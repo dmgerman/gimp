@@ -6,20 +6,26 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__COLOR_BALANCE_H__
+name|__GIMP_COLOR_BALANCE_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__COLOR_BALANCE_H__
+DECL|macro|__GIMP_COLOR_BALANCE_DIALOG_H__
 define|#
 directive|define
-name|__COLOR_BALANCE_H__
+name|__GIMP_COLOR_BALANCE_DIALOG_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpimagemaptool.h"
+end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2779bf8c0103
+DECL|enum|__anon29fec2560103
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -34,6 +40,102 @@ block|}
 name|TransferMode
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_COLOR_BALANCE_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_COLOR_BALANCE_TOOL
+value|(gimp_color_balance_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_COLOR_BALANCE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_COLOR_BALANCE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_COLOR_BALANCE_TOOL, GimpColorBalanceTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_COLOR_BALANCE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_COLOR_BALANCE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_COLOR_BALANCE_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_COLOR_BALANCE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_COLOR_BALANCE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_BALANCE_TOOL, GimpColorBalanceToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_COLOR_BALANCE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_COLOR_BALANCE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_BALANCE_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpColorBalanceTool
+typedef|typedef
+name|struct
+name|_GimpColorBalanceTool
+name|GimpColorBalanceTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpColorBalanceToolClass
+typedef|typedef
+name|struct
+name|_GimpColorBalanceToolClass
+name|GimpColorBalanceToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpColorBalanceTool
+struct|struct
+name|_GimpColorBalanceTool
+block|{
+DECL|member|parent_instance
+name|GimpImageMapTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpColorBalanceToolClass
+struct|struct
+name|_GimpColorBalanceToolClass
+block|{
+DECL|member|parent_class
+name|GimpImageMapToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_typedef
 DECL|typedef|ColorBalanceDialog
@@ -138,9 +240,8 @@ struct|;
 end_struct
 
 begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_color_balance
+name|void
+name|gimp_color_balance_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -148,23 +249,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tools_free_color_balance
+name|GtkType
+name|gimp_color_balance_tool_get_type
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|color_balance_initialize
-parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -214,7 +302,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __COLOR_BALANCE_H__  */
+comment|/*  __GIMP_COLOR_BALANCE_GIMP_H__  */
 end_comment
 
 end_unit

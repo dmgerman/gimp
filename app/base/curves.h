@@ -6,15 +6,21 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CURVES_H__
+name|__GIMP_CURVES_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CURVES_H__
+DECL|macro|__GIMP_CURVES_TOOL_H__
 define|#
 directive|define
-name|__CURVES_H__
+name|__GIMP_CURVES_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpimagemaptool.h"
+end_include
 
 begin_define
 DECL|macro|SMOOTH
@@ -31,6 +37,102 @@ directive|define
 name|GFREE
 value|1
 end_define
+
+begin_define
+DECL|macro|GIMP_TYPE_CURVES_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_CURVES_TOOL
+value|(gimp_curves_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_CURVES_TOOL (obj)
+define|#
+directive|define
+name|GIMP_CURVES_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CURVES_TOOL, GimpCurvesTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CURVES_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_CURVES_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CURVES_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_CURVES_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_CURVES_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CURVES_TOOL, GimpCurvesToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CURVES_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_CURVES_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CURVES_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpCurvesTool
+typedef|typedef
+name|struct
+name|_GimpCurvesTool
+name|GimpCurvesTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpCurvesToolClass
+typedef|typedef
+name|struct
+name|_GimpCurvesToolClass
+name|GimpCurvesToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpCurvesTool
+struct|struct
+name|_GimpCurvesTool
+block|{
+DECL|member|parent_instance
+name|GimpImageMapTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpCurvesToolClass
+struct|struct
+name|_GimpCurvesToolClass
+block|{
+DECL|member|parent_class
+name|GimpImageMapToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_typedef
 DECL|typedef|CurvesDialog
@@ -178,9 +280,8 @@ struct|;
 end_struct
 
 begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_curves
+name|void
+name|gimp_curves_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -188,12 +289,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tools_free_curves
+name|GtkType
+name|gimp_curves_tool_get_type
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -203,17 +302,6 @@ name|void
 name|curves_dialog_hide
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|curves_initialize
-parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

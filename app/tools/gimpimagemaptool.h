@@ -6,99 +6,99 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_LEVELS_TOOL_H__
+name|__GIMP_IMAGE_MAP_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_LEVELS_TOOL_H__
+DECL|macro|__GIMP_IMAGE_MAP_TOOL_H__
 define|#
 directive|define
-name|__GIMP_LEVELS_TOOL_H__
+name|__GIMP_IMAGE_MAP_TOOL_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpimagemaptool.h"
+file|"gimptool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_LEVELS_TOOL
+DECL|macro|GIMP_TYPE_IMAGE_MAP_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_LEVELS_TOOL
-value|(gimp_levels_tool_get_type ())
+name|GIMP_TYPE_IMAGE_MAP_TOOL
+value|(gimp_image_map_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_LEVELS_TOOL (obj)
+DECL|macro|GIMP_IMAGE_MAP_TOOL (obj)
 define|#
 directive|define
-name|GIMP_LEVELS_TOOL
+name|GIMP_IMAGE_MAP_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_LEVELS_TOOL, GimpLevelsTool))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_IMAGE_MAP_TOOL, GimpImageMapTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_LEVELS_TOOL (obj)
+DECL|macro|GIMP_IS_IMAGE_MAP_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_LEVELS_TOOL
+name|GIMP_IS_IMAGE_MAP_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_LEVELS_TOOL))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_IMAGE_MAP_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_LEVELS_TOOL_CLASS (klass)
+DECL|macro|GIMP_IMAGE_MAP_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_LEVELS_TOOL_CLASS
+name|GIMP_IMAGE_MAP_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_LEVELS_TOOL, GimpLevelsToolClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_IMAGE_MAP_TOOL, GimpImageMapToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_LEVELS_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_IMAGE_MAP_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_LEVELS_TOOL_CLASS
+name|GIMP_IS_IMAGE_MAP_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LEVELS_TOOL))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE_MAP_TOOL))
 end_define
 
 begin_typedef
-DECL|typedef|GimpLevelsTool
+DECL|typedef|GimpImageMapTool
 typedef|typedef
 name|struct
-name|_GimpLevelsTool
-name|GimpLevelsTool
+name|_GimpImageMapTool
+name|GimpImageMapTool
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpLevelsToolClass
+DECL|typedef|GimpImageMapToolClass
 typedef|typedef
 name|struct
-name|_GimpLevelsToolClass
-name|GimpLevelsToolClass
+name|_GimpImageMapToolClass
+name|GimpImageMapToolClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpLevelsTool
+DECL|struct|_GimpImageMapTool
 struct|struct
-name|_GimpLevelsTool
+name|_GimpImageMapTool
 block|{
 DECL|member|parent_instance
-name|GimpImageMapTool
+name|GimpTool
 name|parent_instance
 decl_stmt|;
 block|}
@@ -106,12 +106,12 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpLevelsToolClass
+DECL|struct|_GimpImageMapToolClass
 struct|struct
-name|_GimpLevelsToolClass
+name|_GimpImageMapToolClass
 block|{
 DECL|member|parent_class
-name|GimpImageMapToolClass
+name|GimpToolClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -119,35 +119,8 @@ struct|;
 end_struct
 
 begin_function_decl
-name|void
-name|gimp_levels_tool_register
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GtkType
-name|gimp_levels_tool_get_type
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|levels_dialog_hide
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|levels_free
+name|gimp_image_map_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -160,7 +133,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_LEVELS_TOOL_H__  */
+comment|/*  __GIMP_IMAGE_MAP_TOOL_H__  */
 end_comment
 
 end_unit

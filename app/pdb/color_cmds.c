@@ -118,31 +118,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/color_balance.h"
+file|"tools/gimpcolorbalancetool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/curves.h"
+file|"tools/gimpcurvestool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/histogram_tool.h"
+file|"tools/gimphistogramtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/hue_saturation.h"
+file|"tools/gimphuesaturationtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/threshold.h"
+file|"tools/gimpthresholdtool.h"
 end_include
 
 begin_include

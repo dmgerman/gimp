@@ -16,6 +16,12 @@ directive|define
 name|__HISTOGRAM_TOOL_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimptool.h"
+end_include
+
 begin_comment
 comment|/* FIXME: remove the dependency from pdb/color_cmds.c */
 end_comment
@@ -41,6 +47,102 @@ directive|define
 name|HISTOGRAM_HEIGHT
 value|150
 end_define
+
+begin_define
+DECL|macro|GIMP_TYPE_HISTOGRAM_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_HISTOGRAM_TOOL
+value|(gimp_histogram_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_HISTOGRAM_TOOL (obj)
+define|#
+directive|define
+name|GIMP_HISTOGRAM_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_HISTOGRAM_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_HISTOGRAM_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_HISTOGRAM_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_HISTOGRAM_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_HISTOGRAM_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HISTOGRAM_TOOL, GimpHistogramToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_HISTOGRAM_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_HISTOGRAM_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HISTOGRAM_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpHistogramTool
+typedef|typedef
+name|struct
+name|_GimpHistogramTool
+name|GimpHistogramTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpHistogramToolClass
+typedef|typedef
+name|struct
+name|_GimpHistogramToolClass
+name|GimpHistogramToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpHistogramTool
+struct|struct
+name|_GimpHistogramTool
+block|{
+DECL|member|parent_instance
+name|GimpTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpHistogramToolClass
+struct|struct
+name|_GimpHistogramToolClass
+block|{
+DECL|member|parent_class
+name|GimpToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_typedef
 DECL|typedef|HistogramToolDialog
@@ -135,14 +237,18 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  histogram_tool functions  */
-end_comment
+begin_function_decl
+name|void
+name|gimp_histogram_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_histogram_tool
+name|GtkType
+name|gimp_histogram_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -151,22 +257,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_free_histogram_tool
+name|histogram_dialog_hide
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|histogram_tool_initialize
-parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

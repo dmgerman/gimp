@@ -6,20 +6,26 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__HUE_SATURATION_H__
+name|__GIMP_HUE_SATURATION_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__HUE_SATURATION_H__
+DECL|macro|__GIMP_HUE_SATURATION_TOOL_H__
 define|#
 directive|define
-name|__HUE_SATURATION_H__
+name|__GIMP_HUE_SATURATION_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpimagemaptool.h"
+end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bffde440103
+DECL|enum|__anon27eb4dfb0103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES
@@ -46,6 +52,102 @@ block|}
 name|HueRange
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_HUE_SATURATION_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_HUE_SATURATION_TOOL
+value|(gimp_hue_saturation_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_HUE_SATURATION_TOOL (obj)
+define|#
+directive|define
+name|GIMP_HUE_SATURATION_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_HUE_SATURATION_TOOL, GimpHueSaturationTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_HUE_SATURATION_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_HUE_SATURATION_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_HUE_SATURATION_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_HUE_SATURATION_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_HUE_SATURATION_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HUE_SATURATION_TOOL, GimpHueSaturationToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_HUE_SATURATION_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_HUE_SATURATION_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HUE_SATURATION_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpHueSaturationTool
+typedef|typedef
+name|struct
+name|_GimpHueSaturationTool
+name|GimpHueSaturationTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpHueSaturationToolClass
+typedef|typedef
+name|struct
+name|_GimpHueSaturationToolClass
+name|GimpHueSaturationToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpHueSaturationTool
+struct|struct
+name|_GimpHueSaturationTool
+block|{
+DECL|member|parent_instance
+name|GimpImageMapTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpHueSaturationToolClass
+struct|struct
+name|_GimpHueSaturationToolClass
+block|{
+DECL|member|parent_class
+name|GimpImageMapToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_typedef
 DECL|typedef|HueSaturationDialog
@@ -133,9 +235,8 @@ struct|;
 end_struct
 
 begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_hue_saturation
+name|void
+name|gimp_hue_saturation_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -143,23 +244,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tools_free_hue_saturation
+name|GtkType
+name|gimp_hue_saturation_tool_get_type
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|hue_saturation_initialize
-parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

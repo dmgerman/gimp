@@ -6,15 +6,117 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__THRESHOLD_H__
+name|__GIMP_THRESHOLD_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__THRESHOLD_H__
+DECL|macro|__GIMP_THRESHOLD_TOOL_H__
 define|#
 directive|define
-name|__THRESHOLD_H__
+name|__GIMP_THRESHOLD_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpimagemaptool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_THRESHOLD_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_THRESHOLD_TOOL
+value|(gimp_threshold_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_THRESHOLD_TOOL (obj)
+define|#
+directive|define
+name|GIMP_THRESHOLD_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_THRESHOLD_TOOL, GimpThresholdTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_THRESHOLD_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_THRESHOLD_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_THRESHOLD_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_THRESHOLD_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_THRESHOLD_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_THRESHOLD_TOOL, GimpThresholdToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_THRESHOLD_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_THRESHOLD_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_THRESHOLD_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpThresholdTool
+typedef|typedef
+name|struct
+name|_GimpThresholdTool
+name|GimpThresholdTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpThresholdToolClass
+typedef|typedef
+name|struct
+name|_GimpThresholdToolClass
+name|GimpThresholdToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpThresholdTool
+struct|struct
+name|_GimpThresholdTool
+block|{
+DECL|member|parent_instance
+name|GimpImageMapTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpThresholdToolClass
+struct|struct
+name|_GimpThresholdToolClass
+block|{
+DECL|member|parent_class
+name|GimpImageMapToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_typedef
 DECL|typedef|ThresholdDialog
@@ -86,9 +188,8 @@ struct|;
 end_struct
 
 begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_threshold
+name|void
+name|gimp_threshold_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -96,12 +197,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tools_free_threshold
+name|GtkType
+name|gimp_threshold_tool_get_type
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -111,17 +210,6 @@ name|void
 name|threshold_dialog_hide
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|threshold_initialize
-parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -150,7 +238,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __THRESHOLD_H__  */
+comment|/*  __GIMP_THRESHOLD_TOOL_H__  */
 end_comment
 
 end_unit

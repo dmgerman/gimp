@@ -6,20 +6,121 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__POSTERIZE_H__
+name|__GIMP_POSTERIZE_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__POSTERIZE_H__
+DECL|macro|__GIMP_POSTERIZE_TOOL_H__
 define|#
 directive|define
-name|__POSTERIZE_H__
+name|__GIMP_POSTERIZE_TOOL_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpimagemaptool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_POSTERIZE_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_POSTERIZE_TOOL
+value|(gimp_posterize_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_POSTERIZE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_POSTERIZE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_POSTERIZE_TOOL, GimpPosterizeTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_POSTERIZE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_POSTERIZE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_POSTERIZE_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_POSTERIZE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_POSTERIZE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_POSTERIZE_TOOL, GimpPosterizeToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_POSTERIZE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_POSTERIZE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_POSTERIZE_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpPosterizeTool
+typedef|typedef
+name|struct
+name|_GimpPosterizeTool
+name|GimpPosterizeTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPosterizeToolClass
+typedef|typedef
+name|struct
+name|_GimpPosterizeToolClass
+name|GimpPosterizeToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpPosterizeTool
+struct|struct
+name|_GimpPosterizeTool
+block|{
+DECL|member|parent_instance
+name|GimpImageMapTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpPosterizeToolClass
+struct|struct
+name|_GimpPosterizeToolClass
+block|{
+DECL|member|parent_class
+name|GimpImageMapToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_posterize
+name|void
+name|gimp_posterize_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -27,12 +128,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tools_free_posterize
+name|GtkType
+name|gimp_posterize_tool_get_type
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -46,24 +145,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|posterize_initialize
-parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __POSTERIZE_H__  */
+comment|/*  __GIMP_POSTERIZE_TOOL_H__  */
 end_comment
 
 end_unit

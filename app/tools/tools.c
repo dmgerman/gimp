@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrightnesscontrasttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbucketfilltool.h"
 end_include
 
@@ -72,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcolorbalancetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolorpickertool.h"
 end_include
 
@@ -85,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"gimpcroptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcurvestool.h"
 end_include
 
 begin_include
@@ -126,6 +144,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphistogramtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimphuesaturationtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpinktool.h"
 end_include
 
@@ -133,6 +163,12 @@ begin_include
 include|#
 directive|include
 file|"gimpiscissorstool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimplevelstool.h"
 end_include
 
 begin_include
@@ -180,13 +216,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpposterizetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprectselecttool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpbezierselecttool.h"
+file|"gimpthresholdtool.h"
 end_include
 
 begin_include
@@ -228,6 +270,28 @@ name|void
 parameter_list|)
 block|{
 comment|/*  register tools in reverse order  */
+comment|/*  color tools  */
+name|gimp_threshold_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_posterize_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_levels_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_hue_saturation_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_curves_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_color_balance_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_brightness_contrast_tool_register
+argument_list|()
+expr_stmt|;
 comment|/*  paint tools  */
 name|gimp_smudge_tool_register
 argument_list|()
@@ -295,6 +359,9 @@ name|gimp_measure_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_magnify_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_histogram_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_color_picker_tool_register

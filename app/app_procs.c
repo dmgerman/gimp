@@ -83,19 +83,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/curves.h"
+file|"tools/gimpcurvestool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/hue_saturation.h"
+file|"tools/gimphuesaturationtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/levels.h"
+file|"tools/gimplevelstool.h"
 end_include
 
 begin_include
