@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d8b2d0103
+DECL|enum|__anon275c90120103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3683,6 +3683,8 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -3885,6 +3887,8 @@ name|GIMP_CHANNEL
 argument_list|(
 name|mask
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)

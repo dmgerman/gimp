@@ -2354,13 +2354,6 @@ argument_list|(
 name|sc
 argument_list|)
 expr_stmt|;
-name|gimp_channel_invalidate_bounds
-argument_list|(
-name|iscissors
-operator|->
-name|mask
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

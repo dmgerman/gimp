@@ -186,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpselection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpundostack.h"
 end_include
 
@@ -246,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b02965d0103
+DECL|enum|__anon2779cef20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1920,12 +1926,6 @@ name|NULL
 expr_stmt|;
 name|gimage
 operator|->
-name|mask_stroking
-operator|=
-name|FALSE
-expr_stmt|;
-name|gimage
-operator|->
 name|parasites
 operator|=
 name|gimp_parasite_list_new
@@ -3466,7 +3466,7 @@ name|gimage
 operator|->
 name|selection_mask
 operator|=
-name|gimp_channel_new_mask
+name|gimp_selection_new
 argument_list|(
 name|gimage
 argument_list|,

@@ -1109,6 +1109,12 @@ argument_list|(
 name|pert_vpath
 argument_list|)
 expr_stmt|;
+name|mask
+operator|->
+name|bounds_known
+operator|=
+name|FALSE
+expr_stmt|;
 return|return
 name|mask
 return|;
