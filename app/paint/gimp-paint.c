@@ -139,9 +139,9 @@ name|register_funcs
 index|[]
 init|=
 block|{
-name|gimp_smudge_register
-block|,
 name|gimp_dodge_burn_register
+block|,
+name|gimp_smudge_register
 block|,
 name|gimp_convolve_register
 block|,
