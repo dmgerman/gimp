@@ -871,8 +871,9 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"File '%s' exists.\n"
-literal|"Overwrite it?"
+literal|"A file named '%s' already exists.\n\n"
+literal|"Do you want to replace it with the image "
+literal|"you are saving?"
 argument_list|)
 argument_list|,
 name|filename
@@ -902,9 +903,12 @@ name|GIMP_STOCK_QUESTION
 argument_list|,
 name|message
 argument_list|,
-name|GTK_STOCK_YES
+name|_
+argument_list|(
+literal|"Replace"
+argument_list|)
 argument_list|,
-name|GTK_STOCK_NO
+name|GTK_STOCK_CANCEL
 argument_list|,
 name|NULL
 argument_list|,
