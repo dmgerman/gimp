@@ -213,8 +213,12 @@ argument_list|)
 expr_stmt|;
 name|gimprc
 operator|=
-name|gimp_rc_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_RC
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(

@@ -376,7 +376,11 @@ operator|=
 name|GIMP_CORE_CONFIG
 argument_list|(
 name|gimp_rc_new
-argument_list|()
+argument_list|(
+name|alternate_system_gimprc
+argument_list|,
+name|alternate_gimprc
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* solely for debugging */
@@ -397,18 +401,6 @@ name|gimprc_notify_callback
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  parse the local GIMP configuration file  */
-comment|/* FIXME: add back support for alternate_system_gimprc and alternate_gimprc */
-name|gimp_rc_load
-argument_list|(
-name|GIMP_RC
-argument_list|(
-name|the_gimp
-operator|->
-name|config
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  initialize lowlevel stuff  */

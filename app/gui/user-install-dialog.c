@@ -248,7 +248,7 @@ value|gtk_widget_modify_style (widget, title_style)
 end_define
 
 begin_enum
-DECL|enum|__anon2c6b99170103
+DECL|enum|__anon2b9417d90103
 enum|enum
 block|{
 DECL|enumerator|DIRENT_COLUMN
@@ -311,9 +311,9 @@ specifier|static
 name|void
 name|user_install_tuning
 parameter_list|(
-name|Gimp
+name|GimpRc
 modifier|*
-name|gimp
+name|gimprc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -323,9 +323,9 @@ specifier|static
 name|void
 name|user_install_tuning_done
 parameter_list|(
-name|Gimp
+name|GimpRc
 modifier|*
-name|gimp
+name|gimprc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -335,9 +335,9 @@ specifier|static
 name|void
 name|user_install_resolution
 parameter_list|(
-name|Gimp
+name|GimpRc
 modifier|*
-name|gimp
+name|gimprc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -347,7 +347,7 @@ specifier|static
 name|void
 name|user_install_resolution_done
 parameter_list|(
-name|Gimp
+name|GimpRc
 modifier|*
 name|gimp
 parameter_list|)
@@ -517,7 +517,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6b99170208
+DECL|struct|__anon2b9417d90208
 block|{
 DECL|member|directory
 name|gboolean
@@ -1048,6 +1048,13 @@ name|notebook_index
 init|=
 literal|0
 decl_stmt|;
+specifier|static
+name|GimpRc
+modifier|*
+name|gimprc
+init|=
+name|NULL
+decl_stmt|;
 name|Gimp
 modifier|*
 name|gimp
@@ -1143,30 +1150,18 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp
-operator|->
-name|config
+name|gimprc
 operator|=
-name|GIMP_CORE_CONFIG
-argument_list|(
 name|gimp_rc_new
-argument_list|()
-argument_list|)
-expr_stmt|;
-comment|/* FIXME: add back support for alternate_system_gimprc                 and alternate_gimprc */
-name|gimp_rc_load
 argument_list|(
-name|GIMP_RC
-argument_list|(
-name|gimp
-operator|->
-name|config
-argument_list|)
+name|alternate_system_gimprc
+argument_list|,
+name|alternate_gimprc
 argument_list|)
 expr_stmt|;
 name|user_install_tuning
 argument_list|(
-name|gimp
+name|gimprc
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1175,12 +1170,12 @@ literal|3
 case|:
 name|user_install_tuning_done
 argument_list|(
-name|gimp
+name|gimprc
 argument_list|)
 expr_stmt|;
 name|user_install_resolution
 argument_list|(
-name|gimp
+name|gimprc
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1189,8 +1184,25 @@ literal|4
 case|:
 name|user_install_resolution_done
 argument_list|(
-name|gimp
+name|gimprc
 argument_list|)
+expr_stmt|;
+name|gimp_rc_save
+argument_list|(
+name|gimprc
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimprc
+operator|=
+name|NULL
 expr_stmt|;
 name|g_object_unref
 argument_list|(
@@ -4584,12 +4596,12 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|user_install_tuning (Gimp * gimp)
+DECL|function|user_install_tuning (GimpRc * gimprc)
 name|user_install_tuning
 parameter_list|(
-name|Gimp
+name|GimpRc
 modifier|*
-name|gimp
+name|gimprc
 parameter_list|)
 block|{
 name|GimpBaseConfig
@@ -4598,9 +4610,7 @@ name|config
 init|=
 name|GIMP_BASE_CONFIG
 argument_list|(
-name|gimp
-operator|->
-name|config
+name|gimprc
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -4905,12 +4915,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|user_install_tuning_done (Gimp * gimp)
+DECL|function|user_install_tuning_done (GimpRc * gimprc)
 name|user_install_tuning_done
 parameter_list|(
-name|Gimp
+name|GimpRc
 modifier|*
-name|gimp
+name|gimprc
 parameter_list|)
 block|{
 name|gulong
@@ -4943,9 +4953,7 @@ name|g_object_set
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimp
-operator|->
-name|config
+name|gimprc
 argument_list|)
 argument_list|,
 literal|"tile-cache-size"
@@ -5054,12 +5062,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|user_install_resolution (Gimp * gimp)
+DECL|function|user_install_resolution (GimpRc * gimprc)
 name|user_install_resolution
 parameter_list|(
-name|Gimp
+name|GimpRc
 modifier|*
-name|gimp
+name|gimprc
 parameter_list|)
 block|{
 name|GimpDisplayConfig
@@ -5068,9 +5076,7 @@ name|config
 init|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|gimp
-operator|->
-name|config
+name|gimprc
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -5689,12 +5695,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|user_install_resolution_done (Gimp * gimp)
+DECL|function|user_install_resolution_done (GimpRc * gimprc)
 name|user_install_resolution_done
 parameter_list|(
-name|Gimp
+name|GimpRc
 modifier|*
-name|gimp
+name|gimprc
 parameter_list|)
 block|{
 name|gdouble
@@ -5765,9 +5771,7 @@ name|g_object_set
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|gimp
-operator|->
-name|config
+name|gimprc
 argument_list|)
 argument_list|,
 literal|"monitor_xresolution"
