@@ -877,9 +877,9 @@ block|,
 block|{
 name|GIMP_TARGET_URI_LIST
 block|,
-literal|"gimp_dnd_set_file_func"
+literal|"gimp-dnd-set-file-func"
 block|,
-literal|"gimp_dnd_set_file_data"
+literal|"gimp-dnd-set-file-data"
 block|,
 name|NULL
 block|,
@@ -891,9 +891,9 @@ block|,
 block|{
 name|GIMP_TARGET_TEXT_PLAIN
 block|,
-literal|"gimp_dnd_set_file_func"
+literal|"gimp-dnd-set-file-func"
 block|,
-literal|"gimp_dnd_set_file_data"
+literal|"gimp-dnd-set-file-data"
 block|,
 name|NULL
 block|,
@@ -905,9 +905,9 @@ block|,
 block|{
 name|GIMP_TARGET_NETSCAPE_URL
 block|,
-literal|"gimp_dnd_set_file_func"
+literal|"gimp-dnd-set-file-func"
 block|,
-literal|"gimp_dnd_set_file_data"
+literal|"gimp-dnd-set-file-data"
 block|,
 name|NULL
 block|,
@@ -919,9 +919,9 @@ block|,
 block|{
 name|GIMP_TARGET_COLOR
 block|,
-literal|"gimp_dnd_set_color_func"
+literal|"gimp-dnd-set-color-func"
 block|,
-literal|"gimp_dnd_set_color_data"
+literal|"gimp-dnd-set-color-data"
 block|,
 name|gimp_dnd_get_color_icon
 block|,
@@ -933,9 +933,9 @@ block|,
 block|{
 name|GIMP_TARGET_IMAGE
 block|,
-literal|"gimp_dnd_set_image_func"
+literal|"gimp-dnd-set-image-func"
 block|,
-literal|"gimp_dnd_set_image_data"
+literal|"gimp-dnd-set-image-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -947,9 +947,9 @@ block|,
 block|{
 name|GIMP_TARGET_LAYER
 block|,
-literal|"gimp_dnd_set_layer_func"
+literal|"gimp-dnd-set-layer-func"
 block|,
-literal|"gimp_dnd_set_layer_data"
+literal|"gimp-dnd-set-layer-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -961,9 +961,9 @@ block|,
 block|{
 name|GIMP_TARGET_CHANNEL
 block|,
-literal|"gimp_dnd_set_channel_func"
+literal|"gimp-dnd-set-channel-func"
 block|,
-literal|"gimp_dnd_set_channel_data"
+literal|"gimp-dnd-set-channel-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -975,9 +975,9 @@ block|,
 block|{
 name|GIMP_TARGET_LAYER_MASK
 block|,
-literal|"gimp_dnd_set_layer_mask_func"
+literal|"gimp-dnd-set-layer-mask-func"
 block|,
-literal|"gimp_dnd_set_layer_mask_data"
+literal|"gimp-dnd-set-layer-mask-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1003,9 +1003,9 @@ block|,
 block|{
 name|GIMP_TARGET_VECTORS
 block|,
-literal|"gimp_dnd_set_vectors_func"
+literal|"gimp-dnd-set-vectors-func"
 block|,
-literal|"gimp_dnd_set_vectors_data"
+literal|"gimp-dnd-set-vectors-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1017,9 +1017,9 @@ block|,
 block|{
 name|GIMP_TARGET_BRUSH
 block|,
-literal|"gimp_dnd_set_brush_func"
+literal|"gimp-dnd-set-brush-func"
 block|,
-literal|"gimp_dnd_set_brush_data"
+literal|"gimp-dnd-set-brush-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1031,9 +1031,9 @@ block|,
 block|{
 name|GIMP_TARGET_PATTERN
 block|,
-literal|"gimp_dnd_set_pattern_func"
+literal|"gimp-dnd-set-pattern-func"
 block|,
-literal|"gimp_dnd_set_pattern_data"
+literal|"gimp-dnd-set-pattern-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1045,9 +1045,9 @@ block|,
 block|{
 name|GIMP_TARGET_GRADIENT
 block|,
-literal|"gimp_dnd_set_gradient_func"
+literal|"gimp-dnd-set-gradient-func"
 block|,
-literal|"gimp_dnd_set_gradient_data"
+literal|"gimp-dnd-set-gradient-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1059,9 +1059,9 @@ block|,
 block|{
 name|GIMP_TARGET_PALETTE
 block|,
-literal|"gimp_dnd_set_palette_func"
+literal|"gimp-dnd-set-palette-func"
 block|,
-literal|"gimp_dnd_set_palette_data"
+literal|"gimp-dnd-set-palette-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1073,9 +1073,9 @@ block|,
 block|{
 name|GIMP_TARGET_FONT
 block|,
-literal|"gimp_dnd_set_font_func"
+literal|"gimp-dnd-set-font-func"
 block|,
-literal|"gimp_dnd_set_font_data"
+literal|"gimp-dnd-set-font-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1087,9 +1087,9 @@ block|,
 block|{
 name|GIMP_TARGET_BUFFER
 block|,
-literal|"gimp_dnd_set_buffer_func"
+literal|"gimp-dnd-set-buffer-func"
 block|,
-literal|"gimp_dnd_set_buffer_data"
+literal|"gimp-dnd-set-buffer-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1101,9 +1101,9 @@ block|,
 block|{
 name|GIMP_TARGET_IMAGEFILE
 block|,
-literal|"gimp_dnd_set_imagefile_func"
+literal|"gimp-dnd-set-imagefile-func"
 block|,
-literal|"gimp_dnd_set_imagefile_data"
+literal|"gimp-dnd-set-imagefile-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1115,9 +1115,9 @@ block|,
 block|{
 name|GIMP_TARGET_TEMPLATE
 block|,
-literal|"gimp_dnd_set_template_func"
+literal|"gimp-dnd-set-template-func"
 block|,
-literal|"gimp_dnd_set_template_data"
+literal|"gimp-dnd-set-template-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1129,9 +1129,9 @@ block|,
 block|{
 name|GIMP_TARGET_TOOL
 block|,
-literal|"gimp_dnd_set_tool_func"
+literal|"gimp-dnd-set-tool-func"
 block|,
-literal|"gimp_dnd_set_tool_data"
+literal|"gimp-dnd-set-tool-data"
 block|,
 name|gimp_dnd_get_viewable_icon
 block|,
@@ -1245,9 +1245,8 @@ name|icon_widget
 decl_stmt|;
 name|data_type
 operator|=
-operator|(
-name|GimpDndType
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1256,6 +1255,7 @@ name|widget
 argument_list|)
 argument_list|,
 literal|"gimp-dnd-get-data-type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1266,9 +1266,6 @@ condition|)
 return|return;
 name|get_data_func
 operator|=
-operator|(
-name|GCallback
-operator|)
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1281,9 +1278,6 @@ argument_list|)
 expr_stmt|;
 name|get_data_data
 operator|=
-operator|(
-name|gpointer
-operator|)
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1502,9 +1496,8 @@ name|length
 decl_stmt|;
 name|data_type
 operator|=
-operator|(
-name|GimpDndType
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1514,6 +1507,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-dnd-get-data-type"
 argument_list|)
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1521,11 +1515,15 @@ operator|!
 name|data_type
 condition|)
 return|return;
+name|g_assert
+argument_list|(
+name|data_type
+operator|==
+name|info
+argument_list|)
+expr_stmt|;
 name|get_data_func
 operator|=
-operator|(
-name|GCallback
-operator|)
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1538,9 +1536,6 @@ argument_list|)
 expr_stmt|;
 name|get_data_data
 operator|=
-operator|(
-name|gpointer
-operator|)
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1909,10 +1904,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-dnd-get-data-type"
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|data_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -6117,7 +6112,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid buffer data!"
+literal|"Received invalid imagefile data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6234,7 +6229,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid buffer data!"
+literal|"Received invalid template data!"
 argument_list|)
 expr_stmt|;
 return|return;
