@@ -3219,7 +3219,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_overlay_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] overlay operation between the pixel sources  * ctx->A and ctx->B, using the generalised algorithm:  *  * D =  A * (B + (2 * B) * (255 - A))  *  **/
+comment|/**  * gimp_composite_overlay_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] overlay operation between the pixel sources  * ctx->A and ctx->B, using the generalised algorithm:  *  * D =  A * (A + (2 * B) * (255 - A))  *  **/
 end_comment
 
 begin_function
