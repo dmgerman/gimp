@@ -178,6 +178,14 @@ value|pdivwX(dividend,divisor,quotient) \                                       
 end_define
 
 begin_define
+DECL|macro|pdivwuqX_clobber
+define|#
+directive|define
+name|pdivwuqX_clobber
+value|pdivwqX_clobber
+end_define
+
+begin_define
 DECL|macro|xmm_pdivwqX (dividend,divisor,quotient,scratch)
 define|#
 directive|define
