@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75cea00103
+DECL|enum|__anon287dbc160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -823,6 +823,16 @@ argument_list|,
 name|NULL
 argument_list|,
 name|editor
+argument_list|)
+expr_stmt|;
+comment|/*    * Set insensitive because revert buttons are not yet implemented.    */
+name|gtk_widget_set_sensitive
+argument_list|(
+name|editor
+operator|->
+name|revert_button
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
