@@ -2066,7 +2066,6 @@ name|gradient
 init|=
 name|NULL
 decl_stmt|;
-empty_stmt|;
 name|name
 operator|=
 operator|(

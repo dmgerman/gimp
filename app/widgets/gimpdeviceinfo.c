@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4963df0103
+DECL|enum|__anon2b694bb00103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4963df0203
+DECL|enum|__anon2b694bb00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -342,7 +342,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|GParamSpec
 modifier|*
 name|array_spec

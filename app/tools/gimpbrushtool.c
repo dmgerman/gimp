@@ -652,7 +652,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-empty_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent

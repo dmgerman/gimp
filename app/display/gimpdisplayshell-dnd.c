@@ -1126,7 +1126,6 @@ name|gdisp
 operator|->
 name|gimage
 decl_stmt|;
-empty_stmt|;
 name|GimpContext
 modifier|*
 name|context
