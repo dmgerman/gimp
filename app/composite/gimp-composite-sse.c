@@ -238,11 +238,11 @@ value|"\tmovq      %%"#src", %%"#dst"; " \          "\tpunpckhbw %%"#zero", %%"#
 end_define
 
 begin_decl_stmt
-DECL|variable|rgba8_alpha_mask
+DECL|variable|rgba8_alpha_mask_64
 specifier|const
 specifier|static
 name|guint32
-name|rgba8_alpha_mask
+name|rgba8_alpha_mask_64
 index|[
 literal|2
 index|]
@@ -256,11 +256,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rgba8_b1
+DECL|variable|rgba8_b1_64
 specifier|const
 specifier|static
 name|guint32
-name|rgba8_b1
+name|rgba8_b1_64
 index|[
 literal|2
 index|]
@@ -274,11 +274,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rgba8_b255
+DECL|variable|rgba8_b255_64
 specifier|const
 specifier|static
 name|guint32
-name|rgba8_b255
+name|rgba8_b255_64
 index|[
 literal|2
 index|]
@@ -292,11 +292,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rgba8_w1
+DECL|variable|rgba8_w1_64
 specifier|const
 specifier|static
 name|guint32
-name|rgba8_w1
+name|rgba8_w1_64
 index|[
 literal|2
 index|]
@@ -310,11 +310,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rgba8_w2
+DECL|variable|rgba8_w2_64
 specifier|const
 specifier|static
 name|guint32
-name|rgba8_w2
+name|rgba8_w2_64
 index|[
 literal|2
 index|]
@@ -328,11 +328,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rgba8_w128
+DECL|variable|rgba8_w128_64
 specifier|const
 specifier|static
 name|guint32
-name|rgba8_w128
+name|rgba8_w128_64
 index|[
 literal|2
 index|]
@@ -346,11 +346,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rgba8_w256
+DECL|variable|rgba8_w256_64
 specifier|const
 specifier|static
 name|guint32
-name|rgba8_w256
+name|rgba8_w256_64
 index|[
 literal|2
 index|]
@@ -364,11 +364,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|rgba8_w255
+DECL|variable|rgba8_w255_64
 specifier|const
 specifier|static
 name|guint32
-name|rgba8_w255
+name|rgba8_w255_64
 index|[
 literal|2
 index|]
@@ -477,7 +477,7 @@ asm|asm
 specifier|volatile
 asm|("movq    %0,%%mm0"                     :
 comment|/* empty */
-asm|: "m" (*rgba8_alpha_mask)                 : "%mm0");
+asm|: "m" (*rgba8_alpha_mask_64)                 : "%mm0");
 for|for
 control|(
 init|;
@@ -587,7 +587,7 @@ asm|"\tpor       %%mm1,%%mm7\n"
 comment|/* mm7 = mm7 | mm1 */
 asm|"\tmovq      %%mm7,%2\n" 											:
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_b255), "m" (*rgba8_w1), "m" (*rgba8_w255), "m" (*rgba8_alpha_mask) 											: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64) 											: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 name|op
 operator|.
 name|A
@@ -638,7 +638,7 @@ asm|"\tpor       %%mm1,%%mm7\n"
 comment|/* mm7 = mm7 | mm1 */
 asm|"\tmovd      %%mm7,%2\n" 																				:
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_b255), "m" (*rgba8_w1), "m" (*rgba8_w255), "m" (*rgba8_alpha_mask) 																				: "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64) 																				: "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 block|}
 asm|asm("emms");
 block|}
@@ -735,7 +735,7 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
 for|for
 control|(
 init|;
@@ -811,7 +811,7 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0, %%mm0\n" 																"\tmovq    %1, %%mm7\n" 																: 																: "m" (*rgba8_alpha_mask), "m" (*rgba8_w1) 																: "%mm0", "%mm7");
+asm|("movq    %0, %%mm0\n" 																"\tmovq    %1, %%mm7\n" 																: 																: "m" (*rgba8_alpha_mask_64), "m" (*rgba8_w1_64) 																: "%mm0", "%mm7");
 for|for
 control|(
 init|;
@@ -846,7 +846,7 @@ asm|"\tpackuswb  %%mm4,%%mm5\n"
 comment|/* expects mm4 and mm5 to be signed values */
 asm|"\t" pminub(mm0,mm1,mm3) "\n" 																				"\tmovq         %3,%%mm3\n" 																				"\tmovq      %%mm3,%%mm2\n"  																				"\tpandn     %%mm5,%%mm3\n"  																				"\tpand      %%mm2,%%mm1\n" 																				"\tpor       %%mm1,%%mm3\n"  																				"\tmovq      %%mm3,%2\n" 																				:
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_alpha_mask) 																				: "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_alpha_mask_64) 																				: "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 name|op
 operator|.
 name|A
@@ -891,7 +891,7 @@ asm|"\tpackuswb  %%mm4,%%mm5\n"
 comment|/* expects mm4 and mm5 to be signed values */
 asm|"\t" pminub(mm0,mm1,mm3) "\n" 																				"\tmovq         %3,%%mm3\n" 																				"\tmovq      %%mm3,%%mm2\n"  																				"\tpandn     %%mm5,%%mm3\n"  																				"\tpand      %%mm2,%%mm1\n" 																				"\tpor       %%mm1,%%mm3\n"  																				"\tmovd      %%mm3,%2\n" 																				:
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_alpha_mask) 																				: "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_alpha_mask_64) 																				: "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 block|}
 asm|asm("emms");
 block|}
@@ -933,7 +933,7 @@ asm|asm
 specifier|volatile
 asm|("  movq         %0,%%mm0\n" 																				"\tmovq         %1,%%mm1\n" 																				"\tmovq      %%mm1,%%mm3\n" 																				"\tpxor      %%mm2,%%mm2\n" 																				"\tpunpcklbw %%mm2,%%mm3\n" 																				"\tpunpcklbw %%mm0,%%mm2\n"  																				"\tmovq         %3,%%mm4\n" 																				"\tpsubw     %%mm3,%%mm4\n"  																				"\t" pdivwuqX(mm2,mm4,mm5) "\n"  																				"\tmovq      %%mm1,%%mm3\n" 																				"\tpxor      %%mm2,%%mm2\n" 																				"\tpunpckhbw %%mm2,%%mm3\n" 																				"\tpunpckhbw %%mm0,%%mm2\n"  																				"\tmovq         %3,%%mm4\n" 																				"\tpsubw     %%mm3,%%mm4\n"  																				"\t" pdivwuqX(mm2,mm4,mm6) "\n"  																				"\tpackuswb  %%mm6,%%mm5\n"  																				"\tmovq         %4,%%mm6\n" 																				"\tmovq      %%mm1,%%mm7\n" 																				"\t" pminub(mm0,mm7,mm2) "\n" 																				"\tpand      %%mm6,%%mm7\n" 																				"\tpandn     %%mm5,%%mm6\n"  																				"\tpor       %%mm6,%%mm7\n"  																				"\tmovq      %%mm7,%2\n" 																				:
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256), "m" (*rgba8_alpha_mask) 																				: "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256_64), "m" (*rgba8_alpha_mask_64) 																				: "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 name|op
 operator|.
 name|A
@@ -964,7 +964,7 @@ asm|asm
 specifier|volatile
 asm|("  movd         %0,%%mm0\n" 																				"\tmovq         %1,%%mm1\n" 																				"\tmovq      %%mm1,%%mm3\n" 																				"\tpxor      %%mm2,%%mm2\n" 																				"\tpunpcklbw %%mm2,%%mm3\n" 																				"\tpunpcklbw %%mm0,%%mm2\n"  																				"\tmovq         %3,%%mm4\n" 																				"\tpsubw     %%mm3,%%mm4\n"  																				"\t" pdivwuqX(mm2,mm4,mm5) "\n"  																				"\tmovq      %%mm1,%%mm3\n" 																				"\tpxor      %%mm2,%%mm2\n" 																				"\tpunpckhbw %%mm2,%%mm3\n" 																				"\tpunpckhbw %%mm0,%%mm2\n"  																				"\tmovq         %3,%%mm4\n" 																				"\tpsubw     %%mm3,%%mm4\n"  																				"\t" pdivwuqX(mm2,mm4,mm6) "\n"  																				"\tpackuswb  %%mm6,%%mm5\n"  																				"\tmovq         %4,%%mm6\n" 																				"\tmovq      %%mm1,%%mm7\n" 																				"\t" pminub(mm0,mm7,mm2) "\n" 																				"\tpand      %%mm6,%%mm7\n" 																				"\tpandn     %%mm5,%%mm6\n"  																				"\tpor       %%mm6,%%mm7\n"  																				"\tmovd      %%mm7,%2\n" 																				:
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256), "m" (*rgba8_alpha_mask) 																				: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w256_64), "m" (*rgba8_alpha_mask_64) 																				: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 block|}
 asm|asm("emms");
 block|}
@@ -988,13 +988,13 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
 asm|asm
 specifier|volatile
 asm|("pxor    %%mm6,%%mm6"  :  :                         : "%mm6");
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm7"     :  : "m" (*rgba8_w128)       : "%mm7");
+asm|("movq    %0,%%mm7"     :  : "m" (*rgba8_w128_64)       : "%mm7");
 for|for
 control|(
 init|;
@@ -1072,7 +1072,7 @@ asm|asm
 specifier|volatile
 asm|("movq    %0, %%mm0\n"                 "pxor    %%mm6, %%mm6\n"                 "movq    %1, %%mm7\n"                 :
 comment|/* empty */
-asm|: "m" (*rgba8_alpha_mask), "m" (*rgba8_w128)                 : "%mm0", "%mm6", "%mm7");
+asm|: "m" (*rgba8_alpha_mask_64), "m" (*rgba8_w128_64)                 : "%mm0", "%mm6", "%mm7");
 for|for
 control|(
 init|;
@@ -1148,7 +1148,7 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
 for|for
 control|(
 init|;
@@ -1224,10 +1224,10 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm7"     :  : "m" (*rgba8_w128) : "%mm7");
+asm|("movq    %0,%%mm7"     :  : "m" (*rgba8_w128_64) : "%mm7");
 asm|asm
 specifier|volatile
 asm|("pxor    %%mm6,%%mm6"  :  :  : "%mm6");
@@ -1330,7 +1330,7 @@ asm|mmx_high_bytes_to_words(mm4,mm1,mm0)                 mmx_high_bytes_to_words
 comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
 asm|"\tpackuswb  %%mm1,%%mm5\n"                  "\tmovq         %1,%%mm0\n"                 "\tmovq      %%mm0,%%mm1\n"                 "\tpandn     %%mm5,%%mm1\n"                  "\t" pminub(mm2,mm3,mm4) "\n"                 "\tpand      %%mm0,%%mm3\n"                  "\tpor       %%mm3,%%mm1\n"                  :
 comment|/* empty */
-asm|: "m" (*rgba8_w2), "m" (*rgba8_alpha_mask)                 );
+asm|: "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64)                 );
 block|}
 end_function
 
@@ -1354,7 +1354,7 @@ asm|asm
 specifier|volatile
 asm|("pxor    %%mm0,%%mm0\n"                 "movq       %0,%%mm7"                 :
 comment|/* empty */
-asm|: "m" (*rgba8_w128) : "%mm0");
+asm|: "m" (*rgba8_w128_64) : "%mm0");
 for|for
 control|(
 init|;
@@ -1402,7 +1402,7 @@ asm|mmx_low_bytes_to_words(mm4,mm5,mm0) 																				mmx_low_bytes_to_wor
 comment|/* mm5 = INT_MULT(mm6, mm5) low bytes */
 asm|mmx_high_bytes_to_words(mm4,mm1,mm0) 																				mmx_high_bytes_to_words(mm2,mm6,mm0) 																				"\tpaddw     %%mm6,%%mm1\n" 																				mmx_int_mult(mm6,mm1,mm7)
 comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
-asm|"\tpackuswb  %%mm1,%%mm5\n" 																				 																				"\tmovq         %4,%%mm0\n" 																				"\tmovq      %%mm0,%%mm1\n" 																				"\tpandn     %%mm5,%%mm1\n" 																				 																				"\t" pminub(mm2,mm3,mm4) "\n" 																				"\tpand      %%mm0,%%mm3\n" 																				 																				"\tpor       %%mm3,%%mm1\n" 																				 																				"\tmovq      %%mm1,%2\n" 																				: "+m" (*op.A), "+m" (*op.B), "+m" (*op.D) 																				: "m" (*rgba8_w2), "m" (*rgba8_alpha_mask) 																				: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|"\tpackuswb  %%mm1,%%mm5\n" 																				 																				"\tmovq         %4,%%mm0\n" 																				"\tmovq      %%mm0,%%mm1\n" 																				"\tpandn     %%mm5,%%mm1\n" 																				 																				"\t" pminub(mm2,mm3,mm4) "\n" 																				"\tpand      %%mm0,%%mm3\n" 																				 																				"\tpor       %%mm3,%%mm1\n" 																				 																				"\tmovq      %%mm1,%2\n" 																				: "+m" (*op.A), "+m" (*op.B), "+m" (*op.D) 																				: "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64) 																				: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 name|op
 operator|.
 name|A
@@ -1462,7 +1462,7 @@ asm|mmx_high_bytes_to_words(mm4,mm1,mm0) 																				mmx_high_bytes_to_w
 comment|/* mm1 = INT_MULT(mm6, mm1) high bytes */
 asm|"\tpackuswb  %%mm1,%%mm5\n" 																				 																				"\tmovq         %4,%%mm0\n" 																				"\tmovq      %%mm0,%%mm1\n" 																				"\tpandn     %%mm5,%%mm1\n" 																				 																				"\t" pminub(mm2,mm3,mm4) "\n" 																				"\tpand      %%mm0,%%mm3\n" 																				 																				"\tpor       %%mm3,%%mm1\n" 																				 																				"\tmovd      %%mm1,%2\n" 																				:
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w2), "m" (*rgba8_alpha_mask) 																				: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|: "m" (*op.A), "m" (*op.B), "m" (*op.D), "m" (*rgba8_w2_64), "m" (*rgba8_alpha_mask_64) 																				: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}
@@ -1488,7 +1488,7 @@ asm|asm
 specifier|volatile
 asm|("pxor    %%mm0,%%mm0\n"                 "\tmovl     %0,%%eax\n"                 "\tmovl  %%eax,%%ebx\n"                 "\tshl     $16,%%ebx\n"                 "\torl   %%ebx,%%eax\n"                 "\tmovd  %%eax,%%mm5\n"                 "\tmovd  %%eax,%%mm3\n"                 "\tpsllq   $32,%%mm5\n"                 "\tpor   %%mm5,%%mm3\n"                 "\tmovq     %1,%%mm7\n"                 :
 comment|/* empty */
-asm|: "m" (op.scale.scale), "m" (*rgba8_w128)                 : "%eax", "%mm0", "%mm5", "%mm6", "%mm7");
+asm|: "m" (op.scale.scale), "m" (*rgba8_w128_64)                 : "%eax", "%mm0", "%mm5", "%mm6", "%mm7");
 for|for
 control|(
 init|;
@@ -1558,10 +1558,10 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm7"     :  : "m" (*rgba8_w128)  : "%mm7");
+asm|("movq    %0,%%mm7"     :  : "m" (*rgba8_w128_64)  : "%mm7");
 asm|asm
 specifier|volatile
 asm|("pxor    %mm6, %mm6");
@@ -1640,7 +1640,7 @@ name|_op
 decl_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask_64) : "%mm0");
 for|for
 control|(
 init|;
