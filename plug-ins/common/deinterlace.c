@@ -218,7 +218,7 @@ literal|"Andrew Kieschnick"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Enhance/Deinterlace"
+literal|"<Image>/Filters/Enhance/Deinterlace..."
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -156,7 +156,7 @@ DECL|macro|PLUG_IN_MENU_PATH
 define|#
 directive|define
 name|PLUG_IN_MENU_PATH
-value|"<Image>/Filters/Distorts/CurveBend"
+value|"<Image>/Filters/Distorts/CurveBend..."
 end_define
 
 begin_define
@@ -879,7 +879,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b543fc20108
+DECL|struct|__anon2b14149c0108
 typedef|typedef
 struct|struct
 block|{
@@ -908,7 +908,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b543fc20208
+DECL|struct|__anon2b14149c0208
 typedef|typedef
 struct|struct
 block|{
@@ -994,7 +994,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b543fc20308
+DECL|struct|__anon2b14149c0308
 typedef|typedef
 struct|struct
 block|{
