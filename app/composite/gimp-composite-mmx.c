@@ -564,7 +564,11 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm
+specifier|volatile
+asm|("movq    %0,%%mm0"     																:
+comment|/* empty */
+asm|: "m" (rgba8_alpha_mask) 																: "%mm0");
 for|for
 control|(
 init|;
@@ -581,9 +585,7 @@ operator|-=
 literal|2
 control|)
 block|{
-asm|asm
-specifier|volatile
-asm|("  movq    (%0), %%mm2; addl $8, %0\n"                   "\tmovq    (%1), %%mm3; addl $8, %1\n"                   "\tmovq    %%mm2, %%mm4\n"                   "\tpaddusb %%mm3, %%mm4\n"                   "\tmovq    %%mm0, %%mm1\n"                   "\tpandn   %%mm4, %%mm1\n"                   "\t" pminub(mm3, mm2, mm4) "\n"                   "\tpand    %%mm0, %%mm2\n"                   "\tpor     %%mm2, %%mm1\n"                   "\tmovq    %%mm1, (%2); addl $8, %2\n"                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)                   :
+asm|asm ("  movq    (%0), %%mm2; addl $8, %0\n" 									"\tmovq    (%1), %%mm3; addl $8, %1\n" 									"\tmovq    %%mm2, %%mm4\n" 									"\tpaddusb %%mm3, %%mm4\n" 									"\tmovq    %%mm0, %%mm1\n" 									"\tpandn   %%mm4, %%mm1\n" 									"\t" pminub(mm3, mm2, mm4) "\n" 									"\tpand    %%mm0, %%mm2\n" 									"\tpor     %%mm2, %%mm1\n" 									"\tmovq    %%mm1, (%2); addl $8, %2\n" 									: "+r" (op.A), "+r" (op.B), "+r" (op.D) 									:
 comment|/* empty */
 asm|: "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 block|}
@@ -594,7 +596,9 @@ operator|.
 name|n_pixels
 condition|)
 block|{
-asm|asm("  movd    (%0), %%mm2;\n"         "\tmovd    (%1), %%mm3;\n"         "\tmovq    %%mm2, %%mm4\n"         "\tpaddusb %%mm3, %%mm4\n"         "\tmovq    %%mm0, %%mm1\n"         "\tpandn   %%mm4, %%mm1\n"         "\t" pminub(mm3, mm2, mm4) "\n"         "\tpand    %%mm0, %%mm2\n"         "\tpor     %%mm2, %%mm1\n"         "\tmovd    %%mm1, (%2);\n"         :
+asm|asm
+specifier|volatile
+asm|("  movd    (%0), %%mm2;\n"         "\tmovd    (%1), %%mm3;\n"         "\tmovq    %%mm2, %%mm4\n"         "\tpaddusb %%mm3, %%mm4\n"         "\tmovq    %%mm0, %%mm1\n"         "\tpandn   %%mm4, %%mm1\n"         "\t" pminub(mm3, mm2, mm4) "\n"         "\tpand    %%mm0, %%mm2\n"         "\tpor     %%mm2, %%mm1\n"         "\tmovd    %%mm1, (%2);\n"         :
 comment|/* empty */
 asm|: "r" (op.A), "r" (op.B), "r" (op.D)         : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 block|}
@@ -618,7 +622,11 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq   %0,%%mm1"       :       : "m" (rgba8_alpha_mask)       : "%mm1");
+asm|asm
+specifier|volatile
+asm|("movq   %0,%%mm1"       :
+comment|/* empty */
+asm|: "m" (rgba8_alpha_mask)       : "%mm1");
 for|for
 control|(
 init|;
@@ -635,29 +643,27 @@ operator|-=
 literal|2
 control|)
 block|{
-asm|asm
-specifier|volatile
-asm|("  movq      (%0),%%mm0; addl $8,%0\n"                   "\tmovq      (%1),%%mm1; addl $8,%1\n"                    "\tmovq      %3,%%mm2\n"                   "\tpsubb     %%mm0,%%mm2\n"
+asm|asm ("  movq      (%0),%%mm0; addl $8,%0\n" 									"\tmovq      (%1),%%mm1; addl $8,%1\n" 									 									"\tmovq      %3,%%mm2\n" 									"\tpsubb     %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
-asm|"\tpxor      %%mm4,%%mm4\n"                   "\tpunpcklbw %%mm2,%%mm4\n"
+asm|"\tpxor      %%mm4,%%mm4\n" 									"\tpunpcklbw %%mm2,%%mm4\n"
 comment|/* mm4 = (255- A) * 256  */
-asm|"\tmovq      %%mm1,%%mm3\n"                   "\tpxor      %%mm5,%%mm5\n"                   "\tpunpcklbw %%mm5,%%mm3\n"                   "\tmovq      %4,%%mm5\n"                   "\tpaddusw   %%mm3,%%mm5\n"
+asm|"\tmovq      %%mm1,%%mm3\n" 									"\tpxor      %%mm5,%%mm5\n" 									"\tpunpcklbw %%mm5,%%mm3\n" 									"\tmovq      %4,%%mm5\n" 									"\tpaddusw   %%mm3,%%mm5\n"
 comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm7) "\n"                    "\tmovq      %3,%%mm2\n"                   "\tpsubb   %%mm0,%%mm2\n"
+asm|"\t" pdivwqX(mm4,mm5,mm7) "\n"  									"\tmovq      %3,%%mm2\n" 									"\tpsubb   %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
-asm|"\tpxor      %%mm4,%%mm4\n"                   "\tpunpckhbw %%mm2,%%mm4\n"
+asm|"\tpxor      %%mm4,%%mm4\n" 									"\tpunpckhbw %%mm2,%%mm4\n"
 comment|/* mm4 = (255- A) * 256  */
-asm|"\tmovq      %%mm1,%%mm3\n"                   "\tpxor      %%mm5,%%mm5\n"                   "\tpunpckhbw %%mm5,%%mm3\n"                   "\tmovq      %4,%%mm5\n"                   "\tpaddusw   %%mm3,%%mm5\n"
+asm|"\tmovq      %%mm1,%%mm3\n" 									"\tpxor      %%mm5,%%mm5\n" 									"\tpunpckhbw %%mm5,%%mm3\n" 									"\tmovq      %4,%%mm5\n" 									"\tpaddusw   %%mm3,%%mm5\n"
 comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm6) "\n"                    "\tmovq      %5,%%mm4\n"                   "\tmovq      %%mm4,%%mm5\n"                   "\tpsubusw     %%mm6,%%mm4\n"                   "\tpsubusw     %%mm7,%%mm5\n"                                      "\tpackuswb  %%mm4,%%mm5\n"                    "\t" pminub(mm0,mm1,mm3) "\n"
+asm|"\t" pdivwqX(mm4,mm5,mm6) "\n"  									"\tmovq      %5,%%mm4\n" 									"\tmovq      %%mm4,%%mm5\n" 									"\tpsubusw     %%mm6,%%mm4\n" 									"\tpsubusw     %%mm7,%%mm5\n"                    									"\tpackuswb  %%mm4,%%mm5\n"  									"\t" pminub(mm0,mm1,mm3) "\n"
 comment|/* mm1 = min(mm0,mm1) clobber mm3 */
-asm|"\tmovq      %6,%%mm7\n"                   "\tpand      %%mm7,%%mm1\n"
+asm|"\tmovq      %6,%%mm7\n" 									"\tpand      %%mm7,%%mm1\n"
 comment|/* mm1 = mm7& alpha_mask */
 asm|"\tpandn     %%mm5,%%mm7\n"
 comment|/* mm7 = ~mm7& mm5 */
 asm|"\tpor       %%mm1,%%mm7\n"
 comment|/* mm7 = mm7 | mm1 */
-asm|"\tmovq      %%mm7,(%2); addl $8,%2\n"                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)                   : "m" (rgba8_b255), "m" (rgba8_w1), "m" (rgba8_w255), "m" (rgba8_alpha_mask)                   : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|"\tmovq      %%mm7,(%2); addl $8,%2\n" 									: "+r" (op.A), "+r" (op.B), "+r" (op.D) 									: "m" (rgba8_b255), "m" (rgba8_w1), "m" (rgba8_w255), "m" (rgba8_alpha_mask) 									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 if|if
 condition|(
@@ -784,9 +790,7 @@ operator|-=
 literal|2
 control|)
 block|{
-asm|asm
-specifier|volatile
-asm|("  movq    (%0), %%mm2; addl  $8, %0\n"                   "\tmovq    (%1), %%mm3; addl  $8, %1\n"                   "\t" pminub(mm3, mm2, mm4) "\n"                   "\tmovq    %%mm2, (%2); addl  $8, %2\n"                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)                   :
+asm|asm ("  movq    (%0), %%mm2; addl  $8, %0\n" 									"\tmovq    (%1), %%mm3; addl  $8, %1\n" 									"\t" pminub(mm3, mm2, mm4) "\n" 									"\tmovq    %%mm2, (%2); addl  $8, %2\n" 									: "+r" (op.A), "+S" (op.B), "+D" (op.D) 									:
 comment|/* empty */
 asm|: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
@@ -840,9 +844,7 @@ operator|-=
 literal|2
 control|)
 block|{
-asm|asm
-specifier|volatile
-asm|("  movq    (%0), %%mm2; addl $8, %0\n"                   "\tmovq    (%1), %%mm3; addl $8, %1\n"                   "\tmovq    %%mm2, %%mm4\n"                   "\tmovq    %%mm3, %%mm5\n"                   "\tpsubusb %%mm3, %%mm4\n"                   "\tpsubusb %%mm2, %%mm5\n"                   "\tpaddb   %%mm5, %%mm4\n"                   "\tmovq    %%mm0, %%mm1\n"                   "\tpandn   %%mm4, %%mm1\n"                   "\tpminub  %%mm3, %%mm2\n"                   "\tpand    %%mm0, %%mm2\n"                   "\tpor     %%mm2, %%mm1\n"                   "\tmovq    %%mm1, (%2); addl $8, %2\n"                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)                   :
+asm|asm ("  movq    (%0), %%mm2; addl $8, %0\n" 									"\tmovq    (%1), %%mm3; addl $8, %1\n" 									"\tmovq    %%mm2, %%mm4\n" 									"\tmovq    %%mm3, %%mm5\n" 									"\tpsubusb %%mm3, %%mm4\n" 									"\tpsubusb %%mm2, %%mm5\n" 									"\tpaddb   %%mm5, %%mm4\n" 									"\tmovq    %%mm0, %%mm1\n" 									"\tpandn   %%mm4, %%mm1\n" 									"\tpminub  %%mm3, %%mm2\n" 									"\tpand    %%mm0, %%mm2\n" 									"\tpor     %%mm2, %%mm1\n" 									"\tmovq    %%mm1, (%2); addl $8, %2\n" 									: "+r" (op.A), "+r" (op.B), "+r" (op.D) 									:
 comment|/* empty */
 asm|: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
