@@ -1278,6 +1278,10 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pixbuf
+condition|)
 name|gimp_offset_area_set_pixbuf
 argument_list|(
 name|GIMP_OFFSET_AREA
