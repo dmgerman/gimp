@@ -1101,7 +1101,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"open failed on %s: %s\n"
+literal|"Can't open '%s' for writing:\n%s"
 argument_list|)
 argument_list|,
 name|utf8_filename
