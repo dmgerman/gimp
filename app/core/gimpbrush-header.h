@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BRUSH_HEADER_H__
+name|__GIMP_BRUSH_HEADER_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BRUSH_HEADER_H__
+DECL|macro|__GIMP_BRUSH_HEADER_H__
 define|#
 directive|define
-name|__BRUSH_HEADER_H__
+name|__GIMP_BRUSH_HEADER_H__
 end_define
 
 begin_define
@@ -99,7 +99,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  ! __BRUSH_HEADER_H__  */
+comment|/*  __GIMP_BRUSH_HEADER_H__  */
 end_comment
 
 end_unit

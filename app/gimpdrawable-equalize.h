@@ -6,35 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__EQUALIZE_H__
+name|__GIMP_DRAWABLE_EQUALIZE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__EQUALIZE_H__
+DECL|macro|__GIMP_DRAWABLE_EQUALIZE_H__
 define|#
 directive|define
-name|__EQUALIZE_H__
+name|__GIMP_DRAWABLE_EQUALIZE_H__
 end_define
 
 begin_function_decl
 name|void
-name|image_equalize
+name|gimp_drawable_equalize
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|equalize
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -51,7 +36,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __INVERT_H__  */
+comment|/*  __GIMP_DRAWABLE_EQUALIZE_H__  */
 end_comment
 
 end_unit

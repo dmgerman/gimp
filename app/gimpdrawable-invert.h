@@ -6,30 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__INVERT_H__
+name|__GIMP_DRAWABLE_INVERT_H__
 end_ifndef
 
 begin_define
-DECL|macro|__INVERT_H__
+DECL|macro|__GIMP_DRAWABLE_INVERT_H__
 define|#
 directive|define
-name|__INVERT_H__
+name|__GIMP_DRAWABLE_INVERT_H__
 end_define
 
 begin_function_decl
 name|void
-name|image_invert
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|invert
+name|gimp_drawable_invert
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -44,7 +33,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __INVERT_H__  */
+comment|/*  __GIMP_DRAWABLE_INVERT_H__  */
 end_comment
 
 end_unit

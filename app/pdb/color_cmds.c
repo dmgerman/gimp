@@ -34,19 +34,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"desaturate.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"equalize.h"
+file|"gimpdrawable-desaturate.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable-equalize.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable-invert.h"
 end_include
 
 begin_include
@@ -71,12 +77,6 @@ begin_include
 include|#
 directive|include
 file|"gimplut.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"invert.h"
 end_include
 
 begin_include
@@ -1750,7 +1750,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-name|desaturate
+name|gimp_drawable_desaturate
 argument_list|(
 name|drawable
 argument_list|)
@@ -1906,13 +1906,8 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-name|equalize
+name|gimp_drawable_equalize
 argument_list|(
-name|gimp_drawable_gimage
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
 name|drawable
 argument_list|,
 name|mask_only
@@ -2059,7 +2054,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-name|invert
+name|gimp_drawable_invert
 argument_list|(
 name|drawable
 argument_list|)

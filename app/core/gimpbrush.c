@@ -123,12 +123,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_header.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"brush_scale.h"
 end_include
 
@@ -136,6 +130,12 @@ begin_include
 include|#
 directive|include
 file|"gimpbrush.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrush-header.h"
 end_include
 
 begin_include

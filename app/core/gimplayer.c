@@ -82,6 +82,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-invert.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -136,12 +142,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"invert.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpparasite.h"
 end_include
 
@@ -153,7 +153,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b41b60103
+DECL|enum|__anon2afbf7580103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2574,7 +2574,7 @@ operator|&
 name|maskPR
 argument_list|)
 expr_stmt|;
-name|invert
+name|gimp_drawable_invert
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -131,13 +131,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"gimppattern-header.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pattern_header.h"
+file|"gimprc.h"
 end_include
 
 begin_include
