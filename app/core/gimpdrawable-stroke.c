@@ -124,25 +124,85 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*  local function prototypes  */
+comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_stroke_vectors (GimpDrawable * drawable,GimpVectors * vectors,GimpStrokeOptions * options)
+DECL|function|gimp_drawable_stroke_boundary (GimpDrawable * drawable,GimpStrokeOptions * options,const BoundSeg * bound_segs,gint n_bound_segs)
+name|gimp_drawable_stroke_boundary
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GimpStrokeOptions
+modifier|*
+name|options
+parameter_list|,
+specifier|const
+name|BoundSeg
+modifier|*
+name|bound_segs
+parameter_list|,
+name|gint
+name|n_bound_segs
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_STROKE_OPTIONS
+argument_list|(
+name|options
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|bound_segs
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|n_bound_segs
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_message
+argument_list|(
+literal|"gimp_drawable_stroke_boundary() is unimplemented"
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_drawable_stroke_vectors (GimpDrawable * drawable,GimpStrokeOptions * options,GimpVectors * vectors)
 name|gimp_drawable_stroke_vectors
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpVectors
-modifier|*
-name|vectors
-parameter_list|,
 name|GimpStrokeOptions
 modifier|*
 name|options
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|vectors
 parameter_list|)
 block|{
 comment|/* Stroke options */
@@ -224,17 +284,17 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_VECTORS
+name|GIMP_IS_STROKE_OPTIONS
 argument_list|(
-name|vectors
+name|options
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_STROKE_OPTIONS
+name|GIMP_IS_VECTORS
 argument_list|(
-name|options
+name|vectors
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -324,6 +324,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"edit-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-commands.h"
 end_include
 
@@ -3325,6 +3331,12 @@ name|GIMP_SELECTION_EDITOR
 argument_list|(
 name|view
 argument_list|)
+expr_stmt|;
+name|selection_editor
+operator|->
+name|stroke_item_func
+operator|=
+name|edit_stroke_selection
 expr_stmt|;
 name|selection_editor
 operator|->
