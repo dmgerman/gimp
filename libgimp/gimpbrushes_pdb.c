@@ -232,7 +232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_brush:  * @width: The brush width.  * @height: The brush height.  * @spacing: The brush spacing.  *  * Retrieve information about the currently active brush mask.  *  * This procedure retrieves information about the currently active  * brush mask. This includes the brush name, the width and height, and  * the brush spacing paramter. All paint operations and stroke  * operations use this mask to control the application of paint to the  * image.  *  * Returns: The brush name.  */
+comment|/**  * gimp_brushes_get_brush:  * @width: The brush width.  * @height: The brush height.  * @spacing: The brush spacing.  *  * This procedure is deprecated! Use 'gimp_context_get_brush' instead.  *  * This procedure is deprecated! Use 'gimp_context_get_brush' instead.  *  * Returns: The brush name.  */
 end_comment
 
 begin_function
@@ -358,7 +358,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_spacing:  *  * Get the brush spacing.  *  * This procedure returns the spacing setting for brushes. This value  * is set per brush and will change if a different brush is selected.  * The return value is an integer between 0 and 1000 which represents  * percentage of the maximum of the width and height of the mask.  *  * Returns: The brush spacing.  */
+comment|/**  * gimp_brushes_get_spacing:  *  * This procedure is deprecated! Use 'gimp_brush_get_spacing' instead.  *  * This procedure is deprecated! Use 'gimp_brush_get_spacing' instead.  *  * Returns: The brush spacing.  */
 end_comment
 
 begin_function
@@ -431,7 +431,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_set_spacing:  * @spacing: The brush spacing.  *  * Set the brush spacing.  *  * This procedure modifies the spacing setting for the current brush.  * This value is set on a per-brush basis and will change if a  * different brush mask is selected. The value should be a integer  * between 0 and 1000.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_brushes_set_spacing:  * @spacing: The brush spacing.  *  * This procedure is deprecated! Use 'gimp_brush_set_spacing' instead.  *  * This procedure is deprecated! Use 'gimp_brush_set_spacing' instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -493,141 +493,6 @@ argument_list|)
 expr_stmt|;
 return|return
 name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_brushes_get_brush_info:  * @name: The brush name (\"\" means current active brush).  * @width: The brush width.  * @height: The brush height.  * @spacing: The brush spacing.  *  * Retrieve information about the specified brush.  *  * This procedure retrieves information about the specified brush. This  * includes the brush name, and the brush extents (width and height).  *  * Returns: The brush name.  */
-end_comment
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_brushes_get_brush_info (const gchar * name,gint * width,gint * height,gint * spacing)
-name|gimp_brushes_get_brush_info
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gint
-modifier|*
-name|width
-parameter_list|,
-name|gint
-modifier|*
-name|height
-parameter_list|,
-name|gint
-modifier|*
-name|spacing
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gchar
-modifier|*
-name|ret_name
-init|=
-name|NULL
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_brushes_get_brush_info"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
-name|name
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-block|{
-name|ret_name
-operator|=
-name|g_strdup
-argument_list|(
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|)
-expr_stmt|;
-operator|*
-name|width
-operator|=
-name|return_vals
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-operator|*
-name|height
-operator|=
-name|return_vals
-index|[
-literal|3
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-operator|*
-name|spacing
-operator|=
-name|return_vals
-index|[
-literal|4
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-block|}
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|ret_name
 return|;
 block|}
 end_function

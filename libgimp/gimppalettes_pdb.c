@@ -226,7 +226,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_palette:  * @num_colors: The palette num_colors.  *  * Retrieve information about the currently active palette.  *  * This procedure retrieves information about the currently active  * palette. This includes the name, and the number of colors.  *  * Returns: The palette name.  */
+comment|/**  * gimp_palettes_get_palette:  * @num_colors: The palette num_colors.  *  * This procedure is deprecated! Use 'gimp_context_get_palette'  * instead.  *  * This procedure is deprecated! Use 'gimp_context_get_palette'  * instead.  *  * Returns: The palette name.  */
 end_comment
 
 begin_function
@@ -320,110 +320,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_palette_info:  * @name: The palette name (\"\" means currently active palette).  * @num_colors: The palette num_colors.  *  * Retrieve information about the specified palette.  *  * This procedure retrieves information about the specified palette.  * This includes the name, and the number of colors.  *  * Returns: The palette name.  */
-end_comment
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_palettes_get_palette_info (const gchar * name,gint * num_colors)
-name|gimp_palettes_get_palette_info
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gint
-modifier|*
-name|num_colors
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gchar
-modifier|*
-name|ret_name
-init|=
-name|NULL
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp_palettes_get_palette_info"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
-name|name
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-block|{
-name|ret_name
-operator|=
-name|g_strdup
-argument_list|(
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|)
-expr_stmt|;
-operator|*
-name|num_colors
-operator|=
-name|return_vals
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-block|}
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|ret_name
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_palettes_get_palette_entry:  * @name: The palette name (\"\" means currently active palette).  * @entry_num: The entry to retrieve.  * @num_colors: The palette num_colors.  * @color: The color requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the color of the zero-based entry specifed  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: The palette name.  */
+comment|/**  * gimp_palettes_get_palette_entry:  * @name: The palette name (\"\" means currently active palette).  * @entry_num: The entry to retrieve.  * @num_colors: The palette num_colors.  * @color: The color requested.  *  * This procedure is deprecated! Use 'gimp_palette_entry_get_color'  * instead.  *  * This procedure is deprecated! Use 'gimp_palette_entry_get_color'  * instead.  *  * Returns: The palette name.  */
 end_comment
 
 begin_function
