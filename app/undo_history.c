@@ -94,7 +94,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa37cc0108
+DECL|struct|__anon289da70e0108
 block|{
 DECL|member|gimage
 name|GImage
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa37cc0208
+DECL|struct|__anon289da70e0208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -270,15 +270,15 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|gint
 name|subsample
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|scale
 decl_stmt|;
 name|mask
@@ -321,7 +321,7 @@ if|if
 condition|(
 operator|(
 operator|(
-name|float
+name|gfloat
 operator|)
 name|drawable_width
 argument_list|(
@@ -332,7 +332,7 @@ argument_list|)
 argument_list|)
 operator|/
 operator|(
-name|float
+name|gfloat
 operator|)
 operator|*
 name|pwidth
@@ -340,7 +340,7 @@ operator|)
 operator|>
 operator|(
 operator|(
-name|float
+name|gfloat
 operator|)
 name|drawable_height
 argument_list|(
@@ -351,7 +351,7 @@ argument_list|)
 argument_list|)
 operator|/
 operator|(
-name|float
+name|gfloat
 operator|)
 operator|*
 name|pheight
@@ -2130,14 +2130,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|undo_history_set_sensitive (undo_history_st * st,int rows)
+DECL|function|undo_history_set_sensitive (undo_history_st * st,gint rows)
 name|undo_history_set_sensitive
 parameter_list|(
 name|undo_history_st
 modifier|*
 name|st
 parameter_list|,
-name|int
+name|gint
 name|rows
 parameter_list|)
 block|{
@@ -2183,14 +2183,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|undo_history_undo_event (GtkWidget * widget,int ev,gpointer data)
+DECL|function|undo_history_undo_event (GtkWidget * widget,gint ev,gpointer data)
 name|undo_history_undo_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|int
+name|gint
 name|ev
 parameter_list|,
 name|gpointer
@@ -2209,11 +2209,11 @@ init|=
 name|ev
 decl_stmt|;
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|namelist
 index|[
@@ -2224,7 +2224,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|gint
 name|cur_selection
 decl_stmt|;
 name|GtkCList
@@ -2654,6 +2654,30 @@ literal|0
 expr_stmt|;
 break|break;
 block|}
+comment|/*  if the image is clean, set the clean pixmap  */
+if|if
+condition|(
+name|st
+operator|->
+name|gimage
+operator|->
+name|dirty
+operator|==
+literal|0
+condition|)
+name|gtk_clist_set_pixmap
+argument_list|(
+name|clist
+argument_list|,
+name|cur_selection
+argument_list|,
+literal|1
+argument_list|,
+name|clean_pixmap
+argument_list|,
+name|clean_mask
+argument_list|)
+expr_stmt|;
 name|gtk_signal_handler_unblock_by_data
 argument_list|(
 name|GTK_OBJECT
@@ -2713,7 +2737,7 @@ name|st
 init|=
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|cur_selection
 decl_stmt|;
 name|cur_selection
@@ -2806,6 +2830,33 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
+comment|/*  if the image is clean, set the clean pixmap  */
+if|if
+condition|(
+name|st
+operator|->
+name|gimage
+operator|->
+name|dirty
+operator|==
+literal|0
+condition|)
+name|gtk_clist_set_pixmap
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|cur_selection
+argument_list|,
+literal|1
+argument_list|,
+name|clean_pixmap
+argument_list|,
+name|clean_mask
+argument_list|)
+expr_stmt|;
 name|gtk_signal_handler_unblock_by_func
 argument_list|(
 name|GTK_OBJECT
@@ -2857,10 +2908,10 @@ name|st
 init|=
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|nrows
 decl_stmt|;
 name|GtkCList
@@ -2878,8 +2929,7 @@ operator|!=
 literal|0
 condition|)
 return|return;
-comment|/* The image is clean, so this is the version on disc.  Remove the    * clean star from all other entries, and add it to the current    * one. */
-comment|/* XXX currently broken, since "clean" signal is emitted before    * UNDO_POPPED event.  I don't want to change the order of the    * signals.  So I'm a little stuck. --austin */
+comment|/*     * The image has become clean. Remove the clean_pixmap from     * all entries. It will be set in the undo_event or select_row    * callbacks.     * Ugly, but works better than before. The actual problem is     * that the "clean" signal is emitted before UNDO_POPPED event,    * so we can not simply set the clean pixmap here.    */
 name|clist
 operator|=
 name|GTK_CLIST
@@ -2924,21 +2974,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_clist_set_pixmap
-argument_list|(
-name|clist
-argument_list|,
-name|st
-operator|->
-name|old_selection
-argument_list|,
-literal|1
-argument_list|,
-name|clean_pixmap
-argument_list|,
-name|clean_mask
-argument_list|)
-expr_stmt|;
 name|gtk_clist_thaw
 argument_list|(
 name|clist
@@ -2953,12 +2988,12 @@ end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|undo_history_init_undo (const char * undoitemname,void * data)
+name|gboolean
+DECL|function|undo_history_init_undo (const gchar * undoitemname,void * data)
 name|undo_history_init_undo
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|undoitemname
 parameter_list|,
@@ -2973,7 +3008,7 @@ name|st
 init|=
 name|data
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|namelist
 index|[
@@ -3003,7 +3038,7 @@ literal|2
 index|]
 operator|=
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|undoitemname
@@ -3041,7 +3076,7 @@ name|clear_mask
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
@@ -3052,7 +3087,7 @@ end_comment
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|undo_history_init_redo (const char * undoitemname,void * data)
 name|undo_history_init_redo
 parameter_list|(
@@ -3072,7 +3107,7 @@ name|st
 init|=
 name|data
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|namelist
 index|[
@@ -3102,7 +3137,7 @@ literal|2
 index|]
 operator|=
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|undoitemname
@@ -3140,7 +3175,7 @@ name|clear_mask
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
@@ -3742,6 +3777,37 @@ name|undo_history_select_row_callback
 argument_list|)
 argument_list|,
 name|st
+argument_list|)
+expr_stmt|;
+comment|/*  if the image is clean, set the clean pixmap  */
+if|if
+condition|(
+name|st
+operator|->
+name|gimage
+operator|->
+name|dirty
+operator|==
+literal|0
+condition|)
+name|gtk_clist_set_pixmap
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|st
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+name|st
+operator|->
+name|old_selection
+argument_list|,
+literal|1
+argument_list|,
+name|clean_pixmap
+argument_list|,
+name|clean_mask
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -552,7 +552,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b7268930103
+DECL|enum|__anon2c4b0b880103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -874,7 +874,6 @@ name|dirty
 operator|=
 literal|1
 expr_stmt|;
-comment|/* Why is that? I doubt this is correct. --Sven */
 name|gimage
 operator|->
 name|undo_on
@@ -5280,6 +5279,10 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+operator|&&
+name|parasite
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we aren't undoable */
@@ -5297,39 +5300,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_parasite_is_persistent
-argument_list|(
-name|parasite
-argument_list|)
-operator|&&
-operator|!
-name|gimp_parasite_compare
-argument_list|(
-name|parasite
-argument_list|,
-name|gimp_image_parasite_find
-argument_list|(
-name|gimage
-argument_list|,
-name|gimp_parasite_name
-argument_list|(
-name|parasite
-argument_list|)
-argument_list|)
-argument_list|)
-condition|)
-name|undo_push_cantundo
-argument_list|(
-name|gimage
-argument_list|,
-name|_
-argument_list|(
-literal|"attach parasite to image"
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/*  We used to push an cantundo on te stack here. This made the undo stack       unusable (NULL on the stack) and prevented people from undoing after a        save (since most save plug-ins attach an undoable comment parasite).       Now we simply attach the parasite without pushing an undo. That way it's       undoable but does not block the undo system.   --Sven   else if (gimp_parasite_is_persistent (parasite)&& 	   !gimp_parasite_compare (parasite, 		  		   gimp_image_parasite_find (gimage, 			  				     gimp_parasite_name (parasite))))     undo_push_cantundo (gimage, _("attach parasite to image"));   */
 name|parasite_list_add
 argument_list|(
 name|gimage
@@ -5388,6 +5359,10 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+operator|&&
+name|parasite
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -5424,24 +5399,7 @@ name|p
 argument_list|)
 argument_list|)
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|gimp_parasite_is_persistent
-argument_list|(
-name|p
-argument_list|)
-condition|)
-name|undo_push_cantundo
-argument_list|(
-name|gimage
-argument_list|,
-name|_
-argument_list|(
-literal|"detach parasite from image"
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/*  see comment in function gimp_image_parasite_attach()   else if (gimp_parasite_is_persistent (p))     undo_push_cantundo (gimage, _("detach parasite from image"));    */
 name|parasite_list_remove
 argument_list|(
 name|gimage
@@ -14652,6 +14610,16 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|->
 name|undo_on

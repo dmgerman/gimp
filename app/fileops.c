@@ -7704,6 +7704,16 @@ argument_list|,
 name|save_file_proc
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|fs
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -7981,6 +7991,17 @@ name|save_file_proc
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* always make file save dialog sensitive */
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|filesave
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|overwrite_data
