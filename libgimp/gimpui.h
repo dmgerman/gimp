@@ -70,6 +70,24 @@ directive|include
 file|<libgimp/gimppatternmenu.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppixbuf.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpdrawablecombobox.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpimagecombobox.h>
+end_include
+
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
