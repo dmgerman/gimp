@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -154,7 +160,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a359d0b0108
+DECL|struct|__anon278f2b690108
 block|{
 DECL|member|states
 name|GSList
@@ -180,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a359d0b0203
+DECL|enum|__anon278f2b690203
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -1798,6 +1804,15 @@ name|gint
 name|i
 decl_stmt|;
 comment|/* Attempt to lock the file 5 times,    * waiting a random interval (< 1 second)    * in between attempts.    * We should really be doing asynchronous    * locking, but requires substantially larger    * changes.    */
+name|lseek
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+name|SEEK_SET
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1875,6 +1890,15 @@ name|gint
 name|fd
 parameter_list|)
 block|{
+name|lseek
+argument_list|(
+name|fd
+argument_list|,
+literal|0
+argument_list|,
+name|SEEK_SET
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 name|lockf
