@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c00f9610103
+DECL|enum|__anon2aed57bd0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -580,6 +580,12 @@ name|COLUMN_RENDERER
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|combo_box
+operator|->
+name|viewable_renderer
+operator|=
+name|cell
 expr_stmt|;
 name|cell
 operator|=
@@ -1108,6 +1114,7 @@ if|if
 condition|(
 name|iter
 condition|)
+block|{
 name|gtk_list_store_remove
 argument_list|(
 name|GTK_LIST_STORE
@@ -1118,6 +1125,42 @@ argument_list|,
 name|iter
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this hack as soon as bug #149906 is fixed
+endif|#
+directive|endif
+comment|/*  if the store is empty after this remove, clear out renderers        *  from all cells so they don't keep refing the viewables        */
+if|if
+condition|(
+operator|!
+name|gtk_tree_model_iter_n_children
+argument_list|(
+name|model
+argument_list|,
+name|NULL
+argument_list|)
+condition|)
+name|g_object_set
+argument_list|(
+name|GIMP_CONTAINER_COMBO_BOX
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|viewable_renderer
+argument_list|,
+literal|"renderer"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GtkComboBox
 name|parent_instance
 decl_stmt|;
+DECL|member|viewable_renderer
+name|GtkCellRenderer
+modifier|*
+name|viewable_renderer
+decl_stmt|;
 block|}
 struct|;
 end_struct
