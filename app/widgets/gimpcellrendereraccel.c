@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999c4ce0103
+DECL|enum|__anon29e70bd10103
 block|{
 DECL|enumerator|ACCEL_EDITED
 name|ACCEL_EDITED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2999c4ce0203
+DECL|enum|__anon29e70bd10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -435,13 +435,15 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__STRING_UINT_FLAGS
+name|gimp_marshal_VOID__STRING_BOOLEAN_UINT_FLAGS
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|3
+literal|4
 argument_list|,
 name|G_TYPE_STRING
+argument_list|,
+name|G_TYPE_BOOLEAN
 argument_list|,
 name|G_TYPE_UINT
 argument_list|,
@@ -1150,6 +1152,8 @@ literal|0
 argument_list|,
 name|path
 argument_list|,
+name|delete
+argument_list|,
 name|accel_key
 argument_list|,
 name|accel_mods
@@ -1318,11 +1322,9 @@ block|,
 literal|0
 block|,
 comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
 name|NULL
-block|,       }
+comment|/* instance init  */
+block|}
 decl_stmt|;
 specifier|static
 specifier|const

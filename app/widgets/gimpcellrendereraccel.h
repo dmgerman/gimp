@@ -159,6 +159,9 @@ name|char
 modifier|*
 name|path_string
 parameter_list|,
+name|gboolean
+name|delete
+parameter_list|,
 name|guint
 name|accel_key
 parameter_list|,
