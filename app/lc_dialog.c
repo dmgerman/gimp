@@ -93,29 +93,11 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|GRAD_CHECK_SIZE_SM
-define|#
-directive|define
-name|GRAD_CHECK_SIZE_SM
-value|4
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_DARK
-define|#
-directive|define
-name|GRAD_CHECK_DARK
-value|(1.0 / 3.0)
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_LIGHT
-define|#
-directive|define
-name|GRAD_CHECK_LIGHT
-value|(2.0 / 3.0)
-end_define
+begin_include
+include|#
+directive|include
+file|"libgimp/gimplimits.h"
+end_include
 
 begin_define
 DECL|macro|MENU_THUMBNAIL_WIDTH
@@ -379,7 +361,7 @@ name|GtkWidget
 modifier|*
 name|separator
 decl_stmt|;
-name|int
+name|gint
 name|default_index
 decl_stmt|;
 if|if
@@ -1118,9 +1100,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|lc_dialog_free ()
+DECL|function|lc_dialog_free (void)
 name|lc_dialog_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1166,10 +1150,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|lc_dialog_rebuild (int new_preview_size)
+DECL|function|lc_dialog_rebuild (gint new_preview_size)
 name|lc_dialog_rebuild
 parameter_list|(
-name|int
+name|gint
 name|new_preview_size
 parameter_list|)
 block|{
@@ -1177,7 +1161,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
+name|gboolean
 name|flag
 decl_stmt|;
 name|gimage
@@ -1186,7 +1170,7 @@ name|NULL
 expr_stmt|;
 name|flag
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -1195,7 +1179,7 @@ condition|)
 block|{
 name|flag
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gimage
 operator|=
@@ -1240,9 +1224,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|lc_dialog_flush ()
+DECL|function|lc_dialog_flush (void)
 name|lc_dialog_flush
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -1310,7 +1296,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|lc_dialog_menu_preview_dirty (GtkObject * obj,gpointer client_data)
+DECL|function|lc_dialog_menu_preview_dirty (GtkObject * obj,gpointer data)
 name|lc_dialog_menu_preview_dirty
 parameter_list|(
 name|GtkObject
@@ -1318,7 +1304,7 @@ modifier|*
 name|obj
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 if|if
@@ -1335,9 +1321,6 @@ name|GtkFunction
 operator|)
 name|image_menu_preview_update_do
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|obj
 argument_list|)
 expr_stmt|;
@@ -1381,7 +1364,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_image_menu_preview_update_cb (GtkWidget * widget,gpointer client_data)
+DECL|function|lc_dialog_image_menu_preview_update_cb (GtkWidget * widget,gpointer data)
 name|lc_dialog_image_menu_preview_update_cb
 parameter_list|(
 name|GtkWidget
@@ -1389,7 +1372,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1403,13 +1386,15 @@ decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage_to_update
-init|=
+decl_stmt|;
+name|gimage_to_update
+operator|=
 operator|(
 name|GimpImage
 operator|*
 operator|)
-name|client_data
-decl_stmt|;
+name|data
+expr_stmt|;
 comment|/* This is called via an idle  function, so it is possible    * that the client_data no longer points to a GimpImage.. So don't    * pass it to the GIMP_IMAGE() cast function. We never deference    * it here anyways.    */
 name|menu_preview
 operator|=
@@ -1482,15 +1467,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|lc_dialog_update_image_list ()
+DECL|function|lc_dialog_update_image_list (void)
 name|lc_dialog_update_image_list
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GimpImage
 modifier|*
 name|default_gimage
 decl_stmt|;
-name|int
+name|gint
 name|default_index
 decl_stmt|;
 if|if
@@ -1704,7 +1691,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bb7c90108
+DECL|struct|__anon2b9e6bcf0108
 block|{
 DECL|member|def
 name|GImage
@@ -1713,7 +1700,7 @@ modifier|*
 name|def
 decl_stmt|;
 DECL|member|default_index
-name|int
+name|gint
 modifier|*
 name|default_index
 decl_stmt|;
@@ -1727,7 +1714,7 @@ modifier|*
 name|menu
 decl_stmt|;
 DECL|member|num_items
-name|int
+name|gint
 name|num_items
 decl_stmt|;
 DECL|member|id
@@ -1744,12 +1731,12 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_fill_preview_with_thumb (GtkWidget * w,GimpImage * gimage,gint width,gint height)
+DECL|function|lc_dialog_fill_preview_with_thumb (GtkWidget * widget,GimpImage * gimage,gint width,gint height)
 name|lc_dialog_fill_preview_with_thumb
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1892,7 +1879,7 @@ name|gtk_preview_size
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 name|width
@@ -2089,7 +2076,7 @@ condition|(
 operator|(
 name|x
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
@@ -2097,25 +2084,24 @@ condition|)
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 block|}
 else|else
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 block|}
-comment|/* else */
 operator|*
 name|p0
 operator|++
@@ -2225,13 +2211,12 @@ operator|*
 literal|255.0
 expr_stmt|;
 block|}
-comment|/* for */
 if|if
 condition|(
 operator|(
 name|y
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
@@ -2241,7 +2226,7 @@ name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 operator|(
@@ -2264,7 +2249,7 @@ name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 operator|(
@@ -2338,11 +2323,11 @@ operator|*
 operator|)
 name|d
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|image_name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|menu_item_label
 decl_stmt|;
@@ -2547,23 +2532,23 @@ argument_list|,
 name|GDK_RGB_DITHER_MAX
 argument_list|)
 expr_stmt|;
-name|lc_dialog_fill_preview_with_thumb
-argument_list|(
-name|wcolor_box
-argument_list|,
-name|gimage
-argument_list|,
-name|MENU_THUMBNAIL_WIDTH
-argument_list|,
-name|MENU_THUMBNAIL_HEIGHT
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_usize
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|wcolor_box
 argument_list|)
+argument_list|,
+name|MENU_THUMBNAIL_WIDTH
+argument_list|,
+name|MENU_THUMBNAIL_HEIGHT
+argument_list|)
+expr_stmt|;
+name|lc_dialog_fill_preview_with_thumb
+argument_list|(
+name|wcolor_box
+argument_list|,
+name|gimage
 argument_list|,
 name|MENU_THUMBNAIL_WIDTH
 argument_list|,
@@ -2733,7 +2718,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|lc_dialog_create_image_menu (GimpImage ** def,int * default_index,MenuItemCallback callback)
+DECL|function|lc_dialog_create_image_menu (GimpImage ** def,gint * default_index,MenuItemCallback callback)
 name|lc_dialog_create_image_menu
 parameter_list|(
 name|GimpImage
@@ -2741,7 +2726,7 @@ modifier|*
 modifier|*
 name|def
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|default_index
 parameter_list|,
@@ -2861,15 +2846,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_image_menu_callback (GtkWidget * w,gpointer client_data)
+DECL|function|lc_dialog_image_menu_callback (GtkWidget * widget,gpointer data)
 name|lc_dialog_image_menu_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 if|if
@@ -2882,7 +2867,7 @@ name|lc_dialog_update
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
-name|client_data
+name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2895,15 +2880,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_auto_callback (GtkWidget * toggle_button,gpointer client_data)
+DECL|function|lc_dialog_auto_callback (GtkWidget * widget,gpointer data)
 name|lc_dialog_auto_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|toggle_button
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|GimpContext
@@ -2924,7 +2909,7 @@ name|gtk_toggle_button_get_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|toggle_button
+name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2998,7 +2983,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_add_cb (GimpSet * set,GimpImage * gimage,gpointer user_data)
+DECL|function|lc_dialog_add_cb (GimpSet * set,GimpImage * gimage,gpointer data)
 name|lc_dialog_add_cb
 parameter_list|(
 name|GimpSet
@@ -3010,7 +2995,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 block|{
 if|if
@@ -3028,7 +3013,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_remove_cb (GimpSet * set,GimpImage * gimage,gpointer user_data)
+DECL|function|lc_dialog_remove_cb (GimpSet * set,GimpImage * gimage,gpointer data)
 name|lc_dialog_remove_cb
 parameter_list|(
 name|GimpSet
@@ -3040,7 +3025,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 block|{
 if|if
@@ -3058,7 +3043,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_destroy_cb (GimpImage * gimage,gpointer user_data)
+DECL|function|lc_dialog_destroy_cb (GimpImage * gimage,gpointer data)
 name|lc_dialog_destroy_cb
 parameter_list|(
 name|GimpImage
@@ -3066,7 +3051,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 block|{
 if|if
@@ -3084,7 +3069,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lc_dialog_change_image (GimpContext * context,GimpImage * gimage,gpointer user_data)
+DECL|function|lc_dialog_change_image (GimpContext * context,GimpImage * gimage,gpointer data)
 name|lc_dialog_change_image
 parameter_list|(
 name|GimpContext
@@ -3096,7 +3081,7 @@ modifier|*
 name|gimage
 parameter_list|,
 name|gpointer
-name|user_data
+name|data
 parameter_list|)
 block|{
 if|if

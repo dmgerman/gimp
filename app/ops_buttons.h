@@ -45,9 +45,9 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b44b34b0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2b52d7fe0103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -73,9 +73,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b44b34b0203
 typedef|typedef
 enum|enum
+DECL|enum|__anon2b52d7fe0203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -112,9 +112,14 @@ name|ext_callbacks
 decl_stmt|;
 comment|/*  callback functions when modifiers are pressed  */
 DECL|member|tooltip
-name|char
+name|gchar
 modifier|*
 name|tooltip
+decl_stmt|;
+DECL|member|private_tip
+name|gchar
+modifier|*
+name|private_tip
 decl_stmt|;
 DECL|member|widget
 name|GtkWidget
@@ -141,25 +146,18 @@ name|ops_button_box_new
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|parent
 parameter_list|,
-comment|/* parent widget */
 name|GtkTooltips
 modifier|*
+name|tool_tips
 parameter_list|,
 name|OpsButton
 modifier|*
+name|ops_button
 parameter_list|,
 name|OpsButtonType
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|ops_button_box_set_insensitive
-parameter_list|(
-name|OpsButton
-modifier|*
+name|ops_type
 parameter_list|)
 function_decl|;
 end_function_decl

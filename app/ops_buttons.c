@@ -28,6 +28,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_function_decl
+specifier|static
 name|void
 name|ops_button_pressed_callback
 parameter_list|(
@@ -43,6 +44,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|ops_button_extended_callback
 parameter_list|(
@@ -332,7 +334,9 @@ operator|->
 name|tooltip
 argument_list|)
 argument_list|,
-name|NULL
+name|ops_button
+operator|->
+name|private_tip
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -386,46 +390,7 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|ops_button_box_set_insensitive (OpsButton * ops_button)
-name|ops_button_box_set_insensitive
-parameter_list|(
-name|OpsButton
-modifier|*
-name|ops_button
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|ops_button
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-while|while
-condition|(
-name|ops_button
-operator|->
-name|widget
-condition|)
-block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|ops_button
-operator|->
-name|widget
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|ops_button
-operator|++
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
+specifier|static
 name|void
 DECL|function|ops_button_pressed_callback (GtkWidget * widget,GdkEventButton * bevent,gpointer client_data)
 name|ops_button_pressed_callback
@@ -533,6 +498,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|ops_button_extended_callback (GtkWidget * widget,gpointer client_data)
 name|ops_button_extended_callback

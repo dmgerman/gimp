@@ -840,6 +840,8 @@ argument_list|(
 literal|"New Path"
 argument_list|)
 block|,
+literal|"paths/new_path.html"
+block|,
 name|NULL
 block|,
 literal|0
@@ -856,6 +858,8 @@ name|N_
 argument_list|(
 literal|"Duplicate Path"
 argument_list|)
+block|,
+literal|"paths/duplicate_path.html"
 block|,
 name|NULL
 block|,
@@ -874,6 +878,8 @@ argument_list|(
 literal|"Path to Selection"
 argument_list|)
 block|,
+literal|"paths/path_to_selection.html"
+block|,
 name|NULL
 block|,
 literal|0
@@ -890,6 +896,8 @@ name|N_
 argument_list|(
 literal|"Selection to Path"
 argument_list|)
+block|,
+literal|"paths/selection_to_path.html"
 block|,
 name|NULL
 block|,
@@ -908,6 +916,8 @@ argument_list|(
 literal|"Stroke Path"
 argument_list|)
 block|,
+literal|"paths/stroke_path.html"
+block|,
 name|NULL
 block|,
 literal|0
@@ -925,12 +935,16 @@ argument_list|(
 literal|"Delete Path"
 argument_list|)
 block|,
+literal|"paths/delete_path.html"
+block|,
 name|NULL
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -969,6 +983,8 @@ argument_list|)
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 literal|0
 block|}
 block|,
@@ -983,6 +999,8 @@ name|N_
 argument_list|(
 literal|"Add Point"
 argument_list|)
+block|,
+name|NULL
 block|,
 name|NULL
 block|,
@@ -1003,6 +1021,8 @@ argument_list|)
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 literal|0
 block|}
 block|,
@@ -1020,10 +1040,14 @@ argument_list|)
 block|,
 name|NULL
 block|,
+name|NULL
+block|,
 literal|0
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -1043,9 +1067,11 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|paths_dialog_set_menu_sensitivity ()
+DECL|function|paths_dialog_set_menu_sensitivity (void)
 name|paths_dialog_set_menu_sensitivity
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gboolean
 name|gimage

@@ -994,6 +994,8 @@ argument_list|(
 literal|"New Channel"
 argument_list|)
 block|,
+literal|"channels/dialogs/new_channel.html"
+block|,
 name|NULL
 block|,
 literal|0
@@ -1010,6 +1012,8 @@ name|N_
 argument_list|(
 literal|"Raise Channel"
 argument_list|)
+block|,
+literal|"channels/raise_channel.html"
 block|,
 name|NULL
 block|,
@@ -1028,6 +1032,8 @@ argument_list|(
 literal|"Lower Channel"
 argument_list|)
 block|,
+literal|"channels/lower_channel.html"
+block|,
 name|NULL
 block|,
 literal|0
@@ -1044,6 +1050,8 @@ name|N_
 argument_list|(
 literal|"Duplicate Channel"
 argument_list|)
+block|,
+literal|"channels/duplicate_channel.html"
 block|,
 name|NULL
 block|,
@@ -1065,6 +1073,8 @@ literal|"<Ctrl> Subtract      "
 literal|"<Shift><Ctrl> Intersect"
 argument_list|)
 block|,
+literal|"channels/channel_to_selection.html"
+block|,
 name|NULL
 block|,
 literal|0
@@ -1082,12 +1092,16 @@ argument_list|(
 literal|"Delete Channel"
 argument_list|)
 block|,
+literal|"channels/delete_channel.html"
+block|,
 name|NULL
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -1233,9 +1247,11 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|channels_dialog_create ()
+DECL|function|channels_dialog_create (void)
 name|channels_dialog_create
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -1770,9 +1786,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_free ()
+DECL|function|channels_dialog_free (void)
 name|channels_dialog_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|ChannelWidget
 modifier|*
@@ -2372,9 +2390,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_flush ()
+DECL|function|channels_dialog_flush (void)
 name|channels_dialog_flush
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|ChannelWidget
 modifier|*
@@ -2707,9 +2727,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_dialog_clear ()
+DECL|function|channels_dialog_clear (void)
 name|channels_dialog_clear
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -2717,11 +2739,6 @@ operator|!
 name|channelsD
 condition|)
 return|return;
-name|ops_button_box_set_insensitive
-argument_list|(
-name|channels_ops_buttons
-argument_list|)
-expr_stmt|;
 name|suspend_gimage_notify
 operator|++
 expr_stmt|;
@@ -2755,9 +2772,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channels_dialog_preview_extents ()
+DECL|function|channels_dialog_preview_extents (void)
 name|channels_dialog_preview_extents
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GImage
 modifier|*
@@ -2929,9 +2948,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channels_dialog_set_menu_sensitivity ()
+DECL|function|channels_dialog_set_menu_sensitivity (void)
 name|channels_dialog_set_menu_sensitivity
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|ChannelWidget
 modifier|*

@@ -1671,6 +1671,8 @@ argument_list|(
 literal|"New Layer"
 argument_list|)
 block|,
+literal|"layers/dialogs/new_layer.html"
+block|,
 name|NULL
 block|,
 literal|0
@@ -1688,6 +1690,8 @@ argument_list|(
 literal|"Raise Layer    \n"
 literal|"<Shift> To Top"
 argument_list|)
+block|,
+literal|"layers/stack/stack.html#raise_layer"
 block|,
 name|NULL
 block|,
@@ -1707,6 +1711,8 @@ literal|"Lower Layer       \n"
 literal|"<Shift> To Bottom"
 argument_list|)
 block|,
+literal|"layers/stack/stack.html#lower_layer"
+block|,
 name|NULL
 block|,
 literal|0
@@ -1723,6 +1729,8 @@ name|N_
 argument_list|(
 literal|"Duplicate Layer"
 argument_list|)
+block|,
+literal|"layers/duplicate_layer.html"
 block|,
 name|NULL
 block|,
@@ -1741,6 +1749,8 @@ argument_list|(
 literal|"Anchor Layer"
 argument_list|)
 block|,
+literal|"layers/anchor_layer.html"
+block|,
 name|NULL
 block|,
 literal|0
@@ -1758,12 +1768,16 @@ argument_list|(
 literal|"Delete Layer"
 argument_list|)
 block|,
+literal|"layers/delete_layer.html"
+block|,
 name|NULL
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 name|NULL
@@ -1909,9 +1923,11 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|layers_dialog_create ()
+DECL|function|layers_dialog_create (void)
 name|layers_dialog_create
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -2771,9 +2787,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_free ()
+DECL|function|layers_dialog_free (void)
 name|layers_dialog_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|LayerWidget
 modifier|*
@@ -3207,9 +3225,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_flush ()
+DECL|function|layers_dialog_flush (void)
 name|layers_dialog_flush
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GImage
 modifier|*
@@ -3543,16 +3563,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_dialog_clear ()
+DECL|function|layers_dialog_clear (void)
 name|layers_dialog_clear
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
-name|ops_button_box_set_insensitive
-argument_list|(
-name|layers_ops_buttons
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure the gimage is not notified of this change  */
+if|if
+condition|(
+operator|!
+name|layersD
+condition|)
+return|return;
 name|suspend_gimage_notify
 operator|++
 expr_stmt|;
@@ -5093,9 +5115,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_preview_extents ()
+DECL|function|layers_dialog_preview_extents (void)
 name|layers_dialog_preview_extents
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GImage
 modifier|*
@@ -5262,9 +5286,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_set_menu_sensitivity ()
+DECL|function|layers_dialog_set_menu_sensitivity (void)
 name|layers_dialog_set_menu_sensitivity
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gint
 name|fs
