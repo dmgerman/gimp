@@ -343,6 +343,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|GdkEvent
 modifier|*
 name|gimp_display_shell_compress_motion
@@ -2784,10 +2785,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_grab_add
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
 name|canvas
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2867,10 +2865,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_grab_remove
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
 name|canvas
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5393,6 +5388,7 @@ comment|/* gimp_display_shell_compress_motion:  *  * This function walks the who
 end_comment
 
 begin_function
+specifier|static
 name|GdkEvent
 modifier|*
 DECL|function|gimp_display_shell_compress_motion (GimpDisplayShell * shell)
