@@ -2249,6 +2249,11 @@ name|new_index
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2333,6 +2338,11 @@ name|new_index
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2417,6 +2427,11 @@ name|new_index
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 function_decl|;
 end_function_decl

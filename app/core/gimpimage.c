@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ff76080103
+DECL|enum|__anon291360040103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -11585,6 +11585,11 @@ operator|-
 literal|1
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Raise Layer"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -11687,6 +11692,11 @@ operator|+
 literal|1
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Lower Layer"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -11796,6 +11806,11 @@ argument_list|,
 literal|0
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Raise Layer to Top"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -11897,6 +11912,11 @@ operator|-
 literal|1
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Lower Layer to Bottom"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -11904,7 +11924,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_position_layer (GimpImage * gimage,GimpLayer * layer,gint new_index,gboolean push_undo)
+DECL|function|gimp_image_position_layer (GimpImage * gimage,GimpLayer * layer,gint new_index,gboolean push_undo,const gchar * undo_desc)
 name|gimp_image_position_layer
 parameter_list|(
 name|GimpImage
@@ -11920,6 +11940,11 @@ name|new_index
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 block|{
 name|gint
@@ -12093,10 +12118,7 @@ name|gimp_image_undo_push_layer_reposition
 argument_list|(
 name|gimage
 argument_list|,
-name|_
-argument_list|(
-literal|"Reorder Layer"
-argument_list|)
+name|undo_desc
 argument_list|,
 name|layer
 argument_list|)
@@ -12687,6 +12709,11 @@ operator|-
 literal|1
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Raise Channel"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -12781,6 +12808,11 @@ operator|+
 literal|1
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Lower Channel"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -12788,7 +12820,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_position_channel (GimpImage * gimage,GimpChannel * channel,gint new_index,gboolean push_undo)
+DECL|function|gimp_image_position_channel (GimpImage * gimage,GimpChannel * channel,gint new_index,gboolean push_undo,const gchar * undo_desc)
 name|gimp_image_position_channel
 parameter_list|(
 name|GimpImage
@@ -12804,6 +12836,11 @@ name|new_index
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 block|{
 name|gint
@@ -12894,10 +12931,7 @@ name|gimp_image_undo_push_channel_reposition
 argument_list|(
 name|gimage
 argument_list|,
-name|_
-argument_list|(
-literal|"Reorder Channel"
-argument_list|)
+name|undo_desc
 argument_list|,
 name|channel
 argument_list|)
@@ -13438,6 +13472,11 @@ operator|-
 literal|1
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Raise Path"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -13532,6 +13571,11 @@ operator|+
 literal|1
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Lower Path"
+argument_list|)
 argument_list|)
 return|;
 block|}
@@ -13539,7 +13583,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_position_vectors (GimpImage * gimage,GimpVectors * vectors,gint new_index,gboolean push_undo)
+DECL|function|gimp_image_position_vectors (GimpImage * gimage,GimpVectors * vectors,gint new_index,gboolean push_undo,const gchar * undo_desc)
 name|gimp_image_position_vectors
 parameter_list|(
 name|GimpImage
@@ -13555,6 +13599,11 @@ name|new_index
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
 parameter_list|)
 block|{
 name|gint
@@ -13645,10 +13694,7 @@ name|gimp_image_undo_push_vectors_reposition
 argument_list|(
 name|gimage
 argument_list|,
-name|_
-argument_list|(
-literal|"Reorder Path"
-argument_list|)
+name|undo_desc
 argument_list|,
 name|vectors
 argument_list|)

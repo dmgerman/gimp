@@ -6537,6 +6537,8 @@ operator|->
 name|old_position
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|lru
@@ -8497,6 +8499,8 @@ operator|->
 name|old_position
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|cru
@@ -9742,6 +9746,8 @@ operator|->
 name|old_position
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|vru
