@@ -820,6 +820,18 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+comment|/* make sure that undo is enabled */
+while|while
+condition|(
+name|gimage
+operator|->
+name|undo_freeze_count
+condition|)
+name|gimp_image_undo_thaw
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/* set the image to clean  */
 name|gimp_image_clean_all
 argument_list|(

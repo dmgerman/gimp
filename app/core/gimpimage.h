@@ -285,9 +285,9 @@ name|gint
 name|dirty
 decl_stmt|;
 comment|/*  dirty flag -- # of ops       */
-DECL|member|freeze_count
+DECL|member|undo_freeze_count
 name|gint
-name|freeze_count
+name|undo_freeze_count
 decl_stmt|;
 comment|/*  counts the _freeze's         */
 DECL|member|instance_count

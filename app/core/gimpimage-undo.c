@@ -379,7 +379,7 @@ if|if
 condition|(
 name|gimage
 operator|->
-name|freeze_count
+name|undo_freeze_count
 operator|>
 literal|0
 condition|)
@@ -498,7 +498,7 @@ if|if
 condition|(
 name|gimage
 operator|->
-name|freeze_count
+name|undo_freeze_count
 operator|>
 literal|0
 condition|)
@@ -728,7 +728,7 @@ if|if
 condition|(
 name|gimage
 operator|->
-name|freeze_count
+name|undo_freeze_count
 operator|>
 literal|0
 condition|)
