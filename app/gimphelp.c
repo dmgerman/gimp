@@ -403,7 +403,7 @@ name|help_data
 operator|=
 name|g_strdup
 argument_list|(
-literal|"welcome.html"
+literal|"introduction.html"
 argument_list|)
 expr_stmt|;
 ifdef|#
