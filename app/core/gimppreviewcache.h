@@ -79,6 +79,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gsize
+name|gimp_preview_cache_get_memsize
+parameter_list|(
+name|GSList
+modifier|*
+name|cache
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -2081,6 +2081,15 @@ modifier|*
 name|temp_buf
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|temp_buf
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|temp_buf
@@ -2117,6 +2126,81 @@ return|return
 name|temp_buf
 operator|->
 name|data
+return|;
+block|}
+end_function
+
+begin_function
+name|gsize
+DECL|function|temp_buf_get_memsize (TempBuf * temp_buf)
+name|temp_buf_get_memsize
+parameter_list|(
+name|TempBuf
+modifier|*
+name|temp_buf
+parameter_list|)
+block|{
+name|gsize
+name|memsize
+init|=
+literal|0
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|temp_buf
+operator|!=
+name|NULL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|memsize
+operator|+=
+sizeof|sizeof
+argument_list|(
+name|TempBuf
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|temp_buf
+operator|->
+name|swapped
+condition|)
+block|{
+name|memsize
+operator|+=
+name|strlen
+argument_list|(
+name|temp_buf
+operator|->
+name|filename
+argument_list|)
+operator|+
+literal|1
+expr_stmt|;
+block|}
+else|else
+block|{
+name|memsize
+operator|+=
+operator|(
+name|temp_buf
+operator|->
+name|bytes
+operator|*
+name|temp_buf
+operator|->
+name|width
+operator|*
+name|temp_buf
+operator|->
+name|height
+operator|)
+expr_stmt|;
+block|}
+return|return
+name|memsize
 return|;
 block|}
 end_function
@@ -2257,7 +2341,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  a static pointer which keeps track of the last request for a swapped buffer  */
+comment|/*  a static pointer which keeps track of the last request for  *  a swapped buffer  */
 end_comment
 
 begin_decl_stmt
@@ -2405,7 +2489,7 @@ operator|=
 name|buf
 expr_stmt|;
 block|}
-comment|/*  For the case where there is no temp buf ready to be moved to disk, return  */
+comment|/*  For the case where there is no temp buf ready    *  to be moved to disk, return    */
 if|if
 condition|(
 operator|!

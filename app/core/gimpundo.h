@@ -144,11 +144,6 @@ name|gpointer
 name|data
 decl_stmt|;
 comment|/* data to implement the undo */
-DECL|member|size
-name|glong
-name|size
-decl_stmt|;
-comment|/* size of undo item          */
 DECL|member|dirties_image
 name|gboolean
 name|dirties_image
@@ -240,9 +235,6 @@ name|name
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|glong
-name|size
 parameter_list|,
 name|gboolean
 name|dirties_image

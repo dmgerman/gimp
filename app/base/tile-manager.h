@@ -392,6 +392,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gsize
+name|tile_manager_get_memsize
+parameter_list|(
+specifier|const
+name|TileManager
+modifier|*
+name|tm
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|tile_manager_get_tile_coordinates
 parameter_list|(

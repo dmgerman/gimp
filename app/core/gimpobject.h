@@ -115,6 +115,7 @@ DECL|member|parent_class
 name|GObjectClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
 DECL|member|disconnect
 name|void
 function_decl|(
@@ -132,6 +133,19 @@ name|void
 function_decl|(
 modifier|*
 name|name_changed
+function_decl|)
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+comment|/*  virtual functions  */
+DECL|member|get_memsize
+name|gsize
+function_decl|(
+modifier|*
+name|get_memsize
 function_decl|)
 parameter_list|(
 name|GimpObject
@@ -186,6 +200,17 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_object_name_changed
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gsize
+name|gimp_object_get_memsize
 parameter_list|(
 name|GimpObject
 modifier|*

@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e634e30103
+DECL|enum|__anon291409bd0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -899,7 +899,11 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|NULL
+name|widget
+operator|->
+name|style
+operator|->
+name|black_gc
 argument_list|,
 name|event
 operator|->
@@ -933,14 +937,12 @@ name|gca
 operator|->
 name|rowstride
 argument_list|,
-operator|-
 name|event
 operator|->
 name|area
 operator|.
 name|x
 argument_list|,
-operator|-
 name|event
 operator|->
 name|area
