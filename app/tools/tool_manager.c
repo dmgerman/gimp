@@ -2472,6 +2472,10 @@ condition|(
 name|tool_manager
 operator|->
 name|active_tool
+operator|&&
+name|tool_manager
+operator|->
+name|active_tool
 operator|->
 name|tool_info
 operator|->
