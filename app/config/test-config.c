@@ -30,19 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimplimits.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbasetypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config-types.h"
+file|"core/gimpgrid.h"
 end_include
 
 begin_include
@@ -61,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimpconfig-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_function_decl
@@ -122,11 +116,11 @@ parameter_list|)
 block|{
 name|GimpConfig
 modifier|*
-name|gimprc
+name|grid
 decl_stmt|;
 name|GimpConfig
 modifier|*
-name|gimprc2
+name|grid2
 decl_stmt|;
 specifier|const
 name|gchar
@@ -209,26 +203,26 @@ argument_list|()
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\nTesting GimpConfig ...\n\n"
+literal|"\nTesting GimpConfig ...\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" Creating a new GimpRc object ..."
+literal|" Creating a new Grid object ..."
 argument_list|)
 expr_stmt|;
-name|gimprc
+name|grid
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_RC
+name|GIMP_TYPE_GRID
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" done.\n\n"
+literal|" done.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -238,7 +232,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_config_add_unknown_token
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
 literal|"foobar"
 argument_list|,
@@ -247,7 +241,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" done.\n\n"
+literal|" done.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -258,7 +252,7 @@ name|g_type_name
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
 argument_list|(
-name|gimprc
+name|grid
 argument_list|)
 argument_list|)
 argument_list|,
@@ -270,7 +264,7 @@ condition|(
 operator|!
 name|gimp_config_serialize_to_file
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
 name|filename
 argument_list|,
@@ -300,12 +294,12 @@ return|;
 block|}
 name|g_print
 argument_list|(
-literal|" done.\n\n"
+literal|" done.\n"
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
 literal|"notify"
 argument_list|,
@@ -319,7 +313,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" Deserializing from '%s' ...\n\n"
+literal|" Deserializing from '%s' ...\n"
 argument_list|,
 name|filename
 argument_list|)
@@ -329,7 +323,7 @@ condition|(
 operator|!
 name|gimp_config_deserialize_file
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
 name|filename
 argument_list|,
@@ -355,11 +349,11 @@ return|;
 block|}
 name|header
 operator|=
-literal|"\n  Unknown string tokens:\n"
+literal|" Unknown string tokens:\n"
 expr_stmt|;
 name|gimp_config_foreach_unknown_token
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
 name|output_unknown_token
 argument_list|,
@@ -369,35 +363,35 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n done.\n"
+literal|" done.\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n Changing a property ..."
+literal|" Changing a property ..."
 argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
-literal|"use-help"
+literal|"style"
 argument_list|,
-name|FALSE
+name|GIMP_GRID_DOTS
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n Testing gimp_config_duplicate() ..."
+literal|" Testing gimp_config_duplicate() ..."
 argument_list|)
 expr_stmt|;
-name|gimprc2
+name|grid2
 operator|=
 name|gimp_config_duplicate
 argument_list|(
-name|gimprc
+name|grid
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -407,7 +401,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gimprc2
+name|grid2
 argument_list|,
 literal|"notify"
 argument_list|,
@@ -421,129 +415,28 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n Changing a property in the duplicate ..."
+literal|" Changing a property in the duplicate ..."
 argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|gimprc2
+name|grid2
 argument_list|,
-literal|"show-tips"
+literal|"xspacing"
 argument_list|,
-name|FALSE
+literal|20.0
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"\n Querying for \"default-comment\" ... "
-argument_list|)
-expr_stmt|;
-name|result
-operator|=
-name|gimp_rc_query
-argument_list|(
-name|GIMP_RC
-argument_list|(
-name|gimprc2
-argument_list|)
-argument_list|,
-literal|"default-comment"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|result
-condition|)
-block|{
-name|g_print
-argument_list|(
-literal|"OK, found \"%s\".\n"
-argument_list|,
-name|result
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_print
-argument_list|(
-literal|"failed!\n"
-argument_list|)
-expr_stmt|;
-return|return
-name|EXIT_FAILURE
-return|;
-block|}
-name|g_free
-argument_list|(
-name|result
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|" Querying for \"foobar\" ... "
-argument_list|)
-expr_stmt|;
-name|result
-operator|=
-name|gimp_rc_query
-argument_list|(
-name|GIMP_RC
-argument_list|(
-name|gimprc2
-argument_list|)
-argument_list|,
-literal|"foobar"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|result
-operator|&&
-name|strcmp
-argument_list|(
-name|result
-argument_list|,
-literal|"hadjaha"
-argument_list|)
-operator|==
-literal|0
-condition|)
-block|{
-name|g_print
-argument_list|(
-literal|"OK, found \"%s\".\n"
-argument_list|,
-name|result
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_print
-argument_list|(
-literal|"failed!\n"
-argument_list|)
-expr_stmt|;
-return|return
-name|EXIT_FAILURE
-return|;
-block|}
-name|g_free
-argument_list|(
-name|result
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gimprc2
+name|grid2
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n Deserializing from gimpconfig.c (should fail) ..."
+literal|" Deserializing from gimpconfig.c (should fail) ..."
 argument_list|)
 expr_stmt|;
 if|if
@@ -551,7 +444,7 @@ condition|(
 operator|!
 name|gimp_config_deserialize_file
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
 literal|"gimpconfig.c"
 argument_list|,
@@ -594,23 +487,23 @@ return|;
 block|}
 name|g_print
 argument_list|(
-literal|"\n Serializing to a string and back ... "
+literal|" Serializing to a string and back ... "
 argument_list|)
 expr_stmt|;
 name|result
 operator|=
 name|gimp_config_serialize_to_string
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimprc2
+name|grid2
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_RC
+name|GIMP_TYPE_GRID
 argument_list|,
 name|NULL
 argument_list|)
@@ -620,7 +513,7 @@ condition|(
 operator|!
 name|gimp_config_deserialize_string
 argument_list|(
-name|gimprc2
+name|grid2
 argument_list|,
 name|result
 argument_list|,
@@ -660,9 +553,9 @@ name|diff
 init|=
 name|gimp_config_diff
 argument_list|(
-name|gimprc
+name|grid
 argument_list|,
-name|gimprc2
+name|grid2
 argument_list|,
 literal|0
 argument_list|)
@@ -740,17 +633,17 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gimprc2
+name|grid2
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gimprc
+name|grid
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\nFinished test of GimpConfig.\n\n"
+literal|"Finished test of GimpConfig.\n\n"
 argument_list|)
 expr_stmt|;
 return|return
