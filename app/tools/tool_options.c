@@ -3026,10 +3026,23 @@ argument_list|(
 literal|"Smudge Options"
 argument_list|)
 else|:
+operator|(
+operator|(
+name|tool_type
+operator|==
+name|XINPUT_AIRBRUSH
+operator|)
+condition|?
+name|_
+argument_list|(
+literal|"Xinput Airbrush Options"
+argument_list|)
+else|:
 name|_
 argument_list|(
 literal|"ERROR: Unknown Paint Type"
 argument_list|)
+operator|)
 operator|)
 operator|)
 operator|)
