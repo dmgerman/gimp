@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpitemundo.h"
 end_include
 
@@ -2369,6 +2375,8 @@ argument_list|(
 name|mask
 argument_list|,
 name|active
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -2444,6 +2452,8 @@ argument_list|(
 name|mask
 argument_list|,
 name|active
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -2514,12 +2524,24 @@ name|action
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|active
+operator|==
+name|gimp_layer_mask_get_apply
+argument_list|(
+name|mask
+argument_list|)
+condition|)
+block|{
 name|gimp_layer_mask_set_apply
 argument_list|(
 name|mask
 argument_list|,
 operator|!
 name|active
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -2527,6 +2549,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

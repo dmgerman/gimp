@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7678500103
+DECL|enum|__anon2a3290330103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -946,7 +946,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_mask_set_apply (GimpLayerMask * layer_mask,gboolean apply)
+DECL|function|gimp_layer_mask_set_apply (GimpLayerMask * layer_mask,gboolean apply,gboolean push_undo)
 name|gimp_layer_mask_set_apply
 parameter_list|(
 name|GimpLayerMask
@@ -955,6 +955,9 @@ name|layer_mask
 parameter_list|,
 name|gboolean
 name|apply
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -974,6 +977,39 @@ operator|!=
 name|apply
 condition|)
 block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|GIMP_ITEM
+argument_list|(
+name|layer_mask
+argument_list|)
+operator|->
+name|gimage
+decl_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
+name|gimp_image_undo_push_layer_mask_properties
+argument_list|(
+name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply Layer Mask"
+argument_list|)
+argument_list|,
+name|GIMP_UNDO_LAYER_MASK_APPLY
+argument_list|,
+name|layer_mask
+operator|->
+name|layer
+argument_list|,
+name|layer_mask
+argument_list|)
+expr_stmt|;
 name|layer_mask
 operator|->
 name|apply_mask
@@ -1075,7 +1111,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_mask_set_edit (GimpLayerMask * layer_mask,gboolean edit)
+DECL|function|gimp_layer_mask_set_edit (GimpLayerMask * layer_mask,gboolean edit,gboolean push_undo)
 name|gimp_layer_mask_set_edit
 parameter_list|(
 name|GimpLayerMask
@@ -1084,6 +1120,9 @@ name|layer_mask
 parameter_list|,
 name|gboolean
 name|edit
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1103,6 +1142,39 @@ operator|!=
 name|edit
 condition|)
 block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|GIMP_ITEM
+argument_list|(
+name|layer_mask
+argument_list|)
+operator|->
+name|gimage
+decl_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
+name|gimp_image_undo_push_layer_mask_properties
+argument_list|(
+name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Edit Layer Mask"
+argument_list|)
+argument_list|,
+name|GIMP_UNDO_LAYER_MASK_EDIT
+argument_list|,
+name|layer_mask
+operator|->
+name|layer
+argument_list|,
+name|layer_mask
+argument_list|)
+expr_stmt|;
 name|layer_mask
 operator|->
 name|edit_mask
@@ -1160,7 +1232,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_mask_set_show (GimpLayerMask * layer_mask,gboolean show)
+DECL|function|gimp_layer_mask_set_show (GimpLayerMask * layer_mask,gboolean show,gboolean push_undo)
 name|gimp_layer_mask_set_show
 parameter_list|(
 name|GimpLayerMask
@@ -1169,6 +1241,9 @@ name|layer_mask
 parameter_list|,
 name|gboolean
 name|show
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1188,6 +1263,39 @@ operator|!=
 name|show
 condition|)
 block|{
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|GIMP_ITEM
+argument_list|(
+name|layer_mask
+argument_list|)
+operator|->
+name|gimage
+decl_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
+name|gimp_image_undo_push_layer_mask_properties
+argument_list|(
+name|gimage
+argument_list|,
+name|_
+argument_list|(
+literal|"Show Layer Mask"
+argument_list|)
+argument_list|,
+name|GIMP_UNDO_LAYER_MASK_SHOW
+argument_list|,
+name|layer_mask
+operator|->
+name|layer
+argument_list|,
+name|layer_mask
+argument_list|)
+expr_stmt|;
 name|layer_mask
 operator|->
 name|show_mask
