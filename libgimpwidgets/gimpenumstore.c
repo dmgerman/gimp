@@ -274,11 +274,11 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|desc
 decl_stmt|;
-name|name
+name|desc
 operator|=
-name|gimp_enum_value_get_name
+name|gimp_enum_value_get_desc
 argument_list|(
 name|GIMP_ENUM_STORE
 argument_list|(
@@ -313,7 +313,7 @@ name|value
 argument_list|,
 name|GIMP_INT_STORE_LABEL
 argument_list|,
-name|name
+name|desc
 argument_list|,
 operator|-
 literal|1

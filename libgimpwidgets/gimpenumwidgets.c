@@ -239,7 +239,7 @@ block|{
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|desc
 decl_stmt|;
 if|if
 condition|(
@@ -256,9 +256,9 @@ operator|>
 name|maximum
 condition|)
 continue|continue;
-name|name
+name|desc
 operator|=
-name|gimp_enum_value_get_name
+name|gimp_enum_value_get_desc
 argument_list|(
 name|enum_class
 argument_list|,
@@ -271,7 +271,7 @@ name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
-name|name
+name|desc
 argument_list|)
 expr_stmt|;
 if|if
@@ -944,7 +944,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|button
 argument_list|,
-name|gimp_enum_value_get_name
+name|gimp_enum_value_get_desc
 argument_list|(
 name|enum_class
 argument_list|,

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933a7770103
+DECL|enum|__anon278144e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9196,7 +9196,7 @@ name|gchar
 modifier|*
 name|name
 init|=
-name|gimp_enum_value_get_name
+name|gimp_enum_value_get_desc
 argument_list|(
 name|enum_class
 argument_list|,

@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2877c23e0103
+DECL|enum|__anon2b64e9270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3393,7 +3393,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|desc
 decl_stmt|;
 name|gchar
 modifier|*
@@ -3599,8 +3599,12 @@ name|image_type
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
-name|name
+name|desc
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -3642,7 +3646,7 @@ name|template
 operator|->
 name|yresolution
 argument_list|,
-name|name
+name|desc
 argument_list|)
 expr_stmt|;
 else|else
@@ -3662,7 +3666,7 @@ name|template
 operator|->
 name|yresolution
 argument_list|,
-name|name
+name|desc
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text

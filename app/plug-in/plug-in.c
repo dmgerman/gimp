@@ -2175,6 +2175,19 @@ name|plug_in
 operator|->
 name|pid
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Terminating %s ..."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|plug_in
+operator|->
+name|prog
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|status
 operator|=
 name|kill
@@ -2186,6 +2199,7 @@ argument_list|,
 name|SIGKILL
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Wait for the process to exit. This will happen    *  immediately if it was just killed.    */
 if|if
 condition|(
