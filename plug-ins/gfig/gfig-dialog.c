@@ -465,7 +465,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf700900108
+DECL|struct|__anon274f6cd80108
 block|{
 DECL|member|gridspacing
 name|void
@@ -2947,7 +2947,7 @@ name|GTK_WINDOW
 argument_list|(
 name|gtk_widget_get_toplevel
 argument_list|(
-name|widget
+name|data
 argument_list|)
 argument_list|)
 argument_list|,
