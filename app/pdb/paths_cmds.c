@@ -2195,6 +2195,9 @@ name|tool_info
 operator|->
 name|paint_info
 argument_list|)
+argument_list|,
+name|TRUE
+comment|/* use defaults, not tool option values */
 argument_list|)
 expr_stmt|;
 block|}

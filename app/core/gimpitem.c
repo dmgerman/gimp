@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d3bf500103
+DECL|enum|__anon29ff058e0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -3075,7 +3075,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc)
+DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc,gboolean use_default_values)
 name|gimp_item_stroke
 parameter_list|(
 name|GimpItem
@@ -3089,6 +3089,9 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|stroke_desc
+parameter_list|,
+name|gboolean
+name|use_default_values
 parameter_list|)
 block|{
 name|GimpItemClass
@@ -3153,6 +3156,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|stroke_desc
+argument_list|,
+name|use_default_values
 argument_list|)
 return|;
 return|return

@@ -438,6 +438,9 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|stroke_desc
+parameter_list|,
+name|gboolean
+name|use_default_values
 parameter_list|)
 function_decl|;
 DECL|member|default_name
@@ -862,6 +865,9 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|stroke_desc
+parameter_list|,
+name|gboolean
+name|use_default_values
 parameter_list|)
 function_decl|;
 end_function_decl
