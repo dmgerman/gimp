@@ -198,17 +198,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gtk_object_destroy
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|tool_tips
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_unref
-argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|tool_tips
 argument_list|)
@@ -373,7 +365,7 @@ argument_list|,
 name|help_data
 argument_list|)
 expr_stmt|;
-comment|/*   gtk_signal_connect (GTK_OBJECT (widget), "help", 		      GTK_SIGNAL_FUNC (gimp_help_callback), 		      (gpointer) help_func);    gtk_signal_connect (GTK_OBJECT (widget), "tips_query", 		      GTK_SIGNAL_FUNC (gimp_help_tips_query_start), 		      (gpointer) tips_query);   */
+comment|/*   g_signal_connect (G_OBJECT (widget), "help",                     G_CALLBACK (gimp_help_callback),                     (gpointer) help_func);    g_signal_connect (G_OBJECT (widget), "tips_query", 		    G_CALLBACK (gimp_help_tips_query_start), 		    (gpointer) tips_query);   */
 name|gtk_widget_add_events
 argument_list|(
 name|widget
@@ -467,9 +459,9 @@ condition|(
 name|help_data
 condition|)
 block|{
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -560,9 +552,9 @@ specifier|const
 name|gchar
 operator|*
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -682,9 +674,9 @@ operator|(
 name|gchar
 operator|*
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -790,9 +782,9 @@ operator|(
 name|gchar
 operator|*
 operator|)
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)

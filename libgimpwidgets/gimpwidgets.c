@@ -2085,9 +2085,9 @@ name|toggle_val
 operator|=
 name|GPOINTER_TO_INT
 argument_list|(
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -2102,9 +2102,9 @@ name|toggle_val
 operator|=
 name|GPOINTER_TO_INT
 argument_list|(
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -2215,16 +2215,16 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|adj
 argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_int_adjustment_update
 argument_list|)
@@ -2279,16 +2279,16 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|button
 argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_random_seed_toggle_update
 argument_list|)
@@ -2419,7 +2419,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d60cf0108
+DECL|struct|__anon2bd61d370108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2518,9 +2518,9 @@ name|chainbutton
 argument_list|)
 condition|)
 block|{
-name|gtk_signal_emit_stop_by_name
+name|g_signal_stop_emission_by_name
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -3299,7 +3299,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278d60cf0208
+DECL|struct|__anon2bd61d370208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -3603,16 +3603,16 @@ argument_list|,
 literal|0.0
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|divided_adj
 argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_mem_size_entry_callback
 argument_list|)
@@ -3734,7 +3734,7 @@ literal|"destroy"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gtk_object_unref
+name|g_object_unref
 argument_list|)
 argument_list|,
 name|adjustment
@@ -4026,9 +4026,9 @@ argument_list|)
 expr_stmt|;
 name|set_sensitive
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|toggle_button
 argument_list|)
@@ -4050,9 +4050,9 @@ argument_list|)
 expr_stmt|;
 name|set_sensitive
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|set_sensitive
 argument_list|)
@@ -4063,9 +4063,9 @@ expr_stmt|;
 block|}
 name|set_sensitive
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|toggle_button
 argument_list|)
@@ -4088,9 +4088,9 @@ argument_list|)
 expr_stmt|;
 name|set_sensitive
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|set_sensitive
 argument_list|)
@@ -4164,7 +4164,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_button_update:  * @widget: A #GtkRadioButton.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (gtk_object_get_user_data()).  *  * Note that this function calls gimp_toggle_button_sensitive_update().  **/
+comment|/**  * gimp_radio_button_update:  * @widget: A #GtkRadioButton.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (g_object_get_user_data(object, "user_data")).  *  * Note that this function calls gimp_toggle_button_sensitive_update().  **/
 end_comment
 
 begin_function
@@ -4232,7 +4232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_menu_item_update:  * @widget: A #GtkMenuItem.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (gtk_object_get_user_data()).  **/
+comment|/**  * gimp_menu_item_update:  * @widget: A #GtkMenuItem.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (g_object_get_data(object, "user_data")).  **/
 end_comment
 
 begin_function
@@ -4536,9 +4536,9 @@ operator|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -4563,9 +4563,9 @@ argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|spinbutton
 argument_list|)

@@ -623,9 +623,9 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gsp
 operator|->
@@ -634,7 +634,7 @@ argument_list|)
 argument_list|,
 literal|"gradient_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gradient_select_gradient_changed
 argument_list|)
@@ -687,7 +687,7 @@ argument_list|,
 name|gsp
 argument_list|)
 expr_stmt|;
-name|g_signal_handlers_disconnect_by_data
+name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -695,6 +695,8 @@ name|gsp
 operator|->
 name|context
 argument_list|)
+argument_list|,
+name|gradient_select_gradient_changed
 argument_list|,
 name|gsp
 argument_list|)

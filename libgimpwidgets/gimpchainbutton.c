@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274bcabd0103
+DECL|enum|__anon29abeee20103
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -495,9 +495,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gcb
 operator|->
@@ -506,7 +506,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_chain_button_clicked_callback
 argument_list|)
@@ -514,9 +514,9 @@ argument_list|,
 name|gcb
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gcb
 operator|->
@@ -525,7 +525,7 @@ argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_chain_button_draw_lines
 argument_list|)
@@ -533,9 +533,9 @@ argument_list|,
 name|gcb
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gcb
 operator|->
@@ -544,7 +544,7 @@ argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_chain_button_draw_lines
 argument_list|)
@@ -592,7 +592,7 @@ operator|->
 name|broken
 condition|)
 block|{
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gcb
 operator|->
@@ -613,7 +613,7 @@ operator|->
 name|broken_mask
 condition|)
 block|{
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gcb
 operator|->
@@ -634,7 +634,7 @@ operator|->
 name|chain
 condition|)
 block|{
-name|gdk_pixmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gcb
 operator|->
@@ -655,7 +655,7 @@ operator|->
 name|chain_mask
 condition|)
 block|{
-name|gdk_bitmap_unref
+name|gdk_drawable_unref
 argument_list|(
 name|gcb
 operator|->
@@ -1455,9 +1455,9 @@ operator|->
 name|broken_mask
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gcb
 argument_list|)
@@ -1466,6 +1466,8 @@ name|gimp_chain_button_signals
 index|[
 name|TOGGLED
 index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

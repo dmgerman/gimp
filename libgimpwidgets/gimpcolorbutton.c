@@ -295,7 +295,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon294aa28e0103
+DECL|enum|__anon2b940d8a0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -691,16 +691,16 @@ argument_list|,
 name|gcb
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gcb
 argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_color_button_menu_popup
 argument_list|)
@@ -1463,9 +1463,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gcb
 operator|->
@@ -1474,7 +1474,7 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_widget_destroyed
 argument_list|)
@@ -1485,9 +1485,9 @@ operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
@@ -1501,7 +1501,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_color_button_dialog_ok
 argument_list|)
@@ -1509,9 +1509,9 @@ argument_list|,
 name|gcb
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|GTK_COLOR_SELECTION_DIALOG
 argument_list|(
@@ -1525,7 +1525,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_color_button_dialog_cancel
 argument_list|)
@@ -1961,9 +1961,9 @@ name|dcolor
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gcb
 argument_list|)
@@ -1972,6 +1972,8 @@ name|gimp_color_button_signals
 index|[
 name|COLOR_CHANGED
 index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

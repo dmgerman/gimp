@@ -75,7 +75,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon293fb0db0103
+DECL|enum|__anon2a0d9e9d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -924,9 +924,9 @@ argument_list|(
 name|gca
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gca
 argument_list|)
@@ -935,6 +935,8 @@ name|gimp_color_area_signals
 index|[
 name|COLOR_CHANGED
 index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -2110,9 +2112,9 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data_full
+name|g_object_set_data_full
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -2122,7 +2124,7 @@ argument_list|,
 name|window
 argument_list|,
 operator|(
-name|GtkDestroyNotify
+name|GDestroyNotify
 operator|)
 name|gtk_widget_destroy
 argument_list|)
@@ -2156,9 +2158,9 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)

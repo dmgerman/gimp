@@ -264,6 +264,24 @@ directive|include
 file|"pixmaps/wilber.xpm"
 end_include
 
+begin_comment
+comment|/* EEEK, we shouldn't use this, but it will go away when    GDisplay is made a proper GObject */
+end_comment
+
+begin_define
+DECL|macro|g_signal_handlers_disconnect_by_data (instance,data)
+define|#
+directive|define
+name|g_signal_handlers_disconnect_by_data
+parameter_list|(
+name|instance
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|g_signal_handlers_disconnect_matched (instance,\   G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, data)
+end_define
+
 begin_define
 DECL|macro|OVERHEAD
 define|#

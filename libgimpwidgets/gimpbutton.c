@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acd67880103
+DECL|enum|__anon2b65d4a20103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -546,9 +546,9 @@ operator|)
 operator|)
 condition|)
 block|{
-name|gtk_signal_emit
+name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
@@ -557,6 +557,8 @@ name|button_signals
 index|[
 name|EXTENDED_CLICKED
 index|]
+argument_list|,
+literal|0
 argument_list|,
 name|GIMP_BUTTON
 argument_list|(
