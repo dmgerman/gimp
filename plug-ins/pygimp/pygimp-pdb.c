@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a2f1c60108
+DECL|struct|__anon28ae80e70108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27a2f1c60208
+DECL|struct|__anon28ae80e70208
 typedef|typedef
 struct|struct
 block|{
@@ -3500,7 +3500,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"Subscript must be a string."
+literal|"Subscript must be a string"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3931,7 +3931,7 @@ name|PyErr_SetString
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"procedure not found."
+literal|"procedure not found"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4994,7 +4994,7 @@ name|PyErr_SetString
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"unknown return code."
+literal|"unknown return code"
 argument_list|)
 expr_stmt|;
 return|return

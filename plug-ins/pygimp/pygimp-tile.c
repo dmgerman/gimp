@@ -1631,7 +1631,7 @@ name|PyErr_SetString
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"Can't get size of pixel region."
+literal|"Can't get size of pixel region"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1715,7 +1715,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"subscript must be a 2-tuple."
+literal|"subscript must be a 2-tuple"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2469,7 +2469,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"can't delete subscripts."
+literal|"can't delete subscripts"
 argument_list|)
 expr_stmt|;
 return|return

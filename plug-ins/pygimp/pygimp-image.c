@@ -563,7 +563,7 @@ name|PyErr_SetString
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"Can't merge layers."
+literal|"Can't merge layers"
 argument_list|)
 expr_stmt|;
 return|return
@@ -654,7 +654,7 @@ name|PyErr_SetString
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"Can't merge layers."
+literal|"Can't merge layers"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3060,7 +3060,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"can not delete active_channel."
+literal|"cannot delete active_channel"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3081,7 +3081,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"type mis-match."
+literal|"type mismatch"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3248,7 +3248,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"can not delete active_layer."
+literal|"cannot delete active_layer"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3269,7 +3269,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"type mis-match."
+literal|"type mismatch"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3508,7 +3508,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"can not delete cmap."
+literal|"cannot delete cmap"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3529,7 +3529,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"type mis-match."
+literal|"type mismatch"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3655,7 +3655,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"can not delete filename."
+literal|"cannot delete filename"
 argument_list|)
 expr_stmt|;
 return|return
@@ -3676,7 +3676,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"type mis-match."
+literal|"type mismatch"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4050,7 +4050,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"can not delete tattoo_state."
+literal|"cannot delete tattoo_state"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4071,7 +4071,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"type mis-match."
+literal|"type mismatch"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4239,7 +4239,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"can not delete filename."
+literal|"cannot delete resolution"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4277,7 +4277,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"type mis-match."
+literal|"type mismatch"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4362,7 +4362,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"can not delete filename."
+literal|"cannot delete unit"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4383,7 +4383,7 @@ name|PyErr_SetString
 argument_list|(
 name|PyExc_TypeError
 argument_list|,
-literal|"type mis-match."
+literal|"type mismatch"
 argument_list|)
 expr_stmt|;
 return|return

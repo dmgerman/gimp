@@ -774,7 +774,7 @@ name|PyErr_SetString
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"arguments must be callable."
+literal|"arguments must be callable"
 argument_list|)
 expr_stmt|;
 return|return
@@ -792,7 +792,7 @@ name|PyErr_SetString
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"a query procedure must be provided."
+literal|"a query procedure must be provided"
 argument_list|)
 expr_stmt|;
 return|return
