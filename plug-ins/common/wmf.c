@@ -8,7 +8,7 @@ DECL|macro|VERSION
 define|#
 directive|define
 name|VERSION
-value|"1999-09-30"
+value|"1999-10-22"
 end_define
 
 begin_include
@@ -465,6 +465,14 @@ define|#
 directive|define
 name|SIZE_WMFRECORD
 value|6
+end_define
+
+begin_define
+DECL|macro|WORDSIZE_WMFRECORD
+define|#
+directive|define
+name|WORDSIZE_WMFRECORD
+value|3
 end_define
 
 begin_define
@@ -4324,7 +4332,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0108
+DECL|struct|__anon299b3ea80108
 block|{
 DECL|member|scale
 name|double
@@ -4352,7 +4360,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0208
+DECL|struct|__anon299b3ea80208
 block|{
 DECL|member|run
 name|gint
@@ -4379,7 +4387,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0308
+DECL|struct|__anon299b3ea80308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4400,7 +4408,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aab7edf0403
+DECL|enum|__anon299b3ea80403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4431,7 +4439,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0508
+DECL|struct|__anon299b3ea80508
 block|{
 DECL|member|dummy
 name|int
@@ -4446,7 +4454,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0608
+DECL|struct|__anon299b3ea80608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4473,7 +4481,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0708
+DECL|struct|__anon299b3ea80708
 block|{
 DECL|member|dummy
 name|int
@@ -4488,7 +4496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0808
+DECL|struct|__anon299b3ea80808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4515,7 +4523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0908
+DECL|struct|__anon299b3ea80908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4531,7 +4539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0a08
+DECL|struct|__anon299b3ea80a08
 block|{
 DECL|member|dummy
 name|int
@@ -4546,14 +4554,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0b08
+DECL|struct|__anon299b3ea80b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2aab7edf0c0a
+DECL|union|__anon299b3ea80c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4592,7 +4600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0d08
+DECL|struct|__anon299b3ea80d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4645,7 +4653,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0e08
+DECL|struct|__anon299b3ea80e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4696,7 +4704,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab7edf0f08
+DECL|struct|__anon299b3ea80f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -6911,38 +6919,6 @@ name|window
 decl_stmt|,
 name|viewport
 decl_stmt|;
-DECL|macro|XMAPPAR (param)
-define|#
-directive|define
-name|XMAPPAR
-parameter_list|(
-name|param
-parameter_list|)
-value|(((double) (GINT16_FROM_LE (param) - window.org_x) * viewport.ext_x / window.ext_x) + viewport.org_x)
-DECL|macro|YMAPPAR (param)
-define|#
-directive|define
-name|YMAPPAR
-parameter_list|(
-name|param
-parameter_list|)
-value|(((double) (GINT16_FROM_LE (param) - window.org_y) * viewport.ext_y / window.ext_y) + viewport.org_y)
-DECL|macro|XIMAPPAR (param)
-define|#
-directive|define
-name|XIMAPPAR
-parameter_list|(
-name|param
-parameter_list|)
-value|((gint) XMAPPAR (param))
-DECL|macro|YIMAPPAR (param)
-define|#
-directive|define
-name|YIMAPPAR
-parameter_list|(
-name|param
-parameter_list|)
-value|((gint) YMAPPAR (param))
 DECL|macro|XSCALE (value)
 define|#
 directive|define
@@ -6959,6 +6935,70 @@ parameter_list|(
 name|value
 parameter_list|)
 value|((value) * (double) viewport.ext_y / window.ext_y)
+DECL|macro|XMAPPAR (param)
+define|#
+directive|define
+name|XMAPPAR
+parameter_list|(
+name|param
+parameter_list|)
+value|(XSCALE (GINT16_FROM_LE (param) - window.org_x) + viewport.org_x)
+DECL|macro|YMAPPAR (param)
+define|#
+directive|define
+name|YMAPPAR
+parameter_list|(
+name|param
+parameter_list|)
+value|(YSCALE (GINT16_FROM_LE (param) - window.org_y) + viewport.org_y)
+DECL|macro|XMAPPARPLUS1 (param)
+define|#
+directive|define
+name|XMAPPARPLUS1
+parameter_list|(
+name|param
+parameter_list|)
+value|(XSCALE ((GINT16_FROM_LE (param) + 1) - window.org_x) + viewport.org_x)
+DECL|macro|YMAPPARPLUS1 (param)
+define|#
+directive|define
+name|YMAPPARPLUS1
+parameter_list|(
+name|param
+parameter_list|)
+value|(YSCALE ((GINT16_FROM_LE (param) + 1) - window.org_y) + viewport.org_y)
+DECL|macro|XIMAPPAR (param)
+define|#
+directive|define
+name|XIMAPPAR
+parameter_list|(
+name|param
+parameter_list|)
+value|((gint) XMAPPAR (param))
+DECL|macro|YIMAPPAR (param)
+define|#
+directive|define
+name|YIMAPPAR
+parameter_list|(
+name|param
+parameter_list|)
+value|((gint) YMAPPAR (param))
+DECL|macro|XIMAPPARPLUS1 (param)
+define|#
+directive|define
+name|XIMAPPARPLUS1
+parameter_list|(
+name|param
+parameter_list|)
+value|((gint) XMAPPARPLUS1 (param))
+DECL|macro|YIMAPPARPLUS1 (param)
+define|#
+directive|define
+name|YIMAPPARPLUS1
+parameter_list|(
+name|param
+parameter_list|)
+value|((gint) YMAPPARPLUS1 (param))
 name|Canvas
 modifier|*
 name|canvas
@@ -6998,6 +7038,9 @@ decl_stmt|;
 name|GdkImage
 modifier|*
 name|image
+decl_stmt|;
+name|guint
+name|options
 decl_stmt|;
 name|GPixelRgn
 name|pixel_rgn
@@ -9908,9 +9951,14 @@ operator|&
 literal|0xFF
 operator|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|pitch_family = ((GUINT16_FROM_LE (params[8])>> 8)& 0xFF);
+else|#
+directive|else
 name|pitch_family
 operator|=
-operator|(
 operator|(
 name|GUINT16_FROM_LE
 argument_list|(
@@ -9919,13 +9967,12 @@ index|[
 literal|8
 index|]
 argument_list|)
-operator|>>
-literal|8
-operator|)
 operator|&
 literal|0xFF
 operator|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|(
@@ -10001,9 +10048,7 @@ argument_list|)
 operator|-
 literal|9
 operator|-
-name|SIZE_WMFRECORD
-operator|/
-literal|2
+name|WORDSIZE_WMFRECORD
 expr_stmt|;
 name|name
 operator|=
@@ -11393,7 +11438,7 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-name|XIMAPPAR
+name|XIMAPPARPLUS1
 argument_list|(
 name|params
 index|[
@@ -11409,11 +11454,11 @@ literal|3
 index|]
 argument_list|)
 argument_list|,
-name|YIMAPPAR
+name|YIMAPPARPLUS1
 argument_list|(
 name|params
 index|[
-literal|2
+literal|0
 index|]
 argument_list|)
 operator|-
@@ -11487,7 +11532,7 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-name|XIMAPPAR
+name|XIMAPPARPLUS1
 argument_list|(
 name|params
 index|[
@@ -11503,11 +11548,11 @@ literal|3
 index|]
 argument_list|)
 argument_list|,
-name|YIMAPPAR
+name|YIMAPPARPLUS1
 argument_list|(
 name|params
 index|[
-literal|2
+literal|0
 index|]
 argument_list|)
 operator|-
@@ -11640,7 +11685,7 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-name|XIMAPPAR
+name|XIMAPPARPLUS1
 argument_list|(
 name|params
 index|[
@@ -11656,7 +11701,7 @@ literal|3
 index|]
 argument_list|)
 argument_list|,
-name|YIMAPPAR
+name|YIMAPPARPLUS1
 argument_list|(
 name|params
 index|[
@@ -11740,7 +11785,7 @@ literal|2
 index|]
 argument_list|)
 argument_list|,
-name|XIMAPPAR
+name|XIMAPPARPLUS1
 argument_list|(
 name|params
 index|[
@@ -11756,7 +11801,7 @@ literal|3
 index|]
 argument_list|)
 argument_list|,
-name|YIMAPPAR
+name|YIMAPPARPLUS1
 argument_list|(
 name|params
 index|[
@@ -12589,13 +12634,9 @@ return|return
 operator|-
 literal|1
 return|;
-comment|/* Count words read */
+comment|/* Count extra words read */
 name|j
 operator|=
-name|SIZE_WMFRECORD
-operator|/
-literal|2
-operator|+
 literal|4
 expr_stmt|;
 name|x
@@ -12618,7 +12659,7 @@ literal|0
 index|]
 argument_list|)
 expr_stmt|;
-comment|/* String length ? */
+comment|/* String length */
 name|k
 operator|=
 name|GUINT16_FROM_LE
@@ -12629,7 +12670,132 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-comment|/* What is the fourth parameter? */
+name|options
+operator|=
+name|GUINT16_FROM_LE
+argument_list|(
+name|params
+index|[
+literal|3
+index|]
+argument_list|)
+expr_stmt|;
+comment|/* Clipping or opaquing? */
+if|if
+condition|(
+operator|(
+name|options
+operator|&
+literal|0x04
+operator|)
+operator|||
+operator|(
+name|options
+operator|&
+literal|0x02
+operator|)
+condition|)
+block|{
+name|GdkRectangle
+name|r
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|readparams
+argument_list|(
+literal|0
+argument_list|,
+literal|4
+argument_list|,
+name|fp
+argument_list|,
+name|params
+argument_list|)
+condition|)
+return|return
+operator|-
+literal|1
+return|;
+name|j
+operator|+=
+literal|4
+expr_stmt|;
+name|r
+operator|.
+name|x
+operator|=
+name|XIMAPPARPLUS1
+argument_list|(
+name|params
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
+name|r
+operator|.
+name|y
+operator|=
+name|YIMAPPARPLUS1
+argument_list|(
+name|params
+index|[
+literal|1
+index|]
+argument_list|)
+expr_stmt|;
+name|r
+operator|.
+name|width
+operator|=
+name|XIMAPPAR
+argument_list|(
+name|params
+index|[
+literal|2
+index|]
+argument_list|)
+operator|-
+name|r
+operator|.
+name|x
+expr_stmt|;
+name|r
+operator|.
+name|height
+operator|=
+name|YIMAPPARPLUS1
+argument_list|(
+name|params
+index|[
+literal|3
+index|]
+argument_list|)
+operator|-
+name|r
+operator|.
+name|y
+expr_stmt|;
+if|if
+condition|(
+name|options
+operator|&
+literal|0x04
+condition|)
+name|gdk_gc_set_clip_rectangle
+argument_list|(
+name|canvas
+operator|->
+name|dc
+operator|.
+name|gc
+argument_list|,
+operator|&
+name|r
+argument_list|)
+expr_stmt|;
+block|}
 name|string
 operator|=
 name|g_malloc
@@ -12734,32 +12900,13 @@ operator|.
 name|textColor
 argument_list|)
 expr_stmt|;
-comment|/* ExtTextOut records can have an optional list of distances 	   * between characters. 	   */
-if|if
-condition|(
-name|j
-operator|<
-name|GUINT16_FROM_LE
-argument_list|(
-name|record
-operator|.
-name|Size
-argument_list|)
-condition|)
-for|for
-control|(
-name|i
-operator|=
+if|#
+directive|if
 literal|0
-init|;
-name|i
-operator|<
-name|k
-condition|;
-name|i
-operator|++
-control|)
-block|{
+comment|/* ExtTextOut records can have an optional list of distances 	   * between characters. But as we don't have the exact same font 	   * metrics anyway, we ignore it. 	   */
+block|if (j< GUINT16_FROM_LE (record.Size)) 	    for (i = 0; i< k; i++) 	      { 		gdk_draw_text (canvas->pixmap, canvas->dc.font->font, 			       canvas->dc.gc, (gint) x, (gint) y, 			       string + i, 1); 		if (j< GUINT16_FROM_LE (record.Size)) 		  { 		    if (!readparams (0, 1, fp, params)) 		      return -1; 		    j++; 		  } 		x += XSCALE (GINT16_FROM_LE (params[0])); 	      } 	  else
+endif|#
+directive|endif
 name|gdk_draw_text
 argument_list|(
 name|canvas
@@ -12789,67 +12936,7 @@ operator|(
 name|gint
 operator|)
 name|y
-argument_list|,
-name|string
 operator|+
-name|i
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|j
-operator|<
-name|GUINT16_FROM_LE
-argument_list|(
-name|record
-operator|.
-name|Size
-argument_list|)
-condition|)
-if|if
-condition|(
-operator|!
-name|readparams
-argument_list|(
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-name|fp
-argument_list|,
-name|params
-argument_list|)
-condition|)
-return|return
-operator|-
-literal|1
-return|;
-name|x
-operator|+=
-operator|(
-name|int
-operator|)
-name|XSCALE
-argument_list|(
-name|GINT16_FROM_LE
-argument_list|(
-name|params
-index|[
-literal|0
-index|]
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-name|gdk_draw_text
-argument_list|(
-name|canvas
-operator|->
-name|pixmap
-argument_list|,
 name|canvas
 operator|->
 name|dc
@@ -12857,22 +12944,8 @@ operator|.
 name|font
 operator|->
 name|font
-argument_list|,
-name|canvas
 operator|->
-name|dc
-operator|.
-name|gc
-argument_list|,
-operator|(
-name|gint
-operator|)
-name|x
-argument_list|,
-operator|(
-name|gint
-operator|)
-name|y
+name|ascent
 argument_list|,
 name|string
 argument_list|,
@@ -12882,6 +12955,34 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|string
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|options
+operator|&
+literal|0x04
+condition|)
+name|gdk_gc_set_clip_rectangle
+argument_list|(
+name|canvas
+operator|->
+name|dc
+operator|.
+name|gc
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|sync_record
+argument_list|(
+name|record
+operator|.
+name|Size
+argument_list|,
+name|j
+argument_list|,
+name|fp
 argument_list|)
 expr_stmt|;
 break|break;
@@ -14102,9 +14203,7 @@ argument_list|(
 name|size
 argument_list|)
 operator|-
-name|SIZE_WMFRECORD
-operator|/
-literal|2
+name|WORDSIZE_WMFRECORD
 expr_stmt|;
 if|if
 condition|(
@@ -14218,9 +14317,7 @@ argument_list|(
 name|size
 argument_list|)
 operator|-
-name|SIZE_WMFRECORD
-operator|/
-literal|2
+name|WORDSIZE_WMFRECORD
 expr_stmt|;
 if|if
 condition|(
