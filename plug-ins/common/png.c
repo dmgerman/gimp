@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29229bca0108
+DECL|struct|__anon2c82786c0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -5096,7 +5096,7 @@ name|pngvals
 operator|.
 name|compression_level
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|9.0
 argument_list|,
