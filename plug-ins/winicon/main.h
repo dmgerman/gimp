@@ -284,19 +284,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|ico_image_reduce_layer_bpp
-parameter_list|(
-name|guint32
-name|layer
-parameter_list|,
-name|gint
-name|bpp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|ico_image_get_reduced_buf
 parameter_list|(
 name|guint32
