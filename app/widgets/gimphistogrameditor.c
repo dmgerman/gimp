@@ -1770,6 +1770,9 @@ case|:
 case|case
 name|GIMP_HISTOGRAM_BLUE
 case|:
+case|case
+name|GIMP_HISTOGRAM_RGB
+case|:
 return|return
 name|editor
 operator|->

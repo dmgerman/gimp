@@ -3826,6 +3826,9 @@ case|:
 case|case
 name|GIMP_HISTOGRAM_ALPHA
 case|:
+case|case
+name|GIMP_HISTOGRAM_RGB
+case|:
 name|gimp_color_bar_set_buffers
 argument_list|(
 name|GIMP_COLOR_BAR
@@ -4173,6 +4176,12 @@ return|return
 name|tool
 operator|->
 name|alpha
+return|;
+case|case
+name|GIMP_HISTOGRAM_RGB
+case|:
+return|return
+name|FALSE
 return|;
 block|}
 return|return

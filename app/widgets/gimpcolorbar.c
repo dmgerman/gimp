@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c615650103
+DECL|enum|__anon27fa318c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1053,6 +1053,9 @@ name|GIMP_HISTOGRAM_VALUE
 case|:
 case|case
 name|GIMP_HISTOGRAM_ALPHA
+case|:
+case|case
+name|GIMP_HISTOGRAM_RGB
 case|:
 name|gimp_rgb_set
 argument_list|(

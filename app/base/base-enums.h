@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2be08d640103
+DECL|enum|__anon2af05bff0103
 block|{
 DECL|enumerator|GIMP_SMALL_CHECKS
 name|GIMP_SMALL_CHECKS
@@ -116,7 +116,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2be08d640203
+DECL|enum|__anon2af05bff0203
 block|{
 DECL|enumerator|GIMP_LIGHT_CHECKS
 name|GIMP_LIGHT_CHECKS
@@ -181,7 +181,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2be08d640303
+DECL|enum|__anon2af05bff0303
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -217,7 +217,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be08d640403
+DECL|enum|__anon2af05bff0403
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -247,7 +247,13 @@ DECL|enumerator|GIMP_HISTOGRAM_ALPHA
 name|GIMP_HISTOGRAM_ALPHA
 init|=
 literal|4
+block|,
 comment|/*< desc="Alpha">*/
+DECL|enumerator|GIMP_HISTOGRAM_RGB
+name|GIMP_HISTOGRAM_RGB
+init|=
+literal|5
+comment|/*< desc="RGB", pdb-skip>*/
 DECL|typedef|GimpHistogramChannel
 block|}
 name|GimpHistogramChannel
@@ -276,7 +282,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2be08d640503
+DECL|enum|__anon2af05bff0503
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -316,7 +322,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be08d640603
+DECL|enum|__anon2af05bff0603
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -425,7 +431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be08d640703
+DECL|enum|__anon2af05bff0703
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -452,7 +458,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2be08d640803
+DECL|enum|__anon2af05bff0803
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -475,7 +481,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2be08d640903
+DECL|enum|__anon2af05bff0903
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES

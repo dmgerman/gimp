@@ -379,6 +379,17 @@ literal|"alpha"
 block|}
 block|,
 block|{
+name|GIMP_HISTOGRAM_RGB
+block|,
+name|N_
+argument_list|(
+literal|"RGB"
+argument_list|)
+block|,
+literal|"rgb"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
