@@ -2377,7 +2377,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf3fa930108
+DECL|struct|__anon2ab9b72c0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3261,7 +3261,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf3fa930208
+DECL|struct|__anon2ab9b72c0208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -4240,7 +4240,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data: A pointer to a #gint variable which will store the adjustment's  *        value.  *  * Note that the #GtkAdjustment's value (which is a #gfloat) will be rounded  * with (#gint) (value + 0.5).  **/
+comment|/**  * gimp_int_adjustment_update:  * @adjustment: A #GtkAdjustment.  * @data: A pointer to a #gint variable which will store the adjustment's  *        value.  *  * Note that the #GtkAdjustment's value (which is a #gfloat) will be rounded  * with (#gint) rint (value).  **/
 end_comment
 
 begin_function
@@ -4271,15 +4271,14 @@ expr_stmt|;
 operator|*
 name|val
 operator|=
-call|(
+operator|(
 name|gint
-call|)
+operator|)
+name|rint
 argument_list|(
 name|adjustment
 operator|->
 name|value
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
