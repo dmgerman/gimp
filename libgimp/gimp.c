@@ -135,7 +135,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_ifndef
@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9db30d0103
+DECL|enum|__anon29e291250103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
