@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f9cd60108
+DECL|struct|__anon299ff5b10108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f9cd60208
+DECL|struct|__anon299ff5b10208
 block|{
 DECL|member|width
 DECL|member|height
@@ -878,7 +878,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|load_dialog
 parameter_list|(
 name|void
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f9cd60308
+DECL|struct|__anon299ff5b10308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -926,7 +926,7 @@ end_typedef
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_dialog
 parameter_list|(
 name|void
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f9cd60408
+DECL|struct|__anon299ff5b10408
 block|{
 DECL|member|eol
 name|long
@@ -13778,7 +13778,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|load_dialog (void)
 name|load_dialog
 parameter_list|(
@@ -13871,7 +13871,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -13881,7 +13881,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -13914,9 +13914,9 @@ name|hbox
 operator|=
 name|gtk_hbox_new
 argument_list|(
-name|FALSE
+name|TRUE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -13943,7 +13943,7 @@ expr_stmt|;
 comment|/* Rendering */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -13960,7 +13960,7 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -13973,17 +13973,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -14015,7 +14005,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -14025,7 +14015,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -14091,7 +14081,7 @@ argument_list|(
 literal|"Resolution:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -14099,7 +14089,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -14161,7 +14151,7 @@ argument_list|(
 literal|"_Width:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -14169,7 +14159,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -14231,7 +14221,7 @@ argument_list|(
 literal|"_Height:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -14239,7 +14229,7 @@ name|spinbutton
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -14302,7 +14292,7 @@ argument_list|(
 literal|"Pages:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -14310,7 +14300,7 @@ name|pages_entry
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -14473,7 +14463,7 @@ name|frame
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -14489,7 +14479,7 @@ name|gtk_hbox_new
 argument_list|(
 name|TRUE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -14756,7 +14746,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_dialog (void)
 name|save_dialog
 parameter_list|(
@@ -14872,7 +14862,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -14882,7 +14872,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -14944,7 +14934,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -14959,18 +14949,26 @@ index|[
 name|j
 index|]
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|main_vbox
+index|[
+name|j
+index|]
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* Image Size */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -14990,7 +14988,7 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -15003,17 +15001,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -15045,7 +15033,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -15055,7 +15043,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -15126,7 +15114,7 @@ argument_list|(
 literal|"_Width:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -15206,7 +15194,7 @@ argument_list|(
 literal|"_Height:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -15283,10 +15271,10 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"_X-Offset:"
+literal|"_X Offset:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -15363,10 +15351,10 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"_Y-Offset:"
+literal|"_Y Offset:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -15418,9 +15406,9 @@ argument_list|)
 argument_list|,
 name|toggle
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -15520,14 +15508,17 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|main_vbox
+index|[
+literal|0
+index|]
 argument_list|)
 argument_list|,
 name|uframe
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -15612,9 +15603,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -15627,7 +15618,7 @@ expr_stmt|;
 comment|/* Format */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -15660,17 +15651,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -15702,9 +15683,9 @@ argument_list|)
 argument_list|,
 name|toggle
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -15762,9 +15743,9 @@ argument_list|)
 argument_list|,
 name|toggle
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -15822,9 +15803,9 @@ argument_list|)
 argument_list|,
 name|toggle
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -15882,7 +15863,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -16010,30 +15991,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|j
-operator|=
-literal|0
-init|;
-name|j
-operator|<
-name|G_N_ELEMENTS
-argument_list|(
-name|main_vbox
-argument_list|)
-condition|;
-name|j
-operator|++
-control|)
-name|gtk_widget_show
-argument_list|(
-name|main_vbox
-index|[
-name|j
-index|]
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
