@@ -48,7 +48,7 @@ name|GIMP_IS_PARAM_SPEC_COLOR
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_SPEC_COLOR))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_COLOR))
 end_define
 
 begin_decl_stmt
@@ -108,7 +108,7 @@ name|GIMP_IS_PARAM_SPEC_MEMSIZE
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_SPEC_MEMSIZE))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_MEMSIZE))
 end_define
 
 begin_decl_stmt
@@ -172,7 +172,7 @@ name|GIMP_IS_PARAM_SPEC_PATH
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_SPEC_PATH))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_PATH))
 end_define
 
 begin_decl_stmt
@@ -231,7 +231,7 @@ name|GIMP_IS_PARAM_SPEC_UNIT
 parameter_list|(
 name|pspec
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_SPEC_UNIT))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((pspec), GIMP_TYPE_PARAM_UNIT))
 end_define
 
 begin_decl_stmt
