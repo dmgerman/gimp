@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpeditselectiontool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptextoptions.h"
 end_include
 
@@ -788,6 +794,12 @@ operator|->
 name|button_press
 operator|=
 name|gimp_text_tool_button_press
+expr_stmt|;
+name|tool_class
+operator|->
+name|arrow_key
+operator|=
+name|gimp_edit_selection_tool_arrow_key
 expr_stmt|;
 name|tool_class
 operator|->
