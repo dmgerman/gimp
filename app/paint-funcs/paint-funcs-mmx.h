@@ -39,7 +39,7 @@ parameter_list|(
 name|x
 parameter_list|)
 define|\
-value|void \ x( \   const unsigned char *src1, \   const unsigned char *src2, \   unsigned count, \   unsigned char *dst) __attribute((regparm(3)));
+value|void \ x( \   const guchar *src1, \   const guchar *src2, \   guint count, \   guchar *dst) __attribute((regparm(3)));
 end_define
 
 begin_comment
@@ -78,7 +78,7 @@ parameter_list|(
 name|op
 parameter_list|)
 define|\
-value|if (HAS_ALPHA (alms->bytes1)&& HAS_ALPHA (bytes2)) \     { \       if (alms->bytes1==2&& alms->bytes2==2) \ 	return op##_pixels_1a_1a(alms->src1, alms->src2, alms->length, alms->dest); \       if (alms->bytes1==4&& alms->bytes2==4) \ 	return op##_pixels_3a_3a(alms->src1, alms->src2, alms->length, alms->dest); \     }
+value|if (HAS_ALPHA (alms->bytes1)&& HAS_ALPHA (alms->bytes2)) \     { \       if (alms->bytes1==2&& alms->bytes2==2) \ 	return op##_pixels_1a_1a(alms->src1, alms->src2, alms->length, *(alms->dest)); \       if (alms->bytes1==4&& alms->bytes2==4) \ 	return op##_pixels_3a_3a(alms->src1, alms->src2, alms->length, *(alms->dest)); \     }
 end_define
 
 begin_expr_stmt
