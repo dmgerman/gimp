@@ -3656,11 +3656,7 @@ operator|==
 name|ONCE_BACKWARDS
 condition|)
 block|{
-name|printf
-argument_list|(
-literal|"got here \n"
-argument_list|)
-expr_stmt|;
+comment|/*  printf("got here \n"); */
 comment|/* for the once modes, set alpha to 0.0 */
 name|temp_opacity
 operator|=

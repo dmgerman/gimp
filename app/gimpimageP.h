@@ -280,7 +280,21 @@ DECL|member|qmask_state
 name|int
 name|qmask_state
 decl_stmt|;
-comment|/* TRUE if qmask is on           */
+comment|/*  TRUE if qmask is on          */
+DECL|member|qmask_opacity
+name|double
+name|qmask_opacity
+decl_stmt|;
+comment|/*  opacity of the qmask channel */
+DECL|member|qmask_color
+name|unsigned
+name|char
+name|qmask_color
+index|[
+literal|3
+index|]
+decl_stmt|;
+comment|/*  rgb triplet of the color     */
 comment|/*  Undo apparatus  */
 DECL|member|undo_stack
 name|GSList

@@ -16,32 +16,23 @@ directive|define
 name|__QMASK_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|icky
-end_ifdef
-
 begin_function_decl
+name|void
+name|qmask_click_handler
+parameter_list|(
 name|GtkWidget
 modifier|*
-name|qmask_area_create
-parameter_list|(
-name|GDisplay
+name|widget
+parameter_list|,
+name|GdkEventButton
 modifier|*
-name|display
+name|event
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* icky */
-end_comment
 
 begin_function_decl
 name|void
