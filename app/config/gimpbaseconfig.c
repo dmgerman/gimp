@@ -124,7 +124,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon295706ce0103
+DECL|enum|__anon27ecec050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -302,7 +302,7 @@ literal|"${gimp_dir}"
 name|G_DIR_SEPARATOR_S
 literal|"tmp"
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -319,7 +319,7 @@ name|GIMP_CONFIG_PATH_DIR
 argument_list|,
 literal|"${gimp_dir}"
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -334,7 +334,7 @@ name|STINGY_MEMORY_USE_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UINT
@@ -375,7 +375,7 @@ operator|<<
 literal|27
 argument_list|,
 comment|/* 128MB */
-name|GIMP_PARAM_CONFIRM
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 block|}

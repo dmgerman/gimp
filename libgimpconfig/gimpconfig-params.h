@@ -17,54 +17,54 @@ name|__GIMP_CONFIG_PARAMS_H__
 end_define
 
 begin_comment
-comment|/*  * GIMP_PARAM_SERIALIZE - A property that can and should be  *                        serialized and deserialized.  * GIMP_PARAM_AGGREGATE - The object property is to be treated as  *                        part of the parent object.  * GIMP_PARAM_RESTART   - Changes to this property take effect only  *                        after a restart.  * GIMP_PARAM_CONFIRM   - Changes to this property should be  *                        confirmed by the user before being applied.  * GIMP_PARAM_DEFAULTS  - Don't serialize this property if it has the  *                        default value.  * GIMP_PARAM_IGNORE    - This property exists for obscure reasons  *                        and is needed for backward compatibility.  *                        Ignore the value read and don't serialize it.  */
+comment|/*  * GIMP_CONFIG_PARAM_SERIALIZE - A property that can and should be  *                               serialized and deserialized.  * GIMP_CONFIG_PARAM_AGGREGATE - The object property is to be treated as  *                               part of the parent object.  * GIMP_CONFIG_PARAM_RESTART   - Changes to this property take effect only  *                               after a restart.  * GIMP_CONFIG_PARAM_CONFIRM   - Changes to this property should be  *                               confirmed by the user before being applied.  * GIMP_CONFIG_PARAM_DEFAULTS  - Don't serialize this property if it has the  *                               default value.  * GIMP_CONFIG_PARAM_IGNORE    - This property exists for obscure reasons  *                               and is needed for backward compatibility.  *                               Ignore the value read and don't serialize it.  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_PARAM_SERIALIZE
+DECL|macro|GIMP_CONFIG_PARAM_SERIALIZE
 define|#
 directive|define
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 value|(1<< (0 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_AGGREGATE
+DECL|macro|GIMP_CONFIG_PARAM_AGGREGATE
 define|#
 directive|define
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 value|(1<< (1 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_RESTART
+DECL|macro|GIMP_CONFIG_PARAM_RESTART
 define|#
 directive|define
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 value|(1<< (2 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_CONFIRM
+DECL|macro|GIMP_CONFIG_PARAM_CONFIRM
 define|#
 directive|define
-name|GIMP_PARAM_CONFIRM
+name|GIMP_CONFIG_PARAM_CONFIRM
 value|(1<< (3 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_DEFAULTS
+DECL|macro|GIMP_CONFIG_PARAM_DEFAULTS
 define|#
 directive|define
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 value|(1<< (4 + G_PARAM_USER_SHIFT))
 end_define
 
 begin_define
-DECL|macro|GIMP_PARAM_IGNORE
+DECL|macro|GIMP_CONFIG_PARAM_IGNORE
 define|#
 directive|define
-name|GIMP_PARAM_IGNORE
+name|GIMP_CONFIG_PARAM_IGNORE
 value|(1<< (5 + G_PARAM_USER_SHIFT))
 end_define
 
@@ -73,7 +73,7 @@ DECL|macro|GIMP_CONFIG_PARAM_FLAGS
 define|#
 directive|define
 name|GIMP_CONFIG_PARAM_FLAGS
-value|(G_PARAM_READWRITE | \                                  G_PARAM_CONSTRUCT | \                                  GIMP_PARAM_SERIALIZE)
+value|(G_PARAM_READWRITE | \                                  G_PARAM_CONSTRUCT | \                                  GIMP_CONFIG_PARAM_SERIALIZE)
 end_define
 
 begin_comment
@@ -331,7 +331,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags |\                                    G_PARAM_READWRITE | GIMP_PARAM_SERIALIZE))
+value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags |\                                    G_PARAM_READWRITE |\                                    GIMP_CONFIG_PARAM_SERIALIZE))
 end_define
 
 begin_define
@@ -351,7 +351,7 @@ parameter_list|,
 name|flags
 parameter_list|)
 define|\
-value|g_object_class_install_property (class, id,\                                    g_param_spec_pointer (name, NULL, blurb,\                                    flags |\                                    G_PARAM_READWRITE | GIMP_PARAM_SERIALIZE))
+value|g_object_class_install_property (class, id,\                                    g_param_spec_pointer (name, NULL, blurb,\                                    flags |\                                    G_PARAM_READWRITE |\                                    GIMP_CONFIG_PARAM_SERIALIZE))
 end_define
 
 begin_endif

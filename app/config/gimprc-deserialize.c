@@ -203,7 +203,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 condition|)
 block|{
 name|g_scanner_scope_add_symbol

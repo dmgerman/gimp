@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b768350103
+DECL|enum|__anon275046cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1543,7 +1543,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 operator|)
 operator|||
 name|strcmp

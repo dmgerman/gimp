@@ -894,7 +894,7 @@ name|param_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_CONFIRM
+name|GIMP_CONFIG_PARAM_CONFIRM
 condition|)
 block|{
 ifdef|#
@@ -1079,7 +1079,7 @@ argument_list|)
 argument_list|,
 name|config_copy
 argument_list|,
-name|GIMP_PARAM_CONFIRM
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|g_object_freeze_notify
@@ -1222,7 +1222,7 @@ operator|->
 name|config
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 if|if
@@ -1372,7 +1372,7 @@ argument_list|)
 argument_list|,
 name|config_orig
 argument_list|,
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 expr_stmt|;
 name|g_object_freeze_notify
@@ -7936,7 +7936,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c0828d00108
+DECL|struct|__anon2ace9a820108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10060,7 +10060,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0828d00208
+DECL|struct|__anon2ace9a820208
 block|{
 DECL|member|label
 specifier|const
@@ -10217,7 +10217,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c0828d00308
+DECL|struct|__anon2ace9a820308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -154,7 +154,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 operator|)
 operator|&&
 name|G_IS_PARAM_SPEC_OBJECT
@@ -947,7 +947,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 operator|)
 operator|&&
 operator|(
@@ -955,7 +955,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 operator|)
 operator|&&
 name|g_type_interface_peek

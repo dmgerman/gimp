@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27733a580103
+DECL|enum|__anon2b64db7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -561,7 +561,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -591,7 +591,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -656,7 +656,7 @@ name|GIMP_TYPE_TEXT_OUTLINE
 argument_list|,
 name|GIMP_TEXT_OUTLINE_NONE
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -693,7 +693,7 @@ literal|8192.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -713,7 +713,7 @@ literal|8192.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -733,7 +733,7 @@ literal|8192.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -769,7 +769,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -788,7 +788,7 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -823,7 +823,7 @@ argument_list|,
 operator|&
 name|identity
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -843,7 +843,7 @@ name|G_MAXDOUBLE
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -863,7 +863,7 @@ name|G_MAXDOUBLE
 argument_list|,
 literal|0.0
 argument_list|,
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 argument_list|)
 expr_stmt|;
 comment|/*  border does only exist to implement the old text API  */

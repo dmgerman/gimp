@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmodule/gimpmodule.h"
 end_include
 
@@ -102,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac633990108
+DECL|struct|__anon290adb890108
 block|{
 DECL|member|name
 name|gchar
@@ -122,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac633990203
+DECL|enum|__anon290adb890203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -885,11 +891,7 @@ name|blurb
 argument_list|,
 name|NULL
 argument_list|,
-name|G_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT
-operator||
-name|GIMP_MODULE_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -926,11 +928,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|G_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT
-operator||
-name|GIMP_MODULE_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_FLAGS
 argument_list|)
 argument_list|)
 expr_stmt|;

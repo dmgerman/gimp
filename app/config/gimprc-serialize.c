@@ -241,7 +241,7 @@ name|config
 argument_list|,
 name|compare
 argument_list|,
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 expr_stmt|;
 if|if
@@ -272,10 +272,6 @@ name|GParamSpec
 modifier|*
 name|prop_spec
 init|=
-operator|(
-name|GParamSpec
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -288,7 +284,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;

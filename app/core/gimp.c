@@ -249,7 +249,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd20cab0103
+DECL|enum|__anon2b2c647a0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -3162,7 +3162,7 @@ name|param_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 condition|)
 block|{
 ifdef|#

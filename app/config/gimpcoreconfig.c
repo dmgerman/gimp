@@ -240,7 +240,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947aa3a0103
+DECL|enum|__anon2a1a7a4f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -531,7 +531,7 @@ argument_list|(
 literal|"plug-ins"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -551,7 +551,7 @@ argument_list|(
 literal|"modules"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -571,7 +571,7 @@ argument_list|(
 literal|"environ"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -591,7 +591,7 @@ argument_list|(
 literal|"brushes"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -611,7 +611,7 @@ argument_list|(
 literal|"brushes"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -631,7 +631,7 @@ argument_list|(
 literal|"patterns"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -651,7 +651,7 @@ argument_list|(
 literal|"patterns"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -671,7 +671,7 @@ argument_list|(
 literal|"palettes"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -691,7 +691,7 @@ argument_list|(
 literal|"palettes"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -711,7 +711,7 @@ argument_list|(
 literal|"gradients"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -731,7 +731,7 @@ argument_list|(
 literal|"gradients"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -771,7 +771,7 @@ argument_list|(
 literal|"fonts"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -936,7 +936,7 @@ name|DEFAULT_IMAGE_BLURB
 argument_list|,
 name|GIMP_TYPE_TEMPLATE
 argument_list|,
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -951,7 +951,7 @@ name|DEFAULT_GRID_BLURB
 argument_list|,
 name|GIMP_TYPE_GRID
 argument_list|,
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -970,7 +970,7 @@ name|G_MAXINT
 argument_list|,
 literal|5
 argument_list|,
-name|GIMP_PARAM_CONFIRM
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
@@ -992,7 +992,7 @@ operator|<<
 literal|24
 argument_list|,
 comment|/* 16MB */
-name|GIMP_PARAM_CONFIRM
+name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -1009,7 +1009,7 @@ name|GIMP_TYPE_VIEW_SIZE
 argument_list|,
 name|GIMP_VIEW_SIZE_LARGE
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -1028,7 +1028,7 @@ literal|"${gimp_dir}"
 name|G_DIR_SEPARATOR_S
 literal|"pluginrc"
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -1113,7 +1113,7 @@ name|INSTALL_COLORMAP_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -1132,7 +1132,7 @@ literal|256
 argument_list|,
 literal|144
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 block|}

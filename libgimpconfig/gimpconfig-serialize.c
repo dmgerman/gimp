@@ -168,7 +168,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
@@ -305,7 +305,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
@@ -436,7 +436,7 @@ name|param_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 operator|)
 condition|)
 return|return
@@ -448,7 +448,7 @@ name|param_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_IGNORE
+name|GIMP_CONFIG_PARAM_IGNORE
 condition|)
 return|return
 name|TRUE
@@ -484,7 +484,7 @@ name|param_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_DEFAULTS
+name|GIMP_CONFIG_PARAM_DEFAULTS
 operator|&&
 name|g_param_value_defaults
 argument_list|(
@@ -656,7 +656,7 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-comment|/*  if the object property is not GIMP_PARAM_AGGREGATE,                *  deserializing will need to know the exact type                *  in order to create the object                */
+comment|/*  if the object property is not GIMP_CONFIG_PARAM_AGGREGATE,                *  deserializing will need to know the exact type                *  in order to create the object                */
 if|if
 condition|(
 operator|!
@@ -665,7 +665,7 @@ name|param_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 operator|)
 condition|)
 block|{

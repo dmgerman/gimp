@@ -503,7 +503,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_SERIALIZE
+name|GIMP_CONFIG_PARAM_SERIALIZE
 condition|)
 block|{
 name|g_scanner_scope_add_symbol
@@ -877,7 +877,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 operator|)
 operator|)
 condition|)
@@ -2237,7 +2237,7 @@ operator|!
 name|prop_object
 condition|)
 block|{
-comment|/*  if the object property is not GIMP_PARAM_AGGREGATE, read        *  the type of the object and create it        */
+comment|/*  if the object property is not GIMP_CONFIG_PARAM_AGGREGATE, read        *  the type of the object and create it        */
 if|if
 condition|(
 operator|!
@@ -2246,7 +2246,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 operator|)
 condition|)
 block|{

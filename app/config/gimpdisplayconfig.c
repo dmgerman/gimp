@@ -200,7 +200,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be5c50a0103
+DECL|enum|__anon2b37b3d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -780,7 +780,7 @@ name|DEFAULT_VIEW_BLURB
 argument_list|,
 name|GIMP_TYPE_DISPLAY_OPTIONS
 argument_list|,
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -795,7 +795,7 @@ name|DEFAULT_FULLSCREEN_VIEW_BLURB
 argument_list|,
 name|GIMP_TYPE_DISPLAY_OPTIONS
 argument_list|,
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN

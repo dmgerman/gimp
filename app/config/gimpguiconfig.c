@@ -180,7 +180,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a43600b0103
+DECL|enum|__anon279cce0f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -460,7 +460,7 @@ name|INFO_WINDOW_PER_DISPLAY_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -625,7 +625,7 @@ name|MENU_MNEMONICS_BLURB
 argument_list|,
 name|TRUE
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -644,7 +644,7 @@ literal|1024
 argument_list|,
 literal|10
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
@@ -730,7 +730,7 @@ argument_list|(
 literal|"themes"
 argument_list|)
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -841,7 +841,7 @@ name|GIMP_TYPE_WINDOW_HINT
 argument_list|,
 name|GIMP_WINDOW_HINT_NORMAL
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -858,7 +858,7 @@ name|GIMP_TYPE_WINDOW_HINT
 argument_list|,
 name|GIMP_WINDOW_HINT_NORMAL
 argument_list|,
-name|GIMP_PARAM_RESTART
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM

@@ -787,7 +787,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 operator|)
 operator|&&
 name|G_IS_PARAM_SPEC_OBJECT

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7073ad0103
+DECL|enum|__anon2975811a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -420,7 +420,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_STROKE_OPTIONS
 argument_list|,
-name|GIMP_PARAM_AGGREGATE
+name|GIMP_CONFIG_PARAM_AGGREGATE
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
