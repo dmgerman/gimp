@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad76aaf0103
+DECL|enum|__anon28c18cdb0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -122,7 +122,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad76aaf0203
+DECL|enum|__anon28c18cdb0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1102,6 +1102,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_selection_new:  *  * Creates a new #GimpColorSelection widget.  *  * Return value: The new #GimpColorSelection widget.  **/
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -1132,6 +1136,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_selection_set_show_alpha:  * @selection:  A #GimpColorSelection widget.  * @show_alpha: The new @show_alpha setting.  *  * Sets the @show_alpha property of the @selection widget.  **/
+end_comment
 
 begin_function
 name|void
@@ -1241,6 +1249,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_selection_get_show_alpha:  * @selection: A #GimpColorSelection widget.  *  * Returns the @selection's @show_alpha property.  *  * Return value: #TRUE if the #GimpColorSelection has alpha controls.  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_color_selection_get_show_alpha (GimpColorSelection * selection)
@@ -1268,6 +1280,10 @@ name|show_alpha
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_selection_set_color:  * @selection: A #GimpColorSelection widget.  * @color:     The @color to set as current color.  *  * Sets the #GimpColorSelection's current color to the new @color.  **/
+end_comment
 
 begin_function
 name|void
@@ -1338,6 +1354,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_selection_get_color:  * @selection: A #GimpColorSelection widget.  * @color:     Return location for the @selection's current @color.  *  * Returns the #GimpColorSelection's current color.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_color_selection_get_color (GimpColorSelection * selection,GimpRGB * color)
@@ -1376,6 +1396,10 @@ name|rgb
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_selection_set_old_color:  * @selection: A #GimpColorSelection widget.  * @color:     The @color to set as old color.  *  * Sets the #GimpColorSelection's old color.  **/
+end_comment
 
 begin_function
 name|void
@@ -1422,6 +1446,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_color_selection_get_old_color:  * @selection: A #GimpColorSelection widget.  * @color:     Return location for the @selection's old @color.  *  * Returns the #GimpColorSelection's old color.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_color_selection_get_old_color (GimpColorSelection * selection,GimpRGB * color)
@@ -1465,6 +1493,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_selection_reset:  * @selection: A #GimpColorSelection widget.  *  * Sets the #GimpColorSelection's current color to its old color.  **/
+end_comment
 
 begin_function
 name|void
@@ -1510,6 +1542,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_selection_color_changed:  * @selection: A #GimpColorSelection widget.  *  * Emits the "color_changed" signal.  **/
+end_comment
 
 begin_function
 name|void
