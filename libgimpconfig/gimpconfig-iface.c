@@ -751,7 +751,7 @@ name|error
 argument_list|,
 name|GIMP_CONFIG_ERROR
 argument_list|,
-name|GIMP_CONFIG_ERROR_OPEN
+name|GIMP_CONFIG_ERROR_WRITE
 argument_list|,
 name|_
 argument_list|(
@@ -884,6 +884,60 @@ operator|!
 name|success
 condition|)
 block|{
+name|gchar
+modifier|*
+name|msg
+decl_stmt|;
+if|if
+condition|(
+name|g_file_test
+argument_list|(
+name|filename
+argument_list|,
+name|G_FILE_TEST_EXIST
+argument_list|)
+condition|)
+block|{
+name|msg
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Error when writing to temporary file for '%s': %s\n"
+literal|"The original file has not been touched."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|msg
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Error when writing to temporary file for '%s': %s\n"
+literal|"No file has been created."
+argument_list|)
+argument_list|,
+name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|g_set_error
 argument_list|(
 name|error
@@ -892,17 +946,7 @@ name|GIMP_CONFIG_ERROR
 argument_list|,
 name|GIMP_CONFIG_ERROR_WRITE
 argument_list|,
-name|_
-argument_list|(
-literal|"Error when writing to file '%s': %s"
-argument_list|)
-argument_list|,
-name|tmpname
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
-argument_list|)
+name|msg
 argument_list|)
 expr_stmt|;
 name|unlink
@@ -937,7 +981,7 @@ name|error
 argument_list|,
 name|GIMP_CONFIG_ERROR
 argument_list|,
-name|GIMP_CONFIG_ERROR_OPEN
+name|GIMP_CONFIG_ERROR_WRITE
 argument_list|,
 name|_
 argument_list|(
@@ -1666,7 +1710,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23597a0108
+DECL|struct|__anon2b6600930108
 block|{
 DECL|member|key
 name|gchar
