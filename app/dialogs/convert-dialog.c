@@ -96,19 +96,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a300ab40108
+DECL|struct|__anon2b7a425a0108
 block|{
 DECL|member|shell
 name|GtkWidget

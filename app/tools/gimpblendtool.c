@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -354,7 +348,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0593980108
+DECL|struct|__anon293362a90108
 block|{
 DECL|member|offset
 name|gdouble
@@ -406,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0593980208
+DECL|struct|__anon293362a90208
 block|{
 DECL|member|PR
 name|PixelRegion

@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpairbrushtool.h"
 end_include
 

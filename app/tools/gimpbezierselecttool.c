@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -269,7 +263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796c7d30108
+DECL|struct|__anon29f4c8c60108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -305,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796c7d30208
+DECL|struct|__anon29f4c8c60208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -360,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796c7d30308
+DECL|struct|__anon29f4c8c60308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -526,7 +520,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2796c7d30403
+DECL|enum|__anon29f4c8c60403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT

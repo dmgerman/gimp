@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -97,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay_ops.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"selection.h"
 end_include
 
 begin_include

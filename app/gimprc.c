@@ -202,12 +202,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -288,7 +282,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7a431a0103
+DECL|enum|__anon2b9f8d490103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

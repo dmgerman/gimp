@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -233,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcfd70f0103
+DECL|enum|__anon2c8882420103
 block|{
 DECL|enumerator|PAINT
 name|PAINT

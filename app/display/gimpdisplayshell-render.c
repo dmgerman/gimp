@@ -81,12 +81,6 @@ directive|include
 file|"image_render.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"scale.h"
-end_include
-
 begin_define
 DECL|macro|MAX_PREVIEW_SIZE
 define|#

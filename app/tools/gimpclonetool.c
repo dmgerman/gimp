@@ -138,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -203,7 +197,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0ff06a0103
+DECL|enum|__anon275998990103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
