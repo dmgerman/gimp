@@ -166,7 +166,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86638d0108
+DECL|struct|__anon2ba9bb120108
 block|{
 DECL|member|bits
 name|unsigned

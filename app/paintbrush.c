@@ -1841,7 +1841,7 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
-comment|/*  Get a region which can be used to p\\aint to  */
+comment|/*  Get a region which can be used to paint to  */
 if|if
 condition|(
 operator|!
@@ -1923,7 +1923,7 @@ operator|=
 name|local_blend
 expr_stmt|;
 comment|/* hard core to mode LOOP_TRIANGLE */
-comment|/* need to maek a gui to handle this */
+comment|/* need to make a gui to handle this */
 name|mode
 operator|=
 name|gradient_type
