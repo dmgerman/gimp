@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppalette_pdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmath.h"
 end_include
 
