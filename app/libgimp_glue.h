@@ -16,20 +16,16 @@ directive|define
 name|__LIBGIMP_GLUE_H__
 end_define
 
-begin_if
-if|#
-directive|if
-operator|!
-name|defined
-argument_list|(
+begin_ifndef
+ifndef|#
+directive|ifndef
 name|__LIBGIMP_GLUE_C__
-argument_list|)
-end_if
+end_ifndef
 
 begin_error
 error|#
 directive|error
-literal|"You must not include app/libgimp_glue.h."
+error|You must not #include "libgimp_glue.h"
 end_error
 
 begin_endif

@@ -16,6 +16,23 @@ directive|define
 name|__APP_PROCS_H__
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_APP_GLUE_COMPILATION
+end_ifndef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: Dont #include "app_procs.h"
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*  *  this is a temp hack  */
 end_comment

@@ -16,6 +16,23 @@ directive|define
 name|__ERRORS_H__
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_APP_GLUE_COMPILATION
+end_ifndef
+
+begin_error
+error|#
+directive|error
+error|You must not #include "errors.h" from an app/ subdir
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function_decl
 name|void
 name|gimp_message_log_func

@@ -16,6 +16,23 @@ directive|define
 name|__APPENV_H__
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_APP_GLUE_COMPILATION
+end_ifndef
+
+begin_error
+error|#
+directive|error
+error|You must not #include "appenv.h" from an app/ subdir
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*  command line options  */
 end_comment
