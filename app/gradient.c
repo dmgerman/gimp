@@ -334,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27457fba0103
+DECL|enum|__anon292f42310103
 typedef|typedef
 enum|enum
 block|{
@@ -361,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27457fba0203
+DECL|enum|__anon292f42310203
 typedef|typedef
 enum|enum
 block|{
@@ -506,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27457fba0303
+DECL|enum|__anon292f42310303
 typedef|typedef
 enum|enum
 block|{
@@ -530,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27457fba0408
+DECL|struct|__anon292f42310408
 typedef|typedef
 struct|struct
 block|{
@@ -810,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon27457fba0508
+DECL|struct|__anon292f42310508
 struct|struct
 block|{
 DECL|member|r
@@ -5067,6 +5067,37 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+comment|/* hbox for that holds the frame for gradient preview and gradient control;             this is only here, because resizing the preview doesn't work (and is disabled)             to keep the preview and controls together */
+name|hbox
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
+argument_list|)
+expr_stmt|;
 comment|/* Frame for gradient preview and gradient control */
 name|frame
 operator|=
@@ -5089,7 +5120,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|hbox
 argument_list|)
 argument_list|,
 name|frame
@@ -5106,10 +5137,9 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/* hbox for gradient preview and gradient control; this is only because 	   resizing the preview doesn't work (and is disabled) to keep the  	   preview and controls together in the middle of the frame. */
-name|hbox
+name|gvbox
 operator|=
-name|gtk_hbox_new
+name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -5123,38 +5153,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|hbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox
-argument_list|)
-expr_stmt|;
 name|gvbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-comment|/* gtk_container_add(GTK_CONTAINER(frame), gvbox); */
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|gvbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
