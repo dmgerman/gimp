@@ -302,7 +302,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc9ce50108
+DECL|struct|__anon29405ef00108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2550,6 +2550,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|g_list_free
+argument_list|(
+name|session_geometry_updates
+argument_list|)
+expr_stmt|;
 name|session_geometry_updates
 operator|=
 name|NULL
@@ -2700,7 +2705,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon27cc9ce50208
+DECL|struct|__anon29405ef00208
 struct|struct
 block|{
 DECL|member|label
@@ -2740,7 +2745,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon27cc9ce50308
+DECL|struct|__anon29405ef00308
 struct|struct
 block|{
 DECL|member|label
@@ -2809,7 +2814,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon27cc9ce50408
+DECL|struct|__anon29405ef00408
 struct|struct
 block|{
 DECL|member|label
