@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c47b2e0103
+DECL|enum|__anon2b3c1c620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -486,7 +486,7 @@ name|PROP_WIDTH
 argument_list|,
 literal|"width"
 argument_list|,
-name|NULL
+literal|"The image width in pixels."
 argument_list|,
 literal|1
 argument_list|,
@@ -505,7 +505,7 @@ name|PROP_HEIGHT
 argument_list|,
 literal|"height"
 argument_list|,
-name|NULL
+literal|"The image height in pixels."
 argument_list|,
 literal|1
 argument_list|,
@@ -524,7 +524,8 @@ name|PROP_UNIT
 argument_list|,
 literal|"unit"
 argument_list|,
-name|NULL
+literal|"The unit used for coordinate display "
+literal|"when not in dot-for-dot mode."
 argument_list|,
 name|FALSE
 argument_list|,
@@ -543,7 +544,7 @@ name|PROP_XRESOLUTION
 argument_list|,
 literal|"xresolution"
 argument_list|,
-name|NULL
+literal|"The horizonal resolution in dpi."
 argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
@@ -562,7 +563,7 @@ name|PROP_YRESOLUTION
 argument_list|,
 literal|"yresolution"
 argument_list|,
-name|NULL
+literal|"The vertical resolution in dpi."
 argument_list|,
 name|GIMP_MIN_RESOLUTION
 argument_list|,
@@ -581,7 +582,7 @@ name|PROP_RESOLUTION_UNIT
 argument_list|,
 literal|"resolution-unit"
 argument_list|,
-name|NULL
+literal|"The unit used to display resolutions."
 argument_list|,
 name|FALSE
 argument_list|,

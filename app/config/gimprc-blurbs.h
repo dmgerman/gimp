@@ -192,15 +192,6 @@ value|N_("Tools such as fuzzy-select and bucket fill find regions based on a " \
 end_define
 
 begin_define
-DECL|macro|DEFAULT_UNIT_BLURB
-define|#
-directive|define
-name|DEFAULT_UNIT_BLURB
-define|\
-value|"Sets the default unit for new images and for the \"File/New\" dialog. " \ "This units will be used for coordinate display when not in dot-for-dot " \ "mode."
-end_define
-
-begin_define
 DECL|macro|ENVIRON_PATH_BLURB
 define|#
 directive|define
