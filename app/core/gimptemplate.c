@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b449a7c0103
+DECL|enum|__anon2c1bf7680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -410,7 +410,7 @@ literal|"width"
 argument_list|,
 name|NULL
 argument_list|,
-literal|1
+name|GIMP_MIN_IMAGE_SIZE
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
@@ -429,7 +429,7 @@ literal|"height"
 argument_list|,
 name|NULL
 argument_list|,
-literal|1
+name|GIMP_MIN_IMAGE_SIZE
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
@@ -461,7 +461,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
 argument_list|(
 name|object_class
 argument_list|,
@@ -474,16 +474,12 @@ argument_list|(
 literal|"The horizonal image resolution."
 argument_list|)
 argument_list|,
-name|GIMP_MIN_RESOLUTION
-argument_list|,
-name|GIMP_MAX_RESOLUTION
-argument_list|,
 literal|72.0
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
 argument_list|(
 name|object_class
 argument_list|,
@@ -495,10 +491,6 @@ name|N_
 argument_list|(
 literal|"The vertical image resolution."
 argument_list|)
-argument_list|,
-name|GIMP_MIN_RESOLUTION
-argument_list|,
-name|GIMP_MAX_RESOLUTION
 argument_list|,
 literal|72.0
 argument_list|,

@@ -226,7 +226,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eccd9b0103
+DECL|enum|__anon2a0aa3810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -667,7 +667,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
 argument_list|(
 name|object_class
 argument_list|,
@@ -677,16 +677,12 @@ literal|"monitor-xresolution"
 argument_list|,
 name|MONITOR_XRESOLUTION_BLURB
 argument_list|,
-name|GIMP_MIN_RESOLUTION
-argument_list|,
-name|G_MAXDOUBLE
-argument_list|,
 literal|72.0
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
 argument_list|(
 name|object_class
 argument_list|,
@@ -695,10 +691,6 @@ argument_list|,
 literal|"monitor-yresolution"
 argument_list|,
 name|MONITOR_YRESOLUTION_BLURB
-argument_list|,
-name|GIMP_MIN_RESOLUTION
-argument_list|,
-name|G_MAXDOUBLE
 argument_list|,
 literal|72.0
 argument_list|,

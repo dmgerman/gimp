@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6ebf2a0103
+DECL|enum|__anon295474310103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE
@@ -476,6 +476,23 @@ parameter_list|,
 name|max
 parameter_list|,
 define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_double (name, NULL, blurb,\                                    min, max, default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
+end_define
+
+begin_define
+define|#
+directive|define
+name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_RESOLUTION (class,id,\\\nname,blurb,default,flags)
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+define|default, flags)\   g_object_class_install_property (class, id,\                                    g_param_spec_double (name, NULL, blurb,\                                    GIMP_MIN_RESOLUTION, GIMP_MAX_RESOLUTION, \                                    default,\                                    flags | GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_define

@@ -671,6 +671,16 @@ define|#
 directive|define
 name|GIMP_STOCK_QMASK_ON
 value|"gimp-qmask-on"
+DECL|macro|GIMP_STOCK_HISTOGRAM_LINEAR
+define|#
+directive|define
+name|GIMP_STOCK_HISTOGRAM_LINEAR
+value|"gimp-histogram-linear"
+DECL|macro|GIMP_STOCK_HISTOGRAM_LOGARITHMIC
+define|#
+directive|define
+name|GIMP_STOCK_HISTOGRAM_LOGARITHMIC
+value|"gimp-histogram-logarithmic"
 DECL|macro|GIMP_STOCK_CLOSE
 define|#
 directive|define
