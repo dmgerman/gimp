@@ -837,7 +837,7 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
-name|gtk_object_destroy
+name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(

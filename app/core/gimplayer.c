@@ -122,7 +122,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2a4728c90103
+DECL|enum|__anon2b56ec2e0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -2299,7 +2299,7 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|gtk_object_destroy
+name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(

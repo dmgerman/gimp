@@ -2570,7 +2570,10 @@ argument_list|)
 expr_stmt|;
 name|fuzzy_mask
 operator|=
+name|channel_ref
+argument_list|(
 name|new
+argument_list|)
 expr_stmt|;
 comment|/*  calculate and allocate a new XSegment array which represents the boundary    *  of the color-contiguous region    */
 name|pixel_region_init
@@ -3591,7 +3594,7 @@ else|:
 name|FALSE
 expr_stmt|;
 block|}
-comment|/*  call the ellipse_select procedure  */
+comment|/*  call the fuzzy_select procedure  */
 if|if
 condition|(
 name|success

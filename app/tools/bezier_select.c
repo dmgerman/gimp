@@ -5138,6 +5138,8 @@ name|bezier_sel
 operator|->
 name|mask
 operator|=
+name|channel_ref
+argument_list|(
 name|channel_new_mask
 argument_list|(
 name|gdisp
@@ -5157,6 +5159,7 @@ operator|->
 name|gimage
 operator|->
 name|height
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* allocate room for the scanlines */
