@@ -27,6 +27,12 @@ directive|include
 file|"gimpui.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp-intl.h"
+end_include
+
 begin_define
 DECL|macro|FSEL_DATA_KEY
 define|#
@@ -38,16 +44,16 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baac7600108
+DECL|struct|__anon2a43299c0108
 block|{
-DECL|member|dname
+DECL|member|title
 name|gchar
 modifier|*
-name|dname
+name|title
 decl_stmt|;
-DECL|member|cback
+DECL|member|callback
 name|GimpRunFontCallback
-name|cback
+name|callback
 decl_stmt|;
 DECL|member|button
 name|GtkWidget
@@ -84,14 +90,15 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|font_select_invoker (gchar * name,gint closing,gpointer data)
+DECL|function|font_select_invoker (const gchar * name,gboolean closing,gpointer data)
 name|font_select_invoker
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gint
+name|gboolean
 name|closing
 parameter_list|,
 name|gpointer
@@ -108,6 +115,22 @@ operator|*
 operator|)
 name|data
 decl_stmt|;
+name|g_free
+argument_list|(
+name|fsel
+operator|->
+name|font_name
+argument_list|)
+expr_stmt|;
+name|fsel
+operator|->
+name|font_name
+operator|=
+name|g_strdup
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -124,15 +147,11 @@ if|if
 condition|(
 name|fsel
 operator|->
-name|cback
-operator|!=
-name|NULL
+name|callback
 condition|)
-call|(
 name|fsel
 operator|->
-name|cback
-call|)
+name|callback
 argument_list|(
 name|name
 argument_list|,
@@ -147,23 +166,12 @@ if|if
 condition|(
 name|closing
 condition|)
-block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|fsel
-operator|->
-name|button
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|fsel
 operator|->
 name|font_popup_pnt
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -191,32 +199,46 @@ operator|*
 operator|)
 name|data
 decl_stmt|;
-name|gtk_widget_set_sensitive
+if|if
+condition|(
+name|fsel
+operator|->
+name|font_popup_pnt
+condition|)
+block|{
+comment|/*  calling gimp_fonts_set_popup() raises the dialog  */
+name|gimp_fonts_set_popup
 argument_list|(
 name|fsel
 operator|->
-name|button
+name|font_popup_pnt
 argument_list|,
-name|FALSE
+name|fsel
+operator|->
+name|font_name
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
 name|fsel
 operator|->
 name|font_popup_pnt
 operator|=
 name|gimp_interactive_selection_font
 argument_list|(
-operator|(
 name|fsel
 operator|->
-name|dname
-operator|)
+name|title
 condition|?
 name|fsel
 operator|->
-name|dname
+name|title
 else|:
+name|_
+argument_list|(
 literal|"Font Selection"
+argument_list|)
 argument_list|,
 name|fsel
 operator|->
@@ -228,28 +250,31 @@ name|fsel
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_widget:  * @dname: Title of the dialog to use.  NULL means to use the default title.  * @ifont: Initial font name. NULL means to use current selection.   * @cback: a function to call when the selected font changes.  * @data: a pointer to arbitary data to be used in the call to @cback.  *  * Creates a new #GtkWidget that completely controls the selection of a   * font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns:A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_font_select_widget:  * @title: Title of the dialog to use or %NULL means to use the default title.  * @font_name: Initial font name.   * @callback: a function to call when the selected font changes.  * @data: a pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of a   * font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns:A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_font_select_widget (gchar * dname,gchar * ifont,GimpRunFontCallback cback,gpointer data)
+DECL|function|gimp_font_select_widget (const gchar * title,const gchar * font_name,GimpRunFontCallback callback,gpointer data)
 name|gimp_font_select_widget
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
-name|dname
+name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
-name|ifont
+name|font_name
 parameter_list|,
 name|GimpRunFontCallback
-name|cback
+name|callback
 parameter_list|,
 name|gpointer
 name|data
@@ -267,9 +292,18 @@ name|FSelect
 modifier|*
 name|fsel
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|font_name
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|fsel
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|FSelect
 argument_list|,
@@ -278,9 +312,9 @@ argument_list|)
 expr_stmt|;
 name|fsel
 operator|->
-name|cback
+name|callback
 operator|=
-name|cback
+name|callback
 expr_stmt|;
 name|fsel
 operator|->
@@ -292,19 +326,19 @@ name|fsel
 operator|->
 name|font_name
 operator|=
-name|ifont
+name|g_strdup
+argument_list|(
+name|font_name
+argument_list|)
 expr_stmt|;
 name|fsel
 operator|->
-name|dname
+name|title
 operator|=
-name|dname
-expr_stmt|;
-name|fsel
-operator|->
-name|font_popup_pnt
-operator|=
-name|NULL
+name|g_strdup
+argument_list|(
+name|title
+argument_list|)
 expr_stmt|;
 name|fsel
 operator|->
@@ -345,7 +379,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|ifont
+name|font_name
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -502,21 +536,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_widget_set_popup:  * @widget: A font select widget.  * @fname: Font name to set. NULL means no change.   *  * Sets the current font for the font  * select widget.  Calls the callback function if one was  * supplied in the call to gimp_font_select_widget().  */
+comment|/**  * gimp_font_select_widget_set_popup:  * @widget: A font select widget.  * @font_name: Font name to set; %NULL means no change.   *  * Sets the current font for the font  * select widget.  Calls the callback function if one was  * supplied in the call to gimp_font_select_widget().  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_font_select_widget_set_popup (GtkWidget * widget,gchar * fname)
+DECL|function|gimp_font_select_widget_set_popup (GtkWidget * widget,const gchar * font_name)
 name|gimp_font_select_widget_set_popup
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
-name|fname
+name|font_name
 parameter_list|)
 block|{
 name|FSelect
@@ -546,7 +581,7 @@ condition|)
 block|{
 name|font_select_invoker
 argument_list|(
-name|fname
+name|font_name
 argument_list|,
 name|FALSE
 argument_list|,
@@ -565,7 +600,11 @@ name|fsel
 operator|->
 name|font_popup_pnt
 argument_list|,
-name|fname
+operator|(
+name|gchar
+operator|*
+operator|)
+name|font_name
 argument_list|)
 expr_stmt|;
 block|}

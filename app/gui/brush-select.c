@@ -1552,6 +1552,13 @@ argument_list|,
 name|bsp
 argument_list|)
 expr_stmt|;
+name|brush_select_change_callbacks
+argument_list|(
+name|bsp
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

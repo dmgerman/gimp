@@ -111,7 +111,7 @@ name|gint
 name|height
 decl_stmt|;
 DECL|member|brush_mask_data
-name|gchar
+name|guchar
 modifier|*
 name|brush_mask_data
 decl_stmt|;
@@ -266,7 +266,7 @@ name|gint
 name|bytes
 decl_stmt|;
 DECL|member|pattern_mask_data
-name|gchar
+name|guchar
 modifier|*
 name|pattern_mask_data
 decl_stmt|;
@@ -5079,20 +5079,18 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/* Can only be used in conjuction with gdk since we need to tie into the input   * selection mech.  */
-end_comment
-
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_interactive_selection_brush (gchar * dialogname,gchar * brush_name,gdouble opacity,gint spacing,gint paint_mode,GimpRunBrushCallback callback,gpointer data)
+DECL|function|gimp_interactive_selection_brush (const gchar * title,const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,GimpRunBrushCallback callback,gpointer data)
 name|gimp_interactive_selection_brush
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
-name|dialogname
+name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|brush_name
@@ -5103,7 +5101,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|GimpRunBrushCallback
@@ -5295,7 +5293,7 @@ name|pdbname
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|dialogname
+name|title
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
@@ -5380,13 +5378,15 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_interactive_selection_font (gchar * dialogname,gchar * font_name,GimpRunFontCallback callback,gpointer data)
+DECL|function|gimp_interactive_selection_font (const gchar * title,const gchar * font_name,GimpRunFontCallback callback,gpointer data)
 name|gimp_interactive_selection_font
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
-name|dialogname
+name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|font_name
@@ -5525,13 +5525,12 @@ name|pdbname
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|dialogname
+name|title
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
 name|font_name
 argument_list|,
-comment|/*name*/
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
@@ -5592,19 +5591,21 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_interactive_selection_gradient (gchar * dialogname,gchar * gradient_name,gint sample_sz,GimpRunGradientCallback callback,gpointer data)
+DECL|function|gimp_interactive_selection_gradient (const gchar * title,const gchar * gradient_name,gint sample_size,GimpRunGradientCallback callback,gpointer data)
 name|gimp_interactive_selection_gradient
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
-name|dialogname
+name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|gradient_name
 parameter_list|,
 name|gint
-name|sample_sz
+name|sample_size
 parameter_list|,
 name|GimpRunGradientCallback
 name|callback
@@ -5756,18 +5757,16 @@ name|pdbname
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|dialogname
+name|title
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
 name|gradient_name
 argument_list|,
-comment|/*name*/
 name|GIMP_PDB_INT32
 argument_list|,
-name|sample_sz
+name|sample_size
 argument_list|,
-comment|/* size of sample to be returned */
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
@@ -5828,13 +5827,15 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_interactive_selection_pattern (gchar * dialogname,gchar * pattern_name,GimpRunPatternCallback callback,gpointer data)
+DECL|function|gimp_interactive_selection_pattern (const gchar * title,const gchar * pattern_name,GimpRunPatternCallback callback,gpointer data)
 name|gimp_interactive_selection_pattern
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
-name|dialogname
+name|title
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|pattern_name
@@ -6013,13 +6014,12 @@ name|pdbname
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
-name|dialogname
+name|title
 argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
 name|pattern_name
 argument_list|,
-comment|/*name*/
 name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;

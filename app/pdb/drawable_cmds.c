@@ -4863,7 +4863,7 @@ init|=
 literal|0
 decl_stmt|;
 name|gint32
-name|num_pixels
+name|num_bytes
 init|=
 literal|0
 decl_stmt|;
@@ -5049,7 +5049,7 @@ condition|(
 name|buf
 condition|)
 block|{
-name|num_pixels
+name|num_bytes
 operator|=
 name|buf
 operator|->
@@ -5065,23 +5065,14 @@ name|bytes
 expr_stmt|;
 name|thumbnail_data
 operator|=
-name|g_new
+name|g_memdup
 argument_list|(
-name|guint8
-argument_list|,
-name|num_pixels
-argument_list|)
-expr_stmt|;
-name|g_memmove
-argument_list|(
-name|thumbnail_data
-argument_list|,
 name|temp_buf_data
 argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-name|num_pixels
+name|num_bytes
 argument_list|)
 expr_stmt|;
 name|width
@@ -5162,7 +5153,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|num_pixels
+name|num_bytes
 expr_stmt|;
 name|return_args
 index|[
@@ -5254,7 +5245,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"thumbnail_data_count"
 block|,
-literal|"The number of pixels in thumbnail data"
+literal|"The number of bytes in thumbnail data"
 block|}
 block|,
 block|{
