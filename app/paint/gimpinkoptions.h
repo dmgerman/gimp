@@ -116,9 +116,13 @@ DECL|member|size
 name|gdouble
 name|size
 decl_stmt|;
-DECL|member|sensitivity
+DECL|member|tilt_angle
 name|gdouble
-name|sensitivity
+name|tilt_angle
+decl_stmt|;
+DECL|member|size_sensitivity
+name|gdouble
+name|size_sensitivity
 decl_stmt|;
 DECL|member|vel_sensitivity
 name|gdouble
@@ -127,10 +131,6 @@ decl_stmt|;
 DECL|member|tilt_sensitivity
 name|gdouble
 name|tilt_sensitivity
-decl_stmt|;
-DECL|member|tilt_angle
-name|gdouble
-name|tilt_angle
 decl_stmt|;
 DECL|member|blob_type
 name|GimpInkBlobType

@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -78,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection_options.h"
+file|"gimpselectionoptions.h"
 end_include
 
 begin_function_decl

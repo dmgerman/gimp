@@ -113,7 +113,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"transform_options.h"
+file|"gimptransformoptions.h"
 end_include
 
 begin_include

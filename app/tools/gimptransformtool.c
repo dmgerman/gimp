@@ -161,13 +161,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool_manager.h"
+file|"gimptransformoptions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"transform_options.h"
+file|"tool_manager.h"
 end_include
 
 begin_include

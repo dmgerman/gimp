@@ -1944,7 +1944,7 @@ literal|1.0
 operator|+
 name|options
 operator|->
-name|sensitivity
+name|size_sensitivity
 operator|*
 operator|(
 literal|2.0
@@ -1988,6 +1988,7 @@ endif|#
 directive|endif
 name|size
 operator|=
+operator|(
 name|options
 operator|->
 name|vel_sensitivity
@@ -2009,9 +2010,7 @@ operator|*
 operator|(
 literal|2.0
 operator|*
-operator|(
 name|velocity
-operator|)
 operator|)
 operator|)
 operator|)
@@ -2025,6 +2024,7 @@ name|vel_sensitivity
 operator|)
 operator|*
 name|size
+operator|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -2055,7 +2055,7 @@ literal|1.0
 operator|+
 name|options
 operator|->
-name|sensitivity
+name|size_sensitivity
 operator|)
 condition|)
 name|size
@@ -2069,7 +2069,7 @@ literal|1.0
 operator|+
 name|options
 operator|->
-name|sensitivity
+name|size_sensitivity
 operator|)
 expr_stmt|;
 if|if
@@ -3091,7 +3091,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c668c6b0103
+DECL|enum|__anon2c62cf4c0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

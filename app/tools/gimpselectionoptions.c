@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbycolorselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpellipseselecttool.h"
 end_include
 
@@ -84,19 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprectselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpbycolorselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"selection_options.h"
+file|"gimpselectionoptions.h"
 end_include
 
 begin_include
@@ -113,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2e9d90103
+DECL|enum|__anon29300f210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2446,7 +2440,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|optionmenu
+name|width_spinbutton
 argument_list|)
 argument_list|,
 literal|"set_digits"

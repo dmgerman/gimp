@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection_options.h"
+file|"gimpselectionoptions.h"
 end_include
 
 begin_include

@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"transform_options.h"
+file|"gimptransformoptions.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1e95ac0103
+DECL|enum|__anon2b9effe80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -150,7 +150,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"selection_options.h"
+file|"gimpselectionoptions.h"
 end_include
 
 begin_include
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c765ea80108
+DECL|struct|__anon298d95290108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c765ea80208
+DECL|struct|__anon298d95290208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c765ea80308
+DECL|struct|__anon298d95290308
 block|{
 DECL|member|curve_count
 name|CountCurves

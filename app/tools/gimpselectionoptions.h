@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SELECTION_OPTIONS_H__
+name|__GIMP_SELECTION_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SELECTION_OPTIONS_H__
+DECL|macro|__GIMP_SELECTION_OPTIONS_H__
 define|#
 directive|define
-name|__SELECTION_OPTIONS_H__
+name|__GIMP_SELECTION_OPTIONS_H__
 end_define
 
 begin_include
@@ -203,7 +203,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SELCTION_OPTIONS_H__  */
+comment|/*  __GIMP_SELCTION_OPTIONS_H__  */
 end_comment
 
 end_unit

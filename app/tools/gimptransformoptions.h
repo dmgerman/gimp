@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__TRANSFORM_OPTIONS_H__
+name|__GIMP_TRANSFORM_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__TRANSFORM_OPTIONS_H_
+DECL|macro|__GIMP_TRANSFORM_OPTIONS_H_
 define|#
 directive|define
-name|__TRANSFORM_OPTIONS_H_
+name|__GIMP_TRANSFORM_OPTIONS_H_
 end_define
 
 begin_include
@@ -175,7 +175,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __TRANSFORM_OPTIONS_H__ */
+comment|/* __GIMP_TRANSFORM_OPTIONS_H__ */
 end_comment
 
 end_unit
