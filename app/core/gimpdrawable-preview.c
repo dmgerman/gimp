@@ -148,6 +148,7 @@ parameter_list|(
 name|GimpImageBaseType
 name|type
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -698,12 +699,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_scale (GimpImageBaseType type,guchar * cmap,PixelRegion * srcPR,PixelRegion * destPR,gint subsample)
+DECL|function|gimp_drawable_preview_scale (GimpImageBaseType type,const guchar * cmap,PixelRegion * srcPR,PixelRegion * destPR,gint subsample)
 name|gimp_drawable_preview_scale
 parameter_list|(
 name|GimpImageBaseType
 name|type
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -803,6 +805,17 @@ decl_stmt|;
 name|gboolean
 name|advance_dest
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|type
+operator|!=
+name|GIMP_INDEXED
+operator|||
+name|cmap
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|orig_width
 operator|=
 name|srcPR

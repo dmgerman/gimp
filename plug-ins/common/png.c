@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b727b0c0108
+DECL|struct|__anon28cc4b900108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b727b0c0208
+DECL|struct|__anon28cc4b900208
 block|{
 DECL|member|run
 name|gboolean
@@ -2968,8 +2968,22 @@ condition|;
 operator|++
 name|empty
 control|)
-empty_stmt|;
 comment|/* Calculates number of fully transparent "empty" entries */
+empty_stmt|;
+comment|/*  keep at least one entry  */
+name|empty
+operator|=
+name|MIN
+argument_list|(
+name|empty
+argument_list|,
+name|info
+operator|->
+name|num_palette
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|gimp_image_set_cmap
 argument_list|(
 name|image
