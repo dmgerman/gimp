@@ -826,7 +826,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"Refresh Pallettes"
+literal|"Refresh Palettes"
 block|,
 literal|0
 block|,
