@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* TODO  * ----  *  * 1. Run in non-interactive mode (need to figure out useful  *    way for a script to give the 19N paramters for an image).  *    Perhaps just support saving parameters to a file, script  *    passes file name.  (The save-to-file part is already done [Yeti])  * 2. Save settings on a per-layer basis (long term, needs GIMP  *    support to do properly). Load/save from affine parameters?  * 3. Figure out if we need multiple phases for supersampled  *    brushes.  * 4. (minor) Make undo work correctly when focus is in entry widget.  *    (This seems fixed now (by mere change to spinbuttons) [Yeti])  */
+comment|/* TODO  * ----  *  * 1. Run in non-interactive mode (need to figure out useful way for a  *    script to give the 19N paramters for an image).  Perhaps just  *    support saving parameters to a file, script passes file name.  * 2. Figure out if we need multiple phases for supersampled brushes.  */
 end_comment
 
 begin_include
@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293d398a0103
+DECL|enum|__anon2b4eb38b0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293d398a0203
+DECL|enum|__anon2b4eb38b0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d398a0308
+DECL|struct|__anon2b4eb38b0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -210,7 +210,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon293d398a040a
+DECL|union|__anon2b4eb38b040a
 block|{
 DECL|member|d
 name|gdouble
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d398a0508
+DECL|struct|__anon2b4eb38b0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d398a0608
+DECL|struct|__anon2b4eb38b0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -300,7 +300,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d398a0708
+DECL|struct|__anon2b4eb38b0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d398a0808
+DECL|struct|__anon2b4eb38b0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -403,7 +403,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d398a0908
+DECL|struct|__anon2b4eb38b0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -552,7 +552,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d398a0a08
+DECL|struct|__anon2b4eb38b0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1410,7 +1410,7 @@ init|=
 block|{
 name|FALSE
 block|,
-comment|/* run */
+comment|/* run          */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1585,7 +1585,7 @@ index|]
 decl_stmt|;
 name|GimpDrawable
 modifier|*
-name|active_drawable
+name|drawable
 decl_stmt|;
 name|GimpRunMode
 name|run_mode
@@ -1606,6 +1606,8 @@ name|image_id
 decl_stmt|;
 name|gboolean
 name|found_parasite
+init|=
+name|FALSE
 decl_stmt|;
 name|run_mode
 operator|=
@@ -1662,7 +1664,7 @@ name|data
 operator|.
 name|d_image
 expr_stmt|;
-name|active_drawable
+name|drawable
 operator|=
 name|gimp_drawable_get
 argument_list|(
@@ -1689,16 +1691,12 @@ name|parasite
 operator|=
 name|gimp_drawable_parasite_find
 argument_list|(
-name|active_drawable
+name|drawable
 operator|->
 name|drawable_id
 argument_list|,
 name|IFSCOMPOSE_PARASITE
 argument_list|)
-expr_stmt|;
-name|found_parasite
-operator|=
-name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -1735,17 +1733,17 @@ condition|)
 block|{
 name|gint
 name|length
-decl_stmt|;
-name|length
-operator|=
+init|=
 name|gimp_get_data_size
 argument_list|(
 name|IFSCOMPOSE_DATA
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|length
+operator|>
+literal|0
 condition|)
 block|{
 name|gchar
@@ -1797,7 +1795,7 @@ condition|(
 operator|!
 name|ifs_compose_dialog
 argument_list|(
-name|active_drawable
+name|drawable
 argument_list|)
 condition|)
 return|return;
@@ -1805,7 +1803,6 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/*  Make sure all the arguments are there!  */
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
@@ -1814,21 +1811,20 @@ break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/*  Possibly retrieve data  */
 block|{
 name|gint
 name|length
-decl_stmt|;
-name|length
-operator|=
+init|=
 name|gimp_get_data_size
 argument_list|(
 name|IFSCOMPOSE_DATA
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|length
+operator|>
+literal|0
 condition|)
 block|{
 name|gchar
@@ -1889,14 +1885,14 @@ operator|&&
 operator|(
 name|gimp_drawable_is_rgb
 argument_list|(
-name|active_drawable
+name|drawable
 operator|->
 name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
 argument_list|(
-name|active_drawable
+name|drawable
 operator|->
 name|drawable_id
 argument_list|)
@@ -1911,11 +1907,11 @@ operator|*
 operator|(
 name|MAX
 argument_list|(
-name|active_drawable
+name|drawable
 operator|->
 name|width
 argument_list|,
-name|active_drawable
+name|drawable
 operator|->
 name|height
 argument_list|)
@@ -1950,7 +1946,7 @@ expr_stmt|;
 comment|/*  run the effect  */
 name|ifs_compose
 argument_list|(
-name|active_drawable
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  Store data for next invocation - both globally and            *  as a parasite on this layer            */
@@ -2000,7 +1996,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_parasite_attach
 argument_list|(
-name|active_drawable
+name|drawable
 operator|->
 name|drawable_id
 argument_list|,
@@ -2028,7 +2024,7 @@ block|{
 comment|/*  run the effect  */
 name|ifs_compose
 argument_list|(
-name|active_drawable
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -2069,7 +2065,7 @@ name|status
 expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
-name|active_drawable
+name|drawable
 argument_list|)
 expr_stmt|;
 block|}
@@ -5773,8 +5769,12 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|g_object_set
-argument_list|(
+name|GtkAction
+modifier|*
+name|act
+decl_stmt|;
+name|act
+operator|=
 name|gtk_ui_manager_get_action
 argument_list|(
 name|ifsDesign
@@ -5783,6 +5783,10 @@ name|ui_manager
 argument_list|,
 literal|"/ui/dummy-menubar/ifs-compose-menu/undo"
 argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|act
 argument_list|,
 literal|"sensitive"
 argument_list|,
@@ -5793,8 +5797,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_object_set
-argument_list|(
+name|act
+operator|=
 name|gtk_ui_manager_get_action
 argument_list|(
 name|ifsDesign
@@ -5803,6 +5807,10 @@ name|ui_manager
 argument_list|,
 literal|"/ui/dummy-menubar/ifs-compose-menu/redo"
 argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|act
 argument_list|,
 literal|"sensitive"
 argument_list|,
@@ -5815,8 +5823,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_object_set
-argument_list|(
+name|act
+operator|=
 name|gtk_ui_manager_get_action
 argument_list|(
 name|ifsDesign
@@ -5825,6 +5833,10 @@ name|ui_manager
 argument_list|,
 literal|"/ui/dummy-menubar/ifs-compose-menu/delete"
 argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|act
 argument_list|,
 literal|"sensitive"
 argument_list|,
@@ -6569,11 +6581,14 @@ name|height
 decl_stmt|;
 name|gint
 name|num_bands
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|band_height
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|band_y
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|band_no
 decl_stmt|;
 name|gint
@@ -6735,13 +6750,18 @@ operator|&
 name|bc
 argument_list|)
 expr_stmt|;
-name|band_y
-operator|=
-literal|0
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 for|for
 control|(
 name|band_no
+operator|=
+literal|0
+operator|,
+name|band_y
 operator|=
 literal|0
 init|;
@@ -6753,27 +6773,11 @@ name|band_no
 operator|++
 control|)
 block|{
-name|guchar
-modifier|*
-name|ptr
-decl_stmt|;
-name|guchar
-modifier|*
-name|maskptr
-decl_stmt|;
-name|guchar
-modifier|*
-name|dest
-decl_stmt|;
-name|guchar
-modifier|*
-name|destrow
-decl_stmt|;
-name|guchar
-name|maskval
-decl_stmt|;
 name|GimpPixelRgn
 name|dest_rgn
+decl_stmt|;
+name|gpointer
+name|pr
 decl_stmt|;
 name|gint
 name|progress
@@ -6781,12 +6785,9 @@ decl_stmt|;
 name|gint
 name|max_progress
 decl_stmt|;
-name|gpointer
-name|pr
-decl_stmt|;
-name|gimp_progress_init
+name|gimp_progress_update
 argument_list|(
-name|NULL
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gimp_progress_set_text
@@ -6888,9 +6889,9 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* transfer the image to the drawable */
-name|gimp_progress_init
+name|gimp_progress_update
 argument_list|(
-name|NULL
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gimp_progress_set_text
@@ -6961,12 +6962,14 @@ name|pr
 argument_list|)
 control|)
 block|{
+name|guchar
+modifier|*
 name|destrow
-operator|=
+init|=
 name|dest_rgn
 operator|.
 name|data
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|j
@@ -6991,10 +6994,12 @@ name|j
 operator|++
 control|)
 block|{
+name|guchar
+modifier|*
 name|dest
-operator|=
+init|=
 name|destrow
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -7021,11 +7026,6 @@ control|)
 block|{
 comment|/* Accumulate a reduced pixel */
 name|gint
-name|ii
-decl_stmt|,
-name|jj
-decl_stmt|;
-name|gint
 name|rtot
 init|=
 literal|0
@@ -7045,6 +7045,11 @@ name|mtot
 init|=
 literal|0
 decl_stmt|;
+name|gint
+name|ii
+decl_stmt|,
+name|jj
+decl_stmt|;
 for|for
 control|(
 name|jj
@@ -7061,6 +7066,14 @@ name|jj
 operator|++
 control|)
 block|{
+name|guchar
+modifier|*
+name|ptr
+decl_stmt|;
+name|guchar
+modifier|*
+name|maskptr
+decl_stmt|;
 name|ptr
 operator|=
 name|data
@@ -7141,12 +7154,13 @@ name|ii
 operator|++
 control|)
 block|{
+name|guchar
 name|maskval
-operator|=
+init|=
 operator|*
 name|maskptr
 operator|++
-expr_stmt|;
+decl_stmt|;
 name|mtot
 operator|+=
 name|maskval

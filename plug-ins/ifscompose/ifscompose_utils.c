@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29774eba0108
+DECL|struct|__anon2880f80d0108
 block|{
 DECL|member|point
 name|GdkPoint
@@ -5119,7 +5119,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|ifs_render (AffElement ** elements,gint num_elements,gint width,gint height,gint nsteps,IfsComposeVals * vals,gint band_y,gint band_height,guchar * data,guchar * mask,guchar * nhits,gint preview)
+DECL|function|ifs_render (AffElement ** elements,gint num_elements,gint width,gint height,gint nsteps,IfsComposeVals * vals,gint band_y,gint band_height,guchar * data,guchar * mask,guchar * nhits,gboolean preview)
 name|ifs_render
 parameter_list|(
 name|AffElement
@@ -5161,7 +5161,7 @@ name|guchar
 modifier|*
 name|nhits
 parameter_list|,
-name|gint
+name|gboolean
 name|preview
 parameter_list|)
 block|{
@@ -5440,7 +5440,7 @@ operator|)
 operator|-
 literal|1
 expr_stmt|;
-comment|/* make sure we don't get bitten 			           by roundoff*/
+comment|/* make sure we don't get bitten by roundoff */
 comment|/* create the brush */
 if|if
 condition|(
@@ -5595,7 +5595,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-literal|254.999
+literal|255.0
 operator|*
 name|r
 operator|+
@@ -5608,7 +5608,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-literal|254.999
+literal|255.0
 operator|*
 name|g
 operator|+
@@ -5621,7 +5621,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-literal|254.999
+literal|255.0
 operator|*
 name|b
 operator|+

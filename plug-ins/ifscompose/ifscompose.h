@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_typedef
-DECL|struct|__anon292481780108
+DECL|struct|__anon29917db60108
 typedef|typedef
 struct|struct
 block|{
@@ -34,7 +34,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292481780208
+DECL|struct|__anon29917db60208
 typedef|typedef
 struct|struct
 block|{
@@ -55,7 +55,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292481780308
+DECL|struct|__anon29917db60308
 typedef|typedef
 struct|struct
 block|{
@@ -75,7 +75,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292481780408
+DECL|struct|__anon29917db60408
 typedef|typedef
 struct|struct
 block|{
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292481780508
+DECL|struct|__anon29917db60508
 block|{
 DECL|member|num_elements
 name|gint
@@ -192,7 +192,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292481780608
+DECL|struct|__anon29917db60608
 typedef|typedef
 struct|struct
 block|{
@@ -603,7 +603,7 @@ modifier|*
 modifier|*
 name|elements
 parameter_list|,
-name|int
+name|gint
 name|num_elements
 parameter_list|)
 function_decl|;
@@ -688,7 +688,7 @@ name|guchar
 modifier|*
 name|nhits
 parameter_list|,
-name|gint
+name|gboolean
 name|preview
 parameter_list|)
 function_decl|;
