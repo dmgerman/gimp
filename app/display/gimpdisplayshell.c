@@ -10702,6 +10702,10 @@ name|mbox
 decl_stmt|;
 name|gchar
 modifier|*
+name|title_buf
+decl_stmt|;
+name|gchar
+modifier|*
 name|warning_buf
 decl_stmt|;
 if|if
@@ -10734,6 +10738,18 @@ argument_list|,
 name|image_name
 argument_list|)
 expr_stmt|;
+name|title_buf
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Close %s?"
+argument_list|)
+argument_list|,
+name|image_name
+argument_list|)
+expr_stmt|;
 name|shell
 operator|->
 name|warning_dialog
@@ -10742,7 +10758,7 @@ name|mbox
 operator|=
 name|gimp_query_boolean_box
 argument_list|(
-name|image_name
+name|title_buf
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -10763,6 +10779,11 @@ argument_list|,
 name|gimp_display_shell_close_warning_callback
 argument_list|,
 name|shell
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|title_buf
 argument_list|)
 expr_stmt|;
 name|g_free

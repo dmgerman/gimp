@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792899f0108
+DECL|struct|__anon2a9ff1ea0108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792899f0208
+DECL|struct|__anon2a9ff1ea0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792899f0308
+DECL|struct|__anon2a9ff1ea0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792899f0408
+DECL|struct|__anon2a9ff1ea0408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792899f0508
+DECL|struct|__anon2a9ff1ea0508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792899f0608
+DECL|struct|__anon2a9ff1ea0608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792899f0708
+DECL|struct|__anon2a9ff1ea0708
 block|{
 DECL|member|name
 specifier|const
@@ -4928,20 +4928,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_OK
-argument_list|,
-name|newsprint_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
@@ -4955,6 +4941,20 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|GTK_STOCK_OK
+argument_list|,
+name|newsprint_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
@@ -6922,7 +6922,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792899f0808
+DECL|struct|__anon2a9ff1ea0808
 block|{
 DECL|member|index
 name|gint

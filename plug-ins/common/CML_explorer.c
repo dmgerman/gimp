@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6c9ce0108
+DECL|struct|__anon2c7c0a680108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6c9ce0203
+DECL|enum|__anon2c7c0a680203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6c9ce0303
+DECL|enum|__anon2c7c0a680303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6c9ce0403
+DECL|enum|__anon2c7c0a680403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6c9ce0503
+DECL|enum|__anon2c7c0a680503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6c9ce0608
+DECL|struct|__anon2c7c0a680608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6c9ce0708
+DECL|struct|__anon2c7c0a680708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1540,7 +1540,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6c9ce0808
+DECL|struct|__anon2c7c0a680808
 block|{
 DECL|member|run
 name|gint
@@ -1590,7 +1590,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6c9ce0908
+DECL|struct|__anon2c7c0a680908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6574,20 +6574,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_OK
-argument_list|,
-name|CML_explorer_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
@@ -6601,6 +6587,20 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|GTK_STOCK_OK
+argument_list|,
+name|CML_explorer_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
@@ -12890,20 +12890,6 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_OK
-argument_list|,
-name|CML_overwrite_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
@@ -12917,6 +12903,20 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|GTK_STOCK_OK
+argument_list|,
+name|CML_overwrite_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)

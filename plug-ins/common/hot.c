@@ -145,7 +145,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1566340103
+DECL|enum|__anon290bdfa30103
 block|{
 DECL|enumerator|act_lredux
 name|act_lredux
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1566340203
+DECL|enum|__anon290bdfa30203
 block|{
 DECL|enumerator|mode_ntsc
 name|mode_ntsc
@@ -219,7 +219,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b1566340308
+DECL|struct|__anon290bdfa30308
 block|{
 DECL|member|pedestal
 name|gdouble

@@ -376,7 +376,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon29073c120108
+DECL|struct|__anon2b9dd0d00108
 typedef|typedef
 struct|struct
 block|{
@@ -445,7 +445,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29073c120208
+DECL|struct|__anon2b9dd0d00208
 typedef|typedef
 struct|struct
 block|{
@@ -563,7 +563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29073c120308
+DECL|struct|__anon2b9dd0d00308
 typedef|typedef
 struct|struct
 block|{
@@ -592,7 +592,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29073c120408
+DECL|struct|__anon2b9dd0d00408
 typedef|typedef
 struct|struct
 block|{
@@ -619,7 +619,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29073c120508
+DECL|struct|__anon2b9dd0d00508
 typedef|typedef
 struct|struct
 block|{
@@ -6674,23 +6674,6 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Apply"
-argument_list|)
-argument_list|,
-name|p_smp_apply_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|_
-argument_list|(
 literal|"Get Sample Colors"
 argument_list|)
 argument_list|,
@@ -6736,6 +6719,23 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Apply"
+argument_list|)
+argument_list|,
+name|p_smp_apply_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)

@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ee74b0103
+DECL|enum|__anon2a2355620103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -156,7 +156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5ee74b0203
+DECL|enum|__anon2a2355620203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -175,7 +175,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ee74b0308
+DECL|struct|__anon2a2355620308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -234,7 +234,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ee74b0408
+DECL|struct|__anon2a2355620408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ee74b0508
+DECL|struct|__anon2a2355620508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3589,20 +3589,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_OK
-argument_list|,
-name|dialog_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
@@ -3616,6 +3602,20 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|GTK_STOCK_OK
+argument_list|,
+name|dialog_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)

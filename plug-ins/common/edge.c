@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a46f3180103
+DECL|enum|__anon28a6c81a0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -106,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a46f3180208
+DECL|struct|__anon28a6c81a0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a46f3180308
+DECL|struct|__anon28a6c81a0308
 block|{
 DECL|member|run
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a46f3180408
+DECL|struct|__anon28a6c81a0408
 block|{
 DECL|member|tile
 name|GimpTile
@@ -2663,20 +2663,6 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_OK
-argument_list|,
-name|edge_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
 name|gtk_widget_destroy
@@ -2690,6 +2676,20 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|GTK_STOCK_OK
+argument_list|,
+name|edge_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
