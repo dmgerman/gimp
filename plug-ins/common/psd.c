@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * PSD Plugin version 1.9.9.8 (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/*  * PSD Plugin version 1.9.9.8 (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<unistd.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -88,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29469dfd0103
+DECL|enum|__anon27de7ed70103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -407,7 +413,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon29469dfd0208
+DECL|struct|__anon27de7ed70208
 specifier|static
 struct|struct
 block|{
