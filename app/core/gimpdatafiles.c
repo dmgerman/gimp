@@ -268,11 +268,6 @@ argument_list|,
 literal|100
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|pathext
-argument_list|)
-expr_stmt|;
 block|}
 else|else
 block|{
