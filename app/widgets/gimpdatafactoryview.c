@@ -1734,6 +1734,9 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+operator|(
+name|GWeakNotify
+operator|)
 name|g_free
 argument_list|,
 name|delete_data

@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279ce8f30103
+DECL|enum|__anon2b5e41020103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL
@@ -398,6 +398,9 @@ argument_list|(
 name|error_console
 argument_list|)
 argument_list|,
+operator|(
+name|GWeakNotify
+operator|)
 name|error_console_destroy_callback
 argument_list|,
 name|NULL

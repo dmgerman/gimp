@@ -463,7 +463,6 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|basename
@@ -559,7 +558,7 @@ argument_list|)
 expr_stmt|;
 name|dirname
 operator|=
-name|g_dirname
+name|g_path_get_dirname
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -571,7 +570,7 @@ argument_list|)
 expr_stmt|;
 name|basename
 operator|=
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
@@ -601,6 +600,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|dirname
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
 argument_list|)
 expr_stmt|;
 comment|/*  If the file is newer than its thumbnail, the thumbnail may    *  be out of date.    */

@@ -9302,15 +9302,13 @@ name|i
 operator|++
 control|)
 block|{
-name|g_string_printf
-argument_list|(
-name|entry_filename
-argument_list|,
-literal|"%d. %s"
-argument_list|,
-name|i
-argument_list|,
-name|g_basename
+name|gchar
+modifier|*
+name|basename
+decl_stmt|;
+name|basename
+operator|=
+name|g_path_get_basename
 argument_list|(
 operator|(
 operator|(
@@ -9324,6 +9322,21 @@ operator|)
 operator|->
 name|str
 argument_list|)
+expr_stmt|;
+name|g_string_printf
+argument_list|(
+name|entry_filename
+argument_list|,
+literal|"%d. %s"
+argument_list|,
+name|i
+argument_list|,
+name|basename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
 argument_list|)
 expr_stmt|;
 name|g_string_printf

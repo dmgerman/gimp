@@ -421,12 +421,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|UNUSED_CODE
-end_ifdef
-
 begin_function
 specifier|static
 name|void
@@ -674,11 +668,6 @@ expr_stmt|;
 comment|/*<h2v-on>*/
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static
@@ -1473,7 +1462,7 @@ name|row_width
 operator|||
 name|child
 operator|->
-name|forced_break
+name|wrapped
 condition|)
 break|break;
 name|width
@@ -1580,7 +1569,8 @@ decl_stmt|,
 name|have_expand_children
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|total_width
 init|=
 literal|0
@@ -2817,7 +2807,7 @@ decl_stmt|;
 name|GtkAllocation
 name|area
 decl_stmt|;
-name|guint
+name|gint
 name|border
 init|=
 name|GTK_CONTAINER

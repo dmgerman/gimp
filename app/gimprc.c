@@ -300,7 +300,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278dfdad0103
+DECL|enum|__anon28bf28930103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -885,31 +885,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
-modifier|*
-name|gimprc_value_to_str
-parameter_list|(
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gchar
-modifier|*
-name|value_to_str
-parameter_list|(
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 specifier|static
 specifier|inline
 name|gchar
@@ -1186,6 +1161,7 @@ specifier|static
 name|void
 name|gimprc_set_token
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
@@ -3295,14 +3271,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|g_strcasecmp
+name|strcmp
 argument_list|(
 name|filename
 argument_list|,
 name|libfilename
 argument_list|)
-operator|!=
-literal|0
 condition|)
 name|gimprc_parse_file
 argument_list|(
@@ -3359,11 +3333,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
-DECL|function|parse_absolute_gimprc_file (char * filename)
+DECL|function|parse_absolute_gimprc_file (const gchar * filename)
 name|parse_absolute_gimprc_file
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -3521,9 +3497,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimprc_parse_file (gchar * filename)
+DECL|function|gimprc_parse_file (const gchar * filename)
 name|gimprc_parse_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -3634,13 +3611,14 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|g_list_findstr (GList * list,gchar * str)
+DECL|function|g_list_findstr (GList * list,const gchar * str)
 name|g_list_findstr
 parameter_list|(
 name|GList
 modifier|*
 name|list
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|str
@@ -3665,7 +3643,7 @@ operator|!
 name|strcmp
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|list
@@ -3685,13 +3663,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|save_gimprc_strings (gchar * token,gchar * value)
+DECL|function|save_gimprc_strings (const gchar * token,const gchar * value)
 name|save_gimprc_strings
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value
@@ -3948,7 +3928,7 @@ comment|/* check if that entry should be updated */
 if|if
 condition|(
 operator|!
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|token
 argument_list|,
@@ -4599,7 +4579,7 @@ expr_stmt|;
 block|}
 name|str
 operator|=
-name|value_to_str
+name|gimprc_value_to_str
 argument_list|(
 name|tokname
 argument_list|)
@@ -4776,10 +4756,11 @@ argument_list|)
 expr_stmt|;
 name|str
 operator|=
-name|value_to_str
+name|gimprc_value_to_str
 argument_list|(
 operator|(
-name|char
+specifier|const
+name|gchar
 operator|*
 operator|)
 name|option
@@ -9954,6 +9935,10 @@ literal|'\0'
 expr_stmt|;
 name|tmp2
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|gimprc_find_token
 argument_list|(
 name|token
@@ -9969,6 +9954,10 @@ block|{
 comment|/* maybe token is an environment variable */
 name|tmp2
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|g_getenv
 argument_list|(
 name|token
@@ -9985,7 +9974,7 @@ operator|==
 name|NULL
 operator|&&
 operator|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|token
 argument_list|,
@@ -9994,7 +9983,7 @@ argument_list|)
 operator|==
 literal|0
 operator|||
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|token
 argument_list|,
@@ -10040,6 +10029,10 @@ name|tmp2
 operator|=
 name|transform_path
 argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
 name|tmp2
 argument_list|,
 name|FALSE
@@ -10305,6 +10298,10 @@ literal|'\0'
 expr_stmt|;
 name|token
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|gimprc_find_token
 argument_list|(
 name|token
@@ -13592,31 +13589,10 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimprc_value_to_str (gchar * name)
+DECL|function|gimprc_value_to_str (const gchar * name)
 name|gimprc_value_to_str
 parameter_list|(
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-block|{
-return|return
-name|value_to_str
-argument_list|(
-name|name
-argument_list|)
-return|;
-comment|/* had a namespace collision */
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gchar
-modifier|*
-DECL|function|value_to_str (gchar * name)
-name|value_to_str
-parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -15338,11 +15314,13 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
-DECL|function|gimprc_find_token (gchar * token)
+DECL|function|gimprc_find_token (const gchar * token)
 name|gimprc_find_token
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
@@ -15410,9 +15388,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimprc_set_token (gchar * token,gchar * value)
+DECL|function|gimprc_set_token (const gchar * token,gchar * value)
 name|gimprc_set_token
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token

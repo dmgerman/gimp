@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a80e290103
+DECL|enum|__anon298cad310103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -1005,6 +1005,9 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+operator|(
+name|GWeakNotify
+operator|)
 name|g_free
 argument_list|,
 name|nav_dialog
@@ -2011,6 +2014,9 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
+operator|(
+name|GWeakNotify
+operator|)
 name|g_free
 argument_list|,
 name|nav_dialog
@@ -2574,7 +2580,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-specifier|const
 name|gchar
 modifier|*
 name|basename
@@ -2585,7 +2590,7 @@ name|title
 decl_stmt|;
 name|basename
 operator|=
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|gimp_image_filename
 argument_list|(
@@ -2616,6 +2621,11 @@ argument_list|,
 name|gdisp
 operator|->
 name|instance
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
 argument_list|)
 expr_stmt|;
 return|return

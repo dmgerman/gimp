@@ -54,7 +54,7 @@ name|GTK_WRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBox))
+value|(GTK_CHECK_CAST ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBox))
 DECL|macro|GTK_WRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -62,7 +62,7 @@ name|GTK_WRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
 DECL|macro|GTK_IS_WRAP_BOX (obj)
 define|#
 directive|define
@@ -70,7 +70,7 @@ name|GTK_IS_WRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_WRAP_BOX))
+value|(GTK_CHECK_TYPE ((obj), GTK_TYPE_WRAP_BOX))
 DECL|macro|GTK_IS_WRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -78,7 +78,7 @@ name|GTK_IS_WRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_WRAP_BOX))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_WRAP_BOX))
 DECL|macro|GTK_WRAP_BOX_GET_CLASS (obj)
 define|#
 directive|define
@@ -86,7 +86,7 @@ name|GTK_WRAP_BOX_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
+value|(GTK_CHECK_GET_CLASS ((obj), GTK_TYPE_WRAP_BOX, GtkWrapBoxClass))
 comment|/* --- typedefs --- */
 DECL|typedef|GtkWrapBox
 typedef|typedef
@@ -234,9 +234,9 @@ name|vfill
 range|:
 literal|1
 decl_stmt|;
-DECL|member|forced_break
+DECL|member|wrapped
 name|guint
-name|forced_break
+name|wrapped
 range|:
 literal|1
 decl_stmt|;
@@ -355,6 +355,33 @@ name|vfill
 parameter_list|)
 function_decl|;
 name|void
+name|gtk_wrap_box_pack_wrapped
+parameter_list|(
+name|GtkWrapBox
+modifier|*
+name|wbox
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|child
+parameter_list|,
+name|gboolean
+name|hexpand
+parameter_list|,
+name|gboolean
+name|hfill
+parameter_list|,
+name|gboolean
+name|vexpand
+parameter_list|,
+name|gboolean
+name|vfill
+parameter_list|,
+name|gboolean
+name|wrapped
+parameter_list|)
+function_decl|;
+name|void
 name|gtk_wrap_box_reorder_child
 parameter_list|(
 name|GtkWrapBox
@@ -395,22 +422,10 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|vfill
-parameter_list|)
-function_decl|;
-name|void
-name|gtk_wrap_box_query_child_forced_break
-parameter_list|(
-name|GtkWrapBox
-modifier|*
-name|wbox
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|child
 parameter_list|,
 name|gboolean
 modifier|*
-name|forced_break
+name|wrapped
 parameter_list|)
 function_decl|;
 name|void
@@ -435,21 +450,9 @@ name|vexpand
 parameter_list|,
 name|gboolean
 name|vfill
-parameter_list|)
-function_decl|;
-name|void
-name|gtk_wrap_box_set_child_forced_break
-parameter_list|(
-name|GtkWrapBox
-modifier|*
-name|wbox
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|child
 parameter_list|,
 name|gboolean
-name|forced_break
+name|wrapped
 parameter_list|)
 function_decl|;
 name|guint

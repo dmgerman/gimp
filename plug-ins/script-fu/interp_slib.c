@@ -18257,6 +18257,7 @@ index|[
 literal|100
 index|]
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|errmsg
@@ -18285,11 +18286,20 @@ argument_list|)
 expr_stmt|;
 name|errmsg
 operator|=
+operator|(
+specifier|const
+name|char
+operator|*
+operator|)
 name|serrmsg
 expr_stmt|;
 block|}
 return|return
 operator|(
+operator|(
+name|char
+operator|*
+operator|)
 name|errmsg
 operator|)
 return|;
@@ -18318,6 +18328,7 @@ name|errno
 else|:
 name|num
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|errmsg
@@ -18344,6 +18355,10 @@ return|return
 operator|(
 name|cintern
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
 name|errmsg
 argument_list|)
 operator|)

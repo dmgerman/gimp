@@ -4686,6 +4686,10 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|basename
+decl_stmt|;
 comment|/*  Draw the image buf to the preview window  */
 name|gtk_widget_draw
 argument_list|(
@@ -4697,6 +4701,16 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Update the gimage label to reflect the displayed gimage name  */
+name|basename
+operator|=
+name|g_path_get_basename
+argument_list|(
+name|gimp_image_filename
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -4706,13 +4720,12 @@ operator|->
 name|gimage_name
 argument_list|)
 argument_list|,
-name|g_basename
-argument_list|(
-name|gimp_image_filename
-argument_list|(
-name|gimage
+name|basename
 argument_list|)
-argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
 argument_list|)
 expr_stmt|;
 block|}

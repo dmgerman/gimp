@@ -883,7 +883,7 @@ argument_list|,
 name|GTK_SHADOW_OUT
 argument_list|)
 expr_stmt|;
-name|gtk_wrap_box_pack
+name|gtk_wrap_box_pack_wrapped
 argument_list|(
 name|GTK_WRAP_BOX
 argument_list|(
@@ -899,16 +899,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gtk_wrap_box_set_child_forced_break
-argument_list|(
-name|GTK_WRAP_BOX
-argument_list|(
-name|parent
-argument_list|)
-argument_list|,
-name|frame
 argument_list|,
 name|TRUE
 argument_list|)

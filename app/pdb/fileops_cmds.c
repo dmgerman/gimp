@@ -835,7 +835,7 @@ condition|)
 block|{
 name|pname
 operator|=
-name|g_dirname
+name|g_path_get_dirname
 argument_list|(
 name|filename
 argument_list|)

@@ -1444,10 +1444,21 @@ block|}
 else|else
 comment|/* old palette format */
 block|{
+name|gchar
+modifier|*
+name|basename
+decl_stmt|;
 name|g_warning
 argument_list|(
 literal|"old palette format %s"
 argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|basename
+operator|=
+name|g_path_get_basename
+argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
@@ -1458,10 +1469,12 @@ argument_list|(
 name|palette
 argument_list|)
 argument_list|,
-name|g_basename
-argument_list|(
-name|filename
+name|basename
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
 argument_list|)
 expr_stmt|;
 block|}

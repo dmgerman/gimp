@@ -3388,7 +3388,7 @@ block|{
 if|if
 condition|(
 operator|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|plug_in_def
 operator|->
@@ -4413,7 +4413,7 @@ name|g_message
 argument_list|(
 literal|"pipe() failed: Unable to start Plug-In \"%s\"\n(%s)"
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|plug_in
 operator|->
@@ -4535,6 +4535,86 @@ name|my_read
 index|[
 literal|1
 index|]
+argument_list|)
+expr_stmt|;
+name|g_io_channel_set_encoding
+argument_list|(
+name|plug_in
+operator|->
+name|my_read
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_io_channel_set_encoding
+argument_list|(
+name|plug_in
+operator|->
+name|my_write
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_io_channel_set_encoding
+argument_list|(
+name|plug_in
+operator|->
+name|his_read
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_io_channel_set_encoding
+argument_list|(
+name|plug_in
+operator|->
+name|his_write
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_io_channel_set_close_on_unref
+argument_list|(
+name|plug_in
+operator|->
+name|my_read
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_io_channel_set_close_on_unref
+argument_list|(
+name|plug_in
+operator|->
+name|my_write
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_io_channel_set_close_on_unref
+argument_list|(
+name|plug_in
+operator|->
+name|his_read
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_io_channel_set_close_on_unref
+argument_list|(
+name|plug_in
+operator|->
+name|his_write
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Remember the file descriptors for the pipes.        */
@@ -4722,13 +4802,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_io_channel_close
-argument_list|(
-name|plug_in
-operator|->
-name|my_read
-argument_list|)
-expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
 name|plug_in
@@ -4741,13 +4814,6 @@ operator|->
 name|my_read
 operator|=
 name|NULL
-expr_stmt|;
-name|g_io_channel_close
-argument_list|(
-name|plug_in
-operator|->
-name|my_write
-argument_list|)
 expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
@@ -4800,7 +4866,7 @@ name|g_message
 argument_list|(
 literal|"fork() failed: Unable to run Plug-In: \"%s\"\n(%s)"
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|plug_in
 operator|->
@@ -4827,13 +4893,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|g_io_channel_close
-argument_list|(
-name|plug_in
-operator|->
-name|his_read
-argument_list|)
-expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
 name|plug_in
@@ -4846,13 +4905,6 @@ operator|->
 name|his_read
 operator|=
 name|NULL
-expr_stmt|;
-name|g_io_channel_close
-argument_list|(
-name|plug_in
-operator|->
-name|his_write
-argument_list|)
 expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
@@ -5188,13 +5240,6 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|g_io_channel_close
-argument_list|(
-name|plug_in
-operator|->
-name|my_read
-argument_list|)
-expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
 name|plug_in
@@ -5218,13 +5263,6 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|g_io_channel_close
-argument_list|(
-name|plug_in
-operator|->
-name|my_write
-argument_list|)
-expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
 name|plug_in
@@ -5248,13 +5286,6 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|g_io_channel_close
-argument_list|(
-name|plug_in
-operator|->
-name|his_read
-argument_list|)
-expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
 name|plug_in
@@ -5278,13 +5309,6 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|g_io_channel_close
-argument_list|(
-name|plug_in
-operator|->
-name|his_write
-argument_list|)
-expr_stmt|;
 name|g_io_channel_unref
 argument_list|(
 name|plug_in
@@ -6455,7 +6479,7 @@ literal|"You may want to save your images and restart GIMP\n"
 literal|"to be on the safe side."
 argument_list|)
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|current_plug_in
 operator|->
@@ -7893,7 +7917,7 @@ literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"which does not take the standard Plug-In args."
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|current_plug_in
 operator|->
@@ -7991,7 +8015,7 @@ literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"which does not take the standard Plug-In args."
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|current_plug_in
 operator|->
@@ -8089,7 +8113,7 @@ literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"which does not take the standard Plug-In args."
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|current_plug_in
 operator|->
@@ -8213,7 +8237,7 @@ literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
 literal|"which does not take the standard Plug-In args."
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|current_plug_in
 operator|->
@@ -8248,7 +8272,7 @@ literal|"in an invalid menu location.\n"
 literal|"Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Load>\", or \"<Save>\"."
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|current_plug_in
 operator|->
@@ -8359,7 +8383,7 @@ literal|"attempted to install procedure \"%s\"\n"
 literal|"which fails to comply with the array parameter\n"
 literal|"passing standard.  Argument %d is noncompliant."
 argument_list|,
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|current_plug_in
 operator|->
@@ -9275,7 +9299,11 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
-name|GIOError
+name|GIOStatus
+name|status
+decl_stmt|;
+name|GError
+modifier|*
 name|error
 decl_stmt|;
 name|gint
@@ -9308,9 +9336,27 @@ name|bytes
 operator|=
 literal|0
 expr_stmt|;
-name|error
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: g_io_channel_write_chars()
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
+block|status = g_io_channel_write_chars (channel,&current_write_buffer[count], 						 (current_write_buffer_index - count),&bytes,&error);
+endif|#
+directive|endif
+name|status
 operator|=
-name|g_io_channel_write
+name|channel
+operator|->
+name|funcs
+operator|->
+name|io_write
 argument_list|(
 name|channel
 argument_list|,
@@ -9328,21 +9374,24 @@ operator|)
 argument_list|,
 operator|&
 name|bytes
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 block|}
 do|while
 condition|(
-name|error
+name|status
 operator|==
-name|G_IO_ERROR_AGAIN
+name|G_IO_STATUS_AGAIN
 condition|)
 do|;
 if|if
 condition|(
-name|error
+name|status
 operator|!=
-name|G_IO_ERROR_NONE
+name|G_IO_STATUS_NORMAL
 condition|)
 return|return
 name|FALSE
@@ -10379,19 +10428,17 @@ name|PlugInDef
 modifier|*
 name|plug_in_def
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|plug_in_name
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
-name|name
+name|basename
 decl_stmt|;
-name|name
+name|basename
 operator|=
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|filename
 argument_list|)
@@ -10423,7 +10470,7 @@ name|next
 expr_stmt|;
 name|plug_in_name
 operator|=
-name|g_basename
+name|g_path_get_basename
 argument_list|(
 name|plug_in_def
 operator|->
@@ -10432,9 +10479,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
-name|name
+name|basename
 argument_list|,
 name|plug_in_name
 argument_list|)
@@ -10451,11 +10498,21 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|g_free
+argument_list|(
+name|plug_in_name
+argument_list|)
+expr_stmt|;
 name|plug_in_def
 operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
 name|plug_in_def
 operator|=
 name|plug_in_def_new
@@ -10898,6 +10955,25 @@ name|gchar
 modifier|*
 name|help_page
 decl_stmt|;
+name|gchar
+modifier|*
+name|basename
+decl_stmt|;
+name|gchar
+modifier|*
+name|lowercase_page
+decl_stmt|;
+name|basename
+operator|=
+name|g_path_get_basename
+argument_list|(
+name|menu_entry
+operator|->
+name|proc_def
+operator|->
+name|prog
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|menu_entry
@@ -10916,14 +10992,7 @@ argument_list|,
 literal|"@"
 argument_list|,
 comment|/* HACK: locale subdir */
-name|g_basename
-argument_list|(
-name|menu_entry
-operator|->
-name|proc_def
-operator|->
-name|prog
-argument_list|)
+name|basename
 argument_list|,
 literal|".html"
 argument_list|,
@@ -10940,14 +11009,7 @@ argument_list|(
 literal|"filters/"
 argument_list|,
 comment|/* _not_ G_DIR_SEPARATOR_S */
-name|g_basename
-argument_list|(
-name|menu_entry
-operator|->
-name|proc_def
-operator|->
-name|prog
-argument_list|)
+name|basename
 argument_list|,
 literal|".html"
 argument_list|,
@@ -10955,7 +11017,19 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|g_strdown
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
+name|lowercase_page
+operator|=
+name|g_ascii_strdown
+argument_list|(
+name|help_page
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|help_page
 argument_list|)
@@ -11018,7 +11092,7 @@ name|entry
 operator|.
 name|help_page
 operator|=
-name|help_page
+name|lowercase_page
 expr_stmt|;
 name|entry
 operator|.

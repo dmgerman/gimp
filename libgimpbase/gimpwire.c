@@ -374,7 +374,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_read (GIOChannel * channel,guint8 * buf,gulong count)
+DECL|function|wire_read (GIOChannel * channel,guint8 * buf,gsize count)
 name|wire_read
 parameter_list|(
 name|GIOChannel
@@ -385,7 +385,7 @@ name|guint8
 modifier|*
 name|buf
 parameter_list|,
-name|gulong
+name|gsize
 name|count
 parameter_list|)
 block|{
@@ -429,10 +429,16 @@ block|}
 block|}
 else|else
 block|{
-name|GIOError
-name|error
+name|GIOStatus
+name|status
 decl_stmt|;
-name|guint
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
+name|gsize
 name|bytes
 decl_stmt|;
 while|while
@@ -448,9 +454,27 @@ name|bytes
 operator|=
 literal|0
 expr_stmt|;
-name|error
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: g_io_channel_read_chars()
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
+block|status = g_io_channel_read_chars (channel, 						(gchar *) buf, count,&bytes,&error);
+endif|#
+directive|endif
+name|status
 operator|=
-name|g_io_channel_read
+name|channel
+operator|->
+name|funcs
+operator|->
+name|io_read
 argument_list|(
 name|channel
 argument_list|,
@@ -464,41 +488,36 @@ name|count
 argument_list|,
 operator|&
 name|bytes
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 block|}
 do|while
 condition|(
-operator|(
-name|error
+name|status
 operator|==
-name|G_IO_ERROR_AGAIN
-operator|)
-operator|||
-operator|(
-name|error
-operator|==
-name|G_IO_ERROR_UNKNOWN
-operator|&&
-name|errno
-operator|==
-name|EINTR
-operator|)
+name|G_IO_STATUS_AGAIN
 condition|)
 do|;
 if|if
 condition|(
-name|error
+name|status
 operator|!=
-name|G_IO_ERROR_NONE
+name|G_IO_STATUS_NORMAL
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_read: error"
+literal|"%s: wire_read(): error: %s"
 argument_list|,
 name|g_get_prgname
 argument_list|()
+argument_list|,
+name|error
+operator|->
+name|message
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -518,7 +537,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_read: unexpected EOF"
+literal|"%s: wire_read(): unexpected EOF"
 argument_list|,
 name|g_get_prgname
 argument_list|()
@@ -550,7 +569,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|wire_write (GIOChannel * channel,guint8 * buf,gulong count)
+DECL|function|wire_write (GIOChannel * channel,guint8 * buf,gsize count)
 name|wire_write
 parameter_list|(
 name|GIOChannel
@@ -561,7 +580,7 @@ name|guint8
 modifier|*
 name|buf
 parameter_list|,
-name|gulong
+name|gsize
 name|count
 parameter_list|)
 block|{
@@ -605,10 +624,16 @@ block|}
 block|}
 else|else
 block|{
-name|GIOError
-name|error
+name|GIOStatus
+name|status
 decl_stmt|;
-name|guint
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
+name|gsize
 name|bytes
 decl_stmt|;
 while|while
@@ -624,9 +649,27 @@ name|bytes
 operator|=
 literal|0
 expr_stmt|;
-name|error
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: g_io_channel_write_chars()
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
+block|status = g_io_channel_write_chars (channel, 						 (gchar *) buf, count,&bytes,&error);
+endif|#
+directive|endif
+name|status
 operator|=
-name|g_io_channel_write
+name|channel
+operator|->
+name|funcs
+operator|->
+name|io_write
 argument_list|(
 name|channel
 argument_list|,
@@ -640,41 +683,36 @@ name|count
 argument_list|,
 operator|&
 name|bytes
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 block|}
 do|while
 condition|(
-operator|(
-name|error
+name|status
 operator|==
-name|G_IO_ERROR_AGAIN
-operator|)
-operator|||
-operator|(
-name|error
-operator|==
-name|G_IO_ERROR_UNKNOWN
-operator|&&
-name|errno
-operator|==
-name|EINTR
-operator|)
+name|G_IO_STATUS_AGAIN
 condition|)
 do|;
 if|if
 condition|(
-name|error
+name|status
 operator|!=
-name|G_IO_ERROR_NONE
+name|G_IO_STATUS_NORMAL
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_write: error"
+literal|"%s: wire_write(): error: %s"
 argument_list|,
 name|g_get_prgname
 argument_list|()
+argument_list|,
+name|error
+operator|->
+name|message
 argument_list|)
 expr_stmt|;
 name|wire_error_val

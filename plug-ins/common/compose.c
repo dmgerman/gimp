@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c42f90108
+DECL|struct|__anon2907b3930108
 block|{
 DECL|member|compose_type
 name|gchar
@@ -671,7 +671,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c42f90208
+DECL|struct|__anon2907b3930208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c42f90308
+DECL|struct|__anon2907b3930308
 block|{
 DECL|member|width
 DECL|member|height
@@ -1788,7 +1788,7 @@ control|)
 block|{
 if|if
 condition|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|compose_type
 argument_list|,
@@ -3878,7 +3878,7 @@ control|)
 block|{
 if|if
 condition|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|compose_type
 argument_list|,

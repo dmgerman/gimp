@@ -178,7 +178,7 @@ name|guint8
 modifier|*
 name|buf
 parameter_list|,
-name|gulong
+name|gsize
 name|count
 parameter_list|)
 function_decl|;
@@ -193,7 +193,7 @@ name|guint8
 modifier|*
 name|buf
 parameter_list|,
-name|gulong
+name|gsize
 name|count
 parameter_list|)
 function_decl|;

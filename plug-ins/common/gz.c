@@ -2375,7 +2375,7 @@ if|if
 condition|(
 literal|0
 operator|==
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|ext
 argument_list|,
@@ -2392,7 +2392,7 @@ if|if
 condition|(
 literal|0
 operator|!=
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|ext
 argument_list|,

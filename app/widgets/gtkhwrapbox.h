@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gtkwrapbox.h"
+file|<gle/gtkwrapbox.h>
 end_include
 
 begin_ifdef
@@ -48,7 +48,7 @@ name|GTK_HWRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_HWRAP_BOX, GtkHWrapBox))
+value|(GTK_CHECK_CAST ((obj), GTK_TYPE_HWRAP_BOX, GtkHWrapBox))
 DECL|macro|GTK_HWRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -56,7 +56,7 @@ name|GTK_HWRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GTK_TYPE_HWRAP_BOX, GtkHWrapBoxClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GTK_TYPE_HWRAP_BOX, GtkHWrapBoxClass))
 DECL|macro|GTK_IS_HWRAP_BOX (obj)
 define|#
 directive|define
@@ -64,7 +64,7 @@ name|GTK_IS_HWRAP_BOX
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_HWRAP_BOX))
+value|(GTK_CHECK_TYPE ((obj), GTK_TYPE_HWRAP_BOX))
 DECL|macro|GTK_IS_HWRAP_BOX_CLASS (klass)
 define|#
 directive|define
@@ -72,7 +72,7 @@ name|GTK_IS_HWRAP_BOX_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GTK_TYPE_HWRAP_BOX))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GTK_TYPE_HWRAP_BOX))
 DECL|macro|GTK_HWRAP_BOX_GET_CLASS (obj)
 define|#
 directive|define
@@ -80,7 +80,7 @@ name|GTK_HWRAP_BOX_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_HWRAP_BOX_CLASS (((GtkObject*) (obj))->klass))
+value|(GTK_CHECK_GET_CLASS ((obj), GTK_TYPE_HWRAP_BOX, GtkHWrapBoxClass))
 comment|/* --- typedefs --- */
 DECL|typedef|GtkHWrapBox
 typedef|typedef
@@ -105,11 +105,11 @@ name|parent_widget
 decl_stmt|;
 comment|/*<h2v-off>*/
 DECL|member|max_child_width
-name|guint16
+name|guint
 name|max_child_width
 decl_stmt|;
 DECL|member|max_child_height
-name|guint16
+name|guint
 name|max_child_height
 decl_stmt|;
 comment|/*<h2v-on>*/

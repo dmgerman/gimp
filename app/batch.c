@@ -352,7 +352,7 @@ name|i
 decl_stmt|;
 if|if
 condition|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|cmd
 argument_list|,

@@ -620,7 +620,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acafe00108
+DECL|struct|__anon278208e20108
 block|{
 DECL|member|type
 name|gchar
@@ -1089,7 +1089,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acafe00208
+DECL|struct|__anon278208e20208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1107,7 +1107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acafe00308
+DECL|struct|__anon278208e20308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -1904,7 +1904,7 @@ control|)
 block|{
 if|if
 condition|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|extract_type
 argument_list|,
@@ -4748,7 +4748,7 @@ name|j
 index|]
 operator|=
 operator|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|decovals
 operator|.

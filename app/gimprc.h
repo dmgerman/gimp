@@ -259,6 +259,7 @@ begin_function_decl
 name|gboolean
 name|gimprc_parse_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -267,10 +268,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|gimprc_find_token
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
@@ -283,6 +286,7 @@ name|gchar
 modifier|*
 name|gimprc_value_to_str
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -294,10 +298,12 @@ begin_function_decl
 name|void
 name|save_gimprc_strings
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|token
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value

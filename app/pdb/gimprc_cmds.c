@@ -133,6 +133,7 @@ name|gchar
 modifier|*
 name|token
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|value

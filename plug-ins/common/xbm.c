@@ -1667,7 +1667,7 @@ condition|(
 operator|(
 name|dirname
 operator|=
-name|g_dirname
+name|g_path_get_dirname
 argument_list|(
 name|param
 index|[

@@ -4348,7 +4348,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10108
+DECL|struct|__anon28cbc93b0108
 block|{
 DECL|member|scale
 name|double
@@ -4376,7 +4376,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10208
+DECL|struct|__anon28cbc93b0208
 block|{
 DECL|member|run
 name|gint
@@ -4403,7 +4403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10308
+DECL|struct|__anon28cbc93b0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4424,7 +4424,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b95e9c10403
+DECL|enum|__anon28cbc93b0403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4455,7 +4455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10508
+DECL|struct|__anon28cbc93b0508
 block|{
 DECL|member|dummy
 name|int
@@ -4470,7 +4470,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10608
+DECL|struct|__anon28cbc93b0608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4497,7 +4497,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10708
+DECL|struct|__anon28cbc93b0708
 block|{
 DECL|member|dummy
 name|int
@@ -4512,7 +4512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10808
+DECL|struct|__anon28cbc93b0808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4539,7 +4539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10908
+DECL|struct|__anon28cbc93b0908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4555,7 +4555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10a08
+DECL|struct|__anon28cbc93b0a08
 block|{
 DECL|member|dummy
 name|int
@@ -4570,14 +4570,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10b08
+DECL|struct|__anon28cbc93b0b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b95e9c10c0a
+DECL|union|__anon28cbc93b0c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4616,7 +4616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10d08
+DECL|struct|__anon28cbc93b0d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4669,7 +4669,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10e08
+DECL|struct|__anon28cbc93b0e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4720,7 +4720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b95e9c10f08
+DECL|struct|__anon28cbc93b0f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -10500,7 +10500,9 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* Very rough mapping from typical Windows fonts to 	     * typical X11 fonts. If you run GIMP on Win32, 	     * they will be mapped back to typical Windows 	     * fonts, sigh... 	     */
-name|g_strdown
+name|name
+operator|=
+name|g_ascii_strdown
 argument_list|(
 name|name
 argument_list|)

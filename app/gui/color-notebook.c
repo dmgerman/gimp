@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c16d3ab0103
+DECL|enum|__anon273a7d3e0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -5686,7 +5686,7 @@ literal|7
 operator|)
 operator|&&
 operator|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|buffer
 argument_list|,

@@ -2673,7 +2673,7 @@ return|;
 block|}
 name|pathname
 operator|=
-name|g_dirname
+name|g_path_get_dirname
 argument_list|(
 name|full_source_filename
 argument_list|)

@@ -1377,6 +1377,17 @@ block|}
 else|else
 comment|/* old gradient format */
 block|{
+name|gchar
+modifier|*
+name|basename
+decl_stmt|;
+name|basename
+operator|=
+name|g_path_get_basename
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT
@@ -1384,10 +1395,12 @@ argument_list|(
 name|gradient
 argument_list|)
 argument_list|,
-name|g_basename
-argument_list|(
-name|filename
+name|basename
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
 argument_list|)
 expr_stmt|;
 block|}
