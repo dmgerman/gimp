@@ -347,6 +347,8 @@ literal|"Edward Blevins"
 block|,
 literal|"Roberto Boyd"
 block|,
+literal|"Stanislav Brabec"
+block|,
 literal|"Simon Budig"
 block|,
 literal|"Seth Burgess"
@@ -359,15 +361,23 @@ literal|"Ed Connel"
 block|,
 literal|"Jay Cox"
 block|,
+literal|"Kenneth Christiansen"
+block|,
 literal|"Andreas Dilger"
 block|,
 literal|"Austin Donnelly"
 block|,
+literal|"Scott Draves"
+block|,
 literal|"Misha Dynin"
+block|,
+literal|"Daniel Egger"
 block|,
 literal|"Larry Ewing"
 block|,
 literal|"Nick Fetchak"
+block|,
+literal|"Valek Filippov"
 block|,
 literal|"David Forsyth"
 block|,
@@ -378,6 +388,10 @@ block|,
 literal|"Heiko Goller"
 block|,
 literal|"Michael Hammel"
+block|,
+literal|"Ville Hautamäki"
+block|,
+literal|"James Henstridge"
 block|,
 literal|"Christoph Hoegl"
 block|,
@@ -400,6 +414,8 @@ literal|"Nick Lamb"
 block|,
 literal|"Karl LaRocca"
 block|,
+literal|"Chris Lahey"
+block|,
 literal|"Jens Lautenbacher"
 block|,
 literal|"Laramie Leavitt"
@@ -409,6 +425,8 @@ block|,
 literal|"Marc Lehmann"
 block|,
 literal|"Raph Levien"
+block|,
+literal|"Wing Tung Leung"
 block|,
 literal|"Adrian Likins"
 block|,
@@ -420,17 +438,27 @@ literal|"Josh MacDonald"
 block|,
 literal|"Ed Mackey"
 block|,
+literal|"Daniele Medri"
+block|,
 literal|"Vidar Madsen"
 block|,
 literal|"Marcelo Malheiros"
 block|,
 literal|"Ian Main"
 block|,
+literal|"Kjartan Maraas"
+block|,
+literal|"Kelly Martin"
+block|,
 literal|"Torsten Martinsen"
 block|,
 literal|"Federico Mena"
 block|,
+literal|"David Monniaux"
+block|,
 literal|"Adam D. Moss"
+block|,
+literal|"Sung-Hyun Nam"
 block|,
 literal|"Shuji Narazaki"
 block|,
@@ -444,6 +472,8 @@ literal|"Erik Nygren"
 block|,
 literal|"Tomas Ogren"
 block|,
+literal|"Balazs Nagy"
+block|,
 literal|"Miles O'Neal"
 block|,
 literal|"Jay Painter"
@@ -454,12 +484,15 @@ literal|"Mike Phillips"
 block|,
 literal|"Raphael Quinet"
 block|,
+literal|"Vincent Renardias"
+block|,
 literal|"James Robinson"
 block|,
 literal|"Mike Schaeffer"
 block|,
 literal|"Tracy Scott"
 block|,
+literal|"Aaron Sherman"
 literal|"Manish Singh"
 block|,
 literal|"Nathan Summers"
@@ -481,6 +514,8 @@ block|,
 literal|"Kris Wehner"
 block|,
 literal|"Matthew Wilson"
+block|,
+literal|"Shirasaki Yasuhiro"
 block|, }
 decl_stmt|;
 end_decl_stmt
