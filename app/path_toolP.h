@@ -28,6 +28,23 @@ directive|include
 file|"draw_core.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<stdio.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_define
 DECL|macro|IMAGE_COORDS
 define|#
@@ -101,7 +118,7 @@ value|1000
 end_define
 
 begin_typedef
-DECL|enum|__anon289ccf950103
+DECL|enum|__anon2b788e830103
 DECL|enumerator|SEGMENT_LINE
 DECL|enumerator|SEGMENT_BEZIER
 DECL|typedef|SegmentType
@@ -119,7 +136,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon289ccf950203
+DECL|enum|__anon2b788e830203
 DECL|enumerator|ON_ANCHOR
 DECL|enumerator|ON_HANDLE
 DECL|enumerator|ON_CURVE
@@ -351,6 +368,11 @@ name|gdouble
 name|click_position
 decl_stmt|;
 comment|/* The position on the segment       */
+DECL|member|click_handle_id
+name|gint
+name|click_handle_id
+decl_stmt|;
+comment|/* The handle ID of the segment      */
 DECL|member|active_count
 name|gint
 name|active_count

@@ -21,23 +21,6 @@ directive|include
 file|"path_bezier.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|PATH_TOOL_DEBUG
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* only here temporarily */
 end_comment
@@ -96,31 +79,37 @@ block|}
 block|,
 comment|/* SEGMENT_BEZIER */
 block|{
-name|path_bezier_get_points
+name|NULL
 block|,
+comment|/* path_bezier_get_points, */
 name|path_bezier_get_point
 block|,
 name|path_bezier_draw_handles
 block|,
-name|path_bezier_draw_segment
+name|NULL
 block|,
-name|path_bezier_on_segment
+comment|/* path_bezier_draw_segment, */
+name|NULL
 block|,
+comment|/* path_bezier_on_segment, */
 name|path_bezier_drag_segment
 block|,
 name|path_bezier_on_handles
 block|,
 name|path_bezier_drag_handles
 block|,
-name|path_bezier_insert_anchor
+name|NULL
 block|,
-name|path_bezier_update_segment
+comment|/* path_bezier_insert_anchor, */
+name|NULL
 block|,
+comment|/* path_bezier_update_segment, */
 name|path_bezier_flip_segment
 block|,
 name|path_bezier_init_segment
 block|,
-name|path_bezier_cleanup_segment
+name|NULL
+comment|/* path_bezier_cleanup_segment */
 block|}
 block|}
 decl_stmt|;
@@ -173,6 +162,13 @@ if|if
 condition|(
 name|segment
 operator|&&
+name|segment
+operator|->
+name|next
+condition|)
+block|{
+if|if
+condition|(
 name|CurveTypes
 index|[
 name|segment
@@ -309,6 +305,23 @@ literal|0
 return|;
 block|}
 block|}
+ifdef|#
+directive|ifdef
+name|PATH_TOOL_DEBUG
+else|else
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"path_curve_get_point called without valid curve"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+return|return
+literal|0
+return|;
+block|}
 end_function
 
 begin_function
@@ -340,6 +353,13 @@ if|if
 condition|(
 name|segment
 operator|&&
+name|segment
+operator|->
+name|next
+condition|)
+block|{
+if|if
+condition|(
 name|CurveTypes
 index|[
 name|segment
@@ -373,15 +393,6 @@ name|y
 operator|)
 expr_stmt|;
 else|else
-block|{
-if|if
-condition|(
-name|segment
-operator|&&
-name|segment
-operator|->
-name|next
-condition|)
 block|{
 if|#
 directive|if
@@ -563,6 +574,7 @@ expr_stmt|;
 endif|#
 directive|endif
 block|}
+block|}
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -576,7 +588,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-block|}
 return|return;
 block|}
 end_function
@@ -1390,7 +1401,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_drag_segment (PathTool * path_tool,PathSegment * segment,gdouble position,gint x,gint y)
+DECL|function|path_curve_drag_segment (PathTool * path_tool,PathSegment * segment,gdouble position,gdouble dx,gdouble dy)
 name|path_curve_drag_segment
 parameter_list|(
 name|PathTool
@@ -1404,11 +1415,11 @@ parameter_list|,
 name|gdouble
 name|position
 parameter_list|,
-name|gint
-name|x
+name|gdouble
+name|dx
 parameter_list|,
-name|gint
-name|y
+name|gdouble
+name|dy
 parameter_list|)
 block|{
 if|if
@@ -1442,9 +1453,9 @@ name|segment
 operator|,
 name|position
 operator|,
-name|x
+name|dx
 operator|,
-name|y
+name|dy
 operator|)
 expr_stmt|;
 return|return;
@@ -1453,7 +1464,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|path_curve_on_handle (PathTool * path_tool,PathSegment * segment,gint x,gint y,gint halfwidth)
+DECL|function|path_curve_on_handle (PathTool * path_tool,PathSegment * segment,gdouble x,gdouble y,gdouble halfwidth)
 name|path_curve_on_handle
 parameter_list|(
 name|PathTool
@@ -1464,13 +1475,13 @@ name|PathSegment
 modifier|*
 name|segment
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|,
-name|gint
+name|gdouble
 name|halfwidth
 parameter_list|)
 block|{
@@ -1519,7 +1530,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_drag_handle (PathTool * path_tool,PathSegment * segment,gint x,gint y,gint handle_id)
+DECL|function|path_curve_drag_handle (PathTool * path_tool,PathSegment * segment,gdouble dx,gdouble dy,gint handle_id)
 name|path_curve_drag_handle
 parameter_list|(
 name|PathTool
@@ -1530,11 +1541,11 @@ name|PathSegment
 modifier|*
 name|segment
 parameter_list|,
-name|gint
-name|x
+name|gdouble
+name|dx
 parameter_list|,
-name|gint
-name|y
+name|gdouble
+name|dy
 parameter_list|,
 name|gint
 name|handle_id
@@ -1569,9 +1580,9 @@ name|path_tool
 operator|,
 name|segment
 operator|,
-name|x
+name|dx
 operator|,
-name|y
+name|dy
 operator|,
 name|handle_id
 operator|)
@@ -1646,13 +1657,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_flip_segment (PathTool * path_tool,PathSegment * segment)
+DECL|function|path_curve_flip_segment (PathSegment * segment)
 name|path_curve_flip_segment
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -1683,8 +1690,6 @@ operator|.
 name|flip_segment
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|)
 expr_stmt|;
@@ -1742,13 +1747,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_init_segment (PathTool * path_tool,PathSegment * segment)
+DECL|function|path_curve_init_segment (PathSegment * segment)
 name|path_curve_init_segment
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -1779,8 +1780,6 @@ operator|.
 name|init_segment
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|)
 expr_stmt|;
@@ -1790,13 +1789,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_cleanup_segment (PathTool * path_tool,PathSegment * segment)
+DECL|function|path_curve_cleanup_segment (PathSegment * segment)
 name|path_curve_cleanup_segment
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -1827,8 +1822,6 @@ operator|.
 name|cleanup_segment
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|)
 expr_stmt|;
