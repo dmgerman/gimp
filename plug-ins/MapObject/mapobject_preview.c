@@ -1629,7 +1629,7 @@ name|backbuf
 operator|.
 name|image
 operator|=
-name|gdk_image_get
+name|gdk_drawable_get_image
 argument_list|(
 name|previewarea
 operator|->
