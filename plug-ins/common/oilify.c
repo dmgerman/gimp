@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae8ccd0108
+DECL|struct|__anon2b0a55210108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -1316,7 +1316,10 @@ condition|)
 block|{
 name|gimp_drawable_preview_draw_region
 argument_list|(
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|dest_rgn
@@ -1966,7 +1969,10 @@ condition|)
 block|{
 name|gimp_drawable_preview_draw_region
 argument_list|(
+name|GIMP_DRAWABLE_PREVIEW
+argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|dest_rgn

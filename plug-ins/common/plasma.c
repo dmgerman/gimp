@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d48590108
+DECL|struct|__anon2984f9190108
 block|{
 DECL|member|seed
 name|guint32
@@ -1712,7 +1712,10 @@ else|else
 block|{
 name|gimp_preview_draw_buffer
 argument_list|(
+name|GIMP_PREVIEW
+argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 name|preview_buffer
 argument_list|,
