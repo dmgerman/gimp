@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad49d960103
+DECL|enum|__anon28d924210103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3025,9 +3025,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-block|{
-comment|/*  Put this apply mask operation on the undo stack  */
-name|gimp_drawable_apply_image
+name|gimp_drawable_push_undo
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3057,7 +3055,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  Combine the current layer's alpha channel and the mask  */
 name|pixel_region_init
 argument_list|(

@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a908b840103
+DECL|enum|__anon296d5c490103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -8242,7 +8242,7 @@ if|if
 condition|(
 name|push_undo
 condition|)
-name|gimp_drawable_apply_image
+name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,

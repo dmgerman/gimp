@@ -999,7 +999,7 @@ name|cut_gimage
 operator|&&
 name|non_empty
 condition|)
-name|gimp_drawable_apply_image
+name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,

@@ -1649,7 +1649,7 @@ modifier|*
 name|src2PR
 parameter_list|,
 name|gboolean
-name|undo
+name|push_undo
 parameter_list|,
 name|gdouble
 name|opacity
@@ -1687,7 +1687,7 @@ modifier|*
 name|src2PR
 parameter_list|,
 name|gboolean
-name|undo
+name|push_undo
 parameter_list|,
 name|gdouble
 name|opacity

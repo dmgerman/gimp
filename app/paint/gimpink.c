@@ -4344,8 +4344,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-comment|/*  push an undo  */
-name|gimp_drawable_apply_image
+name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,
@@ -4654,7 +4653,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon27db0ae50103
+DECL|enum|__anon2aa7325e0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

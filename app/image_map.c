@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2d13eb0103
+DECL|enum|__anon2b41cf8f0103
 block|{
 DECL|enumerator|IMAGE_MAP_WAITING
 name|IMAGE_MAP_WAITING
@@ -983,7 +983,7 @@ operator|->
 name|undo_tiles
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_apply_image
+name|gimp_drawable_push_undo
 argument_list|(
 name|image_map
 operator|->

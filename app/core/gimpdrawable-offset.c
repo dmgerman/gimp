@@ -1400,7 +1400,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/*  push an undo  */
-name|gimp_drawable_apply_image
+name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,

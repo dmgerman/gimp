@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2770d3070103
+DECL|enum|__anon275c92820103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1491,8 +1491,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_image (GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2,TileManager * tiles,gint sparse)
-name|gimp_drawable_apply_image
+DECL|function|gimp_drawable_push_undo (GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2,TileManager * tiles,gboolean sparse)
+name|gimp_drawable_push_undo
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -1514,7 +1514,7 @@ name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|gint
+name|gboolean
 name|sparse
 parameter_list|)
 block|{
@@ -1583,7 +1583,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_merge_shadow (GimpDrawable * drawable,gboolean undo)
+DECL|function|gimp_drawable_merge_shadow (GimpDrawable * drawable,gboolean push_undo)
 name|gimp_drawable_merge_shadow
 parameter_list|(
 name|GimpDrawable
@@ -1591,7 +1591,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|gboolean
-name|undo
+name|push_undo
 parameter_list|)
 block|{
 name|GimpImage
@@ -1700,7 +1700,7 @@ argument_list|,
 operator|&
 name|shadowPR
 argument_list|,
-name|undo
+name|push_undo
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,

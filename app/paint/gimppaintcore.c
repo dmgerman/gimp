@@ -1805,8 +1805,7 @@ operator|->
 name|start_coords
 argument_list|)
 expr_stmt|;
-comment|/*  push an undo  */
-name|gimp_drawable_apply_image
+name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,
@@ -1839,7 +1838,6 @@ name|undo_tiles
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  push the group end  */
 name|undo_push_group_end
 argument_list|(
 name|gimage
