@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -977,6 +983,18 @@ operator|->
 name|set_context_func
 operator|=
 name|set_context_func
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dockable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|help_id
+argument_list|)
 expr_stmt|;
 return|return
 name|GTK_WIDGET

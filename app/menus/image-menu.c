@@ -1631,7 +1631,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM_100
+name|GIMP_HELP_VIEW_ZOOM_IN
 block|,
 name|NULL
 block|}
@@ -1654,7 +1654,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|GIMP_HELP_VIEW_ZOOM_OUT
+name|GIMP_HELP_VIEW_ZOOM_100
 block|,
 name|NULL
 block|}
@@ -4140,7 +4140,7 @@ block|}
 block|,
 literal|"gimp-channel-list"
 block|,
-name|GIMP_HELP_LAYER_DIALOG
+name|GIMP_HELP_CHANNEL_DIALOG
 block|,
 name|NULL
 block|}
