@@ -173,13 +173,13 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 parameter_list|,
 name|int
 modifier|*
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 parameter_list|)
@@ -258,7 +258,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 comment|/* Plug-in information */
@@ -641,13 +641,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -655,7 +655,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -663,7 +663,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -671,7 +671,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"output_to"
 block|,
@@ -679,7 +679,7 @@ literal|"Print command or filename (| to pipe to command)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"driver"
 block|,
@@ -687,7 +687,7 @@ literal|"Printer driver short name"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"ppd_file"
 block|,
@@ -695,7 +695,7 @@ literal|"PPD file"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"output_type"
 block|,
@@ -703,7 +703,7 @@ literal|"Output type (0 = gray, 1 = color)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"resolution"
 block|,
@@ -711,7 +711,7 @@ literal|"Resolution (\"300\", \"720\", etc.)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"media_size"
 block|,
@@ -719,7 +719,7 @@ literal|"Media size (\"Letter\", \"A4\", etc.)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"media_type"
 block|,
@@ -727,7 +727,7 @@ literal|"Media type (\"Plain\", \"Glossy\", etc.)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"media_source"
 block|,
@@ -735,7 +735,7 @@ literal|"Media source (\"Tray1\", \"Manual\", etc.)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"brightness"
 block|,
@@ -743,7 +743,7 @@ literal|"Brightness (0-400%)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"scaling"
 block|,
@@ -751,7 +751,7 @@ literal|"Output scaling (0-100%, -PPI)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"orientation"
 block|,
@@ -759,7 +759,7 @@ literal|"Output orientation (-1 = auto, 0 = portrait, 1 = landscape)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"left"
 block|,
@@ -767,7 +767,7 @@ literal|"Left offset (points, -1 = centered)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"top"
 block|,
@@ -775,7 +775,7 @@ literal|"Top offset (points, -1 = centered)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"gamma"
 block|,
@@ -783,7 +783,7 @@ literal|"Output gamma (0.1 - 3.0)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"contrast"
 block|,
@@ -791,7 +791,7 @@ literal|"Contrast"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"cyan"
 block|,
@@ -799,7 +799,7 @@ literal|"Cyan level"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"magenta"
 block|,
@@ -807,7 +807,7 @@ literal|"Magenta level"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"yellow"
 block|,
@@ -815,7 +815,7 @@ literal|"Yellow level"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"linear"
 block|,
@@ -823,7 +823,7 @@ literal|"Linear output (0 = normal, 1 = linear)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"image_type"
 block|,
@@ -831,7 +831,7 @@ literal|"Image type (0 = line art, 1 = solid tones, 2 = continuous tone, 3 = mon
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"saturation"
 block|,
@@ -839,7 +839,7 @@ literal|"Saturation (0-1000%)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"density"
 block|,
@@ -847,7 +847,7 @@ literal|"Density (0-200%)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"ink_type"
 block|,
@@ -855,7 +855,7 @@ literal|"Type of ink or cartridge"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"dither_algorithm"
 block|,
@@ -863,7 +863,7 @@ literal|"Dither algorithm"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"unit"
 block|,
@@ -1237,7 +1237,7 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -1249,7 +1249,7 @@ name|int
 name|nparams
 parameter_list|,
 comment|/* I - Number of parameters passed in */
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1259,19 +1259,19 @@ modifier|*
 name|nreturn_vals
 parameter_list|,
 comment|/* O - Number of return values */
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 comment|/* O - Return values */
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 comment|/* Drawable for image */
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 comment|/* Current run mode */
@@ -1284,7 +1284,7 @@ name|int
 name|ncolors
 decl_stmt|;
 comment|/* Number of colors in colormap */
-name|GParam
+name|GimpParam
 modifier|*
 name|values
 decl_stmt|;
@@ -1309,7 +1309,7 @@ name|GIMP_1_0
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 comment|/* return value of gimp_export_image() */
 endif|#
@@ -1389,7 +1389,7 @@ name|values
 operator|=
 name|g_new
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|,
 literal|1
 argument_list|)
@@ -1401,7 +1401,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1412,7 +1412,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -1508,13 +1508,13 @@ argument_list|,
 literal|"Print"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
-name|CAN_HANDLE_ALPHA
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1522,7 +1522,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 operator|*
@@ -1539,7 +1539,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 return|return;
 block|}
@@ -2876,7 +2876,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

@@ -162,7 +162,7 @@ specifier|extern
 name|Image
 name|Image_GDrawable_new
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)

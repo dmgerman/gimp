@@ -43,15 +43,15 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb8aad80108
+DECL|struct|__anon29f4e0a00108
 block|{
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 DECL|member|rgn
-name|GPixelRgn
+name|GimpPixelRgn
 name|rgn
 decl_stmt|;
 comment|/*    * Transformations we can impose on the image.  The transformations    * are considered to be performed in the order given here.    */
@@ -99,10 +99,10 @@ end_typedef
 
 begin_function
 name|Image
-DECL|function|Image_GDrawable_new (GDrawable * drawable)
+DECL|function|Image_GDrawable_new (GimpDrawable * drawable)
 name|Image_GDrawable_new
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
