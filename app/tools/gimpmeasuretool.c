@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -90,6 +84,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-unit.h"
 end_include
 
 begin_include
@@ -2590,22 +2590,18 @@ name|g_strdup_printf
 argument_list|(
 literal|"%%.%df %s, %%.2f %s"
 argument_list|,
-name|gimp_unit_get_digits
+name|gimp_image_unit_get_digits
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|unit
 argument_list|)
 argument_list|,
-name|gimp_unit_get_symbol
+name|gimp_image_unit_get_symbol
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|unit
 argument_list|)
 argument_list|,
 name|_
@@ -2616,13 +2612,11 @@ argument_list|)
 decl_stmt|;
 name|distance
 operator|=
-name|gimp_unit_get_factor
+name|gimp_image_unit_get_factor
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|unit
 argument_list|)
 operator|*
 name|sqrt
@@ -2784,22 +2778,18 @@ name|g_strdup_printf
 argument_list|(
 literal|"%%.%df %s"
 argument_list|,
-name|gimp_unit_get_digits
+name|gimp_image_unit_get_digits
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|unit
 argument_list|)
 argument_list|,
-name|gimp_unit_get_symbol
+name|gimp_image_unit_get_symbol
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|unit
 argument_list|)
 argument_list|)
 expr_stmt|;

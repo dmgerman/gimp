@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
@@ -61,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpunit.h"
 end_include
 
 begin_include
@@ -1852,6 +1858,10 @@ modifier|*
 name|tr_tool
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|GimpTool
 modifier|*
 name|tool
@@ -1948,10 +1958,20 @@ name|label_unit
 operator|=
 name|unit
 expr_stmt|;
+name|gimp
+operator|=
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|gimp
+expr_stmt|;
 name|unit_factor
 operator|=
-name|gimp_unit_get_factor
+name|_gimp_unit_get_factor
 argument_list|(
+name|gimp
+argument_list|,
 name|label_unit
 argument_list|)
 expr_stmt|;
@@ -1972,15 +1992,19 @@ argument_list|)
 argument_list|,
 literal|"%%.%df %s"
 argument_list|,
-name|gimp_unit_get_digits
+name|_gimp_unit_get_digits
 argument_list|(
+name|gimp
+argument_list|,
 name|label_unit
 argument_list|)
 operator|+
 literal|1
 argument_list|,
-name|gimp_unit_get_symbol
+name|_gimp_unit_get_symbol
 argument_list|(
+name|gimp
+argument_list|,
 name|label_unit
 argument_list|)
 argument_list|)

@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -125,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a45c750103
+DECL|enum|__anon29c405350103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE

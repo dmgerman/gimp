@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"vectors-types.h"
 end_include
 
@@ -61,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpunit.h"
 end_include
 
 begin_include
@@ -553,8 +553,12 @@ literal|"%g"
 argument_list|,
 name|w
 operator|*
-name|gimp_unit_get_factor
+name|_gimp_unit_get_factor
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 argument_list|)
@@ -572,8 +576,12 @@ literal|"%g"
 argument_list|,
 name|h
 operator|*
-name|gimp_unit_get_factor
+name|_gimp_unit_get_factor
 argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 argument_list|)

@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-unit.h"
 end_include
 
 begin_include
@@ -2449,7 +2449,7 @@ end_comment
 begin_function
 specifier|static
 name|gdouble
-DECL|function|img2real (GimpDisplayShell * shell,gboolean xdir,gdouble a)
+DECL|function|img2real (GimpDisplayShell * shell,gboolean xdir,gdouble len)
 name|img2real
 parameter_list|(
 name|GimpDisplayShell
@@ -2460,7 +2460,7 @@ name|gboolean
 name|xdir
 parameter_list|,
 name|gdouble
-name|a
+name|len
 parameter_list|)
 block|{
 name|GimpImage
@@ -2477,7 +2477,7 @@ operator|->
 name|dot_for_dot
 condition|)
 return|return
-name|a
+name|len
 return|;
 name|gimage
 operator|=
@@ -2505,13 +2505,11 @@ operator|->
 name|yresolution
 expr_stmt|;
 return|return
-name|a
+name|len
 operator|*
-name|gimp_unit_get_factor
+name|gimp_image_unit_get_factor
 argument_list|(
 name|gimage
-operator|->
-name|unit
 argument_list|)
 operator|/
 name|res
