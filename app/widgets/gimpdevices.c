@@ -12,24 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -297,15 +279,6 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"############# adding %s\n"
-argument_list|,
-name|device
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
 name|device_info
 operator|=
 name|gimp_device_info_new
@@ -491,18 +464,23 @@ name|error
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|error
+operator|->
+name|code
+operator|!=
+name|GIMP_CONFIG_ERROR_OPEN_ENOENT
+condition|)
 name|g_message
 argument_list|(
-literal|"Could not read devicerc: %s"
-argument_list|,
 name|error
 operator|->
 name|message
 argument_list|)
 expr_stmt|;
-name|g_clear_error
+name|g_error_free
 argument_list|(
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
@@ -663,16 +641,13 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Could not write devicerc: %s"
-argument_list|,
 name|error
 operator|->
 name|message
 argument_list|)
 expr_stmt|;
-name|g_clear_error
+name|g_error_free
 argument_list|(
-operator|&
 name|error
 argument_list|)
 expr_stmt|;

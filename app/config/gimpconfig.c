@@ -1536,7 +1536,7 @@ name|GIMP_CONFIG_ERROR_PARSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Error while parsing '%s' in line %d:\n %s"
+literal|"Error while parsing '%s' in line %d:\n%s"
 argument_list|)
 argument_list|,
 name|scanner
@@ -1710,7 +1710,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e58e30108
+DECL|struct|__anon29de5fdc0108
 block|{
 DECL|member|key
 name|gchar

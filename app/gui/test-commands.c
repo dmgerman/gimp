@@ -1158,9 +1158,8 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
-name|g_clear_error
+name|g_error_free
 argument_list|(
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
@@ -1245,9 +1244,8 @@ operator|->
 name|message
 argument_list|)
 expr_stmt|;
-name|g_clear_error
+name|g_error_free
 argument_list|(
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
