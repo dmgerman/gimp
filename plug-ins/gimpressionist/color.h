@@ -32,6 +32,16 @@ end_enum
 
 begin_function_decl
 name|void
+name|create_colorpage
+parameter_list|(
+name|GtkNotebook
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|color_restore
 parameter_list|(
 name|void

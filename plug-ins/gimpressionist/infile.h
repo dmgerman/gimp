@@ -18,6 +18,21 @@ directive|include
 file|"ppmtool.h"
 end_include
 
+begin_comment
+comment|/* Globals */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|img_has_alpha
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* Prototypes */
+end_comment
+
 begin_function_decl
 name|void
 name|infile_copy_to_ppm

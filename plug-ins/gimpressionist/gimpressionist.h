@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a209ca00108
+DECL|struct|__anon275e5bdf0108
 block|{
 DECL|member|orientnum
 name|int
@@ -479,13 +479,6 @@ name|pcvals
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|img_has_alpha
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* Prototypes */
 end_comment
@@ -512,16 +505,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|create_orientationpage
-parameter_list|(
-name|GtkNotebook
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|create_colorpage
 parameter_list|(
 name|GtkNotebook
 modifier|*
