@@ -190,7 +190,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_free:  *  * This function frees the menory used by the #GtkTooltips created by  * gimp_help_init().  *  */
+comment|/**  * gimp_help_free:  *  * This function frees the memory used by the #GtkTooltips created by  * gimp_help_init().  *  */
 end_comment
 
 begin_function
@@ -261,7 +261,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_connect_help_accel:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  *  */
+comment|/**  * gimp_help_connect_help_accel:  * @widget: The widget you want to connect the help accelerator for. Will  *          be a #GtkWindow in most cases.  * @help_func: The function which will be called if the user presses "F1".  * @help_data: The data pointer which will be passed to @help_func.  *  * Note that this function is automatically called by all libgimp dialog  * constructors. You only have to call it for windows/dialogs you created  * "manually".  *  * For convenience, gimp_help_connect_help_accel() calls  * gimp_dialog_set_icon() if the passed widget is a #GtkWindow, so you  * don't have to worry about this.  *  */
 end_comment
 
 begin_function
@@ -537,7 +537,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_set_help_data:  * @widget: The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip.  * @help_data: The @help_data for the #GtkTipsQuery tooltips inspector.  *  */
+comment|/**  * gimp_help_set_help_data:  * @widget: The #GtkWidget you want to set a @tooltip and/or @help_data for.  * @tooltip: The text for this widget's tooltip.  * @help_data: The @help_data for the #GtkTipsQuery tooltips inspector.  *  * The reason why we don't use gtk_tooltips_set_tip() is that it's  * impossible to set a @private_tip (aka @help_data) without a visible  * @tooltip.  *  * This function can be called with @tooltip == #NULL. Use this feature  * if you want to set a HTML help link for a widget which shouldn't have  * a visible tooltip.  *  * You can e.g. set a @help_data string to a complete HTML page for a  * container widget (e.g. a #GtkBox). For the widgets inside the box  * you can set HTML anchors which point inside the container widget's  * help page by setting @help_data strings starting with "#".  *  * If the tooltips inspector (Shift + "F1") is invoked and the user  * clicks on one of the widgets which only contain a "#" link, the  * help system will automatically ascend the widget hierarchy until it  * finds another widget with @help_data attached and concatenates both  * to a complete help path.  *  */
 end_comment
 
 begin_function
@@ -610,7 +610,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_help:  *  * This function invokes the #GtkTipsQuery tooltips inspector.  *   */
+comment|/**  * gimp_context_help:  *  * This function invokes the #GtkTipsQuery tooltips inspector.  *  * The mouse cursor will turn turn into a question mark and the user can  * click on any widget of the application which started the inspector.  *  * If the widget the user clicked on has a @help_data string attached  * (see gimp_help_set_help_data()), the corresponding HTML page will  * be displayed. Otherwise the help system will ascend the widget hierarchy  * until it finds an attached @help_data string (which should be the  * case at least for every window/dialog).  *   */
 end_comment
 
 begin_function
