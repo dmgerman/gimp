@@ -50,11 +50,6 @@ name|values
 parameter_list|)
 block|{
 name|gdouble
-name|xx
-decl_stmt|,
-name|yy
-decl_stmt|;
-name|gdouble
 name|m0
 decl_stmt|,
 name|m1
@@ -66,7 +61,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|xx
+name|x
 operator|=
 name|fmod
 argument_list|(
@@ -75,7 +70,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|yy
+name|y
 operator|=
 name|fmod
 argument_list|(
@@ -109,7 +104,7 @@ operator|=
 operator|(
 literal|1.0
 operator|-
-name|xx
+name|x
 operator|)
 operator|*
 name|values
@@ -117,7 +112,7 @@ index|[
 literal|0
 index|]
 operator|+
-name|xx
+name|x
 operator|*
 name|values
 index|[
@@ -129,7 +124,7 @@ operator|=
 operator|(
 literal|1.0
 operator|-
-name|xx
+name|x
 operator|)
 operator|*
 name|values
@@ -137,7 +132,7 @@ index|[
 literal|2
 index|]
 operator|+
-name|xx
+name|x
 operator|*
 name|values
 index|[
@@ -148,12 +143,12 @@ return|return
 operator|(
 literal|1.0
 operator|-
-name|yy
+name|y
 operator|)
 operator|*
 name|m0
 operator|+
-name|yy
+name|y
 operator|*
 name|m1
 return|;
@@ -177,11 +172,6 @@ name|values
 parameter_list|)
 block|{
 name|gdouble
-name|xx
-decl_stmt|,
-name|yy
-decl_stmt|;
-name|gdouble
 name|m0
 decl_stmt|,
 name|m1
@@ -193,7 +183,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|xx
+name|x
 operator|=
 name|fmod
 argument_list|(
@@ -202,7 +192,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|yy
+name|y
 operator|=
 name|fmod
 argument_list|(
@@ -236,7 +226,7 @@ operator|=
 operator|(
 literal|1.0
 operator|-
-name|xx
+name|x
 operator|)
 operator|*
 name|values
@@ -244,7 +234,7 @@ index|[
 literal|0
 index|]
 operator|+
-name|xx
+name|x
 operator|*
 name|values
 index|[
@@ -256,7 +246,7 @@ operator|=
 operator|(
 literal|1.0
 operator|-
-name|xx
+name|x
 operator|)
 operator|*
 name|values
@@ -264,7 +254,7 @@ index|[
 literal|2
 index|]
 operator|+
-name|xx
+name|x
 operator|*
 name|values
 index|[
@@ -279,12 +269,12 @@ argument_list|(
 operator|(
 literal|1.0
 operator|-
-name|yy
+name|y
 operator|)
 operator|*
 name|m0
 operator|+
-name|yy
+name|y
 operator|*
 name|m1
 argument_list|)
@@ -309,11 +299,6 @@ name|values
 parameter_list|)
 block|{
 name|gdouble
-name|xx
-decl_stmt|,
-name|yy
-decl_stmt|;
-name|gdouble
 name|m0
 decl_stmt|,
 name|m1
@@ -325,7 +310,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|xx
+name|x
 operator|=
 name|fmod
 argument_list|(
@@ -334,7 +319,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|yy
+name|y
 operator|=
 name|fmod
 argument_list|(
@@ -368,7 +353,7 @@ operator|=
 operator|(
 literal|1.0
 operator|-
-name|xx
+name|x
 operator|)
 operator|*
 name|values
@@ -376,7 +361,7 @@ index|[
 literal|0
 index|]
 operator|+
-name|xx
+name|x
 operator|*
 name|values
 index|[
@@ -388,7 +373,7 @@ operator|=
 operator|(
 literal|1.0
 operator|-
-name|xx
+name|x
 operator|)
 operator|*
 name|values
@@ -396,7 +381,7 @@ index|[
 literal|2
 index|]
 operator|+
-name|xx
+name|x
 operator|*
 name|values
 index|[
@@ -411,12 +396,12 @@ argument_list|(
 operator|(
 literal|1.0
 operator|-
-name|yy
+name|y
 operator|)
 operator|*
 name|m0
 operator|+
-name|yy
+name|y
 operator|*
 name|m1
 argument_list|)
@@ -441,11 +426,6 @@ name|values
 parameter_list|)
 block|{
 name|gdouble
-name|xx
-decl_stmt|,
-name|yy
-decl_stmt|;
-name|gdouble
 name|m0
 decl_stmt|,
 name|m1
@@ -457,7 +437,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|xx
+name|x
 operator|=
 name|fmod
 argument_list|(
@@ -466,7 +446,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|yy
+name|y
 operator|=
 name|fmod
 argument_list|(
@@ -500,7 +480,7 @@ operator|=
 operator|(
 literal|1.0
 operator|-
-name|xx
+name|x
 operator|)
 operator|*
 name|values
@@ -508,7 +488,7 @@ index|[
 literal|0
 index|]
 operator|+
-name|xx
+name|x
 operator|*
 name|values
 index|[
@@ -520,7 +500,7 @@ operator|=
 operator|(
 literal|1.0
 operator|-
-name|xx
+name|x
 operator|)
 operator|*
 name|values
@@ -528,7 +508,7 @@ index|[
 literal|2
 index|]
 operator|+
-name|xx
+name|x
 operator|*
 name|values
 index|[
@@ -543,12 +523,12 @@ argument_list|(
 operator|(
 literal|1.0
 operator|-
-name|yy
+name|y
 operator|)
 operator|*
 name|m0
 operator|+
-name|yy
+name|y
 operator|*
 name|m1
 argument_list|)
