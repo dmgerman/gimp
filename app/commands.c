@@ -258,7 +258,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299bc1b50108
+DECL|struct|__anon27a8c1070108
 block|{
 DECL|member|resize
 name|Resize
@@ -4948,7 +4948,7 @@ name|radius_x
 operator|=
 name|radius_y
 operator|=
-name|selection_feather_radius
+name|selection_border_radius
 expr_stmt|;
 if|if
 condition|(
