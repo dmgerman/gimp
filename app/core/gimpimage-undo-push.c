@@ -6676,6 +6676,12 @@ argument_list|)
 operator|->
 name|offset_y
 expr_stmt|;
+comment|/*  Make sure we're not caching any old selection info  */
+name|gimp_layer_invalidate_boundary
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
