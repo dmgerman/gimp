@@ -134,7 +134,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2760821f0108
+DECL|struct|__anon27fdefbd0108
 typedef|typedef
 struct|struct
 block|{
@@ -153,7 +153,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2760821f0208
+DECL|struct|__anon27fdefbd0208
 typedef|typedef
 struct|struct
 block|{
@@ -168,7 +168,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2760821f0308
+DECL|struct|__anon27fdefbd0308
 typedef|typedef
 struct|struct
 block|{
@@ -558,7 +558,7 @@ name|help_string
 init|=
 name|_
 argument_list|(
-literal|" Perform edge detection on the contents of the specified drawable. It applies, I think, convolusion with 3x3 kernel. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tilable image)."
+literal|" Perform edge detection on the contents of the specified drawable. It applies, I think, convolution with 3x3 kernel. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tilable image)."
 argument_list|)
 decl_stmt|;
 name|INIT_I18N
@@ -2108,7 +2108,7 @@ parameter_list|,
 name|Y
 parameter_list|)
 value|src[ (Y-1)*(int)src_rgn.rowstride + (X-1)*(int)src_rgn.bpp + chan ]
-comment|/* make convolusion */
+comment|/* make convolution */
 name|sum1
 operator|=
 operator|(
@@ -2420,7 +2420,7 @@ name|chan
 operator|++
 control|)
 block|{
-comment|/* make convolusion */
+comment|/* make convolution */
 name|sum1
 operator|=
 operator|(
