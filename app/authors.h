@@ -274,7 +274,7 @@ literal|"Asbjorn Pettersen"
 block|,
 literal|"Mike Phillips"
 block|,
-literal|"Artur Polaczyaski"
+literal|"Artur Polaczynski"
 block|,
 literal|"Raphael Quinet"
 block|,
