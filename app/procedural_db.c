@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"general.h"
 end_include
 
@@ -1194,6 +1200,16 @@ DECL|function|procedural_db_init ()
 name|procedural_db_init
 parameter_list|()
 block|{
+name|app_init_update_status
+argument_list|(
+literal|"Procedural Database"
+argument_list|,
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!

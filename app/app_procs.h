@@ -51,6 +51,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|app_init_update_status
+parameter_list|(
+name|char
+modifier|*
+name|label1val
+parameter_list|,
+name|char
+modifier|*
+name|label2val
+parameter_list|,
+name|float
+name|pct_progress
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
