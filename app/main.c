@@ -201,6 +201,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|message_handler
+name|MessageHandlerType
+name|message_handler
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|prog_name
 name|char
 modifier|*
@@ -399,6 +406,10 @@ expr_stmt|;
 name|console_messages
 operator|=
 name|FALSE
+expr_stmt|;
+name|message_handler
+operator|=
+name|CONSOLE
 expr_stmt|;
 name|batch_cmds
 operator|=
@@ -913,11 +924,10 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* Print to console at first */
 name|g_set_message_handler
 argument_list|(
 operator|&
-name|message_console_func
+name|message_func
 argument_list|)
 expr_stmt|;
 comment|/* Handle some signals */

@@ -81,6 +81,22 @@ parameter_list|)
 value|((x> y) ? x : y)
 end_define
 
+begin_typedef
+DECL|enum|__anon2c2a1e810103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|MESSAGE_BOX
+name|MESSAGE_BOX
+block|,
+DECL|enumerator|CONSOLE
+name|CONSOLE
+DECL|typedef|MessageHandlerType
+block|}
+name|MessageHandlerType
+typedef|;
+end_typedef
+
 begin_decl_stmt
 specifier|extern
 name|int
@@ -127,6 +143,13 @@ begin_decl_stmt
 specifier|extern
 name|int
 name|console_messages
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|MessageHandlerType
+name|message_handler
 decl_stmt|;
 end_decl_stmt
 
