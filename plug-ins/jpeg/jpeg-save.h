@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c533a8a0108
+DECL|struct|__anon2aceb62b0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c533a8a0208
+DECL|struct|__anon2aceb62b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -425,7 +425,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c533a8a0308
+DECL|struct|__anon2aceb62b0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -7371,7 +7371,7 @@ name|exif_toggle
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+literal|1
 argument_list|,
 literal|7
 argument_list|,
@@ -7403,6 +7403,18 @@ name|gimp_toggle_button_update
 argument_list|)
 argument_list|,
 operator|&
+name|jsvals
+operator|.
+name|save_exif
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|exif_toggle
+argument_list|)
+argument_list|,
 name|jsvals
 operator|.
 name|save_exif
