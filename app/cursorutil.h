@@ -54,7 +54,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8531200103
+DECL|enum|__anon2933e8a00103
 block|{
 DECL|enumerator|GIMP_MOUSE1_CURSOR
 name|GIMP_MOUSE1_CURSOR
@@ -74,9 +74,6 @@ block|,
 DECL|enumerator|GIMP_MOUSE1U_CURSOR
 name|GIMP_MOUSE1U_CURSOR
 block|,
-DECL|enumerator|GIMP_BIGCIRC_CURSOR
-name|GIMP_BIGCIRC_CURSOR
-block|,
 DECL|enumerator|GIMP_COLOR_PICKER_CURSOR
 name|GIMP_COLOR_PICKER_CURSOR
 block|,
@@ -94,6 +91,9 @@ name|GIMP_MOUSE1SELP_CURSOR
 block|,
 DECL|enumerator|GIMP_MOUSE1SELM_CURSOR
 name|GIMP_MOUSE1SELM_CURSOR
+block|,
+DECL|enumerator|GIMP_MOUSE1SELU_CURSOR
+name|GIMP_MOUSE1SELU_CURSOR
 block|,
 DECL|enumerator|GIMP_MOUSE1SEL_CURSOR
 name|GIMP_MOUSE1SEL_CURSOR

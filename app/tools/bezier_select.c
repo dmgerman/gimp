@@ -283,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon29b13be10108
+DECL|struct|__anon27ddcbfa0108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b13be10208
+DECL|struct|__anon27ddcbfa0208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b13be10308
+DECL|struct|__anon27ddcbfa0308
 typedef|typedef
 struct|struct
 block|{
@@ -6449,7 +6449,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_BIGCIRC_CURSOR
+name|GIMP_MOUSE1SELU_CURSOR
 argument_list|)
 expr_stmt|;
 else|else
