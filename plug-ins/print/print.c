@@ -1350,7 +1350,7 @@ endif|#
 directive|endif
 name|INIT_LOCALE
 argument_list|(
-literal|"gimp-print"
+name|LOCALE
 argument_list|)
 expr_stmt|;
 comment|/*    * Initialize parameter data...    */
