@@ -124,7 +124,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon27df0c4f0103
+DECL|enum|__anon2c932f2a0103
 typedef|typedef
 enum|enum
 block|{
@@ -8349,7 +8349,7 @@ name|file_prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Toolbar"
+literal|"Toolbox"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -12068,7 +12068,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27df0c4f0208
+DECL|struct|__anon2c932f2a0208
 block|{
 DECL|member|label
 name|gchar
@@ -12293,7 +12293,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27df0c4f0308
+DECL|struct|__anon2c932f2a0308
 block|{
 DECL|member|tree_label
 name|gchar
