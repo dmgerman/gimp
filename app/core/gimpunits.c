@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -49,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"gimpunits.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpconfigwriter.h"
 end_include
 
 begin_include
@@ -198,7 +198,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0512c00103
+DECL|enum|__anon2c9a93890103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -546,16 +546,16 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gint
-name|i
+name|GimpConfigWriter
+modifier|*
+name|writer
 decl_stmt|;
 name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|FILE
-modifier|*
-name|fp
+name|gint
+name|i
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -572,13 +572,23 @@ argument_list|(
 literal|"unitrc"
 argument_list|)
 expr_stmt|;
-name|fp
+name|writer
 operator|=
-name|fopen
+name|gimp_config_writer_new
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+name|TRUE
+argument_list|,
+literal|"GIMP units\n\n"
+literal|"This file contains the user unit database. "
+literal|"You can edit this list with the unit "
+literal|"editor. You are not supposed to edit it "
+literal|"manually, but of course you can do.\n"
+literal|"This file will be entirely rewritten every "
+literal|"time you quit the gimp."
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -589,22 +599,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|fp
+name|writer
 condition|)
 return|return;
-name|fprintf
-argument_list|(
-name|fp
-argument_list|,
-literal|"# GIMP unitrc\n"
-literal|"#\n"
-literal|"# This file contains your user unit database. You can\n"
-literal|"# modify this list with the unit editor. You are not\n"
-literal|"# supposed to edit it manually, but of course you can do.\n"
-literal|"# This file will be entirely rewritten every time you\n"
-literal|"# quit the gimp.\n\n"
-argument_list|)
-expr_stmt|;
 comment|/*  save user defined units  */
 for|for
 control|(
@@ -638,22 +635,33 @@ index|[
 name|G_ASCII_DTOSTR_BUF_SIZE
 index|]
 decl_stmt|;
-name|fprintf
+name|gimp_config_writer_open
 argument_list|(
-name|fp
+name|writer
 argument_list|,
-literal|"(unit-info \"%s\"\n"
-literal|"   (factor %s)\n"
-literal|"   (digits %d)\n"
-literal|"   (symbol \"%s\")\n"
-literal|"   (abbreviation \"%s\")\n"
-literal|"   (singular \"%s\")\n"
-literal|"   (plural \"%s\"))\n\n"
+literal|"unit-info"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
 argument_list|,
 name|gimp_unit_get_identifier
 argument_list|(
 name|i
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_open
+argument_list|(
+name|writer
+argument_list|,
+literal|"factor"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_print
+argument_list|(
+name|writer
 argument_list|,
 name|g_ascii_formatd
 argument_list|(
@@ -672,25 +680,115 @@ name|i
 argument_list|)
 argument_list|)
 argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_open
+argument_list|(
+name|writer
+argument_list|,
+literal|"digits"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_printf
+argument_list|(
+name|writer
+argument_list|,
+literal|"%d"
+argument_list|,
 name|gimp_unit_get_digits
 argument_list|(
 name|i
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_open
+argument_list|(
+name|writer
+argument_list|,
+literal|"symbol"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
 argument_list|,
 name|gimp_unit_get_symbol
 argument_list|(
 name|i
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_open
+argument_list|(
+name|writer
+argument_list|,
+literal|"abbreviation"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
 argument_list|,
 name|gimp_unit_get_abbreviation
 argument_list|(
 name|i
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_open
+argument_list|(
+name|writer
+argument_list|,
+literal|"singular"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
 argument_list|,
 name|gimp_unit_get_singular
 argument_list|(
 name|i
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_open
+argument_list|(
+name|writer
+argument_list|,
+literal|"plural"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
 argument_list|,
 name|gimp_unit_get_plural
 argument_list|(
@@ -698,18 +796,25 @@ name|i
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-block|}
-name|fprintf
+name|gimp_config_writer_close
 argument_list|(
-name|fp
-argument_list|,
-literal|"# end of unitrc\n"
+name|writer
 argument_list|)
 expr_stmt|;
-name|fclose
+name|gimp_config_writer_close
 argument_list|(
-name|fp
+name|writer
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|gimp_config_writer_finish
+argument_list|(
+name|writer
+argument_list|,
+literal|"end of units"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

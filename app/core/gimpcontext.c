@@ -1087,7 +1087,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955de790103
+DECL|enum|__anon2a2aa7560103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1101,7 +1101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955de790203
+DECL|enum|__anon2a2aa7560203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -4093,34 +4093,14 @@ condition|(
 name|serialize_obj
 condition|)
 block|{
-name|gchar
-modifier|*
-name|escaped
-decl_stmt|;
-name|escaped
-operator|=
-name|g_strescape
+name|gimp_config_writer_string
 argument_list|(
+name|writer
+argument_list|,
 name|gimp_object_get_name
 argument_list|(
 name|serialize_obj
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_config_writer_printf
-argument_list|(
-name|writer
-argument_list|,
-literal|"\"%s\""
-argument_list|,
-name|escaped
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|escaped
 argument_list|)
 expr_stmt|;
 block|}

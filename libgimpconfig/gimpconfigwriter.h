@@ -150,6 +150,22 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_config_writer_string
+parameter_list|(
+name|GimpConfigWriter
+modifier|*
+name|writer
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|string
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_config_writer_revert
 parameter_list|(
 name|GimpConfigWriter

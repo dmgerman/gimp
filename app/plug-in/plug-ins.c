@@ -472,7 +472,7 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/* query any plug-ins that have changed since we last wrote out    *  the pluginrc file.    */
+comment|/*  Query any plug-ins that have changed since we last wrote out    *  the pluginrc file.    */
 call|(
 modifier|*
 name|status_callback
@@ -745,6 +745,12 @@ operator|->
 name|write_pluginrc
 condition|)
 block|{
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|gimp
@@ -761,6 +767,9 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|plug_in_rc_write
 argument_list|(
 name|gimp
@@ -768,8 +777,27 @@ operator|->
 name|plug_in_defs
 argument_list|,
 name|filename
+argument_list|,
+operator|&
+name|error
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"%s"
+argument_list|,
+name|error
+operator|->
+name|message
 argument_list|)
 expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp
 operator|->
 name|write_pluginrc
@@ -1180,7 +1208,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"Starting extension: \"%s\""
+literal|"Starting extension: \"%s\"\n"
 argument_list|)
 argument_list|,
 name|proc_def
