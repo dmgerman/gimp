@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bef4feb0108
+DECL|struct|__anon29bf236d0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -2993,6 +2993,15 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
+name|drawable
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|)
+expr_stmt|;
 comment|/* Image parameters */
 comment|/* Determine Position of original Layer in the Layer stack. */
 name|image_layers
@@ -5081,22 +5090,6 @@ block|{
 name|gimp_undo_push_group_start
 argument_list|(
 name|image_id
-argument_list|)
-expr_stmt|;
-name|gimp_layer_add_alpha
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-expr_stmt|;
-name|drawable
-operator|=
-name|gimp_drawable_get
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
