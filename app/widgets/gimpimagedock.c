@@ -1128,7 +1128,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|book_added
+name|book_removed
 argument_list|(
 name|dock
 argument_list|,
