@@ -916,6 +916,11 @@ break|break;
 default|default:
 break|break;
 block|}
+name|gimp_transform_tool_expose_preview
+argument_list|(
+name|transform_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -222,6 +222,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-preview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-render.h"
 end_include
 
@@ -1528,6 +1534,12 @@ argument_list|(
 name|rects
 argument_list|)
 expr_stmt|;
+comment|/* draw the transform tool preview */
+name|gimp_display_shell_preview_transform
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 comment|/* draw the guides */
 name|gimp_display_shell_draw_guides
 argument_list|(
@@ -2437,7 +2449,7 @@ name|config
 argument_list|)
 operator|->
 name|perfect_mouse
-operator|&&
+operator|||
 operator|(
 name|gimp_tool_control_motion_mode
 argument_list|(

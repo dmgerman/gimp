@@ -441,6 +441,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_transform_tool_expose_preview
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

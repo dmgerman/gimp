@@ -136,6 +136,10 @@ DECL|member|clip
 name|gboolean
 name|clip
 decl_stmt|;
+DECL|member|show_preview
+name|gboolean
+name|show_preview
+decl_stmt|;
 DECL|member|grid_type
 name|GimpTransformGridType
 name|grid_type

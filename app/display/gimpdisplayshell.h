@@ -495,6 +495,10 @@ name|gint
 name|cursor_y
 decl_stmt|;
 comment|/* software cursor Y value             */
+DECL|member|show_transform_preview
+name|gboolean
+name|show_transform_preview
+decl_stmt|;
 DECL|member|padding_button
 name|GtkWidget
 modifier|*
