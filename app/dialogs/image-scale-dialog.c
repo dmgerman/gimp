@@ -333,9 +333,7 @@ argument_list|)
 argument_list|,
 literal|"gimp-image-scale"
 argument_list|,
-name|display
-operator|->
-name|shell
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
