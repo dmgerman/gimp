@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277d03bd0103
+DECL|enum|__anon297cc56a0103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -242,12 +242,6 @@ modifier|*
 name|sel_stroke
 decl_stmt|;
 comment|/* selected stroke                   */
-DECL|member|select_vectors
-name|GimpVectors
-modifier|*
-name|select_vectors
-decl_stmt|;
-comment|/* used for VECTORS_SELECT_VECTOR    */
 block|}
 struct|;
 end_struct

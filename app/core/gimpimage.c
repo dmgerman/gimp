@@ -252,7 +252,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acc501d0103
+DECL|enum|__anon279486eb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -12964,16 +12964,6 @@ name|GIMP_OBJECT
 argument_list|(
 name|vectors
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_item_set_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Send out REMOVED signal from vectors */
