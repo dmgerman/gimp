@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-transform-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpanchor.h"
 end_include
 
@@ -47,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f177e0103
+DECL|enum|__anon2c134f140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

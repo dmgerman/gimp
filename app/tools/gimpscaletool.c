@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-transform-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdrawable-transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdrawable-transform-utils.h"
 end_include
 
 begin_include
@@ -1774,7 +1774,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|gimp_drawable_transform_matrix_scale
+name|gimp_transform_matrix_scale
 argument_list|(
 name|tr_tool
 operator|->

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-transform-utils.h"
+file|"core/gimp-transform-utils.h"
 end_include
 
 begin_include
@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fbaaf0103
+DECL|enum|__anon2afc27bf0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1791,7 +1791,7 @@ decl_stmt|;
 name|GimpMatrix3
 name|matrix
 decl_stmt|;
-name|gimp_drawable_transform_matrix_flip
+name|gimp_transform_matrix_flip
 argument_list|(
 name|flip_type
 argument_list|,
@@ -1941,7 +1941,7 @@ name|G_PI_2
 expr_stmt|;
 break|break;
 block|}
-name|gimp_drawable_transform_matrix_rotate_center
+name|gimp_transform_matrix_rotate_center
 argument_list|(
 name|center_x
 argument_list|,

@@ -46,13 +46,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"core/gimp-transform-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable-transform-utils.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -642,7 +642,7 @@ name|y2
 argument_list|)
 expr_stmt|;
 comment|/* Assemble the transformation matrix */
-name|gimp_drawable_transform_matrix_perspective
+name|gimp_transform_matrix_perspective
 argument_list|(
 name|x1
 argument_list|,
@@ -1048,7 +1048,7 @@ name|y2
 argument_list|)
 expr_stmt|;
 comment|/* Assemble the transformation matrix */
-name|gimp_drawable_transform_matrix_rotate
+name|gimp_transform_matrix_rotate
 argument_list|(
 name|x1
 argument_list|,
@@ -1430,7 +1430,7 @@ name|y2
 argument_list|)
 expr_stmt|;
 comment|/* Assemble the transformation matrix */
-name|gimp_drawable_transform_matrix_scale
+name|gimp_transform_matrix_scale
 argument_list|(
 name|x1
 argument_list|,
@@ -1819,7 +1819,7 @@ name|y2
 argument_list|)
 expr_stmt|;
 comment|/* Assemble the transformation matrix */
-name|gimp_drawable_transform_matrix_shear
+name|gimp_transform_matrix_shear
 argument_list|(
 name|x1
 argument_list|,

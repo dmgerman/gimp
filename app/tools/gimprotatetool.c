@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-transform-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdrawable-transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdrawable-transform-utils.h"
 end_include
 
 begin_include
@@ -1550,7 +1550,7 @@ name|cy
 operator|=
 name|cy
 expr_stmt|;
-name|gimp_drawable_transform_matrix_rotate_center
+name|gimp_transform_matrix_rotate_center
 argument_list|(
 name|tr_tool
 operator|->

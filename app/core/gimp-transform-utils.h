@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DRAWABLE_TRANSFORM_UTILS_H__
+name|__GIMP_TRANSFORM_UTILS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE_TRANSFORM_UTILS_H__
+DECL|macro|__GIMP_TRANSFORM_UTILS_H__
 define|#
 directive|define
-name|__GIMP_DRAWABLE_TRANSFORM_UTILS_H__
+name|__GIMP_TRANSFORM_UTILS_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_drawable_transform_matrix_flip
+name|gimp_transform_matrix_flip
 parameter_list|(
 name|GimpOrientationType
 name|flip_type
@@ -35,7 +35,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_transform_matrix_rotate
+name|gimp_transform_matrix_rotate
 parameter_list|(
 name|gint
 name|x1
@@ -61,7 +61,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_transform_matrix_rotate_center
+name|gimp_transform_matrix_rotate_center
 parameter_list|(
 name|gdouble
 name|cx
@@ -81,7 +81,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_transform_matrix_scale
+name|gimp_transform_matrix_scale
 parameter_list|(
 name|gint
 name|x1
@@ -116,7 +116,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_transform_matrix_shear
+name|gimp_transform_matrix_shear
 parameter_list|(
 name|gint
 name|x1
@@ -145,7 +145,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_transform_matrix_perspective
+name|gimp_transform_matrix_perspective
 parameter_list|(
 name|gint
 name|x1
@@ -196,7 +196,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DRAWABLE_TRANSFORM_SHEAR_H__  */
+comment|/*  __GIMP_TRANSFORM_UTILS_H__  */
 end_comment
 
 end_unit

@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-transform-utils.h"
+file|"gimp-transform-utils.h"
 end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_flip (GimpOrientationType flip_type,gdouble axis,GimpMatrix3 * result)
-name|gimp_drawable_transform_matrix_flip
+DECL|function|gimp_transform_matrix_flip (GimpOrientationType flip_type,gdouble axis,GimpMatrix3 * result)
+name|gimp_transform_matrix_flip
 parameter_list|(
 name|GimpOrientationType
 name|flip_type
@@ -135,8 +135,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_rotate (gint x1,gint y1,gint x2,gint y2,gdouble angle,GimpMatrix3 * result)
-name|gimp_drawable_transform_matrix_rotate
+DECL|function|gimp_transform_matrix_rotate (gint x1,gint y1,gint x2,gint y2,gdouble angle,GimpMatrix3 * result)
+name|gimp_transform_matrix_rotate
 parameter_list|(
 name|gint
 name|x1
@@ -229,8 +229,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_rotate_center (gdouble cx,gdouble cy,gdouble angle,GimpMatrix3 * result)
-name|gimp_drawable_transform_matrix_rotate_center
+DECL|function|gimp_transform_matrix_rotate_center (gdouble cx,gdouble cy,gdouble angle,GimpMatrix3 * result)
+name|gimp_transform_matrix_rotate_center
 parameter_list|(
 name|gdouble
 name|cx
@@ -285,8 +285,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_scale (gint x1,gint y1,gint x2,gint y2,gdouble tx1,gdouble ty1,gdouble tx2,gdouble ty2,GimpMatrix3 * result)
-name|gimp_drawable_transform_matrix_scale
+DECL|function|gimp_transform_matrix_scale (gint x1,gint y1,gint x2,gint y2,gdouble tx1,gdouble ty1,gdouble tx2,gdouble ty2,GimpMatrix3 * result)
+name|gimp_transform_matrix_scale
 parameter_list|(
 name|gint
 name|x1
@@ -422,8 +422,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_shear (gint x1,gint y1,gint x2,gint y2,GimpOrientationType orientation,gdouble amount,GimpMatrix3 * result)
-name|gimp_drawable_transform_matrix_shear
+DECL|function|gimp_transform_matrix_shear (gint x1,gint y1,gint x2,gint y2,GimpOrientationType orientation,gdouble amount,GimpMatrix3 * result)
+name|gimp_transform_matrix_shear
 parameter_list|(
 name|gint
 name|x1
@@ -575,8 +575,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_transform_matrix_perspective (gint x1,gint y1,gint x2,gint y2,gdouble tx1,gdouble ty1,gdouble tx2,gdouble ty2,gdouble tx3,gdouble ty3,gdouble tx4,gdouble ty4,GimpMatrix3 * result)
-name|gimp_drawable_transform_matrix_perspective
+DECL|function|gimp_transform_matrix_perspective (gint x1,gint y1,gint x2,gint y2,gdouble tx1,gdouble ty1,gdouble tx2,gdouble ty2,gdouble tx3,gdouble ty3,gdouble tx4,gdouble ty4,GimpMatrix3 * result)
+name|gimp_transform_matrix_perspective
 parameter_list|(
 name|gint
 name|x1
