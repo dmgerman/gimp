@@ -637,14 +637,6 @@ name|paint_state
 condition|)
 block|{
 case|case
-name|PRETRACE_PAINT
-case|:
-break|break;
-case|case
-name|POSTTRACE_PAINT
-case|:
-break|break;
-case|case
 name|INIT_PAINT
 case|:
 if|if
@@ -2417,7 +2409,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon2b3e72990103
+DECL|enum|__anon296c73130103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

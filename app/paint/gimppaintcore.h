@@ -29,27 +29,19 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1f87360103
+DECL|enum|__anon2c2b169f0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
 block|,
-comment|/* Setup PaintFunc internals */
+comment|/*  Setup PaintFunc internals                    */
 DECL|enumerator|MOTION_PAINT
 name|MOTION_PAINT
 block|,
-comment|/* PaintFunc performs motion-related rendering */
+comment|/*  PaintFunc performs motion-related rendering  */
 DECL|enumerator|FINISH_PAINT
 name|FINISH_PAINT
-block|,
-comment|/* Cleanup and/or reset PaintFunc operation */
-DECL|enumerator|PRETRACE_PAINT
-name|PRETRACE_PAINT
-block|,
-comment|/* PaintFunc performs window tracing activity                      * prior to rendering                      */
-DECL|enumerator|POSTTRACE_PAINT
-name|POSTTRACE_PAINT
-comment|/* PaintFunc performs window tracing activity                      * following rendering                      */
+comment|/*  Cleanup and/or reset PaintFunc operation     */
 DECL|typedef|GimpPaintCoreState
 block|}
 name|GimpPaintCoreState
@@ -229,11 +221,6 @@ block|{
 DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
-decl_stmt|;
-comment|/*  Set for tools that perform temporary rendering directly to the    *  window. These require sequencing with gimp_display_flush().    *  See gimpclone.c for example.    */
-DECL|member|traces_on_window
-name|gboolean
-name|traces_on_window
 decl_stmt|;
 comment|/*  virtual functions  */
 DECL|member|start
