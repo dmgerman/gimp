@@ -116,6 +116,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gboolean
+name|gimp_progress_box_progress_is_active
+parameter_list|(
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|gimp_progress_box_progress_set_text
 parameter_list|(
@@ -343,6 +355,12 @@ name|gimp_progress_box_progress_end
 expr_stmt|;
 name|progress_iface
 operator|->
+name|is_active
+operator|=
+name|gimp_progress_box_progress_is_active
+expr_stmt|;
+name|progress_iface
+operator|->
 name|set_text
 operator|=
 name|gimp_progress_box_progress_set_text
@@ -521,6 +539,34 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_progress_box_progress_is_active (GimpProgress * progress)
+name|gimp_progress_box_progress_is_active
+parameter_list|(
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|)
+block|{
+name|GimpProgressBox
+modifier|*
+name|box
+init|=
+name|GIMP_PROGRESS_BOX
+argument_list|(
+name|progress
+argument_list|)
+decl_stmt|;
+return|return
+name|box
+operator|->
+name|active
+return|;
 block|}
 end_function
 

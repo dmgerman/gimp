@@ -190,16 +190,15 @@ modifier|*
 name|progress
 decl_stmt|;
 comment|/*  Progress dialog                         */
-DECL|member|progress_active
-name|gboolean
-name|progress_active
-decl_stmt|;
-comment|/*  Is the progress currently used          */
 DECL|member|progress_created
 name|gboolean
 name|progress_created
 decl_stmt|;
 comment|/*  Was the progress created by the plug-in */
+DECL|member|progress_cancel_id
+name|gulong
+name|progress_cancel_id
+decl_stmt|;
 DECL|member|plug_in_def
 name|PlugInDef
 modifier|*
