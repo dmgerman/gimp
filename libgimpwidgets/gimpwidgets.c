@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpwidgets-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
@@ -3747,7 +3741,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baa39e00108
+DECL|struct|__anon29100c960108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -5385,9 +5379,7 @@ name|MAX
 argument_list|(
 literal|3
 argument_list|,
-name|_gimp_eek
-operator|.
-name|unit_get_digits
+name|gimp_unit_get_digits
 argument_list|(
 operator|*
 name|val

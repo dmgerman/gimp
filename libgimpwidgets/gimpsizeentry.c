@@ -39,12 +39,6 @@ directive|include
 file|"gimpunitmenu.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpwidgets-private.h"
-end_include
-
 begin_define
 DECL|macro|SIZE_MAX_VALUE
 define|#
@@ -61,12 +55,12 @@ name|GIMP_SIZE_ENTRY_DIGITS
 parameter_list|(
 name|unit
 parameter_list|)
-value|(MIN (_gimp_eek.unit_get_digits (unit), 5) + 1)
+value|(MIN (gimp_unit_get_digits (unit), 5) + 1)
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf19e4d0103
+DECL|enum|__anon28892ab00103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -2378,9 +2372,7 @@ name|gsef
 operator|->
 name|resolution
 operator|/
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gse
 operator|->
@@ -2395,9 +2387,7 @@ name|gsef
 operator|->
 name|resolution
 operator|/
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gse
 operator|->
@@ -2421,9 +2411,7 @@ name|gsef
 operator|->
 name|min_value
 operator|*
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gse
 operator|->
@@ -2434,9 +2422,7 @@ name|gsef
 operator|->
 name|max_value
 operator|*
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gse
 operator|->
@@ -2654,9 +2640,7 @@ name|gsef
 operator|->
 name|resolution
 operator|/
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gsef
 operator|->
@@ -2710,9 +2694,7 @@ name|CLAMP
 argument_list|(
 name|value
 operator|*
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gsef
 operator|->
@@ -3171,9 +3153,7 @@ name|gsef
 operator|->
 name|min_refval
 operator|*
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gse
 operator|->
@@ -3188,9 +3168,7 @@ name|gsef
 operator|->
 name|max_refval
 operator|*
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gse
 operator|->
@@ -3218,9 +3196,7 @@ name|gsef
 operator|->
 name|min_refval
 operator|/
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gse
 operator|->
@@ -3231,9 +3207,7 @@ name|gsef
 operator|->
 name|max_refval
 operator|/
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gse
 operator|->
@@ -3591,9 +3565,7 @@ name|CLAMP
 argument_list|(
 name|refval
 operator|*
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gsef
 operator|->
@@ -3643,9 +3615,7 @@ name|CLAMP
 argument_list|(
 name|refval
 operator|/
-name|_gimp_eek
-operator|.
-name|unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
 name|gsef
 operator|->
@@ -4050,16 +4020,12 @@ block|{
 name|digits
 operator|=
 operator|(
-name|_gimp_eek
-operator|.
-name|unit_get_digits
+name|gimp_unit_get_digits
 argument_list|(
 name|GIMP_UNIT_INCH
 argument_list|)
 operator|-
-name|_gimp_eek
-operator|.
-name|unit_get_digits
+name|gimp_unit_get_digits
 argument_list|(
 name|unit
 argument_list|)

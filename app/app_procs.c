@@ -142,6 +142,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"units.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -186,11 +192,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  global variables  */
+comment|/*  private variables  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|the_gimp
+specifier|static
 name|Gimp
 modifier|*
 name|the_gimp
@@ -508,6 +515,11 @@ argument_list|,
 name|gimp_error_log_func
 argument_list|,
 operator|&
+name|the_gimp
+argument_list|)
+expr_stmt|;
+name|units_init
+argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;

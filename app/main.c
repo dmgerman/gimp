@@ -618,8 +618,6 @@ block|{
 name|g_type_init
 argument_list|()
 expr_stmt|;
-name|the_gimp
-operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_GIMP

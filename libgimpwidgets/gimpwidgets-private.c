@@ -52,17 +52,6 @@ file|"themes/Default/images/gimp-wilber-pixbufs.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|_gimp_eek
-name|GimpWidgetsVTable
-name|_gimp_eek
-init|=
-block|{
-name|NULL
-block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|_gimp_standard_help_func
 name|GimpHelpFunc
 name|_gimp_standard_help_func
@@ -100,13 +89,9 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_widgets_init (GimpWidgetsVTable * vtable,GimpHelpFunc standard_help_func,GimpGetColorFunc get_foreground_func,GimpGetColorFunc get_background_func,GimpEnsureModulesFunc ensure_modules_func)
+DECL|function|gimp_widgets_init (GimpHelpFunc standard_help_func,GimpGetColorFunc get_foreground_func,GimpGetColorFunc get_background_func,GimpEnsureModulesFunc ensure_modules_func)
 name|gimp_widgets_init
 parameter_list|(
-name|GimpWidgetsVTable
-modifier|*
-name|vtable
-parameter_list|,
 name|GimpHelpFunc
 name|standard_help_func
 parameter_list|,
@@ -157,13 +142,6 @@ block|}
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|vtable
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|standard_help_func
 operator|!=
 name|NULL
@@ -177,11 +155,6 @@ name|g_error
 argument_list|(
 literal|"gimp_widgets_init() must only be called once!"
 argument_list|)
-expr_stmt|;
-name|_gimp_eek
-operator|=
-operator|*
-name|vtable
 expr_stmt|;
 name|_gimp_standard_help_func
 operator|=

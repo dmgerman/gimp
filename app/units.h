@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__APP_PROCS_H__
+name|__UNITS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__APP_PROCS_H__
+DECL|macro|__UNITS_H__
 define|#
 directive|define
-name|__APP_PROCS_H__
+name|__UNITS_H__
 end_define
 
 begin_ifndef
@@ -25,7 +25,7 @@ end_ifndef
 begin_error
 error|#
 directive|error
-error|You must not #include "app_procs.h" from an app/ subdir
+error|You must not #include "units.h" from an app/ subdir
 end_error
 
 begin_endif
@@ -34,89 +34,12 @@ directive|endif
 end_endif
 
 begin_function_decl
-name|gboolean
-name|app_gui_libs_init
-parameter_list|(
-name|gint
-modifier|*
-name|gimp_argc
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-modifier|*
-name|gimp_argv
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
-name|app_init
+name|units_init
 parameter_list|(
-specifier|const
-name|gchar
+name|Gimp
 modifier|*
-name|full_prog_name
-parameter_list|,
-name|gint
-name|gimp_argc
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|gimp_argv
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|alternate_system_gimprc
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|alternate_gimprc
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|session_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-modifier|*
-name|batch_cmds
-parameter_list|,
-name|gboolean
-name|no_interface
-parameter_list|,
-name|gboolean
-name|no_data
-parameter_list|,
-name|gboolean
-name|no_fonts
-parameter_list|,
-name|gboolean
-name|no_splash
-parameter_list|,
-name|gboolean
-name|no_splash_image
-parameter_list|,
-name|gboolean
-name|be_verbose
-parameter_list|,
-name|gboolean
-name|use_shm
-parameter_list|,
-name|gboolean
-name|use_mmx
-parameter_list|,
-name|gboolean
-name|console_messages
-parameter_list|,
-name|GimpStackTraceMode
-name|stack_trace_mode
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -127,7 +50,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __APP_PROCS_H__ */
+comment|/* __UNITS_H__ */
 end_comment
 
 end_unit
