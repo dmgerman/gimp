@@ -998,6 +998,12 @@ argument_list|(
 operator|&
 name|value
 argument_list|)
+operator|||
+name|prop_spec
+operator|->
+name|flags
+operator|&
+name|G_PARAM_WRITABLE
 condition|)
 name|g_object_set_property
 argument_list|(
