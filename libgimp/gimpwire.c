@@ -1,7 +1,13 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *               * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_include
 include|#
@@ -27,11 +33,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_PARAM_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<sys/param.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -39,11 +56,45 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_MSC_VER
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<process.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -317,11 +368,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_read (int fd,guint8 * buf,gulong count)
+DECL|function|wire_read (GIOChannel * channel,guint8 * buf,gulong count)
 name|wire_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|guint8
 modifier|*
@@ -344,7 +396,7 @@ modifier|*
 name|wire_read_func
 call|)
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|buf
 argument_list|,
@@ -352,9 +404,9 @@ name|count
 argument_list|)
 condition|)
 block|{
-name|g_print
+name|g_warning
 argument_list|(
-literal|"wire_read: error\n"
+literal|"wire_read: error"
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -368,6 +420,9 @@ block|}
 block|}
 else|else
 block|{
+name|GIOError
+name|error
+decl_stmt|;
 name|int
 name|bytes
 decl_stmt|;
@@ -382,9 +437,13 @@ do|do
 block|{
 name|bytes
 operator|=
-name|read
+literal|0
+expr_stmt|;
+name|error
+operator|=
+name|g_io_channel_read
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|char
@@ -393,44 +452,29 @@ operator|)
 name|buf
 argument_list|,
 name|count
+argument_list|,
+operator|&
+name|bytes
 argument_list|)
 expr_stmt|;
 block|}
 do|while
 condition|(
-operator|(
-name|bytes
+name|error
 operator|==
-operator|-
-literal|1
-operator|)
-operator|&&
-operator|(
-operator|(
-name|errno
-operator|==
-name|EAGAIN
-operator|)
-operator|||
-operator|(
-name|errno
-operator|==
-name|EINTR
-operator|)
-operator|)
+name|G_IO_ERROR_AGAIN
 condition|)
 do|;
 if|if
 condition|(
-name|bytes
-operator|==
-operator|-
-literal|1
+name|error
+operator|!=
+name|G_IO_ERROR_NONE
 condition|)
 block|{
-name|g_print
+name|g_warning
 argument_list|(
-literal|"wire_read: error\n"
+literal|"wire_read: error"
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -448,9 +492,9 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_print
+name|g_warning
 argument_list|(
-literal|"wire_read: unexpected EOF (plug-in crashed?)\n"
+literal|"wire_read: unexpected EOF (plug-in crashed?)"
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -479,11 +523,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_write (int fd,guint8 * buf,gulong count)
+DECL|function|wire_write (GIOChannel * channel,guint8 * buf,gulong count)
 name|wire_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|guint8
 modifier|*
@@ -506,7 +551,7 @@ modifier|*
 name|wire_write_func
 call|)
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|buf
 argument_list|,
@@ -514,9 +559,9 @@ name|count
 argument_list|)
 condition|)
 block|{
-name|g_print
+name|g_warning
 argument_list|(
-literal|"wire_write: error\n"
+literal|"wire_write: error"
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -530,6 +575,9 @@ block|}
 block|}
 else|else
 block|{
+name|GIOError
+name|error
+decl_stmt|;
 name|int
 name|bytes
 decl_stmt|;
@@ -544,9 +592,13 @@ do|do
 block|{
 name|bytes
 operator|=
-name|write
+literal|0
+expr_stmt|;
+name|error
+operator|=
+name|g_io_channel_write
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|char
@@ -555,44 +607,29 @@ operator|)
 name|buf
 argument_list|,
 name|count
+argument_list|,
+operator|&
+name|bytes
 argument_list|)
 expr_stmt|;
 block|}
 do|while
 condition|(
-operator|(
-name|bytes
+name|error
 operator|==
-operator|-
-literal|1
-operator|)
-operator|&&
-operator|(
-operator|(
-name|errno
-operator|==
-name|EAGAIN
-operator|)
-operator|||
-operator|(
-name|errno
-operator|==
-name|EINTR
-operator|)
-operator|)
+name|G_IO_ERROR_AGAIN
 condition|)
 do|;
 if|if
 condition|(
-name|bytes
-operator|==
-operator|-
-literal|1
+name|error
+operator|!=
+name|G_IO_ERROR_NONE
 condition|)
 block|{
-name|g_print
+name|g_warning
 argument_list|(
-literal|"wire_write: error\n"
+literal|"wire_write: error"
 argument_list|)
 expr_stmt|;
 name|wire_error_val
@@ -621,11 +658,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_flush (int fd)
+DECL|function|wire_flush (GIOChannel * channel)
 name|wire_flush
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|)
 block|{
 if|if
@@ -638,7 +676,7 @@ modifier|*
 name|wire_flush_func
 call|)
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 return|;
 return|return
@@ -674,11 +712,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_read_msg (int fd,WireMessage * msg)
+DECL|function|wire_read_msg (GIOChannel * channel,WireMessage * msg)
 name|wire_read_msg
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -702,7 +741,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -734,7 +773,7 @@ name|handler
 condition|)
 name|g_error
 argument_list|(
-literal|"could not find handler for message: %d\n"
+literal|"could not find handler for message: %d"
 argument_list|,
 name|msg
 operator|->
@@ -748,7 +787,7 @@ operator|->
 name|read_func
 call|)
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|msg
 argument_list|)
@@ -762,11 +801,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_write_msg (int fd,WireMessage * msg)
+DECL|function|wire_write_msg (GIOChannel * channel,WireMessage * msg)
 name|wire_write_msg
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -804,7 +844,7 @@ name|handler
 condition|)
 name|g_error
 argument_list|(
-literal|"could not find handler for message: %d\n"
+literal|"could not find handler for message: %d"
 argument_list|,
 name|msg
 operator|->
@@ -816,7 +856,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -836,7 +876,7 @@ operator|->
 name|write_func
 call|)
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|msg
 argument_list|)
@@ -903,11 +943,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_read_int32 (int fd,guint32 * data,gint count)
+DECL|function|wire_read_int32 (GIOChannel * channel,guint32 * data,gint count)
 name|wire_read_int32
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|guint32
 modifier|*
@@ -929,7 +970,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -973,11 +1014,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_read_int16 (int fd,guint16 * data,gint count)
+DECL|function|wire_read_int16 (GIOChannel * channel,guint16 * data,gint count)
 name|wire_read_int16
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|guint16
 modifier|*
@@ -999,7 +1041,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -1043,11 +1085,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_read_int8 (int fd,guint8 * data,gint count)
+DECL|function|wire_read_int8 (GIOChannel * channel,guint8 * data,gint count)
 name|wire_read_int8
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|guint8
 modifier|*
@@ -1060,7 +1103,7 @@ block|{
 return|return
 name|wire_read
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|data
 argument_list|,
@@ -1072,11 +1115,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_read_double (int fd,gdouble * data,gint count)
+DECL|function|wire_read_double (GIOChannel * channel,gdouble * data,gint count)
 name|wire_read_double
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|gdouble
 modifier|*
@@ -1112,7 +1156,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|str
@@ -1150,11 +1194,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_read_string (int fd,gchar ** data,gint count)
+DECL|function|wire_read_string (GIOChannel * channel,gchar ** data,gint count)
 name|wire_read_string
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|gchar
 modifier|*
@@ -1190,7 +1235,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tmp
@@ -1225,7 +1270,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -1272,11 +1317,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_write_int32 (int fd,guint32 * data,gint count)
+DECL|function|wire_write_int32 (GIOChannel * channel,guint32 * data,gint count)
 name|wire_write_int32
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|guint32
 modifier|*
@@ -1328,7 +1374,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -1353,11 +1399,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_write_int16 (int fd,guint16 * data,gint count)
+DECL|function|wire_write_int16 (GIOChannel * channel,guint16 * data,gint count)
 name|wire_write_int16
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|guint16
 modifier|*
@@ -1409,7 +1456,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -1434,11 +1481,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_write_int8 (int fd,guint8 * data,gint count)
+DECL|function|wire_write_int8 (GIOChannel * channel,guint8 * data,gint count)
 name|wire_write_int8
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|guint8
 modifier|*
@@ -1451,7 +1499,7 @@ block|{
 return|return
 name|wire_write
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|data
 argument_list|,
@@ -1463,11 +1511,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_write_double (int fd,gdouble * data,gint count)
+DECL|function|wire_write_double (GIOChannel * channel,gdouble * data,gint count)
 name|wire_write_double
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|gdouble
 modifier|*
@@ -1524,7 +1573,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|t
@@ -1544,11 +1593,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|wire_write_string (int fd,gchar ** data,gint count)
+DECL|function|wire_write_string (GIOChannel * channel,gchar ** data,gint count)
 name|wire_write_string
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|gchar
 modifier|*
@@ -1608,7 +1658,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tmp
@@ -1630,7 +1680,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8

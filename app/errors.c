@@ -234,6 +234,9 @@ argument_list|,
 name|fmt
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 name|printf
 argument_list|(
 literal|"%s fatal error: "
@@ -253,16 +256,45 @@ argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|g_error
+argument_list|(
+literal|"%s: %s\n"
+argument_list|,
+name|prog_name
+argument_list|,
+name|g_strdup_vprintf
+argument_list|(
+name|fmt
+argument_list|,
+name|args
+argument_list|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|va_end
 argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 name|g_on_error_query
 argument_list|(
 name|prog_name
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+comment|/* g_on_error_query unreliable on Win32 */
+name|abort
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
 name|app_exit
 argument_list|(
 literal|1
@@ -317,6 +349,9 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 if|if
 condition|(
 name|use_debug_handler
@@ -326,6 +361,8 @@ argument_list|(
 name|prog_name
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|gdk_exit
 argument_list|(
 literal|1

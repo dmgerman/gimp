@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -21,11 +27,22 @@ directive|include
 file|<sys/stat.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -60,14 +77,62 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpenv.h"
 end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
+end_ifndef
+
+begin_define
+DECL|macro|USER_INSTALL
+DECL|macro|USER_INSTALL
+define|#
+directive|define
+name|USER_INSTALL
+value|"user_install"
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|STRICT
+DECL|macro|STRICT
+define|#
+directive|define
+name|STRICT
+end_define
+
+begin_include
+include|#
+directive|include
+file|<windows.h>
+end_include
+
+begin_define
+DECL|macro|USER_INSTALL
+DECL|macro|USER_INSTALL
+define|#
+directive|define
+name|USER_INSTALL
+value|"user_install.bat"
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|static
@@ -156,6 +221,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|help_widget
+DECL|variable|help_widget
 specifier|static
 name|GtkWidget
 modifier|*
@@ -164,6 +230,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|install_widget
 DECL|variable|install_widget
 specifier|static
 name|GtkWidget
@@ -174,6 +241,7 @@ end_decl_stmt
 
 begin_function
 name|void
+DECL|function|install_verify (InstallCallback install_callback)
 DECL|function|install_verify (InstallCallback install_callback)
 name|install_verify
 parameter_list|(
@@ -199,31 +267,7 @@ operator|=
 name|gimp_directory
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-literal|'\000'
-operator|==
-name|filename
-index|[
-literal|0
-index|]
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"No home directory--skipping GIMP user installation."
-argument_list|)
-argument_list|)
-expr_stmt|;
-call|(
-modifier|*
-name|install_callback
-call|)
-argument_list|()
-expr_stmt|;
-block|}
+comment|/* gimp_directory now always returns something */
 if|if
 condition|(
 name|stat
@@ -313,6 +357,7 @@ end_comment
 begin_function
 specifier|static
 name|void
+DECL|function|install_help (InstallCallback callback)
 DECL|function|install_help (InstallCallback callback)
 name|install_help
 parameter_list|(
@@ -2862,6 +2907,7 @@ begin_function
 specifier|static
 name|void
 DECL|function|help_install_callback (GtkWidget * w,gpointer client_data)
+DECL|function|help_install_callback (GtkWidget * w,gpointer client_data)
 name|help_install_callback
 parameter_list|(
 name|GtkWidget
@@ -2898,6 +2944,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|help_ignore_callback (GtkWidget * w,gpointer client_data)
 DECL|function|help_ignore_callback (GtkWidget * w,gpointer client_data)
 name|help_ignore_callback
 parameter_list|(
@@ -2937,6 +2984,7 @@ begin_function
 specifier|static
 name|void
 DECL|function|help_quit_callback (GtkWidget * w,gpointer client_data)
+DECL|function|help_quit_callback (GtkWidget * w,gpointer client_data)
 name|help_quit_callback
 parameter_list|(
 name|GtkWidget
@@ -2960,9 +3008,163 @@ expr_stmt|;
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_function
+specifier|static
+name|char
+modifier|*
+DECL|function|quote_spaces (char * string)
+DECL|function|quote_spaces (char * string)
+name|quote_spaces
+parameter_list|(
+name|char
+modifier|*
+name|string
+parameter_list|)
+block|{
+name|int
+name|nspaces
+init|=
+literal|0
+decl_stmt|;
+name|char
+modifier|*
+name|p
+init|=
+name|string
+decl_stmt|,
+modifier|*
+name|q
+decl_stmt|,
+modifier|*
+name|new
+decl_stmt|;
+while|while
+condition|(
+operator|*
+name|p
+condition|)
+block|{
+if|if
+condition|(
+operator|*
+name|p
+operator|==
+literal|' '
+condition|)
+name|nspaces
+operator|++
+expr_stmt|;
+name|p
+operator|++
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|nspaces
+operator|==
+literal|0
+condition|)
+return|return
+name|g_strdup
+argument_list|(
+name|string
+argument_list|)
+return|;
+name|new
+operator|=
+name|g_malloc
+argument_list|(
+name|strlen
+argument_list|(
+name|string
+argument_list|)
+operator|+
+name|nspaces
+operator|*
+literal|2
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+name|p
+operator|=
+name|string
+expr_stmt|;
+name|q
+operator|=
+name|new
+expr_stmt|;
+while|while
+condition|(
+operator|*
+name|p
+condition|)
+block|{
+if|if
+condition|(
+operator|*
+name|p
+operator|==
+literal|' '
+condition|)
+block|{
+operator|*
+name|q
+operator|++
+operator|=
+literal|'"'
+expr_stmt|;
+operator|*
+name|q
+operator|++
+operator|=
+literal|' '
+expr_stmt|;
+operator|*
+name|q
+operator|++
+operator|=
+literal|'"'
+expr_stmt|;
+block|}
+else|else
+operator|*
+name|q
+operator|++
+operator|=
+operator|*
+name|p
+expr_stmt|;
+name|p
+operator|++
+expr_stmt|;
+block|}
+operator|*
+name|q
+operator|=
+literal|'\0'
+expr_stmt|;
+return|return
+name|new
+return|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 specifier|static
 name|void
+DECL|function|install_run (InstallCallback callback)
 DECL|function|install_run (InstallCallback callback)
 name|install_run
 parameter_list|(
@@ -3036,10 +3238,6 @@ name|buffer
 index|[
 literal|2048
 index|]
-decl_stmt|;
-name|char
-modifier|*
-name|gimp_data_dir
 decl_stmt|;
 name|struct
 name|stat
@@ -3333,6 +3531,9 @@ argument_list|(
 name|text
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|NATIVE_WIN32
 name|gtk_text_insert
 argument_list|(
 name|GTK_TEXT
@@ -3355,49 +3556,21 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/*  Generate output  */
-if|if
-condition|(
-operator|(
-name|gimp_data_dir
-operator|=
-name|getenv
-argument_list|(
-literal|"GIMP_DATADIR"
-argument_list|)
-operator|)
-operator|!=
-name|NULL
-condition|)
 name|g_snprintf
 argument_list|(
-name|buffer
+argument|buffer
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buffer
+argument|sizeof(buffer)
+argument_list|,
+literal|"%s"
+argument|G_DIR_SEPARATOR_S USER_INSTALL
+argument_list|,
+argument|gimp_data_directory ()
 argument_list|)
-argument_list|,
-literal|"%s/user_install"
-argument_list|,
-name|gimp_data_dir
-argument_list|)
-expr_stmt|;
-else|else
-name|g_snprintf
-argument_list|(
-name|buffer
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|,
-literal|"%s/user_install"
-argument_list|,
-name|DATADIR
-argument_list|)
-expr_stmt|;
+empty_stmt|;
 if|if
 condition|(
 operator|(
@@ -3461,6 +3634,9 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|S_IXUSR
 elseif|else
 if|if
 condition|(
@@ -3529,6 +3705,8 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 if|if
 condition|(
 name|executable
@@ -3536,49 +3714,119 @@ operator|==
 name|TRUE
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+name|char
+modifier|*
+name|quoted_data_dir
+decl_stmt|,
+modifier|*
+name|quoted_user_dir
+decl_stmt|;
+comment|/* On Windows, it is common for the GIMP data directory        * to have spaces in it ("c:\Program Files\GIMP"). Put spaces in quotes.        */
+name|quoted_data_dir
+operator|=
+name|quote_spaces
+argument_list|(
+name|gimp_data_directory
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|quoted_user_dir
+operator|=
+name|quote_spaces
+argument_list|(
+name|gimp_directory
+argument_list|()
+argument_list|)
+expr_stmt|;
+comment|/* The Microsoft _popen doesn't work in Windows applications, sigh.        * Do the installation by calling system(). The user_install.bat        * ends with a pause command, so the user has to press enter in        * the console window to continue, and thus has a chance to read        * at the window contents.        */
+name|AllocConsole
+argument_list|()
+expr_stmt|;
+name|g_snprintf
+argument_list|(
+argument|buffer
+argument_list|,
+argument|sizeof(buffer)
+argument_list|,
+literal|"%s"
+argument|G_DIR_SEPARATOR_S USER_INSTALL
+literal|" %s %s"
+argument_list|,
+argument|quoted_data_dir
+argument_list|,
+argument|quoted_data_dir
+argument_list|,
+argument|quoted_user_dir
+argument_list|)
+empty_stmt|;
 if|if
 condition|(
-name|gimp_data_dir
+name|system
+argument_list|(
+name|buffer
+argument_list|)
+operator|==
+operator|-
+literal|1
 condition|)
-name|g_snprintf
+name|executable
+operator|=
+name|FALSE
+expr_stmt|;
+name|g_free
 argument_list|(
-name|buffer
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|,
-literal|"%s/user_install %s %s"
-argument_list|,
-name|gimp_data_dir
-argument_list|,
-name|gimp_data_dir
-argument_list|,
-name|gimp_directory
-argument_list|()
+name|quoted_data_dir
 argument_list|)
 expr_stmt|;
-else|else
-name|g_snprintf
+name|g_free
 argument_list|(
-name|buffer
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|buffer
-argument_list|)
-argument_list|,
-literal|"%s/user_install %s %s"
-argument_list|,
-name|DATADIR
-argument_list|,
-name|DATADIR
-argument_list|,
-name|gimp_directory
-argument_list|()
+name|quoted_user_dir
 argument_list|)
 expr_stmt|;
+name|gtk_text_insert
+argument_list|(
+name|GTK_TEXT
+argument_list|(
+name|text
+argument_list|)
+argument_list|,
+name|font_strong
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+literal|"Did you notice any error messages\n"
+literal|"in the console window? If not, installation\n"
+literal|"was successful! Otherwise, quit and investigate\n"
+literal|"the possible reason...\n"
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
+name|g_snprintf
+argument_list|(
+argument|buffer
+argument_list|,
+argument|sizeof(buffer)
+argument_list|,
+literal|"%s"
+argument|G_DIR_SEPARATOR_S USER_INSTALL
+literal|" %s %s"
+argument_list|,
+argument|gimp_data_directory ()
+argument_list|,
+argument|gimp_data_directory()
+argument_list|,
+argument|gimp_directory ()
+argument_list|)
+empty_stmt|;
 comment|/* urk - should really use something better than popen(), since        * we can't tell if the installation script failed --austin */
 if|if
 condition|(
@@ -3602,7 +3850,10 @@ name|fgets
 argument_list|(
 name|buffer
 argument_list|,
-literal|2048
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 name|pfp
 argument_list|)
@@ -3660,6 +3911,9 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+endif|#
+directive|endif
+comment|/* !NATIVE_WIN32 */
 if|if
 condition|(
 name|executable
@@ -3714,7 +3968,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_continue_callback (GtkWidget * w,gpointer client_data)
 name|install_continue_callback
 parameter_list|(
 name|GtkWidget
@@ -3728,6 +3981,14 @@ block|{
 name|InstallCallback
 name|callback
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+name|FreeConsole
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
 name|callback
 operator|=
 operator|(
@@ -3752,7 +4013,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_quit_callback (GtkWidget * w,gpointer client_data)
 name|install_quit_callback
 parameter_list|(
 name|GtkWidget

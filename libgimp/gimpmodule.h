@@ -23,7 +23,7 @@ file|<gmodule.h>
 end_include
 
 begin_typedef
-DECL|enum|__anon2b29b1510103
+DECL|enum|__anon2bc80e240103
 typedef|typedef
 enum|enum
 block|{
@@ -39,7 +39,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b29b1510208
+DECL|struct|__anon2bc80e240208
 typedef|typedef
 struct|struct
 block|{
@@ -103,12 +103,27 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|MODULE_COMPILATION
+end_ifndef
+
+begin_comment
+comment|/* On Win32 this declaration clashes with 				 * the definition (which uses G_MODULE_EXPORT) 				 * and thus should be bypassed when compiling 				 * the module itself. 				 */
+end_comment
+
 begin_decl_stmt
 DECL|variable|module_init
 name|GimpModuleInitFunc
 name|module_init
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* This function is called by the GIMP at startup, and should return  * either GIMP_MODULE_OK if it sucessfully initialised or  * GIMP_MODULE_UNLOAD if the module failed to hook whatever functions  * it wanted.  GIMP_MODULE_UNLOAD causes the module to be closed, so  * the module must not have registered any internal functions or given  * out pointers to its data to anyone.  *  * If the module returns GIMP_MODULE_OK, it should also return a  * GimpModuleInfo structure describing itself.  */
@@ -147,12 +162,27 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|MODULE_COMPILATION
+end_ifndef
+
+begin_comment
+comment|/* The same as for module_init */
+end_comment
+
 begin_decl_stmt
 DECL|variable|module_unload
 name|GimpModuleUnloadFunc
 name|module_unload
 decl_stmt|;
 end_decl_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* GIMP calls this unload request function to ask a module to  * prepare itself to be unloaded.  It is called with the value of  * shutdown_data supplied in the GimpModuleInfo struct.  The module  * should ensure that none of its code or data are being used, and  * then call the supplied "completed_cb" callback function with the  * data provided.  Typically the shutdown request function will queue  * de-registration activities then return.  Only when the  * de-registration has finished should the completed_cb be invoked. */

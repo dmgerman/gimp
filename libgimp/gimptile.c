@@ -525,8 +525,9 @@ name|tile
 parameter_list|)
 block|{
 specifier|extern
-name|int
-name|_writefd
+name|GIOChannel
+modifier|*
+name|_writechannel
 decl_stmt|;
 specifier|extern
 name|guchar
@@ -574,7 +575,7 @@ condition|(
 operator|!
 name|gp_tile_req_write
 argument_list|(
-name|_writefd
+name|_writechannel
 argument_list|,
 operator|&
 name|tile_req
@@ -743,7 +744,7 @@ condition|(
 operator|!
 name|gp_tile_ack_write
 argument_list|(
-name|_writefd
+name|_writechannel
 argument_list|)
 condition|)
 name|gimp_quit
@@ -770,8 +771,9 @@ name|tile
 parameter_list|)
 block|{
 specifier|extern
-name|int
-name|_writefd
+name|GIOChannel
+modifier|*
+name|_writechannel
 decl_stmt|;
 specifier|extern
 name|guchar
@@ -815,7 +817,7 @@ condition|(
 operator|!
 name|gp_tile_req_write
 argument_list|(
-name|_writefd
+name|_writechannel
 argument_list|,
 operator|&
 name|tile_req
@@ -943,7 +945,7 @@ condition|(
 operator|!
 name|gp_tile_data_write
 argument_list|(
-name|_writefd
+name|_writechannel
 argument_list|,
 operator|&
 name|tile_data

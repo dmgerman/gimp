@@ -117,6 +117,12 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
 begin_define
 DECL|macro|MRU_MENU_ENTRY_SIZE
 define|#
@@ -2673,14 +2679,9 @@ name|filename
 decl_stmt|;
 name|filename
 operator|=
-name|g_strconcat
+name|gimp_personal_rc_file
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
-literal|"/menurc"
-argument_list|,
-name|NULL
+literal|"menurc"
 argument_list|)
 expr_stmt|;
 name|gtk_item_factory_dump_rc
@@ -3818,14 +3819,9 @@ expr_stmt|;
 block|}
 name|filename
 operator|=
-name|g_strconcat
+name|gimp_personal_rc_file
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
-literal|"/menurc"
-argument_list|,
-name|NULL
+literal|"menurc"
 argument_list|)
 expr_stmt|;
 name|gtk_item_factory_parse_rc

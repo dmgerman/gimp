@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/parasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layer_pvt.h"
 end_include
 
@@ -132,7 +138,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c0960e10103
+DECL|enum|__anon2c75fd220103
 enum|enum
 block|{
 DECL|enumerator|REMOVED

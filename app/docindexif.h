@@ -173,14 +173,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_define
-DECL|macro|IDEAPATH
-define|#
-directive|define
-name|IDEAPATH
-value|"/" GIMPDIR "/ideas"
-end_define
-
 begin_struct
 DECL|struct|bool_char_pair
 struct|struct

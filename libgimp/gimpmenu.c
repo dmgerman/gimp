@@ -301,17 +301,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|input_callback
 parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|GIOCondition
+name|condition
+parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|gint
-name|source
-parameter_list|,
-name|GdkInputCondition
-name|condition
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3501,18 +3502,19 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|input_callback (gpointer data,gint source,GdkInputCondition condition)
+name|gboolean
+DECL|function|input_callback (GIOChannel * channel,GIOCondition condition,gpointer data)
 name|input_callback
 parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|GIOCondition
+name|condition
+parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|gint
-name|source
-parameter_list|,
-name|GdkInputCondition
-name|condition
 parameter_list|)
 block|{
 comment|/* We have some data in the wire - read it */
@@ -3520,6 +3522,9 @@ comment|/* The below will only ever run a single proc */
 name|gimp_run_temp
 argument_list|()
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -3538,10 +3543,6 @@ name|first_time
 init|=
 name|TRUE
 decl_stmt|;
-specifier|extern
-name|int
-name|_readfd
-decl_stmt|;
 if|if
 condition|(
 name|first_time
@@ -3549,16 +3550,22 @@ condition|)
 block|{
 comment|/* Tie into the gdk input function */
 comment|/* only once */
-name|gdk_input_add
+name|g_io_add_watch
 argument_list|(
-name|_readfd
+name|_readchannel
 argument_list|,
-name|GDK_INPUT_READ
+name|G_IO_IN
+operator||
+name|G_IO_PRI
 argument_list|,
 name|input_callback
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+comment|/* This needed on Win32 */
+name|gimp_request_wakeups
+argument_list|()
 expr_stmt|;
 name|first_time
 operator|=

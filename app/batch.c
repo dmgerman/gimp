@@ -52,6 +52,23 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|_MSC_VER
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -228,7 +245,6 @@ name|read_from_stdin
 operator|=
 name|TRUE
 expr_stmt|;
-block|}
 else|#
 directive|else
 name|g_error
@@ -238,6 +254,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+block|}
 block|}
 else|else
 block|{

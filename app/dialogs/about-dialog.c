@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<time.h>
 end_include
 
@@ -43,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpenv.h"
 end_include
 
 begin_include
@@ -1419,9 +1431,12 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-literal|"%s/gimp_logo.ppm"
+literal|"%s"
+name|G_DIR_SEPARATOR_S
+literal|"gimp_logo.ppm"
 argument_list|,
-name|DATADIR
+name|gimp_data_directory
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|fp

@@ -44,8 +44,9 @@ specifier|static
 name|void
 name|_gp_quit_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -59,8 +60,9 @@ specifier|static
 name|void
 name|_gp_quit_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -86,8 +88,9 @@ specifier|static
 name|void
 name|_gp_config_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -101,8 +104,9 @@ specifier|static
 name|void
 name|_gp_config_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -128,8 +132,9 @@ specifier|static
 name|void
 name|_gp_tile_req_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -143,8 +148,9 @@ specifier|static
 name|void
 name|_gp_tile_req_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -170,8 +176,9 @@ specifier|static
 name|void
 name|_gp_tile_ack_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -185,8 +192,9 @@ specifier|static
 name|void
 name|_gp_tile_ack_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -212,8 +220,9 @@ specifier|static
 name|void
 name|_gp_tile_data_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -227,8 +236,9 @@ specifier|static
 name|void
 name|_gp_tile_data_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -254,8 +264,9 @@ specifier|static
 name|void
 name|_gp_proc_run_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -269,8 +280,9 @@ specifier|static
 name|void
 name|_gp_proc_run_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -296,8 +308,9 @@ specifier|static
 name|void
 name|_gp_proc_return_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -311,8 +324,9 @@ specifier|static
 name|void
 name|_gp_proc_return_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -338,8 +352,9 @@ specifier|static
 name|void
 name|_gp_temp_proc_run_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -353,8 +368,9 @@ specifier|static
 name|void
 name|_gp_temp_proc_run_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -380,8 +396,9 @@ specifier|static
 name|void
 name|_gp_temp_proc_return_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -395,8 +412,9 @@ specifier|static
 name|void
 name|_gp_temp_proc_return_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -422,8 +440,9 @@ specifier|static
 name|void
 name|_gp_proc_install_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -437,8 +456,9 @@ specifier|static
 name|void
 name|_gp_proc_install_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -464,8 +484,9 @@ specifier|static
 name|void
 name|_gp_proc_uninstall_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -479,8 +500,9 @@ specifier|static
 name|void
 name|_gp_proc_uninstall_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -506,8 +528,9 @@ specifier|static
 name|void
 name|_gp_extension_ack_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -521,8 +544,9 @@ specifier|static
 name|void
 name|_gp_extension_ack_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -546,10 +570,55 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|_gp_request_wakeups_read
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|_gp_request_wakeups_write
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|_gp_request_wakeups_destroy
+parameter_list|(
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|_gp_params_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPParam
 modifier|*
@@ -568,8 +637,9 @@ specifier|static
 name|void
 name|_gp_params_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPParam
 modifier|*
@@ -733,16 +803,28 @@ argument_list|,
 name|_gp_extension_ack_destroy
 argument_list|)
 expr_stmt|;
+name|wire_register
+argument_list|(
+name|GP_REQUEST_WAKEUPS
+argument_list|,
+name|_gp_request_wakeups_read
+argument_list|,
+name|_gp_request_wakeups_write
+argument_list|,
+name|_gp_request_wakeups_destroy
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|int
-DECL|function|gp_quit_write (int fd)
+DECL|function|gp_quit_write (GIOChannel * channel)
 name|gp_quit_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|)
 block|{
 name|WireMessage
@@ -765,7 +847,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -779,7 +861,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -793,11 +875,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_config_write (int fd,GPConfig * config)
+DECL|function|gp_config_write (GIOChannel * channel,GPConfig * config)
 name|gp_config_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPConfig
 modifier|*
@@ -824,7 +907,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -838,7 +921,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -852,11 +935,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_tile_req_write (int fd,GPTileReq * tile_req)
+DECL|function|gp_tile_req_write (GIOChannel * channel,GPTileReq * tile_req)
 name|gp_tile_req_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPTileReq
 modifier|*
@@ -883,7 +967,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -897,7 +981,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -911,11 +995,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_tile_ack_write (int fd)
+DECL|function|gp_tile_ack_write (GIOChannel * channel)
 name|gp_tile_ack_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|)
 block|{
 name|WireMessage
@@ -938,7 +1023,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -952,7 +1037,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -966,11 +1051,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_tile_data_write (int fd,GPTileData * tile_data)
+DECL|function|gp_tile_data_write (GIOChannel * channel,GPTileData * tile_data)
 name|gp_tile_data_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPTileData
 modifier|*
@@ -997,7 +1083,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -1011,7 +1097,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -1025,11 +1111,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_proc_run_write (int fd,GPProcRun * proc_run)
+DECL|function|gp_proc_run_write (GIOChannel * channel,GPProcRun * proc_run)
 name|gp_proc_run_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPProcRun
 modifier|*
@@ -1056,7 +1143,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -1070,7 +1157,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -1084,11 +1171,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_proc_return_write (int fd,GPProcReturn * proc_return)
+DECL|function|gp_proc_return_write (GIOChannel * channel,GPProcReturn * proc_return)
 name|gp_proc_return_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPProcReturn
 modifier|*
@@ -1115,7 +1203,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -1129,7 +1217,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -1143,11 +1231,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_temp_proc_run_write (int fd,GPProcRun * proc_run)
+DECL|function|gp_temp_proc_run_write (GIOChannel * channel,GPProcRun * proc_run)
 name|gp_temp_proc_run_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPProcRun
 modifier|*
@@ -1174,7 +1263,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -1188,7 +1277,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -1202,11 +1291,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_temp_proc_return_write (int fd,GPProcReturn * proc_return)
+DECL|function|gp_temp_proc_return_write (GIOChannel * channel,GPProcReturn * proc_return)
 name|gp_temp_proc_return_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPProcReturn
 modifier|*
@@ -1233,7 +1323,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -1247,7 +1337,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -1261,11 +1351,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_proc_install_write (int fd,GPProcInstall * proc_install)
+DECL|function|gp_proc_install_write (GIOChannel * channel,GPProcInstall * proc_install)
 name|gp_proc_install_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPProcInstall
 modifier|*
@@ -1292,7 +1383,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -1306,7 +1397,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -1320,11 +1411,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_proc_uninstall_write (int fd,GPProcUninstall * proc_uninstall)
+DECL|function|gp_proc_uninstall_write (GIOChannel * channel,GPProcUninstall * proc_uninstall)
 name|gp_proc_uninstall_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPProcUninstall
 modifier|*
@@ -1351,7 +1443,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -1365,7 +1457,7 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -1379,11 +1471,12 @@ end_function
 
 begin_function
 name|int
-DECL|function|gp_extension_ack_write (int fd)
+DECL|function|gp_extension_ack_write (GIOChannel * channel)
 name|gp_extension_ack_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|)
 block|{
 name|WireMessage
@@ -1406,7 +1499,7 @@ condition|(
 operator|!
 name|wire_write_msg
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|msg
@@ -1420,7 +1513,63 @@ condition|(
 operator|!
 name|wire_flush
 argument_list|(
-name|fd
+name|channel
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+name|int
+DECL|function|gp_request_wakeups_write (GIOChannel * channel)
+name|gp_request_wakeups_write
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|)
+block|{
+name|WireMessage
+name|msg
+decl_stmt|;
+name|msg
+operator|.
+name|type
+operator|=
+name|GP_REQUEST_WAKEUPS
+expr_stmt|;
+name|msg
+operator|.
+name|data
+operator|=
+name|NULL
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|wire_write_msg
+argument_list|(
+name|channel
+argument_list|,
+operator|&
+name|msg
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
+if|if
+condition|(
+operator|!
+name|wire_flush
+argument_list|(
+name|channel
 argument_list|)
 condition|)
 return|return
@@ -1435,11 +1584,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_quit_read (int fd,WireMessage * msg)
+DECL|function|_gp_quit_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_quit_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -1451,11 +1601,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_quit_write (int fd,WireMessage * msg)
+DECL|function|_gp_quit_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_quit_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -1480,11 +1631,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_config_read (int fd,WireMessage * msg)
+DECL|function|_gp_config_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_config_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -1509,7 +1661,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|config
@@ -1525,7 +1677,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|config
@@ -1541,7 +1693,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|config
@@ -1557,7 +1709,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -1577,7 +1729,7 @@ condition|(
 operator|!
 name|wire_read_double
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|config
@@ -1593,7 +1745,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -1613,7 +1765,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -1632,7 +1784,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -1659,11 +1811,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_config_write (int fd,WireMessage * msg)
+DECL|function|_gp_config_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_config_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -1685,7 +1838,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|config
@@ -1701,7 +1854,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|config
@@ -1717,7 +1870,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|config
@@ -1733,7 +1886,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -1753,7 +1906,7 @@ condition|(
 operator|!
 name|wire_write_double
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|config
@@ -1769,7 +1922,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -1789,7 +1942,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -1808,7 +1961,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -1850,11 +2003,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_req_read (int fd,WireMessage * msg)
+DECL|function|_gp_tile_req_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_tile_req_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -1879,7 +2033,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -1899,7 +2053,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_req
@@ -1915,7 +2069,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_req
@@ -1938,11 +2092,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_req_write (int fd,WireMessage * msg)
+DECL|function|_gp_tile_req_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_tile_req_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -1964,7 +2119,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -1984,7 +2139,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_req
@@ -2000,7 +2155,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_req
@@ -2038,11 +2193,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_ack_read (int fd,WireMessage * msg)
+DECL|function|_gp_tile_ack_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_tile_ack_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2054,11 +2210,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_ack_write (int fd,WireMessage * msg)
+DECL|function|_gp_tile_ack_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_tile_ack_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2083,11 +2240,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_data_read (int fd,WireMessage * msg)
+DECL|function|_gp_tile_data_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_tile_data_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2115,7 +2273,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -2135,7 +2293,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2151,7 +2309,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2167,7 +2325,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2183,7 +2341,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2199,7 +2357,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2215,7 +2373,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2270,7 +2428,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -2297,11 +2455,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_tile_data_write (int fd,WireMessage * msg)
+DECL|function|_gp_tile_data_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_tile_data_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2326,7 +2485,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -2346,7 +2505,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2362,7 +2521,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2378,7 +2537,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2394,7 +2553,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2410,7 +2569,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2426,7 +2585,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|tile_data
@@ -2464,7 +2623,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -2527,11 +2686,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_run_read (int fd,WireMessage * msg)
+DECL|function|_gp_proc_run_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_proc_run_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2556,7 +2716,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_run
@@ -2576,7 +2736,7 @@ return|return;
 block|}
 name|_gp_params_read
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_run
@@ -2605,11 +2765,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_run_write (int fd,WireMessage * msg)
+DECL|function|_gp_proc_run_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_proc_run_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2631,7 +2792,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_run
@@ -2644,7 +2805,7 @@ condition|)
 return|return;
 name|_gp_params_write
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|proc_run
 operator|->
@@ -2708,11 +2869,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_return_read (int fd,WireMessage * msg)
+DECL|function|_gp_proc_return_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_proc_return_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2737,7 +2899,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_return
@@ -2750,7 +2912,7 @@ condition|)
 return|return;
 name|_gp_params_read
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_return
@@ -2779,11 +2941,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_return_write (int fd,WireMessage * msg)
+DECL|function|_gp_proc_return_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_proc_return_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2805,7 +2968,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_return
@@ -2818,7 +2981,7 @@ condition|)
 return|return;
 name|_gp_params_write
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|proc_return
 operator|->
@@ -2875,11 +3038,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_run_read (int fd,WireMessage * msg)
+DECL|function|_gp_temp_proc_run_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_temp_proc_run_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2888,7 +3052,7 @@ parameter_list|)
 block|{
 name|_gp_proc_run_read
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|msg
 argument_list|)
@@ -2899,11 +3063,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_run_write (int fd,WireMessage * msg)
+DECL|function|_gp_temp_proc_run_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_temp_proc_run_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2912,7 +3077,7 @@ parameter_list|)
 block|{
 name|_gp_proc_run_write
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|msg
 argument_list|)
@@ -2942,11 +3107,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_return_read (int fd,WireMessage * msg)
+DECL|function|_gp_temp_proc_return_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_temp_proc_return_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2955,7 +3121,7 @@ parameter_list|)
 block|{
 name|_gp_proc_return_read
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|msg
 argument_list|)
@@ -2966,11 +3132,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_temp_proc_return_write (int fd,WireMessage * msg)
+DECL|function|_gp_temp_proc_return_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_temp_proc_return_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -2979,7 +3146,7 @@ parameter_list|)
 block|{
 name|_gp_proc_return_write
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|msg
 argument_list|)
@@ -3009,11 +3176,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_install_read (int fd,WireMessage * msg)
+DECL|function|_gp_proc_install_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_proc_install_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -3041,7 +3209,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3057,7 +3225,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3073,7 +3241,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3089,7 +3257,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3105,7 +3273,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3121,7 +3289,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3137,7 +3305,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3153,7 +3321,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3169,7 +3337,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3185,7 +3353,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3201,7 +3369,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3259,7 +3427,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -3284,7 +3452,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3305,7 +3473,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3343,7 +3511,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -3368,7 +3536,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3389,7 +3557,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3418,11 +3586,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_install_write (int fd,WireMessage * msg)
+DECL|function|_gp_proc_install_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_proc_install_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -3447,7 +3616,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3463,7 +3632,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3479,7 +3648,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3495,7 +3664,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3511,7 +3680,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3527,7 +3696,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3543,7 +3712,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3559,7 +3728,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3575,7 +3744,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3591,7 +3760,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3607,7 +3776,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3639,7 +3808,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -3664,7 +3833,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3685,7 +3854,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3723,7 +3892,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -3748,7 +3917,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3769,7 +3938,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_install
@@ -3976,11 +4145,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_uninstall_read (int fd,WireMessage * msg)
+DECL|function|_gp_proc_uninstall_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_proc_uninstall_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -4005,7 +4175,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_uninstall
@@ -4028,11 +4198,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_proc_uninstall_write (int fd,WireMessage * msg)
+DECL|function|_gp_proc_uninstall_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_proc_uninstall_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -4054,7 +4225,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|proc_uninstall
@@ -4107,11 +4278,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_params_read (int fd,GPParam ** params,guint * nparams)
+DECL|function|_gp_params_read (GIOChannel * channel,GPParam ** params,guint * nparams)
 name|_gp_params_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPParam
 modifier|*
@@ -4131,7 +4303,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -4189,7 +4361,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -4231,7 +4403,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -4263,7 +4435,7 @@ condition|(
 operator|!
 name|wire_read_int16
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint16
@@ -4295,7 +4467,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -4327,7 +4499,7 @@ condition|(
 operator|!
 name|wire_read_double
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 operator|(
@@ -4355,7 +4527,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 operator|(
@@ -4414,7 +4586,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -4488,7 +4660,7 @@ condition|(
 operator|!
 name|wire_read_int16
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint16
@@ -4562,7 +4734,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -4636,7 +4808,7 @@ condition|(
 operator|!
 name|wire_read_double
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 operator|*
@@ -4707,7 +4879,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 operator|*
@@ -4746,7 +4918,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -4776,7 +4948,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -4806,7 +4978,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -4844,7 +5016,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -4876,7 +5048,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -4908,7 +5080,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -4940,7 +5112,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -4972,7 +5144,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5004,7 +5176,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5036,7 +5208,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5068,7 +5240,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5101,7 +5273,7 @@ condition|(
 operator|!
 name|wire_read_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 operator|(
@@ -5165,7 +5337,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 operator|(
@@ -5193,7 +5365,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 operator|(
@@ -5271,7 +5443,7 @@ condition|(
 operator|!
 name|wire_read_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 operator|*
@@ -5366,7 +5538,7 @@ condition|(
 operator|!
 name|wire_read_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5402,11 +5574,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_params_write (int fd,GPParam * params,int nparams)
+DECL|function|_gp_params_write (GIOChannel * channel,GPParam * params,int nparams)
 name|_gp_params_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|GPParam
 modifier|*
@@ -5424,7 +5597,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5456,7 +5629,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5492,7 +5665,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5521,7 +5694,7 @@ condition|(
 operator|!
 name|wire_write_int16
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint16
@@ -5550,7 +5723,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -5579,7 +5752,7 @@ condition|(
 operator|!
 name|wire_write_double
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|params
@@ -5604,7 +5777,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|params
@@ -5629,7 +5802,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5666,7 +5839,7 @@ condition|(
 operator|!
 name|wire_write_int16
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint16
@@ -5703,7 +5876,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -5740,7 +5913,7 @@ condition|(
 operator|!
 name|wire_write_double
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|params
 index|[
@@ -5773,7 +5946,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|params
 index|[
@@ -5806,7 +5979,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -5833,7 +6006,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -5860,7 +6033,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint8
@@ -5895,7 +6068,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5924,7 +6097,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5953,7 +6126,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -5982,7 +6155,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -6011,7 +6184,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -6040,7 +6213,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -6069,7 +6242,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -6098,7 +6271,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -6153,7 +6326,7 @@ block|{
 comment|/* write a null string to signifly a null parasite */
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|p
@@ -6170,7 +6343,7 @@ condition|(
 operator|!
 name|wire_write_string
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|p
@@ -6186,7 +6359,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|p
@@ -6202,7 +6375,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|&
 name|p
@@ -6227,7 +6400,7 @@ condition|(
 operator|!
 name|wire_write_int8
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 name|p
 operator|->
@@ -6250,7 +6423,7 @@ condition|(
 operator|!
 name|wire_write_int32
 argument_list|(
-name|fd
+name|channel
 argument_list|,
 operator|(
 name|guint32
@@ -6283,11 +6456,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_extension_ack_read (int fd,WireMessage * msg)
+DECL|function|_gp_extension_ack_read (GIOChannel * channel,WireMessage * msg)
 name|_gp_extension_ack_read
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -6299,11 +6473,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|_gp_extension_ack_write (int fd,WireMessage * msg)
+DECL|function|_gp_extension_ack_write (GIOChannel * channel,WireMessage * msg)
 name|_gp_extension_ack_write
 parameter_list|(
-name|int
-name|fd
+name|GIOChannel
+modifier|*
+name|channel
 parameter_list|,
 name|WireMessage
 modifier|*
@@ -6317,6 +6492,53 @@ specifier|static
 name|void
 DECL|function|_gp_extension_ack_destroy (WireMessage * msg)
 name|_gp_extension_ack_destroy
+parameter_list|(
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_request_wakeups_read (GIOChannel * channel,WireMessage * msg)
+name|_gp_request_wakeups_read
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_request_wakeups_write (GIOChannel * channel,WireMessage * msg)
+name|_gp_request_wakeups_write
+parameter_list|(
+name|GIOChannel
+modifier|*
+name|channel
+parameter_list|,
+name|WireMessage
+modifier|*
+name|msg
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|_gp_request_wakeups_destroy (WireMessage * msg)
+name|_gp_request_wakeups_destroy
 parameter_list|(
 name|WireMessage
 modifier|*

@@ -15,6 +15,12 @@ directive|include
 file|<math.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
 begin_function
 name|void
 DECL|function|gimp_matrix_transform_point (GimpMatrix m,double x,double y,double * newx,double * newy)

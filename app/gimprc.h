@@ -417,16 +417,6 @@ comment|/*  function prototypes  */
 end_comment
 
 begin_function_decl
-name|char
-modifier|*
-name|gimp_directory
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|parse_gimprc
 parameter_list|(

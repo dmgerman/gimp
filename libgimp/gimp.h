@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/parasite.h"
 end_include
 
@@ -45,6 +51,74 @@ include|#
 directive|include
 file|"libgimp/parasiteP.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+end_ifdef
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|LIBGIMP_COMPILATION
+end_ifdef
+
+begin_define
+DECL|macro|GIMPVAR
+define|#
+directive|define
+name|GIMPVAR
+value|__declspec(dllexport)
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* !LIBGIMP_COMPILATION */
+end_comment
+
+begin_define
+DECL|macro|GIMPVAR
+define|#
+directive|define
+name|GIMPVAR
+value|extern __declspec(dllimport)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* !LIBGIMP_COMPILATION */
+end_comment
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* !NATIVE_WIN32 */
+end_comment
+
+begin_define
+DECL|macro|GIMPVAR
+define|#
+directive|define
+name|GIMPVAR
+value|extern
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
@@ -59,20 +133,26 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-specifier|extern
-specifier|const
+DECL|variable|gimp_major_version
+name|GIMPVAR
 name|guint
 name|gimp_major_version
 decl_stmt|;
-specifier|extern
-specifier|const
+DECL|variable|gimp_minor_version
+name|GIMPVAR
 name|guint
 name|gimp_minor_version
 decl_stmt|;
-specifier|extern
-specifier|const
+DECL|variable|gimp_micro_version
+name|GIMPVAR
 name|guint
 name|gimp_micro_version
+decl_stmt|;
+DECL|variable|_readchannel
+name|GIMPVAR
+name|GIOChannel
+modifier|*
+name|_readchannel
 decl_stmt|;
 DECL|typedef|GPlugInInfo
 typedef|typedef
@@ -201,6 +281,28 @@ name|run_proc
 decl_stmt|;
 block|}
 struct|;
+if|#
+directive|if
+name|defined
+argument_list|(
+name|NATIVE_WIN32
+argument_list|)
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|LIBGIMP_COMPILATION
+argument_list|)
+comment|/* Define PLUG_IN_INFO as an exported symbol (when compiling a plug-in).  * In gimp.c, we don't declare it at all, but fetch the address  * of it with GetProcAddress.  */
+name|__declspec
+argument_list|(
+argument|dllexport
+argument_list|)
+name|GPlugInInfo
+name|PLUG_IN_INFO
+decl_stmt|;
+endif|#
+directive|endif
 DECL|struct|_GTile
 struct|struct
 name|_GTile
@@ -544,12 +646,28 @@ name|data
 decl_stmt|;
 block|}
 struct|;
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+comment|/* Define WinMain() as plug-ins are built as GUI applications. Also  * define a main() in case some plug-in still is built as a console  * application.  */
 DECL|macro|MAIN ()
 define|#
 directive|define
 name|MAIN
 parameter_list|()
-value|int main (int argc, char *argv[]) { return gimp_main (argc, argv); }
+define|\
+value|int _stdcall				\    WinMain (int hInstance,		\ 	    int hPrevInstance,		\ 	    char *lpszCmdLine,		\ 	    int nCmdShow)		\    {					\      return gimp_main (__argc, __argv);	\    }					\ 					\    int					\    main (int argc, char *argv[])	\    {					\      return gimp_main (argc, argv);	\    }
+else|#
+directive|else
+DECL|macro|MAIN ()
+define|#
+directive|define
+name|MAIN
+parameter_list|()
+define|\
+value|int					\    main (int argc, char *argv[])	\    {					\      return gimp_main (argc, argv);	\    }
+endif|#
+directive|endif
 comment|/* The main procedure that should be called with the  *  'argc' and 'argv' that are passed to "main".  */
 name|int
 name|gimp_main
@@ -1004,9 +1122,8 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-name|gchar
-modifier|*
-name|gimp_gtkrc
+name|void
+name|gimp_request_wakeups
 parameter_list|(
 name|void
 parameter_list|)

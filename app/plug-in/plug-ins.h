@@ -93,7 +93,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdba77b0103
+DECL|enum|__anon28eed2f50103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -211,20 +211,39 @@ decl_stmt|;
 comment|/* Plug-ins command line arguments */
 DECL|member|my_read
 DECL|member|my_write
-name|int
+name|GIOChannel
+modifier|*
 name|my_read
 decl_stmt|,
+modifier|*
 name|my_write
 decl_stmt|;
-comment|/* Apps read and write file descriptors */
+comment|/* App's read and write channels */
 DECL|member|his_read
 DECL|member|his_write
-name|int
+name|GIOChannel
+modifier|*
 name|his_read
 decl_stmt|,
+modifier|*
 name|his_write
 decl_stmt|;
-comment|/* Plug-ins read and write file descriptors */
+comment|/* Plug-in's read and write channels */
+ifdef|#
+directive|ifdef
+name|NATIVE_WIN32
+DECL|member|his_thread_id
+name|guint
+name|his_thread_id
+decl_stmt|;
+comment|/* Plug-in's thread ID */
+DECL|member|his_read_fd
+name|int
+name|his_read_fd
+decl_stmt|;
+comment|/* Plug-in's read pipe fd */
+endif|#
+directive|endif
 DECL|member|input_id
 name|guint32
 name|input_id
