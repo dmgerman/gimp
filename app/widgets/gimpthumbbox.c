@@ -2541,7 +2541,7 @@ name|next
 operator|,
 name|i
 operator|=
-literal|0
+literal|1
 init|;
 name|list
 condition|;
