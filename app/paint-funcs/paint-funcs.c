@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be6a2da0103
+DECL|enum|__anon2c311b370103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -11883,6 +11883,7 @@ comment|/* non-interpolating scale_region.  [adam]  */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|scale_region_no_resample (PixelRegion * srcPR,PixelRegion * destPR)
 name|scale_region_no_resample

@@ -1296,19 +1296,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|scale_region_no_resample
-parameter_list|(
-name|PixelRegion
-modifier|*
-parameter_list|,
-name|PixelRegion
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|subsample_region
 parameter_list|(
 name|PixelRegion
