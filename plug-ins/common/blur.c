@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b9cdcc0108
+DECL|struct|__anon2bc8e6820108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b9cdcc0208
+DECL|struct|__anon2bc8e6820208
 block|{
 DECL|member|run
 name|gint
@@ -1269,6 +1269,9 @@ name|cnt
 decl_stmt|,
 name|ind
 decl_stmt|;
+name|gint
+name|repeat_count
+decl_stmt|;
 name|gboolean
 name|has_alpha
 decl_stmt|;
@@ -1480,6 +1483,15 @@ name|next_row
 operator|+
 name|bytes
 expr_stmt|;
+name|repeat_count
+operator|=
+operator|(
+name|gint
+operator|)
+name|pivals
+operator|.
+name|blur_rcount
+expr_stmt|;
 for|for
 control|(
 name|cnt
@@ -1488,9 +1500,7 @@ literal|1
 init|;
 name|cnt
 operator|<=
-name|pivals
-operator|.
-name|blur_rcount
+name|repeat_count
 condition|;
 name|cnt
 operator|++
@@ -2113,9 +2123,7 @@ if|if
 condition|(
 name|cnt
 operator|<
-name|pivals
-operator|.
-name|blur_rcount
+name|repeat_count
 condition|)
 block|{
 if|if
