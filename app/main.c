@@ -329,7 +329,7 @@ name|display_env
 decl_stmt|;
 endif|#
 directive|endif
-name|ATEXIT
+name|g_atexit
 argument_list|(
 name|g_mem_profile
 argument_list|)
