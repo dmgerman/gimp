@@ -110,7 +110,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_New Color from FG"
+literal|"/New Color from _FG"
 argument_list|)
 block|,
 literal|""
@@ -135,7 +135,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_New Color from BG"
+literal|"/New Color from _BG"
 argument_list|)
 block|,
 literal|""
