@@ -66,22 +66,18 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2777460108
-DECL|struct|__anon2c2777460308
+DECL|struct|__anon2c757afc0108
 block|{
-DECL|member|name
 DECL|member|name
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
 DECL|member|blurb
-DECL|member|blurb
 name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
-DECL|typedef|MidiEvent
 DECL|typedef|MidiEvent
 block|}
 name|MidiEvent
@@ -90,14 +86,11 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2777460203
-DECL|enum|__anon2c2777460403
+DECL|enum|__anon2c757afc0203
 block|{
-DECL|enumerator|PROP_0
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_DEVICE
 DECL|enumerator|PROP_DEVICE
 name|PROP_DEVICE
 block|}
@@ -106,7 +99,6 @@ end_enum
 
 begin_define
 DECL|macro|CONTROLLER_TYPE_MIDI
-DECL|macro|CONTROLLER_TYPE_MIDI
 define|#
 directive|define
 name|CONTROLLER_TYPE_MIDI
@@ -114,7 +106,6 @@ value|(controller_type)
 end_define
 
 begin_define
-DECL|macro|CONTROLLER_MIDI (obj)
 DECL|macro|CONTROLLER_MIDI (obj)
 define|#
 directive|define
@@ -127,7 +118,6 @@ end_define
 
 begin_define
 DECL|macro|CONTROLLER_MIDI_CLASS (klass)
-DECL|macro|CONTROLLER_MIDI_CLASS (klass)
 define|#
 directive|define
 name|CONTROLLER_MIDI_CLASS
@@ -138,7 +128,6 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass), CONTROLLER_TYPE_MIDI, ControllerMidiCla
 end_define
 
 begin_define
-DECL|macro|CONTROLLER_IS_MIDI (obj)
 DECL|macro|CONTROLLER_IS_MIDI (obj)
 define|#
 directive|define
@@ -151,7 +140,6 @@ end_define
 
 begin_define
 DECL|macro|CONTROLLER_IS_MIDI_CLASS (klass)
-DECL|macro|CONTROLLER_IS_MIDI_CLASS (klass)
 define|#
 directive|define
 name|CONTROLLER_IS_MIDI_CLASS
@@ -163,7 +151,6 @@ end_define
 
 begin_typedef
 DECL|typedef|ControllerMidi
-DECL|typedef|ControllerMidi
 typedef|typedef
 name|struct
 name|_ControllerMidi
@@ -172,7 +159,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ControllerMidiClass
 DECL|typedef|ControllerMidiClass
 typedef|typedef
 name|struct
@@ -183,22 +169,18 @@ end_typedef
 
 begin_struct
 DECL|struct|_ControllerMidi
-DECL|struct|_ControllerMidi
 struct|struct
 name|_ControllerMidi
 block|{
-DECL|member|parent_instance
 DECL|member|parent_instance
 name|GimpController
 name|parent_instance
 decl_stmt|;
 DECL|member|device
-DECL|member|device
 name|gchar
 modifier|*
 name|device
 decl_stmt|;
-DECL|member|io
 DECL|member|io
 name|GIOChannel
 modifier|*
@@ -206,36 +188,29 @@ name|io
 decl_stmt|;
 comment|/* midi status */
 DECL|member|swallow
-DECL|member|swallow
 name|gboolean
 name|swallow
 decl_stmt|;
-DECL|member|command
 DECL|member|command
 name|gint
 name|command
 decl_stmt|;
 DECL|member|channel
-DECL|member|channel
 name|gint
 name|channel
 decl_stmt|;
-DECL|member|key
 DECL|member|key
 name|gint
 name|key
 decl_stmt|;
 DECL|member|velocity
-DECL|member|velocity
 name|gint
 name|velocity
 decl_stmt|;
 DECL|member|msb
-DECL|member|msb
 name|gint
 name|msb
 decl_stmt|;
-DECL|member|lsb
 DECL|member|lsb
 name|gint
 name|lsb
@@ -246,11 +221,9 @@ end_struct
 
 begin_struct
 DECL|struct|_ControllerMidiClass
-DECL|struct|_ControllerMidiClass
 struct|struct
 name|_ControllerMidiClass
 block|{
-DECL|member|parent_class
 DECL|member|parent_class
 name|GimpControllerClass
 name|parent_class
@@ -436,7 +409,6 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|midi_info
-DECL|variable|midi_info
 specifier|static
 specifier|const
 name|GimpModuleInfo
@@ -463,7 +435,6 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|controller_type
-DECL|variable|controller_type
 specifier|static
 name|GType
 name|controller_type
@@ -473,7 +444,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|parent_class
 DECL|variable|parent_class
 specifier|static
 name|GimpControllerClass
@@ -485,7 +455,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|midi_events
 DECL|variable|midi_events
 specifier|static
 name|MidiEvent
@@ -506,7 +475,6 @@ specifier|const
 name|GimpModuleInfo
 modifier|*
 DECL|function|gimp_module_query (GTypeModule * module)
-DECL|function|gimp_module_query (GTypeModule * module)
 name|gimp_module_query
 parameter_list|(
 name|GTypeModule
@@ -524,7 +492,6 @@ end_function
 begin_function
 name|G_MODULE_EXPORT
 name|gboolean
-DECL|function|gimp_module_register (GTypeModule * module)
 DECL|function|gimp_module_register (GTypeModule * module)
 name|gimp_module_register
 parameter_list|(
@@ -546,7 +513,6 @@ end_function
 
 begin_function
 name|GType
-DECL|function|midi_get_type (GTypeModule * module)
 DECL|function|midi_get_type (GTypeModule * module)
 name|midi_get_type
 parameter_list|(
@@ -633,7 +599,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|midi_class_init (ControllerMidiClass * klass)
 DECL|function|midi_class_init (ControllerMidiClass * klass)
 name|midi_class_init
 parameter_list|(
@@ -743,7 +708,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|midi_init (ControllerMidi * midi)
-DECL|function|midi_init (ControllerMidi * midi)
 name|midi_init
 parameter_list|(
 name|ControllerMidi
@@ -817,7 +781,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|midi_dispose (GObject * object)
-DECL|function|midi_dispose (GObject * object)
 name|midi_dispose
 parameter_list|(
 name|GObject
@@ -857,7 +820,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|midi_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
 DECL|function|midi_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
 name|midi_set_property
 parameter_list|(
@@ -925,7 +887,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|midi_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-DECL|function|midi_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
 name|midi_get_property
 parameter_list|(
 name|GObject
@@ -990,7 +951,6 @@ begin_function
 specifier|static
 name|gint
 DECL|function|midi_get_n_events (GimpController * controller)
-DECL|function|midi_get_n_events (GimpController * controller)
 name|midi_get_n_events
 parameter_list|(
 name|GimpController
@@ -1014,7 +974,6 @@ specifier|const
 name|gchar
 modifier|*
 DECL|function|midi_get_event_name (GimpController * controller,gint event_id)
-DECL|function|midi_get_event_name (GimpController * controller,gint event_id)
 name|midi_get_event_name
 parameter_list|(
 name|GimpController
@@ -1028,8 +987,14 @@ block|{
 if|if
 condition|(
 name|event_id
-operator|<=
-literal|383
+operator|<
+operator|(
+literal|128
+operator|+
+literal|128
+operator|+
+literal|128
+operator|)
 condition|)
 block|{
 if|if
@@ -1073,6 +1038,7 @@ literal|128
 operator|+
 literal|128
 operator|)
+condition|)
 name|midi_events
 index|[
 name|event_id
@@ -1088,7 +1054,7 @@ name|event_id
 operator|-
 literal|128
 argument_list|)
-empty_stmt|;
+expr_stmt|;
 elseif|else
 if|if
 condition|(
@@ -1139,6 +1105,7 @@ specifier|static
 specifier|const
 name|gchar
 modifier|*
+DECL|function|midi_get_event_blurb (GimpController * controller,gint event_id)
 name|midi_get_event_blurb
 parameter_list|(
 name|GimpController
@@ -1252,6 +1219,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
+DECL|function|midi_set_device (ControllerMidi * midi,const gchar * device)
 name|midi_set_device
 parameter_list|(
 name|ControllerMidi
@@ -1499,6 +1467,7 @@ block|}
 end_function
 
 begin_define
+DECL|macro|D (stmnt)
 define|#
 directive|define
 name|D
@@ -1510,6 +1479,7 @@ end_define
 
 begin_function
 name|gboolean
+DECL|function|midi_read_event (GIOChannel * io,GIOCondition cond,gpointer data)
 name|midi_read_event
 parameter_list|(
 name|GIOChannel
