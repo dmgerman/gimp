@@ -207,7 +207,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon27bae5590108
+DECL|struct|__anon27ccbc130108
 typedef|typedef
 struct|struct
 block|{
@@ -284,7 +284,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27bae5590208
+DECL|struct|__anon27ccbc130208
 typedef|typedef
 struct|struct
 block|{
@@ -420,14 +420,6 @@ literal|"ymax fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
-block|,
-literal|"ymax"
-block|,
-literal|"ymax fractal image delimiter"
-block|}
-block|,
-block|{
 name|PARAM_INT32
 block|,
 literal|"depth"
@@ -512,7 +504,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon27bae5590308
+DECL|struct|__anon27ccbc130308
 typedef|typedef
 struct|struct
 block|{
@@ -555,7 +547,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27bae5590408
+DECL|struct|__anon27ccbc130408
 typedef|typedef
 struct|struct
 block|{
@@ -1105,7 +1097,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27bae5590508
+DECL|struct|__anon27ccbc130508
 typedef|typedef
 struct|struct
 block|{
@@ -3630,7 +3622,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon27bae5590608
+DECL|struct|__anon27ccbc130608
 typedef|typedef
 struct|struct
 block|{
