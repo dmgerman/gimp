@@ -68,18 +68,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -93,7 +93,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|colors_equal
 parameter_list|(
 name|guchar
@@ -104,7 +104,7 @@ name|guchar
 modifier|*
 name|col2
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 function_decl|;
@@ -112,20 +112,20 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|guess_bgcolor
 parameter_list|(
 name|GPixelRgn
 modifier|*
 name|pr
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
 name|guchar
@@ -145,6 +145,7 @@ modifier|*
 name|drawable
 parameter_list|,
 name|gint32
+name|image_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -157,22 +158,23 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|bytes
+specifier|static
 name|gint
 name|bytes
 decl_stmt|;
@@ -183,6 +185,7 @@ DECL|variable|sx1
 DECL|variable|sy1
 DECL|variable|sx2
 DECL|variable|sy2
+specifier|static
 name|gint
 name|sx1
 decl_stmt|,
@@ -196,10 +199,11 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|run_flag
-name|int
+specifier|static
+name|gint
 name|run_flag
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -213,7 +217,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -247,14 +253,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -270,15 +269,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_autocrop"
@@ -304,34 +294,34 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint n_params,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|n_params
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -536,9 +526,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|doit (GDrawable * drawable,gint32 image_id)
 specifier|static
 name|void
+DECL|function|doit (GDrawable * drawable,gint32 image_id)
 name|doit
 parameter_list|(
 name|GDrawable
@@ -557,7 +547,7 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -593,7 +583,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|width
@@ -791,7 +781,7 @@ name|y
 expr_stmt|;
 name|gimp_progress_update
 argument_list|(
-literal|.25
+literal|0.25
 argument_list|)
 expr_stmt|;
 comment|/* Check how many of the bottom lines are uniform. */
@@ -877,7 +867,7 @@ literal|2
 expr_stmt|;
 name|gimp_progress_update
 argument_list|(
-literal|.5
+literal|0.5
 argument_list|)
 expr_stmt|;
 comment|/* Check how many of the left lines are uniform. */
@@ -966,7 +956,7 @@ name|x
 expr_stmt|;
 name|gimp_progress_update
 argument_list|(
-literal|.75
+literal|0.75
 argument_list|)
 expr_stmt|;
 comment|/* Check how many of the right lines are uniform. */
@@ -1106,22 +1096,22 @@ block|}
 end_function
 
 begin_function
-DECL|function|guess_bgcolor (GPixelRgn * pr,int width,int height,int bytes,guchar * color)
 specifier|static
-name|int
+name|gint
+DECL|function|guess_bgcolor (GPixelRgn * pr,gint width,gint height,gint bytes,guchar * color)
 name|guess_bgcolor
 parameter_list|(
 name|GPixelRgn
 modifier|*
 name|pr
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
 name|guchar
@@ -1494,8 +1484,8 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|colors_equal (guchar * col1,guchar * col2,int bytes)
+name|gint
+DECL|function|colors_equal (guchar * col1,guchar * col2,gint bytes)
 name|colors_equal
 parameter_list|(
 name|guchar
@@ -1506,16 +1496,16 @@ name|guchar
 modifier|*
 name|col2
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|equal
 init|=
 literal|1
 decl_stmt|;
-name|int
+name|gint
 name|b
 decl_stmt|;
 if|if

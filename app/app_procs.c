@@ -805,7 +805,7 @@ argument_list|)
 argument_list|,
 literal|"%s"
 name|G_DIR_SEPARATOR_S
-literal|"gimp1_1_splash.ppm"
+literal|"gimp_splash.ppm"
 argument_list|,
 name|gimp_data_directory
 argument_list|()
@@ -966,7 +966,7 @@ argument_list|)
 argument_list|,
 literal|"%s"
 name|G_DIR_SEPARATOR_S
-literal|"gimp1_1_splash.ppm"
+literal|"gimp_splash.ppm"
 argument_list|,
 name|gimp_data_directory
 argument_list|()
