@@ -175,6 +175,16 @@ block|}
 struct|;
 end_struct
 
+begin_decl_stmt
+name|GType
+name|gimp_brush_editor_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|GimpDataEditor
 modifier|*
