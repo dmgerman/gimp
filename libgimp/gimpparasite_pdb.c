@@ -182,7 +182,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_parasite_list (gint * num_parasites,gchar ** parasites)
+DECL|function|gimp_parasite_list (gint * num_parasites,gchar *** parasites)
 name|gimp_parasite_list
 parameter_list|(
 name|gint
@@ -190,6 +190,7 @@ modifier|*
 name|num_parasites
 parameter_list|,
 name|gchar
+modifier|*
 modifier|*
 modifier|*
 name|parasites
@@ -253,6 +254,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+operator|*
 name|parasites
 operator|=
 name|g_new
@@ -278,7 +280,10 @@ condition|;
 name|i
 operator|++
 control|)
+operator|(
+operator|*
 name|parasites
+operator|)
 index|[
 name|i
 index|]
@@ -499,7 +504,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_parasite_list (gint32 drawable_ID,gint * num_parasites,gchar ** parasites)
+DECL|function|gimp_drawable_parasite_list (gint32 drawable_ID,gint * num_parasites,gchar *** parasites)
 name|gimp_drawable_parasite_list
 parameter_list|(
 name|gint32
@@ -510,6 +515,7 @@ modifier|*
 name|num_parasites
 parameter_list|,
 name|gchar
+modifier|*
 modifier|*
 modifier|*
 name|parasites
@@ -577,6 +583,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+operator|*
 name|parasites
 operator|=
 name|g_new
@@ -602,7 +609,10 @@ condition|;
 name|i
 operator|++
 control|)
+operator|(
+operator|*
 name|parasites
+operator|)
 index|[
 name|i
 index|]
@@ -823,7 +833,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_parasite_list (gint32 image_ID,gint * num_parasites,gchar ** parasites)
+DECL|function|gimp_image_parasite_list (gint32 image_ID,gint * num_parasites,gchar *** parasites)
 name|gimp_image_parasite_list
 parameter_list|(
 name|gint32
@@ -834,6 +844,7 @@ modifier|*
 name|num_parasites
 parameter_list|,
 name|gchar
+modifier|*
 modifier|*
 modifier|*
 name|parasites
@@ -901,6 +912,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+operator|*
 name|parasites
 operator|=
 name|g_new
@@ -926,7 +938,10 @@ condition|;
 name|i
 operator|++
 control|)
+operator|(
+operator|*
 name|parasites
+operator|)
 index|[
 name|i
 index|]

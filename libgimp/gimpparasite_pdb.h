@@ -69,6 +69,7 @@ parameter_list|,
 name|gchar
 modifier|*
 modifier|*
+modifier|*
 name|parasites
 parameter_list|)
 function_decl|;
@@ -119,6 +120,7 @@ parameter_list|,
 name|gchar
 modifier|*
 modifier|*
+modifier|*
 name|parasites
 parameter_list|)
 function_decl|;
@@ -167,6 +169,7 @@ modifier|*
 name|num_parasites
 parameter_list|,
 name|gchar
+modifier|*
 modifier|*
 modifier|*
 name|parasites

@@ -191,7 +191,7 @@ name|gint
 name|nreturn_vals
 decl_stmt|;
 name|GimpUnit
-name|unit_ID
+name|unit_id
 init|=
 name|GIMP_UNIT_INCH
 decl_stmt|;
@@ -248,7 +248,7 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
-name|unit_ID
+name|unit_id
 operator|=
 name|return_vals
 index|[
@@ -267,18 +267,18 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 return|return
-name|unit_ID
+name|unit_id
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|_gimp_unit_get_deletion_flag (GimpUnit unit_ID)
+DECL|function|_gimp_unit_get_deletion_flag (GimpUnit unit_id)
 name|_gimp_unit_get_deletion_flag
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|)
 block|{
 name|GimpParam
@@ -291,7 +291,7 @@ decl_stmt|;
 name|gboolean
 name|deletion_flag
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -304,7 +304,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -348,11 +348,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gimp_unit_set_deletion_flag (GimpUnit unit_ID,gboolean deletion_flag)
+DECL|function|_gimp_unit_set_deletion_flag (GimpUnit unit_id,gboolean deletion_flag)
 name|_gimp_unit_set_deletion_flag
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|,
 name|gboolean
 name|deletion_flag
@@ -376,7 +376,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
@@ -398,11 +398,11 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|_gimp_unit_get_identifier (GimpUnit unit_ID)
+DECL|function|_gimp_unit_get_identifier (GimpUnit unit_id)
 name|_gimp_unit_get_identifier
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|)
 block|{
 name|GimpParam
@@ -429,7 +429,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -476,11 +476,11 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|_gimp_unit_get_factor (GimpUnit unit_ID)
+DECL|function|_gimp_unit_get_factor (GimpUnit unit_id)
 name|_gimp_unit_get_factor
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|)
 block|{
 name|GimpParam
@@ -493,7 +493,7 @@ decl_stmt|;
 name|gdouble
 name|factor
 init|=
-literal|1.0
+literal|0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -506,7 +506,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -550,11 +550,11 @@ end_function
 
 begin_function
 name|gint
-DECL|function|_gimp_unit_get_digits (GimpUnit unit_ID)
+DECL|function|_gimp_unit_get_digits (GimpUnit unit_id)
 name|_gimp_unit_get_digits
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|)
 block|{
 name|GimpParam
@@ -567,7 +567,7 @@ decl_stmt|;
 name|gint
 name|digits
 init|=
-literal|2
+literal|0
 decl_stmt|;
 name|return_vals
 operator|=
@@ -580,7 +580,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -625,11 +625,11 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|_gimp_unit_get_symbol (GimpUnit unit_ID)
+DECL|function|_gimp_unit_get_symbol (GimpUnit unit_id)
 name|_gimp_unit_get_symbol
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|)
 block|{
 name|GimpParam
@@ -656,7 +656,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -704,11 +704,11 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|_gimp_unit_get_abbreviation (GimpUnit unit_ID)
+DECL|function|_gimp_unit_get_abbreviation (GimpUnit unit_id)
 name|_gimp_unit_get_abbreviation
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|)
 block|{
 name|GimpParam
@@ -735,7 +735,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -783,11 +783,11 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|_gimp_unit_get_singular (GimpUnit unit_ID)
+DECL|function|_gimp_unit_get_singular (GimpUnit unit_id)
 name|_gimp_unit_get_singular
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|)
 block|{
 name|GimpParam
@@ -814,7 +814,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)
@@ -862,11 +862,11 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|_gimp_unit_get_plural (GimpUnit unit_ID)
+DECL|function|_gimp_unit_get_plural (GimpUnit unit_id)
 name|_gimp_unit_get_plural
 parameter_list|(
 name|GimpUnit
-name|unit_ID
+name|unit_id
 parameter_list|)
 block|{
 name|GimpParam
@@ -893,7 +893,7 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
-name|unit_ID
+name|unit_id
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

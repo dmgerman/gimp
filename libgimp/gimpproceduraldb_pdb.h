@@ -81,10 +81,10 @@ name|gchar
 modifier|*
 modifier|*
 modifier|*
-name|proc_names
+name|procedure_names
 parameter_list|)
 function_decl|;
-name|gboolean
+name|void
 name|_gimp_procedural_db_proc_info
 parameter_list|(
 name|gchar
@@ -129,8 +129,8 @@ modifier|*
 name|num_values
 parameter_list|)
 function_decl|;
-name|gboolean
-name|gimp_procedural_db_proc_arg
+name|void
+name|_gimp_procedural_db_proc_arg
 parameter_list|(
 name|gchar
 modifier|*
@@ -154,8 +154,8 @@ modifier|*
 name|arg_desc
 parameter_list|)
 function_decl|;
-name|gboolean
-name|gimp_procedural_db_proc_val
+name|void
+name|_gimp_procedural_db_proc_val
 parameter_list|(
 name|gchar
 modifier|*
