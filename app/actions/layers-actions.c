@@ -345,8 +345,6 @@ argument_list|)
 block|,
 literal|"<control><shift>D"
 block|,
-name|NULL
-block|,
 name|N_
 argument_list|(
 literal|"Duplicate layer"
