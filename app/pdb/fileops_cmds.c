@@ -1161,9 +1161,9 @@ literal|0
 argument_list|,
 name|GIMP_SMALL_CHECKS
 argument_list|,
-literal|0x666666ff
+literal|0x66666666
 argument_list|,
-literal|0x999999ff
+literal|0x99999999
 argument_list|)
 expr_stmt|;
 name|g_object_unref
