@@ -57,7 +57,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992463d0108
+DECL|struct|__anon29585deb0108
 block|{
 DECL|member|compression
 name|gint
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992463d0208
+DECL|struct|__anon29585deb0208
 block|{
 DECL|member|run
 name|gint
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2992463d0308
+DECL|struct|__anon29585deb0308
 typedef|typedef
 struct|struct
 block|{
@@ -596,7 +596,7 @@ name|PARAM_INT32
 block|,
 literal|"compression"
 block|,
-literal|"Compression type: { NONE (0), LZW (1), PACKBITS (2)"
+literal|"Compression type: { NONE (0), LZW (1), PACKBITS (2) }"
 block|}
 block|,
 block|{
@@ -604,7 +604,7 @@ name|PARAM_INT32
 block|,
 literal|"fillorder"
 block|,
-literal|"Fill Order: { MSB to LSB (0), LSB to MSB (1)"
+literal|"Fill Order: { MSB to LSB (0), LSB to MSB (1) }"
 block|}
 block|}
 decl_stmt|;
