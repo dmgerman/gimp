@@ -484,26 +484,19 @@ argument_list|(
 literal|"/Add Tab/---"
 argument_list|)
 block|,
-block|{
-block|{
+name|ADD_TAB
+argument_list|(
 name|N_
 argument_list|(
 literal|"/Add Tab/Tools..."
 argument_list|)
-block|,
-name|NULL
-block|,
-name|dialogs_add_tab_cmd_callback
-block|,
-literal|0
-block|}
-block|,
+argument_list|,
 literal|"gimp-tool-list"
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
+argument_list|,
+name|GTK_STOCK_MISSING_IMAGE
+argument_list|,
+name|GIMP_HELP_TOOL_DIALOG
+argument_list|)
 block|,
 block|{
 block|{

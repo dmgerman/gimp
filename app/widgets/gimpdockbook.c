@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291b9d150103
+DECL|enum|__anon29f607260103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1730,7 +1730,9 @@ name|dockable
 operator|->
 name|blurb
 argument_list|,
-name|NULL
+name|dockable
+operator|->
+name|help_id
 argument_list|)
 expr_stmt|;
 name|g_object_set_data

@@ -165,6 +165,11 @@ name|gchar
 modifier|*
 name|stock_id
 decl_stmt|;
+DECL|member|help_id
+name|gchar
+modifier|*
+name|help_id
+decl_stmt|;
 DECL|member|tab_style
 name|GimpTabStyle
 name|tab_style
@@ -276,6 +281,11 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 name|GimpDockableGetPreviewFunc
 name|get_preview_func

@@ -1225,6 +1225,14 @@ value|"dialogs/edit_path_attributes.html"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_TOOL_DIALOG
+value|"dialogs/tools.html"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_AIRBRUSH
 define|#
 directive|define
@@ -1973,6 +1981,14 @@ DECL|macro|GIMP_HELP_PALETTE_MERGE
 define|#
 directive|define
 name|GIMP_HELP_PALETTE_MERGE
+value|"dialogs/palette_selection.html"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PALETTE_EDITOR_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_PALETTE_EDITOR_DIALOG
 value|"dialogs/palette_selection.html"
 end_define
 

@@ -198,6 +198,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppaletteeditor.h"
 end_include
 
@@ -549,6 +555,11 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 name|GimpDockableGetPreviewFunc
 name|get_preview_func
@@ -1014,6 +1025,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_OPTIONS
 argument_list|,
+name|GIMP_HELP_TOOL_OPTIONS_DIALOG
+argument_list|,
 name|dialogs_tool_options_preview_func
 argument_list|,
 name|NULL
@@ -1096,6 +1109,8 @@ literal|"Device Status"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_DEVICE_STATUS
+argument_list|,
+name|GIMP_HELP_DEVICE_STATUS_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -1184,6 +1199,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_WARNING
 argument_list|,
+name|GIMP_HELP_ERRORS_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1259,6 +1276,8 @@ literal|"Image List"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_IMAGES
+argument_list|,
+name|GIMP_HELP_IMAGE_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -1336,6 +1355,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,
+name|GIMP_HELP_BRUSH_DIALOG
+argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
 literal|"brush"
@@ -1411,6 +1432,8 @@ literal|"Pattern List"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
+argument_list|,
+name|GIMP_HELP_PATTERN_DIALOG
 argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
@@ -1488,6 +1511,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
+name|GIMP_HELP_GRADIENT_DIALOG
+argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
 literal|"gradient"
@@ -1564,6 +1589,8 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_COLOR
 argument_list|,
+name|GIMP_HELP_PALETTE_DIALOG
+argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
 literal|"palette"
@@ -1632,6 +1659,8 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_FONT
 argument_list|,
+name|GIMP_HELP_FONT_DIALOG
+argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
 literal|"font"
@@ -1699,6 +1728,8 @@ literal|"Tool List"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_MISSING_IMAGE
+argument_list|,
+name|GIMP_HELP_TOOL_DIALOG
 argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
@@ -1771,6 +1802,8 @@ literal|"Buffer List"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_PASTE
+argument_list|,
+name|GIMP_HELP_BUFFER_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -1845,6 +1878,8 @@ literal|"Document History List"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_OPEN
+argument_list|,
+name|GIMP_HELP_DOCUMENT_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -1947,6 +1982,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TEMPLATE
 argument_list|,
+name|GIMP_HELP_TEMPLATE_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -2022,6 +2059,8 @@ literal|"Image Grid"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_IMAGES
+argument_list|,
+name|GIMP_HELP_IMAGE_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -2099,6 +2138,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,
+name|GIMP_HELP_BRUSH_DIALOG
+argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
 literal|"brush"
@@ -2174,6 +2215,8 @@ literal|"Pattern Grid"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
+argument_list|,
+name|GIMP_HELP_PATTERN_DIALOG
 argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
@@ -2251,6 +2294,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
+name|GIMP_HELP_GRADIENT_DIALOG
+argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
 literal|"gradient"
@@ -2327,6 +2372,8 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_COLOR
 argument_list|,
+name|GIMP_HELP_PALETTE_DIALOG
+argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
 literal|"palette"
@@ -2395,6 +2442,8 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_FONT
 argument_list|,
+name|GIMP_HELP_FONT_DIALOG
+argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
 literal|"font"
@@ -2462,6 +2511,8 @@ literal|"Tool Grid"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_MISSING_IMAGE
+argument_list|,
+name|GIMP_HELP_TOOL_DIALOG
 argument_list|,
 name|dialogs_viewable_preview_func
 argument_list|,
@@ -2534,6 +2585,8 @@ literal|"Buffer Grid"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_PASTE
+argument_list|,
+name|GIMP_HELP_BUFFER_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -2608,6 +2661,8 @@ literal|"Document History Grid"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_OPEN
+argument_list|,
+name|GIMP_HELP_DOCUMENT_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -2729,6 +2784,8 @@ literal|"Layer List"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_LAYERS
+argument_list|,
+name|GIMP_HELP_LAYER_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -2859,6 +2916,8 @@ literal|"Channel List"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_CHANNELS
+argument_list|,
+name|GIMP_HELP_CHANNEL_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -3013,6 +3072,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_PATHS
 argument_list|,
+name|GIMP_HELP_PATH_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -3101,6 +3162,8 @@ literal|"Indexed Palette"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_INDEXED_PALETTE
+argument_list|,
+name|GIMP_HELP_INDEXED_PALETTE_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -3218,6 +3281,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_RECT_SELECT
 argument_list|,
+name|GIMP_HELP_SELECTION_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -3302,6 +3367,8 @@ literal|"Undo History"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_UNDO_HISTORY
+argument_list|,
+name|GIMP_HELP_UNDO_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -3415,6 +3482,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_NAVIGATION
 argument_list|,
+name|GIMP_HELP_NAVIGATION_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -3474,6 +3543,8 @@ literal|"FG/BG Color"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_DEFAULT_COLORS
+argument_list|,
+name|GIMP_HELP_COLOR_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -3550,6 +3621,8 @@ literal|"Brush Editor"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
+argument_list|,
+name|GIMP_HELP_BRUSH_EDITOR_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -3657,6 +3730,8 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
+name|GIMP_HELP_GRADIENT_EDITOR_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -3762,6 +3837,8 @@ literal|"Palette Editor"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_COLOR
+argument_list|,
+name|GIMP_HELP_PALETTE_EDITOR_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -4793,7 +4870,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * blurb,const gchar * stock_id,GimpDockableGetPreviewFunc get_preview_func,gpointer get_preview_data,GimpDockableSetContextFunc set_context_func)
+DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDockableGetPreviewFunc get_preview_func,gpointer get_preview_data,GimpDockableSetContextFunc set_context_func)
 name|dialogs_dockable_new
 parameter_list|(
 name|GtkWidget
@@ -4814,6 +4891,11 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 name|GimpDockableGetPreviewFunc
 name|get_preview_func
@@ -4838,6 +4920,8 @@ argument_list|,
 name|blurb
 argument_list|,
 name|stock_id
+argument_list|,
+name|help_id
 argument_list|,
 name|get_preview_func
 argument_list|,
