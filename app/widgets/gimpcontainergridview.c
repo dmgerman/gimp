@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a0274a0103
+DECL|enum|__anon2c25bb1a0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -2459,6 +2459,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+comment|/*  ref the view because calling gimp_container_view_item_selected()    *  may destroy the widget    */
+name|g_object_ref
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_container_view_item_selected
@@ -2493,6 +2499,11 @@ name|viewable
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
