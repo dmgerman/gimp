@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/****************************************************************************  * This is a plugin for the GIMP v 0.99.8 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
+comment|/****************************************************************************  * This is a plugin for the GIMP v 1.0 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997-8 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
 end_comment
 
 begin_comment
-comment|/****************************************************************************  * Randomize:  *  * randomize version 1.6 (29 Apr 1998, MEO)  * history  *     1.6 -  29 Apr 1998 MEO  *         moved blur to separate plugin (blur 2.0)  *     1.5 -  5 Feb 1998 MEO  *         added alpha layer handling to blur code  *     1.4 -  3 Feb 1998 MEO  *         added details to PDB parameter help strings  *     1.3 -  3 Feb 1998 MEO  *         removed tooltips from action buttons  *         fixed param[5] type (was int32, should have been float)  *     1.2 -  2 Feb 1998 MEO  *         converted macro'd functions from 0.5 to inline functions  *         2 casts added for portability by 0.99.18 release coordinator  *         moved from Distorts to Noise menu  *         went to GUI convenience routines as much as reasonable  *         broke out GUI convenience routines into gpc.h and gpc.c  *     1.1 - 30 Nov 1997 MEO  *         added tooltips  *     1.0 - 19 Nov 1997 MEO  *         final cleanup for 1.0 GIMP release  *         - added email and URL info for author  *         - added doc URL info  *         - final FCS comment cleanup  *         - standardized constant strings  *         - restored proper behavior when repeating  *         - final UI labels  *         - better help text (for when GIMP help arrives)  *     0.5 - 20 May 1997 MEO  *         added seed initialization choices (current time or user value)  *         added randomization type to progress label  *         added RNDM_VERSION macro so version changes made in one place  *         speed optimizations:  *             - changed randomize_prepare_row to #define  *             - moved updates back outside main loop  *             - less frequent progress updates  *         minor intialization string and comment cleanup  *     0.4c - 17 May 1997 MEO  *         minor comment cleanup  *     0.4b - 17 May 1997 MEO  *         minor comment cleanup  *     0.4a - 16 May 1997 MEO  *         added, corrected& cleaned up comments  *         removed unused variables, code  *         cleaned up wrong names  *         added version to popups  *     0.4 - 13 May 1997 MEO  *         added SLUR function  *     0.3 - 12 May 1997 MEO  *         added HURL function  *         moved from Blurs menu to Distorts menu.  *     0.2 - 11 May 1997 MEO  *         converted percentage control from text to scale  *         standardized tab stops, style  *     0.1 - 10 May 1997 MEO  *         initial release, with BLUR and PICK  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * This plug-in adds a user-defined amount of randomization to an  * image.  Variations include:  *   *  - hurling (spewing random colors)  *  - picking a nearby pixel at random  *  - slurring (a crude form of melting)  *   * In any case, for each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  Picking  * one selects the new pixel value at random from the current and  * adjacent pixels.  Hurling assigns a random value to the pixel.  * Slurring sort of melts downwards; if a pixel is to be slurred,  * there is an 80% chance the pixel above be used; otherwise, one  * of the pixels adjacent to the one above is used (even odds as  * to which it will be).  *   * Picking, hurling and slurring work with any image type.  *   * This plug-in's effectiveness varies a lot with the type  * and clarity of the image being "randomized".  *   * Hurling more than 75% or so onto an existing image will  * make the image nearly unrecognizable.  By 90% hurl, most  * images are indistinguishable from random noise.  *   * The repeat count is especially useful with slurring.  *   * TODO List  *   *  - add a real melt function  *  - split into multiple files  ****************************************************************************/
+comment|/****************************************************************************  * Randomize:  *  * randomize version 1.7 (1 May 1998, MEO)  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * This plug-in adds a user-defined amount of randomization to an  * image.  Variations include:  *   *  - hurling (spewing random colors)  *  - picking a nearby pixel at random  *  - slurring (a crude form of melting)  *   * In any case, for each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  Picking  * one selects the new pixel value at random from the current and  * adjacent pixels.  Hurling assigns a random value to the pixel.  * Slurring sort of melts downwards; if a pixel is to be slurred,  * there is an 80% chance the pixel above be used; otherwise, one  * of the pixels adjacent to the one above is used (even odds as  * to which it will be).  *   * Picking, hurling and slurring work with any image type.  *   * This plug-in's effectiveness varies a lot with the type  * and clarity of the image being "randomized".  *   * Hurling more than 75% or so onto an existing image will  * make the image nearly unrecognizable.  By 90% hurl, most  * images are indistinguishable from random noise.  *   * The repeat count is especially useful with slurring.  *   * TODO List  *   *  - add a real melt function  ****************************************************************************/
 end_comment
 
 begin_include
@@ -43,6 +43,28 @@ directive|include
 file|<plug-ins/gpc/gpc.h>
 end_include
 
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|__GNUC__
+argument_list|)
+end_if
+
+begin_define
+DECL|macro|inline
+define|#
+directive|define
+name|inline
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*********************************  *  *  PLUGIN-SPECIFIC CONSTANTS  *  ********************************/
 end_comment
@@ -59,21 +81,39 @@ name|PROG_UPDATE_TIME
 value|((row % 10) == 0)
 end_define
 
-begin_define
-DECL|macro|PLUG_IN_NAME
-define|#
-directive|define
+begin_decl_stmt
+DECL|variable|PLUG_IN_NAME
+name|char
+modifier|*
 name|PLUG_IN_NAME
-value|"plug_in_randomize"
-end_define
+index|[]
+init|=
+block|{
+literal|"plug_in_randomize_hurl"
+block|,
+literal|"plug_in_randomize_pick"
+block|,
+literal|"plug_in_randomize_slur"
+block|, }
+decl_stmt|;
+end_decl_stmt
 
-begin_define
-DECL|macro|RNDM_VERSION
-define|#
-directive|define
+begin_decl_stmt
+DECL|variable|RNDM_VERSION
+name|char
+modifier|*
 name|RNDM_VERSION
-value|"Randomize 1.6"
-end_define
+index|[]
+init|=
+block|{
+literal|"Random Hurl 1.7"
+block|,
+literal|"Random Pick 1.7"
+block|,
+literal|"Random Slur 1.7"
+block|, }
+decl_stmt|;
+end_decl_stmt
 
 begin_define
 DECL|macro|RNDM_HURL
@@ -131,25 +171,39 @@ name|SCALE_WIDTH
 value|100
 end_define
 
+begin_decl_stmt
+DECL|variable|rndm_type
+name|gint
+name|rndm_type
+init|=
+name|RNDM_HURL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|rndm_type
+comment|/* hurl, pick, etc. */
+end_comment
+
 begin_comment
 comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND DATA  *  ********************************/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2afb99d50108
+DECL|struct|__anon29921b6e0108
 typedef|typedef
 struct|struct
 block|{
-DECL|member|rndm_type
-name|gint
-name|rndm_type
-decl_stmt|;
-comment|/* type of randomization to apply */
 DECL|member|rndm_pct
 name|gdouble
 name|rndm_pct
 decl_stmt|;
 comment|/* likelihood of randomization (as %age) */
+DECL|member|rndm_rcount
+name|gdouble
+name|rndm_rcount
+decl_stmt|;
+comment|/* repeat count */
 DECL|member|seed_type
 name|gint
 name|seed_type
@@ -160,11 +214,6 @@ name|gint
 name|rndm_seed
 decl_stmt|;
 comment|/* seed value for rand() function */
-DECL|member|rndm_rcount
-name|gdouble
-name|rndm_rcount
-decl_stmt|;
-comment|/* repeat count */
 DECL|typedef|RandomizeVals
 block|}
 name|RandomizeVals
@@ -178,21 +227,19 @@ name|RandomizeVals
 name|pivals
 init|=
 block|{
-name|RNDM_HURL
-block|,
 literal|50.0
+block|,
+literal|1.0
 block|,
 name|SEED_TIME
 block|,
 literal|0
-block|,
-literal|1.0
 block|, }
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2afb99d50208
+DECL|struct|__anon29921b6e0208
 typedef|typedef
 struct|struct
 block|{
@@ -395,19 +442,11 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
-block|,
-literal|"rndm_type"
-block|,
-literal|"Randomization type (1=hurl 2=pick 3=slur)"
-block|}
-block|,
-block|{
 name|PARAM_FLOAT
 block|,
 literal|"rndm_pct"
 block|,
-literal|"Randomization percentage (1 - 100)"
+literal|"Randomization percentage (1.0 - 100.0)"
 block|}
 block|,
 block|{
@@ -415,7 +454,23 @@ name|PARAM_FLOAT
 block|,
 literal|"rndm_rcount"
 block|,
-literal|"Repeat count(1 - 100)"
+literal|"Repeat count (1.0 - 100.0)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"seed_type"
+block|,
+literal|"Seed type (10 = current time, 11 = seed value)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"rndm_seed"
+block|,
+literal|"Seed value (used only if seed type is 11)"
 block|}
 block|,     }
 decl_stmt|;
@@ -452,16 +507,44 @@ decl_stmt|;
 specifier|const
 name|char
 modifier|*
-name|blurb
+name|hurl_blurb
 init|=
-literal|"Add a random factor to the image, by picking a nearby pixel, slurring (similar to melting), or just hurling on it."
+literal|"Add a random factor to the image by hurling random data at it."
 decl_stmt|;
 specifier|const
 name|char
 modifier|*
-name|help
+name|pick_blurb
 init|=
-literal|"This function randomly modified the drawable, either by picking a nearby pixel, slurring (cheezy melting), or hurling (spewing colors).  The type and percentage are user selectable."
+literal|"Add a random factor to the image by picking a random adjacent pixel."
+decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|slur_blurb
+init|=
+literal|"Add a random factor to the image by slurring (similar to melting)."
+decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|hurl_help
+init|=
+literal|"This plug-in ``hurls'' randomly-valued pixels onto the selection or image.  You may select the percentage of pixels to modify and the number of times to repeat the process."
+decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|pick_help
+init|=
+literal|"This plug-in replaces a pixel with a random adjacent pixel.  You may select the percentage of pixels to modify and the number of times to repeat the process."
+decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|slur_help
+init|=
+literal|"This plug-in slurs (melts like a bunch of icicles) an image.  You may select the percentage of pixels to modify and the number of times to repeat the process."
 decl_stmt|;
 specifier|const
 name|char
@@ -482,23 +565,26 @@ name|char
 modifier|*
 name|copyright_date
 init|=
-literal|"1995-1997"
+literal|"1995-1998"
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
+index|[
+literal|0
+index|]
 argument_list|,
 operator|(
 name|char
 operator|*
 operator|)
-name|blurb
+name|hurl_blurb
 argument_list|,
 operator|(
 name|char
 operator|*
 operator|)
-name|help
+name|hurl_help
 argument_list|,
 operator|(
 name|char
@@ -518,7 +604,111 @@ operator|*
 operator|)
 name|copyright_date
 argument_list|,
-literal|"<Image>/Filters/Noise/Randomize"
+literal|"<Image>/Filters/Random/Hurl"
+argument_list|,
+literal|"RGB*, GRAY*, INDEXED*"
+argument_list|,
+name|PROC_PLUG_IN
+argument_list|,
+name|nargs
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PLUG_IN_NAME
+index|[
+literal|1
+index|]
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|pick_blurb
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|pick_help
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|author
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|copyrights
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|copyright_date
+argument_list|,
+literal|"<Image>/Filters/Random/Pick"
+argument_list|,
+literal|"RGB*, GRAY*, INDEXED*"
+argument_list|,
+name|PROC_PLUG_IN
+argument_list|,
+name|nargs
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PLUG_IN_NAME
+index|[
+literal|2
+index|]
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|slur_blurb
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|slur_help
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|author
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|copyrights
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|copyright_date
+argument_list|,
+literal|"<Image>/Filters/Random/Slur"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -600,6 +790,62 @@ literal|1
 index|]
 decl_stmt|;
 comment|/*  *  Get the specified drawable, do standard initialization.  */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PLUG_IN_NAME
+index|[
+literal|0
+index|]
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|rndm_type
+operator|=
+name|RNDM_HURL
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PLUG_IN_NAME
+index|[
+literal|1
+index|]
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|rndm_type
+operator|=
+name|RNDM_PICK
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PLUG_IN_NAME
+index|[
+literal|2
+index|]
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|rndm_type
+operator|=
+name|RNDM_SLUR
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -692,6 +938,11 @@ case|:
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
+index|[
+name|rndm_type
+operator|-
+literal|1
+index|]
 argument_list|,
 operator|&
 name|pivals
@@ -714,7 +965,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|6
+literal|7
 condition|)
 block|{
 name|status
@@ -731,22 +982,6 @@ condition|)
 block|{
 name|pivals
 operator|.
-name|rndm_type
-operator|=
-operator|(
-name|gint
-operator|)
-name|param
-index|[
-literal|3
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|pivals
-operator|.
 name|rndm_pct
 operator|=
 operator|(
@@ -754,7 +989,7 @@ name|gdouble
 operator|)
 name|param
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|data
@@ -770,12 +1005,44 @@ name|gdouble
 operator|)
 name|param
 index|[
-literal|5
+literal|4
 index|]
 operator|.
 name|data
 operator|.
 name|d_float
+expr_stmt|;
+name|pivals
+operator|.
+name|seed_type
+operator|=
+operator|(
+name|gint
+operator|)
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pivals
+operator|.
+name|rndm_seed
+operator|=
+operator|(
+name|gint
+operator|)
+name|param
+index|[
+literal|6
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
 expr_stmt|;
 block|}
 if|if
@@ -786,20 +1053,14 @@ name|STATUS_SUCCESS
 operator|&&
 operator|(
 operator|(
-name|pivals
-operator|.
 name|rndm_type
 operator|!=
 name|RNDM_PICK
 operator|&&
-name|pivals
-operator|.
 name|rndm_type
 operator|!=
 name|RNDM_SLUR
 operator|&&
-name|pivals
-operator|.
 name|rndm_type
 operator|!=
 name|RNDM_HURL
@@ -848,6 +1109,11 @@ case|:
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
+index|[
+name|rndm_type
+operator|-
+literal|1
+index|]
 argument_list|,
 operator|&
 name|pivals
@@ -868,8 +1134,6 @@ block|{
 comment|/*  *  JUST DO IT!  */
 switch|switch
 condition|(
-name|pivals
-operator|.
 name|rndm_type
 condition|)
 block|{
@@ -905,6 +1169,11 @@ argument_list|,
 literal|"%s (%s)"
 argument_list|,
 name|RNDM_VERSION
+index|[
+name|rndm_type
+operator|-
+literal|1
+index|]
 argument_list|,
 name|rndm_type_str
 argument_list|)
@@ -983,6 +1252,11 @@ block|{
 name|gimp_set_data
 argument_list|(
 name|PLUG_IN_NAME
+index|[
+name|rndm_type
+operator|-
+literal|1
+index|]
 argument_list|,
 operator|&
 name|pivals
@@ -1636,8 +1910,6 @@ condition|)
 block|{
 switch|switch
 condition|(
-name|pivals
-operator|.
 name|rndm_type
 condition|)
 block|{
@@ -2117,15 +2389,6 @@ name|seed_vbox
 decl_stmt|,
 modifier|*
 name|table
-decl_stmt|,
-modifier|*
-name|toggle_hbox
-decl_stmt|;
-name|GSList
-modifier|*
-name|type_group
-init|=
-name|NULL
 decl_stmt|;
 name|GSList
 modifier|*
@@ -2148,39 +2411,6 @@ literal|10
 index|]
 decl_stmt|;
 comment|/*  *  various initializations  */
-name|gint
-name|do_pick
-init|=
-operator|(
-name|pivals
-operator|.
-name|rndm_type
-operator|==
-name|RNDM_PICK
-operator|)
-decl_stmt|;
-name|gint
-name|do_hurl
-init|=
-operator|(
-name|pivals
-operator|.
-name|rndm_type
-operator|==
-name|RNDM_HURL
-operator|)
-decl_stmt|;
-name|gint
-name|do_slur
-init|=
-operator|(
-name|pivals
-operator|.
-name|rndm_type
-operator|==
-name|RNDM_SLUR
-operator|)
-decl_stmt|;
 name|gint
 name|do_time
 init|=
@@ -2256,6 +2486,11 @@ name|dlg
 argument_list|)
 argument_list|,
 name|RNDM_VERSION
+index|[
+name|rndm_type
+operator|-
+literal|1
+index|]
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2402,115 +2637,6 @@ argument_list|,
 name|dlg
 argument_list|,
 literal|"Close plug-in without making any changes"
-argument_list|)
-expr_stmt|;
-comment|/*  *  Randomization Type - label& radio buttons  */
-name|gpc_add_label
-argument_list|(
-literal|"Randomization Type:"
-argument_list|,
-name|table
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|toggle_hbox
-operator|=
-name|gtk_hbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|toggle_hbox
-argument_list|)
-argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
-name|gtk_table_attach
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-name|toggle_hbox
-argument_list|,
-literal|1
-argument_list|,
-literal|2
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-name|GTK_FILL
-operator||
-name|GTK_EXPAND
-argument_list|,
-name|GTK_FILL
-argument_list|,
-literal|5
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-comment|/*  *  Hurl, Pick and Slur buttons  */
-name|gpc_add_radio_button
-argument_list|(
-operator|&
-name|type_group
-argument_list|,
-literal|"Hurl"
-argument_list|,
-name|toggle_hbox
-argument_list|,
-operator|&
-name|do_hurl
-argument_list|,
-literal|"Hurl random colors onto pixels"
-argument_list|)
-expr_stmt|;
-name|gpc_add_radio_button
-argument_list|(
-operator|&
-name|type_group
-argument_list|,
-literal|"Pick"
-argument_list|,
-name|toggle_hbox
-argument_list|,
-operator|&
-name|do_pick
-argument_list|,
-literal|"Pick at random from neighboring pixels"
-argument_list|)
-expr_stmt|;
-name|gpc_add_radio_button
-argument_list|(
-operator|&
-name|type_group
-argument_list|,
-literal|"Slur"
-argument_list|,
-name|toggle_hbox
-argument_list|,
-operator|&
-name|do_slur
-argument_list|,
-literal|"Simplistic melt"
 argument_list|)
 expr_stmt|;
 comment|/*  *  Randomization seed initialization controls  */
@@ -2835,41 +2961,6 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-comment|/*  *  Figure out which type of randomization to apply.  */
-if|if
-condition|(
-name|do_pick
-condition|)
-block|{
-name|pivals
-operator|.
-name|rndm_type
-operator|=
-name|RNDM_PICK
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|do_slur
-condition|)
-block|{
-name|pivals
-operator|.
-name|rndm_type
-operator|=
-name|RNDM_SLUR
-expr_stmt|;
-block|}
-else|else
-block|{
-name|pivals
-operator|.
-name|rndm_type
-operator|=
-name|RNDM_HURL
-expr_stmt|;
-block|}
 comment|/*  *  Figure out which type of seed initialization to apply.  */
 if|if
 condition|(

@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/****************************************************************************  * This is a plugin for the GIMP v 0.99.8 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * Blur code Copyright (C) 1995 Spencer Kimball and Peter Mattis  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
+comment|/****************************************************************************  * This is a plugin for the GIMP v 0.99.8 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997-98 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * Blur code Copyright (C) 1995 Spencer Kimball and Peter Mattis  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
 end_comment
 
 begin_comment
-comment|/****************************************************************************  * Blur:  *  * blur version 2.0 (6 Feb 1998, MEO)  * history  *     2.0 -  6 Feb 1998 MEO  *         based on randomize 1.5  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * Blur applies a 3x3 blurring convolution kernel to the specified drawable.  *   * For each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  For  * blurring, an average is determined from the current and adjacent  * pixels. *(Except for the random factor, the blur code came  * straight from the original S&P blur plug-in.)*  *   * This works only with RGB and grayscale images.  *   ****************************************************************************/
+comment|/****************************************************************************  * Blur:  *  * blur version 2.0 (1 May 1998, MEO)  * history  *     2.0 -  1 May 1998 MEO  *         based on randomize 1.7  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * Blur applies a 3x3 blurring convolution kernel to the specified drawable.  *   * For each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  For  * blurring, an average is determined from the current and adjacent  * pixels. *(Except for the random factor, the blur code came  * straight from the original S&P blur plug-in.)*  *   * This works only with RGB and grayscale images.  *   ****************************************************************************/
 end_comment
 
 begin_include
@@ -112,7 +112,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon2befab080108
+DECL|struct|__anon2c29b7b30108
 typedef|typedef
 struct|struct
 block|{
@@ -121,6 +121,11 @@ name|gdouble
 name|blur_pct
 decl_stmt|;
 comment|/* likelihood of randomization (as %age) */
+DECL|member|blur_rcount
+name|gdouble
+name|blur_rcount
+decl_stmt|;
+comment|/* repeat count */
 DECL|member|seed_type
 name|gint
 name|seed_type
@@ -131,11 +136,6 @@ name|gint
 name|blur_seed
 decl_stmt|;
 comment|/* seed value for rand() function */
-DECL|member|blur_rcount
-name|gdouble
-name|blur_rcount
-decl_stmt|;
-comment|/* repeat count */
 DECL|typedef|BlurVals
 block|}
 name|BlurVals
@@ -151,17 +151,17 @@ init|=
 block|{
 literal|50.0
 block|,
+literal|1.0
+block|,
 name|SEED_TIME
 block|,
 literal|0
-block|,
-literal|1.0
 block|, }
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2befab080208
+DECL|struct|__anon2c29b7b30208
 typedef|typedef
 struct|struct
 block|{
@@ -426,6 +426,22 @@ literal|"blur_rcount"
 block|,
 literal|"Repeat count(1 - 100)"
 block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"seed_type"
+block|,
+literal|"Seed type (10 = current time, 11 = seed value)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"blur_seed"
+block|,
+literal|"Seed value (used only if seed type is 11)"
+block|}
 block|,     }
 decl_stmt|;
 specifier|static
@@ -470,7 +486,7 @@ name|char
 modifier|*
 name|help
 init|=
-literal|"This function randomly blurs the specified drawable, using a 3x3 blur.  The type and percentage are user selectable.  Blurring is not supported for indexed images."
+literal|"This plug-in randomly blurs the specified drawable, using a 3x3 blur.  You control the percentage of the pixels that are blurred and the number of times blurring is applied.  Indexed images are not supported."
 decl_stmt|;
 specifier|const
 name|char
@@ -771,7 +787,7 @@ operator|&&
 operator|(
 name|nparams
 operator|==
-literal|5
+literal|7
 operator|)
 condition|)
 block|{
@@ -871,6 +887,80 @@ operator|.
 name|blur_rcount
 argument_list|)
 expr_stmt|;
+name|pivals
+operator|.
+name|seed_type
+operator|=
+operator|(
+name|gint
+operator|)
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pivals
+operator|.
+name|seed_type
+operator|=
+operator|(
+name|gint
+operator|)
+name|MIN
+argument_list|(
+name|SEED_USER
+argument_list|,
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+argument_list|)
+expr_stmt|;
+name|pivals
+operator|.
+name|seed_type
+operator|=
+operator|(
+name|gint
+operator|)
+name|MAX
+argument_list|(
+name|SEED_TIME
+argument_list|,
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+argument_list|)
+expr_stmt|;
+name|pivals
+operator|.
+name|blur_seed
+operator|=
+operator|(
+name|gint
+operator|)
+name|param
+index|[
+literal|6
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
 name|status
 operator|=
 name|STATUS_SUCCESS
@@ -914,6 +1004,18 @@ operator|(
 name|gdouble
 operator|)
 literal|1.0
+expr_stmt|;
+name|pivals
+operator|.
+name|seed_type
+operator|=
+name|SEED_TIME
+expr_stmt|;
+name|pivals
+operator|.
+name|blur_seed
+operator|=
+literal|0
 expr_stmt|;
 name|status
 operator|=
