@@ -267,13 +267,14 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_register_load_handler
+name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_mpeg_load"
 argument_list|,
 literal|"mpg,mpeg"
 argument_list|,
 literal|""
+literal|"0,long,0x000001b3,0,long,0x000001ba"
 argument_list|)
 expr_stmt|;
 block|}

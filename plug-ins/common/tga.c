@@ -313,7 +313,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3b8fa20108
+DECL|struct|__anon298a93550108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -727,15 +727,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_register_load_handler
 argument_list|(
 literal|"file_tga_load"
 argument_list|,
 literal|"tga"
 argument_list|,
 literal|""
-argument_list|,
-literal|"0&,byte,10,2&,byte,1,3&,byte,>0,3,byte,<9"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -149,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b15a150103
+DECL|enum|__anon29a28a600103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b15a150208
+DECL|struct|__anon29a28a600208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -587,7 +587,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon28b15a150308
+DECL|struct|__anon29a28a600308
 specifier|static
 struct|struct
 block|{
@@ -1222,13 +1222,15 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-name|gimp_register_load_handler
+name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_psd_load"
 argument_list|,
 literal|"psd"
 argument_list|,
 literal|""
+argument_list|,
+literal|"0,string,8BPS"
 argument_list|)
 expr_stmt|;
 block|}

@@ -111,7 +111,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ecae2d0108
+DECL|struct|__anon2af88bf90108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ecae2d0208
+DECL|struct|__anon2af88bf90208
 block|{
 DECL|member|run
 name|gint
@@ -540,13 +540,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_load_handler
+name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_gicon_load"
 argument_list|,
 literal|"ico"
 argument_list|,
 literal|""
+argument_list|,
+literal|"0,string,"
+literal|"/*\\040\\040GIMP\\040icon\\040image"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

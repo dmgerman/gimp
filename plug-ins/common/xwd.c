@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * XWD reading and writing code Copyright (C) 1996 Peter Kirchgessner  * (email: pkirchg@aol.com, WWW: http://members.aol.com/pkirchg)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * XWD reading and writing code Copyright (C) 1996 Peter Kirchgessner  * (email: peter@kirchgessner.net, WWW: http://www.kirchgessner.net)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/*  * XWD-input/output was written by Peter Kirchgessner (pkirchg@aol.co
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, xx-Aug-96: First try  * V 1.01, PK, 03-Sep-96: Check for bitmap_bit_order  * V 1.90, PK, 17-Mar-97: Upgrade to work with GIMP V0.99  *                        Use visual class 3 to write indexed image  *                        Set gimp b/w-colormap if no xwdcolormap present  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.93, PK, 11-Apr-98: Fix problem with overwriting memory  */
+comment|/* Event history:  * PK = Peter Kirchgessner, ME = Mattias Engdegård  * V 1.00, PK, xx-Aug-96: First try  * V 1.01, PK, 03-Sep-96: Check for bitmap_bit_order  * V 1.90, PK, 17-Mar-97: Upgrade to work with GIMP V0.99  *                        Use visual class 3 to write indexed image  *                        Set gimp b/w-colormap if no xwdcolormap present  * V 1.91, PK, 05-Apr-97: Return all arguments, even in case of an error  * V 1.92, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.93, PK, 11-Apr-98: Fix problem with overwriting memory  * V 1.94, ME, 27-Feb-00: Remove superfluous little-endian support (format is                           specified as big-endian). Trim magic header  */
 end_comment
 
 begin_decl_stmt
@@ -18,7 +18,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP XWD file-plugin v1.93  11-Apr-98"
+literal|"@(#) GIMP XWD file-plugin v1.94  27-Feb-2000"
 decl_stmt|;
 end_decl_stmt
 
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d430f0108
+DECL|struct|__anon29e918420108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d430f0208
+DECL|struct|__anon29e918420208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -309,7 +309,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d430f0308
+DECL|struct|__anon29e918420308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9d430f0408
+DECL|struct|__anon29e918420408
 block|{
 DECL|member|npixel
 name|gint
@@ -850,16 +850,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|read_msb_first
-specifier|static
-name|int
-name|read_msb_first
-init|=
-literal|1
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GPlugInInfo
 name|PLUG_IN_INFO
@@ -1122,7 +1112,7 @@ literal|"xwd"
 argument_list|,
 literal|""
 argument_list|,
-literal|"4,long,0x00000007,4,long,0x07000000"
+literal|"4,long,0x00000007"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -1624,42 +1614,6 @@ literal|1
 operator|)
 return|;
 block|}
-name|read_msb_first
-operator|=
-literal|1
-expr_stmt|;
-comment|/* Start reading with most significant byte first */
-name|read_xwd_header
-argument_list|(
-name|ifp
-argument_list|,
-operator|&
-name|xwdhdr
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|xwdhdr
-operator|.
-name|l_file_version
-operator|!=
-literal|7
-condition|)
-block|{
-name|read_msb_first
-operator|=
-literal|0
-expr_stmt|;
-comment|/* Try reading with least significant byte first */
-name|fseek
-argument_list|(
-name|ifp
-argument_list|,
-literal|0
-argument_list|,
-name|SEEK_SET
-argument_list|)
-expr_stmt|;
 name|read_xwd_header
 argument_list|(
 name|ifp
@@ -1696,7 +1650,6 @@ operator|-
 literal|1
 operator|)
 return|;
-block|}
 block|}
 comment|/* Position to start of XWDColor structures */
 name|fseek
@@ -2480,11 +2433,6 @@ block|{
 name|L_CARD32
 name|c
 decl_stmt|;
-if|if
-condition|(
-name|read_msb_first
-condition|)
-block|{
 name|c
 operator|=
 operator|(
@@ -2556,81 +2504,6 @@ argument_list|)
 argument_list|)
 operator|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|c
-operator|=
-operator|(
-call|(
-name|L_CARD32
-call|)
-argument_list|(
-name|getc
-argument_list|(
-name|ifp
-argument_list|)
-argument_list|)
-operator|)
-expr_stmt|;
-name|c
-operator||=
-operator|(
-operator|(
-call|(
-name|L_CARD32
-call|)
-argument_list|(
-name|getc
-argument_list|(
-name|ifp
-argument_list|)
-argument_list|)
-operator|)
-operator|<<
-literal|8
-operator|)
-expr_stmt|;
-name|c
-operator||=
-operator|(
-operator|(
-call|(
-name|L_CARD32
-call|)
-argument_list|(
-name|getc
-argument_list|(
-name|ifp
-argument_list|)
-argument_list|)
-operator|)
-operator|<<
-literal|16
-operator|)
-expr_stmt|;
-name|c
-operator||=
-operator|(
-operator|(
-call|(
-name|L_CARD32
-call|)
-argument_list|(
-operator|*
-name|err
-operator|=
-name|getc
-argument_list|(
-name|ifp
-argument_list|)
-argument_list|)
-operator|)
-operator|<<
-literal|24
-operator|)
-expr_stmt|;
-block|}
 operator|*
 name|err
 operator|=
@@ -2667,11 +2540,6 @@ block|{
 name|L_CARD16
 name|c
 decl_stmt|;
-if|if
-condition|(
-name|read_msb_first
-condition|)
-block|{
 name|c
 operator|=
 operator|(
@@ -2707,45 +2575,6 @@ argument_list|)
 argument_list|)
 operator|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|c
-operator|=
-operator|(
-call|(
-name|L_CARD16
-call|)
-argument_list|(
-name|getc
-argument_list|(
-name|ifp
-argument_list|)
-argument_list|)
-operator|)
-expr_stmt|;
-name|c
-operator||=
-operator|(
-operator|(
-call|(
-name|L_CARD16
-call|)
-argument_list|(
-operator|*
-name|err
-operator|=
-name|getc
-argument_list|(
-name|ifp
-argument_list|)
-argument_list|)
-operator|)
-operator|<<
-literal|8
-operator|)
-expr_stmt|;
-block|}
 operator|*
 name|err
 operator|=

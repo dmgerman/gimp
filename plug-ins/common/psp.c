@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370103
+DECL|enum|__anon2c600c930103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370203
+DECL|enum|__anon2c600c930203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370303
+DECL|enum|__anon2c600c930303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370403
+DECL|enum|__anon2c600c930403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370503
+DECL|enum|__anon2c600c930503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370603
+DECL|enum|__anon2c600c930603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370703
+DECL|enum|__anon2c600c930703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370803
+DECL|enum|__anon2c600c930803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370903
+DECL|enum|__anon2c600c930903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370a03
+DECL|enum|__anon2c600c930a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370b03
+DECL|enum|__anon2c600c930b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2936b5370c03
+DECL|enum|__anon2c600c930c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936b5370d08
+DECL|struct|__anon2c600c930d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936b5370e08
+DECL|struct|__anon2c600c930e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2936b5370f08
+DECL|struct|__anon2c600c930f08
 block|{
 DECL|member|run
 name|gint
@@ -983,7 +983,7 @@ literal|"psp,tub"
 argument_list|,
 literal|""
 argument_list|,
-literal|"0,string,Paint Shop Pro Image File\n\032"
+literal|"0,string,Paint\\040Shop\\040Pro\\040Image\\040File\n\032"
 argument_list|)
 expr_stmt|;
 comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_register_save_handler       ("file_psp_save",                                     "psp,tub",                                     ""); */

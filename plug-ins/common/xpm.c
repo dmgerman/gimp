@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921a7660108
+DECL|struct|__anon2b8c53990108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921a7660208
+DECL|struct|__anon2b8c53990208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921a7660308
+DECL|struct|__anon2b8c53990308
 block|{
 DECL|member|r
 name|guchar
@@ -590,7 +590,7 @@ literal|"xpm"
 argument_list|,
 literal|"<Load>/Xpm"
 argument_list|,
-literal|"0, string, /* XPM */"
+literal|"0, string,/*\\040XPM\\040*/"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8297a40108
+DECL|struct|__anon286e84b90108
 block|{
 DECL|member|quality
 name|gdouble
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8297a40208
+DECL|struct|__anon286e84b90208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8297a40308
+DECL|struct|__anon286e84b90308
 block|{
 DECL|member|cinfo
 name|struct
@@ -3795,6 +3795,9 @@ name|drawable
 argument_list|)
 expr_stmt|;
 comment|/* pw - Last of all, attach the parasites (couldn't do it earlier -      there was no image. */
+ifdef|#
+directive|ifdef
+name|GIMP_HAVE_PARASITES
 if|if
 condition|(
 operator|!
@@ -3838,6 +3841,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+endif|#
+directive|endif
+comment|/* GIMP_HAVE_PARASITES */
 return|return
 name|image_ID
 return|;
@@ -5149,6 +5155,9 @@ expr_stmt|;
 comment|/* Step 4.1: Write the comment out - pw */
 if|if
 condition|(
+name|image_comment
+operator|&&
+operator|*
 name|image_comment
 condition|)
 block|{

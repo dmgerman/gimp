@@ -470,13 +470,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_load_handler
+name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_bz2_load"
 argument_list|,
 literal|"xcf.bz2,bz2,xcfbz2"
 argument_list|,
 literal|""
+argument_list|,
+literal|"0,string,BZh"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

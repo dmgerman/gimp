@@ -476,7 +476,7 @@ literal|"cel"
 argument_list|,
 literal|""
 argument_list|,
-literal|"0,string,KiSS\040"
+literal|"0,string,KiSS\\040"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
