@@ -667,6 +667,14 @@ operator|.
 name|paint_options
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|: FIXME: gdisplays_flush()
+endif|#
+directive|endif
 name|gdisplays_flush
 argument_list|()
 expr_stmt|;

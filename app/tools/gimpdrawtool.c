@@ -898,6 +898,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
+literal|"gimp_draw_tool_resume(): "
 literal|"called with draw_tool->paused_count == 0"
 argument_list|)
 expr_stmt|;

@@ -1688,11 +1688,6 @@ operator|)
 condition|)
 block|{
 comment|/*  If shift is down and this is not the first paint stroke,            *  draw a line            */
-name|gint
-name|off_x
-decl_stmt|,
-name|off_y
-decl_stmt|;
 name|gdouble
 name|dx
 decl_stmt|,
@@ -1705,6 +1700,19 @@ name|status_str
 index|[
 name|STATUSBAR_SIZE
 index|]
+decl_stmt|;
+name|core
+operator|->
+name|cur_coords
+operator|=
+operator|*
+name|coords
+expr_stmt|;
+block|{
+name|gint
+name|off_x
+decl_stmt|,
+name|off_y
 decl_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
@@ -1720,17 +1728,12 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-comment|/*  Get the current coordinates */
 name|core
 operator|->
 name|cur_coords
 operator|.
 name|x
-operator|=
-name|coords
-operator|->
-name|x
-operator|-
+operator|-=
 name|off_x
 expr_stmt|;
 name|core
@@ -1738,13 +1741,10 @@ operator|->
 name|cur_coords
 operator|.
 name|y
-operator|=
-name|coords
-operator|->
-name|y
-operator|-
+operator|-=
 name|off_y
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|state
