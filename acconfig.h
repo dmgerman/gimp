@@ -9,6 +9,12 @@ end_escape
 begin_undef
 undef|#
 directive|undef
+name|ENABLE_MP
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|ENABLE_NLS
 end_undef
 

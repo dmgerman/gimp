@@ -384,6 +384,13 @@ name|using_xserver_resolution
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|int
+name|num_processors
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  function prototypes  */
 end_comment

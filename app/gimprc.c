@@ -160,7 +160,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2bfa9f320103
+DECL|enum|__anon2a4feff60103
 typedef|typedef
 enum|enum
 block|{
@@ -803,6 +803,15 @@ name|int
 name|using_xserver_resolution
 init|=
 name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|num_processors
+name|int
+name|num_processors
+init|=
+literal|1
 decl_stmt|;
 end_decl_stmt
 
@@ -2131,6 +2140,17 @@ name|TT_FLOAT
 block|,
 operator|&
 name|monitor_yres
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"num-processors"
+block|,
+name|TT_INT
+block|,
+operator|&
+name|num_processors
 block|,
 name|NULL
 block|}

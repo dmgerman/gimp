@@ -103,6 +103,20 @@ block|}
 struct|;
 end_struct
 
+begin_typedef
+DECL|typedef|p_func
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|p_func
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_comment
 comment|/*  PixelRegion functions  */
 end_comment
@@ -261,6 +275,25 @@ modifier|*
 name|pixel_regions_register
 parameter_list|(
 name|int
+parameter_list|,
+modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|pixel_regions_process_parallel
+parameter_list|(
+name|p_func
+name|f
+parameter_list|,
+name|void
+modifier|*
+name|data
+parameter_list|,
+name|int
+name|num_regions
 parameter_list|,
 modifier|...
 parameter_list|)
