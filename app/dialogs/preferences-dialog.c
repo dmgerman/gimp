@@ -2164,6 +2164,8 @@ argument_list|)
 operator|->
 name|data
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -7689,7 +7691,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c2b1bee0108
+DECL|struct|__anon27dea3dc0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9791,7 +9793,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c2b1bee0208
+DECL|struct|__anon27dea3dc0208
 block|{
 DECL|member|label
 specifier|const
@@ -9948,7 +9950,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c2b1bee0308
+DECL|struct|__anon27dea3dc0308
 block|{
 DECL|member|tree_label
 specifier|const
