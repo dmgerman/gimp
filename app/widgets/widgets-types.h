@@ -66,6 +66,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpActionFactory
+typedef|typedef
+name|struct
+name|_GimpActionFactory
+name|GimpActionFactory
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpActionGroup
 typedef|typedef
 name|struct

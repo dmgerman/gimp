@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions/actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions/file-commands.h"
 end_include
 
@@ -357,6 +363,11 @@ name|menus_initialized
 operator|=
 name|TRUE
 expr_stmt|;
+name|actions_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 comment|/* We need to make sure the property is installed before using it */
 name|g_type_class_ref
 argument_list|(
@@ -394,6 +405,8 @@ operator|=
 name|gimp_menu_factory_new
 argument_list|(
 name|gimp
+argument_list|,
+name|global_action_factory
 argument_list|)
 expr_stmt|;
 name|gimp_menu_factory_menu_register
@@ -987,6 +1000,11 @@ argument_list|,
 name|menu_can_change_accels
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|actions_exit
+argument_list|(
+name|gimp
 argument_list|)
 expr_stmt|;
 block|}

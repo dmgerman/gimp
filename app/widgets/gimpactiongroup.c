@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4a6b50103
+DECL|enum|__anon2c60773d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -577,7 +577,7 @@ end_comment
 begin_function
 name|GimpActionGroup
 modifier|*
-DECL|function|gimp_action_group_new (Gimp * gimp,const gchar * name)
+DECL|function|gimp_action_group_new (Gimp * gimp,const gchar * name,GimpActionGroupUpdateFunc update_func)
 name|gimp_action_group_new
 parameter_list|(
 name|Gimp
@@ -588,8 +588,15 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpActionGroupUpdateFunc
+name|update_func
 parameter_list|)
 block|{
+name|GimpActionGroup
+modifier|*
+name|group
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -609,7 +616,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-return|return
+name|group
+operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_ACTION_GROUP
@@ -624,7 +632,55 @@ name|name
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|group
+operator|->
+name|update_func
+operator|=
+name|update_func
+expr_stmt|;
+return|return
+name|group
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_action_group_update (GimpActionGroup * group,gpointer update_data)
+name|gimp_action_group_update
+parameter_list|(
+name|GimpActionGroup
+modifier|*
+name|group
+parameter_list|,
+name|gpointer
+name|update_data
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_ACTION_GROUP
+argument_list|(
+name|group
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|group
+operator|->
+name|update_func
+condition|)
+name|group
+operator|->
+name|update_func
+argument_list|(
+name|group
+argument_list|,
+name|update_data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

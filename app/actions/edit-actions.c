@@ -718,8 +718,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_action_update (GimpActionGroup * group,gpointer data)
-name|edit_action_update
+DECL|function|edit_actions_update (GimpActionGroup * group,gpointer data)
+name|edit_actions_update
 parameter_list|(
 name|GimpActionGroup
 modifier|*
