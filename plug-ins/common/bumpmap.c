@@ -175,7 +175,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon29b7b5dc0103
+DECL|enum|__anon28da427f0103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -193,7 +193,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29b7b5dc0203
+DECL|enum|__anon28da427f0203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -211,7 +211,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon29b7b5dc0308
+DECL|struct|__anon28da427f0308
 typedef|typedef
 struct|struct
 block|{
@@ -266,7 +266,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b7b5dc0408
+DECL|struct|__anon28da427f0408
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b7b5dc0508
+DECL|struct|__anon28da427f0508
 typedef|typedef
 struct|struct
 block|{
@@ -4133,7 +4133,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4209,7 +4209,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4393,7 +4393,7 @@ name|bmvals
 operator|.
 name|type
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

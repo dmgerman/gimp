@@ -100,7 +100,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2c09cf820108
+DECL|struct|__anon2b890c9d0108
 typedef|typedef
 struct|struct
 block|{
@@ -139,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c09cf820208
+DECL|struct|__anon2b890c9d0208
 typedef|typedef
 struct|struct
 block|{
@@ -1551,7 +1551,7 @@ operator|.
 name|do_x
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -1621,7 +1621,7 @@ operator|.
 name|do_y
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2129,7 +2129,7 @@ operator|&
 name|use_wrap
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2197,7 +2197,7 @@ operator|&
 name|use_smear
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2265,7 +2265,7 @@ operator|&
 name|use_black
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -491,7 +491,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772f7d60108
+DECL|struct|__anon2c90c9110108
 block|{
 DECL|member|threshold
 name|gint
@@ -518,7 +518,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772f7d60208
+DECL|struct|__anon2c90c9110208
 block|{
 DECL|member|run
 name|gint
@@ -2320,7 +2320,7 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2426,11 +2426,11 @@ block|}
 end_function
 
 begin_comment
-comment|/* static void gtkW_table_add_toggle (GtkWidget	*table, 		       gchar	*name, 		       gint	x1, 		       gint	x2, 		       gint	y, 		       GtkSignalFunc update, 		       gint	*value) {   GtkWidget *toggle;      toggle = gtk_check_button_new_with_label(name);   gtk_table_attach (GTK_TABLE (table), toggle, x1, x2, y, y+1, 		    GTK_FILL|GTK_EXPAND, 0, 0, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) update, 		      value);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), *value);   gtk_widget_show (toggle); } */
+comment|/* static void gtkW_table_add_toggle (GtkWidget	*table, 		       gchar	*name, 		       gint	x1, 		       gint	x2, 		       gint	y, 		       GtkSignalFunc update, 		       gint	*value) {   GtkWidget *toggle;      toggle = gtk_check_button_new_with_label(name);   gtk_table_attach (GTK_TABLE (table), toggle, x1, x2, y, y+1, 		    GTK_FILL|GTK_EXPAND, 0, 0, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) update, 		      value);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), *value);   gtk_widget_show (toggle); } */
 end_comment
 
 begin_comment
-comment|/* static GSList * gtkW_vbox_add_radio_button (GtkWidget *vbox, 			    gchar	*name, 			    GSList	*group, 			    GtkSignalFunc	update, 			    gint	*value) {   GtkWidget *toggle;      toggle = gtk_radio_button_new_with_label(group, name);   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) update, value);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), *value);   gtk_widget_show (toggle);   return group; } */
+comment|/* static GSList * gtkW_vbox_add_radio_button (GtkWidget *vbox, 			    gchar	*name, 			    GSList	*group, 			    GtkSignalFunc	update, 			    gint	*value) {   GtkWidget *toggle;      toggle = gtk_radio_button_new_with_label(group, name);   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) update, value);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), *value);   gtk_widget_show (toggle);   return group; } */
 end_comment
 
 begin_comment

@@ -285,7 +285,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon287ef58b0108
+DECL|struct|__anon28caec960108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -5775,7 +5775,7 @@ operator|.
 name|rle
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

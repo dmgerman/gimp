@@ -299,7 +299,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1fc3f40108
+DECL|struct|__anon276e13c00108
 block|{
 DECL|member|r
 DECL|member|g
@@ -386,7 +386,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a1fc3f40208
+DECL|struct|__anon276e13c00208
 typedef|typedef
 struct|struct
 block|{
@@ -5598,7 +5598,7 @@ name|create_new_image
 operator|==
 name|TRUE
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5706,7 +5706,7 @@ name|effect_channel
 operator|==
 literal|0
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5774,7 +5774,7 @@ name|effect_channel
 operator|==
 literal|1
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5842,7 +5842,7 @@ name|effect_channel
 operator|==
 literal|2
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5976,7 +5976,7 @@ name|effect_operator
 operator|==
 literal|0
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6044,7 +6044,7 @@ name|effect_operator
 operator|==
 literal|1
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6178,7 +6178,7 @@ name|effect_convolve
 operator|==
 literal|0
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6246,7 +6246,7 @@ name|effect_convolve
 operator|==
 literal|1
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

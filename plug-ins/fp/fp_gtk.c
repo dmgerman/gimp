@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a3ffc190108
+DECL|struct|__anon28e2b2c60108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -3088,7 +3088,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

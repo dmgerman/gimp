@@ -139,7 +139,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon28fe61ca0108
+DECL|struct|__anon2c38df900108
 typedef|typedef
 struct|struct
 block|{
@@ -2432,7 +2432,7 @@ name|bg_type
 operator|==
 name|BG_TYPE_TRANSPARENT
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2492,7 +2492,7 @@ name|bg_type
 operator|==
 name|BG_TYPE_BLACK
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2551,7 +2551,7 @@ name|bg_type
 operator|==
 name|BG_TYPE_WHITE
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

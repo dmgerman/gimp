@@ -54,7 +54,7 @@ value|25
 end_define
 
 begin_typedef
-DECL|struct|__anon27aabe850108
+DECL|struct|__anon28ff4f2e0108
 typedef|typedef
 struct|struct
 block|{
@@ -81,7 +81,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27aabe850208
+DECL|struct|__anon28ff4f2e0208
 typedef|typedef
 struct|struct
 block|{
@@ -2265,7 +2265,7 @@ operator|.
 name|constrain
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2337,7 +2337,7 @@ operator|.
 name|new_image
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

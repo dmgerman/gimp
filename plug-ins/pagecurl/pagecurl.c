@@ -174,7 +174,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon294792b40108
+DECL|struct|__anon288805350108
 typedef|typedef
 struct|struct
 block|{
@@ -192,7 +192,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon294792b40208
+DECL|struct|__anon288805350208
 typedef|typedef
 struct|struct
 block|{
@@ -3258,7 +3258,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3478,7 +3478,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3564,7 +3564,7 @@ argument_list|(
 literal|"Shade under curl"
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3628,7 +3628,7 @@ argument_list|(
 literal|"Use current Gradient\n instead of FG/BG-Color"
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

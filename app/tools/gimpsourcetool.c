@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c51f2190103
+DECL|enum|__anon2ae44e5f0103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -869,7 +869,7 @@ operator|->
 name|aligned
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

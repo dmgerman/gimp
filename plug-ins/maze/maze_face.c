@@ -97,7 +97,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c730a740108
+DECL|struct|__anon2bdc65900108
 typedef|typedef
 struct|struct
 block|{
@@ -1045,7 +1045,7 @@ argument_list|(
 literal|"Tileable?"
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -1944,7 +1944,7 @@ argument_list|(
 literal|"Time"
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2129,7 +2129,7 @@ name|algorithm
 operator|==
 name|DEPTH_FIRST
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2197,7 +2197,7 @@ name|algorithm
 operator|==
 name|PRIMS_ALGORITHM
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

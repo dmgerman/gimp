@@ -111,7 +111,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c829e880108
+DECL|struct|__anon27ee7ff10108
 block|{
 DECL|member|resolution
 name|guint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c829e880208
+DECL|struct|__anon27ee7ff10208
 block|{
 DECL|member|run
 name|gint
@@ -229,7 +229,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c829e880308
+DECL|struct|__anon27ee7ff10308
 block|{
 DECL|member|width
 DECL|member|height
@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c829e880408
+DECL|struct|__anon27ee7ff10408
 block|{
 DECL|member|run
 name|gint
@@ -797,7 +797,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c829e880508
+DECL|struct|__anon27ee7ff10508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -901,7 +901,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c829e880608
+DECL|struct|__anon27ee7ff10608
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -11557,7 +11557,7 @@ name|use_bbox
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -11755,7 +11755,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -12053,7 +12053,7 @@ operator|+
 name|j
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13411,7 +13411,7 @@ name|keep_ratio
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13624,7 +13624,7 @@ operator|)
 name|vals
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13839,7 +13839,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -14003,7 +14003,7 @@ name|eps
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -14073,7 +14073,7 @@ name|preview
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

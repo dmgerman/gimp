@@ -929,7 +929,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29615b770108
+DECL|struct|__anon2b5e8f050108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -1073,7 +1073,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29615b770208
+DECL|struct|__anon2b5e8f050208
 block|{
 DECL|member|applicable_image_type
 name|int
@@ -1294,7 +1294,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29615b770308
+DECL|struct|__anon2b5e8f050308
 block|{
 DECL|member|run
 name|gint
@@ -3944,7 +3944,7 @@ end_block
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29615b770408
+DECL|struct|__anon2b5e8f050408
 block|{
 DECL|member|min_modified
 name|short
@@ -6256,7 +6256,7 @@ name|drawable_id
 argument_list|)
 condition|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7068,7 +7068,7 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7173,7 +7173,7 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -109,7 +109,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b49f8b00108
+DECL|struct|__anon2c740db30108
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +198,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b49f8b00208
+DECL|struct|__anon2c740db30208
 typedef|typedef
 struct|struct
 block|{
@@ -842,7 +842,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49f8b00308
+DECL|struct|__anon2c740db30308
 block|{
 DECL|member|rle
 name|gint
@@ -858,7 +858,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b49f8b00408
+DECL|struct|__anon2c740db30408
 block|{
 DECL|member|run
 name|gint
@@ -8162,7 +8162,7 @@ operator|&
 name|use_rle
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8230,7 +8230,7 @@ operator|&
 name|use_std
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

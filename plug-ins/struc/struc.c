@@ -42,7 +42,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b425ed30108
+DECL|struct|__anon2b72fbb70108
 typedef|typedef
 struct|struct
 block|{
@@ -61,7 +61,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b425ed30208
+DECL|struct|__anon2b72fbb70208
 typedef|typedef
 struct|struct
 block|{
@@ -1230,7 +1230,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -540,7 +540,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2780f4d70108
+DECL|struct|__anon278579c00108
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon2780f4d70208
+DECL|struct|__anon278579c00208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +858,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2780f4d70308
+DECL|struct|__anon278579c00308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +884,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2780f4d70408
+DECL|struct|__anon278579c00408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +917,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2780f4d70503
+DECL|enum|__anon278579c00503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +933,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2780f4d70608
+DECL|struct|__anon278579c00608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +991,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2780f4d70708
+DECL|struct|__anon278579c00708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1093,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon2780f4d70808
+DECL|struct|__anon278579c00808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1281,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2780f4d70908
+DECL|struct|__anon278579c00908
 typedef|typedef
 struct|struct
 block|{
@@ -5869,7 +5869,7 @@ operator|&
 name|st
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5956,7 +5956,7 @@ operator|&
 name|st
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6043,7 +6043,7 @@ operator|&
 name|st
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6251,7 +6251,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6384,7 +6384,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Make the channels appropriate for this colourspace and      * currently selected defaults.  They may have already been      * created as a result of callbacks to cspace_update from      * gtk_toggle_button_set_state().  Other channel frames are      * created lazily the first time they are required. */
+comment|/* Make the channels appropriate for this colourspace and      * currently selected defaults.  They may have already been      * created as a result of callbacks to cspace_update from      * gtk_toggle_button_set_active().  Other channel frames are      * created lazily the first time they are required. */
 if|if
 condition|(
 operator|!
@@ -7363,7 +7363,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2780f4d70a08
+DECL|struct|__anon278579c00a08
 typedef|typedef
 struct|struct
 block|{

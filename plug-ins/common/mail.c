@@ -410,7 +410,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab4babb0108
+DECL|struct|__anon293588e40108
 block|{
 DECL|member|receipt
 name|char
@@ -2522,7 +2522,7 @@ operator|==
 name|ENCAPSULATION_UUENCODE
 condition|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2535,7 +2535,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

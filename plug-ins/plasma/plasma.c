@@ -94,7 +94,7 @@ value|32
 end_define
 
 begin_typedef
-DECL|struct|__anon28a6669f0108
+DECL|struct|__anon2c114da20108
 typedef|typedef
 struct|struct
 block|{
@@ -118,7 +118,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a6669f0208
+DECL|struct|__anon2c114da20208
 typedef|typedef
 struct|struct
 block|{
@@ -1456,7 +1456,7 @@ argument_list|(
 literal|"Time"
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

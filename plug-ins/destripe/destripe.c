@@ -2854,7 +2854,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2890,7 +2890,7 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/*  button = gtk_check_button_new_with_label("Recursive");   gtk_table_attach(GTK_TABLE(ftable), button, 0, 1, 1, 2, 		   GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);   gtk_toggle_button_set_state(GTK_TOGGLE_BUTTON(button),                               (filter_type& FILTER_RECURSIVE) ? TRUE : FALSE);   gtk_signal_connect(GTK_OBJECT(button), "toggled", 		     (GtkSignalFunc)dialog_recursive_callback, 		     NULL);   gtk_widget_show(button);*/
+comment|/*  button = gtk_check_button_new_with_label("Recursive");   gtk_table_attach(GTK_TABLE(ftable), button, 0, 1, 1, 2, 		   GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button),                                (filter_type& FILTER_RECURSIVE) ? TRUE : FALSE);   gtk_signal_connect(GTK_OBJECT(button), "toggled", 		     (GtkSignalFunc)dialog_recursive_callback, 		     NULL);   gtk_widget_show(button);*/
 comment|/*   * Box size (radius) control...   */
 name|dialog_create_ivalue
 argument_list|(

@@ -633,7 +633,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2918ffb30108
+DECL|struct|__anon2ace47b10108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -679,7 +679,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2918ffb30208
+DECL|struct|__anon2ace47b10208
 block|{
 DECL|member|run
 name|gint
@@ -4827,7 +4827,7 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

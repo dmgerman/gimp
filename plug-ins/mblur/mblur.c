@@ -115,7 +115,7 @@ value|MBLUR_ZOOM
 end_define
 
 begin_typedef
-DECL|struct|__anon2ad50a8f0108
+DECL|struct|__anon29be5b850108
 typedef|typedef
 struct|struct
 block|{
@@ -138,7 +138,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad50a8f0208
+DECL|struct|__anon29be5b850208
 typedef|typedef
 struct|struct
 block|{
@@ -4386,7 +4386,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

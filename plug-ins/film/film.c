@@ -127,7 +127,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bb0d7270108
+DECL|struct|__anon2ac4a8320108
 typedef|typedef
 struct|struct
 block|{
@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0d7270208
+DECL|struct|__anon2ac4a8320208
 block|{
 DECL|member|activate
 name|GtkWidget
@@ -283,7 +283,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0d7270308
+DECL|struct|__anon2ac4a8320308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -6734,7 +6734,7 @@ name|keep_height
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7125,7 +7125,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -119,7 +119,7 @@ value|10
 end_define
 
 begin_typedef
-DECL|enum|__anon2ae0b8930103
+DECL|enum|__anon2962b6dc0103
 typedef|typedef
 enum|enum
 block|{
@@ -139,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ae0b8930203
+DECL|enum|__anon2962b6dc0203
 typedef|typedef
 enum|enum
 block|{
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b8930308
+DECL|struct|__anon2962b6dc0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -178,7 +178,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon2ae0b893040a
+DECL|union|__anon2962b6dc040a
 union|union
 block|{
 DECL|member|d
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b8930508
+DECL|struct|__anon2962b6dc0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b8930608
+DECL|struct|__anon2962b6dc0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -287,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b8930708
+DECL|struct|__anon2962b6dc0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b8930808
+DECL|struct|__anon2962b6dc0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -390,7 +390,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b8930908
+DECL|struct|__anon2962b6dc0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -561,7 +561,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b8930a08
+DECL|struct|__anon2962b6dc0a08
 block|{
 DECL|member|run
 name|gint
@@ -4999,7 +4999,7 @@ name|OP_STRETCH
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5182,7 +5182,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8657,7 +8657,7 @@ name|v
 operator|.
 name|simple_color
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8670,7 +8670,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8682,7 +8682,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13304,7 +13304,7 @@ operator|->
 name|move_handler
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13348,7 +13348,7 @@ operator|->
 name|rotate_handler
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13392,7 +13392,7 @@ operator|->
 name|stretch_handler
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13481,7 +13481,7 @@ block|{
 case|case
 name|OP_TRANSLATE
 case|:
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13497,7 +13497,7 @@ break|break;
 case|case
 name|OP_ROTATE
 case|:
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -13513,7 +13513,7 @@ break|break;
 case|case
 name|OP_STRETCH
 case|:
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

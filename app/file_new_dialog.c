@@ -90,7 +90,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bc369190108
+DECL|struct|__anon2bf3773c0108
 typedef|typedef
 struct|struct
 block|{
@@ -4070,7 +4070,7 @@ name|type
 operator|==
 name|RGB
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4164,7 +4164,7 @@ name|type
 operator|==
 name|GRAY
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4324,7 +4324,7 @@ name|fill_type
 operator|==
 name|FOREGROUND_FILL
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4418,7 +4418,7 @@ name|fill_type
 operator|==
 name|BACKGROUND_FILL
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4512,7 +4512,7 @@ name|fill_type
 operator|==
 name|WHITE_FILL
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4606,7 +4606,7 @@ name|fill_type
 operator|==
 name|TRANSPARENT_FILL
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29581d100108
+DECL|struct|__anon2abfbee20108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29581d100208
+DECL|struct|__anon2abfbee20208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29581d100308
+DECL|struct|__anon2abfbee20308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29581d100408
+DECL|struct|__anon2abfbee20408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -287,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29581d100508
+DECL|struct|__anon2abfbee20508
 block|{
 DECL|member|name
 name|gchar
@@ -315,7 +315,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29581d10060a
+DECL|union|__anon2abfbee2060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29581d100708
+DECL|struct|__anon2abfbee20708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -462,7 +462,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29581d100808
+DECL|struct|__anon2abfbee20808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -6606,7 +6606,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -11074,7 +11074,7 @@ index|]
 operator|.
 name|sfa_toggle
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -99,7 +99,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec13170103
+DECL|enum|__anon2b94e5e70103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -7818,7 +7818,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* GTK weirdness workaround */
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7878,7 +7878,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* GTK weirdness workaround */
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

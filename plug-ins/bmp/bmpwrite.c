@@ -94,7 +94,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9d0ae0108
+DECL|struct|__anon2c2ad7520108
 block|{
 DECL|member|run
 name|gint
@@ -2921,7 +2921,7 @@ operator|&
 name|encoded
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

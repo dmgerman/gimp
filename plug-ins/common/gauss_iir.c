@@ -73,7 +73,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27696e530108
+DECL|struct|__anon2a11ec8c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27696e530208
+DECL|struct|__anon2a11ec8c0208
 block|{
 DECL|member|run
 name|gint
@@ -1302,7 +1302,7 @@ operator|.
 name|horizontal
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -1362,7 +1362,7 @@ operator|.
 name|vertical
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -58,7 +58,7 @@ file|<unistd.h>
 end_include
 
 begin_typedef
-DECL|enum|__anon2c77607d0103
+DECL|enum|__anon2a46199d0103
 typedef|typedef
 enum|enum
 block|{
@@ -252,7 +252,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c77607d0208
+DECL|struct|__anon2a46199d0208
 typedef|typedef
 struct|struct
 block|{
@@ -408,7 +408,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2c77607d0308
+DECL|struct|__anon2a46199d0308
 struct|struct
 block|{
 DECL|member|matrix
@@ -2695,7 +2695,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2729,7 +2729,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2755,7 +2755,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2843,7 +2843,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

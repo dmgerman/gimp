@@ -167,7 +167,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ec22c0108
+DECL|struct|__anon2beda1450108
 block|{
 DECL|member|x
 DECL|member|y
@@ -185,7 +185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ec22c0208
+DECL|struct|__anon2beda1450208
 block|{
 DECL|member|npts
 name|gint
@@ -207,7 +207,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ec22c0308
+DECL|struct|__anon2beda1450308
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ec22c0408
+DECL|struct|__anon2beda1450408
 block|{
 DECL|member|run
 name|gint
@@ -1673,7 +1673,7 @@ operator|.
 name|bg_color
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -167,7 +167,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fcf820108
+DECL|struct|__anon2bf5e3210108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -212,7 +212,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fcf820208
+DECL|struct|__anon2bf5e3210208
 block|{
 DECL|member|run
 name|gint
@@ -2228,7 +2228,7 @@ operator|.
 name|keep_surr
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2310,7 +2310,7 @@ operator|.
 name|use_bkgr
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2403,7 +2403,7 @@ operator|.
 name|set_transparent
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -296,7 +296,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28db885b0108
+DECL|struct|__anon278365da0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3391,7 +3391,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon28db885b0208
+DECL|struct|__anon278365da0208
 specifier|static
 specifier|const
 struct|struct
@@ -3442,7 +3442,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon28db885b0308
+DECL|struct|__anon278365da0308
 specifier|static
 specifier|const
 struct|struct
@@ -3534,7 +3534,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon28db885b0408
+DECL|struct|__anon278365da0408
 specifier|static
 specifier|const
 struct|struct
@@ -4901,7 +4901,7 @@ name|default_type
 operator|==
 name|RGB
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4991,7 +4991,7 @@ name|last_type
 operator|==
 name|GRAY
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5245,7 +5245,7 @@ literal|"Cubic interpolation"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5478,7 +5478,7 @@ index|]
 operator|==
 name|transparency_type
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5666,7 +5666,7 @@ index|]
 operator|==
 name|transparency_size
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5792,7 +5792,7 @@ literal|"Resize window on zoom"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5851,7 +5851,7 @@ literal|"Perfect-but-slow pointer tracking"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5900,7 +5900,7 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/* Don't show the Auto-save button until we really  	 have auto-saving in the gimp.        	 button = gtk_check_button_new_with_label(_("Auto save")); 	 gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (button),                                    auto_save); 	 gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 0); 	 gtk_signal_connect (GTK_OBJECT (button), "toggled", 	                           (GtkSignalFunc) file_prefs_toggle_callback,&auto_save);          gtk_widget_show (button);       */
+comment|/* Don't show the Auto-save button until we really  	 have auto-saving in the gimp.        	 button = gtk_check_button_new_with_label(_("Auto save")); 	 gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button),                                        auto_save); 	 gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 0); 	 gtk_signal_connect (GTK_OBJECT (button), "toggled", 	                           (GtkSignalFunc) file_prefs_toggle_callback,&auto_save);          gtk_widget_show (button);       */
 name|button
 operator|=
 name|gtk_check_button_new_with_label
@@ -5911,7 +5911,7 @@ literal|"Disable cursor updating"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5970,7 +5970,7 @@ literal|"Show tool tips"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_activd
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6029,7 +6029,7 @@ literal|"Show rulers"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6088,7 +6088,7 @@ literal|"Show statusbar"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6721,7 +6721,7 @@ literal|"Conservative memory usage"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7092,7 +7092,7 @@ literal|"Install colormap (8-bit only)"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7169,7 +7169,7 @@ literal|"Colormap cycling (8-bit only)"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7337,7 +7337,7 @@ literal|"Save window positions on exit"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7484,7 +7484,7 @@ literal|"Always try to restore session"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7543,7 +7543,7 @@ literal|"Save device status on exit"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8235,7 +8235,7 @@ condition|(
 operator|!
 name|using_xserver_resolution
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

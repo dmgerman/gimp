@@ -290,7 +290,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273d0c4d0108
+DECL|struct|__anon291d425d0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273d0c4d0208
+DECL|struct|__anon291d425d0208
 block|{
 DECL|member|name
 name|gchar
@@ -1544,7 +1544,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273d0c4d0308
+DECL|struct|__anon291d425d0308
 block|{
 DECL|member|function
 name|gint
@@ -1617,7 +1617,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273d0c4d0408
+DECL|struct|__anon291d425d0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2383,7 +2383,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273d0c4d0508
+DECL|struct|__anon291d425d0508
 block|{
 DECL|member|run
 name|gint
@@ -2431,7 +2431,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273d0c4d0608
+DECL|struct|__anon291d425d0608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -15573,7 +15573,7 @@ modifier|*
 name|wtable
 parameter_list|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -15651,7 +15651,7 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -17678,7 +17678,7 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

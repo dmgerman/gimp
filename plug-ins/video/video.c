@@ -60855,7 +60855,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a28c1b00108
+DECL|struct|__anon277bcba80108
 typedef|typedef
 struct|struct
 block|{
@@ -60878,7 +60878,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a28c1b00208
+DECL|struct|__anon277bcba80208
 typedef|typedef
 struct|struct
 block|{
@@ -63135,7 +63135,7 @@ operator|.
 name|additive
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -63195,7 +63195,7 @@ operator|.
 name|rotated
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -63380,7 +63380,7 @@ name|y
 index|]
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -63399,7 +63399,7 @@ name|toggle
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  toggle = gtk_radio_button_new_with_label (group,"Staggered");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[0]);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[0]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Large staggered");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[1]);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[1]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Striped");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[2]);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[2]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Wide-striped");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[3]);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[3]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Long-staggered");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[4]);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[4]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"3x3");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[5]);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[5]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Large 3x3");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[6]);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[6]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Hex");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[7]);   gtk_toggle_button_set_state (GTK_TOGGLE_BUTTON (toggle), radio_pressed[7]);   gtk_widget_show (toggle);*/
+comment|/*  toggle = gtk_radio_button_new_with_label (group,"Staggered");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[0]);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), radio_pressed[0]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Large staggered");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[1]);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), radio_pressed[1]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Striped");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[2]);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), radio_pressed[2]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Wide-striped");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[3]);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), radio_pressed[3]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Long-staggered");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[4]);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), radio_pressed[4]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"3x3");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[5]);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), radio_pressed[5]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Large 3x3");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[6]);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), radio_pressed[6]);   gtk_widget_show (toggle);    toggle = gtk_radio_button_new_with_label (group,"Hex");   group = gtk_radio_button_group (GTK_RADIO_BUTTON (toggle));   gtk_box_pack_start (GTK_BOX (vbox), toggle, TRUE, TRUE, 0);   gtk_signal_connect (GTK_OBJECT (toggle), "toggled", 		      (GtkSignalFunc) video_toggle_update,&radio_pressed[7]);   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), radio_pressed[7]);   gtk_widget_show (toggle);*/
 name|video_render_preview
 argument_list|(
 name|FALSE

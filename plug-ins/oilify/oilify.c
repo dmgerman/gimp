@@ -85,7 +85,7 @@ value|((unsigned int) (p[0]*77+p[1]*150+p[2]*29)>> 8)
 end_define
 
 begin_typedef
-DECL|struct|__anon29bf78030108
+DECL|struct|__anon27adf4470108
 typedef|typedef
 struct|struct
 block|{
@@ -104,7 +104,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29bf78030208
+DECL|struct|__anon27adf4470208
 typedef|typedef
 struct|struct
 block|{
@@ -2530,7 +2530,7 @@ operator|.
 name|mode
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

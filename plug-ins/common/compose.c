@@ -418,7 +418,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b444a540108
+DECL|struct|__anon29b6bb940108
 typedef|typedef
 struct|struct
 block|{
@@ -601,7 +601,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2b444a540208
+DECL|struct|__anon29b6bb940208
 typedef|typedef
 struct|struct
 block|{
@@ -632,7 +632,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b444a540308
+DECL|struct|__anon29b6bb940308
 typedef|typedef
 struct|struct
 block|{
@@ -3896,7 +3896,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

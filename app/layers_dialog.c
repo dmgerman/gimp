@@ -4451,7 +4451,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon296d8b920108
+DECL|struct|__anon2c8556bf0108
 typedef|typedef
 struct|struct
 block|{
@@ -14456,7 +14456,7 @@ name|mode
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -16108,7 +16108,7 @@ name|options
 operator|->
 name|fill_type
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -28,7 +28,7 @@ file|"libgimp/gimp.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2c1164970103
+DECL|enum|__anon28fbd15b0103
 DECL|enumerator|BEZIER_1
 DECL|enumerator|BEZIER_2
 DECL|typedef|style_t
@@ -44,7 +44,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c1164970203
+DECL|enum|__anon28fbd15b0203
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|enumerator|UP
@@ -16291,7 +16291,7 @@ operator|)
 name|rbutton
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton
@@ -16392,7 +16392,7 @@ operator|)
 name|rbutton
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton
@@ -16527,7 +16527,7 @@ argument_list|(
 literal|"Disable Tooltips"
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton

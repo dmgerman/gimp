@@ -75,7 +75,7 @@ value|(r * 0.30 + g * 0.59 + b * 0.11)
 end_define
 
 begin_typedef
-DECL|struct|__anon2a21cd2a0108
+DECL|struct|__anon2922e3780108
 typedef|typedef
 struct|struct
 block|{
@@ -94,7 +94,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a21cd2a0208
+DECL|struct|__anon2922e3780208
 typedef|typedef
 struct|struct
 block|{
@@ -1168,7 +1168,7 @@ operator|.
 name|limit
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2030,7 +2030,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a21cd2a0308
+DECL|struct|__anon2922e3780308
 typedef|typedef
 struct|struct
 block|{

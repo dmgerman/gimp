@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62073b0108
+DECL|struct|__anon2781f6450108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62073b0208
+DECL|struct|__anon2781f6450208
 block|{
 DECL|member|run
 name|gint
@@ -1610,7 +1610,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b62073b0308
+DECL|struct|__anon2781f6450308
 block|{
 DECL|member|Width
 name|unsigned
@@ -1660,7 +1660,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b62073b0408
+DECL|struct|__anon2781f6450408
 block|{
 DECL|member|transparent
 name|int
@@ -8566,7 +8566,7 @@ operator|.
 name|interlace
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8659,7 +8659,7 @@ operator|&
 name|globalusecomment
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8955,7 +8955,7 @@ operator|.
 name|loop
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

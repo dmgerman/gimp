@@ -707,7 +707,7 @@ comment|/* Description of an extraction */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3b76ca0108
+DECL|struct|__anon29921ad40108
 typedef|typedef
 struct|struct
 block|{
@@ -1049,7 +1049,7 @@ value|(sizeof (extract)/sizeof (extract[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2c3b76ca0208
+DECL|struct|__anon29921ad40208
 typedef|typedef
 struct|struct
 block|{
@@ -1067,7 +1067,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c3b76ca0308
+DECL|struct|__anon29921ad40308
 typedef|typedef
 struct|struct
 block|{
@@ -5290,7 +5290,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

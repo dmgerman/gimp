@@ -61,7 +61,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979fd8e0108
+DECL|struct|__anon2a2067e60108
 block|{
 DECL|member|replace
 name|guint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979fd8e0208
+DECL|struct|__anon2a2067e60208
 block|{
 DECL|member|run
 name|gint
@@ -357,7 +357,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2979fd8e0308
+DECL|struct|__anon2a2067e60308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -5008,7 +5008,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

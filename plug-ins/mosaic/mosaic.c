@@ -227,7 +227,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b1f400108
+DECL|struct|__anon2be1ef2b0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b1f400208
+DECL|struct|__anon2be1ef2b0208
 block|{
 DECL|member|npts
 name|gint
@@ -267,7 +267,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b1f400308
+DECL|struct|__anon2be1ef2b0308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -296,7 +296,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b1f400408
+DECL|struct|__anon2be1ef2b0408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -351,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b1f400508
+DECL|struct|__anon2be1ef2b0508
 block|{
 DECL|member|run
 name|gint
@@ -3172,7 +3172,7 @@ operator|.
 name|antialiasing
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3232,7 +3232,7 @@ operator|.
 name|color_averaging
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3292,7 +3292,7 @@ operator|.
 name|tile_surface
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3356,7 +3356,7 @@ operator|.
 name|grout_color
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3508,7 +3508,7 @@ operator|&
 name|use_squares
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3576,7 +3576,7 @@ operator|&
 name|use_hexagons
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3644,7 +3644,7 @@ operator|&
 name|use_octagons
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

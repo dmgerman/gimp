@@ -1568,7 +1568,7 @@ name|current
 operator|==
 name|selected
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -1579,7 +1579,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 else|else
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

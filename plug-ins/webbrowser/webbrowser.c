@@ -288,7 +288,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298896450108
+DECL|struct|__anon2b37c4e60108
 block|{
 DECL|member|url
 name|char
@@ -1431,7 +1431,7 @@ operator|==
 name|OPEN_URL_NEW_WINDOW
 condition|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -1444,7 +1444,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

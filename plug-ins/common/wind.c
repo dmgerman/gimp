@@ -172,7 +172,7 @@ value|"The effect is applied at both edges of objects"
 end_define
 
 begin_typedef
-DECL|enum|__anon2964f3d50103
+DECL|enum|__anon28d585fa0103
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|typedef|direction_t
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2964f3d50203
+DECL|enum|__anon28d585fa0203
 DECL|enumerator|RENDER_WIND
 DECL|enumerator|RENDER_BLAST
 DECL|typedef|algorithm_t
@@ -204,7 +204,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2964f3d50303
+DECL|enum|__anon28d585fa0303
 DECL|enumerator|BOTH
 DECL|enumerator|LEADING
 DECL|enumerator|TRAILING
@@ -5302,7 +5302,7 @@ operator|)
 name|rbutton
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton
@@ -5407,7 +5407,7 @@ operator|)
 name|rbutton
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton
@@ -5607,7 +5607,7 @@ operator|)
 name|rbutton
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton
@@ -5697,7 +5697,7 @@ argument_list|,
 literal|"Right"
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton
@@ -5897,7 +5897,7 @@ operator|)
 name|rbutton
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton
@@ -5998,7 +5998,7 @@ operator|)
 name|rbutton
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton
@@ -6088,7 +6088,7 @@ argument_list|,
 literal|"Both"
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 operator|(
 name|GtkToggleButton

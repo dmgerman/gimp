@@ -411,7 +411,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4203a50108
+DECL|struct|__anon2b75a04c0108
 block|{
 DECL|member|name
 name|gchar
@@ -900,7 +900,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4203a50208
+DECL|struct|__anon2b75a04c0208
 block|{
 DECL|member|h_style
 name|gint
@@ -963,7 +963,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4203a50308
+DECL|struct|__anon2b75a04c0308
 block|{
 DECL|member|run
 name|gint
@@ -4190,7 +4190,7 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4391,7 +4391,7 @@ argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
