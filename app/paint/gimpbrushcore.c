@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -222,8 +228,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gdouble
-name|scale
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -630,6 +637,12 @@ name|get_paint_area
 operator|=
 name|gimp_brush_core_get_paint_area
 expr_stmt|;
+name|klass
+operator|->
+name|use_scale
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
@@ -654,6 +667,18 @@ operator|->
 name|brush
 operator|=
 name|NULL
+expr_stmt|;
+name|core
+operator|->
+name|spacing
+operator|=
+literal|1.0
+expr_stmt|;
+name|core
+operator|->
+name|scale
+operator|=
+literal|1.0
 expr_stmt|;
 name|core
 operator|->
@@ -2755,7 +2780,7 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_core_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,gdouble scale)
+DECL|function|gimp_brush_core_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
 name|gimp_brush_core_get_paint_area
 parameter_list|(
 name|GimpPaintCore
@@ -2766,8 +2791,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gdouble
-name|scale
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|)
 block|{
 name|GimpBrushCore
@@ -2813,6 +2839,48 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_BRUSH_CORE_GET_CLASS
+argument_list|(
+name|core
+argument_list|)
+operator|->
+name|use_scale
+condition|)
+block|{
+name|GimpPressureOptions
+modifier|*
+name|pressure_options
+init|=
+name|paint_options
+operator|->
+name|pressure_options
+decl_stmt|;
+if|if
+condition|(
+name|pressure_options
+operator|->
+name|size
+condition|)
+name|core
+operator|->
+name|scale
+operator|=
+name|paint_core
+operator|->
+name|cur_coords
+operator|.
+name|pressure
+expr_stmt|;
+else|else
+name|core
+operator|->
+name|scale
+operator|=
+literal|1.0
+expr_stmt|;
+block|}
 name|gimp_brush_core_calc_brush_size
 argument_list|(
 name|core
@@ -2823,6 +2891,8 @@ name|brush
 operator|->
 name|mask
 argument_list|,
+name|core
+operator|->
 name|scale
 argument_list|,
 operator|&
@@ -3007,7 +3077,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble brush_scale,GimpPaintApplicationMode mode)
+DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,GimpPaintApplicationMode mode)
 name|gimp_brush_core_paste_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -3030,9 +3100,6 @@ parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
-name|gdouble
-name|brush_scale
-parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
@@ -3047,7 +3114,9 @@ name|core
 argument_list|,
 name|brush_hardness
 argument_list|,
-name|brush_scale
+name|core
+operator|->
+name|scale
 argument_list|)
 decl_stmt|;
 if|if
@@ -3083,7 +3152,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,gdouble brush_scale,GimpPaintApplicationMode mode)
+DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,GimpPaintApplicationMode mode)
 name|gimp_brush_core_replace_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -3103,9 +3172,6 @@ parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
-name|gdouble
-name|brush_scale
-parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
@@ -3120,7 +3186,9 @@ name|core
 argument_list|,
 name|brush_hardness
 argument_list|,
-name|brush_scale
+name|core
+operator|->
+name|scale
 argument_list|)
 decl_stmt|;
 if|if

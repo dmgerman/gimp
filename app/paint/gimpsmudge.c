@@ -158,6 +158,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -370,6 +374,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpBrushCoreClass
+modifier|*
+name|brush_core_class
+init|=
+name|GIMP_BRUSH_CORE_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -388,6 +401,12 @@ operator|->
 name|paint
 operator|=
 name|gimp_smudge_paint
+expr_stmt|;
+name|brush_core_class
+operator|->
+name|use_scale
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -528,6 +547,8 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+name|paint_options
 argument_list|)
 expr_stmt|;
 if|if
@@ -587,7 +608,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_smudge_start (GimpPaintCore * paint_core,GimpDrawable * drawable)
+DECL|function|gimp_smudge_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
 name|gimp_smudge_start
 parameter_list|(
 name|GimpPaintCore
@@ -597,6 +618,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|)
 block|{
 name|GimpSmudge
@@ -648,10 +673,6 @@ condition|)
 return|return
 name|FALSE
 return|;
-if|if
-condition|(
-operator|!
-operator|(
 name|area
 operator|=
 name|gimp_paint_core_get_paint_area
@@ -660,9 +681,13 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-literal|1.0
+name|paint_options
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|area
 condition|)
 return|return
 name|FALSE
@@ -1239,10 +1264,6 @@ name|h
 argument_list|)
 expr_stmt|;
 comment|/*  Get the paint area (Smudge won't scale!)  */
-if|if
-condition|(
-operator|!
-operator|(
 name|area
 operator|=
 name|gimp_paint_core_get_paint_area
@@ -1251,9 +1272,13 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-literal|1.0
+name|paint_options
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|area
 condition|)
 return|return;
 comment|/* srcPR will be the pixels under the current painthit from the drawable */
@@ -1635,8 +1660,6 @@ name|gimp_paint_options_get_brush_mode
 argument_list|(
 name|paint_options
 argument_list|)
-argument_list|,
-literal|1.0
 argument_list|,
 name|GIMP_PAINT_INCREMENTAL
 argument_list|)

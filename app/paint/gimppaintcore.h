@@ -53,7 +53,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9962bb0103
+DECL|enum|__anon298926ca0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9962bb0203
+DECL|enum|__anon298926ca0203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -398,8 +398,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gdouble
-name|scale
+name|GimpPaintOptions
+modifier|*
+name|paint_options
 parameter_list|)
 function_decl|;
 block|}
@@ -549,8 +550,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gdouble
-name|scale
+name|GimpPaintOptions
+modifier|*
+name|options
 parameter_list|)
 function_decl|;
 end_function_decl

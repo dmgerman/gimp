@@ -128,6 +128,10 @@ DECL|member|spacing
 name|gdouble
 name|spacing
 decl_stmt|;
+DECL|member|scale
+name|gdouble
+name|scale
+decl_stmt|;
 comment|/*  brush buffers  */
 DECL|member|pressure_brush
 name|MaskBuf
@@ -242,6 +246,10 @@ DECL|member|parent_class
 name|GimpPaintCoreClass
 name|parent_class
 decl_stmt|;
+DECL|member|use_scale
+name|gboolean
+name|use_scale
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -280,9 +288,6 @@ parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
-name|gdouble
-name|brush_scale
-parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
@@ -309,9 +314,6 @@ name|image_opacity
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
-parameter_list|,
-name|gdouble
-name|brush_scale
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode

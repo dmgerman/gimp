@@ -1071,9 +1071,6 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
-name|gdouble
-name|scale
-decl_stmt|;
 name|gint
 name|offset_x
 decl_stmt|;
@@ -1170,30 +1167,6 @@ name|src_drawable
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|pressure_options
-operator|->
-name|size
-condition|)
-name|scale
-operator|=
-name|paint_core
-operator|->
-name|cur_coords
-operator|.
-name|pressure
-expr_stmt|;
-else|else
-name|scale
-operator|=
-literal|1.0
-expr_stmt|;
-comment|/*  Get a region which can be used to paint to  */
-if|if
-condition|(
-operator|!
-operator|(
 name|area
 operator|=
 name|gimp_paint_core_get_paint_area
@@ -1202,9 +1175,13 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|scale
+name|paint_options
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|area
 condition|)
 return|return;
 switch|switch
@@ -1815,7 +1792,6 @@ name|cur_coords
 operator|.
 name|pressure
 expr_stmt|;
-comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|gimp_brush_core_paste_canvas
 argument_list|(
 name|GIMP_BRUSH_CORE
@@ -1846,8 +1822,6 @@ name|gimp_paint_options_get_brush_mode
 argument_list|(
 name|paint_options
 argument_list|)
-argument_list|,
-name|scale
 argument_list|,
 name|GIMP_PAINT_CONSTANT
 argument_list|)
