@@ -2534,10 +2534,10 @@ expr_stmt|;
 name|paint_funcs_free
 argument_list|()
 expr_stmt|;
-name|procedural_db_free
+name|plug_in_kill
 argument_list|()
 expr_stmt|;
-name|plug_in_kill
+name|procedural_db_free
 argument_list|()
 expr_stmt|;
 name|menus_quit
