@@ -283,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2b528fae0108
+DECL|struct|__anon28fcb8a20108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b528fae0208
+DECL|struct|__anon28fcb8a20208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b528fae0308
+DECL|struct|__anon28fcb8a20308
 typedef|typedef
 struct|struct
 block|{
@@ -7130,6 +7130,12 @@ expr_stmt|;
 name|bezier_sel
 operator|->
 name|last_point
+operator|=
+name|newpt
+expr_stmt|;
+name|bezier_sel
+operator|->
+name|cur_anchor
 operator|=
 name|newpt
 expr_stmt|;
