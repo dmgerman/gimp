@@ -159,6 +159,8 @@ name|gimp_convolve_register
 block|,
 name|gimp_clone_register
 block|,
+name|gimp_ink_register
+block|,
 name|gimp_airbrush_register
 block|,
 name|gimp_eraser_register
@@ -166,8 +168,6 @@ block|,
 name|gimp_paintbrush_register
 block|,
 name|gimp_pencil_register
-block|,
-name|gimp_ink_register
 block|}
 decl_stmt|;
 name|gint
