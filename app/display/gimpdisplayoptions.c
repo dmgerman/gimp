@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295d66b80103
+DECL|enum|__anon2a48ca7d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -103,8 +103,8 @@ block|,
 DECL|enumerator|PROP_SHOW_SELECTION
 name|PROP_SHOW_SELECTION
 block|,
-DECL|enumerator|PROP_SHOW_ACTIVE_LAYER
-name|PROP_SHOW_ACTIVE_LAYER
+DECL|enumerator|PROP_SHOW_LAYER_BOUNDARY
+name|PROP_SHOW_LAYER_BOUNDARY
 block|,
 DECL|enumerator|PROP_SHOW_GUIDES
 name|PROP_SHOW_GUIDES
@@ -556,9 +556,9 @@ name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_SHOW_ACTIVE_LAYER
+name|PROP_SHOW_LAYER_BOUNDARY
 argument_list|,
-literal|"show-active-layer"
+literal|"show-layer-boundary"
 argument_list|,
 name|NULL
 argument_list|,
@@ -761,9 +761,9 @@ name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_SHOW_ACTIVE_LAYER
+name|PROP_SHOW_LAYER_BOUNDARY
 argument_list|,
-literal|"show-active-layer"
+literal|"show-layer-boundary"
 argument_list|,
 name|NULL
 argument_list|,
@@ -961,11 +961,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_SHOW_ACTIVE_LAYER
+name|PROP_SHOW_LAYER_BOUNDARY
 case|:
 name|options
 operator|->
-name|show_active_layer
+name|show_layer_boundary
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -1147,7 +1147,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_SHOW_ACTIVE_LAYER
+name|PROP_SHOW_LAYER_BOUNDARY
 case|:
 name|g_value_set_boolean
 argument_list|(
@@ -1155,7 +1155,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|show_active_layer
+name|show_layer_boundary
 argument_list|)
 expr_stmt|;
 break|break;

@@ -1147,7 +1147,7 @@ name|g_object_set
 argument_list|(
 name|options
 argument_list|,
-literal|"show-active-layer"
+literal|"show-layer-boundary"
 argument_list|,
 name|show
 argument_list|,
@@ -1227,7 +1227,7 @@ argument_list|(
 name|shell
 argument_list|)
 operator|->
-name|show_active_layer
+name|show_layer_boundary
 return|;
 block|}
 end_function

@@ -790,7 +790,7 @@ name|shell
 argument_list|,
 name|options
 operator|->
-name|show_active_layer
+name|show_layer_boundary
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_guides

@@ -6763,7 +6763,7 @@ name|gdisp
 operator|&&
 name|options
 operator|->
-name|show_active_layer
+name|show_layer_boundary
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE

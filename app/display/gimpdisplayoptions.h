@@ -127,9 +127,9 @@ DECL|member|show_selection
 name|gboolean
 name|show_selection
 decl_stmt|;
-DECL|member|show_active_layer
+DECL|member|show_layer_boundary
 name|gboolean
-name|show_active_layer
+name|show_layer_boundary
 decl_stmt|;
 DECL|member|show_guides
 name|gboolean
