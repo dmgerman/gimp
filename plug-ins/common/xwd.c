@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c7cae0108
+DECL|struct|__anon288a7f5a0108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c7cae0208
+DECL|struct|__anon288a7f5a0208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c7cae0308
+DECL|struct|__anon288a7f5a0308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3c7cae0408
+DECL|struct|__anon288a7f5a0408
 block|{
 DECL|member|npixel
 name|gint
@@ -1009,7 +1009,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"X window image"
+literal|"X window dump"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1072,7 +1072,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"X window image"
+literal|"X window dump"
 argument_list|)
 argument_list|,
 literal|"RGB, GRAY, INDEXED"

@@ -254,7 +254,7 @@ block|,
 block|{
 literal|"file-open-location"
 block|,
-name|NULL
+name|GIMP_STOCK_WEB
 block|,
 name|N_
 argument_list|(

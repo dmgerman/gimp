@@ -57,22 +57,6 @@ value|"gimp-file-open-location"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_FILE_OPEN_BY_EXTENSION
-define|#
-directive|define
-name|GIMP_HELP_FILE_OPEN_BY_EXTENSION
-value|"gimp-file-open-by-extension"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_FILE_OPEN_XCF
-define|#
-directive|define
-name|GIMP_HELP_FILE_OPEN_XCF
-value|"gimp-file-open-xcf"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_FILE_OPEN_RECENT
 define|#
 directive|define
@@ -110,22 +94,6 @@ define|#
 directive|define
 name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
 value|"gimp-file-save-as-template"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_FILE_SAVE_BY_EXTENSION
-define|#
-directive|define
-name|GIMP_HELP_FILE_SAVE_BY_EXTENSION
-value|"gimp-file-save-by-extension"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_FILE_SAVE_XCF
-define|#
-directive|define
-name|GIMP_HELP_FILE_SAVE_XCF
-value|"gimp-file-save-xcf"
 end_define
 
 begin_define
