@@ -130,7 +130,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5aefcd0103
+DECL|enum|__anon2c0675600103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5aefcd0203
+DECL|enum|__anon2c0675600203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +164,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5aefcd0308
+DECL|struct|__anon2c0675600308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5aefcd0408
+DECL|struct|__anon2c0675600408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5aefcd0508
+DECL|struct|__anon2c0675600508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -4722,7 +4722,7 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
-comment|/* Initialise drawable (don't initialise offsets if bumpmap_id is       already known)*/
+comment|/* Initialise drawable    * (don't initialise offsets if bumpmap_id is already known)    */
 if|if
 condition|(
 name|bmvals
@@ -5128,22 +5128,6 @@ name|gboolean
 name|init_offsets
 parameter_list|)
 block|{
-name|GtkAdjustment
-modifier|*
-name|adj
-decl_stmt|;
-name|gint
-name|bump_offset_x
-decl_stmt|;
-name|gint
-name|bump_offset_y
-decl_stmt|;
-name|gint
-name|draw_offset_y
-decl_stmt|;
-name|gint
-name|draw_offset_x
-decl_stmt|;
 comment|/* Get drawable */
 if|if
 condition|(
@@ -5259,6 +5243,22 @@ condition|(
 name|init_offsets
 condition|)
 block|{
+name|GtkAdjustment
+modifier|*
+name|adj
+decl_stmt|;
+name|gint
+name|bump_offset_x
+decl_stmt|;
+name|gint
+name|bump_offset_y
+decl_stmt|;
+name|gint
+name|draw_offset_y
+decl_stmt|;
+name|gint
+name|draw_offset_x
+decl_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
 name|bmint
@@ -5303,7 +5303,6 @@ name|draw_offset_y
 operator|-
 name|bump_offset_y
 expr_stmt|;
-block|}
 name|adj
 operator|=
 operator|(
@@ -5409,6 +5408,7 @@ operator|.
 name|yofs
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/* Initialize pixel region */
 name|gimp_pixel_rgn_init
@@ -6650,6 +6650,24 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
+name|gimp_int_combo_box_get_active
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+operator|&
+name|bmvals
+operator|.
+name|bumpmap_id
+argument_list|)
+expr_stmt|;
+name|dialog_new_bumpmap
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimp_preview_invalidate
 argument_list|(
 name|preview
