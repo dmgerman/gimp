@@ -1251,7 +1251,7 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|indent_level
-operator|>
+operator|>=
 literal|0
 argument_list|)
 expr_stmt|;
@@ -1495,7 +1495,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0cacf0108
+DECL|struct|__anon297e32000108
 block|{
 DECL|member|key
 name|gchar
