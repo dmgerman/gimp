@@ -130,6 +130,25 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_scanner_parse_data
+parameter_list|(
+name|GScanner
+modifier|*
+name|scanner
+parameter_list|,
+name|gint
+name|length
+parameter_list|,
+name|guint8
+modifier|*
+modifier|*
+name|dest
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_scanner_parse_int
 parameter_list|(
 name|GScanner

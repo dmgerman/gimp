@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2cac650108
+DECL|struct|__anon28991fb70108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2cac650208
+DECL|struct|__anon28991fb70208
 block|{
 DECL|member|menu
 name|gchar
@@ -182,7 +182,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2cac650303
+DECL|enum|__anon28991fb70303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -207,7 +207,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2cac650403
+DECL|enum|__anon28991fb70403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -495,6 +495,22 @@ name|N_
 argument_list|(
 literal|"<Toolbox>/Xtns/Extensions"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_icon_register
+argument_list|(
+literal|"plug_in_plug_in_details"
+argument_list|,
+name|GIMP_ICON_TYPE_STOCK_ID
+argument_list|,
+name|strlen
+argument_list|(
+name|GIMP_STOCK_PLUGIN
+argument_list|)
+operator|+
+literal|1
+argument_list|,
+name|GIMP_STOCK_PLUGIN
 argument_list|)
 expr_stmt|;
 block|}

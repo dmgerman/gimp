@@ -71,8 +71,6 @@ operator|->
 name|gimp
 operator|->
 name|load_procs
-argument_list|,
-literal|"gimp_xcf_load"
 argument_list|)
 expr_stmt|;
 block|}

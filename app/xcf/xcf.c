@@ -208,7 +208,7 @@ literal|"raw_filename"
 block|,
 literal|"The basename of the file, in UTF-8"
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -227,7 +227,7 @@ literal|"image"
 block|,
 literal|"Output image"
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -247,13 +247,12 @@ argument_list|)
 block|,
 name|NULL
 block|,
-literal|"xcf"
+name|GIMP_ICON_TYPE_STOCK_ID
 block|,
-literal|""
+operator|-
+literal|1
 block|,
-literal|"0,string,gimp\\040xcf\\040"
-block|,
-literal|"image/x-xcf"
+literal|"gimp-wilber"
 block|,
 name|NULL
 block|,
@@ -261,12 +260,18 @@ comment|/* ignored for load */
 literal|0
 block|,
 comment|/* ignored for load */
+literal|0
+block|,
+name|FALSE
+block|,
 block|{
 literal|"gimp_xcf_load"
 block|,
 literal|"loads file saved in the .xcf file format"
 block|,
-literal|"The xcf file format has been designed specifically for loading and saving tiled and layered images in the GIMP. This procedure will load the specified file."
+literal|"The xcf file format has been designed specifically for loading and "
+literal|"saving tiled and layered images in the GIMP. This procedure will load "
+literal|"the specified file."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -291,6 +296,14 @@ block|}
 block|}
 block|,   }
 block|,
+literal|"xcf"
+block|,
+literal|""
+block|,
+literal|"0,string,gimp\\040xcf\\040"
+block|,
+literal|"image/x-xcf"
+block|,
 name|NULL
 block|,
 comment|/* fill me in at runtime */
@@ -298,9 +311,7 @@ name|NULL
 block|,
 comment|/* fill me in at runtime */
 name|NULL
-block|,
 comment|/* fill me in at runtime */
-literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -352,7 +363,7 @@ literal|"raw_filename"
 block|,
 literal|"The basename of the file, in UTF-8"
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -372,25 +383,30 @@ argument_list|)
 block|,
 name|NULL
 block|,
-literal|"xcf"
+name|GIMP_ICON_TYPE_STOCK_ID
 block|,
-literal|""
+operator|-
+literal|1
 block|,
-name|NULL
-block|,
-literal|"image/x-xcf"
+literal|"gimp-wilber"
 block|,
 literal|"RGB*, GRAY*, INDEXED*"
 block|,
 literal|0
 block|,
 comment|/* fill me in at runtime */
+literal|0
+block|,
+name|FALSE
+block|,
 block|{
 literal|"gimp_xcf_save"
 block|,
 literal|"saves file in the .xcf file format"
 block|,
-literal|"The xcf file format has been designed specifically for loading and saving tiled and layered images in the GIMP. This procedure will save the specified image in the xcf file format."
+literal|"The xcf file format has been designed specifically for loading and "
+literal|"saving tiled and layered images in the GIMP. This procedure will save "
+literal|"the specified image in the xcf file format."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -415,6 +431,14 @@ block|}
 block|}
 block|,   }
 block|,
+literal|"xcf"
+block|,
+literal|""
+block|,
+name|NULL
+block|,
+literal|"image/x-xcf"
+block|,
 name|NULL
 block|,
 comment|/* fill me in at runtime */
@@ -422,9 +446,7 @@ name|NULL
 block|,
 comment|/* fill me in at runtime */
 name|NULL
-block|,
 comment|/* fill me in at runtime */
-literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -497,7 +519,7 @@ name|g_list_append
 argument_list|(
 name|NULL
 argument_list|,
-literal|"<Save>"
+literal|"<Save>/Internal"
 argument_list|)
 expr_stmt|;
 name|xcf_plug_in_load_proc
@@ -508,7 +530,7 @@ name|g_list_append
 argument_list|(
 name|NULL
 argument_list|,
-literal|"<Load>"
+literal|"<Load>/Internal"
 argument_list|)
 expr_stmt|;
 name|xcf_plug_in_save_proc

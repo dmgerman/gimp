@@ -71,8 +71,6 @@ operator|->
 name|gimp
 operator|->
 name|save_procs
-argument_list|,
-literal|"gimp_xcf_save"
 argument_list|)
 expr_stmt|;
 block|}

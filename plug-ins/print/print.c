@@ -752,6 +752,22 @@ literal|"<Image>/File/Send"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_icon_register
+argument_list|(
+literal|"file_print_gimp"
+argument_list|,
+name|GIMP_ICON_TYPE_STOCK_ID
+argument_list|,
+name|strlen
+argument_list|(
+name|GTK_STOCK_PRINT
+argument_list|)
+operator|+
+literal|1
+argument_list|,
+name|GTK_STOCK_PRINT
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

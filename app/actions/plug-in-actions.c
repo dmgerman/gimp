@@ -1194,7 +1194,10 @@ name|entry
 operator|.
 name|stock_id
 operator|=
-name|NULL
+name|plug_in_proc_def_get_stock_id
+argument_list|(
+name|proc_def
+argument_list|)
 expr_stmt|;
 name|entry
 operator|.

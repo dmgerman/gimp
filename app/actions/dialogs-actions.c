@@ -647,7 +647,7 @@ block|,
 block|{
 literal|"dialogs-module-manager"
 block|,
-name|NULL
+name|GTK_STOCK_EXECUTE
 block|,
 name|N_
 argument_list|(

@@ -122,13 +122,6 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|stock_id
-init|=
-name|NULL
-decl_stmt|;
 name|gchar
 modifier|*
 name|help_id
@@ -173,10 +166,6 @@ condition|(
 name|is_xcf
 condition|)
 block|{
-name|stock_id
-operator|=
-name|GIMP_STOCK_WILBER
-expr_stmt|;
 name|help_id
 operator|=
 name|g_strdup
@@ -287,7 +276,10 @@ name|entry
 operator|.
 name|stock_id
 operator|=
-name|stock_id
+name|plug_in_proc_def_get_stock_id
+argument_list|(
+name|file_proc
+argument_list|)
 expr_stmt|;
 name|entry
 operator|.

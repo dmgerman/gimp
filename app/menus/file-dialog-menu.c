@@ -47,7 +47,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|file_dialog_menu_setup (GimpUIManager * manager,const gchar * ui_path,GSList * file_procs,const gchar * xcf_proc_name)
+DECL|function|file_dialog_menu_setup (GimpUIManager * manager,const gchar * ui_path,GSList * file_procs)
 name|file_dialog_menu_setup
 parameter_list|(
 name|GimpUIManager
@@ -62,11 +62,6 @@ parameter_list|,
 name|GSList
 modifier|*
 name|file_procs
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|xcf_proc_name
 parameter_list|)
 block|{
 name|GSList
@@ -114,6 +109,10 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
+name|gchar
+modifier|*
+name|p
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -122,29 +121,32 @@ operator|->
 name|menu_paths
 condition|)
 continue|continue;
-if|if
-condition|(
-operator|!
-name|strcmp
+name|p
+operator|=
+name|strchr
 argument_list|(
 name|file_proc
 operator|->
-name|db_info
-operator|.
-name|name
+name|menu_paths
+operator|->
+name|data
 argument_list|,
-name|xcf_proc_name
+literal|'/'
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|p
 condition|)
 name|path
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s/%s"
+literal|"%s%s"
 argument_list|,
 name|ui_path
 argument_list|,
-literal|"Internal"
+name|p
 argument_list|)
 expr_stmt|;
 else|else

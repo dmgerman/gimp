@@ -32,11 +32,6 @@ parameter_list|,
 name|GSList
 modifier|*
 name|file_procs
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|xcf_proc_name
 parameter_list|)
 function_decl|;
 end_function_decl

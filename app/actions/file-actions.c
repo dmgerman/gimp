@@ -168,12 +168,16 @@ block|,
 block|{
 literal|"file-open-recent-menu"
 block|,
-name|NULL
+name|GTK_STOCK_OPEN
 block|,
 name|N_
 argument_list|(
 literal|"Open _Recent"
 argument_list|)
+block|,
+literal|""
+block|,
+name|NULL
 block|}
 block|,
 block|{
@@ -185,6 +189,10 @@ name|N_
 argument_list|(
 literal|"_Acquire"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
 block|}
 block|,
 block|{
