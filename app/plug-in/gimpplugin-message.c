@@ -1850,15 +1850,6 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|g_warning
-argument_list|(
-literal|"%s: EEEEEEEEEK! \n"
-literal|"You managed to trigger a code path that \n"
-literal|"should be dead. Please report this to bugs.gimp.org."
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|list
