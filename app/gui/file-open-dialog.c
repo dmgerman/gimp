@@ -2809,7 +2809,9 @@ expr_stmt|;
 return|return;
 block|}
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -3155,7 +3157,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function

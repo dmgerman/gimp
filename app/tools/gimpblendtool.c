@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -354,7 +348,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fb43130108
+DECL|struct|__anon27cb08e50108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -411,7 +405,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fb43130208
+DECL|struct|__anon27cb08e50208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -4411,7 +4405,11 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 name|has_selection
 operator|=
@@ -4654,7 +4652,11 @@ name|buf_tiles
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function

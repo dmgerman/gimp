@@ -186,12 +186,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -2516,7 +2510,9 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_busy
+name|the_gimp
+operator|->
+name|busy
 condition|)
 return|return;
 name|gimp_edit_paste_as_new

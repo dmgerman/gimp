@@ -16,24 +16,9 @@ directive|define
 name|__APPENV_H__
 end_define
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2968ef420103
-block|{
-DECL|enumerator|MESSAGE_BOX
-name|MESSAGE_BOX
-block|,
-DECL|enumerator|CONSOLE
-name|CONSOLE
-block|,
-DECL|enumerator|ERROR_CONSOLE
-name|ERROR_CONSOLE
-DECL|typedef|MessageHandlerType
-block|}
-name|MessageHandlerType
-typedef|;
-end_typedef
+begin_comment
+comment|/*  command line options  */
+end_comment
 
 begin_decl_stmt
 specifier|extern
@@ -93,8 +78,45 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gboolean
-name|double_speed
+name|StackTraceMode
+name|stack_trace_mode
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gchar
+modifier|*
+name|alternate_gimprc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gchar
+modifier|*
+name|alternate_system_gimprc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gchar
+modifier|*
+modifier|*
+name|batch_cmds
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  other global variables  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|gchar
+modifier|*
+name|prog_name
 decl_stmt|;
 end_decl_stmt
 
@@ -105,14 +127,17 @@ name|message_handler
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* FIXME: gimp_busy HACK */
-end_comment
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|double_speed
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
 name|gboolean
-name|gimp_busy
+name|use_mmx
 decl_stmt|;
 end_decl_stmt
 

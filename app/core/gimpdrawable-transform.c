@@ -227,7 +227,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28acc6ea0103
+DECL|enum|__anon2b76cb340103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -2267,7 +2267,13 @@ decl_stmt|,
 name|y
 decl_stmt|;
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 name|tool
 operator|=
@@ -2631,7 +2637,13 @@ expr_stmt|;
 block|}
 block|}
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()

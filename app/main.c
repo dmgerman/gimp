@@ -135,12 +135,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"user_install.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -188,42 +182,33 @@ endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/* TODO: this should probably go into a header file */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_ASM_MMX
+end_ifdef
+
 begin_function_decl
-specifier|static
-name|void
-name|init
+name|unsigned
+name|long
+name|intel_cpu_features
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_error_handler
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|domain
-parameter_list|,
-name|GLogLevelFlags
-name|flags
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|msg
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
-comment|/* GLOBAL data */
+comment|/*  command line options  */
 end_comment
 
 begin_decl_stmt
@@ -308,71 +293,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|double_speed
-name|gboolean
-name|double_speed
+DECL|variable|stack_trace_mode
+name|StackTraceMode
+name|stack_trace_mode
 init|=
-name|FALSE
+name|STACK_TRACE_QUERY
 decl_stmt|;
 end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|use_mmx
-name|gboolean
-name|use_mmx
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* TODO: this should probably go into a header file */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_ASM_MMX
-end_ifdef
-
-begin_function_decl
-name|unsigned
-name|long
-name|intel_cpu_features
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_decl_stmt
-DECL|variable|message_handler
-name|MessageHandlerType
-name|message_handler
-init|=
-name|CONSOLE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|prog_name
-name|gchar
-modifier|*
-name|prog_name
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|prog_name
-comment|/* The path name we are invoked with */
-end_comment
 
 begin_decl_stmt
 DECL|variable|alternate_gimprc
@@ -406,33 +333,53 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* LOCAL data */
+comment|/*  other global variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|gimp_argc
-specifier|static
-name|gint
-name|gimp_argc
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gimp_argv
-specifier|static
+DECL|variable|prog_name
 name|gchar
 modifier|*
-modifier|*
-name|gimp_argv
+name|prog_name
 init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  *  argv processing:   *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
+DECL|variable|prog_name
+comment|/* our executable name */
+end_comment
+
+begin_decl_stmt
+DECL|variable|message_handler
+name|MessageHandlerType
+name|message_handler
+init|=
+name|CONSOLE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|double_speed
+name|gboolean
+name|double_speed
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|use_mmx
+name|gboolean
+name|use_mmx
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  *  argv processing:   *      Arguments are either switches, their associated  *      values, or image files.  As switches and their  *      associated values are processed, those slots in  *      the argv[] array are NULLed. We do this because  *      unparsed args are treated as images to load on  *      startup.  *  *      The GTK switches are processed first (X switches are  *      processed here, not by any X routines).  Then the  *      general GIMP switches are processed.  Any args  *      left are assumed to be image files the GIMP should  *      display.  *  *      The exception is the batch switch.  When this is  *      encountered, all remaining args are treated as batch  *      commands.  */
 end_comment
 
 begin_function
@@ -1450,6 +1397,7 @@ if|if
 condition|(
 name|show_version
 condition|)
+block|{
 name|g_print
 argument_list|(
 literal|"%s %s\n"
@@ -1462,6 +1410,7 @@ argument_list|,
 name|GIMP_VERSION
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|show_help
@@ -1695,7 +1644,7 @@ literal|"Gimp"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
-name|gimp_message_func
+name|gimp_message_log_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -1706,7 +1655,7 @@ literal|"Gimp-Base"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
-name|gimp_message_func
+name|gimp_message_log_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -1717,7 +1666,7 @@ literal|"Gimp-Core"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
-name|gimp_message_func
+name|gimp_message_log_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -1728,7 +1677,18 @@ literal|"Gimp-PDB"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
-name|gimp_message_func
+name|gimp_message_log_func
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_log_set_handler
+argument_list|(
+literal|"Gimp-XCF"
+argument_list|,
+name|G_LOG_LEVEL_MESSAGE
+argument_list|,
+name|gimp_message_log_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -1739,7 +1699,7 @@ literal|"Gimp-Widgets"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
-name|gimp_message_func
+name|gimp_message_log_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -1750,7 +1710,7 @@ literal|"Gimp-Tools"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
-name|gimp_message_func
+name|gimp_message_log_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -1761,7 +1721,20 @@ literal|"Gimp-GUI"
 argument_list|,
 name|G_LOG_LEVEL_MESSAGE
 argument_list|,
-name|gimp_message_func
+name|gimp_message_log_func
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_log_set_handler
+argument_list|(
+name|NULL
+argument_list|,
+name|G_LOG_LEVEL_ERROR
+operator||
+name|G_LOG_FLAG_FATAL
+argument_list|,
+name|gimp_error_log_func
 argument_list|,
 name|NULL
 argument_list|)
@@ -1866,36 +1839,16 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* G_OS_WIN32 */
-name|g_log_set_handler
+comment|/* Initialize the application */
+name|app_init
 argument_list|(
-name|NULL
-argument_list|,
-name|G_LOG_LEVEL_ERROR
-operator||
-name|G_LOG_FLAG_FATAL
-argument_list|,
-name|gimp_error_handler
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/* Keep the command line arguments--for use in gimp_init */
-name|gimp_argc
-operator|=
 name|argc
 operator|-
 literal|1
-expr_stmt|;
-name|gimp_argv
-operator|=
+argument_list|,
 name|argv
 operator|+
 literal|1
-expr_stmt|;
-comment|/* Check the user_installation */
-name|user_install_verify
-argument_list|(
-name|init
 argument_list|)
 expr_stmt|;
 comment|/* Main application loop */
@@ -1994,58 +1947,9 @@ endif|#
 directive|endif
 end_endif
 
-begin_function
-specifier|static
-name|void
-DECL|function|init (void)
-name|init
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-comment|/*  Continue initializing  */
-name|app_init
-argument_list|(
-name|gimp_argc
-argument_list|,
-name|gimp_argv
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_error_handler (const gchar * domain,GLogLevelFlags flags,const gchar * msg,gpointer user_data)
-name|gimp_error_handler
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|domain
-parameter_list|,
-name|GLogLevelFlags
-name|flags
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|msg
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
-name|gimp_fatal_error
-argument_list|(
-literal|"%s"
-argument_list|,
-name|msg
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
 
 begin_ifndef
 ifndef|#
@@ -2173,7 +2077,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* !G_OS_WIN32 */
+comment|/* ! G_OS_WIN32 */
 end_comment
 
 end_unit

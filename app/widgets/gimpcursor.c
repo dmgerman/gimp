@@ -28,7 +28,7 @@ file|"gimpcursor.h"
 end_include
 
 begin_comment
-comment|/* standard gimp cursors */
+comment|/*  standard gimp cursors  */
 end_comment
 
 begin_include
@@ -104,7 +104,7 @@ file|"cursors/dropper_mask.xbm"
 end_include
 
 begin_comment
-comment|/* stock tool cursors */
+comment|/*  stock tool cursors  */
 end_comment
 
 begin_include
@@ -468,7 +468,7 @@ file|"cursors/measure_small_mask.xbm"
 end_include
 
 begin_comment
-comment|/* modifiers */
+comment|/*  modifiers  */
 end_comment
 
 begin_include
@@ -799,7 +799,7 @@ name|GimpBitmapCursor
 name|gimp_stock_tool_cursors
 index|[]
 init|=
-comment|/* these have to match up with the enum in appenums.h */
+comment|/* these have to match up with the enum in widgets-types.h */
 block|{
 block|{
 name|NULL
@@ -1431,7 +1431,7 @@ name|GimpBitmapCursor
 name|gimp_modifier_cursors
 index|[]
 init|=
-comment|/* these have to match up with the enum in appenums.h */
+comment|/* these have to match up with the enum in widgets-types.h */
 block|{
 block|{
 name|NULL

@@ -41,6 +41,35 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<sys/stat.h>
+end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<unistd.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -101,12 +130,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/color-notebook.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/file-open-dialog.h"
 end_include
 
@@ -149,13 +172,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"docindex.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay_ops.h"
+file|"errors.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -167,13 +196,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug_in.h"
+file|"module_db.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"module_db.h"
+file|"plug_in.h"
 end_include
 
 begin_include
@@ -191,13 +220,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"errors.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"docindex.h"
+file|"user_install.h"
 end_include
 
 begin_ifdef
@@ -234,19 +257,6 @@ modifier|*
 name|the_gimp
 init|=
 name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* FIXME: gimp_busy HACK */
-end_comment
-
-begin_decl_stmt
-DECL|variable|gimp_busy
-name|gboolean
-name|gimp_busy
-init|=
-name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -301,18 +311,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/* #define RESET_BAR() app_init_update_status("", "", 0) */
-end_comment
-
-begin_define
-DECL|macro|RESET_BAR ()
-define|#
-directive|define
-name|RESET_BAR
-parameter_list|()
-end_define
-
 begin_function
 name|void
 DECL|function|app_init (gint gimp_argc,gchar ** gimp_argv)
@@ -326,6 +324,105 @@ modifier|*
 modifier|*
 name|gimp_argv
 parameter_list|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|gimp_dir
+decl_stmt|;
+name|struct
+name|stat
+name|stat_buf
+decl_stmt|;
+comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
+name|the_gimp
+operator|=
+name|gimp_new
+argument_list|()
+expr_stmt|;
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|the_gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  Check if the usesr's gimp_directory exists    */
+name|gimp_dir
+operator|=
+name|gimp_directory
+argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|stat
+argument_list|(
+name|gimp_dir
+argument_list|,
+operator|&
+name|stat_buf
+argument_list|)
+operator|!=
+literal|0
+condition|)
+block|{
+comment|/*  not properly installed  */
+if|if
+condition|(
+name|no_interface
+condition|)
+block|{
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"The GIMP is not properly installed for the current user\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"User installation was skipped because the '--nointerface' flag was encountered\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"To perform user installation, run the GIMP without the '--nointerface' flag\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|user_install_dialog_create
+argument_list|(
+name|the_gimp
+argument_list|)
+expr_stmt|;
+name|gtk_main
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+operator|!
+name|no_interface
+condition|)
 block|{
 specifier|const
 name|gchar
@@ -393,20 +490,28 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
+block|}
+comment|/*  The user_install dialog may have parsed unitrc and gimprc, so    *  check gimprc_init()'s return value    */
 if|if
 condition|(
 name|gimprc_init
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 condition|)
 block|{
-name|parse_unitrc
-argument_list|()
-expr_stmt|;
 comment|/*  this needs to be done before gimprc loading  */
-name|parse_gimprc
-argument_list|()
+name|gimp_unitrc_load
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
-comment|/*  parse the local GIMP configuration file      */
+comment|/*  parse the local GIMP configuration file  */
+name|gimprc_parse
+argument_list|(
+name|the_gimp
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -430,26 +535,10 @@ comment|/*  initialize lowlevel stuff  */
 name|base_init
 argument_list|()
 expr_stmt|;
-comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
-name|the_gimp
-operator|=
-name|gimp_new
-argument_list|()
-expr_stmt|;
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
+comment|/*  Create all members of the global Gimp instance which need an already    *  parsed gimprc, e.g. the data factories    */
+name|gimp_initialize
 argument_list|(
 name|the_gimp
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|the_gimp
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_manager_init
@@ -485,20 +574,13 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* DISPLAY_FILTERS */
-name|RESET_BAR
-argument_list|()
+comment|/*  Initialize the xcf file format routines    */
+name|xcf_init
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimprc
-operator|.
-name|always_restore_session
-condition|)
-name|restore_session
-operator|=
-name|TRUE
-expr_stmt|;
-comment|/* Now we are ready to draw the splash-screen-image to the start-up window */
+comment|/*  Now we are ready to draw the splash-screen-image    *  to the start-up window    */
 if|if
 condition|(
 operator|!
@@ -512,19 +594,12 @@ name|splash_logo_load
 argument_list|()
 expr_stmt|;
 block|}
-name|RESET_BAR
-argument_list|()
-expr_stmt|;
-name|xcf_init
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
-comment|/*  initialize the xcf file format routines */
-comment|/*  load all data files  */
+comment|/*  Load all data files    */
 name|gimp_restore
 argument_list|(
 name|the_gimp
+argument_list|,
+name|no_data
 argument_list|)
 expr_stmt|;
 name|plug_in_init
@@ -535,9 +610,6 @@ name|module_db_init
 argument_list|()
 expr_stmt|;
 comment|/*  load any modules we need           */
-name|RESET_BAR
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -562,20 +634,13 @@ name|message_handler
 operator|=
 name|MESSAGE_BOX
 expr_stmt|;
-block|}
-if|if
-condition|(
-operator|!
-name|no_interface
-condition|)
-block|{
 name|gui_restore
 argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Parse the rest of the command line arguments as images to load */
+comment|/*  Parse the rest of the command line arguments as images to load    */
 if|if
 condition|(
 name|gimp_argc
@@ -691,13 +756,7 @@ block|}
 name|module_db_free
 argument_list|()
 expr_stmt|;
-name|gdisplays_delete
-argument_list|()
-expr_stmt|;
 name|plug_in_kill
-argument_list|()
-expr_stmt|;
-name|save_unitrc
 argument_list|()
 expr_stmt|;
 name|tool_manager_exit
@@ -760,119 +819,6 @@ block|{
 return|return
 name|is_app_exit_finish_done
 return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_set_busy (void)
-name|gimp_set_busy
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-comment|/* FIXME: gimp_busy HACK */
-name|gimp_busy
-operator|=
-name|TRUE
-expr_stmt|;
-name|gui_set_busy
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gboolean
-DECL|function|gimp_idle_unset_busy (gpointer data)
-name|gimp_idle_unset_busy
-parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gimp_unset_busy
-argument_list|()
-expr_stmt|;
-operator|*
-operator|(
-operator|(
-name|guint
-operator|*
-operator|)
-name|data
-operator|)
-operator|=
-literal|0
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_set_busy_until_idle (void)
-name|gimp_set_busy_until_idle
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-name|guint
-name|busy_idle_id
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|busy_idle_id
-condition|)
-block|{
-name|gimp_set_busy
-argument_list|()
-expr_stmt|;
-name|busy_idle_id
-operator|=
-name|g_idle_add_full
-argument_list|(
-name|G_PRIORITY_HIGH
-argument_list|,
-name|gimp_idle_unset_busy
-argument_list|,
-operator|&
-name|busy_idle_id
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_unset_busy (void)
-name|gimp_unset_busy
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|gui_unset_busy
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
-comment|/* FIXME: gimp_busy HACK */
-name|gimp_busy
-operator|=
-name|FALSE
-expr_stmt|;
 block|}
 end_function
 

@@ -118,12 +118,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -248,7 +242,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_set_busy_until_idle
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 comment|/*  Create a new image  */
 name|new_gimage

@@ -203,45 +203,34 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  function prototypes  */
+comment|/* this has to be called before any file is parsed  */
 end_comment
 
 begin_function_decl
 name|gboolean
 name|gimprc_init
 parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* this has to be called before any file 					 * is parsed 					 */
-end_comment
-
-begin_function_decl
-name|void
-name|parse_gimprc
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|parse_gimprc_file
-parameter_list|(
-name|gchar
+name|Gimp
 modifier|*
-name|filename
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|save_gimprc
+name|gimprc_parse
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimprc_save
 parameter_list|(
 name|GList
 modifier|*
@@ -252,6 +241,17 @@ name|GList
 modifier|*
 modifier|*
 name|conflicting_options
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimprc_parse_file
+parameter_list|(
+name|gchar
+modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl

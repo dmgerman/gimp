@@ -165,12 +165,6 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-specifier|extern
-name|gchar
-modifier|*
-modifier|*
-name|batch_cmds
-decl_stmt|;
 name|gboolean
 name|read_from_stdin
 decl_stmt|;

@@ -6,44 +6,23 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__USER_INSTALL_H__
+name|__USER_INSTALL_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__USER_INSTALL_H__
+DECL|macro|__USER_INSTALL_DIALOG_H__
 define|#
 directive|define
-name|__USER_INSTALL_H__
+name|__USER_INSTALL_DIALOG_H__
 end_define
-
-begin_comment
-comment|/*  Install callback function  */
-end_comment
-
-begin_typedef
-DECL|typedef|UserInstallCallback
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|UserInstallCallback
-function_decl|)
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_comment
-comment|/*  Function declarations  */
-end_comment
 
 begin_function_decl
 name|void
-name|user_install_verify
+name|user_install_dialog_create
 parameter_list|(
-name|UserInstallCallback
-name|user_install_callback
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -54,7 +33,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __USER_INSTALL_H__ */
+comment|/* __USER_INSTALL_DIALOG_H__ */
 end_comment
 
 end_unit

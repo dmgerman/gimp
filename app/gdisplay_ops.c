@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -300,7 +300,13 @@ block|{
 comment|/*  FIXME: gimp_busy HACK not really appropriate here because we only    *  want to prevent the busy image and display to be closed.  --Mitch    */
 if|if
 condition|(
-name|gimp_busy
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|busy
 condition|)
 return|return;
 comment|/*  If the image has been modified, give the user a chance to save    *  it before nuking it--this only applies if its the last view    *  to an image canvas.  (a gimage with disp_count = 1)    */

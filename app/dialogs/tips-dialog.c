@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -1049,7 +1049,7 @@ name|gimprc
 operator|.
 name|show_tips
 expr_stmt|;
-name|save_gimprc
+name|gimprc_save
 argument_list|(
 operator|&
 name|update

@@ -282,7 +282,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6d0b230103
+DECL|enum|__anon2aeb118c0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -2331,26 +2331,6 @@ name|next_token
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  extern variables  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|gchar
-modifier|*
-name|alternate_gimprc
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|gchar
-modifier|*
-name|alternate_system_gimprc
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|gchar
@@ -2397,10 +2377,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimprc_init (void)
+DECL|function|gimprc_init (Gimp * gimp)
 name|gimprc_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 if|if
@@ -3265,10 +3247,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|parse_gimprc (void)
-name|parse_gimprc
+DECL|function|gimprc_parse (Gimp * gimp)
+name|gimprc_parse
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|gchar
@@ -3305,7 +3289,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|parse_gimprc_file
+name|gimprc_parse_file
 argument_list|(
 name|libfilename
 argument_list|)
@@ -3349,7 +3333,7 @@ argument_list|)
 operator|!=
 literal|0
 condition|)
-name|parse_gimprc_file
+name|gimprc_parse_file
 argument_list|(
 name|filename
 argument_list|)
@@ -3562,8 +3546,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|parse_gimprc_file (gchar * filename)
-name|parse_gimprc_file
+DECL|function|gimprc_parse_file (gchar * filename)
+name|gimprc_parse_file
 parameter_list|(
 name|gchar
 modifier|*
@@ -4318,8 +4302,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|save_gimprc (GList ** updated_options,GList ** conflicting_options)
-name|save_gimprc
+DECL|function|gimprc_save (GList ** updated_options,GList ** conflicting_options)
+name|gimprc_save
 parameter_list|(
 name|GList
 modifier|*

@@ -1778,7 +1778,9 @@ name|success
 condition|)
 block|{
 name|gimp_set_busy_until_idle
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gimp_image_resize
 argument_list|(
@@ -1998,7 +2000,9 @@ name|success
 condition|)
 block|{
 name|gimp_set_busy_until_idle
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gimp_image_scale
 argument_list|(
@@ -12923,8 +12927,10 @@ name|GIMP_UNIT_INCH
 operator|||
 name|unit
 operator|>=
-name|gimp_unit_get_number_of_units
-argument_list|()
+name|_gimp_unit_get_number_of_units
+argument_list|(
+name|gimp
+argument_list|)
 condition|)
 name|success
 operator|=

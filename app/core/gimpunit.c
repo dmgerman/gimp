@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b71e1270108
+DECL|struct|__anon29932bda0108
 block|{
 DECL|member|delete_on_exit
 name|gboolean
@@ -291,27 +291,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|user_units
-specifier|static
-name|GSList
-modifier|*
-name|user_units
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|number_of_user_units
-specifier|static
-name|gint
-name|number_of_user_units
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/* private functions */
 end_comment
@@ -320,16 +299,22 @@ begin_function
 specifier|static
 name|GimpUnitDef
 modifier|*
-DECL|function|gimp_unit_get_user_unit (GimpUnit unit)
-name|gimp_unit_get_user_unit
+DECL|function|_gimp_unit_get_user_unit (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_user_unit
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
 block|{
 return|return
-name|g_slist_nth_data
+name|g_list_nth_data
 argument_list|(
+name|gimp
+operator|->
 name|user_units
 argument_list|,
 name|unit
@@ -346,26 +331,32 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_unit_get_number_of_units (void)
-name|gimp_unit_get_number_of_units
+DECL|function|_gimp_unit_get_number_of_units (Gimp * gimp)
+name|_gimp_unit_get_number_of_units
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 return|return
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 return|;
 block|}
 end_function
 
 begin_function
 name|gint
-DECL|function|gimp_unit_get_number_of_built_in_units (void)
-name|gimp_unit_get_number_of_built_in_units
+DECL|function|_gimp_unit_get_number_of_built_in_units (Gimp * gimp)
+name|_gimp_unit_get_number_of_built_in_units
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 return|return
@@ -376,9 +367,13 @@ end_function
 
 begin_function
 name|GimpUnit
-DECL|function|gimp_unit_new (gchar * identifier,gdouble factor,gint digits,gchar * symbol,gchar * abbreviation,gchar * singular,gchar * plural)
-name|gimp_unit_new
+DECL|function|_gimp_unit_new (Gimp * gimp,gchar * identifier,gdouble factor,gint digits,gchar * symbol,gchar * abbreviation,gchar * singular,gchar * plural)
+name|_gimp_unit_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gchar
 modifier|*
 name|identifier
@@ -412,7 +407,7 @@ name|user_unit
 decl_stmt|;
 name|user_unit
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpUnitDef
 argument_list|,
@@ -482,22 +477,30 @@ argument_list|(
 name|plural
 argument_list|)
 expr_stmt|;
+name|gimp
+operator|->
 name|user_units
 operator|=
-name|g_slist_append
+name|g_list_append
 argument_list|(
+name|gimp
+operator|->
 name|user_units
 argument_list|,
 name|user_unit
 argument_list|)
 expr_stmt|;
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|++
 expr_stmt|;
 return|return
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|-
 literal|1
 return|;
@@ -506,9 +509,13 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_unit_get_deletion_flag (GimpUnit unit)
-name|gimp_unit_get_deletion_flag
+DECL|function|_gimp_unit_get_deletion_flag (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_deletion_flag
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
@@ -527,7 +534,9 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 argument_list|,
@@ -544,8 +553,10 @@ return|return
 name|FALSE
 return|;
 return|return
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -556,9 +567,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_unit_set_deletion_flag (GimpUnit unit,gboolean deletion_flag)
-name|gimp_unit_set_deletion_flag
+DECL|function|_gimp_unit_set_deletion_flag (Gimp * gimp,GimpUnit unit,gboolean deletion_flag)
+name|_gimp_unit_set_deletion_flag
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|,
@@ -580,13 +595,17 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -603,9 +622,13 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_unit_get_factor (GimpUnit unit)
-name|gimp_unit_get_factor
+DECL|function|_gimp_unit_get_factor (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_factor
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
@@ -624,7 +647,9 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 argument_list|,
@@ -651,8 +676,10 @@ operator|.
 name|factor
 return|;
 return|return
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -663,9 +690,13 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_unit_get_digits (GimpUnit unit)
-name|gimp_unit_get_digits
+DECL|function|_gimp_unit_get_digits (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_digits
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
@@ -684,7 +715,9 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 argument_list|,
@@ -711,8 +744,10 @@ operator|.
 name|digits
 return|;
 return|return
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -724,9 +759,13 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_identifier (GimpUnit unit)
-name|gimp_unit_get_identifier
+DECL|function|_gimp_unit_get_identifier (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_identifier
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
@@ -745,7 +784,9 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 operator|||
@@ -789,8 +830,10 @@ operator|.
 name|identifier
 return|;
 return|return
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -802,9 +845,13 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_symbol (GimpUnit unit)
-name|gimp_unit_get_symbol
+DECL|function|_gimp_unit_get_symbol (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_symbol
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
@@ -823,7 +870,9 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 operator|||
@@ -867,8 +916,10 @@ operator|.
 name|symbol
 return|;
 return|return
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -880,9 +931,13 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_abbreviation (GimpUnit unit)
-name|gimp_unit_get_abbreviation
+DECL|function|_gimp_unit_get_abbreviation (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_abbreviation
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
@@ -901,7 +956,9 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 operator|||
@@ -945,8 +1002,10 @@ operator|.
 name|abbreviation
 return|;
 return|return
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -958,9 +1017,13 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_singular (GimpUnit unit)
-name|gimp_unit_get_singular
+DECL|function|_gimp_unit_get_singular (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_singular
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
@@ -979,7 +1042,9 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 operator|||
@@ -1034,8 +1099,10 @@ return|;
 return|return
 name|gettext
 argument_list|(
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -1048,9 +1115,13 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_plural (GimpUnit unit)
-name|gimp_unit_get_plural
+DECL|function|_gimp_unit_get_plural (Gimp * gimp,GimpUnit unit)
+name|_gimp_unit_get_plural
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpUnit
 name|unit
 parameter_list|)
@@ -1069,7 +1140,9 @@ operator|<
 operator|(
 name|GIMP_UNIT_END
 operator|+
-name|number_of_user_units
+name|gimp
+operator|->
+name|n_user_units
 operator|)
 operator|)
 operator|||
@@ -1124,8 +1197,10 @@ return|;
 return|return
 name|gettext
 argument_list|(
-name|gimp_unit_get_user_unit
+name|_gimp_unit_get_user_unit
 argument_list|(
+name|gimp
+argument_list|,
 name|unit
 argument_list|)
 operator|->
@@ -1141,10 +1216,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|parse_unitrc (void)
-name|parse_unitrc
+DECL|function|gimp_unitrc_load (Gimp * gimp)
+name|gimp_unitrc_load
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|gchar
@@ -1158,7 +1235,7 @@ argument_list|(
 literal|"unitrc"
 argument_list|)
 expr_stmt|;
-name|parse_gimprc_file
+name|gimprc_parse_file
 argument_list|(
 name|filename
 argument_list|)
@@ -1173,10 +1250,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|save_unitrc (void)
-name|save_unitrc
+DECL|function|gimp_unitrc_save (Gimp * gimp)
+name|gimp_unitrc_save
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|gint

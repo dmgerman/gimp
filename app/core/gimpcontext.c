@@ -1031,7 +1031,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d20bfa0103
+DECL|enum|__anon289934a80103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -1077,7 +1077,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d20bfa0203
+DECL|enum|__anon289934a80203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2272,23 +2272,6 @@ name|parent
 condition|)
 name|gimp_context_unset_parent
 argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
-name|context
-operator|->
-name|gimp
-operator|->
-name|context_list
-operator|=
-name|g_list_remove
-argument_list|(
-name|context
-operator|->
-name|gimp
-operator|->
-name|context_list
-argument_list|,
 name|context
 argument_list|)
 expr_stmt|;

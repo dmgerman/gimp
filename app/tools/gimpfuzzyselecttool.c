@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -79,24 +85,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -133,6 +121,18 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -2746,7 +2746,13 @@ name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 name|use_offsets
 operator|=
@@ -3032,7 +3038,13 @@ name|bsegs
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 return|return
 name|segs

@@ -200,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ca26840103
+DECL|enum|__anon2a16688d0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -3751,9 +3751,6 @@ name|yoff
 init|=
 literal|0
 decl_stmt|;
-name|gimp_set_busy
-argument_list|()
-expr_stmt|;
 name|gdisp
 operator|=
 name|nav_dialog
@@ -3765,6 +3762,13 @@ operator|=
 name|gdisp
 operator|->
 name|gimage
+expr_stmt|;
+name|gimp_set_busy
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 comment|/* Min size is 2 */
 name|pwidth
@@ -4625,7 +4629,11 @@ name|preview_buf_notdot
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function

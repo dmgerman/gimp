@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"xcf-save.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app_procs.h"
 end_include
 
 begin_include
@@ -541,7 +541,9 @@ literal|14
 index|]
 decl_stmt|;
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
@@ -838,7 +840,9 @@ name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 return|return
 name|return_args
@@ -881,7 +885,9 @@ name|gboolean
 name|success
 decl_stmt|;
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|success
 operator|=
@@ -1047,7 +1053,9 @@ name|success
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 return|return
 name|return_args

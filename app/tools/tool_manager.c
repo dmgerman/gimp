@@ -156,12 +156,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -2008,7 +2002,11 @@ expr_stmt|;
 comment|/* FIXME: gimp_busy HACK */
 if|if
 condition|(
-name|gimp_busy
+name|user_context
+operator|->
+name|gimp
+operator|->
+name|busy
 condition|)
 block|{
 comment|/*  there may be contexts waiting for the user_context's "tool_changed"        *  signal, so stop emitting it.        */

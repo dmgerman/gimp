@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad7af170103
+DECL|enum|__anon2b62e9aa0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -3626,7 +3626,7 @@ literal|"tile-cache-size"
 argument_list|)
 expr_stmt|;
 block|}
-name|save_gimprc
+name|gimprc_save
 argument_list|(
 operator|&
 name|update
@@ -13119,7 +13119,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad7af170208
+DECL|struct|__anon2b62e9aa0208
 block|{
 DECL|member|label
 name|gchar
@@ -13348,7 +13348,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad7af170308
+DECL|struct|__anon2b62e9aa0308
 block|{
 DECL|member|tree_label
 name|gchar

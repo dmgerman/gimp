@@ -578,7 +578,7 @@ argument_list|,
 literal|"help-browser"
 argument_list|)
 expr_stmt|;
-name|save_gimprc
+name|gimprc_save
 argument_list|(
 operator|&
 name|update

@@ -1301,7 +1301,7 @@ argument_list|(
 literal|"devicerc"
 argument_list|)
 expr_stmt|;
-name|parse_gimprc_file
+name|gimprc_parse_file
 argument_list|(
 name|filename
 argument_list|)

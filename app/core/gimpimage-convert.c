@@ -74,6 +74,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -116,19 +122,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
+file|"floating_sel.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"floating_sel.h"
 end_include
 
 begin_include
@@ -35088,7 +35088,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297c06290108
+DECL|struct|__anon2a2356650108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35165,7 +35165,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297c06290208
+DECL|struct|__anon2a2356650208
 block|{
 DECL|member|ncolors
 name|long
@@ -35356,7 +35356,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297c06290308
+DECL|struct|__anon2a2356650308
 block|{
 DECL|member|used_count
 name|signed
@@ -36399,7 +36399,11 @@ operator|=
 name|custom_palette
 expr_stmt|;
 name|gimp_set_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 comment|/*  Get the floating layer if one exists  */
 name|floating_layer
@@ -37470,7 +37474,11 @@ name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function

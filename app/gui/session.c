@@ -138,7 +138,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|parse_gimprc_file
+name|gimprc_parse_file
 argument_list|(
 name|filename
 argument_list|)

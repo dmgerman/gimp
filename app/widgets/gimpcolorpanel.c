@@ -39,12 +39,6 @@ directive|include
 file|"gimpcolorpanel.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"appenv.h"
-end_include
-
 begin_struct
 DECL|struct|_GimpColorPanel
 struct|struct
