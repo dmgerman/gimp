@@ -133,6 +133,10 @@ DECL|member|antialias
 name|gboolean
 name|antialias
 decl_stmt|;
+DECL|member|kerning
+name|gboolean
+name|kerning
+decl_stmt|;
 DECL|member|language
 name|gchar
 modifier|*
@@ -157,6 +161,10 @@ decl_stmt|;
 DECL|member|line_spacing
 name|gdouble
 name|line_spacing
+decl_stmt|;
+DECL|member|letter_spacing
+name|gdouble
+name|letter_spacing
 decl_stmt|;
 DECL|member|box_mode
 name|GimpTextBoxMode

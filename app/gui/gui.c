@@ -827,44 +827,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove this as soon as we depend on GTK+>= 2.2.2
-endif|#
-directive|endif
-if|if
-condition|(
-name|gtk_check_version
-argument_list|(
-literal|2
-argument_list|,
-literal|2
-argument_list|,
-literal|2
-argument_list|)
-operator|!=
-name|NULL
-condition|)
-name|gimp_message_box
-argument_list|(
-name|GIMP_STOCK_WILBER_EEK
-argument_list|,
-name|NULL
-argument_list|,
-literal|"Please upgrade your GTK+ installation!\n\n"
-literal|"The GTK+ version you are using is too old.\n"
-literal|"Please upgrade to GTK+ version 2.2.2 or better\n"
-literal|"or your extended input devices (tablets) will\n"
-literal|"not work at all!"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
