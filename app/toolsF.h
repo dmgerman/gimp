@@ -15,13 +15,19 @@ end_define
 begin_include
 include|#
 directive|include
+file|<gdk/gdk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplayF.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac6bba60103
+DECL|enum|__anon2ae82adf0103
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL

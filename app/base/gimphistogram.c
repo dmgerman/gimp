@@ -1258,9 +1258,15 @@ name|int
 name|i
 decl_stmt|,
 name|j
-decl_stmt|,
+decl_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_MP
+name|int
 name|k
 decl_stmt|;
+endif|#
+directive|endif
 name|gimp_histogram_alloc
 argument_list|(
 name|histogram

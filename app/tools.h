@@ -34,6 +34,12 @@ directive|include
 file|"toolsF.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
 begin_comment
 comment|/*  The possible states for tools  */
 end_comment
@@ -141,12 +147,6 @@ directive|define
 name|NON_ACTIVE_LAYER
 value|(1<< 2)
 end_define
-
-begin_include
-include|#
-directive|include
-file|"toolsF.h"
-end_include
 
 begin_comment
 comment|/*  The types of tools...  */

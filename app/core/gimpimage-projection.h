@@ -121,7 +121,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b4a29c0103
+comment|/*< chop=_GIMAGE>*/
+DECL|enum|__anon296b1f680103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -224,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b4a29c0203
+DECL|enum|__anon296b1f680203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -267,7 +268,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b4a29c0303
+DECL|enum|__anon296b1f680303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -295,7 +296,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b4a29c0403
+DECL|enum|__anon296b1f680403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
