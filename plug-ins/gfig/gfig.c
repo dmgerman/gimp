@@ -8403,7 +8403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a02f8540108
+DECL|struct|__anon2aa23bcd0108
 block|{
 DECL|member|color_string
 name|gchar
@@ -31753,7 +31753,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"(Cancel"
+literal|"Cancel"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -531,7 +531,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793248d0108
+DECL|struct|__anon28d35ded0108
 block|{
 DECL|member|name
 specifier|const
@@ -791,7 +791,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793248d0208
+DECL|struct|__anon28d35ded0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -864,7 +864,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793248d0308
+DECL|struct|__anon28d35ded0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -890,7 +890,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793248d0408
+DECL|struct|__anon28d35ded0408
 block|{
 DECL|member|run
 name|gint
@@ -909,7 +909,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793248d0508
+DECL|struct|__anon28d35ded0508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1016,7 +1016,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793248d0608
+DECL|struct|__anon28d35ded0608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1200,7 +1200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793248d0708
+DECL|struct|__anon28d35ded0708
 block|{
 DECL|member|name
 specifier|const
@@ -6287,7 +6287,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Anti-Alias"
+literal|"Antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7025,7 +7025,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793248d0808
+DECL|struct|__anon28d35ded0808
 block|{
 DECL|member|index
 name|gint
