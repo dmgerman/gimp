@@ -461,8 +461,6 @@ argument_list|,
 name|GDK_BUTTON_PRESS_MASK
 operator||
 name|GDK_BUTTON_RELEASE_MASK
-operator||
-name|GDK_BUTTON1_MOTION_MASK
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
