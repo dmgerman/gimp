@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimagefile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimppreviewrendererimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppreviewrendererimagefile.h"
 end_include
 
 begin_include
@@ -206,6 +218,22 @@ block|{
 name|type
 operator|=
 name|GIMP_TYPE_PREVIEW_RENDERER_VECTORS
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|viewable_type
+argument_list|,
+name|GIMP_TYPE_IMAGEFILE
+argument_list|)
+condition|)
+block|{
+name|type
+operator|=
+name|GIMP_TYPE_PREVIEW_RENDERER_IMAGEFILE
 expr_stmt|;
 block|}
 return|return

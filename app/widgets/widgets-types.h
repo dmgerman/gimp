@@ -147,6 +147,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPreviewRendererImagefile
+typedef|typedef
+name|struct
+name|_GimpPreviewRendererImagefile
+name|GimpPreviewRendererImagefile
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPreviewRendererVectors
 typedef|typedef
 name|struct
