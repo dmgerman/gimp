@@ -813,7 +813,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b086d90108
+DECL|struct|__anon27b104ce0108
 typedef|typedef
 struct|struct
 block|{
@@ -842,7 +842,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b086d90208
+DECL|struct|__anon27b104ce0208
 typedef|typedef
 struct|struct
 block|{
@@ -928,7 +928,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b086d90308
+DECL|struct|__anon27b104ce0308
 typedef|typedef
 struct|struct
 block|{
@@ -6161,10 +6161,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-name|_
-argument_list|(
 literal|"CurveBend"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Init GTK  */
