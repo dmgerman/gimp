@@ -66,7 +66,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295cafff0103
+DECL|enum|__anon2b4e06ff0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -152,6 +152,10 @@ decl_stmt|;
 DECL|member|refval_digits
 name|gint
 name|refval_digits
+decl_stmt|;
+DECL|member|value_boundaries
+name|gboolean
+name|value_boundaries
 decl_stmt|;
 DECL|member|stop_recursion
 name|gint
@@ -2145,7 +2149,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_value_boundaries:  * @gse:   The sizeentry you want to set value boundaries for.  * @field: The index of the field you want to set value boundaries for.  * @lower: The new lower boundary of the value of the chosen @field.  * @upper: The new upper boundary of the value of the chosen @field.  *  * Limits the range of possible values which can be entered in field # @field  * of the #GimpSizeEntry.  *  * The current value of the @field will be clamped to fit in the @field's  * new boundaries.  *  * NOTE: In most cases you won't be interested in these values because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval_boundaries() instead.  **/
+comment|/**  * gimp_size_entry_set_value_boundaries:  * @gse:   The sizeentry you want to set value boundaries for.  * @field: The index of the field you want to set value boundaries for.  * @lower: The new lower boundary of the value of the chosen @field.  * @upper: The new upper boundary of the value of the chosen @field.  *  * Limits the range of possible values which can be entered in field # @field  * of the #GimpSizeEntry.  *  * The current value of the @field will be clamped to fit in the @field's  * new boundaries.  *  * NOTE: In most cases you won't be interested in these values because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval_boundaries() instead.  *       Whatever you do, don't mix these calls. A size entry should either  *       be clamped by the value or the reference value.  **/
 end_comment
 
 begin_function
@@ -2229,6 +2233,12 @@ operator|->
 name|max_value
 operator|=
 name|upper
+expr_stmt|;
+name|gsef
+operator|->
+name|value_boundaries
+operator|=
+name|TRUE
 expr_stmt|;
 name|GTK_ADJUSTMENT
 argument_list|(
@@ -4108,6 +4118,28 @@ argument_list|,
 name|gsef
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gsef
+operator|->
+name|value_boundaries
+condition|)
+name|gimp_size_entry_set_value_boundaries
+argument_list|(
+name|gse
+argument_list|,
+name|i
+argument_list|,
+name|gsef
+operator|->
+name|min_value
+argument_list|,
+name|gsef
+operator|->
+name|max_value
+argument_list|)
+expr_stmt|;
+else|else
 name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|gse
