@@ -1466,6 +1466,15 @@ operator|->
 name|channel
 argument_list|)
 expr_stmt|;
+name|curves_update
+argument_list|(
+name|c_tool
+argument_list|,
+name|GRAPH
+operator||
+name|XRANGE
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -1511,6 +1520,15 @@ name|channel
 argument_list|)
 expr_stmt|;
 block|}
+name|curves_update
+argument_list|(
+name|c_tool
+argument_list|,
+name|GRAPH
+operator||
+name|XRANGE
+argument_list|)
+expr_stmt|;
 block|}
 comment|/*  chain up to halt the tool */
 name|GIMP_TOOL_CLASS
