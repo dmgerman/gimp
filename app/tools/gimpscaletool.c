@@ -1808,7 +1808,7 @@ name|dir_x
 decl_stmt|,
 name|dir_y
 decl_stmt|;
-name|gint
+name|gdouble
 name|diff_x
 decl_stmt|,
 name|diff_y

@@ -818,7 +818,7 @@ name|GimpTransformTool
 modifier|*
 name|transform_tool
 decl_stmt|;
-name|gint
+name|gdouble
 name|value
 decl_stmt|;
 name|tool
@@ -916,7 +916,7 @@ name|GimpTransformTool
 modifier|*
 name|transform_tool
 decl_stmt|;
-name|gint
+name|gdouble
 name|value
 decl_stmt|;
 name|tool
@@ -1007,7 +1007,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|gint
+name|gdouble
 name|diffx
 decl_stmt|,
 name|diffy

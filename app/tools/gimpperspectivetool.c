@@ -829,7 +829,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|gint
+name|gdouble
 name|diff_x
 decl_stmt|,
 name|diff_y
