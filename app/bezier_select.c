@@ -283,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28fcb8a20108
+DECL|struct|__anon27a498280108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28fcb8a20208
+DECL|struct|__anon27a498280208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28fcb8a20308
+DECL|struct|__anon27a498280308
 typedef|typedef
 struct|struct
 block|{
@@ -2544,13 +2544,22 @@ condition|)
 block|{
 if|if
 condition|(
+operator|(
 name|bevent
 operator|->
 name|state
 operator|&
 name|GDK_SHIFT_MASK
+operator|)
+operator|||
+operator|(
+name|point_counts
+operator|<=
+literal|7
+operator|)
 condition|)
 block|{
+comment|/* Case 1: GDK_SHIFT_MASK - The user explicitly wishes the present                       curve to go away.                      Case 2: The current implementation cannot cope with less than                      7 points ie: 2 anchors points and 4 controls: the minimal closed curve.                      Since the user wishes less than this implementation minimum,                      we take this for an implicit wish that the entire curve go away.                      G'bye dear curve.  		  */
 name|delete_whole_curve
 argument_list|(
 name|bezier_sel
@@ -2558,21 +2567,6 @@ argument_list|,
 name|start_pt
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|point_counts
-operator|<=
-literal|7
-condition|)
-block|{
-comment|/* If we've got less then 7 points ie: 2 anchors points 4 controls  		     Then the curve is minimal closed curve. 		     I've decided to not operate on this kind of curve because it     		     implies opening the curve and change some drawing states         		     Removing 1 point of curve that contains 2 point is something     		     similare to reconstruct the curve !!! 		  */
-return|return
-operator|(
-literal|0
-operator|)
-return|;
 block|}
 elseif|else
 if|if
@@ -6663,11 +6657,7 @@ argument_list|,
 name|GIMP_MOUSE_SUBTRACT_CURSOR
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"delete whole curve cursor\n"
-argument_list|)
-expr_stmt|;
+comment|/*            g_print ("delete whole curve cursor\n"); */
 block|}
 elseif|else
 if|if
