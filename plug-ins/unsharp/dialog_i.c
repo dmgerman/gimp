@@ -582,16 +582,6 @@ argument_list|(
 name|newtextvalue
 argument_list|)
 expr_stmt|;
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"%d\n"
-argument_list|,
-operator|*
-name|value
-argument_list|)
-expr_stmt|;
 comment|/* this stuff cleans up non-numeric chars */
 name|shift
 operator|=
