@@ -794,7 +794,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d138ae0108
+DECL|struct|__anon293477fb0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d138ae0208
+DECL|struct|__anon293477fb0208
 block|{
 DECL|member|y
 name|gint32
@@ -6654,7 +6654,7 @@ expr_stmt|;
 comment|/*  The preview button  */
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
