@@ -872,6 +872,8 @@ name|view
 operator|->
 name|preview_height
 argument_list|,
+literal|1
+argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
@@ -1283,12 +1285,9 @@ argument_list|,
 literal|"preview"
 argument_list|)
 expr_stmt|;
-name|gtk_preview_size
-argument_list|(
-name|GTK_PREVIEW
+name|gimp_preview_set_size
 argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 name|view
 operator|->
