@@ -117,7 +117,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"script-fu-intl.h"
 end_include
 
 begin_include
@@ -331,7 +331,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e667aa0108
+DECL|struct|__anon2c40ae2e0108
 block|{
 DECL|member|command
 name|gchar
@@ -355,7 +355,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e667aa0208
+DECL|struct|__anon2c40ae2e0208
 block|{
 DECL|member|port_entry
 name|GtkWidget

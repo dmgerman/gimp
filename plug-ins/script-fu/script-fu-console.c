@@ -100,7 +100,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"script-fu-intl.h"
 end_include
 
 begin_include
@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bce2da30108
+DECL|struct|__anon29310c940108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -1684,23 +1684,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|cint
-operator|.
-name|cc
-argument_list|,
-operator|(
-name|ENTRY_WIDTH
-operator|*
-literal|5
-operator|)
-operator|/
-literal|6
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
+comment|/*    gtk_widget_set_usize (cint.cc, (ENTRY_WIDTH*5)/6, 0);  */
 name|GTK_WIDGET_SET_FLAGS
 argument_list|(
 name|cint
@@ -1746,19 +1730,7 @@ literal|"Browse..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|button
-argument_list|,
-operator|(
-name|ENTRY_WIDTH
-operator|)
-operator|/
-literal|6
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
+comment|/*    gtk_widget_set_usize (button, (ENTRY_WIDTH)/6, 0); */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX

@@ -89,7 +89,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"script-fu-intl.h"
 end_include
 
 begin_decl_stmt
@@ -621,8 +621,10 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
+name|gimp_plugin_domain_add
+argument_list|(
+literal|"gimp-script-fu"
+argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
