@@ -402,6 +402,13 @@ case|:
 case|case
 name|GDK_Shift_R
 case|:
+break|break;
+case|case
+name|GDK_Control_L
+case|:
+case|case
+name|GDK_Control_R
+case|:
 if|if
 condition|(
 name|flip_options
@@ -441,13 +448,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GDK_Control_L
-case|:
-case|case
-name|GDK_Control_R
-case|:
 break|break;
 block|}
 block|}

@@ -631,7 +631,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2ae7cfaf0103
+DECL|enum|__anon2b2dfc850103
 typedef|typedef
 enum|enum
 block|{
@@ -3766,6 +3766,13 @@ case|:
 case|case
 name|GDK_Shift_R
 case|:
+break|break;
+case|case
+name|GDK_Control_L
+case|:
+case|case
+name|GDK_Control_R
+case|:
 if|if
 condition|(
 name|crop_options
@@ -3805,13 +3812,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GDK_Control_L
-case|:
-case|case
-name|GDK_Control_R
-case|:
 break|break;
 block|}
 block|}
