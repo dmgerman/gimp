@@ -20,6 +20,12 @@ directive|define
 name|__GIMP_COLOR_AREA_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtkpreview.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -121,11 +127,15 @@ name|alpha
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_color_area_update
+name|gimp_color_area_set_color
 parameter_list|(
 name|GimpColorArea
 modifier|*
 name|gca
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|)
 function_decl|;
 ifdef|#

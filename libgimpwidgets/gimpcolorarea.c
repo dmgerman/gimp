@@ -96,7 +96,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3456bb0103
+DECL|enum|__anon28ef4ffc0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1338,7 +1338,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-color-button-drag-window"
+literal|"gimp-color-area-drag-window"
 argument_list|,
 name|window
 argument_list|,
@@ -1528,7 +1528,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid color data\n"
+literal|"Received invalid color data"
 argument_list|)
 expr_stmt|;
 return|return;
