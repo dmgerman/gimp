@@ -450,11 +450,6 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Script-Fu/Modify"
-argument_list|)
-block|,
-name|N_
-argument_list|(
 literal|"/Script-Fu/Utils"
 argument_list|)
 block|,
