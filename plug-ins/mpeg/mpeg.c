@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Plugin to load MPEG movies.  *  * v1.0 - by Adam D. Moss, adam@gimp.org, adam@foxbox.org  * Requires mpeg_lib by Gregory P. Ward.  See notes below for  * obtaining and patching mpeg_lib.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Plugin to load MPEG movies. (C) 1997-99 Adam D. Moss  *  * v1.1 - by Adam D. Moss, adam@gimp.org, adam@foxbox.org  * Requires mpeg_lib by Gregory P. Ward.  See notes below for  * obtaining and patching mpeg_lib.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
-comment|/*******************************************************************  * USING MPEG_LIB WITH THIS PLUGIN:  mpeg_lib 1.2.1 can be found   *  * at ftp://ftp.mni.mcgill.ca/pub/mpeg/ - however, mpeg_lib 1.2.x  *  * contains a bug in end-of-stream reporting, which will cause it  *  * to crash in conjunction with this plugin.  I enclose a simple   *  * patch below which fixes the problem (or at least the symptom.;))*  *******************************************************************/
+comment|/*******************************************************************  * USING MPEG_LIB WITH THIS PLUGIN:  mpeg_lib 1.2.1 can be found   *  * at ftp://ftp.mni.mcgill.ca/pub/mpeg/ - however, mpeg_lib 1.2.x  *  * contains a bug in end-of-stream reporting, which will cause it  *  * to crash in conjunction with this plugin.  I enclose a simple   *  * patch below which fixes the problem (or at least the symptom.;))*  *******************************************************************  *    Addendum: mpeg_lib 1.3.0 is now released and much better!    *  *******************************************************************/
 end_comment
 
 begin_comment
@@ -12,7 +12,7 @@ comment|/******************************************************************* ***
 end_comment
 
 begin_comment
-comment|/*  * Changelog:  *  * 97/09/21  * v1.0: Initial release. [Adam]  */
+comment|/*  * Changelog:  *  * 99/05/31  * v1.1: Endianness fix.  *  * 97/09/21  * v1.0: Initial release. [Adam]  */
 end_comment
 
 begin_comment
