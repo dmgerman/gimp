@@ -902,7 +902,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_directory:  *  * Returns the top directory for GIMP plug_ins and modules. If the   * environment variable GIMP2_PLUGINDIR exists, that is used.  It   * should be an absolute pathname. Otherwise, on Unix the compile-time   * defined directory is used. On Win32, the installation directory as   * deduced from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP plug_ins and modules.  **/
+comment|/**  * gimp_plug_in_directory:  *  * Returns the top directory for GIMP plug_ins and modules. If the  * environment variable GIMP2_PLUGINDIR exists, that is used.  It  * should be an absolute pathname. Otherwise, on Unix the compile-time  * defined directory is used. On Win32, the installation directory as  * deduced from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP plug_ins and modules.  **/
 end_comment
 
 begin_function

@@ -58,7 +58,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* GimpSignalHandlerFunc is a reference to a (signal handler) function   * that takes a signal ID and returns void.   * signal(2) returns such references; so does gimp_signal_private.  */
+comment|/* GimpSignalHandlerFunc is a reference to a (signal handler) function  * that takes a signal ID and returns void.  * signal(2) returns such references; so does gimp_signal_private.  */
 end_comment
 
 begin_typedef

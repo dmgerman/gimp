@@ -144,7 +144,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_font_select_widget_new:  * @title:     Title of the dialog to use or %NULL means to use the default  *             title.  * @font_name: Initial font name.   * @callback:  A function to call when the selected font changes.  * @data:      A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_font_select_widget_new:  * @title:     Title of the dialog to use or %NULL means to use the default  *             title.  * @font_name: Initial font name.  * @callback:  A function to call when the selected font changes.  * @data:      A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a font.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function
@@ -455,7 +455,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_widget_set;  * @widget:    A font select widget.  * @font_name: Font name to set; %NULL means no change.   *  * Sets the current font for the font select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_font_select_widget_new().  */
+comment|/**  * gimp_font_select_widget_set;  * @widget:    A font select widget.  * @font_name: Font name to set; %NULL means no change.  *  * Sets the current font for the font select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_font_select_widget_new().  */
 end_comment
 
 begin_function

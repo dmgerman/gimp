@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpcolorscale.c  * Copyright (C) 2002  Sven Neumann<sven@gimp.org>  *                     Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcolorscale.c  * Copyright (C) 2002  Sven Neumann<sven@gimp.org>  *                     Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -1750,7 +1750,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_scale_new:  * @orientation: the scale's orientation (horizontal or vertical)  * @channel: the scale's color channel  *   * Creates a new #GimpColorScale widget.  *   * Return value: a new #GimpColorScale widget  **/
+comment|/**  * gimp_color_scale_new:  * @orientation: the scale's orientation (horizontal or vertical)  * @channel: the scale's color channel  *  * Creates a new #GimpColorScale widget.  *  * Return value: a new #GimpColorScale widget  **/
 end_comment
 
 begin_function
@@ -1822,7 +1822,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_scale_set_channel:  * @scale: a #GimpColorScale widget  * @channel: the new color channel  *   * Changes the color channel displayed by the @scale.  **/
+comment|/**  * gimp_color_scale_set_channel:  * @scale: a #GimpColorScale widget  * @channel: the new color channel  *  * Changes the color channel displayed by the @scale.  **/
 end_comment
 
 begin_function
@@ -1880,7 +1880,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_scale_set_color:  * @scale: a #GimpColorScale widget  * @rgb: the new color as #GimpRGB  * @hsv: the new color as #GimpHSV  *   * Changes the color value of the @scale.  **/
+comment|/**  * gimp_color_scale_set_color:  * @scale: a #GimpColorScale widget  * @rgb: the new color as #GimpRGB  * @hsv: the new color as #GimpHSV  *  * Changes the color value of the @scale.  **/
 end_comment
 
 begin_function

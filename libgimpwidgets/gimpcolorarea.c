@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpcolorarea.c  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcolorarea.c  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e1aafb0103
+DECL|enum|__anon2902d1e00103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -981,7 +981,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_new:  * @color:     A pointer to a #GimpRGB struct.  * @type:      The type of color area to create.  * @drag_mask: The event_mask that should trigger drags.  *   * Creates a new #GimpColorArea widget.  *  * This returns a preview area showing the color. It handles color  * DND. If the color changes, the "color_changed" signal is emitted.  *   * Returns: Pointer to the new #GimpColorArea widget.  **/
+comment|/**  * gimp_color_area_new:  * @color:     A pointer to a #GimpRGB struct.  * @type:      The type of color area to create.  * @drag_mask: The event_mask that should trigger drags.  *  * Creates a new #GimpColorArea widget.  *  * This returns a preview area showing the color. It handles color  * DND. If the color changes, the "color_changed" signal is emitted.  *  * Returns: Pointer to the new #GimpColorArea widget.  **/
 end_comment
 
 begin_function
@@ -1099,7 +1099,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_set_color:  * @area: Pointer to a #GimpColorArea.  * @color: Pointer to a #GimpRGB struct that defines the new color.  *   * Sets @area to a different @color.  **/
+comment|/**  * gimp_color_area_set_color:  * @area: Pointer to a #GimpColorArea.  * @color: Pointer to a #GimpRGB struct that defines the new color.  *  * Sets @area to a different @color.  **/
 end_comment
 
 begin_function
@@ -1262,7 +1262,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_set_type:  * @area: Pointer to a #GimpColorArea.  * @type: A #GimpColorAreaType.   *  * Allows to change the type of @area. The #GimpColorAreaType determines  * whether the widget shows transparency information and chooses the size of  * the checkerboard used to do that.  **/
+comment|/**  * gimp_color_area_set_type:  * @area: Pointer to a #GimpColorArea.  * @type: A #GimpColorAreaType.  *  * Allows to change the type of @area. The #GimpColorAreaType determines  * whether the widget shows transparency information and chooses the size of  * the checkerboard used to do that.  **/
 end_comment
 
 begin_function
