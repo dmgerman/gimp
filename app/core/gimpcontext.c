@@ -1270,7 +1270,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295aafdb0103
+DECL|enum|__anon2afb0e5a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1322,7 +1322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295aafdb0203
+DECL|enum|__anon2afb0e5a0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -7547,10 +7547,6 @@ decl_stmt|;
 name|GimpRGB
 name|bg
 decl_stmt|;
-name|bg_context
-operator|=
-name|context
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTEXT
@@ -7558,6 +7554,10 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|bg_context
+operator|=
+name|context
 expr_stmt|;
 name|context_find_defined
 argument_list|(
@@ -7640,10 +7640,6 @@ decl_stmt|;
 name|GimpRGB
 name|bg
 decl_stmt|;
-name|bg_context
-operator|=
-name|context
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTEXT
@@ -7651,6 +7647,10 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|bg_context
+operator|=
+name|context
 expr_stmt|;
 name|context_find_defined
 argument_list|(
