@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
+file|"file-menu.h"
 end_include
 
 begin_include
@@ -54,7 +54,7 @@ modifier|*
 name|ui_path
 parameter_list|)
 block|{
-name|menus_open_recent_add
+name|file_menu_setup
 argument_list|(
 name|manager
 argument_list|,
