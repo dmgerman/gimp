@@ -11,6 +11,12 @@ begin_comment
 comment|/* revision history  * 1.1.9a;  1999/09/21   hof: bugfix RUN_NONINTERACTIVE mode did not work  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 1.1.5a;  1999/05/08   hof: bugix (dont mix GDrawableType with GImageType)  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_comment
 comment|/* SYTEM (UNIX) includes */
 end_comment
@@ -45,11 +51,22 @@ directive|include
 file|<errno.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* GIMP includes */

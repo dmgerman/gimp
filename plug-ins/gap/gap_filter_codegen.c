@@ -7,6 +7,12 @@ begin_comment
 comment|/* revision history:  * version 0.99.00  1999.03.14  hof: Codegeneration of File ./gen_filter_iter_code.c  *                                   splittet into single Files XX_iter_ALT.inc  *                                   bugfixes in code generation  * version 0.95.04  1998.06.12  hof: p_delta_drawable (enable use of layerstack anims in drawable iteration)  * version 0.93.00              hof: generate Iterator Source  *                                   in one single file (per plugin), ready to compile  * version 0.91.01; Tue Dec 23  hof: 1.st (pre) release  */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_comment
 comment|/* SYTEM (UNIX) includes */
 end_comment
@@ -29,11 +35,22 @@ directive|include
 file|<time.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* GIMP includes */

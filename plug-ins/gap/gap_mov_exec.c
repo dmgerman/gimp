@@ -11,6 +11,12 @@ begin_comment
 comment|/* revision history:  * version 0.93.04              hof: Window with Info Message if no Source Image was selected in MovePath  * version 0.90.00;             hof: 1.st (pre) release 14.Dec.1997  */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_comment
 comment|/* SYTEM (UNIX) includes */
 end_comment
@@ -45,11 +51,22 @@ directive|include
 file|<errno.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* GIMP includes */

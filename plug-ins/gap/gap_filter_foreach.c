@@ -11,6 +11,12 @@ begin_comment
 comment|/* revision history:  * version 0.97.00              hof: - modul splitted (2.nd part is now gap_filter_pdb.c)  * version 0.96.03              hof: - pitstop dialog provides optional backup on each step  *                                     (and skip option)  * version 0.96.00              hof: - now using gap_arr_dialog.h  * version 0.92.00              hof: - pitstop dialog   *                                     give user a chance to stop after interactive plugin calls  *                                     if you dont want the dialog export GAP_FILTER_PITSTOP="N"  *                                   - fixed bug in restore of layervisibility  *                                   - codegen via explicite button (in gap_debug mode)  * version 0.91.01; Tue Dec 23  hof: 1.st (pre) release  */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_comment
 comment|/* SYTEM (UNIX) includes */
 end_comment
@@ -27,17 +33,39 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_WAIT_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<sys/wait.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* GIMP includes */

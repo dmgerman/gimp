@@ -848,9 +848,17 @@ name|def_swap_file
 argument_list|)
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
+if|#
+directive|if
+name|defined
+argument_list|(
 name|__EMX__
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|G_OS_WIN32
+argument_list|)
 comment|/* should close before unlink */
 if|if
 condition|(

@@ -300,7 +300,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<strings.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -374,7 +374,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2ba063930103
+DECL|enum|__anon2bab773c0103
 DECL|enumerator|UNDEFINED
 DECL|enumerator|RECTANGLE
 DECL|enumerator|CIRCLE
@@ -421,7 +421,7 @@ file|"imap_csim.y"
 end_line
 
 begin_typedef
-DECL|union|__anon2ba06393020a
+DECL|union|__anon2bab773c020a
 typedef|typedef
 union|union
 block|{

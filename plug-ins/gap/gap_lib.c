@@ -11,6 +11,12 @@ begin_comment
 comment|/* revision history:  * 1.1.9a;  1999/09/14   hof: handle frame filenames with framenumbers  *                            that are not the 4digit style. (like frame1.xcf)  * 1.1.8a;  1999/08/31   hof: for AnimFrame Filtypes != XCF:  *                            p_decide_save_as does save INTERACTIVE at 1.st time  *                            and uses RUN_WITH_LAST_VALS for subsequent calls  *                            (this enables to set Fileformat specific save-Parameters  *                            at least at the 1.st call, using the save dialog  *                            of the selected (by gimp_file_save) file_save procedure.  *                            in NONINTERACTIVE mode we have no access to  *                            the Fileformat specific save-Parameters  *          1999/07/22   hof: accept anim framenames without underscore '_'  *                            (suggested by Samuel Meder)  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_comment
 comment|/* SYTEM (UNIX) includes */
 end_comment
@@ -39,11 +45,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_TIMES_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<sys/times.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -63,17 +80,39 @@ directive|include
 file|<errno.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_DIRENT_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<dirent.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* GIMP includes */
@@ -88,12 +127,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -102,6 +135,67 @@ include|#
 directive|include
 file|"libgimp/gimp.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<io.h>
+end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISDIR
+end_ifndef
+
+begin_define
+DECL|macro|S_ISDIR (m)
+define|#
+directive|define
+name|S_ISDIR
+parameter_list|(
+name|m
+parameter_list|)
+value|((m)& _S_IFDIR)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|S_ISREG
+end_ifndef
+
+begin_define
+DECL|macro|S_ISREG (m)
+define|#
+directive|define
+name|S_ISREG
+parameter_list|(
+name|m
+parameter_list|)
+value|((m)& _S_IFREG)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* GAP includes */

@@ -64,7 +64,7 @@ DECL|macro|PLUG_IN_NAME
 define|#
 directive|define
 name|PLUG_IN_NAME
-value|"extension-winsnap"
+value|"extension_winsnap"
 end_define
 
 begin_define
@@ -358,7 +358,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b52bfa70108
+DECL|struct|__anon296dc8fa0108
 typedef|typedef
 struct|struct
 block|{
@@ -399,7 +399,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b52bfa70208
+DECL|struct|__anon296dc8fa0208
 typedef|typedef
 struct|struct
 block|{
@@ -478,7 +478,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* We create a DIB section to hold the grabbed area. The scanlines in  * DIB sections are aligned ona LONG (four byte) boundary. Its pixel  * data is in RGB (BGR actually) format, three bytes per pixel.  *  * The GIMP uses no alignment for its pixel regions. The GIMP image we  * create is of type RGB, i.e. three bytes per pixel, too. Thus in  * order to be able to quickly transfer all of the image at a time, we  * must use a DIB section and pixel region the scanline width in  * bytesof which is evenly divisible with both 3 and 4. I.e. it must  * be a multiple of 12 bytes, or in pixels, a multiple of four pixels.  */
+comment|/* We create a DIB section to hold the grabbed area. The scanlines in  * DIB sections are aligned ona LONG (four byte) boundary. Its pixel  * data is in RGB (BGR actually) format, three bytes per pixel.  *  * The GIMP uses no alignment for its pixel regions. The GIMP image we  * create is of type RGB, i.e. three bytes per pixel, too. Thus in  * order to be able to quickly transfer all of the image at a time, we  * must use a DIB section and pixel region the scanline width in  * bytes of which is evenly divisible with both 3 and 4. I.e. it must  * be a multiple of 12 bytes, or in pixels, a multiple of four pixels.  */
 end_comment
 
 begin_define
@@ -4317,20 +4317,51 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* The layer resizing causes image corruption along the right border! */
-comment|/* Now resize the layer down to the correct size if necessary. */
-block|if (width != ROUND4(width)) {     gimp_layer_resize (layer_id, width, height, 0, 0);   }
-endif|#
-directive|endif
-comment|/* Finish up */
+comment|/* //HB: update data BEFORE size change */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+comment|/* Now resize the layer down to the correct size if necessary. */
+if|if
+condition|(
+name|width
+operator|!=
+name|ROUND4
+argument_list|(
+name|width
+argument_list|)
+condition|)
+block|{
+name|gimp_layer_resize
+argument_list|(
+name|layer_id
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_image_resize
+argument_list|(
+name|image_id
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* Finish up */
 name|gimp_drawable_detach
 argument_list|(
 name|drawable

@@ -11,6 +11,12 @@ begin_comment
 comment|/* revision history:  * version 0.97.00  1998.10.14  hof: - created module   */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_comment
 comment|/* SYSTEM (UNIX) includes */
 end_comment
@@ -31,12 +37,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<strings.h>
 end_include
 
 begin_include

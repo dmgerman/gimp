@@ -11,6 +11,12 @@ begin_comment
 comment|/* Change Log:  * 1999.06.21 hof: removed Colorify iterator  * 1999.03.14 hof: added iterators for gimp 1.1.3 prerelease  *                 iterator code reorganized in _iter_ALT.inc Files  * 1998.06.12 hof: added p_delta_drawable (Iterate layers in the layerstack)  *                 this enables to apply an animated bumpmap.  * 1998.01.29 hof: 1st release  */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_comment
 comment|/* SYTEM (UNIX) includes */
 end_comment
@@ -27,17 +33,39 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_WAIT_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<sys/wait.h>
 end_include
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* GIMP includes */
@@ -105,7 +133,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2ac75df90108
+DECL|struct|__anon28be4b8c0108
 typedef|typedef
 struct|struct
 block|{
@@ -123,7 +151,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac75df90208
+DECL|struct|__anon28be4b8c0208
 typedef|typedef
 struct|struct
 block|{
@@ -1347,7 +1375,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac75df90308
+DECL|struct|__anon28be4b8c0308
 block|{
 DECL|member|color
 name|double
@@ -1366,7 +1394,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac75df90408
+DECL|struct|__anon28be4b8c0408
 block|{
 DECL|member|coord
 name|double
@@ -1383,7 +1411,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ac75df90503
+DECL|enum|__anon28be4b8c0503
 typedef|typedef
 enum|enum
 block|{
@@ -1405,7 +1433,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ac75df90603
+DECL|enum|__anon28be4b8c0603
 typedef|typedef
 enum|enum
 block|{
@@ -1423,7 +1451,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac75df90708
+DECL|struct|__anon28be4b8c0708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1458,7 +1486,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac75df90808
+DECL|struct|__anon28be4b8c0808
 block|{
 DECL|member|type
 name|t_LightType

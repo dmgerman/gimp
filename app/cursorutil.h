@@ -40,9 +40,11 @@ begin_comment
 comment|/* Stopgap measure to detect build with current CVS GTk+ */
 end_comment
 
-begin_comment
-comment|//#include<gdk/gdkcursor.h>
-end_comment
+begin_include
+include|#
+directive|include
+file|<gdk/gdkcursor.h>
+end_include
 
 begin_endif
 endif|#
@@ -52,7 +54,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1b78790103
+DECL|enum|__anon2b8531200103
 block|{
 DECL|enumerator|GIMP_MOUSE1_CURSOR
 name|GIMP_MOUSE1_CURSOR

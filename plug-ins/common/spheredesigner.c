@@ -46,11 +46,22 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_TIME_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<sys/time.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
@@ -268,7 +279,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2b254fff0103
+DECL|enum|__anon29311bcb0103
 enum|enum
 block|{
 DECL|enumerator|TRIANGLE
@@ -293,7 +304,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b254fff0203
+DECL|enum|__anon29311bcb0203
 enum|enum
 block|{
 DECL|enumerator|SOLID
@@ -342,7 +353,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b254fff0303
+DECL|enum|__anon29311bcb0303
 enum|enum
 block|{
 DECL|enumerator|PERSPECTIVE
@@ -358,7 +369,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b254fff0403
+DECL|enum|__anon29311bcb0403
 enum|enum
 block|{
 DECL|enumerator|FOG
@@ -404,7 +415,7 @@ value|0x00000001
 end_define
 
 begin_typedef
-DECL|struct|__anon2b254fff0508
+DECL|struct|__anon29311bcb0508
 typedef|typedef
 struct|struct
 block|{
@@ -428,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0608
+DECL|struct|__anon29311bcb0608
 typedef|typedef
 struct|struct
 block|{
@@ -452,7 +463,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0708
+DECL|struct|__anon29311bcb0708
 typedef|typedef
 struct|struct
 block|{
@@ -481,7 +492,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0808
+DECL|struct|__anon29311bcb0808
 typedef|typedef
 struct|struct
 block|{
@@ -577,7 +588,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0908
+DECL|struct|__anon29311bcb0908
 typedef|typedef
 struct|struct
 block|{
@@ -604,7 +615,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0a08
+DECL|struct|__anon29311bcb0a08
 typedef|typedef
 struct|struct
 block|{
@@ -646,7 +657,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0b08
+DECL|struct|__anon29311bcb0b08
 typedef|typedef
 struct|struct
 block|{
@@ -671,7 +682,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0c08
+DECL|struct|__anon29311bcb0c08
 typedef|typedef
 struct|struct
 block|{
@@ -697,7 +708,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0d08
+DECL|struct|__anon29311bcb0d08
 typedef|typedef
 struct|struct
 block|{
@@ -720,7 +731,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0e08
+DECL|struct|__anon29311bcb0e08
 typedef|typedef
 struct|struct
 block|{
@@ -745,7 +756,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff0f08
+DECL|struct|__anon29311bcb0f08
 typedef|typedef
 struct|struct
 block|{
@@ -768,7 +779,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff1008
+DECL|struct|__anon29311bcb1008
 typedef|typedef
 struct|struct
 block|{
@@ -791,7 +802,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b254fff1108
+DECL|struct|__anon29311bcb1108
 typedef|typedef
 struct|struct
 block|{
@@ -817,7 +828,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon2b254fff120a
+DECL|union|__anon29311bcb120a
 typedef|typedef
 union|union
 block|{
@@ -1126,7 +1137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2b254fff1308
+DECL|struct|__anon29311bcb1308
 struct|struct
 block|{
 DECL|member|solid
