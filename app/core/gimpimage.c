@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2ac71d880103
+DECL|enum|__anon2c1a0cfd0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -10197,6 +10197,9 @@ name|Layer
 modifier|*
 name|bottom
 decl_stmt|;
+name|gint
+name|bottom_mode
+decl_stmt|;
 name|guchar
 name|bg
 index|[
@@ -10285,6 +10288,10 @@ expr_stmt|;
 name|bottom
 operator|=
 name|NULL
+expr_stmt|;
+name|bottom_mode
+operator|=
+literal|0
 expr_stmt|;
 comment|/*  Get the layer extents  */
 name|count
@@ -10961,15 +10968,21 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/* set the mode of the bottom layer to normal so that the contents        *  aren't lost when merging with the all-alpha merge_layer        *  Keep a pointer to it so that we can set the mode right after it's been        *  merged so that undo works correctly.        */
+name|bottom
+operator|=
 name|layer
+expr_stmt|;
+name|bottom_mode
+operator|=
+name|bottom
+operator|->
+name|mode
+expr_stmt|;
+name|bottom
 operator|->
 name|mode
 operator|=
 name|NORMAL_MODE
-expr_stmt|;
-name|bottom
-operator|=
-name|layer
 expr_stmt|;
 block|}
 while|while
@@ -11294,9 +11307,7 @@ name|bottom
 operator|->
 name|mode
 operator|=
-name|merge_layer
-operator|->
-name|mode
+name|bottom_mode
 expr_stmt|;
 name|g_slist_free
 argument_list|(
@@ -14297,16 +14308,16 @@ if|if
 condition|(
 name|floating_sel
 operator|&&
-name|GIMP_LAYER
-argument_list|(
 name|floating_sel
-argument_list|)
 operator|->
 name|fs
 operator|.
 name|drawable
 operator|==
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
+argument_list|)
 condition|)
 name|reverse_list
 operator|=
