@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in-proc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-run.h"
 end_include
 
@@ -781,6 +787,8 @@ name|gimp
 operator|->
 name|last_plug_in
 operator|->
+name|db_info
+operator|.
 name|args
 index|[
 name|i
@@ -835,9 +843,12 @@ name|gimp
 argument_list|,
 name|context
 argument_list|,
+operator|&
 name|gimp
 operator|->
 name|last_plug_in
+operator|->
+name|db_info
 argument_list|,
 name|args
 argument_list|,

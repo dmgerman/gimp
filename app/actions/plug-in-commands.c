@@ -486,18 +486,13 @@ operator|==
 name|GIMP_PDB_DRAWABLE
 condition|)
 block|{
+name|gimp_set_last_plug_in
+argument_list|(
 name|gimp
-operator|->
-name|last_plug_in
-operator|=
-name|proc_rec
+argument_list|,
+name|proc_def
+argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|FIXME       plug_in_menus_update (GIMP_ITEM_FACTORY (item_factory), drawable_type);
-endif|#
-directive|endif
 block|}
 name|g_free
 argument_list|(
