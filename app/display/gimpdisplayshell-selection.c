@@ -1680,15 +1680,6 @@ operator|->
 name|hidden
 condition|)
 return|return;
-if|if
-condition|(
-operator|!
-name|GTK_WIDGET_REALIZED
-argument_list|(
-name|canvas
-argument_list|)
-condition|)
-return|return;
 ifdef|#
 directive|ifdef
 name|USE_DRAWPOINTS
