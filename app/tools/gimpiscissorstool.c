@@ -126,7 +126,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bezier_selectP.h"
+file|"gimpbezierselecttool.h"
 end_include
 
 begin_include

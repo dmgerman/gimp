@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"draw_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -180,13 +174,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/bezier_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/bezier_selectP.h"
+file|"tools/gimpbezierselecttool.h"
 end_include
 
 begin_include
@@ -585,7 +573,7 @@ specifier|static
 name|void
 name|paths_update_preview
 parameter_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|)
@@ -3252,7 +3240,7 @@ name|Path
 modifier|*
 name|bzp
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bsel
 decl_stmt|;
@@ -4023,7 +4011,7 @@ name|Path
 modifier|*
 name|bzp
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -4701,7 +4689,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bsel
 decl_stmt|;
@@ -4817,7 +4805,7 @@ name|paths_dialog
 operator|->
 name|selected_row_num
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bsel
 init|=
@@ -4990,7 +4978,7 @@ name|bsel
 operator|=
 name|g_new0
 argument_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 argument_list|,
 literal|1
 argument_list|)
@@ -5073,7 +5061,7 @@ name|PathPoint
 modifier|*
 name|pp
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -5430,7 +5418,7 @@ name|PathList
 modifier|*
 name|plp
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -5958,7 +5946,7 @@ name|PathList
 modifier|*
 name|plp
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -6464,10 +6452,10 @@ begin_function
 specifier|static
 name|GSList
 modifier|*
-DECL|function|pathpoints_create (BezierSelect * sel)
+DECL|function|pathpoints_create (GimpBezierSelectTool * sel)
 name|pathpoints_create
 parameter_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|sel
 parameter_list|)
@@ -6485,19 +6473,19 @@ name|PathPoint
 modifier|*
 name|pathpoint
 decl_stmt|;
-name|BezierPoint
+name|GimpBezierSelectPoint
 modifier|*
 name|pts
 init|=
 operator|(
-name|BezierPoint
+name|GimpBezierSelectPoint
 operator|*
 operator|)
 name|sel
 operator|->
 name|points
 decl_stmt|;
-name|BezierPoint
+name|GimpBezierSelectPoint
 modifier|*
 name|start_pnt
 init|=
@@ -6755,14 +6743,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paths_update_bzpath (PathList * plp,BezierSelect * bezier_sel)
+DECL|function|paths_update_bzpath (PathList * plp,GimpBezierSelectTool * bezier_sel)
 name|paths_update_bzpath
 parameter_list|(
 name|PathList
 modifier|*
 name|plp
 parameter_list|,
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|)
@@ -6832,14 +6820,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|paths_replaced_current (PathList * plp,BezierSelect * bezier_sel)
+DECL|function|paths_replaced_current (PathList * plp,GimpBezierSelectTool * bezier_sel)
 name|paths_replaced_current
 parameter_list|(
 name|PathList
 modifier|*
 name|plp
 parameter_list|,
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|)
@@ -6940,10 +6928,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paths_draw_segment_points (BezierSelect * bezier_sel,GdkPoint * pnt,int npoints,gpointer udata)
+DECL|function|paths_draw_segment_points (GimpBezierSelectTool * bezier_sel,GdkPoint * pnt,int npoints,gpointer udata)
 name|paths_draw_segment_points
 parameter_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
@@ -7202,10 +7190,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paths_update_preview (BezierSelect * bezier_sel)
+DECL|function|paths_update_preview (GimpBezierSelectTool * bezier_sel)
 name|paths_update_preview
 parameter_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|)
@@ -7499,10 +7487,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_first_button_press (BezierSelect * bezier_sel,GDisplay * gdisp)
+DECL|function|paths_first_button_press (GimpBezierSelectTool * bezier_sel,GDisplay * gdisp)
 name|paths_first_button_press
 parameter_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
@@ -7631,10 +7619,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|paths_newpoint_current (BezierSelect * bezier_sel,GDisplay * gdisp)
+DECL|function|paths_newpoint_current (GimpBezierSelectTool * bezier_sel,GDisplay * gdisp)
 name|paths_newpoint_current
 parameter_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 parameter_list|,
@@ -9028,7 +9016,7 @@ name|Path
 modifier|*
 name|p
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -9317,7 +9305,7 @@ name|GSList
 modifier|*
 name|points_list
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -9665,7 +9653,7 @@ name|GSList
 modifier|*
 name|points_list
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -9905,16 +9893,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_transform_draw_current (GDisplay * gdisp,DrawCore * core,GimpMatrix3 transform)
+DECL|function|path_transform_draw_current (GDisplay * gdisp,GimpDrawTool * draw_tool,GimpMatrix3 transform)
 name|path_transform_draw_current
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|DrawCore
+name|GimpDrawTool
 modifier|*
-name|core
+name|draw_tool
 parameter_list|,
 name|GimpMatrix3
 name|transform
@@ -9928,7 +9916,7 @@ name|Path
 modifier|*
 name|bzp
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -10083,12 +10071,12 @@ name|p_copy
 argument_list|)
 expr_stmt|;
 name|bezier_sel
-operator|->
-name|core
 operator|=
-name|core
+name|GIMP_BEZIER_SELECT_TOOL
+argument_list|(
+name|draw_tool
+argument_list|)
 expr_stmt|;
-comment|/* A bit hacky */
 name|bezier_draw
 argument_list|(
 name|gdisp
@@ -10338,7 +10326,7 @@ name|Path
 modifier|*
 name|bzpath
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;

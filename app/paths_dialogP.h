@@ -20,7 +20,7 @@ begin_function_decl
 name|void
 name|paths_newpoint_current
 parameter_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 parameter_list|,
 name|GDisplay
@@ -33,7 +33,7 @@ begin_function_decl
 name|void
 name|paths_first_button_press
 parameter_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 parameter_list|,
 name|GDisplay
@@ -65,7 +65,7 @@ begin_function_decl
 name|void
 name|paths_set_bzpaths
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 parameter_list|,
 name|Path

@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/bezier_selectP.h"
+file|"tools/gimpbezierselecttool.h"
 end_include
 
 begin_function_decl
@@ -478,7 +478,7 @@ modifier|*
 name|bzp
 parameter_list|)
 block|{
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -554,7 +554,7 @@ block|{
 name|gint
 name|ret
 decl_stmt|;
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
@@ -873,7 +873,7 @@ block|}
 end_function
 
 begin_function
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 DECL|function|path_to_beziersel (Path * bzp)
 name|path_to_beziersel
@@ -883,11 +883,11 @@ modifier|*
 name|bzp
 parameter_list|)
 block|{
-name|BezierSelect
+name|GimpBezierSelectTool
 modifier|*
 name|bezier_sel
 decl_stmt|;
-name|BezierPoint
+name|GimpBezierSelectPoint
 modifier|*
 name|bpnt
 init|=
@@ -917,7 +917,7 @@ name|bezier_sel
 operator|=
 name|g_new0
 argument_list|(
-name|BezierSelect
+name|GimpBezierSelectTool
 argument_list|,
 literal|1
 argument_list|)
@@ -934,13 +934,6 @@ name|mask
 operator|=
 name|NULL
 expr_stmt|;
-name|bezier_sel
-operator|->
-name|core
-operator|=
-name|NULL
-expr_stmt|;
-comment|/* not required will be reset in bezier code */
 name|bezier_select_reset
 argument_list|(
 name|bezier_sel

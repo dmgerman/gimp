@@ -29,7 +29,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291e5b2c0108
+DECL|struct|__anon28fd11200108
 block|{
 DECL|member|x1
 name|gdouble
@@ -111,7 +111,7 @@ begin_function_decl
 name|void
 name|path_bezier_draw_handles
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -126,7 +126,7 @@ begin_function_decl
 name|void
 name|path_bezier_draw_segment
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -141,7 +141,7 @@ begin_function_decl
 name|gdouble
 name|path_bezier_on_segment
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,

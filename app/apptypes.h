@@ -278,6 +278,24 @@ name|GimpTransformTool
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpBezierSelectPoint
+typedef|typedef
+name|struct
+name|_GimpBezierSelectPoint
+name|GimpBezierSelectPoint
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpBezierSelectTool
+typedef|typedef
+name|struct
+name|_GimpBezierSelectTool
+name|GimpBezierSelectTool
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  undo objects  */
 end_comment
@@ -476,24 +494,6 @@ typedef|typedef
 name|struct
 name|_Argument
 name|Argument
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|BezierPoint
-typedef|typedef
-name|struct
-name|_BezierPoint
-name|BezierPoint
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|BezierSelect
-typedef|typedef
-name|struct
-name|_BezierSelect
-name|BezierSelect
 typedef|;
 end_typedef
 

@@ -310,10 +310,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_bezier_draw_handles (Tool * tool,PathSegment * segment)
+DECL|function|path_bezier_draw_handles (GimpTool * tool,PathSegment * segment)
 name|path_bezier_draw_handles
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -652,10 +652,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_bezier_draw_segment (Tool * tool,PathSegment * segment)
+DECL|function|path_bezier_draw_segment (GimpTool * tool,PathSegment * segment)
 name|path_bezier_draw_segment
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
@@ -670,10 +670,10 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|path_bezier_on_segment (Tool * tool,PathSegment * segment,gint x,gint y,gint halfwidth,gint * distance)
+DECL|function|path_bezier_on_segment (GimpTool * tool,PathSegment * segment,gint x,gint y,gint halfwidth,gint * distance)
 name|path_bezier_on_segment
 parameter_list|(
-name|Tool
+name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
