@@ -282,7 +282,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ee36e0108
+DECL|struct|__anon2beebe840108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1841,7 +1841,7 @@ DECL|macro|AUTOSCROLL_DX
 define|#
 directive|define
 name|AUTOSCROLL_DX
-value|5
+value|0.1
 end_define
 
 begin_function
@@ -1916,13 +1916,9 @@ literal|0
 condition|)
 name|off_x
 operator|=
-name|AUTOSCROLL_DX
-operator|*
 name|device_coords
 operator|.
 name|x
-operator|/
-literal|50.0
 expr_stmt|;
 elseif|else
 if|if
@@ -1939,9 +1935,6 @@ name|disp_width
 condition|)
 name|off_x
 operator|=
-name|AUTOSCROLL_DX
-operator|*
-operator|(
 name|device_coords
 operator|.
 name|x
@@ -1951,9 +1944,6 @@ operator|->
 name|shell
 operator|->
 name|disp_width
-operator|)
-operator|/
-literal|50.0
 expr_stmt|;
 if|if
 condition|(
@@ -1965,13 +1955,9 @@ literal|0
 condition|)
 name|off_y
 operator|=
-name|AUTOSCROLL_DX
-operator|*
 name|device_coords
 operator|.
 name|y
-operator|/
-literal|50.0
 expr_stmt|;
 elseif|else
 if|if
@@ -1988,9 +1974,6 @@ name|disp_height
 condition|)
 name|off_y
 operator|=
-name|AUTOSCROLL_DX
-operator|*
-operator|(
 name|device_coords
 operator|.
 name|y
@@ -2000,9 +1983,6 @@ operator|->
 name|shell
 operator|->
 name|disp_height
-operator|)
-operator|/
-literal|50.0
 expr_stmt|;
 if|if
 condition|(
@@ -2031,8 +2011,18 @@ name|info
 operator|->
 name|shell
 argument_list|,
+name|AUTOSCROLL_DX
+operator|*
+operator|(
+name|gdouble
+operator|)
 name|off_x
 argument_list|,
+name|AUTOSCROLL_DX
+operator|*
+operator|(
+name|gdouble
+operator|)
 name|off_y
 argument_list|)
 expr_stmt|;
