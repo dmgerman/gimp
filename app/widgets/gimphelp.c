@@ -769,6 +769,7 @@ else|else
 block|{
 if|if
 condition|(
+operator|!
 name|help_path
 condition|)
 block|{

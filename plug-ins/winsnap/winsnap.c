@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -362,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2af05d630108
+DECL|struct|__anon2c7e3b260108
 typedef|typedef
 struct|struct
 block|{
@@ -409,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2af05d630208
+DECL|struct|__anon2c7e3b260208
 typedef|typedef
 struct|struct
 block|{

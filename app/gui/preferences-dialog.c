@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2742959a0103
+DECL|enum|__anon2bcd6c370103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -11972,7 +11972,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"From X Server"
+literal|"From windowing system"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12195,7 +12195,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2742959a0208
+DECL|struct|__anon2bcd6c370208
 block|{
 DECL|member|label
 name|gchar
@@ -12424,7 +12424,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2742959a0308
+DECL|struct|__anon2bcd6c370308
 block|{
 DECL|member|tree_label
 name|gchar

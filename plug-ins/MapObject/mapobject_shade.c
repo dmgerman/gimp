@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -73,7 +79,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fba8b0108
+DECL|struct|__anon2c1194590108
 block|{
 DECL|member|u
 DECL|member|v

@@ -16,6 +16,16 @@ directive|define
 name|__DIALOG_HANDLER_H_
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__DIALOG_HANDLER_C_
+end_ifndef
+
+begin_comment
+comment|/* Bypass these declarations when compiling the file with the definitions,  * because of the G_MODULE_EXPORT attribute in it.  */
+end_comment
+
 begin_function_decl
 name|void
 name|dialog_register
@@ -37,6 +47,11 @@ name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 name|void

@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpmath.h"
 end_include
 
@@ -139,7 +145,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a0c89e0108
+DECL|struct|__anon27cacea00108
 block|{
 DECL|member|ready
 name|guchar
