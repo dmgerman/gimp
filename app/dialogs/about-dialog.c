@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"about_dialog.h"
 end_include
 
@@ -556,6 +562,10 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|gchar
+modifier|*
+name|label_text
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -588,7 +598,10 @@ argument_list|(
 name|about_dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"About the GIMP"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_policy
@@ -868,7 +881,10 @@ name|font
 operator|=
 name|gdk_font_load
 argument_list|(
+name|_
+argument_list|(
 literal|"-Adobe-Helvetica-Medium-R-Normal--*-140-*-*-*-*-*-*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_push_style
@@ -876,14 +892,71 @@ argument_list|(
 name|style
 argument_list|)
 expr_stmt|;
+name|label_text
+operator|=
+name|g_malloc
+argument_list|(
+name|strlen
+argument_list|(
+name|_
+argument_list|(
+literal|"Version "
+argument_list|)
+argument_list|)
+operator|+
+name|strlen
+argument_list|(
+name|GIMP_VERSION
+argument_list|)
+operator|+
+name|strlen
+argument_list|(
+name|_
+argument_list|(
+literal|" brought to you by"
+argument_list|)
+argument_list|)
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gchar
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|sprintf
+argument_list|(
+name|label_text
+argument_list|,
+literal|"%s%s%s"
+argument_list|,
+name|_
+argument_list|(
+literal|"Version "
+argument_list|)
+argument_list|,
+name|GIMP_VERSION
+argument_list|,
+name|_
+argument_list|(
+literal|" brought to you by"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Version "
-name|GIMP_VERSION
-literal|" brought to you by"
+name|label_text
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|label_text
+argument_list|)
+expr_stmt|;
+name|label_text
+operator|=
+name|NULL
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -910,7 +983,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Spencer Kimball and Peter Mattis"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1122,7 +1198,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Please visit http://www.gimp.org/ for more info"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

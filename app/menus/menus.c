@@ -105,12 +105,18 @@ directive|include
 file|"docindex.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_define
 DECL|macro|MRU_MENU_ENTRY_SIZE
 define|#
 directive|define
 name|MRU_MENU_ENTRY_SIZE
-value|sizeof ("/File/MRU00")
+value|sizeof (N_("/File/MRU00"))
 end_define
 
 begin_define
@@ -127,6 +133,33 @@ name|void
 name|menus_init
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GtkItemFactoryEntry
+modifier|*
+name|translate_entries
+parameter_list|(
+name|GtkItemFactoryEntry
+modifier|*
+parameter_list|,
+name|gint
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|free_translated_entries
+parameter_list|(
+name|GtkItemFactoryEntry
+modifier|*
+parameter_list|,
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -151,7 +184,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"/File/New"
+argument_list|)
 block|,
 literal|"<control>N"
 block|,
@@ -161,7 +197,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Open"
+argument_list|)
 block|,
 literal|"<control>O"
 block|,
@@ -171,7 +210,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/About..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -181,7 +223,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Preferences..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -191,7 +236,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Tip of the day"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -201,7 +249,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -213,7 +264,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Brushes..."
+argument_list|)
 block|,
 literal|"<control><shift>B"
 block|,
@@ -223,7 +277,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Patterns..."
+argument_list|)
 block|,
 literal|"<control><shift>P"
 block|,
@@ -233,7 +290,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Palette..."
+argument_list|)
 block|,
 literal|"<control>P"
 block|,
@@ -243,7 +303,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Gradient Editor..."
+argument_list|)
 block|,
 literal|"<control>G"
 block|,
@@ -253,7 +316,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Layers& Channels..."
+argument_list|)
 block|,
 literal|"<control>L"
 block|,
@@ -263,7 +329,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Tool Options..."
+argument_list|)
 block|,
 literal|"<control><shift>T"
 block|,
@@ -273,7 +342,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Input Devices..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -283,7 +355,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Device Status..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -293,7 +368,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Document Index..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -303,7 +381,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Dialogs/Error Console..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -313,7 +394,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -366,7 +450,10 @@ name|GtkItemFactoryEntry
 name|file_menu_separator
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"/File/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -386,7 +473,10 @@ name|GtkItemFactoryEntry
 name|toolbox_end
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"/File/Quit"
+argument_list|)
 block|,
 literal|"<control>Q"
 block|,
@@ -406,7 +496,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"/File/New"
+argument_list|)
 block|,
 literal|"<control>N"
 block|,
@@ -416,7 +509,10 @@ literal|1
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Open"
+argument_list|)
 block|,
 literal|"<control>O"
 block|,
@@ -426,7 +522,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Save"
+argument_list|)
 block|,
 literal|"<control>S"
 block|,
@@ -436,7 +535,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Save as"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -446,7 +548,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Preferences..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -456,7 +561,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -468,7 +576,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Close"
+argument_list|)
 block|,
 literal|"<control>W"
 block|,
@@ -478,7 +589,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/Quit"
+argument_list|)
 block|,
 literal|"<control>Q"
 block|,
@@ -488,7 +602,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/File/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -500,7 +617,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Cut"
+argument_list|)
 block|,
 literal|"<control>X"
 block|,
@@ -510,7 +630,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Copy"
+argument_list|)
 block|,
 literal|"<control>C"
 block|,
@@ -520,7 +643,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Paste"
+argument_list|)
 block|,
 literal|"<control>V"
 block|,
@@ -530,7 +656,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Paste Into"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -540,7 +669,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Clear"
+argument_list|)
 block|,
 literal|"<control>K"
 block|,
@@ -550,7 +682,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Fill"
+argument_list|)
 block|,
 literal|"<control>period"
 block|,
@@ -560,7 +695,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Stroke"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -570,7 +708,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Undo"
+argument_list|)
 block|,
 literal|"<control>Z"
 block|,
@@ -580,7 +721,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Redo"
+argument_list|)
 block|,
 literal|"<control>R"
 block|,
@@ -590,7 +734,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -602,7 +749,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Cut Named"
+argument_list|)
 block|,
 literal|"<control><shift>X"
 block|,
@@ -612,7 +762,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Copy Named"
+argument_list|)
 block|,
 literal|"<control><shift>C"
 block|,
@@ -622,7 +775,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/Paste Named"
+argument_list|)
 block|,
 literal|"<control><shift>V"
 block|,
@@ -632,7 +788,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Edit/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -644,7 +803,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Toggle"
+argument_list|)
 block|,
 literal|"<control>T"
 block|,
@@ -654,7 +816,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Invert"
+argument_list|)
 block|,
 literal|"<control>I"
 block|,
@@ -664,7 +829,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/All"
+argument_list|)
 block|,
 literal|"<control>A"
 block|,
@@ -674,7 +842,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/None"
+argument_list|)
 block|,
 literal|"<control><shift>A"
 block|,
@@ -684,7 +855,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Float"
+argument_list|)
 block|,
 literal|"<control><shift>L"
 block|,
@@ -694,7 +868,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Sharpen"
+argument_list|)
 block|,
 literal|"<control><shift>H"
 block|,
@@ -704,7 +881,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Border"
+argument_list|)
 block|,
 literal|"<control><shift>B"
 block|,
@@ -714,7 +894,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Feather"
+argument_list|)
 block|,
 literal|"<control><shift>F"
 block|,
@@ -724,7 +907,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Grow"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -734,7 +920,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Shrink"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -744,7 +933,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Select/Save To Channel"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -755,7 +947,10 @@ block|}
 block|,
 comment|/*   { "/Select/By Color...", NULL, tools_select_cmd_callback, BY_COLOR_SELECT },    */
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom In"
+argument_list|)
 block|,
 literal|"equal"
 block|,
@@ -765,7 +960,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom Out"
+argument_list|)
 block|,
 literal|"minus"
 block|,
@@ -775,7 +973,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/16:1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -785,7 +986,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/8:1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -795,7 +999,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/4:1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -805,7 +1012,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/2:1"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -815,7 +1025,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/1:1"
+argument_list|)
 block|,
 literal|"1"
 block|,
@@ -825,7 +1038,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/1:2"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -835,7 +1051,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/1:4"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -845,7 +1064,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/1:8"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -855,7 +1077,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Zoom/1:16"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -865,7 +1090,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Window Info..."
+argument_list|)
 block|,
 literal|"<control><shift>I"
 block|,
@@ -875,7 +1103,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Toggle Rulers"
+argument_list|)
 block|,
 literal|"<control><shift>R"
 block|,
@@ -887,7 +1118,10 @@ literal|"<ToggleItem>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Toggle Statusbar"
+argument_list|)
 block|,
 literal|"<control><shift>S"
 block|,
@@ -899,7 +1133,10 @@ literal|"<ToggleItem>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Toggle Guides"
+argument_list|)
 block|,
 literal|"<control><shift>T"
 block|,
@@ -911,7 +1148,10 @@ literal|"<ToggleItem>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Snap To Guides"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -923,7 +1163,10 @@ literal|"<ToggleItem>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -935,7 +1178,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/New View"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -945,7 +1191,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/View/Shrink Wrap"
+argument_list|)
 block|,
 literal|"<control>E"
 block|,
@@ -955,7 +1204,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Colors/Equalize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -965,7 +1217,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Colors/Invert"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -974,9 +1229,12 @@ block|,
 literal|0
 block|}
 block|,
-comment|/*   { "/Image/Colors/Posterize", NULL, tools_select_cmd_callback, POSTERIZE },   { "/Image/Colors/Threshold", NULL, tools_select_cmd_callback, THRESHOLD },   { "/Image/Colors/---", NULL, NULL, 0, "<Separator>" },   { "/Image/Colors/Color Balance", NULL, tools_select_cmd_callback, COLOR_BALANCE },   { "/Image/Colors/Brightness-Contrast", NULL, tools_select_cmd_callback, BRIGHTNESS_CONTRAST },   { "/Image/Colors/Hue-Saturation", NULL, tools_select_cmd_callback, 0 },   { "/Image/Colors/Curves", NULL, tools_select_cmd_callback, CURVES },   { "/Image/Colors/Levels", NULL, tools_select_cmd_callback, LEVELS },   */
+comment|/*   { N_("/Image/Colors/Posterize"), NULL, tools_select_cmd_callback, POSTERIZE },   { N_("/Image/Colors/Threshold"), NULL, tools_select_cmd_callback, THRESHOLD },   { N_("/Image/Colors/---"), NULL, NULL, 0, "<Separator>" },   { N_("/Image/Colors/Color Balance"), NULL, tools_select_cmd_callback, COLOR_BALANCE },   { N_("/Image/Colors/Brightness-Contrast"), NULL, tools_select_cmd_callback, BRIGHTNESS_CONTRAST },   { N_("/Image/Colors/Hue-Saturation"), NULL, tools_select_cmd_callback, 0 },   { N_("/Image/Colors/Curves"), NULL, tools_select_cmd_callback, CURVES },   { N_("/Image/Colors/Levels"), NULL, tools_select_cmd_callback, LEVELS },   */
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Colors/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -988,7 +1246,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Colors/Desaturate"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -998,7 +1259,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Channel Ops/Duplicate"
+argument_list|)
 block|,
 literal|"<control>D"
 block|,
@@ -1008,7 +1272,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Channel Ops/Offset"
+argument_list|)
 block|,
 literal|"<control><shift>O"
 block|,
@@ -1018,7 +1285,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Alpha/Add Alpha Channel"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1028,7 +1298,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1040,7 +1313,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/RGB"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1050,7 +1326,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Grayscale"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1060,7 +1339,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Indexed"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1070,7 +1352,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1082,7 +1367,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Resize"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1092,7 +1380,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/Scale"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1102,7 +1393,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Image/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1113,9 +1407,12 @@ block|,
 literal|"<Separator>"
 block|}
 block|,
-comment|/*  { "/Image/Histogram", NULL, tools_select_cmd_callback, HISTOGRAM}, */
+comment|/*  { N_("/Image/Histogram"), NULL, tools_select_cmd_callback, HISTOGRAM}, */
 block|{
+name|N_
+argument_list|(
 literal|"/Image/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1127,7 +1424,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Layers& Channels..."
+argument_list|)
 block|,
 literal|"<control>L"
 block|,
@@ -1137,7 +1437,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Raise Layer"
+argument_list|)
 block|,
 literal|"<control>F"
 block|,
@@ -1147,7 +1450,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Lower Layer"
+argument_list|)
 block|,
 literal|"<control>B"
 block|,
@@ -1157,7 +1463,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Anchor Layer"
+argument_list|)
 block|,
 literal|"<control>H"
 block|,
@@ -1167,7 +1476,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Merge Visible Layers"
+argument_list|)
 block|,
 literal|"<control>M"
 block|,
@@ -1177,7 +1489,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Flatten Image"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1187,7 +1502,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Alpha To Selection"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1197,7 +1515,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Mask To Selection"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1207,7 +1528,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Layers/Add Alpha Channel"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1216,9 +1540,12 @@ block|,
 literal|0
 block|}
 block|,
-comment|/*  { "/Tools/Rect Select", "R", tools_select_cmd_callback, RECT_SELECT },   { "/Tools/Ellipse Select", "E", tools_select_cmd_callback, ELLIPSE_SELECT },   { "/Tools/Free Select", "F", tools_select_cmd_callback, FREE_SELECT },   { "/Tools/Fuzzy Select", "Z", tools_select_cmd_callback, FUZZY_SELECT },   { "/Tools/Bezier Select", "B", tools_select_cmd_callback, BEZIER_SELECT },   { "/Tools/Intelligent Scissors", "I", tools_select_cmd_callback, ISCISSORS },   { "/Tools/Move", "M", tools_select_cmd_callback, MOVE },   { "/Tools/Magnify", "<shift>M", tools_select_cmd_callback, MAGNIFY },   { "/Tools/Crop", "<shift>C", tools_select_cmd_callback, CROP },   { "/Tools/Transform", "<shift>T", tools_select_cmd_callback, ROTATE },   { "/Tools/Flip", "<shift>F", tools_select_cmd_callback, FLIP_HORZ },   { "/Tools/Text", "T", tools_select_cmd_callback, TEXT },   { "/Tools/Color Picker", "O", tools_select_cmd_callback, COLOR_PICKER },   { "/Tools/Bucket Fill", "<shift>B", tools_select_cmd_callback, BUCKET_FILL },   { "/Tools/Blend", "L", tools_select_cmd_callback, BLEND },   { "/Tools/Paintbrush", "P", tools_select_cmd_callback, PAINTBRUSH },   { "/Tools/Pencil", "<shift>P", tools_select_cmd_callback, PENCIL },   { "/Tools/Eraser", "<shift>E", tools_select_cmd_callback, ERASER },   { "/Tools/Airbrush", "A", tools_select_cmd_callback, AIRBRUSH },   { "/Tools/Clone", "C", tools_select_cmd_callback, CLONE },   { "/Tools/Convolve", "V", tools_select_cmd_callback, CONVOLVE },   { "/Tools/Ink", "K", tools_select_cmd_callback, INK },   { "/Tools/Default Colors", "D", tools_default_colors_cmd_callback, 0 },   { "/Tools/Swap Colors", "X", tools_swap_colors_cmd_callback, 0 }, */
+comment|/*  { N_("/Tools/Rect Select"), "R", tools_select_cmd_callback, RECT_SELECT },   { N_("/Tools/Ellipse Select"), "E", tools_select_cmd_callback, ELLIPSE_SELECT },   { N_("/Tools/Free Select"), "F", tools_select_cmd_callback, FREE_SELECT },   { N_("/Tools/Fuzzy Select"), "Z", tools_select_cmd_callback, FUZZY_SELECT },   { N_("/Tools/Bezier Select"), "B", tools_select_cmd_callback, BEZIER_SELECT },   { N_("/Tools/Intelligent Scissors"), "I", tools_select_cmd_callback, ISCISSORS },   { N_("/Tools/Move"), "M", tools_select_cmd_callback, MOVE },   { N_("/Tools/Magnify"), "<shift>M", tools_select_cmd_callback, MAGNIFY },   { N_("/Tools/Crop"), "<shift>C", tools_select_cmd_callback, CROP },   { N_("/Tools/Transform"), "<shift>T", tools_select_cmd_callback, ROTATE },   { N_("/Tools/Flip"), "<shift>F", tools_select_cmd_callback, FLIP_HORZ },   { N_("/Tools/Text"), "T", tools_select_cmd_callback, TEXT },   { N_("/Tools/Color Picker"), "O", tools_select_cmd_callback, COLOR_PICKER },   { N_("/Tools/Bucket Fill"), "<shift>B", tools_select_cmd_callback, BUCKET_FILL },   { N_("/Tools/Blend"), "L", tools_select_cmd_callback, BLEND },   { N_("/Tools/Paintbrush"), "P", tools_select_cmd_callback, PAINTBRUSH },   { N_("/Tools/Pencil"), "<shift>P", tools_select_cmd_callback, PENCIL },   { N_("/Tools/Eraser"), "<shift>E", tools_select_cmd_callback, ERASER },   { N_("/Tools/Airbrush"), "A", tools_select_cmd_callback, AIRBRUSH },   { N_("/Tools/Clone"), "C", tools_select_cmd_callback, CLONE },   { N_("/Tools/Convolve"), "V", tools_select_cmd_callback, CONVOLVE },   { N_("/Tools/Ink"), "K", tools_select_cmd_callback, INK },   { N_("/Tools/Default Colors"), "D", tools_default_colors_cmd_callback, 0 },   { N_("/Tools/Swap Colors"), "X", tools_swap_colors_cmd_callback, 0 }, */
 block|{
+name|N_
+argument_list|(
 literal|"/Tools/Toolbox"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1228,7 +1555,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Tools/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1240,7 +1570,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Tools/Default Colors"
+argument_list|)
 block|,
 literal|"D"
 block|,
@@ -1250,7 +1583,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Tools/Swap Colors"
+argument_list|)
 block|,
 literal|"X"
 block|,
@@ -1260,7 +1596,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Filters/"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1270,7 +1609,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Filters/Repeat last"
+argument_list|)
 block|,
 literal|"<alt>F"
 block|,
@@ -1280,7 +1622,10 @@ literal|0x0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Filters/Re-show last"
+argument_list|)
 block|,
 literal|"<alt><shift>F"
 block|,
@@ -1290,7 +1635,10 @@ literal|0x1
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Filters/---"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1302,7 +1650,10 @@ literal|"<Separator>"
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Script-Fu/"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1312,7 +1663,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Brushes..."
+argument_list|)
 block|,
 literal|"<control><shift>B"
 block|,
@@ -1322,7 +1676,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Patterns..."
+argument_list|)
 block|,
 literal|"<control><shift>P"
 block|,
@@ -1332,7 +1689,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Palette..."
+argument_list|)
 block|,
 literal|"<control>P"
 block|,
@@ -1342,7 +1702,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Gradient Editor..."
+argument_list|)
 block|,
 literal|"<control>G"
 block|,
@@ -1352,7 +1715,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Layers& Channels..."
+argument_list|)
 block|,
 literal|"<control>L"
 block|,
@@ -1362,7 +1728,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Indexed Palette..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1372,7 +1741,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Tool Options..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1382,7 +1754,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Input Devices..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1392,7 +1767,10 @@ literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"/Dialogs/Device Status..."
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1445,7 +1823,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"/Automatic"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1510,7 +1891,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"/By extension"
+argument_list|)
 block|,
 name|NULL
 block|,
@@ -1949,7 +2333,10 @@ name|widget
 condition|)
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to set sensitivity for menu which doesn't exist:\n%s"
+argument_list|)
 argument_list|,
 name|path
 argument_list|)
@@ -2043,7 +2430,10 @@ name|widget
 condition|)
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Unable to set state for menu which doesn't exist:\n%s"
+argument_list|)
 argument_list|,
 name|path
 argument_list|)
@@ -2215,7 +2605,10 @@ argument_list|)
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Error opening file: %s\n"
+argument_list|)
 argument_list|,
 name|raw_filename
 argument_list|)
@@ -2317,7 +2710,10 @@ name|g_string_sprintf
 argument_list|(
 name|path
 argument_list|,
+name|_
+argument_list|(
 literal|"/File/MRU%02d"
+argument_list|)
 argument_list|,
 name|i
 argument_list|)
@@ -2630,7 +3026,10 @@ name|sprintf
 argument_list|(
 name|path
 argument_list|,
+name|_
+argument_list|(
 literal|"/File/MRU%02d"
+argument_list|)
 argument_list|,
 name|i
 operator|+
@@ -2764,6 +3163,10 @@ DECL|function|menus_init_toolbox ()
 name|menus_init_toolbox
 parameter_list|()
 block|{
+name|GtkItemFactoryEntry
+modifier|*
+name|translated_entries
+decl_stmt|;
 name|toolbox_factory
 operator|=
 name|gtk_item_factory_new
@@ -2775,21 +3178,218 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|translated_entries
+operator|=
+name|translate_entries
+argument_list|(
+name|toolbox_entries
+argument_list|,
+name|n_toolbox_entries
+argument_list|)
+expr_stmt|;
 name|gtk_item_factory_create_items_ac
 argument_list|(
 name|toolbox_factory
 argument_list|,
 name|n_toolbox_entries
 argument_list|,
-name|toolbox_entries
+name|translated_entries
 argument_list|,
 name|NULL
 argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
+name|free_translated_entries
+argument_list|(
+name|translated_entries
+argument_list|,
+name|n_toolbox_entries
+argument_list|)
+expr_stmt|;
 name|menus_init_mru
 argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GtkItemFactoryEntry
+modifier|*
+DECL|function|translate_entries (GtkItemFactoryEntry * entries,gint n)
+name|translate_entries
+parameter_list|(
+name|GtkItemFactoryEntry
+modifier|*
+name|entries
+parameter_list|,
+name|gint
+name|n
+parameter_list|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+name|GtkItemFactoryEntry
+modifier|*
+name|ret
+decl_stmt|;
+name|ret
+operator|=
+name|g_malloc
+argument_list|(
+sizeof|sizeof
+argument_list|(
+name|GtkItemFactoryEntry
+argument_list|)
+operator|*
+name|n
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|n
+condition|;
+name|i
+operator|++
+control|)
+block|{
+comment|/* Translation. Note the explicit use of gettext(). */
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|path
+operator|=
+name|g_strdup
+argument_list|(
+name|gettext
+argument_list|(
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|path
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* accelerator and item_type are not duped, only referenced */
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|accelerator
+operator|=
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|accelerator
+expr_stmt|;
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|callback
+operator|=
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|callback
+expr_stmt|;
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|callback_action
+operator|=
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|callback_action
+expr_stmt|;
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|item_type
+operator|=
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|item_type
+expr_stmt|;
+block|}
+return|return
+name|ret
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|free_translated_entries (GtkItemFactoryEntry * entries,gint n)
+name|free_translated_entries
+parameter_list|(
+name|GtkItemFactoryEntry
+modifier|*
+name|entries
+parameter_list|,
+name|gint
+name|n
+parameter_list|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|n
+condition|;
+name|i
+operator|++
+control|)
+name|g_free
+argument_list|(
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|entries
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -2803,6 +3403,10 @@ parameter_list|()
 block|{
 name|int
 name|i
+decl_stmt|;
+name|GtkItemFactoryEntry
+modifier|*
+name|translated_entries
 decl_stmt|;
 if|if
 condition|(
@@ -2831,17 +3435,33 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|translated_entries
+operator|=
+name|translate_entries
+argument_list|(
+name|image_entries
+argument_list|,
+name|n_image_entries
+argument_list|)
+expr_stmt|;
 name|gtk_item_factory_create_items_ac
 argument_list|(
 name|image_factory
 argument_list|,
 name|n_image_entries
 argument_list|,
-name|image_entries
+name|translated_entries
 argument_list|,
 name|NULL
 argument_list|,
 literal|2
+argument_list|)
+expr_stmt|;
+name|free_translated_entries
+argument_list|(
+name|translated_entries
+argument_list|,
+name|n_image_entries
 argument_list|)
 expr_stmt|;
 name|load_factory
@@ -2855,17 +3475,33 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|translated_entries
+operator|=
+name|translate_entries
+argument_list|(
+name|load_entries
+argument_list|,
+name|n_load_entries
+argument_list|)
+expr_stmt|;
 name|gtk_item_factory_create_items_ac
 argument_list|(
 name|load_factory
 argument_list|,
 name|n_load_entries
 argument_list|,
-name|load_entries
+name|translated_entries
 argument_list|,
 name|NULL
 argument_list|,
 literal|2
+argument_list|)
+expr_stmt|;
+name|free_translated_entries
+argument_list|(
+name|translated_entries
+argument_list|,
+name|n_load_entries
 argument_list|)
 expr_stmt|;
 name|save_factory
@@ -2879,17 +3515,33 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|translated_entries
+operator|=
+name|translate_entries
+argument_list|(
+name|load_entries
+argument_list|,
+name|n_save_entries
+argument_list|)
+expr_stmt|;
 name|gtk_item_factory_create_items_ac
 argument_list|(
 name|save_factory
 argument_list|,
 name|n_save_entries
 argument_list|,
-name|save_entries
+name|translated_entries
 argument_list|,
 name|NULL
 argument_list|,
 literal|2
+argument_list|)
+expr_stmt|;
+name|free_translated_entries
+argument_list|(
+name|translated_entries
+argument_list|,
+name|n_save_entries
 argument_list|)
 expr_stmt|;
 for|for

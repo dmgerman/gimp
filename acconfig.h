@@ -9,6 +9,18 @@ end_escape
 begin_undef
 undef|#
 directive|undef
+name|ENABLE_NLS
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|HAVE_CATGETS
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_DIRENT_H
 end_undef
 
@@ -21,7 +33,19 @@ end_undef
 begin_undef
 undef|#
 directive|undef
+name|HAVE_GETTEXT
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|HAVE_IPC_H
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|HAVE_LC_MESSAGES
 end_undef
 
 begin_undef

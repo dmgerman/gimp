@@ -110,6 +110,12 @@ directive|include
 file|"install.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|RETSIGTYPE
@@ -343,6 +349,31 @@ literal|"C"
 argument_list|)
 expr_stmt|;
 comment|/* must use dot, not comma, as decimal separator */
+comment|/* Initialize i18n support */
+ifdef|#
+directive|ifdef
+name|HAVE_LC_MESSAGES
+name|setlocale
+argument_list|(
+name|LC_MESSAGES
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+name|bindtextdomain
+argument_list|(
+literal|"gimp"
+argument_list|,
+name|LOCALEDIR
+argument_list|)
+expr_stmt|;
+name|textdomain
+argument_list|(
+literal|"gimp"
+argument_list|)
+expr_stmt|;
 name|gtk_init
 argument_list|(
 operator|&
@@ -1018,9 +1049,14 @@ name|show_version
 condition|)
 name|g_print
 argument_list|(
-literal|"GIMP version "
+literal|"%s %s\n"
+argument_list|,
+name|_
+argument_list|(
+literal|"GIMP version"
+argument_list|)
+argument_list|,
 name|GIMP_VERSION
-literal|"\n"
 argument_list|)
 expr_stmt|;
 if|if
@@ -1030,7 +1066,10 @@ condition|)
 block|{
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"\007Usage: %s [option ...] [files ...]\n"
+argument_list|)
 argument_list|,
 name|argv
 index|[
@@ -1040,87 +1079,138 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
+name|_
+argument_list|(
 literal|"Valid options are:\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  -h --help                Output this help.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  -v --version             Output version info.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  -b --batch<commands>    Run in batch mode.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  -g --gimprc<gimprc>     Use an alternate gimprc file.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  -n --no-interface        Run without a user interface.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  -r --restore-session     Try to restore saved session.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  --no-data                Do not load patterns, gradients, palettes, brushes.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  --verbose                Show startup messages.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  --no-splash              Do not show the startup window.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  --no-splash-image        Do not add an image to the startup window.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  --no-shm                 Do not use shared memory between GIMP and its plugins.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  --no-xshm                Do not use the X Shared Memory extension.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  --console-messages       Display warnings to console instead of a dialog box.\n"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|g_print
+argument_list|(
+name|_
 argument_list|(
 literal|"  --debug-handlers         Enable debugging signal handlers.\n"
 argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"  --display<display>      Use the designated X display.\n\n"
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
+name|_
+argument_list|(
+literal|"  --display<display>      Use the designated X display.\n\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
 literal|"  --system-gimprc<gimprc> Use an alternate system gimprc file.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1313,7 +1403,10 @@ name|SIGHUP
 case|:
 name|terminate
 argument_list|(
+name|_
+argument_list|(
 literal|"sighup caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1322,7 +1415,10 @@ name|SIGINT
 case|:
 name|terminate
 argument_list|(
+name|_
+argument_list|(
 literal|"sigint caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1331,7 +1427,10 @@ name|SIGQUIT
 case|:
 name|terminate
 argument_list|(
+name|_
+argument_list|(
 literal|"sigquit caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1340,7 +1439,10 @@ name|SIGABRT
 case|:
 name|terminate
 argument_list|(
+name|_
+argument_list|(
 literal|"sigabrt caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1349,7 +1451,10 @@ name|SIGBUS
 case|:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"sigbus caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1358,7 +1463,10 @@ name|SIGSEGV
 case|:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"sigsegv caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1367,7 +1475,10 @@ name|SIGPIPE
 case|:
 name|terminate
 argument_list|(
+name|_
+argument_list|(
 literal|"sigpipe caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1376,7 +1487,10 @@ name|SIGTERM
 case|:
 name|terminate
 argument_list|(
+name|_
+argument_list|(
 literal|"sigterm caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1385,14 +1499,20 @@ name|SIGFPE
 case|:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"sigfpe caught"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
 name|fatal_error
 argument_list|(
+name|_
+argument_list|(
 literal|"unknown signal"
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
