@@ -2569,6 +2569,11 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|lc_shell
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|lc_subshell
 argument_list|)
 expr_stmt|;
@@ -2649,11 +2654,6 @@ name|lc_shell
 argument_list|)
 operator|->
 name|action_area
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|lc_shell
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure the channels page is realized  */
@@ -4315,7 +4315,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b6816b20108
+DECL|struct|__anon27b266050108
 typedef|typedef
 struct|struct
 block|{
