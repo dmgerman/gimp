@@ -1988,18 +1988,12 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|VERBOSE
-name|g_print
+name|g_printerr
 argument_list|(
-literal|"%f (%f) -> "
+literal|"%g (%g) -> "
 argument_list|,
-operator|(
-name|float
-operator|)
 name|size
 argument_list|,
-operator|(
-name|float
-operator|)
 name|velocity
 argument_list|)
 expr_stmt|;
@@ -2048,12 +2042,12 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|VERBOSE
-name|g_print
+name|g_printerr
 argument_list|(
-literal|"%f\n"
+literal|"%g\n"
 argument_list|,
 operator|(
-name|float
+name|gfloat
 operator|)
 name|size
 argument_list|)
@@ -2192,7 +2186,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|VERBOSE
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"angle %g aspect %g; %g %g; %g %g\n"
 argument_list|,
@@ -3147,7 +3141,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29ffecd30103
+DECL|enum|__anon29d83d550103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

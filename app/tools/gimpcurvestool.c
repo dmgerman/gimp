@@ -3335,7 +3335,8 @@ operator|!=
 literal|2
 condition|)
 block|{
-name|g_print
+comment|/*  FIXME: should have a helpful error message here  */
+name|g_printerr
 argument_list|(
 literal|"fields != 2"
 argument_list|)

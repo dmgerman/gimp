@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1cc81c0103
+DECL|enum|__anon2bbfc8950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1658,7 +1658,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG_FOCUS
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"gimp_tool_set_focus_display: gdisp: %p  focus_display: %p\n"
 argument_list|,
@@ -1883,7 +1883,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG_FOCUS
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"gimp_tool_set_modifier_state: gdisp: %p  focus_display: %p\n"
 argument_list|,
