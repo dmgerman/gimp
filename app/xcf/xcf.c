@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -240,7 +244,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289c82e70103
+DECL|enum|__anon27799ec30103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -375,7 +379,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289c82e70203
+DECL|enum|__anon27799ec30203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -671,7 +675,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|xcf_load_image_props
 parameter_list|(
 name|XcfInfo
@@ -687,7 +691,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|xcf_load_layer_props
 parameter_list|(
 name|XcfInfo
@@ -707,7 +711,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|xcf_load_channel_props
 parameter_list|(
 name|XcfInfo
@@ -727,7 +731,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|xcf_load_prop
 parameter_list|(
 name|XcfInfo
@@ -798,7 +802,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|xcf_load_hierarchy
 parameter_list|(
 name|XcfInfo
@@ -814,7 +818,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|xcf_load_level
 parameter_list|(
 name|XcfInfo
@@ -830,7 +834,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|xcf_load_tile
 parameter_list|(
 name|XcfInfo
@@ -846,7 +850,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|xcf_load_tile_rle
 parameter_list|(
 name|XcfInfo
@@ -857,7 +861,7 @@ name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|data_length
 parameter_list|)
 function_decl|;
@@ -871,17 +875,17 @@ end_ifdef
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|xcf_swap_func
 parameter_list|(
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|cmd
 parameter_list|,
 name|gpointer
@@ -1329,7 +1333,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|N_xcf_loaders
 specifier|static
-name|int
+name|gint
 name|N_xcf_loaders
 init|=
 operator|(
@@ -1351,9 +1355,11 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|xcf_init ()
+DECL|function|xcf_init (void)
 name|xcf_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/* So this is sort of a hack, but its better than it was before.  To do this    * right there would be a file load-save handler type and the whole interface    * would change but there isn't, and currently the plug-in structure contains    * all the load-save info, so it makes sense to use that for the XCF load/save    * handlers, even though they are internal.  The only thing it requires is    * using a PlugInProcDef struct.  -josh */
 name|procedural_db_register
@@ -1432,14 +1438,14 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|int
+name|gboolean
 name|success
 decl_stmt|;
-name|char
+name|gchar
 name|id
 index|[
 literal|14
@@ -1769,11 +1775,11 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|int
+name|gboolean
 name|success
 decl_stmt|;
 name|gimp_add_busy_cursors
@@ -1968,7 +1974,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|int
+name|gint
 name|save_version
 init|=
 literal|0
@@ -2037,10 +2043,10 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|gboolean
 name|have_selection
 decl_stmt|;
-name|int
+name|gint
 name|t1
 decl_stmt|,
 name|t2
@@ -2049,7 +2055,7 @@ name|t3
 decl_stmt|,
 name|t4
 decl_stmt|;
-name|char
+name|gchar
 name|version_tag
 index|[
 literal|14
@@ -3109,12 +3115,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_a_parasite (char * key,Parasite * p,XcfInfo * info)
 specifier|static
 name|void
+DECL|function|write_a_parasite (gchar * key,Parasite * p,XcfInfo * info)
 name|write_a_parasite
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|key
 parameter_list|,
@@ -3216,10 +3222,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_a_parasite (XcfInfo * info)
 specifier|static
 name|Parasite
 modifier|*
+DECL|function|read_a_parasite (XcfInfo * info)
 name|read_a_parasite
 parameter_list|(
 name|XcfInfo
@@ -3300,7 +3306,7 @@ name|data
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 name|p
 operator|->
@@ -4201,7 +4207,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"Unknown path type..Possibly corrupt XCF file"
+literal|"Unknown path type. Possibly corrupt XCF file"
 argument_list|)
 expr_stmt|;
 block|}
@@ -7202,14 +7208,14 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|xcf_calc_levels (int size,int tile_size)
+name|gint
+DECL|function|xcf_calc_levels (gint size,gint tile_size)
 name|xcf_calc_levels
 parameter_list|(
-name|int
+name|gint
 name|size
 parameter_list|,
-name|int
+name|gint
 name|tile_size
 parameter_list|)
 block|{
@@ -7263,17 +7269,17 @@ decl_stmt|;
 name|guint32
 name|offset
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|nlevels
 decl_stmt|,
 name|tmp1
 decl_stmt|,
 name|tmp2
 decl_stmt|;
-name|int
+name|gint
 name|h
 decl_stmt|,
 name|w
@@ -7615,7 +7621,7 @@ decl_stmt|;
 name|guint
 name|ntiles
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|guchar
@@ -7964,27 +7970,27 @@ name|unsigned
 name|int
 name|last
 decl_stmt|;
-name|int
+name|gint
 name|state
 decl_stmt|;
-name|int
+name|gint
 name|length
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
-name|int
+name|gint
 name|size
 decl_stmt|;
-name|int
+name|gint
 name|bpp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|len
 init|=
 literal|0
@@ -8480,16 +8486,16 @@ decl_stmt|;
 name|guint32
 name|offset
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|;
-name|int
+name|gint
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|image_type
 decl_stmt|;
-name|int
+name|gint
 name|num_successful_elements
 init|=
 literal|0
@@ -8862,7 +8868,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|xcf_load_image_props (XcfInfo * info,GImage * gimage)
 name|xcf_load_image_props
 parameter_list|(
@@ -9202,7 +9208,7 @@ decl_stmt|;
 name|gint8
 name|orientation
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|nguides
@@ -9336,7 +9342,7 @@ case|case
 name|PROP_RESOLUTION
 case|:
 block|{
-name|float
+name|gfloat
 name|xres
 decl_stmt|,
 name|yres
@@ -9448,7 +9454,7 @@ case|case
 name|PROP_PARASITES
 case|:
 block|{
-name|long
+name|glong
 name|base
 init|=
 name|info
@@ -9893,7 +9899,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|xcf_load_layer_props (XcfInfo * info,GImage * gimage,Layer * layer)
 name|xcf_load_layer_props
 parameter_list|(
@@ -10422,7 +10428,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|xcf_load_channel_props (XcfInfo * info,GImage * gimage,Channel * channel)
 name|xcf_load_channel_props
 parameter_list|(
@@ -10787,7 +10793,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|xcf_load_prop (XcfInfo * info,PropType * prop_type,guint32 * prop_size)
 name|xcf_load_prop
 parameter_list|(
@@ -11272,16 +11278,16 @@ decl_stmt|;
 name|guint32
 name|hierarchy_offset
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|;
-name|int
+name|gint
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|add_floating_sel
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -11525,16 +11531,16 @@ decl_stmt|;
 name|guint32
 name|hierarchy_offset
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|;
-name|int
+name|gint
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|add_floating_sel
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -11760,7 +11766,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|xcf_load_hierarchy (XcfInfo * info,TileManager * tiles)
 name|xcf_load_hierarchy
 parameter_list|(
@@ -11782,13 +11788,13 @@ decl_stmt|;
 name|guint32
 name|junk
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|;
-name|int
+name|gint
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|bpp
 decl_stmt|;
 name|info
@@ -11971,7 +11977,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|xcf_load_level (XcfInfo * info,TileManager * tiles)
 name|xcf_load_level
 parameter_list|(
@@ -11995,16 +12001,16 @@ decl_stmt|;
 name|guint
 name|ntiles
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|;
-name|int
+name|gint
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|fail
 decl_stmt|;
 name|Tile
@@ -12470,7 +12476,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|xcf_load_tile (XcfInfo * info,Tile * tile)
 name|xcf_load_tile
 parameter_list|(
@@ -12583,7 +12589,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|xcf_load_tile_rle (XcfInfo * info,Tile * tile,int data_length)
 name|xcf_load_tile_rle
 parameter_list|(
@@ -12606,24 +12612,24 @@ decl_stmt|;
 name|guchar
 name|val
 decl_stmt|;
-name|int
+name|gint
 name|size
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
-name|int
+name|gint
 name|length
 decl_stmt|;
-name|int
+name|gint
 name|bpp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|nmemb_read_successfully
 decl_stmt|;
 name|guchar
@@ -13027,34 +13033,34 @@ end_ifdef
 
 begin_function
 specifier|static
-name|int
-DECL|function|xcf_swap_func (int fd,Tile * tile,int cmd,gpointer user_data)
+name|gboolean
+DECL|function|xcf_swap_func (gint fd,Tile * tile,gint cmd,gpointer user_data)
 name|xcf_swap_func
 parameter_list|(
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|Tile
 modifier|*
 name|tile
 parameter_list|,
-name|int
+name|gint
 name|cmd
 parameter_list|,
 name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-name|int
+name|gint
 name|err
 decl_stmt|;
-name|int
+name|gint
 name|nleft
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|ref_count
 decl_stmt|;
@@ -13458,7 +13464,7 @@ block|{
 name|guint
 name|total
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|;
 name|total
@@ -13540,7 +13546,7 @@ decl_stmt|;
 name|guint
 name|total
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|total
@@ -13649,7 +13655,7 @@ block|{
 name|guint32
 name|tmp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -13771,7 +13777,7 @@ block|{
 name|guint
 name|total
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|;
 name|total
@@ -13790,14 +13796,14 @@ operator|=
 name|fwrite
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|data
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|char
+name|gchar
 argument_list|)
 argument_list|,
 name|count
@@ -13845,7 +13851,7 @@ decl_stmt|;
 name|guint
 name|total
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|total

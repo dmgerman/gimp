@@ -105,7 +105,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1c85540103
+DECL|enum|__anon287d3d780103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -133,48 +133,42 @@ struct|struct
 name|_PlugIn
 block|{
 DECL|member|open
-name|unsigned
-name|int
+name|guint
 name|open
 range|:
 literal|1
 decl_stmt|;
 comment|/* Is the plug-in open */
 DECL|member|destroy
-name|unsigned
-name|int
+name|guint
 name|destroy
 range|:
 literal|1
 decl_stmt|;
 comment|/* Should the plug-in by destroyed */
 DECL|member|query
-name|unsigned
-name|int
+name|guint
 name|query
 range|:
 literal|1
 decl_stmt|;
 comment|/* Are we querying the plug-in? */
 DECL|member|synchronous
-name|unsigned
-name|int
+name|guint
 name|synchronous
 range|:
 literal|1
 decl_stmt|;
 comment|/* Is the plug-in running synchronously or not */
 DECL|member|recurse
-name|unsigned
-name|int
+name|guint
 name|recurse
 range|:
 literal|1
 decl_stmt|;
 comment|/* Have we called 'gtk_main' recursively? */
 DECL|member|busy
-name|unsigned
-name|int
+name|guint
 name|busy
 range|:
 literal|1
@@ -186,7 +180,7 @@ name|pid
 decl_stmt|;
 comment|/* Plug-ins process id */
 DECL|member|args
-name|char
+name|gchar
 modifier|*
 name|args
 index|[
@@ -223,7 +217,7 @@ name|his_thread_id
 decl_stmt|;
 comment|/* Plug-in's thread ID */
 DECL|member|his_read_fd
-name|int
+name|gint
 name|his_read_fd
 decl_stmt|;
 comment|/* Plug-in's read pipe fd */
@@ -235,7 +229,7 @@ name|input_id
 decl_stmt|;
 comment|/* Id of input proc */
 DECL|member|write_buffer
-name|char
+name|gchar
 name|write_buffer
 index|[
 name|WRITE_BUFFER_SIZE
@@ -243,7 +237,7 @@ index|]
 decl_stmt|;
 comment|/* Buffer for writing */
 DECL|member|write_buffer_index
-name|int
+name|gint
 name|write_buffer_index
 decl_stmt|;
 comment|/* Buffer index for writing */
@@ -311,42 +305,42 @@ struct|struct
 name|_PlugInProcDef
 block|{
 DECL|member|prog
-name|char
+name|gchar
 modifier|*
 name|prog
 decl_stmt|;
 DECL|member|menu_path
-name|char
+name|gchar
 modifier|*
 name|menu_path
 decl_stmt|;
 DECL|member|accelerator
-name|char
+name|gchar
 modifier|*
 name|accelerator
 decl_stmt|;
 DECL|member|extensions
-name|char
+name|gchar
 modifier|*
 name|extensions
 decl_stmt|;
 DECL|member|prefixes
-name|char
+name|gchar
 modifier|*
 name|prefixes
 decl_stmt|;
 DECL|member|magics
-name|char
+name|gchar
 modifier|*
 name|magics
 decl_stmt|;
 DECL|member|image_types
-name|char
+name|gchar
 modifier|*
 name|image_types
 decl_stmt|;
 DECL|member|image_types_val
-name|int
+name|gint
 name|image_types_val
 decl_stmt|;
 DECL|member|db_info
@@ -410,15 +404,15 @@ begin_function_decl
 name|void
 name|plug_in_add
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|menu_path
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|accelerator
 parameter_list|)
@@ -430,11 +424,11 @@ comment|/* Get the "image_types" the plug-in works on.  */
 end_comment
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|plug_in_image_types
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -450,19 +444,19 @@ name|PlugInProcDef
 modifier|*
 name|plug_in_file_handler
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|extensions
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|prefixes
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|magics
 parameter_list|)
@@ -519,11 +513,11 @@ comment|/* Retrieve a plug-ins menu path  */
 end_comment
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|plug_in_menu_path
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -539,7 +533,7 @@ name|PlugIn
 modifier|*
 name|plug_in_new
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -562,11 +556,11 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Open a plug-in. This cause the plug-in to run.  * If returns 1, you must destroy the plugin.  If returns 0 you  * may not destroy the plugin.  */
+comment|/* Open a plug-in. This cause the plug-in to run.  * If returns TRUE, you must destroy the plugin.    * If returns FALSE, you must not destroy the plugin.  */
 end_comment
 
 begin_function_decl
-name|int
+name|gboolean
 name|plug_in_open
 parameter_list|(
 name|PlugIn
@@ -611,16 +605,16 @@ name|Argument
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|argc
 parameter_list|,
-name|int
+name|gboolean
 name|synchronous
 parameter_list|,
-name|int
+name|gboolean
 name|destroy_values
 parameter_list|,
-name|int
+name|gint
 name|gdisp_ID
 parameter_list|)
 function_decl|;
@@ -634,7 +628,7 @@ begin_function_decl
 name|void
 name|plug_in_repeat
 parameter_list|(
-name|int
+name|gboolean
 name|with_interface
 parameter_list|)
 function_decl|;
@@ -674,7 +668,7 @@ name|GSList
 modifier|*
 name|plug_in_extensions_parse
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|extensions
 parameter_list|)
@@ -682,10 +676,10 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|plug_in_image_types_parse
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|image_types
 parameter_list|)
@@ -700,7 +694,7 @@ name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
@@ -718,7 +712,7 @@ name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|double
+name|gdouble
 name|percentage
 parameter_list|)
 function_decl|;

@@ -496,7 +496,7 @@ modifier|*
 name|plug_in
 decl_stmt|;
 DECL|member|proc_name
-name|char
+name|gchar
 modifier|*
 name|proc_name
 decl_stmt|;
@@ -506,7 +506,7 @@ end_struct
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|plug_in_write
 parameter_list|(
 name|GIOChannel
@@ -525,7 +525,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|plug_in_flush
 parameter_list|(
 name|GIOChannel
@@ -662,7 +662,7 @@ specifier|static
 name|void
 name|plug_in_write_rc
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -674,7 +674,7 @@ specifier|static
 name|void
 name|plug_in_init_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -686,7 +686,7 @@ specifier|static
 name|void
 name|plug_in_query
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -787,7 +787,7 @@ name|PlugInProcDef
 modifier|*
 name|proc_def
 parameter_list|,
-name|int
+name|gboolean
 name|data_only
 parameter_list|)
 function_decl|;
@@ -807,7 +807,7 @@ name|Argument
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|argc
 parameter_list|)
 function_decl|;
@@ -823,10 +823,10 @@ name|GPParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
-name|int
+name|gboolean
 name|full_copy
 parameter_list|)
 function_decl|;
@@ -842,10 +842,10 @@ name|Argument
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|nargs
 parameter_list|,
-name|int
+name|gboolean
 name|full_copy
 parameter_list|)
 function_decl|;
@@ -860,10 +860,10 @@ name|GPParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
-name|int
+name|gboolean
 name|full_destroy
 parameter_list|)
 function_decl|;
@@ -878,10 +878,10 @@ name|Argument
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|nargs
 parameter_list|,
-name|int
+name|gboolean
 name|full_destroy
 parameter_list|)
 function_decl|;
@@ -997,7 +997,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|current_write_buffer_index
 specifier|static
-name|int
+name|gint
 name|current_write_buffer_index
 init|=
 literal|0
@@ -1007,7 +1007,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|current_write_buffer
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|current_write_buffer
 init|=
@@ -1029,7 +1029,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|current_return_nvals
 specifier|static
-name|int
+name|gint
 name|current_return_nvals
 init|=
 literal|0
@@ -1050,7 +1050,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|shm_ID
 specifier|static
-name|int
+name|gint
 name|shm_ID
 init|=
 operator|-
@@ -1099,7 +1099,7 @@ end_endif
 begin_decl_stmt
 DECL|variable|write_pluginrc
 specifier|static
-name|int
+name|gboolean
 name|write_pluginrc
 init|=
 name|FALSE
@@ -2096,18 +2096,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_add (char * prog,char * menu_path,char * accelerator)
+DECL|function|plug_in_add (gchar * prog,gchar * menu_path,gchar * accelerator)
 name|plug_in_add
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|prog
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|menu_path
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|accelerator
 parameter_list|)
@@ -2134,7 +2134,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|t
 init|=
@@ -2376,12 +2376,12 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
-DECL|function|plug_in_image_types (char * name)
+DECL|function|plug_in_image_types (gchar * name)
 name|plug_in_image_types
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -2470,10 +2470,10 @@ end_function
 begin_function
 name|GSList
 modifier|*
-DECL|function|plug_in_extensions_parse (char * extensions)
+DECL|function|plug_in_extensions_parse (gchar * extensions)
 name|plug_in_extensions_parse
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|extensions
 parameter_list|)
@@ -2587,22 +2587,22 @@ end_function
 begin_function
 name|PlugInProcDef
 modifier|*
-DECL|function|plug_in_file_handler (char * name,char * extensions,char * prefixes,char * magics)
+DECL|function|plug_in_file_handler (gchar * name,gchar * extensions,gchar * prefixes,gchar * magics)
 name|plug_in_file_handler
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|extensions
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|prefixes
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|magics
 parameter_list|)
@@ -3028,7 +3028,7 @@ name|PlugInProcDef
 modifier|*
 name|proc_def
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|t1
 decl_stmt|,
@@ -3478,7 +3478,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"unable to locate plug-in: \"%s\""
+literal|"Unable to locate plug-in: \"%s\""
 argument_list|)
 argument_list|,
 name|name
@@ -3580,7 +3580,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 literal|32
 argument_list|)
@@ -3594,7 +3594,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 literal|32
 argument_list|)
@@ -3877,27 +3877,27 @@ comment|/* The Microsoft _spawnv() does not allow to run scripts. But  * this is
 end_comment
 
 begin_function
-name|int
-DECL|function|xspawnv (int mode,const char * cmdname,const char * const * argv)
+name|gint
+DECL|function|xspawnv (gint mode,const gchar * cmdname,const gchar * const * argv)
 name|xspawnv
 parameter_list|(
-name|int
+name|gint
 name|mode
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|cmdname
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 specifier|const
 modifier|*
 name|argv
 parameter_list|)
 block|{
-name|char
+name|gchar
 name|sExecutable
 index|[
 name|_MAX_PATH
@@ -3905,28 +3905,28 @@ operator|*
 literal|2
 index|]
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|sArgsList
 decl_stmt|;
-name|char
+name|gchar
 name|sCmndLine
 index|[
 literal|1024
 index|]
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|sPath
 decl_stmt|;
 name|HINSTANCE
 name|hInst
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|pid
 decl_stmt|;
 comment|/* only use it if _spawnv fails */
@@ -4089,7 +4089,7 @@ comment|/* G_OS_WIN32 */
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|plug_in_open (PlugIn * plug_in)
 name|plug_in_open
 parameter_list|(
@@ -4098,13 +4098,13 @@ modifier|*
 name|plug_in
 parameter_list|)
 block|{
-name|int
+name|gint
 name|my_read
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|my_write
 index|[
 literal|2
@@ -4145,7 +4145,7 @@ literal|"unable to open pipe"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|#
@@ -4440,7 +4440,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 literal|16
 argument_list|)
@@ -4454,7 +4454,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 literal|16
 argument_list|)
@@ -4673,7 +4673,7 @@ name|plug_in
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|g_io_channel_close
@@ -4757,7 +4757,7 @@ name|plug_in
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 block|}
@@ -4818,14 +4818,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_close (PlugIn * plug_in,gint kill_it)
+DECL|function|plug_in_close (PlugIn * plug_in,gboolean kill_it)
 name|plug_in_close
 parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|gint
+name|gboolean
 name|kill_it
 parameter_list|)
 block|{
@@ -5374,7 +5374,7 @@ name|Argument
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nargs
 decl_stmt|;
 comment|/* Return the status code plus the current return values. */
@@ -5472,7 +5472,7 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|plug_in_run (ProcRecord * proc_rec,Argument * args,int argc,int synchronous,int destroy_values,int gdisp_ID)
+DECL|function|plug_in_run (ProcRecord * proc_rec,Argument * args,gint argc,gboolean synchronous,gboolean destroy_values,gint gdisp_ID)
 name|plug_in_run
 parameter_list|(
 name|ProcRecord
@@ -5483,16 +5483,16 @@ name|Argument
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|argc
 parameter_list|,
-name|int
+name|gboolean
 name|synchronous
 parameter_list|,
-name|int
+name|gboolean
 name|destroy_values
 parameter_list|,
-name|int
+name|gint
 name|gdisp_ID
 parameter_list|)
 block|{
@@ -5828,10 +5828,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_repeat (int with_interface)
+DECL|function|plug_in_repeat (gboolean with_interface)
 name|plug_in_repeat
 parameter_list|(
-name|int
+name|gboolean
 name|with_interface
 parameter_list|)
 block|{
@@ -5843,7 +5843,7 @@ name|Argument
 modifier|*
 name|args
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -7603,16 +7603,16 @@ decl_stmt|;
 name|GimpItemFactoryEntry
 name|entry
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|prog
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gboolean
 name|add_proc_def
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/*    *  Argument checking    *   --only sanity check arguments when the procedure requests a menu path    */
@@ -8135,6 +8135,12 @@ break|break;
 case|case
 name|PDB_TEMPORARY
 case|:
+name|plug_in_def
+operator|=
+name|current_plug_in
+operator|->
+name|user_data
+expr_stmt|;
 name|prog
 operator|=
 literal|"none"
@@ -8203,6 +8209,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/* destroys data_only */
 break|break;
 block|}
 name|proc_def
@@ -8879,7 +8886,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|plug_in_write (GIOChannel * channel,guint8 * buf,gulong count)
 name|plug_in_write
 parameter_list|(
@@ -8992,7 +8999,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|plug_in_flush (GIOChannel * channel)
 name|plug_in_flush
 parameter_list|(
@@ -9004,7 +9011,7 @@ block|{
 name|GIOError
 name|error
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
 name|guint
@@ -9276,14 +9283,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_write_rc_string (FILE * fp,char * str)
+DECL|function|plug_in_write_rc_string (FILE * fp,gchar * str)
 name|plug_in_write_rc_string
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -9429,10 +9436,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_write_rc (char * filename)
+DECL|function|plug_in_write_rc (gchar * filename)
 name|plug_in_write_rc
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -9456,7 +9463,7 @@ decl_stmt|,
 modifier|*
 name|tmp2
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|fp
@@ -10064,10 +10071,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_init_file (char * filename)
+DECL|function|plug_in_init_file (gchar * filename)
 name|plug_in_init_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -10080,11 +10087,11 @@ name|PlugInDef
 modifier|*
 name|plug_in_def
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|plug_in_name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -10226,10 +10233,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_query (char * filename,PlugInDef * plug_in_def)
+DECL|function|plug_in_query (gchar * filename,PlugInDef * plug_in_def)
 name|plug_in_query
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -11054,16 +11061,16 @@ name|Argument
 modifier|*
 name|args
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|gdisp_ID
 init|=
 operator|-
 literal|1
 decl_stmt|;
-name|int
+name|gint
 name|argc
 init|=
 literal|0
@@ -11799,18 +11806,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_proc_def_destroy (PlugInProcDef * proc_def,int data_only)
+DECL|function|plug_in_proc_def_destroy (PlugInProcDef * proc_def,gboolean data_only)
 name|plug_in_proc_def_destroy
 parameter_list|(
 name|PlugInProcDef
 modifier|*
 name|proc_def
 parameter_list|,
-name|int
+name|gboolean
 name|data_only
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -12203,7 +12210,7 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plug_in_temp_run (ProcRecord * proc_rec,Argument * args,int argc)
+DECL|function|plug_in_temp_run (ProcRecord * proc_rec,Argument * args,gint argc)
 name|plug_in_temp_run
 parameter_list|(
 name|ProcRecord
@@ -12214,7 +12221,7 @@ name|Argument
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|argc
 parameter_list|)
 block|{
@@ -12406,17 +12413,17 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|plug_in_params_to_args (GPParam * params,int nparams,int full_copy)
+DECL|function|plug_in_params_to_args (GPParam * params,gint nparams,gboolean full_copy)
 name|plug_in_params_to_args
 parameter_list|(
 name|GPParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
-name|int
+name|gboolean
 name|full_copy
 parameter_list|)
 block|{
@@ -12433,10 +12440,10 @@ name|guchar
 modifier|*
 name|colorarray
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -13445,17 +13452,17 @@ begin_function
 specifier|static
 name|GPParam
 modifier|*
-DECL|function|plug_in_args_to_params (Argument * args,int nargs,int full_copy)
+DECL|function|plug_in_args_to_params (Argument * args,gint nargs,gboolean full_copy)
 name|plug_in_args_to_params
 parameter_list|(
 name|Argument
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|nargs
 parameter_list|,
-name|int
+name|gboolean
 name|full_copy
 parameter_list|)
 block|{
@@ -13472,7 +13479,7 @@ name|guchar
 modifier|*
 name|colorarray
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -14690,21 +14697,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_params_destroy (GPParam * params,int nparams,int full_destroy)
+DECL|function|plug_in_params_destroy (GPParam * params,gint nparams,gboolean full_destroy)
 name|plug_in_params_destroy
 parameter_list|(
 name|GPParam
 modifier|*
 name|params
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
-name|int
+name|gboolean
 name|full_destroy
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -15041,17 +15048,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_in_args_destroy (Argument * args,int nargs,int full_destroy)
+DECL|function|plug_in_args_destroy (Argument * args,gint nargs,gboolean full_destroy)
 name|plug_in_args_destroy
 parameter_list|(
 name|Argument
 modifier|*
 name|args
 parameter_list|,
-name|int
+name|gint
 name|nargs
 parameter_list|,
-name|int
+name|gboolean
 name|full_destroy
 parameter_list|)
 block|{
@@ -15060,10 +15067,10 @@ modifier|*
 modifier|*
 name|stringarray
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -15380,16 +15387,16 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|plug_in_image_types_parse (char * image_types)
+name|gint
+DECL|function|plug_in_image_types_parse (gchar * image_types)
 name|plug_in_image_types_parse
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|image_types
 parameter_list|)
 block|{
-name|int
+name|gint
 name|types
 init|=
 literal|0
@@ -15766,14 +15773,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_progress_init (PlugIn * plug_in,char * message,gint gdisp_ID)
+DECL|function|plug_in_progress_init (PlugIn * plug_in,gchar * message,gint gdisp_ID)
 name|plug_in_progress_init
 parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|message
 parameter_list|,
@@ -15860,14 +15867,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_progress_update (PlugIn * plug_in,double percentage)
+DECL|function|plug_in_progress_update (PlugIn * plug_in,gdouble percentage)
 name|plug_in_progress_update
 parameter_list|(
 name|PlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|double
+name|gdouble
 name|percentage
 parameter_list|)
 block|{
