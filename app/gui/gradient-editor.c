@@ -338,7 +338,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fac3040103
+DECL|enum|__anon2aef35f70103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -362,7 +362,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fac3040208
+DECL|struct|__anon2aef35f70208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -645,7 +645,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon27fac3040308
+DECL|struct|__anon2aef35f70308
 block|{
 DECL|member|r
 DECL|member|g
@@ -9981,20 +9981,13 @@ name|data
 parameter_list|)
 block|{
 name|gchar
+modifier|*
 name|str
-index|[
-literal|256
-index|]
 decl_stmt|;
-name|g_snprintf
-argument_list|(
 name|str
-argument_list|,
-sizeof|sizeof
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Zoom factor: %d:1    Displaying [%0.6f, %0.6f]"
@@ -10018,6 +10011,11 @@ name|page_size
 argument_list|)
 expr_stmt|;
 name|ed_set_hint
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|str
 argument_list|)
@@ -10909,10 +10907,8 @@ decl_stmt|,
 name|v
 decl_stmt|;
 name|gchar
+modifier|*
 name|str
-index|[
-literal|512
-index|]
 decl_stmt|;
 name|xpos
 operator|=
@@ -10964,15 +10960,10 @@ operator|&
 name|v
 argument_list|)
 expr_stmt|;
-name|g_snprintf
-argument_list|(
 name|str
-argument_list|,
-sizeof|sizeof
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Position: %0.6f    "
@@ -11001,6 +10992,11 @@ name|a
 argument_list|)
 expr_stmt|;
 name|ed_set_hint
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|str
 argument_list|)
@@ -11035,10 +11031,8 @@ decl_stmt|,
 name|a
 decl_stmt|;
 name|gchar
+modifier|*
 name|str
-index|[
-literal|512
-index|]
 decl_stmt|;
 name|xpos
 operator|=
@@ -11084,15 +11078,10 @@ operator|*
 literal|255.0
 argument_list|)
 expr_stmt|;
-name|g_snprintf
-argument_list|(
 name|str
-argument_list|,
-sizeof|sizeof
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Foreground color set to RGB (%d, %d, %d)<-> "
@@ -11138,6 +11127,11 @@ argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -11164,10 +11158,8 @@ decl_stmt|,
 name|a
 decl_stmt|;
 name|gchar
+modifier|*
 name|str
-index|[
-literal|512
-index|]
 decl_stmt|;
 name|xpos
 operator|=
@@ -11213,15 +11205,10 @@ operator|*
 literal|255.0
 argument_list|)
 expr_stmt|;
-name|g_snprintf
-argument_list|(
 name|str
-argument_list|,
-sizeof|sizeof
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Background color to RGB (%d, %d, %d)<-> "
@@ -11263,6 +11250,11 @@ name|b
 argument_list|)
 expr_stmt|;
 name|ed_set_hint
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|str
 argument_list|)
@@ -13255,10 +13247,10 @@ name|gdouble
 name|delta
 decl_stmt|;
 name|gchar
+modifier|*
 name|str
-index|[
-literal|256
-index|]
+init|=
+name|NULL
 decl_stmt|;
 name|seg
 operator|=
@@ -13335,15 +13327,10 @@ argument_list|,
 name|pos
 argument_list|)
 expr_stmt|;
-name|g_snprintf
-argument_list|(
 name|str
-argument_list|,
-sizeof|sizeof
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Handle position: %0.6f"
@@ -13391,15 +13378,10 @@ operator|-
 name|EPSILON
 argument_list|)
 expr_stmt|;
-name|g_snprintf
-argument_list|(
 name|str
-argument_list|,
-sizeof|sizeof
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Handle position: %0.6f"
@@ -13493,15 +13475,10 @@ name|control_last_gx
 operator|+=
 name|delta
 expr_stmt|;
-name|g_snprintf
-argument_list|(
 name|str
-argument_list|,
-sizeof|sizeof
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Distance: %0.6f"
@@ -13537,6 +13514,15 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+if|if
+condition|(
+name|str
+condition|)
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
 name|curr_gradient
 operator|->
 name|dirty
@@ -18932,11 +18918,9 @@ name|double
 name|a
 parameter_list|)
 block|{
-name|char
+name|gchar
+modifier|*
 name|str
-index|[
-literal|256
-index|]
 decl_stmt|;
 name|cpopup_render_color_box
 argument_list|(
@@ -19026,15 +19010,10 @@ argument_list|,
 name|a
 argument_list|)
 expr_stmt|;
-name|g_snprintf
-argument_list|(
 name|str
-argument_list|,
-sizeof|sizeof
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|str
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"RGBA (%0.3f, %0.3f, %0.3f, %0.3f)"
@@ -19110,6 +19089,11 @@ name|n
 index|]
 argument_list|)
 argument_list|,
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
