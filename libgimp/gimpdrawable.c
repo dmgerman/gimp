@@ -1739,13 +1739,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_fill (gint32 drawable_ID,gint fill_type)
+DECL|function|gimp_drawable_fill (gint32 drawable_ID,GimpFillType fill_type)
 name|gimp_drawable_fill
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|gint
+name|GimpFillType
 name|fill_type
 parameter_list|)
 block|{

@@ -1638,13 +1638,13 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|gimp_image_merge_visible_layers (gint32 image_ID,gint merge_type)
+DECL|function|gimp_image_merge_visible_layers (gint32 image_ID,GimpMergeType merge_type)
 name|gimp_image_merge_visible_layers
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|GimpMergeType
 name|merge_type
 parameter_list|)
 block|{
@@ -4295,16 +4295,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_convert_indexed (gint32 image_ID,gint dither_type,gint palette_type,gint num_colors,gint alpha_dither,gint remove_unused,gchar * palette)
+DECL|function|gimp_image_convert_indexed (gint32 image_ID,GimpConvertDitherType dither_type,GimpConvertPaletteType palette_type,gint num_colors,gint alpha_dither,gint remove_unused,gchar * palette)
 name|gimp_image_convert_indexed
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint
+name|GimpConvertDitherType
 name|dither_type
 parameter_list|,
-name|gint
+name|GimpConvertPaletteType
 name|palette_type
 parameter_list|,
 name|gint
