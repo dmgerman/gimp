@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cce630108
+DECL|struct|__anon2b3038240108
 block|{
 DECL|member|film_height
 name|gint
@@ -213,7 +213,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5cce630208
+DECL|struct|__anon2b3038240208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -6346,7 +6346,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"All Values are Fractions of the Film Heigh"
+literal|"All Values are Fractions of the Film Height"
 argument_list|)
 argument_list|)
 expr_stmt|;
