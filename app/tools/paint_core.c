@@ -5149,9 +5149,12 @@ operator|=
 operator|(
 name|gint
 operator|)
+name|floor
+argument_list|(
 name|paint_core
 operator|->
 name|curx
+argument_list|)
 operator|-
 operator|(
 name|bwidth
@@ -5164,9 +5167,12 @@ operator|=
 operator|(
 name|gint
 operator|)
+name|floor
+argument_list|(
 name|paint_core
 operator|->
 name|cury
+argument_list|)
 operator|-
 operator|(
 name|bheight
@@ -8430,9 +8436,12 @@ operator|=
 operator|(
 name|gint
 operator|)
+name|floor
+argument_list|(
 name|paint_core
 operator|->
 name|curx
+argument_list|)
 operator|-
 operator|(
 name|brush_mask
@@ -8447,9 +8456,12 @@ operator|=
 operator|(
 name|gint
 operator|)
+name|floor
+argument_list|(
 name|paint_core
 operator|->
 name|cury
+argument_list|)
 operator|-
 operator|(
 name|brush_mask
@@ -8608,9 +8620,12 @@ operator|=
 operator|(
 name|gint
 operator|)
+name|floor
+argument_list|(
 name|paint_core
 operator|->
 name|curx
+argument_list|)
 operator|-
 operator|(
 name|brush_mask
@@ -8625,9 +8640,12 @@ operator|=
 operator|(
 name|gint
 operator|)
+name|floor
+argument_list|(
 name|paint_core
 operator|->
 name|cury
+argument_list|)
 operator|-
 operator|(
 name|brush_mask
@@ -8815,7 +8833,7 @@ comment|/*   combine the brush mask and the canvas tiles  */
 end_comment
 
 begin_comment
-unit|pixel_region_init (&srcPR, canvas_tiles, 		     canvas_buf->x, canvas_buf->y, 		     canvas_buf->width, canvas_buf->height, TRUE);    x = (gint) paint_core->curx - (brush_mask->width>> 1);   y = (gint) paint_core->cury - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;    maskPR.bytes     = 1;   maskPR.x         = 0;    maskPR.y         = 0;   maskPR.w         = srcPR.w;   maskPR.h         = srcPR.h;   maskPR.rowstride = maskPR.bytes * brush_mask->width;   maskPR.data      = mask_buf_data (brush_mask) + yoff * maskPR.rowstride + xoff * maskPR.bytes;
+unit|pixel_region_init (&srcPR, canvas_tiles, 		     canvas_buf->x, canvas_buf->y, 		     canvas_buf->width, canvas_buf->height, TRUE);    x = (gint) floor (paint_core->curx) - (brush_mask->width>> 1);   y = (gint) floor (paint_core->cury) - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;    maskPR.bytes     = 1;   maskPR.x         = 0;    maskPR.y         = 0;   maskPR.w         = srcPR.w;   maskPR.h         = srcPR.h;   maskPR.rowstride = maskPR.bytes * brush_mask->width;   maskPR.data      = mask_buf_data (brush_mask) + yoff * maskPR.rowstride + xoff * maskPR.bytes;
 comment|/*  combine the mask and canvas tiles  */
 end_comment
 
@@ -8830,7 +8848,7 @@ comment|/*  apply the canvas tiles to the canvas buf  */
 end_comment
 
 begin_comment
-unit|apply_mask_to_region (&srcPR,&maskPR, OPAQUE_OPACITY); }  static void paint_to_canvas_buf (PaintCore *paint_core,  		     MaskBuf   *brush_mask,  		     gint       brush_opacity) {   PixelRegion srcPR;   PixelRegion maskPR;   gint x;   gint y;   gint xoff;   gint yoff;    x = (gint) paint_core->curx - (brush_mask->width>> 1);   y = (gint) paint_core->cury - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;
+unit|apply_mask_to_region (&srcPR,&maskPR, OPAQUE_OPACITY); }  static void paint_to_canvas_buf (PaintCore *paint_core,  		     MaskBuf   *brush_mask,  		     gint       brush_opacity) {   PixelRegion srcPR;   PixelRegion maskPR;   gint x;   gint y;   gint xoff;   gint yoff;    x = (gint) floor (paint_core->curx) - (brush_mask->width>> 1);   y = (gint) floor (paint_core->cury) - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;
 comment|/*  combine the canvas buf and the brush mask to the canvas buf  */
 end_comment
 
@@ -9428,9 +9446,12 @@ operator|=
 operator|(
 name|gint
 operator|)
+name|floor
+argument_list|(
 name|paint_core
 operator|->
 name|curx
+argument_list|)
 operator|-
 operator|(
 name|pixmap_mask
@@ -9445,9 +9466,12 @@ operator|=
 operator|(
 name|gint
 operator|)
+name|floor
+argument_list|(
 name|paint_core
 operator|->
 name|cury
+argument_list|)
 operator|-
 operator|(
 name|pixmap_mask
