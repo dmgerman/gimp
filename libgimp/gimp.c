@@ -272,6 +272,24 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|LIBGIMP_COMPILATION
+end_ifndef
+
+begin_define
+DECL|macro|LIBGIMP_COMPILATION
+define|#
+directive|define
+name|LIBGIMP_COMPILATION
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -862,7 +880,7 @@ literal|10
 condition|)
 if|if
 condition|(
-name|g_strcasecmp
+name|g_ascii_strcasecmp
 argument_list|(
 name|argv
 index|[

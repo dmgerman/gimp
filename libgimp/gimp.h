@@ -125,7 +125,7 @@ file|<stdlib.h>
 end_include
 
 begin_comment
-comment|/* For _-argc and __argv */
+comment|/* For __argc and __argv */
 end_comment
 
 begin_ifdef
