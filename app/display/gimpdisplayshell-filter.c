@@ -1026,6 +1026,13 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|node
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|(
