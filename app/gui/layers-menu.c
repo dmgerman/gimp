@@ -383,7 +383,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer to _Imagesize"
+literal|"/Layer to _Image Size"
 argument_list|)
 block|,
 name|NULL
@@ -1043,7 +1043,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Layer to Imagesize"
+literal|"/Layer to Image Size"
 argument_list|,
 name|layer
 operator|&&

@@ -254,6 +254,23 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|inline
+name|void
+name|rotate_pointers
+parameter_list|(
+name|gulong
+modifier|*
+modifier|*
+name|p
+parameter_list|,
+name|guint32
+name|n
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|MaskBuf
 modifier|*
 name|gimp_paint_core_subsample_mask

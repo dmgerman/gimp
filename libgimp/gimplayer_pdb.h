@@ -121,6 +121,16 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_layer_resize_to_image_size
+parameter_list|(
+name|gint32
+name|layer_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_layer_delete
 parameter_list|(
 name|gint32

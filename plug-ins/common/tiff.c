@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0acfc30108
+DECL|struct|__anon2934842b0108
 block|{
 DECL|member|compression
 name|gint
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0acfc30208
+DECL|struct|__anon2934842b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0acfc30308
+DECL|struct|__anon2934842b0308
 block|{
 DECL|member|ID
 name|gint32
@@ -7088,10 +7088,13 @@ control|)
 block|{
 if|if
 condition|(
+operator|(
+name|guchar
+operator|)
 operator|*
 name|c
-operator|<
-literal|0
+operator|>
+literal|127
 condition|)
 block|{
 name|g_message
