@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a607ce0103
+DECL|enum|__anon296c6c510103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -214,6 +214,12 @@ modifier|*
 name|progressbar
 decl_stmt|;
 comment|/*  widget for progressbar                  */
+DECL|member|cursor_label
+name|GtkWidget
+modifier|*
+name|cursor_label
+decl_stmt|;
+comment|/*  widget for cursor position              */
 DECL|member|cancelbutton
 name|GtkWidget
 modifier|*
