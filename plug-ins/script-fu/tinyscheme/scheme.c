@@ -6642,6 +6642,10 @@ name|gchar
 modifier|*
 name|q2
 decl_stmt|;
+name|gchar
+modifier|*
+name|q3
+decl_stmt|;
 name|int
 name|i
 decl_stmt|;
@@ -6774,11 +6778,22 @@ operator|!=
 literal|0
 condition|)
 block|{
+name|q3
+operator|=
+name|g_utf8_normalize
+argument_list|(
+name|str
+argument_list|,
+name|len
+argument_list|,
+name|G_NORMALIZE_DEFAULT_COMPOSE
+argument_list|)
+expr_stmt|;
 name|memcpy
 argument_list|(
 name|q
 argument_list|,
-name|str
+name|q3
 argument_list|,
 name|len
 argument_list|)
@@ -6789,6 +6804,11 @@ name|len
 index|]
 operator|=
 literal|0
+expr_stmt|;
+name|g_free
+argument_list|(
+name|q3
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -11571,7 +11591,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2c7f47140103
+DECL|enum|__anon2c5a00330103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28782,7 +28802,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c7f47140208
+DECL|struct|__anon2c5a00330208
 specifier|static
 struct|struct
 block|{
@@ -29031,7 +29051,7 @@ value|"\017"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c7f47140308
+DECL|struct|__anon2c5a00330308
 typedef|typedef
 struct|struct
 block|{
