@@ -107,7 +107,7 @@ modifier|*
 name|children
 decl_stmt|;
 name|Atom
-name|class_atom
+name|role_atom
 decl_stmt|;
 name|Atom
 name|string_atom
@@ -175,13 +175,13 @@ condition|)
 return|return
 name|NULL
 return|;
-name|class_atom
+name|role_atom
 operator|=
 name|XInternAtom
 argument_list|(
 name|xdisplay
 argument_list|,
-literal|"WM_CLASS"
+literal|"WM_WINDOW_ROLE"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -245,7 +245,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|/*  We are searching the Gimp toolbox: Its WM_CLASS Property        *  has the values "toolbox\0Gimp\0". This is pretty relieable,        *  it is more reliable when we ask a special property, explicitely        *  set from the gimp. See below... :-)        */
+comment|/*  We are searching for the Gimp toolbox: Its WM_WINDOW_ROLE Property        *  (as set by gtk_window_set_role ()) has the value "gimp-toolbox".        *  This is pretty reliable, since ask for a special property,        *  explicitly set by the gimp. See below... :-)        */
 if|if
 condition|(
 name|XGetWindowProperty
@@ -254,7 +254,7 @@ name|xdisplay
 argument_list|,
 name|window
 argument_list|,
-name|class_atom
+name|role_atom
 argument_list|,
 literal|0
 argument_list|,
@@ -289,24 +289,13 @@ if|if
 condition|(
 name|nitems
 operator|>
-literal|12
+literal|11
 operator|&&
 name|strcmp
 argument_list|(
 name|data
 argument_list|,
-literal|"toolbox"
-argument_list|)
-operator|==
-literal|0
-operator|&&
-name|strcmp
-argument_list|(
-name|data
-operator|+
-literal|8
-argument_list|,
-literal|"Gimp"
+literal|"gimp-toolbox"
 argument_list|)
 operator|==
 literal|0
