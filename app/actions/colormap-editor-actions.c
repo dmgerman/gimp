@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcolormapeditor.h"
+file|"widgets/gimphelp-ids.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/gimphelp-ids.h"
+file|"actions.h"
 end_include
 
 begin_include
@@ -225,10 +225,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpColormapEditor
-modifier|*
-name|editor
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
@@ -243,21 +239,12 @@ name|num_colors
 init|=
 literal|0
 decl_stmt|;
-name|editor
+name|gimage
 operator|=
-name|GIMP_COLORMAP_EDITOR
+name|action_data_get_image
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
-name|gimage
-operator|=
-name|GIMP_IMAGE_EDITOR
-argument_list|(
-name|editor
-argument_list|)
-operator|->
-name|gimage
 expr_stmt|;
 if|if
 condition|(
