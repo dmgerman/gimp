@@ -281,7 +281,7 @@ literal|"file_url_load"
 argument_list|,
 literal|""
 argument_list|,
-literal|"http:,ftp:"
+literal|"http:,https:,ftp:"
 argument_list|)
 expr_stmt|;
 block|}
