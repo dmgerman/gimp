@@ -4884,7 +4884,7 @@ specifier|static
 name|void
 name|gimp_prop_file_entry_callback
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
 name|entry
 parameter_list|,
@@ -4908,7 +4908,7 @@ name|GParamSpec
 modifier|*
 name|param_spec
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
 name|entry
 parameter_list|)
@@ -5008,7 +5008,7 @@ name|NULL
 expr_stmt|;
 name|entry
 operator|=
-name|gimp_file_selection_new
+name|gimp_file_entry_new
 argument_list|(
 name|filesel_title
 argument_list|,
@@ -5036,7 +5036,7 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
-name|GIMP_FILE_SELECTION
+name|GIMP_FILE_ENTRY
 argument_list|(
 name|entry
 argument_list|)
@@ -5083,10 +5083,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_file_entry_callback (GimpFileSelection * entry,GObject * config)
+DECL|function|gimp_prop_file_entry_callback (GimpFileEntry * entry,GObject * config)
 name|gimp_prop_file_entry_callback
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
 name|entry
 parameter_list|,
@@ -5121,7 +5121,7 @@ condition|)
 return|return;
 name|value
 operator|=
-name|gimp_file_selection_get_filename
+name|gimp_file_entry_get_filename
 argument_list|(
 name|entry
 argument_list|)
@@ -5150,7 +5150,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_file_entry_notify (GObject * config,GParamSpec * param_spec,GimpFileSelection * entry)
+DECL|function|gimp_prop_file_entry_notify (GObject * config,GParamSpec * param_spec,GimpFileEntry * entry)
 name|gimp_prop_file_entry_notify
 parameter_list|(
 name|GObject
@@ -5161,7 +5161,7 @@ name|GParamSpec
 modifier|*
 name|param_spec
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
 name|entry
 parameter_list|)
@@ -5193,7 +5193,7 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-name|gimp_file_selection_set_filename
+name|gimp_file_entry_set_filename
 argument_list|(
 name|entry
 argument_list|,

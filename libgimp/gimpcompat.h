@@ -176,8 +176,33 @@ define|#
 directive|define
 name|INTENSITY_BLUE
 value|GIMP_RGB_INTENSITY_BLUE
+DECL|macro|gimp_file_selection_
+define|#
+directive|define
+name|gimp_file_selection_
+value|gimp_file_entry_
+DECL|macro|GimpFileSelection
+define|#
+directive|define
+name|GimpFileSelection
+value|GimpFileEntry
+DECL|macro|GIMP_TYPE_FILE_SELECTION
+define|#
+directive|define
+name|GIMP_TYPE_FILE_SELECTION
+value|GIMP_TYPE_FILE_ENTRY
+DECL|macro|GIMP_FILE_SELECTION
+define|#
+directive|define
+name|GIMP_FILE_SELECTION
+value|GIMP_FILE_ENTRY
+DECL|macro|GIMP_IS_FILE_SELECTION
+define|#
+directive|define
+name|GIMP_IS_FILE_SELECTION
+value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon28b836080103
+DECL|enum|__anon29ffb9760103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -209,7 +234,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon28b836080203
+DECL|enum|__anon29ffb9760203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -236,7 +261,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b836080303
+DECL|enum|__anon29ffb9760303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -263,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b836080403
+DECL|enum|__anon29ffb9760403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -295,7 +320,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b836080503
+DECL|enum|__anon29ffb9760503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -312,7 +337,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b836080603
+DECL|enum|__anon29ffb9760603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -329,7 +354,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b836080703
+DECL|enum|__anon29ffb9760703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -346,7 +371,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b836080803
+DECL|enum|__anon29ffb9760803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -368,7 +393,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b836080903
+DECL|enum|__anon29ffb9760903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR

@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpfileselection.h  * Copyright (C) 1999 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU   * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpfileentry.h  * Copyright (C) 1999-2003 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_FILE_SELECTION_H__
+name|__GIMP_FILE_ENTRY_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_FILE_SELECTION_H__
+DECL|macro|__GIMP_FILE_ENTRY_H__
 define|#
 directive|define
-name|__GIMP_FILE_SELECTION_H__
+name|__GIMP_FILE_ENTRY_H__
 end_define
 
 begin_macro
@@ -25,81 +25,81 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_FILE_SELECTION
+DECL|macro|GIMP_TYPE_FILE_ENTRY
 define|#
 directive|define
-name|GIMP_TYPE_FILE_SELECTION
-value|(gimp_file_selection_get_type ())
+name|GIMP_TYPE_FILE_ENTRY
+value|(gimp_file_entry_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_FILE_SELECTION (obj)
+DECL|macro|GIMP_FILE_ENTRY (obj)
 define|#
 directive|define
-name|GIMP_FILE_SELECTION
+name|GIMP_FILE_ENTRY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_FILE_SELECTION, GimpFileSelection))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_FILE_ENTRY, GimpFileEntry))
 end_define
 
 begin_define
-DECL|macro|GIMP_FILE_SELECTION_CLASS (klass)
+DECL|macro|GIMP_FILE_ENTRY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_FILE_SELECTION_CLASS
+name|GIMP_FILE_ENTRY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FILE_SELECTION, GimpFileSelectionClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_FILE_ENTRY, GimpFileEntryClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_FILE_SELECTION (obj)
+DECL|macro|GIMP_IS_FILE_ENTRY (obj)
 define|#
 directive|define
-name|GIMP_IS_FILE_SELECTION
+name|GIMP_IS_FILE_ENTRY
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_FILE_SELECTION))
+value|(G_TYPE_CHECK_INSTANCE_TYPE (obj, GIMP_TYPE_FILE_ENTRY))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_FILE_SELECTION_CLASS (klass)
+DECL|macro|GIMP_IS_FILE_ENTRY_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_FILE_SELECTION_CLASS
+name|GIMP_IS_FILE_ENTRY_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FILE_SELECTION))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_FILE_ENTRY))
 end_define
 
 begin_define
-DECL|macro|GIMP_FILE_SELECTION_GET_CLASS (obj)
+DECL|macro|GIMP_FILE_ENTRY_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_FILE_SELECTION_GET_CLASS
+name|GIMP_FILE_ENTRY_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_FILE_SELECTION, GimpFileSelectionClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_FILE_ENTRY, GimpFileEntryClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpFileSelectionClass
+DECL|typedef|GimpFileEntryClass
 typedef|typedef
 name|struct
-name|_GimpFileSelectionClass
-name|GimpFileSelectionClass
+name|_GimpFileEntryClass
+name|GimpFileEntryClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpFileSelection
+DECL|struct|_GimpFileEntry
 struct|struct
-name|_GimpFileSelection
+name|_GimpFileEntry
 block|{
 DECL|member|parent_instance
 name|GtkHBox
@@ -143,9 +143,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpFileSelectionClass
+DECL|struct|_GimpFileEntryClass
 struct|struct
-name|_GimpFileSelectionClass
+name|_GimpFileEntryClass
 block|{
 DECL|member|parent_class
 name|GtkHBoxClass
@@ -158,9 +158,9 @@ modifier|*
 name|filename_changed
 function_decl|)
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 function_decl|;
 block|}
@@ -169,7 +169,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_file_selection_get_type
+name|gimp_file_entry_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -180,7 +180,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_file_selection_new
+name|gimp_file_entry_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -204,22 +204,22 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_file_selection_get_filename
+name|gimp_file_entry_get_filename
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_file_selection_set_filename
+name|gimp_file_entry_set_filename
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|,
 specifier|const
 name|gchar
@@ -239,7 +239,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_FILE_SELECTION_H__ */
+comment|/* __GIMP_FILE_ENTRY_H__ */
 end_comment
 
 end_unit

@@ -160,7 +160,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4670d80108
+DECL|struct|__anon27bfa0160108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -204,12 +204,12 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4670d80208
+DECL|struct|__anon27bfa0160208
 block|{
-DECL|member|fileselection
+DECL|member|file_entry
 name|GtkWidget
 modifier|*
-name|fileselection
+name|file_entry
 decl_stmt|;
 DECL|member|filename
 name|gchar
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4670d80308
+DECL|struct|__anon27bfa0160308
 block|{
 DECL|member|name
 name|gchar
@@ -253,7 +253,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4670d80408
+DECL|struct|__anon27bfa0160408
 block|{
 DECL|member|list
 name|GSList
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a4670d8050a
+DECL|union|__anon27bfa016050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -344,7 +344,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4670d80608
+DECL|struct|__anon27bfa0160608
 block|{
 DECL|member|script_name
 name|gchar
@@ -430,7 +430,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4670d80708
+DECL|struct|__anon27bfa0160708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -693,8 +693,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|SFScript
+modifier|*
+name|script
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -716,14 +717,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_file_selection_callback
+name|script_fu_file_entry_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|SFFilename
+modifier|*
+name|fil
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -731,7 +733,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_pattern_preview
+name|script_fu_pattern_callback
 parameter_list|(
 specifier|const
 name|gchar
@@ -764,7 +766,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_gradient_preview
+name|script_fu_gradient_callback
 parameter_list|(
 specifier|const
 name|gchar
@@ -791,7 +793,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_font_preview
+name|script_fu_font_callback
 parameter_list|(
 specifier|const
 name|gchar
@@ -810,7 +812,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|script_fu_brush_preview
+name|script_fu_brush_callback
 parameter_list|(
 specifier|const
 name|gchar
@@ -2690,7 +2692,7 @@ index|]
 operator|.
 name|sfa_file
 operator|.
-name|fileselection
+name|file_entry
 operator|=
 name|NULL
 expr_stmt|;
@@ -6602,7 +6604,7 @@ name|SF_FILENAME
 condition|)
 name|widget
 operator|=
-name|gimp_file_selection_new
+name|gimp_file_entry_new
 argument_list|(
 name|_
 argument_list|(
@@ -6628,7 +6630,7 @@ expr_stmt|;
 else|else
 name|widget
 operator|=
-name|gimp_file_selection_new
+name|gimp_file_entry_new
 argument_list|(
 name|_
 argument_list|(
@@ -6660,7 +6662,7 @@ index|]
 operator|.
 name|sfa_file
 operator|.
-name|fileselection
+name|file_entry
 operator|=
 name|widget
 expr_stmt|;
@@ -6672,7 +6674,7 @@ literal|"filename_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|script_fu_file_selection_callback
+name|script_fu_file_entry_callback
 argument_list|)
 argument_list|,
 operator|&
@@ -6712,7 +6714,7 @@ index|]
 operator|.
 name|sfa_font
 argument_list|,
-name|script_fu_font_preview
+name|script_fu_font_callback
 argument_list|,
 operator|&
 name|script
@@ -6747,7 +6749,7 @@ index|]
 operator|.
 name|sfa_pattern
 argument_list|,
-name|script_fu_pattern_preview
+name|script_fu_pattern_callback
 argument_list|,
 operator|&
 name|script
@@ -6782,7 +6784,7 @@ index|]
 operator|.
 name|sfa_gradient
 argument_list|,
-name|script_fu_gradient_preview
+name|script_fu_gradient_callback
 argument_list|,
 operator|&
 name|script
@@ -6852,7 +6854,7 @@ name|sfa_brush
 operator|.
 name|paint_mode
 argument_list|,
-name|script_fu_brush_preview
+name|script_fu_brush_callback
 argument_list|,
 operator|&
 name|script
@@ -7225,8 +7227,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_pattern_preview (const gchar * name,gint width,gint height,gint bytes,const guchar * mask_data,gboolean closing,gpointer data)
-name|script_fu_pattern_preview
+DECL|function|script_fu_pattern_callback (const gchar * name,gint width,gint height,gint bytes,const guchar * mask_data,gboolean closing,gpointer data)
+name|script_fu_pattern_callback
 parameter_list|(
 specifier|const
 name|gchar
@@ -7258,16 +7260,9 @@ name|gchar
 modifier|*
 modifier|*
 name|pname
-decl_stmt|;
-name|pname
-operator|=
-operator|(
-name|gchar
-operator|*
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 operator|*
@@ -7288,8 +7283,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_gradient_preview (const gchar * name,gint width,const gdouble * mask_data,gboolean closing,gpointer data)
-name|script_fu_gradient_preview
+DECL|function|script_fu_gradient_callback (const gchar * name,gint width,const gdouble * mask_data,gboolean closing,gpointer data)
+name|script_fu_gradient_callback
 parameter_list|(
 specifier|const
 name|gchar
@@ -7315,16 +7310,9 @@ name|gchar
 modifier|*
 modifier|*
 name|gname
-decl_stmt|;
-name|gname
-operator|=
-operator|(
-name|gchar
-operator|*
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 operator|*
@@ -7345,8 +7333,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_font_preview (const gchar * name,gboolean closing,gpointer data)
-name|script_fu_font_preview
+DECL|function|script_fu_font_callback (const gchar * name,gboolean closing,gpointer data)
+name|script_fu_font_callback
 parameter_list|(
 specifier|const
 name|gchar
@@ -7364,16 +7352,9 @@ name|gchar
 modifier|*
 modifier|*
 name|fname
-decl_stmt|;
-name|fname
-operator|=
-operator|(
-name|gchar
-operator|*
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 operator|*
@@ -7394,8 +7375,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_brush_preview (const gchar * name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean closing,gpointer data)
-name|script_fu_brush_preview
+DECL|function|script_fu_brush_callback (const gchar * name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean closing,gpointer data)
+name|script_fu_brush_callback
 parameter_list|(
 specifier|const
 name|gchar
@@ -7432,15 +7413,9 @@ block|{
 name|SFBrush
 modifier|*
 name|brush
-decl_stmt|;
-name|brush
-operator|=
-operator|(
-name|SFBrush
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 name|brush
@@ -7518,14 +7493,7 @@ argument_list|(
 name|script
 argument_list|)
 expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|sf_interface
-operator|->
-name|dialog
-argument_list|)
-expr_stmt|;
-break|break;
+comment|/* fallthru */
 default|default:
 name|gtk_widget_destroy
 argument_list|(
@@ -8951,9 +8919,9 @@ operator|.
 name|filename
 argument_list|)
 expr_stmt|;
-name|gimp_file_selection_set_filename
+name|gimp_file_entry_set_filename
 argument_list|(
-name|GIMP_FILE_SELECTION
+name|GIMP_FILE_ENTRY
 argument_list|(
 name|script
 operator|->
@@ -8964,7 +8932,7 @@ index|]
 operator|.
 name|sfa_file
 operator|.
-name|fileselection
+name|file_entry
 argument_list|)
 argument_list|,
 name|script
@@ -9141,15 +9109,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_about_callback (GtkWidget * widget,gpointer data)
+DECL|function|script_fu_about_callback (GtkWidget * widget,SFScript * script)
 name|script_fu_about_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|SFScript
+modifier|*
+name|script
 parameter_list|)
 block|{
 name|GtkWidget
@@ -9183,16 +9152,6 @@ decl_stmt|;
 name|GtkTextBuffer
 modifier|*
 name|text_buffer
-decl_stmt|;
-name|SFScript
-modifier|*
-name|script
-init|=
-operator|(
-name|SFScript
-operator|*
-operator|)
-name|data
 decl_stmt|;
 if|if
 condition|(
@@ -9844,29 +9803,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_file_selection_callback (GtkWidget * widget,gpointer data)
-name|script_fu_file_selection_callback
+DECL|function|script_fu_file_entry_callback (GtkWidget * widget,SFFilename * file)
+name|script_fu_file_entry_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|SFFilename
 modifier|*
 name|file
-decl_stmt|;
-name|file
-operator|=
-operator|(
-name|SFFilename
-operator|*
-operator|)
-name|data
-expr_stmt|;
+parameter_list|)
+block|{
 if|if
 condition|(
 name|file
@@ -9884,13 +9832,13 @@ name|file
 operator|->
 name|filename
 operator|=
-name|gimp_file_selection_get_filename
+name|gimp_file_entry_get_filename
 argument_list|(
-name|GIMP_FILE_SELECTION
+name|GIMP_FILE_ENTRY
 argument_list|(
 name|file
 operator|->
-name|fileselection
+name|file_entry
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -9913,7 +9861,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Script-Fu Error while executing\n %s\n%s"
+literal|"Error while executing\n%s\n%s"
 argument_list|)
 argument_list|,
 name|command

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpfileselection.c  * Copyright (C) 1999-2000 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpfileentry.c  * Copyright (C) 1999-2003 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -69,7 +69,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfileselection.h"
+file|"gimpfileentry.h"
 end_include
 
 begin_include
@@ -80,7 +80,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b14bf10103
+DECL|enum|__anon2947d9ca0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -94,9 +94,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_file_selection_class_init
+name|gimp_file_entry_class_init
 parameter_list|(
-name|GimpFileSelectionClass
+name|GimpFileEntryClass
 modifier|*
 name|klass
 parameter_list|)
@@ -106,11 +106,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_file_selection_init
+name|gimp_file_entry_init
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -118,7 +118,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_file_selection_destroy
+name|gimp_file_entry_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -130,15 +130,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_file_selection_entry_activate
+name|gimp_file_entry_entry_activate
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -146,7 +146,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|gimp_file_selection_entry_focus_out
+name|gimp_file_entry_entry_focus_out
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -156,9 +156,9 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -166,15 +166,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_file_selection_browse_clicked
+name|gimp_file_entry_browse_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -182,20 +182,20 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_file_selection_check_filename
+name|gimp_file_entry_check_filename
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|gimp_file_selection_signals
+DECL|variable|gimp_file_entry_signals
 specifier|static
 name|guint
-name|gimp_file_selection_signals
+name|gimp_file_entry_signals
 index|[
 name|LAST_SIGNAL
 index|]
@@ -219,33 +219,33 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_file_selection_get_type (void)
-name|gimp_file_selection_get_type
+DECL|function|gimp_file_entry_get_type (void)
+name|gimp_file_entry_get_type
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 specifier|static
 name|GType
-name|selection_type
+name|entry_type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|selection_type
+name|entry_type
 condition|)
 block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|selection_info
+name|entry_info
 init|=
 block|{
 sizeof|sizeof
 argument_list|(
-name|GimpFileSelectionClass
+name|GimpFileEntryClass
 argument_list|)
 block|,
 operator|(
@@ -261,7 +261,7 @@ block|,
 operator|(
 name|GClassInitFunc
 operator|)
-name|gimp_file_selection_class_init
+name|gimp_file_entry_class_init
 block|,
 name|NULL
 block|,
@@ -271,7 +271,7 @@ block|,
 comment|/* class_data     */
 sizeof|sizeof
 argument_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 argument_list|)
 block|,
 literal|0
@@ -280,26 +280,26 @@ comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
-name|gimp_file_selection_init
+name|gimp_file_entry_init
 block|,       }
 decl_stmt|;
-name|selection_type
+name|entry_type
 operator|=
 name|g_type_register_static
 argument_list|(
 name|GTK_TYPE_HBOX
 argument_list|,
-literal|"GimpFileSelection"
+literal|"GimpFileEntry"
 argument_list|,
 operator|&
-name|selection_info
+name|entry_info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|selection_type
+name|entry_type
 return|;
 block|}
 end_function
@@ -307,10 +307,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_selection_class_init (GimpFileSelectionClass * klass)
-name|gimp_file_selection_class_init
+DECL|function|gimp_file_entry_class_init (GimpFileEntryClass * klass)
+name|gimp_file_entry_class_init
 parameter_list|(
-name|GimpFileSelectionClass
+name|GimpFileEntryClass
 modifier|*
 name|klass
 parameter_list|)
@@ -321,11 +321,10 @@ name|object_class
 decl_stmt|;
 name|object_class
 operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
+name|GTK_OBJECT_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
@@ -334,7 +333,7 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
-name|gimp_file_selection_signals
+name|gimp_file_entry_signals
 index|[
 name|FILENAME_CHANGED
 index|]
@@ -352,7 +351,7 @@ name|G_SIGNAL_RUN_FIRST
 argument_list|,
 name|G_STRUCT_OFFSET
 argument_list|(
-name|GimpFileSelectionClass
+name|GimpFileEntryClass
 argument_list|,
 name|filename_changed
 argument_list|)
@@ -372,7 +371,7 @@ name|object_class
 operator|->
 name|destroy
 operator|=
-name|gimp_file_selection_destroy
+name|gimp_file_entry_destroy
 expr_stmt|;
 name|klass
 operator|->
@@ -386,33 +385,33 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_selection_init (GimpFileSelection * selection)
-name|gimp_file_selection_init
+DECL|function|gimp_file_entry_init (GimpFileEntry * entry)
+name|gimp_file_entry_init
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 block|{
-name|selection
+name|entry
 operator|->
 name|title
 operator|=
 name|NULL
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|file_selection
 operator|=
 name|NULL
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|check_valid
 operator|=
 name|FALSE
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|file_exists
 operator|=
@@ -422,23 +421,23 @@ name|gtk_box_set_spacing
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_set_homogeneous
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|browse_button
 operator|=
@@ -451,10 +450,10 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 argument_list|,
-name|selection
+name|entry
 operator|->
 name|browse_button
 argument_list|,
@@ -467,14 +466,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|browse_button
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|browse_button
 argument_list|,
@@ -482,13 +481,13 @@ literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_file_selection_browse_clicked
+name|gimp_file_entry_browse_clicked
 argument_list|)
 argument_list|,
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|entry
 operator|=
@@ -499,10 +498,10 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 argument_list|,
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|,
@@ -515,14 +514,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|,
@@ -530,15 +529,15 @@ literal|"activate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_file_selection_entry_activate
+name|gimp_file_entry_entry_activate
 argument_list|)
 argument_list|,
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|,
@@ -546,10 +545,10 @@ literal|"focus_out_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_file_selection_entry_focus_out
+name|gimp_file_entry_entry_focus_out
 argument_list|)
 argument_list|,
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -558,38 +557,38 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_selection_destroy (GtkObject * object)
-name|gimp_file_selection_destroy
+DECL|function|gimp_file_entry_destroy (GtkObject * object)
+name|gimp_file_entry_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 init|=
-name|GIMP_FILE_SELECTION
+name|GIMP_FILE_ENTRY
 argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 condition|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|file_selection
 operator|=
@@ -598,19 +597,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|selection
+name|entry
 operator|->
 name|title
 condition|)
 block|{
 name|g_free
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|title
 argument_list|)
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|title
 operator|=
@@ -631,14 +630,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_selection_new:  * @title: The title of the #GtkFileSelection dialog.  * @filename: The initial filename.  * @dir_only: %TRUE if the file selection should accept directories only.  * @check_valid: %TRUE if the widget should check if the entered file  *               really exists.  *  * Creates a new #GimpFileSelection widget.  *  * Returns: A pointer to the new #GimpFileSelection widget.  **/
+comment|/**  * gimp_file_entry_new:  * @title:       The title of the #GtkFileEntry dialog.  * @filename:    The initial filename.  * @dir_only:    %TRUE if the file entry should accept directories only.  * @check_valid: %TRUE if the widget should check if the entered file  *               really exists.  *  * Creates a new #GimpFileEntry widget.  *  * Returns: A pointer to the new #GimpFileEntry widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_file_selection_new (const gchar * title,const gchar * filename,gboolean dir_only,gboolean check_valid)
-name|gimp_file_selection_new
+DECL|function|gimp_file_entry_new (const gchar * title,const gchar * filename,gboolean dir_only,gboolean check_valid)
+name|gimp_file_entry_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -657,20 +656,20 @@ name|gboolean
 name|check_valid
 parameter_list|)
 block|{
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 decl_stmt|;
-name|selection
+name|entry
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_FILE_SELECTION
+name|GIMP_TYPE_FILE_ENTRY
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|title
 operator|=
@@ -679,13 +678,13 @@ argument_list|(
 name|title
 argument_list|)
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|dir_only
 operator|=
 name|dir_only
 expr_stmt|;
-name|selection
+name|entry
 operator|->
 name|check_valid
 operator|=
@@ -696,7 +695,7 @@ condition|(
 name|check_valid
 condition|)
 block|{
-name|selection
+name|entry
 operator|->
 name|file_exists
 operator|=
@@ -711,10 +710,10 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 argument_list|,
-name|selection
+name|entry
 operator|->
 name|file_exists
 argument_list|,
@@ -727,15 +726,15 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_exists
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_file_selection_set_filename
+name|gimp_file_entry_set_filename
 argument_list|(
-name|selection
+name|entry
 argument_list|,
 name|filename
 argument_list|)
@@ -743,32 +742,32 @@ expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_selection_get_filename:  * @selection: The file selection you want to know the filename from.  *  * Note that you have to g_free() the returned string.  *  * Returns: The file or directory the user has entered.  **/
+comment|/**  * gimp_file_entry_get_filename:  * @entry: The file entry you want to know the filename from.  *  * Note that you have to g_free() the returned string.  *  * Returns: The file or directory the user has entered.  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_file_selection_get_filename (GimpFileSelection * selection)
-name|gimp_file_selection_get_filename
+DECL|function|gimp_file_entry_get_filename (GimpFileEntry * entry)
+name|gimp_file_entry_get_filename
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_FILE_SELECTION
+name|GIMP_IS_FILE_ENTRY
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 argument_list|,
 name|NULL
@@ -779,7 +778,7 @@ name|gtk_editable_get_chars
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|)
@@ -794,17 +793,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_selection_set_filename:  * @selection: The file selection you want to set the filename for.  * @filename: The new filename.  *  * If you specified @check_valid as %TRUE in gimp_file_selection_new()  * the #GimpFileSelection will immediately check the validity of the file  * name.  *  */
+comment|/**  * gimp_file_entry_set_filename:  * @entry:    The file entry you want to set the filename for.  * @filename: The new filename.  *  * If you specified @check_valid as %TRUE in gimp_file_entry_new()  * the #GimpFileEntry will immediately check the validity of the file  * name.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_file_selection_set_filename (GimpFileSelection * selection,const gchar * filename)
-name|gimp_file_selection_set_filename
+DECL|function|gimp_file_entry_set_filename (GimpFileEntry * entry,const gchar * filename)
+name|gimp_file_entry_set_filename
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|,
 specifier|const
 name|gchar
@@ -814,9 +813,9 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_FILE_SELECTION
+name|GIMP_IS_FILE_ENTRY
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -824,7 +823,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|)
@@ -837,13 +836,13 @@ literal|""
 argument_list|)
 expr_stmt|;
 comment|/*  update everything    */
-name|gimp_file_selection_entry_activate
+name|gimp_file_entry_entry_activate
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|,
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -852,16 +851,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_selection_entry_activate (GtkWidget * widget,GimpFileSelection * selection)
-name|gimp_file_selection_entry_activate
+DECL|function|gimp_file_entry_entry_activate (GtkWidget * widget,GimpFileEntry * entry)
+name|gimp_file_entry_entry_activate
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 block|{
 name|gchar
@@ -931,20 +930,20 @@ literal|'\0'
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|,
-name|gimp_file_selection_entry_activate
+name|gimp_file_entry_entry_activate
 argument_list|,
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|)
@@ -954,18 +953,18 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|,
-name|gimp_file_selection_entry_activate
+name|gimp_file_entry_entry_activate
 argument_list|,
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 condition|)
@@ -973,7 +972,7 @@ name|gtk_file_selection_set_filename
 argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -986,16 +985,16 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-name|gimp_file_selection_check_filename
+name|gimp_file_entry_check_filename
 argument_list|(
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
 name|gtk_editable_set_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|)
@@ -1006,9 +1005,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|selection
+name|entry
 argument_list|,
-name|gimp_file_selection_signals
+name|gimp_file_entry_signals
 index|[
 name|FILENAME_CHANGED
 index|]
@@ -1022,8 +1021,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_file_selection_entry_focus_out (GtkWidget * widget,GdkEvent * event,GimpFileSelection * selection)
-name|gimp_file_selection_entry_focus_out
+DECL|function|gimp_file_entry_entry_focus_out (GtkWidget * widget,GdkEvent * event,GimpFileEntry * entry)
+name|gimp_file_entry_entry_focus_out
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1033,16 +1032,16 @@ name|GdkEvent
 modifier|*
 name|event
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 block|{
-name|gimp_file_selection_entry_activate
+name|gimp_file_entry_entry_activate
 argument_list|(
 name|widget
 argument_list|,
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
 return|return
@@ -1052,14 +1051,14 @@ block|}
 end_function
 
 begin_comment
-comment|/*  local callback of gimp_file_selection_browse_clicked()  */
+comment|/*  local callback of gimp_file_entry_browse_clicked()  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_selection_filesel_response (GtkWidget * dialog,gint response_id,GimpFileSelection * selection)
-name|gimp_file_selection_filesel_response
+DECL|function|gimp_file_entry_filesel_response (GtkWidget * dialog,gint response_id,GimpFileEntry * entry)
+name|gimp_file_entry_filesel_response
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1068,9 +1067,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 block|{
 if|if
@@ -1095,9 +1094,9 @@ name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_file_selection_set_filename
+name|gimp_file_entry_set_filename
 argument_list|(
-name|selection
+name|entry
 argument_list|,
 name|filename
 argument_list|)
@@ -1105,9 +1104,7 @@ expr_stmt|;
 block|}
 name|gtk_widget_hide
 argument_list|(
-name|selection
-operator|->
-name|file_selection
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -1116,16 +1113,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_selection_browse_clicked (GtkWidget * widget,GimpFileSelection * selection)
-name|gimp_file_selection_browse_clicked
+DECL|function|gimp_file_entry_browse_clicked (GtkWidget * widget,GimpFileEntry * entry)
+name|gimp_file_entry_browse_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 block|{
 name|gchar
@@ -1138,7 +1135,7 @@ name|gtk_editable_get_chars
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|)
@@ -1152,7 +1149,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|selection
+name|entry
 operator|->
 name|file_selection
 condition|)
@@ -1163,22 +1160,22 @@ name|filesel
 decl_stmt|;
 if|if
 condition|(
-name|selection
+name|entry
 operator|->
 name|dir_only
 condition|)
 block|{
-name|selection
+name|entry
 operator|->
 name|file_selection
 operator|=
 name|gtk_file_selection_new
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|title
 condition|?
-name|selection
+name|entry
 operator|->
 name|title
 else|:
@@ -1193,7 +1190,7 @@ name|gtk_widget_hide
 argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -1205,7 +1202,7 @@ name|gtk_widget_hide
 argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -1218,17 +1215,17 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|selection
+name|entry
 operator|->
 name|file_selection
 operator|=
 name|gtk_file_selection_new
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|title
 condition|?
-name|selection
+name|entry
 operator|->
 name|title
 else|:
@@ -1243,7 +1240,7 @@ name|filesel
 operator|=
 name|GTK_FILE_SELECTION
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -1252,7 +1249,7 @@ name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -1264,7 +1261,7 @@ name|gtk_window_set_role
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -1302,10 +1299,10 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_file_selection_filesel_response
+name|gimp_file_entry_filesel_response
 argument_list|)
 argument_list|,
-name|selection
+name|entry
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1324,7 +1321,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
-name|selection
+name|entry
 argument_list|,
 literal|"unmap"
 argument_list|,
@@ -1341,7 +1338,7 @@ name|gtk_file_selection_set_filename
 argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -1353,7 +1350,7 @@ name|gtk_window_set_screen
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -1368,7 +1365,7 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_selection
 argument_list|)
@@ -1380,12 +1377,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_selection_check_filename (GimpFileSelection * selection)
-name|gimp_file_selection_check_filename
+DECL|function|gimp_file_entry_check_filename (GimpFileEntry * entry)
+name|gimp_file_entry_check_filename
 parameter_list|(
-name|GimpFileSelection
+name|GimpFileEntry
 modifier|*
-name|selection
+name|entry
 parameter_list|)
 block|{
 name|gchar
@@ -1398,12 +1395,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|selection
+name|entry
 operator|->
 name|check_valid
 operator|||
 operator|!
-name|selection
+name|entry
 operator|->
 name|file_exists
 condition|)
@@ -1414,7 +1411,7 @@ name|gtk_editable_get_chars
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|entry
 argument_list|)
@@ -1427,7 +1424,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|selection
+name|entry
 operator|->
 name|dir_only
 condition|)
@@ -1459,7 +1456,7 @@ name|gtk_image_set_from_stock
 argument_list|(
 name|GTK_IMAGE
 argument_list|(
-name|selection
+name|entry
 operator|->
 name|file_exists
 argument_list|)

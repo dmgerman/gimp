@@ -97,7 +97,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpwidgets/gimpfileselection.h>
+file|<libgimpwidgets/gimpfileentry.h>
 end_include
 
 begin_include
