@@ -83,6 +83,54 @@ end_define
 begin_function_decl
 specifier|extern
 name|gint32
+name|ToL
+parameter_list|(
+name|guchar
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
+name|void
+name|FromL
+parameter_list|(
+name|gint32
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
+name|gint16
+name|ToS
+parameter_list|(
+name|guchar
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
+name|void
+name|FromS
+parameter_list|(
+name|gint16
+parameter_list|,
+name|guchar
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
+name|gint32
 name|ReadBMP
 parameter_list|(
 name|char
@@ -249,7 +297,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b16cab30108
+DECL|struct|__anon29fda1620108
 block|{
 DECL|member|bfSize
 name|unsigned
@@ -284,7 +332,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b16cab30208
+DECL|struct|__anon29fda1620208
 block|{
 DECL|member|biWidth
 name|unsigned
@@ -298,12 +346,18 @@ name|long
 name|biHeight
 decl_stmt|;
 comment|/* 16 */
-DECL|member|biPlanes_biBitCnt
+DECL|member|biPlanes
 name|unsigned
-name|long
-name|biPlanes_biBitCnt
+name|short
+name|biPlanes
 decl_stmt|;
 comment|/* 1A */
+DECL|member|biBitCnt
+name|unsigned
+name|short
+name|biBitCnt
+decl_stmt|;
+comment|/* 1C */
 DECL|member|biCompr
 name|unsigned
 name|long
@@ -350,57 +404,37 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b16cab30308
+DECL|struct|__anon29fda1620308
 block|{
-DECL|member|bcWidth_bcHeight
+DECL|member|bcWidth
 name|unsigned
-name|long
-name|bcWidth_bcHeight
+name|short
+name|bcWidth
 decl_stmt|;
 comment|/* 12 */
-DECL|member|bcPlanes_bcBitCnt
+DECL|member|bcHeight
 name|unsigned
-name|long
-name|bcPlanes_bcBitCnt
+name|short
+name|bcHeight
 decl_stmt|;
-comment|/* 1A */
+comment|/* 14 */
+DECL|member|bcPlanes
+name|unsigned
+name|short
+name|bcPlanes
+decl_stmt|;
+comment|/* 16 */
+DECL|member|bcBitCnt
+name|unsigned
+name|short
+name|bcBitCnt
+decl_stmt|;
+comment|/* 18 */
 DECL|variable|Bitmap_OS2_Head
 block|}
 name|Bitmap_OS2_Head
 struct|;
 end_struct
-
-begin_define
-DECL|macro|biBitCnt
-define|#
-directive|define
-name|biBitCnt
-value|((Bitmap_Head.biPlanes_biBitCnt& 0xffff0000)>> 16)
-end_define
-
-begin_define
-DECL|macro|bcBitCnt
-define|#
-directive|define
-name|bcBitCnt
-value|((Bitmap_OS2_Head.biPlanes_biBitCnt& 0xffff0000)>> 16)
-end_define
-
-begin_define
-DECL|macro|bcHeight
-define|#
-directive|define
-name|bcHeight
-value|((Bitmap_OS2_Head.bcWidth_bcHeight& 0xffff0000)>> 16)
-end_define
-
-begin_define
-DECL|macro|bcWidth
-define|#
-directive|define
-name|bcWidth
-value|(Bitmap_OS2_Head.bcWidth_bcHeight& 0x0000ffff)
-end_define
 
 end_unit
 
