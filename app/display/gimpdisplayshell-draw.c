@@ -316,7 +316,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295b535a0103
+DECL|enum|__anon28fcea570103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2394,7 +2394,7 @@ name|GTK_TYPE_MENU_BAR
 argument_list|,
 name|gdisp
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|shell

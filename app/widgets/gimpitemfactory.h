@@ -145,6 +145,10 @@ DECL|member|update_on_popup
 name|gboolean
 name|update_on_popup
 decl_stmt|;
+DECL|member|create_tearoff
+name|gboolean
+name|create_tearoff
+decl_stmt|;
 DECL|member|title
 name|gchar
 modifier|*
@@ -291,9 +295,6 @@ name|guint
 name|callback_type
 parameter_list|,
 name|gboolean
-name|create_tearoff
-parameter_list|,
-name|gboolean
 name|static_entry
 parameter_list|)
 function_decl|;
@@ -319,9 +320,6 @@ name|callback_data
 parameter_list|,
 name|guint
 name|callback_type
-parameter_list|,
-name|gboolean
-name|create_tearoff
 parameter_list|,
 name|gboolean
 name|static_entries

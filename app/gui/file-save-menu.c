@@ -403,8 +403,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

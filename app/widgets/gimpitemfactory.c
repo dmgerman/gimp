@@ -840,6 +840,12 @@ name|update_on_popup
 expr_stmt|;
 name|factory
 operator|->
+name|create_tearoff
+operator|=
+name|create_tearoff
+expr_stmt|;
+name|factory
+operator|->
 name|title
 operator|=
 name|g_strdup
@@ -901,8 +907,6 @@ argument_list|,
 name|callback_data
 argument_list|,
 literal|2
-argument_list|,
-name|create_tearoff
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1075,7 +1079,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_factory_create_item (GimpItemFactory * item_factory,GimpItemFactoryEntry * entry,const gchar * textdomain,gpointer callback_data,guint callback_type,gboolean create_tearoff,gboolean static_entry)
+DECL|function|gimp_item_factory_create_item (GimpItemFactory * item_factory,GimpItemFactoryEntry * entry,const gchar * textdomain,gpointer callback_data,guint callback_type,gboolean static_entry)
 name|gimp_item_factory_create_item
 parameter_list|(
 name|GimpItemFactory
@@ -1096,9 +1100,6 @@ name|callback_data
 parameter_list|,
 name|guint
 name|callback_type
-parameter_list|,
-name|gboolean
-name|create_tearoff
 parameter_list|,
 name|gboolean
 name|static_entry
@@ -1164,6 +1165,8 @@ if|if
 condition|(
 name|tearoffs
 operator|&&
+name|item_factory
+operator|->
 name|create_tearoff
 condition|)
 block|{
@@ -1185,6 +1188,8 @@ operator|!
 name|tearoffs
 operator|||
 operator|!
+name|item_factory
+operator|->
 name|create_tearoff
 condition|)
 block|{
@@ -1429,7 +1434,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_factory_create_items (GimpItemFactory * item_factory,guint n_entries,GimpItemFactoryEntry * entries,gpointer callback_data,guint callback_type,gboolean create_tearoff,gboolean static_entries)
+DECL|function|gimp_item_factory_create_items (GimpItemFactory * item_factory,guint n_entries,GimpItemFactoryEntry * entries,gpointer callback_data,guint callback_type,gboolean static_entries)
 name|gimp_item_factory_create_items
 parameter_list|(
 name|GimpItemFactory
@@ -1448,9 +1453,6 @@ name|callback_data
 parameter_list|,
 name|guint
 name|callback_type
-parameter_list|,
-name|gboolean
-name|create_tearoff
 parameter_list|,
 name|gboolean
 name|static_entries
@@ -1486,8 +1488,6 @@ argument_list|,
 name|callback_data
 argument_list|,
 name|callback_type
-argument_list|,
-name|create_tearoff
 argument_list|,
 name|static_entries
 argument_list|)
@@ -3291,8 +3291,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -3378,8 +3376,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
