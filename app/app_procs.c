@@ -1500,6 +1500,12 @@ argument_list|(
 name|win_initstatus
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|logo_pixmap
+operator|!=
+name|NULL
+condition|)
 name|gdk_pixmap_unref
 argument_list|(
 name|logo_pixmap
