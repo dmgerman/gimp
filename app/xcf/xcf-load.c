@@ -970,6 +970,27 @@ if|if
 condition|(
 name|info
 operator|->
+name|floating_sel
+operator|&&
+name|info
+operator|->
+name|floating_sel_drawable
+condition|)
+name|floating_sel_attach
+argument_list|(
+name|info
+operator|->
+name|floating_sel
+argument_list|,
+name|info
+operator|->
+name|floating_sel_drawable
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|info
+operator|->
 name|active_layer
 condition|)
 name|gimp_image_set_active_layer
@@ -3486,15 +3507,15 @@ decl_stmt|;
 name|gint
 name|type
 decl_stmt|;
-name|gint
-name|add_floating_sel
+name|gboolean
+name|is_fs_drawable
 decl_stmt|;
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-comment|/* check and see if this is the drawable the floating selection    *  is attached to. if it is then we'll do the attachment at    *  the end of this function.    */
-name|add_floating_sel
+comment|/* check and see if this is the drawable the floating selection    *  is attached to. if it is then we'll do the attachment in our caller.    */
+name|is_fs_drawable
 operator|=
 operator|(
 name|info
@@ -3865,18 +3886,15 @@ block|}
 comment|/* attach the floating selection... */
 if|if
 condition|(
-name|add_floating_sel
+name|is_fs_drawable
 condition|)
-name|floating_sel_attach
-argument_list|(
 name|info
 operator|->
-name|floating_sel
-argument_list|,
+name|floating_sel_drawable
+operator|=
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3925,7 +3943,7 @@ name|gint
 name|height
 decl_stmt|;
 name|gboolean
-name|add_floating_sel
+name|is_fs_drawable
 decl_stmt|;
 name|gboolean
 name|is_qmask
@@ -3949,8 +3967,8 @@ block|,
 name|GIMP_OPACITY_OPAQUE
 block|}
 decl_stmt|;
-comment|/* check and see if this is the drawable the floating selection    *  is attached to. if it is then we'll do the attachment at    *  the end of this function.    */
-name|add_floating_sel
+comment|/* check and see if this is the drawable the floating selection    *  is attached to. if it is then we'll do the attachment in our caller.    */
+name|is_fs_drawable
 operator|=
 operator|(
 name|info
@@ -4134,21 +4152,17 @@ condition|)
 goto|goto
 name|error
 goto|;
-comment|/* attach the floating selection... */
 if|if
 condition|(
-name|add_floating_sel
+name|is_fs_drawable
 condition|)
-name|floating_sel_attach
-argument_list|(
 name|info
 operator|->
-name|floating_sel
-argument_list|,
+name|floating_sel_drawable
+operator|=
 name|GIMP_DRAWABLE
 argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4210,8 +4224,8 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|gint
-name|add_floating_sel
+name|gboolean
+name|is_fs_drawable
 decl_stmt|;
 name|gchar
 modifier|*
@@ -4230,8 +4244,8 @@ block|,
 name|GIMP_OPACITY_OPAQUE
 block|}
 decl_stmt|;
-comment|/* check and see if this is the drawable the floating selection    *  is attached to. if it is then we'll do the attachment at    *  the end of this function.    */
-name|add_floating_sel
+comment|/* check and see if this is the drawable the floating selection    *  is attached to. if it is then we'll do the attachment in our caller.    */
+name|is_fs_drawable
 operator|=
 operator|(
 name|info
@@ -4408,18 +4422,15 @@ goto|;
 comment|/* attach the floating selection... */
 if|if
 condition|(
-name|add_floating_sel
+name|is_fs_drawable
 condition|)
-name|floating_sel_attach
-argument_list|(
 name|info
 operator|->
-name|floating_sel
-argument_list|,
+name|floating_sel_drawable
+operator|=
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer_mask
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

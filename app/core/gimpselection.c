@@ -3370,6 +3370,21 @@ name|selection
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimp_image_owns_item
+argument_list|(
+name|gimage
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  Make sure there is a region to float...  */
 name|non_empty
 operator|=

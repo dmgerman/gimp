@@ -1793,6 +1793,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_image_owns_item
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+specifier|const
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpDrawable
 modifier|*
 name|gimp_image_active_drawable

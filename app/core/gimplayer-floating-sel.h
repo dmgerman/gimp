@@ -55,7 +55,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|floating_sel_reset
+name|floating_sel_activate_drawable
 parameter_list|(
 name|GimpLayer
 modifier|*

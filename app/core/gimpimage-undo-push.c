@@ -6190,15 +6190,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  Make sure we're not caching any old selection info  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/*  record the current position  */
 name|lu
 operator|->
@@ -6244,7 +6235,6 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  reset the gimage values  */
 if|if
 condition|(
 name|gimp_layer_is_floating_sel
@@ -6261,8 +6251,8 @@ name|floating_sel
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  reset the old drawable  */
-name|floating_sel_reset
+comment|/*  activate the underlying drawable  */
+name|floating_sel_activate_drawable
 argument_list|(
 name|layer
 argument_list|)
@@ -6275,6 +6265,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+elseif|else
 if|if
 condition|(
 name|layer
@@ -6399,23 +6390,6 @@ argument_list|(
 name|undo
 operator|->
 name|gimage
-argument_list|)
-expr_stmt|;
-comment|/*  hide the current selection--for all views  */
-if|if
-condition|(
-name|lu
-operator|->
-name|prev_layer
-condition|)
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|lu
-operator|->
-name|prev_layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  if this is a floating selection, set the fs pointer  */
