@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0f4ae50103
+DECL|enum|__anon289eb04e0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -1239,12 +1239,6 @@ expr_stmt|;
 break|break;
 block|}
 name|gdt_render_text
-argument_list|(
-operator|&
-name|gdtvals
-argument_list|)
-expr_stmt|;
-name|gdt_set_values
 argument_list|(
 operator|&
 name|gdtvals
@@ -3906,6 +3900,12 @@ name|selection_channel
 argument_list|)
 expr_stmt|;
 block|}
+name|gdt_set_values
+argument_list|(
+operator|&
+name|gdtvals
+argument_list|)
+expr_stmt|;
 name|gimp_undo_push_group_end
 argument_list|(
 name|data
