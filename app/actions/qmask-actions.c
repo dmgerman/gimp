@@ -84,7 +84,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"QMask Menu"
+literal|"QuickMask Menu"
 argument_list|)
 block|,
 name|NULL
@@ -136,7 +136,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"_QMask Active"
+literal|"_QuickMask Active"
 argument_list|)
 block|,
 name|NULL

@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295393230103
+DECL|enum|__anon28edb2fe0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1159,7 +1159,7 @@ name|gimp_menu_factory_manager_new
 argument_list|(
 name|menu_factory
 argument_list|,
-literal|"<Dialogs>"
+literal|"<Dockable>"
 argument_list|,
 name|dockbook
 argument_list|,

@@ -448,7 +448,7 @@ name|gimp_color_panel_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Edit Qmask Color"
+literal|"Edit QuickMask Color"
 argument_list|)
 argument_list|,
 operator|&
@@ -502,7 +502,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Qmask Attributes"
+literal|"QuickMask Attributes"
 argument_list|)
 argument_list|,
 literal|"gimp-qmask-edit"

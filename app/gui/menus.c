@@ -271,6 +271,8 @@ literal|"drawable"
 argument_list|,
 literal|"layers"
 argument_list|,
+literal|"channels"
+argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"tools"
@@ -327,6 +329,8 @@ argument_list|,
 literal|"drawable"
 argument_list|,
 literal|"layers"
+argument_list|,
+literal|"channels"
 argument_list|,
 literal|"vectors"
 argument_list|,
@@ -442,7 +446,7 @@ name|gimp_menu_factory_manager_register
 argument_list|(
 name|global_menu_factory
 argument_list|,
-literal|"<Dialogs>"
+literal|"<Dockable>"
 argument_list|,
 literal|"dockable"
 argument_list|,
