@@ -574,8 +574,8 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_thumbnail_find_png_thumb (const gchar * uri,GimpThumbSize * size)
-name|gimp_thumbnail_find_png_thumb
+DECL|function|gimp_thumb_find_png_thumb (const gchar * uri,GimpThumbSize * size)
+name|gimp_thumb_find_png_thumb
 parameter_list|(
 specifier|const
 name|gchar

@@ -54,7 +54,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_thumbnail_find_png_thumb
+name|gimp_thumb_find_png_thumb
 parameter_list|(
 specifier|const
 name|gchar
