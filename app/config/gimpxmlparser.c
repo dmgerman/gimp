@@ -65,7 +65,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_xml_parser_new:  * @parser: a #GMarkupParser  * @user_data: user data to pass to #GMarkupParser functions  *  * GimpXmlParser is a thin wrapper around GMarkupParser. This function  * creates one for you and sets up a GMarkupParseContext.  *  * Return value: a new #GimpXmlParser  **/
+comment|/**  * gimp_xml_parser_new:  * @markup_parser: a #GMarkupParser  * @user_data: user data to pass to #GMarkupParser functions  *  * GimpXmlParser is a thin wrapper around GMarkupParser. This function  * creates one for you and sets up a GMarkupParseContext.  *  * Return value: a new #GimpXmlParser  **/
 end_comment
 
 begin_function
