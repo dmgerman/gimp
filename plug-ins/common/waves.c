@@ -42,12 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<plug-ins/megawidget/megawidget.h>
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de2c6d0103
+DECL|enum|__anon2b2dfcd70103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -420,11 +426,17 @@ name|nrets
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_waves"
 argument_list|,
+name|_
+argument_list|(
 literal|"Distort the image with waves"
+argument_list|)
 argument_list|,
 literal|"none yet"
 argument_list|,
@@ -434,7 +446,10 @@ literal|"Stephen Norris"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/Waves..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -571,6 +586,9 @@ decl_stmt|;
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for interactive running */
 if|if
 condition|(
@@ -688,6 +706,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for non-interactive running */
 if|if
 condition|(
@@ -812,6 +833,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for last-values running */
 if|if
 condition|(
@@ -1343,7 +1367,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Waves"
+argument_list|)
 argument_list|,
 literal|"waves"
 argument_list|,
@@ -1359,7 +1386,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|waves_ok_callback
 argument_list|,
@@ -1373,7 +1403,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -1515,7 +1548,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Reflective"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -1605,7 +1641,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameters"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1703,7 +1742,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Amplitude:"
+argument_list|)
 argument_list|,
 literal|140
 argument_list|,
@@ -1761,7 +1803,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Phase:"
+argument_list|)
 argument_list|,
 literal|140
 argument_list|,
@@ -1819,7 +1864,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Wavelength:"
+argument_list|)
 argument_list|,
 literal|140
 argument_list|,
@@ -1875,7 +1923,10 @@ name|gimp_radio_group_new2
 argument_list|(
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
 literal|"Mode"
+argument_list|)
 argument_list|,
 name|waves_radio_button_update
 argument_list|,
@@ -1891,7 +1942,10 @@ name|argp
 operator|->
 name|type
 argument_list|,
+name|_
+argument_list|(
 literal|"Smear"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -1900,7 +1954,10 @@ name|MODE_SMEAR
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Blacken"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -2327,7 +2384,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
-literal|"Waves"
+name|_
+argument_list|(
+literal|"Waving..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|prog_interval

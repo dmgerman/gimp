@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -49,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
@@ -4336,7 +4348,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110108
+DECL|struct|__anon2936a08a0108
 block|{
 DECL|member|scale
 name|double
@@ -4364,7 +4376,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110208
+DECL|struct|__anon2936a08a0208
 block|{
 DECL|member|run
 name|gint
@@ -4391,7 +4403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110308
+DECL|struct|__anon2936a08a0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4412,7 +4424,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2998bd110403
+DECL|enum|__anon2936a08a0403
 block|{
 DECL|enumerator|OBJ_BITMAP
 name|OBJ_BITMAP
@@ -4443,7 +4455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110508
+DECL|struct|__anon2936a08a0508
 block|{
 DECL|member|dummy
 name|int
@@ -4458,7 +4470,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110608
+DECL|struct|__anon2936a08a0608
 block|{
 DECL|member|color
 name|GdkColor
@@ -4485,7 +4497,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110708
+DECL|struct|__anon2936a08a0708
 block|{
 DECL|member|dummy
 name|int
@@ -4500,7 +4512,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110808
+DECL|struct|__anon2936a08a0808
 block|{
 DECL|member|color
 name|GdkColor
@@ -4527,7 +4539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110908
+DECL|struct|__anon2936a08a0908
 block|{
 DECL|member|font
 name|GdkFont
@@ -4543,7 +4555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110a08
+DECL|struct|__anon2936a08a0a08
 block|{
 DECL|member|dummy
 name|int
@@ -4558,14 +4570,14 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110b08
+DECL|struct|__anon2936a08a0b08
 block|{
 DECL|member|type
 name|ObjectType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2998bd110c0a
+DECL|union|__anon2936a08a0c0a
 block|{
 DECL|member|bitmap
 name|BitmapObject
@@ -4604,7 +4616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110d08
+DECL|struct|__anon2936a08a0d08
 block|{
 DECL|member|gc
 name|GdkGC
@@ -4657,7 +4669,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110e08
+DECL|struct|__anon2936a08a0e08
 block|{
 DECL|member|pixmap
 name|GdkPixmap
@@ -4708,7 +4720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998bd110f08
+DECL|struct|__anon2936a08a0f08
 block|{
 DECL|member|valid
 name|gboolean
@@ -5018,7 +5030,10 @@ name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load Windows Metafile"
+argument_list|)
 argument_list|,
 literal|"wmf"
 argument_list|,
@@ -5034,7 +5049,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|load_ok_callback
 argument_list|,
@@ -5048,7 +5066,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -5091,7 +5112,10 @@ name|gtk_frame_new
 argument_list|(
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Rendering %s"
+argument_list|)
 argument_list|,
 name|file_name
 argument_list|)
@@ -5226,7 +5250,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scale (log 2):"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5561,11 +5588,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_wmf_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads files of the Windows(tm) metafile file format"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for file_wmf_load"
 argument_list|,
@@ -5594,9 +5627,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_wmf_load_setargs"
 argument_list|,
+name|_
+argument_list|(
 literal|"set additional parameters for the procedure file_wmf_load"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"set additional parameters for the procedure file_wmf_load"
+argument_list|)
 argument_list|,
 literal|"Tor Lillqvist<tml@iki.fi>"
 argument_list|,
@@ -5731,6 +5770,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"file_wmf_load"
@@ -5759,6 +5801,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"file_wmf_load"
@@ -5771,6 +5816,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"file_wmf_load"
@@ -13486,23 +13534,14 @@ operator|>=
 literal|100
 condition|)
 block|{
-name|name_buf
-operator|=
-name|g_malloc
-argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|100
-argument_list|)
-expr_stmt|;
-name|sprintf
+name|g_strdup_printf
 argument_list|(
 name|name_buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Transferring image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
@@ -13544,7 +13583,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|canvas
 operator|->

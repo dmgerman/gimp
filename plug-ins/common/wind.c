@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -31,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -89,90 +101,10 @@ name|MAX_STRENGTH
 value|50
 end_define
 
-begin_define
-DECL|macro|NEGATIVE_STRENGTH_TEXT
-define|#
-directive|define
-name|NEGATIVE_STRENGTH_TEXT
-value|"\n   Wind Strength must be greater than 0.   \n"
-end_define
-
-begin_define
-DECL|macro|THRESHOLD_TEXT
-define|#
-directive|define
-name|THRESHOLD_TEXT
-value|"Higher values restrict the effect to fewer areas of the image"
-end_define
-
-begin_define
-DECL|macro|STRENGTH_TEXT
-define|#
-directive|define
-name|STRENGTH_TEXT
-value|"Higher values increase the magnitude of the effect"
-end_define
-
-begin_define
-DECL|macro|WIND_TEXT
-define|#
-directive|define
-name|WIND_TEXT
-value|"A fine grained algorithm"
-end_define
-
-begin_define
-DECL|macro|BLAST_TEXT
-define|#
-directive|define
-name|BLAST_TEXT
-value|"A coarse grained algorithm"
-end_define
-
-begin_define
-DECL|macro|LEFT_TEXT
-define|#
-directive|define
-name|LEFT_TEXT
-value|"Makes the wind come from the left"
-end_define
-
-begin_define
-DECL|macro|RIGHT_TEXT
-define|#
-directive|define
-name|RIGHT_TEXT
-value|"Makes the wind come from the right"
-end_define
-
-begin_define
-DECL|macro|LEADING_TEXT
-define|#
-directive|define
-name|LEADING_TEXT
-value|"The effect is applied at the leading edge of objects"
-end_define
-
-begin_define
-DECL|macro|TRAILING_TEXT
-define|#
-directive|define
-name|TRAILING_TEXT
-value|"The effect is applied at the trailing edge of objects"
-end_define
-
-begin_define
-DECL|macro|BOTH_TEXT
-define|#
-directive|define
-name|BOTH_TEXT
-value|"The effect is applied at both edges of objects"
-end_define
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a3b3e60103
+DECL|enum|__anon28d9d9f80103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -188,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a3b3e60203
+DECL|enum|__anon28d9d9f80203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -204,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a3b3e60303
+DECL|enum|__anon28d9d9f80303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -716,13 +648,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_wind"
 argument_list|,
+name|_
+argument_list|(
 literal|"Renders a wind effect."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Renders a wind effect."
+argument_list|)
 argument_list|,
 literal|"Nigel Wetten"
 argument_list|,
@@ -730,7 +671,10 @@ literal|"Nigel Wetten"
 argument_list|,
 literal|"1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/Wind..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -843,6 +787,9 @@ block|{
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -943,6 +890,9 @@ break|break;
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_wind"
@@ -1005,6 +955,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_wind"
@@ -1102,7 +1055,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Rendering Wind..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|render_wind
@@ -1139,7 +1095,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Rendering Blast..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|render_blast
@@ -3226,7 +3185,10 @@ name|message_box
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Wind"
+argument_list|)
 argument_list|,
 literal|"wind"
 argument_list|,
@@ -3242,7 +3204,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|msg_ok_callback
 argument_list|,
@@ -3343,7 +3308,10 @@ condition|)
 block|{
 name|modal_message_box
 argument_list|(
-name|NEGATIVE_STRENGTH_TEXT
+name|_
+argument_list|(
+literal|"\n   Wind Strength must be greater than 0.   \n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3445,7 +3413,10 @@ name|dlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Wind"
+argument_list|)
 argument_list|,
 literal|"wind"
 argument_list|,
@@ -3461,7 +3432,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|ok_callback
 argument_list|,
@@ -3475,7 +3449,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -3651,7 +3628,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Threshold:"
+argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -3671,7 +3651,10 @@ literal|10
 argument_list|,
 literal|0
 argument_list|,
-name|THRESHOLD_TEXT
+name|_
+argument_list|(
+literal|"Higher values restrict the effect to fewer areas of the image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3710,7 +3693,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Strength:"
+argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -3730,7 +3716,10 @@ literal|10.0
 argument_list|,
 literal|0
 argument_list|,
-name|STRENGTH_TEXT
+name|_
+argument_list|(
+literal|"Higher values increase the magnitude of the effect"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3810,7 +3799,10 @@ name|gimp_radio_group_new2
 argument_list|(
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
 literal|"Style"
+argument_list|)
 argument_list|,
 name|gimp_radio_button_update
 argument_list|,
@@ -3826,7 +3818,10 @@ name|config
 operator|.
 name|alg
 argument_list|,
+name|_
+argument_list|(
 literal|"Wind"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -3835,7 +3830,10 @@ name|RENDER_WIND
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Blast"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -3889,7 +3887,10 @@ name|gimp_radio_group_new2
 argument_list|(
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
 literal|"Direction"
+argument_list|)
 argument_list|,
 name|gimp_radio_button_update
 argument_list|,
@@ -3905,7 +3906,10 @@ name|config
 operator|.
 name|direction
 argument_list|,
+name|_
+argument_list|(
 literal|"Left"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -3914,7 +3918,10 @@ name|LEFT
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Right"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -3968,7 +3975,10 @@ name|gimp_radio_group_new2
 argument_list|(
 name|TRUE
 argument_list|,
+name|_
+argument_list|(
 literal|"Edge Affected"
+argument_list|)
 argument_list|,
 name|gimp_radio_button_update
 argument_list|,
@@ -3984,7 +3994,10 @@ name|config
 operator|.
 name|edge
 argument_list|,
+name|_
+argument_list|(
 literal|"Leading"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -3993,7 +4006,10 @@ name|LEADING
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Trailing"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer
@@ -4002,7 +4018,10 @@ name|TRAILING
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Both"
+argument_list|)
 argument_list|,
 operator|(
 name|gpointer

@@ -76,6 +76,12 @@ directive|include
 file|<libgimp/gimplimits.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -127,7 +133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28da4e270108
+DECL|struct|__anon29331b480108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -150,7 +156,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28da4e270208
+DECL|struct|__anon29331b480208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -190,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28da4e270308
+DECL|struct|__anon29331b480308
 block|{
 DECL|member|col
 DECL|member|row
@@ -747,17 +753,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Distort an image by whirling and pinching"
+argument_list|)
 argument_list|,
-literal|"Distorts the image by whirling and pinching, which are two common "
-literal|"center-based, circular distortions.  Whirling is like projecting "
-literal|"the image onto the surface of water in a toilet and flushing.  "
-literal|"Pinching is similar to projecting the image onto an elastic surface "
-literal|"and pressing or pulling on the center of the surface."
+name|_
+argument_list|(
+literal|"Distorts the image by whirling and pinching, which are two common center-based, circular distortions.  Whirling is like projecting the image onto the surface of water in a toilet and flushing.  Pinching is similar to projecting the image onto an elastic surface and pressing or pulling on the center of the surface."
+argument_list|)
 argument_list|,
 literal|"Federico Mena Quintero and Scott Goehring"
 argument_list|,
@@ -765,7 +776,10 @@ literal|"Federico Mena Quintero and Scott Goehring"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/Whirl and Pinch..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1148,6 +1162,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -1169,6 +1186,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Make sure all the arguments are present */
 if|if
 condition|(
@@ -1231,6 +1251,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -1584,7 +1607,10 @@ name|sel_height
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Whirling and pinching..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|whirl
@@ -3735,7 +3761,10 @@ name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Whirl and Pinch"
+argument_list|)
 argument_list|,
 literal|"whirlpinch"
 argument_list|,
@@ -3751,7 +3780,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|dialog_ok_callback
 argument_list|,
@@ -3765,7 +3797,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -4025,7 +4060,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Whirl Angle:"
+argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -4084,7 +4122,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Pinch Amount:"
+argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
@@ -4143,7 +4184,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Radius:"
+argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,

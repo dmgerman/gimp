@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"curl0.xpm"
 end_include
 
@@ -153,7 +159,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2fe260108
+DECL|struct|__anon293fa7860108
 block|{
 DECL|member|x
 DECL|member|y
@@ -171,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2fe260208
+DECL|struct|__anon293fa7860208
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -925,13 +931,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Pagecurl effect"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plug-in creates a pagecurl-effect."
+argument_list|)
 argument_list|,
 literal|"Federico Mena Quintero and Simon Budig"
 argument_list|,
@@ -939,7 +954,10 @@ literal|"Federico Mena Quintero and Simon Budig"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/Pagecurl..."
+argument_list|)
 argument_list|,
 literal|"RGBA, GRAYA"
 argument_list|,
@@ -1133,6 +1151,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  First acquire information with a dialog  */
 if|if
 condition|(
@@ -1145,6 +1166,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -1374,6 +1398,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 default|default:
 break|break;
@@ -2419,7 +2446,10 @@ name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pagecurl Effect"
+argument_list|)
 argument_list|,
 literal|"pagecurl"
 argument_list|,
@@ -2435,7 +2465,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|dialog_ok_callback
 argument_list|,
@@ -2449,7 +2482,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -2883,7 +2919,10 @@ name|corner_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Curl Location"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -2951,13 +2990,25 @@ name|name
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Upper Left"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Upper Right"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Lower Left"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Lower Right"
+argument_list|)
 block|}
 decl_stmt|;
 name|button
@@ -2998,10 +3049,13 @@ name|button
 argument_list|)
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|name
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3104,7 +3158,10 @@ name|orient_frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Curl Orientation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3172,9 +3229,15 @@ name|name
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Horizontal"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Vertical"
+argument_list|)
 block|}
 decl_stmt|;
 name|button
@@ -3215,10 +3278,13 @@ name|button
 argument_list|)
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|name
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3304,7 +3370,10 @@ name|shade_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Shade under Curl"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3368,8 +3437,10 @@ name|gradient_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-literal|"Use Current Gradient\n"
-literal|"instead of FG/BG-Color"
+name|_
+argument_list|(
+literal|"Use Current Gradient\ninstead of FG/BG-Color"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -3433,7 +3504,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Curl Opacity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4162,7 +4236,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_id
 argument_list|,
+name|_
+argument_list|(
 literal|"Curl layer"
+argument_list|)
 argument_list|,
 name|true_sel_width
 argument_list|,
@@ -5891,7 +5968,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Page Curl..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|init_calculation
