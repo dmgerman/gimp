@@ -169,7 +169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29478ff20108
+DECL|struct|__anon2949b8070108
 block|{
 DECL|member|description
 name|gchar
@@ -1329,19 +1329,28 @@ condition|(
 name|bh
 operator|.
 name|magic_number
-operator|!=
+operator|==
 name|GBRUSH_MAGIC
-operator|||
+operator|&&
 name|bh
 operator|.
 name|header_size
-operator|<=
+operator|>
 sizeof|sizeof
 argument_list|(
 name|bh
 argument_list|)
 condition|)
-block|{
+break|break;
+default|default:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Unsupported brush format"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|close
 argument_list|(
 name|fd
@@ -1351,8 +1360,6 @@ return|return
 operator|-
 literal|1
 return|;
-block|}
-break|break;
 block|}
 if|if
 condition|(
@@ -1781,7 +1788,6 @@ break|break;
 case|case
 literal|2
 case|:
-comment|/*  cinepaint brush (16 bit floats) -- convert to 8bit  */
 block|{
 name|guint16
 modifier|*
@@ -1820,7 +1826,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29478ff2020a
+DECL|union|__anon2949b807020a
 block|{
 DECL|member|u
 name|guint16
