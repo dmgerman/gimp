@@ -475,6 +475,12 @@ name|unit
 expr_stmt|;
 name|dialog
 operator|->
+name|interpolation
+operator|=
+name|interpolation
+expr_stmt|;
+name|dialog
+operator|->
 name|xresolution
 operator|=
 name|xresolution
