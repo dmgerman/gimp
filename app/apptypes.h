@@ -476,6 +476,24 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDock
+typedef|typedef
+name|struct
+name|_GimpDock
+name|GimpDock
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDockable
+typedef|typedef
+name|struct
+name|_GimpDockable
+name|GimpDockable
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|HistogramWidget
 typedef|typedef
 name|struct

@@ -842,6 +842,43 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/File/Test Dialogs/Dock..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|test_dock_cmd_callback
+block|,
+literal|1
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+literal|"/File/Test Dialogs/---"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|"<Separator>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/File/Test Dialogs/Layer List..."
 argument_list|)
 block|,
