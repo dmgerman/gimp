@@ -344,7 +344,7 @@ argument_list|(
 literal|"Select contiguous regions"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"/Tools/Selection Tools/Fuzzy Select"
 argument_list|)

@@ -259,7 +259,7 @@ argument_list|(
 literal|"Select regions by color"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"/Tools/Selection Tools/By Color Select"
 argument_list|)

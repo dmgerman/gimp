@@ -311,7 +311,7 @@ argument_list|(
 literal|"Select rectangular regions"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"/Tools/Selection Tools/Rect Select"
 argument_list|)

@@ -313,7 +313,7 @@ argument_list|(
 literal|"Select hand-drawn regions"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"/Tools/Selection Tools/Free Select"
 argument_list|)

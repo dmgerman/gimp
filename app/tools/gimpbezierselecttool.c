@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14049d0108
+DECL|struct|__anon2baab6ef0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14049d0208
+DECL|struct|__anon2baab6ef0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14049d0308
+DECL|struct|__anon2baab6ef0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -1229,7 +1229,7 @@ argument_list|(
 literal|"Select regions using Bezier curves"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"/Tools/Selection Tools/Bezier Select"
 argument_list|)
