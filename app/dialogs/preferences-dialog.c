@@ -6520,6 +6520,23 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"show-paint-tool-cursor"
+argument_list|,
+name|_
+argument_list|(
+literal|"Show Paint _Tool Cursor"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|prefs_table_new
@@ -6756,7 +6773,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c9ca1950108
+DECL|struct|__anon2778c2bd0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8951,7 +8968,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c9ca1950208
+DECL|struct|__anon2778c2bd0208
 block|{
 DECL|member|label
 specifier|const
@@ -9108,7 +9125,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c9ca1950308
+DECL|struct|__anon2778c2bd0308
 block|{
 DECL|member|tree_label
 specifier|const
