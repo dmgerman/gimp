@@ -960,8 +960,8 @@ name|brush_editor
 argument_list|)
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_BRUSH
+operator|->
+name|brush_factory
 argument_list|,
 name|NULL
 argument_list|,

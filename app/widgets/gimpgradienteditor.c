@@ -2144,8 +2144,8 @@ name|editor
 argument_list|)
 argument_list|,
 name|gimp
-argument_list|,
-name|GIMP_TYPE_GRADIENT
+operator|->
+name|gradient_factory
 argument_list|,
 name|menu_factory
 argument_list|,
@@ -3558,6 +3558,8 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
+name|data_factory
+operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -3735,6 +3737,8 @@ name|GIMP_DATA_EDITOR
 argument_list|(
 name|editor
 argument_list|)
+operator|->
+name|data_factory
 operator|->
 name|gimp
 argument_list|)

@@ -47,12 +47,13 @@ DECL|member|open
 name|gboolean
 name|open
 decl_stmt|;
-comment|/*  GList of gchar* of optional additional dialog specific info  */
+comment|/*  dialog specific list of GimpSessionInfoAux  */
 DECL|member|aux_info
 name|GList
 modifier|*
 name|aux_info
 decl_stmt|;
+comment|/*  dialog specific list of GimpSessionInfoAux  */
 comment|/*  only one of these is valid  */
 DECL|member|toplevel_entry
 name|GimpDialogFactoryEntry
@@ -117,11 +118,30 @@ DECL|member|preview_size
 name|gint
 name|preview_size
 decl_stmt|;
-comment|/*  GList of gchar* of optional additional dockable specific info  */
+comment|/*  dialog specific list of GimpSessionInfoAux  */
 DECL|member|aux_info
 name|GList
 modifier|*
 name|aux_info
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpSessionInfoAux
+struct|struct
+name|_GimpSessionInfoAux
+block|{
+DECL|member|name
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
+DECL|member|value
+name|gchar
+modifier|*
+name|value
 decl_stmt|;
 block|}
 struct|;
@@ -156,6 +176,17 @@ parameter_list|(
 name|GimpSessionInfoDockable
 modifier|*
 name|dockable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_session_info_aux_free
+parameter_list|(
+name|GimpSessionInfoAux
+modifier|*
+name|aux
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdatafactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpgradient.h"
 end_include
 
@@ -404,6 +410,8 @@ name|GIMP_DATA_EDITOR
 argument_list|(
 name|editor
 argument_list|)
+operator|->
+name|data_factory
 operator|->
 name|gimp
 argument_list|)
@@ -866,6 +874,8 @@ name|GIMP_DATA_EDITOR
 argument_list|(
 name|editor
 argument_list|)
+operator|->
+name|data_factory
 operator|->
 name|gimp
 argument_list|)

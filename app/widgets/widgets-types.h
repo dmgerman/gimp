@@ -690,6 +690,15 @@ name|GimpSessionInfoDockable
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpSessionInfoAux
+typedef|typedef
+name|struct
+name|_GimpSessionInfoAux
+name|GimpSessionInfoAux
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  function types  */
 end_comment
