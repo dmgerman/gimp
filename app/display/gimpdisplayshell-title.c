@@ -953,35 +953,6 @@ operator|++
 expr_stmt|;
 break|break;
 case|case
-literal|'B'
-case|:
-comment|/* dirty flag (long) */
-if|if
-condition|(
-name|gimage
-operator|->
-name|dirty
-condition|)
-name|i
-operator|+=
-name|print
-argument_list|(
-name|title
-argument_list|,
-name|title_len
-argument_list|,
-name|i
-argument_list|,
-literal|"%s"
-argument_list|,
-name|_
-argument_list|(
-literal|"(modified)"
-argument_list|)
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 literal|'C'
 case|:
 comment|/* clean flag */
