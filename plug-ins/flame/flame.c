@@ -145,7 +145,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon29a405120108
+DECL|struct|__anon28aceccc0108
 block|{
 DECL|member|randomize
 name|gint
@@ -2276,17 +2276,6 @@ name|G_CALLBACK
 argument_list|(
 name|file_response_callback
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_help_connect
-argument_list|(
-name|file_dlg
-argument_list|,
-name|gimp_standard_help_func
-argument_list|,
-name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)

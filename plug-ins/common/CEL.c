@@ -3324,17 +3324,6 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect
-argument_list|(
-name|dialog
-argument_list|,
-name|gimp_standard_help_func
-argument_list|,
-literal|"file-cel-load"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
