@@ -3031,7 +3031,7 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_SHIFT_MASK
+name|GDK_CONTROL_MASK
 condition|)
 block|{
 switch|switch
@@ -3084,7 +3084,7 @@ if|if
 condition|(
 name|state
 operator|&
-name|GDK_CONTROL_MASK
+name|GDK_SHIFT_MASK
 condition|)
 switch|switch
 condition|(
