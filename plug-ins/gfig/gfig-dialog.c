@@ -415,9 +415,6 @@ comment|/* Scale to image when painting  */
 literal|1.0
 block|,
 comment|/* Scale to image fp             */
-name|FALSE
-block|,
-comment|/* Approx circles by drawing lines */
 name|BRUSH_BRUSH_TYPE
 block|,
 comment|/* Default to use a brush        */
@@ -465,7 +462,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2848d0108
+DECL|struct|__anon2773a6a10108
 block|{
 DECL|member|gridspacing
 name|void
@@ -1763,7 +1760,74 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/* foreground color button in Style frame*/
+name|gfig_context
+operator|->
+name|paint_type_toggle
+operator|=
+name|gtk_check_button_new_with_mnemonic
+argument_list|(
+name|_
+argument_list|(
+literal|"Stro_ke"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|gfig_context
+operator|->
+name|paint_type_toggle
+argument_list|)
+argument_list|,
+name|selvals
+operator|.
+name|painttype
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|gfig_context
+operator|->
+name|paint_type_toggle
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|set_paint_type_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|gfig_context
+operator|->
+name|paint_type_toggle
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|gfig_context
+operator|->
+name|paint_type_toggle
+argument_list|)
+expr_stmt|;
+comment|/* foreground color button in Stroke frame*/
 name|gfig_context
 operator|->
 name|fg_color
@@ -1854,7 +1918,7 @@ operator|->
 name|fg_color_button
 argument_list|)
 expr_stmt|;
-comment|/* brush selector in Style frame */
+comment|/* brush selector in Stroke frame */
 name|gfig_context
 operator|->
 name|brush_select
@@ -7471,6 +7535,8 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 comment|/* (x2, y2) - ignored */
+return|return;
+default|default:
 return|return;
 block|}
 name|gimp_edit_bucket_fill

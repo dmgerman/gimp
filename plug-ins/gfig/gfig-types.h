@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0103
+DECL|enum|__anon29ff4c510103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -40,7 +40,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0203
+DECL|enum|__anon29ff4c510203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -64,7 +64,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0303
+DECL|enum|__anon29ff4c510303
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0403
+DECL|enum|__anon29ff4c510403
 block|{
 DECL|enumerator|FILL_NONE
 name|FILL_NONE
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0503
+DECL|enum|__anon29ff4c510503
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0603
+DECL|enum|__anon29ff4c510603
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -154,18 +154,17 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0703
+DECL|enum|__anon29ff4c510703
 block|{
-DECL|enumerator|PAINT_BRUSH_TYPE
-name|PAINT_BRUSH_TYPE
+DECL|enumerator|PAINT_NONE
+name|PAINT_NONE
 init|=
 literal|0
 block|,
-DECL|enumerator|PAINT_SELECTION_TYPE
-name|PAINT_SELECTION_TYPE
-block|,
-DECL|enumerator|PAINT_SELECTION_FILL_TYPE
-name|PAINT_SELECTION_FILL_TYPE
+DECL|enumerator|PAINT_BRUSH_TYPE
+name|PAINT_BRUSH_TYPE
+init|=
+literal|1
 DECL|typedef|PaintType
 block|}
 name|PaintType
@@ -175,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0803
+DECL|enum|__anon29ff4c510803
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -199,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a1d4ec0903
+DECL|enum|__anon29ff4c510903
 block|{
 DECL|enumerator|OBJ_TYPE_NONE
 name|OBJ_TYPE_NONE

@@ -1212,6 +1212,16 @@ expr_stmt|;
 name|paint_layer_fill
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|obj
+operator|->
+name|style
+operator|.
+name|paint_type
+operator|==
+name|PAINT_BRUSH_TYPE
+condition|)
 name|gimp_edit_stroke
 argument_list|(
 name|gfig_context

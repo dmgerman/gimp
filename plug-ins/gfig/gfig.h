@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a47fe9b0108
+DECL|struct|__anon2a9b06730108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a47fe9b0208
+DECL|struct|__anon2a9b06730208
 block|{
 DECL|member|type
 name|SelectionType
@@ -282,7 +282,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a47fe9b0308
+DECL|struct|__anon2a9b06730308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -335,10 +335,6 @@ decl_stmt|;
 DECL|member|scaletoimagefp
 name|gdouble
 name|scaletoimagefp
-decl_stmt|;
-DECL|member|approxcircles
-name|gboolean
-name|approxcircles
 decl_stmt|;
 DECL|member|brshtype
 name|BrushType
@@ -481,7 +477,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a47fe9b0408
+DECL|struct|__anon2a9b06730408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -576,6 +572,11 @@ DECL|member|fillstyle_combo
 name|GtkWidget
 modifier|*
 name|fillstyle_combo
+decl_stmt|;
+DECL|member|paint_type_toggle
+name|GtkWidget
+modifier|*
+name|paint_type_toggle
 decl_stmt|;
 DECL|member|fg_color
 name|GimpRGB

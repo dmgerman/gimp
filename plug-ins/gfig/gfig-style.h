@@ -137,6 +137,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|set_paint_type_callback
+parameter_list|(
+name|GtkToggleButton
+modifier|*
+name|toggle
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gfig_brush_changed_callback
 parameter_list|(
 specifier|const
