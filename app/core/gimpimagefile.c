@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b619e10103
+DECL|enum|__anon275cb3ba0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2541,7 +2541,7 @@ block|}
 block|}
 name|pixbuf
 operator|=
-name|gimp_viewable_get_new_preview_pixbuf
+name|gimp_viewable_get_new_pixbuf
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

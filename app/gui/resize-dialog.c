@@ -3029,7 +3029,7 @@ argument_list|)
 expr_stmt|;
 name|pixbuf
 operator|=
-name|gimp_viewable_get_preview_pixbuf
+name|gimp_viewable_get_pixbuf
 argument_list|(
 name|viewable
 argument_list|,

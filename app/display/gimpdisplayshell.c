@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6ef130103
+DECL|enum|__anon2bc18eb80103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5371,7 +5371,7 @@ expr_stmt|;
 block|}
 name|pixbuf
 operator|=
-name|gimp_viewable_get_new_preview_pixbuf
+name|gimp_viewable_get_new_pixbuf
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
