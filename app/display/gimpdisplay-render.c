@@ -93,6 +93,19 @@ directive|include
 file|"tile_manager.h"
 end_include
 
+begin_define
+DECL|macro|MAX_PREVIEW_SIZE
+define|#
+directive|define
+name|MAX_PREVIEW_SIZE
+value|256
+end_define
+
+begin_comment
+DECL|macro|MAX_PREVIEW_SIZE
+comment|/* EEK */
+end_comment
+
 begin_typedef
 DECL|typedef|RenderInfo
 typedef|typedef
@@ -631,7 +644,8 @@ expr_stmt|;
 comment|/*  calculate check buffer for previews  */
 if|if
 condition|(
-name|preview_size
+name|TRUE
+comment|/* preview_size */
 condition|)
 block|{
 name|render_check_buf
@@ -641,7 +655,7 @@ argument_list|(
 name|guchar
 argument_list|,
 operator|(
-name|preview_size
+name|MAX_PREVIEW_SIZE
 operator|+
 literal|4
 operator|)
@@ -658,7 +672,7 @@ init|;
 name|i
 operator|<
 operator|(
-name|preview_size
+name|MAX_PREVIEW_SIZE
 operator|+
 literal|4
 operator|)
@@ -770,7 +784,7 @@ argument_list|(
 name|guchar
 argument_list|,
 operator|(
-name|preview_size
+name|MAX_PREVIEW_SIZE
 operator|+
 literal|4
 operator|)
@@ -785,7 +799,7 @@ argument_list|(
 name|guchar
 argument_list|,
 operator|(
-name|preview_size
+name|MAX_PREVIEW_SIZE
 operator|+
 literal|4
 operator|)

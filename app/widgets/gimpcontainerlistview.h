@@ -6,115 +6,114 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PATTERN_H__
+name|__GIMP_CONTAINER_LIST_VIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PATTERN_H__
+DECL|macro|__GIMP_CONTAINER_LIST_VIEW_H__
 define|#
 directive|define
-name|__GIMP_PATTERN_H__
+name|__GIMP_CONTAINER_LIST_VIEW_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"gimpviewable.h"
+file|"gimpcontainerview.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_PATTERN
+DECL|macro|GIMP_TYPE_CONTAINER_LIST_VIEW
 define|#
 directive|define
-name|GIMP_TYPE_PATTERN
-value|(gimp_pattern_get_type ())
+name|GIMP_TYPE_CONTAINER_LIST_VIEW
+value|(gimp_container_list_view_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PATTERN (obj)
+DECL|macro|GIMP_CONTAINER_LIST_VIEW (obj)
 define|#
 directive|define
-name|GIMP_PATTERN
+name|GIMP_CONTAINER_LIST_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_PATTERN, GimpPattern))
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTAINER_LIST_VIEW, GimpContainerListView))
 end_define
 
 begin_define
-DECL|macro|GIMP_PATTERN_CLASS (klass)
+DECL|macro|GIMP_CONTAINER_LIST_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_PATTERN_CLASS
+name|GIMP_CONTAINER_LIST_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PATTERN, GimpPatternClass))
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONTAINER_LIST_VIEW, GimpContainerListViewClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PATTERN (obj)
+DECL|macro|GIMP_IS_CONTAINER_LIST_VIEW (obj)
 define|#
 directive|define
-name|GIMP_IS_PATTERN
+name|GIMP_IS_CONTAINER_LIST_VIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_PATTERN))
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTAINER_LIST_VIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PATTERN_CLASS (klass)
+DECL|macro|GIMP_IS_CONTAINER_LIST_VIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_PATTERN_CLASS
+name|GIMP_IS_CONTAINER_LIST_VIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PATTERN))
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTAINER_LIST_VIEW))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPatternClass
+DECL|typedef|GimpContainerListViewClass
 typedef|typedef
 name|struct
-name|_GimpPatternClass
-name|GimpPatternClass
+name|_GimpContainerListViewClass
+name|GimpContainerListViewClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpPattern
+DECL|struct|_GimpContainerListView
 struct|struct
-name|_GimpPattern
+name|_GimpContainerListView
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GimpContainerView
 name|parent_instance
 decl_stmt|;
-DECL|member|filename
-name|gchar
+DECL|member|gtk_list
+name|GtkWidget
 modifier|*
-name|filename
+name|gtk_list
 decl_stmt|;
-comment|/*  actual filename--pattern's location on disk  */
-DECL|member|mask
-name|TempBuf
+DECL|member|hash_table
+name|GHashTable
 modifier|*
-name|mask
+name|hash_table
 decl_stmt|;
-comment|/*  the actual mask                            */
+comment|/*  container child --> list item mapping  */
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpPatternClass
+DECL|struct|_GimpContainerListViewClass
 struct|struct
-name|_GimpPatternClass
+name|_GimpContainerListViewClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GimpContainerViewClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -123,7 +122,7 @@ end_struct
 
 begin_function_decl
 name|GtkType
-name|gimp_pattern_get_type
+name|gimp_container_list_view_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -131,27 +130,13 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpPattern
+name|GtkWidget
 modifier|*
-name|gimp_pattern_load
+name|gimp_container_list_view_new
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpContainer
 modifier|*
-name|filename
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|TempBuf
-modifier|*
-name|gimp_pattern_get_mask
-parameter_list|(
-specifier|const
-name|GimpPattern
-modifier|*
-name|pattern
+name|container
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -162,7 +147,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PATTERN_H__ */
+comment|/*  __GIMP_CONTAINER_LIST_VIEW_H__  */
 end_comment
 
 end_unit

@@ -2539,6 +2539,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+comment|/*   {     GtkWidget *hbox;     GtkWidget *preview;      hbox = gtk_hbox_new (FALSE, 0);     gtk_box_pack_start (GTK_BOX (main_vbox), hbox, FALSE, FALSE, 0);     gtk_widget_show (hbox);      preview = gimp_preview_new (GIMP_VIEWABLE (gdisp->gimage->layers->data));     gtk_widget_set_usize (preview, 64, 64);     gtk_box_pack_start (GTK_BOX (hbox), preview, FALSE, FALSE, 0);     gtk_widget_show (preview);   }   */
 name|gtk_widget_show
 argument_list|(
 name|main_vbox

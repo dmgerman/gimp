@@ -10173,7 +10173,7 @@ name|RED_CHANNEL
 operator|||
 name|component
 operator|>
-name|INDEXED_CHANNEL
+name|ALPHA_CHANNEL
 condition|)
 name|success
 operator|=
@@ -10283,7 +10283,7 @@ name|PDB_INT32
 block|,
 literal|"component"
 block|,
-literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4) }"
+literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4), ALPHA_CHANNEL (5) }"
 block|}
 block|}
 decl_stmt|;
@@ -10416,7 +10416,7 @@ name|RED_CHANNEL
 operator|||
 name|component
 operator|>
-name|INDEXED_CHANNEL
+name|ALPHA_CHANNEL
 condition|)
 name|success
 operator|=
@@ -10530,7 +10530,7 @@ name|PDB_INT32
 block|,
 literal|"component"
 block|,
-literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4) }"
+literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4), ALPHA_CHANNEL (5) }"
 block|}
 block|,
 block|{
@@ -10653,7 +10653,7 @@ name|RED_CHANNEL
 operator|||
 name|component
 operator|>
-name|INDEXED_CHANNEL
+name|ALPHA_CHANNEL
 condition|)
 name|success
 operator|=
@@ -10763,7 +10763,7 @@ name|PDB_INT32
 block|,
 literal|"component"
 block|,
-literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4) }"
+literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4), ALPHA_CHANNEL (5) }"
 block|}
 block|}
 decl_stmt|;
@@ -10896,7 +10896,7 @@ name|RED_CHANNEL
 operator|||
 name|component
 operator|>
-name|INDEXED_CHANNEL
+name|ALPHA_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11010,7 +11010,7 @@ name|PDB_INT32
 block|,
 literal|"component"
 block|,
-literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4) }"
+literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4), ALPHA_CHANNEL (5) }"
 block|}
 block|,
 block|{
