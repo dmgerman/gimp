@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -456,7 +462,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon29c7d7570103
+DECL|enum|__anon29c36b860103
 enum|enum
 block|{
 DECL|enumerator|COLOR_CHANGED
