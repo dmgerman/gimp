@@ -4875,6 +4875,16 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
+name|gtk_scrolled_window_set_shadow_type
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|scrolled_window
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_ETCHED_IN
+argument_list|)
+expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -7015,7 +7025,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292eec0d0108
+DECL|struct|__anon2c3bc3ed0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8656,7 +8666,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292eec0d0208
+DECL|struct|__anon2c3bc3ed0208
 block|{
 DECL|member|label
 specifier|const
@@ -8815,7 +8825,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292eec0d0308
+DECL|struct|__anon2c3bc3ed0308
 block|{
 DECL|member|tree_label
 specifier|const
