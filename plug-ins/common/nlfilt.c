@@ -75,7 +75,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b25c0320108
+DECL|struct|__anon2b0f32900108
 block|{
 DECL|member|img
 name|gint32
@@ -106,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b25c0320203
+DECL|enum|__anon2b0f32900203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -2616,30 +2616,6 @@ DECL|macro|CSCTOSC (x)
 comment|/* convert from course scaled to scaled */
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|MAXINT
-end_ifndef
-
-begin_define
-DECL|macro|MAXINT
-define|#
-directive|define
-name|MAXINT
-value|0x7fffffff
-end_define
-
-begin_comment
-DECL|macro|MAXINT
-comment|/* assume this is a 32 bit machine */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* round and scale floating point to scaled integer */
 end_comment
@@ -4846,7 +4822,7 @@ name|h0
 expr_stmt|;
 name|small1
 operator|=
-name|MAXINT
+name|G_MAXINT
 expr_stmt|;
 name|big1
 operator|=
@@ -5200,7 +5176,7 @@ name|small1
 operator|=
 name|small2
 operator|=
-name|MAXINT
+name|G_MAXINT
 expr_stmt|;
 name|big1
 operator|=
