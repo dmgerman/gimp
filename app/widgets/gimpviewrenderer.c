@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c826040103
+DECL|enum|__anon2b414a0c0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -751,6 +751,12 @@ name|NULL
 expr_stmt|;
 name|preview
 operator|->
+name|is_popup
+operator|=
+name|FALSE
+expr_stmt|;
+name|preview
+operator|->
 name|clickable
 operator|=
 name|FALSE
@@ -898,12 +904,15 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_preview_new (GimpViewable * viewable,gint width,gint height,gboolean clickable,gboolean show_popup)
+DECL|function|gimp_preview_new (GimpViewable * viewable,gboolean is_popup,gint width,gint height,gboolean clickable,gboolean show_popup)
 name|gimp_preview_new
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gboolean
+name|is_popup
 parameter_list|,
 name|gint
 name|width
@@ -1049,6 +1058,12 @@ operator|->
 name|viewable
 operator|=
 name|viewable
+expr_stmt|;
+name|preview
+operator|->
+name|is_popup
+operator|=
+name|is_popup
 expr_stmt|;
 name|preview
 operator|->
@@ -1672,6 +1687,8 @@ argument_list|(
 name|preview
 operator|->
 name|viewable
+argument_list|,
+name|TRUE
 argument_list|,
 name|popup_width
 argument_list|,

@@ -91,6 +91,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 decl_stmt|;
+DECL|member|is_popup
+name|gboolean
+name|is_popup
+decl_stmt|;
 DECL|member|clickable
 name|gboolean
 name|clickable
@@ -194,6 +198,9 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gboolean
+name|is_popup
 parameter_list|,
 name|gint
 name|width

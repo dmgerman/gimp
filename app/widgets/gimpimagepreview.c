@@ -650,6 +650,8 @@ name|preview
 operator|->
 name|viewable
 argument_list|,
+name|TRUE
+argument_list|,
 name|gimage
 operator|->
 name|width
@@ -672,6 +674,8 @@ argument_list|(
 name|preview
 operator|->
 name|viewable
+argument_list|,
+name|TRUE
 argument_list|,
 name|popup_width
 argument_list|,

@@ -420,6 +420,15 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|preview
+operator|->
+name|is_popup
+condition|)
+return|return
+name|temp_buf
+return|;
 name|buf
 operator|=
 name|temp_buf_data
@@ -1192,6 +1201,8 @@ name|preview
 operator|->
 name|viewable
 argument_list|,
+name|TRUE
+argument_list|,
 name|popup_width
 argument_list|,
 name|popup_height
@@ -1280,6 +1291,11 @@ name|height
 expr_stmt|;
 if|if
 condition|(
+name|GIMP_IS_BRUSH_PIPE
+argument_list|(
+name|brush
+argument_list|)
+operator|||
 name|brush_width
 operator|>
 name|width

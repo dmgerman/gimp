@@ -862,6 +862,8 @@ name|gimp_preview_new
 argument_list|(
 name|viewable
 argument_list|,
+name|FALSE
+argument_list|,
 name|view
 operator|->
 name|preview_width
