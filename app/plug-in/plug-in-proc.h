@@ -129,10 +129,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|ProcRecord
 modifier|*
 name|plug_in_proc_def_get_proc
 parameter_list|(
+specifier|const
 name|PlugInProcDef
 modifier|*
 name|proc_def
@@ -146,6 +148,7 @@ name|gchar
 modifier|*
 name|plug_in_proc_def_get_progname
 parameter_list|(
+specifier|const
 name|PlugInProcDef
 modifier|*
 name|proc_def
@@ -158,6 +161,7 @@ name|gchar
 modifier|*
 name|plug_in_proc_def_get_help_id
 parameter_list|(
+specifier|const
 name|PlugInProcDef
 modifier|*
 name|proc_def
@@ -166,6 +170,22 @@ specifier|const
 name|gchar
 modifier|*
 name|help_domain
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|plug_in_proc_def_compare_menu_path
+parameter_list|(
+name|gconstpointer
+name|a
+parameter_list|,
+name|gconstpointer
+name|b
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl

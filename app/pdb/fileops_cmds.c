@@ -330,6 +330,7 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 decl_stmt|;
+specifier|const
 name|ProcRecord
 modifier|*
 name|proc
@@ -645,6 +646,7 @@ name|PlugInProcDef
 modifier|*
 name|file_proc
 decl_stmt|;
+specifier|const
 name|ProcRecord
 modifier|*
 name|proc

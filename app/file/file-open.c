@@ -218,6 +218,7 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+specifier|const
 name|ProcRecord
 modifier|*
 name|proc
