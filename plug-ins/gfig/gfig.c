@@ -101,6 +101,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -4049,13 +4055,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_gfig"
 argument_list|,
+name|_
+argument_list|(
 literal|"Create Geometrical shapes with the Gimp"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"More here later"
+argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -4063,7 +4078,10 @@ literal|"Andy Thomas"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Render/Gfig..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -4365,6 +4383,9 @@ case|case
 name|RUN_INTERACTIVE
 case|:
 comment|/*gimp_get_data ("plug_in_gfig",&selvals);*/
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -8382,7 +8403,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adcb1510108
+DECL|struct|__anon2af72b820108
 block|{
 DECL|member|color_string
 name|gchar
@@ -25152,7 +25173,10 @@ argument_list|(
 name|top_level_dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Gfig"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -25193,7 +25217,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Done"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -25255,7 +25282,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Paint"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -25319,7 +25349,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -25381,7 +25414,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Clear"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -25440,7 +25476,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Undo"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -25504,7 +25543,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -25562,7 +25604,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -25727,7 +25772,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -25945,7 +25993,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Paint"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -25991,7 +26042,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Brush"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -26038,7 +26092,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -26087,7 +26144,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -26255,11 +26315,9 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|gchar
+name|char
+modifier|*
 name|buf
-index|[
-literal|128
-index|]
 decl_stmt|;
 name|window
 operator|=
@@ -26273,7 +26331,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Warning"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -26290,7 +26351,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -26355,7 +26419,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -26415,7 +26482,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Unsaved Gfig objects - continue with exiting?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
@@ -26456,11 +26526,14 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|buf
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
 literal|"Number objects unsaved = %d\n"
+argument_list|)
 argument_list|,
 name|count
 argument_list|)
@@ -26468,6 +26541,11 @@ expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|buf
 argument_list|)
@@ -27968,7 +28046,10 @@ operator|->
 name|query_box
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Gfig entry name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -28056,7 +28137,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Gfig object name:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -28135,7 +28219,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -28199,7 +28286,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -28523,7 +28613,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Entry %.100s is not a directory\n"
+argument_list|)
 argument_list|,
 name|filenamebuf
 argument_list|)
@@ -28603,12 +28696,15 @@ name|window
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Call up the file sel dialouge */
+comment|/* Call up the file sel dialogue */
 name|window
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Add Gfig path"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -28760,7 +28856,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Rescan for Gfig objects"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -28967,7 +29066,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -29071,7 +29173,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Add Dir"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -29144,7 +29249,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -29444,7 +29552,10 @@ name|window
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load Gfig obj"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -29670,7 +29781,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Error in copy layer for onlayers\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gfig_drawable
@@ -29774,9 +29888,12 @@ operator|)
 operator|<
 literal|0
 condition|)
-name|printf
+name|g_warning
 argument_list|(
-literal|"Error in creating\n"
+name|_
+argument_list|(
+literal|"Error in creating layer.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -30059,7 +30176,10 @@ name|sprintf
 argument_list|(
 name|buf
 argument_list|,
+name|_
+argument_list|(
 literal|"Gfig Layer %d"
+argument_list|)
 argument_list|,
 name|layer_count
 operator|++
@@ -30317,7 +30437,10 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"About"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -30334,7 +30457,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -30492,7 +30618,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Gfig - GIMP plug-in"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
@@ -30532,7 +30661,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Release 1.3"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
@@ -30612,7 +30744,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Email alt@picnic.demon.co.uk"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
@@ -30692,7 +30827,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Isometric grid By Rob Saunders"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
@@ -30833,7 +30971,10 @@ name|name
 condition|)
 name|name
 operator|=
+name|_
+argument_list|(
 literal|"New gfig obj"
+argument_list|)
 expr_stmt|;
 name|gfig
 operator|->
@@ -31338,7 +31479,10 @@ argument_list|(
 name|delete_dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete gfig drawing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -31411,7 +31555,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Are you sure you want to delete"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -31529,7 +31676,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Delete"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -31601,7 +31751,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|"Cancel"
+name|_
+argument_list|(
+literal|"(Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -31728,7 +31881,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"<NONE>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -31936,7 +32092,10 @@ name|sprintf
 argument_list|(
 name|str
 argument_list|,
+name|_
+argument_list|(
 literal|"<NONE>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -32021,7 +32180,10 @@ condition|)
 block|{
 name|create_warn_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Editing read-only object - you will not be able to save it"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -32138,7 +32300,10 @@ expr_stmt|;
 else|else
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Internal error - list item has null object!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -32391,29 +32556,20 @@ name|gchar
 modifier|*
 name|new_name
 init|=
-name|g_malloc
-argument_list|(
-name|strlen
-argument_list|(
-name|gfig_obj_for_menu
-operator|->
-name|draw_name
-argument_list|)
-operator|+
-literal|6
-argument_list|)
-decl_stmt|;
-name|sprintf
+name|g_strdup_printf
 argument_list|(
 name|new_name
 argument_list|,
+name|_
+argument_list|(
 literal|"%s copy"
+argument_list|)
 argument_list|,
 name|gfig_obj_for_menu
 operator|->
 name|draw_name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|new_gfig_obj
 argument_list|(
 name|new_name
@@ -32502,7 +32658,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -32548,7 +32707,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Save as..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -32594,7 +32756,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Copy"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -32640,7 +32805,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Edit"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -32884,9 +33052,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|fprintf
 argument_list|(
-literal|"Unknown event\n"
+name|stderr
+argument_list|,
+literal|"gfig: unknown event.\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -37084,7 +37254,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Error reading file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -38458,7 +38631,10 @@ expr_stmt|;
 block|}
 name|g_warning
 argument_list|(
+name|_
+argument_list|(
 literal|"Hey where has the object gone ?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -45430,7 +45606,7 @@ name|center_pnt
 operator|->
 name|next
 expr_stmt|;
-comment|/* this defines the vetices */
+comment|/* this defines the vertices */
 if|if
 condition|(
 operator|!
