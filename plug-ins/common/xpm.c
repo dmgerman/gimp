@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3da92b0108
+DECL|struct|__anon29fbf2d30108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3da92b0208
+DECL|struct|__anon29fbf2d30208
 block|{
 DECL|member|r
 name|guchar
@@ -1384,7 +1384,7 @@ name|xpm_color
 operator|->
 name|m_color
 expr_stmt|;
-comment|/* parse if it's not transparent.  the assumption is that          g_new will memset the buffer to zeros */
+comment|/* parse if it's not transparent */
 if|if
 condition|(
 name|strcmp
@@ -2305,9 +2305,6 @@ operator|->
 name|height
 expr_stmt|;
 comment|/* allocate buffer making the assumption that ibuff is 32 bit aligned... */
-if|if
-condition|(
-operator|(
 name|ibuff
 operator|=
 name|g_new
@@ -2318,16 +2315,7 @@ name|width
 operator|*
 name|height
 argument_list|)
-operator|)
-operator|==
-name|NULL
-condition|)
-goto|goto
-name|cleanup
-goto|;
-if|if
-condition|(
-operator|(
+expr_stmt|;
 name|hash
 operator|=
 name|g_hash_table_new
@@ -2342,13 +2330,7 @@ name|GCompareFunc
 operator|)
 name|compare
 argument_list|)
-operator|)
-operator|==
-name|NULL
-condition|)
-goto|goto
-name|cleanup
-goto|;
+expr_stmt|;
 comment|/* put up a progress bar */
 block|{
 name|gchar
@@ -3028,8 +3010,6 @@ operator|==
 name|XpmSuccess
 operator|)
 expr_stmt|;
-name|cleanup
-label|:
 comment|/* clean up resources */
 name|gimp_drawable_detach
 argument_list|(
