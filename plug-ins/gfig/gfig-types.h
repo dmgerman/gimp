@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850103
+DECL|enum|__anon2b3869400103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -40,7 +40,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850203
+DECL|enum|__anon2b3869400203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -64,7 +64,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850303
+DECL|enum|__anon2b3869400303
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -82,18 +82,15 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850403
+DECL|enum|__anon2b3869400403
 block|{
 DECL|enumerator|FILL_NONE
 name|FILL_NONE
 init|=
 literal|0
 block|,
-DECL|enumerator|FILL_FOREGROUND
-name|FILL_FOREGROUND
-block|,
-DECL|enumerator|FILL_BACKGROUND
-name|FILL_BACKGROUND
+DECL|enumerator|FILL_COLOR
+name|FILL_COLOR
 block|,
 DECL|enumerator|FILL_PATTERN
 name|FILL_PATTERN
@@ -109,7 +106,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850503
+DECL|enum|__anon2b3869400503
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -130,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850603
+DECL|enum|__anon2b3869400603
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -157,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850703
+DECL|enum|__anon2b3869400703
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -178,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850803
+DECL|enum|__anon2b3869400803
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -202,7 +199,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2768eb850903
+DECL|enum|__anon2b3869400903
 block|{
 DECL|enumerator|OBJ_TYPE_NONE
 name|OBJ_TYPE_NONE
