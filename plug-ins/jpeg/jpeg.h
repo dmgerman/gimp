@@ -40,7 +40,7 @@ file|<glib.h>
 end_include
 
 begin_comment
-comment|/* We want glib.h first because of some 				 * pretty obscure Win32 compilation issues. 				 */
+comment|/* We want glib.h first because of some 		       * pretty obscure Win32 compilation issues. 		       */
 end_comment
 
 begin_include
@@ -134,6 +134,7 @@ end_include
 
 begin_define
 DECL|macro|SCALE_WIDTH
+DECL|macro|SCALE_WIDTH
 define|#
 directive|define
 name|SCALE_WIDTH
@@ -158,6 +159,7 @@ end_comment
 
 begin_define
 DECL|macro|DEFAULT_QUALITY
+DECL|macro|DEFAULT_QUALITY
 define|#
 directive|define
 name|DEFAULT_QUALITY
@@ -165,6 +167,7 @@ value|0.75
 end_define
 
 begin_define
+DECL|macro|DEFAULT_SMOOTHING
 DECL|macro|DEFAULT_SMOOTHING
 define|#
 directive|define
@@ -174,6 +177,7 @@ end_define
 
 begin_define
 DECL|macro|DEFAULT_OPTIMIZE
+DECL|macro|DEFAULT_OPTIMIZE
 define|#
 directive|define
 name|DEFAULT_OPTIMIZE
@@ -181,6 +185,7 @@ value|1
 end_define
 
 begin_define
+DECL|macro|DEFAULT_PROGRESSIVE
 DECL|macro|DEFAULT_PROGRESSIVE
 define|#
 directive|define
@@ -190,6 +195,7 @@ end_define
 
 begin_define
 DECL|macro|DEFAULT_BASELINE
+DECL|macro|DEFAULT_BASELINE
 define|#
 directive|define
 name|DEFAULT_BASELINE
@@ -197,6 +203,7 @@ value|1
 end_define
 
 begin_define
+DECL|macro|DEFAULT_SUBSMP
 DECL|macro|DEFAULT_SUBSMP
 define|#
 directive|define
@@ -206,6 +213,7 @@ end_define
 
 begin_define
 DECL|macro|DEFAULT_RESTART
+DECL|macro|DEFAULT_RESTART
 define|#
 directive|define
 name|DEFAULT_RESTART
@@ -213,6 +221,7 @@ value|0
 end_define
 
 begin_define
+DECL|macro|DEFAULT_DCT
 DECL|macro|DEFAULT_DCT
 define|#
 directive|define
@@ -222,6 +231,7 @@ end_define
 
 begin_define
 DECL|macro|DEFAULT_PREVIEW
+DECL|macro|DEFAULT_PREVIEW
 define|#
 directive|define
 name|DEFAULT_PREVIEW
@@ -229,6 +239,7 @@ value|1
 end_define
 
 begin_define
+DECL|macro|DEFAULT_COMMENT
 DECL|macro|DEFAULT_COMMENT
 define|#
 directive|define
@@ -242,6 +253,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|image_ID_global
+DECL|variable|image_ID_global
 specifier|static
 name|gint32
 specifier|volatile
@@ -254,6 +266,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|orig_image_ID_global
+DECL|variable|orig_image_ID_global
 specifier|static
 name|gint32
 name|orig_image_ID_global
@@ -264,6 +277,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|drawable_ID_global
 DECL|variable|drawable_ID_global
 specifier|static
 name|gint32
@@ -276,6 +290,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|layer_ID_global
+DECL|variable|layer_ID_global
 specifier|static
 name|gint32
 name|layer_ID_global
@@ -287,6 +302,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview_size
+DECL|variable|preview_size
 specifier|static
 name|GtkWidget
 modifier|*
@@ -297,6 +313,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|drawable_global
 DECL|variable|drawable_global
 specifier|static
 name|GimpDrawable
@@ -310,44 +327,55 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290672360108
+DECL|struct|__anon2921bf1e0108
+DECL|struct|__anon2921bf1e0408
 block|{
+DECL|member|quality
 DECL|member|quality
 name|gdouble
 name|quality
 decl_stmt|;
 DECL|member|smoothing
+DECL|member|smoothing
 name|gdouble
 name|smoothing
 decl_stmt|;
+DECL|member|optimize
 DECL|member|optimize
 name|gint
 name|optimize
 decl_stmt|;
 DECL|member|progressive
+DECL|member|progressive
 name|gint
 name|progressive
 decl_stmt|;
+DECL|member|baseline
 DECL|member|baseline
 name|gint
 name|baseline
 decl_stmt|;
 DECL|member|subsmp
+DECL|member|subsmp
 name|gint
 name|subsmp
 decl_stmt|;
+DECL|member|restart
 DECL|member|restart
 name|gint
 name|restart
 decl_stmt|;
 DECL|member|dct
+DECL|member|dct
 name|gint
 name|dct
 decl_stmt|;
 DECL|member|preview
+DECL|member|preview
 name|gint
 name|preview
 decl_stmt|;
+DECL|typedef|JpegSaveVals
 DECL|typedef|JpegSaveVals
 block|}
 name|JpegSaveVals
@@ -357,12 +385,15 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290672360208
+DECL|struct|__anon2921bf1e0208
+DECL|struct|__anon2921bf1e0508
 block|{
+DECL|member|run
 DECL|member|run
 name|gint
 name|run
 decl_stmt|;
+DECL|typedef|JpegSaveInterface
 DECL|typedef|JpegSaveInterface
 block|}
 name|JpegSaveInterface
@@ -372,72 +403,88 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290672360308
+DECL|struct|__anon2921bf1e0308
+DECL|struct|__anon2921bf1e0608
 block|{
+DECL|member|cinfo
 DECL|member|cinfo
 name|struct
 name|jpeg_compress_struct
 name|cinfo
 decl_stmt|;
 DECL|member|tile_height
+DECL|member|tile_height
 name|gint
 name|tile_height
 decl_stmt|;
+DECL|member|outfile
 DECL|member|outfile
 name|FILE
 modifier|*
 name|outfile
 decl_stmt|;
 DECL|member|has_alpha
+DECL|member|has_alpha
 name|gint
 name|has_alpha
 decl_stmt|;
 DECL|member|rowstride
+DECL|member|rowstride
 name|gint
 name|rowstride
 decl_stmt|;
+DECL|member|temp
 DECL|member|temp
 name|guchar
 modifier|*
 name|temp
 decl_stmt|;
 DECL|member|data
+DECL|member|data
 name|guchar
 modifier|*
 name|data
 decl_stmt|;
+DECL|member|src
 DECL|member|src
 name|guchar
 modifier|*
 name|src
 decl_stmt|;
 DECL|member|drawable
+DECL|member|drawable
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 DECL|member|pixel_rgn
+DECL|member|pixel_rgn
 name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
+DECL|member|file_name
 DECL|member|file_name
 name|gchar
 modifier|*
 name|file_name
 decl_stmt|;
 DECL|member|abort_me
-name|gint
+DECL|member|abort_me
+name|gboolean
 name|abort_me
 decl_stmt|;
-DECL|typedef|preview_persistent
+DECL|typedef|PreviewPersistent
+DECL|typedef|PreviewPersistent
 block|}
-name|preview_persistent
+name|PreviewPersistent
 typedef|;
 end_typedef
 
 begin_decl_stmt
 DECL|variable|abort_me
-name|gint
+DECL|variable|abort_me
+specifier|static
+name|gboolean
 modifier|*
 name|abort_me
 init|=
@@ -499,7 +546,7 @@ parameter_list|,
 name|GimpRunModeType
 name|runmode
 parameter_list|,
-name|gint
+name|gboolean
 name|preview
 parameter_list|)
 function_decl|;
@@ -523,7 +570,7 @@ parameter_list|,
 name|gint32
 name|orig_image_ID
 parameter_list|,
-name|gint
+name|gboolean
 name|preview
 parameter_list|)
 function_decl|;
@@ -638,6 +685,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
+DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
@@ -659,6 +707,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|jsvals
 DECL|variable|jsvals
 specifier|static
 name|JpegSaveVals
@@ -688,6 +737,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|jsint
+DECL|variable|jsint
 specifier|static
 name|JpegSaveInterface
 name|jsint
@@ -701,6 +751,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|image_comment
+DECL|variable|image_comment
 specifier|static
 name|gchar
 modifier|*
@@ -711,6 +762,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|restart_markers_scale
 DECL|variable|restart_markers_scale
 specifier|static
 name|GtkWidget
@@ -723,6 +775,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|restart_markers_label
+DECL|variable|restart_markers_label
 specifier|static
 name|GtkWidget
 modifier|*
@@ -733,6 +786,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
+DECL|function|MAIN ()
 DECL|function|MAIN ()
 name|MAIN
 argument_list|()
@@ -1048,6 +1102,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
@@ -1368,11 +1423,6 @@ break|break;
 default|default:
 break|break;
 block|}
-if|if
-condition|(
-name|image_comment
-condition|)
-block|{
 name|g_free
 argument_list|(
 name|image_comment
@@ -1860,10 +1910,6 @@ operator|=
 name|FALSE
 expr_stmt|;
 comment|/* free up the default -- wasted some effort earlier */
-if|if
-condition|(
-name|image_comment
-condition|)
 name|g_free
 argument_list|(
 name|image_comment
@@ -2230,6 +2276,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|image_comment
+operator|&&
 name|strlen
 argument_list|(
 name|image_comment
@@ -2307,6 +2355,9 @@ endif|#
 directive|endif
 comment|/* Have Parasites */
 block|}
+end_function
+
+begin_else
 else|else
 block|{
 name|status
@@ -2314,6 +2365,9 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
+end_else
+
+begin_expr_stmt
 name|values
 index|[
 literal|0
@@ -2325,17 +2379,16 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-block|}
-end_function
+end_expr_stmt
 
 begin_comment
+unit|}
 comment|/* Read next byte */
 end_comment
 
 begin_function
-specifier|static
+unit|static
 name|guint
-DECL|function|jpeg_getc (j_decompress_ptr cinfo)
 name|jpeg_getc
 parameter_list|(
 name|j_decompress_ptr
@@ -2405,7 +2458,6 @@ comment|/*  * Marker processor for COM markers.  * This replaces the library's b
 end_comment
 
 begin_decl_stmt
-DECL|variable|local_image_comments
 specifier|static
 name|GString
 modifier|*
@@ -2418,7 +2470,6 @@ end_decl_stmt
 begin_function
 specifier|static
 name|boolean
-DECL|function|COM_handler (j_decompress_ptr cinfo)
 name|COM_handler
 parameter_list|(
 name|j_decompress_ptr
@@ -2512,23 +2563,19 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|my_error_mgr
 typedef|typedef
 struct|struct
 name|my_error_mgr
 block|{
-DECL|member|pub
 name|struct
 name|jpeg_error_mgr
 name|pub
 decl_stmt|;
 comment|/* "public" fields */
-DECL|member|setjmp_buffer
 name|jmp_buf
 name|setjmp_buffer
 decl_stmt|;
 comment|/* for return to caller */
-DECL|typedef|my_error_ptr
 block|}
 typedef|*
 name|my_error_ptr
@@ -2542,7 +2589,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|my_error_exit (j_common_ptr cinfo)
 name|my_error_exit
 parameter_list|(
 name|j_common_ptr
@@ -2590,7 +2636,6 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (gchar * filename,GimpRunModeType runmode,gint preview)
 name|load_image
 parameter_list|(
 name|gchar
@@ -2600,7 +2645,7 @@ parameter_list|,
 name|GimpRunModeType
 name|runmode
 parameter_list|,
-name|gint
+name|gboolean
 name|preview
 parameter_list|)
 block|{
@@ -2884,9 +2929,13 @@ comment|/* if we had any comments then make a parasite for them */
 if|if
 condition|(
 name|local_image_comments
+operator|&&
+name|local_image_comments
+operator|->
+name|len
 condition|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|string
 init|=
@@ -3814,7 +3863,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|background_error_exit (j_common_ptr cinfo)
 name|background_error_exit
 parameter_list|(
 name|j_common_ptr
@@ -3828,7 +3876,7 @@ condition|)
 operator|*
 name|abort_me
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 call|(
 modifier|*
@@ -3848,24 +3896,13 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|background_jpeg_save (gpointer * ptr)
 name|background_jpeg_save
 parameter_list|(
-name|gpointer
-modifier|*
-name|ptr
-parameter_list|)
-block|{
-name|preview_persistent
+name|PreviewPersistent
 modifier|*
 name|pp
-init|=
-operator|(
-name|preview_persistent
-operator|*
-operator|)
-name|ptr
-decl_stmt|;
+parameter_list|)
+block|{
 name|guchar
 modifier|*
 name|t
@@ -4297,10 +4334,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (char * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,int preview)
 name|save_image
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -4313,7 +4349,7 @@ parameter_list|,
 name|gint32
 name|orig_image_ID
 parameter_list|,
-name|int
+name|gboolean
 name|preview
 parameter_list|)
 block|{
@@ -5150,12 +5186,10 @@ name|width
 expr_stmt|;
 name|temp
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|cinfo
 operator|.
 name|image_width
@@ -5167,12 +5201,10 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|rowstride
 operator|*
 name|gimp_tile_height
@@ -5190,27 +5222,17 @@ condition|(
 name|preview
 condition|)
 block|{
-name|preview_persistent
+name|PreviewPersistent
 modifier|*
 name|pp
 init|=
-name|g_malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|preview_persistent
-argument_list|)
+name|PreviewPersistent
+argument_list|,
+literal|1
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|pp
-operator|==
-name|NULL
-condition|)
-return|return
-name|FALSE
-return|;
 comment|/* pass all the information we need */
 name|pp
 operator|->
@@ -5289,7 +5311,7 @@ name|pp
 operator|->
 name|abort_me
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|abort_me
 operator|=
@@ -5488,14 +5510,14 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cinfo
 operator|.
 name|next_scanline
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|cinfo
 operator|.
@@ -5551,7 +5573,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|make_preview (void)
 name|make_preview
 parameter_list|(
 name|void
@@ -5573,14 +5594,11 @@ condition|)
 block|{
 name|tn
 operator|=
-name|tempnam
+name|gimp_temp_name
 argument_list|(
-name|NULL
-argument_list|,
-literal|"gimp"
+literal|"jpeg"
 argument_list|)
 expr_stmt|;
-comment|/* user temp dir? */
 name|save_image
 argument_list|(
 name|tn
@@ -5630,7 +5648,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|destroy_preview (void)
 name|destroy_preview
 parameter_list|(
 name|void
@@ -5644,7 +5661,7 @@ block|{
 operator|*
 name|abort_me
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 comment|/* signal the background save to stop */
 block|}
@@ -5696,7 +5713,6 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_dialog (void)
 name|save_dialog
 parameter_list|(
 name|void
@@ -7350,7 +7366,6 @@ name|dtype
 operator|!=
 name|GIMP_RGBA_IMAGE
 condition|)
-block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|menu
@@ -7358,7 +7373,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 name|com_frame
 operator|=
 name|gtk_frame_new
@@ -7625,7 +7639,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|save_close_callback (GtkWidget * widget,gpointer data)
 name|save_close_callback
 parameter_list|(
 name|GtkWidget
@@ -7651,7 +7664,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_ok_callback (GtkWidget * widget,gpointer data)
 name|save_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -7685,13 +7697,7 @@ argument_list|,
 literal|"text"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image_comment
-operator|!=
-name|NULL
-condition|)
-block|{
+comment|/* pw - gtk_editable_get_chars allocates a copy of the string, so    * don't worry about the gtk_widget_destroy killing it.  */
 name|g_free
 argument_list|(
 name|image_comment
@@ -7701,8 +7707,10 @@ name|image_comment
 operator|=
 name|NULL
 expr_stmt|;
-block|}
-comment|/* pw - gtk_editable_get_chars allocates a copy of the string, so    * don't worry about the gtk_widget_destroy killing it.  */
+if|if
+condition|(
+name|text
+condition|)
 name|image_comment
 operator|=
 name|gtk_editable_get_chars
@@ -7732,7 +7740,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_restart_toggle_update (GtkWidget * widget,GtkAdjustment * adjustment)
 name|save_restart_toggle_update
 parameter_list|(
 name|GtkWidget
@@ -7757,7 +7764,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_restart_update (GtkAdjustment * adjustment,GtkWidget * toggle)
 name|save_restart_update
 parameter_list|(
 name|GtkAdjustment
@@ -7825,7 +7831,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|menu_callback (GtkWidget * widget,gpointer data)
 name|menu_callback
 parameter_list|(
 name|GtkWidget
