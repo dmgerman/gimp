@@ -214,7 +214,6 @@ condition|(
 name|tile
 operator|->
 name|ref_count
-operator|++
 operator|==
 literal|1
 condition|)
