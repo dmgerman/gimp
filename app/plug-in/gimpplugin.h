@@ -333,6 +333,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|PlugInProcFrame
+modifier|*
+name|plug_in_get_proc_frame
+parameter_list|(
+name|PlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|plug_in_proc_frame_push
 parameter_list|(

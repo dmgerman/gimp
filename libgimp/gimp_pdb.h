@@ -47,6 +47,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpcontext_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpconvert_pdb.h>
 end_include
 
