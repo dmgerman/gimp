@@ -458,9 +458,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"%s: unhandled boxed value type: %s"
+literal|"%s: unhandled boxed value type: %s\n"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
@@ -481,9 +481,9 @@ name|value
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"%s: unhandled object value type: %s"
+literal|"%s: unhandled object value type: %s\n"
 argument_list|,
 name|G_STRFUNC
 argument_list|,
