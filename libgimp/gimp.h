@@ -98,6 +98,16 @@ directive|ifdef
 name|G_OS_WIN32
 end_ifdef
 
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
+end_include
+
+begin_comment
+comment|/* For _-argc and __argv */
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
