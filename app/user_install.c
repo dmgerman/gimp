@@ -422,7 +422,7 @@ name|GdkFont
 modifier|*
 name|font
 decl_stmt|;
-DECL|struct|__anon28e6d9de0108
+DECL|struct|__anon274e89970108
 specifier|static
 specifier|const
 struct|struct
@@ -1153,7 +1153,10 @@ name|font_emphasis
 operator|=
 name|gdk_font_load
 argument_list|(
+name|_
+argument_list|(
 literal|"-*-helvetica-medium-o-normal-*-*-100-*-*-*-*-*-*"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|font
