@@ -35,6 +35,23 @@ directive|include
 file|<unistd.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__EMX__
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<process.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -167,7 +184,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2b3071400108
+DECL|struct|__anon293fe4fd0108
 typedef|typedef
 struct|struct
 block|{
@@ -195,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3071400208
+DECL|struct|__anon293fe4fd0208
 typedef|typedef
 struct|struct
 block|{
@@ -1023,6 +1040,9 @@ index|]
 operator|=
 name|NULL
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|__EMX__
 comment|/* fork off a xwd process */
 if|if
 condition|(
@@ -1077,6 +1097,42 @@ expr_stmt|;
 return|return;
 block|}
 else|else
+else|#
+directive|else
+comment|/* __EMX__ */
+name|pid
+operator|=
+name|spawnvp
+argument_list|(
+name|P_NOWAIT
+argument_list|,
+name|XWD
+argument_list|,
+name|xwdargv
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|pid
+operator|==
+operator|-
+literal|1
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"screenshot: spawn failed: %s\n"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+endif|#
+directive|endif
 block|{
 name|waitpid
 argument_list|(
