@@ -1899,7 +1899,7 @@ expr_stmt|;
 comment|/*  the antialias toggle button  */
 name|antialias_toggle
 operator|=
-name|gtk_toggle_button_new_with_label
+name|gtk_check_button_new_with_label
 argument_list|(
 literal|"Antialiasing"
 argument_list|)
@@ -1960,7 +1960,7 @@ expr_stmt|;
 comment|/*  the feather toggle button  */
 name|feather_toggle
 operator|=
-name|gtk_toggle_button_new_with_label
+name|gtk_check_button_new_with_label
 argument_list|(
 literal|"Feather"
 argument_list|)
