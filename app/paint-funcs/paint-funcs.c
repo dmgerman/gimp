@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c1ccfe0103
+DECL|enum|__anon2c3d57b60103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -20813,7 +20813,7 @@ decl_stmt|;
 comment|/* use src->bytes + 1 since DISSOLVE always needs a buffer with alpha */
 name|buf
 operator|=
-name|alloca
+name|g_alloca
 argument_list|(
 name|MAX
 argument_list|(
@@ -21518,7 +21518,7 @@ decl_stmt|;
 comment|/* use src2->bytes + 1 since DISSOLVE always needs a buffer with alpha */
 name|buf
 operator|=
-name|alloca
+name|g_alloca
 argument_list|(
 name|MAX
 argument_list|(
