@@ -162,7 +162,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4229ca0108
+DECL|struct|__anon27a3688b0108
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +202,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4229ca0208
+DECL|struct|__anon27a3688b0208
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4229ca0308
+DECL|struct|__anon27a3688b0308
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4229ca0408
+DECL|struct|__anon27a3688b0408
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +419,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4229ca0508
+DECL|struct|__anon27a3688b0508
 typedef|typedef
 struct|struct
 block|{
@@ -543,7 +543,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4229ca0608
+DECL|struct|__anon27a3688b0608
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +609,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4229ca0708
+DECL|struct|__anon27a3688b0708
 typedef|typedef
 struct|struct
 block|{
@@ -689,7 +689,7 @@ comment|/* Declarations for objects of type Parasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4229ca0808
+DECL|struct|__anon27a3688b0808
 typedef|typedef
 struct|struct
 block|{
@@ -14530,14 +14530,13 @@ literal|"layer"
 argument_list|)
 condition|)
 block|{
+comment|/* id = gimp_channel_get_layer_id(self->ID); */
+comment|/* It isn't quite clear what that was supposed to achieve, but 	   the gimp_channel_get_layer_id call no longer exists, which 	   was breaking everything that tried to load gimpmodule.so.  	   With no-one apparently maintaing it, the options seem to be: 	    A) remove this "layer" attribute entirely, as it doesn't 	       seem to make much sense.             B) Just return the channel ID. 	    	    The latter seems more conservative, so that's what I'll do. 	    -- acapnotic@users.sourceforge.net (08/09/2000) */
 name|id
 operator|=
-name|gimp_channel_get_layer_id
-argument_list|(
 name|self
 operator|->
 name|ID
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
