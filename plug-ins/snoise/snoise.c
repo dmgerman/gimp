@@ -1,15 +1,21 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Solid Noise plug-in -- creates solid noise textures  * Copyright (C) 1997 Marcelo de Gomensoro Malheiros  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* Solid Noise plug-in -- creates solid noise textures  * Copyright (C) 1997, 1998 Marcelo de Gomensoro Malheiros  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
-comment|/* Solid Noise plug-in version 1.02, Aug 1997  *  * This plug-in generates solid noise textures based on the  * `Noise' and `Turbulence' functions described in the paper  *     *    Perlin, K, and Hoffert, E. M., "Hypertexture",  *    Computer Graphics 23, 3 (August 1989)  *  * The algorithm implemented here also makes possible the  * creation of seamless tiles.  *  * You can contact me at<malheiro@dca.fee.unicamp.br>.  * Comments for this code are appreciated.  *  * The overall plug-in structure is based on the Whirl plug-in,  * which is Copyright (C) 1997 Federico Mena Quintero  */
+comment|/* Solid Noise plug-in version 1.03, Apr 1998  *  * This plug-in generates solid noise textures based on the  * `Noise' and `Turbulence' functions described in the paper  *     *    Perlin, K, and Hoffert, E. M., "Hypertexture",  *    Computer Graphics 23, 3 (August 1989)  *  * The algorithm implemented here also makes possible the  * creation of seamless tiles.  *  * You can contact me at<malheiro@dca.fee.unicamp.br>.  * Comments and improvements for this code are welcome.  *  * The overall plug-in structure is based on the Whirl plug-in,  * which is Copyright (C) 1997 Federico Mena Quintero  */
 end_comment
 
 begin_comment
-comment|/* Version 1.02:  *  *  Fixed a stupid bug with the alpha channel.  *  Fixed a rounding bug for small tilable textures.  *  Now the dialog is more compact; using the settings from gtkrc.  *  * Version 1.01:  *  *  Quick fix for wrong pdb declaration. Also changed default seed to 1.  *  Thanks to Adrian Likins and Federico Mena for the patch!  *  * Version 1.0:  *  *  Initial release.  */
+comment|/* Version 1.03:  *  *  Added patch from Kevin Turner<kevint@poboxes.com> to use the  *  current time as the random seed. Thank you!  *  Incorporated some portability changes from the GIMP distribution.  *  * Version 1.02:  *  *  Fixed a stupid bug with the alpha channel.  *  Fixed a rounding bug for small tilable textures.  *  Now the dialog is more compact; using the settings from gtkrc.  *  * Version 1.01:  *  *  Quick fix for wrong pdb declaration. Also changed default seed to 1.  *  Thanks to Adrian Likins and Federico Mena for the patch!  *  * Version 1.0:  *  *  Initial release.  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|<time.h>
+end_include
 
 begin_include
 include|#
@@ -22,16 +28,6 @@ include|#
 directive|include
 file|<stdlib.h>
 end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
-end_include
-
-begin_comment
-comment|/* For random seeding */
-end_comment
 
 begin_include
 include|#
@@ -120,7 +116,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2958ad830108
+DECL|struct|__anon2a9a46ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -148,9 +144,9 @@ DECL|member|ysize
 name|gdouble
 name|ysize
 decl_stmt|;
-comment|/* Interface only */
+comment|/*  Interface only  */
 DECL|member|timeseed
-name|gboolean
+name|gint
 name|timeseed
 decl_stmt|;
 DECL|typedef|SolidNoiseValues
@@ -160,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2958ad830208
+DECL|struct|__anon2a9a46ed0208
 typedef|typedef
 struct|struct
 block|{
@@ -175,7 +171,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2958ad830308
+DECL|struct|__anon2a9a46ed0308
 typedef|typedef
 struct|struct
 block|{
@@ -425,8 +421,8 @@ comment|/* xsize */
 literal|4.0
 block|,
 comment|/* ysize */
-name|TRUE
-comment|/* Time seed? */
+literal|0
+comment|/* use time seed */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -638,7 +634,7 @@ literal|"Marcelo de Gomensoro Malheiros"
 argument_list|,
 literal|"Marcelo de Gomensoro Malheiros"
 argument_list|,
-literal|"Aug 1997, 1.02"
+literal|"Apr 1998, v1.03"
 argument_list|,
 literal|"<Image>/Filters/Render/Solid Noise"
 argument_list|,
@@ -792,22 +788,12 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
-comment|/*  Make sure all the arguments are present  */
+comment|/*  Test number of arguments  */
 if|if
 condition|(
 name|nparams
-operator|!=
-literal|9
-condition|)
-name|status
-operator|=
-name|STATUS_CALLING_ERROR
-expr_stmt|;
-if|if
-condition|(
-name|status
 operator|==
-name|STATUS_SUCCESS
+literal|9
 condition|)
 block|{
 name|snvals
@@ -889,6 +875,11 @@ operator|.
 name|d_float
 expr_stmt|;
 block|}
+else|else
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -973,15 +964,9 @@ name|run_mode
 operator|==
 name|RUN_INTERACTIVE
 operator|||
-operator|(
-name|snvals
-operator|.
-name|timeseed
-operator|&&
 name|run_mode
 operator|==
 name|RUN_WITH_LAST_VALS
-operator|)
 condition|)
 name|gimp_set_data
 argument_list|(
