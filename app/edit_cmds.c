@@ -161,11 +161,18 @@ name|drawable
 operator|==
 name|NULL
 condition|)
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimage
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gimage
 operator|=
 name|drawable_gimage
@@ -173,6 +180,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  create the new image  */
 if|if
@@ -340,11 +348,18 @@ name|drawable
 operator|==
 name|NULL
 condition|)
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimage
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gimage
 operator|=
 name|drawable_gimage
@@ -352,6 +367,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  create the new image  */
 if|if
@@ -528,11 +544,18 @@ name|drawable
 operator|==
 name|NULL
 condition|)
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimage
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gimage
 operator|=
 name|drawable_gimage
@@ -540,6 +563,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -793,11 +817,18 @@ name|drawable
 operator|==
 name|NULL
 condition|)
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimage
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gimage
 operator|=
 name|drawable_gimage
@@ -805,6 +836,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  create the new image  */
 if|if
@@ -968,11 +1000,18 @@ name|drawable
 operator|==
 name|NULL
 condition|)
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimage
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gimage
 operator|=
 name|drawable_gimage
@@ -980,6 +1019,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  create the new image  */
 if|if
@@ -1143,11 +1183,18 @@ name|drawable
 operator|==
 name|NULL
 condition|)
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+name|gimage
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gimage
 operator|=
 name|drawable_gimage
@@ -1155,6 +1202,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/*  create the new image  */
 if|if
