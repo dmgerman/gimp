@@ -315,7 +315,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2acba9a60108
+DECL|struct|__anon28c7846c0108
 typedef|typedef
 struct|struct
 block|{
@@ -384,7 +384,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acba9a60208
+DECL|struct|__anon28c7846c0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2913,16 +2913,6 @@ name|width_units_entry
 argument_list|)
 argument_list|,
 name|vals
-argument_list|)
-expr_stmt|;
-name|gtk_option_menu_set_history
-argument_list|(
-name|GTK_OPTION_MENU
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -6836,7 +6826,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2acba9a60308
+DECL|struct|__anon28c7846c0308
 struct|struct
 block|{
 DECL|member|label
@@ -6905,7 +6895,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2acba9a60408
+DECL|struct|__anon28c7846c0408
 struct|struct
 block|{
 DECL|member|label
