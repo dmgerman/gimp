@@ -47,13 +47,13 @@ DECL|macro|GIMP_MODULE_ABI_VERSION
 define|#
 directive|define
 name|GIMP_MODULE_ABI_VERSION
-value|0x0002
+value|0x0003
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b52ae700103
+DECL|enum|__anon27a965e20103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
