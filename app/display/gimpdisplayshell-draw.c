@@ -4250,17 +4250,17 @@ name|condition
 parameter_list|)
 define|\
 value|menus_set_sensitive ("<Image>/" menu, (condition) != 0)
-DECL|macro|SET_STATE (menu,condition)
+DECL|macro|SET_ACTIVE (menu,condition)
 define|#
 directive|define
-name|SET_STATE
+name|SET_ACTIVE
 parameter_list|(
 name|menu
 parameter_list|,
 name|condition
 parameter_list|)
 define|\
-value|menus_set_state ("<Image>/" menu, (condition) != 0)
+value|menus_set_active ("<Image>/" menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
 literal|"File/Save"
@@ -4470,7 +4470,7 @@ condition|(
 name|gdisp
 condition|)
 block|{
-name|SET_STATE
+name|SET_ACTIVE
 argument_list|(
 literal|"View/Toggle Selection"
 argument_list|,
@@ -4482,7 +4482,7 @@ operator|->
 name|hidden
 argument_list|)
 expr_stmt|;
-name|SET_STATE
+name|SET_ACTIVE
 argument_list|(
 literal|"View/Toggle Layer Boundary"
 argument_list|,
@@ -4494,7 +4494,7 @@ operator|->
 name|layer_hidden
 argument_list|)
 expr_stmt|;
-name|SET_STATE
+name|SET_ACTIVE
 argument_list|(
 literal|"View/Toggle Rulers"
 argument_list|,
@@ -4510,7 +4510,7 @@ else|:
 literal|0
 argument_list|)
 expr_stmt|;
-name|SET_STATE
+name|SET_ACTIVE
 argument_list|(
 literal|"View/Toggle Guides"
 argument_list|,
@@ -4519,7 +4519,7 @@ operator|->
 name|draw_guides
 argument_list|)
 expr_stmt|;
-name|SET_STATE
+name|SET_ACTIVE
 argument_list|(
 literal|"View/Snap to Guides"
 argument_list|,
@@ -4528,7 +4528,7 @@ operator|->
 name|snap_to_guides
 argument_list|)
 expr_stmt|;
-name|SET_STATE
+name|SET_ACTIVE
 argument_list|(
 literal|"View/Toggle Statusbar"
 argument_list|,
@@ -4544,7 +4544,7 @@ else|:
 literal|0
 argument_list|)
 expr_stmt|;
-name|SET_STATE
+name|SET_ACTIVE
 argument_list|(
 literal|"View/Dot for Dot"
 argument_list|,
@@ -5067,7 +5067,7 @@ argument_list|)
 expr_stmt|;
 undef|#
 directive|undef
-name|SET_STATE
+name|SET_ACTIVE
 undef|#
 directive|undef
 name|SET_SENSITIVE

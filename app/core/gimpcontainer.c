@@ -65,7 +65,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon277ba9db0103
+DECL|enum|__anon29fb4a9d0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -90,7 +90,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277ba9db0203
+DECL|enum|__anon29fb4a9d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -672,42 +672,19 @@ name|get_child_index
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  spit out a warning once GType becomes a gpointer  */
-block|{
-name|guint32
-modifier|*
-name|foo
-init|=
-name|NULL
-decl_stmt|;
-name|GType
-modifier|*
-name|bar
-decl_stmt|;
-name|bar
-operator|=
-name|foo
-expr_stmt|;
-block|}
 name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CHILDREN_TYPE
 argument_list|,
-name|g_param_spec_uint
+name|g_param_spec_pointer
 argument_list|(
 literal|"children_type"
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
-argument_list|,
-name|GIMP_TYPE_OBJECT
-argument_list|,
-name|G_MAXINT
-argument_list|,
-name|GIMP_TYPE_OBJECT
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
@@ -923,7 +900,7 @@ operator|=
 operator|(
 name|GType
 operator|)
-name|g_value_get_uint
+name|g_value_get_pointer
 argument_list|(
 name|value
 argument_list|)
@@ -1005,12 +982,12 @@ block|{
 case|case
 name|PROP_CHILDREN_TYPE
 case|:
-name|g_value_set_uint
+name|g_value_set_pointer
 argument_list|(
 name|value
 argument_list|,
 operator|(
-name|guint
+name|gpointer
 operator|)
 name|container
 operator|->

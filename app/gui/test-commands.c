@@ -30,19 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/widgets-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -163,12 +151,6 @@ begin_include
 include|#
 directive|include
 file|"dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient-editor.h"
 end_include
 
 begin_include

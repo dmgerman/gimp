@@ -38,6 +38,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GradientEditor
+typedef|typedef
+name|struct
+name|_GradientEditor
+name|GradientEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|InfoDialog
 typedef|typedef
 name|struct
