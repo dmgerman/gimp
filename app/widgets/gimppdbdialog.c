@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a8a720103
+DECL|enum|__anon295afc130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -645,9 +645,11 @@ name|context
 operator|->
 name|gimp
 argument_list|,
-literal|"pdb selection"
+name|g_type_name
+argument_list|(
+name|type
+argument_list|)
 argument_list|,
-comment|/* gtk_window_get_title (GTK_WINDOW (object)), */
 name|NULL
 argument_list|)
 expr_stmt|;
