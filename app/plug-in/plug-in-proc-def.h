@@ -153,6 +153,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+name|plug_in_proc_def_get_help_id
+parameter_list|(
+name|PlugInProcDef
+modifier|*
+name|proc_def
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
