@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * PSD Plugin version 1.9.9.9b (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/*  * PSD Plugin version 1.9.9.9e (BETA)  * This GIMP plug-in is designed to load Adobe Photoshop(tm) files (.PSD)  *  * Adam D. Moss<adam@gimp.org><adam@foxbox.org>  *  *     If this plug-in fails to load a file which you think it should,  *     please tell me what seemed to go wrong, and anything you know  *     about the image you tried to load.  Please don't send big PSD  *     files to me without asking first.  *  *          Copyright (C) 1997-98 Adam D. Moss  *          Copyright (C) 1996    Torsten Martinsen  * Portions Copyright (C) 1995    Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/*  * Adobe and Adobe Photoshop are trademarks of Adobe Systems  * Incor
 end_comment
 
 begin_comment
-comment|/*  * Revision history:  *  *  98.05.04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  98.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  98.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  98.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  98.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  98.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  97.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  97.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
+comment|/*  * Revision history:  *  *  98.07.31 / v1.9.9.9e / Adam D. Moss  *       Worked around some buggy PSD savers (suspect PS4 on Mac) - ugh.  *       Fixed a bug when loading layer masks of certain dimensions.  *  *  98.05.04 / v1.9.9.9b / Adam D. Moss  *       Changed the Pascal-style string-reading stuff.  That fixed  *       some file-padding problems.  Made all debugging output  *       compile-time optional (please leave it enabled for now).  *       Reduced memory requirements; still much room for improvement.  *  *  98.04.28 / v1.9.9.9 / Adam D. Moss  *       Fixed the correct channel interlacing of 'raw' flat images.  *       Thanks to Christian Kirsch and Jay Cox for spotting this.  *       Changed some of the I/O routines.  *  *  98.04.26 / v1.9.9.8 / Adam D. Moss  *       Implemented Aux-channels for layered files.  Got rid  *       of<endian.h> nonsense.  Improved Layer Mask padding.  *       Enforced num_layers/num_channels limit checks.  *  *  98.04.23 / v1.9.9.5 / Adam D. Moss  *       Got Layer Masks working, got Aux-channels working  *       for unlayered files, fixed 'raw' channel loading, fixed  *       some other mini-bugs, slightly better progress meters.  *       Thanks to everyone who is helping with the testing!  *  *  98.04.21 / v1.9.9.1 / Adam D. Moss  *       A little cleanup.  Implemented Layer Masks but disabled  *       them again - PS masks can be a different size to their  *       owning layer, unlike those in GIMP.  *  *  98.04.19 / v1.9.9.0 / Adam D. Moss  *       Much happier now.  *  *  97.03.13 / v1.9.0 / Adam D. Moss  *       Layers, channels and masks, oh my.  *       + Bugfixes& rearchitecturing.  *  *  97.01.30 / v1.0.12 / Torsten Martinsen  *       Flat PSD image loading.  */
 end_comment
 
 begin_comment
@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f66aa00103
+DECL|enum|__anon296ed99f0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -433,7 +433,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon28f66aa00208
+DECL|struct|__anon296ed99f0208
 specifier|static
 struct|struct
 block|{
@@ -835,6 +835,26 @@ name|guchar
 modifier|*
 name|getpascalstring
 parameter_list|(
+name|FILE
+modifier|*
+name|fd
+parameter_list|,
+name|gchar
+modifier|*
+name|why
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gchar
+modifier|*
+name|getstring
+parameter_list|(
+name|size_t
+name|n
+parameter_list|,
 name|FILE
 modifier|*
 name|fd
@@ -1894,22 +1914,20 @@ condition|)
 block|{
 do|do
 block|{
-name|psd_image
-operator|.
-name|aux_channel
-index|[
-name|psd_image
-operator|.
-name|num_aux_channels
-index|]
-operator|.
-name|name
+name|guchar
+name|slen
+decl_stmt|;
+name|gchar
+modifier|*
+name|sname
+decl_stmt|;
+name|slen
 operator|=
-name|getpascalstring
+name|getguchar
 argument_list|(
 name|fd
 argument_list|,
-literal|"alpha channel name"
+literal|"alpha channel name length"
 argument_list|)
 expr_stmt|;
 operator|(
@@ -1921,6 +1939,77 @@ expr_stmt|;
 name|remaining
 operator|--
 expr_stmt|;
+comment|/* Check for (Mac?) Photoshop (4?) file-writing bug */
+if|if
+condition|(
+name|slen
+operator|>
+name|remaining
+condition|)
+block|{
+name|IFDBG
+block|{
+name|printf
+argument_list|(
+literal|"\nYay, a file bug.  "
+literal|"Nice one Adobe(tm).  "
+literal|"I'll work around you.\n"
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
+break|break;
+block|}
+if|if
+condition|(
+name|slen
+condition|)
+block|{
+name|sname
+operator|=
+name|getstring
+argument_list|(
+name|slen
+argument_list|,
+name|fd
+argument_list|,
+literal|"alpha channel name"
+argument_list|)
+expr_stmt|;
+name|psd_image
+operator|.
+name|aux_channel
+index|[
+name|psd_image
+operator|.
+name|num_aux_channels
+index|]
+operator|.
+name|name
+operator|=
+name|sname
+expr_stmt|;
+block|}
+else|else
+block|{
+name|psd_image
+operator|.
+name|aux_channel
+index|[
+name|psd_image
+operator|.
+name|num_aux_channels
+index|]
+operator|.
+name|name
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|psd_image
@@ -1938,6 +2027,7 @@ name|NULL
 condition|)
 block|{
 name|IFDBG
+block|{
 name|printf
 argument_list|(
 literal|"\t\t\tNull channel name %d.\n"
@@ -1946,12 +2036,13 @@ name|psd_image
 operator|.
 name|num_aux_channels
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|fflush
 argument_list|(
 name|stdout
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -2031,7 +2122,8 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"\nPSD: Sorry - this image has too many aux channels.  Tell Adam!\n"
+literal|"\nPSD: Sorry - this image has too many "
+literal|"aux channels.  Tell Adam!\n"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2051,7 +2143,8 @@ if|if
 condition|(
 name|remaining
 condition|)
-name|throwchunk
+block|{
+name|dumpchunk
 argument_list|(
 name|remaining
 argument_list|,
@@ -2060,6 +2153,18 @@ argument_list|,
 literal|"alphaname padding 0 throw"
 argument_list|)
 expr_stmt|;
+operator|(
+operator|*
+name|offset
+operator|)
+operator|+=
+name|remaining
+expr_stmt|;
+name|remaining
+operator|=
+literal|0
+expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
@@ -3913,22 +4018,6 @@ name|layeri
 operator|++
 control|)
 block|{
-name|tmpline
-operator|=
-name|xmalloc
-argument_list|(
-name|psd_image
-operator|.
-name|layer
-index|[
-name|layeri
-index|]
-operator|.
-name|width
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|channeli
@@ -4023,6 +4112,15 @@ operator|.
 name|height
 expr_stmt|;
 block|}
+name|tmpline
+operator|=
+name|xmalloc
+argument_list|(
+name|width
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
 name|compression
 operator|=
 name|getgshort
@@ -4040,6 +4138,7 @@ operator|+=
 literal|2
 expr_stmt|;
 name|IFDBG
+block|{
 name|printf
 argument_list|(
 literal|"\t\t\tLayer (%d) Channel (%d:%d) Compression: %d (%s)\n"
@@ -4080,8 +4179,15 @@ else|:
 literal|"UNKNOWN!"
 operator|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
 name|IFDBG
+block|{
 name|printf
 argument_list|(
 literal|"\t\t\t\tLoading channel data (%d bytes)...\n"
@@ -4090,7 +4196,13 @@ name|width
 operator|*
 name|height
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
 name|psd_image
 operator|.
 name|layer
@@ -4198,7 +4310,7 @@ name|gint
 name|blockread
 decl_stmt|;
 comment|/* we throw this away because in theory we can trust the 		   data to unpack to the right length... hmm... */
-name|throwchunk
+name|dumpchunk
 argument_list|(
 name|height
 operator|*
@@ -4225,6 +4337,19 @@ operator|*
 name|offset
 operator|)
 expr_stmt|;
+name|IFDBG
+block|{
+name|printf
+argument_list|(
+literal|"\nHere comes the guitar solo...\n"
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
 for|for
 control|(
 name|linei
@@ -4247,7 +4372,7 @@ argument_list|,
 name|tmpline
 argument_list|,
 name|width
-comment|/*(width&1)*/
+comment|/*+ (width&1)*/
 argument_list|,
 name|offset
 argument_list|)
@@ -4281,6 +4406,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|IFDBG
+block|{
 name|printf
 argument_list|(
 literal|"\t\t\t\t\tActual compressed size was %d bytes\n"
@@ -4292,11 +4418,30 @@ operator|)
 operator|-
 name|blockread
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 break|break;
 default|default:
 comment|/* *unknown* */
+name|IFDBG
+block|{
+name|printf
+argument_list|(
+literal|"\nEEP!\n"
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
 name|g_message
 argument_list|(
 literal|"*** Unknown compression type in channel.\n"
@@ -4307,12 +4452,30 @@ argument_list|()
 expr_stmt|;
 break|break;
 block|}
-block|}
+if|if
+condition|(
+name|tmpline
+condition|)
 name|g_free
 argument_list|(
 name|tmpline
 argument_list|)
 expr_stmt|;
+else|else
+name|IFDBG
+block|{
+name|printf
+argument_list|(
+literal|"\nTRIED TO FREE NULL!"
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 comment|/*  printf("\n[[%ld]]\n", getglong(fd, "uhhhh"));   (*offset)+=4;*/
 block|}
@@ -4443,6 +4606,19 @@ operator|&
 name|offset
 argument_list|)
 expr_stmt|;
+name|IFDBG
+block|{
+name|printf
+argument_list|(
+literal|"And...?\n"
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|offset
@@ -9846,22 +10022,64 @@ expr_stmt|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
+begin_function
+specifier|static
+name|gchar
+modifier|*
+DECL|function|getstring (size_t n,FILE * fd,gchar * why)
+name|getstring
+parameter_list|(
+name|size_t
+name|n
+parameter_list|,
+name|FILE
+modifier|*
+name|fd
+parameter_list|,
+name|gchar
+modifier|*
+name|why
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|tmpchunk
+decl_stmt|;
+name|tmpchunk
+operator|=
+name|xmalloc
+argument_list|(
+name|n
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+name|xfread
+argument_list|(
+name|fd
+argument_list|,
+name|tmpchunk
+argument_list|,
+name|n
+argument_list|,
+name|why
+argument_list|)
+expr_stmt|;
+name|tmpchunk
+index|[
+name|n
+index|]
+operator|=
 literal|0
-end_if
-
-begin_comment
-unit|static guchar * getchunk(size_t n, FILE * fd, gchar *why) {   guchar *tmpchunk;    tmpchunk = xmalloc(n);   xfread(fd, tmpchunk, n, why);   return(tmpchunk);
+expr_stmt|;
+return|return
+operator|(
+name|tmpchunk
+operator|)
+return|;
 comment|/* caller should free memory */
-end_comment
-
-begin_endif
-unit|}
-endif|#
-directive|endif
-end_endif
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -9905,7 +10123,6 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|//      xfread(fd,&len, 1, why); /* Throw away a byte? */
 return|return
 operator|(
 name|NULL
@@ -10350,13 +10567,14 @@ operator|==
 literal|0
 condition|)
 block|{
+name|IFDBG
 name|printf
 argument_list|(
 literal|"PSD: WARNING: %s: xmalloc asked for zero-sized chunk\n"
 argument_list|,
 name|prog_name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 return|return
 operator|(
 name|NULL
