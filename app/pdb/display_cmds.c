@@ -163,9 +163,11 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
+name|gimp_image_is_empty
+argument_list|(
 name|gimage
-operator|->
-name|layers
+argument_list|)
 condition|)
 name|success
 operator|=

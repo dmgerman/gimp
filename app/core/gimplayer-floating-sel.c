@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -562,9 +568,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_container_num_children
+argument_list|(
 name|gimage
 operator|->
 name|layers
+argument_list|)
 condition|)
 name|gimage
 operator|->

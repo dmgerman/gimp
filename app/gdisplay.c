@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -7929,15 +7935,13 @@ operator|)
 expr_stmt|;
 name|lp
 operator|=
-operator|(
+operator|!
+name|gimp_image_is_empty
+argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|layers
-operator|!=
-name|NULL
-operator|)
+argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
@@ -8014,7 +8018,7 @@ argument_list|)
 expr_stmt|;
 name|lnum
 operator|=
-name|g_slist_length
+name|gimp_container_num_children
 argument_list|(
 name|gdisp
 operator|->

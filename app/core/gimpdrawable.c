@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreviewcache.h"
 end_include
 
@@ -149,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ddc6440103
+DECL|enum|__anon2bfa824d0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -748,7 +754,7 @@ name|GimpDrawable
 modifier|*
 name|drawable2
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|list
 decl_stmt|,
@@ -797,13 +803,12 @@ name|gimage
 operator|==
 name|NULL
 operator|||
+name|gimp_image_is_empty
+argument_list|(
 name|drawable
 operator|->
 name|gimage
-operator|->
-name|layers
-operator|==
-name|NULL
+argument_list|)
 condition|)
 return|return;
 if|if
@@ -815,11 +820,16 @@ argument_list|)
 condition|)
 name|base_list
 operator|=
+name|GIMP_LIST
+argument_list|(
 name|drawable
 operator|->
 name|gimage
 operator|->
 name|layers
+argument_list|)
+operator|->
+name|list
 expr_stmt|;
 elseif|else
 if|if
@@ -831,11 +841,16 @@ argument_list|)
 condition|)
 name|base_list
 operator|=
+name|GIMP_LIST
+argument_list|(
 name|drawable
 operator|->
 name|gimage
 operator|->
 name|channels
+argument_list|)
+operator|->
+name|list
 expr_stmt|;
 else|else
 name|base_list
@@ -852,7 +867,7 @@ name|list
 condition|;
 name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)
@@ -1012,7 +1027,7 @@ name|list2
 condition|;
 name|list2
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list2
 argument_list|)

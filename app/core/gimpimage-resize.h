@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adf65050103
+DECL|enum|__anon2ae06a110103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adf65050203
+DECL|enum|__anon2ae06a110203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -348,13 +348,13 @@ decl_stmt|;
 comment|/*  guides                       */
 comment|/*  Layer/Channel attributes  */
 DECL|member|layers
-name|GSList
+name|GimpContainer
 modifier|*
 name|layers
 decl_stmt|;
 comment|/*  the list of layers           */
 DECL|member|channels
-name|GSList
+name|GimpContainer
 modifier|*
 name|channels
 decl_stmt|;
@@ -1299,23 +1299,7 @@ parameter_list|,
 specifier|const
 name|GimpLayer
 modifier|*
-name|layer_arg
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpLayer
-modifier|*
-name|gimp_image_get_layer_by_index
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|gint
-name|layer_index
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1332,7 +1316,7 @@ parameter_list|,
 specifier|const
 name|GimpChannel
 modifier|*
-name|channel_arg
+name|channel
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1575,8 +1559,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
+name|gboolean
 name|gimp_image_raise_layer
 parameter_list|(
 name|GimpImage
@@ -1585,14 +1568,13 @@ name|gimage
 parameter_list|,
 name|GimpLayer
 modifier|*
-name|layer_arg
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
+name|gboolean
 name|gimp_image_lower_layer
 parameter_list|(
 name|GimpImage
@@ -1601,14 +1583,13 @@ name|gimage
 parameter_list|,
 name|GimpLayer
 modifier|*
-name|layer_arg
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
+name|gboolean
 name|gimp_image_raise_layer_to_top
 parameter_list|(
 name|GimpImage
@@ -1617,14 +1598,13 @@ name|gimage
 parameter_list|,
 name|GimpLayer
 modifier|*
-name|layer_arg
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
+name|gboolean
 name|gimp_image_lower_layer_to_bottom
 parameter_list|(
 name|GimpImage
@@ -1633,14 +1613,13 @@ name|gimage
 parameter_list|,
 name|GimpLayer
 modifier|*
-name|layer_arg
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
+name|gboolean
 name|gimp_image_position_layer
 parameter_list|(
 name|GimpImage
@@ -1649,7 +1628,7 @@ name|gimage
 parameter_list|,
 name|GimpLayer
 modifier|*
-name|layer_arg
+name|layer
 parameter_list|,
 name|gint
 name|new_index
@@ -1726,8 +1705,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
+name|gboolean
 name|gimp_image_add_layer
 parameter_list|(
 name|GimpImage
@@ -1736,7 +1714,7 @@ name|gimage
 parameter_list|,
 name|GimpLayer
 modifier|*
-name|float_layer
+name|layer
 parameter_list|,
 name|gint
 name|position
@@ -1745,8 +1723,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
+name|void
 name|gimp_image_remove_layer
 parameter_list|(
 name|GimpImage
@@ -1800,8 +1777,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpChannel
-modifier|*
+name|gboolean
 name|gimp_image_raise_channel
 parameter_list|(
 name|GimpImage
@@ -1810,14 +1786,13 @@ name|gimage
 parameter_list|,
 name|GimpChannel
 modifier|*
-name|channel_arg
+name|channel
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpChannel
-modifier|*
+name|gboolean
 name|gimp_image_lower_channel
 parameter_list|(
 name|GimpImage
@@ -1826,14 +1801,13 @@ name|gimage
 parameter_list|,
 name|GimpChannel
 modifier|*
-name|channel_arg
+name|channel
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpChannel
-modifier|*
+name|gboolean
 name|gimp_image_position_channel
 parameter_list|(
 name|GimpImage
@@ -1842,7 +1816,7 @@ name|gimage
 parameter_list|,
 name|GimpChannel
 modifier|*
-name|channel_arg
+name|channel
 parameter_list|,
 name|gint
 name|position
@@ -1851,8 +1825,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpChannel
-modifier|*
+name|gboolean
 name|gimp_image_add_channel
 parameter_list|(
 name|GimpImage
@@ -1870,8 +1843,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpChannel
-modifier|*
+name|void
 name|gimp_image_remove_channel
 parameter_list|(
 name|GimpImage

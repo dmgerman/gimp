@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -7633,7 +7639,7 @@ name|gimage
 init|=
 name|NULL
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|list
 init|=
@@ -7678,9 +7684,14 @@ name|TRUE
 expr_stmt|;
 name|list
 operator|=
+name|GIMP_LIST
+argument_list|(
 name|gimage
 operator|->
 name|layers
+argument_list|)
+operator|->
+name|list
 expr_stmt|;
 while|while
 condition|(
@@ -7722,7 +7733,7 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|g_slist_next
+name|g_list_next
 argument_list|(
 name|list
 argument_list|)
