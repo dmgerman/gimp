@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmath/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgetstypes.h"
 end_include
 
@@ -1735,9 +1741,7 @@ index|[
 name|GIMP_COLOR_SELECTOR_HUE
 index|]
 operator|=
-call|(
-name|gint
-call|)
+name|ROUND
 argument_list|(
 name|selector
 operator|->
@@ -1745,9 +1749,7 @@ name|hsv
 operator|.
 name|h
 operator|*
-literal|359.999
-operator|+
-literal|0.5
+literal|360.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1755,9 +1757,7 @@ index|[
 name|GIMP_COLOR_SELECTOR_SATURATION
 index|]
 operator|=
-call|(
-name|gint
-call|)
+name|ROUND
 argument_list|(
 name|selector
 operator|->
@@ -1765,9 +1765,7 @@ name|hsv
 operator|.
 name|s
 operator|*
-literal|99.999
-operator|+
-literal|0.5
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1775,9 +1773,7 @@ index|[
 name|GIMP_COLOR_SELECTOR_VALUE
 index|]
 operator|=
-call|(
-name|gint
-call|)
+name|ROUND
 argument_list|(
 name|selector
 operator|->
@@ -1785,9 +1781,7 @@ name|hsv
 operator|.
 name|v
 operator|*
-literal|99.999
-operator|+
-literal|0.5
+literal|100.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1795,9 +1789,7 @@ index|[
 name|GIMP_COLOR_SELECTOR_RED
 index|]
 operator|=
-call|(
-name|gint
-call|)
+name|ROUND
 argument_list|(
 name|selector
 operator|->
@@ -1805,9 +1797,7 @@ name|rgb
 operator|.
 name|r
 operator|*
-literal|254.999
-operator|+
-literal|0.5
+literal|255.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1815,9 +1805,7 @@ index|[
 name|GIMP_COLOR_SELECTOR_GREEN
 index|]
 operator|=
-call|(
-name|gint
-call|)
+name|ROUND
 argument_list|(
 name|selector
 operator|->
@@ -1825,9 +1813,7 @@ name|rgb
 operator|.
 name|g
 operator|*
-literal|254.999
-operator|+
-literal|0.5
+literal|255.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1835,9 +1821,7 @@ index|[
 name|GIMP_COLOR_SELECTOR_BLUE
 index|]
 operator|=
-call|(
-name|gint
-call|)
+name|ROUND
 argument_list|(
 name|selector
 operator|->
@@ -1845,9 +1829,7 @@ name|rgb
 operator|.
 name|b
 operator|*
-literal|254.999
-operator|+
-literal|0.5
+literal|255.0
 argument_list|)
 expr_stmt|;
 name|values
@@ -1855,9 +1837,7 @@ index|[
 name|GIMP_COLOR_SELECTOR_ALPHA
 index|]
 operator|=
-call|(
-name|gint
-call|)
+name|ROUND
 argument_list|(
 name|selector
 operator|->
@@ -1865,9 +1845,7 @@ name|rgb
 operator|.
 name|a
 operator|*
-literal|99.999
-operator|+
-literal|0.5
+literal|100.0
 argument_list|)
 expr_stmt|;
 for|for
