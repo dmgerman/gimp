@@ -111,15 +111,6 @@ value|"Specify a default brush.  The brush is searched for in the " \ "specified
 end_define
 
 begin_define
-DECL|macro|DEFAULT_COMMENT_BLURB
-define|#
-directive|define
-name|DEFAULT_COMMENT_BLURB
-define|\
-value|"Sets the default comment."
-end_define
-
-begin_define
 DECL|macro|DEFAULT_DOT_FOR_DOT_BLURB
 define|#
 directive|define

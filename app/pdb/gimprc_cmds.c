@@ -67,6 +67,12 @@ directive|include
 file|"core/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"core/gimptemplate.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|gimprc_query_proc
 specifier|static
@@ -589,7 +595,9 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_comment
+name|default_image
+operator|->
+name|comment
 argument_list|)
 expr_stmt|;
 name|success

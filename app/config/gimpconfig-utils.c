@@ -488,10 +488,7 @@ name|g_list_prepend
 argument_list|(
 name|list
 argument_list|,
-name|param_specs
-index|[
-name|i
-index|]
+name|prop_spec
 argument_list|)
 expr_stmt|;
 block|}
@@ -504,10 +501,7 @@ name|g_list_prepend
 argument_list|(
 name|list
 argument_list|,
-name|param_specs
-index|[
-name|i
-index|]
+name|prop_spec
 argument_list|)
 expr_stmt|;
 block|}

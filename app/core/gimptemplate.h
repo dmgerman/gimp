@@ -135,6 +135,11 @@ DECL|member|fill_type
 name|GimpFillType
 name|fill_type
 decl_stmt|;
+DECL|member|comment
+name|gchar
+modifier|*
+name|comment
+decl_stmt|;
 DECL|member|filename
 name|gchar
 modifier|*

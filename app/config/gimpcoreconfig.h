@@ -172,11 +172,6 @@ name|GimpTemplate
 modifier|*
 name|default_image
 decl_stmt|;
-DECL|member|default_comment
-name|gchar
-modifier|*
-name|default_comment
-decl_stmt|;
 DECL|member|default_grid
 name|GimpGrid
 modifier|*

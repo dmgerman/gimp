@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c058f060103
+DECL|enum|__anon2794c12d0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -329,7 +329,7 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|entry
