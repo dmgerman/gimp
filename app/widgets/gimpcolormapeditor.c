@@ -211,7 +211,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0d5d110103
+DECL|enum|__anon2b47c4f10103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -775,7 +775,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__ENUM
+name|gimp_marshal_VOID__FLAGS
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
