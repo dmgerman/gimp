@@ -310,7 +310,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2c83a5db0108
+DECL|struct|__anon2b36d41f0108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c83a5db0208
+DECL|struct|__anon2b36d41f0208
 typedef|typedef
 struct|struct
 block|{
@@ -468,7 +468,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c83a5db0308
+DECL|struct|__anon2b36d41f0308
 typedef|typedef
 struct|struct
 block|{
@@ -487,7 +487,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c83a5db0408
+DECL|struct|__anon2b36d41f0408
 typedef|typedef
 struct|struct
 block|{
@@ -11394,6 +11394,10 @@ name|GSList
 modifier|*
 name|points_list
 decl_stmt|;
+name|GSList
+modifier|*
+name|plist
+decl_stmt|;
 comment|/* Get bzpath structure  */
 name|plp
 operator|=
@@ -11413,21 +11417,25 @@ operator|!
 name|plp
 condition|)
 return|return;
+name|plist
+operator|=
+name|plp
+operator|->
+name|bz_paths
+expr_stmt|;
+while|while
+condition|(
+name|plist
+condition|)
+block|{
 name|bzp
 operator|=
 operator|(
 name|PATHP
 operator|)
-name|g_slist_nth_data
-argument_list|(
-name|plp
+name|plist
 operator|->
-name|bz_paths
-argument_list|,
-name|plp
-operator|->
-name|last_selected_row
-argument_list|)
+name|data
 expr_stmt|;
 comment|/* This image path is locked */
 if|if
@@ -11541,6 +11549,14 @@ argument_list|(
 name|p_copy
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+name|plist
+operator|=
+name|g_slist_next
+argument_list|(
+name|plist
 argument_list|)
 expr_stmt|;
 block|}

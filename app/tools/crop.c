@@ -637,7 +637,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon294801ea0103
+DECL|enum|__anon2ba501950103
 typedef|typedef
 enum|enum
 block|{
@@ -4480,13 +4480,6 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
-name|draw_core_free
-argument_list|(
-name|crop
-operator|->
-name|core
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|crop_info
@@ -4496,6 +4489,13 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|draw_core_free
+argument_list|(
+name|crop
+operator|->
+name|core
 argument_list|)
 expr_stmt|;
 name|g_free
