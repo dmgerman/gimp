@@ -1589,6 +1589,14 @@ argument_list|(
 name|chooser
 argument_list|)
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove version check as soon as we depend on GTK+ 2.4.1
+endif|#
+directive|endif
 if|if
 condition|(
 name|gtk_check_version
@@ -1672,13 +1680,6 @@ argument_list|(
 name|chooser
 argument_list|)
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"gimp_file_dialog_update_preview: %s\n"
-argument_list|,
-name|uri
-argument_list|)
-expr_stmt|;
 name|gimp_thumb_box_set_uri
 argument_list|(
 name|GIMP_THUMB_BOX
