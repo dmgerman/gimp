@@ -160,7 +160,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2a33b41c0103
+DECL|enum|__anon2c0465e20103
 typedef|typedef
 enum|enum
 block|{
@@ -2718,7 +2718,10 @@ name|image_title_format
 condition|)
 name|image_title_format
 operator|=
+name|g_strdup
+argument_list|(
 name|DEFAULT_IMAGE_TITLE_FORMAT
+argument_list|)
 expr_stmt|;
 block|}
 end_function
