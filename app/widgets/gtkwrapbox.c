@@ -20,7 +20,7 @@ comment|/* --- properties --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon2992c17d0103
+DECL|enum|__anon28ca6b0d0103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -54,7 +54,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2992c17d0203
+DECL|enum|__anon28ca6b0d0203
 enum|enum
 block|{
 DECL|enumerator|CHILD_PROP_0
@@ -833,7 +833,7 @@ name|gtk_container_class_install_child_property
 argument_list|(
 name|container_class
 argument_list|,
-name|CHILD_PROP_VFILL
+name|CHILD_PROP_WRAPPED
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
