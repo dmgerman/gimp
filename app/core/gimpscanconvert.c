@@ -54,18 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpscanconvert.h"
 end_include
 
@@ -74,23 +62,10 @@ DECL|struct|_GimpScanConvert
 struct|struct
 name|_GimpScanConvert
 block|{
-DECL|member|width
-name|guint
-name|width
-decl_stmt|;
-DECL|member|height
-name|guint
-name|height
-decl_stmt|;
 DECL|member|ratio_xy
 name|gdouble
 name|ratio_xy
 decl_stmt|;
-DECL|member|antialias
-name|gboolean
-name|antialias
-decl_stmt|;
-comment|/* do we want antialiasing? */
 comment|/* stuff necessary for the _add_polygons API...  :-/  */
 DECL|member|got_first
 name|gboolean
@@ -132,7 +107,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* Private functions */
+comment|/* private functions */
 end_comment
 
 begin_function_decl
@@ -166,41 +141,16 @@ end_comment
 begin_function
 name|GimpScanConvert
 modifier|*
-DECL|function|gimp_scan_convert_new (guint width,guint height,gboolean antialias)
+DECL|function|gimp_scan_convert_new (void)
 name|gimp_scan_convert_new
 parameter_list|(
-name|guint
-name|width
-parameter_list|,
-name|guint
-name|height
-parameter_list|,
-name|gboolean
-name|antialias
+name|void
 parameter_list|)
 block|{
 name|GimpScanConvert
 modifier|*
 name|sc
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|width
-operator|>
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|height
-operator|>
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|sc
 operator|=
 name|g_new0
@@ -212,27 +162,9 @@ argument_list|)
 expr_stmt|;
 name|sc
 operator|->
-name|width
-operator|=
-name|width
-expr_stmt|;
-name|sc
-operator|->
-name|height
-operator|=
-name|height
-expr_stmt|;
-name|sc
-operator|->
 name|ratio_xy
 operator|=
 literal|1.0
-expr_stmt|;
-name|sc
-operator|->
-name|antialias
-operator|=
-name|antialias
 expr_stmt|;
 return|return
 name|sc
@@ -1020,7 +952,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Stroke the content of a GimpScanConvert. The next  * gimp_scan_convert_to_channel will result in the outline of the polygon  * defined with the commands above.  *  * You cannot add additional polygons after this command.  */
+comment|/* Stroke the content of a GimpScanConvert. The next  * gimp_scan_convert_render() will result in the outline of the polygon  * defined with the commands above.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
@@ -1173,7 +1105,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|sc
 operator|->
 name|vpath
@@ -1187,7 +1118,6 @@ name|sc
 operator|->
 name|ratio_xy
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -1443,75 +1373,12 @@ block|}
 end_function
 
 begin_comment
-comment|/* Return a new Channel according to the polygonal shapes defined with  * the commands above.  *  * You cannot add additional polygons after this command.  */
-end_comment
-
-begin_function
-name|GimpChannel
-modifier|*
-DECL|function|gimp_scan_convert_to_channel (GimpScanConvert * sc,GimpImage * gimage)
-name|gimp_scan_convert_to_channel
-parameter_list|(
-name|GimpScanConvert
-modifier|*
-name|sc
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
-name|GimpChannel
-modifier|*
-name|mask
-decl_stmt|;
-name|mask
-operator|=
-name|gimp_channel_new_mask
-argument_list|(
-name|gimage
-argument_list|,
-name|sc
-operator|->
-name|width
-argument_list|,
-name|sc
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
-name|gimp_scan_convert_render
-argument_list|(
-name|sc
-argument_list|,
-name|gimp_drawable_data
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|mask
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|mask
-operator|->
-name|bounds_known
-operator|=
-name|FALSE
-expr_stmt|;
-return|return
-name|mask
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/* This is a more low level version. Expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_render (GimpScanConvert * sc,TileManager * tile_manager)
+DECL|function|gimp_scan_convert_render (GimpScanConvert * sc,TileManager * tile_manager,gboolean antialias)
 name|gimp_scan_convert_render
 parameter_list|(
 name|GimpScanConvert
@@ -1521,6 +1388,9 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|tile_manager
+parameter_list|,
+name|gboolean
+name|antialias
 parameter_list|)
 block|{
 name|PixelRegion
@@ -1681,14 +1551,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|sc
-operator|->
+operator|!
 name|antialias
-operator|==
-name|FALSE
 condition|)
 block|{
-comment|/*            * Ok, the user didn't want to have antialiasing, so just            * remove the results from lots of CPU-Power...            */
+comment|/* Ok, the user didn't want to have antialiasing, so just            * remove the results from lots of CPU-Power...            */
 name|dest
 operator|=
 name|maskPR

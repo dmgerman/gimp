@@ -26,7 +26,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* Create a new scan conversion context.  Set "antialias" to 1 for no  * supersampling, or the amount to supersample by otherwise.  */
+comment|/* Create a new scan conversion context.  */
 end_comment
 
 begin_function_decl
@@ -34,14 +34,7 @@ name|GimpScanConvert
 modifier|*
 name|gimp_scan_convert_new
 parameter_list|(
-name|guint
-name|width
-parameter_list|,
-name|guint
-name|height
-parameter_list|,
-name|gboolean
-name|antialias
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -160,26 +153,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Return a new Channel according to the polygonal shapes defined with  * the commands above.  *  * You cannot add additional polygons after this command.  */
-end_comment
-
-begin_function_decl
-name|GimpChannel
-modifier|*
-name|gimp_scan_convert_to_channel
-parameter_list|(
-name|GimpScanConvert
-modifier|*
-name|scan_converter
-parameter_list|,
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* This is a more low level version. Expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
@@ -194,6 +167,9 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|tile_manager
+parameter_list|,
+name|gboolean
+name|antialias
 parameter_list|)
 function_decl|;
 end_function_decl
