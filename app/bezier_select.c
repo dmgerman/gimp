@@ -870,7 +870,7 @@ name|tool
 operator|->
 name|preserve
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 return|return
 name|tool

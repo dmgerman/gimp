@@ -710,6 +710,7 @@ name|active_tool
 operator|->
 name|drawable
 condition|)
+block|{
 if|if
 condition|(
 operator|(
@@ -739,6 +740,7 @@ name|active_tool
 operator|->
 name|preserve
 condition|)
+block|{
 name|tools_initialize
 argument_list|(
 name|active_tool
@@ -746,6 +748,20 @@ operator|->
 name|type
 argument_list|,
 name|gdisp
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+name|active_tool
+operator|->
+name|drawable
+operator|=
+name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 call|(

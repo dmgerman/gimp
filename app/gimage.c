@@ -12079,16 +12079,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-else|else
-name|tools_initialize
-argument_list|(
-name|active_tool
-operator|->
-name|type
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|gimage
