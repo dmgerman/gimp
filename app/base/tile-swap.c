@@ -462,7 +462,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|glong
+name|off_t
 name|tile_swap_find_offset
 parameter_list|(
 name|DefSwapFile
@@ -2878,7 +2878,7 @@ end_function
 
 begin_function
 specifier|static
-name|long
+name|off_t
 DECL|function|tile_swap_find_offset (DefSwapFile * def_swap_file,gint fd,off_t bytes)
 name|tile_swap_find_offset
 parameter_list|(
