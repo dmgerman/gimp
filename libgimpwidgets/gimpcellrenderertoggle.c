@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff1c690103
+DECL|enum|__anon29daa6420103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff1c690203
+DECL|enum|__anon29daa6420203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1622,8 +1622,6 @@ condition|(
 name|celltoggle
 operator|->
 name|activatable
-operator|&&
-name|event
 condition|)
 block|{
 name|GdkModifierType
@@ -1633,6 +1631,8 @@ literal|0
 decl_stmt|;
 if|if
 condition|(
+name|event
+operator|&&
 operator|(
 operator|(
 name|GdkEventAny
@@ -1657,16 +1657,12 @@ operator|)
 operator|->
 name|state
 expr_stmt|;
-name|g_signal_emit
+name|gimp_cell_renderer_toggle_clicked
+argument_list|(
+name|GIMP_CELL_RENDERER_TOGGLE
 argument_list|(
 name|cell
-argument_list|,
-name|toggle_cell_signals
-index|[
-name|CLICKED
-index|]
-argument_list|,
-literal|0
+argument_list|)
 argument_list|,
 name|path
 argument_list|,
