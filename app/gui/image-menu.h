@@ -33,6 +33,22 @@ end_decl_stmt
 
 begin_function_decl
 name|void
+name|image_menu_setup2
+parameter_list|(
+name|GimpUIManager
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_path
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|image_menu_setup
 parameter_list|(
 name|GimpItemFactory

@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293005170103
+DECL|enum|__anon2a2150950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -385,7 +385,7 @@ name|g_free
 argument_list|(
 name|entry
 operator|->
-name|identifier
+name|ui_path
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -679,7 +679,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_ui_manager_ui_register (GimpUIManager * manager,const gchar * identifier,const gchar * basename)
+DECL|function|gimp_ui_manager_ui_register (GimpUIManager * manager,const gchar * ui_path,const gchar * basename,GimpUIManagerSetupFunc setup_func)
 name|gimp_ui_manager_ui_register
 parameter_list|(
 name|GimpUIManager
@@ -689,12 +689,15 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|ui_path
 parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|basename
+parameter_list|,
+name|GimpUIManagerSetupFunc
+name|setup_func
 parameter_list|)
 block|{
 name|GimpUIManagerUIEntry
@@ -711,7 +714,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|identifier
+name|ui_path
 operator|!=
 name|NULL
 argument_list|)
@@ -734,11 +737,11 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|->
-name|identifier
+name|ui_path
 operator|=
 name|g_strdup
 argument_list|(
-name|identifier
+name|ui_path
 argument_list|)
 expr_stmt|;
 name|entry
@@ -749,6 +752,12 @@ name|g_strdup
 argument_list|(
 name|basename
 argument_list|)
+expr_stmt|;
+name|entry
+operator|->
+name|setup_func
+operator|=
+name|setup_func
 expr_stmt|;
 name|entry
 operator|->
@@ -810,7 +819,7 @@ name|filename
 argument_list|,
 name|entry
 operator|->
-name|identifier
+name|ui_path
 argument_list|)
 expr_stmt|;
 name|entry
@@ -864,7 +873,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_ui_manager_ui_get (GimpUIManager * manager,const gchar * identifier)
+DECL|function|gimp_ui_manager_ui_get (GimpUIManager * manager,const gchar * ui_path)
 name|gimp_ui_manager_ui_get
 parameter_list|(
 name|GimpUIManager
@@ -874,7 +883,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|identifier
+name|ui_path
 parameter_list|)
 block|{
 name|GList
@@ -893,7 +902,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|identifier
+name|ui_path
 operator|!=
 name|NULL
 argument_list|,
@@ -933,9 +942,9 @@ name|strcmp
 argument_list|(
 name|entry
 operator|->
-name|identifier
+name|ui_path
 argument_list|,
-name|identifier
+name|ui_path
 argument_list|)
 condition|)
 block|{
@@ -981,7 +990,7 @@ name|filename
 argument_list|,
 name|entry
 operator|->
-name|identifier
+name|ui_path
 argument_list|)
 expr_stmt|;
 name|entry
@@ -1053,7 +1062,7 @@ argument_list|)
 argument_list|,
 name|entry
 operator|->
-name|identifier
+name|ui_path
 argument_list|)
 expr_stmt|;
 if|if
@@ -1062,6 +1071,7 @@ name|entry
 operator|->
 name|widget
 condition|)
+block|{
 name|g_object_ref
 argument_list|(
 name|entry
@@ -1069,6 +1079,24 @@ operator|->
 name|widget
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|entry
+operator|->
+name|setup_func
+condition|)
+name|entry
+operator|->
+name|setup_func
+argument_list|(
+name|manager
+argument_list|,
+name|entry
+operator|->
+name|ui_path
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 return|return
 name|entry
@@ -1083,7 +1111,7 @@ literal|"%s: no entry registered for \"%s\""
 argument_list|,
 name|G_STRFUNC
 argument_list|,
-name|identifier
+name|ui_path
 argument_list|)
 expr_stmt|;
 return|return
@@ -1376,7 +1404,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293005170208
+DECL|struct|__anon2a2150950208
 block|{
 DECL|member|x
 name|guint

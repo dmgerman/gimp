@@ -1149,6 +1149,31 @@ end_decl_stmt
 
 begin_function
 name|void
+DECL|function|toolbox_menu_setup2 (GimpUIManager * manager,const gchar * ui_path)
+name|toolbox_menu_setup2
+parameter_list|(
+name|GimpUIManager
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_path
+parameter_list|)
+block|{
+name|menus_open_recent_add
+argument_list|(
+name|manager
+argument_list|,
+name|ui_path
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|toolbox_menu_setup (GimpItemFactory * factory,gpointer callback_data)
 name|toolbox_menu_setup
 parameter_list|(

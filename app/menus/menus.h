@@ -105,6 +105,22 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|menus_open_recent_add
+parameter_list|(
+name|GimpUIManager
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_path
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|menus_last_opened_add
 parameter_list|(
 name|GimpItemFactory

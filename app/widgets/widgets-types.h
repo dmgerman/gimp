@@ -886,6 +886,27 @@ function_decl|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpUIManagerSetupFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpUIManagerSetupFunc
+function_decl|)
+parameter_list|(
+name|GimpUIManager
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_path
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMenuPositionFunc
 typedef|typedef
 name|void
