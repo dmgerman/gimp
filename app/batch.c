@@ -178,7 +178,7 @@ index|[
 literal|0
 index|]
 operator|=
-literal|"(extension-script-fu-text-console RUN-INTERACTIVE)"
+literal|"(plug-in-script-fu-text-console RUN-INTERACTIVE)"
 expr_stmt|;
 name|batch_cmds
 index|[
@@ -203,7 +203,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* until --batch-interp=xxx or something similar is implemented         * and gimp-1.0 is not extinct use a shortcut to speed up starting the        * perl-server tremendously. This is also fully compatible with 1.0.        */
+comment|/* until --batch-interp=xxx or something similar is implemented        * and gimp-1.0 is not extinct use a shortcut to speed up starting the        * perl-server tremendously. This is also fully compatible with 1.0.        */
 block|{
 name|gint
 name|run_mode
@@ -272,7 +272,7 @@ name|procedural_db_lookup
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_script_fu_eval"
+literal|"plug_in_script_fu_eval"
 argument_list|)
 expr_stmt|;
 if|if
@@ -423,7 +423,7 @@ name|procedural_db_execute
 argument_list|(
 name|gimp
 argument_list|,
-literal|"extension_script_fu_eval"
+literal|"plug_in_script_fu_eval"
 argument_list|,
 name|args
 argument_list|)
