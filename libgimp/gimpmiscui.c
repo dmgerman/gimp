@@ -88,7 +88,7 @@ name|GimpFixMePreview
 modifier|*
 name|preview
 init|=
-name|g_new
+name|g_new0
 argument_list|(
 name|GimpFixMePreview
 argument_list|,
