@@ -1376,15 +1376,15 @@ init|=
 block|{
 literal|"gimp_levels_auto"
 block|,
-literal|"Automatically modifies intensity levels in the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp_levels_stretch' instead."
 block|,
-literal|"This procedure allows intensity levels in the specified drawable to be remapped according to a set of guessed parameters. It is equivalent to clicking the \"Auto\" button in the Levels tool. This procedure is only valid on RGB color and grayscale images. It will not operate on indexed drawables."
+literal|"This procedure is deprecated! Use 'gimp_levels_stretch' instead."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
 literal|"gimp_levels_stretch"
 block|,
@@ -1555,11 +1555,11 @@ literal|"Automatically modifies intensity levels in the specified drawable."
 block|,
 literal|"This procedure allows intensity levels in the specified drawable to be remapped according to a set of guessed parameters. It is equivalent to clicking the \"Auto\" button in the Levels tool. This procedure is only valid on RGB color and grayscale images. It will not operate on indexed drawables."
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Joao S.O. Bueno, Shawn Willden"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|"Joao S.O. Bueno, Shawn Willden"
 block|,
-literal|"1995-1996"
+literal|"2003"
 block|,
 name|NULL
 block|,
