@@ -1,14 +1,14 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* bmpwrite.c	Writes Bitmap files. Even RLE encoded ones.	 */
+comment|/* bmpwrite.c   Writes Bitmap files. Even RLE encoded ones.      */
 end_comment
 
 begin_comment
-comment|/*		(Windows (TM) doesn't read all of those, but who */
+comment|/*              (Windows (TM) doesn't read all of those, but who */
 end_comment
 
 begin_comment
-comment|/*		cares? ;-)					 */
+comment|/*              cares? ;-)                                       */
 end_comment
 
 begin_comment
@@ -24,7 +24,7 @@ comment|/*              my computer...                                   */
 end_comment
 
 begin_comment
-comment|/* Alexander.Schulz@stud.uni-karlsruhe.de			 */
+comment|/* Alexander.Schulz@stud.uni-karlsruhe.de                        */
 end_comment
 
 begin_comment
@@ -1155,7 +1155,7 @@ operator|>
 name|GIMP_MIN_RESOLUTION
 condition|)
 block|{
-comment|/* 	 * xresolution and yresolution are in dots per inch. 	 * the BMP spec says that biXPels and biYPels are in 	 * pixels per meter as long ints (actually, "DWORDS"), 	 * so... 	 *    n dots    inch     100 cm   m dots 	 *    ------ * ------- * ------ = ------ 	 *     inch    2.54 cm     m       inch 	 */
+comment|/*          * xresolution and yresolution are in dots per inch.          * the BMP spec says that biXPels and biYPels are in          * pixels per meter as long ints (actually, "DWORDS"),          * so...          *    n dots    inch     100 cm   m dots          *    ------ * ------- * ------ = ------          *     inch    2.54 cm     m       inch          */
 name|Bitmap_Head
 operator|.
 name|biXPels
@@ -1657,9 +1657,10 @@ decl_stmt|;
 name|gint
 name|breite
 decl_stmt|,
-name|n
-decl_stmt|,
 name|k
+decl_stmt|;
+name|guchar
+name|n
 decl_stmt|;
 name|xpos
 operator|=
@@ -2124,7 +2125,7 @@ name|j
 operator|=
 literal|0
 expr_stmt|;
-comment|/* first copy the pixels to a buffer, 		 * making one byte from two 4bit pixels 		 */
+comment|/* first copy the pixels to a buffer,                  * making one byte from two 4bit pixels                  */
 for|for
 control|(
 name|xpos
@@ -2384,7 +2385,7 @@ operator|+
 name|j
 index|]
 expr_stmt|;
-comment|/* this can only happen if j jumps over 			 * the end with a 2 in ketten[i+j] 			 */
+comment|/* this can only happen if j jumps over                          * the end with a 2 in ketten[i+j]                          */
 if|if
 condition|(
 name|j
