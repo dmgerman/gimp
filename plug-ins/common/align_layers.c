@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291405180103
+DECL|enum|__anon2adf16830103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291405180203
+DECL|enum|__anon2adf16830203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291405180303
+DECL|enum|__anon2adf16830303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291405180403
+DECL|enum|__anon2adf16830403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -275,7 +275,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291405180508
+DECL|struct|__anon2adf16830508
 block|{
 DECL|member|h_style
 name|gint
@@ -338,7 +338,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291405180608
+DECL|struct|__anon2adf16830608
 block|{
 DECL|member|run
 name|gboolean
@@ -592,7 +592,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Align Visible Layers: there are too few layers."
+literal|"There are not enough layers to align."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1553,10 +1553,6 @@ block|{
 name|GtkWidget
 modifier|*
 name|dlg
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
