@@ -154,6 +154,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -9530,6 +9536,10 @@ condition|(
 name|req_width
 operator|<=
 literal|0
+operator|||
+name|req_width
+operator|>
+literal|1024
 condition|)
 name|success
 operator|=
@@ -9551,6 +9561,10 @@ condition|(
 name|req_height
 operator|<=
 literal|0
+operator|||
+name|req_height
+operator|>
+literal|1024
 condition|)
 name|success
 operator|=
@@ -9570,17 +9584,13 @@ name|dwidth
 decl_stmt|,
 name|dheight
 decl_stmt|;
-if|if
-condition|(
-name|req_width
-operator|<=
-literal|128
-operator|&&
-name|req_height
-operator|<=
-literal|128
-condition|)
-block|{
+name|g_assert
+argument_list|(
+name|GIMP_VIEWABLE_MAX_PREVIEW_SIZE
+operator|>=
+literal|1024
+argument_list|)
+expr_stmt|;
 comment|/* Adjust the width/height ratio */
 name|dwidth
 operator|=
@@ -9699,7 +9709,6 @@ argument_list|(
 name|buf
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 name|return_args
@@ -9876,7 +9885,7 @@ literal|"gimp_image_thumbnail"
 block|,
 literal|"Get a thumbnail of an image."
 block|,
-literal|"This function gets data from which a thumbnail of an image preview can be created. Maximum x or y dimension is 128 pixels. The pixels are returned in the RGB[A] format. The bpp return value gives the number of bits per pixel in the image. If the image has an alpha channel, it is also returned."
+literal|"This function gets data from which a thumbnail of an image preview can be created. Maximum x or y dimension is 1024 pixels. The pixels are returned in the RGB[A] format. The bpp return value gives the number of bits per pixel in the image. If the image has an alpha channel, it is also returned."
 block|,
 literal|"Andy Thomas"
 block|,

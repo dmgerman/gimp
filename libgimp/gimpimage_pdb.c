@@ -3353,7 +3353,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The thumbnail width.  * @height: The thumbnail height.  * @ret_width: The previews width.  * @ret_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 128 pixels. The pixels  * are returned in the RGB[A] format. The bpp return value gives the  * number of bits per pixel in the image. If the image has an alpha  * channel, it is also returned.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The thumbnail width.  * @height: The thumbnail height.  * @ret_width: The previews width.  * @ret_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in the RGB[A] format. The bpp return value gives the  * number of bits per pixel in the image. If the image has an alpha  * channel, it is also returned.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
