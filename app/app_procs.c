@@ -2833,9 +2833,6 @@ expr_stmt|;
 name|module_db_free
 argument_list|()
 expr_stmt|;
-name|device_status_free
-argument_list|()
-expr_stmt|;
 name|lc_dialog_free
 argument_list|()
 expr_stmt|;
@@ -2919,6 +2916,9 @@ operator|==
 name|FALSE
 condition|)
 block|{
+name|device_status_free
+argument_list|()
+expr_stmt|;
 name|toolbox_free
 argument_list|()
 expr_stmt|;
