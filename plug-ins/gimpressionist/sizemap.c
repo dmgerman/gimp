@@ -542,11 +542,10 @@ argument_list|(
 name|smpreviewprev
 argument_list|)
 argument_list|,
-operator|&
 name|nsbuffer
 operator|.
 name|col
-index|[
+operator|+
 name|y
 operator|*
 name|nsbuffer
@@ -554,7 +553,6 @@ operator|.
 name|width
 operator|*
 literal|3
-index|]
 argument_list|,
 literal|0
 argument_list|,
@@ -563,11 +561,9 @@ argument_list|,
 name|OMWIDTH
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|smpreviewprev
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -942,11 +938,10 @@ argument_list|(
 name|smvectorprev
 argument_list|)
 argument_list|,
-operator|&
 name|sbuffer
 operator|.
 name|col
-index|[
+operator|+
 name|y
 operator|*
 name|sbuffer
@@ -954,7 +949,6 @@ operator|.
 name|width
 operator|*
 literal|3
-index|]
 argument_list|,
 literal|0
 argument_list|,
@@ -963,11 +957,9 @@ argument_list|,
 name|OMWIDTH
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|smvectorprev
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive

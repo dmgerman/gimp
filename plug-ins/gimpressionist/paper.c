@@ -365,11 +365,9 @@ operator|&
 name|p
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|paperprev
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

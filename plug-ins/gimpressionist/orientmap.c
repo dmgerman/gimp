@@ -1139,11 +1139,9 @@ argument_list|,
 name|OMWIDTH
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|ompreviewprev
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -1609,11 +1607,9 @@ argument_list|,
 name|OMWIDTH
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|vectorprev
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

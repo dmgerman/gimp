@@ -430,7 +430,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5643ae0103
+DECL|enum|__anon2912f4e60103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -457,7 +457,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5643ae0203
+DECL|enum|__anon2912f4e60203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -478,7 +478,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0308
+DECL|struct|__anon2912f4e60308
 block|{
 DECL|member|name
 name|gchar
@@ -619,7 +619,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0408
+DECL|struct|__anon2912f4e60408
 block|{
 DECL|member|fp
 name|FILE
@@ -639,7 +639,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5643ae0503
+DECL|enum|__anon2912f4e60503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -667,7 +667,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0608
+DECL|struct|__anon2912f4e60608
 block|{
 DECL|member|init
 name|gint
@@ -689,7 +689,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b5643ae0708
+DECL|struct|__anon2912f4e60708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -763,7 +763,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0808
+DECL|struct|__anon2912f4e60808
 block|{
 DECL|member|init
 name|gint
@@ -833,7 +833,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0908
+DECL|struct|__anon2912f4e60908
 block|{
 DECL|member|x0
 name|gdouble
@@ -860,7 +860,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0a08
+DECL|struct|__anon2912f4e60a08
 block|{
 DECL|member|init
 name|gint
@@ -1030,7 +1030,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0b08
+DECL|struct|__anon2912f4e60b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1057,7 +1057,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0c08
+DECL|struct|__anon2912f4e60c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1293,7 +1293,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0d08
+DECL|struct|__anon2912f4e60d08
 block|{
 DECL|member|tag
 name|gint
@@ -1370,7 +1370,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5643ae0e08
+DECL|struct|__anon2912f4e60e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8564,7 +8564,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2b5643ae0f08
+DECL|struct|__anon2912f4e60f08
 specifier|static
 struct|struct
 block|{
@@ -14429,7 +14429,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2b5643ae1008
+DECL|struct|__anon2912f4e61008
 block|{
 DECL|member|label
 specifier|const
@@ -20976,7 +20976,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|preview_handle_idle (Preview * preview)
 name|preview_handle_idle
 parameter_list|(
@@ -20985,13 +20985,10 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|gint
+name|gboolean
 name|done
 init|=
 name|FALSE
-decl_stmt|;
-name|GdkRectangle
-name|draw_rect
 decl_stmt|;
 if|if
 condition|(
@@ -21128,32 +21125,22 @@ operator|==
 literal|0
 condition|)
 block|{
-name|draw_rect
-operator|.
-name|x
-operator|=
+name|gtk_widget_queue_draw_area
+argument_list|(
+name|preview
+operator|->
+name|widget
+argument_list|,
 literal|0
-expr_stmt|;
-name|draw_rect
-operator|.
-name|y
-operator|=
+argument_list|,
 name|preview
 operator|->
 name|drawn_y
-expr_stmt|;
-name|draw_rect
-operator|.
-name|width
-operator|=
+argument_list|,
 name|preview
 operator|->
 name|width
-expr_stmt|;
-name|draw_rect
-operator|.
-name|height
-operator|=
+argument_list|,
 name|preview
 operator|->
 name|current_y
@@ -21161,6 +21148,7 @@ operator|-
 name|preview
 operator|->
 name|drawn_y
+argument_list|)
 expr_stmt|;
 name|preview
 operator|->
@@ -21169,16 +21157,6 @@ operator|=
 name|preview
 operator|->
 name|current_y
-expr_stmt|;
-name|gtk_widget_draw
-argument_list|(
-name|preview
-operator|->
-name|widget
-argument_list|,
-operator|&
-name|draw_rect
-argument_list|)
 expr_stmt|;
 block|}
 if|if
