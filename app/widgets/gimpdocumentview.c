@@ -501,6 +501,8 @@ argument_list|,
 literal|"documents"
 argument_list|,
 literal|"documents-remove"
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_enable_dnd
