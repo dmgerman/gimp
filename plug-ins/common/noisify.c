@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc31640108
+DECL|struct|__anon27c623c50108
 block|{
 DECL|member|independent
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc31640208
+DECL|struct|__anon27c623c50208
 block|{
 DECL|member|channels
 name|gint
@@ -2615,7 +2615,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Independent"
+literal|"_Independent"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2710,7 +2710,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Gray:"
+literal|"_Gray:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2813,7 +2813,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Gray:"
+literal|"_Gray:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2907,7 +2907,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Alpha:"
+literal|"_Alpha:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3010,7 +3010,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Red:"
+literal|"_Red:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3104,7 +3104,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Green:"
+literal|"_Green:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3198,7 +3198,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Blue:"
+literal|"_Blue:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3301,7 +3301,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Red:"
+literal|"_Red:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3395,7 +3395,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Green:"
+literal|"_Green:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3489,7 +3489,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Blue:"
+literal|"_Blue:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3583,7 +3583,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Alpha:"
+literal|"_Alpha:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

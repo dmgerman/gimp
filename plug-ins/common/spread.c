@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288961430108
+DECL|struct|__anon27822d4e0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288961430208
+DECL|struct|__anon27822d4e0208
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1598,7 +1598,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal:"
+literal|"_Horizontal:"
 argument_list|)
 argument_list|,
 name|spvals
@@ -1626,7 +1626,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical:"
+literal|"_Vertical:"
 argument_list|)
 argument_list|,
 name|spvals

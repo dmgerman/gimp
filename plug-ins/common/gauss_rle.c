@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa565ce0108
+DECL|struct|__anon29124f1e0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa565ce0208
+DECL|struct|__anon29124f1e0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa565ce0308
+DECL|struct|__anon29124f1e0308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1877,7 +1877,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal:"
+literal|"_Horizontal:"
 argument_list|)
 argument_list|,
 name|b2vals
@@ -1907,7 +1907,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical:"
+literal|"_Vertical:"
 argument_list|)
 argument_list|,
 name|b2vals

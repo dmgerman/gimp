@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a049db40108
+DECL|struct|__anon2c6104800108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a049db40208
+DECL|struct|__anon2c6104800208
 block|{
 DECL|member|run
 name|gint
@@ -913,11 +913,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Sobel Horizontally"
+literal|"Sobel _Horizontally"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -976,11 +976,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Sobel Vertically"
+literal|"Sobel _Vertically"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1039,11 +1039,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Keep Sign of Result (one Direction only)"
+literal|"_Keep Sign of Result (one Direction only)"
 argument_list|)
 argument_list|)
 expr_stmt|;

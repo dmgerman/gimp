@@ -2618,7 +2618,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Sharpness:"
+literal|"_Sharpness:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

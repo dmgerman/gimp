@@ -325,7 +325,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d3b000108
+DECL|struct|__anon2c7fc42c0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -371,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d3b000208
+DECL|struct|__anon2c7fc42c0208
 block|{
 DECL|member|run
 name|gint
@@ -1567,6 +1567,7 @@ end_function
 
 begin_function
 DECL|function|scatter_hsv_scatter (guchar * r,guchar * g,guchar * b)
+specifier|static
 name|void
 name|scatter_hsv_scatter
 parameter_list|(
@@ -2313,7 +2314,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Holdness:"
+literal|"_Holdness:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2380,7 +2381,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Hue:"
+literal|"H_ue:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2447,7 +2448,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Saturation:"
+literal|"_Saturation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -2514,7 +2515,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Value:"
+literal|"_Value:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

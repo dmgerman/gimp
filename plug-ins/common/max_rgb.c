@@ -257,7 +257,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbd33ed0103
+DECL|enum|__anon29140c7f0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -275,7 +275,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd33ed0208
+DECL|struct|__anon29140c7f0208
 block|{
 DECL|member|max_p
 name|gint
@@ -291,7 +291,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd33ed0308
+DECL|struct|__anon29140c7f0308
 block|{
 DECL|member|run
 name|gint
@@ -1861,7 +1861,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Hold the Maximal Channels"
+literal|"_Hold the Maximal Channels"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -1874,7 +1874,7 @@ name|max
 argument_list|,
 name|_
 argument_list|(
-literal|"Hold the Minimal Channels"
+literal|"Ho_ld the Minimal Channels"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER

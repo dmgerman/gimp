@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27394ff00103
+DECL|enum|__anon29b772a70103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -106,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27394ff00208
+DECL|struct|__anon29b772a70208
 block|{
 DECL|member|amount
 name|gdouble
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27394ff00308
+DECL|struct|__anon29b772a70308
 block|{
 DECL|member|run
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27394ff00408
+DECL|struct|__anon29b772a70408
 block|{
 DECL|member|tile
 name|GimpTile
@@ -2816,7 +2816,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Amount:"
+literal|"_Amount:"
 argument_list|)
 argument_list|,
 literal|100
@@ -2911,13 +2911,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Wrap"
+literal|"_Wrap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2982,13 +2982,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Smear"
+literal|"_Smear"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3053,13 +3053,13 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Black"
+literal|"_Black"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a648a20108
+DECL|struct|__anon2b4e30a50108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a648a20208
+DECL|struct|__anon2b4e30a50208
 block|{
 DECL|member|run
 name|gint
@@ -3921,7 +3921,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Radius:"
+literal|"_Radius:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3988,7 +3988,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Amount:"
+literal|"_Amount:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -4055,7 +4055,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Threshold:"
+literal|"_Threshold:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

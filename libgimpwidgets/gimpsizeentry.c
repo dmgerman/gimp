@@ -60,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288cb1960103
+DECL|enum|__anon2c1541cd0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1750,7 +1750,7 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|text
 argument_list|)
