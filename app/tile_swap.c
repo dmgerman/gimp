@@ -182,9 +182,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_AsyncSwapInfo
+DECL|struct|_AsyncSwapArgs
 struct|struct
-name|_AsyncSwapInfo
+name|_AsyncSwapArgs
 block|{
 DECL|member|def_swap_file
 name|DefSwapFile
