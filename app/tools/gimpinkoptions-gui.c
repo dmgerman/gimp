@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2900f5620103
+DECL|enum|__anon2c2759c50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -870,6 +870,10 @@ name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|brush_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|hbox
 decl_stmt|;
 name|GtkWidget
@@ -1454,7 +1458,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|vbox
+name|brush_vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
@@ -1467,7 +1471,7 @@ name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|vbox
+name|brush_vbox
 argument_list|)
 argument_list|,
 literal|2
@@ -1480,12 +1484,12 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|vbox
+name|brush_vbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|vbox
+name|brush_vbox
 argument_list|)
 expr_stmt|;
 name|frame
@@ -1517,7 +1521,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|brush_vbox
 argument_list|)
 argument_list|,
 name|frame
