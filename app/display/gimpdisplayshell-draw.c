@@ -294,7 +294,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abe1eb00103
+DECL|enum|__anon292d43360103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4655,7 +4655,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_menu_sensitivity (GimpDisplayShell * shell,Gimp * gimp,gboolean update_popup)
+DECL|function|gimp_display_shell_set_menu_sensitivity (GimpDisplayShell * shell,Gimp * gimp,gboolean popup_only)
 name|gimp_display_shell_set_menu_sensitivity
 parameter_list|(
 name|GimpDisplayShell
@@ -4667,7 +4667,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|update_popup
+name|popup_only
 parameter_list|)
 block|{
 name|GtkItemFactory
@@ -4771,8 +4771,21 @@ literal|1
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|shell
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|popup_only
+operator|==
+name|TRUE
 operator|||
 name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
@@ -4801,7 +4814,7 @@ name|gdisp
 expr_stmt|;
 if|if
 condition|(
-name|update_popup
+name|popup_only
 condition|)
 name|item_factory
 operator|=
@@ -4826,7 +4839,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|update_popup
+name|popup_only
 condition|)
 block|{
 name|item_factory
@@ -6254,13 +6267,11 @@ argument_list|,
 name|type
 argument_list|)
 expr_stmt|;
-comment|/*  update the popup menu if this is the active display  */
+comment|/*  update the popup menu  */
 if|if
 condition|(
-name|shell
-operator|&&
 operator|!
-name|update_popup
+name|popup_only
 condition|)
 block|{
 name|GimpContext
@@ -6271,13 +6282,14 @@ name|user_context
 operator|=
 name|gimp_get_user_context
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|shell
+condition|)
+block|{
 if|if
 condition|(
 name|gimp_context_get_display
@@ -6287,10 +6299,25 @@ argument_list|)
 operator|==
 name|gdisp
 condition|)
-block|{
 name|gimp_display_shell_set_menu_sensitivity
 argument_list|(
 name|shell
+argument_list|,
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_display_shell_set_menu_sensitivity
+argument_list|(
+name|NULL
 argument_list|,
 name|gdisp
 operator|->

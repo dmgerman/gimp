@@ -852,7 +852,7 @@ modifier|*
 name|gimp
 parameter_list|,
 name|gboolean
-name|update_popup
+name|popup_only
 parameter_list|)
 function_decl|;
 end_function_decl
