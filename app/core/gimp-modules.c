@@ -990,7 +990,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"load module: \"%s\"\n"
+literal|"loading module: '%s'\n"
 argument_list|)
 argument_list|,
 name|filename
@@ -1016,7 +1016,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"skipping module: \"%s\"\n"
+literal|"skipping module: '%s'\n"
 argument_list|)
 argument_list|,
 name|filename
@@ -1047,7 +1047,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd43cc50108
+DECL|struct|__anon2bf6a9a60108
 block|{
 DECL|member|search_key
 specifier|const

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290dd46d0103
+DECL|enum|__anon2afc74fa0103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -930,11 +930,11 @@ if|if
 condition|(
 name|verbose
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"module load error: %s: %s"
+literal|"Module '%s' load error:\n%s"
 argument_list|)
 argument_list|,
 name|module_info
@@ -1007,20 +1007,30 @@ name|gimp_module_info_set_last_error
 argument_list|(
 name|module_info
 argument_list|,
-literal|"missing module_init() symbol"
+name|_
+argument_list|(
+literal|"Missing module_init() symbol"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|verbose
 condition|)
-name|g_warning
+name|g_message
 argument_list|(
-literal|"%s: module_init() symbol not found"
+name|_
+argument_list|(
+literal|"Module '%s' load error:\n%s"
+argument_list|)
 argument_list|,
 name|module_info
 operator|->
 name|fullpath
+argument_list|,
+name|module_info
+operator|->
+name|last_module_error
 argument_list|)
 expr_stmt|;
 name|g_module_close

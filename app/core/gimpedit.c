@@ -1411,9 +1411,9 @@ comment|/*  nothing to do, but the fill succeded  */
 default|default:
 name|g_warning
 argument_list|(
-literal|"%s(): unknown fill type"
+literal|"%s: unknown fill type"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 name|gimp_image_get_background

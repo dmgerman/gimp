@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c51cddd0108
+DECL|struct|__anon27c47a9b0108
 block|{
 DECL|member|dirname
 specifier|const
@@ -963,7 +963,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Couldn't open thumbnail file '%s'\n%s"
+literal|"Could not open thumbnail\nfile '%s':\n%s"
 argument_list|)
 argument_list|,
 name|thumbname
@@ -1807,7 +1807,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Thumbnail doesn't have the 'P7 332' header."
+literal|"Thumbnail does not have the 'P7 332' header."
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1992,7 +1992,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Thumbnail is of funky depth."
+literal|"Thumbnail depth is incorrect."
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2037,7 +2037,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Thumbnail size bad.  Corrupted?"
+literal|"Thumbnail size is bad.  Corrupted?"
 argument_list|)
 expr_stmt|;
 name|fclose

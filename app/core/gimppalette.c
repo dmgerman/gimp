@@ -1087,11 +1087,19 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Failed to open palette file %s"
+name|_
+argument_list|(
+literal|"Failed to open palette file '%s': %s"
+argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1148,9 +1156,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s:\n"
-literal|"Corrupt palette:\n"
-literal|"missing magic header\n"
+literal|"Loading palette '%s':\n"
+literal|"Corrupt palette: missing magic header\n"
 literal|"Does this file need converting from DOS?"
 argument_list|)
 argument_list|,
@@ -1162,7 +1169,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s:\n"
+literal|"Loading palette '%s':\n"
 literal|"Corrupt palette: missing magic header"
 argument_list|)
 argument_list|,
@@ -1214,7 +1221,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\nRead error"
+literal|"Loading palette '%s':\nRead error in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1335,7 +1342,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\nRead error"
+literal|"Loading palette '%s':\nRead error in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1414,8 +1421,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\n"
-literal|"Invalid number or columns"
+literal|"Loading palette '%s':\n"
+literal|"Invalid number or columns in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1451,7 +1458,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\nRead error"
+literal|"Loading palette '%s':\nRead error in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1488,13 +1495,6 @@ name|gchar
 modifier|*
 name|basename
 decl_stmt|;
-name|g_warning
-argument_list|(
-literal|"old palette format %s"
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
 name|basename
 operator|=
 name|g_path_get_basename
@@ -1563,8 +1563,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\n"
-literal|"Missing RED component"
+literal|"Loading palette '%s':\n"
+literal|"Missing RED component in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1597,8 +1597,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\n"
-literal|"Missing GREEN component"
+literal|"Loading palette '%s':\n"
+literal|"Missing GREEN component in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1631,8 +1631,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\n"
-literal|"Missing BLUE component"
+literal|"Loading palette '%s':\n"
+literal|"Missing BLUE component in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1680,8 +1680,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\n"
-literal|"RGB value out of range"
+literal|"Loading palette '%s':\n"
+literal|"RGB value out of range in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1748,7 +1748,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette %s (line %d):\nRead error"
+literal|"Loading palette '%s':\nRead error in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1898,7 +1898,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't save palette \"%s\"\n"
+literal|"Cannot save palette '%s':\n%s"
 argument_list|)
 argument_list|,
 name|GIMP_DATA
@@ -1907,6 +1907,11 @@ name|palette
 argument_list|)
 operator|->
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

@@ -1256,7 +1256,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unknown pattern format version #%d in \"%s\"."
+literal|"Unknown pattern format version %d in '%s'."
 argument_list|)
 argument_list|,
 name|header
@@ -1288,9 +1288,12 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Unsupported pattern depth: %d\n"
-literal|"in file \"%s\"\n"
-literal|"GIMP Patterns must be GRAY or RGB\n"
+name|_
+argument_list|(
+literal|"Unsupported pattern depth %d\n"
+literal|"in file '%s'.\n"
+literal|"GIMP Patterns must be GRAY or RGB.\n"
+argument_list|)
 argument_list|,
 name|header
 operator|.
@@ -1351,7 +1354,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error in GIMP pattern file \"%s\"."
+literal|"Error in GIMP pattern file '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -1379,7 +1382,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid UTF-8 string in GIMP pattern file \"%s\"."
+literal|"Invalid UTF-8 string in pattern file '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -1491,7 +1494,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP pattern file appears to be truncated: \"%s\"."
+literal|"Fatal parsing error: Pattern file '%s' appears truncated."
 argument_list|)
 argument_list|,
 name|filename
