@@ -112,6 +112,14 @@ name|GFIG_STOCK_STAR
 value|"gfig-star"
 end_define
 
+begin_define
+DECL|macro|GFIG_STOCK_LOGO
+define|#
+directive|define
+name|GFIG_STOCK_LOGO
+value|"gfig-logo"
+end_define
+
 begin_function_decl
 name|void
 name|gfig_stock_init

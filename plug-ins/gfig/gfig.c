@@ -957,7 +957,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80103
+DECL|enum|__anon2960e8060103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1009,7 +1009,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80203
+DECL|enum|__anon2960e8060203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1030,7 +1030,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80303
+DECL|enum|__anon2960e8060303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1051,7 +1051,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80403
+DECL|enum|__anon2960e8060403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1078,7 +1078,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80503
+DECL|enum|__anon2960e8060503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1099,7 +1099,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80603
+DECL|enum|__anon2960e8060603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1267,7 +1267,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b329a80708
+DECL|struct|__anon2960e8060708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1306,7 +1306,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b329a80808
+DECL|struct|__anon2960e8060808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1355,7 +1355,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b329a80908
+DECL|struct|__anon2960e8060908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1525,7 +1525,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80a03
+DECL|enum|__anon2960e8060a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1549,7 +1549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80b03
+DECL|enum|__anon2960e8060b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1567,7 +1567,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80c03
+DECL|enum|__anon2960e8060c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1588,7 +1588,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b329a80d03
+DECL|enum|__anon2960e8060d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -4878,7 +4878,7 @@ name|dir
 condition|)
 name|g_warning
 argument_list|(
-literal|"Error reading GFig folder \"%s\""
+literal|"Error reading Gfig folder \"%s\""
 argument_list|,
 name|path
 argument_list|)
@@ -18971,7 +18971,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"GFig"
+literal|"Gfig"
 argument_list|)
 argument_list|,
 literal|"gfig"
@@ -22411,7 +22411,7 @@ name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|pm
+name|image
 decl_stmt|;
 name|window
 operator|=
@@ -22419,7 +22419,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"About GFig"
+literal|"About Gfig"
 argument_list|)
 argument_list|,
 literal|"gfig"
@@ -22453,17 +22453,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Bits and bobs */
-name|pm
+name|image
 operator|=
-name|gimp_pixmap_new
+name|gtk_image_new_from_stock
 argument_list|(
-name|rulers_comp_xpm
+name|GFIG_STOCK_LOGO
+argument_list|,
+name|GTK_ICON_SIZE_DIALOG
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pm
+name|image
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -22472,7 +22473,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -22486,7 +22487,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -22501,7 +22502,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|pm
+name|image
 argument_list|,
 name|TRUE
 argument_list|,
@@ -22677,10 +22678,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
 literal|"Email alt@picnic.demon.co.uk"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
@@ -22760,10 +22758,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
 literal|"Isometric grid By Rob Saunders"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_padding
