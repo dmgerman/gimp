@@ -296,6 +296,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpBrushCoreClass
+modifier|*
+name|brush_core_class
+init|=
+name|GIMP_BRUSH_CORE_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -308,6 +317,12 @@ operator|->
 name|paint
 operator|=
 name|gimp_eraser_paint
+expr_stmt|;
+name|brush_core_class
+operator|->
+name|handles_changing_brush
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function
@@ -322,23 +337,7 @@ name|GimpEraser
 modifier|*
 name|eraser
 parameter_list|)
-block|{
-name|GimpPaintCore
-modifier|*
-name|paint_core
-init|=
-name|GIMP_PAINT_CORE
-argument_list|(
-name|eraser
-argument_list|)
-decl_stmt|;
-name|paint_core
-operator|->
-name|flags
-operator||=
-name|CORE_HANDLES_CHANGING_BRUSH
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function

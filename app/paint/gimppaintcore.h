@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29584ac30103
+DECL|enum|__anon2b96b1b80103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -53,32 +53,6 @@ comment|/* PaintFunc performs window tracing activity                      * fol
 DECL|typedef|GimpPaintCoreState
 block|}
 name|GimpPaintCoreState
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon29584ac30203
-block|{
-DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
-name|CORE_HANDLES_CHANGING_BRUSH
-init|=
-literal|0x1
-operator|<<
-literal|0
-block|,
-comment|/*  Set for tools that don't                                            *  mind if the brush                                            *  changes while painting.                                            */
-DECL|enumerator|CORE_TRACES_ON_WINDOW
-name|CORE_TRACES_ON_WINDOW
-init|=
-literal|0x1
-operator|<<
-literal|1
-comment|/*  Set for tools that                                            *  perform temporary                                            *  rendering directly to                                            *  the window. These                                            *  require sequencing with                                            *  gdisplay_flush()                                            *  routines.  See                                            *  gimpclone.c for example.                                            */
-DECL|typedef|GimpPaintCoreFlags
-block|}
-name|GimpPaintCoreFlags
 typedef|;
 end_typedef
 
@@ -214,38 +188,35 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  undo extents in image coords     */
-DECL|member|flags
-name|GimpPaintCoreFlags
-name|flags
-decl_stmt|;
-comment|/*  tool flags, see ToolFlags above  */
 DECL|member|use_pressure
 name|gboolean
 name|use_pressure
 decl_stmt|;
 comment|/*  look at coords->pressure         */
-comment|/*  undo blocks variables  */
 DECL|member|undo_tiles
 name|TileManager
 modifier|*
 name|undo_tiles
 decl_stmt|;
+comment|/*  tiles which have been modified   */
 DECL|member|canvas_tiles
 name|TileManager
 modifier|*
 name|canvas_tiles
 decl_stmt|;
-comment|/*  paint buffers variables  */
+comment|/*  the mask used for painting       */
 DECL|member|orig_buf
 name|TempBuf
 modifier|*
 name|orig_buf
 decl_stmt|;
+comment|/*  the unmodified drawable pixels   */
 DECL|member|canvas_buf
 name|TempBuf
 modifier|*
 name|canvas_buf
 decl_stmt|;
+comment|/*  the buffer to paint to           */
 block|}
 struct|;
 end_struct
@@ -258,6 +229,11 @@ block|{
 DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
+decl_stmt|;
+comment|/*  Set for tools that perform temporary rendering directly to the    *  window. These require sequencing with gimp_display_flush().    *  See gimpclone.c for example.    */
+DECL|member|traces_on_window
+name|gboolean
+name|traces_on_window
 decl_stmt|;
 comment|/*  virtual functions  */
 DECL|member|start

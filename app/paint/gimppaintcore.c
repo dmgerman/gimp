@@ -470,6 +470,12 @@ name|gimp_paint_core_finalize
 expr_stmt|;
 name|klass
 operator|->
+name|traces_on_window
+operator|=
+name|FALSE
+expr_stmt|;
+name|klass
+operator|->
 name|start
 operator|=
 name|gimp_paint_core_real_start
@@ -546,12 +552,6 @@ expr_stmt|;
 name|core
 operator|->
 name|y2
-operator|=
-literal|0
-expr_stmt|;
-name|core
-operator|->
-name|flags
 operator|=
 literal|0
 expr_stmt|;

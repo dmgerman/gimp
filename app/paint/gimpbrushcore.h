@@ -254,6 +254,12 @@ DECL|member|parent_class
 name|GimpPaintCoreClass
 name|parent_class
 decl_stmt|;
+comment|/*  Set for tools that don't mind if the brush changes while painting  */
+DECL|member|handles_changing_brush
+name|gboolean
+name|handles_changing_brush
+decl_stmt|;
+comment|/*  Scale the brush mask depending on pressure  */
 DECL|member|use_scale
 name|gboolean
 name|use_scale
