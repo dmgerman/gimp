@@ -133,17 +133,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|warning_dialog
-specifier|static
-name|GtkWidget
-modifier|*
-name|warning_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  *  This file is for operations on the gdisplay object  */
 end_comment
@@ -1002,12 +991,11 @@ operator|*
 operator|)
 name|data
 expr_stmt|;
-name|menus_set_sensitive
-argument_list|(
-literal|"<Image>/File/Close"
-argument_list|,
-name|TRUE
-argument_list|)
+name|gdisp
+operator|->
+name|warning_dialog
+operator|=
+name|NULL
 expr_stmt|;
 if|if
 condition|(
@@ -1046,10 +1034,10 @@ name|gchar
 modifier|*
 name|warning_buf
 decl_stmt|;
-comment|/* FIXUP this will raise any prexsisting close dialogs, which can be a      a bit confusing if you tried to close a new window because you had      forgotten the old dialog was still around */
-comment|/* If a warning dialog already exists raise the window and get out */
 if|if
 condition|(
+name|gdisp
+operator|->
 name|warning_dialog
 operator|!=
 name|NULL
@@ -1057,6 +1045,8 @@ condition|)
 block|{
 name|gdk_window_raise
 argument_list|(
+name|gdisp
+operator|->
 name|warning_dialog
 operator|->
 name|window
@@ -1064,13 +1054,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|menus_set_sensitive
-argument_list|(
-literal|"<Image>/File/Close"
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|warning_buf
 operator|=
 name|g_strdup_printf
@@ -1083,6 +1066,8 @@ argument_list|,
 name|image_name
 argument_list|)
 expr_stmt|;
+name|gdisp
+operator|->
 name|warning_dialog
 operator|=
 name|mbox
@@ -1121,24 +1106,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|warning_buf
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|mbox
-argument_list|)
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|gtk_widget_destroyed
-argument_list|)
-argument_list|,
-operator|&
-name|warning_dialog
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -603,6 +603,12 @@ modifier|*
 name|cd_ui
 decl_stmt|;
 comment|/* color display filter dialog              */
+DECL|member|warning_dialog
+name|GtkWidget
+modifier|*
+name|warning_dialog
+decl_stmt|;
+comment|/* "Changes were made to %s. Close anyway?" */
 block|}
 struct|;
 end_struct

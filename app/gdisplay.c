@@ -681,6 +681,12 @@ name|cd_ui
 operator|=
 name|NULL
 expr_stmt|;
+name|gdisp
+operator|->
+name|warning_dialog
+operator|=
+name|NULL
+expr_stmt|;
 comment|/* format the title */
 name|gdisplay_format_title
 argument_list|(
