@@ -8151,9 +8151,9 @@ init|=
 block|{
 literal|"gimp_image_add_layer_mask"
 block|,
-literal|"This procedure is deprecated! Use the procedure returned as 'help' instead."
+literal|"This procedure is deprecated! Use 'gimp_layer_add_mask' instead."
 block|,
-literal|"gimp_layer_add_mask"
+literal|"This procedure is deprecated! Use 'gimp_layer_add_mask' instead."
 block|,
 literal|""
 block|,
@@ -8366,9 +8366,9 @@ init|=
 block|{
 literal|"gimp_image_remove_layer_mask"
 block|,
-literal|"This procedure is deprecated! Use the procedure returned as 'help' instead."
+literal|"This procedure is deprecated! Use 'gimp_layer_remove_mask' instead."
 block|,
-literal|"gimp_layer_remove_mask"
+literal|"This procedure is deprecated! Use 'gimp_layer_remove_mask' instead."
 block|,
 literal|""
 block|,
