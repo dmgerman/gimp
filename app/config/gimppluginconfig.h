@@ -118,6 +118,11 @@ name|gchar
 modifier|*
 name|gimpressionist_path
 decl_stmt|;
+DECL|member|script_fu_path
+name|gchar
+modifier|*
+name|script_fu_path
+decl_stmt|;
 block|}
 struct|;
 end_struct

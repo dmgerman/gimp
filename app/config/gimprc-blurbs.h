@@ -175,7 +175,7 @@ define|#
 directive|define
 name|FRACTALEXPLORER_PATH_BLURB
 define|\
-value|"This path will be searched for fractals when you use the "\ "Fractal Explorer plug-in."
+value|"Where to search for fractals used by the Fractal Explorer plug-in."
 end_define
 
 begin_define
@@ -395,6 +395,15 @@ directive|define
 name|SAVE_SESSION_INFO_BLURB
 define|\
 value|"Remember the positions and sizes of the main dialogs and asks your " \ "window-manager to place them there again the next time you use the " \ "GIMP."
+end_define
+
+begin_define
+DECL|macro|SCRIPT_FU_PATH_BLURB
+define|#
+directive|define
+name|SCRIPT_FU_PATH_BLURB
+define|\
+value|"This path will be searched for scripts when the Script-Fu plug-in is run."
 end_define
 
 begin_define

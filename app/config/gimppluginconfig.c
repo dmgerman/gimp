@@ -130,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7a3290103
+DECL|enum|__anon2b5bf40b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -146,7 +146,10 @@ name|PROP_GFLARE_PATH
 block|,
 DECL|enumerator|PROP_GIMPRESSIONIST_PATH
 name|PROP_GIMPRESSIONIST_PATH
-block|, }
+block|,
+DECL|enumerator|PROP_SCRIPT_FU_PATH
+name|PROP_SCRIPT_FU_PATH
+block|}
 enum|;
 end_enum
 
@@ -361,6 +364,24 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_PATH
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_SCRIPT_FU_PATH
+argument_list|,
+literal|"script-fu-path"
+argument_list|,
+name|SCRIPT_FU_PATH_BLURB
+argument_list|,
+name|gimp_config_build_data_path
+argument_list|(
+literal|"scripts"
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -412,6 +433,13 @@ argument_list|(
 name|plugin_config
 operator|->
 name|gimpressionist_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|plugin_config
+operator|->
+name|script_fu_path
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
@@ -546,6 +574,26 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_SCRIPT_FU_PATH
+case|:
+name|g_free
+argument_list|(
+name|plugin_config
+operator|->
+name|script_fu_path
+argument_list|)
+expr_stmt|;
+name|plugin_config
+operator|->
+name|script_fu_path
+operator|=
+name|g_value_dup_string
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -648,6 +696,19 @@ argument_list|,
 name|plugin_config
 operator|->
 name|gimpressionist_path
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_SCRIPT_FU_PATH
+case|:
+name|g_value_set_string
+argument_list|(
+name|value
+argument_list|,
+name|plugin_config
+operator|->
+name|script_fu_path
 argument_list|)
 expr_stmt|;
 break|break;
