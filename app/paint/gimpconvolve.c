@@ -138,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1cec230103
+DECL|enum|__anon278451a70103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1043,7 +1043,7 @@ name|rate
 condition|)
 name|rate
 operator|*=
-literal|2.0
+name|PRESSURE_SCALE
 operator|*
 name|paint_core
 operator|->

@@ -38,6 +38,14 @@ name|PAINT_CORE_SOLID_SUBSAMPLE
 value|2
 end_define
 
+begin_define
+DECL|macro|PRESSURE_SCALE
+define|#
+directive|define
+name|PRESSURE_SCALE
+value|1.5
+end_define
+
 begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment
@@ -46,7 +54,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28d129280103
+DECL|enum|__anon297cc5850103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -85,7 +93,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon28d129280203
+DECL|enum|__anon297cc5850203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH

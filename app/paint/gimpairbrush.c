@@ -601,7 +601,7 @@ name|options
 operator|->
 name|rate
 operator|*
-literal|2.0
+name|PRESSURE_SCALE
 operator|*
 name|paint_core
 operator|->
@@ -756,7 +756,7 @@ name|saved_pressure
 condition|)
 name|opacity
 operator|*=
-literal|2.0
+name|PRESSURE_SCALE
 operator|*
 name|paint_core
 operator|->

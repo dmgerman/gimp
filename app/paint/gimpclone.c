@@ -1837,7 +1837,7 @@ name|opacity
 condition|)
 name|opacity
 operator|*=
-literal|2.0
+name|PRESSURE_SCALE
 operator|*
 name|paint_core
 operator|->

@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d0b4030108
+DECL|struct|__anon29a18d770108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -220,6 +220,7 @@ specifier|static
 name|void
 name|maze_msg
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|msg
@@ -556,10 +557,6 @@ name|gint
 name|trow
 init|=
 literal|0
-decl_stmt|;
-name|gchar
-modifier|*
-name|message
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
@@ -2528,13 +2525,6 @@ name|GimpParamDef
 modifier|*
 name|return_vals
 decl_stmt|;
-name|gint
-name|baz
-decl_stmt|;
-name|gchar
-modifier|*
-name|message
-decl_stmt|;
 if|if
 condition|(
 name|gimp_procedural_db_proc_info
@@ -2573,9 +2563,10 @@ name|return_vals
 argument_list|)
 condition|)
 block|{
-comment|/* open URL for help */
+name|gchar
+modifier|*
 name|message
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
 name|_
@@ -2585,7 +2576,10 @@ argument_list|)
 argument_list|,
 name|MAZE_URL
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|baz
+decl_stmt|;
 name|maze_msg
 argument_list|(
 name|message
@@ -2613,8 +2607,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|gchar
+modifier|*
 name|message
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
 name|_
@@ -2624,7 +2620,7 @@ argument_list|)
 argument_list|,
 name|MAZE_URL
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|maze_msg
 argument_list|(
 name|message
@@ -2642,9 +2638,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|maze_msg (gchar * msg)
+DECL|function|maze_msg (const gchar * msg)
 name|maze_msg
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|msg
