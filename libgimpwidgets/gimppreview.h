@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtktable.h>
+file|<gtk/gtkvbox.h>
 end_include
 
 begin_macro
@@ -108,7 +108,7 @@ struct|struct
 name|_GimpPreview
 block|{
 DECL|member|parent_instance
-name|GtkTable
+name|GtkVBox
 name|parent_instance
 decl_stmt|;
 DECL|member|update_preview
@@ -206,7 +206,7 @@ struct|struct
 name|_GimpPreviewClass
 block|{
 DECL|member|parent_class
-name|GtkTableClass
+name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
 comment|/* virtuals */
@@ -270,6 +270,29 @@ parameter_list|(
 name|GimpPreview
 modifier|*
 name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_preview_set_bounds
+parameter_list|(
+name|GimpPreview
+modifier|*
+name|preview
+parameter_list|,
+name|gint
+name|xmin
+parameter_list|,
+name|gint
+name|ymin
+parameter_list|,
+name|gint
+name|xmax
+parameter_list|,
+name|gint
+name|ymax
 parameter_list|)
 function_decl|;
 end_function_decl
