@@ -228,7 +228,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b4c3ed0103
+DECL|enum|__anon2be00c5c0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b4c3ed0203
+DECL|enum|__anon2be00c5c0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -7686,13 +7686,9 @@ name|rlebuf
 operator|=
 name|g_malloc
 argument_list|(
-name|level
-operator|->
-name|width
+name|TILE_WIDTH
 operator|*
-name|level
-operator|->
-name|height
+name|TILE_HEIGHT
 operator|*
 name|level
 operator|->
@@ -12245,15 +12241,15 @@ name|offset2
 operator|=
 name|offset
 operator|+
-name|width
+name|TILE_WIDTH
 operator|*
-name|height
+name|TILE_WIDTH
 operator|*
 literal|4
 operator|*
 literal|1.5
 expr_stmt|;
-comment|/* 1.5 is probably more 						  than we need to allow */
+comment|/* 1.5 is probably more 							   than we need to allow */
 comment|/* seek to the tile offset */
 name|xcf_seek_pos
 argument_list|(
