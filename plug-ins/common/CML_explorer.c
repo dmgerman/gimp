@@ -93,7 +93,7 @@ DECL|macro|PLUG_IN_NAME
 define|#
 directive|define
 name|PLUG_IN_NAME
-value|"plug_in_CML_explorer"
+value|"plug_in_cml_explorer"
 end_define
 
 begin_define
@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0208620108
+DECL|struct|__anon2b3984ff0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -237,7 +237,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0208620203
+DECL|enum|__anon2b3984ff0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -360,7 +360,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0208620303
+DECL|enum|__anon2b3984ff0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -499,7 +499,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0208620403
+DECL|enum|__anon2b3984ff0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -598,7 +598,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0208620503
+DECL|enum|__anon2b3984ff0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -690,7 +690,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0208620608
+DECL|struct|__anon2b3984ff0608
 block|{
 DECL|member|function
 name|gint
@@ -763,7 +763,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0208620708
+DECL|struct|__anon2b3984ff0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1541,7 +1541,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0208620808
+DECL|struct|__anon2b3984ff0808
 block|{
 DECL|member|widget
 name|GtkWidget

@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ebacd0108
+DECL|struct|__anon2c8f83130108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -412,7 +412,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"file_GTM_save"
+literal|"file_gtm_save"
 argument_list|,
 literal|"GIMP Table Magic"
 argument_list|,
@@ -444,7 +444,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_GTM_save"
+literal|"file_gtm_save"
 argument_list|,
 literal|"html,htm"
 argument_list|,
@@ -548,7 +548,7 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-literal|"file_GTM_save"
+literal|"file_gtm_save"
 argument_list|,
 operator|&
 name|gtmvals
@@ -588,7 +588,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"file_GTM_save"
+literal|"file_gtm_save"
 argument_list|,
 operator|&
 name|gtmvals
