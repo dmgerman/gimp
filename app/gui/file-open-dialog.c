@@ -166,12 +166,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"docindex.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-open.h"
 end_include
 
@@ -812,11 +806,6 @@ argument_list|(
 name|the_gimp
 argument_list|,
 name|filename
-argument_list|)
-expr_stmt|;
-name|document_index_add
-argument_list|(
-name|absolute
 argument_list|)
 expr_stmt|;
 name|menus_last_opened_add

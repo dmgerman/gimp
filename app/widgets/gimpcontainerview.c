@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2add7cf80103
+DECL|enum|__anon27b6c7e70103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -735,7 +735,25 @@ literal|0
 expr_stmt|;
 name|view
 operator|->
+name|reorderable
+operator|=
+name|FALSE
+expr_stmt|;
+name|view
+operator|->
+name|get_name_func
+operator|=
+name|NULL
+expr_stmt|;
+name|view
+operator|->
 name|button_box
+operator|=
+name|NULL
+expr_stmt|;
+name|view
+operator|->
+name|dnd_widget
 operator|=
 name|NULL
 expr_stmt|;

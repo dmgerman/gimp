@@ -989,17 +989,17 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Document Index..."
+literal|"/File/Dialogs/Document History..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_create_toplevel_cmd_callback
+name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
 block|}
 block|,
-literal|"gimp:document-index-dialog"
+literal|"gimp:document-history"
 block|,
 literal|"file/dialogs/document_index.html"
 block|,
@@ -3638,17 +3638,17 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Document Index..."
+literal|"/Dialogs/Document History..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_create_toplevel_cmd_callback
+name|dialogs_create_dockable_cmd_callback
 block|,
 literal|0
 block|}
 block|,
-literal|"gimp:document-index-dialog"
+literal|"gimp:document-history"
 block|,
 literal|"dialogs/document_index.html"
 block|,

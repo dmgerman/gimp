@@ -706,7 +706,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_grid_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y)
+DECL|function|gimp_container_grid_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gboolean reorderable,gint min_items_x,gint min_items_y)
 name|gimp_container_grid_view_new
 parameter_list|(
 name|GimpContainer
@@ -719,6 +719,9 @@ name|context
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gboolean
+name|reorderable
 parameter_list|,
 name|gint
 name|min_items_x
@@ -824,6 +827,16 @@ operator|->
 name|preview_size
 operator|=
 name|preview_size
+expr_stmt|;
+name|view
+operator|->
+name|reorderable
+operator|=
+name|reorderable
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|window_border
 operator|=

@@ -122,6 +122,10 @@ DECL|member|preview_size
 name|gint
 name|preview_size
 decl_stmt|;
+DECL|member|reorderable
+name|gboolean
+name|reorderable
+decl_stmt|;
 DECL|member|get_name_func
 name|GimpItemGetNameFunc
 name|get_name_func

@@ -458,6 +458,8 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
+name|FALSE
+argument_list|,
 literal|5
 argument_list|,
 literal|5
@@ -475,6 +477,8 @@ argument_list|,
 name|context
 argument_list|,
 name|preview_size
+argument_list|,
+name|FALSE
 argument_list|,
 literal|5
 argument_list|,

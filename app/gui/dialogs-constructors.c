@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdocumentview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdrawablelistview.h"
 end_include
 
@@ -336,12 +342,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"docindex.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -385,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f3201c0108
+DECL|struct|__anon2a0503cb0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -885,28 +885,6 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_document_index_get (GimpDialogFactory * factory,GimpContext * context)
-name|dialogs_document_index_get
-parameter_list|(
-name|GimpDialogFactory
-modifier|*
-name|factory
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-block|{
-return|return
-name|document_index_create
-argument_list|()
-return|;
-block|}
-end_function
-
-begin_function
-name|GtkWidget
-modifier|*
 DECL|function|dialogs_preferences_get (GimpDialogFactory * factory,GimpContext * context)
 name|dialogs_preferences_get
 parameter_list|(
@@ -1368,6 +1346,8 @@ name|context
 argument_list|,
 literal|32
 argument_list|,
+name|FALSE
+argument_list|,
 literal|5
 argument_list|,
 literal|3
@@ -1671,6 +1651,8 @@ name|context
 argument_list|,
 literal|22
 argument_list|,
+name|FALSE
+argument_list|,
 literal|5
 argument_list|,
 literal|3
@@ -1788,6 +1770,8 @@ argument_list|,
 name|context
 argument_list|,
 literal|32
+argument_list|,
+name|FALSE
 argument_list|,
 literal|5
 argument_list|,
@@ -2089,6 +2073,8 @@ argument_list|,
 name|context
 argument_list|,
 literal|22
+argument_list|,
+name|FALSE
 argument_list|,
 literal|5
 argument_list|,
@@ -2633,8 +2619,10 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-name|gimp_container_list_view_new
+name|gimp_document_view_new
 argument_list|(
+name|GIMP_VIEW_TYPE_LIST
+argument_list|,
 name|context
 operator|->
 name|gimp
@@ -2648,6 +2636,8 @@ argument_list|,
 literal|5
 argument_list|,
 literal|3
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -2661,7 +2651,7 @@ literal|"History"
 argument_list|,
 name|NULL
 argument_list|,
-name|dialogs_set_view_context_func
+name|dialogs_set_editor_context_func
 argument_list|)
 return|;
 block|}

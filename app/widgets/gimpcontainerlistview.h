@@ -155,6 +155,9 @@ parameter_list|,
 name|gint
 name|preview_size
 parameter_list|,
+name|gboolean
+name|reorderable
+parameter_list|,
 name|gint
 name|min_items_x
 parameter_list|,

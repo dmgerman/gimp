@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273907e40103
+DECL|enum|__anon2b57a36d0103
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_GRID
 name|GIMP_VIEW_TYPE_GRID
@@ -243,6 +243,9 @@ name|context
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gboolean
+name|reorderable
 parameter_list|,
 name|gint
 name|min_items_x

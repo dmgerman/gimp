@@ -333,7 +333,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpContainerContextFunc context_func)
+DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gboolean reorderable,gint min_items_x,gint min_items_y,GimpContainerContextFunc context_func)
 name|gimp_container_editor_construct
 parameter_list|(
 name|GimpContainerEditor
@@ -353,6 +353,9 @@ name|context
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gboolean
+name|reorderable
 parameter_list|,
 name|gint
 name|min_items_x
@@ -461,6 +464,8 @@ name|context
 argument_list|,
 name|preview_size
 argument_list|,
+name|reorderable
+argument_list|,
 name|min_items_x
 argument_list|,
 name|min_items_y
@@ -484,6 +489,8 @@ argument_list|,
 name|context
 argument_list|,
 name|preview_size
+argument_list|,
+name|reorderable
 argument_list|,
 name|min_items_x
 argument_list|,

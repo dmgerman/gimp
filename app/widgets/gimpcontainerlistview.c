@@ -566,7 +566,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_list_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y)
+DECL|function|gimp_container_list_view_new (GimpContainer * container,GimpContext * context,gint preview_size,gboolean reorderable,gint min_items_x,gint min_items_y)
 name|gimp_container_list_view_new
 parameter_list|(
 name|GimpContainer
@@ -579,6 +579,9 @@ name|context
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gboolean
+name|reorderable
 parameter_list|,
 name|gint
 name|min_items_x
@@ -684,6 +687,16 @@ operator|->
 name|preview_size
 operator|=
 name|preview_size
+expr_stmt|;
+name|view
+operator|->
+name|reorderable
+operator|=
+name|reorderable
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 name|window_border
 operator|=
@@ -837,6 +850,26 @@ argument_list|,
 name|view
 operator|->
 name|get_name_func
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|view
+operator|->
+name|reorderable
+condition|)
+name|gimp_list_item_set_reorderable
+argument_list|(
+name|GIMP_LIST_ITEM
+argument_list|(
+name|list_item
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|view
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
