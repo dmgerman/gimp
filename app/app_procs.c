@@ -788,6 +788,33 @@ block|}
 block|}
 end_function
 
+begin_function
+name|gboolean
+DECL|function|app_gui_init (gint * argc,gchar *** argv)
+name|app_gui_init
+parameter_list|(
+name|gint
+modifier|*
+name|argc
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+modifier|*
+name|argv
+parameter_list|)
+block|{
+return|return
+name|gui_libs_init
+argument_list|(
+name|argc
+argument_list|,
+name|argv
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment

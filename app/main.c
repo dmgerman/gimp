@@ -119,12 +119,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/gui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -627,7 +621,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gui_libs_init
+name|app_gui_init
 argument_list|(
 operator|&
 name|argc

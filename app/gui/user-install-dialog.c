@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eccd500103
+DECL|enum|__anon29ecaa560103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eccd500203
+DECL|enum|__anon29ecaa560203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27eccd500303
+DECL|enum|__anon29ecaa560303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27eccd500408
+DECL|struct|__anon29ecaa560408
 block|{
 DECL|member|directory
 name|gboolean
@@ -5309,6 +5309,8 @@ name|str
 decl_stmt|;
 name|gui_get_screen_resolution
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|xres
 argument_list|,

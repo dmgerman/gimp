@@ -87,6 +87,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|app_gui_init
+parameter_list|(
+name|gint
+modifier|*
+name|gimp_argc
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+modifier|*
+name|gimp_argv
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

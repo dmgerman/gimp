@@ -1514,6 +1514,8 @@ condition|)
 block|{
 name|gui_get_screen_resolution
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|xres
 argument_list|,
@@ -6637,7 +6639,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29a527370108
+DECL|struct|__anon2b3b1b270108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7385,6 +7387,8 @@ name|str
 decl_stmt|;
 name|gui_get_screen_resolution
 argument_list|(
+name|NULL
+argument_list|,
 operator|&
 name|xres
 argument_list|,
@@ -8258,7 +8262,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29a527370208
+DECL|struct|__anon2b3b1b270208
 block|{
 DECL|member|label
 specifier|const
@@ -8417,7 +8421,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29a527370308
+DECL|struct|__anon2b3b1b270308
 block|{
 DECL|member|tree_label
 specifier|const
