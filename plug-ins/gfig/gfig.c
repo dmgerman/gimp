@@ -553,7 +553,7 @@ name|gfig_context
 operator|=
 name|g_new
 argument_list|(
-name|GFigContex
+name|GFigContext
 argument_list|,
 literal|1
 argument_list|)
