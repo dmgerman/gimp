@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -1302,20 +1296,15 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|menus_set_sensitive_locale
+name|gdisplay_cancel_warning_callback
 argument_list|(
-literal|"<Image>"
+name|widget
 argument_list|,
-name|N_
-argument_list|(
-literal|"/File/Close"
-argument_list|)
-argument_list|,
-name|TRUE
+name|client_data
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -1356,12 +1345,26 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|mbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|gchar
+modifier|*
+name|warning_buf
+decl_stmt|;
 specifier|static
 name|ActionAreaItem
-name|mbox_action_items
-index|[
-literal|2
-index|]
+name|action_items
+index|[]
 init|=
 block|{
 block|{
@@ -1390,22 +1393,6 @@ block|,
 name|NULL
 block|}
 block|}
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|mbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|char
-modifier|*
-name|warning_buf
 decl_stmt|;
 comment|/* FIXUP this will raise any prexsisting close dialogs, which can be a      a bit confusing if you tried to close a new window because you had      forgotten the old dialog was still around */
 comment|/* If a warning dialog already exists raise the window and get out */
@@ -1537,12 +1524,12 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|1
+literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_container_add
 argument_list|(
-name|GTK_BOX
+name|GTK_CONTAINER
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -1553,12 +1540,6 @@ name|vbox
 argument_list|)
 argument_list|,
 name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1572,7 +1553,8 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Changes were made to %s. Close anyway?"
+literal|"Changes were made to %s.\n"
+literal|"Close anyway?"
 argument_list|)
 argument_list|,
 name|image_name
@@ -1611,7 +1593,7 @@ argument_list|(
 name|warning_buf
 argument_list|)
 expr_stmt|;
-name|mbox_action_items
+name|action_items
 index|[
 literal|0
 index|]
@@ -1620,7 +1602,7 @@ name|user_data
 operator|=
 name|mbox
 expr_stmt|;
-name|mbox_action_items
+name|action_items
 index|[
 literal|1
 index|]
@@ -1636,11 +1618,11 @@ argument_list|(
 name|mbox
 argument_list|)
 argument_list|,
-name|mbox_action_items
+name|action_items
 argument_list|,
 literal|2
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
