@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a68130103
+DECL|enum|__anon299fb8570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -450,7 +450,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_INTERPOLATION_TYPE
 argument_list|,
-name|GIMP_LINEAR
+name|GIMP_INTERPOLATION_LINEAR
 argument_list|,
 literal|0
 argument_list|)
