@@ -66,9 +66,9 @@ DECL|member|opacity
 name|gboolean
 name|opacity
 decl_stmt|;
-DECL|member|pressure
+DECL|member|hardness
 name|gboolean
-name|pressure
+name|hardness
 decl_stmt|;
 DECL|member|rate
 name|gboolean

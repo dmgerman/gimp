@@ -88,10 +88,10 @@ value|TRUE
 end_define
 
 begin_define
-DECL|macro|DEFAULT_PRESSURE_PRESSURE
+DECL|macro|DEFAULT_PRESSURE_HARDNESS
 define|#
 directive|define
-name|DEFAULT_PRESSURE_PRESSURE
+name|DEFAULT_PRESSURE_HARDNESS
 value|FALSE
 end_define
 
@@ -185,7 +185,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291db4bc0103
+DECL|enum|__anon29640fbd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -199,8 +199,8 @@ block|,
 DECL|enumerator|PROP_PRESSURE_OPACITY
 name|PROP_PRESSURE_OPACITY
 block|,
-DECL|enumerator|PROP_PRESSURE_PRESSURE
-name|PROP_PRESSURE_PRESSURE
+DECL|enumerator|PROP_PRESSURE_HARDNESS
+name|PROP_PRESSURE_HARDNESS
 block|,
 DECL|enumerator|PROP_PRESSURE_RATE
 name|PROP_PRESSURE_RATE
@@ -539,13 +539,13 @@ name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PRESSURE_PRESSURE
+name|PROP_PRESSURE_HARDNESS
 argument_list|,
-literal|"pressure-pressure"
+literal|"pressure-hardness"
 argument_list|,
 name|NULL
 argument_list|,
-name|DEFAULT_PRESSURE_PRESSURE
+name|DEFAULT_PRESSURE_HARDNESS
 argument_list|,
 literal|0
 argument_list|)
@@ -952,11 +952,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PRESSURE_PRESSURE
+name|PROP_PRESSURE_HARDNESS
 case|:
 name|pressure_options
 operator|->
-name|pressure
+name|hardness
 operator|=
 name|g_value_get_boolean
 argument_list|(
@@ -1230,7 +1230,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PRESSURE_PRESSURE
+name|PROP_PRESSURE_HARDNESS
 case|:
 name|g_value_set_boolean
 argument_list|(
@@ -1238,7 +1238,7 @@ name|value
 argument_list|,
 name|pressure_options
 operator|->
-name|pressure
+name|hardness
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2076,7 +2076,7 @@ name|paint_options
 operator|->
 name|pressure_options
 operator|->
-name|pressure
+name|hardness
 condition|)
 return|return
 name|GIMP_BRUSH_PRESSURE

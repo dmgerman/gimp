@@ -1399,7 +1399,7 @@ name|gimp_prop_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"pressure-pressure"
+literal|"pressure-hardness"
 argument_list|,
 name|_
 argument_list|(

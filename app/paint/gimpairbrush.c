@@ -750,7 +750,7 @@ name|paint_options
 operator|->
 name|pressure_options
 operator|->
-name|pressure
+name|hardness
 expr_stmt|;
 if|if
 condition|(
@@ -770,7 +770,7 @@ name|paint_options
 operator|->
 name|pressure_options
 operator|->
-name|pressure
+name|hardness
 operator|=
 name|FALSE
 expr_stmt|;
@@ -789,7 +789,7 @@ name|paint_options
 operator|->
 name|pressure_options
 operator|->
-name|pressure
+name|hardness
 operator|=
 name|saved_pressure
 expr_stmt|;
