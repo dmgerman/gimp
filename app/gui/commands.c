@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channels_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -222,7 +216,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialog.h"
+file|"lc_dialog.h"
 end_include
 
 begin_include
@@ -312,7 +306,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abf05e30108
+DECL|struct|__anon29836ec40108
 block|{
 DECL|member|resize
 name|Resize

@@ -108,7 +108,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paths_dialog.h"
+file|"paths_dialogP.h"
 end_include
 
 begin_include
@@ -328,7 +328,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon27ff513d0108
+DECL|struct|__anon2b83ef130108
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27ff513d0208
+DECL|struct|__anon2b83ef130208
 typedef|typedef
 struct|struct
 block|{
@@ -420,7 +420,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27ff513d0308
+DECL|struct|__anon2b83ef130308
 typedef|typedef
 struct|struct
 block|{

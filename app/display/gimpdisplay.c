@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channels_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -126,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialog.h"
+file|"lc_dialog.h"
 end_include
 
 begin_include
@@ -145,12 +139,6 @@ begin_include
 include|#
 directive|include
 file|"bezier_selectP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paths_dialog.h"
 end_include
 
 begin_include
@@ -9621,16 +9609,8 @@ name|list
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  for convenience, we call the layers dialog flush here  */
-name|layers_dialog_flush
-argument_list|()
-expr_stmt|;
-comment|/*  for convenience, we call the channels dialog flush here  */
-name|channels_dialog_flush
-argument_list|()
-expr_stmt|;
-comment|/*  for convenience, we call the paths dialog flush here  */
-name|paths_dialog_flush
+comment|/*  for convenience, we call the L&C flush here  */
+name|lc_dialog_flush
 argument_list|()
 expr_stmt|;
 name|flushing

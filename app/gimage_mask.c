@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_core.h"
 end_include
 

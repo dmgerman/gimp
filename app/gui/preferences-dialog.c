@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialog.h"
+file|"lc_dialog.h"
 end_include
 
 begin_include
@@ -11787,7 +11787,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon2aac12210108
+DECL|struct|__anon2ac3efa20108
 specifier|static
 specifier|const
 struct|struct
@@ -12012,7 +12012,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon2aac12210208
+DECL|struct|__anon2ac3efa20208
 specifier|static
 specifier|const
 struct|struct

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"lc_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug_in.h"
 end_include
 
@@ -90,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a25e40108
+DECL|struct|__anon28b84bb00108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -678,6 +684,10 @@ name|gimage
 argument_list|,
 literal|0x0101
 argument_list|)
+expr_stmt|;
+comment|/*  Update L&C because the last automatic update at image creation        *  time happened when the new image had no layers at all        *        *  TODO: make L&C aware of the image's "repaint" signal        */
+name|lc_dialog_flush
+argument_list|()
 expr_stmt|;
 block|}
 name|g_free

@@ -264,7 +264,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialog.h"
+file|"lc_dialog.h"
 end_include
 
 begin_include

@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"buildmenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -144,13 +138,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialog.h"
+file|"lc_dialogP.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"layers_dialogP.h"
+file|"menus.h"
 end_include
 
 begin_include
@@ -192,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paths_dialogP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"resize.h"
 end_include
 
@@ -205,12 +205,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpmatrix.h"
 end_include
 
 begin_include
@@ -312,7 +306,7 @@ DECL|macro|PREVIEW_EVENT_MASK
 define|#
 directive|define
 name|PREVIEW_EVENT_MASK
-value|GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK | GDK_ENTER_NOTIFY_MASK
+value|GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK | \                            GDK_ENTER_NOTIFY_MASK
 end_define
 
 begin_define
@@ -332,7 +326,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2bd5d5ea0108
+DECL|struct|__anon28d45cf30108
 typedef|typedef
 struct|struct
 block|{
@@ -456,7 +450,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2bd5d5ea0208
+DECL|struct|__anon28d45cf30208
 typedef|typedef
 struct|struct
 block|{
@@ -485,7 +479,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bd5d5ea0308
+DECL|struct|__anon28d45cf30308
 typedef|typedef
 struct|struct
 block|{
@@ -504,7 +498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bd5d5ea0408
+DECL|struct|__anon28d45cf30408
 typedef|typedef
 struct|struct
 block|{
@@ -638,32 +632,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|paths_dialog_new_path_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|paths_dialog_delete_path_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|paths_dialog_map_callback
 parameter_list|(
 name|GtkWidget
@@ -680,81 +648,6 @@ begin_function_decl
 specifier|static
 name|void
 name|paths_dialog_unmap_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|paths_dialog_dup_path_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|paths_dialog_copy_path_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|paths_dialog_paste_path_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|paths_dialog_stroke_path_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gpointer
-name|client_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|paths_dialog_path_to_sel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -894,236 +787,12 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|paths_dialog_import_path_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|paths_dialog_export_path_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|path_close
 parameter_list|(
 name|PATHP
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|paths_ops
-specifier|static
-name|MenuItem
-name|paths_ops
-index|[]
-init|=
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"New Path"
-argument_list|)
-block|,
-literal|'N'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_new_path_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Duplicate Path"
-argument_list|)
-block|,
-literal|'U'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_dup_path_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Path to Selection"
-argument_list|)
-block|,
-literal|'S'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_path_to_sel_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Stroke Path"
-argument_list|)
-block|,
-literal|'T'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_stroke_path_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Delete Path"
-argument_list|)
-block|,
-literal|'D'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_delete_path_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Import Path"
-argument_list|)
-block|,
-literal|'I'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_import_path_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Export Path"
-argument_list|)
-block|,
-literal|'E'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_export_path_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Copy Path"
-argument_list|)
-block|,
-literal|'C'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_copy_path_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|N_
-argument_list|(
-literal|"Paste Path"
-argument_list|)
-block|,
-literal|'P'
-block|,
-name|GDK_CONTROL_MASK
-block|,
-name|paths_dialog_paste_path_callback
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|NULL
-block|,
-literal|0
-block|,
-literal|0
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
 
 begin_define
 DECL|macro|NEW_PATH_BUTTON
@@ -1142,11 +811,19 @@ value|2
 end_define
 
 begin_define
+DECL|macro|DEL_PATH_BUTTON
+define|#
+directive|define
+name|DEL_PATH_BUTTON
+value|3
+end_define
+
+begin_define
 DECL|macro|PATH_TO_SEL_BUTTON
 define|#
 directive|define
 name|PATH_TO_SEL_BUTTON
-value|3
+value|4
 end_define
 
 begin_define
@@ -1154,14 +831,6 @@ DECL|macro|STROKE_PATH_BUTTON
 define|#
 directive|define
 name|STROKE_PATH_BUTTON
-value|4
-end_define
-
-begin_define
-DECL|macro|DEL_PATH_BUTTON
-define|#
-directive|define
-name|DEL_PATH_BUTTON
 value|5
 end_define
 
@@ -1224,6 +893,23 @@ literal|0
 block|}
 block|,
 block|{
+name|delete_xpm
+block|,
+name|paths_dialog_delete_path_callback
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Delete Path"
+argument_list|)
+block|,
+name|NULL
+block|,
+literal|0
+block|}
+block|,
+block|{
 name|toselection_xpm
 block|,
 name|paths_dialog_path_to_sel_callback
@@ -1250,23 +936,6 @@ block|,
 name|N_
 argument_list|(
 literal|"Stroke Path"
-argument_list|)
-block|,
-name|NULL
-block|,
-literal|0
-block|}
-block|,
-block|{
-name|delete_xpm
-block|,
-name|paths_dialog_delete_path_callback
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Delete Path"
 argument_list|)
 block|,
 name|NULL
@@ -1437,14 +1106,12 @@ block|{
 case|case
 name|NEW_PATH_BUTTON
 case|:
-name|gtk_widget_set_sensitive
+name|menus_set_sensitive
 argument_list|(
-name|paths_ops
-index|[
-literal|0
-index|]
-operator|.
-name|widget
+name|_
+argument_list|(
+literal|"<Paths>/New Path"
+argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
@@ -1465,14 +1132,12 @@ break|break;
 case|case
 name|DUP_PATH_BUTTON
 case|:
-name|gtk_widget_set_sensitive
+name|menus_set_sensitive
 argument_list|(
-name|paths_ops
-index|[
-literal|1
-index|]
-operator|.
-name|widget
+name|_
+argument_list|(
+literal|"<Paths>/Duplicate Path"
+argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
@@ -1482,62 +1147,6 @@ argument_list|(
 name|paths_ops_buttons
 index|[
 literal|1
-index|]
-operator|.
-name|widget
-argument_list|,
-name|sensitive
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PATH_TO_SEL_BUTTON
-case|:
-name|gtk_widget_set_sensitive
-argument_list|(
-name|paths_ops
-index|[
-literal|2
-index|]
-operator|.
-name|widget
-argument_list|,
-name|sensitive
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|paths_ops_buttons
-index|[
-literal|2
-index|]
-operator|.
-name|widget
-argument_list|,
-name|sensitive
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|STROKE_PATH_BUTTON
-case|:
-name|gtk_widget_set_sensitive
-argument_list|(
-name|paths_ops
-index|[
-literal|3
-index|]
-operator|.
-name|widget
-argument_list|,
-name|sensitive
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_sensitive
-argument_list|(
-name|paths_ops_buttons
-index|[
-literal|3
 index|]
 operator|.
 name|widget
@@ -1549,14 +1158,64 @@ break|break;
 case|case
 name|DEL_PATH_BUTTON
 case|:
+name|menus_set_sensitive
+argument_list|(
+name|_
+argument_list|(
+literal|"<Paths>/Delete Path"
+argument_list|)
+argument_list|,
+name|sensitive
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|paths_ops
+name|paths_ops_buttons
 index|[
-literal|4
+literal|2
 index|]
 operator|.
 name|widget
+argument_list|,
+name|sensitive
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PATH_TO_SEL_BUTTON
+case|:
+name|menus_set_sensitive
+argument_list|(
+name|_
+argument_list|(
+literal|"<Paths>/Path to Selection"
+argument_list|)
+argument_list|,
+name|sensitive
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|paths_ops_buttons
+index|[
+literal|3
+index|]
+operator|.
+name|widget
+argument_list|,
+name|sensitive
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|STROKE_PATH_BUTTON
+case|:
+name|menus_set_sensitive
+argument_list|(
+name|_
+argument_list|(
+literal|"<Paths>/Stroke Path"
+argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
@@ -1577,14 +1236,12 @@ break|break;
 case|case
 name|COPY_PATH_BUTTON
 case|:
-name|gtk_widget_set_sensitive
+name|menus_set_sensitive
 argument_list|(
-name|paths_ops
-index|[
-literal|7
-index|]
-operator|.
-name|widget
+name|_
+argument_list|(
+literal|"<Paths>/Copy Path"
+argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
@@ -1593,14 +1250,12 @@ break|break;
 case|case
 name|PASTE_PATH_BUTTON
 case|:
-name|gtk_widget_set_sensitive
+name|menus_set_sensitive
 argument_list|(
-name|paths_ops
-index|[
-literal|8
-index|]
-operator|.
-name|widget
+name|_
+argument_list|(
+literal|"<Paths>/Paste Path"
+argument_list|)
 argument_list|,
 name|sensitive
 argument_list|)
@@ -1791,7 +1446,9 @@ name|button_box
 operator|=
 name|ops_button_box_new
 argument_list|(
-name|lc_shell
+name|lc_dialog
+operator|->
+name|shell
 argument_list|,
 name|tool_tips
 argument_list|,
@@ -2066,12 +1723,14 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/* The ops buttons */
+comment|/*  The ops buttons  */
 name|button_box
 operator|=
 name|ops_button_box_new
 argument_list|(
-name|lc_shell
+name|lc_dialog
+operator|->
+name|shell
 argument_list|,
 name|tool_tips
 argument_list|,
@@ -2101,14 +1760,20 @@ argument_list|(
 name|button_box
 argument_list|)
 expr_stmt|;
-comment|/*  Set up signals for map/unmap for the accelerators  */
+name|menus_get_paths_menu
+argument_list|(
+operator|&
+name|paths_dialog
+operator|->
+name|ops_menu
+argument_list|,
+operator|&
 name|paths_dialog
 operator|->
 name|accel_group
-operator|=
-name|gtk_accel_group_new
-argument_list|()
+argument_list|)
 expr_stmt|;
+comment|/*  Set up signals for map/unmap for the accelerators  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -2141,19 +1806,6 @@ operator|)
 name|paths_dialog_unmap_callback
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|paths_dialog
-operator|->
-name|ops_menu
-operator|=
-name|build_menu
-argument_list|(
-name|paths_ops
-argument_list|,
-name|paths_dialog
-operator|->
-name|accel_group
 argument_list|)
 expr_stmt|;
 name|paths_ops_button_set_sensitive
@@ -6254,7 +5906,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_new_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_new_path_callback
@@ -6378,7 +6029,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_delete_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_delete_path_callback
@@ -6622,7 +6272,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_paste_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_paste_path_callback
@@ -6869,7 +6518,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_copy_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_copy_path_callback
@@ -6988,7 +6636,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_dup_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_dup_path_callback
@@ -7141,7 +6788,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_path_to_sel_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_path_to_sel_callback
@@ -7339,7 +6985,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_stroke_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_stroke_path_callback
@@ -7446,12 +7091,9 @@ name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|gtk_widget_get_toplevel
-argument_list|(
-name|paths_dialog
+name|lc_dialog
 operator|->
-name|paths_list
-argument_list|)
+name|shell
 argument_list|)
 argument_list|,
 name|paths_dialog
@@ -7489,12 +7131,9 @@ name|gtk_window_remove_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|gtk_widget_get_toplevel
-argument_list|(
-name|paths_dialog
+name|lc_dialog
 operator|->
-name|paths_list
-argument_list|)
+name|shell
 argument_list|)
 argument_list|,
 name|paths_dialog
@@ -10155,7 +9794,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_import_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_import_path_callback
@@ -10176,7 +9814,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|paths_dialog_export_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_export_path_callback

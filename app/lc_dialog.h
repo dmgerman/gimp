@@ -6,44 +6,69 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__LAYERS_DIALOG_P_H__
+name|__LC_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__LAYERS_DIALOG_P_H__
+DECL|macro|__LC_DIALOG_H__
 define|#
 directive|define
-name|__LAYERS_DIALOG_P_H__
+name|__LC_DIALOG_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimpimageF.h"
+end_include
 
 begin_function_decl
 name|void
-name|render_fs_preview
+name|lc_dialog_create
 parameter_list|(
-name|GtkWidget
+name|GimpImage
 modifier|*
-parameter_list|,
-name|GdkPixmap
-modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|render_preview
+name|lc_dialog_free
 parameter_list|(
-name|TempBuf
-modifier|*
-parameter_list|,
-name|GtkWidget
-modifier|*
-parameter_list|,
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|lc_dialog_rebuild
+parameter_list|(
 name|int
-parameter_list|,
-name|int
-parameter_list|,
-name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  implies free& create  */
+end_comment
+
+begin_function_decl
+name|void
+name|lc_dialog_flush
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|lc_dialog_update_image_list
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -54,7 +79,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __LAYERS_DIALOG_P_H__ */
+comment|/*  __LC_DIALOG_H__  */
 end_comment
 
 end_unit

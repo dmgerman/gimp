@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"palette.h"
 end_include
 
