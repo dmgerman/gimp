@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon290ddb2c0103
+DECL|enum|__anon2b726eed0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ddb2c0208
+DECL|struct|__anon2b726eed0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ddb2c0308
+DECL|struct|__anon2b726eed0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1693,7 +1693,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290ddb2c0408
+DECL|struct|__anon2b726eed0408
 block|{
 DECL|member|used_count
 name|signed
@@ -2920,20 +2920,6 @@ name|base_type
 operator|=
 name|new_type
 expr_stmt|;
-comment|/*  If the image was INDEXED, push its colormap to the undo stack  */
-if|if
-condition|(
-name|old_type
-operator|==
-name|GIMP_INDEXED
-condition|)
-name|gimp_image_undo_push_image_colormap
-argument_list|(
-name|gimage
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/* initialize the colour conversion routines */
 name|cpercep_init_conversions
 argument_list|()
@@ -3472,28 +3458,6 @@ name|new_layer_type
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* colourmap stuff */
-if|if
-condition|(
-name|gimage
-operator|->
-name|cmap
-condition|)
-block|{
-name|g_free
-argument_list|(
-name|gimage
-operator|->
-name|cmap
-argument_list|)
-expr_stmt|;
-name|gimage
-operator|->
-name|cmap
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 switch|switch
 condition|(
 name|new_type
@@ -3505,16 +3469,34 @@ case|:
 case|case
 name|GIMP_GRAY
 case|:
+if|if
+condition|(
+name|old_type
+operator|==
+name|GIMP_INDEXED
+condition|)
+name|gimp_image_set_colormap
+argument_list|(
 name|gimage
-operator|->
-name|num_cols
-operator|=
+argument_list|,
+name|NULL
+argument_list|,
 literal|0
+argument_list|,
+name|TRUE
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
 name|GIMP_INDEXED
 case|:
+name|gimp_image_undo_push_image_colormap
+argument_list|(
+name|gimage
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|->
 name|cmap
