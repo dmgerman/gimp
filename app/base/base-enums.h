@@ -48,118 +48,6 @@ comment|/*  * these enums that are registered with the type system  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_TYPE_CHECK_SIZE
-define|#
-directive|define
-name|GIMP_TYPE_CHECK_SIZE
-value|(gimp_check_size_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_check_size_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2af05bff0103
-block|{
-DECL|enumerator|GIMP_SMALL_CHECKS
-name|GIMP_SMALL_CHECKS
-init|=
-literal|0
-block|,
-comment|/*< desc="Small">*/
-DECL|enumerator|GIMP_MEDIUM_CHECKS
-name|GIMP_MEDIUM_CHECKS
-init|=
-literal|1
-block|,
-comment|/*< desc="Medium">*/
-DECL|enumerator|GIMP_LARGE_CHECKS
-name|GIMP_LARGE_CHECKS
-init|=
-literal|2
-comment|/*< desc="Large">*/
-DECL|typedef|GimpCheckSize
-block|}
-name|GimpCheckSize
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_CHECK_TYPE
-define|#
-directive|define
-name|GIMP_TYPE_CHECK_TYPE
-value|(gimp_check_type_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_check_type_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2af05bff0203
-block|{
-DECL|enumerator|GIMP_LIGHT_CHECKS
-name|GIMP_LIGHT_CHECKS
-init|=
-literal|0
-block|,
-comment|/*< desc="Light Checks">*/
-DECL|enumerator|GIMP_GRAY_CHECKS
-name|GIMP_GRAY_CHECKS
-init|=
-literal|1
-block|,
-comment|/*< desc="Mid-Tone Checks">*/
-DECL|enumerator|GIMP_DARK_CHECKS
-name|GIMP_DARK_CHECKS
-init|=
-literal|2
-block|,
-comment|/*< desc="Dark Checks">*/
-DECL|enumerator|GIMP_WHITE_ONLY
-name|GIMP_WHITE_ONLY
-init|=
-literal|3
-block|,
-comment|/*< desc="White Only">*/
-DECL|enumerator|GIMP_GRAY_ONLY
-name|GIMP_GRAY_ONLY
-init|=
-literal|4
-block|,
-comment|/*< desc="Gray Only">*/
-DECL|enumerator|GIMP_BLACK_ONLY
-name|GIMP_BLACK_ONLY
-init|=
-literal|5
-comment|/*< desc="Black Only">*/
-DECL|typedef|GimpCheckType
-block|}
-name|GimpCheckType
-typedef|;
-end_typedef
-
-begin_define
 DECL|macro|GIMP_TYPE_CURVE_TYPE
 define|#
 directive|define
@@ -181,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2af05bff0303
+DECL|enum|__anon27925f0f0103
 block|{
 DECL|enumerator|GIMP_CURVE_SMOOTH
 name|GIMP_CURVE_SMOOTH
@@ -217,7 +105,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af05bff0403
+DECL|enum|__anon27925f0f0203
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -282,7 +170,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2af05bff0503
+DECL|enum|__anon27925f0f0303
 block|{
 DECL|enumerator|GIMP_INTERPOLATION_NONE
 name|GIMP_INTERPOLATION_NONE
@@ -322,7 +210,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af05bff0603
+DECL|enum|__anon27925f0f0403
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -431,7 +319,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af05bff0703
+DECL|enum|__anon27925f0f0503
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -458,7 +346,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af05bff0803
+DECL|enum|__anon27925f0f0603
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -481,7 +369,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af05bff0903
+DECL|enum|__anon27925f0f0703
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES

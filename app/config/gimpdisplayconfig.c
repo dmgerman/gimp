@@ -228,7 +228,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c903130103
+DECL|enum|__anon297d22100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -492,7 +492,7 @@ name|TRANSPARENCY_SIZE_BLURB
 argument_list|,
 name|GIMP_TYPE_CHECK_SIZE
 argument_list|,
-name|GIMP_MEDIUM_CHECKS
+name|GIMP_CHECK_SIZE_MEDIUM_CHECKS
 argument_list|,
 literal|0
 argument_list|)
@@ -509,7 +509,7 @@ name|TRANSPARENCY_TYPE_BLURB
 argument_list|,
 name|GIMP_TYPE_CHECK_TYPE
 argument_list|,
-name|GIMP_GRAY_CHECKS
+name|GIMP_CHECK_TYPE_GRAY_CHECKS
 argument_list|,
 literal|0
 argument_list|)

@@ -323,6 +323,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|tile_shift
+specifier|static
+name|guint
+name|tile_shift
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|check_mod
 specifier|static
 name|guint
@@ -337,16 +347,6 @@ DECL|variable|check_shift
 specifier|static
 name|guint
 name|check_shift
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|tile_shift
-specifier|static
-name|guint
-name|tile_shift
 init|=
 literal|0
 decl_stmt|;
@@ -371,35 +371,41 @@ block|,
 literal|255
 block|}
 block|,
+comment|/*  LIGHT_CHECKS  */
 block|{
 literal|102
 block|,
 literal|153
 block|}
 block|,
+comment|/*  GRAY_CHECKS   */
 block|{
 literal|0
 block|,
 literal|51
 block|}
 block|,
+comment|/*  DARK_CHECKS   */
 block|{
 literal|255
 block|,
 literal|255
 block|}
 block|,
+comment|/*  WHITE_ONLY    */
 block|{
 literal|127
 block|,
 literal|127
 block|}
 block|,
+comment|/*  GRAY_ONLY     */
 block|{
 literal|0
 block|,
 literal|0
 block|}
+comment|/*  BACK_ONLY     */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -885,7 +891,7 @@ name|check_size
 condition|)
 block|{
 case|case
-name|GIMP_SMALL_CHECKS
+name|GIMP_CHECK_SIZE_SMALL_CHECKS
 case|:
 name|check_mod
 operator|=
@@ -897,7 +903,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_MEDIUM_CHECKS
+name|GIMP_CHECK_SIZE_MEDIUM_CHECKS
 case|:
 name|check_mod
 operator|=
@@ -909,7 +915,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LARGE_CHECKS
+name|GIMP_CHECK_SIZE_LARGE_CHECKS
 case|:
 name|check_mod
 operator|=

@@ -1185,7 +1185,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|GIMP_SMALL_CHECKS
+name|GIMP_CHECK_SIZE_SMALL_CHECKS
 argument_list|,
 literal|0x66666666
 argument_list|,

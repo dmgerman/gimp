@@ -925,7 +925,7 @@ name|check_size
 condition|)
 block|{
 case|case
-name|GIMP_SMALL_CHECKS
+name|GIMP_CHECK_SIZE_SMALL_CHECKS
 case|:
 name|check_mod
 operator|=
@@ -937,7 +937,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_MEDIUM_CHECKS
+name|GIMP_CHECK_SIZE_MEDIUM_CHECKS
 case|:
 name|check_mod
 operator|=
@@ -949,7 +949,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_LARGE_CHECKS
+name|GIMP_CHECK_SIZE_LARGE_CHECKS
 case|:
 name|check_mod
 operator|=
@@ -967,7 +967,7 @@ name|check_type
 condition|)
 block|{
 case|case
-name|GIMP_LIGHT_CHECKS
+name|GIMP_CHECK_TYPE_LIGHT_CHECKS
 case|:
 name|fg_color
 operator|=
@@ -979,7 +979,7 @@ literal|255
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAY_CHECKS
+name|GIMP_CHECK_TYPE_GRAY_CHECKS
 case|:
 name|fg_color
 operator|=
@@ -991,7 +991,7 @@ literal|153
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_DARK_CHECKS
+name|GIMP_CHECK_TYPE_DARK_CHECKS
 case|:
 name|fg_color
 operator|=
@@ -1003,7 +1003,7 @@ literal|51
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_WHITE_ONLY
+name|GIMP_CHECK_TYPE_WHITE_ONLY
 case|:
 name|fg_color
 operator|=
@@ -1015,7 +1015,7 @@ literal|255
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_GRAY_ONLY
+name|GIMP_CHECK_TYPE_GRAY_ONLY
 case|:
 name|fg_color
 operator|=
@@ -1027,7 +1027,7 @@ literal|127
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_BLACK_ONLY
+name|GIMP_CHECK_TYPE_BLACK_ONLY
 case|:
 name|fg_color
 operator|=
