@@ -190,6 +190,25 @@ name|EPSILON
 value|5
 end_define
 
+begin_define
+DECL|macro|ROUND (x)
+define|#
+directive|define
+name|ROUND
+parameter_list|(
+name|x
+parameter_list|)
+value|((int) (x + 0.5))
+end_define
+
+begin_define
+DECL|macro|MAX_TITLE_BUF
+define|#
+directive|define
+name|MAX_TITLE_BUF
+value|256
+end_define
+
 begin_comment
 comment|/* variable declarations */
 end_comment
@@ -223,25 +242,6 @@ init|=
 name|GDK_TOP_LEFT_ARROW
 decl_stmt|;
 end_decl_stmt
-
-begin_define
-DECL|macro|ROUND (x)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) (x + 0.5))
-end_define
-
-begin_define
-DECL|macro|MAX_TITLE_BUF
-define|#
-directive|define
-name|MAX_TITLE_BUF
-value|4096
-end_define
 
 begin_decl_stmt
 DECL|variable|image_type_strs
@@ -842,9 +842,11 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|title
+argument_list|,
+name|MAX_TITLE_BUF
 argument_list|,
 literal|"%s"
 literal|"-%p"
@@ -6364,6 +6366,9 @@ index|[
 name|MAX_TITLE_BUF
 index|]
 decl_stmt|;
+name|guint
+name|context_id
+decl_stmt|;
 comment|/*  traverse the linked list of displays, handling each one  */
 while|while
 condition|(
@@ -6406,6 +6411,47 @@ operator|->
 name|shell
 operator|->
 name|window
+argument_list|,
+name|title
+argument_list|)
+expr_stmt|;
+comment|/* update the statusbar */
+name|context_id
+operator|=
+name|gtk_statusbar_get_context_id
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+literal|"title"
+argument_list|)
+expr_stmt|;
+name|gtk_statusbar_pop
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|context_id
+argument_list|)
+expr_stmt|;
+name|gtk_statusbar_push
+argument_list|(
+name|GTK_STATUSBAR
+argument_list|(
+name|gdisp
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|context_id
 argument_list|,
 name|title
 argument_list|)
