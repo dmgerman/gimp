@@ -781,7 +781,7 @@ end_function
 
 begin_function
 name|gfloat
-DECL|function|curves_lut_func (Curves * curves,gint nchannels,gint channel,gfloat value)
+DECL|function|curves_lut_func (Curves * curves,gint n_channels,gint channel,gfloat value)
 name|curves_lut_func
 parameter_list|(
 name|Curves
@@ -789,7 +789,7 @@ modifier|*
 name|curves
 parameter_list|,
 name|gint
-name|nchannels
+name|n_channels
 parameter_list|,
 name|gint
 name|channel
@@ -812,13 +812,13 @@ name|j
 decl_stmt|;
 if|if
 condition|(
-name|nchannels
-operator|==
-literal|1
+name|n_channels
+operator|<=
+literal|2
 condition|)
 name|j
 operator|=
-literal|0
+name|channel
 expr_stmt|;
 else|else
 name|j
@@ -831,8 +831,7 @@ name|inten
 operator|=
 name|value
 expr_stmt|;
-comment|/* For color images this runs through the loop with j = channel +1      the first time and j = 0 the second time */
-comment|/* For bw images this runs through the loop with j = 0 the first and      only time  */
+comment|/* For RGB and RGBA images this runs through the loop with j = channel + 1    * the first time and j = 0 the second time    *    * For GRAY images this runs through the loop with j = 0 the first and    * only time    */
 for|for
 control|(
 init|;
@@ -857,18 +856,18 @@ operator|==
 literal|0
 operator|&&
 operator|(
-name|nchannels
+name|n_channels
 operator|==
 literal|2
 operator|||
-name|nchannels
+name|n_channels
 operator|==
 literal|4
 operator|)
 operator|&&
 name|channel
 operator|==
-name|nchannels
+name|n_channels
 operator|-
 literal|1
 condition|)
@@ -881,6 +880,7 @@ name|inten
 operator|<
 literal|0.0
 condition|)
+block|{
 name|inten
 operator|=
 name|curves
@@ -895,6 +895,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -902,6 +903,7 @@ name|inten
 operator|>=
 literal|1.0
 condition|)
+block|{
 name|inten
 operator|=
 name|curves
@@ -916,6 +918,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
+block|}
 else|else
 comment|/* interpolate the curve */
 block|{

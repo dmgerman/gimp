@@ -1062,12 +1062,12 @@ decl_stmt|;
 if|if
 condition|(
 name|n_channels
-operator|==
-literal|1
+operator|<=
+literal|2
 condition|)
 name|j
 operator|=
-literal|0
+name|channel
 expr_stmt|;
 else|else
 name|j
@@ -1080,7 +1080,7 @@ name|inten
 operator|=
 name|value
 expr_stmt|;
-comment|/* For color  images this runs through the loop with j = channel +1    * the first time and j = 0 the second time    *    * For bw images this runs through the loop with j = 0 the first and    *  only time    */
+comment|/* For RGB and RGBA images this runs through the loop with j = channel + 1    * the first time and j = 0 the second time    *    * For GRAY images this runs through the loop with j = 0 the first and    * only time    */
 for|for
 control|(
 init|;
@@ -1140,6 +1140,7 @@ index|[
 name|j
 index|]
 condition|)
+block|{
 name|inten
 operator|=
 operator|(
@@ -1179,7 +1180,9 @@ index|]
 argument_list|)
 operator|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|inten
 operator|=
 call|(
@@ -1198,6 +1201,7 @@ name|j
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|levels
