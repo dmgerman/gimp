@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f04320108
+DECL|struct|__anon2ae2ebe00108
 block|{
 DECL|member|seed
 name|guint32
@@ -152,10 +152,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f04320208
+DECL|struct|__anon2ae2ebe00208
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|PlasmaInterface
@@ -220,7 +220,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|plasma_dialog
 parameter_list|(
 name|GimpDrawable
@@ -289,7 +289,7 @@ name|gr
 parameter_list|,
 name|guchar
 modifier|*
-name|d
+name|pixel
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -305,10 +305,10 @@ name|gr
 parameter_list|,
 name|guchar
 modifier|*
-name|d
+name|pixel
 parameter_list|,
 name|gint
-name|amnt
+name|amount
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -399,7 +399,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|do_plasma
 parameter_list|(
 name|GimpPixelFetcher
@@ -574,7 +574,7 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_plasma"
 argument_list|,
-literal|"Create a plasma cloud like image to the specified drawable"
+literal|"Create a plasma cloud like image on the specified drawable"
 argument_list|,
 literal|"More help"
 argument_list|,
@@ -584,7 +584,6 @@ literal|"Stephen Norris"
 argument_list|,
 literal|"May 2000"
 argument_list|,
-comment|/* don't translate '<Image>', it's a special 			   * keyword of the gtk toolkit */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Render/Clouds/Plasma..."
@@ -965,7 +964,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|plasma_dialog (GimpDrawable * drawable,GimpImageType drawable_type)
 name|plasma_dialog
 parameter_list|(
@@ -1583,11 +1582,11 @@ name|v1
 parameter_list|,
 name|v2
 parameter_list|)
-value|n[0] = ((gint)v1[0] + (gint)v2[0]) / 2;\ 	n[1] = ((gint)v1[1] + (gint)v2[1]) / 2;\ 	n[2] = ((gint)v1[2] + (gint)v2[2]) / 2;
+value|n[0] = ((gint)v1[0] + (gint)v2[0]) / 2; \ 	               n[1] = ((gint)v1[1] + (gint)v2[1]) / 2; \ 	               n[2] = ((gint)v1[2] + (gint)v2[2]) / 2;
 end_define
 
 begin_comment
-comment|/*  * Some glabals to save passing too many paramaters that don't change.  */
+comment|/*  * Some globals to save passing too many paramaters that don't change.  */
 end_comment
 
 begin_decl_stmt
@@ -1617,15 +1616,20 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|bpp
-DECL|variable|has_alpha
 DECL|variable|alpha
 specifier|static
 name|gint
 name|bpp
 decl_stmt|,
-name|has_alpha
-decl_stmt|,
 name|alpha
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|has_alpha
+specifier|static
+name|gboolean
+name|has_alpha
 decl_stmt|;
 end_decl_stmt
 
@@ -1848,7 +1852,7 @@ name|bpp
 expr_stmt|;
 name|has_alpha
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|work_buffer
 operator|=
@@ -1953,6 +1957,10 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+name|progress
+operator|=
+literal|0
+expr_stmt|;
 name|max_progress
 operator|=
 operator|(
@@ -1966,10 +1974,6 @@ name|iy2
 operator|-
 name|iy1
 operator|)
-expr_stmt|;
-name|progress
-operator|=
-literal|0
 expr_stmt|;
 return|return
 name|pft
@@ -2276,7 +2280,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|random_rgb (GRand * gr,guchar * d)
+DECL|function|random_rgb (GRand * gr,guchar * pixel)
 name|random_rgb
 parameter_list|(
 name|GRand
@@ -2285,7 +2289,7 @@ name|gr
 parameter_list|,
 name|guchar
 modifier|*
-name|d
+name|pixel
 parameter_list|)
 block|{
 name|gint
@@ -2304,8 +2308,7 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
-name|d
+name|pixel
 index|[
 name|i
 index|]
@@ -2319,12 +2322,11 @@ argument_list|,
 literal|256
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|has_alpha
 condition|)
-name|d
+name|pixel
 index|[
 name|alpha
 index|]
@@ -2337,7 +2339,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_random (GRand * gr,guchar * d,gint amnt)
+DECL|function|add_random (GRand * gr,guchar * pixel,gint amount)
 name|add_random
 parameter_list|(
 name|GRand
@@ -2346,10 +2348,10 @@ name|gr
 parameter_list|,
 name|guchar
 modifier|*
-name|d
+name|pixel
 parameter_list|,
 name|gint
-name|amnt
+name|amount
 parameter_list|)
 block|{
 name|gint
@@ -2357,18 +2359,10 @@ name|i
 decl_stmt|,
 name|tmp
 decl_stmt|;
-if|if
-condition|(
-name|amnt
-operator|==
-literal|0
-condition|)
-block|{
-name|amnt
-operator|=
-literal|1
+name|amount
+operator|/=
+literal|2
 expr_stmt|;
-block|}
 for|for
 control|(
 name|i
@@ -2385,7 +2379,7 @@ control|)
 block|{
 name|tmp
 operator|=
-name|d
+name|pixel
 index|[
 name|i
 index|]
@@ -2395,16 +2389,12 @@ argument_list|(
 name|gr
 argument_list|,
 operator|-
-name|amnt
-operator|/
-literal|2
+name|amount
 argument_list|,
-name|amnt
-operator|/
-literal|2
+name|amount
 argument_list|)
 expr_stmt|;
-name|d
+name|pixel
 index|[
 name|i
 index|]
@@ -2420,7 +2410,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|do_plasma (GimpPixelFetcher * pft,gint x1,gint y1,gint x2,gint y2,gint depth,gint scale_depth,GRand * gr)
 name|do_plasma
 parameter_list|(
@@ -2725,7 +2715,7 @@ name|ml
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 comment|/*    * Some later pass, at the bottom of this pass,    * with averaging at this depth.    */
@@ -2849,7 +2839,7 @@ name|y2
 condition|)
 block|{
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 if|if
@@ -3102,12 +3092,12 @@ block|{
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
@@ -3133,11 +3123,11 @@ literal|3
 condition|)
 block|{
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 name|xm
@@ -3278,25 +3268,29 @@ block|{
 name|GtkWidget
 modifier|*
 name|preview
+init|=
+name|NULL
 decl_stmt|;
 name|guchar
 modifier|*
 name|buf
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
-if|if
+switch|switch
 condition|(
 name|drawable_type
-operator|==
-name|GIMP_GRAY_IMAGE
-operator|||
-name|drawable_type
-operator|==
-name|GIMP_GRAYA_IMAGE
 condition|)
 block|{
+case|case
+name|GIMP_GRAY_IMAGE
+case|:
+case|case
+name|GIMP_GRAYA_IMAGE
+case|:
 name|preview
 operator|=
 name|gtk_preview_new
@@ -3311,10 +3305,13 @@ argument_list|(
 name|PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-comment|/* Gray& colour are the only possibilities here */
-block|{
+break|break;
+case|case
+name|GIMP_RGB_IMAGE
+case|:
+case|case
+name|GIMP_RGBA_IMAGE
+case|:
 name|preview
 operator|=
 name|gtk_preview_new
@@ -3331,6 +3328,12 @@ operator|*
 literal|3
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
+name|g_assert_not_reached
+argument_list|()
+expr_stmt|;
+break|break;
 block|}
 name|gtk_preview_size
 argument_list|(

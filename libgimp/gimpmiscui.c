@@ -3,6 +3,18 @@ begin_comment
 comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmiscui.c  * Contains all kinds of miscellaneous routines factored out from different  * plug-ins. They stay here until their API has crystalized a bit and we can  * put them into the file where they belong (Maurits Rijk   *<lpeek.mrijk@consunet.nl> if you want to blame someone for this mess)  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -29,19 +41,7 @@ end_undef
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
 end_include
 
 begin_include
@@ -53,13 +53,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpintl.h"
+file|"gimpmiscui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpmiscui.h"
+file|"gimpintl.h"
 end_include
 
 begin_define
@@ -894,12 +894,10 @@ name|bpp
 expr_stmt|;
 name|buffer
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|preview
 operator|->
 name|rowstride
@@ -2129,12 +2127,6 @@ name|path_list
 init|=
 name|NULL
 decl_stmt|;
-name|GList
-modifier|*
-name|fail_list
-init|=
-name|NULL
-decl_stmt|;
 name|gchar
 modifier|*
 name|path
@@ -2247,8 +2239,7 @@ literal|16
 argument_list|,
 name|TRUE
 argument_list|,
-operator|&
-name|fail_list
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2256,18 +2247,6 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|fail_list
-condition|)
-block|{
-comment|/* We just ignore the fail_list */
-name|gimp_path_free
-argument_list|(
-name|fail_list
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|path_list
 return|;
