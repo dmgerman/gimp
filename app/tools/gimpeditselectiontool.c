@@ -1071,7 +1071,7 @@ name|undo_desc
 operator|=
 name|_
 argument_list|(
-literal|"Move Selection Mask"
+literal|"Move Selection"
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -2072,7 +2072,7 @@ name|edit_type
 operator|=
 name|EDIT_FLOATING_SEL_TRANSLATE
 expr_stmt|;
-break|break;
+comment|/* fall through */
 case|case
 name|EDIT_FLOATING_SEL_TRANSLATE
 case|:
