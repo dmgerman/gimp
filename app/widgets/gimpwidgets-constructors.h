@@ -21,7 +21,7 @@ name|GtkWidget
 modifier|*
 name|gimp_paint_mode_menu_new
 parameter_list|(
-name|GtkSignalFunc
+name|GCallback
 name|callback
 parameter_list|,
 name|gpointer

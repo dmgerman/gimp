@@ -42,10 +42,10 @@ end_include
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_paint_mode_menu_new (GtkSignalFunc callback,gpointer data,gboolean with_behind_mode,GimpLayerModeEffects initial)
+DECL|function|gimp_paint_mode_menu_new (GCallback callback,gpointer data,gboolean with_behind_mode,GimpLayerModeEffects initial)
 name|gimp_paint_mode_menu_new
 parameter_list|(
-name|GtkSignalFunc
+name|GCallback
 name|callback
 parameter_list|,
 name|gpointer
