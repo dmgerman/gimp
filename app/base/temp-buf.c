@@ -1644,7 +1644,14 @@ name|mask_buf
 parameter_list|)
 block|{
 return|return
-name|temp_buf_data_clear
+name|temp_buf_data
+argument_list|(
+operator|(
+name|TempBuf
+operator|*
+operator|)
+name|mask_buf
+argument_list|)
 return|;
 block|}
 end_function
