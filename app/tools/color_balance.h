@@ -43,7 +43,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3cadb00103
+DECL|enum|__anon2ae2d90b0103
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -159,10 +159,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*  color balance functions  */
-end_comment
 
 begin_function_decl
 name|Tool

@@ -192,14 +192,14 @@ name|GtkWidget
 modifier|*
 name|gimp_radio_group_new
 parameter_list|(
-name|GtkSignalFunc
-name|radio_button_callback
+name|gboolean
+name|in_frame
 parameter_list|,
-name|gpointer
-name|initial
+name|gchar
+modifier|*
+name|frame_title
 parameter_list|,
-comment|/* user_data */
-comment|/* specify radio buttons as va_list: 				   *  gchar          *label, 				   *  gpointer        data, 				   *  gpointer        user_data, 				   */
+comment|/* specify radio buttons as va_list: 				   *  gchar          *label, 				   *  GtkSignalFunc   callback, 				   *  gpointer        data, 				   *  gpointer        user_data, 				   *  GtkWidget     **widget_ptr, 				   *  gboolean        active, 				   */
 modifier|...
 parameter_list|)
 function_decl|;

@@ -22,10 +22,6 @@ directive|include
 file|"tools.h"
 end_include
 
-begin_comment
-comment|/*  by_color select functions  */
-end_comment
-
 begin_function_decl
 name|Tool
 modifier|*
@@ -42,6 +38,7 @@ name|tools_free_brightness_contrast
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -52,6 +49,7 @@ name|brightness_contrast_initialize
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -6,24 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -54,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"general.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -73,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include
@@ -257,7 +227,7 @@ name|_Curves
 block|{
 DECL|member|x
 DECL|member|y
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -270,7 +240,7 @@ end_struct
 begin_typedef
 DECL|typedef|CRMatrix
 typedef|typedef
-name|double
+name|gdouble
 name|CRMatrix
 index|[
 literal|4
@@ -437,7 +407,7 @@ begin_function_decl
 specifier|static
 name|CurvesDialog
 modifier|*
-name|curves_new_dialog
+name|curves_dialog_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -701,20 +671,20 @@ end_comment
 
 begin_function
 name|float
-DECL|function|curves_lut_func (CurvesDialog * cd,int nchannels,int channel,float value)
+DECL|function|curves_lut_func (CurvesDialog * cd,gint nchannels,gint channel,gfloat value)
 name|curves_lut_func
 parameter_list|(
 name|CurvesDialog
 modifier|*
 name|cd
 parameter_list|,
-name|int
+name|gint
 name|nchannels
 parameter_list|,
-name|int
+name|gint
 name|channel
 parameter_list|,
-name|float
+name|gfloat
 name|value
 parameter_list|)
 block|{
@@ -1887,9 +1857,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_curves ()
+DECL|function|tools_new_curves (void)
 name|tools_new_curves
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -2006,9 +1978,9 @@ parameter_list|)
 block|{
 name|Curves
 modifier|*
-name|_curves
+name|private
 decl_stmt|;
-name|_curves
+name|private
 operator|=
 operator|(
 name|Curves
@@ -2035,7 +2007,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|_curves
+name|private
 argument_list|)
 expr_stmt|;
 block|}
@@ -2173,7 +2145,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -2209,8 +2181,26 @@ name|curves_dialog
 condition|)
 name|curves_dialog
 operator|=
-name|curves_new_dialog
+name|curves_dialog_new
 argument_list|()
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+operator|!
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|curves_dialog
+operator|->
+name|shell
+argument_list|)
+condition|)
+name|gtk_widget_show
+argument_list|(
+name|curves_dialog
+operator|->
+name|shell
+argument_list|)
 expr_stmt|;
 comment|/*  Initialize the values  */
 name|curves_dialog
@@ -2403,11 +2393,9 @@ name|color
 operator|=
 name|drawable_color
 argument_list|(
-operator|(
 name|curves_dialog
 operator|->
 name|drawable
-operator|)
 argument_list|)
 expr_stmt|;
 name|curves_dialog
@@ -2428,11 +2416,9 @@ if|if
 condition|(
 name|drawable_has_alpha
 argument_list|(
-operator|(
 name|curves_dialog
 operator|->
 name|drawable
-operator|)
 argument_list|)
 condition|)
 name|gtk_widget_set_sensitive
@@ -2562,9 +2548,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|curves_free ()
+DECL|function|curves_free (void)
 name|curves_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -2644,9 +2632,11 @@ begin_function
 specifier|static
 name|CurvesDialog
 modifier|*
-DECL|function|curves_new_dialog ()
-name|curves_new_dialog
-parameter_list|()
+DECL|function|curves_dialog_new (void)
+name|curves_dialog_new
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|CurvesDialog
 modifier|*
@@ -2767,6 +2757,9 @@ name|cd
 operator|->
 name|cursor_ind_height
 operator|=
+operator|-
+literal|1
+expr_stmt|;
 name|cd
 operator|->
 name|cursor_ind_width
@@ -3012,7 +3005,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -3022,7 +3015,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3049,7 +3042,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3074,7 +3067,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Modify Curves for Channel: "
+literal|"Modify Curves for Channel:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3169,9 +3162,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
+name|gtk_table_set_col_spacings
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
@@ -3271,6 +3274,18 @@ argument_list|,
 name|RANGE_MASK
 argument_list|)
 expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|cd
+operator|->
+name|yrange
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -3282,24 +3297,12 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|curves_yrange_events
-argument_list|,
-name|cd
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
 argument_list|)
 argument_list|,
 name|cd
-operator|->
-name|yrange
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3349,12 +3352,12 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_EXPAND
-operator||
 name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
+name|GTK_SHRINK
+operator||
 name|GTK_FILL
 argument_list|,
 literal|0
@@ -3400,6 +3403,18 @@ argument_list|,
 name|GRAPH_MASK
 argument_list|)
 expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|cd
+operator|->
+name|graph
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -3411,24 +3426,12 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|curves_graph_events
-argument_list|,
-name|cd
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
 argument_list|)
 argument_list|,
 name|cd
-operator|->
-name|graph
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3519,6 +3522,18 @@ argument_list|,
 name|RANGE_MASK
 argument_list|)
 expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|cd
+operator|->
+name|xrange
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -3530,24 +3545,12 @@ argument_list|)
 argument_list|,
 literal|"event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|curves_xrange_events
-argument_list|,
-name|cd
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
 argument_list|)
 argument_list|,
 name|cd
-operator|->
-name|xrange
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3574,7 +3577,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3600,7 +3603,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Curve Type: "
+literal|"Curve Type:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3698,7 +3701,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -3707,7 +3710,7 @@ argument_list|)
 argument_list|,
 name|toggle
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3723,17 +3726,12 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|curves_preview_update
+argument_list|)
 argument_list|,
 name|cd
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4038,12 +4036,12 @@ block|{
 name|GdkRectangle
 name|area
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|32
@@ -4059,8 +4057,7 @@ operator|&
 name|XRANGE_TOP
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|buf
 index|[
 name|XRANGE_WIDTH
@@ -4326,7 +4323,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-comment|/* end switch */
 if|if
 condition|(
 name|update
@@ -4379,8 +4375,7 @@ operator|&
 name|XRANGE_BOTTOM
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|buf
 index|[
 name|XRANGE_WIDTH
@@ -4523,8 +4518,7 @@ operator|&
 name|YRANGE
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|buf
 index|[
 name|YRANGE_WIDTH
@@ -4532,8 +4526,7 @@ operator|*
 literal|3
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|pix
 index|[
 literal|3
@@ -5244,23 +5237,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_plot_curve (CurvesDialog * cd,int p1,int p2,int p3,int p4)
+DECL|function|curves_plot_curve (CurvesDialog * cd,gint p1,gint p2,gint p3,gint p4)
 name|curves_plot_curve
 parameter_list|(
 name|CurvesDialog
 modifier|*
 name|cd
 parameter_list|,
-name|int
+name|gint
 name|p1
 parameter_list|,
-name|int
+name|gint
 name|p2
 parameter_list|,
-name|int
+name|gint
 name|p3
 parameter_list|,
-name|int
+name|gint
 name|p4
 parameter_list|)
 block|{
@@ -6255,18 +6248,20 @@ name|cd
 operator|->
 name|image_map
 condition|)
+block|{
 name|g_message
 argument_list|(
 literal|"curves_preview(): No image map"
 argument_list|)
 expr_stmt|;
+return|return;
+block|}
 name|active_tool
 operator|->
 name|preserve
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* Going to dirty the display... */
 name|image_map_apply
 argument_list|(
 name|cd
@@ -6293,22 +6288,21 @@ name|preserve
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* All done */
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|curves_value_callback (GtkWidget * w,gpointer client_data)
+DECL|function|curves_value_callback (GtkWidget * widget,gpointer data)
 name|curves_value_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -6321,7 +6315,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -6358,15 +6352,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_red_callback (GtkWidget * w,gpointer client_data)
+DECL|function|curves_red_callback (GtkWidget * widget,gpointer data)
 name|curves_red_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -6379,7 +6373,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -6416,15 +6410,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_green_callback (GtkWidget * w,gpointer client_data)
+DECL|function|curves_green_callback (GtkWidget * widget,gpointer data)
 name|curves_green_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -6437,7 +6431,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -6474,15 +6468,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_blue_callback (GtkWidget * w,gpointer client_data)
+DECL|function|curves_blue_callback (GtkWidget * widget,gpointer data)
 name|curves_blue_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -6495,7 +6489,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -6532,15 +6526,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_alpha_callback (GtkWidget * w,gpointer client_data)
+DECL|function|curves_alpha_callback (GtkWidget * widget,gpointer data)
 name|curves_alpha_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -6553,7 +6547,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -6590,15 +6584,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_smooth_callback (GtkWidget * w,gpointer client_data)
+DECL|function|curves_smooth_callback (GtkWidget * widget,gpointer data)
 name|curves_smooth_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -6617,7 +6611,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -6739,15 +6733,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_free_callback (GtkWidget * w,gpointer client_data)
+DECL|function|curves_free_callback (GtkWidget * widget,gpointer data)
 name|curves_free_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -6760,7 +6754,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -6809,7 +6803,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_reset_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|curves_reset_callback (GtkWidget * widget,gpointer data)
 name|curves_reset_callback
 parameter_list|(
 name|GtkWidget
@@ -6817,7 +6811,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -6833,7 +6827,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 comment|/*  Initialize the values  */
 for|for
@@ -7022,7 +7016,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_ok_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|curves_ok_callback (GtkWidget * widget,gpointer data)
 name|curves_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -7030,7 +7024,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -7043,7 +7037,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -7138,7 +7132,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_cancel_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|curves_cancel_callback (GtkWidget * widget,gpointer data)
 name|curves_cancel_callback
 parameter_list|(
 name|GtkWidget
@@ -7146,7 +7140,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|CurvesDialog
@@ -7159,7 +7153,7 @@ operator|(
 name|CurvesDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -8415,7 +8409,7 @@ name|CRMatrix
 name|ab
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j

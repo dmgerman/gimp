@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -60,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"interface.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_define
@@ -168,7 +162,7 @@ begin_function_decl
 specifier|static
 name|HistogramToolDialog
 modifier|*
-name|histogram_tool_new_dialog
+name|histogram_tool_dialog_new
 parameter_list|(
 name|void
 parameter_list|)
@@ -274,7 +268,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|histogram_tool_histogram_range (HistogramWidget * widget,gint start,gint end,void * user_data)
+DECL|function|histogram_tool_histogram_range (HistogramWidget * widget,gint start,gint end,gpointer data)
 name|histogram_tool_histogram_range
 parameter_list|(
 name|HistogramWidget
@@ -287,9 +281,8 @@ parameter_list|,
 name|gint
 name|end
 parameter_list|,
-name|void
-modifier|*
-name|user_data
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|HistogramToolDialog
@@ -308,7 +301,7 @@ operator|(
 name|HistogramToolDialog
 operator|*
 operator|)
-name|user_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -787,9 +780,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_histogram_tool ()
+DECL|function|tools_new_histogram_tool (void)
 name|tools_new_histogram_tool
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -967,7 +962,7 @@ name|histogram_tool_dialog
 condition|)
 name|histogram_tool_dialog
 operator|=
-name|histogram_tool_new_dialog
+name|histogram_tool_dialog_new
 argument_list|()
 expr_stmt|;
 elseif|else
@@ -1119,9 +1114,11 @@ begin_function
 specifier|static
 name|HistogramToolDialog
 modifier|*
-DECL|function|histogram_tool_new_dialog ()
-name|histogram_tool_new_dialog
-parameter_list|()
+DECL|function|histogram_tool_dialog_new (void)
+name|histogram_tool_dialog_new
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|HistogramToolDialog
 modifier|*
@@ -1129,11 +1126,15 @@ name|htd
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|vbox
+name|main_vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|vbox2
+name|hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1396,23 +1397,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|vbox
+name|main_vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|vbox
+name|main_vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1429,27 +1430,51 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|vbox
+name|main_vbox
 argument_list|)
 expr_stmt|;
-comment|/*  The vbox for the menu and histogram  */
-name|vbox2
+name|hbox
 operator|=
-name|gtk_vbox_new
+name|gtk_hbox_new
 argument_list|(
-name|FALSE
+name|TRUE
 argument_list|,
-literal|2
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|main_vbox
 argument_list|)
 argument_list|,
-name|vbox2
+name|hbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|vbox
+operator|=
+name|gtk_vbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|vbox
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1474,7 +1499,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 argument_list|,
 name|htd
@@ -1597,7 +1622,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 argument_list|,
 name|frame
@@ -1620,29 +1645,6 @@ argument_list|,
 name|HISTOGRAM_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|htd
-operator|->
-name|histogram
-argument_list|)
-argument_list|,
-literal|"rangechanged"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|histogram_tool_histogram_range
-argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
-name|htd
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -1656,6 +1658,25 @@ name|htd
 operator|->
 name|histogram
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|htd
+operator|->
+name|histogram
+argument_list|)
+argument_list|,
+literal|"rangechanged"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|histogram_tool_histogram_range
+argument_list|)
+argument_list|,
+name|htd
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1701,7 +1722,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 argument_list|,
 name|htd
@@ -1733,7 +1754,12 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|vbox2
+name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
 argument_list|)
 expr_stmt|;
 comment|/*  The table containing histogram information  */
@@ -1762,7 +1788,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|main_vbox
 argument_list|)
 argument_list|,
 name|table
@@ -1951,7 +1977,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|vbox
+name|main_vbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1970,7 +1996,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_close_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|histogram_tool_close_callback (GtkWidget * widget,gpointer data)
 name|histogram_tool_close_callback
 parameter_list|(
 name|GtkWidget
@@ -1978,7 +2004,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|HistogramToolDialog
@@ -1991,7 +2017,7 @@ operator|(
 name|HistogramToolDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -2009,13 +2035,25 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+name|active_tool
+operator|->
+name|gdisp_ptr
+operator|=
+name|NULL
+expr_stmt|;
+name|active_tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_value_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|histogram_tool_value_callback (GtkWidget * widget,gpointer data)
 name|histogram_tool_value_callback
 parameter_list|(
 name|GtkWidget
@@ -2023,7 +2061,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|HistogramToolDialog
@@ -2036,7 +2074,7 @@ operator|(
 name|HistogramToolDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -2080,7 +2118,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_red_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|histogram_tool_red_callback (GtkWidget * widget,gpointer data)
 name|histogram_tool_red_callback
 parameter_list|(
 name|GtkWidget
@@ -2088,7 +2126,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|HistogramToolDialog
@@ -2101,7 +2139,7 @@ operator|(
 name|HistogramToolDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -2145,7 +2183,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_green_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|histogram_tool_green_callback (GtkWidget * widget,gpointer data)
 name|histogram_tool_green_callback
 parameter_list|(
 name|GtkWidget
@@ -2153,7 +2191,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|HistogramToolDialog
@@ -2166,7 +2204,7 @@ operator|(
 name|HistogramToolDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(
@@ -2210,7 +2248,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|histogram_tool_blue_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|histogram_tool_blue_callback (GtkWidget * widget,gpointer data)
 name|histogram_tool_blue_callback
 parameter_list|(
 name|GtkWidget
@@ -2218,7 +2256,7 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|HistogramToolDialog
@@ -2231,7 +2269,7 @@ operator|(
 name|HistogramToolDialog
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 if|if
 condition|(

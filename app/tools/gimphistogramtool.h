@@ -162,6 +162,7 @@ name|tools_free_histogram_tool
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -172,6 +173,7 @@ name|histogram_tool_initialize
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -191,13 +193,16 @@ name|histogram_tool_histogram_range
 parameter_list|(
 name|HistogramWidget
 modifier|*
+name|hw
 parameter_list|,
 name|gint
+name|start
 parameter_list|,
 name|gint
+name|end
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -135,7 +135,8 @@ specifier|static
 name|void
 name|color_notebook_help_func
 parameter_list|(
-name|gpointer
+name|gchar
+modifier|*
 name|data
 parameter_list|)
 function_decl|;
@@ -458,6 +459,10 @@ literal|"color_selection"
 argument_list|,
 name|color_notebook_help_func
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|cnp
 argument_list|,
 name|GTK_WIN_POS_NONE
@@ -1483,10 +1488,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_help_func (gpointer data)
+DECL|function|color_notebook_help_func (gchar * data)
 name|color_notebook_help_func
 parameter_list|(
-name|gpointer
+name|gchar
+modifier|*
 name|data
 parameter_list|)
 block|{

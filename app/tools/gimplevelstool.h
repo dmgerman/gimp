@@ -22,10 +22,6 @@ directive|include
 file|"tools.h"
 end_include
 
-begin_comment
-comment|/*  hue-saturation functions  */
-end_comment
-
 begin_function_decl
 name|Tool
 modifier|*
@@ -42,6 +38,7 @@ name|tools_free_levels
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -52,6 +49,7 @@ name|levels_initialize
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl

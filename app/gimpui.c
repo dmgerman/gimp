@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpui.h"
 end_include
 
@@ -951,23 +945,27 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_radio_group_new (GtkSignalFunc radio_button_callback,gpointer initial,...)
+DECL|function|gimp_radio_group_new (gboolean in_frame,gchar * frame_title,...)
 name|gimp_radio_group_new
 parameter_list|(
-name|GtkSignalFunc
-name|radio_button_callback
+name|gboolean
+name|in_frame
 parameter_list|,
-name|gpointer
-name|initial
+name|gchar
+modifier|*
+name|frame_title
 parameter_list|,
-comment|/* user_data */
-comment|/* specify radio buttons as va_list: 		       *  gchar     *label, 		       *  gpointer   data, 		       *  gpointer   user_data, 		       */
+comment|/* specify radio buttons as va_list: 		       *  gchar          *label, 		       *  GtkSignalFunc   callback, 		       *  gpointer        data, 		       *  gpointer        user_data, 		       *  GtkWidget     **widget_ptr, 		       *  gboolean        active, 		       */
 modifier|...
 parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -982,11 +980,22 @@ name|gchar
 modifier|*
 name|label
 decl_stmt|;
+name|GtkSignalFunc
+name|callback
+decl_stmt|;
 name|gpointer
 name|data
 decl_stmt|;
 name|gpointer
 name|user_data
+decl_stmt|;
+name|GtkWidget
+modifier|*
+modifier|*
+name|widget_ptr
+decl_stmt|;
+name|gboolean
+name|active
 decl_stmt|;
 name|va_list
 name|args
@@ -1010,6 +1019,34 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|in_frame
+condition|)
+block|{
+name|frame
+operator|=
+name|gtk_frame_new
+argument_list|(
+name|frame_title
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox
+argument_list|)
+expr_stmt|;
+block|}
 name|group
 operator|=
 name|NULL
@@ -1019,7 +1056,7 @@ name|va_start
 argument_list|(
 name|args
 argument_list|,
-name|initial
+name|frame_title
 argument_list|)
 expr_stmt|;
 name|label
@@ -1037,6 +1074,15 @@ condition|(
 name|label
 condition|)
 block|{
+name|callback
+operator|=
+name|va_arg
+argument_list|(
+name|args
+argument_list|,
+name|GtkSignalFunc
+argument_list|)
+expr_stmt|;
 name|data
 operator|=
 name|va_arg
@@ -1053,6 +1099,24 @@ argument_list|(
 name|args
 argument_list|,
 name|gpointer
+argument_list|)
+expr_stmt|;
+name|widget_ptr
+operator|=
+name|va_arg
+argument_list|(
+name|args
+argument_list|,
+name|gpointer
+argument_list|)
+expr_stmt|;
+name|active
+operator|=
+name|va_arg
+argument_list|(
+name|args
+argument_list|,
+name|gboolean
 argument_list|)
 expr_stmt|;
 name|button
@@ -1099,14 +1163,18 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|radio_button_callback
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|callback
+argument_list|)
 argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|user_data
+condition|)
 name|gtk_object_set_user_data
 argument_list|(
 name|GTK_OBJECT
@@ -1117,12 +1185,19 @@ argument_list|,
 name|user_data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|widget_ptr
+condition|)
+operator|*
+name|widget_ptr
+operator|=
+name|button
+expr_stmt|;
 comment|/*  press the initially active radio button  */
 if|if
 condition|(
-name|user_data
-operator|==
-name|initial
+name|active
 condition|)
 name|gtk_toggle_button_set_active
 argument_list|(
@@ -1155,6 +1230,13 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|in_frame
+condition|)
+return|return
+name|frame
+return|;
 return|return
 name|vbox
 return|;
@@ -1261,7 +1343,8 @@ name|spinbutton
 argument_list|,
 literal|75
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 return|return
@@ -2936,19 +3019,6 @@ function_decl|;
 end_function_decl
 
 begin_define
-DECL|macro|MESSAGE_STRING_BUFFER
-define|#
-directive|define
-name|MESSAGE_STRING_BUFFER
-value|80
-end_define
-
-begin_comment
-DECL|macro|MESSAGE_STRING_BUFFER
-comment|/* some buffer size, not critical */
-end_comment
-
-begin_define
 DECL|macro|MESSAGE_BOX_MAXIMUM
 define|#
 directive|define
@@ -2958,13 +3028,13 @@ end_define
 
 begin_comment
 DECL|macro|MESSAGE_BOX_MAXIMUM
-comment|/* the maximum number of concucrrent dialog boxes */
+comment|/*  the maximum number of concucrrent 				 *  dialog boxes 				 */
 end_comment
 
 begin_decl_stmt
 DECL|variable|message_pool
 specifier|static
-name|int
+name|gint
 name|message_pool
 init|=
 name|MESSAGE_BOX_MAXIMUM
@@ -2975,10 +3045,10 @@ begin_decl_stmt
 DECL|variable|message_box_last
 specifier|static
 name|gchar
+modifier|*
 name|message_box_last
-index|[
-name|MESSAGE_STRING_BUFFER
-index|]
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -3016,7 +3086,7 @@ modifier|*
 name|label
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|repeat_count
 decl_stmt|;
 comment|/* arguably, if message_pool<= 0 we could print to stdout */
@@ -3034,6 +3104,8 @@ name|NULL
 return|;
 if|if
 condition|(
+name|message_box_last
+operator|&&
 operator|!
 name|strcmp
 argument_list|(
@@ -3075,17 +3147,17 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|strlen
-argument_list|(
-name|message
-argument_list|)
-operator|<
-name|MESSAGE_STRING_BUFFER
+name|message_box_last
 condition|)
-name|strcpy
+name|g_free
 argument_list|(
 name|message_box_last
-argument_list|,
+argument_list|)
+expr_stmt|;
+name|message_box_last
+operator|=
+name|g_strdup
+argument_list|(
 name|message
 argument_list|)
 expr_stmt|;
