@@ -745,6 +745,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|property_specs
+argument_list|)
+expr_stmt|;
 return|return
 name|retval
 return|;
