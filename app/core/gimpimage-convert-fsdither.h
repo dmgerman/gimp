@@ -17,14 +17,14 @@ name|__GIMP_IMAGE_CONVERT_FSDITHER_H__
 end_define
 
 begin_comment
-comment|/* The following 5 arrays are used in performing floyd-steinberg  *  error diffusion dithering. The range array allows the quick  *  bounds checking of pixel values. The 4 error arrays contain  *  the error computations for the east, south-east, south and   *  south-west pixels surrounding the current pixel respectively.  */
+comment|/* The following 5 arrays are used in performing floyd-steinberg  *  error diffusion dithering. The range array allows the quick  *  bounds checking of pixel values. The 4 error arrays contain  *  the error computations for the east, south-east, south and  *  south-west pixels surrounding the current pixel respectively.  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|range_array
 specifier|static
 specifier|const
-name|short
+name|guchar
 name|range_array
 index|[]
 init|=
@@ -2086,7 +2086,7 @@ begin_decl_stmt
 DECL|variable|floyd_steinberg_error1
 specifier|static
 specifier|const
-name|short
+name|gshort
 name|floyd_steinberg_error1
 index|[]
 init|=
@@ -4657,7 +4657,7 @@ begin_decl_stmt
 DECL|variable|floyd_steinberg_error2
 specifier|static
 specifier|const
-name|short
+name|gshort
 name|floyd_steinberg_error2
 index|[]
 init|=
@@ -7225,7 +7225,7 @@ begin_decl_stmt
 DECL|variable|floyd_steinberg_error3
 specifier|static
 specifier|const
-name|short
+name|gshort
 name|floyd_steinberg_error3
 index|[]
 init|=
@@ -9795,7 +9795,7 @@ begin_decl_stmt
 DECL|variable|floyd_steinberg_error4
 specifier|static
 specifier|const
-name|short
+name|gshort
 name|floyd_steinberg_error4
 index|[]
 init|=
