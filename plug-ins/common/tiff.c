@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f3f3e0108
+DECL|struct|__anon2952137b0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f3f3e0208
+DECL|struct|__anon2952137b0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f3f3e0308
+DECL|struct|__anon2952137b0308
 block|{
 DECL|member|ID
 name|gint32
@@ -3895,6 +3895,17 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+if|#
+directive|if
+name|G_BYTE_ORDER
+operator|==
+name|G_LITTLE_ENDIAN
+name|source
+operator|++
+expr_stmt|;
+comment|/* offset source once, to look at the high byte */
+endif|#
+directive|endif
 for|for
 control|(
 name|row

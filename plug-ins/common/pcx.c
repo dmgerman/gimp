@@ -128,20 +128,9 @@ end_function_decl
 begin_if
 if|#
 directive|if
-name|defined
-argument_list|(
-name|_BIG_ENDIAN
-argument_list|)
-operator|||
-name|defined
-argument_list|(
-name|sparc
-argument_list|)
-operator|||
-name|defined
-argument_list|(
-name|__sgi
-argument_list|)
+name|G_BYTE_ORDER
+operator|==
+name|G_BIG_ENDIAN
 end_if
 
 begin_define
@@ -1098,7 +1087,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b31d5640108
+DECL|struct|__anon2c6585170108
 block|{
 DECL|member|manufacturer
 name|guint8
