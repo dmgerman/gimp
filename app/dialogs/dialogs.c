@@ -57,6 +57,12 @@ directive|include
 file|"dialogs-constructors.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"menus.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|global_dialog_factory
 name|GimpDialogFactory
@@ -715,7 +721,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|NULL
+name|global_menu_factory
 argument_list|,
 name|dialogs_toolbox_get
 argument_list|)
@@ -731,10 +737,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|gimp_item_factory_from_path
-argument_list|(
-literal|"<Dialogs>"
-argument_list|)
+name|global_menu_factory
 argument_list|,
 name|dialogs_dock_new
 argument_list|)

@@ -386,6 +386,12 @@ name|update_func
 operator|=
 name|NULL
 expr_stmt|;
+name|factory
+operator|->
+name|update_on_popup
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -519,7 +525,7 @@ end_comment
 begin_function
 name|GimpItemFactory
 modifier|*
-DECL|function|gimp_item_factory_new (Gimp * gimp,GType container_type,const gchar * factory_path,const gchar * help_path,GimpItemFactoryUpdateFunc update_func,guint n_entries,GimpItemFactoryEntry * entries,gpointer callback_data,gboolean create_tearoff)
+DECL|function|gimp_item_factory_new (Gimp * gimp,GType container_type,const gchar * factory_path,const gchar * help_path,GimpItemFactoryUpdateFunc update_func,gboolean update_on_popup,guint n_entries,GimpItemFactoryEntry * entries,gpointer callback_data,gboolean create_tearoff)
 name|gimp_item_factory_new
 parameter_list|(
 name|Gimp
@@ -541,6 +547,9 @@ name|help_path
 parameter_list|,
 name|GimpItemFactoryUpdateFunc
 name|update_func
+parameter_list|,
+name|gboolean
+name|update_on_popup
 parameter_list|,
 name|guint
 name|n_entries
@@ -680,6 +689,12 @@ operator|->
 name|update_func
 operator|=
 name|update_func
+expr_stmt|;
+name|factory
+operator|->
+name|update_on_popup
+operator|=
+name|update_on_popup
 expr_stmt|;
 name|list
 operator|=
@@ -1274,6 +1289,48 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_item_factory_update (GimpItemFactory * item_factory,gpointer popup_data)
+name|gimp_item_factory_update
+parameter_list|(
+name|GimpItemFactory
+modifier|*
+name|item_factory
+parameter_list|,
+name|gpointer
+name|popup_data
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_ITEM_FACTORY
+argument_list|(
+name|item_factory
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|item_factory
+operator|->
+name|update_func
+condition|)
+name|item_factory
+operator|->
+name|update_func
+argument_list|(
+name|GTK_ITEM_FACTORY
+argument_list|(
+name|item_factory
+argument_list|)
+argument_list|,
+name|popup_data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_item_factory_popup_with_data (GimpItemFactory * item_factory,gpointer data,GtkDestroyNotify popdown_func)
 name|gimp_item_factory_popup_with_data
 parameter_list|(
@@ -1311,16 +1368,11 @@ if|if
 condition|(
 name|item_factory
 operator|->
-name|update_func
+name|update_on_popup
 condition|)
-name|item_factory
-operator|->
-name|update_func
-argument_list|(
-name|GTK_ITEM_FACTORY
+name|gimp_item_factory_update
 argument_list|(
 name|item_factory
-argument_list|)
 argument_list|,
 name|data
 argument_list|)

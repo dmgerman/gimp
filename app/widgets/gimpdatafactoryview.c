@@ -444,7 +444,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpItemFactory * item_factory)
+DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -470,9 +470,14 @@ parameter_list|,
 name|gint
 name|min_items_y
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_identifier
 parameter_list|)
 block|{
 name|GimpDataFactoryView
@@ -509,7 +514,9 @@ name|min_items_x
 argument_list|,
 name|min_items_y
 argument_list|,
-name|item_factory
+name|menu_factory
+argument_list|,
+name|menu_identifier
 argument_list|)
 condition|)
 block|{
@@ -533,7 +540,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpItemFactory * item_factory)
+DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_data_factory_view_construct
 parameter_list|(
 name|GimpDataFactoryView
@@ -563,9 +570,14 @@ parameter_list|,
 name|gint
 name|min_items_y
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_identifier
 parameter_list|)
 block|{
 name|GimpContainerEditor
@@ -670,7 +682,9 @@ name|min_items_x
 argument_list|,
 name|min_items_y
 argument_list|,
-name|item_factory
+name|menu_factory
+argument_list|,
+name|menu_identifier
 argument_list|)
 condition|)
 block|{

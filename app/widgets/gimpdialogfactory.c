@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpitemfactory.h"
+file|"gimpmenufactory.h"
 end_include
 
 begin_comment
@@ -143,7 +143,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdd48400103
+DECL|enum|__anon2b65170c0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdd48400203
+DECL|enum|__anon2b65170c0203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -588,7 +588,7 @@ parameter_list|)
 block|{
 name|factory
 operator|->
-name|item_factory
+name|menu_factory
 operator|=
 name|NULL
 expr_stmt|;
@@ -870,7 +870,7 @@ end_function
 begin_function
 name|GimpDialogFactory
 modifier|*
-DECL|function|gimp_dialog_factory_new (const gchar * name,GimpContext * context,GimpItemFactory * item_factory,GimpDialogNewFunc new_dock_func)
+DECL|function|gimp_dialog_factory_new (const gchar * name,GimpContext * context,GimpMenuFactory * menu_factory,GimpDialogNewFunc new_dock_func)
 name|gimp_dialog_factory_new
 parameter_list|(
 specifier|const
@@ -882,9 +882,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
 parameter_list|,
 name|GimpDialogNewFunc
 name|new_dock_func
@@ -920,11 +920,11 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 operator|!
-name|item_factory
+name|menu_factory
 operator|||
-name|GIMP_IS_ITEM_FACTORY
+name|GIMP_IS_MENU_FACTORY
 argument_list|(
-name|item_factory
+name|menu_factory
 argument_list|)
 argument_list|,
 name|NULL
@@ -1006,9 +1006,9 @@ name|context
 expr_stmt|;
 name|factory
 operator|->
-name|item_factory
+name|menu_factory
 operator|=
-name|item_factory
+name|menu_factory
 expr_stmt|;
 name|factory
 operator|->
@@ -1596,11 +1596,24 @@ operator|!
 name|context
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|dockbook
+decl_stmt|;
 name|dock
 operator|=
 name|gimp_dialog_factory_dock_new
 argument_list|(
 name|factory
+argument_list|)
+expr_stmt|;
+name|dockbook
+operator|=
+name|gimp_dockbook_new
+argument_list|(
+name|factory
+operator|->
+name|menu_factory
 argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book
@@ -1612,8 +1625,7 @@ argument_list|)
 argument_list|,
 name|GIMP_DOCKBOOK
 argument_list|(
-name|gimp_dockbook_new
-argument_list|()
+name|dockbook
 argument_list|)
 argument_list|,
 literal|0
@@ -4143,7 +4155,7 @@ name|books
 argument_list|)
 control|)
 block|{
-name|GimpDockbook
+name|GtkWidget
 modifier|*
 name|dockbook
 decl_stmt|;
@@ -4153,17 +4165,21 @@ name|pages
 decl_stmt|;
 name|dockbook
 operator|=
-name|GIMP_DOCKBOOK
-argument_list|(
 name|gimp_dockbook_new
-argument_list|()
+argument_list|(
+name|factory
+operator|->
+name|menu_factory
 argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book
 argument_list|(
 name|dock
 argument_list|,
+name|GIMP_DOCKBOOK
+argument_list|(
 name|dockbook
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -4281,7 +4297,10 @@ name|dockable
 condition|)
 name|gimp_dockbook_add
 argument_list|(
+name|GIMP_DOCKBOOK
+argument_list|(
 name|dockbook
+argument_list|)
 argument_list|,
 name|GIMP_DOCKABLE
 argument_list|(
@@ -4668,7 +4687,7 @@ literal|0
 argument_list|,
 name|screen_width
 operator|-
-literal|32
+literal|128
 argument_list|)
 expr_stmt|;
 name|info
@@ -4685,7 +4704,7 @@ literal|0
 argument_list|,
 name|screen_height
 operator|-
-literal|32
+literal|128
 argument_list|)
 expr_stmt|;
 name|gtk_window_move

@@ -107,12 +107,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/file-open-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainerview.h"
 end_include
 
@@ -455,7 +449,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_document_view_new (GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpItemFactory * item_factory)
+DECL|function|gimp_document_view_new (GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint min_items_x,gint min_items_y,GimpFileOpenDialogFunc file_open_dialog_func,GimpMenuFactory * menu_factory)
 name|gimp_document_view_new
 parameter_list|(
 name|GimpViewType
@@ -478,9 +472,12 @@ parameter_list|,
 name|gint
 name|min_items_y
 parameter_list|,
-name|GimpItemFactory
+name|GimpFileOpenDialogFunc
+name|file_open_dialog_func
+parameter_list|,
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
 parameter_list|)
 block|{
 name|GimpDocumentView
@@ -495,6 +492,15 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|file_open_dialog_func
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|document_view
 operator|=
 name|g_object_new
@@ -529,7 +535,9 @@ name|min_items_x
 argument_list|,
 name|min_items_y
 argument_list|,
-name|item_factory
+name|menu_factory
+argument_list|,
+literal|"<Documents>"
 argument_list|)
 condition|)
 block|{
@@ -542,6 +550,12 @@ return|return
 name|NULL
 return|;
 block|}
+name|document_view
+operator|->
+name|file_open_dialog_func
+operator|=
+name|file_open_dialog_func
+expr_stmt|;
 name|editor
 operator|=
 name|GIMP_CONTAINER_EDITOR
@@ -851,7 +865,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|file_open_dialog_show
+name|view
+operator|->
+name|file_open_dialog_func
 argument_list|(
 name|editor
 operator|->
@@ -860,8 +876,6 @@ operator|->
 name|context
 operator|->
 name|gimp
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -1057,7 +1071,9 @@ operator|&
 name|GDK_CONTROL_MASK
 condition|)
 block|{
-name|file_open_dialog_show
+name|view
+operator|->
+name|file_open_dialog_func
 argument_list|(
 name|editor
 operator|->
@@ -1066,8 +1082,6 @@ operator|->
 name|context
 operator|->
 name|gimp
-argument_list|,
-name|NULL
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -1162,7 +1176,9 @@ block|}
 block|}
 else|else
 block|{
-name|file_open_dialog_show
+name|view
+operator|->
+name|file_open_dialog_func
 argument_list|(
 name|editor
 operator|->
@@ -1171,8 +1187,6 @@ operator|->
 name|context
 operator|->
 name|gimp
-argument_list|,
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)

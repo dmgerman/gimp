@@ -252,10 +252,10 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
-DECL|member|item_factory
-name|GimpItemFactory
+DECL|member|menu_factory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
 decl_stmt|;
 comment|/*< private>*/
 DECL|member|new_dock_func
@@ -323,9 +323,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
 parameter_list|,
 name|GimpDialogNewFunc
 name|new_dock_func

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpitemfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimptool/gimptool.h"
 end_include
 
@@ -131,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a52cae0103
+DECL|enum|__anon28d16be80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -708,7 +714,7 @@ end_function
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (GimpImage * gimage,guint scale)
+DECL|function|gimp_display_new (GimpImage * gimage,guint scale,GimpMenuFactory * menu_factory,GimpItemFactory * popup_factory)
 name|gimp_display_new
 parameter_list|(
 name|GimpImage
@@ -717,6 +723,14 @@ name|gimage
 parameter_list|,
 name|guint
 name|scale
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
+parameter_list|,
+name|GimpItemFactory
+modifier|*
+name|popup_factory
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -783,6 +797,10 @@ argument_list|(
 name|gdisp
 argument_list|,
 name|scale
+argument_list|,
+name|menu_factory
+argument_list|,
+name|popup_factory
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1746,19 +1764,50 @@ condition|(
 operator|!
 name|now
 condition|)
-name|gimp_display_shell_set_menu_sensitivity
+block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+name|gimp_item_factory_update
 argument_list|(
 name|shell
+operator|->
+name|menubar_factory
 argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|gimp_get_current_context
+argument_list|(
 name|gdisp
 operator|->
 name|gimage
 operator|->
 name|gimp
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisp
+operator|==
+name|gimp_context_get_display
+argument_list|(
+name|context
+argument_list|)
+condition|)
+name|gimp_item_factory_update
+argument_list|(
+name|shell
+operator|->
+name|popup_factory
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmenufactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreview.h"
 end_include
 
@@ -430,7 +436,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gboolean reorderable,gint min_items_x,gint min_items_y,GimpItemFactory * item_factory)
+DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gboolean reorderable,gint min_items_x,gint min_items_y,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_container_editor_construct
 parameter_list|(
 name|GimpContainerEditor
@@ -460,9 +466,14 @@ parameter_list|,
 name|gint
 name|min_items_y
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_identifier
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -497,10 +508,19 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_ITEM_FACTORY
+name|GIMP_IS_MENU_FACTORY
 argument_list|(
-name|item_factory
+name|menu_factory
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|menu_identifier
+operator|!=
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -548,13 +568,19 @@ name|editor
 operator|->
 name|item_factory
 operator|=
-name|item_factory
-expr_stmt|;
-name|g_object_ref
+name|gimp_menu_factory_menu_new
 argument_list|(
-name|editor
+name|menu_factory
+argument_list|,
+name|menu_identifier
+argument_list|,
+name|GTK_TYPE_MENU
+argument_list|,
+name|context
 operator|->
-name|item_factory
+name|gimp
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch

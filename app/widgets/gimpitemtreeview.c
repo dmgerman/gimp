@@ -131,6 +131,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmenufactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreview.h"
 end_include
 
@@ -154,7 +160,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c2c5740103
+DECL|enum|__anon27c5a7cb0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1080,7 +1086,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_item_list_view_new (gint preview_size,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetItemFunc get_item_func,GimpSetItemFunc set_item_func,GimpReorderItemFunc reorder_item_func,GimpAddItemFunc add_item_func,GimpRemoveItemFunc remove_item_func,GimpCopyItemFunc copy_item_func,GimpConvertItemFunc convert_item_func,GimpNewItemFunc new_item_func,GimpEditItemFunc edit_item_func,GimpActivateItemFunc activate_item_func,GimpItemFactory * item_factory)
+DECL|function|gimp_item_list_view_new (gint preview_size,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetItemFunc get_item_func,GimpSetItemFunc set_item_func,GimpReorderItemFunc reorder_item_func,GimpAddItemFunc add_item_func,GimpRemoveItemFunc remove_item_func,GimpCopyItemFunc copy_item_func,GimpConvertItemFunc convert_item_func,GimpNewItemFunc new_item_func,GimpEditItemFunc edit_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
 name|gimp_item_list_view_new
 parameter_list|(
 name|gint
@@ -1131,9 +1137,14 @@ parameter_list|,
 name|GimpActivateItemFunc
 name|activate_item_func
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_identifier
 parameter_list|)
 block|{
 name|GimpItemListView
@@ -1272,10 +1283,19 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_ITEM_FACTORY
+name|GIMP_IS_MENU_FACTORY
 argument_list|(
-name|item_factory
+name|menu_factory
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|menu_identifier
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -1467,13 +1487,19 @@ name|list_view
 operator|->
 name|item_factory
 operator|=
-name|item_factory
-expr_stmt|;
-name|g_object_ref
+name|gimp_menu_factory_menu_new
 argument_list|(
-name|list_view
+name|menu_factory
+argument_list|,
+name|menu_identifier
+argument_list|,
+name|GTK_TYPE_MENU
+argument_list|,
+name|menu_factory
 operator|->
-name|item_factory
+name|gimp
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  connect "drop to new" manually as it makes a difference whether    *  it was clicked or dropped    */

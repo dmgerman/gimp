@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aded8200103
+DECL|enum|__anon2c7d5bbe0103
 block|{
 DECL|enumerator|GIMP_UPDATE_COLOR_STATE_NEW
 name|GIMP_UPDATE_COLOR_STATE_NEW
@@ -235,6 +235,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl

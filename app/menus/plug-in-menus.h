@@ -38,7 +38,7 @@ name|plug_in_make_menu
 parameter_list|(
 name|GimpItemFactory
 modifier|*
-name|image_factory
+name|item_factory
 parameter_list|,
 name|GSList
 modifier|*
@@ -53,7 +53,7 @@ name|plug_in_make_menu_entry
 parameter_list|(
 name|GimpItemFactory
 modifier|*
-name|image_factory
+name|item_factory
 parameter_list|,
 name|PlugInProcDef
 modifier|*
@@ -90,7 +90,7 @@ name|plug_in_set_menu_sensitivity
 parameter_list|(
 name|GimpItemFactory
 modifier|*
-name|image_factory
+name|item_factory
 parameter_list|,
 name|GimpImageType
 name|type

@@ -108,6 +108,11 @@ name|GimpDock
 modifier|*
 name|dock
 decl_stmt|;
+DECL|member|item_factory
+name|GimpItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -140,7 +145,9 @@ name|GtkWidget
 modifier|*
 name|gimp_dockbook_new
 parameter_list|(
-name|void
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl

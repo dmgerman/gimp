@@ -962,7 +962,6 @@ name|gimp
 operator|->
 name|no_interface
 condition|)
-block|{
 name|plug_in_menus_init
 argument_list|(
 name|plug_in_defs
@@ -970,15 +969,6 @@ argument_list|,
 name|STD_PLUGINS_DOMAIN
 argument_list|)
 expr_stmt|;
-comment|/* make the menu */
-name|plug_in_make_menu
-argument_list|(
-name|NULL
-argument_list|,
-name|proc_defs
-argument_list|)
-expr_stmt|;
-block|}
 comment|/* initial the plug-ins */
 call|(
 modifier|*

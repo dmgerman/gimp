@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-constructors.h"
 end_include
 
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"dialogs-constructors.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"menus.h"
 end_include
 
 begin_include
@@ -638,10 +638,7 @@ name|STD_BRUSH_COLUMNS
 argument_list|,
 name|STD_BRUSH_ROWS
 argument_list|,
-name|gimp_item_factory_from_path
-argument_list|(
-literal|"<Brushes>"
-argument_list|)
+name|global_menu_factory
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

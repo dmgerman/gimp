@@ -6,42 +6,60 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__MENUS_H__
+name|__DEBUG_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__MENUS_H__
+DECL|macro|__DEBUG_COMMANDS_H__
 define|#
 directive|define
-name|__MENUS_H__
+name|__DEBUG_COMMANDS_H__
 end_define
 
-begin_decl_stmt
-specifier|extern
-name|GimpMenuFactory
-modifier|*
-name|global_menu_factory
-decl_stmt|;
-end_decl_stmt
+begin_define
+DECL|macro|ENABLE_DEBUG_ENTRIES
+define|#
+directive|define
+name|ENABLE_DEBUG_ENTRIES
+value|1
+end_define
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_DEBUG_ENTRIES
+end_ifdef
 
 begin_function_decl
 name|void
-name|menus_init
+name|debug_dump_menus_cmd_callback
 parameter_list|(
-name|Gimp
+name|GtkWidget
 modifier|*
-name|gimp
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|menus_exit
+name|debug_mem_profile_cmd_callback
 parameter_list|(
-name|Gimp
+name|GtkWidget
 modifier|*
-name|gimp
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -52,7 +70,16 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __MENUS_H__ */
+comment|/*  ENABLE_DEBUG_ENTRIES  */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __DEBUG_COMMANDS_H__ */
 end_comment
 
 end_unit

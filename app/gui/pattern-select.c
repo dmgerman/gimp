@@ -84,7 +84,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpitemfactory.h"
+file|"menus.h"
 end_include
 
 begin_include
@@ -465,10 +465,9 @@ name|STD_PATTERN_COLUMNS
 argument_list|,
 name|STD_PATTERN_ROWS
 argument_list|,
-name|gimp_item_factory_from_path
-argument_list|(
+name|global_menu_factory
+argument_list|,
 literal|"<Patterns>"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

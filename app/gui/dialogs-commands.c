@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontainerview.h"
 end_include
 
@@ -1028,7 +1034,11 @@ expr_stmt|;
 name|dockbook
 operator|=
 name|gimp_dockbook_new
-argument_list|()
+argument_list|(
+name|global_dock_factory
+operator|->
+name|menu_factory
+argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book
 argument_list|(
@@ -1180,7 +1190,11 @@ expr_stmt|;
 name|dockbook
 operator|=
 name|gimp_dockbook_new
-argument_list|()
+argument_list|(
+name|global_dock_factory
+operator|->
+name|menu_factory
+argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book
 argument_list|(

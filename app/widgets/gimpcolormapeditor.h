@@ -113,6 +113,11 @@ DECL|member|parent_instance
 name|GimpEditor
 name|parent_instance
 decl_stmt|;
+DECL|member|item_factory
+name|GimpItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
 DECL|member|gimage
 name|GimpImage
 modifier|*
@@ -210,6 +215,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl

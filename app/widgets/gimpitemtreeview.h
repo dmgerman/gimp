@@ -516,9 +516,14 @@ parameter_list|,
 name|GimpActivateItemFunc
 name|activate_item_func
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_facotry
+name|menu_facotry
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_identifier
 parameter_list|)
 function_decl|;
 end_function_decl

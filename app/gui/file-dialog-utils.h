@@ -25,9 +25,14 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_identifier
 parameter_list|,
 specifier|const
 name|gchar

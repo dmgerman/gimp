@@ -65,6 +65,15 @@ name|GimpItemFactory
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpMenuFactory
+typedef|typedef
+name|struct
+name|_GimpMenuFactory
+name|GimpMenuFactory
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  widgets  */
 end_comment
@@ -547,8 +556,56 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  structs  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpItemFactoryEntry
+typedef|typedef
+name|struct
+name|_GimpItemFactoryEntry
+name|GimpItemFactoryEntry
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  function types  */
 end_comment
+
+begin_typedef
+DECL|typedef|GimpItemFactorySetupFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpItemFactorySetupFunc
+function_decl|)
+parameter_list|(
+name|GimpItemFactory
+modifier|*
+name|factory
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpItemFactoryUpdateFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpItemFactoryUpdateFunc
+function_decl|)
+parameter_list|(
+name|GtkItemFactory
+modifier|*
+name|factory
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_typedef
 
 begin_typedef
 DECL|typedef|GimpItemGetNameFunc

@@ -1441,12 +1441,15 @@ name|GimpVectors
 modifier|*
 name|new_vectors
 decl_stmt|;
-comment|/* undo_push_group_start (gimage, EDIT_PASTE_UNDO_GROUP); */
 name|new_vectors
 operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_VECTORS
+argument_list|,
 name|NULL
+argument_list|)
 expr_stmt|;
-comment|/*gimp_vectors_new (gimage, _("Empty Vectors Copy"));*/
 name|gimp_image_add_vectors
 argument_list|(
 name|gimage
@@ -1457,7 +1460,19 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* undo_push_group_end (gimage); */
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|new_vectors
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Empty Vectors Copy"
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 comment|/*  the new options structure  */

@@ -43,7 +43,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1eb28a0103
+DECL|enum|__anon28b49b010103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1eb28a0203
+DECL|enum|__anon28b49b010203
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -378,6 +378,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl

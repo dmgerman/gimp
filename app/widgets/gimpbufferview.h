@@ -175,9 +175,9 @@ parameter_list|,
 name|gint
 name|min_items_y
 parameter_list|,
-name|GimpItemFactory
+name|GimpMenuFactory
 modifier|*
-name|item_factory
+name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -117,6 +117,11 @@ name|GimpData
 modifier|*
 name|data
 decl_stmt|;
+DECL|member|item_factory
+name|GimpItemFactory
+modifier|*
+name|item_factory
+decl_stmt|;
 DECL|member|name_entry
 name|GtkWidget
 modifier|*
@@ -190,6 +195,15 @@ name|gimp
 parameter_list|,
 name|GType
 name|data_type
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_identifier
 parameter_list|)
 function_decl|;
 end_function_decl

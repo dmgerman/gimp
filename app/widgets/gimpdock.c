@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290df84b0103
+DECL|enum|__anon2a1117e30103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2308,7 +2308,13 @@ expr_stmt|;
 name|dockbook
 operator|=
 name|gimp_dockbook_new
-argument_list|()
+argument_list|(
+name|dock
+operator|->
+name|dialog_factory
+operator|->
+name|menu_factory
+argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book
 argument_list|(
