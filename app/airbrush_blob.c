@@ -228,7 +228,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon275e3bd30103
+DECL|enum|__anon299c65120103
 typedef|typedef
 enum|enum
 block|{
@@ -7040,7 +7040,7 @@ name|AirLine
 modifier|*
 name|airline
 decl_stmt|;
-comment|/* Yes I know I can do a cal of number of lines, but it is for      the moment much easier to just set a side mem for 16 lines   */
+comment|/*       Yes I know I can do a cal of number of lines, but it is for      the moment much easier to just set a side mem for 16 lines   */
 name|airline
 operator|=
 name|airline_new
@@ -7082,6 +7082,45 @@ name|airblob
 operator|->
 name|direction_abs
 expr_stmt|;
+comment|/*     printf("Direction: %f\n", direction);     printf("Xcenter: %f\n",xcenter/SUBSAMPLE);     printf("Ycenter: %f\n",ycenter/SUBSAMPLE);     printf("MaCr.dist: %f\n",airblob->maincross_line.dist);     printf("MaCr.size: %f\n",airblob->maincross_line.size);     printf("MiCr.dist: %f\n",airblob->minorcross_line.dist);     printf("MiCr.size: %f\n",airblob->minorcross_line.size);     printf("Ma.size: %f\n",airblob->main_line.size);     printf("Mi.size: %f\n",airblob->minor_line.size);   */
+if|if
+condition|(
+name|direction
+operator|==
+name|M_PI_H
+operator|||
+name|direction
+operator|==
+name|M_PI
+condition|)
+block|{
+name|direction
+operator|=
+name|direction
+operator|-
+literal|0.001
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|direction
+operator|==
+operator|-
+name|M_PI_H
+operator|||
+name|direction
+operator|==
+operator|-
+name|M_PI
+condition|)
+block|{
+name|direction
+operator|=
+name|direction
+operator|+
+literal|0.001
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|direction
@@ -7606,6 +7645,11 @@ name|nlines
 operator|=
 literal|6
 expr_stmt|;
+name|printf
+argument_list|(
+literal|"Hmm bummer M_PI_H\n"
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -7868,6 +7912,11 @@ operator|->
 name|nlines
 operator|=
 literal|6
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"Hmm bummer M_PI\n"
+argument_list|)
 expr_stmt|;
 block|}
 elseif|else
@@ -8127,6 +8176,17 @@ operator|)
 operator|/
 name|SUBSAMPLE
 expr_stmt|;
+name|airline
+operator|->
+name|nlines
+operator|=
+literal|6
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"Hmm bummer -M_PI_H\n"
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -8390,6 +8450,11 @@ operator|->
 name|nlines
 operator|=
 literal|6
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"Hmm bummer -M_PI\n"
+argument_list|)
 expr_stmt|;
 block|}
 elseif|else
@@ -10035,7 +10100,7 @@ name|airline
 operator|->
 name|ycenter
 expr_stmt|;
-comment|/*     for (i=0; i< airline->nlines ; i++)     {     printf("x%d, value %d\n", i, airline->line[i].x);     printf("y%d, value %d\n", i, airline->line[i].y);     }      printf("The xcenter %d\n",airline->xcenter);       printf("The ycenter %d\n",airline->ycenter);   */
+comment|/*        for (i=0; i< airline->nlines ; i++)     {       printf("x%d, value %d\n", i, airline->line[i].x);       printf("y%d, value %d\n", i, airline->line[i].y);     }    printf("The xcenter %d\n",airline->xcenter);     printf("The ycenter %d\n",airline->ycenter);      */
 for|for
 control|(
 name|i
@@ -11126,71 +11191,6 @@ expr_stmt|;
 return|return
 name|trans_airblob
 return|;
-block|}
-end_function
-
-begin_function
-name|int
-DECL|function|number_of_steps (int x0,int y0,int x1,int y1)
-name|number_of_steps
-parameter_list|(
-name|int
-name|x0
-parameter_list|,
-name|int
-name|y0
-parameter_list|,
-name|int
-name|x1
-parameter_list|,
-name|int
-name|y1
-parameter_list|)
-block|{
-name|int
-name|dx
-decl_stmt|,
-name|dy
-decl_stmt|;
-name|dx
-operator|=
-name|abs
-argument_list|(
-name|x0
-operator|-
-name|x1
-argument_list|)
-expr_stmt|;
-name|dy
-operator|=
-name|abs
-argument_list|(
-name|y0
-operator|-
-name|y1
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|dy
-operator|>
-name|dx
-condition|)
-block|{
-return|return
-name|dy
-operator|+
-literal|1
-return|;
-block|}
-else|else
-block|{
-return|return
-name|dx
-operator|+
-literal|1
-return|;
-block|}
 block|}
 end_function
 

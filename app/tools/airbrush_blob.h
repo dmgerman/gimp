@@ -17,7 +17,7 @@ name|__AIRBRUSHBLOB_H__
 end_define
 
 begin_typedef
-DECL|enum|__anon28d83b410103
+DECL|enum|__anon27ab1f320103
 typedef|typedef
 enum|enum
 block|{
@@ -52,7 +52,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28d83b410203
+DECL|enum|__anon27ab1f320203
 typedef|typedef
 enum|enum
 block|{
@@ -510,25 +510,6 @@ parameter_list|(
 name|AirBlob
 modifier|*
 name|airblob
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|int
-name|number_of_steps
-parameter_list|(
-name|int
-name|x0
-parameter_list|,
-name|int
-name|y0
-parameter_list|,
-name|int
-name|x1
-parameter_list|,
-name|int
-name|y1
 parameter_list|)
 function_decl|;
 end_function_decl
