@@ -162,7 +162,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbfb8680108
+DECL|struct|__anon2a0c8d280108
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +202,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbfb8680208
+DECL|struct|__anon2a0c8d280208
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbfb8680308
+DECL|struct|__anon2a0c8d280308
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbfb8680408
+DECL|struct|__anon2a0c8d280408
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +419,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbfb8680508
+DECL|struct|__anon2a0c8d280508
 typedef|typedef
 struct|struct
 block|{
@@ -543,7 +543,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbfb8680608
+DECL|struct|__anon2a0c8d280608
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +609,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbfb8680708
+DECL|struct|__anon2a0c8d280708
 typedef|typedef
 struct|struct
 block|{
@@ -689,7 +689,7 @@ comment|/* Declarations for objects of type GimpParasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbfb8680808
+DECL|struct|__anon2a0c8d280808
 typedef|typedef
 struct|struct
 block|{
@@ -4836,13 +4836,14 @@ modifier|*
 name|d
 decl_stmt|;
 name|int
-name|pt
-decl_stmt|,
 name|np
 decl_stmt|,
 name|nr
 decl_stmt|,
 name|i
+decl_stmt|;
+name|GimpPDBProcType
+name|pt
 decl_stmt|;
 name|GimpParamDef
 modifier|*
@@ -20071,6 +20072,9 @@ decl_stmt|,
 modifier|*
 name|rv
 decl_stmt|;
+name|GimpPDBProcType
+name|t
+decl_stmt|;
 name|char
 modifier|*
 name|b
@@ -20088,8 +20092,6 @@ modifier|*
 name|d
 decl_stmt|;
 name|int
-name|t
-decl_stmt|,
 name|np
 decl_stmt|,
 name|nrv
