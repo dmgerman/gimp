@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298c073a0103
+DECL|enum|__anon2b8727400103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1974,7 +1974,7 @@ name|width
 argument_list|,
 name|image
 operator|->
-name|width
+name|height
 argument_list|,
 literal|0
 argument_list|,
