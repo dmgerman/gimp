@@ -135,7 +135,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon27d33b3a0103
+DECL|enum|__anon2c4042cc0103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -151,7 +151,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27d33b3a0203
+DECL|enum|__anon2c4042cc0203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d33b3a0308
+DECL|struct|__anon2c4042cc0308
 block|{
 DECL|member|index
 name|gint
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d33b3a0408
+DECL|struct|__anon2c4042cc0408
 block|{
 DECL|member|title
 name|gchar
@@ -3283,7 +3283,7 @@ literal|"GIMP Help Browser"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_help_connect_help_accel
+name|gimp_help_connect
 argument_list|(
 name|window
 argument_list|,

@@ -3527,7 +3527,7 @@ name|create_preferences_dialog
 argument_list|()
 expr_stmt|;
 block|}
-name|gtk_notebook_set_page
+name|gtk_notebook_set_current_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(

@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac124b80103
+DECL|enum|__anon2afbf0520103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac124b80203
+DECL|enum|__anon2afbf0520203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac124b80308
+DECL|struct|__anon2afbf0520308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2ac124b8040a
+DECL|union|__anon2afbf052040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac124b80508
+DECL|struct|__anon2afbf0520508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac124b80608
+DECL|struct|__anon2afbf0520608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac124b80708
+DECL|struct|__anon2afbf0520708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac124b80808
+DECL|struct|__anon2afbf0520808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac124b80908
+DECL|struct|__anon2afbf0520908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -553,7 +553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac124b80a08
+DECL|struct|__anon2afbf0520a08
 block|{
 DECL|member|run
 name|gint
@@ -8743,13 +8743,14 @@ name|ifsDesign
 operator|->
 name|selected_gc
 argument_list|,
+name|gtk_style_get_font
+argument_list|(
 name|ifsDesign
 operator|->
 name|area
 operator|->
 name|style
-operator|->
-name|font
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -4931,9 +4931,14 @@ name|state
 operator|=
 name|ACTIVE
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
 warning|#
 directive|warning
 warning|FIXME: presure, tilt
+endif|#
+directive|endif
 name|b
 operator|=
 name|ink_pen_ellipse
@@ -5682,9 +5687,14 @@ name|lasty
 operator|=
 name|y
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
 warning|#
 directive|warning
 warning|FIXME: tilt, pressure
+endif|#
+directive|endif
 name|pressure
 operator|=
 literal|1.0
@@ -5710,9 +5720,14 @@ name|lasttime
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
 warning|#
 directive|warning
 warning|FIXME: tilt, pressure
+endif|#
+directive|endif
 name|b
 operator|=
 name|ink_pen_ellipse
@@ -6436,7 +6451,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29a9db610103
+DECL|enum|__anon29d7bef10103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

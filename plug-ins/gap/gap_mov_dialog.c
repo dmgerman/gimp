@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon278f74500108
+DECL|struct|__anon2b8aa91c0108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f74500208
+DECL|struct|__anon2b8aa91c0208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f74500308
+DECL|struct|__anon2b8aa91c0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278f74500408
+DECL|struct|__anon2b8aa91c0408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278f74500503
+DECL|enum|__anon2b8aa91c0503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -2612,10 +2612,6 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
 name|t_ok_data
 name|ok_data
 decl_stmt|;
@@ -2675,12 +2671,6 @@ name|gimp_gtkrc
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|gtk_preview_set_gamma
 argument_list|(
 name|gimp_gamma
@@ -2691,34 +2681,6 @@ name|gtk_preview_set_install_cmap
 argument_list|(
 name|gimp_install_cmap
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|color_cube
-operator|=
-name|gimp_color_cube
-argument_list|()
-expr_stmt|;
-name|gtk_preview_set_color_cube
-argument_list|(
-name|color_cube
-index|[
-literal|0
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|1
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|2
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|3
-index|]
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_default_colormap

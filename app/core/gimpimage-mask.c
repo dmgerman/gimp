@@ -123,6 +123,12 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"display/display-funcs.h"
+end_include
+
 begin_comment
 comment|/*  local variables  */
 end_comment

@@ -121,9 +121,15 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"display/display-funcs.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b1f43e00103
+DECL|enum|__anon27edb1df0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
