@@ -3374,7 +3374,6 @@ argument_list|)
 operator|/
 literal|100.0
 expr_stmt|;
-comment|/*  paint_core->spacing =     (double) MAXIMUM (brush->mask->width, brush->mask->height) *     ((double) gimp_brush_get_spacing (brush) / 100.0);   if (paint_core->spacing< 1.0)     paint_core->spacing = 1.0; */
 name|paint_core
 operator|->
 name|brush
@@ -3831,6 +3830,7 @@ name|paint_core
 operator|->
 name|lastytilt
 expr_stmt|;
+comment|/* return if there has been no motion */
 if|if
 condition|(
 operator|!
@@ -3853,6 +3853,7 @@ operator|!
 name|dytilt
 condition|)
 return|return;
+comment|/* calculate the distance traveled in the coordinate space of the brush */
 name|mag
 operator|=
 name|vector2d_magnitude
@@ -3921,20 +3922,11 @@ name|y_axis
 operator|)
 argument_list|)
 operator|/
-name|SQR
-argument_list|(
-name|vector2d_magnitude
-argument_list|(
-operator|&
 operator|(
-name|paint_core
-operator|->
-name|brush
-operator|->
-name|y_axis
+name|mag
+operator|*
+name|mag
 operator|)
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|dist
 operator|=
@@ -5687,8 +5679,8 @@ operator|*
 name|k
 operator|++
 operator|)
-operator|>>
-literal|8
+operator|/
+literal|255
 operator|)
 expr_stmt|;
 operator|*
