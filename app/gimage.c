@@ -6400,6 +6400,16 @@ name|index
 init|=
 literal|0
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|layers
