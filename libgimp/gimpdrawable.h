@@ -30,6 +30,21 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
+DECL|macro|gimp_drawable_offset
+define|#
+directive|define
+name|gimp_drawable_offset
+value|gimp_channel_ops_offset
+DECL|macro|gimp_drawable_image_id
+define|#
+directive|define
+name|gimp_drawable_image_id
+value|gimp_drawable_image
+DECL|macro|gimp_drawable_bpp
+define|#
+directive|define
+name|gimp_drawable_bpp
+value|gimp_drawable_bytes
 DECL|struct|_GimpDrawable
 struct|struct
 name|_GimpDrawable

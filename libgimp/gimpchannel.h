@@ -30,6 +30,11 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
+DECL|macro|gimp_channel_get_image_id
+define|#
+directive|define
+name|gimp_channel_get_image_id
+value|gimp_drawable_image
 name|gint32
 name|gimp_channel_new
 parameter_list|(

@@ -30,6 +30,26 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
+DECL|macro|gimp_image_convert_rgb
+define|#
+directive|define
+name|gimp_image_convert_rgb
+value|gimp_convert_rgb
+DECL|macro|gimp_image_convert_grayscale
+define|#
+directive|define
+name|gimp_image_convert_grayscale
+value|gimp_convert_grayscale
+DECL|macro|gimp_image_convert_indexed
+define|#
+directive|define
+name|gimp_image_convert_indexed
+value|gimp_convert_indexed
+DECL|macro|gimp_image_duplicate
+define|#
+directive|define
+name|gimp_image_duplicate
+value|gimp_channel_ops_duplicate
 name|guchar
 modifier|*
 name|gimp_image_get_cmap

@@ -30,6 +30,31 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
+DECL|macro|gimp_layer_get_mask_id
+define|#
+directive|define
+name|gimp_layer_get_mask_id
+value|gimp_layer_mask
+DECL|macro|gimp_layer_get_image_id
+define|#
+directive|define
+name|gimp_layer_get_image_id
+value|gimp_drawable_image
+DECL|macro|gimp_layer_is_floating_selection
+define|#
+directive|define
+name|gimp_layer_is_floating_selection
+value|gimp_layer_is_floating_sel
+DECL|macro|gimp_layer_get_preserve_transparency
+define|#
+directive|define
+name|gimp_layer_get_preserve_transparency
+value|gimp_layer_get_preserve_trans
+DECL|macro|gimp_layer_set_preserve_transparency
+define|#
+directive|define
+name|gimp_layer_set_preserve_transparency
+value|gimp_layer_set_preserve_trans
 name|gint32
 name|gimp_layer_new
 parameter_list|(

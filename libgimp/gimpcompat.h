@@ -142,7 +142,7 @@ DECL|macro|gimp_channel_get_image_ID
 define|#
 directive|define
 name|gimp_channel_get_image_ID
-value|gimp_drawable_get_image_ID
+value|gimp_drawable_image
 DECL|macro|gimp_channel_get_layer_ID
 define|#
 directive|define
