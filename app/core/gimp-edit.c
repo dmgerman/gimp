@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file_new_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"floating_sel.h"
 end_include
 
@@ -984,6 +990,13 @@ name|cropped_cut
 operator|=
 name|NULL
 expr_stmt|;
+if|if
+condition|(
+name|cut
+condition|)
+name|file_new_reset_current_cut_buffer
+argument_list|()
+expr_stmt|;
 comment|/*  end the group undo  */
 name|undo_push_group_end
 argument_list|(
@@ -1125,6 +1138,13 @@ else|else
 name|cropped_copy
 operator|=
 name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|copy
+condition|)
+name|file_new_reset_current_cut_buffer
+argument_list|()
 expr_stmt|;
 if|if
 condition|(

@@ -44,6 +44,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage_cmds.h"
 end_include
 
@@ -51,6 +57,12 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"global_edit.h"
 end_include
 
 begin_include
@@ -65,8 +77,14 @@ directive|include
 file|"plug_in.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tile_manager_pvt.h"
+end_include
+
 begin_typedef
-DECL|struct|__anon27bb38ac0108
+DECL|struct|__anon28c69a530108
 typedef|typedef
 struct|struct
 block|{
@@ -392,6 +410,16 @@ literal|1
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|last_new_image
+specifier|static
+name|gboolean
+name|last_new_image
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* these are temps that should be set in gimprc eventually */
 end_comment
@@ -440,6 +468,14 @@ DECL|variable|new_dialog_run
 specifier|static
 name|int
 name|new_dialog_run
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|TileManager
+modifier|*
+name|global_buf
 decl_stmt|;
 end_decl_stmt
 
@@ -530,6 +566,10 @@ name|resolution_entry
 argument_list|)
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|last_new_image
+operator|=
+name|TRUE
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
@@ -2559,6 +2599,55 @@ operator|=
 name|RGB
 expr_stmt|;
 comment|/* no indexed images */
+comment|/*  if a cut buffer exist, default to using its size for the new image */
+comment|/* also check to see if a new_image has been opened */
+name|printf
+argument_list|(
+literal|"last_new_image is: %d \n"
+argument_list|,
+name|last_new_image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|global_buf
+operator|&&
+operator|!
+name|last_new_image
+condition|)
+block|{
+name|vals
+operator|->
+name|width
+operator|=
+name|global_buf
+operator|->
+name|levels
+index|[
+literal|0
+index|]
+operator|.
+name|width
+expr_stmt|;
+name|vals
+operator|->
+name|height
+operator|=
+name|global_buf
+operator|->
+name|levels
+index|[
+literal|0
+index|]
+operator|.
+name|height
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"foo foo foo\n"
+argument_list|)
+expr_stmt|;
+block|}
 name|vals
 operator|->
 name|dlg
@@ -4481,6 +4570,20 @@ name|vals
 operator|->
 name|dlg
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+DECL|function|file_new_reset_current_cut_buffer ()
+name|void
+name|file_new_reset_current_cut_buffer
+parameter_list|()
+block|{
+comment|/* this unction just changes the status of last_image_new      so i can if theres been a cut/copy since the last file new */
+name|last_new_image
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function
