@@ -2895,6 +2895,10 @@ name|GimpTextOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpDialogFactory
+modifier|*
+name|dialog_factory
+decl_stmt|;
 if|if
 condition|(
 name|text_tool
@@ -2928,6 +2932,13 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
+name|dialog_factory
+operator|=
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
+expr_stmt|;
 name|text_tool
 operator|->
 name|editor
@@ -2935,6 +2946,10 @@ operator|=
 name|gimp_text_options_editor_new
 argument_list|(
 name|options
+argument_list|,
+name|dialog_factory
+operator|->
+name|menu_factory
 argument_list|,
 name|_
 argument_list|(
@@ -2963,10 +2978,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|dialog_factory
 argument_list|,
 literal|"gimp-text-tool-dialog"
 argument_list|,

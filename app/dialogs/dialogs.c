@@ -1085,7 +1085,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|NULL
+name|menu_factory
 argument_list|,
 name|NULL
 argument_list|)

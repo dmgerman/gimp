@@ -208,6 +208,10 @@ name|GimpTextOptions
 modifier|*
 name|options
 parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
