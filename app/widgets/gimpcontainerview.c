@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e133260103
+DECL|enum|__anon291bcf100103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -787,7 +787,7 @@ name|view_iface
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"preview-border_width"
+literal|"preview-border-width"
 argument_list|,
 name|NULL
 argument_list|,

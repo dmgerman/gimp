@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4c5af0103
+DECL|enum|__anon2bbe20620103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f4c5af0203
+DECL|enum|__anon2bbe20620203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -489,7 +489,7 @@ name|PROP_STOCK_ID
 argument_list|,
 name|g_param_spec_string
 argument_list|(
-literal|"stock_id"
+literal|"stock-id"
 argument_list|,
 name|NULL
 argument_list|,
@@ -511,7 +511,7 @@ name|PROP_STOCK_SIZE
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"stock_size"
+literal|"stock-size"
 argument_list|,
 name|NULL
 argument_list|,

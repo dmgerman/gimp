@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299932fd0103
+DECL|enum|__anon293473750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -412,7 +412,7 @@ name|PROP_SIZE
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"icon_size"
+literal|"icon-size"
 argument_list|,
 name|NULL
 argument_list|,

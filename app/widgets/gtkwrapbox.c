@@ -20,7 +20,7 @@ comment|/* --- properties --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon28ca6b0d0103
+DECL|enum|__anon2baafea30103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -54,7 +54,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28ca6b0d0203
+DECL|enum|__anon2baafea30203
 enum|enum
 block|{
 DECL|enumerator|CHILD_PROP_0
@@ -638,7 +638,7 @@ name|PROP_LINE_JUSTIFY
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"line_justify"
+literal|"line-justify"
 argument_list|,
 name|NULL
 argument_list|,
@@ -660,7 +660,7 @@ name|PROP_ASPECT_RATIO
 argument_list|,
 name|g_param_spec_float
 argument_list|(
-literal|"aspect_ratio"
+literal|"aspect-ratio"
 argument_list|,
 name|NULL
 argument_list|,
@@ -684,7 +684,7 @@ name|PROP_CURRENT_RATIO
 argument_list|,
 name|g_param_spec_float
 argument_list|(
-literal|"current_ratio"
+literal|"current-ratio"
 argument_list|,
 name|NULL
 argument_list|,
@@ -708,7 +708,7 @@ name|PROP_CHILD_LIMIT
 argument_list|,
 name|g_param_spec_uint
 argument_list|(
-literal|"max_children_per_line"
+literal|"max-children-per-line"
 argument_list|,
 name|NULL
 argument_list|,

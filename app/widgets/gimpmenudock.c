@@ -598,7 +598,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"minimal_width"
+literal|"minimal-width"
 argument_list|,
 name|NULL
 argument_list|,
@@ -620,7 +620,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"menu_preview_size"
+literal|"menu-preview-size"
 argument_list|,
 name|NULL
 argument_list|,

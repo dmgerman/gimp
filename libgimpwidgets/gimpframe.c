@@ -375,7 +375,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_boolean
 argument_list|(
-literal|"label_bold"
+literal|"label-bold"
 argument_list|,
 name|NULL
 argument_list|,
@@ -393,7 +393,7 @@ name|widget_class
 argument_list|,
 name|g_param_spec_int
 argument_list|(
-literal|"label_spacing"
+literal|"label-spacing"
 argument_list|,
 name|NULL
 argument_list|,
