@@ -166,12 +166,56 @@ comment|/* For information look into the C source or the html documentation */
 comment|/*  *  Widget Constructors  */
 name|GtkWidget
 modifier|*
+name|gimp_int_option_menu_new
+parameter_list|(
+name|gboolean
+name|menu_only
+parameter_list|,
+name|GCallback
+name|menu_item_callback
+parameter_list|,
+name|gpointer
+name|menu_item_callback_data
+parameter_list|,
+name|gint
+name|initial
+parameter_list|,
+comment|/* item_data */
+comment|/* specify menu items as va_list:                                              *  gchar       *label,                                              *  gint         item_data,                                              *  GtkWidget  **widget_ptr,                                              */
+modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_int_option_menu_set_history
+parameter_list|(
+name|GtkOptionMenu
+modifier|*
+name|option_menu
+parameter_list|,
+name|gint
+name|item_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
+begin_function_decl
+name|GtkWidget
+modifier|*
 name|gimp_option_menu_new
 parameter_list|(
 name|gboolean
 name|menu_only
 parameter_list|,
-comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  GCallback       callback, 				     *  gpointer        callback_data, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active 				     */
+comment|/* specify menu items as va_list:                                        *  gchar       *label,                                        *  GCallback    callback,                                        *  gpointer     callback_data,                                        *  gpointer     item_data,                                        *  GtkWidget  **widget_ptr,                                        *  gboolean     active                                        */
 modifier|...
 parameter_list|)
 function_decl|;
@@ -195,31 +239,7 @@ name|gpointer
 name|initial
 parameter_list|,
 comment|/* item_data */
-comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_int_option_menu_new
-parameter_list|(
-name|gboolean
-name|menu_only
-parameter_list|,
-name|GCallback
-name|menu_item_callback
-parameter_list|,
-name|gpointer
-name|menu_item_callback_data
-parameter_list|,
-name|gint
-name|initial
-parameter_list|,
-comment|/* item_data */
-comment|/* specify menu items as va_list: 				       *  gchar          *label, 				       *  gint            item_data, 				       *  GtkWidget     **widget_ptr, 				       */
+comment|/* specify menu items as va_list:                                        *  gchar        *label,                                        *  gpointer      item_data,                                        *  GtkWidget   **widget_ptr,                                        */
 modifier|...
 parameter_list|)
 function_decl|;
@@ -234,20 +254,6 @@ modifier|*
 name|option_menu
 parameter_list|,
 name|gpointer
-name|item_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_int_option_menu_set_history
-parameter_list|(
-name|GtkOptionMenu
-modifier|*
-name|option_menu
-parameter_list|,
-name|gint
 name|item_data
 parameter_list|)
 function_decl|;
@@ -287,6 +293,50 @@ name|callback_data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_int_radio_group_new
+parameter_list|(
+name|gboolean
+name|in_frame
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|frame_title
+parameter_list|,
+name|GCallback
+name|radio_button_callback
+parameter_list|,
+name|gpointer
+name|radio_button_callback_data
+parameter_list|,
+name|gint
+name|initial
+parameter_list|,
+comment|/* item_data */
+comment|/* specify radio buttons as va_list: 				       *  const gchar  *label, 				       *  gint          item_data, 				       *  GtkWidget   **widget_ptr, 				       */
+modifier|...
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
 
 begin_function_decl
 name|GtkWidget
@@ -337,35 +387,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_int_radio_group_new
-parameter_list|(
-name|gboolean
-name|in_frame
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|frame_title
-parameter_list|,
-name|GCallback
-name|radio_button_callback
-parameter_list|,
-name|gpointer
-name|radio_button_callback_data
-parameter_list|,
-name|gint
-name|initial
-parameter_list|,
-comment|/* item_data */
-comment|/* specify radio buttons as va_list: 				       *  const gchar    *label, 				       *  gint            item_data, 				       *  GtkWidget     **widget_ptr, 				       */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_radio_group_set_active
 parameter_list|(
@@ -378,6 +399,15 @@ name|item_data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|GtkWidget

@@ -92,7 +92,7 @@ comment|/*  *  Widget Constructors  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_option_menu_new:  * @menu_only: %TRUE if the function should return a #GtkMenu only.  * @...:       A %NULL-terminated @va_list describing the menu items.  *  * Convenience function to create a #GtkOptionMenu or a #GtkMenu.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
+comment|/**  * gimp_option_menu_new:  * @menu_only: %TRUE if the function should return a #GtkMenu only.  * @...:       A %NULL-terminated @va_list describing the menu items.  *  * DEPRECATED. Use gimp_int_option_menu_new() instead.  *  * Convenience function to create a #GtkOptionMenu or a #GtkMenu.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
 end_comment
 
 begin_function
@@ -407,7 +407,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_option_menu_new2:  * @menu_only:          %TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @menu_item_callback_data:  *                      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A %NULL-terminated @va_list describing the menu items.  *  * Convenience function to create a #GtkOptionMenu or a #GtkMenu.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
+comment|/**  * gimp_option_menu_new2:  * @menu_only:          %TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @menu_item_callback_data:  *                      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A %NULL-terminated @va_list describing the menu items.  *  * DEPRECATED. Use gimp_int_option_menu_new() instead.  *  * Convenience function to create a #GtkOptionMenu or a #GtkMenu.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
 end_comment
 
 begin_function
@@ -698,7 +698,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_option_menu_new:  * @menu_only:          %TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @menu_item_callback_data:  *                      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A %NULL-terminated @va_list describing the menu items.  *  * Convenience function to create a #GtkOptionMenu or a #GtkMenu. This  * function does the same thing as gimp_option_menu_new2(), but it takes  * integers as @item_data instead of pointers, since that is a very  * common case (mapping an enum to a menu).  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
+comment|/**  * gimp_int_option_menu_new:  * @menu_only:          %TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @menu_item_callback_data:  *                      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A %NULL-terminated @va_list describing the menu items.  *  * Convenience function to create a #GtkOptionMenu or a #GtkMenu. This  * function does the same thing as the deprecated function  * gimp_option_menu_new2(), but it takes integers as @item_data  * instead of pointers, since that is a very common case (mapping an  * enum to a menu).  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
 end_comment
 
 begin_function
@@ -999,7 +999,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_option_menu_new() or  *               gimp_option_menu_new2().  * @item_data:   The @item_data of the menu item you want to select.  *  * Iterates over all entries in a #GtkOptionMenu and selects the one with the  * matching @item_data. Probably only makes sense to use with a #GtkOptionMenu  * that was created using gimp_option_menu_new() or gimp_option_menu_new2().  **/
+comment|/**  * gimp_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_option_menu_new() or  *               gimp_option_menu_new2().  * @item_data:   The @item_data of the menu item you want to select.  *  * DEPRECATED. Use gimp_int_option_menu_set_history() instead.  *  * Iterates over all entries in a #GtkOptionMenu and selects the one  * with the matching @item_data. Probably only makes sense to use with  * a #GtkOptionMenu that was created using gimp_option_menu_new() or  * gimp_option_menu_new2().  **/
 end_comment
 
 begin_function
@@ -1279,7 +1279,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_group_new:  * @in_frame:    %TRUE if you want a #GtkFrame around the radio button group.  * @frame_title: The title of the Frame or %NULL if you don't want a title.  * @...:         A %NULL-terminated @va_list describing the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * gimp_radio_group_new:  * @in_frame:    %TRUE if you want a #GtkFrame around the radio button group.  * @frame_title: The title of the Frame or %NULL if you don't want a title.  * @...:         A %NULL-terminated @va_list describing the radio buttons.  *  * DEPRECATED. Use gimp_int_radio_group_new() instead.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -1613,7 +1613,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_group_new2:  * @in_frame:              %TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or %NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data:  *                         The data which will be passed to g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A %NULL-terminated @va_list describing  *                         the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * gimp_radio_group_new2:  * @in_frame:              %TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or %NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data:  *                         The data which will be passed to g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A %NULL-terminated @va_list describing  *                         the radio buttons.  *  * DEPRECATED. Use gimp_int_radio_group_new() instead.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -3579,7 +3579,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a7b8ce0108
+DECL|struct|__anon292e5f650108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
