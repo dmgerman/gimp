@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad41ffc0103
+DECL|enum|__anon2c1872700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -573,16 +573,6 @@ operator|=
 name|gtk_frame_new
 argument_list|(
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_frame_set_shadow_type
-argument_list|(
-name|GTK_FRAME
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
