@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f3a010103
+DECL|enum|__anon288bf5400103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,7 +54,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f3a010203
+DECL|enum|__anon288bf5400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -261,7 +261,7 @@ name|type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GTK_TYPE_ACTION
+name|GIMP_TYPE_ACTION
 argument_list|,
 literal|"GimpPlugInAction"
 argument_list|,

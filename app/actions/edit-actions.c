@@ -555,7 +555,7 @@ argument_list|(
 literal|"Fill with P_attern"
 argument_list|)
 block|,
-name|NULL
+literal|"<control>semicolon"
 block|,
 name|NULL
 block|,

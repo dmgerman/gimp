@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e7b5e50103
+DECL|enum|__anon2bec58440103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e7b5e50203
+DECL|enum|__anon2bec58440203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,7 +145,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GtkActionClass
+name|GimpActionClass
 modifier|*
 name|parent_class
 init|=
@@ -239,7 +239,7 @@ name|type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GTK_TYPE_ACTION
+name|GIMP_TYPE_ACTION
 argument_list|,
 literal|"GimpEnumAction"
 argument_list|,

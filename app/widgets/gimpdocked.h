@@ -57,6 +57,15 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_INTERFACE ((obj), GIMP_TYPE_DOCKED, GimpDockedInterface))
 end_define
 
+begin_typedef
+DECL|typedef|GimpDockedInterface
+typedef|typedef
+name|struct
+name|_GimpDockedInterface
+name|GimpDockedInterface
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpDockedInterface
 struct|struct

@@ -123,7 +123,7 @@ block|,
 block|{
 literal|"gradient-editor-load-left-color"
 block|,
-name|NULL
+name|GTK_STOCK_REVERT_TO_SAVED
 block|,
 name|N_
 argument_list|(
@@ -134,7 +134,7 @@ block|,
 block|{
 literal|"gradient-editor-save-left-color"
 block|,
-name|NULL
+name|GTK_STOCK_SAVE
 block|,
 name|N_
 argument_list|(
@@ -145,7 +145,7 @@ block|,
 block|{
 literal|"gradient-editor-load-right-color"
 block|,
-name|NULL
+name|GTK_STOCK_REVERT_TO_SAVED
 block|,
 name|N_
 argument_list|(
@@ -156,7 +156,7 @@ block|,
 block|{
 literal|"gradient-editor-save-right-color"
 block|,
-name|NULL
+name|GTK_STOCK_SAVE
 block|,
 name|N_
 argument_list|(
@@ -227,11 +227,11 @@ block|,
 block|{
 literal|"gradient-editor-flip"
 block|,
-name|NULL
+name|GIMP_STOCK_FLIP_HORIZONTAL
 block|,
 literal|"flip"
 block|,
-literal|"F"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -246,11 +246,11 @@ block|,
 block|{
 literal|"gradient-editor-replicate"
 block|,
-name|NULL
+name|GIMP_STOCK_DUPLICATE
 block|,
 literal|"replicate"
 block|,
-literal|"R"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -269,7 +269,7 @@ name|NULL
 block|,
 literal|"splitmidpoint"
 block|,
-literal|"S"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -288,7 +288,7 @@ name|NULL
 block|,
 literal|"splituniform"
 block|,
-literal|"U"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -303,11 +303,11 @@ block|,
 block|{
 literal|"gradient-editor-delete"
 block|,
-name|NULL
+name|GTK_STOCK_DELETE
 block|,
 literal|"delete"
 block|,
-literal|"D"
+literal|""
 block|,
 name|NULL
 block|,
@@ -326,7 +326,7 @@ name|NULL
 block|,
 literal|"recenter"
 block|,
-literal|"C"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -345,7 +345,7 @@ name|NULL
 block|,
 literal|"redistribute"
 block|,
-literal|"<control>C"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -367,7 +367,7 @@ argument_list|(
 literal|"Ble_nd Endpoints' Colors"
 argument_list|)
 block|,
-literal|"B"
+name|NULL
 block|,
 name|NULL
 block|,
@@ -389,7 +389,7 @@ argument_list|(
 literal|"Blend Endpoints' Opacit_y"
 argument_list|)
 block|,
-literal|"<control>B"
+name|NULL
 block|,
 name|NULL
 block|,

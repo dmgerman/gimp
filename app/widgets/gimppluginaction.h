@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkaction.h>
+file|"gimpaction.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpPlugInAction
 block|{
 DECL|member|parent_instance
-name|GtkAction
+name|GimpAction
 name|parent_instance
 decl_stmt|;
 DECL|member|proc_def
@@ -118,7 +118,7 @@ struct|struct
 name|_GimpPlugInActionClass
 block|{
 DECL|member|parent_class
-name|GtkActionClass
+name|GimpActionClass
 name|parent_class
 decl_stmt|;
 DECL|member|selected

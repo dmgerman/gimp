@@ -84,6 +84,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpAction
+typedef|typedef
+name|struct
+name|_GimpAction
+name|GimpAction
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpEnumAction
 typedef|typedef
 name|struct
@@ -672,15 +681,6 @@ begin_comment
 DECL|typedef|GimpDocked
 comment|/* dummy typedef */
 end_comment
-
-begin_typedef
-DECL|typedef|GimpDockedInterface
-typedef|typedef
-name|struct
-name|_GimpDockedInterface
-name|GimpDockedInterface
-typedef|;
-end_typedef
 
 begin_typedef
 DECL|typedef|GimpContainerPopup
