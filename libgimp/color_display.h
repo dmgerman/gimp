@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/parasite.h>
+file|<libgimp/parasiteF.h>
 end_include
 
 begin_typedef
