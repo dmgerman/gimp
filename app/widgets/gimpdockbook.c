@@ -1619,7 +1619,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_NO_WINDOW
+operator|!
+name|GIMP_IS_PREVIEW
 argument_list|(
 name|tab_widget
 argument_list|)
