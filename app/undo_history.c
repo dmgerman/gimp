@@ -88,7 +88,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a520bd70108
+DECL|struct|__anon27738e220108
 block|{
 DECL|member|gimage
 name|GImage
@@ -139,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a520bd70208
+DECL|struct|__anon27738e220208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -3341,7 +3341,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: undo history"
+literal|"Undo History: %s"
 argument_list|)
 argument_list|,
 name|g_basename

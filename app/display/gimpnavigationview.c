@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0acaa70103
+DECL|enum|__anon2bca526f0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -7231,7 +7231,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"No image: Window Navigation"
+literal|"Navigation: No Image"
 argument_list|)
 argument_list|)
 expr_stmt|;
