@@ -1294,6 +1294,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|file_save_thumbnail
 argument_list|(
 name|gimage
@@ -1305,7 +1306,7 @@ argument_list|)
 condition|)
 name|success
 operator|=
-name|TRUE
+name|FALSE
 expr_stmt|;
 block|}
 return|return

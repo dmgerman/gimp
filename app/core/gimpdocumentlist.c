@@ -348,6 +348,11 @@ argument_list|(
 name|uri
 argument_list|)
 expr_stmt|;
+name|gimp_imagefile_update
+argument_list|(
+name|imagefile
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|uri

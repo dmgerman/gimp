@@ -27,9 +27,9 @@ name|gchar
 modifier|*
 name|file_utils_filename_to_uri
 parameter_list|(
-name|Gimp
+name|GSList
 modifier|*
-name|gimp
+name|procs
 parameter_list|,
 specifier|const
 name|gchar

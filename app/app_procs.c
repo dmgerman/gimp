@@ -516,6 +516,8 @@ operator|=
 name|file_utils_filename_to_uri
 argument_list|(
 name|the_gimp
+operator|->
+name|load_procs
 argument_list|,
 name|gimp_argv
 index|[
@@ -547,6 +549,8 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
 name|file_open_with_display
 argument_list|(
 name|the_gimp
@@ -559,6 +563,7 @@ argument_list|(
 name|uri
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}

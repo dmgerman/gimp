@@ -240,7 +240,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b68099d0103
+DECL|enum|__anon2aaff3660103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4320,6 +4320,8 @@ argument_list|(
 name|gimage
 operator|->
 name|gimp
+operator|->
+name|load_procs
 argument_list|,
 name|filename
 argument_list|,
