@@ -720,7 +720,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28a318080108
+DECL|struct|__anon28afea310108
 block|{
 DECL|member|Width
 name|unsigned
@@ -770,7 +770,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28a318080208
+DECL|struct|__anon28afea310208
 block|{
 DECL|member|transparent
 name|int
@@ -3488,6 +3488,9 @@ block|{
 specifier|static
 name|gint32
 name|image_ID
+init|=
+operator|-
+literal|1
 decl_stmt|;
 specifier|static
 name|gint
@@ -3558,6 +3561,28 @@ specifier|static
 name|int
 name|previous_disposal
 decl_stmt|;
+comment|/* Guard against bogus frame size */
+if|if
+condition|(
+name|len
+operator|<
+literal|1
+operator|||
+name|height
+operator|<
+literal|1
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Bogus frame dimensions"
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 comment|/*    **  Initialize the Compression routines    */
 if|if
 condition|(
