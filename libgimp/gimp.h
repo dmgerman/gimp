@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the Free  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -366,7 +370,7 @@ DECL|member|type
 name|GParamType
 name|type
 decl_stmt|;
-DECL|union|__anon28bfaa0d010a
+DECL|union|__anon28da8e79010a
 union|union
 block|{
 DECL|member|d_int32
@@ -416,7 +420,7 @@ modifier|*
 modifier|*
 name|d_stringarray
 decl_stmt|;
-DECL|struct|__anon28bfaa0d0208
+DECL|struct|__anon28da8e790208
 struct|struct
 block|{
 DECL|member|red
@@ -435,7 +439,7 @@ DECL|member|d_color
 block|}
 name|d_color
 struct|;
-DECL|struct|__anon28bfaa0d0308
+DECL|struct|__anon28da8e790308
 struct|struct
 block|{
 DECL|member|x
