@@ -5343,7 +5343,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|channels_dialog_sub_channel_from_sel_callback
+name|channels_dialog_intersect_channel_with_sel_callback
 block|,
 literal|0
 block|}
