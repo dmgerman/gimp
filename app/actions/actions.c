@@ -602,16 +602,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|actions_initialized
-specifier|static
-name|gboolean
-name|actions_initialized
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -639,14 +629,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|actions_initialized
+name|global_action_factory
 operator|==
-name|FALSE
+name|NULL
 argument_list|)
-expr_stmt|;
-name|actions_initialized
-operator|=
-name|TRUE
 expr_stmt|;
 name|global_action_factory
 operator|=
@@ -716,6 +702,22 @@ name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|global_action_factory
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|global_action_factory
+operator|->
+name|gimp
+operator|==
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_object_unref

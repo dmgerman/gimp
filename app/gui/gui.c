@@ -210,6 +210,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"clipboard.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color-history.h"
 end_include
 
@@ -1289,6 +1295,11 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+name|clipboard_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|render_init
 argument_list|(
 name|gimp
@@ -1727,6 +1738,11 @@ expr_stmt|;
 name|image_ui_manager
 operator|=
 name|NULL
+expr_stmt|;
+name|clipboard_exit
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|menus_exit
 argument_list|(

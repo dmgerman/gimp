@@ -118,20 +118,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  private variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|menus_initialized
-specifier|static
-name|gboolean
-name|menus_initialized
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -155,14 +141,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|menus_initialized
+name|global_menu_factory
 operator|==
-name|FALSE
+name|NULL
 argument_list|)
-expr_stmt|;
-name|menus_initialized
-operator|=
-name|TRUE
 expr_stmt|;
 comment|/* We need to make sure the property is installed before using it */
 name|g_type_class_ref
@@ -761,6 +743,22 @@ name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|global_menu_factory
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|global_menu_factory
+operator|->
+name|gimp
+operator|==
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_object_unref

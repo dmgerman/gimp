@@ -1667,6 +1667,8 @@ literal|"png"
 argument_list|,
 operator|&
 name|error
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{
@@ -1801,6 +1803,14 @@ argument_list|,
 operator|&
 name|error
 argument_list|)
+operator|&&
+name|gdk_pixbuf_loader_close
+argument_list|(
+name|loader
+argument_list|,
+operator|&
+name|error
+argument_list|)
 condition|)
 block|{
 name|pixbuf
@@ -1808,6 +1818,11 @@ operator|=
 name|gdk_pixbuf_loader_get_pixbuf
 argument_list|(
 name|loader
+argument_list|)
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|pixbuf
 argument_list|)
 expr_stmt|;
 block|}

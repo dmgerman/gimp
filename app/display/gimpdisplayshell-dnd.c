@@ -590,7 +590,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_svg (GtkWidget * widget,const gchar * svg_data,gsize svg_data_len,gpointer data)
+DECL|function|gimp_display_shell_drop_svg (GtkWidget * widget,const guchar * svg_data,gsize svg_data_len,gpointer data)
 name|gimp_display_shell_drop_svg
 parameter_list|(
 name|GtkWidget
@@ -598,7 +598,7 @@ modifier|*
 name|widget
 parameter_list|,
 specifier|const
-name|gchar
+name|guchar
 modifier|*
 name|svg_data
 parameter_list|,
@@ -658,6 +658,11 @@ name|gimp_vectors_import_buffer
 argument_list|(
 name|gimage
 argument_list|,
+operator|(
+specifier|const
+name|gchar
+operator|*
+operator|)
 name|svg_data
 argument_list|,
 name|svg_data_len

@@ -61,7 +61,7 @@ modifier|*
 name|widget
 parameter_list|,
 specifier|const
-name|gchar
+name|guchar
 modifier|*
 name|svg_data
 parameter_list|,
