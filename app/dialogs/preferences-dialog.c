@@ -7925,12 +7925,12 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Custom"
+literal|"Default"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Standard"
+literal|"Simple"
 argument_list|)
 block|,
 name|N_
@@ -7955,7 +7955,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292401930108
+DECL|struct|__anon291b788c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10057,7 +10057,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292401930208
+DECL|struct|__anon291b788c0208
 block|{
 DECL|member|label
 specifier|const
@@ -10214,7 +10214,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292401930308
+DECL|struct|__anon291b788c0308
 block|{
 DECL|member|tree_label
 specifier|const
