@@ -34923,7 +34923,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774c01a0108
+DECL|struct|__anon2b2a46fe0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35000,7 +35000,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774c01a0208
+DECL|struct|__anon2b2a46fe0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35019,7 +35019,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774c01a0308
+DECL|struct|__anon2b2a46fe0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -37525,6 +37525,12 @@ name|PaletteEntries
 modifier|*
 name|entries
 decl_stmt|;
+name|PaletteEntries
+modifier|*
+name|theWebPalette
+init|=
+name|NULL
+decl_stmt|;
 name|int
 name|i
 decl_stmt|,
@@ -37601,10 +37607,9 @@ expr_stmt|;
 comment|/* Preferentially, the initial default is 'Web' if available */
 if|if
 condition|(
-name|default_palette
+name|theWebPalette
 operator|==
-operator|-
-literal|1
+name|NULL
 operator|&&
 name|g_strcasecmp
 argument_list|(
@@ -37618,7 +37623,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|theCustomPalette
+name|theWebPalette
 operator|=
 name|entries
 expr_stmt|;
@@ -37651,7 +37656,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/* default to first one with<= 256 colors (only used if 'web' palette not avail.) */
+comment|/* default to first one with<= 256 colors       (only used if 'web' palette not available) */
 if|if
 condition|(
 name|default_palette
@@ -37659,6 +37664,23 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
+if|if
+condition|(
+name|theWebPalette
+condition|)
+block|{
+name|theCustomPalette
+operator|=
+name|theWebPalette
+expr_stmt|;
+name|default_palette
+operator|=
+literal|1
+expr_stmt|;
+comment|/*  dummy value  */
+block|}
+else|else
 block|{
 for|for
 control|(
@@ -37715,6 +37737,7 @@ name|default_palette
 operator|=
 name|i
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
@@ -38336,7 +38359,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774c01a0408
+DECL|struct|__anon2b2a46fe0408
 block|{
 DECL|member|used_count
 name|signed
