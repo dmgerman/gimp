@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a114bf50103
+DECL|enum|__anon2943cdf30103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -73,7 +73,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a114bf50203
+DECL|enum|__anon2943cdf30203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -307,7 +307,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_display_editor_changed
+name|gimp_color_display_editor_enabled
 parameter_list|(
 name|GimpColorDisplay
 modifier|*
@@ -1779,11 +1779,11 @@ name|g_signal_connect_object
 argument_list|(
 name|display
 argument_list|,
-literal|"changed"
+literal|"enabled_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_color_display_editor_changed
+name|gimp_color_display_editor_enabled
 argument_list|)
 argument_list|,
 name|G_OBJECT
@@ -2611,11 +2611,11 @@ name|g_signal_connect_object
 argument_list|(
 name|display
 argument_list|,
-literal|"changed"
+literal|"enabled_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_color_display_editor_changed
+name|gimp_color_display_editor_enabled
 argument_list|)
 argument_list|,
 name|G_OBJECT
@@ -2735,7 +2735,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|display
 argument_list|,
-name|gimp_color_display_editor_changed
+name|gimp_color_display_editor_enabled
 argument_list|,
 name|editor
 argument_list|)
@@ -3041,8 +3041,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_display_editor_changed (GimpColorDisplay * display,GimpColorDisplayEditor * editor)
-name|gimp_color_display_editor_changed
+DECL|function|gimp_color_display_editor_enabled (GimpColorDisplay * display,GimpColorDisplayEditor * editor)
+name|gimp_color_display_editor_enabled
 parameter_list|(
 name|GimpColorDisplay
 modifier|*
@@ -3098,9 +3098,6 @@ name|GimpColorDisplay
 modifier|*
 name|display2
 decl_stmt|;
-name|gboolean
-name|enabled
-decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
@@ -3118,11 +3115,6 @@ argument_list|,
 operator|&
 name|display2
 argument_list|,
-name|DEST_COLUMN_ENABLED
-argument_list|,
-operator|&
-name|enabled
-argument_list|,
 operator|-
 literal|1
 argument_list|)
@@ -3139,15 +3131,16 @@ operator|==
 name|display2
 condition|)
 block|{
-if|if
-condition|(
+name|gboolean
 name|enabled
-operator|!=
+decl_stmt|;
+name|enabled
+operator|=
 name|gimp_color_display_get_enabled
 argument_list|(
 name|display
 argument_list|)
-condition|)
+expr_stmt|;
 name|gtk_list_store_set
 argument_list|(
 name|editor
@@ -3159,7 +3152,6 @@ name|iter
 argument_list|,
 name|DEST_COLUMN_ENABLED
 argument_list|,
-operator|!
 name|enabled
 argument_list|,
 operator|-
