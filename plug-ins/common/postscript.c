@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 15-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: dont start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  *                          Add BeginData/EndData comments  *                          Save PS: Set default rotation to 0  * V 1.11, PK, 20-Aug-2000: Fix problem with BoundingBox recognition  *                          for Mac files.  *                          Fix problem with loop when reading not all  *                          images of a multi page file.  */
+comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  * V 1.08, PK, 16-Jan-2000: Add PostScript-Level 2 by Austin Donnelly  * V 1.09, PK, 15-Feb-2000: Force showpage on EPS-files  *                          Add "RunLength" compression  *                          Fix problem with "Level 2" toggle  * V 1.10, PK, 15-Mar-2000: For load EPSF, allow negative Bounding Box Values  *                          Save PS: dont start lines of image data with %%  *                          to prevent problems with stupid PostScript  *                          analyzer programs (Stanislav Brabec)  *                          Add BeginData/EndData comments  *                          Save PS: Set default rotation to 0  * V 1.11, PK, 20-Aug-2000: Fix problem with BoundingBox recognition  *                          for Mac files.  *                          Fix problem with loop when reading not all  *                          images of a multi page file.  *         PK, 31-Aug-2000: Load PS: Add checks for space in filename.  */
 end_comment
 
 begin_define
@@ -22,7 +22,7 @@ name|char
 name|dversio
 index|[]
 init|=
-literal|"v1.11  20-Aug-2000"
+literal|"v1.11  31-Aug-2000"
 decl_stmt|;
 end_decl_stmt
 
@@ -33,7 +33,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP PostScript/PDF file-plugin v1.11  20-Aug-2000"
+literal|"@(#) GIMP PostScript/PDF file-plugin v1.11  31-Aug-2000"
 decl_stmt|;
 end_decl_stmt
 
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc6e130108
+DECL|struct|__anon2ba5d2fc0108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc6e130208
+DECL|struct|__anon2ba5d2fc0208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc6e130308
+DECL|struct|__anon2ba5d2fc0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc6e130408
+DECL|struct|__anon2ba5d2fc0408
 block|{
 DECL|member|run
 name|gint
@@ -854,7 +854,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc6e130508
+DECL|struct|__anon2ba5d2fc0508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1725,7 +1725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc6e130608
+DECL|struct|__anon2ba5d2fc0608
 block|{
 DECL|member|eol
 name|long
@@ -5693,6 +5693,11 @@ name|gs_opts
 decl_stmt|,
 modifier|*
 name|driver
+decl_stmt|,
+modifier|*
+name|fnbuf
+init|=
+name|NULL
 decl_stmt|;
 name|FILE
 modifier|*
@@ -5725,6 +5730,13 @@ literal|0
 decl_stmt|;
 name|int
 name|is_pdf
+decl_stmt|;
+name|int
+name|blank
+decl_stmt|,
+name|anf
+decl_stmt|,
+name|apo
 decl_stmt|;
 name|char
 name|TextAlphaBits
@@ -6220,6 +6232,123 @@ name|gs
 operator|=
 literal|"gs"
 expr_stmt|;
+comment|/* Escape special characters. Escaping " does not work with call of shell. */
+comment|/* fnbuf points to memory that should be freed. */
+name|filename
+operator|=
+name|fnbuf
+operator|=
+name|gimp_strescape
+argument_list|(
+name|filename
+argument_list|,
+literal|"\""
+argument_list|)
+expr_stmt|;
+name|blank
+operator|=
+operator|(
+name|strchr
+argument_list|(
+name|filename
+argument_list|,
+literal|' '
+argument_list|)
+operator|!=
+name|NULL
+operator|)
+expr_stmt|;
+name|apo
+operator|=
+operator|(
+name|strchr
+argument_list|(
+name|filename
+argument_list|,
+literal|'\''
+argument_list|)
+operator|!=
+name|NULL
+operator|)
+expr_stmt|;
+name|anf
+operator|=
+operator|(
+name|strchr
+argument_list|(
+name|filename
+argument_list|,
+literal|'"'
+argument_list|)
+operator|!=
+name|NULL
+operator|)
+expr_stmt|;
+comment|/* Must the filename be enclosed ? */
+comment|/* If we have " and ' it will not work */
+if|if
+condition|(
+name|blank
+operator|||
+name|anf
+operator|||
+name|apo
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|anf
+condition|)
+comment|/* No " ? Enclose with " */
+block|{
+name|filename
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"\"%s\""
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|fnbuf
+argument_list|)
+expr_stmt|;
+name|fnbuf
+operator|=
+name|filename
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+operator|!
+name|apo
+condition|)
+comment|/* No ' ? Enclose with ' */
+block|{
+name|filename
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"'%s'"
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|fnbuf
+argument_list|)
+expr_stmt|;
+name|fnbuf
+operator|=
+name|filename
+expr_stmt|;
+block|}
+block|}
 else|#
 directive|else
 comment|/* We want the console ghostscript application. It should be in the PATH */
@@ -6577,6 +6706,11 @@ directive|endif
 name|g_free
 argument_list|(
 name|cmd
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|fnbuf
 argument_list|)
 expr_stmt|;
 return|return
