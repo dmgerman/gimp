@@ -200,6 +200,9 @@ name|options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -223,6 +226,9 @@ name|options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -243,6 +249,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|options
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -649,7 +658,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_paint_core_real_pre_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_paint_core_real_pre_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
 name|gimp_paint_core_real_pre_paint
 parameter_list|(
 name|GimpPaintCore
@@ -666,6 +675,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 return|return
@@ -677,7 +689,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_real_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_paint_core_real_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
 name|gimp_paint_core_real_paint
 parameter_list|(
 name|GimpPaintCore
@@ -694,6 +706,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{ }
 end_function
@@ -701,7 +716,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_real_interpolate (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_paint_core_real_interpolate (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,guint32 time)
 name|gimp_paint_core_real_interpolate
 parameter_list|(
 name|GimpPaintCore
@@ -715,6 +730,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 name|gimp_paint_core_paint
@@ -726,6 +744,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|MOTION_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 name|core
@@ -767,7 +787,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_paint_core_paint (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
 name|gimp_paint_core_paint
 parameter_list|(
 name|GimpPaintCore
@@ -784,6 +804,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -837,6 +860,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|paint_state
+argument_list|,
+name|time
 argument_list|)
 condition|)
 block|{
@@ -887,6 +912,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|paint_state
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 block|}
@@ -1961,7 +1988,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_interpolate (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_paint_core_interpolate (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,guint32 time)
 name|gimp_paint_core_interpolate
 parameter_list|(
 name|GimpPaintCore
@@ -1975,6 +2002,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2024,6 +2054,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 block|}

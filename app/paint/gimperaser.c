@@ -118,6 +118,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -341,7 +344,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eraser_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_eraser_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
 name|gimp_eraser_paint
 parameter_list|(
 name|GimpPaintCore
@@ -358,6 +361,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 switch|switch

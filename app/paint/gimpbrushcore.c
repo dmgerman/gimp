@@ -190,6 +190,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -210,6 +213,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1163,7 +1169,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_core_pre_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_brush_core_pre_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
 name|gimp_brush_core_pre_paint
 parameter_list|(
 name|GimpPaintCore
@@ -1180,6 +1186,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 name|GimpBrushCore
@@ -1561,7 +1570,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_interpolate (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_brush_core_interpolate (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,guint32 time)
 name|gimp_brush_core_interpolate
 parameter_list|(
 name|GimpPaintCore
@@ -1575,6 +1584,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 name|GimpBrushCore
@@ -2653,6 +2665,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|MOTION_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 comment|/*  restore the current brush pointer  */

@@ -1046,6 +1046,8 @@ name|tool_options
 argument_list|)
 argument_list|,
 name|FINISH_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_cleanup
@@ -1550,6 +1552,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|INIT_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 comment|/*  store the current brush pointer  */
@@ -1586,6 +1590,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|PRETRACE_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 comment|/*  Paint to the image  */
@@ -1603,6 +1609,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 block|}
@@ -1617,6 +1625,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|MOTION_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 block|}
@@ -1642,6 +1652,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|POSTTRACE_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 comment|/*  restore the current brush pointer  */
@@ -1748,6 +1760,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|FINISH_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 comment|/*  resume the current selection  */
@@ -1970,6 +1984,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|PRETRACE_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_interpolate
@@ -1979,6 +1995,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 name|gimp_display_flush_now
@@ -2003,6 +2021,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|POSTTRACE_PAINT
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 block|}

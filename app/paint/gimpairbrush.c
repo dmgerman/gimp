@@ -142,6 +142,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -436,7 +439,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_airbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_airbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
 name|gimp_airbrush_paint
 parameter_list|(
 name|GimpPaintCore
@@ -453,6 +456,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 name|GimpAirbrush
@@ -516,6 +522,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|paint_state
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 break|break;
@@ -665,6 +673,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|paint_state
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 break|break;
@@ -683,6 +693,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|paint_state
+argument_list|,
+name|time
 argument_list|)
 expr_stmt|;
 break|break;
@@ -819,6 +831,8 @@ operator|->
 name|paint_options
 argument_list|,
 name|MOTION_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

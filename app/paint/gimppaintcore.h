@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8d2ec10103
+DECL|enum|__anon29584ac30103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8d2ec10203
+DECL|enum|__anon29584ac30203
 block|{
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
 name|CORE_HANDLES_CHANGING_BRUSH
@@ -305,6 +305,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 DECL|member|paint
@@ -328,6 +331,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 DECL|member|interpolate
@@ -348,6 +354,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 DECL|member|get_paint_area
@@ -403,6 +412,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -497,6 +509,9 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl

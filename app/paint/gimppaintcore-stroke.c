@@ -216,6 +216,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|INIT_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -237,6 +239,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|MOTION_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -279,6 +283,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -291,6 +297,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|FINISH_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_finish
@@ -823,6 +831,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|INIT_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -844,6 +854,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|MOTION_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -886,6 +898,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -898,6 +912,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|FINISH_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -1332,6 +1348,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|INIT_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1353,6 +1371,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|MOTION_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1401,6 +1421,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -1413,6 +1435,8 @@ argument_list|,
 name|paint_options
 argument_list|,
 name|FINISH_PAINT
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

@@ -160,6 +160,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -597,7 +600,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ink_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state)
+DECL|function|gimp_ink_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintCoreState paint_state,guint32 time)
 name|gimp_ink_paint
 parameter_list|(
 name|GimpPaintCore
@@ -614,6 +617,9 @@ name|paint_options
 parameter_list|,
 name|GimpPaintCoreState
 name|paint_state
+parameter_list|,
+name|guint32
+name|time
 parameter_list|)
 block|{
 name|GimpInk
@@ -634,16 +640,6 @@ argument_list|(
 name|paint_options
 argument_list|)
 decl_stmt|;
-specifier|static
-name|guint32
-name|time
-init|=
-literal|23
-decl_stmt|;
-name|time
-operator|+=
-literal|42
-expr_stmt|;
 switch|switch
 condition|(
 name|paint_state
@@ -2407,7 +2403,7 @@ comment|/* Some of this stuff should probably be combined with the  * code it wa
 end_comment
 
 begin_enum
-DECL|enum|__anon295c54fa0103
+DECL|enum|__anon2890f93f0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
