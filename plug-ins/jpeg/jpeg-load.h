@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ffc8250108
+DECL|struct|__anon29c3e38b0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ffc8250208
+DECL|struct|__anon29c3e38b0208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ffc8250308
+DECL|struct|__anon29c3e38b0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -3450,15 +3450,6 @@ name|NORMAL_MODE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_add_layer
-argument_list|(
-name|image_ID
-argument_list|,
-name|layer_ID
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|drawable_global
 operator|=
 name|drawable
@@ -3923,6 +3914,15 @@ argument_list|)
 expr_stmt|;
 comment|/* At this point you may want to check to see whether any corrupt-data    * warnings occurred (test whether jerr.num_warnings is nonzero).    */
 comment|/* Tell the GIMP to display the image.    */
+name|gimp_image_add_layer
+argument_list|(
+name|image_ID
+argument_list|,
+name|layer_ID
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon28dec43f0103
+DECL|enum|__anon2c61930b0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -2739,6 +2739,19 @@ argument_list|(
 name|gimage
 operator|->
 name|selection_mask
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimage
+operator|->
+name|comp_preview
+condition|)
+name|temp_buf_free
+argument_list|(
+name|gimage
+operator|->
+name|comp_preview
 argument_list|)
 expr_stmt|;
 if|if
