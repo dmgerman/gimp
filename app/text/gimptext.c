@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<locale.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb68c010103
+DECL|enum|__anon29a207990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -112,13 +112,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in.h"
+file|"gimp-intl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"plug-in/plug-in.h"
 end_include
 
 begin_decl_stmt

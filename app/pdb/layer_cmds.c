@@ -106,13 +106,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb_glue.h"
+file|"gimp-intl.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"pdb_glue.h"
 end_include
 
 begin_decl_stmt
