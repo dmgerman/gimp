@@ -609,7 +609,7 @@ define|#
 directive|define
 name|LAYER_PREVIEW_SIZE_BLURB
 define|\
-value|N_("Sets the default preview size for layers and channels.")
+value|N_("Sets the preview size used for layers and channel previews in newly " \    "created dialogs.")
 end_define
 
 begin_define
