@@ -243,7 +243,10 @@ block|{
 block|{
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 block|,
-literal|"GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL"
+name|N_
+argument_list|(
+literal|"Perceptual"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -251,7 +254,10 @@ block|,
 block|{
 name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
 block|,
-literal|"GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC"
+name|N_
+argument_list|(
+literal|"Relative Colorimetric"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -259,7 +265,10 @@ block|,
 block|{
 name|GIMP_COLOR_RENDERING_INTENT_SATURATION
 block|,
-literal|"GIMP_COLOR_RENDERING_INTENT_SATURATION"
+name|N_
+argument_list|(
+literal|"Saturation"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -267,7 +276,10 @@ block|,
 block|{
 name|GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC
 block|,
-literal|"GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC"
+name|N_
+argument_list|(
+literal|"Absolute Colorimetric"
+argument_list|)
 block|,
 name|NULL
 block|}

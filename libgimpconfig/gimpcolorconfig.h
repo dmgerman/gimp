@@ -90,11 +90,6 @@ DECL|member|mode
 name|GimpColorManagementMode
 name|mode
 decl_stmt|;
-DECL|member|profile_path
-name|gchar
-modifier|*
-name|profile_path
-decl_stmt|;
 DECL|member|rgb_profile
 name|gchar
 modifier|*

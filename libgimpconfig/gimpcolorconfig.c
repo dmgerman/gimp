@@ -58,14 +58,6 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|DEFAULT_PROFILE_PATH
-define|#
-directive|define
-name|DEFAULT_PROFILE_PATH
-value|"/usr/share/color/icc"
-end_define
-
-begin_define
 DECL|macro|COLOR_MANAGEMENT_MODE_BLURB
 define|#
 directive|define
@@ -75,21 +67,12 @@ value|N_("Mode of operation for color management.")
 end_define
 
 begin_define
-DECL|macro|PROFILE_PATH_BLURB
-define|#
-directive|define
-name|PROFILE_PATH_BLURB
-define|\
-value|N_("Default folder where ICC profiles are located.")
-end_define
-
-begin_define
 DECL|macro|DISPLAY_PROFILE_BLURB
 define|#
 directive|define
 name|DISPLAY_PROFILE_BLURB
 define|\
-value|N_("Sets the display color profile.")
+value|N_("Sets the color profile for the display.")
 end_define
 
 begin_define
@@ -166,16 +149,13 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65e1700103
+DECL|enum|__anon292452450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
 DECL|enumerator|PROP_MODE
 name|PROP_MODE
-block|,
-DECL|enumerator|PROP_PROFILE_PATH
-name|PROP_PROFILE_PATH
 block|,
 DECL|enumerator|PROP_RGB_PROFILE
 name|PROP_RGB_PROFILE
@@ -464,23 +444,6 @@ name|GIMP_CONFIG_INSTALL_PROP_PATH
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PROFILE_PATH
-argument_list|,
-literal|"profile-path"
-argument_list|,
-name|PROFILE_PATH_BLURB
-argument_list|,
-name|GIMP_CONFIG_PATH_DIR
-argument_list|,
-name|DEFAULT_PROFILE_PATH
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_PATH
-argument_list|(
-name|object_class
-argument_list|,
 name|PROP_RGB_PROFILE
 argument_list|,
 literal|"rgb-profile"
@@ -612,13 +575,6 @@ name|g_free
 argument_list|(
 name|color_config
 operator|->
-name|profile_path
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|color_config
-operator|->
 name|rgb_profile
 argument_list|)
 expr_stmt|;
@@ -701,26 +657,6 @@ operator|->
 name|mode
 operator|=
 name|g_value_get_enum
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_PROFILE_PATH
-case|:
-name|g_free
-argument_list|(
-name|color_config
-operator|->
-name|profile_path
-argument_list|)
-expr_stmt|;
-name|color_config
-operator|->
-name|profile_path
-operator|=
-name|g_value_dup_string
 argument_list|(
 name|value
 argument_list|)
@@ -899,19 +835,6 @@ argument_list|,
 name|color_config
 operator|->
 name|mode
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_PROFILE_PATH
-case|:
-name|g_value_set_string
-argument_list|(
-name|value
-argument_list|,
-name|color_config
-operator|->
-name|profile_path
 argument_list|)
 expr_stmt|;
 break|break;

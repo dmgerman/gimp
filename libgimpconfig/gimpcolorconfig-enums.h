@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0ffe000103
+DECL|enum|__anon275b0a730103
 block|{
 DECL|enumerator|GIMP_COLOR_MANAGEMENT_OFF
 name|GIMP_COLOR_MANAGEMENT_OFF
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0ffe000203
+DECL|enum|__anon275b0a730203
 block|{
 DECL|enumerator|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
@@ -123,7 +123,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0ffe000303
+DECL|enum|__anon275b0a730303
 block|{
 DECL|enumerator|GIMP_COLOR_FILE_OPEN_ASK
 name|GIMP_COLOR_FILE_OPEN_ASK

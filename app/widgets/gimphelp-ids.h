@@ -2681,6 +2681,14 @@ value|"gimp-prefs-monitor"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_COLOR_MANAGEMENT
+define|#
+directive|define
+name|GIMP_HELP_PREFS_COLOR_MANAGEMENT
+value|"gimp-prefs-color-management"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_WINDOW_MANAGEMENT
 define|#
 directive|define
