@@ -132,7 +132,7 @@ DECL|macro|CLONE_DEFAULT_ALIGNED
 define|#
 directive|define
 name|CLONE_DEFAULT_ALIGNED
-value|AlignNo
+value|ALIGN_NO
 end_define
 
 begin_comment
@@ -142,16 +142,16 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b540f80103
+DECL|enum|__anon2ab3f5000103
 block|{
-DECL|enumerator|AlignNo
-name|AlignNo
+DECL|enumerator|ALIGN_NO
+name|ALIGN_NO
 block|,
-DECL|enumerator|AlignYes
-name|AlignYes
+DECL|enumerator|ALIGN_YES
+name|ALIGN_YES
 block|,
-DECL|enumerator|AlignRegister
-name|AlignRegister
+DECL|enumerator|ALIGN_REGISTERED
+name|ALIGN_REGISTERED
 DECL|typedef|AlignType
 block|}
 name|AlignType
@@ -1373,7 +1373,7 @@ name|clone_options
 operator|->
 name|aligned
 operator|==
-name|AlignRegister
+name|ALIGN_REGISTERED
 condition|)
 block|{
 name|offset_x
@@ -1499,7 +1499,7 @@ name|clone_options
 operator|->
 name|aligned
 operator|==
-name|AlignNo
+name|ALIGN_NO
 condition|)
 block|{
 name|first
@@ -1558,7 +1558,7 @@ name|clone_options
 operator|->
 name|aligned
 operator|==
-name|AlignNo
+name|ALIGN_NO
 operator|&&
 operator|!
 name|first
