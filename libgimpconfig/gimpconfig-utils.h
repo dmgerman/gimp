@@ -66,6 +66,22 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_config_reset_property
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_config_string_append_escaped
 parameter_list|(
 name|GString

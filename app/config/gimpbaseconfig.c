@@ -57,30 +57,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_decl_stmt
-DECL|variable|gimp_base_config_default_swap_path
-specifier|const
-name|gchar
-modifier|*
-name|gimp_base_config_default_swap_path
-init|=
-literal|"${gimp_dir}"
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gimp_base_config_default_temp_path
-specifier|const
-name|gchar
-modifier|*
-name|gimp_base_config_default_temp_path
-init|=
-literal|"${gimp_dir}"
-name|G_DIR_SEPARATOR_S
-literal|"tmp"
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 specifier|static
 name|void
@@ -154,7 +130,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b021ac40103
+DECL|enum|__anon2a0cc5d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -328,7 +304,9 @@ name|TEMP_PATH_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR
 argument_list|,
-name|gimp_base_config_default_temp_path
+literal|"${gimp_dir}"
+name|G_DIR_SEPARATOR_S
+literal|"tmp"
 argument_list|,
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
@@ -345,7 +323,7 @@ name|SWAP_PATH_BLURB
 argument_list|,
 name|GIMP_CONFIG_PATH_DIR
 argument_list|,
-name|gimp_base_config_default_swap_path
+literal|"${gimp_dir}"
 argument_list|,
 name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
