@@ -7575,11 +7575,6 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|g_print
-argument_list|(
-literal|"boo\n"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gdisp
