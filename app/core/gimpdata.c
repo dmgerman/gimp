@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fc2c120103
+DECL|enum|__anon2b0c1a8f0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -926,9 +926,12 @@ argument_list|(
 literal|"Could not delete '%s': %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|data
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

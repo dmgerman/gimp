@@ -994,9 +994,12 @@ name|def
 operator|->
 name|domain_path
 condition|?
+name|gimp_filename_to_utf8
+argument_list|(
 name|def
 operator|->
 name|domain_path
+argument_list|)
 else|:
 literal|"(null)"
 argument_list|)
@@ -1218,9 +1221,12 @@ argument_list|(
 literal|"Initializing plug-in: '%s'\n"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|plug_in_def
 operator|->
 name|prog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_call_init
@@ -2268,9 +2274,12 @@ name|g_printerr
 argument_list|(
 literal|"executable not found: '%s'\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|plug_in_def
 operator|->
 name|prog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_def_free

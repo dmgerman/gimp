@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c66dcab0103
+DECL|enum|__anon278b7cac0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -5217,10 +5217,16 @@ literal|"Could not execute plug-in \"%s\"\n(%s)\n"
 literal|"because the GIMP is using an older version of the "
 literal|"plug-in protocol."
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|g_get_prgname
 argument_list|()
+argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|progname
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -5243,10 +5249,16 @@ literal|"Could not execute plug-in \"%s\"\n(%s)\n"
 literal|"because it uses an obsolete version of the "
 literal|"plug-in protocol."
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|g_get_prgname
 argument_list|()
+argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|progname
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit

@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b225630103
+DECL|enum|__anon2b8da0960103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b225630203
+DECL|enum|__anon2b8da0960203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -442,7 +442,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b225630303
+DECL|enum|__anon2b8da0960303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -465,7 +465,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b225630408
+DECL|struct|__anon2b8da0960408
 block|{
 DECL|member|directory
 name|gboolean
@@ -4559,7 +4559,12 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot create folder: %s"
+literal|"Cannot create folder '%s': %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|dest
 argument_list|)
 argument_list|,
 name|g_strerror

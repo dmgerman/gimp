@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b453e9f0108
+DECL|struct|__anon2a203fd40108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b453e9f0208
+DECL|struct|__anon2a203fd40208
 block|{
 DECL|member|id
 name|gchar
@@ -1130,7 +1130,10 @@ argument_list|(
 literal|"No paths found in '%s'"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -3594,7 +3597,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b453e9f0308
+DECL|struct|__anon2a203fd40308
 block|{
 DECL|member|strokes
 name|GList

@@ -88,6 +88,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config-types.h"
 end_include
 
@@ -318,7 +324,10 @@ argument_list|(
 literal|"Could not create temporary file for '%s': %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -368,7 +377,10 @@ argument_list|(
 literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1827,9 +1839,12 @@ literal|"Error writing to temporary file for '%s': %s\n"
 literal|"The original file has not been touched."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|writer
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1854,9 +1869,12 @@ literal|"Error writing to temporary file for '%s': %s\n"
 literal|"No file has been created."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|writer
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1888,9 +1906,12 @@ argument_list|(
 literal|"Error writing to '%s': %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|writer
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1953,9 +1974,12 @@ argument_list|(
 literal|"Could not create '%s': %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|writer
 operator|->
 name|filename
+argument_list|)
 argument_list|,
 name|g_strerror
 argument_list|(

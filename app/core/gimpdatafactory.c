@@ -1655,9 +1655,12 @@ literal|"Trying legacy loader on file '%s' "
 literal|"with unknown extension."
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|file_data
 operator|->
 name|filename
+argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto

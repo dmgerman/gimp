@@ -2063,7 +2063,10 @@ argument_list|(
 literal|"\nUsage: %s [option ... ] [file ... ]\n\n"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|progname
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_print
