@@ -431,6 +431,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|gui_get_theme_dir
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -548,6 +562,12 @@ operator|->
 name|gui_get_display_name_func
 operator|=
 name|gui_get_display_name
+expr_stmt|;
+name|gimp
+operator|->
+name|gui_get_theme_dir_func
+operator|=
+name|gui_get_theme_dir
 expr_stmt|;
 block|}
 end_function
@@ -1245,6 +1265,28 @@ argument_list|)
 return|;
 return|return
 name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gui_get_theme_dir (Gimp * gimp)
+name|gui_get_theme_dir
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+return|return
+name|themes_get_theme_dir
+argument_list|(
+name|gimp
+argument_list|)
 return|;
 block|}
 end_function
