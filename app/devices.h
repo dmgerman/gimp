@@ -23,7 +23,7 @@ file|"tools.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon28b2429a0103
+DECL|enum|__anon29f428cb0103
 typedef|typedef
 enum|enum
 block|{
@@ -198,6 +198,19 @@ parameter_list|,
 name|guchar
 name|foreground
 index|[]
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Free device status (only for session-managment) */
+end_comment
+
+begin_function_decl
+name|void
+name|device_status_free
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

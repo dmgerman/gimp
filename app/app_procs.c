@@ -2581,6 +2581,9 @@ expr_stmt|;
 name|procedural_db_free
 argument_list|()
 expr_stmt|;
+name|device_status_free
+argument_list|()
+expr_stmt|;
 name|menus_quit
 argument_list|()
 expr_stmt|;

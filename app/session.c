@@ -311,6 +311,32 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|device_status_session_info
+name|SessionInfo
+name|device_status_session_info
+init|=
+block|{
+literal|"device-status"
+block|,
+operator|(
+name|GtkItemFactoryCallback
+operator|)
+name|dialogs_device_status_cmd_callback
+block|,
+literal|0
+block|,
+literal|600
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|FALSE
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* public functions */
 end_comment
