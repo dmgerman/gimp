@@ -1446,7 +1446,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon299eb02f0108
+DECL|struct|__anon295aae830108
 typedef|typedef
 struct|struct
 block|{
@@ -4248,13 +4248,9 @@ if|if
 condition|(
 name|active
 condition|)
-name|pattern_select_select
+name|select_pattern
 argument_list|(
-name|psp
-argument_list|,
 name|active
-operator|->
-name|index
 argument_list|)
 expr_stmt|;
 comment|/*  update the display  */
