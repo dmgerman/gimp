@@ -507,6 +507,14 @@ operator|&
 name|argv
 argument_list|)
 expr_stmt|;
+name|setlocale
+argument_list|(
+name|LC_NUMERIC
+argument_list|,
+literal|"C"
+argument_list|)
+expr_stmt|;
+comment|/* gtk seems to zap this during init.. */
 ifdef|#
 directive|ifdef
 name|HAVE_PUTENV
@@ -2037,7 +2045,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2a8010108
+DECL|struct|__anon29f453f10108
 block|{
 DECL|member|test_gint32
 name|gint32
