@@ -119,6 +119,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  private variables  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|tile_hash_table
 specifier|static
@@ -182,6 +186,10 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_tile_ref (GimpTile * tile)
@@ -192,11 +200,13 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-if|if
-condition|(
+name|g_return_if_fail
+argument_list|(
 name|tile
-condition|)
-block|{
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|tile
 operator|->
 name|ref_count
@@ -228,7 +238,6 @@ argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -309,6 +318,15 @@ argument_list|(
 name|tile
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|tile
+operator|->
+name|ref_count
+operator|>
+literal|0
 argument_list|)
 expr_stmt|;
 name|tile
@@ -452,6 +470,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static
