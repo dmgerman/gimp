@@ -241,7 +241,7 @@ argument_list|(
 literal|"Copy to Clipboard"
 argument_list|)
 argument_list|,
-literal|"INDEXED*, RGB*"
+literal|"INDEXED*, RGB*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -276,7 +276,7 @@ argument_list|(
 literal|"Paste from Clipboard"
 argument_list|)
 argument_list|,
-literal|"INDEXED*, RGB*"
+literal|"INDEXED*, RGB*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -737,6 +737,10 @@ condition|(
 name|GIMP_INDEXED_IMAGE
 operator|==
 name|drawable_type
+operator|||
+name|GIMP_GRAY_IMAGE
+operator|==
+name|drawable_type
 condition|)
 block|{
 name|nSizeLine
@@ -908,6 +912,10 @@ operator|(
 name|GIMP_INDEXED_IMAGE
 operator|==
 name|drawable_type
+operator|||
+name|GIMP_GRAY_IMAGE
+operator|==
+name|drawable_type
 condition|?
 literal|8
 else|:
@@ -945,6 +953,10 @@ name|biClrUsed
 operator|=
 operator|(
 name|GIMP_INDEXED_IMAGE
+operator|==
+name|drawable_type
+operator|||
+name|GIMP_GRAY_IMAGE
 operator|==
 name|drawable_type
 condition|?
@@ -987,6 +999,10 @@ operator|(
 name|GIMP_INDEXED_IMAGE
 operator|==
 name|drawable_type
+operator|||
+name|GIMP_GRAY_IMAGE
+operator|==
+name|drawable_type
 operator|)
 condition|)
 block|{
@@ -1021,6 +1037,8 @@ name|unsigned
 name|char
 modifier|*
 name|cmap
+init|=
+name|NULL
 decl_stmt|;
 name|pPal
 operator|=
@@ -1047,6 +1065,12 @@ operator|*
 literal|256
 expr_stmt|;
 comment|/* get the gimp colormap */
+if|if
+condition|(
+name|GIMP_GRAY_IMAGE
+operator|!=
+name|drawable_type
+condition|)
 name|cmap
 operator|=
 name|gimp_image_get_cmap
@@ -1155,6 +1179,83 @@ name|TRUE
 expr_stmt|;
 block|}
 comment|/* (cmap) */
+elseif|else
+if|if
+condition|(
+name|GIMP_GRAY_IMAGE
+operator|==
+name|drawable_type
+condition|)
+block|{
+comment|/* fill with identity palette */
+name|int
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+operator|(
+name|i
+operator|<
+literal|256
+operator|)
+operator|&&
+operator|(
+name|i
+operator|<
+name|nColors
+operator|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|pPal
+index|[
+name|i
+index|]
+operator|.
+name|rgbReserved
+operator|=
+literal|0
+expr_stmt|;
+comment|/* is this alpha? */
+name|pPal
+index|[
+name|i
+index|]
+operator|.
+name|rgbRed
+operator|=
+name|i
+expr_stmt|;
+name|pPal
+index|[
+name|i
+index|]
+operator|.
+name|rgbGreen
+operator|=
+name|i
+expr_stmt|;
+name|pPal
+index|[
+name|i
+index|]
+operator|.
+name|rgbBlue
+operator|=
+name|i
+expr_stmt|;
+block|}
+name|bRet
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 else|else
 name|g_message
 argument_list|(
@@ -1175,7 +1276,7 @@ literal|"Failed to lock DIB Palette"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* indexed */
+comment|/* indexed or grayscale */
 comment|/* following the slow part ... */
 if|if
 condition|(
@@ -1266,6 +1367,10 @@ expr_stmt|;
 if|if
 condition|(
 name|GIMP_INDEXED_IMAGE
+operator|==
+name|drawable_type
+operator|||
+name|GIMP_GRAY_IMAGE
 operator|==
 name|drawable_type
 condition|)
