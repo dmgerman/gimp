@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a09aa7d0103
+DECL|enum|__anon2b55de750103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -14214,20 +14214,36 @@ end_function
 
 begin_function
 name|int
-DECL|function|gimp_image_enable_undo (GimpImage * gimage)
-name|gimp_image_enable_undo
+DECL|function|gimp_image_freeze_undo (GimpImage * gimage)
+name|gimp_image_freeze_undo
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
 block|{
-comment|/*  Free all undo steps as they are now invalidated  */
-name|undo_free
-argument_list|(
 name|gimage
-argument_list|)
+operator|->
+name|undo_on
+operator|=
+name|FALSE
 expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+name|int
+DECL|function|gimp_image_thaw_undo (GimpImage * gimage)
+name|gimp_image_thaw_undo
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
 name|gimage
 operator|->
 name|undo_on
@@ -14250,14 +14266,36 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+return|return
+name|gimp_image_freeze_undo
+argument_list|(
 name|gimage
-operator|->
-name|undo_on
-operator|=
-name|FALSE
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|int
+DECL|function|gimp_image_enable_undo (GimpImage * gimage)
+name|gimp_image_enable_undo
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+comment|/*  Free all undo steps as they are now invalidated  */
+name|undo_free
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|gimp_image_thaw_undo
+argument_list|(
+name|gimage
+argument_list|)
 return|;
 block|}
 end_function
@@ -15240,7 +15278,7 @@ name|mask
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  Based on the type of the layer, project the layer onto the        *   composite preview...        *  Indexed images are actually already converted to RGB and RGBA,        *   so just project them as if they were type "intensity"        *  Send in all TRUE for visible since that info doesn't matter for previews        */
+comment|/*  Based on the type of the layer, project the layer onto the        *   composite preview...        *  Indexed images are actually already converted to RGB and RGBA,        *   so just project them as if they were type "intensity"        *  Send in all TRUE for visible since that info doesn't matter        *   for previews        */
 switch|switch
 condition|(
 name|drawable_type

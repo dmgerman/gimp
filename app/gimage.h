@@ -662,6 +662,22 @@ value|gimp_image_disable_undo
 end_define
 
 begin_define
+DECL|macro|gimage_thaw_undo
+define|#
+directive|define
+name|gimage_thaw_undo
+value|gimp_image_thaw_undo
+end_define
+
+begin_define
+DECL|macro|gimage_freeze_undo
+define|#
+directive|define
+name|gimage_freeze_undo
+value|gimp_image_freeze_undo
+end_define
+
+begin_define
 DECL|macro|gimage_dirty
 define|#
 directive|define

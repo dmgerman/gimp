@@ -15,6 +15,10 @@ begin_comment
 comment|/*   * 21-AUG-99 - Added support for JPEG previews, subsampling,  *             non-baseline JPEGs, restart markers and DCT method choice  * - Steinar H. Gunderson<sgunderson@bigfoot.com>  *  * A small preview appears and changes according to the changes to the  * compression options. The image itself works as a much bigger preview.  * For slower machines, the save operation (not the load operation) is  * done in the background, with a standard GTK+ idle loop, which turned  * out to be the most portable way. Win32 porters shouldn't have much  * difficulty porting my changes (at least I hope so...).  *  * Subsampling is a pretty obscure feature, but I thought it might be nice  * to have it in anyway, for people to play with :-) Does anybody have  * any better suggestions than the ones I've put in the menu? (See wizard.doc  * from the libjpeg distribution for a tiny bit of information on subsampling.)  *  * A baseline JPEG is often larger and/or of worse quality than a non-baseline  * one (especially at low quality settings), but all decoders are guaranteed  * to read baseline JPEGs (I think). Not all will read a non-baseline one.  *  * Restart markers are useful if you are transmitting the image over an  * unreliable network. If a file gets corrupted, it will only be corrupted  * up to the next restart marker. Of course, if there are no restart markers,  * the rest of the image will be corrupted. Restart markers take up extra  * space. The libjpeg developers recommend a restart every 1 row for  * transmitting images over unreliable networks, such as Usenet.  *  * The DCT method is said by the libjpeg docs to _only_ influence quality vs.  * speed, and nothing else. However, I've found that there _are_ size  * differences. Fast integer, on the other hand, is faster than integer,  * which in turn is faster than FP. According to the libjpeg docs (and I  * believe it's true), FP has only a theoretical advantage in quality, and  * will be slower than the two other methods, unless you're blessed with  * very a fast FPU. (In addition, images might not be identical on  * different types of FP hardware.)  *  * ...and thus ends my additions to the JPEG plug-in. I hope. *sigh* :-)  */
 end_comment
 
+begin_comment
+comment|/*   * 21-AUG-99 - Bunch O' Fixes.  * - Adam D. Moss<adam@gimp.org>  *  * We now correctly create an alpha-padded layer for our preview --  * having a non-background non-alpha layer is a no-no in GIMP.  *  * I've also tweaked the GIMP undo API a little and changed the JPEG  * plugin to use gimp_image_{freeze,thaw}_undo so that it doesn't store  * up a whole load of superfluous tile data every time the preview is  * changed.  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -245,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d73010108
+DECL|struct|__anon274d48740108
 block|{
 DECL|member|quality
 name|gdouble
@@ -292,7 +296,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d73010208
+DECL|struct|__anon274d48740208
 block|{
 DECL|member|run
 name|gint
@@ -307,7 +311,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d73010308
+DECL|struct|__anon274d48740308
 block|{
 DECL|member|cinfo
 name|struct
@@ -948,7 +952,7 @@ name|PARAM_INT32
 block|,
 literal|"optimize"
 block|,
-literal|"Optimization of entropy encoding parameters"
+literal|"Optimization of entropy encoding parameters (0/1)"
 block|}
 block|,
 block|{
@@ -956,7 +960,7 @@ name|PARAM_INT32
 block|,
 literal|"progressive"
 block|,
-literal|"Enable progressive jpeg image loading - ignored if not compiled with HAVE_PROGRESSIVE_JPEG"
+literal|"Enable progressive jpeg image loading - ignored if not compiled with HAVE_PROGRESSIVE_JPEG (0/1)"
 block|}
 block|,
 block|{
@@ -980,7 +984,7 @@ name|PARAM_INT32
 block|,
 literal|"baseline"
 block|,
-literal|"Force creation of a baseline JPEG (non-baseline JPEGs can't be read by all decoders)"
+literal|"Force creation of a baseline JPEG (non-baseline JPEGs can't be read by all decoders) (0/1)"
 block|}
 block|,
 block|{
@@ -1636,8 +1640,13 @@ block|}
 endif|#
 directive|endif
 comment|/* GIMP_HAVE_PARASITES */
-comment|/* sg - reduce the number of undo slots used for the preview */
+comment|/* we start an undo_group and immediately freeze undo saving 	     so that we can avoid sucking up tile cache with our unneeded 	     preview steps. */
 name|gimp_undo_push_group_start
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+name|gimp_image_freeze_undo
 argument_list|(
 name|image_ID
 argument_list|)
@@ -1663,6 +1672,12 @@ name|err
 operator|=
 name|save_dialog
 argument_list|()
+expr_stmt|;
+comment|/* thaw undo saving and end the undo_group. */
+name|gimp_image_thaw_undo
+argument_list|(
+name|image_ID
+argument_list|)
 expr_stmt|;
 name|gimp_undo_push_group_end
 argument_list|(
@@ -2593,6 +2608,12 @@ name|buf
 decl_stmt|;
 name|guchar
 modifier|*
+name|padded_buf
+init|=
+name|NULL
+decl_stmt|;
+name|guchar
+modifier|*
 modifier|*
 name|rowbuf
 decl_stmt|;
@@ -3009,6 +3030,31 @@ operator|.
 name|output_components
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|preview
+condition|)
+name|padded_buf
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|tile_height
+operator|*
+name|cinfo
+operator|.
+name|output_width
+operator|*
+operator|(
+name|cinfo
+operator|.
+name|output_components
+operator|+
+literal|1
+operator|)
+argument_list|)
+expr_stmt|;
 name|rowbuf
 operator|=
 name|g_new
@@ -3049,7 +3095,7 @@ name|output_components
 operator|*
 name|i
 expr_stmt|;
-comment|/* Create a new image of the proper size and associate the filename with it.    */
+comment|/* Create a new image of the proper size and associate the filename with it.       Preview layers, not being on the bottom of a layer stack, MUST HAVE      AN ALPHA CHANNEL!    */
 switch|switch
 condition|(
 name|cinfo
@@ -3066,6 +3112,10 @@ name|GRAY
 expr_stmt|;
 name|layer_type
 operator|=
+name|preview
+condition|?
+name|GRAYA_IMAGE
+else|:
 name|GRAY_IMAGE
 expr_stmt|;
 break|break;
@@ -3078,6 +3128,10 @@ name|RGB
 expr_stmt|;
 name|layer_type
 operator|=
+name|preview
+condition|?
+name|RGBA_IMAGE
+else|:
 name|RGB_IMAGE
 expr_stmt|;
 break|break;
@@ -3433,11 +3487,159 @@ literal|1
 argument_list|)
 expr_stmt|;
 comment|/*       for (i = start; i< end; i++) 	gimp_pixel_rgn_set_row (&pixel_rgn, tilerow[i - start], 0, i, drawable->width); 	*/
+if|if
+condition|(
+name|preview
+condition|)
+comment|/* Add a dummy alpha channel -- convert buf to padded_buf */
+block|{
+name|guchar
+modifier|*
+name|dest
+init|=
+name|padded_buf
+decl_stmt|;
+name|guchar
+modifier|*
+name|src
+init|=
+name|buf
+decl_stmt|;
+name|gint
+name|num
+init|=
+name|drawable
+operator|->
+name|width
+operator|*
+name|scanlines
+decl_stmt|;
+switch|switch
+condition|(
+name|cinfo
+operator|.
+name|output_components
+condition|)
+block|{
+case|case
+literal|1
+case|:
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|num
+condition|;
+name|i
+operator|++
+control|)
+block|{
+operator|*
+operator|(
+name|dest
+operator|++
+operator|)
+operator|=
+operator|*
+operator|(
+name|src
+operator|++
+operator|)
+expr_stmt|;
+operator|*
+operator|(
+name|dest
+operator|++
+operator|)
+operator|=
+literal|255
+expr_stmt|;
+block|}
+break|break;
+case|case
+literal|3
+case|:
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|num
+condition|;
+name|i
+operator|++
+control|)
+block|{
+operator|*
+operator|(
+name|dest
+operator|++
+operator|)
+operator|=
+operator|*
+operator|(
+name|src
+operator|++
+operator|)
+expr_stmt|;
+operator|*
+operator|(
+name|dest
+operator|++
+operator|)
+operator|=
+operator|*
+operator|(
+name|src
+operator|++
+operator|)
+expr_stmt|;
+operator|*
+operator|(
+name|dest
+operator|++
+operator|)
+operator|=
+operator|*
+operator|(
+name|src
+operator|++
+operator|)
+expr_stmt|;
+operator|*
+operator|(
+name|dest
+operator|++
+operator|)
+operator|=
+literal|255
+expr_stmt|;
+block|}
+break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"JPEG - shouldn't have gotten here.  Report to adam@gimp.org"
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 name|gimp_pixel_rgn_set_rect
 argument_list|(
 operator|&
 name|pixel_rgn
 argument_list|,
+name|preview
+condition|?
+name|padded_buf
+else|:
 name|buf
 argument_list|,
 literal|0
@@ -3502,6 +3704,15 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|buf
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|preview
+condition|)
+name|g_free
+argument_list|(
+name|padded_buf
 argument_list|)
 expr_stmt|;
 comment|/* After finish_decompress, we can close the input file.    * Here we postpone it until after no more JPEG errors are possible,    * so as to simplify the setjmp error logic above.  (Actually, I don't    * think that jpeg_destroy can do an error exit, but why assume anything...)    */
