@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpText  * Copyright (C) 2002-2003  Sven Neumann<sven@gimp.org>  *  * Some of this code was copied from Pango (pangox-fontmap.c)  * and was originally written by Owen Taylor<otaylor@redhat.com>.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpText  * Copyright (C) 2002-2004  Sven Neumann<sven@gimp.org>  *  * Some of this code was copied from Pango (pangox-fontmap.c)  * and was originally written by Owen Taylor<otaylor@redhat.com>.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -65,7 +65,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b483cf0103
+DECL|enum|__anon2ac2c9740103
 block|{
 DECL|enumerator|XLFD_FOUNDRY
 name|XLFD_FOUNDRY
@@ -160,7 +160,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_text_font_name_from_xlfd:  * @xlfd: X Logical Font Description  *   * Attempts to extract a meaningful font name from the "family",  * "weight", "slant" and "stretch" fields of an X Logical Font  * Description.  *   * Return value: a newly allocated string.  **/
+comment|/**  * gimp_text_font_name_from_xlfd:  * @xlfd: X Logical Font Description  *  * Attempts to extract a meaningful font name from the "family",  * "weight", "slant" and "stretch" fields of an X Logical Font  * Description.  *  * Return value: a newly allocated string.  **/
 end_comment
 
 begin_function
@@ -424,7 +424,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_font_size_from_xlfd:  * @xlfd: X Logical Font Description  * @size: return location for the font size  * @size_unit: return location for the font size unit  *   * Attempts to extract the font size from an X Logical Font  * Description.  *   * Return value: %TRUE on success, %FALSE otherwise.  **/
+comment|/**  * gimp_text_font_size_from_xlfd:  * @xlfd: X Logical Font Description  * @size: return location for the font size  * @size_unit: return location for the font size unit  *  * Attempts to extract the font size from an X Logical Font  * Description.  *  * Return value: %TRUE on success, %FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -520,6 +520,8 @@ name|atoi
 argument_list|(
 name|field
 argument_list|)
+operator|/
+literal|10.0
 expr_stmt|;
 operator|*
 name|size_unit
@@ -537,7 +539,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_set_font_from_xlfd:  * @text: a #GimpText object  * @xlfd: X Logical Font Description  *   * Attempts to extract font name and font size from @xlfd and sets  * them on the #GimpText object.  **/
+comment|/**  * gimp_text_set_font_from_xlfd:  * @text: a #GimpText object  * @xlfd: X Logical Font Description  *  * Attempts to extract font name and font size from @xlfd and sets  * them on the #GimpText object.  **/
 end_comment
 
 begin_function
@@ -586,6 +588,24 @@ argument_list|(
 name|xlfd
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+name|GIMP_TEXT_DEBUG
+name|g_printerr
+argument_list|(
+literal|"XLFD: %s  font: %s\n"
+argument_list|,
+name|xlfd
+argument_list|,
+name|font
+condition|?
+name|font
+else|:
+literal|"(null)"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|gimp_text_font_size_from_xlfd
@@ -689,9 +709,10 @@ decl_stmt|;
 name|gint
 name|countdown
 decl_stmt|,
-name|len
-decl_stmt|,
 name|num_dashes
+decl_stmt|;
+name|gsize
+name|len
 decl_stmt|;
 if|if
 condition|(
@@ -702,16 +723,16 @@ return|return
 name|NULL
 return|;
 comment|/* we assume this is a valid fontname...that is, it has 14 fields */
-name|countdown
-operator|=
-name|field_num
-expr_stmt|;
+for|for
+control|(
 name|t1
 operator|=
 name|fontname
-expr_stmt|;
-while|while
-condition|(
+operator|,
+name|countdown
+operator|=
+name|field_num
+init|;
 operator|*
 name|t1
 operator|&&
@@ -720,12 +741,14 @@ name|countdown
 operator|>=
 literal|0
 operator|)
-condition|)
+condition|;
+name|t1
+operator|++
+control|)
 if|if
 condition|(
 operator|*
 name|t1
-operator|++
 operator|==
 literal|'-'
 condition|)
@@ -773,21 +796,21 @@ break|break;
 block|}
 if|if
 condition|(
-name|t1
-operator|!=
 name|t2
+operator|>
+name|t1
 condition|)
 block|{
 comment|/* Check we don't overflow the buffer */
 name|len
 operator|=
 operator|(
-name|long
+name|gsize
 operator|)
 name|t2
 operator|-
 operator|(
-name|long
+name|gsize
 operator|)
 name|t1
 expr_stmt|;
@@ -852,9 +875,11 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 return|return
 name|NULL
 return|;
+block|}
 return|return
 name|buffer
 return|;

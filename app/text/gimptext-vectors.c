@@ -437,7 +437,7 @@ name|start
 decl_stmt|;
 if|#
 directive|if
-name|TEXT_DEBUG
+name|GIMP_TEXT_DEBUG
 name|g_printerr
 argument_list|(
 literal|"moveto  %f, %f\n"
@@ -543,7 +543,7 @@ name|end
 decl_stmt|;
 if|#
 directive|if
-name|TEXT_DEBUG
+name|GIMP_TEXT_DEBUG
 name|g_printerr
 argument_list|(
 literal|"lineto  %f, %f\n"
@@ -635,7 +635,7 @@ name|end
 decl_stmt|;
 if|#
 directive|if
-name|TEXT_DEBUG
+name|GIMP_TEXT_DEBUG
 name|g_printerr
 argument_list|(
 literal|"conicto %f, %f\n"
@@ -747,7 +747,7 @@ name|end
 decl_stmt|;
 if|#
 directive|if
-name|TEXT_DEBUG
+name|GIMP_TEXT_DEBUG
 name|g_printerr
 argument_list|(
 literal|"cubicto %f, %f\n"
