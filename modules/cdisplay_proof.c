@@ -113,7 +113,7 @@ name|INTENT_PERCEPTUAL
 block|,
 literal|"INTENT_PERCEPTUAL"
 block|,
-literal|"perceptual    "
+literal|"perceptual"
 block|}
 block|,
 block|{
@@ -329,7 +329,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c24fbe30103
+DECL|enum|__anon2928ded80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
