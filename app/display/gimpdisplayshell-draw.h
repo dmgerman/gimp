@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"toolsF.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gdisplayF.h"
 end_include
 
 begin_comment

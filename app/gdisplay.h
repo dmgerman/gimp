@@ -34,6 +34,12 @@ directive|include
 file|"selection.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gdisplayF.h"
+end_include
+
 begin_comment
 comment|/*  *  Global variables  *  */
 end_comment
@@ -108,40 +114,6 @@ end_comment
 begin_comment
 comment|/* unused - == MIN */
 end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2bb04cd20103
-block|{
-DECL|enumerator|SelectionOff
-name|SelectionOff
-block|,
-DECL|enumerator|SelectionLayerOff
-name|SelectionLayerOff
-block|,
-DECL|enumerator|SelectionOn
-name|SelectionOn
-block|,
-DECL|enumerator|SelectionPause
-name|SelectionPause
-block|,
-DECL|enumerator|SelectionResume
-name|SelectionResume
-DECL|typedef|SelectionControl
-block|}
-name|SelectionControl
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GDisplay
-typedef|typedef
-name|struct
-name|_GDisplay
-name|GDisplay
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GDisplay

@@ -19,17 +19,14 @@ end_define
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
+file|"boundaryF.h"
 end_include
 
-begin_typedef
-DECL|typedef|BoundSeg
-typedef|typedef
-name|struct
-name|_BoundSeg
-name|BoundSeg
-typedef|;
-end_typedef
+begin_include
+include|#
+directive|include
+file|"paint_funcs.h"
+end_include
 
 begin_struct
 DECL|struct|_BoundSeg
@@ -61,22 +58,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon27e787b00103
-block|{
-DECL|enumerator|WithinBounds
-name|WithinBounds
-block|,
-DECL|enumerator|IgnoreBounds
-name|IgnoreBounds
-DECL|typedef|BoundaryType
-block|}
-name|BoundaryType
-typedef|;
-end_typedef
 
 begin_function_decl
 name|BoundSeg

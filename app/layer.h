@@ -62,24 +62,11 @@ name|DISCARD
 value|1
 end_define
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b4578640103
-block|{
-DECL|enumerator|WhiteMask
-name|WhiteMask
-block|,
-DECL|enumerator|BlackMask
-name|BlackMask
-block|,
-DECL|enumerator|AlphaMask
-name|AlphaMask
-DECL|typedef|AddMaskType
-block|}
-name|AddMaskType
-typedef|;
-end_typedef
+begin_include
+include|#
+directive|include
+file|"layerF.h"
+end_include
 
 begin_comment
 comment|/* structure declarations */
@@ -189,68 +176,6 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_LAYER_MASK))
 end_define
 
-begin_typedef
-DECL|typedef|GimpLayer
-typedef|typedef
-name|struct
-name|_GimpLayer
-name|GimpLayer
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpLayerClass
-typedef|typedef
-name|struct
-name|_GimpLayerClass
-name|GimpLayerClass
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpLayerMask
-typedef|typedef
-name|struct
-name|_GimpLayerMask
-name|GimpLayerMask
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpLayerMaskClass
-typedef|typedef
-name|struct
-name|_GimpLayerMaskClass
-name|GimpLayerMaskClass
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|Layer
-typedef|typedef
-name|GimpLayer
-name|Layer
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|Layer
-comment|/* convenience */
-end_comment
-
-begin_typedef
-DECL|typedef|LayerMask
-typedef|typedef
-name|GimpLayerMask
-name|LayerMask
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|LayerMask
-comment|/* convenience */
-end_comment
-
 begin_function_decl
 name|GtkType
 name|gimp_layer_get_type
@@ -272,15 +197,6 @@ end_function_decl
 begin_comment
 comment|/*  Special undo types  */
 end_comment
-
-begin_typedef
-DECL|typedef|LayerUndo
-typedef|typedef
-name|struct
-name|_layer_undo
-name|LayerUndo
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_layer_undo
@@ -313,15 +229,6 @@ comment|/*  or a remove layer undo?  */
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|LayerMaskUndo
-typedef|typedef
-name|struct
-name|_layer_mask_undo
-name|LayerMaskUndo
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_layer_mask_undo
@@ -369,15 +276,6 @@ comment|/*  or a remove layer mask   */
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|FStoLayerUndo
-typedef|typedef
-name|struct
-name|_fs_to_layer_undo
-name|FStoLayerUndo
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_fs_to_layer_undo

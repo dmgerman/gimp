@@ -107,11 +107,9 @@ directive|include
 file|"procedural_db.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"tile_swap.h"
-end_include
+begin_comment
+comment|/* #include "tile_swap.h"*/
+end_comment
 
 begin_include
 include|#
@@ -166,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3c3dd70103
+DECL|enum|__anon2b9e7b7d0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -271,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3c3dd70203
+DECL|enum|__anon2b9e7b7d0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE

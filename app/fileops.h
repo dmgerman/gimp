@@ -22,6 +22,12 @@ directive|include
 file|"gtk/gtk.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimageF.h"
+end_include
+
 begin_function_decl
 name|void
 name|file_ops_pre_init

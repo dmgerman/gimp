@@ -83,8 +83,14 @@ directive|include
 file|"tile_manager_pvt.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
 begin_typedef
-DECL|struct|__anon2c6ab3e90108
+DECL|struct|__anon2b924e010108
 typedef|typedef
 struct|struct
 block|{

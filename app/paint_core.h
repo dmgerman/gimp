@@ -34,6 +34,12 @@ directive|include
 file|"gimpbrush.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdrawableF.h"
+end_include
+
 begin_comment
 comment|/* the different states that the painting function can be called with  */
 end_comment

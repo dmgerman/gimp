@@ -28,6 +28,18 @@ directive|include
 file|"procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gdisplayF.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimage.h"
+end_include
+
 begin_comment
 comment|/*  by_color select functions  */
 end_comment

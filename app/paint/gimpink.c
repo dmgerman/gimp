@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -3599,7 +3605,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29d2e23d0103
+DECL|enum|__anon2c3c0a8e0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
