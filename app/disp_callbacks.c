@@ -3238,6 +3238,11 @@ argument_list|(
 name|dest_gimage
 argument_list|)
 expr_stmt|;
+name|gdisplay_update_title
+argument_list|(
+name|gdisp
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 block|}
