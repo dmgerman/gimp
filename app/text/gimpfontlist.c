@@ -761,7 +761,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This is copied straight from _pango_fc_font_desc_from_pattern, minus  * the size bits. */
+comment|/* This is copied straight from _pango_fc_font_desc_from_pattern, minus  * the size bits.  * FIXME: Use pango_fc_font_description_from_pattern from 1.4 when we can.  */
 end_comment
 
 begin_function
@@ -789,20 +789,23 @@ decl_stmt|;
 name|PangoStretch
 name|stretch
 decl_stmt|;
-name|gchar
+name|FcChar8
 modifier|*
 name|s
 decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|FcResult
+name|res
+decl_stmt|;
 name|desc
 operator|=
 name|pango_font_description_new
 argument_list|()
 expr_stmt|;
-name|g_assert
-argument_list|(
+name|res
+operator|=
 name|FcPatternGetString
 argument_list|(
 name|pattern
@@ -819,6 +822,10 @@ operator|)
 operator|&
 name|s
 argument_list|)
+expr_stmt|;
+name|g_assert
+argument_list|(
+name|res
 operator|==
 name|FcResultMatch
 argument_list|)
@@ -827,6 +834,10 @@ name|pango_font_description_set_family
 argument_list|(
 name|desc
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|s
 argument_list|)
 expr_stmt|;
@@ -853,6 +864,14 @@ name|i
 condition|)
 block|{
 case|case
+name|FC_SLANT_ROMAN
+case|:
+name|style
+operator|=
+name|PANGO_STYLE_NORMAL
+expr_stmt|;
+break|break;
+case|case
 name|FC_SLANT_ITALIC
 case|:
 name|style
@@ -868,9 +887,6 @@ operator|=
 name|PANGO_STYLE_OBLIQUE
 expr_stmt|;
 break|break;
-case|case
-name|FC_SLANT_ROMAN
-case|:
 default|default:
 name|style
 operator|=
@@ -1027,6 +1043,14 @@ name|i
 condition|)
 block|{
 case|case
+name|FC_WIDTH_NORMAL
+case|:
+name|stretch
+operator|=
+name|PANGO_STRETCH_NORMAL
+expr_stmt|;
+break|break;
+case|case
 name|FC_WIDTH_ULTRACONDENSED
 case|:
 name|stretch
@@ -1090,9 +1114,6 @@ operator|=
 name|PANGO_STRETCH_ULTRA_EXPANDED
 expr_stmt|;
 break|break;
-case|case
-name|FC_WIDTH_NORMAL
-case|:
 default|default:
 name|stretch
 operator|=
