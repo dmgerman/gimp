@@ -1,22 +1,14 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIF loading file filter for The GIMP version 1.0/1.1  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 1.0.3 - 2000/03/31  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
+comment|/* GIF loading file filter for The GIMP 1.3/1.4  * +-------------------------------------------------------------------+  * |  Copyright Adam D. Moss, Peter Mattis, Spencer Kimball            |  * +-------------------------------------------------------------------+  * Version 1.50.4 - 2003/06/03  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
 end_comment
 
 begin_comment
-comment|/*  * This filter uses code taken from the "giftopnm" and "ppmtogif" programs  *    which are part of the "netpbm" package.  */
+comment|/* Copyright notice for old GIF code from which this plugin was long ago */
 end_comment
 
 begin_comment
-comment|/*  *  "The Graphics Interchange Format(c) is the Copyright property of  *  CompuServe Incorporated.  GIF(sm) is a Service Mark property of  *  CompuServe Incorporated."   */
-end_comment
-
-begin_comment
-comment|/* Copyright notice for GIF code from which this plugin was long ago     */
-end_comment
-
-begin_comment
-comment|/* derived (David Koblas has granted permission to relicense):           */
+comment|/* derived (David Koblas has kindly granted permission to relicense):    */
 end_comment
 
 begin_comment
@@ -32,7 +24,15 @@ comment|/* +-------------------------------------------------------------------+
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY  *  * 2000/03/31  * 1.00.03 - Just mildly more useful comments/messages concerning frame  *     disposals.  *  * 99/11/20  * 1.00.02 - Fixed a couple of possible infinite loops where an  *     error condition was not being checked.  Also changed some g_message()s  *     back to g_warning()s as they should be (don't get carried away with  *     the user feedback fellahs, no-one wants to be told of every single  *     corrupt byte and block in its own little window.  :-( ).  *  * 99/11/11  * 1.00.01 - Fixed an uninitialized variable which has been around  *     forever... thanks to jrb@redhat.com for noticing that there  *     was a problem somewhere!  *  * 99/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
+comment|/* Also...  * 'This filter uses code taken from the "giftopnm" and "ppmtogif" programs  *    which are part of the "netpbm" package.'  */
+end_comment
+
+begin_comment
+comment|/* Additionally...  *  "The Graphics Interchange Format(c) is the Copyright property of  *  CompuServe Incorporated.  GIF(sm) is a Service Mark property of  *  CompuServe Incorporated."   */
+end_comment
+
+begin_comment
+comment|/*  * REVISION HISTORY  *  * 2003/06/03  * 1.50.04 - When initializing the LZW state, watch out for a completely  *     bogus input_code_size [based on fix by Raphael Quinet]  *     Also, fix a stupid old bug when clearing the code table between  *     subimages.  (Enables us to deal better with errors when the stream is  *     corrupted pretty early in a subimage.) [adam]  *     Minor-version-bump to distinguish between gimp1.2/1.4 branches.  *  * 2000/03/31  * 1.00.03 - Just mildly more useful comments/messages concerning frame  *     disposals.  *  * 1999/11/20  * 1.00.02 - Fixed a couple of possible infinite loops where an  *     error condition was not being checked.  Also changed some g_message()s  *     back to g_warning()s as they should be (don't get carried away with  *     the user feedback fellahs, no-one wants to be told of every single  *     corrupt byte and block in its own little window.  :-( ).  *  * 1999/11/11  * 1.00.01 - Fixed an uninitialized variable which has been around  *     forever... thanks to jrb@redhat.com for noticing that there  *     was a problem somewhere!  *  * 1999/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
 end_comment
 
 begin_comment
@@ -705,7 +705,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2962ed810108
+DECL|struct|__anon27944e330108
 block|{
 DECL|member|Width
 name|unsigned
@@ -755,7 +755,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2962ed810208
+DECL|struct|__anon27944e330208
 block|{
 DECL|member|transparent
 name|int
@@ -1438,7 +1438,7 @@ literal|','
 condition|)
 block|{
 comment|/* Not a valid start character */
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"GIF: bogus character 0x%02x, ignoring\n"
 argument_list|,
@@ -2757,7 +2757,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|LZWReadByte (FILE * fd,int flag,int input_code_size)
+DECL|function|LZWReadByte (FILE * fd,int just_reset_LZW,int input_code_size)
 name|LZWReadByte
 parameter_list|(
 name|FILE
@@ -2765,7 +2765,7 @@ modifier|*
 name|fd
 parameter_list|,
 name|int
-name|flag
+name|just_reset_LZW
 parameter_list|,
 name|int
 name|input_code_size
@@ -2844,9 +2844,26 @@ name|i
 decl_stmt|;
 if|if
 condition|(
-name|flag
+name|just_reset_LZW
 condition|)
 block|{
+if|if
+condition|(
+name|input_code_size
+operator|>
+name|MAX_LZW_BITS
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"GIF: value out of range for code size (corrupted file?)"
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 name|set_code_size
 operator|=
 name|input_code_size
@@ -2893,6 +2910,10 @@ expr_stmt|;
 name|fresh
 operator|=
 name|TRUE
+expr_stmt|;
+name|sp
+operator|=
+name|stack
 expr_stmt|;
 for|for
 control|(
@@ -2943,6 +2964,7 @@ condition|;
 operator|++
 name|i
 control|)
+block|{
 name|table
 index|[
 literal|0
@@ -2951,20 +2973,19 @@ index|[
 name|i
 index|]
 operator|=
+literal|0
+expr_stmt|;
 name|table
 index|[
 literal|1
 index|]
 index|[
-literal|0
+name|i
 index|]
 operator|=
 literal|0
 expr_stmt|;
-name|sp
-operator|=
-name|stack
-expr_stmt|;
+block|}
 return|return
 literal|0
 return|;
@@ -3091,6 +3112,7 @@ condition|;
 operator|++
 name|i
 control|)
+block|{
 name|table
 index|[
 literal|0
@@ -3099,6 +3121,8 @@ index|[
 name|i
 index|]
 operator|=
+literal|0
+expr_stmt|;
 name|table
 index|[
 literal|1
@@ -3109,6 +3133,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+block|}
 name|code_size
 operator|=
 name|set_code_size
