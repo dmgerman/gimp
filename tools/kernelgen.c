@@ -56,6 +56,14 @@ comment|/*  changing these makes no sense  */
 end_comment
 
 begin_define
+DECL|macro|KERNEL_SUM
+define|#
+directive|define
+name|KERNEL_SUM
+value|256
+end_define
+
+begin_define
 DECL|macro|SUBSAMPLE
 define|#
 directive|define
@@ -297,9 +305,11 @@ control|)
 block|{
 name|w
 operator|=
-literal|256.0
-operator|*
 operator|(
+name|double
+operator|)
+name|KERNEL_SUM
+operator|*
 name|value
 index|[
 name|i
@@ -309,16 +319,19 @@ name|j
 index|]
 operator|/
 name|sum
-operator|)
 expr_stmt|;
 name|printf
 argument_list|(
 literal|" %3d,"
 argument_list|,
-operator|(
+call|(
 name|int
-operator|)
+call|)
+argument_list|(
 name|w
+operator|+
+literal|0.5
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -402,6 +415,13 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
+literal|"#define KERNEL_SUM       %d\n"
+argument_list|,
+name|KERNEL_SUM
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
 literal|"\n\n"
 argument_list|)
 expr_stmt|;
@@ -448,12 +468,10 @@ name|double
 operator|)
 name|j
 operator|/
-call|(
+operator|(
 name|double
-call|)
-argument_list|(
+operator|)
 name|SUBSAMPLE
-argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
@@ -481,12 +499,10 @@ name|double
 operator|)
 name|i
 operator|/
-call|(
+operator|(
 name|double
-call|)
-argument_list|(
+operator|)
 name|SUBSAMPLE
-argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(

@@ -40,6 +40,14 @@ name|KERNEL_SUBSAMPLE
 value|4
 end_define
 
+begin_define
+DECL|macro|KERNEL_SUM
+define|#
+directive|define
+name|KERNEL_SUM
+value|256
+end_define
+
 begin_comment
 comment|/*  Brush pixel subsampling kernels  */
 end_comment
@@ -85,13 +93,13 @@ block|,
 block|{
 literal|25
 block|,
-literal|102
+literal|103
 block|,
 literal|0
 block|,
 literal|25
 block|,
-literal|102
+literal|103
 block|,
 literal|0
 block|,
@@ -125,13 +133,13 @@ block|,
 block|{
 literal|0
 block|,
-literal|102
+literal|103
 block|,
 literal|25
 block|,
 literal|0
 block|,
-literal|102
+literal|103
 block|,
 literal|25
 block|,
@@ -171,9 +179,9 @@ literal|25
 block|,
 literal|0
 block|,
-literal|102
+literal|103
 block|,
-literal|102
+literal|103
 block|,
 literal|0
 block|,
@@ -187,11 +195,11 @@ block|,
 block|{
 literal|6
 block|,
-literal|43
+literal|44
 block|,
 literal|0
 block|,
-literal|43
+literal|44
 block|,
 literal|162
 block|,
@@ -213,7 +221,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|205
+literal|206
 block|,
 literal|0
 block|,
@@ -227,7 +235,7 @@ block|,
 block|{
 literal|0
 block|,
-literal|43
+literal|44
 block|,
 literal|6
 block|,
@@ -235,7 +243,7 @@ literal|0
 block|,
 literal|162
 block|,
-literal|43
+literal|44
 block|,
 literal|0
 block|,
@@ -253,9 +261,9 @@ literal|25
 block|,
 literal|0
 block|,
-literal|102
+literal|103
 block|,
-literal|102
+literal|103
 block|,
 literal|0
 block|,
@@ -295,7 +303,7 @@ literal|0
 block|,
 literal|50
 block|,
-literal|205
+literal|206
 block|,
 literal|0
 block|,
@@ -335,7 +343,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|205
+literal|206
 block|,
 literal|50
 block|,
@@ -375,9 +383,9 @@ literal|0
 block|,
 literal|0
 block|,
-literal|102
+literal|103
 block|,
-literal|102
+literal|103
 block|,
 literal|0
 block|,
@@ -395,7 +403,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|43
+literal|44
 block|,
 literal|162
 block|,
@@ -403,7 +411,7 @@ literal|0
 block|,
 literal|6
 block|,
-literal|43
+literal|44
 block|,
 literal|0
 block|, }
@@ -417,7 +425,7 @@ literal|0
 block|,
 literal|0
 block|,
-literal|205
+literal|206
 block|,
 literal|0
 block|,
@@ -439,11 +447,11 @@ literal|0
 block|,
 literal|162
 block|,
-literal|43
+literal|44
 block|,
 literal|0
 block|,
-literal|43
+literal|44
 block|,
 literal|6
 block|, }
@@ -457,9 +465,9 @@ literal|0
 block|,
 literal|0
 block|,
-literal|102
+literal|103
 block|,
-literal|102
+literal|103
 block|,
 literal|0
 block|,
@@ -499,13 +507,13 @@ literal|0
 block|,
 literal|25
 block|,
-literal|102
+literal|103
 block|,
 literal|0
 block|,
 literal|25
 block|,
-literal|102
+literal|103
 block|,
 literal|0
 block|, }
@@ -539,13 +547,13 @@ literal|0
 block|,
 literal|0
 block|,
-literal|102
+literal|103
 block|,
 literal|25
 block|,
 literal|0
 block|,
-literal|102
+literal|103
 block|,
 literal|25
 block|, }

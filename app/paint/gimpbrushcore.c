@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2786fbfa0103
-DECL|enum|__anon2786fbfa0203
+DECL|enum|__anon2b61093e0103
+DECL|enum|__anon2b61093e0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -4167,9 +4167,6 @@ decl_stmt|;
 name|gint
 name|offs
 decl_stmt|;
-name|gint
-name|kernel_sum
-decl_stmt|;
 while|while
 condition|(
 name|x
@@ -4503,35 +4500,6 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* Investigate modifiying kernelgen to make the sum the same    *  for all kernels. That way kernal_sum becomes a constant    */
-name|kernel_sum
-operator|=
-literal|0
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|KERNEL_HEIGHT
-operator|*
-name|KERNEL_WIDTH
-condition|;
-name|i
-operator|++
-control|)
-block|{
-name|kernel_sum
-operator|+=
-name|kernel
-index|[
-name|i
-index|]
-expr_stmt|;
-block|}
 name|core
 operator|->
 name|kernel_brushes
@@ -4616,7 +4584,6 @@ condition|(
 name|s
 operator|--
 condition|)
-block|{
 name|accum
 index|[
 name|r
@@ -4633,7 +4600,6 @@ operator|*
 name|k
 operator|++
 expr_stmt|;
-block|}
 block|}
 name|m
 operator|++
@@ -4688,7 +4654,7 @@ operator|+
 literal|127
 operator|)
 operator|/
-name|kernel_sum
+name|KERNEL_SUM
 expr_stmt|;
 name|rotate_pointers
 argument_list|(
@@ -4777,13 +4743,13 @@ name|j
 index|]
 operator|+
 operator|(
-name|kernel_sum
+name|KERNEL_SUM
 operator|/
 literal|2
 operator|)
 operator|)
 operator|/
-name|kernel_sum
+name|KERNEL_SUM
 expr_stmt|;
 name|rotate_pointers
 argument_list|(
@@ -5241,7 +5207,6 @@ condition|(
 name|i
 operator|--
 condition|)
-block|{
 operator|*
 name|dest
 operator|++
@@ -5255,7 +5220,6 @@ operator|++
 operator|)
 index|]
 expr_stmt|;
-block|}
 return|return
 name|core
 operator|->
@@ -5603,7 +5567,6 @@ condition|;
 name|j
 operator|++
 control|)
-block|{
 operator|*
 name|d
 operator|++
@@ -5618,7 +5581,6 @@ name|OPAQUE_OPACITY
 else|:
 name|TRANSPARENT_OPACITY
 expr_stmt|;
-block|}
 name|d
 operator|+=
 literal|2
@@ -6724,7 +6686,6 @@ index|]
 operator|*=
 name|alpha
 expr_stmt|;
-comment|/* printf("i: %i d->r: %i d->g: %i d->b: %i d->a: %i\n",i,(int)d[0], (int)d[1], (int)d[2], (int)d[3]); */
 name|gimp_image_transform_color
 argument_list|(
 name|dest
