@@ -5601,7 +5601,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"edit_mask"
 block|,
-literal|"The layer show mask"
+literal|"The layer edit mask"
 block|}
 block|}
 decl_stmt|;
@@ -5616,9 +5616,9 @@ init|=
 block|{
 literal|"gimp_layer_get_edit_mask"
 block|,
-literal|"Get the show mask of the specified layer."
+literal|"Get the edit mask of the specified layer."
 block|,
-literal|"This procedure returns the specified layer's show mask. If the value is non-zero, then the layer mask for this layer is currently active, and not the layer."
+literal|"This procedure returns the specified layer's edit mask. If the value is non-zero, then the layer mask for this layer is currently active, and not the layer."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -5785,7 +5785,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"edit_mask"
 block|,
-literal|"The new layer show mask"
+literal|"The new layer edit mask"
 block|}
 block|}
 decl_stmt|;
@@ -5800,9 +5800,9 @@ init|=
 block|{
 literal|"gimp_layer_set_edit_mask"
 block|,
-literal|"Set the show mask of the specified layer."
+literal|"Set the edit mask of the specified layer."
 block|,
-literal|"This procedure sets the specified layer's show mask. This controls whether the layer or it's mask is currently active for editing. If the specified layer has no layer mask, then this procedure will return an error."
+literal|"This procedure sets the specified layer's edit mask. This controls whether the layer or it's mask is currently active for editing. If the specified layer has no layer mask, then this procedure will return an error."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

@@ -1720,7 +1720,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_get_edit_mask:  * @layer_ID: The layer.  *  * Get the show mask of the specified layer.  *  * This procedure returns the specified layer's show mask. If the value  * is non-zero, then the layer mask for this layer is currently active,  * and not the layer.  *  * Returns: The layer show mask.  */
+comment|/**  * gimp_layer_get_edit_mask:  * @layer_ID: The layer.  *  * Get the edit mask of the specified layer.  *  * This procedure returns the specified layer's edit mask. If the value  * is non-zero, then the layer mask for this layer is currently active,  * and not the layer.  *  * Returns: The layer edit mask.  */
 end_comment
 
 begin_function
@@ -1798,7 +1798,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_set_edit_mask:  * @layer_ID: The layer.  * @edit_mask: The new layer show mask.  *  * Set the show mask of the specified layer.  *  * This procedure sets the specified layer's show mask. This controls  * whether the layer or it's mask is currently active for editing. If  * the specified layer has no layer mask, then this procedure will  * return an error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_set_edit_mask:  * @layer_ID: The layer.  * @edit_mask: The new layer edit mask.  *  * Set the edit mask of the specified layer.  *  * This procedure sets the specified layer's edit mask. This controls  * whether the layer or it's mask is currently active for editing. If  * the specified layer has no layer mask, then this procedure will  * return an error.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
