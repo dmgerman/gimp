@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fd9b40103
+DECL|enum|__anon2b8a1b740103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -325,7 +325,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_color_tool_get_type (void)
 name|gimp_color_tool_get_type
 parameter_list|(
@@ -333,7 +333,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|tool_type
 init|=
 literal|0
@@ -695,8 +695,13 @@ block|{
 name|GimpColorTool
 modifier|*
 name|color_tool
+init|=
+name|GIMP_COLOR_TOOL
+argument_list|(
+name|tool
+argument_list|)
 decl_stmt|;
-comment|/*  Make the tool active and set it's gdisplay& drawable  */
+comment|/*  Make the tool active and set its gdisplay& drawable  */
 name|tool
 operator|->
 name|gdisp
@@ -719,13 +724,6 @@ argument_list|(
 name|tool
 operator|->
 name|control
-argument_list|)
-expr_stmt|;
-name|color_tool
-operator|=
-name|GIMP_COLOR_TOOL
-argument_list|(
-name|tool
 argument_list|)
 expr_stmt|;
 if|if
@@ -886,19 +884,17 @@ block|{
 name|GimpColorTool
 modifier|*
 name|color_tool
+init|=
+name|GIMP_COLOR_TOOL
+argument_list|(
+name|tool
+argument_list|)
 decl_stmt|;
 name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|color_tool
-operator|=
-name|GIMP_COLOR_TOOL
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1493,7 +1489,6 @@ name|color_tool
 operator|->
 name|options
 condition|)
-block|{
 name|g_object_unref
 argument_list|(
 name|color_tool
@@ -1501,13 +1496,6 @@ operator|->
 name|options
 argument_list|)
 expr_stmt|;
-name|color_tool
-operator|->
-name|options
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 name|color_tool
 operator|->
 name|options
