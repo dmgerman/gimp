@@ -140,7 +140,7 @@ name|MAX255
 parameter_list|(
 name|a
 parameter_list|)
-value|(a | ((a& 256) - ((a& 256)>> 8)))
+value|((a) | (((a)& 256) - (((a)& 256)>> 8)))
 end_define
 
 begin_comment
@@ -163,7 +163,7 @@ value|CLAMP(a,0,255)
 end_define
 
 begin_typedef
-DECL|enum|__anon28f5f1e10103
+DECL|enum|__anon2c7280480103
 typedef|typedef
 enum|enum
 block|{

@@ -2045,6 +2045,13 @@ name|basesy
 decl_stmt|;
 endif|#
 directive|endif
+specifier|static
+name|unsigned
+name|int
+name|grrr
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -2222,6 +2229,9 @@ operator|)
 operator|/
 name|bycxmcybx
 expr_stmt|;
+name|grrr
+operator|++
+expr_stmt|;
 for|for
 control|(
 name|dy
@@ -2285,6 +2295,14 @@ name|dx
 decl_stmt|;
 endif|#
 directive|endif
+name|sy
+operator|=
+operator|(
+name|basesy
+operator|+=
+name|cx2
+operator|)
+expr_stmt|;
 name|sx
 operator|=
 operator|(
@@ -2293,12 +2311,47 @@ operator|-=
 name|bx2
 operator|)
 expr_stmt|;
-name|sy
-operator|=
+name|sx
+operator|+=
+operator|(
+call|(
+name|double
+call|)
+argument_list|(
+literal|6
+operator|<<
+literal|11
+argument_list|)
+operator|)
+operator|*
+operator|(
+name|sin
+argument_list|(
+call|(
+name|double
+call|)
+argument_list|(
+operator|(
+operator|(
+operator|(
 operator|(
 name|basesy
-operator|+=
-name|cx2
+operator|)
+operator|>>
+literal|11
+operator|)
+operator|+
+name|grrr
+operator|)
+operator|)
+operator|/
+operator|(
+literal|2.0
+operator|*
+literal|31.4159265
+operator|)
+argument_list|)
+argument_list|)
 operator|)
 expr_stmt|;
 name|dx
@@ -2679,6 +2732,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+comment|//      memcpy(preview_data1, seed_data, 256*256*3);
 if|if
 condition|(
 name|frame
@@ -2749,6 +2803,7 @@ comment|/* Quick specialized clamp */
 block|}
 block|}
 else|else
+comment|// if (0)
 block|{
 name|gint
 name|pixwords
@@ -2795,7 +2850,7 @@ operator|++
 control|)
 block|{
 comment|/*preview_data1[i] = (preview_data1[i]*2 + 		    seed_data[i]) /3;*/
-comment|/* This is from Raph L... it should be a fast 50%/50% 		     blend, though I don't know if 50%/50% is as nice as 		     the old ratio. */
+comment|/* mod'd version of the below for a 'deeper' mix */
 name|prevwords
 index|[
 name|i
@@ -2816,31 +2871,32 @@ operator|)
 operator|+
 operator|(
 operator|(
+name|prevwords
+index|[
+name|i
+index|]
+operator|>>
+literal|2
+operator|)
+operator|&
+literal|0x3f3f3f3f
+operator|)
+operator|+
+operator|(
+operator|(
 name|seedwords
 index|[
 name|i
 index|]
 operator|>>
-literal|1
+literal|2
 operator|)
 operator|&
-literal|0x7f7f7f7f
-operator|)
-operator|+
-operator|(
-name|prevwords
-index|[
-name|i
-index|]
-operator|&
-name|seedwords
-index|[
-name|i
-index|]
-operator|&
-literal|0x01010101
+literal|0x3f3f3f3f
 operator|)
 expr_stmt|;
+comment|/* This is from Raph L... it should be a fast 50%/50% 		     blend, though I don't know if 50%/50% is as nice as 		     the old ratio. */
+comment|/* 		    prevwords[i] = 		    ((prevwords[i]>> 1)& 0x7f7f7f7f) + 		    ((seedwords[i]>> 1)& 0x7f7f7f7f) + 		    (prevwords[i]& seedwords[i]& 0x01010101); */
 block|}
 block|}
 block|}
@@ -3063,7 +3119,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* This is from Raph L... it should be a fast 50%/50% 		     blend, though I don't know if 50%/50% is as nice as 		     the old ratio. */
+comment|/* mod'd version of the below for a 'deeper' mix */
 name|prevwords
 index|[
 name|i
@@ -3084,33 +3140,33 @@ operator|)
 operator|+
 operator|(
 operator|(
+name|prevwords
+index|[
+name|i
+index|]
+operator|>>
+literal|2
+operator|)
+operator|&
+literal|0x3f3f3f3f
+operator|)
+operator|+
+operator|(
+operator|(
 name|seedwords
 index|[
 name|i
 index|]
 operator|>>
-literal|1
+literal|2
 operator|)
 operator|&
-literal|0x7f7f7f7f
-operator|)
-operator|+
-operator|(
-name|prevwords
-index|[
-name|i
-index|]
-operator|&
-name|seedwords
-index|[
-name|i
-index|]
-operator|&
-literal|0x01010101
+literal|0x3f3f3f3f
 operator|)
 expr_stmt|;
+comment|/* This is from Raph L... it should be a fast 50%/50% 		     blend, though I don't know if 50%/50% is as nice as 		     the old ratio. */
+comment|/* 		    prevwords[i] = 		    ((prevwords[i]>> 1)& 0x7f7f7f7f) + 		    ((seedwords[i]>> 1)& 0x7f7f7f7f) + 		    (prevwords[i]& seedwords[i]& 0x01010101); */
 block|}
-comment|/*	      for (i=0;i<pixels;i++) 		{ 		  preview_data1[i] = (preview_data1[i]*2 + seed_data[i]) /3; 		}*/
 block|}
 block|}
 block|}

@@ -32,7 +32,7 @@ DECL|macro|PSD_DEBUG
 define|#
 directive|define
 name|PSD_DEBUG
-value|TRUE
+value|FALSE
 end_define
 
 begin_comment
@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27746e480103
+DECL|enum|__anon29bbcf110103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -504,7 +504,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon27746e480208
+DECL|struct|__anon29bbcf110208
 specifier|static
 struct|struct
 block|{
