@@ -42,17 +42,6 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DRAWABLE, GimpDrawable))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DRAWABLE (obj)
-define|#
-directive|define
-name|GIMP_IS_DRAWABLE
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE))
-end_define
-
-begin_define
 DECL|macro|GIMP_DRAWABLE_CLASS (klass)
 define|#
 directive|define
@@ -64,6 +53,17 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE, GimpDrawableClass))
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_DRAWABLE (obj)
+define|#
+directive|define
+name|GIMP_IS_DRAWABLE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DRAWABLE))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_DRAWABLE_CLASS (klass)
 define|#
 directive|define
@@ -72,6 +72,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE))
+end_define
+
+begin_define
+DECL|macro|GIMP_DRAWABLE_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DRAWABLE_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE, GimpDrawableClass))
 end_define
 
 begin_typedef

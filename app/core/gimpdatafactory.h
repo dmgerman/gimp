@@ -153,6 +153,17 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DATA_FACTORY))
 end_define
 
+begin_define
+DECL|macro|GIMP_DATA_FACTORY_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DATA_FACTORY_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DATA_FACTORY, GimpDataFactoryClass))
+end_define
+
 begin_typedef
 DECL|typedef|GimpDataFactoryClass
 typedef|typedef

@@ -41,7 +41,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fd6a610103
+DECL|enum|__anon2c2e300b0103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fd6a610203
+DECL|enum|__anon2c2e300b0203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -195,6 +195,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GRADIENT))
+end_define
+
+begin_define
+DECL|macro|GIMP_GRADIENT_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_GRADIENT_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_GRADIENT, GimpGradientClass))
 end_define
 
 begin_typedef

@@ -82,10 +82,21 @@ parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BRUSH_PIPE))
 end_define
 
+begin_define
+DECL|macro|GIMP_BRUSH_PIPE_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_BRUSH_PIPE_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_BRUSH_PIPE, GimpBrushPipeClass))
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b73a0000103
+DECL|enum|__anon2a3231770103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
