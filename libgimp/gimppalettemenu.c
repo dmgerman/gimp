@@ -144,7 +144,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_palette_select_widget_new:  * @title:        Title of the dialog to use or %NULL means to use the default  *                title.  * @palette_name: Initial palette name.  * @callback:     A function to call when the selected palette changes.  * @data:         A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_palette_select_widget_new:  * @title:        Title of the dialog to use or %NULL means to use the default  *                title.  * @palette_name: Initial palette name.  * @callback:     A function to call when the selected palette changes.  * @data:         A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a palette.  This widget is suitable for placement in a table in a  * plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -307,6 +307,36 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
+name|image
+operator|=
+name|gtk_image_new_from_stock
+argument_list|(
+name|GIMP_STOCK_PALETTE
+argument_list|,
+name|GTK_ICON_SIZE_BUTTON
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|image
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|palette_sel
 operator|->
 name|label
@@ -341,36 +371,6 @@ operator|->
 name|label
 argument_list|)
 expr_stmt|;
-name|image
-operator|=
-name|gtk_image_new_from_stock
-argument_list|(
-name|GIMP_STOCK_PALETTE
-argument_list|,
-name|GTK_ICON_SIZE_BUTTON
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|image
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -394,7 +394,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_widget_close:  * @widget: A palette select widget.  *  * Closes the popup window associated with @widget.  */
+comment|/**  * gimp_palette_select_widget_close:  * @widget: A palette select widget.  *  * Closes the popup window associated with @widget.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function
@@ -455,7 +455,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_widget_set;  * @widget:       A palette select widget.  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_palette_select_widget_new().  */
+comment|/**  * gimp_palette_select_widget_set;  * @widget:       A palette select widget.  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_palette_select_widget_new().  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

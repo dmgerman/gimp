@@ -422,7 +422,6 @@ name|pattern_data
 operator|->
 name|idle_id
 condition|)
-block|{
 name|g_source_remove
 argument_list|(
 name|pattern_data
@@ -444,7 +443,6 @@ operator|->
 name|pattern_mask_data
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|pattern_data

@@ -460,7 +460,6 @@ name|brush_data
 operator|->
 name|idle_id
 condition|)
-block|{
 name|g_source_remove
 argument_list|(
 name|brush_data
@@ -482,7 +481,6 @@ operator|->
 name|brush_mask_data
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|brush_data

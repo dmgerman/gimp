@@ -365,7 +365,6 @@ name|palette_data
 operator|->
 name|idle_id
 condition|)
-block|{
 name|g_source_remove
 argument_list|(
 name|palette_data
@@ -380,7 +379,6 @@ operator|->
 name|palette_name
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette_data

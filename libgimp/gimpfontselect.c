@@ -365,7 +365,6 @@ name|font_data
 operator|->
 name|idle_id
 condition|)
-block|{
 name|g_source_remove
 argument_list|(
 name|font_data
@@ -380,7 +379,6 @@ operator|->
 name|font_name
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|font_data

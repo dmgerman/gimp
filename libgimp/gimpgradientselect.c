@@ -395,7 +395,6 @@ name|gradient_data
 operator|->
 name|idle_id
 condition|)
-block|{
 name|g_source_remove
 argument_list|(
 name|gradient_data
@@ -417,7 +416,6 @@ operator|->
 name|gradient_data
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|gradient_data
