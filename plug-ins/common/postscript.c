@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  */
+comment|/* Event history:  * V 0.90, PK, 28-Mar-97: Creation.  * V 0.91, PK, 03-Apr-97: Clip everything outside BoundingBox.  *             24-Apr-97: Multi page read support.  * V 1.00, PK, 30-Apr-97: PDF support.  * V 1.01, PK, 05-Oct-97: Parse rc-file.  * V 1.02, GW, 09-Oct-97: Antialiasing support.  *         PK, 11-Oct-97: No progress bars when running non-interactive.  *                        New procedure file_ps_load_setargs to set  *                        load-arguments non-interactively.  *                        If GS_OPTIONS are not set, use at least "-dSAFER"  * V 1.03, nn, 20-Dec-97: Initialize some variables  * V 1.04, PK, 20-Dec-97: Add Encapsulated PostScript output and preview  * V 1.05, PK, 21-Sep-98: Write b/w-images (indexed) using image-operator  * V 1.06, PK, 22-Dec-98: Fix problem with writing color PS files.  *                        Ghostview may hang when displaying the files.  * V 1.07, PK, 14-Sep-99: Add resolution to image  */
 end_comment
 
 begin_define
@@ -12,7 +12,7 @@ DECL|macro|VERSIO
 define|#
 directive|define
 name|VERSIO
-value|1.06
+value|1.07
 end_define
 
 begin_decl_stmt
@@ -22,7 +22,7 @@ name|char
 name|dversio
 index|[]
 init|=
-literal|"v1.06  22-Dec-98"
+literal|"v1.07  14-Sep-99"
 decl_stmt|;
 end_decl_stmt
 
@@ -33,7 +33,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP PostScript/PDF file-plugin v1.06  22-Dec-98"
+literal|"@(#) GIMP PostScript/PDF file-plugin v1.07  14-Sep-99"
 decl_stmt|;
 end_decl_stmt
 
@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f29340108
+DECL|struct|__anon2b0cd3000108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f29340208
+DECL|struct|__anon2b0cd3000208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f29340308
+DECL|struct|__anon2b0cd3000308
 block|{
 DECL|member|width
 DECL|member|height
@@ -309,7 +309,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f29340408
+DECL|struct|__anon2b0cd3000408
 block|{
 DECL|member|run
 name|gint
@@ -820,7 +820,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f29340508
+DECL|struct|__anon2b0cd3000508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -924,7 +924,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f29340608
+DECL|struct|__anon2b0cd3000608
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1317,7 +1317,7 @@ name|PARAM_FLOAT
 block|,
 literal|"width"
 block|,
-literal|"Width of the image in PostScript file"
+literal|"Width of the image in PostScript file (0: use input image size)"
 block|}
 block|,
 block|{
@@ -1325,7 +1325,7 @@ name|PARAM_FLOAT
 block|,
 literal|"height"
 block|,
-literal|"Height of image in PostScript file"
+literal|"Height of image in PostScript file (0: use input image size)"
 block|}
 block|,
 block|{
@@ -1419,7 +1419,7 @@ argument_list|(
 literal|"load file of PostScript/PDF file format"
 argument_list|)
 argument_list|,
-literal|"Peter Kirchgessner<pkirchg@aol.com>"
+literal|"Peter Kirchgessner<peter@kirchgessner.net>"
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -1448,7 +1448,7 @@ literal|"set additional parameters for procedure file_ps_load"
 argument_list|,
 literal|"set additional parameters for procedure file_ps_load"
 argument_list|,
-literal|"Peter Kirchgessner<pkirchg@aol.com>"
+literal|"Peter Kirchgessner<peter@kirchgessner.net>"
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -1527,6 +1527,169 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GIMP_HAVE_RESOLUTION_INFO
+end_ifdef
+
+begin_function
+specifier|static
+name|void
+DECL|function|ps_set_save_size (PSSaveVals * vals,gint32 image_ID)
+name|ps_set_save_size
+parameter_list|(
+name|PSSaveVals
+modifier|*
+name|vals
+parameter_list|,
+name|gint32
+name|image_ID
+parameter_list|)
+block|{
+name|gdouble
+name|xres
+decl_stmt|,
+name|yres
+decl_stmt|,
+name|factor
+decl_stmt|,
+name|iw
+decl_stmt|,
+name|ih
+decl_stmt|;
+name|guint
+name|width
+decl_stmt|,
+name|height
+decl_stmt|;
+name|GUnit
+name|unit
+decl_stmt|;
+name|gimp_image_get_resolution
+argument_list|(
+name|image_ID
+argument_list|,
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
+argument_list|)
+expr_stmt|;
+name|unit
+operator|=
+name|gimp_image_get_unit
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+name|factor
+operator|=
+name|gimp_unit_get_factor
+argument_list|(
+name|unit
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|factor
+operator|<
+literal|1e-5
+operator|)
+operator|||
+operator|(
+name|xres
+operator|<
+literal|1e-5
+operator|)
+operator|||
+operator|(
+name|yres
+operator|<
+literal|1e-5
+operator|)
+condition|)
+block|{
+name|factor
+operator|=
+literal|1.0
+expr_stmt|;
+name|xres
+operator|=
+name|yres
+operator|=
+literal|72.0
+expr_stmt|;
+block|}
+comment|/* Calculate size of image in inches */
+name|width
+operator|=
+name|gimp_image_width
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+name|height
+operator|=
+name|gimp_image_height
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+name|iw
+operator|=
+name|width
+operator|/
+name|xres
+operator|/
+name|factor
+expr_stmt|;
+name|ih
+operator|=
+name|height
+operator|/
+name|yres
+operator|/
+name|factor
+expr_stmt|;
+if|if
+condition|(
+name|vals
+operator|->
+name|unit_mm
+condition|)
+block|{
+name|iw
+operator|*=
+literal|25.4
+expr_stmt|;
+name|ih
+operator|*=
+literal|25.4
+expr_stmt|;
+block|}
+name|vals
+operator|->
+name|width
+operator|=
+name|iw
+expr_stmt|;
+name|vals
+operator|->
+name|height
+operator|=
+name|ih
+expr_stmt|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -1894,6 +2057,26 @@ name|eps
 operator|=
 literal|1
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_HAVE_RESOLUTION_INFO
+name|ps_set_save_size
+argument_list|(
+operator|&
+name|psvals
+argument_list|,
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 comment|/*  First acquire information with a dialog  */
 if|if
 condition|(
@@ -2088,6 +2271,44 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_HAVE_RESOLUTION_INFO
+if|if
+condition|(
+operator|(
+name|psvals
+operator|.
+name|width
+operator|==
+literal|0.0
+operator|)
+operator|||
+operator|(
+name|psvals
+operator|.
+name|height
+operator|==
+literal|0.0
+operator|)
+condition|)
+name|ps_set_save_size
+argument_list|(
+operator|&
+name|psvals
+argument_list|,
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|check_save_vals
 argument_list|()
 expr_stmt|;
@@ -2402,9 +2623,6 @@ decl_stmt|;
 name|char
 modifier|*
 name|temp
-decl_stmt|,
-modifier|*
-name|format
 decl_stmt|;
 name|int
 name|llx
@@ -2788,6 +3006,37 @@ operator|-
 literal|1
 condition|)
 break|break;
+ifdef|#
+directive|ifdef
+name|GIMP_HAVE_RESOLUTION_INFO
+name|gimp_image_set_resolution
+argument_list|(
+name|image_ID
+argument_list|,
+operator|(
+name|float
+operator|)
+name|plvals
+operator|.
+name|resolution
+argument_list|,
+operator|(
+name|float
+operator|)
+name|plvals
+operator|.
+name|resolution
+argument_list|)
+expr_stmt|;
+name|gimp_image_set_unit
+argument_list|(
+name|image_ID
+argument_list|,
+name|UNIT_INCH
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|n_images

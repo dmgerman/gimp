@@ -163,6 +163,14 @@ comment|/** chunk magics */
 end_comment
 
 begin_define
+DECL|macro|NO_HEADER
+define|#
+directive|define
+name|NO_HEADER
+value|0
+end_define
+
+begin_define
 DECL|macro|HEADER_FLI
 define|#
 directive|define

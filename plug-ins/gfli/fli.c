@@ -506,6 +506,12 @@ argument_list|,
 literal|"error: magic number is wrong !\n"
 argument_list|)
 expr_stmt|;
+name|fli_header
+operator|->
+name|magic
+operator|=
+name|NO_HEADER
+expr_stmt|;
 block|}
 block|}
 block|}
