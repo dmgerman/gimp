@@ -72,7 +72,7 @@ value|7
 end_define
 
 begin_enum
-DECL|enum|__anon2c52d8830103
+DECL|enum|__anon29b0094c0103
 enum|enum
 block|{
 DECL|enumerator|PATH_COLUMN
@@ -90,7 +90,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52d8830208
+DECL|struct|__anon29b0094c0208
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1539,7 +1539,9 @@ condition|)
 do|;
 name|g_warning
 argument_list|(
-literal|"tried to remove module that wasn't in brower's list"
+literal|"%s: Tried to remove a module not in the browser's list."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 block|}
@@ -1770,12 +1772,12 @@ name|on_disk
 condition|?
 name|_
 argument_list|(
-literal|"on disk"
+literal|"On disk"
 argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"only in memory"
+literal|"Only in memory"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1827,12 +1829,12 @@ name|on_disk
 condition|?
 name|_
 argument_list|(
-literal|"on disk"
+literal|"On disk"
 argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"nowhere (click 'refresh')"
+literal|"No longer available"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1853,7 +1855,7 @@ name|status
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s (%s)"
+literal|"%s\n(%s)"
 argument_list|,
 name|gettext
 argument_list|(
@@ -2331,7 +2333,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Autoload during startup"
+literal|"Autoload during start-up"
 argument_list|)
 argument_list|)
 expr_stmt|;

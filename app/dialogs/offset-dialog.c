@@ -258,7 +258,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Offset"
+literal|"Offset Layer"
 argument_list|)
 argument_list|,
 literal|"offset"
@@ -835,7 +835,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Wrap Around"
+literal|"Wrap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -954,6 +954,9 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The by half height and half width option */
+warning|#
+directive|warning
+warning|FIXME move button
 name|push
 operator|=
 name|gtk_button_new_with_label
