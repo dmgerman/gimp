@@ -387,7 +387,7 @@ condition|)
 block|{
 name|l_env
 operator|=
-name|getenv
+name|g_getenv
 argument_list|(
 literal|"GAP_FILTER_PITSTOP"
 argument_list|)
@@ -971,7 +971,7 @@ operator|(
 name|gint
 operator|*
 operator|)
-name|malloc
+name|g_malloc
 argument_list|(
 operator|(
 name|l_nlayers
@@ -1335,7 +1335,7 @@ argument_list|,
 name|plugin_name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_visible_tab
 argument_list|)
@@ -1933,7 +1933,7 @@ argument_list|,
 name|plugin_name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|l_visible_tab
 argument_list|)
