@@ -2417,19 +2417,11 @@ value|"gimp-prefs-new-image"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_PREFS_NEW_IMAGE_COMMENT
+DECL|macro|GIMP_HELP_PREFS_DEFAULT_GRID
 define|#
 directive|define
-name|GIMP_HELP_PREFS_NEW_IMAGE_COMMENT
-value|"gimp-prefs-new-image-comment"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_PREFS_NEW_IMAGE_GRID
-define|#
-directive|define
-name|GIMP_HELP_PREFS_NEW_IMAGE_GRID
-value|"gimp-prefs-new-image-grid"
+name|GIMP_HELP_PREFS_DEFAULT_GRID
+value|"gimp-prefs-default-grid"
 end_define
 
 begin_define
@@ -2566,6 +2558,14 @@ define|#
 directive|define
 name|GIMP_HELP_PREFS_FOLDERS_GRADIENTS
 value|"gimp-prefs-folders-gradients"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_FONTS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_FONTS
+value|"gimp-prefs-folders-fonts"
 end_define
 
 begin_define

@@ -4977,7 +4977,7 @@ argument_list|(
 literal|"Default Grid"
 argument_list|)
 argument_list|,
-name|GIMP_HELP_PREFS_NEW_IMAGE_GRID
+name|GIMP_HELP_PREFS_DEFAULT_GRID
 argument_list|,
 name|NULL
 argument_list|,
@@ -6797,7 +6797,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29b26fcb0108
+DECL|struct|__anon2c977d6f0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9238,7 +9238,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29b26fcb0208
+DECL|struct|__anon2c977d6f0208
 block|{
 DECL|member|label
 specifier|const
@@ -9397,7 +9397,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29b26fcb0308
+DECL|struct|__anon2c977d6f0308
 block|{
 DECL|member|tree_label
 specifier|const
@@ -9545,7 +9545,7 @@ argument_list|)
 block|,
 literal|"folders-fonts.png"
 block|,
-name|GIMP_HELP_PREFS_FOLDERS_GRADIENTS
+name|GIMP_HELP_PREFS_FOLDERS_FONTS
 block|,
 name|N_
 argument_list|(
