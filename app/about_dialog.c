@@ -322,6 +322,10 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* See the end of the list for how to add names with Non-ASCII characters */
+end_comment
+
 begin_decl_stmt
 DECL|variable|scroll_text
 specifier|static
@@ -389,8 +393,6 @@ literal|"Heiko Goller"
 block|,
 literal|"Michael Hammel"
 block|,
-literal|"Ville Hautamäki"
-block|,
 literal|"James Henstridge"
 block|,
 literal|"Christoph Hoegl"
@@ -408,6 +410,7 @@ block|,
 literal|"Peter Kirchgessner"
 block|,
 literal|"Karin Kylander"
+block|,
 literal|"Olof S Kylander"
 block|,
 literal|"Nick Lamb"
@@ -470,8 +473,6 @@ literal|"Stephen Robert Norris"
 block|,
 literal|"Erik Nygren"
 block|,
-literal|"Tomas Ögren"
-block|,
 literal|"Balazs Nagy"
 block|,
 literal|"Miles O'Neal"
@@ -493,6 +494,7 @@ block|,
 literal|"Tracy Scott"
 block|,
 literal|"Aaron Sherman"
+block|,
 literal|"Manish Singh"
 block|,
 literal|"Nathan Summers"
@@ -516,7 +518,24 @@ block|,
 literal|"Matthew Wilson"
 block|,
 literal|"Shirasaki Yasuhiro"
-block|, }
+block|,
+ifndef|#
+directive|ifndef
+name|GDK_USE_UTF8_MBS
+literal|"Ville Hautamäki"
+block|,
+literal|"Tomas Ögren"
+block|,
+else|#
+directive|else
+comment|/* Win32 GDK uses UTF-8 */
+literal|"Ville HautamÃ¤ki"
+block|,
+literal|"Tomas Ãgren"
+block|,
+endif|#
+directive|endif
+block|}
 decl_stmt|;
 end_decl_stmt
 
