@@ -170,7 +170,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8cc5210103
+DECL|enum|__anon2b423dda0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -546,6 +546,12 @@ operator|->
 name|want_null_motion
 operator|=
 name|gimp_brush_real_want_null_motion
+expr_stmt|;
+name|klass
+operator|->
+name|spacing_changed
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function

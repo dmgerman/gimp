@@ -159,18 +159,7 @@ DECL|member|parent_class
 name|GimpDataClass
 name|parent_class
 decl_stmt|;
-DECL|member|spacing_changed
-name|void
-function_decl|(
-modifier|*
-name|spacing_changed
-function_decl|)
-parameter_list|(
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|)
-function_decl|;
+comment|/*  virtual functions  */
 DECL|member|select_brush
 name|GimpBrush
 modifier|*
@@ -210,6 +199,19 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|cur_coords
+parameter_list|)
+function_decl|;
+comment|/*  signals  */
+DECL|member|spacing_changed
+name|void
+function_decl|(
+modifier|*
+name|spacing_changed
+function_decl|)
+parameter_list|(
+name|GimpBrush
+modifier|*
+name|brush
 parameter_list|)
 function_decl|;
 block|}
