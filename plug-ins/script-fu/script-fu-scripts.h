@@ -22,12 +22,6 @@ directive|include
 file|"script-fu-enums.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"siod.h"
-end_include
-
 begin_function_decl
 name|void
 name|script_fu_find_scripts

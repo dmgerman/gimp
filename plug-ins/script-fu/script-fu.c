@@ -59,6 +59,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"siod/siod.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"siod-wrapper.h"
 end_include
 

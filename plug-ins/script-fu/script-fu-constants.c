@@ -10,7 +10,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"siod.h"
+file|"siod/siod.h"
 end_include
 
 begin_function

@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"siod/siod.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"script-fu-constants.h"
 end_include
 
@@ -53,12 +59,6 @@ begin_include
 include|#
 directive|include
 file|"script-fu-server.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"siod.h"
 end_include
 
 begin_include

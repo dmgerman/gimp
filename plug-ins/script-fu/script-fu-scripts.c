@@ -94,13 +94,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"siod.h"
+file|"siod/siod.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"script-fu-scripts.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"siod-wrapper.h"
 end_include
 
 begin_include
@@ -160,7 +166,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bfa0160108
+DECL|struct|__anon2af63e230108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -204,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bfa0160208
+DECL|struct|__anon2af63e230208
 block|{
 DECL|member|file_entry
 name|GtkWidget
@@ -225,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bfa0160308
+DECL|struct|__anon2af63e230308
 block|{
 DECL|member|name
 name|gchar
@@ -253,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bfa0160408
+DECL|struct|__anon2af63e230408
 block|{
 DECL|member|list
 name|GSList
@@ -273,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27bfa016050a
+DECL|union|__anon2af63e23050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -344,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bfa0160608
+DECL|struct|__anon2af63e230608
 block|{
 DECL|member|script_name
 name|gchar
@@ -430,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bfa0160708
+DECL|struct|__anon2af63e230708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -878,14 +884,6 @@ begin_comment
 DECL|variable|sf_interface
 comment|/*  there can only be at most one 					      interactive interface  */
 end_comment
-
-begin_decl_stmt
-specifier|extern
-name|gchar
-name|siod_err_msg
-index|[]
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  *  Function definitions  */
@@ -9866,7 +9864,8 @@ argument_list|)
 argument_list|,
 name|command
 argument_list|,
-name|siod_err_msg
+name|siod_get_error_msg
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
