@@ -366,7 +366,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2795ebf60108
+DECL|struct|__anon2b98c82e0108
 typedef|typedef
 struct|struct
 block|{
@@ -381,7 +381,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2795ebf60208
+DECL|struct|__anon2b98c82e0208
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +419,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2795ebf60308
+DECL|struct|__anon2b98c82e0308
 typedef|typedef
 struct|struct
 block|{
@@ -710,7 +710,7 @@ if|if
 condition|(
 name|n_params
 operator|!=
-literal|8
+literal|7
 condition|)
 block|{
 name|status

@@ -342,7 +342,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|1
+literal|4
 condition|)
 name|status
 operator|=

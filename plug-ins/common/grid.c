@@ -150,9 +150,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27a5348d0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon29eb50e60108
 block|{
 DECL|member|width
 DECL|member|height
@@ -168,8 +168,8 @@ name|x_offset
 decl_stmt|,
 name|y_offset
 decl_stmt|;
-DECL|typedef|config
 block|}
+DECL|typedef|config
 name|config
 typedef|;
 end_typedef
@@ -267,7 +267,7 @@ literal|"y_offset"
 block|,
 literal|"Y Offset"
 block|}
-block|, 	}
+block|,   }
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -315,7 +315,7 @@ literal|"1997"
 argument_list|,
 literal|"<Image>/Filters/Render/Grid"
 argument_list|,
-literal|"RGB, GRAY"
+literal|"RGB*, GRAY*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -332,9 +332,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -417,7 +417,12 @@ operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
-else|else
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
 block|{
 name|my_config
 operator|.
@@ -425,7 +430,7 @@ name|width
 operator|=
 name|param
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|data
@@ -438,7 +443,7 @@ name|height
 operator|=
 name|param
 index|[
-literal|5
+literal|4
 index|]
 operator|.
 name|data
@@ -451,7 +456,7 @@ name|x_offset
 operator|=
 name|param
 index|[
-literal|6
+literal|5
 index|]
 operator|.
 name|data
@@ -464,7 +469,7 @@ name|y_offset
 operator|=
 name|param
 index|[
-literal|7
+literal|6
 index|]
 operator|.
 name|data
@@ -491,7 +496,7 @@ operator|==
 name|RUN_INTERACTIVE
 condition|)
 block|{
-comment|/* Oh boy. We get to do a dialog box, because we can't really expect the 			 * user to set us up with the right values using gdb. 			 */
+comment|/* Oh boy. We get to do a dialog box, because we can't really expect the 	   * user to set us up with the right values using gdb. 	   */
 if|if
 condition|(
 operator|!
@@ -667,9 +672,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|doit (GDrawable * drawable)
 specifier|static
 name|void
+DECL|function|doit (GDrawable * drawable)
 name|doit
 parameter_list|(
 name|GDrawable
@@ -714,7 +719,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-comment|/* Get the input area. This is the bounding box of the selection in 	 *  the image (or the entire image if there is no selection). Only 	 *  operating on the input area is simply an optimization. It doesn't 	 *  need to be done for correct operation. (It simply makes it go 	 *  faster, since fewer pixels need to be operated on). 	 */
+comment|/* Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -734,7 +739,7 @@ operator|&
 name|sy2
 argument_list|)
 expr_stmt|;
-comment|/* Get the size of the input image. (This will/must be the same 	 *  as the size of the output image. 	 */
+comment|/* Get the size of the input image. (This will/must be the same    *  as the size of the output image.    */
 name|width
 operator|=
 name|drawable
@@ -1058,9 +1063,9 @@ comment|/***************************************************  * GUI stuff  */
 end_comment
 
 begin_function
-DECL|function|close_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|close_callback (GtkWidget * widget,gpointer data)
 name|close_callback
 parameter_list|(
 name|GtkWidget
@@ -1078,9 +1083,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|ok_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|ok_callback (GtkWidget * widget,gpointer data)
 name|ok_callback
 parameter_list|(
 name|GtkWidget
@@ -1107,9 +1112,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|entry_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|entry_callback (GtkWidget * widget,gpointer data)
 name|entry_callback
 parameter_list|(
 name|GtkWidget
@@ -1223,9 +1228,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog ()
 specifier|static
 name|gint
+DECL|function|dialog ()
 name|dialog
 parameter_list|()
 block|{
