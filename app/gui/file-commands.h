@@ -283,6 +283,10 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -455,7 +455,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_dialog_show (Gimp * gimp,GimpImage * gimage,const gchar * uri,GimpMenuFactory * menu_factory)
+DECL|function|file_open_dialog_show (Gimp * gimp,GimpImage * gimage,const gchar * uri,GimpMenuFactory * menu_factory,GtkWidget * parent)
 name|file_open_dialog_show
 parameter_list|(
 name|Gimp
@@ -474,6 +474,10 @@ parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|gchar
@@ -657,6 +661,8 @@ expr_stmt|;
 name|file_dialog_show
 argument_list|(
 name|fileload
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 block|}

@@ -209,6 +209,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -225,6 +229,10 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -777,6 +785,8 @@ expr_stmt|;
 name|vectors_import_query
 argument_list|(
 name|gimage
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -817,6 +827,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_vectors
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -2626,12 +2638,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|vectors_import_query (GimpImage * gimage)
+DECL|function|vectors_import_query (GimpImage * gimage,GtkWidget * parent)
 name|vectors_import_query
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkFileSelection
@@ -2676,6 +2692,19 @@ operator|)
 name|gtk_widget_destroy
 argument_list|,
 name|filesel
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_screen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|filesel
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_role
@@ -2883,7 +2912,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|vectors_export_query (GimpImage * gimage,GimpVectors * vectors)
+DECL|function|vectors_export_query (GimpImage * gimage,GimpVectors * vectors,GtkWidget * parent)
 name|vectors_export_query
 parameter_list|(
 name|GimpImage
@@ -2893,6 +2922,10 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkFileSelection
@@ -2937,6 +2970,19 @@ operator|)
 name|gtk_widget_destroy
 argument_list|,
 name|filesel
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_screen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|filesel
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_role

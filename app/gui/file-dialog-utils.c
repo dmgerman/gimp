@@ -531,12 +531,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_dialog_show (GtkWidget * filesel)
+DECL|function|file_dialog_show (GtkWidget * filesel,GtkWidget * parent)
 name|file_dialog_show
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|filesel
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|gimp_item_factories_set_sensitive
@@ -582,6 +586,19 @@ argument_list|,
 literal|"/File/Save a Copy..."
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_screen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|filesel
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_grab_focus

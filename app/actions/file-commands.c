@@ -453,6 +453,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|global_menu_factory
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -875,6 +877,8 @@ operator|->
 name|gimage
 argument_list|,
 name|global_menu_factory
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -914,6 +918,8 @@ operator|->
 name|gimage
 argument_list|,
 name|global_menu_factory
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1297,7 +1303,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_file_open_dialog (Gimp * gimp,const gchar * uri)
+DECL|function|file_file_open_dialog (Gimp * gimp,const gchar * uri,GtkWidget * parent)
 name|file_file_open_dialog
 parameter_list|(
 name|Gimp
@@ -1308,6 +1314,10 @@ specifier|const
 name|gchar
 modifier|*
 name|uri
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|file_open_dialog_show
@@ -1319,6 +1329,8 @@ argument_list|,
 name|uri
 argument_list|,
 name|global_menu_factory
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 block|}

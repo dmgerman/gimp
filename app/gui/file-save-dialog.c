@@ -361,7 +361,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_dialog_show (GimpImage * gimage,GimpMenuFactory * menu_factory)
+DECL|function|file_save_dialog_show (GimpImage * gimage,GimpMenuFactory * menu_factory,GtkWidget * parent)
 name|file_save_dialog_show
 parameter_list|(
 name|GimpImage
@@ -371,6 +371,10 @@ parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GimpItemFactory
@@ -527,6 +531,8 @@ expr_stmt|;
 name|file_dialog_show
 argument_list|(
 name|filesave
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 block|}
@@ -534,7 +540,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_a_copy_dialog_show (GimpImage * gimage,GimpMenuFactory * menu_factory)
+DECL|function|file_save_a_copy_dialog_show (GimpImage * gimage,GimpMenuFactory * menu_factory,GtkWidget * parent)
 name|file_save_a_copy_dialog_show
 parameter_list|(
 name|GimpImage
@@ -544,6 +550,10 @@ parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GimpItemFactory
@@ -725,6 +735,8 @@ expr_stmt|;
 name|file_dialog_show
 argument_list|(
 name|filesave
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 block|}

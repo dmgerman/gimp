@@ -135,7 +135,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be658340103
+DECL|enum|__anon2c41c1630103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -1509,6 +1509,21 @@ name|file_selection
 argument_list|)
 argument_list|,
 name|filename
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_screen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|selection
+operator|->
+name|file_selection
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_present
