@@ -4,7 +4,7 @@ comment|/* bmp.c                                          */
 end_comment
 
 begin_comment
-comment|/* Version 0.43	                                  */
+comment|/* Version 0.44	                                  */
 end_comment
 
 begin_comment
@@ -65,6 +65,10 @@ end_comment
 
 begin_comment
 comment|/*                       Parses gtkrc             */
+end_comment
+
+begin_comment
+comment|/*            14.04.1998 Another Bug in Padding   */
 end_comment
 
 begin_comment
