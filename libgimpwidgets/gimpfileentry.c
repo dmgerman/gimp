@@ -236,7 +236,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895796c0103
+DECL|enum|__anon2a420ed10103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -1151,7 +1151,7 @@ name|data
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 end_function
