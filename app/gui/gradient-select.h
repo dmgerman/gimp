@@ -151,9 +151,6 @@ begin_function_decl
 name|void
 name|gradient_select_rename_all
 parameter_list|(
-name|gint
-name|n
-parameter_list|,
 name|gradient_t
 modifier|*
 name|gradient
@@ -179,8 +176,9 @@ begin_function_decl
 name|void
 name|gradient_select_delete_all
 parameter_list|(
-name|gint
-name|n
+name|gradient_t
+modifier|*
+name|gradient
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -207,9 +205,6 @@ begin_function_decl
 name|void
 name|gradient_select_update_all
 parameter_list|(
-name|gint
-name|row
-parameter_list|,
 name|gradient_t
 modifier|*
 name|gradient

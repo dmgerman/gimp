@@ -1356,7 +1356,7 @@ name|b
 decl_stmt|,
 name|a
 decl_stmt|;
-name|int
+name|gint
 name|i
 init|=
 name|gsp
@@ -1616,12 +1616,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_select_rename_all (gint n,gradient_t * gradient)
+DECL|function|gradient_select_rename_all (gradient_t * gradient)
 name|gradient_select_rename_all
 parameter_list|(
-name|gint
-name|n
-parameter_list|,
 name|gradient_t
 modifier|*
 name|gradient
@@ -1634,6 +1631,9 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|list
+decl_stmt|;
+name|gint
+name|row
 decl_stmt|;
 for|for
 control|(
@@ -1661,6 +1661,27 @@ name|list
 operator|->
 name|data
 expr_stmt|;
+name|row
+operator|=
+name|gtk_clist_find_row_from_data
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|gsp
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+name|gradient
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|row
+operator|>
+operator|-
+literal|1
+condition|)
 name|gtk_clist_set_text
 argument_list|(
 name|GTK_CLIST
@@ -1670,7 +1691,7 @@ operator|->
 name|clist
 argument_list|)
 argument_list|,
-name|n
+name|row
 argument_list|,
 literal|1
 argument_list|,
@@ -1777,11 +1798,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_select_delete_all (gint n)
+DECL|function|gradient_select_delete_all (gradient_t * gradient)
 name|gradient_select_delete_all
 parameter_list|(
-name|gint
-name|n
+name|gradient_t
+modifier|*
+name|gradient
 parameter_list|)
 block|{
 name|GradientSelect
@@ -1791,6 +1813,9 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|list
+decl_stmt|;
+name|gint
+name|row
 decl_stmt|;
 for|for
 control|(
@@ -1818,6 +1843,27 @@ name|list
 operator|->
 name|data
 expr_stmt|;
+name|row
+operator|=
+name|gtk_clist_find_row_from_data
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|gsp
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+name|gradient
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|row
+operator|>
+operator|-
+literal|1
+condition|)
 name|gtk_clist_remove
 argument_list|(
 name|GTK_CLIST
@@ -1827,7 +1873,7 @@ operator|->
 name|clist
 argument_list|)
 argument_list|,
-name|n
+name|row
 argument_list|)
 expr_stmt|;
 block|}
@@ -1876,27 +1922,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|gtk_clist_freeze
-argument_list|(
-name|GTK_CLIST
-argument_list|(
-name|gsp
-operator|->
-name|clist
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gtk_clist_clear
-argument_list|(
-name|GTK_CLIST
-argument_list|(
-name|gsp
-operator|->
-name|clist
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_clist_thaw
 argument_list|(
 name|GTK_CLIST
 argument_list|(
@@ -2007,12 +2033,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_select_update_all (gint row,gradient_t * gradient)
+DECL|function|gradient_select_update_all (gradient_t * gradient)
 name|gradient_select_update_all
 parameter_list|(
-name|gint
-name|row
-parameter_list|,
 name|gradient_t
 modifier|*
 name|gradient
@@ -2025,6 +2048,9 @@ decl_stmt|;
 name|GradientSelect
 modifier|*
 name|gsp
+decl_stmt|;
+name|gint
+name|row
 decl_stmt|;
 for|for
 control|(
@@ -2052,6 +2078,27 @@ name|list
 operator|->
 name|data
 expr_stmt|;
+name|row
+operator|=
+name|gtk_clist_find_row_from_data
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|gsp
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+name|gradient
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|row
+operator|>
+operator|-
+literal|1
+condition|)
 name|gtk_clist_set_text
 argument_list|(
 name|GTK_CLIST
