@@ -1002,34 +1002,6 @@ operator|.
 name|active
 condition|)
 block|{
-name|printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Deleted idlerendering gdisp %p...\n"
-argument_list|)
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-name|_
-argument_list|(
-literal|"\tIdlerender stops now!\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
 name|gtk_idle_remove
 argument_list|(
 name|gdisp
@@ -1046,19 +1018,6 @@ operator|.
 name|active
 operator|=
 name|FALSE
-expr_stmt|;
-name|printf
-argument_list|(
-name|_
-argument_list|(
-literal|"\tDeletion finished.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
 expr_stmt|;
 block|}
 if|if
