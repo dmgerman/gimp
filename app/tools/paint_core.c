@@ -4356,6 +4356,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* #define FANCY_PRESSURE */
+end_comment
+
 begin_function
 specifier|static
 name|MaskBuf
@@ -4392,13 +4396,6 @@ init|=
 name|NULL
 decl_stmt|;
 specifier|static
-name|double
-name|map
-index|[
-literal|256
-index|]
-decl_stmt|;
-specifier|static
 name|unsigned
 name|char
 name|mapi
@@ -4423,6 +4420,16 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|FANCY_PRESSURE
+specifier|static
+name|double
+name|map
+index|[
+literal|256
+index|]
+decl_stmt|;
 name|double
 name|ds
 decl_stmt|,
@@ -4430,6 +4437,8 @@ name|s
 decl_stmt|,
 name|c
 decl_stmt|;
+endif|#
+directive|endif
 comment|/* Get the raw subsampled mask */
 name|subsample_mask
 operator|=
@@ -4496,6 +4505,9 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|FANCY_PRESSURE
 comment|/* Create the pressure profile       It is: I'(I) = tanh(20*(pressure-0.5)*I) : pressure> 0.5             I'(I) = 1 - tanh(20*(0.5-pressure)*(1-I)) : pressure< 0.5       It looks like:          low pressure      medium pressure     high pressure               |                   /                 --              |    		/                 /             /     	       /                 |           --                  /	                 |    */
 name|ds
 operator|=
@@ -4681,6 +4693,59 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+else|#
+directive|else
+comment|/* ! FANCY_PRESSURE */
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|256
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|int
+name|tmp
+init|=
+operator|(
+name|pressure
+operator|/
+literal|0.5
+operator|)
+operator|*
+name|i
+decl_stmt|;
+if|if
+condition|(
+name|tmp
+operator|>
+literal|255
+condition|)
+name|mapi
+index|[
+name|i
+index|]
+operator|=
+literal|255
+expr_stmt|;
+else|else
+name|mapi
+index|[
+name|i
+index|]
+operator|=
+name|tmp
+expr_stmt|;
+block|}
+endif|#
+directive|endif
+comment|/* FANCY_PRESSURE */
 comment|/* Now convert the brush */
 name|source
 operator|=

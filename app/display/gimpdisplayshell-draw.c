@@ -692,6 +692,24 @@ name|CONVOLVE
 block|}
 block|,
 block|{
+operator|(
+name|char
+operator|*
+operator|*
+operator|)
+name|ink_bits
+block|,
+literal|"Draw in ink"
+block|,
+literal|"ContextHelp/ink"
+block|,
+operator|(
+name|gpointer
+operator|)
+name|INK
+block|}
+block|,
+block|{
 name|NULL
 block|,
 name|NULL
@@ -921,7 +939,7 @@ DECL|macro|ROWS
 define|#
 directive|define
 name|ROWS
-value|7
+value|8
 end_define
 
 begin_define
@@ -1850,7 +1868,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|21
+literal|22
 condition|;
 name|i
 operator|++

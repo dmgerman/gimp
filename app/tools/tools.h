@@ -143,10 +143,15 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27aea0d80103
+DECL|enum|__anon2c3c64c90103
 block|{
+DECL|enumerator|FIRST_TOOLBOX_TOOL
+name|FIRST_TOOLBOX_TOOL
+block|,
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
+init|=
+name|FIRST_TOOLBOX_TOOL
 block|,
 DECL|enumerator|ELLIPSE_SELECT
 name|ELLIPSE_SELECT
@@ -219,6 +224,14 @@ name|CLONE
 block|,
 DECL|enumerator|CONVOLVE
 name|CONVOLVE
+block|,
+DECL|enumerator|INK
+name|INK
+block|,
+DECL|enumerator|LAST_TOOLBOX_TOOL
+name|LAST_TOOLBOX_TOOL
+init|=
+name|INK
 block|,
 comment|/*  Non-toolbox tools  */
 DECL|enumerator|BY_COLOR_SELECT

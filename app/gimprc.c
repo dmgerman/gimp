@@ -136,7 +136,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2baeba460103
+DECL|enum|__anon2965b2910103
 typedef|typedef
 enum|enum
 block|{
@@ -8284,11 +8284,11 @@ for|for
 control|(
 name|tool
 operator|=
-name|RECT_SELECT
+name|FIRST_TOOLBOX_TOOL
 init|;
 name|tool
 operator|<=
-name|CONVOLVE
+name|LAST_TOOLBOX_TOOL
 condition|;
 name|tool
 operator|++
@@ -8315,7 +8315,7 @@ if|if
 condition|(
 name|tool
 operator|>
-name|CONVOLVE
+name|LAST_TOOLBOX_TOOL
 condition|)
 goto|goto
 name|error

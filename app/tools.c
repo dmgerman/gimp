@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"ink.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -520,19 +526,19 @@ block|,
 literal|20
 block|}
 block|,
+block|{
+name|NULL
+block|,
+literal|"Ink"
+block|,
+literal|21
+block|}
+block|,
 comment|/*  Non-toolbox tools  */
 block|{
 name|NULL
 block|,
 literal|"By Color Select"
-block|,
-literal|21
-block|}
-block|,
-block|{
-name|NULL
-block|,
-literal|"Color Balance"
 block|,
 literal|22
 block|}
@@ -540,7 +546,7 @@ block|,
 block|{
 name|NULL
 block|,
-literal|"Brightness-Contrast"
+literal|"Color Balance"
 block|,
 literal|23
 block|}
@@ -548,7 +554,7 @@ block|,
 block|{
 name|NULL
 block|,
-literal|"Hue-Saturation"
+literal|"Brightness-Contrast"
 block|,
 literal|24
 block|}
@@ -556,7 +562,7 @@ block|,
 block|{
 name|NULL
 block|,
-literal|"Posterize"
+literal|"Hue-Saturation"
 block|,
 literal|25
 block|}
@@ -564,7 +570,7 @@ block|,
 block|{
 name|NULL
 block|,
-literal|"Threshold"
+literal|"Posterize"
 block|,
 literal|26
 block|}
@@ -572,7 +578,7 @@ block|,
 block|{
 name|NULL
 block|,
-literal|"Curves"
+literal|"Threshold"
 block|,
 literal|27
 block|}
@@ -580,7 +586,7 @@ block|,
 block|{
 name|NULL
 block|,
-literal|"Levels"
+literal|"Curves"
 block|,
 literal|28
 block|}
@@ -588,9 +594,17 @@ block|,
 block|{
 name|NULL
 block|,
-literal|"Histogram"
+literal|"Levels"
 block|,
 literal|29
+block|}
+block|,
+block|{
+name|NULL
+block|,
+literal|"Histogram"
+block|,
+literal|30
 block|}
 block|}
 decl_stmt|;
@@ -912,6 +926,15 @@ case|case
 name|CONVOLVE
 case|:
 name|tools_free_convolve
+argument_list|(
+name|active_tool
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|INK
+case|:
+name|tools_free_ink
 argument_list|(
 name|active_tool
 argument_list|)
@@ -1260,6 +1283,15 @@ case|:
 name|active_tool
 operator|=
 name|tools_new_convolve
+argument_list|()
+expr_stmt|;
+break|break;
+case|case
+name|INK
+case|:
+name|active_tool
+operator|=
+name|tools_new_ink
 argument_list|()
 expr_stmt|;
 break|break;
@@ -1682,6 +1714,15 @@ case|:
 name|active_tool
 operator|=
 name|tools_new_convolve
+argument_list|()
+expr_stmt|;
+break|break;
+case|case
+name|INK
+case|:
+name|active_tool
+operator|=
+name|tools_new_ink
 argument_list|()
 expr_stmt|;
 break|break;
