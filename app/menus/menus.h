@@ -210,6 +210,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkItemFactory
+modifier|*
+name|menus_get_buffers_factory
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkItemFactory
+modifier|*
+name|menus_get_documents_factory
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|menus_create_item_from_full_path
 parameter_list|(

@@ -140,6 +140,17 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+name|void
+name|gimp_button_extended_clicked
+parameter_list|(
+name|GimpButton
+modifier|*
+name|button
+parameter_list|,
+name|guint
+name|state
+parameter_list|)
+function_decl|;
 ifdef|#
 directive|ifdef
 name|__cplusplus

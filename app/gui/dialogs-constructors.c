@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -198,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"buffers-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channels-commands.h"
 end_include
 
@@ -223,6 +223,12 @@ begin_include
 include|#
 directive|include
 file|"dialogs-constructors.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"documents-commands.h"
 end_include
 
 begin_include
@@ -385,7 +391,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0503cb0108
+DECL|struct|__anon2ae035410108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -1714,7 +1720,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|NULL
+name|buffers_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -2137,7 +2143,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|NULL
+name|buffers_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
@@ -2637,7 +2643,7 @@ literal|5
 argument_list|,
 literal|3
 argument_list|,
-name|NULL
+name|documents_show_context_menu
 argument_list|)
 expr_stmt|;
 return|return
