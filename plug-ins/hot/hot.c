@@ -131,7 +131,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2a59a98d0103
+DECL|enum|__anon28ac2e7d0103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a59a98d0203
+DECL|enum|__anon28ac2e7d0203
 typedef|typedef
 enum|enum
 block|{
@@ -206,7 +206,7 @@ comment|/*  * RGB to YIQ encoding matrix.  */
 end_comment
 
 begin_struct
-DECL|struct|__anon2a59a98d0308
+DECL|struct|__anon28ac2e7d0308
 struct|struct
 block|{
 DECL|member|pedestal
@@ -760,7 +760,6 @@ name|retvals
 operator|=
 name|rvals
 expr_stmt|;
-comment|/* bzero(&args, sizeof(struct piArgs)); */
 name|memset
 argument_list|(
 operator|&

@@ -498,7 +498,6 @@ name|retvals
 operator|=
 name|rvals
 expr_stmt|;
-comment|/* bzero(&args, sizeof(struct piArgs)); */
 name|memset
 argument_list|(
 operator|&
