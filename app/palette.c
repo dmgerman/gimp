@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296896a40103
+DECL|enum|__anon27c00d620103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -656,7 +656,7 @@ modifier|*
 name|palette_dialog_new
 parameter_list|(
 name|gboolean
-name|vert
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1637,7 +1637,7 @@ argument_list|)
 expr_stmt|;
 name|g_warning
 argument_list|(
-literal|"failed to open palette file %s: can't happen?"
+literal|"Failed to open palette file %s: can't happen?"
 argument_list|,
 name|filename
 argument_list|)
@@ -2108,7 +2108,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"can't save palette \"%s\"\n"
+literal|"Can't save palette \"%s\"\n"
 argument_list|)
 argument_list|,
 name|filename
@@ -2295,7 +2295,7 @@ index|]
 decl_stmt|;
 name|GSList
 modifier|*
-name|tmp_link
+name|list
 decl_stmt|;
 name|gint
 name|index
@@ -2347,19 +2347,19 @@ literal|0
 expr_stmt|;
 for|for
 control|(
-name|tmp_link
+name|list
 operator|=
 name|entries
 operator|->
 name|colors
 init|;
-name|tmp_link
+name|list
 condition|;
-name|tmp_link
+name|list
 operator|=
 name|g_slist_next
 argument_list|(
-name|tmp_link
+name|list
 argument_list|)
 control|)
 block|{
@@ -2378,7 +2378,7 @@ name|loop
 decl_stmt|;
 name|entry
 operator|=
-name|tmp_link
+name|list
 operator|->
 name|data
 expr_stmt|;
@@ -5208,6 +5208,14 @@ name|col
 expr_stmt|;
 name|tmp_link
 operator|=
+operator|(
+name|palette
+operator|->
+name|entries
+operator|!=
+name|NULL
+operator|)
+condition|?
 name|g_slist_nth
 argument_list|(
 name|palette
@@ -5218,6 +5226,8 @@ name|colors
 argument_list|,
 name|pos
 argument_list|)
+else|:
+name|NULL
 expr_stmt|;
 if|if
 condition|(
@@ -6849,6 +6859,14 @@ decl_stmt|;
 name|guint
 name|width
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|palette
+operator|->
+name|entries
+condition|)
+return|return;
 name|width
 operator|=
 name|palette
@@ -7276,6 +7294,15 @@ decl_stmt|;
 name|palette
 operator|=
 name|data
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|palette
+operator|->
+name|entries
+operator|!=
+name|NULL
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -8142,23 +8169,11 @@ argument_list|)
 operator|->
 name|selection
 expr_stmt|;
-while|while
+if|if
 condition|(
 name|sel_list
 condition|)
 block|{
-name|gint
-name|row
-decl_stmt|;
-name|row
-operator|=
-name|GPOINTER_TO_INT
-argument_list|(
-name|sel_list
-operator|->
-name|data
-argument_list|)
-expr_stmt|;
 name|p_entries
 operator|=
 operator|(
@@ -8174,17 +8189,20 @@ operator|->
 name|clist
 argument_list|)
 argument_list|,
-name|row
+name|GPOINTER_TO_INT
+argument_list|(
+name|sel_list
+operator|->
+name|data
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|palette_create_edit
 argument_list|(
 name|p_entries
 argument_list|)
 expr_stmt|;
-comment|/* One only */
-return|return;
-block|}
 block|}
 end_function
 
@@ -8484,11 +8502,11 @@ end_comment
 begin_function
 name|PaletteDialog
 modifier|*
-DECL|function|palette_dialog_new (gint vert)
+DECL|function|palette_dialog_new (gboolean editor)
 name|palette_dialog_new
 parameter_list|(
-name|gint
-name|vert
+name|gboolean
+name|editor
 parameter_list|)
 block|{
 name|PaletteDialog
@@ -8544,7 +8562,7 @@ index|]
 decl_stmt|;
 name|palette
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|PaletteDialog
 argument_list|,
@@ -8559,45 +8577,9 @@ name|default_palette_entries
 expr_stmt|;
 name|palette
 operator|->
-name|color
-operator|=
-name|NULL
-expr_stmt|;
-name|palette
-operator|->
-name|dnd_color
-operator|=
-name|NULL
-expr_stmt|;
-name|palette
-operator|->
-name|color_notebook
-operator|=
-name|NULL
-expr_stmt|;
-name|palette
-operator|->
-name|color_notebook_active
-operator|=
-name|FALSE
-expr_stmt|;
-name|palette
-operator|->
 name|zoom_factor
 operator|=
 literal|1.0
-expr_stmt|;
-name|palette
-operator|->
-name|last_width
-operator|=
-literal|0
-expr_stmt|;
-name|palette
-operator|->
-name|col_width
-operator|=
-literal|0
 expr_stmt|;
 name|palette
 operator|->
@@ -8620,7 +8602,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|vert
+name|editor
 condition|)
 block|{
 name|palette
@@ -8771,7 +8753,7 @@ block|}
 comment|/*  The main container widget  */
 if|if
 condition|(
-name|vert
+name|editor
 condition|)
 block|{
 name|hbox
@@ -9162,6 +9144,13 @@ literal|"Undefined"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|entry
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|palette
 operator|->
 name|entry_sig_id
@@ -9308,7 +9297,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|vert
+name|editor
 condition|)
 block|{
 name|gtk_notebook_append_page
@@ -9495,7 +9484,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|vert
+name|editor
 condition|)
 name|gtk_clist_set_selection_mode
 argument_list|(
@@ -9541,7 +9530,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|vert
+name|editor
 condition|)
 block|{
 name|frame
