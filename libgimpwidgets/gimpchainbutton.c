@@ -18,7 +18,7 @@ end_include
 begin_decl_stmt
 DECL|variable|gimp_chain_xpm
 specifier|static
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|gimp_chain_xpm
@@ -35,7 +35,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gimp_chain_broken_xpm
 specifier|static
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|gimp_chain_broken_xpm
@@ -116,7 +116,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GtkWidgetClass
+name|GtkTableClass
 modifier|*
 name|parent_class
 init|=
@@ -253,7 +253,7 @@ name|parent_class
 operator|=
 name|gtk_type_class
 argument_list|(
-name|gtk_widget_get_type
+name|gtk_table_get_type
 argument_list|()
 argument_list|)
 expr_stmt|;
@@ -721,12 +721,10 @@ name|GTK_RELIEF_NONE
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|GTK_WIDGET
 argument_list|(
 name|gcb
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
@@ -1596,12 +1594,6 @@ name|gcb
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|is_active
-operator|=
-name|is_active
-operator|!=
-literal|0
-expr_stmt|;
 if|if
 condition|(
 name|gcb
@@ -1706,15 +1698,9 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|gcb
 operator|->
 name|active
-operator|)
-condition|?
-name|TRUE
-else|:
-name|FALSE
 return|;
 block|}
 end_function
