@@ -223,6 +223,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|qmask_removed_callback
+parameter_list|(
+name|GtkObject
+modifier|*
+name|qmask
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Actual code */
 end_comment
@@ -248,6 +263,54 @@ operator|=
 name|adjustment
 operator|->
 name|value
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|qmask_removed_callback (GtkObject * qmask,gpointer data)
+name|qmask_removed_callback
+parameter_list|(
+name|GtkObject
+modifier|*
+name|qmask
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GDisplay
+modifier|*
+name|gdisp
+init|=
+operator|(
+name|GDisplay
+operator|*
+operator|)
+name|data
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|gdisp
+operator|->
+name|gimage
+condition|)
+return|return;
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|qmask_state
+operator|=
+literal|0
+expr_stmt|;
+name|qmask_buttons_update
+argument_list|(
+name|gdisp
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -507,10 +570,8 @@ name|gimage
 operator|->
 name|qmask_state
 condition|)
-block|{
 return|return;
 comment|/* if already set do nothing */
-block|}
 name|undo_push_group_start
 argument_list|(
 name|gimg
@@ -644,10 +705,8 @@ name|gimage
 operator|->
 name|qmask_state
 condition|)
-block|{
 return|return;
 comment|/* If already set, do nothing */
-block|}
 comment|/* Set the defaults */
 name|opacity
 operator|=
@@ -861,6 +920,24 @@ argument_list|)
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()
+expr_stmt|;
+comment|/* connect to the removed signal, so the buttons get updated */
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gmask
+argument_list|)
+argument_list|,
+literal|"removed"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|qmask_removed_callback
+argument_list|)
+argument_list|,
+name|gdisp
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -1354,9 +1431,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|edit_qmask_query_ok_callback (GtkWidget * widget,gpointer client_data)
 specifier|static
 name|void
+DECL|function|edit_qmask_query_ok_callback (GtkWidget * widget,gpointer client_data)
 name|edit_qmask_query_ok_callback
 parameter_list|(
 name|GtkWidget

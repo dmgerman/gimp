@@ -546,7 +546,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27f09a700103
+DECL|enum|__anon29e3db0e0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -13360,6 +13360,14 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* Send out REMOVED signal from channel */
+name|channel_removed
+argument_list|(
+name|channel
+argument_list|,
+name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Important to push the undo here in case the push fails  */

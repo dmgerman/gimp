@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afca75c0103
+DECL|enum|__anon2b3ed5150103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -375,6 +375,18 @@ name|channel_delete
 parameter_list|(
 name|Channel
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|channel_removed
+parameter_list|(
+name|Channel
+modifier|*
+parameter_list|,
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpsignal.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppreviewcache.h"
 end_include
 
@@ -129,9 +135,18 @@ directive|include
 file|"lut_funcs.h"
 end_include
 
-begin_comment
-comment|/* enum {   LAST_SIGNAL }; */
-end_comment
+begin_enum
+DECL|enum|__anon28b766660103
+enum|enum
+block|{
+DECL|enumerator|REMOVED
+name|REMOVED
+block|,
+DECL|enumerator|LAST_SIGNAL
+name|LAST_SIGNAL
+block|}
+enum|;
+end_enum
 
 begin_function_decl
 specifier|static
@@ -169,9 +184,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* static gint channel_signals[LAST_SIGNAL] = { 0 }; */
-end_comment
+begin_decl_stmt
+DECL|variable|channel_signals
+specifier|static
+name|guint
+name|channel_signals
+index|[
+name|LAST_SIGNAL
+index|]
+init|=
+block|{
+literal|0
+block|}
+decl_stmt|;
+end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|parent_class
@@ -289,7 +315,35 @@ name|gimp_drawable_get_type
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*   gtk_object_class_add_signals (object_class, channel_signals, LAST_SIGNAL);   */
+name|channel_signals
+index|[
+name|REMOVED
+index|]
+operator|=
+name|gimp_signal_new
+argument_list|(
+literal|"removed"
+argument_list|,
+literal|0
+argument_list|,
+name|object_class
+operator|->
+name|type
+argument_list|,
+literal|0
+argument_list|,
+name|gimp_sigtype_void
+argument_list|)
+expr_stmt|;
+name|gtk_object_class_add_signals
+argument_list|(
+name|object_class
+argument_list|,
+name|channel_signals
+argument_list|,
+name|LAST_SIGNAL
+argument_list|)
+expr_stmt|;
 name|object_class
 operator|->
 name|destroy
@@ -1242,6 +1296,54 @@ operator|)
 operator|(
 name|object
 operator|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/* The removed signal is sent out when the channel is no longer  * associcated with an image.  It's needed because channels aren't  * destroyed immediately, but kept around for undo purposes.  Connect  * to the removed signal to update bits of UI that are tied to a  * particular layer. */
+end_comment
+
+begin_function
+name|void
+DECL|function|channel_removed (Channel * channel,gpointer image)
+name|channel_removed
+parameter_list|(
+name|Channel
+modifier|*
+name|channel
+parameter_list|,
+name|gpointer
+name|image
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|channel
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
+name|channel_signals
+index|[
+name|REMOVED
+index|]
+argument_list|)
 expr_stmt|;
 block|}
 end_function

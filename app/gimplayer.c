@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon28c243650103
+DECL|enum|__anon2b3cea370103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -255,7 +255,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* static gint layer_mask_signals[LAST_SIGNAL] = { 0 }; */
+comment|/*   static guint layer_mask_signals[LAST_SIGNAL] = { 0 };  */
 end_comment
 
 begin_decl_stmt
