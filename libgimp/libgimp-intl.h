@@ -36,7 +36,7 @@ name|_
 parameter_list|(
 name|String
 parameter_list|)
-value|dgettext ("gimp-std-plugins", String)
+value|dgettext ("gimp-libgimp", String)
 end_define
 
 begin_undef
@@ -53,7 +53,7 @@ name|gettext
 parameter_list|(
 name|String
 parameter_list|)
-value|dgettext ("gimp-std-plugins", String)
+value|dgettext ("gimp-libgimp", String)
 end_define
 
 begin_ifdef
@@ -70,7 +70,7 @@ name|N_
 parameter_list|(
 name|String
 parameter_list|)
-value|dgettext_noop ("gimp-std_plugins", String)
+value|dgettext_noop ("gimp-libgimp", String)
 end_define
 
 begin_else
