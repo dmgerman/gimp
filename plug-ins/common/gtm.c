@@ -60,7 +60,7 @@ comment|/* Typedefs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c6b6f950108
+DECL|struct|__anon2bcb22170108
 typedef|typedef
 struct|struct
 block|{
@@ -127,7 +127,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6b6f950208
+DECL|struct|__anon2bcb22170208
 typedef|typedef
 struct|struct
 block|{
@@ -528,7 +528,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_GTM_save"
 argument_list|,
-literal|"htm,html"
+literal|"html,htm"
 argument_list|,
 literal|""
 argument_list|)

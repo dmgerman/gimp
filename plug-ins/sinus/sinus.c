@@ -224,7 +224,7 @@ value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon2b88e62c0108
+DECL|struct|__anon292da94f0108
 typedef|typedef
 struct|struct
 block|{
@@ -333,7 +333,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b88e62c0208
+DECL|struct|__anon292da94f0208
 typedef|typedef
 struct|struct
 block|{
@@ -884,6 +884,9 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sinus"
@@ -1497,7 +1500,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2b88e62c0308
+DECL|struct|__anon292da94f0308
 DECL|member|r
 DECL|member|g
 DECL|member|b

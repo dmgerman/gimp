@@ -142,7 +142,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2a31b43c0108
+DECL|struct|__anon2b7669810108
 typedef|typedef
 struct|struct
 block|{
@@ -170,7 +170,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a31b43c0208
+DECL|struct|__anon2b7669810208
 typedef|typedef
 struct|struct
 block|{
@@ -455,6 +455,9 @@ name|nreturn_vals
 init|=
 name|NUMBER_OUT_ARGS
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* the actual installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
@@ -616,6 +619,9 @@ operator|.
 name|window_id
 operator|=
 name|NULL
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 comment|/* Get information from the dialog */
 if|if

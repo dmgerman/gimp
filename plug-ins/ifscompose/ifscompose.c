@@ -124,7 +124,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon29fcea290103
+DECL|enum|__anon28a6724f0103
 typedef|typedef
 enum|enum
 block|{
@@ -144,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29fcea290203
+DECL|enum|__anon28a6724f0203
 typedef|typedef
 enum|enum
 block|{
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcea290308
+DECL|struct|__anon28a6724f0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -183,7 +183,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon29fcea29040a
+DECL|union|__anon28a6724f040a
 union|union
 block|{
 DECL|member|d
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcea290508
+DECL|struct|__anon28a6724f0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcea290608
+DECL|struct|__anon28a6724f0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcea290708
+DECL|struct|__anon28a6724f0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcea290808
+DECL|struct|__anon28a6724f0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcea290908
+DECL|struct|__anon28a6724f0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fcea290a08
+DECL|struct|__anon28a6724f0a08
 block|{
 DECL|member|run
 name|gint
@@ -1599,6 +1599,9 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_ifs_compose"

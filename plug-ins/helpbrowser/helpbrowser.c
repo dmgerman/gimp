@@ -133,7 +133,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2b264fc60103
+DECL|enum|__anon2c2f45160103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -149,7 +149,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b264fc60203
+DECL|enum|__anon2c2f45160203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -181,7 +181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b264fc60308
+DECL|struct|__anon2c2f45160308
 block|{
 DECL|member|index
 name|gint
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b264fc60408
+DECL|struct|__anon2c2f45160408
 block|{
 DECL|member|title
 name|gchar
@@ -4965,6 +4965,9 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|GIMP_HELP_EXT_NAME
@@ -5095,6 +5098,9 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 if|if
 condition|(

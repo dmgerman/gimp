@@ -240,11 +240,11 @@ DECL|macro|PREVIEW_MASK
 define|#
 directive|define
 name|PREVIEW_MASK
-value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \                        GDK_BUTTON1_MOTION_MASK
+value|( GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \                        GDK_BUTTON1_MOTION_MASK )
 end_define
 
 begin_typedef
-DECL|struct|__anon292485240108
+DECL|struct|__anon29790b340108
 typedef|typedef
 struct|struct
 block|{
@@ -281,7 +281,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292485240208
+DECL|struct|__anon29790b340208
 typedef|typedef
 struct|struct
 block|{
@@ -296,7 +296,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292485240308
+DECL|struct|__anon29790b340308
 typedef|typedef
 struct|struct
 block|{
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292485240408
+DECL|struct|__anon29790b340408
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -704,7 +704,7 @@ name|gdouble
 name|h
 parameter_list|,
 name|gdouble
-name|sl
+name|s
 parameter_list|,
 name|gdouble
 name|l
@@ -913,6 +913,9 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_nova"
@@ -5076,11 +5079,13 @@ comment|/*  ################################################################  ##
 end_comment
 
 begin_function
-DECL|function|gauss ()
 specifier|static
 name|double
+DECL|function|gauss (void)
 name|gauss
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|double
 name|sum

@@ -66,7 +66,7 @@ value|20
 end_define
 
 begin_typedef
-DECL|struct|__anon2bbeab640108
+DECL|struct|__anon2c235e5b0108
 typedef|typedef
 struct|struct
 block|{
@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbeab640208
+DECL|struct|__anon2c235e5b0208
 typedef|typedef
 struct|struct
 block|{
@@ -99,7 +99,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbeab640308
+DECL|struct|__anon2c235e5b0308
 typedef|typedef
 struct|struct
 block|{
@@ -392,6 +392,9 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_colortoalpha"
