@@ -104,7 +104,10 @@ name|GimpAnchor
 modifier|*
 name|temp_anchor
 decl_stmt|;
-comment|/* Stuff missing? */
+DECL|member|closed
+name|gboolean
+name|closed
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -219,7 +222,6 @@ name|GimpCoords
 modifier|*
 name|deltacoord
 parameter_list|,
-specifier|const
 name|GimpAnchorFeatureType
 name|feature
 parameter_list|)
@@ -244,7 +246,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|GimpAnchorFeatureType
 name|feature
 parameter_list|)
@@ -455,10 +456,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  stroke utility functions  */
-end_comment
-
 begin_decl_stmt
 name|GType
 name|gimp_stroke_get_type
@@ -550,9 +547,8 @@ parameter_list|,
 specifier|const
 name|GimpCoords
 modifier|*
-name|deltacoord
+name|delta
 parameter_list|,
-specifier|const
 name|GimpAnchorFeatureType
 name|feature
 parameter_list|)
@@ -576,7 +572,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|GimpAnchorFeatureType
 name|feature
 parameter_list|)
@@ -668,7 +663,7 @@ name|precision
 parameter_list|,
 name|gboolean
 modifier|*
-name|ret_closed
+name|closed
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -730,10 +725,6 @@ name|stroke
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* usually overloaded */
-end_comment
 
 begin_comment
 comment|/* creates a bezier approximation. */

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"glib-object.h"
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -40,21 +40,6 @@ directive|define
 name|INPUT_RESOLUTION
 value|256
 end_define
-
-begin_comment
-comment|/*  private variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpStrokeClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/* local prototypes */
@@ -102,7 +87,6 @@ name|GimpCoords
 modifier|*
 name|deltacoord
 parameter_list|,
-specifier|const
 name|GimpAnchorFeatureType
 name|feature
 parameter_list|)
@@ -127,7 +111,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|GimpAnchorFeatureType
 name|feature
 parameter_list|)
@@ -149,6 +132,28 @@ name|anchor
 parameter_list|,
 name|GimpAnchorFeatureType
 name|feature
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GArray
+modifier|*
+name|gimp_bezier_stroke_interpolate
+parameter_list|(
+specifier|const
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|,
+specifier|const
+name|gdouble
+name|precision
+parameter_list|,
+name|gboolean
+modifier|*
+name|closed
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -256,7 +261,7 @@ name|b
 parameter_list|,
 name|GimpCoords
 modifier|*
-name|ret_difference
+name|difference
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -389,6 +394,21 @@ name|precision
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  private variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GimpStrokeClass
+modifier|*
+name|parent_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 name|GType
@@ -745,7 +765,7 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_bezier_stroke_new_from_coords (const GimpCoords * coords,const gint ncoords)
+DECL|function|gimp_bezier_stroke_new_from_coords (const GimpCoords * coords,gint n_coords)
 name|gimp_bezier_stroke_new_from_coords
 parameter_list|(
 specifier|const
@@ -753,9 +773,8 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-specifier|const
 name|gint
-name|ncoords
+name|n_coords
 parameter_list|)
 block|{
 name|GimpBezierStroke
@@ -777,7 +796,7 @@ name|count
 decl_stmt|;
 if|if
 condition|(
-name|ncoords
+name|n_coords
 operator|>=
 literal|1
 condition|)
@@ -818,7 +837,7 @@ while|while
 condition|(
 name|count
 operator|<
-name|ncoords
+name|n_coords
 condition|)
 block|{
 name|last_anchor
@@ -1081,60 +1100,9 @@ expr_stmt|;
 name|anchor
 operator|->
 name|position
-operator|.
-name|x
 operator|=
+operator|*
 name|coords
-operator|->
-name|x
-expr_stmt|;
-name|anchor
-operator|->
-name|position
-operator|.
-name|y
-operator|=
-name|coords
-operator|->
-name|y
-expr_stmt|;
-name|anchor
-operator|->
-name|position
-operator|.
-name|pressure
-operator|=
-literal|1.0
-expr_stmt|;
-name|anchor
-operator|->
-name|position
-operator|.
-name|xtilt
-operator|=
-literal|0.5
-expr_stmt|;
-name|anchor
-operator|->
-name|position
-operator|.
-name|ytilt
-operator|=
-literal|0.5
-expr_stmt|;
-name|anchor
-operator|->
-name|position
-operator|.
-name|wheel
-operator|=
-literal|0.5
-expr_stmt|;
-name|anchor
-operator|->
-name|selected
-operator|=
-name|FALSE
 expr_stmt|;
 switch|switch
 condition|(
@@ -1330,7 +1298,6 @@ return|return
 name|anchor
 return|;
 block|}
-else|else
 return|return
 name|NULL
 return|;
@@ -1341,7 +1308,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bezier_stroke_anchor_move_relative (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * deltacoord,const GimpAnchorFeatureType feature)
+DECL|function|gimp_bezier_stroke_anchor_move_relative (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * deltacoord,GimpAnchorFeatureType feature)
 name|gimp_bezier_stroke_anchor_move_relative
 parameter_list|(
 name|GimpStroke
@@ -1357,7 +1324,6 @@ name|GimpCoords
 modifier|*
 name|deltacoord
 parameter_list|,
-specifier|const
 name|GimpAnchorFeatureType
 name|feature
 parameter_list|)
@@ -1748,7 +1714,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bezier_stroke_anchor_move_absolute (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * coord,const GimpAnchorFeatureType feature)
+DECL|function|gimp_bezier_stroke_anchor_move_absolute (GimpStroke * stroke,GimpAnchor * anchor,const GimpCoords * coord,GimpAnchorFeatureType feature)
 name|gimp_bezier_stroke_anchor_move_absolute
 parameter_list|(
 name|GimpStroke
@@ -1764,7 +1730,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|GimpAnchorFeatureType
 name|feature
 parameter_list|)
@@ -1777,11 +1742,9 @@ argument_list|(
 name|coord
 argument_list|,
 operator|&
-operator|(
 name|anchor
 operator|->
 name|position
-operator|)
 argument_list|,
 operator|&
 name|deltacoord
@@ -1803,6 +1766,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_bezier_stroke_anchor_convert (GimpStroke * stroke,GimpAnchor * anchor,GimpAnchorFeatureType feature)
 name|gimp_bezier_stroke_anchor_convert
@@ -1916,6 +1880,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GArray
 modifier|*
 DECL|function|gimp_bezier_stroke_interpolate (const GimpStroke * stroke,gdouble precision,gboolean * ret_closed)
@@ -2620,7 +2585,6 @@ operator|*
 name|INPUT_RESOLUTION
 expr_stmt|;
 return|return
-operator|(
 name|gimp_bezier_coords_scalarprod
 argument_list|(
 operator|&
@@ -2629,7 +2593,6 @@ argument_list|,
 operator|&
 name|upscaled_a
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
@@ -2647,7 +2610,6 @@ name|a
 parameter_list|)
 block|{
 return|return
-operator|(
 name|sqrt
 argument_list|(
 name|gimp_bezier_coords_length2
@@ -2655,7 +2617,6 @@ argument_list|(
 name|a
 argument_list|)
 argument_list|)
-operator|)
 return|;
 block|}
 end_function

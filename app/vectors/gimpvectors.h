@@ -155,7 +155,6 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
-specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
@@ -310,11 +309,9 @@ name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
-specifier|const
 name|gint
 name|max_points
 parameter_list|,
@@ -480,7 +477,6 @@ name|GimpCoords
 modifier|*
 name|deltacoord
 parameter_list|,
-specifier|const
 name|gint
 name|type
 parameter_list|)
@@ -504,7 +500,6 @@ name|GimpCoords
 modifier|*
 name|coord
 parameter_list|,
-specifier|const
 name|gint
 name|type
 parameter_list|)
@@ -658,11 +653,9 @@ name|GimpStroke
 modifier|*
 name|stroke
 parameter_list|,
-specifier|const
 name|gdouble
 name|precision
 parameter_list|,
-specifier|const
 name|gint
 name|max_points
 parameter_list|,
