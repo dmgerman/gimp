@@ -80,7 +80,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimplimits.h"
 end_include
 
 begin_include
@@ -89,8 +89,14 @@ directive|include
 file|"libgimp/gimpsizeentry.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_typedef
-DECL|struct|__anon2989ffb00108
+DECL|struct|__anon2b4143f00108
 typedef|typedef
 struct|struct
 block|{
@@ -1776,9 +1782,9 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|1
+name|GIMP_MIN_IMAGE_SIZE
 argument_list|,
-literal|32767
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
@@ -1792,9 +1798,9 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+name|GIMP_MIN_IMAGE_SIZE
 argument_list|,
-literal|32767
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -2019,9 +2025,9 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|1
+name|GIMP_MIN_RESOLUTION
 argument_list|,
-literal|32767
+name|GIMP_MAX_RESOLUTION
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -2206,9 +2212,9 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|1
+name|GIMP_MIN_RESOLUTION
 argument_list|,
-literal|32767
+name|GIMP_MAX_RESOLUTION
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval_boundaries
@@ -2222,9 +2228,9 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+name|GIMP_MIN_RESOLUTION
 argument_list|,
-literal|32767
+name|GIMP_MAX_RESOLUTION
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval

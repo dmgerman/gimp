@@ -49,6 +49,12 @@ directive|include
 file|"text_tool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|text_fontname_proc
 specifier|static
@@ -186,19 +192,11 @@ if|if
 condition|(
 name|xresolution
 operator|<
-operator|(
-literal|1.0
-operator|/
-literal|65536.0
-operator|)
+name|GIMP_MIN_RESOLUTION
 operator|||
 name|yresolution
 operator|<
-operator|(
-literal|1.0
-operator|/
-literal|65536.0
-operator|)
+name|GIMP_MIN_RESOLUTION
 operator|||
 name|metric
 operator|==
@@ -220,7 +218,7 @@ name|MIN
 argument_list|(
 name|xresolution
 argument_list|,
-literal|65536.0
+name|GIMP_MAX_RESOLUTION
 argument_list|)
 expr_stmt|;
 name|yresolution
@@ -229,7 +227,7 @@ name|MIN
 argument_list|(
 name|yresolution
 argument_list|,
-literal|65536.0
+name|GIMP_MAX_RESOLUTION
 argument_list|)
 expr_stmt|;
 block|}
@@ -253,6 +251,11 @@ operator|!=
 literal|0.0
 condition|)
 block|{
+comment|/*  the xlfd uses decipoints  */
+name|size
+operator|*=
+literal|10
+expr_stmt|;
 comment|/*  X allows only integer resolution values, so we do some        *  ugly calculations (starting with yres because the size of        *  a font is it's height)        */
 if|if
 condition|(
@@ -262,7 +265,7 @@ literal|1.0
 condition|)
 block|{
 name|size
-operator|*=
+operator|/=
 operator|(
 literal|1.0
 operator|/
@@ -283,8 +286,8 @@ literal|1.0
 expr_stmt|;
 block|}
 comment|/*  res may be != (int) res        *  (important only for very small resolutions)        */
-name|xresolution
-operator|/=
+name|size
+operator|*=
 name|yresolution
 operator|/
 operator|(
@@ -295,7 +298,7 @@ name|int
 operator|)
 name|yresolution
 expr_stmt|;
-name|size
+name|xresolution
 operator|/=
 name|yresolution
 operator|/
@@ -316,13 +319,8 @@ name|xresolution
 argument_list|,
 literal|1.0
 argument_list|,
-literal|65536.0
+name|GIMP_MAX_RESOLUTION
 argument_list|)
-expr_stmt|;
-comment|/*  the xlfd uses decipoints  */
-name|size
-operator|*=
-literal|10
 expr_stmt|;
 block|}
 name|sprintf

@@ -10359,9 +10359,9 @@ literal|"Returns the unit of the specified image."
 block|,
 literal|"This procedure returns the specified image's unit. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
 block|,
-literal|"Michael Naterrer"
+literal|"Michael Natterer"
 block|,
-literal|"Michael Naterrer"
+literal|"Michael Natterer"
 block|,
 literal|"1998"
 block|,
@@ -10520,9 +10520,9 @@ literal|"Set the unit of the specified image."
 block|,
 literal|"This procedure sets the specified image's unit. No scaling or resizing is performed. This value is independent of any of the layers in this image. See the gimp_unit_* procedure definitions for the valid range of unit IDs and a description of the unit system."
 block|,
-literal|"Michael Naterrer"
+literal|"Michael Natterer"
 block|,
-literal|"Michael Naterrer"
+literal|"Michael Natterer"
 block|,
 literal|"1998"
 block|,
