@@ -72,7 +72,7 @@ value|7
 end_define
 
 begin_enum
-DECL|enum|__anon2c2bc47c0103
+DECL|enum|__anon2c52d8830103
 enum|enum
 block|{
 DECL|enumerator|PATH_COLUMN
@@ -90,7 +90,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2bc47c0208
+DECL|struct|__anon2c52d8830208
 block|{
 DECL|member|table
 name|GtkWidget
@@ -408,7 +408,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GTK_STOCK_OK
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|browser_popdown_callback
 argument_list|,
