@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f4e2050108
+DECL|struct|__anon2c8485550108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -830,10 +830,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|export_dialog (GList * actions,gchar * format)
+DECL|function|export_dialog (GSList * actions,gchar * format)
 name|export_dialog
 parameter_list|(
-name|GList
+name|GSList
 modifier|*
 name|actions
 parameter_list|,
@@ -862,7 +862,7 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-name|GList
+name|GSList
 modifier|*
 name|list
 decl_stmt|;
@@ -1744,13 +1744,13 @@ name|cap
 parameter_list|)
 comment|/* cap like capabilities */
 block|{
-name|GList
+name|GSList
 modifier|*
 name|actions
 init|=
 name|NULL
 decl_stmt|;
-name|GList
+name|GSList
 modifier|*
 name|list
 decl_stmt|;
@@ -1863,7 +1863,7 @@ condition|)
 block|{
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -1889,7 +1889,7 @@ condition|)
 block|{
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -1919,13 +1919,6 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
-operator|(
-name|cap
-operator|&
-name|CAN_HANDLE_LAYERS
-operator|)
-operator|&&
 operator|(
 name|cap
 operator|&
@@ -1934,7 +1927,7 @@ operator|)
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -1954,7 +1947,7 @@ operator|)
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2006,7 +1999,7 @@ operator|)
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2023,7 +2016,7 @@ name|CAN_HANDLE_INDEXED
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2040,7 +2033,7 @@ name|CAN_HANDLE_GRAY
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2079,7 +2072,7 @@ operator|)
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2096,7 +2089,7 @@ name|CAN_HANDLE_RGB
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2113,7 +2106,7 @@ name|CAN_HANDLE_INDEXED
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2152,7 +2145,7 @@ operator|)
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2169,7 +2162,7 @@ name|CAN_HANDLE_RGB
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2186,7 +2179,7 @@ name|CAN_HANDLE_GRAY
 condition|)
 name|actions
 operator|=
-name|g_list_append
+name|g_slist_prepend
 argument_list|(
 name|actions
 argument_list|,
@@ -2201,6 +2194,14 @@ if|if
 condition|(
 name|actions
 condition|)
+block|{
+name|actions
+operator|=
+name|g_slist_reverse
+argument_list|(
+name|actions
+argument_list|)
+expr_stmt|;
 name|dialog_return
 operator|=
 name|export_dialog
@@ -2210,6 +2211,7 @@ argument_list|,
 name|format
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 name|dialog_return
 operator|=
