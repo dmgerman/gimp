@@ -4854,6 +4854,18 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
+literal|"/Layer/Crop Layer"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|sel
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
 literal|"/Layer/Transform/Offset..."
 argument_list|,
 name|lp

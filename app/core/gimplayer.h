@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b8a2ccd0108
+DECL|struct|__anon277832660108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -558,7 +558,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|gimp_layer_pick_correlate
 parameter_list|(
 name|GimpLayer

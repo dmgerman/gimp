@@ -3224,6 +3224,31 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Crop Layer"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_crop_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_CROP
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/dialogs/scale_layer.html"
+block|,
+name|NULL
+block|}
+block|,
 comment|/*<Image>/Layer/Transform  */
 name|SEPARATOR
 argument_list|(

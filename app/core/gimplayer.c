@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6b7620103
+DECL|enum|__anon2b38643d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -5586,7 +5586,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|gimp_layer_pick_correlate (GimpLayer * layer,gint x,gint y)
 name|gimp_layer_pick_correlate
 parameter_list|(
