@@ -5804,7 +5804,7 @@ name|tool_options_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Path Tool Options"
+literal|"Path Tool"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6140,7 +6140,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c85c9bd0108
+DECL|struct|__anon29b80f310108
 typedef|typedef
 struct|struct
 block|{
@@ -6525,7 +6525,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c85c9bd0208
+DECL|struct|__anon29b80f310208
 typedef|typedef
 struct|struct
 block|{
@@ -6877,7 +6877,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c85c9bd0308
+DECL|struct|__anon29b80f310308
 typedef|typedef
 struct|struct
 block|{
@@ -7207,7 +7207,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c85c9bd0408
+DECL|struct|__anon29b80f310408
 typedef|typedef
 struct|struct
 block|{
@@ -7365,7 +7365,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c85c9bd0508
+DECL|struct|__anon29b80f310508
 typedef|typedef
 struct|struct
 block|{

@@ -729,7 +729,7 @@ name|tool_options_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Threshold Options"
+literal|"Threshold"
 argument_list|)
 argument_list|)
 expr_stmt|;

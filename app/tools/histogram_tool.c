@@ -807,7 +807,7 @@ name|tool_options_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Histogram Options"
+literal|"Histogram"
 argument_list|)
 argument_list|)
 expr_stmt|;

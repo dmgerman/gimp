@@ -366,7 +366,7 @@ operator|=
 name|tool_options_new
 argument_list|(
 operator|(
-literal|"Posterize Options"
+literal|"Posterize"
 operator|)
 argument_list|)
 expr_stmt|;

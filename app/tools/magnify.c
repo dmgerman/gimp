@@ -372,7 +372,7 @@ name|options
 argument_list|,
 name|_
 argument_list|(
-literal|"Magnify Options"
+literal|"Magnify Tool"
 argument_list|)
 argument_list|,
 name|magnify_options_reset

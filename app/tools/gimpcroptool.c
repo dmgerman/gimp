@@ -633,7 +633,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d242b30103
+DECL|enum|__anon28c643ad0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -920,7 +920,7 @@ name|options
 argument_list|,
 name|_
 argument_list|(
-literal|"Crop& Resize Options"
+literal|"Crop& Resize"
 argument_list|)
 argument_list|,
 name|crop_options_reset

@@ -245,7 +245,7 @@ name|options
 argument_list|,
 name|_
 argument_list|(
-literal|"Flip Tool Options"
+literal|"Flip Tool"
 argument_list|)
 argument_list|,
 name|flip_options_reset

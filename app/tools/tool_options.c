@@ -410,7 +410,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Rectangular Select Options"
+literal|"Rectangular Selection"
 argument_list|)
 else|:
 operator|(
@@ -422,7 +422,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Elliptical Selection Options"
+literal|"Elliptical Selection"
 argument_list|)
 else|:
 operator|(
@@ -434,7 +434,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Free-hand Selection Options"
+literal|"Free-Hand Selection"
 argument_list|)
 else|:
 operator|(
@@ -446,7 +446,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Fuzzy Selection Options"
+literal|"Fuzzy Selection"
 argument_list|)
 else|:
 operator|(
@@ -458,7 +458,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Bezier Selection Options"
+literal|"Bezier Selection"
 argument_list|)
 else|:
 operator|(
@@ -470,7 +470,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Intelligent Scissors Options"
+literal|"Intelligent Scissors"
 argument_list|)
 else|:
 operator|(
@@ -482,10 +482,10 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"By-Color Select Options"
+literal|"By-Color Selection"
 argument_list|)
 else|:
-literal|"ERROR: Unknown Selection Type"
+literal|"ERROR: Unknown Select Tool Type"
 operator|)
 operator|)
 operator|)
@@ -2153,7 +2153,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Bucket Fill Options"
+literal|"Bucket Fill"
 argument_list|)
 else|:
 operator|(
@@ -2165,7 +2165,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Blend Options"
+literal|"Blend Tool"
 argument_list|)
 else|:
 operator|(
@@ -2177,7 +2177,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Pencil Options"
+literal|"Pencil"
 argument_list|)
 else|:
 operator|(
@@ -2189,7 +2189,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Paintbrush Options"
+literal|"Paintbrush"
 argument_list|)
 else|:
 operator|(
@@ -2201,7 +2201,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Eraser Options"
+literal|"Eraser"
 argument_list|)
 else|:
 operator|(
@@ -2213,7 +2213,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Airbrush Options"
+literal|"Airbrush"
 argument_list|)
 else|:
 operator|(
@@ -2225,7 +2225,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Clone Tool Options"
+literal|"Clone Tool"
 argument_list|)
 else|:
 operator|(
@@ -2237,7 +2237,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Convolver Options"
+literal|"Convolver"
 argument_list|)
 else|:
 operator|(
@@ -2249,7 +2249,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Ink Options"
+literal|"Ink Tool"
 argument_list|)
 else|:
 operator|(
@@ -2261,7 +2261,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Dodge or Burn Options"
+literal|"Dodge or Burn"
 argument_list|)
 else|:
 operator|(
@@ -2273,7 +2273,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Smudge Options"
+literal|"Smudge Tool"
 argument_list|)
 else|:
 operator|(
@@ -2285,10 +2285,10 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Xinput Airbrush Options"
+literal|"Xinput Airbrush"
 argument_list|)
 else|:
-literal|"ERROR: Unknown Paint Type"
+literal|"ERROR: Unknown Paint Tool Type"
 operator|)
 operator|)
 operator|)

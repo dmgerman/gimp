@@ -723,7 +723,7 @@ name|options
 argument_list|,
 name|_
 argument_list|(
-literal|"Transform Tool Options"
+literal|"Transform Tool"
 argument_list|)
 argument_list|,
 name|transform_options_reset

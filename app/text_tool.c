@@ -705,7 +705,7 @@ name|options
 argument_list|,
 name|_
 argument_list|(
-literal|"Text Tool Options"
+literal|"Text Tool"
 argument_list|)
 argument_list|,
 name|text_options_reset

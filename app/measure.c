@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27564d530103
+DECL|enum|__anon2acecfad0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -395,7 +395,9 @@ begin_function_decl
 specifier|static
 name|void
 name|measure_tool_info_update
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -469,7 +471,7 @@ name|options
 argument_list|,
 name|_
 argument_list|(
-literal|"Measure Options"
+literal|"Measure Tool"
 argument_list|)
 argument_list|,
 name|measure_tool_options_reset

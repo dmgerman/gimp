@@ -352,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ad9b00108
+DECL|struct|__anon275c3b480108
 block|{
 DECL|member|offset
 name|gdouble
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274ad9b00208
+DECL|struct|__anon275c3b480208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1218,9 +1218,11 @@ begin_function
 specifier|static
 name|BlendOptions
 modifier|*
-DECL|function|blend_options_new ()
+DECL|function|blend_options_new (void)
 name|blend_options_new
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|BlendOptions
 modifier|*

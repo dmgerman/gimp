@@ -643,7 +643,7 @@ name|options
 argument_list|,
 name|_
 argument_list|(
-literal|"Color Picker Options"
+literal|"Color Picker"
 argument_list|)
 argument_list|,
 name|color_picker_options_reset
