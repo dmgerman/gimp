@@ -1148,7 +1148,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"rt"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 if|if

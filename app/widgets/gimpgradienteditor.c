@@ -340,7 +340,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c86f2b20103
+DECL|enum|__anon2b9a92050103
 typedef|typedef
 enum|enum
 block|{
@@ -367,7 +367,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c86f2b20203
+DECL|enum|__anon2b9a92050203
 typedef|typedef
 enum|enum
 block|{
@@ -512,7 +512,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c86f2b20303
+DECL|enum|__anon2b9a92050303
 typedef|typedef
 enum|enum
 block|{
@@ -536,7 +536,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c86f2b20408
+DECL|struct|__anon2b9a92050408
 typedef|typedef
 struct|struct
 block|{
@@ -816,7 +816,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon2c86f2b20508
+DECL|struct|__anon2b9a92050508
 struct|struct
 block|{
 DECL|member|r
@@ -8300,7 +8300,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -24977,7 +24977,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -25353,7 +25353,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 if|if

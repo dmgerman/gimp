@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e3bb300103
+DECL|enum|__anon290e6bc30103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -8205,7 +8205,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 if|if

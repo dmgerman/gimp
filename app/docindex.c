@@ -980,7 +980,7 @@ name|fopen
 argument_list|(
 name|desktopfile
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1344,7 +1344,7 @@ name|fopen
 argument_list|(
 name|desktopfile
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2087,7 +2087,7 @@ name|fopen
 argument_list|(
 name|desktopfile
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -2378,7 +2378,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 if|if

@@ -52,7 +52,7 @@ file|"brush_header.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28a17e0d0103
+DECL|enum|__anon2923ce070103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -616,7 +616,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 operator|)
 condition|)

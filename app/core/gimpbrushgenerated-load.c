@@ -372,7 +372,7 @@ name|fopen
 argument_list|(
 name|file_name
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 operator|)
 operator|==
@@ -626,7 +626,7 @@ name|fopen
 argument_list|(
 name|file_name
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 operator|)
 operator|==

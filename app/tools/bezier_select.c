@@ -849,7 +849,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2b8b1fc30103
+DECL|enum|__anon2948a11c0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -8477,7 +8477,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 name|printf
@@ -8857,7 +8857,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -9646,7 +9646,7 @@ modifier|*
 name|box
 parameter_list|)
 block|{
-DECL|struct|__anon2b8b1fc30208
+DECL|struct|__anon2948a11c0208
 specifier|static
 struct|struct
 block|{

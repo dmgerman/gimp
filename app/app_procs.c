@@ -711,7 +711,7 @@ name|fopen
 argument_list|(
 name|buf
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -856,7 +856,7 @@ name|fopen
 argument_list|(
 name|buf
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 if|if

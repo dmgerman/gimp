@@ -1881,7 +1881,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 operator|)
 condition|)
@@ -2063,7 +2063,7 @@ name|buf
 operator|->
 name|filename
 argument_list|,
-literal|"r"
+literal|"rb"
 argument_list|)
 operator|)
 condition|)

@@ -11668,7 +11668,7 @@ name|fopen
 argument_list|(
 literal|"dump"
 argument_list|,
-literal|"w"
+literal|"wb"
 argument_list|)
 expr_stmt|;
 name|fprintf

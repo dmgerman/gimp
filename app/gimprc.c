@@ -142,7 +142,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b1754750103
+DECL|enum|__anon2b1e2a8e0103
 typedef|typedef
 enum|enum
 block|{
@@ -2500,7 +2500,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"rt"
+literal|"rb"
 argument_list|)
 expr_stmt|;
 if|if
@@ -10343,7 +10343,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"rt"
+literal|"rb"
 argument_list|)
 operator|)
 operator|==
@@ -10442,7 +10442,7 @@ name|fopen
 argument_list|(
 name|filename
 argument_list|,
-literal|"wt"
+literal|"wb"
 argument_list|)
 operator|)
 operator|==
