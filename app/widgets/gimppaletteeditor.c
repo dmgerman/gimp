@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -126,12 +132,6 @@ begin_include
 include|#
 directive|include
 file|"gui/color-notebook.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/dialogs.h"
 end_include
 
 begin_include
@@ -4324,6 +4324,17 @@ operator|->
 name|color_notebook
 condition|)
 block|{
+name|GimpDialogFactory
+modifier|*
+name|toplevel_factory
+decl_stmt|;
+name|toplevel_factory
+operator|=
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|color_notebook
@@ -4347,7 +4358,7 @@ argument_list|(
 literal|"Edit Color Palette Entry"
 argument_list|)
 argument_list|,
-name|global_dialog_factory
+name|toplevel_factory
 argument_list|,
 literal|"gimp-palette-editor-color-dialog"
 argument_list|,

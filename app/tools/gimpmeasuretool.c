@@ -125,12 +125,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/info-dialog.h"
 end_include
 
@@ -1534,7 +1528,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
 argument_list|,
 literal|"gimp-measure-tool-dialog"
 argument_list|,

@@ -27,29 +27,6 @@ directive|include
 file|"tools-types.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -102,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/dialogs.h"
 end_include
 
 begin_include
@@ -981,9 +952,21 @@ name|image_map_tool
 operator|->
 name|shell_identifier
 condition|)
+block|{
+name|GimpDialogFactory
+modifier|*
+name|dialog_factory
+decl_stmt|;
+name|dialog_factory
+operator|=
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
+expr_stmt|;
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|global_dialog_factory
+name|dialog_factory
 argument_list|,
 name|image_map_tool
 operator|->
@@ -994,6 +977,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|drawable
 operator|=

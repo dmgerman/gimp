@@ -33,29 +33,6 @@ directive|include
 file|"tools-types.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "gui/gui-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"gui/gui-types.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -138,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/dialogs.h"
 end_include
 
 begin_include
@@ -2026,7 +1997,10 @@ expr_stmt|;
 block|}
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
 argument_list|,
 literal|"gimp-histogram-tool-dialog"
 argument_list|,

@@ -108,12 +108,6 @@ directive|include
 file|"gui/color-notebook.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gui/dialogs.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -144,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279414f90103
+DECL|enum|__anon2afc91f60103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1761,13 +1755,24 @@ operator|!
 name|color_notebook
 condition|)
 block|{
+name|GimpDialogFactory
+modifier|*
+name|toplevel_factory
+decl_stmt|;
+name|toplevel_factory
+operator|=
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
+expr_stmt|;
 name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
 name|title
 argument_list|,
-name|global_dialog_factory
+name|toplevel_factory
 argument_list|,
 literal|"gimp-toolbox-color-dialog"
 argument_list|,

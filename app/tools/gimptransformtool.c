@@ -173,12 +173,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/info-dialog.h"
 end_include
 
@@ -4704,9 +4698,21 @@ name|tr_tool
 operator|->
 name|shell_identifier
 condition|)
+block|{
+name|GimpDialogFactory
+modifier|*
+name|dialog_factory
+decl_stmt|;
+name|dialog_factory
+operator|=
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
+expr_stmt|;
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|global_dialog_factory
+name|dialog_factory
 argument_list|,
 name|tr_tool
 operator|->
@@ -4719,6 +4725,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

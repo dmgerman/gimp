@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -3420,10 +3414,21 @@ operator|!
 name|state
 condition|)
 block|{
-comment|/* Hide or show all dialogs */
+name|GimpDialogFactory
+modifier|*
+name|dialog_factory
+decl_stmt|;
+name|dialog_factory
+operator|=
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toolbox"
+argument_list|)
+expr_stmt|;
+comment|/*  Hide or show all dialogs  */
 name|gimp_dialog_factories_toggle
 argument_list|(
-name|global_toolbox_factory
+name|dialog_factory
 argument_list|)
 expr_stmt|;
 block|}

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppropwidgets.h"
 end_include
 
@@ -327,14 +333,9 @@ argument_list|)
 expr_stmt|;
 name|dialog_factory
 operator|=
-name|g_object_get_data
+name|gimp_dialog_factory_from_name
 argument_list|(
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-argument_list|,
-literal|"gimp-tool-options-dialog-factory"
+literal|"dock"
 argument_list|)
 expr_stmt|;
 comment|/*  the main table  */

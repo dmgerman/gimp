@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpfontselection.h"
 end_include
 
@@ -125,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c424b400103
+DECL|enum|__anon2b0fbdab0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -838,14 +844,9 @@ argument_list|)
 expr_stmt|;
 name|dialog_factory
 operator|=
-name|g_object_get_data
+name|gimp_dialog_factory_from_name
 argument_list|(
-name|G_OBJECT
-argument_list|(
-name|tool_options
-argument_list|)
-argument_list|,
-literal|"gimp-tool-options-dialog-factory"
+literal|"dock"
 argument_list|)
 expr_stmt|;
 name|table

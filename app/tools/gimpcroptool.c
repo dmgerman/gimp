@@ -149,12 +149,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/info-dialog.h"
 end_include
 
@@ -200,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d7783c0103
+DECL|enum|__anon2c30cc3f0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -5081,7 +5075,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_from_name
+argument_list|(
+literal|"toplevel"
+argument_list|)
 argument_list|,
 literal|"gimp-crop-tool-dialog"
 argument_list|,
