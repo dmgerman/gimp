@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9771160103
+DECL|enum|__anon2785ff760103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -299,7 +299,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9771160208
+DECL|struct|__anon2785ff760208
 block|{
 DECL|member|dirname
 specifier|const
@@ -4453,7 +4453,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to create thumbnail directory '%s'."
+literal|"Failed to create thumbnail folder '%s'."
 argument_list|)
 argument_list|,
 name|thumb_subdirs
