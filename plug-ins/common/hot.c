@@ -67,56 +67,10 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_struct
-DECL|struct|Grgb
+begin_typedef
+typedef|typedef
 struct|struct
-name|Grgb
-block|{
-DECL|member|red
-name|guint8
-name|red
-decl_stmt|;
-DECL|member|green
-name|guint8
-name|green
-decl_stmt|;
-DECL|member|blue
-name|guint8
-name|blue
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|GRegion
-struct|struct
-name|GRegion
-block|{
-DECL|member|x
-name|gint32
-name|x
-decl_stmt|;
-DECL|member|y
-name|gint32
-name|y
-decl_stmt|;
-DECL|member|width
-name|gint32
-name|width
-decl_stmt|;
-DECL|member|height
-name|gint32
-name|height
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|piArgs
-struct|struct
-name|piArgs
+DECL|struct|__anon2c5eae970108
 block|{
 DECL|member|image
 name|gint32
@@ -138,14 +92,16 @@ DECL|member|new_layerp
 name|gint32
 name|new_layerp
 decl_stmt|;
+DECL|typedef|piArgs
 block|}
-struct|;
-end_struct
+name|piArgs
+typedef|;
+end_typedef
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d3d3e00103
+DECL|enum|__anon2c5eae970203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -164,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d3d3e00203
+DECL|enum|__anon2c5eae970303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -209,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon28d3d3e00308
+DECL|struct|__anon2c5eae970408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -456,7 +412,6 @@ specifier|static
 name|gint
 name|pluginCore
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -469,7 +424,6 @@ specifier|static
 name|gint
 name|pluginCoreIA
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -479,18 +433,15 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|hotp
 parameter_list|(
-specifier|register
 name|guint8
 name|r
 parameter_list|,
-specifier|register
 name|guint8
 name|g
 parameter_list|,
-specifier|register
 name|guint8
 name|b
 parameter_list|)
@@ -732,7 +683,6 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|struct
 name|piArgs
 name|args
 decl_stmt|;
@@ -758,8 +708,7 @@ literal|0
 argument_list|,
 sizeof|sizeof
 argument_list|(
-expr|struct
-name|piArgs
+name|args
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -905,8 +854,7 @@ name|args
 argument_list|,
 sizeof|sizeof
 argument_list|(
-expr|struct
-name|piArgs
+name|args
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1042,10 +990,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pluginCore (struct piArgs * argp)
+DECL|function|pluginCore (piArgs * argp)
 name|pluginCore
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -1094,7 +1041,16 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|,
-name|Bpp
+name|bpp
+decl_stmt|;
+name|gint
+name|sel_x1
+decl_stmt|,
+name|sel_x2
+decl_stmt|,
+name|sel_y1
+decl_stmt|,
+name|sel_y2
 decl_stmt|;
 name|gint
 name|prog_interval
@@ -1185,7 +1141,7 @@ name|drw
 operator|->
 name|height
 expr_stmt|;
-name|Bpp
+name|bpp
 operator|=
 name|drw
 operator|->
@@ -1304,6 +1260,37 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_drawable_mask_bounds
+argument_list|(
+name|drw
+operator|->
+name|drawable_id
+argument_list|,
+operator|&
+name|sel_x1
+argument_list|,
+operator|&
+name|sel_y1
+argument_list|,
+operator|&
+name|sel_x2
+argument_list|,
+operator|&
+name|sel_y2
+argument_list|)
+expr_stmt|;
+name|width
+operator|=
+name|sel_x2
+operator|-
+name|sel_x1
+expr_stmt|;
+name|height
+operator|=
+name|sel_y2
+operator|-
+name|sel_y1
+expr_stmt|;
 name|src
 operator|=
 name|g_new
@@ -1314,7 +1301,7 @@ name|width
 operator|*
 name|height
 operator|*
-name|Bpp
+name|bpp
 argument_list|)
 expr_stmt|;
 name|dst
@@ -1337,9 +1324,9 @@ name|srcPr
 argument_list|,
 name|drw
 argument_list|,
-literal|0
+name|sel_x1
 argument_list|,
-literal|0
+name|sel_y1
 argument_list|,
 name|width
 argument_list|,
@@ -1364,9 +1351,9 @@ name|dstPr
 argument_list|,
 name|ndrw
 argument_list|,
-literal|0
+name|sel_x1
 argument_list|,
-literal|0
+name|sel_y1
 argument_list|,
 name|width
 argument_list|,
@@ -1387,9 +1374,9 @@ name|dstPr
 argument_list|,
 name|drw
 argument_list|,
-literal|0
+name|sel_x1
 argument_list|,
-literal|0
+name|sel_y1
 argument_list|,
 name|width
 argument_list|,
@@ -1408,9 +1395,9 @@ name|srcPr
 argument_list|,
 name|src
 argument_list|,
-literal|0
+name|sel_x1
 argument_list|,
-literal|0
+name|sel_y1
 argument_list|,
 name|width
 argument_list|,
@@ -1450,11 +1437,11 @@ for|for
 control|(
 name|y
 operator|=
-literal|0
+name|sel_y1
 init|;
 name|y
 operator|<
-name|height
+name|sel_y2
 condition|;
 name|y
 operator|++
@@ -1475,21 +1462,25 @@ name|double
 operator|)
 name|y
 operator|/
-operator|(
+call|(
 name|double
-operator|)
-name|height
+call|)
+argument_list|(
+name|sel_y2
+operator|-
+name|sel_y1
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
 control|(
 name|x
 operator|=
-literal|0
+name|sel_x1
 init|;
 name|x
 operator|<
-name|width
+name|sel_x2
 condition|;
 name|x
 operator|++
@@ -1562,7 +1553,7 @@ literal|3
 expr_stmt|;
 if|if
 condition|(
-name|Bpp
+name|bpp
 operator|==
 literal|4
 condition|)
@@ -1630,7 +1621,7 @@ literal|3
 expr_stmt|;
 if|if
 condition|(
-name|Bpp
+name|bpp
 operator|==
 literal|4
 condition|)
@@ -2146,7 +2137,7 @@ literal|3
 expr_stmt|;
 if|if
 condition|(
-name|Bpp
+name|bpp
 operator|==
 literal|4
 condition|)
@@ -2192,7 +2183,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|Bpp
+name|bpp
 condition|;
 name|i
 operator|++
@@ -2210,7 +2201,7 @@ else|else
 block|{
 name|s
 operator|+=
-name|Bpp
+name|bpp
 expr_stmt|;
 name|d
 operator|+=
@@ -2227,21 +2218,21 @@ name|dstPr
 argument_list|,
 name|dst
 argument_list|,
-literal|0
+name|sel_x1
 argument_list|,
-literal|0
+name|sel_y1
 argument_list|,
 name|width
 argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|src
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dst
 argument_list|)
@@ -2262,9 +2253,9 @@ name|gimp_drawable_update
 argument_list|(
 name|nl
 argument_list|,
-literal|0
+name|sel_x1
 argument_list|,
-literal|0
+name|sel_y1
 argument_list|,
 name|width
 argument_list|,
@@ -2294,9 +2285,9 @@ name|drw
 operator|->
 name|drawable_id
 argument_list|,
-literal|0
+name|sel_x1
 argument_list|,
-literal|0
+name|sel_y1
 argument_list|,
 name|width
 argument_list|,
@@ -2315,6 +2306,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|run_flag
+specifier|static
 name|gboolean
 name|run_flag
 init|=
@@ -2354,10 +2346,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|pluginCoreIA (struct piArgs * argp)
+DECL|function|pluginCoreIA (piArgs * argp)
 name|pluginCoreIA
 parameter_list|(
-name|struct
 name|piArgs
 modifier|*
 name|argp
@@ -2538,11 +2529,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Create New Layer"
+literal|"Create _New Layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2627,7 +2618,7 @@ operator|->
 name|mode
 argument_list|)
 argument_list|,
-literal|"NTSC"
+literal|"N_TSC"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -2636,7 +2627,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-literal|"PAL"
+literal|"_PAL"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
@@ -2699,7 +2690,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Reduce Luminance"
+literal|"Reduce _Luminance"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -2711,7 +2702,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Reduce Saturation"
+literal|"Reduce _Saturation"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -2723,7 +2714,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Blacken"
+literal|"_Blacken"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -2800,11 +2791,9 @@ name|int
 name|m
 parameter_list|)
 block|{
-specifier|register
 name|double
 name|f
 decl_stmt|;
-specifier|register
 name|int
 name|pv
 decl_stmt|;
@@ -3223,24 +3212,20 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|hotp (register guint8 r,register guint8 g,register guint8 b)
+name|gboolean
+DECL|function|hotp (guint8 r,guint8 g,guint8 b)
 name|hotp
 parameter_list|(
-specifier|register
 name|guint8
 name|r
 parameter_list|,
-specifier|register
 name|guint8
 name|g
 parameter_list|,
-specifier|register
 name|guint8
 name|b
 parameter_list|)
 block|{
-specifier|register
 name|int
 name|y
 decl_stmt|,
@@ -3248,13 +3233,11 @@ name|i
 decl_stmt|,
 name|q
 decl_stmt|;
-specifier|register
 name|long
 name|y2
 decl_stmt|,
 name|c2
 decl_stmt|;
-comment|/*  fprintf(stderr, "\tr: %d, g: %d, b: %d\n", r, g, b);*/
 comment|/*    * Pixel decoding, gamma correction, and matrix multiplication    * all done by lookup table.    *    * "i" and "q" are the two chrominance components;    * they are I and Q for NTSC.    * For PAL, "i" is U (scaled B-Y) and "q" is V (scaled R-Y).    * Since we only care about the length of the chroma vector,    * not its angle, we don't care which is which.    */
 name|y
 operator|=
@@ -3391,7 +3374,6 @@ name|y2
 operator|*=
 name|y2
 expr_stmt|;
-comment|/*  fprintf(stderr, "hotp: c2: %d; ichroma_lim2: %d; y2: %d; ", 	  c2, ichroma_lim2, y2);*/
 if|if
 condition|(
 name|c2
@@ -3404,14 +3386,12 @@ name|y2
 condition|)
 block|{
 comment|/* no problems */
-comment|/*    fprintf(stderr, "nope\n");*/
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
-comment|/*  fprintf(stderr, "yup\n");*/
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
