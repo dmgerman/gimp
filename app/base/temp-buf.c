@@ -283,7 +283,7 @@ argument_list|(
 name|src_buf
 operator|->
 name|bytes
-operator|!=
+operator|==
 literal|1
 argument_list|)
 expr_stmt|;
@@ -328,7 +328,7 @@ argument_list|(
 name|src_buf
 operator|->
 name|bytes
-operator|!=
+operator|==
 literal|2
 argument_list|)
 expr_stmt|;
@@ -451,7 +451,7 @@ argument_list|(
 name|src_buf
 operator|->
 name|bytes
-operator|!=
+operator|==
 literal|3
 argument_list|)
 expr_stmt|;
@@ -504,7 +504,7 @@ argument_list|(
 name|src_buf
 operator|->
 name|bytes
-operator|!=
+operator|==
 literal|4
 argument_list|)
 expr_stmt|;
