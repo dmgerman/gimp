@@ -617,25 +617,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|_use_xshm
-specifier|static
-name|gboolean
-name|_use_xshm
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|_color_cube
-specifier|static
-name|guchar
-name|_color_cube
-index|[
-literal|4
-index|]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|_min_colors
 specifier|static
 name|gint
@@ -3259,35 +3240,6 @@ block|}
 end_function
 
 begin_function
-name|gboolean
-DECL|function|gimp_use_xshm (void)
-name|gimp_use_xshm
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|_use_xshm
-return|;
-block|}
-end_function
-
-begin_function
-name|guchar
-modifier|*
-DECL|function|gimp_color_cube (void)
-name|gimp_color_cube
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-return|return
-name|_color_cube
-return|;
-block|}
-end_function
-
-begin_function
 name|gint
 DECL|function|gimp_min_colors (void)
 name|gimp_min_colors
@@ -4402,42 +4354,6 @@ operator|=
 name|config
 operator|->
 name|install_cmap
-expr_stmt|;
-name|_color_cube
-index|[
-literal|0
-index|]
-operator|=
-literal|6
-expr_stmt|;
-comment|/*  These are the former default values  */
-name|_color_cube
-index|[
-literal|1
-index|]
-operator|=
-literal|6
-expr_stmt|;
-comment|/*  (for backward compatibility only)    */
-name|_color_cube
-index|[
-literal|2
-index|]
-operator|=
-literal|4
-expr_stmt|;
-name|_color_cube
-index|[
-literal|3
-index|]
-operator|=
-literal|24
-expr_stmt|;
-name|_use_xshm
-operator|=
-name|config
-operator|->
-name|use_xshm
 expr_stmt|;
 name|_min_colors
 operator|=

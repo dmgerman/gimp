@@ -27,29 +27,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: GDK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GDK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -6426,6 +6403,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* Set a proper size for the coordinates display in the statusbar. */
+end_comment
+
 begin_function
 name|void
 DECL|function|gdisplay_resize_cursor_label (GDisplay * gdisp)
@@ -6436,7 +6417,10 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-comment|/* Set a proper size for the coordinates display in the statusbar. */
+name|PangoLayout
+modifier|*
+name|layout
+decl_stmt|;
 name|gchar
 name|buffer
 index|[
@@ -6614,23 +6598,43 @@ name|yresolution
 argument_list|)
 expr_stmt|;
 block|}
-name|cursor_label_width
+name|layout
 operator|=
-name|gdk_string_width
-argument_list|(
-name|gtk_widget_get_style
+name|GTK_LABEL
 argument_list|(
 name|gdisp
 operator|->
 name|cursor_label
 argument_list|)
 operator|->
-name|font
+name|layout
+expr_stmt|;
+if|if
+condition|(
+name|layout
+condition|)
+block|{
+name|pango_layout_set_text
+argument_list|(
+name|layout
 argument_list|,
 name|buffer
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
-comment|/*  find out how many pixels the label's parent frame is bigger than    *  the label itself    */
+name|pango_layout_get_pixel_size
+argument_list|(
+name|layout
+argument_list|,
+operator|&
+name|cursor_label_width
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  find out how many pixels the label's parent frame is bigger than        *  the label itself        */
 name|label_frame_size_difference
 operator|=
 name|gdisp
@@ -6684,6 +6688,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 name|gdisplay_update_cursor
 argument_list|(
 name|gdisp

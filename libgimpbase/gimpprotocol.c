@@ -1689,7 +1689,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|use_xshm
+name|unused
 argument_list|,
 literal|1
 argument_list|)
@@ -1901,7 +1901,7 @@ operator|)
 operator|&
 name|config
 operator|->
-name|use_xshm
+name|unused
 argument_list|,
 literal|1
 argument_list|)

@@ -398,7 +398,7 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* ! G_OS_WIN32 */
-name|gdk_exit
+name|gtk_exit
 argument_list|(
 literal|1
 argument_list|)
@@ -556,7 +556,7 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* ! G_OS_WIN32 */
-name|gdk_exit
+name|gtk_exit
 argument_list|(
 literal|1
 argument_list|)

@@ -1841,13 +1841,10 @@ name|factor
 expr_stmt|;
 break|break;
 block|}
+name|pango_font_description_set_size
+argument_list|(
 name|font_desc
-operator|->
-name|size
-operator|=
-operator|(
-name|gdouble
-operator|)
+argument_list|,
 name|PANGO_SCALE
 operator|*
 name|MAX
@@ -1855,6 +1852,7 @@ argument_list|(
 literal|1
 argument_list|,
 name|size
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fontname

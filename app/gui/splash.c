@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a11f3520103
+DECL|enum|__anon28934ab40103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER
@@ -301,11 +301,15 @@ modifier|*
 name|logo_hbox
 decl_stmt|;
 name|PangoFontMetrics
+modifier|*
 name|metrics
 decl_stmt|;
 name|PangoContext
 modifier|*
 name|context
+decl_stmt|;
+name|gint
+name|char_width
 decl_stmt|;
 name|win_initstatus
 operator|=
@@ -597,6 +601,8 @@ argument_list|(
 name|label2
 argument_list|)
 expr_stmt|;
+name|metrics
+operator|=
 name|pango_context_get_metrics
 argument_list|(
 name|context
@@ -611,8 +617,17 @@ name|pango_context_get_language
 argument_list|(
 name|context
 argument_list|)
-argument_list|,
-operator|&
+argument_list|)
+expr_stmt|;
+name|char_width
+operator|=
+name|pango_font_metrics_get_approximate_char_width
+argument_list|(
+name|metrics
+argument_list|)
+expr_stmt|;
+name|pango_font_metrics_unref
+argument_list|(
 name|metrics
 argument_list|)
 expr_stmt|;
@@ -631,9 +646,7 @@ name|gdouble
 operator|)
 name|PANGO_PIXELS
 argument_list|(
-name|metrics
-operator|.
-name|approximate_char_width
+name|char_width
 argument_list|)
 operator|)
 expr_stmt|;
