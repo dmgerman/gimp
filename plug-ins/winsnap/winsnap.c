@@ -301,13 +301,13 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 parameter_list|,
 name|int
 modifier|*
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 parameter_list|)
@@ -368,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c7e3b260108
+DECL|struct|__anon29c090ec0108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c7e3b260208
+DECL|struct|__anon29c090ec0208
 typedef|typedef
 struct|struct
 block|{
@@ -490,7 +490,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -3908,7 +3908,7 @@ DECL|macro|IN_ARGS
 define|#
 directive|define
 name|IN_ARGS
-value|{ PARAM_INT32,    "run_mode",  "Interactive, non-interactive" },\                 { PARAM_INT32,    "root",      "Root window { TRUE, FALSE }" },\                 { PARAM_INT32,    "decorations", \ 									"Include Window Decorations { TRUE, FALSE }" }
+value|{ GIMP_PDB_INT32,    "run_mode",  "Interactive, non-interactive" },\                 { GIMP_PDB_INT32,    "root",      "Root window { TRUE, FALSE }" },\                 { GIMP_PDB_INT32,    "decorations", \ 									"Include Window Decorations { TRUE, FALSE }" }
 end_define
 
 begin_define
@@ -3924,7 +3924,7 @@ DECL|macro|OUT_ARGS
 define|#
 directive|define
 name|OUT_ARGS
-value|{ PARAM_IMAGE,   "image",     "Output image" }
+value|{ GIMP_PDB_IMAGE,   "image",     "Output image" }
 end_define
 
 begin_comment
@@ -3941,7 +3941,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
@@ -3950,7 +3950,7 @@ name|IN_ARGS
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|return_vals
 index|[]
 init|=
@@ -3983,7 +3983,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|NUMBER_IN_ARGS
 argument_list|,
@@ -4004,7 +4004,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|values
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
@@ -4019,7 +4019,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -4031,7 +4031,7 @@ name|gint
 name|nparams
 parameter_list|,
 comment|/* number of in-paramters */
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -4041,14 +4041,14 @@ modifier|*
 name|nreturn_vals
 parameter_list|,
 comment|/* number of out-parameters */
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 comment|/* out-parameters */
 block|{
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|int
@@ -4064,7 +4064,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -4075,7 +4075,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -4107,7 +4107,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 expr_stmt|;
 name|values
 index|[
@@ -4136,7 +4136,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Get information from the dialog */
 if|if
@@ -4148,10 +4148,10 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 if|if
 condition|(
@@ -4169,7 +4169,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 default|default:
@@ -4210,7 +4210,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 comment|/* Store variable states for next run */
@@ -4246,7 +4246,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -4394,10 +4394,10 @@ decl_stmt|;
 name|gint32
 name|layer_id
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -4454,11 +4454,11 @@ expr_stmt|;
 comment|/* Set up the image and layer types */
 name|imageType
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 name|layerType
 operator|=
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 expr_stmt|;
 comment|/* Create the GIMP image and layers */
 name|image_id
@@ -4494,7 +4494,7 @@ name|layerType
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

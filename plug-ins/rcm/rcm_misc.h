@@ -107,10 +107,10 @@ name|ReducedImage
 modifier|*
 name|rcm_reduce_image
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 parameter_list|,
 name|gint

@@ -154,7 +154,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|xjpg_load_layer (char * filename,gint32 image_id,int image_type,char * layer_name,gdouble layer_opacity,GLayerMode layer_mode)
+DECL|function|xjpg_load_layer (char * filename,gint32 image_id,int image_type,char * layer_name,gdouble layer_opacity,GimpLayerModeEffects layer_mode)
 name|xjpg_load_layer
 parameter_list|(
 name|char
@@ -174,21 +174,21 @@ parameter_list|,
 name|gdouble
 name|layer_opacity
 parameter_list|,
-name|GLayerMode
+name|GimpLayerModeEffects
 name|layer_mode
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|l_pixel_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_drawable
 decl_stmt|;
 name|gint32
 name|l_layer_id
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|l_layer_type
 decl_stmt|;
 name|struct
@@ -248,7 +248,7 @@ name|my_error_exit
 expr_stmt|;
 name|l_layer_type
 operator|=
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 if|if
 condition|(
@@ -434,7 +434,7 @@ literal|1
 case|:
 name|l_layer_type
 operator|=
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -442,7 +442,7 @@ literal|3
 case|:
 name|l_layer_type
 operator|=
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 expr_stmt|;
 break|break;
 default|default:
@@ -722,14 +722,14 @@ name|gint32
 name|layer_id
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|l_pixel_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_drawable
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|l_layer_type
 decl_stmt|;
 name|struct
@@ -804,7 +804,7 @@ name|my_error_exit
 expr_stmt|;
 name|l_layer_type
 operator|=
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 comment|/* add alpha channel */
 name|gimp_layer_add_alpha
@@ -1369,10 +1369,10 @@ name|guchar
 name|blue
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|l_pixel_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_drawable
 decl_stmt|;
@@ -1991,14 +1991,14 @@ modifier|*
 name|jsvals
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|drawable_type
 decl_stmt|;
 name|struct
@@ -2097,10 +2097,10 @@ name|drawable_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 if|if
 condition|(
@@ -2114,14 +2114,14 @@ return|;
 comment|/* there is no alpha to save */
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 break|break;
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 comment|/*g_message ("jpeg: cannot operate on indexed color images");*/
 return|return
@@ -2277,10 +2277,10 @@ name|drawable_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 comment|/* # of color components per pixel */
 name|cinfo
@@ -2301,10 +2301,10 @@ literal|0
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 if|if
 condition|(
@@ -2387,11 +2387,11 @@ operator|&&
 operator|(
 name|drawable_type
 operator|==
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 operator|||
 name|drawable_type
 operator|==
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 operator|)
 operator|)
 condition|?

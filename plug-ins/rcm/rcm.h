@@ -40,7 +40,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_enum
-DECL|enum|__anon2c3e05ca0103
+DECL|enum|__anon2a2362010103
 DECL|enumerator|ENTIRE_IMAGE
 DECL|enumerator|SELECTION
 DECL|enumerator|SELECTION_IN_CONTEXT
@@ -59,7 +59,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2c3e05ca0203
+DECL|enum|__anon2a2362010203
 DECL|enumerator|EACH
 DECL|enumerator|BOTH
 DECL|enumerator|DEGREES
@@ -93,7 +93,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|enum|__anon2c3e05ca0303
+DECL|enum|__anon2a2362010303
 DECL|enumerator|VIRGIN
 DECL|enumerator|DRAG_START
 DECL|enumerator|DRAGING
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e05ca0408
+DECL|struct|__anon2a2362010408
 block|{
 DECL|member|alpha
 name|float
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e05ca0508
+DECL|struct|__anon2a2362010508
 block|{
 DECL|member|width
 name|gint
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e05ca0608
+DECL|struct|__anon2a2362010608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e05ca0708
+DECL|struct|__anon2a2362010708
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e05ca0808
+DECL|struct|__anon2a2362010808
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3e05ca0908
+DECL|struct|__anon2a2362010908
 block|{
 DECL|member|Slctn
 name|gint
@@ -403,12 +403,12 @@ name|gint
 name|Gray_to_from
 decl_stmt|;
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 DECL|member|mask
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|mask
 decl_stmt|;

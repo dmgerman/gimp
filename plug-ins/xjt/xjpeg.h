@@ -31,7 +31,7 @@ file|"libgimp/gimp.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29ca28770103
+DECL|enum|__anon2b412a520103
 typedef|typedef
 enum|enum
 block|{
@@ -51,7 +51,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ca28770208
+DECL|struct|__anon2b412a520208
 block|{
 DECL|member|quality
 name|gdouble
@@ -121,7 +121,7 @@ parameter_list|,
 name|gdouble
 name|layer_opacity
 parameter_list|,
-name|GLayerMode
+name|GimpLayerModeEffects
 name|layer_mode
 parameter_list|)
 function_decl|;

@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e500108
+DECL|struct|__anon2bd1bb740108
 block|{
 DECL|member|run
 name|gint
@@ -195,7 +195,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d48e500203
+DECL|enum|__anon2bd1bb740203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d48e500303
+DECL|enum|__anon2bd1bb740303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -455,7 +455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d48e500403
+DECL|enum|__anon2bd1bb740403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -485,7 +485,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d48e500503
+DECL|enum|__anon2bd1bb740503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d48e500603
+DECL|enum|__anon2bd1bb740603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -527,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d48e500703
+DECL|enum|__anon2bd1bb740703
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -562,7 +562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d48e500803
+DECL|enum|__anon2bd1bb740803
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -652,7 +652,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e500908
+DECL|struct|__anon2bd1bb740908
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e500a08
+DECL|struct|__anon2bd1bb740a08
 block|{
 DECL|member|int_val1
 name|gint32
@@ -737,7 +737,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e500b08
+DECL|struct|__anon2bd1bb740b08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -774,7 +774,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e500c08
+DECL|struct|__anon2bd1bb740c08
 block|{
 DECL|member|path_type
 name|gint32
@@ -824,7 +824,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e500d08
+DECL|struct|__anon2bd1bb740d08
 block|{
 DECL|member|active_channel
 name|gint
@@ -898,7 +898,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e500e08
+DECL|struct|__anon2bd1bb740e08
 block|{
 DECL|member|active_layer
 name|gint
@@ -983,7 +983,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e500f08
+DECL|struct|__anon2bd1bb740f08
 block|{
 DECL|member|position
 name|gint32
@@ -1007,7 +1007,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d48e501008
+DECL|struct|__anon2bd1bb741008
 block|{
 DECL|member|version
 name|gchar
@@ -1027,7 +1027,7 @@ name|gint
 name|gimp_micro_version
 decl_stmt|;
 DECL|member|image_type
-name|GImageType
+name|GimpImageBaseType
 name|image_type
 decl_stmt|;
 DECL|member|image_width
@@ -1641,7 +1641,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1649,7 +1649,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -1714,7 +1714,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -1885,13 +1885,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1899,7 +1899,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -1907,7 +1907,7 @@ literal|"The name of the file to load"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -1916,13 +1916,13 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1967,13 +1967,13 @@ argument_list|)
 operator|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|save_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1981,7 +1981,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1989,7 +1989,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1997,7 +1997,7 @@ literal|"is ignored"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -2005,7 +2005,7 @@ literal|"The name of the file to save the image in"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -2013,7 +2013,7 @@ literal|"The name of the file to save the image in"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"quality"
 block|,
@@ -2021,7 +2021,7 @@ literal|"Quality of saved image (0<= quality<= 1)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"smoothing"
 block|,
@@ -2029,7 +2029,7 @@ literal|"Smoothing factor for saved image (0<= smoothing<= 1)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"optimize"
 block|,
@@ -2037,7 +2037,7 @@ literal|"Optimization of entropy encoding parameters"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"clr_transparent"
 block|,
@@ -2083,7 +2083,7 @@ literal|"<Load>/xjt"
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nload_args
 argument_list|,
@@ -2112,7 +2112,7 @@ literal|"<Save>/xjt"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nsave_args
 argument_list|,
@@ -2149,7 +2149,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -2159,7 +2159,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -2167,26 +2167,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
@@ -2267,7 +2267,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -2278,13 +2278,13 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|INIT_I18N
@@ -2343,7 +2343,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -2361,7 +2361,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -2384,7 +2384,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -2405,12 +2405,12 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CANCEL
+name|GIMP_PDB_CANCEL
 expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
 if|if
@@ -2422,7 +2422,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -2496,7 +2496,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 elseif|else
@@ -2517,13 +2517,13 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -2542,7 +2542,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 if|if
@@ -2582,7 +2582,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -2608,7 +2608,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -2646,12 +2646,12 @@ name|XJT_ORIENTATION_VERTICAL
 condition|)
 return|return
 operator|(
-name|ORIENTATION_VERTICAL
+name|GIMP_VERTICAL
 operator|)
 return|;
 return|return
 operator|(
-name|ORIENTATION_HORIZONTAL
+name|GIMP_HORIZONTAL
 operator|)
 return|;
 block|}
@@ -2670,7 +2670,7 @@ if|if
 condition|(
 name|orientation
 operator|==
-name|ORIENTATION_VERTICAL
+name|GIMP_VERTICAL
 condition|)
 return|return
 operator|(
@@ -5225,7 +5225,7 @@ name|flags
 operator|&
 name|GIMP_PARASITE_PERSISTENT
 condition|)
-comment|/* check if Parasite should be saved */
+comment|/* check if GimpParasite should be saved */
 block|{
 name|global_parasite_id
 operator|++
@@ -6796,7 +6796,7 @@ name|gint
 name|wr_all_prp
 parameter_list|)
 block|{
-name|GImageType
+name|GimpImageBaseType
 name|l_image_type
 decl_stmt|;
 name|guint
@@ -7209,7 +7209,7 @@ decl_stmt|;
 name|mode_t
 name|l_mode_dir
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|l_image_type
 decl_stmt|;
 name|gint32

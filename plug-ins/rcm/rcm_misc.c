@@ -727,14 +727,14 @@ end_comment
 begin_function
 name|ReducedImage
 modifier|*
-DECL|function|rcm_reduce_image (GDrawable * drawable,GDrawable * mask,gint LongerSize,gint Slctn)
+DECL|function|rcm_reduce_image (GimpDrawable * drawable,GimpDrawable * mask,gint LongerSize,gint Slctn)
 name|rcm_reduce_image
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|mask
 parameter_list|,
@@ -745,7 +745,7 @@ name|gint
 name|Slctn
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|srcMask
