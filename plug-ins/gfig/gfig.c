@@ -650,6 +650,9 @@ operator|->
 name|image_id
 argument_list|)
 expr_stmt|;
+name|gimp_context_push
+argument_list|()
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -840,6 +843,9 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
+case|case
+name|GIMP_RUN_WITH_LAST_VALS
+case|:
 comment|/*gimp_get_data ("plug_in_gfig",&selvals);*/
 if|if
 condition|(
@@ -871,14 +877,12 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_RUN_WITH_LAST_VALS
-case|:
-comment|/*gimp_get_data ("plug_in_gfig",&selvals);*/
-break|break;
 default|default:
 break|break;
 block|}
+name|gimp_context_pop
+argument_list|()
+expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|gfig_context
