@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b94e4490108
+DECL|struct|__anon2a23747f0108
 block|{
 DECL|member|run
 name|gint
@@ -840,7 +840,7 @@ name|Bitmap_Head
 operator|.
 name|biPlanes
 operator|=
-name|channels
+literal|1
 expr_stmt|;
 name|Bitmap_Head
 operator|.
