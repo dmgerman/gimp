@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275882f60103
+DECL|enum|__anon29d74f0b0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275882f60208
+DECL|struct|__anon29d74f0b0208
 block|{
 DECL|member|img
 name|gint32
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275882f60308
+DECL|struct|__anon29d74f0b0308
 block|{
 DECL|member|width
 name|gint
@@ -2657,7 +2657,7 @@ argument_list|)
 argument_list|,
 literal|100
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|argp
 operator|->
@@ -2724,7 +2724,7 @@ argument_list|)
 argument_list|,
 literal|100
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|argp
 operator|->
@@ -2791,7 +2791,7 @@ argument_list|)
 argument_list|,
 literal|100
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|argp
 operator|->

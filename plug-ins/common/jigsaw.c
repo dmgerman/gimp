@@ -85,7 +85,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbc506d0103
+DECL|enum|__anon2c1d1b410103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbc506d0203
+DECL|enum|__anon2c1d1b410203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -1604,14 +1604,6 @@ define|#
 directive|define
 name|SCALE_WIDTH
 value|200
-end_define
-
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|40
 end_define
 
 begin_define
@@ -15469,7 +15461,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|4
 argument_list|,
 name|config
 operator|.
@@ -15557,7 +15549,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|4
 argument_list|,
 name|config
 operator|.

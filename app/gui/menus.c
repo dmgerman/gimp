@@ -2532,7 +2532,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_HELP
+name|GIMP_STOCK_INFO
 block|}
 block|,
 name|NULL

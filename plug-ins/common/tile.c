@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f89440108
+DECL|struct|__anon274e87e80108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f89440208
+DECL|struct|__anon274e87e80208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -1681,7 +1681,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|75
+literal|8
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|,

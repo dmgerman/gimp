@@ -214,7 +214,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2a2bbae10103
+DECL|enum|__anon27b5861c0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -234,7 +234,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bbae10208
+DECL|struct|__anon27b5861c0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -430,7 +430,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bbae10308
+DECL|struct|__anon27b5861c0308
 block|{
 DECL|member|x1
 name|gint
@@ -473,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bbae10408
+DECL|struct|__anon27b5861c0408
 block|{
 DECL|member|width
 name|gint
@@ -1032,7 +1032,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bbae10508
+DECL|struct|__anon27b5861c0508
 block|{
 DECL|member|r
 name|guchar
@@ -2833,7 +2833,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2bbae10608
+DECL|struct|__anon27b5861c0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4438,7 +4438,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|parameters
 operator|.
@@ -4506,7 +4506,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|parameters
 operator|.
@@ -4574,7 +4574,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|parameters
 operator|.
@@ -4642,7 +4642,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|parameters
 operator|.
@@ -4710,7 +4710,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|parameters
 operator|.

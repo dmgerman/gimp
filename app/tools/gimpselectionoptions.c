@@ -75,10 +75,6 @@ directive|include
 file|"gimpbycolorselecttool.h"
 end_include
 
-begin_comment
-comment|/*#include "gimptool.h"*/
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -1028,7 +1024,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|50
+operator|-
+literal|1
 argument_list|,
 name|options
 operator|->
@@ -1529,7 +1526,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|50
+operator|-
+literal|1
 argument_list|,
 name|gimprc
 operator|.
@@ -2050,7 +2048,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|50
+literal|5
 argument_list|,
 name|options
 operator|->
@@ -2131,7 +2129,7 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|50
+literal|5
 argument_list|,
 name|options
 operator|->

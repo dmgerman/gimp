@@ -67,6 +67,14 @@ name|SCALE_WIDTH
 value|150
 end_define
 
+begin_define
+DECL|macro|ENTRY_WIDTH
+define|#
+directive|define
+name|ENTRY_WIDTH
+value|4
+end_define
+
 begin_comment
 comment|/* to show both pretty unoptimized code and ugly optimized code blocks    There's really no reason to define this, unless you want to see how    much pointer aritmetic can speed things up.  I find that it is about    45% faster with the optimized code. */
 end_comment
@@ -141,7 +149,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b84ac0108
+DECL|struct|__anon2add5c8c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b84ac0208
+DECL|struct|__anon2add5c8c0208
 block|{
 DECL|member|run
 name|gint
@@ -3926,7 +3934,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|unsharp_params
 operator|.
@@ -3993,7 +4001,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|unsharp_params
 operator|.
@@ -4060,7 +4068,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|unsharp_params
 operator|.

@@ -64,6 +64,14 @@ value|175
 end_define
 
 begin_define
+DECL|macro|ENTRY_WIDTH
+define|#
+directive|define
+name|ENTRY_WIDTH
+value|5
+end_define
+
+begin_define
 DECL|macro|MAX_CHANNELS
 define|#
 directive|define
@@ -119,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295bd50a0108
+DECL|struct|__anon2b4297220108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -182,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295bd50a0208
+DECL|struct|__anon2b4297220208
 block|{
 DECL|member|run
 name|gint
@@ -1716,7 +1724,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
@@ -1786,7 +1794,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
@@ -1856,7 +1864,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
@@ -1926,7 +1934,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
@@ -1996,7 +2004,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
@@ -2068,7 +2076,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
@@ -2138,7 +2146,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
@@ -2208,7 +2216,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.
@@ -2279,7 +2287,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|svals
 operator|.

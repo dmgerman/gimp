@@ -30489,14 +30489,6 @@ value|200
 end_define
 
 begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|45
-end_define
-
-begin_define
 DECL|macro|SINUS
 define|#
 directive|define
@@ -30527,7 +30519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f873d0108
+DECL|struct|__anon29af5ae80108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30562,7 +30554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3f873d0208
+DECL|struct|__anon29af5ae80208
 block|{
 DECL|member|preview
 name|GtkWidget

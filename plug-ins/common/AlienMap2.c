@@ -30493,7 +30493,7 @@ DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
 name|ENTRY_WIDTH
-value|45
+value|6
 end_define
 
 begin_comment
@@ -30523,7 +30523,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcf4b10108
+DECL|struct|__anon2bb6e8e00108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30574,7 +30574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcf4b10208
+DECL|struct|__anon2bb6e8e00208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -33482,7 +33482,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|wvals
 operator|.
@@ -33552,7 +33552,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|wvals
 operator|.
@@ -33622,7 +33622,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|wvals
 operator|.
@@ -33693,7 +33693,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|wvals
 operator|.
@@ -33763,7 +33763,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|wvals
 operator|.
@@ -33834,7 +33834,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|wvals
 operator|.

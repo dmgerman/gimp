@@ -231,14 +231,6 @@ value|256
 end_define
 
 begin_define
-DECL|macro|TEXT_WIDTH
-define|#
-directive|define
-name|TEXT_WIDTH
-value|45
-end_define
-
-begin_define
 DECL|macro|DA_WIDTH
 define|#
 directive|define
@@ -399,7 +391,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c047b650108
+DECL|struct|__anon29ea4f900108
 typedef|typedef
 struct|struct
 block|{
@@ -468,7 +460,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c047b650208
+DECL|struct|__anon29ea4f900208
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +578,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c047b650308
+DECL|struct|__anon29ea4f900308
 typedef|typedef
 struct|struct
 block|{
@@ -615,7 +607,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c047b650408
+DECL|struct|__anon29ea4f900408
 typedef|typedef
 struct|struct
 block|{
@@ -642,7 +634,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c047b650508
+DECL|struct|__anon29ea4f900508
 typedef|typedef
 struct|struct
 block|{
@@ -8310,16 +8302,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-name|TEXT_WIDTH
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_spin_button_set_numeric
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -8416,16 +8398,6 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-name|TEXT_WIDTH
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_spin_button_set_numeric
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -8520,16 +8492,6 @@ argument_list|,
 literal|0.5
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-name|TEXT_WIDTH
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_numeric
@@ -8702,16 +8664,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-name|TEXT_WIDTH
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_spin_button_set_numeric
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -8806,16 +8758,6 @@ argument_list|,
 literal|0.5
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-name|TEXT_WIDTH
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_numeric

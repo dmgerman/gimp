@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4eda710108
+DECL|struct|__anon29db9f290108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4eda710208
+DECL|struct|__anon29db9f290208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4eda710308
+DECL|struct|__anon29db9f290308
 block|{
 DECL|member|col
 DECL|member|row
@@ -3927,7 +3927,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|wpvals
 operator|.
@@ -3995,7 +3995,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|wpvals
 operator|.
@@ -4063,7 +4063,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|wpvals
 operator|.

@@ -380,7 +380,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-literal|50
+operator|-
+literal|1
 argument_list|,
 literal|0.0
 argument_list|,
@@ -497,15 +498,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|destroy
-condition|)
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c25400108
+DECL|struct|__anon27e9bb070108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c25400208
+DECL|struct|__anon27e9bb070208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c25400308
+DECL|struct|__anon27e9bb070308
 block|{
 DECL|member|run
 name|gint
@@ -1525,7 +1525,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|cvals
 operator|.
@@ -1592,7 +1592,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|cvals
 operator|.

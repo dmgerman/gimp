@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292434530108
+DECL|struct|__anon2794d4b00108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292434530208
+DECL|struct|__anon2794d4b00208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292434530308
+DECL|struct|__anon2794d4b00308
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1883,7 +1883,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|75
+operator|-
+literal|1
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|,

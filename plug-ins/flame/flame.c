@@ -535,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon27cb5f570108
+DECL|struct|__anon2a1feab70108
 block|{
 DECL|member|randomize
 name|gint
@@ -5214,7 +5214,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|config
 operator|.
@@ -5302,7 +5302,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|config
 operator|.
@@ -5390,7 +5390,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|config
 operator|.
@@ -5478,7 +5478,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|config
 operator|.
@@ -5549,7 +5549,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|config
 operator|.
@@ -5565,7 +5565,7 @@ literal|0.01
 argument_list|,
 literal|0.1
 argument_list|,
-literal|0
+literal|2
 argument_list|,
 name|TRUE
 argument_list|,
@@ -5620,7 +5620,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|config
 operator|.

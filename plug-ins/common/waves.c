@@ -70,7 +70,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0709b60103
+DECL|enum|__anon2c1331350103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -84,7 +84,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0709b60208
+DECL|struct|__anon2c1331350208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -119,7 +119,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0709b60308
+DECL|struct|__anon2c1331350308
 block|{
 DECL|member|width
 name|gint
@@ -1832,7 +1832,7 @@ argument_list|)
 argument_list|,
 literal|140
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|argp
 operator|->
@@ -1899,7 +1899,7 @@ argument_list|)
 argument_list|,
 literal|140
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|argp
 operator|->
@@ -1966,7 +1966,7 @@ argument_list|)
 argument_list|,
 literal|140
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|argp
 operator|->

@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3be1150108
+DECL|struct|__anon2c03d5a80108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -253,50 +253,50 @@ comment|/* Defaults */
 end_comment
 
 begin_decl_stmt
-DECL|variable|sdither_type
+DECL|variable|saved_dither_type
 specifier|static
 name|GimpConvertDitherType
-name|sdither_type
+name|saved_dither_type
 init|=
 name|GIMP_FS_DITHER
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|salpha_dither
+DECL|variable|saved_alpha_dither
 specifier|static
 name|gboolean
-name|salpha_dither
+name|saved_alpha_dither
 init|=
 name|FALSE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|sremove_dups
+DECL|variable|saved_remove_dups
 specifier|static
 name|gboolean
-name|sremove_dups
+name|saved_remove_dups
 init|=
 name|TRUE
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|snum_colors
+DECL|variable|saved_num_colors
 specifier|static
 name|gint
-name|snum_colors
+name|saved_num_colors
 init|=
 literal|256
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|spalette_type
+DECL|variable|saved_palette_type
 specifier|static
 name|GimpConvertPaletteType
-name|spalette_type
+name|saved_palette_type
 init|=
 name|GIMP_MAKE_PALETTE
 decl_stmt|;
@@ -482,31 +482,31 @@ name|dialog
 operator|->
 name|dither_type
 operator|=
-name|sdither_type
+name|saved_dither_type
 expr_stmt|;
 name|dialog
 operator|->
 name|alpha_dither
 operator|=
-name|salpha_dither
+name|saved_alpha_dither
 expr_stmt|;
 name|dialog
 operator|->
 name|remove_dups
 operator|=
-name|sremove_dups
+name|saved_remove_dups
 expr_stmt|;
 name|dialog
 operator|->
 name|num_colors
 operator|=
-name|snum_colors
+name|saved_num_colors
 expr_stmt|;
 name|dialog
 operator|->
 name|palette_type
 operator|=
-name|spalette_type
+name|saved_palette_type
 expr_stmt|;
 name|dialog
 operator|->
@@ -816,7 +816,7 @@ literal|256
 argument_list|,
 literal|1
 argument_list|,
-literal|5
+literal|8
 argument_list|,
 literal|0
 argument_list|,
@@ -872,7 +872,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Number of Colors:"
+literal|"Max. Number of Colors:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2199,31 +2199,31 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/* Save defaults for next time */
-name|sdither_type
+name|saved_dither_type
 operator|=
 name|dialog
 operator|->
 name|dither_type
 expr_stmt|;
-name|salpha_dither
+name|saved_alpha_dither
 operator|=
 name|dialog
 operator|->
 name|alpha_dither
 expr_stmt|;
-name|sremove_dups
+name|saved_remove_dups
 operator|=
 name|dialog
 operator|->
 name|remove_dups
 expr_stmt|;
-name|snum_colors
+name|saved_num_colors
 operator|=
 name|dialog
 operator|->
 name|num_colors
 expr_stmt|;
-name|spalette_type
+name|saved_palette_type
 operator|=
 name|dialog
 operator|->
@@ -2354,7 +2354,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|void
 DECL|function|indexed_palette_select_palette (GimpContext * context,GimpPalette * palette,gpointer data)
 name|indexed_palette_select_palette
 parameter_list|(
@@ -2385,10 +2385,7 @@ expr_stmt|;
 if|if
 condition|(
 name|palette
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|palette
 operator|->
 name|n_colors
@@ -2423,10 +2420,6 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 

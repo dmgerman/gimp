@@ -105,14 +105,6 @@ value|80
 end_define
 
 begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|50
-end_define
-
-begin_define
 DECL|macro|MAX_SEGS
 define|#
 directive|define
@@ -151,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932829b0108
+DECL|struct|__anon29bf1e5f0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -586,7 +578,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2932829b0203
+DECL|enum|__anon29bf1e5f0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -605,7 +597,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932829b0308
+DECL|struct|__anon29bf1e5f0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -675,7 +667,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2932829b0408
+DECL|struct|__anon29bf1e5f0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -2484,16 +2476,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-name|ENTRY_WIDTH
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_label_set_mnemonic_widget
 argument_list|(
 name|GTK_LABEL
@@ -2674,16 +2656,6 @@ argument_list|,
 literal|1
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-name|ENTRY_WIDTH
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_mnemonic_widget
@@ -2996,7 +2968,8 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-name|ENTRY_WIDTH
+operator|-
+literal|1
 argument_list|,
 name|opacity
 argument_list|,
@@ -3156,7 +3129,8 @@ literal|"1 / (2 ** _n)"
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-name|ENTRY_WIDTH
+operator|-
+literal|1
 argument_list|,
 name|itvals
 operator|.

@@ -280,6 +280,14 @@ name|SCALE_WIDTH
 value|100
 end_define
 
+begin_define
+DECL|macro|ENTRY_WIDTH
+define|#
+directive|define
+name|ENTRY_WIDTH
+value|3
+end_define
+
 begin_decl_stmt
 DECL|variable|preview_width
 specifier|static
@@ -325,7 +333,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7fc42c0108
+DECL|struct|__anon2c9a5d820108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -371,7 +379,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7fc42c0208
+DECL|struct|__anon2c9a5d820208
 block|{
 DECL|member|run
 name|gint
@@ -2319,7 +2327,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|VALS
 operator|.
@@ -2386,7 +2394,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|VALS
 operator|.
@@ -2453,7 +2461,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|VALS
 operator|.
@@ -2520,7 +2528,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|VALS
 operator|.

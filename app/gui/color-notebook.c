@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a20cc500103
+DECL|enum|__anon2c90758c0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -2765,7 +2765,8 @@ argument_list|)
 argument_list|,
 literal|80
 argument_list|,
-literal|55
+operator|-
+literal|1
 argument_list|,
 name|slider_initial_vals
 index|[

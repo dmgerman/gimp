@@ -106,13 +106,13 @@ DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
 name|ENTRY_WIDTH
-value|50
+value|6
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6406ae0108
+DECL|struct|__anon2acc55820108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6406ae0208
+DECL|struct|__anon2acc55820208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6406ae0308
+DECL|struct|__anon2acc55820308
 block|{
 DECL|member|x
 DECL|member|y

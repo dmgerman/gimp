@@ -22250,7 +22250,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b576ed60108
+DECL|struct|__anon27b2af8c0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22353,7 +22353,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b576ed60208
+DECL|struct|__anon27b2af8c0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -22435,7 +22435,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b576ed60308
+DECL|struct|__anon27b2af8c0308
 block|{
 DECL|member|width
 name|gint
@@ -26685,7 +26685,7 @@ argument_list|)
 argument_list|,
 literal|140
 argument_list|,
-literal|0
+literal|8
 argument_list|,
 name|svals
 operator|.
@@ -26752,7 +26752,7 @@ argument_list|)
 argument_list|,
 literal|140
 argument_list|,
-literal|0
+literal|8
 argument_list|,
 name|svals
 operator|.
@@ -26819,7 +26819,7 @@ argument_list|)
 argument_list|,
 literal|140
 argument_list|,
-literal|0
+literal|8
 argument_list|,
 name|svals
 operator|.
@@ -27032,16 +27032,6 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-literal|100
-argument_list|,
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -138,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be83af20108
+DECL|struct|__anon2b16b66c0108
 block|{
 DECL|member|film_height
 name|gint
@@ -242,7 +242,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be83af20208
+DECL|struct|__anon2b16b66c0208
 block|{
 DECL|member|font_entry
 name|GtkWidget
@@ -6465,9 +6465,9 @@ argument_list|(
 literal|"Image Height:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
-literal|0.5
+literal|0
 argument_list|,
 name|filmvals
 operator|.
@@ -6557,9 +6557,9 @@ argument_list|(
 literal|"Image Spacing:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
-literal|0.5
+literal|0
 argument_list|,
 name|filmvals
 operator|.
@@ -6690,9 +6690,9 @@ argument_list|(
 literal|"Hole Offset:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
-literal|0.5
+literal|0
 argument_list|,
 name|filmvals
 operator|.
@@ -6782,9 +6782,9 @@ argument_list|(
 literal|"Hole Width:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
-literal|0.5
+literal|0
 argument_list|,
 name|filmvals
 operator|.
@@ -6874,9 +6874,9 @@ argument_list|(
 literal|"Hole Height:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
-literal|0.5
+literal|0
 argument_list|,
 name|filmvals
 operator|.
@@ -6966,9 +6966,9 @@ argument_list|(
 literal|"Hole Spacing:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
-literal|0.5
+literal|0
 argument_list|,
 name|filmvals
 operator|.
@@ -7099,9 +7099,9 @@ argument_list|(
 literal|"Number Height:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0
 argument_list|,
-literal|0.5
+literal|0
 argument_list|,
 name|filmvals
 operator|.

@@ -51,10 +51,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_comment
-comment|/* Some useful macros */
-end_comment
-
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -71,18 +67,10 @@ name|TILE_CACHE_SIZE
 value|16
 end_define
 
-begin_define
-DECL|macro|ENTRY_WIDTH
-define|#
-directive|define
-name|ENTRY_WIDTH
-value|50
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27822d4e0108
+DECL|struct|__anon2acb002d0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -101,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27822d4e0208
+DECL|struct|__anon2acb002d0208
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1582,7 +1570,8 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|75
+operator|-
+literal|1
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|,

@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c71a17e0108
+DECL|struct|__anon2b62681f0108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -4554,7 +4554,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|licvals
 operator|.
@@ -4622,7 +4622,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|licvals
 operator|.
@@ -4690,7 +4690,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|licvals
 operator|.
@@ -4758,7 +4758,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|licvals
 operator|.
@@ -4827,7 +4827,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|licvals
 operator|.

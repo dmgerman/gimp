@@ -232,7 +232,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2eeed0108
+DECL|struct|__anon2c152a670108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -259,7 +259,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2eeed0203
+DECL|enum|__anon2c152a670203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -382,7 +382,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2eeed0303
+DECL|enum|__anon2c152a670303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -521,7 +521,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2eeed0403
+DECL|enum|__anon2c152a670403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -620,7 +620,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc2eeed0503
+DECL|enum|__anon2c152a670503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -712,7 +712,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2eeed0608
+DECL|struct|__anon2c152a670608
 block|{
 DECL|member|function
 name|gint
@@ -785,7 +785,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2eeed0708
+DECL|struct|__anon2c152a670708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1557,7 +1557,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2eeed0808
+DECL|struct|__anon2c152a670808
 block|{
 DECL|member|run
 name|gint
@@ -1607,7 +1607,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc2eeed0908
+DECL|struct|__anon2c152a670908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -7667,7 +7667,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|3
 argument_list|,
 name|VALS
 operator|.
@@ -7733,7 +7733,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|3
 argument_list|,
 name|VALS
 operator|.
@@ -9761,7 +9761,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|param
 operator|->
@@ -9830,7 +9830,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|param
 operator|->
@@ -9899,7 +9899,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|param
 operator|->
@@ -9968,7 +9968,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|param
 operator|->
@@ -10037,7 +10037,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|param
 operator|->
@@ -10106,7 +10106,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|param
 operator|->
@@ -10175,7 +10175,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|param
 operator|->
@@ -10244,7 +10244,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|param
 operator|->

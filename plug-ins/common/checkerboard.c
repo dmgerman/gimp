@@ -38,7 +38,7 @@ DECL|macro|SPIN_BUTTON_WIDTH
 define|#
 directive|define
 name|SPIN_BUTTON_WIDTH
-value|75
+value|8
 end_define
 
 begin_comment
@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a09c90d0108
+DECL|struct|__anon2bd48a520108
 block|{
 DECL|member|run
 name|gboolean

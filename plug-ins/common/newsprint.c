@@ -535,7 +535,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1eff540108
+DECL|struct|__anon2c096c8b0108
 block|{
 DECL|member|name
 specifier|const
@@ -795,7 +795,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1eff540208
+DECL|struct|__anon2c096c8b0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -868,7 +868,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1eff540308
+DECL|struct|__anon2c096c8b0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -894,7 +894,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1eff540408
+DECL|struct|__anon2c096c8b0408
 block|{
 DECL|member|run
 name|gint
@@ -913,7 +913,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1eff540508
+DECL|struct|__anon2c096c8b0508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1020,7 +1020,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1eff540608
+DECL|struct|__anon2c096c8b0608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1204,7 +1204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1eff540708
+DECL|struct|__anon2c096c8b0708
 block|{
 DECL|member|name
 specifier|const
@@ -5256,7 +5256,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|pvals_ui
 operator|.
@@ -5325,7 +5325,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|pvals_ui
 operator|.
@@ -5394,7 +5394,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|pvals
 operator|.
@@ -7018,7 +7018,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1eff540808
+DECL|struct|__anon2c096c8b0808
 block|{
 DECL|member|index
 name|gint

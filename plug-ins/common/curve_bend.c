@@ -794,7 +794,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1624d00108
+DECL|struct|__anon29d6b6780108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1624d00208
+DECL|struct|__anon29d6b6780208
 block|{
 DECL|member|y
 name|gint32
@@ -6425,8 +6425,6 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
-operator|+
 literal|4
 argument_list|)
 expr_stmt|;
@@ -6551,7 +6549,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Rotate: "
+literal|"Rotate:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6569,6 +6567,11 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 name|data
@@ -6607,16 +6610,6 @@ name|rotate_data
 argument_list|,
 literal|0.5
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|spinbutton
-argument_list|,
-name|ENTRY_WIDTH
-argument_list|,
-operator|-
 literal|1
 argument_list|)
 expr_stmt|;
@@ -6676,7 +6669,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Curve for Border: "
+literal|"Curve for Border:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6694,6 +6687,11 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 name|menu
@@ -6730,11 +6728,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
 name|cd
 operator|->
 name|outline_menu
@@ -6764,7 +6757,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Curve Type: "
+literal|"Curve Type:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6782,6 +6775,11 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 name|menu
@@ -6810,11 +6808,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

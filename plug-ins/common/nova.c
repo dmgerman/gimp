@@ -267,7 +267,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5471c0108
+DECL|struct|__anon2c7d46580108
 block|{
 DECL|member|xcenter
 name|gint
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5471c0208
+DECL|struct|__anon2c7d46580208
 block|{
 DECL|member|run
 name|gint
@@ -317,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5471c0308
+DECL|struct|__anon2c7d46580308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2251,7 +2251,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|8
 argument_list|,
 name|pvals
 operator|.
@@ -2335,7 +2335,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|8
 argument_list|,
 name|pvals
 operator|.
@@ -2419,7 +2419,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|8
 argument_list|,
 name|pvals
 operator|.

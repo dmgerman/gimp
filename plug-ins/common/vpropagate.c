@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f65f2d0108
+DECL|struct|__anon2a2f8a0a0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -866,7 +866,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f65f2d0208
+DECL|struct|__anon2a2f8a0a0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1091,7 +1091,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f65f2d0308
+DECL|struct|__anon2a2f8a0a0308
 block|{
 DECL|member|run
 name|gint
@@ -1267,7 +1267,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Generic/Erode..."
+literal|"<Image>/Filters/Generic/Erode"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -1302,7 +1302,7 @@ literal|"1996-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Generic/Dilate..."
+literal|"<Image>/Filters/Generic/Dilate"
 argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
@@ -2065,7 +2065,8 @@ name|cur_row
 decl_stmt|,
 modifier|*
 name|next_row
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|pr
 decl_stmt|,
@@ -2111,8 +2112,7 @@ name|up_index
 decl_stmt|,
 name|down_index
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|tmp
 decl_stmt|;
 name|GimpRGB
@@ -3946,7 +3946,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f65f2d0408
+DECL|struct|__anon2a2f8a0a0408
 block|{
 DECL|member|min_modified
 name|gshort
@@ -6035,7 +6035,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|4
 argument_list|,
 name|vpvals
 operator|.
@@ -6102,7 +6102,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|4
 argument_list|,
 name|vpvals
 operator|.
@@ -6169,7 +6169,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|4
 argument_list|,
 name|vpvals
 operator|.

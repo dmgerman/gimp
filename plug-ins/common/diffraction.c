@@ -158,7 +158,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27da3af90108
+DECL|struct|__anon2a2ba99c0108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27da3af90208
+DECL|struct|__anon2a2ba99c0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3373,7 +3373,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|dvals
 operator|.
@@ -3440,7 +3440,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|dvals
 operator|.
@@ -3507,7 +3507,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|7
 argument_list|,
 name|dvals
 operator|.

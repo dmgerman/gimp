@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ddee9d0108
+DECL|struct|__anon2a43add90108
 block|{
 DECL|member|posx
 name|gint
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ddee9d0208
+DECL|struct|__anon2a43add90208
 block|{
 DECL|member|run
 name|gint
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ddee9d0308
+DECL|struct|__anon2a43add90308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -5338,11 +5338,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
-argument_list|)
-expr_stmt|;
 name|gtk_label_set_mnemonic_widget
 argument_list|(
 name|GTK_LABEL
@@ -5350,6 +5345,11 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -5500,11 +5500,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|spinbutton
-argument_list|)
-expr_stmt|;
 name|gtk_label_set_mnemonic_widget
 argument_list|(
 name|GTK_LABEL
@@ -5512,6 +5507,11 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|spinbutton
 argument_list|)
 expr_stmt|;

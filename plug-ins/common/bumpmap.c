@@ -161,7 +161,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6d5c00103
+DECL|enum|__anon2be3366d0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -179,7 +179,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b6d5c00203
+DECL|enum|__anon2be3366d0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -198,7 +198,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b6d5c00308
+DECL|struct|__anon2be3366d0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -257,7 +257,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b6d5c00408
+DECL|struct|__anon2be3366d0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b6d5c00508
+DECL|struct|__anon2be3366d0508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4745,7 +4745,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|bmvals
 operator|.
@@ -4813,7 +4813,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|bmvals
 operator|.
@@ -4880,7 +4880,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|bmvals
 operator|.
@@ -4965,7 +4965,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|bmvals
 operator|.
@@ -5037,7 +5037,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|bmvals
 operator|.
@@ -5119,7 +5119,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|bmvals
 operator|.
@@ -5187,7 +5187,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|6
 argument_list|,
 name|bmvals
 operator|.

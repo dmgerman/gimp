@@ -2137,7 +2137,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|100
+literal|10
 argument_list|,
 name|wvals
 operator|.
@@ -2213,7 +2213,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|100
+literal|10
 argument_list|,
 name|wvals
 operator|.
@@ -2289,7 +2289,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|100
+literal|10
 argument_list|,
 name|wvals
 operator|.
@@ -2365,7 +2365,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|100
+literal|10
 argument_list|,
 name|wvals
 operator|.
@@ -2441,7 +2441,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|100
+literal|10
 argument_list|,
 name|wvals
 operator|.
@@ -2517,7 +2517,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|100
+literal|10
 argument_list|,
 name|wvals
 operator|.
@@ -2594,7 +2594,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|100
+literal|10
 argument_list|,
 name|wvals
 operator|.
@@ -2683,12 +2683,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Load"
-argument_list|)
+name|GTK_STOCK_OPEN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

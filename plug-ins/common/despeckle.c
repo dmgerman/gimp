@@ -107,7 +107,7 @@ DECL|macro|SCALE_WIDTH
 define|#
 directive|define
 name|SCALE_WIDTH
-value|80
+value|100
 end_define
 
 begin_define
@@ -115,7 +115,7 @@ DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
 name|ENTRY_WIDTH
-value|40
+value|3
 end_define
 
 begin_define
@@ -3036,9 +3036,9 @@ argument_list|(
 literal|"_Radius:"
 argument_list|)
 argument_list|,
-literal|100
+name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|despeckle_radius
 argument_list|,
@@ -3100,9 +3100,9 @@ argument_list|(
 literal|"_Black Level:"
 argument_list|)
 argument_list|,
-literal|100
+name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|black_level
 argument_list|,
@@ -3165,9 +3165,9 @@ argument_list|(
 literal|"_White Level:"
 argument_list|)
 argument_list|,
-literal|100
+name|SCALE_WIDTH
 argument_list|,
-literal|0
+name|ENTRY_WIDTH
 argument_list|,
 name|white_level
 argument_list|,

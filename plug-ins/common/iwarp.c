@@ -121,7 +121,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2761bf070103
+DECL|enum|__anon2991b0390103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bf070208
+DECL|struct|__anon2991b0390208
 block|{
 DECL|member|run
 name|gint
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bf070308
+DECL|struct|__anon2991b0390308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -5408,7 +5408,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|4
 argument_list|,
 name|iwarp_vals
 operator|.
@@ -5475,7 +5475,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|4
 argument_list|,
 name|iwarp_vals
 operator|.
@@ -6104,7 +6104,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|iwarp_vals
 operator|.
@@ -6171,7 +6171,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|iwarp_vals
 operator|.

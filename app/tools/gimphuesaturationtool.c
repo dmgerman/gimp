@@ -980,7 +980,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2b1adbb10108
+DECL|struct|__anon29b40a4f0108
 block|{
 DECL|member|label
 specifier|const
@@ -1728,7 +1728,8 @@ argument_list|)
 argument_list|,
 name|SLIDER_WIDTH
 argument_list|,
-literal|75
+operator|-
+literal|1
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1818,7 +1819,8 @@ argument_list|)
 argument_list|,
 name|SLIDER_WIDTH
 argument_list|,
-literal|75
+operator|-
+literal|1
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1908,7 +1910,8 @@ argument_list|)
 argument_list|,
 name|SLIDER_WIDTH
 argument_list|,
-literal|75
+operator|-
+literal|1
 argument_list|,
 literal|0.0
 argument_list|,

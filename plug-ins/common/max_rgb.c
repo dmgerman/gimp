@@ -257,7 +257,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29140c7f0103
+DECL|enum|__anon27c37d7e0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -275,7 +275,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29140c7f0208
+DECL|struct|__anon27c37d7e0208
 block|{
 DECL|member|max_p
 name|gint
@@ -291,7 +291,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29140c7f0308
+DECL|struct|__anon27c37d7e0308
 block|{
 DECL|member|run
 name|gint
@@ -1652,7 +1652,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -1662,7 +1662,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1699,16 +1699,6 @@ name|_
 argument_list|(
 literal|"Preview"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1910,16 +1900,6 @@ argument_list|,
 literal|"drawable"
 argument_list|,
 name|drawable
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

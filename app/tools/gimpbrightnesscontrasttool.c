@@ -904,7 +904,8 @@ argument_list|)
 argument_list|,
 name|SLIDER_WIDTH
 argument_list|,
-literal|75
+operator|-
+literal|1
 argument_list|,
 name|bc_tool
 operator|->
@@ -996,7 +997,8 @@ argument_list|)
 argument_list|,
 name|SLIDER_WIDTH
 argument_list|,
-literal|75
+operator|-
+literal|1
 argument_list|,
 name|bc_tool
 operator|->

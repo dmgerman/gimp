@@ -205,7 +205,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32d7720108
+DECL|struct|__anon2c3da3730108
 block|{
 DECL|member|x
 DECL|member|y
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32d7720208
+DECL|struct|__anon2c3da3730208
 block|{
 DECL|member|npts
 name|gint
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32d7720308
+DECL|struct|__anon2c3da3730308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -274,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32d7720408
+DECL|struct|__anon2c3da3730408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -333,7 +333,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a32d7720508
+DECL|struct|__anon2c3da3730508
 block|{
 DECL|member|run
 name|gint
@@ -3472,7 +3472,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|mvals
 operator|.
@@ -3539,7 +3539,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|mvals
 operator|.
@@ -3606,7 +3606,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|mvals
 operator|.
@@ -3673,7 +3673,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|mvals
 operator|.
@@ -3740,7 +3740,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|mvals
 operator|.
@@ -3807,7 +3807,7 @@ argument_list|)
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+literal|5
 argument_list|,
 name|mvals
 operator|.
