@@ -6,26 +6,10 @@ end_comment
 begin_escape
 end_escape
 
-begin_comment
-comment|/* These get defined to the version numbers in configure.in */
-end_comment
-
 begin_undef
 undef|#
 directive|undef
-name|GIMP_MAJOR_VERSION_NUMBER
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|GIMP_MINOR_VERSION_NUMBER
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|GIMP_MICRO_VERSION_NUMBER
+name|GIMP_VERSION
 end_undef
 
 begin_undef

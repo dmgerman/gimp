@@ -231,6 +231,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_define
 DECL|macro|LOGO_WIDTH_MIN
 define|#
@@ -1206,7 +1212,7 @@ name|gdk_string_width
 argument_list|(
 name|font
 argument_list|,
-name|VERSION
+name|GIMP_VERSION
 argument_list|)
 operator|)
 operator|/
@@ -1219,7 +1225,7 @@ operator|*
 name|logo_area_height
 operator|)
 argument_list|,
-name|VERSION
+name|GIMP_VERSION
 argument_list|)
 expr_stmt|;
 name|gdk_draw_string

@@ -776,7 +776,7 @@ condition|)
 name|g_print
 argument_list|(
 literal|"GIMP version "
-name|VERSION
+name|GIMP_VERSION
 literal|"\n"
 argument_list|)
 expr_stmt|;
