@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05585e0108
+DECL|struct|__anon2bed187e0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05585e0208
+DECL|struct|__anon2bed187e0208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05585e0308
+DECL|struct|__anon2bed187e0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -3217,11 +3217,24 @@ case|case
 literal|0
 case|:
 comment|/* unknown -> set the aspect ratio but use the default 		*  image resolution 		*/
+if|if
+condition|(
+name|cinfo
+operator|.
+name|Y_density
+operator|!=
+literal|0
+condition|)
 name|asymmetry
 operator|=
 name|xresolution
 operator|/
 name|yresolution
+expr_stmt|;
+else|else
+name|asymmetry
+operator|=
+literal|1.0
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
