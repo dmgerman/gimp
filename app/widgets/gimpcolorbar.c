@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1702000103
+DECL|enum|__anon2c41d9340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1397,7 +1397,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_bar_new:  *  * Creates a new #GimpColorBar widget.  *  * Return value: The new #GimpColorBar widget.  **/
+comment|/**  * gimp_color_bar_new:  * @orientation: whether the bar should be oriented horizontally or  *               vertically  *  * Creates a new #GimpColorBar widget.  *  * Return value: The new #GimpColorBar widget.  **/
 end_comment
 
 begin_function
@@ -1554,7 +1554,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_bar_set_color:  * @bar:     a #GimpColorBar widget  * @channel: a #GimpHistogramChannel  *  * Convenience function that calls gimp_color_bar_set_color() with the  * color that matches the @channel.  **/
+comment|/**  * gimp_color_bar_set_channel:  * @bar:     a #GimpColorBar widget  * @channel: a #GimpHistogramChannel  *  * Convenience function that calls gimp_color_bar_set_color() with the  * color that matches the @channel.  **/
 end_comment
 
 begin_function
