@@ -272,7 +272,7 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n Testing gimp_rc_write_changes() ... "
+literal|"\n\nTesting gimp_rc_write_changes() ... \n\n"
 argument_list|)
 expr_stmt|;
 name|gimprc2

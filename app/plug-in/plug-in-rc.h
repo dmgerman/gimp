@@ -28,6 +28,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|plug_in_rc_write
+parameter_list|(
+name|GSList
+modifier|*
+name|proc_defs
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
