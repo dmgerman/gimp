@@ -16,11 +16,22 @@ directive|define
 name|__GIMPINTL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GETTEXT_PACKAGE
+end_ifndef
+
+begin_error
+error|#
+directive|error
+literal|"config.h must be included prior to gimpintl.h"
+end_error
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -29,7 +40,7 @@ file|<locale.h>
 end_include
 
 begin_comment
-comment|/* Copied from gnome-i18n.h by Tom Tromey<tromey@creche.cygnus.com>  * Heavily modified by Daniel Egger<Daniel.Egger@t-online.de>  * So be sure to hit me instead of him if something is wrong here  */
+comment|/* Copied from gnome-i18n.h by Tom Tromey<tromey@creche.cygnus.com>  * Modified by Daniel Egger<Daniel.Egger@t-online.de> and others.  */
 end_comment
 
 begin_ifndef
@@ -234,17 +245,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_define
-DECL|macro|INIT_LOCALE (domain)
-define|#
-directive|define
-name|INIT_LOCALE
-parameter_list|(
-name|domain
-parameter_list|)
-value|G_STMT_START{	\      setlocale (LC_ALL, "");                    \      bindtextdomain (domain, LOCALEDIR);	\      bind_textdomain_codeset (domain, "UTF-8"); \      textdomain (domain);			\ }G_STMT_END
-end_define
 
 begin_endif
 endif|#
