@@ -32,11 +32,12 @@ define|#
 directive|define
 name|GimpExportReturnType
 value|GimpExportReturn
-DECL|macro|gimp_use_xshm
+DECL|macro|gimp_use_xshm ()
 define|#
 directive|define
 name|gimp_use_xshm
-value|TRUE
+parameter_list|()
+value|(TRUE)
 DECL|macro|gimp_color_cube
 define|#
 directive|define
@@ -436,7 +437,7 @@ directive|define
 name|GIMP_IS_FILE_SELECTION
 value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon277a33b10103
+DECL|enum|__anon29c088ef0103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -468,7 +469,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon277a33b10203
+DECL|enum|__anon29c088ef0203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -495,7 +496,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a33b10303
+DECL|enum|__anon29c088ef0303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -522,7 +523,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a33b10403
+DECL|enum|__anon29c088ef0403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -549,7 +550,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a33b10503
+DECL|enum|__anon29c088ef0503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -566,7 +567,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a33b10603
+DECL|enum|__anon29c088ef0603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -583,7 +584,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a33b10703
+DECL|enum|__anon29c088ef0703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -600,7 +601,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a33b10803
+DECL|enum|__anon29c088ef0803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -622,7 +623,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277a33b10903
+DECL|enum|__anon29c088ef0903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
