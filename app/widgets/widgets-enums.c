@@ -288,6 +288,17 @@ literal|"icon"
 block|}
 block|,
 block|{
+name|GIMP_TAB_STYLE_PREVIEW
+block|,
+name|N_
+argument_list|(
+literal|"Current Status"
+argument_list|)
+block|,
+literal|"preview"
+block|}
+block|,
+block|{
 name|GIMP_TAB_STYLE_NAME
 block|,
 name|N_
@@ -296,6 +307,17 @@ literal|"Text"
 argument_list|)
 block|,
 literal|"name"
+block|}
+block|,
+block|{
+name|GIMP_TAB_STYLE_BLURB
+block|,
+name|N_
+argument_list|(
+literal|"Description"
+argument_list|)
+block|,
+literal|"blurb"
 block|}
 block|,
 block|{
@@ -318,6 +340,28 @@ literal|"Icon& Desc"
 argument_list|)
 block|,
 literal|"icon-blurb"
+block|}
+block|,
+block|{
+name|GIMP_TAB_STYLE_PREVIEW_NAME
+block|,
+name|N_
+argument_list|(
+literal|"Status& Text"
+argument_list|)
+block|,
+literal|"preview-name"
+block|}
+block|,
+block|{
+name|GIMP_TAB_STYLE_PREVIEW_BLURB
+block|,
+name|N_
+argument_list|(
+literal|"Status& Desc"
+argument_list|)
+block|,
+literal|"preview-blurb"
 block|}
 block|,
 block|{

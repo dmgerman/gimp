@@ -662,6 +662,16 @@ name|TAB_STYLE
 argument_list|(
 name|N_
 argument_list|(
+literal|"/Tab Style/Current _Status"
+argument_list|)
+argument_list|,
+name|GIMP_TAB_STYLE_PREVIEW
+argument_list|)
+block|,
+name|TAB_STYLE
+argument_list|(
+name|N_
+argument_list|(
 literal|"/Tab Style/_Text"
 argument_list|)
 argument_list|,
@@ -676,6 +686,16 @@ literal|"/Tab Style/I_con& Text"
 argument_list|)
 argument_list|,
 name|GIMP_TAB_STYLE_ICON_NAME
+argument_list|)
+block|,
+name|TAB_STYLE
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Tab Style/St_atus& Text"
+argument_list|)
+argument_list|,
+name|GIMP_TAB_STYLE_PREVIEW_NAME
 argument_list|)
 block|,
 block|{
@@ -1273,6 +1293,20 @@ if|if
 condition|(
 name|tab_style
 operator|==
+name|GIMP_TAB_STYLE_PREVIEW
+condition|)
+name|SET_ACTIVE
+argument_list|(
+literal|"/Tab Style/Current Status"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|tab_style
+operator|==
 name|GIMP_TAB_STYLE_NAME
 condition|)
 name|SET_ACTIVE
@@ -1294,6 +1328,38 @@ argument_list|(
 literal|"/Tab Style/Icon& Text"
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|tab_style
+operator|==
+name|GIMP_TAB_STYLE_PREVIEW_NAME
+condition|)
+name|SET_ACTIVE
+argument_list|(
+literal|"/Tab Style/Status& Text"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Tab Style/Current Status"
+argument_list|,
+name|dockable
+operator|->
+name|get_preview_func
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Tab Style/Status& Text"
+argument_list|,
+name|dockable
+operator|->
+name|get_preview_func
 argument_list|)
 expr_stmt|;
 name|SET_VISIBLE

@@ -387,7 +387,7 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -410,7 +410,7 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|dialogs_tool_options_icon_func
+name|dialogs_tool_options_preview_func
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -550,11 +550,11 @@ name|gchar
 modifier|*
 name|stock_id
 parameter_list|,
-name|GimpDockableGetIconFunc
-name|get_icon_func
+name|GimpDockableGetPreviewFunc
+name|get_preview_func
 parameter_list|,
 name|gpointer
-name|get_icon_data
+name|get_preview_data
 parameter_list|,
 name|GimpDockableSetContextFunc
 name|set_context_func
@@ -1014,7 +1014,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_OPTIONS
 argument_list|,
-name|dialogs_tool_options_icon_func
+name|dialogs_tool_options_preview_func
 argument_list|,
 name|NULL
 argument_list|,
@@ -1336,7 +1336,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"brush"
 argument_list|,
@@ -1412,7 +1412,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"pattern"
 argument_list|,
@@ -1488,7 +1488,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"gradient"
 argument_list|,
@@ -1564,7 +1564,7 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_COLOR
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"palette"
 argument_list|,
@@ -1632,7 +1632,7 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_FONT
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"font"
 argument_list|,
@@ -1700,7 +1700,7 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_MISSING_IMAGE
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"tool"
 argument_list|,
@@ -2099,7 +2099,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"brush"
 argument_list|,
@@ -2175,7 +2175,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"pattern"
 argument_list|,
@@ -2251,7 +2251,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"gradient"
 argument_list|,
@@ -2327,7 +2327,7 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_COLOR
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"palette"
 argument_list|,
@@ -2395,7 +2395,7 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_SELECT_FONT
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"font"
 argument_list|,
@@ -2463,7 +2463,7 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_MISSING_IMAGE
 argument_list|,
-name|dialogs_viewable_icon_func
+name|dialogs_viewable_preview_func
 argument_list|,
 literal|"tool"
 argument_list|,
@@ -3949,8 +3949,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_viewable_icon_func (GimpDockable * dockable,GimpContext * context,GtkIconSize size,gpointer icon_data)
-name|dialogs_viewable_icon_func
+DECL|function|dialogs_viewable_preview_func (GimpDockable * dockable,GimpContext * context,GtkIconSize size,gpointer preview_data)
+name|dialogs_viewable_preview_func
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -3964,7 +3964,7 @@ name|GtkIconSize
 name|size
 parameter_list|,
 name|gpointer
-name|icon_data
+name|preview_data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -4003,7 +4003,7 @@ specifier|const
 name|gchar
 operator|*
 operator|)
-name|icon_data
+name|preview_data
 expr_stmt|;
 name|is_tool
 operator|=
@@ -4173,8 +4173,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tool_options_icon_func (GimpDockable * dockable,GimpContext * context,GtkIconSize size,gpointer icon_data)
-name|dialogs_tool_options_icon_func
+DECL|function|dialogs_tool_options_preview_func (GimpDockable * dockable,GimpContext * context,GtkIconSize size,gpointer preview_data)
+name|dialogs_tool_options_preview_func
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -4188,7 +4188,7 @@ name|GtkIconSize
 name|size
 parameter_list|,
 name|gpointer
-name|icon_data
+name|preview_data
 parameter_list|)
 block|{
 name|GimpToolInfo
@@ -4793,7 +4793,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * blurb,const gchar * stock_id,GimpDockableGetIconFunc get_icon_func,gpointer get_icon_data,GimpDockableSetContextFunc set_context_func)
+DECL|function|dialogs_dockable_new (GtkWidget * widget,const gchar * name,const gchar * blurb,const gchar * stock_id,GimpDockableGetPreviewFunc get_preview_func,gpointer get_preview_data,GimpDockableSetContextFunc set_context_func)
 name|dialogs_dockable_new
 parameter_list|(
 name|GtkWidget
@@ -4815,11 +4815,11 @@ name|gchar
 modifier|*
 name|stock_id
 parameter_list|,
-name|GimpDockableGetIconFunc
-name|get_icon_func
+name|GimpDockableGetPreviewFunc
+name|get_preview_func
 parameter_list|,
 name|gpointer
-name|get_icon_data
+name|get_preview_data
 parameter_list|,
 name|GimpDockableSetContextFunc
 name|set_context_func
@@ -4839,9 +4839,9 @@ name|blurb
 argument_list|,
 name|stock_id
 argument_list|,
-name|get_icon_func
+name|get_preview_func
 argument_list|,
-name|get_icon_data
+name|get_preview_data
 argument_list|,
 name|set_context_func
 argument_list|)

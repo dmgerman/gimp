@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b68ebfc0103
+DECL|enum|__anon2c4040b00103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -80,7 +80,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b68ebfc0203
+DECL|enum|__anon2c4040b00203
 block|{
 DECL|enumerator|GIMP_HELP_BROWSER_GIMP
 name|GIMP_HELP_BROWSER_GIMP
@@ -116,7 +116,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b68ebfc0303
+DECL|enum|__anon2c4040b00303
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_SCALE_LINEAR
 name|GIMP_HISTOGRAM_SCALE_LINEAR
@@ -152,23 +152,39 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b68ebfc0403
+DECL|enum|__anon2c4040b00403
 block|{
 DECL|enumerator|GIMP_TAB_STYLE_ICON
 name|GIMP_TAB_STYLE_ICON
 block|,
 comment|/*< desc="Icon">*/
+DECL|enumerator|GIMP_TAB_STYLE_PREVIEW
+name|GIMP_TAB_STYLE_PREVIEW
+block|,
+comment|/*< desc="Current Status">*/
 DECL|enumerator|GIMP_TAB_STYLE_NAME
 name|GIMP_TAB_STYLE_NAME
 block|,
 comment|/*< desc="Text">*/
+DECL|enumerator|GIMP_TAB_STYLE_BLURB
+name|GIMP_TAB_STYLE_BLURB
+block|,
+comment|/*< desc="Description">*/
 DECL|enumerator|GIMP_TAB_STYLE_ICON_NAME
 name|GIMP_TAB_STYLE_ICON_NAME
 block|,
 comment|/*< desc="Icon& Text">*/
 DECL|enumerator|GIMP_TAB_STYLE_ICON_BLURB
 name|GIMP_TAB_STYLE_ICON_BLURB
+block|,
 comment|/*< desc="Icon& Desc">*/
+DECL|enumerator|GIMP_TAB_STYLE_PREVIEW_NAME
+name|GIMP_TAB_STYLE_PREVIEW_NAME
+block|,
+comment|/*< desc="Status& Text">*/
+DECL|enumerator|GIMP_TAB_STYLE_PREVIEW_BLURB
+name|GIMP_TAB_STYLE_PREVIEW_BLURB
+comment|/*< desc="Status& Desc">*/
 DECL|typedef|GimpTabStyle
 block|}
 name|GimpTabStyle
@@ -196,7 +212,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b68ebfc0503
+DECL|enum|__anon2c4040b00503
 block|{
 DECL|enumerator|GIMP_VIEW_TYPE_LIST
 name|GIMP_VIEW_TYPE_LIST
@@ -232,7 +248,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b68ebfc0603
+DECL|enum|__anon2c4040b00603
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -255,7 +271,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b68ebfc0703
+DECL|enum|__anon2c4040b00703
 block|{
 DECL|enumerator|GIMP_PREVIEW_BG_CHECKS
 name|GIMP_PREVIEW_BG_CHECKS
@@ -272,7 +288,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b68ebfc0803
+DECL|enum|__anon2c4040b00803
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -292,7 +308,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b68ebfc0903
+DECL|enum|__anon2c4040b00903
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -327,7 +343,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b68ebfc0a03
+DECL|enum|__anon2c4040b00a03
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -434,7 +450,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b68ebfc0b03
+DECL|enum|__anon2c4040b00b03
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -484,7 +500,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b68ebfc0c03
+DECL|enum|__anon2c4040b00c03
 block|{
 DECL|enumerator|GIMP_DEVICE_VALUE_MODE
 name|GIMP_DEVICE_VALUE_MODE
