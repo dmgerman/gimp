@@ -38,7 +38,7 @@ file|"ifscompose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon29c7edc00103
+DECL|enum|__anon292636ba0103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -124,7 +124,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c7edc00208
+DECL|struct|__anon292636ba0208
 block|{
 DECL|member|name
 name|gchar
@@ -1083,7 +1083,7 @@ name|GList
 modifier|*
 name|tmp_list
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|new_vals
@@ -1480,10 +1480,11 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|ifsvals_parse_string (char * str,IfsComposeVals * vals,AffElement *** elements)
+DECL|function|ifsvals_parse_string (const gchar * str,IfsComposeVals * vals,AffElement *** elements)
 name|ifsvals_parse_string
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|str
 parameter_list|,
@@ -1614,7 +1615,7 @@ comment|/*************************************************************  * ifsval
 end_comment
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|ifsvals_stringify (IfsComposeVals * vals,AffElement ** elements)
 name|ifsvals_stringify
@@ -1650,12 +1651,14 @@ decl_stmt|;
 name|GString
 modifier|*
 name|result
-init|=
+decl_stmt|;
+name|result
+operator|=
 name|g_string_new
 argument_list|(
 name|NULL
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|g_string_append_printf
 argument_list|(
 name|result

@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b8598550108
+DECL|struct|__anon292481780108
 typedef|typedef
 struct|struct
 block|{
@@ -34,7 +34,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8598550208
+DECL|struct|__anon292481780208
 typedef|typedef
 struct|struct
 block|{
@@ -55,7 +55,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8598550308
+DECL|struct|__anon292481780308
 typedef|typedef
 struct|struct
 block|{
@@ -75,7 +75,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8598550408
+DECL|struct|__anon292481780408
 typedef|typedef
 struct|struct
 block|{
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8598550508
+DECL|struct|__anon292481780508
 block|{
 DECL|member|num_elements
 name|gint
@@ -192,7 +192,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b8598550608
+DECL|struct|__anon292481780608
 typedef|typedef
 struct|struct
 block|{
@@ -638,9 +638,9 @@ name|GdkGC
 modifier|*
 name|selected_gc
 parameter_list|,
-name|GdkFont
+name|PangoLayout
 modifier|*
-name|font
+name|layout
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -695,7 +695,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|ifsvals_stringify
 parameter_list|(
@@ -715,7 +715,8 @@ begin_function_decl
 name|gboolean
 name|ifsvals_parse_string
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|str
 parameter_list|,

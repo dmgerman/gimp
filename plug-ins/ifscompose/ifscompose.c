@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fcbfcc0103
+DECL|enum|__anon2addafa90103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fcbfcc0203
+DECL|enum|__anon2addafa90203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcbfcc0308
+DECL|struct|__anon2addafa90308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -201,7 +201,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon27fcbfcc040a
+DECL|union|__anon2addafa9040a
 block|{
 DECL|member|d
 name|gdouble
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcbfcc0508
+DECL|struct|__anon2addafa90508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ modifier|*
 name|elements
 decl_stmt|;
 DECL|member|element_selected
-name|gint
+name|gboolean
 modifier|*
 name|element_selected
 decl_stmt|;
@@ -260,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcbfcc0608
+DECL|struct|__anon2addafa90608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -295,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcbfcc0708
+DECL|struct|__anon2addafa90708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -331,7 +331,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcbfcc0808
+DECL|struct|__anon2addafa90808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcbfcc0908
+DECL|struct|__anon2addafa90908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -600,7 +600,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fcbfcc0a08
+DECL|struct|__anon2addafa90a08
 block|{
 DECL|member|run
 name|gboolean
@@ -8630,7 +8630,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|design_area_expose (GtkWidget * widget,GdkEventExpose * event)
 name|design_area_expose
 parameter_list|(
@@ -8643,6 +8643,10 @@ modifier|*
 name|event
 parameter_list|)
 block|{
+name|PangoLayout
+modifier|*
+name|layout
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -8817,6 +8821,15 @@ operator|+
 literal|10
 argument_list|)
 expr_stmt|;
+name|layout
+operator|=
+name|gtk_widget_create_pango_layout
+argument_list|(
+name|widget
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -8876,17 +8889,15 @@ name|ifsDesign
 operator|->
 name|selected_gc
 argument_list|,
-name|gtk_style_get_font
-argument_list|(
-name|ifsDesign
-operator|->
-name|area
-operator|->
-name|style
-argument_list|)
+name|layout
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_unref
+argument_list|(
+name|layout
+argument_list|)
+expr_stmt|;
 name|gdk_draw_drawable
 argument_list|(
 name|widget
@@ -8954,7 +8965,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|design_area_configure (GtkWidget * widget,GdkEventConfigure * event)
 name|design_area_configure
 parameter_list|(
@@ -9303,7 +9314,7 @@ index|[
 name|i
 index|]
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 if|if
@@ -10485,7 +10496,7 @@ name|element_selected
 operator|=
 name|g_new
 argument_list|(
-name|gint
+name|gboolean
 argument_list|,
 name|ifsvals
 operator|.
@@ -10703,7 +10714,7 @@ modifier|*
 modifier|*
 name|telements
 decl_stmt|;
-name|gint
+name|gboolean
 modifier|*
 name|tselected
 decl_stmt|;
@@ -13476,7 +13487,7 @@ name|num_elements
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gint
+name|gboolean
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -14170,7 +14181,7 @@ name|num_elements
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gint
+name|gboolean
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -14786,7 +14797,7 @@ name|num_elements
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gint
+name|gboolean
 argument_list|)
 argument_list|)
 expr_stmt|;
