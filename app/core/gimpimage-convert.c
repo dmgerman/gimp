@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1843c0108
+DECL|struct|__anon2be5a3da0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1843c0208
+DECL|struct|__anon2be5a3da0208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1843c0308
+DECL|struct|__anon2be5a3da0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -15427,7 +15427,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|convert_indexed_proc
+name|convert_indexed_palette_proc
 argument_list|,
 name|success
 argument_list|)
