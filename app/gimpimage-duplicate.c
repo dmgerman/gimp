@@ -3809,37 +3809,45 @@ name|gimage
 operator|->
 name|height
 argument_list|,
-comment|//	  64,64,128,128);
-comment|//					  newgdisplay->disp_width,newgdisplay->disp_height,
-comment|//					  newgdisplay->disp_width+newgdisplay->disp_xoffset,newgdisplay->disp_height+newgdisplay->disp_yoffset
-name|x1
+literal|64
 argument_list|,
-name|y1
+literal|64
 argument_list|,
-name|x2
+literal|128
 argument_list|,
-name|y2
+literal|128
 argument_list|)
 expr_stmt|;
-block|}
+comment|/*					  newgdisplay->disp_width,newgdisplay->disp_height, 					  					  newgdisplay->disp_width+newgdisplay->disp_xoffset,newgdisplay->disp_height+newgdisplay->disp_yoffset */
+name|x1
+operator|,
+name|y1
+operator|,
+name|x2
+operator|,
+name|y2
+block|)
+empty_stmt|;
 block|}
 block|}
 end_function
 
 begin_endif
+unit|}
 endif|#
 directive|endif
 end_endif
 
-begin_function
-name|void
+begin_macro
+unit|void
 DECL|function|channel_ops_duplicate (GimpImage * gimage)
 name|channel_ops_duplicate
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
+argument_list|(
+argument|GimpImage *gimage
+argument_list|)
+end_macro
+
+begin_block
 block|{
 name|GDisplay
 modifier|*
@@ -3869,7 +3877,7 @@ argument_list|)
 expr_stmt|;
 comment|/* duplicate_projection(gimage, new_gimage, new_gdisp);*/
 block|}
-end_function
+end_block
 
 end_unit
 

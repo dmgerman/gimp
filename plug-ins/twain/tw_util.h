@@ -90,7 +90,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|// __TW_UTIL_H
+comment|/* __TW_UTIL_H */
 end_comment
 
 end_unit

@@ -368,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29c090ec0108
+DECL|struct|__anon2c770ba40108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29c090ec0208
+DECL|struct|__anon2c770ba40208
 typedef|typedef
 struct|struct
 block|{
@@ -4574,7 +4574,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* //HB: update data BEFORE size change */
+comment|/* HB: update data BEFORE size change */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

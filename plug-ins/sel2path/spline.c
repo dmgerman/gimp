@@ -409,7 +409,7 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-comment|/* //HB: the above is really nice, but is there any other compiler 	 * supporting this ?? 	 */
+comment|/* HB: the above is really nice, but is there any other compiler 	 * supporting this ?? 	 */
 name|real_coordinate_type
 name|t1
 decl_stmt|;

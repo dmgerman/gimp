@@ -1019,7 +1019,7 @@ argument_list|,
 name|tile
 argument_list|)
 expr_stmt|;
-comment|/* DEBUG STUFF ->  if (tm->user_data)     {       //      fprintf(stderr,"V%p  ",tm->user_data);       fprintf(stderr,"V");     }   else     {       fprintf(stderr,"v");     } */
+comment|/* DEBUG STUFF ->  if (tm->user_data)     {             fprintf(stderr,"V%p  ",tm->user_data);       fprintf(stderr,"V");     }   else     {       fprintf(stderr,"v");     } */
 block|}
 end_function
 

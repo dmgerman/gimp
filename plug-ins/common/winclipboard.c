@@ -1523,7 +1523,8 @@ name|bpp
 index|]
 expr_stmt|;
 comment|/* red */
-comment|//pData[x+y*drawable->width*3+3] = 0;          /* reserved */
+comment|/*pData[x+y*drawable->width*3+3] = 0;*/
+comment|/* reserved */
 block|}
 block|}
 block|}

@@ -1174,7 +1174,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-comment|// GtkWidget *spinbutton;
+comment|/*GtkWidget *spinbutton;*/
 name|GtkObject
 modifier|*
 name|adj

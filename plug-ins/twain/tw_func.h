@@ -603,7 +603,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|// _TW_FUNC_H
+comment|/* _TW_FUNC_H */
 end_comment
 
 end_unit

@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beda83c0108
+DECL|struct|__anon287ebc080108
 block|{
 DECL|member|quality
 name|gdouble
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beda83c0208
+DECL|struct|__anon287ebc080208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beda83c0308
+DECL|struct|__anon287ebc080308
 block|{
 DECL|member|cinfo
 name|struct
@@ -7701,7 +7701,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-comment|/* //HB: restrict to 3 line height  				       * to allow 800x600 mode */
+comment|/* HB: restrict to 3 line height  				       * to allow 800x600 mode */
 if|if
 condition|(
 name|image_comment

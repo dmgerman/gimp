@@ -34882,7 +34882,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda2d140108
+DECL|struct|__anon28a530340108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34959,7 +34959,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda2d140208
+DECL|struct|__anon28a530340208
 block|{
 DECL|member|ncolors
 name|long
@@ -34978,7 +34978,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda2d140308
+DECL|struct|__anon28a530340308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38273,7 +38273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda2d140408
+DECL|struct|__anon28a530340408
 block|{
 DECL|member|used_count
 name|signed
@@ -44035,7 +44035,7 @@ block|}
 block|}
 name|finished_axesscan
 label|:
-comment|/*     //  boxp->Rhalferror = (Rmin+Rmax)/2;     //  boxp->Ghalferror = (Gmin+Gmax)/2;     //  boxp->Bhalferror = (Bmin+Bmax)/2;   */
+comment|/*       boxp->Rhalferror = (Rmin+Rmax)/2;       boxp->Ghalferror = (Gmin+Gmax)/2;       boxp->Bhalferror = (Bmin+Bmax)/2;   */
 comment|/*boxp->error = (sqrt((double)(boxp->error/ccount)));*/
 comment|/*  boxp->rerror = (sqrt((double)((boxp->rerror)/ccount)));   boxp->gerror = (sqrt((double)((boxp->gerror)/ccount)));   boxp->berror = (sqrt((double)((boxp->berror)/ccount)));*/
 comment|/*printf(":%lld / %ld: ", boxp->error, ccount);   printf("(%d-%d-%d)(%d-%d-%d)(%d-%d-%d)\n", 	 Rmin, boxp->Rhalferror, Rmax, 	 Gmin, boxp->Ghalferror, Gmax, 	 Bmin, boxp->Bhalferror, Bmax 	 ); 	 fflush(stdout);*/
