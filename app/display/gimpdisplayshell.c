@@ -340,7 +340,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d66670103
+DECL|enum|__anon2ad342f90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -356,7 +356,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d66670203
+DECL|enum|__anon2ad342f90203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2814,6 +2814,14 @@ operator|->
 name|show_menubar
 condition|)
 name|gtk_widget_show
+argument_list|(
+name|shell
+operator|->
+name|menubar
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_widget_hide
 argument_list|(
 name|shell
 operator|->
