@@ -205,7 +205,7 @@ value|32
 end_define
 
 begin_typedef
-DECL|struct|__anon2b829ea00108
+DECL|struct|__anon274f39c50108
 typedef|typedef
 struct|struct
 block|{
@@ -220,7 +220,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b829ea00208
+DECL|struct|__anon274f39c50208
 typedef|typedef
 struct|struct
 block|{
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b829ea00308
+DECL|struct|__anon274f39c50308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -475,7 +475,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b829ea00408
+DECL|struct|__anon274f39c50408
 typedef|typedef
 struct|struct
 block|{
@@ -7234,7 +7234,7 @@ name|option_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"How to fetch te next SrcLayer   \nat the next handled frame"
+literal|"How to fetch the next SrcLayer   \nat the next handled frame"
 argument_list|)
 argument_list|,
 name|NULL

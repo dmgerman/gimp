@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -55,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"bmp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -931,16 +931,6 @@ expr_stmt|;
 undef|#
 directive|undef
 name|LROUND
-if|if
-condition|(
-name|xresolution
-operator|>
-literal|1e-5
-operator|&&
-name|yresolution
-operator|>
-literal|1e-5
-condition|)
 name|gimp_image_set_resolution
 argument_list|(
 name|image_ID

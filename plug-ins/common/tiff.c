@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1be72c0108
+DECL|struct|__anon28fab2ae0108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1be72c0208
+DECL|struct|__anon28fab2ae0208
 block|{
 DECL|member|run
 name|gint
@@ -72,7 +72,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b1be72c0308
+DECL|struct|__anon28fab2ae0308
 typedef|typedef
 struct|struct
 block|{
@@ -2221,14 +2221,6 @@ condition|(
 name|read_unit
 operator|!=
 name|RESUNIT_NONE
-operator|&&
-name|xres
-operator|>
-literal|1e-5
-operator|&&
-name|yres
-operator|>
-literal|1e-5
 condition|)
 block|{
 name|gimp_image_set_resolution

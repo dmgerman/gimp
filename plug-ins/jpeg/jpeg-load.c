@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a158f90108
+DECL|struct|__anon2adf1cd00108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a158f90208
+DECL|struct|__anon2adf1cd00208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a158f90308
+DECL|struct|__anon2adf1cd00308
 block|{
 DECL|member|cinfo
 name|struct
@@ -3550,16 +3550,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-if|if
-condition|(
-name|xresolution
-operator|>
-literal|1e-5
-operator|&&
-name|yresolution
-operator|>
-literal|1e-5
-condition|)
 name|gimp_image_set_resolution
 argument_list|(
 name|image_ID

@@ -6132,7 +6132,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"File '%s' is corrupt\nLine %d Option section incorrect"
+literal|"File '%s' is corrupt.\nLine %d Option section incorrect"
 argument_list|)
 argument_list|,
 name|filename

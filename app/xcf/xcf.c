@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -228,7 +234,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf16cd0103
+DECL|enum|__anon2a0f0cd20103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -363,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aaf16cd0203
+DECL|enum|__anon2a0f0cd20203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9375,9 +9381,11 @@ argument_list|)
 expr_stmt|;
 name|xres
 operator|=
+name|default_xresolution
+expr_stmt|;
 name|yres
 operator|=
-literal|72.0
+name|default_yresolution
 expr_stmt|;
 block|}
 name|gimage

@@ -243,7 +243,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"This plugin creates one-pixel wide edges from the image, with the value proportional to the gradient. It uses the Laplace operator (a 3x3 kernel with -8 in the middle)The image has to be laplacered to get usefull results, a gauss_iir with 1.5 - 5.0 depending on the noise in the image is best"
+literal|"This plugin creates one-pixel wide edges from the image, with the value proportional to the gradient. It uses the Laplace operator (a 3x3 kernel with -8 in the middle). The image has to be laplacered to get useful results, a gauss_iir with 1.5 - 5.0 depending on the noise in the image is best."
 argument_list|)
 argument_list|,
 literal|"Thorsten Schnier"

@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile_manager.h"
 end_include
 
@@ -540,7 +546,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b4ba9460103
+DECL|enum|__anon27f09a700103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1604,16 +1610,24 @@ literal|1e-5
 operator|)
 condition|)
 return|return;
-comment|/* don't allow to set the resolution to zero */
+comment|/* don't allow to set the resolution out of bounds */
 if|if
 condition|(
 name|xresolution
 operator|<
-literal|1e-5
+name|GIMP_MIN_RESOLUTION
+operator|||
+name|xresolution
+operator|>
+name|GIMP_MAX_RESOLUTION
 operator|||
 name|yresolution
 operator|<
-literal|1e-5
+name|GIMP_MIN_RESOLUTION
+operator|||
+name|yresolution
+operator|>
+name|GIMP_MAX_RESOLUTION
 condition|)
 return|return;
 name|undo_push_resolution
@@ -9760,6 +9774,8 @@ decl_stmt|;
 name|Layer
 modifier|*
 name|layer
+init|=
+name|NULL
 decl_stmt|;
 comment|/* if there's a floating selection, anchor it */
 if|if
