@@ -1016,7 +1016,7 @@ name|undo_desc
 operator|=
 name|_
 argument_list|(
-literal|"Move Floating Layer"
+literal|"Move Floating Selection"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4645,7 +4645,7 @@ name|undo_desc
 operator|=
 name|_
 argument_list|(
-literal|"Move Floating Layer"
+literal|"Move Floating Selection"
 argument_list|)
 expr_stmt|;
 break|break;

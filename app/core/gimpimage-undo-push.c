@@ -10686,6 +10686,17 @@ name|floating_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  update the floating layer's name  */
+name|gimp_object_name_changed
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|fsu
+operator|->
+name|floating_layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  Update the preview for the gimage and underlying drawable  */
 name|gimp_viewable_invalidate_preview
 argument_list|(
@@ -10785,6 +10796,17 @@ operator|->
 name|floating_sel
 operator|=
 name|NULL
+expr_stmt|;
+comment|/*  update the floating layer's name  */
+name|gimp_object_name_changed
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|fsu
+operator|->
+name|floating_layer
+argument_list|)
+argument_list|)
 expr_stmt|;
 comment|/*  Update the fs drawable  */
 name|gimp_viewable_invalidate_preview

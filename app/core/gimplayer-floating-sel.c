@@ -895,6 +895,14 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+name|gimp_object_name_changed
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE

@@ -3592,7 +3592,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Selection"
+literal|"Floated Layer"
 argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
