@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actionarea.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color_picker.h"
 end_include
 
@@ -149,6 +155,19 @@ name|int
 parameter_list|,
 name|void
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|color_picker_info_window_close_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -572,6 +591,27 @@ return|;
 block|}
 end_function
 
+begin_decl_stmt
+DECL|variable|action_items
+specifier|static
+name|ActionAreaItem
+name|action_items
+index|[]
+init|=
+block|{
+block|{
+literal|"Close"
+block|,
+name|color_picker_info_window_close_callback
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
@@ -790,6 +830,32 @@ break|break;
 default|default :
 break|break;
 block|}
+comment|/* Create the action area  */
+name|action_items
+index|[
+literal|0
+index|]
+operator|.
+name|user_data
+operator|=
+name|color_picker_info
+expr_stmt|;
+name|build_action_area
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|color_picker_info
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|action_items
+argument_list|,
+literal|1
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 name|gdk_pointer_grab
 argument_list|(
@@ -2573,6 +2639,32 @@ block|}
 return|return
 name|return_args
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|color_picker_info_window_close_callback (GtkWidget * w,gpointer client_data)
+name|color_picker_info_window_close_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|w
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|info_dialog_popdown
+argument_list|(
+operator|(
+name|InfoDialog
+operator|*
+operator|)
+name|client_data
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
