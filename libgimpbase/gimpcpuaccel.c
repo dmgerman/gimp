@@ -567,22 +567,11 @@ return|;
 else|#
 directive|else
 comment|/* !ARCH_X86&& !ARCH_PPC/ENABLE_ALTIVEC */
-ifdef|#
-directive|ifdef
-name|HAVE_MLIB
-return|return
-name|CPU_ACCEL_MLIB
-return|;
-else|#
-directive|else
 return|return
 literal|0
 return|;
 endif|#
 directive|endif
-endif|#
-directive|endif
-comment|/* !ARCH_X86&& !ARCH_PPC/ENABLE_ALTIVEC */
 block|}
 end_function
 

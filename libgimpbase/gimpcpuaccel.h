@@ -21,18 +21,6 @@ name|__CPU_ACCEL_H__
 end_define
 
 begin_comment
-comment|/* generic accelerations */
-end_comment
-
-begin_define
-DECL|macro|CPU_ACCEL_MLIB
-define|#
-directive|define
-name|CPU_ACCEL_MLIB
-value|0x00000001
-end_define
-
-begin_comment
 comment|/* x86 accelerations */
 end_comment
 
