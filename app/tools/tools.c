@@ -928,12 +928,6 @@ operator|.
 name|tool_options
 argument_list|)
 expr_stmt|;
-comment|/* Update the device-information dialog */
-name|device_status_update
-argument_list|(
-name|current_device
-argument_list|)
-expr_stmt|;
 comment|/*  Set the paused count variable to 0    */
 name|active_tool
 operator|->
@@ -965,6 +959,12 @@ operator|=
 name|active_tool
 operator|->
 name|type
+expr_stmt|;
+comment|/* Update the device-information dialog */
+name|device_status_update
+argument_list|(
+name|current_device
+argument_list|)
 expr_stmt|;
 block|}
 end_function
