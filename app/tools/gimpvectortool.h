@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297cc56a0103
+DECL|enum|__anon27602b0f0103
 block|{
 DECL|enumerator|VECTORS_SELECT_VECTOR
 name|VECTORS_SELECT_VECTOR
@@ -201,6 +201,12 @@ name|gdouble
 name|last_y
 decl_stmt|;
 comment|/* last y coordinate                 */
+DECL|member|have_undo
+name|gboolean
+name|have_undo
+decl_stmt|;
+comment|/* did we push an undo at            */
+comment|/* ..._button_press?                 */
 DECL|member|cur_anchor
 name|GimpAnchor
 modifier|*
@@ -218,6 +224,13 @@ name|gdouble
 name|cur_position
 decl_stmt|;
 comment|/* the current Position on a segment */
+DECL|member|cur_vectors
+name|GimpVectors
+modifier|*
+name|cur_vectors
+decl_stmt|;
+comment|/* the vectors the tool is hovering  */
+comment|/* over (if different from ->vectors */
 DECL|member|vectors
 name|GimpVectors
 modifier|*
