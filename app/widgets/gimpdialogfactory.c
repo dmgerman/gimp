@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ce503f0103
+DECL|enum|__anon27b7d6240103
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -2090,6 +2090,14 @@ argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|toplevel
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_dockable_blink
+argument_list|(
+name|GIMP_DOCKABLE
+argument_list|(
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
