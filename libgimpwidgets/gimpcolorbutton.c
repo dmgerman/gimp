@@ -295,7 +295,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d733430103
+DECL|enum|__anon28ef329e0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_get_color:  * @gcb: Pointer to a #GimpColorButton.  *   **/
+comment|/**  * gimp_color_button_get_color:  * @gcb: Pointer to a #GimpColorButton.  * @color:  *   **/
 end_comment
 
 begin_function
@@ -977,7 +977,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_has_alpha:  * @gcb: Pointer to a #GimpColorButton.  *   **/
+comment|/**  * gimp_color_button_has_alpha:  * @gcb: Pointer to a #GimpColorButton.  *  *  * Returns:  **/
 end_comment
 
 begin_function

@@ -96,7 +96,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b9ffe30103
+DECL|enum|__anon2b42e3260103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -633,7 +633,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_area_new:  * @color: A pointer to a #GimpRGB struct.  * @alpha: If the color_area should show alpha.  * @drag_mask: The event_mask that should trigger drags.  *   * Creates a new #GimpColorArea widget.  *  * This returns a preview area showing the color. It handles color  * DND. If the color changes, the "color_changed" signal is emitted.  *   * Returns: Pointer to the new #GimpColorArea widget.  **/
+comment|/**  * gimp_color_area_new:  * @color:     A pointer to a #GimpRGB struct.  * @type:      The type of color area to create.  * @drag_mask: The event_mask that should trigger drags.  *   * Creates a new #GimpColorArea widget.  *  * This returns a preview area showing the color. It handles color  * DND. If the color changes, the "color_changed" signal is emitted.  *   * Returns: Pointer to the new #GimpColorArea widget.  **/
 end_comment
 
 begin_function

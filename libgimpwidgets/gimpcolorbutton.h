@@ -161,7 +161,7 @@ modifier|*
 name|color
 parameter_list|,
 name|GimpColorAreaType
-name|alpha
+name|type
 parameter_list|)
 function_decl|;
 name|void
@@ -229,7 +229,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __COLOR_BUTTON_H__ */
+comment|/* __GIMP_COLOR_BUTTON_H__ */
 end_comment
 
 end_unit
