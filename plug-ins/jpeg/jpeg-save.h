@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9d49c0108
+DECL|struct|__anon2c533a8a0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9d49c0208
+DECL|struct|__anon2c533a8a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -425,7 +425,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9d49c0308
+DECL|struct|__anon2c533a8a0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -6409,7 +6409,7 @@ name|gimp_parameter_settings_new
 argument_list|(
 name|main_vbox
 argument_list|,
-literal|10
+literal|9
 argument_list|,
 literal|3
 argument_list|)
