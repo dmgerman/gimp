@@ -871,7 +871,6 @@ operator|->
 name|projection
 argument_list|)
 expr_stmt|;
-comment|/*  treat the undo stacks separately  */
 name|undo_size
 operator|=
 name|gimp_object_get_memsize
@@ -900,23 +899,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  calculate the part of the memsize that won't change by scaling  */
+comment|/*  the fixed part of the image's memsize w/o any undo information  */
 name|fixed_size
 operator|=
-operator|(
 name|current_size
 operator|-
-comment|/*  the overall size                 */
-name|scalable_size
-operator|-
-comment|/*  minus the part that scales       */
 name|undo_size
 operator|-
-comment|/*  minus undo (special, see below)  */
 name|redo_size
-operator|)
+operator|-
+name|scalable_size
 expr_stmt|;
-comment|/*  minus redo (will be blown)       */
 comment|/*  calculate the new size, which is:  */
 name|new_size
 operator|=
@@ -952,64 +945,6 @@ argument_list|)
 operator|)
 operator|)
 expr_stmt|;
-comment|/*  ...plus the new undo size which is...  */
-if|if
-condition|(
-name|undo_size
-operator|+
-name|scalable_size
-operator|<
-name|gimage
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|undo_size
-condition|)
-block|{
-comment|/*  ...the old undo size plus the old drawables (if within limits)  */
-name|new_size
-operator|+=
-name|undo_size
-operator|+
-name|scalable_size
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|scalable_size
-operator|<
-name|gimage
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|undo_size
-condition|)
-block|{
-comment|/*  ...the limit (if the old drawables are not larger than the limit)  */
-name|new_size
-operator|+=
-name|gimage
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|undo_size
-expr_stmt|;
-block|}
-else|else
-block|{
-comment|/*  ...the old drawables otherwise  */
-name|new_size
-operator|+=
-name|scalable_size
-expr_stmt|;
-block|}
 operator|*
 name|new_memsize
 operator|=
