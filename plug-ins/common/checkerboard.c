@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -72,10 +60,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa60620108
+DECL|struct|__anon2998bc1e0108
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|CheckInterface
@@ -162,7 +150,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|check_dialog
 parameter_list|(
 name|void
@@ -270,7 +258,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"check_mode"
 block|,
-literal|"Regular or Physcobilly"
+literal|"Regular or Psychobilly"
 block|}
 block|,
 block|{
@@ -1350,7 +1338,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|check_dialog (void)
 name|check_dialog
 parameter_list|(
@@ -1542,11 +1530,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Psychobilly"
+literal|"_Psychobilly"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1660,7 +1648,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Check Size:"
+literal|"Check _Size:"
 argument_list|)
 argument_list|,
 literal|200
