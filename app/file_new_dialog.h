@@ -18,6 +18,12 @@ directive|include
 file|"gtk/gtk.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"image_new.h"
+end_include
+
 begin_function_decl
 name|void
 name|file_new_cmd_callback
@@ -37,8 +43,13 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_new_reset_current_cut_buffer
-parameter_list|()
+name|ui_new_image_window_create
+parameter_list|(
+specifier|const
+name|GimpImageNewValues
+modifier|*
+name|values
+parameter_list|)
 function_decl|;
 end_function_decl
 

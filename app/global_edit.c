@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file_new_dialog.h"
+file|"image_new.h"
 end_include
 
 begin_include
@@ -112,7 +112,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2bba0f850103
+DECL|enum|__anon29a255850103
 typedef|typedef
 enum|enum
 block|{
@@ -968,7 +968,7 @@ if|if
 condition|(
 name|cut
 condition|)
-name|file_new_reset_current_cut_buffer
+name|image_new_reset_current_cut_buffer
 argument_list|()
 expr_stmt|;
 comment|/*  end the group undo  */
@@ -1117,7 +1117,7 @@ if|if
 condition|(
 name|copy
 condition|)
-name|file_new_reset_current_cut_buffer
+name|image_new_reset_current_cut_buffer
 argument_list|()
 expr_stmt|;
 if|if

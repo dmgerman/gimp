@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c2914e80103
+DECL|enum|__anon29d0fc610103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1992,6 +1992,44 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_image_get_width (const GimpImage * gimage)
+name|gimp_image_get_width
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|width
+return|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_image_get_height (const GimpImage * gimage)
+name|gimp_image_get_height
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|height
+return|;
 block|}
 end_function
 

@@ -208,7 +208,7 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon27d6df520103
+DECL|enum|__anon298dc2080103
 typedef|typedef
 enum|enum
 block|{
@@ -227,7 +227,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27d6df520203
+DECL|enum|__anon298dc2080203
 typedef|typedef
 enum|enum
 block|{
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d6df520303
+DECL|enum|__anon298dc2080303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -276,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d6df520403
+DECL|enum|__anon298dc2080403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -467,6 +467,28 @@ name|PlugInProcDef
 modifier|*
 name|gimp_image_get_save_proc
 parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_image_get_width
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_image_get_height
+parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 parameter_list|)
