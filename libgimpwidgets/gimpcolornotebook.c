@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcolorscales.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolorselector.h"
 end_include
 
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27970af00103
+DECL|enum|__anon2c8626e90103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -409,6 +415,12 @@ operator|->
 name|hsv
 argument_list|)
 expr_stmt|;
+name|notebook
+operator|->
+name|channel
+operator|=
+name|GIMP_COLOR_SELECTOR_HUE
+expr_stmt|;
 name|selector_types
 operator|=
 name|g_type_children
@@ -461,6 +473,20 @@ name|i
 operator|++
 control|)
 block|{
+comment|/*  skip the "Scales" color selector  */
+if|if
+condition|(
+name|g_type_is_a
+argument_list|(
+name|selector_types
+index|[
+name|i
+index|]
+argument_list|,
+name|GIMP_TYPE_COLOR_SCALES
+argument_list|)
+condition|)
+continue|continue;
 name|selector
 operator|=
 name|gimp_color_selector_new
@@ -479,6 +505,10 @@ operator|&
 name|notebook
 operator|->
 name|hsv
+argument_list|,
+name|notebook
+operator|->
+name|channel
 argument_list|)
 expr_stmt|;
 if|if
@@ -487,6 +517,16 @@ operator|!
 name|selector
 condition|)
 continue|continue;
+name|gimp_color_selector_set_show_alpha
+argument_list|(
+name|GIMP_COLOR_SELECTOR
+argument_list|(
+name|selector
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new

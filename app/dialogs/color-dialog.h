@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af41d390103
+DECL|enum|__anon2b4e6db60103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK
@@ -138,6 +138,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|color_notebook_free
+parameter_list|(
+name|ColorNotebook
+modifier|*
+name|cnb
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|color_notebook_set_viewable
 parameter_list|(
 name|ColorNotebook
@@ -181,17 +192,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|color_notebook_hide
-parameter_list|(
-name|ColorNotebook
-modifier|*
-name|cnb
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|color_notebook_free
 parameter_list|(
 name|ColorNotebook
 modifier|*

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpcolorselect.c  * Copyright (C) 2002 Michael Natterer<mitch@gimp.org>  *  * based on color_notebook module  * Copyright (C) 1998 Austin Donnelly<austin@greenend.org.uk>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be16b030103
+DECL|enum|__anon279e090b0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -168,7 +168,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be16b030203
+DECL|enum|__anon279e090b0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -211,25 +211,6 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_TYPE_COLOR_SELECT
-define|#
-directive|define
-name|GIMP_TYPE_COLOR_SELECT
-value|(gimp_color_select_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_COLOR_SELECT (obj)
-define|#
-directive|define
-name|GIMP_COLOR_SELECT
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_COLOR_SELECT, GimpColorSelect))
-end_define
-
-begin_define
 DECL|macro|GIMP_COLOR_SELECT_CLASS (klass)
 define|#
 directive|define
@@ -238,17 +219,6 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_SELECT, GimpColorSelectClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_COLOR_SELECT (obj)
-define|#
-directive|define
-name|GIMP_IS_COLOR_SELECT
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_COLOR_SELECT))
 end_define
 
 begin_define
@@ -272,6 +242,15 @@ name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_COLOR_SELECT, GimpColorSelectClass))
 end_define
+
+begin_typedef
+DECL|typedef|GimpColorSelectClass
+typedef|typedef
+name|struct
+name|_GimpColorSelectClass
+name|GimpColorSelectClass
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpColorSelect
@@ -298,14 +277,6 @@ name|pos
 index|[
 literal|3
 index|]
-decl_stmt|;
-DECL|member|rgb
-name|GimpRGB
-name|rgb
-decl_stmt|;
-DECL|member|hsv
-name|GimpHSV
-name|hsv
 decl_stmt|;
 DECL|member|z_color_fill
 name|gint
@@ -384,13 +355,13 @@ DECL|member|height
 name|gint
 name|height
 decl_stmt|;
-DECL|member|hsv
-name|GimpHSV
-name|hsv
-decl_stmt|;
 DECL|member|rgb
 name|GimpRGB
 name|rgb
+decl_stmt|;
+DECL|member|hsv
+name|GimpHSV
+name|hsv
 decl_stmt|;
 DECL|member|update
 name|ColorSelectFillUpdateProc
@@ -491,43 +462,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_select_update_caller
-parameter_list|(
-name|GimpColorSelect
-modifier|*
-name|select
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_color_select_update_values
-parameter_list|(
-name|GimpColorSelect
-modifier|*
-name|select
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_color_select_update_rgb_values
-parameter_list|(
-name|GimpColorSelect
-modifier|*
-name|select
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_color_select_update_hsv_values
 parameter_list|(
 name|GimpColorSelect
 modifier|*
@@ -555,7 +490,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void   gimp_color_select_drop_color        (GtkWidget          *widget,                                                    const GimpRGB      *color,                                                    gpointer            data);
+unit|static void   gimp_color_select_drop_color     (GtkWidget          *widget,                                                 const GimpRGB      *color,                                                 gpointer            data);
 endif|#
 directive|endif
 end_endif
@@ -1535,20 +1470,6 @@ argument_list|(
 name|selector
 argument_list|)
 expr_stmt|;
-name|select
-operator|->
-name|rgb
-operator|=
-operator|*
-name|rgb
-expr_stmt|;
-name|select
-operator|->
-name|hsv
-operator|=
-operator|*
-name|hsv
-expr_stmt|;
 name|gimp_color_select_update_pos
 argument_list|(
 name|select
@@ -1736,6 +1657,17 @@ name|ColorSelectUpdateType
 name|update
 parameter_list|)
 block|{
+name|GimpColorSelector
+modifier|*
+name|selector
+decl_stmt|;
+name|selector
+operator|=
+name|GIMP_COLOR_SELECTOR
+argument_list|(
+name|select
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|update
@@ -1776,12 +1708,12 @@ operator|->
 name|xy_color_fill
 argument_list|,
 operator|&
-name|select
+name|selector
 operator|->
 name|hsv
 argument_list|,
 operator|&
-name|select
+name|selector
 operator|->
 name|rgb
 argument_list|)
@@ -1812,12 +1744,12 @@ operator|->
 name|z_color_fill
 argument_list|,
 operator|&
-name|select
+name|selector
 operator|->
 name|hsv
 argument_list|,
 operator|&
-name|select
+name|selector
 operator|->
 name|rgb
 argument_list|)
@@ -1836,41 +1768,12 @@ name|update
 operator|&
 name|UPDATE_CALLER
 condition|)
-name|gimp_color_select_update_caller
-argument_list|(
-name|select
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_color_select_update_caller (GimpColorSelect * select)
-name|gimp_color_select_update_caller
-parameter_list|(
-name|GimpColorSelect
-modifier|*
-name|select
-parameter_list|)
-block|{
 name|gimp_color_selector_color_changed
 argument_list|(
 name|GIMP_COLOR_SELECTOR
 argument_list|(
 name|select
 argument_list|)
-argument_list|,
-operator|&
-name|select
-operator|->
-name|rgb
-argument_list|,
-operator|&
-name|select
-operator|->
-name|hsv
 argument_list|)
 expr_stmt|;
 block|}
@@ -1887,6 +1790,17 @@ modifier|*
 name|select
 parameter_list|)
 block|{
+name|GimpColorSelector
+modifier|*
+name|selector
+decl_stmt|;
+name|selector
+operator|=
+name|GIMP_COLOR_SELECTOR
+argument_list|(
+name|select
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|select
@@ -1897,7 +1811,7 @@ block|{
 case|case
 name|COLOR_SELECT_RED
 case|:
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -1912,7 +1826,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -1927,7 +1841,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -1946,7 +1860,7 @@ break|break;
 case|case
 name|COLOR_SELECT_GREEN
 case|:
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -1961,7 +1875,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -1976,7 +1890,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -1995,7 +1909,7 @@ break|break;
 case|case
 name|COLOR_SELECT_BLUE
 case|:
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2010,7 +1924,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2025,7 +1939,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2044,7 +1958,7 @@ break|break;
 case|case
 name|COLOR_SELECT_HUE
 case|:
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2059,7 +1973,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2074,7 +1988,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2093,7 +2007,7 @@ break|break;
 case|case
 name|COLOR_SELECT_SATURATION
 case|:
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2108,7 +2022,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2123,7 +2037,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2142,7 +2056,7 @@ break|break;
 case|case
 name|COLOR_SELECT_VALUE
 case|:
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2157,7 +2071,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2172,7 +2086,7 @@ index|]
 operator|/
 literal|255.0
 expr_stmt|;
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2205,82 +2119,44 @@ case|:
 case|case
 name|COLOR_SELECT_BLUE
 case|:
-name|gimp_color_select_update_hsv_values
-argument_list|(
-name|select
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|COLOR_SELECT_HUE
-case|:
-case|case
-name|COLOR_SELECT_SATURATION
-case|:
-case|case
-name|COLOR_SELECT_VALUE
-case|:
-name|gimp_color_select_update_rgb_values
-argument_list|(
-name|select
-argument_list|)
-expr_stmt|;
-break|break;
-block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_color_select_update_rgb_values (GimpColorSelect * select)
-name|gimp_color_select_update_rgb_values
-parameter_list|(
-name|GimpColorSelect
-modifier|*
-name|select
-parameter_list|)
-block|{
-name|gimp_hsv_to_rgb
-argument_list|(
-operator|&
-name|select
-operator|->
-name|hsv
-argument_list|,
-operator|&
-name|select
-operator|->
-name|rgb
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_color_select_update_hsv_values (GimpColorSelect * select)
-name|gimp_color_select_update_hsv_values
-parameter_list|(
-name|GimpColorSelect
-modifier|*
-name|select
-parameter_list|)
-block|{
 name|gimp_rgb_to_hsv
 argument_list|(
 operator|&
-name|select
+name|selector
 operator|->
 name|rgb
 argument_list|,
 operator|&
-name|select
+name|selector
 operator|->
 name|hsv
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|COLOR_SELECT_HUE
+case|:
+case|case
+name|COLOR_SELECT_SATURATION
+case|:
+case|case
+name|COLOR_SELECT_VALUE
+case|:
+name|gimp_hsv_to_rgb
+argument_list|(
+operator|&
+name|selector
+operator|->
+name|hsv
+argument_list|,
+operator|&
+name|selector
+operator|->
+name|rgb
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 block|}
 end_function
 
@@ -2295,6 +2171,17 @@ modifier|*
 name|select
 parameter_list|)
 block|{
+name|GimpColorSelector
+modifier|*
+name|selector
+decl_stmt|;
+name|selector
+operator|=
+name|GIMP_COLOR_SELECTOR
+argument_list|(
+name|select
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|select
@@ -2316,7 +2203,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2336,7 +2223,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2356,7 +2243,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2380,7 +2267,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2400,7 +2287,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2420,7 +2307,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2444,7 +2331,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2464,7 +2351,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2484,7 +2371,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|rgb
 operator|.
@@ -2508,7 +2395,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2528,7 +2415,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2548,7 +2435,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2572,7 +2459,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2592,7 +2479,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2612,7 +2499,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2636,7 +2523,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2656,7 +2543,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
@@ -2676,7 +2563,7 @@ call|(
 name|gint
 call|)
 argument_list|(
-name|select
+name|selector
 operator|->
 name|hsv
 operator|.
