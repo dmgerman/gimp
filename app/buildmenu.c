@@ -24,16 +24,16 @@ end_include
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|build_menu (MenuItem * items,GtkAcceleratorTable * table)
+DECL|function|build_menu (MenuItem * items,GtkAccelGroup * accel_group)
 name|build_menu
 parameter_list|(
 name|MenuItem
 modifier|*
 name|items
 parameter_list|,
-name|GtkAcceleratorTable
+name|GtkAccelGroup
 modifier|*
-name|table
+name|accel_group
 parameter_list|)
 block|{
 name|GtkWidget
@@ -49,14 +49,14 @@ operator|=
 name|gtk_menu_new
 argument_list|()
 expr_stmt|;
-name|gtk_menu_set_accelerator_table
+name|gtk_menu_set_accel_group
 argument_list|(
 name|GTK_MENU
 argument_list|(
 name|menu
 argument_list|)
 argument_list|,
-name|table
+name|accel_group
 argument_list|)
 expr_stmt|;
 while|while
@@ -121,15 +121,15 @@ name|items
 operator|->
 name|accelerator_key
 operator|&&
-name|table
+name|accel_group
 condition|)
-name|gtk_widget_install_accelerator
+name|gtk_widget_add_accelerator
 argument_list|(
 name|menu_item
 argument_list|,
-name|table
-argument_list|,
 literal|"activate"
+argument_list|,
+name|accel_group
 argument_list|,
 name|items
 operator|->
@@ -138,6 +138,10 @@ argument_list|,
 name|items
 operator|->
 name|accelerator_mods
+argument_list|,
+name|GTK_ACCEL_VISIBLE
+operator||
+name|GTK_ACCEL_LOCKED
 argument_list|)
 expr_stmt|;
 block|}
@@ -187,7 +191,7 @@ name|items
 operator|->
 name|subitems
 argument_list|,
-name|table
+name|accel_group
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -315,7 +315,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon292d0b0f0108
+DECL|struct|__anon2b986d930108
 typedef|typedef
 struct|struct
 block|{
@@ -374,7 +374,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292d0b0f0208
+DECL|struct|__anon2b986d930208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2053,9 +2053,6 @@ modifier|*
 name|vals
 decl_stmt|;
 name|float
-name|new_resolution
-decl_stmt|;
-name|float
 name|temp_units
 decl_stmt|;
 name|float
@@ -2218,7 +2215,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_new_cmd_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|file_new_cmd_callback (GtkWidget * widget,gpointer callback_data,guint callback_action)
 name|file_new_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -2226,7 +2223,10 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|callback_data
+parameter_list|,
+name|guint
+name|callback_action
 parameter_list|)
 block|{
 name|GDisplay
@@ -2264,10 +2264,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|radio_box
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|units_box
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -2320,10 +2316,7 @@ block|}
 comment|/*  Before we try to determine the responsible gdisplay,    *  make sure this wasn't called from the toolbox    */
 if|if
 condition|(
-operator|(
-name|long
-operator|)
-name|client_data
+name|callback_action
 condition|)
 name|gdisp
 operator|=
@@ -6002,7 +5995,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon292d0b0f0308
+DECL|struct|__anon2b986d930308
 struct|struct
 block|{
 DECL|member|label
@@ -6071,7 +6064,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon292d0b0f0408
+DECL|struct|__anon2b986d930408
 struct|struct
 block|{
 DECL|member|label
@@ -12814,7 +12807,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_select_cmd_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|tools_select_cmd_callback (GtkWidget * widget,gpointer callback_data,guint callback_action)
 name|tools_select_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -12822,7 +12815,10 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|callback_data
+parameter_list|,
+name|guint
+name|callback_action
 parameter_list|)
 block|{
 name|GDisplay
@@ -12836,10 +12832,7 @@ name|tool_widgets
 index|[
 name|tool_info
 index|[
-operator|(
-name|long
-operator|)
-name|client_data
+name|callback_action
 index|]
 operator|.
 name|toolbar_position
@@ -12867,7 +12860,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|filters_repeat_cmd_callback (GtkWidget * widget,gpointer client_data)
+DECL|function|filters_repeat_cmd_callback (GtkWidget * widget,gpointer callback_data,guint callback_action)
 name|filters_repeat_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -12875,15 +12868,15 @@ modifier|*
 name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|callback_data
+parameter_list|,
+name|guint
+name|callback_action
 parameter_list|)
 block|{
 name|plug_in_repeat
 argument_list|(
-operator|(
-name|long
-operator|)
-name|client_data
+name|callback_action
 argument_list|)
 expr_stmt|;
 block|}

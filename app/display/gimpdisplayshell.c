@@ -2725,7 +2725,7 @@ name|GList
 modifier|*
 name|device_list
 decl_stmt|;
-name|GtkAcceleratorTable
+name|GtkAccelGroup
 modifier|*
 name|table
 decl_stmt|;
@@ -2985,7 +2985,7 @@ name|menubar
 argument_list|)
 expr_stmt|;
 comment|/*  Install the accelerator table in the main window  */
-name|gtk_window_add_accelerator_table
+name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -3171,9 +3171,9 @@ init|=
 name|NULL
 decl_stmt|;
 specifier|static
-name|GtkAcceleratorTable
+name|GtkAccelGroup
 modifier|*
-name|image_accelerator_table
+name|image_accel_group
 init|=
 name|NULL
 decl_stmt|;
@@ -4101,7 +4101,7 @@ operator|&
 name|image_popup_menu
 argument_list|,
 operator|&
-name|image_accelerator_table
+name|image_accel_group
 argument_list|)
 expr_stmt|;
 comment|/*  the popup menu  */
@@ -4112,7 +4112,7 @@ operator|=
 name|image_popup_menu
 expr_stmt|;
 comment|/*  the accelerator table for images  */
-name|gtk_window_add_accelerator_table
+name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -4121,7 +4121,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|image_accelerator_table
+name|image_accel_group
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

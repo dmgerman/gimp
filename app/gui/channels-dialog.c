@@ -388,10 +388,10 @@ name|GtkWidget
 modifier|*
 name|ops_menu
 decl_stmt|;
-DECL|member|accel_table
-name|GtkAcceleratorTable
+DECL|member|accel_group
+name|GtkAccelGroup
 modifier|*
-name|accel_table
+name|accel_group
 decl_stmt|;
 DECL|member|num_components
 name|int
@@ -1255,9 +1255,9 @@ name|NULL
 expr_stmt|;
 name|channelsD
 operator|->
-name|accel_table
+name|accel_group
 operator|=
-name|gtk_accelerator_table_new
+name|gtk_accel_group_new
 argument_list|()
 expr_stmt|;
 if|if
@@ -1324,7 +1324,7 @@ name|channels_ops
 argument_list|,
 name|channelsD
 operator|->
-name|accel_table
+name|accel_group
 argument_list|)
 expr_stmt|;
 comment|/*  The channels listbox  */
@@ -4035,7 +4035,7 @@ operator|!
 name|channelsD
 condition|)
 return|return;
-name|gtk_window_add_accelerator_table
+name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -4044,7 +4044,7 @@ argument_list|)
 argument_list|,
 name|channelsD
 operator|->
-name|accel_table
+name|accel_group
 argument_list|)
 expr_stmt|;
 block|}
@@ -4070,7 +4070,7 @@ operator|!
 name|channelsD
 condition|)
 return|return;
-name|gtk_window_remove_accelerator_table
+name|gtk_window_remove_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -4079,7 +4079,7 @@ argument_list|)
 argument_list|,
 name|channelsD
 operator|->
-name|accel_table
+name|accel_group
 argument_list|)
 expr_stmt|;
 block|}

@@ -509,9 +509,9 @@ name|GtkWidget
 modifier|*
 name|hbox
 decl_stmt|;
-name|GtkAcceleratorTable
+name|GtkAccelGroup
 modifier|*
-name|table
+name|accel_group
 decl_stmt|;
 name|int
 name|default_index
@@ -539,9 +539,9 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|table
+name|accel_group
 operator|=
-name|gtk_accelerator_table_new
+name|gtk_accel_group_new
 argument_list|()
 expr_stmt|;
 comment|/*  The shell and main vbox  */
@@ -594,7 +594,7 @@ argument_list|,
 literal|"Indexed Color Palette"
 argument_list|)
 expr_stmt|;
-name|gtk_window_add_accelerator_table
+name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -603,7 +603,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|table
+name|accel_group
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -825,7 +825,7 @@ name|build_menu
 argument_list|(
 name|indexed_color_ops
 argument_list|,
-name|table
+name|accel_group
 argument_list|)
 expr_stmt|;
 name|menu_bar
