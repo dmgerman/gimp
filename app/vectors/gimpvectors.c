@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b71d62a0103
+DECL|enum|__anon2b694b140103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2056,6 +2056,9 @@ name|GimpVectors
 modifier|*
 name|vectors
 decl_stmt|;
+name|GimpMatrix3
+name|local_matrix
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -2085,6 +2088,23 @@ literal|"Transform Path"
 argument_list|)
 argument_list|,
 name|vectors
+argument_list|)
+expr_stmt|;
+name|local_matrix
+operator|=
+operator|*
+name|matrix
+expr_stmt|;
+if|if
+condition|(
+name|direction
+operator|==
+name|GIMP_TRANSFORM_BACKWARD
+condition|)
+name|gimp_matrix3_invert
+argument_list|(
+operator|&
+name|local_matrix
 argument_list|)
 expr_stmt|;
 for|for
@@ -2145,7 +2165,8 @@ name|data
 decl_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
-name|matrix
+operator|&
+name|local_matrix
 argument_list|,
 name|anchor
 operator|->
