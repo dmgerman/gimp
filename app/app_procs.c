@@ -3242,7 +3242,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Yes"
+literal|"Quit"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3307,7 +3307,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"No"
+literal|"Cancel"
 argument_list|)
 argument_list|)
 expr_stmt|;
