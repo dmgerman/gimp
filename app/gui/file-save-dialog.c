@@ -193,7 +193,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|file_save_dialog_save_image
 parameter_list|(
 name|GtkWidget
@@ -794,6 +794,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|file_save_dialog_save_image
 argument_list|(
 name|save_dialog
@@ -818,7 +820,14 @@ name|dialog
 operator|->
 name|set_image_clean
 argument_list|)
+condition|)
+block|{
+name|file_dialog_hide
+argument_list|(
+name|save_dialog
+argument_list|)
 expr_stmt|;
+block|}
 name|gtk_widget_set_sensitive
 argument_list|(
 name|save_dialog
@@ -1067,6 +1076,8 @@ operator|->
 name|save_dialog
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
 name|file_save_dialog_save_image
 argument_list|(
 name|overwrite_data
@@ -1097,7 +1108,16 @@ name|dialog
 operator|->
 name|set_image_clean
 argument_list|)
+condition|)
+block|{
+name|file_dialog_hide
+argument_list|(
+name|overwrite_data
+operator|->
+name|save_dialog
+argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gtk_widget_set_sensitive
 argument_list|(
@@ -1132,7 +1152,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_uri_and_proc,gboolean set_image_clean)
 name|file_save_dialog_save_image
 parameter_list|(
@@ -1241,15 +1261,13 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
-else|else
-block|{
-name|file_dialog_hide
-argument_list|(
-name|save_dialog
-argument_list|)
-expr_stmt|;
-block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
