@@ -420,8 +420,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|plug_in_menus_create2 (GimpUIManager * manager,const gchar * ui_path)
-name|plug_in_menus_create2
+DECL|function|plug_in_menus_setup (GimpUIManager * manager,const gchar * ui_path)
+name|plug_in_menus_setup
 parameter_list|(
 name|GimpUIManager
 modifier|*

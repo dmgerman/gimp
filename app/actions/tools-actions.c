@@ -193,15 +193,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|tools_actions_setup (GimpActionGroup * group,gpointer data)
+DECL|function|tools_actions_setup (GimpActionGroup * group)
 name|tools_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|GList
@@ -218,8 +215,6 @@ name|G_N_ELEMENTS
 argument_list|(
 name|tools_actions
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 for|for
@@ -394,8 +389,6 @@ name|G_CALLBACK
 argument_list|(
 name|tools_select_cmd_callback
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 name|g_free

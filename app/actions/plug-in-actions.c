@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimppluginaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -456,15 +462,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|plug_in_actions_setup (GimpActionGroup * group,gpointer data)
+DECL|function|plug_in_actions_setup (GimpActionGroup * group)
 name|plug_in_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|GSList
@@ -481,8 +484,6 @@ name|G_N_ELEMENTS
 argument_list|(
 name|plug_in_actions
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -500,8 +501,6 @@ name|G_CALLBACK
 argument_list|(
 name|plug_in_repeat_cmd_callback
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 for|for
@@ -1243,7 +1242,7 @@ name|gchar
 modifier|*
 name|label
 decl_stmt|;
-name|GtkAction
+name|GimpPlugInAction
 modifier|*
 name|action
 decl_stmt|;
@@ -1268,7 +1267,7 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_action_new
+name|gimp_plug_in_action_new
 argument_list|(
 name|proc_def
 operator|->
@@ -1281,23 +1280,24 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|proc_def
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|action
 argument_list|,
-literal|"activate"
+literal|"selected"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|plug_in_run_cmd_callback
 argument_list|)
 argument_list|,
-operator|&
-name|proc_def
+name|group
 operator|->
-name|db_info
+name|user_data
 argument_list|)
 expr_stmt|;
 name|gtk_action_group_add_action_with_accel
@@ -1307,7 +1307,10 @@ argument_list|(
 name|group
 argument_list|)
 argument_list|,
+name|GTK_ACTION
+argument_list|(
 name|action
+argument_list|)
 argument_list|,
 name|proc_def
 operator|->

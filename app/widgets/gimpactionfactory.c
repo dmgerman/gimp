@@ -481,7 +481,7 @@ end_function
 begin_function
 name|GimpActionGroup
 modifier|*
-DECL|function|gimp_action_factory_group_new (GimpActionFactory * factory,const gchar * identifier,gpointer setup_data)
+DECL|function|gimp_action_factory_group_new (GimpActionFactory * factory,const gchar * identifier,gpointer user_data)
 name|gimp_action_factory_group_new
 parameter_list|(
 name|GimpActionFactory
@@ -494,7 +494,7 @@ modifier|*
 name|identifier
 parameter_list|,
 name|gpointer
-name|setup_data
+name|user_data
 parameter_list|)
 block|{
 name|GList
@@ -575,6 +575,8 @@ name|entry
 operator|->
 name|identifier
 argument_list|,
+name|user_data
+argument_list|,
 name|entry
 operator|->
 name|update_func
@@ -591,8 +593,6 @@ operator|->
 name|setup_func
 argument_list|(
 name|group
-argument_list|,
-name|setup_data
 argument_list|)
 expr_stmt|;
 return|return

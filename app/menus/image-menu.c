@@ -5085,7 +5085,7 @@ argument_list|,
 name|ui_path
 argument_list|)
 expr_stmt|;
-name|plug_in_menus_create2
+name|plug_in_menus_setup
 argument_list|(
 name|manager
 argument_list|,

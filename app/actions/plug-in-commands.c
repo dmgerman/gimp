@@ -115,7 +115,7 @@ end_define
 
 begin_function
 name|void
-DECL|function|plug_in_run_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|plug_in_run_cmd_callback (GtkWidget * widget,gpointer data)
 name|plug_in_run_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -124,9 +124,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GtkItemFactory

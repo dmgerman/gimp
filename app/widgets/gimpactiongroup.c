@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b87f350103
+DECL|enum|__anon2b9b17db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -753,7 +753,7 @@ end_comment
 begin_function
 name|GimpActionGroup
 modifier|*
-DECL|function|gimp_action_group_new (Gimp * gimp,const gchar * name,GimpActionGroupUpdateFunc update_func)
+DECL|function|gimp_action_group_new (Gimp * gimp,const gchar * name,gpointer user_data,GimpActionGroupUpdateFunc update_func)
 name|gimp_action_group_new
 parameter_list|(
 name|Gimp
@@ -764,6 +764,9 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|,
 name|GimpActionGroupUpdateFunc
 name|update_func
@@ -808,6 +811,12 @@ name|name
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+name|group
+operator|->
+name|user_data
+operator|=
+name|user_data
 expr_stmt|;
 name|group
 operator|->
@@ -920,7 +929,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_actions (GimpActionGroup * group,GimpActionEntry * entries,guint n_entries,gpointer user_data)
+DECL|function|gimp_action_group_add_actions (GimpActionGroup * group,GimpActionEntry * entries,guint n_entries)
 name|gimp_action_group_add_actions
 parameter_list|(
 name|GimpActionGroup
@@ -933,9 +942,6 @@ name|entries
 parameter_list|,
 name|guint
 name|n_entries
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|gint
@@ -1046,6 +1052,8 @@ index|]
 operator|.
 name|callback
 argument_list|,
+name|group
+operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
@@ -1077,7 +1085,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_toggle_actions (GimpActionGroup * group,GimpToggleActionEntry * entries,guint n_entries,gpointer user_data)
+DECL|function|gimp_action_group_add_toggle_actions (GimpActionGroup * group,GimpToggleActionEntry * entries,guint n_entries)
 name|gimp_action_group_add_toggle_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1090,9 +1098,6 @@ name|entries
 parameter_list|,
 name|guint
 name|n_entries
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|gint
@@ -1215,6 +1220,8 @@ index|]
 operator|.
 name|callback
 argument_list|,
+name|group
+operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
@@ -1249,7 +1256,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,GimpRadioActionEntry * entries,guint n_entries,gint value,GCallback callback,gpointer user_data)
+DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,GimpRadioActionEntry * entries,guint n_entries,gint value,GCallback callback)
 name|gimp_action_group_add_radio_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1268,9 +1275,6 @@ name|value
 parameter_list|,
 name|GCallback
 name|callback
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|GtkRadioAction
@@ -1463,6 +1467,8 @@ literal|"changed"
 argument_list|,
 name|callback
 argument_list|,
+name|group
+operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
@@ -1471,7 +1477,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_enum_actions (GimpActionGroup * group,GimpEnumActionEntry * entries,guint n_entries,GCallback callback,gpointer user_data)
+DECL|function|gimp_action_group_add_enum_actions (GimpActionGroup * group,GimpEnumActionEntry * entries,guint n_entries,GCallback callback)
 name|gimp_action_group_add_enum_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1487,9 +1493,6 @@ name|n_entries
 parameter_list|,
 name|GCallback
 name|callback
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|gint
@@ -1597,6 +1600,8 @@ literal|"selected"
 argument_list|,
 name|callback
 argument_list|,
+name|group
+operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
@@ -1631,7 +1636,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_string_actions (GimpActionGroup * group,GimpStringActionEntry * entries,guint n_entries,GCallback callback,gpointer user_data)
+DECL|function|gimp_action_group_add_string_actions (GimpActionGroup * group,GimpStringActionEntry * entries,guint n_entries,GCallback callback)
 name|gimp_action_group_add_string_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1647,9 +1652,6 @@ name|n_entries
 parameter_list|,
 name|GCallback
 name|callback
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|gint
@@ -1757,6 +1759,8 @@ literal|"selected"
 argument_list|,
 name|callback
 argument_list|,
+name|group
+operator|->
 name|user_data
 argument_list|)
 expr_stmt|;

@@ -861,15 +861,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|view_actions_setup (GimpActionGroup * group,gpointer data)
+DECL|function|view_actions_setup (GimpActionGroup * group)
 name|view_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gimp_action_group_add_actions
@@ -882,8 +879,6 @@ name|G_N_ELEMENTS
 argument_list|(
 name|view_actions
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_toggle_actions
@@ -896,8 +891,6 @@ name|G_N_ELEMENTS
 argument_list|(
 name|view_toggle_actions
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_radio_actions
@@ -917,8 +910,6 @@ name|G_CALLBACK
 argument_list|(
 name|view_zoom_cmd_callback
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 block|}

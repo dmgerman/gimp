@@ -104,7 +104,7 @@ block|{
 block|{
 literal|"gradients-popup"
 block|,
-name|NULL
+name|GIMP_STOCK_GRADIENT
 block|,
 name|N_
 argument_list|(
@@ -249,15 +249,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gradients_actions_setup (GimpActionGroup * group,gpointer data)
+DECL|function|gradients_actions_setup (GimpActionGroup * group)
 name|gradients_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gimp_action_group_add_actions
@@ -270,8 +267,6 @@ name|G_N_ELEMENTS
 argument_list|(
 name|gradients_actions
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 block|}

@@ -38,7 +38,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|plug_in_menus_create2
+name|plug_in_menus_setup
 parameter_list|(
 name|GimpUIManager
 modifier|*

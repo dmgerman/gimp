@@ -220,7 +220,7 @@ modifier|*
 name|identifier
 parameter_list|,
 name|gpointer
-name|setup_data
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl

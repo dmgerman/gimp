@@ -93,6 +93,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPlugInAction
+typedef|typedef
+name|struct
+name|_GimpPlugInAction
+name|GimpPlugInAction
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpStringAction
 typedef|typedef
 name|struct
@@ -858,10 +867,7 @@ function_decl|)
 parameter_list|(
 name|GimpActionGroup
 modifier|*
-name|factory
-parameter_list|,
-name|gpointer
-name|data
+name|group
 parameter_list|)
 function_decl|;
 end_typedef
@@ -877,7 +883,7 @@ function_decl|)
 parameter_list|(
 name|GimpActionGroup
 modifier|*
-name|factory
+name|group
 parameter_list|,
 name|gpointer
 name|data

@@ -946,15 +946,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|layers_actions_setup (GimpActionGroup * group,gpointer data)
+DECL|function|layers_actions_setup (GimpActionGroup * group)
 name|layers_actions_setup
 parameter_list|(
 name|GimpActionGroup
 modifier|*
 name|group
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|gimp_action_group_add_actions
@@ -967,8 +964,6 @@ name|G_N_ELEMENTS
 argument_list|(
 name|layers_actions
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -986,8 +981,6 @@ name|G_CALLBACK
 argument_list|(
 name|layers_mask_to_selection_cmd_callback
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 name|gimp_action_group_add_enum_actions
@@ -1005,8 +998,6 @@ name|G_CALLBACK
 argument_list|(
 name|layers_alpha_to_selection_cmd_callback
 argument_list|)
-argument_list|,
-name|data
 argument_list|)
 expr_stmt|;
 block|}

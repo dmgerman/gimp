@@ -108,6 +108,10 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+DECL|member|user_data
+name|gpointer
+name|user_data
+decl_stmt|;
 DECL|member|update_func
 name|GimpActionGroupUpdateFunc
 name|update_func
@@ -408,6 +412,9 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|,
 name|GimpActionGroupUpdateFunc
 name|update_func
 parameter_list|)
@@ -455,9 +462,6 @@ name|entries
 parameter_list|,
 name|guint
 name|n_entries
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -476,9 +480,6 @@ name|entries
 parameter_list|,
 name|guint
 name|n_entries
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -503,9 +504,6 @@ name|value
 parameter_list|,
 name|GCallback
 name|on_change
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -527,9 +525,6 @@ name|n_entries
 parameter_list|,
 name|GCallback
 name|callback
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -551,9 +546,6 @@ name|n_entries
 parameter_list|,
 name|GCallback
 name|callback
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
