@@ -570,6 +570,54 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__MINGW32__
+end_ifdef
+
+begin_define
+DECL|macro|RGBA8_ALPHA_MASK
+define|#
+directive|define
+name|RGBA8_ALPHA_MASK
+value|"_rgba8_alpha_mask"
+end_define
+
+begin_define
+DECL|macro|RGBA8_W256
+define|#
+directive|define
+name|RGBA8_W256
+value|"_rgba8_w256"
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|RGBA8_ALPHA_MASK
+define|#
+directive|define
+name|RGBA8_ALPHA_MASK
+value|"rgba8_alpha_mask"
+end_define
+
+begin_define
+DECL|macro|RGBA8_W256
+define|#
+directive|define
+name|RGBA8_W256
+value|"rgba8_w256"
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/*  *  */
 end_comment
@@ -951,7 +999,7 @@ control|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movq     (%0), %%mm0; addl $8, %0\n"                   "\tmovq     (%1), %%mm1; addl $8, %1\n"                   "\tmovq      %%mm1, %%mm3\n"                   "\tpxor      %%mm2, %%mm2\n"                   "\tpunpcklbw %%mm2, %%mm3\n"                   "\tpunpcklbw %%mm0, %%mm2\n"                    "\tmovq      rgba8_w256, %%mm4\n"                   "\tpsubw     %%mm3, %%mm4\n"                    "\t" pdivwuqX(mm2,mm4,mm5) "\n"                    "\tmovq      %%mm1, %%mm3\n"                   "\tpxor      %%mm2, %%mm2\n"                   "\tpunpckhbw %%mm2, %%mm3\n"                   "\tpunpckhbw %%mm0, %%mm2\n"                    "\tmovq      rgba8_w256, %%mm4\n"                   "\tpsubw     %%mm3, %%mm4\n"                    "\t" pdivwuqX(mm2,mm4,mm6) "\n"                    "\tpackuswb  %%mm6, %%mm5\n"                    "\tmovq      rgba8_alpha_mask, %%mm6\n"                   "\tmovq      %%mm1,%%mm7\n"                   "\t" pminub(mm0,mm7,mm2) "\n"                   "\tpand      %%mm6, %%mm7\n"                   "\tpandn     %%mm5, %%mm6\n"                    "\tpor       %%mm6, %%mm7\n"                    "\tmovq    %%mm7, (%2); addl $8, %2\n"                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)                   :
+asm|("  movq     (%0), %%mm0; addl $8, %0\n"                   "\tmovq     (%1), %%mm1; addl $8, %1\n"                   "\tmovq      %%mm1, %%mm3\n"                   "\tpxor      %%mm2, %%mm2\n"                   "\tpunpcklbw %%mm2, %%mm3\n"                   "\tpunpcklbw %%mm0, %%mm2\n"                    "\tmovq      "RGBA8_W256", %%mm4\n"                   "\tpsubw     %%mm3, %%mm4\n"                    "\t" pdivwuqX(mm2,mm4,mm5) "\n"                    "\tmovq      %%mm1, %%mm3\n"                   "\tpxor      %%mm2, %%mm2\n"                   "\tpunpckhbw %%mm2, %%mm3\n"                   "\tpunpckhbw %%mm0, %%mm2\n"                    "\tmovq      "RGBA8_W256", %%mm4\n"                   "\tpsubw     %%mm3, %%mm4\n"                    "\t" pdivwuqX(mm2,mm4,mm6) "\n"                    "\tpackuswb  %%mm6, %%mm5\n"                    "\tmovq      "RGBA8_ALPHA_MASK", %%mm6\n"                   "\tmovq      %%mm1,%%mm7\n"                   "\t" pminub(mm0,mm7,mm2) "\n"                   "\tpand      %%mm6, %%mm7\n"                   "\tpandn     %%mm5, %%mm6\n"                    "\tpor       %%mm6, %%mm7\n"                    "\tmovq    %%mm7, (%2); addl $8, %2\n"                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)                   :
 comment|/* empty */
 asm|: "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 block|}
@@ -964,7 +1012,7 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd     (%0), %%mm0;\n"                   "\tmovq     (%1), %%mm1;\n"                   "\tmovq      %%mm1, %%mm3\n"                   "\tpxor      %%mm2, %%mm2\n"                   "\tpunpcklbw %%mm2, %%mm3\n"                   "\tpunpcklbw %%mm0, %%mm2\n"                    "\tmovq      rgba8_w256, %%mm4\n"                   "\tpsubw     %%mm3, %%mm4\n"                    "\t" pdivwuqX(mm2,mm4,mm5) "\n"                    "\tmovq      %%mm1, %%mm3\n"                   "\tpxor      %%mm2, %%mm2\n"                   "\tpunpckhbw %%mm2, %%mm3\n"                   "\tpunpckhbw %%mm0, %%mm2\n"                    "\tmovq      rgba8_w256, %%mm4\n"                   "\tpsubw     %%mm3, %%mm4\n"                    "\t" pdivwuqX(mm2,mm4,mm6) "\n"                    "\tpackuswb  %%mm6, %%mm5\n"                    "\tmovq      rgba8_alpha_mask, %%mm6\n"                   "\tmovq      %%mm1,%%mm7\n"                   "\t" pminub(mm0,mm7,mm2) "\n"                   "\tpand      %%mm6, %%mm7\n"                   "\tpandn     %%mm5, %%mm6\n"                    "\tpor       %%mm6, %%mm7\n"                    "\tmovd    %%mm7, (%2);\n"                   :
+asm|("  movd     (%0), %%mm0;\n"                   "\tmovq     (%1), %%mm1;\n"                   "\tmovq      %%mm1, %%mm3\n"                   "\tpxor      %%mm2, %%mm2\n"                   "\tpunpcklbw %%mm2, %%mm3\n"                   "\tpunpcklbw %%mm0, %%mm2\n"                    "\tmovq      "RGBA8_W256", %%mm4\n"                   "\tpsubw     %%mm3, %%mm4\n"                    "\t" pdivwuqX(mm2,mm4,mm5) "\n"                    "\tmovq      %%mm1, %%mm3\n"                   "\tpxor      %%mm2, %%mm2\n"                   "\tpunpckhbw %%mm2, %%mm3\n"                   "\tpunpckhbw %%mm0, %%mm2\n"                    "\tmovq      "RGBA8_W256", %%mm4\n"                   "\tpsubw     %%mm3, %%mm4\n"                    "\t" pdivwuqX(mm2,mm4,mm6) "\n"                    "\tpackuswb  %%mm6, %%mm5\n"                    "\tmovq      "RGBA8_ALPHA_MASK", %%mm6\n"                   "\tmovq      %%mm1,%%mm7\n"                   "\t" pminub(mm0,mm7,mm2) "\n"                   "\tpand      %%mm6, %%mm7\n"                   "\tpandn     %%mm5, %%mm6\n"                    "\tpor       %%mm6, %%mm7\n"                    "\tmovd    %%mm7, (%2);\n"                   :
 comment|/* empty */
 asm|: "r" (op.A), "r" (op.B), "r" (op.D)                   : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 block|}

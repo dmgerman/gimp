@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62e4a0108
+DECL|struct|__anon2b7fbf0b0108
 block|{
 DECL|member|resolution
 name|guint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62e4a0208
+DECL|struct|__anon2b7fbf0b0208
 block|{
 DECL|member|run
 name|gboolean
@@ -287,7 +287,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62e4a0308
+DECL|struct|__anon2b7fbf0b0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -349,7 +349,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62e4a0408
+DECL|struct|__anon2b7fbf0b0408
 block|{
 DECL|member|run
 name|gboolean
@@ -850,6 +850,31 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_function_decl
+specifier|static
+name|gchar
+modifier|*
+name|my_shell_quote
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|unquoted_string
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/* Dialog-handling */
 end_comment
@@ -897,7 +922,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62e4a0508
+DECL|struct|__anon2b7fbf0b0508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1768,7 +1793,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62e4a0608
+DECL|struct|__anon2b7fbf0b0608
 block|{
 DECL|member|eol
 name|long
@@ -6263,6 +6288,10 @@ name|gs
 operator|=
 name|DEFAULT_GS_PROG
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+comment|/* g_shell_quote is specified to use single quotes, which don't mean    * anything on Windows    */
 name|quoted_fn
 operator|=
 name|g_shell_quote
@@ -6270,6 +6299,17 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+name|quoted_fn
+operator|=
+name|my_shell_quote
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|gs_opts
 operator|=
 name|getenv
@@ -6553,10 +6593,8 @@ name|fprintf
 argument_list|(
 name|indf
 argument_list|,
-literal|"%s -sDEVICE=%s -r%d %s%s%s-q -dNOPAUSE %s "
+literal|"-sDEVICE=%s -r%d %s%s%s-q -dNOPAUSE %s "
 literal|"-sOutputFile=%s %s-f %s %s-c quit\n"
-argument_list|,
-name|gs
 argument_list|,
 name|driver
 argument_list|,
@@ -6574,7 +6612,7 @@ name|pnmfile
 argument_list|,
 name|offset
 argument_list|,
-name|filename
+name|quoted_fn
 argument_list|,
 operator|*
 name|is_epsf
@@ -15952,6 +15990,83 @@ block|}
 block|}
 block|}
 end_function
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_function
+specifier|static
+name|gchar
+modifier|*
+DECL|function|my_shell_quote (const gchar * unquoted_string)
+name|my_shell_quote
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|unquoted_string
+parameter_list|)
+block|{
+comment|/* On Windows, we always enclose the file name with double    * quotes. No more is needed, as file names can't contain double    * quotes.    */
+name|GString
+modifier|*
+name|dest
+decl_stmt|;
+name|gchar
+modifier|*
+name|ret
+decl_stmt|;
+name|dest
+operator|=
+name|g_string_new
+argument_list|(
+literal|"\""
+argument_list|)
+expr_stmt|;
+name|g_string_append
+argument_list|(
+name|dest
+argument_list|,
+name|unquoted_string
+argument_list|)
+expr_stmt|;
+name|g_string_append_c
+argument_list|(
+name|dest
+argument_list|,
+literal|'"'
+argument_list|)
+expr_stmt|;
+name|ret
+operator|=
+name|dest
+operator|->
+name|str
+expr_stmt|;
+name|g_string_free
+argument_list|(
+name|dest
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|ret
+return|;
+block|}
+end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* G_OS_WIN32 */
+end_comment
 
 end_unit
 
