@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3048f60108
+DECL|struct|__anon29aaeb300108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3048f60208
+DECL|struct|__anon29aaeb300208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3048f60308
+DECL|struct|__anon29aaeb300308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3048f60408
+DECL|struct|__anon29aaeb300408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3048f60508
+DECL|struct|__anon29aaeb300508
 block|{
 DECL|member|name
 name|gchar
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a3048f6060a
+DECL|union|__anon29aaeb30060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -388,7 +388,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3048f60708
+DECL|struct|__anon29aaeb300708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -469,7 +469,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3048f60808
+DECL|struct|__anon29aaeb300808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -7637,6 +7637,16 @@ operator|=
 name|gtk_hbutton_box_new
 argument_list|()
 expr_stmt|;
+name|gtk_button_box_set_layout
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|bbox
+argument_list|)
+argument_list|,
+name|GTK_BUTTONBOX_END
+argument_list|)
+expr_stmt|;
 name|gtk_button_box_set_spacing
 argument_list|(
 name|GTK_BUTTON_BOX
@@ -7644,7 +7654,7 @@ argument_list|(
 name|bbox
 argument_list|)
 argument_list|,
-name|GTK_BUTTONBOX_EDGE
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
