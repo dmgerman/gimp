@@ -47,7 +47,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpdisplayconfig.h"
+file|"config/gimpguiconfig.h"
 end_include
 
 begin_include
@@ -238,6 +238,21 @@ argument_list|(
 name|shell
 operator|->
 name|canvas
+argument_list|,
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|cursor_format
 argument_list|,
 name|cursor_type
 argument_list|,
@@ -744,6 +759,13 @@ argument_list|(
 name|shell
 operator|->
 name|canvas
+argument_list|,
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|config
+argument_list|)
+operator|->
+name|cursor_format
 argument_list|,
 name|cursor_type
 argument_list|,

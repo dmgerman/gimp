@@ -25,6 +25,9 @@ name|GdkDisplay
 modifier|*
 name|display
 parameter_list|,
+name|GimpCursorFormat
+name|cursor_format
+parameter_list|,
 name|GimpCursorType
 name|cursor_type
 parameter_list|,
@@ -44,6 +47,9 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|GimpCursorFormat
+name|cursor_format
 parameter_list|,
 name|GimpCursorType
 name|cursor_type

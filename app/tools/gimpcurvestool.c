@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/curves.h"
 end_include
 
@@ -5373,6 +5379,22 @@ argument_list|(
 name|tool
 operator|->
 name|graph
+argument_list|,
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|GIMP_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|cursor_format
 argument_list|,
 name|cursor_type
 argument_list|,

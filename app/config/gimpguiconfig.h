@@ -214,6 +214,10 @@ DECL|member|dock_window_hint
 name|GimpWindowHint
 name|dock_window_hint
 decl_stmt|;
+DECL|member|cursor_format
+name|GimpCursorFormat
+name|cursor_format
+decl_stmt|;
 DECL|member|last_tip
 name|gint
 name|last_tip

@@ -74,6 +74,15 @@ value|N_("Ask for confirmation before closing an image without saving.")
 end_define
 
 begin_define
+DECL|macro|CURSOR_FORMAT_BLURB
+define|#
+directive|define
+name|CURSOR_FORMAT_BLURB
+define|\
+value|N_("Sets the pixel format of cursors the GIMP will use.")
+end_define
+
+begin_define
 DECL|macro|CURSOR_MODE_BLURB
 define|#
 directive|define

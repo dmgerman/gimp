@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf5db510103
+DECL|enum|__anon2b54f66e0103
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -4732,6 +4732,8 @@ operator|=
 name|gimp_cursor_new
 argument_list|(
 name|display
+argument_list|,
+name|GIMP_CURSOR_FORMAT_BITMAP
 argument_list|,
 name|GDK_WATCH
 argument_list|,
