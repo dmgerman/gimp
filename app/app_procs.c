@@ -1033,7 +1033,7 @@ argument_list|,
 name|logo_height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_destroy
+name|gtk_widget_unref
 argument_list|(
 name|preview
 argument_list|)
@@ -1199,7 +1199,6 @@ argument_list|,
 name|AUTHORS
 argument_list|)
 expr_stmt|;
-comment|/*  gdk_draw_rectangle (widget->window, 		      widget->style->black_gc, 		      FALSE,  		      1, 1, (logo_area_width - 2), (logo_area_height - 2));   */
 block|}
 end_function
 
@@ -1479,7 +1478,7 @@ condition|)
 block|{
 name|show_logo
 operator|=
-name|TRUE
+name|SHOW_LATER
 expr_stmt|;
 block|}
 name|vbox
