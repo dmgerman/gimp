@@ -5594,7 +5594,8 @@ name|coords
 operator|->
 name|xtilt
 argument_list|,
-literal|0.0
+operator|-
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -5604,7 +5605,7 @@ name|coords
 operator|->
 name|xtilt
 operator|=
-literal|0.5
+literal|0.0
 expr_stmt|;
 if|if
 condition|(
@@ -5630,7 +5631,8 @@ name|coords
 operator|->
 name|ytilt
 argument_list|,
-literal|0.0
+operator|-
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -5640,7 +5642,7 @@ name|coords
 operator|->
 name|ytilt
 operator|=
-literal|0.5
+literal|0.0
 expr_stmt|;
 if|if
 condition|(
@@ -5830,7 +5832,8 @@ name|coords
 operator|->
 name|xtilt
 argument_list|,
-literal|0.0
+operator|-
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -5840,7 +5843,7 @@ name|coords
 operator|->
 name|xtilt
 operator|=
-literal|0.5
+literal|0.0
 expr_stmt|;
 if|if
 condition|(
@@ -5868,7 +5871,8 @@ name|coords
 operator|->
 name|ytilt
 argument_list|,
-literal|0.0
+operator|-
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -5878,7 +5882,7 @@ name|coords
 operator|->
 name|ytilt
 operator|=
-literal|0.5
+literal|0.0
 expr_stmt|;
 if|if
 condition|(
