@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* handy.c  * These routines are useful for working with the GIMP and need not be  * specific to plug-in-maze.  *  * Kevin Turner<kevint@poboxes.com>  * http://www.poboxes.com/kevint/gimp/maze.html  */
+comment|/* $Id$  * These routines are useful for working with the GIMP and need not be  * specific to plug-in-maze.  *  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  */
 end_comment
 
 begin_comment
@@ -353,64 +353,28 @@ literal|4
 index|]
 parameter_list|)
 block|{
+specifier|const
 name|guint
-name|xx
-decl_stmt|,
-name|yy
-decl_stmt|,
-name|y_max
-decl_stmt|,
-name|x_min
-comment|/*, x_max */
-decl_stmt|;
-specifier|static
-name|guint8
-modifier|*
-name|rowbuf
-decl_stmt|;
-name|guint
-name|rowsize
-decl_stmt|;
-specifier|static
-name|guint
-name|high_size
+name|bpp
 init|=
-literal|0
-decl_stmt|;
-comment|/* The maximum [xy] value is that of the far end of the box, or       * the edge of the region, whichever comes first. */
-name|y_max
-operator|=
-name|dest_rgn
-operator|->
-name|rowstride
-operator|*
-name|MIN
-argument_list|(
-name|dest_rgn
-operator|->
-name|h
-argument_list|,
-operator|(
-name|y
-operator|+
-name|h
-operator|)
-argument_list|)
-expr_stmt|;
-comment|/*   x_max = dest_rgn->bpp * MIN(dest_rgn->w, (x + w)); */
-name|x_min
-operator|=
-name|x
-operator|*
 name|dest_rgn
 operator|->
 name|bpp
-expr_stmt|;
+decl_stmt|;
+specifier|const
+name|guint
+name|x_min
+init|=
+name|x
+operator|*
+name|bpp
+decl_stmt|;
+comment|/* x_max = dest_rgn->bpp * MIN(dest_rgn->w, (x + w)); */
 comment|/* rowsize = x_max - x_min */
+specifier|const
+name|guint
 name|rowsize
-operator|=
-name|dest_rgn
-operator|->
+init|=
 name|bpp
 operator|*
 name|MIN
@@ -427,7 +391,45 @@ operator|)
 argument_list|)
 operator|-
 name|x_min
-expr_stmt|;
+decl_stmt|;
+comment|/* The maximum [xy] value is that of the far end of the box, or       * the edge of the region, whichever comes first. */
+specifier|const
+name|guint
+name|y_max
+init|=
+name|dest_rgn
+operator|->
+name|rowstride
+operator|*
+name|MIN
+argument_list|(
+name|dest_rgn
+operator|->
+name|h
+argument_list|,
+operator|(
+name|y
+operator|+
+name|h
+operator|)
+argument_list|)
+decl_stmt|;
+specifier|static
+name|guint8
+modifier|*
+name|rowbuf
+decl_stmt|;
+specifier|static
+name|guint
+name|high_size
+init|=
+literal|0
+decl_stmt|;
+name|guint
+name|xx
+decl_stmt|,
+name|yy
+decl_stmt|;
 comment|/* Does the row buffer need to be (re)allocated? */
 if|if
 condition|(
@@ -489,8 +491,6 @@ name|rowsize
 condition|;
 name|xx
 operator|+=
-name|dest_rgn
-operator|->
 name|bpp
 control|)
 block|{
@@ -504,8 +504,6 @@ index|]
 argument_list|,
 name|clr
 argument_list|,
-name|dest_rgn
-operator|->
 name|bpp
 argument_list|)
 expr_stmt|;

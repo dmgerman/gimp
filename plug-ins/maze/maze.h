@@ -1,10 +1,14 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* $Id$ */
+end_comment
+
 begin_define
 DECL|macro|MAZE_TITLE
 define|#
 directive|define
 name|MAZE_TITLE
-value|"Maze 1.2.1"
+value|"Maze 1.2.2"
 end_define
 
 begin_define
@@ -12,7 +16,7 @@ DECL|macro|MAZE_URL
 define|#
 directive|define
 name|MAZE_URL
-value|"http://www.poboxes.com/kevint/gimp/maze-help.html"
+value|"http://gimp-plug-ins.sourceforge.net/maze/help.html"
 end_define
 
 begin_define
@@ -66,7 +70,7 @@ file|"glib.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29f8c2170103
+DECL|enum|__anon2a0d68640103
 typedef|typedef
 enum|enum
 block|{
@@ -82,7 +86,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29f8c2170208
+DECL|struct|__anon2a0d68640208
 typedef|typedef
 struct|struct
 block|{

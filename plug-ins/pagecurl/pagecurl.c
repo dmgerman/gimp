@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298c33f80108
+DECL|struct|__anon27c6bc450108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -790,7 +790,7 @@ block|{
 block|{
 name|PARAM_LAYER
 block|,
-literal|"Curl layer"
+literal|"Curl Layer"
 block|,
 literal|"The new layer with the curl."
 block|}
@@ -3994,7 +3994,7 @@ name|image_id
 argument_list|,
 name|_
 argument_list|(
-literal|"Curl layer"
+literal|"Curl Layer"
 argument_list|)
 argument_list|,
 name|true_sel_width

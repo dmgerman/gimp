@@ -1169,7 +1169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650103
+DECL|enum|__anon275cd1080103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1221,7 +1221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650203
+DECL|enum|__anon275cd1080203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1242,7 +1242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650303
+DECL|enum|__anon275cd1080303
 block|{
 DECL|enumerator|SINGLE_LAYER
 name|SINGLE_LAYER
@@ -1263,7 +1263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650403
+DECL|enum|__anon275cd1080403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1287,7 +1287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650503
+DECL|enum|__anon275cd1080503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1308,7 +1308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650603
+DECL|enum|__anon275cd1080603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1476,7 +1476,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27552b650708
+DECL|struct|__anon275cd1080708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1515,7 +1515,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27552b650808
+DECL|struct|__anon275cd1080808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1564,7 +1564,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27552b650908
+DECL|struct|__anon275cd1080908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1735,7 +1735,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650a03
+DECL|enum|__anon275cd1080a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1765,7 +1765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650b03
+DECL|enum|__anon275cd1080b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1781,7 +1781,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650c03
+DECL|enum|__anon275cd1080c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1806,7 +1806,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27552b650d03
+DECL|enum|__anon275cd1080d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -5188,7 +5188,7 @@ name|dir
 condition|)
 name|g_warning
 argument_list|(
-literal|"error reading GFig directory \"%s\""
+literal|"Error reading GFig directory \"%s\""
 argument_list|,
 name|path
 argument_list|)
@@ -7170,6 +7170,10 @@ modifier|*
 name|savename
 decl_stmt|;
 name|gchar
+modifier|*
+name|message
+decl_stmt|;
+name|gchar
 name|conv_buf
 index|[
 name|MAX_LOAD_LINE
@@ -7200,11 +7204,33 @@ operator|!
 name|fp
 condition|)
 block|{
-name|g_message
+name|message
+operator|=
+name|g_strconcat
 argument_list|(
-literal|"Error opening '%.100s' could not save"
+name|_
+argument_list|(
+literal|"Error opening: %s"
+argument_list|)
+argument_list|,
+literal|"\n"
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not save."
+argument_list|)
 argument_list|,
 name|savename
+argument_list|)
+expr_stmt|;
+name|g_message
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|message
 argument_list|)
 expr_stmt|;
 return|return;
@@ -12166,7 +12192,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Error in creating layer for brush preview\n"
+literal|"Error in creating layer for brush preview"
 argument_list|)
 expr_stmt|;
 return|return
@@ -22637,7 +22663,7 @@ name|g_warning
 argument_list|(
 name|_
 argument_list|(
-literal|"Error in copy layer for onlayers\n"
+literal|"Error in copy layer for onlayers"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -22746,7 +22772,7 @@ name|g_warning
 argument_list|(
 name|_
 argument_list|(
-literal|"Error in creating layer.\n"
+literal|"Error in creating layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -23117,7 +23143,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Error in onlayers val %d\n"
+literal|"Error in onlayers val %d"
 argument_list|,
 name|selvals
 operator|.
