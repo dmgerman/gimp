@@ -270,7 +270,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  callback functions for the info dialog entries  */
+comment|/*  callback functions for the info dialog fields  */
 end_comment
 
 begin_function_decl
@@ -330,7 +330,7 @@ name|transform_core
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|spinbutton2
+name|spinbutton
 decl_stmt|;
 name|gdisp
 operator|=
@@ -398,7 +398,7 @@ argument_list|,
 name|orig_height_buf
 argument_list|)
 expr_stmt|;
-name|spinbutton2
+name|spinbutton
 operator|=
 name|info_dialog_add_spinbutton
 argument_list|(
@@ -462,7 +462,7 @@ literal|"%a"
 argument_list|,
 name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -482,7 +482,7 @@ argument_list|)
 argument_list|,
 name|GTK_SPIN_BUTTON
 argument_list|(
-name|spinbutton2
+name|spinbutton
 argument_list|)
 argument_list|,
 name|NULL
@@ -659,6 +659,46 @@ name|shell
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_size_entry_set_size
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|transform_core
+operator|->
+name|x2
+operator|-
+name|transform_core
+operator|->
+name|x1
+argument_list|)
+expr_stmt|;
+name|gimp_size_entry_set_size
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|1
+argument_list|,
+literal|0
+argument_list|,
+name|transform_core
+operator|->
+name|y2
+operator|-
+name|transform_core
+operator|->
+name|y1
 argument_list|)
 expr_stmt|;
 name|transform_core
@@ -969,6 +1009,12 @@ index|[
 literal|16
 index|]
 decl_stmt|;
+specifier|static
+name|GUnit
+name|label_unit
+init|=
+name|UNIT_PIXEL
+decl_stmt|;
 name|gdisp
 operator|=
 operator|(
@@ -1000,13 +1046,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 empty_stmt|;
-name|unit_factor
-operator|=
-name|gimp_unit_get_factor
-argument_list|(
-name|unit
-argument_list|)
-expr_stmt|;
 comment|/*  Find original sizes  */
 name|x1
 operator|=
@@ -1035,6 +1074,23 @@ expr_stmt|;
 if|if
 condition|(
 name|unit
+operator|!=
+name|UNIT_PERCENT
+condition|)
+name|label_unit
+operator|=
+name|unit
+expr_stmt|;
+name|unit_factor
+operator|=
+name|gimp_unit_get_factor
+argument_list|(
+name|label_unit
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|label_unit
 condition|)
 comment|/* unit != UNIT_PIXEL */
 block|{
@@ -1048,14 +1104,14 @@ literal|"%%.%df %s"
 argument_list|,
 name|gimp_unit_get_digits
 argument_list|(
-name|unit
+name|label_unit
 argument_list|)
 operator|+
 literal|1
 argument_list|,
 name|gimp_unit_get_symbol
 argument_list|(
-name|unit
+name|label_unit
 argument_list|)
 argument_list|)
 expr_stmt|;

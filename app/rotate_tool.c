@@ -203,6 +203,19 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
+comment|/*  needed for size update  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|sizeentry
+specifier|static
+name|GtkWidget
+modifier|*
+name|sizeentry
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  forward function declarations  */
 end_comment
 
@@ -516,7 +529,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|widget
+name|sizeentry
 operator|=
 name|info_dialog_add_sizeentry
 argument_list|(
@@ -547,7 +560,7 @@ literal|"%a"
 argument_list|,
 name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -562,7 +575,7 @@ name|gimp_size_entry_add_field
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|widget
+name|sizeentry
 argument_list|)
 argument_list|,
 name|GTK_SPIN_BUTTON
@@ -577,7 +590,7 @@ name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|widget
+name|sizeentry
 argument_list|)
 argument_list|,
 literal|0
@@ -598,7 +611,7 @@ name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|widget
+name|sizeentry
 argument_list|)
 argument_list|,
 literal|0
@@ -616,7 +629,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|widget
+name|sizeentry
 argument_list|)
 argument_list|,
 literal|0
@@ -631,7 +644,7 @@ name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|widget
+name|sizeentry
 argument_list|)
 argument_list|,
 literal|1
@@ -652,7 +665,7 @@ name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|widget
+name|sizeentry
 argument_list|)
 argument_list|,
 literal|1
@@ -670,7 +683,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|widget
+name|sizeentry
 argument_list|)
 argument_list|,
 literal|1
@@ -720,6 +733,42 @@ name|shell
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_size_entry_set_size
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|transform_core
+operator|->
+name|x1
+argument_list|,
+name|transform_core
+operator|->
+name|x2
+argument_list|)
+expr_stmt|;
+name|gimp_size_entry_set_size
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|sizeentry
+argument_list|)
+argument_list|,
+literal|1
+argument_list|,
+name|transform_core
+operator|->
+name|y1
+argument_list|,
+name|transform_core
+operator|->
+name|y2
 argument_list|)
 expr_stmt|;
 name|transform_core

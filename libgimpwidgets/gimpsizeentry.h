@@ -92,7 +92,7 @@ name|GimpSizeEntryClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcf1bee0103
+DECL|enum|__anon2b8955b80103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -238,7 +238,7 @@ modifier|*
 name|refval_spinbutton
 parameter_list|)
 function_decl|;
-comment|/* this one is just a convenience function if you want to add labels  * to the empty cells of the widget  * (take care not to specify cells which already have a widget ;-)  */
+comment|/* this one is just a convenience function if you want to add labels  * to the empty cells of the widget  */
 name|void
 name|gimp_size_entry_attach_label
 parameter_list|(
@@ -278,7 +278,25 @@ name|guint
 name|keep_size
 parameter_list|)
 function_decl|;
-comment|/* these functions set/return the value in the units the user selected  * note that in some cases where the caller chooses not to have the  * reference value row and the user selected the reference unit  * the both values 'value' and 'refvalue' will be the same  */
+comment|/* this one sets the values (in pixels) which will be treated as  * 0% and 100% when we want "percent" in the unit menu  *  * does nothing if update_policy != GIMP_SIZE_ENTRY_UPDATE_SIZE  */
+name|void
+name|gimp_size_entry_set_size
+parameter_list|(
+name|GimpSizeEntry
+modifier|*
+name|gse
+parameter_list|,
+name|gint
+name|field
+parameter_list|,
+name|gfloat
+name|lower
+parameter_list|,
+name|gfloat
+name|upper
+parameter_list|)
+function_decl|;
+comment|/* these functions set/return the value in the units the user selected  * note that in some cases where the caller chooses not to have the  * reference value row and the user selected the reference unit  * the both values 'value' and 'refval' will be the same  */
 name|void
 name|gimp_size_entry_set_value_boundaries
 parameter_list|(

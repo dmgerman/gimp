@@ -41,7 +41,7 @@ directive|endif
 comment|/* __cplusplus */
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0d0dce0103
+DECL|enum|__anon28a031710103
 block|{
 DECL|enumerator|UNIT_PIXEL
 name|UNIT_PIXEL
@@ -72,7 +72,13 @@ DECL|enumerator|UNIT_END
 name|UNIT_END
 init|=
 literal|5
-comment|/* never use UNIT_END but 			gimp_unit_get_number_of_units() instead */
+block|,
+comment|/*  never use UNIT_END but 			*  gimp_unit_get_number_of_units() instead 			*/
+DECL|enumerator|UNIT_PERCENT
+name|UNIT_PERCENT
+init|=
+literal|65536
+comment|/*  this one does not really belong here but it's 			*  convenient to use the unit system for the 			*  various strings (symbol, singular, ...) 			* 			*  you can only ask it for it's strings, asking for 			*  factor, digits or deletion_flag will produce 			*  an error. 			*/
 DECL|typedef|GUnit
 block|}
 name|GUnit
