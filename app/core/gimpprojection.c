@@ -5117,6 +5117,19 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gdisplay_update_cursor
+argument_list|(
+name|gdisp
+argument_list|,
+name|gdisp
+operator|->
+name|cursor_x
+argument_list|,
+name|gdisp
+operator|->
+name|cursor_y
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

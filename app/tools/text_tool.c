@@ -3928,7 +3928,7 @@ value|{						\   if (x>= 0)					\       g_snprintf (new_ ## x, 16, "%d", x);	\  
 end_define
 
 begin_comment
-comment|/* Multiply the point and pixel sizes in *fontname by "mul", which  * must be positive.  If either point or pixel sizes are "*" then they  * are left untouched.  The memory *fontname is g_free()d, and  * *fontname is replaced by a fresh allocation of the correct size. */
+comment|/* Multiply the point and pixel sizes in *fontname by "mul", which  * must be positive.  If either point or pixel sizes are "*" then they  * are left untouched.  The memory *fontname is g_free()d, and  * *fontname is replaced by a fresh allocation of the correct size.  */
 end_comment
 
 begin_function
@@ -4130,6 +4130,10 @@ parameter_list|)
 block|{
 name|char
 modifier|*
+name|point_str
+decl_stmt|;
+name|char
+modifier|*
 name|xres_str
 decl_stmt|;
 name|char
@@ -4156,6 +4160,30 @@ index|[
 literal|16
 index|]
 decl_stmt|;
+comment|/* get the point size string */
+name|text_field_edges
+argument_list|(
+operator|*
+name|fontname
+argument_list|,
+name|POINT_SIZE
+argument_list|,
+operator|&
+name|point_str
+argument_list|,
+operator|&
+name|end
+argument_list|)
+expr_stmt|;
+comment|/* don't set the resolution if the point size is unspecified */
+if|if
+condition|(
+operator|*
+name|point_str
+operator|==
+literal|'*'
+condition|)
+return|return;
 comment|/* slice the font spec around the resolution fields */
 name|text_field_edges
 argument_list|(

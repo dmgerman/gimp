@@ -27,7 +27,7 @@ DECL|macro|GDYNTEXT_VERSION
 define|#
 directive|define
 name|GDYNTEXT_VERSION
-value|"1.4.2"
+value|"1.4.3"
 end_define
 
 begin_define
@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a9cdf90103
+DECL|enum|__anon28faae460103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a9cdf90208
+DECL|struct|__anon28faae460208
 typedef|typedef
 struct|struct
 block|{
@@ -215,21 +215,21 @@ name|gint32
 name|drawable_id
 decl_stmt|;
 DECL|member|text
-name|char
+name|gchar
 name|text
 index|[
 name|MAX_TEXT_SIZE
 index|]
 decl_stmt|;
 DECL|member|font_family
-name|char
+name|gchar
 name|font_family
 index|[
 literal|1024
 index|]
 decl_stmt|;
 DECL|member|font_style
-name|char
+name|gchar
 name|font_style
 index|[
 literal|1024
@@ -332,23 +332,6 @@ name|data
 parameter_list|,
 name|gboolean
 name|show_progress
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GArray
-modifier|*
-name|strsplit
-parameter_list|(
-specifier|const
-name|char
-modifier|*
-name|text
-parameter_list|,
-specifier|const
-name|char
-name|sep
 parameter_list|)
 function_decl|;
 end_function_decl
