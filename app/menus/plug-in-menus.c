@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-proc.h"
+file|"plug-in/plug-in-proc-def.h"
 end_include
 
 begin_include

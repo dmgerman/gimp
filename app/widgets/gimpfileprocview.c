@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-proc.h"
+file|"plug-in/plug-in-proc-def.h"
 end_include
 
 begin_include
@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4366ec0103
+DECL|enum|__anon29dc4e290103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4366ec0203
+DECL|enum|__anon29dc4e290203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

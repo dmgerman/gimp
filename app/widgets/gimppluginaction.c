@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-proc.h"
+file|"plug-in/plug-in-proc-def.h"
 end_include
 
 begin_include
@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2b7e40103
+DECL|enum|__anon2a0a48dc0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,7 +54,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2b7e40203
+DECL|enum|__anon2a0a48dc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
