@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293481e60108
+DECL|struct|__anon2c2a3e6e0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293481e60208
+DECL|struct|__anon2c2a3e6e0208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293481e60308
+DECL|struct|__anon2c2a3e6e0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -6403,6 +6403,27 @@ goto|;
 block|}
 comment|/* Colour was not in the table of 		       * existing colours 		       */
 comment|/* Remember the new colour we just found. 		       */
+if|if
+condition|(
+name|num_found_cols
+operator|>
+name|col_limit
+condition|)
+block|{
+comment|/* There are more colours in the image 			   *  than were allowed.  We switch to plain 			   *  histogram calculation with a view to 			   *  quantizing at a later stage. 			   */
+name|needs_quantize
+operator|=
+name|TRUE
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"max colours exceeded - needs quantize.\n"
+argument_list|)
+expr_stmt|;
+goto|goto
+name|already_found
+goto|;
+block|}
 name|found_cols
 index|[
 name|num_found_cols
@@ -6442,27 +6463,6 @@ index|[
 name|BLUE_PIX
 index|]
 expr_stmt|;
-if|if
-condition|(
-name|num_found_cols
-operator|>
-name|col_limit
-condition|)
-block|{
-comment|/* There are more colours in the image 			   *  than were allowed.  We switch to plain 			   *  histogram calculation with a view to 			   *  quantizing at a later stage. 			   */
-name|needs_quantize
-operator|=
-name|TRUE
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"max colours exceeded - needs quantize.\n"
-argument_list|)
-expr_stmt|;
-goto|goto
-name|already_found
-goto|;
-block|}
 name|num_found_cols
 operator|++
 expr_stmt|;
