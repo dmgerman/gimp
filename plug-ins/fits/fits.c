@@ -21,6 +21,12 @@ end_decl_stmt
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -73,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a280b70108
+DECL|struct|__anon27685a0b0108
 block|{
 DECL|member|replace
 name|guint
@@ -99,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a280b70208
+DECL|struct|__anon27685a0b0208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a280b70308
+DECL|struct|__anon27685a0b0308
 block|{
 DECL|member|dialog
 name|GtkWidget

@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -27,6 +33,12 @@ begin_include
 include|#
 directive|include
 file|"dbbrowser.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -133,11 +145,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"extension_db_browser"
 argument_list|,
-literal|"list available procedures in the PDB"
+name|_
+argument_list|(
+literal|"List available procedures in the PDB"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -147,7 +165,10 @@ literal|"Thomas Noel"
 argument_list|,
 literal|"23th june 1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Toolbox>/Xtns/DB Browser..."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -260,6 +281,9 @@ decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|argc
 operator|=
 literal|1

@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -35,6 +41,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -97,7 +109,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba5ec0d0108
+DECL|struct|__anon2b1404420108
 typedef|typedef
 struct|struct
 block|{
@@ -584,6 +596,10 @@ index|[
 literal|32
 index|]
 decl_stmt|;
+name|gchar
+modifier|*
+name|message
+decl_stmt|;
 name|argc
 operator|=
 literal|1
@@ -747,7 +763,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -804,7 +823,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|"Cancel"
+name|_
+argument_list|(
+literal|"Help"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -814,7 +836,7 @@ argument_list|,
 name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -826,12 +848,9 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|gtk_widget_destroy
+name|maze_help
 argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dlg
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -859,7 +878,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|"Help"
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -869,7 +891,7 @@ argument_list|,
 name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -881,9 +903,12 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|maze_help
+name|gtk_widget_destroy
 argument_list|,
-name|NULL
+name|GTK_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -997,11 +1022,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|message
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|buffer
-argument_list|,
+name|_
+argument_list|(
 literal|"Selection is %dx%d"
+argument_list|)
 argument_list|,
 name|sel_w
 argument_list|,
@@ -1012,7 +1040,12 @@ name|msg_label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|buffer
+name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|message
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1046,7 +1079,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Maze Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1109,7 +1145,10 @@ name|tilecheck
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Tileable?"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -1223,7 +1262,10 @@ name|div_x_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pieces:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1343,7 +1385,10 @@ literal|0
 argument_list|,
 name|trow
 argument_list|,
+name|_
+argument_list|(
 literal|"Height (pixels):"
+argument_list|)
 argument_list|,
 operator|&
 name|mvals
@@ -1374,7 +1419,10 @@ name|div_y_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Pieces:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1503,7 +1551,10 @@ name|frame
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Options"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1512,7 +1563,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"At Your Own Risk"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1571,7 +1625,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Multiple (57)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1708,7 +1765,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Offset (1)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1845,7 +1905,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Seed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2008,7 +2071,10 @@ name|time_button
 operator|=
 name|gtk_toggle_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Time"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -2073,7 +2139,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Algorithm"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2165,7 +2234,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"Depth First"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2233,7 +2305,10 @@ name|alg_button
 argument_list|)
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Prim's Algorithm"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2311,7 +2386,10 @@ name|frame
 argument_list|,
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Advanced"
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2873,7 +2951,10 @@ condition|)
 block|{
 name|maze_msg
 argument_list|(
+name|_
+argument_list|(
 literal|"Selection size is not even.  \nTileable maze won't work perfectly."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3500,6 +3581,10 @@ decl_stmt|;
 name|gint
 name|baz
 decl_stmt|;
+name|gchar
+modifier|*
+name|message
+decl_stmt|;
 if|if
 condition|(
 name|gimp_query_procedure
@@ -3538,10 +3623,27 @@ name|return_vals
 argument_list|)
 condition|)
 block|{
+comment|/* open URL for help */
+name|message
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Opening %s"
+argument_list|)
+argument_list|,
+name|MAZE_URL
+argument_list|)
+expr_stmt|;
 name|maze_msg
 argument_list|(
-literal|"Opening "
-name|MAZE_URL
+name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|message
 argument_list|)
 expr_stmt|;
 name|gimp_run_procedure
@@ -3569,10 +3671,26 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|message
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"See %s"
+argument_list|)
+argument_list|,
+name|MAZE_URL
+argument_list|)
+expr_stmt|;
 name|maze_msg
 argument_list|(
-literal|"See "
-name|MAZE_URL
+name|message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|message
 argument_list|)
 expr_stmt|;
 block|}

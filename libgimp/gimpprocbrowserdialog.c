@@ -10,7 +10,19 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dbbrowser_utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt
@@ -140,7 +152,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"DB Browser (init)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -411,7 +426,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Search :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -567,7 +585,10 @@ name|name_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Search by name"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -636,7 +657,10 @@ name|blurb_button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Search by blurb"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -708,7 +732,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Apply"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -768,7 +795,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1331,7 +1361,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Name :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1451,7 +1484,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blurb :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -1616,7 +1652,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"In :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2317,7 +2356,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Help :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2615,7 +2657,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Author :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2728,7 +2773,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Date :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2841,7 +2889,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Copyright :"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3263,7 +3314,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"DB Browser (by name - please wait)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|query
@@ -3381,7 +3435,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"DB Browser (by blurb - please wait)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_query_database
@@ -3427,7 +3484,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"DB Browser (please wait)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_query_database
@@ -3630,7 +3690,10 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"DB Browser"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_clist_thaw

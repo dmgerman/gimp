@@ -66,7 +66,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -528,15 +540,35 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|gchar
+modifier|*
+name|help
+decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|help
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Generates a maze using either the depth-first search method or Prim's algorithm.  Can make tileable mazes too.  See %s for more help."
+argument_list|)
+argument_list|,
+name|MAZE_URL
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_maze"
 argument_list|,
+name|_
+argument_list|(
 literal|"Draws a maze."
+argument_list|)
 argument_list|,
-literal|"Generates a maze using either the depth-first search method or Prim's algorithm.  Can make tileable mazes too.  See "
-name|MAZE_URL
-literal|" for more help."
+name|help
 argument_list|,
 literal|"Kevin Turner<kevint@poboxes.com>"
 argument_list|,
@@ -544,7 +576,10 @@ literal|"Kevin Turner"
 argument_list|,
 literal|"1997, 1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Render/Pattern/Maze..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -557,6 +592,11 @@ argument_list|,
 name|args
 argument_list|,
 name|return_vals
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|help
 argument_list|)
 expr_stmt|;
 block|}
@@ -650,6 +690,9 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 name|values
 index|[
@@ -1785,7 +1828,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Drawing Maze..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

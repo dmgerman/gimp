@@ -18,6 +18,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -37,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt
@@ -1103,7 +1115,10 @@ literal|0
 decl_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Constructing maze using Prim's Algorithm..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* OUT is zero, so we should be already initalized. */
@@ -1833,7 +1848,10 @@ literal|0
 decl_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Constructing tileable maze using Prim's Algorithm..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* OUT is zero, so we should be already initalized. */

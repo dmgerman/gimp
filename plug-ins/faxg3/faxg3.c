@@ -113,7 +113,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -306,13 +312,22 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_faxg3_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"loads g3 fax files"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This plug-in loads Fax G3 Image files."
+argument_list|)
 argument_list|,
 literal|"Jochen Friedrich"
 argument_list|,
@@ -442,6 +457,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -788,25 +806,12 @@ decl_stmt|;
 comment|/* column, highest column ever used */
 name|name
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|12
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -816,7 +821,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|name
 argument_list|)
@@ -2103,7 +2108,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|hcol
 argument_list|,
