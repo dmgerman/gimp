@@ -81,6 +81,7 @@ comment|/* some convenience macros to install object properties */
 end_comment
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_BOOLEAN (class,id,name,blurb,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -88,8 +89,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_BOOLEAN (class,id,\\\nname,blurb,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -98,6 +98,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_RGB (class,id,name,blurb,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_RGB
@@ -105,8 +106,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_RGB (class,id,\\\nname,blurb,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -115,6 +115,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_DOUBLE (class,id,name,blurb,min,max,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
@@ -122,8 +123,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_DOUBLE (class,id,\\\nname,blurb,min,max,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -136,6 +136,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_RESOLUTION (class,id,name,blurb,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
@@ -143,8 +144,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_RESOLUTION (class,id,\\\nname,blurb,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -153,6 +153,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_ENUM (class,id,name,blurb,enum_type,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
@@ -160,8 +161,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_ENUM (class,id,\\\nname,blurb,enum_type,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -172,6 +172,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_INT (class,id,name,blurb,min,max,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_INT
@@ -179,8 +180,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_INT (class,id,\\\nname,blurb,min,max,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -193,6 +193,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_MATRIX2 (class,id,name,blurb,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_MATRIX2
@@ -200,8 +201,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_MATRIX2 (class,id,\\\nname,blurb,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -210,6 +210,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_MEMSIZE (class,id,name,blurb,min,max,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_MEMSIZE
@@ -217,8 +218,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_MEMSIZE (class,id,\\\nname,blurb,min,max,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -231,6 +231,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,name,blurb,path_type,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_PATH
@@ -238,8 +239,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_PATH (class,id,\\\nname,blurb,path_type,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -250,6 +250,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_STRING (class,id,name,blurb,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_STRING
@@ -257,8 +258,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_STRING (class,id,\\\nname,blurb,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -267,6 +267,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_UINT (class,id,name,blurb,min,max,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_UINT
@@ -274,8 +275,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_UINT (class,id,\\\nname,blurb,min,max,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -288,6 +288,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_UNIT (class,id,name,blurb,pixels,percent,default,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
@@ -295,8 +296,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_UNIT (class,id,\\\nname,blurb,pixels,percent,default,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -313,6 +313,7 @@ comment|/*  object and pointer properties are _not_ G_PARAM_CONSTRUCT  */
 end_comment
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_OBJECT (class,id,name,blurb,object_type,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
@@ -320,8 +321,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_OBJECT (class,id,\\\nname,blurb,object_type,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
@@ -335,6 +335,7 @@ value|g_object_class_install_property (class, id,\                              
 end_define
 
 begin_define
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_POINTER (class,id,name,blurb,flags)
 define|#
 directive|define
 name|GIMP_CONFIG_INSTALL_PROP_POINTER
@@ -342,8 +343,7 @@ parameter_list|(
 name|class
 parameter_list|,
 name|id
-parameter_list|,\
-DECL|macro|GIMP_CONFIG_INSTALL_PROP_POINTER (class,id,\\\nname,blurb,flags)
+parameter_list|,
 name|name
 parameter_list|,
 name|blurb
