@@ -51,6 +51,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphistogram.h"
 end_include
 
@@ -1359,6 +1365,8 @@ name|g_new0
 argument_list|(
 name|gchar
 argument_list|,
+name|base_config
+operator|->
 name|num_processors
 argument_list|)
 expr_stmt|;
@@ -1372,6 +1380,8 @@ name|gdouble
 operator|*
 operator|*
 argument_list|,
+name|base_config
+operator|->
 name|num_processors
 argument_list|)
 expr_stmt|;
@@ -1383,6 +1393,8 @@ literal|0
 init|;
 name|i
 operator|<
+name|base_config
+operator|->
 name|num_processors
 condition|;
 name|i
@@ -1548,6 +1560,8 @@ literal|0
 init|;
 name|i
 operator|<
+name|base_config
+operator|->
 name|num_processors
 condition|;
 name|i

@@ -36,14 +36,22 @@ init|=
 block|{
 name|NULL
 block|,
+comment|/* temp_path           */
 name|NULL
 block|,
+comment|/* swap_path           */
 literal|33554432
 block|,
-comment|/* 32 MB */
+comment|/* tile_cache_size     */
 name|FALSE
 block|,
+comment|/* stingy_memory_usage */
 name|LINEAR_INTERPOLATION
+block|,
+comment|/* interpolation_type  */
+literal|1
+block|,
+comment|/* num_processors      */
 block|}
 decl_stmt|;
 end_decl_stmt

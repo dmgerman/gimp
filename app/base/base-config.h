@@ -52,6 +52,10 @@ DECL|member|interpolation_type
 name|InterpolationType
 name|interpolation_type
 decl_stmt|;
+DECL|member|num_processors
+name|gint
+name|num_processors
+decl_stmt|;
 block|}
 struct|;
 end_struct

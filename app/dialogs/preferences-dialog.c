@@ -150,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289649950103
+DECL|enum|__anon27e7397f0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -1462,10 +1462,14 @@ return|;
 block|}
 if|if
 condition|(
+name|base_config
+operator|->
 name|num_processors
 operator|<
 literal|1
 operator|||
+name|base_config
+operator|->
 name|num_processors
 operator|>
 literal|30
@@ -1479,6 +1483,8 @@ literal|"Error: Number of processors must be between 1 and 30."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|base_config
+operator|->
 name|num_processors
 operator|=
 name|old_num_processors
@@ -2956,6 +2962,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|base_config
+operator|->
 name|num_processors
 operator|!=
 name|old_num_processors
@@ -3548,6 +3556,12 @@ name|interpolation_type
 operator|=
 name|old_interpolation_type
 expr_stmt|;
+name|base_config
+operator|->
+name|num_processors
+operator|=
+name|old_num_processors
+expr_stmt|;
 name|levels_of_undo
 operator|=
 name|old_levels_of_undo
@@ -3667,10 +3681,6 @@ expr_stmt|;
 name|default_threshold
 operator|=
 name|old_default_threshold
-expr_stmt|;
-name|num_processors
-operator|=
-name|old_num_processors
 expr_stmt|;
 comment|/*  restore variables which need some magic  */
 if|if
@@ -5885,6 +5895,12 @@ name|base_config
 operator|->
 name|interpolation_type
 expr_stmt|;
+name|old_num_processors
+operator|=
+name|base_config
+operator|->
+name|num_processors
+expr_stmt|;
 name|old_perfectmouse
 operator|=
 name|perfectmouse
@@ -6028,10 +6044,6 @@ expr_stmt|;
 name|old_default_threshold
 operator|=
 name|default_threshold
-expr_stmt|;
-name|old_num_processors
-operator|=
-name|num_processors
 expr_stmt|;
 name|prefs_strset
 argument_list|(
@@ -10831,6 +10843,8 @@ argument_list|(
 operator|&
 name|adjustment
 argument_list|,
+name|base_config
+operator|->
 name|num_processors
 argument_list|,
 literal|1
@@ -10863,6 +10877,8 @@ name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
+name|base_config
+operator|->
 name|num_processors
 argument_list|)
 expr_stmt|;
@@ -12471,7 +12487,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289649950208
+DECL|struct|__anon27e7397f0208
 block|{
 DECL|member|label
 name|gchar
@@ -12700,7 +12716,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289649950308
+DECL|struct|__anon27e7397f0308
 block|{
 DECL|member|tree_label
 name|gchar

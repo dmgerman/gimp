@@ -75,6 +75,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base-config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixel-processor.h"
 end_include
 
@@ -610,7 +616,7 @@ parameter_list|)
 block|{
 name|IF_THREAD
 argument_list|(
-argument|gint nthreads;     nthreads = MIN (num_processors, MAX_THREADS);
+argument|gint nthreads;     nthreads = MIN (base_config->num_processors, MAX_THREADS);
 comment|/* make sure we have at least one tile per thread */
 argument|nthreads = MIN (nthreads, 		  (p_s->PRI->region_width * p_s->PRI->region_height) 		  / (TILE_WIDTH * TILE_HEIGHT));    if (nthreads>
 literal|1
