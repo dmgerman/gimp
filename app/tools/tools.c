@@ -380,7 +380,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Rect Select"
+literal|"/Tools/Select Tools/Rect Select"
 argument_list|)
 block|,
 literal|"R"
@@ -422,7 +422,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Ellipse Select"
+literal|"/Tools/Select Tools/Ellipse Select"
 argument_list|)
 block|,
 literal|"E"
@@ -464,7 +464,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Free Select"
+literal|"/Tools/Select Tools/Free Select"
 argument_list|)
 block|,
 literal|"F"
@@ -506,7 +506,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Fuzzy Select"
+literal|"/Tools/Select Tools/Fuzzy Select"
 argument_list|)
 block|,
 literal|"Z"
@@ -548,7 +548,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Bezier Select"
+literal|"/Tools/Select Tools/Bezier Select"
 argument_list|)
 block|,
 literal|"B"
@@ -590,7 +590,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Intelligent Scissors"
+literal|"/Tools/Select Tools/Intelligent Scissors"
 argument_list|)
 block|,
 literal|"I"
@@ -632,7 +632,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Move"
+literal|"/Tools/Transform Tools/Move"
 argument_list|)
 block|,
 literal|"M"
@@ -674,7 +674,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Magnify"
+literal|"/Tools/Transform Tools/Magnify"
 argument_list|)
 block|,
 literal|"<shift>M"
@@ -716,7 +716,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Crop& Resize"
+literal|"/Tools/Transform Tools/Crop& Resize"
 argument_list|)
 block|,
 literal|"<shift>C"
@@ -758,7 +758,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform"
+literal|"/Tools/Transform Tools/Transform"
 argument_list|)
 block|,
 literal|"<shift>T"
@@ -807,7 +807,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Transform the layer or selection"
+literal|"Rotation, scaling, shearing, perspective."
 argument_list|)
 block|,
 literal|"tools/transform.html"
@@ -842,7 +842,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Transform the layer or selection"
+literal|"Rotation, scaling, shearing, perspective."
 argument_list|)
 block|,
 literal|"tools/transform.html"
@@ -877,7 +877,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Transform the layer or selection"
+literal|"Rotation, scaling, shearing, perspective."
 argument_list|)
 block|,
 literal|"tools/transform.html"
@@ -906,7 +906,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Flip"
+literal|"/Tools/Transform Tools/Flip"
 argument_list|)
 block|,
 literal|"<shift>F"
@@ -1032,7 +1032,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Bucket Fill"
+literal|"/Tools/Paint Tools/Bucket Fill"
 argument_list|)
 block|,
 literal|"<shift>B"
@@ -1074,7 +1074,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Blend"
+literal|"/Tools/Paint Tools/Blend"
 argument_list|)
 block|,
 literal|"L"
@@ -1116,7 +1116,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Pencil"
+literal|"/Tools/Paint Tools/Pencil"
 argument_list|)
 block|,
 literal|"<shift>P"
@@ -1158,7 +1158,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Paintbrush"
+literal|"/Tools/Paint Tools/Paintbrush"
 argument_list|)
 block|,
 literal|"P"
@@ -1200,7 +1200,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Eraser"
+literal|"/Tools/Paint Tools/Eraser"
 argument_list|)
 block|,
 literal|"<shift>E"
@@ -1242,7 +1242,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Airbrush"
+literal|"/Tools/Paint Tools/Airbrush"
 argument_list|)
 block|,
 literal|"A"
@@ -1284,7 +1284,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Clone"
+literal|"/Tools/Paint Tools/Clone"
 argument_list|)
 block|,
 literal|"C"
@@ -1326,7 +1326,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Convolve"
+literal|"/Tools/Paint Tools/Convolve"
 argument_list|)
 block|,
 literal|"V"
@@ -1368,7 +1368,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Ink"
+literal|"/Tools/Paint Tools/Ink"
 argument_list|)
 block|,
 literal|"K"
@@ -1410,7 +1410,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/DodgeBurn"
+literal|"/Tools/Paint Tools/DodgeBurn"
 argument_list|)
 block|,
 literal|"<shift>D"
@@ -1452,7 +1452,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/Smudge"
+literal|"/Tools/Paint Tools/Smudge"
 argument_list|)
 block|,
 literal|"<shift>S"
@@ -1494,7 +1494,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Tools/XinputAirbrush"
+literal|"/Tools/Paint Tools/XinputAirbrush"
 argument_list|)
 block|,
 literal|"<shift>A"

@@ -9401,15 +9401,6 @@ index|]
 operator|.
 name|tool_id
 operator|==
-name|MOVE
-operator|||
-name|tool_info
-index|[
-name|i
-index|]
-operator|.
-name|tool_id
-operator|==
 name|TEXT
 operator|||
 name|tool_info
