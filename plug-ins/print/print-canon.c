@@ -28,7 +28,7 @@ comment|/*  * Local functions...  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a5299760108
+DECL|struct|__anon2b6e0ff30108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +200,7 @@ value|(PHYSICAL_BPI * MAX_OVERSAMPLED * MAX_BPP * \ 	MAX_CARRIAGE_WIDTH / BITS_P
 end_define
 
 begin_comment
-comment|/* Codes for possible ink-tank combinations.  * Each combo is represented by the colors that can be used with  * the installed ink-tank(s)  * Combinations of the codes represent the combinations allowed for a model  */
+comment|/* Codes for possible ink-tank combinations.  * Each combo is represented by the colors that can be used with  * the installed ink-tank(s)  * Combinations of the codes represent the combinations allowed for a model  * Note that only preferrable combinations should be used   */
 end_comment
 
 begin_define
@@ -739,7 +739,7 @@ literal|18
 block|,
 name|CANON_INK_CMYK
 operator||
-name|CANON_INK_CcMmYK
+name|CANON_INK_CcMmYyK
 block|,
 name|CANON_SLOT_ASF1
 block|,
@@ -1341,6 +1341,19 @@ argument_list|)
 condition|)
 return|return
 literal|4
+return|;
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"Black/Photo Color"
+argument_list|)
+condition|)
+return|return
+literal|5
 return|;
 ifdef|#
 directive|ifdef
@@ -2511,7 +2524,28 @@ index|]
 operator|=
 name|c_strdup
 argument_list|(
-literal|"Photo/Color"
+literal|"Photo"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|caps
+operator|.
+name|inks
+operator|&
+name|CANON_INK_CcMmYyK
+operator|)
+condition|)
+name|valptrs
+index|[
+name|c
+operator|++
+index|]
+operator|=
+name|c_strdup
+argument_list|(
+literal|"Black/Photo Color"
 argument_list|)
 expr_stmt|;
 operator|*
@@ -4970,6 +5004,14 @@ operator|.
 name|inks
 operator|&
 name|CANON_INK_CcMmYy
+operator|)
+operator|||
+operator|(
+name|caps
+operator|.
+name|inks
+operator|&
+name|CANON_INK_CcMmYyK
 operator|)
 condition|)
 name|lyellow

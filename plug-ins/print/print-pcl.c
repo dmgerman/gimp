@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcc39310108
+DECL|struct|__anon278c72260108
 block|{
 DECL|member|pcl_name
 name|char
@@ -1118,7 +1118,7 @@ comment|/*  * Printer capability data  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bcc39310208
+DECL|struct|__anon278c72260208
 typedef|typedef
 struct|struct
 block|{
@@ -3003,7 +3003,7 @@ literal|1
 block|,     }
 block|,   }
 block|,
-comment|/* LaserJet 4 series */
+comment|/* LaserJet 4L */
 block|{
 literal|4
 block|,
@@ -3156,7 +3156,7 @@ literal|1
 block|,     }
 block|,   }
 block|,
-comment|/* LaserJet 5 series, 6 series */
+comment|/* LaserJet 4 series (except as above), 5 series, 6 series */
 block|{
 literal|6
 block|,

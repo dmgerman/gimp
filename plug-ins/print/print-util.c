@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3168620108
+DECL|struct|__anon2b6118ce0108
 block|{
 DECL|member|steps
 name|unsigned
@@ -8202,6 +8202,17 @@ block|}
 block|,
 comment|/*  11in x 17in */
 block|{
+literal|"Executive"
+block|,
+literal|522
+block|,
+literal|756
+block|,
+name|PAPERSIZE_ENGLISH
+block|}
+block|,
+comment|/* 7.25 * 10.5in */
+block|{
 literal|"Postcard"
 block|,
 literal|283
@@ -8212,6 +8223,16 @@ name|PAPERSIZE_ENGLISH
 block|}
 block|,
 comment|/* 100mm x 147mm */
+block|{
+literal|"3x5"
+block|,
+literal|216
+block|,
+literal|360
+block|,
+name|PAPERSIZE_ENGLISH
+block|}
+block|,
 block|{
 literal|"4x6"
 block|,
@@ -8987,7 +9008,7 @@ block|}
 block|,
 comment|/*  162mm x  229mm */
 block|{
-literal|"B6/C4"
+literal|"B6-C4"
 block|,
 literal|354
 block|,
@@ -9020,7 +9041,7 @@ block|}
 block|,
 comment|/*  110mm x  220mm */
 block|{
-literal|"C7/6"
+literal|"C7-6"
 block|,
 literal|229
 block|,
@@ -9273,6 +9294,84 @@ name|PAPERSIZE_METRIC
 block|}
 block|,
 comment|/* 129mm x 198mm */
+comment|/* Miscellaneous sizes */
+block|{
+literal|"Hagaki Card"
+block|,
+literal|283
+block|,
+literal|420
+block|,
+name|PAPERSIZE_METRIC
+block|}
+block|,
+comment|/* 100 x 148 mm */
+block|{
+literal|"Oufuku Card"
+block|,
+literal|420
+block|,
+literal|567
+block|,
+name|PAPERSIZE_METRIC
+block|}
+block|,
+comment|/* 148 x 200 mm */
+block|{
+literal|"Long 3"
+block|,
+literal|340
+block|,
+literal|666
+block|,
+name|PAPERSIZE_METRIC
+block|}
+block|,
+comment|/* Japanese long envelope #3 */
+block|{
+literal|"Long 4"
+block|,
+literal|255
+block|,
+literal|581
+block|,
+name|PAPERSIZE_METRIC
+block|}
+block|,
+comment|/* Japanese long envelope #4 */
+block|{
+literal|"Kaku"
+block|,
+literal|680
+block|,
+literal|941
+block|,
+name|PAPERSIZE_METRIC
+block|}
+block|,
+comment|/* Japanese Kaku envelope #4 */
+block|{
+literal|"Commercial 10"
+block|,
+literal|297
+block|,
+literal|684
+block|,
+name|PAPERSIZE_ENGLISH
+block|}
+block|,
+comment|/* US Commercial 10 env */
+block|{
+literal|"A2 Invitation"
+block|,
+literal|315
+block|,
+literal|414
+block|,
+name|PAPERSIZE_ENGLISH
+block|}
+block|,
+comment|/* US A2 invitation */
 block|{
 literal|""
 block|,
