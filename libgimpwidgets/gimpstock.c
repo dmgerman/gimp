@@ -1172,7 +1172,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2989a6290108
+DECL|struct|__anon2c8fbb600108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1556,7 +1556,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2989a6290208
+DECL|struct|__anon2c8fbb600208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1667,7 +1667,7 @@ block|,
 block|{
 name|GIMP_STOCK_SWAP_COLORS
 block|,
-name|stock_swap_colors_16
+name|stock_swap_colors_12
 block|}
 block|,
 block|{
