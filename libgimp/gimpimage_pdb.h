@@ -132,6 +132,19 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_image_flip
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|GimpOrientationType
+name|flip_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_image_free_shadow
 parameter_list|(
 name|gint32
