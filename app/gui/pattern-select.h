@@ -45,30 +45,11 @@ name|GtkWidget
 modifier|*
 name|shell
 decl_stmt|;
-DECL|member|frame
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
+comment|/*  The preview and it's vscale data  */
 DECL|member|preview
 name|GtkWidget
 modifier|*
 name|preview
-decl_stmt|;
-DECL|member|pattern_name
-name|GtkWidget
-modifier|*
-name|pattern_name
-decl_stmt|;
-DECL|member|pattern_size
-name|GtkWidget
-modifier|*
-name|pattern_size
-decl_stmt|;
-DECL|member|options_box
-name|GtkWidget
-modifier|*
-name|options_box
 decl_stmt|;
 DECL|member|gc
 name|GdkGC
@@ -80,23 +61,20 @@ name|GtkAdjustment
 modifier|*
 name|sbar_data
 decl_stmt|;
-DECL|member|width
-DECL|member|height
-name|int
-name|width
-decl_stmt|,
-name|height
+DECL|member|options_box
+name|GtkWidget
+modifier|*
+name|options_box
 decl_stmt|;
-DECL|member|cell_width
-DECL|member|cell_height
-name|int
-name|cell_width
-decl_stmt|,
-name|cell_height
+DECL|member|pattern_name
+name|GtkWidget
+modifier|*
+name|pattern_name
 decl_stmt|;
-DECL|member|scroll_offset
-name|int
-name|scroll_offset
+DECL|member|pattern_size
+name|GtkWidget
+modifier|*
+name|pattern_size
 decl_stmt|;
 comment|/*  Pattern popup  */
 DECL|member|pattern_popup
@@ -109,11 +87,28 @@ name|GtkWidget
 modifier|*
 name|pattern_preview
 decl_stmt|;
-comment|/* Call back function name */
+comment|/*  Call back function name  */
 DECL|member|callback_name
 name|gchar
 modifier|*
 name|callback_name
+decl_stmt|;
+comment|/*  Current pattern  */
+DECL|member|pattern
+name|GPatternP
+name|pattern
+decl_stmt|;
+comment|/*  Some variables to keep the GUI consistent  */
+DECL|member|cell_width
+DECL|member|cell_height
+name|int
+name|cell_width
+decl_stmt|,
+name|cell_height
+decl_stmt|;
+DECL|member|scroll_offset
+name|int
+name|scroll_offset
 decl_stmt|;
 DECL|member|old_row
 name|gint
@@ -123,12 +118,6 @@ DECL|member|old_col
 name|gint
 name|old_col
 decl_stmt|;
-comment|/* Current pattern */
-DECL|member|pattern
-name|GPatternP
-name|pattern
-decl_stmt|;
-comment|/* To calc column pos. */
 DECL|member|NUM_PATTERN_COLUMNS
 name|gint
 name|NUM_PATTERN_COLUMNS

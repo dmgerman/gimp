@@ -57,7 +57,7 @@ name|GtkWidget
 modifier|*
 name|shell
 decl_stmt|;
-comment|/* Place holders which enable global<->per-tool paint options switching */
+comment|/*  Place holders which enable global<->per-tool paint options switching  */
 DECL|member|left_box
 name|GtkWidget
 modifier|*
@@ -78,15 +78,21 @@ name|GtkWidget
 modifier|*
 name|paint_options_box
 decl_stmt|;
-DECL|member|frame
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
+comment|/*  The preview and it's vscale data  */
 DECL|member|preview
 name|GtkWidget
 modifier|*
 name|preview
+decl_stmt|;
+DECL|member|sbar_data
+name|GtkAdjustment
+modifier|*
+name|sbar_data
+decl_stmt|;
+DECL|member|options_box
+name|GtkWidget
+modifier|*
+name|options_box
 decl_stmt|;
 DECL|member|brush_name
 name|GtkWidget
@@ -98,11 +104,6 @@ name|GtkWidget
 modifier|*
 name|brush_size
 decl_stmt|;
-DECL|member|options_box
-name|GtkWidget
-modifier|*
-name|options_box
-decl_stmt|;
 DECL|member|opacity_data
 name|GtkAdjustment
 modifier|*
@@ -112,11 +113,6 @@ DECL|member|spacing_data
 name|GtkAdjustment
 modifier|*
 name|spacing_data
-decl_stmt|;
-DECL|member|sbar_data
-name|GtkAdjustment
-modifier|*
-name|sbar_data
 decl_stmt|;
 DECL|member|edit_button
 name|GtkWidget
@@ -128,7 +124,7 @@ name|GtkWidget
 modifier|*
 name|option_menu
 decl_stmt|;
-comment|/* Brush preview */
+comment|/*  Brush preview  */
 DECL|member|brush_popup
 name|GtkWidget
 modifier|*
@@ -139,13 +135,13 @@ name|GtkWidget
 modifier|*
 name|brush_preview
 decl_stmt|;
-comment|/* Call back function name */
+comment|/*  Call back function name  */
 DECL|member|callback_name
 name|gchar
 modifier|*
 name|callback_name
 decl_stmt|;
-comment|/* Current brush */
+comment|/*  Current brush  */
 DECL|member|brush
 name|GimpBrushP
 name|brush
@@ -154,7 +150,7 @@ DECL|member|spacing_value
 name|gint
 name|spacing_value
 decl_stmt|;
-comment|/* Current paint options */
+comment|/*  Current paint options  */
 DECL|member|opacity_value
 name|gdouble
 name|opacity_value
@@ -163,14 +159,7 @@ DECL|member|paint_mode
 name|gint
 name|paint_mode
 decl_stmt|;
-comment|/* Some variables to keep the GUI consistent */
-DECL|member|width
-DECL|member|height
-name|int
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
+comment|/*  Some variables to keep the GUI consistent  */
 DECL|member|cell_width
 DECL|member|cell_height
 name|int

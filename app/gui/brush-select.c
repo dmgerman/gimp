@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -534,19 +528,6 @@ comment|/*  local variables  */
 end_comment
 
 begin_comment
-comment|/*  Brush editor dialog (main brush dialog only)  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|brush_edit_generated_dialog
-specifier|static
-name|BrushEditGeneratedWindow
-modifier|*
-name|brush_edit_generated_dialog
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  PDB interface data  */
 end_comment
 
@@ -585,7 +566,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  If title is null then it is the main brush dialog  */
+comment|/*  Brush editor dialog (main brush dialog only)  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|brush_edit_generated_dialog
+specifier|static
+name|BrushEditGeneratedWindow
+modifier|*
+name|brush_edit_generated_dialog
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  If title == NULL then it is the main brush dialog  */
 end_comment
 
 begin_function
@@ -622,6 +616,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -918,7 +916,7 @@ argument_list|,
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/* handle the wm close signal */
+comment|/*  Handle the wm close signal  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -1014,8 +1012,6 @@ operator|->
 name|brush_selection_box
 argument_list|)
 expr_stmt|;
-name|bsp
-operator|->
 name|frame
 operator|=
 name|gtk_frame_new
@@ -1027,8 +1023,6 @@ name|gtk_frame_set_shadow_type
 argument_list|(
 name|GTK_FRAME
 argument_list|(
-name|bsp
-operator|->
 name|frame
 argument_list|)
 argument_list|,
@@ -1044,8 +1038,6 @@ operator|->
 name|brush_selection_box
 argument_list|)
 argument_list|,
-name|bsp
-operator|->
 name|frame
 argument_list|,
 name|TRUE
@@ -1145,24 +1137,6 @@ name|STD_CELL_HEIGHT
 expr_stmt|;
 name|bsp
 operator|->
-name|width
-operator|=
-name|MAX_WIN_WIDTH
-argument_list|(
-name|bsp
-argument_list|)
-expr_stmt|;
-name|bsp
-operator|->
-name|height
-operator|=
-name|MAX_WIN_HEIGHT
-argument_list|(
-name|bsp
-argument_list|)
-expr_stmt|;
-name|bsp
-operator|->
 name|preview
 operator|=
 name|gtk_preview_new
@@ -1179,13 +1153,27 @@ operator|->
 name|preview
 argument_list|)
 argument_list|,
+name|MAX_WIN_WIDTH
+argument_list|(
 name|bsp
-operator|->
-name|width
+argument_list|)
 argument_list|,
+name|MAX_WIN_HEIGHT
+argument_list|(
+name|bsp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_preview_set_expand
+argument_list|(
+name|GTK_PREVIEW
+argument_list|(
 name|bsp
 operator|->
-name|height
+name|preview
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events
@@ -1216,13 +1204,13 @@ argument_list|,
 name|bsp
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_after
+name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
 name|bsp
 operator|->
-name|frame
+name|preview
 argument_list|)
 argument_list|,
 literal|"size_allocate"
@@ -1239,8 +1227,6 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|bsp
-operator|->
 name|frame
 argument_list|)
 argument_list|,
@@ -1263,8 +1249,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|bsp
-operator|->
 name|frame
 argument_list|)
 expr_stmt|;
@@ -1282,7 +1266,7 @@ operator|->
 name|left_box
 argument_list|)
 expr_stmt|;
-comment|/*  options box  */
+comment|/*  Options box  */
 name|bsp
 operator|->
 name|options_box
@@ -1480,7 +1464,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  a separator before the paint options  */
+comment|/*  A separator before the paint options  */
 name|sep
 operator|=
 name|gtk_hseparator_new
@@ -3167,7 +3151,7 @@ name|GimpBrushP
 name|brush
 parameter_list|)
 block|{
-comment|/* TODO: be smarter here and only update the part of the preview  *       that has changed */
+comment|/* TODO: be smarter here and only update the part of the preview    *       that has changed */
 if|if
 condition|(
 name|bsp
@@ -4004,7 +3988,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|height
 argument_list|)
@@ -4023,7 +4007,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|height
 argument_list|)
@@ -4161,7 +4145,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|width
 argument_list|)
@@ -4177,7 +4161,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|width
 argument_list|)
@@ -4195,7 +4179,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|height
 condition|;
@@ -4221,7 +4205,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|width
 argument_list|)
@@ -4245,9 +4229,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|do_display_brush (GimpBrush * brush,BrushSelectP bsp)
 specifier|static
 name|void
+DECL|function|do_display_brush (GimpBrush * brush,BrushSelectP bsp)
 name|do_display_brush
 parameter_list|(
 name|GimpBrush
@@ -4471,7 +4455,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|height
 argument_list|)
@@ -4492,7 +4476,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|height
 argument_list|)
@@ -4689,7 +4673,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|height
 argument_list|)
@@ -4710,7 +4694,7 @@ name|bsp
 operator|->
 name|preview
 operator|->
-name|requisition
+name|allocation
 operator|.
 name|height
 argument_list|)
@@ -5096,8 +5080,6 @@ operator|->
 name|allocation
 operator|.
 name|width
-operator|-
-literal|4
 operator|)
 operator|/
 name|STD_CELL_WIDTH
@@ -5107,6 +5089,10 @@ name|bsp
 operator|->
 name|NUM_BRUSH_ROWS
 operator|=
+call|(
+name|gint
+call|)
+argument_list|(
 operator|(
 name|gimp_brush_list_length
 argument_list|(
@@ -5123,47 +5109,6 @@ operator|/
 name|bsp
 operator|->
 name|NUM_BRUSH_COLUMNS
-expr_stmt|;
-name|bsp
-operator|->
-name|width
-operator|=
-name|widget
-operator|->
-name|allocation
-operator|.
-name|width
-operator|-
-literal|4
-expr_stmt|;
-name|bsp
-operator|->
-name|height
-operator|=
-name|widget
-operator|->
-name|allocation
-operator|.
-name|height
-operator|-
-literal|4
-expr_stmt|;
-name|gtk_preview_size
-argument_list|(
-name|GTK_PREVIEW
-argument_list|(
-name|bsp
-operator|->
-name|preview
-argument_list|)
-argument_list|,
-name|bsp
-operator|->
-name|width
-argument_list|,
-name|bsp
-operator|->
-name|height
 argument_list|)
 expr_stmt|;
 comment|/*  recalculate scrollbar extents  */
