@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2783b87b0103
+DECL|enum|__anon274f82be0103
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -138,6 +138,11 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+DECL|member|pango_context
+name|PangoContext
+modifier|*
+name|pango_context
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -167,7 +172,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkType
+name|GType
 name|gimp_text_tool_get_type
 parameter_list|(
 name|void
@@ -179,10 +184,12 @@ begin_function_decl
 name|gboolean
 name|text_get_extents
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|fontname
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text
@@ -225,10 +232,12 @@ parameter_list|,
 name|gint
 name|text_y
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|fontname
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text

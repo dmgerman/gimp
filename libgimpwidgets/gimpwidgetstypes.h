@@ -38,7 +38,7 @@ comment|/* __cplusplus */
 comment|/* For information look into the html documentation */
 typedef|typedef
 enum|enum
-DECL|enum|__anon295aa8d30103
+DECL|enum|__anon2c666ec40103
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -87,12 +87,6 @@ typedef|typedef
 name|struct
 name|_GimpFileSelection
 name|GimpFileSelection
-typedef|;
-DECL|typedef|GimpFontSelection
-typedef|typedef
-name|struct
-name|_GimpFontSelection
-name|GimpFontSelection
 typedef|;
 DECL|typedef|GimpOffsetArea
 typedef|typedef
