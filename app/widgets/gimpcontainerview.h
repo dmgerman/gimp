@@ -308,6 +308,11 @@ modifier|*
 name|view
 parameter_list|)
 function_decl|;
+comment|/*  the destroy notifier for view->hash_table's values  */
+DECL|member|insert_data_free
+name|GDestroyNotify
+name|insert_data_free
+decl_stmt|;
 block|}
 struct|;
 end_struct

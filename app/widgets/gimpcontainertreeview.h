@@ -131,6 +131,11 @@ DECL|member|name_changed_handler_id
 name|GQuark
 name|name_changed_handler_id
 decl_stmt|;
+DECL|member|dnd_viewable
+name|GimpViewable
+modifier|*
+name|dnd_viewable
+decl_stmt|;
 block|}
 struct|;
 end_struct
