@@ -76,8 +76,12 @@ parameter_list|,
 name|PangoGlyph
 name|glyph
 parameter_list|,
-name|gint
-name|flags
+name|FT_Int32
+name|load_flags
+parameter_list|,
+name|FT_Matrix
+modifier|*
+name|tranform
 parameter_list|,
 name|gint
 name|x

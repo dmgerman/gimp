@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptextlayer-transform.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptextlayout.h"
 end_include
 
@@ -262,7 +268,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_text_layer_render
+name|gimp_text_layer_render_now
 parameter_list|(
 name|GimpTextLayer
 modifier|*
@@ -473,6 +479,15 @@ name|gimp_text_layer_get_preview
 expr_stmt|;
 name|item_class
 operator|->
+name|default_name
+operator|=
+name|_
+argument_list|(
+literal|"Text Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
 name|duplicate
 operator|=
 name|gimp_text_layer_duplicate
@@ -483,15 +498,12 @@ name|rename
 operator|=
 name|gimp_text_layer_rename
 expr_stmt|;
-name|item_class
-operator|->
-name|default_name
-operator|=
-name|_
-argument_list|(
-literal|"Text Layer"
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|item_class->scale                = gimp_text_layer_scale;   item_class->flip                 = gimp_text_layer_flip;   item_class->rotate               = gimp_text_layer_rotate;   item_class->transform            = gimp_text_layer_transform;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -888,6 +900,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_text_layer_new:  * @image: the #GimpImage the layer should belong to  * @text: a #GimpText object  *  * Creates a new text layer.  *  * Return value: a new #GimpTextLayer or %NULL in case of a problem  **/
+end_comment
+
 begin_function
 name|GimpLayer
 modifier|*
@@ -981,7 +997,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_text_layer_render
+name|gimp_text_layer_render_now
 argument_list|(
 name|layer
 argument_list|)
@@ -1463,6 +1479,53 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_text_layer_render (GimpTextLayer * layer)
+name|gimp_text_layer_render
+parameter_list|(
+name|GimpTextLayer
+modifier|*
+name|layer
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TEXT_LAYER
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|layer
+operator|->
+name|idle_render_id
+condition|)
+block|{
+name|g_source_remove
+argument_list|(
+name|layer
+operator|->
+name|idle_render_id
+argument_list|)
+expr_stmt|;
+name|layer
+operator|->
+name|idle_render_id
+operator|=
+literal|0
+expr_stmt|;
+block|}
+name|gimp_text_layer_render_now
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
 DECL|function|gimp_text_layer_notify_text (GimpTextLayer * layer)
@@ -1524,7 +1587,7 @@ name|idle_render_id
 operator|=
 literal|0
 expr_stmt|;
-name|gimp_text_layer_render
+name|gimp_text_layer_render_now
 argument_list|(
 name|layer
 argument_list|)
@@ -1538,8 +1601,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_text_layer_render (GimpTextLayer * layer)
-name|gimp_text_layer_render
+DECL|function|gimp_text_layer_render_now (GimpTextLayer * layer)
+name|gimp_text_layer_render_now
 parameter_list|(
 name|GimpTextLayer
 modifier|*

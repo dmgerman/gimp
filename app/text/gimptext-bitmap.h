@@ -27,8 +27,12 @@ parameter_list|,
 name|PangoGlyph
 name|glyph
 parameter_list|,
-name|gint
+name|FT_Int32
 name|flags
+parameter_list|,
+name|FT_Matrix
+modifier|*
+name|trafo
 parameter_list|,
 name|gint
 name|x

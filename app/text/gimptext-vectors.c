@@ -140,11 +140,11 @@ modifier|*
 name|anchor
 decl_stmt|;
 DECL|member|offset_x
-name|gint
+name|gdouble
 name|offset_x
 decl_stmt|;
 DECL|member|offset_y
-name|gint
+name|gdouble
 name|offset_y
 decl_stmt|;
 block|}
@@ -164,8 +164,12 @@ name|PangoGlyph
 modifier|*
 name|glyph
 parameter_list|,
-name|gint
+name|FT_Int32
 name|flags
+parameter_list|,
+name|FT_Matrix
+modifier|*
+name|matrix
 parameter_list|,
 name|gint
 name|x
@@ -1013,7 +1017,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_render_vectors (PangoFont * font,PangoGlyph * pango_glyph,gint flags,gint x,gint y,RenderContext * context)
+DECL|function|gimp_text_render_vectors (PangoFont * font,PangoGlyph * pango_glyph,FT_Int32 flags,FT_Matrix * trafo,gint x,gint y,RenderContext * context)
 name|gimp_text_render_vectors
 parameter_list|(
 name|PangoFont
@@ -1024,8 +1028,12 @@ name|PangoGlyph
 modifier|*
 name|pango_glyph
 parameter_list|,
-name|gint
+name|FT_Int32
 name|flags
+parameter_list|,
+name|FT_Matrix
+modifier|*
+name|trafo
 parameter_list|,
 name|gint
 name|x
@@ -1114,13 +1122,23 @@ name|context
 operator|->
 name|offset_x
 operator|=
+operator|(
+name|gdouble
+operator|)
 name|x
+operator|/
+name|PANGO_SCALE
 expr_stmt|;
 name|context
 operator|->
 name|offset_y
 operator|=
+operator|(
+name|gdouble
+operator|)
 name|y
+operator|/
+name|PANGO_SCALE
 expr_stmt|;
 name|FT_Outline_Decompose
 argument_list|(
