@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad3c6640108
+DECL|struct|__anon2accf8530108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1116,7 +1116,7 @@ comment|/* File pointer */
 specifier|volatile
 name|gint32
 name|image
-decl_stmt|,
+decl_stmt|;
 comment|/* Image -- preserved against setjmp() */
 name|gint32
 name|layer

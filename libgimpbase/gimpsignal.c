@@ -91,7 +91,7 @@ name|ret
 operator|<
 literal|0
 condition|)
-name|gimp_fatal_error
+name|g_error
 argument_list|(
 literal|"unable to set handler for signal %d\n"
 argument_list|,
