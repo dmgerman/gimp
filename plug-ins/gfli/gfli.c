@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<config.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -41,6 +47,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/stdplugins-intl.h>
 end_include
 
 begin_include
@@ -778,6 +790,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1100,6 +1115,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1300,6 +1318,9 @@ name|height
 decl_stmt|,
 name|frames
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*        * check for valid parameters;        */
 if|if
 condition|(
@@ -1549,7 +1570,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"FLI: can't open \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1667,21 +1691,12 @@ name|cnt
 decl_stmt|;
 name|name_buf
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-literal|64
-operator|+
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name_buf
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1713,7 +1728,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"FLI: can't open \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1969,17 +1987,14 @@ name|cnt
 operator|++
 control|)
 block|{
-name|gchar
-name|layername
-index|[
-literal|64
-index|]
-decl_stmt|;
-name|sprintf
+name|name_buf
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|layername
-argument_list|,
+name|_
+argument_list|(
 literal|"Frame (%i)"
+argument_list|)
 argument_list|,
 name|cnt
 argument_list|)
@@ -1990,7 +2005,7 @@ name|gimp_layer_new
 argument_list|(
 name|image_id
 argument_list|,
-name|layername
+name|name_buf
 argument_list|,
 name|fli_header
 operator|.
@@ -2014,6 +2029,11 @@ argument_list|,
 name|layer_ID
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name_buf
 argument_list|)
 expr_stmt|;
 name|drawable
@@ -2351,7 +2371,10 @@ name|GRAYA_IMAGE
 case|:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"FLI: Sorry, can't save images with Alpha.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2552,7 +2575,10 @@ block|}
 default|default:
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"FLI: Sorry, I can save only INDEXED and GRAY images.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2563,7 +2589,10 @@ name|name_buf
 operator|=
 name|g_strdup_printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2723,7 +2752,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"FLI: can't open \"%s\"\n"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -3354,7 +3386,10 @@ name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"GFLI 1.2 - Load framestack"
+argument_list|)
 argument_list|,
 literal|"gfli"
 argument_list|,
@@ -3370,7 +3405,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|cb_ok
 argument_list|,
@@ -3384,7 +3422,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -3521,7 +3562,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"From:"
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
@@ -3587,7 +3631,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"To:"
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
@@ -3689,7 +3736,10 @@ name|dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"GFLI 1.2 - Save framestack"
+argument_list|)
 argument_list|,
 literal|"gfli"
 argument_list|,
@@ -3705,7 +3755,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|,
 name|cb_ok
 argument_list|,
@@ -3719,7 +3772,10 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|,
 name|gtk_widget_destroy
 argument_list|,
@@ -3856,7 +3912,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"From:"
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
@@ -3922,7 +3981,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"To:"
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
