@@ -603,7 +603,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4a8800108
+DECL|struct|__anon29c776720108
 block|{
 DECL|member|name
 specifier|const
@@ -2690,6 +2690,10 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
+name|i
+operator|==
+literal|3
+operator|||
 operator|*
 name|end
 operator|==

@@ -6,13 +6,25 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib.h>
 end_include
 
 begin_include
@@ -239,11 +251,12 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"\nWRONG digest!! Please report to http://bugzilla.gnome.org/\n"
+literal|"\nWRONG digest!! "
+literal|"Please report to http://bugzilla.gnome.org/\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|EXIT_FAILURE
 return|;
 block|}
 block|}
@@ -253,7 +266,7 @@ literal|"\nLooks good.\n\n"
 argument_list|)
 expr_stmt|;
 return|return
-literal|0
+name|EXIT_SUCCESS
 return|;
 block|}
 end_function
