@@ -2256,6 +2256,14 @@ argument_list|,
 name|display2
 argument_list|)
 expr_stmt|;
+comment|/*  stop the emission of the original signal (the emission of                    *  the recursive signal is finished)                    */
+name|g_signal_stop_emission_by_name
+argument_list|(
+name|context
+argument_list|,
+literal|"display-changed"
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 block|}
