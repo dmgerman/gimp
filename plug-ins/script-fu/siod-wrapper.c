@@ -4121,9 +4121,6 @@ argument_list|(
 name|a
 argument_list|)
 decl_stmt|;
-name|gint
-name|j
-decl_stmt|;
 if|if
 condition|(
 operator|(
