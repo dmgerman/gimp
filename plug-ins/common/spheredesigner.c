@@ -243,7 +243,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc926de0103
+DECL|enum|__anon2c0474140103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -268,7 +268,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc926de0203
+DECL|enum|__anon2c0474140203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -317,7 +317,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc926de0303
+DECL|enum|__anon2c0474140303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -333,7 +333,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc926de0403
+DECL|enum|__anon2c0474140403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -380,7 +380,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0508
+DECL|struct|__anon2c0474140508
 block|{
 DECL|member|x
 DECL|member|y
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0608
+DECL|struct|__anon2c0474140608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0708
+DECL|struct|__anon2c0474140708
 block|{
 DECL|member|numcol
 name|gshort
@@ -456,7 +456,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0808
+DECL|struct|__anon2c0474140808
 block|{
 DECL|member|majtype
 name|gint
@@ -551,7 +551,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0908
+DECL|struct|__anon2c0474140908
 block|{
 DECL|member|type
 name|gshort
@@ -578,7 +578,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0a08
+DECL|struct|__anon2c0474140a08
 block|{
 DECL|member|type
 name|gshort
@@ -619,7 +619,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0b08
+DECL|struct|__anon2c0474140b08
 block|{
 DECL|member|com
 name|common
@@ -644,7 +644,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0c08
+DECL|struct|__anon2c0474140c08
 block|{
 DECL|member|com
 name|common
@@ -670,7 +670,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0d08
+DECL|struct|__anon2c0474140d08
 block|{
 DECL|member|com
 name|common
@@ -693,7 +693,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0e08
+DECL|struct|__anon2c0474140e08
 block|{
 DECL|member|com
 name|common
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de0f08
+DECL|struct|__anon2c0474140f08
 block|{
 DECL|member|com
 name|common
@@ -741,7 +741,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de1008
+DECL|struct|__anon2c0474141008
 block|{
 DECL|member|com
 name|common
@@ -764,7 +764,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc926de1108
+DECL|struct|__anon2c0474141108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -790,7 +790,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2bc926de120a
+DECL|union|__anon2c047414120a
 block|{
 DECL|member|com
 name|common
@@ -919,46 +919,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_function_decl
-specifier|static
-name|gint
-name|traceray
-parameter_list|(
-name|ray
-modifier|*
-name|r
-parameter_list|,
-name|vector
-modifier|*
-name|col
-parameter_list|,
-name|int
-name|level
-parameter_list|,
-name|double
-name|imp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gdouble
-name|turbulence
-parameter_list|(
-name|gdouble
-modifier|*
-name|point
-parameter_list|,
-name|gdouble
-name|lofreq
-parameter_list|,
-name|gdouble
-name|hifreq
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_decl_stmt
 DECL|variable|drawarea
@@ -1146,7 +1106,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bc926de1308
+DECL|struct|__anon2c0474141308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -1256,6 +1216,46 @@ name|void
 name|fileselect
 parameter_list|(
 name|gint
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|traceray
+parameter_list|(
+name|ray
+modifier|*
+name|r
+parameter_list|,
+name|vector
+modifier|*
+name|col
+parameter_list|,
+name|gint
+name|level
+parameter_list|,
+name|gdouble
+name|imp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gdouble
+name|turbulence
+parameter_list|(
+name|gdouble
+modifier|*
+name|point
+parameter_list|,
+name|gdouble
+name|lofreq
+parameter_list|,
+name|gdouble
+name|hifreq
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1467,10 +1467,10 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|start
 specifier|static
-name|gint
+name|gboolean
 name|start
 init|=
-literal|1
+name|TRUE
 decl_stmt|;
 end_decl_stmt
 
@@ -1777,7 +1777,7 @@ end_define
 
 begin_function
 specifier|static
-name|double
+name|gdouble
 DECL|function|noise3 (gdouble * vec)
 name|noise3
 parameter_list|(
@@ -1855,7 +1855,7 @@ condition|)
 block|{
 name|start
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|init
 argument_list|()
@@ -2591,7 +2591,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|double
+name|gdouble
 DECL|function|vdist (vector * a,vector * b)
 name|vdist
 parameter_list|(
@@ -2663,7 +2663,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|double
+name|gdouble
 DECL|function|vlen (vector * a)
 name|vlen
 parameter_list|(
@@ -2714,14 +2714,14 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vnorm (vector * a,double v)
+DECL|function|vnorm (vector * a,gdouble v)
 name|vnorm
 parameter_list|(
 name|vector
 modifier|*
 name|a
 parameter_list|,
-name|double
+name|gdouble
 name|v
 parameter_list|)
 block|{
@@ -2788,14 +2788,14 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|vrotate (vector * axis,double ang,vector * vector)
+DECL|function|vrotate (vector * axis,gdouble ang,vector * vector)
 name|vrotate
 parameter_list|(
 name|vector
 modifier|*
 name|axis
 parameter_list|,
-name|double
+name|gdouble
 name|ang
 parameter_list|,
 name|vector
@@ -4369,14 +4369,14 @@ block|{
 return|return
 name|solmax
 return|;
-comment|/*        *hits = solmax;        return 1;        */
+comment|/*        * hits = solmax;        * return 1;        */
 block|}
 else|else
 block|{
 return|return
 name|solmin
 return|;
-comment|/*        *hits++ = solmin;        *hits = solmax;        return 2;        */
+comment|/*        * hits++ = solmin;        * hits = solmax;        * return 2;        */
 block|}
 block|}
 end_function
@@ -4396,9 +4396,9 @@ modifier|*
 name|cylinder
 parameter_list|)
 block|{
-comment|/* fixme */
+comment|/* FIXME */
 return|return
-literal|0
+literal|0.0
 return|;
 block|}
 end_function
@@ -6524,7 +6524,7 @@ modifier|*
 name|obj
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|texture
@@ -6829,7 +6829,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 switch|switch
@@ -6976,7 +6976,7 @@ name|i
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|k
 decl_stmt|;
 name|vector
@@ -7005,7 +7005,7 @@ index|[
 name|i
 index|]
 decl_stmt|;
-name|double
+name|gdouble
 name|nstep
 init|=
 literal|0.1
@@ -8024,7 +8024,7 @@ modifier|*
 name|col
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -8034,7 +8034,7 @@ decl_stmt|;
 name|ray
 name|r
 decl_stmt|;
-name|double
+name|gdouble
 name|d
 decl_stmt|,
 name|b
@@ -8048,7 +8048,7 @@ decl_stmt|;
 name|vector
 name|pcol
 decl_stmt|;
-name|double
+name|gdouble
 name|ps
 decl_stmt|;
 name|vcopy
@@ -8366,7 +8366,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|traceray (ray * r,vector * col,int level,double imp)
+DECL|function|traceray (ray * r,vector * col,gint level,gdouble imp)
 name|traceray
 parameter_list|(
 name|ray
@@ -8377,14 +8377,14 @@ name|vector
 modifier|*
 name|col
 parameter_list|,
-name|int
+name|gint
 name|level
 parameter_list|,
-name|double
+name|gdouble
 name|imp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|b
@@ -8392,7 +8392,7 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|double
+name|gdouble
 name|t
 init|=
 operator|-
@@ -8402,7 +8402,7 @@ name|min
 init|=
 literal|0.0
 decl_stmt|;
-name|int
+name|gint
 name|type
 init|=
 operator|-
@@ -8417,7 +8417,7 @@ name|bobj
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|hits
 init|=
 literal|0
@@ -8802,7 +8802,7 @@ operator|&
 name|SMARTAMBIENT
 condition|)
 block|{
-name|double
+name|gdouble
 name|ambient
 init|=
 literal|0.3
@@ -10164,7 +10164,7 @@ operator|==
 name|FOG
 condition|)
 block|{
-name|double
+name|gdouble
 name|v
 decl_stmt|,
 name|pt
@@ -11066,16 +11066,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selectitem (GtkWidget * wg,GtkWidget * p)
+DECL|function|selectitem (GtkWidget * widget,gpointer data)
 name|selectitem
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|wg
+name|widget
 parameter_list|,
-name|GtkWidget
-modifier|*
-name|p
+name|gpointer
+name|data
 parameter_list|)
 block|{
 name|setvals
@@ -11100,7 +11099,7 @@ name|GtkWidget
 modifier|*
 name|item
 decl_stmt|;
-name|int
+name|gint
 name|n
 init|=
 name|s
@@ -11227,7 +11226,7 @@ init|=
 name|currenttexture
 argument_list|()
 decl_stmt|;
-name|int
+name|gint
 name|n
 init|=
 name|s
@@ -11827,6 +11826,26 @@ argument_list|,
 literal|"rt"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|f
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Failed to open '%s': %s"
+argument_list|,
+name|fn
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 while|while
 condition|(
 operator|!
@@ -12364,12 +12383,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|loadpreset_ok (GtkWidget * w,GtkFileSelection * fs)
+DECL|function|loadpreset_ok (GtkWidget * widget,GtkFileSelection * fs)
 name|loadpreset_ok
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GtkFileSelection
 modifier|*
@@ -12458,6 +12477,26 @@ argument_list|,
 literal|"wt"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|f
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Failed to open '%s': %s"
+argument_list|,
+name|fn
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 for|for
 control|(
 name|i
@@ -13010,12 +13049,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|savepreset_ok (GtkWidget * w,GtkFileSelection * fs)
+DECL|function|savepreset_ok (GtkWidget * widget,GtkFileSelection * fs)
 name|savepreset_ok
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GtkFileSelection
 modifier|*
@@ -13088,10 +13127,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fileselect (int action)
+DECL|function|fileselect (gint action)
 name|fileselect
 parameter_list|(
-name|int
+name|gint
 name|action
 parameter_list|)
 block|{
@@ -13973,12 +14012,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|getscales (GtkWidget * wg,gpointer data)
+DECL|function|getscales (GtkWidget * widget,gpointer data)
 name|getscales
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|wg
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -18836,7 +18875,7 @@ name|x
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|k
 decl_stmt|,
 name|dx
@@ -18851,7 +18890,7 @@ name|x
 operator|*
 name|bpp
 decl_stmt|;
-name|float
+name|gfloat
 name|a
 init|=
 name|buffer
@@ -18929,12 +18968,12 @@ expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|y
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|ty
 argument_list|)
