@@ -40,7 +40,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29b1f1d10103
+DECL|enum|__anon2a3e2d8b0103
 DECL|enumerator|BEZIER_1
 DECL|enumerator|BEZIER_2
 DECL|typedef|style_t
@@ -56,7 +56,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29b1f1d10203
+DECL|enum|__anon2a3e2d8b0203
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|enumerator|UP
@@ -2107,7 +2107,7 @@ literal|"1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Jigsaw..."
+literal|"<Image>/Filters/Render/Pattern/Jigsaw..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -14565,7 +14565,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"jigsaw"
+literal|"Jigsaw"
 argument_list|)
 argument_list|)
 expr_stmt|;

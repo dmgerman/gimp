@@ -54,7 +54,7 @@ comment|/* Typedefs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ae8ee390108
+DECL|struct|__anon29224f2a0108
 typedef|typedef
 struct|struct
 block|{
@@ -121,7 +121,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ae8ee390208
+DECL|struct|__anon29224f2a0208
 typedef|typedef
 struct|struct
 block|{
@@ -1728,7 +1728,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GIMP HTML Magic"
+literal|"GIMP Table Magic"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -5020,7 +5020,7 @@ name|gck_label_aligned_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Hightlight:"
+literal|"Highlight:"
 argument_list|)
 argument_list|,
 name|NULL
