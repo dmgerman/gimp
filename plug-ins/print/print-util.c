@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6118ce0108
+DECL|struct|__anon276a68b10108
 block|{
 DECL|member|steps
 name|unsigned
@@ -1118,11 +1118,15 @@ if|if
 condition|(
 name|c
 operator|==
-name|m
+literal|0
 operator|&&
-name|c
+name|m
 operator|==
+literal|0
+operator|&&
 name|y
+operator|==
+literal|0
 condition|)
 return|return;
 name|k
