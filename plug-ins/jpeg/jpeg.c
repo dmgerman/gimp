@@ -96,6 +96,12 @@ directive|include
 file|"jpeg-save.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpexif.h"
+end_include
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -1128,35 +1134,17 @@ block|}
 ifdef|#
 directive|ifdef
 name|HAVE_EXIF
-name|parasite
+name|exif_data
 operator|=
-name|gimp_image_parasite_find
+name|gimp_metadata_generate_exif
 argument_list|(
 name|orig_image_ID
-argument_list|,
-literal|"exif-data"
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parasite
-condition|)
-block|{
 name|exif_data
-operator|=
-name|exif_data_new_from_data
-argument_list|(
-name|gimp_parasite_data
-argument_list|(
-name|parasite
-argument_list|)
-argument_list|,
-name|gimp_parasite_data_size
-argument_list|(
-name|parasite
-argument_list|)
-argument_list|)
-expr_stmt|;
+condition|)
 name|jpeg_setup_exif_for_save
 argument_list|(
 name|exif_data
@@ -1164,12 +1152,6 @@ argument_list|,
 name|orig_image_ID
 argument_list|)
 expr_stmt|;
-name|gimp_parasite_free
-argument_list|(
-name|parasite
-argument_list|)
-expr_stmt|;
-block|}
 endif|#
 directive|endif
 comment|/* HAVE_EXIF */
