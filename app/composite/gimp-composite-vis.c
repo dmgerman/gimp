@@ -93,7 +93,7 @@ comment|/* defined(USE_VIS) */
 end_comment
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_composite_vis_init (void)
 name|gimp_composite_vis_init
 parameter_list|(
@@ -105,14 +105,14 @@ directive|ifdef
 name|ARCH_SPARC
 return|return
 operator|(
-literal|1
+name|TRUE
 operator|)
 return|;
 else|#
 directive|else
 return|return
 operator|(
-literal|0
+name|FALSE
 operator|)
 return|;
 endif|#

@@ -13,7 +13,8 @@ name|gimp_composite_generic_h
 end_define
 
 begin_function_decl
-name|void
+specifier|extern
+name|gboolean
 name|gimp_composite_generic_init
 parameter_list|(
 name|void
@@ -26,7 +27,8 @@ comment|/* 	* The function gimp_composite_*_install() is defined in the code gen
 end_comment
 
 begin_function_decl
-name|void
+specifier|extern
+name|gboolean
 name|gimp_composite_generic_install
 parameter_list|(
 name|void

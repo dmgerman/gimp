@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*- 	* 	* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -1898,7 +1898,7 @@ comment|/* USE_MMX */
 end_comment
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_composite_mmx_init (void)
 name|gimp_composite_mmx_init
 parameter_list|(
@@ -1916,22 +1916,17 @@ name|defined
 argument_list|(
 name|ARCH_X86
 argument_list|)
-name|guint32
-name|cpu
-init|=
-name|cpu_accel
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
-name|cpu
+name|cpu_accel
+argument_list|()
 operator|&
 name|CPU_ACCEL_X86_MMX
 condition|)
 block|{
 return|return
 operator|(
-literal|1
+name|TRUE
 operator|)
 return|;
 block|}
@@ -1939,7 +1934,7 @@ endif|#
 directive|endif
 return|return
 operator|(
-literal|0
+name|FALSE
 operator|)
 return|;
 block|}

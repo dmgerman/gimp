@@ -1644,7 +1644,7 @@ comment|/* defined(USE_SSE) */
 end_comment
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_composite_sse2_init (void)
 name|gimp_composite_sse2_init
 parameter_list|(
@@ -1681,7 +1681,7 @@ condition|)
 block|{
 return|return
 operator|(
-literal|1
+name|TRUE
 operator|)
 return|;
 block|}
@@ -1689,7 +1689,7 @@ endif|#
 directive|endif
 return|return
 operator|(
-literal|0
+name|FALSE
 operator|)
 return|;
 block|}

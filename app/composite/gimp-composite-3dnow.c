@@ -99,7 +99,7 @@ comment|/* USE_MMX */
 end_comment
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_composite_3dnow_init (void)
 name|gimp_composite_3dnow_init
 parameter_list|(
@@ -117,22 +117,17 @@ name|defined
 argument_list|(
 name|ARCH_X86
 argument_list|)
-name|guint32
-name|cpu
-init|=
-name|cpu_accel
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
-name|cpu
+name|cpu_accel
+argument_list|()
 operator|&
 name|CPU_ACCEL_X86_3DNOW
 condition|)
 block|{
 return|return
 operator|(
-literal|1
+name|FALSE
 operator|)
 return|;
 block|}
@@ -140,7 +135,7 @@ endif|#
 directive|endif
 return|return
 operator|(
-literal|0
+name|TRUE
 operator|)
 return|;
 block|}

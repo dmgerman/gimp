@@ -100,30 +100,6 @@ name|defined
 argument_list|(
 name|ARCH_X86
 argument_list|)
-name|printf
-argument_list|(
-literal|"\nRunning gimp_composite_sse2 tests...\n"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_composite_sse2_init
-argument_list|()
-operator|==
-literal|0
-condition|)
-block|{
-name|printf
-argument_list|(
-literal|"gimp_composite_sse2: Instruction set is not available.\n"
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-literal|0
-operator|)
-return|;
-block|}
 name|GimpCompositeContext
 name|generic_ctx
 decl_stmt|;
@@ -179,6 +155,30 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
+name|printf
+argument_list|(
+literal|"\nRunning gimp_composite_sse2 tests...\n"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_composite_sse2_init
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+name|printf
+argument_list|(
+literal|"gimp_composite_sse2: Instruction set is not available.\n"
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+literal|0
+operator|)
+return|;
+block|}
 name|rgba8A
 operator|=
 name|gimp_composite_regression_fixed_rgba8

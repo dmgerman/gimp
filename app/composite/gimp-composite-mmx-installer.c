@@ -291,7 +291,7 @@ struct|;
 end_struct
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_composite_mmx_install (void)
 name|gimp_composite_mmx_install
 parameter_list|(
@@ -306,6 +306,12 @@ name|t
 init|=
 name|_gimp_composite_mmx
 decl_stmt|;
+if|if
+condition|(
+name|gimp_composite_mmx_init
+argument_list|()
+condition|)
+block|{
 for|for
 control|(
 name|t
@@ -353,9 +359,17 @@ operator|->
 name|function
 expr_stmt|;
 block|}
-name|gimp_composite_mmx_init
-argument_list|()
-expr_stmt|;
+return|return
+operator|(
+name|TRUE
+operator|)
+return|;
+block|}
+return|return
+operator|(
+name|FALSE
+operator|)
+return|;
 block|}
 end_function
 

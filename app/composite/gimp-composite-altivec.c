@@ -78,7 +78,7 @@ comment|/* ARCH_PPC */
 end_comment
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_composite_altivec_init (void)
 name|gimp_composite_altivec_init
 parameter_list|(
@@ -88,22 +88,17 @@ block|{
 ifdef|#
 directive|ifdef
 name|ARCH_PPC
-name|guint32
-name|cpu
-init|=
-name|cpu_accel
-argument_list|()
-decl_stmt|;
 if|if
 condition|(
-name|cpu
+name|cpu_accel
+argument_list|()
 operator|&
 name|CPU_ACCEL_PPC_ALTIVEC
 condition|)
 block|{
 return|return
 operator|(
-literal|1
+name|TRUE
 operator|)
 return|;
 block|}
@@ -111,7 +106,7 @@ endif|#
 directive|endif
 return|return
 operator|(
-literal|0
+name|FALSE
 operator|)
 return|;
 block|}

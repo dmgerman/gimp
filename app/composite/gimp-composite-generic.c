@@ -6212,7 +6212,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_composite_generic_init (void)
 name|gimp_composite_generic_init
 parameter_list|(
@@ -6307,6 +6307,11 @@ index|]
 operator|=
 literal|255
 expr_stmt|;
+return|return
+operator|(
+name|TRUE
+operator|)
+return|;
 block|}
 end_function
 

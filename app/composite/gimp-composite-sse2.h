@@ -14,7 +14,7 @@ end_define
 
 begin_function_decl
 specifier|extern
-name|int
+name|gboolean
 name|gimp_composite_sse2_init
 parameter_list|(
 name|void
@@ -28,7 +28,7 @@ end_comment
 
 begin_function_decl
 specifier|extern
-name|void
+name|gboolean
 name|gimp_composite_sse2_install
 parameter_list|(
 name|void

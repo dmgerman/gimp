@@ -50,7 +50,7 @@ file|"gimp-composite-altivec.h"
 end_include
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_composite_altivec_install (void)
 name|gimp_composite_altivec_install
 parameter_list|(
@@ -58,9 +58,11 @@ name|void
 parameter_list|)
 block|{
 comment|/* nothing to do */
-name|gimp_composite_altivec_init
-argument_list|()
-expr_stmt|;
+return|return
+operator|(
+name|FALSE
+operator|)
+return|;
 block|}
 end_function
 
