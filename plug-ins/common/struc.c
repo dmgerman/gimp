@@ -43,6 +43,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_NAME
+define|#
+directive|define
+name|PLUG_IN_NAME
+value|"plug_in_apply_canvas"
+end_define
+
 begin_decl_stmt
 DECL|variable|sdata
 specifier|static
@@ -40873,7 +40881,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9936720103
+DECL|enum|__anon2950cb860103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40893,7 +40901,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9936720208
+DECL|struct|__anon2950cb860208
 block|{
 DECL|member|direction
 name|gint
@@ -41096,7 +41104,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_apply_canvas"
+name|PLUG_IN_NAME
 argument_list|,
 literal|"Adds a canvas texture map to the picture"
 argument_list|,
@@ -41133,7 +41141,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_apply_canvas"
+name|PLUG_IN_NAME
 argument_list|,
 literal|"<Image>/Filters/Artistic"
 argument_list|)
@@ -41259,7 +41267,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_struc"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|svals
@@ -41377,7 +41385,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_struc"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|svals
@@ -41461,7 +41469,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_struc"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|svals

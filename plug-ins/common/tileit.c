@@ -55,6 +55,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_NAME
+define|#
+directive|define
+name|PLUG_IN_NAME
+value|"plug_in_small_tiles"
+end_define
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -114,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a5fdc0108
+DECL|struct|__anon286e367c0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -496,7 +504,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0a5fdc0203
+DECL|enum|__anon286e367c0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -515,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a5fdc0308
+DECL|struct|__anon286e367c0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -585,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a5fdc0408
+DECL|struct|__anon286e367c0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -794,7 +802,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_small_tiles"
+name|PLUG_IN_NAME
 argument_list|,
 literal|"Tiles image into smaller versions of the orginal"
 argument_list|,
@@ -829,7 +837,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-literal|"plug_in_small_tiles"
+name|PLUG_IN_NAME
 argument_list|,
 literal|"<Image>/Filters/Map"
 argument_list|)
@@ -1065,7 +1073,7 @@ name|GIMP_RUN_INTERACTIVE
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_tileit"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|itvals
@@ -1123,7 +1131,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_tileit"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|itvals
@@ -1196,7 +1204,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_tileit"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|itvals
