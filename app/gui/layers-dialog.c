@@ -4120,9 +4120,9 @@ operator|=
 name|gtk_list_new
 argument_list|()
 expr_stmt|;
-name|gtk_container_add
+name|gtk_scrolled_window_add_with_viewport
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_SCROLLED_WINDOW
 argument_list|(
 name|listbox
 argument_list|)
@@ -4292,7 +4292,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27fbcf600108
+DECL|struct|__anon2bd4928f0108
 typedef|typedef
 struct|struct
 block|{

@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<netinet/in.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<unistd.h>
 end_include
 
@@ -960,7 +954,7 @@ block|{
 operator|*
 name|data
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 operator|*
 name|data
@@ -1030,7 +1024,7 @@ block|{
 operator|*
 name|data
 operator|=
-name|ntohs
+name|g_ntohs
 argument_list|(
 operator|*
 name|data
@@ -1321,7 +1315,7 @@ control|)
 block|{
 name|tmp
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 name|data
 index|[
@@ -1402,7 +1396,7 @@ control|)
 block|{
 name|tmp
 operator|=
-name|htons
+name|g_htons
 argument_list|(
 name|data
 index|[

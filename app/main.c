@@ -1692,7 +1692,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8c42e0108
+DECL|struct|__anon2b0933d90108
 block|{
 DECL|member|test_gint32
 name|gint32
@@ -1801,16 +1801,6 @@ literal|7
 block|,
 literal|8
 block|}
-decl_stmt|;
-name|void
-modifier|*
-name|ser
-decl_stmt|;
-name|long
-name|len
-decl_stmt|;
-name|int
-name|i
 decl_stmt|;
 name|ts
 operator|=

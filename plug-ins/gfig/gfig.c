@@ -8250,7 +8250,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3c76410108
+DECL|struct|__anon29450cdb0108
 block|{
 DECL|member|color_string
 name|gchar
@@ -17907,7 +17907,7 @@ if|#
 directive|if
 literal|0
 comment|/* Brush list */
-block|list_frame = gtk_frame_new(NULL);   gtk_frame_set_shadow_type (GTK_FRAME (list_frame), GTK_SHADOW_ETCHED_IN);   gtk_widget_show(list_frame);    scrolled_win = gtk_scrolled_window_new (NULL, NULL);   gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_win),                                   GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);   gtk_container_add (GTK_CONTAINER (list_frame), scrolled_win);   gtk_widget_show (scrolled_win);    list = gtk_list_new ();   gtk_list_set_selection_mode (GTK_LIST (list), GTK_SELECTION_SINGLE);   gtk_container_add (GTK_CONTAINER (scrolled_win), list);   gtk_widget_show (list);   gtk_table_attach(GTK_TABLE(table), list_frame, 0, 4, 1, 5, GTK_FILL|GTK_EXPAND , GTK_FILL|GTK_EXPAND, 0, 0);
+block|list_frame = gtk_frame_new(NULL);   gtk_frame_set_shadow_type (GTK_FRAME (list_frame), GTK_SHADOW_ETCHED_IN);   gtk_widget_show(list_frame);    scrolled_win = gtk_scrolled_window_new (NULL, NULL);   gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled_win),                                   GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);   gtk_container_add (GTK_CONTAINER (list_frame), scrolled_win);   gtk_widget_show (scrolled_win);    list = gtk_list_new ();   gtk_list_set_selection_mode (GTK_LIST (list), GTK_SELECTION_SINGLE);   gtk_scrolled_window_add_with_viewport (GTK_SCROLLED_WINDOW (scrolled_win), 					 list);   gtk_widget_show (list);   gtk_table_attach(GTK_TABLE(table), list_frame, 0, 4, 1, 5, GTK_FILL|GTK_EXPAND , GTK_FILL|GTK_EXPAND, 0, 0);
 comment|/* Get brush list and insert in table */
 block|gfig_get_brushes(list);
 endif|#
@@ -22734,9 +22734,9 @@ argument_list|,
 name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_scrolled_window_add_with_viewport
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_SCROLLED_WINDOW
 argument_list|(
 name|scrolled_win
 argument_list|)
@@ -28807,9 +28807,9 @@ argument_list|,
 name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_scrolled_window_add_with_viewport
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_SCROLLED_WINDOW
 argument_list|(
 name|scrolled_win
 argument_list|)

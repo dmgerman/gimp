@@ -855,7 +855,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2c1b8e6e0103
+DECL|enum|__anon29d14dbd0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -9685,7 +9685,7 @@ modifier|*
 name|box
 parameter_list|)
 block|{
-DECL|struct|__anon2c1b8e6e0208
+DECL|struct|__anon29d14dbd0208
 specifier|static
 struct|struct
 block|{
@@ -10301,9 +10301,9 @@ argument_list|,
 name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_scrolled_window_add_with_viewport
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_SCROLLED_WINDOW
 argument_list|(
 name|listbox
 argument_list|)

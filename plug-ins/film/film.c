@@ -127,7 +127,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f63ec20108
+DECL|struct|__anon2bb0d7270108
 typedef|typedef
 struct|struct
 block|{
@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f63ec20208
+DECL|struct|__anon2bb0d7270208
 block|{
 DECL|member|activate
 name|GtkWidget
@@ -283,7 +283,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f63ec20308
+DECL|struct|__anon2bb0d7270308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -6038,9 +6038,9 @@ argument_list|,
 name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_scrolled_window_add_with_viewport
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_SCROLLED_WINDOW
 argument_list|(
 name|scrolled_win
 argument_list|)

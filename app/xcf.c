@@ -44,12 +44,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<netinet/in.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<unistd.h>
 end_include
 
@@ -170,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273c66bb0103
+DECL|enum|__anon2c3d33d20103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -275,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273c66bb0203
+DECL|enum|__anon2c3d33d20203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -10271,7 +10265,7 @@ block|{
 operator|*
 name|data
 operator|=
-name|ntohl
+name|g_ntohl
 argument_list|(
 operator|*
 name|data
@@ -10528,7 +10522,7 @@ control|)
 block|{
 name|tmp
 operator|=
-name|htonl
+name|g_htonl
 argument_list|(
 name|data
 index|[
