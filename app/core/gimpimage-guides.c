@@ -789,7 +789,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c534760103
+DECL|enum|__anon2b77e7540103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4900,11 +4900,11 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"%s(): illegal parameters"
+literal|"%s: illegal parameters."
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5470,11 +5470,11 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"%s(): got illegal parameters"
+literal|"%s: illegal parameters."
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -8018,7 +8018,10 @@ literal|0
 condition|)
 name|g_warning
 argument_list|(
-literal|"gimp_image_get_new_tattoo(): Tattoo state has become corrupt (2.1 billion operation limit exceded)"
+literal|"%s: Tattoo state corrupted "
+literal|"(integer overflow)."
+argument_list|,
+name|G_GNUC_PRETTY_FUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -9125,11 +9128,11 @@ name|INITIAL_INDEXED
 argument_list|)
 expr_stmt|;
 else|else
-name|g_message
+name|g_warning
 argument_list|(
-literal|"%s(): unable to project indexed image."
+literal|"%s: unable to project indexed image."
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 block|}
@@ -13218,10 +13221,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s(): layer cannot be raised any further"
+literal|"Layer cannot be raised higher."
 argument_list|)
-argument_list|,
-name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -13322,10 +13323,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s(): layer cannot be lowered any further"
+literal|"Layer cannot be lowered more."
 argument_list|)
-argument_list|,
-name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -13411,10 +13410,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s(): layer is already on top"
+literal|"Layer is already on top."
 argument_list|)
-argument_list|,
-name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -13434,10 +13431,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s(): can't raise Layer without alpha"
+literal|"Cannot raise a layer without alpha."
 argument_list|)
-argument_list|,
-name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -13535,10 +13530,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s(): layer is already on bottom"
+literal|"Layer is already on the bottom."
 argument_list|)
-argument_list|,
-name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -13726,8 +13719,15 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"BG has no alpha, layer was placed above"
+literal|"Layer \"%s\" has no alpha.\nLayer was placed above it."
 argument_list|)
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|tmp
+argument_list|)
+operator|->
+name|name
 argument_list|)
 expr_stmt|;
 name|new_index
@@ -13995,7 +13995,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"There are not enough visible layers for a merge.\nThere must be at least two."
+literal|"Not enough visible layers for a merge.\n"
+literal|"There must be at least two."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -14986,9 +14987,11 @@ operator|!
 name|merge_layer
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"gimp_image_merge_layers: could not allocate merge layer"
+literal|"%s: could not allocate merge layer."
+argument_list|,
+name|G_GNUC_PRETTY_FUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -15111,9 +15114,11 @@ operator|!
 name|merge_layer
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"gimp_image_merge_layers: could not allocate merge layer"
+literal|"%s: could not allocate merge layer"
+argument_list|,
+name|G_GNUC_PRETTY_FUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -15320,9 +15325,11 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"gimp_image_merge_layers attempting to merge incompatible layers\n"
+literal|"%s: attempting to merge incompatible layers."
+argument_list|,
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -15821,9 +15828,11 @@ operator|!=
 name|gimage
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"gimp_image_add_layer: attempt to add layer to wrong image"
+literal|"%s: attempting to add layer to wrong image."
+argument_list|,
+name|G_GNUC_PRETTY_FUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -15845,9 +15854,11 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"gimp_image_add_layer: trying to add layer to image twice"
+literal|"%s: trying to add layer to image twice."
+argument_list|,
+name|G_GNUC_PRETTY_FUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -16430,7 +16441,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Channel cannot be raised any further"
+literal|"Channel cannot be raised higher."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16524,7 +16535,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Channel cannot be lowered any further"
+literal|"Channel cannot be lowered more."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -16760,11 +16771,11 @@ operator|!=
 name|gimage
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"%s(): attempt to add channel to wrong image"
+literal|"%s: attempting to add channel to wrong image."
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -16786,11 +16797,11 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"%s(): trying to add channel to image twice"
+literal|"%s: trying to add channel to image twice."
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return

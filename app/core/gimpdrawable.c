@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c97c9f30103
+DECL|enum|__anon2ae6efc50103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1306,7 +1306,7 @@ name|name
 operator|=
 name|_
 argument_list|(
-literal|"unnamed"
+literal|"Unnamed"
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1387,12 +1387,11 @@ name|TRUE
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"Layer type %d not supported."
-argument_list|)
+literal|"%s: Layer type %d not supported."
+argument_list|,
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|,
 name|type
 argument_list|)
@@ -2247,12 +2246,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"Can't fill unknown image type."
-argument_list|)
+literal|"%s: Cannot fill unknown image type."
+argument_list|,
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2418,7 +2416,11 @@ return|return;
 default|default:
 name|g_warning
 argument_list|(
-literal|"gimp_drawable_fill_by_type(): unknown fill type"
+literal|"%s: unknown fill type %d"
+argument_list|,
+name|G_GNUC_PRETTY_FUNCTION
+argument_list|,
+name|fill_type
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3386,7 +3388,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"parasite attach to drawable"
+literal|"parasite attached to drawable"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3558,7 +3560,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"detach parasite from drawable"
+literal|"parasite detached from drawable"
 argument_list|)
 argument_list|)
 expr_stmt|;

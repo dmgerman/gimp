@@ -371,7 +371,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No available patterns for this operation."
+literal|"No patterns available for this operation."
 argument_list|)
 argument_list|)
 expr_stmt|;

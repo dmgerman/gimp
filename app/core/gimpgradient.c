@@ -1390,7 +1390,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid UTF-8 string in GIMP gradient file \"%s\"."
+literal|"Invalid UTF-8 string in gradient file '%s'."
 argument_list|)
 argument_list|,
 name|filename
@@ -1466,9 +1466,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s(): invalid number of segments in \"%s\""
-argument_list|,
-name|G_GNUC_FUNCTION
+literal|"Fatal parsing error:\nGradient file '%s' is corrupt."
 argument_list|,
 name|filename
 argument_list|)
@@ -1822,10 +1820,10 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"%s(): badly formatted gradient segment %d in \"%s\" --- "
-literal|"bad things may happen soon"
-argument_list|,
-name|G_GNUC_FUNCTION
+name|_
+argument_list|(
+literal|"Corrupt segment %d in gradient file '%s'."
+argument_list|)
 argument_list|,
 name|i
 argument_list|,
@@ -1963,13 +1961,19 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"%s(): can't open \"%s\""
-argument_list|,
-name|G_GNUC_FUNCTION
+name|_
+argument_list|(
+literal|"Unable to save '%s':\n%s"
+argument_list|)
 argument_list|,
 name|data
 operator|->
 name|filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2589,15 +2593,12 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|gimp_fatal_error
+name|g_warning
 argument_list|(
-literal|"%s(): Unknown gradient type %d"
+literal|"%s: Unknown gradient type %d."
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|,
-operator|(
-name|gint
-operator|)
 name|seg
 operator|->
 name|type
@@ -2936,11 +2937,11 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|gimp_fatal_error
+name|g_warning
 argument_list|(
 literal|"%s(): Unknown coloring mode %d"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|,
 operator|(
 name|gint
@@ -3084,11 +3085,11 @@ expr_stmt|;
 block|}
 block|}
 comment|/* Oops: we should have found a segment, but we didn't */
-name|gimp_fatal_error
+name|g_warning
 argument_list|(
 literal|"%s(): no matching segment for position %0.15f"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_GNUC_PRETTY_FUNCTION
 argument_list|,
 name|pos
 argument_list|)

@@ -35082,7 +35082,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894cc670108
+DECL|struct|__anon27ccc4fc0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35159,7 +35159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894cc670208
+DECL|struct|__anon27ccc4fc0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35350,7 +35350,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2894cc670308
+DECL|struct|__anon27ccc4fc0308
 block|{
 DECL|member|used_count
 name|signed
@@ -39062,7 +39062,7 @@ name|needs_quantize
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*			  g_print (_("\nmax colours exceeded - needs quantize.\n"));*/
+comment|/*			  g_print ("\nmax colours exceeded - needs quantize.\n");*/
 goto|goto
 name|already_found
 goto|;
@@ -46738,8 +46738,8 @@ block|}
 block|}
 name|g_error
 argument_list|(
-literal|"Non-existant colour was expected to "
-literal|"be in non-destructive colourmap."
+literal|"Nonexistent color was expected to "
+literal|"be in nondestructive colormap."
 argument_list|)
 expr_stmt|;
 name|got_colour

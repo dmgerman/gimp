@@ -1005,12 +1005,14 @@ block|}
 block|}
 else|else
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"%s(): trying legacy loader on file with unknown "
-literal|"extension: %s"
-argument_list|,
-name|G_GNUC_FUNCTION
+name|_
+argument_list|(
+literal|"Trying legacy loader on\n"
+literal|"file '%s'\n"
+literal|"with unknown extension."
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -1059,7 +1061,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Warning: Failed to load data from\n\"%s\""
+literal|"Warning: Failed to load data from\n'%s'"
 argument_list|)
 argument_list|,
 name|filename

@@ -843,8 +843,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to cut/copy because the selected\n"
-literal|"region is empty."
+literal|"Unable to cut or copy because the\n"
+literal|"selected region is empty."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1499,7 +1499,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Float Selection: No selection to float."
+literal|"Cannot float selection: No selection made."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2194,7 +2194,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"No selection to stroke!"
+literal|"No selection to stroke."
 argument_list|)
 argument_list|)
 expr_stmt|;
