@@ -2045,7 +2045,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_paint_core_constrain_helper:  * @dx: the (fixed) delta-x  * @dy: a suggested delta-y  *   * Returns an adjusted dy' near dy such that the slope (dx,dy') is a  * multiple of 15 degrees.  **/
+comment|/**  * gimp_paint_core_constrain_helper:  * @dx: the (fixed) delta-x  * @dy: a suggested delta-y  *  * Returns an adjusted dy' near dy such that the slope (dx,dy') is a  * multiple of 15 degrees.  **/
 end_comment
 
 begin_function

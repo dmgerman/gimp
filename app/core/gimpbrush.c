@@ -176,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c383d8f0103
+DECL|enum|__anon2a2ab40f0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
