@@ -483,6 +483,8 @@ literal|"Balazs Nagy"
 block|,
 literal|"Miles O'Neal"
 block|,
+literal|"Garry R. Osgood"
+block|,
 literal|"Jay Painter"
 block|,
 literal|"Asbjorn Pettersen"
