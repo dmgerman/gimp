@@ -153,7 +153,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc37830103
+DECL|enum|__anon2a4e02200103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc37830203
+DECL|enum|__anon2a4e02200203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1353,7 +1353,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc37830308
+DECL|struct|__anon2a4e02200308
 block|{
 DECL|member|fd
 name|gint
@@ -2615,10 +2615,7 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|gimp_container_disconnect_callback
-argument_list|)
 argument_list|,
 name|container
 argument_list|)
@@ -3682,7 +3679,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: tried to unhandler which id %d"
+literal|"%s: tried to remove handler which unknown id %d"
 argument_list|,
 name|G_STRLOC
 argument_list|,
