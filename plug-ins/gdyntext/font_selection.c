@@ -193,7 +193,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon296480ab0103
+DECL|enum|__anon28b99e0e0103
 enum|enum
 block|{
 DECL|enumerator|FONT_CHANGED
@@ -2204,7 +2204,7 @@ argument_list|(
 name|GTK_WINDOW_DIALOG
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
