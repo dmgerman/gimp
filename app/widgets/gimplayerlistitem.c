@@ -967,7 +967,7 @@ name|layer_item
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_signal_connect
+name|gtk_signal_connect_while_alive
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -982,6 +982,11 @@ name|gimp_layer_list_item_mask_changed
 argument_list|)
 argument_list|,
 name|list_item
+argument_list|,
+name|GTK_OBJECT
+argument_list|(
+name|list_item
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1812,7 +1817,7 @@ name|layer_item
 operator|->
 name|mask_preview
 argument_list|,
-literal|2
+literal|3
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8311970108
+DECL|struct|__anon2a433e2d0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8311970208
+DECL|struct|__anon2a433e2d0208
 block|{
 DECL|member|boole
 name|gboolean
@@ -3270,6 +3270,10 @@ argument_list|(
 name|ideas
 operator|->
 name|window
+argument_list|,
+name|gimp_dnd_open_files
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|dialog_register
