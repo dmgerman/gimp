@@ -85,10 +85,6 @@ specifier|static
 name|void
 name|start_new_gimp
 argument_list|(
-name|GdkDisplay
-operator|*
-name|display
-argument_list|,
 name|GdkScreen
 operator|*
 name|screen
@@ -524,13 +520,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|start_new_gimp (GdkDisplay * display,GdkScreen * screen,const gchar * argv0,const gchar * startup_id,GString * file_list)
+DECL|function|start_new_gimp (GdkScreen * screen,const gchar * argv0,const gchar * startup_id,GString * file_list)
 name|start_new_gimp
 parameter_list|(
-name|GdkDisplay
-modifier|*
-name|display
-parameter_list|,
 name|GdkScreen
 modifier|*
 name|screen
@@ -811,15 +803,26 @@ name|gimp
 condition|)
 break|break;
 block|}
-comment|/*  Close the display so that gimp can reopen it later without getting    *  into authentification problems with the X server (see bug #139158).    */
-name|XCloseDisplay
+comment|/* We must ensure that gimp is started with a different PID.      Otherwise it could happen that (when it opens it's display) it sends      the same auth token again (because that one is uniquified with PID      and time()), which the server would deny.  */
+switch|switch
+condition|(
+name|fork
+argument_list|()
+condition|)
+block|{
+case|case
+operator|-
+literal|1
+case|:
+name|exit
 argument_list|(
-name|gdk_x11_display_get_xdisplay
-argument_list|(
-name|display
-argument_list|)
+name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
+case|case
+literal|0
+case|:
+comment|/* child */
 name|execv
 argument_list|(
 name|gimp
@@ -834,7 +837,7 @@ argument_list|,
 name|argv
 argument_list|)
 expr_stmt|;
-comment|/*  if execv and execvp return, there was an arror  */
+comment|/*  if execv and execvp return, there was an error  */
 name|g_printerr
 argument_list|(
 literal|"Couldn't start %s for the following reason: %s\n"
@@ -850,6 +853,15 @@ expr_stmt|;
 name|exit
 argument_list|(
 name|EXIT_FAILURE
+argument_list|)
+expr_stmt|;
+default|default:
+comment|/* parent */
+break|break;
+block|}
+name|exit
+argument_list|(
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 block|}
@@ -1423,8 +1435,6 @@ condition|)
 block|{
 name|start_new_gimp
 argument_list|(
-name|display
-argument_list|,
 name|screen
 argument_list|,
 name|argv
@@ -1661,8 +1671,6 @@ condition|)
 block|{
 name|start_new_gimp
 argument_list|(
-name|display
-argument_list|,
 name|screen
 argument_list|,
 name|argv
