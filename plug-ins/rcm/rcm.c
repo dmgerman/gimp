@@ -259,7 +259,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug-in-rotate-colormap"
+literal|"plug_in_rotate_colormap"
 argument_list|,
 literal|"Colormap rotation as in xv"
 argument_list|,
