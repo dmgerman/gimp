@@ -9860,6 +9860,14 @@ name|retval
 operator|=
 name|translation
 expr_stmt|;
+else|else
+name|g_warning
+argument_list|(
+literal|"bad translation for menupath: %s"
+argument_list|,
+name|menupath
+argument_list|)
+expr_stmt|;
 name|i
 operator|=
 literal|0
@@ -9934,6 +9942,14 @@ operator|+
 name|strlen
 argument_list|(
 name|factory
+argument_list|)
+expr_stmt|;
+else|else
+name|g_warning
+argument_list|(
+literal|"bad translation for menupath: %s"
+argument_list|,
+name|menupath
 argument_list|)
 expr_stmt|;
 block|}
