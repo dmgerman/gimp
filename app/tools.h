@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a43efd0103
+DECL|enum|__anon2c10ec0b0103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -213,10 +213,6 @@ DECL|member|tool_name
 name|gchar
 modifier|*
 name|tool_name
-decl_stmt|;
-DECL|member|toolbar_position
-name|gint
-name|toolbar_position
 decl_stmt|;
 DECL|member|menu_path
 name|gchar

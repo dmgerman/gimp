@@ -378,8 +378,6 @@ argument_list|(
 literal|"Rect Select"
 argument_list|)
 block|,
-literal|0
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Rect Select"
@@ -421,8 +419,6 @@ name|N_
 argument_list|(
 literal|"Ellipse Select"
 argument_list|)
-block|,
-literal|1
 block|,
 name|N_
 argument_list|(
@@ -466,8 +462,6 @@ argument_list|(
 literal|"Free Select"
 argument_list|)
 block|,
-literal|2
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Free Select"
@@ -509,8 +503,6 @@ name|N_
 argument_list|(
 literal|"Fuzzy Select"
 argument_list|)
-block|,
-literal|3
 block|,
 name|N_
 argument_list|(
@@ -554,8 +546,6 @@ argument_list|(
 literal|"Bezier Select"
 argument_list|)
 block|,
-literal|4
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Bezier Select"
@@ -597,8 +587,6 @@ name|N_
 argument_list|(
 literal|"Intelligent Scissors"
 argument_list|)
-block|,
-literal|5
 block|,
 name|N_
 argument_list|(
@@ -642,8 +630,6 @@ argument_list|(
 literal|"Move"
 argument_list|)
 block|,
-literal|6
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Move"
@@ -685,8 +671,6 @@ name|N_
 argument_list|(
 literal|"Magnify"
 argument_list|)
-block|,
-literal|7
 block|,
 name|N_
 argument_list|(
@@ -730,8 +714,6 @@ argument_list|(
 literal|"Crop& Resize"
 argument_list|)
 block|,
-literal|8
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Crop& Resize"
@@ -773,8 +755,6 @@ name|N_
 argument_list|(
 literal|"Transform"
 argument_list|)
-block|,
-literal|9
 block|,
 name|N_
 argument_list|(
@@ -819,8 +799,6 @@ argument_list|(
 literal|"Transform"
 argument_list|)
 block|,
-literal|9
-block|,
 name|NULL
 block|,
 name|NULL
@@ -855,8 +833,6 @@ name|N_
 argument_list|(
 literal|"Transform"
 argument_list|)
-block|,
-literal|9
 block|,
 name|NULL
 block|,
@@ -893,8 +869,6 @@ argument_list|(
 literal|"Transform"
 argument_list|)
 block|,
-literal|9
-block|,
 name|NULL
 block|,
 name|NULL
@@ -929,8 +903,6 @@ name|N_
 argument_list|(
 literal|"Flip"
 argument_list|)
-block|,
-literal|10
 block|,
 name|N_
 argument_list|(
@@ -974,8 +946,6 @@ argument_list|(
 literal|"Text"
 argument_list|)
 block|,
-literal|11
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Text"
@@ -1017,8 +987,6 @@ name|N_
 argument_list|(
 literal|"Color Picker"
 argument_list|)
-block|,
-literal|12
 block|,
 name|N_
 argument_list|(
@@ -1062,8 +1030,6 @@ argument_list|(
 literal|"Bucket Fill"
 argument_list|)
 block|,
-literal|13
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Bucket Fill"
@@ -1105,8 +1071,6 @@ name|N_
 argument_list|(
 literal|"Blend"
 argument_list|)
-block|,
-literal|14
 block|,
 name|N_
 argument_list|(
@@ -1150,8 +1114,6 @@ argument_list|(
 literal|"Pencil"
 argument_list|)
 block|,
-literal|15
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Pencil"
@@ -1193,8 +1155,6 @@ name|N_
 argument_list|(
 literal|"Paintbrush"
 argument_list|)
-block|,
-literal|16
 block|,
 name|N_
 argument_list|(
@@ -1238,8 +1198,6 @@ argument_list|(
 literal|"Eraser"
 argument_list|)
 block|,
-literal|17
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Eraser"
@@ -1281,8 +1239,6 @@ name|N_
 argument_list|(
 literal|"Airbrush"
 argument_list|)
-block|,
-literal|18
 block|,
 name|N_
 argument_list|(
@@ -1326,8 +1282,6 @@ argument_list|(
 literal|"Clone"
 argument_list|)
 block|,
-literal|19
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Clone"
@@ -1369,8 +1323,6 @@ name|N_
 argument_list|(
 literal|"Convolve"
 argument_list|)
-block|,
-literal|20
 block|,
 name|N_
 argument_list|(
@@ -1414,8 +1366,6 @@ argument_list|(
 literal|"Ink"
 argument_list|)
 block|,
-literal|21
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Ink"
@@ -1457,8 +1407,6 @@ name|N_
 argument_list|(
 literal|"Dodge or Burn"
 argument_list|)
-block|,
-literal|22
 block|,
 name|N_
 argument_list|(
@@ -1502,8 +1450,6 @@ argument_list|(
 literal|"Smudge"
 argument_list|)
 block|,
-literal|23
-block|,
 name|N_
 argument_list|(
 literal|"/Tools/Smudge"
@@ -1543,54 +1489,8 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Measure"
-argument_list|)
-block|,
-literal|24
-block|,
-name|N_
-argument_list|(
-literal|"/Tools/Measure"
-argument_list|)
-block|,
-literal|""
-block|,
-operator|(
-name|char
-operator|*
-operator|*
-operator|)
-name|measure_bits
-block|,
-name|N_
-argument_list|(
-literal|"Measure distances and angles"
-argument_list|)
-block|,
-literal|"tools/measure.html"
-block|,
-name|MEASURE
-block|,
-name|tools_new_measure_tool
-block|,
-name|tools_free_measure_tool
-block|,
-name|NULL
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|NULL
-block|,
-name|N_
-argument_list|(
 literal|"Xinput Airbrush"
 argument_list|)
-block|,
-literal|25
 block|,
 name|N_
 argument_list|(
@@ -1631,10 +1531,50 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Path"
+literal|"Measure"
 argument_list|)
 block|,
-literal|26
+name|N_
+argument_list|(
+literal|"/Tools/Measure"
+argument_list|)
+block|,
+literal|""
+block|,
+operator|(
+name|char
+operator|*
+operator|*
+operator|)
+name|measure_bits
+block|,
+name|N_
+argument_list|(
+literal|"Measure distances and angles"
+argument_list|)
+block|,
+literal|"tools/measure.html"
+block|,
+name|MEASURE
+block|,
+name|tools_new_measure_tool
+block|,
+name|tools_free_measure_tool
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Path"
+argument_list|)
 block|,
 name|N_
 argument_list|(
@@ -1679,8 +1619,6 @@ argument_list|(
 literal|"By Color Select"
 argument_list|)
 block|,
-literal|27
-block|,
 name|N_
 argument_list|(
 literal|"/Select/By Color..."
@@ -1717,8 +1655,6 @@ name|N_
 argument_list|(
 literal|"Color Balance"
 argument_list|)
-block|,
-literal|28
 block|,
 name|N_
 argument_list|(
@@ -1757,8 +1693,6 @@ argument_list|(
 literal|"Brightness-Contrast"
 argument_list|)
 block|,
-literal|29
-block|,
 name|N_
 argument_list|(
 literal|"/Image/Colors/Brightness-Contrast..."
@@ -1795,8 +1729,6 @@ name|N_
 argument_list|(
 literal|"Hue-Saturation"
 argument_list|)
-block|,
-literal|30
 block|,
 name|N_
 argument_list|(
@@ -1835,8 +1767,6 @@ argument_list|(
 literal|"Posterize"
 argument_list|)
 block|,
-literal|31
-block|,
 name|N_
 argument_list|(
 literal|"/Image/Colors/Posterize..."
@@ -1873,8 +1803,6 @@ name|N_
 argument_list|(
 literal|"Threshold"
 argument_list|)
-block|,
-literal|32
 block|,
 name|N_
 argument_list|(
@@ -1913,8 +1841,6 @@ argument_list|(
 literal|"Curves"
 argument_list|)
 block|,
-literal|33
-block|,
 name|N_
 argument_list|(
 literal|"/Image/Colors/Curves..."
@@ -1952,8 +1878,6 @@ argument_list|(
 literal|"Levels"
 argument_list|)
 block|,
-literal|34
-block|,
 name|N_
 argument_list|(
 literal|"/Image/Colors/Levels..."
@@ -1990,8 +1914,6 @@ name|N_
 argument_list|(
 literal|"Histogram"
 argument_list|)
-block|,
-literal|35
 block|,
 name|N_
 argument_list|(
