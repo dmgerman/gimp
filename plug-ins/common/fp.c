@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -98,7 +104,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon279cc70d0108
+DECL|struct|__anon2ac3778b0108
 typedef|typedef
 struct|struct
 block|{
@@ -113,7 +119,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon279cc70d0208
+DECL|struct|__anon2ac3778b0208
 typedef|typedef
 struct|struct
 block|{
@@ -147,7 +153,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon279cc70d0303
+DECL|enum|__anon2ac3778b0303
 typedef|typedef
 enum|enum
 block|{
@@ -169,7 +175,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon279cc70d0403
+DECL|enum|__anon2ac3778b0403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -201,7 +207,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon279cc70d0503
+DECL|enum|__anon2ac3778b0503
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -220,7 +226,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon279cc70d0603
+DECL|enum|__anon2ac3778b0603
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -248,7 +254,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon279cc70d0703
+DECL|enum|__anon2ac3778b0703
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -266,7 +272,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon279cc70d0808
+DECL|struct|__anon2ac3778b0808
 typedef|typedef
 struct|struct
 block|{
@@ -312,7 +318,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon279cc70d0908
+DECL|struct|__anon2ac3778b0908
 typedef|typedef
 struct|struct
 block|{
@@ -1280,7 +1286,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon279cc70d0a08
+DECL|struct|__anon2ac3778b0a08
 block|{
 DECL|member|bna
 name|GtkWidget

@@ -11,24 +11,10 @@ begin_comment
 comment|/* Based on S&P's Gauss and Blur filters              */
 end_comment
 
-begin_comment
-comment|/* updated 11/04/97:    don't use rint;    if gamma-channel: set to white if at least one colour channel is>15 */
-end_comment
-
-begin_comment
-comment|/* Update 3/10/97:    #ifdef Max and Min,    save old values    correct 'cancel' behaviour */
-end_comment
-
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
 end_include
 
 begin_include
@@ -64,7 +50,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3868de0108
+DECL|struct|__anon2b8017be0108
 block|{
 DECL|member|horizontal
 name|gint
@@ -1026,52 +1012,21 @@ block|{
 name|gint
 name|b
 decl_stmt|;
-if|if
-condition|(
 name|y
-operator|<
-literal|0
-condition|)
-name|gimp_pixel_rgn_get_row
+operator|=
+name|CLAMP
 argument_list|(
-name|pixel_rgn
-argument_list|,
-name|data
-argument_list|,
-name|x
+name|y
 argument_list|,
 literal|0
-argument_list|,
-name|w
-argument_list|)
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|y
-operator|>=
-name|pixel_rgn
-operator|->
-name|h
-condition|)
-name|gimp_pixel_rgn_get_row
-argument_list|(
-name|pixel_rgn
-argument_list|,
-name|data
-argument_list|,
-name|x
 argument_list|,
 name|pixel_rgn
 operator|->
 name|h
 operator|-
 literal|1
-argument_list|,
-name|w
 argument_list|)
 expr_stmt|;
-else|else
 name|gimp_pixel_rgn_get_row
 argument_list|(
 name|pixel_rgn
@@ -1151,17 +1106,6 @@ block|}
 end_function
 
 begin_define
-DECL|macro|SIGN (a)
-define|#
-directive|define
-name|SIGN
-parameter_list|(
-name|a
-parameter_list|)
-value|(((a)> 0) ? 1 : -1)
-end_define
-
-begin_define
 DECL|macro|RMS (a,b)
 define|#
 directive|define
@@ -1171,7 +1115,7 @@ name|a
 parameter_list|,
 name|b
 parameter_list|)
-value|(sqrt (pow ((a),2) + pow ((b), 2)))
+value|(sqrt ((a) * (a) + (b) * (b)))
 end_define
 
 begin_function
@@ -1266,7 +1210,6 @@ decl_stmt|;
 name|gint
 name|counter
 decl_stmt|;
-comment|/* Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
