@@ -853,6 +853,16 @@ operator|=
 name|gtk_notebook_new
 argument_list|()
 expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|info_table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
 name|gtk_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
