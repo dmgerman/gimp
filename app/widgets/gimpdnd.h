@@ -60,7 +60,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d86cf0103
+DECL|enum|__anon27606ada0103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3d86cf0203
+DECL|enum|__anon27606ada0203
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -263,33 +263,6 @@ block|}
 name|GimpDropType
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*  drawable dnd functions  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_dnd_set_drawable_preview_icon
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkDragContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|GdkGC
-modifier|*
-name|gc
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  color dnd functions  */
@@ -752,6 +725,33 @@ name|set_tool_func
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  drawable dnd functions  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_dnd_set_drawable_preview_icon
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkDragContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|GdkGC
+modifier|*
+name|gc
 parameter_list|)
 function_decl|;
 end_function_decl
