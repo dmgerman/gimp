@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpbrushmenu.c  * Copyright (C) 1998 Andy Thomas                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpbrushmenu.c  * Copyright (C) 1998 Andy Thomas  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -305,7 +305,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_brush_select_widget_new:  * @title:      Title of the dialog to use or %NULL to use the default title.  * @brush_name: Initial brush name or %NULL to use current selection.   * @opacity:    Initial opacity. -1 means to use current opacity.  * @spacing:    Initial spacing. -1 means to use current spacing.  * @paint_mode: Initial paint mode.  -1 means to use current paint mode.  * @callback:   A function to call when the selected brush changes.  * @data:       A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a #GimpBrush. This widget is suitable for placement in a table in  * a plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
+comment|/**  * gimp_brush_select_widget_new:  * @title:      Title of the dialog to use or %NULL to use the default title.  * @brush_name: Initial brush name or %NULL to use current selection.  * @opacity:    Initial opacity. -1 means to use current opacity.  * @spacing:    Initial spacing. -1 means to use current spacing.  * @paint_mode: Initial paint mode.  -1 means to use current paint mode.  * @callback:   A function to call when the selected brush changes.  * @data:       A pointer to arbitary data to be used in the call to @callback.  *  * Creates a new #GtkWidget that completely controls the selection of  * a #GimpBrush. This widget is suitable for placement in a table in  * a plug-in dialog.  *  * Returns: A #GtkWidget that you can use in your UI.  */
 end_comment
 
 begin_function
@@ -541,7 +541,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|" ... "
+name|_
+argument_list|(
+literal|"Browse..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -790,7 +793,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_select_widget_set;  * @widget:     A brush select widget.  * @brush_name: Brush name to set; %NULL means no change.   * @opacity:    Opacity to set. -1 means no change.  * @spacing:    Spacing to set. -1 means no change.  * @paint_mode: Paint mode to set.  -1 means no change.  *  * Sets the current brush and other values for the brush select  * widget.  Calls the callback function if one was supplied in the  * call to gimp_brush_select_widget_new().  */
+comment|/**  * gimp_brush_select_widget_set;  * @widget:     A brush select widget.  * @brush_name: Brush name to set; %NULL means no change.  * @opacity:    Opacity to set. -1 means no change.  * @spacing:    Spacing to set. -1 means no change.  * @paint_mode: Paint mode to set.  -1 means no change.  *  * Sets the current brush and other values for the brush select  * widget.  Calls the callback function if one was supplied in the  * call to gimp_brush_select_widget_new().  */
 end_comment
 
 begin_function
