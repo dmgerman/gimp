@@ -7979,6 +7979,19 @@ condition|(
 name|gdisp
 condition|)
 block|{
+comment|/* Interactive tools such as CURVES, COLOR_BALANCE, LEVELS disable */
+comment|/* undo to fake some kind of atomic behaviour. G. R. Osgood #14072  */
+if|if
+condition|(
+name|gimp_image_undo_is_enabled
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+condition|)
+block|{
+comment|/* If undo/redo stacks are empty, disable respective menu */
 name|SET_SENSITIVE
 argument_list|(
 literal|"Edit/Undo"
@@ -8003,6 +8016,24 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|SET_SENSITIVE
+argument_list|(
+literal|"Edit/Undo"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"Edit/Redo"
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
 name|SET_SENSITIVE
 argument_list|(
 literal|"Edit/Cut"
