@@ -644,7 +644,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_STOCK_BRUSH
 block|}
 block|,
 literal|"gimp-brush-grid"
@@ -669,7 +669,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_STOCK_PATTERN
 block|}
 block|,
 literal|"gimp-pattern-grid"
@@ -694,7 +694,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_STOCK_GRADIENT
 block|}
 block|,
 literal|"gimp-gradient-list|gimp-gradient-grid"
@@ -719,7 +719,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_PALETTE
 block|}
 block|,
 literal|"gimp-palette-list|gimp-palette-list"
@@ -744,7 +744,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_SELECT_FONT
+name|GIMP_STOCK_FONT
 block|}
 block|,
 literal|"gimp-font-list|gimp-font-grid"
@@ -769,7 +769,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_PASTE
+name|GIMP_STOCK_BUFFER
 block|}
 block|,
 literal|"gimp-buffer-list|gimp-buffer-grid"

@@ -1036,7 +1036,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_STOCK_BRUSH
 argument_list|,
 name|GIMP_HELP_BRUSH_DIALOG
 argument_list|)
@@ -1105,7 +1105,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_STOCK_PATTERN
 argument_list|,
 name|GIMP_HELP_PATTERN_DIALOG
 argument_list|)
@@ -1174,7 +1174,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_STOCK_GRADIENT
 argument_list|,
 name|GIMP_HELP_GRADIENT_DIALOG
 argument_list|)
@@ -1243,7 +1243,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_PALETTE
 argument_list|,
 name|GIMP_HELP_PALETTE_DIALOG
 argument_list|)
@@ -1308,7 +1308,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_SELECT_FONT
+name|GIMP_STOCK_FONT
 argument_list|,
 name|GIMP_HELP_FONT_DIALOG
 argument_list|)
@@ -1434,7 +1434,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_PASTE
+name|GIMP_STOCK_BUFFER
 argument_list|,
 name|GIMP_HELP_BUFFER_DIALOG
 argument_list|)
@@ -1748,7 +1748,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_STOCK_BRUSH
 argument_list|,
 name|GIMP_HELP_BRUSH_DIALOG
 argument_list|)
@@ -1817,7 +1817,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_BUCKET_FILL
+name|GIMP_STOCK_PATTERN
 argument_list|,
 name|GIMP_HELP_PATTERN_DIALOG
 argument_list|)
@@ -1886,7 +1886,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_STOCK_GRADIENT
 argument_list|,
 name|GIMP_HELP_GRADIENT_DIALOG
 argument_list|)
@@ -1955,7 +1955,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_PALETTE
 argument_list|,
 name|GIMP_HELP_PALETTE_DIALOG
 argument_list|)
@@ -2020,7 +2020,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_SELECT_FONT
+name|GIMP_STOCK_FONT
 argument_list|,
 name|GIMP_HELP_FONT_DIALOG
 argument_list|)
@@ -2146,7 +2146,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_PASTE
+name|GIMP_STOCK_BUFFER
 argument_list|,
 name|GIMP_HELP_BUFFER_DIALOG
 argument_list|)
@@ -3149,7 +3149,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_PAINTBRUSH
+name|GIMP_STOCK_BRUSH
 argument_list|,
 name|GIMP_HELP_BRUSH_EDITOR_DIALOG
 argument_list|)
@@ -3257,7 +3257,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_STOCK_GRADIENT
 argument_list|,
 name|GIMP_HELP_GRADIENT_EDITOR_DIALOG
 argument_list|)
@@ -3365,7 +3365,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_PALETTE
 argument_list|,
 name|GIMP_HELP_PALETTE_EDITOR_DIALOG
 argument_list|)

@@ -293,7 +293,7 @@ argument_list|(
 literal|"Left Endpoint Color"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_STOCK_GRADIENT
 argument_list|,
 name|_
 argument_list|(
@@ -762,7 +762,7 @@ argument_list|(
 literal|"Right Endpoint Color"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_STOCK_GRADIENT
 argument_list|,
 name|_
 argument_list|(
@@ -1930,7 +1930,7 @@ name|title
 argument_list|,
 literal|"gimp-gradient-segment-replicate"
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_STOCK_GRADIENT
 argument_list|,
 name|desc
 argument_list|,
@@ -2405,7 +2405,7 @@ name|title
 argument_list|,
 literal|"gimp-gradient-segment-split-uniformly"
 argument_list|,
-name|GIMP_STOCK_TOOL_BLEND
+name|GIMP_STOCK_GRADIENT
 argument_list|,
 name|desc
 argument_list|,

@@ -4639,7 +4639,7 @@ argument_list|(
 literal|"Edit Palette Color"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_SELECT_COLOR
+name|GIMP_STOCK_PALETTE
 argument_list|,
 name|_
 argument_list|(

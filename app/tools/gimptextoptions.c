@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2c78740103
+DECL|enum|__anon2c0c85ca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1172,7 +1172,7 @@ name|dialog_factory
 argument_list|,
 literal|"gimp-font-list|gimp-font-grid"
 argument_list|,
-name|GTK_STOCK_SELECT_FONT
+name|GIMP_STOCK_FONT
 argument_list|,
 name|_
 argument_list|(
