@@ -266,6 +266,13 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|int
+name|nav_preview_size
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
 name|show_rulers
 decl_stmt|;
 end_decl_stmt

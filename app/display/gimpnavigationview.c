@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gximage.h"
 end_include
 
@@ -131,38 +137,6 @@ begin_comment
 comment|/* Navigation preview sizes */
 end_comment
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_define
-define|#
-directive|define
-name|NAV_PREVIEW_WIDTH
-value|48
-end_define
-
-begin_define
-define|#
-directive|define
-name|NAV_PREVIEW_HEIGHT
-value|48
-end_define
-
-begin_define
-define|#
-directive|define
-name|BORDER_PEN_WIDTH
-value|2
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_define
 DECL|macro|NAV_PREVIEW_WIDTH
 define|#
@@ -187,15 +161,6 @@ name|BORDER_PEN_WIDTH
 value|3
 end_define
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* 0 */
-end_comment
-
 begin_define
 DECL|macro|MAX_SCALE_BUF
 define|#
@@ -207,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b56e9420103
+DECL|enum|__anon2892b3ef0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -414,22 +379,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static gint nav_window_preview_resized (GtkWidget      *, 			    GtkAllocation  *, 			    gpointer       *);
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* 0 */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -3570,13 +3519,6 @@ operator|->
 name|dispy
 expr_stmt|;
 block|}
-if|#
-directive|if
-literal|0
-comment|/* Now grab the square */
-block|iwd->sq_grabbed = TRUE; 	  gtk_grab_add(widget); 	  gdk_pointer_grab (widget->window, TRUE, 			    GDK_BUTTON_RELEASE_MASK | 			    GDK_POINTER_MOTION_HINT_MASK | 			    GDK_BUTTON_MOTION_MASK, 			    widget->window, NULL, 0);
-else|#
-directive|else
 name|nav_window_grab_pointer
 argument_list|(
 name|iwd
@@ -3584,9 +3526,6 @@ argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-comment|/* 0 */
 break|break;
 default|default:
 break|break;
@@ -5364,13 +5303,37 @@ name|iwd
 operator|->
 name|nav_preview_width
 operator|=
+operator|(
+name|nav_preview_size
+operator|<
+literal|0
+operator|||
+name|nav_preview_size
+operator|>
+literal|256
+operator|)
+condition|?
 name|NAV_PREVIEW_WIDTH
+else|:
+name|nav_preview_size
 expr_stmt|;
 name|iwd
 operator|->
 name|nav_preview_height
 operator|=
+operator|(
+name|nav_preview_size
+operator|<
+literal|0
+operator|||
+name|nav_preview_size
+operator|>
+literal|256
+operator|)
+condition|?
 name|NAV_PREVIEW_HEIGHT
+else|:
+name|nav_preview_size
 expr_stmt|;
 name|iwd
 operator|->
@@ -5504,8 +5467,6 @@ argument_list|(
 name|title_buf
 argument_list|)
 expr_stmt|;
-comment|/*   gtk_window_set_policy (GTK_WINDOW (info_win->shell), */
-comment|/* 			 FALSE,FALSE,FALSE); */
 name|iwd
 operator|=
 name|create_dummy_iwd
@@ -5533,21 +5494,6 @@ operator|=
 name|info_window_image_preview_new
 argument_list|(
 name|info_win
-argument_list|)
-expr_stmt|;
-comment|/*   gtk_container_set_focus_child(GTK_CONTAINER(container),iwd->preview); */
-name|gtk_window_set_focus
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|info_win
-operator|->
-name|shell
-argument_list|)
-argument_list|,
-name|iwd
-operator|->
-name|preview
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
@@ -5724,16 +5670,6 @@ operator|->
 name|gdisp_ptr
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/* do the same for the popup widget..*/
-block|if(((GDisplay *)iwd->gdisp_ptr)->nav_popup)     {       NavWinData *iwp;
-comment|/* dummy shorter version for the popups */
-block|iwp = (NavWinData *)gtk_object_get_data(GTK_OBJECT(((GDisplay *)iwd->gdisp_ptr)->nav_popup),"navpop_prt");       nav_window_disp_area(iwp,iwp->gdisp_ptr);     }
-endif|#
-directive|endif
-comment|/* 0 */
 comment|/* and redraw */
 name|nav_window_draw_sqr
 argument_list|(
@@ -6301,6 +6237,146 @@ name|gtk_widget_destroy
 argument_list|(
 name|nav_popup
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|nav_window_preview_resized (InfoDialog * idialog)
+name|nav_window_preview_resized
+parameter_list|(
+name|InfoDialog
+modifier|*
+name|idialog
+parameter_list|)
+block|{
+name|NavWinData
+modifier|*
+name|iwd
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|idialog
+condition|)
+return|return;
+name|iwd
+operator|=
+operator|(
+name|NavWinData
+operator|*
+operator|)
+name|idialog
+operator|->
+name|user_data
+expr_stmt|;
+comment|/* force regeneration of the widgets */
+comment|/* bit of a fiddle... could cause if the image really is 1x1    * but the preview would not really matter in that case.    */
+name|iwd
+operator|->
+name|imagewidth
+operator|=
+literal|1
+expr_stmt|;
+name|iwd
+operator|->
+name|imageheight
+operator|=
+literal|1
+expr_stmt|;
+name|iwd
+operator|->
+name|nav_preview_width
+operator|=
+operator|(
+name|nav_preview_size
+operator|<
+literal|0
+operator|||
+name|nav_preview_size
+operator|>
+literal|256
+operator|)
+condition|?
+name|NAV_PREVIEW_WIDTH
+else|:
+name|nav_preview_size
+expr_stmt|;
+name|iwd
+operator|->
+name|nav_preview_height
+operator|=
+operator|(
+name|nav_preview_size
+operator|<
+literal|0
+operator|||
+name|nav_preview_size
+operator|>
+literal|256
+operator|)
+condition|?
+name|NAV_PREVIEW_HEIGHT
+else|:
+name|nav_preview_size
+expr_stmt|;
+name|nav_window_update_window_marker
+argument_list|(
+name|idialog
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|nav_window_popup_preview_resized (GtkWidget ** widget)
+name|nav_window_popup_preview_resized
+parameter_list|(
+name|GtkWidget
+modifier|*
+modifier|*
+name|widget
+parameter_list|)
+block|{
+name|NavWinData
+modifier|*
+name|iwp
+decl_stmt|;
+comment|/* dummy shorter version for the popups */
+name|iwp
+operator|=
+operator|(
+name|NavWinData
+operator|*
+operator|)
+name|gtk_object_get_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+operator|*
+name|widget
+argument_list|)
+argument_list|,
+literal|"navpop_prt"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|iwp
+argument_list|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+operator|*
+name|widget
+argument_list|)
+expr_stmt|;
+operator|*
+name|widget
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function

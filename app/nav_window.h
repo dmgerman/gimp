@@ -64,6 +64,29 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|nav_window_preview_resized
+parameter_list|(
+name|InfoDialog
+modifier|*
+name|idialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|nav_window_popup_preview_resized
+parameter_list|(
+name|GtkWidget
+modifier|*
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* popup functions */
 end_comment

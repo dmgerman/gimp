@@ -1218,6 +1218,15 @@ begin_comment
 comment|/* no rerender! */
 end_comment
 
+begin_function_decl
+name|void
+name|gdisplays_nav_preview_resized
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
