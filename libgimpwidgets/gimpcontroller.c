@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e0ffa90103
+DECL|enum|__anon289422bd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -57,7 +57,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e0ffa90203
+DECL|enum|__anon289422bd0203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -349,6 +349,8 @@ argument_list|,
 name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
+operator||
+name|GIMP_CONTROLLER_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -371,6 +373,8 @@ argument_list|,
 name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
+operator||
+name|GIMP_CONTROLLER_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;

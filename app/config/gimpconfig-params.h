@@ -279,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a5317150103
+DECL|enum|__anon29456b3f0103
 block|{
 DECL|enumerator|GIMP_PARAM_PATH_FILE
 name|GIMP_PARAM_PATH_FILE
@@ -672,7 +672,7 @@ define|default, flags)\   g_object_class_install_property (class, id,\          
 end_define
 
 begin_comment
-comment|/*  object properties are _not_ G_PARAM_CONSTRUCT  */
+comment|/*  object and pointer properties are _not_ G_PARAM_CONSTRUCT  */
 end_comment
 
 begin_define
@@ -695,6 +695,26 @@ name|flags
 parameter_list|)
 define|\
 value|g_object_class_install_property (class, id,\                                    g_param_spec_object (name, NULL, blurb,\                                    object_type,\                                    flags |\                                    G_PARAM_READWRITE | GIMP_PARAM_SERIALIZE))
+end_define
+
+begin_define
+define|#
+directive|define
+name|GIMP_CONFIG_INSTALL_PROP_POINTER
+parameter_list|(
+name|class
+parameter_list|,
+name|id
+parameter_list|,\
+DECL|macro|GIMP_CONFIG_INSTALL_PROP_POINTER (class,id,\\\nname,blurb,flags)
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+name|flags
+parameter_list|)
+define|\
+value|g_object_class_install_property (class, id,\                                    g_param_spec_pointer (name, NULL, blurb,\                                    flags |\                                    G_PARAM_READWRITE | GIMP_PARAM_SERIALIZE))
 end_define
 
 begin_endif
