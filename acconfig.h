@@ -210,6 +210,12 @@ directive|undef
 name|USE_PTHREADS
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|GETTEXT_PACKAGE
+end_undef
+
 begin_escape
 end_escape
 

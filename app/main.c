@@ -399,7 +399,7 @@ expr_stmt|;
 comment|/* Initialize i18n support */
 name|INIT_LOCALE
 argument_list|(
-literal|"gimp"
+name|GETTEXT_PACKAGE
 argument_list|)
 expr_stmt|;
 ifdef|#

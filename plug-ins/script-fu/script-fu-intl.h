@@ -34,7 +34,7 @@ define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-value|G_STMT_START{			\   setlocale(LC_MESSAGES, ""); 				\   bindtextdomain("gimp-libgimp", LOCALEDIR);            \   bindtextdomain("gimp-script-fu", LOCALEDIR);	        \   textdomain("gimp-script-fu");			        \   			}G_STMT_END
+value|G_STMT_START{			  \   setlocale(LC_MESSAGES, ""); 				  \   bindtextdomain(GETTEXT_PACKAGE"-libgimp", LOCALEDIR);   \   bindtextdomain(GETTEXT_PACKAGE"-script-fu", LOCALEDIR); \   textdomain(GETTEXT_PACKAGE"-script-fu");		  \                         }G_STMT_END
 end_define
 
 begin_else
@@ -48,7 +48,7 @@ define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-value|G_STMT_START{			\   bindtextdomain("gimp-libgimp", LOCALEDIR);            \   bindtextdomain("gimp-script-fu", LOCALEDIR);	        \   textdomain("gimp-script-fu");                         \   			}G_STMT_END
+value|G_STMT_START{			  \   bindtextdomain(GETTEXT_PACKAGE"-libgimp", LOCALEDIR);   \   bindtextdomain(GETTEXT_PACKAGE"-script-fu", LOCALEDIR); \   textdomain(GETTEXT_PACKAGE"-script-fu");                \   			}G_STMT_END
 end_define
 
 begin_endif

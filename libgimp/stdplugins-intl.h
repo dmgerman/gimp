@@ -28,7 +28,7 @@ define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-value|G_STMT_START{		         \   bindtextdomain("gimp-libgimp", LOCALEDIR);             \   bind_textdomain_codeset ("gimp-libgimp", "UTF-8");     \   bindtextdomain("gimp-std-plugins", LOCALEDIR);         \   bind_textdomain_codeset ("gimp-std-plugins", "UTF-8"); \   textdomain("gimp-std-plugins");		         \   setlocale (LC_NUMERIC, "C");                           \ }G_STMT_END
+value|G_STMT_START{                               \   bindtextdomain(GETTEXT_PACKAGE"-libgimp", LOCALEDIR);             \   bind_textdomain_codeset (GETTEXT_PACKAGE"-libgimp", "UTF-8");     \   bindtextdomain(GETTEXT_PACKAGE"-std-plugins", LOCALEDIR);         \   bind_textdomain_codeset (GETTEXT_PACKAGE"-std-plugins", "UTF-8"); \   textdomain(GETTEXT_PACKAGE"-std-plugins");		            \   setlocale (LC_NUMERIC, "C");                                      \ }G_STMT_END
 end_define
 
 begin_define
