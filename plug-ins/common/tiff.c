@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a664900108
+DECL|struct|__anon2c14f12c0108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a664900208
+DECL|struct|__anon2c14f12c0208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a664900308
+DECL|struct|__anon2c14f12c0308
 block|{
 DECL|member|ID
 name|gint32
@@ -5913,23 +5913,14 @@ name|tsvals
 operator|.
 name|compression
 expr_stmt|;
-if|if
-condition|(
-name|TIFFFindCODEC
-argument_list|(
-operator|(
-name|uint16
-operator|)
-name|compression
-argument_list|)
-operator|==
-name|NULL
-condition|)
-name|compression
-operator|=
-name|COMPRESSION_NONE
-expr_stmt|;
+comment|/* Disabled because this isn't in older releases of libtiff, and it      wasn't helping much anyway */
+if|#
+directive|if
+literal|0
+block|if (TIFFFindCODEC((uint16) compression) == NULL)     compression = COMPRESSION_NONE;
 comment|/* CODEC not available */
+endif|#
+directive|endif
 name|predictor
 operator|=
 literal|0
