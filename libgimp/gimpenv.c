@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  *  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * Copyright (C) 1999 Tor Lillqvist  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU Lesser General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * gimpenv.c  *  * Copyright (C) 1999 Tor Lillqvist  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU Lesser General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -231,7 +231,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the environment   * variable GIMP_DIRECTORY exists, it is used. If it is an absolute path,   * it is used as is.  If it is a relative path, it is taken to be a   * subdirectory of the home directory. If it is relative path, and no home   * directory can be determined, it is taken to be a subdirectory of  * gimp_data_directory().  *  * The usual case is that no GIMP_DIRECTORY environment variable exists,   * and then we use the GIMPDIR subdirectory of the home directory. If no   * home directory exists, we use a per-user subdirectory of  * gimp_data_directory().  * In any case, we always return some non-empty string, whether it  * corresponds to an existing directory or not.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The user-specific GIMP settings directory.  */
+comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the environment   * variable GIMP_DIRECTORY exists, it is used. If it is an absolute path,   * it is used as is.  If it is a relative path, it is taken to be a   * subdirectory of the home directory. If it is relative path, and no home   * directory can be determined, it is taken to be a subdirectory of  * gimp_data_directory().  *  * The usual case is that no GIMP_DIRECTORY environment variable exists,   * and then we use the GIMPDIR subdirectory of the home directory. If no   * home directory exists, we use a per-user subdirectory of  * gimp_data_directory().  * In any case, we always return some non-empty string, whether it  * corresponds to an existing directory or not.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The user-specific GIMP settings directory.  **/
 end_comment
 
 begin_function
@@ -454,7 +454,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_personal_rc_file:  * @basename: The basename of a rc_file.  *  * Returns the name of a file in the user-specific GIMP settings directory.  *  * The returned string is allocated dynamically and *SHOULD* be freed  * with g_free() after use.  *  * Returns: The name of a file in the user-specific GIMP settings directory.  */
+comment|/**  * gimp_personal_rc_file:  * @basename: The basename of a rc_file.  *  * Returns the name of a file in the user-specific GIMP settings directory.  *  * The returned string is allocated dynamically and *SHOULD* be freed  * with g_free() after use.  *  * Returns: The name of a file in the user-specific GIMP settings directory.  **/
 end_comment
 
 begin_function
@@ -485,7 +485,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP data. If the environment variable   * GIMP_DATADIR exists, that is used.  It should be an absolute pathname.  * Otherwise, on Unix the compile-time defined directory is used.  On  * Win32, the installation directory as deduced from the executable's  * name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP data.  */
+comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP data. If the environment variable   * GIMP_DATADIR exists, that is used.  It should be an absolute pathname.  * Otherwise, on Unix the compile-time defined directory is used.  On  * Win32, the installation directory as deduced from the executable's  * name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP data.  **/
 end_comment
 
 begin_function
@@ -712,7 +712,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP config files. If the environment  * variable GIMP_SYSCONFDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP config files.  */
+comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP config files. If the environment  * variable GIMP_SYSCONFDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The top directory for GIMP config files.  **/
 end_comment
 
 begin_function
@@ -939,7 +939,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gtkrc:  *  * Returns the name of the GIMP's application-specific gtkrc file.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The name of the GIMP's application-specific gtkrc file.  */
+comment|/**  * gimp_gtkrc:  *  * Returns the name of the GIMP's application-specific gtkrc file.  *  * The returned string is allocated just once, and should *NOT* be  * freed with g_free().  *  * Returns: The name of the GIMP's application-specific gtkrc file.  **/
 end_comment
 
 begin_function
@@ -988,7 +988,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_parse:  * @path: A list of directories separated by #G_SEARCHPATH_SEPARATOR.  * @max_paths: The maximum number of directories to return.  * @check: #TRUE if you want the directories to be checked.  * @check_failed: Returns a #GList of path elements for which the  *                check failed. Each list element is guaranteed  *		  to end with a #G_PATH_SEPARATOR.  *  * Returns: A #GList of all directories in @path. Each list element  *	    is guaranteed to end with a #G_PATH_SEPARATOR.  */
+comment|/**  * gimp_path_parse:  * @path: A list of directories separated by #G_SEARCHPATH_SEPARATOR.  * @max_paths: The maximum number of directories to return.  * @check: #TRUE if you want the directories to be checked.  * @check_failed: Returns a #GList of path elements for which the  *                check failed. Each list element is guaranteed  *		  to end with a #G_PATH_SEPARATOR.  *  * Returns: A #GList of all directories in @path. Each list element  *	    is guaranteed to end with a #G_PATH_SEPARATOR.  **/
 end_comment
 
 begin_function
@@ -1308,7 +1308,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_to_str:  * @path: A list of directories as returned by gimp_path_parse().  *  * Returns: A searchpath string separated by #G_SEARCHPATH_SEPARATOR.  *  */
+comment|/**  * gimp_path_to_str:  * @path: A list of directories as returned by gimp_path_parse().  *  * Returns: A searchpath string separated by #G_SEARCHPATH_SEPARATOR.  **/
 end_comment
 
 begin_function
@@ -1423,7 +1423,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_free:  * @path: A list of directories as returned by gimp_path_parse().  *  * This function frees the memory allocated for the list and it's strings.  *  */
+comment|/**  * gimp_path_free:  * @path: A list of directories as returned by gimp_path_parse().  *  * This function frees the memory allocated for the list and it's strings.  **/
 end_comment
 
 begin_function
@@ -1479,7 +1479,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_get_user_writable_dir:  * @path: A list of directories as returned by gimp_path_parse().  *  * Note that you have to g_free() the returned string.  *  * Returns: The first directory in @path where the user has write permission.  *  */
+comment|/**  * gimp_path_get_user_writable_dir:  * @path: A list of directories as returned by gimp_path_parse().  *  * Note that you have to g_free() the returned string.  *  * Returns: The first directory in @path where the user has write permission.  **/
 end_comment
 
 begin_function
