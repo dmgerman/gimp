@@ -1883,7 +1883,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_drawable_name
+name|gimp_drawable_get_name
 argument_list|(
 name|self
 operator|->
@@ -3372,7 +3372,7 @@ block|{
 return|return
 name|PyString_FromString
 argument_list|(
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|self
 operator|->
@@ -3442,7 +3442,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_layer_set_name
+name|gimp_drawable_set_name
 argument_list|(
 name|self
 operator|->
@@ -3800,7 +3800,7 @@ block|{
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_layer_get_tattoo
+name|gimp_drawable_get_tattoo
 argument_list|(
 name|self
 operator|->
@@ -3870,7 +3870,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_layer_set_tattoo
+name|gimp_drawable_set_tattoo
 argument_list|(
 name|self
 operator|->
@@ -3907,7 +3907,7 @@ block|{
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_layer_get_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|self
 operator|->
@@ -3977,7 +3977,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_layer_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|self
 operator|->
@@ -4210,7 +4210,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_layer_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|self
 operator|->
@@ -5030,7 +5030,7 @@ block|{
 return|return
 name|PyString_FromString
 argument_list|(
-name|gimp_channel_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|self
 operator|->
@@ -5100,7 +5100,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_channel_set_name
+name|gimp_drawable_set_name
 argument_list|(
 name|self
 operator|->
@@ -5351,7 +5351,7 @@ block|{
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_channel_get_tattoo
+name|gimp_drawable_get_tattoo
 argument_list|(
 name|self
 operator|->
@@ -5421,7 +5421,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_channel_set_tattoo
+name|gimp_drawable_set_tattoo
 argument_list|(
 name|self
 operator|->
@@ -5458,7 +5458,7 @@ block|{
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_channel_get_visible
+name|gimp_drawable_get_visible
 argument_list|(
 name|self
 operator|->
@@ -5528,7 +5528,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_channel_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|self
 operator|->
@@ -5691,7 +5691,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_channel_get_name
+name|gimp_drawable_get_name
 argument_list|(
 name|self
 operator|->
