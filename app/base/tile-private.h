@@ -19,36 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_PTHREADS
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<pthread.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
 file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<glib.h>
 end_include
 
 begin_typedef
@@ -179,9 +150,10 @@ decl_stmt|;
 comment|/* Pointer to the head of the list this tile is on */
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
+name|ENABLE_THREADED_TILE_SWAPPER
 DECL|member|mutex
-name|pthread_mutex_t
+name|GMutex
+modifier|*
 name|mutex
 decl_stmt|;
 endif|#
@@ -193,7 +165,7 @@ end_struct
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
+name|ENABLE_THREADED_TILE_SWAPPER
 end_ifdef
 
 begin_define
@@ -204,7 +176,7 @@ name|TILE_MUTEX_LOCK
 parameter_list|(
 name|tile
 parameter_list|)
-value|pthread_mutex_lock(&((tile)->mutex))
+value|g_mutex_lock((tile)->mutex)
 end_define
 
 begin_define
@@ -215,7 +187,7 @@ name|TILE_MUTEX_UNLOCK
 parameter_list|(
 name|tile
 parameter_list|)
-value|pthread_mutex_unlock(&((tile)->mutex))
+value|g_mutex_unlock((tile)->mutex)
 end_define
 
 begin_else

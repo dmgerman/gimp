@@ -9,23 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_PTHREADS
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<pthread.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -107,7 +90,7 @@ end_function_decl
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
+name|ENABLE_THREADED_TILE_SWAPPER
 end_ifdef
 
 begin_function_decl
@@ -249,44 +232,49 @@ end_decl_stmt
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
+name|ENABLE_THREADED_TILE_SWAPPER
 end_ifdef
 
 begin_decl_stmt
 DECL|variable|preswap_thread
 specifier|static
-name|pthread_t
+name|GThread
+modifier|*
 name|preswap_thread
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|dirty_mutex
 specifier|static
-name|pthread_mutex_t
+name|GMutex
+modifier|*
 name|dirty_mutex
 init|=
-name|PTHREAD_MUTEX_INITIALIZER
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|dirty_signal
 specifier|static
-name|pthread_cond_t
+name|GCond
+modifier|*
 name|dirty_signal
 init|=
-name|PTHREAD_COND_INITIALIZER
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_mutex
 specifier|static
-name|pthread_mutex_t
+name|GStaticMutex
 name|tile_mutex
 init|=
-name|PTHREAD_MUTEX_INITIALIZER
+name|G_STATIC_MUTEX_INIT
 decl_stmt|;
 end_decl_stmt
 
@@ -295,7 +283,7 @@ DECL|macro|CACHE_LOCK
 define|#
 directive|define
 name|CACHE_LOCK
-value|pthread_mutex_lock (&tile_mutex)
+value|g_static_mutex_lock (&tile_mutex)
 end_define
 
 begin_define
@@ -303,7 +291,7 @@ DECL|macro|CACHE_UNLOCK
 define|#
 directive|define
 name|CACHE_UNLOCK
-value|pthread_mutex_unlock (&tile_mutex)
+value|g_static_mutex_unlock (&tile_mutex)
 end_define
 
 begin_else
@@ -394,16 +382,27 @@ name|tile_cache_size
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
-name|pthread_create
+name|ENABLE_THREADED_TILE_SWAPPER
+name|dirty_mutex
+operator|=
+name|g_mutex_new
+argument_list|()
+expr_stmt|;
+name|dirty_signal
+operator|=
+name|g_cond_new
+argument_list|()
+expr_stmt|;
+name|preswap_thread
+operator|=
+name|g_thread_create
 argument_list|(
 operator|&
-name|preswap_thread
+name|tile_idle_thread
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|tile_idle_thread
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
@@ -701,22 +700,19 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
-name|pthread_mutex_lock
+name|ENABLE_THREADED_TILE_SWAPPER
+name|g_mutex_lock
 argument_list|(
-operator|&
 name|dirty_mutex
 argument_list|)
 expr_stmt|;
-name|pthread_cond_signal
+name|g_cond_signal
 argument_list|(
-operator|&
 name|dirty_signal
 argument_list|)
 expr_stmt|;
-name|pthread_mutex_unlock
+name|g_mutex_unlock
 argument_list|(
-operator|&
 name|dirty_mutex
 argument_list|)
 expr_stmt|;
@@ -1017,11 +1013,11 @@ return|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-name|USE_PTHREADS
-end_if
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_THREADED_TILE_SWAPPER
+end_ifdef
 
 begin_function
 specifier|static
@@ -1079,24 +1075,20 @@ name|count
 operator|=
 literal|0
 expr_stmt|;
-name|pthread_mutex_lock
+name|g_mutex_lock
 argument_list|(
-operator|&
 name|dirty_mutex
 argument_list|)
 expr_stmt|;
-name|pthread_cond_wait
+name|g_cond_wait
 argument_list|(
-operator|&
 name|dirty_signal
 argument_list|,
-operator|&
 name|dirty_mutex
 argument_list|)
 expr_stmt|;
-name|pthread_mutex_unlock
+name|g_mutex_unlock
 argument_list|(
-operator|&
 name|dirty_mutex
 argument_list|)
 expr_stmt|;
@@ -1292,7 +1284,7 @@ directive|else
 end_else
 
 begin_comment
-comment|/* !USE_PTHREADS */
+comment|/* !ENABLE_THREADED_TILE_SWAPPER */
 end_comment
 
 begin_function
@@ -1433,7 +1425,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* !USE_PTHREADS */
+comment|/* !ENABLE_THREADED_TILE_SWAPPER */
 end_comment
 
 end_unit

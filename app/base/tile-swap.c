@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
+file|<fcntl.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<fcntl.h>
+file|<sys/types.h>
 end_include
 
 begin_ifdef
@@ -37,23 +37,6 @@ begin_include
 include|#
 directive|include
 file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|USE_PTHREADS
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<pthread.h>
 end_include
 
 begin_endif
@@ -524,7 +507,7 @@ end_function_decl
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
+name|ENABLE_THREADED_TILE_SWAPPER
 end_ifdef
 
 begin_function_decl
@@ -613,16 +596,16 @@ end_decl_stmt
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
+name|ENABLE_THREADED_TILE_SWAPPER
 end_ifdef
 
 begin_decl_stmt
 DECL|variable|swapfile_mutex
 specifier|static
-name|pthread_mutex_t
+name|GStaticMutex
 name|swapfile_mutex
 init|=
-name|PTHREAD_MUTEX_INITIALIZER
+name|G_STATIC_MUTEX_INIT
 decl_stmt|;
 end_decl_stmt
 
@@ -633,28 +616,33 @@ end_comment
 begin_decl_stmt
 DECL|variable|swapin_thread
 specifier|static
-name|pthread_t
+name|GThread
+modifier|*
 name|swapin_thread
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|async_swapin_mutex
 specifier|static
-name|pthread_mutex_t
+name|GMutex
+modifier|*
 name|async_swapin_mutex
 init|=
-name|PTHREAD_MUTEX_INITIALIZER
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|async_swapin_signal
 specifier|static
-name|pthread_cond_t
+name|GCond
+modifier|*
 name|async_swapin_signal
 init|=
-name|PTHREAD_COND_INITIALIZER
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -1039,17 +1027,26 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|NOTDEF
-comment|/* USE_PTHREADS */
-name|pthread_create
-argument_list|(
-operator|&
+name|ENABLE_THREADED_TILE_SWAPPER
+name|async_swapin_signal
+operator|=
+name|g_cond_new
+argument_list|()
+expr_stmt|;
+name|async_swapin_mutex
+operator|=
+name|g_mutex_new
+argument_list|()
+expr_stmt|;
 name|swapin_thread
+operator|=
+name|g_thread_create
+argument_list|(
+name|tile_swap_in_thread
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|tile_swap_in_thread
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
@@ -1108,10 +1105,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|initialized
-operator|=
-name|FALSE
-expr_stmt|;
 block|}
 end_function
 
@@ -1141,8 +1134,8 @@ name|def_swap_file
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
-name|pthread_mutex_lock
+name|ENABLE_THREADED_TILE_SWAPPER
+name|g_static_mutex_lock
 argument_list|(
 operator|&
 name|swapfile_mutex
@@ -1258,8 +1251,8 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
-name|pthread_mutex_unlock
+name|ENABLE_THREADED_TILE_SWAPPER
+name|g_static_mutex_unlock
 argument_list|(
 operator|&
 name|swapfile_mutex
@@ -1290,8 +1283,8 @@ name|swap_file
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
-name|pthread_mutex_lock
+name|ENABLE_THREADED_TILE_SWAPPER
+name|g_static_mutex_lock
 argument_list|(
 operator|&
 name|swapfile_mutex
@@ -1355,8 +1348,8 @@ name|out
 label|:
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
-name|pthread_mutex_unlock
+name|ENABLE_THREADED_TILE_SWAPPER
+name|g_static_mutex_unlock
 argument_list|(
 operator|&
 name|swapfile_mutex
@@ -1675,8 +1668,8 @@ name|swap_file
 decl_stmt|;
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
-name|pthread_mutex_lock
+name|ENABLE_THREADED_TILE_SWAPPER
+name|g_static_mutex_lock
 argument_list|(
 operator|&
 name|swapfile_mutex
@@ -1774,8 +1767,8 @@ name|out
 label|:
 ifdef|#
 directive|ifdef
-name|USE_PTHREADS
-name|pthread_mutex_unlock
+name|ENABLE_THREADED_TILE_SWAPPER
+name|g_static_mutex_unlock
 argument_list|(
 operator|&
 name|swapfile_mutex
@@ -2048,8 +2041,7 @@ parameter_list|)
 block|{
 ifdef|#
 directive|ifdef
-name|NOTDEF
-comment|/* USE_PTHREADS */
+name|ENABLE_THREADED_TILE_SWAPPER
 name|AsyncSwapArgs
 modifier|*
 name|args
@@ -2082,9 +2074,8 @@ operator|=
 name|tile
 expr_stmt|;
 comment|/* add this tile to the list of tiles for the async swapin task */
-name|pthread_mutex_lock
+name|g_mutex_lock
 argument_list|(
-operator|&
 name|async_swapin_mutex
 argument_list|)
 expr_stmt|;
@@ -2104,15 +2095,13 @@ name|async_swapin_tiles
 operator|=
 name|async_swapin_tiles_end
 expr_stmt|;
-name|pthread_cond_signal
+name|g_cond_broadcast
 argument_list|(
-operator|&
 name|async_swapin_signal
 argument_list|)
 expr_stmt|;
-name|pthread_mutex_unlock
+name|g_mutex_unlock
 argument_list|(
-operator|&
 name|async_swapin_mutex
 argument_list|)
 expr_stmt|;
@@ -3345,12 +3334,8 @@ end_function
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|NOTDEF
+name|ENABLE_THREADED_TILE_SWAPPER
 end_ifdef
-
-begin_comment
-comment|/* USE_PTHREADS */
-end_comment
 
 begin_comment
 comment|/* go through the list of tiles that are likely to be used soon and  * try to swap them in.  If any tile is not in a state to be swapped  * in, ignore it, and the error will get dealt with when the tile  * is really needed -- assuming that the error still happens.  *  * Potential future enhancement: for non-threaded systems, we could  * fork() a process which merely attempts to bring tiles into the  * OS's buffer/page cache, where they will be read into the gimp  * more quickly.  This would be pretty trivial, actually.  */
@@ -3588,9 +3573,8 @@ condition|(
 name|TRUE
 condition|)
 block|{
-name|pthread_mutex_lock
+name|g_mutex_lock
 argument_list|(
-operator|&
 name|async_swapin_mutex
 argument_list|)
 expr_stmt|;
@@ -3599,17 +3583,13 @@ condition|(
 operator|!
 name|async_swapin_tiles
 condition|)
-block|{
-name|pthread_cond_wait
+name|g_cond_wait
 argument_list|(
-operator|&
 name|async_swapin_signal
 argument_list|,
-operator|&
 name|async_swapin_mutex
 argument_list|)
 expr_stmt|;
-block|}
 name|args
 operator|=
 name|async_swapin_tiles
@@ -3640,9 +3620,8 @@ name|async_swapin_tiles_end
 operator|=
 name|NULL
 expr_stmt|;
-name|pthread_mutex_unlock
+name|g_mutex_unlock
 argument_list|(
-operator|&
 name|async_swapin_mutex
 argument_list|)
 expr_stmt|;
