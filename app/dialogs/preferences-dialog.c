@@ -6818,7 +6818,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon292e412a0108
+DECL|struct|__anon273acc990108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8304,6 +8304,23 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|object
+argument_list|,
+literal|"confirm-on-close"
+argument_list|,
+name|_
+argument_list|(
+literal|"Confirm Closing of Unsaved Images"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|prefs_table_new
@@ -9089,7 +9106,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292e412a0208
+DECL|struct|__anon273acc990208
 block|{
 DECL|member|label
 specifier|const
@@ -9248,7 +9265,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292e412a0308
+DECL|struct|__anon273acc990308
 block|{
 DECL|member|tree_label
 specifier|const
