@@ -1257,19 +1257,6 @@ name|s
 operator|=
 literal|'-'
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"registering %s  \"%s\" = %d\n"
-argument_list|,
-name|enum_name
-argument_list|,
-name|scheme_name
-argument_list|,
-name|value
-operator|->
-name|value
-argument_list|)
-expr_stmt|;
 name|setvar
 argument_list|(
 name|rintern
@@ -1290,20 +1277,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|scheme_name
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_print
-argument_list|(
-literal|"EEK: enum %s has evil value \"%s\"\n"
-argument_list|,
-name|enum_name
-argument_list|,
-name|value
-operator|->
-name|value_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -1364,15 +1337,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|tmp
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"registering GimpUnit  \"%s\" = %d\n"
-argument_list|,
-name|scheme_name
-argument_list|,
-name|unit
 argument_list|)
 expr_stmt|;
 name|setvar
