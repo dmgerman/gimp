@@ -27,7 +27,7 @@ DECL|macro|GDYNTEXT_VERSION
 define|#
 directive|define
 name|GDYNTEXT_VERSION
-value|"1.4.1"
+value|"1.4.2"
 end_define
 
 begin_define
@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29300bcd0103
+DECL|enum|__anon29a9cdf90103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29300bcd0208
+DECL|struct|__anon29a9cdf90208
 typedef|typedef
 struct|struct
 block|{
@@ -318,6 +318,20 @@ parameter_list|(
 name|GdtVals
 modifier|*
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdt_render_text_p
+parameter_list|(
+name|GdtVals
+modifier|*
+name|data
+parameter_list|,
+name|gboolean
+name|show_progress
 parameter_list|)
 function_decl|;
 end_function_decl
