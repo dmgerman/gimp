@@ -525,7 +525,7 @@ name|automatic
 operator|=
 name|_
 argument_list|(
-literal|"Automatic"
+literal|"Automatically Detected"
 argument_list|)
 expr_stmt|;
 name|automatic_help_id
