@@ -38,7 +38,7 @@ end_ifndef
 begin_include
 include|#
 directive|include
-file|"regexrepl.h"
+file|"regexrepl/regex.h"
 end_include
 
 begin_else
