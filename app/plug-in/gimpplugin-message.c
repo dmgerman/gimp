@@ -1508,6 +1508,46 @@ operator|==
 name|GIMP_PDB_COMPAT_WARN
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|proc_rec
+operator|->
+name|deprecated
+argument_list|,
+literal|"NONE"
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"WARNING: Plug-In \"%s\"\n(%s)\n"
+literal|"called deprecated procedure '%s'."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|plug_in
+operator|->
+name|name
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|plug_in
+operator|->
+name|prog
+argument_list|)
+argument_list|,
+name|proc_run
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_message
 argument_list|(
 literal|"WARNING: Plug-In \"%s\"\n(%s)\n"
@@ -1537,6 +1577,7 @@ operator|->
 name|deprecated
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if

@@ -3708,27 +3708,17 @@ condition|)
 block|{
 name|success
 operator|=
-name|gimp_item_is_floating
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-name|gimp_item_set_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
+operator|(
 name|gimage
+operator|==
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
 argument_list|)
+argument_list|)
+operator|)
 expr_stmt|;
 block|}
 return|return
@@ -3779,17 +3769,17 @@ init|=
 block|{
 literal|"gimp_drawable_set_image"
 block|,
-literal|"Set image where drawable belongs to."
+literal|"This procedure is deprecated!"
 block|,
-literal|"Set the image the drawable should be a part of (Use this before adding a drawable to another image)."
+literal|"This procedure is deprecated!"
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 block|,
-literal|"1995-1996"
+literal|""
 block|,
-name|NULL
+literal|"NONE"
 block|,
 name|GIMP_INTERNAL
 block|,

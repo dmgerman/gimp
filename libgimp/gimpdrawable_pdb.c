@@ -1223,7 +1223,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_image:  * @drawable_ID: The drawable.  * @image_ID: The image.  *  * Set image where drawable belongs to.  *  * Set the image the drawable should be a part of (Use this before  * adding a drawable to another image).  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_image:  * @drawable_ID: The drawable.  * @image_ID: The image.  *  * This procedure is deprecated!  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

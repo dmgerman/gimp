@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9989fe0103
+DECL|enum|__anon2afb8d350103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -3861,7 +3861,8 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimp_item_is_floating
+operator|!
+name|gimp_item_is_attached
 argument_list|(
 name|item
 argument_list|)
@@ -3869,8 +3870,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|gimage
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
