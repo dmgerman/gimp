@@ -350,6 +350,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Image>/File/Open Recent  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/File/_Open Recent"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -773,6 +781,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Image>/Edit/Buffer  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Edit/_Buffer"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -1300,6 +1316,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Image>/View/Zoom  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/View/_Zoom"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -1941,6 +1965,14 @@ argument_list|)
 argument_list|)
 block|,
 comment|/*<Image>/Image/Mode  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Image/_Mode"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -2017,6 +2049,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Image>/Image/Transform  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Image/_Transform"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -2438,17 +2478,30 @@ block|,
 name|NULL
 block|}
 block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/Layer/---"
+argument_list|)
+block|,
 comment|/*<Image>/Layer/Stack  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Layer/_Stack"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Stack/Previous Layer"
+literal|"/Layer/Stack/Select Previous Layer"
 argument_list|)
 block|,
 literal|"Prior"
 block|,
-name|layers_previous_cmd_callback
+name|layers_select_previous_cmd_callback
 block|,
 literal|0
 block|}
@@ -2464,12 +2517,12 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Stack/Next Layer"
+literal|"/Layer/Stack/Select Next Layer"
 argument_list|)
 block|,
 literal|"Next"
 block|,
-name|layers_next_cmd_callback
+name|layers_select_next_cmd_callback
 block|,
 literal|0
 block|}
@@ -2480,6 +2533,53 @@ literal|"layers/stack/stack.html#next_layer"
 block|,
 name|NULL
 block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Stack/Select Top Layer"
+argument_list|)
+block|,
+literal|"Home"
+block|,
+name|layers_select_top_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/stack/stack.html#previous_layer"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Stack/Select Bottom Layer"
+argument_list|)
+block|,
+literal|"End"
+block|,
+name|layers_select_bottom_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/stack/stack.html#next_layer"
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/Layer/Stack/---"
+argument_list|)
 block|,
 block|{
 block|{
@@ -2538,7 +2638,7 @@ argument_list|(
 literal|"/Layer/Stack/Layer to Top"
 argument_list|)
 block|,
-literal|"<control>Prior"
+literal|"<shift>Home"
 block|,
 name|layers_raise_to_top_cmd_callback
 block|,
@@ -2563,7 +2663,7 @@ argument_list|(
 literal|"/Layer/Stack/Layer to Bottom"
 argument_list|)
 block|,
-literal|"<control>Next"
+literal|"<Shift>End"
 block|,
 name|layers_lower_to_bottom_cmd_callback
 block|,
@@ -2581,57 +2681,41 @@ block|,
 name|NULL
 block|}
 block|,
+comment|/*<Image>/Layer/Colors  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Layer/_Colors"
+argument_list|)
+argument_list|)
+block|,
 name|MENU_SEPARATOR
 argument_list|(
-literal|"/Layer/---"
+literal|"/Layer/Colors/---"
 argument_list|)
 block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Layer Boundary Size..."
+literal|"/Layer/Colors/Desaturate"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_resize_cmd_callback
+name|drawable_desaturate_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_RESIZE
+name|GIMP_STOCK_CONVERT_GRAYSCALE
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/layer_boundary_size.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Layer/Layer to Imagesize"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|layers_resize_to_image_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_LAYER_TO_IMAGESIZE
-block|}
-block|,
-name|NULL
-block|,
-literal|"layers/layer_to_image_size.html"
+literal|"layers/colors/desaturate.html"
 block|,
 name|NULL
 block|}
@@ -2640,23 +2724,88 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Scale Layer..."
+literal|"/Layer/Colors/Invert"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_scale_cmd_callback
+name|drawable_invert_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_SCALE
+name|GIMP_STOCK_INVERT
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/scale_layer.html"
+literal|"layers/colors/invert.html"
+block|,
+name|NULL
+block|}
+block|,
+comment|/*<Image>/Layer/Colors/Auto  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Layer/Colors/_Auto"
+argument_list|)
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Colors/Auto/Equalize"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|drawable_equalize_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/colors/auto/equalize.html"
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/Layer/Colors/---"
+argument_list|)
+block|,
+comment|/*<Image>/Layer/Mask  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Layer/_Mask"
+argument_list|)
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/Add Layer Mask..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_add_layer_mask_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/dialogs/add_layer_mask.html"
 block|,
 name|NULL
 block|}
@@ -2665,28 +2814,142 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Crop Layer"
+literal|"/Layer/Mask/Apply Layer Mask"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_crop_cmd_callback
+name|layers_apply_layer_mask_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/apply_mask.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/Delete Layer Mask"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_delete_layer_mask_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_TOOL_CROP
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/dialogs/scale_layer.html"
+literal|"layers/delete_mask.html"
 block|,
 name|NULL
 block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Mask/Mask to Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_mask_select_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_REPLACE
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/mask_to_selection.html"
+block|,
+name|NULL
+block|}
+block|,
+comment|/*<Image>/Layer/Transparency  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Layer/Tr_ansparency"
+argument_list|)
+argument_list|)
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Transparency/Add Alpha Channel"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_add_alpha_channel_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/add_alpha_channel.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Layer/Transparency/Alpha to Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_alpha_select_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_REPLACE
+block|}
+block|,
+name|NULL
+block|,
+literal|"layers/alpha_to_selection.html"
+block|,
+name|NULL
+block|}
+block|,
+name|MENU_SEPARATOR
+argument_list|(
+literal|"/Layer/Transparency/---"
+argument_list|)
 block|,
 comment|/*<Image>/Layer/Transform  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Layer/_Transform"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -2848,33 +3111,27 @@ argument_list|(
 literal|"/Layer/---"
 argument_list|)
 block|,
-comment|/*<Image>/Layer/Colors  */
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/Layer/Colors/---"
-argument_list|)
-block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Colors/Desaturate"
+literal|"/Layer/Layer Boundary Size..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|drawable_desaturate_cmd_callback
+name|layers_resize_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_CONVERT_GRAYSCALE
+name|GIMP_STOCK_RESIZE
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/colors/desaturate.html"
+literal|"layers/dialogs/layer_boundary_size.html"
 block|,
 name|NULL
 block|}
@@ -2883,72 +3140,23 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Colors/Invert"
+literal|"/Layer/Layer to Imagesize"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|drawable_invert_cmd_callback
+name|layers_resize_to_image_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_INVERT
+name|GIMP_STOCK_LAYER_TO_IMAGESIZE
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/colors/invert.html"
-block|,
-name|NULL
-block|}
-block|,
-comment|/*<Image>/Layer/Colors/Auto  */
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Layer/Colors/Auto/Equalize"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|drawable_equalize_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"layers/colors/auto/equalize.html"
-block|,
-name|NULL
-block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/Layer/Colors/---"
-argument_list|)
-block|,
-comment|/*<Image>/Layer/Mask  */
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Layer/Mask/Add Layer Mask..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|layers_add_layer_mask_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"layers/dialogs/add_layer_mask.html"
+literal|"layers/layer_to_image_size.html"
 block|,
 name|NULL
 block|}
@@ -2957,44 +3165,23 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Mask/Apply Layer Mask"
+literal|"/Layer/Scale Layer..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_apply_layer_mask_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"layers/apply_mask.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Layer/Mask/Delete Layer Mask"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|layers_delete_layer_mask_cmd_callback
+name|layers_scale_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_DELETE
+name|GIMP_STOCK_SCALE
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/delete_mask.html"
+literal|"layers/dialogs/scale_layer.html"
 block|,
 name|NULL
 block|}
@@ -3003,78 +3190,26 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layer/Mask/Mask to Selection"
+literal|"/Layer/Crop Layer"
 argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_mask_select_cmd_callback
+name|layers_crop_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_SELECTION_REPLACE
+name|GIMP_STOCK_TOOL_CROP
 block|}
 block|,
 name|NULL
 block|,
-literal|"layers/mask_to_selection.html"
+literal|"layers/dialogs/scale_layer.html"
 block|,
 name|NULL
 block|}
-block|,
-comment|/*<Image>/Layer/Transparency  */
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Layer/Transparency/Add Alpha Channel"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|layers_add_alpha_channel_cmd_callback
-block|,
-literal|0
-block|}
-block|,
-name|NULL
-block|,
-literal|"layers/add_alpha_channel.html"
-block|,
-name|NULL
-block|}
-block|,
-block|{
-block|{
-name|N_
-argument_list|(
-literal|"/Layer/Transparency/Alpha to Selection"
-argument_list|)
-block|,
-name|NULL
-block|,
-name|layers_alpha_select_cmd_callback
-block|,
-literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GIMP_STOCK_SELECTION_REPLACE
-block|}
-block|,
-name|NULL
-block|,
-literal|"layers/alpha_to_selection.html"
-block|,
-name|NULL
-block|}
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/Layer/Transparency/---"
-argument_list|)
 block|,
 name|MENU_SEPARATOR
 argument_list|(
@@ -3170,7 +3305,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Tools/Selection Tools"
+literal|"/Tools/_Selection Tools"
 argument_list|)
 argument_list|)
 block|,
@@ -3178,7 +3313,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools"
+literal|"/Tools/_Paint Tools"
 argument_list|)
 argument_list|)
 block|,
@@ -3186,7 +3321,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools"
+literal|"/Tools/_Transform Tools"
 argument_list|)
 argument_list|)
 block|,
@@ -3835,7 +3970,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Blur"
+literal|"/Filters/_Blur"
 argument_list|)
 argument_list|)
 block|,
@@ -3843,7 +3978,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Colors"
+literal|"/Filters/_Colors"
 argument_list|)
 argument_list|)
 block|,
@@ -3851,7 +3986,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Noise"
+literal|"/Filters/_Noise"
 argument_list|)
 argument_list|)
 block|,
@@ -3859,7 +3994,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Edge-Detect"
+literal|"/Filters/_Edge-Detect"
 argument_list|)
 argument_list|)
 block|,
@@ -3867,7 +4002,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Enhance"
+literal|"/Filters/En_hance"
 argument_list|)
 argument_list|)
 block|,
@@ -3875,7 +4010,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Generic"
+literal|"/Filters/_Generic"
 argument_list|)
 argument_list|)
 block|,
@@ -3888,7 +4023,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Glass Effects"
+literal|"/Filters/Gla_ss Effects"
 argument_list|)
 argument_list|)
 block|,
@@ -3896,7 +4031,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Light Effects"
+literal|"/Filters/_Light Effects"
 argument_list|)
 argument_list|)
 block|,
@@ -3904,7 +4039,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Distorts"
+literal|"/Filters/_Distorts"
 argument_list|)
 argument_list|)
 block|,
@@ -3912,7 +4047,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Artistic"
+literal|"/Filters/_Artistic"
 argument_list|)
 argument_list|)
 block|,
@@ -3920,7 +4055,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Map"
+literal|"/Filters/_Map"
 argument_list|)
 argument_list|)
 block|,
@@ -3928,7 +4063,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Render"
+literal|"/Filters/_Render"
 argument_list|)
 argument_list|)
 block|,
@@ -3936,7 +4071,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Web"
+literal|"/Filters/_Web"
 argument_list|)
 argument_list|)
 block|,
@@ -3949,7 +4084,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Animation"
+literal|"/Filters/An_imation"
 argument_list|)
 argument_list|)
 block|,
@@ -3957,7 +4092,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/Filters/Combine"
+literal|"/Filters/C_ombine"
 argument_list|)
 argument_list|)
 block|,
@@ -3969,7 +4104,7 @@ block|,
 name|MENU_BRANCH
 argument_list|(
 argument|N_(
-literal|"/Filters/Toys"
+literal|"/Filters/_Toys"
 argument|)
 argument_list|)
 block|}
@@ -6222,7 +6357,104 @@ expr_stmt|;
 comment|/*  Layer  */
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Layer/Stack/Previous Layer"
+literal|"/Layer/New Layer..."
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Duplicate Layer"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Anchor Layer"
+argument_list|,
+name|lp
+operator|&&
+name|fs
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Merge Down"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Delete Layer"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Layer Boundary Size..."
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Layer to Imagesize"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Scale Layer..."
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Crop Layer"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|sel
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Stack/Select Previous Layer"
 argument_list|,
 name|lp
 operator|&&
@@ -6239,7 +6471,45 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Layer/Stack/Next Layer"
+literal|"/Layer/Stack/Select Next Layer"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|lind
+operator|<
+operator|(
+name|lnum
+operator|-
+literal|1
+operator|)
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Stack/Select Top Layer"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|fs
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|lind
+operator|>
+literal|0
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Stack/Select Bottom Layer"
 argument_list|,
 name|lp
 operator|&&
@@ -6344,124 +6614,6 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Layer/New Layer..."
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Duplicate Layer"
-argument_list|,
-name|lp
-operator|&&
-operator|!
-name|fs
-operator|&&
-operator|!
-name|aux
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Anchor Layer"
-argument_list|,
-name|lp
-operator|&&
-name|fs
-operator|&&
-operator|!
-name|aux
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Merge Down"
-argument_list|,
-name|lp
-operator|&&
-operator|!
-name|fs
-operator|&&
-operator|!
-name|aux
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Delete Layer"
-argument_list|,
-name|lp
-operator|&&
-operator|!
-name|aux
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Layer Boundary Size..."
-argument_list|,
-name|lp
-operator|&&
-operator|!
-name|aux
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Layer to Imagesize"
-argument_list|,
-name|lp
-operator|&&
-operator|!
-name|aux
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Scale Layer..."
-argument_list|,
-name|lp
-operator|&&
-operator|!
-name|aux
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Crop Layer"
-argument_list|,
-name|lp
-operator|&&
-operator|!
-name|aux
-operator|&&
-name|sel
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Transform/Flip Horizontally"
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Transform/Flip Vertically"
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
-literal|"/Layer/Transform/Offset..."
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"/Layer/Colors/Color Balance..."
 argument_list|,
 name|lp
@@ -6472,6 +6624,15 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Layer/Colors/Hue-Saturation..."
+argument_list|,
+name|lp
+operator|&&
+name|is_rgb
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Colors/Colorize..."
 argument_list|,
 name|lp
 operator|&&
@@ -6629,18 +6790,6 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Layer/Transparency/Alpha to Selection"
-argument_list|,
-name|lp
-operator|&&
-operator|!
-name|aux
-operator|&&
-name|alpha
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"/Layer/Transparency/Add Alpha Channel"
 argument_list|,
 name|lp
@@ -6656,6 +6805,39 @@ name|lm
 operator|&&
 operator|!
 name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transparency/Alpha to Selection"
+argument_list|,
+name|lp
+operator|&&
+operator|!
+name|aux
+operator|&&
+name|alpha
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transform/Flip Horizontally"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transform/Flip Vertically"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Layer/Transform/Offset..."
+argument_list|,
+name|lp
 argument_list|)
 expr_stmt|;
 undef|#
@@ -6967,7 +7149,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Zoom (%d:%d)"
+literal|"_Zoom (%d:%d)"
 argument_list|)
 argument_list|,
 name|scaledest

@@ -2161,7 +2161,7 @@ operator|->
 name|child
 argument_list|)
 condition|)
-name|gtk_label_set_text
+name|gtk_label_set_text_with_mnemonic
 argument_list|(
 name|GTK_LABEL
 argument_list|(

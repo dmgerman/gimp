@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|layers_previous_cmd_callback
+name|layers_select_previous_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -32,7 +32,35 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|layers_next_cmd_callback
+name|layers_select_next_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widet
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|layers_select_top_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widet
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|layers_select_bottom_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -160,6 +160,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Toolbox>/File/Open Recent  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/File/_Open Recent"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
@@ -216,7 +224,7 @@ name|MENU_BRANCH
 argument_list|(
 name|N_
 argument_list|(
-literal|"/File/Acquire"
+literal|"/File/_Acquire"
 argument_list|)
 argument_list|)
 block|,
@@ -251,6 +259,14 @@ name|NULL
 block|}
 block|,
 comment|/*<Toolbox>/File/Dialogs  */
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/File/_Dialogs"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
