@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a5d700103
+DECL|enum|__anon2be39bf10103
 block|{
 DECL|enumerator|SPLASH_SHOW_LOGO_NEVER
 name|SPLASH_SHOW_LOGO_NEVER
@@ -441,16 +441,16 @@ operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|logo_area
 argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|splash_logo_expose
 argument_list|)

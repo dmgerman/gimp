@@ -324,8 +324,8 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|info_window_image_rename_callback (GimpImage * gimage,gpointer data)
-name|info_window_image_rename_callback
+DECL|function|info_window_image_renamed_callback (GimpImage * gimage,gpointer data)
+name|info_window_image_renamed_callback
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -464,12 +464,14 @@ operator|(
 name|InfoDialog
 operator|*
 operator|)
-name|gtk_object_get_user_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+literal|"user_data"
 argument_list|)
 expr_stmt|;
 name|iwd
@@ -1671,24 +1673,23 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_user_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|info_win
 operator|->
 name|info_notebook
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+literal|"user_data"
+argument_list|,
 name|info_win
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|info_win
 operator|->
@@ -1697,7 +1698,7 @@ argument_list|)
 argument_list|,
 literal|"switch_page"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|info_window_page_switch
 argument_list|)
@@ -1928,9 +1929,9 @@ name|info_win
 argument_list|)
 expr_stmt|;
 comment|/*  keep track of image name changes  */
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -1939,9 +1940,9 @@ argument_list|)
 argument_list|,
 literal|"name_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
-name|info_window_image_rename_callback
+name|info_window_image_renamed_callback
 argument_list|)
 argument_list|,
 name|info_win
@@ -2935,9 +2936,9 @@ name|info_win
 operator|->
 name|user_data
 expr_stmt|;
-name|gtk_signal_disconnect_by_data
+name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|iwd
 operator|->
@@ -2945,6 +2946,8 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|)
+argument_list|,
+name|info_window_image_renamed_callback
 argument_list|,
 name|info_win
 argument_list|)

@@ -706,7 +706,7 @@ argument_list|)
 argument_list|,
 literal|"drag_drop"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gimp_dock_separator_drag_drop
 argument_list|)

@@ -638,9 +638,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_object_set_data
+name|g_object_set_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|shrink_dialog
 argument_list|)
@@ -1351,9 +1351,9 @@ operator|=
 operator|!
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|gtk_object_get_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)

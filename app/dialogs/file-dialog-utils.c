@@ -115,7 +115,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|file_dialog_hide (GtkWidget * filesel)
 name|file_dialog_hide
 parameter_list|(
@@ -171,19 +171,23 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  return FALSE because we are used as "delete_event" handler  */
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|file_dialog_update_name (PlugInProcDef * proc,GtkWidget * filesel)
+DECL|function|file_dialog_update_name (PlugInProcDef * proc,GtkFileSelection * filesel)
 name|file_dialog_update_name
 parameter_list|(
 name|PlugInProcDef
 modifier|*
 name|proc
 parameter_list|,
-name|GtkWidget
+name|GtkFileSelection
 modifier|*
 name|filesel
 parameter_list|)
@@ -214,10 +218,7 @@ name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|GTK_FILE_SELECTION
-argument_list|(
 name|filesel
-argument_list|)
 operator|->
 name|selection_entry
 argument_list|)
@@ -291,10 +292,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|GTK_FILE_SELECTION
-argument_list|(
 name|filesel
-argument_list|)
 operator|->
 name|selection_entry
 argument_list|)

@@ -1536,9 +1536,9 @@ if|if
 condition|(
 name|double_speed
 condition|)
-name|gtk_signal_connect_after
+name|g_signal_connect_after
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->

@@ -28,7 +28,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|file_dialog_hide
 parameter_list|(
 name|GtkWidget
@@ -46,7 +46,7 @@ name|PlugInProcDef
 modifier|*
 name|proc
 parameter_list|,
-name|GtkWidget
+name|GtkFileSelection
 modifier|*
 name|filesel
 parameter_list|)

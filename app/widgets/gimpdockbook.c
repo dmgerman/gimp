@@ -1133,12 +1133,23 @@ operator|)
 name|dockable
 condition|)
 block|{
-name|gtk_signal_disconnect_by_data
+comment|/*  EEK: disconnect GtkNotebook's own handler  */
+name|g_signal_handlers_disconnect_matched
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|menu_item
 argument_list|)
+argument_list|,
+name|G_SIGNAL_MATCH_DATA
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|,
 name|page
 argument_list|)

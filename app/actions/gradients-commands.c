@@ -440,7 +440,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_widget_destroy
 argument_list|)

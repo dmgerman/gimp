@@ -1373,7 +1373,7 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_widget_destroyed
 argument_list|)
@@ -1494,7 +1494,7 @@ argument_list|)
 argument_list|,
 literal|"select_row"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|paths_select_row
 argument_list|)
@@ -1511,7 +1511,7 @@ argument_list|)
 argument_list|,
 literal|"unselect_row"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|paths_unselect_row
 argument_list|)
@@ -1540,7 +1540,7 @@ argument_list|)
 argument_list|,
 literal|"realize"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|paths_dialog_realized
 argument_list|)
@@ -4847,9 +4847,9 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gtk_signal_disconnect
+name|g_signal_handler_disconnect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|plp
 operator|->
@@ -8402,7 +8402,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|file_cancel_callback
 argument_list|)
@@ -8424,7 +8424,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|file_ok_callback
 argument_list|)
@@ -8441,7 +8441,7 @@ argument_list|)
 argument_list|,
 literal|"delete_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|gtk_widget_hide
 argument_list|)
@@ -10732,9 +10732,9 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gtk_signal_disconnect
+name|g_signal_handler_disconnect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|plp
 operator|->

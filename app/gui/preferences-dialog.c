@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d7bcc00103
+DECL|enum|__anon29591e2f0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -4614,12 +4614,14 @@ name|val
 operator|=
 name|GPOINTER_TO_INT
 argument_list|(
-name|gtk_object_get_user_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+literal|"user_data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4652,12 +4654,14 @@ name|val
 operator|=
 name|GPOINTER_TO_INT
 argument_list|(
-name|gtk_object_get_user_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+literal|"user_data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4744,7 +4748,20 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/* FIXME: update preview size      lc_dialog_rebuild ((long) gtk_object_get_user_data (GTK_OBJECT (widget)));   */
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: update preview size
+endif|#
+directive|endif
+if|#
+directive|if
+literal|0
+block|lc_dialog_rebuild ((long) g_object_get_data (G_OBJECT (widget), "user_data"));
+endif|#
+directive|endif
 name|layer_select_update_preview_size
 argument_list|()
 expr_stmt|;
@@ -4771,12 +4788,14 @@ name|nav_preview_size
 operator|=
 name|GPOINTER_TO_INT
 argument_list|(
-name|gtk_object_get_user_data
+name|g_object_get_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+literal|"user_data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13526,7 +13545,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27d7bcc00208
+DECL|struct|__anon29591e2f0208
 block|{
 DECL|member|label
 name|gchar
@@ -13755,7 +13774,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27d7bcc00308
+DECL|struct|__anon29591e2f0308
 block|{
 DECL|member|tree_label
 name|gchar
