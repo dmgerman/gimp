@@ -40,6 +40,10 @@ modifier|*
 modifier|*
 name|argv
 decl_stmt|;
+name|gchar
+modifier|*
+name|user_gtkrc
+decl_stmt|;
 specifier|static
 name|gboolean
 name|initialized
@@ -95,6 +99,23 @@ name|gtk_rc_parse
 argument_list|(
 name|gimp_gtkrc
 argument_list|()
+argument_list|)
+expr_stmt|;
+name|user_gtkrc
+operator|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gtkrc"
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|user_gtkrc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|user_gtkrc
 argument_list|)
 expr_stmt|;
 comment|/*  It's only safe to switch Gdk SHM usage off  */

@@ -2358,6 +2358,11 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|parse_buffers_init
