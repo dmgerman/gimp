@@ -81,7 +81,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d9d7570108
+DECL|struct|__anon2767d2750108
 block|{
 DECL|member|img
 name|gint32
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d9d7570203
+DECL|enum|__anon2767d2750203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -2740,6 +2740,7 @@ end_comment
 
 begin_function
 specifier|static
+specifier|inline
 name|void
 DECL|function|nlfiltRow (guchar * srclast,guchar * srcthis,guchar * srcnext,guchar * dst,gint width,gint bpp,gint filtno)
 name|nlfiltRow

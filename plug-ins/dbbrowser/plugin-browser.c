@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b5ea20108
+DECL|struct|__anon2c106abf0108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b5ea20208
+DECL|struct|__anon2c106abf0208
 block|{
 DECL|member|menu
 name|gchar
@@ -182,7 +182,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b5ea20303
+DECL|enum|__anon2c106abf0303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -207,7 +207,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b5ea20403
+DECL|enum|__anon2c106abf0403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -799,19 +799,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|GtkWidget
-modifier|*
-name|p
-init|=
-name|GTK_WIDGET
-argument_list|(
-name|pdesc
-operator|->
-name|paned
-argument_list|)
-operator|->
-name|parent
-decl_stmt|;
 name|GTK_PANED
 argument_list|(
 name|pdesc
