@@ -66,7 +66,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2046920103
+DECL|enum|__anon2bd204270103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -4142,6 +4142,18 @@ argument_list|,
 name|gimp_size_entry_signals
 index|[
 name|UNIT_CHANGED
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|gse
+argument_list|,
+name|gimp_size_entry_signals
+index|[
+name|VALUE_CHANGED
 index|]
 argument_list|,
 literal|0
