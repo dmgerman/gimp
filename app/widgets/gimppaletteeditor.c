@@ -2339,6 +2339,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 literal|"<PaletteEditor>"
+argument_list|,
+literal|"/palette-editor-popup"
 argument_list|)
 condition|)
 block|{

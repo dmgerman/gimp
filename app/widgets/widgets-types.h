@@ -102,6 +102,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpUIManager
+typedef|typedef
+name|struct
+name|_GimpUIManager
+name|GimpUIManager
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpEnumStore
 typedef|typedef
 name|struct

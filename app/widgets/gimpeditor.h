@@ -113,6 +113,11 @@ name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
+DECL|member|ui_manager
+name|GimpUIManager
+modifier|*
+name|ui_manager
+decl_stmt|;
 DECL|member|item_factory_data
 name|gpointer
 name|item_factory_data
@@ -175,6 +180,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_identifier
 parameter_list|,
 name|gpointer
 name|callback_data

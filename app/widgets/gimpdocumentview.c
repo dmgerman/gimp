@@ -577,6 +577,8 @@ comment|/* reorderable */
 name|menu_factory
 argument_list|,
 literal|"<Documents>"
+argument_list|,
+literal|"/documents-popup"
 argument_list|)
 condition|)
 block|{

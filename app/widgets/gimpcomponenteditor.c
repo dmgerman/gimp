@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2b2910103
+DECL|enum|__anon299ca7d90103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1133,6 +1133,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 literal|"<Channels>"
+argument_list|,
+literal|"/channels-popup"
 argument_list|,
 name|editor
 argument_list|)

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -843,6 +849,15 @@ argument_list|(
 name|shell
 operator|->
 name|menubar_factory
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_ui_manager_update
+argument_list|(
+name|shell
+operator|->
+name|menubar_manager
 argument_list|,
 name|shell
 argument_list|)

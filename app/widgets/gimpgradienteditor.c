@@ -2149,6 +2149,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 literal|"<GradientEditor>"
+argument_list|,
+literal|"/gradient-editor-popup"
 argument_list|)
 condition|)
 block|{

@@ -211,7 +211,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b47c4f10103
+DECL|enum|__anon2b9a7ef00103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1350,6 +1350,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 literal|"<ColormapEditor>"
+argument_list|,
+literal|"/colormap-editor-popup"
 argument_list|,
 name|editor
 argument_list|)

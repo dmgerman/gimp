@@ -1161,6 +1161,8 @@ name|menu_factory
 argument_list|,
 literal|"<ToolOptions>"
 argument_list|,
+literal|"/tool-options-popup"
+argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;

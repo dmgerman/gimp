@@ -629,6 +629,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 literal|"<Brushes>"
+argument_list|,
+literal|"/brushes-popup"
 argument_list|)
 condition|)
 block|{

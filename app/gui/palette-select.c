@@ -486,6 +486,8 @@ argument_list|,
 name|global_menu_factory
 argument_list|,
 literal|"<Palettes>"
+argument_list|,
+literal|"/palettes-popup"
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_set_size_request

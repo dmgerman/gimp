@@ -280,6 +280,11 @@ name|GimpItemFactory
 modifier|*
 name|menubar_factory
 decl_stmt|;
+DECL|member|menubar_manager
+name|GimpUIManager
+modifier|*
+name|menubar_manager
+decl_stmt|;
 DECL|member|popup_factory
 name|GimpItemFactory
 modifier|*

@@ -77,6 +77,11 @@ name|GList
 modifier|*
 name|action_groups
 decl_stmt|;
+DECL|member|managed_uis
+name|GList
+modifier|*
+name|managed_uis
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -312,7 +317,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkUIManager
+name|GimpUIManager
 modifier|*
 name|gimp_menu_factory_manager_new
 parameter_list|(

@@ -209,6 +209,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -334,7 +340,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c84a97e0103
+DECL|enum|__anon2a02fb040103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -819,6 +825,12 @@ expr_stmt|;
 name|shell
 operator|->
 name|menubar_factory
+operator|=
+name|NULL
+expr_stmt|;
+name|shell
+operator|->
+name|menubar_manager
 operator|=
 name|NULL
 expr_stmt|;
@@ -1533,6 +1545,27 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|shell
+operator|->
+name|menubar_manager
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|shell
+operator|->
+name|menubar_manager
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|menubar_manager
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 name|shell
 operator|->
 name|popup_factory
@@ -1925,6 +1958,15 @@ argument_list|(
 name|shell
 operator|->
 name|menubar_factory
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_ui_manager_update
+argument_list|(
+name|shell
+operator|->
+name|menubar_manager
 argument_list|,
 name|shell
 argument_list|)
@@ -2430,6 +2472,21 @@ argument_list|)
 expr_stmt|;
 name|shell
 operator|->
+name|menubar_manager
+operator|=
+name|gimp_menu_factory_manager_new
+argument_list|(
+name|menu_factory
+argument_list|,
+literal|"<Image>"
+argument_list|,
+name|gdisp
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
 name|popup_factory
 operator|=
 name|popup_factory
@@ -2531,6 +2588,12 @@ argument_list|(
 name|menubar
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|menubar = gimp_ui_manager_ui_create (shell->menubar_manager,                                        "/image-menubar");   gtk_box_pack_start (GTK_BOX (main_vbox), menubar, FALSE, FALSE, 0);   gtk_widget_show (menubar);
+endif|#
+directive|endif
 comment|/*  make sure we can activate accels even if the menubar is invisible    *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)    */
 name|g_signal_connect
 argument_list|(

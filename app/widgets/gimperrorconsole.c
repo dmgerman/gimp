@@ -926,6 +926,8 @@ name|menu_factory
 argument_list|,
 literal|"<ErrorConsole>"
 argument_list|,
+literal|"/error-console-popup"
+argument_list|,
 name|console
 argument_list|)
 expr_stmt|;

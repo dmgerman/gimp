@@ -1164,6 +1164,8 @@ operator|->
 name|menu_factory
 argument_list|,
 literal|"<Gradients>"
+argument_list|,
+literal|"/gradients-popup"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1233,6 +1235,8 @@ operator|->
 name|menu_factory
 argument_list|,
 literal|"<Palettes>"
+argument_list|,
+literal|"/palettes-popup"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1874,6 +1878,8 @@ operator|->
 name|menu_factory
 argument_list|,
 literal|"<Gradients>"
+argument_list|,
+literal|"/gradients-popup"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1943,6 +1949,8 @@ operator|->
 name|menu_factory
 argument_list|,
 literal|"<Palettes>"
+argument_list|,
+literal|"/palettes-popup"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2309,6 +2317,8 @@ operator|->
 name|menu_factory
 argument_list|,
 literal|"<Layers>"
+argument_list|,
+literal|"/layers-popup"
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -2424,6 +2434,8 @@ operator|->
 name|menu_factory
 argument_list|,
 literal|"<Channels>"
+argument_list|,
+literal|"/channels-popup"
 argument_list|)
 expr_stmt|;
 name|dockable
@@ -2543,6 +2555,8 @@ operator|->
 name|menu_factory
 argument_list|,
 literal|"<Vectors>"
+argument_list|,
+literal|"/vectors-popup"
 argument_list|)
 expr_stmt|;
 name|vectors_view

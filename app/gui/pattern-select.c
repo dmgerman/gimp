@@ -470,6 +470,8 @@ argument_list|,
 name|global_menu_factory
 argument_list|,
 literal|"<Patterns>"
+argument_list|,
+literal|"/patterns-popup"
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_set_size_request

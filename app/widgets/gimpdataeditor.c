@@ -1027,7 +1027,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_editor_construct (GimpDataEditor * editor,GimpDataFactory * data_factory,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_data_editor_construct (GimpDataEditor * editor,GimpDataFactory * data_factory,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
 name|gimp_data_editor_construct
 parameter_list|(
 name|GimpDataEditor
@@ -1046,6 +1046,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_identifier
 parameter_list|)
 block|{
 name|GimpData
@@ -1110,6 +1115,8 @@ condition|(
 name|menu_factory
 operator|&&
 name|menu_identifier
+operator|&&
+name|ui_identifier
 condition|)
 name|gimp_editor_create_menu
 argument_list|(
@@ -1121,6 +1128,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|menu_identifier
+argument_list|,
+name|ui_identifier
 argument_list|,
 name|editor
 argument_list|)

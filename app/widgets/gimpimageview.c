@@ -420,6 +420,8 @@ comment|/* reorderable */
 name|menu_factory
 argument_list|,
 literal|"<Images>"
+argument_list|,
+literal|"/images-popup"
 argument_list|)
 condition|)
 block|{

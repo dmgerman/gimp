@@ -544,6 +544,8 @@ comment|/* reorderable */
 name|menu_factory
 argument_list|,
 literal|"<Templates>"
+argument_list|,
+literal|"/templates-popup"
 argument_list|)
 condition|)
 block|{

@@ -464,7 +464,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_data_factory_view_new (GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
 name|gimp_data_factory_view_new
 parameter_list|(
 name|GimpViewType
@@ -495,6 +495,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_identifier
 parameter_list|)
 block|{
 name|GimpDataFactoryView
@@ -532,6 +537,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|menu_identifier
+argument_list|,
+name|ui_identifier
 argument_list|)
 condition|)
 block|{
@@ -555,7 +562,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_data_factory_view_construct (GimpDataFactoryView * factory_view,GimpViewType view_type,GimpDataFactory * factory,GimpDataEditFunc edit_func,GimpContext * context,gint preview_size,gint preview_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
 name|gimp_data_factory_view_construct
 parameter_list|(
 name|GimpDataFactoryView
@@ -590,6 +597,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_identifier
 parameter_list|)
 block|{
 name|GimpContainerEditor
@@ -682,6 +694,8 @@ comment|/* reorderable */
 name|menu_factory
 argument_list|,
 name|menu_identifier
+argument_list|,
+name|ui_identifier
 argument_list|)
 condition|)
 block|{

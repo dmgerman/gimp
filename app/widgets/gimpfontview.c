@@ -376,6 +376,8 @@ comment|/* reorderable */
 name|menu_factory
 argument_list|,
 literal|"<Fonts>"
+argument_list|,
+literal|"/fonts-popup"
 argument_list|)
 condition|)
 block|{

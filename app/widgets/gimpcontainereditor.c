@@ -480,7 +480,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,gboolean reorderable,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,gboolean reorderable,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
 name|gimp_container_editor_construct
 parameter_list|(
 name|GimpContainerEditor
@@ -515,6 +515,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_identifier
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -657,6 +662,8 @@ condition|(
 name|menu_factory
 operator|&&
 name|menu_identifier
+operator|&&
+name|ui_identifier
 condition|)
 name|gimp_editor_create_menu
 argument_list|(
@@ -670,6 +677,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|menu_identifier
+argument_list|,
+name|ui_identifier
 argument_list|,
 name|editor
 argument_list|)

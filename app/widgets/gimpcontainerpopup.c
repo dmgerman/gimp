@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29615dbd0103
+DECL|enum|__anon2a3f6c4b0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1955,6 +1955,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 comment|/* reorderable */
+name|NULL
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2891f1020103
+DECL|enum|__anon2bbaa4b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +189,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2891f1020203
+DECL|enum|__anon2bbaa4b80203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2490,7 +2490,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_item_tree_view_new (gint preview_size,gint preview_border_width,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpEditItemFunc edit_item_func,GimpNewItemFunc new_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier)
+DECL|function|gimp_item_tree_view_new (gint preview_size,gint preview_border_width,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpEditItemFunc edit_item_func,GimpNewItemFunc new_item_func,GimpActivateItemFunc activate_item_func,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
 name|gimp_item_tree_view_new
 parameter_list|(
 name|gint
@@ -2528,6 +2528,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ui_identifier
 parameter_list|)
 block|{
 name|GimpItemTreeView
@@ -2634,6 +2639,15 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|menu_identifier
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|ui_identifier
 operator|!=
 name|NULL
 argument_list|,
@@ -2771,6 +2785,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|menu_identifier
+argument_list|,
+name|ui_identifier
 argument_list|,
 name|item_view
 argument_list|)

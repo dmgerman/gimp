@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptool.h"
 end_include
 
@@ -131,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9174970103
+DECL|enum|__anon2c2769c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1827,6 +1833,15 @@ argument_list|(
 name|shell
 operator|->
 name|menubar_factory
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_ui_manager_update
+argument_list|(
+name|shell
+operator|->
+name|menubar_manager
 argument_list|,
 name|shell
 argument_list|)
