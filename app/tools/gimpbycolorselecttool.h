@@ -6,20 +6,138 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BY_COLOR_SELECT_H__
+name|__GIMP_BY_COLOR_SELECT_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BY_COLOR_SELECT_H__
+DECL|macro|__GIMP_BY_COLOR_SELECT_TOOL_H__
 define|#
 directive|define
-name|__BY_COLOR_SELECT_H__
+name|__GIMP_BY_COLOR_SELECT_TOOL_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpselectiontool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_BY_COLOR_SELECT_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_BY_COLOR_SELECT_TOOL
+value|(gimp_by_color_select_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_BY_COLOR_SELECT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_BY_COLOR_SELECT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_BY_COLOR_SELECT_TOOL, GimpByColorSelectTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BY_COLOR_SELECT_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_BY_COLOR_SELECT_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_BY_COLOR_SELECT_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_BY_COLOR_SELECT_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_BY_COLOR_SELECT_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_BY_COLOR_SELECT_TOOL, GimpByColorSelectToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_BY_COLOR_SELECT_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_BY_COLOR_SELECT_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BY_COLOR_SELECT_TOOL))
+end_define
+
+begin_comment
+comment|/*  the by color selection structures  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpByColorSelectTool
+typedef|typedef
+name|struct
+name|_GimpByColorSelectTool
+name|GimpByColorSelectTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpByColorSelectToolClass
+typedef|typedef
+name|struct
+name|_GimpByColorSelectToolClass
+name|GimpByColorSelectToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpByColorSelectTool
+struct|struct
+name|_GimpByColorSelectTool
+block|{
+DECL|member|parent_instance
+name|GimpSelectionTool
+name|parent_instance
+decl_stmt|;
+DECL|member|x
+DECL|member|y
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+comment|/*  Point from which to execute seed fill  */
+DECL|member|operation
+name|SelectOps
+name|operation
+decl_stmt|;
+comment|/*  add, subtract, normal color selection  */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpByColorSelectToolClass
+struct|struct
+name|_GimpByColorSelectToolClass
+block|{
+DECL|member|klass
+name|GimpSelectionToolClass
+name|klass
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_by_color_select
+name|void
+name|gimp_by_color_select_tool_register
 parameter_list|(
 name|void
 parameter_list|)
@@ -27,41 +145,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tools_free_by_color_select
+name|GtkType
+name|gimp_by_color_select_tool_get_type
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|by_color_select_initialize
-parameter_list|(
-name|GDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/*  * void    gimp_by_color_select_tool_initialize          (GDisplay     *gdisp);  * void    gimp_by_color_select_tool_initialize_by_image (GimpImage    *gimage);  */
+end_comment
 
 begin_function_decl
 name|void
-name|by_color_select_initialize_by_image
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|by_color_select
+name|gimp_by_color_select_tool_select
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -102,7 +200,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __BY_COLOR_SELECT_H__  */
+comment|/*  __GIMP_BY_COLOR_SELECT_TOOL_H__  */
 end_comment
 
 end_unit

@@ -2254,7 +2254,7 @@ operator|+
 literal|2
 argument_list|)
 expr_stmt|;
-name|by_color_select
+name|gimp_by_color_select_tool_select
 argument_list|(
 name|gimage
 argument_list|,

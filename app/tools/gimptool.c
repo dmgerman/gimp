@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296bb38b0103
+DECL|enum|__anon2bf06eef0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1710,20 +1710,6 @@ name|x
 parameter_list|)
 value|void * x (void){g_message ("stub function %s called",#x); return NULL;}
 end_define
-
-begin_macro
-name|STUB
-argument_list|(
-argument|by_color_select_initialize_by_image
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|by_color_select
-argument_list|)
-end_macro
 
 begin_macro
 name|STUB

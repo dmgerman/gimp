@@ -307,6 +307,9 @@ expr_stmt|;
 name|gimp_iscissors_tool_register
 argument_list|()
 expr_stmt|;
+name|gimp_by_color_select_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_fuzzy_select_tool_register
 argument_list|()
 expr_stmt|;
