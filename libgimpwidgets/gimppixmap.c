@@ -78,7 +78,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GtkPixmapClass
+name|GtkImageClass
 modifier|*
 name|parent_class
 init|=
@@ -156,7 +156,7 @@ name|pixmap_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GTK_TYPE_PIXMAP
+name|GTK_TYPE_IMAGE
 argument_list|,
 literal|"GimpPixmap"
 argument_list|,
@@ -258,16 +258,6 @@ argument_list|(
 name|GIMP_TYPE_PIXMAP
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_pixmap_set_build_insensitive
-argument_list|(
-name|GTK_PIXMAP
-argument_list|(
-name|pixmap
-argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_pixmap_set
@@ -564,9 +554,9 @@ name|xpm_data
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_pixmap_set
+name|gtk_image_set_from_pixmap
 argument_list|(
-name|GTK_PIXMAP
+name|GTK_IMAGE
 argument_list|(
 name|pixmap
 argument_list|)

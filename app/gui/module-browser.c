@@ -72,7 +72,7 @@ value|7
 end_define
 
 begin_enum
-DECL|enum|__anon29a2be130103
+DECL|enum|__anon29f8b4490103
 enum|enum
 block|{
 DECL|enumerator|PATH_COLUMN
@@ -90,7 +90,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2be130208
+DECL|struct|__anon29f8b4490208
 block|{
 DECL|member|table
 name|GtkWidget
@@ -471,6 +471,16 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_scrolled_window_set_shadow_type
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|listbox
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
 name|gtk_scrolled_window_set_policy

@@ -156,7 +156,7 @@ struct|struct
 name|_GimpPixmap
 block|{
 DECL|member|parent_instance
-name|GtkPixmap
+name|GtkImage
 name|parent_instance
 decl_stmt|;
 DECL|member|xpm_data
@@ -175,7 +175,7 @@ struct|struct
 name|_GimpPixmapClass
 block|{
 DECL|member|parent_class
-name|GtkPixmapClass
+name|GtkImageClass
 name|parent_class
 decl_stmt|;
 block|}

@@ -60,7 +60,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29626f540103
+DECL|enum|__anon28dc9f1e0103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -1010,9 +1010,9 @@ name|gdouble
 operator|)
 name|height
 expr_stmt|;
-name|gtk_drawing_area_size
+name|gtk_widget_set_size_request
 argument_list|(
-name|GTK_DRAWING_AREA
+name|GTK_WIDGET
 argument_list|(
 name|offset_area
 argument_list|)

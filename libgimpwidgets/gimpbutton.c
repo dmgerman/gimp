@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296880b20103
+DECL|enum|__anon294715380103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -660,6 +660,15 @@ expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
 name|widget
+argument_list|)
+expr_stmt|;
+name|gdk_window_process_updates
+argument_list|(
+name|widget
+operator|->
+name|window
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
