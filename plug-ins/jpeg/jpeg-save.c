@@ -316,7 +316,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b863a0c0108
+DECL|struct|__anon291edd720108
 block|{
 DECL|member|quality
 name|gdouble
@@ -363,7 +363,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b863a0c0208
+DECL|struct|__anon291edd720208
 block|{
 DECL|member|run
 name|gint
@@ -378,7 +378,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b863a0c0308
+DECL|struct|__anon291edd720308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1360,16 +1360,6 @@ name|parasite
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-operator|!
-name|image_comment
-condition|)
-name|image_comment
-operator|=
-name|gimp_get_default_comment
-argument_list|()
-expr_stmt|;
 name|jsvals
 operator|.
 name|quality

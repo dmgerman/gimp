@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e65ae0108
+DECL|struct|__anon29f099a40108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e65ae0208
+DECL|struct|__anon29f099a40208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e65ae0308
+DECL|struct|__anon29f099a40308
 block|{
 DECL|member|ID
 name|gint32
@@ -1046,16 +1046,6 @@ name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|image_comment
-condition|)
-name|image_comment
-operator|=
-name|gimp_get_default_comment
-argument_list|()
 expr_stmt|;
 switch|switch
 condition|(
