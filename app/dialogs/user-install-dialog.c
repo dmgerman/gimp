@@ -561,6 +561,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|cancel_button
+specifier|static
+name|GtkWidget
+modifier|*
+name|cancel_button
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|title_style
 specifier|static
 name|GtkStyle
@@ -631,7 +642,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bc3b98f0108
+DECL|struct|__anon2b4aeb5d0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -1150,9 +1161,45 @@ break|break;
 case|case
 literal|1
 case|:
+comment|/*  Creatring the directories can take some time on NFS, so inform        *  the user and set the buttons insensitive        */
+name|gtk_widget_set_sensitive
+argument_list|(
+name|continue_button
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|cancel_button
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|footer_label
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Please wait while your personal\n"
+literal|"GIMP directory is being created..."
+argument_list|)
+argument_list|)
+expr_stmt|;
+while|while
+condition|(
+name|gtk_events_pending
+argument_list|()
+condition|)
+name|gtk_main_iteration
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
-operator|!
 name|user_install_run
 argument_list|()
 condition|)
@@ -1160,7 +1207,14 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|continue_button
 argument_list|,
-name|FALSE
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|cancel_button
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1851,7 +1905,8 @@ name|callback
 argument_list|,
 literal|1
 argument_list|,
-name|NULL
+operator|&
+name|cancel_button
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2681,7 +2736,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Click \"Continue\" to enter the GIMP user installation."
+literal|"Click \"Continue\" to enter "
+literal|"the GIMP user installation."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2858,7 +2914,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Click \"Continue\" to create your personal GIMP directory."
+literal|"Click \"Continue\" to create "
+literal|"your personal GIMP directory."
 argument_list|)
 argument_list|)
 expr_stmt|;
