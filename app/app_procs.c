@@ -2497,9 +2497,15 @@ name|no_interface
 operator|==
 name|FALSE
 condition|)
+block|{
+name|devices_restore
+argument_list|()
+expr_stmt|;
+comment|/* Must be done AFTER get_active_{brush|pattern}  			 * because these functions set the brush/pattern. 			 */
 name|session_restore
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2542,6 +2548,9 @@ expr_stmt|;
 name|we_are_exiting
 operator|=
 name|TRUE
+expr_stmt|;
+name|device_status_free
+argument_list|()
 expr_stmt|;
 name|lc_dialog_free
 argument_list|()
@@ -2598,9 +2607,6 @@ name|plug_in_kill
 argument_list|()
 expr_stmt|;
 name|procedural_db_free
-argument_list|()
-expr_stmt|;
-name|device_status_free
 argument_list|()
 expr_stmt|;
 name|error_console_free

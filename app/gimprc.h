@@ -323,6 +323,13 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|int
+name|save_device_status
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
 name|always_restore_session
 decl_stmt|;
 end_decl_stmt

@@ -23,7 +23,7 @@ file|"tools.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon27a438f80103
+DECL|enum|__anon28d3a4fa0103
 typedef|typedef
 enum|enum
 block|{
@@ -223,6 +223,17 @@ name|device_status_free
 parameter_list|(
 name|void
 parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* Restores device settings from rc file */
+end_comment
+
+begin_function_decl
+name|void
+name|devices_restore
+parameter_list|()
 function_decl|;
 end_function_decl
 

@@ -142,7 +142,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2a3fdf870103
+DECL|enum|__anon28eebb960103
 typedef|typedef
 enum|enum
 block|{
@@ -636,6 +636,15 @@ name|int
 name|save_session_info
 init|=
 name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|save_device_status
+name|int
+name|save_device_status
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -1809,6 +1818,28 @@ name|NULL
 block|,
 operator|&
 name|save_session_info
+block|}
+block|,
+block|{
+literal|"save-device-status"
+block|,
+name|TT_BOOLEAN
+block|,
+operator|&
+name|save_device_status
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"dont-save-device-status"
+block|,
+name|TT_BOOLEAN
+block|,
+name|NULL
+block|,
+operator|&
+name|save_device_status
 block|}
 block|,
 block|{
