@@ -122,7 +122,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon29e5385e0108
+DECL|struct|__anon2bac83340108
 typedef|typedef
 struct|struct
 block|{
@@ -141,7 +141,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e5385e0208
+DECL|struct|__anon2bac83340208
 typedef|typedef
 struct|struct
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e5385e0308
+DECL|struct|__anon2bac83340308
 typedef|typedef
 struct|struct
 block|{
@@ -791,11 +791,22 @@ break|break;
 default|default:
 break|break;
 block|}
+comment|/* make sure the drawable exist and is not indexed */
 if|if
 condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
+name|gimp_drawable_color
+argument_list|(
+name|drawable
+operator|->
+name|id
+argument_list|)
+operator|||
+name|gimp_drawable_gray
+argument_list|(
+name|drawable
+operator|->
+name|id
+argument_list|)
 condition|)
 block|{
 name|gimp_progress_init
@@ -843,6 +854,14 @@ argument_list|(
 name|EdgeVals
 argument_list|)
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* gimp_message ("edge: cannot operate on indexed color images"); */
+name|status
+operator|=
+name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|values

@@ -983,6 +983,11 @@ argument_list|(
 literal|"Try exiting other color intensive applications.\n"
 argument_list|)
 expr_stmt|;
+name|g_print
+argument_list|(
+literal|"Also try enabling the (install-colormap) option in gimprc.\n"
+argument_list|)
+expr_stmt|;
 name|swapping_free
 argument_list|()
 expr_stmt|;

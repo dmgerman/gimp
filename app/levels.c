@@ -8516,6 +8516,19 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+comment|/*  make sure the drawable is not indexed color  */
+if|if
+condition|(
+name|success
+condition|)
+name|success
+operator|=
+operator|!
+name|drawable_indexed
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 comment|/*  channel  */
 if|if
 condition|(

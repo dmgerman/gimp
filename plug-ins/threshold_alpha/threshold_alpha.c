@@ -491,7 +491,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a81ff30108
+DECL|struct|__anon28b413040108
 block|{
 DECL|member|threshold
 name|gint
@@ -518,7 +518,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a81ff30208
+DECL|struct|__anon28b413040208
 block|{
 DECL|member|run
 name|gint
@@ -582,6 +582,14 @@ block|,
 literal|"drawable"
 block|,
 literal|"Input drawable"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"threshold"
+block|,
+literal|"Threshold"
 block|}
 block|,   }
 decl_stmt|;
@@ -807,7 +815,37 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
-comment|/* You must copy the values of parameters to VALS or dialog variables. */
+if|if
+condition|(
+name|nparams
+operator|!=
+literal|4
+condition|)
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
+name|VALS
+operator|.
+name|threshold
+operator|=
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
