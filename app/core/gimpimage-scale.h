@@ -56,6 +56,10 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|gint64
+modifier|*
+name|new_memsize
 parameter_list|)
 function_decl|;
 end_function_decl

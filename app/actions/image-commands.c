@@ -180,7 +180,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291bc2510108
+DECL|struct|__anon2ad4d2720108
 block|{
 DECL|member|resize
 name|Resize
@@ -1843,6 +1843,12 @@ name|image_scale
 init|=
 name|data
 decl_stmt|;
+name|GimpImageScaleCheckType
+name|scale_check
+decl_stmt|;
+name|gint64
+name|new_memsize
+decl_stmt|;
 name|gchar
 modifier|*
 name|warning_message
@@ -1874,9 +1880,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|GimpImageScaleCheckType
 name|scale_check
-init|=
+operator|=
 name|gimp_image_scale_check
 argument_list|(
 name|image_scale
@@ -1894,8 +1899,11 @@ operator|->
 name|resize
 operator|->
 name|height
+argument_list|,
+operator|&
+name|new_memsize
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 switch|switch
 condition|(
 name|scale_check
@@ -1917,29 +1925,7 @@ name|size_str
 operator|=
 name|gimp_memsize_to_string
 argument_list|(
-name|gimp_object_get_memsize
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|image_scale
-operator|->
-name|gimage
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-operator|*
-name|image_scale
-operator|->
-name|resize
-operator|->
-name|ratio_x
-operator|*
-name|image_scale
-operator|->
-name|resize
-operator|->
-name|ratio_y
+name|new_memsize
 argument_list|)
 expr_stmt|;
 name|max_size_str
@@ -1966,19 +1952,27 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"You are trying to create an image with "
-literal|"a size of %s.\n\n"
+literal|"You are trying to create an image with a size of %s.\n\n"
 literal|"Choose OK to create this image anyway.\n"
-literal|"Choose Cancel if you did not intend to "
-literal|"create such a large image.\n\n"
-literal|"To prevent this dialog from appearing, "
-literal|"increase the \"Maximum Image Size\" "
-literal|"setting (currently %s) in the "
+literal|"Choose Cancel if you did not intend to create such a "
+literal|"large image.\n\n"
+literal|"To prevent this dialog from appearing, increase the "
+literal|"\"Maximum Image Size\" setting (currently %s) in the "
 literal|"Preferences dialog."
 argument_list|)
 argument_list|,
 name|size_str
 argument_list|,
+name|max_size_str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|size_str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|max_size_str
 argument_list|)
 expr_stmt|;
@@ -1991,6 +1985,11 @@ argument_list|(
 literal|"Image exceeds maximum image size"
 argument_list|)
 argument_list|,
+name|warning_message
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|warning_message
 argument_list|)
 expr_stmt|;
