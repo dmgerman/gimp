@@ -3097,9 +3097,10 @@ literal|0
 argument_list|,
 name|black_level
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|,
-literal|256
+literal|255
 argument_list|,
 literal|1
 argument_list|,
