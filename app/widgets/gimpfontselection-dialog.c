@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c3a1d0103
+DECL|enum|__anon276d2b240103
 block|{
 DECL|enumerator|FAMILY_COLUMN
 name|FAMILY_COLUMN
@@ -110,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c3a1d0203
+DECL|enum|__anon276d2b240203
 block|{
 DECL|enumerator|FACE_COLUMN
 name|FACE_COLUMN
@@ -1157,9 +1157,9 @@ argument_list|)
 argument_list|,
 name|table
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
