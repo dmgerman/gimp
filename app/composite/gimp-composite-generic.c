@@ -5587,7 +5587,6 @@ operator|->
 name|pixelformat_D
 index|]
 expr_stmt|;
-comment|/*gimp_composite_convert_any_any_any_generic (ctx);*/
 block|}
 name|gr
 operator|=
