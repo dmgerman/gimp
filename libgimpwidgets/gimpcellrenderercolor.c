@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274aca250103
+DECL|enum|__anon2c11ceb90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1223,6 +1223,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cell_renderer_color_new:  *  * Creates a #GtkCellRenderer that displays a color.  *  * Return value: a new #GimpCellRendererColor  *  * Since: GIMP 2.2  **/
+end_comment
 
 begin_function
 name|GtkCellRenderer
