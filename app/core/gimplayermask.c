@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74cf1b0103
+DECL|enum|__anon2b7bf4b30103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -1111,7 +1111,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_layer_mask_set_edit (GimpLayerMask * layer_mask,gboolean edit,gboolean push_undo)
+DECL|function|gimp_layer_mask_set_edit (GimpLayerMask * layer_mask,gboolean edit)
 name|gimp_layer_mask_set_edit
 parameter_list|(
 name|GimpLayerMask
@@ -1120,9 +1120,6 @@ name|layer_mask
 parameter_list|,
 name|gboolean
 name|edit
-parameter_list|,
-name|gboolean
-name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1142,33 +1139,6 @@ operator|!=
 name|edit
 condition|)
 block|{
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|GIMP_ITEM
-argument_list|(
-name|layer_mask
-argument_list|)
-operator|->
-name|gimage
-decl_stmt|;
-if|if
-condition|(
-name|push_undo
-condition|)
-name|gimp_image_undo_push_layer_mask_edit
-argument_list|(
-name|gimage
-argument_list|,
-name|_
-argument_list|(
-literal|"Edit Layer Mask"
-argument_list|)
-argument_list|,
-name|layer_mask
-argument_list|)
-expr_stmt|;
 name|layer_mask
 operator|->
 name|edit_mask

@@ -284,10 +284,7 @@ modifier|*
 name|layer_mask
 parameter_list|,
 name|gboolean
-name|apply
-parameter_list|,
-name|gboolean
-name|push_undo
+name|edit
 parameter_list|)
 function_decl|;
 end_function_decl

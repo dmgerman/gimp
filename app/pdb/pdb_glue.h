@@ -59,7 +59,7 @@ name|l
 parameter_list|,
 name|a
 parameter_list|)
-value|{ if((l)->mask) gimp_layer_mask_set_apply((l)->mask,(a), TRUE); else success = FALSE; }
+value|{ if((l)->mask) gimp_layer_mask_set_apply((l)->mask,(a),TRUE); else success = FALSE; }
 end_define
 
 begin_define
@@ -72,7 +72,7 @@ name|l
 parameter_list|,
 name|s
 parameter_list|)
-value|{ if((l)->mask) gimp_layer_mask_set_show((l)->mask,(s), TRUE); else success = FALSE; }
+value|{ if((l)->mask) gimp_layer_mask_set_show((l)->mask,(s),TRUE); else success = FALSE; }
 end_define
 
 begin_define
@@ -85,7 +85,7 @@ name|l
 parameter_list|,
 name|e
 parameter_list|)
-value|{ if((l)->mask) gimp_layer_mask_set_edit((l)->mask,(e), TRUE); else success = FALSE; }
+value|{ if((l)->mask) gimp_layer_mask_set_edit((l)->mask,(e)); else success = FALSE; }
 end_define
 
 begin_endif

@@ -576,26 +576,6 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_undo_push_layer_mask_edit
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|undo_desc
-parameter_list|,
-name|GimpLayerMask
-modifier|*
-name|mask
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
 name|gimp_image_undo_push_layer_mask_show
 parameter_list|(
 name|GimpImage

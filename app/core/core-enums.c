@@ -3726,14 +3726,6 @@ literal|"layer-mask-apply"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_LAYER_MASK_EDIT
-block|,
-literal|"GIMP_UNDO_LAYER_MASK_EDIT"
-block|,
-literal|"layer-mask-edit"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_LAYER_MASK_SHOW
 block|,
 literal|"GIMP_UNDO_LAYER_MASK_SHOW"
@@ -4570,17 +4562,6 @@ block|,
 name|N_
 argument_list|(
 literal|"Apply layer mask"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|GIMP_UNDO_LAYER_MASK_EDIT
-block|,
-name|N_
-argument_list|(
-literal|"Edit layer mask"
 argument_list|)
 block|,
 name|NULL
