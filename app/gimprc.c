@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -106,7 +112,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b9e6ecd0103
+DECL|enum|__anon2baf611c0103
 typedef|typedef
 enum|enum
 block|{
