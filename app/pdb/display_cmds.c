@@ -181,9 +181,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|GIMP_IS_IMAGE
+argument_list|(
 name|gimage
-operator|==
-name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -371,9 +373,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|GIMP_IS_DISPLAY
+argument_list|(
 name|gdisp
-operator|==
-name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
