@@ -31,7 +31,7 @@ file|"libgimp/gimp.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2b412a520103
+DECL|enum|__anon293130c10103
 typedef|typedef
 enum|enum
 block|{
@@ -51,7 +51,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b412a520208
+DECL|struct|__anon293130c10208
 block|{
 DECL|member|quality
 name|gdouble
@@ -80,6 +80,7 @@ begin_function_decl
 name|gint
 name|xjpg_save_drawable
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
@@ -104,6 +105,7 @@ begin_function_decl
 name|gint32
 name|xjpg_load_layer
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
@@ -131,6 +133,7 @@ begin_function_decl
 name|gint
 name|xjpg_load_layer_alpha
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
@@ -148,6 +151,7 @@ begin_function_decl
 name|gint32
 name|xjpg_load_channel
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename

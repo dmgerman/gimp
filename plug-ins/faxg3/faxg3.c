@@ -12,29 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* For G_OS_WIN32 */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
+file|<string.h>
 end_include
 
 begin_ifdef
@@ -63,13 +47,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<fcntl.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<fcntl.h>
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* For G_OS_WIN32 */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -860,7 +854,7 @@ argument_list|)
 expr_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
@@ -972,10 +966,8 @@ argument_list|(
 name|rs
 argument_list|)
 expr_stmt|;
-name|exit
-argument_list|(
-literal|8
-argument_list|)
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|rr
@@ -1071,10 +1063,8 @@ block|{
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"hibit=%2d, data="
 argument_list|,
 name|hibit
@@ -1190,10 +1180,8 @@ block|}
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"hibit=%2d, data="
 argument_list|,
 name|hibit
@@ -1280,10 +1268,8 @@ name|NULL
 condition|)
 comment|/* invalid code */
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"invalid code, row=%d, col=%d, file offset=%lx, skip to eol\n"
 argument_list|,
 name|row
@@ -1465,10 +1451,8 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"PELs: %d (%c)\n"
 argument_list|,
 name|nr_pels
@@ -1493,10 +1477,8 @@ block|{
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"hibit=%2d, data="
 argument_list|,
 name|hibit
@@ -1656,10 +1638,8 @@ block|}
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"hibit=%2d, data="
 argument_list|,
 name|hibit
@@ -1722,15 +1702,11 @@ operator|>=
 name|max_rows
 condition|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|p
 init|=
-operator|(
-name|char
-operator|*
-operator|)
-name|realloc
+name|g_try_realloc
 argument_list|(
 name|bitmap
 argument_list|,
@@ -1951,10 +1927,8 @@ comment|/* close input file */
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"consecutive EOLs: %d, max columns: %d\n"
 argument_list|,
 name|cons_eol
@@ -2059,10 +2033,8 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"emit gimp: %d x %d\n"
 argument_list|,
 name|hcol
@@ -2160,10 +2132,8 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"tile height: %d\n"
 argument_list|,
 name|tile_height
@@ -2282,10 +2252,8 @@ block|{
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"update tile height: %d\n"
 argument_list|,
 name|tile_height
@@ -2343,10 +2311,8 @@ block|{
 ifdef|#
 directive|ifdef
 name|DEBUG
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"update rest: %d\n"
 argument_list|,
 name|row

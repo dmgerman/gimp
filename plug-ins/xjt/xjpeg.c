@@ -20,18 +20,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<setjmp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -39,6 +27,18 @@ begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<setjmp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_comment
@@ -160,9 +160,10 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|xjpg_load_layer (char * filename,gint32 image_id,int image_type,char * layer_name,gdouble layer_opacity,GimpLayerModeEffects layer_mode)
+DECL|function|xjpg_load_layer (const char * filename,gint32 image_id,int image_type,char * layer_name,gdouble layer_opacity,GimpLayerModeEffects layer_mode)
 name|xjpg_load_layer
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
@@ -261,7 +262,7 @@ condition|(
 operator|(
 name|infile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -714,9 +715,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|xjpg_load_layer_alpha (char * filename,gint32 image_id,gint32 layer_id)
+DECL|function|xjpg_load_layer_alpha (const char * filename,gint32 image_id,gint32 layer_id)
 name|xjpg_load_layer_alpha
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
@@ -823,7 +825,7 @@ condition|(
 operator|(
 name|infile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -1345,9 +1347,10 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|xjpg_load_channel (char * filename,gint32 image_id,gint32 drawable_id,char * channel_name,gdouble channel_opacity,guchar red,guchar green,guchar blue)
+DECL|function|xjpg_load_channel (const char * filename,gint32 image_id,gint32 drawable_id,char * channel_name,gdouble channel_opacity,guchar red,guchar green,guchar blue)
 name|xjpg_load_channel
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
@@ -1462,7 +1465,7 @@ condition|(
 operator|(
 name|infile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -1962,14 +1965,15 @@ comment|/* end xjpg_load_channel */
 end_comment
 
 begin_comment
-comment|/* ============================================================================  * xjpg_save_drawable  *   save as drawable as jpeg file depending on save_mode:  *   - save the drawable without alpha channel.  *     (optional clear full transparent pixels to 0,  *      resulting in better compression)  *   - save the alpha channel   * ============================================================================  */
+comment|/* ============================================================================  * xjpg_save_drawable  *   save as drawable as jpeg file depending on save_mode:  *   - save the drawable without alpha channel.  *     (optional clear full transparent pixels to 0,  *      resulting in better compression)  *   - save the alpha channel  * ============================================================================  */
 end_comment
 
 begin_function
 name|gint
-DECL|function|xjpg_save_drawable (char * filename,gint32 image_ID,gint32 drawable_ID,gint save_mode,t_JpegSaveVals * jsvals)
+DECL|function|xjpg_save_drawable (const char * filename,gint32 image_ID,gint32 drawable_ID,gint save_mode,t_JpegSaveVals * jsvals)
 name|xjpg_save_drawable
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
@@ -2239,7 +2243,7 @@ condition|(
 operator|(
 name|outfile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2843,7 +2847,7 @@ operator|)
 condition|)
 block|{
 comment|/* all bytes in the alpha channel are set to 0xff      * == full opaque image. We can remove the file      * to save diskspace      */
-name|remove
+name|g_remove
 argument_list|(
 name|filename
 argument_list|)

@@ -10,19 +10,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdio.h>
 end_include
 
 begin_include
@@ -1125,7 +1125,7 @@ name|chunks
 operator|=
 literal|0
 expr_stmt|;
-comment|/*  	 * create color chunk  	 */
+comment|/* 	 * create color chunk 	 */
 if|if
 condition|(
 name|fli_header
@@ -3696,7 +3696,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * This is the delta-compression method from the classic Autodesk Animator.   * It's basically the RLE method from above, but it allows to skip unchanged  * lines at the beginning and end of an image, and unchanged pixels in a line  * This chunk is used in FLI files.  */
+comment|/*  * This is the delta-compression method from the classic Autodesk Animator.  * It's basically the RLE method from above, but it allows to skip unchanged  * lines at the beginning and end of an image, and unchanged pixels in a line  * This chunk is used in FLI files.  */
 end_comment
 
 begin_function

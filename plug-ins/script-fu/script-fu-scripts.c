@@ -12,41 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* Include early for obscure Win32 build reasons */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_ifdef
@@ -124,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e59d340108
+DECL|struct|__anon276e68d90108
 block|{
 DECL|member|script
 name|SFScript

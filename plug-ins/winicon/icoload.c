@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -548,7 +548,7 @@ name|ico
 operator|->
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -71,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f06e50103
+DECL|enum|__anon2a8d6e4f0103
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -96,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f06e50203
+DECL|enum|__anon2a8d6e4f0203
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -146,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f06e50308
+DECL|struct|__anon2a8d6e4f0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -191,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6f06e50408
+DECL|struct|__anon2a8d6e4f0408
 block|{
 DECL|member|menu
 name|gchar

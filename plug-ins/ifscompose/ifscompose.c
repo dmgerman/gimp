@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -34,7 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -152,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4eb38b0103
+DECL|enum|__anon286e73e10103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -172,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4eb38b0203
+DECL|enum|__anon286e73e10203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -188,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eb38b0308
+DECL|struct|__anon286e73e10308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -210,7 +204,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b4eb38b040a
+DECL|union|__anon286e73e1040a
 block|{
 DECL|member|d
 name|gdouble
@@ -235,7 +229,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eb38b0508
+DECL|struct|__anon286e73e10508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -265,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eb38b0608
+DECL|struct|__anon286e73e10608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -300,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eb38b0708
+DECL|struct|__anon286e73e10708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -336,7 +330,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eb38b0808
+DECL|struct|__anon286e73e10808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -403,7 +397,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eb38b0908
+DECL|struct|__anon286e73e10908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -552,7 +546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4eb38b0a08
+DECL|struct|__anon286e73e10a08
 block|{
 DECL|member|run
 name|gboolean
@@ -12321,7 +12315,7 @@ argument_list|)
 expr_stmt|;
 name|fh
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

@@ -10,13 +10,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -82,7 +88,7 @@ block|{
 comment|/* Open our output file... Not settable... Always    * write to the root directory.  Simplistic, but    * gets the job done.    */
 name|outputFile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|DUMP_FILE
 argument_list|,
@@ -438,7 +444,7 @@ name|FILE
 modifier|*
 name|inputFile
 init|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|DUMP_FILE
 argument_list|,

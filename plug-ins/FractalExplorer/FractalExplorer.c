@@ -28,7 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<errno.h>
 end_include
 
 begin_include
@@ -59,6 +59,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
 
 begin_ifdef
 ifdef|#
@@ -4758,15 +4764,13 @@ name|fractalexplorer
 operator|->
 name|filename
 condition|)
-block|{
-name|remove
+name|g_remove
 argument_list|(
 name|fractalexplorer
 operator|->
 name|filename
 argument_list|)
 expr_stmt|;
-block|}
 name|fractalexplorer_free
 argument_list|(
 name|fractalexplorer
@@ -4849,7 +4853,7 @@ argument_list|)
 expr_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -4862,11 +4866,22 @@ operator|!
 name|fp
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"Error opening: %s"
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|filename
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -5043,6 +5058,7 @@ name|fractalexplorer
 condition|)
 block|{
 comment|/* Read only ?*/
+comment|/* FIXME: filename handling for Win32 */
 if|if
 condition|(
 name|access

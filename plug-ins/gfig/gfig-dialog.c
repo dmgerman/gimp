@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -47,13 +47,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
+file|<glib.h>
 end_include
 
 begin_ifdef
@@ -428,7 +422,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3150e0108
+DECL|struct|__anon27aa92b20108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -83,7 +77,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -119,37 +113,6 @@ end_include
 begin_comment
 comment|/* getpid() */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|<direct.h>
-end_include
-
-begin_comment
-comment|/* _mkdir */
-end_comment
-
-begin_define
-DECL|macro|mkdir (path,mode)
-define|#
-directive|define
-name|mkdir
-parameter_list|(
-name|path
-parameter_list|,
-name|mode
-parameter_list|)
-value|_mkdir(path)
-end_define
-
-begin_define
-DECL|macro|mode_t
-define|#
-directive|define
-name|mode_t
-value|int
-end_define
 
 begin_endif
 endif|#
@@ -243,7 +206,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43342e0103
+DECL|enum|__anon29581da70103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -443,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43342e0203
+DECL|enum|__anon29581da70203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -503,7 +466,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43342e0303
+DECL|enum|__anon29581da70303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -533,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43342e0403
+DECL|enum|__anon29581da70403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -555,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43342e0503
+DECL|enum|__anon29581da70503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -575,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43342e0603
+DECL|enum|__anon29581da70603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -610,7 +573,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43342e0703
+DECL|enum|__anon29581da70703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -735,7 +698,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43342e0808
+DECL|struct|__anon29581da70808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -771,7 +734,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43342e0908
+DECL|struct|__anon29581da70908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -820,7 +783,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43342e0a08
+DECL|struct|__anon29581da70a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -857,7 +820,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43342e0b08
+DECL|struct|__anon29581da70b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -907,7 +870,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43342e0c08
+DECL|struct|__anon29581da70c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -981,7 +944,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43342e0d08
+DECL|struct|__anon29581da70d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1066,7 +1029,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43342e0e08
+DECL|struct|__anon29581da70e08
 block|{
 DECL|member|position
 name|gint32
@@ -1090,7 +1053,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43342e0f08
+DECL|struct|__anon29581da70f08
 block|{
 DECL|member|version
 name|gchar
@@ -7262,9 +7225,6 @@ name|FILE
 modifier|*
 name|l_fp_prp
 decl_stmt|;
-name|mode_t
-name|l_mode_dir
-decl_stmt|;
 name|GimpImageBaseType
 name|l_image_type
 decl_stmt|;
@@ -7448,17 +7408,13 @@ argument_list|,
 name|G_DIR_SEPARATOR
 argument_list|)
 expr_stmt|;
-name|l_mode_dir
-operator|=
-literal|0777
-expr_stmt|;
 if|if
 condition|(
-name|mkdir
+name|g_mkdir
 argument_list|(
 name|l_dirname
 argument_list|,
-name|l_mode_dir
+literal|0777
 argument_list|)
 operator|!=
 literal|0
@@ -7489,7 +7445,7 @@ block|}
 comment|/* create property file PRP */
 name|l_fp_prp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|l_prop_file
 argument_list|,
@@ -14047,9 +14003,6 @@ name|gchar
 modifier|*
 name|l_cmd
 decl_stmt|;
-name|mode_t
-name|l_mode_dir
-decl_stmt|;
 name|gint32
 modifier|*
 name|l_layers_list
@@ -14191,17 +14144,13 @@ argument_list|,
 name|G_DIR_SEPARATOR
 argument_list|)
 expr_stmt|;
-name|l_mode_dir
-operator|=
-literal|0777
-expr_stmt|;
 if|if
 condition|(
-name|mkdir
+name|g_mkdir
 argument_list|(
 name|l_dirname
 argument_list|,
-name|l_mode_dir
+literal|0777
 argument_list|)
 operator|!=
 literal|0

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<float.h>
+file|<errno.h>
 end_include
 
 begin_include
@@ -24,25 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<assert.h>
 end_include
 
 begin_include
@@ -278,7 +260,7 @@ name|real_coordinate_type
 name|coord2
 parameter_list|)
 block|{
-name|assert
+name|g_assert
 argument_list|(
 name|coord2
 operator|.

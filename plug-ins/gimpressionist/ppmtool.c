@@ -8,12 +8,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -32,19 +26,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpmath/gimpmath.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpmath/gimpmath.h>
 end_include
 
 begin_include
@@ -1412,7 +1406,7 @@ name|full_filename
 decl_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fn
 argument_list|,
@@ -1434,7 +1428,7 @@ argument_list|)
 expr_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|full_filename
 argument_list|,
@@ -1505,13 +1499,14 @@ operator|!
 name|f
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"load_gimp_brush: Unable to open file \"%s\"!\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fn
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ppm_new
@@ -1703,7 +1698,7 @@ argument_list|(
 name|f
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|ptr
 argument_list|)
@@ -1792,13 +1787,14 @@ operator|!
 name|f
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"ppm_load: Unable to open file \"%s\"!\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fn
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ppm_new
@@ -1846,11 +1842,14 @@ argument_list|(
 name|f
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printerr
 argument_list|(
 literal|"ppm_load: File \"%s\" not PPM/PGM? (line=\"%s\")%c\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fn
+argument_list|)
 argument_list|,
 name|line
 argument_list|,
@@ -1926,11 +1925,14 @@ literal|"255"
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"ppm_load: File \"%s\" not valid PPM/PGM? (line=\"%s\")%c\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fn
+argument_list|)
 argument_list|,
 name|line
 argument_list|,
@@ -3984,7 +3986,7 @@ name|FILE
 modifier|*
 name|f
 init|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fn
 argument_list|,

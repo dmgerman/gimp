@@ -26,7 +26,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -126,7 +126,7 @@ name|logFile
 condition|)
 name|logFile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|DEBUG_LOGFILE
 argument_list|,

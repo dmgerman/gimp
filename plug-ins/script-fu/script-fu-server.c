@@ -12,35 +12,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* For G_OS_WIN32 */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|<stdarg.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<time.h>
 end_include
 
 begin_ifdef
@@ -59,18 +49,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<time.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<errno.h>
-end_include
 
 begin_ifdef
 ifdef|#
@@ -93,6 +71,12 @@ begin_include
 include|#
 directive|include
 file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib.h>
 end_include
 
 begin_ifdef
@@ -171,7 +155,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -397,7 +381,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff35390108
+DECL|struct|__anon2ae96d680108
 block|{
 DECL|member|command
 name|gchar
@@ -421,7 +405,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff35390208
+DECL|struct|__anon2ae96d680208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -1305,7 +1289,7 @@ name|logfile
 condition|)
 name|server_log_file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|logfile
 argument_list|,

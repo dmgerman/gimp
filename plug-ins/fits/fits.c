@@ -7,39 +7,10 @@ begin_comment
 comment|/* Event history:  * V 1.00, PK, 05-May-97: Creation  * V 1.01, PK, 19-May-97: Problem with compilation on Irix fixed  * V 1.02, PK, 08-Jun-97: Bug with saving gray images fixed  * V 1.03, PK, 05-Oct-97: Parse rc-file  * V 1.04, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.05, nn, 20-Dec-97: Initialize image_ID in run()  * V 1.06, PK, 21-Nov-99: Internationalization  *                        Fix bug with gimp_export_image()  *                        (moved it from load to save)  */
 end_comment
 
-begin_decl_stmt
-DECL|variable|ident
-specifier|static
-name|char
-name|ident
-index|[]
-init|=
-literal|"@(#) GIMP FITS file-plugin v1.06  21-Nov-99"
-decl_stmt|;
-end_decl_stmt
-
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -51,7 +22,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -85,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1594a80108
+DECL|struct|__anon28b6c8960108
 block|{
 DECL|member|replace
 name|gint
@@ -1115,7 +1092,7 @@ name|hdu
 decl_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -1532,13 +1509,6 @@ decl_stmt|;
 name|gint
 name|retval
 decl_stmt|;
-name|char
-modifier|*
-name|temp
-init|=
-name|ident
-decl_stmt|;
-comment|/* Just to satisfy lint/gcc */
 name|drawable_type
 operator|=
 name|gimp_drawable_type
@@ -1647,9 +1617,12 @@ name|FALSE
 operator|)
 return|;
 block|}
-name|temp
-operator|=
-name|g_strdup_printf
+name|gimp_progress_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_progress_set_text
 argument_list|(
 name|_
 argument_list|(
@@ -1660,16 +1633,6 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_progress_init
-argument_list|(
-name|temp
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp
 argument_list|)
 expr_stmt|;
 if|if
@@ -4447,7 +4410,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"BLANK/NaN Pixel Replacement"
+literal|"Replacement for undefined pixels"
 argument_list|)
 argument_list|,
 name|G_CALLBACK

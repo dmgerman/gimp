@@ -12,19 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
 end_include
 
 begin_include
@@ -53,7 +47,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -66,12 +60,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -162,6 +150,12 @@ begin_include
 include|#
 directive|include
 file|"gfig-stock.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -1546,7 +1540,7 @@ directive|endif
 comment|/* DEBUG */
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2900,7 +2894,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error trying to save figure as a parasite: can't attach parasite to drawable.\n"
+literal|"Error trying to save figure as a parasite: "
+literal|"can't attach parasite to drawable."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2958,7 +2953,7 @@ argument_list|)
 expr_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fname
 argument_list|,
@@ -2975,10 +2970,19 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error trying to open temp file '%s'for parasite loading.\n"
+literal|"Error trying to open temporary file '%s' "
+literal|"for parasite loading: %s"
 argument_list|)
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fname
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3043,7 +3047,7 @@ argument_list|,
 literal|"(none)"
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|fname
 argument_list|)
@@ -3086,7 +3090,7 @@ name|filename
 expr_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|savename
 argument_list|,
@@ -3148,11 +3152,10 @@ argument_list|)
 condition|)
 name|g_message
 argument_list|(
-literal|"Failed to write file\n"
+literal|"Failed to write file."
 argument_list|)
 expr_stmt|;
 else|else
-block|{
 name|gfig_context
 operator|->
 name|current_obj
@@ -3166,7 +3169,6 @@ operator||
 name|GFIG_READONLY
 operator|)
 expr_stmt|;
-block|}
 name|fclose
 argument_list|(
 name|fp

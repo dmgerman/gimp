@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -24,31 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
 end_include
 
 begin_ifdef
@@ -71,7 +47,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -407,7 +389,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba8dcac0103
+DECL|enum|__anon2b43f42d0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -434,7 +416,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba8dcac0203
+DECL|enum|__anon2b43f42d0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -455,7 +437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0308
+DECL|struct|__anon2b43f42d0308
 block|{
 DECL|member|name
 name|gchar
@@ -596,7 +578,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0408
+DECL|struct|__anon2b43f42d0408
 block|{
 DECL|member|fp
 name|FILE
@@ -616,7 +598,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba8dcac0503
+DECL|enum|__anon2b43f42d0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -644,7 +626,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0608
+DECL|struct|__anon2b43f42d0608
 block|{
 DECL|member|init
 name|gint
@@ -666,7 +648,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ba8dcac0708
+DECL|struct|__anon2b43f42d0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -745,7 +727,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0808
+DECL|struct|__anon2b43f42d0808
 block|{
 DECL|member|init
 name|gint
@@ -815,7 +797,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0908
+DECL|struct|__anon2b43f42d0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -842,7 +824,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0a08
+DECL|struct|__anon2b43f42d0a08
 block|{
 DECL|member|init
 name|gint
@@ -1012,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0b08
+DECL|struct|__anon2b43f42d0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1039,7 +1021,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0c08
+DECL|struct|__anon2b43f42d0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1280,7 +1262,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0d08
+DECL|struct|__anon2b43f42d0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1357,7 +1339,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba8dcac0e08
+DECL|struct|__anon2b43f42d0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -5974,7 +5956,7 @@ argument_list|)
 expr_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -7019,7 +7001,7 @@ expr_stmt|;
 block|}
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|gflare
 operator|->
@@ -8539,7 +8521,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2ba8dcac0f08
+DECL|struct|__anon2b43f42d0f08
 specifier|static
 struct|struct
 block|{
@@ -14497,7 +14479,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2ba8dcac1008
+DECL|struct|__anon2b43f42d1008
 block|{
 DECL|member|label
 specifier|const
@@ -15881,7 +15863,7 @@ name|old_gflare
 operator|->
 name|filename
 condition|)
-name|unlink
+name|g_unlink
 argument_list|(
 name|old_gflare
 operator|->

@@ -232,21 +232,6 @@ value|0.11
 end_define
 
 begin_comment
-comment|/* Identifikation:    "@(#)<product><ver><dd-mmm-yy>" */
-end_comment
-
-begin_decl_stmt
-DECL|variable|ident
-specifier|static
-name|char
-name|ident
-index|[]
-init|=
-literal|"@(#) libfits.c              0.11  20-Dec-97  (%I%)"
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/******************************************************************************/
 end_comment
 
@@ -351,12 +336,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -366,22 +345,11 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
-file|<unistd.h>
+file|<glib/gstdio.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -2291,7 +2259,7 @@ argument_list|)
 expr_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -6675,8 +6643,6 @@ decl_stmt|;
 name|char
 modifier|*
 name|cp
-init|=
-name|ident
 decl_stmt|,
 modifier|*
 name|dst
@@ -9387,7 +9353,7 @@ goto|;
 comment|/* Enough dimensions ? */
 name|pgmout
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|pgmfile
 argument_list|,
@@ -9722,7 +9688,7 @@ name|err_return
 goto|;
 name|pgmin
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|pgmfile
 argument_list|,

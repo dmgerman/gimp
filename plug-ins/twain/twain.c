@@ -418,7 +418,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2974a4f30108
+DECL|struct|__anon2b155cc40108
 typedef|typedef
 struct|struct
 block|{
@@ -1393,7 +1393,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2974a4f30208
+DECL|struct|__anon2b155cc40208
 typedef|typedef
 struct|struct
 block|{

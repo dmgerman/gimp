@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -67,6 +61,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
 
 begin_include
 include|#
@@ -142,7 +142,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290fed9b0108
+DECL|struct|__anon2b9e9e2b0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -522,7 +522,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* we cleanup here (load_image doesn't run in the background) */
-name|unlink
+name|g_unlink
 argument_list|(
 name|pp
 operator|->
@@ -984,7 +984,7 @@ condition|(
 operator|(
 name|outfile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -4480,7 +4480,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290fed9b0208
+DECL|struct|__anon2b9e9e2b0208
 block|{
 DECL|member|pub
 name|struct

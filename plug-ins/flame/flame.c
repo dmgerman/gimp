@@ -18,18 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -37,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|<time.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -145,7 +139,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon28ee1d930108
+DECL|struct|__anon2c2c57e80108
 block|{
 DECL|member|randomize
 name|gint
@@ -1939,7 +1933,7 @@ return|return;
 block|}
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -2066,7 +2060,7 @@ name|FILE
 modifier|*
 name|f
 init|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

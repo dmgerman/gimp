@@ -16,19 +16,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include

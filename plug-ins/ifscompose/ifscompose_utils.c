@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -48,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2880f80d0108
+DECL|struct|__anon2b2f0dfb0108
 block|{
 DECL|member|point
 name|GdkPoint

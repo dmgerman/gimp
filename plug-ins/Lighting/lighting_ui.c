@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -25,6 +19,12 @@ begin_include
 include|#
 directive|include
 file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -318,7 +318,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_chooser_response
+name|save_preset_response
 parameter_list|(
 name|GtkFileChooser
 modifier|*
@@ -351,7 +351,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|load_file_chooser_response
+name|load_preset_response
 parameter_list|(
 name|GtkFileChooser
 modifier|*
@@ -5661,7 +5661,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|file_chooser_response
+name|save_preset_response
 argument_list|)
 argument_list|,
 name|NULL
@@ -5763,8 +5763,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
-name|file_chooser_response
+DECL|function|save_preset_response (GtkFileChooser * chooser,gint response_id,gpointer data)
+name|save_preset_response
 parameter_list|(
 name|GtkFileChooser
 modifier|*
@@ -5834,7 +5834,7 @@ argument_list|)
 decl_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -6160,6 +6160,11 @@ name|fp
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_destroy
 argument_list|(
@@ -6259,7 +6264,7 @@ literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|load_file_chooser_response
+name|load_preset_response
 argument_list|)
 argument_list|,
 name|NULL
@@ -6361,8 +6366,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_file_chooser_response (GtkFileChooser * chooser,gint response_id,gpointer data)
-name|load_file_chooser_response
+DECL|function|load_preset_response (GtkFileChooser * chooser,gint response_id,gpointer data)
+name|load_preset_response
 parameter_list|(
 name|GtkFileChooser
 modifier|*
@@ -6435,7 +6440,7 @@ argument_list|)
 decl_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -6801,6 +6806,11 @@ name|fp
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 name|lightselect_callback
 argument_list|(
 name|GIMP_INT_COMBO_BOX

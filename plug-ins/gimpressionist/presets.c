@@ -8,19 +8,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<string.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
 end_include
 
 begin_include
@@ -55,7 +49,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -428,7 +422,7 @@ argument_list|)
 expr_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|full_path
 argument_list|,
@@ -977,7 +971,7 @@ name|len
 decl_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fname
 argument_list|,
@@ -990,15 +984,14 @@ operator|!
 name|f
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
+literal|"Error opening file \"%s\" for reading!\n"
 argument_list|,
-literal|"Error opening file \"%s\" for reading!%c\n"
-argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fname
-argument_list|,
-literal|7
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2663,7 +2656,7 @@ name|f
 decl_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fn
 argument_list|,
@@ -2676,13 +2669,14 @@ operator|!
 name|f
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Error opening file \"%s\" for reading!\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fn
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3086,13 +3080,11 @@ argument_list|(
 name|abs
 argument_list|)
 condition|)
-block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|abs
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|abs
@@ -3633,7 +3625,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Internal error: (save_preset) thispath == NULL"
+literal|"Internal error: (save_preset) thispath == NULL\n"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3669,7 +3661,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|mkdir
+name|g_mkdir
 argument_list|(
 name|presets_dir_path
 argument_list|,
@@ -3696,7 +3688,10 @@ name|g_printerr
 argument_list|(
 literal|"Error creating folder \"%s\"!\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|presets_dir_path
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -3765,7 +3760,7 @@ return|return;
 block|}
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fname
 argument_list|,
@@ -3780,11 +3775,12 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Error opening file \"%s\" for writing!%c\n"
+literal|"Error opening file \"%s\" for writing!\n"
 argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
 name|fname
-argument_list|,
-literal|7
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

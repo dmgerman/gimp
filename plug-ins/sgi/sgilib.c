@@ -1,7 +1,31 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file format library routines.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   sgiClose()    - Close an SGI image file.  *   sgiGetRow()   - Get a row of image data from a file.  *   sgiOpen()     - Open an SGI image file for reading or writing.  *   sgiOpenFile() - Open an SGI image file for reading or writing.  *   sgiPutRow()   - Put a row of image data to a file.  *   getlong()     - Get a 32-bit big-endian integer.  *   getshort()    - Get a 16-bit big-endian integer.  *   putlong()     - Put a 32-bit big-endian integer.  *   putshort()    - Put a 16-bit big-endian integer.  *   read_rle8()   - Read 8-bit RLE data.  *   read_rle16()  - Read 16-bit RLE data.  *   write_rle8()  - Write 8-bit RLE data.  *   write_rle16() - Write 16-bit RLE data.  *  * Revision History:  *  *   $Log$  *   Revision 1.8  2003/04/07 11:59:33  neo  *   2003-04-07  Sven Neumann<sven@gimp.org>  *  *   	* plug-ins/sgi/sgi.h  *   	* plug-ins/sgi/sgilib.c: applied a patch from marek@aki.cz that  *   	adds support for reading SGI files in little-endian format. Fixes  *   	bug #106610.  *  *   Revision 1.7  1998/06/06 23:22:21  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.5  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.4  1998/02/05  17:10:58  mike  *   Added sgiOpenFile() function for opening an existing file pointer.  *  *   Revision 1.3  1997/07/02  16:40:16  mike  *   sgiOpen() wasn't opening files with "rb" or "wb+".  This caused problems  *   on PCs running Windows/DOS...  *  *   Revision 1.2  1997/06/18  00:55:28  mike  *   Updated to hold length table when writing.  *   Updated to hold current length when doing ARLE.  *   Wasn't writing length table on close.  *   Wasn't saving new line into arle_row when necessary.  *  *   Revision 1.1  1997/06/15  03:37:19  mike  *   Initial revision  */
+comment|/*  *   SGI image file format library routines.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   sgiClose()    - Close an SGI image file.  *   sgiGetRow()   - Get a row of image data from a file.  *   sgiOpen()     - Open an SGI image file for reading or writing.  *   sgiOpenFile() - Open an SGI image file for reading or writing.  *   sgiPutRow()   - Put a row of image data to a file.  *   getlong()     - Get a 32-bit big-endian integer.  *   getshort()    - Get a 16-bit big-endian integer.  *   putlong()     - Put a 32-bit big-endian integer.  *   putshort()    - Put a 16-bit big-endian integer.  *   read_rle8()   - Read 8-bit RLE data.  *   read_rle16()  - Read 16-bit RLE data.  *   write_rle8()  - Write 8-bit RLE data.  *   write_rle16() - Write 16-bit RLE data.  *  * Revision History:  *  *   $Log$  *   Revision 1.9  2005/03/04 13:23:31  neo  *   2005-03-04  Sven Neumann<sven@gimp.org>  *  *   	* plug-ins/FractalExplorer  *   	* plug-ins/Lighting  *   	* plug-ins/bmp  *   	* plug-ins/dbbrowser  *   	* plug-ins/faxg3  *   	* plug-ins/fits  *   	* plug-ins/flame  *   	* plug-ins/gfig  *   	* plug-ins/gflare  *   	* plug-ins/gfli  *   	* plug-ins/gimpressionist  *   	* plug-ins/ifscompose  *   	* plug-ins/jpeg  *   	* plug-ins/maze  *   	* plug-ins/pagecurl  *   	* plug-ins/print  *   	* plug-ins/rcm  *   	* plug-ins/script-fu  *   	* plug-ins/sel2path  *   	* plug-ins/sgi  *   	* plug-ins/twain  *   	* plug-ins/winicon  *   	* plug-ins/xjt: ported to gstdio, removed unnecessary includes,  *   	minor fixes to filename handling here and there.  *  *   Revision 1.8  2003/04/07 11:59:33  neo  *   2003-04-07  Sven Neumann<sven@gimp.org>  *  *   	* plug-ins/sgi/sgi.h  *   	* plug-ins/sgi/sgilib.c: applied a patch from marek@aki.cz that  *   	adds support for reading SGI files in little-endian format. Fixes  *   	bug #106610.  *  *   Revision 1.7  1998/06/06 23:22:21  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.5  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.4  1998/02/05  17:10:58  mike  *   Added sgiOpenFile() function for opening an existing file pointer.  *  *   Revision 1.3  1997/07/02  16:40:16  mike  *   sgiOpen() wasn't opening files with "rb" or "wb+".  This caused problems  *   on PCs running Windows/DOS...  *  *   Revision 1.2  1997/06/18  00:55:28  mike  *   Updated to hold length table when writing.  *   Updated to hold current length when doing ARLE.  *   Wasn't writing length table on close.  *   Wasn't saving new line into arle_row when necessary.  *  *   Revision 1.1  1997/06/15  03:37:19  mike  *   Initial revision  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
 
 begin_include
 include|#
@@ -730,7 +754,7 @@ name|SGI_READ
 condition|)
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -740,7 +764,7 @@ expr_stmt|;
 else|else
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
