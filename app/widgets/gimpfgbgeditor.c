@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be74f8f0103
+DECL|enum|__anon2b7172080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be74f8f0203
+DECL|enum|__anon2b7172080203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be74f8f0303
+DECL|enum|__anon2b7172080303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -269,27 +269,6 @@ name|y
 parameter_list|,
 name|guint
 name|time
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_fg_bg_editor_context_changed
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|,
-name|GimpFgBgEditor
-modifier|*
-name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2294,7 +2273,7 @@ name|editor
 operator|->
 name|context
 argument_list|,
-name|gimp_fg_bg_editor_context_changed
+name|gtk_widget_queue_draw
 argument_list|,
 name|editor
 argument_list|)
@@ -2329,7 +2308,7 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_swapped
 argument_list|(
 name|context
 argument_list|,
@@ -2337,13 +2316,13 @@ literal|"foreground_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_fg_bg_editor_context_changed
+name|gtk_widget_queue_draw
 argument_list|)
 argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_swapped
 argument_list|(
 name|context
 argument_list|,
@@ -2351,7 +2330,7 @@ literal|"background_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_fg_bg_editor_context_changed
+name|gtk_widget_queue_draw
 argument_list|)
 argument_list|,
 name|editor
@@ -2422,37 +2401,6 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_fg_bg_editor_context_changed (GimpContext * context,const GimpRGB * color,GimpFgBgEditor * editor)
-name|gimp_fg_bg_editor_context_changed
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-specifier|const
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|,
-name|GimpFgBgEditor
-modifier|*
-name|editor
-parameter_list|)
-block|{
-name|gtk_widget_queue_draw
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|editor
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 specifier|static
