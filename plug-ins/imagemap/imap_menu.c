@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/types.h>
 end_include
 
@@ -13,18 +19,6 @@ begin_include
 include|#
 directive|include
 file|<sys/stat.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"imap_tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_decl_stmt
@@ -981,9 +981,11 @@ argument_list|(
 literal|"Undo %s"
 argument_list|)
 argument_list|,
-operator|(
 name|command
-operator|)
+operator|&&
+name|command
+operator|->
+name|name
 condition|?
 name|command
 operator|->
@@ -1071,9 +1073,11 @@ argument_list|(
 literal|"Redo %s"
 argument_list|)
 argument_list|,
-operator|(
 name|command
-operator|)
+operator|&&
+name|command
+operator|->
+name|name
 condition|?
 name|command
 operator|->

@@ -6,13 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<stdio.h>
 end_include
 
 begin_include
@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"imap_main.h"
 end_include
 
@@ -57,8 +51,14 @@ directive|include
 file|"imap_table.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_typedef
-DECL|struct|__anon2a2b36280108
+DECL|struct|__anon2b81fbcd0108
 typedef|typedef
 struct|struct
 block|{
@@ -1602,7 +1602,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a2b36280208
+DECL|struct|__anon2b81fbcd0208
 typedef|typedef
 struct|struct
 block|{

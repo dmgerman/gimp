@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_copy_object.h"
 end_include
 
@@ -71,7 +77,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c2f270d0108
+DECL|struct|__anon2ae4cf750108
 typedef|typedef
 struct|struct
 block|{

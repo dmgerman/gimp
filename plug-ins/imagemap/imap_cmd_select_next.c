@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_select.h"
 end_include
 
@@ -24,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"imap_main.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"imap_main.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -89,7 +95,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28c7619a0108
+DECL|struct|__anon293fee050108
 typedef|typedef
 struct|struct
 block|{

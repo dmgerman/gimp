@@ -6,13 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"imap_cmd_delete_point.h"
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|"imap_cmd_delete_point.h"
 end_include
 
 begin_include
@@ -25,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|"imap_polygon.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -72,7 +78,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27b63e370108
+DECL|struct|__anon2c2ae8620108
 typedef|typedef
 struct|struct
 block|{

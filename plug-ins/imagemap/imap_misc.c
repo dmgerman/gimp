@@ -126,7 +126,7 @@ name|identifier
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"Private"
+name|NULL
 argument_list|,
 name|iconw
 argument_list|,
@@ -260,7 +260,7 @@ name|identifier
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"Private"
+name|NULL
 argument_list|,
 name|iconw
 argument_list|,
@@ -390,7 +390,7 @@ name|identifier
 argument_list|,
 name|tooltip
 argument_list|,
-literal|"Private"
+name|NULL
 argument_list|,
 name|iconw
 argument_list|,

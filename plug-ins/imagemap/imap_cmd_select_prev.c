@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_cmd_select.h"
 end_include
 
@@ -25,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|"imap_main.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
@@ -83,7 +95,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2ba9768d0108
+DECL|struct|__anon2af58b2c0108
 typedef|typedef
 struct|struct
 block|{
@@ -138,7 +150,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Select Previous"
+argument_list|)
 argument_list|,
 operator|&
 name|select_prev_command_class

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"imap_menu.h"
 end_include
 
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"imap_tools.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -468,7 +468,10 @@ name|NULL
 argument_list|,
 name|arrow_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Select"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -496,7 +499,10 @@ name|arrow
 argument_list|,
 name|rectangle_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Rectangle"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -524,7 +530,10 @@ name|rectangle
 argument_list|,
 name|circle_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Circle"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -552,7 +561,10 @@ name|circle
 argument_list|,
 name|polygon_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Polygon"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -584,7 +596,10 @@ name|window
 argument_list|,
 name|edit_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -619,7 +634,10 @@ name|window
 argument_list|,
 name|delete_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete"
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

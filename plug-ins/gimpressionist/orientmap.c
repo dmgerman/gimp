@@ -5184,9 +5184,5 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* void main(int argc, char **argv) {   gtk_set_locale ();   gtk_init (&argc,&argv);   gtk_rc_parse ("./rc");    if(argc> 1)     readdata(argv[1]);   else {     numvect++;     vector[0].x = 0.5;     vector[0].y = 0.5;     vector[0].dir = 0.0;     vector[0].str = 1.0;   }        create_orientmap_dialog();   gtk_main(); } */
-end_comment
-
 end_unit
 
