@@ -10873,7 +10873,10 @@ name|gpointer
 operator|)
 name|thumbnail_mode
 argument_list|,
+name|_
+argument_list|(
 literal|"Always"
+argument_list|)
 argument_list|,
 operator|&
 name|thumbnail_mode
@@ -10883,7 +10886,10 @@ name|gpointer
 operator|)
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Never"
+argument_list|)
 argument_list|,
 operator|&
 name|thumbnail_mode
@@ -12004,7 +12010,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon27ed6c220108
+DECL|struct|__anon292e73580108
 specifier|static
 specifier|const
 struct|struct
@@ -12229,7 +12235,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon27ed6c220208
+DECL|struct|__anon292e73580208
 specifier|static
 specifier|const
 struct|struct
