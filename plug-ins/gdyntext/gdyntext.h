@@ -16,18 +16,6 @@ directive|define
 name|_GDYNTEXT_H_
 end_define
 
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
 begin_define
 DECL|macro|GDYNTEXT_VERSION
 define|#
@@ -95,7 +83,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b07b8b20103
+DECL|enum|__anon2c2fb38b0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -120,7 +108,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b07b8b20203
+DECL|enum|__anon2c2fb38b0203
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -170,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b07b8b20303
+DECL|enum|__anon2c2fb38b0303
 block|{
 DECL|enumerator|XLFD_NONE
 name|XLFD_NONE
@@ -255,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b07b8b20403
+DECL|enum|__anon2c2fb38b0403
 block|{
 DECL|enumerator|LA_NONE
 name|LA_NONE
@@ -313,7 +301,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b07b8b20508
+DECL|struct|__anon2c2fb38b0508
 typedef|typedef
 struct|struct
 block|{

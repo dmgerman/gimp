@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -66,7 +72,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2bd0700c0103
+DECL|enum|__anon2bdd4ee50103
 enum|enum
 block|{
 DECL|enumerator|CHAR_SELECTED

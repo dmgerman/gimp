@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -37,6 +43,18 @@ begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -1466,7 +1484,7 @@ name|layer_id
 argument_list|,
 name|_
 argument_list|(
-literal|"GDynText Layer "
+literal|"GDynText Layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1551,11 +1569,16 @@ decl_stmt|,
 name|selection_empty
 decl_stmt|,
 name|selection_channel
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|gint32
 name|text_width
 decl_stmt|,
 name|text_height
+init|=
+literal|0
 decl_stmt|;
 name|gint32
 name|text_ascent

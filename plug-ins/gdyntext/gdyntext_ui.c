@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/types.h>
 end_include
 
@@ -31,6 +37,18 @@ begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -184,7 +202,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon29c7bb930108
+DECL|struct|__anon2981d7b60108
 typedef|typedef
 struct|struct
 block|{
@@ -792,7 +810,7 @@ DECL|macro|DEFAULT_FONT_PREVIEW_TEXT
 define|#
 directive|define
 name|DEFAULT_FONT_PREVIEW_TEXT
-value|"ABCDEFGHIJKLMNOPQRSTUVWXYZ"\ 																	"abcdefghijklmnopqrstuvwxyz"\ 																	"0123456789"
+value|"ABCDEFGHIJKLMNOPQRSTUVWXYZ"\   					"abcdefghijklmnopqrstuvwxyz"\ 					"0123456789"
 end_define
 
 begin_define
