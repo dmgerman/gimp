@@ -168,7 +168,11 @@ name|view
 parameter_list|,
 name|GimpViewable
 modifier|*
-name|viewable
+name|old_viewable
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|new_viewable
 parameter_list|)
 function_decl|;
 DECL|member|clicked

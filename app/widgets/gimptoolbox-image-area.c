@@ -193,7 +193,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|image_preview_set_viewable (GimpView * view,GimpViewable * viewable)
+DECL|function|image_preview_set_viewable (GimpView * view,GimpViewable * old_viewable,GimpViewable * new_viewable)
 name|image_preview_set_viewable
 parameter_list|(
 name|GimpView
@@ -202,13 +202,21 @@ name|view
 parameter_list|,
 name|GimpViewable
 modifier|*
-name|viewable
+name|old_viewable
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|new_viewable
 parameter_list|)
 block|{
 if|if
 condition|(
-name|viewable
+operator|!
+name|old_viewable
+operator|&&
+name|new_viewable
 condition|)
+block|{
 name|gimp_dnd_xds_source_add
 argument_list|(
 name|GTK_WIDGET
@@ -224,6 +232,25 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|old_viewable
+operator|&&
+operator|!
+name|new_viewable
+condition|)
+block|{
+name|gimp_dnd_xds_source_remove
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

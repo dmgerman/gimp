@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b63beff0103
+DECL|enum|__anon2c69aae20103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -330,6 +330,10 @@ name|view
 parameter_list|,
 name|GimpViewable
 modifier|*
+name|old
+parameter_list|,
+name|GimpViewable
+modifier|*
 name|viewable
 parameter_list|)
 function_decl|;
@@ -539,11 +543,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__OBJECT
+name|gimp_marshal_VOID__OBJECT_OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|1
+literal|2
+argument_list|,
+name|GIMP_TYPE_VIEWABLE
 argument_list|,
 name|GIMP_TYPE_VIEWABLE
 argument_list|)
@@ -2355,12 +2361,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_real_set_viewable (GimpView * view,GimpViewable * viewable)
+DECL|function|gimp_view_real_set_viewable (GimpView * view,GimpViewable * old,GimpViewable * viewable)
 name|gimp_view_real_set_viewable
 parameter_list|(
 name|GimpView
 modifier|*
 name|view
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|old
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -3158,6 +3168,10 @@ name|SET_VIEWABLE
 index|]
 argument_list|,
 literal|0
+argument_list|,
+name|view
+operator|->
+name|viewable
 argument_list|,
 name|viewable
 argument_list|)
