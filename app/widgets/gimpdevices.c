@@ -2517,6 +2517,20 @@ operator|=
 literal|"ytilt"
 expr_stmt|;
 break|break;
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+case|case
+name|GDK_AXIS_WHEEL
+case|:
+name|axis_type
+operator|=
+literal|"wheel"
+expr_stmt|;
+break|break;
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 block|}
 name|fprintf
 argument_list|(

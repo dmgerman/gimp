@@ -93,7 +93,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afc2e920103
+DECL|enum|__anon2bd4780f0103
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -152,17 +152,28 @@ DECL|member|startpressure
 name|double
 name|startpressure
 decl_stmt|;
-comment|/* starting pressure           */
+comment|/*  starting pressure          */
 DECL|member|startxtilt
 name|double
 name|startxtilt
 decl_stmt|;
-comment|/* starting xtilt              */
+comment|/*  starting xtilt             */
 DECL|member|startytilt
 name|double
 name|startytilt
 decl_stmt|;
-comment|/* starting ytilt              */
+comment|/*  starting ytilt             */
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+DECL|member|startwheel
+name|double
+name|startwheel
+decl_stmt|;
+comment|/*  starting wheel             */
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|curx
 name|double
 name|curx
@@ -188,6 +199,17 @@ name|double
 name|curytilt
 decl_stmt|;
 comment|/*  current ytilt              */
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+DECL|member|curwheel
+name|double
+name|curwheel
+decl_stmt|;
+comment|/*  current wheel              */
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|lastx
 name|double
 name|lastx
@@ -213,6 +235,17 @@ name|double
 name|lastytilt
 decl_stmt|;
 comment|/*  last ytilt                 */
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+DECL|member|lastwheel
+name|double
+name|lastwheel
+decl_stmt|;
+comment|/*  last wheel                 */
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 DECL|member|state
 name|int
 name|state
@@ -328,6 +361,16 @@ DECL|member|lastytilt
 name|double
 name|lastytilt
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+DECL|member|lastwheel
+name|double
+name|lastwheel
+decl_stmt|;
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 block|}
 struct|;
 end_struct

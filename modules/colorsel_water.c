@@ -324,7 +324,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon2b09b9330108
+DECL|struct|__anon2c373e230108
 typedef|typedef
 struct|struct
 block|{
@@ -2108,6 +2108,11 @@ name|event
 operator|->
 name|deviceid
 argument_list|,
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+name|NULL
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -2121,6 +2126,25 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+comment|/* !GTK_HAVE_SIX_VALUATORS */
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+block|)
+empty_stmt|;
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 name|draw_brush
 argument_list|(
 name|widget
@@ -2142,6 +2166,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_else
 else|else
 block|{
 name|gdk_input_window_get_pointer
@@ -2164,6 +2191,11 @@ name|event
 operator|->
 name|y
 argument_list|,
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+name|NULL
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -2173,15 +2205,37 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
-return|return
+else|#
+directive|else
+comment|/* !GTK_HAVE_SIX_VALUATORS */
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+block|)
+empty_stmt|;
+end_else
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GTK_HAVE_SIX_VALUATORS */
+end_comment
+
+begin_expr_stmt
+unit|}    return
 name|TRUE
-return|;
-block|}
-end_function
+expr_stmt|;
+end_expr_stmt
 
 begin_function
-specifier|static
+unit|}  static
 name|gint
 DECL|function|proximity_out_event (GtkWidget * widget,GdkEventProximity * event)
 name|proximity_out_event

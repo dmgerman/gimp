@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2917e0860103
+DECL|enum|__anon2bdb84b00103
 typedef|typedef
 enum|enum
 block|{
@@ -9590,6 +9590,30 @@ index|]
 operator|=
 name|GDK_AXIS_YTILT
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+elseif|else
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+literal|"wheel"
+argument_list|,
+name|token_sym
+argument_list|)
+condition|)
+name|axes
+index|[
+name|i
+index|]
+operator|=
+name|GDK_AXIS_WHEEL
+expr_stmt|;
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 else|else
 goto|goto
 name|error

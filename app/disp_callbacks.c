@@ -1601,6 +1601,11 @@ argument_list|,
 operator|&
 name|ty
 argument_list|,
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
+name|NULL
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL
@@ -1610,6 +1615,21 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+comment|/* !GTK_HAVE_SIX_VALUATORS */
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+block|)
+empty_stmt|;
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 else|else
 block|{
 name|tx
@@ -2021,6 +2041,9 @@ name|window
 argument_list|,
 name|current_device
 argument_list|,
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
 operator|&
 name|tx
 argument_list|,
@@ -2034,8 +2057,31 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+comment|/* !GTK_HAVE_SIX_VALUATORS */
+operator|&
+name|tx
+operator|,
+operator|&
+name|ty
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+block|)
+empty_stmt|;
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 call|(
 modifier|*
 name|active_tool
@@ -2057,10 +2103,19 @@ expr_stmt|;
 block|}
 break|break;
 block|}
+end_function
+
+begin_break
 break|break;
+end_break
+
+begin_case
 case|case
 name|GDK_KEY_RELEASE
 case|:
+end_case
+
+begin_expr_stmt
 name|kevent
 operator|=
 operator|(
@@ -2069,12 +2124,18 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|state
 operator|=
 name|kevent
 operator|->
 name|state
 expr_stmt|;
+end_expr_stmt
+
+begin_switch
 switch|switch
 condition|(
 name|kevent
@@ -2132,6 +2193,9 @@ name|window
 argument_list|,
 name|current_device
 argument_list|,
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
 operator|&
 name|tx
 argument_list|,
@@ -2145,8 +2209,31 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+else|#
+directive|else
+comment|/* !GTK_HAVE_SIX_VALUATORS */
+operator|&
+name|tx
+operator|,
+operator|&
+name|ty
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+operator|,
+name|NULL
+block|)
+empty_stmt|;
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS */
 call|(
 modifier|*
 name|active_tool
@@ -2166,22 +2253,38 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+end_switch
+
+begin_break
 break|break;
-block|}
-name|return_val
+end_break
+
+begin_expr_stmt
+unit|}        return_val
 operator|=
 name|TRUE
 expr_stmt|;
+end_expr_stmt
+
+begin_break
 break|break;
+end_break
+
+begin_default
 default|default:
+end_default
+
+begin_break
 break|break;
-block|}
-if|if
-condition|(
+end_break
+
+begin_expr_stmt
+unit|}    if
+operator|(
 name|no_cursor_updating
 operator|==
 literal|0
-condition|)
+operator|)
 block|{
 if|if
 condition|(
@@ -2246,6 +2349,9 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
+end_expr_stmt
+
+begin_elseif
 elseif|else
 if|if
 condition|(
@@ -2263,11 +2369,13 @@ argument_list|,
 name|GDK_TOP_LEFT_ARROW
 argument_list|)
 expr_stmt|;
-block|}
-if|if
-condition|(
+end_elseif
+
+begin_expr_stmt
+unit|}    if
+operator|(
 name|update_cursor
-condition|)
+operator|)
 name|gdisplay_update_cursor
 argument_list|(
 name|gdisp
@@ -2277,28 +2385,28 @@ argument_list|,
 name|ty
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_return
 return|return
 name|return_val
 return|;
-block|}
-end_function
+end_return
 
-begin_function
-name|gint
+begin_macro
+unit|}  gint
 DECL|function|gdisplay_hruler_button_press (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|gdisplay_hruler_button_press
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEventButton
-modifier|*
-name|event
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
+argument_list|(
+argument|GtkWidget      *widget
+argument_list|,
+argument|GdkEventButton *event
+argument_list|,
+argument|gpointer        data
+argument_list|)
+end_macro
+
+begin_block
 block|{
 name|GDisplay
 modifier|*
@@ -2349,7 +2457,7 @@ return|return
 name|FALSE
 return|;
 block|}
-end_function
+end_block
 
 begin_function
 name|gint
