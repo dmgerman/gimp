@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/****************************************************************************  * This is a plugin for the GIMP v 0.99.8 or later.  *  * Copyright (C) 1997 Miles O'Neal  * Blur code Copyright (C) 1995 Spencer Kimball and Peter Mattis  * GUI based on GTK code from:  *    plasma (Copyright (C) 1996 Stephen Norris),  *    oilify (Copyright (C) 1996 Torsten Martinsen),  *    ripple (Copyright (C) 1997 Brian Degenhardt) and  *    whirl  (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  ****************************************************************************/
+comment|/****************************************************************************  * This is a plugin for the GIMP v 0.99.8 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * Blur code Copyright (C) 1995 Spencer Kimball and Peter Mattis  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  ****************************************************************************/
 end_comment
 
 begin_comment
-comment|/****************************************************************************  * Randomize:  *  * randomize version 0.4c (17 May 1997, MEO)  * history  *     0.5 - 20 May 1997 MEO  *         added seed initialization choices (current time or user value)  *         added randomization type to progress label  *         added RNDM_VERSION macro so version changes made in one place  *         speed optimizations:  *             - changed randomize_prepare_row to #define  *             - moved updates back outside main loop  *             - less frequent progress updates  *         minor intialization string and comment cleanup  *     0.4c - 17 May 1997 MEO  *         minor comment cleanup  *     0.4b - 17 May 1997 MEO  *         minor comment cleanup  *     0.4a - 16 May 1997 MEO  *         added, corrected& cleaned up comments  *         removed unused variables, code  *         cleaned up wrong names  *         added version to popups  *     0.4 - 13 May 1997 MEO  *         added SLUR function  *     0.3 - 12 May 1997 MEO  *         added HURL function  *         moved from Blurs menu to Distorts menu.  *     0.2 - 11 May 1997 MEO  *         converted percentage control from text to scale  *         standardized tab stops, style  *     0.1 - 10 May 1997 MEO  *         initial release, with BLUR and PICK  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * This plug-in adds a user-defined amount of randomization to an  * image.  Variations include:  *   *  - blurring  *  - hurling (spewing random colors)  *  - picking a nearby pixel at random  *  - slurring (a crude form of melting)  *   * In any case, for each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  For  * blurring, an average is determined from the current and adjacent  * pixels. *(Except for the random factor, the blur code came  * straight from the original S&P blur plug-in.)*  Picking  * one selects the new pixel value at random from the current and  * adjacent pixels.  Hurling assigns a random value to the pixel.  * Slurring sort of melts downwards; if a pixel is to be slurred,  * there is an 80% chance the pixel above be used; otherwise, one  * of the pixels adjacent to the one above is used (even odds as  * to which it will be).  *   * Picking, hurling and slurring work with any image type.  Blurring  * works only with RGB and grayscale images.  If randomize is  * run against an indexed image, "blur" is not presented as an  * option.  *   * This plug-in's effectiveness varies a lot with the type  * and clarity of the image being "randomized".  *   * Hurling more than 75% or so onto an existing image will  * make the image nearly unrecognizable.  By 90% hurl, most  * images are indistinguishable from random noise.  *   * The repeat count is especially useful with slurring.  *   * TODO List  *   *  - Add a real melt function.  ****************************************************************************/
+comment|/****************************************************************************  * Randomize:  *  * randomize version 1.0 (19 Oct 1997, MEO)  * history  *     1.1 - 30 Nov 1997 MEO  *         added tooltips  *     1.0 - 19 Nov 1997 MEO  *         final cleanup for 1.0 GIMP release  *         - added email and URL info for author  *         - added doc URL info  *         - final FCS comment cleanup  *         - standardized constant strings  *         - restored proper behavior when repeating  *         - final UI labels  *         - better help text (for when GIMP help arrives)  *     0.5 - 20 May 1997 MEO  *         added seed initialization choices (current time or user value)  *         added randomization type to progress label  *         added RNDM_VERSION macro so version changes made in one place  *         speed optimizations:  *             - changed randomize_prepare_row to #define  *             - moved updates back outside main loop  *             - less frequent progress updates  *         minor intialization string and comment cleanup  *     0.4c - 17 May 1997 MEO  *         minor comment cleanup  *     0.4b - 17 May 1997 MEO  *         minor comment cleanup  *     0.4a - 16 May 1997 MEO  *         added, corrected& cleaned up comments  *         removed unused variables, code  *         cleaned up wrong names  *         added version to popups  *     0.4 - 13 May 1997 MEO  *         added SLUR function  *     0.3 - 12 May 1997 MEO  *         added HURL function  *         moved from Blurs menu to Distorts menu.  *     0.2 - 11 May 1997 MEO  *         converted percentage control from text to scale  *         standardized tab stops, style  *     0.1 - 10 May 1997 MEO  *         initial release, with BLUR and PICK  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * This plug-in adds a user-defined amount of randomization to an  * image.  Variations include:  *   *  - blurring  *  - hurling (spewing random colors)  *  - picking a nearby pixel at random  *  - slurring (a crude form of melting)  *   * In any case, for each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  For  * blurring, an average is determined from the current and adjacent  * pixels. *(Except for the random factor, the blur code came  * straight from the original S&P blur plug-in.)*  Picking  * one selects the new pixel value at random from the current and  * adjacent pixels.  Hurling assigns a random value to the pixel.  * Slurring sort of melts downwards; if a pixel is to be slurred,  * there is an 80% chance the pixel above be used; otherwise, one  * of the pixels adjacent to the one above is used (even odds as  * to which it will be).  *   * Picking, hurling and slurring work with any image type.  Blurring  * works only with RGB and grayscale images.  If randomize is  * run against an indexed image, "blur" is not presented as an  * option.  *   * This plug-in's effectiveness varies a lot with the type  * and clarity of the image being "randomized".  *   * Hurling more than 75% or so onto an existing image will  * make the image nearly unrecognizable.  By 90% hurl, most  * images are indistinguishable from random noise.  *   * The repeat count is especially useful with slurring.  *   * TODO List  *   *  - add a real melt function  *  - split into multiple files  ****************************************************************************/
 end_comment
 
 begin_include
@@ -32,14 +32,18 @@ file|"gtk/gtk.h"
 end_include
 
 begin_comment
-comment|/*  *  Set this to 0 for faster processing, to 1 if for some  *  reason you want all functions to be subroutines  */
+comment|/*********************************  *  *  PLUGIN-SPECIFIC CONSTANTS  *  ********************************/
+end_comment
+
+begin_comment
+comment|/*  *  Set this to 1 for faster processing, to 0 if for some  *  reason you want all functions to be subroutines  */
 end_comment
 
 begin_define
-DECL|macro|SUBS_NOT_DEFINES
+DECL|macro|OPTIMIZE_SUBS
 define|#
 directive|define
-name|SUBS_NOT_DEFINES
+name|OPTIMIZE_SUBS
 value|0
 end_define
 
@@ -56,16 +60,20 @@ value|((row % 10) == 0)
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_NAME
+define|#
+directive|define
+name|PLUG_IN_NAME
+value|"plug_in_randomize"
+end_define
+
+begin_define
 DECL|macro|RNDM_VERSION
 define|#
 directive|define
 name|RNDM_VERSION
-value|"Randomize 0.5"
+value|"Randomize 1.1"
 end_define
-
-begin_comment
-comment|/*********************************  *  *  LOCAL DATA  *  ********************************/
-end_comment
 
 begin_define
 DECL|macro|RNDM_BLUR
@@ -131,8 +139,12 @@ name|SCALE_WIDTH
 value|100
 end_define
 
+begin_comment
+comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND DATA  *  ********************************/
+end_comment
+
 begin_typedef
-DECL|struct|__anon27c831780108
+DECL|struct|__anon289174520108
 typedef|typedef
 struct|struct
 block|{
@@ -188,7 +200,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27c831780208
+DECL|struct|__anon289174520208
 typedef|typedef
 struct|struct
 block|{
@@ -305,9 +317,9 @@ begin_if
 if|#
 directive|if
 operator|(
-name|SUBS_NOT_DEFINES
+name|OPTIMIZE_SUBS
 operator|==
-literal|1
+literal|0
 operator|)
 end_if
 
@@ -440,6 +452,35 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|set_tooltip
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|char
+modifier|*
+name|tip
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|setup_tooltips
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/************************************ Guts ***********************************/
+end_comment
+
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
@@ -541,19 +582,74 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|blurb
+init|=
+literal|"Add a random factor to the image, by blurring, picking a nearby pixel, slurring (similar to melting), or just hurling on it."
+decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|help
+init|=
+literal|"This function randomly ``blurs'' the specified drawable, using either a 3x3 blur, picking a nearby pixel, slurring (cheezy melting), or hurling (spewing colors).  The type and percentage are user selectable.  Blurring is not supported for indexed images."
+decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|author
+init|=
+literal|"Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/"
+decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|copyrights
+init|=
+literal|"Miles O'Neal, Spencer Kimball, Peter Mattis, Torsten Martinsen, Brian Degenhardt, Federico Mena Quintero, Stephen Norris, Daniel Cotting"
+decl_stmt|;
+specifier|const
+name|char
+modifier|*
+name|copyright_date
+init|=
+literal|"1995-1997"
+decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_randomize"
+name|PLUG_IN_NAME
 argument_list|,
-literal|"Add a random factor to the image, by blurring, picking a nearby pixel, slurring (similar to melting), or just hurling on it."
+operator|(
+name|char
+operator|*
+operator|)
+name|blurb
 argument_list|,
-literal|"This function randomly ``blurs'' the specified drawable, using either a 3x3 blur, picking a nearby pixel, slurring (cheezy melting), or hurling (spewing colors).  The type and percentage are user selectable.  Blurring is not supported for indexed images."
+operator|(
+name|char
+operator|*
+operator|)
+name|help
 argument_list|,
-literal|"Miles O'Neal"
+operator|(
+name|char
+operator|*
+operator|)
+name|author
 argument_list|,
-literal|"Miles O'Neal, Spencer Kimball, Peter Mattis, Torsten Martinsen, Brian Degenhardt, Federico Mena Quintero"
+operator|(
+name|char
+operator|*
+operator|)
+name|copyrights
 argument_list|,
-literal|"1995-1997"
+operator|(
+name|char
+operator|*
+operator|)
+name|copyright_date
 argument_list|,
 literal|"<Image>/Filters/Distorts/Randomize"
 argument_list|,
@@ -618,13 +714,6 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-specifier|static
-name|GParam
-name|values
-index|[
-literal|1
-index|]
-decl_stmt|;
 name|GDrawable
 modifier|*
 name|drawable
@@ -648,6 +737,13 @@ name|char
 name|prog_label
 index|[
 literal|32
+index|]
+decl_stmt|;
+specifier|static
+name|GParam
+name|values
+index|[
+literal|1
 index|]
 decl_stmt|;
 comment|/*  *  Get the specified drawable, do standard initialization.  */
@@ -745,7 +841,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_randomize"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|pivals
@@ -910,7 +1006,7 @@ name|RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
-literal|"plug_in_randomize"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|pivals
@@ -994,7 +1090,7 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*  *  Initialie the rand() function seed  */
+comment|/*  *  Initialize the rand() function seed  */
 if|if
 condition|(
 name|pivals
@@ -1046,7 +1142,7 @@ condition|)
 block|{
 name|gimp_set_data
 argument_list|(
-literal|"plug_in_randomize"
+name|PLUG_IN_NAME
 argument_list|,
 operator|&
 name|pivals
@@ -1095,9 +1191,9 @@ begin_if
 if|#
 directive|if
 operator|(
-name|SUBS_NOT_DEFINES
+name|OPTIMIZE_SUBS
 operator|==
-literal|1
+literal|0
 operator|)
 end_if
 
@@ -1310,6 +1406,17 @@ name|GPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR
+decl_stmt|,
+name|destPR2
+decl_stmt|,
+modifier|*
+name|sp
+decl_stmt|,
+modifier|*
+name|dp
+decl_stmt|,
+modifier|*
+name|tp
 decl_stmt|;
 name|gint
 name|width
@@ -1482,22 +1589,6 @@ operator|*
 name|bytes
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-name|cnt
-operator|=
-literal|1
-init|;
-name|cnt
-operator|<=
-name|pivals
-operator|.
-name|rndm_rcount
-condition|;
-name|cnt
-operator|++
-control|)
-block|{
 comment|/*  *  initialize the pixel regions  */
 name|gimp_pixel_rgn_init
 argument_list|(
@@ -1539,6 +1630,40 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_pixel_rgn_init
+argument_list|(
+operator|&
+name|destPR2
+argument_list|,
+name|drawable
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|sp
+operator|=
+operator|&
+name|srcPR
+expr_stmt|;
+name|dp
+operator|=
+operator|&
+name|destPR
+expr_stmt|;
+name|tp
+operator|=
+name|NULL
+expr_stmt|;
 name|pr
 operator|=
 name|prev_row
@@ -1557,11 +1682,26 @@ name|next_row
 operator|+
 name|bytes
 expr_stmt|;
+for|for
+control|(
+name|cnt
+operator|=
+literal|1
+init|;
+name|cnt
+operator|<=
+name|pivals
+operator|.
+name|rndm_rcount
+condition|;
+name|cnt
+operator|++
+control|)
+block|{
 comment|/*  *  prepare the first row and previous row  */
 name|randomize_prepare_row
 argument_list|(
-operator|&
-name|srcPR
+name|sp
 argument_list|,
 name|pr
 argument_list|,
@@ -1580,8 +1720,7 @@ argument_list|)
 expr_stmt|;
 name|randomize_prepare_row
 argument_list|(
-operator|&
-name|srcPR
+name|dp
 argument_list|,
 name|cr
 argument_list|,
@@ -1614,8 +1753,7 @@ block|{
 comment|/*  prepare the next row  */
 name|randomize_prepare_row
 argument_list|(
-operator|&
-name|srcPR
+name|sp
 argument_list|,
 name|nr
 argument_list|,
@@ -2049,8 +2187,7 @@ block|}
 comment|/*  *  Save the modified row, shuffle the row pointers, and every  *  so often, update the progress meter.  */
 name|gimp_pixel_rgn_set_row
 argument_list|(
-operator|&
-name|destPR
+name|dp
 argument_list|,
 name|dest
 argument_list|,
@@ -2102,6 +2239,55 @@ name|y1
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+comment|/*  *  if we have more cycles to perform, swap the src and dest Pixel Regions  */
+if|if
+condition|(
+name|cnt
+operator|<
+name|pivals
+operator|.
+name|rndm_rcount
+condition|)
+block|{
+if|if
+condition|(
+name|tp
+operator|!=
+name|NULL
+condition|)
+block|{
+name|tp
+operator|=
+name|dp
+expr_stmt|;
+name|dp
+operator|=
+name|sp
+expr_stmt|;
+name|sp
+operator|=
+name|tp
+expr_stmt|;
+block|}
+else|else
+block|{
+name|tp
+operator|=
+operator|&
+name|srcPR
+expr_stmt|;
+name|sp
+operator|=
+operator|&
+name|destPR
+expr_stmt|;
+name|dp
+operator|=
+operator|&
+name|destPR2
+expr_stmt|;
+block|}
 block|}
 block|}
 name|gimp_progress_update
@@ -2179,7 +2365,7 @@ comment|/*********************************  *  *  GUI ROUTINES  *  *************
 end_comment
 
 begin_define
-DECL|macro|randomize_add_action_button (label,callback,dialog)
+DECL|macro|randomize_add_action_button (label,callback,dialog,tip)
 define|#
 directive|define
 name|randomize_add_action_button
@@ -2189,13 +2375,15 @@ parameter_list|,
 name|callback
 parameter_list|,
 name|dialog
+parameter_list|,
+name|tip
 parameter_list|)
 define|\
-value|{ \     GtkWidget *button; \ \     button = gtk_button_new_with_label(label); \     GTK_WIDGET_SET_FLAGS(button, GTK_CAN_DEFAULT); \     gtk_signal_connect(GTK_OBJECT(button), "clicked", callback, dialog); \     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->action_area), \ 	button, TRUE, TRUE, 0); \     gtk_widget_grab_default(button); \     gtk_widget_show(button); \ }
+value|{ \     GtkWidget *button; \ \     button = gtk_button_new_with_label(label); \     GTK_WIDGET_SET_FLAGS(button, GTK_CAN_DEFAULT); \     gtk_signal_connect(GTK_OBJECT(button), "clicked", callback, dialog); \     gtk_box_pack_start(GTK_BOX(GTK_DIALOG(dialog)->action_area), \ 	button, TRUE, TRUE, 0); \     gtk_widget_grab_default(button); \     gtk_widget_show(button); \     set_tooltip(button, tip); \ }
 end_define
 
 begin_define
-DECL|macro|randomize_add_radio_button (group,label,box,callback,value)
+DECL|macro|randomize_add_radio_button (group,label,box,callback,value,tip)
 define|#
 directive|define
 name|randomize_add_radio_button
@@ -2209,9 +2397,11 @@ parameter_list|,
 name|callback
 parameter_list|,
 name|value
+parameter_list|,
+name|tip
 parameter_list|)
 define|\
-value|{  \     GtkWidget *toggle; \ \     toggle = gtk_radio_button_new_with_label(group, label); \     group = gtk_radio_button_group(GTK_RADIO_BUTTON(toggle)); \     gtk_box_pack_start(GTK_BOX(box), toggle, FALSE, FALSE, 0); \     gtk_signal_connect(GTK_OBJECT(toggle), "toggled", \         (GtkSignalFunc) callback, value); \     gtk_toggle_button_set_state(GTK_TOGGLE_BUTTON(toggle), *value); \     gtk_widget_show(toggle); \     gtk_widget_show(box); \ }
+value|{  \     GtkWidget *toggle; \ \     toggle = gtk_radio_button_new_with_label(group, label); \     group = gtk_radio_button_group(GTK_RADIO_BUTTON(toggle)); \     gtk_box_pack_start(GTK_BOX(box), toggle, FALSE, FALSE, 0); \     gtk_signal_connect(GTK_OBJECT(toggle), "toggled", \         (GtkSignalFunc) callback, value); \     gtk_toggle_button_set_state(GTK_TOGGLE_BUTTON(toggle), *value); \     gtk_widget_show(toggle); \     gtk_widget_show(box); \     set_tooltip(toggle, tip); \ }
 end_define
 
 begin_comment
@@ -2426,31 +2616,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  *  Action area OK& Cancel buttons  */
-name|randomize_add_action_button
-argument_list|(
-literal|"OK"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|randomize_ok_callback
-argument_list|,
-name|dlg
-argument_list|)
-expr_stmt|;
-name|randomize_add_action_button
-argument_list|(
-literal|"Cancel"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|randomize_cancel_callback
-argument_list|,
-name|dlg
-argument_list|)
-expr_stmt|;
 comment|/*  *  Parameter settings  *  *  First set up the basic containers, label them, etc.  */
 name|frame
 operator|=
@@ -2529,6 +2694,45 @@ name|frame
 argument_list|)
 argument_list|,
 name|table
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
+name|setup_tooltips
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
+comment|/*  *  Action area OK& Cancel buttons  */
+name|randomize_add_action_button
+argument_list|(
+literal|"OK"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|randomize_ok_callback
+argument_list|,
+name|dlg
+argument_list|,
+literal|"Accept settings and apply filter to image"
+argument_list|)
+expr_stmt|;
+name|randomize_add_action_button
+argument_list|(
+literal|"Cancel"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|randomize_cancel_callback
+argument_list|,
+name|dlg
+argument_list|,
+literal|"Close plug-in without making any changes"
 argument_list|)
 expr_stmt|;
 comment|/*  *  Randomization Type - label& radio buttons  */
@@ -2653,6 +2857,8 @@ name|randomize_toggle_update
 argument_list|,
 operator|&
 name|do_blur
+argument_list|,
+literal|"Blur each pixel by averaging its value with those of its neighbors"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2672,6 +2878,8 @@ name|randomize_toggle_update
 argument_list|,
 operator|&
 name|do_hurl
+argument_list|,
+literal|"Hurl random colors onto pixels"
 argument_list|)
 expr_stmt|;
 name|randomize_add_radio_button
@@ -2689,6 +2897,8 @@ name|randomize_toggle_update
 argument_list|,
 operator|&
 name|do_pick
+argument_list|,
+literal|"Pick at random from neighboring pixels"
 argument_list|)
 expr_stmt|;
 name|randomize_add_radio_button
@@ -2706,6 +2916,8 @@ name|randomize_toggle_update
 argument_list|,
 operator|&
 name|do_slur
+argument_list|,
+literal|"Simplistic melt"
 argument_list|)
 expr_stmt|;
 comment|/*  *  Randomization seed initialization controls  */
@@ -2713,7 +2925,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Seed"
+literal|"Randomization Seed"
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2823,6 +3035,8 @@ name|randomize_toggle_update
 argument_list|,
 operator|&
 name|do_time
+argument_list|,
+literal|"Seed random number generator from the current time - this guarantees a reasonable randomization"
 argument_list|)
 expr_stmt|;
 comment|/*  *  Box to hold seed user initialization controls  */
@@ -2866,7 +3080,7 @@ name|randomize_add_radio_button
 argument_list|(
 name|seed_group
 argument_list|,
-literal|"User"
+literal|"Other Value"
 argument_list|,
 name|seed_hbox
 argument_list|,
@@ -2877,9 +3091,11 @@ name|randomize_toggle_update
 argument_list|,
 operator|&
 name|do_user
+argument_list|,
+literal|"Enable user-entered value for random number generator seed - this allows you to repeat a given \"random\" operation"
 argument_list|)
 expr_stmt|;
-comment|/*  *  Randomization seed text  */
+comment|/*  *  Randomization seed number (text)  */
 name|entry
 operator|=
 name|gtk_entry_new
@@ -2954,6 +3170,13 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|entry
+argument_list|)
+expr_stmt|;
+name|set_tooltip
+argument_list|(
+name|entry
+argument_list|,
+literal|"Value for seeding the random number generator"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3135,6 +3358,13 @@ argument_list|(
 name|scale
 argument_list|)
 expr_stmt|;
+name|set_tooltip
+argument_list|(
+name|scale
+argument_list|,
+literal|"Percentage of pixels to be filtered"
+argument_list|)
+expr_stmt|;
 comment|/*  *  Repeat count label& scale (1 to 100)  */
 name|label
 operator|=
@@ -3307,15 +3537,17 @@ argument_list|(
 name|scale
 argument_list|)
 expr_stmt|;
+name|set_tooltip
+argument_list|(
+name|scale
+argument_list|,
+literal|"Number of times to apply filter"
+argument_list|)
+expr_stmt|;
 comment|/*  *  Display everything.  */
 name|gtk_widget_show
 argument_list|(
 name|frame
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3411,6 +3643,10 @@ begin_comment
 comment|/*********************************  *  *  GUI accessories (callbacks, etc)  *  ********************************/
 end_comment
 
+begin_comment
+comment|/*  *  DESTROY callback  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -3430,6 +3666,10 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  *  OK BUTTON callback  */
+end_comment
 
 begin_function
 specifier|static
@@ -3462,6 +3702,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  *  CANCEL BUTTON callback  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -3487,6 +3731,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  *  SCALE UPDATE callback  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -3511,6 +3759,10 @@ name|value
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  *  TOGGLE UPDATE callback  */
+end_comment
 
 begin_function
 specifier|static
@@ -3561,6 +3813,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  *  TEXT UPDATE callback  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -3599,6 +3855,154 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  *  TOOLTIPS ROUTINES  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|tips
+specifier|static
+name|GtkTooltips
+modifier|*
+name|tips
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+DECL|function|setup_tooltips (GtkWidget * parent)
+name|void
+name|setup_tooltips
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|)
+block|{
+specifier|static
+name|GdkColor
+name|tips_fg
+decl_stmt|,
+name|tips_bg
+decl_stmt|;
+name|tips
+operator|=
+name|gtk_tooltips_new
+argument_list|()
+expr_stmt|;
+comment|/* black as foreground: */
+name|tips_fg
+operator|.
+name|red
+operator|=
+literal|0
+expr_stmt|;
+name|tips_fg
+operator|.
+name|green
+operator|=
+literal|0
+expr_stmt|;
+name|tips_fg
+operator|.
+name|blue
+operator|=
+literal|0
+expr_stmt|;
+name|gdk_color_alloc
+argument_list|(
+name|gtk_widget_get_colormap
+argument_list|(
+name|parent
+argument_list|)
+argument_list|,
+operator|&
+name|tips_fg
+argument_list|)
+expr_stmt|;
+comment|/* postit yellow (khaki) as background: */
+name|tips_bg
+operator|.
+name|red
+operator|=
+literal|61669
+expr_stmt|;
+name|tips_bg
+operator|.
+name|green
+operator|=
+literal|59113
+expr_stmt|;
+name|tips_bg
+operator|.
+name|blue
+operator|=
+literal|35979
+expr_stmt|;
+name|gdk_color_alloc
+argument_list|(
+name|gtk_widget_get_colormap
+argument_list|(
+name|parent
+argument_list|)
+argument_list|,
+operator|&
+name|tips_bg
+argument_list|)
+expr_stmt|;
+name|gtk_tooltips_set_colors
+argument_list|(
+name|tips
+argument_list|,
+operator|&
+name|tips_bg
+argument_list|,
+operator|&
+name|tips_fg
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+DECL|function|set_tooltip (GtkWidget * widget,const char * tip)
+name|void
+name|set_tooltip
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|char
+modifier|*
+name|tip
+parameter_list|)
+block|{
+if|if
+condition|(
+name|tip
+operator|&&
+name|tip
+index|[
+literal|0
+index|]
+condition|)
+name|gtk_tooltips_set_tips
+argument_list|(
+name|tips
+argument_list|,
+name|widget
+argument_list|,
+operator|(
+name|char
+operator|*
+operator|)
+name|tip
 argument_list|)
 expr_stmt|;
 block|}

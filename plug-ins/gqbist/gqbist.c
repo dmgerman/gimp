@@ -4,7 +4,7 @@ comment|/*  * Written 1997 Jens Ch. Restemeier<jchrr@hrz.uni-bielefeld.de>  * Th
 end_comment
 
 begin_comment
-comment|/*  * History:  * 1.0 first release  * 1.2 now handles RGB*  * 1.5 fixed a small bug  * 1.6 fixed a bug that was added by v1.5 :-(  * 1.7 added patch from Art Haas to make it compile with HP-UX, a small clean-up  * 1.8 Dscho added transform file load/save, bug-fixes   * 1.9 rewrote renderloop.  */
+comment|/*  * History:  * 1.0 first release  * 1.2 now handles RGB*  * 1.5 fixed a small bug  * 1.6 fixed a bug that was added by v1.5 :-(  * 1.7 added patch from Art Haas to make it compile with HP-UX, a small clean-up  * 1.8 Dscho added transform file load/save, bug-fixes   * 1.9 rewrote renderloop.  * 1.9a fixed a bug.  */
 end_comment
 
 begin_include
@@ -1946,12 +1946,6 @@ decl_stmt|,
 name|img_bpp
 decl_stmt|,
 name|img_has_alpha
-decl_stmt|;
-name|GParam
-name|values
-index|[
-literal|1
-index|]
 decl_stmt|;
 name|GDrawable
 modifier|*
