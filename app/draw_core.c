@@ -85,7 +85,7 @@ name|core
 operator|->
 name|line_width
 operator|=
-literal|1
+literal|0
 expr_stmt|;
 name|core
 operator|->
