@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c623c50108
+DECL|struct|__anon2b25c5be0108
 block|{
 DECL|member|independent
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c623c50208
+DECL|struct|__anon2b25c5be0208
 block|{
 DECL|member|channels
 name|gint
@@ -1857,19 +1857,11 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|even
-condition|)
 name|g_free
 argument_list|(
 name|even
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|odd
-condition|)
 name|g_free
 argument_list|(
 name|odd
@@ -2611,7 +2603,7 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(

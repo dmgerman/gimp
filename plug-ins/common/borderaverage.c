@@ -1706,11 +1706,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Thickness:"
+literal|"_Thickness:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1777,6 +1777,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|spinbutton
 argument_list|)
 expr_stmt|;
@@ -1865,11 +1875,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Bucket Size:"
+literal|"_Bucket Size:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2021,6 +2031,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|menu
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|menu
 argument_list|)
 expr_stmt|;

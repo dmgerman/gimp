@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b2a300108
+DECL|struct|__anon2c181af60108
 block|{
 DECL|member|img
 name|gint32
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292b2a300203
+DECL|enum|__anon2c181af60203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b2a300308
+DECL|struct|__anon2c181af60308
 block|{
 DECL|member|width
 name|gint
@@ -2852,7 +2852,7 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(

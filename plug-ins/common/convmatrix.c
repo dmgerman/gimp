@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3470c80103
+DECL|enum|__anon27ebb55c0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -104,6 +104,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|drawable
+specifier|static
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -112,6 +113,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|channel_labels
+specifier|static
 name|gchar
 modifier|*
 specifier|const
@@ -121,27 +123,27 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Grey"
+literal|"Gr_ey"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Red"
+literal|"Re_d"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Green"
+literal|"_Green"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Blue"
+literal|"_Blue"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Alpha"
+literal|"_Alpha"
 argument_list|)
 block|}
 decl_stmt|;
@@ -149,6 +151,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|bmode_labels
+specifier|static
 name|gchar
 modifier|*
 specifier|const
@@ -158,17 +161,17 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Extend"
+literal|"E_xtend"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Wrap"
+literal|"_Wrap"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Crop"
+literal|"Cro_p"
 argument_list|)
 block|}
 decl_stmt|;
@@ -270,29 +273,15 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|bytes
+specifier|static
 name|gint
 name|bytes
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|sx1
-DECL|variable|sy1
-DECL|variable|sx2
-DECL|variable|sy2
-name|gint
-name|sx1
-decl_stmt|,
-name|sy1
-decl_stmt|,
-name|sx2
-decl_stmt|,
-name|sy2
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|run_flag
+specifier|static
 name|gint
 name|run_flag
 init|=
@@ -303,7 +292,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3470c80208
+DECL|struct|__anon27ebb55c0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -350,6 +339,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|default_config
+specifier|static
 specifier|const
 name|config
 name|default_config
@@ -451,6 +441,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|my_config
+specifier|static
 name|config
 name|my_config
 decl_stmt|;
@@ -458,7 +449,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a3470c80308
+DECL|struct|__anon27ebb55c0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -2027,6 +2018,15 @@ decl_stmt|,
 name|h
 decl_stmt|,
 name|i
+decl_stmt|;
+name|gint
+name|sx1
+decl_stmt|,
+name|sy1
+decl_stmt|,
+name|sx2
+decl_stmt|,
+name|sy2
 decl_stmt|;
 name|gint
 name|x1
@@ -4269,11 +4269,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Divisor:"
+literal|"D_ivisor:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4354,6 +4354,16 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|entry
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT
@@ -4418,11 +4428,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Offset:"
+literal|"O_ffset:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4500,6 +4510,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
@@ -4574,11 +4594,11 @@ name|autoset
 operator|=
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Automatic"
+literal|"A_utomatic"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4629,11 +4649,11 @@ name|alpha_alg
 operator|=
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Alpha-weighting"
+literal|"A_lpha-weighting"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4821,7 +4841,7 @@ index|]
 operator|=
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
 name|group
 argument_list|,
@@ -4988,7 +5008,7 @@ index|]
 operator|=
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|gettext
 argument_list|(

@@ -761,6 +761,16 @@ operator|=
 name|gtk_toolbar_new
 argument_list|()
 expr_stmt|;
+name|gtk_toolbar_set_style
+argument_list|(
+name|GTK_TOOLBAR
+argument_list|(
+name|toolbar
+argument_list|)
+argument_list|,
+name|GTK_TOOLBAR_ICONS
+argument_list|)
+expr_stmt|;
 name|gtk_toolbar_set_orientation
 argument_list|(
 name|GTK_TOOLBAR
@@ -781,7 +791,6 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: replacement ?    gtk_toolbar_set_space_size(GTK_TOOLBAR(toolbar), 5); */
 name|data
 operator|->
 name|arrow_up

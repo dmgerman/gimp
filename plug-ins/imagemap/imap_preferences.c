@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -2411,10 +2411,6 @@ name|GtkWidget
 modifier|*
 name|hbox
 decl_stmt|;
-name|GSList
-modifier|*
-name|group
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|label
@@ -2526,11 +2522,11 @@ name|data
 operator|->
 name|ncsa
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic_from_widget
 argument_list|(
 name|NULL
 argument_list|,
-literal|"NCSA"
+literal|"_NCSA"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2558,9 +2554,11 @@ operator|->
 name|ncsa
 argument_list|)
 expr_stmt|;
-name|group
+name|data
+operator|->
+name|cern
 operator|=
-name|gtk_radio_button_group
+name|gtk_radio_button_new_with_mnemonic_from_widget
 argument_list|(
 name|GTK_RADIO_BUTTON
 argument_list|(
@@ -2568,17 +2566,8 @@ name|data
 operator|->
 name|ncsa
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|data
-operator|->
-name|cern
-operator|=
-name|gtk_radio_button_new_with_label
-argument_list|(
-name|group
 argument_list|,
-literal|"CERN"
+literal|"C_ERN"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2604,29 +2593,22 @@ argument_list|(
 name|data
 operator|->
 name|cern
-argument_list|)
-expr_stmt|;
-name|group
-operator|=
-name|gtk_radio_button_group
-argument_list|(
-name|GTK_RADIO_BUTTON
-argument_list|(
-name|data
-operator|->
-name|cern
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
 operator|->
 name|csim
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic_from_widget
 argument_list|(
-name|group
+name|GTK_RADIO_BUTTON
+argument_list|(
+name|data
+operator|->
+name|cern
+argument_list|)
 argument_list|,
-literal|"CSIM"
+literal|"C_SIM"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2668,7 +2650,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Prompt for area info"
+literal|"_Prompt for area info"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2686,7 +2668,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Require default URL"
+literal|"_Require default URL"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2704,7 +2686,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Show area handles"
+literal|"Show area _handles"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2722,7 +2704,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep NCSA circles true"
+literal|"_Keep NCSA circles true"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2740,7 +2722,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Show area URL tip"
+literal|"Show area URL _tip"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2758,7 +2740,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Use double-sized grab handles"
+literal|"_Use double-sized grab handles"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2769,11 +2751,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"General"
+literal|"_General"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2895,6 +2877,8 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -2905,7 +2889,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of Undo levels (1 - 99):"
+literal|"Number of Undo _levels (1 - 99):"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2928,6 +2912,8 @@ argument_list|,
 literal|99
 argument_list|)
 expr_stmt|;
+name|label
+operator|=
 name|create_label_in_table
 argument_list|(
 name|table
@@ -2938,7 +2924,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of MRU entries (1 - 16):"
+literal|"Number of MRU _entries (1 - 16):"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2963,11 +2949,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Menu"
+literal|"_Menu"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3299,11 +3285,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Colors"
+literal|"Co_lors"
 argument_list|)
 argument_list|)
 expr_stmt|;

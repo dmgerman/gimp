@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2002 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -536,7 +536,7 @@ end_decl_stmt
 begin_function_decl
 DECL|variable|_button_press_func
 specifier|static
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|_button_press_func
@@ -715,7 +715,7 @@ literal|"Maurits Rijk"
 argument_list|,
 literal|"Maurits Rijk"
 argument_list|,
-literal|"1998-1999"
+literal|"1998-2002"
 argument_list|,
 name|N_
 argument_list|(
@@ -2081,10 +2081,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_object_func (void (* func)(GtkWidget *,GdkEventButton *,gpointer),gpointer param)
+DECL|function|set_object_func (gboolean (* func)(GtkWidget *,GdkEventButton *,gpointer),gpointer param)
 name|set_object_func
 parameter_list|(
-name|void
+name|gboolean
 function_decl|(
 modifier|*
 name|func
@@ -2405,7 +2405,7 @@ name|title
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s - ImageMap 1.3"
+literal|"%s - ImageMap 2.0"
 argument_list|,
 name|p
 argument_list|)
@@ -3487,7 +3487,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"VERSION:1.3\n"
+literal|"VERSION:2.0\n"
 argument_list|)
 expr_stmt|;
 name|write_cern_comment
@@ -3705,7 +3705,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"<!-- #$VERSION:1.3 -->\n"
+literal|"<!-- #$VERSION:2.0 -->\n"
 argument_list|)
 expr_stmt|;
 name|output
@@ -3847,7 +3847,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"#$VERSION:1.3\n"
+literal|"#$VERSION:2.0\n"
 argument_list|)
 expr_stmt|;
 name|output
@@ -4518,7 +4518,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|preview_move (GtkWidget * widget,GdkEventMotion * event)
 name|preview_move
 parameter_list|(
@@ -4683,6 +4683,9 @@ block|}
 block|}
 endif|#
 directive|endif
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
@@ -4745,7 +4748,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|button_press (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|button_press
 parameter_list|(
@@ -4761,6 +4764,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+return|return
 name|_button_press_func
 argument_list|(
 name|widget
@@ -4769,7 +4773,7 @@ name|event
 argument_list|,
 name|_button_press_param
 argument_list|)
-expr_stmt|;
+return|;
 block|}
 end_function
 
@@ -5913,20 +5917,6 @@ name|dlg
 argument_list|)
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|dlg
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_realize
-argument_list|(
-name|dlg
 argument_list|)
 expr_stmt|;
 name|main_set_title

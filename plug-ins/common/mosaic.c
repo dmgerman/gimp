@@ -205,7 +205,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af393360108
+DECL|struct|__anon2a32d7720108
 block|{
 DECL|member|x
 DECL|member|y
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af393360208
+DECL|struct|__anon2a32d7720208
 block|{
 DECL|member|npts
 name|gint
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af393360308
+DECL|struct|__anon2a32d7720308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -274,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af393360408
+DECL|struct|__anon2a32d7720408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -333,7 +333,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af393360508
+DECL|struct|__anon2a32d7720508
 block|{
 DECL|member|run
 name|gint
@@ -2934,11 +2934,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Antialiasing"
+literal|"_Antialiasing"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2997,11 +2997,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Color Averaging"
+literal|"Co_lor Averaging"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3060,11 +3060,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Allow Tile splitting"
+literal|"Allo_w Tile splitting"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3123,11 +3123,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Pitted Surfaces"
+literal|"_Pitted Surfaces"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3190,11 +3190,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"FG/BG Lighting"
+literal|"_FG/BG Lighting"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3301,7 +3301,7 @@ name|tile_type
 argument_list|,
 name|_
 argument_list|(
-literal|"Squares"
+literal|"_Squares"
 argument_list|)
 argument_list|,
 operator|(
@@ -3313,7 +3313,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Hexagons"
+literal|"He_xagons"
 argument_list|)
 argument_list|,
 operator|(
@@ -3325,7 +3325,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Octagons& Squares"
+literal|"Oc_tagons& Squares"
 argument_list|)
 argument_list|,
 operator|(
@@ -3467,7 +3467,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Size:"
+literal|"T_ile Size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3534,7 +3534,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Height:"
+literal|"Tile _Height:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3601,7 +3601,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Spacing:"
+literal|"Til_e Spacing:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3668,7 +3668,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile Neatness:"
+literal|"Tile _Neatness:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3735,7 +3735,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Light Direction:"
+literal|"Light _Direction:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -3802,7 +3802,7 @@ literal|5
 argument_list|,
 name|_
 argument_list|(
-literal|"Color Variation:"
+literal|"Color _Variation:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH

@@ -267,7 +267,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2768dff90108
+DECL|struct|__anon28a5471c0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -302,7 +302,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2768dff90208
+DECL|struct|__anon28a5471c0208
 block|{
 DECL|member|run
 name|gint
@@ -317,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2768dff90308
+DECL|struct|__anon28a5471c0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -3266,7 +3266,7 @@ argument_list|)
 expr_stmt|;
 name|check
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
