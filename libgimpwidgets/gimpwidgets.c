@@ -2788,8 +2788,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_random_seed_toggle_update (GtkWidget * widget,gpointer data)
-name|gimp_random_seed_toggle_update
+DECL|function|gimp_random_seed_update (GtkWidget * widget,gpointer data)
+name|gimp_random_seed_update
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2799,95 +2799,42 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gint
+name|GtkWidget
 modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|gint
-operator|*
-operator|)
+name|w
+init|=
 name|data
-expr_stmt|;
-if|if
-condition|(
-name|gtk_toggle_button_get_active
+decl_stmt|;
+name|gtk_spin_button_set_value
 argument_list|(
-name|GTK_TOGGLE_BUTTON
+name|GTK_SPIN_BUTTON
 argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|GPOINTER_TO_INT
-argument_list|(
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|widget
+name|w
 argument_list|)
 argument_list|,
-literal|"time_true"
-argument_list|)
-argument_list|)
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|GPOINTER_TO_INT
-argument_list|(
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-literal|"time_false"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_toggle_button_sensitive_update
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
+operator|(
+name|guint
+operator|)
+name|g_random_int
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_random_seed_new:  * @seed:       A pointer to the variable which stores the random seed.  * @use_time:   A pointer to the variable which stores the @use_time  *              toggle boolean.  * @time_true:  The value to write to @use_time if the toggle button is checked.  * @time_false: The value to write to @use_time if the toggle button is  *              unchecked.  *  * Note that this widget automatically sets tooltips with  * gimp_help_set_help_data(), so you'll have to initialize GIMP's help  * system with gimp_help_init() before using it.  *  * Returns: A #GtkHBox containing a #GtkSpinButton for the random seed and  *          a #GtkToggleButton for toggling the @use_time behaviour.  **/
+comment|/**  * gimp_random_seed_new:  * @seed:       A pointer to the variable which stores the random seed.  *  * Note that this widget automatically sets tooltips with  * gimp_help_set_help_data(), so you'll have to initialize GIMP's help  * system with gimp_help_init() before using it.  *  * Returns: A #GtkHBox containing a #GtkSpinButton for the seed and  *          a #GtkButton for setting a random seed.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_random_seed_new (gint * seed,gint * use_time,gint time_true,gint time_false)
+DECL|function|gimp_random_seed_new (guint * seed)
 name|gimp_random_seed_new
 parameter_list|(
-name|gint
+name|guint
 modifier|*
 name|seed
-parameter_list|,
-name|gint
-modifier|*
-name|use_time
-parameter_list|,
-name|gint
-name|time_true
-parameter_list|,
-name|gint
-name|time_false
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2971,7 +2918,7 @@ literal|"value_changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_int_adjustment_update
+name|gimp_uint_adjustment_update
 argument_list|)
 argument_list|,
 name|seed
@@ -2988,8 +2935,7 @@ name|spinbutton
 argument_list|,
 name|_
 argument_list|(
-literal|"If the \"Time\" button is not pressed, "
-literal|"use this value for random number generator "
+literal|"Use this value for random number generator "
 literal|"seed - this allows you to repeat a "
 literal|"given \"random\" operation"
 argument_list|)
@@ -2999,11 +2945,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_toggle_button_new_with_mnemonic
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Time"
+literal|"_Randomize"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3024,6 +2970,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+comment|/* Send spinbutton as data so that we can change the value in     * gimp_random_seed_update() */
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT
@@ -3031,14 +2978,14 @@ argument_list|(
 name|button
 argument_list|)
 argument_list|,
-literal|"toggled"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_random_seed_toggle_update
+name|gimp_random_seed_update
 argument_list|)
 argument_list|,
-name|use_time
+name|spinbutton
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -3068,67 +3015,10 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Seed random number generator from the current "
-literal|"time - this guarantees a reasonable "
-literal|"randomization"
+literal|"Seed random number generator with a generated random number"
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"time_true"
-argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|time_true
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"time_false"
-argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|time_false
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"inverse_sensitive"
-argument_list|,
-name|spinbutton
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-operator|*
-name|use_time
-operator|==
-name|time_true
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -3150,7 +3040,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|"togglebutton"
+literal|"button"
 argument_list|,
 name|button
 argument_list|)
@@ -3164,7 +3054,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea184b0108
+DECL|struct|__anon2900e1350108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -4079,7 +3969,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ea184b0208
+DECL|struct|__anon2900e1350208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment

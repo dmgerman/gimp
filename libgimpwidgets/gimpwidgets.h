@@ -571,36 +571,14 @@ define|\
 value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (hbox), "spinbutton")))
 end_define
 
-begin_define
-DECL|macro|GIMP_RANDOM_SEED_TOGGLEBUTTON (hbox)
-define|#
-directive|define
-name|GIMP_RANDOM_SEED_TOGGLEBUTTON
-parameter_list|(
-name|hbox
-parameter_list|)
-define|\
-value|(g_object_get_data (G_OBJECT (hbox), "togglebutton"))
-end_define
-
 begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_random_seed_new
 parameter_list|(
-name|gint
+name|guint32
 modifier|*
 name|seed
-parameter_list|,
-name|gint
-modifier|*
-name|use_time
-parameter_list|,
-name|gint
-name|time_true
-parameter_list|,
-name|gint
-name|time_false
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fc42b60108
+DECL|struct|__anon2c5133a30108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -212,11 +212,6 @@ name|gdouble
 name|rndm_rcount
 decl_stmt|;
 comment|/* repeat count */
-DECL|member|seed_type
-name|gint
-name|seed_type
-decl_stmt|;
-comment|/* seed init. type - current time or user value */
 DECL|member|rndm_seed
 name|gint
 name|rndm_seed
@@ -249,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fc42b60208
+DECL|struct|__anon2c5133a30208
 block|{
 DECL|member|run
 name|gint
@@ -471,14 +466,6 @@ block|,
 literal|"rndm_rcount"
 block|,
 literal|"Repeat count (1.0 - 100.0)"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"seed_type"
-block|,
-literal|"Seed type (10 = current time, 11 = seed value)"
 block|}
 block|,
 block|{
@@ -1026,22 +1013,6 @@ name|d_float
 expr_stmt|;
 name|pivals
 operator|.
-name|seed_type
-operator|=
-operator|(
-name|gint
-operator|)
-name|param
-index|[
-literal|5
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|pivals
-operator|.
 name|rndm_seed
 operator|=
 operator|(
@@ -1212,14 +1183,6 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/* 	   *  Initialize the g_rand() function seed 	   */
-if|if
-condition|(
-name|pivals
-operator|.
-name|seed_type
-operator|!=
-name|SEED_DEFAULT
-condition|)
 name|g_rand_set_seed
 argument_list|(
 name|gr
@@ -2620,15 +2583,6 @@ operator|&
 name|pivals
 operator|.
 name|rndm_seed
-argument_list|,
-operator|&
-name|pivals
-operator|.
-name|seed_type
-argument_list|,
-name|SEED_DEFAULT
-argument_list|,
-name|SEED_USER
 argument_list|)
 expr_stmt|;
 name|label

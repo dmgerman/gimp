@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c040f470108
+DECL|struct|__anon293677e30108
 block|{
 DECL|member|tilable
 name|gint
@@ -131,11 +131,6 @@ DECL|member|ysize
 name|gdouble
 name|ysize
 decl_stmt|;
-comment|/*  Interface only  */
-DECL|member|defaultseed
-name|gint
-name|defaultseed
-decl_stmt|;
 DECL|typedef|SolidNoiseValues
 block|}
 name|SolidNoiseValues
@@ -145,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c040f470208
+DECL|struct|__anon293677e30208
 block|{
 DECL|member|run
 name|gint
@@ -316,7 +311,7 @@ comment|/* tilable       */
 literal|0
 block|,
 comment|/* turbulent     */
-literal|1
+literal|0
 block|,
 comment|/* seed          */
 literal|1
@@ -328,8 +323,6 @@ comment|/* xsize         */
 literal|4.0
 block|,
 comment|/* ysize         */
-literal|0
-comment|/* use default seed */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1352,23 +1345,6 @@ name|seed
 operator|=
 literal|0
 expr_stmt|;
-comment|/*  Define the pseudo-random number generator seed  */
-if|if
-condition|(
-operator|!
-name|snvals
-operator|.
-name|defaultseed
-condition|)
-name|g_rand_set_seed
-argument_list|(
-name|gr
-argument_list|,
-name|snvals
-operator|.
-name|seed
-argument_list|)
-expr_stmt|;
 comment|/*  Set scaling factors  */
 if|if
 condition|(
@@ -2230,15 +2206,6 @@ operator|&
 name|snvals
 operator|.
 name|seed
-argument_list|,
-operator|&
-name|snvals
-operator|.
-name|defaultseed
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|label
