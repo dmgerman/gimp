@@ -1624,7 +1624,7 @@ name|uri
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_RUN_NONINTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|status
 argument_list|,
