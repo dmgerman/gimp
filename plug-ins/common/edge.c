@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b84bd00103
+DECL|enum|__anon27ee769d0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b84bd00208
+DECL|struct|__anon27ee769d0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3425,6 +3425,20 @@ argument_list|,
 literal|2
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_swapped
+argument_list|(
+name|combo
+argument_list|,
+literal|"changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|edge_preview_update
+argument_list|)
+argument_list|,
+name|drawable
 argument_list|)
 expr_stmt|;
 comment|/*  Label, scale, entry for evals.amount  */
