@@ -580,10 +580,10 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|d
+argument_list|)
 operator|!=
 literal|2
 condition|)

@@ -8816,7 +8816,7 @@ argument_list|(
 name|b
 argument_list|)
 condition|?
-literal|"%%%d.%dg"
+literal|"%%%ld.%ldg"
 else|:
 name|EQ
 argument_list|(
@@ -8825,9 +8825,9 @@ argument_list|,
 name|b
 argument_list|)
 condition|?
-literal|"%%%d.%dd"
+literal|"%%%ld.%ldd"
 else|:
-literal|"%%%d.%df"
+literal|"%%%ld.%ldf"
 argument_list|,
 name|width
 argument_list|,
@@ -8850,7 +8850,7 @@ argument_list|(
 name|b
 argument_list|)
 condition|?
-literal|"%%%dg"
+literal|"%%%ldg"
 else|:
 name|EQ
 argument_list|(
@@ -8859,9 +8859,9 @@ argument_list|,
 name|b
 argument_list|)
 condition|?
-literal|"%%%de"
+literal|"%%%lde"
 else|:
-literal|"%%%df"
+literal|"%%%ldf"
 argument_list|,
 name|width
 argument_list|)
@@ -8882,7 +8882,7 @@ argument_list|(
 name|b
 argument_list|)
 condition|?
-literal|"%%.%dg"
+literal|"%%.%ldg"
 else|:
 name|EQ
 argument_list|(
@@ -8891,9 +8891,9 @@ argument_list|,
 name|b
 argument_list|)
 condition|?
-literal|"%%.%de"
+literal|"%%.%lde"
 else|:
-literal|"%%.%df"
+literal|"%%.%ldf"
 argument_list|,
 name|prec
 argument_list|)
@@ -8908,7 +8908,7 @@ argument_list|(
 name|b
 argument_list|)
 condition|?
-literal|"%g"
+literal|"%%g"
 else|:
 name|EQ
 argument_list|(
@@ -8917,9 +8917,9 @@ argument_list|,
 name|b
 argument_list|)
 condition|?
-literal|"%e"
+literal|"%%e"
 else|:
-literal|"%f"
+literal|"%%f"
 argument_list|)
 expr_stmt|;
 name|g_ascii_formatd
@@ -8994,6 +8994,9 @@ literal|"%0*lo"
 else|:
 literal|"%0*lX"
 argument_list|,
+operator|(
+name|int
+operator|)
 name|width
 argument_list|,
 operator|(
@@ -13894,11 +13897,17 @@ name|msgbuff
 argument_list|,
 literal|"# sizeof(long) = %d\n# sizeof(double) = %d\n"
 argument_list|,
+operator|(
+name|int
+operator|)
 sizeof|sizeof
 argument_list|(
 name|long
 argument_list|)
 argument_list|,
+operator|(
+name|int
+operator|)
 sizeof|sizeof
 argument_list|(
 name|double

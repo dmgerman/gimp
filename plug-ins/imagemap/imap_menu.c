@@ -352,10 +352,10 @@ block|{
 name|gint
 name|factor
 init|=
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|data
+argument_list|)
 decl_stmt|;
 if|if
 condition|(

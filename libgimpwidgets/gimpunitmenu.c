@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e15a50103
+DECL|enum|__anon28ee9e140103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0e15a50203
+DECL|enum|__anon28ee9e140203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2653,9 +2653,8 @@ name|data
 expr_stmt|;
 name|new_unit
 operator|=
-operator|(
-name|guint
-operator|)
+name|GPOINTER_TO_UINT
+argument_list|(
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -2664,6 +2663,7 @@ name|widget
 argument_list|)
 argument_list|,
 literal|"gimp_unit_menu"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

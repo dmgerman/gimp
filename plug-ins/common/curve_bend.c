@@ -794,7 +794,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e517ea0108
+DECL|struct|__anon27d333150108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -880,7 +880,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e517ea0208
+DECL|struct|__anon27d333150208
 block|{
 DECL|member|y
 name|gint32
@@ -14524,11 +14524,8 @@ name|gb_debug
 condition|)
 name|printf
 argument_list|(
-literal|"\np_end_gdrw: drawable %x  ID: %d\n"
+literal|"\np_end_gdrw: drawable %p  ID: %d\n"
 argument_list|,
-operator|(
-name|int
-operator|)
 name|gdrw
 operator|->
 name|drawable
@@ -14637,11 +14634,8 @@ name|gb_debug
 condition|)
 name|printf
 argument_list|(
-literal|"\np_init_gdrw: drawable %x  ID: %d\n"
+literal|"\np_init_gdrw: drawable %p  ID: %d\n"
 argument_list|,
-operator|(
-name|int
-operator|)
 name|drawable
 argument_list|,
 operator|(

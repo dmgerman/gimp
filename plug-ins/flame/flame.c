@@ -535,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon27ed9c600108
+DECL|struct|__anon2771144d0108
 block|{
 DECL|member|randomize
 name|gint
@@ -2809,10 +2809,10 @@ block|{
 name|gint
 name|mut
 init|=
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|data
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -4401,10 +4401,10 @@ name|config
 operator|.
 name|cmap_drawable
 operator|=
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|data
+argument_list|)
 expr_stmt|;
 name|set_cmap_preview
 argument_list|()
@@ -5918,10 +5918,10 @@ argument_list|(
 name|gradient_cb
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|d
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_shell_prepend

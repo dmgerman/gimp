@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945c1ae0108
+DECL|struct|__anon2b73657b0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945c1ae0208
+DECL|struct|__anon2b73657b0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945c1ae0308
+DECL|struct|__anon2b73657b0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -14059,10 +14059,6 @@ name|nreturn_vals
 argument_list|,
 name|GIMP_PDB_DRAWABLE
 argument_list|,
-operator|(
-name|GimpDrawable
-operator|*
-operator|)
 name|gimp_item_get_ID
 argument_list|(
 name|GIMP_ITEM

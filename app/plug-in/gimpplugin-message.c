@@ -7293,7 +7293,7 @@ decl_stmt|;
 name|gint
 name|count
 decl_stmt|;
-name|guint
+name|gsize
 name|bytes
 decl_stmt|;
 name|plug_in

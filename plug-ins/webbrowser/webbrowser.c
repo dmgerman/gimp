@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c35cd260108
+DECL|struct|__anon29491e6e0108
 block|{
 DECL|member|url
 name|gchar
@@ -1551,10 +1551,10 @@ name|url_info
 operator|.
 name|new_window
 operator|=
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|data
+argument_list|)
 expr_stmt|;
 block|}
 block|}

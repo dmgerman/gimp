@@ -343,7 +343,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ae6c70108
+DECL|struct|__anon2739be270108
 block|{
 DECL|member|command
 name|gchar
@@ -367,7 +367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ae6c70208
+DECL|struct|__anon2739be270208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -994,10 +994,10 @@ name|g_hash_table_insert
 argument_list|(
 name|clientname_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|new
+argument_list|)
 argument_list|,
 name|g_strdup
 argument_list|(
@@ -1037,10 +1037,10 @@ name|g_hash_table_remove
 argument_list|(
 name|clientname_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|i
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* 		server_log ("Server: disconnect from host %s, port %d.\n", 			    inet_ntoa (clientname.sin_addr), 			    (unsigned int) ntohs (clientname.sin_port)); 			    */
@@ -1797,12 +1797,12 @@ name|g_hash_table_lookup
 argument_list|(
 name|clientname_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|cmd
 operator|->
 name|filedes
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|time

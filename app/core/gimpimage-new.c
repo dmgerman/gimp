@@ -371,7 +371,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d Bytes"
+literal|"%lu Bytes"
 argument_list|)
 argument_list|,
 name|memsize
@@ -447,7 +447,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%d KB"
+literal|"%lu KB"
 argument_list|)
 argument_list|,
 name|memsize

@@ -82,7 +82,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2c1a57810103
+DECL|enum|__anon2b4220ad0103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -101,7 +101,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c1a57810208
+DECL|struct|__anon2b4220ad0208
 typedef|typedef
 struct|struct
 block|{
@@ -475,10 +475,10 @@ condition|)
 block|{
 name|grid_type
 operator|=
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|data
+argument_list|)
 expr_stmt|;
 name|redraw_preview
 argument_list|()

@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e61d790108
+DECL|struct|__anon2be76eb50108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -1644,7 +1644,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gint
+name|gsize
 name|count
 decl_stmt|;
 name|GIOStatus

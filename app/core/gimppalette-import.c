@@ -369,10 +369,10 @@ name|g_hash_table_lookup
 argument_list|(
 name|h_array
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GUINT_TO_POINTER
+argument_list|(
 name|key_colors
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -462,10 +462,10 @@ name|g_hash_table_insert
 argument_list|(
 name|h_array
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GUINT_TO_POINTER
+argument_list|(
 name|key_colors
+argument_list|)
 argument_list|,
 name|new_color
 argument_list|)

@@ -1314,6 +1314,9 @@ argument_list|(
 literal|"Could not read %d bytes from '%s': %s"
 argument_list|)
 argument_list|,
+operator|(
+name|gint
+operator|)
 sizeof|sizeof
 argument_list|(
 name|header

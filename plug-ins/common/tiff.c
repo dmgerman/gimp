@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adf20940108
+DECL|struct|__anon29e6ea000108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adf20940208
+DECL|struct|__anon29e6ea000208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adf20940308
+DECL|struct|__anon29e6ea000308
 block|{
 DECL|member|ID
 name|gint32
@@ -2672,7 +2672,7 @@ decl_stmt|;
 name|uint32
 name|row
 decl_stmt|;
-name|gulong
+name|uint32
 modifier|*
 name|buffer
 decl_stmt|;
@@ -2732,7 +2732,7 @@ name|buffer
 operator|=
 name|g_new
 argument_list|(
-name|gulong
+name|uint32
 argument_list|,
 name|imageWidth
 operator|*

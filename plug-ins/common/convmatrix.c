@@ -83,7 +83,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5d83ac0103
+DECL|enum|__anon27f156370103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -292,7 +292,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5d83ac0208
+DECL|struct|__anon27f156370208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -449,7 +449,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b5d83ac0308
+DECL|struct|__anon27f156370308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -3724,10 +3724,10 @@ name|my_config
 operator|.
 name|bmode
 operator|=
-operator|(
-name|int
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|data
+argument_list|)
 operator|-
 literal|1
 expr_stmt|;
@@ -4899,9 +4899,7 @@ argument_list|(
 name|my_bmode_callback
 argument_list|)
 argument_list|,
-call|(
-name|gpointer
-call|)
+name|GINT_TO_POINTER
 argument_list|(
 name|i
 operator|+

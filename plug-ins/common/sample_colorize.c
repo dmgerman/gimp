@@ -391,7 +391,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c45a75a0108
+DECL|struct|__anon28795ea70108
 typedef|typedef
 struct|struct
 block|{
@@ -460,7 +460,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c45a75a0208
+DECL|struct|__anon28795ea70208
 typedef|typedef
 struct|struct
 block|{
@@ -578,7 +578,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c45a75a0308
+DECL|struct|__anon28795ea70308
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +607,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c45a75a0408
+DECL|struct|__anon28795ea70408
 typedef|typedef
 struct|struct
 block|{
@@ -634,7 +634,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c45a75a0508
+DECL|struct|__anon28795ea70508
 typedef|typedef
 struct|struct
 block|{
@@ -2293,11 +2293,8 @@ name|g_Sdebug
 condition|)
 name|printf
 argument_list|(
-literal|"GRADIENT_MENU_CB: wiget %x,  id: %d\n"
+literal|"GRADIENT_MENU_CB: widget %p,  id: %d\n"
 argument_list|,
-operator|(
-name|int
-operator|)
 name|w
 argument_list|,
 operator|(
@@ -2417,11 +2414,8 @@ name|g_Sdebug
 condition|)
 name|printf
 argument_list|(
-literal|"MENU_CB: data %x,  dst: %x, samp %x\n"
+literal|"MENU_CB: data %p,  dst: %x, samp %x\n"
 argument_list|,
-operator|(
-name|int
-operator|)
 name|data
 argument_list|,
 operator|(
@@ -13260,11 +13254,8 @@ name|g_Sdebug
 condition|)
 name|printf
 argument_list|(
-literal|"\np_end_gdrw: drawable %x  ID: %d\n"
+literal|"\np_end_gdrw: drawable %p  ID: %d\n"
 argument_list|,
-operator|(
-name|int
-operator|)
 name|gdrw
 operator|->
 name|drawable
@@ -13468,11 +13459,8 @@ name|g_Sdebug
 condition|)
 name|printf
 argument_list|(
-literal|"\np_init_gdrw: drawable %x  ID: %d\n"
+literal|"\np_init_gdrw: drawable %p  ID: %d\n"
 argument_list|,
-operator|(
-name|int
-operator|)
 name|drawable
 argument_list|,
 operator|(

@@ -790,7 +790,7 @@ name|sprintf
 argument_list|(
 name|buffer
 argument_list|,
-literal|"#<REGEX %p nsub=%d"
+literal|"#<REGEX %p nsub=%lu"
 argument_list|,
 name|p
 argument_list|,

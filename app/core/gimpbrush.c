@@ -176,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2776db7a0103
+DECL|enum|__anon2b03d4db0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -2087,6 +2087,9 @@ argument_list|(
 literal|"Could not read %d bytes from '%s': %s"
 argument_list|)
 argument_list|,
+operator|(
+name|gint
+operator|)
 sizeof|sizeof
 argument_list|(
 name|header

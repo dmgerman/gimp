@@ -153,7 +153,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2c62380108
+DECL|struct|__anon2c6302140108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2c62380208
+DECL|struct|__anon2c6302140208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1850,14 +1850,14 @@ operator|!
 name|size
 operator|||
 operator|(
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|gtk_clist_get_row_data
 argument_list|(
 name|clist
 argument_list|,
 name|row
+argument_list|)
 argument_list|)
 operator|)
 operator|==

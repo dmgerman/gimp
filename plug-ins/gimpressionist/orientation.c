@@ -169,10 +169,10 @@ name|pcvals
 operator|.
 name|orienttype
 operator|=
-operator|(
-name|int
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|d
+argument_list|)
 expr_stmt|;
 block|}
 else|else

@@ -43,7 +43,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa84fe0103
+DECL|enum|__anon291a29f10103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -59,7 +59,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa84fe0203
+DECL|enum|__anon291a29f10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1041,7 +1041,7 @@ name|object_size
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%s \"%s\": %d\n"
+literal|"%s%s \"%s\": %lu\n"
 argument_list|,
 name|indent_buf
 argument_list|,

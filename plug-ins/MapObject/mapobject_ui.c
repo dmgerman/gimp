@@ -1668,9 +1668,8 @@ name|i
 decl_stmt|;
 name|i
 operator|=
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1679,6 +1678,7 @@ name|data
 argument_list|)
 argument_list|,
 literal|"_mapwid_id"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mapvals
@@ -1754,9 +1754,8 @@ name|i
 decl_stmt|;
 name|i
 operator|=
-operator|(
-name|gint
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1765,6 +1764,7 @@ name|data
 argument_list|)
 argument_list|,
 literal|"_mapwid_id"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mapvals
