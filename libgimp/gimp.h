@@ -79,6 +79,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpmisc.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimppixelrgn.h>
 end_include
 
