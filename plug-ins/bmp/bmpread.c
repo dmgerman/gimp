@@ -1390,7 +1390,7 @@ name|cur_progress
 decl_stmt|,
 name|max_progress
 decl_stmt|,
-name|egal
+name|unused
 decl_stmt|;
 comment|/* Make a new image in the gimp */
 if|if
@@ -2124,7 +2124,7 @@ operator|==
 name|width
 condition|)
 block|{
-name|egal
+name|unused
 operator|=
 name|ReadOK
 argument_list|(
@@ -2210,7 +2210,7 @@ operator|<=
 name|width
 condition|)
 block|{
-name|egal
+name|unused
 operator|=
 name|ReadOK
 argument_list|(
@@ -2459,7 +2459,7 @@ name|bpp
 operator|)
 control|)
 block|{
-name|egal
+name|unused
 operator|=
 name|ReadOK
 argument_list|(
@@ -2604,7 +2604,7 @@ operator|)
 operator|%
 literal|2
 condition|)
-name|egal
+name|unused
 operator|=
 name|ReadOK
 argument_list|(
@@ -2644,7 +2644,7 @@ operator|==
 literal|0
 operator|)
 condition|)
-comment|/* Zeilenende */
+comment|/* Line end */
 block|{
 name|ypos
 operator|--
@@ -2712,7 +2712,7 @@ operator|==
 literal|1
 operator|)
 condition|)
-comment|/* Bitmapende */
+comment|/* Bitmap end */
 block|{
 break|break;
 block|}
@@ -2744,7 +2744,7 @@ operator|)
 condition|)
 comment|/* Deltarecord */
 block|{
-name|egal
+name|unused
 operator|=
 name|ReadOK
 argument_list|(
@@ -2783,6 +2783,7 @@ block|}
 break|break;
 default|default:
 comment|/* This is very bad, we should not be here */
+empty_stmt|;
 block|}
 name|fclose
 argument_list|(
