@@ -545,7 +545,7 @@ name|restore_session
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  connext our "exit" callbacks after gui_restore() so they are    *  invoked after the GUI's "exit" callbacks    */
+comment|/*  connect our "exit" callbacks after gui_restore() so they are    *  invoked after the GUI's "exit" callbacks    */
 name|g_signal_connect
 argument_list|(
 name|G_OBJECT
@@ -793,6 +793,8 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp
+operator|->
 name|no_interface
 condition|)
 name|tool_manager_exit
