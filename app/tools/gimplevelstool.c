@@ -790,9 +790,10 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|make_file_dlg
+name|file_dialog_create
 parameter_list|(
-name|gpointer
+name|GtkWidget
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -800,7 +801,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_ok_callback
+name|file_dialog_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -813,7 +814,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|file_cancel_callback
+name|file_dialog_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -826,7 +827,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|read_levels_from_file
+name|levels_read_from_file
 parameter_list|(
 name|FILE
 modifier|*
@@ -838,7 +839,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|write_levels_to_file
+name|levels_write_to_file
 parameter_list|(
 name|FILE
 modifier|*
@@ -3439,7 +3440,9 @@ argument_list|(
 name|levels_load_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|ld
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3494,7 +3497,9 @@ argument_list|(
 name|levels_save_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|ld
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5999,9 +6004,12 @@ condition|(
 operator|!
 name|file_dlg
 condition|)
-name|make_file_dlg
+name|file_dialog_create
 argument_list|(
-name|NULL
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -6057,9 +6065,12 @@ condition|(
 operator|!
 name|file_dlg
 condition|)
-name|make_file_dlg
+name|file_dialog_create
 argument_list|(
-name|NULL
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -7577,11 +7588,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|make_file_dlg (gpointer data)
-name|make_file_dlg
+DECL|function|file_dialog_create (GtkWidget * parent)
+name|file_dialog_create
 parameter_list|(
-name|gpointer
-name|data
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|gchar
@@ -7661,10 +7673,10 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_cancel_callback
+name|file_dialog_cancel_callback
 argument_list|)
 argument_list|,
-name|data
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -7678,10 +7690,10 @@ literal|"delete_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_cancel_callback
+name|file_dialog_cancel_callback
 argument_list|)
 argument_list|,
-name|data
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -7700,10 +7712,27 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|file_ok_callback
+name|file_dialog_ok_callback
 argument_list|)
 argument_list|,
-name|data
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|parent
+argument_list|)
+argument_list|,
+literal|"unmap"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|file_dialog_cancel_callback
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|temp
@@ -7754,8 +7783,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_ok_callback (GtkWidget * widget,gpointer data)
-name|file_ok_callback
+DECL|function|file_dialog_ok_callback (GtkWidget * widget,gpointer data)
+name|file_dialog_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -7818,7 +7847,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|read_levels_from_file
+name|levels_read_from_file
 argument_list|(
 name|f
 argument_list|)
@@ -7870,7 +7899,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|write_levels_to_file
+name|levels_write_to_file
 argument_list|(
 name|f
 argument_list|)
@@ -7892,8 +7921,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_cancel_callback (GtkWidget * widget,gpointer data)
-name|file_cancel_callback
+DECL|function|file_dialog_cancel_callback (GtkWidget * widget,gpointer data)
+name|file_dialog_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -7914,8 +7943,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|read_levels_from_file (FILE * f)
-name|read_levels_from_file
+DECL|function|levels_read_from_file (FILE * f)
+name|levels_read_from_file
 parameter_list|(
 name|FILE
 modifier|*
@@ -8195,8 +8224,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_levels_to_file (FILE * f)
-name|write_levels_to_file
+DECL|function|levels_write_to_file (FILE * f)
+name|levels_write_to_file
 parameter_list|(
 name|FILE
 modifier|*

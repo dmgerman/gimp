@@ -4592,15 +4592,11 @@ else|else
 comment|/* Error writing thumbnail */
 block|{
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 block|}
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 block|}
 end_function
@@ -5020,9 +5016,7 @@ operator|!
 name|fp
 condition|)
 return|return
-operator|(
 name|NULL
-operator|)
 return|;
 name|fread
 argument_list|(
@@ -5060,9 +5054,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|NULL
-operator|)
 return|;
 block|}
 comment|/*newline*/
@@ -5212,9 +5204,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|NULL
-operator|)
 return|;
 block|}
 name|sscanf
@@ -5249,9 +5239,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|NULL
-operator|)
 return|;
 block|}
 if|if
@@ -5296,9 +5284,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|NULL
-operator|)
 return|;
 block|}
 name|buf
@@ -5341,9 +5327,7 @@ name|fp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|buf
-operator|)
 return|;
 block|}
 end_function
