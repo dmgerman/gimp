@@ -5,30 +5,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -886,7 +862,7 @@ return|return
 literal|90
 operator|-
 operator|(
-name|radtodeg
+name|gimp_rad_to_deg
 argument_list|(
 name|atan2
 argument_list|(
@@ -1033,7 +1009,7 @@ block|{
 name|double
 name|dir
 init|=
-name|degtorad
+name|gimp_deg_to_rad
 argument_list|(
 name|getdir
 argument_list|(
@@ -1484,7 +1460,7 @@ name|OMHEIGHT
 expr_stmt|;
 name|dir
 operator|=
-name|degtorad
+name|gimp_deg_to_rad
 argument_list|(
 name|vector
 index|[
@@ -1496,7 +1472,7 @@ argument_list|)
 expr_stmt|;
 name|s
 operator|=
-name|degtorad
+name|gimp_deg_to_rad
 argument_list|(
 name|vector
 index|[
@@ -1867,7 +1843,7 @@ name|dx
 operator|=
 name|sin
 argument_list|(
-name|degtorad
+name|gimp_deg_to_rad
 argument_list|(
 literal|0.0
 argument_list|)
@@ -1882,7 +1858,7 @@ name|dy
 operator|=
 name|cos
 argument_list|(
-name|degtorad
+name|gimp_deg_to_rad
 argument_list|(
 literal|0.0
 argument_list|)
@@ -2172,7 +2148,7 @@ index|]
 operator|.
 name|dir
 operator|=
-name|radtodeg
+name|gimp_rad_to_deg
 argument_list|(
 name|d
 argument_list|)
@@ -2256,7 +2232,7 @@ name|dx
 operator|=
 name|sin
 argument_list|(
-name|degtorad
+name|gimp_deg_to_rad
 argument_list|(
 name|vector
 index|[
@@ -2276,7 +2252,7 @@ name|dy
 operator|=
 name|cos
 argument_list|(
-name|degtorad
+name|gimp_deg_to_rad
 argument_list|(
 name|vector
 index|[

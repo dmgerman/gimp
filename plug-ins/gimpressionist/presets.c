@@ -23,6 +23,18 @@ directive|include
 file|<string.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<sys/stat.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<sys/types.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -70,6 +82,23 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpwin32-io.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 DECL|variable|presetnameentry
 specifier|static
@@ -111,6 +140,31 @@ modifier|*
 name|store
 decl_stmt|;
 end_decl_stmt
+
+begin_function
+DECL|function|set_preset_description_text (const gchar * text)
+specifier|static
+name|void
+name|set_preset_description_text
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|text
+parameter_list|)
+block|{
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|presetdesclabel
+argument_list|)
+argument_list|,
+name|text
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_decl_stmt
 DECL|variable|presetdesc
@@ -212,12 +266,13 @@ value|"Preset"
 end_define
 
 begin_function
-DECL|function|loadoldpreset (char * fname)
+DECL|function|loadoldpreset (const gchar * fname)
 specifier|static
 name|int
 name|loadoldpreset
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|fname
 parameter_list|)
@@ -353,13 +408,14 @@ block|}
 end_function
 
 begin_function
-DECL|function|parsergbstring (char * s)
+DECL|function|parsergbstring (const gchar * s)
 specifier|static
 name|char
 modifier|*
 name|parsergbstring
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|s
 parameter_list|)
@@ -453,17 +509,19 @@ block|}
 end_function
 
 begin_function
-DECL|function|setorientvector (char * str)
+DECL|function|setorientvector (const gchar * str)
 specifier|static
 name|void
 name|setorientvector
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|str
 parameter_list|)
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|tmps
 init|=
@@ -705,17 +763,19 @@ block|}
 end_function
 
 begin_function
-DECL|function|setsizevector (char * str)
+DECL|function|setsizevector (const gchar * str)
 specifier|static
 name|void
 name|setsizevector
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|str
 parameter_list|)
 block|{
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|tmps
 init|=
@@ -863,16 +923,17 @@ block|}
 end_function
 
 begin_function
-DECL|function|parsedesc (char * str,char * d,gssize d_len)
+DECL|function|parsedesc (const gchar * str,gchar * d,gssize d_len)
 specifier|static
 name|void
 name|parsedesc
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|str
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|d
 parameter_list|,
@@ -907,16 +968,18 @@ block|}
 end_function
 
 begin_function
-DECL|function|setval (char * key,char * val)
+DECL|function|setval (const gchar * key,const gchar * val)
 specifier|static
 name|void
 name|setval
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|key
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|val
 parameter_list|)
@@ -1869,12 +1932,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadpreset (char * fn)
+DECL|function|loadpreset (const gchar * fn)
 specifier|static
 name|int
 name|loadpreset
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|fn
 parameter_list|)
@@ -2030,11 +2094,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|select_preset (char * preset)
+DECL|function|select_preset (const gchar * preset)
 name|int
 name|select_preset
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|preset
 parameter_list|)
@@ -2352,9 +2417,6 @@ parameter_list|)
 block|{
 name|char
 modifier|*
-name|dest
-decl_stmt|,
-modifier|*
 name|str
 decl_stmt|;
 name|GtkTextIter
@@ -2388,30 +2450,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|dest
-operator|=
-name|g_strescape
-argument_list|(
-name|str
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_strlcpy
 argument_list|(
 name|presetdesc
 argument_list|,
-name|dest
+name|str
 argument_list|,
 sizeof|sizeof
 argument_list|(
 name|presetdesc
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|dest
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2780,6 +2828,9 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|fname
+decl_stmt|,
+modifier|*
+name|presets_dir_path
 decl_stmt|;
 name|FILE
 modifier|*
@@ -2813,6 +2864,10 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|gchar
+modifier|*
+name|desc_escaped
+decl_stmt|;
 name|l
 operator|=
 name|gtk_entry_get_text
@@ -2844,7 +2899,8 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|fname
+comment|/* Create the ~/.gimp-$VER/gimpressionist/Presets directory if    * it doesn't already exists.    * */
+name|presets_dir_path
 operator|=
 name|g_build_filename
 argument_list|(
@@ -2858,9 +2914,74 @@ name|data
 argument_list|,
 literal|"Presets"
 argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|g_file_test
+argument_list|(
+name|presets_dir_path
+argument_list|,
+name|G_FILE_TEST_IS_DIR
+argument_list|)
+condition|)
+block|{
+if|if
+condition|(
+name|mkdir
+argument_list|(
+name|presets_dir_path
+argument_list|,
+name|S_IRUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IXUSR
+operator||
+name|S_IRGRP
+operator||
+name|S_IXGRP
+operator||
+name|S_IROTH
+operator||
+name|S_IXOTH
+argument_list|)
+operator|==
+operator|-
+literal|1
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"Error creating folder \"%s\"!\n"
+argument_list|,
+name|presets_dir_path
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|presets_dir_path
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+block|}
+name|fname
+operator|=
+name|g_build_filename
+argument_list|(
+name|presets_dir_path
+argument_list|,
 name|l
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|presets_dir_path
 argument_list|)
 expr_stmt|;
 name|f
@@ -2887,6 +3008,11 @@ argument_list|,
 literal|7
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|fname
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|fprintf
@@ -2898,13 +3024,27 @@ argument_list|,
 name|PRESETMAGIC
 argument_list|)
 expr_stmt|;
+name|desc_escaped
+operator|=
+name|g_strescape
+argument_list|(
+name|presetdesc
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|fprintf
 argument_list|(
 name|f
 argument_list|,
 literal|"desc=%s\n"
 argument_list|,
-name|presetdesc
+name|desc_escaped
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|desc_escaped
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3923,13 +4063,8 @@ operator|!
 name|fname
 condition|)
 block|{
-name|gtk_label_set_text
+name|set_preset_description_text
 argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|presetdesclabel
-argument_list|)
-argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
@@ -4011,13 +4146,8 @@ name|tmplabel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_label_set_text
+name|set_preset_description_text
 argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|presetdesclabel
-argument_list|)
-argument_list|,
 name|tmplabel
 argument_list|)
 expr_stmt|;
@@ -4035,13 +4165,8 @@ name|f
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_label_set_text
+name|set_preset_description_text
 argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|presetdesclabel
-argument_list|)
-argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
@@ -4665,6 +4790,27 @@ operator|=
 name|gtk_label_new
 argument_list|(
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_line_wrap
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|tmpw
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/*    * Make sure the label's width is reasonable and it won't stretch    * the dialog more than its width.    * */
+name|gtk_widget_set_size_request
+argument_list|(
+name|tmpw
+argument_list|,
+literal|200
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

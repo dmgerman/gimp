@@ -8,41 +8,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -59,8 +24,14 @@ file|"gimpressionist.h"
 end_include
 
 begin_comment
-comment|/*  * The Page Specific Imports   * */
+comment|/*  * The Page Specific Imports  * */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"brush.h"
+end_include
 
 begin_include
 include|#
@@ -1073,6 +1044,10 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+comment|/*    * This is to make sure the values from the pcvals will be reflected    * in the GUI here. Otherwise they will be set to the defaults.    * */
+name|restorevals
+argument_list|()
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(

@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -18,13 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpressionist.h"
+file|<glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<libgimpmath/gimpmath.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpressionist.h"
 end_include
 
 begin_include
@@ -36,59 +42,6 @@ end_include
 begin_comment
 comment|/* Mathematical Utilities */
 end_comment
-
-begin_function
-DECL|function|degtorad (double d)
-name|double
-name|degtorad
-parameter_list|(
-name|double
-name|d
-parameter_list|)
-block|{
-return|return
-name|d
-operator|/
-literal|180.0
-operator|*
-name|G_PI
-return|;
-block|}
-end_function
-
-begin_function
-DECL|function|radtodeg (double d)
-name|double
-name|radtodeg
-parameter_list|(
-name|double
-name|d
-parameter_list|)
-block|{
-name|double
-name|v
-init|=
-name|d
-operator|/
-name|G_PI
-operator|*
-literal|180.0
-decl_stmt|;
-if|if
-condition|(
-name|v
-operator|<
-literal|0.0
-condition|)
-name|v
-operator|+=
-literal|360
-expr_stmt|;
-return|return
-name|v
-return|;
-block|}
-end_function
 
 begin_function
 DECL|function|dist (double x,double y,double end_x,double end_y)
@@ -193,7 +146,7 @@ operator|>
 literal|1.0
 operator|)
 condition|)
-name|printf
+name|g_warning
 argument_list|(
 literal|"HUH? x = %f\n"
 argument_list|,
@@ -432,7 +385,7 @@ name|char
 modifier|*
 name|ptr
 decl_stmt|;
-comment|/*    * Note: there is some reliance on the ASCII character code     * characteristics here.    * */
+comment|/*    * Note: there is some reliance on the ASCII character code    * characteristics here.    * */
 name|ptr
 operator|=
 name|buffer
@@ -484,7 +437,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* This function is memoized. Once it finds the value it permanently  * caches it   * */
+comment|/* This function is memoized. Once it finds the value it permanently  * caches it  * */
 end_comment
 
 begin_function
@@ -1336,7 +1289,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Creates a radio button.  * box - the containing box.  * orienttype - The orientation ID  * label, help_string - self-describing  * radio_group -   *      A pointer to a radio group. The function assigns its value  *      as the radio group of the radio button. Afterwards, it assigns it  *      a new value of the new radio group of the button.  *      This is useful to group buttons. Just reset the variable to NULL,  *      to create a new group.  * */
+comment|/*  * Creates a radio button.  * box - the containing box.  * orienttype - The orientation ID  * label, help_string - self-describing  * radio_group -  *      A pointer to a radio group. The function assigns its value  *      as the radio group of the radio button. Afterwards, it assigns it  *      a new value of the new radio group of the button.  *      This is useful to group buttons. Just reset the variable to NULL,  *      to create a new group.  * */
 end_comment
 
 begin_function

@@ -1,44 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
-end_include
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|HAVE_DIRENT_H
-define|#
-directive|define
-name|HAVE_DIRENT_H
-end_define
-
-begin_define
-DECL|macro|HAVE_UNISTD_H
-define|#
-directive|define
-name|HAVE_UNISTD_H
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
 end_include
 
 begin_include
@@ -52,23 +16,6 @@ include|#
 directive|include
 file|<string.h>
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -453,7 +400,7 @@ name|temp
 decl_stmt|,
 name|diff
 decl_stmt|;
-comment|/* TODO : There seems to be some typoes in the comments here.     * Ask vidar what he meant.    * */
+comment|/* TODO : There seems to be some typoes in the comments here.    * Ask vidar what he meant.    * */
 if|if
 condition|(
 operator|(
@@ -1230,10 +1177,8 @@ operator|!
 name|brlist
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"What!? No brushes?!\n"
 argument_list|)
 expr_stmt|;
@@ -2367,10 +2312,8 @@ name|height
 operator|)
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Huh? Image size != alpha size?\n"
 argument_list|)
 expr_stmt|;
@@ -2871,7 +2814,7 @@ comment|/* Brush-debugging */
 if|#
 directive|if
 literal|0
-block|for(i = 0; i< numbrush; i++) {     char tmp[1000];     sprintf(tmp, "/tmp/_brush%03d.ppm", i);     saveppm(&brushes[i], tmp);   }
+block|for(i = 0; i< numbrush; i++) {     char tmp[1000];     g_snprintf (tmp, sizeof (tmp), "/tmp/_brush%03d.ppm", i);     saveppm(&brushes[i], tmp);   }
 endif|#
 directive|endif
 for|for
@@ -5167,7 +5110,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|fprintf(stderr, "step=%d i=%d\n", step, i);
+block|g_printerr("step=%d i=%d\n", step, i);
 endif|#
 directive|endif
 block|}
@@ -5442,9 +5385,14 @@ index|[
 literal|40
 index|]
 decl_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|tmps
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|tmps
+argument_list|)
 argument_list|,
 literal|"%.1f %%"
 argument_list|,
@@ -5668,7 +5616,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|fprintf(stderr, "Internal Error; invalid coords: (%d,%d) i=%d\n", tx, ty, i);
+block|g_printerr("Internal Error; invalid coords: (%d,%d) i=%d\n", tx, ty, i);
 endif|#
 directive|endif
 continue|continue;
@@ -5783,10 +5731,8 @@ case|:
 break|break;
 comment|/* Handled below */
 default|default:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Internal error; Unknown orientationtype\n"
 argument_list|)
 expr_stmt|;
@@ -5870,10 +5816,8 @@ case|:
 break|break;
 comment|/* Handled below */
 default|default:
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Internal error; Unknown sizetype\n"
 argument_list|)
 expr_stmt|;

@@ -8,25 +8,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -57,6 +39,12 @@ begin_include
 include|#
 directive|include
 file|"preview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"brush.h"
 end_include
 
 begin_include
@@ -321,6 +309,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|preset_name
+init|=
+name|NULL
 decl_stmt|;
 name|status
 operator|=
@@ -602,6 +592,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 name|preview_free_resources
+argument_list|()
+expr_stmt|;
+name|brush_free
 argument_list|()
 expr_stmt|;
 name|values

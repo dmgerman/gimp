@@ -26,36 +26,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<errno.h>
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpmath/gimpmath.h>
 end_include
 
 begin_include
@@ -4077,7 +4060,7 @@ operator|!
 name|f
 condition|)
 block|{
-comment|/*         * gimp_filename_to_utf8() and g_strerror() return temporary strings        * that need not and should not be freed. So this call is OK.        * */
+comment|/*        * gimp_filename_to_utf8() and g_strerror() return temporary strings        * that need not and should not be freed. So this call is OK.        * */
 name|g_message
 argument_list|(
 name|_
