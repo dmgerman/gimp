@@ -1363,11 +1363,11 @@ argument_list|)
 expr_stmt|;
 name|font
 operator|=
-name|gdk_font_load
+name|gdk_fontset_load
 argument_list|(
 name|_
 argument_list|(
-literal|"-*-helvetica-bold-r-normal--*-120-*-*-*-*-*-*"
+literal|"-*-helvetica-bold-r-normal--*-120-*-*-*-*-*-*,*"
 argument_list|)
 argument_list|)
 expr_stmt|;

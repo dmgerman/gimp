@@ -1388,7 +1388,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"xanim asynchron"
+literal|"Run asynchronously"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -1400,7 +1400,7 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"Run xanim asynchron and delete unwanted frames\n"
+literal|"Run xanim asynchronously and delete unwanted frames\n"
 literal|"(out of the specified range) while xanim is still running"
 argument_list|)
 expr_stmt|;
@@ -1426,7 +1426,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Select Framerange"
+literal|"Select Frame range"
 argument_list|)
 argument_list|,
 name|XADIALOG_NUM_ARGS

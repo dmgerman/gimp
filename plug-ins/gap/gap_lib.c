@@ -3630,7 +3630,7 @@ name|l_msg
 operator|=
 name|_
 argument_list|(
-literal|"You are using a fileformat != xcf\nSave Operations may result\nin loss of layerinformation"
+literal|"You are using a file format != xcf\nSave Operations may result\nin loss of layer information"
 argument_list|)
 expr_stmt|;
 comment|/* check if there are SAVE_AS_MODE settings (from privious calls within one gimp session) */
