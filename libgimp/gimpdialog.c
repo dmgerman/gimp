@@ -615,7 +615,8 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|gpointer
+name|GtkObject
+operator|*
 argument_list|)
 expr_stmt|;
 name|widget_ptr
@@ -624,7 +625,9 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|gpointer
+name|GtkWidget
+operator|*
+operator|*
 argument_list|)
 expr_stmt|;
 name|default_action

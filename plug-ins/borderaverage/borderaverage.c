@@ -192,8 +192,8 @@ DECL|member|bucket_exponent
 name|gint
 name|bucket_exponent
 decl_stmt|;
-DECL|variable|borderaverage_data
 block|}
+DECL|variable|borderaverage_data
 name|borderaverage_data
 init|=
 block|{
@@ -2044,8 +2044,10 @@ argument_list|)
 expr_stmt|;
 name|menu
 operator|=
-name|gimp_option_menu_new
+name|gimp_option_menu_new2
 argument_list|(
+name|FALSE
+argument_list|,
 name|gimp_menu_item_update
 argument_list|,
 operator|&

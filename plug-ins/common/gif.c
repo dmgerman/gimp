@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a42a39d0103
+DECL|enum|__anon278b731a0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a42a39d0208
+DECL|struct|__anon278b731a0208
 block|{
 DECL|member|interlace
 name|gint
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a42a39d0308
+DECL|struct|__anon278b731a0308
 block|{
 DECL|member|run
 name|gint
@@ -4910,8 +4910,10 @@ argument_list|)
 expr_stmt|;
 name|disposal_option_menu
 operator|=
-name|gimp_option_menu_new
+name|gimp_option_menu_new2
 argument_list|(
+name|FALSE
+argument_list|,
 name|gimp_menu_item_update
 argument_list|,
 operator|&

@@ -39,6 +39,20 @@ name|GtkWidget
 modifier|*
 name|gimp_option_menu_new
 parameter_list|(
+name|gboolean
+name|menu_only
+parameter_list|,
+comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  GtkSignalFunc   callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active 				     */
+modifier|...
+parameter_list|)
+function_decl|;
+name|GtkWidget
+modifier|*
+name|gimp_option_menu_new2
+parameter_list|(
+name|gboolean
+name|menu_only
+parameter_list|,
 name|GtkSignalFunc
 name|menu_item_callback
 parameter_list|,
@@ -80,7 +94,7 @@ modifier|*
 name|frame_title
 parameter_list|,
 name|GtkSignalFunc
-name|callback
+name|radio_button_callback
 parameter_list|,
 name|gpointer
 name|data
@@ -290,7 +304,7 @@ name|row
 parameter_list|,
 name|gchar
 modifier|*
-name|text
+name|label_text
 parameter_list|,
 name|gfloat
 name|xalign

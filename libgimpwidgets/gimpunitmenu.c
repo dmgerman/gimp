@@ -65,7 +65,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad62af20103
+DECL|enum|__anon29e0531a0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED

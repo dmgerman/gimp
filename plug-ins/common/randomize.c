@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a05a670108
+DECL|struct|__anon2ba625b50108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a05a670208
+DECL|struct|__anon2ba625b50208
 block|{
 DECL|member|run
 name|gint
@@ -2449,10 +2449,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|seed_hbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|spinbutton
 decl_stmt|;
 name|GtkObject
 modifier|*
