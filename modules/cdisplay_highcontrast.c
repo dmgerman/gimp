@@ -353,6 +353,8 @@ name|GimpModuleInfo
 name|cdisplay_contrast_info
 init|=
 block|{
+name|GIMP_MODULE_ABI_VERSION
+block|,
 name|N_
 argument_list|(
 literal|"High Contrast color display filter"

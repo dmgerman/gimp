@@ -398,6 +398,8 @@ name|GimpModuleInfo
 name|colorsel_water_info
 init|=
 block|{
+name|GIMP_MODULE_ABI_VERSION
+block|,
 name|N_
 argument_list|(
 literal|"Watercolor style color selector"

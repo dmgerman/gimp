@@ -353,6 +353,8 @@ name|GimpModuleInfo
 name|cdisplay_gamma_info
 init|=
 block|{
+name|GIMP_MODULE_ABI_VERSION
+block|,
 name|N_
 argument_list|(
 literal|"Gamma color display filter"

@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a2fe590103
+DECL|enum|__anon29a34c130103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_NONE
 name|COLORBLIND_DEFICIENCY_NONE
@@ -363,6 +363,8 @@ name|GimpModuleInfo
 name|cdisplay_colorblind_info
 init|=
 block|{
+name|GIMP_MODULE_ABI_VERSION
+block|,
 name|N_
 argument_list|(
 literal|"Colorblind display filter"

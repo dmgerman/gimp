@@ -38,10 +38,22 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
+begin_comment
+comment|/*  increment the ABI version each time one of the following changes:  *  *  - the libgimpmodule implementation (if the change affects modules).  *  - one of the classes implemented by modules (currently GimpColorDisplay  *    and GimpColorSelector).  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_MODULE_ABI_VERSION
+define|#
+directive|define
+name|GIMP_MODULE_ABI_VERSION
+value|0x0001
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b46c770103
+DECL|enum|__anon2b330da30103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -69,6 +81,10 @@ DECL|struct|_GimpModuleInfo
 struct|struct
 name|_GimpModuleInfo
 block|{
+DECL|member|abi_version
+name|guint32
+name|abi_version
+decl_stmt|;
 DECL|member|purpose
 name|gchar
 modifier|*
@@ -380,6 +396,9 @@ name|GimpModuleInfo
 modifier|*
 name|gimp_module_info_new
 parameter_list|(
+name|guint32
+name|abi_version
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

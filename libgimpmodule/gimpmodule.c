@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c50a2000103
+DECL|enum|__anon2a28fb800103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1099,12 +1099,22 @@ if|if
 condition|(
 operator|!
 name|info
+operator|||
+name|info
+operator|->
+name|abi_version
+operator|!=
+name|GIMP_MODULE_ABI_VERSION
 condition|)
 block|{
 name|gimp_module_set_last_error
 argument_list|(
 name|module
 argument_list|,
+name|info
+condition|?
+literal|"module ABI version does not match"
+else|:
 literal|"gimp_module_query() returned NULL"
 argument_list|)
 expr_stmt|;
@@ -1500,9 +1510,12 @@ end_comment
 begin_function
 name|GimpModuleInfo
 modifier|*
-DECL|function|gimp_module_info_new (const gchar * purpose,const gchar * author,const gchar * version,const gchar * copyright,const gchar * date)
+DECL|function|gimp_module_info_new (guint32 abi_version,const gchar * purpose,const gchar * author,const gchar * version,const gchar * copyright,const gchar * date)
 name|gimp_module_info_new
 parameter_list|(
+name|guint32
+name|abi_version
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1541,6 +1554,12 @@ name|GimpModuleInfo
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|info
+operator|->
+name|abi_version
+operator|=
+name|abi_version
 expr_stmt|;
 name|info
 operator|->
@@ -1617,6 +1636,10 @@ expr_stmt|;
 return|return
 name|gimp_module_info_new
 argument_list|(
+name|info
+operator|->
+name|abi_version
+argument_list|,
 name|info
 operator|->
 name|purpose
