@@ -54,7 +54,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<libgimpbase/gimpwin32-io.h>
+file|"libgimpbase/gimpwin32-io.h"
 end_include
 
 begin_endif
@@ -219,7 +219,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a0e9be0103
+DECL|enum|__anon276a4bbe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

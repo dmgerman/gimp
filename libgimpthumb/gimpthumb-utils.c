@@ -65,7 +65,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|<libgimpbase/gimpwin32-io.h>
+file|"libgimpbase/gimpwin32-io.h"
 end_include
 
 begin_endif

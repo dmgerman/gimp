@@ -1353,9 +1353,11 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|tile_swap_test ()
+DECL|function|tile_swap_test (void)
 name|tile_swap_test
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|SwapFile
 modifier|*
