@@ -90,19 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"authors.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimphelp.h"
+file|"appenv.h"
 end_include
 
 begin_include
