@@ -491,16 +491,7 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-name|GIMP_LIST
-argument_list|(
-name|manager
-operator|->
-name|device_info_list
-argument_list|)
-operator|->
-name|list
-operator|=
-name|g_list_reverse
+name|gimp_list_reverse
 argument_list|(
 name|GIMP_LIST
 argument_list|(
@@ -508,8 +499,6 @@ name|manager
 operator|->
 name|device_info_list
 argument_list|)
-operator|->
-name|list
 argument_list|)
 expr_stmt|;
 name|device_info

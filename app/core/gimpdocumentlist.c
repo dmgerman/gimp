@@ -592,6 +592,14 @@ comment|/* do nothing */
 break|break;
 block|}
 block|}
+name|gimp_list_reverse
+argument_list|(
+name|GIMP_LIST
+argument_list|(
+name|document_list
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|gimp_config_deserialize_return
 argument_list|(
