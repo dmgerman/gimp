@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3f5e580103
+DECL|enum|__anon289c85cc0103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3f5e580203
+DECL|enum|__anon289c85cc0203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +190,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a3f5e580308
+DECL|struct|__anon289c85cc0308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +210,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2a3f5e580408
+DECL|struct|__anon289c85cc0408
 block|{
 DECL|member|x0
 name|gint
@@ -577,7 +577,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a3f5e580508
+DECL|struct|__anon289c85cc0508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -2114,6 +2114,10 @@ argument_list|,
 name|p
 operator|.
 name|drawable_has_alpha
+condition|?
+name|GIMP_COLOR_AREA_SMALL_CHECKS
+else|:
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

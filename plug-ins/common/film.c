@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b08f3490108
+DECL|struct|__anon2ab40dd90108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b08f3490208
+DECL|struct|__anon2ab40dd90208
 block|{
 DECL|member|font_entry
 name|GtkWidget
@@ -5835,7 +5835,7 @@ name|filmvals
 operator|.
 name|film_color
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -6164,7 +6164,7 @@ name|filmvals
 operator|.
 name|number_color
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

@@ -22238,7 +22238,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbdc0290108
+DECL|struct|__anon2b634c360108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22341,7 +22341,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbdc0290208
+DECL|struct|__anon2b634c360208
 block|{
 DECL|member|height
 DECL|member|width
@@ -27621,7 +27621,7 @@ name|svals
 operator|.
 name|col1
 argument_list|,
-name|TRUE
+name|GIMP_COLOR_AREA_SMALL_CHECKS
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -27683,7 +27683,7 @@ name|svals
 operator|.
 name|col2
 argument_list|,
-name|TRUE
+name|GIMP_COLOR_AREA_SMALL_CHECKS
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

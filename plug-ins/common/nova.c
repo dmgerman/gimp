@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba7074a0108
+DECL|struct|__anon29350b6f0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba7074a0208
+DECL|struct|__anon29350b6f0208
 block|{
 DECL|member|run
 name|gint
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba7074a0308
+DECL|struct|__anon29350b6f0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2188,7 +2188,7 @@ name|pvals
 operator|.
 name|color
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

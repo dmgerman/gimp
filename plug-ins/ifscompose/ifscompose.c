@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2965fe0c0103
+DECL|enum|__anon27fc55290103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2965fe0c0203
+DECL|enum|__anon27fc55290203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965fe0c0308
+DECL|struct|__anon27fc55290308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2965fe0c040a
+DECL|union|__anon27fc5529040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965fe0c0508
+DECL|struct|__anon27fc55290508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965fe0c0608
+DECL|struct|__anon27fc55290608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965fe0c0708
+DECL|struct|__anon27fc55290708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965fe0c0808
+DECL|struct|__anon27fc55290808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965fe0c0908
+DECL|struct|__anon27fc55290908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -553,7 +553,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2965fe0c0a08
+DECL|struct|__anon27fc55290a08
 block|{
 DECL|member|run
 name|gint
@@ -11136,7 +11136,7 @@ name|data
 else|:
 name|orig_color
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|,
 literal|0
 argument_list|)
@@ -11224,7 +11224,7 @@ name|COLOR_SAMPLE_SIZE
 argument_list|,
 name|data
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -208,7 +208,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon29b2646f0108
+DECL|struct|__anon28b0317d0108
 typedef|typedef
 struct|struct
 block|{
@@ -2108,7 +2108,7 @@ argument_list|,
 operator|&
 name|color
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

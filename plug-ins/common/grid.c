@@ -288,7 +288,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772a7920108
+DECL|struct|__anon2c92811f0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -5351,7 +5351,7 @@ name|grid_cfg
 operator|.
 name|hcolor
 argument_list|,
-name|TRUE
+name|GIMP_COLOR_AREA_SMALL_CHECKS
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5460,7 +5460,7 @@ name|grid_cfg
 operator|.
 name|vcolor
 argument_list|,
-name|TRUE
+name|GIMP_COLOR_AREA_SMALL_CHECKS
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -5569,7 +5569,7 @@ name|grid_cfg
 operator|.
 name|icolor
 argument_list|,
-name|TRUE
+name|GIMP_COLOR_AREA_SMALL_CHECKS
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

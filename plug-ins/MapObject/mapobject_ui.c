@@ -3411,7 +3411,7 @@ name|lightsource
 operator|.
 name|color
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

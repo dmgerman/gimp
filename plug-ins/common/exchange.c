@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27483f6e0108
+DECL|struct|__anon2c8d95320108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -1610,7 +1610,7 @@ name|xargs
 operator|.
 name|threshold
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1810,7 +1810,7 @@ name|xargs
 operator|.
 name|from
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

@@ -192,7 +192,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8bbe540108
+DECL|struct|__anon2c2ad2d90108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -207,7 +207,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8bbe540208
+DECL|struct|__anon2c2ad2d90208
 block|{
 DECL|member|run
 name|gboolean
@@ -1567,7 +1567,7 @@ name|COLOR_SIZE
 argument_list|,
 name|color
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1647,7 +1647,7 @@ index|[
 name|i
 index|]
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|,
 name|GDK_BUTTON2_MASK
 argument_list|)

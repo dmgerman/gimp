@@ -16,72 +16,122 @@ directive|define
 name|__COLOR_PANEL_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpcolorbutton.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_COLOR_PANEL
+define|#
+directive|define
+name|GIMP_TYPE_COLOR_PANEL
+value|(gimp_color_panel_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_COLOR_PANEL (obj)
+define|#
+directive|define
+name|GIMP_COLOR_PANEL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_COLOR_PANEL, GimpColorPanel))
+end_define
+
+begin_define
+DECL|macro|GIMP_COLOR_PANEL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_COLOR_PANEL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_COLOR_PANEL, GimpColorPanelClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_COLOR_PANEL (obj)
+define|#
+directive|define
+name|GIMP_IS_COLOR_PANEL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_COLOR_PANEL))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_COLOR_PANEL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_COLOR_PANEL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_COLOR_PANEL))
+end_define
+
 begin_typedef
-DECL|typedef|ColorPanel
+DECL|typedef|GimpColorPanel
 typedef|typedef
 name|struct
-name|_ColorPanel
-name|ColorPanel
+name|_GimpColorPanel
+name|GimpColorPanel
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpColorPanelClass
+typedef|typedef
+name|struct
+name|_GimpColorPanelClass
+name|GimpColorPanelClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_ColorPanel
+DECL|struct|_GimpColorPanelClass
 struct|struct
-name|_ColorPanel
+name|_GimpColorPanelClass
 block|{
-comment|/*  The calling procedure is respondible for showing this widget  */
-DECL|member|color_panel_widget
-name|GtkWidget
-modifier|*
-name|color_panel_widget
-decl_stmt|;
-comment|/*  The actual color  */
-DECL|member|color
-name|GimpRGB
-name|color
-decl_stmt|;
-comment|/*  Don't touch this :)  */
-DECL|member|private_part
-name|gpointer
-name|private_part
+DECL|member|parent_class
+name|GimpColorButtonClass
+name|parent_class
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_function_decl
-name|ColorPanel
-modifier|*
-name|color_panel_new
+name|GtkType
+name|gimp_color_panel_get_type
 parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_color_panel_new
+parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|gboolean
-name|show_alpha
+name|GimpColorAreaType
+name|type
 parameter_list|,
 name|gint
 name|width
 parameter_list|,
 name|gint
 name|height
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|color_panel_set_color
-parameter_list|(
-name|ColorPanel
-modifier|*
-name|color_panel
-parameter_list|,
-name|GimpRGB
-modifier|*
-name|color
 parameter_list|)
 function_decl|;
 end_function_decl

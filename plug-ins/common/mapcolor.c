@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e97360108
+DECL|struct|__anon2a97fdbd0108
 block|{
 DECL|member|colors
 name|GimpRGB
@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e97360208
+DECL|struct|__anon2a97fdbd0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -220,7 +220,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e97360308
+DECL|struct|__anon2a97fdbd0308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3013,7 +3013,7 @@ index|[
 name|csel_index
 index|]
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

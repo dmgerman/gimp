@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e18d1d0108
+DECL|struct|__anon29e2c5e70108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e18d1d0208
+DECL|struct|__anon29e2c5e70208
 block|{
 DECL|member|run
 name|gboolean
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e18d1d0308
+DECL|struct|__anon29e2c5e70308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -1998,7 +1998,7 @@ name|pvals
 operator|.
 name|color
 argument_list|,
-name|FALSE
+name|GIMP_COLOR_AREA_FLAT
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
