@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbasetypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs-types.h"
 end_include
 

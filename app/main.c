@@ -270,6 +270,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|use_mmx
+name|gboolean
+name|use_mmx
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|stack_trace_mode
 name|GimpStackTraceMode
 name|stack_trace_mode
@@ -1143,6 +1152,34 @@ index|[
 name|i
 index|]
 argument_list|,
+literal|"--no-mmx"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|use_mmx
+operator|=
+name|FALSE
+expr_stmt|;
+name|argv
+index|[
+name|i
+index|]
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
 literal|"--debug-handlers"
 argument_list|)
 operator|==
@@ -1581,7 +1618,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  --no-xshm                Do not use the X Shared Memory extension.\n"
+literal|"  --no-mmx                 Do not use MMX routines.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-processor.h"
 end_include
 
@@ -99,6 +93,12 @@ directive|include
 file|"paint-funcs-mmx.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"appenv.h"
+end_include
+
 begin_define
 DECL|macro|RANDOM_SEED
 define|#
@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c524430103
+DECL|enum|__anon27b1bfd70103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY

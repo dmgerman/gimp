@@ -64,13 +64,6 @@ name|base_config
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|gboolean
-name|use_mmx
-decl_stmt|;
-end_decl_stmt
-
 begin_endif
 endif|#
 directive|endif

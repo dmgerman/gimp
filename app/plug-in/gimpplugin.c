@@ -481,6 +481,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -1219,10 +1225,6 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-specifier|extern
-name|gboolean
-name|use_shm
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP

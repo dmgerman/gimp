@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base.h"
 end_include
 
@@ -126,7 +132,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/paint-funcs.h"
+file|"appenv.h"
 end_include
 
 begin_function_decl
@@ -164,6 +170,8 @@ directive|ifdef
 name|HAVE_ASM_MMX
 name|use_mmx
 operator|=
+name|use_mmx
+operator|&&
 operator|(
 name|intel_cpu_features
 argument_list|()

@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbasetypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -67,7 +61,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acd2dec0103
+DECL|enum|__anon2bca299b0103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -87,7 +81,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2acd2dec0203
+DECL|enum|__anon2bca299b0203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -108,7 +102,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2acd2dec0303
+DECL|enum|__anon2bca299b0303
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
