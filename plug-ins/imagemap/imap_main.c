@@ -3659,8 +3659,8 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"<IMG SRC=\"%s\" WIDTH=%d HEIGHT=%d BORDER=0 "
-literal|"USEMAP=\"#%s\">\n\n"
+literal|"<img src=\"%s\" width=%d height=%d border=0 "
+literal|"usemap=\"#%s\">\n\n"
 argument_list|,
 name|_map_info
 operator|.
@@ -3679,7 +3679,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"<MAP NAME=\"%s\">\n"
+literal|"<map name=\"%s\">\n"
 argument_list|,
 name|_map_info
 operator|.
@@ -3790,7 +3790,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"<AREA SHAPE=\"DEFAULT\" HREF=\"%s\">\n"
+literal|"<area shape=\"default\" href=\"%s\">\n"
 argument_list|,
 name|_map_info
 operator|.
@@ -3801,7 +3801,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"</MAP>\n"
+literal|"</map>\n"
 argument_list|)
 expr_stmt|;
 block|}

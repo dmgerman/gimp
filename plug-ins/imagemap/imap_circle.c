@@ -1307,7 +1307,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b24b55c0108
+DECL|struct|__anon287e1e5e0108
 typedef|typedef
 struct|struct
 block|{
@@ -2069,7 +2069,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"\"CIRCLE\" COORDS=\"%d,%d,%d\""
+literal|"\"circle\" coords=\"%d,%d,%d\""
 argument_list|,
 name|circle
 operator|->

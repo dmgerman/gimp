@@ -58,7 +58,7 @@ file|"imap_string.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bf8ee0e0108
+DECL|struct|__anon2c3054270108
 typedef|typedef
 struct|struct
 block|{
@@ -5067,7 +5067,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"<AREA SHAPE="
+literal|"<area shape="
 argument_list|)
 expr_stmt|;
 name|obj
@@ -5094,7 +5094,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|" ALT=\"%s\""
+literal|" alt=\"%s\""
 argument_list|,
 name|obj
 operator|->
@@ -5112,7 +5112,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|" TARGET=\"%s\""
+literal|" target=\"%s\""
 argument_list|,
 name|obj
 operator|->
@@ -5130,7 +5130,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|" onMouseover=\"%s\""
+literal|" onmouseover=\"%s\""
 argument_list|,
 name|obj
 operator|->
@@ -5148,7 +5148,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|" onMouseout=\"%s\""
+literal|" onmouseout=\"%s\""
 argument_list|,
 name|obj
 operator|->
@@ -5166,7 +5166,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|" onFocus=\"%s\""
+literal|" onfocus=\"%s\""
 argument_list|,
 name|obj
 operator|->
@@ -5184,7 +5184,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|" onBlur=\"%s\""
+literal|" onblur=\"%s\""
 argument_list|,
 name|obj
 operator|->
@@ -5195,7 +5195,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|" HREF=\"%s\">\n"
+literal|" href=\"%s\">\n"
 argument_list|,
 name|obj
 operator|->

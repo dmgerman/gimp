@@ -1947,7 +1947,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28c8e0d70108
+DECL|struct|__anon27a626990108
 typedef|typedef
 struct|struct
 block|{
@@ -2947,7 +2947,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"\"RECT\" COORDS=\"%d,%d,%d,%d\""
+literal|"\"rect\" coords=\"%d,%d,%d,%d\""
 argument_list|,
 name|rectangle
 operator|->

@@ -1719,7 +1719,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27ffa2510108
+DECL|struct|__anon2a31ce750108
 typedef|typedef
 struct|struct
 block|{
@@ -3671,7 +3671,7 @@ name|output
 argument_list|(
 name|param
 argument_list|,
-literal|"\"POLY\" COORDS=\""
+literal|"\"poly\" coords=\""
 argument_list|)
 expr_stmt|;
 for|for
