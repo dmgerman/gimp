@@ -288,7 +288,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad6c5e0103
+DECL|enum|__anon2b884bb90103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4757,7 +4757,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/File/Save a Copy as..."
+literal|"/File/Save a Copy..."
 argument_list|,
 name|gdisp
 operator|&&

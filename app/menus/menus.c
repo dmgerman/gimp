@@ -1421,18 +1421,14 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Save a Copy as..."
+literal|"/File/Save a Copy..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|file_save_a_copy_as_cmd_callback
+name|file_save_a_copy_cmd_callback
 block|,
 literal|0
-block|,
-literal|"<StockItem>"
-block|,
-name|GTK_STOCK_SAVE_AS
 block|}
 block|,
 name|NULL

@@ -493,7 +493,7 @@ name|gimp_item_factory_set_sensitive
 argument_list|(
 name|item_factory
 argument_list|,
-literal|"/File/Save a Copy as..."
+literal|"/File/Save a Copy..."
 argument_list|,
 name|FALSE
 argument_list|)
@@ -595,7 +595,7 @@ name|gimp_item_factory_set_sensitive
 argument_list|(
 name|item_factory
 argument_list|,
-literal|"/File/Save a Copy as..."
+literal|"/File/Save a Copy..."
 argument_list|,
 name|TRUE
 argument_list|)
