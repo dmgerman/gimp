@@ -92,7 +92,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5d8fbf0108
+DECL|struct|__anon2b9fd5300108
 typedef|typedef
 struct|struct
 block|{
@@ -226,7 +226,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5d8fbf0208
+DECL|struct|__anon2b9fd5300208
 typedef|typedef
 struct|struct
 block|{
@@ -284,7 +284,7 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c5d8fbf0308
+DECL|struct|__anon2b9fd5300308
 typedef|typedef
 struct|struct
 block|{
@@ -310,7 +310,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5d8fbf0408
+DECL|struct|__anon2b9fd5300408
 typedef|typedef
 struct|struct
 block|{
@@ -3271,20 +3271,8 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|colormap
-index|[
-name|j
-index|]
-operator|.
-name|l_flags
-operator|>
-literal|7
-condition|)
-name|flag_is_bad
-operator|++
-expr_stmt|;
+comment|/* WindowMaker at 24bpp seems to insert a bogus value here.. we don't     * use flags, so just ignore it     */
+comment|/* if (colormap[j].l_flags> 7)      flag_is_bad++; */
 if|if
 condition|(
 name|indexed
@@ -3470,33 +3458,7 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|colormap
-index|[
-name|j
-index|]
-operator|.
-name|l_flags
-operator|==
-literal|0
-operator|)
-operator|||
-operator|(
-name|colormap
-index|[
-name|j
-index|]
-operator|.
-name|l_flags
-operator|>
-literal|7
-operator|)
-condition|)
-name|flag_is_bad
-operator|++
-expr_stmt|;
+comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7))      flag_is_bad++; */
 if|if
 condition|(
 name|indexed
@@ -3682,33 +3644,7 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|colormap
-index|[
-name|j
-index|]
-operator|.
-name|l_flags
-operator|==
-literal|0
-operator|)
-operator|||
-operator|(
-name|colormap
-index|[
-name|j
-index|]
-operator|.
-name|l_flags
-operator|>
-literal|7
-operator|)
-condition|)
-name|flag_is_bad
-operator|++
-expr_stmt|;
+comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7))      flag_is_bad++; */
 if|if
 condition|(
 name|indexed
@@ -3934,33 +3870,7 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|colormap
-index|[
-name|j
-index|]
-operator|.
-name|l_flags
-operator|==
-literal|0
-operator|)
-operator|||
-operator|(
-name|colormap
-index|[
-name|j
-index|]
-operator|.
-name|l_flags
-operator|>
-literal|7
-operator|)
-condition|)
-name|flag_is_bad
-operator|++
-expr_stmt|;
+comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7))      flag_is_bad++; */
 if|if
 condition|(
 name|indexed
