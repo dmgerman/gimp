@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIF loading file filter for The GIMP version 1.0/1.1  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 1.0.1 - 99/11/11  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
+comment|/* GIF loading file filter for The GIMP version 1.0/1.1  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 1.0.2 - 99/11/20  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
 end_comment
 
 begin_comment
@@ -12,7 +12,7 @@ comment|/*  *  "The Graphics Interchange Format(c) is the Copyright property of 
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY  *  * 99/11/11  * 1.00.01 - Fixed an uninitialized variable which has been around  *     forever... thanks to jrb@redhat.com for noticing that there  *     was a problem somewhere!  *  * 99/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
+comment|/*  * REVISION HISTORY  *  * 99/11/20  * 1.00.02 - Fixed a couple of possible infinite loops where an  *     error condition was not being checked.  Also changed some g_message()s  *     back to g_warning()s as they should be (don't get carried away with  *     the user feedback fellahs, no-one wants to be told of every single  *     corrupt byte and block in its own little window.  :-( ).  *  * 99/11/11  * 1.00.01 - Fixed an uninitialized variable which has been around  *     forever... thanks to jrb@redhat.com for noticing that there  *     was a problem somewhere!  *  * 99/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
 end_comment
 
 begin_comment
@@ -758,7 +758,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon299e98b60108
+DECL|struct|__anon297ba2950108
 block|{
 DECL|member|Width
 name|unsigned
@@ -808,7 +808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon299e98b60208
+DECL|struct|__anon297ba2950208
 block|{
 DECL|member|transparent
 name|int
@@ -1530,7 +1530,7 @@ literal|','
 condition|)
 block|{
 comment|/* Not a valid start character */
-name|g_message
+name|g_warning
 argument_list|(
 name|_
 argument_list|(
@@ -2190,7 +2190,7 @@ operator|*
 operator|)
 name|buf
 argument_list|)
-operator|!=
+operator|>
 literal|0
 condition|)
 block|{
@@ -2271,7 +2271,7 @@ operator|*
 operator|)
 name|buf
 argument_list|)
-operator|!=
+operator|>
 literal|0
 condition|)
 block|{
@@ -2446,7 +2446,7 @@ operator|*
 operator|)
 name|buf
 argument_list|)
-operator|!=
+operator|>
 literal|0
 condition|)
 empty_stmt|;
@@ -2503,7 +2503,7 @@ operator|*
 operator|)
 name|buf
 argument_list|)
-operator|!=
+operator|>
 literal|0
 condition|)
 empty_stmt|;
@@ -2766,7 +2766,7 @@ literal|2
 index|]
 argument_list|)
 operator|)
-operator|==
+operator|<=
 literal|0
 condition|)
 name|done
@@ -4297,11 +4297,8 @@ literal|"GIF: Ouchie!  Can't handle non-alpha RGB frames.\n     Please mail the 
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|exit
-argument_list|(
-operator|-
-literal|1
-argument_list|)
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 while|while
