@@ -63,6 +63,10 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
 begin_function
 name|void
 DECL|function|brushes_menu_update (GtkItemFactory * factory,gpointer data)

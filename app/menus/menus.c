@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"drawable-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"edit-commands.h"
 end_include
 
@@ -3242,7 +3248,7 @@ argument_list|)
 block|,
 literal|"<control><shift>O"
 block|,
-name|layers_offset_cmd_callback
+name|drawable_offset_cmd_callback
 block|,
 literal|0
 block|}
@@ -3269,7 +3275,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_desaturate_cmd_callback
+name|drawable_desaturate_cmd_callback
 block|,
 literal|0
 block|}
@@ -3290,7 +3296,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_invert_cmd_callback
+name|drawable_invert_cmd_callback
 block|,
 literal|0
 block|}
@@ -3317,7 +3323,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|layers_equalize_cmd_callback
+name|drawable_equalize_cmd_callback
 block|,
 literal|0
 block|}
