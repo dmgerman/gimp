@@ -1073,12 +1073,6 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/*  setup scale properly  */
-name|gimp_display_shell_scale_setup
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 comment|/*  set the initial cursor  */
 name|gimp_display_shell_set_cursor
 argument_list|(

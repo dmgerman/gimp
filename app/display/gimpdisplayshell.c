@@ -250,7 +250,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7e2420103
+DECL|enum|__anon2b7ab33d0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1567,6 +1567,25 @@ parameter_list|)
 block|{
 name|gimp_display_shell_update_title
 argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+comment|/* update the<Image>/View/Zoom menu */
+name|gimp_item_factory_update
+argument_list|(
+name|shell
+operator|->
+name|menubar_factory
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_item_factory_update
+argument_list|(
+name|shell
+operator|->
+name|popup_factory
+argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
