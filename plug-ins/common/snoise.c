@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b99270108
+DECL|struct|__anon288a71f20108
 block|{
 DECL|member|tilable
 name|gint
@@ -1979,6 +1979,11 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
+name|gboolean
+name|randomize
+init|=
+name|FALSE
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"snoise"
@@ -2130,7 +2135,8 @@ name|snvals
 operator|.
 name|seed
 argument_list|,
-name|FALSE
+operator|&
+name|randomize
 argument_list|)
 expr_stmt|;
 name|label

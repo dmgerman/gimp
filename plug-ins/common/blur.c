@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bf7020108
+DECL|struct|__anon2c3023d20108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -2416,6 +2416,7 @@ name|pivals
 operator|.
 name|blur_seed
 argument_list|,
+operator|&
 name|pivals
 operator|.
 name|blur_randomize

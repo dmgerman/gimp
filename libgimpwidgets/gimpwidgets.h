@@ -703,6 +703,7 @@ modifier|*
 name|seed
 parameter_list|,
 name|gboolean
+modifier|*
 name|random_seed
 parameter_list|)
 function_decl|;

@@ -3516,13 +3516,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_random_seed_new:  * @seed:        A pointer to the variable which stores the random seed.  * @random_seed: A boolean indicating whether seed should be initialised   *               randomly or not.  *  * Creates a widget that allows the user to control how the random number  * generator is initialized.  *  * Returns: A #GtkHBox containing a #GtkSpinButton for the seed and  *          a #GtkButton for setting a random seed.  **/
+comment|/**  * gimp_random_seed_new:  * @seed:        A pointer to the variable which stores the random seed.  * @random_seed: A pointer to a boolean indicating whether seed should be   *               initialised randomly or not.  *  * Creates a widget that allows the user to control how the random number  * generator is initialized.  *  * Returns: A #GtkHBox containing a #GtkSpinButton for the seed and  *          a #GtkButton for setting a random seed.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_random_seed_new (guint * seed,gboolean random_seed)
+DECL|function|gimp_random_seed_new (guint * seed,gboolean * random_seed)
 name|gimp_random_seed_new
 parameter_list|(
 name|guint
@@ -3530,6 +3530,7 @@ modifier|*
 name|seed
 parameter_list|,
 name|gboolean
+modifier|*
 name|random_seed
 parameter_list|)
 block|{
@@ -3560,6 +3561,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|*
 name|random_seed
 condition|)
 block|{
@@ -3756,7 +3758,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5db6850108
+DECL|struct|__anon2b37afe50108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

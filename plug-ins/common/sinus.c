@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daca7b0108
+DECL|struct|__anon295cc8350108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -265,7 +265,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daca7b0208
+DECL|struct|__anon295cc8350208
 block|{
 DECL|member|height
 DECL|member|width
@@ -347,7 +347,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daca7b0308
+DECL|struct|__anon295cc8350308
 block|{
 DECL|member|width
 name|gint
@@ -3409,6 +3409,9 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
+name|gboolean
+name|randomize
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"sinus"
@@ -3988,7 +3991,8 @@ name|svals
 operator|.
 name|seed
 argument_list|,
-name|FALSE
+operator|&
+name|randomize
 argument_list|)
 expr_stmt|;
 name|label

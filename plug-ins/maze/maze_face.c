@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c10cf080108
+DECL|struct|__anon2c6a628c0108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -573,6 +573,11 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|message
+decl_stmt|;
+name|gboolean
+name|randomize
+init|=
+name|FALSE
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
@@ -1253,7 +1258,8 @@ name|mvals
 operator|.
 name|seed
 argument_list|,
-name|FALSE
+operator|&
+name|randomize
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned

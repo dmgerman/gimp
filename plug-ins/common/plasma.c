@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b25f980108
+DECL|struct|__anon296581c10108
 block|{
 DECL|member|seed
 name|guint32
@@ -973,6 +973,11 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
+name|gboolean
+name|randomize
+init|=
+name|FALSE
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"plasma"
@@ -1194,7 +1199,8 @@ name|pvals
 operator|.
 name|seed
 argument_list|,
-name|FALSE
+operator|&
+name|randomize
 argument_list|)
 expr_stmt|;
 name|label
