@@ -65,6 +65,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|char
+modifier|*
+modifier|*
+name|gimp_parasite_list
+parameter_list|(
+name|gint
+modifier|*
+name|count
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

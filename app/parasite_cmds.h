@@ -44,6 +44,13 @@ name|gimp_detach_parasite_proc
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gimp_parasite_list_proc
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif
