@@ -1121,7 +1121,7 @@ name|gint32
 name|image_ID
 parameter_list|)
 function_decl|;
-name|void
+name|gint32
 name|gimp_image_flatten
 parameter_list|(
 name|gint32

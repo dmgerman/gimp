@@ -747,7 +747,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gint32
 DECL|function|gimp_image_flatten (gint32 image_ID)
 name|gimp_image_flatten
 parameter_list|(
@@ -761,6 +761,9 @@ name|return_vals
 decl_stmt|;
 name|int
 name|nreturn_vals
+decl_stmt|;
+name|gint32
+name|layer_ID
 decl_stmt|;
 name|return_vals
 operator|=
@@ -778,6 +781,35 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
+name|layer_ID
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+name|layer_ID
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_layer
+expr_stmt|;
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -785,6 +817,9 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
+return|return
+name|layer_ID
+return|;
 block|}
 end_function
 
