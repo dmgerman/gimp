@@ -315,6 +315,17 @@ condition|(
 name|text
 operator|==
 name|NULL
+operator|&&
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|text
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -606,7 +617,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"fontname"
 block|,
-literal|"The fontname (conforming to the X Logical Font Description Conventions)"
+literal|"The name of the font"
 block|}
 block|}
 decl_stmt|;
@@ -744,6 +755,17 @@ condition|(
 name|text
 operator|==
 name|NULL
+operator|&&
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|text
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -969,7 +991,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"fontname"
 block|,
-literal|"The fontname (conforming to the X Logical Font Description Conventions)"
+literal|"The name of the font"
 block|}
 block|}
 decl_stmt|;
@@ -1243,6 +1265,17 @@ condition|(
 name|text
 operator|==
 name|NULL
+operator|&&
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|text
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -1709,7 +1742,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"foundry"
 block|,
-literal|"The font foundry, \"*\" for any"
+literal|"The font foundry"
 block|}
 block|,
 block|{
@@ -1717,7 +1750,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"family"
 block|,
-literal|"The font family, \"*\" for any"
+literal|"The font family"
 block|}
 block|,
 block|{
@@ -1725,7 +1758,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"weight"
 block|,
-literal|"The font weight, \"*\" for any"
+literal|"The font weight"
 block|}
 block|,
 block|{
@@ -1733,7 +1766,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"slant"
 block|,
-literal|"The font slant, \"*\" for any"
+literal|"The font slant"
 block|}
 block|,
 block|{
@@ -1741,7 +1774,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"set_width"
 block|,
-literal|"The font set-width, \"*\" for any"
+literal|"The font set-width"
 block|}
 block|,
 block|{
@@ -1749,7 +1782,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"spacing"
 block|,
-literal|"The font spacing, \"*\" for any"
+literal|"The font spacing"
 block|}
 block|,
 block|{
@@ -1757,7 +1790,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"registry"
 block|,
-literal|"The font registry, \"*\" for any"
+literal|"The font registry"
 block|}
 block|,
 block|{
@@ -1765,7 +1798,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"encoding"
 block|,
-literal|"The font encoding, \"*\" for any"
+literal|"The font encoding"
 block|}
 block|}
 decl_stmt|;
@@ -1932,6 +1965,17 @@ condition|(
 name|text
 operator|==
 name|NULL
+operator|&&
+operator|!
+name|g_utf8_validate
+argument_list|(
+name|text
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 name|success
 operator|=
@@ -2332,7 +2376,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"foundry"
 block|,
-literal|"The font foundry, \"*\" for any"
+literal|"The font foundry"
 block|}
 block|,
 block|{
@@ -2340,7 +2384,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"family"
 block|,
-literal|"The font family, \"*\" for any"
+literal|"The font family"
 block|}
 block|,
 block|{
@@ -2348,7 +2392,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"weight"
 block|,
-literal|"The font weight, \"*\" for any"
+literal|"The font weight"
 block|}
 block|,
 block|{
@@ -2356,7 +2400,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"slant"
 block|,
-literal|"The font slant, \"*\" for any"
+literal|"The font slant"
 block|}
 block|,
 block|{
@@ -2364,7 +2408,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"set_width"
 block|,
-literal|"The font set-width, \"*\" for any"
+literal|"The font set-width"
 block|}
 block|,
 block|{
@@ -2372,7 +2416,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"spacing"
 block|,
-literal|"The font spacing, \"*\" for any"
+literal|"The font spacing"
 block|}
 block|,
 block|{
@@ -2380,7 +2424,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"registry"
 block|,
-literal|"The font registry, \"*\" for any"
+literal|"The font registry"
 block|}
 block|,
 block|{
@@ -2388,7 +2432,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"encoding"
 block|,
-literal|"The font encoding, \"*\" for any"
+literal|"The font encoding"
 block|}
 block|}
 decl_stmt|;
