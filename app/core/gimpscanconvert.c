@@ -2170,27 +2170,23 @@ name|gint
 name|n_steps
 parameter_list|)
 block|{
-name|gint
-name|k
-decl_stmt|,
-name|run_x0
-decl_stmt|,
-name|run_x1
+name|GimpScanConvert
+modifier|*
+name|sc
+init|=
+name|user_data
 decl_stmt|;
 name|gint
 name|cur_value
 init|=
 name|start_value
 decl_stmt|;
-name|GimpScanConvert
-modifier|*
-name|sc
-init|=
-operator|(
-name|GimpScanConvert
-operator|*
-operator|)
-name|user_data
+name|gint
+name|k
+decl_stmt|,
+name|run_x0
+decl_stmt|,
+name|run_x1
 decl_stmt|;
 DECL|macro|VALUE_TO_PIXEL (x)
 define|#
@@ -2199,7 +2195,7 @@ name|VALUE_TO_PIXEL
 parameter_list|(
 name|x
 parameter_list|)
-value|(sc->antialias ? (x)>> 16 : ((x)>> 23 ? 255 : 0))
+value|(sc->antialias ? \                            ((x)>> 16)   : \                            (((x)& (1<< 23) ? 255 : 0)))
 if|if
 condition|(
 name|n_steps
