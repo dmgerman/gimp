@@ -121,7 +121,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2b497abb0103
+DECL|enum|__anon291aeede0103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -137,7 +137,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b497abb0203
+DECL|enum|__anon291aeede0203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -169,7 +169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b497abb0308
+DECL|struct|__anon291aeede0308
 block|{
 DECL|member|index
 name|gint
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b497abb0408
+DECL|struct|__anon291aeede0408
 block|{
 DECL|member|title
 name|gchar
@@ -1332,23 +1332,7 @@ argument_list|,
 name|combo_list
 argument_list|)
 expr_stmt|;
-name|gtk_entry_set_text
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-name|GTK_COMBO
-argument_list|(
-name|combo
-argument_list|)
-operator|->
-name|entry
-argument_list|)
-argument_list|,
-name|item
-operator|->
-name|title
-argument_list|)
-expr_stmt|;
+comment|/*    gtk_entry_set_text (GTK_ENTRY (GTK_COMBO (combo)->entry), item->title); */
 name|gtk_signal_handler_unblock_by_data
 argument_list|(
 name|GTK_OBJECT
@@ -1511,6 +1495,17 @@ operator|(
 literal|"<Untitled>"
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|add_to_history
+condition|)
+name|history_add
+argument_list|(
+name|ref
+argument_list|,
+name|title
+argument_list|)
+expr_stmt|;
 name|gtk_signal_handler_block_by_data
 argument_list|(
 name|GTK_OBJECT
@@ -1554,17 +1549,6 @@ name|entry
 argument_list|)
 argument_list|,
 name|combo
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|add_to_history
-condition|)
-name|history_add
-argument_list|(
-name|ref
-argument_list|,
-name|title
 argument_list|)
 expr_stmt|;
 block|}
