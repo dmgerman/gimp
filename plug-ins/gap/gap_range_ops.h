@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 0.97.00; 1998/10/19   hof: extended gap_range_to_multilayer layer seletion  * 0.96.03; 1998/08/31   hof: gap_range_to_multilayer: all params available  *                            in non-interactive runmode  * 0.96.00; 1998/07/02   hof: (extracted from gap_lib.h)  * 0.94.01; 1998/04/27   hof: added flatten_mode to plugin: gap_range_to_multilayer  */
+comment|/* revision history:  * 1.1.10a; 1999/10/22   hof: extended dither options in gap_range_conv  * 0.97.00; 1998/10/19   hof: extended gap_range_to_multilayer layer seletion  * 0.96.03; 1998/08/31   hof: gap_range_to_multilayer: all params available  *                            in non-interactive runmode  * 0.96.00; 1998/07/02   hof: (extracted from gap_lib.h)  * 0.94.01; 1998/04/27   hof: added flatten_mode to plugin: gap_range_to_multilayer  */
 end_comment
 
 begin_ifndef
@@ -73,7 +73,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2974a5240103
+DECL|enum|__anon2c7fc5870103
 block|{
 DECL|enumerator|ASIZ_SCALE
 name|ASIZ_SCALE
@@ -213,6 +213,19 @@ parameter_list|,
 name|char
 modifier|*
 name|extension
+parameter_list|,
+name|gint32
+name|palette_type
+parameter_list|,
+name|gint32
+name|alpha_dither
+parameter_list|,
+name|gint32
+name|remove_unused
+parameter_list|,
+name|char
+modifier|*
+name|palette
 parameter_list|)
 function_decl|;
 end_function_decl

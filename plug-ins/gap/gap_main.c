@@ -14,12 +14,12 @@ name|char
 modifier|*
 name|gap_main_version
 init|=
-literal|"1.1.8a; 1999/08/31"
+literal|"1.1.10a; 1999/10/23"
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.10a; 1999/10/22  hof: extended dither options for gap_range_convert  * gimp    1.1.8a;  1999/08/31  hof: updated main version  * version 0.99.00; 1999/03/17  hof: updated main version  * version 0.98.02; 1999/01/27  hof: updated main version  * version 0.98.01; 1998/12/21  hof: updated main version, e-mail adress  * version 0.98.00; 1998/11/27  hof: updated main version, started port to GIMP 1.1 interfaces  *                                   Use no '_' (underscore) in menunames. (has special function in 1.1)  * version 0.96.03; 1998/08/31  hof: updated main version,  *                                         gap_range_to_multilayer now returns image_id  *                                         gap_split_image now returns image_id  * version 0.96.02; 1998/08/05  hof: updated main version,   *                                   added gap_shift  * version 0.96.00; 1998/06/27  hof: added gap animation sizechange plugins  *                                         gap_split_image  *                                         gap_mpeg_encode  * version 0.94.01; 1998/04/28  hof: updated main version,  *                                   added flatten_mode to plugin: gap_range_to_multilayer  * version 0.94.00; 1998/04/25  hof: updated main version  * version 0.93.01; 1998/02/03  hof:  * version 0.92.00;             hof: set gap_debug from environment   * version 0.91.00; 1997/12/22  hof:   * version 0.90.00;             hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -932,7 +932,7 @@ name|PARAM_INT32
 block|,
 literal|"dest_dither"
 block|,
-literal|"0=no, 1=floyd-steinberg (used only for dest_type INDEXED)"
+literal|"0=no, 1=floyd-steinberg  2=fs/low-bleed, 3=fixed (used only for dest_type INDEXED)"
 block|}
 block|,
 block|{
@@ -964,6 +964,150 @@ operator|/
 sizeof|sizeof
 argument_list|(
 name|args_rconv
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+specifier|static
+name|GParamDef
+name|args_rconv2
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image (one of the Anim Frames)"
+block|}
+block|,
+block|{
+name|PARAM_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Input drawable (unused)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"range_from"
+block|,
+literal|"frame nr to start"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"range_to"
+block|,
+literal|"frame nr to stop (can be lower than range_from)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"flatten"
+block|,
+literal|"0 .. dont flatten image before save"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"dest_type"
+block|,
+literal|"0=RGB, 1=GRAY, 2=INDEXED"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"dest_colors"
+block|,
+literal|"1 upto 256 (used only for dest_type INDEXED)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"dest_dither"
+block|,
+literal|"0=no, 1=floyd-steinberg 2=fs/low-bleed, 3=fixed(used only for dest_type INDEXED)"
+block|}
+block|,
+block|{
+name|PARAM_STRING
+block|,
+literal|"extension"
+block|,
+literal|"extension for the destination filetype (jpg, tif ...or any other gimp supported type)"
+block|}
+block|,
+block|{
+name|PARAM_STRING
+block|,
+literal|"basename"
+block|,
+literal|"(optional parameter) here you may specify the basename of the destination frames \"/my_dir/myframe\"  _0001.ext is added)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"palette_type"
+block|,
+literal|"0 == MAKE_PALETTE, 2 == WEB_PALETTE, 3 == MONO_PALETTE (bw) 4 == CUSTOM_PALETTE (used only for dest_type INDEXED)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"alpha_dither"
+block|,
+literal|"dither transparency to fake partial opacity (used only for dest_type INDEXED)"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"remove_unused"
+block|,
+literal|"remove unused or double colors from final palette (used only for dest_type INDEXED)"
+block|}
+block|,
+block|{
+name|PARAM_STRING
+block|,
+literal|"palette"
+block|,
+literal|"name of the cutom palette to use (used only for dest_type INDEXED and palette_type == CUSTOM_PALETTE) "
+block|}
+block|,   }
+decl_stmt|;
+specifier|static
+name|int
+name|nargs_rconv2
+init|=
+sizeof|sizeof
+argument_list|(
+name|args_rconv2
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args_rconv2
 index|[
 literal|0
 index|]
@@ -1895,6 +2039,39 @@ argument_list|(
 literal|"This plugin converts the given range of frame-images to other fileformats (on disk) depending on extension"
 argument_list|)
 argument_list|,
+literal|"WARNING this procedure is obsolete, please use plug_in_gap_range_convert2"
+argument_list|,
+literal|"Wolfgang Hofer (hof@hotbot.com)"
+argument_list|,
+literal|"Wolfgang Hofer"
+argument_list|,
+name|gap_main_version
+argument_list|,
+name|NULL
+argument_list|,
+comment|/* do not appear in menus */
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|PROC_PLUG_IN
+argument_list|,
+name|nargs_rconv
+argument_list|,
+name|nreturn_vals
+argument_list|,
+name|args_rconv
+argument_list|,
+name|return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"plug_in_gap_range_convert2"
+argument_list|,
+name|_
+argument_list|(
+literal|"This plugin converts the given range of frame-images to other fileformats (on disk) depending on extension"
+argument_list|)
+argument_list|,
 literal|""
 argument_list|,
 literal|"Wolfgang Hofer (hof@hotbot.com)"
@@ -1912,11 +2089,11 @@ literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
-name|nargs_rconv
+name|nargs_rconv2
 argument_list|,
 name|nreturn_vals
 argument_list|,
-name|args_rconv
+name|args_rconv2
 argument_list|,
 name|return_vals
 argument_list|)
@@ -2237,7 +2414,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d72e4f0108
+DECL|struct|__anon29373df80108
 block|{
 DECL|member|lock
 name|long
@@ -2293,6 +2470,10 @@ name|char
 modifier|*
 name|l_basename_ptr
 decl_stmt|;
+name|char
+modifier|*
+name|l_palette_ptr
+decl_stmt|;
 specifier|static
 name|GParam
 name|values
@@ -2327,6 +2508,15 @@ name|dest_colors
 decl_stmt|;
 name|gint32
 name|dest_dither
+decl_stmt|;
+name|gint32
+name|palette_type
+decl_stmt|;
+name|gint32
+name|alpha_dither
+decl_stmt|;
+name|gint32
+name|remove_unused
 decl_stmt|;
 name|gint32
 name|mode
@@ -3797,6 +3987,7 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|(
 name|strcmp
 argument_list|(
 name|name
@@ -3805,11 +3996,39 @@ literal|"plug_in_gap_range_convert"
 argument_list|)
 operator|==
 literal|0
+operator|)
+operator|||
+operator|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"plug_in_gap_range_convert2"
+argument_list|)
+operator|==
+literal|0
+operator|)
 condition|)
 block|{
 name|l_basename_ptr
 operator|=
 name|NULL
+expr_stmt|;
+name|l_palette_ptr
+operator|=
+name|NULL
+expr_stmt|;
+name|palette_type
+operator|=
+name|GIMP_MAKE_PALETTE
+expr_stmt|;
+name|alpha_dither
+operator|=
+literal|0
+expr_stmt|;
+name|remove_unused
+operator|=
+literal|1
 expr_stmt|;
 if|if
 condition|(
@@ -3830,6 +4049,12 @@ operator|(
 name|n_params
 operator|!=
 literal|11
+operator|)
+operator|&&
+operator|(
+name|n_params
+operator|!=
+literal|15
 operator|)
 condition|)
 block|{
@@ -3876,7 +4101,7 @@ expr_stmt|;
 if|if
 condition|(
 name|n_params
-operator|==
+operator|>=
 literal|11
 condition|)
 block|{
@@ -3890,6 +4115,58 @@ operator|.
 name|data
 operator|.
 name|d_string
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|n_params
+operator|>=
+literal|15
+condition|)
+block|{
+name|l_palette_ptr
+operator|=
+name|param
+index|[
+literal|14
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+expr_stmt|;
+name|palette_type
+operator|=
+name|param
+index|[
+literal|11
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|alpha_dither
+operator|=
+name|param
+index|[
+literal|12
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|remove_unused
+operator|=
+name|param
+index|[
+literal|13
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
 expr_stmt|;
 block|}
 block|}
@@ -4004,6 +4281,14 @@ argument_list|,
 name|l_basename_ptr
 argument_list|,
 name|l_extension
+argument_list|,
+name|palette_type
+argument_list|,
+name|alpha_dither
+argument_list|,
+name|remove_unused
+argument_list|,
+name|l_palette_ptr
 argument_list|)
 expr_stmt|;
 block|}
