@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c88918d0108
+DECL|struct|__anon29facc220108
 block|{
 DECL|member|interlaced
 name|gint
@@ -933,7 +933,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|8
+literal|12
 condition|)
 block|{
 name|status
