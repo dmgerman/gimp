@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2ef4960103
+DECL|enum|__anon2c5b2a5e0103
 block|{
 DECL|enumerator|COLUMN_ACTION
 name|COLUMN_ACTION
@@ -1394,7 +1394,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2ef4960208
+DECL|struct|__anon2c5b2a5e0208
 block|{
 DECL|member|accel_path
 name|gchar
@@ -1935,9 +1935,9 @@ argument_list|(
 literal|"Shortcut \"%s\" is already taken by "
 literal|"\"%s\" from the \"%s\" group.\n"
 literal|"\n"
-literal|"Click \"Delete Old Shortcut\" to "
-literal|"assign the shortcut anyway, "
-literal|"deleting %s's shortcut."
+literal|"Choose \"Reassign Shortcut\" to "
+literal|"reassign the shortcut, thereby removing "
+literal|"the shortcut from %s."
 argument_list|,
 name|accel_string
 argument_list|,
@@ -2007,7 +2007,7 @@ name|message
 argument_list|,
 name|_
 argument_list|(
-literal|"Delete Old Shortcut"
+literal|"_Resassign Shortcut"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_CANCEL
