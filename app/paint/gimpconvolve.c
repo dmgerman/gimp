@@ -138,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7507610103
+DECL|enum|__anon2a1cec230103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -764,6 +764,10 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 name|TempBuf
 modifier|*
 name|area
@@ -779,7 +783,13 @@ name|PixelRegion
 name|destPR
 decl_stmt|;
 name|gdouble
+name|opacity
+decl_stmt|;
+name|gdouble
 name|scale
+decl_stmt|;
+name|gdouble
+name|rate
 decl_stmt|;
 name|ConvolveClipType
 name|area_hclip
@@ -824,6 +834,9 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+operator|(
+name|gimage
+operator|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -831,9 +844,9 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
+operator|)
 condition|)
 return|return;
-comment|/*  If the image type is indexed, don't convolve  */
 if|if
 condition|(
 name|gimp_drawable_is_indexed
@@ -845,7 +858,6 @@ return|return;
 comment|/* If the brush is smaller than the convolution matrix, don't convolve */
 if|if
 condition|(
-operator|(
 name|paint_core
 operator|->
 name|brush
@@ -855,9 +867,7 @@ operator|->
 name|width
 operator|<
 name|matrix_size
-operator|)
 operator|||
-operator|(
 name|paint_core
 operator|->
 name|brush
@@ -867,7 +877,26 @@ operator|->
 name|height
 operator|<
 name|matrix_size
-operator|)
+condition|)
+return|return;
+name|opacity
+operator|=
+name|gimp_paint_options_get_fade
+argument_list|(
+name|paint_options
+argument_list|,
+name|gimage
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|opacity
+operator|==
+literal|0.0
 condition|)
 return|return;
 if|if
@@ -889,7 +918,6 @@ name|scale
 operator|=
 literal|1.0
 expr_stmt|;
-comment|/*  Get image region around current brush (mask bbox + 1 pixel)  */
 if|if
 condition|(
 operator|!
@@ -937,7 +965,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Configure the destination pixel region - a paint_core TempBuf */
+comment|/*  configure the destination pixel region  */
 name|destPR
 operator|.
 name|bytes
@@ -1001,20 +1029,20 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
+name|rate
+operator|=
+name|options
+operator|->
+name|rate
+expr_stmt|;
 if|if
 condition|(
 name|pressure_options
 operator|->
 name|rate
 condition|)
-name|options
-operator|->
 name|rate
-operator|=
-name|options
-operator|->
-name|rate
-operator|*
+operator|*=
 literal|2.0
 operator|*
 name|paint_core
@@ -1029,8 +1057,6 @@ name|options
 operator|->
 name|type
 argument_list|,
-name|options
-operator|->
 name|rate
 argument_list|)
 expr_stmt|;
@@ -1160,20 +1186,16 @@ name|area_vclip
 operator|=
 name|CONVOLVE_PCLIP
 expr_stmt|;
-comment|/* Has the TempBuf been clipped by a canvas edge or two ?        */
+comment|/*  Has the TempBuf been clipped by a canvas edge or two?  */
 if|if
 condition|(
-operator|(
 name|area_hclip
 operator|==
 name|CONVOLVE_NOT_CLIPPED
-operator|)
 operator|&&
-operator|(
 name|area_vclip
 operator|==
 name|CONVOLVE_NOT_CLIPPED
-operator|)
 condition|)
 block|{
 comment|/* No clipping...                                              */
@@ -1704,11 +1726,6 @@ argument_list|(
 operator|&
 name|ovrsz1PR
 argument_list|,
-operator|(
-specifier|const
-name|guchar
-operator|*
-operator|)
 name|fillcolor
 argument_list|)
 expr_stmt|;
@@ -1972,7 +1989,12 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
+name|MIN
+argument_list|(
+name|opacity
+argument_list|,
 name|GIMP_OPACITY_OPAQUE
+argument_list|)
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(

@@ -7027,7 +7027,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage -- It is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
@@ -7540,7 +7540,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the gimage--it is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
+comment|/*  Update the gimage -- It is important to call gimp_image_update    *  instead of drawable_update because we don't want the drawable    *  preview to be constantly invalidated    */
 name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM

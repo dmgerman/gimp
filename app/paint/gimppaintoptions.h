@@ -283,6 +283,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gdouble
+name|gimp_paint_options_get_fade
+parameter_list|(
+name|GimpPaintOptions
+modifier|*
+name|paint_options
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|gdouble
+name|pixel_dist
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpBrushApplicationMode
 name|gimp_paint_options_get_brush_mode
 parameter_list|(

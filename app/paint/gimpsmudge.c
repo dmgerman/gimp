@@ -418,12 +418,6 @@ argument_list|(
 name|smudge
 argument_list|)
 expr_stmt|;
-name|paint_core
-operator|->
-name|flags
-operator||=
-name|CORE_HANDLES_CHANGING_BRUSH
-expr_stmt|;
 name|smudge
 operator|->
 name|initialized
@@ -655,6 +649,10 @@ argument_list|(
 name|paint_core
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
 name|gimage
 operator|=
 name|gimp_item_get_image
@@ -664,8 +662,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-comment|/*  If the image type is indexed, don't smudge  */
+operator|)
+condition|)
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 name|gimp_drawable_is_indexed
@@ -676,6 +677,10 @@ condition|)
 return|return
 name|FALSE
 return|;
+if|if
+condition|(
+operator|!
+operator|(
 name|area
 operator|=
 name|gimp_paint_core_get_paint_area
@@ -686,11 +691,7 @@ name|drawable
 argument_list|,
 literal|1.0
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|area
+operator|)
 condition|)
 return|return
 name|FALSE
@@ -1219,6 +1220,10 @@ name|paint_options
 operator|->
 name|pressure_options
 expr_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
 name|gimage
 operator|=
 name|gimp_item_get_image
@@ -1228,14 +1233,35 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
-comment|/*  If the image type is indexed, don't smudge  */
+operator|)
+condition|)
+return|return;
 if|if
 condition|(
 name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
+condition|)
+return|return;
+name|opacity
+operator|=
+name|gimp_paint_options_get_fade
+argument_list|(
+name|paint_options
+argument_list|,
+name|gimage
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|opacity
+operator|==
+literal|0.0
 condition|)
 return|return;
 name|gimp_smudge_nonclipped_painthit_coords
@@ -1255,8 +1281,7 @@ operator|&
 name|h
 argument_list|)
 expr_stmt|;
-comment|/*  Get the paint area */
-comment|/*  Smudge won't scale!  */
+comment|/*  Get the paint area (Smudge won't scale!)  */
 if|if
 condition|(
 operator|!
@@ -1321,13 +1346,13 @@ name|rate
 operator|/
 literal|100.0
 operator|*
+literal|2.0
+operator|*
 name|paint_core
 operator|->
 name|cur_coords
 operator|.
 name|pressure
-operator|*
-literal|2.0
 argument_list|,
 literal|1.0
 argument_list|)
@@ -1612,13 +1637,6 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
-name|opacity
-operator|=
-name|gimp_context_get_opacity
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|pressure_options
@@ -1626,9 +1644,7 @@ operator|->
 name|opacity
 condition|)
 name|opacity
-operator|=
-name|opacity
-operator|*
+operator|*=
 literal|2.0
 operator|*
 name|paint_core
@@ -1637,7 +1653,7 @@ name|cur_coords
 operator|.
 name|pressure
 expr_stmt|;
-comment|/*Replace the newly made paint area to the gimage*/
+comment|/* Replace the newly made paint area to the gimage */
 name|gimp_paint_core_replace_canvas
 argument_list|(
 name|paint_core
@@ -1651,7 +1667,10 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|)
 argument_list|,
-name|GIMP_OPACITY_OPAQUE
+name|gimp_context_get_opacity
+argument_list|(
+name|context
+argument_list|)
 argument_list|,
 name|gimp_paint_options_get_brush_mode
 argument_list|(

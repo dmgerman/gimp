@@ -754,26 +754,32 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-comment|/*  If the image type is indexed, don't dodgeburn  */
 if|if
 condition|(
-operator|(
-name|gimp_drawable_type
+name|gimp_drawable_is_indexed
 argument_list|(
 name|drawable
 argument_list|)
-operator|==
-name|GIMP_INDEXED_IMAGE
-operator|)
-operator|||
-operator|(
-name|gimp_drawable_type
+condition|)
+return|return;
+name|opacity
+operator|=
+name|gimp_paint_options_get_fade
 argument_list|(
-name|drawable
+name|paint_options
+argument_list|,
+name|gimage
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|opacity
 operator|==
-name|GIMP_INDEXEDA_IMAGE
-operator|)
+literal|0.0
 condition|)
 return|return;
 if|if
@@ -1000,7 +1006,7 @@ name|orig
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* tempPR will hold the dodgeburned region*/
+comment|/* tempPR will hold the dodgeburned region */
 name|tempPR
 operator|.
 name|bytes
@@ -1146,7 +1152,7 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
-comment|/* Now add an alpha to the dodgeburned region      and put this in area = canvas_buf */
+comment|/* Now add an alpha to the dodgeburned region    * and put this in area = canvas_buf    */
 if|if
 condition|(
 operator|!
@@ -1174,13 +1180,6 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
-name|opacity
-operator|=
-name|gimp_context_get_opacity
-argument_list|(
-name|context
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|pressure_options
@@ -1188,9 +1187,7 @@ operator|->
 name|opacity
 condition|)
 name|opacity
-operator|=
-name|opacity
-operator|*
+operator|*=
 literal|2.0
 operator|*
 name|paint_core
@@ -1199,7 +1196,7 @@ name|cur_coords
 operator|.
 name|pressure
 expr_stmt|;
-comment|/* Replace the newly dodgedburned area (canvas_buf) to the gimage*/
+comment|/* Replace the newly dodgedburned area (canvas_buf) to the gimage */
 name|gimp_paint_core_replace_canvas
 argument_list|(
 name|paint_core
@@ -1213,7 +1210,10 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|)
 argument_list|,
-name|GIMP_OPACITY_OPAQUE
+name|gimp_context_get_opacity
+argument_list|(
+name|context
+argument_list|)
 argument_list|,
 name|gimp_paint_options_get_brush_mode
 argument_list|(
