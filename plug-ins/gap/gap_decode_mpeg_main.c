@@ -148,6 +148,33 @@ DECL|variable|gap_debug
 comment|/* ==0  ... dont print debug infos */
 end_comment
 
+begin_comment
+comment|/*  for i18n  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|dummy_entries
+specifier|static
+name|gchar
+name|G_GNUC_UNUSED
+modifier|*
+name|dummy_entries
+index|[]
+init|=
+block|{
+name|N_
+argument_list|(
+literal|"<Image>/Video/Split Video to Frames"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"<Toolbox>/Xtns/Split Video to Frames"
+argument_list|)
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 specifier|static
 name|void
