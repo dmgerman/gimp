@@ -121,7 +121,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e13b940103
+DECL|enum|__anon2b0e1efb0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e13b940208
+DECL|struct|__anon2b0e1efb0208
 block|{
 DECL|member|run
 name|gboolean
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e13b940308
+DECL|struct|__anon2b0e1efb0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -3363,12 +3363,6 @@ operator|)
 operator|*
 name|image_bpp
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|if (layer_alpha) 	    dest = dest_data + (col - syl) * stride + (row - sxl) * image_bpp; 	  else  	    dest = dest_data + (col - syl) * stride + (row - sxl) * image_bpp;
-endif|#
-directive|endif
 for|for
 control|(
 name|i
@@ -3485,6 +3479,9 @@ name|xv
 decl_stmt|,
 name|yv
 decl_stmt|;
+name|gboolean
+name|padding
+decl_stmt|;
 name|progress
 operator|=
 literal|0
@@ -3526,6 +3523,21 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+comment|/* If the source drawable doesn't have an alpha channel but the      destination drawable has (happens with animations), we need      to pad the alpha channel of the destination drawable.    */
+name|padding
+operator|=
+operator|(
+operator|!
+name|layer_alpha
+operator|&&
+name|gimp_drawable_has_alpha
+argument_list|(
+name|destdrawable
+operator|->
+name|drawable_id
+argument_list|)
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -3757,6 +3769,16 @@ name|i
 index|]
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|padding
+condition|)
+operator|*
+name|dest
+operator|++
+operator|=
+literal|255
+expr_stmt|;
 block|}
 name|dest_row
 operator|+=
