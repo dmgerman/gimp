@@ -1667,6 +1667,9 @@ case|:
 case|case
 name|BEZIER_SELECT
 case|:
+case|case
+name|ISCISSORS
+case|:
 break|break;
 case|case
 name|RECT_SELECT
@@ -1676,9 +1679,6 @@ name|ELLIPSE_SELECT
 case|:
 case|case
 name|FUZZY_SELECT
-case|:
-case|case
-name|ISCISSORS
 case|:
 case|case
 name|BY_COLOR_SELECT
