@@ -201,7 +201,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bcad5b0103
+DECL|enum|__anon27cf64cd0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -17060,7 +17060,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_premultiplied_double_row (PixelRegion * srcPR,int x,int y,int w,double * row,guchar * tmp_src,int n,int extra)
+DECL|function|get_premultiplied_double_row (PixelRegion * srcPR,int x,int y,int w,double * row,guchar * tmp_src,int n)
 name|get_premultiplied_double_row
 parameter_list|(
 name|PixelRegion
@@ -17086,9 +17086,6 @@ name|tmp_src
 parameter_list|,
 name|int
 name|n
-parameter_list|,
-name|int
-name|extra
 parameter_list|)
 block|{
 name|int
@@ -17247,7 +17244,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|extra
+literal|2
 operator|*
 name|bytes
 condition|;
@@ -17257,7 +17254,7 @@ control|)
 name|row
 index|[
 operator|-
-name|extra
+literal|2
 operator|*
 name|bytes
 operator|+
@@ -17283,7 +17280,7 @@ name|b
 operator|<
 name|bytes
 operator|*
-name|extra
+literal|2
 condition|;
 name|b
 operator|++
@@ -17871,7 +17868,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_scaled_row (void ** src,int y,int new_width,PixelRegion * srcPR,double * row,guchar * src_tmp,int extra_pixels)
+DECL|function|get_scaled_row (void ** src,int y,int new_width,PixelRegion * srcPR,double * row,guchar * src_tmp)
 name|get_scaled_row
 parameter_list|(
 name|void
@@ -17896,9 +17893,6 @@ parameter_list|,
 name|guchar
 modifier|*
 name|src_tmp
-parameter_list|,
-name|int
-name|extra_pixels
 parameter_list|)
 block|{
 comment|/* get the necesary lines from the source image, scale them,    and put them into src[] */
@@ -17928,23 +17922,6 @@ operator|->
 name|h
 condition|)
 block|{
-if|if
-condition|(
-name|new_width
-operator|==
-name|srcPR
-operator|->
-name|w
-condition|)
-comment|/* no scailing so load it straight to it's */
-name|row
-operator|=
-name|src
-index|[
-literal|3
-index|]
-expr_stmt|;
-comment|/* destination */
 name|get_premultiplied_double_row
 argument_list|(
 name|srcPR
@@ -17962,8 +17939,6 @@ argument_list|,
 name|src_tmp
 argument_list|,
 literal|1
-argument_list|,
-name|extra_pixels
 argument_list|)
 expr_stmt|;
 if|if
@@ -18027,6 +18002,29 @@ argument_list|,
 name|interpolation_type
 argument_list|)
 expr_stmt|;
+else|else
+comment|/* no scailing needed */
+name|memcpy
+argument_list|(
+name|src
+index|[
+literal|3
+index|]
+argument_list|,
+name|row
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|double
+argument_list|)
+operator|*
+name|new_width
+operator|*
+name|srcPR
+operator|->
+name|bytes
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 name|memcpy
@@ -18047,6 +18045,10 @@ name|double
 argument_list|)
 operator|*
 name|new_width
+operator|*
+name|srcPR
+operator|->
+name|bytes
 argument_list|)
 expr_stmt|;
 block|}
@@ -18352,8 +18354,6 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|new_y
@@ -18458,8 +18458,6 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 while|while
@@ -18520,8 +18518,6 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|max
@@ -18603,10 +18599,7 @@ condition|)
 block|{
 name|new_y
 operator|=
-operator|(
-call|(
-name|int
-call|)
+name|floor
 argument_list|(
 operator|(
 name|y
@@ -18615,12 +18608,7 @@ literal|0.5
 operator|)
 operator|*
 name|y_rat
-operator|+
-literal|2.0
 argument_list|)
-operator|)
-operator|-
-literal|2
 expr_stmt|;
 while|while
 condition|(
@@ -18654,8 +18642,6 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|old_y
@@ -18921,8 +18907,6 @@ argument_list|,
 name|row
 argument_list|,
 name|src_tmp
-argument_list|,
-literal|2
 argument_list|)
 expr_stmt|;
 name|memcpy
