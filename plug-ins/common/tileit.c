@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0cea460108
+DECL|struct|__anon277344a60108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -486,7 +486,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0cea460203
+DECL|enum|__anon277344a60203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -505,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0cea460308
+DECL|struct|__anon277344a60308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -575,7 +575,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0cea460408
+DECL|struct|__anon277344a60408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -958,7 +958,10 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -976,7 +979,18 @@ argument_list|,
 operator|&
 name|sel_y2
 argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Region selected for filter is empty."
+argument_list|)
+argument_list|)
 expr_stmt|;
+return|return;
+block|}
 name|sel_width
 operator|=
 name|sel_x2

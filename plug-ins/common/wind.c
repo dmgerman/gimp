@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276acb4c0103
+DECL|enum|__anon2b56ced00103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276acb4c0203
+DECL|enum|__anon2b56ced00203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -130,7 +130,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276acb4c0303
+DECL|enum|__anon2b56ced00303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -1193,15 +1193,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_progress_init
-argument_list|(
-name|_
-argument_list|(
-literal|"Rendering Blast..."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -1218,6 +1212,15 @@ name|x2
 argument_list|,
 operator|&
 name|y2
+argument_list|)
+condition|)
+block|{
+name|gimp_progress_init
+argument_list|(
+name|_
+argument_list|(
+literal|"Rendering Blast..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|width
@@ -1252,6 +1255,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+return|return;
 block|}
 name|gimp_pixel_rgn_init
 argument_list|(
@@ -1742,15 +1748,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_progress_init
-argument_list|(
-name|_
-argument_list|(
-literal|"Rendering Wind..."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -1767,6 +1767,15 @@ name|x2
 argument_list|,
 operator|&
 name|y2
+argument_list|)
+condition|)
+block|{
+name|gimp_progress_init
+argument_list|(
+name|_
+argument_list|(
+literal|"Rendering Wind..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|width
@@ -1801,6 +1810,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+return|return;
 block|}
 name|gimp_pixel_rgn_init
 argument_list|(

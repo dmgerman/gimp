@@ -201,7 +201,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e34e290103
+DECL|enum|__anon2c3c20210103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -226,7 +226,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e34e290203
+DECL|enum|__anon2c3c20210203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -275,7 +275,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e34e290303
+DECL|enum|__anon2c3c20210303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -291,7 +291,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e34e290403
+DECL|enum|__anon2c3c20210403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -301,7 +301,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e34e290503
+DECL|enum|__anon2c3c20210503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -354,7 +354,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290608
+DECL|struct|__anon2c3c20210608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290708
+DECL|struct|__anon2c3c20210708
 block|{
 DECL|member|numcol
 name|gshort
@@ -406,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290808
+DECL|struct|__anon2c3c20210808
 block|{
 DECL|member|majtype
 name|gint
@@ -501,7 +501,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290908
+DECL|struct|__anon2c3c20210908
 block|{
 DECL|member|type
 name|gshort
@@ -528,7 +528,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290a08
+DECL|struct|__anon2c3c20210a08
 block|{
 DECL|member|type
 name|gshort
@@ -569,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290b08
+DECL|struct|__anon2c3c20210b08
 block|{
 DECL|member|com
 name|common
@@ -594,7 +594,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290c08
+DECL|struct|__anon2c3c20210c08
 block|{
 DECL|member|com
 name|common
@@ -620,7 +620,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290d08
+DECL|struct|__anon2c3c20210d08
 block|{
 DECL|member|com
 name|common
@@ -643,7 +643,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290e08
+DECL|struct|__anon2c3c20210e08
 block|{
 DECL|member|com
 name|common
@@ -668,7 +668,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e290f08
+DECL|struct|__anon2c3c20210f08
 block|{
 DECL|member|com
 name|common
@@ -691,7 +691,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e291008
+DECL|struct|__anon2c3c20211008
 block|{
 DECL|member|com
 name|common
@@ -714,7 +714,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e34e291108
+DECL|struct|__anon2c3c20211108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -740,7 +740,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29e34e29120a
+DECL|union|__anon2c3c2021120a
 block|{
 DECL|member|com
 name|common
@@ -1056,7 +1056,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29e34e291308
+DECL|struct|__anon2c3c20211308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -17794,6 +17794,15 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|,
+name|w
+decl_stmt|,
+name|h
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -17852,6 +17861,39 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|,
+operator|&
+name|w
+argument_list|,
+operator|&
+name|h
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Region selected for plug-in is empty"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 switch|switch
 condition|(
 name|run_mode

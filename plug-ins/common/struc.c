@@ -40875,7 +40875,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292ef49a0103
+DECL|enum|__anon2c9b09a70103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40895,7 +40895,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292ef49a0208
+DECL|struct|__anon2c9b09a70208
 block|{
 DECL|member|direction
 name|gint
@@ -42109,7 +42109,10 @@ block|}
 else|else
 block|{
 comment|/* Get the input area. This is the bounding box of the selection in        *  the image (or the entire image if there is no selection). Only        *  operating on the input area is simply an optimization. It doesn't        *  need to be done for correct operation. (It simply makes it go        *  faster, since fewer pixels need to be operated on).        */
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -42127,7 +42130,8 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 comment|/* Get the size of the input image. (This will/must be the same        *  as the size of the output image.        */
 name|width
 operator|=

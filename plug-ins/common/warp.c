@@ -67,7 +67,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b170f390103
+DECL|enum|__anon291150aa0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -87,7 +87,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b170f390208
+DECL|struct|__anon291150aa0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1346,6 +1346,11 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+if|if
+condition|(
+name|map_x
+condition|)
+block|{
 name|image_ID
 operator|=
 name|gimp_drawable_get_image
@@ -1370,6 +1375,7 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|run_mode
@@ -3666,7 +3672,10 @@ name|pval
 decl_stmt|;
 comment|/* average pixel value of pixel& neighbors */
 comment|/* --------------------------------------- */
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -3684,7 +3693,8 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|width
 operator|=
 name|drawable
@@ -4756,7 +4766,10 @@ operator|)
 expr_stmt|;
 comment|/* multiply by magnitude map if so requested */
 comment|/* Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -4774,7 +4787,8 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 comment|/* Get the size of the input image. (This will/must be the same    *  as the size of the output image.    */
 name|width
 operator|=
@@ -6711,7 +6725,10 @@ argument_list|)
 expr_stmt|;
 comment|/* generate x,y differential images (arrays) */
 comment|/* Get selection area */
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|orig_draw
 operator|->
@@ -6729,7 +6746,8 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|width
 operator|=
 name|orig_draw
@@ -7202,6 +7220,9 @@ expr_stmt|;
 comment|/* Seed Pseudo Random Number Generator */
 comment|/* ================ Outer Loop calculation ================================ */
 comment|/* Get selection area */
+if|if
+condition|(
+operator|!
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|draw
@@ -7220,7 +7241,8 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|width
 operator|=
 name|draw

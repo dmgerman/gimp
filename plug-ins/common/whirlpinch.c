@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e44e10108
+DECL|struct|__anon2bd470bb0108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -598,7 +598,10 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -616,7 +619,18 @@ argument_list|,
 operator|&
 name|sel_y2
 argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Region affected by plug-in is empty"
+argument_list|)
+argument_list|)
 expr_stmt|;
+return|return;
+block|}
 comment|/* Set the tile cache size */
 name|gimp_tile_cache_ntiles
 argument_list|(
