@@ -4805,6 +4805,16 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_undo_stack_peek
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|redo_stack
+argument_list|)
+operator|&&
 name|GIMP_IS_UNDO_STACK
 argument_list|(
 name|undo

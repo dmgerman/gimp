@@ -3454,12 +3454,7 @@ condition|)
 block|{
 name|GimpLayerModeEffects
 name|mode
-decl_stmt|;
-name|mode
-operator|=
-operator|(
-name|GimpLayerModeEffects
-operator|)
+init|=
 name|GPOINTER_TO_INT
 argument_list|(
 name|g_object_get_data
@@ -3472,7 +3467,7 @@ argument_list|,
 literal|"gimp-item-data"
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimp_layer_get_mode
@@ -3504,6 +3499,14 @@ expr_stmt|;
 comment|/*  compress layer mode undos  */
 if|if
 condition|(
+operator|!
+name|gimp_undo_stack_peek
+argument_list|(
+name|gimage
+operator|->
+name|redo_stack
+argument_list|)
+operator|&&
 name|GIMP_IS_ITEM_UNDO
 argument_list|(
 name|undo
@@ -3706,15 +3709,13 @@ condition|)
 block|{
 name|gdouble
 name|opacity
-decl_stmt|;
-name|opacity
-operator|=
+init|=
 name|adjustment
 operator|->
 name|value
 operator|/
 literal|100.0
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimp_layer_get_opacity
@@ -3746,6 +3747,14 @@ expr_stmt|;
 comment|/*  compress opacity undos  */
 if|if
 condition|(
+operator|!
+name|gimp_undo_stack_peek
+argument_list|(
+name|gimage
+operator|->
+name|redo_stack
+argument_list|)
+operator|&&
 name|GIMP_IS_ITEM_UNDO
 argument_list|(
 name|undo
