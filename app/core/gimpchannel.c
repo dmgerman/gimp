@@ -6017,6 +6017,12 @@ argument_list|(
 name|lut
 argument_list|)
 expr_stmt|;
+name|mask
+operator|->
+name|bounds_known
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
