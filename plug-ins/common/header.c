@@ -211,7 +211,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Save>/Header"
+name|N_
+argument_list|(
+literal|"C source code header"
+argument_list|)
 argument_list|,
 literal|"INDEXED, RGB"
 argument_list|,
@@ -227,6 +230,20 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_header_save"
+argument_list|,
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_header_save"
+argument_list|,
+literal|"text/x-chdr"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

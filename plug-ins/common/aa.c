@@ -276,7 +276,10 @@ literal|"Tim Newsome<nuisance@cmu.edu>"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Save>/AA"
+name|N_
+argument_list|(
+literal|"ASCII art"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -294,11 +297,25 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_aa_save"
+argument_list|,
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_aa_save"
+argument_list|,
+literal|"text/plain"
+argument_list|)
+expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
 literal|"file_aa_save"
 argument_list|,
-literal|"ansi,txt,text"
+literal|"txt,ansi,text"
 argument_list|,
 literal|""
 argument_list|)

@@ -159,7 +159,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef196f0108
+DECL|struct|__anon291f603d0108
 block|{
 DECL|member|description
 name|gchar
@@ -455,7 +455,10 @@ literal|"Tim Newsome, Jens Lautenbacher, Sven Neumann"
 argument_list|,
 literal|"1997-2000"
 argument_list|,
-literal|"<Load>/GBR"
+name|N_
+argument_list|(
+literal|"GIMP brush"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -476,6 +479,31 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_gbr_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_gbr_load"
+argument_list|,
+literal|"image/x-gimp-gbr"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_gbr_load"
+argument_list|,
+literal|"gbr, gpb"
+argument_list|,
+literal|""
+argument_list|,
+literal|"20, string, GIMP"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_gbr_save"
@@ -490,7 +518,10 @@ literal|"Tim Newsome, Jens Lautenbacher, Sven Neumann"
 argument_list|,
 literal|"1997-2000"
 argument_list|,
-literal|"<Save>/GBR"
+name|N_
+argument_list|(
+literal|"GIMP brush"
+argument_list|)
 argument_list|,
 literal|"RGBA, GRAY"
 argument_list|,
@@ -508,15 +539,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_gbr_load"
+literal|"file_gbr_save"
 argument_list|,
-literal|"gbr, gpb"
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_gbr_save"
 argument_list|,
-literal|""
-argument_list|,
-literal|"20, string, GIMP"
+literal|"image/x-gimp-gbr"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -1949,7 +1983,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28ef196f020a
+DECL|union|__anon291f603d020a
 block|{
 DECL|member|u
 name|guint16

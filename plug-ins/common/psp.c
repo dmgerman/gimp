@@ -143,7 +143,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720103
+DECL|enum|__anon2c254eb20103
 typedef|typedef
 enum|enum
 block|{
@@ -207,7 +207,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720203
+DECL|enum|__anon2c254eb20203
 typedef|typedef
 enum|enum
 block|{
@@ -247,7 +247,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720303
+DECL|enum|__anon2c254eb20303
 typedef|typedef
 enum|enum
 block|{
@@ -279,7 +279,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720403
+DECL|enum|__anon2c254eb20403
 typedef|typedef
 enum|enum
 block|{
@@ -307,7 +307,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720503
+DECL|enum|__anon2c254eb20503
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720603
+DECL|enum|__anon2c254eb20603
 typedef|typedef
 enum|enum
 block|{
@@ -357,7 +357,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720703
+DECL|enum|__anon2c254eb20703
 typedef|typedef
 enum|enum
 block|{
@@ -393,7 +393,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720803
+DECL|enum|__anon2c254eb20803
 typedef|typedef
 enum|enum
 block|{
@@ -413,7 +413,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720903
+DECL|enum|__anon2c254eb20903
 typedef|typedef
 enum|enum
 block|{
@@ -461,7 +461,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720a03
+DECL|enum|__anon2c254eb20a03
 typedef|typedef
 enum|enum
 block|{
@@ -485,7 +485,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720b03
+DECL|enum|__anon2c254eb20b03
 typedef|typedef
 enum|enum
 block|{
@@ -546,7 +546,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon28f05e720c03
+DECL|enum|__anon2c254eb20c03
 typedef|typedef
 enum|enum
 block|{
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f05e720d08
+DECL|struct|__anon2c254eb20d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -771,7 +771,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f05e720e08
+DECL|struct|__anon2c254eb20e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -893,7 +893,10 @@ literal|"Tor Lillqvist"
 argument_list|,
 literal|"1999"
 argument_list|,
-literal|"<Load>/PSP"
+name|N_
+argument_list|(
+literal|"Paint Shop Pro image"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -914,7 +917,20 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
-comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_install_procedure ("file_psp_save",                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in " 			  "Paint Shop Pro's native PSP format. " 			  "Vector layers aren't handled. Saving isn't " 			  "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           "<Save>/PSP", 			  "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (save_args), 0,                           save_args, NULL); */
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_psp_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_psp_load"
+argument_list|,
+literal|"image/x-psp"
+argument_list|)
+expr_stmt|;
 name|gimp_register_magic_load_handler
 argument_list|(
 literal|"file_psp_load"
@@ -926,7 +942,7 @@ argument_list|,
 literal|"0,string,Paint\\040Shop\\040Pro\\040Image\\040File\n\032"
 argument_list|)
 expr_stmt|;
-comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_register_save_handler       ("file_psp_save",                                     "psp,tub",                                     ""); */
+comment|/* Removed until Saving is implemented -- njl195@zepler.org   gimp_install_procedure ("file_psp_save",                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in " 			  "Paint Shop Pro's native PSP format. " 			  "Vector layers aren't handled. Saving isn't " 			  "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           N_("Paint Shop Pro image"), 			  "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (save_args), 0,                           save_args, NULL);    gimp_plugin_menu_register ("file_psp_save", "<Save>");   gimp_register_save_handler ("file_psp_save",                               "psp,tub",                               ""); */
 block|}
 end_function
 

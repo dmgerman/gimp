@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bc9948b0108
+DECL|struct|__anon2bf963fd0108
 block|{
 DECL|member|spacing
 name|guint
@@ -226,7 +226,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc9948b0208
+DECL|struct|__anon2bf963fd0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -636,6 +636,69 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
+literal|"file_gih_load"
+argument_list|,
+literal|"loads images in GIMP brush pipe format"
+argument_list|,
+literal|"This plug-in loads a GIMP brush pipe as an image."
+argument_list|,
+literal|"Jens Lautenbacher, Sven Neumann"
+argument_list|,
+literal|"Jens Lautenbacher, Sven Neumann"
+argument_list|,
+literal|"2000"
+argument_list|,
+name|N_
+argument_list|(
+literal|"GIMP brush (animated)"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|gih_load_args
+argument_list|)
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|gih_load_return_vals
+argument_list|)
+argument_list|,
+name|gih_load_args
+argument_list|,
+name|gih_load_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_gih_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_gih_load"
+argument_list|,
+literal|"image/x-gimp-gih"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_gih_load"
+argument_list|,
+literal|"gih"
+argument_list|,
+literal|""
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
 literal|"file_gih_save"
 argument_list|,
 literal|"saves images in GIMP brush pipe format"
@@ -648,7 +711,10 @@ literal|"Tor Lillqvist"
 argument_list|,
 literal|"1999"
 argument_list|,
-literal|"<Save>/GIH"
+name|N_
+argument_list|(
+literal|"GIMP brush (animated)"
+argument_list|)
 argument_list|,
 literal|"RGBA, GRAYA"
 argument_list|,
@@ -666,39 +732,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_install_procedure
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_gih_load"
+literal|"file_gih_save"
 argument_list|,
-literal|"loads images in GIMP brush pipe format"
-argument_list|,
-literal|"This plug-in loads a GIMP brush pipe as an image."
-argument_list|,
-literal|"Jens Lautenbacher, Sven Neumann"
-argument_list|,
-literal|"Jens Lautenbacher, Sven Neumann"
-argument_list|,
-literal|"2000"
-argument_list|,
-literal|"<Load>/GIH"
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|gih_load_args
+literal|"<Save>"
 argument_list|)
-argument_list|,
-name|G_N_ELEMENTS
+expr_stmt|;
+name|gimp_register_file_handler_mime
 argument_list|(
-name|gih_load_return_vals
-argument_list|)
+literal|"file_gih_save"
 argument_list|,
-name|gih_load_args
-argument_list|,
-name|gih_load_return_vals
+literal|"image/x-gimp-gih"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
@@ -706,17 +751,6 @@ argument_list|(
 literal|"file_gih_save"
 argument_list|,
 literal|"gih"
-argument_list|,
-literal|""
-argument_list|)
-expr_stmt|;
-name|gimp_register_magic_load_handler
-argument_list|(
-literal|"file_gih_load"
-argument_list|,
-literal|"gih"
-argument_list|,
-literal|""
 argument_list|,
 literal|""
 argument_list|)

@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8f83130108
+DECL|struct|__anon2a2c4f2d0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -424,7 +424,10 @@ literal|"Daniel Dunbar"
 argument_list|,
 literal|"1998"
 argument_list|,
-literal|"<Save>/HTML"
+name|_
+argument_list|(
+literal|"HTML table"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -440,6 +443,20 @@ argument_list|,
 name|save_args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_gtm_save"
+argument_list|,
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_gtm_save"
+argument_list|,
+literal|"text/html"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler

@@ -85,7 +85,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf4c5260108
+DECL|struct|__anon2af30d460108
 block|{
 DECL|member|replace
 name|gint
@@ -510,7 +510,10 @@ literal|"Peter Kirchgessner (peter@kirchgessner.net)"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Load>/FITS"
+name|N_
+argument_list|(
+literal|"Flexible Image Transport System"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -531,6 +534,31 @@ argument_list|,
 name|load_return_vals
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+literal|"file_fits_load"
+argument_list|,
+literal|"<Load>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_fits_load"
+argument_list|,
+literal|"image/x-fits"
+argument_list|)
+expr_stmt|;
+name|gimp_register_magic_load_handler
+argument_list|(
+literal|"file_fits_load"
+argument_list|,
+literal|"fit,fits"
+argument_list|,
+literal|""
+argument_list|,
+literal|"0,string,SIMPLE"
+argument_list|)
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_fits_save"
@@ -545,7 +573,10 @@ literal|"Peter Kirchgessner (peter@kirchgessner.net)"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Save>/FITS"
+name|N_
+argument_list|(
+literal|"Flexible Image Transport System"
+argument_list|)
 argument_list|,
 literal|"RGB, GRAY, INDEXED"
 argument_list|,
@@ -563,16 +594,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Register file plugin by plugin name and handable extensions */
-name|gimp_register_magic_load_handler
+name|gimp_plugin_menu_register
 argument_list|(
-literal|"file_fits_load"
+literal|"file_fits_save"
 argument_list|,
-literal|"fit,fits"
+literal|"<Save>"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_fits_save"
 argument_list|,
-literal|""
-argument_list|,
-literal|"0,string,SIMPLE"
+literal|"image/x-fits"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
