@@ -5705,6 +5705,7 @@ block|{
 name|PDB_LAYER
 block|,
 literal|"layer"
+block|,
 literal|"The layer to merge down from"
 block|}
 block|,

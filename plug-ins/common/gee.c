@@ -738,10 +738,15 @@ name|GtkWidget
 modifier|*
 name|hbox2
 decl_stmt|;
+ifndef|#
+directive|ifndef
+name|RAPH_IS_HOME
 name|guchar
 modifier|*
 name|color_cube
 decl_stmt|;
+endif|#
+directive|endif
 name|argc
 operator|=
 literal|1

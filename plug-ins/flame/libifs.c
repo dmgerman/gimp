@@ -4874,6 +4874,8 @@ decl_stmt|;
 name|double
 modifier|*
 name|slot
+init|=
+name|NULL
 decl_stmt|,
 name|xf
 decl_stmt|,

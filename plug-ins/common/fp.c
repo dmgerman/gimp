@@ -808,6 +808,7 @@ name|M
 operator|!=
 name|m
 condition|)
+block|{
 if|if
 condition|(
 name|P
@@ -877,6 +878,7 @@ argument_list|,
 name|middle
 argument_list|)
 expr_stmt|;
+block|}
 name|P
 index|[
 literal|0

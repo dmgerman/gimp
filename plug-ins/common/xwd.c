@@ -49,12 +49,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -86,7 +80,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon294675e90108
+DECL|struct|__anon2ade43710108
 typedef|typedef
 struct|struct
 block|{
@@ -220,7 +214,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon294675e90208
+DECL|struct|__anon2ade43710208
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +272,7 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon294675e90308
+DECL|struct|__anon2ade43710308
 typedef|typedef
 struct|struct
 block|{
@@ -304,7 +298,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon294675e90408
+DECL|struct|__anon2ade43710408
 typedef|typedef
 struct|struct
 block|{

@@ -56,12 +56,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -986,7 +980,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon29a3415d0108
+DECL|struct|__anon28c0a19a0108
 specifier|static
 struct|struct
 block|{

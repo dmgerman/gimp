@@ -433,7 +433,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2bf77b070108
+DECL|struct|__anon28ee17ca0108
 struct|struct
 block|{
 DECL|member|randomize
@@ -798,6 +798,8 @@ decl_stmt|;
 name|GDrawable
 modifier|*
 name|drawable
+init|=
+name|NULL
 decl_stmt|;
 name|GRunModeType
 name|run_mode
@@ -3620,7 +3622,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2bf77b070208
+DECL|struct|__anon28ee17ca0208
 specifier|static
 struct|struct
 block|{

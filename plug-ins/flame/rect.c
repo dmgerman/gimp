@@ -1128,6 +1128,8 @@ decl_stmt|,
 name|t1
 decl_stmt|,
 name|shift
+init|=
+literal|0.0
 decl_stmt|,
 name|corner0
 decl_stmt|,

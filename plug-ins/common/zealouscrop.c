@@ -31,12 +31,6 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -565,11 +559,11 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
+name|gint8
 modifier|*
 name|killrows
 decl_stmt|;
-name|gboolean
+name|gint8
 modifier|*
 name|killcols
 decl_stmt|;
@@ -623,7 +617,7 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|gboolean
+name|gint8
 argument_list|)
 operator|*
 name|height
@@ -635,7 +629,7 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|gboolean
+name|gint8
 argument_list|)
 operator|*
 name|width
