@@ -122,6 +122,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-templates.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppropwidgets.h"
 end_include
 
@@ -197,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29317dd60103
+DECL|enum|__anon2c6080c90103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -222,7 +228,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29317dd60203
+DECL|enum|__anon2c6080c90203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -434,7 +440,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29317dd60303
+DECL|enum|__anon2c6080c90303
 block|{
 DECL|enumerator|TREE_ITEM_DO_NOTHING
 name|TREE_ITEM_DO_NOTHING
@@ -456,7 +462,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29317dd60408
+DECL|struct|__anon2c6080c90408
 block|{
 DECL|member|directory
 name|gboolean
@@ -975,7 +981,7 @@ parameter_list|)
 block|{
 specifier|static
 name|gint
-name|notebook_index
+name|index
 init|=
 name|GPL_PAGE
 decl_stmt|;
@@ -994,7 +1000,7 @@ expr_stmt|;
 block|}
 switch|switch
 condition|(
-name|notebook_index
+name|index
 condition|)
 block|{
 case|case
@@ -1004,12 +1010,12 @@ if|if
 condition|(
 name|oldgimp
 condition|)
-name|notebook_index
+name|index
 operator|=
 name|MIGRATION_PAGE
 expr_stmt|;
 else|else
-name|notebook_index
+name|index
 operator|=
 name|TREE_PAGE
 expr_stmt|;
@@ -1020,7 +1026,7 @@ argument_list|(
 name|notebook
 argument_list|)
 argument_list|,
-name|notebook_index
+name|index
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1032,7 +1038,7 @@ condition|(
 name|migrate
 condition|)
 block|{
-name|notebook_index
+name|index
 operator|=
 name|TREE_PAGE
 expr_stmt|;
@@ -1048,7 +1054,7 @@ name|notebook
 argument_list|)
 argument_list|,
 operator|++
-name|notebook_index
+name|index
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1064,7 +1070,7 @@ name|notebook
 argument_list|)
 argument_list|,
 operator|++
-name|notebook_index
+name|index
 argument_list|)
 expr_stmt|;
 comment|/*  Creating the directories can take some time on NFS, so inform        *  the user and set the buttons insensitive        */
@@ -1147,7 +1153,7 @@ literal|"Contact system administrator."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|notebook_index
+name|index
 operator|=
 name|TUNING_PAGE
 expr_stmt|;
@@ -1183,7 +1189,7 @@ name|notebook
 argument_list|)
 argument_list|,
 operator|++
-name|notebook_index
+name|index
 argument_list|)
 expr_stmt|;
 name|user_install_tuning
@@ -5288,6 +5294,9 @@ return|return
 name|FALSE
 return|;
 block|}
+name|gimp_templates_migrate
+argument_list|()
+expr_stmt|;
 return|return
 name|TRUE
 return|;
