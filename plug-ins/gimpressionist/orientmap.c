@@ -3121,7 +3121,10 @@ name|ebox
 argument_list|,
 name|_
 argument_list|(
-literal|"The vector-field. Left-click to move selected vector, Right-click to point it towards mouse, Middle-click to add a new vector."
+literal|"The vector-field. "
+literal|"Left-click to move selected vector, "
+literal|"Right-click to point it towards mouse, "
+literal|"Middle-click to add a new vector."
 argument_list|)
 argument_list|,
 name|NULL
@@ -3179,33 +3182,25 @@ argument_list|(
 name|tmpw
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_events
+name|gtk_widget_add_events
 argument_list|(
 name|ebox
 argument_list|,
 name|GDK_BUTTON_PRESS_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
+name|g_signal_connect
 argument_list|(
 name|ebox
-argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|mapclick
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_realize
-argument_list|(
-name|ebox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3271,19 +3266,16 @@ argument_list|(
 name|tmpw
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
+name|g_signal_connect
 argument_list|(
 name|vectprevbrightadjust
-argument_list|)
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|G_CALLBACK
+argument_list|(
 name|updatevectorprev
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
