@@ -4249,7 +4249,7 @@ block|}
 block|}
 comment|/*printf("tn: %d x %d -> ", w, h);fflush(stdout);*/
 return|return
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

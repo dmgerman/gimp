@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c36bd50103
+DECL|enum|__anon29627bad0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -4074,7 +4074,7 @@ argument_list|)
 expr_stmt|;
 name|tmpbuf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

@@ -282,7 +282,7 @@ begin_function_decl
 specifier|static
 name|TempBuf
 modifier|*
-name|gimp_image_preview
+name|gimp_image_get_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -301,7 +301,7 @@ begin_function_decl
 specifier|static
 name|TempBuf
 modifier|*
-name|gimp_image_preview_new
+name|gimp_image_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -749,7 +749,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b96023f0103
+DECL|enum|__anon2a0e69fa0103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -1177,15 +1177,15 @@ name|gimp_image_invalidate_preview
 expr_stmt|;
 name|viewable_class
 operator|->
-name|preview
+name|get_preview
 operator|=
-name|gimp_image_preview
+name|gimp_image_get_preview
 expr_stmt|;
 name|viewable_class
 operator|->
-name|preview_new
+name|get_new_preview
 operator|=
-name|gimp_image_preview_new
+name|gimp_image_get_new_preview
 expr_stmt|;
 name|klass
 operator|->
@@ -16193,8 +16193,8 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_image_preview (GimpViewable * viewable,gint width,gint height)
-name|gimp_image_preview
+DECL|function|gimp_image_get_preview (GimpViewable * viewable,gint width,gint height)
+name|gimp_image_get_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -16269,7 +16269,7 @@ name|gimage
 operator|->
 name|comp_preview
 operator|=
-name|gimp_image_preview_new
+name|gimp_image_get_new_preview
 argument_list|(
 name|viewable
 argument_list|,
@@ -16297,8 +16297,8 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_image_preview_new (GimpViewable * viewable,gint width,gint height)
-name|gimp_image_preview_new
+DECL|function|gimp_image_get_new_preview (GimpViewable * viewable,gint width,gint height)
+name|gimp_image_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -16794,7 +16794,7 @@ name|bytes
 expr_stmt|;
 name|layer_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -16900,7 +16900,7 @@ condition|)
 block|{
 name|mask_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

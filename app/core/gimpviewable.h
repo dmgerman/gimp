@@ -117,12 +117,12 @@ modifier|*
 name|viewable
 parameter_list|)
 function_decl|;
-DECL|member|preview
+DECL|member|get_preview
 name|TempBuf
 modifier|*
 function_decl|(
 modifier|*
-name|preview
+name|get_preview
 function_decl|)
 parameter_list|(
 name|GimpViewable
@@ -136,12 +136,12 @@ name|gint
 name|height
 parameter_list|)
 function_decl|;
-DECL|member|preview_new
+DECL|member|get_new_preview
 name|TempBuf
 modifier|*
 function_decl|(
 modifier|*
-name|preview_new
+name|get_new_preview
 function_decl|)
 parameter_list|(
 name|GimpViewable
@@ -182,7 +182,7 @@ end_function_decl
 begin_function_decl
 name|TempBuf
 modifier|*
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -200,7 +200,7 @@ end_function_decl
 begin_function_decl
 name|TempBuf
 modifier|*
-name|gimp_viewable_preview_new
+name|gimp_viewable_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*

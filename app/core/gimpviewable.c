@@ -41,16 +41,16 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3235aa0103
+DECL|enum|__anon2c7298110103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
 block|,
-DECL|enumerator|PREVIEW
-name|PREVIEW
+DECL|enumerator|GET_PREVIEW
+name|GET_PREVIEW
 block|,
-DECL|enumerator|PREVIEW_NEW
-name|PREVIEW_NEW
+DECL|enumerator|GET_NEW_PREVIEW
+name|GET_NEW_PREVIEW
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -244,12 +244,12 @@ argument_list|)
 expr_stmt|;
 name|viewable_signals
 index|[
-name|PREVIEW
+name|GET_PREVIEW
 index|]
 operator|=
 name|gtk_signal_new
 argument_list|(
-literal|"preview"
+literal|"get_preview"
 argument_list|,
 name|GTK_RUN_LAST
 argument_list|,
@@ -261,7 +261,7 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpViewableClass
 argument_list|,
-name|preview
+name|get_preview
 argument_list|)
 argument_list|,
 name|gimp_marshal_POINTER__INT_INT
@@ -279,12 +279,12 @@ argument_list|)
 expr_stmt|;
 name|viewable_signals
 index|[
-name|PREVIEW_NEW
+name|GET_NEW_PREVIEW
 index|]
 operator|=
 name|gtk_signal_new
 argument_list|(
-literal|"preview_new"
+literal|"get_new_preview"
 argument_list|,
 name|GTK_RUN_LAST
 argument_list|,
@@ -296,7 +296,7 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpViewableClass
 argument_list|,
-name|preview_new
+name|get_new_preview
 argument_list|)
 argument_list|,
 name|gimp_marshal_POINTER__INT_INT
@@ -329,13 +329,13 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|preview
+name|get_preview
 operator|=
 name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|preview_new
+name|get_new_preview
 operator|=
 name|NULL
 expr_stmt|;
@@ -397,8 +397,8 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_viewable_preview (GimpViewable * viewable,gint width,gint height)
-name|gimp_viewable_preview
+DECL|function|gimp_viewable_get_preview (GimpViewable * viewable,gint width,gint height)
+name|gimp_viewable_get_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -461,7 +461,7 @@ argument_list|)
 argument_list|,
 name|viewable_signals
 index|[
-name|PREVIEW
+name|GET_PREVIEW
 index|]
 argument_list|,
 name|width
@@ -532,7 +532,7 @@ argument_list|)
 argument_list|,
 name|viewable_signals
 index|[
-name|PREVIEW_NEW
+name|GET_NEW_PREVIEW
 index|]
 argument_list|,
 name|width
@@ -564,8 +564,8 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_viewable_preview_new (GimpViewable * viewable,gint width,gint height)
-name|gimp_viewable_preview_new
+DECL|function|gimp_viewable_get_new_preview (GimpViewable * viewable,gint width,gint height)
+name|gimp_viewable_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -628,7 +628,7 @@ argument_list|)
 argument_list|,
 name|viewable_signals
 index|[
-name|PREVIEW_NEW
+name|GET_NEW_PREVIEW
 index|]
 argument_list|,
 name|width
@@ -646,15 +646,24 @@ condition|)
 return|return
 name|temp_buf
 return|;
-name|temp_buf
-operator|=
-name|gimp_viewable_preview
+name|gtk_signal_emit
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|viewable
+argument_list|)
+argument_list|,
+name|viewable_signals
+index|[
+name|GET_PREVIEW
+index|]
 argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|,
+operator|&
+name|temp_buf
 argument_list|)
 expr_stmt|;
 if|if

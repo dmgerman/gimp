@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawablepreview.h"
+file|"gimpdrawable-preview.h"
 end_include
 
 begin_include
@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276093eb0103
+DECL|enum|__anon27ddc6440103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -458,9 +458,9 @@ name|gimp_drawable_invalidate_preview
 expr_stmt|;
 name|viewable_class
 operator|->
-name|preview
+name|get_preview
 operator|=
-name|gimp_drawable_preview
+name|gimp_drawable_get_preview
 expr_stmt|;
 name|klass
 operator|->

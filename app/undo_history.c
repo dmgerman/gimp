@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55f39c0108
+DECL|struct|__anon2adeb4c90108
 block|{
 DECL|member|gimage
 name|GImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b55f39c0208
+DECL|struct|__anon2adeb4c90208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1084,7 +1084,7 @@ condition|)
 block|{
 name|buf
 operator|=
-name|gimp_viewable_preview_new
+name|gimp_viewable_get_new_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

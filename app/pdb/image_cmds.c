@@ -8305,7 +8305,7 @@ name|dheight
 expr_stmt|;
 name|buf
 operator|=
-name|gimp_viewable_preview_new
+name|gimp_viewable_get_new_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

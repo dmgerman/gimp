@@ -10989,7 +10989,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcfcd6f0108
+DECL|struct|__anon27940d9d0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -13613,7 +13613,7 @@ name|LAYER_PREVIEW
 case|:
 name|preview_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -13643,7 +13643,7 @@ name|MASK_PREVIEW
 case|:
 name|preview_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

@@ -7029,7 +7029,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ea8e280108
+DECL|struct|__anon287caa0c0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -8841,7 +8841,7 @@ comment|/*  Preview is scaling up!  */
 block|{
 name|preview_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -8879,7 +8879,7 @@ else|else
 block|{
 name|preview_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -8954,7 +8954,7 @@ comment|/*  Preview is scaling up!  */
 block|{
 name|preview_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -8988,7 +8988,7 @@ else|else
 block|{
 name|preview_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

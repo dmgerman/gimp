@@ -1924,7 +1924,7 @@ argument_list|)
 expr_stmt|;
 name|preview_buf
 operator|=
-name|gimp_viewable_preview
+name|gimp_viewable_get_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

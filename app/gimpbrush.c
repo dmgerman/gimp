@@ -153,6 +153,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brush_scale.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushpipe.h"
 end_include
 
@@ -164,7 +170,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298dce4b0103
+DECL|enum|__anon2ba4456c0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -215,7 +221,7 @@ begin_function_decl
 specifier|static
 name|TempBuf
 modifier|*
-name|gimp_brush_preview_new
+name|gimp_brush_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -446,9 +452,9 @@ name|gimp_brush_destroy
 expr_stmt|;
 name|viewable_class
 operator|->
-name|preview_new
+name|get_new_preview
 operator|=
-name|gimp_brush_preview_new
+name|gimp_brush_get_new_preview
 expr_stmt|;
 name|klass
 operator|->
@@ -609,8 +615,8 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_preview_new (GimpViewable * viewable,gint width,gint height)
-name|gimp_brush_preview_new
+DECL|function|gimp_brush_get_new_preview (GimpViewable * viewable,gint width,gint height)
+name|gimp_brush_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*

@@ -198,7 +198,7 @@ begin_function_decl
 specifier|static
 name|TempBuf
 modifier|*
-name|gimp_pattern_preview_new
+name|gimp_pattern_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*
@@ -351,9 +351,9 @@ name|gimp_pattern_destroy
 expr_stmt|;
 name|viewable_class
 operator|->
-name|preview_new
+name|get_new_preview
 operator|=
-name|gimp_pattern_preview_new
+name|gimp_pattern_get_new_preview
 expr_stmt|;
 block|}
 end_function
@@ -452,8 +452,8 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_pattern_preview_new (GimpViewable * viewable,gint width,gint height)
-name|gimp_pattern_preview_new
+DECL|function|gimp_pattern_get_new_preview (GimpViewable * viewable,gint width,gint height)
+name|gimp_pattern_get_new_preview
 parameter_list|(
 name|GimpViewable
 modifier|*

@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f5f13c0103
+DECL|enum|__anon2772e4130103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -2188,7 +2188,7 @@ name|tmp
 decl_stmt|;
 name|tmp
 operator|=
-name|gimp_viewable_preview_new
+name|gimp_viewable_get_new_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -2225,7 +2225,7 @@ else|else
 block|{
 name|preview_buf
 operator|=
-name|gimp_viewable_preview_new
+name|gimp_viewable_get_new_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(

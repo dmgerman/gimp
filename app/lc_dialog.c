@@ -1736,7 +1736,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9eb3380108
+DECL|struct|__anon27b1e6ba0108
 block|{
 DECL|member|def
 name|GImage
@@ -1957,7 +1957,7 @@ name|tmp
 decl_stmt|;
 name|tmp
 operator|=
-name|gimp_viewable_preview_new
+name|gimp_viewable_get_new_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
@@ -1994,7 +1994,7 @@ else|else
 block|{
 name|buf
 operator|=
-name|gimp_viewable_preview_new
+name|gimp_viewable_get_new_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
