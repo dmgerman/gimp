@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon29f2af0a0103
+DECL|enum|__anon2b6ef9ec0103
 typedef|typedef
 enum|enum
 block|{
@@ -268,7 +268,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29f2af0a0208
+DECL|struct|__anon2b6ef9ec0208
 typedef|typedef
 struct|struct
 block|{
@@ -385,7 +385,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon29f2af0a0308
+DECL|struct|__anon2b6ef9ec0308
 typedef|typedef
 struct|struct
 block|{
@@ -1196,9 +1196,9 @@ literal|"Module DB"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|hbox
+name|vbox
 operator|=
-name|gtk_hbox_new
+name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
@@ -1209,7 +1209,7 @@ name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|hbox
+name|vbox
 argument_list|)
 argument_list|,
 literal|5
@@ -1227,7 +1227,7 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|hbox
+name|vbox
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1238,7 +1238,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|hbox
+name|vbox
 argument_list|)
 expr_stmt|;
 name|listbox
@@ -1266,7 +1266,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox
+name|vbox
 argument_list|)
 argument_list|,
 name|listbox
@@ -1346,36 +1346,6 @@ argument_list|(
 name|st
 operator|->
 name|list
-argument_list|)
-expr_stmt|;
-name|vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
 argument_list|)
 expr_stmt|;
 name|st
@@ -1702,7 +1672,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29f2af0a0408
+DECL|struct|__anon2b6ef9ec0408
 typedef|typedef
 struct|struct
 block|{
@@ -1717,7 +1687,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon29f2af0a0503
+DECL|enum|__anon2b6ef9ec0503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -4544,7 +4514,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29f2af0a0608
+DECL|struct|__anon2b6ef9ec0608
 typedef|typedef
 struct|struct
 block|{
