@@ -77,7 +77,7 @@ DECL|macro|GIMP_BINARY
 define|#
 directive|define
 name|GIMP_BINARY
-value|"gimp-1.3"
+value|"gimp-" GIMP_APP_VERSION
 end_define
 
 begin_decl_stmt
@@ -493,7 +493,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|start_new_gimp (GdkScreen * screen,const gchar * argv0,GString * file_list)
+DECL|function|start_new_gimp (GdkScreen * screen,const gchar * argv0,const gchar * startup_id,GString * file_list)
 name|start_new_gimp
 parameter_list|(
 name|GdkScreen
@@ -504,6 +504,11 @@ specifier|const
 name|gchar
 modifier|*
 name|argv0
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|startup_id
 parameter_list|,
 name|GString
 modifier|*
@@ -540,6 +545,19 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+if|if
+condition|(
+name|startup_id
+condition|)
+name|setenv
+argument_list|(
+literal|"DESKTOP_STARTUP_ID"
+argument_list|,
+name|startup_id
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|file_list
@@ -1023,6 +1041,17 @@ name|GdkWindow
 modifier|*
 name|gimp_window
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|startup_id
+decl_stmt|;
+name|gchar
+modifier|*
+name|desktop_startup_id
+init|=
+name|NULL
+decl_stmt|;
 name|GString
 modifier|*
 name|file_list
@@ -1042,6 +1071,35 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+comment|/* we save the startup_id before calling gtk_init()      because GTK+ will unset it  */
+name|startup_id
+operator|=
+name|g_getenv
+argument_list|(
+literal|"DESKTOP_STARTUP_ID"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|startup_id
+operator|&&
+operator|*
+name|startup_id
+condition|)
+name|desktop_startup_id
+operator|=
+name|g_strdup
+argument_list|(
+name|startup_id
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"%s\n"
+argument_list|,
+name|desktop_startup_id
+argument_list|)
+expr_stmt|;
 name|gtk_init
 argument_list|(
 operator|&
@@ -1334,6 +1392,8 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|desktop_startup_id
+argument_list|,
 name|file_list
 argument_list|)
 expr_stmt|;
@@ -1581,6 +1641,8 @@ index|[
 literal|0
 index|]
 argument_list|,
+name|desktop_startup_id
+argument_list|,
 name|file_list
 argument_list|)
 expr_stmt|;
@@ -1591,6 +1653,14 @@ name|file_list
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|desktop_startup_id
+argument_list|)
+expr_stmt|;
+name|gdk_notify_startup_complete
+argument_list|()
 expr_stmt|;
 return|return
 name|EXIT_SUCCESS
