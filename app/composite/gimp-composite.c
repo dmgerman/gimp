@@ -63,7 +63,7 @@ block|,
 comment|/* GIMP_PIXELFORMAT_RGBA8   */
 if|#
 directive|if
-name|GIMP_16BITCOLOR
+name|GIMP_COMPOSITE_16BIT
 literal|2
 block|,
 comment|/* GIMP_PIXELFORMAT_V16     */
@@ -76,6 +76,23 @@ comment|/* GIMP_PIXELFORMAT_RGB16   */
 literal|8
 block|,
 comment|/* GIMP_PIXELFORMAT_RGBA16  */
+endif|#
+directive|endif
+if|#
+directive|if
+name|GIMP_COMPOSITE_32BIT
+literal|2
+block|,
+comment|/* GIMP_PIXELFORMAT_V32     */
+literal|4
+block|,
+comment|/* GIMP_PIXELFORMAT_VA32    */
+literal|6
+block|,
+comment|/* GIMP_PIXELFORMAT_RGB32   */
+literal|8
+block|,
+comment|/* GIMP_PIXELFORMAT_RGBA32  */
 endif|#
 directive|endif
 literal|0
@@ -104,7 +121,7 @@ literal|"GIMP_PIXELFORMAT_RGBA8"
 block|,
 if|#
 directive|if
-name|GIMP_16BITCOLOR
+name|GIMP_COMPOSITE_16BIT
 literal|"GIMP_PIXELFORMAT_V16"
 block|,
 literal|"GIMP_PIXELFORMAT_VA16"
@@ -112,6 +129,19 @@ block|,
 literal|"GIMP_PIXELFORMAT_RGB16 "
 block|,
 literal|"GIMP_PIXELFORMAT_RGBA16 "
+block|,
+endif|#
+directive|endif
+if|#
+directive|if
+name|GIMP_COMPOSITE_32BIT
+literal|"GIMP_PIXELFORMAT_V32"
+block|,
+literal|"GIMP_PIXELFORMAT_VA32"
+block|,
+literal|"GIMP_PIXELFORMAT_RGB32 "
+block|,
+literal|"GIMP_PIXELFORMAT_RGBA32 "
 block|,
 endif|#
 directive|endif
@@ -146,7 +176,7 @@ block|,
 comment|/* GIMP_PIXELFORMAT_RGBA8   */
 if|#
 directive|if
-name|GIMP_16BITCOLOR
+name|GIMP_COMPOSITE_16BIT
 literal|0
 block|,
 comment|/* GIMP_PIXELFORMAT_V16     */
@@ -159,6 +189,23 @@ comment|/* GIMP_PIXELFORMAT_RGB16   */
 literal|1
 block|,
 comment|/* GIMP_PIXELFORMAT_RGBA16  */
+endif|#
+directive|endif
+if|#
+directive|if
+name|GIMP_COMPOSITE_32BIT
+literal|0
+block|,
+comment|/* GIMP_PIXELFORMAT_V32     */
+literal|1
+block|,
+comment|/* GIMP_PIXELFORMAT_VA32    */
+literal|0
+block|,
+comment|/* GIMP_PIXELFORMAT_RGB32   */
+literal|1
+block|,
+comment|/* GIMP_PIXELFORMAT_RGBA32  */
 endif|#
 directive|endif
 literal|0
@@ -194,7 +241,7 @@ block|,
 comment|/* GIMP_PIXELFORMAT_RGBA8   */
 if|#
 directive|if
-name|GIMP_16BITCOLOR
+name|GIMP_COMPOSITE_16BIT
 name|GIMP_PIXELFORMAT_VA16
 block|,
 name|GIMP_PIXELFORMAT_V16
@@ -202,6 +249,18 @@ block|,
 name|GIMP_PIXELFORMAT_RGBA16
 block|,
 name|GIMP_PIXELFORMAT_RGB16
+endif|#
+directive|endif
+if|#
+directive|if
+name|GIMP_COMPOSITE_32BIT
+name|GIMP_PIXELFORMAT_VA32
+block|,
+name|GIMP_PIXELFORMAT_V32
+block|,
+name|GIMP_PIXELFORMAT_RGBA32
+block|,
+name|GIMP_PIXELFORMAT_RGB32
 endif|#
 directive|endif
 name|GIMP_PIXELFORMAT_ANY
@@ -511,7 +570,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon2b62bb500108
+DECL|struct|__anon27928ee80108
 struct|struct
 block|{
 DECL|member|announce_function
@@ -523,10 +582,6 @@ block|}
 name|gimp_composite_debug
 struct|;
 end_struct
-
-begin_comment
-comment|/*#include "gimp-composite-dispatch.c"*/
-end_comment
 
 begin_decl_stmt
 specifier|extern
@@ -742,6 +797,14 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_decl_stmt
+DECL|variable|gimp_composite_options
+name|struct
+name|GimpCompositeOptions
+name|gimp_composite_options
+decl_stmt|;
+end_decl_stmt
 
 end_unit
 

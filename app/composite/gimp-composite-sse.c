@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Much of the content of this file are derivative works of David  * Monniaux which are Copyright (C) 1999, 2001 David Monniaux  * Tip-o-the-hat to David for pioneering this effort.  *  * All of these functions use the mmx registers and expect them to  * remain intact across multiple asm() constructs.  This may not work  * in the future, if the compiler allocates mmx registers for it's own  * use. XXX  */
+comment|/* Much of the content of this file are derivative works of David  * Monniaux which are Copyright (C) 1999, 2001 David Monniaux  * Tip-o-the-hat to David for pioneering this effort.  *  * All of these functions use the mmx and sse registers and expect  * them to remain intact across multiple asm() constructs.  This may  * not work in the future, if the compiler allocates mmx/sse registers  * for it's own use. XXX  */
 end_comment
 
 begin_include
@@ -46,14 +46,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-composite-mmx.h"
+file|"gimp-composite-sse.h"
 end_include
-
-begin_undef
-undef|#
-directive|undef
-name|USE_SSE
-end_undef
 
 begin_ifdef
 ifdef|#
@@ -130,10 +124,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_comment
-comment|/*  *  "\t" pdivwX(mm4,mm5,mm7) "\n"  * "\tpsrlq     $32,%%mm4\n"  * "\tpsrlq     $32,%%mm5\n"  * "\t" pdivwX(mm4,mm5,mm5) "\n"  * "\tpsllq     $32,%%mm5\n"  * "\tpor       %%mm5,%%mm7\n"  */
-end_comment
 
 begin_comment
 comment|/*  * Clobbers eax, ecx edx  */
@@ -220,142 +210,6 @@ parameter_list|)
 define|\
 value|"\tpmullw    %%"#opr2", %%"#opr1"; " \                   "\tpaddw     %%"#w128", %%"#opr1"; " \                   "\tmovq      %%"#opr1", %%"#opr2"; " \                   "\tpsrlw     $8,        %%"#opr2"; " \                   "\tpaddw     %%"#opr1", %%"#opr2"; " \                   "\tpsrlw     $8,        %%"#opr2"\n"
 end_define
-
-begin_define
-DECL|macro|ASM (x)
-define|#
-directive|define
-name|ASM
-parameter_list|(
-name|x
-parameter_list|)
-value|debug(#x); asm(x)
-end_define
-
-begin_define
-DECL|macro|DEBUG (x)
-define|#
-directive|define
-name|DEBUG
-parameter_list|(
-name|x
-parameter_list|)
-end_define
-
-begin_function
-name|void
-DECL|function|debug_display_mmx ()
-name|debug_display_mmx
-parameter_list|()
-block|{
-DECL|macro|mask32 (x)
-define|#
-directive|define
-name|mask32
-parameter_list|(
-name|x
-parameter_list|)
-value|((x)& (unsigned long long) 0xFFFFFFFF)
-DECL|macro|print64 (reg)
-define|#
-directive|define
-name|print64
-parameter_list|(
-name|reg
-parameter_list|)
-value|{ unsigned long long reg; asm("movq %%" #reg ",%0" : "=m" (reg)); printf(#reg"=%08llx %08llx", mask32(reg>>32), mask32(reg)); }
-name|printf
-argument_list|(
-literal|"--------------------------------------------\n"
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm0
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm1
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm2
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm3
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm4
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm5
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm6
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"  "
-argument_list|)
-expr_stmt|;
-name|print64
-argument_list|(
-name|mm7
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"--------------------------------------------\n"
-argument_list|)
-expr_stmt|;
-block|}
-end_function
 
 begin_decl_stmt
 DECL|variable|rgba8_alpha_mask
@@ -550,8 +404,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_composite_addition_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_addition_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_addition_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_addition_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -607,9 +461,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_composite_burn_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
+DECL|function|gimp_composite_burn_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
 name|void
-name|gimp_composite_burn_rgba8_rgba8_rgba8_mmx
+name|gimp_composite_burn_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -704,8 +558,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_coloronly_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|xxxgimp_composite_coloronly_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_coloronly_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|xxxgimp_composite_coloronly_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -760,8 +614,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_darken_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_darken_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_darken_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_darken_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -813,8 +667,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_difference_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_difference_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_difference_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_difference_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -867,8 +721,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_dissolve_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|xxxgimp_composite_dissolve_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_dissolve_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|xxxgimp_composite_dissolve_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -923,8 +777,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_divide_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_divide_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_divide_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_divide_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1009,8 +863,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_composite_dodge_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_dodge_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_dodge_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_dodge_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1064,8 +918,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_grain_extract_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_grain_extract_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_grain_extract_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_grain_extract_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1122,8 +976,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_grain_merge_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_grain_merge_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_grain_merge_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_grain_merge_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1180,8 +1034,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_hardlight_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|xxxgimp_composite_hardlight_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_hardlight_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|xxxgimp_composite_hardlight_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1224,8 +1078,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_hueonly_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|xxxgimp_composite_hueonly_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_hueonly_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|xxxgimp_composite_hueonly_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1268,8 +1122,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_lighten_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_lighten_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_lighten_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_lighten_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1324,8 +1178,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_multiply_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_multiply_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_multiply_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_multiply_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1488,8 +1342,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_overlay_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_overlay_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_overlay_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_overlay_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1544,8 +1398,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_saturationonly_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|xxxgimp_composite_saturationonly_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_saturationonly_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|xxxgimp_composite_saturationonly_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1600,8 +1454,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_scale_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_scale_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_scale_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_scale_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1660,8 +1514,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_screen_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_screen_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_screen_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_screen_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1718,8 +1572,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|xxxgimp_composite_softlight_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|xxxgimp_composite_softlight_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_softlight_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|xxxgimp_composite_softlight_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1774,8 +1628,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_subtract_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_subtract_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_subtract_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_subtract_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1830,8 +1684,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_swap_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_swap_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_swap_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_swap_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1885,8 +1739,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_valueonly_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_valueonly_rgba8_rgba8_rgba8_mmx
+DECL|function|gimp_composite_valueonly_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|gimp_composite_valueonly_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -1980,7 +1834,7 @@ literal|0
 end_if
 
 begin_comment
-unit|void gimp_composite_addition_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");    asm("subl $ 4, %ecx");   asm("jl .add_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".add_pixels_1a_1a_loop:");    asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .add_pixels_1a_1a_loop");    asm(".add_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .add_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".add_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .add_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".add_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_burn_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("movq   %0,%%mm1"       :       : "m" (va8_alpha_mask)       : "%mm1");    for (; op.n_pixels>= 4; op.n_pixels -= 4) {     asm volatile ("  movq      (%0),%%mm0; addl $8,%0\n"                   "\tmovq      (%1),%%mm1; addl $8,%1\n"                    "\tmovq      %3,%%mm2\n"                   "\tpsubb     %%mm0,%%mm2\n"
+unit|void gimp_composite_addition_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");    asm("subl $ 4, %ecx");   asm("jl .add_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".add_pixels_1a_1a_loop:");    asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .add_pixels_1a_1a_loop");    asm(".add_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .add_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".add_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .add_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("paddusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".add_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_burn_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("movq   %0,%%mm1"       :       : "m" (va8_alpha_mask)       : "%mm1");    for (; op.n_pixels>= 4; op.n_pixels -= 4) {     asm volatile ("  movq      (%0),%%mm0; addl $8,%0\n"                   "\tmovq      (%1),%%mm1; addl $8,%1\n"                    "\tmovq      %3,%%mm2\n"                   "\tpsubb     %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
 end_comment
 
@@ -2085,7 +1939,7 @@ comment|/* empty */
 end_comment
 
 begin_endif
-unit|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (va8_b255), "m" (va8_w1), "m" (va8_w255), "m" (va8_alpha_mask)                   : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");   }    asm("emms"); }  void xxxgimp_composite_coloronly_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void gimp_composite_darken_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .darken_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".darken_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .darken_pixels_1a_1a_loop");    asm(".darken_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .darken_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".darken_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .darken_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".darken_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_difference_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .difference_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".difference_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .difference_pixels_1a_1a_loop");    asm(".difference_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .difference_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".difference_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .difference_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".difference_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_dissolve_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_divide_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_dodge_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_grainextract_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_grainmerge_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_hardlight_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_hueonly_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_lighten_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .lighten_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".lighten_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .lighten_pixels_1a_1a_loop");    asm(".lighten_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .lighten_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".lighten_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .lighten_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".lighten_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_multiply_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .multiply_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".multiply_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .multiply_pixels_1a_1a_loop");    asm(".multiply_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .multiply_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".multiply_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .multiply_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".multiply_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_overlay_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .overlay_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".overlay_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");   asm("call op_overlay");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .overlay_pixels_1a_1a_loop");    asm(".overlay_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .overlay_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");   asm("call op_overlay");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".overlay_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .overlay_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");   asm("call op_overlay");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".overlay_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_replace_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_saturationonly_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_screen_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .screen_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".screen_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .screen_pixels_1a_1a_loop");    asm(".screen_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .screen_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".screen_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .screen_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".screen_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_softlight_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_subtract_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .substract_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".substract_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .substract_pixels_1a_1a_loop");    asm(".substract_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .substract_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".substract_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .substract_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".substract_pixels_1a_1a_end:");   asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_swap_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_valueonly_va8_va8_va8_mmx(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }
+unit|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (va8_b255), "m" (va8_w1), "m" (va8_w255), "m" (va8_alpha_mask)                   : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");   }    asm("emms"); }  void xxxgimp_composite_coloronly_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void gimp_composite_darken_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .darken_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".darken_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .darken_pixels_1a_1a_loop");    asm(".darken_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .darken_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".darken_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .darken_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("movq %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".darken_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_difference_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .difference_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".difference_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .difference_pixels_1a_1a_loop");    asm(".difference_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .difference_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".difference_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .difference_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("movq %mm3, %mm5");   asm("psubusb %mm3, %mm4");   asm("psubusb %mm2, %mm5");   asm("movq %mm0, %mm1");   asm("paddb %mm5, %mm4");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".difference_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_dissolve_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_divide_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_dodge_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_grainextract_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_grainmerge_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_hardlight_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_hueonly_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_lighten_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .lighten_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".lighten_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .lighten_pixels_1a_1a_loop");    asm(".lighten_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .lighten_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".lighten_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .lighten_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("paddb %mm4, %mm3");   asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".lighten_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_multiply_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .multiply_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".multiply_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .multiply_pixels_1a_1a_loop");    asm(".multiply_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .multiply_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".multiply_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .multiply_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");     asm("movq %mm2, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm3, %mm5");   asm("punpcklbw %mm6, %mm5");   asm("pmullw %mm5, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm2, %mm4");   asm("punpckhbw %mm6, %mm4");   asm("movq %mm3, %mm5");   asm("punpckhbw %mm6, %mm5");   asm("pmullw %mm5, %mm4");   asm("paddw %mm7, %mm4");   asm("movq %mm4, %mm5");   asm("psrlw $ 8, %mm5");   asm("paddw %mm5, %mm4");   asm("psrlw $ 8, %mm4");    asm("packuswb %mm4, %mm1");    asm("movq %mm0, %mm4");   asm("pandn %mm1, %mm4");   asm("movq %mm4, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".multiply_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void gimp_composite_overlay_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .overlay_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".overlay_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");   asm("call op_overlay");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .overlay_pixels_1a_1a_loop");    asm(".overlay_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .overlay_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");   asm("call op_overlay");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".overlay_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .overlay_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");   asm("call op_overlay");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".overlay_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_replace_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_saturationonly_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_screen_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .screen_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".screen_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .screen_pixels_1a_1a_loop");    asm(".screen_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .screen_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".screen_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .screen_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");     asm("pcmpeqb %mm4, %mm4");   asm("psubb %mm2, %mm4");   asm("pcmpeqb %mm5, %mm5");   asm("psubb %mm3, %mm5");    asm("movq %mm4, %mm1");   asm("punpcklbw %mm6, %mm1");   asm("movq %mm5, %mm3");   asm("punpcklbw %mm6, %mm3");   asm("pmullw %mm3, %mm1");   asm("paddw %mm7, %mm1");   asm("movq %mm1, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm1");   asm("psrlw $ 8, %mm1");    asm("movq %mm4, %mm2");   asm("punpckhbw %mm6, %mm2");   asm("movq %mm5, %mm3");   asm("punpckhbw %mm6, %mm3");   asm("pmullw %mm3, %mm2");   asm("paddw %mm7, %mm2");   asm("movq %mm2, %mm3");   asm("psrlw $ 8, %mm3");   asm("paddw %mm3, %mm2");   asm("psrlw $ 8, %mm2");    asm("packuswb %mm2, %mm1");    asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm1, %mm3");    asm("movq %mm0, %mm1");   asm("pandn %mm3, %mm1");    asm("movq %mm2, %mm4");   asm("psubusb %mm5, %mm2");   asm("paddb %mm2, %mm5");   asm("pcmpeqb %mm3, %mm3");   asm("psubb %mm5, %mm3");    asm("pand %mm0, %mm3");   asm("por %mm3, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".screen_pixels_1a_1a_end:");    asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_softlight_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_subtract_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;    asm("pushl %edi");   asm("pushl %ebx");   asm("movl 12(%esp), %edi");   asm("movq v8_alpha_mask, %mm0");   asm("subl $ 4, %ecx");   asm("jl .substract_pixels_1a_1a_last3");   asm("movl $ 8, %ebx");   asm(".substract_pixels_1a_1a_loop:");   asm("movq (%eax), %mm2");   asm("movq (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movq %mm1, (%edi)");   asm("addl %ebx, %eax");   asm("addl %ebx, %edx");   asm("addl %ebx, %edi");   asm("subl $ 4, %ecx");   asm("jge .substract_pixels_1a_1a_loop");    asm(".substract_pixels_1a_1a_last3:");   asm("test $ 2, %ecx");   asm("jz .substract_pixels_1a_1a_last1");   asm("movd (%eax), %mm2");   asm("movd (%edx), %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("addl $ 4, %eax");   asm("addl $ 4, %edx");   asm("addl $ 4, %edi");    asm(".substract_pixels_1a_1a_last1:");   asm("test $ 1, %ecx");   asm("jz .substract_pixels_1a_1a_end");    asm("movw (%eax), %bx");   asm("movd %ebx, %mm2");   asm("movw (%edx), %bx");   asm("movd %ebx, %mm3");    asm("movq %mm2, %mm4");   asm("psubusb %mm3, %mm4");   asm("movq %mm0, %mm1");   asm("pandn %mm4, %mm1");   asm("psubb %mm4, %mm2");   asm("pand %mm0, %mm2");   asm("por %mm2, %mm1");   asm("movd %mm1, %ebx");   asm("movw %bx, (%edi)");    asm(".substract_pixels_1a_1a_end:");   asm("emms");   asm("popl %ebx");   asm("popl %edi"); }  void xxxgimp_composite_swap_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }  void xxxgimp_composite_valueonly_va8_va8_va8_sse(GimpCompositeContext *_op) {   GimpCompositeContext op = *_op;  }
 endif|#
 directive|endif
 end_endif
@@ -2096,13 +1950,13 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* USE_MMX */
+comment|/* USE_SSE */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_composite_mmx_init ()
-name|gimp_composite_mmx_init
+DECL|function|gimp_composite_sse_init ()
+name|gimp_composite_sse_init
 parameter_list|()
 block|{  }
 end_function
