@@ -112,37 +112,43 @@ DECL|member|parent_instance
 name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
+DECL|member|sx
+DECL|member|sy
+name|gint
+name|sx
+decl_stmt|,
+name|sy
+decl_stmt|;
+comment|/*  start coordinate where the button is                                    *  first pressed  */
 DECL|member|x
 DECL|member|y
-name|gdouble
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/*  upper left hand coordinate  */
+comment|/*  upper left coordinate of selection  */
 DECL|member|w
 DECL|member|h
-name|gdouble
+name|gint
 name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-comment|/*  width and height  */
+comment|/*  width, height of selection always>=0  */
+DECL|member|lx
+DECL|member|ly
+name|gint
+name|lx
+decl_stmt|,
+name|ly
+decl_stmt|;
+comment|/*  last coordinate of mouse cursor  */
 DECL|member|center
 name|gboolean
 name|center
 decl_stmt|;
 comment|/*  is the selection being created from the                                    *  center out?  */
-DECL|member|moved
-name|gboolean
-name|moved
-decl_stmt|;
-comment|/*  ever moved since button press?  */
-DECL|member|last_coords
-name|GimpCoords
-name|last_coords
-decl_stmt|;
-comment|/*  last button_press/motion coords  */
 DECL|member|fixed_mode
 name|GimpRectSelectMode
 name|fixed_mode
@@ -239,45 +245,6 @@ name|w
 parameter_list|,
 name|gint
 name|h
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_rect_select_tool_coords_to_integer
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|,
-name|gdouble
-name|x
-parameter_list|,
-name|gdouble
-name|y
-parameter_list|,
-name|gdouble
-name|w
-parameter_list|,
-name|gdouble
-name|h
-parameter_list|,
-name|gint
-modifier|*
-name|ix
-parameter_list|,
-name|gint
-modifier|*
-name|iy
-parameter_list|,
-name|gint
-modifier|*
-name|iw
-parameter_list|,
-name|gint
-modifier|*
-name|ih
 parameter_list|)
 function_decl|;
 end_function_decl
