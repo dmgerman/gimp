@@ -34,7 +34,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdc4ecf0103
+DECL|enum|__anon291a1b790103
 block|{
 DECL|enumerator|URI_UNKNOWN
 name|URI_UNKNOWN
@@ -475,18 +475,10 @@ name|base_type
 operator|!=
 name|URI_ABSURI
 condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"base uri is not absolute: '%s'\n"
-argument_list|,
-name|base_uri
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;
-block|}
+comment|/*  neither uri nor base uri are absolute  */
 block|}
 comment|/* find missing parts in base URI */
 switch|switch

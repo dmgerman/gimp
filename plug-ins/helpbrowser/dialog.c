@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c6f520103
+DECL|enum|__anon2949028e0103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c6f520203
+DECL|enum|__anon2949028e0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1306,13 +1306,12 @@ argument_list|,
 name|current_ref
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|abs
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|anchor
 operator|=
 name|strchr
