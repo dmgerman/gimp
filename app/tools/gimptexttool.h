@@ -123,11 +123,6 @@ DECL|member|offset_y
 name|gint
 name|offset_y
 decl_stmt|;
-DECL|member|gdisp
-name|GimpDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
 DECL|member|text
 name|GimpText
 modifier|*
