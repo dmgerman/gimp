@@ -1355,7 +1355,7 @@ directive|endif
 if|#
 directive|if
 literal|0
-block|FIXME            core->src_drawable = src_drawable;       core->src_x        = srx_x;       core->src_y        = src_y;
+block|FIXME        core->src_drawable = src_drawable;       core->src_x        = srx_x;       core->src_y        = src_y;
 endif|#
 directive|endif
 name|success
