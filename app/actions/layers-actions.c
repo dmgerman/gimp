@@ -1482,6 +1482,11 @@ name|FALSE
 decl_stmt|;
 comment|/*  active channel         */
 name|gboolean
+name|sel
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|alpha
 init|=
 name|FALSE
@@ -1584,6 +1589,17 @@ argument_list|)
 operator|!=
 name|NULL
 operator|)
+expr_stmt|;
+name|sel
+operator|=
+operator|!
+name|gimp_channel_is_empty
+argument_list|(
+name|gimp_image_get_mask
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|alpha
 operator|=
@@ -2002,6 +2018,15 @@ name|layer
 operator|&&
 operator|!
 name|ac
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"layers-crop"
+argument_list|,
+name|layer
+operator|&&
+name|sel
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
