@@ -60902,7 +60902,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1e8f10108
+DECL|struct|__anon2a3f2a9e0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -60956,14 +60956,6 @@ name|TRUE
 block|,
 name|FALSE
 block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
 decl_stmt|;
 end_decl_stmt
 
@@ -61255,6 +61247,9 @@ decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -61760,7 +61755,7 @@ name|gimp_rgn_iterator_new
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_rgn_iterator_src_dest

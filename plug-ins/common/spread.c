@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287178e80108
+DECL|struct|__anon28f54fee0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -186,14 +186,6 @@ comment|/*  horizontal spread amount  */
 literal|5
 comment|/*  vertical spread amount    */
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
 decl_stmt|;
 end_decl_stmt
 
@@ -356,6 +348,9 @@ decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -668,7 +663,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon287178e80208
+DECL|struct|__anon28f54fee0208
 typedef|typedef
 struct|struct
 block|{
@@ -997,7 +992,7 @@ name|gimp_rgn_iterator_new
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_rgn_iterator_dest

@@ -194,14 +194,6 @@ block|}
 struct|;
 end_struct
 
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
@@ -376,6 +368,9 @@ name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpRGB
 name|result_color
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -665,7 +660,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29da0de00108
+DECL|struct|__anon297637980108
 typedef|typedef
 struct|struct
 block|{
@@ -1070,7 +1065,7 @@ name|gimp_rgn_iterator_new
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_rgn_iterator_src

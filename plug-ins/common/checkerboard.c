@@ -65,14 +65,6 @@ name|CheckVals
 typedef|;
 end_typedef
 
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 specifier|static
 name|void
@@ -357,6 +349,9 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -615,7 +610,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bdd2a1e0108
+DECL|struct|__anon29c4b4c50108
 typedef|typedef
 struct|struct
 block|{
@@ -871,7 +866,7 @@ name|gimp_rgn_iterator_new
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_rgn_iterator_dest

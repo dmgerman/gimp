@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b882180108
+DECL|struct|__anon2a10d02a0108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b882180208
+DECL|struct|__anon2a10d02a0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -514,14 +514,6 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/***** Functions *****/
 end_comment
@@ -758,6 +750,9 @@ name|active_drawable
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 comment|/* Initialize */
 name|INIT_I18N
@@ -1150,7 +1145,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28b882180308
+DECL|struct|__anon2a10d02a0308
 typedef|typedef
 struct|struct
 block|{
@@ -1410,7 +1405,7 @@ name|gimp_rgn_iterator_new
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_rgn_iterator_dest

@@ -152,7 +152,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8a5370108
+DECL|struct|__anon2b30bb300108
 block|{
 DECL|member|division
 name|gint32
@@ -258,14 +258,6 @@ specifier|static
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
 decl_stmt|;
 end_decl_stmt
 
@@ -418,6 +410,9 @@ name|GimpPDBStatusType
 name|status
 init|=
 name|GIMP_PDB_SUCCESS
+decl_stmt|;
+name|GimpRunMode
+name|run_mode
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -685,7 +680,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28c8a5370208
+DECL|struct|__anon2b30bb300208
 typedef|typedef
 struct|struct
 block|{
@@ -1247,7 +1242,7 @@ name|gimp_rgn_iterator_new
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_rgn_iterator_src_dest

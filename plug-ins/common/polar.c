@@ -144,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2946de670108
+DECL|struct|__anon2b3b158f0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -391,14 +391,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|run_mode
-specifier|static
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|img_width
 DECL|variable|img_height
 DECL|variable|img_has_alpha
@@ -640,7 +632,10 @@ decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
-name|double
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
+name|gdouble
 name|xhsiz
 decl_stmt|,
 name|yhsiz
@@ -1376,7 +1371,7 @@ name|gimp_rgn_iterator_new
 argument_list|(
 name|drawable
 argument_list|,
-name|run_mode
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_rgn_iterator_dest
