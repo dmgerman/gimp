@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -40,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/widgets-types.h"
+file|"gui/gui-types.h"
 end_include
 
 begin_include
@@ -64,7 +58,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpbrush.h"
+file|"core/gimpcontainer.h"
 end_include
 
 begin_include
@@ -77,12 +71,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdatafactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimplist.h"
 end_include
 
 begin_include
@@ -930,7 +918,6 @@ argument_list|)
 operator|->
 name|spacing_adjustment
 expr_stmt|;
-comment|/* Updating the context updates the widgets as well */
 name|gimp_context_set_brush
 argument_list|(
 name|bsp

@@ -581,7 +581,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"GimpDisplay procedures"
+literal|"Display procedures"
 argument_list|)
 argument_list|,
 literal|0.133
@@ -821,7 +821,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Interface"
+literal|"Message procedures"
 argument_list|)
 argument_list|,
 literal|0.612
@@ -1141,7 +1141,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Tool procedures"
+literal|"Transform Tool procedures"
 argument_list|)
 argument_list|,
 literal|0.941

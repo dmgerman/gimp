@@ -653,8 +653,10 @@ if|if
 condition|(
 name|success
 condition|)
-name|gdisplays_reconnect
+name|gimp_displays_reconnect
 argument_list|(
+name|gimp
+argument_list|,
 name|gimage_old
 argument_list|,
 name|gimage_new

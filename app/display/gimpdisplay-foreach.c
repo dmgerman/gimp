@@ -464,9 +464,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplays_reconnect (GimpImage * old,GimpImage * new)
-name|gdisplays_reconnect
+DECL|function|gimp_displays_reconnect (Gimp * gimp,GimpImage * old,GimpImage * new)
+name|gimp_displays_reconnect
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|old
@@ -486,9 +490,18 @@ name|gdisp
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
 name|old
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -505,8 +518,6 @@ name|list
 operator|=
 name|GIMP_LIST
 argument_list|(
-name|new
-operator|->
 name|gimp
 operator|->
 name|displays

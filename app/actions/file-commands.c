@@ -1042,8 +1042,12 @@ argument_list|(
 name|new_gimage
 argument_list|)
 expr_stmt|;
-name|gdisplays_reconnect
+name|gimp_displays_reconnect
 argument_list|(
+name|old_gimage
+operator|->
+name|gimp
+argument_list|,
 name|old_gimage
 argument_list|,
 name|new_gimage
