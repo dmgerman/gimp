@@ -4,7 +4,7 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
+comment|/*----------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *----------------------------------------------------------------------------*/
 end_comment
 
 begin_include
@@ -28,19 +28,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -68,15 +62,7 @@ file|"rcm_gdk.h"
 end_include
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Global variables */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_decl_stmt
@@ -88,20 +74,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Drawing routines */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function
 name|void
-DECL|function|rcm_draw_little_circle (GdkWindow * window,GdkGC * color,float hue,float satur)
+DECL|function|rcm_draw_little_circle (GdkWindow * window,GdkGC * color,gfloat hue,gfloat satur)
 name|rcm_draw_little_circle
 parameter_list|(
 name|GdkWindow
@@ -112,14 +90,14 @@ name|GdkGC
 modifier|*
 name|color
 parameter_list|,
-name|float
+name|gfloat
 name|hue
 parameter_list|,
-name|float
+name|gfloat
 name|satur
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -184,13 +162,9 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 name|void
-DECL|function|rcm_draw_large_circle (GdkWindow * window,GdkGC * color,float gray_sat)
+DECL|function|rcm_draw_large_circle (GdkWindow * window,GdkGC * color,gfloat gray_sat)
 name|rcm_draw_large_circle
 parameter_list|(
 name|GdkWindow
@@ -201,11 +175,11 @@ name|GdkGC
 modifier|*
 name|color
 parameter_list|,
-name|float
+name|gfloat
 name|gray_sat
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -272,10 +246,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
 begin_define
 DECL|macro|REL
 define|#
@@ -318,10 +288,10 @@ modifier|*
 name|angle
 parameter_list|)
 block|{
-name|int
+name|gint
 name|dist
 decl_stmt|;
-name|float
+name|gfloat
 name|alpha
 decl_stmt|,
 name|beta

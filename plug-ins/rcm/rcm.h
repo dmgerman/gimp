@@ -4,19 +4,11 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*----------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *----------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
 comment|/* Global defines */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_define
@@ -28,19 +20,11 @@ value|(2*G_PI)
 end_define
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Typedefs */
 end_comment
 
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
 begin_enum
-DECL|enum|__anon2962774d0103
+DECL|enum|__anon2739c6c60103
 DECL|enumerator|ENTIRE_IMAGE
 DECL|enumerator|SELECTION
 DECL|enumerator|SELECTION_IN_CONTEXT
@@ -59,7 +43,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2962774d0203
+DECL|enum|__anon2739c6c60203
 DECL|enumerator|EACH
 DECL|enumerator|BOTH
 DECL|enumerator|DEGREES
@@ -93,7 +77,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|enum|__anon2962774d0303
+DECL|enum|__anon2739c6c60303
 DECL|enumerator|VIRGIN
 DECL|enumerator|DRAG_START
 DECL|enumerator|DRAGING
@@ -117,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962774d0408
+DECL|struct|__anon2739c6c60408
 block|{
 DECL|member|alpha
 name|float
@@ -140,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962774d0508
+DECL|struct|__anon2739c6c60508
 block|{
 DECL|member|width
 name|gint
@@ -174,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962774d0608
+DECL|struct|__anon2739c6c60608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -292,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962774d0708
+DECL|struct|__anon2739c6c60708
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -323,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962774d0808
+DECL|struct|__anon2739c6c60808
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -380,7 +364,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2962774d0908
+DECL|struct|__anon2739c6c60908
 block|{
 DECL|member|Slctn
 name|gint
@@ -440,15 +424,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Global variables */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_decl_stmt
@@ -457,10 +433,6 @@ name|RcmParams
 name|Current
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
 
 end_unit
 

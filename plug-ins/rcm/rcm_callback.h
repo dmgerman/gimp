@@ -4,19 +4,11 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*---------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *---------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
 comment|/* Misc functions */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -57,7 +49,7 @@ name|GtkWidget
 modifier|*
 name|label_box
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|pixmap_data
@@ -66,15 +58,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Ok Button */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -92,15 +76,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Circle buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -149,15 +125,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc: units buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -206,15 +174,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc: Gray: mode buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -248,15 +208,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc: Preview buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -320,15 +272,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Circle events */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -408,15 +352,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Gray circle events */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -496,15 +432,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Spinbuttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -576,10 +504,6 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 end_unit
 

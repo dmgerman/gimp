@@ -115,15 +115,7 @@ file|"pixmaps/rcm_cw.xpm"
 end_include
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc functions */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -285,14 +277,12 @@ name|widget
 operator|!=
 name|NULL
 condition|)
-block|{
 name|gtk_widget_destroy
 argument_list|(
 operator|*
 name|widget
 argument_list|)
 expr_stmt|;
-block|}
 operator|*
 name|widget
 operator|=
@@ -330,15 +320,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Circle buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -608,15 +590,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc: units buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -881,10 +855,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -1146,10 +1116,6 @@ expr_stmt|;
 block|}
 block|}
 end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -1414,15 +1380,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc: Gray: mode buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1487,14 +1445,12 @@ block|{
 if|if
 condition|(
 operator|!
-operator|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|button
 argument_list|)
 operator|->
 name|active
-operator|)
 condition|)
 return|return;
 name|Current
@@ -1518,15 +1474,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc: Preview buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1543,34 +1491,19 @@ modifier|*
 name|value
 parameter_list|)
 block|{
-if|if
-condition|(
+name|Current
+operator|.
+name|RealTime
+operator|=
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|button
 argument_list|)
 operator|->
 name|active
-condition|)
-name|Current
-operator|.
-name|RealTime
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-name|Current
-operator|.
-name|RealTime
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 specifier|static
@@ -1709,10 +1642,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 name|void
 DECL|function|rcm_selection_in_context (GtkWidget * button,gpointer * value)
@@ -1831,15 +1760,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Circle events */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1920,10 +1841,6 @@ name|TRUE
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 name|gboolean
@@ -2205,10 +2122,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 name|gboolean
 DECL|function|rcm_release_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
@@ -2291,10 +2204,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 name|gboolean
 DECL|function|rcm_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
@@ -2318,19 +2227,19 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|float
+name|gfloat
 name|clicked_angle
 decl_stmt|,
 name|delta
 decl_stmt|;
-name|float
+name|gfloat
 modifier|*
 name|alpha
 decl_stmt|,
 modifier|*
 name|beta
 decl_stmt|;
-name|int
+name|gint
 name|cw_ccw
 decl_stmt|;
 name|GdkGCValues
@@ -2519,6 +2428,7 @@ name|mode
 operator|==
 name|EACH
 condition|)
+block|{
 operator|*
 operator|(
 name|circle
@@ -2528,6 +2438,7 @@ operator|)
 operator|=
 name|clicked_angle
 expr_stmt|;
+block|}
 else|else
 block|{
 name|circle
@@ -2658,15 +2569,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Gray circle events */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -2758,10 +2661,6 @@ name|TRUE
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 name|gboolean
@@ -2978,10 +2877,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 name|gboolean
 DECL|function|rcm_gray_release_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
@@ -3058,10 +2953,6 @@ name|TRUE
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 name|gboolean
@@ -3174,6 +3065,7 @@ name|DRAGING
 expr_stmt|;
 block|}
 else|else
+block|{
 name|rcm_draw_little_circle
 argument_list|(
 name|widget
@@ -3192,6 +3084,7 @@ name|satur
 argument_list|)
 expr_stmt|;
 comment|/* erase */
+block|}
 name|gdk_window_get_pointer
 argument_list|(
 name|widget
@@ -3346,15 +3239,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Spinbuttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3373,15 +3258,9 @@ block|{
 name|RcmCircle
 modifier|*
 name|circle
-decl_stmt|;
-name|circle
-operator|=
-operator|(
-name|RcmCircle
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|circle
@@ -3397,6 +3276,7 @@ name|angle
 operator|->
 name|alpha
 operator|=
+operator|(
 name|gtk_spin_button_get_value
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -3411,6 +3291,7 @@ name|Current
 operator|.
 name|Units
 argument_list|)
+operator|)
 expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
@@ -3453,10 +3334,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 name|void
@@ -3474,15 +3351,9 @@ block|{
 name|RcmCircle
 modifier|*
 name|circle
-decl_stmt|;
-name|circle
-operator|=
-operator|(
-name|RcmCircle
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|circle
@@ -3498,6 +3369,7 @@ name|angle
 operator|->
 name|beta
 operator|=
+operator|(
 name|gtk_spin_button_get_value
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -3512,6 +3384,7 @@ name|Current
 operator|.
 name|Units
 argument_list|)
+operator|)
 expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
@@ -3555,10 +3428,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 name|void
 DECL|function|rcm_set_hue (GtkWidget * entry,gpointer data)
@@ -3575,15 +3444,9 @@ block|{
 name|RcmGray
 modifier|*
 name|circle
-decl_stmt|;
-name|circle
-operator|=
-operator|(
-name|RcmGray
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|circle
@@ -3597,6 +3460,7 @@ name|circle
 operator|->
 name|hue
 operator|=
+operator|(
 name|gtk_spin_button_get_value
 argument_list|(
 name|GTK_SPIN_BUTTON
@@ -3611,6 +3475,7 @@ name|Current
 operator|.
 name|Units
 argument_list|)
+operator|)
 expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
@@ -3678,10 +3543,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 begin_function
 name|void
@@ -3699,15 +3560,9 @@ block|{
 name|RcmGray
 modifier|*
 name|circle
-decl_stmt|;
-name|circle
-operator|=
-operator|(
-name|RcmGray
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|circle
@@ -3796,10 +3651,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
 begin_function
 name|void
 DECL|function|rcm_set_gray_sat (GtkWidget * entry,gpointer data)
@@ -3816,15 +3667,9 @@ block|{
 name|RcmGray
 modifier|*
 name|circle
-decl_stmt|;
-name|circle
-operator|=
-operator|(
-name|RcmGray
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 name|circle
 operator|->
 name|gray_sat
@@ -3878,10 +3723,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
 
 end_unit
 

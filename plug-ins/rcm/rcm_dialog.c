@@ -51,12 +51,6 @@ end_undef
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -64,12 +58,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -120,16 +108,14 @@ directive|include
 file|"pixmaps/rcm_cw.xpm"
 end_include
 
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_comment
 comment|/* Defines */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_define
@@ -181,15 +167,7 @@ value|GDK_EXPOSURE_MASK | \                           GDK_ENTER_NOTIFY_MASK | \ 
 end_define
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Previews: create one preview */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -234,17 +212,6 @@ argument_list|,
 name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-operator|*
-name|frame
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 operator|*
@@ -272,12 +239,6 @@ argument_list|,
 name|previewHeight
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-operator|*
-name|preview
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -290,19 +251,17 @@ operator|*
 name|preview
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+operator|*
+name|preview
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Previews */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -592,15 +551,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Main: Create one pixmap button */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -767,15 +718,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Set buttons pixmaps */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -853,15 +796,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Main: One circles with values and buttons */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -970,18 +905,6 @@ argument_list|(
 name|label_content
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|st
-operator|->
-name|frame
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|st
@@ -1006,16 +929,6 @@ name|frame
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1047,13 +960,6 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|st
-operator|->
-name|preview
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -1061,6 +967,13 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
+name|st
+operator|->
+name|preview
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|st
 operator|->
 name|preview
@@ -1868,15 +1781,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Main */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1982,15 +1887,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc: Gray */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -3326,15 +3223,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*----------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Misc */
-end_comment
-
-begin_comment
-comment|/*----------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -4188,15 +4077,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* create and call main dialog */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -4270,7 +4151,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/rcm.html"
+literal|"plug-in-rotate-colormap"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -4,25 +4,19 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
+comment|/*----------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *----------------------------------------------------------------------------*/
 end_comment
 
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdio.h>
 end_include
 
 begin_include
@@ -35,12 +29,6 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -67,16 +55,14 @@ directive|include
 file|"rcm_callback.h"
 end_include
 
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_comment
 comment|/* Forward declarations */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -120,15 +106,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Global variables */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_decl_stmt
@@ -150,18 +128,6 @@ name|GRAY_TO
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
-comment|/* Local variables */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
@@ -185,18 +151,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
-comment|/* Dummy function */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
@@ -204,15 +158,7 @@ argument_list|()
 end_macro
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Query plug-in */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -294,15 +240,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Rotate colormap of a single row */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -674,15 +612,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Rotate colormap row by row ... */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -981,15 +911,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* STANDARD RUN */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function

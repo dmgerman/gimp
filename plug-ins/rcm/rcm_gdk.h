@@ -4,19 +4,11 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*----------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *----------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
 comment|/* Global defines */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_define
@@ -100,15 +92,7 @@ value|0.3
 end_define
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* Global variables */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_decl_stmt
@@ -118,10 +102,6 @@ modifier|*
 name|xor_gc
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
 
 begin_function_decl
 name|void
@@ -135,10 +115,10 @@ name|GdkGC
 modifier|*
 name|color
 parameter_list|,
-name|float
+name|gfloat
 name|hue
 parameter_list|,
-name|float
+name|gfloat
 name|satur
 parameter_list|)
 function_decl|;
@@ -156,7 +136,7 @@ name|GdkGC
 modifier|*
 name|color
 parameter_list|,
-name|float
+name|gfloat
 name|gray_sat
 parameter_list|)
 function_decl|;
@@ -180,10 +160,6 @@ name|angle
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
 
 end_unit
 

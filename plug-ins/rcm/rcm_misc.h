@@ -4,19 +4,11 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
+comment|/*----------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *----------------------------------------------------------------------------*/
 end_comment
 
 begin_comment
 comment|/* Global defines */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_define
@@ -33,25 +25,17 @@ value|{float t=X; X=Y; Y=t;}
 end_define
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* used in 'rcm_callback.c' and 'rcm_dialog.c' */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
 name|float
 name|arctg
 parameter_list|(
-name|float
+name|gfloat
 name|y
 parameter_list|,
-name|float
+name|gfloat
 name|x
 parameter_list|)
 function_decl|;
@@ -61,13 +45,13 @@ begin_function_decl
 name|float
 name|min_prox
 parameter_list|(
-name|float
+name|gfloat
 name|alpha
 parameter_list|,
-name|float
+name|gfloat
 name|beta
 parameter_list|,
-name|float
+name|gfloat
 name|angle
 parameter_list|)
 function_decl|;
@@ -78,15 +62,15 @@ name|float
 modifier|*
 name|closest
 parameter_list|(
-name|float
+name|gfloat
 modifier|*
 name|alpha
 parameter_list|,
-name|float
+name|gfloat
 modifier|*
 name|beta
 parameter_list|,
-name|float
+name|gfloat
 name|angle
 parameter_list|)
 function_decl|;
@@ -96,7 +80,7 @@ begin_function_decl
 name|float
 name|angle_mod_2PI
 parameter_list|(
-name|float
+name|gfloat
 name|angle
 parameter_list|)
 function_decl|;
@@ -140,25 +124,17 @@ name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|int
+name|gint
 name|sum
 parameter_list|,
-name|int
+name|gint
 name|margin
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* only used in 'rcm.c' (or local) */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function_decl
@@ -223,10 +199,6 @@ name|angle
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
 
 end_unit
 

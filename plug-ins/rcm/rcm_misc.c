@@ -4,7 +4,7 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
+comment|/*----------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *----------------------------------------------------------------------------*/
 end_comment
 
 begin_include
@@ -23,12 +23,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_ifdef
@@ -212,7 +206,7 @@ name|float
 name|angle
 parameter_list|)
 block|{
-name|float
+name|gfloat
 name|temp_alpha
 init|=
 name|MIN
@@ -236,7 +230,7 @@ name|angle
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|float
+name|gfloat
 name|temp_beta
 init|=
 name|MIN
@@ -318,15 +312,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* supporting routines  */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -356,6 +342,7 @@ name|B
 operator|>
 name|A
 condition|)
+block|{
 if|if
 condition|(
 name|A
@@ -429,7 +416,9 @@ else|else
 return|return
 name|x
 return|;
-elseif|else
+block|}
+else|else
+block|{
 if|if
 condition|(
 name|B
@@ -503,6 +492,7 @@ else|else
 return|return
 name|x
 return|;
+block|}
 block|}
 end_function
 
@@ -700,15 +690,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* reduce image/selection for preview */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1559,9 +1541,7 @@ literal|3
 index|]
 expr_stmt|;
 block|}
-comment|/* for j */
 block|}
-comment|/* for i */
 comment|/* return values */
 name|temp
 operator|->
@@ -1600,15 +1580,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* render before/after preview */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function
@@ -1715,7 +1687,7 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|float
+name|gfloat
 name|degree
 decl_stmt|,
 name|transp
@@ -1987,9 +1959,7 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* switch */
 block|}
-comment|/* if */
 if|if
 condition|(
 operator|!
@@ -2066,7 +2036,6 @@ name|V
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* if (!skip) */
 if|if
 condition|(
 name|unchanged
@@ -2279,9 +2248,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* if */
 block|}
-comment|/* for j */
 name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
@@ -2299,7 +2266,6 @@ name|RW
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for i */
 block|}
 else|else
 comment|/* ORIGINAL */
@@ -2479,9 +2445,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* if */
 block|}
-comment|/* for j */
 name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
@@ -2499,7 +2463,6 @@ name|RW
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for i */
 block|}
 name|g_free
 argument_list|(
@@ -2515,15 +2478,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
 comment|/* render circle */
-end_comment
-
-begin_comment
-comment|/*-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_function
