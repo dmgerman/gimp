@@ -1158,7 +1158,7 @@ init|=
 block|{
 literal|"gimp_palette_list"
 block|,
-literal|"Retrieves a list of all of the available patterns"
+literal|"Retrieves a list of all of the available palettes"
 block|,
 literal|"This procedure returns a complete listing of available palettes. Each name returned can be used as input to the command 'gimp_palette_set_palette'."
 block|,

@@ -496,7 +496,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_list:  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available patterns  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * 'gimp_palette_set_palette'.  *  * Returns: The list of palette names.  */
+comment|/**  * gimp_palette_list:  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * 'gimp_palette_set_palette'.  *  * Returns: The list of palette names.  */
 end_comment
 
 begin_function
