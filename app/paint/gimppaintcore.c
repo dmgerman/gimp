@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconvolvetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppainttool.h"
 end_include
 
@@ -227,7 +233,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a06fba90103
+DECL|enum|__anon27da09d70103
 block|{
 DECL|enumerator|PAINT
 name|PAINT

@@ -132,6 +132,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpclonetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpconvolvetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdodgeburntool.h"
 end_include
 

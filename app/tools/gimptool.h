@@ -31,22 +31,6 @@ value|GTK_TYPE_NONE
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_CLONE_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_CLONE_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
-DECL|macro|GIMP_TYPE_CONVOLVE_TOOL
-define|#
-directive|define
-name|GIMP_TYPE_CONVOLVE_TOOL
-value|GTK_TYPE_NONE
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_ROTATE_TOOL
 define|#
 directive|define

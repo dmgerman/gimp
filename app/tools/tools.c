@@ -235,11 +235,15 @@ expr_stmt|;
 name|gimp_dodgeburn_tool_register
 argument_list|()
 expr_stmt|;
+name|gimp_convolve_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_clone_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_ink_tool_register
 argument_list|()
 expr_stmt|;
-comment|/* gimp_convolve_tool_register (): */
-comment|/* gimp_clone_tool_register (); */
 name|gimp_airbrush_tool_register
 argument_list|()
 expr_stmt|;

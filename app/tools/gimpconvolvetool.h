@@ -6,20 +6,26 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CONVOLVE_H__
+name|__GIMP_CONVOLVE_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CONVOLVE_H__
+DECL|macro|__GIMP_CONVOLVE_TOOL_H__
 define|#
 directive|define
-name|__CONVOLVE_H__
+name|__GIMP_CONVOLVE_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimppainttool.h"
+end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278f3f150103
+DECL|enum|__anon28d971db0103
 block|{
 DECL|enumerator|BLUR_CONVOLVE
 name|BLUR_CONVOLVE
@@ -34,6 +40,124 @@ block|}
 name|ConvolveType
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_CONVOLVE_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_CONVOLVE_TOOL
+value|(gimp_convolve_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_CONVOLVE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_CONVOLVE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONVOLVE_TOOL, GimpConvolveTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CONVOLVE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_CONVOLVE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONVOLVE_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONVOLVE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_CONVOLVE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CONVOLVE_TOOL, GimpConvolveToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CONVOLVE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_CONVOLVE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONVOLVE_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpConvolveTool
+typedef|typedef
+name|struct
+name|_GimpConvolveTool
+name|GimpConvolveTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpConvolveToolClass
+typedef|typedef
+name|struct
+name|_GimpConvolveToolClass
+name|GimpConvolveToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpConvolveTool
+struct|struct
+name|_GimpConvolveTool
+block|{
+DECL|member|parent_instance
+name|GimpPaintTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpConvolveToolClass
+struct|struct
+name|_GimpConvolveToolClass
+block|{
+DECL|member|parent_class
+name|GimpPaintToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|void
+name|gimp_convolve_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_convolve_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* FIXME: These need to disappear */
+end_comment
 
 begin_function_decl
 name|gboolean
@@ -77,34 +201,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_convolve
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_convolve
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __CONVOLVE_H__  */
+comment|/*  __GIMP_CONVOLVE_TOOL_H__  */
 end_comment
 
 end_unit
