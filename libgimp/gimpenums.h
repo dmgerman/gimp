@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c375160103
+DECL|enum|__anon289a012e0103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -44,7 +44,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c375160203
+DECL|enum|__anon289a012e0203
 block|{
 DECL|enumerator|RGB_IMAGE
 name|RGB_IMAGE
@@ -84,7 +84,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c375160303
+DECL|enum|__anon289a012e0303
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -155,6 +155,11 @@ DECL|enumerator|VALUE_MODE
 name|VALUE_MODE
 init|=
 literal|14
+block|,
+DECL|enumerator|DIVIDE_MODE
+name|DIVIDE_MODE
+init|=
+literal|15
 DECL|typedef|GLayerMode
 block|}
 name|GLayerMode
@@ -164,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c375160403
+DECL|enum|__anon289a012e0403
 block|{
 DECL|enumerator|BG_IMAGE_FILL
 name|BG_IMAGE_FILL
@@ -183,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c375160503
+DECL|enum|__anon289a012e0503
 block|{
 DECL|enumerator|PARAM_INT32
 name|PARAM_INT32
@@ -259,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c375160603
+DECL|enum|__anon289a012e0603
 block|{
 DECL|enumerator|PROC_PLUG_IN
 name|PROC_PLUG_IN
@@ -288,7 +293,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c375160703
+DECL|enum|__anon289a012e0703
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -313,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c375160803
+DECL|enum|__anon289a012e0803
 block|{
 DECL|enumerator|STATUS_EXECUTION_ERROR
 name|STATUS_EXECUTION_ERROR

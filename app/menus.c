@@ -465,7 +465,7 @@ block|,
 block|{
 literal|"/Edit/Fill"
 block|,
-literal|"<control>."
+literal|"<control>period"
 block|,
 name|edit_fill_cmd_callback
 block|,

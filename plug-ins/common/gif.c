@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e3bf9b0108
+DECL|struct|__anon2b1755560108
 block|{
 DECL|member|interlace
 name|int
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e3bf9b0208
+DECL|struct|__anon2b1755560208
 block|{
 DECL|member|run
 name|gint
@@ -1522,7 +1522,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29e3bf9b0308
+DECL|struct|__anon2b1755560308
 block|{
 DECL|member|Width
 name|unsigned
@@ -1572,7 +1572,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29e3bf9b0408
+DECL|struct|__anon2b1755560408
 block|{
 DECL|member|transparent
 name|int
@@ -5947,7 +5947,7 @@ operator|)
 name|FALSE
 condition|)
 block|{
-name|g_message
+name|g_print
 argument_list|(
 literal|"GIF: Found unused colour index %d.\n"
 argument_list|,
