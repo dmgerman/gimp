@@ -491,6 +491,15 @@ argument_list|,
 name|GIMP_TOOL_CURSOR_CLONE
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_action_object_2
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+literal|"context/context-pattern-select-set"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

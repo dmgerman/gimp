@@ -346,6 +346,18 @@ name|action_value_4
 operator|=
 name|NULL
 expr_stmt|;
+name|control
+operator|->
+name|action_object_1
+operator|=
+name|NULL
+expr_stmt|;
+name|control
+operator|->
+name|action_object_2
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -395,6 +407,20 @@ argument_list|(
 name|control
 operator|->
 name|action_value_4
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|control
+operator|->
+name|action_object_1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|control
+operator|->
+name|action_object_2
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
@@ -1520,7 +1546,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_action_value_1 (GimpToolControl * control,const gchar * action_name)
+DECL|function|gimp_tool_control_set_action_value_1 (GimpToolControl * control,const gchar * action_desc)
 name|gimp_tool_control_set_action_value_1
 parameter_list|(
 name|GimpToolControl
@@ -1530,7 +1556,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_name
+name|action_desc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1543,7 +1569,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|action_name
+name|action_desc
 operator|!=
 name|control
 operator|->
@@ -1563,7 +1589,7 @@ name|action_value_1
 operator|=
 name|g_strdup
 argument_list|(
-name|action_name
+name|action_desc
 argument_list|)
 expr_stmt|;
 block|}
@@ -1602,7 +1628,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_action_value_2 (GimpToolControl * control,const gchar * action_name)
+DECL|function|gimp_tool_control_set_action_value_2 (GimpToolControl * control,const gchar * action_desc)
 name|gimp_tool_control_set_action_value_2
 parameter_list|(
 name|GimpToolControl
@@ -1612,7 +1638,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_name
+name|action_desc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1625,7 +1651,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|action_name
+name|action_desc
 operator|!=
 name|control
 operator|->
@@ -1645,7 +1671,7 @@ name|action_value_2
 operator|=
 name|g_strdup
 argument_list|(
-name|action_name
+name|action_desc
 argument_list|)
 expr_stmt|;
 block|}
@@ -1684,7 +1710,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_action_value_3 (GimpToolControl * control,const gchar * action_name)
+DECL|function|gimp_tool_control_set_action_value_3 (GimpToolControl * control,const gchar * action_desc)
 name|gimp_tool_control_set_action_value_3
 parameter_list|(
 name|GimpToolControl
@@ -1694,7 +1720,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_name
+name|action_desc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1707,7 +1733,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|action_name
+name|action_desc
 operator|!=
 name|control
 operator|->
@@ -1727,7 +1753,7 @@ name|action_value_3
 operator|=
 name|g_strdup
 argument_list|(
-name|action_name
+name|action_desc
 argument_list|)
 expr_stmt|;
 block|}
@@ -1766,7 +1792,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_control_set_action_value_4 (GimpToolControl * control,const gchar * action_name)
+DECL|function|gimp_tool_control_set_action_value_4 (GimpToolControl * control,const gchar * action_desc)
 name|gimp_tool_control_set_action_value_4
 parameter_list|(
 name|GimpToolControl
@@ -1776,7 +1802,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|action_name
+name|action_desc
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1789,7 +1815,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|action_name
+name|action_desc
 operator|!=
 name|control
 operator|->
@@ -1809,7 +1835,7 @@ name|action_value_4
 operator|=
 name|g_strdup
 argument_list|(
-name|action_name
+name|action_desc
 argument_list|)
 expr_stmt|;
 block|}
@@ -1842,6 +1868,170 @@ return|return
 name|control
 operator|->
 name|action_value_4
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_tool_control_set_action_object_1 (GimpToolControl * control,const gchar * action_desc)
+name|gimp_tool_control_set_action_object_1
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|action_desc
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_CONTROL
+argument_list|(
+name|control
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|action_desc
+operator|!=
+name|control
+operator|->
+name|action_object_1
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|control
+operator|->
+name|action_object_1
+argument_list|)
+expr_stmt|;
+name|control
+operator|->
+name|action_object_1
+operator|=
+name|g_strdup
+argument_list|(
+name|action_desc
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_tool_control_get_action_object_1 (GimpToolControl * control)
+name|gimp_tool_control_get_action_object_1
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_CONTROL
+argument_list|(
+name|control
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|control
+operator|->
+name|action_object_1
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_tool_control_set_action_object_2 (GimpToolControl * control,const gchar * action_desc)
+name|gimp_tool_control_set_action_object_2
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|action_desc
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_CONTROL
+argument_list|(
+name|control
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|action_desc
+operator|!=
+name|control
+operator|->
+name|action_object_2
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|control
+operator|->
+name|action_object_2
+argument_list|)
+expr_stmt|;
+name|control
+operator|->
+name|action_object_2
+operator|=
+name|g_strdup
+argument_list|(
+name|action_desc
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_tool_control_get_action_object_2 (GimpToolControl * control)
+name|gimp_tool_control_get_action_object_2
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_CONTROL
+argument_list|(
+name|control
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|control
+operator|->
+name|action_object_2
 return|;
 block|}
 end_function
