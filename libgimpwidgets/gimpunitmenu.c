@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2975c1b70103
+DECL|enum|__anon275dfc0f0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2975c1b70203
+DECL|enum|__anon275dfc0f0203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -470,7 +470,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_menu_new:  * @format:       A printf-like format string which is used to create the unit  *                strings.  * @unit:         The initially selected unit.  * @show_pixels:  %TRUE if the unit menu should contain an item for  *                GIMP_UNIT_PIXEL.  * @show_percent: %TRUE in the unit menu should contain an item for  *                GIMP_UNIT_PERCENT.  * @show_custom:  %TRUE if the unit menu should contain a "More..." item for  *                opening the user-defined-unit selection dialog.  *  * Creates a new #GimpUnitMenu widget.  *  * The @format string supports the following percent expansions:  *  * Returns: A pointer to the new #GimpUnitMenu widget.  **/
+comment|/**  * gimp_unit_menu_new:  * @format:       A printf-like format string which is used to create the unit  *                strings.  * @unit:         The initially selected unit.  * @show_pixels:  %TRUE if the unit menu should contain an item for  *                GIMP_UNIT_PIXEL.  * @show_percent: %TRUE in the unit menu should contain an item for  *                GIMP_UNIT_PERCENT.  * @show_custom:  %TRUE if the unit menu should contain a "More..." item for  *                opening the user-defined-unit selection dialog.  *  * Creates a new #GimpUnitMenu widget.  *  * The @format string supports the following percent expansions:  *  *<informaltable pgwide="1" frame="none" role="enum">  *<tgroup cols="2"><colspec colwidth="1*"/><colspec colwidth="8*"/>  *<tbody>  *<row>  *<entry>% f</entry>  *<entry>Factor (how many units make up an inch)</entry>  *</row>  *<row>  *<entry>% y</entry>  *<entry>Symbol (e.g. "''" for GIMP_UNIT_INCH)</entry>  *</row>  *<row>  *<entry>% a</entry>  *<entry>Abbreviation</entry>  *</row>  *<row>  *<entry>% s</entry>  *<entry>Singular</entry>  *</row>  *<row>  *<entry>% p</entry>  *<entry>Plural</entry>  *</row>  *<row>  *<entry>%%</entry>  *<entry>Literal percent</entry>  *</row>  *</tbody>  *</tgroup>  *</informaltable>  *  * Returns: A pointer to the new #GimpUnitMenu widget.  **/
 end_comment
 
 begin_function
