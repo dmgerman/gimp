@@ -595,14 +595,36 @@ block|{
 name|GimpImage
 modifier|*
 name|gimage
-decl_stmt|;
-name|gimage
-operator|=
+init|=
 name|gimp_image_get_by_ID
 argument_list|(
 name|gimp
 argument_list|,
 name|gimage_id
+argument_list|)
+decl_stmt|;
+comment|/* clear all undo steps */
+name|gimp_image_undo_free
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+comment|/* make sure that undo is enabled */
+while|while
+condition|(
+name|gimage
+operator|->
+name|undo_freeze_count
+condition|)
+name|gimp_image_undo_thaw
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+comment|/* set the image to clean  */
+name|gimp_image_clean_all
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_image_invalidate_layer_previews
@@ -814,30 +836,6 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
-comment|/* clear all undo steps */
-name|gimp_image_undo_free
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-comment|/* make sure that undo is enabled */
-while|while
-condition|(
-name|gimage
-operator|->
-name|undo_freeze_count
-condition|)
-name|gimp_image_undo_thaw
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-comment|/* set the image to clean  */
-name|gimp_image_clean_all
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gimp_create_display
 argument_list|(
 name|gimage
@@ -847,11 +845,6 @@ argument_list|,
 name|gimage
 argument_list|,
 literal|1.0
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 name|documents
@@ -896,6 +889,12 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  the display owns the image now  */
+name|g_object_unref
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|gimage

@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimptemplate.h"
 end_include
 
@@ -1561,22 +1555,12 @@ name|data
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_undo_free
-argument_list|(
-name|new_gimage
-argument_list|)
-expr_stmt|;
 name|gimp_displays_reconnect
 argument_list|(
 name|gimp
 argument_list|,
 name|old_gimage
 argument_list|,
-name|new_gimage
-argument_list|)
-expr_stmt|;
-name|gimp_image_clean_all
-argument_list|(
 name|new_gimage
 argument_list|)
 expr_stmt|;
