@@ -372,6 +372,14 @@ name|blurb
 expr_stmt|;
 name|entry
 operator|.
+name|help_id
+operator|=
+name|tool_info
+operator|->
+name|help_id
+expr_stmt|;
+name|entry
+operator|.
 name|value
 operator|=
 name|identifier

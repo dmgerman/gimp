@@ -172,6 +172,8 @@ argument_list|(
 name|qmask_toggle_cmd_callback
 argument_list|)
 block|,
+name|FALSE
+block|,
 name|GIMP_HELP_QMASK_TOGGLE
 block|}
 block|}
