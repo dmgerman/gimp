@@ -410,7 +410,7 @@ name|file_proc
 argument_list|,
 literal|2
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
