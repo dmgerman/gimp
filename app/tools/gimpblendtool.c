@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdnd.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpprogress.h"
 end_include
 
 begin_include
@@ -1243,7 +1243,7 @@ directive|else
 comment|/* ! BLEND_UI_CALLS_VIA_PDB */
 name|progress
 operator|=
-name|progress_start
+name|gimp_progress_start
 argument_list|(
 name|gdisp
 argument_list|,
@@ -1332,7 +1332,7 @@ name|endy
 argument_list|,
 name|progress
 condition|?
-name|progress_update_and_flush
+name|gimp_progress_update_and_flush
 else|:
 name|NULL
 argument_list|,
@@ -1343,7 +1343,7 @@ if|if
 condition|(
 name|progress
 condition|)
-name|progress_end
+name|gimp_progress_end
 argument_list|(
 name|progress
 argument_list|)

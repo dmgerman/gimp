@@ -16,18 +16,10 @@ directive|define
 name|__GIMP_PROGRESS_H__
 end_define
 
-begin_comment
-comment|/* Progress bars for use internally by the main GIMP application. */
-end_comment
-
-begin_comment
-comment|/* functions */
-end_comment
-
 begin_function_decl
 name|GimpProgress
 modifier|*
-name|progress_start
+name|gimp_progress_start
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -53,7 +45,7 @@ end_function_decl
 begin_function_decl
 name|GimpProgress
 modifier|*
-name|progress_restart
+name|gimp_progress_restart
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -75,7 +67,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|progress_update
+name|gimp_progress_update
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -89,7 +81,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|progress_step
+name|gimp_progress_step
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -100,7 +92,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|progress_end
+name|gimp_progress_end
 parameter_list|(
 name|GimpProgress
 modifier|*
@@ -111,7 +103,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|progress_update_and_flush
+name|gimp_progress_update_and_flush
 parameter_list|(
 name|gint
 name|ymin

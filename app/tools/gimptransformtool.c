@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptransformtool.h"
 end_include
 
@@ -145,12 +151,6 @@ begin_include
 include|#
 directive|include
 file|"transform_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpprogress.h"
 end_include
 
 begin_include
@@ -3188,7 +3188,7 @@ name|tool_options
 expr_stmt|;
 name|progress
 operator|=
-name|progress_start
+name|gimp_progress_start
 argument_list|(
 name|tool
 operator|->
@@ -3238,11 +3238,8 @@ name|direction
 argument_list|,
 name|progress
 condition|?
-name|progress_update_and_flush
+name|gimp_progress_update_and_flush
 else|:
-operator|(
-name|GimpProgressFunc
-operator|)
 name|NULL
 argument_list|,
 name|progress
@@ -3252,7 +3249,7 @@ if|if
 condition|(
 name|progress
 condition|)
-name|progress_end
+name|gimp_progress_end
 argument_list|(
 name|progress
 argument_list|)

@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"convert-dialog.h"
 end_include
 
@@ -102,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpprogress.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8b580d0108
+DECL|struct|__anon27c0b0b80108
 block|{
 DECL|member|resize
 name|Resize
@@ -1697,7 +1697,7 @@ argument_list|)
 expr_stmt|;
 name|progress
 operator|=
-name|progress_start
+name|gimp_progress_start
 argument_list|(
 name|image_scale
 operator|->
@@ -1737,12 +1737,12 @@ name|resize
 operator|->
 name|interpolation
 argument_list|,
-name|progress_update_and_flush
+name|gimp_progress_update_and_flush
 argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
-name|progress_end
+name|gimp_progress_end
 argument_list|(
 name|progress
 argument_list|)

@@ -427,6 +427,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/brush-select.h"
 end_include
 
@@ -464,12 +470,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpprogress.h"
 end_include
 
 begin_include
@@ -3981,7 +3981,7 @@ name|plug_in
 operator|->
 name|progress
 condition|)
-name|progress_end
+name|gimp_progress_end
 argument_list|(
 name|plug_in
 operator|->
@@ -5281,7 +5281,7 @@ operator|->
 name|progress
 condition|)
 block|{
-name|progress_end
+name|gimp_progress_end
 argument_list|(
 name|plug_in
 operator|->
@@ -15481,7 +15481,7 @@ name|plug_in
 operator|->
 name|progress
 operator|=
-name|progress_restart
+name|gimp_progress_restart
 argument_list|(
 name|plug_in
 operator|->
@@ -15502,7 +15502,7 @@ name|plug_in
 operator|->
 name|progress
 operator|=
-name|progress_start
+name|gimp_progress_start
 argument_list|(
 name|gdisp
 argument_list|,
@@ -15551,7 +15551,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|progress_update
+name|gimp_progress_update
 argument_list|(
 name|plug_in
 operator|->
