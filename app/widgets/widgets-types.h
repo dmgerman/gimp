@@ -813,6 +813,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpMessageBox
+typedef|typedef
+name|struct
+name|_GimpMessageBox
+name|GimpMessageBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpProgressBox
 typedef|typedef
 name|struct
