@@ -33,7 +33,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a11b7880103
+DECL|enum|__anon2baa06e10103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -246,7 +246,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __CHAIN_BUTTON_H__ */
+comment|/* __GIMP_CHAIN_BUTTON_H__ */
 end_comment
 
 end_unit

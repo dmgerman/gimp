@@ -103,6 +103,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpmemsizeentry.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpoffsetarea.h>
 end_include
 
@@ -675,54 +681,6 @@ comment|/* % */
 name|gdouble
 name|ysize_100
 comment|/* % */
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_define
-DECL|macro|GIMP_MEMSIZE_ENTRY_SPINBUTTON (memsize)
-define|#
-directive|define
-name|GIMP_MEMSIZE_ENTRY_SPINBUTTON
-parameter_list|(
-name|memsize
-parameter_list|)
-define|\
-value|(g_object_get_data (G_OBJECT (memsize), "spinbutton"))
-end_define
-
-begin_define
-DECL|macro|GIMP_MEMSIZE_ENTRY_SPINBUTTON_ADJ (memsize)
-define|#
-directive|define
-name|GIMP_MEMSIZE_ENTRY_SPINBUTTON_ADJ
-parameter_list|(
-name|memsize
-parameter_list|)
-define|\
-value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (memsize), "spinbutton")))
-end_define
-
-begin_define
-DECL|macro|GIMP_MEMSIZE_ENTRY_OPTIONMENU (memsize)
-define|#
-directive|define
-name|GIMP_MEMSIZE_ENTRY_OPTIONMENU
-parameter_list|(
-name|memsize
-parameter_list|)
-define|\
-value|(g_object_get_data (G_OBJECT (memsize), "optionmenu"))
-end_define
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_memsize_entry_new
-parameter_list|(
-name|GtkAdjustment
-modifier|*
-name|adjustment
 parameter_list|)
 function_decl|;
 end_function_decl
