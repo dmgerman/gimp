@@ -151,7 +151,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon297dea400108
+DECL|struct|__anon27ab1d310108
 typedef|typedef
 struct|struct
 block|{
@@ -169,7 +169,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon297dea400208
+DECL|struct|__anon27ab1d310208
 typedef|typedef
 struct|struct
 block|{
@@ -1398,7 +1398,7 @@ name|PLUG_IN_NAME
 argument_list|,
 literal|"Pagecurl effect"
 argument_list|,
-literal|"This plug-in creates an pagecurl-effect."
+literal|"This plug-in creates a pagecurl-effect."
 argument_list|,
 literal|"Federico Mena Quintero and Simon Budig"
 argument_list|,
@@ -1408,7 +1408,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 literal|"<Image>/Filters/Distorts/Pagecurl..."
 argument_list|,
-literal|"RGBA*, GRAYA*"
+literal|"RGBA, GRAYA"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,

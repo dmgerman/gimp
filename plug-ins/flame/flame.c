@@ -156,14 +156,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
-name|dialog
-parameter_list|()
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|doit
 parameter_list|(
@@ -176,9 +168,21 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gint
+name|dialog
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|set_flame_preview
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -200,7 +204,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|store_callback
+name|save_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -216,7 +220,9 @@ begin_function_decl
 specifier|static
 name|void
 name|set_edit_preview
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -250,7 +256,9 @@ begin_function_decl
 specifier|static
 name|void
 name|init_mutants
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -310,10 +318,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|load_store
+DECL|variable|load_save
 specifier|static
 name|int
-name|load_store
+name|load_save
 decl_stmt|;
 end_decl_stmt
 
@@ -444,7 +452,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon29a40cf60108
+DECL|struct|__anon2b9a075c0108
 struct|struct
 block|{
 DECL|member|randomize
@@ -500,7 +508,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -572,12 +582,12 @@ literal|"plug_in_flame"
 argument_list|,
 name|_
 argument_list|(
-literal|"cosmic recursive fractal flames"
+literal|"Creates cosmic recursive fractal flames"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"use Smooth Palette to make colormaps"
+literal|"Creates cosmic recursive fractal flames"
 argument_list|)
 argument_list|,
 literal|"Scott Draves"
@@ -608,11 +618,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|maybe_init_cp ()
 specifier|static
 name|void
+DECL|function|maybe_init_cp (void)
 name|maybe_init_cp
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -785,9 +797,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -1389,9 +1401,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|doit (GDrawable * drawable)
 specifier|static
 name|void
+DECL|function|doit (GDrawable * drawable)
 name|doit
 parameter_list|(
 name|GDrawable
@@ -1856,9 +1868,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|close_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|close_callback (GtkWidget * widget,gpointer data)
 name|close_callback
 parameter_list|(
 name|GtkWidget
@@ -1876,9 +1888,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|ok_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|ok_callback (GtkWidget * widget,gpointer data)
 name|ok_callback
 parameter_list|(
 name|GtkWidget
@@ -1914,9 +1926,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|file_ok_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|file_ok_callback (GtkWidget * widget,gpointer data)
 name|file_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -1951,7 +1963,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|load_store
+name|load_save
 condition|)
 block|{
 name|FILE
@@ -2120,9 +2132,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|file_cancel_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|file_cancel_callback (GtkWidget * widget,gpointer data)
 name|file_cancel_callback
 parameter_list|(
 name|GtkWidget
@@ -2144,9 +2156,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|make_file_dlg ()
+DECL|function|make_file_dlg (void)
 name|make_file_dlg
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|file_dlg
 operator|=
@@ -2154,7 +2168,7 @@ name|gtk_file_selection_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Load/Store Flame"
+literal|"Load/Save Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2243,9 +2257,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|randomize_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|randomize_callback (GtkWidget * widget,gpointer data)
 name|randomize_callback
 parameter_list|(
 name|GtkWidget
@@ -2276,9 +2290,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|edit_close_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|edit_close_callback (GtkWidget * widget,gpointer data)
 name|edit_close_callback
 parameter_list|(
 name|GtkWidget
@@ -2298,9 +2312,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|edit_ok_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|edit_ok_callback (GtkWidget * widget,gpointer data)
 name|edit_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -2329,9 +2343,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|edit_cancel_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|edit_cancel_callback (GtkWidget * widget,gpointer data)
 name|edit_cancel_callback
 parameter_list|(
 name|GtkWidget
@@ -2351,11 +2365,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|init_mutants ()
 specifier|static
 name|void
+DECL|function|init_mutants (void)
 name|init_mutants
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|int
 name|i
@@ -2415,9 +2431,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|my_mw_update_cb (gpointer data)
 specifier|static
 name|void
+DECL|function|my_mw_update_cb (gpointer data)
 name|my_mw_update_cb
 parameter_list|(
 name|gpointer
@@ -2514,11 +2530,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_edit_preview ()
 specifier|static
 name|void
+DECL|function|set_edit_preview (void)
 name|set_edit_preview
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|int
 name|y
@@ -2824,9 +2842,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|preview_clicked (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|preview_clicked (GtkWidget * widget,gpointer data)
 name|preview_clicked
 parameter_list|(
 name|GtkWidget
@@ -2949,14 +2967,18 @@ name|cp
 expr_stmt|;
 if|if
 condition|(
-literal|0
-operator|==
 name|edit_dlg
+operator|==
+literal|0
 condition|)
 block|{
 name|GtkWidget
 modifier|*
 name|table
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|hbbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3049,6 +3071,78 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  Action area  */
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|edit_dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|edit_dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|hbbox
+operator|=
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|edit_dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|hbbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
@@ -3087,19 +3181,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|edit_dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -3152,26 +3241,16 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|edit_dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3206,7 +3285,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3254,6 +3333,36 @@ name|frame
 argument_list|)
 argument_list|,
 name|table
+argument_list|)
+expr_stmt|;
+name|gtk_container_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3431,7 +3540,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3466,7 +3575,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3504,11 +3613,31 @@ argument_list|)
 argument_list|,
 name|table
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|10
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_container_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3551,9 +3680,9 @@ name|box
 operator|=
 name|gtk_hbox_new
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3565,11 +3694,11 @@ argument_list|)
 argument_list|,
 name|box
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3623,7 +3752,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3636,7 +3765,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon29a40cf60208
+DECL|struct|__anon2b9a075c0208
 specifier|static
 struct|struct
 block|{
@@ -3766,10 +3895,10 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -3778,11 +3907,11 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3990,9 +4119,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|load_callback (GtkWidget * widget,gpointer data)
 name|load_callback
 parameter_list|(
 name|GtkWidget
@@ -4037,7 +4166,7 @@ literal|"Load Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|load_store
+name|load_save
 operator|=
 literal|1
 expr_stmt|;
@@ -4050,10 +4179,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|store_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
-name|store_callback
+DECL|function|save_callback (GtkWidget * widget,gpointer data)
+name|save_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4093,11 +4222,11 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Store Flame"
+literal|"Save Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|load_store
+name|load_save
 operator|=
 literal|0
 expr_stmt|;
@@ -4110,9 +4239,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|menu_cb (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|menu_cb (GtkWidget * widget,gpointer data)
 name|menu_cb
 parameter_list|(
 name|GtkWidget
@@ -4160,11 +4289,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_flame_preview ()
 specifier|static
 name|void
+DECL|function|set_flame_preview (void)
 name|set_flame_preview
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|int
 name|y
@@ -4345,11 +4476,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_cmap_preview ()
 specifier|static
 name|void
+DECL|function|set_cmap_preview (void)
 name|set_cmap_preview
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|int
 name|i
@@ -4542,9 +4675,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gradient_cb (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gradient_cb (GtkWidget * widget,gpointer data)
 name|gradient_cb
 parameter_list|(
 name|GtkWidget
@@ -4575,9 +4708,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|cmap_callback (gint32 id,gpointer data)
 specifier|static
 name|void
+DECL|function|cmap_callback (gint32 id,gpointer data)
 name|cmap_callback
 parameter_list|(
 name|gint32
@@ -4630,11 +4763,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog ()
 specifier|static
 name|gint
+DECL|function|dialog (void)
 name|dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -5028,7 +5163,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5063,7 +5198,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5115,7 +5250,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5130,7 +5265,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -5140,7 +5275,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|8
 argument_list|)
 expr_stmt|;
 name|row
@@ -5421,7 +5556,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5451,7 +5586,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Colormap:"
+literal|"Colormap"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5480,7 +5615,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5501,7 +5636,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|menu
@@ -5782,7 +5917,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5821,7 +5956,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5868,7 +6003,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5893,7 +6028,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -5903,7 +6038,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|8
 argument_list|)
 expr_stmt|;
 name|row
@@ -6115,7 +6250,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -6171,7 +6306,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6217,14 +6352,20 @@ block|{
 name|GtkWidget
 modifier|*
 name|vbox
-init|=
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbbox
+decl_stmt|;
+name|vbox
+operator|=
 name|gtk_vbox_new
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -6234,11 +6375,57 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|TRUE
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|vbbox
+operator|=
+name|gtk_vbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbbox
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|vbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|vbbox
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6252,7 +6439,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Shape Edit"
+literal|"Edit Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6287,16 +6474,16 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|vbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6310,7 +6497,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Load"
+literal|"Load Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6345,16 +6532,16 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|vbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -6368,7 +6555,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Store"
+literal|"Save Flame"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6391,7 +6578,7 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|store_callback
+name|save_callback
 argument_list|,
 operator|(
 name|gpointer
@@ -6403,16 +6590,16 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|vbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
