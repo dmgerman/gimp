@@ -607,9 +607,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel2path_advanced"
 argument_list|,
+name|_
+argument_list|(
 literal|"Converts a selection to a path (with advanced user menu)"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Converts a selection to a path (with advanced user menu)"
+argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -703,13 +709,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel2path"
 argument_list|,
+name|_
+argument_list|(
 literal|"Converts a selection to a path"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Converts a selection to a path"
+argument_list|)
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,
@@ -717,7 +732,10 @@ literal|"Andy Thomas"
 argument_list|,
 literal|"1999"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Select/To Path"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -816,9 +834,18 @@ argument_list|,
 literal|"plug_in_sel2path"
 argument_list|)
 condition|)
+block|{
 name|no_dialog
 operator|=
 name|TRUE
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 operator|*
 name|nreturn_vals
@@ -885,7 +912,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"No selection to convert"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_detach
@@ -1551,7 +1581,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1613,7 +1646,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1673,7 +1709,9 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+operator|(
 literal|"Default Values"
+operator|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2525,7 +2563,10 @@ block|}
 else|else
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"print_spline: strange degree (%d)"
+argument_list|)
 argument_list|,
 name|SPLINE_DEGREE
 argument_list|(
@@ -2634,7 +2675,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"gimp_image_get_selection failed"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2660,7 +2704,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Internal error. Selection bpp> 1"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3180,11 +3227,9 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|fprintf
+name|g_warning
 argument_list|(
-name|stderr
-argument_list|,
-literal|"safe_free: Attempt to free a null item.\n"
+literal|"safe_free: Attempt to free a null item."
 argument_list|)
 expr_stmt|;
 name|abort

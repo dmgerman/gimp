@@ -53,7 +53,7 @@ directive|define
 name|INIT_I18N_UI
 parameter_list|()
 define|\
-value|gtk_set_locale(); \   INIT_I18N();
+value|gtk_set_locale(); \   setlocale (LC_NUMERIC, "C"); \   INIT_I18N();
 end_define
 
 begin_else
@@ -78,7 +78,7 @@ directive|define
 name|INIT_I18N_UI
 parameter_list|()
 define|\
-value|gtk_set_locale(); \   INIT_I18N();
+value|gtk_set_locale(); \   setlocale (LC_NUMERIC, "C"); \   INIT_I18N();
 end_define
 
 begin_endif
