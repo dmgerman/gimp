@@ -28,7 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -112,6 +124,29 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|dummy
+specifier|static
+name|gchar
+modifier|*
+name|G_GNUC_UNUSED
+name|dummy
+index|[]
+init|=
+block|{
+name|N_
+argument_list|(
+literal|"<Image>/Image/Transforms/Image"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"<Image>/Image/Transforms/Layer"
+argument_list|)
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
@@ -185,11 +220,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_layer_rot90"
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotates the given layer 90 degrees clockwise."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -199,7 +240,10 @@ literal|"Adam D. Moss (adam@gimp.org)"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Image/Transforms/Layer/Rotate 90"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -218,7 +262,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_layer_rot270"
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotates the given layer 90 degrees anticlockwise."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -228,7 +275,10 @@ literal|"Adam D. Moss (adam@gimp.org)"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Image/Transforms/Layer/Rotate 270"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -247,7 +297,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_image_rot90"
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotates the given image 90 degrees clockwise."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -257,7 +310,10 @@ literal|"Adam D. Moss (adam@gimp.org)"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Image/Transforms/Image/Rotate 90"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -276,7 +332,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_image_rot270"
 argument_list|,
+name|_
+argument_list|(
 literal|"Rotates the current image 90 degrees anticlockwise."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -286,7 +345,10 @@ literal|"Adam D. Moss (adam@gimp.org)"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Image/Transforms/Image/Rotate 270"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

@@ -184,6 +184,11 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
+literal|"/Image/Transforms"
+argument_list|)
+block|,
+name|N_
+argument_list|(
 literal|"/Layers"
 argument_list|)
 block|,
@@ -200,6 +205,11 @@ block|,
 name|N_
 argument_list|(
 literal|"/View/Zoom"
+argument_list|)
+block|,
+name|N_
+argument_list|(
+literal|"/Stack"
 argument_list|)
 block|}
 decl_stmt|;

@@ -26,7 +26,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -179,13 +191,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_guillotine"
 argument_list|,
+name|_
+argument_list|(
 literal|"Slice up the image into subimages, cutting along the image's Guides.  Fooey to you and your broccoli, Pokey."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This function takes an image and blah blah.  Hooray!"
+argument_list|)
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
@@ -193,7 +214,10 @@ literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
 literal|"1998"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Image/Transforms/Guillotine"
+argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
@@ -283,6 +307,9 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Get the specified drawable  */
 name|image_ID
 operator|=
@@ -304,7 +331,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Guillotine..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|guillotine
@@ -477,7 +507,10 @@ break|break;
 default|default:
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Aie!  Aie!  Aie!\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -511,7 +544,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Yay... found %d horizontal guides and %d vertical guides.\n"
+argument_list|)
 argument_list|,
 name|num_hguides
 argument_list|,
@@ -523,7 +559,10 @@ else|else
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"Poopy, no guides.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

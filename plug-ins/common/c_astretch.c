@@ -25,6 +25,18 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Declare local functions.  */
 end_comment
@@ -185,13 +197,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_c_astretch"
 argument_list|,
+name|_
+argument_list|(
 literal|"Automatically stretch the contrast of the specified drawable to cover all possible ranges."
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This simple plug-in does an automatic contrast stretch.  For each channel in the image, it finds the minimum and maximum values... it uses those values to stretch the individual histograms to the full contrast range.  For some images it may do just what you want; for others it may be total crap :)"
+argument_list|)
 argument_list|,
 literal|"Federico Mena Quintero"
 argument_list|,
@@ -199,7 +220,10 @@ literal|"Federico Mena Quintero"
 argument_list|,
 literal|"1996"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Image/Colors/Auto-Stretch Contrast"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -266,6 +290,9 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -323,7 +350,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Auto-Stretching Contrast..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -493,7 +523,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"c_astretch: cmap was NULL!  Quitting...\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_quit

@@ -30,7 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -46,27 +58,11 @@ value|"plug_in_rotate"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_PRINT_NAME
-define|#
-directive|define
-name|PLUG_IN_PRINT_NAME
-value|"Rotate"
-end_define
-
-begin_define
 DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"v0.6 (01/15/98)"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_MENU_PATH
-define|#
-directive|define
-name|PLUG_IN_MENU_PATH
-value|"<Image>/Image/Transforms/Rotate"
 end_define
 
 begin_define
@@ -91,22 +87,6 @@ define|#
 directive|define
 name|PLUG_IN_COPYRIGHT
 value|"Sven Neumann"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_DESCRIBTION
-define|#
-directive|define
-name|PLUG_IN_DESCRIBTION
-value|"Rotates a layer or the whole image by 90, 180 or 270 degrees"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_HELP
-define|#
-directive|define
-name|PLUG_IN_HELP
-value|"This plug-in does rotate the active layer or the whole image clockwise by multiples of 90 degrees. When the whole image is choosen, the image is resized if necessary."
 end_define
 
 begin_define
@@ -171,7 +151,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a982bb00108
+DECL|struct|__anon2977c7a00108
 typedef|typedef
 struct|struct
 block|{
@@ -190,7 +170,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a982bb00208
+DECL|struct|__anon2977c7a00208
 typedef|typedef
 struct|struct
 block|{
@@ -501,14 +481,23 @@ name|nreturn_vals
 init|=
 name|NUMBER_OUT_ARGS
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* the actual installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|PLUG_IN_DESCRIBTION
+name|_
+argument_list|(
+literal|"Rotates a layer or the whole image by 90, 180 or 270 degrees"
+argument_list|)
 argument_list|,
-name|PLUG_IN_HELP
+name|_
+argument_list|(
+literal|"This plug-in does rotate the active layer or the whole image clockwise by multiples of 90 degrees. When the whole image is choosen, the image is resized if necessary."
+argument_list|)
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -516,7 +505,10 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|PLUG_IN_MENU_PATH
+name|_
+argument_list|(
+literal|"<Image>/Image/Transforms/Rotate"
+argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
@@ -624,6 +616,23 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
 comment|/* get image and drawable */
 name|image_ID
 operator|=
@@ -2046,7 +2055,10 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"You can not rotate the whole image if there's a selection."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_detach
@@ -2068,7 +2080,10 @@ condition|)
 block|{
 name|gimp_message
 argument_list|(
+name|_
+argument_list|(
 literal|"You can not rotate the whole image if there's a floating selection."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_detach
@@ -2081,7 +2096,10 @@ block|}
 block|}
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotating..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_run_procedure
@@ -2418,7 +2436,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-name|PLUG_IN_PRINT_NAME
+name|_
+argument_list|(
+literal|"Rotate"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2453,7 +2474,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2515,7 +2539,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2576,7 +2603,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotate clockwise by"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3174,7 +3204,10 @@ name|unit_label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"degrees"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3264,7 +3297,10 @@ name|check_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotate the whole image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

@@ -1420,8 +1420,6 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
-name|GIMP_IMAGE
-argument_list|(
 operator|(
 name|GimpImage
 operator|*
@@ -1434,7 +1432,6 @@ name|widget
 argument_list|)
 argument_list|,
 literal|"menu_preview_gimage"
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1698,7 +1695,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2082d0108
+DECL|struct|__anon27981faa0108
 block|{
 DECL|member|def
 name|GImage

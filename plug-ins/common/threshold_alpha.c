@@ -1,19 +1,7 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* threshold_alpha.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1997/06/08 22:34:26 narazaki@InetQ.or.jp>  * Version: 0.13A (the 'A' is for Adam who hacked in greyscale  *                 support - don't know if there's a more recent official  *                 version)  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* threshold_alpha.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1999-09-05 04:24:02 yasuhiro>  * Version: 0.13A (the 'A' is for Adam who hacked in greyscale  *                 support - don't know if there's a more recent official  *                 version)  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
-end_include
 
 begin_include
 include|#
@@ -39,6 +27,30 @@ directive|include
 file|<string.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Replace them with the right ones */
 end_comment
@@ -57,22 +69,6 @@ define|#
 directive|define
 name|SHORT_NAME
 value|"threshold_alpha"
-end_define
-
-begin_define
-DECL|macro|PROGRESS_NAME
-define|#
-directive|define
-name|PROGRESS_NAME
-value|"threshold_alpha (0.13):coloring transparency..."
-end_define
-
-begin_define
-DECL|macro|MENU_POSITION
-define|#
-directive|define
-name|MENU_POSITION
-value|"<Image>/Image/Alpha/Threshold Alpha"
 end_define
 
 begin_define
@@ -491,7 +487,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bfcc00108
+DECL|struct|__anon2b0d30630108
 block|{
 DECL|member|threshold
 name|gint
@@ -518,7 +514,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bfcc00208
+DECL|struct|__anon2b0d30630208
 block|{
 DECL|member|run
 name|gint
@@ -637,7 +633,10 @@ literal|"Shuji Narazaki"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|MENU_POSITION
+name|N_
+argument_list|(
+literal|"<Image>/Image/Alpha/Threshold Alpha"
+argument_list|)
 argument_list|,
 literal|"RGBA,GRAYA"
 argument_list|,
@@ -722,6 +721,23 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
 operator|*
 name|nreturn_vals
 operator|=
@@ -1137,7 +1153,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-name|PROGRESS_NAME
+name|_
+argument_list|(
+literal|"threshold_alpha (0.13):coloring transparency..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1454,7 +1473,10 @@ name|gtkW_frame_new
 argument_list|(
 name|hbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|table
@@ -1472,7 +1494,10 @@ name|gtkW_table_add_iscale_entry
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Threshold"
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -1854,7 +1879,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1916,7 +1944,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2044,7 +2075,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

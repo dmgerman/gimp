@@ -28,7 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_ifdef
@@ -251,11 +263,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_zealouscrop"
 argument_list|,
+name|_
+argument_list|(
 literal|"Automagically crops unused space from the edges and middle of a picture."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -265,7 +283,10 @@ literal|"Adam D. Moss"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Image/Transforms/Zealous Crop"
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -332,6 +353,9 @@ decl_stmt|;
 name|gint32
 name|image_id
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -433,7 +457,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"ZealousCropping(tm)..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -946,7 +973,10 @@ condition|)
 block|{
 name|printf
 argument_list|(
+name|_
+argument_list|(
 literal|"ZealousCrop(tm): Nothing to be done.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
