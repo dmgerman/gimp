@@ -18,7 +18,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.99.5, August 1999"
+value|"v0.99.6, August 1999"
 end_define
 
 begin_ifndef
@@ -174,7 +174,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2b5d89f00108
+DECL|struct|__anon2952084f0108
 typedef|typedef
 struct|struct
 block|{
@@ -362,6 +362,10 @@ decl_stmt|;
 DECL|member|generalshadowblur
 name|int
 name|generalshadowblur
+decl_stmt|;
+DECL|member|coloracc
+name|int
+name|coloracc
 decl_stmt|;
 DECL|typedef|gimpressionist_vals_t
 block|}
@@ -696,6 +700,14 @@ specifier|extern
 name|GtkObject
 modifier|*
 name|devthreshadjust
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GtkObject
+modifier|*
+name|coloraccadjust
 decl_stmt|;
 end_decl_stmt
 

@@ -2271,8 +2271,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|s
 decl_stmt|;
