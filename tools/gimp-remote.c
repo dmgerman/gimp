@@ -69,6 +69,26 @@ name|GIMP_BINARY
 value|"gimp-1.3"
 end_define
 
+begin_decl_stmt
+DECL|variable|existing
+specifier|static
+name|gboolean
+name|existing
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|query
+specifier|static
+name|gboolean
+name|query
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|GdkWindow
@@ -438,9 +458,11 @@ expr_stmt|;
 name|g_print
 argument_list|(
 literal|"Valid options are:\n"
-literal|"  --display<display>  Use the designated X display.\n"
-literal|"  -h --help            Output this help.\n"
-literal|"  -v --version         Output version info.\n"
+literal|"  -h, --help            Output this help.\n"
+literal|"  -v, --version         Output version info.\n"
+literal|"  --display<display>   Use the designated X display.\n"
+literal|"  -e, --existing        Use a running GIMP only, never start a new one.\n"
+literal|"  -q, --query           Query if a GIMP is running, then quit.\n"
 literal|"\n"
 argument_list|)
 expr_stmt|;
@@ -460,13 +482,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|start_new_gimp (GdkScreen * screen,gchar * argv0,GString * file_list)
+DECL|function|start_new_gimp (GdkScreen * screen,const gchar * argv0,GString * file_list)
 name|start_new_gimp
 parameter_list|(
 name|GdkScreen
 modifier|*
 name|screen
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|argv0
@@ -867,6 +890,60 @@ name|strcmp
 argument_list|(
 name|arg
 argument_list|,
+literal|"-e"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|arg
+argument_list|,
+literal|"--existing"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|existing
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|arg
+argument_list|,
+literal|"-q"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|arg
+argument_list|,
+literal|"--query"
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|query
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|arg
+argument_list|,
 literal|"-n"
 argument_list|)
 operator|==
@@ -1229,6 +1306,12 @@ operator|->
 name|len
 operator|==
 literal|0
+operator|&&
+operator|!
+name|query
+operator|&&
+operator|!
+name|existing
 condition|)
 block|{
 name|start_new_gimp
@@ -1253,6 +1336,21 @@ argument_list|,
 name|screen
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|query
+condition|)
+block|{
+name|exit
+argument_list|(
+name|gimp_window
+condition|?
+name|EXIT_SUCCESS
+else|:
+name|EXIT_FAILURE
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|gimp_window
@@ -1454,6 +1552,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|existing
+condition|)
+name|exit
+argument_list|(
+name|EXIT_FAILURE
+argument_list|)
+expr_stmt|;
 name|start_new_gimp
 argument_list|(
 name|screen
