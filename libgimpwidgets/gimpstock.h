@@ -561,6 +561,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TEXT_LAYER
 value|"gimp-text-layer"
+DECL|macro|GIMP_STOCK_FLOATING_SELECTION
+define|#
+directive|define
+name|GIMP_STOCK_FLOATING_SELECTION
+value|"gimp-floating-selection"
 DECL|macro|GIMP_STOCK_CHANNEL
 define|#
 directive|define
