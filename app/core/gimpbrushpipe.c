@@ -1303,7 +1303,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"pixmap brush pipe should have at least one brush"
+literal|"Image hoses should have at least one brush."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2030,7 +2030,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"failed to load one of the pixmap brushes in the pipe"
+literal|"Failed to load one of the brushes in the image hose."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2347,7 +2347,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"failed to load pixmap brush"
+literal|"Failed to load pixmap brush."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -66,12 +66,6 @@ directive|include
 file|"plug_in.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|file_load_proc
 specifier|static
@@ -1693,10 +1687,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"load handler \"%s\" does not take the standard load handler args"
-argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -1726,13 +1717,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"attempt to register non-existant load handler \"%s\""
 argument_list|)
-argument_list|,
+operator|,
 name|name
-argument_list|)
 expr_stmt|;
 goto|goto
 name|done
@@ -2184,10 +2172,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"save handler \"%s\" does not take the standard save handler args"
-argument_list|)
 argument_list|,
 name|name
 argument_list|)
@@ -2217,10 +2202,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"attempt to register non-existant save handler \"%s\""
-argument_list|)
 argument_list|,
 name|name
 argument_list|)

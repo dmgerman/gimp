@@ -43,18 +43,6 @@ directive|include
 file|"regex.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpintl.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|progress_init_proc
 specifier|static
@@ -823,10 +811,7 @@ name|num_plugins
 condition|)
 name|g_error
 argument_list|(
-name|_
-argument_list|(
 literal|"Internal error counting plugins"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|proc_def
