@@ -366,7 +366,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|channel
@@ -958,7 +958,7 @@ block|}
 end_function
 
 begin_function
-name|gint
+name|gdouble
 DECL|function|gimp_channel_get_opacity (const GimpChannel * channel)
 name|gimp_channel_get_opacity
 parameter_list|(
@@ -979,32 +979,25 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
-call|(
-name|gint
-call|)
-argument_list|(
 name|channel
 operator|->
 name|color
 operator|.
 name|a
-operator|*
-literal|100.999
-argument_list|)
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_channel_set_opacity (GimpChannel * channel,gint opacity)
+DECL|function|gimp_channel_set_opacity (GimpChannel * channel,gdouble opacity)
 name|gimp_channel_set_opacity
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
+name|gdouble
 name|opacity
 parameter_list|)
 block|{
@@ -1022,9 +1015,9 @@ name|CLAMP
 argument_list|(
 name|opacity
 argument_list|,
-literal|0
+name|GIMP_OPACITY_TRANSPARENT
 argument_list|,
-literal|100
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|channel
@@ -1034,8 +1027,6 @@ operator|.
 name|a
 operator|=
 name|opacity
-operator|/
-literal|100.0
 expr_stmt|;
 block|}
 end_function

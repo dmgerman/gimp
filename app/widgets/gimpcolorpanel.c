@@ -557,7 +557,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set
@@ -571,7 +571,7 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_color

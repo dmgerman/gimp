@@ -215,7 +215,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a93b10103
+DECL|enum|__anon2af2ccd40103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1010,7 +1010,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|preview

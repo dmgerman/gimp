@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27964ef00103
+DECL|enum|__anon2b8b20ce0103
 block|{
 DECL|enumerator|IMAGE_MAP_WAITING
 name|IMAGE_MAP_WAITING
@@ -1768,7 +1768,7 @@ name|shadowPR
 argument_list|,
 name|FALSE
 argument_list|,
-name|OPAQUE_OPACITY
+name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_REPLACE_MODE
 argument_list|,

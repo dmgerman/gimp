@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf639220103
+DECL|enum|__anon27904cd10103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2313,7 +2313,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 block|}
 decl_stmt|;
 name|gimage
@@ -6001,7 +6001,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 return|return

@@ -895,6 +895,8 @@ name|paint_options
 operator|)
 operator|->
 name|pressure
+operator|/
+literal|100.0
 expr_stmt|;
 if|if
 condition|(
@@ -1131,15 +1133,13 @@ name|MIN
 argument_list|(
 name|pressure
 argument_list|,
-literal|255
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(
 name|context
 argument_list|)
-operator|*
-literal|255
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(

@@ -1595,7 +1595,7 @@ parameter_list|,
 name|gboolean
 name|undo
 parameter_list|,
-name|gint
+name|gdouble
 name|opacity
 parameter_list|,
 name|GimpLayerModeEffects
@@ -1633,7 +1633,7 @@ parameter_list|,
 name|gboolean
 name|undo
 parameter_list|,
-name|gint
+name|gdouble
 name|opacity
 parameter_list|,
 name|PixelRegion

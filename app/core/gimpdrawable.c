@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac7dc60103
+DECL|enum|__anon296c631b0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -1715,7 +1715,7 @@ name|shadowPR
 argument_list|,
 name|undo
 argument_list|,
-name|OPAQUE_OPACITY
+name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_REPLACE_MODE
 argument_list|,
@@ -2059,7 +2059,7 @@ name|color
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 switch|switch
 condition|(
@@ -2120,7 +2120,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.0
+name|GIMP_OPACITY_TRANSPARENT
 argument_list|)
 expr_stmt|;
 break|break;

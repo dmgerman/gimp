@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fed5df0103
+DECL|enum|__anon2c5cff850103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -2060,7 +2060,7 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|color_area
@@ -2171,7 +2171,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|color_area
@@ -5994,7 +5994,7 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|color_history_initialized

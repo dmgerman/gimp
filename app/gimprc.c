@@ -256,7 +256,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6d17510103
+DECL|enum|__anon28928b540103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -7303,7 +7303,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 block|}
 decl_stmt|;
 name|gint
@@ -8577,7 +8577,7 @@ literal|1.0
 block|,
 literal|1.0
 block|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 block|}
 decl_stmt|;
 name|GimpRGB
@@ -8590,7 +8590,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 block|}
 decl_stmt|;
 name|gchar
@@ -9157,7 +9157,7 @@ name|foreground
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 block|}
 elseif|else
@@ -9193,7 +9193,7 @@ name|background
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 block|}
 elseif|else

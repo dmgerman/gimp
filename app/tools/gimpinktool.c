@@ -4645,7 +4645,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2af94e9d0103
+DECL|enum|__anon2be1073d0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -5761,16 +5761,9 @@ name|srcPR
 argument_list|,
 name|FALSE
 argument_list|,
-call|(
-name|int
-call|)
-argument_list|(
 name|gimp_context_get_opacity
 argument_list|(
 name|context
-argument_list|)
-operator|*
-literal|255
 argument_list|)
 argument_list|,
 name|gimp_context_get_paint_mode

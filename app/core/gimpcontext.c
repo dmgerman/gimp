@@ -1131,7 +1131,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon299ceb560103
+DECL|enum|__anon2957e2500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1183,7 +1183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299ceb560203
+DECL|enum|__anon2957e2500203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2673,7 +2673,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set
@@ -2689,14 +2689,14 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|context
 operator|->
 name|opacity
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|context
 operator|->
@@ -5741,7 +5741,7 @@ endif|#
 directive|endif
 typedef|typedef
 struct|struct
-DECL|struct|__anon299ceb560308
+DECL|struct|__anon2957e2500308
 block|{
 DECL|member|foo
 name|GimpObject
@@ -7018,7 +7018,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set
@@ -7032,7 +7032,7 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_foreground
@@ -7160,7 +7160,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
 return|return

@@ -2180,9 +2180,14 @@ name|fsPR
 argument_list|,
 name|undo
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|layer
 operator|->
 name|opacity
+operator|/
+literal|255.0
 argument_list|,
 name|layer
 operator|->

@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c36f45a0103
+DECL|enum|__anon2a3d3ca60103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1966,14 +1966,12 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|OPAQUE_OPACITY
+name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(
 name|context
 argument_list|)
-operator|*
-literal|255
 argument_list|,
 name|pressure_options
 operator|->

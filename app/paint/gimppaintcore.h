@@ -58,7 +58,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon278d53d10103
+DECL|enum|__anon29d2cb610103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -97,7 +97,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon278d53d10203
+DECL|enum|__anon29d2cb610203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -608,10 +608,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|,
-name|gint
+name|gdouble
 name|image_opacity
 parameter_list|,
 name|GimpLayerModeEffects
@@ -641,10 +641,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|,
-name|gint
+name|gdouble
 name|image_opacity
 parameter_list|,
 name|BrushApplicationMode

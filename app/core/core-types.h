@@ -41,6 +41,26 @@ file|"core/core-enums.h"
 end_include
 
 begin_comment
+comment|/*  defines  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_OPACITY_TRANSPARENT
+define|#
+directive|define
+name|GIMP_OPACITY_TRANSPARENT
+value|0.0
+end_define
+
+begin_define
+DECL|macro|GIMP_OPACITY_OPAQUE
+define|#
+directive|define
+name|GIMP_OPACITY_OPAQUE
+value|1.0
+end_define
+
+begin_comment
 comment|/*  enums  */
 end_comment
 
@@ -48,7 +68,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2796f5630103
+DECL|enum|__anon28c2c6e00103
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -79,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796f5630203
+DECL|enum|__anon28c2c6e00203
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -95,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796f5630303
+DECL|enum|__anon28c2c6e00303
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -115,7 +135,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2796f5630403
+DECL|enum|__anon28c2c6e00403
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -139,7 +159,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon2796f5630503
+DECL|enum|__anon28c2c6e00503
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -161,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796f5630603
+DECL|enum|__anon28c2c6e00603
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -191,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796f5630703
+DECL|enum|__anon28c2c6e00703
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -207,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796f5630803
+DECL|enum|__anon28c2c6e00803
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -229,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796f5630903
+DECL|enum|__anon28c2c6e00903
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -264,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796f5630a03
+DECL|enum|__anon28c2c6e00a03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -300,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796f5630b03
+DECL|enum|__anon28c2c6e00b03
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL
@@ -321,7 +341,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2796f5630c03
+DECL|enum|__anon28c2c6e00c03
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */

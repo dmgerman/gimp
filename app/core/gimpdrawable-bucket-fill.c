@@ -1279,8 +1279,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|opacity
-operator|*
-literal|255
 argument_list|,
 name|paint_mode
 argument_list|,

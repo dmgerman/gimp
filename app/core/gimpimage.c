@@ -228,7 +228,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2893425f0103
+DECL|enum|__anon2c78a6080103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -7119,7 +7119,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,gint opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
+DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
 name|gimp_image_apply_image
 parameter_list|(
 name|GimpImage
@@ -7137,7 +7137,7 @@ parameter_list|,
 name|gboolean
 name|push_undo
 parameter_list|,
-name|gint
+name|gdouble
 name|opacity
 parameter_list|,
 name|GimpLayerModeEffects
@@ -7644,6 +7644,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|mode
 argument_list|,
@@ -7670,6 +7672,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|mode
 argument_list|,
@@ -7688,7 +7692,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_replace_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,gint opacity,PixelRegion * maskPR,gint x,gint y)
+DECL|function|gimp_image_replace_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,gdouble opacity,PixelRegion * maskPR,gint x,gint y)
 name|gimp_image_replace_image
 parameter_list|(
 name|GimpImage
@@ -7706,7 +7710,7 @@ parameter_list|,
 name|gboolean
 name|push_undo
 parameter_list|,
-name|gint
+name|gdouble
 name|opacity
 parameter_list|,
 name|PixelRegion
@@ -8334,6 +8338,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|active_components
 argument_list|,
@@ -8363,6 +8369,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|opacity
+operator|*
+literal|255.999
 argument_list|,
 name|active_components
 argument_list|,

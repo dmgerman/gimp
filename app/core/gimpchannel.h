@@ -259,7 +259,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gdouble
 name|gimp_channel_get_opacity
 parameter_list|(
 specifier|const
@@ -278,7 +278,7 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
-name|gint
+name|gdouble
 name|opacity
 parameter_list|)
 function_decl|;

@@ -726,10 +726,7 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gint
-name|mode
-decl_stmt|;
-name|gint
+name|gdouble
 name|opacity
 decl_stmt|;
 name|gdouble
@@ -866,10 +863,6 @@ name|temp_blend
 operator|=
 name|local_blend
 expr_stmt|;
-name|mode
-operator|=
-name|gradient_type
-expr_stmt|;
 if|if
 condition|(
 name|gradient_length
@@ -918,7 +911,7 @@ argument_list|,
 operator|&
 name|color
 argument_list|,
-name|mode
+name|gradient_type
 argument_list|)
 expr_stmt|;
 name|temp_blend
@@ -1082,6 +1075,8 @@ operator|(
 name|gdouble
 operator|)
 name|temp_blend
+operator|/
+literal|255.0
 expr_stmt|;
 if|if
 condition|(
@@ -1111,15 +1106,13 @@ name|MIN
 argument_list|(
 name|opacity
 argument_list|,
-literal|255
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(
 name|context
 argument_list|)
-operator|*
-literal|255
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(

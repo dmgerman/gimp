@@ -988,7 +988,7 @@ decl_stmt|;
 name|gdouble
 name|rate
 decl_stmt|;
-name|gint
+name|gdouble
 name|opacity
 decl_stmt|;
 name|gint
@@ -1384,8 +1384,6 @@ argument_list|)
 expr_stmt|;
 name|opacity
 operator|=
-literal|255
-operator|*
 name|gimp_context_get_opacity
 argument_list|(
 name|context
@@ -1420,10 +1418,10 @@ name|MIN
 argument_list|(
 name|opacity
 argument_list|,
-literal|255
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 argument_list|,
-name|OPAQUE_OPACITY
+name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|pressure_options
 operator|->

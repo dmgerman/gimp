@@ -388,10 +388,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|,
-name|gint
+name|gdouble
 name|image_opacity
 parameter_list|,
 name|GimpLayerModeEffects
@@ -420,10 +420,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|,
-name|gint
+name|gdouble
 name|image_opacity
 parameter_list|,
 name|PaintApplicationMode
@@ -445,7 +445,7 @@ name|MaskBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|)
 function_decl|;
@@ -464,7 +464,7 @@ name|MaskBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|)
 function_decl|;
@@ -3768,7 +3768,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_paste_canvas (GimpPaintCore * core,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,GimpLayerModeEffects paint_mode,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
+DECL|function|gimp_paint_core_paste_canvas (GimpPaintCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
 name|gimp_paint_core_paste_canvas
 parameter_list|(
 name|GimpPaintCore
@@ -3779,10 +3779,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|,
-name|gint
+name|gdouble
 name|image_opacity
 parameter_list|,
 name|GimpLayerModeEffects
@@ -3841,7 +3841,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_replace_canvas (GimpPaintCore * core,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
+DECL|function|gimp_paint_core_replace_canvas (GimpPaintCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
 name|gimp_paint_core_replace_canvas
 parameter_list|(
 name|GimpPaintCore
@@ -3852,10 +3852,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|,
-name|gint
+name|gdouble
 name|image_opacity
 parameter_list|,
 name|BrushApplicationMode
@@ -5591,7 +5591,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_paste (GimpPaintCore * core,MaskBuf * brush_mask,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,GimpLayerModeEffects paint_mode,PaintApplicationMode mode)
+DECL|function|gimp_paint_core_paste (GimpPaintCore * core,MaskBuf * brush_mask,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,PaintApplicationMode mode)
 name|gimp_paint_core_paste
 parameter_list|(
 name|GimpPaintCore
@@ -5606,10 +5606,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|,
-name|gint
+name|gdouble
 name|image_opacity
 parameter_list|,
 name|GimpLayerModeEffects
@@ -5990,7 +5990,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_replace (GimpPaintCore * core,MaskBuf * brush_mask,GimpDrawable * drawable,gint brush_opacity,gint image_opacity,PaintApplicationMode mode)
+DECL|function|gimp_paint_core_replace (GimpPaintCore * core,MaskBuf * brush_mask,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,PaintApplicationMode mode)
 name|gimp_paint_core_replace
 parameter_list|(
 name|GimpPaintCore
@@ -6005,10 +6005,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|,
-name|gint
+name|gdouble
 name|image_opacity
 parameter_list|,
 name|PaintApplicationMode
@@ -6632,7 +6632,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_to_canvas_tiles (GimpPaintCore * core,MaskBuf * brush_mask,gint brush_opacity)
+DECL|function|brush_to_canvas_tiles (GimpPaintCore * core,MaskBuf * brush_mask,gdouble brush_opacity)
 name|brush_to_canvas_tiles
 parameter_list|(
 name|GimpPaintCore
@@ -6643,7 +6643,7 @@ name|MaskBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|)
 block|{
@@ -6851,6 +6851,8 @@ operator|&
 name|maskPR
 argument_list|,
 name|brush_opacity
+operator|*
+literal|255.999
 argument_list|)
 expr_stmt|;
 block|}
@@ -6859,7 +6861,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brush_to_canvas_buf (GimpPaintCore * core,MaskBuf * brush_mask,gint brush_opacity)
+DECL|function|brush_to_canvas_buf (GimpPaintCore * core,MaskBuf * brush_mask,gdouble brush_opacity)
 name|brush_to_canvas_buf
 parameter_list|(
 name|GimpPaintCore
@@ -6870,7 +6872,7 @@ name|MaskBuf
 modifier|*
 name|brush_mask
 parameter_list|,
-name|gint
+name|gdouble
 name|brush_opacity
 parameter_list|)
 block|{
@@ -7109,6 +7111,8 @@ operator|&
 name|maskPR
 argument_list|,
 name|brush_opacity
+operator|*
+literal|255.999
 argument_list|)
 expr_stmt|;
 block|}

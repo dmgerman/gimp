@@ -4176,7 +4176,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 block|}
 decl_stmt|;
 comment|/* check and see if this is the drawable the floating selection    *  is attached to. if it is then we'll do the attachment at    *  the end of this function.    */
@@ -4430,7 +4430,7 @@ literal|0.0
 block|,
 literal|0.0
 block|,
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 block|}
 decl_stmt|;
 comment|/* check and see if this is the drawable the floating selection    *  is attached to. if it is then we'll do the attachment at    *  the end of this function.    */

@@ -2173,7 +2173,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|editor
 operator|->
@@ -2218,7 +2218,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|editor
 operator|->
@@ -2263,7 +2263,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|editor
 operator|->
@@ -2308,7 +2308,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|0.0
+name|GIMP_OPACITY_TRANSPARENT
 expr_stmt|;
 name|editor
 operator|->
@@ -2353,7 +2353,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|editor
 operator|->
@@ -2398,7 +2398,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|editor
 operator|->
@@ -2443,7 +2443,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|editor
 operator|->
@@ -2488,7 +2488,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|editor
 operator|->
@@ -2533,7 +2533,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 name|editor
 operator|->
@@ -2578,7 +2578,7 @@ index|]
 operator|.
 name|a
 operator|=
-literal|1.0
+name|GIMP_OPACITY_OPAQUE
 expr_stmt|;
 if|if
 condition|(
