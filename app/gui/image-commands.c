@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5fd5950108
+DECL|struct|__anon2beb2cbb0108
 block|{
 DECL|member|resize
 name|Resize
@@ -910,7 +910,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/scale_layer_warn.html"
 argument_list|,
-name|FALSE
+name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
 name|_
 argument_list|(

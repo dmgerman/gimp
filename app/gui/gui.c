@@ -1350,7 +1350,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/really_quit.html"
 argument_list|,
-name|TRUE
+name|GTK_STOCK_DIALOG_WARNING
 argument_list|,
 name|_
 argument_list|(

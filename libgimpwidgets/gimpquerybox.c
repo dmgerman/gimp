@@ -63,12 +63,6 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"pixmaps/eek.xpm"
-end_include
-
 begin_comment
 comment|/*  *  String, integer, double and size query boxes  */
 end_comment
@@ -1421,13 +1415,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_query_boolean_box:  * @title:        The query box dialog's title.  * @help_func:    The help function to show this dialog's help page.  * @help_data:    A string pointing to this dialog's html help page.  * @eek:          #TRUE if you want the "Eek" wilber to appear left of  *                the dialog's message.  * @message:      A string which will be shown in the query box.  * @true_button:  The string to be shown in the dialog's left button.  * @false_button: The string to be shown in the dialog's right button.  * @object:       The object this query box is associated with.  * @signal:       The object's signal which will cause the query box  *                to be closed.  * @callback:     The function which will be called when the user clicks one  *                of the buttons.  * @data:         The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
+comment|/**  * gimp_query_boolean_box:  * @title:        The query box dialog's title.  * @help_func:    The help function to show this dialog's help page.  * @help_data:    A string pointing to this dialog's html help page.  * @stock_id:     A stock_id to specify an icon to appear on the left  *                on the dialog's message.  * @message:      A string which will be shown in the query box.  * @true_button:  The string to be shown in the dialog's left button.  * @false_button: The string to be shown in the dialog's right button.  * @object:       The object this query box is associated with.  * @signal:       The object's signal which will cause the query box  *                to be closed.  * @callback:     The function which will be called when the user clicks one  *                of the buttons.  * @data:         The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_query_boolean_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,gboolean eek,const gchar * message,const gchar * true_button,const gchar * false_button,GObject * object,const gchar * signal,GimpQueryBooleanCallback callback,gpointer data)
+DECL|function|gimp_query_boolean_box (const gchar * title,GimpHelpFunc help_func,const gchar * help_data,const gchar * stock_id,const gchar * message,const gchar * true_button,const gchar * false_button,GObject * object,const gchar * signal,GimpQueryBooleanCallback callback,gpointer data)
 name|gimp_query_boolean_box
 parameter_list|(
 specifier|const
@@ -1443,8 +1437,10 @@ name|gchar
 modifier|*
 name|help_data
 parameter_list|,
-name|gboolean
-name|eek
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -1487,12 +1483,27 @@ name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|pixmap
+name|image
+init|=
+name|NULL
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
+if|if
+condition|(
+name|stock_id
+condition|)
+name|image
+operator|=
+name|gtk_image_new_from_stock
+argument_list|(
+name|stock_id
+argument_list|,
+name|GTK_ICON_SIZE_DIALOG
+argument_list|)
+expr_stmt|;
 name|query_box
 operator|=
 name|create_query_box
@@ -1513,7 +1524,7 @@ argument_list|(
 name|boolean_query_box_false_callback
 argument_list|)
 argument_list|,
-name|eek
+name|image
 condition|?
 name|NULL
 else|:
@@ -1546,7 +1557,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|eek
+name|image
 condition|)
 return|return
 name|query_box
@@ -1594,13 +1605,6 @@ argument_list|(
 name|hbox
 argument_list|)
 expr_stmt|;
-name|pixmap
-operator|=
-name|gimp_pixmap_new
-argument_list|(
-name|eek_xpm
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1608,7 +1612,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|pixmap
+name|image
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1619,7 +1623,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|pixmap
+name|image
 argument_list|)
 expr_stmt|;
 name|label

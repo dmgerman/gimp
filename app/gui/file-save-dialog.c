@@ -1737,7 +1737,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"save/file_exists.html"
 argument_list|,
-name|FALSE
+name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
 name|overwrite_text
 argument_list|,

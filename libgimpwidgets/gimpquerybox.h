@@ -375,8 +375,10 @@ name|gchar
 modifier|*
 name|help_data
 parameter_list|,
-name|gboolean
-name|eek
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar

@@ -1133,7 +1133,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210103
+DECL|enum|__anon2b5235e40103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1185,7 +1185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210203
+DECL|enum|__anon2b5235e40203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1206,7 +1206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210303
+DECL|enum|__anon2b5235e40303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1227,7 +1227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210403
+DECL|enum|__anon2b5235e40403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1254,7 +1254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210503
+DECL|enum|__anon2b5235e40503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1275,7 +1275,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210603
+DECL|enum|__anon2b5235e40603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1443,7 +1443,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dad1210708
+DECL|struct|__anon2b5235e40708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1482,7 +1482,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dad1210808
+DECL|struct|__anon2b5235e40808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1531,7 +1531,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dad1210908
+DECL|struct|__anon2b5235e40908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1709,7 +1709,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210a03
+DECL|enum|__anon2b5235e40a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1739,7 +1739,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210b03
+DECL|enum|__anon2b5235e40b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1755,7 +1755,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210c03
+DECL|enum|__anon2b5235e40c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1780,7 +1780,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dad1210d03
+DECL|enum|__anon2b5235e40d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -20265,7 +20265,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,
-name|FALSE
+name|GTK_STOCK_DIALOG_WARNING
 argument_list|,
 name|message
 argument_list|,

@@ -3295,7 +3295,7 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fractalexplorer.html"
 argument_list|,
-name|FALSE
+name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
 name|str
 argument_list|,
