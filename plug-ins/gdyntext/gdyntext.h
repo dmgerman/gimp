@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28faae460103
+DECL|enum|__anon28ad499c0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -188,7 +188,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28faae460208
+DECL|struct|__anon28ad499c0208
 typedef|typedef
 struct|struct
 block|{

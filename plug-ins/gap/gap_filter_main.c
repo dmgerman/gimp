@@ -272,7 +272,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_filter_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Filters/Filter all Layers..."
 argument_list|)

@@ -438,9 +438,9 @@ literal|"Vidar Madsen"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Artistic/GIMPressionist"
+literal|"<Image>/Filters/Artistic/GIMPressionist..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

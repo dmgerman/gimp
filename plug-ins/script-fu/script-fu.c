@@ -47,13 +47,19 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -619,9 +625,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu"
 argument_list|,
+name|_
+argument_list|(
 literal|"A scheme interpreter for scripting GIMP operations"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"More help here later"
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -651,9 +663,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu_console"
 argument_list|,
+name|_
+argument_list|(
 literal|"Provides a console mode for script-fu development"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Provides an interface which allows interactive scheme development."
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -661,7 +679,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Toolbox>/Xtns/Script-Fu/Console"
+name|N_
+argument_list|(
+literal|"<Toolbox>/Xtns/Script-Fu/Console..."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -680,9 +701,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu_server"
 argument_list|,
+name|_
+argument_list|(
 literal|"Provides a server for remote script-fu operation"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Provides a server for remote script-fu operation"
+argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -690,7 +717,10 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Toolbox>/Xtns/Script-Fu/Server"
+name|N_
+argument_list|(
+literal|"<Toolbox>/Xtns/Script-Fu/Server..."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -711,9 +741,15 @@ name|gimp_install_procedure
 argument_list|(
 literal|"extension_script_fu_eval"
 argument_list|,
+name|_
+argument_list|(
 literal|"Evaluate scheme code"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Evaluate the code under the scheme interpeter (primarily for batch mode)"
+argument_list|)
 argument_list|,
 literal|"Manish Singh"
 argument_list|,

@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bba4d110103
+DECL|enum|__anon2a9cc66e0103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bba4d110203
+DECL|enum|__anon2a9cc66e0203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -191,7 +191,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon2bba4d110308
+DECL|struct|__anon2a9cc66e0308
 specifier|static
 struct|struct
 block|{
@@ -212,7 +212,7 @@ DECL|member|drawable_has_alpha
 name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
-DECL|struct|__anon2bba4d110408
+DECL|struct|__anon2a9cc66e0408
 struct|struct
 block|{
 DECL|member|x0
@@ -581,7 +581,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon2bba4d110508
+DECL|struct|__anon2a9cc66e0508
 specifier|static
 struct|struct
 block|{
@@ -5897,9 +5897,9 @@ argument_list|(
 literal|"September 31, 1999"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Paper Tile"
+literal|"<Image>/Filters/Map/Paper Tile..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

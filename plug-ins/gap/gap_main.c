@@ -1627,7 +1627,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Video/Goto Next"
 argument_list|)
@@ -1662,7 +1662,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Video/Goto Prev"
 argument_list|)
@@ -1697,7 +1697,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Video/Goto First"
 argument_list|)
@@ -1732,7 +1732,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Video/Goto Last"
 argument_list|)
@@ -1767,7 +1767,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Video/Goto Any"
 argument_list|)
@@ -1802,7 +1802,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Video/Delete Frames"
 argument_list|)
@@ -1837,9 +1837,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Duplicate Frames"
+literal|"<Image>/Video/Duplicate Frames..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1872,9 +1872,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Exchange Frame"
+literal|"<Image>/Video/Exchange Frame..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1907,9 +1907,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Move Path"
+literal|"<Image>/Video/Move Path..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1942,9 +1942,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Frames to Image"
+literal|"<Image>/Video/Frames to Image..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1977,9 +1977,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Frames Flatten"
+literal|"<Image>/Video/Frames Flatten..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2012,9 +2012,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Frames LayerDel"
+literal|"<Image>/Video/Frames LayerDel..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2080,9 +2080,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Frames Convert"
+literal|"<Image>/Video/Frames Convert..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2115,9 +2115,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Frames Resize"
+literal|"<Image>/Video/Frames Resize..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2150,9 +2150,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Frames Crop"
+literal|"<Image>/Video/Frames Crop..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2185,9 +2185,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Frames Scale"
+literal|"<Image>/Video/Frames Scale..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2220,9 +2220,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Split Img to Frames"
+literal|"<Image>/Video/Split Img to Frames..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2255,9 +2255,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Encode/MPEG1"
+literal|"<Image>/Video/Encode/MPEG1..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2290,9 +2290,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Encode/MPEG2 mpeg2encode)"
+literal|"<Image>/Video/Encode/MPEG2 mpeg2encode...)"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2325,9 +2325,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Framesequence Shift"
+literal|"<Image>/Video/Framesequence Shift..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2360,9 +2360,9 @@ literal|"Wolfgang Hofer"
 argument_list|,
 name|gap_main_version
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Video/Frames Modify"
+literal|"<Image>/Video/Frames Modify..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2414,7 +2414,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon297408690108
+DECL|struct|__anon2c76d0330108
 block|{
 DECL|member|lock
 name|long

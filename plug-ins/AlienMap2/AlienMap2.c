@@ -161,7 +161,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b3a26af0108
+DECL|struct|__anon29b3a0620108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b3a26af0208
+DECL|struct|__anon29b3a0620208
 typedef|typedef
 struct|struct
 block|{
@@ -1004,7 +1004,7 @@ argument_list|(
 literal|"24th April 1998"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Filters/Colors/Map/Alien Map 2"
 argument_list|)

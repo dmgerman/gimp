@@ -134,7 +134,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2892f4eb0108
+DECL|struct|__anon29380bb80108
 typedef|typedef
 struct|struct
 block|{
@@ -162,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2892f4eb0208
+DECL|struct|__anon29380bb80208
 typedef|typedef
 struct|struct
 block|{
@@ -485,11 +485,11 @@ argument_list|)
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
-literal|"1998, 1999 Sven Neumann"
+literal|"1998, 1999"
 argument_list|,
 literal|"v0.9.2 (99/09/01)"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Toolbox>/File/Acquire/Screen Shot..."
 argument_list|)

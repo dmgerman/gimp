@@ -139,7 +139,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c3f1a3c0108
+DECL|struct|__anon2b8af6740108
 typedef|typedef
 struct|struct
 block|{
@@ -251,7 +251,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3f1a3c0208
+DECL|struct|__anon2b8af6740208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1018,9 +1018,9 @@ literal|"Peter Kirchgessner (peter@kirchgessner.net)"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Combine/Film"
+literal|"<Image>/Filters/Combine/Film..."
 argument_list|)
 argument_list|,
 literal|"INDEXED*, GRAY*, RGB*"

@@ -376,7 +376,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_borderaverage"
 argument_list|,
+name|_
+argument_list|(
 literal|"Borderaverage"
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -386,9 +389,9 @@ literal|"Internet Access AG"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Border Average"
+literal|"<Image>/Filters/Colors/Border Average..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -1466,9 +1469,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|add_new_color (gint bytes,guchar * buffer,gint * cube,gint bucket_expo)
 specifier|static
 name|void
+DECL|function|add_new_color (gint bytes,guchar * buffer,gint * cube,gint bucket_expo)
 name|add_new_color
 parameter_list|(
 name|gint
@@ -1585,9 +1588,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|borderaverage_dialog ()
 specifier|static
 name|gint
+DECL|function|borderaverage_dialog ()
 name|borderaverage_dialog
 parameter_list|()
 block|{
@@ -1665,7 +1668,10 @@ name|mw_app_new
 argument_list|(
 literal|"plug_in_borderaverage"
 argument_list|,
+name|_
+argument_list|(
 literal|"Borderaverage"
+argument_list|)
 argument_list|,
 operator|&
 name|runp

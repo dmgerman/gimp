@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdk/gdkkeysyms.h"
 end_include
 
@@ -47,6 +41,18 @@ begin_include
 include|#
 directive|include
 file|"gtk/gtk.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -209,12 +215,6 @@ begin_include
 include|#
 directive|include
 file|"imap_grid.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -692,7 +692,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_imagemap"
 argument_list|,
+name|_
+argument_list|(
 literal|"Creates a clickable imagemap."
+argument_list|)
 argument_list|,
 literal|""
 argument_list|,
@@ -702,7 +705,10 @@ literal|"Maurits Rijk"
 argument_list|,
 literal|"1998-1999"
 argument_list|,
-literal|"<Image>/Filters/Misc/ImageMap"
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Misc/ImageMap..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

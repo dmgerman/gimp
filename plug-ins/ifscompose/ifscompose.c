@@ -124,7 +124,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon29ed19870103
+DECL|enum|__anon2b2b571a0103
 typedef|typedef
 enum|enum
 block|{
@@ -144,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29ed19870203
+DECL|enum|__anon2b2b571a0203
 typedef|typedef
 enum|enum
 block|{
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed19870308
+DECL|struct|__anon2b2b571a0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -183,7 +183,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon29ed1987040a
+DECL|union|__anon2b2b571a040a
 union|union
 block|{
 DECL|member|d
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed19870508
+DECL|struct|__anon2b2b571a0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed19870608
+DECL|struct|__anon2b2b571a0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed19870708
+DECL|struct|__anon2b2b571a0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed19870808
+DECL|struct|__anon2b2b571a0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed19870908
+DECL|struct|__anon2b2b571a0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed19870a08
+DECL|struct|__anon2b2b571a0a08
 block|{
 DECL|member|run
 name|gint
@@ -1625,9 +1625,9 @@ literal|"Owen Taylor"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Nature/IfsCompose"
+literal|"<Image>/Filters/Render/Nature/IfsCompose..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29eaf9650103
+DECL|enum|__anon2c630f1b0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -387,7 +387,7 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1997-98"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Filters/Animation/Animation Optimize"
 argument_list|)
@@ -426,7 +426,7 @@ literal|"Adam D. Moss<adam@gimp.org>"
 argument_list|,
 literal|"1997-98"
 argument_list|,
-name|_
+name|N_
 argument_list|(
 literal|"<Image>/Filters/Animation/Animation UnOptimize"
 argument_list|)

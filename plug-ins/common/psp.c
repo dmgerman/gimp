@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490103
+DECL|enum|__anon2c1cb5070103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490203
+DECL|enum|__anon2c1cb5070203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490303
+DECL|enum|__anon2c1cb5070303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490403
+DECL|enum|__anon2c1cb5070403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490503
+DECL|enum|__anon2c1cb5070503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490603
+DECL|enum|__anon2c1cb5070603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490703
+DECL|enum|__anon2c1cb5070703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490803
+DECL|enum|__anon2c1cb5070803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490903
+DECL|enum|__anon2c1cb5070903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490a03
+DECL|enum|__anon2c1cb5070a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490b03
+DECL|enum|__anon2c1cb5070b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a1fba490c03
+DECL|enum|__anon2c1cb5070c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1fba490d08
+DECL|struct|__anon2c1cb5070d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1fba490e08
+DECL|struct|__anon2c1cb5070e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1fba490f08
+DECL|struct|__anon2c1cb5070f08
 block|{
 DECL|member|run
 name|gint
@@ -1218,6 +1218,10 @@ name|dlg
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|hbbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|button
 decl_stmt|;
 name|GtkWidget
@@ -1281,7 +1285,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Save as PSP"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -1312,11 +1319,85 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Action area  */
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|hbbox
+operator|=
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|hbbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1347,19 +1428,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -1378,7 +1454,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1412,19 +1491,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -1439,7 +1513,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Data Compression"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1522,8 +1599,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"None"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -1590,8 +1670,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"RLE"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -1658,7 +1741,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"LZ77"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

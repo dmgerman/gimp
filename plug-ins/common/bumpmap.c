@@ -175,7 +175,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon27c6144e0103
+DECL|enum|__anon29d70be90103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -193,7 +193,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon27c6144e0203
+DECL|enum|__anon29d70be90203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -211,7 +211,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon27c6144e0308
+DECL|struct|__anon29d70be90308
 typedef|typedef
 struct|struct
 block|{
@@ -266,7 +266,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27c6144e0408
+DECL|struct|__anon29d70be90408
 typedef|typedef
 struct|struct
 block|{
@@ -311,7 +311,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27c6144e0508
+DECL|struct|__anon29d70be90508
 typedef|typedef
 struct|struct
 block|{
@@ -947,21 +947,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|dialog_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|dialog_close_callback
 parameter_list|(
 name|GtkWidget
@@ -1406,12 +1391,13 @@ argument_list|(
 literal|"Create an embossing effect using an image as a bump map"
 argument_list|)
 argument_list|,
-operator|(
+name|_
+argument_list|(
 literal|"This plug-in uses the algorithm described by John Schlag, "
 literal|"\"Fast Embossing Effects on Raster Image Data\" in Graphics GEMS IV "
 literal|"(ISBN 0-12-336155-9). It takes a grayscale image to be applied as "
 literal|"a bump map to another image and produces a nice embossing effect."
-operator|)
+argument_list|)
 argument_list|,
 literal|"Federico Mena Quintero& Jens Lautenbacher"
 argument_list|,
@@ -1419,9 +1405,9 @@ literal|"Federico Mena Quintero& Jens Lautenbacher"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Map/Bump Map"
+literal|"<Image>/Filters/Map/Bump Map..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -3626,6 +3612,10 @@ name|menu
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|hbbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|button
 decl_stmt|;
 name|GSList
@@ -4851,8 +4841,8 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Buttons */
-name|gtk_container_border_width
+comment|/*  Action area  */
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -4864,7 +4854,63 @@ operator|->
 name|action_area
 argument_list|)
 argument_list|,
-literal|6
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|hbbox
+operator|=
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|hbbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbbox
 argument_list|)
 expr_stmt|;
 name|button
@@ -4905,19 +4951,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4949,7 +4990,7 @@ argument_list|,
 name|GTK_CAN_DEFAULT
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -4961,28 +5002,26 @@ argument_list|,
 operator|(
 name|GtkSignalFunc
 operator|)
-name|dialog_cancel_callback
+name|gtk_widget_destroy
 argument_list|,
+name|GTK_OBJECT
+argument_list|(
 name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -5999,9 +6038,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_update_preview ()
+DECL|function|dialog_update_preview (void)
 name|dialog_update_preview
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|guchar
@@ -9258,39 +9299,6 @@ end_function
 
 begin_comment
 comment|/* dialog_ok_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_cancel_callback (GtkWidget * widget,gpointer data)
-name|dialog_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* dialog_cancel_callback */
 end_comment
 
 begin_comment

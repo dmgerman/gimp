@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291cca290108
+DECL|struct|__anon2aea14010108
 block|{
 DECL|member|colors
 name|guchar
@@ -562,9 +562,9 @@ literal|"Peter Kirchgessner"
 argument_list|,
 name|dversio
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Adjust Fgrd.-Bkgrd."
+literal|"<Image>/Filters/Colors/Map/Adjust FG-BG"
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -600,9 +600,9 @@ literal|"Peter Kirchgessner"
 argument_list|,
 name|dversio
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Map/Color Mapping"
+literal|"<Image>/Filters/Colors/Map/Color Mapping..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
@@ -954,7 +954,10 @@ name|RUN_NONINTERACTIVE
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Adjusting Foreground/Background"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|color_mapping
@@ -1904,9 +1907,15 @@ operator|==
 literal|0
 operator|)
 condition|?
+name|_
+argument_list|(
 literal|"From:"
+argument_list|)
 else|:
+name|_
+argument_list|(
 literal|"To:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment

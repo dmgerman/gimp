@@ -184,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d216b0108
+DECL|struct|__anon297fdf820108
 block|{
 DECL|member|hwidth
 name|gint
@@ -525,9 +525,9 @@ literal|"Tim Newsome, Sven Neumann, Tom Rathborne"
 argument_list|,
 literal|"1997, 1999"
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/Grid"
+literal|"<Image>/Filters/Render/Pattern/Grid..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

@@ -66,7 +66,7 @@ value|20
 end_define
 
 begin_typedef
-DECL|struct|__anon28cb1a340108
+DECL|struct|__anon28a1f4230108
 typedef|typedef
 struct|struct
 block|{
@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28cb1a340208
+DECL|struct|__anon28a1f4230208
 typedef|typedef
 struct|struct
 block|{
@@ -99,7 +99,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28cb1a340308
+DECL|struct|__anon28a1f4230308
 typedef|typedef
 struct|struct
 block|{
@@ -415,9 +415,9 @@ argument_list|(
 literal|"7th Aug 1999"
 argument_list|)
 argument_list|,
-name|_
+name|N_
 argument_list|(
-literal|"<Image>/Filters/Colors/Color To Alpha"
+literal|"<Image>/Filters/Colors/Color To Alpha..."
 argument_list|)
 argument_list|,
 literal|"RGBA"
