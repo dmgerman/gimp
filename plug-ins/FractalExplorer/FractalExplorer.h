@@ -90,7 +90,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29243bad0103
+DECL|enum|__anon29574b840103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -106,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29243bad0203
+DECL|enum|__anon29574b840203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -148,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29243bad0308
+DECL|struct|__anon29574b840308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29243bad0408
+DECL|struct|__anon29574b840408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29243bad0508
+DECL|struct|__anon29574b840508
 block|{
 DECL|member|text
 name|GtkWidget
@@ -654,73 +654,104 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|plug_in_parse_fractalexplorer_path
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/**********************************************************************   Global variables    *********************************************************************/
 end_comment
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|xmin
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gdouble
 name|xmax
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gdouble
 name|ymin
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gdouble
 name|ymax
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|xbild
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gdouble
 name|ybild
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gdouble
 name|xdiff
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gdouble
 name|ydiff
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|x_press
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gdouble
 name|y_press
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|double
+name|gdouble
 name|x_release
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gdouble
 name|y_release
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|float
+name|gfloat
 name|cx
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|float
+name|gfloat
 name|cy
 decl_stmt|;
 end_decl_stmt
@@ -949,9 +980,9 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GList
+name|gchar
 modifier|*
-name|fractalexplorer_path_list
+name|fractalexplorer_path
 decl_stmt|;
 end_decl_stmt
 

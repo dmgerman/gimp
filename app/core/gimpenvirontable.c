@@ -139,9 +139,13 @@ specifier|static
 name|void
 name|gimp_environ_table_load_env_file
 parameter_list|(
+specifier|const
 name|GimpDatafileData
 modifier|*
 name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -825,12 +829,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_environ_table_load_env_file (GimpDatafileData * file_data)
+DECL|function|gimp_environ_table_load_env_file (const GimpDatafileData * file_data,gpointer user_data)
 name|gimp_environ_table_load_env_file
 parameter_list|(
+specifier|const
 name|GimpDatafileData
 modifier|*
 name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|GimpEnvironTable
@@ -874,8 +882,6 @@ name|environ_table
 operator|=
 name|GIMP_ENVIRON_TABLE
 argument_list|(
-name|file_data
-operator|->
 name|user_data
 argument_list|)
 expr_stmt|;

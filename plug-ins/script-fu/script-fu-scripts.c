@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3e7e30108
+DECL|struct|__anon2b90c5840108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3e7e30208
+DECL|struct|__anon2b90c5840208
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3e7e30308
+DECL|struct|__anon2b90c5840308
 block|{
 DECL|member|name
 name|gchar
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3e7e30408
+DECL|struct|__anon2b90c5840408
 block|{
 DECL|member|list
 name|GSList
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28a3e7e3050a
+DECL|union|__anon2b90c584050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3e7e30608
+DECL|struct|__anon2b90c5840608
 block|{
 DECL|member|script_name
 name|gchar
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3e7e30708
+DECL|struct|__anon2b90c5840708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -493,9 +493,13 @@ specifier|static
 name|void
 name|script_fu_load_script
 parameter_list|(
+specifier|const
 name|GimpDatafileData
 modifier|*
 name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3568,12 +3572,16 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_load_script (GimpDatafileData * file_data)
+DECL|function|script_fu_load_script (const GimpDatafileData * file_data,gpointer user_data)
 name|script_fu_load_script
 parameter_list|(
+specifier|const
 name|GimpDatafileData
 modifier|*
 name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 if|if

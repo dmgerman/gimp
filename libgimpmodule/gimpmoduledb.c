@@ -76,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acbc4400103
+DECL|enum|__anon27b0c0b90103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -138,9 +138,13 @@ specifier|static
 name|void
 name|gimp_module_db_module_initialize
 parameter_list|(
+specifier|const
 name|GimpDatafileData
 modifier|*
 name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1208,12 +1212,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_module_db_module_initialize (GimpDatafileData * file_data)
+DECL|function|gimp_module_db_module_initialize (const GimpDatafileData * file_data,gpointer user_data)
 name|gimp_module_db_module_initialize
 parameter_list|(
+specifier|const
 name|GimpDatafileData
 modifier|*
 name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|GimpModuleDB
@@ -1231,8 +1239,6 @@ name|db
 operator|=
 name|GIMP_MODULE_DB
 argument_list|(
-name|file_data
-operator|->
 name|user_data
 argument_list|)
 expr_stmt|;

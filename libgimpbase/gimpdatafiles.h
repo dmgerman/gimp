@@ -33,6 +33,12 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+DECL|member|basename
+specifier|const
+name|gchar
+modifier|*
+name|basename
+decl_stmt|;
 DECL|member|atime
 name|time_t
 name|atime
@@ -44,10 +50,6 @@ decl_stmt|;
 DECL|member|ctime
 name|time_t
 name|ctime
-decl_stmt|;
-DECL|member|user_data
-name|gpointer
-name|user_data
 decl_stmt|;
 block|}
 struct|;

@@ -37,7 +37,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c29d0570108
+DECL|struct|__anon2b4fb7fb0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -307,9 +307,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GList
+name|gchar
 modifier|*
-name|gimp_plug_in_parse_path
+name|gimp_plug_in_get_path
 parameter_list|(
 specifier|const
 name|gchar

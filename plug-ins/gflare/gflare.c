@@ -475,7 +475,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e2d10d0103
+DECL|enum|__anon289f51e60103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e2d10d0203
+DECL|enum|__anon289f51e60203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -523,7 +523,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0308
+DECL|struct|__anon289f51e60308
 block|{
 DECL|member|name
 name|gchar
@@ -660,7 +660,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0408
+DECL|struct|__anon289f51e60408
 block|{
 DECL|member|fp
 name|FILE
@@ -680,7 +680,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e2d10d0503
+DECL|enum|__anon289f51e60503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -708,7 +708,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0608
+DECL|struct|__anon289f51e60608
 block|{
 DECL|member|init
 name|gint
@@ -730,7 +730,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29e2d10d0708
+DECL|struct|__anon289f51e60708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -804,7 +804,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0808
+DECL|struct|__anon289f51e60808
 block|{
 DECL|member|init
 name|gint
@@ -874,7 +874,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0908
+DECL|struct|__anon289f51e60908
 block|{
 DECL|member|x0
 name|gdouble
@@ -901,7 +901,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0a08
+DECL|struct|__anon289f51e60a08
 block|{
 DECL|member|init
 name|gint
@@ -1071,7 +1071,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0b08
+DECL|struct|__anon289f51e60b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1098,7 +1098,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0c08
+DECL|struct|__anon289f51e60c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1333,7 +1333,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0d08
+DECL|struct|__anon289f51e60d08
 block|{
 DECL|member|tag
 name|gint
@@ -1410,7 +1410,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0e08
+DECL|struct|__anon289f51e60e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1468,7 +1468,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2d10d0f08
+DECL|struct|__anon289f51e60f08
 block|{
 DECL|member|run
 name|gboolean
@@ -2488,11 +2488,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gflare_path_list
+DECL|variable|gflare_path
 specifier|static
-name|GList
+name|gchar
 modifier|*
-name|gflare_path_list
+name|gflare_path
 init|=
 name|NULL
 decl_stmt|;
@@ -4115,16 +4115,17 @@ literal|"Threshold for adaptive supersampling"
 block|}
 block|}
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|help_string
 init|=
-literal|" This plug-in produces a lense flare effect using custom gradients."
-literal|" In interactive call, the user can edit his/her own favorite lense flare"
-literal|" (GFlare) and render it. Edited gflare is saved automatically to"
-literal|" the folder in gflare-path, if it is defined in gimprc."
-literal|" In non-interactive call, the user can only render one of GFlare"
-literal|" which has been stored in gflare-path already."
+literal|"This plug-in produces a lense flare effect using custom gradients. "
+literal|"In interactive call, the user can edit his/her own favorite lense flare "
+literal|"(GFlare) and render it. Edited gflare is saved automatically to "
+literal|"the folder in gflare-path, if it is defined in gimprc. "
+literal|"In non-interactive call, the user can only render one of GFlare "
+literal|"which has been stored in gflare-path already."
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
@@ -4346,9 +4347,9 @@ name|gradient_init
 argument_list|()
 expr_stmt|;
 comment|/*    *	Parse gflare path from gimprc and load gflares    */
-name|gflare_path_list
+name|gflare_path
 operator|=
-name|gimp_plug_in_parse_path
+name|gimp_plug_in_get_path
 argument_list|(
 literal|"gflare-path"
 argument_list|,
@@ -5757,9 +5758,11 @@ begin_function
 specifier|static
 name|GFlare
 modifier|*
-DECL|function|gflare_new ()
+DECL|function|gflare_new (void)
 name|gflare_new
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GFlare
 modifier|*
@@ -6888,9 +6891,13 @@ operator|==
 name|NULL
 condition|)
 block|{
+name|GList
+modifier|*
+name|list
+decl_stmt|;
 if|if
 condition|(
-name|gflare_path_list
+name|gflare_path
 operator|==
 name|NULL
 condition|)
@@ -6912,8 +6919,19 @@ argument_list|)
 decl_stmt|;
 name|gchar
 modifier|*
-name|gflare_path
+name|dir
 init|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"gflare"
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|gflare_dir
+decl_stmt|;
+name|gflare_dir
+operator|=
 name|g_strescape
 argument_list|(
 literal|"${gimp_dir}"
@@ -6922,16 +6940,7 @@ literal|"gflare"
 argument_list|,
 name|NULL
 argument_list|)
-decl_stmt|;
-name|gchar
-modifier|*
-name|dir
-init|=
-name|gimp_personal_rc_file
-argument_list|(
-literal|"gflare"
-argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|g_message
 argument_list|(
 name|_
@@ -6940,7 +6949,7 @@ literal|"GFlare `%s' is not saved.\n"
 literal|"If you add a new entry in %s, like:\n"
 literal|"(gflare-path \"%s\")\n"
 literal|"and make a folder %s,\n"
-literal|"then you can save your own GFlare's into that folder."
+literal|"then you can save your own GFlares into that folder."
 argument_list|)
 argument_list|,
 name|gflare
@@ -6949,7 +6958,7 @@ name|name
 argument_list|,
 name|gimprc
 argument_list|,
-name|gflare_path
+name|gflare_dir
 argument_list|,
 name|dir
 argument_list|)
@@ -6961,7 +6970,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|gflare_path
+name|gflare_dir
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -6976,11 +6985,29 @@ expr_stmt|;
 block|}
 return|return;
 block|}
+name|list
+operator|=
+name|gimp_path_parse
+argument_list|(
+name|gflare_path
+argument_list|,
+literal|16
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|path
 operator|=
 name|gimp_path_get_user_writable_dir
 argument_list|(
-name|gflare_path_list
+name|list
+argument_list|)
+expr_stmt|;
+name|gimp_path_free
+argument_list|(
+name|list
 argument_list|)
 expr_stmt|;
 if|if
@@ -7873,132 +7900,33 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gflares_list_load_all (void)
-name|gflares_list_load_all
+DECL|function|gflares_list_load_one (const GimpDatafileData * file_data,gpointer user_data)
+name|gflares_list_load_one
 parameter_list|(
-name|void
+specifier|const
+name|GimpDatafileData
+modifier|*
+name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|GFlare
 modifier|*
 name|gflare
 decl_stmt|;
-name|GList
-modifier|*
-name|list
-decl_stmt|;
-name|gchar
-modifier|*
-name|path
-decl_stmt|;
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
-name|GDir
-modifier|*
-name|dir
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|dir_ent
-decl_stmt|;
-comment|/*  Make sure to clear any existing gflares  */
-name|gflares_list_free_all
-argument_list|()
-expr_stmt|;
-name|list
-operator|=
-name|gflare_path_list
-expr_stmt|;
-while|while
-condition|(
-name|list
-condition|)
-block|{
-name|path
-operator|=
-name|list
-operator|->
-name|data
-expr_stmt|;
-name|list
-operator|=
-name|list
-operator|->
-name|next
-expr_stmt|;
-comment|/* Open directory */
-name|dir
-operator|=
-name|g_dir_open
-argument_list|(
-name|path
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|dir
-condition|)
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Error reading GFlare folder '%s'"
-argument_list|)
-argument_list|,
-name|path
-argument_list|)
-expr_stmt|;
-else|else
-block|{
-while|while
-condition|(
-operator|(
-name|dir_ent
-operator|=
-name|g_dir_read_name
-argument_list|(
-name|dir
-argument_list|)
-operator|)
-condition|)
-block|{
-name|filename
-operator|=
-name|g_build_filename
-argument_list|(
-name|path
-argument_list|,
-name|dir_ent
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-comment|/* Check the file and see that it is not a sub-directory */
-if|if
-condition|(
-name|g_file_test
-argument_list|(
-name|filename
-argument_list|,
-name|G_FILE_TEST_IS_REGULAR
-argument_list|)
-condition|)
-block|{
 name|gflare
 operator|=
 name|gflare_load
 argument_list|(
+name|file_data
+operator|->
 name|filename
 argument_list|,
-name|dir_ent
+name|file_data
+operator|->
+name|basename
 argument_list|)
 expr_stmt|;
 if|if
@@ -8011,21 +7939,32 @@ name|gflare
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gflares_list_load_all (void)
+name|gflares_list_load_all
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+comment|/*  Make sure to clear any existing gflares  */
+name|gflares_list_free_all
+argument_list|()
+expr_stmt|;
+name|gimp_datafiles_read_directories
 argument_list|(
-name|filename
+name|gflare_path
+argument_list|,
+name|G_FILE_TEST_EXISTS
+argument_list|,
+name|gflares_list_load_one
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-block|}
-comment|/* while */
-name|g_dir_close
-argument_list|(
-name|dir
-argument_list|)
-expr_stmt|;
-block|}
-comment|/* else */
-block|}
 block|}
 end_function
 
@@ -8588,9 +8527,11 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|calc_init_progress ()
+DECL|function|calc_init_progress (void)
 name|calc_init_progress
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -8616,11 +8557,13 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|calc_sample_one_gradient ()
+DECL|function|calc_sample_one_gradient (void)
 name|calc_sample_one_gradient
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
-DECL|struct|__anon29e2d10d1008
+DECL|struct|__anon289f51e61008
 specifier|static
 struct|struct
 block|{
@@ -9197,9 +9140,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|calc_place_sflare ()
+DECL|function|calc_place_sflare (void)
 name|calc_place_sflare
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GFlare
 modifier|*
@@ -9604,9 +9549,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|calc_deinit ()
+DECL|function|calc_deinit (void)
 name|calc_deinit
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -12843,9 +12790,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dlg_preview_update ()
+DECL|function|dlg_preview_update (void)
 name|dlg_preview_update
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -14599,7 +14548,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon29e2d10d1108
+DECL|struct|__anon289f51e61108
 block|{
 DECL|member|label
 specifier|const
@@ -20373,9 +20322,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ed_preview_update ()
+DECL|function|ed_preview_update (void)
 name|ed_preview_update
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(

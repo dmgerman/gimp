@@ -138,11 +138,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_data_factory_load_callback
+name|gimp_data_factory_load_data
 parameter_list|(
+specifier|const
 name|GimpDatafileData
 modifier|*
 name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -735,7 +739,7 @@ name|path
 argument_list|,
 name|G_FILE_TEST_EXISTS
 argument_list|,
-name|gimp_data_factory_load_callback
+name|gimp_data_factory_load_data
 argument_list|,
 name|factory
 argument_list|)
@@ -1564,12 +1568,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_factory_load_callback (GimpDatafileData * file_data)
-name|gimp_data_factory_load_callback
+DECL|function|gimp_data_factory_load_data (const GimpDatafileData * file_data,gpointer user_data)
+name|gimp_data_factory_load_data
 parameter_list|(
+specifier|const
 name|GimpDatafileData
 modifier|*
 name|file_data
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|GimpDataFactory
@@ -1581,13 +1589,10 @@ name|i
 decl_stmt|;
 name|factory
 operator|=
-operator|(
-name|GimpDataFactory
-operator|*
-operator|)
-name|file_data
-operator|->
+name|GIMP_DATA_FACTORY
+argument_list|(
 name|user_data
+argument_list|)
 expr_stmt|;
 for|for
 control|(
