@@ -623,6 +623,12 @@ name|have_cursor
 operator|=
 name|FALSE
 expr_stmt|;
+name|gdisp
+operator|->
+name|progressid
+operator|=
+name|FALSE
+expr_stmt|;
 comment|/*  add the new display to the list so that it isn't lost  */
 name|display_list
 operator|=

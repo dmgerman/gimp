@@ -234,6 +234,11 @@ name|GtkWidget
 modifier|*
 name|progress_bar
 decl_stmt|;
+DECL|member|progress_gdisp_ID
+name|gint8
+name|progress_gdisp_ID
+decl_stmt|;
+comment|/* gdisp_ID of progress */
 DECL|member|user_data
 name|gpointer
 name|user_data

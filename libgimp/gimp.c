@@ -805,10 +805,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* Snorfle - check for valid _gdisp_ID (!= -1) here and use it */
-end_comment
-
 begin_function
 name|void
 DECL|function|gimp_progress_init (char * message)
@@ -826,7 +822,6 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-comment|/* g_print ("%d\n", _gdisp_ID); */
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -839,6 +834,10 @@ argument_list|,
 name|PARAM_STRING
 argument_list|,
 name|message
+argument_list|,
+name|PARAM_INT8
+argument_list|,
+name|_gdisp_ID
 argument_list|,
 name|PARAM_END
 argument_list|)
