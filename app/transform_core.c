@@ -133,28 +133,6 @@ directive|include
 file|"libgimp/gimpmath.h"
 end_include
 
-begin_define
-DECL|macro|BILINEAR (jk,j1k,jk1,j1k1,dx,dy)
-define|#
-directive|define
-name|BILINEAR
-parameter_list|(
-name|jk
-parameter_list|,
-name|j1k
-parameter_list|,
-name|jk1
-parameter_list|,
-name|j1k1
-parameter_list|,
-name|dx
-parameter_list|,
-name|dy
-parameter_list|)
-define|\
-value|((1-dy) * (jk + dx * (j1k - jk)) + \                     dy  * (jk1 + dx * (j1k1 - jk1)))
-end_define
-
 begin_comment
 comment|/*  variables  */
 end_comment
@@ -5543,7 +5521,7 @@ name|TRANSPARENT_OPACITY
 expr_stmt|;
 name|alpha
 operator|=
-literal|3
+name|ALPHA_PIX
 expr_stmt|;
 break|break;
 case|case
@@ -5561,7 +5539,7 @@ name|TRANSPARENT_OPACITY
 expr_stmt|;
 name|alpha
 operator|=
-literal|1
+name|ALPHA_G_PIX
 expr_stmt|;
 break|break;
 case|case
@@ -5579,12 +5557,17 @@ name|TRANSPARENT_OPACITY
 expr_stmt|;
 name|alpha
 operator|=
-literal|1
+name|ALPHA_I_PIX
 expr_stmt|;
 comment|/*  If the gimage is indexed color, ignore smoothing value  */
 name|interpolation
 operator|=
-literal|0
+name|FALSE
+expr_stmt|;
+break|break;
+default|default:
+name|g_assert_not_reached
+argument_list|()
 expr_stmt|;
 break|break;
 block|}
@@ -7255,6 +7238,7 @@ name|gimage
 argument_list|)
 condition|)
 block|{
+comment|/* set the keep_indexed flag to FALSE here, since we use  	 layer_new_from_tiles() later which assumes that the tiles 	 are either RGB or GRAY.  Eeek!!!              (Sven)        */
 name|tiles
 operator|=
 name|gimage_mask_extract
@@ -7265,7 +7249,7 @@ name|drawable
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|)
