@@ -726,15 +726,6 @@ value|N_("The tile cache is used to make sure the GIMP doesn't thrash " \    "ti
 end_define
 
 begin_define
-DECL|macro|TOOL_PLUG_IN_PATH_BLURB
-define|#
-directive|define
-name|TOOL_PLUG_IN_PATH_BLURB
-define|\
-value|"Sets the tool-plug-in search path."
-end_define
-
-begin_define
 DECL|macro|TRANSPARENCY_TYPE_BLURB
 define|#
 directive|define
