@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b620fa0103
+DECL|enum|__anon2c0019980103
 block|{
 DECL|enumerator|GIMP_ENUM_STORE_VALUE
 name|GIMP_ENUM_STORE_VALUE
@@ -245,23 +245,16 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_enum_store_set_icons
+name|gimp_enum_store_set_stock_prefix
 parameter_list|(
 name|GimpEnumStore
 modifier|*
 name|store
 parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
-parameter_list|,
-name|GtkIconSize
-name|size
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -245,7 +245,7 @@ comment|/*  GIMP_ENUM_STORE_VALUE      */
 name|G_TYPE_STRING
 block|,
 comment|/*  GIMP_ENUM_STORE_LABEL      */
-name|GDK_TYPE_PIXBUF
+name|G_TYPE_STRING
 block|,
 comment|/*  GIMP_ENUM_STORE_ICON       */
 name|G_TYPE_POINTER
@@ -832,29 +832,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_set_icons:  * @store:        a #GimpEnumStore  * @widget:       the widget used to create the icon pixbufs  * @stock_prefix: a prefix to create icon stock ID from enum values  * @size:         the size to create the icons in  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them. If an icon is registered for the resulting stock ID,  * it is rendered by @widget (which should be the @combo_box using  * this @store as it's model). The rendered pixbuf is then added to  * the @store in the %GIMP_ENUM_STORE_PIXBUF column.  **/
+comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_enum_store_set_icons (GimpEnumStore * store,GtkWidget * widget,const gchar * stock_prefix,GtkIconSize size)
-name|gimp_enum_store_set_icons
+DECL|function|gimp_enum_store_set_stock_prefix (GimpEnumStore * store,const gchar * stock_prefix)
+name|gimp_enum_store_set_stock_prefix
 parameter_list|(
 name|GimpEnumStore
 modifier|*
 name|store
 parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|stock_prefix
-parameter_list|,
-name|GtkIconSize
-name|size
 parameter_list|)
 block|{
 name|GtkTreeModel
@@ -873,30 +866,6 @@ name|GIMP_IS_ENUM_STORE
 argument_list|(
 name|store
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|stock_prefix
-operator|==
-name|NULL
-operator|||
-name|GTK_IS_WIDGET
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|size
-operator|>
-name|GTK_ICON_SIZE_INVALID
-operator|||
-name|size
-operator|==
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 name|model
@@ -931,9 +900,9 @@ name|iter
 argument_list|)
 control|)
 block|{
-name|GdkPixbuf
+name|gchar
 modifier|*
-name|pixbuf
+name|stock_id
 init|=
 name|NULL
 decl_stmt|;
@@ -945,10 +914,6 @@ block|{
 name|GEnumValue
 modifier|*
 name|enum_value
-decl_stmt|;
-name|gchar
-modifier|*
-name|stock_id
 decl_stmt|;
 name|gint
 name|value
@@ -995,24 +960,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|pixbuf
-operator|=
-name|gtk_widget_render_icon
-argument_list|(
-name|widget
-argument_list|,
-name|stock_id
-argument_list|,
-name|size
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|stock_id
-argument_list|)
-expr_stmt|;
 block|}
 name|gtk_list_store_set
 argument_list|(
@@ -1026,7 +973,7 @@ name|iter
 argument_list|,
 name|GIMP_ENUM_STORE_ICON
 argument_list|,
-name|pixbuf
+name|stock_id
 argument_list|,
 operator|-
 literal|1
@@ -1034,11 +981,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|pixbuf
+name|stock_id
 condition|)
-name|g_object_unref
+name|g_free
 argument_list|(
-name|pixbuf
+name|stock_id
 argument_list|)
 expr_stmt|;
 block|}
