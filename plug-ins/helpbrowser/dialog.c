@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af2dd2c0103
+DECL|enum|__anon28db0aa20103
 block|{
 DECL|enumerator|BUTTON_INDEX
 name|BUTTON_INDEX
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af2dd2c0203
+DECL|enum|__anon28db0aa20203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -140,9 +140,10 @@ name|gchar
 modifier|*
 name|url
 parameter_list|,
-name|GError
+specifier|const
+name|gchar
 modifier|*
-name|error
+name|message
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1535,6 +1536,8 @@ argument_list|,
 name|abs
 argument_list|,
 name|error
+operator|->
+name|message
 argument_list|)
 expr_stmt|;
 name|g_error_free
@@ -1621,7 +1624,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|browser_dialog_404 (HtmlDocument * doc,const gchar * url,GError * error)
+DECL|function|browser_dialog_404 (HtmlDocument * doc,const gchar * url,const gchar * message)
 name|browser_dialog_404
 parameter_list|(
 name|HtmlDocument
@@ -1633,9 +1636,10 @@ name|gchar
 modifier|*
 name|url
 parameter_list|,
-name|GError
+specifier|const
+name|gchar
 modifier|*
-name|error
+name|message
 parameter_list|)
 block|{
 name|gchar
@@ -1671,8 +1675,6 @@ argument_list|)
 argument_list|,
 name|url
 argument_list|,
-name|error
-operator|->
 name|message
 argument_list|)
 decl_stmt|;
