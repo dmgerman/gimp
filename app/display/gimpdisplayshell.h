@@ -632,6 +632,10 @@ modifier|*
 name|highlight
 decl_stmt|;
 comment|/* in image coordinates, can be NULL   */
+DECL|member|scroll_info
+name|gpointer
+name|scroll_info
+decl_stmt|;
 block|}
 struct|;
 end_struct
