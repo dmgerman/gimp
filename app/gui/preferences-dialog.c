@@ -1922,7 +1922,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|12
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -4679,16 +4679,6 @@ name|page_index
 operator|++
 argument_list|)
 expr_stmt|;
-name|gtk_box_set_spacing
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
 comment|/* select this page in the tree */
 name|gtk_tree_selection_select_iter
 argument_list|(
@@ -4940,16 +4930,6 @@ operator|->
 name|default_image
 operator|->
 name|yresolution
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_spacing
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|editor
-argument_list|)
-argument_list|,
-literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6315,7 +6295,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c866d0a0108
+DECL|struct|__anon2947b6b60108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8629,7 +8609,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c866d0a0208
+DECL|struct|__anon2947b6b60208
 block|{
 DECL|member|label
 specifier|const
@@ -8788,7 +8768,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c866d0a0308
+DECL|struct|__anon2947b6b60308
 block|{
 DECL|member|tree_label
 specifier|const
