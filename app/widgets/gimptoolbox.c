@@ -722,14 +722,15 @@ literal|"The GIMP"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_resizable
+comment|/* Docks are utility windows by default, but the toolbox doesn't fit    *  into this category.  'Normal' is not correct as well but there    *  doesn't seem to be a better match :-(    */
+name|gtk_window_set_type_hint
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|toolbox
 argument_list|)
 argument_list|,
-name|TRUE
+name|GDK_WINDOW_TYPE_HINT_NORMAL
 argument_list|)
 expr_stmt|;
 name|main_vbox
