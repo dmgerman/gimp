@@ -153,6 +153,7 @@ end_comment
 
 begin_define
 DECL|macro|TARGET_HEIGHT
+DECL|macro|TARGET_HEIGHT
 define|#
 directive|define
 name|TARGET_HEIGHT
@@ -160,6 +161,7 @@ value|15
 end_define
 
 begin_define
+DECL|macro|TARGET_WIDTH
 DECL|macro|TARGET_WIDTH
 define|#
 directive|define
@@ -169,6 +171,7 @@ end_define
 
 begin_define
 DECL|macro|EPSILON
+DECL|macro|EPSILON
 define|#
 directive|define
 name|EPSILON
@@ -176,6 +179,7 @@ value|0.00001
 end_define
 
 begin_define
+DECL|macro|STATUSBAR_SIZE
 DECL|macro|STATUSBAR_SIZE
 define|#
 directive|define
@@ -188,6 +192,7 @@ comment|/*  global variables--for use in the various paint tools  */
 end_comment
 
 begin_decl_stmt
+DECL|variable|non_gui_paint_core
 DECL|variable|non_gui_paint_core
 name|PaintCore
 name|non_gui_paint_core
@@ -410,6 +415,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|undo_tiles
+DECL|variable|undo_tiles
 specifier|static
 name|TileManager
 modifier|*
@@ -420,6 +426,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|canvas_tiles
 DECL|variable|canvas_tiles
 specifier|static
 name|TileManager
@@ -440,6 +447,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|orig_buf
+DECL|variable|orig_buf
 specifier|static
 name|TempBuf
 modifier|*
@@ -450,6 +458,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|canvas_buf
 DECL|variable|canvas_buf
 specifier|static
 name|TempBuf
@@ -466,6 +475,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|pressure_brush
+DECL|variable|pressure_brush
 specifier|static
 name|MaskBuf
 modifier|*
@@ -475,6 +485,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|solid_brush
+DECL|variable|solid_brush
 specifier|static
 name|MaskBuf
 modifier|*
@@ -483,6 +494,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|kernel_brushes
 DECL|variable|kernel_brushes
 specifier|static
 name|MaskBuf
@@ -517,6 +529,7 @@ end_comment
 
 begin_define
 DECL|macro|KERNEL_WIDTH
+DECL|macro|KERNEL_WIDTH
 define|#
 directive|define
 name|KERNEL_WIDTH
@@ -524,6 +537,7 @@ value|3
 end_define
 
 begin_define
+DECL|macro|KERNEL_HEIGHT
 DECL|macro|KERNEL_HEIGHT
 define|#
 directive|define
@@ -536,6 +550,7 @@ comment|/*  Brush pixel subsampling kernels  */
 end_comment
 
 begin_decl_stmt
+DECL|variable|subsample
 DECL|variable|subsample
 specifier|static
 specifier|const
@@ -1069,6 +1084,7 @@ begin_function
 specifier|static
 name|void
 DECL|function|paint_core_sample_color (GimpDrawable * drawable,int x,int y,int state)
+DECL|function|paint_core_sample_color (GimpDrawable * drawable,int x,int y,int state)
 name|paint_core_sample_color
 parameter_list|(
 name|GimpDrawable
@@ -1162,6 +1178,7 @@ end_function
 
 begin_function
 name|void
+DECL|function|paint_core_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 DECL|function|paint_core_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|paint_core_button_press
 parameter_list|(
@@ -1983,6 +2000,7 @@ end_function
 begin_function
 name|void
 DECL|function|paint_core_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
+DECL|function|paint_core_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|paint_core_button_release
 parameter_list|(
 name|Tool
@@ -2119,6 +2137,7 @@ end_function
 
 begin_function
 name|void
+DECL|function|paint_core_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 DECL|function|paint_core_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|paint_core_motion
 parameter_list|(
@@ -2344,6 +2363,7 @@ end_function
 
 begin_function
 name|void
+DECL|function|paint_core_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 DECL|function|paint_core_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|paint_core_cursor_update
 parameter_list|(
@@ -3033,6 +3053,7 @@ end_function
 begin_function
 name|void
 DECL|function|paint_core_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
+DECL|function|paint_core_control (Tool * tool,ToolAction action,gpointer gdisp_ptr)
 name|paint_core_control
 parameter_list|(
 name|Tool
@@ -3136,6 +3157,7 @@ end_function
 
 begin_function
 name|void
+DECL|function|paint_core_draw (Tool * tool)
 DECL|function|paint_core_draw (Tool * tool)
 name|paint_core_draw
 parameter_list|(
@@ -3410,6 +3432,7 @@ begin_function
 name|Tool
 modifier|*
 DECL|function|paint_core_new (ToolType type)
+DECL|function|paint_core_new (ToolType type)
 name|paint_core_new
 parameter_list|(
 name|ToolType
@@ -3516,6 +3539,7 @@ end_function
 begin_function
 name|void
 DECL|function|paint_core_free (Tool * tool)
+DECL|function|paint_core_free (Tool * tool)
 name|paint_core_free
 parameter_list|(
 name|Tool
@@ -3588,6 +3612,7 @@ end_function
 
 begin_function
 name|int
+DECL|function|paint_core_init (PaintCore * paint_core,GimpDrawable * drawable,double x,double y)
 DECL|function|paint_core_init (PaintCore * paint_core,GimpDrawable * drawable,double x,double y)
 name|paint_core_init
 parameter_list|(
@@ -3675,6 +3700,9 @@ name|curytilt
 operator|=
 literal|0
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GTK_HAVE_SIX_VALUATORS
 name|paint_core
 operator|->
 name|startwheel
@@ -3689,8 +3717,9 @@ name|curwheel
 operator|=
 literal|0.5
 expr_stmt|;
-block|}
-comment|/*  Each buffer is the same size as the maximum bounds of the active brush... */
+endif|#
+directive|endif
+comment|/* GTK_HAVE_SIX_VALUATORS     }    /*  Each buffer is the same size as the maximum bounds of the active brush... */
 if|if
 condition|(
 name|brush
@@ -3886,11 +3915,7 @@ return|return
 name|TRUE
 return|;
 block|}
-end_function
-
-begin_function
 name|void
-DECL|function|paint_core_get_color_from_gradient (PaintCore * paint_core,double gradient_length,double * r,double * g,double * b,double * a,int mode)
 name|paint_core_get_color_from_gradient
 parameter_list|(
 name|PaintCore
@@ -4133,11 +4158,7 @@ name|a
 operator|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
 name|void
-DECL|function|paint_core_interpolate (PaintCore * paint_core,GimpDrawable * drawable)
 name|paint_core_interpolate
 parameter_list|(
 name|PaintCore
@@ -4711,11 +4732,7 @@ endif|#
 directive|endif
 comment|/* GTK_HAVE_SIX_VALUATORS */
 block|}
-end_function
-
-begin_function
 name|void
-DECL|function|paint_core_finish (PaintCore * paint_core,GimpDrawable * drawable,int tool_id)
 name|paint_core_finish
 parameter_list|(
 name|PaintCore
@@ -4907,11 +4924,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
 name|void
-DECL|function|paint_core_cleanup ()
 name|paint_core_cleanup
 parameter_list|()
 block|{
@@ -4953,24 +4966,11 @@ name|free_paint_buffers
 argument_list|()
 expr_stmt|;
 block|}
-end_function
-
-begin_comment
 comment|/************************/
-end_comment
-
-begin_comment
 comment|/*  Painting functions  */
-end_comment
-
-begin_comment
 comment|/************************/
-end_comment
-
-begin_function
 name|TempBuf
 modifier|*
-DECL|function|paint_core_get_paint_area (PaintCore * paint_core,GimpDrawable * drawable)
 name|paint_core_get_paint_area
 parameter_list|(
 name|PaintCore
@@ -5196,12 +5196,8 @@ return|return
 name|canvas_buf
 return|;
 block|}
-end_function
-
-begin_function
 name|TempBuf
 modifier|*
-DECL|function|paint_core_get_orig_image (PaintCore * paint_core,GimpDrawable * drawable,int x1,int y1,int x2,int y2)
 name|paint_core_get_orig_image
 parameter_list|(
 name|PaintCore
@@ -5662,11 +5658,7 @@ return|return
 name|orig_buf
 return|;
 block|}
-end_function
-
-begin_function
 name|void
-DECL|function|paint_core_paste_canvas (PaintCore * paint_core,GimpDrawable * drawable,int brush_opacity,int image_opacity,LayerModeEffects paint_mode,BrushApplicationMode brush_hardness,PaintApplicationMode mode)
 name|paint_core_paste_canvas
 parameter_list|(
 name|PaintCore
@@ -5726,15 +5718,8 @@ name|mode
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_comment
 comment|/* Similar to paint_core_paste_canvas, but replaces the alpha channel    rather than using it to composite (i.e. transparent over opaque    becomes transparent rather than opauqe. */
-end_comment
-
-begin_function
 name|void
-DECL|function|paint_core_replace_canvas (PaintCore * paint_core,GimpDrawable * drawable,int brush_opacity,int image_opacity,BrushApplicationMode brush_hardness,PaintApplicationMode mode)
 name|paint_core_replace_canvas
 parameter_list|(
 name|PaintCore
@@ -5789,10 +5774,6 @@ name|mode
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_decl_stmt
-DECL|variable|last_brush_mask
 specifier|static
 name|MaskBuf
 modifier|*
@@ -5800,20 +5781,12 @@ name|last_brush_mask
 init|=
 name|NULL
 decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|cache_invalid
 specifier|static
 name|int
 name|cache_invalid
 init|=
 literal|0
 decl_stmt|;
-end_decl_stmt
-
-begin_function
-DECL|function|paint_core_invalidate_cache (GimpBrush * brush,gpointer * blah)
 specifier|static
 name|int
 name|paint_core_invalidate_cache
@@ -5849,17 +5822,10 @@ return|return
 literal|0
 return|;
 block|}
-end_function
-
-begin_comment
 comment|/************************************************************  *             LOCAL FUNCTION DEFINITIONS                   *  ************************************************************/
-end_comment
-
-begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|paint_core_subsample_mask (MaskBuf * mask,double x,double y)
 name|paint_core_subsample_mask
 parameter_list|(
 name|MaskBuf
@@ -6263,17 +6229,10 @@ return|return
 name|dest
 return|;
 block|}
-end_function
-
-begin_comment
 comment|/* #define FANCY_PRESSURE */
-end_comment
-
-begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|paint_core_pressurize_mask (MaskBuf * brush_mask,double x,double y,double pressure)
 name|paint_core_pressurize_mask
 parameter_list|(
 name|MaskBuf
@@ -6697,13 +6656,9 @@ return|return
 name|pressure_brush
 return|;
 block|}
-end_function
-
-begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|paint_core_solidify_mask (MaskBuf * brush_mask)
 name|paint_core_solidify_mask
 parameter_list|(
 name|MaskBuf
@@ -6847,13 +6802,9 @@ return|return
 name|solid_brush
 return|;
 block|}
-end_function
-
-begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|paint_core_get_brush_mask (PaintCore * paint_core,BrushApplicationMode brush_hardness)
 name|paint_core_get_brush_mask
 parameter_list|(
 name|PaintCore
@@ -6949,12 +6900,8 @@ return|return
 name|bm
 return|;
 block|}
-end_function
-
-begin_function
 specifier|static
 name|void
-DECL|function|paint_core_paste (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,int brush_opacity,int image_opacity,LayerModeEffects paint_mode,PaintApplicationMode mode)
 name|paint_core_paste
 parameter_list|(
 name|PaintCore
@@ -7291,16 +7238,9 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_comment
 comment|/* This works similarly to paint_core_paste. However, instead of combining    the canvas to the paint core drawable using one of the combination    modes, it uses a "replace" mode (i.e. transparent pixels in the     canvas erase the paint core drawable).     When not drawing on alpha-enabled images, it just paints using NORMAL    mode. */
-end_comment
-
-begin_function
 specifier|static
 name|void
-DECL|function|paint_core_replace (PaintCore * paint_core,MaskBuf * brush_mask,GimpDrawable * drawable,int brush_opacity,int image_opacity,PaintApplicationMode mode)
 name|paint_core_replace
 parameter_list|(
 name|PaintCore
@@ -7732,12 +7672,8 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
 specifier|static
 name|void
-DECL|function|canvas_tiles_to_canvas_buf (PaintCore * paint_core)
 name|canvas_tiles_to_canvas_buf
 parameter_list|(
 name|PaintCore
@@ -7847,12 +7783,8 @@ name|OPAQUE_OPACITY
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
 specifier|static
 name|void
-DECL|function|brush_to_canvas_tiles (PaintCore * paint_core,MaskBuf * brush_mask,int brush_opacity)
 name|brush_to_canvas_tiles
 parameter_list|(
 name|PaintCore
@@ -8049,12 +7981,8 @@ name|brush_opacity
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_function
 specifier|static
 name|void
-DECL|function|brush_to_canvas_buf (PaintCore * paint_core,MaskBuf * brush_mask,int brush_opacity)
 name|brush_to_canvas_buf
 parameter_list|(
 name|PaintCore
@@ -8282,54 +8210,26 @@ name|brush_opacity
 argument_list|)
 expr_stmt|;
 block|}
-end_function
-
-begin_if
 if|#
 directive|if
 literal|0
-end_if
-
-begin_comment
-unit|static void paint_to_canvas_tiles (PaintCore *paint_core,  		       MaskBuf   *brush_mask,  		       int        brush_opacity) {   PixelRegion srcPR, maskPR;   int x, y;   int xoff, yoff;
+block|static void paint_to_canvas_tiles (PaintCore *paint_core,  		       MaskBuf   *brush_mask,  		       int        brush_opacity) {   PixelRegion srcPR, maskPR;   int x, y;   int xoff, yoff;
 comment|/*   combine the brush mask and the canvas tiles  */
-end_comment
-
-begin_comment
-unit|pixel_region_init (&srcPR, canvas_tiles, 		     canvas_buf->x, canvas_buf->y, 		     canvas_buf->width, canvas_buf->height, TRUE);    x = (int) paint_core->curx - (brush_mask->width>> 1);   y = (int) paint_core->cury - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;    maskPR.bytes = 1;   maskPR.x = 0; maskPR.y = 0;   maskPR.w = srcPR.w;   maskPR.h = srcPR.h;   maskPR.rowstride = maskPR.bytes * brush_mask->width;   maskPR.data = mask_buf_data (brush_mask) + yoff * maskPR.rowstride + xoff * maskPR.bytes;
+block|pixel_region_init (&srcPR, canvas_tiles, 		     canvas_buf->x, canvas_buf->y, 		     canvas_buf->width, canvas_buf->height, TRUE);    x = (int) paint_core->curx - (brush_mask->width>> 1);   y = (int) paint_core->cury - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;    maskPR.bytes = 1;   maskPR.x = 0; maskPR.y = 0;   maskPR.w = srcPR.w;   maskPR.h = srcPR.h;   maskPR.rowstride = maskPR.bytes * brush_mask->width;   maskPR.data = mask_buf_data (brush_mask) + yoff * maskPR.rowstride + xoff * maskPR.bytes;
 comment|/*  combine the mask and canvas tiles  */
-end_comment
-
-begin_comment
-unit|combine_mask_and_region (&srcPR,&maskPR, brush_opacity);
+block|combine_mask_and_region (&srcPR,&maskPR, brush_opacity);
 comment|/*  combine the canvas tiles and the canvas buf  */
-end_comment
-
-begin_comment
-unit|srcPR.bytes = canvas_buf->bytes;   srcPR.x = 0; srcPR.y = 0;   srcPR.w = canvas_buf->width;   srcPR.h = canvas_buf->height;   srcPR.rowstride = canvas_buf->width * canvas_buf->bytes;   srcPR.data = temp_buf_data (canvas_buf);    pixel_region_init (&maskPR, canvas_tiles, 		     canvas_buf->x, canvas_buf->y, 		     canvas_buf->width, canvas_buf->height, FALSE);
+block|srcPR.bytes = canvas_buf->bytes;   srcPR.x = 0; srcPR.y = 0;   srcPR.w = canvas_buf->width;   srcPR.h = canvas_buf->height;   srcPR.rowstride = canvas_buf->width * canvas_buf->bytes;   srcPR.data = temp_buf_data (canvas_buf);    pixel_region_init (&maskPR, canvas_tiles, 		     canvas_buf->x, canvas_buf->y, 		     canvas_buf->width, canvas_buf->height, FALSE);
 comment|/*  apply the canvas tiles to the canvas buf  */
-end_comment
-
-begin_comment
-unit|apply_mask_to_region (&srcPR,&maskPR, OPAQUE_OPACITY); }  static void paint_to_canvas_buf (PaintCore *paint_core,  		     MaskBuf   *brush_mask,  		     int        brush_opacity) {   PixelRegion srcPR, maskPR;   int x, y;   int xoff, yoff;    x = (int) paint_core->curx - (brush_mask->width>> 1);   y = (int) paint_core->cury - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;
+block|apply_mask_to_region (&srcPR,&maskPR, OPAQUE_OPACITY); }  static void paint_to_canvas_buf (PaintCore *paint_core,  		     MaskBuf   *brush_mask,  		     int        brush_opacity) {   PixelRegion srcPR, maskPR;   int x, y;   int xoff, yoff;    x = (int) paint_core->curx - (brush_mask->width>> 1);   y = (int) paint_core->cury - (brush_mask->height>> 1);   xoff = (x< 0) ? -x : 0;   yoff = (y< 0) ? -y : 0;
 comment|/*  combine the canvas buf and the brush mask to the canvas buf  */
-end_comment
-
-begin_comment
-unit|srcPR.bytes = canvas_buf->bytes;   srcPR.x = 0; srcPR.y = 0;   srcPR.w = canvas_buf->width;   srcPR.h = canvas_buf->height;   srcPR.rowstride = canvas_buf->width * canvas_buf->bytes;   srcPR.data = temp_buf_data (canvas_buf);    maskPR.bytes = 1;   maskPR.x = 0; maskPR.y = 0;   maskPR.w = srcPR.w;   maskPR.h = srcPR.h;   maskPR.rowstride = maskPR.bytes * brush_mask->width;   maskPR.data = mask_buf_data (brush_mask) + yoff * maskPR.rowstride + xoff * maskPR.bytes;
+block|srcPR.bytes = canvas_buf->bytes;   srcPR.x = 0; srcPR.y = 0;   srcPR.w = canvas_buf->width;   srcPR.h = canvas_buf->height;   srcPR.rowstride = canvas_buf->width * canvas_buf->bytes;   srcPR.data = temp_buf_data (canvas_buf);    maskPR.bytes = 1;   maskPR.x = 0; maskPR.y = 0;   maskPR.w = srcPR.w;   maskPR.h = srcPR.h;   maskPR.rowstride = maskPR.bytes * brush_mask->width;   maskPR.data = mask_buf_data (brush_mask) + yoff * maskPR.rowstride + xoff * maskPR.bytes;
 comment|/*  apply the mask  */
-end_comment
-
-begin_endif
-unit|apply_mask_to_region (&srcPR,&maskPR, brush_opacity); }
+block|apply_mask_to_region (&srcPR,&maskPR, brush_opacity); }
 endif|#
 directive|endif
-end_endif
-
-begin_function
 specifier|static
 name|void
-DECL|function|set_undo_tiles (GimpDrawable * drawable,int x,int y,int w,int h)
 name|set_undo_tiles
 parameter_list|(
 name|GimpDrawable
@@ -8498,12 +8398,8 @@ block|}
 block|}
 block|}
 block|}
-end_function
-
-begin_function
 specifier|static
 name|void
-DECL|function|set_canvas_tiles (int x,int y,int w,int h)
 name|set_canvas_tiles
 parameter_list|(
 name|int
@@ -8652,24 +8548,11 @@ block|}
 block|}
 block|}
 block|}
-end_function
-
-begin_comment
 comment|/*****************************************************/
-end_comment
-
-begin_comment
 comment|/*  Paint buffers utility functions                  */
-end_comment
-
-begin_comment
 comment|/*****************************************************/
-end_comment
-
-begin_function
 specifier|static
 name|void
-DECL|function|free_paint_buffers ()
 name|free_paint_buffers
 parameter_list|()
 block|{
