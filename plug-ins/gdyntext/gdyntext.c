@@ -159,7 +159,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782f40c0103
+DECL|enum|__anon2c60949d0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -1724,23 +1724,6 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|data
-operator|->
-name|messages
-operator|=
-name|g_list_append
-argument_list|(
-name|data
-operator|->
-name|messages
-argument_list|,
-name|_
-argument_list|(
-literal|"Current layer isn't a GDynText layer or it has no alpha channel.\n"
-literal|"  Forcing new layer creation.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|data
 operator|->
 name|new_layer
