@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29881adf0103
+DECL|enum|__anon28ff92ea0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1333,6 +1333,18 @@ argument_list|,
 name|GIMP_TYPE_CHANNEL
 argument_list|,
 name|gimp_display_shell_drop_drawable
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_dnd_svg_dest_add
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|gimp_display_shell_drop_svg
 argument_list|,
 name|shell
 argument_list|)
