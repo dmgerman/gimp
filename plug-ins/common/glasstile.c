@@ -56,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e98100108
+DECL|struct|__anon2be393630108
 block|{
 DECL|member|xblock
 name|gint
@@ -75,7 +75,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e98100208
+DECL|struct|__anon2be393630208
 block|{
 DECL|member|run
 name|gboolean
@@ -1192,6 +1192,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
+comment|/* Translations of variable names from Maswan    * rutbredd = grid width    * ruthojd = grid height    * ymitt = y middle    * xmitt = x middle    */
 name|gint
 name|rutbredd
 decl_stmt|,
@@ -1325,7 +1326,7 @@ operator|*
 name|bytes
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the pixel regions  */
+comment|/* initialize the pixel regions, set grid height/width */
 if|if
 condition|(
 name|preview_mode
@@ -1350,6 +1351,25 @@ operator|*
 name|preview
 operator|->
 name|scale_y
+expr_stmt|;
+comment|/* Algorithm depends on grid height/width being at least 2         * or you'll get extremely bad previews (1/2 size).         *        * Preview isn't really terribly useful for larger images.        * Might be more useful as full-size window scroll-around type.          */
+name|rutbredd
+operator|=
+name|MAX
+argument_list|(
+name|rutbredd
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|ruthojd
+operator|=
+name|MAX
+argument_list|(
+name|ruthojd
+argument_list|,
+literal|2
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -1546,6 +1566,7 @@ block|}
 name|yoffs
 operator|++
 expr_stmt|;
+comment|/* if current offset = half, do a displacement next time around */
 if|if
 condition|(
 name|yoffs
