@@ -7,10 +7,6 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
-begin_comment
-comment|/* Revision history  *  (2000/02/28)  v1.1.17b hof: checkboard BG for transparent preview pixels  *  (2000/02/19)  v1.1.17  hof: added spinbuttons for level entries and Reset Button  *  (1999/07/12)  v1.0.2 hof: bugfix: progress is now updated properly  *                            make use NLS Macros if available  *  (1999/03/08)  v1.0.1 hof: dont show indexed layers in option menues  *                            dst-Preview refresh needed at text entry callback  *  (1999/03/04)  v1.0   hof: first public release  *  (1999/02/01)         hof: started development  */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -33,12 +29,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
 end_include
 
 begin_ifdef
@@ -254,7 +244,7 @@ DECL|macro|LEVELS_DA_MASK
 define|#
 directive|define
 name|LEVELS_DA_MASK
-value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \ 			GDK_BUTTON_PRESS_MASK | \ 			GDK_BUTTON_RELEASE_MASK | \ 			GDK_BUTTON1_MOTION_MASK | \ 			GDK_POINTER_MOTION_HINT_MASK
+value|(GDK_EXPOSURE_MASK       | \                          GDK_ENTER_NOTIFY_MASK   | \                          GDK_BUTTON_PRESS_MASK   | \                          GDK_BUTTON_RELEASE_MASK | \                          GDK_BUTTON1_MOTION_MASK | \                          GDK_POINTER_MOTION_HINT_MASK)
 end_define
 
 begin_define
@@ -378,9 +368,9 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon28a442020108
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a62a320108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -439,7 +429,7 @@ DECL|member|tol_col_err
 name|float
 name|tol_col_err
 decl_stmt|;
-comment|/* 0.0% upto 100.0%                             * this is uesd to findout colors of the same 			    * colortone, while analyzing sample colors, 			    * It does not make much sense for the user to adjust this 			    * value. (I used a param file to findout a suitable value)                             */
+comment|/* 0.0% upto 100.0%                             * this is uesd to findout colors of the same                             * colortone, while analyzing sample colors,                             * It does not make much sense for the user to adjust this                             * value. (I used a param file to findout a suitable value)                             */
 DECL|typedef|t_values
 block|}
 name|t_values
@@ -447,9 +437,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a442020208
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a62a320208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -555,9 +545,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a442020308
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a62a320308
 block|{
 DECL|member|color
 name|guchar
@@ -584,9 +574,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a442020408
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a62a320408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -611,9 +601,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a442020508
 typedef|typedef
 struct|struct
+DECL|struct|__anon27a62a320508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -930,7 +920,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|void
 name|p_smp_dialog
 parameter_list|(
 name|void
@@ -1167,21 +1157,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|p_gradient_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
-name|gint32
-name|id
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|p_get_gradient
 parameter_list|(
 name|gint
@@ -1218,7 +1193,6 @@ name|query
 block|,
 comment|/* query_proc */
 name|run
-block|,
 comment|/* run_proc   */
 block|}
 decl_stmt|;
@@ -1639,7 +1613,7 @@ expr_stmt|;
 name|p_clear_tables
 argument_list|()
 expr_stmt|;
-comment|/*  Make sure that the dst_drawable is gray or RGB color	*/
+comment|/*  Make sure that the dst_drawable is gray or RGB color        */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
@@ -1867,15 +1841,12 @@ name|run_mode
 operator|!=
 name|GIMP_RUN_NONINTERACTIVE
 condition|)
-block|{
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 block|}
-block|}
 else|else
 block|{
-comment|/* gimp_message ("Sample Colorize: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
@@ -2239,58 +2210,53 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|p_gradient_callback (GtkWidget * w,gint32 id)
-name|p_gradient_callback
+DECL|function|p_smp_sample_combo_callback (GtkWidget * widget,gpointer data)
+name|p_smp_sample_combo_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
-name|gint32
-name|id
+name|gpointer
+name|data
 parameter_list|)
 block|{
-if|if
-condition|(
-name|g_Sdebug
-condition|)
-name|printf
+name|gint
+name|value
+decl_stmt|;
+name|gimp_int_combo_box_get_active
 argument_list|(
-literal|"GRADIENT_MENU_CB: widget %p,  id: %d\n"
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
-name|w
-argument_list|,
-operator|(
-name|int
-operator|)
-name|id
+operator|&
+name|value
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
-name|id
-operator|==
-name|SMP_GRADIENT
-operator|)
-operator|||
-operator|(
-name|id
-operator|==
-name|SMP_INV_GRADIENT
-operator|)
-condition|)
-block|{
 name|g_values
 operator|.
 name|sample_id
 operator|=
-name|id
+name|value
 expr_stmt|;
+if|if
+condition|(
+name|value
+operator|==
+name|SMP_GRADIENT
+operator|||
+name|value
+operator|==
+name|SMP_INV_GRADIENT
+condition|)
+block|{
 name|p_get_gradient
 argument_list|(
-name|id
+name|value
 argument_list|)
 expr_stmt|;
 name|p_smp_get_colors
@@ -2340,82 +2306,14 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/* end p_gradient_callback */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|p_smp_menu_callback (gint32 id,gpointer data)
-name|p_smp_menu_callback
-parameter_list|(
-name|gint32
-name|id
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
+else|else
 block|{
-name|gint32
-modifier|*
-name|id_ptr
-decl_stmt|;
-if|if
-condition|(
-name|g_Sdebug
-condition|)
-name|printf
+name|p_update_preview
 argument_list|(
-literal|"MENU_CB: id: %d,  data %p,  dst: %x, samp %x\n"
-argument_list|,
-name|id
-argument_list|,
-name|data
-argument_list|,
-operator|(
-name|int
-operator|)
 operator|&
 name|g_values
 operator|.
 name|sample_id
-argument_list|,
-operator|(
-name|int
-operator|)
-operator|&
-name|g_values
-operator|.
-name|dst_id
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|(
-name|id_ptr
-operator|=
-operator|(
-name|gint32
-operator|*
-operator|)
-name|data
-operator|)
-operator|!=
-name|NULL
-condition|)
-block|{
-operator|*
-name|id_ptr
-operator|=
-name|id
-expr_stmt|;
-name|p_update_preview
-argument_list|(
-name|id_ptr
 argument_list|)
 expr_stmt|;
 name|gtk_dialog_set_response_sensitive
@@ -2436,9 +2334,57 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/* end p_smp_menu_callback */
-end_comment
+begin_function
+specifier|static
+name|void
+DECL|function|p_smp_dest_combo_callback (GtkWidget * widget,gpointer data)
+name|p_smp_dest_combo_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|gimp_int_combo_box_get_active
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+operator|&
+name|g_values
+operator|.
+name|dst_id
+argument_list|)
+expr_stmt|;
+name|p_update_preview
+argument_list|(
+operator|&
+name|g_values
+operator|.
+name|dst_id
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_response_sensitive
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|g_di
+operator|.
+name|dialog
+argument_list|)
+argument_list|,
+name|RESPONSE_GET_COLORS
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 specifier|static
@@ -2462,13 +2408,9 @@ name|image_id
 operator|<
 literal|0
 condition|)
-block|{
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
-block|}
 comment|/* dont accept layers from indexed images */
 if|if
 condition|(
@@ -2477,24 +2419,14 @@ argument_list|(
 name|drawable_id
 argument_list|)
 condition|)
-block|{
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
-block|}
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* end p_smp_constrain */
-end_comment
 
 begin_function
 specifier|static
@@ -2935,6 +2867,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_refresh_dst_preview (GtkWidget * preview,guchar * src_buffer)
 name|p_refresh_dst_preview
@@ -3243,6 +3176,7 @@ comment|/* end p_refresh_dst_preview */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_clear_preview (GtkWidget * preview)
 name|p_clear_preview
@@ -3365,6 +3299,7 @@ comment|/* end p_clear_preview */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_update_pv (GtkWidget * preview,gint32 show_selection,t_GDRW * gdrw,guchar * dst_buffer,gint is_color)
 name|p_update_pv
@@ -4337,6 +4272,7 @@ comment|/* end p_update_pv */
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_update_preview (gint32 * id_ptr)
 name|p_update_preview
@@ -5093,7 +5029,7 @@ operator|&
 name|INPUT_SLIDERS
 condition|)
 block|{
-name|double
+name|gdouble
 name|width
 decl_stmt|,
 name|mid
@@ -5506,7 +5442,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|p_level_in_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|p_level_in_events
 parameter_list|(
@@ -5583,13 +5519,11 @@ name|g_di
 operator|.
 name|in_lvl_drawarea
 condition|)
-block|{
 name|p_levels_update
 argument_list|(
 name|INPUT_SLIDERS
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 name|GDK_BUTTON_PRESS
@@ -6047,7 +5981,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|p_level_out_events (GtkWidget * widget,GdkEvent * event,gpointer data)
 name|p_level_out_events
 parameter_list|(
@@ -6111,13 +6045,11 @@ name|g_di
 operator|.
 name|sample_drawarea
 condition|)
-block|{
 name|p_levels_update
 argument_list|(
 name|OUTPUT_SLIDERS
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 name|GDK_BUTTON_PRESS
@@ -6448,7 +6380,7 @@ end_comment
 
 begin_function
 specifier|static
-name|int
+name|void
 DECL|function|p_smp_dialog (void)
 name|p_smp_dialog
 parameter_list|(
@@ -6489,15 +6421,7 @@ name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|option_menu
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|menu
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|menu_item
+name|combo
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -6759,7 +6683,7 @@ name|l_ty
 operator|=
 literal|0
 expr_stmt|;
-comment|/* layer optionmenu (Dst) */
+comment|/* layer combo_box (Dst) */
 name|label
 operator|=
 name|gtk_label_new
@@ -6815,10 +6739,40 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|option_menu
+name|combo
 operator|=
-name|gtk_option_menu_new
-argument_list|()
+name|gimp_layer_combo_box_new
+argument_list|(
+name|p_smp_constrain
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_int_combo_box_set_active
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|g_values
+operator|.
+name|dst_id
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|combo
+argument_list|,
+literal|"changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|p_smp_dest_combo_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
@@ -6827,7 +6781,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|option_menu
+name|combo
 argument_list|,
 literal|1
 argument_list|,
@@ -6854,44 +6808,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|option_menu
+name|combo
 argument_list|)
 expr_stmt|;
-name|menu
-operator|=
-name|gimp_layer_menu_new
-argument_list|(
-name|p_smp_constrain
-argument_list|,
-name|p_smp_menu_callback
-argument_list|,
-operator|&
-name|g_values
-operator|.
-name|dst_id
-argument_list|,
-comment|/* data */
-name|g_values
-operator|.
-name|dst_id
-argument_list|)
-expr_stmt|;
-name|gtk_option_menu_set_menu
-argument_list|(
-name|GTK_OPTION_MENU
-argument_list|(
-name|option_menu
-argument_list|)
-argument_list|,
-name|menu
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|option_menu
-argument_list|)
-expr_stmt|;
-comment|/* layer optionmenu (Sample) */
+comment|/* layer combo_box (Sample) */
 name|label
 operator|=
 name|gtk_label_new
@@ -6947,10 +6867,92 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|option_menu
+name|combo
 operator|=
-name|gtk_option_menu_new
-argument_list|()
+name|gimp_layer_combo_box_new
+argument_list|(
+name|p_smp_constrain
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_int_combo_box_prepend
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|GIMP_INT_STORE_VALUE
+argument_list|,
+name|SMP_INV_GRADIENT
+argument_list|,
+name|GIMP_INT_STORE_LABEL
+argument_list|,
+name|_
+argument_list|(
+literal|"From Reverse Gradient"
+argument_list|)
+argument_list|,
+name|GIMP_INT_STORE_STOCK_ID
+argument_list|,
+name|GIMP_STOCK_GRADIENT
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_int_combo_box_prepend
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|GIMP_INT_STORE_VALUE
+argument_list|,
+name|SMP_GRADIENT
+argument_list|,
+name|GIMP_INT_STORE_LABEL
+argument_list|,
+name|_
+argument_list|(
+literal|"From Gradient"
+argument_list|)
+argument_list|,
+name|GIMP_INT_STORE_STOCK_ID
+argument_list|,
+name|GIMP_STOCK_GRADIENT
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_int_combo_box_set_active
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|g_values
+operator|.
+name|sample_id
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|combo
+argument_list|,
+literal|"changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|p_smp_sample_combo_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
@@ -6959,7 +6961,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|option_menu
+name|combo
 argument_list|,
 literal|4
 argument_list|,
@@ -6986,127 +6988,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|option_menu
-argument_list|)
-expr_stmt|;
-name|menu
-operator|=
-name|gimp_layer_menu_new
-argument_list|(
-name|p_smp_constrain
-argument_list|,
-name|p_smp_menu_callback
-argument_list|,
-operator|&
-name|g_values
-operator|.
-name|sample_id
-argument_list|,
-comment|/* data */
-name|g_values
-operator|.
-name|sample_id
-argument_list|)
-expr_stmt|;
-name|gtk_option_menu_set_menu
-argument_list|(
-name|GTK_OPTION_MENU
-argument_list|(
-name|option_menu
-argument_list|)
-argument_list|,
-name|menu
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|option_menu
-argument_list|)
-expr_stmt|;
-comment|/* Add extra menu items for Gradient */
-name|menu_item
-operator|=
-name|gtk_menu_item_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"From Gradient"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|menu
-argument_list|)
-argument_list|,
-name|menu_item
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu_item
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|menu_item
-argument_list|,
-literal|"activate"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|p_gradient_callback
-argument_list|)
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|SMP_GRADIENT
-argument_list|)
-expr_stmt|;
-comment|/* Add extra menu items for Inverted Gradient */
-name|menu_item
-operator|=
-name|gtk_menu_item_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"From Reverse Gradient"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|menu
-argument_list|)
-argument_list|,
-name|menu_item
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|menu_item
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|menu_item
-argument_list|,
-literal|"activate"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|p_gradient_callback
-argument_list|)
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|SMP_INV_GRADIENT
+name|combo
 argument_list|)
 expr_stmt|;
 name|l_ty
@@ -9038,11 +8920,6 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
-return|return
-operator|(
-literal|0
-operator|)
-return|;
 block|}
 end_function
 
@@ -12170,7 +12047,7 @@ operator|/
 name|l_div
 operator|)
 expr_stmt|;
-comment|/*  * 	 printf("LO: %03d %03d %03d HI: %03d %03d %03d   NEW: %03d %03d %03d\n",  * 	       (int)l_lo_color[0],  (int)l_lo_color[1],  (int)l_lo_color[2],  * 	       (int)l_hi_color[0],  (int)l_hi_color[1],  (int)l_hi_color[2],  * 	       (int)l_new_color[0], (int)l_new_color[1], (int)l_new_color[2]);  */
+comment|/*  *          printf("LO: %03d %03d %03d HI: %03d %03d %03d   NEW: %03d %03d %03d\n",  *                (int)l_lo_color[0],  (int)l_lo_color[1],  (int)l_lo_color[2],  *                (int)l_hi_color[0],  (int)l_hi_color[1],  (int)l_hi_color[2],  *                (int)l_new_color[0], (int)l_new_color[1], (int)l_new_color[2]);  */
 block|}
 name|g_lum_tab
 index|[
@@ -12482,7 +12359,7 @@ operator|==
 literal|255
 condition|)
 block|{
-comment|/*  * 	      l_hi_color[0] = 255;  * 	      l_hi_color[1] = 255;  * 	      l_hi_color[2] = 255;  */
+comment|/*  *               l_hi_color[0] = 255;  *               l_hi_color[1] = 255;  *               l_hi_color[2] = 255;  */
 name|memcpy
 argument_list|(
 operator|&
