@@ -4907,9 +4907,6 @@ modifier|*
 name|dm
 parameter_list|)
 block|{
-name|int
-name|x
-decl_stmt|;
 name|dm
 operator|->
 name|interface

@@ -3317,12 +3317,8 @@ comment|/* Histogram count for 255 values */
 name|guchar
 modifier|*
 name|rgba
-decl_stmt|,
-comment|/* Output image */
-modifier|*
-name|rgba_ptr
 decl_stmt|;
-comment|/* Pixel pointer for output */
+comment|/* Output image */
 name|rgba
 operator|=
 name|g_new
