@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27820f000108
+DECL|struct|__anon2796c3250108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -652,7 +652,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27820f000208
+DECL|struct|__anon2796c3250208
 typedef|typedef
 struct|struct
 block|{

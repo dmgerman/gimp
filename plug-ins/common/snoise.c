@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d434690108
+DECL|struct|__anon28e26ad50108
 block|{
 DECL|member|tilable
 name|gint
@@ -1902,6 +1902,11 @@ operator|*=
 name|m
 expr_stmt|;
 block|}
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

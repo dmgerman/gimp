@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292c3f950108
+DECL|struct|__anon29d2ed110108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -1158,6 +1158,11 @@ name|y2
 operator|-
 name|y1
 operator|)
+argument_list|)
+expr_stmt|;
+name|g_rand_free
+argument_list|(
+name|gr
 argument_list|)
 expr_stmt|;
 block|}

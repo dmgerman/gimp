@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0da8a90108
+DECL|struct|__anon2c6aea6e0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -271,7 +271,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0da8a90208
+DECL|struct|__anon2c6aea6e0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0da8a90308
+DECL|struct|__anon2c6aea6e0308
 block|{
 DECL|member|width
 name|gint
@@ -2095,6 +2095,11 @@ operator|.
 name|a
 operator|*
 literal|255.0
+expr_stmt|;
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
 expr_stmt|;
 block|}
 end_function

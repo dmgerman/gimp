@@ -299,7 +299,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon289302430108
+DECL|struct|__anon2afb7fcc0108
 block|{
 DECL|member|width
 name|gint
@@ -747,14 +747,14 @@ end_function
 begin_function
 specifier|static
 name|long
-DECL|function|pix_diff (guchar * pal,gint bpp,gint i,gint j)
+DECL|function|pix_diff (guchar * pal,guint bpp,gint i,gint j)
 name|pix_diff
 parameter_list|(
 name|guchar
 modifier|*
 name|pal
 parameter_list|,
-name|gint
+name|guint
 name|bpp
 parameter_list|,
 name|gint
@@ -769,7 +769,7 @@ name|r
 init|=
 literal|0
 decl_stmt|;
-name|gint
+name|guint
 name|k
 decl_stmt|;
 for|for
@@ -834,14 +834,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pix_swap (guchar * pal,gint bpp,gint i,gint j)
+DECL|function|pix_swap (guchar * pal,guint bpp,gint i,gint j)
 name|pix_swap
 parameter_list|(
 name|guchar
 modifier|*
 name|pal
 parameter_list|,
-name|gint
+name|guint
 name|bpp
 parameter_list|,
 name|gint
@@ -851,7 +851,7 @@ name|gint
 name|j
 parameter_list|)
 block|{
-name|gint
+name|guint
 name|k
 decl_stmt|;
 for|for
@@ -946,7 +946,7 @@ name|guchar
 modifier|*
 name|pal
 decl_stmt|;
-name|gint
+name|guint
 name|bpp
 init|=
 name|drawable
@@ -1057,8 +1057,10 @@ name|width
 expr_stmt|;
 name|pal
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|psize
 operator|*
 name|bpp
