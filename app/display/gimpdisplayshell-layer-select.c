@@ -1172,11 +1172,12 @@ name|layer_select
 operator|->
 name|current_layer
 operator|!=
+name|gimp_image_get_active_layer
+argument_list|(
 name|layer_select
 operator|->
 name|gimage
-operator|->
-name|active_layer
+argument_list|)
 condition|)
 block|{
 name|gimp_image_set_active_layer
@@ -1228,9 +1229,10 @@ name|layer_select
 operator|->
 name|current_layer
 operator|=
+name|gimp_image_get_active_layer
+argument_list|(
 name|gimage
-operator|->
-name|active_layer
+argument_list|)
 expr_stmt|;
 name|layer_select
 operator|->

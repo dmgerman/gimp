@@ -236,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b017cff0103
+DECL|enum|__anon29ab3a1a0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b017cff0203
+DECL|enum|__anon29ab3a1a0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -2775,9 +2775,10 @@ if|if
 condition|(
 name|layer
 operator|==
+name|gimp_image_get_active_layer
+argument_list|(
 name|gimage
-operator|->
-name|active_layer
+argument_list|)
 condition|)
 name|xcf_save_prop
 argument_list|(
@@ -3001,9 +3002,10 @@ if|if
 condition|(
 name|channel
 operator|==
+name|gimp_image_get_active_channel
+argument_list|(
 name|gimage
-operator|->
-name|active_channel
+argument_list|)
 condition|)
 name|xcf_save_prop
 argument_list|(

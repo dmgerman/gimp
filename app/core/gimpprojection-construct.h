@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae06a110103
+DECL|enum|__anon2c759ffe0103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae06a110203
+DECL|enum|__anon2c759ffe0203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -370,25 +370,25 @@ name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
-comment|/*  ID of active layer           */
+comment|/*  the active layer             */
 DECL|member|active_channel
 name|GimpChannel
 modifier|*
 name|active_channel
 decl_stmt|;
-comment|/*  ID of active channel         */
+comment|/*  the active channel           */
 DECL|member|floating_sel
 name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;
-comment|/*  ID of fs layer               */
+comment|/*  the FS layer                 */
 DECL|member|selection_mask
 name|GimpChannel
 modifier|*
 name|selection_mask
 decl_stmt|;
-comment|/*  selection mask channel       */
+comment|/*  the selection mask channel   */
 DECL|member|parasites
 name|ParasiteList
 modifier|*

@@ -731,7 +731,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db2ec70103
+DECL|enum|__anon28ca16f90103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -2840,9 +2840,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-operator|(
-literal|"gimp_image_scale: Scaling to zero width or height has been rejected."
-operator|)
+literal|"%s(): Scaling to zero width or height has been rejected."
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3480,7 +3480,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gimp_image_apply_image sent illegal parameters"
+literal|"%s(): illegal parameters"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4040,7 +4042,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gimp_image_apply_image sent illegal parameters"
+literal|"%s(): got illegal parameters"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6620,7 +6624,9 @@ expr_stmt|;
 else|else
 name|g_message
 argument_list|(
-literal|"Unable to project indexed image."
+literal|"%s(): unable to project indexed image."
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 block|}
@@ -9672,15 +9678,16 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The second boundary corresponds to the active layer's    *  perimeter...    */
-if|if
-condition|(
-operator|(
 name|layer
 operator|=
+name|gimp_image_get_active_layer
+argument_list|(
 name|gimage
-operator|->
-name|active_layer
-operator|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|layer
 condition|)
 block|{
 operator|*
@@ -10398,8 +10405,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Layer cannot be raised any further"
+literal|"%s(): layer cannot be raised any further"
 argument_list|)
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -10518,8 +10527,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Layer cannot be lowered any further"
+literal|"%s(): layer cannot be lowered any further"
 argument_list|)
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -10623,8 +10634,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Layer is already on top"
+literal|"%s(): layer is already on top"
 argument_list|)
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -10644,8 +10657,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't raise Layer without alpha"
+literal|"%s(): can't raise Layer without alpha"
 argument_list|)
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -10761,8 +10776,10 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Layer is already on bottom"
+literal|"%s(): layer is already on bottom"
 argument_list|)
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -13163,9 +13180,10 @@ name|lu
 operator|->
 name|prev_layer
 operator|=
+name|gimp_image_get_active_layer
+argument_list|(
 name|gimage
-operator|->
-name|active_layer
+argument_list|)
 expr_stmt|;
 name|undo_push_layer
 argument_list|(
@@ -13291,19 +13309,6 @@ name|layer
 argument_list|)
 argument_list|,
 name|position
-argument_list|)
-expr_stmt|;
-name|gimage
-operator|->
-name|layer_stack
-operator|=
-name|g_slist_prepend
-argument_list|(
-name|gimage
-operator|->
-name|layer_stack
-argument_list|,
-name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  notify the layers dialog of the currently active layer  */
@@ -13525,11 +13530,12 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|gimage
-operator|->
-name|active_layer
-operator|==
 name|layer
+operator|==
+name|gimp_image_get_active_layer
+argument_list|(
+name|gimage
+argument_list|)
 condition|)
 block|{
 if|if
@@ -13619,6 +13625,26 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_LAYER
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_LAYER_MASK
+argument_list|(
+name|mask
 argument_list|)
 argument_list|,
 name|NULL
@@ -13848,7 +13874,12 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
-operator|&&
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|GIMP_IS_LAYER
 argument_list|(
 name|layer
@@ -14521,7 +14552,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gimp_image_add_channel: attempt to add channel to wrong image"
+literal|"%s(): attempt to add channel to wrong image"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -14545,7 +14578,9 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"gimp_image_add_channel: trying to add channel to image twice"
+literal|"%s(): trying to add channel to image twice"
+argument_list|,
+name|G_GNUC_FUNCTION
 argument_list|)
 expr_stmt|;
 return|return
@@ -14578,9 +14613,10 @@ name|cu
 operator|->
 name|prev_channel
 operator|=
+name|gimp_image_get_active_channel
+argument_list|(
 name|gimage
-operator|->
-name|active_channel
+argument_list|)
 expr_stmt|;
 name|undo_push_channel
 argument_list|(
@@ -14756,9 +14792,10 @@ name|cu
 operator|->
 name|prev_channel
 operator|=
+name|gimp_image_get_active_channel
+argument_list|(
 name|gimage
-operator|->
-name|active_channel
+argument_list|)
 expr_stmt|;
 name|undo_push_channel
 argument_list|(
@@ -14800,16 +14837,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
-operator|->
-name|active_channel
-operator|==
 name|channel
-condition|)
+operator|==
+name|gimp_image_get_active_channel
+argument_list|(
 name|gimage
-operator|->
-name|active_channel
-operator|=
+argument_list|)
+condition|)
+block|{
+name|gimp_image_set_active_channel
+argument_list|(
+name|gimage
+argument_list|,
 name|GIMP_CHANNEL
 argument_list|(
 name|gimp_container_get_child_by_index
@@ -14821,7 +14860,9 @@ argument_list|,
 literal|0
 argument_list|)
 argument_list|)
+argument_list|)
 expr_stmt|;
+block|}
 name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
@@ -14945,8 +14986,6 @@ condition|(
 name|gimage
 operator|->
 name|active_channel
-operator|!=
-name|NULL
 condition|)
 block|{
 return|return
@@ -14964,8 +15003,6 @@ condition|(
 name|gimage
 operator|->
 name|active_layer
-operator|!=
-name|NULL
 condition|)
 block|{
 name|layer

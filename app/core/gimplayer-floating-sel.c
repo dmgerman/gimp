@@ -497,6 +497,7 @@ operator|.
 name|drawable
 argument_list|)
 condition|)
+block|{
 name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
@@ -511,6 +512,7 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -523,6 +525,7 @@ operator|.
 name|drawable
 argument_list|)
 condition|)
+block|{
 name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
@@ -539,6 +542,7 @@ operator|->
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -575,12 +579,11 @@ operator|->
 name|layers
 argument_list|)
 condition|)
+block|{
+name|gimp_image_set_active_layer
+argument_list|(
 name|gimage
-operator|->
-name|active_layer
-operator|=
-operator|(
-operator|(
+argument_list|,
 operator|(
 name|GimpLayer
 operator|*
@@ -590,16 +593,9 @@ operator|->
 name|layer_stack
 operator|->
 name|data
-operator|)
-operator|)
+argument_list|)
 expr_stmt|;
-else|else
-name|gimage
-operator|->
-name|active_layer
-operator|=
-name|NULL
-expr_stmt|;
+block|}
 block|}
 block|}
 end_function

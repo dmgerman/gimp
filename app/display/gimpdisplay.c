@@ -8918,11 +8918,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|active_layer
+name|layer
 argument_list|)
 expr_stmt|;
 name|lnum

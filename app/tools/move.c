@@ -2028,11 +2028,12 @@ if|if
 condition|(
 name|layer
 operator|==
+name|gimp_image_get_active_layer
+argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|active_layer
+argument_list|)
 condition|)
 block|{
 name|gdisplay_install_tool_cursor
