@@ -1968,7 +1968,7 @@ operator|-
 literal|1
 operator|)
 operator|/
-literal|4.0
+literal|2.0
 argument_list|,
 literal|3
 argument_list|)
@@ -2004,7 +2004,7 @@ operator|-
 literal|1
 operator|)
 operator|/
-literal|4.0
+literal|2.0
 argument_list|,
 literal|3
 argument_list|)
