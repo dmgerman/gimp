@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29be794b0103
+DECL|enum|__anon297764140103
 block|{
 DECL|enumerator|GIMP_ITEM_LINKED_LAYERS
 name|GIMP_ITEM_LINKED_LAYERS
@@ -173,10 +173,6 @@ name|GList
 modifier|*
 name|gimp_item_linked_get_list
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpItem
 modifier|*
 name|item

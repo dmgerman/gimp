@@ -118,11 +118,6 @@ name|linked_list
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
 name|item
 argument_list|,
 name|GIMP_ITEM_LINKED_ALL
@@ -236,11 +231,6 @@ name|linked_list
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
 name|item
 argument_list|,
 name|GIMP_ITEM_LINKED_ALL
@@ -359,11 +349,6 @@ name|linked_list
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
 name|item
 argument_list|,
 name|GIMP_ITEM_LINKED_LAYERS
@@ -415,11 +400,6 @@ name|linked_list
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
 name|item
 argument_list|,
 name|GIMP_ITEM_LINKED_CHANNELS
@@ -564,11 +544,6 @@ name|linked_list
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
 name|item
 argument_list|,
 name|GIMP_ITEM_LINKED_ALL
@@ -624,19 +599,15 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_linked_get_list:  * @gimage: The image @item is part of.  * @item:   An @item to skip in the returned list.  * @which:  Which items to return.  *  * This function returns a #GList og #GimpItem's for which the  * "linked" property is #TRUE. Note that the passed in @item  * must be linked too.  *  * Return value: The list of linked items, excluding the passed @item.  **/
+comment|/**  * gimp_item_linked_get_list:  * @item:  A linked @item.  * @which: Which items to return.  *  * This function returns a #GList og #GimpItem's for which the  * "linked" property is #TRUE. Note that the passed in @item  * must be linked too.  *  * Return value: The list of linked items, excluding the passed @item.  **/
 end_comment
 
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_item_linked_get_list (GimpImage * gimage,GimpItem * item,GimpItemLinkedMask which)
+DECL|function|gimp_item_linked_get_list (GimpItem * item,GimpItemLinkedMask which)
 name|gimp_item_linked_get_list
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpItem
 modifier|*
 name|item
@@ -645,6 +616,10 @@ name|GimpItemLinkedMask
 name|which
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 name|GimpItem
 modifier|*
 name|linked_item
@@ -661,16 +636,6 @@ name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
@@ -685,8 +650,6 @@ name|gimp_item_get_linked
 argument_list|(
 name|item
 argument_list|)
-operator|==
-name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
@@ -699,6 +662,13 @@ name|item
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimage
+operator|=
+name|gimp_item_get_image
+argument_list|(
+name|item
 argument_list|)
 expr_stmt|;
 if|if

@@ -1534,10 +1534,6 @@ name|linked
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
 name|active_item
 argument_list|,
 name|GIMP_ITEM_LINKED_LAYERS
@@ -1709,10 +1705,6 @@ name|linked
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
 name|active_item
 argument_list|,
 name|GIMP_ITEM_LINKED_VECTORS
@@ -2212,10 +2204,6 @@ name|linked
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
 name|active_item
 argument_list|,
 name|GIMP_ITEM_LINKED_CHANNELS
@@ -2667,10 +2655,6 @@ name|linked
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
 name|active_item
 argument_list|,
 name|GIMP_ITEM_LINKED_LAYERS
@@ -3289,10 +3273,6 @@ name|linked
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
 name|active_item
 argument_list|,
 name|GIMP_ITEM_LINKED_LAYERS
@@ -3501,10 +3481,6 @@ name|linked
 operator|=
 name|gimp_item_linked_get_list
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
 name|active_item
 argument_list|,
 name|GIMP_ITEM_LINKED_VECTORS
