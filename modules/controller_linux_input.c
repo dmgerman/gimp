@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b181d880103
+DECL|enum|__anon27827c230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -216,6 +216,12 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
+DECL|member|blurb
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -333,6 +339,23 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|linux_input_get_event_blurb
+parameter_list|(
+name|GimpController
+modifier|*
+name|controller
+parameter_list|,
+name|gint
+name|event_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gboolean
 name|linux_input_set_device
 parameter_list|(
@@ -406,6 +429,8 @@ name|EV_KEY
 block|,
 name|BTN_0
 block|,
+literal|"button-0"
+block|,
 name|N_
 argument_list|(
 literal|"Button 0"
@@ -416,6 +441,8 @@ block|{
 name|EV_KEY
 block|,
 name|BTN_1
+block|,
+literal|"button-1"
 block|,
 name|N_
 argument_list|(
@@ -428,6 +455,8 @@ name|EV_KEY
 block|,
 name|BTN_2
 block|,
+literal|"button-2"
+block|,
 name|N_
 argument_list|(
 literal|"Button 2"
@@ -438,6 +467,8 @@ block|{
 name|EV_KEY
 block|,
 name|BTN_3
+block|,
+literal|"button-3"
 block|,
 name|N_
 argument_list|(
@@ -450,6 +481,8 @@ name|EV_KEY
 block|,
 name|BTN_4
 block|,
+literal|"button-4"
+block|,
 name|N_
 argument_list|(
 literal|"Button 4"
@@ -460,6 +493,8 @@ block|{
 name|EV_KEY
 block|,
 name|BTN_5
+block|,
+literal|"button-5"
 block|,
 name|N_
 argument_list|(
@@ -472,6 +507,8 @@ name|EV_KEY
 block|,
 name|BTN_6
 block|,
+literal|"button-6"
+block|,
 name|N_
 argument_list|(
 literal|"Button 6"
@@ -482,6 +519,8 @@ block|{
 name|EV_KEY
 block|,
 name|BTN_7
+block|,
+literal|"button-7"
 block|,
 name|N_
 argument_list|(
@@ -494,6 +533,8 @@ name|EV_KEY
 block|,
 name|BTN_8
 block|,
+literal|"button-8"
+block|,
 name|N_
 argument_list|(
 literal|"Button 8"
@@ -504,6 +545,8 @@ block|{
 name|EV_KEY
 block|,
 name|BTN_9
+block|,
+literal|"button-9"
 block|,
 name|N_
 argument_list|(
@@ -516,6 +559,8 @@ name|EV_KEY
 block|,
 name|BTN_LEFT
 block|,
+literal|"button-left"
+block|,
 name|N_
 argument_list|(
 literal|"Button Left"
@@ -526,6 +571,8 @@ block|{
 name|EV_KEY
 block|,
 name|BTN_RIGHT
+block|,
+literal|"button-right"
 block|,
 name|N_
 argument_list|(
@@ -538,6 +585,8 @@ name|EV_KEY
 block|,
 name|BTN_MIDDLE
 block|,
+literal|"button-middle"
+block|,
 name|N_
 argument_list|(
 literal|"Button Middle"
@@ -549,6 +598,8 @@ name|EV_REL
 block|,
 name|REL_WHEEL
 block|,
+literal|"wheel-turn-left"
+block|,
 name|N_
 argument_list|(
 literal|"Wheel Turn Left"
@@ -559,6 +610,8 @@ block|{
 name|EV_REL
 block|,
 name|REL_WHEEL
+block|,
+literal|"wheel-rurn-right"
 block|,
 name|N_
 argument_list|(
@@ -812,6 +865,12 @@ name|get_event_name
 operator|=
 name|linux_input_get_event_name
 expr_stmt|;
+name|controller_class
+operator|->
+name|get_event_blurb
+operator|=
+name|linux_input_get_event_blurb
+expr_stmt|;
 block|}
 end_function
 
@@ -1053,6 +1112,52 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
+name|gchar
+modifier|*
+DECL|function|linux_input_get_event_blurb (GimpController * controller,gint event_id)
+name|linux_input_get_event_blurb
+parameter_list|(
+name|GimpController
+modifier|*
+name|controller
+parameter_list|,
+name|gint
+name|event_id
+parameter_list|)
+block|{
+if|if
+condition|(
+name|event_id
+operator|<
+literal|0
+operator|||
+name|event_id
+operator|>=
+name|G_N_ELEMENTS
+argument_list|(
+name|input_events
+argument_list|)
+condition|)
+return|return
+name|NULL
+return|;
+return|return
+name|gettext
+argument_list|(
+name|input_events
+index|[
+name|event_id
+index|]
+operator|.
+name|blurb
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|gboolean
 DECL|function|linux_input_set_device (ControllerLinuxInput * controller,const gchar * device)
 name|linux_input_set_device
@@ -1186,7 +1291,7 @@ else|else
 block|{
 name|g_printerr
 argument_list|(
-literal|"Cannot open device '%s': %s"
+literal|"Cannot open device '%s': %s\n"
 argument_list|,
 name|device
 argument_list|,

@@ -291,9 +291,9 @@ name|mapping
 operator|=
 name|g_hash_table_new_full
 argument_list|(
-name|g_int_hash
+name|g_str_hash
 argument_list|,
-name|g_int_equal
+name|g_str_equal
 argument_list|,
 operator|(
 name|GDestroyNotify

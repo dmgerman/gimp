@@ -67,6 +67,12 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
+DECL|member|blurb
+specifier|const
+name|gchar
+modifier|*
+name|blurb
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -112,6 +118,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|gimp_controller_wheel_get_event_blurb
+parameter_list|(
+name|GimpController
+modifier|*
+name|controller
+parameter_list|,
+name|gint
+name|event_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -141,6 +164,8 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-up-shift-control-alt"
+block|,
 name|N_
 argument_list|(
 literal|"Alt + Control + Shift + Scroll Up"
@@ -153,6 +178,8 @@ block|,
 name|GDK_MOD1_MASK
 operator||
 name|GDK_CONTROL_MASK
+block|,
+literal|"scroll-up-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -167,6 +194,8 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-up-shift-alt"
+block|,
 name|N_
 argument_list|(
 literal|"Alt + Shift + Scroll Up"
@@ -180,6 +209,8 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-up-shift-control"
+block|,
 name|N_
 argument_list|(
 literal|"Control + Shift + Scroll Up"
@@ -190,6 +221,8 @@ block|{
 name|GDK_SCROLL_UP
 block|,
 name|GDK_MOD1_MASK
+block|,
+literal|"scroll-up-alt"
 block|,
 name|N_
 argument_list|(
@@ -202,6 +235,8 @@ name|GDK_SCROLL_UP
 block|,
 name|GDK_CONTROL_MASK
 block|,
+literal|"scroll-up-control"
+block|,
 name|N_
 argument_list|(
 literal|"Control + Scroll Up"
@@ -213,6 +248,8 @@ name|GDK_SCROLL_UP
 block|,
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-up-shift"
+block|,
 name|N_
 argument_list|(
 literal|"Shift + Scroll Up"
@@ -223,6 +260,8 @@ block|{
 name|GDK_SCROLL_UP
 block|,
 literal|0
+block|,
+literal|"scroll-up"
 block|,
 name|N_
 argument_list|(
@@ -239,6 +278,8 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-down-shift-control-alt"
+block|,
 name|N_
 argument_list|(
 literal|"Alt + Control + Shift + Scroll Down"
@@ -251,6 +292,8 @@ block|,
 name|GDK_MOD1_MASK
 operator||
 name|GDK_CONTROL_MASK
+block|,
+literal|"scroll-down-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -265,6 +308,8 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-down-shift-alt"
+block|,
 name|N_
 argument_list|(
 literal|"Alt + Shift + Scroll Down"
@@ -278,6 +323,8 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-down-shift-control"
+block|,
 name|N_
 argument_list|(
 literal|"Control + Shift + Scroll Down"
@@ -288,6 +335,8 @@ block|{
 name|GDK_SCROLL_DOWN
 block|,
 name|GDK_MOD1_MASK
+block|,
+literal|"scroll-down-alt"
 block|,
 name|N_
 argument_list|(
@@ -300,6 +349,8 @@ name|GDK_SCROLL_DOWN
 block|,
 name|GDK_CONTROL_MASK
 block|,
+literal|"scroll-down-control"
+block|,
 name|N_
 argument_list|(
 literal|"Control + Scroll Down"
@@ -311,6 +362,8 @@ name|GDK_SCROLL_DOWN
 block|,
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-down-shift"
+block|,
 name|N_
 argument_list|(
 literal|"Shift + Scroll Down"
@@ -321,6 +374,8 @@ block|{
 name|GDK_SCROLL_DOWN
 block|,
 literal|0
+block|,
+literal|"scroll-down"
 block|,
 name|N_
 argument_list|(
@@ -337,6 +392,8 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-left-shift-control-alt"
+block|,
 name|N_
 argument_list|(
 literal|"Alt + Control + Shift + Scroll Left"
@@ -349,6 +406,8 @@ block|,
 name|GDK_MOD1_MASK
 operator||
 name|GDK_CONTROL_MASK
+block|,
+literal|"scroll-left-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -363,6 +422,8 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-left-shift-alt"
+block|,
 name|N_
 argument_list|(
 literal|"Alt + Shift + Scroll Left"
@@ -376,6 +437,8 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-left-shift-control"
+block|,
 name|N_
 argument_list|(
 literal|"Control + Shift + Scroll Left"
@@ -386,6 +449,8 @@ block|{
 name|GDK_SCROLL_LEFT
 block|,
 name|GDK_MOD1_MASK
+block|,
+literal|"scroll-left-alt"
 block|,
 name|N_
 argument_list|(
@@ -398,6 +463,8 @@ name|GDK_SCROLL_LEFT
 block|,
 name|GDK_CONTROL_MASK
 block|,
+literal|"scroll-left-control"
+block|,
 name|N_
 argument_list|(
 literal|"Control + Scroll Left"
@@ -409,6 +476,8 @@ name|GDK_SCROLL_LEFT
 block|,
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-left-shift"
+block|,
 name|N_
 argument_list|(
 literal|"Shift + Scroll Left"
@@ -419,6 +488,8 @@ block|{
 name|GDK_SCROLL_LEFT
 block|,
 literal|0
+block|,
+literal|"scroll-left"
 block|,
 name|N_
 argument_list|(
@@ -435,6 +506,8 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-right-shift-control-alt"
+block|,
 name|N_
 argument_list|(
 literal|"Alt + Control + Shift + Scroll Right"
@@ -447,6 +520,8 @@ block|,
 name|GDK_MOD1_MASK
 operator||
 name|GDK_CONTROL_MASK
+block|,
+literal|"scroll-right-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -461,6 +536,8 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-right-shift-alt"
+block|,
 name|N_
 argument_list|(
 literal|"Alt + Shift + Scroll Right"
@@ -474,6 +551,8 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-right-shift-control"
+block|,
 name|N_
 argument_list|(
 literal|"Control + Shift + Scroll Right"
@@ -484,6 +563,8 @@ block|{
 name|GDK_SCROLL_RIGHT
 block|,
 name|GDK_MOD1_MASK
+block|,
+literal|"scroll-right-alt"
 block|,
 name|N_
 argument_list|(
@@ -496,6 +577,8 @@ name|GDK_SCROLL_RIGHT
 block|,
 name|GDK_CONTROL_MASK
 block|,
+literal|"scroll-right-control"
+block|,
 name|N_
 argument_list|(
 literal|"Control + Scroll Right"
@@ -507,6 +590,8 @@ name|GDK_SCROLL_RIGHT
 block|,
 name|GDK_SHIFT_MASK
 block|,
+literal|"scroll-right-shift"
+block|,
 name|N_
 argument_list|(
 literal|"Shift + Scroll Right"
@@ -517,6 +602,8 @@ block|{
 name|GDK_SCROLL_RIGHT
 block|,
 literal|0
+block|,
+literal|"scroll-right"
 block|,
 name|N_
 argument_list|(
@@ -660,6 +747,12 @@ name|get_event_name
 operator|=
 name|gimp_controller_wheel_get_event_name
 expr_stmt|;
+name|controller_class
+operator|->
+name|get_event_blurb
+operator|=
+name|gimp_controller_wheel_get_event_blurb
+expr_stmt|;
 block|}
 end_function
 
@@ -724,6 +817,52 @@ name|event_id
 index|]
 operator|.
 name|name
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_controller_wheel_get_event_blurb (GimpController * controller,gint event_id)
+name|gimp_controller_wheel_get_event_blurb
+parameter_list|(
+name|GimpController
+modifier|*
+name|controller
+parameter_list|,
+name|gint
+name|event_id
+parameter_list|)
+block|{
+if|if
+condition|(
+name|event_id
+operator|<
+literal|0
+operator|||
+name|event_id
+operator|>=
+name|G_N_ELEMENTS
+argument_list|(
+name|wheel_events
+argument_list|)
+condition|)
+return|return
+name|NULL
+return|;
+return|return
+name|gettext
+argument_list|(
+name|wheel_events
+index|[
+name|event_id
+index|]
+operator|.
+name|blurb
 argument_list|)
 return|;
 block|}
