@@ -3319,6 +3319,10 @@ block|,
 name|layers_mask_add_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_LAYER_MASK
 block|}
 block|,
 name|NULL
