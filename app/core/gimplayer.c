@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af234880103
+DECL|enum|__anon28a15da40103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3438,7 +3438,7 @@ name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|gimage
+name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
