@@ -124,6 +124,10 @@ DECL|member|rle
 name|gint
 name|rle
 decl_stmt|;
+DECL|member|origin
+name|gint
+name|origin
+decl_stmt|;
 DECL|typedef|TgaSaveVals
 block|}
 name|TgaSaveVals
@@ -139,7 +143,10 @@ init|=
 block|{
 literal|1
 block|,
-comment|/* rle */
+comment|/* rle = ON */
+literal|1
+block|,
+comment|/* origin = bottom left */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -645,6 +652,14 @@ literal|"rle"
 block|,
 literal|"Use RLE compression"
 block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"origin"
+block|,
+literal|"Image origin (0 = top-left, 1 = bottom-left)"
+block|}
 block|}
 decl_stmt|;
 name|gimp_install_procedure
@@ -1063,7 +1078,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|6
+literal|7
 condition|)
 block|{
 name|status
@@ -4421,6 +4436,14 @@ index|[
 literal|17
 index|]
 operator|=
+operator|(
+name|tsvals
+operator|.
+name|origin
+operator|)
+condition|?
+literal|0
+else|:
 literal|0x20
 expr_stmt|;
 comment|/* alpha + orientation */
@@ -4445,6 +4468,14 @@ index|[
 literal|17
 index|]
 operator|=
+operator|(
+name|tsvals
+operator|.
+name|origin
+operator|)
+condition|?
+literal|8
+else|:
 literal|0x28
 expr_stmt|;
 comment|/* alpha + orientation */
@@ -4469,6 +4500,14 @@ index|[
 literal|17
 index|]
 operator|=
+operator|(
+name|tsvals
+operator|.
+name|origin
+operator|)
+condition|?
+literal|0
+else|:
 literal|0x20
 expr_stmt|;
 comment|/* alpha + orientation */
@@ -4493,6 +4532,14 @@ index|[
 literal|17
 index|]
 operator|=
+operator|(
+name|tsvals
+operator|.
+name|origin
+operator|)
+condition|?
+literal|8
+else|:
 literal|0x28
 expr_stmt|;
 comment|/* alpha + orientation */
@@ -4653,6 +4700,38 @@ operator|++
 name|row
 control|)
 block|{
+if|if
+condition|(
+name|tsvals
+operator|.
+name|origin
+condition|)
+block|{
+name|gimp_pixel_rgn_get_rect
+argument_list|(
+operator|&
+name|pixel_rgn
+argument_list|,
+name|pixels
+argument_list|,
+literal|0
+argument_list|,
+name|height
+operator|-
+operator|(
+name|row
+operator|+
+literal|1
+operator|)
+argument_list|,
+name|width
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gimp_pixel_rgn_get_rect
 argument_list|(
 operator|&
@@ -4669,6 +4748,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|dtype
@@ -4897,6 +4977,10 @@ name|toggle
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|origin
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|frame
 decl_stmt|;
 name|GtkWidget
@@ -5097,6 +5181,70 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|toggle
+argument_list|)
+expr_stmt|;
+comment|/*  origin  */
+name|origin
+operator|=
+name|gtk_check_button_new_with_label
+argument_list|(
+name|_
+argument_list|(
+literal|"Origin at bottom left"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|origin
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|origin
+argument_list|)
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
+argument_list|,
+operator|&
+name|tsvals
+operator|.
+name|origin
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|origin
+argument_list|)
+argument_list|,
+name|tsvals
+operator|.
+name|origin
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|origin
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
