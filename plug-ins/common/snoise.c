@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29237b7a0108
+DECL|struct|__anon2c5ef32e0108
 block|{
 DECL|member|tilable
 name|gint
@@ -132,6 +132,10 @@ decl_stmt|;
 DECL|member|ysize
 name|gdouble
 name|ysize
+decl_stmt|;
+DECL|member|random_seed
+name|gboolean
+name|random_seed
 decl_stmt|;
 DECL|typedef|SolidNoiseValues
 block|}
@@ -297,7 +301,8 @@ comment|/* xsize         */
 literal|4.0
 block|,
 comment|/* ysize         */
-block|}
+name|FALSE
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -1258,6 +1263,22 @@ operator|=
 name|g_rand_new
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|snvals
+operator|.
+name|random_seed
+condition|)
+name|g_rand_set_seed
+argument_list|(
+name|gr
+argument_list|,
+name|snvals
+operator|.
+name|seed
+argument_list|)
+expr_stmt|;
 comment|/*  Force sane parameters  */
 name|snvals
 operator|.
@@ -1979,11 +2000,6 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|gboolean
-name|randomize
-init|=
-name|FALSE
-decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"snoise"
@@ -2136,7 +2152,9 @@ operator|.
 name|seed
 argument_list|,
 operator|&
-name|randomize
+name|snvals
+operator|.
+name|random_seed
 argument_list|)
 expr_stmt|;
 name|label

@@ -693,6 +693,18 @@ define|\
 value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (hbox), "spinbutton")))
 end_define
 
+begin_define
+DECL|macro|GIMP_RANDOM_SEED_TOGGLE (hbox)
+define|#
+directive|define
+name|GIMP_RANDOM_SEED_TOGGLE
+parameter_list|(
+name|hbox
+parameter_list|)
+define|\
+value|(g_object_get_data (G_OBJECT(hbox), "toggle"))
+end_define
+
 begin_function_decl
 name|GtkWidget
 modifier|*

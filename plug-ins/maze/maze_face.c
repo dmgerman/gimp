@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28deb9480108
+DECL|struct|__anon2b2e03890108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1259,7 +1259,9 @@ operator|.
 name|seed
 argument_list|,
 operator|&
-name|randomize
+name|mvals
+operator|.
+name|random_seed
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned

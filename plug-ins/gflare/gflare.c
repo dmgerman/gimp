@@ -452,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2fbb2f0103
+DECL|enum|__anon2b3f92c40103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -479,7 +479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2fbb2f0203
+DECL|enum|__anon2b3f92c40203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -500,7 +500,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0308
+DECL|struct|__anon2b3f92c40308
 block|{
 DECL|member|name
 name|gchar
@@ -628,6 +628,10 @@ DECL|member|sflare_seed
 name|guint32
 name|sflare_seed
 decl_stmt|;
+DECL|member|random_seed
+name|gboolean
+name|random_seed
+decl_stmt|;
 DECL|typedef|GFlare
 block|}
 name|GFlare
@@ -637,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0408
+DECL|struct|__anon2b3f92c40408
 block|{
 DECL|member|fp
 name|FILE
@@ -657,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2fbb2f0503
+DECL|enum|__anon2b3f92c40503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -685,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0608
+DECL|struct|__anon2b3f92c40608
 block|{
 DECL|member|init
 name|gint
@@ -707,7 +711,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b2fbb2f0708
+DECL|struct|__anon2b3f92c40708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -781,7 +785,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0808
+DECL|struct|__anon2b3f92c40808
 block|{
 DECL|member|init
 name|gint
@@ -851,7 +855,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0908
+DECL|struct|__anon2b3f92c40908
 block|{
 DECL|member|x0
 name|gdouble
@@ -878,7 +882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0a08
+DECL|struct|__anon2b3f92c40a08
 block|{
 DECL|member|init
 name|gint
@@ -1048,7 +1052,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0b08
+DECL|struct|__anon2b3f92c40b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1075,7 +1079,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0c08
+DECL|struct|__anon2b3f92c40c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1310,7 +1314,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0d08
+DECL|struct|__anon2b3f92c40d08
 block|{
 DECL|member|tag
 name|gint
@@ -1387,7 +1391,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2fbb2f0e08
+DECL|struct|__anon2b3f92c40e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -2267,6 +2271,9 @@ comment|/* sflare_nverts */
 literal|0
 block|,
 comment|/* sflare_seed */
+name|TRUE
+block|,
+comment|/* random_seed */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -8591,7 +8598,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2b2fbb2f0f08
+DECL|struct|__anon2b3f92c40f08
 specifier|static
 struct|struct
 block|{
@@ -9323,6 +9330,13 @@ operator|/
 name|sum
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|gflare
+operator|->
+name|random_seed
+condition|)
 name|g_rand_set_seed
 argument_list|(
 name|gr
@@ -14521,7 +14535,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2b2fbb2f1008
+DECL|struct|__anon2b3f92c41008
 block|{
 DECL|member|label
 specifier|const
@@ -19681,7 +19695,9 @@ operator|->
 name|sflare_seed
 argument_list|,
 operator|&
-name|randomize
+name|gflare
+operator|->
+name|random_seed
 argument_list|)
 expr_stmt|;
 name|entry

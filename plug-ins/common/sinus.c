@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66352b0108
+DECL|struct|__anon2a0e9d3c0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -207,6 +207,10 @@ decl_stmt|;
 DECL|member|col2
 name|GimpRGB
 name|col2
+decl_stmt|;
+DECL|member|random_seed
+name|gboolean
+name|random_seed
 decl_stmt|;
 DECL|typedef|SinusVals
 block|}
@@ -265,7 +269,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66352b0208
+DECL|struct|__anon2a0e9d3c0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -347,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66352b0308
+DECL|struct|__anon2a0e9d3c0308
 block|{
 DECL|member|width
 name|gint
@@ -1416,6 +1420,13 @@ operator|=
 name|g_rand_new
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|svals
+operator|.
+name|random_seed
+condition|)
 name|g_rand_set_seed
 argument_list|(
 name|gr
@@ -3406,9 +3417,6 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|gboolean
-name|randomize
-decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"sinus"
@@ -3989,7 +3997,9 @@ operator|.
 name|seed
 argument_list|,
 operator|&
-name|randomize
+name|svals
+operator|.
+name|random_seed
 argument_list|)
 expr_stmt|;
 name|label

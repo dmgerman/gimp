@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295fbc1e0108
+DECL|struct|__anon2af2030e0108
 block|{
 DECL|member|seed
 name|guint32
@@ -107,6 +107,10 @@ decl_stmt|;
 DECL|member|turbulence
 name|gdouble
 name|turbulence
+decl_stmt|;
+DECL|member|random_seed
+name|gboolean
+name|random_seed
 decl_stmt|;
 DECL|typedef|PlasmaValues
 block|}
@@ -391,10 +395,13 @@ init|=
 block|{
 literal|0
 block|,
-comment|/* seed       */
+comment|/* seed            */
 literal|1.0
 block|,
-comment|/* turbulence */
+comment|/* turbulence      */
+name|FALSE
+block|,
+comment|/* Use random seed */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -815,6 +822,19 @@ operator|&
 name|pvals
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pvals
+operator|.
+name|random_seed
+condition|)
+name|pvals
+operator|.
+name|seed
+operator|=
+name|g_random_int
+argument_list|()
+expr_stmt|;
 break|break;
 default|default:
 break|break;
@@ -973,11 +993,6 @@ decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|gboolean
-name|randomize
-init|=
-name|FALSE
-decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"plasma"
@@ -1087,11 +1102,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|plasma
+name|plasma_seed_changed_callback
 argument_list|(
 name|drawable
 argument_list|,
-name|TRUE
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* preview image */
@@ -1200,7 +1215,9 @@ operator|.
 name|seed
 argument_list|,
 operator|&
-name|randomize
+name|pvals
+operator|.
+name|random_seed
 argument_list|)
 expr_stmt|;
 name|label
@@ -1253,6 +1270,23 @@ name|seed
 argument_list|)
 argument_list|,
 literal|"value_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|plasma_seed_changed_callback
+argument_list|)
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_swapped
+argument_list|(
+name|GIMP_RANDOM_SEED_TOGGLE
+argument_list|(
+name|seed
+argument_list|)
+argument_list|,
+literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1384,6 +1418,19 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+if|if
+condition|(
+name|pvals
+operator|.
+name|random_seed
+condition|)
+name|pvals
+operator|.
+name|seed
+operator|=
+name|g_random_int
+argument_list|()
+expr_stmt|;
 name|plasma
 argument_list|(
 name|drawable

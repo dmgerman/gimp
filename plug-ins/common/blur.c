@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cafde0108
+DECL|struct|__anon29462fbc0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -976,6 +976,12 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/*            *  Initialize the rand() function seed            */
+if|if
+condition|(
+name|pivals
+operator|.
+name|blur_randomize
+condition|)
 name|g_random_set_seed
 argument_list|(
 name|pivals
