@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool-options-commands.h"
 end_include
 
@@ -136,11 +142,19 @@ name|tool_options_menu_entries
 index|[]
 init|=
 block|{
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Save Options to"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Save Options to/_New Entry..."
+literal|"/Save Options to/_New Entry..."
 argument_list|)
 block|,
 literal|""
@@ -163,7 +177,7 @@ block|}
 block|,
 block|{
 block|{
-literal|"/_Save Options to/new-separator"
+literal|"/Save Options to/new-separator"
 block|,
 literal|""
 block|,
@@ -183,11 +197,19 @@ block|,
 name|NULL
 block|}
 block|,
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Restore Options from"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Restore Options from/(None)"
+literal|"/Restore Options from/(None)"
 argument_list|)
 block|,
 literal|""
@@ -208,11 +230,19 @@ block|,
 name|NULL
 block|}
 block|,
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/Re_name Saved Options"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Re_name Saved Options/(None)"
+literal|"/Rename Saved Options/(None)"
 argument_list|)
 block|,
 literal|""
@@ -233,11 +263,19 @@ block|,
 name|NULL
 block|}
 block|,
+name|MENU_BRANCH
+argument_list|(
+name|N_
+argument_list|(
+literal|"/_Delete Saved Options"
+argument_list|)
+argument_list|)
+block|,
 block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Delete Saved Options/(None)"
+literal|"/Delete Saved Options/(None)"
 argument_list|)
 block|,
 literal|""
