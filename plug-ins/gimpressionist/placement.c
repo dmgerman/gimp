@@ -67,6 +67,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"placement.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -92,6 +98,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|placecenter
+specifier|static
 name|GtkWidget
 modifier|*
 name|placecenter
@@ -102,6 +109,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|brushdensityadjust
+specifier|static
 name|GtkObject
 modifier|*
 name|brushdensityadjust
@@ -111,13 +119,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|placechange (int num)
+DECL|function|place_restore ()
 name|void
-name|placechange
-parameter_list|(
-name|int
-name|num
-parameter_list|)
+name|place_restore
+parameter_list|()
 block|{
 name|gtk_toggle_button_set_active
 argument_list|(
@@ -125,12 +130,58 @@ name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|placeradio
 index|[
-name|num
+name|pcvals
+operator|.
+name|placetype
 index|]
 argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|placecenter
+argument_list|)
+argument_list|,
+name|pcvals
+operator|.
+name|placecenter
+argument_list|)
+expr_stmt|;
+name|gtk_adjustment_set_value
+argument_list|(
+name|GTK_ADJUSTMENT
+argument_list|(
+name|brushdensityadjust
+argument_list|)
+argument_list|,
+name|pcvals
+operator|.
+name|brushdensity
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+DECL|function|place_store ()
+name|void
+name|place_store
+parameter_list|()
+block|{
+name|pcvals
+operator|.
+name|placecenter
+operator|=
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|placecenter
+argument_list|)
+operator|->
+name|active
 expr_stmt|;
 block|}
 end_function
@@ -224,12 +275,12 @@ argument_list|(
 literal|"Randomly"
 argument_list|)
 argument_list|,
-literal|0
+name|PLACEMENT_TYPE_RANDOM
 argument_list|,
 operator|&
 name|placeradio
 index|[
-literal|0
+name|PLACEMENT_TYPE_RANDOM
 index|]
 argument_list|,
 name|_
@@ -237,12 +288,12 @@ argument_list|(
 literal|"Evenly distributed"
 argument_list|)
 argument_list|,
-literal|1
+name|PLACEMENT_TYPE_EVEN_DIST
 argument_list|,
 operator|&
 name|placeradio
 index|[
-literal|1
+name|PLACEMENT_TYPE_EVEN_DIST
 index|]
 argument_list|,
 name|NULL
@@ -252,7 +303,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|placeradio
 index|[
-literal|0
+name|PLACEMENT_TYPE_RANDOM
 index|]
 argument_list|,
 name|_
@@ -267,7 +318,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|placeradio
 index|[
-literal|1
+name|PLACEMENT_TYPE_EVEN_DIST
 index|]
 argument_list|,
 name|_

@@ -99,8 +99,8 @@ name|int
 name|len
 parameter_list|)
 block|{
-name|again
-label|:
+do|do
+block|{
 if|if
 condition|(
 operator|!
@@ -117,48 +117,21 @@ return|return
 operator|-
 literal|1
 return|;
-if|if
+block|}
+do|while
 condition|(
-operator|*
 name|buffer
+index|[
+literal|0
+index|]
 operator|==
 literal|'#'
 condition|)
-block|{
-goto|goto
-name|again
-goto|;
-block|}
-while|while
-condition|(
-name|strlen
+do|;
+name|remove_trailing_whitespace
 argument_list|(
 name|buffer
 argument_list|)
-operator|&&
-name|buffer
-index|[
-name|strlen
-argument_list|(
-name|buffer
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|<=
-literal|' '
-condition|)
-name|buffer
-index|[
-name|strlen
-argument_list|(
-name|buffer
-argument_list|)
-operator|-
-literal|1
-index|]
-operator|=
-literal|'\0'
 expr_stmt|;
 return|return
 literal|0
@@ -466,8 +439,13 @@ name|width
 operator|-
 literal|1
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|bail=1;
+endif|#
+directive|endif
 block|}
-comment|/* bail=1; */
 if|if
 condition|(
 name|yo
@@ -498,8 +476,13 @@ name|height
 operator|-
 literal|1
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|bail=1;
+endif|#
+directive|endif
 block|}
-comment|/* bail=1; */
 if|if
 condition|(
 name|bail
@@ -538,7 +521,12 @@ name|int
 operator|)
 name|yo
 expr_stmt|;
-comment|/*   x1 = wrap(ix, s->width);   x2 = wrap(ix+1, s->width);   y1 = wrap(iy, s->height);   y2 = wrap(iy+1, s->height);   */
+if|#
+directive|if
+literal|0
+block|x1 = wrap(ix, s->width);   x2 = wrap(ix+1, s->width);   y1 = wrap(iy, s->height);   y2 = wrap(iy+1, s->height);
+endif|#
+directive|endif
 name|x1
 operator|=
 name|ix
@@ -559,7 +547,12 @@ name|iy
 operator|+
 literal|1
 expr_stmt|;
-comment|/* printf("x1=%d y1=%d x2=%d y2=%d\n",x1,y1,x2,y2); */
+if|#
+directive|if
+literal|0
+block|printf("x1=%d y1=%d x2=%d y2=%d\n",x1,y1,x2,y2);
+endif|#
+directive|endif
 name|x1y1
 operator|=
 operator|(
@@ -1436,6 +1429,75 @@ block|}
 end_function
 
 begin_function
+DECL|function|fopen_from_search_path (const gchar * fn,const char * mode)
+specifier|static
+name|FILE
+modifier|*
+name|fopen_from_search_path
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|fn
+parameter_list|,
+specifier|const
+name|char
+modifier|*
+name|mode
+parameter_list|)
+block|{
+name|FILE
+modifier|*
+name|f
+decl_stmt|;
+name|gchar
+modifier|*
+name|full_filename
+decl_stmt|;
+name|f
+operator|=
+name|fopen
+argument_list|(
+name|fn
+argument_list|,
+name|mode
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|f
+condition|)
+block|{
+name|full_filename
+operator|=
+name|findfile
+argument_list|(
+name|fn
+argument_list|)
+expr_stmt|;
+name|f
+operator|=
+name|fopen
+argument_list|(
+name|full_filename
+argument_list|,
+name|mode
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|full_filename
+argument_list|)
+expr_stmt|;
+block|}
+return|return
+name|f
+return|;
+block|}
+end_function
+
+begin_function
 DECL|function|loadgbr (const gchar * fn,ppm_t * p)
 name|void
 name|loadgbr
@@ -1469,36 +1531,13 @@ name|y
 decl_stmt|;
 name|f
 operator|=
-name|fopen
+name|fopen_from_search_path
 argument_list|(
 name|fn
 argument_list|,
 literal|"rb"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|f
-condition|)
-block|{
-name|ptr
-operator|=
-name|findfile
-argument_list|(
-name|fn
-argument_list|)
-expr_stmt|;
-name|f
-operator|=
-name|fopen
-argument_list|(
-name|ptr
-argument_list|,
-literal|"rb"
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|p
@@ -1785,26 +1824,9 @@ return|return;
 block|}
 name|f
 operator|=
-name|fopen
+name|fopen_from_search_path
 argument_list|(
 name|fn
-argument_list|,
-literal|"rb"
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|f
-condition|)
-name|f
-operator|=
-name|fopen
-argument_list|(
-name|findfile
-argument_list|(
-name|fn
-argument_list|)
 argument_list|,
 literal|"rb"
 argument_list|)
@@ -1845,7 +1867,12 @@ literal|10
 argument_list|)
 expr_stmt|;
 return|return;
-comment|/* fatal("Aborting!"); */
+if|#
+directive|if
+literal|0
+block|fatal("Aborting!");
+endif|#
+directive|endif
 block|}
 name|readline
 argument_list|(
@@ -1902,7 +1929,12 @@ literal|10
 argument_list|)
 expr_stmt|;
 return|return;
-comment|/* fatal("Aborting!"); */
+if|#
+directive|if
+literal|0
+block|fatal("Aborting!");
+endif|#
+directive|endif
 block|}
 name|pgm
 operator|=
@@ -1983,7 +2015,12 @@ literal|10
 argument_list|)
 expr_stmt|;
 return|return;
-comment|/* fatal("Aborting!"); */
+if|#
+directive|if
+literal|0
+block|fatal("Aborting!");
+endif|#
+directive|endif
 block|}
 name|p
 operator|->
@@ -2349,25 +2386,8 @@ name|p
 operator|->
 name|col
 operator|=
-name|g_malloc
+name|g_memdup
 argument_list|(
-name|p
-operator|->
-name|width
-operator|*
-literal|3
-operator|*
-name|p
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
-name|memcpy
-argument_list|(
-name|p
-operator|->
-name|col
-argument_list|,
 name|s
 operator|->
 name|col
@@ -3025,7 +3045,12 @@ name|ly
 operator|=
 name|y
 expr_stmt|;
-comment|/* printf("ly = %d\n", ly); */
+if|#
+directive|if
+literal|0
+block|printf("ly = %d\n", ly);
+endif|#
+directive|endif
 comment|/* lower */
 name|memcpy
 argument_list|(
@@ -3152,7 +3177,12 @@ name|height
 operator|-
 literal|1
 expr_stmt|;
-comment|/* printf("hy = %d\n", hy); */
+if|#
+directive|if
+literal|0
+block|printf("hy = %d\n", hy);
+endif|#
+directive|endif
 comment|/* left */
 name|memcpy
 argument_list|(
@@ -3257,7 +3287,12 @@ name|lx
 operator|=
 name|x
 expr_stmt|;
-comment|/* printf("lx = %d\n", lx); */
+if|#
+directive|if
+literal|0
+block|printf("lx = %d\n", lx);
+endif|#
+directive|endif
 comment|/* right */
 name|memcpy
 argument_list|(
@@ -3370,7 +3405,12 @@ name|x
 operator|+
 literal|1
 expr_stmt|;
-comment|/* printf("hx = %d\n", hx); */
+if|#
+directive|if
+literal|0
+block|printf("hx = %d\n", hx);
+endif|#
+directive|endif
 name|lx
 operator|-=
 name|room
@@ -3561,9 +3601,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pad (ppm_t * p,int left,int right,int top,int bottom,guchar * bg)
+DECL|function|ppm_pad (ppm_t * p,int left,int right,int top,int bottom,guchar * bg)
 name|void
-name|pad
+name|ppm_pad
 parameter_list|(
 name|ppm_t
 modifier|*
@@ -4037,6 +4077,7 @@ operator|!
 name|f
 condition|)
 block|{
+comment|/*         * gimp_filename_to_utf8() and g_strerror() return temporary strings        * that need not and should not be freed. So this call is OK.        * */
 name|g_message
 argument_list|(
 name|_

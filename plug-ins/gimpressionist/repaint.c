@@ -91,6 +91,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"placement.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"size.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"ppmtool.h"
 end_include
 
@@ -107,6 +119,86 @@ name|gimpressionist_vals_t
 name|runningvals
 decl_stmt|;
 end_decl_stmt
+
+begin_function
+DECL|function|get_siz_from_pcvals (double x,double y)
+specifier|static
+name|double
+name|get_siz_from_pcvals
+parameter_list|(
+name|double
+name|x
+parameter_list|,
+name|double
+name|y
+parameter_list|)
+block|{
+return|return
+name|getsiz_proto
+argument_list|(
+name|x
+argument_list|,
+name|y
+argument_list|,
+name|pcvals
+operator|.
+name|numsizevector
+argument_list|,
+name|pcvals
+operator|.
+name|sizevector
+argument_list|,
+name|pcvals
+operator|.
+name|sizestrexp
+argument_list|,
+name|pcvals
+operator|.
+name|sizevoronoi
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+DECL|function|pixval (double dir)
+specifier|static
+name|int
+name|pixval
+parameter_list|(
+name|double
+name|dir
+parameter_list|)
+block|{
+while|while
+condition|(
+name|dir
+operator|<
+literal|0.0
+condition|)
+name|dir
+operator|+=
+literal|360.0
+expr_stmt|;
+while|while
+condition|(
+name|dir
+operator|>=
+literal|360.0
+condition|)
+name|dir
+operator|-=
+literal|360.0
+expr_stmt|;
+return|return
+name|dir
+operator|*
+literal|255.0
+operator|/
+literal|360.0
+return|;
+block|}
+end_function
 
 begin_function
 DECL|function|prepbrush (ppm_t * p)
@@ -361,6 +453,7 @@ name|temp
 decl_stmt|,
 name|diff
 decl_stmt|;
+comment|/* TODO : There seems to be some typoes in the comments here.     * Ask vidar what he meant.    * */
 if|if
 condition|(
 operator|(
@@ -683,7 +776,12 @@ index|[
 name|i
 index|]
 decl_stmt|;
-comment|/* thissum = 0.0; */
+if|#
+directive|if
+literal|0
+block|thissum = 0.0;
+endif|#
+directive|endif
 name|thissum
 operator|=
 name|brushsum
@@ -791,7 +889,12 @@ index|]
 operator|)
 condition|)
 block|{
-comment|/* thissum += h; */
+if|#
+directive|if
+literal|0
+block|thissum += h;
+endif|#
+directive|endif
 name|v
 operator|=
 name|h
@@ -2307,7 +2410,7 @@ name|runningvals
 operator|.
 name|placetype
 operator|==
-literal|1
+name|PLACEMENT_TYPE_EVEN_DIST
 condition|)
 name|density
 operator|/=
@@ -2545,7 +2648,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|pad
+name|ppm_pad
 argument_list|(
 operator|&
 name|brushes
@@ -2765,7 +2868,12 @@ expr_stmt|;
 block|}
 block|}
 comment|/* Brush-debugging */
-comment|/*   for(i = 0; i< numbrush; i++) {     char tmp[1000];     sprintf(tmp, "/tmp/_brush%03d.ppm", i);     saveppm(&brushes[i], tmp);   }   */
+if|#
+directive|if
+literal|0
+block|for(i = 0; i< numbrush; i++) {     char tmp[1000];     sprintf(tmp, "/tmp/_brush%03d.ppm", i);     saveppm(&brushes[i], tmp);   }
+endif|#
+directive|endif
 for|for
 control|(
 name|i
@@ -2948,7 +3056,7 @@ name|xp
 operator|||
 name|yp
 condition|)
-name|pad
+name|ppm_pad
 argument_list|(
 operator|&
 name|brushes
@@ -3040,7 +3148,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|pad
+name|ppm_pad
 argument_list|(
 operator|&
 name|shadows
@@ -3093,12 +3201,27 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-comment|/* autocrop(&shadows[i],1); */
+if|#
+directive|if
+literal|0
+block|autocrop(&shadows[i],1);
+endif|#
+directive|endif
 block|}
-comment|/*     maxbrushwidth += shadowdepth*3;     maxbrushheight += shadowdepth*3;     */
+if|#
+directive|if
+literal|0
+block|maxbrushwidth += shadowdepth*3;     maxbrushheight += shadowdepth*3;
+endif|#
+directive|endif
 block|}
 comment|/* For extra annoying debugging :-) */
-comment|/*   saveppm(brushes, "/tmp/__brush.ppm");   if(shadows) saveppm(shadows, "/tmp/__shadow.ppm");   system("xv /tmp/__brush.ppm& xv /tmp/__shadow.ppm& ");   */
+if|#
+directive|if
+literal|0
+block|saveppm(brushes, "/tmp/__brush.ppm");   if(shadows) saveppm(shadows, "/tmp/__shadow.ppm");   system("xv /tmp/__brush.ppm& xv /tmp/__shadow.ppm& ");
+endif|#
+directive|endif
 if|if
 condition|(
 name|runningvals
@@ -3149,7 +3272,7 @@ name|runningvals
 operator|.
 name|generalbgtype
 operator|==
-literal|3
+name|BG_TYPE_TRANSPARENT
 condition|)
 block|{
 name|guchar
@@ -3207,7 +3330,7 @@ name|runningvals
 operator|.
 name|generalbgtype
 operator|==
-literal|0
+name|BG_TYPE_SOLID
 condition|)
 block|{
 name|guchar
@@ -3272,7 +3395,7 @@ name|runningvals
 operator|.
 name|generalbgtype
 operator|==
-literal|1
+name|BG_TYPE_KEEP_ORIGINAL
 condition|)
 block|{
 name|copyppm
@@ -3480,16 +3603,16 @@ operator|*
 name|cy
 argument_list|)
 expr_stmt|;
-if|if
+switch|switch
 condition|(
 name|runningvals
 operator|.
 name|orienttype
-operator|==
-literal|0
 condition|)
 block|{
-comment|/* Value */
+case|case
+name|ORIENTATION_VALUE
+case|:
 name|newppm
 argument_list|(
 operator|&
@@ -3610,18 +3733,10 @@ literal|3
 expr_stmt|;
 block|}
 block|}
-block|}
-elseif|else
-if|if
-condition|(
-name|runningvals
-operator|.
-name|orienttype
-operator|==
-literal|1
-condition|)
-block|{
-comment|/* Radius */
+break|break;
+case|case
+name|ORIENTATION_RADIUS
+case|:
 name|newppm
 argument_list|(
 operator|&
@@ -3731,18 +3846,10 @@ name|maxdist
 expr_stmt|;
 block|}
 block|}
-block|}
-elseif|else
-if|if
-condition|(
-name|runningvals
-operator|.
-name|orienttype
-operator|==
-literal|3
-condition|)
-block|{
-comment|/* Radial */
+break|break;
+case|case
+name|ORIENTATION_RADIAL
+case|:
 name|newppm
 argument_list|(
 operator|&
@@ -3839,18 +3946,10 @@ operator|)
 expr_stmt|;
 block|}
 block|}
-block|}
-elseif|else
-if|if
-condition|(
-name|runningvals
-operator|.
-name|orienttype
-operator|==
-literal|4
-condition|)
-block|{
-comment|/* Flowing */
+break|break;
+case|case
+name|ORIENTATION_FLOWING
+case|:
 name|newppm
 argument_list|(
 operator|&
@@ -3945,18 +4044,10 @@ argument_list|,
 name|maxbrushheight
 argument_list|)
 expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-name|runningvals
-operator|.
-name|orienttype
-operator|==
-literal|5
-condition|)
-block|{
-comment|/* Hue */
+break|break;
+case|case
+name|ORIENTATION_HUE
+case|:
 name|newppm
 argument_list|(
 operator|&
@@ -4059,16 +4150,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-block|}
-elseif|else
-if|if
-condition|(
-name|runningvals
-operator|.
-name|orienttype
-operator|==
-literal|6
-condition|)
+break|break;
+case|case
+name|ORIENTATION_ADAPTIVE
+case|:
 block|{
 name|guchar
 name|tmpcol
@@ -4107,17 +4192,10 @@ name|tmpcol
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
-if|if
-condition|(
-name|runningvals
-operator|.
-name|orienttype
-operator|==
-literal|7
-condition|)
-block|{
-comment|/* Manual */
+break|break;
+case|case
+name|ORIENTATION_MANUAL
+case|:
 name|newppm
 argument_list|(
 operator|&
@@ -4246,6 +4324,7 @@ argument_list|,
 name|maxbrushheight
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 if|if
 condition|(
@@ -4253,10 +4332,9 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|0
+name|SIZE_TYPE_VALUE
 condition|)
 block|{
-comment|/* Value */
 name|newppm
 argument_list|(
 operator|&
@@ -4385,10 +4463,9 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|1
+name|SIZE_TYPE_RADIUS
 condition|)
 block|{
-comment|/* Radius */
 name|newppm
 argument_list|(
 operator|&
@@ -4506,10 +4583,9 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|3
+name|SIZE_TYPE_RADIAL
 condition|)
 block|{
-comment|/* Radial */
 name|newppm
 argument_list|(
 operator|&
@@ -4614,10 +4690,9 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|4
+name|SIZE_TYPE_FLOWING
 condition|)
 block|{
-comment|/* Flowing */
 name|newppm
 argument_list|(
 operator|&
@@ -4720,10 +4795,9 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|5
+name|SIZE_TYPE_HUE
 condition|)
 block|{
-comment|/* Hue */
 name|newppm
 argument_list|(
 operator|&
@@ -4834,7 +4908,7 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|6
+name|SIZE_TYPE_ADAPTIVE
 condition|)
 block|{
 name|guchar
@@ -4881,10 +4955,9 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|7
+name|SIZE_TYPE_MANUAL
 condition|)
 block|{
-comment|/* Manual */
 name|newppm
 argument_list|(
 operator|&
@@ -4981,7 +5054,7 @@ operator|*
 operator|(
 literal|1.0
 operator|-
-name|getsiz
+name|get_siz_from_pcvals
 argument_list|(
 name|x
 operator|/
@@ -4993,8 +5066,6 @@ operator|.
 name|width
 argument_list|,
 name|tmpy
-argument_list|,
-literal|1
 argument_list|)
 operator|)
 expr_stmt|;
@@ -5015,14 +5086,19 @@ name|maxbrushheight
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*   saveppm(&sizmap, "/tmp/_sizmap.ppm");   */
+if|#
+directive|if
+literal|0
+block|saveppm(&sizmap, "/tmp/_sizmap.ppm");
+endif|#
+directive|endif
 if|if
 condition|(
 name|runningvals
 operator|.
 name|placetype
 operator|==
-literal|0
+name|PLACEMENT_TYPE_RANDOM
 condition|)
 block|{
 name|i
@@ -5053,7 +5129,7 @@ name|runningvals
 operator|.
 name|placetype
 operator|==
-literal|1
+name|PLACEMENT_TYPE_EVEN_DIST
 condition|)
 block|{
 name|i
@@ -5088,7 +5164,12 @@ name|step
 operator|=
 name|i
 expr_stmt|;
-comment|/* fprintf(stderr, "step=%d i=%d\n", step, i); */
+if|#
+directive|if
+literal|0
+block|fprintf(stderr, "step=%d i=%d\n", step, i);
+endif|#
+directive|endif
 block|}
 if|if
 condition|(
@@ -5126,7 +5207,7 @@ name|runningvals
 operator|.
 name|placetype
 operator|==
-literal|1
+name|PLACEMENT_TYPE_EVEN_DIST
 condition|)
 block|{
 name|int
@@ -5414,7 +5495,7 @@ name|runningvals
 operator|.
 name|placetype
 operator|==
-literal|0
+name|PLACEMENT_TYPE_RANDOM
 condition|)
 block|{
 name|tx
@@ -5463,7 +5544,7 @@ name|runningvals
 operator|.
 name|placetype
 operator|==
-literal|1
+name|PLACEMENT_TYPE_EVEN_DIST
 condition|)
 block|{
 name|tx
@@ -5584,7 +5665,12 @@ name|height
 operator|)
 condition|)
 block|{
-comment|/*       fprintf(stderr, "Internal Error; invalid coords: (%d,%d) i=%d\n", tx, ty, i);       */
+if|#
+directive|if
+literal|0
+block|fprintf(stderr, "Internal Error; invalid coords: (%d,%d) i=%d\n", tx, ty, i);
+endif|#
+directive|endif
 continue|continue;
 block|}
 if|if
@@ -5631,9 +5717,8 @@ name|orienttype
 condition|)
 block|{
 case|case
-literal|2
+name|ORIENTATION_RANDOM
 case|:
-comment|/* Random */
 name|on
 operator|=
 name|g_rand_int_range
@@ -5649,29 +5734,23 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|0
+name|ORIENTATION_VALUE
 case|:
-comment|/* Value */
 case|case
-literal|1
+name|ORIENTATION_RADIUS
 case|:
-comment|/* Radius */
 case|case
-literal|3
+name|ORIENTATION_RADIAL
 case|:
-comment|/* Radial */
 case|case
-literal|4
+name|ORIENTATION_FLOWING
 case|:
-comment|/* Flowing */
 case|case
-literal|5
+name|ORIENTATION_HUE
 case|:
-comment|/* Hue */
 case|case
-literal|7
+name|ORIENTATION_MANUAL
 case|:
-comment|/* Manual */
 name|on
 operator|=
 name|runningvals
@@ -5699,9 +5778,8 @@ literal|256
 expr_stmt|;
 break|break;
 case|case
-literal|6
+name|ORIENTATION_ADAPTIVE
 case|:
-comment|/* Adaptive */
 break|break;
 comment|/* Handled below */
 default|default:
@@ -5726,9 +5804,8 @@ name|sizetype
 condition|)
 block|{
 case|case
-literal|2
+name|SIZE_TYPE_RANDOM
 case|:
-comment|/* Random */
 name|sn
 operator|=
 name|g_rand_int_range
@@ -5744,29 +5821,23 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|0
+name|SIZE_TYPE_VALUE
 case|:
-comment|/* Value */
 case|case
-literal|1
+name|SIZE_TYPE_RADIUS
 case|:
-comment|/* Radius */
 case|case
-literal|3
+name|SIZE_TYPE_RADIAL
 case|:
-comment|/* Radial */
 case|case
-literal|4
+name|SIZE_TYPE_FLOWING
 case|:
-comment|/* Flowing */
 case|case
-literal|5
+name|SIZE_TYPE_HUE
 case|:
-comment|/* Hue */
 case|case
-literal|7
+name|SIZE_TYPE_MANUAL
 case|:
-comment|/* Manual */
 name|sn
 operator|=
 name|runningvals
@@ -5794,9 +5865,8 @@ literal|256
 expr_stmt|;
 break|break;
 case|case
-literal|6
+name|SIZE_TYPE_ADAPTIVE
 case|:
-comment|/* Adaptive */
 break|break;
 comment|/* Handled below */
 default|default:
@@ -5814,6 +5884,7 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* Handle Adaptive selections */
+comment|/* TODO : Nest the ifs here. */
 if|if
 condition|(
 operator|(
@@ -5821,7 +5892,7 @@ name|runningvals
 operator|.
 name|orienttype
 operator|==
-literal|6
+name|ORIENTATION_ADAPTIVE
 operator|)
 operator|&&
 operator|(
@@ -5829,7 +5900,7 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|6
+name|SIZE_TYPE_ADAPTIVE
 operator|)
 condition|)
 block|{
@@ -5872,7 +5943,7 @@ name|runningvals
 operator|.
 name|orienttype
 operator|==
-literal|6
+name|ORIENTATION_ADAPTIVE
 condition|)
 block|{
 name|int
@@ -5927,7 +5998,7 @@ name|runningvals
 operator|.
 name|sizetype
 operator|==
-literal|6
+name|SIZE_TYPE_ADAPTIVE
 condition|)
 block|{
 name|n
@@ -6325,123 +6396,44 @@ name|runningvals
 operator|.
 name|colornoise
 decl_stmt|;
-name|r
-operator|=
-name|r
-operator|+
-name|g_rand_double_range
+DECL|macro|BOUNDS (a)
+define|#
+directive|define
+name|BOUNDS
+parameter_list|(
+name|a
+parameter_list|)
+value|(((a)< 0) ? (a) : ((a)> 255) ? 255 : (a))
+DECL|macro|MYASSIGN (a)
+define|#
+directive|define
+name|MYASSIGN
+parameter_list|(
+name|a
+parameter_list|)
+define|\
+value|{ \         a = a + g_rand_double_range (gr, -v/2.0, v/2.0); \         a = BOUNDS(a) ;       \     }
+name|MYASSIGN
 argument_list|(
-name|gr
-argument_list|,
-operator|-
-name|v
-operator|/
-literal|2.0
-argument_list|,
-name|v
-operator|/
-literal|2.0
+name|r
 argument_list|)
 expr_stmt|;
-name|g
-operator|=
-name|g
-operator|+
-name|g_rand_double_range
+name|MYASSIGN
 argument_list|(
-name|gr
-argument_list|,
-operator|-
-name|v
-operator|/
-literal|2.0
-argument_list|,
-name|v
-operator|/
-literal|2.0
+name|g
 argument_list|)
 expr_stmt|;
-name|b
-operator|=
-name|b
-operator|+
-name|g_rand_double_range
+name|MYASSIGN
 argument_list|(
-name|gr
-argument_list|,
-operator|-
-name|v
-operator|/
-literal|2.0
-argument_list|,
-name|v
-operator|/
-literal|2.0
+name|b
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|r
-operator|<
-literal|0
-condition|)
-name|r
-operator|=
-literal|0
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|r
-operator|>
-literal|255
-condition|)
-name|r
-operator|=
-literal|255
-expr_stmt|;
-if|if
-condition|(
-name|g
-operator|<
-literal|0
-condition|)
-name|g
-operator|=
-literal|0
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|g
-operator|>
-literal|255
-condition|)
-name|g
-operator|=
-literal|255
-expr_stmt|;
-if|if
-condition|(
-name|b
-operator|<
-literal|0
-condition|)
-name|b
-operator|=
-literal|0
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|b
-operator|>
-literal|255
-condition|)
-name|b
-operator|=
-literal|255
-expr_stmt|;
+undef|#
+directive|undef
+name|BOUNDS
+undef|#
+directive|undef
+name|MYASSIGN
 block|}
 name|applybrush
 argument_list|(

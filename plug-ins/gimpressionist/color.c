@@ -49,6 +49,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"color.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -72,23 +78,12 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|colornoiseadjust
-name|GtkObject
-modifier|*
-name|colornoiseadjust
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
 begin_function
-DECL|function|colorchange (int num)
+DECL|function|color_type_restore (void)
 name|void
-name|colorchange
+name|color_type_restore
 parameter_list|(
-name|int
-name|num
+name|void
 parameter_list|)
 block|{
 name|gtk_toggle_button_set_active
@@ -97,7 +92,9 @@ name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|colorradio
 index|[
-name|num
+name|pcvals
+operator|.
+name|colortype
 index|]
 argument_list|)
 argument_list|,
@@ -194,12 +191,12 @@ argument_list|(
 literal|"A_verage under brush"
 argument_list|)
 argument_list|,
-literal|0
+name|COLOR_TYPE_AVERAGE
 argument_list|,
 operator|&
 name|colorradio
 index|[
-literal|0
+name|COLOR_TYPE_AVERAGE
 index|]
 argument_list|,
 name|_
@@ -207,12 +204,12 @@ argument_list|(
 literal|"C_enter of brush"
 argument_list|)
 argument_list|,
-literal|1
+name|COLOR_TYPE_CENTER
 argument_list|,
 operator|&
 name|colorradio
 index|[
-literal|1
+name|COLOR_TYPE_CENTER
 index|]
 argument_list|,
 name|NULL
@@ -222,7 +219,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|colorradio
 index|[
-literal|0
+name|COLOR_TYPE_AVERAGE
 index|]
 argument_list|,
 name|_
@@ -237,7 +234,7 @@ name|gimp_help_set_help_data
 argument_list|(
 name|colorradio
 index|[
-literal|1
+name|COLOR_TYPE_CENTER
 index|]
 argument_list|,
 name|_
@@ -269,20 +266,8 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|colorradio
-index|[
-name|pcvals
-operator|.
-name|colortype
-index|]
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|)
+name|color_type_restore
+argument_list|()
 expr_stmt|;
 name|table
 operator|=
@@ -379,7 +364,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|brushdensityadjust
+name|colornoiseadjust
 argument_list|,
 literal|"value_changed"
 argument_list|,
