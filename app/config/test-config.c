@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Test suite for GimpConfig.  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Test suite for GimpConfig.  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -124,6 +124,12 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -181,7 +187,12 @@ argument_list|()
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"Testing GimpConfig ...\n\n"
+literal|"\nTesting GimpConfig ...\n\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|" Creating a new GimpRc object ..."
 argument_list|)
 expr_stmt|;
 name|gimprc
@@ -191,7 +202,34 @@ argument_list|()
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" Serializing %s to '%s' ... "
+literal|" done.\n\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|" Adding the unknown token (foobar \"hadjaha\") ..."
+argument_list|)
+expr_stmt|;
+name|gimp_config_add_unknown_token
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
+argument_list|,
+literal|"foobar"
+argument_list|,
+literal|"hadjaha"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|" done.\n\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|" Serializing %s to '%s' ..."
 argument_list|,
 name|g_type_name
 argument_list|(
@@ -204,6 +242,9 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gimp_config_serialize
 argument_list|(
 name|G_OBJECT
@@ -212,11 +253,29 @@ name|gimprc
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+operator|&
+name|error
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|g_print
 argument_list|(
-literal|"done.\n\n"
+literal|"%s\n"
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+name|g_print
+argument_list|(
+literal|" done.\n\n"
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -238,11 +297,14 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|" Deserializing from '%s' ...\n"
+literal|" Deserializing from '%s' ...\n\n"
 argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gimp_config_deserialize
 argument_list|(
 name|G_OBJECT
@@ -251,8 +313,26 @@ name|gimprc
 argument_list|)
 argument_list|,
 name|filename
+argument_list|,
+operator|&
+name|error
+argument_list|)
+condition|)
+block|{
+name|g_print
+argument_list|(
+literal|"%s\n"
+argument_list|,
+name|error
+operator|->
+name|message
 argument_list|)
 expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 name|header
 operator|=
 literal|"\n  Unknown string tokens:\n"
@@ -272,7 +352,12 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n\nChanging a property ... "
+literal|"\n done.\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n Changing a property ..."
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -291,24 +376,47 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\nTesting gimp_rc_duplicate() ... "
+literal|"\n Testing gimp_config_duplicate() ..."
 argument_list|)
 expr_stmt|;
 name|gimprc2
 operator|=
-name|gimp_rc_duplicate
+name|GIMP_RC
+argument_list|(
+name|gimp_config_duplicate
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|gimprc
 argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"done.\n"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\nTesting gimp_rc_write_changes() ... \n\n"
+literal|" done.\n"
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimprc2
+argument_list|)
+argument_list|,
+literal|"notify"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|notify_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n Changing a property in the duplicate ..."
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -325,6 +433,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n Testing gimp_rc_write_changes() ... \n\n"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gimp_rc_write_changes
 argument_list|(
 name|gimprc2
@@ -333,18 +449,14 @@ name|gimprc
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 name|g_print
 argument_list|(
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|gimprc
-argument_list|)
+literal|"\n done.\n"
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -357,7 +469,65 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"Done.\n\n"
+literal|"\n Deserializing from gimpconfig.c (should fail) ..."
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_config_deserialize
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
+argument_list|,
+literal|"gimpconfig.c"
+argument_list|,
+operator|&
+name|error
+argument_list|)
+condition|)
+block|{
+name|g_print
+argument_list|(
+literal|" OK, failed. The error was:\n %s\n"
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_print
+argument_list|(
+literal|"This test should have failed :-("
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimprc
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\nFinished test of GimpConfig.\n\n"
 argument_list|)
 expr_stmt|;
 return|return

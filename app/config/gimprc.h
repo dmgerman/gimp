@@ -139,18 +139,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpRc
-modifier|*
-name|gimp_rc_duplicate
-parameter_list|(
-name|GimpRc
-modifier|*
-name|rc
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_rc_write_changes
 parameter_list|(

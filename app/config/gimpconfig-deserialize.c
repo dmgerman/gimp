@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Object properties deserialization routines  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Object properties deserialization routines  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -243,6 +243,10 @@ name|token_name
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/**  * gimp_config_deserialize_properties:  * @object: a #GObject.  * @scanner: a #GScanner.  * @store_unknown_tokens: %TRUE if you want to store unknown tokens.  *   * This function uses the @scanner to configure the properties of @object.  *  * The store_unknown_tokens parameter is a special feature for #GimpRc.  * If it set to %TRUE, unknown tokens (e.g. tokens that don't refer to  * a property of @object) with string values are attached to @object as  * unknown tokens. GimpConfig has a couple of functions to handle the  * attached key/value pairs.  *   * Return value:   **/
+end_comment
 
 begin_function
 name|gboolean
@@ -494,9 +498,13 @@ condition|)
 do|;
 if|if
 condition|(
-name|token
+name|next
 operator|!=
-name|G_TOKEN_LEFT_PAREN
+name|G_TOKEN_EOF
+operator|&&
+name|next
+operator|!=
+name|token
 operator|&&
 name|token
 operator|!=
@@ -520,10 +528,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|_
-argument_list|(
-literal|"fatal parse error"
-argument_list|)
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|)
@@ -538,9 +543,13 @@ argument_list|)
 expr_stmt|;
 return|return
 operator|(
-name|token
+name|next
 operator|==
 name|G_TOKEN_EOF
+operator|||
+name|next
+operator|==
+name|token
 operator|)
 return|;
 block|}
@@ -828,6 +837,9 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+if|#
+directive|if
+name|CONFIG_DEBUG
 else|else
 block|{
 name|g_warning
@@ -855,6 +867,8 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 name|g_value_unset
 argument_list|(
 operator|&
@@ -1083,7 +1097,7 @@ expr_stmt|;
 else|else
 block|{
 comment|/* don't translate 'yes' and 'no' */
-name|g_scanner_warn
+name|g_scanner_error
 argument_list|(
 name|scanner
 argument_list|,
@@ -1307,7 +1321,7 @@ operator|!
 name|enum_value
 condition|)
 block|{
-name|g_scanner_warn
+name|g_scanner_error
 argument_list|(
 name|scanner
 argument_list|,
@@ -1699,7 +1713,7 @@ condition|)
 return|return
 name|TRUE
 return|;
-name|g_scanner_warn
+name|g_scanner_error
 argument_list|(
 name|scanner
 argument_list|,

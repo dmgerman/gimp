@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Config file serialization and deserialization interface  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Config file serialization and deserialization interface  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -135,6 +135,11 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -151,6 +156,23 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GObject
+modifier|*
+name|gimp_config_duplicate
+parameter_list|(
+name|GObject
+modifier|*
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -210,6 +232,46 @@ name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_define
+DECL|macro|GIMP_CONFIG_ERROR
+define|#
+directive|define
+name|GIMP_CONFIG_ERROR
+value|(gimp_config_error_quark ())
+end_define
+
+begin_decl_stmt
+name|GQuark
+name|gimp_config_error_quark
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bcc44020103
+block|{
+DECL|enumerator|GIMP_CONFIG_ERROR_FILE_ENOENT
+name|GIMP_CONFIG_ERROR_FILE_ENOENT
+block|,
+comment|/* config file does not exist      */
+DECL|enumerator|GIMP_CONFIG_ERROR_FILE
+name|GIMP_CONFIG_ERROR_FILE
+block|,
+comment|/* config file could not be opened */
+DECL|enumerator|GIMP_CONFIG_ERROR_PARSE
+name|GIMP_CONFIG_ERROR_PARSE
+comment|/* config file could not be parsed */
+DECL|typedef|GimpConfigError
+block|}
+name|GimpConfigError
+typedef|;
+end_typedef
 
 begin_endif
 endif|#
