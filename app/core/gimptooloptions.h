@@ -31,6 +31,7 @@ modifier|*
 name|main_vbox
 decl_stmt|;
 DECL|member|title
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -52,6 +53,7 @@ name|ToolOptions
 modifier|*
 name|tool_options_new
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|title
@@ -71,6 +73,7 @@ name|ToolOptions
 modifier|*
 name|options
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|title

@@ -19,18 +19,8 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tool_options.h"
 end_include
-
-begin_comment
-comment|/*  the paint options structures  */
-end_comment
 
 begin_typedef
 DECL|typedef|PaintPressureOptions
@@ -119,10 +109,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*  the paint options structures  */
-end_comment
 
 begin_typedef
 DECL|typedef|PaintOptions

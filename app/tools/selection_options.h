@@ -201,7 +201,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  to be used by "derived selection options only  */
+comment|/*  to be used by "derived" selection options only  */
 end_comment
 
 begin_function_decl
