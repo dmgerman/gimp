@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -2409,7 +2415,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2563c50108
+DECL|struct|__anon2c4158200108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3293,7 +3299,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2563c50208
+DECL|struct|__anon2c4158200208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
