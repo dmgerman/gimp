@@ -757,7 +757,7 @@ name|maximum
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 return|;
 block|}
