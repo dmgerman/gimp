@@ -215,6 +215,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_config_iface_reset
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|GType
 DECL|function|gimp_config_interface_get_type (void)
@@ -331,6 +343,12 @@ operator|->
 name|equal
 operator|=
 name|gimp_config_iface_equal
+expr_stmt|;
+name|gimp_config_iface
+operator|->
+name|reset
+operator|=
+name|gimp_config_iface_reset
 expr_stmt|;
 block|}
 end_function
@@ -630,6 +648,25 @@ expr_stmt|;
 return|return
 name|equal
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_config_iface_reset (GObject * object)
+name|gimp_config_iface_reset
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|gimp_config_reset_properties
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1566,6 +1603,57 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_config_reset:  * @object: a #GObject that implements the #GimpConfigInterface.  *   * Resets the object to its default state. The default implementation of the  * #GimpConfigInterface only works for objects that are completely defined by  * their properties.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_config_reset (GObject * object)
+name|gimp_config_reset
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|GimpConfigInterface
+modifier|*
+name|gimp_config_iface
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|G_IS_OBJECT
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_config_iface
+operator|=
+name|GIMP_GET_CONFIG_INTERFACE
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_config_iface
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_config_iface
+operator|->
+name|reset
+argument_list|(
+name|object
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/*   * Code to store and lookup unknown tokens (string key/value pairs).  */
 end_comment
 
@@ -1580,7 +1668,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288f5c040108
+DECL|struct|__anon27537a6e0108
 block|{
 DECL|member|key
 name|gchar

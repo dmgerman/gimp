@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpconfig-params.h"
 end_include
 
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c90dfb0103
+DECL|enum|__anon299e118f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -234,6 +240,22 @@ name|NULL
 comment|/* instance_init  */
 block|}
 decl_stmt|;
+specifier|static
+specifier|const
+name|GInterfaceInfo
+name|text_iface_info
+init|=
+block|{
+name|NULL
+block|,
+comment|/* iface_init     */
+name|NULL
+block|,
+comment|/* iface_finalize */
+name|NULL
+comment|/* iface_data     */
+block|}
+decl_stmt|;
 name|text_type
 operator|=
 name|g_type_register_static
@@ -246,6 +268,16 @@ operator|&
 name|text_info
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_type_add_interface_static
+argument_list|(
+name|text_type
+argument_list|,
+name|GIMP_TYPE_CONFIG_INTERFACE
+argument_list|,
+operator|&
+name|text_iface_info
 argument_list|)
 expr_stmt|;
 block|}
@@ -333,7 +365,7 @@ literal|"text"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"GIMP"
 argument_list|,
 literal|0
 argument_list|)
@@ -365,7 +397,7 @@ name|NULL
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_MAXFLOAT
+literal|1024.0
 argument_list|,
 literal|18.0
 argument_list|,

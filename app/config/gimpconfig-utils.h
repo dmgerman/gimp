@@ -51,6 +51,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_config_reset_properties
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_config_build_data_path
