@@ -364,6 +364,8 @@ argument_list|,
 name|O_WRONLY
 operator||
 name|O_CREAT
+operator||
+name|O_TRUNC
 argument_list|,
 ifndef|#
 directive|ifndef
@@ -628,7 +630,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2754adbb0108
+DECL|struct|__anon2ade2ce70108
 block|{
 DECL|member|key
 name|gchar
