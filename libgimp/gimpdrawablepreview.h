@@ -167,6 +167,7 @@ name|GimpDrawablePreview
 modifier|*
 name|preview
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buf
