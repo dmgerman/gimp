@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config.h"
 end_include
 
@@ -84,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88ff9f0108
+DECL|struct|__anon29080a520108
 block|{
 DECL|member|angle
 name|gint
@@ -103,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88ff9f0208
+DECL|struct|__anon29080a520208
 block|{
 DECL|member|ID
 name|gint32
@@ -774,17 +768,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|!=
-name|RUN_INTERACTIVE
-condition|)
 name|INIT_I18N
-argument_list|()
-expr_stmt|;
-else|else
-name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 comment|/* get image and drawable */
