@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2003 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2004 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_ifndef
@@ -21,7 +21,7 @@ DECL|macro|IMAP_STOCK_ARROW
 define|#
 directive|define
 name|IMAP_STOCK_ARROW
-value|"imap_arrow"
+value|"imap-arrow"
 end_define
 
 begin_define
@@ -29,7 +29,7 @@ DECL|macro|IMAP_STOCK_CIRCLE
 define|#
 directive|define
 name|IMAP_STOCK_CIRCLE
-value|"imap_circle"
+value|"imap-circle"
 end_define
 
 begin_define
@@ -37,7 +37,7 @@ DECL|macro|IMAP_STOCK_COORD
 define|#
 directive|define
 name|IMAP_STOCK_COORD
-value|"imap_coord"
+value|"imap-coord"
 end_define
 
 begin_define
@@ -45,7 +45,7 @@ DECL|macro|IMAP_STOCK_DIMENSION
 define|#
 directive|define
 name|IMAP_STOCK_DIMENSION
-value|"imap_dimension"
+value|"imap-dimension"
 end_define
 
 begin_define
@@ -53,7 +53,7 @@ DECL|macro|IMAP_STOCK_JAVA
 define|#
 directive|define
 name|IMAP_STOCK_JAVA
-value|"imap_java"
+value|"imap-java"
 end_define
 
 begin_define
@@ -61,7 +61,7 @@ DECL|macro|IMAP_STOCK_LINK
 define|#
 directive|define
 name|IMAP_STOCK_LINK
-value|"imap_link"
+value|"imap-link"
 end_define
 
 begin_define
@@ -77,7 +77,7 @@ DECL|macro|IMAP_STOCK_POLYGON
 define|#
 directive|define
 name|IMAP_STOCK_POLYGON
-value|"imap_polygon"
+value|"imap-polygon"
 end_define
 
 begin_define
@@ -85,7 +85,7 @@ DECL|macro|IMAP_STOCK_RECTANGLE
 define|#
 directive|define
 name|IMAP_STOCK_RECTANGLE
-value|"imap_rectangle"
+value|"imap-rectangle"
 end_define
 
 begin_define

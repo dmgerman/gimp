@@ -15,12 +15,6 @@ directive|include
 file|"imap_browse.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"imap_stock.h"
-end_include
-
 begin_decl_stmt
 DECL|variable|target_table
 specifier|static
