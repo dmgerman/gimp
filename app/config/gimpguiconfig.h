@@ -146,6 +146,10 @@ DECL|member|restore_accels
 name|gboolean
 name|restore_accels
 decl_stmt|;
+DECL|member|menu_mnemonics
+name|gboolean
+name|menu_mnemonics
+decl_stmt|;
 DECL|member|last_opened_size
 name|gint
 name|last_opened_size

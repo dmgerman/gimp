@@ -154,6 +154,10 @@ name|GList
 modifier|*
 name|registered_groups
 decl_stmt|;
+DECL|member|mnemonics
+name|gboolean
+name|mnemonics
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -189,6 +193,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|mnemonics
 parameter_list|)
 function_decl|;
 end_function_decl

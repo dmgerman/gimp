@@ -118,6 +118,10 @@ name|gchar
 modifier|*
 name|stock_id
 decl_stmt|;
+DECL|member|mnemonics
+name|gboolean
+name|mnemonics
+decl_stmt|;
 DECL|member|user_data
 name|gpointer
 name|user_data
@@ -481,6 +485,9 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+parameter_list|,
+name|gboolean
+name|mnemonics
 parameter_list|,
 name|gpointer
 name|user_data
