@@ -22,6 +22,12 @@ directive|include
 file|"libgimp/gimpparasite.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpobject.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_PARASITE_LIST
 define|#
@@ -52,8 +58,85 @@ parameter_list|)
 value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_PARASITE_LIST))
 end_define
 
+begin_define
+DECL|macro|PARASITE_LIST_CLASS (class)
+define|#
+directive|define
+name|PARASITE_LIST_CLASS
+parameter_list|(
+name|class
+parameter_list|)
+value|GIMP_CHECK_CLASS_CAST (class, parasite_list_get_type(), ParasiteListClass)
+end_define
+
+begin_struct
+DECL|struct|_ParasiteList
+struct|struct
+name|_ParasiteList
+block|{
+DECL|member|object
+name|GimpObject
+name|object
+decl_stmt|;
+DECL|member|table
+name|GHashTable
+modifier|*
+name|table
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_typedef
+DECL|struct|_ParasiteListClass
+typedef|typedef
+struct|struct
+name|_ParasiteListClass
+block|{
+DECL|member|parent_class
+name|GimpObjectClass
+name|parent_class
+decl_stmt|;
+DECL|member|add
+name|void
+function_decl|(
+modifier|*
+name|add
+function_decl|)
+parameter_list|(
+name|ParasiteList
+modifier|*
+name|list
+parameter_list|,
+name|GimpParasite
+modifier|*
+name|parasite
+parameter_list|)
+function_decl|;
+DECL|member|remove
+name|void
+function_decl|(
+modifier|*
+name|remove
+function_decl|)
+parameter_list|(
+name|ParasiteList
+modifier|*
+name|list
+parameter_list|,
+name|GimpParasite
+modifier|*
+name|parasite
+parameter_list|)
+function_decl|;
+DECL|typedef|ParasiteListClass
+block|}
+name|ParasiteListClass
+typedef|;
+end_typedef
+
 begin_comment
-comment|/* Signals:    add    remove */
+comment|/* function declarations */
 end_comment
 
 begin_function_decl
@@ -64,10 +147,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* function declarations */
-end_comment
 
 begin_function_decl
 name|ParasiteList

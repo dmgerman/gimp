@@ -22,12 +22,6 @@ directive|include
 file|"apptypes.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"boundaryF.h"
-end_include
-
 begin_comment
 comment|/*  Functions  */
 end_comment

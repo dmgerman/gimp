@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplayP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay_ops.h"
 end_include
 
@@ -260,6 +254,38 @@ directive|define
 name|MAX_TITLE_BUF
 value|256
 end_define
+
+begin_typedef
+DECL|typedef|GimpArea
+typedef|typedef
+name|struct
+name|_GimpArea
+name|GimpArea
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpArea
+struct|struct
+name|_GimpArea
+block|{
+DECL|member|x1
+DECL|member|y1
+DECL|member|x2
+DECL|member|y2
+name|gint
+name|x1
+decl_stmt|,
+name|y1
+decl_stmt|,
+name|x2
+decl_stmt|,
+name|y2
+decl_stmt|;
+comment|/*  area bounds  */
+block|}
+struct|;
+end_struct
 
 begin_comment
 comment|/* variable declarations */

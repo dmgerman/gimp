@@ -147,10 +147,6 @@ name|GimpListClass
 typedef|;
 end_typedef
 
-begin_comment
-comment|/* Signals:    add    remove */
-end_comment
-
 begin_function_decl
 name|GtkType
 name|gimp_list_get_type

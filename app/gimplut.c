@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplutP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplut.h"
 end_include
 

@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520103
+DECL|enum|__anon29a951270103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520203
+DECL|enum|__anon29a951270203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -92,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520303
+DECL|enum|__anon29a951270303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520403
+DECL|enum|__anon29a951270403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520503
+DECL|enum|__anon29a951270503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -226,7 +226,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520603
+DECL|enum|__anon29a951270603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520703
+DECL|enum|__anon29a951270703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520803
+DECL|enum|__anon29a951270803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -288,7 +288,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2c4ccb520903
+DECL|enum|__anon29a951270903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -309,7 +309,7 @@ comment|/* gradient paint modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c4ccb520a03
+DECL|enum|__anon29a951270a03
 typedef|typedef
 enum|enum
 block|{
@@ -345,7 +345,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4ccb520b03
+DECL|enum|__anon29a951270b03
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -567,6 +567,15 @@ typedef|typedef
 name|struct
 name|_GimpLut
 name|GimpLut
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|BoundSeg
+typedef|typedef
+name|struct
+name|_BoundSeg
+name|BoundSeg
 typedef|;
 end_typedef
 

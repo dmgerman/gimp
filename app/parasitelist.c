@@ -30,19 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpobject.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpsignal.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"parasitelistP.h"
+file|"parasitelist.h"
 end_include
 
 begin_include
@@ -53,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be758500103
+DECL|enum|__anon297d96ff0103
 block|{
 DECL|enumerator|ADD
 name|ADD

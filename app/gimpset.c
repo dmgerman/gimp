@@ -24,19 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpobject.h"
+file|"gimpset.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpsignal.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpsetP.h"
 end_include
 
 begin_comment
@@ -72,7 +66,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b409bcc0108
+DECL|struct|__anon2bd01e730108
 block|{
 DECL|member|object
 name|gpointer
@@ -95,7 +89,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b409bcc0203
+DECL|enum|__anon2bd01e730203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1132,14 +1126,16 @@ name|object
 parameter_list|)
 block|{
 return|return
-operator|!
-operator|!
+operator|(
 name|gimp_set_find_node
 argument_list|(
 name|set
 argument_list|,
 name|object
 argument_list|)
+operator|!=
+name|NULL
+operator|)
 return|;
 block|}
 end_function
