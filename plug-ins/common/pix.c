@@ -986,7 +986,10 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|progMessage
+init|=
+name|ident
 decl_stmt|;
+comment|/*  only to suppress compiler warnings  */
 name|guchar
 modifier|*
 name|dest

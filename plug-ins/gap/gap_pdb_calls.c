@@ -3382,9 +3382,6 @@ modifier|*
 name|basename
 parameter_list|)
 block|{
-name|int
-name|l_len
-decl_stmt|;
 name|char
 modifier|*
 name|l_str

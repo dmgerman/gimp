@@ -217,7 +217,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c36551a0103
+DECL|enum|__anon2b1561960103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -2287,6 +2287,17 @@ name|bytes
 parameter_list|)
 block|{
 comment|/* dest % bytes and color % bytes must be 0 or we will crash       when bytes = 2 or 4.      Is this safe to assume?  Lets find out.      This is 4-7X as fast as the simple version.      */
+if|#
+directive|if
+name|defined
+argument_list|(
+name|sparc
+argument_list|)
+operator|||
+name|defined
+argument_list|(
+name|__sparc__
+argument_list|)
 specifier|register
 name|unsigned
 name|char
@@ -2298,19 +2309,17 @@ name|c2
 decl_stmt|,
 name|c3
 decl_stmt|;
-if|#
-directive|if
-operator|!
-name|defined
-argument_list|(
-name|sparc
-argument_list|)
-operator|&&
-operator|!
-name|defined
-argument_list|(
-name|__sparc__
-argument_list|)
+else|#
+directive|else
+specifier|register
+name|unsigned
+name|char
+name|c0
+decl_stmt|,
+name|c1
+decl_stmt|,
+name|c2
+decl_stmt|;
 specifier|register
 name|guint32
 modifier|*
@@ -2327,7 +2336,6 @@ name|shortc
 decl_stmt|;
 endif|#
 directive|endif
-comment|/* !sparc&& !__sparc__ */
 switch|switch
 condition|(
 name|bytes

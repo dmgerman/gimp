@@ -2011,6 +2011,7 @@ name|jerr
 decl_stmt|;
 name|FILE
 modifier|*
+specifier|volatile
 name|outfile
 decl_stmt|;
 name|guchar
@@ -2051,6 +2052,7 @@ name|guchar
 name|alpha_byte
 decl_stmt|;
 name|guchar
+specifier|volatile
 name|l_alpha_sum
 decl_stmt|;
 name|alpha_offset
