@@ -407,7 +407,7 @@ expr_stmt|;
 comment|/* Lines */
 name|ang_grid
 operator|=
-literal|2
+literal|2.0
 operator|*
 name|G_PI
 operator|/
@@ -895,7 +895,7 @@ expr_stmt|;
 comment|/* Lines */
 name|ang_grid
 operator|=
-literal|2
+literal|2.0
 operator|*
 name|G_PI
 operator|/
