@@ -12,6 +12,10 @@ directive|define
 name|__TILE_H__
 end_define
 
+begin_comment
+comment|/* We make one big assumptions about the tilesize at several places    in the code: All tiles are squares!				    */
+end_comment
+
 begin_define
 DECL|macro|TILE_WIDTH
 define|#
@@ -27,6 +31,19 @@ directive|define
 name|TILE_HEIGHT
 value|64
 end_define
+
+begin_define
+DECL|macro|TILE_SHIFT
+define|#
+directive|define
+name|TILE_SHIFT
+value|6
+end_define
+
+begin_comment
+DECL|macro|TILE_SHIFT
+comment|/* This has to be the lg(TILE_WIDTH) to the base of 2 */
+end_comment
 
 begin_comment
 comment|/* Uncomment for verbose debugging on copy-on-write logic #define TILE_DEBUG */
