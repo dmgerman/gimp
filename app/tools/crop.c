@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -90,13 +96,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/gimpsizeentry.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpsizeentry.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -639,7 +645,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f86ad10103
+DECL|enum|__anon2ad12e350103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -8142,6 +8148,8 @@ name|private
 expr_stmt|;
 name|ox
 operator|=
+name|RINT
+argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -8151,9 +8159,12 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|oy
 operator|=
+name|RINT
+argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -8162,6 +8173,7 @@ name|widget
 argument_list|)
 argument_list|,
 literal|1
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

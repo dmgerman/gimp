@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -66,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -1413,9 +1419,7 @@ name|private
 expr_stmt|;
 name|width
 operator|=
-call|(
-name|int
-call|)
+name|RINT
 argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -1426,15 +1430,11 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
-call|(
-name|int
-call|)
+name|RINT
 argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -1445,8 +1445,6 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 if|if

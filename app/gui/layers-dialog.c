@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpmath.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpsizeentry.h"
 end_include
 
@@ -10880,7 +10886,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2f0c80108
+DECL|struct|__anon2a2c23b20108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -15683,9 +15689,7 @@ name|options
 operator|->
 name|xsize
 operator|=
-call|(
-name|gint
-call|)
+name|RINT
 argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -15698,17 +15702,13 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|options
 operator|->
 name|ysize
 operator|=
-call|(
-name|gint
-call|)
+name|RINT
 argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -15721,8 +15721,6 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|fill_type

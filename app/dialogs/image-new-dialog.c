@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file_new_dialog.h"
 end_include
 
@@ -30,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/gimpchainbutton.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpchainbutton.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -60,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f775350108
+DECL|struct|__anon2c533e680108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -245,9 +251,7 @@ name|values
 operator|->
 name|width
 operator|=
-call|(
-name|int
-call|)
+name|RINT
 argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -260,17 +264,13 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|values
 operator|->
 name|height
 operator|=
-call|(
-name|int
-call|)
+name|RINT
 argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -283,8 +283,6 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 comment|/* get the resolution in dpi */
@@ -1141,12 +1139,7 @@ name|values
 operator|->
 name|width
 operator|=
-call|(
-name|gdouble
-call|)
-argument_list|(
-name|gint
-argument_list|)
+name|RINT
 argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -1159,8 +1152,6 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|info
@@ -1169,12 +1160,7 @@ name|values
 operator|->
 name|height
 operator|=
-call|(
-name|gdouble
-call|)
-argument_list|(
-name|gint
-argument_list|)
+name|RINT
 argument_list|(
 name|gimp_size_entry_get_refval
 argument_list|(
@@ -1187,8 +1173,6 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|)
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|info
