@@ -152,13 +152,21 @@ DECL|member|line_spacing
 name|gdouble
 name|line_spacing
 decl_stmt|;
-DECL|member|letter_spacing
-name|gdouble
-name|letter_spacing
+DECL|member|box_mode
+name|GimpTextBoxMode
+name|box_mode
 decl_stmt|;
 DECL|member|box_width
-name|gint
+name|gdouble
 name|box_width
+decl_stmt|;
+DECL|member|box_height
+name|gdouble
+name|box_height
+decl_stmt|;
+DECL|member|box_unit
+name|GimpUnit
+name|box_unit
 decl_stmt|;
 comment|/* for historical reasons, don't use */
 DECL|member|border

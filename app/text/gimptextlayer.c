@@ -1136,17 +1136,6 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_text_layout_get_size
-argument_list|(
-name|layout
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_text_layout_get_size
