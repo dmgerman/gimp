@@ -2324,6 +2324,10 @@ argument_list|(
 name|pn_dlg
 argument_list|)
 expr_stmt|;
+comment|/*  flush the display  */
+name|gdisplays_flush
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 

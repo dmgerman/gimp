@@ -5359,6 +5359,13 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
+literal|"<Image>/Edit/Paste"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive
+argument_list|(
 literal|"<Image>/Edit/Paste Into"
 argument_list|,
 name|lp
@@ -5395,6 +5402,13 @@ expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
 literal|"<Image>/Edit/Copy Named"
+argument_list|,
+name|lp
+argument_list|)
+expr_stmt|;
+name|menus_set_sensitive
+argument_list|(
+literal|"<Image>/Edit/Paste Named"
 argument_list|,
 name|lp
 argument_list|)
