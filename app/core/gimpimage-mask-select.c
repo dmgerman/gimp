@@ -676,6 +676,11 @@ decl_stmt|;
 name|gboolean
 name|closed
 decl_stmt|;
+name|gint
+name|num_coords
+init|=
+literal|0
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -691,6 +696,8 @@ decl_stmt|;
 name|GimpChannel
 modifier|*
 name|mask
+init|=
+name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -858,6 +865,9 @@ argument_list|)
 operator|.
 name|y
 expr_stmt|;
+name|num_coords
+operator|++
+expr_stmt|;
 block|}
 name|gimp_scan_convert_add_points
 argument_list|(
@@ -886,6 +896,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|num_coords
+condition|)
 name|mask
 operator|=
 name|gimp_scan_convert_to_channel

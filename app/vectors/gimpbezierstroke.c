@@ -5710,6 +5710,27 @@ name|stroke
 operator|->
 name|closed
 expr_stmt|;
+if|if
+condition|(
+name|ret_coords
+operator|->
+name|len
+operator|==
+literal|0
+condition|)
+block|{
+name|g_array_free
+argument_list|(
+name|ret_coords
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|ret_coords
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 return|return
 name|ret_coords
 return|;
@@ -5808,6 +5829,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+return|return
+name|NULL
+return|;
 block|}
 end_function
 
