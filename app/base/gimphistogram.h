@@ -57,21 +57,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_histogram_calculate_drawable
-parameter_list|(
-name|GimpHistogram
-modifier|*
-name|histogram
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gdouble
 name|gimp_histogram_get_maximum
 parameter_list|(

@@ -103,7 +103,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2937f4950103
+DECL|enum|__anon2bd06ce50103
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -186,7 +186,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2937f4950203
+DECL|enum|__anon2bd06ce50203
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -208,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2937f4950303
+DECL|enum|__anon2bd06ce50303
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -224,6 +224,37 @@ name|InterpolationType
 typedef|;
 end_typedef
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bd06ce50403
+block|{
+DECL|enumerator|VALUE_LUT
+name|VALUE_LUT
+block|,
+DECL|enumerator|RED_LUT
+name|RED_LUT
+block|,
+DECL|enumerator|GREEN_LUT
+name|GREEN_LUT
+block|,
+DECL|enumerator|BLUE_LUT
+name|BLUE_LUT
+block|,
+DECL|enumerator|ALPHA_LUT
+name|ALPHA_LUT
+block|,
+DECL|enumerator|GRAY_LUT
+name|GRAY_LUT
+init|=
+literal|0
+comment|/*< skip>*/
+DECL|typedef|ChannelLutType
+block|}
+name|ChannelLutType
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  Transparency representation  */
 end_comment
@@ -232,7 +263,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2937f4950403
+DECL|enum|__anon2bd06ce50503
 block|{
 DECL|enumerator|LIGHT_CHECKS
 name|LIGHT_CHECKS
@@ -273,7 +304,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2937f4950503
+DECL|enum|__anon2bd06ce50603
 block|{
 DECL|enumerator|SMALL_CHECKS
 name|SMALL_CHECKS
@@ -295,6 +326,42 @@ name|GimpCheckSize
 typedef|;
 end_typedef
 
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2bd06ce50703
+block|{
+DECL|enumerator|GIMP_HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
+init|=
+literal|0
+block|,
+DECL|enumerator|GIMP_HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
+init|=
+literal|1
+block|,
+DECL|enumerator|GIMP_HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
+init|=
+literal|2
+block|,
+DECL|enumerator|GIMP_HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
+init|=
+literal|3
+block|,
+DECL|enumerator|GIMP_HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
+init|=
+literal|4
+DECL|typedef|GimpHistogramChannel
+block|}
+name|GimpHistogramChannel
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  types  */
 end_comment
@@ -305,6 +372,15 @@ typedef|typedef
 name|struct
 name|_BoundSeg
 name|BoundSeg
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpHistogram
+typedef|typedef
+name|struct
+name|_GimpHistogram
+name|GimpHistogram
 typedef|;
 end_typedef
 

@@ -24,7 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/gimphistogram.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/gimplut.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/lut-funcs.h"
 end_include
 
 begin_include
@@ -42,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -60,19 +66,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-histogram.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"lut_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimphistogram.h"
+file|"drawable.h"
 end_include
 
 begin_function
@@ -172,11 +178,11 @@ operator|=
 name|gimp_histogram_new
 argument_list|()
 expr_stmt|;
-name|gimp_histogram_calculate_drawable
+name|gimp_drawable_calculate_histogram
 argument_list|(
-name|hist
-argument_list|,
 name|drawable
+argument_list|,
+name|hist
 argument_list|)
 expr_stmt|;
 comment|/* Build equalization LUT */

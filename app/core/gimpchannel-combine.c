@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/lut-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/pixel-processor.h"
 end_include
 
@@ -127,12 +133,6 @@ begin_include
 include|#
 directive|include
 file|"parasitelist.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lut_funcs.h"
 end_include
 
 begin_include

@@ -46,7 +46,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/gimphistogram.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/gimplut.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/lut-funcs.h"
 end_include
 
 begin_include
@@ -95,18 +113,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimphistogram.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lut_funcs.h"
 end_include
 
 begin_include
