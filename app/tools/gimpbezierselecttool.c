@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppaintinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -280,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c45c2200108
+DECL|struct|__anon27b8242b0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -316,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c45c2200208
+DECL|struct|__anon27b8242b0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -371,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c45c2200308
+DECL|struct|__anon27b8242b0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -13887,6 +13893,8 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|)
+operator|->
+name|paint_info
 operator|->
 name|pdb_string
 expr_stmt|;

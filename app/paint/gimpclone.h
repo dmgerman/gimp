@@ -33,7 +33,7 @@ typedef|typedef
 enum|enum
 comment|/*< skip>*/
 comment|/*< pdb-skip>*/
-DECL|enum|__anon292747ac0103
+DECL|enum|__anon2887aadc0103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -292,6 +292,20 @@ comment|/* 3 radio buttons */
 block|}
 struct|;
 end_struct
+
+begin_function_decl
+name|void
+name|gimp_clone_register
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpPaintRegisterCallback
+name|callback
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_decl_stmt
 name|GType

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppaintinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -858,9 +864,6 @@ name|GimpPaintCore
 modifier|*
 name|core
 decl_stmt|;
-name|GType
-name|core_type
-decl_stmt|;
 name|GimpToolInfo
 modifier|*
 name|tool_info
@@ -927,29 +930,15 @@ name|tool_info
 operator|->
 name|tool_options
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"core_name: %s\n"
-argument_list|,
-name|tool_info
-operator|->
-name|paint_core_name
-argument_list|)
-expr_stmt|;
-name|core_type
-operator|=
-name|g_type_from_name
-argument_list|(
-name|tool_info
-operator|->
-name|paint_core_name
-argument_list|)
-expr_stmt|;
 name|core
 operator|=
 name|g_object_new
 argument_list|(
-name|core_type
+name|tool_info
+operator|->
+name|paint_info
+operator|->
+name|paint_type
 argument_list|,
 name|NULL
 argument_list|)

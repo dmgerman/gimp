@@ -250,6 +250,32 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+name|void
+DECL|function|gimp_airbrush_register (Gimp * gimp,GimpPaintRegisterCallback callback)
+name|gimp_airbrush_register
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpPaintRegisterCallback
+name|callback
+parameter_list|)
+block|{
+call|(
+modifier|*
+name|callback
+call|)
+argument_list|(
+name|gimp
+argument_list|,
+name|GIMP_TYPE_AIRBRUSH
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|GType
 DECL|function|gimp_airbrush_get_type (void)
 name|gimp_airbrush_get_type

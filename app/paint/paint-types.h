@@ -45,6 +45,48 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  functions  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpPaintRegisterCallback
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpPaintRegisterCallback
+function_decl|)
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GType
+name|tool_type
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpPaintRegisterFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpPaintRegisterFunc
+function_decl|)
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpPaintRegisterCallback
+name|callback
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_comment
 comment|/*  enums  */
 end_comment
 
@@ -55,7 +97,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ba1450103
+DECL|enum|__anon29934e550103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -81,7 +123,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ba1450203
+DECL|enum|__anon29934e550203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -104,7 +146,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ba1450303
+DECL|enum|__anon29934e550303
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -134,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ba1450403
+DECL|enum|__anon29934e550403
 block|{
 DECL|enumerator|DODGE
 name|DODGE
@@ -150,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ba1450503
+DECL|enum|__anon29934e550503
 block|{
 DECL|enumerator|BLUR_CONVOLVE
 name|BLUR_CONVOLVE
@@ -169,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ba1450603
+DECL|enum|__anon29934e550603
 block|{
 DECL|enumerator|IMAGE_CLONE
 name|IMAGE_CLONE

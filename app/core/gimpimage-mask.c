@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppaintinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -2234,6 +2240,8 @@ name|gimp_context_get_tool
 argument_list|(
 name|context
 argument_list|)
+operator|->
+name|paint_info
 operator|->
 name|pdb_string
 expr_stmt|;

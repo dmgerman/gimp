@@ -263,6 +263,11 @@ name|GimpParasiteList
 modifier|*
 name|parasites
 decl_stmt|;
+DECL|member|paint_info_list
+name|GimpContainer
+modifier|*
+name|paint_info_list
+decl_stmt|;
 DECL|member|modules
 name|GimpContainer
 modifier|*
