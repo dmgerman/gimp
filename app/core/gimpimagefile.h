@@ -263,6 +263,11 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
+parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage

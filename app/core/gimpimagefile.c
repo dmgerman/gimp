@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21327a0103
+DECL|enum|__anon298dc9330103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1440,12 +1440,17 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_imagefile_save_thumbnail (GimpImagefile * imagefile,GimpImage * gimage)
+DECL|function|gimp_imagefile_save_thumbnail (GimpImagefile * imagefile,const gchar * mime_type,GimpImage * gimage)
 name|gimp_imagefile_save_thumbnail
 parameter_list|(
 name|GimpImagefile
 modifier|*
 name|imagefile
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -1509,7 +1514,7 @@ name|imagefile
 operator|->
 name|thumbnail
 argument_list|,
-name|NULL
+name|mime_type
 argument_list|,
 name|gimage
 argument_list|)

@@ -1623,6 +1623,8 @@ name|gimp_imagefile_save_thumbnail
 argument_list|(
 name|imagefile
 argument_list|,
+name|NULL
+argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
