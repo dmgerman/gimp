@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ef69ab0103
+DECL|enum|__anon28d262d40103
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ef69ab0203
+DECL|enum|__anon28d262d40203
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -158,10 +158,13 @@ block|,
 DECL|enumerator|PIXMAPBRUSH
 name|PIXMAPBRUSH
 block|,
+DECL|enumerator|MEASURE
+name|MEASURE
+block|,
 DECL|enumerator|LAST_TOOLBOX_TOOL
 name|LAST_TOOLBOX_TOOL
 init|=
-name|PIXMAPBRUSH
+name|MEASURE
 block|,
 comment|/*  Non-toolbox tools  */
 DECL|enumerator|BY_COLOR_SELECT
