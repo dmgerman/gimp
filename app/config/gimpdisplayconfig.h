@@ -118,6 +118,10 @@ DECL|member|default_dot_for_dot
 name|gboolean
 name|default_dot_for_dot
 decl_stmt|;
+DECL|member|initial_zoom_to_fit
+name|gboolean
+name|initial_zoom_to_fit
+decl_stmt|;
 DECL|member|perfect_mouse
 name|gboolean
 name|perfect_mouse

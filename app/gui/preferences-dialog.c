@@ -5783,7 +5783,7 @@ name|table
 operator|=
 name|prefs_table_new
 argument_list|(
-literal|1
+literal|2
 argument_list|,
 name|GTK_CONTAINER
 argument_list|(
@@ -5791,6 +5791,32 @@ name|vbox2
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|prefs_boolean_option_menu_add
+argument_list|(
+name|config
+argument_list|,
+literal|"initial-zoom-to-fit"
+argument_list|,
+name|_
+argument_list|(
+literal|"Fit to Window"
+argument_list|)
+argument_list|,
+literal|"1:1"
+argument_list|,
+name|_
+argument_list|(
+literal|"Inital Zoom Ratio:"
+argument_list|)
+argument_list|,
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|prefs_spin_button_add
@@ -5815,7 +5841,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|0
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  Canvas Padding Color  */
@@ -6156,7 +6182,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b9b00ec0108
+DECL|struct|__anon2767909b0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7777,7 +7803,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b9b00ec0208
+DECL|struct|__anon2767909b0208
 block|{
 DECL|member|label
 specifier|const
@@ -7936,7 +7962,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b9b00ec0308
+DECL|struct|__anon2767909b0308
 block|{
 DECL|member|tree_label
 specifier|const

@@ -321,6 +321,15 @@ value|N_("When set to yes, the GIMP will use a different info window per image "
 end_define
 
 begin_define
+DECL|macro|INITIAL_ZOOM_TO_FIT_BLURB
+define|#
+directive|define
+name|INITIAL_ZOOM_TO_FIT_BLURB
+define|\
+value|N_("When set to yes, this will ensure that the full image is visible after " \    "a file is opened, otherwise it will be displayed with a scale of 1:1.")
+end_define
+
+begin_define
 DECL|macro|INSTALL_COLORMAP_BLURB
 define|#
 directive|define

@@ -250,7 +250,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277f42230103
+DECL|enum|__anon27a5fe240103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1659,6 +1659,13 @@ argument_list|,
 name|image_height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|config
+operator|->
+name|initial_zoom_to_fit
+condition|)
+block|{
 comment|/*  Limit to the size of the screen...  */
 while|while
 condition|(
@@ -1751,6 +1758,31 @@ operator|==
 literal|0xFF
 condition|)
 break|break;
+block|}
+block|}
+else|else
+block|{
+comment|/* Set up size like above, but do not zoom to fit.  	 Useful when working on large images. */
+if|if
+condition|(
+name|n_width
+operator|>
+name|s_width
+condition|)
+name|n_width
+operator|=
+name|s_width
+expr_stmt|;
+if|if
+condition|(
+name|n_height
+operator|>
+name|s_height
+condition|)
+name|n_height
+operator|=
+name|s_height
+expr_stmt|;
 block|}
 name|shell
 operator|->
