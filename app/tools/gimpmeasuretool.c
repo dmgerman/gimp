@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afa57ae0103
+DECL|enum|__anon297add120103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -3462,7 +3462,7 @@ name|x
 index|[
 literal|0
 index|]
-operator|<
+operator|<=
 literal|0
 condition|?
 name|x
