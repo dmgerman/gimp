@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the Free  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91c3d90103
+DECL|enum|__anon28c375160103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -44,7 +44,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91c3d90203
+DECL|enum|__anon28c375160203
 block|{
 DECL|enumerator|RGB_IMAGE
 name|RGB_IMAGE
@@ -84,7 +84,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91c3d90303
+DECL|enum|__anon28c375160303
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91c3d90403
+DECL|enum|__anon28c375160403
 block|{
 DECL|enumerator|BG_IMAGE_FILL
 name|BG_IMAGE_FILL
@@ -183,7 +183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91c3d90503
+DECL|enum|__anon28c375160503
 block|{
 DECL|enumerator|PARAM_INT32
 name|PARAM_INT32
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91c3d90603
+DECL|enum|__anon28c375160603
 block|{
 DECL|enumerator|PROC_PLUG_IN
 name|PROC_PLUG_IN
@@ -288,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91c3d90703
+DECL|enum|__anon28c375160703
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b91c3d90803
+DECL|enum|__anon28c375160803
 block|{
 DECL|enumerator|STATUS_EXECUTION_ERROR
 name|STATUS_EXECUTION_ERROR

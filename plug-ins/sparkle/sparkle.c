@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Sparkle --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * You can contact Michael at mjhammel@csn.net  * Note: set tabstops to 3 to make this more readable.  */
+comment|/* Sparkle --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 by John Beale;  ported to Gimp by Michael J. Hammel  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact Michael at mjhammel@csn.net  * Note: set tabstops to 3 to make this more readable.  */
 end_comment
 
 begin_comment
@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f0d260108
+DECL|struct|__anon27d5d3710108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -156,7 +156,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f0d260208
+DECL|struct|__anon27d5d3710208
 block|{
 DECL|member|run
 name|gint

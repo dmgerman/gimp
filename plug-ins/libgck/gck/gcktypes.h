@@ -68,7 +68,11 @@ comment|/* along with this program; if not, write to the Free Software          
 end_comment
 
 begin_comment
-comment|/* Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.               */
+comment|/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,   */
+end_comment
+
+begin_comment
+comment|/* USA.                                                                    */
 end_comment
 
 begin_comment
@@ -190,7 +194,7 @@ name|GCK_HSL_UNDEFINED
 value|-1.0
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c6de5f0103
+DECL|enum|__anon2bd537d50103
 block|{
 DECL|enumerator|DITHER_NONE
 name|DITHER_NONE
@@ -206,7 +210,7 @@ name|GckDitherType
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0208
+DECL|struct|__anon2bd537d50208
 block|{
 DECL|member|r
 DECL|member|g
@@ -227,7 +231,7 @@ name|GckRGB
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0308
+DECL|struct|__anon2bd537d50308
 block|{
 DECL|member|r
 DECL|member|g
@@ -251,7 +255,7 @@ name|GckNamedRGB
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0408
+DECL|struct|__anon2bd537d50408
 block|{
 DECL|member|visual
 name|GdkVisual
@@ -434,7 +438,7 @@ parameter_list|)
 function_decl|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0508
+DECL|struct|__anon2bd537d50508
 block|{
 DECL|member|size
 name|double
@@ -478,7 +482,7 @@ name|GckScaleValues
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c6de5f0603
+DECL|enum|__anon2bd537d50603
 block|{
 DECL|enumerator|GCK_RIGHT
 name|GCK_RIGHT
@@ -497,7 +501,7 @@ name|GckPosition
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0708
+DECL|struct|__anon2bd537d50708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -534,7 +538,7 @@ name|GckDialogWindow
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0808
+DECL|struct|__anon2bd537d50808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -603,7 +607,7 @@ name|GckMenuItem
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0908
+DECL|struct|__anon2bd537d50908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -662,7 +666,7 @@ name|GckListBox
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0a08
+DECL|struct|__anon2bd537d50a08
 block|{
 DECL|member|label
 name|char
@@ -689,7 +693,7 @@ name|GckListBoxItem
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0b08
+DECL|struct|__anon2bd537d50b08
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -741,7 +745,7 @@ name|GckNoteBook
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0c08
+DECL|struct|__anon2bd537d50c08
 block|{
 DECL|member|label
 name|char
@@ -768,7 +772,7 @@ name|GckNoteBookTab
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0d08
+DECL|struct|__anon2bd537d50d08
 block|{
 DECL|member|label
 name|gchar
@@ -807,7 +811,7 @@ DECL|typedef|GckNoteBookPage
 block|}
 name|GckNoteBookPage
 typedef|;
-DECL|struct|__anon29c6de5f0e08
+DECL|struct|__anon2bd537d50e08
 typedef|typedef
 struct|struct
 block|{
@@ -835,7 +839,7 @@ name|_GckBackBuffer
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f0f08
+DECL|struct|__anon2bd537d50f08
 block|{
 DECL|member|x
 DECL|member|y
@@ -850,7 +854,7 @@ name|GckVector2
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f1008
+DECL|struct|__anon2bd537d51008
 block|{
 DECL|member|x
 DECL|member|y
@@ -868,7 +872,7 @@ name|GckVector3
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6de5f1108
+DECL|struct|__anon2bd537d51108
 block|{
 DECL|member|x
 DECL|member|y

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * PostScript file plugin  * PostScript writing and GhostScript interfacing code  * Copyright (C) 1997 Peter Kirchgessner  * (email: pkirchg@aol.com, WWW: http://members.aol.com/pkirchg)  *  * Added controls for TextAlphaBits and GraphicsAlphaBits  *   George White<aa056@chebucto.ns.ca>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * PostScript file plugin  * PostScript writing and GhostScript interfacing code  * Copyright (C) 1997 Peter Kirchgessner  * (email: pkirchg@aol.com, WWW: http://members.aol.com/pkirchg)  *  * Added controls for TextAlphaBits and GraphicsAlphaBits  *   George White<aa056@chebucto.ns.ca>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_comment
@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdc7c590108
+DECL|struct|__anon2962e6d60108
 block|{
 DECL|member|resolution
 name|guint
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdc7c590208
+DECL|struct|__anon2962e6d60208
 block|{
 DECL|member|run
 name|gint
@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdc7c590308
+DECL|struct|__anon2962e6d60308
 block|{
 DECL|member|width
 DECL|member|height
@@ -281,7 +281,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdc7c590408
+DECL|struct|__anon2962e6d60408
 block|{
 DECL|member|run
 name|gint
@@ -774,7 +774,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdc7c590508
+DECL|struct|__anon2962e6d60508
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -878,7 +878,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdc7c590608
+DECL|struct|__anon2962e6d60608
 block|{
 DECL|member|dialog
 name|GtkWidget

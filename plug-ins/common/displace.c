@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Displace --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 Stephen Robert Norris  * Much of the code taken from the pinch plug-in by 1996 Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * You can contact me at srn@flibble.cs.su.oz.au.  * Please send me any patches or enhancements to this code.  * You can contact the original The Gimp authors at gimp@xcf.berkeley.edu  *  * Extensive modifications to the dialog box, parameters, and some  * legibility stuff in displace() by Federico Mena Quintero ---  * federico@nuclecu.unam.mx.  If there are any bugs in these  * changes, they are my fault and not Stephen's.  *  * JTL: May 29th 1997  * Added (part of) the patch from Eiichi Takamori -- the part which removes the border artefacts  * (http://ha1.seikyou.ne.jp/home/taka/gimp/displace/displace.html)  * Added ability to use transparency as the identity transformation  * (Full transparency is treated as if it was grey 0.5)  * and the possibility to use RGB/RGBA pictures where the intensity of the pixel is taken into account  *  */
+comment|/* Displace --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1996 Stephen Robert Norris  * Much of the code taken from the pinch plug-in by 1996 Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * You can contact me at srn@flibble.cs.su.oz.au.  * Please send me any patches or enhancements to this code.  * You can contact the original The Gimp authors at gimp@xcf.berkeley.edu  *  * Extensive modifications to the dialog box, parameters, and some  * legibility stuff in displace() by Federico Mena Quintero ---  * federico@nuclecu.unam.mx.  If there are any bugs in these  * changes, they are my fault and not Stephen's.  *  * JTL: May 29th 1997  * Added (part of) the patch from Eiichi Takamori -- the part which removes the border artefacts  * (http://ha1.seikyou.ne.jp/home/taka/gimp/displace/displace.html)  * Added ability to use transparency as the identity transformation  * (Full transparency is treated as if it was grey 0.5)  * and the possibility to use RGB/RGBA pictures where the intensity of the pixel is taken into account  *  */
 end_comment
 
 begin_comment
@@ -100,7 +100,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2bed37310108
+DECL|struct|__anon2afc96dd0108
 typedef|typedef
 struct|struct
 block|{
@@ -139,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bed37310208
+DECL|struct|__anon2afc96dd0208
 typedef|typedef
 struct|struct
 block|{
