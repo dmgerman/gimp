@@ -514,7 +514,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File"
+literal|"/_File"
 argument_list|)
 block|,
 name|NULL
@@ -1029,7 +1029,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Xtns"
+literal|"/_Xtns"
 argument_list|)
 block|,
 name|NULL
@@ -1088,7 +1088,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Help"
+literal|"/_Help"
 argument_list|)
 block|,
 name|NULL
@@ -9874,9 +9874,6 @@ modifier|*
 name|domain
 init|=
 name|NULL
-decl_stmt|;
-name|gint
-name|i
 decl_stmt|;
 name|factory
 operator|=
