@@ -4010,9 +4010,9 @@ name|src
 operator|++
 operator|)
 condition|?
-name|OPAQUE
+name|OPAQUE_OPACITY
 else|:
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 expr_stmt|;
 block|}
 name|data
@@ -5140,7 +5140,7 @@ argument_list|,
 operator|&
 name|maskPR
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|)
 expr_stmt|;
 block|}

@@ -167,7 +167,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2756359e0103
+DECL|enum|__anon2a1814fa0103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2756359e0203
+DECL|enum|__anon2a1814fa0203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -226,7 +226,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2756359e0303
+DECL|enum|__anon2a1814fa0303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -360,7 +360,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2756359e0408
+DECL|struct|__anon2a1814fa0408
 typedef|typedef
 struct|struct
 block|{
@@ -412,7 +412,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2756359e0508
+DECL|struct|__anon2a1814fa0508
 typedef|typedef
 struct|struct
 block|{
@@ -5964,7 +5964,7 @@ literal|1
 index|]
 init|=
 block|{
-name|OPAQUE
+name|OPAQUE_OPACITY
 block|}
 decl_stmt|;
 comment|/*  allocate the distance map  */

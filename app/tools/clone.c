@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c50f75a0103
+DECL|enum|__anon2a3e3e240103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -2240,7 +2240,7 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 call|(
 name|int
@@ -2385,7 +2385,7 @@ index|[
 name|dest_alpha
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|s
 operator|+=
@@ -2589,7 +2589,7 @@ index|[
 name|alpha
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|d
 operator|+=

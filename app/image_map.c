@@ -321,7 +321,7 @@ name|shadowPR
 argument_list|,
 name|FALSE
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|REPLACE_MODE
 argument_list|,

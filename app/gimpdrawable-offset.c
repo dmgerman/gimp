@@ -108,7 +108,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc3aad90108
+DECL|struct|__anon2ba85a5c0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -2169,7 +2169,7 @@ operator|-
 literal|1
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 block|}
 if|if

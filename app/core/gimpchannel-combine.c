@@ -100,7 +100,7 @@ file|"channel_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b5606680103
+DECL|enum|__anon2bb4d55e0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -370,7 +370,7 @@ name|tile
 operator|->
 name|data
 argument_list|,
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 argument_list|,
 name|tile
 operator|->

@@ -4373,7 +4373,7 @@ index|[
 name|ALPHA_PIX
 index|]
 operator|=
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 expr_stmt|;
 name|alpha
 operator|=
@@ -4391,7 +4391,7 @@ index|[
 name|ALPHA_G_PIX
 index|]
 operator|=
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 expr_stmt|;
 name|alpha
 operator|=
@@ -4409,7 +4409,7 @@ index|[
 name|ALPHA_I_PIX
 index|]
 operator|=
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 expr_stmt|;
 name|alpha
 operator|=
@@ -6796,7 +6796,7 @@ name|tiles
 argument_list|,
 literal|"Transformation"
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|NORMAL_MODE
 argument_list|)

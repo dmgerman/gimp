@@ -2010,7 +2010,7 @@ name|GdkEventButton
 modifier|*
 name|bevent
 decl_stmt|;
-name|int
+name|guchar
 name|r
 decl_stmt|,
 name|g
@@ -2077,6 +2077,9 @@ operator|=
 literal|16
 operator|*
 operator|(
+operator|(
+name|int
+operator|)
 name|bevent
 operator|->
 name|y
@@ -2085,6 +2088,9 @@ name|CELL_HEIGHT
 operator|)
 operator|+
 operator|(
+operator|(
+name|int
+operator|)
 name|bevent
 operator|->
 name|x

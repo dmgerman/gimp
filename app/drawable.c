@@ -100,7 +100,7 @@ file|"drawable_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon275722770103
+DECL|enum|__anon2bff6c180103
 enum|enum
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
@@ -653,7 +653,7 @@ name|shadowPR
 argument_list|,
 name|undo
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|REPLACE_MODE
 argument_list|,

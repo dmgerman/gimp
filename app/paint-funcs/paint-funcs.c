@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a909680103
+DECL|enum|__anon2ad3a3ae0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -380,7 +380,7 @@ name|unsigned
 name|char
 name|no_mask
 init|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 decl_stmt|;
 end_decl_stmt
 
@@ -3942,7 +3942,7 @@ operator|)
 condition|?
 literal|0
 else|:
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|dest
 operator|+=
@@ -4396,7 +4396,7 @@ index|[
 name|b
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|src
 operator|+=
@@ -4854,7 +4854,7 @@ index|[
 name|b
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|src
 operator|++
@@ -4934,7 +4934,7 @@ index|[
 name|alpha
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|dest
 operator|+=
@@ -5023,7 +5023,7 @@ operator|*
 name|dest
 operator|++
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 block|}
 block|}
@@ -5157,9 +5157,9 @@ operator|>
 literal|127
 operator|)
 condition|?
-name|OPAQUE
+name|OPAQUE_OPACITY
 else|:
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 expr_stmt|;
 if|if
 condition|(
@@ -6157,7 +6157,7 @@ operator|>
 literal|127
 operator|)
 condition|?
-name|OPAQUE
+name|OPAQUE_OPACITY
 else|:
 name|src1
 index|[
@@ -6257,7 +6257,7 @@ operator|>
 literal|127
 operator|)
 condition|?
-name|OPAQUE
+name|OPAQUE_OPACITY
 else|:
 name|src1
 index|[
@@ -6436,7 +6436,7 @@ operator|>
 literal|127
 operator|)
 condition|?
-name|OPAQUE
+name|OPAQUE_OPACITY
 else|:
 name|src1
 index|[
@@ -6540,7 +6540,7 @@ operator|>
 literal|127
 operator|)
 condition|?
-name|OPAQUE
+name|OPAQUE_OPACITY
 else|:
 name|src1
 index|[
@@ -8521,9 +8521,9 @@ operator|>
 literal|127
 operator|)
 condition|?
-name|OPAQUE
+name|OPAQUE_OPACITY
 else|:
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 expr_stmt|;
 for|for
 control|(
@@ -8551,7 +8551,7 @@ index|]
 operator|&&
 name|new_alpha
 operator|==
-name|OPAQUE
+name|OPAQUE_OPACITY
 operator|&&
 operator|(
 name|src1_alpha
@@ -9257,7 +9257,7 @@ operator|>
 literal|127
 operator|)
 condition|?
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 else|:
 name|src1
 index|[

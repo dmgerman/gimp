@@ -800,6 +800,9 @@ name|idle_tag
 operator|=
 name|gtk_idle_add
 argument_list|(
+operator|(
+name|GtkFunction
+operator|)
 name|my_idle_proc
 argument_list|,
 name|NULL

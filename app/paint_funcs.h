@@ -2275,18 +2275,18 @@ comment|/* Opacities */
 end_comment
 
 begin_define
-DECL|macro|TRANSPARENT
+DECL|macro|TRANSPARENT_OPACITY
 define|#
 directive|define
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 value|0
 end_define
 
 begin_define
-DECL|macro|OPAQUE
+DECL|macro|OPAQUE_OPACITY
 define|#
 directive|define
-name|OPAQUE
+name|OPAQUE_OPACITY
 value|255
 end_define
 

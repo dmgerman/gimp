@@ -1214,7 +1214,7 @@ name|paste
 argument_list|,
 literal|"Pasted Layer"
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|NORMAL
 argument_list|)
@@ -1450,7 +1450,7 @@ operator|-
 literal|1
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|drawable_mask_bounds
 argument_list|(
@@ -1581,7 +1581,7 @@ name|bufPR
 argument_list|,
 literal|1
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|ERASE_MODE
 argument_list|,
@@ -1701,7 +1701,7 @@ operator|-
 literal|1
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|drawable_mask_bounds
 argument_list|(
@@ -1832,7 +1832,7 @@ name|bufPR
 argument_list|,
 literal|1
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|NORMAL_MODE
 argument_list|,

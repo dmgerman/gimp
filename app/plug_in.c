@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bab125e0103
+DECL|enum|__anon2a22e0710103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -8561,12 +8561,12 @@ block|}
 name|plug_in_pop
 argument_list|()
 expr_stmt|;
-block|}
 name|plug_in_destroy
 argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

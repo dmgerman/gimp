@@ -493,7 +493,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Open a plug-in. This cause the plug-in to run. */
+comment|/* Open a plug-in. This cause the plug-in to run.  * If returns 1, you must destroy the plugin.  If returns 0 you  * may not destroy the plugin.  */
 end_comment
 
 begin_function_decl

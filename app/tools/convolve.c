@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a0b2d00103
+DECL|enum|__anon29b131600103
 block|{
 DECL|enumerator|Blur
 name|Blur
@@ -1599,7 +1599,7 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 call|(
 name|int

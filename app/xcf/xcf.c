@@ -156,7 +156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be40fa50103
+DECL|enum|__anon2be83d890103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be40fa50203
+DECL|enum|__anon2be83d890203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9977,6 +9977,14 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|bytes
+operator|<=
+literal|0
+condition|)
+comment|/* something bad happened */
+break|break;
 name|count
 operator|-=
 name|bytes

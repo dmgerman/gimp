@@ -3294,7 +3294,7 @@ name|tempPR
 argument_list|,
 name|maskPR
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|)
 expr_stmt|;
 name|tempPR
@@ -9110,7 +9110,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|NORMAL_MODE
 argument_list|)
@@ -11564,7 +11564,7 @@ name|ac_visible
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  What makes a flat image?        *  1) the solitary layer is exactly gimage-sized and placed        *  2) no layer mask        *  3) opacity == OPAQUE        *  4) all channels must be visible        */
+comment|/*  What makes a flat image?        *  1) the solitary layer is exactly gimage-sized and placed        *  2) no layer mask        *  3) opacity == OPAQUE_OPACITY        *  4) all channels must be visible        */
 name|drawable_offsets
 argument_list|(
 name|GIMP_DRAWABLE
@@ -11634,7 +11634,7 @@ name|layer
 operator|->
 name|opacity
 operator|!=
-name|OPAQUE
+name|OPAQUE_OPACITY
 operator|)
 operator|||
 operator|(
@@ -12327,7 +12327,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  If the gimage is flat, return the opacity of the active layer    *  Otherwise, we'll pass back OPAQUE    */
+comment|/*  If the gimage is flat, return the opacity of the active layer    *  Otherwise, we'll pass back OPAQUE_OPACITY    */
 if|if
 condition|(
 name|gimage_is_flat
@@ -12355,12 +12355,12 @@ name|opacity
 return|;
 else|else
 return|return
-name|OPAQUE
+name|OPAQUE_OPACITY
 return|;
 block|}
 else|else
 return|return
-name|OPAQUE
+name|OPAQUE_OPACITY
 return|;
 block|}
 end_function

@@ -128,7 +128,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b99270f0103
+DECL|enum|__anon2956e9f00103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -1995,13 +1995,13 @@ name|unsigned
 name|char
 name|white_mask
 init|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 decl_stmt|;
 name|unsigned
 name|char
 name|black_mask
 init|=
-name|TRANSPARENT
+name|TRANSPARENT_OPACITY
 decl_stmt|;
 name|mask_name
 operator|=
@@ -2071,7 +2071,7 @@ name|height
 argument_list|,
 name|mask_name
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|black
 argument_list|)
@@ -2573,7 +2573,7 @@ argument_list|,
 operator|&
 name|maskPR
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE

@@ -307,7 +307,7 @@ empty_stmt|;
 end_empty_stmt
 
 begin_typedef
-DECL|struct|__anon2c60881c0108
+DECL|struct|__anon2771169a0108
 typedef|typedef
 struct|struct
 block|{
@@ -351,7 +351,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c60881c0208
+DECL|struct|__anon2771169a0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -614,6 +614,14 @@ DECL|variable|old_levels_of_undo
 specifier|static
 name|int
 name|old_levels_of_undo
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|old_marching_speed
+specifier|static
+name|int
+name|old_marching_speed
 decl_stmt|;
 end_decl_stmt
 
@@ -1253,7 +1261,7 @@ name|type
 argument_list|,
 literal|"Background"
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|NORMAL
 argument_list|)
@@ -2830,7 +2838,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Some information regarding preferences, compiled by Raph Levien 11/3/97.     The following preference items cannot be set on the fly (at least    according to the existing pref code - it may be that changing them    so they're set on the fly is not hard).     temp-path    swap-path    brush-path    pattern-path    plug-in-path    palette-path    gradient-path    stingy-memory-use    tile-cache-size    install-cmap    cycled-marching-ants     All of these now have variables of the form edit_temp_path, which    are copied from the actual variables (e.g. temp_path) the first time    the dialog box is started.     Variables of the form old_temp_path represent the values at the    time the dialog is opened - a cancel copies them back from old to    the real variables or the edit variables, depending on whether they    can be set on the fly.     Here are the remaining issues as I see them:     Still no settings for default-brush, default-gradient,    default-palette, default-pattern, gamma-correction, color-cube,    marching-ants-speed, show-rulers, ruler-units. No widget for    confirm-on-close although a lot of stuff is there.     No UI feedback for the fact that some settings won't take effect    until the next Gimp restart.     The semantics of "save" are a little funny - it only saves the    settings that are different from the way they were when the dialog    was opened. So you can set something, close the window, open it    up again, click "save" and have nothing happen. To change this    to more intuitive semantics, we should have a whole set of init_    variables that are set the first time the dialog is opened (along    with the edit_ variables that are currently set). Then, the save    callback checks against the init_ variable rather than the old_.     */
+comment|/* Some information regarding preferences, compiled by Raph Levien 11/3/97.     The following preference items cannot be set on the fly (at least    according to the existing pref code - it may be that changing them    so they're set on the fly is not hard).     temp-path    swap-path    brush-path    pattern-path    plug-in-path    palette-path    gradient-path    stingy-memory-use    tile-cache-size    install-cmap    cycled-marching-ants     All of these now have variables of the form edit_temp_path, which    are copied from the actual variables (e.g. temp_path) the first time    the dialog box is started.     Variables of the form old_temp_path represent the values at the    time the dialog is opened - a cancel copies them back from old to    the real variables or the edit variables, depending on whether they    can be set on the fly.     Here are the remaining issues as I see them:     Still no settings for default-brush, default-gradient,    default-palette, default-pattern, gamma-correction, color-cube,    show-rulers, ruler-units. No widget for confirm-on-close although    a lot of stuff is there.     No UI feedback for the fact that some settings won't take effect    until the next Gimp restart.     The semantics of "save" are a little funny - it only saves the    settings that are different from the way they were when the dialog    was opened. So you can set something, close the window, open it    up again, click "save" and have nothing happen. To change this    to more intuitive semantics, we should have a whole set of init_    variables that are set the first time the dialog is opened (along    with the edit_ variables that are currently set). Then, the save    callback checks against the init_ variable rather than the old_.     */
 end_comment
 
 begin_comment
@@ -2984,6 +2992,28 @@ expr_stmt|;
 name|levels_of_undo
 operator|=
 name|old_levels_of_undo
+expr_stmt|;
+return|return;
+block|}
+if|if
+condition|(
+name|marching_speed
+operator|<=
+literal|50
+condition|)
+block|{
+name|message_box
+argument_list|(
+literal|"Error: Marching speed must be 50 or greater."
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|marching_speed
+operator|=
+name|old_marching_speed
 expr_stmt|;
 return|return;
 block|}
@@ -3192,6 +3222,21 @@ argument_list|(
 name|update
 argument_list|,
 literal|"undo-levels"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|marching_speed
+operator|!=
+name|old_marching_speed
+condition|)
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"marching-ants-speed"
 argument_list|)
 expr_stmt|;
 if|if
@@ -3775,6 +3820,10 @@ expr_stmt|;
 name|levels_of_undo
 operator|=
 name|old_levels_of_undo
+expr_stmt|;
+name|marching_speed
+operator|=
+name|old_marching_speed
 expr_stmt|;
 name|allow_resize_windows
 operator|=
@@ -4444,7 +4493,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon2c60881c0308
+DECL|struct|__anon2771169a0308
 struct|struct
 block|{
 DECL|member|label
@@ -4513,7 +4562,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon2c60881c0408
+DECL|struct|__anon2771169a0408
 struct|struct
 block|{
 DECL|member|label
@@ -4713,6 +4762,10 @@ expr_stmt|;
 name|old_levels_of_undo
 operator|=
 name|levels_of_undo
+expr_stmt|;
+name|old_marching_speed
+operator|=
+name|marching_speed
 expr_stmt|;
 name|old_allow_resize_windows
 operator|=
@@ -6981,6 +7034,24 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+literal|"changed"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|file_prefs_text_callback
+argument_list|,
+operator|&
+name|marching_speed
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

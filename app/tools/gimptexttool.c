@@ -9063,7 +9063,7 @@ name|layer_type
 argument_list|,
 literal|"Text Layer"
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|NORMAL_MODE
 argument_list|)
@@ -9092,7 +9092,7 @@ operator|-
 literal|1
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 name|pixel_region_init
 argument_list|(
@@ -9205,7 +9205,7 @@ argument_list|,
 operator|&
 name|maskPR
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|)
 expr_stmt|;
 comment|/*  Start a group undo  */

@@ -13902,7 +13902,7 @@ argument_list|)
 argument_list|,
 name|layer_name
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 name|NORMAL_MODE
 argument_list|)

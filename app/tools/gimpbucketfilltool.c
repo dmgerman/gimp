@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a20a4300103
+DECL|enum|__anon2be471980103
 block|{
 DECL|enumerator|FgColorFill
 name|FgColorFill
@@ -2933,7 +2933,7 @@ index|[
 name|alpha
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 block|}
 name|buf
@@ -3144,7 +3144,7 @@ index|[
 name|alpha
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 block|}
 name|buf

@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be0b1fc0108
+DECL|struct|__anon2ae61ed50108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be0b1fc0208
+DECL|struct|__anon2ae61ed50208
 block|{
 DECL|member|run
 name|gint
@@ -1056,7 +1056,7 @@ name|char
 modifier|*
 name|name
 decl_stmt|;
-DECL|struct|__anon2be0b1fc0308
+DECL|struct|__anon2ae61ed50308
 typedef|typedef
 struct|struct
 block|{
@@ -2231,6 +2231,8 @@ operator|*
 name|d
 operator|++
 operator|=
+name|maxval
+operator|-
 name|gray_val
 expr_stmt|;
 for|for

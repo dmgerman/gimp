@@ -338,7 +338,7 @@ operator|-
 literal|1
 index|]
 operator|=
-name|OPAQUE
+name|OPAQUE_OPACITY
 expr_stmt|;
 comment|/*  color the pixels  */
 name|color_pixels
@@ -370,7 +370,7 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|OPAQUE
+name|OPAQUE_OPACITY
 argument_list|,
 call|(
 name|int
