@@ -9,6 +9,24 @@ end_escape
 begin_undef
 undef|#
 directive|undef
+name|GIMP_MAJOR_VERSION
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|GIMP_MINOR_VERSION
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|GIMP_MICRO_VERSION
+end_undef
+
+begin_undef
+undef|#
+directive|undef
 name|GIMP_VERSION
 end_undef
 

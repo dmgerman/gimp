@@ -4615,6 +4615,16 @@ argument_list|(
 name|overwrite_box
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|filesave
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -4699,6 +4709,16 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|overwrite_box
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|filesave
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
