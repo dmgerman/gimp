@@ -6,27 +6,88 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PLUG_IN_TYPES_H__
+name|__PLUG_IN_ENUMS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PLUG_IN_TYPES_H__
+DECL|macro|__PLUG_IN_ENUMS_H__
 define|#
 directive|define
-name|__PLUG_IN_TYPES_H__
+name|__PLUG_IN_ENUMS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"core/core-types.h"
-end_include
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b6cc4da0103
+block|{
+DECL|enumerator|GIMP_RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
+block|,
+DECL|enumerator|GIMP_RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
+block|,
+DECL|enumerator|GIMP_RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
+DECL|typedef|GimpRunMode
+block|}
+name|GimpRunMode
+typedef|;
+end_typedef
 
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in-enums.h"
-end_include
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+comment|/*< skip>*/
+DECL|enum|__anon2b6cc4da0203
+block|{
+DECL|enumerator|PLUG_IN_RGB_IMAGE
+name|PLUG_IN_RGB_IMAGE
+init|=
+literal|1
+operator|<<
+literal|0
+block|,
+DECL|enumerator|PLUG_IN_GRAY_IMAGE
+name|PLUG_IN_GRAY_IMAGE
+init|=
+literal|1
+operator|<<
+literal|1
+block|,
+DECL|enumerator|PLUG_IN_INDEXED_IMAGE
+name|PLUG_IN_INDEXED_IMAGE
+init|=
+literal|1
+operator|<<
+literal|2
+block|,
+DECL|enumerator|PLUG_IN_RGBA_IMAGE
+name|PLUG_IN_RGBA_IMAGE
+init|=
+literal|1
+operator|<<
+literal|3
+block|,
+DECL|enumerator|PLUG_IN_GRAYA_IMAGE
+name|PLUG_IN_GRAYA_IMAGE
+init|=
+literal|1
+operator|<<
+literal|4
+block|,
+DECL|enumerator|PLUG_IN_INDEXEDA_IMAGE
+name|PLUG_IN_INDEXEDA_IMAGE
+init|=
+literal|1
+operator|<<
+literal|5
+DECL|typedef|PlugInImageType
+block|}
+name|PlugInImageType
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|typedef|PlugIn
@@ -79,7 +140,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PLUG_IN_TYPES_H__ */
+comment|/* __PLUG_IN_ENUMS_H__ */
 end_comment
 
 end_unit
