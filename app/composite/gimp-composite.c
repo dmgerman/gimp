@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c278a640108
+DECL|struct|__anon29808cf20108
 block|{
 DECL|member|announce_function
 name|gchar
@@ -659,6 +659,10 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/**  * gimp_composite_dispatch:  * @ctx: The compositing context  *   * Given a compositing context, perform the compositing function  * dictated by the compositing context operation.  There is no return  * value, all results are in the compositing context.  **/
+end_comment
 
 begin_function
 name|void
@@ -802,6 +806,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_context_print:  * @ctx: The context to print  *   * Print a human readable form of a GimpCompositeContext on stdout.  *   * Return value: void  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_context_print (GimpCompositeContext * ctx)
@@ -892,6 +900,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_mode_astext:  * @op:   *   * Given a GimpCompositeOperatin, return a string representation of the name  * of that operation.  *   * Return value:  const gchar *  **/
+end_comment
 
 begin_function
 specifier|const
@@ -1176,20 +1188,24 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_pixelformat_astext:  * @format:  The format.  *   * Given a GimpPixelFormat, return a string representation of the name  * of that format.  *   * Return value:  const gchar *  **/
+end_comment
+
 begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_composite_pixelformat_astext (GimpPixelFormat f)
+DECL|function|gimp_composite_pixelformat_astext (GimpPixelFormat format)
 name|gimp_composite_pixelformat_astext
 parameter_list|(
 name|GimpPixelFormat
-name|f
+name|format
 parameter_list|)
 block|{
 switch|switch
 condition|(
-name|f
+name|format
 condition|)
 block|{
 case|case
@@ -1316,6 +1332,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_init:  * @void:   *   * Initialise the Gimp Compositing subsystem.  This includes checking  * for user options and environment, installing the generic set of  * compositing operation handlers, followed by overloading those which  * are supported by the current cpu/hardware.  *  * Return value: void  **/
+end_comment
 
 begin_function
 name|void

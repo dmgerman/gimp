@@ -65,33 +65,37 @@ directive|include
 file|"gimp-composite-generic.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_composite_regression_print_rgba8:  * @rgba8:   *   *   **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_composite_regression_print_rgba8 (gimp_rgba8_t * p)
+DECL|function|gimp_composite_regression_print_rgba8 (gimp_rgba8_t * rgba8)
 name|gimp_composite_regression_print_rgba8
 parameter_list|(
 name|gimp_rgba8_t
 modifier|*
-name|p
+name|rgba8
 parameter_list|)
 block|{
 name|printf
 argument_list|(
 literal|"#%02x%02x%02x,%02X"
 argument_list|,
-name|p
+name|rgba8
 operator|->
 name|r
 argument_list|,
-name|p
+name|rgba8
 operator|->
 name|g
 argument_list|,
-name|p
+name|rgba8
 operator|->
 name|b
 argument_list|,
-name|p
+name|rgba8
 operator|->
 name|a
 argument_list|)
@@ -103,6 +107,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_regression_print_va8:  * @va8:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -134,6 +142,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_regression_compare_contexts:  * @operation:   * @ctx1:   * @ctx2:   *   *   *   * Return value:   **/
+end_comment
 
 begin_function
 name|int
@@ -708,9 +720,13 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_regression_comp_rgba8:  * @str:   * @rgba8A:   * @rgba8B:   * @expected:   * @actual:   * @length:   *   *   *   * Return value:   **/
+end_comment
+
 begin_function
 name|int
-DECL|function|gimp_composite_regression_comp_rgba8 (char * str,gimp_rgba8_t * rgba8A,gimp_rgba8_t * rgba8B,gimp_rgba8_t * expected,gimp_rgba8_t * got,u_long length)
+DECL|function|gimp_composite_regression_comp_rgba8 (char * str,gimp_rgba8_t * rgba8A,gimp_rgba8_t * rgba8B,gimp_rgba8_t * expected,gimp_rgba8_t * actual,u_long length)
 name|gimp_composite_regression_comp_rgba8
 parameter_list|(
 name|char
@@ -731,7 +747,7 @@ name|expected
 parameter_list|,
 name|gimp_rgba8_t
 modifier|*
-name|got
+name|actual
 parameter_list|,
 name|u_long
 name|length
@@ -777,7 +793,7 @@ index|]
 operator|.
 name|r
 operator|!=
-name|got
+name|actual
 index|[
 name|i
 index|]
@@ -799,7 +815,7 @@ index|]
 operator|.
 name|g
 operator|!=
-name|got
+name|actual
 index|[
 name|i
 index|]
@@ -821,7 +837,7 @@ index|]
 operator|.
 name|b
 operator|!=
-name|got
+name|actual
 index|[
 name|i
 index|]
@@ -843,7 +859,7 @@ index|]
 operator|.
 name|a
 operator|!=
-name|got
+name|actual
 index|[
 name|i
 index|]
@@ -910,7 +926,7 @@ expr_stmt|;
 block|}
 name|printf
 argument_list|(
-literal|"   exp="
+literal|"   expected="
 argument_list|)
 expr_stmt|;
 name|gimp_composite_regression_print_rgba8
@@ -924,13 +940,13 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|" got="
+literal|" actual="
 argument_list|)
 expr_stmt|;
 name|gimp_composite_regression_print_rgba8
 argument_list|(
 operator|&
-name|got
+name|actual
 index|[
 name|i
 index|]
@@ -958,9 +974,13 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_regression_comp_va8:  * @str:   * @va8A:   * @va8B:   * @expected:   * @actual:   * @length:   *   *   *   * Return value:   **/
+end_comment
+
 begin_function
 name|int
-DECL|function|gimp_composite_regression_comp_va8 (char * str,gimp_va8_t * va8A,gimp_va8_t * va8B,gimp_va8_t * expected,gimp_va8_t * got,u_long length)
+DECL|function|gimp_composite_regression_comp_va8 (char * str,gimp_va8_t * va8A,gimp_va8_t * va8B,gimp_va8_t * expected,gimp_va8_t * actual,u_long length)
 name|gimp_composite_regression_comp_va8
 parameter_list|(
 name|char
@@ -981,7 +1001,7 @@ name|expected
 parameter_list|,
 name|gimp_va8_t
 modifier|*
-name|got
+name|actual
 parameter_list|,
 name|u_long
 name|length
@@ -1027,7 +1047,7 @@ index|]
 operator|.
 name|v
 operator|!=
-name|got
+name|actual
 index|[
 name|i
 index|]
@@ -1049,7 +1069,7 @@ index|]
 operator|.
 name|a
 operator|!=
-name|got
+name|actual
 index|[
 name|i
 index|]
@@ -1121,7 +1141,7 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"exp="
+literal|"expected="
 argument_list|)
 expr_stmt|;
 name|gimp_composite_regression_print_va8
@@ -1135,13 +1155,13 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-literal|" got="
+literal|" actual="
 argument_list|)
 expr_stmt|;
 name|gimp_composite_regression_print_va8
 argument_list|(
 operator|&
-name|got
+name|actual
 index|[
 name|i
 index|]
@@ -1168,6 +1188,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_regression_dump_rgba8:  * @str:   * @rgba:   * @n_pixels:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -1261,6 +1285,10 @@ parameter_list|)
 value|printf("%-17s %17.7f %17.7f %17.7f%c\n", name, tv_to_secs(t1), tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2), tv_to_secs(t1)/tv_to_secs(t2)> 1.0 ? ' ' : '*');
 end_define
 
+begin_comment
+comment|/**  * gimp_composite_regression_timer_report:  * @name:   * @t1:   * @t2:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_regression_timer_report (char * name,double t1,double t2)
@@ -1304,6 +1332,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_regression_time_function:  * @iterations:   * @func:   *   *   *   * Return value:   **/
+end_comment
 
 begin_function
 name|double
@@ -1401,6 +1433,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_regression_random_rgba8:  * @n_pixels:   *   *   *   * Return value:   **/
+end_comment
 
 begin_function
 name|gimp_rgba8_t
@@ -1512,6 +1548,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_regression_fixed_rgba8:  * @n_pixels:   *   *   *   * Return value:   **/
+end_comment
+
 begin_function
 name|gimp_rgba8_t
 modifier|*
@@ -1618,6 +1658,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_context_init:  * @ctx:   * @op:   * @a_format:   * @b_format:   * @d_format:   * @m_format:   * @n_pixels:   * @A:   * @B:   * @M:   * @D:   *   *   *   * Return value:   **/
+end_comment
 
 begin_function
 name|GimpCompositeContext

@@ -61,6 +61,7 @@ name|gimp_composite_addition_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -72,6 +73,7 @@ name|gimp_composite_burn_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -83,6 +85,7 @@ name|gimp_composite_coloronly_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -94,6 +97,7 @@ name|gimp_composite_darken_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -105,6 +109,7 @@ name|gimp_composite_difference_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -116,6 +121,7 @@ name|gimp_composite_dissolve_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -127,6 +133,7 @@ name|gimp_composite_divide_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -138,6 +145,7 @@ name|gimp_composite_dodge_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -149,6 +157,7 @@ name|gimp_composite_grain_extract_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -160,6 +169,7 @@ name|gimp_composite_grain_merge_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -171,6 +181,7 @@ name|gimp_composite_hardlight_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -182,6 +193,7 @@ name|gimp_composite_hueonly_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -193,6 +205,7 @@ name|gimp_composite_lighten_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -204,6 +217,7 @@ name|gimp_composite_multiply_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,6 +229,7 @@ name|gimp_composite_overlay_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -226,6 +241,7 @@ name|gimp_composite_replace_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -237,6 +253,7 @@ name|gimp_composite_saturationonly_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -248,6 +265,7 @@ name|gimp_composite_scale_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -259,6 +277,7 @@ name|gimp_composite_screen_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -270,6 +289,7 @@ name|gimp_composite_softlight_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -281,6 +301,7 @@ name|gimp_composite_subtract_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -292,6 +313,7 @@ name|gimp_composite_swap_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -303,6 +325,7 @@ name|gimp_composite_valueonly_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl

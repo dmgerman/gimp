@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/* -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*- 	* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_comment
@@ -179,6 +179,10 @@ begin_comment
 comment|/*  *  * Pixel format type conversion  *  * XXX This implementation will not work for>8 bit colours.  * XXX This implementation is totally wrong.  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_composite_convert_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_convert_any_any_any_generic (GimpCompositeContext * ctx)
@@ -290,6 +294,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_color_any_any_any_generic:  * @dest:   * @color:   * @w:   * @bytes:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -675,6 +683,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_blend_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_blend_any_any_any_generic (GimpCompositeContext * ctx)
@@ -822,6 +834,10 @@ unit|src += bytes;       dest += bytes;     } }
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/**  * gimp_composite_darken_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -1038,6 +1054,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_lighten_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_lighten_any_any_any_generic (GimpCompositeContext * ctx)
@@ -1252,6 +1272,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_hue_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -1514,6 +1538,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_saturation_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_saturation_any_any_any_generic (GimpCompositeContext * ctx)
@@ -1775,6 +1803,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_value_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_value_any_any_any_generic (GimpCompositeContext * ctx)
@@ -2035,6 +2067,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_color_only_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -2302,6 +2338,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_behind_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_behind_any_any_any_generic (GimpCompositeContext * ctx)
@@ -2337,6 +2377,10 @@ name|NO_COMBINATION
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_multiply_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -2650,6 +2694,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_divide_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_divide_any_any_any_generic (GimpCompositeContext * ctx)
@@ -2867,6 +2915,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_screen_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_screen_any_any_any_generic (GimpCompositeContext * ctx)
@@ -3077,6 +3129,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_overlay_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -3300,6 +3356,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_dodge_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_dodge_any_any_any_generic (GimpCompositeContext * ctx)
@@ -3515,6 +3575,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_burn_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -3741,6 +3805,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_hardlight_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -4033,6 +4101,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_softlight_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_softlight_any_any_any_generic (GimpCompositeContext * ctx)
@@ -4306,6 +4378,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_grain_extract_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_grain_extract_any_any_any_generic (GimpCompositeContext * ctx)
@@ -4525,6 +4601,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_grain_merge_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_grain_merge_any_any_any_generic (GimpCompositeContext * ctx)
@@ -4740,6 +4820,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_addition_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -5049,6 +5133,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_subtract_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_subtract_any_any_any_generic (GimpCompositeContext * ctx)
@@ -5263,6 +5351,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_difference_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -5479,6 +5571,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_dissolve_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -5814,6 +5910,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_replace_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_replace_any_any_any_generic (GimpCompositeContext * ctx)
@@ -5840,6 +5940,10 @@ name|REPLACE_INTEN
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_swap_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -5931,6 +6035,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_normal_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_normal_any_any_any_generic (GimpCompositeContext * ctx)
@@ -5951,6 +6059,10 @@ name|B
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_erase_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -5997,6 +6109,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_anti_erase_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_anti_erase_any_any_any_generic (GimpCompositeContext * ctx)
@@ -6042,6 +6158,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_composite_color_erase_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_composite_color_erase_any_any_any_generic (GimpCompositeContext * ctx)
@@ -6086,6 +6206,10 @@ literal|0
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_scale_any_any_any_generic:  * @ctx:   *   *   **/
+end_comment
 
 begin_function
 name|void
@@ -6210,6 +6334,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_composite_generic_init:  * @void:   *   *   *   * Return value:   **/
+end_comment
 
 begin_function
 name|gboolean

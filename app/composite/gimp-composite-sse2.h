@@ -43,6 +43,7 @@ name|gimp_composite_addition_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -54,6 +55,7 @@ name|gimp_composite_darken_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -65,6 +67,7 @@ name|gimp_composite_difference_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -76,6 +79,7 @@ name|gimp_composite_grain_extract_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -87,6 +91,7 @@ name|gimp_composite_lighten_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -98,6 +103,7 @@ name|gimp_composite_subtract_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -109,6 +115,7 @@ name|gimp_composite_swap_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -120,6 +127,7 @@ name|gimp_composite_dodge_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* -*- mode: c; tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*- 	* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Gimp Image Compositing  * Copyright (C) 2003  Helvetix Victorinox, a pseudonym,<helvetix@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* -*- mode: c; c-default-style: "gnu"; tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*- 	* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Gimp Image Compositing  * Copyright (C) 2003  Helvetix Victorinox, a pseudonym,<helvetix@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0f51280103
+DECL|enum|__anon298d88580103
 block|{
 DECL|enumerator|GIMP_PIXELFORMAT_V8
 name|GIMP_PIXELFORMAT_V8
@@ -33,40 +33,6 @@ block|,
 DECL|enumerator|GIMP_PIXELFORMAT_RGBA8
 name|GIMP_PIXELFORMAT_RGBA8
 block|,
-if|#
-directive|if
-name|GIMP_COMPOSITE_16BIT
-DECL|enumerator|GIMP_PIXELFORMAT_V16
-name|GIMP_PIXELFORMAT_V16
-block|,
-DECL|enumerator|GIMP_PIXELFORMAT_VA16
-name|GIMP_PIXELFORMAT_VA16
-block|,
-DECL|enumerator|GIMP_PIXELFORMAT_RGB16
-name|GIMP_PIXELFORMAT_RGB16
-block|,
-DECL|enumerator|GIMP_PIXELFORMAT_RGBA16
-name|GIMP_PIXELFORMAT_RGBA16
-block|,
-endif|#
-directive|endif
-if|#
-directive|if
-name|GIMP_COMPOSITE_32BIT
-DECL|enumerator|GIMP_PIXELFORMAT_V32
-name|GIMP_PIXELFORMAT_V32
-block|,
-DECL|enumerator|GIMP_PIXELFORMAT_VA32
-name|GIMP_PIXELFORMAT_VA32
-block|,
-DECL|enumerator|GIMP_PIXELFORMAT_RGB32
-name|GIMP_PIXELFORMAT_RGB32
-block|,
-DECL|enumerator|GIMP_PIXELFORMAT_RGBA32
-name|GIMP_PIXELFORMAT_RGBA32
-block|,
-endif|#
-directive|endif
 DECL|enumerator|GIMP_PIXELFORMAT_ANY
 name|GIMP_PIXELFORMAT_ANY
 block|,
@@ -77,6 +43,10 @@ block|}
 name|GimpPixelFormat
 typedef|;
 end_typedef
+
+begin_comment
+comment|/*  * gtk-doc is unhappy with these #ifdef's inside the enumeration.  * #ifdef GIMP_COMPOSITE_16BIT   GIMP_PIXELFORMAT_V16,   GIMP_PIXELFORMAT_VA16,   GIMP_PIXELFORMAT_RGB16,   GIMP_PIXELFORMAT_RGBA16, #endif #ifdef GIMP_COMPOSITE_32BIT   GIMP_PIXELFORMAT_V32,   GIMP_PIXELFORMAT_VA32,   GIMP_PIXELFORMAT_RGB32,   GIMP_PIXELFORMAT_RGBA32, #endif   *   */
+end_comment
 
 begin_comment
 comment|/* bytes per-pixel for each of the pixel formats */
@@ -140,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0f51280203
+DECL|enum|__anon298d88580203
 block|{
 DECL|enumerator|GIMP_COMPOSITE_NORMAL
 name|GIMP_COMPOSITE_NORMAL
@@ -335,7 +305,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f51280308
+DECL|struct|__anon298d88580308
 block|{
 DECL|member|A
 name|guchar
@@ -381,7 +351,7 @@ DECL|member|pixelformat_M
 name|GimpPixelFormat
 name|pixelformat_M
 decl_stmt|;
-DECL|struct|__anon2b0f51280408
+DECL|struct|__anon298d88580408
 DECL|member|opacity
 DECL|member|affect
 DECL|member|replace
@@ -396,7 +366,7 @@ decl_stmt|;
 block|}
 name|replace
 struct|;
-DECL|struct|__anon2b0f51280508
+DECL|struct|__anon298d88580508
 DECL|member|scale
 DECL|member|scale
 struct|struct
@@ -407,7 +377,7 @@ decl_stmt|;
 block|}
 name|scale
 struct|;
-DECL|struct|__anon2b0f51280608
+DECL|struct|__anon298d88580608
 DECL|member|blend
 DECL|member|blend
 struct|struct
@@ -418,7 +388,7 @@ decl_stmt|;
 block|}
 name|blend
 struct|;
-DECL|struct|__anon2b0f51280708
+DECL|struct|__anon298d88580708
 DECL|member|x
 DECL|member|y
 DECL|member|opacity
@@ -498,6 +468,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+specifier|extern
 name|void
 name|gimp_composite_init
 parameter_list|(
@@ -507,43 +478,51 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|extern
 name|void
 name|gimp_composite_dispatch
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|extern
 name|void
 name|gimp_composite_context_print
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
+name|ctx
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|extern
 specifier|const
 name|gchar
 modifier|*
 name|gimp_composite_mode_astext
 parameter_list|(
 name|GimpCompositeOperation
+name|op
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|extern
 specifier|const
 name|gchar
 modifier|*
 name|gimp_composite_pixelformat_astext
 parameter_list|(
 name|GimpPixelFormat
+name|format
 parameter_list|)
 function_decl|;
 end_function_decl
