@@ -787,6 +787,44 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
+comment|/*  first try if we got a file uri  */
+name|uri
+operator|=
+name|g_filename_from_uri
+argument_list|(
+name|gimp_argv
+index|[
+name|i
+index|]
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|uri
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|uri
+argument_list|)
+expr_stmt|;
+name|uri
+operator|=
+name|g_strdup
+argument_list|(
+name|gimp_argv
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|uri
 operator|=
 name|file_utils_filename_to_uri
@@ -804,6 +842,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -875,7 +914,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Opening '%s' failed:\n\n%s"
+literal|"Opening '%s' failed:\n%s"
 argument_list|)
 argument_list|,
 name|filename
