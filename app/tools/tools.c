@@ -21,6 +21,32 @@ directive|include
 file|"tools-types.h"
 end_include
 
+begin_comment
+comment|/*FIXME: remove when proper module loading is in place */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpdatafiles.h"
+end_include
+
+begin_comment
+comment|/*end remove */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -267,6 +293,40 @@ directive|include
 file|"gimptoolmodule.h"
 end_include
 
+begin_decl_stmt
+DECL|variable|thatgimp
+name|Gimp
+modifier|*
+name|thatgimp
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+DECL|function|cheesey_module_loading_hack (gchar * filename)
+name|void
+name|cheesey_module_loading_hack
+parameter_list|(
+name|gchar
+modifier|*
+name|filename
+parameter_list|)
+block|{
+name|GimpToolModule
+modifier|*
+name|m
+init|=
+name|gimp_tool_module_new
+argument_list|(
+name|filename
+argument_list|,
+name|thatgimp
+argument_list|,
+name|tool_manager_register_tool
+argument_list|)
+decl_stmt|;
+block|}
+end_function
+
 begin_function
 name|void
 DECL|function|tools_init (Gimp * gimp)
@@ -396,7 +456,31 @@ name|tool_manager_register_tool
 operator|)
 expr_stmt|;
 block|}
-comment|/*  For testing only...     {       GimpToolModule *m = gimp_tool_module_new("/home/rockwlrs/gimp/app/tools/libtestmodule.so", gimp, tool_manager_register_tool);     } */
+name|thatgimp
+operator|=
+name|gimp
+expr_stmt|;
+if|if
+condition|(
+name|g_module_supported
+argument_list|()
+condition|)
+name|gimp_datafiles_read_directories
+argument_list|(
+name|gimp
+operator|->
+name|config
+operator|->
+name|tool_plug_in_path
+argument_list|,
+literal|0
+comment|/* no flags */
+argument_list|,
+name|cheesey_module_loading_hack
+argument_list|,
+name|gimp
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

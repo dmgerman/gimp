@@ -169,7 +169,15 @@ name|gimp
 parameter_list|,
 name|GimpToolRegisterCallback
 name|callback
-parameter_list|,
+parameter_list|)
+function_decl|;
+DECL|member|register_type
+name|gboolean
+function_decl|(
+modifier|*
+name|register_type
+function_decl|)
+parameter_list|(
 name|GTypeModule
 modifier|*
 name|module
