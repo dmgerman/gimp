@@ -2120,6 +2120,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|open_options
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
