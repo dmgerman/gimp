@@ -51,6 +51,12 @@ directive|include
 file|"gimpvectors-preview.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -305,6 +311,24 @@ operator|->
 name|duplicate
 operator|=
 name|gimp_vectors_duplicate
+expr_stmt|;
+name|item_class
+operator|->
+name|default_name
+operator|=
+name|_
+argument_list|(
+literal|"Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|rename_desc
+operator|=
+name|_
+argument_list|(
+literal|"Rename Path"
+argument_list|)
 expr_stmt|;
 name|klass
 operator|->

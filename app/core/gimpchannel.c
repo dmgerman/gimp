@@ -402,6 +402,24 @@ name|duplicate
 operator|=
 name|gimp_channel_duplicate
 expr_stmt|;
+name|item_class
+operator|->
+name|default_name
+operator|=
+name|_
+argument_list|(
+literal|"Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|rename_desc
+operator|=
+name|_
+argument_list|(
+literal|"Rename Channel"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
