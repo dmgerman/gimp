@@ -713,6 +713,22 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_base_type
+argument_list|(
+name|gimage
+argument_list|)
+operator|==
+name|INDEXED
+condition|)
+name|paint_funcs_invalidate_color_hash_table
+argument_list|(
+name|gimage
+argument_list|,
+name|ncol
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

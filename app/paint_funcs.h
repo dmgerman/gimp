@@ -60,6 +60,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|paint_funcs_invalidate_color_hash_table
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|gint
+name|index
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  Paint functions  */
 end_comment
