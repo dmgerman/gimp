@@ -848,6 +848,17 @@ name|d_status
 operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
+block|{
+name|color
+operator|=
+name|g_new
+argument_list|(
+name|GimpRGB
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+operator|*
 name|color
 operator|=
 name|return_vals
@@ -859,6 +870,7 @@ name|data
 operator|.
 name|d_color
 expr_stmt|;
+block|}
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
