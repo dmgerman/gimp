@@ -1919,7 +1919,6 @@ modifier|*
 name|mru
 parameter_list|)
 block|{
-return|return;
 name|GList
 modifier|*
 name|p
@@ -1932,6 +1931,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
+return|return;
 if|if
 condition|(
 name|_menu
