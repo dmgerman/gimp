@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3a9ef0108
+DECL|struct|__anon2b38fd000108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3a9ef0208
+DECL|struct|__anon2b38fd000208
 block|{
 DECL|member|run
 name|gboolean
@@ -98,7 +98,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3a9ef0308
+DECL|struct|__anon2b38fd000308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -583,7 +583,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|3
+literal|4
 condition|)
 name|status
 operator|=
