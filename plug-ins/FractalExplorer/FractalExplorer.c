@@ -1898,9 +1898,13 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+name|bytes
+operator|*
+operator|(
 name|x2
 operator|-
 name|x1
+operator|)
 argument_list|)
 expr_stmt|;
 name|dest_row
@@ -1909,9 +1913,13 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+name|bytes
+operator|*
+operator|(
 name|x2
 operator|-
 name|x1
+operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the pixel regions  */
