@@ -190,7 +190,7 @@ endif|#
 directive|endif
 name|g_message
 argument_list|(
-literal|"%s"
+literal|"tool_plug_in_path: %s"
 argument_list|,
 name|tool_plug_in_path
 argument_list|)
@@ -206,13 +206,6 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_message
-argument_list|(
-literal|"%p"
-argument_list|,
-name|path
 argument_list|)
 expr_stmt|;
 for|for
@@ -233,14 +226,17 @@ control|)
 block|{
 name|g_message
 argument_list|(
-literal|"reading directory %s"
+literal|"reading datafiles directory '%s'"
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
 name|list
 operator|->
 name|data
 argument_list|)
 expr_stmt|;
-comment|/* Open directory */
 name|dir
 operator|=
 name|g_dir_open
@@ -266,7 +262,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"error reading datafiles directory \"%s\""
+literal|"error reading datafiles directory '%s'"
 argument_list|,
 operator|(
 name|gchar
