@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"gdisplayF.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"info_dialog.h"
 end_include
 
@@ -27,8 +33,9 @@ name|InfoDialog
 modifier|*
 name|info_window_create
 parameter_list|(
-name|void
+name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -39,6 +46,7 @@ name|info_window_free
 parameter_list|(
 name|InfoDialog
 modifier|*
+name|info_win
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -49,9 +57,7 @@ name|info_window_update
 parameter_list|(
 name|InfoDialog
 modifier|*
-parameter_list|,
-name|void
-modifier|*
+name|info_win
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -62,13 +68,13 @@ name|info_window_update_RGB
 parameter_list|(
 name|InfoDialog
 modifier|*
-parameter_list|,
-name|void
-modifier|*
+name|info_win
 parameter_list|,
 name|gdouble
+name|tx
 parameter_list|,
 name|gdouble
+name|ty
 parameter_list|)
 function_decl|;
 end_function_decl

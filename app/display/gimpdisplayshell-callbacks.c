@@ -882,8 +882,6 @@ name|gdisp
 operator|->
 name|window_info_dialog
 argument_list|,
-name|gdisp
-argument_list|,
 operator|-
 literal|1
 argument_list|,

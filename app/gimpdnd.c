@@ -51,6 +51,12 @@ directive|include
 file|"tools.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
 begin_define
 DECL|macro|DRAG_PREVIEW_SIZE
 define|#
@@ -70,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287f6eb80103
+DECL|enum|__anon2b3140fa0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -802,42 +808,6 @@ begin_comment
 comment|/****************************/
 end_comment
 
-begin_define
-DECL|macro|GRAD_CHECK_SIZE_SM
-define|#
-directive|define
-name|GRAD_CHECK_SIZE_SM
-value|4
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_DARK
-define|#
-directive|define
-name|GRAD_CHECK_DARK
-value|(1.0 / 3.0)
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_LIGHT
-define|#
-directive|define
-name|GRAD_CHECK_LIGHT
-value|(2.0 / 3.0)
-end_define
-
-begin_comment
-comment|/* Good idea for size to be<= small preview size in LCP dialog.  * that way we get good cache hits.  */
-end_comment
-
-begin_define
-DECL|macro|DRAG_IMAGE_SZ
-define|#
-directive|define
-name|DRAG_IMAGE_SZ
-value|32
-end_define
-
 begin_function
 name|void
 DECL|function|gimp_dnd_set_drawable_preview_icon (GtkWidget * widget,GdkDragContext * context,GimpDrawable * drawable,GdkGC * gc)
@@ -953,7 +923,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|DRAG_IMAGE_SZ
+name|DRAG_PREVIEW_SIZE
 operator|/
 operator|(
 name|gdouble
@@ -968,7 +938,7 @@ operator|=
 operator|(
 name|gdouble
 operator|)
-name|DRAG_IMAGE_SZ
+name|DRAG_PREVIEW_SIZE
 operator|/
 operator|(
 name|gdouble
@@ -1534,7 +1504,7 @@ condition|(
 operator|(
 name|x
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
@@ -1542,22 +1512,22 @@ condition|)
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 block|}
 else|else
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 block|}
 operator|*
@@ -1674,7 +1644,7 @@ condition|(
 operator|(
 name|y
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
@@ -4093,10 +4063,6 @@ block|{
 name|gradient_t
 modifier|*
 name|gradient
-decl_stmt|;
-name|GSList
-modifier|*
-name|list
 decl_stmt|;
 name|gchar
 modifier|*

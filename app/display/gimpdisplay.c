@@ -1579,14 +1579,7 @@ operator|.
 name|update_areas
 argument_list|)
 expr_stmt|;
-comment|/*  free the gimage  */
-name|gimage_delete
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
+comment|/*  remove dialogs before removing the image because they may want to    *  disconnect from image signals    */
 comment|/*  insure that if a window information dialog exists, it is removed  */
 if|if
 condition|(
@@ -1613,6 +1606,14 @@ argument_list|(
 name|gdisp
 operator|->
 name|window_nav_dialog
+argument_list|)
+expr_stmt|;
+comment|/*  free the gimage  */
+name|gimage_delete
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 if|if
@@ -2965,12 +2966,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|window_info_dialog
-argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
-name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/* update the gdisplay's qmask buttons */
@@ -4854,8 +4849,6 @@ name|gdisp
 operator|->
 name|window_info_dialog
 argument_list|,
-name|gdisp
-argument_list|,
 operator|-
 literal|1
 argument_list|,
@@ -4967,8 +4960,6 @@ argument_list|(
 name|gdisp
 operator|->
 name|window_info_dialog
-argument_list|,
-name|gdisp
 argument_list|,
 name|t_x
 argument_list|,

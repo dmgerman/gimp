@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1999 
 end_comment
 
 begin_comment
-comment|/* TODO:  *  *  - reuse the L&C previews?  *         Currently we use gimp_image_construct_composite_preview ()  *	   which makes use of the preview_cache on a per layer basis.  *  *  - work out which (if any) is the clean image, and mark it as such.  *         Currently, it's on the wrong line.  *  *  - undo names are less than useful.  This isn't a problem with  *         undo_history.c itself, more with the rather chaotic way  *         people have of picking an undo type when pushing undos, and  *         inconsistent use of undo groups.  Maybe rather than  *         specifying an (enum) type, it should be a const char * ?  *  * BUGS:  *  - clean pixmap in wrong place  *  - window title not updated on image title change  *  *  Initial rev 0.01, (c) 19 Sept 1999 Austin Donnelly<austin@gimp.org>  *  */
+comment|/* TODO:  *  *  - reuse the L&C previews?  *         Currently we use gimp_image_construct_composite_preview ()  *	   which makes use of the preview_cache on a per layer basis.  *  *  - work out which (if any) is the clean image, and mark it as such.  *         Currently, it's on the wrong line.  *  *  - undo names are less than useful.  This isn't a problem with  *         undo_history.c itself, more with the rather chaotic way  *         people have of picking an undo type when pushing undos, and  *         inconsistent use of undo groups.  Maybe rather than  *         specifying an (enum) type, it should be a const char * ?  *  * BUGS:  *  - clean pixmap in wrong place  *  *  Initial rev 0.01, (c) 19 Sept 1999 Austin Donnelly<austin@gimp.org>  *  */
 end_comment
 
 begin_include
@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixmaps/raise.xpm"
 end_include
 
@@ -61,34 +67,10 @@ directive|include
 file|"pixmaps/yes.xpm"
 end_include
 
-begin_define
-DECL|macro|GRAD_CHECK_SIZE_SM
-define|#
-directive|define
-name|GRAD_CHECK_SIZE_SM
-value|4
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_DARK
-define|#
-directive|define
-name|GRAD_CHECK_DARK
-value|(1.0 / 3.0)
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_LIGHT
-define|#
-directive|define
-name|GRAD_CHECK_LIGHT
-value|(2.0 / 3.0)
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8a72e0108
+DECL|struct|__anon295a7dc60108
 block|{
 DECL|member|gimage
 name|GImage
@@ -139,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8a72e0208
+DECL|struct|__anon295a7dc60208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -754,7 +736,7 @@ condition|(
 operator|(
 name|x
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
@@ -762,22 +744,22 @@ condition|)
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 block|}
 else|else
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 block|}
 operator|*
@@ -894,7 +876,7 @@ condition|(
 operator|(
 name|y
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
@@ -1148,18 +1130,84 @@ comment|/* The gimage and shell destroy callbacks are split so we can:  *   a) b
 end_comment
 
 begin_comment
+comment|/* gimage renamed */
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|undo_history_gimage_rename_callback (GimpImage * gimage,gpointer data)
+name|undo_history_gimage_rename_callback
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|undo_history_st
+modifier|*
+name|st
+init|=
+name|data
+decl_stmt|;
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
+name|title
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"%s: undo history"
+argument_list|)
+argument_list|,
+name|g_basename
+argument_list|(
+name|gimage_filename
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|st
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|title
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|title
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
 comment|/* gimage destroyed */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|undo_history_gimage_destroy_callback (GtkWidget * widget,gpointer data)
+DECL|function|undo_history_gimage_destroy_callback (GimpImage * gimage,gpointer data)
 name|undo_history_gimage_destroy_callback
 parameter_list|(
-name|GtkWidget
+name|GimpImage
 modifier|*
-name|widget
+name|gimage
 parameter_list|,
 name|gpointer
 name|data
@@ -2445,7 +2493,27 @@ argument_list|)
 argument_list|,
 literal|"undo_event"
 argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|undo_history_undo_event
+argument_list|)
+argument_list|,
+name|st
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+literal|"rename"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|undo_history_gimage_rename_callback
+argument_list|)
 argument_list|,
 name|st
 argument_list|)
@@ -2459,7 +2527,10 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|undo_history_gimage_destroy_callback
+argument_list|)
 argument_list|,
 name|st
 argument_list|)
@@ -2473,14 +2544,17 @@ argument_list|)
 argument_list|,
 literal|"clean"
 argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|undo_history_clean_callback
+argument_list|)
 argument_list|,
 name|st
 argument_list|)
 expr_stmt|;
 comment|/*  The shell and main vbox  */
 block|{
-name|char
+name|gchar
 modifier|*
 name|title
 init|=
@@ -2955,7 +3029,10 @@ argument_list|)
 argument_list|,
 literal|"select_row"
 argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|undo_history_select_row_callback
+argument_list|)
 argument_list|,
 name|st
 argument_list|)
@@ -3078,7 +3155,10 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|undo_history_undo_callback
+argument_list|)
 argument_list|,
 name|st
 argument_list|)
@@ -3246,7 +3326,10 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|undo_history_redo_callback
+argument_list|)
 argument_list|,
 name|st
 argument_list|)
