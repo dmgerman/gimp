@@ -1682,7 +1682,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278bb8780103
+DECL|enum|__anon2a1a1fb20103
 block|{
 DECL|enumerator|no_op
 name|no_op
@@ -4079,7 +4079,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bb8780208
+DECL|struct|__anon2a1a1fb20208
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4186,7 +4186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bb8780308
+DECL|struct|__anon2a1a1fb20308
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4490,7 +4490,9 @@ parameter_list|,
 name|failure_code
 parameter_list|)
 define|\
-value|do {									\     char *destination;							\
+value|do {									\
+comment|/* char *destination; */
+value|\
 comment|/* Must be int, so when we don't save any registers, the arithmetic	\        of 0 + -1 isn't done as unsigned.  */
 value|\
 comment|/* Can't be int, since there is not a shred of a guarantee that int	\        is wide enough to hold a value of something to which pointer can	\        be assigned */
@@ -4647,14 +4649,14 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon278bb878040a
+DECL|union|__anon2a1a1fb2040a
 block|{
 DECL|member|word
 name|fail_stack_elt_t
 name|word
 decl_stmt|;
 struct|struct
-DECL|struct|__anon278bb8780508
+DECL|struct|__anon2a1a1fb20508
 block|{
 comment|/* This field is one if this group can match the empty string,          zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
 DECL|macro|MATCH_NULL_UNSET_VALUE
@@ -5399,7 +5401,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bb8780608
+DECL|struct|__anon2a1a1fb20608
 block|{
 DECL|member|begalt_offset
 name|pattern_offset_t
@@ -5430,7 +5432,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bb8780708
+DECL|struct|__anon2a1a1fb20708
 block|{
 DECL|member|stack
 name|compile_stack_elt_t
