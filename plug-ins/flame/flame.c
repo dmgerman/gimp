@@ -535,7 +535,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a1feab70108
+DECL|struct|__anon294633fd0108
 block|{
 DECL|member|randomize
 name|gint
@@ -4911,12 +4911,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_mnemonic
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"_Edit Flame"
-argument_list|)
+name|GIMP_STOCK_EDIT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4961,12 +4958,9 @@ name|load_button
 operator|=
 name|button
 operator|=
-name|gtk_button_new_with_mnemonic
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"_Load Flame"
-argument_list|)
+name|GTK_STOCK_OPEN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5011,12 +5005,9 @@ name|save_button
 operator|=
 name|button
 operator|=
-name|gtk_button_new_with_mnemonic
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"_Save Flame"
-argument_list|)
+name|GTK_STOCK_SAVE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -196,7 +196,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c777970108
+DECL|struct|__anon2bb932440108
 block|{
 DECL|member|division
 name|gint32
@@ -2900,7 +2900,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
