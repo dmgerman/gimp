@@ -2197,7 +2197,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Perspective the selection */
+comment|/* Transform the selection */
 name|success
 operator|=
 name|gimp_drawable_transform_affine
@@ -2823,7 +2823,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Perspective the selection */
+comment|/* Transform the selection */
 name|success
 operator|=
 name|gimp_drawable_transform_affine
@@ -3803,7 +3803,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Rotate the selection */
+comment|/* Transform the selection */
 name|success
 operator|=
 name|gimp_drawable_transform_affine
@@ -4318,7 +4318,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Rotate the selection */
+comment|/* Transform the selection */
 name|success
 operator|=
 name|gimp_drawable_transform_affine
@@ -4907,7 +4907,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Scale the selection */
+comment|/* Transform the selection */
 name|success
 operator|=
 name|gimp_drawable_transform_affine
@@ -5457,7 +5457,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Scale the selection */
+comment|/* Transform the selection */
 name|success
 operator|=
 name|gimp_drawable_transform_affine
@@ -5978,7 +5978,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Shear the selection */
+comment|/* Transform the selection */
 name|success
 operator|=
 name|gimp_drawable_transform_affine
@@ -6444,7 +6444,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Shear the selection */
+comment|/* Transform the selection */
 name|success
 operator|=
 name|gimp_drawable_transform_affine
