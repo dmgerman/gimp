@@ -2423,6 +2423,12 @@ index|[
 literal|1
 index|]
 expr_stmt|;
+name|non_gui_paint_core
+operator|.
+name|flags
+operator||=
+name|TOOL_CAN_HANDLE_CHANGING_BRUSH
+expr_stmt|;
 name|paintbrush_non_gui_paint_func
 argument_list|(
 operator|&
@@ -2624,6 +2630,12 @@ name|stroke_array
 index|[
 literal|1
 index|]
+expr_stmt|;
+name|non_gui_paint_core
+operator|.
+name|flags
+operator||=
+name|TOOL_CAN_HANDLE_CHANGING_BRUSH
 expr_stmt|;
 if|if
 condition|(
