@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e1e93e0103
+DECL|enum|__anon2adf65050103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -133,6 +133,9 @@ block|,
 DECL|enumerator|INDEXED_CHANNEL
 name|INDEXED_CHANNEL
 block|,
+DECL|enumerator|ALPHA_CHANNEL
+name|ALPHA_CHANNEL
+block|,
 DECL|enumerator|AUXILLARY_CHANNEL
 name|AUXILLARY_CHANNEL
 DECL|typedef|ChannelType
@@ -144,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e1e93e0203
+DECL|enum|__anon2adf65050203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
