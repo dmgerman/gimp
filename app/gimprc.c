@@ -220,7 +220,7 @@ value|3
 end_define
 
 begin_typedef
-DECL|enum|__anon28b6075c0103
+DECL|enum|__anon29d9cd0a0103
 typedef|typedef
 enum|enum
 block|{
@@ -11913,6 +11913,10 @@ name|flags
 init|=
 literal|0
 decl_stmt|;
+name|Parasite
+modifier|*
+name|parasite
+decl_stmt|;
 name|token
 operator|=
 name|get_next_token
@@ -11964,8 +11968,8 @@ condition|)
 goto|goto
 name|error
 goto|;
-name|gimp_parasite_attach
-argument_list|(
+name|parasite
+operator|=
 name|parasite_new
 argument_list|(
 name|identifier
@@ -11976,6 +11980,16 @@ name|token_int
 argument_list|,
 name|token_str
 argument_list|)
+expr_stmt|;
+name|gimp_parasite_attach
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
+comment|/* attaches a copy */
+name|parasite_free
+argument_list|(
+name|parasite
 argument_list|)
 expr_stmt|;
 name|token
