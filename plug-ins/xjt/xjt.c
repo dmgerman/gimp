@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* WARNING: XJT code and Fileformat under construction  *  * XJT (JPEG-TAR fileformat) loading and saving file filter for the GIMP  *  -hof (Wolfgang Hofer)  *  * This filter requires UNIX tar and the "jpeglib" Library to run.  * For optional further compression you also should install  *  gzip and bzip2 compression Programs.  *  * IMPORTANT NOTE:  *   This plugin needs GIMP 1.1.18 or newer versions of the GIMP-core to run.  */
+comment|/* xjt.c  *  * XJT (JPEG-TAR fileformat) loading and saving file filter for the GIMP  *  -hof (Wolfgang Hofer)  *  * This filter requires UNIX tar and the "jpeglib" Library to run.  * For optional further compression you also should install  *  gzip and bzip2 compression Programs.  *  * IMPORTANT NOTE:  *   This plugin needs GIMP 1.1.18 or newer versions of the GIMP-core to run.  */
 end_comment
 
 begin_comment
@@ -12,7 +12,7 @@ comment|/* TODO:  *  - support user units   *  - show continous progress while l
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.1.18a; 2000/03/07  hof: tattoo_state  * version 1.1.16a; 2000/02/04  hof: load paths continued, load tattos, load/save unit  * version 1.1.15b; 2000/01/28  hof: save/load paths  (load is not activated PDB-bug)  *                                   continued save/load parasites,  *                                   replaced static buffers by dynamic allocated memory (goodbye to sprintf)  * version 1.1.15a; 2000/01/23  hof: NLS_macros, save/load parasites, \" and \n characters in names  *                                   use G_DIR_SEPARATOR (but you still need UNIX tar to run this plugin)  *                                   older gimp releases (prior to 1.1.15) are not supported any more.  * version 1.02.00; 1999/03/16  hof: - save layer/channel Tattoos  *                                   - load/save image resolution added  *                                   - tolerate unknown properties with warnings  * version 1.01.00; 1998/11/22  hof: added load/save of guides  *                                   (you need gimp 1.1 to use this feature)  * version 1.00.00; 1998/10/29  hof: 1.st (pre) release  */
+comment|/* revision history:  * version 1.3.14a; 2003/06/03  hof: bugfix: using setlocale independent float conversion procedures  *                                   p_my_ascii_strtod (g_ascii_strtod()) and g_ascii_formatd()  * version 1.1.18a; 2000/03/07  hof: tattoo_state  * version 1.1.16a; 2000/02/04  hof: load paths continued, load tattos, load/save unit  * version 1.1.15b; 2000/01/28  hof: save/load paths  (load is not activated PDB-bug)  *                                   continued save/load parasites,  *                                   replaced static buffers by dynamic allocated memory (goodbye to sprintf)  * version 1.1.15a; 2000/01/23  hof: NLS_macros, save/load parasites, \" and \n characters in names  *                                   use G_DIR_SEPARATOR (but you still need UNIX tar to run this plugin)  *                                   older gimp releases (prior to 1.1.15) are not supported any more.  * version 1.02.00; 1999/03/16  hof: - save layer/channel Tattoos  *                                   - load/save image resolution added  *                                   - tolerate unknown properties with warnings  * version 1.01.00; 1998/11/22  hof: added load/save of guides  *                                   (you need gimp 1.1 to use this feature)  * version 1.00.00; 1998/10/29  hof: 1.st (pre) release  */
 end_comment
 
 begin_include
@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07040108
+DECL|struct|__anon293e0df70108
 block|{
 DECL|member|run
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f07040203
+DECL|enum|__anon293e0df70203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -419,7 +419,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f07040303
+DECL|enum|__anon293e0df70303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -479,7 +479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f07040403
+DECL|enum|__anon293e0df70403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -509,7 +509,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f07040503
+DECL|enum|__anon293e0df70503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -531,7 +531,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f07040603
+DECL|enum|__anon293e0df70603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -551,7 +551,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f07040703
+DECL|enum|__anon293e0df70703
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -586,7 +586,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276f07040803
+DECL|enum|__anon293e0df70803
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -711,7 +711,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07040908
+DECL|struct|__anon293e0df70908
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -747,7 +747,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07040a08
+DECL|struct|__anon293e0df70a08
 block|{
 DECL|member|int_val1
 name|gint32
@@ -796,7 +796,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07040b08
+DECL|struct|__anon293e0df70b08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -833,7 +833,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07040c08
+DECL|struct|__anon293e0df70c08
 block|{
 DECL|member|path_type
 name|gint32
@@ -883,7 +883,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07040d08
+DECL|struct|__anon293e0df70d08
 block|{
 DECL|member|active_channel
 name|gint
@@ -957,7 +957,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07040e08
+DECL|struct|__anon293e0df70e08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1042,7 +1042,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07040f08
+DECL|struct|__anon293e0df70f08
 block|{
 DECL|member|position
 name|gint32
@@ -1066,7 +1066,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276f07041008
+DECL|struct|__anon293e0df71008
 block|{
 DECL|member|version
 name|gchar
@@ -2624,6 +2624,147 @@ block|}
 end_function
 
 begin_comment
+comment|/* ------------------------  * p_my_ascii_strtod  * ------------------------  * call  g_ascii_strtod  * with XJT private modification:  *  g_ascii_strtod accepts both "." and "," as radix character (decimalpoint)  *  for float numbers (at least for GERMAN LANG)  *  because XJT PRP files have comma (,) seperated lists of float numbers this cant be accepted here.  *  the private version substitutes a '\0' character for the next comma  *  before calling g_ascii_strtod, and puts back the comma after the call  */
+end_comment
+
+begin_function
+specifier|static
+name|gdouble
+DECL|function|p_my_ascii_strtod (gchar * nptr,gchar ** endptr)
+name|p_my_ascii_strtod
+parameter_list|(
+name|gchar
+modifier|*
+name|nptr
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|endptr
+parameter_list|)
+block|{
+name|gint
+name|ii
+decl_stmt|;
+name|gint
+name|ic
+decl_stmt|;
+name|gdouble
+name|l_rc
+decl_stmt|;
+comment|/* check for comma (is a terminating character for the NON locale float string)     */
+name|ii
+operator|=
+literal|0
+expr_stmt|;
+name|ic
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+while|while
+condition|(
+name|nptr
+condition|)
+block|{
+if|if
+condition|(
+name|nptr
+index|[
+name|ii
+index|]
+operator|==
+literal|','
+condition|)
+block|{
+name|ic
+operator|=
+name|ii
+expr_stmt|;
+name|nptr
+index|[
+name|ii
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
+comment|/* temporary use 0 as terminator for the call of g_ascii_strtod */
+break|break;
+block|}
+if|if
+condition|(
+operator|(
+name|nptr
+index|[
+name|ii
+index|]
+operator|==
+literal|'\0'
+operator|)
+operator|||
+operator|(
+name|nptr
+index|[
+name|ii
+index|]
+operator|==
+literal|' '
+operator|)
+operator|||
+operator|(
+name|nptr
+index|[
+name|ii
+index|]
+operator|==
+literal|'\n'
+operator|)
+condition|)
+block|{
+break|break;
+block|}
+name|ii
+operator|++
+expr_stmt|;
+block|}
+name|l_rc
+operator|=
+name|g_ascii_strtod
+argument_list|(
+name|nptr
+argument_list|,
+name|endptr
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|ic
+operator|>=
+literal|0
+condition|)
+block|{
+name|nptr
+index|[
+name|ii
+index|]
+operator|=
+literal|','
+expr_stmt|;
+comment|/* restore the comma */
+block|}
+return|return
+operator|(
+name|l_rc
+operator|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/* end p_my_ascii_strtod */
+end_comment
+
+begin_comment
 comment|/* -- type transformer routines XJT -- GIMP internal enums ----------------- */
 end_comment
 
@@ -4138,6 +4279,12 @@ name|flt_val
 parameter_list|)
 block|{
 name|gchar
+name|l_dbl_str
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
+name|gchar
 modifier|*
 name|l_str
 decl_stmt|;
@@ -4145,16 +4292,27 @@ name|gint
 name|l_idx
 decl_stmt|;
 comment|/* XJT float precision is limited to 5 digits */
-name|l_str
-operator|=
-name|g_strdup_printf
+comment|/* print setlocale independent float string */
+name|g_ascii_formatd
 argument_list|(
+operator|&
+name|l_dbl_str
+index|[
+literal|0
+index|]
+argument_list|,
+name|G_ASCII_DTOSTR_BUF_SIZE
+argument_list|,
 literal|"%.5f"
 argument_list|,
-operator|(
-name|float
-operator|)
 name|flt_val
+argument_list|)
+expr_stmt|;
+name|l_str
+operator|=
+name|g_strdup
+argument_list|(
+name|l_dbl_str
 argument_list|)
 expr_stmt|;
 comment|/* delete trailing '0' and '.' characters */
@@ -10131,7 +10289,7 @@ name|param
 operator|->
 name|flt_val1
 operator|=
-name|strtod
+name|p_my_ascii_strtod
 argument_list|(
 name|l_ptr
 argument_list|,
@@ -10243,7 +10401,7 @@ name|param
 operator|->
 name|flt_val2
 operator|=
-name|strtod
+name|p_my_ascii_strtod
 argument_list|(
 name|l_ptr
 argument_list|,
@@ -10342,7 +10500,7 @@ name|param
 operator|->
 name|flt_val3
 operator|=
-name|strtod
+name|p_my_ascii_strtod
 argument_list|(
 name|l_ptr
 argument_list|,
@@ -10512,7 +10670,7 @@ operator|->
 name|num_fvals
 index|]
 operator|=
-name|strtod
+name|p_my_ascii_strtod
 argument_list|(
 name|l_ptr
 argument_list|,
