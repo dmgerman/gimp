@@ -16,10 +16,79 @@ directive|define
 name|__CROP_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpdrawtool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_CROP_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_CROP_TOOL
+value|(gimp_crop_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_CROP_TOOL (obj)
+define|#
+directive|define
+name|GIMP_CROP_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CROP_TOOL, GimpCropTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CROP_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_CROP_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CROP_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_CROP_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_CROP_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_CROP_TOOL, GimpCropToolClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpCropTool
+typedef|typedef
+name|struct
+name|_GimpCropTool
+name|GimpCropTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpCropToolClass
+typedef|typedef
+name|struct
+name|_GimpCropToolClass
+name|GimpCropToolClass
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* XXX Used? */
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29adb4750103
+DECL|enum|__anon2881a0460103
 block|{
 DECL|enumerator|CROP_CROP
 name|CROP_CROP
@@ -32,16 +101,115 @@ name|CropType
 typedef|;
 end_typedef
 
+begin_struct
+DECL|struct|_GimpCropTool
+struct|struct
+name|_GimpCropTool
+block|{
+DECL|member|parent_instance
+name|GimpDrawTool
+name|parent_instance
+decl_stmt|;
+comment|/*  DrawCore *core; */
+DECL|member|startx
+name|gint
+name|startx
+decl_stmt|;
+comment|/*  starting x coord            */
+DECL|member|starty
+name|gint
+name|starty
+decl_stmt|;
+comment|/*  starting y coord            */
+DECL|member|lastx
+name|gint
+name|lastx
+decl_stmt|;
+comment|/*  previous x coord            */
+DECL|member|lasty
+name|gint
+name|lasty
+decl_stmt|;
+comment|/*  previous y coord            */
+DECL|member|x1
+DECL|member|y1
+name|gint
+name|x1
+decl_stmt|,
+name|y1
+decl_stmt|;
+comment|/*  upper left hand coordinate  */
+DECL|member|x2
+DECL|member|y2
+name|gint
+name|x2
+decl_stmt|,
+name|y2
+decl_stmt|;
+comment|/*  lower right hand coords     */
+DECL|member|srw
+DECL|member|srh
+name|gint
+name|srw
+decl_stmt|,
+name|srh
+decl_stmt|;
+comment|/*  width and height of corners */
+DECL|member|tx1
+DECL|member|ty1
+name|gint
+name|tx1
+decl_stmt|,
+name|ty1
+decl_stmt|;
+comment|/*  transformed coords          */
+DECL|member|tx2
+DECL|member|ty2
+name|gint
+name|tx2
+decl_stmt|,
+name|ty2
+decl_stmt|;
+comment|/*                              */
+DECL|member|function
+name|guint
+name|function
+decl_stmt|;
+comment|/*  moving or resizing          */
+DECL|member|context_id
+name|guint
+name|context_id
+decl_stmt|;
+comment|/*  for the statusbar           */
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpCropToolClass
+struct|struct
+name|_GimpCropToolClass
+block|{
+DECL|member|parent_class
+name|GimpToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
 name|void
-name|crop_draw
+name|gimp_crop_tool_register
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* Keep around for the PDB, temporarily */
+end_comment
 
 begin_function_decl
 name|void
@@ -68,27 +236,6 @@ name|layer_only
 parameter_list|,
 name|gboolean
 name|crop_layers
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_crop
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_crop
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

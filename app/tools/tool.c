@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d2b920103
+DECL|enum|__anon276895940103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2102,13 +2102,6 @@ begin_macro
 name|QUIET_STUB
 argument_list|(
 argument|GIMP_IS_FUZZY_SELECT
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|crop_image
 argument_list|)
 end_macro
 
