@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bebcd770103
+DECL|enum|__anon2c190c170103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -145,6 +145,11 @@ DECL|enumerator|PROP_USER_UNIT
 name|PROP_USER_UNIT
 init|=
 literal|24
+block|,
+DECL|enumerator|PROP_VECTORS
+name|PROP_VECTORS
+init|=
+literal|25
 DECL|typedef|PropType
 block|}
 name|PropType
@@ -154,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bebcd770203
+DECL|enum|__anon2c190c170203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -186,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bebcd770303
+DECL|enum|__anon2c190c170303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -200,6 +205,26 @@ literal|2
 DECL|typedef|XcfOrientationType
 block|}
 name|XcfOrientationType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c190c170403
+block|{
+DECL|enumerator|XCF_STROKETYPE_STROKE
+name|XCF_STROKETYPE_STROKE
+init|=
+literal|0
+block|,
+DECL|enumerator|XCF_STROKETYPE_BEZIER_STROKE
+name|XCF_STROKETYPE_BEZIER_STROKE
+init|=
+literal|1
+DECL|typedef|XcfStrokeType
+block|}
+name|XcfStrokeType
 typedef|;
 end_typedef
 

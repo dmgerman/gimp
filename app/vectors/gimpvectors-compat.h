@@ -74,6 +74,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_vectors_compat_is_compatible
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpVectorsCompatPoint
 modifier|*
 name|gimp_vectors_compat_get_points
