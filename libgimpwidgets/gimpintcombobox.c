@@ -592,7 +592,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_prepend:  * @combo_box: a #GimpIntComboBox  * @...:       pairs of column number and value, terminated with -1  *  * This function provides a convenient way to prepend items to a  * #GimpIntComboBox. It prepends a row to the @combo_box's list store  * and calls gtk_list_store_set() for you.  *  * The column number must be taken from the enum #GimpIntStoreColumns.  **/
+comment|/**  * gimp_int_combo_box_prepend:  * @combo_box: a #GimpIntComboBox  * @...:       pairs of column number and value, terminated with -1  *  * This function provides a convenient way to prepend items to a  * #GimpIntComboBox. It prepends a row to the @combo_box's list store  * and calls gtk_list_store_set() for you.  *  * The column number must be taken from the enum #GimpIntStoreColumns.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -672,7 +672,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_append:  * @combo_box: a #GimpIntComboBox  * @...:       pairs of column number and value, terminated with -1  *  * This function provides a convenient way to append items to a  * #GimpIntComboBox. It appends a row to the @combo_box's list store  * and calls gtk_list_store_set() for you.  *  * The column number must be taken from the enum #GimpIntStoreColumns.  **/
+comment|/**  * gimp_int_combo_box_append:  * @combo_box: a #GimpIntComboBox  * @...:       pairs of column number and value, terminated with -1  *  * This function provides a convenient way to append items to a  * #GimpIntComboBox. It appends a row to the @combo_box's list store  * and calls gtk_list_store_set() for you.  *  * The column number must be taken from the enum #GimpIntStoreColumns.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
