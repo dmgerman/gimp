@@ -455,7 +455,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b09a0108
+DECL|struct|__anon2b872c080108
 block|{
 DECL|member|name
 specifier|const
@@ -715,7 +715,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b09a0208
+DECL|struct|__anon2b872c080208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -788,7 +788,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b09a0308
+DECL|struct|__anon2b872c080308
 block|{
 DECL|member|input_spi
 name|gint
@@ -814,7 +814,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b09a0408
+DECL|struct|__anon2b872c080408
 block|{
 DECL|member|run
 name|gint
@@ -833,7 +833,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b09a0508
+DECL|struct|__anon2b872c080508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -940,7 +940,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b09a0608
+DECL|struct|__anon2b872c080608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1124,7 +1124,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b09a0708
+DECL|struct|__anon2b872c080708
 block|{
 DECL|member|name
 specifier|const
@@ -6938,7 +6938,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b09a0808
+DECL|struct|__anon2b872c080808
 block|{
 DECL|member|index
 name|gint
@@ -7452,6 +7452,18 @@ decl_stmt|;
 name|gint
 name|w002
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|TIMINGS
+name|GTimer
+modifier|*
+name|timer
+init|=
+name|g_timer_new
+argument_list|()
+decl_stmt|;
+endif|#
+directive|endif
 name|width
 operator|=
 name|pvals
@@ -7919,14 +7931,6 @@ operator|-
 name|y1
 operator|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|TIMINGS
-name|gimp_timer_start
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
 for|for
 control|(
 name|y
@@ -8944,8 +8948,20 @@ block|}
 ifdef|#
 directive|ifdef
 name|TIMINGS
-name|gimp_timer_stop
-argument_list|()
+name|g_printerr
+argument_list|(
+literal|"%f seconds\n"
+argument_list|,
+name|g_timer_elapsed
+argument_list|(
+name|timer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_timer_destroy
+argument_list|(
+name|timer
+argument_list|)
 expr_stmt|;
 endif|#
 directive|endif

@@ -20,7 +20,7 @@ begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 name|enum
-DECL|enum|__anon2b86db790103
+DECL|enum|__anon2793ac2d0103
 type|{
 DECL|enumerator|PIXEL_WRAP
 name|PIXEL_WRAP
@@ -36,7 +36,7 @@ begin_typedef
 unit|};
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b86db790208
+DECL|struct|__anon2793ac2d0208
 block|{
 DECL|member|col
 DECL|member|row
@@ -197,24 +197,6 @@ parameter_list|,
 name|guchar
 modifier|*
 name|bg
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_timer_start
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_timer_stop
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

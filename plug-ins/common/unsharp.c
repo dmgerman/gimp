@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a36e560108
+DECL|struct|__anon2b3d277c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a36e560208
+DECL|struct|__anon2b3d277c0208
 block|{
 DECL|member|run
 name|gint
@@ -546,9 +546,13 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|TIMER
-name|timerstart
+name|GTimer
+modifier|*
+name|timer
+init|=
+name|g_timer_new
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 endif|#
 directive|endif
 name|run_mode
@@ -805,8 +809,20 @@ block|}
 ifdef|#
 directive|ifdef
 name|TIMER
-name|timerstop
-argument_list|()
+name|g_printerr
+argument_list|(
+literal|"%f seconds\n"
+argument_list|,
+name|g_timer_elapsed
+argument_list|(
+name|timer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_timer_destroy
+argument_list|(
+name|timer
+argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
