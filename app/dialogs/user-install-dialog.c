@@ -203,7 +203,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3118b70103
+DECL|enum|__anon2b639bfc0103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -231,7 +231,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3118b70203
+DECL|enum|__anon2b639bfc0203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -476,7 +476,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3118b70303
+DECL|enum|__anon2b639bfc0303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -502,7 +502,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a3118b70408
+DECL|struct|__anon2b639bfc0408
 block|{
 DECL|member|directory
 name|gboolean
@@ -621,7 +621,7 @@ literal|"open the last time you quit The GIMP.  You can configure\n"
 literal|"The GIMP to reopen these dialogs at the saved position."
 argument_list|)
 block|,
-name|TREE_ITEM_DONT
+name|TREE_ITEM_FROM_SYSCONF_DIR
 block|,
 name|NULL
 block|}
@@ -639,7 +639,7 @@ argument_list|)
 block|,
 name|TREE_ITEM_FROM_SYSCONF_DIR
 block|,
-literal|"templaterc"
+name|NULL
 block|}
 block|,
 block|{
