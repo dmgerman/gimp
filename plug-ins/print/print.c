@@ -113,7 +113,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2c2df77c0108
+DECL|struct|__anon29b280920108
 block|{
 DECL|member|name
 name|char
@@ -613,7 +613,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon2c2df77c0208
+DECL|struct|__anon29b280920208
 block|{
 DECL|member|output_to
 name|char
@@ -2260,10 +2260,12 @@ name|gint32
 name|drawable_ID
 decl_stmt|;
 comment|/* drawable ID */
-name|gboolean
+name|GimpExportReturnType
 name|export
+init|=
+name|EXPORT_CANCEL
 decl_stmt|;
-comment|/* have we exported the image ? */
+comment|/* return value of gimp_export_image() */
 name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
@@ -2378,6 +2380,31 @@ name|CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_CANCEL
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
 break|break;
 default|default:
 break|break;
@@ -3358,6 +3385,8 @@ expr_stmt|;
 if|if
 condition|(
 name|export
+operator|==
+name|EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

@@ -90,7 +90,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ddaeff0108
+DECL|struct|__anon2b7fa2da0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -616,10 +616,10 @@ modifier|*
 name|values
 decl_stmt|;
 comment|/* Return values */
-name|gboolean
+name|GimpExportReturnType
 name|export
 init|=
-name|FALSE
+name|EXPORT_CANCEL
 decl_stmt|;
 comment|/*   * Initialize parameter data...   */
 name|values
@@ -827,6 +827,31 @@ name|CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_CANCEL
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
 break|break;
 default|default:
 break|break;
@@ -1028,6 +1053,8 @@ expr_stmt|;
 if|if
 condition|(
 name|export
+operator|==
+name|EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

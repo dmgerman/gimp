@@ -279,7 +279,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294a623b0108
+DECL|struct|__anon2bd30f760108
 block|{
 DECL|member|quality
 name|gdouble
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294a623b0208
+DECL|struct|__anon2bd30f760208
 block|{
 DECL|member|run
 name|gint
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294a623b0308
+DECL|struct|__anon2bd30f760308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1236,10 +1236,10 @@ comment|/* GIMP_HAVE_PARASITES */
 name|int
 name|err
 decl_stmt|;
-name|gboolean
+name|GimpExportReturnType
 name|export
 init|=
-name|FALSE
+name|EXPORT_CANCEL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -1449,11 +1449,14 @@ name|CAN_HANDLE_GRAY
 operator|)
 argument_list|)
 expr_stmt|;
-if|if
+switch|switch
 condition|(
 name|export
 condition|)
 block|{
+case|case
+name|EXPORT_EXPORT
+case|:
 name|display_ID
 operator|=
 name|gimp_display_new
@@ -1464,6 +1467,32 @@ expr_stmt|;
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
+break|break;
+case|case
+name|EXPORT_IGNORE
+case|:
+break|break;
+case|case
+name|EXPORT_CANCEL
+case|:
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+break|break;
 block|}
 break|break;
 default|default:
@@ -1812,8 +1841,9 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|export
+operator|!=
+name|EXPORT_EXPORT
 condition|)
 block|{
 comment|/* thaw undo saving and end the undo_group. */
@@ -2341,10 +2371,12 @@ expr_stmt|;
 if|if
 condition|(
 name|export
+operator|==
+name|EXPORT_EXPORT
 condition|)
 block|{
-comment|/* if the image was exported, delete the new display */
-comment|/* according to the documentation, this should also delete the image */
+comment|/* If the image was exported, delete the new display. */
+comment|/* This also deletes the image.                       */
 if|if
 condition|(
 name|display_ID

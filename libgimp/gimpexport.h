@@ -70,8 +70,27 @@ name|CAN_HANDLE_LAYERS_AS_ANIMATION
 value|1<< 5
 end_define
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2a3b56000103
+block|{
+DECL|enumerator|EXPORT_CANCEL
+name|EXPORT_CANCEL
+block|,
+DECL|enumerator|EXPORT_IGNORE
+name|EXPORT_IGNORE
+block|,
+DECL|enumerator|EXPORT_EXPORT
+name|EXPORT_EXPORT
+DECL|typedef|GimpExportReturnType
+block|}
+name|GimpExportReturnType
+typedef|;
+end_typedef
+
 begin_function_decl
-name|gboolean
+name|GimpExportReturnType
 name|gimp_export_image
 parameter_list|(
 name|gint32
