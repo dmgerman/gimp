@@ -144,6 +144,7 @@ begin_function_decl
 name|void
 name|loadppm
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|fn

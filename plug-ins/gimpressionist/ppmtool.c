@@ -1723,10 +1723,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|loadppm (char * fn,ppm_t * p)
+DECL|function|loadppm (const char * fn,ppm_t * p)
 name|void
 name|loadppm
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|fn

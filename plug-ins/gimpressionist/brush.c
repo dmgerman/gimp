@@ -202,6 +202,7 @@ specifier|static
 name|void
 name|updatebrushprev
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|fn
@@ -210,11 +211,12 @@ function_decl|;
 end_function_decl
 
 begin_function
-DECL|function|colorfile (char * fn)
+DECL|function|colorfile (const char * fn)
 specifier|static
 name|gboolean
 name|colorfile
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|fn
@@ -1067,9 +1069,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|brushlistrefresh (void)
 specifier|static
 name|void
+DECL|function|brushlistrefresh (void)
 name|brushlistrefresh
 parameter_list|(
 name|void
@@ -1093,13 +1095,14 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|savebrush_response (GtkFileSelection * fs,gint response_id,gpointer data)
+DECL|function|savebrush_response (GtkWidget * dialog,gint response_id,gpointer data)
 name|savebrush_response
 parameter_list|(
-name|GtkFileSelection
+name|GtkWidget
 modifier|*
-name|fs
+name|dialog
 parameter_list|,
 name|gint
 name|response_id
@@ -1115,42 +1118,45 @@ operator|==
 name|GTK_RESPONSE_OK
 condition|)
 block|{
-specifier|const
 name|gchar
 modifier|*
-name|fn
-decl_stmt|;
-name|fn
-operator|=
-name|gtk_file_selection_get_filename
+name|name
+init|=
+name|gtk_file_chooser_get_filename
 argument_list|(
-name|fs
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
 argument_list|)
-expr_stmt|;
+argument_list|)
+decl_stmt|;
 name|saveppm
 argument_list|(
 operator|&
 name|brushppm
 argument_list|,
-name|fn
+name|name
 argument_list|)
 expr_stmt|;
 name|brushlistrefresh
 argument_list|()
 expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 block|}
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|fs
-argument_list|)
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|savebrush (GtkWidget * wg,gpointer data)
 name|savebrush
@@ -1166,7 +1172,7 @@ block|{
 specifier|static
 name|GtkWidget
 modifier|*
-name|window
+name|dialog
 init|=
 name|NULL
 decl_stmt|;
@@ -1199,21 +1205,13 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|window
+name|dialog
 operator|=
-name|gtk_file_selection_new
+name|gtk_file_chooser_dialog_new
 argument_list|(
 name|_
 argument_list|(
 literal|"Save Brush"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_transient_for
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|window
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
@@ -1223,16 +1221,18 @@ argument_list|(
 name|wg
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|window
-argument_list|)
 argument_list|,
-name|GTK_WIN_POS_MOUSE
+name|GTK_FILE_CHOOSER_ACTION_SAVE
+argument_list|,
+name|GTK_STOCK_CANCEL
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+name|GTK_STOCK_SAVE
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|path
@@ -1240,7 +1240,7 @@ operator|=
 name|g_build_filename
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|thispath
@@ -1249,16 +1249,14 @@ name|data
 argument_list|,
 literal|"Brushes"
 argument_list|,
-literal|""
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_file_selection_set_filename
+name|gtk_file_chooser_set_current_folder
 argument_list|(
-name|GTK_FILE_SELECTION
+name|GTK_FILE_CHOOSER
 argument_list|(
-name|window
+name|dialog
 argument_list|)
 argument_list|,
 name|path
@@ -1271,7 +1269,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|window
+name|dialog
 argument_list|,
 literal|"destroy"
 argument_list|,
@@ -1281,12 +1279,12 @@ name|gtk_widget_destroyed
 argument_list|)
 argument_list|,
 operator|&
-name|window
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|window
+name|dialog
 argument_list|,
 literal|"response"
 argument_list|,
@@ -1300,7 +1298,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|window
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -1339,11 +1337,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|reloadbrush (char * fn,ppm_t * p)
 name|void
+DECL|function|reloadbrush (const gchar * fn,ppm_t * p)
 name|reloadbrush
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|fn
 parameter_list|,
@@ -1425,19 +1424,19 @@ block|}
 end_function
 
 begin_function
-DECL|function|padbrush (ppm_t * p,int width,int height)
 specifier|static
 name|void
+DECL|function|padbrush (ppm_t * p,gint width,gint height)
 name|padbrush
 parameter_list|(
 name|ppm_t
 modifier|*
 name|p
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -1526,11 +1525,13 @@ block|}
 end_function
 
 begin_function
-DECL|function|updatebrushprev (char * fn)
+specifier|static
 name|void
+DECL|function|updatebrushprev (const gchar * fn)
 name|updatebrushprev
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|fn
 parameter_list|)
@@ -1913,9 +1914,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|selectbrush (GtkTreeSelection * selection,gpointer data)
 specifier|static
 name|void
+DECL|function|selectbrush (GtkTreeSelection * selection,gpointer data)
 name|selectbrush
 parameter_list|(
 name|GtkTreeSelection
@@ -2069,9 +2070,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|selectbrushfile (GtkTreeSelection * selection,gpointer data)
 specifier|static
 name|void
+DECL|function|selectbrushfile (GtkTreeSelection * selection,gpointer data)
 name|selectbrushfile
 parameter_list|(
 name|GtkTreeSelection
@@ -2104,9 +2105,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|brushaspectadjust_cb (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|brushaspectadjust_cb (GtkWidget * w,gpointer data)
 name|brushaspectadjust_cb
 parameter_list|(
 name|GtkWidget
@@ -2138,8 +2139,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_brushpage (GtkNotebook * notebook)
 name|void
+DECL|function|create_brushpage (GtkNotebook * notebook)
 name|create_brushpage
 parameter_list|(
 name|GtkNotebook
