@@ -148,37 +148,37 @@ DECL|member|startx
 name|gint
 name|startx
 decl_stmt|;
-comment|/*  starting x coord            */
+comment|/*  starting x coord                 */
 DECL|member|starty
 name|gint
 name|starty
 decl_stmt|;
-comment|/*  starting y coord            */
+comment|/*  starting y coord                 */
 DECL|member|curx
 name|gint
 name|curx
 decl_stmt|;
-comment|/*  current x coord             */
+comment|/*  current x coord                  */
 DECL|member|cury
 name|gint
 name|cury
 decl_stmt|;
-comment|/*  current y coord             */
+comment|/*  current y coord                  */
 DECL|member|lastx
 name|gint
 name|lastx
 decl_stmt|;
-comment|/*  last x coord                */
+comment|/*  last x coord                     */
 DECL|member|lasty
 name|gint
 name|lasty
 decl_stmt|;
-comment|/*  last y coord                */
+comment|/*  last y coord                     */
 DECL|member|state
 name|gint
 name|state
 decl_stmt|;
-comment|/*  state of buttons and keys   */
+comment|/*  state of buttons and keys        */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -186,7 +186,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  upper left hand coordinate  */
+comment|/*  upper left hand coordinate       */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -194,7 +194,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  lower right hand coords     */
+comment|/*  lower right hand coords          */
 DECL|member|cx
 DECL|member|cy
 name|gint
@@ -202,7 +202,7 @@ name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-comment|/*  center point (for rotation) */
+comment|/*  center point (for rotation)      */
 DECL|member|tx1
 DECL|member|ty1
 name|gdouble
@@ -210,7 +210,7 @@ name|tx1
 decl_stmt|,
 name|ty1
 decl_stmt|;
-comment|/*  transformed coords          */
+comment|/*  transformed coords               */
 DECL|member|tx2
 DECL|member|ty2
 name|gdouble
@@ -218,7 +218,6 @@ name|tx2
 decl_stmt|,
 name|ty2
 decl_stmt|;
-comment|/*                              */
 DECL|member|tx3
 DECL|member|ty3
 name|gdouble
@@ -226,7 +225,6 @@ name|tx3
 decl_stmt|,
 name|ty3
 decl_stmt|;
-comment|/*                              */
 DECL|member|tx4
 DECL|member|ty4
 name|gdouble
@@ -234,7 +232,6 @@ name|tx4
 decl_stmt|,
 name|ty4
 decl_stmt|;
-comment|/*                              */
 DECL|member|tcx
 DECL|member|tcy
 name|gdouble
@@ -242,33 +239,37 @@ name|tcx
 decl_stmt|,
 name|tcy
 decl_stmt|;
-comment|/*                              */
 DECL|member|transform
 name|GimpMatrix3
 name|transform
 decl_stmt|;
-comment|/*  transformation matrix       */
+comment|/*  transformation matrix            */
 DECL|member|trans_info
 name|TransInfo
 name|trans_info
 decl_stmt|;
-comment|/*  transformation info         */
+comment|/*  transformation info              */
+DECL|member|old_trans_info
+name|TransInfo
+name|old_trans_info
+decl_stmt|;
+comment|/*  for cancelling a drag operation  */
 DECL|member|original
 name|TileManager
 modifier|*
 name|original
 decl_stmt|;
-comment|/*  pointer to original tiles   */
+comment|/*  pointer to original tiles        */
 DECL|member|function
 name|TransformAction
 name|function
 decl_stmt|;
-comment|/*  current tool activity       */
+comment|/*  current tool activity            */
 DECL|member|use_grid
 name|gboolean
 name|use_grid
 decl_stmt|;
-comment|/*  does the tool use the grid  */
+comment|/*  does the tool use the grid       */
 DECL|member|ngx
 DECL|member|ngy
 name|gint
@@ -276,19 +277,25 @@ name|ngx
 decl_stmt|,
 name|ngy
 decl_stmt|;
-comment|/*  number of grid lines in original 				 *  x and y directions 				 */
+comment|/*  number of grid lines in original                                    *  x and y directions                                    */
 DECL|member|grid_coords
 name|gdouble
 modifier|*
 name|grid_coords
 decl_stmt|;
-comment|/*  x and y coordinates of the grid 				 *  endpoints (a total of (ngx+ngy)*2 				 *  coordinate pairs) 				 */
+comment|/*  x and y coordinates of the grid                                    *  endpoints (a total of (ngx+ngy)*2                                    *  coordinate pairs)                                    */
 DECL|member|tgrid_coords
 name|gdouble
 modifier|*
 name|tgrid_coords
 decl_stmt|;
-comment|/*  transformed grid_coords     */
+comment|/*  transformed grid_coords          */
+DECL|member|info_dialog
+name|InfoDialog
+modifier|*
+name|info_dialog
+decl_stmt|;
+comment|/*  transform info dialog            */
 block|}
 struct|;
 end_struct
@@ -326,10 +333,6 @@ function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*  Special undo type  */
-end_comment
 
 begin_typedef
 DECL|typedef|TransformUndo
@@ -370,22 +373,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  make this variable available to all  */
-end_comment
-
-begin_comment
-comment|/*  Do we still need to do this?  -- rock */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|InfoDialog
-modifier|*
-name|transform_info
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 name|GType
 name|gimp_transform_tool_get_type
@@ -419,6 +406,22 @@ parameter_list|(
 name|GimpTransformTool
 modifier|*
 name|tr_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_transform_tool_info_dialog_connect
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|ok_button
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -4046,7 +4046,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-item-data"
 argument_list|)
 expr_stmt|;
 name|options

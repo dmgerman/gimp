@@ -106,19 +106,8 @@ directive|include
 file|<libgimpwidgets/gimpunitmenu.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_function_decl
+name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
 comment|/*  *  Widget Constructors  */
 name|GtkWidget
@@ -128,10 +117,13 @@ parameter_list|(
 name|gboolean
 name|menu_only
 parameter_list|,
-comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  GCallback       callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active 				     */
+comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  GCallback       callback, 				     *  gpointer        callback_data, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active 				     */
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_option_menu_new2
@@ -143,16 +135,19 @@ name|GCallback
 name|menu_item_callback
 parameter_list|,
 name|gpointer
-name|data
+name|menu_item_callback_data
 parameter_list|,
 name|gpointer
 name|initial
 parameter_list|,
-comment|/* user_data */
-comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     */
+comment|/* item_data */
+comment|/* specify menu items as va_list: 				     *  gchar          *label, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     */
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_option_menu_set_history
 parameter_list|(
@@ -161,9 +156,12 @@ modifier|*
 name|option_menu
 parameter_list|,
 name|gpointer
-name|user_data
+name|item_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_radio_group_new
@@ -176,10 +174,13 @@ name|gchar
 modifier|*
 name|frame_title
 parameter_list|,
-comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  GCallback       callback, 				     *  gpointer        data, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active, 				     */
+comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  GCallback       callback, 				     *  gpointer        callback_data, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     *  gboolean        active, 				     */
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_radio_group_new2
@@ -196,16 +197,33 @@ name|GCallback
 name|radio_button_callback
 parameter_list|,
 name|gpointer
-name|data
+name|radio_button_callback_data
 parameter_list|,
 name|gpointer
 name|initial
 parameter_list|,
-comment|/* user_data */
-comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  gpointer        user_data, 				     *  GtkWidget     **widget_ptr, 				     */
+comment|/* item_data */
+comment|/* specify radio buttons as va_list: 				     *  const gchar    *label, 				     *  gpointer        item_data, 				     *  GtkWidget     **widget_ptr, 				     */
 modifier|...
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_radio_group_set_active
+parameter_list|(
+name|GtkRadioButton
+modifier|*
+name|radio_button
+parameter_list|,
+name|gpointer
+name|item_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_spin_button_new
@@ -241,6 +259,9 @@ name|guint
 name|digits
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_define
 DECL|macro|GIMP_SCALE_ENTRY_LABEL (adj)
 define|#
 directive|define
@@ -249,7 +270,10 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|GTK_LABEL (gtk_object_get_data (GTK_OBJECT(adj), "label"))
+value|GTK_LABEL (g_object_get_data (G_OBJECT (adj), "label"))
+end_define
+
+begin_define
 DECL|macro|GIMP_SCALE_ENTRY_SCALE (adj)
 define|#
 directive|define
@@ -258,7 +282,10 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|GTK_HSCALE (gtk_object_get_data (GTK_OBJECT(adj), "scale"))
+value|GTK_HSCALE (g_object_get_data (G_OBJECT (adj), "scale"))
+end_define
+
+begin_define
 DECL|macro|GIMP_SCALE_ENTRY_SCALE_ADJ (adj)
 define|#
 directive|define
@@ -267,7 +294,10 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|gtk_range_get_adjustment \         (GTK_RANGE (gtk_object_get_data (GTK_OBJECT (adj), "scale")))
+value|gtk_range_get_adjustment \         (GTK_RANGE (g_object_get_data (G_OBJECT (adj), "scale")))
+end_define
+
+begin_define
 DECL|macro|GIMP_SCALE_ENTRY_SPINBUTTON (adj)
 define|#
 directive|define
@@ -276,7 +306,10 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (adj), "spinbutton"))
+value|GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (adj), "spinbutton"))
+end_define
+
+begin_define
 DECL|macro|GIMP_SCALE_ENTRY_SPINBUTTON_ADJ (adj)
 define|#
 directive|define
@@ -285,7 +318,10 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (adj), "spinbutton")))
+value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (adj), "spinbutton")))
+end_define
+
+begin_function_decl
 name|GtkObject
 modifier|*
 name|gimp_scale_entry_new
@@ -349,6 +385,9 @@ modifier|*
 name|help_data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_define
 DECL|macro|GIMP_RANDOM_SEED_SPINBUTTON (hbox)
 define|#
 directive|define
@@ -357,7 +396,10 @@ parameter_list|(
 name|hbox
 parameter_list|)
 define|\
-value|GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT( hbox), "spinbutton"))
+value|GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (hbox), "spinbutton"))
+end_define
+
+begin_define
 DECL|macro|GIMP_RANDOM_SEED_SPINBUTTON_ADJ (hbox)
 define|#
 directive|define
@@ -366,7 +408,10 @@ parameter_list|(
 name|hbox
 parameter_list|)
 define|\
-value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (hbox), "spinbutton")))
+value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (hbox), "spinbutton")))
+end_define
+
+begin_define
 DECL|macro|GIMP_RANDOM_SEED_TOGGLEBUTTON (hbox)
 define|#
 directive|define
@@ -375,7 +420,10 @@ parameter_list|(
 name|hbox
 parameter_list|)
 define|\
-value|GTK_TOGGLE_BUTTON (gtk_object_get_data (GTK_OBJECT (hbox), \                                                 "togglebutton"))
+value|GTK_TOGGLE_BUTTON (g_object_get_data (G_OBJECT (hbox), "togglebutton"))
+end_define
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_random_seed_new
@@ -395,6 +443,9 @@ name|gint
 name|time_false
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_define
 DECL|macro|GIMP_COORDINATES_CHAINBUTTON (sizeentry)
 define|#
 directive|define
@@ -404,6 +455,9 @@ name|sizeentry
 parameter_list|)
 define|\
 value|GIMP_CHAIN_BUTTON (gtk_object_get_data (GTK_OBJECT (sizeentry), \                                                 "chainbutton"))
+end_define
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_coordinates_new
@@ -485,6 +539,9 @@ name|ysize_100
 comment|/* % */
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_define
 DECL|macro|GIMP_MEM_SIZE_ENTRY_SPINBUTTON (memsize)
 define|#
 directive|define
@@ -493,7 +550,10 @@ parameter_list|(
 name|memsize
 parameter_list|)
 define|\
-value|GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (memsize), \                                               "spinbutton"))
+value|GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (memsize), "spinbutton"))
+end_define
+
+begin_define
 DECL|macro|GIMP_MEM_SIZE_ENTRY_SPINBUTTON_ADJ (memsize)
 define|#
 directive|define
@@ -502,7 +562,10 @@ parameter_list|(
 name|memsize
 parameter_list|)
 define|\
-value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (memsize), \                                                "spinbutton")))
+value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (memsize), "spinbutton")))
+end_define
+
+begin_define
 DECL|macro|GIMP_MEM_SIZE_ENTRY_OPTIONMENU (memsize)
 define|#
 directive|define
@@ -511,7 +574,10 @@ parameter_list|(
 name|memsize
 parameter_list|)
 define|\
-value|GTK_OPTION_MENU (gtk_object_get_data (GTK_OBJECT (memsize), \                                               "optionmenu"))
+value|GTK_OPTION_MENU (g_object_get_data (G_OBJECT (memsize), "optionmenu"))
+end_define
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_mem_size_entry_new
@@ -521,6 +587,9 @@ modifier|*
 name|adjustment
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_pixmap_button_new
@@ -536,7 +605,13 @@ modifier|*
 name|text
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  *  Standard Callbacks  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_toggle_button_sensitive_update
 parameter_list|(
@@ -545,6 +620,9 @@ modifier|*
 name|toggle_button
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_toggle_button_update
 parameter_list|(
@@ -556,6 +634,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_radio_button_update
 parameter_list|(
@@ -567,6 +648,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_menu_item_update
 parameter_list|(
@@ -578,6 +662,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_int_adjustment_update
 parameter_list|(
@@ -589,6 +676,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_uint_adjustment_update
 parameter_list|(
@@ -600,6 +690,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_float_adjustment_update
 parameter_list|(
@@ -611,6 +704,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_double_adjustment_update
 parameter_list|(
@@ -622,6 +718,9 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_unit_menu_update
 parameter_list|(
@@ -633,7 +732,13 @@ name|gpointer
 name|data
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  *  Helper Functions  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_table_attach_aligned
 parameter_list|(
@@ -669,20 +774,11 @@ name|gboolean
 name|left_align
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

@@ -145,7 +145,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"resolution-entry"
 argument_list|)
 expr_stmt|;
 name|x
@@ -417,7 +417,7 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"resolution-entry"
 argument_list|,
 name|resolution_entry
 argument_list|)

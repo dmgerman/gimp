@@ -743,6 +743,14 @@ modifier|*
 name|draw_tool
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DRAW_TOOL
+argument_list|(
+name|draw_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|draw_tool

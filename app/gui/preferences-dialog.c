@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5328970103
+DECL|enum|__anon29f6d5c60103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -4777,7 +4777,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-item-data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4817,7 +4817,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-item-data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4915,7 +4915,7 @@ directive|endif
 if|#
 directive|if
 literal|0
-block|lc_dialog_rebuild ((long) g_object_get_data (G_OBJECT (widget), "user_data"));
+block|lc_dialog_rebuild ((long) g_object_get_data (G_OBJECT (widget),                                                "gimp-item-data"));
 endif|#
 directive|endif
 block|}
@@ -4948,7 +4948,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-item-data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13853,7 +13853,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5328970208
+DECL|struct|__anon29f6d5c60208
 block|{
 DECL|member|label
 name|gchar
@@ -14082,7 +14082,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5328970308
+DECL|struct|__anon29f6d5c60308
 block|{
 DECL|member|tree_label
 name|gchar

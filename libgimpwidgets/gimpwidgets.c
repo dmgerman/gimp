@@ -98,7 +98,7 @@ parameter_list|(
 name|gboolean
 name|menu_only
 parameter_list|,
-comment|/* specify menu items as va_list: 		       *  const gchar    *label, 		       *  GCallback       callback, 		       *  gpointer        callback_data, 		       *  gpointer        user_data, 		       *  GtkWidget     **widget_ptr, 		       *  gboolean        active 		       */
+comment|/* specify menu items as va_list: 		       *  const gchar    *label, 		       *  GCallback       callback, 		       *  gpointer        callback_data, 		       *  gpointer        item_data, 		       *  GtkWidget     **widget_ptr, 		       *  gboolean        active 		       */
 modifier|...
 parameter_list|)
 block|{
@@ -123,7 +123,7 @@ name|gpointer
 name|callback_data
 decl_stmt|;
 name|gpointer
-name|user_data
+name|item_data
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -200,7 +200,7 @@ argument_list|,
 name|gpointer
 argument_list|)
 expr_stmt|;
-name|user_data
+name|item_data
 operator|=
 name|va_arg
 argument_list|(
@@ -262,8 +262,22 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|user_data
+name|item_data
 condition|)
+block|{
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|menuitem
+argument_list|)
+argument_list|,
+literal|"gimp-item-data"
+argument_list|,
+name|item_data
+argument_list|)
+expr_stmt|;
+comment|/*  backward compat  */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -273,9 +287,10 @@ argument_list|)
 argument_list|,
 literal|"user_data"
 argument_list|,
-name|user_data
+name|item_data
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -389,7 +404,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_option_menu_new2:  * @menu_only:          #TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @callback_data:      The data which will be passed to g_signal_connect().  * @initial:            The @user_data of the initially selected menu item.  * @...:                A #NULL terminated @va_list describing the menu items.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
+comment|/**  * gimp_option_menu_new2:  * @menu_only:          #TRUE if the function should return a #GtkMenu only.  * @menu_item_callback: The callback each menu item's "activate" signal will  *                      be connected with.  * @callback_data:      The data which will be passed to g_signal_connect().  * @initial:            The @item_data of the initially selected menu item.  * @...:                A #NULL terminated @va_list describing the menu items.  *  * Returns: A #GtkOptionMenu or a #GtkMenu (depending on @menu_only).  **/
 end_comment
 
 begin_function
@@ -410,8 +425,8 @@ parameter_list|,
 name|gpointer
 name|initial
 parameter_list|,
-comment|/* user_data */
-comment|/* specify menu items as va_list: 			*  const gchar *label, 			*  gpointer     user_data, 			*  GtkWidget  **widget_ptr, 			*/
+comment|/* item_data */
+comment|/* specify menu items as va_list: 			*  const gchar *label, 			*  gpointer     item_data, 			*  GtkWidget  **widget_ptr, 			*/
 modifier|...
 parameter_list|)
 block|{
@@ -430,7 +445,7 @@ modifier|*
 name|label
 decl_stmt|;
 name|gpointer
-name|user_data
+name|item_data
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -486,7 +501,7 @@ name|i
 operator|++
 control|)
 block|{
-name|user_data
+name|item_data
 operator|=
 name|va_arg
 argument_list|(
@@ -539,8 +554,22 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|user_data
+name|item_data
 condition|)
+block|{
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|menuitem
+argument_list|)
+argument_list|,
+literal|"gimp-item-data"
+argument_list|,
+name|item_data
+argument_list|)
+expr_stmt|;
+comment|/*  backward compat  */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -550,9 +579,10 @@ argument_list|)
 argument_list|,
 literal|"user_data"
 argument_list|,
-name|user_data
+name|item_data
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -596,7 +626,7 @@ expr_stmt|;
 comment|/*  remember the initial menu item  */
 if|if
 condition|(
-name|user_data
+name|item_data
 operator|==
 name|initial
 condition|)
@@ -668,12 +698,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_option_menu_new() or  *               gimp_option_menu_new2().  * @user_data:   The @user_data of the menu item you want to select.  **/
+comment|/**  * gimp_option_menu_set_history:  * @option_menu: A #GtkOptionMenu as returned by gimp_option_menu_new() or  *               gimp_option_menu_new2().  * @item_data:   The @item_data of the menu item you want to select.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_option_menu_set_history (GtkOptionMenu * option_menu,gpointer user_data)
+DECL|function|gimp_option_menu_set_history (GtkOptionMenu * option_menu,gpointer item_data)
 name|gimp_option_menu_set_history
 parameter_list|(
 name|GtkOptionMenu
@@ -681,7 +711,7 @@ modifier|*
 name|option_menu
 parameter_list|,
 name|gpointer
-name|user_data
+name|item_data
 parameter_list|)
 block|{
 name|GtkWidget
@@ -697,11 +727,6 @@ name|history
 init|=
 literal|0
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|option_menu
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GTK_IS_OPTION_MENU
@@ -761,10 +786,10 @@ argument_list|(
 name|menu_item
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-item-data"
 argument_list|)
 operator|==
-name|user_data
+name|item_data
 condition|)
 block|{
 break|break;
@@ -805,7 +830,7 @@ name|gchar
 modifier|*
 name|frame_title
 parameter_list|,
-comment|/* specify radio buttons as va_list: 		       *  const gchar    *label, 		       *  GCallback       callback, 		       *  gpointer        callback_data, 		       *  gpointer        user_data, 		       *  GtkWidget     **widget_ptr, 		       *  gboolean        active, 		       */
+comment|/* specify radio buttons as va_list: 		       *  const gchar    *label, 		       *  GCallback       callback, 		       *  gpointer        callback_data, 		       *  gpointer        item_data, 		       *  GtkWidget     **widget_ptr, 		       *  gboolean        active, 		       */
 modifier|...
 parameter_list|)
 block|{
@@ -834,7 +859,7 @@ name|gpointer
 name|callback_data
 decl_stmt|;
 name|gpointer
-name|user_data
+name|item_data
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -902,7 +927,7 @@ argument_list|,
 name|gpointer
 argument_list|)
 expr_stmt|;
-name|user_data
+name|item_data
 operator|=
 name|va_arg
 argument_list|(
@@ -985,8 +1010,22 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|user_data
+name|item_data
 condition|)
+block|{
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"gimp-item-data"
+argument_list|,
+name|item_data
+argument_list|)
+expr_stmt|;
+comment|/*  backward compatibility  */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -996,9 +1035,10 @@ argument_list|)
 argument_list|,
 literal|"user_data"
 argument_list|,
-name|user_data
+name|item_data
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|widget_ptr
@@ -1110,7 +1150,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_group_new2:  * @in_frame:              #TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or #NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @callback_data:         The data which will be passed to  *                         g_signal_connect().  * @initial:               The @user_data of the initially pressed radio button.  * @...:                   A #NULL terminated @va_list describing  *                         the radio buttons.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * gimp_radio_group_new2:  * @in_frame:              #TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or #NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @callback_data:         The data which will be passed to  *                         g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A #NULL terminated @va_list describing  *                         the radio buttons.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -1136,8 +1176,8 @@ parameter_list|,
 name|gpointer
 name|initial
 parameter_list|,
-comment|/* user_data */
-comment|/* specify radio buttons as va_list: 			*  const gchar *label, 			*  gpointer     user_data, 			*  GtkWidget  **widget_ptr, 			*/
+comment|/* item_data */
+comment|/* specify radio buttons as va_list: 			*  const gchar *label, 			*  gpointer     item_data, 			*  GtkWidget  **widget_ptr, 			*/
 modifier|...
 parameter_list|)
 block|{
@@ -1160,7 +1200,7 @@ modifier|*
 name|label
 decl_stmt|;
 name|gpointer
-name|user_data
+name|item_data
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1207,7 +1247,7 @@ condition|(
 name|label
 condition|)
 block|{
-name|user_data
+name|item_data
 operator|=
 name|va_arg
 argument_list|(
@@ -1281,8 +1321,22 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|user_data
+name|item_data
 condition|)
+block|{
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"gimp-item-data"
+argument_list|,
+name|item_data
+argument_list|)
+expr_stmt|;
+comment|/*  backward compatibility  */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -1292,9 +1346,10 @@ argument_list|)
 argument_list|,
 literal|"user_data"
 argument_list|,
-name|user_data
+name|item_data
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|widget_ptr
@@ -1308,7 +1363,7 @@ if|if
 condition|(
 name|initial
 operator|==
-name|user_data
+name|item_data
 condition|)
 name|gtk_toggle_button_set_active
 argument_list|(
@@ -1404,6 +1459,94 @@ block|}
 return|return
 name|vbox
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_radio_group_set_active (GtkRadioButton * radio_button,gpointer item_data)
+name|gimp_radio_group_set_active
+parameter_list|(
+name|GtkRadioButton
+modifier|*
+name|radio_button
+parameter_list|,
+name|gpointer
+name|item_data
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|button
+decl_stmt|;
+name|GSList
+modifier|*
+name|group
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_RADIO_BUTTON
+argument_list|(
+name|radio_button
+argument_list|)
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|group
+operator|=
+name|gtk_radio_button_get_group
+argument_list|(
+name|radio_button
+argument_list|)
+init|;
+name|group
+condition|;
+name|group
+operator|=
+name|g_slist_next
+argument_list|(
+name|group
+argument_list|)
+control|)
+block|{
+name|button
+operator|=
+name|GTK_WIDGET
+argument_list|(
+name|group
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+literal|"gimp-item-data"
+argument_list|)
+operator|==
+name|item_data
+condition|)
+block|{
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+block|}
 block|}
 end_function
 
@@ -2419,7 +2562,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800d08d0108
+DECL|struct|__anon2b7a4afd0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3299,7 +3442,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2800d08d0208
+DECL|struct|__anon2b7a4afd0208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -3415,7 +3558,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-item-data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4164,7 +4307,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_button_update:  * @widget: A #GtkRadioButton.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (g_object_get_user_data(object, "user_data")).  *  * Note that this function calls gimp_toggle_button_sensitive_update().  **/
+comment|/**  * gimp_radio_button_update:  * @widget: A #GtkRadioButton.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (g_object_get_user_data(@widget, "gimp-item-data")).  *  * Note that this function calls gimp_toggle_button_sensitive_update().  **/
 end_comment
 
 begin_function
@@ -4215,7 +4358,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-item-data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4232,7 +4375,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_menu_item_update:  * @widget: A #GtkMenuItem.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (g_object_get_data(object, "user_data")).  **/
+comment|/**  * gimp_menu_item_update:  * @widget: A #GtkMenuItem.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (g_object_get_data(@widget, "gimp-item-data")).  **/
 end_comment
 
 begin_function
@@ -4272,7 +4415,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-item-data"
 argument_list|)
 argument_list|)
 expr_stmt|;

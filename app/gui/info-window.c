@@ -465,7 +465,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-info-window"
 argument_list|)
 expr_stmt|;
 name|iwd
@@ -1680,7 +1680,7 @@ operator|->
 name|info_notebook
 argument_list|)
 argument_list|,
-literal|"user_data"
+literal|"gimp-info-window"
 argument_list|,
 name|info_win
 argument_list|)
