@@ -41,17 +41,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-modifier|*
-name|safemalloc
-parameter_list|(
-name|int
-name|len
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|killppm
 parameter_list|(
 name|struct

@@ -52,7 +52,7 @@ file|"imap_table.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29766bf20108
+DECL|struct|__anon2a40fc630108
 typedef|typedef
 struct|struct
 block|{
@@ -430,11 +430,9 @@ name|bound_w
 decl_stmt|,
 name|bound_h
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|bounds
-index|[
-literal|128
-index|]
 decl_stmt|;
 name|width
 operator|=
@@ -556,10 +554,10 @@ name|rows
 operator|-
 name|vspace
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|bounds
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Resulting Guide Bounds: %d,%d to %d,%d (%d areas)"
@@ -630,6 +628,11 @@ operator|->
 name|guide_bounds
 argument_list|)
 argument_list|,
+name|bounds
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|bounds
 argument_list|)
 expr_stmt|;
@@ -1442,11 +1445,9 @@ modifier|*
 name|list
 parameter_list|)
 block|{
-name|char
+name|gchar
+modifier|*
 name|dimension
-index|[
-literal|128
-index|]
 decl_stmt|;
 name|dialog
 operator|->
@@ -1454,10 +1455,10 @@ name|list
 operator|=
 name|list
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|dimension
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Image dimensions: %d x %d"
@@ -1479,6 +1480,11 @@ operator|->
 name|image_dimensions
 argument_list|)
 argument_list|,
+name|dimension
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|dimension
 argument_list|)
 expr_stmt|;
@@ -1584,7 +1590,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29766bf20208
+DECL|struct|__anon2a40fc630208
 typedef|typedef
 struct|struct
 block|{

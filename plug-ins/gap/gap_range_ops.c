@@ -197,15 +197,13 @@ decl_stmt|;
 name|gint
 name|cnt
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|title
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|hline
-index|[
-literal|100
-index|]
 decl_stmt|;
 name|gint
 name|l_width
@@ -486,10 +484,10 @@ argument_list|(
 literal|"Crop AnimFrames (all)"
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|hline
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Crop (original %dx%d)"
@@ -569,10 +567,10 @@ argument_list|(
 literal|"Resize AnimFrames (all)"
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|hline
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Resize (original %dx%d)"
@@ -616,10 +614,10 @@ argument_list|(
 literal|"Scale AnimFrames (all)"
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|hline
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Scale (original %dx%d)"
@@ -668,6 +666,11 @@ argument_list|,
 name|cnt
 argument_list|,
 name|argv
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|hline
 argument_list|)
 expr_stmt|;
 operator|*
@@ -6537,12 +6540,9 @@ name|l_percentage
 decl_stmt|,
 name|l_percentage_step
 decl_stmt|;
-specifier|static
-name|char
+name|gchar
+modifier|*
 name|l_buff
-index|[
-literal|50
-index|]
 decl_stmt|;
 name|int
 name|l_rc
@@ -6564,10 +6564,10 @@ operator|==
 name|RUN_INTERACTIVE
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|l_buff
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Removing Layer (pos:%ld) from Frames .."
@@ -6577,6 +6577,11 @@ name|position
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
+argument_list|(
+name|l_buff
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|l_buff
 argument_list|)

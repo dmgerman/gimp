@@ -452,7 +452,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2b9a075c0108
+DECL|struct|__anon27b791530108
 struct|struct
 block|{
 DECL|member|randomize
@@ -1456,10 +1456,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"only works with three or four channels, not %d.\n"
-argument_list|)
 argument_list|,
 name|bytes
 argument_list|)
@@ -3765,7 +3762,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2b9a075c0208
+DECL|struct|__anon27b791530208
 specifier|static
 struct|struct
 block|{

@@ -73,7 +73,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3a4c10108
+DECL|struct|__anon28a280b70108
 block|{
 DECL|member|replace
 name|guint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3a4c10208
+DECL|struct|__anon28a280b70208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3a4c10308
+DECL|struct|__anon28a280b70308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1872,20 +1872,8 @@ condition|)
 block|{
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|64
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"

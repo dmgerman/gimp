@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274b5f880108
+DECL|struct|__anon2ac24ba60108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1372,8 +1372,6 @@ name|progress
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|progress
-argument_list|,
 name|_
 argument_list|(
 literal|"Loading %s:"

@@ -973,10 +973,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"ZealousCrop(tm): Nothing to be done.\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

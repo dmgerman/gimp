@@ -477,7 +477,7 @@ comment|/* Description of a composition */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5f66fd0108
+DECL|struct|__anon2743cf120108
 typedef|typedef
 struct|struct
 block|{
@@ -753,7 +753,7 @@ value|(sizeof (compose_dsc) / sizeof (compose_dsc[0]))
 end_define
 
 begin_typedef
-DECL|struct|__anon2c5f66fd0208
+DECL|struct|__anon2743cf120208
 typedef|typedef
 struct|struct
 block|{
@@ -784,7 +784,7 @@ comment|/* Dialog structure */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5f66fd0308
+DECL|struct|__anon2743cf120308
 typedef|typedef
 struct|struct
 block|{
@@ -1323,11 +1323,9 @@ decl_stmt|;
 name|int
 name|compose_by_drawable
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|msg
-index|[
-literal|256
-index|]
 decl_stmt|;
 name|INIT_I18N_UI
 argument_list|()
@@ -1476,11 +1474,14 @@ literal|0
 operator|)
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|msg
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
 literal|"compose: Could not get layers for image %d"
+argument_list|)
 argument_list|,
 operator|(
 name|int
@@ -1496,6 +1497,11 @@ name|d_int32
 argument_list|)
 expr_stmt|;
 name|show_message
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|msg
 argument_list|)
@@ -2052,7 +2058,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-literal|"compose: drawables have different size"
+name|_
+argument_list|(
+literal|"Compose: Drawables have different size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2160,7 +2169,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-literal|"compose: images have different size"
+name|_
+argument_list|(
+literal|"Compose: Images have different size"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2219,7 +2231,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
-literal|"compose: error in getting layer IDs"
+name|_
+argument_list|(
+literal|"Compose: Error in getting layer IDs"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2299,19 +2314,15 @@ literal|2
 operator|)
 condition|)
 block|{
-name|char
+name|gchar
+modifier|*
 name|msg
-index|[
-literal|256
-index|]
 decl_stmt|;
-name|sprintf
+name|g_strdup_printf
 argument_list|(
-name|msg
-argument_list|,
 name|_
 argument_list|(
-literal|"compose: image is not a gray image (bpp=%d)"
+literal|"Compose: Image is not a gray image (bpp=%d)"
 argument_list|)
 argument_list|,
 name|incr_src
@@ -2321,6 +2332,11 @@ index|]
 argument_list|)
 expr_stmt|;
 name|show_message
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|msg
 argument_list|)
@@ -2386,31 +2402,6 @@ operator|->
 name|bpp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|src
-index|[
-name|j
-index|]
-operator|==
-name|NULL
-condition|)
-block|{
-name|show_message
-argument_list|(
-name|_
-argument_list|(
-literal|"compose: not enough memory"
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-operator|-
-literal|1
-operator|)
-return|;
-block|}
 block|}
 comment|/* Create new image */
 name|gdtype_dst
@@ -2475,49 +2466,6 @@ operator|->
 name|bpp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|dst
-operator|==
-name|NULL
-condition|)
-block|{
-for|for
-control|(
-name|j
-operator|=
-literal|0
-init|;
-name|j
-operator|<
-name|num_images
-condition|;
-name|j
-operator|++
-control|)
-name|g_free
-argument_list|(
-name|src
-index|[
-name|j
-index|]
-argument_list|)
-expr_stmt|;
-name|show_message
-argument_list|(
-name|_
-argument_list|(
-literal|"compose: not enough memory"
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-operator|-
-literal|1
-operator|)
-return|;
-block|}
 comment|/* Do the composition */
 name|i
 operator|=

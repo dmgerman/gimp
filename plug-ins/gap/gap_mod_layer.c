@@ -194,13 +194,6 @@ decl_stmt|;
 name|gint
 name|l_rc
 decl_stmt|;
-specifier|static
-name|char
-name|l_buf
-index|[
-name|MAX_LAYERNAME
-index|]
-decl_stmt|;
 comment|/* Layer select modes */
 specifier|static
 name|char
@@ -444,16 +437,6 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|sprintf
-argument_list|(
-name|l_buf
-argument_list|,
-name|_
-argument_list|(
-literal|"Perform function on one or more Layer(s)\nin all frames of the selected framerange\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* the 3 Action Buttons */
 name|b_argv
 index|[
@@ -516,11 +499,10 @@ index|]
 operator|.
 name|label_txt
 operator|=
-operator|&
-name|l_buf
-index|[
-literal|0
-index|]
+name|_
+argument_list|(
+literal|"Perform function on one or more Layer(s)\nin all frames of the selected framerange\n"
+argument_list|)
 expr_stmt|;
 name|p_init_arr_arg
 argument_list|(
@@ -1168,15 +1150,13 @@ modifier|*
 name|filter_procname
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|l_env
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|l_msg
-index|[
-literal|512
-index|]
 decl_stmt|;
 specifier|static
 name|t_but_arg
@@ -1297,10 +1277,10 @@ operator|==
 literal|0
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|l_msg
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"2.nd call of %s\n(define end-settings)"
@@ -1312,10 +1292,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|sprintf
-argument_list|(
 name|l_msg
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Non-Interactive call of %s\n(for all selected layers)"
@@ -1345,6 +1325,11 @@ argument_list|,
 name|l_but_argv
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|l_msg
 argument_list|)
 expr_stmt|;
 return|return

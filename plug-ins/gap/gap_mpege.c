@@ -3018,10 +3018,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"cant open MPEG Paramfile %s for write\n"
-argument_list|)
 argument_list|,
 name|mp_ptr
 operator|->
@@ -5529,10 +5526,7 @@ else|else
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"sorry folks, NON_INTERACTIVE call .. not implemented yet\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|l_rc

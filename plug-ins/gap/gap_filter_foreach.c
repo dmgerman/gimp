@@ -246,15 +246,13 @@ name|gint32
 name|layer_idx
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|l_env
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|l_msg
-index|[
-literal|512
-index|]
 decl_stmt|;
 specifier|static
 name|t_but_arg
@@ -481,10 +479,10 @@ operator|==
 literal|0
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|l_msg
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"2.nd call of %s\n(define end-settings)"
@@ -496,10 +494,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|sprintf
-argument_list|(
 name|l_msg
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Non-Interactive call of %s\n(for all layers inbetween)"
@@ -537,6 +535,11 @@ argument_list|,
 name|l_but_argv
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|l_msg
 argument_list|)
 expr_stmt|;
 if|if
@@ -673,10 +676,7 @@ else|else
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Error: Plugin %s has changed Nr. of layers from %d to %d\ncould not restore Layer visibilty.\n"
-argument_list|)
 argument_list|,
 name|plugin_name
 argument_list|,
@@ -750,10 +750,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning: cant get layers (maybe the image was closed)\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -780,10 +777,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Error: Plugin %s has changed Nr. of layers from %d to %d\nAnim Filter apply stopped.\n"
-argument_list|)
 argument_list|,
 name|plugin_name
 argument_list|,
@@ -961,10 +955,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"ERROR: Plugin not available or wrong type %s\n"
-argument_list|)
 argument_list|,
 name|plugin_name
 argument_list|)
@@ -1034,10 +1025,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
-literal|"ERROR: need at 1 Layers to apply plugin !\n"
-argument_list|)
+literal|"ERROR: need at least 1 Layers to apply plugin !\n"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1188,10 +1176,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"ERROR: fork failed !\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1964,10 +1949,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Saving image to backupfile:%s step = %d\n"
-argument_list|)
 argument_list|,
 name|l_step_backup_file
 argument_list|,

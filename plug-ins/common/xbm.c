@@ -2710,10 +2710,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"XBM: can only save two color indexed images\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

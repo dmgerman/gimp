@@ -948,11 +948,9 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|char
+name|gchar
+modifier|*
 name|scratch
-index|[
-literal|64
-index|]
 decl_stmt|;
 comment|/* Set undo entry */
 if|if
@@ -968,10 +966,10 @@ operator|.
 name|undo
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|scratch
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Undo %s"
@@ -1008,6 +1006,11 @@ operator|&
 name|_menu
 operator|.
 name|cmd_undo
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|scratch
 argument_list|)
 expr_stmt|;
 name|add_accelerator
@@ -1053,10 +1056,10 @@ operator|.
 name|redo
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|scratch
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Redo %s"
@@ -1093,6 +1096,11 @@ operator|&
 name|_menu
 operator|.
 name|cmd_redo
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|scratch
 argument_list|)
 expr_stmt|;
 name|add_accelerator

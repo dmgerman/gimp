@@ -122,20 +122,8 @@ condition|)
 block|{
 name|temp_buf
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|name
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp_buf
-argument_list|,
 name|_
 argument_list|(
 literal|"Loading %s:"

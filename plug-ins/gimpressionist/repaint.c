@@ -1140,10 +1140,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"What!? No brushes?!\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2319,10 +2316,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"Huh? Image size != alpha size?\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2383,7 +2377,7 @@ name|brushgamma
 expr_stmt|;
 name|brushes
 operator|=
-name|safemalloc
+name|g_malloc
 argument_list|(
 name|numbrush
 operator|*
@@ -2396,7 +2390,7 @@ argument_list|)
 expr_stmt|;
 name|brushsum
 operator|=
-name|safemalloc
+name|g_malloc
 argument_list|(
 name|numbrush
 operator|*
@@ -2412,7 +2406,7 @@ name|dropshadow
 condition|)
 name|shadows
 operator|=
-name|safemalloc
+name|g_malloc
 argument_list|(
 name|numbrush
 operator|*
@@ -5184,26 +5178,20 @@ name|j
 decl_stmt|;
 name|xpos
 operator|=
-name|safemalloc
-argument_list|(
-name|i
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|int
-argument_list|)
+argument_list|,
+name|i
 argument_list|)
 expr_stmt|;
 name|ypos
 operator|=
-name|safemalloc
-argument_list|(
-name|i
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|int
-argument_list|)
+argument_list|,
+name|i
 argument_list|)
 expr_stmt|;
 for|for
@@ -5795,10 +5783,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"Internal error; Unknown orientationtype\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|on
@@ -5889,10 +5874,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"Internal error; Unknown sizetype\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|sn
@@ -6838,7 +6820,7 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|brushes
 argument_list|)
@@ -6847,14 +6829,32 @@ if|if
 condition|(
 name|shadows
 condition|)
-name|free
+name|g_free
 argument_list|(
 name|shadows
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|brushsum
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|xpos
+condition|)
+name|g_free
+argument_list|(
+name|xpos
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|ypos
+condition|)
+name|g_free
+argument_list|(
+name|ypos
 argument_list|)
 expr_stmt|;
 if|if

@@ -66,7 +66,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon297e45580103
+DECL|enum|__anon2c76ccb30103
 enum|enum
 block|{
 DECL|enumerator|CHAR_SELECTED
@@ -282,10 +282,8 @@ literal|2
 index|]
 decl_stmt|;
 name|gchar
+modifier|*
 name|tip
-index|[
-literal|20
-index|]
 decl_stmt|;
 name|GtkTooltips
 modifier|*
@@ -522,10 +520,10 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|tip
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Char: %c, %d, 0x%02x"
@@ -553,6 +551,11 @@ argument_list|,
 name|tip
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tip
 argument_list|)
 expr_stmt|;
 block|}

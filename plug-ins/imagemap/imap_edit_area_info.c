@@ -2656,11 +2656,9 @@ name|gboolean
 name|add
 parameter_list|)
 block|{
-name|char
+name|gchar
+modifier|*
 name|title
-index|[
-literal|64
-index|]
 decl_stmt|;
 name|object_unlock
 argument_list|(
@@ -2824,10 +2822,10 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|title
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Area #%d Settings"
@@ -2847,6 +2845,11 @@ name|dialog
 operator|->
 name|dialog
 argument_list|,
+name|title
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|title
 argument_list|)
 expr_stmt|;

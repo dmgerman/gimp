@@ -196,8 +196,16 @@ name|PREVIEW_MASK
 value|GDK_EXPOSURE_MASK | \ 		       GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTTON1_MOTION_MASK
 end_define
 
+begin_define
+DECL|macro|LABEL_LENGTH
+define|#
+directive|define
+name|LABEL_LENGTH
+value|32
+end_define
+
 begin_typedef
-DECL|struct|__anon2ae526240108
+DECL|struct|__anon2c880fa40108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +220,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ae526240208
+DECL|struct|__anon2c880fa40208
 typedef|typedef
 struct|struct
 block|{
@@ -239,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae526240308
+DECL|struct|__anon2c880fa40308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -346,42 +354,42 @@ DECL|member|X_Label
 name|char
 name|X_Label
 index|[
-literal|20
+name|LABEL_LENGTH
 index|]
 decl_stmt|;
 DECL|member|Y_Label
 name|char
 name|Y_Label
 index|[
-literal|20
+name|LABEL_LENGTH
 index|]
 decl_stmt|;
 DECL|member|Opacity_Label
 name|char
 name|Opacity_Label
 index|[
-literal|30
+name|LABEL_LENGTH
 index|]
 decl_stmt|;
 DECL|member|Wresize_Label
 name|char
 name|Wresize_Label
 index|[
-literal|30
+name|LABEL_LENGTH
 index|]
 decl_stmt|;
 DECL|member|Hresize_Label
 name|char
 name|Hresize_Label
 index|[
-literal|30
+name|LABEL_LENGTH
 index|]
 decl_stmt|;
 DECL|member|Rotation_Label
 name|char
 name|Rotation_Label
 index|[
-literal|30
+name|LABEL_LENGTH
 index|]
 decl_stmt|;
 DECL|member|X_LabelPtr
@@ -467,7 +475,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ae526240408
+DECL|struct|__anon2c880fa40408
 typedef|typedef
 struct|struct
 block|{
@@ -5707,7 +5715,7 @@ modifier|*
 name|path_ptr
 parameter_list|)
 block|{
-name|sprintf
+name|snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5716,6 +5724,8 @@ name|X_Label
 index|[
 literal|0
 index|]
+argument_list|,
+name|LABEL_LENGTH
 argument_list|,
 name|_
 argument_list|(
@@ -5729,7 +5739,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5738,6 +5748,8 @@ name|Y_Label
 index|[
 literal|0
 index|]
+argument_list|,
+name|LABEL_LENGTH
 argument_list|,
 name|_
 argument_list|(
@@ -5751,7 +5763,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5760,6 +5772,8 @@ name|Opacity_Label
 index|[
 literal|0
 index|]
+argument_list|,
+name|LABEL_LENGTH
 argument_list|,
 name|_
 argument_list|(
@@ -5773,7 +5787,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5782,6 +5796,8 @@ name|Wresize_Label
 index|[
 literal|0
 index|]
+argument_list|,
+name|LABEL_LENGTH
 argument_list|,
 name|_
 argument_list|(
@@ -5795,7 +5811,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5804,6 +5820,8 @@ name|Hresize_Label
 index|[
 literal|0
 index|]
+argument_list|,
+name|LABEL_LENGTH
 argument_list|,
 name|_
 argument_list|(
@@ -5817,7 +5835,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 operator|&
 name|path_ptr
@@ -5826,6 +5844,8 @@ name|Rotation_Label
 index|[
 literal|0
 index|]
+argument_list|,
+name|LABEL_LENGTH
 argument_list|,
 name|_
 argument_list|(

@@ -293,10 +293,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"Error opening file \"%s\" for reading!%c\n"
-argument_list|)
 argument_list|,
 name|fname
 argument_list|,
@@ -1956,10 +1953,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"Error opening file \"%s\" for reading!\n"
-argument_list|)
 argument_list|,
 name|fn
 argument_list|)
@@ -2873,10 +2867,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"Internal error: (savepreset) thispath == NULL"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2917,10 +2908,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"Error opening file \"%s\" for writing!%c\n"
-argument_list|)
 argument_list|,
 name|fname
 argument_list|,
@@ -3866,22 +3854,6 @@ name|GtkWidget
 modifier|*
 name|tmpw
 decl_stmt|;
-name|char
-name|title
-index|[
-literal|100
-index|]
-decl_stmt|;
-name|sprintf
-argument_list|(
-name|title
-argument_list|,
-name|_
-argument_list|(
-literal|"Presets"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|labelbox
 operator|=
 name|gtk_hbox_new
@@ -3895,7 +3867,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
-name|title
+name|_
+argument_list|(
+literal|"Presets"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3932,7 +3907,10 @@ name|tmpw
 operator|=
 name|gtk_label_new
 argument_list|(
-name|title
+name|_
+argument_list|(
+literal|"Presets"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

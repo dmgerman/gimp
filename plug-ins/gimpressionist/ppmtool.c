@@ -88,12 +88,6 @@ directive|include
 file|"gimpressionist.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<libgimp/stdplugins-intl.h>
-end_include
-
 begin_function
 DECL|function|readline (FILE * f,char * buffer,int len)
 name|int
@@ -206,58 +200,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|safemalloc (int len)
-name|void
-modifier|*
-name|safemalloc
-parameter_list|(
-name|int
-name|len
-parameter_list|)
-block|{
-name|void
-modifier|*
-name|p
-init|=
-name|g_malloc
-argument_list|(
-name|len
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|p
-condition|)
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-name|_
-argument_list|(
-literal|"(When allocating %u bytes.)\n"
-argument_list|)
-argument_list|,
-name|len
-argument_list|)
-expr_stmt|;
-name|fatal
-argument_list|(
-name|_
-argument_list|(
-literal|"Out of memory!\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|p
-return|;
-block|}
-end_function
-
-begin_function
 DECL|function|killppm (struct ppm * p)
 name|void
 name|killppm
@@ -364,7 +306,7 @@ name|p
 operator|->
 name|col
 operator|=
-name|safemalloc
+name|g_malloc
 argument_list|(
 name|xs
 operator|*
@@ -1592,10 +1534,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"loadgbr: Unable to open file \"%s\"!\n"
-argument_list|)
 argument_list|,
 name|fn
 argument_list|)
@@ -1672,7 +1611,7 @@ argument_list|)
 expr_stmt|;
 name|ptr
 operator|=
-name|safemalloc
+name|g_malloc
 argument_list|(
 name|hdr
 operator|.
@@ -1905,10 +1844,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"loadppm: Unable to open file \"%s\"!\n"
-argument_list|)
 argument_list|,
 name|fn
 argument_list|)
@@ -1961,10 +1897,7 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"loadppm: File \"%s\" not PPM/PGM? (line=\"%s\")%c\n"
-argument_list|)
 argument_list|,
 name|fn
 argument_list|,
@@ -2045,10 +1978,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"loadppm: File \"%s\" not valid PPM/PGM? (line=\"%s\")%c\n"
-argument_list|)
 argument_list|,
 name|fn
 argument_list|,
@@ -2073,7 +2003,7 @@ name|p
 operator|->
 name|col
 operator|=
-name|safemalloc
+name|g_malloc
 argument_list|(
 name|p
 operator|->
@@ -2120,7 +2050,7 @@ name|guchar
 modifier|*
 name|tmpcol
 init|=
-name|safemalloc
+name|g_malloc
 argument_list|(
 name|p
 operator|->
@@ -2436,7 +2366,7 @@ name|p
 operator|->
 name|col
 operator|=
-name|safemalloc
+name|g_malloc
 argument_list|(
 name|p
 operator|->

@@ -138,7 +138,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c6b80c0108
+DECL|struct|__anon29d148500108
 typedef|typedef
 struct|struct
 block|{
@@ -227,7 +227,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28c6b80c0208
+DECL|struct|__anon29d148500208
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +881,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6b80c0308
+DECL|struct|__anon29d148500308
 block|{
 DECL|member|rle
 name|gint
@@ -897,7 +897,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6b80c0408
+DECL|struct|__anon29d148500408
 block|{
 DECL|member|run
 name|gint
@@ -2009,8 +2009,6 @@ name|temp
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"Loading %s:"
@@ -8690,10 +8688,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-name|_
-argument_list|(
 literal|"sunras: %s\n"
-argument_list|)
 argument_list|,
 name|message
 argument_list|)

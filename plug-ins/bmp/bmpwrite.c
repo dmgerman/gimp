@@ -121,7 +121,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289df8f10108
+DECL|struct|__anon2ba306510108
 block|{
 DECL|member|run
 name|gint
@@ -665,20 +665,8 @@ condition|)
 block|{
 name|temp_buf
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp_buf
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"

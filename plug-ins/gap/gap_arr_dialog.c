@@ -100,7 +100,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b8355a0108
+DECL|struct|__anon28dcfafe0108
 typedef|typedef
 struct|struct
 block|{
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b8355a0208
+DECL|struct|__anon28dcfafe0208
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -146,7 +146,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b8355a0308
+DECL|struct|__anon28dcfafe0308
 typedef|typedef
 struct|struct
 block|{
@@ -3234,10 +3234,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"pair_flt_create_value: Bad FloatFormat ignored %s\n"
-argument_list|)
 argument_list|,
 name|arr_ptr
 operator|->
@@ -4098,10 +4095,7 @@ condition|)
 block|{
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"pair_int_create_value: Bad IntFormat ignored %s\n"
-argument_list|)
 argument_list|,
 name|arr_ptr
 operator|->
@@ -5560,10 +5554,7 @@ name|WGT_ACT_BUTTON
 case|:
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"WGT_ACT_BUTTON not implemented yet, widget type ignored\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5571,10 +5562,7 @@ default|default:
 comment|/* undefined widget type */
 name|printf
 argument_list|(
-name|_
-argument_list|(
 literal|"Unknown widget type %d ignored\n"
-argument_list|)
 argument_list|,
 name|arr_ptr
 operator|->

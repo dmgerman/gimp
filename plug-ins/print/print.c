@@ -120,7 +120,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f66dc20108
+DECL|struct|__anon2beb1ed00108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -3953,11 +3953,9 @@ literal|"Landscape"
 argument_list|)
 block|}
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|plug_in_name
-index|[
-literal|80
-index|]
 decl_stmt|;
 comment|/*   * Initialize the program's display...   */
 name|init_gtk
@@ -4000,10 +3998,10 @@ operator|=
 name|gtk_dialog_new
 argument_list|()
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|plug_in_name
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Print v%s"
@@ -4019,6 +4017,11 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|plug_in_name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|plug_in_name
 argument_list|)
 expr_stmt|;

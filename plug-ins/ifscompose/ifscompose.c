@@ -124,7 +124,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon2b2b571a0103
+DECL|enum|__anon29fcea290103
 typedef|typedef
 enum|enum
 block|{
@@ -144,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b2b571a0203
+DECL|enum|__anon29fcea290203
 typedef|typedef
 enum|enum
 block|{
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b571a0308
+DECL|struct|__anon29fcea290308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -183,7 +183,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon2b2b571a040a
+DECL|union|__anon29fcea29040a
 union|union
 block|{
 DECL|member|d
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b571a0508
+DECL|struct|__anon29fcea290508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b571a0608
+DECL|struct|__anon29fcea290608
 block|{
 DECL|member|color
 name|IfsColor
@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b571a0708
+DECL|struct|__anon29fcea290708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b571a0808
+DECL|struct|__anon29fcea290808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b571a0908
+DECL|struct|__anon29fcea290908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b571a0a08
+DECL|struct|__anon29fcea290a08
 block|{
 DECL|member|run
 name|gint
@@ -7749,10 +7749,8 @@ name|id
 argument_list|)
 decl_stmt|;
 name|gchar
+modifier|*
 name|buffer
-index|[
-literal|128
-index|]
 decl_stmt|;
 name|gint
 name|width
@@ -7962,10 +7960,10 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|sprintf
-argument_list|(
 name|buffer
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Rendering IFS (%d/%d)..."
@@ -7979,6 +7977,11 @@ name|num_bands
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|buffer
 argument_list|)
@@ -8068,10 +8071,10 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* transfer the image to the drawable */
-name|sprintf
-argument_list|(
 name|buffer
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Copying IFS to image (%d/%d)..."
@@ -8085,6 +8088,11 @@ name|num_bands
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|buffer
 argument_list|)
