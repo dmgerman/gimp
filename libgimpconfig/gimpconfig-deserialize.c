@@ -201,7 +201,7 @@ end_function_decl
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_deserialize_properties (GObject * object,GScanner * scanner)
+DECL|function|gimp_config_deserialize_properties (GObject * object,GScanner * scanner,gboolean store_unknown_tokens)
 name|gimp_config_deserialize_properties
 parameter_list|(
 name|GObject
@@ -211,6 +211,9 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gboolean
+name|store_unknown_tokens
 parameter_list|)
 block|{
 name|GObjectClass
@@ -356,7 +359,6 @@ argument_list|(
 name|scanner
 argument_list|)
 expr_stmt|;
-comment|/* if we expected a symbol, but got an identifier,          try parsing it with gimp_config_deserialize_unknown */
 if|if
 condition|(
 name|next
@@ -365,6 +367,8 @@ name|token
 operator|&&
 operator|!
 operator|(
+name|store_unknown_tokens
+operator|&&
 name|token
 operator|==
 name|G_TOKEN_SYMBOL
@@ -552,14 +556,16 @@ name|object
 argument_list|,
 name|key
 argument_list|,
-name|g_strdup
-argument_list|(
 name|scanner
 operator|->
 name|value
 operator|.
 name|v_string
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|key
 argument_list|)
 expr_stmt|;
 return|return

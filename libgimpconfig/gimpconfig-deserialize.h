@@ -27,6 +27,9 @@ parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
+parameter_list|,
+name|gboolean
+name|store_unknown_tokens
 parameter_list|)
 function_decl|;
 end_function_decl
