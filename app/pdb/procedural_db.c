@@ -671,10 +671,18 @@ return|return
 name|return_args
 return|;
 block|}
-while|while
-condition|(
+for|for
+control|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 if|if
 condition|(
@@ -730,12 +738,6 @@ return|return
 name|return_args
 return|;
 block|}
-name|list
-operator|=
-name|list
-operator|->
-name|next
-expr_stmt|;
 comment|/*  check the arguments  */
 for|for
 control|(
@@ -943,7 +945,6 @@ operator|->
 name|num_values
 argument_list|)
 expr_stmt|;
-comment|/*  Check if the return value is a PDB_PASS_THROUGH,            in which case run the next procedure in the list  */
 if|if
 condition|(
 name|return_args
@@ -954,16 +955,18 @@ operator|.
 name|value
 operator|.
 name|pdb_int
-operator|!=
+operator|==
 name|GIMP_PDB_PASS_THROUGH
 condition|)
-break|break;
-elseif|else
+block|{
+comment|/*  If the return value is GIMP_PDB_PASS_THROUGH and there is            *  a next procedure in the list, destroy the return values            *  and run the next procedure.            */
 if|if
 condition|(
+name|g_list_next
+argument_list|(
 name|list
+argument_list|)
 condition|)
-comment|/*  Pass through,                            destroy return values and run another procedure  */
 name|procedural_db_destroy_args
 argument_list|(
 name|return_args
@@ -973,6 +976,12 @@ operator|->
 name|num_values
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|/*  No GIMP_PDB_PASS_THROUGH, break out of the list of            *  procedures and return the current return values.            */
+break|break;
+block|}
 block|}
 return|return
 name|return_args

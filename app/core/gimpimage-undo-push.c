@@ -257,7 +257,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a35a60e0103
+DECL|enum|__anon2bb719080103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -6510,16 +6510,12 @@ operator|->
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  if exists, set the previous layer                                           */
-comment|/* (counterexample: result layer added after a merge op has no previous layer.) */
+comment|/*  if exists, set the previous layer  */
 if|if
 condition|(
-name|GIMP_IS_LAYER
-argument_list|(
 name|lu
 operator|->
 name|prev_layer
-argument_list|)
 condition|)
 name|gimp_image_set_active_layer
 argument_list|(
@@ -9159,14 +9155,13 @@ name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  if exists, set the previous channel  */
 if|if
 condition|(
 name|cu
 operator|->
 name|prev_channel
 condition|)
-block|{
-comment|/*  set the previous channel  */
 name|gimp_image_set_active_channel
 argument_list|(
 name|gimage
@@ -9176,7 +9171,6 @@ operator|->
 name|prev_channel
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  update the area  */
 name|gimp_drawable_update
 argument_list|(
@@ -10437,14 +10431,13 @@ name|vectors
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  if exists, set the previous vectors  */
 if|if
 condition|(
 name|vu
 operator|->
 name|prev_vectors
 condition|)
-block|{
-comment|/*  set the previous vectors  */
 name|gimp_image_set_active_vectors
 argument_list|(
 name|gimage
@@ -10454,7 +10447,6 @@ operator|->
 name|prev_vectors
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -11745,7 +11737,6 @@ return|return
 name|TRUE
 return|;
 block|}
-else|else
 return|return
 name|FALSE
 return|;
@@ -12085,7 +12076,6 @@ return|return
 name|TRUE
 return|;
 block|}
-else|else
 return|return
 name|FALSE
 return|;
