@@ -1099,6 +1099,8 @@ condition|)
 return|return;
 if|if
 condition|(
+name|gdisp
+operator|&&
 name|tool_manager
 operator|->
 name|active_tool
