@@ -49,6 +49,14 @@ value|"gimp-file-open"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILE_OPEN_LOCATION
+define|#
+directive|define
+name|GIMP_HELP_FILE_OPEN_LOCATION
+value|"gimp-file-open-location"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_OPEN_BY_EXTENSION
 define|#
 directive|define

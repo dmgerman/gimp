@@ -180,7 +180,7 @@ block|,
 block|{
 literal|"file-open-recent-menu"
 block|,
-name|GTK_STOCK_OPEN
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -249,6 +249,28 @@ name|file_open_from_image_cmd_callback
 argument_list|)
 block|,
 name|GIMP_HELP_FILE_OPEN
+block|}
+block|,
+block|{
+literal|"file-open-location"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"_Open Location..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|file_open_location_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_FILE_OPEN_LOCATION
 block|}
 block|,
 block|{
