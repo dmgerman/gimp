@@ -6943,6 +6943,12 @@ name|cache_invalid
 operator|=
 name|TRUE
 expr_stmt|;
+name|core
+operator|->
+name|solid_cache_invalid
+operator|=
+name|TRUE
+expr_stmt|;
 return|return
 name|core
 operator|->
