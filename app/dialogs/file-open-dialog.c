@@ -1521,7 +1521,7 @@ name|gtk_label_set_text
 argument_list|(
 name|label
 argument_list|,
-name|gimp_imagefile_get_description
+name|gimp_imagefile_get_desc_string
 argument_list|(
 name|imagefile
 argument_list|)

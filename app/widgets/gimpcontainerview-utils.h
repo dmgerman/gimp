@@ -16,10 +16,6 @@ directive|define
 name|__GIMP_CONTAINER_VIEW_UTILS_H__
 end_define
 
-begin_comment
-comment|/*  public  */
-end_comment
-
 begin_function_decl
 name|GimpContainerView
 modifier|*
@@ -28,30 +24,6 @@ parameter_list|(
 name|GimpDockable
 modifier|*
 name|dockable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  private  */
-end_comment
-
-begin_function_decl
-name|GimpItemGetNameFunc
-name|gimp_container_view_get_built_in_name_func
-parameter_list|(
-name|GType
-name|type
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_container_view_is_built_in_name_func
-parameter_list|(
-name|GimpItemGetNameFunc
-name|get_name_func
 parameter_list|)
 function_decl|;
 end_function_decl

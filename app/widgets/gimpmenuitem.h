@@ -118,7 +118,6 @@ name|GtkWidget
 modifier|*
 name|name_label
 decl_stmt|;
-comment|/*< protected>*/
 DECL|member|preview_size
 name|gint
 name|preview_size
@@ -126,11 +125,6 @@ decl_stmt|;
 DECL|member|preview_border_width
 name|gint
 name|preview_border_width
-decl_stmt|;
-comment|/*< private>*/
-DECL|member|get_name_func
-name|GimpItemGetNameFunc
-name|get_name_func
 decl_stmt|;
 block|}
 struct|;
@@ -190,20 +184,6 @@ name|preview_size
 parameter_list|,
 name|gint
 name|preview_border_width
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_menu_item_set_name_func
-parameter_list|(
-name|GimpMenuItem
-modifier|*
-name|menu_item
-parameter_list|,
-name|GimpItemGetNameFunc
-name|get_name_func
 parameter_list|)
 function_decl|;
 end_function_decl

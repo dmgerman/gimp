@@ -94,7 +94,7 @@ end_comment
 begin_function_decl
 name|guchar
 modifier|*
-name|readXVThumb
+name|file_utils_readXVThumb
 parameter_list|(
 specifier|const
 name|gchar

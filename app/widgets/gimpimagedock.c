@@ -866,6 +866,8 @@ name|menu
 argument_list|)
 argument_list|,
 name|menu_preview_height
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request

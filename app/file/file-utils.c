@@ -2690,14 +2690,14 @@ block|}
 end_function
 
 begin_comment
-comment|/* The readXVThumb function source may be re-used under    the XFree86-style license.<adam@gimp.org> */
+comment|/* The readXVThumb function source may be re-used under  * the XFree86-style license.<adam@gimp.org>  */
 end_comment
 
 begin_function
 name|guchar
 modifier|*
-DECL|function|readXVThumb (const gchar * fnam,gint * w,gint * h,gchar ** imginfo)
-name|readXVThumb
+DECL|function|file_utils_readXVThumb (const gchar * fnam,gint * w,gint * h,gchar ** imginfo)
+name|file_utils_readXVThumb
 parameter_list|(
 specifier|const
 name|gchar

@@ -894,7 +894,7 @@ argument_list|)
 expr_stmt|;
 name|raw_thumb
 operator|=
-name|readXVThumb
+name|file_utils_readXVThumb
 argument_list|(
 name|tname
 argument_list|,
