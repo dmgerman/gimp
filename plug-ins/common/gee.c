@@ -71,12 +71,9 @@ begin_comment
 comment|/* Is the plug-in hidden?  Hey, if you can read this, you may    as well comment-out the next line...! */
 end_comment
 
-begin_define
-DECL|macro|HIDDEN
-define|#
-directive|define
-name|HIDDEN
-end_define
+begin_comment
+comment|//#define HIDDEN
+end_comment
 
 begin_comment
 comment|/* Declare local functions. */
@@ -373,23 +370,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|total_frames
-specifier|static
-name|gint32
-name|total_frames
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|layers
-specifier|static
-name|gint32
-modifier|*
-name|layers
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|drawable
 specifier|static
 name|GimpDrawable
@@ -448,7 +428,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
-literal|"Always interactive"
+literal|"Must be interactive (1)"
 block|}
 block|,
 block|{
@@ -615,6 +595,17 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+name|image_id
+operator|=
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_image
+expr_stmt|;
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -629,19 +620,23 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
-name|image_id
-operator|=
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|fprintf(stderr, "Got these: %d, %d, %d(%p)\n", 	      (int)param[0].data.d_int32, 	      (int)param[1].data.d_image, 	      (int)param[2].data.d_drawable, 	      drawable 	      );
+endif|#
+directive|endif
+if|if
+condition|(
+name|drawable
+condition|)
 name|do_fun
 argument_list|()
+expr_stmt|;
+else|else
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -1294,16 +1289,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|layers
-operator|=
-name|gimp_image_get_layers
-argument_list|(
-name|image_id
-argument_list|,
-operator|&
-name|total_frames
-argument_list|)
-expr_stmt|;
 name|imagetype
 operator|=
 name|gimp_image_base_type
