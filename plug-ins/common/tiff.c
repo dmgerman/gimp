@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291407780108
+DECL|struct|__anon2a0acfc30108
 block|{
 DECL|member|compression
 name|gint
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291407780208
+DECL|struct|__anon2a0acfc30208
 block|{
 DECL|member|run
 name|gboolean
@@ -92,7 +92,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291407780308
+DECL|struct|__anon2a0acfc30308
 block|{
 DECL|member|ID
 name|gint32
@@ -4453,6 +4453,7 @@ condition|;
 operator|++
 name|i
 control|)
+block|{
 operator|*
 name|channel
 index|[
@@ -4469,6 +4470,7 @@ name|source
 operator|+=
 literal|2
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
