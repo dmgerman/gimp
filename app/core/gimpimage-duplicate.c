@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-new.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplayer.h"
 end_include
 

@@ -184,12 +184,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-new.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimagefile.h"
 end_include
 
@@ -255,7 +249,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b16e2a20103
+DECL|enum|__anon2c094a3a0103
 block|{
 DECL|enumerator|EXIT
 name|EXIT

@@ -33,12 +33,12 @@ DECL|macro|GIMP_MAX_IMAGE_SIZE
 define|#
 directive|define
 name|GIMP_MAX_IMAGE_SIZE
-value|16777216
+value|262144
 end_define
 
 begin_comment
 DECL|macro|GIMP_MAX_IMAGE_SIZE
-comment|/*  2^24  */
+comment|/*  2^18  */
 end_comment
 
 begin_comment

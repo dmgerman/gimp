@@ -103,7 +103,7 @@ name|filename
 operator|=
 name|gimp_personal_rc_file
 argument_list|(
-literal|"templates"
+literal|"templaterc"
 argument_list|)
 expr_stmt|;
 if|if
@@ -171,7 +171,7 @@ name|gchar
 modifier|*
 name|header
 init|=
-literal|"GIMP templates\n"
+literal|"GIMP templaterc\n"
 literal|"\n"
 literal|"This file will be entirely rewritten every time you quit the gimp."
 decl_stmt|;
@@ -180,7 +180,7 @@ name|gchar
 modifier|*
 name|footer
 init|=
-literal|"end of templates"
+literal|"end of templaterc"
 decl_stmt|;
 name|gchar
 modifier|*
@@ -214,7 +214,7 @@ name|filename
 operator|=
 name|gimp_personal_rc_file
 argument_list|(
-literal|"templates"
+literal|"templaterc"
 argument_list|)
 expr_stmt|;
 if|if

@@ -995,12 +995,12 @@ literal|'m'
 case|:
 comment|/* memory used by image */
 block|{
-name|gsize
+name|gulong
 name|memsize
 decl_stmt|;
 name|gchar
 modifier|*
-name|size_str
+name|memsize_str
 decl_stmt|;
 name|memsize
 operator|=
@@ -1012,9 +1012,9 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|size_str
+name|memsize_str
 operator|=
-name|gimp_image_new_get_memsize_string
+name|gimp_memsize_to_string
 argument_list|(
 name|memsize
 argument_list|)
@@ -1031,12 +1031,12 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|size_str
+name|memsize_str
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|size_str
+name|memsize_str
 argument_list|)
 expr_stmt|;
 block|}
