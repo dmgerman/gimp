@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d666820103
+DECL|enum|__anon299ce5110103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1004,7 +1004,7 @@ name|gtk_widget_set_name
 argument_list|(
 name|event_box
 argument_list|,
-literal|"dock-separator"
+literal|"gimp-dock-separator"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_style_get
