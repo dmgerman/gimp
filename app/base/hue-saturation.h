@@ -124,8 +124,9 @@ name|PixelRegion
 modifier|*
 name|destPR
 parameter_list|,
-name|gpointer
-name|data
+name|HueSaturation
+modifier|*
+name|hs
 parameter_list|)
 function_decl|;
 end_function_decl

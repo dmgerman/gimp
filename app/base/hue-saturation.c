@@ -340,8 +340,7 @@ name|i
 index|]
 operator|=
 call|(
-name|unsigned
-name|char
+name|guchar
 call|)
 argument_list|(
 operator|(
@@ -369,8 +368,7 @@ name|i
 index|]
 operator|=
 call|(
-name|unsigned
-name|char
+name|guchar
 call|)
 argument_list|(
 name|i
@@ -425,7 +423,7 @@ argument_list|,
 literal|255
 argument_list|)
 expr_stmt|;
-comment|/* This change affects the way saturation is computed. With the 	   old code (different code for value< 0), increasing the 	   saturation affected muted colors very much, and bright colors 	   less. With the new code, it affects muted colors and bright 	   colors more or less evenly. For enhancing the color in photos, 	   the new behavior is exactly what you want. It's hard for me 	   to imagine a case in which the old behavior is better. 	*/
+comment|/* This change affects the way saturation is computed. With the 	   old code (different code for value< 0), increasing the 	   saturation affected muted colors very much, and bright colors 	   less. With the new code, it affects muted colors and bright 	   colors more or less evenly. For enhancing the color in photos, 	   the new behavior is exactly what you want. It's hard for me 	   to imagine a case in which the old behavior is better. 	 */
 name|hs
 operator|->
 name|saturation_transfer
@@ -461,7 +459,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|hue_saturation (PixelRegion * srcPR,PixelRegion * destPR,gpointer data)
+DECL|function|hue_saturation (PixelRegion * srcPR,PixelRegion * destPR,HueSaturation * hs)
 name|hue_saturation
 parameter_list|(
 name|PixelRegion
@@ -472,14 +470,11 @@ name|PixelRegion
 modifier|*
 name|destPR
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|HueSaturation
 modifier|*
 name|hs
-decl_stmt|;
+parameter_list|)
+block|{
 name|guchar
 modifier|*
 name|src
@@ -512,14 +507,6 @@ decl_stmt|;
 name|gint
 name|hue
 decl_stmt|;
-name|hs
-operator|=
-operator|(
-name|HueSaturation
-operator|*
-operator|)
-name|data
-expr_stmt|;
 comment|/*  Set the transfer arrays  (for speed)  */
 name|h
 operator|=
@@ -612,11 +599,25 @@ operator|&
 name|b
 argument_list|)
 expr_stmt|;
+name|hue
+operator|=
+operator|(
+name|r
+operator|+
+operator|(
+literal|128
+operator|/
+literal|6
+operator|)
+operator|)
+operator|/
+literal|6
+expr_stmt|;
 if|if
 condition|(
 name|r
 operator|<
-literal|43
+literal|21
 condition|)
 name|hue
 operator|=
@@ -627,7 +628,7 @@ if|if
 condition|(
 name|r
 operator|<
-literal|85
+literal|64
 condition|)
 name|hue
 operator|=
@@ -638,7 +639,7 @@ if|if
 condition|(
 name|r
 operator|<
-literal|128
+literal|106
 condition|)
 name|hue
 operator|=
@@ -649,7 +650,7 @@ if|if
 condition|(
 name|r
 operator|<
-literal|171
+literal|149
 condition|)
 name|hue
 operator|=
@@ -660,16 +661,27 @@ if|if
 condition|(
 name|r
 operator|<
-literal|213
+literal|192
 condition|)
 name|hue
 operator|=
 literal|4
 expr_stmt|;
-else|else
+elseif|else
+if|if
+condition|(
+name|r
+operator|<
+literal|234
+condition|)
 name|hue
 operator|=
 literal|5
+expr_stmt|;
+else|else
+name|hue
+operator|=
+literal|0
 expr_stmt|;
 name|r
 operator|=

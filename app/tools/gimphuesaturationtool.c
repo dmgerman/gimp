@@ -882,6 +882,9 @@ name|image_map_tool
 operator|->
 name|image_map
 argument_list|,
+operator|(
+name|GimpImageMapApplyFunc
+operator|)
 name|hue_saturation
 argument_list|,
 name|hs_tool
@@ -962,7 +965,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2aa5aa6b0108
+DECL|struct|__anon294318530108
 block|{
 DECL|member|label
 specifier|const
