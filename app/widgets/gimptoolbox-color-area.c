@@ -81,6 +81,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -100,6 +106,12 @@ begin_include
 include|#
 directive|include
 file|"gui/color-notebook.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/dialogs.h"
 end_include
 
 begin_ifdef
@@ -132,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b80aad20103
+DECL|enum|__anon279414f90103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -1667,6 +1679,11 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1717,16 +1734,27 @@ name|edit_color
 operator|=
 name|active_color
 expr_stmt|;
-DECL|macro|FG_TITLE
-define|#
-directive|define
-name|FG_TITLE
-value|_("Change Foreground Color")
-DECL|macro|BG_TITLE
-define|#
-directive|define
-name|BG_TITLE
-value|_("Change Background Color")
+if|if
+condition|(
+name|active_color
+operator|==
+name|FOREGROUND
+condition|)
+name|title
+operator|=
+name|_
+argument_list|(
+literal|"Change Foreground Color"
+argument_list|)
+expr_stmt|;
+else|else
+name|title
+operator|=
+name|_
+argument_list|(
+literal|"Change Background Color"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1737,13 +1765,11 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
-name|active_color
-operator|==
-name|FOREGROUND
-condition|?
-name|FG_TITLE
-else|:
-name|BG_TITLE
+name|title
+argument_list|,
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-toolbox-color-dialog"
 argument_list|,
 operator|(
 specifier|const
@@ -1773,13 +1799,7 @@ name|color_notebook_set_title
 argument_list|(
 name|color_notebook
 argument_list|,
-name|active_color
-operator|==
-name|FOREGROUND
-condition|?
-name|FG_TITLE
-else|:
-name|BG_TITLE
+name|title
 argument_list|)
 expr_stmt|;
 name|color_notebook_set_color

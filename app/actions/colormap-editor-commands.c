@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"colormap-editor-commands.h"
 end_include
 
@@ -339,6 +345,10 @@ name|_
 argument_list|(
 literal|"Edit Indexed Image Palette Color"
 argument_list|)
+argument_list|,
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-colormap-editor-color-dialog"
 argument_list|,
 operator|(
 specifier|const

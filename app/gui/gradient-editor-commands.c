@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient-editor-commands.h"
 end_include
 
@@ -291,6 +297,10 @@ name|_
 argument_list|(
 literal|"Gradient Segment's Left Endpoint Color"
 argument_list|)
+argument_list|,
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-gradient-editor-color-dialog"
 argument_list|,
 operator|&
 name|editor
@@ -749,6 +759,10 @@ name|_
 argument_list|(
 literal|"Gradient Segment's Right Endpoint Color"
 argument_list|)
+argument_list|,
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-gradient-editor-color-dialog"
 argument_list|,
 operator|&
 name|editor
