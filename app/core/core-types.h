@@ -69,36 +69,8 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750103
-block|{
-DECL|enumerator|RED_CHANNEL
-name|RED_CHANNEL
-block|,
-DECL|enumerator|GREEN_CHANNEL
-name|GREEN_CHANNEL
-block|,
-DECL|enumerator|BLUE_CHANNEL
-name|BLUE_CHANNEL
-block|,
-DECL|enumerator|GRAY_CHANNEL
-name|GRAY_CHANNEL
-block|,
-DECL|enumerator|INDEXED_CHANNEL
-name|INDEXED_CHANNEL
-block|,
-DECL|enumerator|ALPHA_CHANNEL
-name|ALPHA_CHANNEL
-DECL|typedef|ChannelType
-block|}
-name|ChannelType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon2bb0cf750203
+DECL|enum|__anon276a659f0103
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -123,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750303
+DECL|enum|__anon276a659f0203
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -139,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750403
+DECL|enum|__anon276a659f0303
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -159,7 +131,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2bb0cf750503
+DECL|enum|__anon276a659f0403
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -183,7 +155,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon2bb0cf750603
+DECL|enum|__anon276a659f0503
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -205,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750703
+DECL|enum|__anon276a659f0603
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -235,7 +207,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750803
+DECL|enum|__anon276a659f0703
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -251,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750903
+DECL|enum|__anon276a659f0803
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -273,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750a03
+DECL|enum|__anon276a659f0903
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -308,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750b03
+DECL|enum|__anon276a659f0a03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -344,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0cf750c03
+DECL|enum|__anon276a659f0b03
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL

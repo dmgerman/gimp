@@ -529,7 +529,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|channel
 parameter_list|)
 function_decl|;
@@ -544,7 +544,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|channel
 parameter_list|)
 function_decl|;
@@ -805,6 +805,7 @@ begin_function_decl
 name|gint
 name|gimp_image_get_ID
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -1089,7 +1090,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|type
 parameter_list|,
 name|gboolean
@@ -1107,7 +1108,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|type
 parameter_list|)
 function_decl|;
@@ -1117,10 +1118,12 @@ begin_function_decl
 name|void
 name|gimp_image_get_active_components
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1140,7 +1143,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|type
 parameter_list|,
 name|gboolean
@@ -1158,7 +1161,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|type
 parameter_list|)
 function_decl|;

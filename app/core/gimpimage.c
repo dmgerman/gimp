@@ -222,7 +222,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d695130103
+DECL|enum|__anon29fd2e660103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3730,9 +3730,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_ID (GimpImage * gimage)
+DECL|function|gimp_image_get_ID (const GimpImage * gimage)
 name|gimp_image_get_ID
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -4583,14 +4584,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_component_active (GimpImage * gimage,ChannelType type,gboolean active)
+DECL|function|gimp_image_set_component_active (GimpImage * gimage,GimpChannelType type,gboolean active)
 name|gimp_image_set_component_active
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|type
 parameter_list|,
 name|gboolean
@@ -4617,7 +4618,7 @@ name|type
 condition|)
 block|{
 case|case
-name|RED_CHANNEL
+name|GIMP_RED_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -4625,7 +4626,7 @@ name|RED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -4633,7 +4634,7 @@ name|GREEN_PIX
 expr_stmt|;
 break|break;
 case|case
-name|BLUE_CHANNEL
+name|GIMP_BLUE_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -4641,7 +4642,7 @@ name|BLUE_PIX
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -4649,7 +4650,7 @@ name|GRAY_PIX
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -4657,7 +4658,7 @@ name|INDEXED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 case|:
 switch|switch
 condition|(
@@ -4755,7 +4756,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_component_active (const GimpImage * gimage,ChannelType type)
+DECL|function|gimp_image_get_component_active (const GimpImage * gimage,GimpChannelType type)
 name|gimp_image_get_component_active
 parameter_list|(
 specifier|const
@@ -4763,7 +4764,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|type
 parameter_list|)
 block|{
@@ -4774,7 +4775,7 @@ name|type
 condition|)
 block|{
 case|case
-name|RED_CHANNEL
+name|GIMP_RED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -4786,7 +4787,7 @@ index|]
 return|;
 break|break;
 case|case
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 case|:
 return|return
 name|gimage
@@ -4798,7 +4799,7 @@ index|]
 return|;
 break|break;
 case|case
-name|BLUE_CHANNEL
+name|GIMP_BLUE_CHANNEL
 case|:
 return|return
 name|gimage
@@ -4810,7 +4811,7 @@ index|]
 return|;
 break|break;
 case|case
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 case|:
 return|return
 name|gimage
@@ -4822,7 +4823,7 @@ index|]
 return|;
 break|break;
 case|case
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -4834,7 +4835,7 @@ index|]
 return|;
 break|break;
 case|case
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 case|:
 switch|switch
 condition|(
@@ -4893,13 +4894,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_active_components (GimpImage * gimage,GimpDrawable * drawable,gint * active)
+DECL|function|gimp_image_get_active_components (const GimpImage * gimage,const GimpDrawable * drawable,gint * active)
 name|gimp_image_get_active_components
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5008,14 +5011,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_component_visible (GimpImage * gimage,ChannelType type,gboolean visible)
+DECL|function|gimp_image_set_component_visible (GimpImage * gimage,GimpChannelType type,gboolean visible)
 name|gimp_image_set_component_visible
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|type
 parameter_list|,
 name|gboolean
@@ -5042,7 +5045,7 @@ name|type
 condition|)
 block|{
 case|case
-name|RED_CHANNEL
+name|GIMP_RED_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -5050,7 +5053,7 @@ name|RED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -5058,7 +5061,7 @@ name|GREEN_PIX
 expr_stmt|;
 break|break;
 case|case
-name|BLUE_CHANNEL
+name|GIMP_BLUE_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -5066,7 +5069,7 @@ name|BLUE_PIX
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -5074,7 +5077,7 @@ name|GRAY_PIX
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -5082,7 +5085,7 @@ name|INDEXED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 case|:
 switch|switch
 condition|(
@@ -5191,7 +5194,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_get_component_visible (const GimpImage * gimage,ChannelType type)
+DECL|function|gimp_image_get_component_visible (const GimpImage * gimage,GimpChannelType type)
 name|gimp_image_get_component_visible
 parameter_list|(
 specifier|const
@@ -5199,7 +5202,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|type
 parameter_list|)
 block|{
@@ -5210,7 +5213,7 @@ name|type
 condition|)
 block|{
 case|case
-name|RED_CHANNEL
+name|GIMP_RED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -5222,7 +5225,7 @@ index|]
 return|;
 break|break;
 case|case
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 case|:
 return|return
 name|gimage
@@ -5234,7 +5237,7 @@ index|]
 return|;
 break|break;
 case|case
-name|BLUE_CHANNEL
+name|GIMP_BLUE_CHANNEL
 case|:
 return|return
 name|gimage
@@ -5246,7 +5249,7 @@ index|]
 return|;
 break|break;
 case|case
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 case|:
 return|return
 name|gimage
@@ -5258,7 +5261,7 @@ index|]
 return|;
 break|break;
 case|case
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 case|:
 return|return
 name|gimage
@@ -5270,7 +5273,7 @@ index|]
 return|;
 break|break;
 case|case
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 case|:
 switch|switch
 condition|(

@@ -139,7 +139,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|channel
 parameter_list|,
 name|gpointer
@@ -157,7 +157,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|channel
 parameter_list|,
 name|gpointer
@@ -488,7 +488,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_component_list_item_new (GimpImage * gimage,gint preview_size,ChannelType channel)
+DECL|function|gimp_component_list_item_new (GimpImage * gimage,gint preview_size,GimpChannelType channel)
 name|gimp_component_list_item_new
 parameter_list|(
 name|GimpImage
@@ -498,7 +498,7 @@ parameter_list|,
 name|gint
 name|preview_size
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|channel
 parameter_list|)
 block|{
@@ -525,19 +525,6 @@ operator|&&
 name|preview_size
 operator|<=
 literal|256
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|channel
-operator|>=
-name|RED_CHANNEL
-operator|&&
-name|channel
-operator|<=
-name|ALPHA_CHANNEL
 argument_list|,
 name|NULL
 argument_list|)
@@ -717,7 +704,7 @@ name|channel
 condition|)
 block|{
 case|case
-name|RED_CHANNEL
+name|GIMP_RED_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -725,7 +712,7 @@ name|RED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -733,7 +720,7 @@ name|GREEN_PIX
 expr_stmt|;
 break|break;
 case|case
-name|BLUE_CHANNEL
+name|GIMP_BLUE_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -741,7 +728,7 @@ name|BLUE_PIX
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -749,7 +736,7 @@ name|GRAY_PIX
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -757,7 +744,7 @@ name|INDEXED_PIX
 expr_stmt|;
 break|break;
 case|case
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 case|:
 name|pixel
 operator|=
@@ -768,6 +755,9 @@ default|default:
 name|pixel
 operator|=
 literal|0
+expr_stmt|;
+name|g_assert_not_reached
+argument_list|()
 expr_stmt|;
 block|}
 name|GIMP_IMAGE_PREVIEW
@@ -1114,14 +1104,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_list_item_visibility_changed (GimpImage * gimage,ChannelType channel,gpointer data)
+DECL|function|gimp_component_list_item_visibility_changed (GimpImage * gimage,GimpChannelType channel,gpointer data)
 name|gimp_component_list_item_visibility_changed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|channel
 parameter_list|,
 name|gpointer
@@ -1303,14 +1293,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_list_item_active_changed (GimpImage * gimage,ChannelType channel,gpointer data)
+DECL|function|gimp_component_list_item_active_changed (GimpImage * gimage,GimpChannelType channel,gpointer data)
 name|gimp_component_list_item_active_changed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|channel
 parameter_list|,
 name|gpointer
@@ -1420,7 +1410,7 @@ name|channel
 condition|)
 block|{
 case|case
-name|RED_CHANNEL
+name|GIMP_RED_CHANNEL
 case|:
 return|return
 name|g_strdup
@@ -1433,7 +1423,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 case|:
 return|return
 name|g_strdup
@@ -1446,7 +1436,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|BLUE_CHANNEL
+name|GIMP_BLUE_CHANNEL
 case|:
 return|return
 name|g_strdup
@@ -1459,7 +1449,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 case|:
 return|return
 name|g_strdup
@@ -1472,7 +1462,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 case|:
 return|return
 name|g_strdup
@@ -1485,7 +1475,7 @@ argument_list|)
 return|;
 break|break;
 case|case
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 case|:
 return|return
 name|g_strdup
@@ -1501,10 +1491,12 @@ default|default:
 return|return
 name|g_strdup
 argument_list|(
-literal|"EEK"
+name|_
+argument_list|(
+literal|"EEEEK"
+argument_list|)
 argument_list|)
 return|;
-break|break;
 block|}
 block|}
 end_function

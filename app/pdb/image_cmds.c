@@ -11190,11 +11190,11 @@ if|if
 condition|(
 name|component
 operator|<
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 operator|||
 name|component
 operator|>
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11209,7 +11209,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11225,7 +11225,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11304,7 +11304,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"component"
 block|,
-literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4), ALPHA_CHANNEL (5) }"
+literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
 block|}
 block|}
 decl_stmt|;
@@ -11439,11 +11439,11 @@ if|if
 condition|(
 name|component
 operator|<
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 operator|||
 name|component
 operator|>
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11473,7 +11473,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11489,7 +11489,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11557,7 +11557,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"component"
 block|,
-literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4), ALPHA_CHANNEL (5) }"
+literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
 block|}
 block|,
 block|{
@@ -11682,11 +11682,11 @@ if|if
 condition|(
 name|component
 operator|<
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 operator|||
 name|component
 operator|>
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11701,7 +11701,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11717,7 +11717,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11796,7 +11796,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"component"
 block|,
-literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4), ALPHA_CHANNEL (5) }"
+literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
 block|}
 block|}
 decl_stmt|;
@@ -11931,11 +11931,11 @@ if|if
 condition|(
 name|component
 operator|<
-name|GREEN_CHANNEL
+name|GIMP_GREEN_CHANNEL
 operator|||
 name|component
 operator|>
-name|ALPHA_CHANNEL
+name|GIMP_ALPHA_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11965,7 +11965,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|GRAY_CHANNEL
+name|GIMP_GRAY_CHANNEL
 condition|)
 name|success
 operator|=
@@ -11981,7 +11981,7 @@ if|if
 condition|(
 name|component
 operator|==
-name|INDEXED_CHANNEL
+name|GIMP_INDEXED_CHANNEL
 condition|)
 name|success
 operator|=
@@ -12049,7 +12049,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"component"
 block|,
-literal|"The image component: { RED_CHANNEL (0), GREEN_CHANNEL (1), BLUE_CHANNEL (2), GRAY_CHANNEL (3), INDEXED_CHANNEL (4), ALPHA_CHANNEL (5) }"
+literal|"The image component: { GIMP_RED_CHANNEL (0), GIMP_GREEN_CHANNEL (1), GIMP_BLUE_CHANNEL (2), GIMP_GRAY_CHANNEL (3), GIMP_INDEXED_CHANNEL (4), GIMP_ALPHA_CHANNEL (5) }"
 block|}
 block|,
 block|{

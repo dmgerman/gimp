@@ -104,7 +104,7 @@ name|GimpListItem
 name|parent_instance
 decl_stmt|;
 DECL|member|channel
-name|ChannelType
+name|GimpChannelType
 name|channel
 decl_stmt|;
 DECL|member|eye_button
@@ -151,7 +151,7 @@ parameter_list|,
 name|gint
 name|preview_size
 parameter_list|,
-name|ChannelType
+name|GimpChannelType
 name|channel
 parameter_list|)
 function_decl|;
