@@ -77,7 +77,7 @@ parameter_list|,
 name|GimpParamDef
 modifier|*
 modifier|*
-name|params
+name|args
 parameter_list|,
 name|GimpParamDef
 modifier|*
@@ -107,7 +107,7 @@ name|gpointer
 name|data
 parameter_list|,
 name|guint32
-name|length
+name|bytes
 parameter_list|)
 function_decl|;
 ifdef|#

@@ -362,7 +362,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedural_db_set_data:  * @identifier: The identifier associated with data.  * @data: A byte array containing data.  *  * Associates the specified identifier with the supplied data.  *  * This procedure associates the supplied data with the provided  * identifier. The data may be subsequently retrieved by a call to  * 'procedural-db-get-data'.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_procedural_db_set_data:  * @identifier: The identifier associated with data.  * @data: A byte array containing data.  * @bytes: The number of bytes in the data  *  * Associates the specified identifier with the supplied data.  *  * This procedure associates the supplied data with the provided  * identifier. The data may be subsequently retrieved by a call to  * 'procedural-db-get-data'.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
