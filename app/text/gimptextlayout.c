@@ -902,12 +902,18 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_text_layout_render (GimpTextLayout * layout)
+DECL|function|gimp_text_layout_render (GimpTextLayout * layout,gint width,gint height)
 name|gimp_text_layout_render
 parameter_list|(
 name|GimpTextLayout
 modifier|*
 name|layout
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
 parameter_list|)
 block|{
 name|TileManager
@@ -928,11 +934,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gint
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_TEXT_LAYOUT
@@ -941,17 +942,6 @@ name|layout
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_text_layout_get_size
-argument_list|(
-name|layout
-argument_list|,
-operator|&
-name|width
-argument_list|,
-operator|&
-name|height
 argument_list|)
 expr_stmt|;
 name|gimp_text_layout_get_offsets
