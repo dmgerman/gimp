@@ -22,7 +22,7 @@ name|file_dialog_show
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|filesel
+name|dialog
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -37,7 +37,7 @@ name|file_dialog_hide
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|filesel
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl

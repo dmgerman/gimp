@@ -12,19 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
@@ -36,37 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"plug-in/plug-in-proc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpdialogfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpfiledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpmenufactory.h"
 end_include
 
 begin_include
@@ -75,20 +33,14 @@ directive|include
 file|"file-dialog-utils.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_function
 name|void
-DECL|function|file_dialog_show (GtkWidget * filesel,GtkWidget * parent)
+DECL|function|file_dialog_show (GtkWidget * dialog,GtkWidget * parent)
 name|file_dialog_show
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|filesel
+name|dialog
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -144,7 +96,7 @@ name|gtk_window_set_screen
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|filesel
+name|dialog
 argument_list|)
 argument_list|,
 name|gtk_widget_get_screen
@@ -157,7 +109,7 @@ name|gtk_widget_grab_focus
 argument_list|(
 name|GTK_FILE_SELECTION
 argument_list|(
-name|filesel
+name|dialog
 argument_list|)
 operator|->
 name|selection_entry
@@ -167,7 +119,7 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|filesel
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -176,17 +128,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_dialog_hide (GtkWidget * filesel)
+DECL|function|file_dialog_hide (GtkWidget * dialog)
 name|file_dialog_hide
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|filesel
+name|dialog
 parameter_list|)
 block|{
 name|gtk_widget_hide
 argument_list|(
-name|filesel
+name|dialog
 argument_list|)
 expr_stmt|;
 name|gimp_item_factories_set_sensitive
