@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c6a44f0103
+DECL|enum|__anon2b95f22f0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -1310,7 +1310,7 @@ comment|/* help_browser              */
 name|HELP_BROWSER_GIMP
 block|,
 comment|/* cursor_mode               */
-name|CURSOR_MODE_TOOL_ICON
+name|GIMP_CURSOR_MODE_TOOL_ICON
 block|,
 comment|/* disable_tearoff_menus     */
 name|FALSE
@@ -12876,13 +12876,13 @@ condition|)
 operator|*
 operator|(
 operator|(
-name|CursorMode
+name|GimpCursorMode
 operator|*
 operator|)
 name|val1p
 operator|)
 operator|=
-name|CURSOR_MODE_TOOL_ICON
+name|GIMP_CURSOR_MODE_TOOL_ICON
 expr_stmt|;
 elseif|else
 if|if
@@ -12899,13 +12899,13 @@ condition|)
 operator|*
 operator|(
 operator|(
-name|CursorMode
+name|GimpCursorMode
 operator|*
 operator|)
 name|val1p
 operator|)
 operator|=
-name|CURSOR_MODE_TOOL_CROSSHAIR
+name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 expr_stmt|;
 elseif|else
 if|if
@@ -12922,13 +12922,13 @@ condition|)
 operator|*
 operator|(
 operator|(
-name|CursorMode
+name|GimpCursorMode
 operator|*
 operator|)
 name|val1p
 operator|)
 operator|=
-name|CURSOR_MODE_CROSSHAIR
+name|GIMP_CURSOR_MODE_CROSSHAIR
 expr_stmt|;
 name|token
 operator|=
@@ -14447,7 +14447,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|CursorMode
+name|GimpCursorMode
 name|mode
 decl_stmt|;
 name|mode
@@ -14455,7 +14455,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|CursorMode
+name|GimpCursorMode
 operator|*
 operator|)
 name|val1p
@@ -14465,7 +14465,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|CURSOR_MODE_TOOL_ICON
+name|GIMP_CURSOR_MODE_TOOL_ICON
 condition|)
 return|return
 name|g_strdup
@@ -14478,7 +14478,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|CURSOR_MODE_TOOL_CROSSHAIR
+name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 condition|)
 return|return
 name|g_strdup

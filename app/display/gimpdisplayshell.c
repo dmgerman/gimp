@@ -6501,11 +6501,11 @@ name|cursor_mode
 condition|)
 block|{
 case|case
-name|CURSOR_MODE_TOOL_ICON
+name|GIMP_CURSOR_MODE_TOOL_ICON
 case|:
 break|break;
 case|case
-name|CURSOR_MODE_TOOL_CROSSHAIR
+name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 case|:
 name|cursor_type
 operator|=
@@ -6513,7 +6513,7 @@ name|GIMP_CROSSHAIR_SMALL_CURSOR
 expr_stmt|;
 break|break;
 case|case
-name|CURSOR_MODE_CROSSHAIR
+name|GIMP_CURSOR_MODE_CROSSHAIR
 case|:
 name|cursor_type
 operator|=

@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e9e8990103
+DECL|enum|__anon2ac02e370103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -11421,7 +11421,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CURSOR_MODE_TOOL_ICON
+name|GIMP_CURSOR_MODE_TOOL_ICON
 argument_list|)
 argument_list|,
 name|NULL
@@ -11433,7 +11433,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CURSOR_MODE_TOOL_CROSSHAIR
+name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 argument_list|)
 argument_list|,
 name|NULL
@@ -11445,7 +11445,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CURSOR_MODE_CROSSHAIR
+name|GIMP_CURSOR_MODE_CROSSHAIR
 argument_list|)
 argument_list|,
 name|NULL
@@ -13811,7 +13811,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e9e8990208
+DECL|struct|__anon2ac02e370208
 block|{
 DECL|member|label
 name|gchar
@@ -14029,7 +14029,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e9e8990308
+DECL|struct|__anon2ac02e370308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -165,6 +165,10 @@ DECL|member|tearoff_menus
 name|gboolean
 name|tearoff_menus
 decl_stmt|;
+DECL|member|show_indicators
+name|gboolean
+name|show_indicators
+decl_stmt|;
 DECL|member|max_new_image_size
 name|guint
 name|max_new_image_size
@@ -179,11 +183,6 @@ name|gchar
 modifier|*
 name|theme
 decl_stmt|;
-comment|/* the fields below have not yet been implemented as properties */
-DECL|member|show_indicators
-name|gboolean
-name|show_indicators
-decl_stmt|;
 DECL|member|use_help
 name|gboolean
 name|use_help
@@ -192,6 +191,7 @@ DECL|member|help_browser
 name|gint
 name|help_browser
 decl_stmt|;
+comment|/* FIXME: not yet a property */
 block|}
 struct|;
 end_struct

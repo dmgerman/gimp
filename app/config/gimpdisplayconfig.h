@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"display/display-enums.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcoreconfig.h"
 end_include
 
@@ -122,7 +128,7 @@ name|gboolean
 name|default_dot_for_dot
 decl_stmt|;
 DECL|member|cursor_mode
-name|gint
+name|GimpCursorMode
 name|cursor_mode
 decl_stmt|;
 DECL|member|cursor_updating

@@ -6,52 +6,50 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DISPLAY_TYPES_H__
+name|__DISPLAY_ENUMS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DISPLAY_TYPES_H__
+DECL|macro|__DISPLAY_ENUMS_H__
 define|#
 directive|define
-name|__DISPLAY_TYPES_H__
+name|__DISPLAY_ENUMS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"widgets/widgets-types.h"
-end_include
+begin_define
+DECL|macro|GIMP_TYPE_CURSOR_MODE
+define|#
+directive|define
+name|GIMP_TYPE_CURSOR_MODE
+value|(gimp_cursor_mode_get_type ())
+end_define
 
-begin_include
-include|#
-directive|include
-file|"display/display-enums.h"
-end_include
-
-begin_typedef
-DECL|typedef|GimpDisplay
-typedef|typedef
-name|struct
-name|_GimpDisplay
-name|GimpDisplay
-typedef|;
-end_typedef
+begin_decl_stmt
+name|GType
+name|gimp_cursor_mode_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_typedef
-DECL|typedef|GimpDisplayShell
 typedef|typedef
-name|struct
-name|_GimpDisplayShell
-name|GimpDisplayShell
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|Selection
-typedef|typedef
-name|struct
-name|_Selection
-name|Selection
+enum|enum
+DECL|enum|__anon28e311d70103
+block|{
+DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
+name|GIMP_CURSOR_MODE_TOOL_ICON
+block|,
+DECL|enumerator|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
+name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
+block|,
+DECL|enumerator|GIMP_CURSOR_MODE_CROSSHAIR
+name|GIMP_CURSOR_MODE_CROSSHAIR
+DECL|typedef|GimpCursorMode
+block|}
+name|GimpCursorMode
 typedef|;
 end_typedef
 
@@ -61,7 +59,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __DISPLAY_TYPES_H__ */
+comment|/* __DISPLAY_ENUMS_H__ */
 end_comment
 
 end_unit
