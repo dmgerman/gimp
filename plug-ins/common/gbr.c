@@ -92,7 +92,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27c2d9a60108
+DECL|struct|__anon278cb6c20108
 typedef|typedef
 struct|struct
 block|{
@@ -501,7 +501,7 @@ literal|"1997"
 argument_list|,
 literal|"<Save>/GBR"
 argument_list|,
-literal|"RGB*, GRAY*"
+literal|"GRAY"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -1433,6 +1433,18 @@ name|char
 modifier|*
 name|temp
 decl_stmt|;
+if|if
+condition|(
+name|gimp_drawable_type
+argument_list|(
+name|drawable_ID
+argument_list|)
+operator|!=
+name|GRAY_IMAGE
+condition|)
+return|return
+name|FALSE
+return|;
 name|temp
 operator|=
 name|g_malloc
