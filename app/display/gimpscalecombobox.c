@@ -37,7 +37,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771be440103
+DECL|enum|__anon2aa7be9d0103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -795,13 +795,6 @@ name|label
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"removing %s\n"
-argument_list|,
-name|label
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_remove
