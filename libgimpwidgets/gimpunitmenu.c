@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2886570103
+DECL|enum|__anon2b6fa0c80103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2886570203
+DECL|enum|__anon2b6fa0c80203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2203,6 +2203,23 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|menu
+operator|->
+name|selection
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer

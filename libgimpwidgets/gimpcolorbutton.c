@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a388c80103
+DECL|enum|__anon2b03cc2c0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1378,6 +1378,23 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|RESPONSE_RESET
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
