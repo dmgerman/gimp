@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287c6c6d0108
+DECL|struct|__anon2b03d84b0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon287c6c6d0203
+DECL|enum|__anon2b03d84b0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287c6c6d0303
+DECL|enum|__anon2b03d84b0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287c6c6d0403
+DECL|enum|__anon2b03d84b0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287c6c6d0503
+DECL|enum|__anon2b03d84b0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287c6c6d0608
+DECL|struct|__anon2b03d84b0608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287c6c6d0708
+DECL|struct|__anon2b03d84b0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1539,7 +1539,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287c6c6d0808
+DECL|struct|__anon2b03d84b0808
 block|{
 DECL|member|run
 name|gint
@@ -1589,7 +1589,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287c6c6d0908
+DECL|struct|__anon2b03d84b0908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -12329,6 +12329,12 @@ name|channel_id
 operator|++
 control|)
 block|{
+name|gchar
+name|buf
+index|[
+name|G_ASCII_DTOSTR_BUF_SIZE
+index|]
+decl_stmt|;
 name|CML_PARAM
 name|param
 init|=
@@ -12435,22 +12441,42 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"Mod. rate        : %f\n"
+literal|"Mod. rate        : %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|param
 operator|.
 name|mod_rate
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"Env_sensitivtiy  : %f\n"
+literal|"Env_sensitivtiy  : %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|param
 operator|.
 name|env_sensitivity
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -12468,11 +12494,21 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"Ch. sensitivity  : %f\n"
+literal|"Ch. sensitivity  : %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|param
 operator|.
 name|ch_sensitivity
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -12490,66 +12526,126 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"Power_factor     : %f\n"
+literal|"Power_factor     : %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|param
 operator|.
 name|power
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"Parameter_k      : %f\n"
+literal|"Parameter_k      : %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|param
 operator|.
 name|parameter_k
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"Range_low        : %f\n"
+literal|"Range_low        : %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|param
 operator|.
 name|range_l
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"Range_high       : %f\n"
+literal|"Range_high       : %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|param
 operator|.
 name|range_h
 argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|file
-argument_list|,
-literal|"Mutation_rate    : %f\n"
-argument_list|,
-name|param
-operator|.
-name|mutation_rate
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"Mutation_distance: %f\n"
+literal|"Mutation_rate    : %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
+argument_list|,
+name|param
+operator|.
+name|mutation_rate
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|fprintf
+argument_list|(
+name|file
+argument_list|,
+literal|"Mutation_distance: %s\n"
+argument_list|,
+name|g_ascii_dtostr
+argument_list|(
+name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 name|param
 operator|.
 name|mutation_dist
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
