@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac29bb90103
+DECL|enum|__anon292c35dc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2604,11 +2604,9 @@ argument_list|(
 literal|"Fill Type"
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|GIMP_FOREGROUND_FILL
 argument_list|,
-operator|-
-literal|1
+name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
