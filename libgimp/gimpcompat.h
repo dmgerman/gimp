@@ -73,6 +73,11 @@ define|#
 directive|define
 name|gimp_drawable_detach_parasite
 value|gimp_drawable_parasite_detach
+DECL|macro|gimp_drawable_find_parasite
+define|#
+directive|define
+name|gimp_drawable_find_parasite
+value|gimp_drawable_parasite_find
 DECL|macro|gimp_drawable_channel
 define|#
 directive|define
