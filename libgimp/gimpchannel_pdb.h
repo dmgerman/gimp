@@ -153,6 +153,17 @@ modifier|*
 name|color
 parameter_list|)
 function_decl|;
+name|gboolean
+name|gimp_channel_set_color
+parameter_list|(
+name|gint32
+name|channel_ID
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
 name|gint
 name|gimp_channel_get_tattoo
 parameter_list|(
