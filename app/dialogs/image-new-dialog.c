@@ -84,7 +84,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon28c8ee640108
+DECL|struct|__anon2c4099290108
 typedef|typedef
 struct|struct
 block|{
@@ -2813,7 +2813,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
-name|GTK_ENTRY
+name|GTK_OBJECT
 argument_list|(
 name|vals
 operator|->
@@ -2931,7 +2931,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
-name|GTK_ENTRY
+name|GTK_OBJECT
 argument_list|(
 name|vals
 operator|->
