@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9949740103
+DECL|enum|__anon291349830103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1226,16 +1226,20 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|GTK_WIDGET_DRAWABLE
-argument_list|(
-name|widget
-argument_list|)
+name|preview
+operator|->
+name|idle_id
 operator|||
 operator|!
 name|preview
 operator|->
 name|buffer
+operator|||
+operator|!
+name|GTK_WIDGET_DRAWABLE
+argument_list|(
+name|widget
+argument_list|)
 condition|)
 return|return
 name|FALSE

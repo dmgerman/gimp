@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4220e30103
+DECL|enum|__anon2b3c48370103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -855,20 +855,20 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|GTK_WIDGET_DRAWABLE
-argument_list|(
-name|widget
-argument_list|)
+name|gca
+operator|->
+name|idle_id
 operator|||
 operator|!
 name|gca
 operator|->
 name|buf
 operator|||
-name|gca
-operator|->
-name|idle_id
+operator|!
+name|GTK_WIDGET_DRAWABLE
+argument_list|(
+name|widget
+argument_list|)
 condition|)
 return|return
 name|FALSE
