@@ -410,6 +410,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|filename
+init|=
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
