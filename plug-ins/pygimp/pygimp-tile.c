@@ -94,7 +94,6 @@ end_function
 begin_decl_stmt
 DECL|variable|tile_methods
 specifier|static
-name|struct
 name|PyMethodDef
 name|tile_methods
 index|[]
@@ -580,7 +579,7 @@ name|s
 operator|=
 name|PyString_FromFormat
 argument_list|(
-literal|"<gimp.Tile for drawable %s (shadow)>"
+literal|"<gimp.Tile for drawable '%s' (shadow)>"
 argument_list|,
 name|name
 argument_list|)
@@ -590,7 +589,7 @@ name|s
 operator|=
 name|PyString_FromFormat
 argument_list|(
-literal|"<gimp.Tile for drawable %s>"
+literal|"<gimp.Tile for drawable '%s'>"
 argument_list|,
 name|name
 argument_list|)
@@ -1458,7 +1457,6 @@ end_function
 begin_decl_stmt
 DECL|variable|pr_methods
 specifier|static
-name|struct
 name|PyMethodDef
 name|pr_methods
 index|[]
@@ -3591,7 +3589,7 @@ name|s
 operator|=
 name|PyString_FromFormat
 argument_list|(
-literal|"<gimp.PixelRgn for drawable %s>"
+literal|"<gimp.PixelRgn for drawable '%s'>"
 argument_list|,
 name|name
 argument_list|)

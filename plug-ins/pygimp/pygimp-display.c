@@ -29,7 +29,6 @@ end_include
 begin_decl_stmt
 DECL|variable|disp_methods
 specifier|static
-name|struct
 name|PyMethodDef
 name|disp_methods
 index|[]

@@ -60,7 +60,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29ab5cc80108
+DECL|struct|__anon2914dc8d0108
 typedef|typedef
 struct|struct
 block|{
@@ -80,7 +80,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29ab5cc80208
+DECL|struct|__anon2914dc8d0208
 typedef|typedef
 struct|struct
 block|{
@@ -3349,7 +3349,6 @@ end_function
 begin_decl_stmt
 DECL|variable|pdb_methods
 specifier|static
-name|struct
 name|PyMethodDef
 name|pdb_methods
 index|[]
@@ -4528,7 +4527,7 @@ block|{
 return|return
 name|PyString_FromFormat
 argument_list|(
-literal|"<pdb function %s>"
+literal|"<pdb function '%s'>"
 argument_list|,
 name|PyString_AsString
 argument_list|(

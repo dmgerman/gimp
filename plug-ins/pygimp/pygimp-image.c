@@ -2010,7 +2010,6 @@ end_function
 begin_decl_stmt
 DECL|variable|img_methods
 specifier|static
-name|struct
 name|PyMethodDef
 name|img_methods
 index|[]
@@ -3572,7 +3571,6 @@ end_function
 begin_decl_stmt
 DECL|variable|img_getsets
 specifier|static
-name|struct
 name|PyGetSetDef
 name|img_getsets
 index|[]
@@ -3914,7 +3912,7 @@ name|s
 operator|=
 name|PyString_FromFormat
 argument_list|(
-literal|"<gimp.image %s>"
+literal|"<gimp.image '%s'>"
 argument_list|,
 name|name
 condition|?
