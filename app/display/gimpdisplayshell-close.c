@@ -438,7 +438,7 @@ argument_list|)
 argument_list|,
 name|gtk_image_new_from_stock
 argument_list|(
-name|GTK_STOCK_NO
+name|GTK_STOCK_DELETE
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
