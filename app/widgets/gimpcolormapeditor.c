@@ -205,7 +205,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4292970103
+DECL|enum|__anon28c6b3c90103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1013,16 +1013,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_col_spacing
 argument_list|(
 name|GTK_TABLE
@@ -1190,7 +1180,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"He_x triplet:"
+literal|"HTML notation:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4240,6 +4230,10 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
+name|gchar
+modifier|*
+name|desc
+decl_stmt|;
 name|gimp_rgba_set_uchar
 argument_list|(
 operator|&
@@ -4285,6 +4279,20 @@ argument_list|,
 name|OPAQUE_OPACITY
 argument_list|)
 expr_stmt|;
+name|desc
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Edit colormap entry #%d"
+argument_list|)
+argument_list|,
+name|editor
+operator|->
+name|col_index
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -4320,12 +4328,9 @@ argument_list|(
 literal|"Edit Colormap Entry"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_CONVERT_INDEXED
+name|GIMP_STOCK_INDEXED_PALETTE
 argument_list|,
-name|_
-argument_list|(
-literal|"Edit colormap entry"
-argument_list|)
+name|desc
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -4402,6 +4407,19 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_set
+argument_list|(
+name|editor
+operator|->
+name|color_dialog
+argument_list|,
+literal|"description"
+argument_list|,
+name|desc
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_color_dialog_set_color
 argument_list|(
 name|GIMP_COLOR_DIALOG
@@ -4416,6 +4434,11 @@ name|color
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|desc
+argument_list|)
+expr_stmt|;
 name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW

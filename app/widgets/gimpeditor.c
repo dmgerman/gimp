@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289f43020103
+DECL|enum|__anon2882bab60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2806,6 +2806,20 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_box_reorder_child
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|editor
+operator|->
+name|button_box
 argument_list|,
 literal|0
 argument_list|)
