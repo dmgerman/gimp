@@ -136,7 +136,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"qmask-toggle"
+literal|"qmask-active"
 block|,
 name|NULL
 block|,
@@ -155,6 +155,28 @@ name|qmask_toggle_cmd_callback
 argument_list|)
 block|,
 name|FALSE
+block|,
+name|GIMP_HELP_QMASK_TOGGLE
+block|}
+block|,
+block|{
+literal|"qmask-toggle"
+block|,
+name|GIMP_STOCK_QMASK_ON
+block|,
+name|N_
+argument_list|(
+literal|"Toggle _QuickMask"
+argument_list|)
+block|,
+literal|"<shift>Q"
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|qmask_toggle_cmd_callback
+argument_list|)
 block|,
 name|GIMP_HELP_QMASK_TOGGLE
 block|}
@@ -378,6 +400,17 @@ name|color
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_color (group, action, (color), FALSE)
+name|SET_ACTIVE
+argument_list|(
+literal|"qmask-active"
+argument_list|,
+name|gimage
+operator|&&
+name|gimage
+operator|->
+name|qmask_state
+argument_list|)
+expr_stmt|;
 name|SET_ACTIVE
 argument_list|(
 literal|"qmask-toggle"
