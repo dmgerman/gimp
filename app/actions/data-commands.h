@@ -18,6 +18,20 @@ end_define
 
 begin_function_decl
 name|void
+name|data_open_as_image_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|data_new_data_cmd_callback
 parameter_list|(
 name|GtkAction

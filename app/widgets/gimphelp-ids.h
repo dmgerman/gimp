@@ -1881,6 +1881,22 @@ value|"gimp-brush-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_BRUSH_EDIT
+define|#
+directive|define
+name|GIMP_HELP_BRUSH_EDIT
+value|"gimp-brush-edit"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_BRUSH_OPEN_AS_IMAGE
+define|#
+directive|define
+name|GIMP_HELP_BRUSH_OPEN_AS_IMAGE
+value|"gimp-brush-open-as-image"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_BRUSH_NEW
 define|#
 directive|define
@@ -1894,14 +1910,6 @@ define|#
 directive|define
 name|GIMP_HELP_BRUSH_DUPLICATE
 value|"gimp-brush-duplicate"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_BRUSH_EDIT
-define|#
-directive|define
-name|GIMP_HELP_BRUSH_EDIT
-value|"gimp-brush-edit"
 end_define
 
 begin_define
@@ -1937,6 +1945,22 @@ value|"gimp-pattern-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PATTERN_EDIT
+define|#
+directive|define
+name|GIMP_HELP_PATTERN_EDIT
+value|"gimp-pattern-edit"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_PATTERN_OPEN_AS_IMAGE
+define|#
+directive|define
+name|GIMP_HELP_PATTERN_OPEN_AS_IMAGE
+value|"gimp-pattern-open-as-image"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PATTERN_NEW
 define|#
 directive|define
@@ -1950,14 +1974,6 @@ define|#
 directive|define
 name|GIMP_HELP_PATTERN_DUPLICATE
 value|"gimp-pattern-duplicate"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_PATTERN_EDIT
-define|#
-directive|define
-name|GIMP_HELP_PATTERN_EDIT
-value|"gimp-pattern-edit"
 end_define
 
 begin_define
@@ -1985,6 +2001,14 @@ value|"gimp-gradient-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_GRADIENT_EDIT
+define|#
+directive|define
+name|GIMP_HELP_GRADIENT_EDIT
+value|"gimp-gradient-edit"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_GRADIENT_NEW
 define|#
 directive|define
@@ -1998,14 +2022,6 @@ define|#
 directive|define
 name|GIMP_HELP_GRADIENT_DUPLICATE
 value|"gimp-gradient-duplicate"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_GRADIENT_EDIT
-define|#
-directive|define
-name|GIMP_HELP_GRADIENT_EDIT
-value|"gimp-gradient-edit"
 end_define
 
 begin_define
@@ -2209,6 +2225,14 @@ value|"gimp-palette-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PALETTE_EDIT
+define|#
+directive|define
+name|GIMP_HELP_PALETTE_EDIT
+value|"gimp-palette-edit"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PALETTE_NEW
 define|#
 directive|define
@@ -2222,14 +2246,6 @@ define|#
 directive|define
 name|GIMP_HELP_PALETTE_DUPLICATE
 value|"gimp-palette-duplicate"
-end_define
-
-begin_define
-DECL|macro|GIMP_HELP_PALETTE_EDIT
-define|#
-directive|define
-name|GIMP_HELP_PALETTE_EDIT
-value|"gimp-palette-edit"
 end_define
 
 begin_define

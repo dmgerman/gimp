@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"core/gimpbrushgenerated.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdata.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -100,6 +100,31 @@ block|,
 name|NULL
 block|,
 name|GIMP_HELP_BRUSH_DIALOG
+block|}
+block|,
+block|{
+literal|"brushes-open-as-image"
+block|,
+name|GTK_STOCK_OPEN
+block|,
+name|N_
+argument_list|(
+literal|"_Open Brush as Image"
+argument_list|)
+block|,
+literal|""
+block|,
+name|N_
+argument_list|(
+literal|"Open brush as image"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|data_open_as_image_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_BRUSH_OPEN_AS_IMAGE
 block|}
 block|,
 block|{
@@ -354,6 +379,23 @@ argument_list|(
 literal|"brushes-edit"
 argument_list|,
 name|brush
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"brushes-open-as-image"
+argument_list|,
+name|brush
+operator|&&
+name|data
+operator|->
+name|filename
+operator|&&
+operator|!
+name|GIMP_IS_BRUSH_GENERATED
+argument_list|(
+name|brush
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
