@@ -166,7 +166,7 @@ DECL|macro|DEFAULT_FONT_SIZE
 define|#
 directive|define
 name|DEFAULT_FONT_SIZE
-value|50
+value|18
 end_define
 
 begin_comment
@@ -1249,7 +1249,10 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-literal|"gimp"
+operator|(
+literal|"No, you can't change this text.\n"
+literal|"Please DON'T report this bug."
+operator|)
 expr_stmt|;
 comment|/* FIXME */
 name|text_render
