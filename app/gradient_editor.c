@@ -289,7 +289,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a12008f0103
+DECL|enum|__anon2756ca8c0103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -329,7 +329,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a12008f0203
+DECL|enum|__anon2756ca8c0203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a12008f0308
+DECL|struct|__anon2756ca8c0308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -636,7 +636,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2a12008f0408
+DECL|struct|__anon2756ca8c0408
 block|{
 DECL|member|r
 DECL|member|g
@@ -26655,6 +26655,20 @@ name|grad_segment_t
 modifier|*
 name|seg
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|grad
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|file
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
@@ -27099,7 +27113,7 @@ block|}
 comment|/* Oops: we should have found a segment, but we didn't */
 name|grad_dump_gradient
 argument_list|(
-name|curr_gradient
+name|grad
 argument_list|,
 name|stderr
 argument_list|)
