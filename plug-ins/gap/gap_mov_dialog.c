@@ -205,7 +205,7 @@ value|32
 end_define
 
 begin_typedef
-DECL|struct|__anon274f39c50108
+DECL|struct|__anon2c72e7770108
 typedef|typedef
 struct|struct
 block|{
@@ -220,7 +220,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274f39c50208
+DECL|struct|__anon2c72e7770208
 typedef|typedef
 struct|struct
 block|{
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274f39c50308
+DECL|struct|__anon2c72e7770308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -475,7 +475,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon274f39c50408
+DECL|struct|__anon2c72e7770408
 typedef|typedef
 struct|struct
 block|{
@@ -2305,11 +2305,6 @@ name|gint
 name|last_nr
 parameter_list|)
 block|{
-name|GdkColor
-name|tips_fg
-decl_stmt|,
-name|tips_bg
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|hbbox
@@ -2523,83 +2518,6 @@ operator|)
 name|mov_close_callback
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/* tooltips */
-name|g_tooltips
-operator|=
-name|gtk_tooltips_new
-argument_list|()
-expr_stmt|;
-comment|/* use black as foreground: */
-name|tips_fg
-operator|.
-name|red
-operator|=
-literal|0
-expr_stmt|;
-name|tips_fg
-operator|.
-name|green
-operator|=
-literal|0
-expr_stmt|;
-name|tips_fg
-operator|.
-name|blue
-operator|=
-literal|0
-expr_stmt|;
-comment|/* postit yellow (khaki) as background: */
-name|gdk_color_alloc
-argument_list|(
-name|gtk_widget_get_colormap
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
-operator|&
-name|tips_fg
-argument_list|)
-expr_stmt|;
-name|tips_bg
-operator|.
-name|red
-operator|=
-literal|61669
-expr_stmt|;
-name|tips_bg
-operator|.
-name|green
-operator|=
-literal|59113
-expr_stmt|;
-name|tips_bg
-operator|.
-name|blue
-operator|=
-literal|35979
-expr_stmt|;
-name|gdk_color_alloc
-argument_list|(
-name|gtk_widget_get_colormap
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
-operator|&
-name|tips_bg
-argument_list|)
-expr_stmt|;
-name|gtk_tooltips_set_colors
-argument_list|(
-name|g_tooltips
-argument_list|,
-operator|&
-name|tips_bg
-argument_list|,
-operator|&
-name|tips_fg
 argument_list|)
 expr_stmt|;
 comment|/*  Action area  */
