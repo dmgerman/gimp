@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4847ac0103
+DECL|enum|__anon295383ce0103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES
@@ -252,9 +252,8 @@ parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -85,6 +85,16 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TOOL_CONTROL, GimpToolControlClass))
 end_define
 
+begin_decl_stmt
+name|GType
+name|gimp_tool_control_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|void
 name|gimp_tool_control_pause

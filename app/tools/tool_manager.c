@@ -1039,6 +1039,7 @@ operator|==
 name|HALT
 condition|)
 block|{
+comment|/* sets paused_count to 0 -- is this ok? */
 name|gimp_tool_control_halt
 argument_list|(
 name|tool_manager
@@ -1048,7 +1049,6 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
-comment|/* sets paused_count to 0 -- is this ok? */
 block|}
 block|}
 end_function
@@ -1517,7 +1517,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_register_tool (GType tool_type,GimpToolOptionsNewFunc options_new_func,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id,Gimp * gimp)
+DECL|function|tool_manager_register_tool (GType tool_type,GimpToolOptionsNewFunc options_new_func,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id,gpointer data)
 name|tool_manager_register_tool
 parameter_list|(
 name|GType
@@ -1569,11 +1569,20 @@ name|gchar
 modifier|*
 name|stock_id
 parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|)
-block|{
+init|=
+operator|(
+name|Gimp
+operator|*
+operator|)
+name|data
+decl_stmt|;
 name|GimpToolManager
 modifier|*
 name|tool_manager

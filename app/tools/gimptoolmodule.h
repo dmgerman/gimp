@@ -177,12 +177,11 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GimpToolRegisterCallback
 name|callback
+parameter_list|,
+name|gpointer
+name|register_data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -179,15 +179,14 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_dodgeburn_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
+DECL|function|gimp_dodgeburn_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_dodgeburn_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
+name|gpointer
+name|data
 parameter_list|)
 block|{
 call|(
@@ -226,7 +225,7 @@ literal|"tools/dodgeburn.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_DODGE
 argument_list|,
-name|gimp
+name|data
 argument_list|)
 expr_stmt|;
 block|}

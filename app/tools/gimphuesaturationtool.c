@@ -590,15 +590,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_hue_saturation_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
+DECL|function|gimp_hue_saturation_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_hue_saturation_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
+name|gpointer
+name|data
 parameter_list|)
 block|{
 call|(
@@ -637,7 +636,7 @@ literal|"tools/hue_saturation.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_HUE_SATURATION
 argument_list|,
-name|gimp
+name|data
 argument_list|)
 expr_stmt|;
 block|}

@@ -2971,12 +2971,12 @@ comment|/* restrict to horizontal/vertical lines, if modifiers are pressed     *
 end_comment
 
 begin_comment
-unit|if (mevent->state& GDK_MOD1_MASK)    {       if (mevent->state& GDK_CONTROL_MASK)       { 	 d  = (fabs(dx) + fabs(dy)) / 2;   	 d  = (fabs(x - path_tool->click_x) + fabs(y - path_tool->click_y)) / 2;   	  	 dx = ((x< path_tool->click_x) ? -d : d ) - dxsum; 	 dy = ((y< path_tool->click_y) ? -d : d ) - dysum;       }       else 	 dx = - dxsum;    }    else if (mevent->state& GDK_CONTROL_MASK)       dy = - dysum;         path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_offset_active (path_tool->cur_path, dx, dy);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }  void path_tool_motion_handle (Tool           *tool, 		         GdkEventMotion *mevent, 		         GimpDisplay    *gdisp) {    PathTool * path_tool;    gdouble dx, dy;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;
+unit|if (mevent->state& GDK_MOD1_MASK)    {       if (mevent->state& GDK_CONTROL_MASK)       { 	 d  = (fabs(dx) + fabs(dy)) / 2;   	 d  = (fabs(x - path_tool->click_x) + fabs(y - path_tool->click_y)) / 2;   	  	 dx = ((x< path_tool->click_x) ? -d : d ) - dxsum; 	 dy = ((y< path_tool->click_y) ? -d : d ) - dysum;       }       else 	 dx = - dxsum;    }    else if (mevent->state& GDK_CONTROL_MASK)       dy = - dysum;         path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause (path_tool->core, tool);     path_offset_active (path_tool->cur_path, dx, dy);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }  void path_tool_motion_handle (Tool           *tool, 		         GdkEventMotion *mevent, 		         GimpDisplay    *gdisp) {    PathTool * path_tool;    gdouble dx, dy;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;
 comment|/*     * Dont do anything, if the user clicked with pressed CONTROL-Key,     * because he moved the handle to the anchor an anchor.      * XXX: Not yet! :-)     */
 end_comment
 
 begin_ifdef
-unit|if (path_tool->click_modifier& GDK_CONTROL_MASK)       return;        if (!(path_tool->state& PATH_TOOL_DRAG))    {       path_tool->state |= PATH_TOOL_DRAG;       dxsum = 0;       dysum = 0;    }     gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);        dx = x - path_tool->click_x - dxsum;    dy = y - path_tool->click_y - dysum;        path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_curve_drag_handle (path_tool, path_tool->click_segment, dx, dy, path_tool->click_handle_id);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }      void path_tool_motion_curve (Tool           *tool, 		        GdkEventMotion *mevent, 		        GimpDisplay    *gdisp) {    PathTool * path_tool;    gdouble dx, dy;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;        if (!(path_tool->state& PATH_TOOL_DRAG))    {       path_tool->state |= PATH_TOOL_DRAG;       dxsum = 0;       dysum = 0;    }     gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);        dx = x - path_tool->click_x - dxsum;    dy = y - path_tool->click_y - dysum;        path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause(path_tool->core, tool);     path_curve_drag_segment (path_tool, path_tool->click_segment, path_tool->click_position, dx, dy);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }      void path_tool_cursor_update (Tool           *tool, 			 GdkEventMotion *mevent, 			 GimpDisplay    *gdisp) {    PathTool *path_tool;    gint     x, y, halfwidth, dummy, cursor_location;
+unit|if (path_tool->click_modifier& GDK_CONTROL_MASK)       return;        if (!(path_tool->state& PATH_TOOL_DRAG))    {       path_tool->state |= PATH_TOOL_DRAG;       dxsum = 0;       dysum = 0;    }     gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);        dx = x - path_tool->click_x - dxsum;    dy = y - path_tool->click_y - dysum;        path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause (path_tool->core, tool);     path_curve_drag_handle (path_tool, path_tool->click_segment, dx, dy, path_tool->click_handle_id);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }      void path_tool_motion_curve (Tool           *tool, 		        GdkEventMotion *mevent, 		        GimpDisplay    *gdisp) {    PathTool * path_tool;    gdouble dx, dy;    gint x,y;    static gint dxsum = 0;    static gint dysum = 0;        path_tool = (PathTool *) tool->private;        if (!(path_tool->state& PATH_TOOL_DRAG))    {       path_tool->state |= PATH_TOOL_DRAG;       dxsum = 0;       dysum = 0;    }     gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&x,&y, TRUE, 0);        dx = x - path_tool->click_x - dxsum;    dy = y - path_tool->click_y - dysum;        path_tool->draw |= PATH_TOOL_REDRAW_ACTIVE;        draw_core_pause (path_tool->core, tool);     path_curve_drag_segment (path_tool, path_tool->click_segment, path_tool->click_position, dx, dy);     dxsum += dx;    dysum += dy;     draw_core_resume (path_tool->core, tool);        path_tool->draw&= ~PATH_TOOL_REDRAW_ACTIVE;  }      void path_tool_cursor_update (Tool           *tool, 			 GdkEventMotion *mevent, 			 GimpDisplay    *gdisp) {    PathTool *path_tool;    gint     x, y, halfwidth, dummy, cursor_location;
 ifdef|#
 directive|ifdef
 name|PATH_TOOL_DEBUG
@@ -3082,7 +3082,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f443170108
+DECL|struct|__anon291cd6690108
 typedef|typedef
 struct|struct
 block|{
@@ -3440,7 +3440,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f443170208
+DECL|struct|__anon291cd6690208
 typedef|typedef
 struct|struct
 block|{
@@ -3782,7 +3782,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f443170308
+DECL|struct|__anon291cd6690308
 typedef|typedef
 struct|struct
 block|{
@@ -4100,7 +4100,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f443170408
+DECL|struct|__anon291cd6690408
 typedef|typedef
 struct|struct
 block|{
@@ -4258,7 +4258,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28f443170508
+DECL|struct|__anon291cd6690508
 typedef|typedef
 struct|struct
 block|{

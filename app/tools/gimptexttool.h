@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc0b7950103
+DECL|enum|__anon29e610f10103
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -167,9 +167,8 @@ parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -304,7 +304,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0948680108
+DECL|struct|__anon2b72eb2f0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -340,7 +340,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0948680208
+DECL|struct|__anon2b72eb2f0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0948680308
+DECL|struct|__anon2b72eb2f0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -1214,15 +1214,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bezier_select_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
+DECL|function|gimp_bezier_select_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_bezier_select_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
+name|gpointer
+name|data
 parameter_list|)
 block|{
 call|(
@@ -1261,7 +1260,7 @@ literal|"tools/bezier_select.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_BEZIER_SELECT
 argument_list|,
-name|gimp
+name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -1912,7 +1911,7 @@ operator|==
 name|EXTEND_REMOVE
 condition|)
 block|{
-comment|/* 	  if(bezier_sel->num_points< 6) */
+comment|/* 	  if (bezier_sel->num_points< 6) */
 comment|/* 	    return; */
 comment|/* erase the handles */
 name|bezier_sel
@@ -2912,7 +2911,6 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* never can be too careful */
 if|if
 condition|(
 operator|!
@@ -5147,7 +5145,7 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* Where are we?  reset to first point... */
-comment|/*if(last_curve == NULL)*/
+comment|/*if (last_curve == NULL)*/
 if|if
 condition|(
 name|start_pt

@@ -204,7 +204,7 @@ name|GimpToolRegisterCallback
 name|callback
 parameter_list|,
 name|gpointer
-name|register_data
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -171,7 +171,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bc2b00103
+DECL|enum|__anon27db81990103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -757,15 +757,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_crop_tool_register (GimpToolRegisterCallback callback,Gimp * gimp)
+DECL|function|gimp_crop_tool_register (GimpToolRegisterCallback callback,gpointer data)
 name|gimp_crop_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
 parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
+name|gpointer
+name|data
 parameter_list|)
 block|{
 call|(
@@ -804,7 +803,7 @@ literal|"tools/crop_tool.html"
 argument_list|,
 name|GIMP_STOCK_TOOL_CROP
 argument_list|,
-name|gimp
+name|data
 argument_list|)
 expr_stmt|;
 block|}
@@ -3139,7 +3138,7 @@ operator|!=
 name|gdisp
 operator|)
 condition|)
-comment|/* this expression can be simplified to !..._is_active() || t->g != g */
+comment|/* this expression can be simplified to !..._is_active () || t->g != g */
 block|{
 name|ctype
 operator|=
