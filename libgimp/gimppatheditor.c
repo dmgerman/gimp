@@ -147,7 +147,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon279bb2960103
+DECL|enum|__anon2a0ec2de0103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -380,6 +380,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|new_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -429,6 +431,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|raise_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -485,6 +489,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|lower_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -541,6 +547,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|delete_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive

@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e9df140103
+DECL|enum|__anon2986f3bc0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -5202,6 +5202,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|zoom_out_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_UNSET_FLAGS
@@ -5451,6 +5453,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|zoom_in_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_UNSET_FLAGS

@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d85a70103
+DECL|enum|__anon28c087e90103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -9230,6 +9230,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|zoom_in_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -9278,6 +9280,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|zoom_out_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

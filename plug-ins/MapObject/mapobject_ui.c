@@ -7999,6 +7999,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|zoom_out_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -8056,6 +8058,8 @@ operator|=
 name|gimp_pixmap_button_new
 argument_list|(
 name|zoom_in_xpm
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

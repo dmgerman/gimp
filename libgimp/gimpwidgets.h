@@ -385,6 +385,10 @@ name|gchar
 modifier|*
 modifier|*
 name|xpm_data
+parameter_list|,
+name|gchar
+modifier|*
+name|text
 parameter_list|)
 function_decl|;
 comment|/*  *  Standard Callbacks  */

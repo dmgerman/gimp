@@ -136,25 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cd7e780108
-block|{
-DECL|member|x
-DECL|member|y
-name|gdouble
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-DECL|typedef|vector_t
-block|}
-name|vector_t
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon27cd7e780208
+DECL|struct|__anon298c33f80108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -266,8 +248,10 @@ name|dialog_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -279,8 +263,10 @@ name|dialog_toggle_update
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
-name|gint
+name|gint32
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -292,98 +278,21 @@ name|dialog_scale_update
 parameter_list|(
 name|GtkAdjustment
 modifier|*
+name|adjustment
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|do_dialog
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|v_set
-parameter_list|(
-name|vector_t
-modifier|*
-name|v
-parameter_list|,
-name|double
-name|x
-parameter_list|,
-name|double
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|v_add
-parameter_list|(
-name|vector_t
-modifier|*
-name|v
-parameter_list|,
-name|vector_t
-name|a
-parameter_list|,
-name|vector_t
-name|b
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|v_sub
-parameter_list|(
-name|vector_t
-modifier|*
-name|v
-parameter_list|,
-name|vector_t
-name|a
-parameter_list|,
-name|vector_t
-name|b
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|double
-name|v_mag
-parameter_list|(
-name|vector_t
-name|v
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|double
-name|v_dot
-parameter_list|(
-name|vector_t
-name|a
-parameter_list|,
-name|vector_t
-name|b
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -400,13 +309,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|left_of_diagl
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 function_decl|;
@@ -414,13 +323,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|right_of_diagr
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 function_decl|;
@@ -428,13 +337,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|below_diagb
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 function_decl|;
@@ -442,13 +351,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|right_of_diagm
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 function_decl|;
@@ -456,13 +365,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|inside_circle
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 function_decl|;
@@ -550,6 +459,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|image_id
+specifier|static
 name|gint32
 name|image_id
 decl_stmt|;
@@ -557,6 +467,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|curl_layer
+specifier|static
 name|GDrawable
 modifier|*
 name|curl_layer
@@ -565,6 +476,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable
+specifier|static
 name|GDrawable
 modifier|*
 name|drawable
@@ -572,25 +484,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_mask
-name|GDrawable
-modifier|*
-name|layer_mask
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-DECL|typedef|GdkPmP
-typedef|typedef
+DECL|variable|gdk_curl_pixmaps
+specifier|static
 name|GdkPixmap
 modifier|*
-name|GdkPmP
-typedef|;
-end_typedef
-
-begin_decl_stmt
-DECL|variable|gdk_curl_pixmaps
-name|GdkPmP
 name|gdk_curl_pixmaps
 index|[
 literal|8
@@ -598,18 +495,11 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
-begin_typedef
-DECL|typedef|GdkBmP
-typedef|typedef
-name|GdkBitmap
-modifier|*
-name|GdkBmP
-typedef|;
-end_typedef
-
 begin_decl_stmt
 DECL|variable|gdk_curl_masks
-name|GdkBmP
+specifier|static
+name|GdkBitmap
+modifier|*
 name|gdk_curl_masks
 index|[
 literal|8
@@ -619,6 +509,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|curl_pixmap_widget
+specifier|static
 name|GtkWidget
 modifier|*
 name|curl_pixmap_widget
@@ -630,6 +521,7 @@ DECL|variable|sel_x1
 DECL|variable|sel_y1
 DECL|variable|sel_x2
 DECL|variable|sel_y2
+specifier|static
 name|gint
 name|sel_x1
 decl_stmt|,
@@ -644,6 +536,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|true_sel_width
 DECL|variable|true_sel_height
+specifier|static
 name|gint
 name|true_sel_width
 decl_stmt|,
@@ -654,6 +547,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|sel_width
 DECL|variable|sel_height
+specifier|static
 name|gint
 name|sel_width
 decl_stmt|,
@@ -663,6 +557,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable_position
+specifier|static
 name|gint
 name|drawable_position
 decl_stmt|;
@@ -680,6 +575,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|curl_layer_ID
+specifier|static
 name|gint32
 name|curl_layer_ID
 decl_stmt|;
@@ -691,13 +587,15 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|center
-name|vector_t
+specifier|static
+name|GimpVector2
 name|center
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|radius
+specifier|static
 name|double
 name|radius
 decl_stmt|;
@@ -709,14 +607,16 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|left_tangent
-name|vector_t
+specifier|static
+name|GimpVector2
 name|left_tangent
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|right_tangent
-name|vector_t
+specifier|static
+name|GimpVector2
 name|right_tangent
 decl_stmt|;
 end_decl_stmt
@@ -727,28 +627,32 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|diagl_slope
-name|double
+specifier|static
+name|gdouble
 name|diagl_slope
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|diagr_slope
-name|double
+specifier|static
+name|gdouble
 name|diagr_slope
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|diagb_slope
-name|double
+specifier|static
+name|gdouble
 name|diagb_slope
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|diagm_slope
-name|double
+specifier|static
+name|gdouble
 name|diagm_slope
 decl_stmt|;
 end_decl_stmt
@@ -759,6 +663,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|fore_color
+specifier|static
 name|guchar
 name|fore_color
 index|[
@@ -769,6 +674,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|back_color
+specifier|static
 name|guchar
 name|back_color
 index|[
@@ -856,26 +762,10 @@ literal|"shade"
 block|,
 literal|"Shade the region under the curl (1) or not (0)"
 block|}
-block|,    }
-decl_stmt|;
-comment|/* args */
-specifier|static
-name|GParamDef
-name|return_vals
-index|[]
-init|=
-block|{
-block|{
-name|PARAM_LAYER
-block|,
-literal|"Curl layer"
-block|,
-literal|"The new layer with the curl."
-block|}
-block|}
+block|,   }
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -892,7 +782,22 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|int
+name|GParamDef
+name|return_vals
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_LAYER
+block|,
+literal|"Curl layer"
+block|,
+literal|"The new layer with the curl."
+block|}
+block|}
+decl_stmt|;
+specifier|static
+name|gint
 name|nreturn_vals
 init|=
 sizeof|sizeof
@@ -1448,213 +1353,19 @@ block|}
 end_function
 
 begin_comment
-comment|/*************************/
-end_comment
-
-begin_comment
-comment|/* Some Vector-functions */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|v_set (vector_t * v,double x,double y)
-name|v_set
-parameter_list|(
-name|vector_t
-modifier|*
-name|v
-parameter_list|,
-name|double
-name|x
-parameter_list|,
-name|double
-name|y
-parameter_list|)
-block|{
-name|v
-operator|->
-name|x
-operator|=
-name|x
-expr_stmt|;
-name|v
-operator|->
-name|y
-operator|=
-name|y
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|v_add (vector_t * v,vector_t a,vector_t b)
-name|v_add
-parameter_list|(
-name|vector_t
-modifier|*
-name|v
-parameter_list|,
-name|vector_t
-name|a
-parameter_list|,
-name|vector_t
-name|b
-parameter_list|)
-block|{
-name|v
-operator|->
-name|x
-operator|=
-name|a
-operator|.
-name|x
-operator|+
-name|b
-operator|.
-name|x
-expr_stmt|;
-name|v
-operator|->
-name|y
-operator|=
-name|a
-operator|.
-name|y
-operator|+
-name|b
-operator|.
-name|y
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|v_sub (vector_t * v,vector_t a,vector_t b)
-name|v_sub
-parameter_list|(
-name|vector_t
-modifier|*
-name|v
-parameter_list|,
-name|vector_t
-name|a
-parameter_list|,
-name|vector_t
-name|b
-parameter_list|)
-block|{
-name|v
-operator|->
-name|x
-operator|=
-name|a
-operator|.
-name|x
-operator|-
-name|b
-operator|.
-name|x
-expr_stmt|;
-name|v
-operator|->
-name|y
-operator|=
-name|a
-operator|.
-name|y
-operator|-
-name|b
-operator|.
-name|y
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|double
-DECL|function|v_mag (vector_t v)
-name|v_mag
-parameter_list|(
-name|vector_t
-name|v
-parameter_list|)
-block|{
-return|return
-name|sqrt
-argument_list|(
-name|v
-operator|.
-name|x
-operator|*
-name|v
-operator|.
-name|x
-operator|+
-name|v
-operator|.
-name|y
-operator|*
-name|v
-operator|.
-name|y
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|double
-DECL|function|v_dot (vector_t a,vector_t b)
-name|v_dot
-parameter_list|(
-name|vector_t
-name|a
-parameter_list|,
-name|vector_t
-name|b
-parameter_list|)
-block|{
-return|return
-name|a
-operator|.
-name|x
-operator|*
-name|b
-operator|.
-name|x
-operator|+
-name|a
-operator|.
-name|y
-operator|*
-name|b
-operator|.
-name|y
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/*****************************************************  * Functions to locate the current point in the curl.  *  The following functions assume an curl in the  *  lower right corner.  *  diagb crosses the two tangential points from the  *  circle with diagl and diagr.  *  *   +------------------------------------------------+  *   |                                          __-- /|  *   |                                      __--   _/ |  *   |                                  __--      /   |  *   |                              __--        _/    |  *   |                          __--           /      |  *   |                      __--____         _/       |  *   |                  __----~~    \      _/         |  *   |              __--             |   _/           |  *   |    diagl __--               _/| _/diagr        |  *   |      __--            diagm_/  |/               |  *   |  __--                    /___/                 |  *   +-------------------------+----------------------+  */
 end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|left_of_diagl (double x,double y)
+name|gint
+DECL|function|left_of_diagl (gdouble x,gdouble y)
 name|left_of_diagl
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -1680,14 +1391,14 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|right_of_diagr (double x,double y)
+name|gint
+DECL|function|right_of_diagr (gdouble x,gdouble y)
 name|right_of_diagr
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -1713,14 +1424,14 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|below_diagb (double x,double y)
+name|gint
+DECL|function|below_diagb (gdouble x,gdouble y)
 name|below_diagb
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -1750,14 +1461,14 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|right_of_diagm (double x,double y)
+name|gint
+DECL|function|right_of_diagm (gdouble x,gdouble y)
 name|right_of_diagm
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -1783,18 +1494,18 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|inside_circle (double x,double y)
+name|gint
+DECL|function|inside_circle (gdouble x,gdouble y)
 name|inside_circle
 parameter_list|(
-name|double
+name|gdouble
 name|x
 parameter_list|,
-name|double
+name|gdouble
 name|y
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|dx
 decl_stmt|,
 name|dy
@@ -2482,11 +2193,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_realize
-argument_list|(
-name|dialog
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -2607,6 +2313,11 @@ name|frame
 argument_list|)
 argument_list|,
 name|table
+argument_list|)
+expr_stmt|;
+name|gtk_widget_realize
+argument_list|(
+name|dialog
 argument_list|)
 expr_stmt|;
 name|style
@@ -3717,18 +3428,18 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|k
 decl_stmt|;
-name|double
+name|gdouble
 name|alpha
 decl_stmt|,
 name|beta
 decl_stmt|;
-name|double
+name|gdouble
 name|angle
 decl_stmt|;
-name|vector_t
+name|GimpVector2
 name|v1
 decl_stmt|,
 name|v2
@@ -3899,7 +3610,7 @@ name|beta
 argument_list|)
 operator|)
 expr_stmt|;
-name|v_set
+name|gimp_vector2_set
 argument_list|(
 operator|&
 name|center
@@ -3926,7 +3637,7 @@ operator|.
 name|y
 expr_stmt|;
 comment|/* left_tangent  */
-name|v_set
+name|gimp_vector2_set
 argument_list|(
 operator|&
 name|left_tangent
@@ -3947,28 +3658,32 @@ name|alpha
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|v_add
+name|gimp_vector2_add
 argument_list|(
 operator|&
 name|left_tangent
 argument_list|,
+operator|&
 name|left_tangent
 argument_list|,
+operator|&
 name|center
 argument_list|)
 expr_stmt|;
 comment|/* right_tangent */
-name|v_sub
+name|gimp_vector2_sub
 argument_list|(
 operator|&
 name|v1
 argument_list|,
+operator|&
 name|left_tangent
 argument_list|,
+operator|&
 name|center
 argument_list|)
 expr_stmt|;
-name|v_set
+name|gimp_vector2_set
 argument_list|(
 operator|&
 name|v2
@@ -3993,27 +3708,31 @@ literal|2.0
 operator|*
 name|acos
 argument_list|(
-name|v_dot
+name|gimp_vector2_inner_product
 argument_list|(
+operator|&
 name|v1
 argument_list|,
+operator|&
 name|v2
 argument_list|)
 operator|/
 operator|(
-name|v_mag
+name|gimp_vector2_length
 argument_list|(
+operator|&
 name|v1
 argument_list|)
 operator|*
-name|v_mag
+name|gimp_vector2_length
 argument_list|(
+operator|&
 name|v2
 argument_list|)
 operator|)
 argument_list|)
 expr_stmt|;
-name|v_set
+name|gimp_vector2_set
 argument_list|(
 operator|&
 name|right_tangent
@@ -4056,13 +3775,15 @@ name|angle
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|v_add
+name|gimp_vector2_add
 argument_list|(
 operator|&
 name|right_tangent
 argument_list|,
+operator|&
 name|right_tangent
 argument_list|,
+operator|&
 name|center
 argument_list|)
 expr_stmt|;
@@ -4211,7 +3932,7 @@ name|alpha
 decl_stmt|,
 name|beta
 decl_stmt|;
-name|vector_t
+name|GimpVector2
 name|v
 decl_stmt|,
 name|dl
@@ -4534,7 +4255,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Init shade_under */
-name|v_set
+name|gimp_vector2_set
 argument_list|(
 operator|&
 name|dl
@@ -4548,12 +4269,13 @@ argument_list|)
 expr_stmt|;
 name|dl_mag
 operator|=
-name|v_mag
+name|gimp_vector2_length
 argument_list|(
+operator|&
 name|dl
 argument_list|)
 expr_stmt|;
-name|v_set
+name|gimp_vector2_set
 argument_list|(
 operator|&
 name|dr
@@ -4579,8 +4301,9 @@ argument_list|)
 expr_stmt|;
 name|dr_mag
 operator|=
-name|v_mag
+name|gimp_vector2_length
 argument_list|(
+operator|&
 name|dr
 argument_list|)
 expr_stmt|;
@@ -4588,10 +4311,12 @@ name|alpha
 operator|=
 name|acos
 argument_list|(
-name|v_dot
+name|gimp_vector2_inner_product
 argument_list|(
+operator|&
 name|dl
 argument_list|,
+operator|&
 name|dr
 argument_list|)
 operator|/
@@ -4971,16 +4696,19 @@ name|angle
 operator|=
 name|acos
 argument_list|(
-name|v_dot
+name|gimp_vector2_inner_product
 argument_list|(
+operator|&
 name|v
 argument_list|,
+operator|&
 name|dl
 argument_list|)
 operator|/
 operator|(
-name|v_mag
+name|gimp_vector2_length
 argument_list|(
+operator|&
 name|v
 argument_list|)
 operator|*
