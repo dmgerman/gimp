@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *   * gimp-remote.c  * Copyright (C) 2000-2003  Sven Neumann<sven@gimp.org>  *                          Simon Budig<simon@gimp.org>  *  * Tells a running gimp to open files by creating a synthetic drop-event.  *  * compile with  *  gcc -o gimp-remote `pkg-config --cflags --libs gtk+-2.0` -lXmu gimp-remote.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimp-remote.c  * Copyright (C) 2000-2003  Sven Neumann<sven@gimp.org>  *                          Simon Budig<simon@gimp.org>  *  * Tells a running gimp to open files by creating a synthetic drop-event.  *  * compile with  *  gcc -o gimp-remote `pkg-config --cflags --libs gtk+-2.0` -lXmu gimp-remote.c  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -1092,6 +1092,18 @@ index|]
 argument_list|,
 literal|5
 argument_list|)
+operator|&&
+name|g_ascii_strncasecmp
+argument_list|(
+literal|"https:"
+argument_list|,
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|6
+argument_list|)
 condition|)
 block|{
 if|if
@@ -1139,6 +1151,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|file_uri
 operator|=
 name|g_strdup
@@ -1149,6 +1162,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|file_list
@@ -1276,7 +1290,7 @@ return|return
 name|EXIT_FAILURE
 return|;
 block|}
-comment|/*  Problem: If the Toolbox is hidden via Tab (gtk_widget_hide)    *  it does not accept DnD-Operations and gtk_main() will not be    *  terminated. If the Toolbox is simply unmapped (by the Windowmanager)    *  DnD works. But in both cases gdk_window_is_visible () == 0.... :-(     *  To work around this add a timeout and abort after 1.5 seconds.    */
+comment|/*  Problem: If the Toolbox is hidden via Tab (gtk_widget_hide)    *  it does not accept DnD-Operations and gtk_main() will not be    *  terminated. If the Toolbox is simply unmapped (by the Windowmanager)    *  DnD works. But in both cases gdk_window_is_visible () == 0.... :-(    *  To work around this add a timeout and abort after 1.5 seconds.    */
 name|timeout
 operator|=
 name|g_timeout_add
