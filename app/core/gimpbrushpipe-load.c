@@ -933,10 +933,6 @@ decl_stmt|;
 name|gdouble
 name|angle
 decl_stmt|;
-name|GRand
-modifier|*
-name|gr
-decl_stmt|;
 if|if
 condition|(
 name|pipe
@@ -953,12 +949,6 @@ operator|->
 name|current
 argument_list|)
 return|;
-comment|/* Initialise random number generator */
-name|gr
-operator|=
-name|g_rand_new
-argument_list|()
-expr_stmt|;
 name|brushix
 operator|=
 literal|0
@@ -1097,10 +1087,8 @@ case|:
 comment|/* This probably isn't the right way */
 name|ix
 operator|=
-name|g_rand_int_range
+name|g_random_int_range
 argument_list|(
-name|gr
-argument_list|,
 literal|0
 argument_list|,
 name|pipe
@@ -1279,11 +1267,6 @@ name|brushes
 index|[
 name|brushix
 index|]
-expr_stmt|;
-name|g_rand_free
-argument_list|(
-name|gr
-argument_list|)
 expr_stmt|;
 return|return
 name|GIMP_BRUSH
