@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c5244f0103
+DECL|enum|__anon289dddc70103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_NONE
 name|COLORBLIND_DEFICIENCY_NONE
@@ -1909,6 +1909,7 @@ name|CdisplayColorblind
 modifier|*
 name|colorblind
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|str
