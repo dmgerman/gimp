@@ -1,14 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  Rotate plug-in v0.9   *  by Sven Neumann<sven@gimp.org> and Adam D. Moss<adam@gimp.org>  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  A lot of changes in version 0.3 were inspired by (or even simply   *  copied from) the similar rotators-plug-in by Adam D. Moss.   *  *  As I still prefer my version I have not stopped developing it.  *  Probably this will result in one plug-in that includes the advantages   *  of both approaches.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *  Rotate plug-in v1.0  *  Copyright 1997-2000 by Sven Neumann<sven@gimp.org>   *& Adam D. Moss<adam@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
-end_comment
-
-begin_comment
-comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *  (01/15/98)  v0.6   fixed a line that caused rotate to crash on some   *                     systems                 *  (05/28/98)  v0.7   use the new gimp_message function for error output  *  (10/09/99)  v0.8   rotate guides too  *  (11/13/99)  v0.9   merge rotators and rotate plug-ins   *                     -> drop the dialog, register directly into menus instead  */
+comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *  (01/15/98)  v0.6   fixed a line that caused rotate to crash on some   *                     systems                 *  (05/28/98)  v0.7   use the new gimp_message function for error output  *  (10/09/99)  v0.8   rotate guides too  *  (11/13/99)  v0.9   merge rotators and rotate plug-ins   *                     -> drop the dialog, register directly into menus instead  *  (06/18/00)  v1.0   speed up 180° rotations,   *                     declare version 1.0 for gimp-1.2 release  */
 end_comment
 
 begin_comment
@@ -48,7 +44,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.9 (1999/11/13)"
+value|"v1.0 (2000/06/18)"
 end_define
 
 begin_define
@@ -78,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c25f1310108
+DECL|struct|__anon2b76d1800108
 block|{
 DECL|member|angle
 name|gint
@@ -97,7 +93,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c25f1310208
+DECL|struct|__anon2b76d1800208
 block|{
 DECL|member|ID
 name|gint32
@@ -155,7 +151,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -163,7 +159,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -186,7 +182,7 @@ specifier|static
 name|void
 name|rotate_drawable
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -227,7 +223,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -253,7 +249,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|active_drawable
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|active_drawable
 init|=
@@ -291,7 +287,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
@@ -355,7 +351,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|menuargs
 index|[]
 init|=
@@ -632,7 +628,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -642,7 +638,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -650,14 +646,14 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 comment|/* Get the runmode from the in-parameters */
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 init|=
 name|param
@@ -670,14 +666,14 @@ operator|.
 name|d_int32
 decl_stmt|;
 comment|/* status variable, use it to check for errors in invocation usualy only       during non-interactive calling */
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
 comment|/*always return at least the status to the caller. */
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
@@ -1240,7 +1236,7 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|destPR
@@ -1249,24 +1245,24 @@ name|gint
 name|width
 decl_stmt|,
 name|height
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|longside
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|bytes
 decl_stmt|;
 name|gint
 name|row
 decl_stmt|,
 name|col
-decl_stmt|,
-name|byte
 decl_stmt|;
 name|gint
 name|offsetx
 decl_stmt|,
 name|offsety
 decl_stmt|;
-name|gint
+name|gboolean
 name|was_preserve_transparency
 init|=
 name|FALSE
@@ -1274,7 +1270,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|buffer
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|src_row
 decl_stmt|,
@@ -1348,9 +1345,9 @@ name|width
 operator|/
 name|gimp_tile_width
 argument_list|()
-operator|)
 operator|+
 literal|1
+operator|)
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
@@ -1461,45 +1458,29 @@ name|col
 operator|++
 control|)
 block|{
-for|for
-control|(
-name|byte
-operator|=
-literal|0
-init|;
-name|byte
-operator|<
-name|bytes
-condition|;
-name|byte
-operator|++
-control|)
-block|{
+name|memcpy
+argument_list|(
 name|dest_row
-index|[
+operator|+
 name|col
 operator|*
 name|bytes
-operator|+
-name|byte
-index|]
-operator|=
+argument_list|,
 name|src_row
-index|[
+operator|+
 operator|(
 name|width
 operator|-
-name|col
-operator|-
 literal|1
+operator|-
+name|col
 operator|)
 operator|*
 name|bytes
-operator|+
-name|byte
-index|]
+argument_list|,
+name|bytes
+argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|gimp_pixel_rgn_set_row
 argument_list|(
@@ -1638,23 +1619,19 @@ expr_stmt|;
 name|gimp_tile_cache_ntiles
 argument_list|(
 operator|(
-operator|(
 name|longside
 operator|/
 name|gimp_tile_width
 argument_list|()
-operator|)
 operator|+
 literal|1
 operator|)
 operator|+
 operator|(
-operator|(
 name|longside
 operator|/
 name|gimp_tile_height
 argument_list|()
-operator|)
 operator|+
 literal|1
 operator|)
@@ -2029,7 +2006,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
