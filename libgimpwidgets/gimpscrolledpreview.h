@@ -229,6 +229,23 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|gimp_scrolled_preview_set_position
+parameter_list|(
+name|GimpScrolledPreview
+modifier|*
+name|scr
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

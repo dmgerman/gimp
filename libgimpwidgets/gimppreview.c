@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef45cd0103
+DECL|enum|__anon29b2da470103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef45cd0203
+DECL|enum|__anon29b2da470203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2139,10 +2139,7 @@ name|preview
 operator|->
 name|xoff
 operator|+
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 operator|->
 name|xmin
 expr_stmt|;
@@ -2157,10 +2154,7 @@ name|preview
 operator|->
 name|yoff
 operator|+
-name|GIMP_PREVIEW
-argument_list|(
 name|preview
-argument_list|)
 operator|->
 name|ymin
 expr_stmt|;
