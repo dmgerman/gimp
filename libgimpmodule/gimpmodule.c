@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a28fb800103
+DECL|enum|__anon2c1db0030103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -807,6 +807,10 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_module_new:  * @filename:     The filename of a loadable module.  * @load_inhibit: Pass #TRUE to exclude this module from auto-loading.  * @verbose:      Pass #TRUE to enable debugging output.  *   * Creates a new #GimpModule instance.  *   * Return value: The new #GimpModule object.  **/
+end_comment
+
 begin_function
 name|GimpModule
 modifier|*
@@ -937,6 +941,10 @@ name|module
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_module_query_module:  * @module: A #GimpModule.  *   * Queries the module without actually registering any of the types it  * may implement. After successful query, the @info field of the  * #GimpModule struct will be available for further inspection.  *   * Return value: #TRUE on success.  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -1180,6 +1188,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_module_modified:  * @module: A #GimpModule.  *   * Emits the "modified" signal. Call it whenever you have modified the module  * manually (which you shouldn't do).  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_module_modified (GimpModule * module)
@@ -1215,6 +1227,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_module_set_load_inhibit:  * @module:       A #GimpModule.  * @load_inhibit: Pass #TRUE to exclude this module from auto-loading.  *   * Sets the @load_inhibit property if the module. Emits "modified".  **/
+end_comment
 
 begin_function
 name|void
@@ -1267,6 +1283,10 @@ end_function
 
 begin_comment
 comment|/*  private functions  */
+end_comment
+
+begin_comment
+comment|/**  * gimp_module_state_name:  * @state: A #GimpModuleState.  *   * Returns the translated textual representation of a #GimpModuleState.  * The returned string must not be freed.  *   * Return value: The @state's name.  **/
 end_comment
 
 begin_function
@@ -1507,6 +1527,10 @@ begin_comment
 comment|/*  GimpModuleInfo functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_module_info_new:  * @abi_version: The #GIMP_MODULE_ABI_VERSION the module was compiled against.  * @purpose:     The module's general purpose.  * @author:      The module's author.  * @version:     The module's version.  * @copyright:   The module's copyright.  * @date:        The module's release date.  *   * Creates a newly allocated #GimpModuleInfo struct.  *   * Return value: The new #GimpModuleInfo struct.  **/
+end_comment
+
 begin_function
 name|GimpModuleInfo
 modifier|*
@@ -1612,6 +1636,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_module_info_copy:  * @info: The #GimpModuleInfo struct to copy.  *   * Copies a #GimpModuleInfo struct.  *   * Return value: The new copy.  **/
+end_comment
+
 begin_function
 name|GimpModuleInfo
 modifier|*
@@ -1663,6 +1691,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_module_info_free:  * @info: The #GimpModuleInfo struct to free  *   * Frees the passed #GimpModuleInfo.  **/
+end_comment
 
 begin_function
 name|void

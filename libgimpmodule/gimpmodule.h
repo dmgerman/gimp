@@ -53,7 +53,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b330da30103
+DECL|enum|__anon2c36a9880103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -229,6 +229,7 @@ DECL|member|parent_instance
 name|GTypeModule
 name|parent_instance
 decl_stmt|;
+comment|/*< public>*/
 DECL|member|filename
 name|gchar
 modifier|*
@@ -256,12 +257,14 @@ name|load_inhibit
 decl_stmt|;
 comment|/* user requests not to load at boot time   */
 comment|/* stuff from now on may be NULL depending on the state the module is in   */
+comment|/*< private>*/
 DECL|member|module
 name|GModule
 modifier|*
 name|module
 decl_stmt|;
 comment|/* handle on the module                     */
+comment|/*< public>*/
 DECL|member|info
 name|GimpModuleInfo
 modifier|*
@@ -273,6 +276,7 @@ name|gchar
 modifier|*
 name|last_module_error
 decl_stmt|;
+comment|/*< private>*/
 DECL|member|query_module
 name|GimpModuleQueryFunc
 name|query_module

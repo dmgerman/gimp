@@ -101,6 +101,7 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
+comment|/*< private>*/
 DECL|member|modules
 name|GList
 modifier|*
