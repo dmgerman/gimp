@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in-context.h"
 end_include
 
@@ -136,6 +142,8 @@ operator|->
 name|open
 condition|)
 block|{
+name|success
+operator|=
 name|plug_in_context_push
 argument_list|(
 name|gimp
@@ -241,6 +249,8 @@ operator|->
 name|open
 condition|)
 block|{
+name|success
+operator|=
 name|plug_in_context_push
 argument_list|(
 name|gimp

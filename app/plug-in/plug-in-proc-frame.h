@@ -21,10 +21,15 @@ DECL|struct|_PlugInProcFrame
 struct|struct
 name|_PlugInProcFrame
 block|{
-DECL|member|context
+DECL|member|main_context
 name|GimpContext
 modifier|*
-name|context
+name|main_context
+decl_stmt|;
+DECL|member|context_stack
+name|GList
+modifier|*
+name|context_stack
 decl_stmt|;
 DECL|member|proc_rec
 name|ProcRecord

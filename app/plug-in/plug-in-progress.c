@@ -622,7 +622,7 @@ literal|"context"
 argument_list|,
 name|proc_frame
 operator|->
-name|context
+name|main_context
 argument_list|,
 literal|"callback-name"
 argument_list|,

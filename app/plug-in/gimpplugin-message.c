@@ -1535,7 +1535,17 @@ name|gimp
 argument_list|,
 name|proc_frame
 operator|->
-name|context
+name|context_stack
+condition|?
+name|proc_frame
+operator|->
+name|context_stack
+operator|->
+name|data
+else|:
+name|proc_frame
+operator|->
+name|main_context
 argument_list|,
 name|proc_frame
 operator|->
@@ -1711,6 +1721,15 @@ name|PlugInBlocked
 modifier|*
 name|blocked
 decl_stmt|;
+name|g_warning
+argument_list|(
+literal|"%s: EEEEEEEEEK! \n"
+literal|"You managed to trigger a code path that \n"
+literal|"should be dead. Please report this to bugs.gimp.org."
+argument_list|,
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 name|blocked
 operator|=
 name|g_new0
@@ -1831,6 +1850,15 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
+name|g_warning
+argument_list|(
+literal|"%s: EEEEEEEEEK! \n"
+literal|"You managed to trigger a code path that \n"
+literal|"should be dead. Please report this to bugs.gimp.org."
+argument_list|,
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
