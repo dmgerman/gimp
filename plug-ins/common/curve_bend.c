@@ -746,7 +746,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9be060108
+DECL|struct|__anon28a0a3ec0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -800,7 +800,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac9be060208
+DECL|struct|__anon28a0a3ec0208
 block|{
 DECL|member|y
 name|gint32
@@ -2982,6 +2982,13 @@ literal|0
 condition|)
 block|{
 comment|/* apply the layermask        *   some transitions (especially rotate) cant operate proper on        *   layers with masks !        */
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_NONINTERACTIVE
+condition|)
+block|{
 name|gimp_layer_remove_mask
 argument_list|(
 name|l_layer_id
@@ -2990,6 +2997,22 @@ literal|0
 comment|/* 0==APPLY */
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Cannot operate on layers with masks."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
 block|}
 comment|/* if there is a selection, make it the floating selection layer */
 name|l_active_drawable_id
