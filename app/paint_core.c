@@ -1749,6 +1749,15 @@ condition|(
 name|draw_line
 condition|)
 block|{
+name|draw_core_pause
+argument_list|(
+name|paint_core
+operator|->
+name|core
+argument_list|,
+name|tool
+argument_list|)
+expr_stmt|;
 name|paint_core_interpolate
 argument_list|(
 name|paint_core
