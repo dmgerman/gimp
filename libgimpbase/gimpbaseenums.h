@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f4e4b00103
+DECL|enum|__anon289d5ddc0103
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f4e4b00203
+DECL|enum|__anon289d5ddc0203
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -116,7 +116,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f4e4b00303
+DECL|enum|__anon289d5ddc0303
 block|{
 DECL|enumerator|GIMP_UNIT_PIXEL
 name|GIMP_UNIT_PIXEL
@@ -163,7 +163,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f4e4b00403
+DECL|enum|__anon289d5ddc0403
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -243,7 +243,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f4e4b00503
+DECL|enum|__anon289d5ddc0503
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -266,7 +266,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f4e4b00603
+DECL|enum|__anon289d5ddc0603
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -292,7 +292,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f4e4b00703
+DECL|enum|__anon289d5ddc0703
 block|{
 DECL|enumerator|GIMP_MESSAGE_BOX
 name|GIMP_MESSAGE_BOX
@@ -312,7 +312,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29f4e4b00803
+DECL|enum|__anon289d5ddc0803
 block|{
 DECL|enumerator|GIMP_STACK_TRACE_NEVER
 name|GIMP_STACK_TRACE_NEVER
@@ -325,6 +325,29 @@ name|GIMP_STACK_TRACE_ALWAYS
 DECL|typedef|GimpStackTraceMode
 block|}
 name|GimpStackTraceMode
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon289d5ddc0903
+block|{
+DECL|enumerator|GIMP_PROGRESS_COMMAND_START
+name|GIMP_PROGRESS_COMMAND_START
+block|,
+DECL|enumerator|GIMP_PROGRESS_COMMAND_END
+name|GIMP_PROGRESS_COMMAND_END
+block|,
+DECL|enumerator|GIMP_PROGRESS_COMMAND_SET_TEXT
+name|GIMP_PROGRESS_COMMAND_SET_TEXT
+block|,
+DECL|enumerator|GIMP_PROGRESS_COMMAND_SET_VALUE
+name|GIMP_PROGRESS_COMMAND_SET_VALUE
+DECL|typedef|GimpProgressCommand
+block|}
+name|GimpProgressCommand
 typedef|;
 end_typedef
 

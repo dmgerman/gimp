@@ -34,12 +34,6 @@ name|gchar
 modifier|*
 name|progress_callback
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|guint                      idle_id;
-endif|#
-directive|endif
 DECL|member|start_callback
 name|GimpProgressStartCallback
 name|start_callback
@@ -423,12 +417,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-if|#
-directive|if
-literal|0
-block|if (progress_data->idle_id)     g_source_remove (progress_data->idle_id);
-endif|#
-directive|endif
 name|_gimp_progress_uninstall
 argument_list|(
 name|progress_callback
@@ -516,18 +504,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-if|#
-directive|if
-literal|0
-block|if (! progress_data->idle_id)         progress_data->idle_id =           g_idle_add ((GSourceFunc) gimp_temp_progress_run_idle,                       progress_data);
-endif|#
-directive|endif
-name|g_print
-argument_list|(
-literal|"%s: command = %d, text = %s, value = %f\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
+name|GimpProgressCommand
+name|command
+init|=
 name|param
 index|[
 literal|0
@@ -536,40 +515,14 @@ operator|.
 name|data
 operator|.
 name|d_int32
-argument_list|,
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|,
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_float
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|command
 condition|)
 block|{
 case|case
-literal|0
+name|GIMP_PROGRESS_COMMAND_START
 case|:
 name|progress_data
 operator|->
@@ -602,7 +555,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|1
+name|GIMP_PROGRESS_COMMAND_END
 case|:
 name|progress_data
 operator|->
@@ -615,7 +568,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|2
+name|GIMP_PROGRESS_COMMAND_SET_TEXT
 case|:
 name|progress_data
 operator|->
@@ -637,7 +590,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-literal|3
+name|GIMP_PROGRESS_COMMAND_SET_VALUE
 case|:
 name|progress_data
 operator|->
@@ -667,27 +620,6 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|g_print
-argument_list|(
-literal|"%s: callback finished\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-while|while
-condition|(
-name|g_main_context_pending
-argument_list|(
-name|NULL
-argument_list|)
-condition|)
-name|g_main_context_iteration
-argument_list|(
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -720,18 +652,6 @@ name|GIMP_PDB_SUCCESS
 expr_stmt|;
 block|}
 end_function
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static gboolean gimp_temp_progress_run_idle (GimpProgressData *progress_data) {   progress_data->idle_id = 0;    if (progress_data->callback)     progress_data->callback (progress_data->progress_name,                              progress_data->closing,                              progress_data->data);    if (progress_data->closing)     {       gchar *progress_callback = progress_data->progress_callback;        progress_data->progress_callback = NULL;       gimp_progress_select_destroy (progress_callback);     }    return FALSE; }
-endif|#
-directive|endif
-end_endif
 
 end_unit
 

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a0e3d0103
+DECL|enum|__anon2782276e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -871,14 +871,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_pdb_progress_run_callback (GimpPdbProgress * progress,gint command,const gchar * text,gdouble value)
+DECL|function|gimp_pdb_progress_run_callback (GimpPdbProgress * progress,GimpProgressCommand command,const gchar * text,gdouble value)
 name|gimp_pdb_progress_run_callback
 parameter_list|(
 name|GimpPdbProgress
 modifier|*
 name|progress
 parameter_list|,
-name|gint
+name|GimpProgressCommand
 name|command
 parameter_list|,
 specifier|const
@@ -910,19 +910,6 @@ operator|->
 name|callback_busy
 operator|=
 name|TRUE
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"%s: command = %d, text = %s, value = %f\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|command
-argument_list|,
-name|text
-argument_list|,
-name|value
-argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
@@ -1008,13 +995,6 @@ argument_list|,
 name|n_return_vals
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"%s: callback finished\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
 name|progress
 operator|->
 name|callback_busy
@@ -1066,7 +1046,7 @@ name|gimp_pdb_progress_run_callback
 argument_list|(
 name|pdb_progress
 argument_list|,
-literal|0
+name|GIMP_PROGRESS_COMMAND_START
 argument_list|,
 name|message
 argument_list|,
@@ -1126,7 +1106,7 @@ name|gimp_pdb_progress_run_callback
 argument_list|(
 name|pdb_progress
 argument_list|,
-literal|1
+name|GIMP_PROGRESS_COMMAND_END
 argument_list|,
 name|NULL
 argument_list|,
@@ -1212,7 +1192,7 @@ name|gimp_pdb_progress_run_callback
 argument_list|(
 name|pdb_progress
 argument_list|,
-literal|2
+name|GIMP_PROGRESS_COMMAND_SET_TEXT
 argument_list|,
 name|message
 argument_list|,
@@ -1256,7 +1236,7 @@ name|gimp_pdb_progress_run_callback
 argument_list|(
 name|pdb_progress
 argument_list|,
-literal|3
+name|GIMP_PROGRESS_COMMAND_SET_VALUE
 argument_list|,
 name|NULL
 argument_list|,
