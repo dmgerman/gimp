@@ -121,6 +121,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpenumcombobox.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpwidgets/gimpenumstore.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpfileentry.h>
 end_include
 

@@ -1036,24 +1036,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpEnumStore
-typedef|typedef
-name|struct
-name|_GimpEnumStore
-name|GimpEnumStore
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpEnumComboBox
-typedef|typedef
-name|struct
-name|_GimpEnumComboBox
-name|GimpEnumComboBox
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpUnitStore
 typedef|typedef
 name|struct

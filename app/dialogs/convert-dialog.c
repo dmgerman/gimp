@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpenumcombobox.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpviewablebox.h"
 end_include
 
@@ -126,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9cd1540108
+DECL|struct|__anon2997a2230108
 block|{
 DECL|member|dialog
 name|GtkWidget

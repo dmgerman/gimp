@@ -33,7 +33,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c38d91a0103
+DECL|enum|__anon2c96e42d0103
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c38d91a0203
+DECL|enum|__anon2c96e42d0203
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c38d91a0303
+DECL|enum|__anon2c96e42d0303
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -257,6 +257,24 @@ typedef|typedef
 name|struct
 name|_GimpDialog
 name|GimpDialog
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpEnumStore
+typedef|typedef
+name|struct
+name|_GimpEnumStore
+name|GimpEnumStore
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpEnumComboBox
+typedef|typedef
+name|struct
+name|_GimpEnumComboBox
+name|GimpEnumComboBox
 typedef|;
 end_typedef
 

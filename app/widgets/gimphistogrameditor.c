@@ -78,18 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpenumcombobox.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpenumstore.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimphelp-ids.h"
 end_include
 

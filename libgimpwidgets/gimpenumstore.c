@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpenumstore.c  * Copyright (C) 2004  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpenumstore.c  * Copyright (C) 2004  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -24,13 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets-types.h"
+file|"gimpwidgetstypes.h"
 end_include
 
 begin_include
@@ -323,7 +317,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new:  * @enum_type: the #GType of an enum.  *  * Creates a new #GimpEnumStore, derived from #GtkListStore and fills  * it with enum values. The enum needs to be registered to the type  * system and should have translatable value names.  *  * Return value: a new #GimpEnumStore.  **/
+comment|/**  * gimp_enum_store_new:  * @enum_type: the #GType of an enum.  *  * Creates a new #GimpEnumStore, derived from #GtkListStore and fills  * it with enum values. The enum needs to be registered to the type  * system and should have translatable value names.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -388,7 +382,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range.  *  * Return value: a new #GimpEnumStore.  **/
+comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -497,7 +491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to list the enum values that should be added to the store.  *  * Return value: a new #GimpEnumStore.  **/
+comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to list the enum values that should be added to the store.  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -552,7 +546,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_new_with_values_valist:  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @args:      a va_list of enum values (exactly @n_values)  *  * See gimp_enum_store_new_with_values().  *  * Return value: a new #GimpEnumStore.  **/
+comment|/**  * gimp_enum_store_new_with_values_valist:  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @args:      a va_list of enum values (exactly @n_values)  *  * See gimp_enum_store_new_with_values().  *  * Return value: a new #GimpEnumStore.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -674,7 +668,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them.  **/
+comment|/**  * gimp_enum_store_set_stock_prefix:  * @store:        a #GimpEnumStore  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

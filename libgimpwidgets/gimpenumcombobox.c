@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpenumcombobox.c  * Copyright (C) 2004  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpenumcombobox.h  * Copyright (C) 2004  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets-types.h"
+file|"gimpwidgetstypes.h"
 end_include
 
 begin_include
@@ -42,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_function
@@ -125,7 +119,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_new:  * @enum_type: the #GType of an enum.  *  * Creates a #GtkComboBox readily filled with all enum values from a  * given @enum_type. The enum needs to be registered to the type  * system and should have translatable value names.  *  * This is just a convenience function. If you need more control over  * the enum values that appear in the combo_box, you can create your  * own #GimpEnumStore and use gimp_enum_combo_box_new_with_model().  *  * Return value: a new #GimpEnumComboBox.  **/
+comment|/**  * gimp_enum_combo_box_new:  * @enum_type: the #GType of an enum.  *  * Creates a #GtkComboBox readily filled with all enum values from a  * given @enum_type. The enum needs to be registered to the type  * system and should have translatable value names.  *  * This is just a convenience function. If you need more control over  * the enum values that appear in the combo_box, you can create your  * own #GimpEnumStore and use gimp_enum_combo_box_new_with_model().  *  * Return value: a new #GimpEnumComboBox.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -188,7 +182,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_set_stock_prefix:  * @combo_box:    a #GimpEnumComboBox  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Attempts to create and set icons for all items in the  * @combo_box. See gimp_enum_store_set_icons() for more info.  **/
+comment|/**  * gimp_enum_combo_box_set_stock_prefix:  * @combo_box:    a #GimpEnumComboBox  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Attempts to create and set icons for all items in the  * @combo_box. See gimp_enum_store_set_icons() for more info.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -242,7 +236,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_combo_box_set_visible:  * @combo_box: a #GimpEnumComboBox  * @func:      a #GtkTreeModelFilterVisibleFunc  * @data:      a pointer that is passed to @func  *  * Sets a filter on the combo_box that selectively hides items. The  * registered callback @func is called with an iter for each item and  * must return %TRUE or %FALSE indicating whether the respective row  * should be visible or not.  *  * This function must only be called once for a @combo_box. If you  * want to refresh the visibility of the items in the @combo_box  * later, call gtk_tree_model_filter_refilter() on the @combo_box's  * model.  *  * This is a kludge to allow to work around the inability of  * #GtkComboBox to set the sensitivity of it's items (bug #135875).  * It should be removed as soon as this bug is fixed (probably with  * GTK+-2.6).  **/
+comment|/**  * gimp_enum_combo_box_set_visible:  * @combo_box: a #GimpEnumComboBox  * @func:      a #GtkTreeModelFilterVisibleFunc  * @data:      a pointer that is passed to @func  *  * Sets a filter on the combo_box that selectively hides items. The  * registered callback @func is called with an iter for each item and  * must return %TRUE or %FALSE indicating whether the respective row  * should be visible or not.  *  * This function must only be called once for a @combo_box. If you  * want to refresh the visibility of the items in the @combo_box  * later, call gtk_tree_model_filter_refilter() on the @combo_box's  * model.  *  * This is a kludge to allow to work around the inability of  * #GtkComboBox to set the sensitivity of it's items (bug #135875).  * It should be removed as soon as this bug is fixed (probably with  * GTK+-2.6).  *  * This function is only temporarily in GIMP 2.3, it will not become  * part of the GIMP 2.0 API!!  **/
 end_comment
 
 begin_function

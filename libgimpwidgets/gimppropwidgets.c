@@ -84,18 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpenumcombobox.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpenumstore.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpenumwidgets.h"
 end_include
 
