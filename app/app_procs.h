@@ -35,8 +35,12 @@ end_endif
 
 begin_function_decl
 name|gboolean
-name|app_gui_libs_init
+name|app_libs_init
 parameter_list|(
+name|gboolean
+modifier|*
+name|no_interface
+parameter_list|,
 name|gint
 modifier|*
 name|gimp_argc
@@ -50,17 +54,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 name|void
-name|app_gui_abort
-parameter_list|(
+name|app_abort
+argument_list|(
+name|gboolean
+name|no_interface
+argument_list|,
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|abort_message
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_NORETURN
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+name|void
+name|app_exit
+argument_list|(
+name|gint
+name|status
+argument_list|)
+name|G_GNUC_NORETURN
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void
