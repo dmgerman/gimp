@@ -3393,7 +3393,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b811b930108
+DECL|struct|__anon2b79ab640108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -5130,7 +5130,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-name|GTK_JUSTIFY_RIGHT
+name|GTK_JUSTIFY_LEFT
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

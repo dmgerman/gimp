@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65021b0103
+DECL|enum|__anon2c7eca300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1262,17 +1262,18 @@ argument_list|,
 name|gint
 argument_list|)
 expr_stmt|;
-comment|/*  suppress a help button if we added one already  */
+comment|/*  hide the automatically added help button if another one is added  */
 if|if
 condition|(
-operator|(
 name|response_id
-operator|!=
+operator|==
 name|GTK_RESPONSE_HELP
-operator|)
-operator|||
-operator|(
-operator|!
+condition|)
+block|{
+name|GtkWidget
+modifier|*
+name|button
+init|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1282,9 +1283,13 @@ argument_list|)
 argument_list|,
 literal|"gimp-dialog-help-button"
 argument_list|)
-operator|)
-condition|)
-block|{
+decl_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|button
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_dialog_add_button
 argument_list|(
 name|GTK_DIALOG
@@ -1297,7 +1302,6 @@ argument_list|,
 name|response_id
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|response_id
@@ -1323,7 +1327,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c65021b0208
+DECL|struct|__anon2c7eca300208
 block|{
 DECL|member|dialog
 name|GtkDialog
