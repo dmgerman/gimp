@@ -51,11 +51,22 @@ directive|ifdef
 name|COMPILE_ALTIVEC_IS_OKAY
 end_ifdef
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_ALTIVEC_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<altivec.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_decl_stmt
 DECL|variable|alphamask
