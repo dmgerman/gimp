@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3b99e30103
+DECL|enum|__anon2ab3b35f0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -3252,7 +3252,13 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+operator|!
+name|toggled_cell
+condition|)
+comment|/* ignore double click on toggles */
 block|{
 name|gimp_container_view_item_activated
 argument_list|(
