@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Object properties serialization routines  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Object properties serialization routines  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -70,7 +70,7 @@ file|"gimpconfig-utils.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -200,7 +200,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_changed_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties that have been changed from  * their default values to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_changed_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties that have been changed from  * their default values to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -379,6 +379,10 @@ name|TRUE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_serialize_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function serializes a single object property to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -850,7 +854,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

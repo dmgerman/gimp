@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Utitility functions for GimpConfig.  * Copyright (C) 2001-2003  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Utitility functions for GimpConfig.  * Copyright (C) 2001-2003  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -517,7 +517,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_diff:  * @a: a #GimpConfig object  * @b: another #GimpConfig object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: a GList of differing GParamSpecs.  **/
+comment|/**  * gimp_config_diff:  * @a: a #GimpConfig object  * @b: another #GimpConfig object  * @flags: a mask of GParamFlags  *  * Compares all properties of @a and @b that have all @flags set. If  * @flags is 0, all properties are compared.  *  * If the two objects are not of the same type, only properties that  * exist in both object classes and are of the same value_type are  * compared.  *  * Return value: a GList of differing GParamSpecs.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -607,7 +607,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_sync:  * @src: a #GimpConfig object  * @dest: another #GimpConfig object  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties.  *  * Properties marked as "construct-only" are not touched.  *  * If the two objects are not of the same type, only  * properties that exist in both object classes and are of the same  * value_type are synchronized  *  * Return value: %TRUE if @dest was modified, %FALSE otherwise  **/
+comment|/**  * gimp_config_sync:  * @src: a #GimpConfig object  * @dest: another #GimpConfig object  * @flags: a mask of GParamFlags  *  * Compares all read- and write-able properties from @src and @dest  * that have all @flags set. Differing values are then copied from  * @src to @dest. If @flags is 0, all differing read/write properties.  *  * Properties marked as "construct-only" are not touched.  *  * If the two objects are not of the same type, only  * properties that exist in both object classes and are of the same  * value_type are synchronized  *  * Return value: %TRUE if @dest was modified, %FALSE otherwise  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -805,7 +805,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset_properties:  * @config: a #GimpConfig  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec. Properties marked as "construct-only"  * are not touched.  **/
+comment|/**  * gimp_config_reset_properties:  * @config: a #GimpConfig  *  * Resets all writable properties of @object to the default values as  * defined in their #GParamSpec. Properties marked as "construct-only"  * are not touched.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1072,7 +1072,7 @@ comment|/*  * GimpConfig string utilities  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_config_string_append_escaped:  * @string: pointer to a #GString  * @val: a string to append or %NULL  *  * Escapes and quotes @val and appends it to @string. The escape  * algorithm is different from the one used by g_strescape() since it  * leaves non-ASCII characters intact and thus preserves UTF-8  * strings. Only control characters and quotes are being escaped.  **/
+comment|/**  * gimp_config_string_append_escaped:  * @string: pointer to a #GString  * @val: a string to append or %NULL  *  * Escapes and quotes @val and appends it to @string. The escape  * algorithm is different from the one used by g_strescape() since it  * leaves non-ASCII characters intact and thus preserves UTF-8  * strings. Only control characters and quotes are being escaped.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Object properties deserialization routines  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Object properties deserialization routines  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -373,7 +373,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_properties:  * @config: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level:  *  * This function uses the @scanner to configure the properties of @config.  *  * Return value:  **/
+comment|/**  * gimp_config_deserialize_properties:  * @config: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level:  *  * This function uses the @scanner to configure the properties of @config.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -641,6 +641,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_deserialize_property:  * @config: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level:  *  * This function deserializes a single property of @config. You  * shouldn't need to call this function directly. If possible, use  * gimp_config_deserialize_properties() instead.  *  * Return value: %G_TOKEN_RIGHT_PAREN on success, otherwise the  * expected #GTokenType or %G_TOKEN_NONE if the expected token was  * found but couldn't be parsed.  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|GTokenType

@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3aafc30108
+DECL|struct|__anon2c4ffa560108
 block|{
 DECL|member|fd
 name|gint
@@ -188,6 +188,10 @@ end_function_decl
 
 begin_comment
 comment|/*  public functions  */
+end_comment
+
+begin_comment
+comment|/**  * gimp_scanner_new_file:  * @filename:  * @error:  *  * Return value:  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -324,6 +328,10 @@ name|scanner
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scanner_new_string:  * @text:  * @text_len:  * @error:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|GScanner
@@ -540,6 +548,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_scanner_destroy:  * @scanner:  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_scanner_destroy (GScanner * scanner)
@@ -618,6 +630,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_scanner_parse_token:  * @scanner:  * @token:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_scanner_parse_token (GScanner * scanner,GTokenType token)
@@ -653,6 +669,10 @@ name|TRUE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scanner_parse_identifier:  * @scanner:  * @identifier:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -707,6 +727,10 @@ name|TRUE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scanner_parse_string:  * @scanner:  * @dest:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -809,6 +833,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_scanner_parse_string_no_validate:  * @scanner:  * @dest:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_scanner_parse_string_no_validate (GScanner * scanner,gchar ** dest)
@@ -873,6 +901,10 @@ name|TRUE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scanner_parse_data:  * @scanner:  * @length:  * @dest:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -942,6 +974,10 @@ name|TRUE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scanner_parse_int:  * @scanner:  * @dest:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -1029,6 +1065,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_scanner_parse_float:  * @scanner:  * @dest:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_scanner_parse_float (GScanner * scanner,gdouble * dest)
@@ -1077,7 +1117,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3aafc30203
+DECL|enum|__anon2c4ffa560203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
@@ -1095,6 +1135,10 @@ name|COLOR_HSVA
 block|}
 enum|;
 end_enum
+
+begin_comment
+comment|/**  * gimp_scanner_parse_color:  * @scanner:  * @dest:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -1518,6 +1562,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_scanner_parse_matrix2:  * @scanner:  * @dest:  *  * Return value:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Config file serialization and deserialization interface  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Spencer Kimball and Peter Mattis  *  * Config file serialization and deserialization interface  * Copyright (C) 2001-2002  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -885,7 +885,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_file:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error:  *  * Serializes the object properties of @config to the file specified  * by @filename. If a file with that name already exists, it is  * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize_to_file:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error:  *  * Serializes the object properties of @config to the file specified  * by @filename. If a file with that name already exists, it is  * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1006,6 +1006,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_config_serialize_to_fd:  * @config: a #GObject that implements the #GimpConfigInterface.  * @fd: a file descriptor, opened for writing  * @data: user data passed to the serialize implementation.  *  * Serializes the object properties of @config to the given file  * descriptor.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_config_serialize_to_fd (GimpConfig * config,gint fd,gpointer data)
@@ -1088,7 +1092,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @data: user data passed to the serialize implementation.  *  * Serializes the object properties of @config to a string.  *  * Return value: a newly allocated %NUL-terminated string.  **/
+comment|/**  * gimp_config_serialize_to_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @data: user data passed to the serialize implementation.  *  * Serializes the object properties of @config to a string.  *  * Return value: a newly allocated %NUL-terminated string.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1172,7 +1176,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error:  *  * Opens the file specified by @filename, reads configuration data  * from it and configures @config accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_deserialize:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error:  *  * Opens the file specified by @filename, reads configuration data  * from it and configures @config accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1302,7 +1306,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @data:  * @error:  *  * Configures @config from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @config's #GimpConfigInterface.  *  * Returns: %TRUE if deserialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_deserialize_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @data:  * @error:  *  * Configures @config from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @config's #GimpConfigInterface.  *  * Returns: %TRUE if deserialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1431,6 +1435,10 @@ name|success
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_config_deserialize_return:  * @scanner:  * @expected_token:  * @nest_level:  *  * Returns:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -1565,7 +1573,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_duplicate:  * @config: a #GObject that implements the #GimpConfigInterface.  *  * Creates a copy of the passed object by copying all object  * properties. The default implementation of the #GimpConfigInterface  * only works for objects that are completely defined by their  * properties.  *  * Return value: the duplicated #GimpConfig object  **/
+comment|/**  * gimp_config_duplicate:  * @config: a #GObject that implements the #GimpConfigInterface.  *  * Creates a copy of the passed object by copying all object  * properties. The default implementation of the #GimpConfigInterface  * only works for objects that are completely defined by their  * properties.  *  * Return value: the duplicated #GimpConfig object  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1603,7 +1611,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_is_equal_to:  * @a: a #GObject that implements the #GimpConfigInterface.  * @b: another #GObject of the same type as @a.  *  * Compares the two objects. The default implementation of the  * #GimpConfigInterface compares the object properties and thus only  * works for objects that are completely defined by their  * properties.  *  * Return value: %TRUE if the two objects are equal.  **/
+comment|/**  * gimp_config_is_equal_to:  * @a: a #GObject that implements the #GimpConfigInterface.  * @b: another #GObject of the same type as @a.  *  * Compares the two objects. The default implementation of the  * #GimpConfigInterface compares the object properties and thus only  * works for objects that are completely defined by their  * properties.  *  * Return value: %TRUE if the two objects are equal.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1672,7 +1680,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_reset:  * @config: a #GObject that implements the #GimpConfigInterface.  *  * Resets the object to its default state. The default implementation of the  * #GimpConfigInterface only works for objects that are completely defined by  * their properties.  **/
+comment|/**  * gimp_config_reset:  * @config: a #GObject that implements the #GimpConfigInterface.  *  * Resets the object to its default state. The default implementation of the  * #GimpConfigInterface only works for objects that are completely defined by  * their properties.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
