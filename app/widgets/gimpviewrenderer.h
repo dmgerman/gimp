@@ -196,6 +196,27 @@ DECL|member|parent_class
 name|GObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|frame
+name|GdkPixbuf
+modifier|*
+name|frame
+decl_stmt|;
+DECL|member|frame_left
+name|gint
+name|frame_left
+decl_stmt|;
+DECL|member|frame_right
+name|gint
+name|frame_right
+decl_stmt|;
+DECL|member|frame_bottom
+name|gint
+name|frame_bottom
+decl_stmt|;
+DECL|member|frame_top
+name|gint
+name|frame_top
+decl_stmt|;
 comment|/*  signals  */
 DECL|member|update
 name|void

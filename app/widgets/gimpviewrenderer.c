@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eb05d70103
+DECL|enum|__anon2c5b88d10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -363,10 +363,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-comment|/* base_init */
+comment|/* base_init      */
 name|NULL
 block|,
-comment|/* base_finalize */
+comment|/* base_finalize  */
 operator|(
 name|GClassInitFunc
 operator|)
@@ -377,7 +377,7 @@ block|,
 comment|/* class_finalize */
 name|NULL
 block|,
-comment|/* class_data */
+comment|/* class_data     */
 sizeof|sizeof
 argument_list|(
 name|GimpViewRenderer
@@ -385,7 +385,7 @@ argument_list|)
 block|,
 literal|0
 block|,
-comment|/* n_preallocs */
+comment|/* n_preallocs    */
 operator|(
 name|GInstanceInitFunc
 operator|)
@@ -553,6 +553,36 @@ literal|0.0
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|)
+expr_stmt|;
+name|klass
+operator|->
+name|frame
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|frame_left
+operator|=
+literal|0
+expr_stmt|;
+name|klass
+operator|->
+name|frame_right
+operator|=
+literal|0
+expr_stmt|;
+name|klass
+operator|->
+name|frame_top
+operator|=
+literal|0
+expr_stmt|;
+name|klass
+operator|->
+name|frame_bottom
+operator|=
+literal|0
 expr_stmt|;
 block|}
 end_function

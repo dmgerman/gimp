@@ -885,6 +885,14 @@ name|strcmp
 argument_list|(
 name|prop_name
 argument_list|,
+literal|"imagefile"
+argument_list|)
+operator|||
+operator|!
+name|strcmp
+argument_list|(
+name|prop_name
+argument_list|,
 literal|"tool"
 argument_list|)
 operator|||

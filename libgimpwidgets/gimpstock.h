@@ -862,6 +862,11 @@ define|#
 directive|define
 name|GIMP_STOCK_WILBER_EEK
 value|"gimp-wilber-eek"
+DECL|macro|GIMP_STOCK_FRAME
+define|#
+directive|define
+name|GIMP_STOCK_FRAME
+value|"gimp-frame"
 DECL|macro|GIMP_STOCK_TEXTURE
 define|#
 directive|define
