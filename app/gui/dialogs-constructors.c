@@ -1425,9 +1425,9 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_MISSING_IMAGE
+name|GIMP_STOCK_TOOLS
 argument_list|,
-name|GIMP_HELP_TOOL_DIALOG
+name|GIMP_HELP_TOOLS_DIALOG
 argument_list|)
 return|;
 block|}
@@ -2128,9 +2128,9 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_STOCK_MISSING_IMAGE
+name|GIMP_STOCK_TOOLS
 argument_list|,
-name|GIMP_HELP_TOOL_DIALOG
+name|GIMP_HELP_TOOLS_DIALOG
 argument_list|)
 return|;
 block|}

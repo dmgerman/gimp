@@ -479,6 +479,20 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
+literal|"/Add Tab/T_ools"
+argument_list|)
+argument_list|,
+literal|"gimp-tool-list"
+argument_list|,
+name|GIMP_STOCK_TOOLS
+argument_list|,
+name|GIMP_HELP_TOOLS_DIALOG
+argument_list|)
+block|,
+name|ADD_TAB
+argument_list|(
+name|N_
+argument_list|(
 literal|"/Add Tab/Error Co_nsole"
 argument_list|)
 argument_list|,
@@ -487,25 +501,6 @@ argument_list|,
 name|GIMP_STOCK_WARNING
 argument_list|,
 name|GIMP_HELP_ERRORS_DIALOG
-argument_list|)
-block|,
-name|MENU_SEPARATOR
-argument_list|(
-literal|"/Add Tab/---"
-argument_list|)
-block|,
-name|ADD_TAB
-argument_list|(
-name|N_
-argument_list|(
-literal|"/Add Tab/Tools"
-argument_list|)
-argument_list|,
-literal|"gimp-tool-list"
-argument_list|,
-name|GTK_STOCK_MISSING_IMAGE
-argument_list|,
-name|GIMP_HELP_TOOL_DIALOG
 argument_list|)
 block|,
 block|{

@@ -696,6 +696,11 @@ define|#
 directive|define
 name|GIMP_STOCK_SWAP_COLORS
 value|"gimp-swap-colors"
+DECL|macro|GIMP_STOCK_TOOLS
+define|#
+directive|define
+name|GIMP_STOCK_TOOLS
+value|"gimp-tools"
 DECL|macro|GIMP_STOCK_TOOL_OPTIONS
 define|#
 directive|define

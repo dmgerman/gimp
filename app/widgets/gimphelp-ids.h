@@ -1257,11 +1257,11 @@ value|"gimp-path-edit"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_TOOL_DIALOG
+DECL|macro|GIMP_HELP_TOOLS_DIALOG
 define|#
 directive|define
-name|GIMP_HELP_TOOL_DIALOG
-value|"gimp-tool-dialog"
+name|GIMP_HELP_TOOLS_DIALOG
+value|"gimp-tools-dialog"
 end_define
 
 begin_define
