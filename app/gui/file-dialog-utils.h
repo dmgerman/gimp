@@ -57,9 +57,6 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
-parameter_list|,
-name|GCallback
-name|ok_callback
 parameter_list|)
 function_decl|;
 end_function_decl
