@@ -1257,6 +1257,11 @@ name|g_strjoinv
 argument_list|(
 literal|":"
 argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|*
+operator|)
 name|g_get_language_names
 argument_list|()
 argument_list|)
