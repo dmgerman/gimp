@@ -462,7 +462,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aea08dc0108
+DECL|struct|__anon2778eada0108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1110,6 +1110,16 @@ name|gimp_style
 argument_list|,
 literal|"Gimp"
 argument_list|)
+expr_stmt|;
+name|gfig_context
+operator|->
+name|default_style
+operator|.
+name|paint_type
+operator|=
+name|selvals
+operator|.
+name|painttype
 expr_stmt|;
 name|gfig_context
 operator|->

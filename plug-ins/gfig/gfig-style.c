@@ -848,10 +848,17 @@ name|name
 argument_list|)
 condition|)
 block|{
-comment|/* no style data */
-name|g_printerr
+comment|/* no style data, copy default style and fail silently */
+name|gfig_style_copy
 argument_list|(
-literal|"No style data\n"
+name|style
+argument_list|,
+operator|&
+name|gfig_context
+operator|->
+name|default_style
+argument_list|,
+literal|"default style"
 argument_list|)
 expr_stmt|;
 name|fseek
