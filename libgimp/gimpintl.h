@@ -96,18 +96,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_define
-DECL|macro|INIT_LOCALE (domain)
-define|#
-directive|define
-name|INIT_LOCALE
-parameter_list|(
-name|domain
-parameter_list|)
-define|\
-value|gtk_set_locale ();			\ 	setlocale (LC_NUMERIC, "C");		\ 	bindtextdomain (domain, LOCALEDIR);	\ 	textdomain (domain);
-end_define
-
 begin_else
 else|#
 directive|else
@@ -206,6 +194,18 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_define
+DECL|macro|INIT_LOCALE (domain)
+define|#
+directive|define
+name|INIT_LOCALE
+parameter_list|(
+name|domain
+parameter_list|)
+define|\
+value|gtk_set_locale ();			\ 	setlocale (LC_NUMERIC, "C");		\ 	bindtextdomain (domain, LOCALEDIR);	\ 	textdomain (domain);
+end_define
 
 begin_endif
 endif|#

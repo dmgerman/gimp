@@ -39,7 +39,7 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|undo_type
+name|UndoType
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -533,7 +533,7 @@ comment|/* Argument to undo_event signal emitted by gimages: */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29a1eaa40103
+DECL|enum|__anon2c14d8d80103
 typedef|typedef
 enum|enum
 block|{

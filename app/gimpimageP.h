@@ -332,7 +332,7 @@ name|group_count
 decl_stmt|;
 comment|/*  nested undo groups           */
 DECL|member|pushing_undo_group
-name|undo_type
+name|UndoType
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */

@@ -249,6 +249,8 @@ block|,
 literal|"PDB_PARASITE"
 block|,
 literal|"PDB_STATUS"
+block|,
+literal|"PDB_END"
 block|}
 decl_stmt|;
 end_decl_stmt

@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0536350103
+DECL|enum|__anon2ad5a5130103
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -105,7 +105,6 @@ name|PDB_STATUS
 block|,
 DECL|enumerator|PDB_END
 name|PDB_END
-comment|/*< skip>*/
 DECL|typedef|PDBArgType
 block|}
 name|PDBArgType
@@ -119,7 +118,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0536350203
+DECL|enum|__anon2ad5a5130203
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -146,7 +145,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=PDB_>*/
-DECL|enum|__anon2a0536350303
+DECL|enum|__anon2ad5a5130303
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL

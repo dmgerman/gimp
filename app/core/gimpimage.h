@@ -208,9 +208,10 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon27b67e840103
 typedef|typedef
 enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon2c41d3a30103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -227,9 +228,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27b67e840203
 typedef|typedef
 enum|enum
+DECL|enum|__anon2c41d3a30203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -248,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b67e840303
+DECL|enum|__anon2c41d3a30303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -276,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b67e840403
+DECL|enum|__anon2c41d3a30403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

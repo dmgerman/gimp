@@ -21,9 +21,9 @@ comment|/*  Undo types  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b3d45100103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2af79a980103
 block|{
 comment|/* Type 0 is special - in the gimpimage structure it means      * there is no undo group currently being added to. */
 DECL|enumerator|IMAGE_UNDO
@@ -137,9 +137,9 @@ DECL|enumerator|MISC_UNDO
 name|MISC_UNDO
 init|=
 literal|100
-DECL|typedef|undo_type
+DECL|typedef|UndoType
 block|}
-name|undo_type
+name|UndoType
 typedef|;
 end_typedef
 
