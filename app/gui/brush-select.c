@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"session.h"
 end_include
 
@@ -121,6 +115,12 @@ begin_include
 include|#
 directive|include
 file|"temp_buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/paint_options.h"
 end_include
 
 begin_include
@@ -5270,7 +5270,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa0cad0108
+DECL|struct|__anon27e5f08e0108
 block|{
 DECL|member|bsp
 name|BrushSelect

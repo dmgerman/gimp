@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"edit_selection.h"
 end_include
 
@@ -133,6 +127,12 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools.h"
 end_include
 
 begin_include

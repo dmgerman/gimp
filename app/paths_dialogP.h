@@ -16,12 +16,6 @@ directive|define
 name|__PATHS_DIALOG_P_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"bezier_selectP.h"
-end_include
-
 begin_function_decl
 name|void
 name|paths_newpoint_current

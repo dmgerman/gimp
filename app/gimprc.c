@@ -184,7 +184,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tools/tools.h"
 end_include
 
 begin_include
@@ -260,7 +260,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1bece60103
+DECL|enum|__anon2be09e4c0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

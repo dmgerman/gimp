@@ -96,13 +96,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"undo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"tools/tools.h"
 end_include
 
 begin_comment

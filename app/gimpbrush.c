@@ -155,13 +155,17 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_core.h"
+file|"temp_buf.h"
 end_include
+
+begin_comment
+comment|/*  this needs to go away  */
+end_comment
 
 begin_include
 include|#
 directive|include
-file|"temp_buf.h"
+file|"tools/paint_core.h"
 end_include
 
 begin_include
@@ -172,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b288a2b0103
+DECL|enum|__anon2c4251960103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY

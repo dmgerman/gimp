@@ -294,12 +294,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -323,6 +317,12 @@ end_endif
 begin_comment
 comment|/* DISPLAY_FILTERS */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/tools.h"
+end_include
 
 begin_include
 include|#

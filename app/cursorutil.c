@@ -52,7 +52,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tools/tools.h"
 end_include
 
 begin_include
@@ -410,7 +410,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b93f20103
+DECL|enum|__anon2a0572f90103
 block|{
 DECL|enumerator|GIMP_PLUS_CURSOR
 name|GIMP_PLUS_CURSOR

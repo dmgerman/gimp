@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bezier_selectP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"paths_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/bezier_selectP.h"
 end_include
 
 begin_include

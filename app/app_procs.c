@@ -156,12 +156,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"curves.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"colormaps.h"
 end_include
 
@@ -270,12 +264,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"hue_saturation.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"image_render.h"
 end_include
 
@@ -289,12 +277,6 @@ begin_include
 include|#
 directive|include
 file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"levels.h"
 end_include
 
 begin_include
@@ -361,12 +343,6 @@ begin_include
 include|#
 directive|include
 file|"tips_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools.h"
 end_include
 
 begin_include
@@ -442,6 +418,30 @@ begin_include
 include|#
 directive|include
 file|"gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/curves.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/hue_saturation.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/levels.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools.h"
 end_include
 
 begin_include

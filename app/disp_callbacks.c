@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bucket_fill.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -120,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"move.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
 end_include
 
@@ -174,13 +162,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"undo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"tools/bucket_fill.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/move.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools.h"
 end_include
 
 begin_include

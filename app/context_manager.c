@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_options.h"
+file|"tools/paint_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tools/tools.h"
 end_include
 
 begin_decl_stmt

@@ -114,13 +114,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"undo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"tools/tools.h"
 end_include
 
 begin_include
@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a39df80103
+DECL|enum|__anon28cb9eb60103
 block|{
 DECL|enumerator|PASTE
 name|PASTE

@@ -114,7 +114,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
+file|"tools/tools.h"
 end_include
 
 begin_include
@@ -148,7 +148,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b95a4c80103
+DECL|enum|__anon2a9b8b7c0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR

@@ -56,18 +56,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brightness_contrast.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"color_balance.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"convert.h"
 end_include
 
@@ -75,12 +63,6 @@ begin_include
 include|#
 directive|include
 file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"curves.h"
 end_include
 
 begin_include
@@ -122,19 +104,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"hue_saturation.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"levels.h"
 end_include
 
 begin_include
@@ -170,18 +140,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"posterize.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"threshold.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile_manager.h"
 end_include
 
@@ -194,6 +152,48 @@ end_include
 begin_comment
 comment|/* ick ick ick. */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"tools/brightness_contrast.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/color_balance.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/curves.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/hue_saturation.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/levels.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/posterize.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/threshold.h"
+end_include
 
 begin_include
 include|#
@@ -34951,7 +34951,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b16aba0108
+DECL|struct|__anon2955aeb00108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35028,7 +35028,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b16aba0208
+DECL|struct|__anon2955aeb00208
 block|{
 DECL|member|ncolors
 name|long
@@ -35047,7 +35047,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b16aba0308
+DECL|struct|__anon2955aeb00308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38400,7 +38400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b16aba0408
+DECL|struct|__anon2955aeb00408
 block|{
 DECL|member|used_count
 name|signed

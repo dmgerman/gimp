@@ -64,7 +64,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text_tool.h"
+file|"tools/text_tool.h"
 end_include
 
 begin_include

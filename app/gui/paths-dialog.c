@@ -150,18 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bezier_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"bezier_selectP.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"path.h"
 end_include
 
@@ -199,6 +187,18 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/bezier_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/bezier_selectP.h"
 end_include
 
 begin_include

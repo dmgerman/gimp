@@ -78,19 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_options.h"
 end_include
 
 begin_include
@@ -115,6 +103,24 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/paint_core.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/tools.h"
 end_include
 
 begin_include
