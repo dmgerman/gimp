@@ -662,7 +662,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|gimage
 operator|->
@@ -799,7 +799,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|gimage
 operator|->

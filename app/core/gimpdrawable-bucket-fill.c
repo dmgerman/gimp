@@ -524,9 +524,9 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|fill_mode
-operator|==
+operator|!=
 name|PATTERN_BUCKET_FILL
-operator|&&
+operator|||
 name|GIMP_IS_PATTERN
 argument_list|(
 name|pattern
@@ -537,14 +537,14 @@ name|g_return_if_fail
 argument_list|(
 operator|(
 name|fill_mode
-operator|==
+operator|!=
 name|FG_BUCKET_FILL
-operator|||
+operator|&&
 name|fill_mode
-operator|==
+operator|!=
 name|BG_BUCKET_FILL
 operator|)
-operator|&&
+operator|||
 name|color
 operator|!=
 name|NULL
@@ -871,8 +871,6 @@ expr_stmt|;
 comment|/*  If there is no selection mask, the do a seed bucket    *  fill...To do this, calculate a new contiguous region    */
 if|if
 condition|(
-name|do_seed_fill
-operator|&&
 operator|!
 name|gimp_drawable_mask_bounds
 argument_list|(
@@ -890,6 +888,8 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
+operator|&&
+name|do_seed_fill
 condition|)
 block|{
 name|mask

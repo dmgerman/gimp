@@ -106,15 +106,6 @@ comment|/*  stuff  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpCoords
-typedef|typedef
-name|struct
-name|_GimpCoords
-name|GimpCoords
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|SelectionOptions
 typedef|typedef
 name|struct
@@ -154,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287cbbfd0103
+DECL|enum|__anon27b9e01c0103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -180,7 +171,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287cbbfd0203
+DECL|enum|__anon27b9e01c0203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -203,7 +194,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287cbbfd0303
+DECL|enum|__anon27b9e01c0303
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -234,7 +225,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287cbbfd0403
+DECL|enum|__anon27b9e01c0403
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -278,7 +269,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287cbbfd0503
+DECL|enum|__anon27b9e01c0503
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -302,7 +293,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287cbbfd0603
+DECL|enum|__anon27b9e01c0603
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -326,7 +317,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287cbbfd0703
+DECL|enum|__anon27b9e01c0703
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
@@ -359,7 +350,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon287cbbfd0803
+DECL|enum|__anon27b9e01c0803
 block|{
 DECL|enumerator|TRANSFORM_INIT
 name|TRANSFORM_INIT

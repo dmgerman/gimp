@@ -518,10 +518,6 @@ name|GtkWidget
 modifier|*
 name|scale
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|separator
-decl_stmt|;
 name|tool_info
 operator|=
 name|tool_manager_get_info_by_type
@@ -961,12 +957,12 @@ operator|||
 name|tool_type
 operator|==
 name|GIMP_TYPE_BLEND_TOOL
-operator|||
-name|tool_type
-operator|==
-name|GIMP_TYPE_INK_TOOL
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|separator
+decl_stmt|;
 name|separator
 operator|=
 name|gtk_hseparator_new

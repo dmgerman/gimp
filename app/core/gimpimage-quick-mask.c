@@ -654,7 +654,12 @@ name|gmask
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
 condition|)
 block|{
 name|gimage
@@ -666,12 +671,6 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimage
-condition|)
-return|return;
-if|if
-condition|(
-operator|!
 name|gdisp
 operator|->
 name|gimage
@@ -680,9 +679,6 @@ name|qmask_state
 condition|)
 return|return;
 comment|/* if already set do nothing */
-if|if
-condition|(
-operator|(
 name|gmask
 operator|=
 name|gimp_image_get_channel_by_name
@@ -691,7 +687,10 @@ name|gimage
 argument_list|,
 literal|"Qmask"
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|gmask
 condition|)
 block|{
 name|undo_push_group_start
@@ -777,7 +776,12 @@ name|color
 decl_stmt|;
 if|if
 condition|(
-name|gdisp
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
 condition|)
 block|{
 name|gimage
@@ -788,12 +792,6 @@ name|gimage
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|gimage
-condition|)
-return|return;
-if|if
-condition|(
 name|gdisp
 operator|->
 name|gimage
@@ -801,7 +799,7 @@ operator|->
 name|qmask_state
 condition|)
 return|return;
-comment|/* If already set, do nothing */
+comment|/* if already set, do nothing */
 comment|/* Set the defaults */
 name|color
 operator|=
@@ -809,9 +807,6 @@ name|gimage
 operator|->
 name|qmask_color
 expr_stmt|;
-if|if
-condition|(
-operator|(
 name|gmask
 operator|=
 name|gimp_image_get_channel_by_name
@@ -820,7 +815,10 @@ name|gimage
 argument_list|,
 literal|"Qmask"
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|gmask
 condition|)
 block|{
 name|gimage

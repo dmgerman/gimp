@@ -188,7 +188,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fdb6270103
+DECL|enum|__anon2a3ecdfb0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1086,8 +1086,8 @@ block|{
 if|if
 condition|(
 operator|(
-name|state
-operator|&
+name|key
+operator|==
 name|GDK_CONTROL_MASK
 operator|)
 operator|&&

@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20103
+DECL|enum|__anon274c77000103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20203
+DECL|enum|__anon274c77000203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20303
+DECL|enum|__anon274c77000303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -149,7 +149,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon296be1f20403
+DECL|enum|__anon274c77000403
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20503
+DECL|enum|__anon274c77000503
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20603
+DECL|enum|__anon274c77000603
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -210,7 +210,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon296be1f20703
+DECL|enum|__anon274c77000703
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -234,7 +234,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon296be1f20803
+DECL|enum|__anon274c77000803
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -257,7 +257,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon296be1f20903
+DECL|enum|__anon274c77000903
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -282,7 +282,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20a03
+DECL|enum|__anon274c77000a03
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -313,7 +313,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=GIMP_>*/
-DECL|enum|__anon296be1f20b03
+DECL|enum|__anon274c77000b03
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -332,7 +332,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20c03
+DECL|enum|__anon274c77000c03
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -348,7 +348,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20d03
+DECL|enum|__anon274c77000d03
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -370,7 +370,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20e03
+DECL|enum|__anon274c77000e03
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -405,7 +405,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f20f03
+DECL|enum|__anon274c77000f03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -441,7 +441,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f21003
+DECL|enum|__anon274c77001003
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL
@@ -460,7 +460,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f21103
+DECL|enum|__anon274c77001103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -504,7 +504,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_MODE>*/
-DECL|enum|__anon296be1f21203
+DECL|enum|__anon274c77001203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296be1f21303
+DECL|enum|__anon274c77001303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -824,6 +824,15 @@ comment|/*  non-object types  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpCoords
+typedef|typedef
+name|struct
+name|_GimpCoords
+name|GimpCoords
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCoreConfig
 typedef|typedef
 name|struct
@@ -977,6 +986,43 @@ name|filename
 parameter_list|)
 function_decl|;
 end_typedef
+
+begin_comment
+comment|/*  structs  */
+end_comment
+
+begin_struct
+DECL|struct|_GimpCoords
+struct|struct
+name|_GimpCoords
+block|{
+DECL|member|x
+name|gdouble
+name|x
+decl_stmt|;
+DECL|member|y
+name|gdouble
+name|y
+decl_stmt|;
+DECL|member|pressure
+name|gdouble
+name|pressure
+decl_stmt|;
+DECL|member|xtilt
+name|gdouble
+name|xtilt
+decl_stmt|;
+DECL|member|ytilt
+name|gdouble
+name|ytilt
+decl_stmt|;
+DECL|member|wheel
+name|gdouble
+name|wheel
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_endif
 endif|#
