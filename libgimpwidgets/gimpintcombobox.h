@@ -168,6 +168,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_int_combo_box_new_array
+parameter_list|(
+name|gint
+name|n_values
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|labels
+index|[]
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_int_combo_box_set_active
 parameter_list|(

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libintl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -29,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296d26420103
+DECL|enum|__anon29999c9c0103
 block|{
 DECL|enumerator|GIMP_INT_STORE_VALUE
 name|GIMP_INT_STORE_VALUE
@@ -218,7 +224,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_new:  * @first_label: the label of the first item  * @first_value: the value of the first item  * @...: a %NULL terminated list of more label, value pairs  *  * Creates a GtkComboBox that has integer values associated with each  * item. The items to fill the combo box with are specified as a %NULL  * terminated list of label, value pairs.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
+comment|/**  * gimp_int_combo_box_new:  * @first_label: the label of the first item  * @first_value: the value of the first item  * @...: a %NULL terminated list of more label, value pairs  *  * Creates a GtkComboBox that has integer values associated with each  * item. The items to fill the combo box with are specified as a %NULL  * terminated list of label/value pairs.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -245,6 +251,15 @@ decl_stmt|;
 name|va_list
 name|args
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|first_label
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|va_start
 argument_list|(
 name|args
@@ -275,7 +290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_new_valist:  * @first_label: the label of the first item  * @first_value: the value of the first item  * @values: a va_list with more values  *  * A variant of gimp_int_combo_box_new() that takes a va_list. Useful  * for language bindings.  *  * Return value: a new #GimpIntComboBox.  *  * Since: 2.2  **/
+comment|/**  * gimp_int_combo_box_new_valist:  * @first_label: the label of the first item  * @first_value: the value of the first item  * @values: a va_list with more values  *  * A variant of gimp_int_combo_box_new() that takes a va_list of  * label/value pairs. Probably only useful for language bindings.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -312,6 +327,15 @@ decl_stmt|;
 name|gint
 name|value
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|first_label
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|combo_box
 operator|=
 name|g_object_new
@@ -405,7 +429,144 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_set_active:  * @combo_box: a #GimpIntComboBox  * @value:     an integer value  *  * Looks up the item that belongs to the given @value and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: 2.2  **/
+comment|/**  * gimp_int_combo_box_new_array:  * @n_values: the number of values  * @labels:   an array of labels (array length must be @n_values)  *  * A variant of gimp_int_combo_box_new() that takes an array of labels.  * The array indices are used as values.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_int_combo_box_new_array (gint n_values,const gchar * labels[])
+name|gimp_int_combo_box_new_array
+parameter_list|(
+name|gint
+name|n_values
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|labels
+index|[]
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|combo_box
+decl_stmt|;
+name|GtkListStore
+modifier|*
+name|store
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|n_values
+operator|>
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|labels
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|combo_box
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_INT_COMBO_BOX
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|store
+operator|=
+name|GTK_LIST_STORE
+argument_list|(
+name|gtk_combo_box_get_model
+argument_list|(
+name|GTK_COMBO_BOX
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|n_values
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|GtkTreeIter
+name|iter
+decl_stmt|;
+if|if
+condition|(
+name|labels
+index|[
+name|i
+index|]
+condition|)
+block|{
+name|gtk_list_store_append
+argument_list|(
+name|store
+argument_list|,
+operator|&
+name|iter
+argument_list|)
+expr_stmt|;
+name|gtk_list_store_set
+argument_list|(
+name|store
+argument_list|,
+operator|&
+name|iter
+argument_list|,
+name|GIMP_INT_STORE_VALUE
+argument_list|,
+name|i
+argument_list|,
+name|GIMP_INT_STORE_LABEL
+argument_list|,
+name|gettext
+argument_list|(
+name|labels
+index|[
+name|i
+index|]
+argument_list|)
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+return|return
+name|combo_box
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_int_combo_box_set_active:  * @combo_box: a #GimpIntComboBox  * @value:     an integer value  *  * Looks up the item that belongs to the given @value and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -530,7 +691,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_combo_box_get_active:  * @combo_box: a #GimpIntComboBox  * @value:     return location for the integer value  *  * Retrieves the value of the selected (active) item in the @combo_box.  *  * Return value: %TRUE if @value has been set or %FALSE if no item was  *               active.  *  * Since: 2.2  **/
+comment|/**  * gimp_int_combo_box_get_active:  * @combo_box: a #GimpIntComboBox  * @value:     return location for the integer value  *  * Retrieves the value of the selected (active) item in the @combo_box.  *  * Return value: %TRUE if @value has been set or %FALSE if no item was  *               active.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -556,6 +717,15 @@ name|GIMP_IS_INT_COMBO_BOX
 argument_list|(
 name|combo_box
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|value
+operator|!=
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
