@@ -1204,7 +1204,7 @@ name|selection_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:iscissors_tool"
+literal|"gimp-iscissors-tool"
 argument_list|,
 name|_
 argument_list|(

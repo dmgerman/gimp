@@ -338,7 +338,7 @@ name|clone_options_new
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"gimp:clone_tool"
+literal|"gimp-clone-tool"
 argument_list|,
 name|_
 argument_list|(

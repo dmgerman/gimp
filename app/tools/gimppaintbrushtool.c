@@ -116,7 +116,7 @@ name|paint_options_new
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"gimp:paintbrush_tool"
+literal|"gimp-paintbrush-tool"
 argument_list|,
 name|_
 argument_list|(

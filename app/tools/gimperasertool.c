@@ -191,7 +191,7 @@ name|gimp_eraser_tool_options_new
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"gimp:eraser_tool"
+literal|"gimp-eraser-tool"
 argument_list|,
 name|_
 argument_list|(

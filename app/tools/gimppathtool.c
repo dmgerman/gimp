@@ -429,7 +429,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:path_tool"
+literal|"gimp-path-tool"
 argument_list|,
 name|_
 argument_list|(

@@ -367,7 +367,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:posterize_tool"
+literal|"gimp-posterize-tool"
 argument_list|,
 name|_
 argument_list|(

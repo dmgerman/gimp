@@ -299,7 +299,7 @@ name|flip_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:flip_tool"
+literal|"gimp-flip-tool"
 argument_list|,
 name|_
 argument_list|(

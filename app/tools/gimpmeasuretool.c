@@ -512,7 +512,7 @@ name|measure_tool_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:measure_tool"
+literal|"gimp-measure-tool"
 argument_list|,
 name|_
 argument_list|(

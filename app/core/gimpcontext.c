@@ -1131,7 +1131,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2957e2500103
+DECL|enum|__anon2941e1d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1183,7 +1183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2957e2500203
+DECL|enum|__anon2941e1d80203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -5741,7 +5741,7 @@ endif|#
 directive|endif
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957e2500308
+DECL|struct|__anon2941e1d80308
 block|{
 DECL|member|foo
 name|GimpObject
@@ -6134,7 +6134,7 @@ name|tool_name
 operator|=
 name|g_strdup
 argument_list|(
-literal|"gimp:rect-select-tool"
+literal|"gimp-rect-select-tool"
 argument_list|)
 expr_stmt|;
 if|if

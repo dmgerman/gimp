@@ -97,7 +97,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"gimp:device-status-dialog"
+literal|"gimp-device-status-dialog"
 block|,
 name|dialogs_device_status_get
 block|,
@@ -113,7 +113,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:preferences-dialog"
+literal|"gimp-preferences-dialog"
 block|,
 name|dialogs_preferences_get
 block|,
@@ -129,7 +129,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:module-browser-dialog"
+literal|"gimp-module-browser-dialog"
 block|,
 name|dialogs_module_browser_get
 block|,
@@ -145,7 +145,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:undo-history-dialog"
+literal|"gimp-undo-history-dialog"
 block|,
 name|dialogs_undo_history_get
 block|,
@@ -161,7 +161,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:display-filters-dialog"
+literal|"gimp-display-filters-dialog"
 block|,
 name|dialogs_display_filters_get
 block|,
@@ -177,7 +177,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:tips-dialog"
+literal|"gimp-tips-dialog"
 block|,
 name|dialogs_tips_get
 block|,
@@ -193,7 +193,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:about-dialog"
+literal|"gimp-about-dialog"
 block|,
 name|dialogs_about_get
 block|,
@@ -221,7 +221,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"gimp:tool-options"
+literal|"gimp-tool-options"
 block|,
 name|dialogs_tool_options_get
 block|,
@@ -237,7 +237,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:error-console"
+literal|"gimp-error-console"
 block|,
 name|dialogs_error_console_get
 block|,
@@ -253,7 +253,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:image-list"
+literal|"gimp-image-list"
 block|,
 name|dialogs_image_list_view_new
 block|,
@@ -269,7 +269,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:brush-list"
+literal|"gimp-brush-list"
 block|,
 name|dialogs_brush_list_view_new
 block|,
@@ -285,7 +285,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:pattern-list"
+literal|"gimp-pattern-list"
 block|,
 name|dialogs_pattern_list_view_new
 block|,
@@ -301,7 +301,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:gradient-list"
+literal|"gimp-gradient-list"
 block|,
 name|dialogs_gradient_list_view_new
 block|,
@@ -317,7 +317,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:palette-list"
+literal|"gimp-palette-list"
 block|,
 name|dialogs_palette_list_view_new
 block|,
@@ -333,7 +333,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:tool-list"
+literal|"gimp-tool-list"
 block|,
 name|dialogs_tool_list_view_new
 block|,
@@ -349,7 +349,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:buffer-list"
+literal|"gimp-buffer-list"
 block|,
 name|dialogs_buffer_list_view_new
 block|,
@@ -365,7 +365,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:image-grid"
+literal|"gimp-image-grid"
 block|,
 name|dialogs_image_grid_view_new
 block|,
@@ -381,7 +381,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:brush-grid"
+literal|"gimp-brush-grid"
 block|,
 name|dialogs_brush_grid_view_new
 block|,
@@ -397,7 +397,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:pattern-grid"
+literal|"gimp-pattern-grid"
 block|,
 name|dialogs_pattern_grid_view_new
 block|,
@@ -413,7 +413,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:gradient-grid"
+literal|"gimp-gradient-grid"
 block|,
 name|dialogs_gradient_grid_view_new
 block|,
@@ -429,7 +429,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:palette-grid"
+literal|"gimp-palette-grid"
 block|,
 name|dialogs_palette_grid_view_new
 block|,
@@ -445,7 +445,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:tool-grid"
+literal|"gimp-tool-grid"
 block|,
 name|dialogs_tool_grid_view_new
 block|,
@@ -461,7 +461,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:buffer-grid"
+literal|"gimp-buffer-grid"
 block|,
 name|dialogs_buffer_grid_view_new
 block|,
@@ -477,7 +477,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:layer-list"
+literal|"gimp-layer-list"
 block|,
 name|dialogs_layer_list_view_new
 block|,
@@ -493,7 +493,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:channel-list"
+literal|"gimp-channel-list"
 block|,
 name|dialogs_channel_list_view_new
 block|,
@@ -509,7 +509,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:vectors-list"
+literal|"gimp-vectors-list"
 block|,
 name|dialogs_vectors_list_view_new
 block|,
@@ -525,7 +525,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:path-list"
+literal|"gimp-path-list"
 block|,
 name|dialogs_path_list_view_new
 block|,
@@ -541,7 +541,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:indexed-palette"
+literal|"gimp-indexed-palette"
 block|,
 name|dialogs_indexed_palette_new
 block|,
@@ -557,7 +557,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:document-history"
+literal|"gimp-document-history"
 block|,
 name|dialogs_document_history_new
 block|,
@@ -573,7 +573,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:brush-editor"
+literal|"gimp-brush-editor"
 block|,
 name|dialogs_brush_editor_get
 block|,
@@ -589,7 +589,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:gradient-editor"
+literal|"gimp-gradient-editor"
 block|,
 name|dialogs_gradient_editor_get
 block|,
@@ -605,7 +605,7 @@ name|TRUE
 block|}
 block|,
 block|{
-literal|"gimp:palette-editor"
+literal|"gimp-palette-editor"
 block|,
 name|dialogs_palette_editor_get
 block|,

@@ -787,7 +787,7 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
-literal|"gimp:buffer-list"
+literal|"gimp-buffer-list"
 argument_list|,
 operator|-
 literal|1

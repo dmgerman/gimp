@@ -916,7 +916,7 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
-literal|"gimp:paintbrush_tool"
+literal|"gimp-paintbrush-tool"
 argument_list|)
 expr_stmt|;
 block|}

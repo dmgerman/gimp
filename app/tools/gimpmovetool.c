@@ -437,7 +437,7 @@ name|move_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:move_tool"
+literal|"gimp-move-tool"
 argument_list|,
 name|_
 argument_list|(

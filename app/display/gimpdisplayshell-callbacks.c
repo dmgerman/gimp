@@ -3619,7 +3619,7 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
-literal|"gimp:move_tool"
+literal|"gimp-move-tool"
 argument_list|)
 expr_stmt|;
 if|if
@@ -3772,7 +3772,7 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
-literal|"gimp:move_tool"
+literal|"gimp-move-tool"
 argument_list|)
 expr_stmt|;
 if|if

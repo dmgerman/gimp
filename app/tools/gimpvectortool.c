@@ -411,7 +411,7 @@ name|vector_tool_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:vector_tool"
+literal|"gimp-vector-tool"
 argument_list|,
 name|_
 argument_list|(

@@ -161,7 +161,7 @@ name|airbrush_options_new
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"gimp:airbrush_tool"
+literal|"gimp-airbrush-tool"
 argument_list|,
 name|_
 argument_list|(

@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c764de80108
+DECL|struct|__anon2991a4070108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c764de80208
+DECL|struct|__anon2991a4070208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c764de80308
+DECL|struct|__anon2991a4070308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -1220,7 +1220,7 @@ name|selection_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:bezier_select_tool"
+literal|"gimp-bezier-select-tool"
 argument_list|,
 name|_
 argument_list|(

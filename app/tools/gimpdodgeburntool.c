@@ -197,7 +197,7 @@ name|gimp_dodgeburn_tool_options_new
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"gimp:dodgeburn_tool"
+literal|"gimp-dodgeburn-tool"
 argument_list|,
 name|_
 argument_list|(

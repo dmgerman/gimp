@@ -453,7 +453,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:brightness_contrast_tool"
+literal|"gimp-brightness-contrast-tool"
 argument_list|,
 name|_
 argument_list|(

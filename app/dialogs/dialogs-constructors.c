@@ -2991,7 +2991,7 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
-literal|"gimp:brush-editor"
+literal|"gimp-brush-editor"
 argument_list|,
 operator|-
 literal|1
@@ -3083,7 +3083,7 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
-literal|"gimp:gradient-editor"
+literal|"gimp-gradient-editor"
 argument_list|,
 operator|-
 literal|1
@@ -3175,7 +3175,7 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
-literal|"gimp:palette-editor"
+literal|"gimp-palette-editor"
 argument_list|,
 operator|-
 literal|1

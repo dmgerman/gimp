@@ -322,7 +322,7 @@ name|transform_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:shear_tool"
+literal|"gimp-shear-tool"
 argument_list|,
 name|_
 argument_list|(

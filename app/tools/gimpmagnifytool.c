@@ -427,7 +427,7 @@ name|magnify_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:magnify_tool"
+literal|"gimp-magnify-tool"
 argument_list|,
 name|_
 argument_list|(

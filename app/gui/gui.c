@@ -1006,7 +1006,7 @@ name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,
-literal|"gimp:tips-dialog"
+literal|"gimp-tips-dialog"
 argument_list|,
 operator|-
 literal|1
@@ -1450,7 +1450,7 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
-literal|"gimp:error-console"
+literal|"gimp-error-console"
 argument_list|,
 operator|-
 literal|1

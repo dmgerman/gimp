@@ -336,7 +336,7 @@ name|transform_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:scale_tool"
+literal|"gimp-scale-tool"
 argument_list|,
 name|_
 argument_list|(

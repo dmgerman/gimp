@@ -534,7 +534,7 @@ name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,
-literal|"gimp:display-filters-dialog"
+literal|"gimp-display-filters-dialog"
 argument_list|,
 operator|-
 literal|1

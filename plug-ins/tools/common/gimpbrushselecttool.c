@@ -356,7 +356,7 @@ name|selection_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:brush_select_tool"
+literal|"gimp-brush-select-tool-module"
 argument_list|,
 name|_
 argument_list|(

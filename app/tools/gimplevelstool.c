@@ -998,7 +998,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:levels_tool"
+literal|"gimp-levels-tool"
 argument_list|,
 name|_
 argument_list|(

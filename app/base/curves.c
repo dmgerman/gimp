@@ -989,7 +989,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:curves_tool"
+literal|"gimp-curves-tool"
 argument_list|,
 name|_
 argument_list|(

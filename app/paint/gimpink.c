@@ -1100,7 +1100,7 @@ name|ink_options_new
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"gimp:ink_tool"
+literal|"gimp-ink-tool"
 argument_list|,
 name|_
 argument_list|(
@@ -4645,7 +4645,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon27aef4930103
+DECL|enum|__anon27ce5b2a0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

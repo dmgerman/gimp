@@ -308,7 +308,7 @@ name|selection_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:rect_select_tool"
+literal|"gimp-rect-select-tool"
 argument_list|,
 name|_
 argument_list|(

@@ -358,7 +358,7 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
-literal|"gimp:bucket_fill_tool"
+literal|"gimp-bucket-fill-tool"
 argument_list|)
 expr_stmt|;
 if|if

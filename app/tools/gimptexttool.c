@@ -472,7 +472,7 @@ name|text_tool_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:text_tool"
+literal|"gimp-text-tool"
 argument_list|,
 name|_
 argument_list|(

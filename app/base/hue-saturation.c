@@ -602,7 +602,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:hue_saturation_tool"
+literal|"gimp-hue-saturation-tool"
 argument_list|,
 name|_
 argument_list|(

@@ -175,7 +175,7 @@ argument_list|)
 operator|->
 name|dialog_factory
 argument_list|,
-literal|"gimp:brush-grid"
+literal|"gimp-brush-grid"
 argument_list|,
 operator|-
 literal|1
@@ -250,7 +250,7 @@ argument_list|)
 operator|->
 name|dialog_factory
 argument_list|,
-literal|"gimp:pattern-grid"
+literal|"gimp-pattern-grid"
 argument_list|,
 operator|-
 literal|1
@@ -325,7 +325,7 @@ argument_list|)
 operator|->
 name|dialog_factory
 argument_list|,
-literal|"gimp:gradient-list"
+literal|"gimp-gradient-list"
 argument_list|,
 operator|-
 literal|1

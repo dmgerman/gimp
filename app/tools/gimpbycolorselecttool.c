@@ -651,7 +651,7 @@ name|selection_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:by_color_select_tool"
+literal|"gimp-by-color-select-tool"
 argument_list|,
 name|_
 argument_list|(

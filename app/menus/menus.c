@@ -584,7 +584,7 @@ block|,
 name|GTK_STOCK_PREFERENCES
 block|}
 block|,
-literal|"gimp:preferences-dialog"
+literal|"gimp-preferences-dialog"
 block|,
 literal|"file/dialogs/preferences/preferences.html"
 block|,
@@ -648,7 +648,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:tool-options"
+literal|"gimp-tool-options"
 block|,
 literal|"file/dialogs/tool_options.html"
 block|,
@@ -669,7 +669,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:device-status-dialog"
+literal|"gimp-device-status-dialog"
 block|,
 literal|"file/dialogs/device_status.html"
 block|,
@@ -695,7 +695,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:brush-grid"
+literal|"gimp-brush-grid"
 block|,
 literal|"file/dialogs/brush_selection.html"
 block|,
@@ -716,7 +716,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:pattern-grid"
+literal|"gimp-pattern-grid"
 block|,
 literal|"file/dialogs/pattern_selection.html"
 block|,
@@ -737,7 +737,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:gradient-list"
+literal|"gimp-gradient-list"
 block|,
 literal|"file/dialogs/gradient_selection.html"
 block|,
@@ -762,7 +762,7 @@ block|,
 name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
-literal|"gimp:palette-list"
+literal|"gimp-palette-list"
 block|,
 literal|"file/dialogs/palette_selection.html"
 block|,
@@ -787,7 +787,7 @@ block|,
 name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
-literal|"gimp:indexed-palette"
+literal|"gimp-indexed-palette"
 block|,
 literal|"file/dialogs/indexed_palette.html"
 block|,
@@ -808,7 +808,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:buffer-list"
+literal|"gimp-buffer-list"
 block|,
 name|NULL
 block|,
@@ -829,7 +829,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:image-list"
+literal|"gimp-image-list"
 block|,
 name|NULL
 block|,
@@ -855,7 +855,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:document-history"
+literal|"gimp-document-history"
 block|,
 literal|"file/dialogs/document_index.html"
 block|,
@@ -876,7 +876,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:error-console"
+literal|"gimp-error-console"
 block|,
 literal|"file/dialogs/error_console.html"
 block|,
@@ -1013,7 +1013,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:module-browser-dialog"
+literal|"gimp-module-browser-dialog"
 block|,
 literal|"dialogs/module_browser.html"
 block|,
@@ -1098,7 +1098,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:tips-dialog"
+literal|"gimp-tips-dialog"
 block|,
 literal|"help/dialogs/tip_of_the_day.html"
 block|,
@@ -1119,7 +1119,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:about-dialog"
+literal|"gimp-about-dialog"
 block|,
 literal|"help/dialogs/about.html"
 block|,
@@ -2863,7 +2863,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:undo-history-dialog"
+literal|"gimp-undo-history-dialog"
 block|,
 literal|"dialogs/undo_history.html"
 block|,
@@ -3661,7 +3661,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:tool-options"
+literal|"gimp-tool-options"
 block|,
 literal|"dialogs/tool_options.html"
 block|,
@@ -3682,7 +3682,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:device-status-dialog"
+literal|"gimp-device-status-dialog"
 block|,
 literal|"dialogs/device_status.html"
 block|,
@@ -3708,7 +3708,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:brush-grid"
+literal|"gimp-brush-grid"
 block|,
 literal|"dialogs/brush_selection.html"
 block|,
@@ -3729,7 +3729,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:pattern-grid"
+literal|"gimp-pattern-grid"
 block|,
 literal|"dialogs/pattern_selection.html"
 block|,
@@ -3750,7 +3750,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:gradient-list"
+literal|"gimp-gradient-list"
 block|,
 literal|"dialogs/gradient_selection.html"
 block|,
@@ -3775,7 +3775,7 @@ block|,
 name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
-literal|"gimp:palette-list"
+literal|"gimp-palette-list"
 block|,
 literal|"dialogs/palette_selection.html"
 block|,
@@ -3800,7 +3800,7 @@ block|,
 name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
-literal|"gimp:indexed-palette"
+literal|"gimp-indexed-palette"
 block|,
 literal|"dialogs/indexed_palette.html"
 block|,
@@ -3821,7 +3821,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:buffer-list"
+literal|"gimp-buffer-list"
 block|,
 name|NULL
 block|,
@@ -3842,7 +3842,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:image-list"
+literal|"gimp-image-list"
 block|,
 name|NULL
 block|,
@@ -3868,7 +3868,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:document-history"
+literal|"gimp-document-history"
 block|,
 literal|"dialogs/document_index.html"
 block|,
@@ -3889,7 +3889,7 @@ block|,
 literal|0
 block|}
 block|,
-literal|"gimp:error-console"
+literal|"gimp-error-console"
 block|,
 literal|"dialogs/error_console.html"
 block|,
@@ -5808,7 +5808,7 @@ argument_list|(
 literal|"/Add Tab/Layers..."
 argument_list|)
 argument_list|,
-literal|"gimp:layer-list"
+literal|"gimp-layer-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5822,7 +5822,7 @@ argument_list|(
 literal|"/Add Tab/Channels..."
 argument_list|)
 argument_list|,
-literal|"gimp:channel-list"
+literal|"gimp-channel-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5836,7 +5836,7 @@ argument_list|(
 literal|"/Add Tab/Paths..."
 argument_list|)
 argument_list|,
-literal|"gimp:vectors-list"
+literal|"gimp-vectors-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5850,7 +5850,7 @@ argument_list|(
 literal|"/Add Tab/Old Paths..."
 argument_list|)
 argument_list|,
-literal|"gimp:path-list"
+literal|"gimp-path-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5864,7 +5864,7 @@ argument_list|(
 literal|"/Add Tab/Document History..."
 argument_list|)
 argument_list|,
-literal|"gimp:document-history"
+literal|"gimp-document-history"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5878,7 +5878,7 @@ argument_list|(
 literal|"/Add Tab/Error Console..."
 argument_list|)
 argument_list|,
-literal|"gimp:error-console"
+literal|"gimp-error-console"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5897,7 +5897,7 @@ argument_list|(
 literal|"/Add Tab/Brushes..."
 argument_list|)
 argument_list|,
-literal|"gimp:brush-grid"
+literal|"gimp-brush-grid"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5911,7 +5911,7 @@ argument_list|(
 literal|"/Add Tab/Patterns..."
 argument_list|)
 argument_list|,
-literal|"gimp:pattern-grid"
+literal|"gimp-pattern-grid"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5925,7 +5925,7 @@ argument_list|(
 literal|"/Add Tab/Gradients..."
 argument_list|)
 argument_list|,
-literal|"gimp:gradient-list"
+literal|"gimp-gradient-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5939,7 +5939,7 @@ argument_list|(
 literal|"/Add Tab/Palettes..."
 argument_list|)
 argument_list|,
-literal|"gimp:palette-list"
+literal|"gimp-palette-list"
 argument_list|,
 literal|"<StockItem>"
 argument_list|,
@@ -5953,7 +5953,7 @@ argument_list|(
 literal|"/Add Tab/Indexed Palette..."
 argument_list|)
 argument_list|,
-literal|"gimp:indexed-palette"
+literal|"gimp-indexed-palette"
 argument_list|,
 literal|"<StockItem>"
 argument_list|,
@@ -5967,7 +5967,7 @@ argument_list|(
 literal|"/Add Tab/Buffers..."
 argument_list|)
 argument_list|,
-literal|"gimp:buffer-list"
+literal|"gimp-buffer-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -5981,7 +5981,7 @@ argument_list|(
 literal|"/Add Tab/Images..."
 argument_list|)
 argument_list|,
-literal|"gimp:image-list"
+literal|"gimp-image-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -6000,7 +6000,7 @@ argument_list|(
 literal|"/Add Tab/Tools..."
 argument_list|)
 argument_list|,
-literal|"gimp:tool-list"
+literal|"gimp-tool-list"
 argument_list|,
 name|NULL
 argument_list|,
@@ -9048,17 +9048,17 @@ name|color_tools
 index|[]
 init|=
 block|{
-literal|"gimp:color_balance_tool"
+literal|"gimp-color-balance-tool"
 block|,
-literal|"gimp:hue_saturation_tool"
+literal|"gimp-hue-saturation-tool"
 block|,
-literal|"gimp:brightness_contrast_tool"
+literal|"gimp-brightness-contrast-tool"
 block|,
-literal|"gimp:threshold_tool"
+literal|"gimp-threshold-tool"
 block|,
-literal|"gimp:levels_tool"
+literal|"gimp-levels-tool"
 block|,
-literal|"gimp:curves_tool"
+literal|"gimp-curves-tool"
 block|}
 decl_stmt|;
 name|GtkWidget
@@ -9223,7 +9223,7 @@ name|gimp
 operator|->
 name|tool_info_list
 argument_list|,
-literal|"gimp:posterize_tool"
+literal|"gimp-posterize-tool"
 argument_list|)
 expr_stmt|;
 name|menu_item

@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aee4760103
+DECL|enum|__anon27678e690103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -775,7 +775,7 @@ name|crop_options_new
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:crop_tool"
+literal|"gimp-crop-tool"
 argument_list|,
 name|_
 argument_list|(

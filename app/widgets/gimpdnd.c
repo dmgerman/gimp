@@ -5175,7 +5175,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-literal|"gimp:standard_tool"
+literal|"gimp-standard-tool"
 argument_list|)
 operator|==
 literal|0

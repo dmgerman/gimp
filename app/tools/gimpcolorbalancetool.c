@@ -441,7 +441,7 @@ name|NULL
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"gimp:color_balance_tool"
+literal|"gimp-color-balance-tool"
 argument_list|,
 name|_
 argument_list|(

@@ -535,7 +535,7 @@ name|blend_options_new
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"gimp:blend_tool"
+literal|"gimp-blend-tool"
 argument_list|,
 name|_
 argument_list|(
