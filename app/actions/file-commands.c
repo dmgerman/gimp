@@ -576,8 +576,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_a_copy_as_cmd_callback (GtkWidget * widget,gpointer data)
-name|file_save_a_copy_as_cmd_callback
+DECL|function|file_save_a_copy_cmd_callback (GtkWidget * widget,gpointer data)
+name|file_save_a_copy_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

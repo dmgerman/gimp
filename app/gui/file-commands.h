@@ -122,7 +122,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_save_a_copy_as_cmd_callback
+name|file_save_a_copy_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
