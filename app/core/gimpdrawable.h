@@ -297,10 +297,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  drawable access functions  */
-end_comment
-
 begin_decl_stmt
 name|GType
 name|gimp_drawable_get_type
@@ -518,6 +514,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_drawable_shadow
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_drawable_merge_shadow
 parameter_list|(
@@ -670,31 +678,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|TileManager
-modifier|*
-name|gimp_drawable_data
-parameter_list|(
-specifier|const
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|TileManager
-modifier|*
-name|gimp_drawable_shadow
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gint
 name|gimp_drawable_bytes
 parameter_list|(
@@ -709,6 +692,19 @@ end_function_decl
 begin_function_decl
 name|gint
 name|gimp_drawable_bytes_with_alpha
+parameter_list|(
+specifier|const
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_drawable_data
 parameter_list|(
 specifier|const
 name|GimpDrawable
