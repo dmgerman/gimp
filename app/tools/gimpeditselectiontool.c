@@ -733,8 +733,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_snap (GimpEditSelectionTool * edit_select,GimpDisplay * gdisp,gdouble x,gdouble y)
-name|gimp_edit_selection_tool_snap
+DECL|function|gimp_edit_selection_tool_calc_coords (GimpEditSelectionTool * edit_select,GimpDisplay * gdisp,gdouble x,gdouble y)
+name|gimp_edit_selection_tool_calc_coords
 parameter_list|(
 name|GimpEditSelectionTool
 modifier|*
@@ -813,7 +813,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|RINT
+name|floor
 argument_list|(
 name|x1
 argument_list|)
@@ -835,7 +835,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|RINT
+name|floor
 argument_list|(
 name|y1
 argument_list|)
@@ -1165,25 +1165,19 @@ operator|->
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_edit_selection_tool_snap
+name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
 argument_list|,
 name|gdisp
 argument_list|,
-name|RINT
-argument_list|(
 name|edit_select
 operator|->
 name|origx
-argument_list|)
 argument_list|,
-name|RINT
-argument_list|(
 name|edit_select
 operator|->
 name|origy
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
@@ -1663,7 +1657,7 @@ operator|==
 name|EDIT_MASK_TRANSLATE
 condition|)
 block|{
-name|gimp_edit_selection_tool_snap
+name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
 argument_list|,
@@ -1974,21 +1968,15 @@ name|off_y
 expr_stmt|;
 block|}
 comment|/* now do the actual move. */
-name|gimp_edit_selection_tool_snap
+name|gimp_edit_selection_tool_calc_coords
 argument_list|(
 name|edit_select
 argument_list|,
 name|gdisp
 argument_list|,
-name|RINT
-argument_list|(
 name|motion_x
-argument_list|)
 argument_list|,
-name|RINT
-argument_list|(
 name|motion_y
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/******************************************* adam's live move *******/
