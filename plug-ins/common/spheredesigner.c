@@ -230,7 +230,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca92690103
+DECL|enum|__anon2992ca520103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca92690203
+DECL|enum|__anon2992ca520203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -304,7 +304,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca92690303
+DECL|enum|__anon2992ca520303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -320,7 +320,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca92690403
+DECL|enum|__anon2992ca520403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca92690503
+DECL|enum|__anon2992ca520503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -383,7 +383,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690608
+DECL|struct|__anon2992ca520608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -406,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690708
+DECL|struct|__anon2992ca520708
 block|{
 DECL|member|numcol
 name|gshort
@@ -435,7 +435,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690808
+DECL|struct|__anon2992ca520808
 block|{
 DECL|member|majtype
 name|gint
@@ -530,7 +530,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690908
+DECL|struct|__anon2992ca520908
 block|{
 DECL|member|type
 name|gshort
@@ -557,7 +557,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690a08
+DECL|struct|__anon2992ca520a08
 block|{
 DECL|member|type
 name|gshort
@@ -598,7 +598,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690b08
+DECL|struct|__anon2992ca520b08
 block|{
 DECL|member|com
 name|common
@@ -623,7 +623,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690c08
+DECL|struct|__anon2992ca520c08
 block|{
 DECL|member|com
 name|common
@@ -649,7 +649,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690d08
+DECL|struct|__anon2992ca520d08
 block|{
 DECL|member|com
 name|common
@@ -672,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690e08
+DECL|struct|__anon2992ca520e08
 block|{
 DECL|member|com
 name|common
@@ -697,7 +697,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92690f08
+DECL|struct|__anon2992ca520f08
 block|{
 DECL|member|com
 name|common
@@ -720,7 +720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92691008
+DECL|struct|__anon2992ca521008
 block|{
 DECL|member|com
 name|common
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ca92691108
+DECL|struct|__anon2992ca521108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -769,7 +769,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28ca9269120a
+DECL|union|__anon2992ca52120a
 block|{
 DECL|member|com
 name|common
@@ -1085,7 +1085,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon28ca92691308
+DECL|struct|__anon2992ca521308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -11510,14 +11510,11 @@ name|texture
 modifier|*
 name|t
 decl_stmt|;
-name|s
-operator|.
-name|com
-operator|.
-name|numtexture
-operator|=
-literal|0
-expr_stmt|;
+name|gint
+name|majtype
+decl_stmt|,
+name|type
+decl_stmt|;
 name|f
 operator|=
 name|fopen
@@ -11553,6 +11550,65 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+literal|2
+operator|!=
+name|fscanf
+argument_list|(
+name|f
+argument_list|,
+literal|"%d %d"
+argument_list|,
+operator|&
+name|majtype
+argument_list|,
+operator|&
+name|type
+argument_list|)
+operator|||
+name|majtype
+operator|<
+literal|0
+operator|||
+name|majtype
+operator|>
+literal|2
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"File '%s' is not a valid save file."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|fn
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+name|rewind
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
+name|s
+operator|.
+name|com
+operator|.
+name|numtexture
+operator|=
+literal|0
+expr_stmt|;
 while|while
 condition|(
 operator|!
