@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d423be0103
+DECL|enum|__anon2a0982780103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4398,10 +4398,7 @@ name|uri
 operator|=
 name|gimp_image_get_uri
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|gimage
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
