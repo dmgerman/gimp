@@ -446,7 +446,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|gimage_mask_feather_callback
 argument_list|,
@@ -586,7 +586,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|gimage_mask_shrink_callback
 argument_list|,
@@ -758,7 +758,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|gimage_mask_grow_callback
 argument_list|,
@@ -859,7 +859,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|gimage_mask_border_callback
 argument_list|,

@@ -661,7 +661,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|cut_named_buffer_callback
 argument_list|,
@@ -731,7 +731,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|copy_named_buffer_callback
 argument_list|,

@@ -1014,7 +1014,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bfa600103
+DECL|enum|__anon2ad6844b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1060,7 +1060,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bfa600203
+DECL|enum|__anon2ad6844b0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -1489,13 +1489,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -1567,13 +1567,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -1762,13 +1762,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -1801,13 +1801,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -1840,13 +1840,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -1879,13 +1879,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -1918,13 +1918,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|g_cclosure_marshal_VOID__POINTER
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_POINTER
+name|G_TYPE_OBJECT
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -2072,7 +2072,7 @@ name|object_class
 argument_list|,
 name|PROP_IMAGE
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_object
 argument_list|(
 name|gimp_context_prop_names
 index|[
@@ -2082,6 +2082,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_IMAGE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2114,7 +2116,7 @@ name|object_class
 argument_list|,
 name|PROP_TOOL
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_object
 argument_list|(
 name|gimp_context_prop_names
 index|[
@@ -2124,6 +2126,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_TOOL_INFO
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2231,7 +2235,7 @@ name|object_class
 argument_list|,
 name|PROP_BRUSH
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_object
 argument_list|(
 name|gimp_context_prop_names
 index|[
@@ -2241,6 +2245,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_BRUSH
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2252,7 +2258,7 @@ name|object_class
 argument_list|,
 name|PROP_PATTERN
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_object
 argument_list|(
 name|gimp_context_prop_names
 index|[
@@ -2262,6 +2268,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_PATTERN
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2273,7 +2281,7 @@ name|object_class
 argument_list|,
 name|PROP_GRADIENT
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_object
 argument_list|(
 name|gimp_context_prop_names
 index|[
@@ -2283,6 +2291,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_GRADIENT
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2294,7 +2304,7 @@ name|object_class
 argument_list|,
 name|PROP_PALETTE
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_object
 argument_list|(
 name|gimp_context_prop_names
 index|[
@@ -2304,6 +2314,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_PALETTE
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2315,7 +2327,7 @@ name|object_class
 argument_list|,
 name|PROP_BUFFER
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_object
 argument_list|(
 name|gimp_context_prop_names
 index|[
@@ -2325,6 +2337,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_BUFFER
 argument_list|,
 name|G_PARAM_READWRITE
 argument_list|)
@@ -2840,7 +2854,7 @@ name|gimp_context_set_image
 argument_list|(
 name|context
 argument_list|,
-name|g_value_get_pointer
+name|g_value_get_object
 argument_list|(
 name|value
 argument_list|)
@@ -2868,7 +2882,7 @@ name|gimp_context_set_tool
 argument_list|(
 name|context
 argument_list|,
-name|g_value_get_pointer
+name|g_value_get_object
 argument_list|(
 name|value
 argument_list|)
@@ -2938,7 +2952,7 @@ name|gimp_context_set_brush
 argument_list|(
 name|context
 argument_list|,
-name|g_value_get_pointer
+name|g_value_get_object
 argument_list|(
 name|value
 argument_list|)
@@ -2952,7 +2966,7 @@ name|gimp_context_set_pattern
 argument_list|(
 name|context
 argument_list|,
-name|g_value_get_pointer
+name|g_value_get_object
 argument_list|(
 name|value
 argument_list|)
@@ -2966,7 +2980,7 @@ name|gimp_context_set_gradient
 argument_list|(
 name|context
 argument_list|,
-name|g_value_get_pointer
+name|g_value_get_object
 argument_list|(
 name|value
 argument_list|)
@@ -2980,7 +2994,7 @@ name|gimp_context_set_palette
 argument_list|(
 name|context
 argument_list|,
-name|g_value_get_pointer
+name|g_value_get_object
 argument_list|(
 name|value
 argument_list|)
@@ -2994,7 +3008,7 @@ name|gimp_context_set_buffer
 argument_list|(
 name|context
 argument_list|,
-name|g_value_get_pointer
+name|g_value_get_object
 argument_list|(
 name|value
 argument_list|)
@@ -3057,7 +3071,7 @@ block|{
 case|case
 name|PROP_IMAGE
 case|:
-name|g_value_set_pointer
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
@@ -3085,7 +3099,7 @@ break|break;
 case|case
 name|PROP_TOOL
 case|:
-name|g_value_set_pointer
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
@@ -3155,7 +3169,7 @@ break|break;
 case|case
 name|PROP_BRUSH
 case|:
-name|g_value_set_pointer
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
@@ -3169,7 +3183,7 @@ break|break;
 case|case
 name|PROP_PATTERN
 case|:
-name|g_value_set_pointer
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
@@ -3183,7 +3197,7 @@ break|break;
 case|case
 name|PROP_GRADIENT
 case|:
-name|g_value_set_pointer
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
@@ -3197,7 +3211,7 @@ break|break;
 case|case
 name|PROP_PALETTE
 case|:
-name|g_value_set_pointer
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
@@ -3211,7 +3225,7 @@ break|break;
 case|case
 name|PROP_BUFFER
 case|:
-name|g_value_set_pointer
+name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,

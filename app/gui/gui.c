@@ -338,7 +338,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gui_image_destroy
+name|gui_image_disconnect
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -476,10 +476,10 @@ comment|/*  private variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|image_destroy_handler_id
+DECL|variable|image_disconnect_handler_id
 specifier|static
 name|GQuark
-name|image_destroy_handler_id
+name|image_disconnect_handler_id
 init|=
 literal|0
 decl_stmt|;
@@ -845,7 +845,7 @@ name|restore_session
 operator|=
 name|TRUE
 expr_stmt|;
-name|image_destroy_handler_id
+name|image_disconnect_handler_id
 operator|=
 name|gimp_container_add_handler
 argument_list|(
@@ -853,11 +853,11 @@ name|gimp
 operator|->
 name|images
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gui_image_destroy
+name|gui_image_disconnect
 argument_list|)
 argument_list|,
 name|gimp
@@ -1322,7 +1322,7 @@ name|gimp
 operator|->
 name|images
 argument_list|,
-name|image_destroy_handler_id
+name|image_disconnect_handler_id
 argument_list|)
 expr_stmt|;
 name|gimp_container_remove_handler
@@ -1379,7 +1379,7 @@ argument_list|,
 name|image_update_handler_id
 argument_list|)
 expr_stmt|;
-name|image_destroy_handler_id
+name|image_disconnect_handler_id
 operator|=
 literal|0
 expr_stmt|;
@@ -1995,8 +1995,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_image_destroy (GimpImage * gimage,gpointer data)
-name|gui_image_destroy
+DECL|function|gui_image_disconnect (GimpImage * gimage,gpointer data)
+name|gui_image_disconnect
 parameter_list|(
 name|GimpImage
 modifier|*

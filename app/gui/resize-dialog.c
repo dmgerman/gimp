@@ -838,7 +838,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|g_object_weak_ref
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -847,12 +847,10 @@ operator|->
 name|resize_shell
 argument_list|)
 argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
+operator|(
+name|GWeakNotify
+operator|)
 name|g_free
-argument_list|)
 argument_list|,
 name|private
 argument_list|)

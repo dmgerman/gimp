@@ -719,7 +719,7 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|file_revert_confirm_callback
 argument_list|,

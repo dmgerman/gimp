@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c74145e0103
+DECL|enum|__anon2961c0820103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -980,8 +980,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clone_src_drawable_destroyed_cb (GimpDrawable * drawable,GimpDrawable ** src_drawable)
-name|clone_src_drawable_destroyed_cb
+DECL|function|clone_src_drawable_disconnect_cb (GimpDrawable * drawable,GimpDrawable ** src_drawable)
+name|clone_src_drawable_disconnect_cb
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -1045,7 +1045,7 @@ argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|clone_src_drawable_destroyed_cb
+name|clone_src_drawable_disconnect_cb
 argument_list|)
 argument_list|,
 operator|&
@@ -1068,11 +1068,11 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|clone_src_drawable_destroyed_cb
+name|clone_src_drawable_disconnect_cb
 argument_list|)
 argument_list|,
 operator|&

@@ -195,7 +195,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc96f30103
+DECL|enum|__anon2ab03ac40103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1737,7 +1737,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|g_signal_connect
+name|g_object_weak_ref
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1746,12 +1746,10 @@ operator|->
 name|viewable
 argument_list|)
 argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
+operator|(
+name|GWeakNotify
+operator|)
 name|gtk_widget_destroyed
-argument_list|)
 argument_list|,
 operator|&
 name|preview

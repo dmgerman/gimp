@@ -1720,7 +1720,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-literal|"destroy"
+literal|"disconnect"
 argument_list|,
 name|gimp_data_factory_view_delete_callback
 argument_list|,
