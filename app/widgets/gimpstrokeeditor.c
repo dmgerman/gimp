@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b796e0103
+DECL|enum|__anon29ae2ed60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -951,10 +951,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -970,10 +967,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_after
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"expose-event"
 argument_list|,
@@ -1042,10 +1036,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
@@ -1061,10 +1052,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_after
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|button
-argument_list|)
 argument_list|,
 literal|"expose-event"
 argument_list|,
@@ -1159,12 +1147,9 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|editor
 operator|->
 name|options
-argument_list|)
 argument_list|,
 literal|"dash_info_changed"
 argument_list|,

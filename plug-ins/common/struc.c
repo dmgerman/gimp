@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279fca240103
+DECL|enum|__anon276ff4d90103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279fca240208
+DECL|struct|__anon276ff4d90208
 block|{
 DECL|member|direction
 name|gint
@@ -42245,13 +42245,9 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|CLAMP
+name|CLAMP0255
 argument_list|(
 name|varde
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|)
 expr_stmt|;
 if|if
@@ -42344,13 +42340,9 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|CLAMP
+name|CLAMP0255
 argument_list|(
 name|varde
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|)
 expr_stmt|;
 name|varde
@@ -42384,13 +42376,9 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|CLAMP
+name|CLAMP0255
 argument_list|(
 name|varde
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|)
 expr_stmt|;
 name|varde
@@ -42424,13 +42412,9 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|CLAMP
+name|CLAMP0255
 argument_list|(
 name|varde
-argument_list|,
-literal|0
-argument_list|,
-literal|255
 argument_list|)
 expr_stmt|;
 if|if

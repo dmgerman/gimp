@@ -575,9 +575,11 @@ end_ifdef
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_toplevel_directory ()
+DECL|function|gimp_toplevel_directory (void)
 name|gimp_toplevel_directory
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/* Figure it out from the executable name */
 specifier|static

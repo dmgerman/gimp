@@ -80,7 +80,7 @@ end_define
 
 begin_comment
 DECL|macro|GIMP_MAX_MEMSIZE
-comment|/*  4 terabyte;                                         *  needs a 64bit variable                                         *  and must be< G_MAXDOUBLE                                         */
+comment|/*  4 terabyte;                                                   *  needs a 64bit variable                                                   *  and must be< G_MAXDOUBLE                                                   */
 end_comment
 
 begin_comment

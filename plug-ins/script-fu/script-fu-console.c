@@ -159,21 +159,10 @@ name|BUFSIZE
 value|256
 end_define
 
-begin_define
-DECL|macro|message (string)
-define|#
-directive|define
-name|message
-parameter_list|(
-name|string
-parameter_list|)
-value|printf("(%s): %d ::: %s\n", __PRETTY_FUNCTION__, __LINE__, string)
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cc64ae0108
+DECL|struct|__anon28b13e6d0108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -2255,6 +2244,19 @@ argument_list|)
 operator|)
 operator|->
 name|data
+argument_list|)
+expr_stmt|;
+name|gtk_editable_set_position
+argument_list|(
+name|GTK_EDITABLE
+argument_list|(
+name|cint
+operator|.
+name|cc
+argument_list|)
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 return|return

@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c9bde80103
+DECL|enum|__anon296c532a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1807,8 +1807,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GTK_WIDGET
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DASH_EDITOR
@@ -1818,7 +1816,6 @@ argument_list|,
 name|stroke_options
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 return|;
 block|}
