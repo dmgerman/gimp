@@ -4,15 +4,11 @@ comment|/* Page Curl 0.9 --- image filter plug-in for The Gimp  * Copyright (C) 
 end_comment
 
 begin_comment
-comment|/* TODO for v0.5 - in 0.9 still to do...  * As of version 0.5 alpha, the only thing that is not yet implemented  * is the "Warp curl" option.  Everything else seems to be working  * just fine.  Please email me if you find any bugs.  I know that the  * calculation code is horrible, but you don't want to tweak it anyway ;)  */
-end_comment
-
-begin_comment
 comment|/*  * Ported to the 0.99.x architecture by Simon Budig, Simon.Budig@unix-ag.org  */
 end_comment
 
 begin_comment
-comment|/*  * Version History  * 0.5: (1996) Version for Gimp 0.54 by Federico Mena Quintero  * 0.6: (Feb '98) First Version for Gimp 0.99.x, very buggy.  * 0.8: (Mar '98) First "stable" version  * 0.9: (May '98)  *      - Added support for Gradients. It is now possible to map  *        a gradient to the back of the curl.  *      - This implies a changed PDB-Interface: New "mode" parameter.  *      - Pagecurl now returns the ID of the new layer.  *      - Exchanged the meaning of FG/BG Color, because mostly the FG  *        color is darker.  */
+comment|/*  * Version History  * 0.5: (1996) Version for Gimp 0.54 by Federico Mena Quintero  * 0.6: (Feb '98) First Version for Gimp 0.99.x, very buggy.  * 0.8: (Mar '98) First "stable" version  * 0.9: (May '98)  *      - Added support for Gradients. It is now possible to map  *        a gradient to the back of the curl.  *      - This implies a changed PDB-Interface: New "mode" parameter.  *      - Pagecurl now returns the ID of the new layer.  *      - Exchanged the meaning of FG/BG Color, because mostly the FG  *        color is darker.  * 1.0: (July '04)  *      - Code cleanup, added reverse gradient option.  */
 end_comment
 
 begin_include
@@ -135,7 +131,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"May 1998, 0.9"
+value|"July 2004, 1.0"
 end_define
 
 begin_define
@@ -157,7 +153,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae81e510103
+DECL|enum|__anon2c5ae9a50103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -181,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae81e510203
+DECL|enum|__anon2c5ae9a50203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -202,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae81e510303
+DECL|enum|__anon2c5ae9a50303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -280,7 +276,7 @@ name|CURL_EDGE_UPPER
 parameter_list|(
 name|e
 parameter_list|)
-value|((e) == CURL_EDGE_UPPER_LEFT || \                             (e) == CURL_EDGE_UPPER_RIGHT)
+value|((e) == CURL_EDGE_UPPER_LEFT  || \                             (e) == CURL_EDGE_UPPER_RIGHT)
 end_define
 
 begin_comment
@@ -290,7 +286,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae81e510408
+DECL|struct|__anon2c5ae9a50408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -411,7 +407,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gint32
 name|do_curl_effect
 parameter_list|(
 name|gint32
@@ -433,7 +429,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gint32
 name|page_curl
 parameter_list|(
 name|gint32
@@ -546,6 +542,8 @@ specifier|static
 name|GtkWidget
 modifier|*
 name|curl_pixmap_widget
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -593,14 +591,6 @@ DECL|variable|drawable_position
 specifier|static
 name|gint
 name|drawable_position
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|curl_layer_ID
-specifier|static
-name|gint32
-name|curl_layer_ID
 decl_stmt|;
 end_decl_stmt
 
@@ -1144,11 +1134,6 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-name|page_curl
-argument_list|(
-name|drawable_id
-argument_list|)
-expr_stmt|;
 name|values
 index|[
 literal|1
@@ -1158,7 +1143,10 @@ name|data
 operator|.
 name|d_layer
 operator|=
-name|curl_layer_ID
+name|page_curl
+argument_list|(
+name|drawable_id
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1706,9 +1694,9 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -1719,9 +1707,9 @@ name|gtk_table_new
 argument_list|(
 literal|3
 argument_list|,
-literal|3
+literal|2
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -1773,7 +1761,7 @@ argument_list|)
 argument_list|,
 name|curl_pixmap_widget
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|2
 argument_list|,
@@ -1921,7 +1909,7 @@ argument_list|)
 condition|?
 literal|0
 else|:
-literal|2
+literal|1
 argument_list|,
 name|CURL_EDGE_LEFT
 argument_list|(
@@ -1930,7 +1918,7 @@ argument_list|)
 condition|?
 literal|1
 else|:
-literal|3
+literal|2
 argument_list|,
 name|CURL_EDGE_UPPER
 argument_list|(
@@ -2064,12 +2052,12 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Vertical"
+literal|"_Vertical"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Horizontal"
+literal|"_Horizontal"
 argument_list|)
 block|}
 decl_stmt|;
@@ -2093,13 +2081,11 @@ control|)
 block|{
 name|button
 operator|=
-name|gtk_radio_button_new_with_label
+name|gtk_radio_button_new_with_mnemonic
 argument_list|(
-operator|(
 name|button
 operator|==
 name|NULL
-operator|)
 condition|?
 name|NULL
 else|:
@@ -2211,114 +2197,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
-argument_list|)
-expr_stmt|;
-name|table
-operator|=
-name|gtk_table_new
-argument_list|(
-literal|1
-argument_list|,
-literal|3
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_col_spacings
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|table
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-name|adjustment
-operator|=
-name|gimp_scale_entry_new
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"_Opacity:"
-argument_list|)
-argument_list|,
-literal|100
-argument_list|,
-literal|0
-argument_list|,
-name|curl
-operator|.
-name|opacity
-operator|*
-literal|100.0
-argument_list|,
-literal|0.0
-argument_list|,
-literal|100.0
-argument_list|,
-literal|1.0
-argument_list|,
-literal|1.0
-argument_list|,
-literal|0.0
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|adjustment
-argument_list|,
-literal|"value_changed"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|dialog_scale_update
-argument_list|)
-argument_list|,
-operator|&
-name|curl
-operator|.
-name|opacity
 argument_list|)
 expr_stmt|;
 name|button
@@ -2455,6 +2333,114 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|dialog
+argument_list|)
+expr_stmt|;
+name|table
+operator|=
+name|gtk_table_new
+argument_list|(
+literal|1
+argument_list|,
+literal|3
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|table
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
+name|adjustment
+operator|=
+name|gimp_scale_entry_new
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"_Opacity:"
+argument_list|)
+argument_list|,
+literal|100
+argument_list|,
+literal|0
+argument_list|,
+name|curl
+operator|.
+name|opacity
+operator|*
+literal|100.0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|100.0
+argument_list|,
+literal|1.0
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.0
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|adjustment
+argument_list|,
+literal|"value_changed"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|dialog_scale_update
+argument_list|)
+argument_list|,
+operator|&
+name|curl
+operator|.
+name|opacity
 argument_list|)
 expr_stmt|;
 name|run
@@ -2965,7 +2951,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gint32
 DECL|function|do_curl_effect (gint32 drawable_id)
 name|do_curl_effect
 parameter_list|(
@@ -3044,6 +3030,9 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
+name|gint32
+name|curl_layer_id
+decl_stmt|;
 name|guchar
 modifier|*
 name|grad_samples
@@ -3086,6 +3075,12 @@ name|GIMP_NORMAL_MODE
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|curl_layer_id
+operator|=
+name|curl_layer
+operator|->
+name|drawable_id
+expr_stmt|;
 name|gimp_image_add_layer
 argument_list|(
 name|image_id
@@ -3105,12 +3100,6 @@ name|drawable_id
 argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
-expr_stmt|;
-name|curl_layer_ID
-operator|=
-name|curl_layer
-operator|->
-name|drawable_id
 expr_stmt|;
 name|gimp_drawable_offsets
 argument_list|(
@@ -4120,6 +4109,9 @@ argument_list|(
 name|grad_samples
 argument_list|)
 expr_stmt|;
+return|return
+name|curl_layer_id
+return|;
 block|}
 end_function
 
@@ -4643,7 +4635,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gint32
 DECL|function|page_curl (gint32 drawable_id)
 name|page_curl
 parameter_list|(
@@ -4651,6 +4643,9 @@ name|gint32
 name|drawable_id
 parameter_list|)
 block|{
+name|gint
+name|curl_layer_id
+decl_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
 name|image_id
@@ -4669,6 +4664,8 @@ argument_list|(
 name|drawable_id
 argument_list|)
 expr_stmt|;
+name|curl_layer_id
+operator|=
 name|do_curl_effect
 argument_list|(
 name|drawable_id
@@ -4684,6 +4681,9 @@ argument_list|(
 name|image_id
 argument_list|)
 expr_stmt|;
+return|return
+name|curl_layer_id
+return|;
 block|}
 end_function
 
