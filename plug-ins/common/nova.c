@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -29,12 +23,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<time.h>
 end_include
 
 begin_include
@@ -167,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3dd2c0108
+DECL|struct|__anon2c36dc760108
 block|{
 DECL|member|xcenter
 name|gint
@@ -202,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3dd2c0208
+DECL|struct|__anon2c36dc760208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2835,11 +2823,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|printf
-argument_list|(
-literal|"Before\n"
-argument_list|)
-expr_stmt|;
 name|nova_center_draw
 argument_list|(
 operator|(
@@ -2849,11 +2832,6 @@ operator|)
 name|data
 argument_list|,
 name|ALL
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"After\n"
 argument_list|)
 expr_stmt|;
 return|return

@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a199c2a0103
+DECL|enum|__anon2b811e700103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a199c2a0203
+DECL|enum|__anon2b811e700203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a199c2a0303
+DECL|enum|__anon2b811e700303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a199c2a0403
+DECL|enum|__anon2b811e700403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -260,7 +260,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a199c2a0508
+DECL|struct|__anon2b811e700508
 block|{
 DECL|member|h_style
 name|gint
@@ -279,11 +279,11 @@ name|gint
 name|v_base
 decl_stmt|;
 DECL|member|ignore_bottom
-name|gint
+name|gboolean
 name|ignore_bottom
 decl_stmt|;
 DECL|member|base_is_bottom_layer
-name|gint
+name|gboolean
 name|base_is_bottom_layer
 decl_stmt|;
 DECL|member|grid_size

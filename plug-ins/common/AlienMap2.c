@@ -30529,7 +30529,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf9faa70108
+DECL|struct|__anon28f0f0dc0108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30580,7 +30580,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf9faa70208
+DECL|struct|__anon28f0f0dc0208
 block|{
 DECL|member|run
 name|gint

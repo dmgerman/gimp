@@ -141,7 +141,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abc87af0108
+DECL|struct|__anon274b57470108
 block|{
 DECL|member|img_bpp
 name|gint

@@ -30525,7 +30525,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac0243f0108
+DECL|struct|__anon2922c5140108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30560,7 +30560,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac0243f0208
+DECL|struct|__anon2922c5140208
 block|{
 DECL|member|run
 name|gint

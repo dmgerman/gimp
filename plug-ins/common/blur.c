@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3023d20108
+DECL|struct|__anon2c6e09240108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -683,7 +683,7 @@ condition|(
 name|run_mode
 condition|)
 block|{
-comment|/* 	   *  If we're running interactively, pop up the dialog box. 	   */
+comment|/*            *  If we're running interactively, pop up the dialog box.            */
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
@@ -704,7 +704,7 @@ condition|)
 comment|/* return on Cancel */
 return|return;
 break|break;
-comment|/* 	   *  If we're not interactive (probably scripting), we 	   *  get the parameters from the param[] array, since 	   *  we don't use the dialog box.  Make sure all 	   *  parameters have legitimate values. 	   */
+comment|/*            *  If we're not interactive (probably scripting), we            *  get the parameters from the param[] array, since            *  we don't use the dialog box.  Make sure all            *  parameters have legitimate values.            */
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
@@ -918,7 +918,7 @@ name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 break|break;
-comment|/* 	   *  If we're running with the last set of values, get those values. 	   */
+comment|/*            *  If we're running with the last set of values, get those values.            */
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
@@ -931,7 +931,7 @@ name|pivals
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/* 	   *  Hopefully we never get here! 	   */
+comment|/*            *  Hopefully we never get here!            */
 default|default:
 break|break;
 block|}
@@ -942,7 +942,7 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-comment|/* 	   *  JUST DO IT! 	   */
+comment|/*            *  JUST DO IT!            */
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -967,7 +967,7 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* 	   *  Initialize the rand() function seed 	   */
+comment|/*            *  Initialize the rand() function seed            */
 name|g_random_set_seed
 argument_list|(
 name|pivals
@@ -980,7 +980,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-comment|/* 	   *  If we ran interactively (even repeating) update the display. 	   */
+comment|/*            *  If we ran interactively (even repeating) update the display.            */
 if|if
 condition|(
 name|run_mode
@@ -992,7 +992,7 @@ name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* 	   *  If we use the dialog popup, set the data for future use. 	   */
+comment|/*            *  If we use the dialog popup, set the data for future use.            */
 if|if
 condition|(
 name|run_mode
@@ -1626,7 +1626,7 @@ operator|!
 name|has_alpha
 condition|)
 block|{
-comment|/* 		       *  If no alpha channel, 		       *   or if there is one and this is it... 		       */
+comment|/*                        *  If no alpha channel,                        *   or if there is one and this is it...                        */
 operator|*
 name|d
 operator|++
@@ -1726,7 +1726,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* 		       *  otherwise we have an alpha channel, 		       *   but this is a color channel 		       */
+comment|/*                        *  otherwise we have an alpha channel,                        *   but this is a color channel                        */
 operator|*
 name|d
 operator|++
@@ -2034,7 +2034,7 @@ argument_list|)
 operator|)
 expr_stmt|;
 block|}
-comment|/* 		   *  Otherwise, this pixel was not selected for randomization, 		   *  so use the current value. 		   */
+comment|/*                    *  Otherwise, this pixel was not selected for randomization,                    *  so use the current value.                    */
 block|}
 else|else
 block|{
@@ -2052,7 +2052,7 @@ index|]
 expr_stmt|;
 block|}
 block|}
-comment|/* 	   *  Save the modified row, shuffle the row pointers, and every 	   *  so often, update the progress meter. 	   */
+comment|/*            *  Save the modified row, shuffle the row pointers, and every            *  so often, update the progress meter.            */
 name|gimp_pixel_rgn_set_row
 argument_list|(
 name|dp

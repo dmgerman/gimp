@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ed26a50103
+DECL|enum|__anon2c2d56070103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -620,6 +620,24 @@ begin_comment
 comment|/* for shaping */
 end_comment
 
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon2c2d56070208
+block|{
+DECL|member|x
+DECL|member|y
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+DECL|typedef|CursorOffset
+block|}
+name|CursorOffset
+typedef|;
+end_typedef
+
 begin_decl_stmt
 DECL|variable|shape_preview_mask
 specifier|static
@@ -637,25 +655,6 @@ modifier|*
 name|shape_window
 decl_stmt|;
 end_decl_stmt
-
-begin_typedef
-DECL|struct|_cursoroffset
-DECL|member|x
-DECL|member|y
-DECL|typedef|CursorOffset
-typedef|typedef
-struct|struct
-name|_cursoroffset
-block|{
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-block|}
-name|CursorOffset
-typedef|;
-end_typedef
 
 begin_decl_stmt
 DECL|variable|shaping
@@ -1245,7 +1244,6 @@ operator|&
 name|mask
 argument_list|)
 expr_stmt|;
-comment|/*  printf("%u %d\n", mask, event->state);fflush(stdout); */
 comment|/* if a button is still held by the time we process this event... */
 if|if
 condition|(
@@ -1338,7 +1336,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/*  printf("Repaint!  Woohoo!\n");*/
 name|gdk_draw_rgb_image
 argument_list|(
 name|drawing_area
@@ -1400,7 +1397,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-comment|/*printf("Repaint!  Woohoo!\n");*/
 name|gdk_draw_rgb_image
 argument_list|(
 name|shape_drawing_area
@@ -1724,61 +1720,32 @@ argument_list|)
 expr_stmt|;
 block|{
 comment|/* The 'playback' half of the dialog */
-name|windowname
-operator|=
-name|g_malloc
-argument_list|(
-name|strlen
-argument_list|(
-name|_
-argument_list|(
-literal|"Playback: "
-argument_list|)
-argument_list|)
-operator|+
-name|strlen
-argument_list|(
-name|imagename
-argument_list|)
-operator|+
-literal|1
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|total_frames
 operator|>
 literal|1
 condition|)
-block|{
-name|strcpy
-argument_list|(
 name|windowname
-argument_list|,
+operator|=
+name|g_strconcat
+argument_list|(
 name|_
 argument_list|(
 literal|"Playback: "
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|strcat
-argument_list|(
-name|windowname
 argument_list|,
 name|imagename
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
-name|strcpy
-argument_list|(
 name|windowname
-argument_list|,
+operator|=
+name|g_strdup
+argument_list|(
 name|imagename
 argument_list|)
 expr_stmt|;
-block|}
 name|frame
 operator|=
 name|gtk_frame_new
@@ -2055,8 +2022,8 @@ name|button
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* If there aren't multiple frames, playback controls make no 	     sense */
-comment|/*	  if (total_frames<=1) gtk_widget_set_sensitive (hbox2, FALSE); 	  gtk_widget_show(hbox2);*/
+comment|/* If there aren't multiple frames, playback controls make no              sense */
+comment|/*      if (total_frames<=1) gtk_widget_set_sensitive (hbox2, FALSE);           gtk_widget_show(hbox2);*/
 if|if
 condition|(
 name|total_frames
@@ -2560,7 +2527,7 @@ operator|==
 name|GIMP_GRAY
 condition|)
 block|{
-comment|/* This is a bit sick, until this plugin ever gets 	 real GRAY support (not worth it?) */
+comment|/* This is a bit sick, until this plugin ever gets          real GRAY support (not worth it?) */
 name|palette
 operator|=
 name|g_malloc
@@ -3273,7 +3240,6 @@ name|height
 operator|)
 condition|)
 block|{
-comment|/*printf("quickie\n");fflush(stdout);*/
 name|memcpy
 argument_list|(
 name|preview_data

@@ -154,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9169e50108
+DECL|struct|__anon2b680a270108
 block|{
 DECL|member|refraction
 name|gdouble

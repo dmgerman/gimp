@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a019740103
+DECL|enum|__anon27a30fa10103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a019740203
+DECL|enum|__anon27a30fa10203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -1701,7 +1701,7 @@ operator|==
 name|OPFOREGROUND
 condition|)
 block|{
-comment|/* iterate through all rows of all frames, find statistical 	 mode for each pixel position. */
+comment|/* iterate through all rows of all frames, find statistical          mode for each pixel position. */
 name|gint
 name|i
 decl_stmt|,
@@ -2466,7 +2466,7 @@ literal|"yayyyy!"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*	  memcpy(&back_frame[width * pixelstep * row], 		  these_rows[0], 		  width * pixelstep);*/
+comment|/*      memcpy(&back_frame[width * pixelstep * row],                   these_rows[0],                   width * pixelstep);*/
 block|}
 for|for
 control|(
@@ -2661,7 +2661,7 @@ name|this_frame_num
 operator|++
 control|)
 block|{
-comment|/* 	   * BUILD THIS FRAME into our 'this_frame' buffer. 	   */
+comment|/*            * BUILD THIS FRAME into our 'this_frame' buffer.            */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -2924,7 +2924,7 @@ argument_list|,
 name|frame_sizebytes
 argument_list|)
 expr_stmt|;
-comment|/* 	   * 	   * OPTIMIZE HERE! 	   * 	   */
+comment|/*            *            * OPTIMIZE HERE!            *            */
 if|if
 condition|(
 operator|(
@@ -2952,7 +2952,7 @@ name|can_combine
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/* 	       * SEARCH FOR BOUNDING BOX 	       */
+comment|/*                * SEARCH FOR BOUNDING BOX                */
 name|bbox_left
 operator|=
 name|width
@@ -3201,7 +3201,7 @@ goto|goto
 name|decided
 goto|;
 block|}
-comment|/* If 'last' and 'this' are opaque, we have 		       *  to check if they're the same colour - we 		       *  only have to keep the pixel if 'last' or 		       *  'this' are opaque and different. 		       */
+comment|/* If 'last' and 'this' are opaque, we have                        *  to check if they're the same colour - we                        *  only have to keep the pixel if 'last' or                        *  'this' are opaque and different.                        */
 name|keep_pix
 operator|=
 name|FALSE
@@ -3366,7 +3366,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* pixel didn't change this frame - make 			   *  it transparent in our optimized buffer! 			   */
+comment|/* pixel didn't change this frame - make                            *  it transparent in our optimized buffer!                            */
 name|opti_frame
 index|[
 name|yit
@@ -3428,7 +3428,7 @@ operator|!
 name|diff_only
 condition|)
 block|{
-comment|/* Try to optimize the pixel data for RLE or LZW compression 		   * by making some transparent pixels non-transparent if they 		   * would have the same color as the adjacent pixels.  This 		   * gives a better compression if the algorithm compresses 		   * the image line by line. 		   * See: http://bugzilla.gnome.org/show_bug.cgi?id=66367 		   * It may not be very efficient to add two additional passes 		   * over the pixels, but this hopefully makes the code easier 		   * to maintain and less error-prone. 		   */
+comment|/* Try to optimize the pixel data for RLE or LZW compression                    * by making some transparent pixels non-transparent if they                    * would have the same color as the adjacent pixels.  This                    * gives a better compression if the algorithm compresses                    * the image line by line.                    * See: http://bugzilla.gnome.org/show_bug.cgi?id=66367                    * It may not be very efficient to add two additional passes                    * over the pixels, but this hopefully makes the code easier                    * to maintain and less error-prone.                    */
 for|for
 control|(
 name|yit
@@ -3844,12 +3844,12 @@ comment|/* xit */
 block|}
 comment|/* yit */
 block|}
-comment|/* 	       * Collapse opti_frame data down such that the data 	       *  which occupies the bounding box sits at the start 	       *  of the data (for convenience with ..set_rect()). 	       */
+comment|/*                * Collapse opti_frame data down such that the data                *  which occupies the bounding box sits at the start                *  of the data (for convenience with ..set_rect()).                */
 name|destptr
 operator|=
 name|opti_frame
 expr_stmt|;
-comment|/* 	       * If can_combine, then it's safe to use our optimized 	       *  alpha information.  Otherwise, an opaque pixel became 	       *  transparent this frame, and we'll have to use the 	       *  actual true frame's alpha. 	       */
+comment|/*                * If can_combine, then it's safe to use our optimized                *  alpha information.  Otherwise, an opaque pixel became                *  transparent this frame, and we'll have to use the                *  actual true frame's alpha.                */
 if|if
 condition|(
 name|can_combine
@@ -3943,7 +3943,7 @@ name|frame_sizebytes
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* 	   * 	   * REMEMBER THE ANIMATION STATUS TO DELTA AGAINST NEXT TIME 	   * 	   */
+comment|/*            *            * REMEMBER THE ANIMATION STATUS TO DELTA AGAINST NEXT TIME            *            */
 name|memcpy
 argument_list|(
 name|last_frame
@@ -3953,7 +3953,7 @@ argument_list|,
 name|frame_sizebytes
 argument_list|)
 expr_stmt|;
-comment|/* 	   * 	   * PUT THIS FRAME INTO A NEW LAYER IN THE NEW IMAGE 	   * 	   */
+comment|/*            *            * PUT THIS FRAME INTO A NEW LAYER IN THE NEW IMAGE            *            */
 name|oldlayer_name
 operator|=
 name|gimp_drawable_get_name
@@ -4938,7 +4938,7 @@ name|TRUE
 return|;
 block|}
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function

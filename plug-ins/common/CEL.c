@@ -4,7 +4,7 @@ comment|/* cel.c -- KISS CEL file format plug-in for The GIMP  * (copyright) 199
 end_comment
 
 begin_comment
-comment|/* History:  * 0.1	Very limited functionality (modern 4bit only)  * 0.2  Default palette (nice yellows) is automatically used  * 0.3  Support for the older (pre KISS/GS) cell format  * 0.4  First support for saving images  * 0.5  Show copyright date, not version number, thanks to DbBrowser  * 0.6  File dialogs, palette handling, better magic behaviour  * 0.7  Handle interactivity settings, tidy up  * 1.0  Fixed for GIMP 0.99.27 running on GTK+ 1.0.0, and released  * 1.1  Oops, #include unistd.h, thanks Tamito Kajiyama  * 1.2  Changed email address, tidied up  * 1.3  Added g_message features, fixed Saving bugs...  * 1.4  Offsets work (needed them for a nice example set)  *  * Possible future additions:  *  +   Save (perhaps optionally?) the palette in a KCF  */
+comment|/* History:  * 0.1  Very limited functionality (modern 4bit only)  * 0.2  Default palette (nice yellows) is automatically used  * 0.3  Support for the older (pre KISS/GS) cell format  * 0.4  First support for saving images  * 0.5  Show copyright date, not version number, thanks to DbBrowser  * 0.6  File dialogs, palette handling, better magic behaviour  * 0.7  Handle interactivity settings, tidy up  * 1.0  Fixed for GIMP 0.99.27 running on GTK+ 1.0.0, and released  * 1.1  Oops, #include unistd.h, thanks Tamito Kajiyama  * 1.2  Changed email address, tidied up  * 1.3  Added g_message features, fixed Saving bugs...  * 1.4  Offsets work (needed them for a nice example set)  *  * Possible future additions:  *  +   Save (perhaps optionally?) the palette in a KCF  */
 end_comment
 
 begin_include
@@ -586,10 +586,6 @@ condition|)
 block|{
 name|palette_file
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
 name|g_malloc
 argument_list|(
 name|data_length

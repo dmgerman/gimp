@@ -812,7 +812,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b76def90108
+DECL|struct|__anon27446d760108
 typedef|typedef
 struct|struct
 block|{
@@ -876,10 +876,6 @@ name|AutoStretchParam_t
 modifier|*
 name|param
 init|=
-operator|(
-name|AutoStretchParam_t
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|gint
@@ -999,10 +995,6 @@ name|AutoStretchParam_t
 modifier|*
 name|param
 init|=
-operator|(
-name|AutoStretchParam_t
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|gint

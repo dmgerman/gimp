@@ -380,7 +380,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/*	Get the specified drawable	*/
+comment|/*    Get the specified drawable      */
 name|drawable
 operator|=
 name|gimp_drawable_get

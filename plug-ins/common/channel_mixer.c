@@ -144,7 +144,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276c9fae0103
+DECL|enum|__anon28c6b80a0103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c9fae0208
+DECL|struct|__anon28c6b80a0208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c9fae0308
+DECL|struct|__anon28c6b80a0308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c9fae0408
+DECL|struct|__anon28c6b80a0408
 block|{
 DECL|member|width
 name|gint
