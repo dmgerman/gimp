@@ -676,7 +676,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_sharpen:  * @image_ID: The image.  *  * Sharpen the selection mask.  *  * This procedure sharpens the selection mask. For every pixel in the  * selection channel, if the value is> 0, the new pixel is assigned a  * value of 255. This removes any \"anti-aliasing\" that might exist in  * the selection mask's boundary.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_sharpen:  * @image_ID: The image.  *  * Sharpen the selection mask.  *  * This procedure sharpens the selection mask. For every pixel in the  * selection channel, if the value is&gt; 0, the new pixel is assigned  * a value of 255. This removes any \"anti-aliasing\" that might exist  * in the selection mask's boundary.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

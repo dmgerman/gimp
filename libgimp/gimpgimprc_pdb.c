@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_gimprc_query:  * @token: The token to query for.  *  * Queries the gimprc file parser for information on a specified token.  *  * This procedure is used to locate additional information contained in  * the gimprc file considered extraneous to the operation of the GIMP.  * Plug-ins that need configuration information can expect it will be  * stored in the user gimprc file and can use this procedure to  * retrieve it. This query procedure will return the value associated  * with the specified token. This corresponds _only_ to entries with  * the format: (<token><value>). The value must be a string. Entries  * not corresponding to this format will cause warnings to be issued on  * gimprc parsing and will not be queryable.  *  * Returns: The value associated with the queried token.  */
+comment|/**  * gimp_gimprc_query:  * @token: The token to query for.  *  * Queries the gimprc file parser for information on a specified token.  *  * This procedure is used to locate additional information contained in  * the gimprc file considered extraneous to the operation of the GIMP.  * Plug-ins that need configuration information can expect it will be  * stored in the user gimprc file and can use this procedure to  * retrieve it. This query procedure will return the value associated  * with the specified token. This corresponds _only_ to entries with  * the format: (&lt;token&gt;&lt;value&gt;). The value must be a  * string. Entries not corresponding to this format will cause warnings  * to be issued on gimprc parsing and will not be queryable.  *  * Returns: The value associated with the queried token.  */
 end_comment
 
 begin_function
@@ -104,7 +104,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gimprc_set:  * @token: The token to modify.  * @value: The value to set the token to.  *  * Sets a gimprc token to a value and saves it in the gimprc.  *  * This procedure is used to add or change additional information in  * the gimprc file that is considered extraneous to the operation of  * the GIMP. Plug-ins that need configuration information can use this  * function to store it, and gimp_gimprc_query to retrieve it. This  * will accept _only_ parameters in the format of (<token><value>),  * where<token> and<value> must be strings. Entries not corresponding  * to this format will be eaten and no action will be performed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gimprc_set:  * @token: The token to modify.  * @value: The value to set the token to.  *  * Sets a gimprc token to a value and saves it in the gimprc.  *  * This procedure is used to add or change additional information in  * the gimprc file that is considered extraneous to the operation of  * the GIMP. Plug-ins that need configuration information can use this  * function to store it, and gimp_gimprc_query to retrieve it. This  * will accept _only_ parameters in the format of (&lt;token&gt;  *&lt;value&gt;), where&lt;token&gt; and&lt;value&gt; must be  * strings. Entries not corresponding to this format will be eaten and  * no action will be performed.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
