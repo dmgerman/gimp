@@ -23,7 +23,7 @@ file|"imap_default_dialog.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon275f5b270108
+DECL|struct|__anon2880c2e70108
 typedef|typedef
 struct|struct
 block|{
@@ -50,7 +50,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275f5b270208
+DECL|struct|__anon2880c2e70208
 typedef|typedef
 struct|struct
 block|{
@@ -82,6 +82,10 @@ DECL|member|use_doublesized
 name|gboolean
 name|use_doublesized
 decl_stmt|;
+DECL|member|undo_levels
+name|gint
+name|undo_levels
+decl_stmt|;
 DECL|member|mru_size
 name|gint
 name|mru_size
@@ -107,7 +111,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275f5b270308
+DECL|struct|__anon2880c2e70308
 typedef|typedef
 struct|struct
 block|{
@@ -165,6 +169,16 @@ DECL|member|use_doublesized
 name|GtkWidget
 modifier|*
 name|use_doublesized
+decl_stmt|;
+DECL|member|undo_levels
+name|GtkWidget
+modifier|*
+name|undo_levels
+decl_stmt|;
+DECL|member|mru_size
+name|GtkWidget
+modifier|*
+name|mru_size
 decl_stmt|;
 DECL|member|normal_fg
 name|GtkWidget

@@ -29,7 +29,7 @@ end_include
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|move_to_front_command_execute
 parameter_list|(
 name|Command_t
@@ -83,7 +83,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2bd411fd0108
+DECL|struct|__anon2a58c85b0108
 typedef|typedef
 struct|struct
 block|{
@@ -237,7 +237,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|move_to_front_command_execute (Command_t * parent)
 name|move_to_front_command_execute
 parameter_list|(
@@ -317,7 +317,7 @@ name|id2
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|CMD_APPEND
 return|;
 block|}
 end_function

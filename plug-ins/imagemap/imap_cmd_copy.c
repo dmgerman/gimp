@@ -6,18 +6,18 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|"imap_cmd_copy.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"imap_cmd_copy.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|copy_command_execute
 parameter_list|(
 name|Command_t
@@ -60,7 +60,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b9c516b0108
+DECL|struct|__anon2b6058ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -126,7 +126,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Copy"
+argument_list|)
 argument_list|,
 operator|&
 name|copy_command_class
@@ -137,7 +140,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|copy_command_execute (Command_t * parent)
 name|copy_command_execute
 parameter_list|(
@@ -178,7 +181,7 @@ name|list
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|CMD_APPEND
 return|;
 block|}
 end_function

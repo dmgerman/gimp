@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_menu.h"
 end_include
 
@@ -484,7 +490,10 @@ name|arrow_xpm
 argument_list|,
 literal|"Select"
 argument_list|,
+name|_
+argument_list|(
 literal|"Select existing area"
+argument_list|)
 argument_list|,
 name|arrow_clicked
 argument_list|,
@@ -509,7 +518,10 @@ name|rectangle_xpm
 argument_list|,
 literal|"Rectangle"
 argument_list|,
+name|_
+argument_list|(
 literal|"Define Rectangle area"
+argument_list|)
 argument_list|,
 name|rectangle_clicked
 argument_list|,
@@ -534,7 +546,10 @@ name|circle_xpm
 argument_list|,
 literal|"Circle"
 argument_list|,
+name|_
+argument_list|(
 literal|"Define Circle/Oval area"
+argument_list|)
 argument_list|,
 name|circle_clicked
 argument_list|,
@@ -559,7 +574,10 @@ name|polygon_xpm
 argument_list|,
 literal|"Polygon"
 argument_list|,
+name|_
+argument_list|(
 literal|"Define Polygon area"
+argument_list|)
 argument_list|,
 name|polygon_clicked
 argument_list|,
@@ -588,7 +606,10 @@ name|edit_xpm
 argument_list|,
 literal|"Edit"
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit selected area info"
+argument_list|)
 argument_list|,
 name|tools_command
 argument_list|,
@@ -620,7 +641,10 @@ name|delete_xpm
 argument_list|,
 literal|"Delete"
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete selected area"
+argument_list|)
 argument_list|,
 name|tools_command
 argument_list|,

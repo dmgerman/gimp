@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -47,7 +53,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28cba1da0108
+DECL|struct|__anon2b4f6f320108
 typedef|typedef
 struct|struct
 block|{
@@ -183,7 +189,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Move Sash"
+argument_list|)
 argument_list|,
 operator|&
 name|move_sash_command_class
@@ -409,6 +418,11 @@ argument_list|,
 name|dy
 argument_list|)
 expr_stmt|;
+name|object_emit_geometry_signal
+argument_list|(
+name|obj
+argument_list|)
+expr_stmt|;
 name|object_draw
 argument_list|(
 name|obj
@@ -510,7 +524,8 @@ argument_list|,
 name|GDK_COPY
 argument_list|)
 expr_stmt|;
-name|redraw_preview
+comment|/*   redraw_preview(); */
+name|preview_thaw
 argument_list|()
 expr_stmt|;
 name|show_url
@@ -521,7 +536,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|move_sash_command_execute (Command_t * parent)
 name|move_sash_command_execute
 parameter_list|(
@@ -541,6 +556,9 @@ operator|)
 name|parent
 decl_stmt|;
 name|hide_url
+argument_list|()
+expr_stmt|;
+name|preview_freeze
 argument_list|()
 expr_stmt|;
 name|gtk_signal_connect
@@ -592,7 +610,7 @@ name|GDK_EQUIV
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|CMD_APPEND
 return|;
 block|}
 end_function

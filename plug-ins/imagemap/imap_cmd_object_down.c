@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -29,7 +35,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|object_down_command_execute
 parameter_list|(
 name|Command_t
@@ -70,7 +76,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27dbd97d0108
+DECL|struct|__anon295056920108
 typedef|typedef
 struct|struct
 block|{
@@ -143,7 +149,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Move Down"
+argument_list|)
 argument_list|,
 operator|&
 name|object_down_command_class
@@ -185,7 +194,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|object_down_command_execute (Command_t * parent)
 name|object_down_command_execute
 parameter_list|(
@@ -220,7 +229,7 @@ argument_list|()
 expr_stmt|;
 comment|/* fix me! */
 return|return
-name|TRUE
+name|CMD_APPEND
 return|;
 block|}
 end_function

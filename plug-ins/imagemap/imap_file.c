@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -117,7 +123,10 @@ else|else
 block|{
 name|do_file_error_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Error opening file"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -149,7 +158,10 @@ name|dialog
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load Imagemap"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object
@@ -266,7 +278,10 @@ name|dialog
 operator|=
 name|make_default_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"File exists!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_hide_apply_button
@@ -287,8 +302,11 @@ name|default_dialog_set_label
 argument_list|(
 name|dialog
 argument_list|,
+name|_
+argument_list|(
 literal|"File already exists.\n"
 literal|"  Do you really want to overwrite?  "
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -414,7 +432,10 @@ name|dialog
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save Imagemap"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object
@@ -474,7 +495,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c6fdc2c0108
+DECL|struct|__anon2a10e7c60108
 typedef|typedef
 struct|struct
 block|{
@@ -534,7 +555,10 @@ name|dialog
 operator|=
 name|make_default_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Error"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_hide_apply_button

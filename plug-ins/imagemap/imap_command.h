@@ -22,6 +22,14 @@ directive|include
 file|"imap_object.h"
 end_include
 
+begin_define
+DECL|macro|DEFAULT_UNDO_LEVELS
+define|#
+directive|define
+name|DEFAULT_UNDO_LEVELS
+value|10
+end_define
+
 begin_typedef
 DECL|typedef|CommandClass_t
 typedef|typedef
@@ -49,6 +57,25 @@ name|CommandList_t
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|enum|__anon2bb7b9180103
+DECL|enumerator|CMD_APPEND
+DECL|enumerator|CMD_DESTRUCT
+DECL|enumerator|CMD_IGNORE
+DECL|typedef|CmdExecuteValue_t
+typedef|typedef
+enum|enum
+block|{
+name|CMD_APPEND
+block|,
+name|CMD_DESTRUCT
+block|,
+name|CMD_IGNORE
+block|}
+name|CmdExecuteValue_t
+typedef|;
+end_typedef
+
 begin_define
 DECL|macro|COMMAND_PROTO (class)
 define|#
@@ -58,7 +85,7 @@ parameter_list|(
 name|class
 parameter_list|)
 define|\
-value|static void class##_destruct(Command_t *command); \ static gboolean class##_execute(Command_t *command); \ static void class##_undo(Command_t *command); \ static void class##_redo(Command_t *command)
+value|static void class##_destruct(Command_t *command); \ static CmdExecuteValue_t class##_execute(Command_t *command); \ static void class##_undo(Command_t *command); \ static void class##_redo(Command_t *command)
 end_define
 
 begin_struct
@@ -78,7 +105,7 @@ modifier|*
 parameter_list|)
 function_decl|;
 DECL|member|execute
-name|gboolean
+name|CmdExecuteValue_t
 function_decl|(
 modifier|*
 name|execute
@@ -176,7 +203,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3af69d0108
+DECL|struct|__anon2bb7b9180208
 typedef|typedef
 struct|struct
 block|{
@@ -195,7 +222,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3af69d0208
+DECL|struct|__anon2bb7b9180308
 typedef|typedef
 struct|struct
 block|{

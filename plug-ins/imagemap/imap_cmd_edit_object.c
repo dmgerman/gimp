@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -59,7 +65,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29c750840108
+DECL|struct|__anon28b7a5850108
 typedef|typedef
 struct|struct
 block|{
@@ -131,7 +137,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Object"
+argument_list|)
 argument_list|,
 operator|&
 name|edit_object_command_class

@@ -18,12 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|select_all_command_execute
 parameter_list|(
 name|Command_t
@@ -77,7 +83,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c082a510108
+DECL|struct|__anon2987c1860108
 typedef|typedef
 struct|struct
 block|{
@@ -132,7 +138,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Select All"
+argument_list|)
 argument_list|,
 operator|&
 name|select_all_command_class
@@ -183,7 +192,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|select_all_command_execute (Command_t * parent)
 name|select_all_command_execute
 parameter_list|(
@@ -205,7 +214,7 @@ decl_stmt|;
 name|gpointer
 name|id
 decl_stmt|;
-name|gboolean
+name|CmdExecuteValue_t
 name|rvalue
 decl_stmt|;
 name|id
@@ -237,14 +246,14 @@ expr_stmt|;
 comment|/* Fix me! */
 name|rvalue
 operator|=
-name|TRUE
+name|CMD_APPEND
 expr_stmt|;
 block|}
 else|else
 block|{
 name|rvalue
 operator|=
-name|FALSE
+name|CMD_DESTRUCT
 expr_stmt|;
 block|}
 name|object_list_remove_select_cb

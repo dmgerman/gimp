@@ -28,11 +28,21 @@ directive|include
 file|"imap_object.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"imap_preview.h"
+end_include
+
 begin_function_decl
 name|Command_t
 modifier|*
 name|move_command_new
 parameter_list|(
+name|Preview_t
+modifier|*
+name|preview
+parameter_list|,
 name|Object_t
 modifier|*
 name|obj

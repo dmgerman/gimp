@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -478,7 +484,10 @@ name|open_xpm
 argument_list|,
 literal|"Open"
 argument_list|,
+name|_
+argument_list|(
 literal|"Open"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -496,7 +505,10 @@ name|window
 argument_list|,
 name|save_xpm
 argument_list|,
+name|_
+argument_list|(
 literal|"Save"
+argument_list|)
 argument_list|,
 literal|"Save"
 argument_list|,
@@ -526,7 +538,10 @@ name|preferences_xpm
 argument_list|,
 literal|"Preferences"
 argument_list|,
+name|_
+argument_list|(
 literal|"Preferences"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -558,7 +573,10 @@ name|undo_xpm
 argument_list|,
 literal|"Undo"
 argument_list|,
+name|_
+argument_list|(
 literal|"Undo"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -591,7 +609,10 @@ name|redo_xpm
 argument_list|,
 literal|"Redo"
 argument_list|,
+name|_
+argument_list|(
 literal|"Redo"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -639,7 +660,10 @@ name|cut_xpm
 argument_list|,
 literal|"Cut"
 argument_list|,
+name|_
+argument_list|(
 literal|"Cut"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -672,7 +696,10 @@ name|copy_xpm
 argument_list|,
 literal|"Copy"
 argument_list|,
+name|_
+argument_list|(
 literal|"Copy"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -703,7 +730,10 @@ name|paste_xpm
 argument_list|,
 literal|"Paste"
 argument_list|,
+name|_
+argument_list|(
 literal|"Paste"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -762,7 +792,10 @@ name|zoom_in_xpm
 argument_list|,
 literal|"ZoomIn"
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom in"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -786,7 +819,10 @@ name|zoom_out_xpm
 argument_list|,
 literal|"ZoomOut"
 argument_list|,
+name|_
+argument_list|(
 literal|"Zoom out"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -823,7 +859,10 @@ name|map_info_xpm
 argument_list|,
 literal|"EditMapInfo"
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Map Info"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -855,7 +894,10 @@ name|to_front_xpm
 argument_list|,
 literal|"ToFront"
 argument_list|,
+name|_
+argument_list|(
 literal|"Move To Front"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -888,7 +930,10 @@ name|to_back_xpm
 argument_list|,
 literal|"ToBack"
 argument_list|,
+name|_
+argument_list|(
 literal|"Send To Back"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,
@@ -929,7 +974,10 @@ name|grid_xpm
 argument_list|,
 literal|"Grid"
 argument_list|,
+name|_
+argument_list|(
 literal|"Grid"
+argument_list|)
 argument_list|,
 name|toolbar_command
 argument_list|,

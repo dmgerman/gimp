@@ -30,12 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|select_region_command_execute
 parameter_list|(
 name|Command_t
@@ -89,7 +95,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c4f4a190108
+DECL|struct|__anon29ab26780108
 typedef|typedef
 struct|struct
 block|{
@@ -119,6 +125,11 @@ DECL|member|obj
 name|Object_t
 modifier|*
 name|obj
+decl_stmt|;
+DECL|member|unselect_command
+name|Command_t
+modifier|*
+name|unselect_command
 decl_stmt|;
 DECL|typedef|SelectRegionCommand_t
 block|}
@@ -196,7 +207,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Select Region"
+argument_list|)
 argument_list|,
 operator|&
 name|select_region_command_class
@@ -220,6 +234,12 @@ name|parent
 argument_list|,
 name|sub_command
 argument_list|)
+expr_stmt|;
+name|command
+operator|->
+name|unselect_command
+operator|=
+name|sub_command
 expr_stmt|;
 return|return
 operator|&
@@ -430,6 +450,9 @@ decl_stmt|;
 name|gpointer
 name|id
 decl_stmt|;
+name|gint
+name|count
+decl_stmt|;
 name|gtk_signal_disconnect_by_func
 argument_list|(
 name|GTK_OBJECT
@@ -497,8 +520,8 @@ argument_list|,
 name|command
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|count
+operator|=
 name|object_list_select_region
 argument_list|(
 name|command
@@ -521,9 +544,6 @@ name|rectangle
 operator|->
 name|height
 argument_list|)
-condition|)
-name|redraw_preview
-argument_list|()
 expr_stmt|;
 name|object_list_remove_select_cb
 argument_list|(
@@ -534,6 +554,44 @@ argument_list|,
 name|id
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|count
+condition|)
+block|{
+name|redraw_preview
+argument_list|()
+expr_stmt|;
+comment|/* Fix me! */
+name|command_list_add
+argument_list|(
+operator|&
+name|command
+operator|->
+name|parent
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* Nothing selected */
+if|if
+condition|(
+name|command
+operator|->
+name|unselect_command
+operator|->
+name|sub_commands
+condition|)
+name|command_list_add
+argument_list|(
+operator|&
+name|command
+operator|->
+name|parent
+argument_list|)
+expr_stmt|;
+block|}
 name|object_unref
 argument_list|(
 name|obj
@@ -544,7 +602,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|select_region_command_execute (Command_t * parent)
 name|select_region_command_execute
 parameter_list|(
@@ -563,7 +621,6 @@ operator|*
 operator|)
 name|parent
 decl_stmt|;
-comment|/*   Command_t *sub_command; */
 name|command
 operator|->
 name|obj
@@ -621,34 +678,6 @@ argument_list|,
 name|command
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|_OLD_
-name|sub_command
-operator|=
-name|unselect_all_command_new
-argument_list|(
-name|command
-operator|->
-name|list
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|command_add_subcommand
-argument_list|(
-name|parent
-argument_list|,
-name|sub_command
-argument_list|)
-expr_stmt|;
-name|command_execute
-argument_list|(
-name|sub_command
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|gdk_gc_set_function
 argument_list|(
 name|get_preferences
@@ -660,7 +689,7 @@ name|GDK_EQUIV
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|CMD_IGNORE
 return|;
 block|}
 end_function

@@ -15,6 +15,12 @@ directive|include
 file|"imap_default_dialog.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_function
 name|void
 DECL|function|do_about_dialog (void)
@@ -38,7 +44,10 @@ name|dialog
 operator|=
 name|make_default_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"About"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_hide_cancel_button
@@ -55,10 +64,13 @@ name|default_dialog_set_label
 argument_list|(
 name|dialog
 argument_list|,
-literal|"Imagemap plug-in 1.2\n\n"
+name|_
+argument_list|(
+literal|"Imagemap plug-in 1.3\n\n"
 literal|"Copyright(c) 1999 by Maurits Rijk\n"
 literal|"lpeek.mrijk@consunet.nl \n\n"
 literal|"  Released under the GNU General Public License  "
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

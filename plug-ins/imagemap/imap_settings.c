@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -257,7 +263,10 @@ name|dialog
 operator|=
 name|make_default_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Settings for this Mapfile"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|default_dialog_set_ok_cb
@@ -343,7 +352,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Filename:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -369,7 +381,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Image name:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -378,7 +393,10 @@ name|imagename
 operator|=
 name|browse_widget_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select Image File"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach_defaults
@@ -411,7 +429,10 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Title:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -435,7 +456,10 @@ literal|3
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Author:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -459,7 +483,10 @@ literal|4
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Default URL:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -483,7 +510,10 @@ literal|5
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Description:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -606,7 +636,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Map file format"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -913,7 +946,10 @@ operator|)
 condition|?
 name|filename
 else|:
+name|_
+argument_list|(
 literal|"<Untitled>"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|browse_widget_set_filename

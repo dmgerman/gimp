@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"imap_mru.h"
 end_include
 
@@ -40,14 +34,8 @@ directive|include
 file|"imap_preferences.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"imap_preview.h"
-end_include
-
 begin_typedef
-DECL|enum|__anon2ba92bf40103
+DECL|enum|__anon29fa50c70103
 DECL|enumerator|NCSA
 DECL|enumerator|CERN
 DECL|enumerator|CSIM
@@ -66,7 +54,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ba92bf40208
+DECL|struct|__anon29fa50c70208
 typedef|typedef
 struct|struct
 block|{
@@ -215,16 +203,6 @@ begin_function_decl
 name|PreferencesData_t
 modifier|*
 name|get_preferences
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|get_top_widget
 parameter_list|(
 name|void
 parameter_list|)
@@ -568,6 +546,24 @@ end_function_decl
 begin_function_decl
 name|void
 name|redraw_preview
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|preview_freeze
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|preview_thaw
 parameter_list|(
 name|void
 parameter_list|)

@@ -29,7 +29,7 @@ file|"gtk/gtk.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b7376e50108
+DECL|struct|__anon299ca7620108
 typedef|typedef
 struct|struct
 block|{
@@ -78,6 +78,10 @@ decl_stmt|;
 DECL|member|src_rgn
 name|GPixelRgn
 name|src_rgn
+decl_stmt|;
+DECL|member|cursor
+name|GdkCursorType
+name|cursor
 decl_stmt|;
 DECL|typedef|Preview_t
 block|}
@@ -201,7 +205,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GdkCursorType
 name|preview_set_cursor
 parameter_list|(
 name|Preview_t

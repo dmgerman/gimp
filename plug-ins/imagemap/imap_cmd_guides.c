@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -46,7 +52,7 @@ file|"imap_table.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2892b0bb0108
+DECL|struct|__anon29766bf20108
 typedef|typedef
 struct|struct
 block|{
@@ -264,7 +270,10 @@ argument_list|)
 expr_stmt|;
 name|subcommand_start
 argument_list|(
+name|_
+argument_list|(
 literal|"Create Guides"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|y
@@ -551,7 +560,10 @@ name|sprintf
 argument_list|(
 name|bounds
 argument_list|,
+name|_
+argument_list|(
 literal|"Resulting Guide Bounds: %d,%d to %d,%d (%d areas)"
+argument_list|)
 argument_list|,
 name|left
 argument_list|,
@@ -683,10 +695,13 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Guides are pre-defined rectangles covering the image. You define\n"
 literal|"them by their width, height, and spacing from each other. This\n"
 literal|"allows you to rapidly create the most common image map type -\n"
 literal|"image collection of \"thumbnails\", suitable for navigation bars."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_justify
@@ -885,8 +900,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Width"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|data
 operator|->
@@ -937,8 +955,11 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Left Start at"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|data
 operator|->
@@ -989,7 +1010,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Height"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -1041,8 +1065,11 @@ literal|1
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Top Start at"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|data
 operator|->
@@ -1093,8 +1120,11 @@ literal|2
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Horz. Spacing"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|data
 operator|->
@@ -1145,8 +1175,11 @@ literal|2
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"No. Across"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|data
 operator|->
@@ -1197,7 +1230,10 @@ literal|3
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Vert. Spacing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -1249,7 +1285,10 @@ literal|3
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"No. Down"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|data
@@ -1419,7 +1458,10 @@ name|sprintf
 argument_list|(
 name|dimension
 argument_list|,
+name|_
+argument_list|(
 literal|"Image dimensions: %d x %d"
+argument_list|)
 argument_list|,
 name|get_image_width
 argument_list|()
@@ -1449,7 +1491,10 @@ operator|->
 name|guide_bounds
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Resulting Guide Bounds: 0,0 to 0,0 (0 areas)"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_grab_focus
@@ -1507,7 +1552,7 @@ end_function
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|guides_command_execute
 parameter_list|(
 name|Command_t
@@ -1539,7 +1584,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2892b0bb0208
+DECL|struct|__anon29766bf20208
 typedef|typedef
 struct|struct
 block|{
@@ -1594,7 +1639,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Guides"
+argument_list|)
 argument_list|,
 operator|&
 name|guides_command_class
@@ -1605,7 +1653,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|guides_command_execute (Command_t * parent)
 name|guides_command_execute
 parameter_list|(
@@ -1632,7 +1680,7 @@ name|list
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|CMD_DESTRUCT
 return|;
 block|}
 end_function

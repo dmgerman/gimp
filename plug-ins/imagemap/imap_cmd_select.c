@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -29,7 +35,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|select_command_execute
 parameter_list|(
 name|Command_t
@@ -71,7 +77,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28c452a30108
+DECL|struct|__anon275e5cf70108
 typedef|typedef
 struct|struct
 block|{
@@ -129,7 +135,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Select"
+argument_list|)
 argument_list|,
 operator|&
 name|select_command_class
@@ -171,7 +180,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|select_command_execute (Command_t * parent)
 name|select_command_execute
 parameter_list|(
@@ -198,7 +207,7 @@ name|obj
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|CMD_APPEND
 return|;
 block|}
 end_function

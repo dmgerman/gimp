@@ -24,12 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|send_to_back_command_execute
 parameter_list|(
 name|Command_t
@@ -83,7 +89,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27910b280108
+DECL|struct|__anon289d934a0108
 typedef|typedef
 struct|struct
 block|{
@@ -138,7 +144,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Send To Back"
+argument_list|)
 argument_list|,
 operator|&
 name|send_to_back_command_class
@@ -237,7 +246,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|send_to_back_command_execute (Command_t * parent)
 name|send_to_back_command_execute
 parameter_list|(
@@ -317,7 +326,7 @@ name|id2
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|CMD_APPEND
 return|;
 block|}
 end_function

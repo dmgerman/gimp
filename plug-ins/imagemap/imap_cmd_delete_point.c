@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -23,7 +29,7 @@ end_include
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|delete_point_command_execute
 parameter_list|(
 name|Command_t
@@ -66,7 +72,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a3d40be0108
+DECL|struct|__anon279808ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -172,7 +178,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete Point"
+argument_list|)
 argument_list|,
 operator|&
 name|delete_point_command_class
@@ -183,7 +192,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|delete_point_command_execute (Command_t * parent)
 name|delete_point_command_execute
 parameter_list|(
@@ -253,7 +262,7 @@ argument_list|()
 expr_stmt|;
 comment|/* Fix me! */
 return|return
-name|TRUE
+name|CMD_APPEND
 return|;
 block|}
 end_function

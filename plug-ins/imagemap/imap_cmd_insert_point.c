@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_main.h"
 end_include
 
@@ -23,7 +29,7 @@ end_include
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 name|insert_point_command_execute
 parameter_list|(
 name|Command_t
@@ -66,7 +72,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2870d9740108
+DECL|struct|__anon29e918f00108
 typedef|typedef
 struct|struct
 block|{
@@ -167,7 +173,10 @@ name|command
 operator|->
 name|parent
 argument_list|,
+name|_
+argument_list|(
 literal|"Insert Point"
+argument_list|)
 argument_list|,
 operator|&
 name|insert_point_command_class
@@ -178,7 +187,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|CmdExecuteValue_t
 DECL|function|insert_point_command_execute (Command_t * parent)
 name|insert_point_command_execute
 parameter_list|(
@@ -298,7 +307,7 @@ name|redraw_preview
 argument_list|()
 expr_stmt|;
 return|return
-name|TRUE
+name|CMD_APPEND
 return|;
 block|}
 end_function

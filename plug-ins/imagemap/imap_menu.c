@@ -2402,6 +2402,7 @@ operator|,
 name|i
 operator|++
 control|)
+block|{
 name|insert_item_with_label
 argument_list|(
 name|_menu
@@ -2426,6 +2427,7 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+block|}
 name|insert_separator
 argument_list|(
 name|_menu

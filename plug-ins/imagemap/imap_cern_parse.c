@@ -256,7 +256,7 @@ file|"imap_cern.y"
 end_line
 
 begin_typedef
-DECL|union|__anon28c7a26c010a
+DECL|union|__anon2796e5fe010a
 typedef|typedef
 union|union
 block|{
@@ -1958,7 +1958,7 @@ begin_line
 line|#
 directive|line
 number|3
-file|"/usr/lib/bison.simple"
+file|"bison.simple"
 end_line
 
 begin_comment
@@ -2850,7 +2850,7 @@ begin_line
 line|#
 directive|line
 number|196
-file|"/usr/lib/bison.simple"
+file|"bison.simple"
 end_line
 
 begin_comment
@@ -4411,7 +4411,7 @@ comment|/* the action file gets copied in in place of this dollarsign */
 line|#
 directive|line
 number|498
-file|"/usr/lib/bison.simple"
+file|"bison.simple"
 name|yyvsp
 operator|-=
 name|yylen
