@@ -464,6 +464,9 @@ argument_list|(
 name|use_mmx
 argument_list|)
 expr_stmt|;
+name|gimp_composite_init
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 

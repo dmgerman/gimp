@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afb19f80103
+DECL|enum|__anon2bd6f5f70103
 block|{
 DECL|enumerator|GIMP_PIXELFORMAT_V8
 name|GIMP_PIXELFORMAT_V8
@@ -61,10 +61,14 @@ name|GimpPixelFormat
 typedef|;
 end_typedef
 
+begin_comment
+comment|/*  * The following typedefs are temporary and only used in regression testing. 	*/
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80208
+DECL|struct|__anon2bd6f5f70208
 block|{
 DECL|member|v
 name|guint8
@@ -79,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80308
+DECL|struct|__anon2bd6f5f70308
 block|{
 DECL|member|v
 name|guint8
@@ -98,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80408
+DECL|struct|__anon2bd6f5f70408
 block|{
 DECL|member|r
 name|guint8
@@ -121,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80508
+DECL|struct|__anon2bd6f5f70508
 block|{
 DECL|member|r
 name|guint8
@@ -154,7 +158,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80608
+DECL|struct|__anon2bd6f5f70608
 block|{
 DECL|member|v
 name|guint16
@@ -169,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80708
+DECL|struct|__anon2bd6f5f70708
 block|{
 DECL|member|v
 name|guint16
@@ -188,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80808
+DECL|struct|__anon2bd6f5f70808
 block|{
 DECL|member|r
 name|guint16
@@ -211,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80908
+DECL|struct|__anon2bd6f5f70908
 block|{
 DECL|member|r
 name|guint16
@@ -302,7 +306,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afb19f80a03
+DECL|enum|__anon2bd6f5f70a03
 block|{
 DECL|enumerator|GIMP_COMPOSITE_NORMAL
 name|GIMP_COMPOSITE_NORMAL
@@ -494,7 +498,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afb19f80b08
+DECL|struct|__anon2bd6f5f70b08
 block|{
 DECL|member|A
 name|guchar
@@ -540,7 +544,7 @@ DECL|member|pixelformat_M
 name|GimpPixelFormat
 name|pixelformat_M
 decl_stmt|;
-DECL|struct|__anon2afb19f80c08
+DECL|struct|__anon2bd6f5f70c08
 DECL|member|opacity
 DECL|member|affect
 DECL|member|replace
@@ -555,7 +559,7 @@ decl_stmt|;
 block|}
 name|replace
 struct|;
-DECL|struct|__anon2afb19f80d08
+DECL|struct|__anon2bd6f5f70d08
 DECL|member|scale
 DECL|member|scale
 struct|struct
@@ -566,7 +570,7 @@ decl_stmt|;
 block|}
 name|scale
 struct|;
-DECL|struct|__anon2afb19f80e08
+DECL|struct|__anon2bd6f5f70e08
 DECL|member|blend
 DECL|member|blend
 struct|struct
@@ -577,7 +581,7 @@ decl_stmt|;
 block|}
 name|blend
 struct|;
-DECL|struct|__anon2afb19f80f08
+DECL|struct|__anon2bd6f5f70f08
 DECL|member|x
 DECL|member|y
 DECL|member|opacity

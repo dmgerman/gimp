@@ -511,7 +511,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon2c63c4fa0108
+DECL|struct|__anon2b62bb500108
 struct|struct
 block|{
 DECL|member|announce_function
@@ -524,11 +524,38 @@ name|gimp_composite_debug
 struct|;
 end_struct
 
-begin_include
-include|#
-directive|include
-file|"gimp-composite-dispatch.c"
-end_include
+begin_comment
+comment|/*#include "gimp-composite-dispatch.c"*/
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|char
+modifier|*
+name|gimp_composite_function_name
+index|[
+name|GIMP_COMPOSITE_N
+index|]
+index|[
+name|GIMP_PIXELFORMAT_N
+index|]
+index|[
+name|GIMP_PIXELFORMAT_N
+index|]
+index|[
+name|GIMP_PIXELFORMAT_N
+index|]
+decl_stmt|;
+end_decl_stmt
+
+begin_extern
+extern|extern void (*gimp_composite_function[GIMP_COMPOSITE_N][GIMP_PIXELFORMAT_N][GIMP_PIXELFORMAT_N][GIMP_PIXELFORMAT_N]
+end_extern
+
+begin_empty_stmt
+unit|)
+empty_stmt|;
+end_empty_stmt
 
 begin_function
 name|void
