@@ -1443,7 +1443,8 @@ index|[
 name|i
 index|]
 operator|=
-operator|(
+name|rint
+argument_list|(
 call|(
 name|double
 call|)
@@ -1452,7 +1453,7 @@ name|wiggleamp
 operator|<<
 literal|11
 argument_list|)
-operator|)
+argument_list|)
 operator|*
 operator|(
 name|sin
