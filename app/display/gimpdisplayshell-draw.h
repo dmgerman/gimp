@@ -343,6 +343,15 @@ modifier|*
 name|filters_dialog
 decl_stmt|;
 comment|/* color display filter dialog         */
+comment|/*  the state of gimp_display_shell_tool_events()  */
+DECL|member|space_pressed
+name|gboolean
+name|space_pressed
+decl_stmt|;
+DECL|member|space_release_pending
+name|gboolean
+name|space_release_pending
+decl_stmt|;
 block|}
 struct|;
 end_struct
