@@ -8,16 +8,23 @@ comment|/* This plug-in was written using the online documentation from   * Alia
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.0, MT, 02-Jul-97: initial version of plug-in  */
+comment|/* Event history:  * V 1.0, MT, 02-Jul-97: initial version of plug-in  * V 1.1, MT, 04-Dec-97: added .als file extension   */
 end_comment
 
 begin_comment
 comment|/* Features  *  - loads and saves  *    - 24-bit (.pix)   *    - 8-bit (.matte, .alpha, or .mask) images  *  * NOTE: pix and matte files do not support alpha channels or indexed  *       colour, so neither does this plug-in  */
 end_comment
 
-begin_comment
-comment|/* static char ident[] = "@(#) GIMP Alias|Wavefront pix image file-plugin v1.0  24-jun-97"; */
-end_comment
+begin_decl_stmt
+DECL|variable|ident
+specifier|static
+name|char
+name|ident
+index|[]
+init|=
+literal|"@(#) GIMP Alias|Wavefront pix image file-plugin v1.0  24-jun-97"
+decl_stmt|;
+end_decl_stmt
 
 begin_include
 include|#
@@ -205,13 +212,29 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* static guint32  get_long( FILE * file ); */
-end_comment
+begin_function_decl
+specifier|static
+name|guint32
+name|get_long
+parameter_list|(
+name|FILE
+modifier|*
+name|file
+parameter_list|)
+function_decl|;
+end_function_decl
 
-begin_comment
-comment|/* static gchar    get_char( FILE * file ); */
-end_comment
+begin_function_decl
+specifier|static
+name|gchar
+name|get_char
+parameter_list|(
+name|FILE
+modifier|*
+name|file
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_comment
 comment|/******************  * Implementation *  ******************/
@@ -458,7 +481,7 @@ name|gimp_register_load_handler
 argument_list|(
 literal|"file_pix_load"
 argument_list|,
-literal|"pix,matte,mask,alpha"
+literal|"pix,matte,mask,alpha,als"
 argument_list|,
 literal|""
 argument_list|)
@@ -467,7 +490,7 @@ name|gimp_register_save_handler
 argument_list|(
 literal|"file_pix_save"
 argument_list|,
-literal|"pix,matte,mask,alpha"
+literal|"pix,matte,mask,alpha,als"
 argument_list|,
 literal|""
 argument_list|)
@@ -848,21 +871,107 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
+begin_function
+DECL|function|get_long (FILE * file)
+specifier|static
+name|guint32
+name|get_long
+parameter_list|(
+name|FILE
+modifier|*
+name|file
+parameter_list|)
 comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     bit ordering should not matter   */
-end_comment
+block|{
+name|guchar
+name|buf
+index|[
+literal|4
+index|]
+decl_stmt|;
+name|fread
+argument_list|(
+name|buf
+argument_list|,
+literal|4
+argument_list|,
+literal|1
+argument_list|,
+name|file
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+name|buf
+index|[
+literal|0
+index|]
+operator|<<
+literal|24
+operator|)
+operator|+
+operator|(
+name|buf
+index|[
+literal|1
+index|]
+operator|<<
+literal|16
+operator|)
+operator|+
+operator|(
+name|buf
+index|[
+literal|2
+index|]
+operator|<<
+literal|8
+operator|)
+operator|+
+operator|(
+name|buf
+index|[
+literal|3
+index|]
+operator|<<
+literal|0
+operator|)
+return|;
+block|}
+end_function
 
-begin_comment
-comment|/* static guint32 get_long( FILE * file ) { 	guchar buf[4];  	fread( buf, 4, 1, file ); 	return ( buf[0]<< 24 ) + ( buf[1]<< 16 )           + ( buf[2]<< 8 ) + ( buf[3]<< 0 ); } */
-end_comment
-
-begin_comment
+begin_function
+DECL|function|get_char (FILE * file)
+specifier|static
+name|gchar
+name|get_char
+parameter_list|(
+name|FILE
+modifier|*
+name|file
+parameter_list|)
 comment|/*   * Description:  *     Reads a byte from a file.  Provided for convenience;   */
-end_comment
-
-begin_comment
-comment|/* static gchar get_char( FILE * file ) { 	gchar result;  	fread(&result, 1, 1, file ); 	return result; } */
-end_comment
+block|{
+name|gchar
+name|result
+decl_stmt|;
+name|fread
+argument_list|(
+operator|&
+name|result
+argument_list|,
+literal|1
+argument_list|,
+literal|1
+argument_list|,
+name|file
+argument_list|)
+expr_stmt|;
+return|return
+name|result
+return|;
+block|}
+end_function
 
 begin_function
 DECL|function|load_image (char * filename)
@@ -885,9 +994,27 @@ name|tile_height
 decl_stmt|,
 name|row
 decl_stmt|;
+name|gint
+name|result
+init|=
+operator|-
+literal|1
+decl_stmt|;
 name|FILE
 modifier|*
 name|file
+init|=
+name|NULL
+decl_stmt|;
+name|gint32
+modifier|*
+name|offsetTable
+init|=
+name|NULL
+decl_stmt|;
+name|gint32
+modifier|*
+name|lengthTable
 init|=
 name|NULL
 decl_stmt|;
@@ -1625,6 +1752,11 @@ decl_stmt|,
 name|rectHeight
 decl_stmt|;
 name|gboolean
+name|savingAlpha
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|savingColor
 init|=
 name|TRUE
@@ -2004,6 +2136,14 @@ literal|1
 control|)
 block|{
 comment|/* Write a row of the image */
+name|guchar
+name|count
+decl_stmt|;
+name|gint
+name|cnt
+init|=
+literal|0
+decl_stmt|;
 name|record
 index|[
 literal|0
@@ -2307,6 +2447,14 @@ literal|1
 control|)
 block|{
 comment|/* Write a row of the image */
+name|guchar
+name|count
+decl_stmt|;
+name|gint
+name|cnt
+init|=
+literal|0
+decl_stmt|;
 name|record
 index|[
 literal|0
