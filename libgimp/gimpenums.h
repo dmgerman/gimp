@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1999 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1999 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -35,7 +35,7 @@ directive|endif
 comment|/* __cplusplus */
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0103
+DECL|enum|__anon2772c8bf0103
 block|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -51,7 +51,7 @@ name|GimpAddMaskType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0203
+DECL|enum|__anon2772c8bf0203
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -70,7 +70,7 @@ name|GimpBlendMode
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0303
+DECL|enum|__anon2772c8bf0303
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -86,7 +86,7 @@ name|GimpBrushApplicationMode
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0403
+DECL|enum|__anon2772c8bf0403
 block|{
 DECL|enumerator|GIMP_FG_BUCKET_FILL
 name|GIMP_FG_BUCKET_FILL
@@ -102,7 +102,7 @@ name|GimpBucketFillMode
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0503
+DECL|enum|__anon2772c8bf0503
 block|{
 DECL|enumerator|GIMP_VALUE_LUT
 name|GIMP_VALUE_LUT
@@ -124,7 +124,7 @@ name|GimpChannelLutType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0603
+DECL|enum|__anon2772c8bf0603
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND
@@ -137,7 +137,7 @@ name|GimpChannelOffsetType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0703
+DECL|enum|__anon2772c8bf0703
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -156,7 +156,7 @@ name|GimpChannelOps
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0803
+DECL|enum|__anon2772c8bf0803
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -181,7 +181,7 @@ name|GimpChannelType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0903
+DECL|enum|__anon2772c8bf0903
 block|{
 DECL|enumerator|GIMP_IMAGE_CLONE
 name|GIMP_IMAGE_CLONE
@@ -194,7 +194,7 @@ name|GimpCloneType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0a03
+DECL|enum|__anon2772c8bf0a03
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -216,7 +216,7 @@ name|GimpConvertDitherType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0b03
+DECL|enum|__anon2772c8bf0b03
 block|{
 DECL|enumerator|GIMP_MAKE_PALETTE
 name|GIMP_MAKE_PALETTE
@@ -238,7 +238,7 @@ name|GimpConvertPaletteType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0c03
+DECL|enum|__anon2772c8bf0c03
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -254,7 +254,7 @@ name|GimpConvolutionType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0d03
+DECL|enum|__anon2772c8bf0d03
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -270,7 +270,7 @@ name|GimpConvolveType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0e03
+DECL|enum|__anon2772c8bf0e03
 block|{
 DECL|enumerator|GIMP_DODGEBURN_HIGHLIGHTS
 name|GIMP_DODGEBURN_HIGHLIGHTS
@@ -286,7 +286,7 @@ name|GimpDodgeBurnMode
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc0f03
+DECL|enum|__anon2772c8bf0f03
 block|{
 DECL|enumerator|GIMP_DODGE
 name|GIMP_DODGE
@@ -299,7 +299,7 @@ name|GimpDodgeBurnType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1003
+DECL|enum|__anon2772c8bf1003
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -321,7 +321,7 @@ name|GimpFillType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1103
+DECL|enum|__anon2772c8bf1103
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -337,7 +337,7 @@ name|GimpImageBaseType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1203
+DECL|enum|__anon2772c8bf1203
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -362,7 +362,7 @@ name|GimpImageType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1303
+DECL|enum|__anon2772c8bf1303
 block|{
 DECL|enumerator|GIMP_ONCE_FORWARD
 name|GIMP_ONCE_FORWARD
@@ -384,7 +384,7 @@ name|GimpGradientPaintMode
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1403
+DECL|enum|__anon2772c8bf1403
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -424,7 +424,7 @@ name|GimpGradientType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1503
+DECL|enum|__anon2772c8bf1503
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
@@ -452,7 +452,7 @@ name|GimpHueRange
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1603
+DECL|enum|__anon2772c8bf1603
 block|{
 DECL|enumerator|GIMP_LINEAR_INTERPOLATION
 name|GIMP_LINEAR_INTERPOLATION
@@ -468,7 +468,7 @@ name|GimpInterpolationType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1703
+DECL|enum|__anon2772c8bf1703
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -523,7 +523,7 @@ name|GimpLayerModeEffects
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1803
+DECL|enum|__anon2772c8bf1803
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -536,7 +536,7 @@ name|GimpMaskApplyMode
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1903
+DECL|enum|__anon2772c8bf1903
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -555,7 +555,7 @@ name|GimpMergeType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1a03
+DECL|enum|__anon2772c8bf1a03
 block|{
 DECL|enumerator|GIMP_MESSAGE_BOX
 name|GIMP_MESSAGE_BOX
@@ -571,7 +571,7 @@ name|GimpMessageHandlerType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1b03
+DECL|enum|__anon2772c8bf1b03
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -587,7 +587,7 @@ name|GimpOrientationType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1c03
+DECL|enum|__anon2772c8bf1c03
 block|{
 DECL|enumerator|GIMP_PDB_INT32
 name|GIMP_PDB_INT32
@@ -663,7 +663,7 @@ name|GimpPDBArgType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1d03
+DECL|enum|__anon2772c8bf1d03
 block|{
 DECL|enumerator|GIMP_INTERNAL
 name|GIMP_INTERNAL
@@ -682,7 +682,7 @@ name|GimpPDBProcType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1e03
+DECL|enum|__anon2772c8bf1e03
 block|{
 DECL|enumerator|GIMP_PDB_EXECUTION_ERROR
 name|GIMP_PDB_EXECUTION_ERROR
@@ -701,7 +701,7 @@ name|GimpPDBStatusType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc1f03
+DECL|enum|__anon2772c8bf1f03
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -714,7 +714,7 @@ name|GimpPaintApplicationMode
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc2003
+DECL|enum|__anon2772c8bf2003
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -730,7 +730,7 @@ name|GimpRepeatMode
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc2103
+DECL|enum|__anon2772c8bf2103
 block|{
 DECL|enumerator|GIMP_RUN_INTERACTIVE
 name|GIMP_RUN_INTERACTIVE
@@ -746,7 +746,7 @@ name|GimpRunModeType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc2203
+DECL|enum|__anon2772c8bf2203
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -759,7 +759,7 @@ name|GimpSizeType
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d94abc2303
+DECL|enum|__anon2772c8bf2303
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Library General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Library General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -35,7 +35,7 @@ value|0x0003
 end_define
 
 begin_enum
-DECL|enum|__anon2ac421fe0103
+DECL|enum|__anon298a3b3e0103
 enum|enum
 block|{
 DECL|enumerator|GP_QUIT
@@ -290,7 +290,7 @@ DECL|member|type
 name|guint32
 name|type
 decl_stmt|;
-DECL|union|__anon2ac421fe020a
+DECL|union|__anon298a3b3e020a
 union|union
 block|{
 DECL|member|d_int32
@@ -340,7 +340,7 @@ modifier|*
 modifier|*
 name|d_stringarray
 decl_stmt|;
-DECL|struct|__anon2ac421fe0308
+DECL|struct|__anon298a3b3e0308
 struct|struct
 block|{
 DECL|member|red
@@ -359,7 +359,7 @@ DECL|member|d_color
 block|}
 name|d_color
 struct|;
-DECL|struct|__anon2ac421fe0408
+DECL|struct|__anon298a3b3e0408
 struct|struct
 block|{
 DECL|member|x
@@ -415,7 +415,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ac421fe0508
+DECL|struct|__anon298a3b3e0508
 block|{
 DECL|member|name
 name|char
