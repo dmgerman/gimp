@@ -1223,7 +1223,7 @@ operator|->
 name|gimage
 argument_list|)
 condition|)
-name|init_edit_selection
+name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
@@ -1231,7 +1231,7 @@ name|gdisp
 argument_list|,
 name|coords
 argument_list|,
-name|EDIT_VECTORS_TRANSLATE
+name|GIMP_TRANSLATE_MODE_VECTORS
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1251,7 +1251,7 @@ name|gimage
 argument_list|)
 argument_list|)
 condition|)
-name|init_edit_selection
+name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
@@ -1259,7 +1259,7 @@ name|gdisp
 argument_list|,
 name|coords
 argument_list|,
-name|EDIT_MASK_TRANSLATE
+name|GIMP_TRANSLATE_MODE_MASK
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1285,7 +1285,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-name|init_edit_selection
+name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
@@ -1293,7 +1293,7 @@ name|gdisp
 argument_list|,
 name|coords
 argument_list|,
-name|EDIT_LAYER_MASK_TRANSLATE
+name|GIMP_TRANSLATE_MODE_LAYER_MASK
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -1304,7 +1304,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-name|init_edit_selection
+name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
@@ -1312,7 +1312,7 @@ name|gdisp
 argument_list|,
 name|coords
 argument_list|,
-name|EDIT_CHANNEL_TRANSLATE
+name|GIMP_TRANSLATE_MODE_CHANNEL
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -1323,7 +1323,7 @@ argument_list|(
 name|drawable
 argument_list|)
 condition|)
-name|init_edit_selection
+name|gimp_edit_selection_tool_start
 argument_list|(
 name|tool
 argument_list|,
@@ -1331,7 +1331,7 @@ name|gdisp
 argument_list|,
 name|coords
 argument_list|,
-name|EDIT_LAYER_TRANSLATE
+name|GIMP_TRANSLATE_MODE_LAYER
 argument_list|)
 expr_stmt|;
 block|}

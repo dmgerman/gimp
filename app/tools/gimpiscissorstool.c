@@ -148,12 +148,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpeditselectiontool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpselectionoptions.h"
 end_include
 

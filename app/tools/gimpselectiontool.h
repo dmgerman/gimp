@@ -149,6 +149,25 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  protected function  */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|gimp_selection_tool_start_edit
+parameter_list|(
+name|GimpSelectionTool
+modifier|*
+name|sel_tool
+parameter_list|,
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
