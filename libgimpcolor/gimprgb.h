@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277af0540103
+DECL|enum|__anon2773daca0103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -140,7 +140,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gsize
+name|gint
 name|len
 parameter_list|)
 function_decl|;
@@ -159,7 +159,7 @@ name|gchar
 modifier|*
 name|hex
 parameter_list|,
-name|gsize
+name|gint
 name|len
 parameter_list|)
 function_decl|;
@@ -178,7 +178,7 @@ name|gchar
 modifier|*
 name|css
 parameter_list|,
-name|gsize
+name|gint
 name|len
 parameter_list|)
 function_decl|;

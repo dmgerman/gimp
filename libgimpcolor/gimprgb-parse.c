@@ -102,7 +102,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_rgb_parse_name (GimpRGB * rgb,const gchar * name,gsize len)
+DECL|function|gimp_rgb_parse_name (GimpRGB * rgb,const gchar * name,gint len)
 name|gimp_rgb_parse_name
 parameter_list|(
 name|GimpRGB
@@ -114,7 +114,7 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|gsize
+name|gint
 name|len
 parameter_list|)
 block|{
@@ -194,7 +194,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_rgb_parse_hex (GimpRGB * rgb,const gchar * hex,gsize len)
+DECL|function|gimp_rgb_parse_hex (GimpRGB * rgb,const gchar * hex,gint len)
 name|gimp_rgb_parse_hex
 parameter_list|(
 name|GimpRGB
@@ -206,7 +206,7 @@ name|gchar
 modifier|*
 name|hex
 parameter_list|,
-name|gsize
+name|gint
 name|len
 parameter_list|)
 block|{
@@ -281,12 +281,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_parse_css:  * @rgb: a #GimpRGB struct used to return the parsed color  * @css: a string describing a color in CSS notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing a color in RGB value in  * CSS notation. This can be either a numerical representation:  *<informalexample><programlisting>  *     rgb (255, 0, 0)  *     rgb (100%, 0%, 0%)  *</programlisting></informalexample>  * or a hexadecimal notation as parsed by gimp_rgb_parse_hex():  *<informalexample><programlisting>  *     #ff0000  *</programlisting></informalexample>  * or a color name as parsed by  gimp_rgb_parse_name().  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @css was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_css:  * @rgb: a #GimpRGB struct used to return the parsed color  * @css: a string describing a color in CSS notation  * @len: the length of @hex, in bytes. or -1 if @hex is nul-terminated  *  * Attempts to parse a string describing a color in RGB value in CSS  * notation. This can be either a numerical representation  * (<code>rgb (255, 0, 0)</code> or<code>rgb (100%, 0%, 0%)</code>) or  * a hexadecimal notation as parsed by gimp_rgb_parse_hex()  * (<code>##ff0000</code>) or a color name as parsed by  * gimp_rgb_parse_name() (<code>red</code>).  *  * This funcion does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @css was parsed successfully and @rgb has been  *               set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_rgb_parse_css (GimpRGB * rgb,const gchar * css,gsize len)
+DECL|function|gimp_rgb_parse_css (GimpRGB * rgb,const gchar * css,gint len)
 name|gimp_rgb_parse_css
 parameter_list|(
 name|GimpRGB
@@ -298,7 +298,7 @@ name|gchar
 modifier|*
 name|css
 parameter_list|,
-name|gsize
+name|gint
 name|len
 parameter_list|)
 block|{
@@ -375,7 +375,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b1ea640108
+DECL|struct|__anon2be64cfa0108
 block|{
 DECL|member|name
 specifier|const
@@ -2432,6 +2432,11 @@ name|values
 index|[
 literal|2
 index|]
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_clamp
+argument_list|(
+name|rgb
 argument_list|)
 expr_stmt|;
 return|return

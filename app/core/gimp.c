@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa777a50103
+DECL|enum|__anon2955182c0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2239,6 +2239,12 @@ block|{
 name|gimp_gradient_load
 block|,
 name|GIMP_GRADIENT_FILE_EXTENSION
+block|}
+block|,
+block|{
+name|gimp_gradient_load_svg
+block|,
+name|GIMP_GRADIENT_SVG_FILE_EXTENSION
 block|}
 block|,
 block|{
