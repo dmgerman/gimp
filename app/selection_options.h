@@ -158,6 +158,16 @@ DECL|member|extend
 name|gint
 name|extend
 decl_stmt|;
+comment|/*  used by iscissors */
+DECL|member|interactive
+name|gboolean
+name|interactive
+decl_stmt|;
+DECL|member|interactive_w
+name|GtkWidget
+modifier|*
+name|interactive_w
+decl_stmt|;
 block|}
 struct|;
 end_struct
