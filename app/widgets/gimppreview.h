@@ -133,6 +133,10 @@ DECL|member|in_button
 name|gboolean
 name|in_button
 decl_stmt|;
+DECL|member|has_grab
+name|gboolean
+name|has_grab
+decl_stmt|;
 DECL|member|press_state
 name|GdkModifierType
 name|press_state
