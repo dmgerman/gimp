@@ -102,6 +102,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpEnumStore
+typedef|typedef
+name|struct
+name|_GimpEnumStore
+name|GimpEnumStore
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCellRendererToggle
 typedef|typedef
 name|struct
