@@ -291,6 +291,9 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1632,14 +1635,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prefs_input_devices_dialog (GtkWidget * widget)
+DECL|function|prefs_input_devices_dialog (GtkWidget * widget,gpointer user_data)
 name|prefs_input_devices_dialog
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|user_data
+argument_list|)
+decl_stmt|;
 specifier|static
 name|GtkWidget
 modifier|*
@@ -1705,7 +1720,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_hide
+name|g_signal_connect_swapped
 argument_list|(
 name|GTK_INPUT_DIALOG
 argument_list|(
@@ -1713,6 +1728,15 @@ name|input_dialog
 argument_list|)
 operator|->
 name|save_button
+argument_list|,
+literal|"clicked"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_devices_save
+argument_list|)
+argument_list|,
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
@@ -6602,7 +6626,7 @@ argument_list|(
 name|prefs_input_devices_dialog
 argument_list|)
 argument_list|,
-name|NULL
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*******************************/
@@ -7110,7 +7134,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27f92f0f0108
+DECL|struct|__anon29d0262e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9551,7 +9575,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27f92f0f0208
+DECL|struct|__anon29d0262e0208
 block|{
 DECL|member|label
 specifier|const
@@ -9710,7 +9734,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27f92f0f0308
+DECL|struct|__anon29d0262e0308
 block|{
 DECL|member|tree_label
 specifier|const
