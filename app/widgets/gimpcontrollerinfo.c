@@ -89,13 +89,16 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dbceed0103
+DECL|enum|__anon29c2f6250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
 DECL|enumerator|PROP_ENABLED
 name|PROP_ENABLED
+block|,
+DECL|enumerator|PROP_DEBUG_EVENTS
+name|PROP_DEBUG_EVENTS
 block|,
 DECL|enumerator|PROP_CONTROLLER
 name|PROP_CONTROLLER
@@ -108,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dbceed0203
+DECL|enum|__anon29c2f6250203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -495,6 +498,21 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_DEBUG_EVENTS
+argument_list|,
+literal|"debug-events"
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_OBJECT
 argument_list|(
 name|object_class
@@ -728,6 +746,19 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_DEBUG_EVENTS
+case|:
+name|info
+operator|->
+name|debug_events
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_CONTROLLER
 case|:
 if|if
@@ -886,6 +917,19 @@ argument_list|,
 name|info
 operator|->
 name|enabled
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_DEBUG_EVENTS
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|info
+operator|->
+name|debug_events
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1459,6 +1503,12 @@ operator|.
 name|event_id
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|info
+operator|->
+name|debug_events
+condition|)
 name|g_print
 argument_list|(
 literal|"Received '%s' (class '%s')\n"
@@ -1492,6 +1542,12 @@ block|{
 case|case
 name|GIMP_CONTROLLER_EVENT_TRIGGER
 case|:
+if|if
+condition|(
+name|info
+operator|->
+name|debug_events
+condition|)
 name|g_print
 argument_list|(
 literal|"    (trigger event)\n"
@@ -1501,6 +1557,12 @@ break|break;
 case|case
 name|GIMP_CONTROLLER_EVENT_VALUE
 case|:
+if|if
+condition|(
+name|info
+operator|->
+name|debug_events
+condition|)
 block|{
 if|if
 condition|(
@@ -1557,6 +1619,12 @@ operator|->
 name|enabled
 condition|)
 block|{
+if|if
+condition|(
+name|info
+operator|->
+name|debug_events
+condition|)
 name|g_print
 argument_list|(
 literal|"    ignoring because controller is disabled\n\n"
@@ -1593,6 +1661,12 @@ name|retval
 init|=
 name|FALSE
 decl_stmt|;
+if|if
+condition|(
+name|info
+operator|->
+name|debug_events
+condition|)
 name|g_print
 argument_list|(
 literal|"    maps to action '%s'\n"
@@ -1623,6 +1697,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|info
+operator|->
+name|debug_events
+condition|)
+block|{
+if|if
+condition|(
 name|retval
 condition|)
 name|g_print
@@ -1636,12 +1717,19 @@ argument_list|(
 literal|"    action NOT found\n\n"
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|retval
 return|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|info
+operator|->
+name|debug_events
+condition|)
 name|g_print
 argument_list|(
 literal|"    doesn't map to action\n\n"

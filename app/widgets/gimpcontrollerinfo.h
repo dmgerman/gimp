@@ -107,6 +107,10 @@ DECL|member|enabled
 name|gboolean
 name|enabled
 decl_stmt|;
+DECL|member|debug_events
+name|gboolean
+name|debug_events
+decl_stmt|;
 DECL|member|controller
 name|GimpController
 modifier|*
