@@ -1986,7 +1986,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1P_CURSOR
+name|GIMP_MOUSE_ADD_CURSOR
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1997,7 +1997,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1M_CURSOR
+name|GIMP_MOUSE_SUBTRACT_CURSOR
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2008,7 +2008,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1U_CURSOR
+name|GIMP_MOUSE_INTERSECT_CURSOR
 argument_list|)
 expr_stmt|;
 break|break;

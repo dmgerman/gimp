@@ -283,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c5e1a360108
+DECL|struct|__anon2b528fae0108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5e1a360208
+DECL|struct|__anon2b528fae0208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5e1a360308
+DECL|struct|__anon2b528fae0308
 typedef|typedef
 struct|struct
 block|{
@@ -5978,7 +5978,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|bezier_point_on_curve (GDisplay * gdisp,BezierSelect * bezier_sel,gint x,gint y,gint halfwidth)
 name|bezier_point_on_curve
 parameter_list|(
@@ -6174,7 +6174,7 @@ expr_stmt|;
 block|}
 else|else
 break|break;
-comment|/* must be last curve since only this one is allowed< 4 		  * points. 		  */
+comment|/* must be last curve since only this one is allowed< 4 		    * points. 		    */
 block|}
 do|while
 condition|(
@@ -6183,11 +6183,9 @@ condition|)
 do|;
 block|}
 return|return
-operator|(
 name|chkpnts
 operator|.
 name|found
-operator|)
 return|;
 block|}
 end_function
@@ -6272,7 +6270,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1_CURSOR
+name|GIMP_MOUSE_CURSOR
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6415,13 +6413,15 @@ operator|&
 name|GDK_CONTROL_MASK
 operator|)
 condition|)
+block|{
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1SELP_CURSOR
+name|GIMP_SELECTION_ADD_CURSOR
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -6442,13 +6442,15 @@ operator|&
 name|GDK_SHIFT_MASK
 operator|)
 condition|)
+block|{
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1SELM_CURSOR
+name|GIMP_SELECTION_SUBTRACT_CURSOR
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -6468,21 +6470,25 @@ operator|&
 name|GDK_SHIFT_MASK
 operator|)
 condition|)
+block|{
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1SELU_CURSOR
+name|GIMP_SELECTION_INTERSECT_CURSOR
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1SEL_CURSOR
+name|GIMP_SELECTION_CURSOR
 argument_list|)
 expr_stmt|;
+block|}
 return|return;
 block|}
 if|if
@@ -6509,7 +6515,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1MM_CURSOR
+name|GIMP_MOUSE_MOVE_CURSOR
 argument_list|)
 expr_stmt|;
 block|}
@@ -6519,7 +6525,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1MM_CURSOR
+name|GIMP_MOUSE_MOVE_CURSOR
 argument_list|)
 expr_stmt|;
 block|}
@@ -6547,7 +6553,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1CP_CURSOR
+name|GIMP_MOUSE_RECTANGLE_CURSOR
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("add to curve cursor\n"); */
@@ -6562,7 +6568,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1AP_CURSOR
+name|GIMP_MOUSE_POINT_CURSOR
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("edit control point cursor\n"); */
@@ -6573,7 +6579,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1AP_CURSOR
+name|GIMP_MOUSE_POINT_CURSOR
 argument_list|)
 expr_stmt|;
 block|}
@@ -6590,7 +6596,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1P_CURSOR
+name|GIMP_MOUSE_ADD_CURSOR
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("add to curve cursor\n"); */
@@ -6601,7 +6607,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1_CURSOR
+name|GIMP_MOUSE_CURSOR
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6619,7 +6625,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1CP_CURSOR
+name|GIMP_MOUSE_RECTANGLE_CURSOR
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("edit control point cursor\n"); */
@@ -6630,7 +6636,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1_CURSOR
+name|GIMP_MOUSE_CURSOR
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6654,7 +6660,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1M_CURSOR
+name|GIMP_MOUSE_SUBTRACT_CURSOR
 argument_list|)
 expr_stmt|;
 name|g_print
@@ -6673,7 +6679,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1M_CURSOR
+name|GIMP_MOUSE_SUBTRACT_CURSOR
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("remove point cursor\n"); */
@@ -6684,7 +6690,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1_CURSOR
+name|GIMP_MOUSE_CURSOR
 argument_list|)
 expr_stmt|;
 comment|/* 	      g_print ("default no action cursor\n"); */
@@ -6700,7 +6706,7 @@ name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_MOUSE1_CURSOR
+name|GIMP_MOUSE_CURSOR
 argument_list|)
 expr_stmt|;
 break|break;

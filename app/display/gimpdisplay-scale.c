@@ -141,17 +141,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|resize_display (GDisplay * gdisp,gint resize_window,gint redisplay)
+DECL|function|resize_display (GDisplay * gdisp,gboolean resize_window,gboolean redisplay)
 name|resize_display
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|gint
+name|gboolean
 name|resize_window
 parameter_list|,
-name|gint
+name|gboolean
 name|redisplay
 parameter_list|)
 block|{
@@ -283,15 +283,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|change_scale (GDisplay * gdisp,gint dir)
+DECL|function|change_scale (GDisplay * gdisp,ZoomType zoom_type)
 name|change_scale
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|gint
-name|dir
+name|ZoomType
+name|zoom_type
 parameter_list|)
 block|{
 name|guchar
@@ -382,7 +382,7 @@ operator|)
 expr_stmt|;
 switch|switch
 condition|(
-name|dir
+name|zoom_type
 condition|)
 block|{
 case|case
@@ -434,7 +434,7 @@ break|break;
 default|default :
 name|scalesrc
 operator|=
-name|dir
+name|zoom_type
 operator|%
 literal|100
 expr_stmt|;
@@ -461,7 +461,7 @@ literal|0x10
 expr_stmt|;
 name|scaledest
 operator|=
-name|dir
+name|zoom_type
 operator|/
 literal|100
 expr_stmt|;

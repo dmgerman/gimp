@@ -27,16 +27,6 @@ comment|/*  magnify functions  */
 end_comment
 
 begin_function_decl
-name|void
-name|magnify_draw
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|Tool
 modifier|*
 name|tools_new_magnify
@@ -52,6 +42,18 @@ name|tools_free_magnify
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|magnify_draw
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

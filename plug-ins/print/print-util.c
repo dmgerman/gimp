@@ -66,7 +66,7 @@ union|union
 name|error
 block|{
 struct|struct
-DECL|struct|__anon27a7a93a0108
+DECL|struct|__anon28add6010108
 block|{
 DECL|member|c
 name|int
@@ -6982,7 +6982,7 @@ index|[
 literal|3
 index|]
 operator|/
-literal|255
+literal|25500
 operator|+
 literal|255
 operator|-
