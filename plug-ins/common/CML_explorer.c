@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad050a40108
+DECL|struct|__anon2c424ed70108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad050a40203
+DECL|enum|__anon2c424ed70203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad050a40303
+DECL|enum|__anon2c424ed70303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad050a40403
+DECL|enum|__anon2c424ed70403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad050a40503
+DECL|enum|__anon2c424ed70503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad050a40608
+DECL|struct|__anon2c424ed70608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad050a40708
+DECL|struct|__anon2c424ed70708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1539,7 +1539,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad050a40808
+DECL|struct|__anon2c424ed70808
 block|{
 DECL|member|run
 name|gint
@@ -1589,7 +1589,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad050a40908
+DECL|struct|__anon2c424ed70908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -12018,24 +12018,12 @@ operator|.
 name|last_file_name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_VISIBLE
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|filesel
 argument_list|)
-condition|)
-name|gdk_window_raise
-argument_list|(
-name|filesel
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-else|else
-name|gtk_widget_show
-argument_list|(
-name|filesel
 argument_list|)
 expr_stmt|;
 block|}
