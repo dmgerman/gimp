@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bdbb200103
+DECL|enum|__anon2c6358100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3065,9 +3065,11 @@ argument_list|(
 name|errno
 argument_list|)
 argument_list|,
-literal|"Could not set permissions of thumbnail '%s': %s"
+literal|"Could not set permissions of thumbnail for %s: %s"
 argument_list|,
-name|name
+name|thumbnail
+operator|->
+name|image_uri
 argument_list|,
 name|g_strerror
 argument_list|(
