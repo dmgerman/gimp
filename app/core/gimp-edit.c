@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d2c43c0103
+DECL|enum|__anon27477e940103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -1415,7 +1415,7 @@ name|paste_into
 condition|)
 name|channel_clear
 argument_list|(
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -1449,7 +1449,7 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -1525,7 +1525,7 @@ argument_list|,
 name|RGB
 argument_list|)
 expr_stmt|;
-name|gimage_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|gimage
 argument_list|)
@@ -1591,7 +1591,7 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -1600,7 +1600,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimage_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|gimage
 argument_list|)
@@ -1680,7 +1680,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimage_get_background
+name|gimp_image_get_background
 argument_list|(
 name|gimage
 argument_list|,
@@ -1827,7 +1827,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,
@@ -1961,7 +1961,7 @@ block|{
 case|case
 name|FOREGROUND_FILL
 case|:
-name|gimage_get_foreground
+name|gimp_image_get_foreground
 argument_list|(
 name|gimage
 argument_list|,
@@ -1974,7 +1974,7 @@ break|break;
 case|case
 name|BACKGROUND_FILL
 case|:
-name|gimage_get_background
+name|gimp_image_get_background
 argument_list|(
 name|gimage
 argument_list|,
@@ -2066,7 +2066,7 @@ argument_list|(
 literal|"unknown fill type"
 argument_list|)
 expr_stmt|;
-name|gimage_get_background
+name|gimp_image_get_background
 argument_list|(
 name|gimage
 argument_list|,
@@ -2196,7 +2196,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,
@@ -2279,7 +2279,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2319,7 +2319,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2366,7 +2366,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -2643,7 +2643,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|pn_dlg
 operator|->
@@ -2671,7 +2671,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|pn_dlg
 operator|->
@@ -3722,7 +3722,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -3856,7 +3856,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->

@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -5730,7 +5724,7 @@ call|(
 name|gint32
 call|)
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -5751,7 +5745,7 @@ argument_list|,
 name|TRUE
 argument_list|,
 operator|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -5921,7 +5915,7 @@ call|(
 name|gint32
 call|)
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)

@@ -46,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -169,7 +169,7 @@ operator|(
 name|success
 operator|=
 operator|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -323,7 +323,7 @@ operator|(
 name|success
 operator|=
 operator|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -599,7 +599,7 @@ operator|(
 name|success
 operator|=
 operator|(
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)

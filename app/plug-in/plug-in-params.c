@@ -397,7 +397,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -5935,7 +5935,7 @@ name|pdb_int
 operator|=
 name|drawable_ID
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisplay
 operator|->
@@ -11437,7 +11437,7 @@ name|pdb_int
 operator|=
 name|drawable_ID
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisplay
 operator|->
@@ -11552,7 +11552,7 @@ name|pdb_int
 operator|=
 name|drawable_ID
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisplay
 operator|->

@@ -1725,7 +1725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a3c6b0108
+DECL|struct|__anon29d96f880108
 block|{
 DECL|member|def
 name|GImage
@@ -2538,7 +2538,7 @@ name|image_name
 operator|=
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)

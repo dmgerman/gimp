@@ -64,12 +64,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -4160,7 +4154,7 @@ expr_stmt|;
 comment|/*  Configure the mask from the gimage's selection mask */
 name|mask
 operator|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|drawable_gimage
 argument_list|(

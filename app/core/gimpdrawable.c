@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimage_mask.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimage_mask.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f34c9b0103
+DECL|enum|__anon2ad6becf0103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -555,7 +555,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,
@@ -756,7 +756,7 @@ index|]
 operator|=
 name|b
 expr_stmt|;
-name|gimage_transform_color
+name|gimp_image_transform_color
 argument_list|(
 name|gimage
 argument_list|,
@@ -2785,7 +2785,7 @@ return|return
 name|NULL
 return|;
 return|return
-name|gimage_shadow
+name|gimp_image_shadow
 argument_list|(
 name|gimage
 argument_list|,

@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -1435,7 +1435,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimage_get_foreground
+name|gimp_image_get_foreground
 argument_list|(
 name|gimage
 argument_list|,

@@ -2192,7 +2192,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisplay
 operator|->
@@ -2251,7 +2251,7 @@ name|filename
 operator|=
 name|g_strdup
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gdisplay
 operator|->
@@ -2344,7 +2344,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisplay
 operator|->
@@ -2553,7 +2553,7 @@ name|gimage
 operator|->
 name|has_filename
 condition|?
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gdisplay
 operator|->
@@ -2776,7 +2776,7 @@ switch|switch
 condition|(
 name|gimp_drawable_type
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisplay
 operator|->
@@ -2977,13 +2977,13 @@ argument_list|)
 argument_list|,
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -3725,7 +3725,7 @@ name|GimpImage
 modifier|*
 name|gimage
 init|=
-name|gimage_get_ID
+name|pdb_id_to_image
 argument_list|(
 name|gimage_id
 argument_list|)
@@ -3815,13 +3815,13 @@ name|NULL
 condition|)
 block|{
 comment|/* enable& clear all undo steps */
-name|gimage_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
 comment|/* set the image to clean  */
-name|gimage_clean_all
+name|gimp_image_clean_all
 argument_list|(
 name|gimage
 argument_list|)
@@ -5161,7 +5161,7 @@ name|statbuf
 decl_stmt|;
 if|if
 condition|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -5173,7 +5173,7 @@ name|PDB_EXECUTION_ERROR
 return|;
 name|file_proc
 operator|=
-name|gimage_get_save_proc
+name|gimp_image_get_save_proc
 argument_list|(
 name|gimage
 argument_list|)
@@ -5441,7 +5441,7 @@ name|pdb_int
 operator|=
 name|drawable_ID
 argument_list|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -5499,7 +5499,7 @@ name|PDB_SUCCESS
 condition|)
 block|{
 comment|/*  set this image to clean  */
-name|gimage_clean_all
+name|gimp_image_clean_all
 argument_list|(
 name|gimage
 argument_list|)
@@ -7678,7 +7678,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimage_set_save_proc
+name|gimp_image_set_save_proc
 argument_list|(
 name|gimage
 argument_list|,
@@ -8521,7 +8521,7 @@ name|status
 decl_stmt|;
 name|filename
 operator|=
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|old_gimage
 argument_list|)

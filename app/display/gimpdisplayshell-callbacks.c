@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -1058,7 +1058,7 @@ name|MOVE
 operator|)
 operator|||
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -1122,7 +1122,7 @@ name|drawable
 operator|||
 comment|/* or a drawable different from the current one */
 operator|(
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1166,7 +1166,7 @@ name|active_tool
 operator|->
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
@@ -1532,7 +1532,7 @@ name|MOVE
 operator|)
 operator|||
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -1814,7 +1814,7 @@ name|MOVE
 operator|)
 operator|||
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -2065,7 +2065,7 @@ condition|(
 name|active_tool
 operator|&&
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -2103,7 +2103,7 @@ operator|&
 name|GDK_MOD1_MASK
 operator|&&
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -2132,7 +2132,7 @@ operator|&
 name|GDK_CONTROL_MASK
 operator|&&
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -2203,7 +2203,7 @@ condition|(
 name|active_tool
 operator|&&
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -2346,7 +2346,7 @@ condition|(
 name|active_tool
 operator|&&
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -2454,7 +2454,7 @@ condition|(
 name|active_tool
 operator|&&
 operator|!
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -2515,7 +2515,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gimage_is_empty
+name|gimp_image_is_empty
 argument_list|(
 name|gdisp
 operator|->
@@ -3307,7 +3307,7 @@ name|RGB
 expr_stmt|;
 break|break;
 block|}
-name|gimage_get_background
+name|gimp_image_get_background
 argument_list|(
 name|src_gimage
 argument_list|,
@@ -3531,7 +3531,7 @@ argument_list|,
 name|off_y
 argument_list|)
 expr_stmt|;
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|dest_gimage
 argument_list|,
@@ -3680,7 +3680,7 @@ name|gimage
 expr_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -3872,7 +3872,7 @@ name|size
 operator|--
 condition|)
 block|{
-name|gimage_transform_color
+name|gimp_image_transform_color
 argument_list|(
 name|gimage
 argument_list|,
@@ -4045,7 +4045,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,

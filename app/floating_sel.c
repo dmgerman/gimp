@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimage_mask.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimage_mask.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -168,7 +168,7 @@ name|floating_sel
 expr_stmt|;
 name|floating_sel_anchor
 argument_list|(
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -186,7 +186,7 @@ argument_list|)
 condition|)
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -243,7 +243,7 @@ operator|=
 name|layer
 expr_stmt|;
 comment|/*  add the layer to the gimage  */
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -314,7 +314,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  remove the layer from the gimage  */
-name|gimage_remove_layer
+name|gimp_image_remove_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -438,7 +438,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  remove the floating selection  */
-name|gimage_remove_layer
+name|gimp_image_remove_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -502,7 +502,7 @@ operator|.
 name|drawable
 argument_list|)
 condition|)
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -528,7 +528,7 @@ operator|.
 name|drawable
 argument_list|)
 condition|)
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -557,7 +557,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|gimage_set_active_channel
+name|gimp_image_set_active_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -2202,7 +2202,7 @@ literal|1
 expr_stmt|;
 block|}
 comment|/*  apply the fs with the undo specified by the value 	   *  passed to this function 	   */
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,

@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimage_mask.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimage_mask.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -319,7 +319,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimage_apply_image
+name|gimp_image_apply_image
 argument_list|(
 name|gimage
 argument_list|,

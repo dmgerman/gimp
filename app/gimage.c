@@ -374,25 +374,6 @@ return|;
 block|}
 end_function
 
-begin_function
-name|GImage
-modifier|*
-DECL|function|gimage_get_ID (gint ID)
-name|gimage_get_ID
-parameter_list|(
-name|gint
-name|ID
-parameter_list|)
-block|{
-return|return
-name|pdb_id_to_image
-argument_list|(
-name|ID
-argument_list|)
-return|;
-block|}
-end_function
-
 begin_comment
 comment|/* Ack, GImages have their own ref counts! This is going to cause    trouble.. It should be pretty easy to convert to proper GtkObject    ref counting, though. */
 end_comment
@@ -543,11 +524,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimlist_cb (gpointer im,gpointer data)
+DECL|function|gimlist_cb (gpointer image,gpointer data)
 name|gimlist_cb
 parameter_list|(
 name|gpointer
-name|im
+name|image
 parameter_list|,
 name|gpointer
 name|data
@@ -556,7 +537,7 @@ block|{
 name|GSList
 modifier|*
 modifier|*
-name|l
+name|list
 init|=
 operator|(
 name|GSList
@@ -566,14 +547,14 @@ operator|)
 name|data
 decl_stmt|;
 operator|*
-name|l
+name|list
 operator|=
 name|g_slist_prepend
 argument_list|(
 operator|*
-name|l
+name|list
 argument_list|,
-name|im
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -619,9 +600,7 @@ name|list
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|num_images
-operator|)
 return|;
 block|}
 end_function
@@ -648,16 +627,23 @@ name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  free all guides  */
+for|for
+control|(
 name|list
 operator|=
 name|gimage
 operator|->
 name|guides
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|list
-condition|)
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|g_free
 argument_list|(
@@ -668,13 +654,6 @@ operator|)
 name|list
 operator|->
 name|data
-argument_list|)
-expr_stmt|;
-name|list
-operator|=
-name|g_list_next
-argument_list|(
-name|list
 argument_list|)
 expr_stmt|;
 block|}
@@ -1022,7 +1001,7 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y

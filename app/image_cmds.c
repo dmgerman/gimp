@@ -1565,7 +1565,7 @@ block|{
 name|gimp_add_busy_cursors_until_idle
 argument_list|()
 expr_stmt|;
-name|gimage_resize
+name|gimp_image_resize
 argument_list|(
 name|gimage
 argument_list|,
@@ -1781,7 +1781,7 @@ block|{
 name|gimp_add_busy_cursors_until_idle
 argument_list|()
 expr_stmt|;
-name|gimage_scale
+name|gimp_image_scale
 argument_list|(
 name|gimage
 argument_list|,
@@ -2048,7 +2048,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_free_shadow
+name|gimp_image_free_shadow
 argument_list|(
 name|gimage
 argument_list|)
@@ -2701,7 +2701,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_unset_active_channel
+name|gimp_image_unset_active_channel
 argument_list|(
 name|gimage
 argument_list|)
@@ -2864,7 +2864,7 @@ name|success
 condition|)
 name|layer
 operator|=
-name|gimage_pick_correlate_layer
+name|gimp_image_pick_correlate_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -3081,7 +3081,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_raise_layer
+name|gimp_image_raise_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -3246,7 +3246,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_lower_layer
+name|gimp_image_lower_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -3411,7 +3411,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_raise_layer_to_top
+name|gimp_image_raise_layer_to_top
 argument_list|(
 name|gimage
 argument_list|,
@@ -3576,7 +3576,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_lower_layer_to_bottom
+name|gimp_image_lower_layer_to_bottom
 argument_list|(
 name|gimage
 argument_list|,
@@ -3752,7 +3752,7 @@ condition|)
 block|{
 name|layer
 operator|=
-name|gimage_merge_visible_layers
+name|gimp_image_merge_visible_layers
 argument_list|(
 name|gimage
 argument_list|,
@@ -4214,7 +4214,7 @@ operator|=
 operator|(
 name|layer
 operator|=
-name|gimage_flatten
+name|gimp_image_flatten
 argument_list|(
 name|gimage
 argument_list|)
@@ -4438,7 +4438,7 @@ name|layer
 argument_list|)
 argument_list|)
 operator|&&
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -4455,7 +4455,7 @@ name|layer
 argument_list|)
 argument_list|)
 operator|&&
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -4472,7 +4472,7 @@ name|layer
 argument_list|)
 argument_list|)
 operator|&&
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -4487,7 +4487,7 @@ expr_stmt|;
 else|else
 name|success
 operator|=
-name|gimage_add_layer
+name|gimp_image_add_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -4667,7 +4667,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_remove_layer
+name|gimp_image_remove_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -4858,7 +4858,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_add_layer_mask
+name|gimp_image_add_layer_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -5059,7 +5059,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_remove_layer_mask
+name|gimp_image_remove_layer_mask
 argument_list|(
 name|gimage
 argument_list|,
@@ -5232,7 +5232,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_raise_channel
+name|gimp_image_raise_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -5397,7 +5397,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_lower_layer
+name|gimp_image_lower_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -5576,7 +5576,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_add_channel
+name|gimp_image_add_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -5755,7 +5755,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_remove_channel
+name|gimp_image_remove_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -5903,7 +5903,7 @@ operator|=
 operator|(
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)
@@ -6084,7 +6084,7 @@ name|success
 condition|)
 name|base_type
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -6282,7 +6282,7 @@ name|memcpy
 argument_list|(
 name|cmap
 argument_list|,
-name|gimage_cmap
+name|gimp_image_cmap
 argument_list|(
 name|gimage
 argument_list|)
@@ -6904,7 +6904,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_enable_undo
+name|gimp_image_undo_enable
 argument_list|(
 name|gimage
 argument_list|)
@@ -7075,7 +7075,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_disable_undo
+name|gimp_image_undo_disable
 argument_list|(
 name|gimage
 argument_list|)
@@ -7246,7 +7246,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_freeze_undo
+name|gimp_image_undo_freeze
 argument_list|(
 name|gimage
 argument_list|)
@@ -7417,7 +7417,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|gimage_thaw_undo
+name|gimp_image_undo_thaw
 argument_list|(
 name|gimage
 argument_list|)
@@ -7582,7 +7582,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_clean_all
+name|gimp_image_clean_all
 argument_list|(
 name|gimage
 argument_list|)
@@ -7717,7 +7717,7 @@ name|success
 condition|)
 name|floating_sel
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -7906,7 +7906,7 @@ condition|)
 block|{
 name|floating_sel
 operator|=
-name|gimage_floating_sel
+name|gimp_image_floating_sel
 argument_list|(
 name|gimage
 argument_list|)
@@ -9215,7 +9215,7 @@ name|success
 condition|)
 name|active_layer
 operator|=
-name|gimage_get_active_layer
+name|gimp_image_get_active_layer
 argument_list|(
 name|gimage
 argument_list|)
@@ -9415,7 +9415,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_set_active_layer
+name|gimp_image_set_active_layer
 argument_list|(
 name|gimage
 argument_list|,
@@ -9560,7 +9560,7 @@ name|success
 condition|)
 name|active_channel
 operator|=
-name|gimage_get_active_channel
+name|gimp_image_get_active_channel
 argument_list|(
 name|gimage
 argument_list|)
@@ -9760,7 +9760,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_set_active_channel
+name|gimp_image_set_active_channel
 argument_list|(
 name|gimage
 argument_list|,
@@ -9908,7 +9908,7 @@ operator|=
 operator|(
 name|selection
 operator|=
-name|gimage_get_mask
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
@@ -10119,7 +10119,7 @@ name|GRAY_CHANNEL
 condition|)
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10135,7 +10135,7 @@ name|INDEXED_CHANNEL
 condition|)
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10145,7 +10145,7 @@ expr_stmt|;
 else|else
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10176,7 +10176,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimage_get_component_active
+name|gimp_image_get_component_active
 argument_list|(
 name|gimage
 argument_list|,
@@ -10377,7 +10377,7 @@ name|GRAY_CHANNEL
 condition|)
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10393,7 +10393,7 @@ name|INDEXED_CHANNEL
 condition|)
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10403,7 +10403,7 @@ expr_stmt|;
 else|else
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10414,7 +10414,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_set_component_active
+name|gimp_image_set_component_active
 argument_list|(
 name|gimage
 argument_list|,
@@ -10599,7 +10599,7 @@ name|GRAY_CHANNEL
 condition|)
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10615,7 +10615,7 @@ name|INDEXED_CHANNEL
 condition|)
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10625,7 +10625,7 @@ expr_stmt|;
 else|else
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10656,7 +10656,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|gimage_get_component_visible
+name|gimp_image_get_component_visible
 argument_list|(
 name|gimage
 argument_list|,
@@ -10857,7 +10857,7 @@ name|GRAY_CHANNEL
 condition|)
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10873,7 +10873,7 @@ name|INDEXED_CHANNEL
 condition|)
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10883,7 +10883,7 @@ expr_stmt|;
 else|else
 name|success
 operator|=
-name|gimage_base_type
+name|gimp_image_base_type
 argument_list|(
 name|gimage
 argument_list|)
@@ -10894,7 +10894,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_set_component_visible
+name|gimp_image_set_component_visible
 argument_list|(
 name|gimage
 argument_list|,
@@ -11063,7 +11063,7 @@ name|pdb_pointer
 operator|=
 name|g_strdup
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gimage
 argument_list|)
@@ -11229,7 +11229,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimage_set_filename
+name|gimp_image_set_filename
 argument_list|(
 name|gimage
 argument_list|,

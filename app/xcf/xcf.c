@@ -218,7 +218,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fbc6090103
+DECL|enum|__anon28ee821e0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fbc6090203
+DECL|enum|__anon28ee821e0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1765,7 +1765,7 @@ name|FALSE
 expr_stmt|;
 name|gimage
 operator|=
-name|gimage_get_ID
+name|pdb_id_to_image
 argument_list|(
 name|args
 index|[

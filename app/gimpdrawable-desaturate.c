@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -79,7 +79,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimage_active_drawable
+name|gimp_image_active_drawable
 argument_list|(
 name|gimage
 argument_list|)

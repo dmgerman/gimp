@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
@@ -368,7 +368,7 @@ name|gdisplay_close_warning_dialog
 argument_list|(
 name|g_basename
 argument_list|(
-name|gimage_filename
+name|gimp_image_filename
 argument_list|(
 name|gdisp
 operator|->
