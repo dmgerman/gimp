@@ -102,7 +102,7 @@ value|(GIMP_CHECK_TYPE ((obj), GIMP_TYPE_BRUSH_PIXMAP))
 end_define
 
 begin_function_decl
-name|guint
+name|GtkType
 name|gimp_brush_pixmap_get_type
 parameter_list|(
 name|void

@@ -58,7 +58,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b9fec970103
+DECL|enum|__anon29f386580103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -328,8 +328,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_brush_get_type (void)
 name|GtkType
+DECL|function|gimp_brush_get_type (void)
 name|gimp_brush_get_type
 parameter_list|(
 name|void
@@ -338,6 +338,8 @@ block|{
 specifier|static
 name|GtkType
 name|type
+init|=
+literal|0
 decl_stmt|;
 if|if
 condition|(
@@ -345,6 +347,8 @@ operator|!
 name|type
 condition|)
 block|{
+specifier|static
+specifier|const
 name|GtkTypeInfo
 name|info
 init|=
@@ -371,8 +375,15 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_brush_init
 block|,
+comment|/* reserved_1 */
 name|NULL
 block|,
+comment|/* reserved_2 */
+name|NULL
+block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
 name|NULL
 block|}
 decl_stmt|;

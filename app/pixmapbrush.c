@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbrushhose.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -701,17 +707,35 @@ decl_stmt|;
 name|int
 name|opacity
 decl_stmt|;
+name|GimpBrushHose
+modifier|*
+name|brush
+decl_stmt|;
 name|pr
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* ttemp hack just for kicks. remove */
-comment|/*  paint_core->brush = gimp_brush_list_get_brush_by_index(brush_list,       (rand()% gimp_brush_list_length(brush_list))); */
+if|if
+condition|(
+name|GIMP_IS_BRUSH_PIXMAP
+argument_list|(
+name|paint_core
+operator|->
+name|brush
+argument_list|)
+condition|)
+block|{
+name|printf
+argument_list|(
+literal|"looks like were a pixmap\n"
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
 operator|(
-name|GIMP_IS_BRUSH_PIXMAP
+name|GIMP_IS_BRUSH_HOSE
 argument_list|(
 name|paint_core
 operator|->
@@ -719,7 +743,15 @@ name|brush
 argument_list|)
 operator|)
 condition|)
-return|return;
+block|{
+name|printf
+argument_list|(
+literal|"not gimpbrushhose apparently...but why not i have no idea\n"
+argument_list|)
+expr_stmt|;
+block|}
+comment|// brush = GIMP_BRUSH_HOSE(paint_core->brush);
+comment|//paint_core->brush = gimp_brush_list_get_brush_by_index(&(GIMP_BRUSH_HOSE(brush))->brush_list, 0);
 comment|/* We always need a destination image */
 if|if
 condition|(
@@ -918,14 +950,19 @@ name|NULL
 expr_stmt|;
 name|pixmapbrush
 operator|=
+name|GIMP_BRUSH_PIXMAP
+argument_list|(
 name|brush
+argument_list|)
 expr_stmt|;
-empty_stmt|;
 name|pixmap_data
 operator|=
 name|gimp_brush_pixmap_get_pixmap
 argument_list|(
+name|GIMP_BRUSH_PIXMAP
+argument_list|(
 name|brush
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|position
