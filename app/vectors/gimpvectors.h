@@ -755,7 +755,6 @@ name|ArtVpath
 modifier|*
 name|gimp_vectors_to_art_vpath
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpvectors.c  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *   * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpvectors.c  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0e88f0103
+DECL|enum|__anon298c38910103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -3805,16 +3805,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * gimp_vectors_to_art_vpath: Create an ArtVpath from a GimpVectors object.  * @vectors: The source path  *  * Traverses the stroke list of a GimpVector object, adding nodes to an   * ArtVpath as it goes.  * The destination path is allocated inside this function, and must be   * freed after use.   *   * Return value: Newly allocated ArtVpath.  */
+comment|/*  * gimp_vectors_to_art_vpath: Create an ArtVpath from a GimpVectors object.  * @vectors: The source path  *  * Traverses the stroke list of a GimpVector object, adding nodes to an  * ArtVpath as it goes.  * The destination path is allocated inside this function, and must be  * freed after use.  *  * Return value: Newly allocated ArtVpath.  */
 end_comment
 
 begin_function
 name|ArtVpath
 modifier|*
-DECL|function|gimp_vectors_to_art_vpath (const GimpVectors * vectors)
+DECL|function|gimp_vectors_to_art_vpath (GimpVectors * vectors)
 name|gimp_vectors_to_art_vpath
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -3831,14 +3830,16 @@ name|cur_stroke
 decl_stmt|;
 name|guint
 name|num_points
-init|=
+decl_stmt|;
+name|num_points
+operator|=
 name|g_list_length
 argument_list|(
 name|vectors
 operator|->
 name|strokes
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|vec
 operator|=
 name|art_new
@@ -3853,7 +3854,7 @@ argument_list|(
 name|vectors
 argument_list|)
 expr_stmt|;
-comment|/* Get the list of Strokes in the vector, and create the equivalent     * ArtVpath node */
+comment|/* Get the list of Strokes in the vector, and create the equivalent    * ArtVpath node */
 for|for
 control|(
 name|cur_stroke
@@ -3878,13 +3879,10 @@ argument_list|)
 control|)
 block|{
 comment|/* Add this stroke to the art_vpath */
-name|GIMP_STROKE_GET_CLASS
+name|gimp_stroke_to_art_point
 argument_list|(
 name|cur_stroke
-argument_list|)
-operator|->
-name|to_art_point
-argument_list|(
+argument_list|,
 name|vec
 argument_list|)
 expr_stmt|;

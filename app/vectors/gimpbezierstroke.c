@@ -521,6 +521,11 @@ specifier|static
 name|void
 name|gimp_bezier_stroke_to_art_point
 parameter_list|(
+specifier|const
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|,
 name|ArtVpath
 modifier|*
 name|vec
@@ -7244,9 +7249,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bezier_stroke_to_art_point (ArtVpath * vec)
+DECL|function|gimp_bezier_stroke_to_art_point (const GimpStroke * stroke,ArtVpath * vec)
 name|gimp_bezier_stroke_to_art_point
 parameter_list|(
+specifier|const
+name|GimpStroke
+modifier|*
+name|stroke
+parameter_list|,
 name|ArtVpath
 modifier|*
 name|vec
@@ -7254,7 +7264,7 @@ parameter_list|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"gimp_bezier_stroke_to_art_point: default implementation\n"
+literal|"gimp_bezier_stroke_to_art_point: implement me!\n"
 argument_list|)
 expr_stmt|;
 return|return;
