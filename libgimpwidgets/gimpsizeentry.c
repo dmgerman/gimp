@@ -48,7 +48,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2864880103
+DECL|enum|__anon2a348b760103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -748,8 +748,7 @@ name|gse
 operator|=
 name|gtk_type_new
 argument_list|(
-name|gimp_size_entry_get_type
-argument_list|()
+name|GIMP_TYPE_SIZE_ENTRY
 argument_list|)
 expr_stmt|;
 name|gse
