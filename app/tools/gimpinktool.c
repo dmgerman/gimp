@@ -6446,7 +6446,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29f5676c0103
+DECL|enum|__anon297bcb2a0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -8359,9 +8359,9 @@ name|standard_arrow_keys_func
 expr_stmt|;
 name|tool
 operator|->
-name|toggle_key_func
+name|modifier_key_func
 operator|=
-name|standard_toggle_key_func
+name|standard_modifier_key_func
 expr_stmt|;
 name|tool
 operator|->

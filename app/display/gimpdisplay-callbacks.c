@@ -1621,7 +1621,6 @@ name|state
 operator||=
 name|GDK_MOD1_MASK
 expr_stmt|;
-break|break;
 case|case
 name|GDK_Shift_L
 case|:
@@ -1632,6 +1631,17 @@ name|state
 operator||=
 name|GDK_SHIFT_MASK
 expr_stmt|;
+case|case
+name|GDK_Control_L
+case|:
+case|case
+name|GDK_Control_R
+case|:
+name|state
+operator||=
+name|GDK_CONTROL_MASK
+expr_stmt|;
+comment|/* For all modifier keys: call the tools modifier_key_func */
 if|if
 condition|(
 name|active_tool
@@ -1649,7 +1659,7 @@ call|(
 modifier|*
 name|active_tool
 operator|->
-name|toggle_key_func
+name|modifier_key_func
 call|)
 argument_list|(
 name|active_tool
@@ -1687,17 +1697,6 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-break|break;
-case|case
-name|GDK_Control_L
-case|:
-case|case
-name|GDK_Control_R
-case|:
-name|state
-operator||=
-name|GDK_CONTROL_MASK
-expr_stmt|;
 break|break;
 block|}
 comment|/*  We need this here in case of accelerators  */
@@ -1742,7 +1741,6 @@ operator|&=
 operator|~
 name|GDK_MOD1_MASK
 expr_stmt|;
-break|break;
 case|case
 name|GDK_Shift_L
 case|:
@@ -1756,6 +1754,20 @@ operator|&=
 operator|~
 name|GDK_SHIFT_MASK
 expr_stmt|;
+case|case
+name|GDK_Control_L
+case|:
+case|case
+name|GDK_Control_R
+case|:
+name|kevent
+operator|->
+name|state
+operator|&=
+operator|~
+name|GDK_CONTROL_MASK
+expr_stmt|;
+comment|/* For all modifier keys: call the tools modifier_key_func */
 if|if
 condition|(
 name|active_tool
@@ -1773,7 +1785,7 @@ call|(
 modifier|*
 name|active_tool
 operator|->
-name|toggle_key_func
+name|modifier_key_func
 call|)
 argument_list|(
 name|active_tool
@@ -1811,20 +1823,6 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-break|break;
-case|case
-name|GDK_Control_L
-case|:
-case|case
-name|GDK_Control_R
-case|:
-name|kevent
-operator|->
-name|state
-operator|&=
-operator|~
-name|GDK_CONTROL_MASK
-expr_stmt|;
 break|break;
 block|}
 name|return_val

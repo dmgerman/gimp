@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c371a2f0103
+DECL|enum|__anon2aaa7afc0103
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -254,12 +254,12 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|ToggleKeyFunc
+DECL|typedef|ModifierKeyFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|ToggleKeyFunc
+name|ModifierKeyFunc
 function_decl|)
 parameter_list|(
 name|Tool

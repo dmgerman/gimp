@@ -2925,8 +2925,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|standard_toggle_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
-name|standard_toggle_key_func
+DECL|function|standard_modifier_key_func (Tool * tool,GdkEventKey * kevent,gpointer gdisp_ptr)
+name|standard_modifier_key_func
 parameter_list|(
 name|Tool
 modifier|*

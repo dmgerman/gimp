@@ -2961,6 +2961,8 @@ argument_list|,
 name|GDK_POINTER_MOTION_MASK
 operator||
 name|GDK_POINTER_MOTION_HINT_MASK
+operator||
+name|GDK_KEY_RELEASE_MASK
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect

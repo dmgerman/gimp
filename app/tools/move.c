@@ -2103,9 +2103,9 @@ name|edit_sel_arrow_keys_func
 expr_stmt|;
 name|tool
 operator|->
-name|toggle_key_func
+name|modifier_key_func
 operator|=
-name|standard_toggle_key_func
+name|standard_modifier_key_func
 expr_stmt|;
 name|tool
 operator|->

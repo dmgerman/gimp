@@ -234,9 +234,9 @@ DECL|member|arrow_keys_func
 name|ArrowKeysFunc
 name|arrow_keys_func
 decl_stmt|;
-DECL|member|toggle_key_func
-name|ToggleKeyFunc
-name|toggle_key_func
+DECL|member|modifier_key_func
+name|ModifierKeyFunc
+name|modifier_key_func
 decl_stmt|;
 DECL|member|cursor_update_func
 name|CursorUpdateFunc
@@ -454,7 +454,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|standard_toggle_key_func
+name|standard_modifier_key_func
 parameter_list|(
 name|Tool
 modifier|*
