@@ -108,6 +108,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|plug_in_progress_message
+parameter_list|(
+name|PlugIn
+modifier|*
+name|plug_in
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|message
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
