@@ -145,7 +145,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b9fb1b0103
+DECL|enum|__anon295976380103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -2411,7 +2411,8 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|gtk_object_unref
+comment|/*  Layers are normally deleted by removing them from the associated       image. The only case where layer_delete() is useful is if you want       to remove a floating layer object that has not been added to an       image yet. We use gtk_object_sink() for this reason here.    */
+name|gtk_object_sink
 argument_list|(
 name|GTK_OBJECT
 argument_list|(

@@ -2006,6 +2006,15 @@ name|success
 operator|=
 name|FALSE
 expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+name|layer_delete
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -2048,7 +2057,7 @@ literal|"gimp_layer_delete"
 block|,
 literal|"Delete a layer."
 block|,
-literal|"This procedure is obsolete and does nothing. Layers are automatically deleted when removed from an image or if the associated image is destroyed."
+literal|"This procedure deletes the specified layer. This must not be done if the gimage containing this layer was already deleted or if the layer was already removed from the image. The only case in which this procedure is useful is if you want to get rid of a layer which has not yet been added to an image."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

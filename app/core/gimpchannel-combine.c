@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289e32d50103
+DECL|enum|__anon297d9c410103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -1184,7 +1184,8 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
-name|gtk_object_unref
+comment|/*  Channels are normally deleted by removing them from the associated       image. The only case where channel_delete() is useful is if you want       to remove a floating channel object that has not been added to an       image yet. We use gtk_object_sink() for this reason here.    */
+name|gtk_object_sink
 argument_list|(
 name|GTK_OBJECT
 argument_list|(

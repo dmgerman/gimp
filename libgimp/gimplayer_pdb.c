@@ -491,7 +491,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_delete:  * @layer_ID: The layer to delete.  *  * Delete a layer.  *  * This procedure is obsolete and does nothing. Layers are  * automatically deleted when removed from an image or if the  * associated image is destroyed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_delete:  * @layer_ID: The layer to delete.  *  * Delete a layer.  *  * This procedure deletes the specified layer. This must not be done if  * the gimage containing this layer was already deleted or if the layer  * was already removed from the image. The only case in which this  * procedure is useful is if you want to get rid of a layer which has  * not yet been added to an image.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
