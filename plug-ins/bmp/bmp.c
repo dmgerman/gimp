@@ -144,6 +144,30 @@ name|interactive_bmp
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|Bitmap_File_Head
+name|struct
+name|Bitmap_File_Head_Struct
+name|Bitmap_File_Head
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|Bitmap_Head
+name|struct
+name|Bitmap_Head_Struct
+name|Bitmap_Head
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|Bitmap_OS2_Head
+name|struct
+name|Bitmap_OS2_Head_Struct
+name|Bitmap_OS2_Head
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* Declare some local functions.  */
 end_comment

@@ -68,6 +68,7 @@ end_define
 
 begin_function
 DECL|function|g_serial_copy_to_n (char * dest,char * source,long data_size,long n_items)
+specifier|static
 name|long
 name|g_serial_copy_to_n
 parameter_list|(
@@ -661,6 +662,24 @@ block|,
 literal|8
 block|}
 decl_stmt|;
+if|if
+condition|(
+name|item
+operator|->
+name|type
+operator|>=
+name|GSERIAL_STRING
+condition|)
+return|return
+name|sizes
+index|[
+name|item
+operator|->
+name|type
+operator|-
+literal|95
+index|]
+return|;
 return|return
 name|sizes
 index|[
@@ -903,6 +922,20 @@ operator|->
 name|type
 operator|>=
 name|GSERIAL_LAST_TYPE
+operator|||
+operator|(
+name|item
+operator|->
+name|type
+operator|>
+name|GSERIAL_DOUBLE
+operator|&&
+name|item
+operator|->
+name|type
+operator|<
+name|GSERIAL_STRING
+operator|)
 condition|)
 block|{
 name|g_warning
@@ -1327,7 +1360,7 @@ end_function
 
 begin_function
 DECL|function|g_deserialize (GSerialDescription * d,void * struct_data,void * serial)
-name|void
+name|long
 name|g_deserialize
 parameter_list|(
 name|GSerialDescription
@@ -1394,6 +1427,17 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+return|return
+operator|(
+name|in_buf
+operator|-
+operator|(
+name|char
+operator|*
+operator|)
+name|serial
+operator|)
+return|;
 block|}
 end_function
 

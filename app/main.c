@@ -1692,7 +1692,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0933d90108
+DECL|struct|__anon2ba0b4450108
 block|{
 DECL|member|test_gint32
 name|gint32
@@ -1765,7 +1765,7 @@ literal|51
 block|,
 literal|51
 block|,
-literal|6
+literal|101
 block|,
 literal|0
 block|,
@@ -1783,7 +1783,7 @@ literal|111
 block|,
 literal|0
 block|,
-literal|8
+literal|103
 block|,
 literal|0
 block|,

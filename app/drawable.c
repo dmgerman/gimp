@@ -55,10 +55,23 @@ modifier|*
 name|drawable
 parameter_list|)
 block|{
+if|if
+condition|(
+name|drawable
+condition|)
 return|return
 name|drawable
 operator|->
 name|ID
+return|;
+else|else
+name|g_warning
+argument_list|(
+literal|"drawable_ID called on a NULL pointer"
+argument_list|)
+expr_stmt|;
+return|return
+literal|0
 return|;
 block|}
 end_function

@@ -296,8 +296,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
+DECL|struct|Bitmap_File_Head_Struct
+specifier|extern
 struct|struct
-DECL|struct|__anon292a46ff0108
+name|Bitmap_File_Head_Struct
 block|{
 DECL|member|bfSize
 name|unsigned
@@ -330,8 +332,10 @@ struct|;
 end_struct
 
 begin_struct
+DECL|struct|Bitmap_Head_Struct
+specifier|extern
 struct|struct
-DECL|struct|__anon292a46ff0208
+name|Bitmap_Head_Struct
 block|{
 DECL|member|biWidth
 name|unsigned
@@ -401,8 +405,10 @@ struct|;
 end_struct
 
 begin_struct
+DECL|struct|Bitmap_OS2_Head_Struct
+specifier|extern
 struct|struct
-DECL|struct|__anon292a46ff0308
+name|Bitmap_OS2_Head_Struct
 block|{
 DECL|member|bcWidth
 name|unsigned

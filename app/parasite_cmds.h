@@ -47,8 +47,11 @@ end_decl_stmt
 begin_endif
 endif|#
 directive|endif
-endif|__PARASITE_CMDS_H__
 end_endif
+
+begin_comment
+comment|/* __PARASITE_CMDS_H__ */
+end_comment
 
 end_unit
 

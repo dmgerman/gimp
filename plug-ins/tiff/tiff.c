@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5254020108
+DECL|struct|__anon2bbe40120108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5254020208
+DECL|struct|__anon2bbe40120208
 block|{
 DECL|member|run
 name|gint
@@ -72,7 +72,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5254020308
+DECL|struct|__anon2bbe40120308
 typedef|typedef
 struct|struct
 block|{
@@ -1978,7 +1978,7 @@ name|parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-literal|1
+name|PARASITE_PERSISTENT
 argument_list|,
 name|len
 argument_list|,

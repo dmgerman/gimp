@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cec5d40108
+DECL|struct|__anon2b62073b0108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cec5d40208
+DECL|struct|__anon2b62073b0208
 block|{
 DECL|member|run
 name|gint
@@ -1610,7 +1610,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29cec5d40308
+DECL|struct|__anon2b62073b0308
 block|{
 DECL|member|Width
 name|unsigned
@@ -1660,7 +1660,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29cec5d40408
+DECL|struct|__anon2b62073b0408
 block|{
 DECL|member|transparent
 name|int
@@ -3099,7 +3099,7 @@ name|parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|TRUE
+name|PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
