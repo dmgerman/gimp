@@ -184,7 +184,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_thumb_box_set_uris
+name|gimp_thumb_box_take_uris
 parameter_list|(
 name|GimpThumbBox
 modifier|*
