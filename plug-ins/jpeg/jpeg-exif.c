@@ -165,6 +165,23 @@ operator|!
 name|exif_data
 condition|)
 return|return;
+comment|/*    * Unfortunately libexif may return a non-null exif_data even if the file    * contains no exif data.  We check for validity by making sure it    * has an ExifVersion tag.   */
+if|if
+condition|(
+operator|!
+name|exif_content_get_entry
+argument_list|(
+name|exif_data
+operator|->
+name|ifd
+index|[
+name|EXIF_IFD_EXIF
+index|]
+argument_list|,
+name|EXIF_TAG_EXIF_VERSION
+argument_list|)
+condition|)
+return|return;
 name|gimp_metadata_store_exif
 argument_list|(
 name|image_ID
