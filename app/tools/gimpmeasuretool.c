@@ -484,7 +484,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Measure"
+literal|"/Tools/_Measure"
 argument_list|)
 argument_list|,
 name|NULL

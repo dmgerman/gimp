@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29335f9d0103
+DECL|enum|__anon2ae8a00f0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -679,7 +679,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools/Crop& Resize"
+literal|"/Tools/Transform Tools/_Crop& Resize"
 argument_list|)
 argument_list|,
 literal|"<shift>C"

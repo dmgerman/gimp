@@ -389,7 +389,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools/Move"
+literal|"/Tools/Transform Tools/_Move"
 argument_list|)
 argument_list|,
 literal|"M"

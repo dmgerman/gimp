@@ -216,7 +216,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/DodgeBurn"
+literal|"/Tools/Paint Tools/Dod_geBurn"
 argument_list|)
 argument_list|,
 literal|"<shift>D"

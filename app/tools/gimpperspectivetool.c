@@ -288,7 +288,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools/Perspective"
+literal|"/Tools/Transform Tools/_Perspective"
 argument_list|)
 argument_list|,
 literal|"<shift>P"

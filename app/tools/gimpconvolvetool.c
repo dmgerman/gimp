@@ -322,7 +322,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/Convolve"
+literal|"/Tools/Paint Tools/Con_volve"
 argument_list|)
 argument_list|,
 literal|"V"

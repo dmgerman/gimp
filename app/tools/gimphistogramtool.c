@@ -431,7 +431,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Color Tools/Histogram..."
+literal|"/Tools/Color Tools/_Histogram..."
 argument_list|)
 argument_list|,
 name|NULL

@@ -343,7 +343,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Selection Tools/Rect Select"
+literal|"/Tools/Selection Tools/_Rect Select"
 argument_list|)
 argument_list|,
 literal|"R"

@@ -333,7 +333,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Magnify"
+literal|"/Tools/M_agnify"
 argument_list|)
 argument_list|,
 name|NULL

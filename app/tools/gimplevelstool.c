@@ -794,7 +794,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Color Tools/Levels..."
+literal|"/Tools/Color Tools/_Levels..."
 argument_list|)
 argument_list|,
 name|NULL

@@ -409,7 +409,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Transform Tools/Rotate"
+literal|"/Tools/Transform Tools/_Rotate"
 argument_list|)
 argument_list|,
 literal|"<shift>R"

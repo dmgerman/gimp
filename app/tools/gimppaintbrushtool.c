@@ -143,7 +143,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/Paintbrush"
+literal|"/Tools/Paint Tools/_Paintbrush"
 argument_list|)
 argument_list|,
 literal|"P"

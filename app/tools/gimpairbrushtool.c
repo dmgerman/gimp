@@ -166,7 +166,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/Airbrush"
+literal|"/Tools/Paint Tools/_Airbrush"
 argument_list|)
 argument_list|,
 literal|"A"

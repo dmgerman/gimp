@@ -207,7 +207,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Selection Tools/Ellipse Select"
+literal|"/Tools/Selection Tools/_Ellipse Select"
 argument_list|)
 argument_list|,
 literal|"E"

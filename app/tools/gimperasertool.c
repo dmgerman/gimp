@@ -216,7 +216,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Paint Tools/Eraser"
+literal|"/Tools/Paint Tools/_Eraser"
 argument_list|)
 argument_list|,
 literal|"<shift>E"

@@ -341,7 +341,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Selection Tools/Free Select"
+literal|"/Tools/Selection Tools/_Free Select"
 argument_list|)
 argument_list|,
 literal|"F"

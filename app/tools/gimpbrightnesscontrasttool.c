@@ -300,7 +300,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Color Tools/Brightness-Contrast..."
+literal|"/Tools/Color Tools/B_rightness-Contrast..."
 argument_list|)
 argument_list|,
 name|NULL

@@ -705,7 +705,7 @@ argument_list|)
 argument_list|,
 name|N_
 argument_list|(
-literal|"/Tools/Color Tools/Curves..."
+literal|"/Tools/Color Tools/_Curves..."
 argument_list|)
 argument_list|,
 name|NULL

@@ -1317,7 +1317,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Repeat \"%s\""
+literal|"Re_peat \"%s\""
 argument_list|)
 argument_list|,
 name|basename
@@ -1329,7 +1329,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Re-show \"%s\""
+literal|"R_e-show \"%s\""
 argument_list|)
 argument_list|,
 name|basename
