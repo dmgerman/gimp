@@ -99,6 +99,16 @@ endif|#
 directive|endif
 end_endif
 
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* for G_OS_* */
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -160,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27948c140108
+DECL|struct|__anon289c05f10108
 block|{
 DECL|member|run
 name|gint

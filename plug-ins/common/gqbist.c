@@ -72,6 +72,25 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|PATH_MAX
+end_ifndef
+
+begin_define
+DECL|macro|PATH_MAX
+define|#
+directive|define
+name|PATH_MAX
+value|_MAX_PATH
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/** qbist renderer ***********************************************************/
 end_comment
@@ -138,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274fb0840103
+DECL|enum|__anon2c3abfd30103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -183,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274fb0840208
+DECL|struct|__anon2c3abfd30208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -222,7 +241,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274fb0840308
+DECL|struct|__anon2c3abfd30308
 block|{
 DECL|member|info
 name|ExpInfo
