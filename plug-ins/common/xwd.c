@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288a7f5a0108
+DECL|struct|__anon2c537a560108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -214,7 +214,7 @@ DECL|member|l_colormap_entries
 name|L_CARD32
 name|l_colormap_entries
 decl_stmt|;
-comment|/* Number of colours in colour table (?) */
+comment|/* Number of colors in color table (?) */
 DECL|member|l_ncolors
 name|L_CARD32
 name|l_ncolors
@@ -254,13 +254,13 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288a7f5a0208
+DECL|struct|__anon2c537a560208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
 name|l_pixel
 decl_stmt|;
-comment|/* Colour index */
+comment|/* Color index */
 DECL|member|l_red
 DECL|member|l_green
 DECL|member|l_blue
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288a7f5a0308
+DECL|struct|__anon2c537a560308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288a7f5a0408
+DECL|struct|__anon2c537a560408
 block|{
 DECL|member|npixel
 name|gint
@@ -510,7 +510,7 @@ specifier|static
 name|int
 name|set_pixelmap
 parameter_list|(
-name|int
+name|gint
 parameter_list|,
 name|L_XWDCOLOR
 modifier|*
@@ -523,7 +523,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gboolean
 name|get_pixelmap
 parameter_list|(
 name|L_CARD32
@@ -531,16 +531,13 @@ parameter_list|,
 name|PIXEL_MAP
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -685,7 +682,7 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -699,7 +696,7 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -713,7 +710,7 @@ parameter_list|(
 name|FILE
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -832,7 +829,7 @@ name|gint32
 parameter_list|,
 name|gint32
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -997,9 +994,11 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xwd_load"
 argument_list|,
-literal|"load file of the XWD file format"
+literal|"Loads files in the XWD (X Window Dump) format"
 argument_list|,
-literal|"load file of the XWD file format"
+literal|"Loads files in the XWD (X Window Dump) format. "
+literal|"XWD image files are produced by the program xwd. "
+literal|"Xwd is an X Window System window dumping utility."
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -1060,9 +1059,10 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_xwd_save"
 argument_list|,
-literal|"saves files in the XWD file format"
+literal|"Saves files in the XWD (X Window Dump) format"
 argument_list|,
-literal|"XWD saving handles all image types except \ those with alpha channels."
+literal|"XWD saving handles all image types except "
+literal|"those with alpha channels."
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
@@ -1498,7 +1498,7 @@ name|FILE
 modifier|*
 name|ifp
 decl_stmt|;
-name|int
+name|gint
 name|depth
 decl_stmt|,
 name|bpp
@@ -1762,7 +1762,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"can't read color entries"
+literal|"Can't read color entries"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2049,15 +2049,9 @@ expr_stmt|;
 if|if
 condition|(
 name|xwdcolmap
-operator|!=
-name|NULL
 condition|)
 name|g_free
 argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
 name|xwdcolmap
 argument_list|)
 expr_stmt|;
@@ -2075,7 +2069,9 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"load_image (xwd): XWD-file %s has format %d, depth %d\n\ and bits per pixel %d.\nCurrently this is not supported.\n"
+literal|"XWD-file %s has format %d, depth %d\n"
+literal|"and bits per pixel %d.\n"
+literal|"Currently this is not supported."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2084,7 +2080,7 @@ name|filename
 argument_list|)
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|xwdhdr
 operator|.
@@ -2106,16 +2102,12 @@ name|temp
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 return|return
-operator|(
 name|image_ID
-operator|)
 return|;
 block|}
 end_function
@@ -2148,7 +2140,7 @@ decl_stmt|;
 name|gint
 name|retval
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|temp
 decl_stmt|;
@@ -2205,9 +2197,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 break|break;
 block|}
@@ -2447,9 +2437,7 @@ literal|0
 operator|)
 expr_stmt|;
 return|return
-operator|(
 name|c
-operator|)
 return|;
 block|}
 end_function
@@ -2518,9 +2506,7 @@ literal|0
 operator|)
 expr_stmt|;
 return|return
-operator|(
 name|c
-operator|)
 return|;
 block|}
 end_function
@@ -2571,9 +2557,7 @@ literal|0
 operator|)
 expr_stmt|;
 return|return
-operator|(
 name|c
-operator|)
 return|;
 block|}
 end_function
@@ -2764,7 +2748,7 @@ modifier|*
 name|xwdhdr
 parameter_list|)
 block|{
-name|int
+name|gint
 name|j
 decl_stmt|,
 name|err
@@ -2859,7 +2843,7 @@ modifier|*
 name|xwdhdr
 parameter_list|)
 block|{
-name|int
+name|gint
 name|j
 decl_stmt|,
 name|hdrpad
@@ -2989,19 +2973,19 @@ modifier|*
 name|colormap
 parameter_list|)
 block|{
-name|int
+name|gint
 name|j
 decl_stmt|,
 name|err
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|flag_is_bad
 decl_stmt|,
 name|index_is_bad
 decl_stmt|;
-name|int
+name|gint
 name|indexed
 init|=
 operator|(
@@ -3012,7 +2996,7 @@ operator|<=
 literal|8
 operator|)
 decl_stmt|;
-name|long
+name|glong
 name|colmappos
 init|=
 name|ftell
@@ -3503,7 +3487,7 @@ operator|&
 name|err
 argument_list|)
 expr_stmt|;
-comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7)) 	 flag_is_bad++; */
+comment|/* if ((colormap[j].l_flags == 0) || (colormap[j].l_flags> 7))          flag_is_bad++; */
 if|if
 condition|(
 name|indexed
@@ -4199,9 +4183,9 @@ comment|/* Returns number of colors kept in the map (up to 256) */
 end_comment
 
 begin_function
-DECL|function|set_pixelmap (int ncols,L_XWDCOLOR * xwdcol,PIXEL_MAP * pixelmap)
 specifier|static
-name|int
+name|gint
+DECL|function|set_pixelmap (int ncols,L_XWDCOLOR * xwdcol,PIXEL_MAP * pixelmap)
 name|set_pixelmap
 parameter_list|(
 name|int
@@ -4216,7 +4200,7 @@ modifier|*
 name|pixelmap
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -4231,7 +4215,7 @@ decl_stmt|;
 name|memset
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|pixelmap
@@ -4485,7 +4469,7 @@ directive|ifdef
 name|XWD_COL_DEBUG
 name|printf
 argument_list|(
-literal|"Colours in pixelmap: %d\n"
+literal|"Colors in pixelmap: %d\n"
 argument_list|,
 name|pixelmap
 operator|->
@@ -4581,27 +4565,25 @@ expr_stmt|;
 endif|#
 directive|endif
 return|return
-operator|(
 name|pixelmap
 operator|->
 name|npixel
-operator|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/* Search a pixel value in the pixel map. Returns 0 if the */
+comment|/* Search a pixel value in the pixel map. Returns FALSE if the */
 end_comment
 
 begin_comment
-comment|/* pixelval was not found in map. Returns 1 if found. */
+comment|/* pixelval was not found in map. Returns TRUE if found. */
 end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|get_pixelmap (L_CARD32 pixelval,PIXEL_MAP * pixelmap,unsigned char * red,unsigned char * green,unsigned char * blue)
+name|gboolean
+DECL|function|get_pixelmap (L_CARD32 pixelval,PIXEL_MAP * pixelmap,guchar * red,guchar * green,guchar * blue)
 name|get_pixelmap
 parameter_list|(
 name|L_CARD32
@@ -4611,18 +4593,15 @@ name|PIXEL_MAP
 modifier|*
 name|pixelmap
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|red
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|green
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|blue
 parameter_list|)
@@ -4647,9 +4626,7 @@ operator|==
 literal|0
 condition|)
 return|return
-operator|(
-literal|0
-operator|)
+name|FALSE
 return|;
 if|if
 condition|(
@@ -4666,9 +4643,7 @@ index|]
 operator|)
 condition|)
 return|return
-operator|(
-literal|0
-operator|)
+name|FALSE
 return|;
 name|low
 operator|=
@@ -4771,15 +4746,11 @@ operator|->
 name|blue
 expr_stmt|;
 return|return
-operator|(
-literal|1
-operator|)
+name|TRUE
 return|;
 block|}
 return|return
-operator|(
-literal|0
-operator|)
+name|FALSE
 return|;
 block|}
 end_function
@@ -4795,8 +4766,7 @@ name|image_ID
 parameter_list|)
 block|{
 specifier|static
-name|unsigned
-name|char
+name|guchar
 name|BWColorMap
 index|[
 literal|2
@@ -4847,20 +4817,19 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|init_color_table256 (L_XWDFILEHEADER * xwdhdr,unsigned char * ColorMap)
+DECL|function|init_color_table256 (L_XWDFILEHEADER * xwdhdr,guchar * ColorMap)
 name|init_color_table256
 parameter_list|(
 name|L_XWDFILEHEADER
 modifier|*
 name|xwdhdr
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|ColorMap
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -4869,14 +4838,14 @@ name|k
 decl_stmt|,
 name|cuind
 decl_stmt|;
-name|int
+name|gint
 name|redshift
 decl_stmt|,
 name|greenshift
 decl_stmt|,
 name|blueshift
 decl_stmt|;
-name|int
+name|gint
 name|maxred
 decl_stmt|,
 name|maxgreen
@@ -4992,7 +4961,7 @@ block|}
 name|memset
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|ColorMap
@@ -5143,15 +5112,14 @@ modifier|*
 name|xwdcolmap
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ncols
 decl_stmt|,
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|ColorMap
 index|[
 literal|256
@@ -5541,9 +5509,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|image_ID
-operator|)
 return|;
 block|}
 end_function
@@ -5581,16 +5547,14 @@ name|int
 name|pix8
 decl_stmt|;
 specifier|register
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
 modifier|*
 name|src
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|c1
 decl_stmt|,
 name|c2
@@ -5599,7 +5563,7 @@ name|c3
 decl_stmt|,
 name|c4
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -5610,22 +5574,21 @@ name|scan_lines
 decl_stmt|,
 name|tile_height
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|,
 name|ncols
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|temp
 init|=
 name|ident
 decl_stmt|;
 comment|/* Just to satisfy lint/gcc */
-name|unsigned
-name|char
+name|guchar
 name|bit2byte
 index|[
 literal|256
@@ -5633,15 +5596,14 @@ operator|*
 literal|8
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|,
 modifier|*
 name|scanline
 decl_stmt|;
-name|int
+name|gint
 name|err
 init|=
 literal|0
@@ -5720,13 +5682,10 @@ argument_list|)
 expr_stmt|;
 name|scanline
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|xwdhdr
 operator|->
 name|l_bytes_per_line
@@ -5734,18 +5693,6 @@ operator|+
 literal|8
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|scanline
-operator|==
-name|NULL
-condition|)
-return|return
-operator|(
-operator|-
-literal|1
-operator|)
-return|;
 name|ncols
 operator|=
 name|xwdhdr
@@ -5790,7 +5737,7 @@ expr_stmt|;
 name|temp
 operator|=
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|bit2byte
@@ -6311,7 +6258,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"EOF encountered on "
+literal|"EOF encountered on reading"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6321,14 +6268,12 @@ name|drawable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|err
 condition|?
 operator|-
 literal|1
 else|:
 name|image_ID
-operator|)
 return|;
 block|}
 end_function
@@ -6361,7 +6306,7 @@ modifier|*
 name|xwdcolmap
 parameter_list|)
 block|{
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -6372,25 +6317,24 @@ name|tile_height
 decl_stmt|,
 name|scan_lines
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|,
 name|ncols
 decl_stmt|;
-name|int
-name|greyscale
+name|gint
+name|grayscale
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|err
 init|=
 literal|0
@@ -6431,8 +6375,8 @@ name|xwdhdr
 operator|->
 name|l_pixmap_height
 expr_stmt|;
-comment|/* This could also be a greyscale image. Check it */
-name|greyscale
+comment|/* This could also be a grayscale image. Check it */
+name|grayscale
 operator|=
 literal|0
 expr_stmt|;
@@ -6529,7 +6473,7 @@ operator|)
 condition|)
 break|break;
 block|}
-name|greyscale
+name|grayscale
 operator|=
 operator|(
 name|j
@@ -6548,7 +6492,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|greyscale
+name|grayscale
 condition|?
 name|GIMP_GRAY
 else|:
@@ -6581,7 +6525,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|greyscale
+name|grayscale
 condition|)
 block|{
 name|ncols
@@ -6728,7 +6672,7 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|i
@@ -6737,7 +6681,7 @@ literal|1
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|height
 argument_list|)
@@ -6814,14 +6758,12 @@ name|drawable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|err
 condition|?
 operator|-
 literal|1
 else|:
 name|image_ID
-operator|)
 return|;
 block|}
 end_function
@@ -6855,14 +6797,13 @@ name|xwdcolmap
 parameter_list|)
 block|{
 specifier|register
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
 name|lsbyte_first
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -6879,7 +6820,7 @@ name|c1
 decl_stmt|,
 name|ncols
 decl_stmt|;
-name|int
+name|gint
 name|red
 decl_stmt|,
 name|green
@@ -6892,40 +6833,36 @@ name|greenval
 decl_stmt|,
 name|blueval
 decl_stmt|;
-name|int
+name|gint
 name|maxred
 decl_stmt|,
 name|maxgreen
 decl_stmt|,
 name|maxblue
 decl_stmt|;
-name|int
+name|gint
 name|tile_height
 decl_stmt|,
 name|scan_lines
 decl_stmt|;
-name|unsigned
-name|long
+name|gulong
 name|redmask
 decl_stmt|,
 name|greenmask
 decl_stmt|,
 name|bluemask
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 name|redshift
 decl_stmt|,
 name|greenshift
 decl_stmt|,
 name|blueshift
 decl_stmt|;
-name|unsigned
-name|long
+name|gulong
 name|maxval
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|ColorMap
 decl_stmt|,
@@ -6935,7 +6872,7 @@ decl_stmt|,
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|err
 init|=
 literal|0
@@ -7023,43 +6960,9 @@ literal|3
 expr_stmt|;
 name|ColorMap
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new0
 argument_list|(
-name|maxval
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|ColorMap
-operator|==
-name|NULL
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"No memory for mapping colors"
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-operator|-
-literal|1
-operator|)
-return|;
-block|}
-name|memset
-argument_list|(
-name|ColorMap
-argument_list|,
-literal|0
+name|guchar
 argument_list|,
 name|maxval
 argument_list|)
@@ -7744,14 +7647,12 @@ name|drawable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|err
 condition|?
 operator|-
 literal|1
 else|:
 name|image_ID
-operator|)
 return|;
 block|}
 end_function
@@ -7785,14 +7686,13 @@ name|xwdcolmap
 parameter_list|)
 block|{
 specifier|register
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
 name|lsbyte_first
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -7811,7 +7711,7 @@ name|c2
 decl_stmt|,
 name|c3
 decl_stmt|;
-name|int
+name|gint
 name|tile_height
 decl_stmt|,
 name|scan_lines
@@ -7819,7 +7719,7 @@ decl_stmt|;
 name|L_CARD32
 name|pixelval
 decl_stmt|;
-name|int
+name|gint
 name|red
 decl_stmt|,
 name|green
@@ -7828,31 +7728,28 @@ name|blue
 decl_stmt|,
 name|ncols
 decl_stmt|;
-name|int
+name|gint
 name|maxred
 decl_stmt|,
 name|maxgreen
 decl_stmt|,
 name|maxblue
 decl_stmt|;
-name|unsigned
-name|long
+name|gulong
 name|redmask
 decl_stmt|,
 name|greenmask
 decl_stmt|,
 name|bluemask
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 name|redshift
 decl_stmt|,
 name|greenshift
 decl_stmt|,
 name|blueshift
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|redmap
 index|[
 literal|256
@@ -7868,15 +7765,14 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
 name|PIXEL_MAP
 name|pixel_map
 decl_stmt|;
-name|int
+name|gint
 name|err
 init|=
 literal|0
@@ -8551,7 +8447,7 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|i
@@ -8560,7 +8456,7 @@ literal|1
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|height
 argument_list|)
@@ -8837,7 +8733,7 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|i
@@ -8846,7 +8742,7 @@ literal|1
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|height
 argument_list|)
@@ -8924,14 +8820,12 @@ name|drawable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|err
 condition|?
 operator|-
 literal|1
 else|:
 name|image_ID
-operator|)
 return|;
 block|}
 end_function
@@ -8965,8 +8859,7 @@ name|xwdcolmap
 parameter_list|)
 block|{
 specifier|register
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|,
@@ -8976,7 +8869,7 @@ name|inmask
 decl_stmt|,
 name|do_reverse
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -8991,26 +8884,26 @@ name|plane
 decl_stmt|,
 name|fromright
 decl_stmt|;
-name|int
+name|gint
 name|tile_height
 decl_stmt|,
 name|tile_start
 decl_stmt|,
 name|tile_end
 decl_stmt|;
-name|int
+name|gint
 name|indexed
 decl_stmt|,
 name|bytes_per_pixel
 decl_stmt|;
-name|int
+name|gint
 name|maxred
 decl_stmt|,
 name|maxgreen
 decl_stmt|,
 name|maxblue
 decl_stmt|;
-name|int
+name|gint
 name|red
 decl_stmt|,
 name|green
@@ -9021,35 +8914,31 @@ name|ncols
 decl_stmt|,
 name|standard_rgb
 decl_stmt|;
-name|long
+name|glong
 name|data_offset
 decl_stmt|,
 name|plane_offset
 decl_stmt|,
 name|tile_offset
 decl_stmt|;
-name|unsigned
-name|long
+name|gulong
 name|redmask
 decl_stmt|,
 name|greenmask
 decl_stmt|,
 name|bluemask
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 name|redshift
 decl_stmt|,
 name|greenshift
 decl_stmt|,
 name|blueshift
 decl_stmt|;
-name|unsigned
-name|long
+name|gulong
 name|g
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|redmap
 index|[
 literal|256
@@ -9065,15 +8954,13 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|bit_reverse
 index|[
 literal|256
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|xwddata
 decl_stmt|,
@@ -9089,7 +8976,7 @@ decl_stmt|;
 name|PIXEL_MAP
 name|pixel_map
 decl_stmt|;
-name|int
+name|gint
 name|err
 init|=
 literal|0
@@ -9134,10 +9021,8 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 name|width
 operator|=
@@ -10267,19 +10152,15 @@ block|}
 block|}
 name|gimp_progress_update
 argument_list|(
-call|(
-name|double
-call|)
-argument_list|(
+operator|(
+name|gdouble
+operator|)
 name|tile_end
-argument_list|)
 operator|/
-call|(
-name|double
-call|)
-argument_list|(
+operator|(
+name|gdouble
+operator|)
 name|height
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_set_rect
@@ -10331,14 +10212,12 @@ name|drawable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|err
 condition|?
 operator|-
 literal|1
 else|:
 name|image_ID
-operator|)
 return|;
 block|}
 end_function
@@ -10346,7 +10225,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_index (FILE * ofp,gint32 image_ID,gint32 drawable_ID,int grey)
+DECL|function|save_index (FILE * ofp,gint32 image_ID,gint32 drawable_ID,gint gray)
 name|save_index
 parameter_list|(
 name|FILE
@@ -10359,11 +10238,11 @@ parameter_list|,
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|int
-name|grey
+name|gint
+name|gray
 parameter_list|)
 block|{
-name|int
+name|gint
 name|height
 decl_stmt|,
 name|width
@@ -10376,18 +10255,17 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|ncolors
 decl_stmt|,
 name|vclass
 decl_stmt|;
-name|long
+name|glong
 name|tmp
 init|=
 literal|0
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|,
@@ -10482,13 +10360,10 @@ name|src
 operator|=
 name|data
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|tile_height
 operator|*
 name|width
@@ -10517,7 +10392,7 @@ expr_stmt|;
 comment|/* Fill XWD-color map */
 if|if
 condition|(
-name|grey
+name|gray
 condition|)
 block|{
 name|vclass
@@ -10938,7 +10813,7 @@ literal|0
 condition|)
 comment|/* Get more data */
 block|{
-name|int
+name|gint
 name|scan_lines
 init|=
 operator|(
@@ -11028,12 +10903,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|i
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|height
 argument_list|)
@@ -11061,20 +10936,16 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error during writing indexed/grey image"
+literal|"Error during writing indexed/gray image"
 argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 block|}
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 block|}
 end_function
@@ -11096,7 +10967,7 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
-name|int
+name|gint
 name|height
 decl_stmt|,
 name|width
@@ -11107,13 +10978,12 @@ name|tile_height
 decl_stmt|,
 name|i
 decl_stmt|;
-name|long
+name|glong
 name|tmp
 init|=
 literal|0
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|,
@@ -11199,13 +11069,10 @@ name|src
 operator|=
 name|data
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|tile_height
 operator|*
 name|width
@@ -11424,7 +11291,7 @@ literal|0
 condition|)
 comment|/* Get more data */
 block|{
-name|int
+name|gint
 name|scan_lines
 init|=
 operator|(
@@ -11518,12 +11385,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|i
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|height
 argument_list|)
@@ -11556,15 +11423,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 block|}
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 block|}
 end_function
