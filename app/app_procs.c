@@ -95,7 +95,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool_manager.h"
 end_include
 
 begin_include
@@ -144,12 +144,6 @@ begin_include
 include|#
 directive|include
 file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"context_manager.h"
 end_include
 
 begin_include
@@ -458,9 +452,10 @@ name|the_gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Initialize the context system before loading any data  */
-name|context_manager_init
-argument_list|()
+name|tool_manager_init
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 comment|/*  Initialize the procedural database    *    We need to do this first because any of the init    *    procedures might install or query it as needed.    */
 name|app_init_update_status
@@ -575,7 +570,9 @@ name|no_interface
 condition|)
 block|{
 name|gui_restore
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 block|}
 comment|/* Parse the rest of the command line arguments as images to load */
@@ -621,7 +618,9 @@ name|no_interface
 condition|)
 block|{
 name|gui_post_init
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -687,7 +686,9 @@ name|no_interface
 condition|)
 block|{
 name|gui_shutdown
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 block|}
 name|module_db_free
@@ -696,17 +697,16 @@ expr_stmt|;
 name|gdisplays_delete
 argument_list|()
 expr_stmt|;
-name|context_manager_free
-argument_list|()
-expr_stmt|;
 name|plug_in_kill
 argument_list|()
 expr_stmt|;
 name|save_unitrc
 argument_list|()
 expr_stmt|;
-name|tools_exit
-argument_list|()
+name|tool_manager_exit
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -715,7 +715,9 @@ name|no_interface
 condition|)
 block|{
 name|gui_exit
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 block|}
 name|xcf_exit
@@ -778,7 +780,9 @@ operator|=
 name|TRUE
 expr_stmt|;
 name|gui_set_busy
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -863,7 +867,9 @@ name|void
 parameter_list|)
 block|{
 name|gui_unset_busy
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 comment|/* FIXME: gimp_busy HACK */
 name|gimp_busy

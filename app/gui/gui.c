@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -280,6 +286,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gui_display_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GDisplay
+modifier|*
+name|display
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  global variables  */
 end_comment
@@ -310,6 +335,32 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|gimp
+operator|->
+name|create_display_func
+operator|=
+name|gui_display_new
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+argument_list|,
+literal|"display_changed"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gui_display_changed
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* make sure the monitor resolution is valid */
 if|if
 condition|(
@@ -370,7 +421,9 @@ name|transparency_size
 argument_list|)
 expr_stmt|;
 name|dialogs_init
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|devices_init
 argument_list|()
@@ -509,21 +562,17 @@ name|filenames
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp
-operator|->
-name|create_display_func
-operator|=
-name|gui_display_new
-expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gui_restore (void)
+DECL|function|gui_restore (Gimp * gimp)
 name|gui_restore
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|color_select_init
@@ -540,10 +589,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gui_post_init (void)
+DECL|function|gui_post_init (Gimp * gimp)
 name|gui_post_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 if|if
@@ -566,10 +617,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gui_shutdown (void)
+DECL|function|gui_shutdown (Gimp * gimp)
 name|gui_shutdown
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|session_save
@@ -595,10 +648,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gui_exit (void)
+DECL|function|gui_exit (Gimp * gimp)
 name|gui_exit
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|menus_quit
@@ -611,7 +666,9 @@ name|render_free
 argument_list|()
 expr_stmt|;
 name|dialogs_exit
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 comment|/*  handle this in the dialog factory:  */
 name|document_index_free
@@ -634,10 +691,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gui_set_busy (void)
+DECL|function|gui_set_busy (Gimp * gimp)
 name|gui_set_busy
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GDisplay
@@ -695,10 +754,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gui_unset_busy (void)
+DECL|function|gui_unset_busy (Gimp * gimp)
 name|gui_unset_busy
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GDisplay
@@ -852,8 +913,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_set_display
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 name|gdisp
 argument_list|)
@@ -1153,6 +1218,32 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gui_display_changed (GimpContext * context,GDisplay * display,gpointer data)
+name|gui_display_changed
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GDisplay
+modifier|*
+name|display
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|gdisplay_set_menu_sensitivity
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

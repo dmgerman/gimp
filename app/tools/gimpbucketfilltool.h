@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c11054c0103
+DECL|enum|__anon2a26a9c70103
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL
@@ -151,7 +151,9 @@ begin_function_decl
 name|void
 name|gimp_bucket_fill_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpcolorpanel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -875,6 +887,13 @@ argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|gmask
+argument_list|)
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimg
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 name|TRANSPARENT_FILL

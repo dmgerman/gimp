@@ -124,6 +124,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -167,12 +173,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -954,6 +954,8 @@ name|gimage
 operator|=
 name|file_open_image
 argument_list|(
+name|the_gimp
+argument_list|,
 name|filename
 argument_list|,
 name|raw_filename
@@ -2751,8 +2753,8 @@ else|else
 block|{
 switch|switch
 condition|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|thumbnail_mode
 condition|)
 block|{
@@ -3177,6 +3179,8 @@ name|gimage_to_be_thumbed
 operator|=
 name|file_open_image
 argument_list|(
+name|the_gimp
+argument_list|,
 name|full_filename
 argument_list|,
 name|list
@@ -3220,8 +3224,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|thumbnail_mode
 condition|)
 block|{
@@ -4006,6 +4010,10 @@ name|new_gimage
 operator|=
 name|file_open_image
 argument_list|(
+name|old_gimage
+operator|->
+name|gimp
+argument_list|,
 name|filename
 argument_list|,
 name|filename

@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpellipseselecttool.h"
 end_include
 
@@ -79,6 +73,18 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -200,14 +206,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_ellipse_select_tool_register (void)
+DECL|function|gimp_ellipse_select_tool_register (Gimp * gimp)
 name|gimp_ellipse_select_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_ELLIPSE_SELECT_TOOL
 argument_list|,
 name|FALSE
@@ -973,6 +983,8 @@ operator|*
 operator|)
 name|tool_manager_get_info_by_tool
 argument_list|(
+name|the_gimp
+argument_list|,
 name|tool
 argument_list|)
 operator|->

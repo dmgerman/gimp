@@ -469,14 +469,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brightness_contrast_tool_register (void)
+DECL|function|gimp_brightness_contrast_tool_register (Gimp * gimp)
 name|gimp_brightness_contrast_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_BRIGHTNESS_CONTRAST_TOOL
 argument_list|,
 name|FALSE

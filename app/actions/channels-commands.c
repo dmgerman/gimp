@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -85,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -1132,6 +1144,11 @@ argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|new_channel
+argument_list|)
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
 argument_list|)
 argument_list|,
 name|TRANSPARENT_FILL

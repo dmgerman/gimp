@@ -22,62 +22,10 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_TYPE_CONTEXT
-define|#
-directive|define
-name|GIMP_TYPE_CONTEXT
-value|(gimp_context_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_CONTEXT (obj)
-define|#
-directive|define
-name|GIMP_CONTEXT
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTEXT, GimpContext))
-end_define
-
-begin_define
-DECL|macro|GIMP_CONTEXT_CLASS (klass)
-define|#
-directive|define
-name|GIMP_CONTEXT_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_CONTEXT, GimpContextClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_CONTEXT (obj)
-define|#
-directive|define
-name|GIMP_IS_CONTEXT
-parameter_list|(
-name|obj
-parameter_list|)
-value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTEXT))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_CONTEXT_CLASS (klass)
-define|#
-directive|define
-name|GIMP_IS_CONTEXT_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTEXT))
-end_define
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292b79b50103
+DECL|enum|__anon27c7ace60103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -126,7 +74,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292b79b50203
+DECL|enum|__anon27c7ace60203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -253,6 +201,58 @@ block|}
 name|GimpContextArgMask
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_CONTEXT
+define|#
+directive|define
+name|GIMP_TYPE_CONTEXT
+value|(gimp_context_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_CONTEXT (obj)
+define|#
+directive|define
+name|GIMP_CONTEXT
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_CONTEXT, GimpContext))
+end_define
+
+begin_define
+DECL|macro|GIMP_CONTEXT_CLASS (klass)
+define|#
+directive|define
+name|GIMP_CONTEXT_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_CONTEXT, GimpContextClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CONTEXT (obj)
+define|#
+directive|define
+name|GIMP_IS_CONTEXT
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_CONTEXT))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_CONTEXT_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_CONTEXT_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_CONTEXT))
+end_define
 
 begin_typedef
 DECL|typedef|GimpContextClass
@@ -603,97 +603,6 @@ name|template
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  TODO: - gimp_context_find ()  *  *        probably interacting with the context manager:  *        - gimp_context_push () which will call gimp_context_set_parent()  *        - gimp_context_push_new () to do a GL-style push  *        - gimp_context_pop ()  *  *        a proper mechanism to prevent silly operations like pushing  *        the user context to some client stack etc.  */
-end_comment
-
-begin_comment
-comment|/*  to be used by the context management system only  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_context_set_current
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_context_set_user
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_context_set_default
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  these are always available  */
-end_comment
-
-begin_function_decl
-name|GimpContext
-modifier|*
-name|gimp_context_get_current
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpContext
-modifier|*
-name|gimp_context_get_user
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpContext
-modifier|*
-name|gimp_context_get_default
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpContext
-modifier|*
-name|gimp_context_get_standard
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  functions for manipulating a single context  */
-end_comment
 
 begin_function_decl
 specifier|const

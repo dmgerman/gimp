@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gtkhwrapbox.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -151,6 +151,18 @@ begin_include
 include|#
 directive|include
 file|"gimpconvolvetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -514,6 +526,8 @@ name|tool_info
 operator|=
 name|tool_manager_get_info_by_type
 argument_list|(
+name|the_gimp
+argument_list|,
 name|tool_type
 argument_list|)
 expr_stmt|;
@@ -1294,8 +1308,10 @@ name|tool_options
 expr_stmt|;
 name|default_context
 operator|=
-name|gimp_context_get_default
-argument_list|()
+name|gimp_get_default_context
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d971db0103
+DECL|enum|__anon27c35c3d0103
 block|{
 DECL|enumerator|BLUR_CONVOLVE
 name|BLUR_CONVOLVE
@@ -141,7 +141,9 @@ begin_function_decl
 name|void
 name|gimp_convolve_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

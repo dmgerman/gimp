@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"gimp.h"
 end_include
 
 begin_include
@@ -85,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_function
@@ -996,12 +1002,28 @@ operator|==
 name|OFFSET_BACKGROUND
 condition|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|gimp
+operator|=
+name|gimp_drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
+operator|->
+name|gimp
+expr_stmt|;
 name|gimp_context_get_background
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|color

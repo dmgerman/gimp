@@ -110,12 +110,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"info-dialog.h"
 end_include
 
@@ -128,7 +122,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"colormaps.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -730,6 +736,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|tool_manager_get_info_by_type
 argument_list|(
+name|the_gimp
+argument_list|,
 name|GIMP_TYPE_MOVE_TOOL
 argument_list|)
 argument_list|)
@@ -1225,6 +1233,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|tool_manager_get_info_by_type
 argument_list|(
+name|the_gimp
+argument_list|,
 name|GIMP_TYPE_COLOR_PICKER_TOOL
 argument_list|)
 argument_list|)
@@ -2139,8 +2149,10 @@ name|gdisp
 decl_stmt|;
 name|context
 operator|=
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|gdisp
 operator|=

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289314600103
+DECL|enum|__anon28a429f40103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -73,7 +73,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_MODE>*/
-DECL|enum|__anon289314600203
+DECL|enum|__anon28a429f40203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289314600303
+DECL|enum|__anon28a429f40303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -241,17 +241,19 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
-name|gimp_blend_tool_get_type
-parameter_list|(
 name|void
+name|gimp_blend_tool_register
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_blend_tool_register
+name|GtkType
+name|gimp_blend_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)

@@ -1115,7 +1115,10 @@ name|gradient
 operator|=
 name|gimp_context_get_gradient
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|)
 operator|)
 operator|!=

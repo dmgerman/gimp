@@ -39,15 +39,9 @@ directive|include
 file|"gimpundo.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2ba008860103
+DECL|enum|__anon2ac1d8850103
 block|{
 DECL|enumerator|PUSH
 name|PUSH
@@ -738,6 +732,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+comment|/* FIXME: need core_config->undo_preview_size */
 name|undo
 operator|->
 name|preview
@@ -749,13 +744,9 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|gimprc
-operator|.
-name|preview_size
+literal|24
 argument_list|,
-name|gimprc
-operator|.
-name|preview_size
+literal|24
 argument_list|)
 expr_stmt|;
 block|}

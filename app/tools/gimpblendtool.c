@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -354,8 +360,13 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289b4f440108
+DECL|struct|__anon2b88f6330108
 block|{
+DECL|member|gradient
+name|GimpGradient
+modifier|*
+name|gradient
+decl_stmt|;
 DECL|member|offset
 name|gdouble
 name|offset
@@ -406,7 +417,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289b4f440208
+DECL|struct|__anon2b88f6330208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1128,14 +1139,18 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_blend_tool_register (void)
+DECL|function|gimp_blend_tool_register (Gimp * gimp)
 name|gimp_blend_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_BLEND_TOOL
 argument_list|,
 name|TRUE
@@ -2003,7 +2018,12 @@ name|blend_mode
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 argument_list|,
 name|blend_options
@@ -2012,7 +2032,12 @@ name|gradient_type
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 operator|*
 literal|100
@@ -4237,8 +4262,10 @@ name|data
 expr_stmt|;
 name|gimp_context_set_gradient
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|,
 name|GIMP_GRADIENT
 argument_list|(
@@ -4287,8 +4314,10 @@ parameter_list|)
 block|{
 name|gimp_context_set_tool
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|,
 name|GIMP_TOOL_INFO
 argument_list|(
@@ -6998,10 +7027,9 @@ condition|)
 block|{
 name|gimp_gradient_get_color_at
 argument_list|(
-name|gimp_context_get_gradient
-argument_list|(
-name|NULL
-argument_list|)
+name|rbd
+operator|->
+name|gradient
 argument_list|,
 name|factor
 argument_list|,
@@ -7403,10 +7431,32 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+name|context
+operator|=
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
+name|rbd
+operator|.
+name|gradient
+operator|=
+name|gimp_context_get_gradient
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
 comment|/* Get foreground and background colors, normalized */
 name|gimp_context_get_foreground
 argument_list|(
-name|NULL
+name|context
 argument_list|,
 operator|&
 name|rbd
@@ -7418,7 +7468,7 @@ comment|/* rbd.fg.a = 1.0; */
 comment|/* Foreground is always opaque */
 name|gimp_context_get_background
 argument_list|(
-name|NULL
+name|context
 argument_list|,
 operator|&
 name|rbd

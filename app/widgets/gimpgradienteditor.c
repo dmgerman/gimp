@@ -275,7 +275,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a95890103
+DECL|enum|__anon2988ea030103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -315,7 +315,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297a95890203
+DECL|enum|__anon2988ea030203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -2413,7 +2413,7 @@ name|gradient_editor
 operator|->
 name|context
 operator|=
-name|gimp_context_new
+name|gimp_create_context
 argument_list|(
 name|the_gimp
 argument_list|,
@@ -6543,8 +6543,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_set_foreground
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gradient_editor
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|color
@@ -6671,8 +6677,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_set_background
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gradient_editor
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|color
@@ -12538,8 +12550,14 @@ expr_stmt|;
 comment|/* Render Foreground color boxes */
 name|gimp_context_get_foreground
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gradient_editor
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|fg
@@ -14759,8 +14777,14 @@ case|:
 comment|/* Fetch from FG color */
 name|gimp_context_get_foreground
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gradient_editor
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|fg
@@ -15027,8 +15051,14 @@ case|:
 comment|/* Fetch from FG color */
 name|gimp_context_get_foreground
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gradient_editor
+operator|->
+name|context
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|fg

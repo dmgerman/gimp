@@ -184,6 +184,10 @@ name|GimpToolInfo
 modifier|*
 name|gimp_tool_info_new
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GtkType
 name|tool_type
 parameter_list|,

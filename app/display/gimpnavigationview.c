@@ -200,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4362150103
+DECL|enum|__anon28ca26840103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -1482,8 +1482,10 @@ name|gdisp
 decl_stmt|;
 name|context
 operator|=
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|gdisp
 operator|=

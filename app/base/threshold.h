@@ -191,7 +191,9 @@ begin_function_decl
 name|void
 name|gimp_threshold_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

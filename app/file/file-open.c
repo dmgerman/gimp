@@ -243,18 +243,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"file-open.h"
 end_include
 
@@ -299,9 +287,13 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (const gchar * filename,const gchar * raw_filename,const gchar * open_mode,PlugInProcDef * file_proc,RunModeType run_mode,gint * status)
+DECL|function|file_open_image (Gimp * gimp,const gchar * filename,const gchar * raw_filename,const gchar * open_mode,PlugInProcDef * file_proc,RunModeType run_mode,gint * status)
 name|file_open_image
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -644,7 +636,7 @@ name|return_vals
 operator|=
 name|procedural_db_execute
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|proc
 operator|->

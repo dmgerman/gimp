@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c120f860103
+DECL|enum|__anon279178ab0103
 block|{
 DECL|enumerator|DODGE
 name|DODGE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c120f860203
+DECL|enum|__anon279178ab0203
 block|{
 DECL|enumerator|DODGEBURN_HIGHLIGHTS
 name|DODGEBURN_HIGHLIGHTS
@@ -157,7 +157,9 @@ begin_function_decl
 name|void
 name|gimp_dodgeburn_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

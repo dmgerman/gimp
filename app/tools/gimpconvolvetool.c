@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -61,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -201,7 +213,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c136d920103
+DECL|enum|__anon2bac84890103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -748,14 +760,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_convolve_tool_register (void)
+DECL|function|gimp_convolve_tool_register (Gimp * gimp)
 name|gimp_convolve_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_CONVOLVE_TOOL
 argument_list|,
 name|TRUE
@@ -1367,6 +1383,10 @@ name|gint
 name|marginy
 init|=
 literal|0
+decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
 decl_stmt|;
 if|if
 condition|(
@@ -2479,6 +2499,18 @@ name|fillcolor
 argument_list|)
 expr_stmt|;
 block|}
+name|context
+operator|=
+name|gimp_get_current_context
+argument_list|(
+name|gimp_drawable_gimage
+argument_list|(
+name|drawable
+argument_list|)
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|gimp_paint_tool_replace_canvas
 argument_list|(
@@ -2494,7 +2526,7 @@ call|)
 argument_list|(
 name|gimp_context_get_opacity
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 operator|*
 literal|255

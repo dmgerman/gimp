@@ -78,18 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -115,6 +103,24 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"floating_sel.h"
 end_include
 
 begin_include
@@ -146,7 +152,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd502b0103
+DECL|enum|__anon29da8d950103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT
@@ -332,14 +338,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rect_select_tool_register (void)
+DECL|function|gimp_rect_select_tool_register (Gimp * gimp)
 name|gimp_rect_select_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_RECT_SELECT_TOOL
 argument_list|,
 name|FALSE
@@ -998,6 +1008,12 @@ operator|*
 operator|)
 name|tool_manager_get_info_by_tool
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|tool
 argument_list|)
 operator|->
@@ -2758,6 +2774,8 @@ operator|*
 operator|)
 name|tool_manager_get_info_by_tool
 argument_list|(
+name|the_gimp
+argument_list|,
 name|tool
 argument_list|)
 operator|->

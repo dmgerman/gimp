@@ -342,7 +342,7 @@ name|psp
 operator|->
 name|context
 operator|=
-name|gimp_context_new
+name|gimp_create_context
 argument_list|(
 name|the_gimp
 argument_list|,
@@ -358,8 +358,10 @@ name|psp
 operator|->
 name|context
 operator|=
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 comment|/*       session_set_window_geometry (psp->shell,&palette_select_session_info, 				   TRUE);       */
 name|dialog_register
@@ -425,8 +427,10 @@ name|active
 operator|=
 name|gimp_context_get_palette
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -439,7 +443,7 @@ name|active
 operator|=
 name|gimp_context_get_palette
 argument_list|(
-name|gimp_context_get_standard
+name|gimp_get_standard_context
 argument_list|(
 name|the_gimp
 argument_list|)

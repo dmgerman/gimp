@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"widgets/widgets-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"widgets/widgets-types.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -563,10 +563,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|dialogs_init (void)
+DECL|function|dialogs_init (Gimp * gimp)
 name|dialogs_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|gint
@@ -578,8 +580,10 @@ name|gimp_dialog_factory_new
 argument_list|(
 literal|"toplevel"
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -608,8 +612,10 @@ name|gimp_dialog_factory_new
 argument_list|(
 literal|"dock"
 argument_list|,
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 name|menus_get_dialogs_factory
 argument_list|()
@@ -744,10 +750,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|dialogs_exit (void)
+DECL|function|dialogs_exit (Gimp * gimp)
 name|dialogs_exit
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|gtk_object_unref

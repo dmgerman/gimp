@@ -397,6 +397,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -1551,8 +1557,8 @@ expr_stmt|;
 comment|/* search for binaries in the plug-in directory path */
 name|gimp_datafiles_read_directories
 argument_list|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|plug_in_path
 argument_list|,
 name|MODE_EXECUTABLE
@@ -1569,8 +1575,8 @@ name|NULL
 expr_stmt|;
 if|if
 condition|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|pluginrc_path
 condition|)
 block|{
@@ -1578,8 +1584,8 @@ if|if
 condition|(
 name|g_path_is_absolute
 argument_list|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|pluginrc_path
 argument_list|)
 condition|)
@@ -1587,8 +1593,8 @@ name|filename
 operator|=
 name|g_strdup
 argument_list|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|pluginrc_path
 argument_list|)
 expr_stmt|;
@@ -1604,8 +1610,8 @@ argument_list|,
 name|gimp_directory
 argument_list|()
 argument_list|,
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|pluginrc_path
 argument_list|)
 expr_stmt|;
@@ -3715,8 +3721,8 @@ name|path
 operator|=
 name|plug_in_search_in_path
 argument_list|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|plug_in_path
 argument_list|,
 name|name

@@ -9667,6 +9667,8 @@ name|tool_info
 operator|=
 name|tool_manager_get_info_by_type
 argument_list|(
+name|the_gimp
+argument_list|,
 name|GIMP_TYPE_POSTERIZE_TOOL
 argument_list|)
 expr_stmt|;
@@ -9772,6 +9774,8 @@ name|tool_info
 operator|=
 name|tool_manager_get_info_by_type
 argument_list|(
+name|the_gimp
+argument_list|,
 name|color_tools
 index|[
 name|i

@@ -192,7 +192,10 @@ name|pattern
 operator|=
 name|gimp_context_get_pattern
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|)
 operator|)
 operator|!=
@@ -462,7 +465,10 @@ condition|)
 block|{
 name|gimp_context_set_pattern
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 name|pattern
 argument_list|)
@@ -926,7 +932,10 @@ name|pattern
 operator|=
 name|gimp_context_get_pattern
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|)
 operator|)
 operator|!=

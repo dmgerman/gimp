@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -336,8 +336,8 @@ name|image_new_last_values
 operator|.
 name|width
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_width
 expr_stmt|;
 name|gimp
@@ -346,8 +346,8 @@ name|image_new_last_values
 operator|.
 name|height
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_height
 expr_stmt|;
 name|gimp
@@ -356,8 +356,8 @@ name|image_new_last_values
 operator|.
 name|unit
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_units
 expr_stmt|;
 name|gimp
@@ -366,8 +366,8 @@ name|image_new_last_values
 operator|.
 name|xresolution
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_xresolution
 expr_stmt|;
 name|gimp
@@ -376,8 +376,8 @@ name|image_new_last_values
 operator|.
 name|yresolution
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_yresolution
 expr_stmt|;
 name|gimp
@@ -386,8 +386,8 @@ name|image_new_last_values
 operator|.
 name|res_unit
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_resolution_units
 expr_stmt|;
 name|gimp
@@ -396,8 +396,8 @@ name|image_new_last_values
 operator|.
 name|type
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_type
 expr_stmt|;
 name|gimp
@@ -1200,6 +1200,11 @@ argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
+argument_list|,
+name|gimp_get_current_context
+argument_list|(
+name|gimp
 argument_list|)
 argument_list|,
 name|values

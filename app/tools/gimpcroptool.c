@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac020000103
+DECL|enum|__anon2a0f7fac0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -8522,14 +8522,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_crop_tool_register (void)
+DECL|function|gimp_crop_tool_register (Gimp * gimp)
 name|gimp_crop_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_CROP_TOOL
 argument_list|,
 name|FALSE

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -157,6 +163,12 @@ begin_include
 include|#
 directive|include
 file|"nav_window.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -3335,17 +3347,25 @@ name|now
 operator|&&
 name|gimp_context_get_display
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 operator|==
 name|gdisp
 condition|)
+block|{
 name|gdisplay_set_menu_sensitivity
 argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -10283,8 +10303,10 @@ block|}
 return|return
 name|gimp_context_get_display
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 return|;
 block|}

@@ -34,24 +34,35 @@ name|GimpBaseConfig
 name|static_base_config
 init|=
 block|{
+operator|.
+name|temp_path
+operator|=
 name|NULL
 block|,
-comment|/* temp_path           */
+operator|.
+name|swap_path
+operator|=
 name|NULL
 block|,
-comment|/* swap_path           */
+operator|.
+name|tile_cache_size
+operator|=
 literal|33554432
 block|,
-comment|/* tile_cache_size     */
+operator|.
+name|stingy_memory_use
+operator|=
 name|FALSE
 block|,
-comment|/* stingy_memory_usage */
+operator|.
+name|interpolation_type
+operator|=
 name|LINEAR_INTERPOLATION
 block|,
-comment|/* interpolation_type  */
+operator|.
+name|num_processors
+operator|=
 literal|1
-block|,
-comment|/* num_processors      */
 block|}
 decl_stmt|;
 end_decl_stmt

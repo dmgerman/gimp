@@ -1987,6 +1987,10 @@ name|view
 operator|=
 name|gimp_drawable_list_view_new
 argument_list|(
+name|gimprc
+operator|.
+name|preview_size
+argument_list|,
 name|gimage
 argument_list|,
 name|GIMP_TYPE_LAYER
@@ -2113,6 +2117,10 @@ name|view
 operator|=
 name|gimp_drawable_list_view_new
 argument_list|(
+name|gimprc
+operator|.
+name|preview_size
+argument_list|,
 name|gimage
 argument_list|,
 name|GIMP_TYPE_CHANNEL

@@ -397,6 +397,10 @@ name|gimage
 condition|)
 name|tool_manager_initialize_tool
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|active_tool
 argument_list|,
 name|gdisp
@@ -405,6 +409,10 @@ expr_stmt|;
 else|else
 name|tool_manager_initialize_tool
 argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|active_tool
 argument_list|,
 name|NULL

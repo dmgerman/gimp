@@ -89,6 +89,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplist.h"
 end_include
 
@@ -107,13 +113,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"datafiles.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"datafiles.h"
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -131,7 +137,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27aaf2b50103
+DECL|enum|__anon2b7ea8430103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -305,7 +311,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aaf2b50208
+DECL|struct|__anon2b7ea8430208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -420,7 +426,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aaf2b50308
+DECL|struct|__anon2b7ea8430308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -905,8 +911,8 @@ argument_list|()
 condition|)
 name|gimp_datafiles_read_directories
 argument_list|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|module_path
 argument_list|,
 literal|0
@@ -1737,7 +1743,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aaf2b50403
+DECL|enum|__anon2b7ea8430403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -2527,8 +2533,8 @@ name|mod
 operator|->
 name|fullpath
 argument_list|,
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|module_db_load_inhibit
 argument_list|)
 expr_stmt|;
@@ -4699,7 +4705,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aaf2b50508
+DECL|struct|__anon2b7ea8430508
 block|{
 DECL|member|search_key
 specifier|const
@@ -4864,8 +4870,8 @@ expr_stmt|;
 comment|/* walk filesystem and add new things we find */
 name|gimp_datafiles_read_directories
 argument_list|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|module_path
 argument_list|,
 literal|0

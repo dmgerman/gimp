@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"context_manager.h"
 end_include
 
 begin_comment
@@ -789,9 +789,13 @@ end_function
 begin_function
 name|GimpToolInfo
 modifier|*
-DECL|function|gimp_tool_info_new (GtkType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar ** icon_data)
+DECL|function|gimp_tool_info_new (GimpContext * context,GtkType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar ** icon_data)
 name|gimp_tool_info_new
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GtkType
 name|tool_type
 parameter_list|,
@@ -936,15 +940,15 @@ name|tool_info
 operator|->
 name|context
 operator|=
-name|gimp_context_new
+name|gimp_create_context
 argument_list|(
-name|global_tool_context
+name|context
 operator|->
 name|gimp
 argument_list|,
 name|identifier
 argument_list|,
-name|global_tool_context
+name|context
 argument_list|)
 expr_stmt|;
 block|}
@@ -980,6 +984,8 @@ name|standard_tool_info
 operator|=
 name|gimp_tool_info_new
 argument_list|(
+name|NULL
+argument_list|,
 name|GIMP_TYPE_RECT_SELECT_TOOL
 argument_list|,
 name|FALSE

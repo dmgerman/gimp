@@ -237,6 +237,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -256,12 +262,6 @@ begin_include
 include|#
 directive|include
 file|"gui/menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -724,8 +724,8 @@ comment|/* gimage_set_save_proc(gimage, file_proc); */
 comment|/* Write a thumbnail for the saved image, where appropriate */
 switch|switch
 condition|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|thumbnail_mode
 condition|)
 block|{

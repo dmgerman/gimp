@@ -555,7 +555,7 @@ name|bsp
 operator|->
 name|context
 operator|=
-name|gimp_context_new
+name|gimp_create_context
 argument_list|(
 name|the_gimp
 argument_list|,
@@ -571,8 +571,10 @@ name|bsp
 operator|->
 name|context
 operator|=
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|dialog_register
 argument_list|(
@@ -637,8 +639,10 @@ name|active
 operator|=
 name|gimp_context_get_brush
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -651,7 +655,7 @@ name|active
 operator|=
 name|gimp_context_get_brush
 argument_list|(
-name|gimp_context_get_standard
+name|gimp_get_standard_context
 argument_list|(
 name|the_gimp
 argument_list|)

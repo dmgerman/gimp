@@ -112,12 +112,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -2405,7 +2399,11 @@ operator|->
 name|gimp
 argument_list|,
 name|tool_manager_active_get_PDB_string
-argument_list|()
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -1015,14 +1021,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_ink_tool_register (void)
+DECL|function|gimp_ink_tool_register (Gimp * gimp)
 name|gimp_ink_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_INK_TOOL
 argument_list|,
 name|TRUE
@@ -6385,7 +6395,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2be15d600103
+DECL|enum|__anon2c3da8660103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7276,6 +7286,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
@@ -7303,6 +7317,15 @@ argument_list|)
 operator|)
 condition|)
 return|return;
+name|context
+operator|=
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 comment|/* Get the the buffer */
 name|ink_set_paint_area
 argument_list|(
@@ -7491,7 +7514,7 @@ call|)
 argument_list|(
 name|gimp_context_get_opacity
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 operator|*
 literal|255
@@ -7499,7 +7522,7 @@ argument_list|)
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 argument_list|,
 name|undo_tiles

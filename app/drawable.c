@@ -59,12 +59,16 @@ end_include
 
 begin_function
 name|void
-DECL|function|drawable_fill (GimpDrawable * drawable,GimpFillType fill_type)
+DECL|function|drawable_fill (GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type)
 name|drawable_fill
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpFillType
 name|fill_type
@@ -104,7 +108,7 @@ name|FOREGROUND_FILL
 case|:
 name|gimp_context_get_foreground
 argument_list|(
-name|NULL
+name|context
 argument_list|,
 operator|&
 name|color
@@ -116,7 +120,7 @@ name|BACKGROUND_FILL
 case|:
 name|gimp_context_get_background
 argument_list|(
-name|NULL
+name|context
 argument_list|,
 operator|&
 name|color

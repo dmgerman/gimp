@@ -29,6 +29,10 @@ name|GimpImage
 modifier|*
 name|file_open_image
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

@@ -1044,6 +1044,12 @@ name|timeout_id
 operator|=
 literal|0
 expr_stmt|;
+name|select
+operator|->
+name|state
+operator|=
+name|INVISIBLE
+expr_stmt|;
 block|}
 name|select
 operator|->

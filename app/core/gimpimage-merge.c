@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -179,12 +185,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -772,7 +772,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6b7660103
+DECL|enum|__anon2b688b9e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1583,24 +1583,24 @@ name|gimage
 operator|->
 name|xresolution
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_xresolution
 expr_stmt|;
 name|gimage
 operator|->
 name|yresolution
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_yresolution
 expr_stmt|;
 name|gimage
 operator|->
 name|unit
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_units
 expr_stmt|;
 name|gimage
@@ -5359,7 +5359,12 @@ index|]
 decl_stmt|;
 name|gimp_context_get_foreground
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|color
@@ -5437,7 +5442,12 @@ decl_stmt|;
 comment|/*  Get the palette color  */
 name|gimp_context_get_background
 argument_list|(
-name|NULL
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|color

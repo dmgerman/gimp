@@ -163,7 +163,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2c1795e00103
+DECL|enum|__anon2bbdfc060103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1795e00208
+DECL|struct|__anon2bbdfc060208
 block|{
 DECL|member|count
 name|gint
@@ -403,7 +403,9 @@ begin_function_decl
 name|void
 name|gimp_bezier_select_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

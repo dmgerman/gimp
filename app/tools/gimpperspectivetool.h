@@ -119,17 +119,19 @@ struct|;
 end_struct
 
 begin_function_decl
-name|GtkType
-name|gimp_perspective_tool_get_type
-parameter_list|(
 name|void
+name|gimp_perspective_tool_register
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_perspective_tool_register
+name|GtkType
+name|gimp_perspective_tool_get_type
 parameter_list|(
 name|void
 parameter_list|)

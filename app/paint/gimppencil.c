@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -240,14 +246,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_pencil_tool_register (void)
+DECL|function|gimp_pencil_tool_register (Gimp * gimp)
 name|gimp_pencil_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_PENCIL_TOOL
 argument_list|,
 name|TRUE
@@ -594,6 +604,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|TempBuf
 modifier|*
 name|area
@@ -632,6 +646,15 @@ argument_list|)
 operator|)
 condition|)
 return|return;
+name|context
+operator|=
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|pressure_options
@@ -682,7 +705,7 @@ name|gimp_gradient_get_color_at
 argument_list|(
 name|gimp_context_get_gradient
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 argument_list|,
 name|paint_tool
@@ -836,7 +859,7 @@ literal|255
 operator|*
 name|gimp_context_get_opacity
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 expr_stmt|;
 if|if
@@ -871,14 +894,14 @@ argument_list|)
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 operator|*
 literal|255
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 argument_list|,
 name|HARD

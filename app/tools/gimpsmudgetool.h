@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc3379a0103
+DECL|enum|__anon2c7659830103
 block|{
 DECL|enumerator|SMUDGE_TYPE_SMUDGE
 name|SMUDGE_TYPE_SMUDGE
@@ -41,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc3379a0203
+DECL|enum|__anon2c7659830203
 block|{
 DECL|enumerator|SMUDGE_MODE_HIGHLIGHTS
 name|SMUDGE_MODE_HIGHLIGHTS
@@ -157,7 +157,9 @@ begin_function_decl
 name|void
 name|gimp_smudge_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

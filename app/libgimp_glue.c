@@ -30,7 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -61,7 +73,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_set_foreground
 argument_list|(
-name|NULL
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|,
 name|color
 argument_list|)
@@ -93,7 +108,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
 argument_list|(
-name|NULL
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|,
 name|color
 argument_list|)
@@ -126,7 +144,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_set_background
 argument_list|(
-name|NULL
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|,
 name|color
 argument_list|)
@@ -158,7 +179,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_get_background
 argument_list|(
-name|NULL
+name|gimp_get_user_context
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|,
 name|color
 argument_list|)

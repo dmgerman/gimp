@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2badb9b60103
+DECL|enum|__anon27a8656e0103
 block|{
 DECL|enumerator|IMAGE_CLONE
 name|IMAGE_CLONE
@@ -138,7 +138,9 @@ begin_function_decl
 name|void
 name|gimp_clone_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

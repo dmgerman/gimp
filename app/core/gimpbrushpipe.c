@@ -152,12 +152,6 @@ directive|include
 file|"gimppattern-header.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
 begin_comment
 comment|/*  this needs to go away  */
 end_comment

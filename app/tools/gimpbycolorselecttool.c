@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -756,14 +750,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_by_color_select_tool_register (void)
+DECL|function|gimp_by_color_select_tool_register (Gimp * gimp)
 name|gimp_by_color_select_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_BY_COLOR_SELECT_TOOL
 argument_list|,
 name|FALSE

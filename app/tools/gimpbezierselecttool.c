@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -263,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298bef1f0108
+DECL|struct|__anon29cd40530108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -299,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298bef1f0208
+DECL|struct|__anon29cd40530208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -354,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298bef1f0308
+DECL|struct|__anon29cd40530308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -520,7 +526,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon298bef1f0403
+DECL|enum|__anon29cd40530403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT
@@ -1199,14 +1205,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bezier_select_tool_register (void)
+DECL|function|gimp_bezier_select_tool_register (Gimp * gimp)
 name|gimp_bezier_select_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_BEZIER_SELECT_TOOL
 argument_list|,
 name|FALSE
@@ -3722,11 +3732,23 @@ decl_stmt|;
 comment|/*  select the bezier tool  */
 name|gimp_context_set_tool
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 name|tool_manager_get_info_by_type
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|GIMP_TYPE_BEZIER_SELECT_TOOL
 argument_list|)
 argument_list|)
@@ -12348,11 +12370,23 @@ block|}
 block|}
 name|gimp_context_set_tool
 argument_list|(
-name|gimp_context_get_user
-argument_list|()
+name|gimp_get_user_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 name|tool_manager_get_info_by_type
 argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
 name|GIMP_TYPE_BEZIER_SELECT_TOOL
 argument_list|)
 argument_list|)
@@ -15504,7 +15538,13 @@ operator|->
 name|gimp
 argument_list|,
 name|tool_manager_active_get_PDB_string
-argument_list|()
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|)
 argument_list|,
 operator|&
 name|nreturn_vals

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -191,7 +197,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296dccfd0103
+DECL|enum|__anon277217000103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -711,14 +717,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_clone_tool_register (void)
+DECL|function|gimp_clone_tool_register (Gimp * gimp)
 name|gimp_clone_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|tool_manager_register_tool
 argument_list|(
+name|gimp
+argument_list|,
 name|GIMP_TYPE_CLONE_TOOL
 argument_list|,
 name|TRUE
@@ -1138,6 +1148,10 @@ name|GimpDrawTool
 modifier|*
 name|draw_tool
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|gdisp
 operator|=
 operator|(
@@ -1153,6 +1167,17 @@ operator|=
 name|GIMP_DRAW_TOOL
 argument_list|(
 name|paint_tool
+argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|gimp_get_current_context
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1382,7 +1407,7 @@ condition|(
 operator|!
 name|gimp_context_get_pattern
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 condition|)
 name|g_message
@@ -1854,6 +1879,10 @@ name|src_gimage
 init|=
 name|NULL
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|guchar
 modifier|*
 name|s
@@ -1964,6 +1993,15 @@ argument_list|)
 operator|)
 condition|)
 return|return;
+name|context
+operator|=
+name|gimp_get_current_context
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|pressure_options
@@ -2438,7 +2476,7 @@ name|pattern
 operator|=
 name|gimp_context_get_pattern
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 expr_stmt|;
 if|if
@@ -2655,7 +2693,7 @@ literal|255.0
 operator|*
 name|gimp_context_get_opacity
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 expr_stmt|;
 if|if
@@ -2694,7 +2732,7 @@ call|)
 argument_list|(
 name|gimp_context_get_opacity
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 operator|*
 literal|255
@@ -2702,7 +2740,7 @@ argument_list|)
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
-name|NULL
+name|context
 argument_list|)
 argument_list|,
 name|pressure_options

@@ -31,7 +31,9 @@ begin_function_decl
 name|void
 name|gui_restore
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -40,7 +42,9 @@ begin_function_decl
 name|void
 name|gui_post_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -49,7 +53,9 @@ begin_function_decl
 name|void
 name|gui_shutdown
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -58,7 +64,9 @@ begin_function_decl
 name|void
 name|gui_exit
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -67,7 +75,9 @@ begin_function_decl
 name|void
 name|gui_set_busy
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -76,7 +86,9 @@ begin_function_decl
 name|void
 name|gui_unset_busy
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

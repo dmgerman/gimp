@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fec2560103
+DECL|enum|__anon27f1e8a30103
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -243,7 +243,9 @@ begin_function_decl
 name|void
 name|gimp_color_balance_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

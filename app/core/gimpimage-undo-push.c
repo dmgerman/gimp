@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -180,12 +186,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"parasitelist.h"
 end_include
 
@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275cc42d0103
+DECL|enum|__anon2c03474a0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1571,8 +1571,8 @@ block|{
 comment|/* If there are 0 levels of undo return FALSE.  */
 if|if
 condition|(
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|levels_of_undo
 operator|==
 literal|0
@@ -1587,8 +1587,8 @@ name|gimage
 operator|->
 name|undo_levels
 operator|>=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|levels_of_undo
 condition|)
 name|gimage

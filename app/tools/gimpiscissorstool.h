@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1bd1930103
+DECL|enum|__anon275456740103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -55,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1bd1930203
+DECL|enum|__anon275456740203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -296,7 +296,9 @@ begin_function_decl
 name|void
 name|gimp_iscissors_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

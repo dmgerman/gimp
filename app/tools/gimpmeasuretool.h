@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aef7d420103
+DECL|enum|__anon2c095b380103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -210,7 +210,9 @@ begin_function_decl
 name|void
 name|gimp_measure_tool_register
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
