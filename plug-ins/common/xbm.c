@@ -4226,9 +4226,9 @@ operator|<
 literal|128
 operator|)
 condition|?
-literal|1
-else|:
 literal|0
+else|:
+literal|1
 operator|)
 operator|<<
 operator|(
