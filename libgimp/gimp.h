@@ -750,7 +750,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 parameter_list|,
 specifier|const
 name|gchar
@@ -820,7 +820,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 parameter_list|,
 specifier|const
 name|gchar
