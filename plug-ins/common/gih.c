@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c8e6d10108
+DECL|struct|__anon294214820108
 block|{
 DECL|member|spacing
 name|guint
@@ -226,7 +226,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8e6d10208
+DECL|struct|__anon294214820208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3874,7 +3874,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Spacing (Percent):"
+literal|"Spacing (percent):"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4286,7 +4286,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Cell Size:"
+literal|"Cell size:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4345,7 +4345,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of Cells:"
+literal|"Number of cells:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -4588,7 +4588,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|" Columns on each Layer"
+literal|" Columns on each layer"
 argument_list|)
 argument_list|)
 expr_stmt|;

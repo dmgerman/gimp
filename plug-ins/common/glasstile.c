@@ -16,12 +16,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -62,7 +56,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c64176a0108
+DECL|struct|__anon294262320108
 block|{
 DECL|member|xblock
 name|gint
@@ -940,7 +934,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile _Width:"
+literal|"Tile _width:"
 argument_list|)
 argument_list|,
 literal|150
@@ -1019,7 +1013,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Tile _Height:"
+literal|"Tile _height:"
 argument_list|)
 argument_list|,
 literal|150
@@ -1632,14 +1626,12 @@ condition|(
 name|xpixel2
 operator|<
 operator|(
-operator|(
 name|x2
 operator|-
 name|x1
 operator|)
 operator|*
 name|bytes
-operator|)
 condition|)
 block|{
 if|if
@@ -1838,17 +1830,13 @@ name|x1
 argument_list|,
 name|y1
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
 argument_list|)
 expr_stmt|;
 block|}

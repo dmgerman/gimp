@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff80c50103
+DECL|enum|__anon2bab5faa0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ff80c50208
+DECL|struct|__anon2bab5faa0208
 block|{
 DECL|member|interlace
 name|gint
@@ -4064,11 +4064,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Interlace"
+literal|"_Interlace"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4183,11 +4183,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"GIF Comment:"
+literal|"_GIF comment:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4491,11 +4491,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Loop forever"
+literal|"_Loop forever"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4581,7 +4581,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Delay between Frames where Unspecified:"
+literal|"_Delay between frames where unspecified:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4676,7 +4676,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Milliseconds"
+literal|"milliseconds"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4738,7 +4738,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Frame Disposal where Unspecified: "
+literal|"Frame disposal where unspecified: "
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4769,21 +4769,21 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"I don't Care"
+literal|"I don't care"
 argument_list|)
 argument_list|,
 name|DISPOSE_UNSPECIFIED
 argument_list|,
 name|_
 argument_list|(
-literal|"Cumulative Layers (Combine)"
+literal|"Cumulative layers (combine)"
 argument_list|)
 argument_list|,
 name|DISPOSE_COMBINE
 argument_list|,
 name|_
 argument_list|(
-literal|"One Frame per Layer (Replace)"
+literal|"One frame per layer (replace)"
 argument_list|)
 argument_list|,
 name|DISPOSE_REPLACE

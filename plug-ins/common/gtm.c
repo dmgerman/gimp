@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ad7780108
+DECL|struct|__anon2937311b0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -1880,7 +1880,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Generate Full HTML Document"
+literal|"_Generate full HTML document"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2032,7 +2032,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"_Use Cellspan"
+literal|"_Use cellspan"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2425,7 +2425,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"C_ell Content:"
+literal|"C_ell content:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2831,7 +2831,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Cell-_Padding:"
+literal|"Cell-_padding:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -2913,7 +2913,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Cell-_Spacing:"
+literal|"Cell-_spacing:"
 argument_list|)
 argument_list|,
 literal|0.0

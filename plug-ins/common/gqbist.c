@@ -3,10 +3,6 @@ begin_comment
 comment|/*  * Written 1997 Jens Ch. Restemeier<jrestemeier@currantbun.com>  * This program is based on an algorithm / article by  * Jörn Loviscach.  *  * It appeared in c't 10/95, page 326 and is called  * "Ausgewürfelt - Moderne Kunst algorithmisch erzeugen"  * (~modern art created with algorithms).  *  * It generates one main formula (the middle button) and 8 variations of it.  * If you select a variation it becomes the new main formula. If you  * press "OK" the main formula will be applied to the image.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
-begin_comment
-comment|/*  * History:  * 1.0 first release  * 1.2 now handles RGB*  * 1.5 fixed a small bug  * 1.6 fixed a bug that was added by v1.5 :-(  * 1.7 added patch from Art Haas to make it compile with HP-UX, a small  *     clean-up  * 1.8 Dscho added transform file load/save, bug-fixes  * 1.9 rewrote renderloop.  * 1.9a fixed a bug.  * 1.9b fixed MAIN()  * 1.10 added optimizer  * 1.11 uses tile iterator, antialiasing thanks to Simon Thum, compiles  *      outside GIMP-tree  * 1.12 small fix to behave more like the original, button to control  *      antialaising, remeber last used filename, bugfixes+cleanups  */
-end_comment
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -188,7 +184,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad7316a0103
+DECL|enum|__anon294f33dd0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -233,7 +229,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7316a0208
+DECL|struct|__anon294f33dd0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -272,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7316a0308
+DECL|struct|__anon294f33dd0308
 block|{
 DECL|member|info
 name|ExpInfo
