@@ -164,12 +164,17 @@ block|{
 name|gchar
 modifier|*
 name|tool_plug_in_path
+decl_stmt|,
+modifier|*
+name|free_me
 decl_stmt|;
 name|g_message
 argument_list|(
 literal|"tool-safe-mode init called"
 argument_list|)
 expr_stmt|;
+name|free_me
+operator|=
 name|tool_plug_in_path
 operator|=
 name|gimp_gimprc_query
@@ -447,7 +452,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|tool_plug_in_path
+name|free_me
 argument_list|)
 expr_stmt|;
 block|}
