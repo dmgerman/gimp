@@ -956,6 +956,12 @@ condition|(
 name|cdd
 operator|.
 name|modified
+operator|&&
+name|cdd
+operator|.
+name|gdisp
+operator|!=
+name|NULL
 condition|)
 block|{
 name|list
@@ -1010,7 +1016,6 @@ operator|.
 name|old_nodes
 argument_list|)
 expr_stmt|;
-block|}
 name|gdisplay_expose_full
 argument_list|(
 name|cdd
@@ -1025,6 +1030,7 @@ operator|.
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1063,6 +1069,12 @@ condition|(
 name|cdd
 operator|.
 name|modified
+operator|&&
+name|cdd
+operator|.
+name|gdisp
+operator|!=
+name|NULL
 condition|)
 block|{
 name|list
@@ -1124,7 +1136,6 @@ operator|=
 name|next
 expr_stmt|;
 block|}
-block|}
 name|gdisplay_expose_full
 argument_list|(
 name|cdd
@@ -1139,6 +1150,7 @@ operator|.
 name|gdisp
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1176,6 +1188,12 @@ operator|.
 name|src_row
 operator|<
 literal|0
+operator|||
+name|cdd
+operator|.
+name|gdisp
+operator|==
+name|NULL
 condition|)
 return|return;
 name|gtk_clist_get_text
@@ -1291,6 +1309,12 @@ operator|.
 name|dest_row
 operator|<
 literal|0
+operator|||
+name|cdd
+operator|.
+name|gdisp
+operator|==
+name|NULL
 condition|)
 return|return;
 name|node
@@ -1405,6 +1429,12 @@ operator|.
 name|dest_row
 operator|<
 literal|0
+operator|||
+name|cdd
+operator|.
+name|gdisp
+operator|==
+name|NULL
 condition|)
 return|return;
 name|node
@@ -1504,6 +1534,12 @@ operator|.
 name|dest_row
 operator|<
 literal|0
+operator|||
+name|cdd
+operator|.
+name|gdisp
+operator|==
+name|NULL
 condition|)
 return|return;
 name|node
