@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1ffa6d0103
+DECL|enum|__anon297756c90103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -5594,6 +5594,11 @@ comment|/*  only pop if the active tool is the tool that pushed this undo  */
 block|if (pu->tool_ID != active_tool->ID)     return TRUE;
 comment|/*  swap the paint core information  */
 block|tmp = pc->lastx;   pc->lastx = pu->lastx;   pu->lastx = tmp;    tmp = pc->lasty;   pc->lasty = pu->lasty;   pu->lasty = tmp;    tmp = pc->lastpressure;   pc->lastpressure = pu->lastpressure;   pu->lastpressure = tmp;    tmp = pc->lastxtilt;   pc->lastxtilt = pu->lastxtilt;   pu->lastxtilt = tmp;    tmp = pc->lastytilt;   pc->lastytilt = pu->lastytilt;   pu->lastytilt = tmp;    return TRUE;
+else|#
+directive|else
+return|return
+name|FALSE
+return|;
 endif|#
 directive|endif
 block|}

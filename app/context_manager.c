@@ -162,6 +162,20 @@ value|GIMP_CONTEXT_OPACITY_MASK | \                            GIMP_CONTEXT_PAIN
 end_define
 
 begin_comment
+comment|/* HACK: provide prototype without tools/tools.h */
+end_comment
+
+begin_function_decl
+specifier|extern
+name|void
+name|register_tools
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  *  the list of all images  */
 end_comment
 
