@@ -120,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7ac2270103
+DECL|enum|__anon2ad088750103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -590,7 +590,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|old_tile_cache_size
 specifier|static
-name|gint
+name|guint
 name|old_tile_cache_size
 decl_stmt|;
 end_decl_stmt
@@ -760,7 +760,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|old_max_new_image_size
 specifier|static
-name|gint
+name|guint
 name|old_max_new_image_size
 decl_stmt|;
 end_decl_stmt
@@ -1011,7 +1011,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|edit_tile_cache_size
 specifier|static
-name|gint
+name|guint
 name|edit_tile_cache_size
 decl_stmt|;
 end_decl_stmt
@@ -7247,6 +7247,8 @@ operator|*
 literal|1024
 operator|*
 literal|1024
+operator|-
+literal|1
 operator|)
 argument_list|,
 literal|1.0
@@ -7277,7 +7279,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_int_adjustment_update
+name|gimp_uint_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
@@ -10478,6 +10480,8 @@ operator|*
 literal|1024
 operator|*
 literal|1024
+operator|-
+literal|1
 operator|)
 argument_list|,
 literal|1.0
@@ -10508,7 +10512,7 @@ literal|"value_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|gimp_int_adjustment_update
+name|gimp_uint_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
@@ -12013,7 +12017,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7ac2270208
+DECL|struct|__anon2ad088750208
 block|{
 DECL|member|label
 name|gchar
@@ -12242,7 +12246,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7ac2270308
+DECL|struct|__anon2ad088750308
 block|{
 DECL|member|tree_label
 name|gchar

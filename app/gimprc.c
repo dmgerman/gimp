@@ -222,7 +222,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f68a850103
+DECL|enum|__anon2bd2f1370103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -504,7 +504,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_cache_size
-name|gint
+name|guint
 name|tile_cache_size
 init|=
 literal|33554432
@@ -943,7 +943,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|max_new_image_size
-name|gint
+name|guint
 name|max_new_image_size
 init|=
 literal|33554432
@@ -1780,7 +1780,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|cur_token
 specifier|static
-name|int
+name|gint
 name|cur_token
 decl_stmt|;
 end_decl_stmt
@@ -1788,7 +1788,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|next_token
 specifier|static
-name|int
+name|gint
 name|next_token
 decl_stmt|;
 end_decl_stmt
@@ -1796,7 +1796,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|done
 specifier|static
-name|int
+name|gboolean
 name|done
 decl_stmt|;
 end_decl_stmt
@@ -2830,7 +2830,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|nsession_infos
 specifier|static
-name|int
+name|gint
 name|nsession_infos
 init|=
 sizeof|sizeof
@@ -2850,7 +2850,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|alternate_gimprc
 decl_stmt|;
@@ -2858,7 +2858,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|char
+name|gchar
 modifier|*
 name|alternate_system_gimprc
 decl_stmt|;
@@ -2882,7 +2882,7 @@ end_define
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
 DECL|function|gimp_system_rc_file (void)
 name|gimp_system_rc_file
@@ -2891,7 +2891,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|char
+name|gchar
 modifier|*
 name|value
 init|=
@@ -2986,16 +2986,16 @@ block|}
 end_function
 
 begin_function
-DECL|function|parse_add_directory_tokens (void)
 specifier|static
 name|GList
 modifier|*
+DECL|function|parse_add_directory_tokens (void)
 name|parse_add_directory_tokens
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|gimp_dir
 decl_stmt|;
@@ -3161,7 +3161,7 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-name|int
+name|gint
 name|status
 decl_stmt|;
 name|parse_info
@@ -3408,14 +3408,14 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|g_list_findstr (GList * list,char * str)
+DECL|function|g_list_findstr (GList * list,gchar * str)
 name|g_list_findstr
 parameter_list|(
 name|GList
 modifier|*
 name|list
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -4069,17 +4069,17 @@ modifier|*
 name|conflicting_options
 parameter_list|)
 block|{
-name|char
+name|gchar
 name|timestamp
 index|[
 literal|40
 index|]
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|char
+name|gchar
 name|tokname
 index|[
 literal|51
@@ -4097,15 +4097,15 @@ name|GList
 modifier|*
 name|option
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|cur_line
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|prev_line
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|str
 decl_stmt|;
@@ -4613,7 +4613,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|get_next_token (void)
 name|get_next_token
 parameter_list|(
@@ -4657,7 +4657,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|peek_next_token (void)
 name|peek_next_token
 parameter_list|(
@@ -4687,17 +4687,17 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_statement (void)
 name|parse_statement
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|token
@@ -5264,7 +5264,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_path (gpointer val1p,gpointer val2p)
 name|parse_path
 parameter_list|(
@@ -5275,10 +5275,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|pathp
@@ -5398,7 +5398,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_string (gpointer val1p,gpointer val2p)
 name|parse_string
 parameter_list|(
@@ -5409,10 +5409,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|strp
@@ -5427,7 +5427,7 @@ expr_stmt|;
 name|strp
 operator|=
 operator|(
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -5521,7 +5521,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_double (gpointer val1p,gpointer val2p)
 name|parse_double
 parameter_list|(
@@ -5532,10 +5532,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|double
+name|gdouble
 modifier|*
 name|nump
 decl_stmt|;
@@ -5549,7 +5549,7 @@ expr_stmt|;
 name|nump
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|*
 operator|)
 name|val1p
@@ -5615,7 +5615,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_float (gpointer val1p,gpointer val2p)
 name|parse_float
 parameter_list|(
@@ -5626,10 +5626,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|float
+name|gfloat
 modifier|*
 name|nump
 decl_stmt|;
@@ -5643,7 +5643,7 @@ expr_stmt|;
 name|nump
 operator|=
 operator|(
-name|float
+name|gfloat
 operator|*
 operator|)
 name|val1p
@@ -5720,10 +5720,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|nump
 decl_stmt|;
@@ -5737,7 +5737,7 @@ expr_stmt|;
 name|nump
 operator|=
 operator|(
-name|int
+name|gint
 operator|*
 operator|)
 name|val1p
@@ -5814,10 +5814,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|boolp
 decl_stmt|;
@@ -6042,7 +6042,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_position (gpointer val1p,gpointer val2p)
 name|parse_position
 parameter_list|(
@@ -6053,14 +6053,14 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|xp
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|yp
 decl_stmt|;
@@ -6181,7 +6181,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_mem_size (gpointer val1p,gpointer val2p)
 name|parse_mem_size
 parameter_list|(
@@ -6192,16 +6192,16 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
-name|mult
-decl_stmt|;
-name|int
+name|gint
 name|suffix
 decl_stmt|;
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|guint
+name|mult
+decl_stmt|;
+name|guint
 modifier|*
 name|sizep
 decl_stmt|;
@@ -6215,7 +6215,7 @@ expr_stmt|;
 name|sizep
 operator|=
 operator|(
-name|int
+name|guint
 operator|*
 operator|)
 name|val1p
@@ -6389,7 +6389,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_image_type (gpointer val1p,gpointer val2p)
 name|parse_image_type
 parameter_list|(
@@ -6400,10 +6400,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|gint
 modifier|*
 name|typep
 decl_stmt|;
@@ -6525,7 +6525,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_interpolation_type (gpointer val1p,gpointer val2p)
 name|parse_interpolation_type
 parameter_list|(
@@ -6536,7 +6536,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|InterpolationType
@@ -6668,7 +6668,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_preview_size (gpointer val1p,gpointer val2p)
 name|parse_preview_size
 parameter_list|(
@@ -6679,7 +6679,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|token
@@ -6861,7 +6861,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_nav_preview_size (gpointer val1p,gpointer val2p)
 name|parse_nav_preview_size
 parameter_list|(
@@ -6872,7 +6872,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|token
@@ -7009,7 +7009,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_units (gpointer val1p,gpointer val2p)
 name|parse_units
 parameter_list|(
@@ -7020,10 +7020,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|g_assert
@@ -7142,7 +7142,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_plug_in (gpointer val1p,gpointer val2p)
 name|parse_plug_in
 parameter_list|(
@@ -7153,19 +7153,19 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|menu_path
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|accelerator
 decl_stmt|;
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|name
@@ -7325,7 +7325,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_plug_in_def (gpointer val1p,gpointer val2p)
 name|parse_plug_in_def
 parameter_list|(
@@ -7542,7 +7542,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_locale_def (PlugInDef * plug_in_def)
 name|parse_locale_def
 parameter_list|(
@@ -7551,7 +7551,7 @@ modifier|*
 name|plug_in_def
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|token
@@ -7703,7 +7703,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_proc_def (PlugInProcDef ** proc_def)
 name|parse_proc_def
 parameter_list|(
@@ -7717,10 +7717,10 @@ name|PlugInProcDef
 modifier|*
 name|pd
 decl_stmt|;
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|token
@@ -8718,7 +8718,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_proc_arg (ProcArg * arg)
 name|parse_proc_arg
 parameter_list|(
@@ -8727,7 +8727,7 @@ modifier|*
 name|arg
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|arg
@@ -8955,7 +8955,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_menu_path (gpointer val1p,gpointer val2p)
 name|parse_menu_path
 parameter_list|(
@@ -8966,15 +8966,15 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|menu_path
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|accelerator
 decl_stmt|;
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|menu_path
@@ -9698,7 +9698,7 @@ modifier|*
 name|key
 parameter_list|)
 block|{
-name|int
+name|gboolean
 name|done
 decl_stmt|;
 name|g_return_if_fail
@@ -10929,7 +10929,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_session_info (gpointer val1p,gpointer val2p)
 name|parse_session_info
 parameter_list|(
@@ -10940,10 +10940,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|SessionInfo
@@ -11288,7 +11288,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_unit_info (gpointer val1p,gpointer val2p)
 name|parse_unit_info
 parameter_list|(
@@ -11809,7 +11809,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_parasite (gpointer val1p,gpointer val2p)
 name|parse_parasite
 parameter_list|(
@@ -11820,10 +11820,10 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
-name|int
+name|gint
 name|res
 init|=
 name|ERROR
@@ -11951,7 +11951,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|parse_help_browser (gpointer val1p,gpointer val2p)
 name|parse_help_browser
 parameter_list|(
@@ -11962,7 +11962,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|token
@@ -12050,16 +12050,16 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|parse_unknown (char * token_sym)
+name|gint
+DECL|function|parse_unknown (gchar * token_sym)
 name|parse_unknown
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|token_sym
 parameter_list|)
 block|{
-name|int
+name|gint
 name|token
 decl_stmt|;
 name|UnknownToken
@@ -12284,12 +12284,12 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
-DECL|function|gimprc_value_to_str (char * name)
+DECL|function|gimprc_value_to_str (gchar * name)
 name|gimprc_value_to_str
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -12306,17 +12306,17 @@ end_function
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
-DECL|function|value_to_str (char * name)
+DECL|function|value_to_str (gchar * name)
 name|value_to_str
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -12706,7 +12706,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|string_to_str (gpointer val1p,gpointer val2p)
 name|string_to_str
@@ -12768,7 +12768,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|path_to_str (gpointer val1p,gpointer val2p)
 name|path_to_str
@@ -12794,7 +12794,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|double_to_str (gpointer val1p,gpointer val2p)
 name|double_to_str
@@ -12814,7 +12814,7 @@ argument_list|,
 operator|*
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|*
 operator|)
 name|val1p
@@ -12827,7 +12827,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|float_to_str (gpointer val1p,gpointer val2p)
 name|float_to_str
@@ -12845,7 +12845,7 @@ argument_list|(
 literal|"%f"
 argument_list|,
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 operator|*
@@ -12865,7 +12865,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|int_to_str (gpointer val1p,gpointer val2p)
 name|int_to_str
@@ -12885,7 +12885,7 @@ argument_list|,
 operator|*
 operator|(
 operator|(
-name|int
+name|gint
 operator|*
 operator|)
 name|val1p
@@ -12898,7 +12898,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|boolean_to_str (gpointer val1p,gpointer val2p)
 name|boolean_to_str
@@ -12966,7 +12966,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|position_to_str (gpointer val1p,gpointer val2p)
 name|position_to_str
@@ -13008,7 +13008,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|mem_size_to_str (gpointer val1p,gpointer val2p)
 name|mem_size_to_str
@@ -13020,7 +13020,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|guint
 name|size
 decl_stmt|;
 name|size
@@ -13028,7 +13028,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|int
+name|guint
 operator|*
 operator|)
 name|val1p
@@ -13086,7 +13086,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|image_type_to_str (gpointer val1p,gpointer val2p)
 name|image_type_to_str
@@ -13098,7 +13098,7 @@ name|gpointer
 name|val2p
 parameter_list|)
 block|{
-name|int
+name|gint
 name|type
 decl_stmt|;
 name|type
@@ -13106,7 +13106,7 @@ operator|=
 operator|*
 operator|(
 operator|(
-name|int
+name|gint
 operator|*
 operator|)
 name|val1p
@@ -13137,7 +13137,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|interpolation_type_to_str (gpointer val1p,gpointer val2p)
 name|interpolation_type_to_str
@@ -13209,7 +13209,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|preview_size_to_str (gpointer val1p,gpointer val2p)
 name|preview_size_to_str
@@ -13298,7 +13298,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|nav_preview_size_to_str (gpointer val1p,gpointer val2p)
 name|nav_preview_size_to_str
@@ -13361,7 +13361,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|units_to_str (gpointer val1p,gpointer val2p)
 name|units_to_str
@@ -13395,7 +13395,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|help_browser_to_str (gpointer val1p,gpointer val2p)
 name|help_browser_to_str
@@ -13432,7 +13432,7 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|char
+name|gchar
 modifier|*
 DECL|function|comment_to_str (gpointer val1p,gpointer val2p)
 name|comment_to_str
@@ -13529,10 +13529,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_gimp_directory_token (char * gimp_dir)
+DECL|function|add_gimp_directory_token (gchar * gimp_dir)
 name|add_gimp_directory_token
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|gimp_dir
 parameter_list|)
@@ -13636,10 +13636,10 @@ end_ifdef
 begin_function
 specifier|static
 name|void
-DECL|function|add_x11root_token (char * x11root)
+DECL|function|add_x11root_token (gchar * x11root)
 name|add_x11root_token
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|x11root
 parameter_list|)
@@ -13716,20 +13716,20 @@ end_comment
 
 begin_function
 specifier|static
-name|char
+name|gchar
 modifier|*
-DECL|function|open_backup_file (char * filename,char * secondary_filename,char ** name_used,FILE ** fp_new,FILE ** fp_old)
+DECL|function|open_backup_file (gchar * filename,gchar * secondary_filename,gchar ** name_used,FILE ** fp_new,FILE ** fp_old)
 name|open_backup_file
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|secondary_filename
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|name_used
@@ -13745,7 +13745,7 @@ modifier|*
 name|fp_old
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|oldfilename
 init|=
@@ -14005,12 +14005,12 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
-DECL|function|gimprc_find_token (char * token)
+DECL|function|gimprc_find_token (gchar * token)
 name|gimprc_find_token
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|token
 parameter_list|)
@@ -14077,14 +14077,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimprc_set_token (char * token,char * value)
+DECL|function|gimprc_set_token (gchar * token,gchar * value)
 name|gimprc_set_token
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|token
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|value
 parameter_list|)

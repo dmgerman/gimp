@@ -502,6 +502,17 @@ name|data
 parameter_list|)
 function_decl|;
 name|void
+name|gimp_uint_adjustment_update
+parameter_list|(
+name|GtkAdjustment
+modifier|*
+name|adjustment
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+name|void
 name|gimp_float_adjustment_update
 parameter_list|(
 name|GtkAdjustment

@@ -152,7 +152,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|guint
 name|tile_cache_size
 decl_stmt|;
 end_decl_stmt
@@ -457,7 +457,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|guint
 name|max_new_image_size
 decl_stmt|;
 end_decl_stmt
