@@ -83,7 +83,7 @@ block|}
 struct|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon297ee60f0103
+DECL|enum|__anon2c0785e20103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -255,6 +255,15 @@ parameter_list|)
 function_decl|;
 name|gdouble
 name|gimp_rgb_intensity
+parameter_list|(
+specifier|const
+name|GimpRGB
+modifier|*
+name|rgb
+parameter_list|)
+function_decl|;
+name|guchar
+name|gimp_rgb_intensity_uchar
 parameter_list|(
 specifier|const
 name|GimpRGB

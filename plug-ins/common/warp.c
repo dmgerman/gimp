@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295019090103
+DECL|enum|__anon2a1c3a500103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295019090208
+DECL|struct|__anon2a1c3a500208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295019090308
+DECL|struct|__anon2a1c3a500308
 block|{
 DECL|member|run
 name|gint
@@ -1026,6 +1026,9 @@ name|gint32
 name|image_ID
 decl_stmt|;
 comment|/* image id of drawable */
+name|GimpRGB
+name|color
+decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
@@ -1058,8 +1061,17 @@ name|gimp_tile_height
 argument_list|()
 expr_stmt|;
 comment|/* get currently selected foreground pixel color */
-name|gimp_palette_get_foreground
+name|gimp_palette_get_foreground_rgb
 argument_list|(
+operator|&
+name|color
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|color
+argument_list|,
 operator|&
 name|color_pixel
 index|[

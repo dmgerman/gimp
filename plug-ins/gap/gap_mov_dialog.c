@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon277288a20108
+DECL|struct|__anon28fa441b0108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon277288a20208
+DECL|struct|__anon28fa441b0208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277288a20308
+DECL|struct|__anon28fa441b0308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon277288a20408
+DECL|struct|__anon28fa441b0408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon277288a20503
+DECL|enum|__anon28fa441b0503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -12263,6 +12263,9 @@ decl_stmt|;
 name|GdkColor
 name|fg
 decl_stmt|;
+name|GimpRGB
+name|foreground
+decl_stmt|;
 name|guchar
 name|l_red
 decl_stmt|,
@@ -12350,8 +12353,17 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_palette_get_foreground
+name|gimp_palette_get_foreground_rgb
 argument_list|(
+operator|&
+name|foreground
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|foreground
+argument_list|,
 operator|&
 name|l_red
 argument_list|,

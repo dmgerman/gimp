@@ -679,6 +679,9 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
+name|GimpRGB
+name|background
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|,
@@ -708,8 +711,17 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/* Fetch the GIMP current background colour, to semi-flatten against */
-name|gimp_palette_get_background
+name|gimp_palette_get_background_rgb
 argument_list|(
+operator|&
+name|background
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|background
+argument_list|,
 operator|&
 name|bgred
 argument_list|,

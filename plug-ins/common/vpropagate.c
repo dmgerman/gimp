@@ -71,14 +71,6 @@ name|SHORT_NAME
 value|"vpropagate"
 end_define
 
-begin_typedef
-DECL|typedef|CH
-typedef|typedef
-name|guchar
-name|CH
-typedef|;
-end_typedef
-
 begin_define
 DECL|macro|VP_RGB
 define|#
@@ -235,13 +227,13 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 function_decl|;
@@ -300,10 +292,10 @@ specifier|static
 name|int
 name|value_difference_check
 parameter_list|(
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|int
@@ -320,13 +312,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -344,10 +336,10 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -366,13 +358,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -390,10 +382,10 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -412,13 +404,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -436,10 +428,10 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -458,13 +450,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -482,13 +474,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -506,13 +498,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -530,10 +522,10 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -552,10 +544,10 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -574,13 +566,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -598,13 +590,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -622,13 +614,13 @@ name|GimpImageBaseType
 parameter_list|,
 name|int
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 parameter_list|,
 name|void
@@ -698,7 +690,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ce3380108
+DECL|struct|__anon2894a7720108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -850,7 +842,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ce3380208
+DECL|struct|__anon2894a7720208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1075,7 +1067,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ce3380308
+DECL|struct|__anon2894a7720308
 block|{
 DECL|member|run
 name|gint
@@ -1817,6 +1809,9 @@ name|void
 modifier|*
 name|tmp
 decl_stmt|;
+name|GimpRGB
+name|foreground
+decl_stmt|;
 comment|/* calculate neighbors' indexes */
 name|left_index
 operator|=
@@ -2140,8 +2135,17 @@ literal|"Value propagating..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_palette_get_foreground_rgb
 argument_list|(
+operator|&
+name|foreground
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|foreground
+argument_list|,
 name|fore
 operator|+
 literal|0
@@ -2858,7 +2862,7 @@ name|dest
 operator|++
 operator|=
 call|(
-name|CH
+name|guchar
 call|)
 argument_list|(
 name|vpvals
@@ -2914,7 +2918,7 @@ name|dest
 operator|++
 operator|=
 call|(
-name|CH
+name|guchar
 call|)
 argument_list|(
 name|vpvals
@@ -2957,14 +2961,14 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|value_difference_check (CH * pos1,CH * pos2,gint ch)
+DECL|function|value_difference_check (guchar * pos1,guchar * pos2,gint ch)
 name|value_difference_check
 parameter_list|(
-name|CH
+name|guchar
 modifier|*
 name|pos1
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|pos2
 parameter_list|,
@@ -3054,7 +3058,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_white (GimpImageBaseType dtype,gint bytes,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_white (GimpImageBaseType dtype,gint bytes,guchar * best,guchar * here,void ** tmp)
 name|initialize_white
 parameter_list|(
 name|GimpImageBaseType
@@ -3063,11 +3067,11 @@ parameter_list|,
 name|gint
 name|bytes
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
@@ -3160,7 +3164,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_white (GimpImageBaseType dtype,gint bytes,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_white (GimpImageBaseType dtype,gint bytes,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_white
 parameter_list|(
 name|GimpImageBaseType
@@ -3169,15 +3173,15 @@ parameter_list|,
 name|gint
 name|bytes
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|orig
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
@@ -3290,7 +3294,7 @@ literal|3
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3336,7 +3340,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_black (GimpImageBaseType dtype,gint channels,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_black (GimpImageBaseType dtype,gint channels,guchar * best,guchar * here,void ** tmp)
 name|initialize_black
 parameter_list|(
 name|GimpImageBaseType
@@ -3345,11 +3349,11 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
@@ -3442,7 +3446,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_black (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_black (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_black
 parameter_list|(
 name|GimpImageBaseType
@@ -3451,15 +3455,15 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|orig
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
@@ -3572,7 +3576,7 @@ literal|3
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3618,7 +3622,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ce3380408
+DECL|struct|__anon2894a7720408
 block|{
 DECL|member|min_modified
 name|gshort
@@ -3637,7 +3641,7 @@ name|glong
 name|minv
 decl_stmt|;
 DECL|member|min
-name|CH
+name|guchar
 name|min
 index|[
 literal|3
@@ -3648,7 +3652,7 @@ name|glong
 name|maxv
 decl_stmt|;
 DECL|member|max
-name|CH
+name|guchar
 name|max
 index|[
 literal|3
@@ -3663,7 +3667,7 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_middle (GimpImageBaseType image_type,gint channels,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_middle (GimpImageBaseType image_type,gint channels,guchar * best,guchar * here,void ** tmp)
 name|initialize_middle
 parameter_list|(
 name|GimpImageBaseType
@@ -3672,11 +3676,11 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
@@ -3864,7 +3868,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_middle (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_middle (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_middle
 parameter_list|(
 name|GimpImageBaseType
@@ -3873,15 +3877,15 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|orig
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
@@ -4004,7 +4008,7 @@ literal|3
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4051,7 +4055,7 @@ literal|3
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4161,7 +4165,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_middle_to_peak (GimpImageBaseType image_type,gint channels,CH * here,CH * best,CH * dest,void * tmp)
+DECL|function|set_middle_to_peak (GimpImageBaseType image_type,gint channels,guchar * here,guchar * best,guchar * dest,void * tmp)
 name|set_middle_to_peak
 parameter_list|(
 name|GimpImageBaseType
@@ -4170,15 +4174,15 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|dest
 parameter_list|,
@@ -4354,7 +4358,7 @@ name|dest
 operator|++
 operator|=
 call|(
-name|CH
+name|guchar
 call|)
 argument_list|(
 name|vpvals
@@ -4423,7 +4427,7 @@ name|dest
 operator|++
 operator|=
 call|(
-name|CH
+name|guchar
 call|)
 argument_list|(
 name|vpvals
@@ -4466,7 +4470,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_foreground_to_peak (GimpImageBaseType image_type,gint channels,CH * here,CH * best,CH * dest,void * tmp)
+DECL|function|set_foreground_to_peak (GimpImageBaseType image_type,gint channels,guchar * here,guchar * best,guchar * dest,void * tmp)
 name|set_foreground_to_peak
 parameter_list|(
 name|GimpImageBaseType
@@ -4475,15 +4479,15 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|dest
 parameter_list|,
@@ -4656,7 +4660,7 @@ name|dest
 operator|++
 operator|=
 call|(
-name|CH
+name|guchar
 call|)
 argument_list|(
 name|vpvals
@@ -4699,7 +4703,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_foreground (GimpImageBaseType image_type,gint channels,CH * here,CH * best,void ** tmp)
+DECL|function|initialize_foreground (GimpImageBaseType image_type,gint channels,guchar * here,guchar * best,void ** tmp)
 name|initialize_foreground
 parameter_list|(
 name|GimpImageBaseType
@@ -4708,11 +4712,11 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
@@ -4722,7 +4726,10 @@ modifier|*
 name|tmp
 parameter_list|)
 block|{
-name|CH
+name|GimpRGB
+name|foreground
+decl_stmt|;
+name|guchar
 modifier|*
 name|ch
 decl_stmt|;
@@ -4743,7 +4750,7 @@ operator|*
 operator|)
 name|g_new
 argument_list|(
-name|CH
+name|guchar
 argument_list|,
 literal|3
 argument_list|)
@@ -4751,14 +4758,23 @@ expr_stmt|;
 name|ch
 operator|=
 operator|(
-name|CH
+name|guchar
 operator|*
 operator|)
 operator|*
 name|tmp
 expr_stmt|;
-name|gimp_palette_get_foreground
+name|gimp_palette_get_foreground_rgb
 argument_list|(
+operator|&
+name|foreground
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|foreground
+argument_list|,
 operator|&
 name|ch
 index|[
@@ -4785,7 +4801,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_background (GimpImageBaseType image_type,gint channels,CH * here,CH * best,void ** tmp)
+DECL|function|initialize_background (GimpImageBaseType image_type,gint channels,guchar * here,guchar * best,void ** tmp)
 name|initialize_background
 parameter_list|(
 name|GimpImageBaseType
@@ -4794,11 +4810,11 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
@@ -4808,7 +4824,10 @@ modifier|*
 name|tmp
 parameter_list|)
 block|{
-name|CH
+name|GimpRGB
+name|background
+decl_stmt|;
+name|guchar
 modifier|*
 name|ch
 decl_stmt|;
@@ -4829,7 +4848,7 @@ operator|*
 operator|)
 name|g_new
 argument_list|(
-name|CH
+name|guchar
 argument_list|,
 literal|3
 argument_list|)
@@ -4837,14 +4856,23 @@ expr_stmt|;
 name|ch
 operator|=
 operator|(
-name|CH
+name|guchar
 operator|*
 operator|)
 operator|*
 name|tmp
 expr_stmt|;
-name|gimp_palette_get_background
+name|gimp_palette_get_background_rgb
 argument_list|(
+operator|&
+name|background
+argument_list|)
+expr_stmt|;
+name|gimp_rgb_get_uchar
+argument_list|(
+operator|&
+name|background
+argument_list|,
 operator|&
 name|ch
 index|[
@@ -4871,7 +4899,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_a_color (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_a_color (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_a_color
 parameter_list|(
 name|GimpImageBaseType
@@ -4880,15 +4908,15 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|orig
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
@@ -4897,12 +4925,12 @@ modifier|*
 name|tmp
 parameter_list|)
 block|{
-name|CH
+name|guchar
 modifier|*
 name|fg
 init|=
 operator|(
-name|CH
+name|guchar
 operator|*
 operator|)
 name|tmp
@@ -4970,7 +4998,7 @@ literal|3
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4993,7 +5021,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_opaque (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_opaque (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_opaque
 parameter_list|(
 name|GimpImageBaseType
@@ -5002,15 +5030,15 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|orig
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
@@ -5058,7 +5086,7 @@ name|channels
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5097,7 +5125,7 @@ name|channels
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5111,7 +5139,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_transparent (GimpImageBaseType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_transparent (GimpImageBaseType image_type,gint channels,guchar * orig,guchar * here,guchar * best,void * tmp)
 name|propagate_transparent
 parameter_list|(
 name|GimpImageBaseType
@@ -5120,15 +5148,15 @@ parameter_list|,
 name|gint
 name|channels
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|orig
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|here
 parameter_list|,
-name|CH
+name|guchar
 modifier|*
 name|best
 parameter_list|,
@@ -5176,7 +5204,7 @@ name|channels
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5215,7 +5243,7 @@ name|channels
 operator|*
 sizeof|sizeof
 argument_list|(
-name|CH
+name|guchar
 argument_list|)
 argument_list|)
 expr_stmt|;
