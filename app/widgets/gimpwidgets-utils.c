@@ -1298,6 +1298,18 @@ argument_list|,
 name|screen
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|TRUE
+comment|/* gtk_check_version (2, 4, 1) */
+condition|)
+name|gtk_menu_set_monitor
+argument_list|(
+name|menu
+argument_list|,
+name|monitor
+argument_list|)
+expr_stmt|;
 name|gtk_widget_size_request
 argument_list|(
 name|widget
@@ -1590,6 +1602,18 @@ argument_list|(
 name|menu
 argument_list|,
 name|screen
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|TRUE
+comment|/* gtk_check_version (2, 4, 1) */
+condition|)
+name|gtk_menu_set_monitor
+argument_list|(
+name|menu
+argument_list|,
+name|monitor
 argument_list|)
 expr_stmt|;
 operator|*

@@ -1579,8 +1579,14 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|FALSE
-comment|/* gtk_check_version (2, 4, 1) */
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|4
+argument_list|,
+literal|1
+argument_list|)
 condition|)
 block|{
 if|if

@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afba2da0103
+DECL|enum|__anon2c84a97e0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2532,18 +2532,6 @@ name|menubar
 argument_list|)
 expr_stmt|;
 comment|/*  make sure we can activate accels even if the menubar is invisible    *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)    */
-if|if
-condition|(
-operator|!
-name|gtk_check_version
-argument_list|(
-literal|2
-argument_list|,
-literal|4
-argument_list|,
-literal|0
-argument_list|)
-condition|)
 name|g_signal_connect
 argument_list|(
 name|menubar
