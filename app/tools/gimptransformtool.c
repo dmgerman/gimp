@@ -4492,7 +4492,7 @@ name|tr_tool
 operator|->
 name|info_dialog
 condition|)
-name|info_dialog_popdown
+name|info_dialog_hide
 argument_list|(
 name|tr_tool
 operator|->

@@ -615,7 +615,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|info_dialog_popup
+name|info_dialog_present
 argument_list|(
 name|shell
 operator|->

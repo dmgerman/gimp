@@ -348,8 +348,54 @@ end_function
 
 begin_function
 name|void
-DECL|function|info_dialog_popup (InfoDialog * idialog)
-name|info_dialog_popup
+DECL|function|info_dialog_show (InfoDialog * idialog)
+name|info_dialog_show
+parameter_list|(
+name|InfoDialog
+modifier|*
+name|idialog
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|idialog
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|idialog
+operator|->
+name|shell
+argument_list|)
+condition|)
+name|gdk_window_show
+argument_list|(
+name|idialog
+operator|->
+name|shell
+operator|->
+name|window
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_widget_show
+argument_list|(
+name|idialog
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|info_dialog_present (InfoDialog * idialog)
+name|info_dialog_present
 parameter_list|(
 name|InfoDialog
 modifier|*
@@ -378,8 +424,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|info_dialog_popdown (InfoDialog * idialog)
-name|info_dialog_popdown
+DECL|function|info_dialog_hide (InfoDialog * idialog)
+name|info_dialog_hide
 parameter_list|(
 name|InfoDialog
 modifier|*

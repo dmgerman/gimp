@@ -330,7 +330,7 @@ modifier|*
 name|info_win
 parameter_list|)
 block|{
-name|info_dialog_popdown
+name|info_dialog_hide
 argument_list|(
 name|info_win
 argument_list|)
@@ -1558,7 +1558,7 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 block|}
-name|info_dialog_popup
+name|info_dialog_present
 argument_list|(
 name|info_window_auto
 argument_list|)

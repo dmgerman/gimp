@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c73bc10103
+DECL|enum|__anon2afbee490103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL
@@ -223,7 +223,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|info_dialog_popup
+name|info_dialog_show
 parameter_list|(
 name|InfoDialog
 modifier|*
@@ -234,7 +234,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|info_dialog_popdown
+name|info_dialog_present
+parameter_list|(
+name|InfoDialog
+modifier|*
+name|idialog
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|info_dialog_hide
 parameter_list|(
 name|InfoDialog
 modifier|*

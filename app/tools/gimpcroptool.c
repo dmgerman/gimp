@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e50380103
+DECL|enum|__anon2b40004d0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4920,7 +4920,7 @@ operator|->
 name|crop_info
 argument_list|)
 expr_stmt|;
-name|info_dialog_popup
+name|info_dialog_show
 argument_list|(
 name|crop
 operator|->
@@ -4980,7 +4980,7 @@ name|crop
 operator|->
 name|crop_info
 condition|)
-name|info_dialog_popdown
+name|info_dialog_hide
 argument_list|(
 name|crop
 operator|->

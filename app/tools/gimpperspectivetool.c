@@ -1124,7 +1124,7 @@ operator|->
 name|info_dialog
 argument_list|)
 expr_stmt|;
-name|info_dialog_popup
+name|info_dialog_show
 argument_list|(
 name|tr_tool
 operator|->
