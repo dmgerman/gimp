@@ -1,10 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Portable Network Graphics (PNG) plug-in for The GIMP -- an image  *   manipulation program  *  *   Copyright 1997 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.1.1.1  1997/11/24 22:04:45  sopwith  *   Let's try this import one last time.  *  *   Revision 1.4  1997/11/18 03:04:24  nobody  *   fixed ugly comment-bugs introduced by evil darkwing  *   keep out configuration empty dirs  *   	--darkwing  *  *   Revision 1.3  1997/11/17 05:43:55  nobody  *   updated ChangeLog  *   dropped non-working /doc/Makefile entries  *   applied many fixes from the registry as well as the devel ML  *   applied missing patches by Art Haas  *  *   	--darkwing  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/10/17  13:55:55  mike  *   Updated author/contact info.  *   Added typecast for palette information.  *  *   Revision 1.9  1997/09/29  19:18:59  mike  *   Now check for return value of fopen() in case the user picks a file that  *   doesn't exist or isn't writable.  *  *   Revision 1.8  1997/09/29  13:42:13  mike  *   Updated "magic" string for PNG detection (thanks to Nicholas Lamb)  *  *   Revision 1.7  1997/07/25  20:45:24  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.6  1997/06/11  17:49:07  mike  *   Updated docos for release.  */
-end_comment
-
-begin_comment
-comment|/*   Revision 1.5  1997/06/11  17:39:28  mike  *   Fixed a few memory leaks - not critical, since this plug-in isn't running  *   all the time...  *  *   Merged with work done by Daniel Skarda - now support compression level  *   and interlacing on saves.  *  *   Fixed indexed image handling (whoops, image types and drawable types are  *   not the same... d'oh!)  *  *   Revision 1.4  1997/06/08  19:34:43  mike  *   Fixed bug in load_image() and save_image() - would crash if filename  *   didn't have a '/' in it...  *  *   Revision 1.3  1997/06/08  16:34:33  mike  *   Added actual code to save_image().  *   Updated docos.  *  *   Revision 1.2  1997/06/08  16:02:52  mike  *   Updated registration to get rid of load handler errors.  *  *   Revision 1.1  1997/06/08  15:10:08  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Portable Network Graphics (PNG) plug-in for The GIMP -- an image  *   manipulation program  *  *   Copyright 1997 Michael Sweet (mike@easysw.com) and  *   Daniel Skarda (0rfelyus@atrey.karlin.mff.cuni.cz).  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_interlace_update()     - Update the interlacing option.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.2  1998/01/05 09:30:23  yosh  *   Check for div-by-zero in by_color_select.c when threshold is 0  *   The text tool handles the no fonts case better  *   Minor bug in tile saving squashed  *   updated png plugin  *   added flarefx plugin  *  *   -Yosh  *  *   Revision 1.12  1998/01/04  14:10:09  mike  *   Fixed paletted image saving bug - wasn't correctly storing the number of  *   colors and didn't flag the palette as valid.  *   Removed INDEXEDA support since the current PNG library doesn't support it.  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/10/17  13:55:55  mike  *   Updated author/contact info.  *   Added typecast for palette information.  *  *   Revision 1.9  1997/09/29  19:18:59  mike  *   Now check for return value of fopen() in case the user picks a file that  *   doesn't exist or isn't writable.  *  *   Revision 1.8  1997/09/29  13:42:13  mike  *   Updated "magic" string for PNG detection (thanks to Nicholas Lamb)  *  *   Revision 1.7  1997/07/25  20:45:24  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.6  1997/06/11  17:49:07  mike  *   Updated docos for release.  *  *   Revision 1.5  1997/06/11  17:39:28  mike  *   Fixed a few memory leaks - not critical, since this plug-in isn't running  *   all the time...  *  *   Merged with work done by Daniel Skarda - now support compression level  *   and interlacing on saves.  *  *   Fixed indexed image handling (whoops, image types and drawable types are  *   not the same... d'oh!)  *  *   Revision 1.4  1997/06/08  19:34:43  mike  *   Fixed bug in load_image() and save_image() - would crash if filename  *   didn't have a '/' in it...  *  *   Revision 1.3  1997/06/08  16:34:33  mike  *   Added actual code to save_image().  *   Updated docos.  *  *   Revision 1.2  1997/06/08  16:02:52  mike  *   Updated registration to get rid of load handler errors.  *  *   Revision 1.1  1997/06/08  15:10:08  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -50,7 +46,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.1.4 - 14 November 1997"
+value|"1.1.5 - 4 January 1998"
 end_define
 
 begin_define
@@ -68,7 +64,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4c507c0108
+DECL|struct|__anon279532260108
 block|{
 DECL|member|interlaced
 name|gint
@@ -508,7 +504,7 @@ name|PLUG_IN_VERSION
 argument_list|,
 literal|"<Save>/PNG"
 argument_list|,
-literal|"RGB*,GRAY*,INDEXED*"
+literal|"RGB*,GRAY*,INDEXED"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -1340,25 +1336,6 @@ operator|=
 name|INDEXED_IMAGE
 expr_stmt|;
 break|break;
-case|case
-name|PNG_COLOR_TYPE_PALETTE
-operator||
-name|PNG_COLOR_MASK_ALPHA
-case|:
-comment|/* Indexed + alpha */
-name|bpp
-operator|=
-literal|2
-expr_stmt|;
-name|image_type
-operator|=
-name|INDEXED
-expr_stmt|;
-name|layer_type
-operator|=
-name|INDEXEDA_IMAGE
-expr_stmt|;
-break|break;
 block|}
 empty_stmt|;
 name|image
@@ -1836,6 +1813,10 @@ name|png_infop
 name|info
 decl_stmt|;
 comment|/* PNG info pointer */
+name|gint
+name|num_colors
+decl_stmt|;
+comment|/* Number of colors in colormap */
 name|guchar
 modifier|*
 modifier|*
@@ -1926,7 +1907,7 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* PNG_LIBPNG_VER> 88 */
-comment|/*   * Open the file and initialize the PNG read "engine"...   */
+comment|/*   * Open the file and initialize the PNG write "engine"...   */
 name|fp
 operator|=
 name|fopen
@@ -2194,6 +2175,12 @@ name|INDEXED_IMAGE
 case|:
 name|info
 operator|->
+name|valid
+operator||=
+name|PNG_INFO_PLTE
+expr_stmt|;
+name|info
+operator|->
 name|color_type
 operator|=
 name|PNG_COLOR_TYPE_PALETTE
@@ -2209,60 +2196,19 @@ name|gimp_image_get_cmap
 argument_list|(
 name|image_ID
 argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
 operator|&
-operator|(
+name|num_colors
+argument_list|)
+expr_stmt|;
 name|info
 operator|->
 name|num_palette
-operator|)
-argument_list|)
+operator|=
+name|num_colors
 expr_stmt|;
 name|bpp
 operator|=
 literal|1
-expr_stmt|;
-break|break;
-case|case
-name|INDEXEDA_IMAGE
-case|:
-name|info
-operator|->
-name|color_type
-operator|=
-name|PNG_COLOR_TYPE_PALETTE
-operator||
-name|PNG_COLOR_MASK_ALPHA
-expr_stmt|;
-name|info
-operator|->
-name|palette
-operator|=
-operator|(
-name|png_colorp
-operator|)
-name|gimp_image_get_cmap
-argument_list|(
-name|image_ID
-argument_list|,
-operator|(
-name|guchar
-operator|*
-operator|)
-operator|&
-operator|(
-name|info
-operator|->
-name|num_palette
-operator|)
-argument_list|)
-expr_stmt|;
-name|bpp
-operator|=
-literal|2
 expr_stmt|;
 break|break;
 block|}

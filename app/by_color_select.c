@@ -654,6 +654,10 @@ block|}
 if|if
 condition|(
 name|antialias
+operator|&&
+name|threshold
+operator|>
+literal|0
 condition|)
 block|{
 name|float

@@ -1634,7 +1634,7 @@ name|rbytes
 operator|-
 name|nleft
 argument_list|,
-name|rbytes
+name|nleft
 argument_list|)
 expr_stmt|;
 if|if
