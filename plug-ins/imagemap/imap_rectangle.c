@@ -1947,7 +1947,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2be34e9f0108
+DECL|struct|__anon28c8e0d70108
 typedef|typedef
 struct|struct
 block|{
@@ -3120,6 +3120,63 @@ end_function
 
 begin_function
 specifier|static
+name|gboolean
+DECL|function|rectangle_factory_finish (Object_t * obj,gint x,gint y)
+name|rectangle_factory_finish
+parameter_list|(
+name|Object_t
+modifier|*
+name|obj
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+block|{
+name|Rectangle_t
+modifier|*
+name|rectangle
+init|=
+name|ObjectToRectangle
+argument_list|(
+name|obj
+argument_list|)
+decl_stmt|;
+name|rectangle
+operator|->
+name|width
+operator|=
+name|x
+operator|-
+name|rectangle
+operator|->
+name|x
+expr_stmt|;
+name|rectangle
+operator|->
+name|height
+operator|=
+name|y
+operator|-
+name|rectangle
+operator|->
+name|y
+expr_stmt|;
+name|rectangle_normalize
+argument_list|(
+name|obj
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|Object_t
 modifier|*
 DECL|function|rectangle_factory_create_object (gint x,gint y)
@@ -3289,9 +3346,8 @@ block|{
 name|NULL
 block|,
 comment|/* Object pointer */
-name|NULL
+name|rectangle_factory_finish
 block|,
-comment|/* Finish func */
 name|NULL
 block|,
 comment|/* Cancel func */
