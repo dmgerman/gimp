@@ -147,6 +147,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

@@ -283,6 +283,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -319,6 +320,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -526,7 +528,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9e0610103
+DECL|enum|__anon28dab1610103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -633,7 +635,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af9e0610203
+DECL|enum|__anon28dab1610203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -3985,13 +3987,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_foreground (GimpContext * context,GimpRGB * color)
+DECL|function|gimp_context_set_foreground (GimpContext * context,const GimpRGB * color)
 name|gimp_context_set_foreground
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -4075,13 +4078,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_real_set_foreground (GimpContext * context,GimpRGB * color)
+DECL|function|gimp_context_real_set_foreground (GimpContext * context,const GimpRGB * color)
 name|gimp_context_real_set_foreground
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -4196,13 +4200,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_background (GimpContext * context,GimpRGB * color)
+DECL|function|gimp_context_set_background (GimpContext * context,const GimpRGB * color)
 name|gimp_context_set_background
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -4286,13 +4291,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_real_set_background (GimpContext * context,GimpRGB * color)
+DECL|function|gimp_context_real_set_background (GimpContext * context,const GimpRGB * color)
 name|gimp_context_real_set_background
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

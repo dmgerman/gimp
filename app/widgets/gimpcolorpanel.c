@@ -136,6 +136,7 @@ specifier|static
 name|void
 name|gimp_color_panel_select_callback
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -609,6 +610,11 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
+operator|(
+specifier|const
+name|GimpRGB
+operator|*
+operator|)
 operator|&
 name|color
 argument_list|,
@@ -675,9 +681,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_panel_select_callback (GimpRGB * color,ColorNotebookState state,gpointer data)
+DECL|function|gimp_color_panel_select_callback (const GimpRGB * color,ColorNotebookState state,gpointer data)
 name|gimp_color_panel_select_callback
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

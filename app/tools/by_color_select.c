@@ -362,6 +362,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -5406,13 +5407,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|by_color_select_color_drop (GtkWidget * widget,GimpRGB * color,gpointer data)
+DECL|function|by_color_select_color_drop (GtkWidget * widget,const GimpRGB * color,gpointer data)
 name|by_color_select_color_drop
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

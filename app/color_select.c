@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d696750103
+DECL|enum|__anon2ad544890103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -227,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d696750203
+DECL|enum|__anon2ad544890203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -448,6 +448,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -1457,13 +1458,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_select_drop_color (GtkWidget * widget,GimpRGB * color,gpointer data)
+DECL|function|color_select_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
 name|color_select_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -7251,7 +7253,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d696750308
+DECL|struct|__anon2ad544890308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299995850103
+DECL|enum|__anon277f65530103
 block|{
 DECL|enumerator|GIMP_CONTEXT_ARG_IMAGE
 name|GIMP_CONTEXT_ARG_IMAGE
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299995850203
+DECL|enum|__anon277f65530203
 block|{
 DECL|enumerator|GIMP_CONTEXT_IMAGE_MASK
 name|GIMP_CONTEXT_IMAGE_MASK
@@ -937,6 +937,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -1005,6 +1006,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

@@ -143,6 +143,17 @@ parameter_list|)
 value|(GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_IMAGE, GimpImageClass))
 end_define
 
+begin_define
+DECL|macro|GIMP_IS_IMAGE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_IMAGE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_IMAGE))
+end_define
+
 begin_typedef
 DECL|typedef|GimpImageClass
 typedef|typedef
@@ -527,7 +538,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0502f20103
+DECL|enum|__anon2778e0bd0103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -555,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0502f20203
+DECL|enum|__anon2778e0bd0203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY

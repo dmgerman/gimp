@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275e712c0103
+DECL|enum|__anon287895700103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -755,9 +755,10 @@ end_decl_stmt
 begin_function
 name|ColorNotebook
 modifier|*
-DECL|function|color_notebook_new (GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
+DECL|function|color_notebook_new (const GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
 name|color_notebook_new
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -3031,13 +3032,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_set_color (ColorNotebook * cnp,GimpRGB * color)
+DECL|function|color_notebook_set_color (ColorNotebook * cnp,const GimpRGB * color)
 name|color_notebook_set_color
 parameter_list|(
 name|ColorNotebook
 modifier|*
 name|cnp
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

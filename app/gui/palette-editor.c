@@ -336,7 +336,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c03dcf30103
+DECL|enum|__anon2b14862a0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -4153,9 +4153,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_select_callback (GimpRGB * callback_color,ColorNotebookState state,void * data)
+DECL|function|palette_select_callback (const GimpRGB * callback_color,ColorNotebookState state,gpointer data)
 name|palette_select_callback
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|callback_color
@@ -4163,8 +4164,7 @@ parameter_list|,
 name|ColorNotebookState
 name|state
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -4522,6 +4522,11 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
+operator|(
+specifier|const
+name|GimpRGB
+operator|*
+operator|)
 operator|&
 name|color
 argument_list|,
@@ -8415,13 +8420,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_dialog_drop_color (GtkWidget * widget,GimpRGB * color,gpointer data)
+DECL|function|palette_dialog_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
 name|palette_dialog_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

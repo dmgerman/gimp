@@ -2442,12 +2442,15 @@ modifier|*
 name|GetColorFunc
 function_decl|)
 parameter_list|(
-name|GtkObject
+name|GimpObject
 modifier|*
+name|object
 parameter_list|,
-name|int
+name|gint
+name|x
 parameter_list|,
-name|int
+name|gint
+name|y
 parameter_list|)
 function_decl|;
 end_typedef
@@ -2506,7 +2509,7 @@ decl_stmt|;
 name|GetColorFunc
 name|get_color_func
 decl_stmt|;
-name|GtkObject
+name|GimpObject
 modifier|*
 name|get_color_obj
 decl_stmt|;
@@ -2569,7 +2572,7 @@ name|gimp_drawable_get_color_at
 expr_stmt|;
 name|get_color_obj
 operator|=
-name|GTK_OBJECT
+name|GIMP_OBJECT
 argument_list|(
 name|drawable
 argument_list|)
@@ -2597,7 +2600,7 @@ name|gimp_image_get_color_at
 expr_stmt|;
 name|get_color_obj
 operator|=
-name|GTK_OBJECT
+name|GIMP_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
@@ -2772,7 +2775,7 @@ index|]
 operator|+=
 name|tmp_color
 index|[
-literal|3
+name|ALPHA_PIX
 index|]
 expr_stmt|;
 name|g_free
@@ -2847,7 +2850,7 @@ call|)
 argument_list|(
 name|color_avg
 index|[
-literal|3
+name|ALPHA_PIX
 index|]
 operator|/
 name|count
@@ -2899,7 +2902,7 @@ index|]
 operator|=
 name|color
 index|[
-literal|3
+name|ALPHA_PIX
 index|]
 expr_stmt|;
 if|if

@@ -4124,13 +4124,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_drop_color (GtkWidget * widget,GimpRGB * drop_color,gpointer data)
+DECL|function|gdisplay_drop_color (GtkWidget * widget,const GimpRGB * drop_color,gpointer data)
 name|gdisplay_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|drop_color

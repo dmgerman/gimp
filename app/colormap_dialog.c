@@ -141,7 +141,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon287174670103
+DECL|enum|__anon2b9d48640103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -340,6 +340,7 @@ specifier|static
 name|void
 name|ipal_select_callback
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -574,6 +575,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -2047,13 +2049,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|palette_drop_color (GtkWidget * widget,GimpRGB * color,gpointer data)
+DECL|function|palette_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
 name|palette_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -5030,6 +5033,11 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
+operator|(
+specifier|const
+name|GimpRGB
+operator|*
+operator|)
 operator|&
 name|color
 argument_list|,
@@ -5105,9 +5113,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ipal_select_callback (GimpRGB * color,ColorNotebookState state,gpointer data)
+DECL|function|ipal_select_callback (const GimpRGB * color,ColorNotebookState state,gpointer data)
 name|ipal_select_callback
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -5582,7 +5591,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287174670208
+DECL|struct|__anon2b9d48640208
 block|{
 DECL|member|def
 name|GimpImage

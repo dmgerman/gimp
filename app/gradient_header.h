@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c1762d0103
+DECL|enum|__anon295508940103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c1762d0203
+DECL|enum|__anon295508940203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB
@@ -138,34 +138,14 @@ decl_stmt|,
 name|right
 decl_stmt|;
 comment|/* Left pos, midpoint, right pos */
-DECL|member|r0
-DECL|member|g0
-DECL|member|b0
-DECL|member|a0
-name|gdouble
-name|r0
-decl_stmt|,
-name|g0
-decl_stmt|,
-name|b0
-decl_stmt|,
-name|a0
+DECL|member|left_color
+name|GimpRGB
+name|left_color
 decl_stmt|;
-comment|/* Left color */
-DECL|member|r1
-DECL|member|g1
-DECL|member|b1
-DECL|member|a1
-name|gdouble
-name|r1
-decl_stmt|,
-name|g1
-decl_stmt|,
-name|b1
-decl_stmt|,
-name|a1
+DECL|member|right_color
+name|GimpRGB
+name|right_color
 decl_stmt|;
-comment|/* Right color */
 DECL|member|type
 name|grad_type_t
 name|type
@@ -177,12 +157,12 @@ name|color
 decl_stmt|;
 comment|/* Segment's coloring type */
 DECL|member|prev
-DECL|member|next
-name|struct
-name|_grad_segment_t
+name|grad_segment_t
 modifier|*
 name|prev
-decl_stmt|,
+decl_stmt|;
+DECL|member|next
+name|grad_segment_t
 modifier|*
 name|next
 decl_stmt|;

@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f4c9900103
+DECL|enum|__anon2c0891590103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -139,6 +139,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -1377,9 +1378,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_select_callback (GimpRGB * color,ColorNotebookState state,gpointer client_data)
+DECL|function|color_area_select_callback (const GimpRGB * color,ColorNotebookState state,gpointer client_data)
 name|color_area_select_callback
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -1557,6 +1559,11 @@ name|color_notebook
 operator|=
 name|color_notebook_new
 argument_list|(
+operator|(
+specifier|const
+name|GimpRGB
+operator|*
+operator|)
 operator|&
 name|color
 argument_list|,
@@ -2272,13 +2279,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_area_drop_color (GtkWidget * widget,GimpRGB * color,gpointer data)
+DECL|function|color_area_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
 name|color_area_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

@@ -780,6 +780,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -6913,7 +6914,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad65a220108
+DECL|struct|__anon2b192b960108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -7374,13 +7375,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|channel_widget_drop_color (GtkWidget * widget,GimpRGB * color,gpointer data)
+DECL|function|channel_widget_drop_color (GtkWidget * widget,const GimpRGB * color,gpointer data)
 name|channel_widget_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1770040103
+DECL|enum|__anon275879db0103
 block|{
 DECL|enumerator|COLOR_NOTEBOOK_OK
 name|COLOR_NOTEBOOK_OK
@@ -44,6 +44,7 @@ modifier|*
 name|ColorNotebookCallback
 function_decl|)
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -71,6 +72,7 @@ name|ColorNotebook
 modifier|*
 name|color_notebook_new
 parameter_list|(
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -131,6 +133,7 @@ name|ColorNotebook
 modifier|*
 name|cnb
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
