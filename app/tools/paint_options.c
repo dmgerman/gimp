@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppropwidgets.h"
 end_include
 
@@ -1891,8 +1897,19 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
+name|toplevel
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|popup
 decl_stmt|;
+name|toplevel
+operator|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 name|popup
 operator|=
 name|gimp_container_popup_new
@@ -1906,6 +1923,22 @@ operator|->
 name|container
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_DOCK
+argument_list|(
+name|toplevel
+argument_list|)
+operator|->
+name|dialog_factory
+argument_list|,
+literal|"gimp-brush-grid"
+argument_list|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+argument_list|,
+name|_
+argument_list|(
+literal|"Open the brush selection dialog"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_popup_show

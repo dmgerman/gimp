@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpfontselection.h"
 end_include
 
@@ -125,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dd7c6f0103
+DECL|enum|__anon2bf7d96a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1270,8 +1276,19 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
+name|toplevel
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|popup
 decl_stmt|;
+name|toplevel
+operator|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 name|popup
 operator|=
 name|gimp_container_popup_new
@@ -1283,6 +1300,22 @@ operator|->
 name|fonts
 argument_list|,
 name|context
+argument_list|,
+name|GIMP_DOCK
+argument_list|(
+name|toplevel
+argument_list|)
+operator|->
+name|dialog_factory
+argument_list|,
+literal|"gimp-font-list"
+argument_list|,
+name|GTK_STOCK_SELECT_FONT
+argument_list|,
+name|_
+argument_list|(
+literal|"Open the font selection dialog"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_popup_show

@@ -108,11 +108,6 @@ name|GtkWidget
 modifier|*
 name|name_label
 decl_stmt|;
-DECL|member|scrolled_win
-name|GtkWidget
-modifier|*
-name|scrolled_win
-decl_stmt|;
 DECL|member|wrap_box
 name|GtkWidget
 modifier|*

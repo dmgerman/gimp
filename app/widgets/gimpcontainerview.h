@@ -130,6 +130,11 @@ DECL|member|get_name_func
 name|GimpItemGetNameFunc
 name|get_name_func
 decl_stmt|;
+DECL|member|scrolled_win
+name|GtkWidget
+modifier|*
+name|scrolled_win
+decl_stmt|;
 comment|/*  initialized by subclass  */
 DECL|member|dnd_widget
 name|GtkWidget
@@ -399,6 +404,23 @@ name|button
 parameter_list|,
 name|GType
 name|children_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_container_view_set_size_request
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
 parameter_list|)
 function_decl|;
 end_function_decl
