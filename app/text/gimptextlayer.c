@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d6ebd10103
+DECL|enum|__anon28b6b1630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1906,7 +1906,7 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TEXT
 argument_list|,
-name|NULL
+name|undo_desc
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_push_text_layer
@@ -2237,21 +2237,7 @@ block|{
 name|TileManager
 modifier|*
 name|new_tiles
-decl_stmt|;
-name|item
-operator|->
-name|width
-operator|=
-name|width
-expr_stmt|;
-name|item
-operator|->
-name|height
-operator|=
-name|height
-expr_stmt|;
-name|new_tiles
-operator|=
+init|=
 name|tile_manager_new
 argument_list|(
 name|width
@@ -2262,7 +2248,7 @@ name|drawable
 operator|->
 name|bytes
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_drawable_set_tiles
 argument_list|(
 name|drawable
