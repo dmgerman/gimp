@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e02f40103
+DECL|enum|__anon2c4841620103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -167,7 +167,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e02f40203
+DECL|enum|__anon2c4841620203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -938,6 +938,11 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+name|gimp_container_clear
+argument_list|(
+name|container
+argument_list|)
+expr_stmt|;
 while|while
 condition|(
 name|container
@@ -1274,7 +1279,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e02f40308
+DECL|struct|__anon2c4841620308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
