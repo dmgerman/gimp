@@ -1304,10 +1304,8 @@ name|temp_proc_ht
 operator|=
 name|g_hash_table_new
 argument_list|(
-operator|&
 name|g_str_hash
 argument_list|,
-operator|&
 name|g_str_equal
 argument_list|)
 expr_stmt|;
@@ -1802,11 +1800,6 @@ condition|(
 name|found
 condition|)
 block|{
-name|g_free
-argument_list|(
-name|hash_name
-argument_list|)
-expr_stmt|;
 name|g_hash_table_remove
 argument_list|(
 name|temp_proc_ht
@@ -1815,6 +1808,11 @@ operator|(
 name|gpointer
 operator|)
 name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|hash_name
 argument_list|)
 expr_stmt|;
 block|}
