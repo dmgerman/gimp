@@ -61,7 +61,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e67ee0103
+DECL|enum|__anon2c1a8bea0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -81,7 +81,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e67ee0208
+DECL|struct|__anon2c1a8bea0208
 block|{
 DECL|member|direction
 name|gint
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296e67ee0308
+DECL|struct|__anon2c1a8bea0308
 block|{
 DECL|member|run
 name|gint
@@ -226,9 +226,9 @@ init|=
 block|{
 literal|0
 block|,
-comment|/* direction*/
+comment|/* direction */
 literal|4
-comment|/* depth */
+comment|/* depth     */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -312,14 +312,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -334,12 +327,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -371,11 +358,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -543,16 +530,13 @@ name|nparams
 operator|!=
 literal|5
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|svals
 operator|.
@@ -586,7 +570,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|svals
@@ -623,6 +606,7 @@ name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -667,7 +651,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
-literal|"struc"
+name|_
+argument_list|(
+literal|"Applying Canvas..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -1347,12 +1334,10 @@ expr_stmt|;
 comment|/*  allocate row buffers  */
 name|cur_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -1364,12 +1349,10 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -1949,12 +1932,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|row
 operator|/
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|y2

@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bee20bc0108
+DECL|struct|__anon2c25d3820108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -283,7 +283,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bee20bc0208
+DECL|struct|__anon2c25d3820208
 block|{
 DECL|member|height
 DECL|member|width
@@ -718,16 +718,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -882,13 +882,6 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
 name|gint
 name|nargs
 init|=
@@ -904,12 +897,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -939,11 +926,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1110,16 +1097,13 @@ name|nparams
 operator|!=
 literal|16
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|svals
 operator|.
@@ -1443,7 +1427,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
-literal|"Calculating picture..."
+name|_
+argument_list|(
+literal|"Sinus: rendering..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -1525,7 +1512,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2bee20bc0308
+DECL|struct|__anon2c25d3820308
 DECL|member|r
 DECL|member|g
 DECL|member|b

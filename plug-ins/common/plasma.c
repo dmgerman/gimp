@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d235930108
+DECL|struct|__anon2901c4a50108
 block|{
 DECL|member|seed
 name|gint
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d235930208
+DECL|struct|__anon2901c4a50208
 block|{
 DECL|member|run
 name|gint
@@ -1208,12 +1208,6 @@ name|pvals
 operator|.
 name|turbulence
 argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
 literal|0.1
 argument_list|,
 literal|7.0
@@ -1223,6 +1217,12 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 name|NULL
 argument_list|,

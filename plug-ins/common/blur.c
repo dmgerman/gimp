@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2909338f0108
+DECL|struct|__anon2c51f4de0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -184,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2909338f0208
+DECL|struct|__anon2c51f4de0208
 block|{
 DECL|member|run
 name|gint
@@ -259,16 +259,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -486,19 +486,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -582,11 +569,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -631,11 +618,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs_ni
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args_ni
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -995,10 +982,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|status
-operator|=
-name|STATUS_SUCCESS
-expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -1050,10 +1033,6 @@ operator|.
 name|blur_seed
 operator|=
 literal|0
-expr_stmt|;
-name|status
-operator|=
-name|STATUS_SUCCESS
 expr_stmt|;
 block|}
 else|else

@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a41900108
+DECL|struct|__anon2c940f270108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a41900208
+DECL|struct|__anon2c940f270208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a41900308
+DECL|struct|__anon2c940f270308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a41900408
+DECL|struct|__anon2c940f270408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a41900508
+DECL|struct|__anon2c940f270508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a41900608
+DECL|struct|__anon2c940f270608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a41900708
+DECL|struct|__anon2c940f270708
 block|{
 DECL|member|name
 specifier|const
@@ -5288,11 +5288,11 @@ literal|10.0
 argument_list|,
 literal|0
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+name|GIMP_MIN_RESOLUTION
 argument_list|,
-literal|0
+name|GIMP_MAX_RESOLUTION
 argument_list|,
 name|NULL
 argument_list|,
@@ -5357,11 +5357,11 @@ literal|10.0
 argument_list|,
 literal|1
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+name|GIMP_MIN_RESOLUTION
 argument_list|,
-literal|0
+name|GIMP_MAX_RESOLUTION
 argument_list|,
 name|NULL
 argument_list|,
@@ -5426,11 +5426,11 @@ literal|5.0
 argument_list|,
 literal|0
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+literal|3.0
 argument_list|,
-literal|0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|NULL
 argument_list|,
@@ -7036,7 +7036,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a41900808
+DECL|struct|__anon2c940f270808
 block|{
 DECL|member|index
 name|gint

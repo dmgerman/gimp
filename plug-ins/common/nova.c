@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27596adb0108
+DECL|struct|__anon290790c10108
 block|{
 DECL|member|xcenter
 DECL|member|ycenter
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27596adb0208
+DECL|struct|__anon290790c10208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27596adb0308
+DECL|struct|__anon290790c10308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1628,11 +1628,11 @@ literal|10
 argument_list|,
 literal|0
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+literal|1
 argument_list|,
-literal|0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|NULL
 argument_list|,

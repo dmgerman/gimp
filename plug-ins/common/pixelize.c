@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288902bb0108
+DECL|struct|__anon27e53d620108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288902bb0208
+DECL|struct|__anon27e53d620208
 block|{
 DECL|member|run
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288902bb0308
+DECL|struct|__anon27e53d620308
 block|{
 DECL|member|x
 DECL|member|y
@@ -1073,11 +1073,11 @@ literal|8
 argument_list|,
 literal|0
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|NULL
 argument_list|,

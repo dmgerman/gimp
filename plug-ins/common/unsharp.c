@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958dcec0108
+DECL|struct|__anon2c0340bb0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958dcec0208
+DECL|struct|__anon2c0340bb0208
 block|{
 DECL|member|run
 name|gint
@@ -436,7 +436,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|preview_width
 specifier|static
-name|int
+name|gint
 name|preview_width
 decl_stmt|;
 end_decl_stmt
@@ -449,7 +449,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|preview_height
 specifier|static
-name|int
+name|gint
 name|preview_height
 decl_stmt|;
 end_decl_stmt
@@ -462,7 +462,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|preview_x1
 specifier|static
-name|int
+name|gint
 name|preview_x1
 decl_stmt|;
 end_decl_stmt
@@ -475,7 +475,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|preview_y1
 specifier|static
-name|int
+name|gint
 name|preview_y1
 decl_stmt|;
 end_decl_stmt
@@ -488,7 +488,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|preview_x2
 specifier|static
-name|int
+name|gint
 name|preview_x2
 decl_stmt|;
 end_decl_stmt
@@ -501,7 +501,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|preview_y2
 specifier|static
-name|int
+name|gint
 name|preview_y2
 decl_stmt|;
 end_decl_stmt
@@ -514,7 +514,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|sel_width
 specifier|static
-name|int
+name|gint
 name|sel_width
 decl_stmt|;
 end_decl_stmt
@@ -527,7 +527,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|sel_height
 specifier|static
-name|int
+name|gint
 name|sel_height
 decl_stmt|;
 end_decl_stmt

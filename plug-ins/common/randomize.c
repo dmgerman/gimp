@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7694eb0108
+DECL|struct|__anon2b16f2fe0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7694eb0208
+DECL|struct|__anon2b16f2fe0208
 block|{
 DECL|member|run
 name|gint
@@ -990,12 +990,7 @@ operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+else|else
 block|{
 name|pivals
 operator|.
@@ -1061,14 +1056,8 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-block|}
 if|if
 condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-operator|&&
-operator|(
 operator|(
 name|rndm_type
 operator|!=
@@ -1110,13 +1099,13 @@ name|rndm_rcount
 operator|>
 literal|100.0
 operator|)
-operator|)
 condition|)
 block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+block|}
 block|}
 break|break;
 comment|/* 	   *  If we're running with the last set of values, get those values. 	   */
@@ -2715,7 +2704,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Randomization %:"
+literal|"Randomization (%):"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
