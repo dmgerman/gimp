@@ -133,6 +133,11 @@ name|gint
 name|center
 decl_stmt|;
 comment|/*  is the selection being created from the                                    *  center out?  */
+DECL|member|last_coords
+name|GimpCoords
+name|last_coords
+decl_stmt|;
+comment|/*  last button_press/motion coords  */
 DECL|member|fixed_mode
 name|GimpRectSelectMode
 name|fixed_mode

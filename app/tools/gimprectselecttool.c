@@ -684,6 +684,19 @@ literal|0
 expr_stmt|;
 name|rect_sel
 operator|->
+name|center
+operator|=
+name|FALSE
+expr_stmt|;
+name|rect_sel
+operator|->
+name|last_coords
+operator|=
+operator|*
+name|coords
+expr_stmt|;
+name|rect_sel
+operator|->
 name|fixed_mode
 operator|=
 name|options
@@ -824,12 +837,6 @@ name|rect_sel
 operator|->
 name|fixed_height
 argument_list|)
-expr_stmt|;
-name|rect_sel
-operator|->
-name|center
-operator|=
-name|FALSE
 expr_stmt|;
 name|gimp_tool_control_activate
 argument_list|(
@@ -1357,7 +1364,53 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Calculate starting point */
+if|if
+condition|(
+name|state
+operator|&
+name|GDK_MOD1_MASK
+condition|)
+block|{
+comment|/*  Just move the selection rectangle around  */
+name|rect_sel
+operator|->
+name|x
+operator|+=
+name|RINT
+argument_list|(
+name|coords
+operator|->
+name|x
+operator|-
+name|rect_sel
+operator|->
+name|last_coords
+operator|.
+name|x
+argument_list|)
+expr_stmt|;
+name|rect_sel
+operator|->
+name|y
+operator|+=
+name|RINT
+argument_list|(
+name|coords
+operator|->
+name|y
+operator|-
+name|rect_sel
+operator|->
+name|last_coords
+operator|.
+name|y
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/*  Change the selection rectangle's size  */
+comment|/*  Calculate starting point  */
 if|if
 condition|(
 name|rect_sel
@@ -1507,7 +1560,7 @@ argument_list|)
 operator|-
 name|oy
 expr_stmt|;
-comment|/* This is probably an inefficient way to do it, but it gives        * nicer, more predictable results than the original agorithm        */
+comment|/* This is probably an inefficient way to do it, but it gives            * nicer, more predictable results than the original agorithm            */
 if|if
 condition|(
 operator|(
@@ -1663,7 +1716,7 @@ operator|)
 expr_stmt|;
 break|break;
 block|}
-comment|/* If the shift key is down, then make the rectangle square (or    * ellipse circular)    */
+comment|/* If the shift key is down, then make the rectangle square (or        * ellipse circular)        */
 if|if
 condition|(
 operator|(
@@ -1727,7 +1780,7 @@ operator|=
 name|s
 expr_stmt|;
 block|}
-comment|/*  If the control key is down, create the selection from the center out    */
+comment|/*  If the control key is down, create the selection from the center out        */
 if|if
 condition|(
 name|state
@@ -1907,6 +1960,14 @@ operator|=
 name|h
 expr_stmt|;
 block|}
+block|}
+name|rect_sel
+operator|->
+name|last_coords
+operator|=
+operator|*
+name|coords
+expr_stmt|;
 name|gimp_rect_select_tool_update_options
 argument_list|(
 name|rect_sel

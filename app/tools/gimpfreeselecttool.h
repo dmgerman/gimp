@@ -112,6 +112,10 @@ DECL|member|parent_instance
 name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
+DECL|member|last_coords
+name|GimpCoords
+name|last_coords
+decl_stmt|;
 DECL|member|points
 name|GimpVector2
 modifier|*
