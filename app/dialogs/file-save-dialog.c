@@ -987,6 +987,11 @@ operator|->
 name|save_dialog
 argument_list|)
 decl_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|file_save_dialog_save_image
