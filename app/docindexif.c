@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* docindexif.c - Interface file for the docindex for gimp.  *  * Copyright (C) 1998 Chris Lahey.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -8,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"docindex_interface.h"
+file|"docindexif.h"
 end_include
 
 begin_function

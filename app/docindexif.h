@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* docindex_interface.h - Interface file for the docindex for gimp.  *  * Copyright (C) 1998 Chris Lahey.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  */
+comment|/* docindexif.h - Interface file for the docindex for gimp.  *  * Copyright (C) 1998 Chris Lahey.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2, or (at your option)  * any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DOCINDEX_INTERFACE_H__
+name|__DOCINDEXIF_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DOCINDEX_INTERFACE_H__
+DECL|macro|__DOCINDEXIF_H__
 define|#
 directive|define
-name|__DOCINDEX_INTERFACE_H__
+name|__DOCINDEXIF_H__
 end_define
 
 begin_include
@@ -205,7 +205,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __DOCINDEX_INTERFACE_H__ */
+comment|/* __DOCINDEXIF_H__ */
 end_comment
 
 end_unit
