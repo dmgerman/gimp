@@ -121,11 +121,6 @@ DECL|member|data_editable
 name|gboolean
 name|data_editable
 decl_stmt|;
-DECL|member|item_factory
-name|GimpItemFactory
-modifier|*
-name|item_factory
-decl_stmt|;
 DECL|member|name_entry
 name|GtkWidget
 modifier|*

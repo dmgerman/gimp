@@ -113,11 +113,6 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
-DECL|member|item_factory
-name|GimpItemFactory
-modifier|*
-name|item_factory
-decl_stmt|;
 DECL|member|col_index
 name|gint
 name|col_index

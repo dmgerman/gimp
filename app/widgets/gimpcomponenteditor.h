@@ -107,11 +107,6 @@ DECL|member|preview_size
 name|gint
 name|preview_size
 decl_stmt|;
-DECL|member|item_factory
-name|GimpItemFactory
-modifier|*
-name|item_factory
-decl_stmt|;
 DECL|member|model
 name|GtkTreeModel
 modifier|*

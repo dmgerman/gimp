@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GtkVBox
 name|parent_instance
 decl_stmt|;
-DECL|member|item_factory
-name|GimpItemFactory
-modifier|*
-name|item_factory
-decl_stmt|;
 DECL|member|view
 name|GimpContainerView
 modifier|*

@@ -1806,7 +1806,7 @@ condition|)
 block|{
 name|gimp_item_factory_popup_with_data
 argument_list|(
-name|GIMP_DATA_EDITOR
+name|GIMP_EDITOR
 argument_list|(
 name|editor
 argument_list|)

@@ -658,7 +658,10 @@ argument_list|)
 operator|->
 name|preview_size
 argument_list|,
+name|GIMP_EDITOR
+argument_list|(
 name|item_view
+argument_list|)
 operator|->
 name|menu_factory
 argument_list|)

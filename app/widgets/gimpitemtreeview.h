@@ -335,16 +335,6 @@ DECL|member|activate_item_func
 name|GimpActivateItemFunc
 name|activate_item_func
 decl_stmt|;
-DECL|member|menu_factory
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-decl_stmt|;
-DECL|member|item_factory
-name|GimpItemFactory
-modifier|*
-name|item_factory
-decl_stmt|;
 DECL|member|new_button
 name|GtkWidget
 modifier|*
