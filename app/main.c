@@ -1923,7 +1923,7 @@ if|if
 condition|(
 name|stack_trace_mode
 operator|!=
-name|STACK_TRACE_NEVER
+name|GIMP_STACK_TRACE_NEVER
 condition|)
 block|{
 comment|/* these are handled by gimp_fatal_error() */
