@@ -1324,7 +1324,7 @@ literal|"gimp_drawable_mask_bounds"
 block|,
 literal|"Find the bounding box of the current selection in relation to the specified drawable."
 block|,
-literal|"This procedure returns the whether there is a selection. If there is one, the upper left and lower righthand corners of its bounding box are returned. These coordinates are specified relative to the drawable's origin, and bounded by the drawable's extents."
+literal|"This procedure returns the whether there is a selection. If there is one, the upper left and lower righthand corners of its bounding box are returned. These coordinates are specified relative to the drawable's origin, and bounded by the drawable's extents. Please note that the pixel specified by the lower righthand coordinate of the bounding box is not part of the selection. The selection ends at the upper left corner of this pixel. This means the width of the selection can be calculated as (x2 - x1), its height as (y2 - y1)."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
