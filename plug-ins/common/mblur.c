@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf612a10103
+DECL|enum|__anon2adf73b10103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf612a10208
+DECL|struct|__anon2adf73b10208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -755,6 +755,16 @@ argument_list|)
 operator|/
 literal|2.0
 expr_stmt|;
+comment|/* Set the tile cache size */
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|2
+operator|*
+name|drawable
+operator|->
+name|ntile_cols
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -953,26 +963,6 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/* Set the tile cache size */
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|drawable
-operator|->
-name|width
-operator|+
-name|gimp_tile_width
-argument_list|()
-operator|-
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
-argument_list|)
-expr_stmt|;
 comment|/* Run! */
 name|has_alpha
 operator|=
