@@ -2811,7 +2811,7 @@ argument_list|,
 literal|255
 argument_list|)
 expr_stmt|;
-name|gimp_rgba_set_uchar
+name|gimp_rgb_set_uchar
 argument_list|(
 operator|&
 name|colour
@@ -2821,8 +2821,6 @@ argument_list|,
 name|g
 argument_list|,
 name|b
-argument_list|,
-literal|255
 argument_list|)
 expr_stmt|;
 name|gimp_palette_set_background
