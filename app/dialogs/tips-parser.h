@@ -83,11 +83,6 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|locale
-parameter_list|,
 name|GError
 modifier|*
 modifier|*

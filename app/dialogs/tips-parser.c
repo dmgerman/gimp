@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f02cf60103
+DECL|enum|__anon29cd60520103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f02cf60203
+DECL|enum|__anon29cd60520203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -438,18 +438,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_tips_from_file (const gchar * filename,const gchar * locale,GError ** error)
+DECL|function|gimp_tips_from_file (const gchar * filename,GError ** error)
 name|gimp_tips_from_file
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|locale
 parameter_list|,
 name|GError
 modifier|*
@@ -464,6 +459,11 @@ decl_stmt|;
 name|TipsParser
 modifier|*
 name|parser
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|tips_locale
 decl_stmt|;
 name|FILE
 modifier|*
@@ -511,17 +511,16 @@ name|error
 argument_list|,
 literal|0
 argument_list|,
-comment|/* error domain */
 literal|0
 argument_list|,
-comment|/* error code   */
 name|_
 argument_list|(
 literal|"Your GIMP tips file appears to be missing!\n"
-literal|"There should be a file called gimp-tips.xml in "
-literal|"the tips subfolder of the GIMP data folder.\n"
+literal|"There should be a file called '%s'.\n"
 literal|"Please check your installation."
 argument_list|)
+argument_list|,
+name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -539,17 +538,60 @@ argument_list|)
 expr_stmt|;
 name|parser
 operator|->
-name|locale
-operator|=
-name|locale
-expr_stmt|;
-name|parser
-operator|->
 name|value
 operator|=
 name|g_string_new
 argument_list|(
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* This is a special string to specify the language identifier to      look for in the gimp-tips.xml file. Please translate the C in it      according to the name of the po file used for gimp-tips.xml.      E.g. for the german translation, that would be "tips-locale:de".    */
+name|tips_locale
+operator|=
+name|_
+argument_list|(
+literal|"tips-locale:C"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|strncmp
+argument_list|(
+name|tips_locale
+argument_list|,
+literal|"tips-locale:"
+argument_list|,
+literal|12
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|tips_locale
+operator|+=
+literal|12
+expr_stmt|;
+if|if
+condition|(
+operator|*
+name|tips_locale
+operator|&&
+operator|*
+name|tips_locale
+operator|!=
+literal|'C'
+condition|)
+name|parser
+operator|->
+name|locale
+operator|=
+name|tips_locale
+expr_stmt|;
+block|}
+else|else
+name|g_warning
+argument_list|(
+literal|"Wrong translation for 'tips-locale:', fix the translation!"
 argument_list|)
 expr_stmt|;
 name|context
@@ -659,10 +701,8 @@ name|error
 argument_list|,
 literal|0
 argument_list|,
-comment|/* error domain */
 literal|0
 argument_list|,
-comment|/* error code   */
 name|_
 argument_list|(
 literal|"Your GIMP tips file could not be parsed correctly!\n"
@@ -1450,12 +1490,10 @@ operator|->
 name|locale_state
 operator|=
 operator|(
-operator|(
 name|parser
 operator|->
 name|locale
 operator|&&
-operator|(
 name|strcmp
 argument_list|(
 operator|*
@@ -1467,22 +1505,6 @@ name|locale
 argument_list|)
 operator|==
 literal|0
-operator|||
-name|strncmp
-argument_list|(
-operator|*
-name|values
-argument_list|,
-name|parser
-operator|->
-name|locale
-argument_list|,
-literal|2
-argument_list|)
-operator|==
-literal|0
-operator|)
-operator|)
 condition|?
 name|TIPS_LOCALE_MATCH
 else|:

@@ -293,13 +293,6 @@ name|gimp_tips_from_file
 argument_list|(
 name|filename
 argument_list|,
-name|setlocale
-argument_list|(
-name|LC_MESSAGES
-argument_list|,
-name|NULL
-argument_list|)
-argument_list|,
 operator|&
 name|error
 argument_list|)
