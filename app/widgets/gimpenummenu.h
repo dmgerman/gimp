@@ -517,6 +517,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_enum_stock_box_set_child_padding
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|stock_box
+parameter_list|,
+name|gint
+name|xpad
+parameter_list|,
+name|gint
+name|ypad
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

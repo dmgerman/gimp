@@ -103,7 +103,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c4f06a0103
+DECL|enum|__anon2927388c0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c4f06a0203
+DECL|enum|__anon2927388c0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -3858,7 +3858,7 @@ name|csf
 operator|.
 name|buffer
 operator|=
-name|g_malloc
+name|g_alloca
 argument_list|(
 name|preview
 operator|->
@@ -3931,11 +3931,8 @@ name|height
 operator|>
 literal|0
 condition|)
-while|while
-condition|(
-name|height
-operator|--
-condition|)
+block|{
+do|do
 block|{
 if|if
 condition|(
@@ -3977,13 +3974,13 @@ name|width
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|csf
-operator|.
-name|buffer
-argument_list|)
-expr_stmt|;
+do|while
+condition|(
+operator|--
+name|height
+condition|)
+do|;
+block|}
 block|}
 end_function
 

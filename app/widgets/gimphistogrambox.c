@@ -452,7 +452,7 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_COLOR_BAR
 argument_list|,
-literal|"channel"
+literal|"histogram-channel"
 argument_list|,
 name|box
 operator|->

@@ -117,6 +117,12 @@ name|GimpLut
 modifier|*
 name|lut
 decl_stmt|;
+DECL|member|levels
+name|Levels
+modifier|*
+name|levels
+decl_stmt|;
+comment|/* dialog */
 DECL|member|color
 name|gboolean
 name|color
@@ -125,12 +131,6 @@ DECL|member|alpha
 name|gboolean
 name|alpha
 decl_stmt|;
-DECL|member|levels
-name|Levels
-modifier|*
-name|levels
-decl_stmt|;
-comment|/* dialog */
 DECL|member|channel
 name|GimpHistogramChannel
 name|channel
@@ -146,7 +146,6 @@ index|[
 literal|5
 index|]
 decl_stmt|;
-comment|/*  positions for the five sliders  */
 DECL|member|hist
 name|GimpHistogram
 modifier|*
@@ -191,17 +190,21 @@ DECL|member|input_area
 name|GtkWidget
 modifier|*
 name|input_area
-index|[
-literal|2
-index|]
+decl_stmt|;
+DECL|member|input_bar
+name|GtkWidget
+modifier|*
+name|input_bar
 decl_stmt|;
 DECL|member|output_area
 name|GtkWidget
 modifier|*
 name|output_area
-index|[
-literal|2
-index|]
+decl_stmt|;
+DECL|member|output_bar
+name|GtkWidget
+modifier|*
+name|output_bar
 decl_stmt|;
 DECL|member|channel_menu
 name|GtkWidget

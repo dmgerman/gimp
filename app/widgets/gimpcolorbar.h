@@ -107,15 +107,6 @@ DECL|member|orientation
 name|GtkOrientation
 name|orientation
 decl_stmt|;
-DECL|member|input
-name|gboolean
-name|input
-decl_stmt|;
-DECL|member|input_window
-name|GdkWindow
-modifier|*
-name|input_window
-decl_stmt|;
 DECL|member|buf
 name|guchar
 name|buf
