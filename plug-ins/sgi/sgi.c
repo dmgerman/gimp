@@ -910,8 +910,11 @@ name|tile_height
 decl_stmt|,
 comment|/* Height of tile in GIMP */
 name|count
-decl_stmt|;
+decl_stmt|,
 comment|/* Count of rows to put in image */
+name|bytes
+decl_stmt|;
+comment|/* Number of channels to use */
 name|sgi_t
 modifier|*
 name|sgip
@@ -1034,14 +1037,11 @@ name|progress
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the image dimensions and create the image...    */
-name|image_type
+name|bytes
 operator|=
-literal|0
-expr_stmt|;
-comment|/* shut up warnings */
-name|layer_type
-operator|=
-literal|0
+name|sgip
+operator|->
+name|zsize
 expr_stmt|;
 switch|switch
 condition|(
@@ -1100,6 +1100,20 @@ expr_stmt|;
 name|layer_type
 operator|=
 name|GIMP_RGBA_IMAGE
+expr_stmt|;
+break|break;
+default|default:
+name|image_type
+operator|=
+name|GIMP_RGB
+expr_stmt|;
+name|layer_type
+operator|=
+name|GIMP_RGBA_IMAGE
+expr_stmt|;
+name|bytes
+operator|=
+literal|4
 expr_stmt|;
 break|break;
 block|}
@@ -1229,9 +1243,7 @@ name|sgip
 operator|->
 name|xsize
 operator|*
-name|sgip
-operator|->
-name|zsize
+name|bytes
 argument_list|)
 expr_stmt|;
 name|pixels
@@ -1268,9 +1280,7 @@ name|sgip
 operator|->
 name|xsize
 operator|*
-name|sgip
-operator|->
-name|zsize
+name|bytes
 operator|*
 name|i
 expr_stmt|;
@@ -1491,9 +1501,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|sgip
-operator|->
-name|zsize
+name|bytes
 condition|;
 name|i
 operator|++
@@ -1546,9 +1554,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|sgip
-operator|->
-name|zsize
+name|bytes
 condition|;
 name|i
 operator|++
