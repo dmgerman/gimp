@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIF loading and saving file filter for The GIMP version 1.0  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 2.0.3 - 98/05/18  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
+comment|/* GIF loading and saving file filter for The GIMP version 1.0  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 2.0.4 - 98/09/15  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
 end_comment
 
 begin_comment
@@ -12,11 +12,11 @@ comment|/*  *  "The Graphics Interchange Format(c) is the Copyright property of 
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY  *  *  * 98/05/18  * 2.00.03 - If we did manage to decode at least one frame of a  *           gif, be sure to display the resulting image even if  *           it terminated abruptly.  *  * 98/04/28  * 2.00.02 - Fixed a bug with (ms) tag parsing.  *  * 98/03/16  * 2.00.01 - Fixed a long-standing bug when loading GIFs which layer  *           opaque frames onto transparent ones.  *  * 98/03/15  * 2.00.00 - No longer beta.  Uses the current GIMP brush background  *           colour as the transparent-index colour for viewers that  *           don't know about transparency, instead of magenta.  Note  *           that this is by no means likely to actually work, but  *           is more likely to do so if your image has been freshly  *           to-index'd before saving.  *  *           Also added some analysis to gif-reading to prevent the  *           number of encoded bits being pumped up inadvertantly for  *           successive load/saves of the same image.  [Adam]  *  * 97/12/11  * 1.99.18 - Bleh.  Disposals should specify how the next frame will  *           be composed with this frame, NOT how this frame will  *           be composed with the previous frame.  Fixed.  [Adam]  *  * 97/11/30  * 1.99.17 - No more bogus transparency indices in animated GIFs,  *           hopefully.  Saved files are better-behaved, sometimes  *           smaller.  [Adam]  *  * 97/09/29  * 1.99.16 - Added a dialog for the user to choose what to do if  *           one of the layers of the image extends beyond the image  *           borders - crop or cancel.  Added code behind it.  *  *           Corrected the number of bits for the base image to be  *           on the generous side.  Hopefully we can no longer generate  *           GIFs which make XV barf.  *  *           Now a lot more careful about whether we choose to encode  *           as a GIF87a or a GIF89a.  Hopefully does everything by the  *           book.  It should now be nigh-on impossible to torture the  *           plugin into generating a GIF which isn't extremely well  *           behaved with respect to the GIF89a specification.  *  *           Fixed(?) a lot of dialog callback details, should now be  *           happy with window deletion (GTK+970925).  Fixed the  *           cancellation of a save.  [Adam]  *  * 97/09/16  * 1.99.15 - Hey!  We can now cope with loading images which change  *           colourmap between frames.  This plugin will never save  *           such abominations of nature while I still live, though.  *           There should be no noncorrupt GIF in the universe which  *           GIMP can't load and play now.  [Adam]  *  * 97/09/14  * 1.99.14 - Added a check for layers whose extents don't lay  *           within the image boundaries, which would make it a  *           lot harder to generate badly-behaved GIFs.  Doesn't  *           do anything about it yet, but it should crop all layers  *           to the image boundaries.  Also, there's now a (separate)  *           animation-preview plugin!  [Adam]  *  * 97/08/29  * 1.99.13 - Basic ability to embed GIF comments within saved images.  *           Fixed a bug with encoding the number of loops in a GIF file -  *           would have been important, but we're not using that feature  *           yet anyway.  ;)  *           Subtly improved dialog layout a little. [Adam]  *  * 97/07/25  * 1.99.12 - Fixed attempts to load GIFs which don't exist.  Made a  *           related cosmetic adjustment. [Adam]  *  * 97/07/10  * 1.99.11 - Fixed a bug with loading and saving GIFs where the bottom  *           layer wasn't the same size as the image. [Adam]  *  * 97/07/06  * 1.99.10 - New 'save' dialog, now most of the default behaviour of  *           animated GIF saving is user-settable (looping, default  *           time between frames, etc.)  *           PDB entry for saving is no longer compatible.  Fortunately  *           I don't think that anyone is using file_gif_save in  *           scripts.  [Adam]  *  * 97/07/05  * 1.99.9  - More animated GIF work: now loads and saves frame disposal  *           information.  This is neat and will also allow some delta  *           stuff in the future.  *           The disposal-method is kept in the layer name, like the timing  *           info.  *           (replace) - this frame replaces whatever else has been shown  *                       so far.  *           (combine) - this frame builds apon the previous frame.  *           If a disposal method is not specified, it is assumed to mean  *           "don't care."  [Adam]  *  * 97/07/04  * 1.99.8  - Can save per-frame timing information too, now.  The time  *           for which a frame is visible is specified within the layer name  *           as i,e. (250ms).  If a frame doesn't have this timing value  *           it defaults to lasting 100ms. [Adam]  *  * 97/07/02  * 1.99.7  - For animated GIFs, fixed the saving of timing information for  *           frames which couldn't be made transparent.  *           Added the loading of timing information into the layer  *           names.  Adjusted GIMP's GIF magic number very slightly. [Adam]  *  * 97/06/30  * 1.99.6  - Now saves GRAY and GRAYA images, albeit not always  *           optimally (yet). [Adam]  *  * 97/06/25  * 1.99.5  - Good, the transparancy-on-big-architectures bug is  *           fixed.  Cleaned up some stuff.  *           (Adam D. Moss, adam@foxbox.org)  *  * 97/06/23  * 1.99.4  - Trying to fix some endianness/word-size problems with  *           transparent gif-saving on some architectures... does  *           this help?  (Adam D. Moss, adam@foxbox.org)  *  * 97/05/18  * 1.99.3  - Fixed the problem with GIFs getting loop extensions even  *           if they only had one frame (thanks to Zach for noticing -  *           git!  :) )  (Adam D. Moss, adam@foxbox.org)  *  * 97/05/17  * 1.99.2  - Can now save animated GIFs.  Correctly handles saving of  *           image offsets.  Uses N*tscape extentions to loop infinitely.  *           Some notable shortcomings - see TODO list below.  *           (Adam D. Moss, adam@foxbox.org)  *  * 97/05/16  * 1.99.1  - Implemented image offsets in animated GIF loading.  Requires  *           a fix to gimp_layer_translate in libgimp/gimplayer.c if used  *           with GIMP versions<= 0.99.10.  Started work on saving animated  *           GIFs.  Started TODO list.  (Adam D. Moss, adam@foxbox.org)  *  * 97/05/15  * 1.99.0  - Started revision log.  GIF plugin now loads/saves INDEXED  *           and INDEXEDA images with correct transparency where possible.  *           Loads multi-image (animated) GIFs as a framestack implemented  *           in GIMP layers.  Some bug fixes to original code, some new bugs  *           cheerfully added.  (Adam D. Moss, adam@foxbox.org)  *  * Previous versions - load/save INDEXED images.  *           (Peter Mattis& Spencer Kimball, gimp@scam.xcf.berkeley.edu)  */
+comment|/*  * REVISION HISTORY  *  *  * 98/09/15  * 2.00.04 - The facility to specify the background colour of  *           a transparent/animated GIF for non-transparent  *           viewers now works very much more consistantly.  *  *           The only situations in which it will fail to work  *           as expected now are those where file size can be reduced  *           (abeit not by much, as the plugin is sometimes more pessimistic  *           than it need be) by re-using an existing unused colour  *           index rather than using another bit per pixel in the  *           encoded file.  That will never be an issue with an image  *           which was freshly converted from RGB to INDEXED with the  *           Quantize option, as that option removes any unused colours  *           from the image.  *  *           Let me know if you find the consistancy/size tradeoff more  *           annoying than helpful and I can adjust it.  IMHO it is too  *           arcane a feature to present to any user as a runtime option.  *  * 98/05/18  * 2.00.03 - If we did manage to decode at least one frame of a  *           gif, be sure to display the resulting image even if  *           it terminated abruptly.  *  * 98/04/28  * 2.00.02 - Fixed a bug with (ms) tag parsing.  *  * 98/03/16  * 2.00.01 - Fixed a long-standing bug when loading GIFs which layer  *           opaque frames onto transparent ones.  *  * 98/03/15  * 2.00.00 - No longer beta.  Uses the current GIMP brush background  *           colour as the transparent-index colour for viewers that  *           don't know about transparency, instead of magenta.  Note  *           that this is by no means likely to actually work, but  *           is more likely to do so if your image has been freshly  *           to-index'd before saving.  *  *           Also added some analysis to gif-reading to prevent the  *           number of encoded bits being pumped up inadvertantly for  *           successive load/saves of the same image.  [Adam]  *  * 97/12/11  * 1.99.18 - Bleh.  Disposals should specify how the next frame will  *           be composed with this frame, NOT how this frame will  *           be composed with the previous frame.  Fixed.  [Adam]  *  * 97/11/30  * 1.99.17 - No more bogus transparency indices in animated GIFs,  *           hopefully.  Saved files are better-behaved, sometimes  *           smaller.  [Adam]  *  * 97/09/29  * 1.99.16 - Added a dialog for the user to choose what to do if  *           one of the layers of the image extends beyond the image  *           borders - crop or cancel.  Added code behind it.  *  *           Corrected the number of bits for the base image to be  *           on the generous side.  Hopefully we can no longer generate  *           GIFs which make XV barf.  *  *           Now a lot more careful about whether we choose to encode  *           as a GIF87a or a GIF89a.  Hopefully does everything by the  *           book.  It should now be nigh-on impossible to torture the  *           plugin into generating a GIF which isn't extremely well  *           behaved with respect to the GIF89a specification.  *  *           Fixed(?) a lot of dialog callback details, should now be  *           happy with window deletion (GTK+970925).  Fixed the  *           cancellation of a save.  [Adam]  *  * 97/09/16  * 1.99.15 - Hey!  We can now cope with loading images which change  *           colourmap between frames.  This plugin will never save  *           such abominations of nature while I still live, though.  *           There should be no noncorrupt GIF in the universe which  *           GIMP can't load and play now.  [Adam]  *  * 97/09/14  * 1.99.14 - Added a check for layers whose extents don't lay  *           within the image boundaries, which would make it a  *           lot harder to generate badly-behaved GIFs.  Doesn't  *           do anything about it yet, but it should crop all layers  *           to the image boundaries.  Also, there's now a (separate)  *           animation-preview plugin!  [Adam]  *  * 97/08/29  * 1.99.13 - Basic ability to embed GIF comments within saved images.  *           Fixed a bug with encoding the number of loops in a GIF file -  *           would have been important, but we're not using that feature  *           yet anyway.  ;)  *           Subtly improved dialog layout a little. [Adam]  *  * 97/07/25  * 1.99.12 - Fixed attempts to load GIFs which don't exist.  Made a  *           related cosmetic adjustment. [Adam]  *  * 97/07/10  * 1.99.11 - Fixed a bug with loading and saving GIFs where the bottom  *           layer wasn't the same size as the image. [Adam]  *  * 97/07/06  * 1.99.10 - New 'save' dialog, now most of the default behaviour of  *           animated GIF saving is user-settable (looping, default  *           time between frames, etc.)  *           PDB entry for saving is no longer compatible.  Fortunately  *           I don't think that anyone is using file_gif_save in  *           scripts.  [Adam]  *  * 97/07/05  * 1.99.9  - More animated GIF work: now loads and saves frame disposal  *           information.  This is neat and will also allow some delta  *           stuff in the future.  *           The disposal-method is kept in the layer name, like the timing  *           info.  *           (replace) - this frame replaces whatever else has been shown  *                       so far.  *           (combine) - this frame builds apon the previous frame.  *           If a disposal method is not specified, it is assumed to mean  *           "don't care."  [Adam]  *  * 97/07/04  * 1.99.8  - Can save per-frame timing information too, now.  The time  *           for which a frame is visible is specified within the layer name  *           as i,e. (250ms).  If a frame doesn't have this timing value  *           it defaults to lasting 100ms. [Adam]  *  * 97/07/02  * 1.99.7  - For animated GIFs, fixed the saving of timing information for  *           frames which couldn't be made transparent.  *           Added the loading of timing information into the layer  *           names.  Adjusted GIMP's GIF magic number very slightly. [Adam]  *  * 97/06/30  * 1.99.6  - Now saves GRAY and GRAYA images, albeit not always  *           optimally (yet). [Adam]  *  * 97/06/25  * 1.99.5  - Good, the transparancy-on-big-architectures bug is  *           fixed.  Cleaned up some stuff.  *           (Adam D. Moss, adam@foxbox.org)  *  * 97/06/23  * 1.99.4  - Trying to fix some endianness/word-size problems with  *           transparent gif-saving on some architectures... does  *           this help?  (Adam D. Moss, adam@foxbox.org)  *  * 97/05/18  * 1.99.3  - Fixed the problem with GIFs getting loop extensions even  *           if they only had one frame (thanks to Zach for noticing -  *           git!  :) )  (Adam D. Moss, adam@foxbox.org)  *  * 97/05/17  * 1.99.2  - Can now save animated GIFs.  Correctly handles saving of  *           image offsets.  Uses N*tscape extentions to loop infinitely.  *           Some notable shortcomings - see TODO list below.  *           (Adam D. Moss, adam@foxbox.org)  *  * 97/05/16  * 1.99.1  - Implemented image offsets in animated GIF loading.  Requires  *           a fix to gimp_layer_translate in libgimp/gimplayer.c if used  *           with GIMP versions<= 0.99.10.  Started work on saving animated  *           GIFs.  Started TODO list.  (Adam D. Moss, adam@foxbox.org)  *  * 97/05/15  * 1.99.0  - Started revision log.  GIF plugin now loads/saves INDEXED  *           and INDEXEDA images with correct transparency where possible.  *           Loads multi-image (animated) GIFs as a framestack implemented  *           in GIMP layers.  Some bug fixes to original code, some new bugs  *           cheerfully added.  (Adam D. Moss, adam@foxbox.org)  *  * Previous versions - load/save INDEXED images.  *           (Peter Mattis& Spencer Kimball, gimp@scam.xcf.berkeley.edu)  */
 end_comment
 
 begin_comment
-comment|/*  * TODO (more *'s means more important!)  *  * - animated GIF optimization routines (seperate plugin)  *  * - Show GIF comments in a popup window?  *  * - PDB stuff for comments  *  * - 'requantize' option for INDEXEDA images which really have 256 colours  *   in them  *  * - Be a bit smarter about finding unused/superfluous colour indices for  *   lossless colour crunching of INDEXEDA images.  (Specifically, look  *   for multiple indices which correspond to the same physical colour.)  *  * - Tidy up parameters for the GIFEncode routines  *  * - Remove unused colourmap entries for GRAYSCALE images.  *  * - All the warning messages etc. which the plugin prints to STDOUT should  *   pop up in windows.  *  * - * Button to activate the animation preview plugin from the GIF-save  *     dialog.  *  */
+comment|/*  * TODO (more *'s means more important!)  *  * - Show GIF comments in a popup window?  *  * - PDB stuff for comments  *  * - 'requantize' option for INDEXEDA images which really have 256 colours  *   in them  *  * - Be a bit smarter about finding unused/superfluous colour indices for  *   lossless colour crunching of INDEXEDA images.  (Specifically, look  *   for multiple indices which correspond to the same physical colour.)  *  * - Tidy up parameters for the GIFEncode routines  *  * - Remove unused colourmap entries for GRAYSCALE images.  *  * - Button to activate the animation preview plugin from the GIF-save  *   dialog.  *  */
 end_comment
 
 begin_comment
@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1755560108
+DECL|struct|__anon276b5f740108
 block|{
 DECL|member|interlace
 name|int
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1755560208
+DECL|struct|__anon276b5f740208
 block|{
 DECL|member|run
 name|gint
@@ -1522,7 +1522,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1755560308
+DECL|struct|__anon276b5f740308
 block|{
 DECL|member|Width
 name|unsigned
@@ -1572,7 +1572,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b1755560408
+DECL|struct|__anon276b5f740408
 block|{
 DECL|member|transparent
 name|int
@@ -5442,6 +5442,13 @@ name|pixels
 parameter_list|,
 name|int
 name|numpixels
+parameter_list|,
+name|int
+name|num_indices
+parameter_list|,
+name|int
+modifier|*
+name|colors
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -5472,6 +5479,16 @@ begin_function_decl
 specifier|static
 name|int
 name|colorstobpp
+parameter_list|(
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|int
+name|bpptocolors
 parameter_list|(
 name|int
 parameter_list|)
@@ -5836,7 +5853,7 @@ function_decl|;
 end_function_decl
 
 begin_function
-DECL|function|find_unused_ia_colour (guchar * pixels,int numpixels)
+DECL|function|find_unused_ia_colour (guchar * pixels,int numpixels,int num_indices,int * colors)
 specifier|static
 name|int
 name|find_unused_ia_colour
@@ -5847,6 +5864,13 @@ name|pixels
 parameter_list|,
 name|int
 name|numpixels
+parameter_list|,
+name|int
+name|num_indices
+parameter_list|,
+name|int
+modifier|*
+name|colors
 parameter_list|)
 block|{
 name|int
@@ -5858,7 +5882,25 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/*   g_message ("GIF: Image has>=256 colors - attempting to reduce...\n");   */
+name|g_print
+argument_list|(
+literal|"GIF: fuiac: Image claims to use %d/%d indices - finding free "
+literal|"index...\n"
+argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
+operator|*
+name|colors
+argument_list|)
+argument_list|,
+operator|(
+name|int
+operator|)
+name|num_indices
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -5872,6 +5914,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 name|ix_used
 index|[
 name|i
@@ -5882,6 +5925,7 @@ name|gboolean
 operator|)
 name|FALSE
 expr_stmt|;
+block|}
 for|for
 control|(
 name|i
@@ -5895,6 +5939,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|pixels
@@ -5921,19 +5966,23 @@ name|gboolean
 operator|)
 name|TRUE
 expr_stmt|;
+block|}
 for|for
 control|(
 name|i
 operator|=
-literal|0
+name|num_indices
+operator|-
+literal|1
 init|;
 name|i
-operator|<
-literal|256
+operator|>=
+literal|0
 condition|;
 name|i
-operator|++
+operator|--
 control|)
+block|{
 if|if
 condition|(
 name|ix_used
@@ -5959,6 +6008,50 @@ argument_list|)
 expr_stmt|;
 return|return
 name|i
+return|;
+block|}
+block|}
+comment|/* Couldn't find an unused colour index within the number of      bits per pixel we wanted.  Will have to increment the number      of colours in the image and assign a transparent pixel there. */
+if|if
+condition|(
+operator|(
+operator|*
+name|colors
+operator|)
+operator|<
+literal|256
+condition|)
+block|{
+operator|(
+operator|*
+name|colors
+operator|)
+operator|++
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"GIF: 2nd pass - Increasing bounds and using colour index %d.\n"
+argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
+operator|*
+name|colors
+argument_list|)
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+operator|(
+operator|*
+name|colors
+operator|)
+operator|-
+literal|1
+operator|)
 return|;
 block|}
 name|g_message
@@ -6102,22 +6195,8 @@ index|]
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-operator|(
-operator|*
-name|colors
-operator|)
-operator|<
-literal|256
-condition|)
-operator|(
-operator|*
-name|colors
-operator|)
-operator|+=
-literal|1
-expr_stmt|;
+comment|/* commented out - this is now done in find_unused.. where neces. */
+comment|/*  if ((*colors)< 256) 	  (*colors) += 1; */
 block|}
 comment|/* Pixel data now takes half as much space (the alpha data has been      discarded) */
 comment|/*  pixels = g_realloc (pixels, numpixels);*/
@@ -6657,6 +6736,10 @@ name|cols
 decl_stmt|;
 name|int
 name|BitsPerPixel
+decl_stmt|,
+name|liberalBPP
+decl_stmt|,
+name|useBPP
 decl_stmt|;
 name|int
 name|colors
@@ -6985,6 +7068,9 @@ operator|<
 literal|256
 condition|)
 block|{
+comment|/* we keep track of how many bits we promised to have in liberalBPP, 	 so that we don't accidentally come under this when doing 	 clever transparency stuff where we can re-use wasted indices. */
+name|liberalBPP
+operator|=
 name|BitsPerPixel
 operator|=
 name|colorstobpp
@@ -7014,11 +7100,19 @@ argument_list|(
 literal|256
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|drawable_type
+operator|==
+name|INDEXEDA_IMAGE
+condition|)
+block|{
 name|g_print
 argument_list|(
 literal|"GIF: Too many colours?\n"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|cols
 operator|=
@@ -7309,6 +7403,17 @@ operator|*
 name|drawable
 operator|->
 name|height
+argument_list|,
+name|bpptocolors
+argument_list|(
+name|colorstobpp
+argument_list|(
+name|colors
+argument_list|)
+argument_list|)
+argument_list|,
+operator|&
+name|colors
 argument_list|)
 expr_stmt|;
 name|special_flatten_indexed_alpha
@@ -7343,6 +7448,38 @@ name|colorstobpp
 argument_list|(
 name|colors
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|BitsPerPixel
+operator|!=
+name|liberalBPP
+condition|)
+block|{
+comment|/* We were able to re-use an index within the existing bitspace, 	     whereas the estimate in the header was pessimistic but still 	     needs to be upheld... */
+name|g_warning
+argument_list|(
+literal|"Promised %d bpp, pondered writing chunk with %d bpp!\n"
+literal|"Transparent colour may be incorrect on viewers which"
+literal|" don't support transparency.\n"
+argument_list|,
+name|liberalBPP
+argument_list|,
+name|BitsPerPixel
+argument_list|)
+expr_stmt|;
+block|}
+name|useBPP
+operator|=
+operator|(
+name|BitsPerPixel
+operator|>
+name|liberalBPP
+operator|)
+condition|?
+name|BitsPerPixel
+else|:
+name|liberalBPP
 expr_stmt|;
 if|if
 condition|(
@@ -7451,7 +7588,7 @@ literal|0
 argument_list|,
 name|transparent
 argument_list|,
-name|BitsPerPixel
+name|useBPP
 argument_list|,
 name|Red
 argument_list|,
@@ -7479,7 +7616,7 @@ literal|0
 argument_list|,
 name|transparent
 argument_list|,
-name|BitsPerPixel
+name|useBPP
 argument_list|,
 name|Red
 argument_list|,
@@ -7529,7 +7666,7 @@ literal|0
 argument_list|,
 name|transparent
 argument_list|,
-name|BitsPerPixel
+name|useBPP
 argument_list|,
 name|Red
 argument_list|,
@@ -9242,9 +9379,9 @@ literal|8
 expr_stmt|;
 else|else
 block|{
-name|g_message
+name|g_warning
 argument_list|(
-literal|"GIF: too many colors: %d\n"
+literal|"GIF: colorstobpp - Eep! too many colors: %d\n"
 argument_list|,
 name|colors
 argument_list|)
@@ -9255,6 +9392,52 @@ return|;
 block|}
 return|return
 name|bpp
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|int
+DECL|function|bpptocolors (int bpp)
+name|bpptocolors
+parameter_list|(
+name|int
+name|bpp
+parameter_list|)
+block|{
+name|int
+name|colors
+decl_stmt|;
+if|if
+condition|(
+name|bpp
+operator|>
+literal|8
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"GIF: bpptocolors - Eep! bpp==%d !\n"
+argument_list|,
+name|bpp
+argument_list|)
+expr_stmt|;
+return|return
+literal|256
+return|;
+block|}
+name|colors
+operator|=
+literal|1
+operator|<<
+name|bpp
+expr_stmt|;
+comment|/*  printf(">> %dbpp is %d colours<<\n", bpp, colors); */
+return|return
+operator|(
+name|colors
+operator|)
 return|;
 block|}
 end_function
