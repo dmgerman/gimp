@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe810b0103
+DECL|enum|__anon274dbc3f0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe810b0203
+DECL|enum|__anon274dbc3f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1459,25 +1459,12 @@ condition|)
 block|{
 name|gint
 name|k
-decl_stmt|;
-for|for
-control|(
-name|k
-operator|=
+init|=
 name|i
-init|;
-name|k
-operator|<
-name|j
-operator|&&
-operator|!
+decl_stmt|;
+do|do
 name|in_selection
-condition|;
-name|k
-operator|++
-control|)
-name|in_selection
-operator|=
+operator||=
 operator|(
 name|x1
 operator|<=
@@ -1488,6 +1475,14 @@ operator|<=
 name|x2
 operator|)
 expr_stmt|;
+do|while
+condition|(
+operator|++
+name|k
+operator|<
+name|j
+condition|)
+do|;
 block|}
 if|if
 condition|(
