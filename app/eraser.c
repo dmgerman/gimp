@@ -613,6 +613,9 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|gint
+name|opacity
+decl_stmt|;
 name|TempBuf
 modifier|*
 name|area
@@ -697,6 +700,24 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+name|opacity
+operator|=
+name|OPAQUE_OPACITY
+operator|*
+name|paint_core
+operator|->
+name|curpressure
+expr_stmt|;
+if|if
+condition|(
+name|opacity
+operator|>
+literal|255
+condition|)
+name|opacity
+operator|=
+literal|255
+expr_stmt|;
 comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|paint_core_paste_canvas
 argument_list|(
@@ -704,7 +725,7 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|OPAQUE_OPACITY
+name|opacity
 argument_list|,
 call|(
 name|int
