@@ -2845,11 +2845,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|g_warning
-argument_list|(
-literal|"gdisplay_flush"
-argument_list|)
-expr_stmt|;
 comment|/* Redraw on idle time */
 name|gdisplay_flush_whenever
 argument_list|(
@@ -2871,11 +2866,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|g_warning
-argument_list|(
-literal|"gdisplay_flush_now"
-argument_list|)
-expr_stmt|;
 comment|/* Redraw NOW */
 name|gdisplay_flush_whenever
 argument_list|(
@@ -9480,11 +9470,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|g_warning
-argument_list|(
-literal|"gdisplays_flush"
-argument_list|)
-expr_stmt|;
 name|gdisplays_flush_whenever
 argument_list|(
 name|FALSE
@@ -9501,11 +9486,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|g_warning
-argument_list|(
-literal|"gdisplays_flush_now"
-argument_list|)
-expr_stmt|;
 name|gdisplays_flush_whenever
 argument_list|(
 name|TRUE

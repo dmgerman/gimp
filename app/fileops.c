@@ -210,6 +210,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -3719,9 +3725,6 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
 name|gimage
 operator|=
 name|file_open_image
@@ -3732,10 +3735,19 @@ name|raw_filename
 argument_list|,
 name|RUN_INTERACTIVE
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+name|gimage
 operator|!=
 name|NULL
 condition|)
+block|{
+name|undo_free
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gdisplay_reconnect
 argument_list|(
 name|gdisplay
@@ -3743,6 +3755,7 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 name|g_message
 argument_list|(
