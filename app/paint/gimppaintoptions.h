@@ -62,6 +62,10 @@ DECL|struct|_GimpPressureOptions
 struct|struct
 name|_GimpPressureOptions
 block|{
+DECL|member|expanded
+name|gboolean
+name|expanded
+decl_stmt|;
 DECL|member|opacity
 name|gboolean
 name|opacity
