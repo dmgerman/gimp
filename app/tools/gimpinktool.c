@@ -126,25 +126,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"blob.h"
+file|"gimpinktool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"ink.h"
+file|"gimpinktool-blob.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptool.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool.h"
 end_include
 
 begin_include
@@ -6365,7 +6365,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c64c89b0103
+DECL|enum|__anon28d828120103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

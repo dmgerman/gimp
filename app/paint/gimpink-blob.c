@@ -48,13 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"blob.h"
+file|"gimpinktool-blob.h"
 end_include
 
 begin_function
@@ -115,7 +109,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon29dfef740103
+DECL|enum|__anon29e948690103
 typedef|typedef
 enum|enum
 block|{

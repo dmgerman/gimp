@@ -84,19 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"edit_selection.h"
+file|"gimpeditselectiontool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"move.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool.h"
+file|"gimpmovetool.h"
 end_include
 
 begin_include

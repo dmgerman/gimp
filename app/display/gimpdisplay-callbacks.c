@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/bucket_fill.h"
+file|"tools/gimpbucketfilltool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/move.h"
+file|"tools/gimpmovetool.h"
 end_include
 
 begin_include

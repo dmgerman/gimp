@@ -42,18 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimpdrawtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpcolorpickertool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -102,7 +90,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimpdrawtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcolorpickertool.h"
 end_include
 
 begin_include

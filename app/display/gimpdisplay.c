@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
+file|"tools/gimptool.h"
 end_include
 
 begin_include

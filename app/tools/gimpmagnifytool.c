@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"magnify.h"
+file|"gimpmagnifytool.h"
 end_include
 
 begin_include

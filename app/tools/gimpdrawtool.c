@@ -24,24 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpdrawtool.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a18c97d0103
+DECL|enum|__anon2c66ff690103
 block|{
 DECL|enumerator|DRAW
 name|DRAW

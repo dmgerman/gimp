@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimptool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"blob.h"
+file|"gimpinktool-blob.h"
 end_include
 
 begin_comment

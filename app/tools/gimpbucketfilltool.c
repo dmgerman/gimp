@@ -132,25 +132,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"bucket_fill.h"
+file|"gimpbucketfilltool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"fuzzy_select.h"
+file|"gimpfuzzyselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptool.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool.h"
 end_include
 
 begin_include

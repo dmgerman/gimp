@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
+file|"tools/gimptool.h"
 end_include
 
 begin_include
@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c523ccc0103
+DECL|enum|__anon29330b4e0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE

@@ -78,7 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptool.h"
 end_include
 
 begin_include
@@ -96,18 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialog_handler.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afd79c50103
+DECL|enum|__anon28a72cda0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

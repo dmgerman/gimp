@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -60,31 +66,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tool_manager.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"bucket_fill.h"
+file|"gimpbucketfilltool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpinktool.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimppaintbrushtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"ink.h"
 end_include
 
 begin_include

@@ -150,7 +150,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/by_color_select.h"
+file|"tools/gimpbycolorselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/gimptool.h"
 end_include
 
 begin_include
@@ -163,12 +169,6 @@ begin_include
 include|#
 directive|include
 file|"tools/gimppainttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool.h"
 end_include
 
 begin_include
@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2054a80103
+DECL|enum|__anon2969e7b40103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

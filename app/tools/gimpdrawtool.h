@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
+file|"gimptool.h"
 end_include
 
 begin_comment

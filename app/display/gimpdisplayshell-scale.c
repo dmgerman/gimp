@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
+file|"tools/gimptool.h"
 end_include
 
 begin_include
@@ -184,10 +184,6 @@ name|tool_manager_control_active
 argument_list|(
 name|PAUSE
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -237,10 +233,6 @@ name|tool_manager_control_active
 argument_list|(
 name|RESUME
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -262,10 +254,6 @@ name|tool_manager_control_active
 argument_list|(
 name|PAUSE
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;
@@ -297,10 +285,6 @@ name|tool_manager_control_active
 argument_list|(
 name|RESUME
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;

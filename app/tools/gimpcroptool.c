@@ -120,13 +120,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/crop.h"
+file|"gimpcroptool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/gimpdrawtool.h"
+file|"gimpdrawtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptool.h"
 end_include
 
 begin_include
@@ -144,13 +150,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"../pixmaps2.h"
+file|"pixmaps2.h"
 end_include
 
 begin_include
@@ -704,7 +704,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc8f16f0103
+DECL|enum|__anon2bcc31420103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool.h"
 end_include
 
 begin_include

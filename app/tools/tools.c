@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimptool.h"
 end_include
 
 begin_include
@@ -36,31 +36,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"airbrush.h"
+file|"gimpairbrushtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"blend.h"
+file|"gimpblendtool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"bucket_fill.h"
+file|"gimpbucketfilltool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"by_color_select.h"
+file|"gimpbycolorselecttool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"clone.h"
+file|"gimpclonetool.h"
 end_include
 
 begin_include
@@ -72,85 +72,73 @@ end_include
 begin_include
 include|#
 directive|include
-file|"convolve.h"
+file|"gimpconvolvetool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"crop.h"
+file|"gimpcroptool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dodgeburn.h"
+file|"gimpdodgeburntool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"gimpellipseselecttool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"ellipse_select.h"
+file|"gimperasertool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"eraser.h"
+file|"gimpfliptool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"flip_tool.h"
+file|"gimpfreeselecttool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"free_select.h"
+file|"gimpfuzzyselecttool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"fuzzy_select.h"
+file|"gimpinktool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"gimpmagnifytool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"ink.h"
+file|"gimpmeasuretool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"magnify.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"measure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"move.h"
+file|"gimpmovetool.h"
 end_include
 
 begin_include
@@ -162,49 +150,49 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pencil.h"
+file|"gimppenciltool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"perspective_tool.h"
+file|"gimpperspectivetool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rect_select.h"
+file|"gimprectselecttool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rotate_tool.h"
+file|"gimprotatetool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"scale_tool.h"
+file|"gimpscaletool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"shear_tool.h"
+file|"gimpsheartool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"smudge.h"
+file|"gimpsmudgetool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"text_tool.h"
+file|"gimptexttool.h"
 end_include
 
 begin_function

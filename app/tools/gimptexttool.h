@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimptool.h"
 end_include
 
 begin_define
@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b95a0b10103
+DECL|enum|__anon28cccbe00103
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS

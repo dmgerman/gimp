@@ -100,13 +100,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimptoolinfo.h"
+file|"tools/gimptool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
+file|"tools/gimptoolinfo.h"
 end_include
 
 begin_include
@@ -282,7 +282,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3f12cd0103
+DECL|enum|__anon2a245ae30103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

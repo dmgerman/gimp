@@ -72,13 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"measure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool.h"
+file|"gimpmeasuretool.h"
 end_include
 
 begin_include

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"selection_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool.h"
 end_include
 
 begin_include

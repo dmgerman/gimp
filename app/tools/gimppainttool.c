@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"drawable.h"
 end_include
 
@@ -126,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppainttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pixel_region.h"
 end_include
 
@@ -162,13 +150,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"undo.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"undo.h"
+file|"gimpdrawtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppainttool.h"
 end_include
 
 begin_include
@@ -221,7 +215,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3feb650103
+DECL|enum|__anon2bbe95640103
 block|{
 DECL|enumerator|PAINT
 name|PAINT

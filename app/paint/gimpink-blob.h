@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__BLOB_H__
+name|__GIMP_INK_TOOL_BLOB_H__
 end_ifndef
 
 begin_define
-DECL|macro|__BLOB_H__
+DECL|macro|__GIMP_INK_TOOL_BLOB_H__
 define|#
 directive|define
-name|__BLOB_H__
+name|__GIMP_INK_TOOL_BLOB_H__
 end_define
 
 begin_typedef
@@ -243,7 +243,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __BLOB_H__ */
+comment|/* __GIMP_INK_TOOL_BLOB_H__ */
 end_comment
 
 end_unit

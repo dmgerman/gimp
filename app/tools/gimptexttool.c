@@ -179,19 +179,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"edit_selection.h"
+file|"gimpeditselectiontool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"text_tool.h"
+file|"gimptexttool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimptool.h"
 end_include
 
 begin_include

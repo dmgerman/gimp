@@ -96,7 +96,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimppainttool.h"
+file|"gimppaintbrushtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppainttool.h"
 end_include
 
 begin_include
@@ -108,25 +114,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimppaintbrushtool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tool_options.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/tool_manager.h"
+file|"tool_manager.h"
 end_include
 
 begin_include

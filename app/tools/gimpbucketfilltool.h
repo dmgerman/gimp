@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimptool.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298bac770103
+DECL|enum|__anon275dafbf0103
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL

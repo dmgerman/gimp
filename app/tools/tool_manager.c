@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -78,19 +84,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"tool.h"
+file|"gimptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptoolinfo.h"
 end_include
 
 begin_include
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
 end_include
 
 begin_include

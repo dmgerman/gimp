@@ -71,12 +71,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"edit_selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -125,13 +119,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fuzzy_select.h"
+file|"gimpeditselectiontool.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rect_select.h"
+file|"gimpfuzzyselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprectselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptool.h"
 end_include
 
 begin_include
@@ -144,12 +150,6 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tool.h"
 end_include
 
 begin_include
