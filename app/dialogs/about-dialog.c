@@ -180,7 +180,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd9bb560108
+DECL|struct|__anon29c98a900108
 block|{
 DECL|member|about_dialog
 name|GtkWidget
@@ -1943,6 +1943,12 @@ expr_stmt|;
 if|if
 condition|(
 name|pp
+operator|&&
+name|about_info
+operator|.
+name|state
+operator|==
+literal|0
 operator|&&
 operator|(
 name|about_info
