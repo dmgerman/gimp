@@ -291,7 +291,7 @@ name|origx
 decl_stmt|,
 name|origy
 decl_stmt|;
-comment|/*  last x and y coords             */
+comment|/*  Last x and y coords               */
 DECL|member|cumlx
 DECL|member|cumly
 name|gint
@@ -299,7 +299,7 @@ name|cumlx
 decl_stmt|,
 name|cumly
 decl_stmt|;
-comment|/*  cumulative changes to x and yed */
+comment|/*  Cumulative changes to x and yed   */
 DECL|member|x
 DECL|member|y
 name|gint
@@ -307,29 +307,29 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/*  current x and y coords          */
+comment|/*  Current x and y coords            */
 DECL|member|num_segs_in
 name|gint
 name|num_segs_in
 decl_stmt|;
-comment|/* Num seg in selection boundary    */
+comment|/*  Num seg in selection boundary     */
 DECL|member|num_segs_out
 name|gint
 name|num_segs_out
 decl_stmt|;
-comment|/* Num seg in selection boundary    */
+comment|/*  Num seg in selection boundary     */
 DECL|member|segs_in
 name|BoundSeg
 modifier|*
 name|segs_in
 decl_stmt|;
-comment|/* Pointer to the channel sel. segs */
+comment|/*  Pointer to the channel sel. segs  */
 DECL|member|segs_out
 name|BoundSeg
 modifier|*
 name|segs_out
 decl_stmt|;
-comment|/* Pointer to the channel sel. segs */
+comment|/*  Pointer to the channel sel. segs  */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -337,7 +337,7 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  bounding box of selection mask  */
+comment|/*  Bounding box of selection mask    */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -349,12 +349,12 @@ DECL|member|edit_type
 name|EditType
 name|edit_type
 decl_stmt|;
-comment|/*  translate the mask or layer?    */
+comment|/*  Translate the mask or layer?      */
 DECL|member|first_move
 name|gboolean
 name|first_move
 decl_stmt|;
-comment|/*  we undo_freeze after the first  */
+comment|/*  Don't push undos after the first  */
 block|}
 struct|;
 end_struct
@@ -584,25 +584,21 @@ block|{
 name|GimpToolClass
 modifier|*
 name|tool_class
-decl_stmt|;
-name|GimpDrawToolClass
-modifier|*
-name|draw_class
-decl_stmt|;
-name|tool_class
-operator|=
+init|=
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpDrawToolClass
+modifier|*
 name|draw_class
-operator|=
+init|=
 name|GIMP_DRAW_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -645,14 +641,12 @@ block|{
 name|GimpTool
 modifier|*
 name|tool
-decl_stmt|;
-name|tool
-operator|=
+init|=
 name|GIMP_TOOL
 argument_list|(
 name|edit_selection_tool
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_tool_control_set_scroll_lock
 argument_list|(
 name|tool
@@ -1971,31 +1965,27 @@ block|{
 name|GimpEditSelectionTool
 modifier|*
 name|edit_select
-decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|active_item
-decl_stmt|;
-name|edit_select
-operator|=
+init|=
 name|GIMP_EDIT_SELECTION_TOOL
 argument_list|(
 name|tool
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
 name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|gdisp
 operator|->
 name|shell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpItem
+modifier|*
+name|active_item
+decl_stmt|;
 comment|/*  resume the current selection  */
 name|gimp_display_shell_selection_visibility
 argument_list|(
@@ -2110,35 +2100,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|edit_select
-operator|->
-name|first_move
-condition|)
-block|{
-name|gimp_image_undo_freeze
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-name|edit_select
-operator|->
-name|first_move
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-comment|/* thaw the undo again */
-name|gimp_image_undo_thaw
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 comment|/*  EDIT_CHANNEL_TRANSLATE and EDIT_LAYER_MASK_TRANSLATE need to be    *  preformed after thawing the undo.    */
 if|if
 condition|(
@@ -2395,10 +2356,11 @@ block|{
 name|GimpEditSelectionTool
 modifier|*
 name|edit_select
-decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
+init|=
+name|GIMP_EDIT_SELECTION_TOOL
+argument_list|(
+name|tool
+argument_list|)
 decl_stmt|;
 name|GimpItem
 modifier|*
@@ -2414,22 +2376,6 @@ name|motion_x
 decl_stmt|,
 name|motion_y
 decl_stmt|;
-name|edit_select
-operator|=
-name|GIMP_EDIT_SELECTION_TOOL
-argument_list|(
-name|tool
-argument_list|)
-expr_stmt|;
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
@@ -2648,7 +2594,9 @@ name|xoffset
 argument_list|,
 name|yoffset
 argument_list|,
-name|TRUE
+name|edit_select
+operator|->
+name|first_move
 argument_list|)
 expr_stmt|;
 if|if
@@ -2711,34 +2659,15 @@ name|xoffset
 argument_list|,
 name|yoffset
 argument_list|,
-name|TRUE
+name|edit_select
+operator|->
+name|first_move
 argument_list|)
 expr_stmt|;
 name|g_list_free
 argument_list|(
 name|linked
 argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|edit_select
-operator|->
-name|first_move
-condition|)
-block|{
-name|gimp_image_undo_freeze
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-name|edit_select
-operator|->
-name|first_move
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 break|break;
@@ -2797,20 +2726,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/*  this is always the first move, since we switch to              *  EDIT_FLOATING_SEL_TRANSLATE when finished here              */
-name|gimp_image_undo_freeze
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-name|edit_select
-operator|->
-name|first_move
-operator|=
-name|FALSE
-expr_stmt|;
 name|edit_select
 operator|->
 name|origx
@@ -2885,30 +2800,11 @@ name|xoffset
 argument_list|,
 name|yoffset
 argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|edit_select
 operator|->
 name|first_move
-condition|)
-block|{
-name|gimp_image_undo_freeze
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
 argument_list|)
 expr_stmt|;
-name|edit_select
-operator|->
-name|first_move
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 break|break;
 default|default:
 name|g_warning
@@ -2930,6 +2826,12 @@ expr_stmt|;
 block|}
 comment|/********************************************************************/
 comment|/********************************************************************/
+name|edit_select
+operator|->
+name|first_move
+operator|=
+name|FALSE
+expr_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
@@ -2980,31 +2882,27 @@ block|{
 name|GimpEditSelectionTool
 modifier|*
 name|edit_select
-decl_stmt|;
-name|GimpDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|active_item
-decl_stmt|;
-name|edit_select
-operator|=
+init|=
 name|GIMP_EDIT_SELECTION_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpDisplay
+modifier|*
 name|gdisp
-operator|=
+init|=
 name|GIMP_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
 operator|->
 name|gdisp
-expr_stmt|;
+decl_stmt|;
+name|GimpItem
+modifier|*
+name|active_item
+decl_stmt|;
 if|if
 condition|(
 name|edit_select
