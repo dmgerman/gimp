@@ -1730,9 +1730,6 @@ name|frame
 decl_stmt|,
 modifier|*
 name|preview
-decl_stmt|,
-modifier|*
-name|label
 decl_stmt|;
 name|Object_t
 modifier|*
