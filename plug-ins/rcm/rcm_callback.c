@@ -4,7 +4,7 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*---------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *---------------------------------------------------------------------------*/
+comment|/*---------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *---------------------------------------------------------------------------*/
 end_comment
 
 begin_include
@@ -324,48 +324,6 @@ name|gtk_widget_show
 argument_list|(
 operator|*
 name|widget
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_comment
-comment|/* Ok Button */
-end_comment
-
-begin_comment
-comment|/*---------------------------------------------------------------------------*/
-end_comment
-
-begin_function
-name|void
-DECL|function|rcm_ok_callback (GtkWidget * widget,gpointer data)
-name|rcm_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|Current
-operator|.
-name|Success
-operator|=
-literal|1
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -176,7 +176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d4ca230108
+DECL|struct|__anon2a3575e10108
 block|{
 DECL|member|run
 name|gboolean
@@ -585,7 +585,7 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|GimpExportReturnType
+name|GimpExportReturn
 name|export
 init|=
 name|GIMP_EXPORT_CANCEL

@@ -168,7 +168,7 @@ argument_list|,
 name|desc
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_create_action_areav
+name|gimp_dialog_add_buttons_valist
 argument_list|(
 name|GIMP_DIALOG
 argument_list|(

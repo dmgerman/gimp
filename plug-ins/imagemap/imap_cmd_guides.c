@@ -52,7 +52,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2aadee990108
+DECL|struct|__anon2b37a2ea0108
 typedef|typedef
 struct|struct
 block|{
@@ -594,11 +594,18 @@ name|get_image_height
 argument_list|()
 condition|)
 block|{
-name|default_dialog_set_ok_sensitivity
+name|gtk_dialog_set_response_sensitive
+argument_list|(
+name|GTK_DIALOG
 argument_list|(
 name|param
 operator|->
 name|dialog
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
 argument_list|,
 name|FALSE
 argument_list|)
@@ -606,11 +613,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|default_dialog_set_ok_sensitivity
+name|gtk_dialog_set_response_sensitive
+argument_list|(
+name|GTK_DIALOG
 argument_list|(
 name|param
 operator|->
 name|dialog
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_RESPONSE_OK
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1549,7 +1563,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2aadee990208
+DECL|struct|__anon2b37a2ea0208
 typedef|typedef
 struct|struct
 block|{

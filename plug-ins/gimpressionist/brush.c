@@ -2197,6 +2197,10 @@ name|GtkTreeSelection
 modifier|*
 name|selection
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|emptyitem
+decl_stmt|;
 name|label
 operator|=
 name|gtk_label_new_with_mnemonic
@@ -2611,16 +2615,6 @@ argument_list|(
 name|box2
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|standalone
-condition|)
-block|{
-name|GtkWidget
-modifier|*
-name|emptyitem
-decl_stmt|;
 name|box3
 operator|=
 name|gtk_hbox_new
@@ -2817,7 +2811,6 @@ argument_list|(
 name|tmpw
 argument_list|)
 expr_stmt|;
-block|}
 name|table
 operator|=
 name|gtk_table_new

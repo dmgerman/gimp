@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Warp  --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1997 John P. Beale  * Much of the 'warp' is from the Displace plug-in: 1996 Stephen Robert Norris  * Much of the 'displace' code taken in turn  from the pinch plug-in   *   which is by 1996 Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * You can contact me (the warp author) at beale@best.com  * Please send me any patches or enhancements to this code.  * You can contact the original The Gimp authors at gimp@xcf.berkeley.edu  *  * --------------------------------------------------------------------  * Warp Program structure: after running the user interface and setting the  * parameters, warp generates a brand-new image (later to be deleted   * before the user ever sees it) which contains two grayscale layers,  * representing the X and Y gradients of the "control" image. For this  * purpose, all channels of the control image are summed for a scalar  * value at each pixel coordinate for the gradient operation.  *  * The X,Y components of the calculated gradient are then used to displace pixels  * from the source image into the destination image. The displacement vector is  * rotated a user-specified amount first. This displacement operation happens  * iteratively, generating a new displaced image from each prior image.   * -------------------------------------------------------------------  *  * Revision History:  * Version 0.37  12/19/98 Fixed Tooltips and freeing memory  * Version 0.36  11/9/97  Changed XY vector layers  back to own image  *               fixed 'undo' problem (hopefully)  *  * Version 0.35  11/3/97  Added vector-map, mag-map, grad-map to  *               diff vector instead of separate operation  *               further futzing with drawable updates  *               starting adding tooltips  *  * Version 0.34  10/30/97   'Fixed' drawable update problem  *               Added 16-bit resolution to differential map  *	         Added substep increments for finer control  *  * Version 0.33  10/26/97   Added 'angle increment' to user interface  *  * Version 0.32  10/25/97   Added magnitude control map (secondary control)  *               Changed undo behavior to be one undo-step per warp call.  *  * Version 0.31  10/25/97   Fixed src/dest pixregions so program works  *               with multiple-layer images. Still don't know  *               exactly what I did to fix it :-/  Also, added 'color' option for  *               border pixels to use the current selected foreground color.  *  * Version 0.3   10/20/97  Initial release for Gimp 0.99.xx  */
+comment|/* Warp  --- image filter plug-in for The Gimp image manipulation program  * Copyright (C) 1997 John P. Beale  * Much of the 'warp' is from the Displace plug-in: 1996 Stephen Robert Norris  * Much of the 'displace' code taken in turn  from the pinch plug-in  *   which is by 1996 Federico Mena Quintero  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * You can contact me (the warp author) at beale@best.com  * Please send me any patches or enhancements to this code.  * You can contact the original The Gimp authors at gimp@xcf.berkeley.edu  *  * --------------------------------------------------------------------  * Warp Program structure: after running the user interface and setting the  * parameters, warp generates a brand-new image (later to be deleted  * before the user ever sees it) which contains two grayscale layers,  * representing the X and Y gradients of the "control" image. For this  * purpose, all channels of the control image are summed for a scalar  * value at each pixel coordinate for the gradient operation.  *  * The X,Y components of the calculated gradient are then used to displace pixels  * from the source image into the destination image. The displacement vector is  * rotated a user-specified amount first. This displacement operation happens  * iteratively, generating a new displaced image from each prior image.  * -------------------------------------------------------------------  *  * Revision History:  * Version 0.37  12/19/98 Fixed Tooltips and freeing memory  * Version 0.36  11/9/97  Changed XY vector layers  back to own image  *               fixed 'undo' problem (hopefully)  *  * Version 0.35  11/3/97  Added vector-map, mag-map, grad-map to  *               diff vector instead of separate operation  *               further futzing with drawable updates  *               starting adding tooltips  *  * Version 0.34  10/30/97   'Fixed' drawable update problem  *               Added 16-bit resolution to differential map  *	         Added substep increments for finer control  *  * Version 0.33  10/26/97   Added 'angle increment' to user interface  *  * Version 0.32  10/25/97   Added magnitude control map (secondary control)  *               Changed undo behavior to be one undo-step per warp call.  *  * Version 0.31  10/25/97   Fixed src/dest pixregions so program works  *               with multiple-layer images. Still don't know  *               exactly what I did to fix it :-/  Also, added 'color' option for  *               border pixels to use the current selected foreground color.  *  * Version 0.3   10/20/97  Initial release for Gimp 0.99.xx  */
 end_comment
 
 begin_include
@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b73e4420103
+DECL|enum|__anon29fd8ee40103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b73e4420208
+DECL|struct|__anon29fd8ee40208
 block|{
 DECL|member|amount
 name|gdouble
@@ -166,21 +166,6 @@ decl_stmt|;
 DECL|typedef|WarpVals
 block|}
 name|WarpVals
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2b73e4420308
-block|{
-DECL|member|run
-name|gboolean
-name|run
-decl_stmt|;
-DECL|typedef|WarpInterface
-block|}
-name|WarpInterface
 typedef|;
 end_typedef
 
@@ -481,21 +466,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|warp_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gdouble
 name|warp_map_mag_give_value
 parameter_list|(
@@ -598,20 +568,6 @@ block|,
 comment|/* vector_scale */
 literal|0.0
 comment|/* vector_angle */
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|dint
-specifier|static
-name|WarpInterface
-name|dint
-init|=
-block|{
-name|FALSE
-block|,
-comment|/* run */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1102,7 +1058,7 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/*  Make sure minimum args        *  (mode, image, draw, amount, warp_map, iter) are there         */
+comment|/*  Make sure minimum args        *  (mode, image, draw, amount, warp_map, iter) are there        */
 if|if
 condition|(
 name|nparams
@@ -1581,6 +1537,9 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"warp"
@@ -1599,59 +1558,21 @@ argument_list|)
 argument_list|,
 literal|"warp"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/warp.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|warp_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -3502,15 +3423,26 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-name|gtk_main
-argument_list|()
+name|run
+operator|=
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
 expr_stmt|;
-name|gdk_flush
-argument_list|()
+name|gtk_widget_destroy
+argument_list|(
+name|dlg
+argument_list|)
 expr_stmt|;
 return|return
-name|dint
-operator|.
 name|run
 return|;
 block|}
@@ -4756,7 +4688,7 @@ name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* -- Add two layers: X and Y Displacement vectors -- */
-comment|/* -- I'm using a RGB  drawable and using the first two bytes for a          16-bit pixel value. This is either clever, or a kluge,          depending on your point of view.  */
+comment|/* -- I'm using a RGB  drawable and using the first two bytes for a         16-bit pixel value. This is either clever, or a kluge,         depending on your point of view.  */
 name|image_id
 operator|=
 name|gimp_layer_get_image_id
@@ -9576,37 +9508,6 @@ operator|.
 name|vector_map
 operator|=
 name|id
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|warp_ok_callback (GtkWidget * widget,gpointer data)
-name|warp_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|dint
-operator|.
-name|run
-operator|=
-name|TRUE
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79ad390108
+DECL|struct|__anon2b3c85280108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79ad390208
+DECL|struct|__anon2b3c85280208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -312,7 +312,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79ad390308
+DECL|struct|__anon2b3c85280308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b79ad390408
+DECL|struct|__anon2b3c85280408
 block|{
 DECL|member|npixel
 name|gint
@@ -1133,7 +1133,7 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|GimpExportReturnType
+name|GimpExportReturn
 name|export
 init|=
 name|GIMP_EXPORT_CANCEL

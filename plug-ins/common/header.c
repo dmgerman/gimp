@@ -291,7 +291,7 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|GimpExportReturnType
+name|GimpExportReturn
 name|export
 init|=
 name|GIMP_EXPORT_CANCEL

@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program   * Copyright (C) 1995 Spencer Kimball and Peter Mattis   *   * This program is free software; you can redistribute it and/or modify   * it under the terms of the GNU General Public License as published by   * the Free Software Foundation; either version 2 of the License, or   * (at your option) any later version.   *  * This program is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the   * GNU General Public License for more details.   *   * You should have received a copy of the GNU General Public License   * along with this program; if not, write to the Free Software   * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.   */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
-comment|/* Original plug-in coded by Tim Newsome.   *   * Changed to make use of real-life units by Sven Neumann<sven@gimp.org>.  *   * The interface code is heavily commented in the hope that it will  * help other plug-in developers to adapt their plug-ins to make use  * of the gimp_size_entry functionality.   *   * Note: There is a convenience constructor called gimp_coordinetes_new ()  *       which simplifies the task of setting up a standard X,Y sizeentry.   *  * For more info and bugs see libgimp/gimpsizeentry.h and libgimp/gimpwidgets.h  *  * May 2000 tim copperfield [timecop@japan.co.jp]  * http://www.ne.jp/asahi/linux/timecop  * Added dynamic preview.  Due to weird implementation of signals from all  * controls, preview will not auto-update.  But this plugin isn't really  * crying for real-time updating either.  *  */
+comment|/* Original plug-in coded by Tim Newsome.  *  * Changed to make use of real-life units by Sven Neumann<sven@gimp.org>.  *  * The interface code is heavily commented in the hope that it will  * help other plug-in developers to adapt their plug-ins to make use  * of the gimp_size_entry functionality.  *  * Note: There is a convenience constructor called gimp_coordinetes_new ()  *       which simplifies the task of setting up a standard X,Y sizeentry.  *  * For more info and bugs see libgimp/gimpsizeentry.h and libgimp/gimpwidgets.h  *  * May 2000 tim copperfield [timecop@japan.co.jp]  * http://www.ne.jp/asahi/linux/timecop  * Added dynamic preview.  Due to weird implementation of signals from all  * controls, preview will not auto-update.  But this plugin isn't really  * crying for real-time updating either.  *  */
 end_comment
 
 begin_include
@@ -209,16 +209,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|run_flag
-specifier|static
-name|gint
-name|run_flag
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|main_dialog
 specifier|static
 name|GtkWidget
@@ -265,7 +255,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf8b44e0108
+DECL|struct|__anon28e7abc60108
 block|{
 DECL|member|hwidth
 name|gint
@@ -913,7 +903,7 @@ name|data
 operator|.
 name|d_color
 expr_stmt|;
-comment|/*  FIXME: this used to be the alpha value	   			     param[17].data.d_int8); 	   */
+comment|/*  FIXME: this used to be the alpha value 			     param[17].data.d_int8); 	   */
 block|}
 block|}
 else|else
@@ -1717,7 +1707,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Get the input area. This is the bounding box of the selection in        *  the image (or the entire image if there is no selection).         */
+comment|/* Get the input area. This is the bounding box of the selection in        *  the image (or the entire image if there is no selection).        */
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -2622,38 +2612,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ok_callback (GtkWidget * widget,gpointer data)
-name|ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|run_flag
-operator|=
-name|TRUE
-expr_stmt|;
-name|update_values
-argument_list|()
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|update_preview (void)
 name|update_preview
 parameter_list|(
@@ -2990,6 +2948,9 @@ decl_stmt|;
 name|gdouble
 name|yres
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|main_dialog
@@ -3019,59 +2980,21 @@ argument_list|)
 argument_list|,
 literal|"grid"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/grid.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -3721,7 +3644,7 @@ argument_list|(
 name|chain_button
 argument_list|)
 expr_stmt|;
-comment|/* connect to the 'value_changed' signal because we have to take care     * of keeping the entries in sync when the chainbutton is active    */
+comment|/* connect to the 'value_changed' signal because we have to take care    * of keeping the entries in sync when the chainbutton is active    */
 name|g_signal_connect
 argument_list|(
 name|width
@@ -5078,11 +5001,34 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gtk_main
+name|run
+operator|=
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
+expr_stmt|;
+if|if
+condition|(
+name|run
+condition|)
+name|update_values
 argument_list|()
 expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|dlg
+argument_list|)
+expr_stmt|;
 return|return
-name|run_flag
+name|run
 return|;
 block|}
 end_function

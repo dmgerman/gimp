@@ -710,7 +710,7 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|GimpExportReturnType
+name|GimpExportReturn
 name|export
 init|=
 name|GIMP_EXPORT_CANCEL
@@ -1049,7 +1049,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ab4c8760108
+DECL|struct|__anon27715e890108
 block|{
 DECL|member|manufacturer
 name|guint8

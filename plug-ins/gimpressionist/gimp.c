@@ -314,10 +314,15 @@ name|drawable
 decl_stmt|;
 end_decl_stmt
 
+begin_macro
+DECL|function|MAIN ()
+name|MAIN
+argument_list|()
+end_macro
+
 begin_function
 specifier|static
 name|void
-DECL|function|query (void)
 name|query
 parameter_list|(
 name|void
@@ -735,21 +740,6 @@ decl_stmt|;
 name|int
 name|rowstride
 decl_stmt|;
-if|if
-condition|(
-name|standalone
-condition|)
-block|{
-name|loadppm
-argument_list|(
-name|standalone
-argument_list|,
-operator|&
-name|infile
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable

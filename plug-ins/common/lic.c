@@ -163,7 +163,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a33c8320108
+DECL|struct|__anon2959b7ea0108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3150,40 +3150,6 @@ end_comment
 
 begin_function
 specifier|static
-name|void
-DECL|function|ok_button_clicked (GtkWidget * widget,gpointer data)
-name|ok_button_clicked
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_widget_hide
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-name|compute_image
-argument_list|()
-expr_stmt|;
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|gint
 DECL|function|effect_image_constrain (gint32 image_id,gint32 drawable_id,gpointer data)
 name|effect_image_constrain
@@ -3241,7 +3207,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|create_main_dialog (void)
 name|create_main_dialog
 parameter_list|(
@@ -3287,6 +3253,16 @@ decl_stmt|;
 name|gint
 name|row
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
+name|gimp_ui_init
+argument_list|(
+literal|"lic"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|=
 name|gimp_dialog_new
@@ -3297,6 +3273,10 @@ literal|"Van Gogh (LIC)"
 argument_list|)
 argument_list|,
 literal|"lic"
+argument_list|,
+name|NULL
+argument_list|,
+literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -3312,31 +3292,11 @@ name|FALSE
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_main_quit
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|ok_button_clicked
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -4156,32 +4116,30 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+name|run
+operator|=
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|dialog
+argument_list|)
+expr_stmt|;
+return|return
+name|run
+return|;
 block|}
 end_function
-
-begin_comment
-comment|/******************/
-end_comment
-
-begin_comment
-comment|/* Implementation */
-end_comment
-
-begin_comment
-comment|/******************/
-end_comment
-
-begin_function_decl
-specifier|static
-name|void
-name|lic_interactive
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*************************************/
@@ -4497,10 +4455,20 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|lic_interactive
+name|image_setup
 argument_list|(
 name|drawable
+argument_list|,
+name|TRUE
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|create_main_dialog
+argument_list|()
+condition|)
+name|compute_image
+argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
@@ -4580,49 +4548,6 @@ comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-specifier|static
-name|void
-DECL|function|lic_interactive (GimpDrawable * drawable)
-name|lic_interactive
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-name|gimp_ui_init
-argument_list|(
-literal|"lic"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/* Create application window */
-comment|/* ========================= */
-name|create_main_dialog
-argument_list|()
-expr_stmt|;
-comment|/* Prepare images */
-comment|/* ============== */
-name|image_setup
-argument_list|(
-name|drawable
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/* Gtk main event loop */
-comment|/* =================== */
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-block|}
-end_function
 
 begin_macro
 name|MAIN

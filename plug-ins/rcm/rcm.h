@@ -40,7 +40,7 @@ comment|/*----------------------------------------------------------------------
 end_comment
 
 begin_enum
-DECL|enum|__anon2a2362010103
+DECL|enum|__anon2962774d0103
 DECL|enumerator|ENTIRE_IMAGE
 DECL|enumerator|SELECTION
 DECL|enumerator|SELECTION_IN_CONTEXT
@@ -59,7 +59,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a2362010203
+DECL|enum|__anon2962774d0203
 DECL|enumerator|EACH
 DECL|enumerator|BOTH
 DECL|enumerator|DEGREES
@@ -93,7 +93,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|enum|__anon2a2362010303
+DECL|enum|__anon2962774d0303
 DECL|enumerator|VIRGIN
 DECL|enumerator|DRAG_START
 DECL|enumerator|DRAGING
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2362010408
+DECL|struct|__anon2962774d0408
 block|{
 DECL|member|alpha
 name|float
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2362010508
+DECL|struct|__anon2962774d0508
 block|{
 DECL|member|width
 name|gint
@@ -174,7 +174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2362010608
+DECL|struct|__anon2962774d0608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -292,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2362010708
+DECL|struct|__anon2962774d0708
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2362010808
+DECL|struct|__anon2962774d0808
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -380,7 +380,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2362010908
+DECL|struct|__anon2962774d0908
 block|{
 DECL|member|Slctn
 name|gint
@@ -389,10 +389,6 @@ decl_stmt|;
 DECL|member|RealTime
 name|gint
 name|RealTime
-decl_stmt|;
-DECL|member|Success
-name|gint
-name|Success
 decl_stmt|;
 DECL|member|Units
 name|gint

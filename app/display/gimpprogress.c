@@ -125,8 +125,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_progress_response
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|,
+name|gint
+name|response_id
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
-comment|/**  * gimp_progress_start:  * @gdisp:           The #GimpDisplay to show the progress in.  * @message:         The message.  * @important:       Setting this to #FALSE will cause the progress  *                   to silently fail if the display's statusbar  *                   is hidden.  * @cancel_callback: The callback to call if the "Cancel" button is clicked.  * @cancel_data:     The %cancel_callback's "user_data".  *   * Start a progress bar on %gdisp with reason %message.  If %gdisp  * is #NULL, the progress bar is presented in a new dialog box.  If  * %message is #NULL, then no message is used.  *  * If %cancel_callback is not %NULL, it is attached to the progress  * bar cancel button's "clicked" signal, with data %cancel_data.  The  * cancel button is only made sensitive if the callback is set.  *  * It is an error to gimp_progress_start() a bar on a %gdisp for which  * there is already a progress bar active.  *  * Progress bars with %important set to #TRUE will be shown to the  * user in any possible way.  Unimportant progress bars will not be  * shown to the user if it would mean creating a new window.  *   * Return value: The new #GimpProgress.  **/
+comment|/**  * gimp_progress_start:  * @gdisp:           The #GimpDisplay to show the progress in.  * @message:         The message.  * @important:       Setting this to #FALSE will cause the progress  *                   to silently fail if the display's statusbar  *                   is hidden.  * @cancel_callback: The callback to call if the "Cancel" button is clicked.  * @cancel_data:     The %cancel_callback's "user_data".  *  * Start a progress bar on %gdisp with reason %message.  If %gdisp  * is #NULL, the progress bar is presented in a new dialog box.  If  * %message is #NULL, then no message is used.  *  * If %cancel_callback is not %NULL, it is attached to the progress  * bar cancel button's "clicked" signal, with data %cancel_data.  The  * cancel button is only made sensitive if the callback is set.  *  * It is an error to gimp_progress_start() a bar on a %gdisp for which  * there is already a progress bar active.  *  * Progress bars with %important set to #TRUE will be shown to the  * user in any possible way.  Unimportant progress bars will not be  * shown to the user if it would mean creating a new window.  *  * Return value: The new #GimpProgress.  **/
 end_comment
 
 begin_function
@@ -318,51 +337,36 @@ literal|"progress"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
-argument_list|,
-name|GTK_WIN_POS_NONE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|GTK_STOCK_CANCEL
+literal|0
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-operator|&
-name|progress
-operator|->
-name|cancelbutton
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_resizable
+name|progress
+operator|->
+name|cancelbutton
+operator|=
+name|gtk_dialog_add_button
 argument_list|(
-name|GTK_WINDOW
+name|GTK_DIALOG
 argument_list|(
 name|progress
 operator|->
 name|dialog
 argument_list|)
 argument_list|,
-name|FALSE
+name|GTK_STOCK_CANCEL
+argument_list|,
+name|GTK_RESPONSE_CANCEL
 argument_list|)
 expr_stmt|;
-name|gtk_dialog_set_has_separator
+name|gtk_window_set_resizable
 argument_list|(
-name|GTK_DIALOG
+name|GTK_WINDOW
 argument_list|(
 name|progress
 operator|->
@@ -535,7 +539,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_restart:  * @progress:        The #GimpProgress to restart.  * @message:         The new message.  * @cancel_callback: The new cancel_callback  * @cancel_data:     The new cancel_data  *   * Update the message and/or the callbacks for a progress and reset  * the bar to zero, with the minimum of disturbance to the user.  *   * Return value: The same #GimpProgress as passed in as %progress.  **/
+comment|/**  * gimp_progress_restart:  * @progress:        The #GimpProgress to restart.  * @message:         The new message.  * @cancel_callback: The new cancel_callback  * @cancel_data:     The new cancel_data  *  * Update the message and/or the callbacks for a progress and reset  * the bar to zero, with the minimum of disturbance to the user.  *  * Return value: The same #GimpProgress as passed in as %progress.  **/
 end_comment
 
 begin_function
@@ -803,7 +807,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_step:  * @progress: The #GimpProgress.  *   * Step the progress bar by one percent, wrapping at 100%  **/
+comment|/**  * gimp_progress_step:  * @progress: The #GimpProgress.  *  * Step the progress bar by one percent, wrapping at 100%  **/
 end_comment
 
 begin_function
@@ -906,7 +910,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_progress_end:  * @progress: The #GimpProgress.  *   * Finish using the progress bar.  **/
+comment|/**  * gimp_progress_end:  * @progress: The #GimpProgress.  *  * Finish using the progress bar.  **/
 end_comment
 
 begin_function
@@ -1042,7 +1046,7 @@ comment|/*  This function's prototype is conveniently  *  the same as progress_f
 end_comment
 
 begin_comment
-comment|/**  * gimp_progress_update_and_flush:  * @min:  The minimum, ...  * @max:  ... the maximum, ...  * @current: ... and the current progress of your operation.  * @data: The #GimpProgress you want to update.  *   * This function's prototype is conveniently  * the same as #GimpProgressFunc from libgimpcolor.  **/
+comment|/**  * gimp_progress_update_and_flush:  * @min:  The minimum, ...  * @max:  ... the maximum, ...  * @current: ... and the current progress of your operation.  * @data: The #GimpProgress you want to update.  *  * This function's prototype is conveniently  * the same as #GimpProgressFunc from libgimpcolor.  **/
 end_comment
 
 begin_function
@@ -1211,9 +1215,13 @@ operator|->
 name|cancel_callback
 condition|)
 block|{
+if|if
+condition|(
+name|dialog
+condition|)
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|button
+name|dialog
 argument_list|,
 name|progress
 operator|->
@@ -1224,13 +1232,10 @@ operator|->
 name|cancel_data
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|dialog
-condition|)
+else|else
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|dialog
+name|button
 argument_list|,
 name|progress
 operator|->
@@ -1248,20 +1253,6 @@ condition|(
 name|cancel_callback
 condition|)
 block|{
-name|g_signal_connect
-argument_list|(
-name|button
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|cancel_callback
-argument_list|)
-argument_list|,
-name|cancel_data
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|dialog
@@ -1270,7 +1261,22 @@ name|g_signal_connect
 argument_list|(
 name|dialog
 argument_list|,
-literal|"destroy"
+literal|"response"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_progress_response
+argument_list|)
+argument_list|,
+name|progress
+argument_list|)
+expr_stmt|;
+else|else
+name|g_signal_connect
+argument_list|(
+name|button
+argument_list|,
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1306,6 +1312,109 @@ operator|->
 name|cancel_data
 operator|=
 name|cancel_data
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_progress_response (GtkWidget * dialog,gint response_id,GimpProgress * progress)
+name|gimp_progress_response
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|dialog
+parameter_list|,
+name|gint
+name|response_id
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|)
+block|{
+DECL|typedef|cb
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|cb
+function_decl|)
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+name|GtkWidget
+modifier|*
+name|button
+decl_stmt|;
+name|cb
+name|callback
+decl_stmt|;
+name|callback
+operator|=
+operator|(
+name|cb
+operator|)
+name|progress
+operator|->
+name|cancel_callback
+expr_stmt|;
+if|if
+condition|(
+name|progress
+operator|->
+name|gdisp
+condition|)
+block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|progress
+operator|->
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+name|button
+operator|=
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
+operator|->
+name|cancelbutton
+expr_stmt|;
+block|}
+else|else
+block|{
+name|button
+operator|=
+name|progress
+operator|->
+name|cancelbutton
+expr_stmt|;
+block|}
+name|callback
+argument_list|(
+name|button
+argument_list|,
+name|progress
+operator|->
+name|cancel_data
+argument_list|)
 expr_stmt|;
 block|}
 end_function

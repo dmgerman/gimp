@@ -4,7 +4,7 @@ comment|/*  * This is the FlareFX plug-in for the GIMP 0.99  * Version 1.05  *  
 end_comment
 
 begin_comment
-comment|/*   * Please send any comments or suggestions to me,  * Karl-Johan Andersson (t96kja@student.tdb.uu.se)  *   * TODO:  * - add "streaks" from lightsource  * - improve the user interface  * - speed it up  * - more flare types, more control (color, size, intensity...)  *  * Missing something? - please contact me!  *  * May 2000 - tim copperfield [timecop@japan.co.jp]  * preview window now draws a "mini flarefx" to show approximate  * positioning after final render.  *  * Note, the algorithm does not render into an alpha channel.  * Therefore, changed RGB* to RGB in the capabilities.  * Someone who actually knows something about graphics should  * take a look to see why this doesnt render on alpha channel :)  *    */
+comment|/*  * Please send any comments or suggestions to me,  * Karl-Johan Andersson (t96kja@student.tdb.uu.se)  *  * TODO:  * - add "streaks" from lightsource  * - improve the user interface  * - speed it up  * - more flare types, more control (color, size, intensity...)  *  * Missing something? - please contact me!  *  * May 2000 - tim copperfield [timecop@japan.co.jp]  * preview window now draws a "mini flarefx" to show approximate  * positioning after final render.  *  * Note, the algorithm does not render into an alpha channel.  * Therefore, changed RGB* to RGB in the capabilities.  * Someone who actually knows something about graphics should  * take a look to see why this doesnt render on alpha channel :)  *  */
 end_comment
 
 begin_include
@@ -106,7 +106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9c3c070108
+DECL|struct|__anon28c61e700108
 block|{
 DECL|member|posx
 name|gint
@@ -119,21 +119,6 @@ decl_stmt|;
 DECL|typedef|FlareValues
 block|}
 name|FlareValues
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2b9c3c070208
-block|{
-DECL|member|run
-name|gboolean
-name|run
-decl_stmt|;
-DECL|typedef|FlareInterface
-block|}
-name|FlareInterface
 typedef|;
 end_typedef
 
@@ -196,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9c3c070308
+DECL|struct|__anon28c61e700208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -321,21 +306,6 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|flare_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -684,19 +654,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|fint
-specifier|static
-name|FlareInterface
-name|fint
-init|=
-block|{
-name|FALSE
-comment|/* run */
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|scolor
 DECL|variable|sglow
 DECL|variable|sinner
@@ -879,7 +836,7 @@ argument_list|,
 comment|/* Copyright */
 literal|"May 2000"
 argument_list|,
-comment|/* don't translate '<Image>' entry,  			   * it is keyword for the gtk toolkit */
+comment|/* don't translate '<Image>' entry, 			   * it is keyword for the gtk toolkit */
 name|N_
 argument_list|(
 literal|"<Image>/Filters/Light Effects/_FlareFX..."
@@ -1258,6 +1215,9 @@ name|FlareCenter
 modifier|*
 name|center
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"flarefx"
@@ -1276,59 +1236,21 @@ argument_list|)
 argument_list|,
 literal|"flarefx"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/flarefx.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|flare_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -1444,52 +1366,28 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-return|return
-name|fint
-operator|.
-name|run
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/* --- Interface functions --- */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|flare_ok_callback (GtkWidget * widget,gpointer data)
-name|flare_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|fint
-operator|.
 name|run
 operator|=
-name|TRUE
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
+name|dlg
 argument_list|)
 expr_stmt|;
+return|return
+name|run
+return|;
 block|}
 end_function
 

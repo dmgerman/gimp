@@ -30,7 +30,6 @@ name|gchar
 modifier|*
 name|desc
 parameter_list|,
-comment|/* specify action area buttons                                    * as va_list:                                    *  const gchar  *label,                                    *  GCallback     callback,                                    *  gpointer      callback_data,                                    *  GObject      *slot_object,                                    *  GtkWidget   **widget_ptr,                                    *  gboolean      default_action,                                    *  gboolean      connect_delete,                                    */
 modifier|...
 parameter_list|)
 function_decl|;

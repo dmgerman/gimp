@@ -673,7 +673,6 @@ name|gchar
 modifier|*
 name|help_id
 parameter_list|,
-comment|/* specify action area buttons                            * as va_list:                            *  const gchar    *label,                            *  GCallback       callback,                            *  gpointer        callback_data,                            *  GObject        *slot_object,                            *  GtkWidget     **widget_ptr,                            *  gboolean        default_action,                            *  gboolean        connect_delete,                            */
 modifier|...
 parameter_list|)
 block|{
@@ -773,7 +772,7 @@ argument_list|,
 name|help_id
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_create_action_areav
+name|gimp_dialog_add_buttons_valist
 argument_list|(
 name|GIMP_DIALOG
 argument_list|(

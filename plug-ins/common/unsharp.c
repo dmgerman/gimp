@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  *  * unsharp.c 0.10 -- This is a plug-in for the GIMP 1.0  *  http://www.stdout.org/~winston/gimp/unsharp.html  *  (now out of date)   *  * Copyright (C) 1999 Winston Chang  *<winstonc@cs.wisc.edu>  *<winston@stdout.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* $Id$  *  * unsharp.c 0.10 -- This is a plug-in for the GIMP 1.0  *  http://www.stdout.org/~winston/gimp/unsharp.html  *  (now out of date)  *  * Copyright (C) 1999 Winston Chang  *<winstonc@cs.wisc.edu>  *<winston@stdout.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e6cc40108
+DECL|struct|__anon2be7c7dc0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e6cc40208
+DECL|struct|__anon2be7c7dc0208
 block|{
 DECL|member|run
 name|gboolean
@@ -300,21 +300,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|unsharp_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gint
 name|unsharp_mask_dialog
 parameter_list|(
@@ -322,16 +307,6 @@ name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|run_filter
-specifier|static
-name|gint
-name|run_filter
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/* create a few globals, set default values */
@@ -2385,7 +2360,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* generates a 1-D convolution matrix to be used for each pass of   * a two-pass gaussian blur.  Returns the length of the matrix.  */
+comment|/* generates a 1-D convolution matrix to be used for each pass of  * a two-pass gaussian blur.  Returns the length of the matrix.  */
 end_comment
 
 begin_function
@@ -2870,6 +2845,9 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"unsharp"
@@ -2888,59 +2866,21 @@ argument_list|)
 argument_list|,
 literal|"unsharp"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/unsharp.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|unsharp_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|window
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -3158,44 +3098,28 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-return|return
-name|run_filter
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|unsharp_ok_callback (GtkWidget * widget,gpointer data)
-name|unsharp_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|run_filter
+name|run
 operator|=
-name|TRUE
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
+name|window
 argument_list|)
 expr_stmt|;
+return|return
+name|run
+return|;
 block|}
 end_function
 

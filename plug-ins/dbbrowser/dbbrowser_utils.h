@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*   * dbbrowser_utils.h  * 0.08  26th sept 97  by Thomas NOEL<thomas@minet.net>   */
+comment|/*  * dbbrowser_utils.h  * 0.08  26th sept 97  by Thomas NOEL<thomas@minet.net>  */
 end_comment
 
 begin_ifndef

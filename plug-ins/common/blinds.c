@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Blinds plug-in. Distort an image as though it was stuck to   * window blinds and the blinds where opened/closed.  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *   * A fair proprotion of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *   * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero             *  */
+comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Blinds plug-in. Distort an image as though it was stuck to  * window blinds and the blinds where opened/closed.  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * A fair proprotion of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *  * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero  *  */
 end_comment
 
 begin_comment
-comment|/* Change log:-  *   * Version 0.5 10 June 1997.  * Changes required to work with 0.99.10.  *  * Version 0.4 20 May 1997.  * Fixed problem with using this plugin in GIMP_RUN_NONINTERACTIVE mode  *  * Version 0.3 8 May 1997.  * Make preview work in Quartics words "The Right Way".  *  * Allow the background to be transparent.  *  * Version 0.2 1 May 1997 (not released).  * Added patches supplied by Tim Mooney mooney@dogbert.cc.ndsu.NoDak.edu  * to allow the plug-in to build with Digitals compiler.  */
+comment|/* Change log:-  *  * Version 0.5 10 June 1997.  * Changes required to work with 0.99.10.  *  * Version 0.4 20 May 1997.  * Fixed problem with using this plugin in GIMP_RUN_NONINTERACTIVE mode  *  * Version 0.3 8 May 1997.  * Make preview work in Quartics words "The Right Way".  *  * Allow the background to be transparent.  *  * Version 0.2 1 May 1997 (not released).  * Added patches supplied by Tim Mooney mooney@dogbert.cc.ndsu.NoDak.edu  * to allow the plug-in to build with Digitals compiler.  */
 end_comment
 
 begin_include
@@ -135,12 +135,8 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293881b20108
+DECL|struct|__anon29773bbc0108
 block|{
-DECL|member|run
-name|gboolean
-name|run
-decl_stmt|;
 DECL|member|img_bpp
 name|gint
 name|img_bpp
@@ -158,9 +154,6 @@ name|BlindsInterface
 name|bint
 init|=
 block|{
-name|FALSE
-block|,
-comment|/* run */
 literal|4
 comment|/* bpp of drawable */
 block|}
@@ -237,21 +230,6 @@ name|gint
 name|blinds_dialog
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|blinds_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -865,6 +843,9 @@ name|GtkWidget
 modifier|*
 name|toggle
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"blinds"
@@ -887,59 +868,21 @@ argument_list|)
 argument_list|,
 literal|"blinds"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/blinds.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|blinds_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -1456,48 +1399,28 @@ expr_stmt|;
 name|dialog_update_preview
 argument_list|()
 expr_stmt|;
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-return|return
-name|bint
-operator|.
-name|run
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|blinds_ok_callback (GtkWidget * widget,gpointer data)
-name|blinds_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|bint
-operator|.
 name|run
 operator|=
-name|TRUE
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
+name|dlg
 argument_list|)
 expr_stmt|;
+return|return
+name|run
+return|;
 block|}
 end_function
 
@@ -2288,7 +2211,7 @@ block|}
 else|else
 block|{
 comment|/* Horizontal blinds */
-comment|/* Apply the blinds algo to a single column -        * this act as a transfomation matrix for the         * rows. Make row 0 invalid so we can find it again!        */
+comment|/* Apply the blinds algo to a single column -        * this act as a transfomation matrix for the        * rows. Make row 0 invalid so we can find it again!        */
 name|gint
 name|i
 decl_stmt|;
@@ -2431,7 +2354,7 @@ operator|+
 literal|1
 expr_stmt|;
 block|}
-comment|/* Bit of a fiddle since blindsapply really works on an image        * row not a set of bytes. - preview can't be> 255        * or must make dr sr int rows.         */
+comment|/* Bit of a fiddle since blindsapply really works on an image        * row not a set of bytes. - preview can't be> 255        * or must make dr sr int rows.        */
 name|blindsapply
 argument_list|(
 name|sr
@@ -2884,7 +2807,7 @@ block|}
 else|else
 block|{
 comment|/* Horizontal blinds */
-comment|/* Apply the blinds algo to a single column -        * this act as a transfomation matrix for the         * rows. Make row 0 invalid so we can find it again!        */
+comment|/* Apply the blinds algo to a single column -        * this act as a transfomation matrix for the        * rows. Make row 0 invalid so we can find it again!        */
 name|int
 name|i
 decl_stmt|;
@@ -2979,7 +2902,7 @@ literal|1
 expr_stmt|;
 block|}
 comment|/* Hmmm. does this work portably? */
-comment|/* This "swaps the intergers around that are held in in the        * sr& dr arrays.         */
+comment|/* This "swaps the intergers around that are held in in the        * sr& dr arrays.        */
 name|blindsapply
 argument_list|(
 operator|(

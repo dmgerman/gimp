@@ -143,7 +143,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80103
+DECL|enum|__anon2ae3f6420103
 typedef|typedef
 enum|enum
 block|{
@@ -207,7 +207,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80203
+DECL|enum|__anon2ae3f6420203
 typedef|typedef
 enum|enum
 block|{
@@ -247,7 +247,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80303
+DECL|enum|__anon2ae3f6420303
 typedef|typedef
 enum|enum
 block|{
@@ -279,7 +279,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80403
+DECL|enum|__anon2ae3f6420403
 typedef|typedef
 enum|enum
 block|{
@@ -307,7 +307,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80503
+DECL|enum|__anon2ae3f6420503
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80603
+DECL|enum|__anon2ae3f6420603
 typedef|typedef
 enum|enum
 block|{
@@ -357,7 +357,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80703
+DECL|enum|__anon2ae3f6420703
 typedef|typedef
 enum|enum
 block|{
@@ -393,7 +393,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80803
+DECL|enum|__anon2ae3f6420803
 typedef|typedef
 enum|enum
 block|{
@@ -413,7 +413,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80903
+DECL|enum|__anon2ae3f6420903
 typedef|typedef
 enum|enum
 block|{
@@ -461,7 +461,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80a03
+DECL|enum|__anon2ae3f6420a03
 typedef|typedef
 enum|enum
 block|{
@@ -485,7 +485,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80b03
+DECL|enum|__anon2ae3f6420b03
 typedef|typedef
 enum|enum
 block|{
@@ -546,7 +546,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2756dda80c03
+DECL|enum|__anon2ae3f6420c03
 typedef|typedef
 enum|enum
 block|{
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756dda80d08
+DECL|struct|__anon2ae3f6420d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -771,7 +771,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756dda80e08
+DECL|struct|__anon2ae3f6420e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -783,21 +783,6 @@ name|PSPSaveVals
 typedef|;
 end_typedef
 
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2756dda80f08
-block|{
-DECL|member|run
-name|gint
-name|run
-decl_stmt|;
-DECL|typedef|PSPSaveInterface
-block|}
-name|PSPSaveInterface
-typedef|;
-end_typedef
-
 begin_decl_stmt
 DECL|variable|psvals
 specifier|static
@@ -806,19 +791,6 @@ name|psvals
 init|=
 block|{
 name|PSP_COMP_LZ77
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|psint
-specifier|static
-name|PSPSaveInterface
-name|psint
-init|=
-block|{
-name|FALSE
-comment|/* run */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -960,37 +932,6 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|save_ok_callback (GtkWidget * widget,gpointer data)
-name|save_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|psint
-operator|.
-name|run
-operator|=
-name|TRUE
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|gint
 DECL|function|save_dialog (void)
 name|save_dialog
@@ -1006,6 +947,9 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
+name|gint
+name|run
+decl_stmt|;
 name|dlg
 operator|=
 name|gimp_dialog_new
@@ -1017,59 +961,21 @@ argument_list|)
 argument_list|,
 literal|"psp"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/psp.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|save_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -1183,15 +1089,26 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-name|gtk_main
-argument_list|()
+name|run
+operator|=
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
 expr_stmt|;
-name|gdk_flush
-argument_list|()
+name|gtk_widget_destroy
+argument_list|(
+name|dlg
+argument_list|)
 expr_stmt|;
 return|return
-name|psint
-operator|.
 name|run
 return|;
 block|}
@@ -6933,7 +6850,7 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|GimpExportReturnType
+name|GimpExportReturn
 name|export
 init|=
 name|GIMP_EXPORT_CANCEL

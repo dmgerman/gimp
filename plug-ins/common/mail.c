@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * Copyright (C) 1997 Daniel Risacher   *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * Copyright (C) 1997 Daniel Risacher  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
-comment|/*  *   GUMP - Gimp Useless Mail Plugin (or Gump Useless Mail Plugin if you prefer)  *          version about .85 I would say... give or take a few decimal points  *  *  *   by Adrian Likins<adrian@gimp.org>  *      MIME encapsulation by Reagan Blundell<reagan@emails.net>  *  *  *  *   Based heavily on gz.c by Daniel Risacher  *  *     Lets you choose to send a image to the mail from the file save as dialog.  *      images are piped to uuencode and then to mail...  *  *  *   This works fine for .99.10. I havent actually tried it in combination with  *   the gz plugin, but it works with all other file types. I will eventually get  *   around to making sure it works with gz.  *  *  To use: 1) image->File->mail image  *          2) when the mail dialog popups up, fill it out. Only to: and filename are required  *             note: the filename needs to a type that the image can be saved as. otherwise  *                   you will just send an empty message.  *          3) click ok and it should be on its way  *  *  * NOTE: You probabaly need sendmail installed. If your sendmail is in an odd spot  *       you can change the #define below. If you use qmail or other MTA's, and this  *       works after changing the MAILER, let me know how well or what changes were  *       needed.  *  * NOTE: Uuencode is needed. If it is in the path, it should work fine as is. Other-  *       wise just change the UUENCODE.  *  *  * TODO: 1) the aforementioned abilty to specify the   *           uuencode filename                         *done*  *       2) someway to do this without tmp files  *              * wont happen anytime soon*  *       3) MIME? *done*  *       4) a pointlessly snazzier dialog  *       5) make sure it works with gz       *               * works for .xcfgz but not .xcf.gz *  *       6) add an option to choose if mail get   *          uuencode or not (or MIME'ed for that matter)  *       7) realtime preview  *       8) better entry for comments    *done*  *       9) list of frequently used addreses       *      10) openGL compliance  *      11) better handling of filesave errors  *       *  *  Version history  *       .5  - 6/30/97 - inital relese  *       .51 - 7/3/97  - fixed a few spelling errors and the like  *       .65 - 7/4/97  - a fairly significant revision. changed it from a file  *                       plugin to an image plugin.  *                     - Changed some strcats into strcpy to be a bit more robust.  *                     - added the abilty to specify the filename you want it sent as  *                     - no more annoying hassles with the file saves as dialog  *                     - plugin now registers itself as<image>/File/Mail image  *       .7  - 9/12/97 - (RB) added support for MIME encapsulation  *       .71 - 9/17/97 - (RB) included Base64 encoding functions from mpack  *                       instead of using external program.  *                     - General cleanup of the MIME handling code.  *       .80 - 6/23/98 - Added a text box so you can compose real messages.  *       .85 - 3/19/99 - Added a "From:" field. Made it check gimprc for a  *                       "gump-from" token and use it. Also made "run with last   *                        values" work.  * As always: The utility of this plugin is left as an exercise for the reader  *  */
+comment|/*  *   GUMP - Gimp Useless Mail Plugin (or Gump Useless Mail Plugin if you prefer)  *          version about .85 I would say... give or take a few decimal points  *  *  *   by Adrian Likins<adrian@gimp.org>  *      MIME encapsulation by Reagan Blundell<reagan@emails.net>  *  *  *  *   Based heavily on gz.c by Daniel Risacher  *  *     Lets you choose to send a image to the mail from the file save as dialog.  *      images are piped to uuencode and then to mail...  *  *  *   This works fine for .99.10. I havent actually tried it in combination with  *   the gz plugin, but it works with all other file types. I will eventually get  *   around to making sure it works with gz.  *  *  To use: 1) image->File->mail image  *          2) when the mail dialog popups up, fill it out. Only to: and filename are required  *             note: the filename needs to a type that the image can be saved as. otherwise  *                   you will just send an empty message.  *          3) click ok and it should be on its way  *  *  * NOTE: You probabaly need sendmail installed. If your sendmail is in an odd spot  *       you can change the #define below. If you use qmail or other MTA's, and this  *       works after changing the MAILER, let me know how well or what changes were  *       needed.  *  * NOTE: Uuencode is needed. If it is in the path, it should work fine as is. Other-  *       wise just change the UUENCODE.  *  *  * TODO: 1) the aforementioned abilty to specify the  *           uuencode filename                         *done*  *       2) someway to do this without tmp files  *              * wont happen anytime soon*  *       3) MIME? *done*  *       4) a pointlessly snazzier dialog  *       5) make sure it works with gz  *               * works for .xcfgz but not .xcf.gz *  *       6) add an option to choose if mail get  *          uuencode or not (or MIME'ed for that matter)  *       7) realtime preview  *       8) better entry for comments    *done*  *       9) list of frequently used addreses  *      10) openGL compliance  *      11) better handling of filesave errors  *  *  *  Version history  *       .5  - 6/30/97 - inital relese  *       .51 - 7/3/97  - fixed a few spelling errors and the like  *       .65 - 7/4/97  - a fairly significant revision. changed it from a file  *                       plugin to an image plugin.  *                     - Changed some strcats into strcpy to be a bit more robust.  *                     - added the abilty to specify the filename you want it sent as  *                     - no more annoying hassles with the file saves as dialog  *                     - plugin now registers itself as<image>/File/Mail image  *       .7  - 9/12/97 - (RB) added support for MIME encapsulation  *       .71 - 9/17/97 - (RB) included Base64 encoding functions from mpack  *                       instead of using external program.  *                     - General cleanup of the MIME handling code.  *       .80 - 6/23/98 - Added a text box so you can compose real messages.  *       .85 - 3/19/99 - Added a "From:" field. Made it check gimprc for a  *                       "gump-from" token and use it. Also made "run with last  *                        values" work.  * As always: The utility of this plugin is left as an exercise for the reader  *  */
 end_comment
 
 begin_define
@@ -251,21 +251,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|mail_entry_callback
 parameter_list|(
 name|GtkWidget
@@ -397,7 +382,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291136110108
+DECL|struct|__anon2a18163f0108
 block|{
 DECL|member|receipt
 name|gchar
@@ -477,16 +462,6 @@ modifier|*
 name|mesg_body
 init|=
 name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|run_flag
-specifier|static
-name|gint
-name|run_flag
-init|=
-literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -1572,6 +1547,9 @@ name|gchar
 modifier|*
 name|gump_from
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"mail"
@@ -1620,59 +1598,21 @@ argument_list|)
 argument_list|,
 literal|"mail"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/mail.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -2451,14 +2391,27 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-name|gtk_main
-argument_list|()
+name|run
+operator|=
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
 expr_stmt|;
-name|gdk_flush
-argument_list|()
+name|gtk_widget_destroy
+argument_list|(
+name|dlg
+argument_list|)
 expr_stmt|;
 return|return
-name|run_flag
+name|run
 return|;
 block|}
 end_function
@@ -2841,35 +2794,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ok_callback (GtkWidget * widget,gpointer data)
-name|ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|run_flag
-operator|=
-name|TRUE
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|mail_entry_callback (GtkWidget * widget,gpointer data)
 name|mail_entry_callback
 parameter_list|(
@@ -3180,11 +3104,11 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * The following code taken from codes.c in the mpack-1.5 distribution  * by Carnegie Mellon University.   *   *  * (C) Copyright 1993,1994 by Carnegie Mellon University  * All Rights Reserved.  *  * CARNEGIE MELLON UNIVERSITY DISCLAIMS ALL WARRANTIES WITH REGARD TO  * THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY  * AND FITNESS, IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY BE LIABLE  * FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN  * AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS  * SOFTWARE.  */
+comment|/*  * The following code taken from codes.c in the mpack-1.5 distribution  * by Carnegie Mellon University.  *  *  * (C) Copyright 1993,1994 by Carnegie Mellon University  * All Rights Reserved.  *  * CARNEGIE MELLON UNIVERSITY DISCLAIMS ALL WARRANTIES WITH REGARD TO  * THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY  * AND FITNESS, IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY BE LIABLE  * FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN  * AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING  * OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS  * SOFTWARE.  */
 end_comment
 
 begin_comment
-comment|/* Copyright (c) 1991 Bell Communications Research, Inc. (Bellcore)  Permission to use, copy, modify, and distribute this material  for any purpose and without fee is hereby granted, provided  that the above copyright notice and this permission notice  appear in all copies, and that the name of Bellcore not be  used in advertising or publicity pertaining to this  material without the specific, prior written permission  of an authorized representative of Bellcore.  BELLCORE  MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY  OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",  WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.  */
+comment|/* Copyright (c) 1991 Bell Communications Research, Inc. (Bellcore)  Permission to use, copy, modify, and distribute this material for any purpose and without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies, and that the name of Bellcore not be used in advertising or publicity pertaining to this material without the specific, prior written permission of an authorized representative of Bellcore.  BELLCORE MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.  */
 end_comment
 
 begin_decl_stmt

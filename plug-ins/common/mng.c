@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Multiple-image Network Graphics (MNG) plug-in for The GIMP -- an image  * manipulation program  *  * Copyright (C) 2002 S. Mukund<muks@mukund.org>  * Portions are copyright of the authors of the file-gif-save, file-png-save  * and file-jpeg-save plug-ins' code. The exact ownership of these code  * fragments has not been determined.  *  * This work was sponsored by Xinit Systems Limited, UK.  * http://www.xinitsystems.com/  *  * THIS SOURCE CODE DOES NOT INCLUDE ANY FUNCTIONALITY FOR READING  * OR WRITING CONTENT IN THE GIF IMAGE FORMAT.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  * --  *   * For now, this MNG plug-in can only save images. It cannot load images.  * Save your working copy as .xcf and use this for "exporting" your images  * to MNG. Supports animation the same way as animated GIFs. Supports alpha  * transparency. Uses the libmng library (http://www.libmng.com/).  * The MIME content-type for MNG images is video/x-mng for now. Make sure  * your web-server is configured appropriately if you want to serve MNG  * images.  *  * Since libmng cannot write PNG, JNG and delta PNG chunks at this time  * (when this text was written), this plug-in uses libpng and jpeglib to  * create the data for the chunks.  *  */
+comment|/*  * Multiple-image Network Graphics (MNG) plug-in for The GIMP -- an image  * manipulation program  *  * Copyright (C) 2002 S. Mukund<muks@mukund.org>  * Portions are copyright of the authors of the file-gif-save, file-png-save  * and file-jpeg-save plug-ins' code. The exact ownership of these code  * fragments has not been determined.  *  * This work was sponsored by Xinit Systems Limited, UK.  * http://www.xinitsystems.com/  *  * THIS SOURCE CODE DOES NOT INCLUDE ANY FUNCTIONALITY FOR READING  * OR WRITING CONTENT IN THE GIF IMAGE FORMAT.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  * --  *  * For now, this MNG plug-in can only save images. It cannot load images.  * Save your working copy as .xcf and use this for "exporting" your images  * to MNG. Supports animation the same way as animated GIFs. Supports alpha  * transparency. Uses the libmng library (http://www.libmng.com/).  * The MIME content-type for MNG images is video/x-mng for now. Make sure  * your web-server is configured appropriately if you want to serve MNG  * images.  *  * Since libmng cannot write PNG, JNG and delta PNG chunks at this time  * (when this text was written), this plug-in uses libpng and jpeglib to  * create the data for the chunks.  *  */
 end_comment
 
 begin_include
@@ -925,7 +925,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Try to find a colour in the palette which isn't actually   * used in the image, so that we can use it as the transparency   * index. Taken from png.c */
+comment|/* Try to find a colour in the palette which isn't actually  * used in the image, so that we can use it as the transparency  * index. Taken from png.c */
 end_comment
 
 begin_function
@@ -997,7 +997,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* If alpha is over a threshold, the colour index in the         * palette is taken. Otherwise, this pixel is transparent. */
+comment|/* If alpha is over a threshold, the colour index in the        * palette is taken. Otherwise, this pixel is transparent. */
 if|if
 condition|(
 name|pixels
@@ -2214,7 +2214,7 @@ return|return
 literal|0
 return|;
 block|}
-comment|/*	how do we get this to work? 	 	if (mng_data.bkgd) 	{ 		GimpRGB bgcolor; 		guchar red, green, blue; 		 		gimp_palette_get_background(&bgcolor); 		gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);  		if ((ret = mng_putchunk_back(handle, red, green, blue, MNG_BACKGROUNDCOLOR_MANDATORY, 0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_back() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 		 		if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0, gimp_rgb_intensity_uchar(&bgcolor), red, green, blue)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
+comment|/*	how do we get this to work?  	if (mng_data.bkgd) 	{ 		GimpRGB bgcolor; 		guchar red, green, blue;  		gimp_palette_get_background(&bgcolor); 		gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);  		if ((ret = mng_putchunk_back(handle, red, green, blue, MNG_BACKGROUNDCOLOR_MANDATORY, 0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_back() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		}  		if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0, gimp_rgb_intensity_uchar(&bgcolor), red, green, blue)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
 if|if
 condition|(
 name|mng_data
@@ -2289,7 +2289,7 @@ literal|0
 return|;
 block|}
 block|}
-comment|/*	how do we get this to work?  	if (mng_data.phys) 	{ 		gimp_image_get_resolution(original_image_id,&xres,&yres); 		 		if ((ret = mng_putchunk_phyg(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phyg() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 		 		if ((ret = mng_putchunk_phys(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phys() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
+comment|/*	how do we get this to work?  	if (mng_data.phys) 	{ 		gimp_image_get_resolution(original_image_id,&xres,&yres);  		if ((ret = mng_putchunk_phyg(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phyg() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		}  		if ((ret = mng_putchunk_phys(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR) 		{ 			g_warning("Unable to mng_putchunk_phys() in mng_save_image()"); 			mng_cleanup(&handle); 			fclose(userdata->fp); 			g_free(userdata); 			return 0; 		} 	} */
 if|if
 condition|(
 name|mng_data
@@ -4605,45 +4605,6 @@ begin_comment
 comment|/* The interactive dialog. */
 end_comment
 
-begin_decl_stmt
-DECL|variable|accept
-specifier|static
-name|gboolean
-name|accept
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-specifier|static
-name|void
-DECL|function|mng_save_dialog_ok_callback (GtkWidget * widget,gpointer data)
-name|mng_save_dialog_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|accept
-operator|=
-name|TRUE
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
 begin_function
 specifier|static
 name|gint
@@ -4709,6 +4670,9 @@ decl_stmt|;
 name|gint
 name|num_layers
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|dlg
 operator|=
 name|gimp_dialog_new
@@ -4722,57 +4686,19 @@ literal|"mng"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
-name|GTK_WIN_POS_MOUSE
+name|gimp_standard_help_func
 argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
+literal|"filters/mng.html"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|mng_save_dialog_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -6170,11 +6096,27 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-name|gtk_main
-argument_list|()
+name|run
+operator|=
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|dlg
+argument_list|)
 expr_stmt|;
 return|return
-name|accept
+name|run
 return|;
 block|}
 end_function
@@ -6341,7 +6283,9 @@ literal|"file_mng_save"
 argument_list|,
 literal|"Saves images in the MNG file format"
 argument_list|,
-literal|"This plug-in saves images in the Multiple-image Network Graphics (MNG) format which can be used as a replacement for animated GIFs, and more."
+literal|"This plug-in saves images in the Multiple-image "
+literal|"Network Graphics (MNG) format which can be used as "
+literal|"a replacement for animated GIFs, and more."
 argument_list|,
 literal|"S. Mukund<muks@mukund.org>"
 argument_list|,
@@ -6468,7 +6412,7 @@ decl_stmt|;
 name|gint32
 name|drawable_id
 decl_stmt|;
-name|GimpExportReturnType
+name|GimpExportReturn
 name|export
 init|=
 name|GIMP_EXPORT_IGNORE

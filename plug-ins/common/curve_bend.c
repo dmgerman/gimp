@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (2003/08/24)  v1.3.18 hof: #119937 show busy cursor when recalculating preview  *  (2002/09/xx)  v1.1.18 mitch and gsr: clean interface  *  (2000/02/16)  v1.1.17b hof: added spinbuttons for rotate entry  *  (2000/02/16)  v1.1.17 hof: undo bugfix (#6012)  *                             don't call gimp_undo_push_group_end   *                             after gimp_displays_flush  *  (1999/09/13)  v1.01  hof: PDB-calls updated for gimp 1.1.9  *  (1999/05/10)  v1.0   hof: first public release  *  (1999/04/23)  v0.0   hof: coding started,  *                            splines and dialog parts are similar to curves.c  */
+comment|/* Revision history  *  (2003/08/24)  v1.3.18 hof: #119937 show busy cursor when recalculating preview  *  (2002/09/xx)  v1.1.18 mitch and gsr: clean interface  *  (2000/02/16)  v1.1.17b hof: added spinbuttons for rotate entry  *  (2000/02/16)  v1.1.17 hof: undo bugfix (#6012)  *                             don't call gimp_undo_push_group_end  *                             after gimp_displays_flush  *  (1999/09/13)  v1.01  hof: PDB-calls updated for gimp 1.1.9  *  (1999/05/10)  v1.0   hof: first public release  *  (1999/04/23)  v0.0   hof: coding started,  *                            splines and dialog parts are similar to curves.c  */
 end_comment
 
 begin_include
@@ -640,7 +640,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-comment|/*  0<= curve_ptr<= src_drawable_width  				   *  both arrays are allocated dynamic, 				   *  depending on drawable width 				   */
+comment|/*  0<= curve_ptr<= src_drawable_width 				   *  both arrays are allocated dynamic, 				   *  depending on drawable width 				   */
 DECL|member|min2
 name|gint32
 name|min2
@@ -718,7 +718,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* points Coords:  *  *  1.0 +----+----+----+----+   *      |    .    |    |    |   *      +--.-+--.-+----+----+   *      .    |    .    |    |    *  0.5 +----+----+-.--+----+   *      |    |    |    .    .   *      +----+----+----+-.-.+   *      |    |    |    |    |   *  0.0 +----+----+----+----+   *      0.0      0.5       1.0  *  * curve Coords:  *  *      OUTLINE_UPPER                                       OUTLINE_LOWER  *  *  255 +----+----+----+----+                          255 +----+----+----+----+  *      |    .    |    |    |  ---   max	           |	.    |    |    |  ---	max  *      +--.-+--.-+----+----+			           +--.-+--.-+----+----+  *      .    |    .    |    |			 zero ___  .	|    .    |    |                   *      +----+----+-.--+----+   		           +----+----+-.--+----+  *      |    |    |    .    .  ---   zero      	           |	|    |    .    .    *      +----+----+----+-.-.+  ___   min	           +----+----+----+-.-.+  ___	min  *      |    |    |    |    |			           |	|    |    |    |  *    0 +----+----+----+----+			         0 +----+----+----+----+  *      0                   255 		           0		       255  */
+comment|/* points Coords:  *  *  1.0 +----+----+----+----+  *      |    .    |    |    |  *      +--.-+--.-+----+----+  *      .    |    .    |    |  *  0.5 +----+----+-.--+----+  *      |    |    |    .    .  *      +----+----+----+-.-.+  *      |    |    |    |    |  *  0.0 +----+----+----+----+  *      0.0      0.5       1.0  *  * curve Coords:  *  *      OUTLINE_UPPER                                       OUTLINE_LOWER  *  *  255 +----+----+----+----+                          255 +----+----+----+----+  *      |    .    |    |    |  ---   max	           |	.    |    |    |  ---	max  *      +--.-+--.-+----+----+			           +--.-+--.-+----+----+  *      .    |    .    |    |			 zero ___  .	|    .    |    |  *      +----+----+-.--+----+   		           +----+----+-.--+----+  *      |    |    |    .    .  ---   zero      	           |	|    |    .    .  *      +----+----+----+-.-.+  ___   min	           +----+----+----+-.-.+  ___	min  *      |    |    |    |    |			           |	|    |    |    |  *    0 +----+----+----+----+			         0 +----+----+----+----+  *      0                   255 		           0		       255  */
 end_comment
 
 begin_typedef
@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c5b210108
+DECL|struct|__anon27601efc0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c5b210208
+DECL|struct|__anon27601efc0208
 block|{
 DECL|member|y
 name|gint32
@@ -1016,25 +1016,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|bender_ok_callback
+name|bender_response
 parameter_list|(
 name|GtkWidget
 modifier|*
 parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|bender_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
+name|gint
 parameter_list|,
-name|gpointer
+name|BenderDialog
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2153,7 +2143,7 @@ operator|>=
 literal|0
 condition|)
 block|{
-comment|/* selection is TRUE, make a layer (floating selection) from  	     the selection  */
+comment|/* selection is TRUE, make a layer (floating selection) from 	     the selection  */
 name|gimp_edit_copy
 argument_list|(
 name|layer_id
@@ -2181,7 +2171,7 @@ comment|/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX END_PDB_STUFF XXXXXXXXXXXXXXXXXXXXXXX
 end_comment
 
 begin_comment
-comment|/*  *    M      M    AAAAA    IIIIII    N     N  *    M M  M M   A     A     II      NN    N  *    M  M   M   AAAAAAA     II      N  N  N   *    M      M   A     A     II      N    NN  *    M      M   A     A   IIIIII    N     N  */
+comment|/*  *    M      M    AAAAA    IIIIII    N     N  *    M M  M M   A     A     II      NN    N  *    M  M   M   AAAAAAA     II      N  N  N  *    M      M   A     A     II      N    NN  *    M      M   A     A   IIIIII    N     N  */
 end_comment
 
 begin_macro
@@ -2799,7 +2789,7 @@ name|bval
 argument_list|)
 condition|)
 block|{
-comment|/* get _FROM and _TO data,               * This data was stored by plug_in_gap_layers_run_animfilter              */
+comment|/* get _FROM and _TO data,              * This data was stored by plug_in_gap_layers_run_animfilter              */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_DATA_ITER_FROM
@@ -5576,47 +5566,39 @@ argument_list|)
 argument_list|,
 literal|"curve_bend"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/curve_bend.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|bender_cancel_callback
-argument_list|,
-name|cd
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|bender_ok_callback
+name|GTK_RESPONSE_OK
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|cd
+operator|->
+name|shell
+argument_list|,
+literal|"response"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|bender_response
+argument_list|)
 argument_list|,
 name|cd
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  active and waiting cursor  */
@@ -7402,7 +7384,7 @@ operator|&
 name|UP_PREVIEW_EXPOSE
 condition|)
 block|{
-comment|/* on expose just redraw cd->preview_layer_id2         * that holds the bent version of the preview (if there is one)         */
+comment|/* on expose just redraw cd->preview_layer_id2        * that holds the bent version of the preview (if there is one)        */
 if|if
 condition|(
 name|cd
@@ -10388,43 +10370,27 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|bender_ok_callback (GtkWidget * widget,gpointer data)
-name|bender_ok_callback
+DECL|function|bender_response (GtkWidget * widget,gint response_id,BenderDialog * cd)
+name|bender_response
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
+name|gint
+name|response_id
+parameter_list|,
 name|BenderDialog
 modifier|*
 name|cd
-init|=
-operator|(
-name|BenderDialog
-operator|*
-operator|)
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 if|if
 condition|(
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|cd
-operator|->
-name|shell
-argument_list|)
+name|response_id
+operator|==
+name|GTK_RESPONSE_OK
 condition|)
-name|gtk_widget_hide
-argument_list|(
-name|cd
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
 name|cd
 operator|->
 name|run
@@ -10441,26 +10407,6 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|bender_cancel_callback (GtkWidget * widget,gpointer data)
-name|bender_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|gtk_main_quit
 argument_list|()
 expr_stmt|;
@@ -16284,7 +16230,7 @@ name|l_dy
 operator|++
 control|)
 block|{
-comment|/* y differs more than 1 pixel from last y in the  		       * destination drawable. So we have to fill the empty  		       * space between using a mixed color 		       */
+comment|/* y differs more than 1 pixel from last y in the 		       * destination drawable. So we have to fill the empty 		       * space between using a mixed color 		       */
 if|if
 condition|(
 name|cd
@@ -16483,7 +16429,7 @@ block|}
 block|}
 else|else
 block|{
-comment|/* smooting is off, so we are using this color or  			     the last color */
+comment|/* smooting is off, so we are using this color or 			     the last color */
 if|if
 condition|(
 name|l_dy
@@ -16746,7 +16692,7 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-comment|/* set layer invisible and dummyname and      * add at top of the image while working     * (for the case of undo the gimp must know,     *  that the layer was part of the image)     */
+comment|/* set layer invisible and dummyname and     * add at top of the image while working     * (for the case of undo the gimp must know,     *  that the layer was part of the image)     */
 name|gimp_image_add_layer
 argument_list|(
 name|l_image_id
@@ -17115,7 +17061,7 @@ argument_list|)
 expr_stmt|;
 comment|/* TODO: here we should crop dst_drawable to cut off full transparent borderpixels */
 block|}
-comment|/* set offsets of the resulting new layer      *(center == center of original_drawable)     */
+comment|/* set offsets of the resulting new layer     *(center == center of original_drawable)     */
 name|l_offset_x
 operator|=
 name|l_center_x

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Tileit - This plugin will take an image an make repeated  * copies of it the stepping is 1/(2**n); 1<=n<=6  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *   * A fair proprotion of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *   * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero             *  */
+comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Tileit - This plugin will take an image an make repeated  * copies of it the stepping is 1/(2**n); 1<=n<=6  *  * Copyright (C) 1997 Andy Thomas  alt@picnic.demon.co.uk  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * A fair proprotion of this code was taken from the Whirl plug-in  * which was copyrighted by Federico Mena Quintero (as below).  *  * Whirl plug-in --- distort an image into a whirlpool  * Copyright (C) 1997 Federico Mena Quintero  *  */
 end_comment
 
 begin_comment
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a3b180108
+DECL|struct|__anon2b5c938d0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -161,10 +161,6 @@ DECL|member|pv_cache
 name|guchar
 modifier|*
 name|pv_cache
-decl_stmt|;
-DECL|member|run
-name|gboolean
-name|run
 decl_stmt|;
 DECL|typedef|TileItInterface
 block|}
@@ -193,10 +189,6 @@ literal|4
 block|,
 comment|/* bpp of drawable */
 name|NULL
-block|,
-name|FALSE
-block|,
-comment|/* run */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -264,21 +256,6 @@ name|gint
 name|tileit_dialog
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|tileit_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -542,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296a3b180203
+DECL|enum|__anon2b5c938d0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -561,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a3b180308
+DECL|struct|__anon2b5c938d0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -631,7 +608,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a3b180408
+DECL|struct|__anon2b5c938d0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1360,6 +1337,9 @@ name|orientation_group
 init|=
 name|NULL
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"tileit"
@@ -1371,7 +1351,6 @@ name|cache_preview
 argument_list|()
 expr_stmt|;
 comment|/* Get the preview image */
-comment|/* Start buildng the dialog up */
 name|dlg
 operator|=
 name|gimp_dialog_new
@@ -1383,59 +1362,21 @@ argument_list|)
 argument_list|,
 literal|"tileit"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/tileit.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|tileit_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -3080,48 +3021,28 @@ expr_stmt|;
 name|dialog_update_preview
 argument_list|()
 expr_stmt|;
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-return|return
-name|tint
-operator|.
-name|run
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|tileit_ok_callback (GtkWidget * widget,gpointer data)
-name|tileit_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|tint
-operator|.
 name|run
 operator|=
-name|TRUE
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
+name|dlg
 argument_list|)
 expr_stmt|;
+return|return
+name|run
+return|;
 block|}
 end_function
 
@@ -4321,7 +4242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Could avoid almost dup. functions by using a field in the data   * passed.  Must still pass the data since used in sig blocking func.  */
+comment|/* Could avoid almost dup. functions by using a field in the data  * passed.  Must still pass the data since used in sig blocking func.  */
 end_comment
 
 begin_function

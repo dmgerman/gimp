@@ -1,18 +1,18 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * Alias|Wavefront pix/matte image reading and writing code   * Copyright (C) 1997 Mike Taylor  * (email: mtaylor@aw.sgi.com, WWW: http://reality.sgi.com/mtaylor)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * Alias|Wavefront pix/matte image reading and writing code  * Copyright (C) 1997 Mike Taylor  * (email: mtaylor@aw.sgi.com, WWW: http://reality.sgi.com/mtaylor)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_comment
-comment|/* This plug-in was written using the online documentation from   * Alias|Wavefront Inc's PowerAnimator product.  *  * Bug reports or suggestions should be e-mailed to mtaylor@aw.sgi.com  */
+comment|/* This plug-in was written using the online documentation from  * Alias|Wavefront Inc's PowerAnimator product.  *  * Bug reports or suggestions should be e-mailed to mtaylor@aw.sgi.com  */
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.0, MT, 02-Jul-97: initial version of plug-in  * V 1.1, MT, 04-Dec-97: added .als file extension   */
+comment|/* Event history:  * V 1.0, MT, 02-Jul-97: initial version of plug-in  * V 1.1, MT, 04-Dec-97: added .als file extension  */
 end_comment
 
 begin_comment
-comment|/* Features  *  - loads and saves  *    - 24-bit (.pix)   *    - 8-bit (.matte, .alpha, or .mask) images  *  * NOTE: pix and matte files do not support alpha channels or indexed  *       colour, so neither does this plug-in  */
+comment|/* Features  *  - loads and saves  *    - 24-bit (.pix)  *    - 8-bit (.matte, .alpha, or .mask) images  *  * NOTE: pix and matte files do not support alpha channels or indexed  *       colour, so neither does this plug-in  */
 end_comment
 
 begin_decl_stmt
@@ -288,7 +288,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/*    * Description:    *     Register the services provided by this plug-in     */
+comment|/*    * Description:    *     Register the services provided by this plug-in    */
 specifier|static
 name|GimpParamDef
 name|load_args
@@ -471,7 +471,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   *  Description:  *      perform registered plug-in function   *  *  Arguments:  *      name         - name of the function to perform  *      nparams      - number of parameters passed to the function  *      param        - parameters passed to the function  *      nreturn_vals - number of parameters returned by the function  *      return_vals  - parameters returned by the function  */
+comment|/*  *  Description:  *      perform registered plug-in function  *  *  Arguments:  *      name         - name of the function to perform  *      nparams      - number of parameters passed to the function  *      param        - parameters passed to the function  *      nreturn_vals - number of parameters returned by the function  *      return_vals  - parameters returned by the function  */
 end_comment
 
 begin_function
@@ -524,7 +524,7 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|GimpExportReturnType
+name|GimpExportReturn
 name|export
 init|=
 name|GIMP_EXPORT_CANCEL
@@ -808,7 +808,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     byte order should not matter.  */
+comment|/*  * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     byte order should not matter.  */
 end_comment
 
 begin_function
@@ -858,7 +858,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * Description:  *     Writes a 16-bit integer to a file in such a way that the machine's  *     byte order should not matter.  */
+comment|/*  * Description:  *     Writes a 16-bit integer to a file in such a way that the machine's  *     byte order should not matter.  */
 end_comment
 
 begin_function
@@ -918,7 +918,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  Description:  *      load the given image into gimp  *   *  Arguments:  *      filename      - name on the file to read  *  *  Return Value:  *      Image id for the loaded image  *        */
+comment|/*  *  Description:  *      load the given image into gimp  *  *  Arguments:  *      filename      - name on the file to read  *  *  Return Value:  *      Image id for the loaded image  *  */
 end_comment
 
 begin_function
@@ -1649,7 +1649,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   *  Description:  *      save the given file out as an alias pix or matte file  *   *  Arguments:   *      filename    - name of file to save to  *      image_ID    - ID of image to save  *      drawable_ID - current drawable  */
+comment|/*  *  Description:  *      save the given file out as an alias pix or matte file  *  *  Arguments:  *      filename    - name of file to save to  *      image_ID    - ID of image to save  *      drawable_ID - current drawable  */
 end_comment
 
 begin_function

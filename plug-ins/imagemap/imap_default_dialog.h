@@ -17,7 +17,7 @@ name|_IMAP_DEFAULT_DIALOG_H
 end_define
 
 begin_typedef
-DECL|struct|__anon27ad2e800108
+DECL|struct|__anon2bd34f8e0108
 typedef|typedef
 struct|struct
 block|{
@@ -232,20 +232,6 @@ specifier|const
 name|gchar
 modifier|*
 name|title
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|default_dialog_set_ok_sensitivity
-parameter_list|(
-name|DefaultDialog_t
-modifier|*
-name|dialog
-parameter_list|,
-name|gint
-name|sensitive
 parameter_list|)
 function_decl|;
 end_function_decl

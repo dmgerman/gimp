@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* TODO:  *  - support user units   *  - show continous progress while loading/saving  */
+comment|/* TODO:  *  - support user units  *  - show continous progress while loading/saving  */
 end_comment
 
 begin_comment
@@ -230,29 +230,14 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon2b7633a00108
-block|{
-DECL|member|run
-name|gboolean
-name|run
-decl_stmt|;
-DECL|typedef|JpegSaveInterface
-block|}
-name|JpegSaveInterface
-typedef|;
-end_typedef
-
 begin_comment
-comment|/* PROPERTY enums   *  (0-21 are ident with PropType values as used in xcf.c  *   the rest was added for xjt  */
+comment|/* PROPERTY enums  *  (0-21 are ident with PropType values as used in xcf.c  *   the rest was added for xjt  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7633a00203
+DECL|enum|__anon2a4071510103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -452,7 +437,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7633a00303
+DECL|enum|__anon2a4071510203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -512,7 +497,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7633a00403
+DECL|enum|__anon2a4071510303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -542,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7633a00503
+DECL|enum|__anon2a4071510403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -564,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7633a00603
+DECL|enum|__anon2a4071510503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -584,7 +569,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7633a00703
+DECL|enum|__anon2a4071510603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -619,7 +604,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b7633a00803
+DECL|enum|__anon2a4071510703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -744,7 +729,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7633a00908
+DECL|struct|__anon2a4071510808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -780,7 +765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7633a00a08
+DECL|struct|__anon2a4071510908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -829,7 +814,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7633a00b08
+DECL|struct|__anon2a4071510a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -866,7 +851,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7633a00c08
+DECL|struct|__anon2a4071510b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -916,7 +901,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7633a00d08
+DECL|struct|__anon2a4071510c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -990,7 +975,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7633a00e08
+DECL|struct|__anon2a4071510d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1075,7 +1060,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7633a00f08
+DECL|struct|__anon2a4071510e08
 block|{
 DECL|member|position
 name|gint32
@@ -1099,7 +1084,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7633a01008
+DECL|struct|__anon2a4071510f08
 block|{
 DECL|member|version
 name|gchar
@@ -1793,21 +1778,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|save_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GimpPlugInInfo
@@ -1848,19 +1818,6 @@ block|,
 comment|/*  optimize  */
 literal|0
 comment|/*  clr_transparent */
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|jsint
-specifier|static
-name|JpegSaveInterface
-name|jsint
-init|=
-block|{
-name|FALSE
-comment|/*  run  */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -3602,6 +3559,9 @@ name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
+name|gboolean
+name|run
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 literal|"xjt"
@@ -3620,59 +3580,21 @@ argument_list|)
 argument_list|,
 literal|"xjt"
 argument_list|,
+name|NULL
+argument_list|,
+literal|0
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 literal|"filters/xjt.html"
 argument_list|,
-name|GTK_WIN_POS_MOUSE
+name|GTK_STOCK_CANCEL
 argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
-name|save_ok_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|GTK_STOCK_CANCEL
-argument_list|,
-name|gtk_widget_destroy
-argument_list|,
-name|NULL
-argument_list|,
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|dlg
-argument_list|,
-literal|"destroy"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_main_quit
-argument_list|)
+name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
 argument_list|)
@@ -4063,48 +3985,28 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-return|return
-name|jsint
-operator|.
-name|run
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|save_ok_callback (GtkWidget * widget,gpointer data)
-name|save_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|jsint
-operator|.
 name|run
 operator|=
-name|TRUE
+operator|(
+name|gtk_dialog_run
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_RESPONSE_OK
+operator|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
+name|dlg
 argument_list|)
 expr_stmt|;
+return|return
+name|run
+return|;
 block|}
 end_function
 
@@ -8272,7 +8174,7 @@ literal|0
 operator|)
 condition|)
 block|{
-comment|/* call optional extracompression programs gzip or bzip2        * (depends on filename's extension)       *       * used gzip options: (bzip2 uses the same options)       *     -c --stdout --to-stdout       *          Write  output  on  standard  output       *     -f --force       *           Force compression or decompression even if the file       */
+comment|/* call optional extracompression programs gzip or bzip2       * (depends on filename's extension)       *       * used gzip options: (bzip2 uses the same options)       *     -c --stdout --to-stdout       *          Write  output  on  standard  output       *     -f --force       *           Force compression or decompression even if the file       */
 if|if
 condition|(
 name|strcmp
@@ -9416,7 +9318,7 @@ comment|/* end p_new_image_prop */
 end_comment
 
 begin_comment
-comment|/* ============================================================================  * p_skip_blanks  *     * ============================================================================  */
+comment|/* ============================================================================  * p_skip_blanks  *  * ============================================================================  */
 end_comment
 
 begin_function
@@ -11012,7 +10914,7 @@ argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
-comment|/* advance l_ptr to next Blank    * (this is needed to skip unknown tokens     */
+comment|/* advance l_ptr to next Blank    * (this is needed to skip unknown tokens    */
 while|while
 condition|(
 literal|1
@@ -11416,7 +11318,7 @@ argument_list|(
 name|l_fp_pte
 argument_list|)
 expr_stmt|;
-comment|/* attach the parasite to gimp_obj_id     * (is an Image or drawable id depending on parasite_type)    */
+comment|/* attach the parasite to gimp_obj_id    * (is an Image or drawable id depending on parasite_type)    */
 if|if
 condition|(
 name|parasite_props
@@ -12422,7 +12324,7 @@ comment|/* end p_scann_channel_prop */
 end_comment
 
 begin_comment
-comment|/* ============================================================================  * p_scann_image_prop  *     * ============================================================================  */
+comment|/* ============================================================================  * p_scann_image_prop  *  * ============================================================================  */
 end_comment
 
 begin_function
@@ -14378,7 +14280,7 @@ operator|>
 literal|3
 condition|)
 block|{
-comment|/* call optional extracompression programs gzip or bzip2         * (depends on filename's extension)        *        * used gzip options: (bzip2 uses the same options)        *     -c --stdout --to-stdout        *          Write  output  on  standard  output        *     -d --decompress --uncompress        *          Decompress.        *     -f --force        *           Force compression or decompression even if the file        */
+comment|/* call optional extracompression programs gzip or bzip2        * (depends on filename's extension)        *        * used gzip options: (bzip2 uses the same options)        *     -c --stdout --to-stdout        *          Write  output  on  standard  output        *     -d --decompress --uncompress        *          Decompress.        *     -f --force        *           Force compression or decompression even if the file        */
 if|if
 condition|(
 name|strcmp
