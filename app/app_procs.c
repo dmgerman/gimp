@@ -2421,12 +2421,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|really_quit_cancel_callback (GtkButton * button,GtkWidget * dialog)
+DECL|function|really_quit_cancel_callback (GtkWidget * widget,GtkWidget * dialog)
 name|really_quit_cancel_callback
 parameter_list|(
-name|GtkButton
+name|GtkWidget
 modifier|*
-name|button
+name|widget
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -2475,10 +2475,7 @@ parameter_list|)
 block|{
 name|really_quit_cancel_callback
 argument_list|(
-name|GTK_BUTTON
-argument_list|(
 name|widget
-argument_list|)
 argument_list|,
 operator|(
 name|GtkWidget

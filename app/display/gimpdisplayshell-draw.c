@@ -1047,11 +1047,11 @@ parameter_list|)
 block|{
 name|app_exit
 argument_list|(
-name|FALSE
+literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -1119,7 +1119,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
