@@ -82,7 +82,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2ab14abd0103
+DECL|enum|__anon29d13a3a0103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -101,7 +101,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ab14abd0208
+DECL|struct|__anon29d13a3a0208
 typedef|typedef
 struct|struct
 block|{
@@ -1017,7 +1017,7 @@ name|type_frame
 operator|=
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1262,7 +1262,7 @@ name|granularity_frame
 operator|=
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1531,7 +1531,7 @@ name|offset_frame
 operator|=
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(

@@ -52,7 +52,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b15a8470108
+DECL|struct|__anon274f865c0108
 typedef|typedef
 struct|struct
 block|{
@@ -699,7 +699,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(

@@ -840,6 +840,21 @@ block|}
 end_function
 
 begin_function
+name|GtkWidget
+modifier|*
+DECL|function|get_dialog (void)
+name|get_dialog
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_dlg
+return|;
+block|}
+end_function
+
+begin_function
 name|MRU_t
 modifier|*
 DECL|function|get_mru (void)

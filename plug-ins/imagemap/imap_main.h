@@ -35,7 +35,7 @@ file|"imap_preferences.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2b7ad3f10103
+DECL|enum|__anon2afca5b00103
 DECL|enumerator|NCSA
 DECL|enumerator|CERN
 DECL|enumerator|CSIM
@@ -54,7 +54,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b7ad3f10208
+DECL|struct|__anon2afca5b00208
 typedef|typedef
 struct|struct
 block|{
@@ -165,6 +165,16 @@ name|param
 parameter_list|,
 name|OutputFunc_t
 name|output
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|get_dialog
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
