@@ -124,7 +124,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b825aca0103
+DECL|enum|__anon29ff253b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -372,8 +372,9 @@ name|GIMP_MAX_MEMSIZE
 argument_list|,
 literal|1
 operator|<<
-literal|26
+literal|27
 argument_list|,
+comment|/* 128MB */
 name|GIMP_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
