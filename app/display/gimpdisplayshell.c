@@ -1514,7 +1514,7 @@ argument_list|,
 name|col_area
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tips
+name|gtk_tooltips_set_tip
 argument_list|(
 name|tool_tips
 argument_list|,
@@ -1523,6 +1523,8 @@ argument_list|,
 literal|"Foreground& background colors.  The small black "
 literal|"and white squares reset colors.  The small arrows swap colors.  Double "
 literal|"click to change colors."
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1831,7 +1833,7 @@ operator|.
 name|callback_data
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tips
+name|gtk_tooltips_set_tip
 argument_list|(
 name|tool_tips
 argument_list|,
@@ -1843,6 +1845,8 @@ name|i
 index|]
 operator|.
 name|tool_desc
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

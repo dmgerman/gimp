@@ -244,7 +244,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c37cc0108
+DECL|struct|__anon29b0b99e0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c37cc0208
+DECL|struct|__anon29b0b99e0208
 block|{
 DECL|member|name
 name|guchar
@@ -1498,7 +1498,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c37cc0308
+DECL|struct|__anon29b0b99e0308
 block|{
 DECL|member|function
 name|gint
@@ -1571,7 +1571,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c37cc0408
+DECL|struct|__anon29b0b99e0408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2337,7 +2337,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c37cc0508
+DECL|struct|__anon29b0b99e0508
 block|{
 DECL|member|run
 name|gint
@@ -2385,7 +2385,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c37cc0608
+DECL|struct|__anon29b0b99e0608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -9149,13 +9149,15 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tips
+name|gtk_tooltips_set_tip
 argument_list|(
 name|tooltips
 argument_list|,
 name|button
 argument_list|,
 literal|"\"Fix seed\" button is an alias of me.\nThe same seed produces the same image, if (1) the widths of images are same (this is the reason why image on drawable is different from preview), and (2) all mutation rates equal to zero."
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_tooltips_enable

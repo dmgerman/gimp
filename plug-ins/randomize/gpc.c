@@ -341,7 +341,7 @@ index|[
 literal|0
 index|]
 condition|)
-name|gtk_tooltips_set_tips
+name|gtk_tooltips_set_tip
 argument_list|(
 name|tips
 argument_list|,
@@ -352,6 +352,8 @@ name|char
 operator|*
 operator|)
 name|tip
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
