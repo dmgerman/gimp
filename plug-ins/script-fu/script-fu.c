@@ -496,7 +496,7 @@ literal|"plug_in_script_fu_eval"
 argument_list|,
 literal|"Evaluate scheme code"
 argument_list|,
-literal|"Evaluate the code under the scheme interpeter "
+literal|"Evaluate the code under the scheme interpreter "
 literal|"(primarily for batch mode)"
 argument_list|,
 literal|"Manish Singh"
