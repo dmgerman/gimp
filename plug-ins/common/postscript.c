@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c192d0108
+DECL|struct|__anon2913eb8f0108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c192d0208
+DECL|struct|__anon2913eb8f0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c192d0308
+DECL|struct|__anon2913eb8f0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c192d0408
+DECL|struct|__anon2913eb8f0408
 block|{
 DECL|member|eol
 name|long
@@ -8801,6 +8801,15 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|basename
+init|=
+name|g_path_get_basename
+argument_list|(
+name|filename
+argument_list|)
+decl_stmt|;
 name|time_t
 name|cutime
 init|=
@@ -8839,7 +8848,7 @@ name|ofp
 argument_list|,
 literal|"%%%%Title: %s\n"
 argument_list|,
-name|filename
+name|basename
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -8888,6 +8897,11 @@ argument_list|(
 name|ofp
 argument_list|,
 literal|"%%%%Pages: 1\n"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
 argument_list|)
 expr_stmt|;
 block|}
