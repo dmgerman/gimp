@@ -205,6 +205,47 @@ name|DRAG_ICON_OFFSET
 value|-8
 end_define
 
+begin_comment
+comment|/* #define DEBUG_DND */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_DND
+end_ifdef
+
+begin_define
+DECL|macro|D (stmnt)
+define|#
+directive|define
+name|D
+parameter_list|(
+name|stmnt
+parameter_list|)
+value|stmnt
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|D (stmnt)
+define|#
+directive|define
+name|D
+parameter_list|(
+name|stmnt
+parameter_list|)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 DECL|typedef|GimpDndGetIconFunc
 typedef|typedef
@@ -1720,11 +1761,14 @@ decl_stmt|;
 name|GimpDndType
 name|data_type
 decl_stmt|;
+name|D
+argument_list|(
 name|g_print
 argument_list|(
 literal|"\ngimp_dnd_data_drag_handle(%d)\n"
 argument_list|,
 name|info
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1772,6 +1816,8 @@ decl_stmt|;
 name|gint
 name|length
 decl_stmt|;
+name|D
+argument_list|(
 name|g_print
 argument_list|(
 literal|"gimp_dnd_data_drag_handle(%s)\n"
@@ -1781,6 +1827,7 @@ operator|->
 name|target_entry
 operator|.
 name|target
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1931,11 +1978,14 @@ block|{
 name|GimpDndType
 name|data_type
 decl_stmt|;
+name|D
+argument_list|(
 name|g_print
 argument_list|(
 literal|"\ngimp_dnd_data_drop_handle(%d)\n"
 argument_list|,
 name|info
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2005,6 +2055,8 @@ name|set_data_data
 init|=
 name|NULL
 decl_stmt|;
+name|D
+argument_list|(
 name|g_print
 argument_list|(
 literal|"gimp_dnd_data_drop_handle(%s)\n"
@@ -2014,6 +2066,7 @@ operator|->
 name|target_entry
 operator|.
 name|target
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3023,11 +3076,14 @@ operator|*
 operator|)
 name|vals
 expr_stmt|;
+name|D
+argument_list|(
 name|g_print
 argument_list|(
 literal|"gimp_dnd_set_file_data: raw buffer>>%s<<\n"
 argument_list|,
 name|buffer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
@@ -3720,11 +3776,16 @@ operator|!
 name|dnd_crap
 condition|)
 continue|continue;
+name|D
+argument_list|(
 name|g_print
 argument_list|(
-literal|"gimp_dnd_open_files: trying to convert \"%s\" to an uri...\n"
+literal|"gimp_dnd_open_files: trying to convert "
+operator|\
+literal|"%s\" to an uri.\n"
 argument_list|,
 name|dnd_crap
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|filename
@@ -3956,11 +4017,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|D
+argument_list|(
 name|g_print
 argument_list|(
-literal|"gimp_dnd_open_files: ...trying to open resulting uri \"%s\"\n"
+literal|"gimp_dnd_open_files: ...trying to open "
+literal|"resulting uri \"%s\"\n"
 argument_list|,
 name|uri
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
