@@ -142,7 +142,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2c8494310103
+DECL|enum|__anon2b86b9d90103
 typedef|typedef
 enum|enum
 block|{
@@ -1952,6 +1952,14 @@ argument_list|)
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|char
+modifier|*
+name|alternate_gimprc
+decl_stmt|;
+end_decl_stmt
+
 begin_define
 DECL|macro|MAX_GIMPDIR_LEN
 define|#
@@ -2367,6 +2375,18 @@ expr_stmt|;
 name|filename
 operator|=
 name|rfilename
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|alternate_gimprc
+operator|!=
+name|NULL
+condition|)
+block|{
+name|filename
+operator|=
+name|alternate_gimprc
 expr_stmt|;
 block|}
 name|parse_info
