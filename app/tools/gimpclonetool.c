@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29793d7f0103
+DECL|enum|__anon27e4508d0103
 block|{
 DECL|enumerator|ImageClone
 name|ImageClone
@@ -1532,14 +1532,7 @@ name|drawable
 argument_list|)
 operator|)
 condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"Select source image before cloning"
-argument_list|)
-expr_stmt|;
 return|return;
-block|}
 comment|/*  Get a region which can be used to paint to  */
 if|if
 condition|(
