@@ -527,8 +527,6 @@ index|[]
 init|=
 block|{
 name|GIMP_TARGET_COLOR
-block|,
-name|GIMP_TARGET_PALETTE
 block|}
 decl_stmt|;
 end_decl_stmt
