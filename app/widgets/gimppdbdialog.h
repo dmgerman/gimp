@@ -107,6 +107,13 @@ DECL|member|parent_instance
 name|GimpDialog
 name|parent_instance
 decl_stmt|;
+comment|/*  The context we were created with. This is the context the plug-in    *  exists in and must be used when calling the plug-in.    */
+DECL|member|caller_context
+name|GimpContext
+modifier|*
+name|caller_context
+decl_stmt|;
+comment|/*  The dialog's private context, serves just as model for the    *  select widgets and must not be used when calling the plug-in.    */
 DECL|member|context
 name|GimpContext
 modifier|*

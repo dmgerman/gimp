@@ -465,13 +465,13 @@ name|procedural_db_run_proc
 argument_list|(
 name|dialog
 operator|->
-name|context
+name|caller_context
 operator|->
 name|gimp
 argument_list|,
 name|dialog
 operator|->
-name|context
+name|caller_context
 argument_list|,
 name|NULL
 argument_list|,

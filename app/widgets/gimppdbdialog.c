@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295afc130103
+DECL|enum|__anon28a5cf560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -617,7 +617,7 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|dialog
 operator|->
-name|context
+name|caller_context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -641,7 +641,7 @@ name|gimp_context_new
 argument_list|(
 name|dialog
 operator|->
-name|context
+name|caller_context
 operator|->
 name|gimp
 argument_list|,
@@ -793,12 +793,11 @@ block|{
 case|case
 name|PROP_CONTEXT
 case|:
-comment|/* don't ref, see constructor */
 name|dialog
 operator|->
-name|context
+name|caller_context
 operator|=
-name|g_value_get_object
+name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
@@ -912,6 +911,27 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|dialog
+operator|->
+name|caller_context
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|dialog
+operator|->
+name|caller_context
+argument_list|)
+expr_stmt|;
+name|dialog
+operator|->
+name|caller_context
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|dialog
@@ -1098,7 +1118,7 @@ name|procedural_db_lookup
 argument_list|(
 name|dialog
 operator|->
-name|context
+name|caller_context
 operator|->
 name|gimp
 argument_list|,
@@ -1331,7 +1351,7 @@ if|if
 condition|(
 name|dialog
 operator|->
-name|context
+name|caller_context
 operator|&&
 name|dialog
 operator|->
@@ -1345,7 +1365,7 @@ name|procedural_db_lookup
 argument_list|(
 name|dialog
 operator|->
-name|context
+name|caller_context
 operator|->
 name|gimp
 argument_list|,

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a301310103
+DECL|enum|__anon29af36b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -645,13 +645,13 @@ name|procedural_db_run_proc
 argument_list|(
 name|dialog
 operator|->
-name|context
+name|caller_context
 operator|->
 name|gimp
 argument_list|,
 name|dialog
 operator|->
-name|context
+name|caller_context
 argument_list|,
 name|NULL
 argument_list|,
