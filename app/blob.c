@@ -103,7 +103,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|enum|__anon2c6581c60103
+DECL|enum|__anon29fb5ffa0103
 typedef|typedef
 enum|enum
 block|{
@@ -3317,13 +3317,13 @@ name|r2
 operator|=
 name|sqrt
 argument_list|(
-name|xp
+name|xq
 operator|*
-name|xp
+name|xq
 operator|+
-name|yp
+name|yq
 operator|*
-name|yp
+name|yq
 argument_list|)
 expr_stmt|;
 name|max_radius
