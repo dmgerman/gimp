@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1d72770108
+DECL|struct|__anon27ee73fe0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -8966,16 +8966,6 @@ name|GtkObject
 modifier|*
 name|scale_scale_data
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|item1
-decl_stmt|,
-modifier|*
-name|item2
-decl_stmt|,
-modifier|*
-name|item3
-decl_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -9174,8 +9164,7 @@ argument_list|)
 argument_list|,
 name|PAINT_BRUSH_TYPE
 argument_list|,
-operator|&
-name|item1
+name|NULL
 argument_list|,
 name|_
 argument_list|(
@@ -9184,8 +9173,7 @@ argument_list|)
 argument_list|,
 name|PAINT_SELECTION_TYPE
 argument_list|,
-operator|&
-name|item2
+name|NULL
 argument_list|,
 name|_
 argument_list|(
@@ -9194,8 +9182,7 @@ argument_list|)
 argument_list|,
 name|PAINT_SELECTION_FILL_TYPE
 argument_list|,
-operator|&
-name|item3
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
