@@ -143,7 +143,7 @@ value|32767
 end_define
 
 begin_enum
-DECL|enum|__anon2b76cfff0103
+DECL|enum|__anon2b1a45ff0103
 enum|enum
 block|{
 DECL|enumerator|FONT_CHANGED
@@ -1738,24 +1738,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_entry_set_position
-argument_list|(
-name|GTK_ENTRY
-argument_list|(
-operator|&
-name|GTK_SPIN_BUTTON
-argument_list|(
-name|fs
-operator|->
-name|font_size
-argument_list|)
-operator|->
-name|entry
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
+comment|/* If we do this for the font_size then it's difficult/ annoying to 	   erase characters from that entry widget, which IMHO is a bug 	gtk_entry_set_position(GTK_ENTRY(&GTK_SPIN_BUTTON(fs->font_size)->entry), 0); 	*/
 name|gtk_entry_set_position
 argument_list|(
 name|GTK_ENTRY
