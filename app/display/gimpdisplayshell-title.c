@@ -75,35 +75,6 @@ directive|include
 file|"file/file-utils.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "dialogs/dialogs-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialogs/info-window.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -437,21 +408,6 @@ argument_list|,
 literal|"title"
 argument_list|,
 name|title
-argument_list|)
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: dont call info_window_update() here.
-endif|#
-directive|endif
-name|info_window_update
-argument_list|(
-name|shell
-operator|->
-name|gdisp
 argument_list|)
 expr_stmt|;
 return|return

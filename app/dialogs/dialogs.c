@@ -72,6 +72,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"info-dialog.h"
+end_include
+
+begin_comment
+comment|/* EEK */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1523,6 +1533,35 @@ block|}
 return|return
 name|NULL
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|dialogs_eek (void)
+name|dialogs_eek
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: get rid of info-dialog
+endif|#
+directive|endif
+name|g_error
+argument_list|(
+literal|"eek we suck"
+argument_list|)
+expr_stmt|;
+name|info_dialog_free
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

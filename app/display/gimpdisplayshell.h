@@ -23,16 +23,6 @@ file|<gtk/gtkwindow.h>
 end_include
 
 begin_comment
-comment|/*  FIXME: remove all dialogs/ stuff  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs-types.h"
-end_include
-
-begin_comment
 comment|/* Apply to a float the same rounding mode used in the renderer */
 end_comment
 
@@ -528,12 +518,6 @@ modifier|*
 name|close_dialog
 decl_stmt|;
 comment|/*  close dialog                       */
-DECL|member|info_dialog
-name|InfoDialog
-modifier|*
-name|info_dialog
-decl_stmt|;
-comment|/*  image information dialog           */
 DECL|member|scale_dialog
 name|GtkWidget
 modifier|*

@@ -135,35 +135,6 @@ directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME #include "dialogs/dialogs-types.h"
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialogs/info-window.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -286,7 +257,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a311c760103
+DECL|enum|__anon280396870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -302,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a311c760203
+DECL|enum|__anon280396870203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1186,12 +1157,6 @@ name|NULL
 expr_stmt|;
 name|shell
 operator|->
-name|info_dialog
-operator|=
-name|NULL
-expr_stmt|;
-name|shell
-operator|->
 name|scale_dialog
 operator|=
 name|NULL
@@ -1670,27 +1635,6 @@ operator|->
 name|title_idle_id
 operator|=
 literal|0
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|shell
-operator|->
-name|info_dialog
-condition|)
-block|{
-name|info_window_free
-argument_list|(
-name|shell
-operator|->
-name|info_dialog
-argument_list|)
-expr_stmt|;
-name|shell
-operator|->
-name|info_dialog
-operator|=
-name|NULL
 expr_stmt|;
 block|}
 if|if
