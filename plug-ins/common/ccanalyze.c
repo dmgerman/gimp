@@ -4,7 +4,7 @@ comment|/*  * This is a plug-in for the GIMP.  *  * This program is free softwar
 end_comment
 
 begin_comment
-comment|/*  * Analyze colorcube.  *   * Author: robert@experimental.net  */
+comment|/*  * Analyze colorcube.  *  * Author: robert@experimental.net  */
 end_comment
 
 begin_comment
@@ -95,13 +95,13 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
-comment|/*  * I found the following implementation of storing a sparse color matrix  * in Dr. Dobb's Journal #232 (July 1995).  *   * The matrix is build as three linked lists, each representing a color-  * cube axis. Each node in the matrix contains two pointers: one to its   * neighbour and one to the next color-axis.   *  * Each red node contains a pointer to the next red node, and a pointer to  * the green nodes. Green nodes, in turn, each contain a pointer to the next  * green node, and a pointer to the blue axis.  *  * If we want to find an RGB triplet, we first walk down the red axis, match  * the red values, from where we start walking down the green axis, etc.  * If we haven't found our color at the end of the blue axis, it's a new color  * and we store it in the matrix.  *  * For the textual-impaired (number in parentheses are color values):  *  *      start of table  *      |  *      v  *         RED(91)  ->  RED(212)  ->  ...  *      |            |               *      |            v   *      |            GREEN(81)  ->  GREEN(128)  ->  ...  *      |            |              |  *      |            |              v  *      |            |              BLUE(93)  *      |            v  *      |            BLUE(206)  ->  BLUE(93)  ->  ...  *      v  *      GREEN(1)  ->  ...  *      |  *      v  *      BLUE(206)  ->  BLUE(12)  ->  ...  *  * So, some colors stored are (in RGB triplets): (91, 1, 206), (91, 1, 12),  * (212, 128, 93), ...  *  */
+comment|/*  * I found the following implementation of storing a sparse color matrix  * in Dr. Dobb's Journal #232 (July 1995).  *  * The matrix is build as three linked lists, each representing a color-  * cube axis. Each node in the matrix contains two pointers: one to its  * neighbour and one to the next color-axis.  *  * Each red node contains a pointer to the next red node, and a pointer to  * the green nodes. Green nodes, in turn, each contain a pointer to the next  * green node, and a pointer to the blue axis.  *  * If we want to find an RGB triplet, we first walk down the red axis, match  * the red values, from where we start walking down the green axis, etc.  * If we haven't found our color at the end of the blue axis, it's a new color  * and we store it in the matrix.  *  * For the textual-impaired (number in parentheses are color values):  *  *      start of table  *      |  *      v  *         RED(91)  ->  RED(212)  ->  ...  *      |            |  *      |            v  *      |            GREEN(81)  ->  GREEN(128)  ->  ...  *      |            |              |  *      |            |              v  *      |            |              BLUE(93)  *      |            v  *      |            BLUE(206)  ->  BLUE(93)  ->  ...  *      v  *      GREEN(1)  ->  ...  *      |  *      v  *      BLUE(206)  ->  BLUE(12)  ->  ...  *  * So, some colors stored are (in RGB triplets): (91, 1, 206), (91, 1, 12),  * (212, 128, 93), ...  *  */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e8c08b0103
+DECL|enum|__anon28eb48b30103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -909,7 +909,7 @@ literal|"Colorcube Analysis..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*     * Get the input area. This is the bounding box of the selection in    * the image (or the entire image if there is no selection). Only    * operating on the input area is simply an optimization. It doesn't    * need to be done for correct operation. (It simply makes it go    * faster, since fewer pixels need to be operated on).    */
+comment|/*    * Get the input area. This is the bounding box of the selection in    * the image (or the entire image if there is no selection). Only    * operating on the input area is simply an optimization. It doesn't    * need to be done for correct operation. (It simply makes it go    * faster, since fewer pixels need to be operated on).    */
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -929,7 +929,7 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-comment|/*     * Get the size of the input image (this will/must be the same    * as the size of the output image).    */
+comment|/*    * Get the size of the input image (this will/must be the same    * as the size of the output image).    */
 name|width
 operator|=
 name|drawable
@@ -1050,7 +1050,7 @@ name|x
 operator|++
 control|)
 block|{
-comment|/*             * If the image is indexed, fetch RGB values            * from colormap.            */
+comment|/*            * If the image is indexed, fetch RGB values            * from colormap.            */
 if|if
 condition|(
 name|cmap
@@ -1441,7 +1441,7 @@ name|next_axis
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*     * At the end of the list, we store the entire triplet.    * For now, there is no reason whatsoever to do this, but perhaps    * it might prove useful someday :)    */
+comment|/*    * At the end of the list, we store the entire triplet.    * For now, there is no reason whatsoever to do this, but perhaps    * it might prove useful someday :)    */
 name|newblue
 operator|->
 name|r
@@ -1678,7 +1678,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * Update RGB count, and keep track of maximum values (which aren't used   * anywhere as of yet, but they might be useful sometime).  */
+comment|/*  * Update RGB count, and keep track of maximum values (which aren't used  * anywhere as of yet, but they might be useful sometime).  */
 end_comment
 
 begin_function
