@@ -14,7 +14,7 @@ file|"gimp.h"
 end_include
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_selection_bounds (gint32 image_ID,gboolean * non_empty,gint * x1,gint * y1,gint * x2,gint * y2)
 name|gimp_selection_bounds
 parameter_list|(
@@ -49,9 +49,6 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -68,9 +65,30 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
-name|success
+operator|*
+name|non_empty
 operator|=
 name|FALSE
+expr_stmt|;
+operator|*
+name|x1
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|y1
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|x2
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|y2
+operator|=
+literal|0
 expr_stmt|;
 if|if
 condition|(
@@ -86,10 +104,6 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
-name|success
-operator|=
-name|TRUE
-expr_stmt|;
 operator|*
 name|non_empty
 operator|=
@@ -158,9 +172,6 @@ argument_list|,
 name|nreturn_vals
 argument_list|)
 expr_stmt|;
-return|return
-name|success
-return|;
 block|}
 end_function
 
@@ -183,7 +194,7 @@ decl_stmt|;
 name|gboolean
 name|is_empty
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=

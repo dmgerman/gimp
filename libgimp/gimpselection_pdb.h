@@ -34,7 +34,7 @@ endif|#
 directive|endif
 comment|/* __cplusplus */
 comment|/* For information look into the C source or the html documentation */
-name|gboolean
+name|void
 name|gimp_selection_bounds
 parameter_list|(
 name|gint32
@@ -42,7 +42,7 @@ name|image_ID
 parameter_list|,
 name|gboolean
 modifier|*
-name|none_empty
+name|non_empty
 parameter_list|,
 name|gint
 modifier|*

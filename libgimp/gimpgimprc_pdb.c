@@ -180,10 +180,12 @@ expr_stmt|;
 operator|*
 name|xres
 operator|=
+literal|0.0
+expr_stmt|;
 operator|*
 name|yres
 operator|=
-literal|1.0
+literal|0.0
 expr_stmt|;
 if|if
 condition|(

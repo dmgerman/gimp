@@ -10,12 +10,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -1856,6 +1850,11 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
+operator|*
+name|num_bytes
+operator|=
+literal|0
+expr_stmt|;
 if|if
 condition|(
 name|return_vals
@@ -2004,7 +2003,7 @@ decl_stmt|;
 name|gboolean
 name|enabled
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2078,7 +2077,7 @@ decl_stmt|;
 name|gboolean
 name|enabled
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2152,7 +2151,7 @@ decl_stmt|;
 name|gboolean
 name|disabled
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2226,7 +2225,7 @@ decl_stmt|;
 name|gboolean
 name|frozen
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2300,7 +2299,7 @@ decl_stmt|;
 name|gboolean
 name|thawed
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -2621,6 +2620,11 @@ literal|0
 expr_stmt|;
 operator|*
 name|ret_height
+operator|=
+literal|0
+expr_stmt|;
+operator|*
+name|bpp
 operator|=
 literal|0
 expr_stmt|;
@@ -3357,7 +3361,7 @@ decl_stmt|;
 name|gboolean
 name|active
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -3494,7 +3498,7 @@ decl_stmt|;
 name|gboolean
 name|visible
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 name|return_vals
 operator|=
@@ -3762,14 +3766,6 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-operator|*
-name|xresolution
-operator|=
-operator|*
-name|yresolution
-operator|=
-literal|1.0
-expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -3785,6 +3781,16 @@ name|image_ID
 argument_list|,
 name|PARAM_END
 argument_list|)
+expr_stmt|;
+operator|*
+name|xresolution
+operator|=
+literal|0.0
+expr_stmt|;
+operator|*
+name|yresolution
+operator|=
+literal|0.0
 expr_stmt|;
 if|if
 condition|(

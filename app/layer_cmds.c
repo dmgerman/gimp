@@ -5837,7 +5837,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|gint32
+name|gboolean
 name|linked
 decl_stmt|;
 name|layer
@@ -5874,6 +5874,10 @@ operator|.
 name|value
 operator|.
 name|pdb_int
+condition|?
+name|TRUE
+else|:
+name|FALSE
 expr_stmt|;
 if|if
 condition|(

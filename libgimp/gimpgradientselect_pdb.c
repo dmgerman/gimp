@@ -203,6 +203,12 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
+name|gchar
+modifier|*
+name|name
+init|=
+name|NULL
+decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -227,10 +233,6 @@ operator|*
 name|width
 operator|=
 literal|0
-expr_stmt|;
-name|name
-operator|=
-name|NULL
 expr_stmt|;
 if|if
 condition|(

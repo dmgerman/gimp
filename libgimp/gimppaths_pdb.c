@@ -153,7 +153,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_path_get_points (gint32 image_ID,gchar * pathname,gint * num_path_point_details,gint * path_closed,gdouble ** points_pairs)
+DECL|function|gimp_path_get_points (gint32 image_ID,gchar * pathname,gint * path_closed,gint * num_path_point_details,gdouble ** points_pairs)
 name|gimp_path_get_points
 parameter_list|(
 name|gint32
@@ -165,11 +165,11 @@ name|pathname
 parameter_list|,
 name|gint
 modifier|*
-name|num_path_point_details
+name|path_closed
 parameter_list|,
 name|gint
 modifier|*
-name|path_closed
+name|num_path_point_details
 parameter_list|,
 name|gdouble
 modifier|*

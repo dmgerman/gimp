@@ -59,11 +59,11 @@ name|pathname
 parameter_list|,
 name|gint
 modifier|*
-name|num_path_point_details
+name|path_closed
 parameter_list|,
 name|gint
 modifier|*
-name|path_closed
+name|num_path_point_details
 parameter_list|,
 name|gdouble
 modifier|*
