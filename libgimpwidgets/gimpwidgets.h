@@ -85,6 +85,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcolorselection.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpdialog.h>
 end_include
 
