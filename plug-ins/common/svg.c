@@ -46,18 +46,23 @@ end_include
 begin_include
 include|#
 directive|include
-file|<librsvg/rsvg.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<rsvg.h>
 end_include
 
 begin_comment
-comment|/* Declare local functions.  */
+comment|/* TODO: remove me, initialize gimp i18n services */
 end_comment
+
+begin_define
+DECL|macro|_ (String)
+define|#
+directive|define
+name|_
+parameter_list|(
+name|String
+parameter_list|)
+value|(String)
+end_define
 
 begin_function_decl
 specifier|static
@@ -115,11 +120,37 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+DECL|variable|PLUG_IN_INFO
+name|GimpPlugInInfo
+name|PLUG_IN_INFO
+init|=
+block|{
+name|NULL
+block|,
+comment|/* init_proc  */
+name|NULL
+block|,
+comment|/* quit_proc  */
+name|query
+block|,
+comment|/* query_proc */
+name|run
+block|,
+comment|/* run_proc   */
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
 argument_list|()
 end_macro
+
+begin_comment
+comment|/*  * 'query()' - Respond to a plug-in query...  */
+end_comment
 
 begin_function
 specifier|static
@@ -135,6 +166,14 @@ name|load_args
 index|[]
 init|=
 block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
 block|{
 name|GIMP_PDB_STRING
 block|,
@@ -171,15 +210,16 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_svg_load"
 argument_list|,
-literal|"loads files in the SVG file format"
+literal|"Loads files in the SVG file format"
 argument_list|,
-literal|"loads files in the SVG file format"
+literal|"Loads files in the SVG file format"
 argument_list|,
-literal|"Dom Lachowicz"
+literal|"Dom Lachowicz<cinamod@hotmail.com>"
 argument_list|,
-literal|"Dom Lachowicz"
+literal|"Dom Lachowicz<cinamod@hotmail.com>"
 argument_list|,
-literal|"2002"
+literal|"(c) 2003 - "
+name|VERSION
 argument_list|,
 literal|"<Load>/SVG"
 argument_list|,
@@ -306,6 +346,10 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+comment|/* MUST call this before any RSVG funcs */
+name|g_type_init
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -318,9 +362,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N_UI
-argument_list|()
-expr_stmt|;
+comment|/* INIT_I18N_UI (); */
 name|image_ID
 operator|=
 name|load_image
@@ -520,6 +562,25 @@ argument_list|,
 name|GIMP_RGB
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image
+operator|==
+operator|-
+literal|1
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Can't allocate new image\n%s"
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+block|}
 name|gimp_image_set_filename
 argument_list|(
 name|image
@@ -548,7 +609,7 @@ argument_list|(
 name|pixbuf
 argument_list|)
 argument_list|,
-name|GIMP_RGB_IMAGE
+name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
