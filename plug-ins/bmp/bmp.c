@@ -577,7 +577,7 @@ decl_stmt|;
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -804,11 +804,11 @@ argument_list|,
 literal|"BMP"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -816,7 +816,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 name|values
@@ -909,7 +909,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

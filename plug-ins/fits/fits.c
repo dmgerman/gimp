@@ -79,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdffa910108
+DECL|struct|__anon27d8cbe40108
 block|{
 DECL|member|replace
 name|gint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdffa910208
+DECL|struct|__anon27d8cbe40208
 block|{
 DECL|member|run
 name|gint
@@ -715,7 +715,7 @@ decl_stmt|;
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|l_run_mode
 operator|=
@@ -997,11 +997,11 @@ argument_list|,
 literal|"FITS"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1009,7 +1009,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 name|values
@@ -1095,7 +1095,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

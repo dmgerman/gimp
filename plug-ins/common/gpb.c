@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3de0710108
+DECL|struct|__anon28ef1a7f0108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de0710208
+DECL|struct|__anon28ef1a7f0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -4676,7 +4676,7 @@ decl_stmt|;
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -4802,11 +4802,11 @@ argument_list|,
 literal|"GPB"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_ALPHA
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
-name|NEEDS_ALPHA
+name|GIMP_EXPORT_NEEDS_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -4814,7 +4814,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 name|values
@@ -5053,13 +5053,13 @@ argument_list|,
 literal|"GIH"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_ALPHA
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
-name|CAN_HANDLE_LAYERS
+name|GIMP_EXPORT_CAN_HANDLE_LAYERS
 operator||
-name|NEEDS_ALPHA
+name|GIMP_EXPORT_NEEDS_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -5067,7 +5067,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 name|values
@@ -5386,7 +5386,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af394890108
+DECL|struct|__anon277ff4980108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af394890208
+DECL|struct|__anon277ff4980208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af394890308
+DECL|struct|__anon277ff4980308
 block|{
 DECL|member|ID
 name|gint32
@@ -842,7 +842,7 @@ decl_stmt|;
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -1029,13 +1029,13 @@ argument_list|,
 literal|"TIFF"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
-name|CAN_HANDLE_ALPHA
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1043,7 +1043,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 name|values
@@ -1384,7 +1384,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

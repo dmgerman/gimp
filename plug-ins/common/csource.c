@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e8edc0108
+DECL|struct|__anon2b76c8600108
 block|{
 DECL|member|file_name
 name|gchar
@@ -416,7 +416,7 @@ decl_stmt|;
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -642,9 +642,9 @@ argument_list|,
 literal|"C Source"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_ALPHA
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -652,7 +652,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 name|values
@@ -813,7 +813,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

@@ -313,7 +313,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c28f4bf0108
+DECL|struct|__anon298f2f590108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -786,7 +786,7 @@ decl_stmt|;
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 ifdef|#
 directive|ifdef
@@ -1008,13 +1008,13 @@ argument_list|,
 literal|"TGA"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
-name|CAN_HANDLE_ALPHA
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1022,7 +1022,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 name|values
@@ -1190,7 +1190,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

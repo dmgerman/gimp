@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b929b350108
+DECL|struct|__anon27a85a580108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -929,7 +929,7 @@ specifier|static
 name|GimpExportReturnType
 name|dialog_return
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 end_decl_stmt
 
@@ -954,7 +954,7 @@ argument_list|)
 expr_stmt|;
 name|dialog_return
 operator|=
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 expr_stmt|;
 block|}
 end_function
@@ -980,7 +980,7 @@ argument_list|)
 expr_stmt|;
 name|dialog_return
 operator|=
-name|EXPORT_IGNORE
+name|GIMP_EXPORT_IGNORE
 expr_stmt|;
 block|}
 end_function
@@ -1001,7 +1001,7 @@ parameter_list|)
 block|{
 name|dialog_return
 operator|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 expr_stmt|;
 name|dialog
 operator|=
@@ -1110,7 +1110,7 @@ name|action
 decl_stmt|;
 name|dialog_return
 operator|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1779,7 +1779,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_export_image:  * @image_ID: Pointer to the image_ID.  * @drawable_ID: Pointer to the drawable_ID.  * @format_name: The (short) name of the image_format (e.g. JPEG or GIF).  * @capabilities: What can the image_format do?  *  * Takes an image and a drawable to be saved together with a  * description of the capabilities of the image_format. If the  * type of image doesn't match the capabilities of the format  * a dialog is opened that informs the user that the image has  * to be exported and offers to do the necessary conversions.  *  * If the user chooses to export the image, a copy is created.  * This copy is then converted, the image_ID and drawable_ID  * are changed to point to the new image and the procedure returns  * EXPORT_EXPORT. The save_plugin has to take care of deleting the  * created image using gimp_image_delete() when it has saved it.  *  * If the user chooses to Ignore the export problem, the image_ID  * and drawable_ID is not altered, EXPORT_IGNORE is returned and   * the save_plugin should try to save the original image. If the   * user chooses Cancel, EXPORT_CANCEL is returned and the   * save_plugin should quit itself with status #STATUS_CANCEL.  *  * Returns: An enum of #GimpExportReturnType describing the user_action.  */
+comment|/**  * gimp_export_image:  * @image_ID: Pointer to the image_ID.  * @drawable_ID: Pointer to the drawable_ID.  * @format_name: The (short) name of the image_format (e.g. JPEG or GIF).  * @capabilities: What can the image_format do?  *  * Takes an image and a drawable to be saved together with a  * description of the capabilities of the image_format. If the  * type of image doesn't match the capabilities of the format  * a dialog is opened that informs the user that the image has  * to be exported and offers to do the necessary conversions.  *  * If the user chooses to export the image, a copy is created.  * This copy is then converted, the image_ID and drawable_ID  * are changed to point to the new image and the procedure returns  * GIMP_EXPORT_EXPORT. The save_plugin has to take care of deleting the  * created image using gimp_image_delete() when it has saved it.  *  * If the user chooses to Ignore the export problem, the image_ID  * and drawable_ID is not altered, GIMP_EXPORT_IGNORE is returned and   * the save_plugin should try to save the original image. If the   * user chooses Cancel, GIMP_EXPORT_CANCEL is returned and the   * save_plugin should quit itself with status #STATUS_CANCEL.  *  * Returns: An enum of #GimpExportReturnType describing the user_action.  */
 end_comment
 
 begin_function
@@ -1862,21 +1862,21 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|NEEDS_ALPHA
+name|GIMP_EXPORT_NEEDS_ALPHA
 condition|)
 name|capabilities
 operator||=
-name|CAN_HANDLE_ALPHA
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 expr_stmt|;
 if|if
 condition|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_LAYERS_AS_ANIMATION
+name|GIMP_EXPORT_CAN_HANDLE_LAYERS_AS_ANIMATION
 condition|)
 name|capabilities
 operator||=
-name|CAN_HANDLE_LAYERS
+name|GIMP_EXPORT_CAN_HANDLE_LAYERS
 expr_stmt|;
 comment|/* check alpha */
 name|layers
@@ -1921,7 +1921,7 @@ operator|!
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_ALPHA
+name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator|)
 condition|)
 block|{
@@ -1969,7 +1969,7 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|NEEDS_ALPHA
+name|GIMP_EXPORT_NEEDS_ALPHA
 condition|)
 block|{
 name|actions
@@ -2006,7 +2006,7 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_LAYERS_AS_ANIMATION
+name|GIMP_EXPORT_CAN_HANDLE_LAYERS_AS_ANIMATION
 condition|)
 block|{
 if|if
@@ -2015,7 +2015,7 @@ name|background_has_alpha
 operator|||
 name|capabilities
 operator|&
-name|NEEDS_ALPHA
+name|GIMP_EXPORT_NEEDS_ALPHA
 condition|)
 name|actions
 operator|=
@@ -2046,7 +2046,7 @@ operator|!
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_LAYERS
+name|GIMP_EXPORT_CAN_HANDLE_LAYERS
 operator|)
 condition|)
 block|{
@@ -2056,7 +2056,7 @@ name|background_has_alpha
 operator|||
 name|capabilities
 operator|&
-name|NEEDS_ALPHA
+name|GIMP_EXPORT_NEEDS_ALPHA
 condition|)
 name|actions
 operator|=
@@ -2104,7 +2104,7 @@ operator|!
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator|)
 condition|)
 block|{
@@ -2113,13 +2113,13 @@ condition|(
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator|)
 operator|&&
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator|)
 condition|)
 name|actions
@@ -2137,7 +2137,7 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 condition|)
 name|actions
 operator|=
@@ -2154,7 +2154,7 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 condition|)
 name|actions
 operator|=
@@ -2177,7 +2177,7 @@ operator|!
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator|)
 condition|)
 block|{
@@ -2186,13 +2186,13 @@ condition|(
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator|)
 operator|&&
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator|)
 condition|)
 name|actions
@@ -2210,7 +2210,7 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 condition|)
 name|actions
 operator|=
@@ -2227,7 +2227,7 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 condition|)
 name|actions
 operator|=
@@ -2250,7 +2250,7 @@ operator|!
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator|)
 condition|)
 block|{
@@ -2259,13 +2259,13 @@ condition|(
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator|)
 operator|&&
 operator|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator|)
 condition|)
 name|actions
@@ -2283,7 +2283,7 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 condition|)
 name|actions
 operator|=
@@ -2300,7 +2300,7 @@ if|if
 condition|(
 name|capabilities
 operator|&
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 condition|)
 name|actions
 operator|=
@@ -2340,13 +2340,13 @@ block|}
 else|else
 name|dialog_return
 operator|=
-name|EXPORT_IGNORE
+name|GIMP_EXPORT_IGNORE
 expr_stmt|;
 if|if
 condition|(
 name|dialog_return
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 block|{
 operator|*

@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274cbe3b0108
+DECL|struct|__anon2918bc170108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274cbe3b0208
+DECL|struct|__anon2918bc170208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274cbe3b0308
+DECL|struct|__anon2918bc170308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274cbe3b0408
+DECL|struct|__anon2918bc170408
 block|{
 DECL|member|run
 name|gint
@@ -854,7 +854,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274cbe3b0508
+DECL|struct|__anon2918bc170508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1725,7 +1725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274cbe3b0608
+DECL|struct|__anon2918bc170608
 block|{
 DECL|member|eol
 name|long
@@ -2617,7 +2617,7 @@ decl_stmt|;
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|gint
 name|k
@@ -2908,11 +2908,11 @@ argument_list|,
 literal|"PS"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator||
-name|CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator|)
 argument_list|)
 expr_stmt|;
@@ -2920,7 +2920,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 condition|)
 block|{
 name|values
@@ -3311,7 +3311,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 name|gimp_image_delete
 argument_list|(

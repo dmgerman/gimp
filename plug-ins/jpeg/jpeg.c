@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b07c0108
+DECL|struct|__anon27a6642b0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b07c0208
+DECL|struct|__anon27a6642b0208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b53b07c0308
+DECL|struct|__anon27a6642b0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1152,7 +1152,7 @@ decl_stmt|;
 name|GimpExportReturnType
 name|export
 init|=
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -1342,9 +1342,9 @@ argument_list|,
 literal|"JPEG"
 argument_list|,
 operator|(
-name|CAN_HANDLE_RGB
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
-name|CAN_HANDLE_GRAY
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1354,7 +1354,7 @@ name|export
 condition|)
 block|{
 case|case
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 case|:
 name|display_ID
 operator|=
@@ -1378,11 +1378,11 @@ argument_list|()
 expr_stmt|;
 break|break;
 case|case
-name|EXPORT_IGNORE
+name|GIMP_EXPORT_IGNORE
 case|:
 break|break;
 case|case
-name|EXPORT_CANCEL
+name|GIMP_EXPORT_CANCEL
 case|:
 name|values
 index|[
@@ -2227,7 +2227,7 @@ if|if
 condition|(
 name|export
 operator|==
-name|EXPORT_EXPORT
+name|GIMP_EXPORT_EXPORT
 condition|)
 block|{
 comment|/* If the image was exported, delete the new display. */
