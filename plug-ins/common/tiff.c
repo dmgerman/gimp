@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f5bc40108
+DECL|struct|__anon275f0e890108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0f5bc40208
+DECL|struct|__anon275f0e890208
 block|{
 DECL|member|run
 name|gint
@@ -430,7 +430,7 @@ literal|"FIXME: write help for tiff_load"
 argument_list|,
 literal|"Spencer Kimball, Peter Mattis& Nick Lamb"
 argument_list|,
-literal|"Nick Lamb<njl195@.ecs.soton.ac.uk>"
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"1995-1996,1998"
 argument_list|,
@@ -985,12 +985,10 @@ literal|0
 decl_stmt|;
 name|unsigned
 name|short
+name|extra
+decl_stmt|,
 modifier|*
 name|extra_types
-decl_stmt|,
-name|extra
-init|=
-literal|0
 decl_stmt|;
 name|int
 name|col
@@ -1059,7 +1057,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|struct|__anon2b0f5bc40308
+DECL|struct|__anon275f0e890308
 typedef|typedef
 struct|struct
 block|{
@@ -1111,9 +1109,9 @@ operator|!
 name|tif
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Can't open \"%s\"\n"
+literal|"TIFF Can't open \n%s"
 argument_list|,
 name|filename
 argument_list|)
@@ -1177,9 +1175,9 @@ operator|>
 literal|8
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Can't handle samples wider than 8-bit\n"
+literal|"TIFF Can't handle samples wider than 8-bit"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1237,9 +1235,9 @@ name|cols
 argument_list|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Can't get image width\n"
+literal|"TIFF Can't get image width"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1260,9 +1258,9 @@ name|rows
 argument_list|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Can't get image length\n"
+literal|"TIFF Can't get image length"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1283,9 +1281,9 @@ name|photomet
 argument_list|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Can't get photometric\n"
+literal|"TIFF Can't get photometric"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1321,11 +1319,16 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-comment|/* some programs seem to think alpha etc. aren't "extra" samples (?) */
 if|if
 condition|(
+name|photomet
+operator|==
+name|PHOTOMETRIC_RGB
+operator|&&
 name|spp
 operator|>
+name|extra
+operator|+
 literal|3
 condition|)
 block|{
@@ -1334,6 +1337,35 @@ operator|=
 name|spp
 operator|-
 literal|3
+expr_stmt|;
+name|alpha
+operator|=
+literal|1
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|photomet
+operator|!=
+name|PHOTOMETRIC_RGB
+operator|&&
+name|spp
+operator|>
+name|extra
+operator|+
+literal|1
+condition|)
+block|{
+name|extra
+operator|=
+name|spp
+operator|-
+literal|1
+expr_stmt|;
+name|alpha
+operator|=
+literal|1
 expr_stmt|;
 block|}
 name|maxval
@@ -1411,9 +1443,9 @@ break|break;
 case|case
 name|PHOTOMETRIC_MASK
 case|:
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Can't handle PHOTOMETRIC_MASK\n"
+literal|"TIFF Can't handle PHOTOMETRIC_MASK"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1421,9 +1453,9 @@ argument_list|()
 expr_stmt|;
 break|break;
 default|default:
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Unknown photometric: %d\n"
+literal|"TIFF Unknown photometric\n Number %d"
 argument_list|,
 name|photomet
 argument_list|)
@@ -1451,9 +1483,9 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Can't allocate new image\n"
+literal|"TIFF Can't create a new image\n"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1495,9 +1527,9 @@ name|bluemap
 argument_list|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Can't get colormaps\n"
+literal|"TIFF Can't get colormaps"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1871,9 +1903,9 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
-literal|"TIFF Bad data read on line %d\n"
+literal|"TIFF Bad data read on line %d"
 argument_list|,
 name|row
 argument_list|)
@@ -1902,7 +1934,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"TIFF Bad data read on line %d\n"
 argument_list|,
@@ -2755,7 +2787,7 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"can't open \"%s\"\n"
+literal|"Can't write image to\n%s"
 argument_list|,
 name|filename
 argument_list|)
@@ -3631,9 +3663,9 @@ operator|!
 name|success
 condition|)
 block|{
-name|g_print
+name|g_message
 argument_list|(
-literal|"failed a scanline write on row %d\n"
+literal|"TIFF Failed a scanline write on row %d"
 argument_list|,
 name|row
 argument_list|)

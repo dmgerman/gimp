@@ -4939,6 +4939,11 @@ name|label
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
 name|msg_box
 operator|->
 name|mbox

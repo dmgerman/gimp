@@ -395,7 +395,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3f73530108
+DECL|struct|__anon2c4e75890108
 block|{
 DECL|member|receipt
 name|char
@@ -1172,7 +1172,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"mail: fork failed: %s\n"
 argument_list|,
@@ -1214,7 +1214,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"mail: dup2 failed: %s\n"
 argument_list|,
@@ -1239,7 +1239,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* What are we doing here? exec must have failed */
-name|g_warning
+name|g_message
 argument_list|(
 literal|"mail: exec failed: uuencode: %s\n"
 argument_list|,
@@ -1289,9 +1289,9 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
-literal|"mail: mail didnt work or something on  file %s\n"
+literal|"mail: mail didnt work or something on file %s\n"
 argument_list|,
 name|tmpname
 argument_list|)
@@ -2752,7 +2752,7 @@ literal|'/'
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_message
 argument_list|(
 literal|"mail: some sort of error with the file extension or lack thereof \n"
 argument_list|)

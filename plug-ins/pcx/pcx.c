@@ -4,7 +4,7 @@ comment|/* pcx.c GIMP plug-in for loading& saving PCX files */
 end_comment
 
 begin_comment
-comment|/* This code is based in parts on code by Francisco Bustamante, but the    largest portion of the code has been rewritten and is now maintained    occasionally by Nick Lamb njl195@ecs.soton.ac.uk */
+comment|/* This code is based in parts on code by Francisco Bustamante, but the    largest portion of the code has been rewritten and is now maintained    occasionally by Nick Lamb njl195@zepler.org.uk */
 end_comment
 
 begin_comment
@@ -21,6 +21,14 @@ end_comment
 
 begin_comment
 comment|/* 1998-02-05 - merged patch with "official" tree, some tidying up (njl) */
+end_comment
+
+begin_comment
+comment|/* 1998-05-17 - changed email address, more tidying up (njl) */
+end_comment
+
+begin_comment
+comment|/* 1998-05-31 - g_message (njl) */
 end_comment
 
 begin_comment
@@ -43,12 +51,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
 end_include
 
 begin_include
@@ -385,7 +387,7 @@ literal|"FIXME: write help for pcx_load"
 argument_list|,
 literal|"Francisco Bustamante& Nick Lamb"
 argument_list|,
-literal|"Nick Lamb<njl195@ecs.soton.ac.uk>"
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"January 1997"
 argument_list|,
@@ -414,7 +416,7 @@ literal|"FIXME: write help for pcx_save"
 argument_list|,
 literal|"Francisco Bustamante& Nick Lamb"
 argument_list|,
-literal|"Nick Lamb<njl195@ecs.soton.ac.uk>"
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"January 1997"
 argument_list|,
@@ -487,7 +489,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|buffer
 parameter_list|,
@@ -512,7 +514,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|buffer
 parameter_list|,
@@ -537,7 +539,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|buffer
 parameter_list|,
@@ -562,7 +564,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|buffer
 parameter_list|,
@@ -984,7 +986,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon29f3d0b40108
+DECL|struct|__anon29a3415d0108
 specifier|static
 struct|struct
 block|{
@@ -1157,11 +1159,9 @@ operator|!
 name|fd
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"PCX: Can't open \"%s\"\n"
+literal|"PCX Can't open\n%s"
 argument_list|,
 name|filename
 argument_list|)
@@ -1188,11 +1188,9 @@ operator|==
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"PCX: Can't read header from \"%s\"\n"
+literal|"PCX Can't read header from\n%s"
 argument_list|,
 name|filename
 argument_list|)
@@ -1211,11 +1209,9 @@ operator|!=
 literal|10
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"PCX: File \"%s\" is not a PCX file\n"
+literal|"%s\nis not a PCX file"
 argument_list|,
 name|filename
 argument_list|)
@@ -1625,11 +1621,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"PCX: Unusual PCX flavour, giving up\n"
+literal|"Unusual PCX flavour, giving up"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1695,7 +1689,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_8 (FILE * fp,int width,int height,guchar * buffer,int bytes)
+DECL|function|load_8 (FILE * fp,int width,int height,char * buffer,int bytes)
 specifier|static
 name|void
 name|load_8
@@ -1710,7 +1704,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|buffer
 parameter_list|,
@@ -1795,7 +1789,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_24 (FILE * fp,int width,int height,guchar * buffer,int bytes)
+DECL|function|load_24 (FILE * fp,int width,int height,char * buffer,int bytes)
 specifier|static
 name|void
 name|load_24
@@ -1810,7 +1804,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|buffer
 parameter_list|,
@@ -1938,7 +1932,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_1 (FILE * fp,int width,int height,guchar * buffer,int bytes)
+DECL|function|load_1 (FILE * fp,int width,int height,char * buffer,int bytes)
 specifier|static
 name|void
 name|load_1
@@ -1953,7 +1947,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|buffer
 parameter_list|,
@@ -2080,7 +2074,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_4 (FILE * fp,int width,int height,guchar * buffer,int bytes)
+DECL|function|load_4 (FILE * fp,int width,int height,char * buffer,int bytes)
 specifier|static
 name|void
 name|load_4
@@ -2095,7 +2089,7 @@ parameter_list|,
 name|int
 name|height
 parameter_list|,
-name|guchar
+name|char
 modifier|*
 name|buffer
 parameter_list|,
@@ -2370,7 +2364,6 @@ end_function
 
 begin_function
 DECL|function|save_image (char * filename,gint32 image,gint32 layer)
-specifier|static
 name|gint
 name|save_image
 parameter_list|(
@@ -2650,11 +2643,9 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"PCX: Can't save this image type\n"
+literal|"PCX Can't save this image type\nFlatten your image"
 argument_list|)
 expr_stmt|;
 return|return
@@ -2679,11 +2670,9 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"PCX: Can't open \"%s\"\n"
+literal|"PCX Can't open \n%s"
 argument_list|,
 name|filename
 argument_list|)
@@ -2963,11 +2952,9 @@ expr_stmt|;
 block|}
 break|break;
 default|default:
-name|fprintf
+name|g_message
 argument_list|(
-name|stderr
-argument_list|,
-literal|"PCX: Can't save this image type\n"
+literal|"Can't save this image as PCX\nFlatten your image"
 argument_list|)
 expr_stmt|;
 return|return

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* cel.c -- KISS CEL file format plug-in for The GIMP  * (copyright) 1997,1998 Nick Lamb (njl195@ecs.soton.ac.uk)  *  * Skeleton cloned from Michael Sweet's PNG plug-in. KISS format courtesy  * of the KISS/GS documentation. Problem reports to the above address  */
+comment|/* cel.c -- KISS CEL file format plug-in for The GIMP  * (copyright) 1997,1998 Nick Lamb (njl195@zepler.org.uk)  *  * Skeleton cloned from Michael Sweet's PNG plug-in. KISS format courtesy  * of the KISS/GS documentation. Problem reports to the above address  */
 end_comment
 
 begin_comment
@@ -404,7 +404,7 @@ literal|"This plug-in loads individual KISS cell files."
 argument_list|,
 literal|"Nick Lamb"
 argument_list|,
-literal|"Nick Lamb"
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"May 1998"
 argument_list|,
@@ -444,7 +444,7 @@ literal|"This plug-in saves individual KISS cell files."
 argument_list|,
 literal|"Nick Lamb"
 argument_list|,
-literal|"Nick Lamb"
+literal|"Nick Lamb<njl195@zepler.org.uk>"
 argument_list|,
 literal|"May 1998"
 argument_list|,
@@ -1214,7 +1214,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't create a new image"
+literal|"CEL Can't create a new image"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -1604,9 +1604,9 @@ block|}
 block|}
 break|break;
 default|default:
-name|g_error
+name|g_message
 argument_list|(
-literal|"Unsupported number of colours (%d)\n"
+literal|"Unsupported number of colours (%d)"
 argument_list|,
 name|colours
 argument_list|)
@@ -2250,7 +2250,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Couldn't write image to\n%s"
+literal|"CEL Couldn't write image to\n%s"
 argument_list|,
 name|file
 argument_list|)

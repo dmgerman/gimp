@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in header file for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Revision History:  *  *   $Log$  *   Revision 1.6  1998/05/14 00:32:53  yosh  *   updated print plugin  *  *   stubbed out nonworking frac code  *  *   -Yosh  *  *   Revision 1.11  1998/05/08  19:20:50  mike  *   Updated for new driver interface.  *   Added media size, imageable area, and parameter functions.  *  *   Revision 1.10  1998/03/01  17:20:48  mike  *   Updated version number& date.  *  *   Revision 1.9  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Replaced Burkes dither with stochastic (random) dither.  *   Now use Level 2 ASCII85 filter for Level 2 printers.  *  *   Revision 1.8  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.7  1997/10/02  17:57:26  mike  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/10/02  17:57:26  mike  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.5  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.4  1997/07/26  18:43:04  mike  *   Updated version number to 1.1.  *  *   Revision 1.3  1997/07/03  13:26:46  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/02  13:51:53  mike  *   Added rgb_to_rgb and gray_to_gray conversion functions.  *   Standardized calling args to conversion functions.  *  *   Revision 1.2  1997/07/02  13:51:53  mike  *   Added rgb_to_rgb and gray_to_gray conversion functions.  *   Standardized calling args to conversion functions.  *  *   Revision 1.1  1997/06/19  02:18:15  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in header file for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Revision History:  *  *   $Log$  *   Revision 1.7  1998/05/31 06:49:17  yosh  *   * app/interface.c: plug mem leak in message_box  *  *   * plug-ins/mail/mail.c: use g_message  *  *   * plug-ins/script-fu/scripts/carve-it.scm: fix for gimp-layer-new params from  *   Kevin Cozens<kcozens@interlog.com>  *  *   * plug-ins/CEL/CEL.c  *   * plug-ins/pcx/pcx.c  *   * plug-ins/tiff/tiff.c: updates from author  *  *   * plug-ins/png/png.c: correct copyright  *  *   * plug-ins/print/print.h: use correct version  *  *   -Yosh  *  *   Revision 1.12  1998/05/16  14:25:51  mike  *   Updated for v2.0.2.  *  *   Revision 1.11  1998/05/08  19:20:50  mike  *   Updated for new driver interface.  *   Added media size, imageable area, and parameter functions.  *  *   Revision 1.10  1998/03/01  17:20:48  mike  *   Updated version number& date.  *  *   Revision 1.9  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Replaced Burkes dither with stochastic (random) dither.  *   Now use Level 2 ASCII85 filter for Level 2 printers.  *  *   Revision 1.8  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.7  1997/10/02  17:57:26  mike  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/10/02  17:57:26  mike  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.6  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.5  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *  *   Revision 1.4  1997/07/26  18:43:04  mike  *   Updated version number to 1.1.  *  *   Revision 1.3  1997/07/03  13:26:46  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.2  1997/07/02  13:51:53  mike  *   Added rgb_to_rgb and gray_to_gray conversion functions.  *   Standardized calling args to conversion functions.  *  *   Revision 1.2  1997/07/02  13:51:53  mike  *   Added rgb_to_rgb and gray_to_gray conversion functions.  *   Standardized calling args to conversion functions.  *  *   Revision 1.1  1997/06/19  02:18:15  mike  *   Initial revision  */
 end_comment
 
 begin_comment
@@ -58,7 +58,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"2.0 - 8 May 1998"
+value|"2.0.2 - 16 May 1998"
 end_define
 
 begin_define
@@ -68,71 +68,6 @@ directive|define
 name|PLUG_IN_NAME
 value|"Print"
 end_define
-
-begin_define
-DECL|macro|MEDIA_LETTER
-define|#
-directive|define
-name|MEDIA_LETTER
-value|0
-end_define
-
-begin_comment
-DECL|macro|MEDIA_LETTER
-comment|/* 8.5x11" a.k.a. "A" size */
-end_comment
-
-begin_define
-DECL|macro|MEDIA_LEGAL
-define|#
-directive|define
-name|MEDIA_LEGAL
-value|1
-end_define
-
-begin_comment
-DECL|macro|MEDIA_LEGAL
-comment|/* 8.5x14" */
-end_comment
-
-begin_define
-DECL|macro|MEDIA_TABLOID
-define|#
-directive|define
-name|MEDIA_TABLOID
-value|2
-end_define
-
-begin_comment
-DECL|macro|MEDIA_TABLOID
-comment|/* 11x17" a.k.a. "B" size */
-end_comment
-
-begin_define
-DECL|macro|MEDIA_A4
-define|#
-directive|define
-name|MEDIA_A4
-value|3
-end_define
-
-begin_comment
-DECL|macro|MEDIA_A4
-comment|/* 8.27x11.69" (210x297mm) */
-end_comment
-
-begin_define
-DECL|macro|MEDIA_A3
-define|#
-directive|define
-name|MEDIA_A3
-value|4
-end_define
-
-begin_comment
-DECL|macro|MEDIA_A3
-comment|/* 11.69x16.54" (297x420mm) */
-end_comment
 
 begin_define
 DECL|macro|OUTPUT_GRAY
@@ -247,7 +182,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4b10de0108
+DECL|struct|__anon28953bb40108
 block|{
 DECL|member|long_name
 name|char
