@@ -7947,7 +7947,7 @@ name|entry
 operator|.
 name|accelerator
 operator|=
-name|NULL
+literal|""
 expr_stmt|;
 name|last_opened_entries
 index|[

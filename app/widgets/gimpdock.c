@@ -405,16 +405,6 @@ name|context
 operator|=
 name|NULL
 expr_stmt|;
-name|gtk_window_set_title
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dock
-argument_list|)
-argument_list|,
-literal|"Gimp"
-argument_list|)
-expr_stmt|;
 name|gtk_window_set_wmclass
 argument_list|(
 name|GTK_WINDOW
