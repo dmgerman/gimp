@@ -5663,7 +5663,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Apply Layer Mask..."
+literal|"Apply Layer Mask"
 argument_list|,
 name|fs
 operator|&&
@@ -5678,7 +5678,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Delete Layer Mask..."
+literal|"Delete Layer Mask"
 argument_list|,
 name|fs
 operator|&&

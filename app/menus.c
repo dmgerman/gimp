@@ -4894,7 +4894,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Apply Layer Mask..."
+literal|"/Apply Layer Mask"
 argument_list|)
 block|,
 name|NULL
@@ -4913,7 +4913,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Delete Layer Mask..."
+literal|"/Delete Layer Mask"
 argument_list|)
 block|,
 name|NULL
