@@ -391,10 +391,6 @@ name|size
 init|=
 literal|0
 decl_stmt|;
-name|gchar
-modifier|*
-name|message
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
@@ -417,6 +413,18 @@ name|gboolean
 name|debug
 init|=
 name|FALSE
+decl_stmt|;
+name|gchar
+modifier|*
+name|message
+decl_stmt|;
+name|gchar
+modifier|*
+name|timeout_msg
+decl_stmt|;
+name|gchar
+modifier|*
+name|progress
 decl_stmt|;
 DECL|macro|DEBUG (x)
 define|#
@@ -494,7 +502,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"wget exited abnormally on URI '%s'"
+argument_list|)
 argument_list|,
 name|uri
 argument_list|)
@@ -509,12 +520,40 @@ name|buf
 argument_list|)
 expr_stmt|;
 comment|/*  The third line is "Connecting to..."  */
+name|timeout_msg
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"(timeout is %s seconds)"
+argument_list|)
+argument_list|,
+name|TIMEOUT
+argument_list|)
+expr_stmt|;
+name|progress
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s %s"
+argument_list|,
+name|_
+argument_list|(
+literal|"Connecting to server..."
+argument_list|)
+argument_list|,
+name|timeout_msg
+argument_list|)
+expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-literal|"Connecting to server... "
-literal|"(timeout is "
-name|TIMEOUT
-literal|" seconds)"
+name|progress
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|progress
 argument_list|)
 expr_stmt|;
 name|read_connect
@@ -541,7 +580,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"wget exited abnormally on URI '%s'"
+argument_list|)
 argument_list|,
 name|uri
 argument_list|)
@@ -595,12 +637,28 @@ name|buf
 argument_list|)
 expr_stmt|;
 comment|/*  The fourth line is either the network request or an error  */
+name|progress
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s %s"
+argument_list|,
+name|_
+argument_list|(
+literal|"Opening URI..."
+argument_list|)
+argument_list|,
+name|timeout_msg
+argument_list|)
+expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-literal|"Opening URI... "
-literal|"(timeout is "
-name|TIMEOUT
-literal|" seconds)"
+name|progress
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|progress
 argument_list|)
 expr_stmt|;
 if|if
@@ -625,7 +683,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"wget exited abnormally on URI '%s'"
+argument_list|)
 argument_list|,
 name|uri
 argument_list|)
@@ -649,7 +710,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"A network error occured: %s"
+argument_list|)
 argument_list|,
 name|buf
 argument_list|)
@@ -691,7 +755,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"wget exited abnormally on URI '%s'"
+argument_list|)
 argument_list|,
 name|uri
 argument_list|)
@@ -726,7 +793,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"A network error occured: %s"
+argument_list|)
 argument_list|,
 name|buf
 argument_list|)
@@ -844,17 +914,36 @@ name|message
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"Downloading %d bytes of image data... "
-literal|"(timeout is "
-name|TIMEOUT
-literal|" seconds)"
+name|_
+argument_list|(
+literal|"Downloading %s of image data... "
+argument_list|)
 argument_list|,
+name|gimp_memsize_to_string
+argument_list|(
 name|size
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|progress
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"%s %s"
+argument_list|,
+name|message
+argument_list|,
+name|timeout_msg
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-name|message
+name|progress
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|progress
 argument_list|)
 expr_stmt|;
 name|g_free
