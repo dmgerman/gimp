@@ -55,6 +55,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpbrushes.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpbrushselect.h>
 end_include
 

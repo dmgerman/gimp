@@ -557,7 +557,7 @@ argument_list|(
 literal|"Channel"
 argument_list|)
 argument_list|,
-literal|0.037
+literal|0.026
 argument_list|)
 expr_stmt|;
 name|register_channel_procs
@@ -577,7 +577,7 @@ argument_list|(
 literal|"Color"
 argument_list|)
 argument_list|,
-literal|0.06
+literal|0.05
 argument_list|)
 expr_stmt|;
 name|register_color_procs
@@ -597,7 +597,7 @@ argument_list|(
 literal|"Context"
 argument_list|)
 argument_list|,
-literal|0.094
+literal|0.084
 argument_list|)
 expr_stmt|;
 name|register_context_procs
