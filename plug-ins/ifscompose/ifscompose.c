@@ -135,7 +135,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon295c378c0103
+DECL|enum|__anon275e704f0103
 typedef|typedef
 enum|enum
 block|{
@@ -155,7 +155,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon295c378c0203
+DECL|enum|__anon275e704f0203
 typedef|typedef
 enum|enum
 block|{
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c378c0308
+DECL|struct|__anon275e704f0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -194,7 +194,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon295c378c040a
+DECL|union|__anon275e704f040a
 union|union
 block|{
 DECL|member|d
@@ -224,7 +224,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c378c0508
+DECL|struct|__anon275e704f0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c378c0608
+DECL|struct|__anon275e704f0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -303,7 +303,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c378c0708
+DECL|struct|__anon275e704f0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c378c0808
+DECL|struct|__anon275e704f0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -406,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c378c0908
+DECL|struct|__anon275e704f0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -577,7 +577,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295c378c0a08
+DECL|struct|__anon275e704f0a08
 block|{
 DECL|member|run
 name|gint
@@ -1929,7 +1929,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*  set the tile cache size so that the gaussian blur works well  */
+comment|/*  set the tile cache size so that the operation works well  */
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2

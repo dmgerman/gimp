@@ -22,7 +22,7 @@ file|"ifscompose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon28fc37ac0103
+DECL|enum|__anon2c008ebb0103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -108,7 +108,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28fc37ac0208
+DECL|struct|__anon2c008ebb0208
 block|{
 DECL|member|name
 name|gchar
@@ -483,6 +483,15 @@ block|{
 operator|*
 name|result
 operator|=
+name|negate
+condition|?
+operator|-
+name|scanner
+operator|->
+name|value
+operator|.
+name|v_float
+else|:
 name|scanner
 operator|->
 name|value
