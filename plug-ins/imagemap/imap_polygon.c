@@ -1672,7 +1672,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2af42a3f0108
+DECL|struct|__anon2adf9a010108
 typedef|typedef
 struct|struct
 block|{
@@ -2937,7 +2937,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -2947,7 +2947,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b51ba130108
+DECL|struct|__anon290973780108
 typedef|typedef
 struct|struct
 block|{
@@ -761,7 +761,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -805,7 +805,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -855,16 +855,6 @@ argument_list|(
 name|FALSE
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|10
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1222,7 +1212,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b51ba130208
+DECL|struct|__anon290973780208
 typedef|typedef
 struct|struct
 block|{

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2003 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2004 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -82,7 +82,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon29d13a3a0103
+DECL|enum|__anon2c5ae9080103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -101,7 +101,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29d13a3a0208
+DECL|struct|__anon2c5ae9080208
 typedef|typedef
 struct|struct
 block|{
@@ -1120,7 +1120,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1189,7 +1189,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1248,7 +1248,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1299,16 +1299,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -1316,7 +1306,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -1326,7 +1316,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1568,16 +1558,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -1585,7 +1565,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -1595,7 +1575,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
