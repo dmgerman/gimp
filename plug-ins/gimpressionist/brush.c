@@ -1068,30 +1068,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|destroy_window (GtkWidget * widget,GtkWidget ** window)
-specifier|static
-name|void
-name|destroy_window
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GtkWidget
-modifier|*
-modifier|*
-name|window
-parameter_list|)
-block|{
-operator|*
-name|window
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|brushlistrefresh (void)
 specifier|static
 name|void
@@ -1118,21 +1094,27 @@ block|}
 end_function
 
 begin_function
-DECL|function|savebrush_ok (GtkWidget * w,GtkFileSelection * fs,gpointer data)
 name|void
-name|savebrush_ok
+DECL|function|savebrush_response (GtkFileSelection * fs,gint response_id,gpointer data)
+name|savebrush_response
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|w
-parameter_list|,
 name|GtkFileSelection
 modifier|*
 name|fs
 parameter_list|,
+name|gint
+name|response_id
+parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
+block|{
+if|if
+condition|(
+name|response_id
+operator|==
+name|GTK_RESPONSE_OK
+condition|)
 block|{
 specifier|const
 name|gchar
@@ -1143,10 +1125,7 @@ name|fn
 operator|=
 name|gtk_file_selection_get_filename
 argument_list|(
-name|GTK_FILE_SELECTION
-argument_list|(
 name|fs
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|saveppm
@@ -1157,6 +1136,10 @@ argument_list|,
 name|fn
 argument_list|)
 expr_stmt|;
+name|brushlistrefresh
+argument_list|()
+expr_stmt|;
+block|}
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
@@ -1165,15 +1148,12 @@ name|fs
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|brushlistrefresh
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|savebrush (GtkWidget * wg,gpointer data)
 name|void
+DECL|function|savebrush (GtkWidget * wg,gpointer data)
 name|savebrush
 parameter_list|(
 name|GtkWidget
@@ -1198,7 +1178,7 @@ init|=
 name|parsepath
 argument_list|()
 decl_stmt|;
-name|char
+name|gchar
 name|path
 index|[
 literal|200
@@ -1291,7 +1271,7 @@ literal|"destroy"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|destroy_window
+name|gtk_widget_destroyed
 argument_list|)
 argument_list|,
 operator|&
@@ -1300,40 +1280,16 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|GTK_FILE_SELECTION
-argument_list|(
 name|window
-argument_list|)
-operator|->
-name|ok_button
 argument_list|,
-literal|"clicked"
+literal|"response"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|savebrush_ok
+name|savebrush_response
 argument_list|)
 argument_list|,
-name|window
-argument_list|)
-expr_stmt|;
-name|g_signal_connect_swapped
-argument_list|(
-name|GTK_FILE_SELECTION
-argument_list|(
-name|window
-argument_list|)
-operator|->
-name|cancel_button
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_widget_destroy
-argument_list|)
-argument_list|,
-name|window
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1341,7 +1297,6 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 end_function
 
