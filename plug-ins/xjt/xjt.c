@@ -239,7 +239,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f0108
+DECL|struct|__anon2ba9c6f10108
 block|{
 DECL|member|run
 name|gboolean
@@ -258,7 +258,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baecd0f0203
+DECL|enum|__anon2ba9c6f10203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -458,7 +458,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baecd0f0303
+DECL|enum|__anon2ba9c6f10303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baecd0f0403
+DECL|enum|__anon2ba9c6f10403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -548,7 +548,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baecd0f0503
+DECL|enum|__anon2ba9c6f10503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -570,7 +570,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baecd0f0603
+DECL|enum|__anon2ba9c6f10603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baecd0f0703
+DECL|enum|__anon2ba9c6f10703
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -625,7 +625,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baecd0f0803
+DECL|enum|__anon2ba9c6f10803
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -750,7 +750,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f0908
+DECL|struct|__anon2ba9c6f10908
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -786,7 +786,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f0a08
+DECL|struct|__anon2ba9c6f10a08
 block|{
 DECL|member|int_val1
 name|gint32
@@ -835,7 +835,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f0b08
+DECL|struct|__anon2ba9c6f10b08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -872,7 +872,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f0c08
+DECL|struct|__anon2ba9c6f10c08
 block|{
 DECL|member|path_type
 name|gint32
@@ -922,7 +922,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f0d08
+DECL|struct|__anon2ba9c6f10d08
 block|{
 DECL|member|active_channel
 name|gint
@@ -996,7 +996,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f0e08
+DECL|struct|__anon2ba9c6f10e08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1081,7 +1081,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f0f08
+DECL|struct|__anon2ba9c6f10f08
 block|{
 DECL|member|position
 name|gint32
@@ -1105,7 +1105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baecd0f1008
+DECL|struct|__anon2ba9c6f11008
 block|{
 DECL|member|version
 name|gchar
@@ -1901,10 +1901,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|p_system (gchar * cmd)
+DECL|function|p_system (const gchar * cmd)
 name|int
 name|p_system
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|cmd
@@ -4433,21 +4434,23 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|p_namedup (gchar * name)
+DECL|function|p_namedup (const gchar * name)
 name|p_namedup
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|l_name
-decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|l_str
+decl_stmt|;
+name|gchar
+modifier|*
+name|l_name
 decl_stmt|;
 name|gchar
 modifier|*
@@ -5463,9 +5466,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|p_write_parasite (gchar * dirname,FILE * fp,GimpParasite * parasite,gint wr_all_prp)
+DECL|function|p_write_parasite (const gchar * dirname,FILE * fp,GimpParasite * parasite,gint wr_all_prp)
 name|p_write_parasite
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dirname
@@ -6073,9 +6077,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|p_write_image_parasites (gchar * dirname,FILE * fp,gint32 image_id,gint wr_all_prp)
+DECL|function|p_write_image_parasites (const gchar * dirname,FILE * fp,gint32 image_id,gint wr_all_prp)
 name|p_write_image_parasites
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dirname
@@ -6195,9 +6200,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|p_write_drawable_parasites (gchar * dirname,FILE * fp,gint32 drawable_id,gint wr_all_prp)
+DECL|function|p_write_drawable_parasites (const gchar * dirname,FILE * fp,gint32 drawable_id,gint wr_all_prp)
 name|p_write_drawable_parasites
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dirname
@@ -6322,9 +6328,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|p_write_layer_prp (gchar * dirname,FILE * fp,gchar * layer_shortname,gint32 image_id,gint32 layer_id,gint wr_all_prp)
+DECL|function|p_write_layer_prp (const gchar * dirname,FILE * fp,const gchar * layer_shortname,gint32 image_id,gint32 layer_id,gint wr_all_prp)
 name|p_write_layer_prp
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dirname
@@ -6333,6 +6340,7 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|layer_shortname
@@ -6724,9 +6732,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|p_write_channel_prp (gchar * dirname,FILE * fp,gchar * channel_shortname,gint32 image_id,gint32 channel_id,gint wr_all_prp)
+DECL|function|p_write_channel_prp (const gchar * dirname,FILE * fp,const gchar * channel_shortname,gint32 image_id,gint32 channel_id,gint wr_all_prp)
 name|p_write_channel_prp
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dirname
@@ -6735,6 +6744,7 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|channel_shortname
@@ -7082,9 +7092,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|p_write_image_prp (gchar * dirname,FILE * fp,gint32 image_id,gint wr_all_prp)
+DECL|function|p_write_image_prp (const gchar * dirname,FILE * fp,gint32 image_id,gint wr_all_prp)
 name|p_write_image_prp
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dirname
@@ -11378,12 +11389,13 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|p_create_and_attach_parasite (gint32 gimp_obj_id,gchar * dirname,t_parasite_props * parasite_props)
+DECL|function|p_create_and_attach_parasite (gint32 gimp_obj_id,const gchar * dirname,t_parasite_props * parasite_props)
 name|p_create_and_attach_parasite
 parameter_list|(
 name|gint32
 name|gimp_obj_id
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|dirname
@@ -11678,12 +11690,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|p_check_and_add_parasite (gint32 gimp_obj_id,gchar * dirname,t_parasite_props * parasite_props,gint32 pos,t_parasitetype parasite_type)
+DECL|function|p_check_and_add_parasite (gint32 gimp_obj_id,const gchar * dirname,t_parasite_props * parasite_props,gint32 pos,t_parasitetype parasite_type)
 name|p_check_and_add_parasite
 parameter_list|(
 name|gint32
 name|gimp_obj_id
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|dirname
@@ -12180,10 +12193,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_scann_channel_prop (gchar * scan_ptr,t_image_props * image_prop)
+DECL|function|p_scann_channel_prop (const gchar * scan_ptr,t_image_props * image_prop)
 name|gint
 name|p_scann_channel_prop
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|scan_ptr
@@ -13005,10 +13019,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_scann_parasite_prop (gchar * scan_ptr,t_image_props * image_prop)
+DECL|function|p_scann_parasite_prop (const gchar * scan_ptr,t_image_props * image_prop)
 name|gint
 name|p_scann_parasite_prop
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|scan_ptr
@@ -13639,9 +13654,10 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|p_load_linefile (gchar * filename,gint32 * len)
+DECL|function|p_load_linefile (const gchar * filename,gint32 * len)
 name|p_load_linefile
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -13793,9 +13809,10 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|p_next_lineindex (gchar * file_buff,gint32 max_len,gint32 pos)
+DECL|function|p_next_lineindex (const gchar * file_buff,gint32 max_len,gint32 pos)
 name|p_next_lineindex
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|file_buff
@@ -13874,11 +13891,12 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_load_prop_file (gchar * prop_filename)
+DECL|function|p_load_prop_file (const gchar * prop_filename)
 name|t_image_props
 modifier|*
 name|p_load_prop_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|prop_filename

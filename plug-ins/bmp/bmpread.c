@@ -307,9 +307,10 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|ReadBMP (gchar * name)
+DECL|function|ReadBMP (const gchar * name)
 name|ReadBMP
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

@@ -54,12 +54,6 @@ directive|include
 file|<errno.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<ctype.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -325,6 +319,7 @@ specifier|static
 name|gint
 name|mozilla_remote
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|command
@@ -342,11 +337,12 @@ specifier|static
 name|gint
 name|open_url
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|url
 parameter_list|,
-name|gint
+name|gboolean
 name|new_window
 parameter_list|)
 function_decl|;
@@ -377,7 +373,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab1fd580108
+DECL|struct|__anon28f0ba900108
 block|{
 DECL|member|url
 name|gchar
@@ -783,13 +779,15 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|start_browser (gchar * prog,gchar * url)
+DECL|function|start_browser (const gchar * prog,const gchar * url)
 name|start_browser
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|prog
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|url
@@ -889,14 +887,15 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|open_url (gchar * url,gint new_window)
+DECL|function|open_url (const gchar * url,gboolean new_window)
 name|open_url
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|url
 parameter_list|,
-name|gint
+name|gboolean
 name|new_window
 parameter_list|)
 block|{
@@ -908,7 +907,7 @@ index|]
 decl_stmt|;
 while|while
 condition|(
-name|isspace
+name|g_ascii_isspace
 argument_list|(
 operator|*
 name|url
@@ -3809,10 +3808,11 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|mozilla_remote (char * command)
+DECL|function|mozilla_remote (const gchar * command)
 name|mozilla_remote
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|command
 parameter_list|)

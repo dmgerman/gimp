@@ -84,8 +84,10 @@ specifier|extern
 name|gint32
 name|ReadBMP
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
+name|filename
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -95,8 +97,10 @@ specifier|extern
 name|GimpPDBStatusType
 name|WriteBMP
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
+name|filename
 parameter_list|,
 name|gint32
 parameter_list|,
@@ -175,6 +179,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+specifier|const
 name|gchar
 modifier|*
 name|prog_name
@@ -183,6 +188,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+specifier|const
 name|gchar
 modifier|*
 name|filename

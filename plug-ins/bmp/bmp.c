@@ -171,6 +171,7 @@ end_include
 
 begin_decl_stmt
 DECL|variable|prog_name
+specifier|const
 name|gchar
 modifier|*
 name|prog_name
@@ -181,9 +182,12 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|filename
+specifier|const
 name|gchar
 modifier|*
 name|filename
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 

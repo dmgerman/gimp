@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ec4b00108
+DECL|struct|__anon2c77ae300108
 block|{
 DECL|member|run
 name|gint
@@ -419,9 +419,10 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|WriteBMP (gchar * filename,gint32 image,gint32 drawable_ID)
+DECL|function|WriteBMP (const gchar * filename,gint32 image,gint32 drawable_ID)
 name|WriteBMP
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
