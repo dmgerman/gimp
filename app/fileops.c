@@ -3506,7 +3506,7 @@ name|pdb_int
 operator|=
 name|pdb_image_to_id
 argument_list|(
-name|the_gimage
+name|gimage
 argument_list|)
 expr_stmt|;
 name|args
