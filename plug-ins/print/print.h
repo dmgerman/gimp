@@ -37,6 +37,18 @@ directive|include
 file|<errno.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<sys/stat.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -199,7 +211,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b427780108
+DECL|struct|__anon29da0ff40108
 block|{
 DECL|member|composite
 name|unsigned
@@ -243,7 +255,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon29b427780208
+DECL|struct|__anon29da0ff40208
 block|{
 DECL|member|output_to
 name|char
@@ -371,7 +383,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon29b427780308
+DECL|struct|__anon29da0ff40308
 block|{
 DECL|member|active
 name|int
@@ -535,7 +547,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b427780408
+DECL|struct|__anon29da0ff40408
 block|{
 DECL|member|long_name
 name|char
