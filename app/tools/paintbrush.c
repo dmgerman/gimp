@@ -1119,7 +1119,7 @@ name|ProcRecord
 name|paintbrush_extended_proc
 init|=
 block|{
-literal|"gimp_paintbrush_exteneded"
+literal|"gimp_paintbrush_extended"
 block|,
 literal|"Paint in the current brush with optional fade out parameter"
 block|,
