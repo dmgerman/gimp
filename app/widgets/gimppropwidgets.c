@@ -1477,11 +1477,7 @@ argument_list|)
 argument_list|,
 name|value
 argument_list|)
-block|)
-function|;
-end_function
-
-begin_expr_stmt
+expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|combo_box
@@ -1491,10 +1487,10 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-end_expr_stmt
+block|}
+end_function
 
 begin_comment
-unit|}
 comment|/************************/
 end_comment
 
@@ -1507,7 +1503,7 @@ comment|/************************/
 end_comment
 
 begin_function_decl
-unit|static
+specifier|static
 name|void
 name|gimp_prop_boolean_combo_box_callback
 parameter_list|(
@@ -1842,6 +1838,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|combo_box
+argument_list|,
+name|gimp_prop_boolean_combo_box_callback
+argument_list|,
+name|config
+argument_list|)
+expr_stmt|;
 name|gtk_combo_box_set_active
 argument_list|(
 name|GTK_COMBO_BOX
@@ -1854,6 +1859,15 @@ condition|?
 literal|0
 else|:
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_unblock_by_func
+argument_list|(
+name|combo_box
+argument_list|,
+name|gimp_prop_boolean_combo_box_callback
+argument_list|,
+name|config
 argument_list|)
 expr_stmt|;
 block|}
