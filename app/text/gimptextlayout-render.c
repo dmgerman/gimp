@@ -70,6 +70,29 @@ file|"gimptextlayout-render.h"
 end_include
 
 begin_comment
+comment|/* for compatibility with older freetype versions */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|FT_LOAD_TARGET_MONO
+end_ifndef
+
+begin_define
+DECL|macro|FT_LOAD_TARGET_MONO
+define|#
+directive|define
+name|FT_LOAD_TARGET_MONO
+value|FT_LOAD_MONOCHROME
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
 comment|/*  This file duplicates quite a lot of code from pangoft2.c.  *  At some point all this should be folded back into Pango.  */
 end_comment
 

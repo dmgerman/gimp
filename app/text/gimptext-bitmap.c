@@ -33,6 +33,29 @@ directive|include
 file|"gimptext-bitmap.h"
 end_include
 
+begin_comment
+comment|/* for compatibility with older freetype versions */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|FT_LOAD_TARGET_MONO
+end_ifndef
+
+begin_define
+DECL|macro|FT_LOAD_TARGET_MONO
+define|#
+directive|define
+name|FT_LOAD_TARGET_MONO
+value|FT_LOAD_MONOCHROME
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_function
 name|void
 DECL|function|gimp_text_render_bitmap (PangoFont * font,PangoGlyph glyph,gint flags,gint x,gint y,FT_Bitmap * bitmap)
