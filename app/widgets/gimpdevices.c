@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdatafactory.h"
 end_include
 
