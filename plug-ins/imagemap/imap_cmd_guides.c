@@ -64,7 +64,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon27dfc9ae0108
+DECL|struct|__anon296c6bad0108
 typedef|typedef
 struct|struct
 block|{
@@ -1106,7 +1106,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Horz. Spacing"
+literal|"_Horz. Spacing:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1283,7 +1283,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"No. _Down"
+literal|"No. _Down:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1588,7 +1588,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon27dfc9ae0208
+DECL|struct|__anon296c6bad0208
 typedef|typedef
 struct|struct
 block|{

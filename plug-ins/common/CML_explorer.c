@@ -232,7 +232,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4e2810108
+DECL|struct|__anon2bc2eeed0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -259,7 +259,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4e2810203
+DECL|enum|__anon2bc2eeed0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -382,7 +382,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4e2810303
+DECL|enum|__anon2bc2eeed0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -521,7 +521,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4e2810403
+DECL|enum|__anon2bc2eeed0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -620,7 +620,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4e2810503
+DECL|enum|__anon2bc2eeed0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -712,7 +712,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4e2810608
+DECL|struct|__anon2bc2eeed0608
 block|{
 DECL|member|function
 name|gint
@@ -785,7 +785,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4e2810708
+DECL|struct|__anon2bc2eeed0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1174,10 +1174,6 @@ name|GtkWidget
 modifier|*
 name|CML_dialog_channel_panel_new
 parameter_list|(
-name|gchar
-modifier|*
-name|name
-parameter_list|,
 name|CML_PARAM
 modifier|*
 name|param
@@ -1194,9 +1190,7 @@ name|GtkWidget
 modifier|*
 name|CML_dialog_advanced_panel_new
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1477,7 +1471,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|CML_load_parameter_file
 parameter_list|(
 specifier|const
@@ -1485,7 +1479,7 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint
+name|gboolean
 name|interactive_mode
 parameter_list|)
 function_decl|;
@@ -1515,7 +1509,7 @@ name|FILE
 modifier|*
 name|file
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|flag
 parameter_list|)
@@ -1531,7 +1525,7 @@ name|FILE
 modifier|*
 name|file
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|flag
 parameter_list|)
@@ -1563,7 +1557,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4e2810808
+DECL|struct|__anon2bc2eeed0808
 block|{
 DECL|member|run
 name|gint
@@ -1613,7 +1607,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad4e2810908
+DECL|struct|__anon2bc2eeed0908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2119,28 +2113,16 @@ name|ValueType
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|mem_chank0
-condition|)
 name|g_free
 argument_list|(
 name|mem_chank0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|mem_chank1
-condition|)
 name|g_free
 argument_list|(
 name|mem_chank1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|mem_chank2
-condition|)
 name|g_free
 argument_list|(
 name|mem_chank2
@@ -2482,10 +2464,6 @@ name|gdouble
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-name|mem_chank0
-condition|)
 name|g_free
 argument_list|(
 name|mem_chank0
@@ -2589,10 +2567,6 @@ operator|*
 name|keep_height
 condition|)
 block|{
-if|if
-condition|(
-name|mem_chank1
-condition|)
 name|g_free
 argument_list|(
 name|mem_chank1
@@ -2629,10 +2603,6 @@ operator|*
 name|keep_height
 condition|)
 block|{
-if|if
-condition|(
-name|mem_chank2
-condition|)
 name|g_free
 argument_list|(
 name|mem_chank2
@@ -6629,22 +6599,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|memset
-argument_list|(
-operator|&
-name|widget_pointers
-argument_list|,
-operator|(
-name|gint
-operator|)
-literal|0
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|widget_pointers
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|CML_preview_defer
 operator|=
 name|TRUE
@@ -6910,12 +6864,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_from_stock
 argument_list|(
-name|_
-argument_list|(
-literal|"Load"
-argument_list|)
+name|GTK_STOCK_OPEN
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -7233,11 +7184,6 @@ name|page
 operator|=
 name|CML_dialog_channel_panel_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Hue Settings"
-argument_list|)
-argument_list|,
 operator|&
 name|VALS
 operator|.
@@ -7255,11 +7201,11 @@ argument_list|)
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Hue"
+literal|"_Hue"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -7268,11 +7214,6 @@ name|page
 operator|=
 name|CML_dialog_channel_panel_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Saturation Settings"
-argument_list|)
-argument_list|,
 operator|&
 name|VALS
 operator|.
@@ -7290,11 +7231,11 @@ argument_list|)
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Saturation"
+literal|"Sat_uration"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -7303,11 +7244,6 @@ name|page
 operator|=
 name|CML_dialog_channel_panel_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Value (Gray Image) Settings"
-argument_list|)
-argument_list|,
 operator|&
 name|VALS
 operator|.
@@ -7325,11 +7261,11 @@ argument_list|)
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Value"
+literal|"_Value"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -7337,12 +7273,7 @@ expr_stmt|;
 name|page
 operator|=
 name|CML_dialog_advanced_panel_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Advanced Settings"
-argument_list|)
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gtk_notebook_append_page
 argument_list|(
@@ -7353,11 +7284,11 @@ argument_list|)
 argument_list|,
 name|page
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Advanced"
+literal|"_Advanced"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -7369,15 +7300,11 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|optionmenu
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|subframe
+name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -7387,31 +7314,6 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Other Parameter Settings"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -7431,22 +7333,12 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|vbox
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-name|subframe
+name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -7463,7 +7355,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|subframe
+name|frame
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7474,7 +7366,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|subframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|table
@@ -7522,7 +7414,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|subframe
+name|frame
 argument_list|)
 argument_list|,
 name|table
@@ -7887,7 +7779,7 @@ operator|.
 name|start_offset
 argument_list|)
 expr_stmt|;
-name|subframe
+name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -7904,7 +7796,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|subframe
+name|frame
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7915,7 +7807,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|subframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|table
@@ -7963,7 +7855,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|subframe
+name|frame
 argument_list|)
 argument_list|,
 name|table
@@ -8151,13 +8043,13 @@ argument_list|(
 name|notebook
 argument_list|)
 argument_list|,
-name|frame
+name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Others"
+literal|"O_thers"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -8174,41 +8066,12 @@ name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|subframe
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|optionmenu
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Misc Operations"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -8228,22 +8091,12 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|vbox
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-name|subframe
+name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -8260,7 +8113,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|subframe
+name|frame
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8271,7 +8124,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|subframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|table
@@ -8319,7 +8172,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|subframe
+name|frame
 argument_list|)
 argument_list|,
 name|table
@@ -8579,7 +8432,7 @@ operator|&
 name|VALS
 argument_list|)
 expr_stmt|;
-name|subframe
+name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
@@ -8596,7 +8449,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|subframe
+name|frame
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8607,7 +8460,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|subframe
+name|frame
 argument_list|)
 expr_stmt|;
 name|table
@@ -8655,7 +8508,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|subframe
+name|frame
 argument_list|)
 argument_list|,
 name|table
@@ -8885,13 +8738,13 @@ argument_list|(
 name|notebook
 argument_list|)
 argument_list|,
-name|frame
+name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Misc Ops."
+literal|"_Misc Ops."
 argument_list|)
 argument_list|)
 argument_list|)
@@ -8938,13 +8791,9 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|CML_dialog_channel_panel_new (gchar * name,CML_PARAM * param,gint channel_id)
+DECL|function|CML_dialog_channel_panel_new (CML_PARAM * param,gint channel_id)
 name|CML_dialog_channel_panel_new
 parameter_list|(
-name|gchar
-modifier|*
-name|name
-parameter_list|,
 name|CML_PARAM
 modifier|*
 name|param
@@ -8953,10 +8802,6 @@ name|gint
 name|channel_id
 parameter_list|)
 block|{
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
@@ -8986,28 +8831,6 @@ name|index
 init|=
 literal|0
 decl_stmt|;
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -9047,16 +8870,6 @@ name|table
 argument_list|)
 argument_list|,
 literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|table
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -10561,11 +10374,8 @@ argument_list|,
 name|chank
 argument_list|)
 expr_stmt|;
-name|index
-operator|++
-expr_stmt|;
 return|return
-name|frame
+name|table
 return|;
 block|}
 end_function
@@ -10574,18 +10384,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|CML_dialog_advanced_panel_new (gchar * name)
+DECL|function|CML_dialog_advanced_panel_new (void)
 name|CML_dialog_advanced_panel_new
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|void
 parameter_list|)
 block|{
-name|GtkWidget
-modifier|*
-name|frame
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vbox
@@ -10619,28 +10423,6 @@ name|CML_PARAM
 modifier|*
 name|param
 decl_stmt|;
-name|frame
-operator|=
-name|gtk_frame_new
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -10658,16 +10440,6 @@ name|vbox
 argument_list|)
 argument_list|,
 literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|vbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -11006,7 +10778,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|frame
+name|vbox
 return|;
 block|}
 end_function
@@ -12076,11 +11848,9 @@ name|seed_widget
 operator|.
 name|updater
 condition|)
-call|(
 name|seed_widget
 operator|.
 name|updater
-call|)
 argument_list|(
 operator|&
 name|seed_widget
@@ -13433,7 +13203,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|CML_load_parameter_file (const gchar * filename,gint interactive_mode)
+DECL|function|CML_load_parameter_file (const gchar * filename,gboolean interactive_mode)
 name|CML_load_parameter_file
 parameter_list|(
 specifier|const
@@ -13441,7 +13211,7 @@ name|gchar
 modifier|*
 name|filename
 parameter_list|,
-name|gint
+name|gboolean
 name|interactive_mode
 parameter_list|)
 block|{
@@ -13452,7 +13222,7 @@ decl_stmt|;
 name|gint
 name|channel_id
 decl_stmt|;
-name|gint
+name|gboolean
 name|flag
 init|=
 name|TRUE
@@ -14250,14 +14020,14 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|parse_line_to_gint (FILE * file,gint * flag)
+DECL|function|parse_line_to_gint (FILE * file,gboolean * flag)
 name|parse_line_to_gint
 parameter_list|(
 name|FILE
 modifier|*
 name|file
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|flag
 parameter_list|)
@@ -14271,9 +14041,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|str
-decl_stmt|;
-name|gint
-name|value
 decl_stmt|;
 if|if
 condition|(
@@ -14346,8 +14113,7 @@ else|else
 name|str
 operator|++
 expr_stmt|;
-name|value
-operator|=
+return|return
 operator|(
 name|gint
 operator|)
@@ -14357,9 +14123,6 @@ name|str
 operator|+
 literal|1
 argument_list|)
-expr_stmt|;
-return|return
-name|value
 return|;
 block|}
 end_function
@@ -14367,14 +14130,14 @@ end_function
 begin_function
 specifier|static
 name|gdouble
-DECL|function|parse_line_to_gdouble (FILE * file,gint * flag)
+DECL|function|parse_line_to_gdouble (FILE * file,gboolean * flag)
 name|parse_line_to_gdouble
 parameter_list|(
 name|FILE
 modifier|*
 name|file
 parameter_list|,
-name|gint
+name|gboolean
 modifier|*
 name|flag
 parameter_list|)
@@ -14388,9 +14151,6 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|str
-decl_stmt|;
-name|gdouble
-name|value
 decl_stmt|;
 if|if
 condition|(
@@ -14463,8 +14223,7 @@ else|else
 name|str
 operator|++
 expr_stmt|;
-name|value
-operator|=
+return|return
 operator|(
 name|gdouble
 operator|)
@@ -14474,9 +14233,6 @@ name|str
 operator|+
 literal|1
 argument_list|)
-expr_stmt|;
-return|return
-name|value
 return|;
 block|}
 end_function
