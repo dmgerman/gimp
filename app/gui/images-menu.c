@@ -223,7 +223,7 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Raise Viewss"
+literal|"/Raise Views"
 argument_list|,
 name|image
 argument_list|)
