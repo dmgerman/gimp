@@ -784,11 +784,11 @@ name|GTK_ADJUSTMENT
 argument_list|(
 name|gtk_adjustment_new
 argument_list|(
-literal|8.0
+literal|4.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|100.0
+literal|25.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2158,12 +2158,16 @@ expr_stmt|;
 if|if
 condition|(
 name|size
+operator|*
+name|SUBSAMPLE
 operator|<
 literal|1
 condition|)
 name|size
 operator|=
 literal|1
+operator|/
+name|SUBSAMPLE
 expr_stmt|;
 comment|/* Add brush angle/aspect to title vectorially */
 name|x
@@ -3542,7 +3546,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29b5c5040103
+DECL|enum|__anon2a2c43690103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
