@@ -1991,7 +1991,7 @@ name|wwidth
 argument_list|,
 name|wheight
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
