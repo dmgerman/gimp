@@ -3,22 +3,29 @@ begin_comment
 comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997-2000 Michael Sweet (mike@easysw.com) and  *	Robert Krawitz (rlk@alum.mit.edu)  *   Copyright 2000 Charles Briscoe-Smith<cpbs@debian.org>  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|"config.h"
 end_include
 
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_include
+include|#
+directive|include
+file|<gimp-print/gimp-print.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
+end_include
 
 begin_include
 include|#
@@ -29,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"print-intl.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -43,7 +50,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f4e0a00108
+DECL|struct|__anon29ec185d0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -97,10 +104,289 @@ name|Gimp_Image_t
 typedef|;
 end_typedef
 
+begin_function_decl
+specifier|static
+specifier|const
+name|char
+modifier|*
+name|Image_get_appname
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_progress_conclude
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_note_progress
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|,
+name|double
+name|current
+parameter_list|,
+name|double
+name|total
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_progress_init
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|stp_image_status_t
+name|Image_get_row
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|,
+name|unsigned
+name|char
+modifier|*
+name|data
+parameter_list|,
+name|int
+name|row
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|int
+name|Image_height
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|int
+name|Image_width
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|int
+name|Image_bpp
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_rotate_180
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_rotate_cw
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_rotate_ccw
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_crop
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|,
+name|int
+name|left
+parameter_list|,
+name|int
+name|top
+parameter_list|,
+name|int
+name|right
+parameter_list|,
+name|int
+name|bottom
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_vflip
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_hflip
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_transpose
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_reset
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|Image_init
+parameter_list|(
+name|stp_image_t
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_decl_stmt
+DECL|variable|theImage
+specifier|static
+name|stp_image_t
+name|theImage
+init|=
+block|{
+name|Image_init
+block|,
+name|Image_reset
+block|,
+name|Image_transpose
+block|,
+name|Image_hflip
+block|,
+name|Image_vflip
+block|,
+name|Image_crop
+block|,
+name|Image_rotate_ccw
+block|,
+name|Image_rotate_cw
+block|,
+name|Image_rotate_180
+block|,
+name|Image_bpp
+block|,
+name|Image_width
+block|,
+name|Image_height
+block|,
+name|Image_get_row
+block|,
+name|Image_get_appname
+block|,
+name|Image_progress_init
+block|,
+name|Image_note_progress
+block|,
+name|Image_progress_conclude
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_function
-name|Image
-DECL|function|Image_GDrawable_new (GimpDrawable * drawable)
-name|Image_GDrawable_new
+name|stp_image_t
+modifier|*
+DECL|function|Image_GimpDrawable_new (GimpDrawable * drawable)
+name|Image_GimpDrawable_new
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -111,7 +397,7 @@ name|Gimp_Image_t
 modifier|*
 name|i
 init|=
-name|malloc
+name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -153,26 +439,35 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|Image_reset
-argument_list|(
-operator|(
-name|Image
-operator|)
+name|theImage
+operator|.
+name|rep
+operator|=
 name|i
+expr_stmt|;
+name|theImage
+operator|.
+name|reset
+argument_list|(
+operator|&
+name|theImage
 argument_list|)
 expr_stmt|;
 return|return
-name|i
+operator|&
+name|theImage
 return|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_init (Image image)
+DECL|function|Image_init (stp_image_t * image)
 name|Image_init
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -181,11 +476,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_reset (Image image)
+DECL|function|Image_reset (stp_image_t * image)
 name|Image_reset
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -197,7 +494,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 name|i
 operator|->
@@ -253,11 +554,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_transpose (Image image)
+DECL|function|Image_transpose (stp_image_t * image)
 name|Image_transpose
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -269,7 +572,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 name|int
 name|tmp
@@ -386,11 +693,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_hflip (Image image)
+DECL|function|Image_hflip (stp_image_t * image)
 name|Image_hflip
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -402,7 +711,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 name|i
 operator|->
@@ -417,11 +730,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_vflip (Image image)
+DECL|function|Image_vflip (stp_image_t * image)
 name|Image_vflip
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -433,7 +748,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 name|i
 operator|->
@@ -468,11 +787,13 @@ comment|/*  * Image_crop:  *  * Crop the given number of pixels off the LEFT, TO
 end_comment
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_crop (Image image,int left,int top,int right,int bottom)
+DECL|function|Image_crop (stp_image_t * image,int left,int top,int right,int bottom)
 name|Image_crop
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|,
 name|int
@@ -496,7 +817,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 name|int
 name|xmax
@@ -737,11 +1062,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_rotate_ccw (Image image)
+DECL|function|Image_rotate_ccw (stp_image_t * image)
 name|Image_rotate_ccw
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -759,11 +1086,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_rotate_cw (Image image)
+DECL|function|Image_rotate_cw (stp_image_t * image)
 name|Image_rotate_cw
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -781,11 +1110,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_rotate_180 (Image image)
+DECL|function|Image_rotate_180 (stp_image_t * image)
 name|Image_rotate_180
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -803,11 +1134,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|int
-DECL|function|Image_bpp (Image image)
+DECL|function|Image_bpp (stp_image_t * image)
 name|Image_bpp
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -819,7 +1152,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 return|return
 name|i
@@ -832,11 +1169,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|int
-DECL|function|Image_width (Image image)
+DECL|function|Image_width (stp_image_t * image)
 name|Image_width
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -848,7 +1187,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 return|return
 name|i
@@ -859,11 +1202,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|int
-DECL|function|Image_height (Image image)
+DECL|function|Image_height (stp_image_t * image)
 name|Image_height
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -875,7 +1220,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 return|return
 name|i
@@ -886,11 +1235,13 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|Image_get_row (Image image,unsigned char * data,int row)
+specifier|static
+name|stp_image_status_t
+DECL|function|Image_get_row (stp_image_t * image,unsigned char * data,int row)
 name|Image_get_row
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|,
 name|unsigned
@@ -910,7 +1261,11 @@ operator|(
 name|Gimp_Image_t
 operator|*
 operator|)
+operator|(
 name|image
+operator|->
+name|rep
+operator|)
 decl_stmt|;
 if|if
 condition|(
@@ -1089,15 +1444,20 @@ expr_stmt|;
 block|}
 block|}
 block|}
+return|return
+name|STP_IMAGE_OK
+return|;
 block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_progress_init (Image image)
+DECL|function|Image_progress_init (stp_image_t * image)
 name|Image_progress_init
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -1113,11 +1473,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_note_progress (Image image,double current,double total)
+DECL|function|Image_note_progress (stp_image_t * image,double current,double total)
 name|Image_note_progress
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|,
 name|double
@@ -1138,11 +1500,13 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
-DECL|function|Image_progress_conclude (Image image)
+DECL|function|Image_progress_conclude (stp_image_t * image)
 name|Image_progress_conclude
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
@@ -1155,13 +1519,15 @@ block|}
 end_function
 
 begin_function
+specifier|static
 specifier|const
 name|char
 modifier|*
-DECL|function|Image_get_appname (Image image)
+DECL|function|Image_get_appname (stp_image_t * image)
 name|Image_get_appname
 parameter_list|(
-name|Image
+name|stp_image_t
+modifier|*
 name|image
 parameter_list|)
 block|{
