@@ -670,6 +670,10 @@ argument_list|(
 name|gimage
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|drawable
+condition|)
 name|type
 operator|=
 name|gimp_drawable_type
