@@ -27,12 +27,6 @@ directive|include
 file|"imap_default_dialog.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"libgimp/stdplugins-intl.h"
-end_include
-
 begin_function
 specifier|static
 name|void
