@@ -3190,10 +3190,11 @@ name|core
 operator|->
 name|pixel_dist
 expr_stmt|;
-comment|/*  FIXME: need to adapt the spacing to the size  */
-comment|/*   lastscale = MIN (gimp_paint_tool->lastpressure, 1/256); */
-comment|/*   curscale = MIN (gimp_paint_tool->curpressure,  1/256); */
-comment|/*   spacing = gimp_paint_tool->spacing * sqrt (0.5 * (lastscale + curscale)); */
+comment|/*  FIXME: need to adapt the spacing to the size                       */
+comment|/*   lastscale = MIN (gimp_paint_tool->lastpressure, 1/256);           */
+comment|/*   curscale = MIN (gimp_paint_tool->curpressure,  1/256);            */
+comment|/*   spacing =                                                         */
+comment|/*     gimp_paint_tool->spacing * sqrt (0.5 * (lastscale + curscale)); */
 comment|/*  Compute spacing parameters such that a brush position will be    *  made each time the line crosses the *center* of a pixel row or    *  column, according to whether the line is mostly horizontal or    *  mostly vertical. The term "stripe" will mean "column" if the    *  line is horizontalish; "row" if the line is verticalish.    *    *  We start by deriving coefficients for a new parameter 's':    *      s = t * st_factor + st_offset    *  such that the "nice" brush positions are the ones with *integer*    *  s values. (Actually the value of s will be 1/2 less than the nice    *  brush position's x or y coordinate - note that st_factor may    *  be negative!)    */
 if|if
 condition|(
@@ -3776,6 +3777,9 @@ modifier|*
 name|current_brush
 decl_stmt|;
 name|gdouble
+name|pressure
+decl_stmt|;
+name|gdouble
 name|t
 init|=
 name|t0
@@ -3820,10 +3824,7 @@ name|delta_vec
 operator|.
 name|y
 expr_stmt|;
-name|core
-operator|->
-name|cur_coords
-operator|.
+comment|/*  avoid negative pressure, see bug #123811  */
 name|pressure
 operator|=
 name|core
@@ -3835,6 +3836,19 @@ operator|+
 name|t
 operator|*
 name|delta_pressure
+expr_stmt|;
+name|core
+operator|->
+name|cur_coords
+operator|.
+name|pressure
+operator|=
+name|MAX
+argument_list|(
+name|pressure
+argument_list|,
+literal|0.0
+argument_list|)
 expr_stmt|;
 name|core
 operator|->
