@@ -1541,7 +1541,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1624,7 +1624,7 @@ condition|)
 comment|/*  If there is a floating selection, and this aint it, use the move tool  */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -1728,7 +1728,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1780,7 +1780,7 @@ condition|)
 comment|/*  if there is a floating selection, and this aint it...  */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -2537,7 +2537,7 @@ name|black
 decl_stmt|,
 name|white
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -3264,7 +3264,7 @@ operator|&&
 operator|(
 name|layer
 operator|=
-name|layer_new
+name|gimp_layer_new
 argument_list|(
 name|gimage
 argument_list|,

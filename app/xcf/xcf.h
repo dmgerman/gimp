@@ -45,7 +45,7 @@ modifier|*
 name|filename
 decl_stmt|;
 DECL|member|active_layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
@@ -60,7 +60,7 @@ modifier|*
 name|floating_sel_drawable
 decl_stmt|;
 DECL|member|floating_sel
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;

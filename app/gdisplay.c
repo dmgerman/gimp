@@ -6562,7 +6562,7 @@ modifier|*
 name|y2
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -7801,7 +7801,7 @@ name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 init|=
@@ -7937,7 +7937,7 @@ condition|)
 block|{
 name|lm
 operator|=
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -7948,7 +7948,7 @@ name|FALSE
 expr_stmt|;
 name|alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -9929,8 +9929,6 @@ decl_stmt|;
 name|GSList
 modifier|*
 name|list
-init|=
-name|display_list
 decl_stmt|;
 name|gint
 name|count
@@ -9938,10 +9936,21 @@ init|=
 literal|0
 decl_stmt|;
 comment|/*  traverse the linked list of displays, handling each one  */
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
+operator|=
+name|display_list
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|gdisp
 operator|=
@@ -10033,13 +10042,6 @@ name|count
 operator|++
 expr_stmt|;
 block|}
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function

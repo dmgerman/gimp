@@ -200,7 +200,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|floating_sel
 argument_list|)
@@ -341,7 +341,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|floating_sel
 argument_list|)
@@ -482,7 +482,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|floating_sel
 argument_list|)
@@ -806,7 +806,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|floating_sel
 argument_list|)
@@ -975,7 +975,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|floating_sel
 argument_list|)

@@ -868,7 +868,7 @@ modifier|*
 name|layer
 parameter_list|)
 block|{
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -944,14 +944,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_set_layer_mask_edit (GimpImage * gimage,Layer * layer,gboolean edit)
+DECL|function|gimage_set_layer_mask_edit (GimpImage * gimage,GimpLayer * layer,gboolean edit)
 name|gimage_set_layer_mask_edit
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,

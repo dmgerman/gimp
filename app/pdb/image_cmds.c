@@ -7927,7 +7927,7 @@ name|drawable
 init|=
 name|NULL
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;

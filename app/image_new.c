@@ -997,7 +997,7 @@ name|GDisplay
 modifier|*
 name|display
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1176,7 +1176,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|layer_new
+name|gimp_layer_new
 argument_list|(
 name|image
 argument_list|,

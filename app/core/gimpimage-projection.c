@@ -422,7 +422,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -450,7 +450,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -478,7 +478,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -502,7 +502,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -681,7 +681,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2796c1910103
+DECL|enum|__anon275527d20103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -2176,11 +2176,11 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -2462,14 +2462,14 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
 operator|->
 name|data
 expr_stmt|;
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|layer
 argument_list|,
@@ -2538,11 +2538,11 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -2774,7 +2774,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -2783,7 +2783,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|layer_scale_by_factors
+name|gimp_layer_scale_by_factors
 argument_list|(
 name|layer
 argument_list|,
@@ -5810,7 +5810,7 @@ name|Tattoo
 name|val
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -5880,7 +5880,7 @@ decl_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layers
@@ -5889,9 +5889,12 @@ name|data
 expr_stmt|;
 name|ltattoo
 operator|=
-name|layer_get_tattoo
+name|gimp_drawable_get_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -6231,14 +6234,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|project_intensity (GimpImage * gimage,Layer * layer,PixelRegion * src,PixelRegion * dest,PixelRegion * mask)
+DECL|function|project_intensity (GimpImage * gimage,GimpLayer * layer,PixelRegion * src,PixelRegion * dest,PixelRegion * mask)
 name|project_intensity
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -6321,14 +6324,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|project_intensity_alpha (GimpImage * gimage,Layer * layer,PixelRegion * src,PixelRegion * dest,PixelRegion * mask)
+DECL|function|project_intensity_alpha (GimpImage * gimage,GimpLayer * layer,PixelRegion * src,PixelRegion * dest,PixelRegion * mask)
 name|project_intensity_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -6411,14 +6414,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|project_indexed (GimpImage * gimage,Layer * layer,PixelRegion * src,PixelRegion * dest)
+DECL|function|project_indexed (GimpImage * gimage,GimpLayer * layer,PixelRegion * src,PixelRegion * dest)
 name|project_indexed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -6477,14 +6480,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|project_indexed_alpha (GimpImage * gimage,Layer * layer,PixelRegion * src,PixelRegion * dest,PixelRegion * mask)
+DECL|function|project_indexed_alpha (GimpImage * gimage,GimpLayer * layer,PixelRegion * src,PixelRegion * dest,PixelRegion * mask)
 name|project_indexed_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -6738,7 +6741,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -6763,16 +6766,19 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
 operator|->
 name|data
 expr_stmt|;
-name|layer_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -6882,7 +6888,7 @@ name|gint
 name|h
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -6978,7 +6984,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -6989,7 +6995,7 @@ comment|/*  only add layers that are visible and not floating selections  	  to 
 if|if
 condition|(
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -7020,7 +7026,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|reverse_list
@@ -7638,7 +7644,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -7693,7 +7699,7 @@ decl_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -7725,7 +7731,7 @@ argument_list|)
 argument_list|)
 operator|&&
 operator|!
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -7840,7 +7846,7 @@ modifier|*
 name|active
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -7909,7 +7915,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -7970,21 +7976,21 @@ directive|if
 literal|0
 block|gint xoff;   gint yoff;
 comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
-block|gimage->construct_flag = 0;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE ((Layer*) gimage->layers->data),&xoff,&yoff);     }    if ((gimage->layers)&&
+block|gimage->construct_flag = 0;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE ((GimpLayer*) gimage->layers->data),&xoff,&yoff);     }    if ((gimage->layers)&&
 comment|/* There's a layer.      */
-block|(!g_slist_next(gimage->layers))&&
+block|(! g_slist_next (gimage->layers))&&
 comment|/* It's the only layer.  */
-block|(layer_has_alpha((Layer*)(gimage->layers->data)))&&
+block|(gimp_layer_has_alpha ((GimpLayer *) (gimage->layers->data)))&&
 comment|/* It's !flat.  */
 comment|/* It's visible.         */
-block|(gimp_drawable_visible (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))))&&       (gimp_drawable_width (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))) ==        gimage->width)&&       (gimp_drawable_height (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))) ==        gimage->height)&&
+block|(gimp_drawable_visible (GIMP_DRAWABLE (gimage->layers->data)))&&       (gimp_drawable_width (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->width)&&       (gimp_drawable_height (GIMP_DRAWABLE (gimage->layers->data)) ==        gimage->height)&&
 comment|/* Covers all.           */
 comment|/* Not indexed.          */
-block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE ((Layer*)(gimage->layers->data))))&&       (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
+block|(!gimp_drawable_is_indexed (GIMP_DRAWABLE (gimage->layers->data)))&&       (((GimpLayer *)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
 comment|/*opaq */
-block|)     {       gint xoff;       gint yoff;              gimp_drawable_offsets (GIMP_DRAWABLE ((Layer*)(gimage->layers->data)),&xoff,&yoff);         if ((xoff==0)&& (yoff==0))
+block|)     {       gint xoff;       gint yoff;              gimp_drawable_offsets (GIMP_DRAWABLE (gimage->layers->data),&xoff,&yoff);        if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
-block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE 			      ((Layer*)(gimage->layers->data))), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = 1; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
+block|{ 	  PixelRegion srcPR, destPR; 	  gpointer    pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE (gimage->layers->data)), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = 1; 	  gimp_image_construct_channels (gimage, x, y, w, h);  	  return; 	}     }
 else|#
 directive|else
 name|gimage
@@ -8839,7 +8845,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|tmp
@@ -8937,7 +8943,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_layer_index (const GimpImage * gimage,const Layer * layer_arg)
+DECL|function|gimp_image_get_layer_index (const GimpImage * gimage,const GimpLayer * layer_arg)
 name|gimp_image_get_layer_index
 parameter_list|(
 specifier|const
@@ -8946,12 +8952,12 @@ modifier|*
 name|gimage
 parameter_list|,
 specifier|const
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -9001,7 +9007,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layers
@@ -9026,7 +9032,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimp_image_get_layer_by_index (const GimpImage * gimage,gint layer_index)
 name|gimp_image_get_layer_by_index
@@ -9040,7 +9046,7 @@ name|gint
 name|layer_index
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -9066,7 +9072,7 @@ expr_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|g_slist_nth_data
@@ -9185,7 +9191,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimp_image_get_active_layer (const GimpImage * gimage)
 name|gimp_image_get_active_layer
@@ -9254,7 +9260,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimp_image_get_layer_by_tattoo (const GimpImage * gimage,Tattoo tattoo)
 name|gimp_image_get_layer_by_tattoo
@@ -9268,7 +9274,7 @@ name|Tattoo
 name|tattoo
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -9307,7 +9313,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layers
@@ -9316,9 +9322,12 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|layer_get_tattoo
+name|gimp_drawable_get_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 operator|==
 name|tattoo
@@ -9730,7 +9739,7 @@ modifier|*
 name|n_segs
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -9777,7 +9786,7 @@ block|{
 operator|*
 name|segs
 operator|=
-name|layer_boundary
+name|gimp_layer_boundary
 argument_list|(
 name|layer
 argument_list|,
@@ -9808,16 +9817,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_set_active_layer (GimpImage * gimage,Layer * layer)
+DECL|function|gimp_image_set_active_layer (GimpImage * gimage,GimpLayer * layer)
 name|gimp_image_set_active_layer
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -9869,7 +9878,7 @@ return|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|gimage
@@ -9898,10 +9907,6 @@ name|gimage
 operator|->
 name|layer_stack
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|layer
 argument_list|)
 expr_stmt|;
@@ -9915,15 +9920,11 @@ name|gimage
 operator|->
 name|layer_stack
 argument_list|,
-operator|(
-name|void
-operator|*
-operator|)
 name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  invalidate the selection boundary because of a layer modification  */
-name|layer_invalidate_boundary
+name|gimp_layer_invalidate_boundary
 argument_list|(
 name|layer
 argument_list|)
@@ -10290,7 +10291,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimp_image_pick_correlate_layer (const GimpImage * gimage,gint x,gint y)
 name|gimp_image_pick_correlate_layer
@@ -10307,7 +10308,7 @@ name|gint
 name|y
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -10346,7 +10347,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -10355,7 +10356,7 @@ name|data
 expr_stmt|;
 if|if
 condition|(
-name|layer_pick_correlate
+name|gimp_layer_pick_correlate
 argument_list|(
 name|layer
 argument_list|,
@@ -10375,16 +10376,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_raise_layer (GimpImage * gimage,Layer * layer_arg)
+DECL|function|gimp_image_raise_layer (GimpImage * gimage,GimpLayer * layer_arg)
 name|gimp_image_raise_layer
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -10469,16 +10470,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_lower_layer (GimpImage * gimage,Layer * layer_arg)
+DECL|function|gimp_image_lower_layer (GimpImage * gimage,GimpLayer * layer_arg)
 name|gimp_image_lower_layer
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -10575,16 +10576,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_raise_layer_to_top (GimpImage * gimage,Layer * layer_arg)
+DECL|function|gimp_image_raise_layer_to_top (GimpImage * gimage,GimpLayer * layer_arg)
 name|gimp_image_raise_layer_to_top
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -10652,7 +10653,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer_arg
 argument_list|)
@@ -10686,16 +10687,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_lower_layer_to_bottom (GimpImage * gimage,Layer * layer_arg)
+DECL|function|gimp_image_lower_layer_to_bottom (GimpImage * gimage,GimpLayer * layer_arg)
 name|gimp_image_lower_layer_to_bottom
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -10790,16 +10791,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_position_layer (GimpImage * gimage,Layer * layer_arg,gint new_index,gboolean push_undo)
+DECL|function|gimp_image_position_layer (GimpImage * gimage,GimpLayer * layer_arg,gint new_index,gboolean push_undo)
 name|gimp_image_position_layer
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|,
@@ -10810,7 +10811,7 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -10934,7 +10935,7 @@ comment|/* check if we want to move it below a bottom layer without alpha */
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|g_slist_last
@@ -10953,7 +10954,7 @@ operator|-
 literal|1
 operator|&&
 operator|!
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -11087,7 +11088,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimp_image_merge_visible_layers (GimpImage * gimage,MergeType merge_type)
 name|gimp_image_merge_visible_layers
@@ -11115,7 +11116,7 @@ name|had_floating_sel
 init|=
 name|FALSE
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 init|=
@@ -11173,7 +11174,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -11269,7 +11270,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimp_image_flatten (GimpImage * gimage)
 name|gimp_image_flatten
@@ -11289,7 +11290,7 @@ name|merge_list
 init|=
 name|NULL
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -11342,7 +11343,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -11397,16 +11398,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_down (GimpImage * gimage,Layer * current_layer,MergeType merge_type)
+DECL|function|gimp_image_merge_down (GimpImage * gimage,GimpLayer * current_layer,MergeType merge_type)
 name|gimp_image_merge_down
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|current_layer
 parameter_list|,
@@ -11424,7 +11425,7 @@ name|merge_list
 init|=
 name|NULL
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 init|=
@@ -11454,7 +11455,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -11483,7 +11484,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -11603,7 +11604,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimp_image_merge_layers (GimpImage * gimage,GSList * merge_list,MergeType merge_type)
 name|gimp_image_merge_layers
@@ -11637,15 +11638,15 @@ name|PixelRegion
 modifier|*
 name|mask
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|merge_layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|bottom
 decl_stmt|;
@@ -11772,7 +11773,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|merge_list
@@ -12182,7 +12183,7 @@ break|break;
 block|}
 name|merge_layer
 operator|=
-name|layer_new
+name|gimp_layer_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -12307,7 +12308,7 @@ block|{
 comment|/*  The final merged layer inherits the name of the bottom most layer        *  and the resulting layer has an alpha channel        *  whether or not the original did        *  Opacity is set to 100% and the MODE is set to normal        */
 name|merge_layer
 operator|=
-name|layer_new
+name|gimp_layer_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -12417,7 +12418,7 @@ comment|/*  Find the index in the layer list of the bottom layer--we need this  
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|reverse_list
@@ -12468,13 +12469,19 @@ name|NORMAL_MODE
 expr_stmt|;
 block|}
 comment|/* Copy the tattoo and parasites of the bottom layer to the new layer */
-name|layer_set_tattoo
+name|gimp_drawable_set_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|merge_layer
+argument_list|)
 argument_list|,
-name|layer_get_tattoo
+name|gimp_drawable_get_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -12503,7 +12510,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|reverse_list
@@ -12852,7 +12859,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|merge_list
@@ -12989,16 +12996,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_add_layer (GimpImage * gimage,Layer * float_layer,gint position)
+DECL|function|gimp_image_add_layer (GimpImage * gimage,GimpLayer * float_layer,gint position)
 name|gimp_image_add_layer
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|float_layer
 parameter_list|,
@@ -13121,7 +13128,7 @@ expr_stmt|;
 comment|/*  If the layer is a floating selection, set the ID  */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|float_layer
 argument_list|)
@@ -13342,16 +13349,16 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
-DECL|function|gimp_image_remove_layer (GimpImage * gimage,Layer * layer)
+DECL|function|gimp_image_remove_layer (GimpImage * gimage,GimpLayer * layer)
 name|gimp_image_remove_layer
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -13615,7 +13622,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -13872,7 +13879,7 @@ name|layer
 operator|->
 name|show_mask
 expr_stmt|;
-name|layer_apply_mask
+name|gimp_layer_apply_mask
 argument_list|(
 name|layer
 argument_list|,
@@ -15026,7 +15033,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -15643,7 +15650,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimp_image_floating_sel (const GimpImage * gimage)
 name|gimp_image_floating_sel
@@ -15987,11 +15994,11 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;
@@ -16182,7 +16189,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -16204,15 +16211,17 @@ block|{
 comment|/*  floating selections are added right above the layer  	      they are attached to  */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
 name|floating_sel
 operator|=
 name|layer
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -16263,7 +16272,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|reverse_list
@@ -16467,7 +16476,7 @@ name|bytes
 expr_stmt|;
 name|layer_buf
 operator|=
-name|layer_preview
+name|gimp_layer_preview
 argument_list|(
 name|layer
 argument_list|,
@@ -17070,7 +17079,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;

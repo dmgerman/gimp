@@ -113,10 +113,10 @@ end_include
 
 begin_function
 name|void
-DECL|function|floating_sel_attach (Layer * layer,GimpDrawable * drawable)
+DECL|function|floating_sel_attach (GimpLayer * layer,GimpDrawable * drawable)
 name|floating_sel_attach
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -129,7 +129,7 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;
@@ -261,10 +261,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_remove (Layer * layer)
+DECL|function|floating_sel_remove (GimpLayer * layer)
 name|floating_sel_remove
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -322,10 +322,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_anchor (Layer * layer)
+DECL|function|floating_sel_anchor (GimpLayer * layer)
 name|floating_sel_anchor
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -353,7 +353,7 @@ return|return;
 if|if
 condition|(
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -458,10 +458,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_reset (Layer * layer)
+DECL|function|floating_sel_reset (GimpLayer * layer)
 name|floating_sel_reset
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -580,7 +580,7 @@ operator|=
 operator|(
 operator|(
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|gimage
@@ -604,10 +604,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_to_layer (Layer * layer)
+DECL|function|floating_sel_to_layer (GimpLayer * layer)
 name|floating_sel_to_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -616,12 +616,12 @@ name|FStoLayerUndo
 modifier|*
 name|fsu
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -788,7 +788,7 @@ name|fsu
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */
-name|layer_invalidate_boundary
+name|gimp_layer_invalidate_boundary
 argument_list|(
 name|layer
 argument_list|)
@@ -852,23 +852,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_store (Layer * layer,int x,int y,int w,int h)
+DECL|function|floating_sel_store (GimpLayer * layer,gint x,gint y,gint w,gint h)
 name|floating_sel_store
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -877,12 +877,12 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1273,23 +1273,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_restore (Layer * layer,int x,int y,int w,int h)
+DECL|function|floating_sel_restore (GimpLayer * layer,gint x,gint y,gint w,gint h)
 name|floating_sel_restore
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -1298,12 +1298,12 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1589,14 +1589,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_rigor (Layer * layer,int undo)
+DECL|function|floating_sel_rigor (GimpLayer * layer,gint undo)
 name|floating_sel_rigor
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 name|undo
 parameter_list|)
 block|{
@@ -1674,14 +1674,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_relax (Layer * layer,int undo)
+DECL|function|floating_sel_relax (GimpLayer * layer,gint undo)
 name|floating_sel_relax
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 name|undo
 parameter_list|)
 block|{
@@ -1769,26 +1769,26 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_composite (Layer * layer,int x,int y,int w,int h,int undo)
+DECL|function|floating_sel_composite (GimpLayer * layer,gint x,gint y,gint w,gint h,gint undo)
 name|floating_sel_composite
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|int
+name|gint
 name|undo
 parameter_list|)
 block|{
@@ -1799,25 +1799,25 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|d_layer
 decl_stmt|;
-name|int
+name|gint
 name|preserve_trans
 decl_stmt|;
-name|int
+name|gint
 name|active
 index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|offx
 decl_stmt|,
 name|offy
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1826,7 +1826,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|d_layer
@@ -2290,14 +2290,14 @@ end_function
 begin_function
 name|BoundSeg
 modifier|*
-DECL|function|floating_sel_boundary (Layer * layer,int * num_segs)
+DECL|function|floating_sel_boundary (GimpLayer * layer,gint * num_segs)
 name|floating_sel_boundary
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|num_segs
 parameter_list|)
@@ -2531,10 +2531,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_invalidate (Layer * layer)
+DECL|function|floating_sel_invalidate (GimpLayer * layer)
 name|floating_sel_invalidate
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)

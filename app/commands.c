@@ -3366,7 +3366,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
@@ -3455,7 +3455,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
@@ -3861,7 +3861,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|layer_add_alpha
+name|gimp_layer_add_alpha
 argument_list|(
 name|gdisp
 operator|->
@@ -3939,7 +3939,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|layer_resize_to_image
+name|gimp_layer_resize_to_image
 argument_list|(
 name|gdisp
 operator|->

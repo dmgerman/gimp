@@ -154,7 +154,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimage_mask_float
 parameter_list|(
@@ -320,7 +320,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -335,7 +335,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)

@@ -1994,7 +1994,7 @@ name|ByColorSelect
 modifier|*
 name|by_col_sel
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;

@@ -302,7 +302,7 @@ name|layer_stack
 decl_stmt|;
 comment|/*  the layers in MRU order      */
 DECL|member|active_layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
@@ -314,7 +314,7 @@ name|active_channel
 decl_stmt|;
 comment|/*  ID of active channel         */
 DECL|member|floating_sel
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;
@@ -538,7 +538,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbff0f60103
+DECL|enum|__anon2b55342a0103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -566,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbff0f60203
+DECL|enum|__anon2b55342a0203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -621,7 +621,7 @@ struct|struct
 name|_GimpImageRepaintArg
 block|{
 DECL|member|layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1297,7 +1297,7 @@ modifier|*
 name|gimage
 parameter_list|,
 specifier|const
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -1305,7 +1305,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_get_layer_by_index
 parameter_list|(
@@ -1338,7 +1338,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_get_active_layer
 parameter_list|(
@@ -1364,7 +1364,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
@@ -1478,7 +1478,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_set_active_layer
 parameter_list|(
@@ -1486,7 +1486,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1556,7 +1556,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_pick_correlate_layer
 parameter_list|(
@@ -1575,7 +1575,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_raise_layer
 parameter_list|(
@@ -1583,7 +1583,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -1591,7 +1591,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_lower_layer
 parameter_list|(
@@ -1599,7 +1599,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -1607,7 +1607,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_raise_layer_to_top
 parameter_list|(
@@ -1615,7 +1615,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -1623,7 +1623,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_lower_layer_to_bottom
 parameter_list|(
@@ -1631,7 +1631,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|)
@@ -1639,7 +1639,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_position_layer
 parameter_list|(
@@ -1647,7 +1647,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer_arg
 parameter_list|,
@@ -1661,7 +1661,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_merge_visible_layers
 parameter_list|(
@@ -1676,7 +1676,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_merge_down
 parameter_list|(
@@ -1684,7 +1684,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|current_layer
 parameter_list|,
@@ -1695,7 +1695,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_flatten
 parameter_list|(
@@ -1707,7 +1707,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_merge_layers
 parameter_list|(
@@ -1726,7 +1726,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_add_layer
 parameter_list|(
@@ -1734,7 +1734,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|float_layer
 parameter_list|,
@@ -1745,7 +1745,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_remove_layer
 parameter_list|(
@@ -1753,7 +1753,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1789,7 +1789,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -2186,7 +2186,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_image_floating_sel
 parameter_list|(

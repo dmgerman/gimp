@@ -2780,14 +2780,14 @@ name|GimpImage
 modifier|*
 name|new_gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|,
 modifier|*
 name|new_layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -2812,7 +2812,7 @@ name|guide
 init|=
 name|NULL
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|active_layer
 init|=
@@ -2954,7 +2954,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -2970,7 +2970,7 @@ argument_list|)
 expr_stmt|;
 name|new_layer
 operator|=
-name|layer_copy
+name|gimp_layer_copy
 argument_list|(
 name|layer
 argument_list|,
@@ -2988,16 +2988,16 @@ name|new_gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure the copied layer doesn't say: "<old layer> copy"  */
-name|layer_set_name
+name|gimp_object_set_name
 argument_list|(
-name|GIMP_LAYER
+name|GIMP_OBJECT
 argument_list|(
 name|new_layer
 argument_list|)
 argument_list|,
-name|layer_get_name
+name|gimp_object_get_name
 argument_list|(
-name|GIMP_LAYER
+name|GIMP_OBJECT
 argument_list|(
 name|layer
 argument_list|)

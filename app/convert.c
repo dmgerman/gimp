@@ -34794,7 +34794,7 @@ parameter_list|(
 name|QuantizeObj
 modifier|*
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 parameter_list|,
 name|TileManager
@@ -34929,7 +34929,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2769860d0108
+DECL|struct|__anon297b7a980108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35006,7 +35006,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2769860d0208
+DECL|struct|__anon297b7a980208
 block|{
 DECL|member|ncolors
 name|long
@@ -35025,7 +35025,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2769860d0308
+DECL|struct|__anon297b7a980308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35168,7 +35168,7 @@ specifier|static
 name|void
 name|rgb_converter
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 parameter_list|,
 name|TileManager
@@ -35184,7 +35184,7 @@ specifier|static
 name|void
 name|grayscale_converter
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 parameter_list|,
 name|TileManager
@@ -35222,7 +35222,7 @@ name|generate_histogram_gray
 parameter_list|(
 name|CFHistogram
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 parameter_list|,
 name|int
@@ -35238,7 +35238,7 @@ name|generate_histogram_rgb
 parameter_list|(
 name|CFHistogram
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 parameter_list|,
 name|int
@@ -35996,10 +35996,10 @@ name|layers
 operator|->
 name|next
 operator|||
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|gimage
@@ -37374,10 +37374,10 @@ name|layers
 operator|->
 name|next
 operator|||
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|gimage
@@ -38378,7 +38378,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2769860d0408
+DECL|struct|__anon297b7a980408
 block|{
 DECL|member|used_count
 name|signed
@@ -39103,10 +39103,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|remap_indexed_layer (Layer * layer,unsigned char * remap_table,int num_entries)
+DECL|function|remap_indexed_layer (GimpLayer * layer,unsigned char * remap_table,int num_entries)
 name|remap_indexed_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -39146,7 +39146,7 @@ name|dest
 decl_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -39357,11 +39357,11 @@ name|QuantizeObj
 modifier|*
 name|quantobj
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -39543,7 +39543,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -39766,7 +39766,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -39782,7 +39782,7 @@ argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -40182,7 +40182,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -40456,10 +40456,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rgb_converter (Layer * layer,TileManager * new_tiles,int old_type)
+DECL|function|rgb_converter (GimpLayer * layer,TileManager * new_tiles,int old_type)
 name|rgb_converter
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -40514,7 +40514,7 @@ name|pr
 decl_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -40863,10 +40863,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|grayscale_converter (Layer * layer,TileManager * new_tiles,int old_type)
+DECL|function|grayscale_converter (GimpLayer * layer,TileManager * new_tiles,int old_type)
 name|grayscale_converter
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -40923,7 +40923,7 @@ name|pr
 decl_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -41385,13 +41385,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_gray (CFHistogram histogram,Layer * layer,int alpha_dither)
+DECL|function|generate_histogram_gray (CFHistogram histogram,GimpLayer * layer,int alpha_dither)
 name|generate_histogram_gray
 parameter_list|(
 name|CFHistogram
 name|histogram
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -41419,10 +41419,7 @@ name|has_alpha
 decl_stmt|;
 name|has_alpha
 operator|=
-operator|(
-name|gboolean
-operator|)
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -41527,13 +41524,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|generate_histogram_rgb (CFHistogram histogram,Layer * layer,int col_limit,int alpha_dither)
+DECL|function|generate_histogram_rgb (CFHistogram histogram,GimpLayer * layer,int col_limit,int alpha_dither)
 name|generate_histogram_rgb
 parameter_list|(
 name|CFHistogram
 name|histogram
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -41583,10 +41580,7 @@ name|offsety
 decl_stmt|;
 name|has_alpha
 operator|=
-operator|(
-name|gboolean
-operator|)
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -47446,14 +47440,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|median_cut_pass2_no_dither_gray (QuantizeObj * quantobj,Layer * layer,TileManager * new_tiles)
+DECL|function|median_cut_pass2_no_dither_gray (QuantizeObj * quantobj,GimpLayer * layer,TileManager * new_tiles)
 name|median_cut_pass2_no_dither_gray
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -47538,7 +47532,7 @@ argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -47839,14 +47833,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|median_cut_pass2_fixed_dither_gray (QuantizeObj * quantobj,Layer * layer,TileManager * new_tiles)
+DECL|function|median_cut_pass2_fixed_dither_gray (QuantizeObj * quantobj,GimpLayer * layer,TileManager * new_tiles)
 name|median_cut_pass2_fixed_dither_gray
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -47940,7 +47934,7 @@ argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -48320,14 +48314,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|median_cut_pass2_no_dither_rgb (QuantizeObj * quantobj,Layer * layer,TileManager * new_tiles)
+DECL|function|median_cut_pass2_no_dither_rgb (QuantizeObj * quantobj,GimpLayer * layer,TileManager * new_tiles)
 name|median_cut_pass2_no_dither_rgb
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -48455,7 +48449,7 @@ name|GRAY_PIX
 expr_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -48783,14 +48777,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|median_cut_pass2_fixed_dither_rgb (QuantizeObj * quantobj,Layer * layer,TileManager * new_tiles)
+DECL|function|median_cut_pass2_fixed_dither_rgb (QuantizeObj * quantobj,GimpLayer * layer,TileManager * new_tiles)
 name|median_cut_pass2_fixed_dither_rgb
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -48929,7 +48923,7 @@ name|GRAY_PIX
 expr_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -49427,14 +49421,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|median_cut_pass2_nodestruct_dither_rgb (QuantizeObj * quantobj,Layer * layer,TileManager * new_tiles)
+DECL|function|median_cut_pass2_nodestruct_dither_rgb (QuantizeObj * quantobj,GimpLayer * layer,TileManager * new_tiles)
 name|median_cut_pass2_nodestruct_dither_rgb
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -49542,7 +49536,7 @@ argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -50215,14 +50209,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|median_cut_pass2_fs_dither_gray (QuantizeObj * quantobj,Layer * layer,TileManager * new_tiles)
+DECL|function|median_cut_pass2_fs_dither_gray (QuantizeObj * quantobj,GimpLayer * layer,TileManager * new_tiles)
 name|median_cut_pass2_fs_dither_gray
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -50382,7 +50376,7 @@ argument_list|)
 expr_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -51244,14 +51238,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|median_cut_pass2_fs_dither_rgb (QuantizeObj * quantobj,Layer * layer,TileManager * new_tiles)
+DECL|function|median_cut_pass2_fs_dither_rgb (QuantizeObj * quantobj,GimpLayer * layer,TileManager * new_tiles)
 name|median_cut_pass2_fs_dither_rgb
 parameter_list|(
 name|QuantizeObj
 modifier|*
 name|quantobj
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -51486,7 +51480,7 @@ name|GRAY_PIX
 expr_stmt|;
 name|has_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)

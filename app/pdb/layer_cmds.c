@@ -743,7 +743,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|layer_new
+name|gimp_layer_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -1020,7 +1020,7 @@ operator|=
 operator|(
 name|copy
 operator|=
-name|layer_copy
+name|gimp_layer_copy
 argument_list|(
 name|layer
 argument_list|,
@@ -1247,7 +1247,7 @@ operator|=
 operator|(
 name|mask
 operator|=
-name|layer_create_mask
+name|gimp_layer_create_mask
 argument_list|(
 name|layer
 argument_list|,
@@ -1415,7 +1415,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -1548,7 +1548,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|layer_scale
+name|gimp_layer_scale
 argument_list|(
 name|layer
 argument_list|,
@@ -1712,7 +1712,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -1852,7 +1852,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|layer_resize
+name|gimp_layer_resize
 argument_list|(
 name|layer
 argument_list|,
@@ -2042,7 +2042,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|layer_delete
+name|gimp_layer_delete
 argument_list|(
 name|layer
 argument_list|)
@@ -2147,11 +2147,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|tmp_layer
 decl_stmt|;
@@ -2267,7 +2267,7 @@ block|{
 name|tmp_layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -2286,7 +2286,7 @@ name|tmp_layer
 operator|->
 name|linked
 condition|)
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|tmp_layer
 argument_list|,
@@ -2463,7 +2463,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|layer_add_alpha
+name|gimp_layer_add_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -2568,11 +2568,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|tmp_layer
 decl_stmt|;
@@ -2688,7 +2688,7 @@ block|{
 name|tmp_layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -2707,7 +2707,7 @@ name|tmp_layer
 operator|->
 name|linked
 condition|)
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|tmp_layer
 argument_list|,
@@ -3100,7 +3100,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -3265,7 +3265,7 @@ name|pdb_pointer
 operator|=
 name|g_strdup
 argument_list|(
-name|layer_get_name
+name|gimp_layer_get_name
 argument_list|(
 name|layer
 argument_list|)
@@ -3435,7 +3435,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|layer_set_name
+name|gimp_layer_set_name
 argument_list|(
 name|layer
 argument_list|,
@@ -6166,7 +6166,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|layer_get_tattoo
+name|gimp_layer_get_tattoo
 argument_list|(
 name|layer
 argument_list|)
@@ -6330,7 +6330,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|layer_set_tattoo
+name|gimp_layer_set_tattoo
 argument_list|(
 name|layer
 argument_list|,

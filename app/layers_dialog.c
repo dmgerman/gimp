@@ -543,7 +543,7 @@ specifier|static
 name|void
 name|layers_dialog_set_active_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -555,7 +555,7 @@ specifier|static
 name|void
 name|layers_dialog_unset_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -567,7 +567,7 @@ specifier|static
 name|void
 name|layers_dialog_position_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -582,7 +582,7 @@ specifier|static
 name|void
 name|layers_dialog_add_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -594,7 +594,7 @@ specifier|static
 name|void
 name|layers_dialog_remove_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -606,7 +606,7 @@ specifier|static
 name|void
 name|layers_dialog_add_layer_mask
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -618,7 +618,7 @@ specifier|static
 name|void
 name|layers_dialog_remove_layer_mask
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -812,7 +812,7 @@ name|LayerWidget
 modifier|*
 name|layer_widget_get_ID
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -829,7 +829,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1173,7 +1173,7 @@ specifier|static
 name|void
 name|layers_dialog_add_mask_query
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1189,7 +1189,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1205,7 +1205,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -2941,25 +2941,34 @@ block|{
 name|GSList
 modifier|*
 name|list
-init|=
-name|gimage
-operator|->
-name|layers
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
 comment|/*  Invalidate all previews ...    *  This is called during loading the image    */
-while|while
-condition|(
+for|for
+control|(
 name|list
-condition|)
+operator|=
+name|gimage
+operator|->
+name|layers
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -2975,13 +2984,6 @@ name|preview_valid
 operator|=
 name|FALSE
 expr_stmt|;
-name|list
-operator|=
-name|g_slist_next
-argument_list|(
-name|list
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -2996,7 +2998,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -3149,7 +3151,7 @@ comment|/*  create a layer list item  */
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -3227,7 +3229,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -3357,7 +3359,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -3465,7 +3467,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -5347,7 +5349,7 @@ name|GSList
 modifier|*
 name|prev
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -5382,7 +5384,7 @@ condition|)
 name|lm
 operator|=
 operator|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -5431,7 +5433,7 @@ name|alpha
 operator|=
 name|layer
 operator|&&
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -5491,7 +5493,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -5538,7 +5540,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|next
@@ -5547,7 +5549,7 @@ name|data
 expr_stmt|;
 name|next_alpha
 operator|=
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -6123,10 +6125,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_set_active_layer (Layer * layer)
+DECL|function|layers_dialog_set_active_layer (GimpLayer * layer)
 name|layers_dialog_set_active_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -6248,10 +6250,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_unset_layer (Layer * layer)
+DECL|function|layers_dialog_unset_layer (GimpLayer * layer)
 name|layers_dialog_unset_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -6366,10 +6368,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_position_layer (Layer * layer,gint new_index)
+DECL|function|layers_dialog_position_layer (GimpLayer * layer,gint new_index)
 name|layers_dialog_position_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
@@ -6543,10 +6545,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_add_layer (Layer * layer)
+DECL|function|layers_dialog_add_layer (GimpLayer * layer)
 name|layers_dialog_add_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -6652,10 +6654,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_remove_layer (Layer * layer)
+DECL|function|layers_dialog_remove_layer (GimpLayer * layer)
 name|layers_dialog_remove_layer
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -6729,10 +6731,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_add_layer_mask (Layer * layer)
+DECL|function|layers_dialog_add_layer_mask (GimpLayer * layer)
 name|layers_dialog_add_layer_mask
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -6812,10 +6814,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_remove_layer_mask (Layer * layer)
+DECL|function|layers_dialog_remove_layer_mask (GimpLayer * layer)
 name|layers_dialog_remove_layer_mask
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -6927,7 +6929,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -6958,7 +6960,7 @@ return|return;
 comment|/*  If the layer has an alpha channel, set the transparency and redraw  */
 if|if
 condition|(
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -7044,7 +7046,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -7154,7 +7156,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -7469,7 +7471,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
@@ -7549,7 +7551,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
@@ -7817,7 +7819,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -7886,11 +7888,11 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|active_layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
@@ -7926,7 +7928,7 @@ argument_list|)
 expr_stmt|;
 name|new_layer
 operator|=
-name|layer_copy
+name|gimp_layer_copy
 argument_list|(
 name|active_layer
 argument_list|,
@@ -7972,7 +7974,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -8004,7 +8006,7 @@ return|return;
 comment|/*  if the layer is a floating selection, take special care  */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -8150,7 +8152,7 @@ name|gimage
 operator|)
 condition|)
 return|return;
-name|layer_resize_to_image
+name|gimp_layer_resize_to_image
 argument_list|(
 name|gimage
 operator|->
@@ -8222,7 +8224,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -8254,7 +8256,7 @@ operator|)
 operator|!=
 name|NULL
 operator|&&
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -8341,7 +8343,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -8373,7 +8375,7 @@ operator|)
 operator|!=
 name|NULL
 operator|&&
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -8733,7 +8735,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -8762,7 +8764,7 @@ argument_list|)
 operator|)
 condition|)
 return|return;
-name|layer_add_alpha
+name|gimp_layer_add_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -8874,16 +8876,14 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
-init|=
-name|NULL
 decl_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|gtk_object_get_data
@@ -8907,7 +8907,7 @@ operator|->
 name|active_layer
 condition|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
@@ -8975,7 +8975,7 @@ argument_list|)
 expr_stmt|;
 name|new_layer
 operator|=
-name|layer_new
+name|gimp_layer_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -9017,7 +9017,7 @@ argument_list|,
 name|TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|new_layer
 argument_list|,
@@ -9123,14 +9123,14 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|gtk_object_get_data
@@ -9154,7 +9154,7 @@ operator|->
 name|active_layer
 operator|&&
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -9359,10 +9359,10 @@ begin_function
 specifier|static
 name|LayerWidget
 modifier|*
-DECL|function|layer_widget_get_ID (Layer * ID)
+DECL|function|layer_widget_get_ID (GimpLayer * ID)
 name|layer_widget_get_ID
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|ID
 parameter_list|)
@@ -9433,14 +9433,14 @@ begin_function
 specifier|static
 name|LayerWidget
 modifier|*
-DECL|function|layer_widget_create (GimpImage * gimage,Layer * layer)
+DECL|function|layer_widget_create (GimpImage * gimage,GimpLayer * layer)
 name|layer_widget_create
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -9593,7 +9593,7 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -10185,7 +10185,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -10260,7 +10260,7 @@ expr_stmt|;
 comment|/*  the layer name label */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -10284,9 +10284,12 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|layer_get_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10564,9 +10567,6 @@ argument_list|(
 name|invalidate_preview_callback
 argument_list|)
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|layer_widget
 argument_list|,
 name|GTK_OBJECT
@@ -10661,7 +10661,7 @@ if|if
 condition|(
 name|dest
 operator|&&
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|dest
 operator|->
@@ -10696,7 +10696,7 @@ if|if
 condition|(
 name|src
 operator|&&
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|src
 operator|->
@@ -10704,7 +10704,7 @@ name|layer
 argument_list|)
 operator|&&
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|src
 operator|->
@@ -10968,7 +10968,7 @@ name|context
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer_widget
 operator|->
@@ -10983,7 +10983,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b74a00108
+DECL|struct|__anon2bf6f4fc0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -10991,7 +10991,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -11131,7 +11131,7 @@ if|if
 condition|(
 name|dest
 operator|&&
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|dest
 operator|->
@@ -11166,7 +11166,7 @@ if|if
 condition|(
 name|src
 operator|&&
-name|layer_has_alpha
+name|gimp_layer_has_alpha
 argument_list|(
 name|src
 operator|->
@@ -11174,7 +11174,7 @@ name|layer
 argument_list|)
 operator|&&
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|src
 operator|->
@@ -12504,7 +12504,7 @@ name|valid
 operator|=
 name|GIMP_DRAWABLE
 argument_list|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer_widget
 operator|->
@@ -12518,7 +12518,7 @@ break|break;
 block|}
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer_widget
 operator|->
@@ -15119,7 +15119,7 @@ name|LayerWidget
 modifier|*
 name|layer_widget
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -15167,7 +15167,7 @@ comment|/*  to false if there is a floating selection, and this aint it  */
 if|if
 condition|(
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer_widget
 operator|->
@@ -15203,7 +15203,7 @@ block|}
 comment|/*  to true if there is a floating selection, and this is it  */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer_widget
 operator|->
@@ -15370,7 +15370,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer_widget
 operator|->
@@ -15387,11 +15387,14 @@ expr_stmt|;
 else|else
 name|name
 operator|=
-name|layer_get_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|layer_widget
 operator|->
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  we need to set the name label if necessary  */
@@ -15432,7 +15435,7 @@ expr_stmt|;
 comment|/*  show the layer mask preview if necessary  */
 if|if
 condition|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer_widget
 operator|->
@@ -15463,7 +15466,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer_widget
 operator|->
@@ -15507,7 +15510,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -15519,7 +15522,7 @@ operator|(
 operator|!
 name|GIMP_DRAWABLE
 argument_list|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -15759,7 +15762,7 @@ name|NewLayerOptions
 modifier|*
 name|options
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -15864,7 +15867,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|layer_new
+name|gimp_layer_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -16912,7 +16915,7 @@ name|EditLayerOptions
 modifier|*
 name|options
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -16945,7 +16948,7 @@ argument_list|)
 operator|->
 name|name
 operator|&&
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -16971,9 +16974,12 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
-name|layer_set_name
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|gtk_entry_get_text
 argument_list|(
@@ -17269,7 +17275,7 @@ argument_list|)
 argument_list|,
 operator|(
 operator|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer_widget
 operator|->
@@ -17281,11 +17287,14 @@ argument_list|(
 literal|"Floating Selection"
 argument_list|)
 else|:
-name|layer_get_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|layer_widget
 operator|->
 name|layer
+argument_list|)
 argument_list|)
 operator|)
 operator|)
@@ -17366,7 +17375,7 @@ modifier|*
 name|query_box
 decl_stmt|;
 DECL|member|layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -17442,7 +17451,7 @@ condition|)
 block|{
 name|mask
 operator|=
-name|layer_create_mask
+name|gimp_layer_create_mask
 argument_list|(
 name|layer
 argument_list|,
@@ -17477,10 +17486,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_add_mask_query (Layer * layer)
+DECL|function|layers_dialog_add_mask_query (GimpLayer * layer)
 name|layers_dialog_add_mask_query
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -17735,7 +17744,7 @@ struct|struct
 name|_ScaleLayerOptions
 block|{
 DECL|member|layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -17770,7 +17779,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -17847,7 +17856,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -17859,7 +17868,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|layer_scale
+name|gimp_layer_scale
 argument_list|(
 name|layer
 argument_list|,
@@ -17880,7 +17889,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -17929,14 +17938,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_scale_layer_query (GimpImage * gimage,Layer * layer)
+DECL|function|layers_dialog_scale_layer_query (GimpImage * gimage,GimpLayer * layer)
 name|layers_dialog_scale_layer_query
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -18079,7 +18088,7 @@ struct|struct
 name|_ResizeLayerOptions
 block|{
 DECL|member|layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -18114,7 +18123,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -18191,7 +18200,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -18203,7 +18212,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|layer_resize
+name|gimp_layer_resize
 argument_list|(
 name|layer
 argument_list|,
@@ -18234,7 +18243,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -18283,14 +18292,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_dialog_resize_layer_query (GimpImage * gimage,Layer * layer)
+DECL|function|layers_dialog_resize_layer_query (GimpImage * gimage,GimpLayer * layer)
 name|layers_dialog_resize_layer_query
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)

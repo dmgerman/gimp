@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e275e00103
+DECL|enum|__anon2ae8f2620103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -359,7 +359,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e275e00203
+DECL|enum|__anon2ae8f2620203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -488,7 +488,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -545,7 +545,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -682,7 +682,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1995,11 +1995,11 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -2723,7 +2723,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_layer_props (XcfInfo * info,GImage * gimage,Layer * layer)
+DECL|function|xcf_save_layer_props (XcfInfo * info,GImage * gimage,GimpLayer * layer)
 name|xcf_save_layer_props
 parameter_list|(
 name|XcfInfo
@@ -2734,7 +2734,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -6679,7 +6679,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xcf_save_layer (XcfInfo * info,GImage * gimage,Layer * layer)
+DECL|function|xcf_save_layer (XcfInfo * info,GImage * gimage,GimpLayer * layer)
 name|xcf_save_layer
 parameter_list|(
 name|XcfInfo
@@ -6690,7 +6690,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -8500,7 +8500,7 @@ end_function
 
 begin_function
 specifier|static
-name|GImage
+name|GimpImage
 modifier|*
 DECL|function|xcf_load_image (XcfInfo * info)
 name|xcf_load_image
@@ -8514,7 +8514,7 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -9947,7 +9947,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_layer_props (XcfInfo * info,GImage * gimage,Layer * layer)
+DECL|function|xcf_load_layer_props (XcfInfo * info,GImage * gimage,GimpLayer * layer)
 name|xcf_load_layer_props
 parameter_list|(
 name|XcfInfo
@@ -9958,7 +9958,7 @@ name|GImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -11087,7 +11087,7 @@ expr_stmt|;
 comment|/* create a new layer */
 name|layer
 operator|=
-name|layer_new
+name|gimp_layer_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -11303,7 +11303,7 @@ condition|(
 name|add_floating_sel
 condition|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;
@@ -11329,9 +11329,12 @@ name|layer
 return|;
 name|error
 label|:
-name|layer_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -11554,7 +11557,7 @@ condition|(
 name|add_floating_sel
 condition|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;
@@ -11808,7 +11811,7 @@ condition|(
 name|add_floating_sel
 condition|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;

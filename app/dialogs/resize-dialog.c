@@ -7639,7 +7639,7 @@ name|list
 init|=
 name|NULL
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 init|=
@@ -7694,7 +7694,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -7703,7 +7703,7 @@ name|data
 expr_stmt|;
 name|success
 operator|=
-name|layer_check_scaling
+name|gimp_layer_check_scaling
 argument_list|(
 name|layer
 argument_list|,

@@ -560,7 +560,7 @@ name|EditType
 name|edit_type
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -697,7 +697,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -944,7 +944,7 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1175,7 +1175,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -1373,11 +1373,11 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -1517,7 +1517,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -1534,13 +1534,13 @@ name|gimage
 operator|->
 name|active_layer
 operator|||
-name|layer_linked
+name|gimp_layer_linked
 argument_list|(
 name|layer
 argument_list|)
 condition|)
 block|{
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|layer
 argument_list|,
@@ -1705,7 +1705,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|layer
 argument_list|,
@@ -2069,7 +2069,7 @@ name|Selection
 modifier|*
 name|select
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -2140,7 +2140,7 @@ argument_list|)
 expr_stmt|;
 name|floating_sel
 operator|=
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -2419,7 +2419,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -2440,7 +2440,7 @@ operator|->
 name|active_layer
 operator|)
 operator|&&
-name|layer_linked
+name|gimp_layer_linked
 argument_list|(
 name|layer
 argument_list|)
@@ -3208,11 +3208,11 @@ name|mask_inc_x
 decl_stmt|,
 name|mask_inc_y
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -3470,7 +3470,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -3544,7 +3544,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_list
@@ -3565,13 +3565,13 @@ operator|->
 name|active_layer
 operator|)
 operator|||
-name|layer_linked
+name|gimp_layer_linked
 argument_list|(
 name|layer
 argument_list|)
 condition|)
 block|{
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|layer
 argument_list|,
@@ -3604,7 +3604,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|layer
 argument_list|,

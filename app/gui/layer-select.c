@@ -140,7 +140,7 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|current_layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|current_layer
 decl_stmt|;
@@ -938,7 +938,7 @@ name|GSList
 modifier|*
 name|nth
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -994,7 +994,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -1052,7 +1052,7 @@ block|{
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|nth
@@ -1412,7 +1412,7 @@ modifier|*
 name|layer_select
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1758,7 +1758,7 @@ modifier|*
 name|layer_select
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1823,11 +1823,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
 name|render_fs_preview
 argument_list|(
 name|layer_select
@@ -1839,6 +1840,7 @@ operator|->
 name|layer_pixmap
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|gint
@@ -1928,7 +1930,7 @@ argument_list|)
 expr_stmt|;
 name|preview_buf
 operator|=
-name|layer_preview
+name|gimp_layer_preview
 argument_list|(
 name|layer
 argument_list|,

@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb0a08b0103
+DECL|enum|__anon29b361d40103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -887,10 +887,10 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|edit_cut (GImage * gimage,GimpDrawable * drawable)
+DECL|function|edit_cut (GimpImage * gimage,GimpDrawable * drawable)
 name|edit_cut
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1046,10 +1046,10 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|edit_copy (GImage * gimage,GimpDrawable * drawable)
+DECL|function|edit_copy (GimpImage * gimage,GimpDrawable * drawable)
 name|edit_copy
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1191,10 +1191,10 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|edit_paste (GImage * gimage,GimpDrawable * drawable,TileManager * paste,gboolean paste_into)
+DECL|function|edit_paste (GimpImage * gimage,GimpDrawable * drawable,TileManager * paste,gboolean paste_into)
 name|edit_paste
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1210,7 +1210,7 @@ name|gboolean
 name|paste_into
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1237,7 +1237,7 @@ name|NULL
 condition|)
 name|layer
 operator|=
-name|layer_new_from_tiles
+name|gimp_layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
@@ -1261,7 +1261,7 @@ expr_stmt|;
 else|else
 name|layer
 operator|=
-name|layer_new_from_tiles
+name|gimp_layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
@@ -1487,10 +1487,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|edit_paste_as_new (GImage * invoke,TileManager * paste)
+DECL|function|edit_paste_as_new (GimpImage * invoke,TileManager * paste)
 name|edit_paste_as_new
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|invoke
 parameter_list|,
@@ -1499,11 +1499,11 @@ modifier|*
 name|paste
 parameter_list|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1566,7 +1566,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|layer_new_from_tiles
+name|gimp_layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
@@ -1646,10 +1646,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|edit_clear (GImage * gimage,GimpDrawable * drawable)
+DECL|function|edit_clear (GimpImage * gimage,GimpDrawable * drawable)
 name|edit_clear
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -1897,10 +1897,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|edit_fill (GImage * gimage,GimpDrawable * drawable,GimpFillType fill_type)
+DECL|function|edit_fill (GimpImage * gimage,GimpDrawable * drawable,GimpFillType fill_type)
 name|edit_fill
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

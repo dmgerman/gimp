@@ -160,7 +160,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3007cc0103
+DECL|enum|__anon2c3fe22e0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -4077,7 +4077,7 @@ condition|)
 block|{
 name|tmpbuf
 operator|=
-name|layer_preview
+name|gimp_layer_preview
 argument_list|(
 name|GIMP_LAYER
 argument_list|(

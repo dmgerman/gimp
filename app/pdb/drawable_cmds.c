@@ -4586,7 +4586,7 @@ argument_list|)
 condition|)
 name|buf
 operator|=
-name|layer_preview
+name|gimp_layer_preview
 argument_list|(
 name|GIMP_LAYER
 argument_list|(

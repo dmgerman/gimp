@@ -144,19 +144,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Layer
-typedef|typedef
-name|GimpLayer
-name|Layer
-typedef|;
-end_typedef
-
-begin_comment
-DECL|typedef|Layer
-comment|/* convenience */
-end_comment
-
-begin_typedef
 DECL|typedef|GimpImage
 typedef|typedef
 name|struct

@@ -1694,7 +1694,7 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|&&
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|GIMP_LAYER
 argument_list|(
@@ -2815,7 +2815,7 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|&&
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|GIMP_LAYER
 argument_list|(
@@ -7164,7 +7164,7 @@ name|gimage
 argument_list|)
 condition|)
 block|{
-comment|/* set the keep_indexed flag to FALSE here, since we use  	 layer_new_from_tiles() later which assumes that the tiles 	 are either RGB or GRAY.  Eeek!!!              (Sven)        */
+comment|/* set the keep_indexed flag to FALSE here, since we use  	 gimp_layer_new_from_tiles() later which assumes that the tiles 	 are either RGB or GRAY.  Eeek!!!              (Sven)        */
 name|tiles
 operator|=
 name|gimage_mask_extract
@@ -7264,7 +7264,7 @@ name|gboolean
 name|new_layer
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 init|=
@@ -7276,7 +7276,7 @@ name|channel
 init|=
 name|NULL
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -7287,7 +7287,7 @@ condition|)
 block|{
 name|layer
 operator|=
-name|layer_new_from_tiles
+name|gimp_layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
@@ -7316,7 +7316,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"transform_core_paste: layer_new_frome_tiles() failed"
+literal|"transform_core_paste: gimp_layer_new_frome_tiles() failed"
 argument_list|)
 expr_stmt|;
 return|return
@@ -7418,7 +7418,7 @@ if|if
 condition|(
 name|layer
 condition|)
-name|layer_add_alpha
+name|gimp_layer_add_alpha
 argument_list|(
 name|layer
 argument_list|)

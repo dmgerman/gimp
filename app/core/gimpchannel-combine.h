@@ -23,10 +23,6 @@ file|"gimpdrawable.h"
 end_include
 
 begin_comment
-comment|/* OPERATIONS */
-end_comment
-
-begin_comment
 comment|/*  Half way point where a region is no longer visible in a selection  */
 end_comment
 
@@ -984,14 +980,6 @@ name|channel
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_define
-DECL|macro|gimp_drawable_channel
-define|#
-directive|define
-name|gimp_drawable_channel
-value|GIMP_IS_CHANNEL
-end_define
 
 begin_endif
 endif|#

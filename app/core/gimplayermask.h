@@ -23,14 +23,6 @@ file|"channel.h"
 end_include
 
 begin_define
-DECL|macro|gimp_drawable_layer_mask
-define|#
-directive|define
-name|gimp_drawable_layer_mask
-value|GIMP_IS_LAYER_MASK
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_LAYER_MASK
 define|#
 directive|define
@@ -236,7 +228,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Layer
+name|GimpLayer
 modifier|*
 name|gimp_layer_mask_get_layer
 parameter_list|(

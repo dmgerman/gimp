@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2784121f0103
+DECL|enum|__anon27aa2c590103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -1010,7 +1010,7 @@ specifier|static
 name|gint
 name|layer_size
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1073,10 +1073,10 @@ end_decl_stmt
 begin_function
 specifier|static
 name|gint
-DECL|function|layer_size (Layer * layer)
+DECL|function|layer_size (GimpLayer * layer)
 name|layer_size
 parameter_list|(
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1088,7 +1088,7 @@ name|size
 operator|=
 sizeof|sizeof
 argument_list|(
-name|Layer
+name|GimpLayer
 argument_list|)
 operator|+
 name|GIMP_DRAWABLE
@@ -1124,7 +1124,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -1135,7 +1135,7 @@ name|channel_size
 argument_list|(
 name|GIMP_CHANNEL
 argument_list|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)
@@ -5171,7 +5171,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  invalidate the selection boundary because of a layer modification  */
-name|layer_invalidate_boundary
+name|gimp_layer_invalidate_boundary
 argument_list|(
 name|layer
 argument_list|)
@@ -6160,7 +6160,7 @@ expr_stmt|;
 comment|/*  reset the gimage values  */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|lu
 operator|->
@@ -6237,7 +6237,7 @@ name|active_layer
 operator|!=
 name|NULL
 condition|)
-name|layer_invalidate_boundary
+name|gimp_layer_invalidate_boundary
 argument_list|(
 operator|(
 name|gimage
@@ -6249,7 +6249,7 @@ expr_stmt|;
 comment|/*  if this is a floating selection, set the fs pointer  */
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|lu
 operator|->
@@ -6458,7 +6458,7 @@ decl_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|layer_ptr
@@ -8548,7 +8548,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/*  clear the selection  */
-name|layer_invalidate_boundary
+name|gimp_layer_invalidate_boundary
 argument_list|(
 name|fsu
 operator|->
@@ -8630,7 +8630,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */
-name|layer_invalidate_boundary
+name|gimp_layer_invalidate_boundary
 argument_list|(
 name|fsu
 operator|->
@@ -8844,7 +8844,7 @@ block|{
 name|gint32
 name|layer_ID
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -8882,7 +8882,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|floating_layer
 argument_list|)
@@ -9144,7 +9144,7 @@ block|{
 name|gint32
 name|layer_ID
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -9182,7 +9182,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|floating_layer
 argument_list|)
@@ -11600,9 +11600,12 @@ name|old_name
 operator|=
 name|g_strdup
 argument_list|(
-name|layer_get_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11651,19 +11654,25 @@ name|tmp
 operator|=
 name|g_strdup
 argument_list|(
-name|layer_get_name
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|data
 operator|->
 name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|layer_set_name
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
 argument_list|(
 name|data
 operator|->
 name|layer
+argument_list|)
 argument_list|,
 name|data
 operator|->

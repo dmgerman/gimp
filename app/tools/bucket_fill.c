@@ -1233,7 +1233,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;

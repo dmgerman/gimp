@@ -304,7 +304,7 @@ modifier|*
 name|active_channel
 decl_stmt|;
 DECL|member|floating_sel
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;
@@ -6920,7 +6920,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44deb60108
+DECL|struct|__anon2bb7b0d70108
 block|{
 DECL|member|gimage
 name|GimpImage

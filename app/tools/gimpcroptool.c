@@ -726,7 +726,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf8e0e30103
+DECL|enum|__anon27e79e640103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -2176,7 +2176,7 @@ name|Crop
 modifier|*
 name|crop
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -3354,7 +3354,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -4567,11 +4567,11 @@ name|gboolean
 name|crop_layers
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_layer
 decl_stmt|;
@@ -4654,7 +4654,7 @@ name|active_layer
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -4696,7 +4696,7 @@ operator|-
 name|y1
 operator|)
 expr_stmt|;
-name|layer_resize
+name|gimp_layer_resize
 argument_list|(
 name|layer
 argument_list|,
@@ -4711,7 +4711,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -4863,7 +4863,7 @@ decl_stmt|;
 name|layer
 operator|=
 operator|(
-name|Layer
+name|GimpLayer
 operator|*
 operator|)
 name|list
@@ -4877,7 +4877,7 @@ argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|layer
 argument_list|,
@@ -5011,7 +5011,7 @@ name|width
 operator|&&
 name|height
 condition|)
-name|layer_resize
+name|gimp_layer_resize
 argument_list|(
 name|layer
 argument_list|,
@@ -6492,7 +6492,7 @@ name|Crop
 modifier|*
 name|crop
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;

@@ -3179,15 +3179,15 @@ condition|(
 name|drawable
 condition|)
 block|{
-name|GImage
+name|GimpImage
 modifier|*
 name|src_gimage
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
-name|GImage
+name|GimpImage
 modifier|*
 name|dest_gimage
 decl_stmt|;
@@ -3463,7 +3463,7 @@ argument_list|)
 expr_stmt|;
 name|new_layer
 operator|=
-name|layer_new_from_tiles
+name|gimp_layer_new_from_tiles
 argument_list|(
 name|dest_gimage
 argument_list|,
@@ -3528,7 +3528,7 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
-name|layer_translate
+name|gimp_layer_translate
 argument_list|(
 name|new_layer
 argument_list|,

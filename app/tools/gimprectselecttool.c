@@ -2297,11 +2297,11 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|floating_sel
 decl_stmt|;

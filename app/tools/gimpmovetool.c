@@ -136,7 +136,7 @@ struct|struct
 name|_MoveTool
 block|{
 DECL|member|layer
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -326,7 +326,7 @@ name|MoveTool
 modifier|*
 name|move
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -590,7 +590,7 @@ name|gimage
 argument_list|)
 operator|&&
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -1468,7 +1468,7 @@ name|Guide
 modifier|*
 name|guide
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1714,7 +1714,7 @@ name|gimage
 argument_list|)
 operator|&&
 operator|!
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)

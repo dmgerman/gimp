@@ -190,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cf9b770103
+DECL|enum|__anon296589310103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -1485,7 +1485,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;

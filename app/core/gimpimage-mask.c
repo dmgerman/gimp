@@ -191,7 +191,7 @@ name|GimpDrawable
 modifier|*
 name|d
 decl_stmt|;
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -519,7 +519,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -560,7 +560,7 @@ if|if
 condition|(
 name|layer
 operator|&&
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer
 argument_list|)
@@ -1280,7 +1280,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|layer_is_floating_sel
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|GIMP_LAYER
 argument_list|(
@@ -1363,7 +1363,7 @@ block|}
 end_function
 
 begin_function
-name|Layer
+name|GimpLayer
 modifier|*
 DECL|function|gimage_mask_float (GImage * gimage,GimpDrawable * drawable,gint off_x,gint off_y)
 name|gimage_mask_float
@@ -1384,7 +1384,7 @@ name|gint
 name|off_y
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1497,7 +1497,7 @@ expr_stmt|;
 comment|/*  Create a new layer from the buffer  */
 name|layer
 operator|=
-name|layer_new_from_tiles
+name|gimp_layer_new_from_tiles
 argument_list|(
 name|gimage
 argument_list|,
@@ -1867,14 +1867,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_layer_alpha (GImage * gimage,Layer * layer)
+DECL|function|gimage_mask_layer_alpha (GimpImage * gimage,GimpLayer * layer)
 name|gimage_mask_layer_alpha
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1921,14 +1921,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_mask_layer_mask (GImage * gimage,Layer * layer)
+DECL|function|gimage_mask_layer_mask (GimpImage * gimage,GimpLayer * layer)
 name|gimage_mask_layer_mask
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 parameter_list|)
@@ -1936,7 +1936,7 @@ block|{
 comment|/*  extract the layer's alpha channel  */
 if|if
 condition|(
-name|layer_get_mask
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
 argument_list|)

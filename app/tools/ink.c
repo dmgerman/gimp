@@ -5447,7 +5447,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|Layer
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -6111,7 +6111,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2afd2d410103
+DECL|enum|__anon2aa1fbc80103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
