@@ -119,6 +119,10 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_pixel_fetcher_new:  * @drawable: the #GimpDrawable the new region will be attached to.  * @shadow:   a #gboolean indicating whether the region is attached to  *            the shadow tiles or the real %drawable tiles.  *  * Initialize a pixel region from the drawable.  *  * Return value: a pointer to a #GimpPixelRgn structure (or NULL).  **/
+end_comment
+
 begin_function
 name|GimpPixelFetcher
 modifier|*
@@ -353,6 +357,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_fetcher_destroy:  * @pf: a pointer to a previously initialized #GimpPixelFetcher.  *  * Close a previously initializd pixel region.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pixel_fetcher_destroy (GimpPixelFetcher * pf)
@@ -395,6 +403,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_fetcher_set_edge_mode:  * @pf:   a pointer to a previously initialized #GimpPixelFetcher.  * @mode: the new edge mode from #GimpPixelFetcherEdgeMode.  *  * Change the edage mode of a previously initialized pixel region.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pixel_fetcher_set_edge_mode (GimpPixelFetcher * pf,GimpPixelFetcherEdgeMode mode)
@@ -423,6 +435,10 @@ name|mode
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pixel_fetcher_set_bg_color:  * @pf:    a pointer to a previously initialized #GimpPixelFetcher.  * @color: the color to be used as bg color.  *  * Change the background color of a previously initialized pixel region.  **/
+end_comment
 
 begin_function
 name|void
@@ -528,6 +544,10 @@ break|break;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pixel_fetcher_get_pixel:  * @pf:    a pointer to a previously initialized #GimpPixelFetcher.  * @x:     the x coordinate of the pixel to get.  * @y:     the y coordinate of the pixel to get.  * @pixel: the memory location where to return the pixel.  *  * Get a pixel from the pixel region.  **/
+end_comment
 
 begin_function
 name|void
@@ -836,6 +856,10 @@ condition|)
 do|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pixel_fetcher_put_pixel:  * @pf:    a pointer to a previously initialized #GimpPixelFetcher.  * @x:     the x coordinate of the pixel to set.  * @y:     the y coordinate of the pixel to set.  * @pixel: the pixel to set.  *  * Set a pixel in the pixel region.  **/
+end_comment
 
 begin_function
 name|void
