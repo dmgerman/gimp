@@ -238,16 +238,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|app_exit_finish
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|really_quit_dialog
 parameter_list|(
 name|void
@@ -1123,12 +1113,26 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|app_exit_finish ()
 name|app_exit_finish
 parameter_list|()
 block|{
+specifier|static
+name|gint
+name|once
+init|=
+literal|0
+decl_stmt|;
+if|if
+condition|(
+name|once
+condition|)
+return|return;
+name|once
+operator|=
+literal|1
+expr_stmt|;
 name|lc_dialog_free
 argument_list|()
 expr_stmt|;
@@ -1207,10 +1211,9 @@ name|tools_options_dialog_free
 argument_list|()
 expr_stmt|;
 block|}
-name|gtk_exit
-argument_list|(
-literal|0
-argument_list|)
+comment|/*  gtk_exit (0); */
+name|gtk_main_quit
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -1242,7 +1245,7 @@ name|really_quit_dialog
 argument_list|()
 expr_stmt|;
 else|else
-name|app_exit_finish
+name|toolbox_free
 argument_list|()
 expr_stmt|;
 block|}
@@ -1272,7 +1275,7 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
-name|app_exit_finish
+name|toolbox_free
 argument_list|()
 expr_stmt|;
 block|}
