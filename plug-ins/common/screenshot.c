@@ -128,7 +128,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b854e5c0108
+DECL|struct|__anon2c314c130108
 block|{
 DECL|member|root
 name|gboolean
@@ -213,7 +213,6 @@ specifier|static
 name|GdkNativeWindow
 name|select_window
 parameter_list|(
-specifier|const
 name|GdkScreen
 modifier|*
 name|screen
@@ -322,6 +321,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|image_ID
+specifier|static
 name|gint32
 name|image_ID
 init|=
@@ -332,6 +332,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|run_flag
+specifier|static
 name|gboolean
 name|run_flag
 init|=
@@ -345,6 +346,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|cur_screen
+specifier|static
 name|GdkScreen
 modifier|*
 name|cur_screen
@@ -359,6 +361,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|selected_native
+specifier|static
 name|GdkNativeWindow
 name|selected_native
 decl_stmt|;
@@ -801,10 +804,9 @@ end_comment
 begin_function
 specifier|static
 name|GdkNativeWindow
-DECL|function|select_window (const GdkScreen * screen)
+DECL|function|select_window (GdkScreen * screen)
 name|select_window
 parameter_list|(
-specifier|const
 name|GdkScreen
 modifier|*
 name|screen
@@ -851,20 +853,14 @@ name|x_dpy
 operator|=
 name|GDK_SCREEN_XDISPLAY
 argument_list|(
-name|GDK_SCREEN
-argument_list|(
 name|screen
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|x_scr
 operator|=
 name|GDK_SCREEN_XNUMBER
 argument_list|(
-name|GDK_SCREEN
-argument_list|(
 name|screen
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|x_win
@@ -1140,20 +1136,14 @@ name|width
 operator|=
 name|gdk_pixbuf_get_width
 argument_list|(
-name|GDK_PIXBUF
-argument_list|(
 name|pixbuf
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
 name|gdk_pixbuf_get_height
 argument_list|(
-name|GDK_PIXBUF
-argument_list|(
 name|pixbuf
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|image
@@ -1242,20 +1232,14 @@ name|rowstride
 operator|=
 name|gdk_pixbuf_get_rowstride
 argument_list|(
-name|GDK_PIXBUF
-argument_list|(
 name|pixbuf
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|buf
 operator|=
 name|gdk_pixbuf_get_pixels
 argument_list|(
-name|GDK_PIXBUF
-argument_list|(
 name|pixbuf
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|status
@@ -1468,20 +1452,14 @@ name|screen_w
 operator|=
 name|gdk_screen_get_width
 argument_list|(
-name|GDK_SCREEN
-argument_list|(
 name|cur_screen
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|screen_h
 operator|=
 name|gdk_screen_get_height
 argument_list|(
-name|GDK_SCREEN
-argument_list|(
 name|cur_screen
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|clip
@@ -1508,10 +1486,7 @@ name|window
 operator|=
 name|gdk_screen_get_root_window
 argument_list|(
-name|GDK_SCREEN
-argument_list|(
 name|cur_screen
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1564,7 +1539,7 @@ return|return;
 block|}
 name|gdk_drawable_get_size
 argument_list|(
-name|GDK_WINDOW
+name|GDK_DRAWABLE
 argument_list|(
 name|window
 argument_list|)
@@ -1582,10 +1557,7 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_get_origin
 argument_list|(
-name|GDK_WINDOW
-argument_list|(
 name|window
-argument_list|)
 argument_list|,
 operator|&
 name|origin
@@ -1711,10 +1683,7 @@ name|gdk_pixbuf_get_from_drawable
 argument_list|(
 name|NULL
 argument_list|,
-name|GDK_WINDOW
-argument_list|(
 name|window
-argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1743,10 +1712,7 @@ name|gdk_display_beep
 argument_list|(
 name|gdk_screen_get_display
 argument_list|(
-name|GDK_SCREEN
-argument_list|(
 name|cur_screen
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1773,10 +1739,7 @@ name|image_ID
 operator|=
 name|create_image
 argument_list|(
-name|GDK_PIXBUF
-argument_list|(
 name|screenshot
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1809,10 +1772,7 @@ name|cur_screen
 operator|=
 name|gtk_widget_get_screen
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
 name|widget
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
@@ -1839,10 +1799,7 @@ name|selected_native
 operator|=
 name|select_window
 argument_list|(
-name|GDK_SCREEN
-argument_list|(
 name|cur_screen
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
