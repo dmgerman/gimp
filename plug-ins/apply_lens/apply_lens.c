@@ -18,6 +18,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -161,7 +167,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fad3330108
+DECL|struct|__anon2c2fcf820108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -206,7 +212,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fad3330208
+DECL|struct|__anon2c2fcf820208
 block|{
 DECL|member|run
 name|gint

@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2adf8acd0103
+DECL|enum|__anon2c2fb9c40103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -3117,6 +3117,13 @@ operator|->
 name|progress_bar
 operator|=
 name|NULL
+expr_stmt|;
+name|plug_in
+operator|->
+name|progress_gdisp_ID
+operator|=
+operator|-
+literal|1
 expr_stmt|;
 name|plug_in
 operator|->

@@ -669,7 +669,7 @@ block|,
 block|{
 literal|"/View/Zoom In"
 block|,
-literal|"="
+literal|"equal"
 block|,
 name|view_zoomin_cmd_callback
 block|,
@@ -679,7 +679,7 @@ block|,
 block|{
 literal|"/View/Zoom Out"
 block|,
-literal|"-"
+literal|"minus"
 block|,
 name|view_zoomout_cmd_callback
 block|,
