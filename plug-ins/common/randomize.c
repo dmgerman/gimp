@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf56d1f0108
+DECL|struct|__anon28fee65f0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -212,9 +212,14 @@ name|gdouble
 name|rndm_rcount
 decl_stmt|;
 comment|/* repeat count */
-DECL|member|rndm_seed
+DECL|member|randomize
+name|gboolean
+name|randomize
+decl_stmt|;
+comment|/* Whether to use a random seed */
+DECL|member|seed
 name|guint
-name|rndm_seed
+name|seed
 decl_stmt|;
 comment|/* seed value for g_rand_set_seed() function */
 DECL|typedef|RandomizeVals
@@ -233,6 +238,8 @@ block|{
 literal|50.0
 block|,
 literal|1.0
+block|,
+name|FALSE
 block|,
 name|SEED_DEFAULT
 block|}
@@ -428,9 +435,17 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"rndm_seed"
+literal|"randomize"
 block|,
-literal|"Seed value (used only if seed type is 11)"
+literal|"Use random seed (TRUE, FALSE)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"seed"
+block|,
+literal|"Seed value (used only if randomize is FALSE)"
 block|}
 block|}
 decl_stmt|;
@@ -972,7 +987,23 @@ name|d_float
 expr_stmt|;
 name|pivals
 operator|.
-name|rndm_seed
+name|randomize
+operator|=
+operator|(
+name|gboolean
+operator|)
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pivals
+operator|.
+name|seed
 operator|=
 operator|(
 name|gint
@@ -1148,7 +1179,7 @@ name|gr
 argument_list|,
 name|pivals
 operator|.
-name|rndm_seed
+name|seed
 argument_list|)
 expr_stmt|;
 name|randomize
@@ -2495,7 +2526,12 @@ argument_list|(
 operator|&
 name|pivals
 operator|.
-name|rndm_seed
+name|seed
+argument_list|,
+operator|&
+name|pivals
+operator|.
+name|randomize
 argument_list|)
 expr_stmt|;
 name|label

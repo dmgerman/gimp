@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f9bb040108
+DECL|struct|__anon2c10cf080108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1252,6 +1252,8 @@ operator|&
 name|mvals
 operator|.
 name|seed
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned

@@ -701,6 +701,9 @@ parameter_list|(
 name|guint32
 modifier|*
 name|seed
+parameter_list|,
+name|gboolean
+name|random_seed
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c30e82d0108
+DECL|struct|__anon27daca7b0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -265,7 +265,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c30e82d0208
+DECL|struct|__anon27daca7b0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -347,7 +347,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c30e82d0308
+DECL|struct|__anon27daca7b0308
 block|{
 DECL|member|width
 name|gint
@@ -3987,6 +3987,8 @@ operator|&
 name|svals
 operator|.
 name|seed
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|label

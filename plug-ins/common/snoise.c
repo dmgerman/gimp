@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f18620108
+DECL|struct|__anon295b99270108
 block|{
 DECL|member|tilable
 name|gint
@@ -2129,6 +2129,8 @@ operator|&
 name|snvals
 operator|.
 name|seed
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|label

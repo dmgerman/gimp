@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b1ca00108
+DECL|struct|__anon29b25f980108
 block|{
 DECL|member|seed
 name|guint32
@@ -1193,6 +1193,8 @@ operator|&
 name|pvals
 operator|.
 name|seed
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|label

@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9f1e810108
+DECL|struct|__anon2a3bf7020108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -139,6 +139,11 @@ name|gdouble
 name|blur_rcount
 decl_stmt|;
 comment|/* repeat count */
+DECL|member|blur_randomize
+name|gboolean
+name|blur_randomize
+decl_stmt|;
+comment|/* Generate a random seed value */
 DECL|member|blur_seed
 name|guint
 name|blur_seed
@@ -161,8 +166,10 @@ literal|100.0
 block|,
 literal|1.0
 block|,
+name|FALSE
+block|,
 literal|0
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -382,9 +389,17 @@ block|,
 block|{
 name|GIMP_PDB_INT32
 block|,
-literal|"blur_seed"
+literal|"randomize"
 block|,
-literal|"Seed value (used only if seed type is 11)"
+literal|"Use a random seed (TRUE, FALSE)"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"seed"
+block|,
+literal|"Seed value (used only if randomize is FALSE)"
 block|}
 block|}
 decl_stmt|;
@@ -811,6 +826,22 @@ argument_list|)
 expr_stmt|;
 name|pivals
 operator|.
+name|blur_randomize
+operator|=
+operator|(
+name|gboolean
+operator|)
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|pivals
+operator|.
 name|blur_seed
 operator|=
 operator|(
@@ -864,6 +895,12 @@ operator|(
 name|gdouble
 operator|)
 literal|1.0
+expr_stmt|;
+name|pivals
+operator|.
+name|blur_randomize
+operator|=
+name|FALSE
 expr_stmt|;
 name|pivals
 operator|.
@@ -2378,6 +2415,10 @@ operator|&
 name|pivals
 operator|.
 name|blur_seed
+argument_list|,
+name|pivals
+operator|.
+name|blur_randomize
 argument_list|)
 expr_stmt|;
 name|label
