@@ -143,7 +143,7 @@ name|property_name
 parameter_list|,
 name|GimpIntStore
 modifier|*
-name|int_store
+name|store
 parameter_list|)
 function_decl|;
 end_function_decl

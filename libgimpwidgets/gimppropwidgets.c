@@ -1101,7 +1101,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_int_combo_box_new:  * @config:            Object to which property is attached.  * @property_name:     Name of Int property controlled by combo box.  * @store:             #GimpIntStore holding list of labels, values, etc.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * property.  The contents of the widget are determined by @store,  * which should be created using gimp_int_store_new().  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_int_combo_box_new:  * @config:         Object to which property is attached.  * @property_name:  Name of Int property controlled by combo box.  * @store:          #GimpIntStore holding list of labels, values, etc.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * property.  The contents of the widget are determined by @store,  * which should be created using gimp_int_store_new().  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1279,7 +1279,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_enum_combo_box_new:  * @config:            Object to which property is attached.  * @property_name:     Name of Enum property controlled by combo box.  * @minimum_value:     Smallest allowed value of enum.  * @maximum_value:     Largest allowed value of enum.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * Enum property.  The @mimimum_value and @maximum_value give the  * possibility of restricting the allowed range to a subset of the  * enum.  If the two values are equal (e.g., 0, 0), then the full  * range of the Enum is used.  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_combo_box_new:  * @config:         Object to which property is attached.  * @property_name:  Name of Enum property controlled by combo box.  * @minimum:        Smallest allowed value of enum.  * @maximum:        Largest allowed value of enum.  *  * Creates a #GimpIntComboBox widget to display and set the specified  * Enum property.  The @mimimum_value and @maximum_value give the  * possibility of restricting the allowed range to a subset of the  * enum.  If the two values are equal (e.g., 0, 0), then the full  * range of the Enum is used.  *  * Return value: The newly created #GimpIntComboBox widget.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -2072,13 +2072,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_enum_radio_frame_new:  * @config:            Object to which property is attached.  * @property_name:     Name of Enum property controlled by the radio buttons.  * @label:             Label for the frame holding the buttons  * @minimum:           Smallest value of enum to be included.  * @maximum:           Largest value of enum to be included.  *  * Creates a group of radio buttons which function to set and display  * the specified Enum property.  The @minimum and @maximum arguments  * allow only a subset of the enum to be used.  If the two arguments  * are equal (e.g., 0, 0), then the full range of the enum will be used.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_radio_frame_new:  * @config:            Object to which property is attached.  * @property_name:     Name of Enum property controlled by the radio buttons.  * @title:             Label for the frame holding the buttons  * @minimum:           Smallest value of enum to be included.  * @maximum:           Largest value of enum to be included.  *  * Creates a group of radio buttons which function to set and display  * the specified Enum property.  The @minimum and @maximum arguments  * allow only a subset of the enum to be used.  If the two arguments  * are equal (e.g., 0, 0), then the full range of the enum will be used.  *  * Return value: A #GimpFrame containing the radio buttons.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_enum_radio_frame_new (GObject * config,const gchar * property_name,const gchar * label,gint minimum,gint maximum)
+DECL|function|gimp_prop_enum_radio_frame_new (GObject * config,const gchar * property_name,const gchar * title,gint minimum,gint maximum)
 name|gimp_prop_enum_radio_frame_new
 parameter_list|(
 name|GObject
@@ -2093,7 +2093,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label
+name|title
 parameter_list|,
 name|gint
 name|minimum
@@ -2171,7 +2171,7 @@ name|maximum
 argument_list|,
 name|gtk_label_new
 argument_list|(
-name|label
+name|title
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -2198,7 +2198,7 @@ name|value_type
 argument_list|,
 name|gtk_label_new
 argument_list|(
-name|label
+name|title
 argument_list|)
 argument_list|,
 name|G_CALLBACK
