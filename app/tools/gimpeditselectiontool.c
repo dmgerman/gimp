@@ -4237,7 +4237,10 @@ name|undo_desc
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Bail out early if it is not an arrow key event */
+name|gint
+name|velocity
+decl_stmt|;
+comment|/* bail out early if it is not an arrow key event */
 if|if
 condition|(
 name|kevent
@@ -4267,6 +4270,29 @@ condition|)
 return|return
 name|FALSE
 return|;
+comment|/*  adapt arrow velocity to the zoom factor  */
+name|velocity
+operator|=
+name|ARROW_VELOCITY
+operator|/
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|gdisp
+operator|->
+name|shell
+argument_list|)
+operator|->
+name|scale
+expr_stmt|;
+name|velocity
+operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
+name|velocity
+argument_list|)
+expr_stmt|;
 comment|/*  check for mask translation first because the translate_layer    *  modifiers match the translate_mask ones...    */
 name|inc_x
 operator|=
@@ -4285,7 +4311,7 @@ argument_list|,
 operator|-
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Left
 argument_list|,
@@ -4304,7 +4330,7 @@ operator|)
 argument_list|,
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Right
 argument_list|,
@@ -4332,7 +4358,7 @@ argument_list|,
 operator|-
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Up
 argument_list|,
@@ -4351,7 +4377,7 @@ operator|)
 argument_list|,
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Down
 argument_list|,
@@ -4413,7 +4439,7 @@ argument_list|,
 operator|-
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Left
 argument_list|,
@@ -4432,7 +4458,7 @@ operator|)
 argument_list|,
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Right
 argument_list|,
@@ -4460,7 +4486,7 @@ argument_list|,
 operator|-
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Up
 argument_list|,
@@ -4479,7 +4505,7 @@ operator|)
 argument_list|,
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Down
 argument_list|,
@@ -4538,7 +4564,7 @@ argument_list|,
 operator|-
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Left
 argument_list|,
@@ -4553,7 +4579,7 @@ name|GDK_SHIFT_MASK
 argument_list|,
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Right
 argument_list|,
@@ -4577,7 +4603,7 @@ argument_list|,
 operator|-
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Up
 argument_list|,
@@ -4592,7 +4618,7 @@ name|GDK_SHIFT_MASK
 argument_list|,
 literal|1
 operator|*
-name|ARROW_VELOCITY
+name|velocity
 argument_list|,
 name|GDK_Down
 argument_list|,

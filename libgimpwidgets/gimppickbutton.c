@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a85cc40103
+DECL|enum|__anon2af1ea250103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -461,7 +461,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_TOOL_COLOR_PICKER
+name|GIMP_STOCK_COLOR_PICK_FROM_SCREEN
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

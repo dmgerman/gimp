@@ -901,6 +901,18 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
+name|GIMP_STOCK_COLOR_PICK_FROM_SCREEN
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|LIBGIMP_DOMAIN
+block|}
+block|,
+block|{
 name|GIMP_STOCK_CHAR_PICKER
 block|,
 name|NULL
@@ -2289,7 +2301,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b6544ef0108
+DECL|struct|__anon2a0f8e740108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2503,6 +2515,12 @@ block|{
 name|GIMP_STOCK_COLOR_TRIANGLE
 block|,
 name|stock_color_triangle_16
+block|}
+block|,
+block|{
+name|GIMP_STOCK_COLOR_PICK_FROM_SCREEN
+block|,
+name|stock_color_pick_from_screen_16
 block|}
 block|,
 block|{
@@ -2967,7 +2985,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b6544ef0208
+DECL|struct|__anon2a0f8e740208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3723,7 +3741,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b6544ef0308
+DECL|struct|__anon2a0f8e740308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3819,7 +3837,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b6544ef0408
+DECL|struct|__anon2a0f8e740408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3957,7 +3975,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b6544ef0508
+DECL|struct|__anon2a0f8e740508
 block|{
 DECL|member|stock_id
 specifier|const
