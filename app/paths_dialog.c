@@ -292,7 +292,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon28b009e70108
+DECL|struct|__anon275f20020108
 typedef|typedef
 struct|struct
 block|{
@@ -401,7 +401,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon28b009e70208
+DECL|struct|__anon275f20020208
 typedef|typedef
 struct|struct
 block|{
@@ -986,12 +986,16 @@ name|new_xpm
 block|,
 name|paths_dialog_new_path_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"New Path"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -999,12 +1003,16 @@ name|duplicate_xpm
 block|,
 name|paths_dialog_dup_path_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Duplicate Path"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1012,12 +1020,16 @@ name|toselection_xpm
 block|,
 name|paths_dialog_path_to_sel_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Path to Selection"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1025,12 +1037,16 @@ name|penstroke_xpm
 block|,
 name|paths_dialog_stroke_path_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Stroke Path"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1038,12 +1054,16 @@ name|delete_xpm
 block|,
 name|paths_dialog_delete_path_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Delete Path"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1054,6 +1074,10 @@ block|,
 name|NULL
 block|,
 name|NULL
+block|,
+name|NULL
+block|,
+literal|0
 block|}
 block|}
 decl_stmt|;
@@ -1104,12 +1128,16 @@ name|pennorm_xpm
 block|,
 name|paths_dialog_new_point_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"New Point"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1117,12 +1145,16 @@ name|penadd_xpm
 block|,
 name|paths_dialog_add_point_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Add Point"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1130,12 +1162,16 @@ name|pendel_xpm
 block|,
 name|paths_dialog_delete_point_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Delete Point"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1143,12 +1179,16 @@ name|penedit_xpm
 block|,
 name|paths_dialog_edit_point_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Edit Point"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1159,6 +1199,10 @@ block|,
 name|NULL
 block|,
 name|NULL
+block|,
+name|NULL
+block|,
+literal|0
 block|}
 block|}
 decl_stmt|;

@@ -1073,6 +1073,23 @@ comment|/* the ops buttons */
 end_comment
 
 begin_decl_stmt
+DECL|variable|to_selection_ext_callbacks
+specifier|static
+name|OpsButtonCallback
+name|to_selection_ext_callbacks
+index|[]
+init|=
+block|{
+name|channels_dialog_add_channel_to_sel_callback
+block|,
+name|channels_dialog_sub_channel_from_sel_callback
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|channels_ops_buttons
 specifier|static
 name|OpsButton
@@ -1085,12 +1102,16 @@ name|new_xpm
 block|,
 name|channels_dialog_new_channel_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"New Channel"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1098,12 +1119,16 @@ name|raise_xpm
 block|,
 name|channels_dialog_raise_channel_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Raise Channel"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1111,12 +1136,16 @@ name|lower_xpm
 block|,
 name|channels_dialog_lower_channel_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Lower Channel"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1124,12 +1153,16 @@ name|duplicate_xpm
 block|,
 name|channels_dialog_duplicate_channel_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Duplicate Channel"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1137,12 +1170,16 @@ name|delete_xpm
 block|,
 name|channels_dialog_delete_channel_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Delete Channel"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1150,12 +1187,16 @@ name|toselection_xpm
 block|,
 name|channels_dialog_channel_to_sel_callback
 block|,
+name|to_selection_ext_callbacks
+block|,
 name|N_
 argument_list|(
 literal|"Channel To Selection"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -1166,6 +1207,10 @@ block|,
 name|NULL
 block|,
 name|NULL
+block|,
+name|NULL
+block|,
+literal|0
 block|}
 block|}
 decl_stmt|;

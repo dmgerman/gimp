@@ -16,10 +16,6 @@ directive|define
 name|__OPS_BUTTONS_H__
 end_define
 
-begin_comment
-comment|/* Structures */
-end_comment
-
 begin_typedef
 DECL|typedef|OpsButton
 typedef|typedef
@@ -48,6 +44,48 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_comment
+comment|// typedef OpsButtonCallback OpsButtonExtCallbacks;
+end_comment
+
+begin_typedef
+DECL|enum|__anon2b5cf6ba0103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
+name|OPS_BUTTON_MODIFIER_NONE
+block|,
+DECL|enumerator|OPS_BUTTON_MODIFIER_SHIFT
+name|OPS_BUTTON_MODIFIER_SHIFT
+block|,
+DECL|enumerator|OPS_BUTTON_MODIFIER_CTRL
+name|OPS_BUTTON_MODIFIER_CTRL
+block|,
+DECL|enumerator|OPS_BUTTON_MODIFIER_ALT
+name|OPS_BUTTON_MODIFIER_ALT
+block|, }
+DECL|typedef|OpsButtonModifier
+name|OpsButtonModifier
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|enum|__anon2b5cf6ba0203
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|OPS_BUTTON_NORMAL
+name|OPS_BUTTON_NORMAL
+block|,
+DECL|enumerator|OPS_BUTTON_RADIO
+name|OPS_BUTTON_RADIO
+block|, }
+DECL|typedef|OpsButtonType
+name|OpsButtonType
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_OpsButton
 struct|struct
@@ -64,6 +102,11 @@ DECL|member|callback
 name|OpsButtonCallback
 name|callback
 decl_stmt|;
+DECL|member|ext_callbacks
+name|OpsButtonCallback
+modifier|*
+name|ext_callbacks
+decl_stmt|;
 DECL|member|tooltip
 name|char
 modifier|*
@@ -75,25 +118,13 @@ modifier|*
 name|widget
 decl_stmt|;
 comment|/* the button widget */
+DECL|member|modifier
+name|gint
+name|modifier
+decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|enum|__anon2a507a750103
-typedef|typedef
-enum|enum
-block|{
-DECL|enumerator|OPS_BUTTON_NORMAL
-name|OPS_BUTTON_NORMAL
-block|,
-DECL|enumerator|OPS_BUTTON_RADIO
-name|OPS_BUTTON_RADIO
-block|, }
-DECL|typedef|OpsButtonType
-name|OpsButtonType
-typedef|;
-end_typedef
 
 begin_comment
 comment|/* Function declarations */

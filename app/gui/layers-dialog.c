@@ -2185,6 +2185,40 @@ comment|/* the ops buttons */
 end_comment
 
 begin_decl_stmt
+DECL|variable|raise_layers_ext_callbacks
+specifier|static
+name|OpsButtonCallback
+name|raise_layers_ext_callbacks
+index|[]
+init|=
+block|{
+name|layers_dialog_raise_layer_to_top_callback
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|lower_layers_ext_callbacks
+specifier|static
+name|OpsButtonCallback
+name|lower_layers_ext_callbacks
+index|[]
+init|=
+block|{
+name|layers_dialog_lower_layer_to_bottom_callback
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|layers_ops_buttons
 specifier|static
 name|OpsButton
@@ -2197,12 +2231,16 @@ name|new_xpm
 block|,
 name|layers_dialog_new_layer_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"New Layer"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -2210,12 +2248,16 @@ name|raise_xpm
 block|,
 name|layers_dialog_raise_layer_callback
 block|,
+name|raise_layers_ext_callbacks
+block|,
 name|N_
 argument_list|(
 literal|"Raise Layer"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -2223,12 +2265,16 @@ name|lower_xpm
 block|,
 name|layers_dialog_lower_layer_callback
 block|,
+name|lower_layers_ext_callbacks
+block|,
 name|N_
 argument_list|(
 literal|"Lower Layer"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -2236,12 +2282,16 @@ name|duplicate_xpm
 block|,
 name|layers_dialog_duplicate_layer_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Duplicate Layer"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -2249,12 +2299,16 @@ name|delete_xpm
 block|,
 name|layers_dialog_delete_layer_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Delete Layer"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -2262,12 +2316,16 @@ name|anchor_xpm
 block|,
 name|layers_dialog_anchor_layer_callback
 block|,
+name|NULL
+block|,
 name|N_
 argument_list|(
 literal|"Anchor Layer"
 argument_list|)
 block|,
 name|NULL
+block|,
+literal|0
 block|}
 block|,
 block|{
@@ -2278,6 +2336,10 @@ block|,
 name|NULL
 block|,
 name|NULL
+block|,
+name|NULL
+block|,
+literal|0
 block|}
 block|}
 decl_stmt|;
@@ -4514,7 +4576,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c1f2c4d0108
+DECL|struct|__anon2bd195a40108
 typedef|typedef
 struct|struct
 block|{
