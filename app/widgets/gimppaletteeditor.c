@@ -4184,6 +4184,8 @@ name|gdouble
 operator|)
 name|window_height
 operator|-
+literal|2
+operator|*
 name|SPACING
 operator|)
 operator|/

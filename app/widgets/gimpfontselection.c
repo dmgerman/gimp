@@ -180,7 +180,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon290327d30103
+DECL|enum|__anon2b0b87a20103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -459,7 +459,7 @@ operator|->
 name|entry
 argument_list|)
 argument_list|,
-literal|16
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
