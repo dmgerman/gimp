@@ -85,7 +85,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gpointer
+name|PixelRegionIterator
+modifier|*
 name|pixel_regions_configure
 parameter_list|(
 name|PixelRegionIterator
@@ -1026,7 +1027,8 @@ block|}
 end_function
 
 begin_function
-name|gpointer
+name|PixelRegionIterator
+modifier|*
 DECL|function|pixel_regions_register (gint num_regions,...)
 name|pixel_regions_register
 parameter_list|(
@@ -1056,24 +1058,12 @@ name|ap
 decl_stmt|;
 name|PRI
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|PixelRegionIterator
 argument_list|,
 literal|1
 argument_list|)
-expr_stmt|;
-name|PRI
-operator|->
-name|pixel_regions
-operator|=
-name|NULL
-expr_stmt|;
-name|PRI
-operator|->
-name|process_count
-operator|=
-literal|0
 expr_stmt|;
 name|PRI
 operator|->
@@ -1119,7 +1109,7 @@ argument_list|)
 expr_stmt|;
 name|PRH
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|PixelRegionHolder
 argument_list|,
@@ -1242,7 +1232,8 @@ block|}
 end_function
 
 begin_function
-name|gpointer
+name|PixelRegionIterator
+modifier|*
 DECL|function|pixel_regions_process (PixelRegionIterator * PRI)
 name|pixel_regions_process
 parameter_list|(
@@ -1950,7 +1941,8 @@ end_function
 
 begin_function
 specifier|static
-name|gpointer
+name|PixelRegionIterator
+modifier|*
 DECL|function|pixel_regions_configure (PixelRegionIterator * PRI)
 name|pixel_regions_configure
 parameter_list|(

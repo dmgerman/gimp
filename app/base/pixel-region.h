@@ -356,7 +356,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gpointer
+name|PixelRegionIterator
+modifier|*
 name|pixel_regions_register
 parameter_list|(
 name|gint
@@ -368,7 +369,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gpointer
+name|PixelRegionIterator
+modifier|*
 name|pixel_regions_process
 parameter_list|(
 name|PixelRegionIterator
