@@ -3507,6 +3507,10 @@ name|printf
 argument_list|(
 literal|"\n      Longitud total de 0x03EE resource: %d\n"
 argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
 name|posActual
 operator|-
 name|posNombres
@@ -3514,6 +3518,7 @@ operator|-
 sizeof|sizeof
 argument_list|(
 name|glong
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -3617,6 +3622,9 @@ name|printf
 argument_list|(
 literal|"      Longitud total de 0x0400 resource: %d\n"
 argument_list|,
+operator|(
+name|int
+operator|)
 sizeof|sizeof
 argument_list|(
 name|gshort
@@ -3663,6 +3671,10 @@ name|printf
 argument_list|(
 literal|"      Longitud total de la seccion de recursos: %d\n"
 argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
 name|posActual
 operator|-
 name|posTotal
@@ -3670,6 +3682,7 @@ operator|-
 sizeof|sizeof
 argument_list|(
 name|glong
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -5035,6 +5048,10 @@ name|printf
 argument_list|(
 literal|"      Longitud total de ExtraData: %d\n"
 argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
 name|posActual
 operator|-
 name|posExtraData
@@ -5042,6 +5059,7 @@ operator|-
 sizeof|sizeof
 argument_list|(
 name|glong
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -5749,6 +5767,10 @@ name|printf
 argument_list|(
 literal|"\n      Longitud total de layers info section: %d\n"
 argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
 name|posActual
 operator|-
 name|posLayerInfo
@@ -5756,6 +5778,7 @@ operator|-
 sizeof|sizeof
 argument_list|(
 name|glong
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -5790,6 +5813,10 @@ name|printf
 argument_list|(
 literal|"      Longitud total de layers& mask information: %d\n"
 argument_list|,
+call|(
+name|int
+call|)
+argument_list|(
 name|posActual
 operator|-
 name|posLayerMask
@@ -5797,6 +5824,7 @@ operator|-
 sizeof|sizeof
 argument_list|(
 name|glong
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;

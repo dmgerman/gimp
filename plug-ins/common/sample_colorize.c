@@ -391,7 +391,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon293621d70108
+DECL|struct|__anon2a0614060108
 typedef|typedef
 struct|struct
 block|{
@@ -460,7 +460,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon293621d70208
+DECL|struct|__anon2a0614060208
 typedef|typedef
 struct|struct
 block|{
@@ -578,7 +578,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon293621d70308
+DECL|struct|__anon2a0614060308
 typedef|typedef
 struct|struct
 block|{
@@ -607,7 +607,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon293621d70408
+DECL|struct|__anon2a0614060408
 typedef|typedef
 struct|struct
 block|{
@@ -634,7 +634,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon293621d70508
+DECL|struct|__anon2a0614060508
 typedef|typedef
 struct|struct
 block|{
@@ -15519,10 +15519,10 @@ block|{
 name|gboolean
 name|has_alpha
 init|=
-operator|(
-name|gboolean
-operator|)
+name|GPOINTER_TO_INT
+argument_list|(
 name|data
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
