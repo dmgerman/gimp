@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c78b6870108
+DECL|struct|__anon290bbded0108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c78b6870208
+DECL|struct|__anon290bbded0208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c78b6870308
+DECL|struct|__anon290bbded0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c78b6870408
+DECL|struct|__anon290bbded0408
 block|{
 DECL|member|run
 name|gint
@@ -860,7 +860,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c78b6870508
+DECL|struct|__anon290bbded0508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -5174,6 +5174,16 @@ condition|)
 name|gs
 operator|=
 literal|"gswin32c"
+expr_stmt|;
+comment|/* Quote the filename in case it contains spaces. Ignore memory leak,    * this is a short-lived plug-in.    */
+name|filename
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"\"%s\""
+argument_list|,
+name|filename
+argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
