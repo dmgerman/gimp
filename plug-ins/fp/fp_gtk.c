@@ -26,6 +26,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -234,7 +240,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29d62b8a0108
+DECL|struct|__anon291c071d0108
 block|{
 DECL|member|bna
 name|GtkWidget
