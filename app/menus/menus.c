@@ -5614,9 +5614,32 @@ name|NULL
 block|,
 name|dialogs_preview_size_cmd_callback
 block|,
-literal|16
+name|GIMP_PREVIEW_SIZE_TINY
 block|,
 literal|"<RadioItem>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Very Small"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
+block|,
+literal|"/Preview Size/Tiny"
 block|}
 block|,
 name|NULL
@@ -5637,7 +5660,7 @@ name|NULL
 block|,
 name|dialogs_preview_size_cmd_callback
 block|,
-literal|24
+name|GIMP_PREVIEW_SIZE_SMALL
 block|,
 literal|"/Preview Size/Tiny"
 block|}
@@ -5660,7 +5683,7 @@ name|NULL
 block|,
 name|dialogs_preview_size_cmd_callback
 block|,
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 block|,
 literal|"/Preview Size/Tiny"
 block|}
@@ -5683,7 +5706,30 @@ name|NULL
 block|,
 name|dialogs_preview_size_cmd_callback
 block|,
-literal|48
+name|GIMP_PREVIEW_SIZE_LARGE
+block|,
+literal|"/Preview Size/Tiny"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Extra Large"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
 block|,
 literal|"/Preview Size/Tiny"
 block|}
@@ -5706,7 +5752,7 @@ name|NULL
 block|,
 name|dialogs_preview_size_cmd_callback
 block|,
-literal|64
+name|GIMP_PREVIEW_SIZE_HUGE
 block|,
 literal|"/Preview Size/Tiny"
 block|}
@@ -5729,7 +5775,30 @@ name|NULL
 block|,
 name|dialogs_preview_size_cmd_callback
 block|,
-literal|128
+name|GIMP_PREVIEW_SIZE_ENORMOUS
+block|,
+literal|"/Preview Size/Tiny"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Preview Size/Gigantic"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_preview_size_cmd_callback
+block|,
+name|GIMP_PREVIEW_SIZE_GIGANTIC
 block|,
 literal|"/Preview Size/Tiny"
 block|}

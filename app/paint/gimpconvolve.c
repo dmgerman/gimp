@@ -182,7 +182,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aef02660103
+DECL|enum|__anon2bd8d3820103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -3045,7 +3045,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Convolve Type"
+literal|"Convolve Type (<Ctrl>)"
 argument_list|)
 argument_list|,
 name|G_CALLBACK

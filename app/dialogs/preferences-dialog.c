@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2940004f0103
+DECL|enum|__anon28b42c750103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -9557,7 +9557,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-literal|0
+name|GIMP_PREVIEW_SIZE_NONE
 argument_list|)
 argument_list|,
 name|NULL
@@ -9569,7 +9569,19 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-literal|24
+name|GIMP_PREVIEW_SIZE_TINY
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Extra Small"
+argument_list|)
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
 argument_list|)
 argument_list|,
 name|NULL
@@ -9581,7 +9593,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-literal|32
+name|GIMP_PREVIEW_SIZE_SMALL
 argument_list|)
 argument_list|,
 name|NULL
@@ -9593,7 +9605,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-literal|48
+name|GIMP_PREVIEW_SIZE_MEDIUM
 argument_list|)
 argument_list|,
 name|NULL
@@ -9605,7 +9617,19 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-literal|64
+name|GIMP_PREVIEW_SIZE_LARGE
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Extra Large"
+argument_list|)
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
 argument_list|)
 argument_list|,
 name|NULL
@@ -9617,7 +9641,19 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-literal|128
+name|GIMP_PREVIEW_SIZE_HUGE
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Gigantic"
+argument_list|)
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
+name|GIMP_PREVIEW_SIZE_GIGANTIC
 argument_list|)
 argument_list|,
 name|NULL
@@ -13853,7 +13889,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2940004f0208
+DECL|struct|__anon28b42c750208
 block|{
 DECL|member|label
 name|gchar
@@ -14082,7 +14118,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2940004f0308
+DECL|struct|__anon28b42c750308
 block|{
 DECL|member|tree_label
 name|gchar

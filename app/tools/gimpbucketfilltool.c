@@ -1671,7 +1671,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill Type"
+literal|"Fill Type (<Ctrl>)"
 argument_list|)
 argument_list|,
 name|G_CALLBACK

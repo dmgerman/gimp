@@ -167,7 +167,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ceb2c0103
+DECL|enum|__anon27cd9e500103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -6460,7 +6460,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Allow Enlarging"
+literal|"Allow Enlarging (<Alt>)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6534,7 +6534,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Tool Toggle"
+literal|"Tool Toggle (<Ctrl>)"
 argument_list|)
 argument_list|,
 name|G_CALLBACK

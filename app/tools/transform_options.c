@@ -307,7 +307,7 @@ name|TRUE
 argument_list|,
 name|_
 argument_list|(
-literal|"Tool Paradigm"
+literal|"Transform Direction"
 argument_list|)
 argument_list|,
 name|G_CALLBACK
@@ -329,7 +329,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Traditional"
+literal|"Forward (Traditional)"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -347,7 +347,7 @@ index|]
 argument_list|,
 name|_
 argument_list|(
-literal|"Corrective"
+literal|"Backward (Corrective)"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER

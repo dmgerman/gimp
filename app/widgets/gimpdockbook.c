@@ -1789,7 +1789,24 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-literal|128
+name|GIMP_PREVIEW_SIZE_GIGANTIC
+condition|)
+block|{
+name|size_widget
+operator|=
+name|gtk_item_factory_get_widget
+argument_list|(
+name|ifactory
+argument_list|,
+literal|"/Preview Size/Gigantic"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|preview_size
+operator|>=
+name|GIMP_PREVIEW_SIZE_ENORMOUS
 condition|)
 block|{
 name|size_widget
@@ -1807,7 +1824,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-literal|64
+name|GIMP_PREVIEW_SIZE_HUGE
 condition|)
 block|{
 name|size_widget
@@ -1825,7 +1842,25 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-literal|48
+name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
+condition|)
+block|{
+name|size_widget
+operator|=
+name|gtk_item_factory_get_widget
+argument_list|(
+name|ifactory
+argument_list|,
+literal|"/Preview Size/Extra Large"
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|preview_size
+operator|>=
+name|GIMP_PREVIEW_SIZE_LARGE
 condition|)
 block|{
 name|size_widget
@@ -1843,7 +1878,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-literal|32
+name|GIMP_PREVIEW_SIZE_MEDIUM
 condition|)
 block|{
 name|size_widget
@@ -1861,7 +1896,7 @@ if|if
 condition|(
 name|preview_size
 operator|>=
-literal|24
+name|GIMP_PREVIEW_SIZE_SMALL
 condition|)
 block|{
 name|size_widget
@@ -1871,6 +1906,24 @@ argument_list|(
 name|ifactory
 argument_list|,
 literal|"/Preview Size/Small"
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|preview_size
+operator|>=
+name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
+condition|)
+block|{
+name|size_widget
+operator|=
+name|gtk_item_factory_get_widget
+argument_list|(
+name|ifactory
+argument_list|,
+literal|"/Preview Size/Extra Small"
 argument_list|)
 expr_stmt|;
 block|}
