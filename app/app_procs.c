@@ -192,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"errorconsole.h"
 end_include
 
@@ -2306,7 +2312,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*    *  Initialize the procedural database    *    We need to do this first because any of the init    *    procedures might install or query it as needed.    */
+comment|/*  Initialize the procedural database    *    We need to do this first because any of the init    *    procedures might install or query it as needed.    */
 name|procedural_db_init
 argument_list|()
 expr_stmt|;
@@ -2573,6 +2579,10 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+comment|/* Initialize the context system */
+name|context_manager_init
+argument_list|()
+expr_stmt|;
 name|destroy_initialization_status_window
 argument_list|()
 expr_stmt|;
@@ -2833,6 +2843,9 @@ name|named_buffers_free
 argument_list|()
 expr_stmt|;
 name|swapping_free
+argument_list|()
+expr_stmt|;
+name|context_manager_free
 argument_list|()
 expr_stmt|;
 name|brushes_free
