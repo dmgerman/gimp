@@ -558,7 +558,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27860ba70103
+DECL|enum|__anon2be1c6500103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -5366,12 +5366,13 @@ name|maxval
 init|=
 literal|0
 decl_stmt|;
-name|PATHP
+name|Path
+modifier|*
 name|pptr
 init|=
 name|NULL
 decl_stmt|;
-name|PathsList
+name|PathList
 modifier|*
 name|plist
 decl_stmt|;
@@ -5431,7 +5432,7 @@ block|}
 comment|/* Now check path an't got this tattoo */
 if|if
 condition|(
-name|paths_get_path_by_tattoo
+name|path_get_path_by_tattoo
 argument_list|(
 name|gimage
 argument_list|,
@@ -5494,7 +5495,7 @@ expr_stmt|;
 comment|/* Now check path an't got this tattoo */
 if|if
 condition|(
-name|paths_get_path_by_tattoo
+name|path_get_path_by_tattoo
 argument_list|(
 name|gimage
 argument_list|,
@@ -5558,7 +5559,7 @@ name|data
 expr_stmt|;
 name|ptattoo
 operator|=
-name|paths_get_tattoo
+name|path_get_tattoo
 argument_list|(
 name|pptr
 argument_list|)
@@ -5657,14 +5658,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_paths (GimpImage * gimage,PathsList * paths)
+DECL|function|gimp_image_set_paths (GimpImage * gimage,PathList * paths)
 name|gimp_image_set_paths
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|PathsList
+name|PathList
 modifier|*
 name|paths
 parameter_list|)
@@ -5679,7 +5680,7 @@ block|}
 end_function
 
 begin_function
-name|PathsList
+name|PathList
 modifier|*
 DECL|function|gimp_image_get_paths (GimpImage * gimage)
 name|gimp_image_get_paths

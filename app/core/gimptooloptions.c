@@ -2428,20 +2428,9 @@ argument_list|(
 literal|"Smudge Tool"
 argument_list|)
 else|:
-operator|(
-operator|(
-name|tool_type
-operator|==
-name|XINPUT_AIRBRUSH
-operator|)
-condition|?
-name|_
-argument_list|(
-literal|"Xinput Airbrush"
-argument_list|)
-else|:
+comment|/*  				((tool_type == XINPUT_AIRBRUSH) ? */
+comment|/*  				 _("Xinput Airbrush") : */
 literal|"ERROR: Unknown Paint Tool Type"
-operator|)
 operator|)
 operator|)
 operator|)
@@ -2726,9 +2715,7 @@ case|:
 case|case
 name|INK
 case|:
-case|case
-name|XINPUT_AIRBRUSH
-case|:
+comment|/*      case XINPUT_AIRBRUSH: */
 name|gtk_table_set_row_spacing
 argument_list|(
 name|GTK_TABLE
@@ -2870,9 +2857,7 @@ case|:
 case|case
 name|SMUDGE
 case|:
-case|case
-name|XINPUT_AIRBRUSH
-case|:
+comment|/*      case XINPUT_AIRBRUSH: */
 name|separator
 operator|=
 name|gtk_hseparator_new

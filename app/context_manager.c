@@ -562,9 +562,7 @@ case|:
 case|case
 name|SMUDGE
 case|:
-case|case
-name|XINPUT_AIRBRUSH
-case|:
+comment|/*  	case XINPUT_AIRBRUSH: */
 name|tool_info
 index|[
 name|i

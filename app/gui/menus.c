@@ -690,7 +690,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Dialogs/Layers& Channels..."
+literal|"/File/Dialogs/Layers, Channels& Paths..."
 argument_list|)
 block|,
 literal|"<control>L"
@@ -3111,7 +3111,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Layers& Channels..."
+literal|"/Layers/Layers, Channels& Paths..."
 argument_list|)
 block|,
 literal|"<control>L"
@@ -3693,7 +3693,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Dialogs/Layers& Channels..."
+literal|"/Dialogs/Layers, Channels& Paths..."
 argument_list|)
 block|,
 literal|"<control>L"

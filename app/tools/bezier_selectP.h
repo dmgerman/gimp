@@ -16,6 +16,12 @@ directive|define
 name|__BEZIER_SELECTP_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"draw_core.h"
+end_include
+
 begin_define
 DECL|macro|BEZIER_START
 define|#
@@ -105,7 +111,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon27cddd2b0103
+DECL|enum|__anon29be11b80103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -271,7 +277,7 @@ comment|/* All udata that are passed to the bezier_draw_curve must  * have this 
 end_comment
 
 begin_typedef
-DECL|struct|__anon27cddd2b0208
+DECL|struct|__anon29be11b80208
 typedef|typedef
 struct|struct
 block|{
@@ -350,6 +356,17 @@ name|bezier_select_reset
 parameter_list|(
 name|BezierSelect
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|bezier_select_free
+parameter_list|(
+name|BezierSelect
+modifier|*
+name|bezier_sel
 parameter_list|)
 function_decl|;
 end_function_decl

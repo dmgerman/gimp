@@ -234,7 +234,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299dc1af0103
+DECL|enum|__anon2a0d1b930103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299dc1af0203
+DECL|enum|__anon2a0d1b930203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -3327,9 +3327,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_bz_point (gpointer pptr,gpointer iptr)
 specifier|static
 name|void
+DECL|function|write_bz_point (gpointer pptr,gpointer iptr)
 name|write_bz_point
 parameter_list|(
 name|gpointer
@@ -3339,11 +3339,13 @@ name|gpointer
 name|iptr
 parameter_list|)
 block|{
-name|PATHPOINTP
+name|PathPoint
+modifier|*
 name|bpt
 init|=
 operator|(
-name|PATHPOINTP
+name|PathPoint
+operator|*
 operator|)
 name|pptr
 decl_stmt|;
@@ -3432,9 +3434,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|v1read_bz_point (XcfInfo * info)
 specifier|static
-name|PATHPOINTP
+name|PathPoint
+modifier|*
+DECL|function|v1read_bz_point (XcfInfo * info)
 name|v1read_bz_point
 parameter_list|(
 name|XcfInfo
@@ -3442,7 +3445,8 @@ modifier|*
 name|info
 parameter_list|)
 block|{
-name|PATHPOINTP
+name|PathPoint
+modifier|*
 name|ptr
 decl_stmt|;
 name|guint32
@@ -3512,7 +3516,7 @@ argument_list|)
 expr_stmt|;
 name|ptr
 operator|=
-name|pathpoint_new
+name|path_point_new
 argument_list|(
 name|type
 argument_list|,
@@ -3536,9 +3540,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_bz_point (XcfInfo * info)
 specifier|static
-name|PATHPOINTP
+name|PathPoint
+modifier|*
+DECL|function|read_bz_point (XcfInfo * info)
 name|read_bz_point
 parameter_list|(
 name|XcfInfo
@@ -3546,7 +3551,8 @@ modifier|*
 name|info
 parameter_list|)
 block|{
-name|PATHPOINTP
+name|PathPoint
+modifier|*
 name|ptr
 decl_stmt|;
 name|guint32
@@ -3608,7 +3614,7 @@ argument_list|)
 expr_stmt|;
 name|ptr
 operator|=
-name|pathpoint_new
+name|path_point_new
 argument_list|(
 name|type
 argument_list|,
@@ -3632,9 +3638,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_one_path (gpointer pptr,gpointer iptr)
 specifier|static
 name|void
+DECL|function|write_one_path (gpointer pptr,gpointer iptr)
 name|write_one_path
 parameter_list|(
 name|gpointer
@@ -3644,11 +3650,13 @@ name|gpointer
 name|iptr
 parameter_list|)
 block|{
-name|PATHP
+name|Path
+modifier|*
 name|bzp
 init|=
 operator|(
-name|PATHP
+name|Path
+operator|*
 operator|)
 name|pptr
 decl_stmt|;
@@ -3696,8 +3704,6 @@ operator|&
 name|bzp
 operator|->
 name|name
-operator|->
-name|str
 argument_list|,
 literal|1
 argument_list|)
@@ -3854,9 +3860,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_one_path (GImage * gimage,XcfInfo * info)
 specifier|static
-name|PATHP
+name|Path
+modifier|*
+DECL|function|read_one_path (GImage * gimage,XcfInfo * info)
 name|read_one_path
 parameter_list|(
 name|GImage
@@ -3868,7 +3875,8 @@ modifier|*
 name|info
 parameter_list|)
 block|{
-name|PATHP
+name|Path
+modifier|*
 name|bzp
 decl_stmt|;
 name|gchar
@@ -4020,7 +4028,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|PATHPOINTP
+name|PathPoint
+modifier|*
 name|bpt
 decl_stmt|;
 comment|/* Read in a path */
@@ -4079,7 +4088,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|PATHPOINTP
+name|PathPoint
+modifier|*
 name|bpt
 decl_stmt|;
 comment|/* Read in a path */
@@ -4158,7 +4168,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|PATHPOINTP
+name|PathPoint
+modifier|*
 name|bpt
 decl_stmt|;
 comment|/* Read in a path */
@@ -4221,12 +4232,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_bzpaths (PathsList * paths,XcfInfo * info)
 specifier|static
 name|void
+DECL|function|write_bzpaths (PathList * paths,XcfInfo * info)
 name|write_bzpaths
 parameter_list|(
-name|PathsList
+name|PathList
 modifier|*
 name|paths
 parameter_list|,
@@ -4301,10 +4312,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_bzpaths (GImage * gimage,XcfInfo * info)
 specifier|static
-name|PathsList
+name|PathList
 modifier|*
+DECL|function|read_bzpaths (GImage * gimage,XcfInfo * info)
 name|read_bzpaths
 parameter_list|(
 name|GImage
@@ -4322,7 +4333,7 @@ decl_stmt|;
 name|guint32
 name|last_selected_row
 decl_stmt|;
-name|PathsList
+name|PathList
 modifier|*
 name|paths
 decl_stmt|;
@@ -4372,7 +4383,8 @@ operator|>
 literal|0
 condition|)
 block|{
-name|PATHP
+name|Path
+modifier|*
 name|bzp
 decl_stmt|;
 comment|/* Read in a path */
@@ -4397,7 +4409,7 @@ expr_stmt|;
 block|}
 name|paths
 operator|=
-name|pathsList_new
+name|path_list_new
 argument_list|(
 name|gimage
 argument_list|,
@@ -6205,7 +6217,7 @@ case|case
 name|PROP_PATHS
 case|:
 block|{
-name|PathsList
+name|PathList
 modifier|*
 name|paths_list
 decl_stmt|;
@@ -6223,7 +6235,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|PathsList
+name|PathList
 operator|*
 argument_list|)
 expr_stmt|;
@@ -9550,7 +9562,7 @@ case|case
 name|PROP_PATHS
 case|:
 block|{
-name|PathsList
+name|PathList
 modifier|*
 name|paths
 init|=

@@ -413,10 +413,10 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Layers& Channels"
+literal|"Layers, Channels& Paths"
 argument_list|)
 argument_list|,
-literal|"layers_and_channels"
+literal|"layers_channels_paths"
 argument_list|,
 name|lc_dialog_help_func
 argument_list|,
@@ -1668,7 +1668,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a1ee40108
+DECL|struct|__anon2881296e0108
 block|{
 DECL|member|def
 name|GImage

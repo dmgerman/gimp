@@ -283,7 +283,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2ac16a280108
+DECL|struct|__anon2c5e1a360108
 typedef|typedef
 struct|struct
 block|{
@@ -320,7 +320,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac16a280208
+DECL|struct|__anon2c5e1a360208
 typedef|typedef
 struct|struct
 block|{
@@ -375,7 +375,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ac16a280308
+DECL|struct|__anon2c5e1a360308
 typedef|typedef
 struct|struct
 block|{
@@ -1842,6 +1842,29 @@ operator|->
 name|scanlines
 operator|=
 name|NULL
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|bezier_select_free (BezierSelect * bezier_sel)
+name|bezier_select_free
+parameter_list|(
+name|BezierSelect
+modifier|*
+name|bezier_sel
+parameter_list|)
+block|{
+name|bezier_select_reset
+argument_list|(
+name|bezier_sel
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|bezier_sel
+argument_list|)
 expr_stmt|;
 block|}
 end_function

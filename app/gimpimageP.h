@@ -258,7 +258,7 @@ name|parasites
 decl_stmt|;
 comment|/*  Plug-in parasite data        */
 DECL|member|paths
-name|PathsList
+name|PathList
 modifier|*
 name|paths
 decl_stmt|;

@@ -211,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2a3cd93d0103
+DECL|enum|__anon28905d440103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3cd93d0203
+DECL|enum|__anon28905d440203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3cd93d0303
+DECL|enum|__anon28905d440303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3cd93d0403
+DECL|enum|__anon28905d440403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -879,14 +879,14 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|PathsList
+name|PathList
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|PathsList
+name|PathList
 modifier|*
 name|gimp_image_get_paths
 parameter_list|(

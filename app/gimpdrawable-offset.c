@@ -2758,7 +2758,7 @@ name|floating_sel_drawable
 init|=
 name|NULL
 decl_stmt|;
-name|PathsList
+name|PathList
 modifier|*
 name|paths
 decl_stmt|;
@@ -3444,10 +3444,6 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|0
-comment|/* we need a path_duplicate() function */
 if|if
 condition|(
 name|paths
@@ -3459,8 +3455,19 @@ name|plist
 init|=
 name|NULL
 decl_stmt|;
-name|PATHP
+name|GSList
+modifier|*
+name|new_plist
+init|=
+name|NULL
+decl_stmt|;
+name|Path
+modifier|*
 name|path
+decl_stmt|;
+name|PathList
+modifier|*
+name|new_paths
 decl_stmt|;
 for|for
 control|(
@@ -3485,13 +3492,13 @@ name|plist
 operator|->
 name|data
 expr_stmt|;
-name|plist
+name|new_plist
 operator|=
 name|g_slist_append
 argument_list|(
-name|plist
+name|new_plist
 argument_list|,
-name|path_duplicate
+name|path_copy
 argument_list|(
 name|new_gimage
 argument_list|,
@@ -3502,7 +3509,7 @@ expr_stmt|;
 block|}
 name|new_paths
 operator|=
-name|pathsList_new
+name|path_list_new
 argument_list|(
 name|new_gimage
 argument_list|,
@@ -3510,7 +3517,7 @@ name|paths
 operator|->
 name|last_selected_row
 argument_list|,
-name|plist
+name|new_plist
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_paths
@@ -3521,8 +3528,6 @@ name|new_paths
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
 name|gimage_enable_undo
 argument_list|(
 name|new_gimage

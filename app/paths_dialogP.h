@@ -58,7 +58,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|PATHP
+name|Path
+modifier|*
 name|paths_get_bzpaths
 parameter_list|(
 name|void
@@ -73,7 +74,8 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|PATHP
+name|Path
+modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
