@@ -16,25 +16,6 @@ directive|define
 name|__PRINT_GIMP_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_define
-DECL|macro|inline
-define|#
-directive|define
-name|inline
-value|__inline__
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/*  * All Gimp-specific code is in this file.  */
 end_comment
@@ -59,7 +40,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2774fe350108
+DECL|struct|__anon2baec0b00108
 block|{
 DECL|member|active
 name|int

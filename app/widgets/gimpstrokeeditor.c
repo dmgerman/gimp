@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f3ca600103
+DECL|enum|__anon2c1533d40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1050,8 +1050,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GTK_WIDGET
-argument_list|(
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_STROKE_EDITOR
@@ -1065,7 +1063,6 @@ argument_list|,
 name|resolution
 argument_list|,
 name|NULL
-argument_list|)
 argument_list|)
 return|;
 block|}
