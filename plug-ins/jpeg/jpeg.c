@@ -310,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297daaaa0108
+DECL|struct|__anon2acbccb20108
 block|{
 DECL|member|quality
 name|gdouble
@@ -357,7 +357,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297daaaa0208
+DECL|struct|__anon2acbccb20208
 block|{
 DECL|member|run
 name|gint
@@ -372,7 +372,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297daaaa0308
+DECL|struct|__anon2acbccb20308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1174,7 +1174,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|image_ID

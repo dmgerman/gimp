@@ -364,7 +364,7 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 if|if

@@ -632,7 +632,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 switch|switch
@@ -747,7 +747,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|image_ID

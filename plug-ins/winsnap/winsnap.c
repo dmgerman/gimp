@@ -368,7 +368,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29d522ee0108
+DECL|struct|__anon27e712c10108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29d522ee0208
+DECL|struct|__anon27e712c10208
 typedef|typedef
 struct|struct
 block|{
@@ -3958,7 +3958,7 @@ block|{
 name|OUT_ARGS
 block|}
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 comment|/* the installation of the plugin */

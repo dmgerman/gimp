@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bad8dc00108
+DECL|struct|__anon28b038920108
 block|{
 DECL|member|threshold
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bad8dc00208
+DECL|struct|__anon28b038920208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bad8dc00308
+DECL|struct|__anon28b038920308
 block|{
 DECL|member|r
 name|guchar
@@ -706,7 +706,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 name|image_ID

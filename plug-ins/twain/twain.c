@@ -502,7 +502,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon292dcd670108
+DECL|struct|__anon2bb82d6f0108
 typedef|typedef
 struct|struct
 block|{
@@ -1404,7 +1404,7 @@ block|{
 name|OUT_ARGS
 block|}
 decl_stmt|;
-name|INIT_I18N
+name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
 ifdef|#
@@ -1827,7 +1827,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon292dcd670208
+DECL|struct|__anon2bb82d6f0208
 typedef|typedef
 struct|struct
 block|{
