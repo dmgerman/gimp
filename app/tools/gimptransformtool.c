@@ -3858,6 +3858,13 @@ decl_stmt|;
 comment|/*  always clip the selction and unfloated channels          *  so they keep their size          */
 if|if
 condition|(
+name|tr_tool
+operator|->
+name|original
+condition|)
+block|{
+if|if
+condition|(
 name|GIMP_IS_CHANNEL
 argument_list|(
 name|active_item
@@ -3917,6 +3924,7 @@ argument_list|,
 name|progress
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case

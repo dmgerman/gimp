@@ -4840,6 +4840,8 @@ block|{
 name|TileManager
 modifier|*
 name|new_tiles
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -4950,6 +4952,11 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/* transform the buffer */
+if|if
+condition|(
+name|orig_tiles
+condition|)
+block|{
 name|new_tiles
 operator|=
 name|gimp_drawable_transform_tiles_flip
@@ -4973,6 +4980,7 @@ argument_list|(
 name|orig_tiles
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|new_tiles
@@ -5372,7 +5380,36 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|,
+name|w
+decl_stmt|,
+name|h
+decl_stmt|;
 comment|/* set the keep_indexed flag to FALSE here, since we use        * gimp_layer_new_from_tiles() later which assumes that the tiles        * are either RGB or GRAY.  Eeek!!!              (Sven)        */
+if|if
+condition|(
+name|gimp_drawable_mask_intersect
+argument_list|(
+name|drawable
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|,
+operator|&
+name|w
+argument_list|,
+operator|&
+name|h
+argument_list|)
+condition|)
+block|{
 name|tiles
 operator|=
 name|gimp_selection_extract
@@ -5398,6 +5435,19 @@ name|new_layer
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
+else|else
+block|{
+name|tiles
+operator|=
+name|NULL
+expr_stmt|;
+operator|*
+name|new_layer
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 block|}
 else|else
 comment|/*  otherwise, just copy the layer  */

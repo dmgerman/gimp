@@ -993,6 +993,12 @@ case|:
 case|case
 name|GIMP_TRANSFORM_TYPE_SELECTION
 case|:
+if|if
+condition|(
+name|trans_tool
+operator|->
+name|original
+condition|)
 name|ret
 operator|=
 name|gimp_drawable_transform_tiles_flip
