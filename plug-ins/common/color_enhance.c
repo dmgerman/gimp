@@ -536,7 +536,7 @@ name|i
 operator|++
 control|)
 block|{
-name|double
+name|gdouble
 name|h
 decl_stmt|,
 name|s
@@ -550,7 +550,7 @@ name|m
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdouble
+name|gint
 name|k
 decl_stmt|;
 name|guchar
@@ -712,7 +712,7 @@ name|m
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdouble
+name|gint
 name|k
 decl_stmt|;
 name|guchar
@@ -1226,7 +1226,7 @@ name|m
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdouble
+name|gint
 name|k
 decl_stmt|;
 name|guchar
@@ -1537,7 +1537,7 @@ name|m
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gdouble
+name|gint
 name|k
 decl_stmt|;
 name|guchar
