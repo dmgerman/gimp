@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27813efb0108
+DECL|struct|__anon2c8810810108
 block|{
 DECL|member|tilable
 name|gint
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27813efb0208
+DECL|struct|__anon2c8810810208
 block|{
 DECL|member|run
 name|gint
@@ -160,7 +160,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27813efb0308
+DECL|struct|__anon2c8810810308
 block|{
 DECL|member|x
 DECL|member|y
@@ -2318,14 +2318,10 @@ name|snvals
 operator|.
 name|seed
 argument_list|,
-name|NULL
-argument_list|,
 operator|&
 name|snvals
 operator|.
 name|timeseed
-argument_list|,
-name|NULL
 argument_list|,
 name|TRUE
 argument_list|,

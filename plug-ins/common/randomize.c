@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eaf8110108
+DECL|struct|__anon29380c1f0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eaf8110208
+DECL|struct|__anon29380c1f0208
 block|{
 DECL|member|run
 name|gint
@@ -2644,14 +2644,10 @@ name|pivals
 operator|.
 name|rndm_seed
 argument_list|,
-name|NULL
-argument_list|,
 operator|&
 name|pivals
 operator|.
 name|seed_type
-argument_list|,
-name|NULL
 argument_list|,
 name|SEED_TIME
 argument_list|,

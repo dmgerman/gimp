@@ -1264,7 +1264,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_query_boolean_box:  * @title: The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @eek: #TRUE if you want the "Eek" wilber to appear left of the dialog's  *       message.  * @message: A string which will be shown in the query box.  * @true_button: The string to be shown in the dialog's left button.  * @false_button: The string to be shown in the dialog's right button.  * @object: The object this query box is associated with.  * @signal: The object's signal which will cause the query box to be closed.  * @callback: The function which will be called when the user selects "OK".  * @data: The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  *  */
+comment|/**  * gimp_query_boolean_box:  * @title: The query box dialog's title.  * @help_func: The help function to show this dialog's help page.  * @help_data: A string pointing to this dialog's html help page.  * @eek: #TRUE if you want the "Eek" wilber to appear left of the dialog's  *       message.  * @message: A string which will be shown in the query box.  * @true_button: The string to be shown in the dialog's left button.  * @false_button: The string to be shown in the dialog's right button.  * @object: The object this query box is associated with.  * @signal: The object's signal which will cause the query box to be closed.  * @callback: The function which will be called when the user clicks one  *            of the buttons.  * @data: The callback's user data.  *  * Returns: A pointer to the new #GtkDialog.  *  */
 end_comment
 
 begin_function

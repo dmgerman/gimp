@@ -40,6 +40,7 @@ literal|"C"
 block|{
 endif|#
 directive|endif
+comment|/* For information look into the C source or the html documentation */
 comment|/*  *  Widget Constructors  */
 name|GtkWidget
 modifier|*
@@ -185,7 +186,7 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|gtk_range_get_adjustment \         (GTK_RANGE (gtk_object_get_data (GTK_OBJECT(adj), "scale")))
+value|gtk_range_get_adjustment \         (GTK_RANGE (gtk_object_get_data (GTK_OBJECT (adj), "scale")))
 DECL|macro|GIMP_SCALE_ENTRY_SPINBUTTON (adj)
 define|#
 directive|define
@@ -194,7 +195,7 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT(adj), "spinbutton"))
+value|GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (adj), "spinbutton"))
 DECL|macro|GIMP_SCALE_ENTRY_SPINBUTTON_ADJ (adj)
 define|#
 directive|define
@@ -203,7 +204,7 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT(adj), "spinbutton")))
+value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (adj), "spinbutton")))
 name|GtkObject
 modifier|*
 name|gimp_scale_entry_new
@@ -264,6 +265,33 @@ modifier|*
 name|private_tip
 parameter_list|)
 function_decl|;
+DECL|macro|GIMP_RANDOM_SEED_SPINBUTTON (hbox)
+define|#
+directive|define
+name|GIMP_RANDOM_SEED_SPINBUTTON
+parameter_list|(
+name|hbox
+parameter_list|)
+define|\
+value|GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT( hbox), "spinbutton"))
+DECL|macro|GIMP_RANDOM_SEED_SPINBUTTON_ADJ (hbox)
+define|#
+directive|define
+name|GIMP_RANDOM_SEED_SPINBUTTON_ADJ
+parameter_list|(
+name|hbox
+parameter_list|)
+define|\
+value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT (hbox), "spinbutton")))
+DECL|macro|GIMP_RANDOM_SEED_TOGGLEBUTTON (hbox)
+define|#
+directive|define
+name|GIMP_RANDOM_SEED_TOGGLEBUTTON
+parameter_list|(
+name|hbox
+parameter_list|)
+define|\
+value|GTK_TOGGLE_BUTTON (gtk_object_get_data (GTK_OBJECT (hbox), \                                                 "togglebutton"))
 name|GtkWidget
 modifier|*
 name|gimp_random_seed_new
@@ -272,19 +300,9 @@ name|gint
 modifier|*
 name|seed
 parameter_list|,
-name|GtkWidget
-modifier|*
-modifier|*
-name|seed_spinbutton
-parameter_list|,
 name|gint
 modifier|*
 name|use_time
-parameter_list|,
-name|GtkWidget
-modifier|*
-modifier|*
-name|time_button
 parameter_list|,
 name|gint
 name|time_true
@@ -293,6 +311,15 @@ name|gint
 name|time_false
 parameter_list|)
 function_decl|;
+DECL|macro|GIMP_COORDINATES_CHAINBUTTON (sizeentry)
+define|#
+directive|define
+name|GIMP_COORDINATES_CHAINBUTTON
+parameter_list|(
+name|sizeentry
+parameter_list|)
+define|\
+value|GIMP_CHAIN_BUTTON (gtk_object_get_data (GTK_OBJECT (sizeentry), \                                                 "chainbutton"))
 name|GtkWidget
 modifier|*
 name|gimp_coordinates_new
@@ -321,12 +348,6 @@ name|chainbutton_active
 parameter_list|,
 name|gboolean
 name|chain_constrains_ratio
-parameter_list|,
-comment|/* return value: */
-name|GtkWidget
-modifier|*
-modifier|*
-name|chainbutton
 parameter_list|,
 name|gchar
 modifier|*
@@ -393,6 +414,14 @@ parameter_list|)
 function_decl|;
 comment|/*  *  Standard Callbacks  */
 name|void
+name|gimp_toggle_button_sensitive_update
+parameter_list|(
+name|GtkToggleButton
+modifier|*
+name|toggle_button
+parameter_list|)
+function_decl|;
+name|void
 name|gimp_toggle_button_update
 parameter_list|(
 name|GtkWidget
@@ -404,7 +433,7 @@ name|data
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_menu_item_update
+name|gimp_radio_button_update
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -415,7 +444,7 @@ name|data
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_radio_button_update
+name|gimp_menu_item_update
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -470,7 +499,6 @@ name|data
 parameter_list|)
 function_decl|;
 comment|/*  *  Helper Functions  */
-comment|/*  add aligned label& widget to a table  */
 name|void
 name|gimp_table_attach_aligned
 parameter_list|(

@@ -609,7 +609,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_parse:  * @path: A list of directories separated by #G_SEARCHPATH_SEPARATOR.  * @max_path: The maximum number of directories to return.  * @check: #TRUE if you want the directories to be checked.  * @not_found: #  *  * Return: A list of all directories in @path.  *  */
+comment|/**  * gimp_path_parse:  * @path: A list of directories separated by #G_SEARCHPATH_SEPARATOR.  * @max_paths: The maximum number of directories to return.  * @check: #TRUE if you want the directories to be checked.  * @check_failed: Returns a #GList of path elements for which the  *                check failed.  *  * Returns: A #GList of all directories in @path.  *  */
 end_comment
 
 begin_function

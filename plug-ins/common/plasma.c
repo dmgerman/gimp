@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901c4a50108
+DECL|struct|__anon2801b42b0108
 block|{
 DECL|member|seed
 name|gint
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901c4a50208
+DECL|struct|__anon2801b42b0208
 block|{
 DECL|member|run
 name|gint
@@ -1141,14 +1141,10 @@ name|pvals
 operator|.
 name|seed
 argument_list|,
-name|NULL
-argument_list|,
 operator|&
 name|pvals
 operator|.
 name|timeseed
-argument_list|,
-name|NULL
 argument_list|,
 name|TRUE
 argument_list|,

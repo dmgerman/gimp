@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c51f4de0108
+DECL|struct|__anon2aac12a10108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -184,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c51f4de0208
+DECL|struct|__anon2aac12a10208
 block|{
 DECL|member|run
 name|gint
@@ -2684,14 +2684,10 @@ name|pivals
 operator|.
 name|blur_seed
 argument_list|,
-name|NULL
-argument_list|,
 operator|&
 name|pivals
 operator|.
 name|seed_type
-argument_list|,
-name|NULL
 argument_list|,
 name|SEED_TIME
 argument_list|,

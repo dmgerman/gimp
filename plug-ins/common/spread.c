@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb2d410108
+DECL|struct|__anon2b1acb4e0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb2d410208
+DECL|struct|__anon2b1acb4e0208
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1670,8 +1670,6 @@ operator|.
 name|spread_amount_y
 argument_list|,
 name|FALSE
-argument_list|,
-name|NULL
 argument_list|,
 name|_
 argument_list|(
