@@ -468,7 +468,10 @@ parameter_list|)
 block|{
 name|gimp_tile_cache_size
 argument_list|(
-operator|(
+call|(
+name|gulong
+call|)
+argument_list|(
 name|ntiles
 operator|*
 name|_gimp_tile_width
@@ -476,7 +479,9 @@ operator|*
 name|_gimp_tile_height
 operator|*
 literal|4
-operator|)
+operator|+
+literal|1023
+argument_list|)
 operator|/
 literal|1024
 argument_list|)
