@@ -5,29 +5,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -276,6 +253,74 @@ name|vector_type
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|update_om_preview_nbuffer
+specifier|static
+name|ppm_t
+name|update_om_preview_nbuffer
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|selectedvector
+specifier|static
+name|gint
+name|selectedvector
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|update_vector_preview_backup
+specifier|static
+name|ppm_t
+name|update_vector_preview_backup
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|update_vector_preview_buffer
+specifier|static
+name|ppm_t
+name|update_vector_preview_buffer
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+name|NULL
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|adjignore
+specifier|static
+name|gboolean
+name|adjignore
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 DECL|function|get_direction (double x,double y,int from)
 name|double
@@ -291,16 +336,16 @@ name|int
 name|from
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|n
 decl_stmt|;
-name|int
+name|gint
 name|voronoi
 decl_stmt|;
-name|double
+name|gdouble
 name|sum
 decl_stmt|,
 name|dx
@@ -313,12 +358,12 @@ name|vector_t
 modifier|*
 name|vec
 decl_stmt|;
-name|double
+name|gdouble
 name|angoff
 decl_stmt|,
 name|strexp
 decl_stmt|;
-name|int
+name|gint
 name|first
 init|=
 literal|0
@@ -406,7 +451,7 @@ condition|(
 name|voronoi
 condition|)
 block|{
-name|double
+name|gdouble
 name|bestdist
 init|=
 operator|-
@@ -516,7 +561,7 @@ name|i
 operator|++
 control|)
 block|{
-name|double
+name|gdouble
 name|s
 init|=
 name|vec
@@ -526,7 +571,7 @@ index|]
 operator|.
 name|str
 decl_stmt|;
-name|double
+name|gdouble
 name|tx
 init|=
 literal|0.0
@@ -579,7 +624,7 @@ operator|==
 literal|1
 condition|)
 block|{
-name|double
+name|gdouble
 name|a
 init|=
 name|atan2
@@ -654,7 +699,7 @@ operator|==
 literal|2
 condition|)
 block|{
-name|double
+name|gdouble
 name|a
 init|=
 name|atan2
@@ -729,7 +774,7 @@ operator|==
 literal|3
 condition|)
 block|{
-name|double
+name|gdouble
 name|a
 init|=
 name|atan2
@@ -890,26 +935,10 @@ return|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|update_om_preview_nbuffer
-specifier|static
-name|ppm_t
-name|update_om_preview_nbuffer
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-name|NULL
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function
-DECL|function|update_orient_map_preview_prev (void)
 specifier|static
 name|void
+DECL|function|update_orient_map_preview_prev (void)
 name|update_orient_map_preview_prev
 parameter_list|(
 name|void
@@ -1190,82 +1219,40 @@ expr_stmt|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|selectedvector
-specifier|static
-name|int
-name|selectedvector
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|update_vector_preview_backup
-specifier|static
-name|ppm_t
-name|update_vector_preview_backup
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-name|NULL
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|update_vector_preview_buffer
-specifier|static
-name|ppm_t
-name|update_vector_preview_buffer
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-name|NULL
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function
-DECL|function|update_vector_prev (void)
 specifier|static
 name|void
+DECL|function|update_vector_prev (void)
 name|update_vector_prev
 parameter_list|(
 name|void
 parameter_list|)
 block|{
 specifier|static
-name|int
+name|gint
 name|ok
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|double
+name|gdouble
 name|dir
 decl_stmt|,
 name|xo
 decl_stmt|,
 name|yo
 decl_stmt|;
-name|double
+name|gdouble
 name|val
 decl_stmt|;
 specifier|static
-name|double
+name|gdouble
 name|last_val
 init|=
 literal|0.0
@@ -1422,7 +1409,7 @@ name|i
 operator|++
 control|)
 block|{
-name|double
+name|gdouble
 name|s
 decl_stmt|;
 name|x
@@ -1507,6 +1494,7 @@ name|i
 operator|==
 name|selectedvector
 condition|)
+block|{
 name|ppm_drawline
 argument_list|(
 operator|&
@@ -1531,7 +1519,9 @@ argument_list|,
 name|red
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|ppm_drawline
 argument_list|(
 operator|&
@@ -1556,6 +1546,7 @@ argument_list|,
 name|gray
 argument_list|)
 expr_stmt|;
+block|}
 name|ppm_put_rgb
 argument_list|(
 operator|&
@@ -1607,8 +1598,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|orientation_map_free_resources ()
 name|void
+DECL|function|orientation_map_free_resources ()
 name|orientation_map_free_resources
 parameter_list|()
 block|{
@@ -1633,20 +1624,10 @@ expr_stmt|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|adjignore
-specifier|static
-name|gboolean
-name|adjignore
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
 begin_function
-DECL|function|update_slides (void)
 specifier|static
 name|void
+DECL|function|update_slides (void)
 name|update_slides
 parameter_list|(
 name|void
@@ -1719,9 +1700,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|prev_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|prev_click_callback (GtkWidget * w,gpointer data)
 name|prev_click_callback
 parameter_list|(
 name|GtkWidget
@@ -1757,9 +1738,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|next_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|next_click_callback (GtkWidget * w,gpointer data)
 name|next_click_callback
 parameter_list|(
 name|GtkWidget
@@ -1793,9 +1774,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|add_new_vector (gdouble x,gdouble y)
 specifier|static
 name|void
+DECL|function|add_new_vector (gdouble x,gdouble y)
 name|add_new_vector
 parameter_list|(
 name|gdouble
@@ -1891,9 +1872,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|add_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|add_click_callback (GtkWidget * w,gpointer data)
 name|add_click_callback
 parameter_list|(
 name|GtkWidget
@@ -1924,9 +1905,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|delete_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|delete_click_callback (GtkWidget * w,gpointer data)
 name|delete_click_callback
 parameter_list|(
 name|GtkWidget
@@ -1955,7 +1936,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|vector
 index|[
 name|i
@@ -1968,7 +1948,6 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-block|}
 name|num_vectors
 operator|--
 expr_stmt|;
@@ -1995,9 +1974,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|map_click_callback (GtkWidget * w,GdkEventButton * event)
 specifier|static
 name|void
+DECL|function|map_click_callback (GtkWidget * w,GdkEventButton * event)
 name|map_click_callback
 parameter_list|(
 name|GtkWidget
@@ -2105,7 +2084,7 @@ operator|==
 literal|3
 condition|)
 block|{
-name|double
+name|gdouble
 name|d
 decl_stmt|;
 name|d
@@ -2189,9 +2168,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|angle_adjust_move_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|angle_adjust_move_callback (GtkWidget * w,gpointer data)
 name|angle_adjust_move_callback
 parameter_list|(
 name|GtkWidget
@@ -2271,9 +2250,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|strength_adjust_move_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|strength_adjust_move_callback (GtkWidget * w,gpointer data)
 name|strength_adjust_move_callback
 parameter_list|(
 name|GtkWidget
@@ -2313,9 +2292,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|strength_exponent_adjust_move_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|strength_exponent_adjust_move_callback (GtkWidget * w,gpointer data)
 name|strength_exponent_adjust_move_callback
 parameter_list|(
 name|GtkWidget
@@ -2341,9 +2320,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|angle_offset_adjust_move_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|angle_offset_adjust_move_callback (GtkWidget * w,gpointer data)
 name|angle_offset_adjust_move_callback
 parameter_list|(
 name|GtkWidget
@@ -2369,9 +2348,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|vector_type_click_callback (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|vector_type_click_callback (GtkWidget * w,gpointer data)
 name|vector_type_click_callback
 parameter_list|(
 name|GtkWidget
@@ -2526,9 +2505,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|init_vectors (void)
 specifier|static
 name|void
+DECL|function|init_vectors (void)
 name|init_vectors
 parameter_list|(
 name|void
@@ -2541,7 +2520,7 @@ operator|.
 name|num_orient_vectors
 condition|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|num_vectors
@@ -2563,7 +2542,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|vector
 index|[
 name|i
@@ -2576,7 +2554,6 @@ index|[
 name|i
 index|]
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -2609,8 +2586,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|update_orientmap_dialog (void)
 name|void
+DECL|function|update_orientmap_dialog (void)
 name|update_orientmap_dialog
 parameter_list|(
 name|void
@@ -2671,8 +2648,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_orientmap_dialog (void)
 name|void
+DECL|function|create_orientmap_dialog (void)
 name|create_orientmap_dialog
 parameter_list|(
 name|void

@@ -11,29 +11,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -262,7 +239,7 @@ operator|+=
 literal|100
 control|)
 block|{
-name|int
+name|gint
 name|k
 init|=
 name|i
@@ -393,9 +370,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|paper_select (GtkTreeSelection * selection,gpointer data)
 specifier|static
 name|void
+DECL|function|paper_select (GtkTreeSelection * selection,gpointer data)
 name|paper_select
 parameter_list|(
 name|GtkTreeSelection
@@ -500,8 +477,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|paper_restore (void)
 name|void
+DECL|function|paper_restore (void)
 name|paper_restore
 parameter_list|(
 name|void
@@ -568,8 +545,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|paper_store (void)
 name|void
+DECL|function|paper_store (void)
 name|paper_store
 parameter_list|(
 name|void
@@ -612,8 +589,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_paperpage (GtkNotebook * notebook)
 name|void
+DECL|function|create_paperpage (GtkNotebook * notebook)
 name|create_paperpage
 parameter_list|(
 name|GtkNotebook

@@ -66,8 +66,8 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function
-DECL|function|readline (FILE * f,char * buffer,int len)
 name|int
+DECL|function|readline (FILE * f,char * buffer,int len)
 name|readline
 parameter_list|(
 name|FILE
@@ -123,8 +123,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_kill (ppm_t * p)
 name|void
+DECL|function|ppm_kill (ppm_t * p)
 name|ppm_kill
 parameter_list|(
 name|ppm_t
@@ -302,8 +302,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_rgb (ppm_t * s,float xo,float yo,guchar * d)
 name|void
+DECL|function|get_rgb (ppm_t * s,float xo,float yo,guchar * d)
 name|get_rgb
 parameter_list|(
 name|ppm_t
@@ -880,8 +880,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|resize (ppm_t * p,int nx,int ny)
 name|void
+DECL|function|resize (ppm_t * p,int nx,int ny)
 name|resize
 parameter_list|(
 name|ppm_t
@@ -1045,8 +1045,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|rescale (ppm_t * p,double sc)
 name|void
+DECL|function|rescale (ppm_t * p,double sc)
 name|rescale
 parameter_list|(
 name|ppm_t
@@ -1171,7 +1171,7 @@ name|x
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|rx
 init|=
 name|x
@@ -1311,8 +1311,8 @@ struct|;
 end_struct
 
 begin_function
-DECL|function|msb2lsb (unsigned int * i)
 name|void
+DECL|function|msb2lsb (unsigned int * i)
 name|msb2lsb
 parameter_list|(
 name|unsigned
@@ -1385,10 +1385,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|fopen_from_search_path (const gchar * fn,const char * mode)
 specifier|static
 name|FILE
 modifier|*
+DECL|function|fopen_from_search_path (const gchar * fn,const char * mode)
 name|fopen_from_search_path
 parameter_list|(
 specifier|const
@@ -1454,8 +1454,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_gimp_brush (const gchar * fn,ppm_t * p)
 name|void
+DECL|function|load_gimp_brush (const gchar * fn,ppm_t * p)
 name|load_gimp_brush
 parameter_list|(
 specifier|const
@@ -1480,7 +1480,7 @@ name|gchar
 modifier|*
 name|ptr
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -1712,8 +1712,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_load (const char * fn,ppm_t * p)
 name|void
+DECL|function|ppm_load (const char * fn,ppm_t * p)
 name|ppm_load
 parameter_list|(
 specifier|const
@@ -2074,8 +2074,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fill (ppm_t * p,guchar * c)
 name|void
+DECL|function|fill (ppm_t * p,guchar * c)
 name|fill
 parameter_list|(
 name|ppm_t
@@ -2268,8 +2268,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_copy (ppm_t * s,ppm_t * p)
 name|void
+DECL|function|ppm_copy (ppm_t * s,ppm_t * p)
 name|ppm_copy
 parameter_list|(
 name|ppm_t
@@ -2327,8 +2327,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|free_rotate (ppm_t * p,double amount)
 name|void
+DECL|function|free_rotate (ppm_t * p,double amount)
 name|free_rotate
 parameter_list|(
 name|ppm_t
@@ -2629,8 +2629,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|crop (ppm_t * p,int lx,int ly,int hx,int hy)
 name|void
+DECL|function|crop (ppm_t * p,int lx,int ly,int hx,int hy)
 name|crop
 parameter_list|(
 name|ppm_t
@@ -2800,8 +2800,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|autocrop (ppm_t * p,int room)
 name|void
+DECL|function|autocrop (ppm_t * p,int room)
 name|autocrop
 parameter_list|(
 name|ppm_t
@@ -3521,8 +3521,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_pad (ppm_t * p,int left,int right,int top,int bottom,guchar * bg)
 name|void
+DECL|function|ppm_pad (ppm_t * p,int left,int right,int top,int bottom,guchar * bg)
 name|ppm_pad
 parameter_list|(
 name|ppm_t
@@ -3966,8 +3966,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_save (ppm_t * p,const char * fn)
 name|void
+DECL|function|ppm_save (ppm_t * p,const char * fn)
 name|ppm_save
 parameter_list|(
 name|ppm_t
@@ -3997,7 +3997,7 @@ operator|!
 name|f
 condition|)
 block|{
-comment|/*        * gimp_filename_to_utf8() and g_strerror() return temporary strings        * that need not and should not be freed. So this call is OK.        * */
+comment|/*        * gimp_filename_to_utf8 () and g_strerror () return temporary strings        * that need not and should not be freed. So this call is OK.        * */
 name|g_message
 argument_list|(
 name|_
@@ -4063,8 +4063,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|edgepad (ppm_t * p,int left,int right,int top,int bottom)
 name|void
+DECL|function|edgepad (ppm_t * p,int left,int right,int top,int bottom)
 name|edgepad
 parameter_list|(
 name|ppm_t
@@ -4470,8 +4470,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_apply_gamma (ppm_t * p,float e,int r,int g,int b)
 name|void
+DECL|function|ppm_apply_gamma (ppm_t * p,float e,int r,int g,int b)
 name|ppm_apply_gamma
 parameter_list|(
 name|ppm_t
@@ -4731,8 +4731,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_apply_brightness (ppm_t * p,float e,int r,int g,int b)
 name|void
+DECL|function|ppm_apply_brightness (ppm_t * p,float e,int r,int g,int b)
 name|ppm_apply_brightness
 parameter_list|(
 name|ppm_t
@@ -4789,7 +4789,6 @@ condition|;
 name|x
 operator|++
 control|)
-block|{
 name|xlat
 index|[
 name|x
@@ -4799,7 +4798,6 @@ name|x
 operator|*
 name|e
 expr_stmt|;
-block|}
 name|pix
 operator|=
 name|p
@@ -4903,8 +4901,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|blur (ppm_t * p,int xrad,int yrad)
 name|void
+DECL|function|blur (ppm_t * p,int xrad,int yrad)
 name|blur
 parameter_list|(
 name|ppm_t
@@ -5215,8 +5213,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_put_rgb_fast (ppm_t * s,float xo,float yo,guchar * d)
 name|void
+DECL|function|ppm_put_rgb_fast (ppm_t * s,float xo,float yo,guchar * d)
 name|ppm_put_rgb_fast
 parameter_list|(
 name|ppm_t
@@ -5304,8 +5302,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_put_rgb (ppm_t * s,float xo,float yo,guchar * d)
 name|void
+DECL|function|ppm_put_rgb (ppm_t * s,float xo,float yo,guchar * d)
 name|ppm_put_rgb
 parameter_list|(
 name|ppm_t
@@ -5849,8 +5847,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ppm_drawline (ppm_t * p,float fx,float fy,float tx,float ty,guchar * col)
 name|void
+DECL|function|ppm_drawline (ppm_t * p,float fx,float fy,float tx,float ty,guchar * col)
 name|ppm_drawline
 parameter_list|(
 name|ppm_t

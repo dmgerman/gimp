@@ -93,9 +93,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|orientation_store (GtkWidget * wg,void * d)
 specifier|static
 name|void
+DECL|function|orientation_store (GtkWidget * wg,void * d)
 name|orientation_store
 parameter_list|(
 name|GtkWidget
@@ -202,9 +202,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_orientmap_dialog_helper (void)
 specifier|static
 name|void
+DECL|function|create_orientmap_dialog_helper (void)
 name|create_orientmap_dialog_helper
 parameter_list|(
 name|void
@@ -226,14 +226,13 @@ expr_stmt|;
 name|create_orientmap_dialog
 argument_list|()
 expr_stmt|;
-return|return;
 block|}
 end_function
 
 begin_function
-DECL|function|create_orientradio_button (GtkWidget * box,int orient_type,gchar * label,gchar * help_string,GSList ** radio_group)
 specifier|static
 name|void
+DECL|function|create_orientradio_button (GtkWidget * box,int orient_type,gchar * label,gchar * help_string,GSList ** radio_group)
 name|create_orientradio_button
 parameter_list|(
 name|GtkWidget
@@ -274,7 +273,6 @@ argument_list|,
 name|orient_radio
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 end_function
 

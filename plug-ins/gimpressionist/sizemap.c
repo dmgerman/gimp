@@ -5,29 +5,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -254,9 +231,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|getsiz_from_gui (double x,double y)
 specifier|static
 name|double
+DECL|function|getsiz_from_gui (double x,double y)
 name|getsiz_from_gui
 parameter_list|(
 name|double
@@ -296,9 +273,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|updatesmpreviewprev (void)
 specifier|static
 name|void
+DECL|function|updatesmpreviewprev (void)
 name|updatesmpreviewprev
 parameter_list|(
 name|void
@@ -596,9 +573,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|updatesmvectorprev (void)
 specifier|static
 name|void
+DECL|function|updatesmvectorprev (void)
 name|updatesmvectorprev
 parameter_list|(
 name|void
@@ -706,8 +683,8 @@ if|#
 directive|if
 literal|0
 block|if (!PPM_IS_INITED (&infile))          updatepreview (NULL, (void *)2);
-comment|/* Force grabarea() */
-block|ppm_copy(&infile,&update_vector_preview_backup);
+comment|/* Force grabarea () */
+block|ppm_copy (&infile,&update_vector_preview_backup);
 else|#
 directive|else
 name|infile_copy_to_ppm
@@ -984,8 +961,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|size_map_free_resources ()
 name|void
+DECL|function|size_map_free_resources ()
 name|size_map_free_resources
 parameter_list|()
 block|{
@@ -1015,9 +992,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|updatesmsliders (void)
 specifier|static
 name|void
+DECL|function|updatesmsliders (void)
 name|updatesmsliders
 parameter_list|(
 name|void
@@ -1065,9 +1042,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|smprevclick (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|smprevclick (GtkWidget * w,gpointer data)
 name|smprevclick
 parameter_list|(
 name|GtkWidget
@@ -1103,9 +1080,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|smnextclick (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|smnextclick (GtkWidget * w,gpointer data)
 name|smnextclick
 parameter_list|(
 name|GtkWidget
@@ -1139,9 +1116,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|smaddclick (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|smaddclick (GtkWidget * w,gpointer data)
 name|smaddclick
 parameter_list|(
 name|GtkWidget
@@ -1208,9 +1185,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|smdeleteclick (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|smdeleteclick (GtkWidget * w,gpointer data)
 name|smdeleteclick
 parameter_list|(
 name|GtkWidget
@@ -1279,9 +1256,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|smmapclick (GtkWidget * w,GdkEventButton * event)
 specifier|static
 name|void
+DECL|function|smmapclick (GtkWidget * w,GdkEventButton * event)
 name|smmapclick
 parameter_list|(
 name|GtkWidget
@@ -1418,7 +1395,7 @@ block|}
 if|#
 directive|if
 literal|0
-block|else if(event->button == 3) {     double d;     d = atan2(OMWIDTH * smvector[selectedsmvector].x - event->x,                OMHEIGHT * smvector[selectedsmvector].y - event->y);     smvector[selectedsmvector].dir = radtodeg(d);     updatesmsliders();     */   }
+block|else if (event->button == 3)     {       double d;       d = atan2 (OMWIDTH * smvector[selectedsmvector].x - event->x,                  OMHEIGHT * smvector[selectedsmvector].y - event->y);       smvector[selectedsmvector].dir = radtodeg (d);       updatesmsliders ();     */   }
 endif|#
 directive|endif
 name|updatesmvectorprev
@@ -1431,9 +1408,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|angsmadjmove (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|angsmadjmove (GtkWidget * w,gpointer data)
 name|angsmadjmove
 parameter_list|(
 name|GtkWidget
@@ -1475,9 +1452,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|strsmadjmove (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|strsmadjmove (GtkWidget * w,gpointer data)
 name|strsmadjmove
 parameter_list|(
 name|GtkWidget
@@ -1519,9 +1496,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|smstrexpsmadjmove (GtkWidget * w,gpointer data)
 specifier|static
 name|void
+DECL|function|smstrexpsmadjmove (GtkWidget * w,gpointer data)
 name|smstrexpsmadjmove
 parameter_list|(
 name|GtkWidget
@@ -1651,9 +1628,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|initsmvectors (void)
 specifier|static
 name|void
+DECL|function|initsmvectors (void)
 name|initsmvectors
 parameter_list|(
 name|void
@@ -1769,14 +1746,14 @@ literal|0
 end_if
 
 begin_endif
-unit|static void update_sizemap_dialog(void) {   if (smwindow)     {       initsmvectors();        gtk_adjustment_set_value(GTK_ADJUSTMENT(smstrexpadjust),                                   pcvals.size_strength_exponent);       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(size_voronoi),                                        pcvals.size_voronoi);        updatesmvectorprev();       updatesmpreviewprev();     } }
+unit|static void update_sizemap_dialog (void) {   if (smwindow)     {       initsmvectors ();        gtk_adjustment_set_value (GTK_ADJUSTMENT (smstrexpadjust),                                 pcvals.size_strength_exponent);       gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (size_voronoi),                                     pcvals.size_voronoi);        updatesmvectorprev ();       updatesmpreviewprev ();     } }
 endif|#
 directive|endif
 end_endif
 
 begin_function
-DECL|function|create_sizemap_dialog (void)
 name|void
+DECL|function|create_sizemap_dialog (void)
 name|create_sizemap_dialog
 parameter_list|(
 name|void

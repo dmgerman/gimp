@@ -44,8 +44,8 @@ comment|/* Mathematical Utilities */
 end_comment
 
 begin_function
-DECL|function|dist (double x,double y,double end_x,double end_y)
 name|double
+DECL|function|dist (double x,double y,double end_x,double end_y)
 name|dist
 parameter_list|(
 name|double
@@ -91,8 +91,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|getsiz_proto (double x,double y,int n,smvector_t * vec,double smstrexp,int voronoi)
 name|double
+DECL|function|getsiz_proto (double x,double y,int n,smvector_t * vec,double smstrexp,int voronoi)
 name|getsiz_proto
 parameter_list|(
 name|double
@@ -387,9 +387,9 @@ comment|/* This function is memoized. Once it finds the value it permanently  * 
 end_comment
 
 begin_function
-DECL|function|parsepath (void)
 name|GList
 modifier|*
+DECL|function|parsepath (void)
 name|parsepath
 parameter_list|(
 name|void
@@ -538,9 +538,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|my_g_free (gpointer data,gpointer userdata)
 specifier|static
 name|void
+DECL|function|my_g_free (gpointer data,gpointer userdata)
 name|my_g_free
 parameter_list|(
 name|gpointer
@@ -559,8 +559,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|free_parsepath_cache (void)
 name|void
+DECL|function|free_parsepath_cache (void)
 name|free_parsepath_cache
 parameter_list|(
 name|void
@@ -572,7 +572,7 @@ name|parsepath_cached_path
 operator|!=
 name|NULL
 condition|)
-return|return
+return|return;
 name|g_list_foreach
 argument_list|(
 name|parsepath_cached_path
@@ -581,7 +581,7 @@ name|my_g_free
 argument_list|,
 name|NULL
 argument_list|)
-return|;
+expr_stmt|;
 name|g_list_free
 argument_list|(
 name|parsepath_cached_path
@@ -881,9 +881,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|readdirintolist_real (char * subdir,GtkWidget * view,char * selected,gboolean with_filename_column,gchar * (* get_object_name_cb)(gchar * dir,gchar * filename,void * context),void * context)
 specifier|static
 name|void
+DECL|function|readdirintolist_real (char * subdir,GtkWidget * view,char * selected,gboolean with_filename_column,gchar * (* get_object_name_cb)(gchar * dir,gchar * filename,void * context),void * context)
 name|readdirintolist_real
 parameter_list|(
 name|char
@@ -1296,8 +1296,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|readdirintolist_extended (char * subdir,GtkWidget * view,char * selected,gboolean with_filename_column,gchar * (* get_object_name_cb)(gchar * dir,gchar * filename,void * context),void * context)
 name|void
+DECL|function|readdirintolist_extended (char * subdir,GtkWidget * view,char * selected,gboolean with_filename_column,gchar * (* get_object_name_cb)(gchar * dir,gchar * filename,void * context),void * context)
 name|readdirintolist_extended
 parameter_list|(
 name|char
@@ -1404,8 +1404,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|readdirintolist (char * subdir,GtkWidget * view,char * selected)
 name|void
+DECL|function|readdirintolist (char * subdir,GtkWidget * view,char * selected)
 name|readdirintolist
 parameter_list|(
 name|char
@@ -1444,9 +1444,9 @@ comment|/*  * Creates a radio button.  * box - the containing box.  * orient_typ
 end_comment
 
 begin_function
-DECL|function|create_radio_button (GtkWidget * box,int orient_type,void (* callback)(GtkWidget * wg,void * d),gchar * label,gchar * help_string,GSList ** radio_group,GtkWidget ** buttons_array)
 name|GtkWidget
 modifier|*
+DECL|function|create_radio_button (GtkWidget * box,int orient_type,void (* callback)(GtkWidget * wg,void * d),gchar * label,gchar * help_string,GSList ** radio_group,GtkWidget ** buttons_array)
 name|create_radio_button
 parameter_list|(
 name|GtkWidget

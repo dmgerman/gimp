@@ -11,29 +11,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -127,9 +104,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|drawalpha (ppm_t * p,ppm_t * a)
 specifier|static
 name|void
+DECL|function|drawalpha (ppm_t * p,ppm_t * a)
 name|drawalpha
 parameter_list|(
 name|ppm_t
@@ -400,8 +377,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|preview_free_resources (void)
 name|void
+DECL|function|preview_free_resources (void)
 name|preview_free_resources
 parameter_list|(
 name|void

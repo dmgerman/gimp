@@ -200,8 +200,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|infile_copy_to_ppm (ppm_t * p)
 name|void
+DECL|function|infile_copy_to_ppm (ppm_t * p)
 name|infile_copy_to_ppm
 parameter_list|(
 name|ppm_t
@@ -225,7 +225,7 @@ if|#
 directive|if
 literal|0
 block|updatepreview (NULL, (void *)2);
-comment|/* Force grabarea() */
+comment|/* Force grabarea () */
 endif|#
 directive|endif
 name|ppm_copy
@@ -240,8 +240,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|infile_copy_alpha_to_ppm (ppm_t * p)
 name|void
+DECL|function|infile_copy_alpha_to_ppm (ppm_t * p)
 name|infile_copy_alpha_to_ppm
 parameter_list|(
 name|ppm_t
@@ -749,8 +749,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|grabarea (void)
 name|void
+DECL|function|grabarea (void)
 name|grabarea
 parameter_list|(
 name|void
@@ -770,9 +770,10 @@ decl_stmt|;
 name|gint
 name|alpha
 decl_stmt|,
-name|has_alpha
-decl_stmt|,
 name|bpp
+decl_stmt|;
+name|gboolean
+name|has_alpha
 decl_stmt|;
 name|gint
 name|x
@@ -1472,9 +1473,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimpressionist_main (void)
 specifier|static
 name|void
+DECL|function|gimpressionist_main (void)
 name|gimpressionist_main
 parameter_list|(
 name|void
@@ -1494,9 +1495,10 @@ decl_stmt|;
 name|gint
 name|alpha
 decl_stmt|,
-name|has_alpha
-decl_stmt|,
 name|bpp
+decl_stmt|;
+name|gboolean
+name|has_alpha
 decl_stmt|;
 name|gint
 name|x
@@ -2056,6 +2058,8 @@ operator|(
 name|tmprow
 index|[
 name|k
+operator|+
+literal|0
 index|]
 operator|+
 name|tmprow
@@ -2224,6 +2228,8 @@ operator|(
 name|tmprow
 index|[
 name|k
+operator|+
+literal|0
 index|]
 operator|+
 name|tmprow

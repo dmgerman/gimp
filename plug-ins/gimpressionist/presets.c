@@ -230,9 +230,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|can_delete_preset (const gchar * abs)
 specifier|static
 name|gboolean
+DECL|function|can_delete_preset (const gchar * abs)
 name|can_delete_preset
 parameter_list|(
 specifier|const
@@ -289,8 +289,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|preset_save_button_set_sensitive (gboolean s)
 name|void
+DECL|function|preset_save_button_set_sensitive (gboolean s)
 name|preset_save_button_set_sensitive
 parameter_list|(
 name|gboolean
@@ -318,8 +318,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|preset_free (void)
 name|void
+DECL|function|preset_free (void)
 name|preset_free
 parameter_list|(
 name|void
@@ -888,9 +888,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|add_factory_defaults (void)
 specifier|static
 name|void
+DECL|function|add_factory_defaults (void)
 name|add_factory_defaults
 parameter_list|(
 name|void
@@ -943,9 +943,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|preset_refresh_presets (void)
 specifier|static
 name|void
+DECL|function|preset_refresh_presets (void)
 name|preset_refresh_presets
 parameter_list|(
 name|void
@@ -966,9 +966,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_old_preset (const gchar * fname)
 specifier|static
 name|int
+DECL|function|load_old_preset (const gchar * fname)
 name|load_old_preset
 parameter_list|(
 specifier|const
@@ -1044,10 +1044,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|hexval (char c)
 specifier|static
 name|unsigned
 name|int
+DECL|function|hexval (char c)
 name|hexval
 parameter_list|(
 name|char
@@ -1108,10 +1108,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|parse_rgb_string (const gchar * s)
 specifier|static
 name|char
 modifier|*
+DECL|function|parse_rgb_string (const gchar * s)
 name|parse_rgb_string
 parameter_list|(
 specifier|const
@@ -1209,9 +1209,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_orient_vector (const gchar * str)
 specifier|static
 name|void
+DECL|function|set_orient_vector (const gchar * str)
 name|set_orient_vector
 parameter_list|(
 specifier|const
@@ -1623,9 +1623,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|parse_desc (const gchar * str,gchar * d,gssize d_len)
 specifier|static
 name|void
+DECL|function|parse_desc (const gchar * str,gchar * d,gssize d_len)
 name|parse_desc
 parameter_list|(
 specifier|const
@@ -1668,9 +1668,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_values (const gchar * key,const gchar * val)
 specifier|static
 name|void
+DECL|function|set_values (const gchar * key,const gchar * val)
 name|set_values
 parameter_list|(
 specifier|const
@@ -2647,9 +2647,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|load_preset (const gchar * fn)
 specifier|static
 name|int
+DECL|function|load_preset (const gchar * fn)
 name|load_preset
 parameter_list|(
 specifier|const
@@ -2809,8 +2809,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|select_preset (const gchar * preset)
 name|int
+DECL|function|select_preset (const gchar * preset)
 name|select_preset
 parameter_list|(
 specifier|const
@@ -2824,7 +2824,7 @@ name|ret
 init|=
 name|SELECT_PRESET_OK
 decl_stmt|;
-comment|/* I'm copying this behavior as is. As it seems applying the      * factory_defaults preset does nothing, which I'm not sure      * if that was what the author intended.      *              -- Shlomi Fish      */
+comment|/* I'm copying this behavior as is. As it seems applying the    * factory_defaults preset does nothing, which I'm not sure    * if that was what the author intended.    *              -- Shlomi Fish    */
 if|if
 condition|(
 name|strcmp
@@ -2901,7 +2901,7 @@ operator|==
 name|SELECT_PRESET_OK
 condition|)
 block|{
-comment|/* This is so the colorbrushes param (that is not stored in the          * preset will be set correctly upon the preset loading.          * */
+comment|/* This is so the colorbrushes param (that is not stored in the        * preset will be set correctly upon the preset loading.        * */
 name|set_colorbrushes
 argument_list|(
 name|pcvals
@@ -2917,9 +2917,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|apply_preset (GtkWidget * w,GtkTreeSelection * selection)
 specifier|static
 name|void
+DECL|function|apply_preset (GtkWidget * w,GtkTreeSelection * selection)
 name|apply_preset
 parameter_list|(
 name|GtkWidget
@@ -2995,9 +2995,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|delete_preset (GtkWidget * w,GtkTreeSelection * selection)
 specifier|static
 name|void
+DECL|function|delete_preset (GtkWidget * w,GtkTreeSelection * selection)
 name|delete_preset
 parameter_list|(
 name|GtkWidget
@@ -3132,9 +3132,9 @@ function_decl|;
 end_function_decl
 
 begin_function
-DECL|function|preset_desc_callback (GtkTextBuffer * buffer,gpointer data)
 specifier|static
 name|void
+DECL|function|preset_desc_callback (GtkTextBuffer * buffer,gpointer data)
 name|preset_desc_callback
 parameter_list|(
 name|GtkTextBuffer
@@ -3542,9 +3542,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_preset (void)
 specifier|static
 name|void
+DECL|function|save_preset (void)
 name|save_preset
 parameter_list|(
 name|void
@@ -4807,9 +4807,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|read_description (const char * fn)
 specifier|static
 name|void
+DECL|function|read_description (const char * fn)
 name|read_description
 parameter_list|(
 specifier|const
@@ -5322,8 +5322,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_presetpage (GtkNotebook * notebook)
 name|void
+DECL|function|create_presetpage (GtkNotebook * notebook)
 name|create_presetpage
 parameter_list|(
 name|GtkNotebook

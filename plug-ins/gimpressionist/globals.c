@@ -191,8 +191,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|restore_default_values (void)
 name|void
+DECL|function|restore_default_values (void)
 name|restore_default_values
 parameter_list|(
 name|void

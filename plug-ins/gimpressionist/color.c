@@ -73,8 +73,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|color_restore (void)
 name|void
+DECL|function|color_restore (void)
 name|color_restore
 parameter_list|(
 name|void
@@ -111,8 +111,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|color_type_input (int in)
 name|int
+DECL|function|color_type_input (int in)
 name|color_type_input
 parameter_list|(
 name|int
@@ -131,8 +131,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_colorpage (GtkNotebook * notebook)
 name|void
+DECL|function|create_colorpage (GtkNotebook * notebook)
 name|create_colorpage
 parameter_list|(
 name|GtkNotebook

@@ -11,23 +11,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -87,6 +70,19 @@ include|#
 directive|include
 file|<libgimp/stdplugins-intl.h>
 end_include
+
+begin_function_decl
+specifier|static
+name|void
+name|update_brush_preview
+parameter_list|(
+specifier|const
+name|char
+modifier|*
+name|fn
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_decl_stmt
 DECL|variable|brush_preview
@@ -155,6 +151,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|brush_dont_update
+specifier|static
+name|gboolean
+name|brush_dont_update
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|last_selected_brush
 specifier|static
 name|gchar
@@ -192,8 +198,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|brush_restore (void)
 name|void
+DECL|function|brush_restore (void)
 name|brush_restore
 parameter_list|(
 name|void
@@ -248,8 +254,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|brush_store (void)
 name|void
+DECL|function|brush_store (void)
 name|brush_store
 parameter_list|(
 name|void
@@ -270,8 +276,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|brush_free (void)
 name|void
+DECL|function|brush_free (void)
 name|brush_free
 parameter_list|(
 name|void
@@ -320,23 +326,10 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function_decl
-specifier|static
-name|void
-name|update_brush_preview
-parameter_list|(
-specifier|const
-name|char
-modifier|*
-name|fn
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
-DECL|function|file_is_color (const char * fn)
 specifier|static
 name|gboolean
+DECL|function|file_is_color (const char * fn)
 name|file_is_color
 parameter_list|(
 specifier|const
@@ -359,8 +352,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|set_colorbrushes (const gchar * fn)
 name|void
+DECL|function|set_colorbrushes (const gchar * fn)
 name|set_colorbrushes
 parameter_list|(
 specifier|const
@@ -412,9 +405,10 @@ decl_stmt|;
 name|gint
 name|alpha
 decl_stmt|,
-name|has_alpha
-decl_stmt|,
 name|bpp
+decl_stmt|;
+name|gboolean
+name|has_alpha
 decl_stmt|;
 name|gint
 name|x
@@ -479,7 +473,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|unselectall(brush_list);
+block|unselectall (brush_list);
 endif|#
 directive|endif
 name|preset_save_button_set_sensitive
@@ -792,7 +786,7 @@ name|tmprow_ptr
 operator|=
 name|tmprow
 expr_stmt|;
-comment|/* Possible micro-optimization here:        * src_end = src + src_rgn.bpp * (x2-x1);        * for( ; src< src_end ; src += src_rgn.bpp)        * */
+comment|/* Possible micro-optimization here:            * src_end = src + src_rgn.bpp * (x2-x1);            * for ( ; src< src_end ; src += src_rgn.bpp)            */
 for|for
 control|(
 name|x
@@ -900,7 +894,7 @@ literal|0
 end_if
 
 begin_endif
-unit|void dummybrushdmenuselect(GtkWidget *w, gpointer data) {   ppm_kill (&brushppm);   ppm_new (&brushppm, 10,10);   brush_from_file = 0;   update_brush_preview (NULL); }
+unit|void dummybrushdmenuselect (GtkWidget *w, gpointer data) {   ppm_kill (&brushppm);   ppm_new (&brushppm, 10,10);   brush_from_file = 0;   update_brush_preview (NULL); }
 endif|#
 directive|endif
 end_endif
@@ -1738,16 +1732,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|brush_dont_update
-specifier|static
-name|gboolean
-name|brush_dont_update
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
 comment|/*  * "force" implies here to change the brush even if it was the same.  * It is used for the initialization of the preview.  * */
 end_comment
@@ -1973,7 +1957,6 @@ argument_list|(
 name|brush
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 end_function
 

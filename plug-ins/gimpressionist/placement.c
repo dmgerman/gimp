@@ -84,8 +84,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|place_restore ()
 name|void
+DECL|function|place_restore ()
 name|place_restore
 parameter_list|()
 block|{
@@ -132,8 +132,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|place_type_input (int in)
 name|int
+DECL|function|place_type_input (int in)
 name|place_type_input
 parameter_list|(
 name|int
@@ -152,8 +152,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|place_store ()
 name|void
+DECL|function|place_store ()
 name|place_store
 parameter_list|()
 block|{
@@ -172,8 +172,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_placementpage (GtkNotebook * notebook)
 name|void
+DECL|function|create_placementpage (GtkNotebook * notebook)
 name|create_placementpage
 parameter_list|(
 name|GtkNotebook
@@ -462,8 +462,6 @@ argument_list|)
 expr_stmt|;
 name|placement_center
 operator|=
-name|tmpw
-operator|=
 name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
@@ -471,6 +469,10 @@ argument_list|(
 literal|"Centerize"
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|tmpw
+operator|=
+name|placement_center
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(

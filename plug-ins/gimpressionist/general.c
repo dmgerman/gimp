@@ -173,9 +173,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|normalize_bg (int n)
 specifier|static
 name|int
+DECL|function|normalize_bg (int n)
 name|normalize_bg
 parameter_list|(
 name|int
@@ -202,9 +202,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|general_bg_callback (GtkWidget * wg,void * d)
 specifier|static
 name|void
+DECL|function|general_bg_callback (GtkWidget * wg,void * d)
 name|general_bg_callback
 parameter_list|(
 name|GtkWidget
@@ -232,8 +232,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|general_store (void)
 name|void
+DECL|function|general_store (void)
 name|general_store
 parameter_list|(
 name|void
@@ -331,8 +331,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|general_bg_type_input (int in)
 name|int
+DECL|function|general_bg_type_input (int in)
 name|general_bg_type_input
 parameter_list|(
 name|int
@@ -351,8 +351,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|general_restore (void)
 name|void
+DECL|function|general_restore (void)
 name|general_restore
 parameter_list|(
 name|void
@@ -489,9 +489,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|select_color (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|select_color (GtkWidget * widget,gpointer data)
 name|select_color
 parameter_list|(
 name|GtkWidget
@@ -519,10 +519,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_general_button (GtkWidget * box,int idx,gchar * label,gchar * help_string,GSList ** radio_group)
 specifier|static
 name|GtkWidget
 modifier|*
+DECL|function|create_general_button (GtkWidget * box,int idx,gchar * label,gchar * help_string,GSList ** radio_group)
 name|create_general_button
 parameter_list|(
 name|GtkWidget
@@ -568,8 +568,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_generalpage (GtkNotebook * notebook)
 name|void
+DECL|function|create_generalpage (GtkNotebook * notebook)
 name|create_generalpage
 parameter_list|(
 name|GtkNotebook

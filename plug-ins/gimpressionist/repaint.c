@@ -98,9 +98,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|get_siz_from_pcvals (double x,double y)
 specifier|static
 name|double
+DECL|function|get_siz_from_pcvals (double x,double y)
 name|get_siz_from_pcvals
 parameter_list|(
 name|double
@@ -138,9 +138,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_pixel_value (double dir)
 specifier|static
 name|int
+DECL|function|get_pixel_value (double dir)
 name|get_pixel_value
 parameter_list|(
 name|double
@@ -178,9 +178,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|prepare_brush (ppm_t * p)
 specifier|static
 name|void
+DECL|function|prepare_brush (ppm_t * p)
 name|prepare_brush
 parameter_list|(
 name|ppm_t
@@ -355,9 +355,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|sum_brush (ppm_t * p)
 specifier|static
 name|double
+DECL|function|sum_brush (ppm_t * p)
 name|sum_brush
 parameter_list|(
 name|ppm_t
@@ -415,9 +415,9 @@ comment|/* TODO : Use r = rgb[0]; g = rgb[1] ; b = rgb[2]; instead of   * the di
 end_comment
 
 begin_function
-DECL|function|get_hue (guchar * rgb)
 specifier|static
 name|int
+DECL|function|get_hue (guchar * rgb)
 name|get_hue
 parameter_list|(
 name|guchar
@@ -656,9 +656,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|choose_best_brush (ppm_t * p,ppm_t * a,int tx,int ty,ppm_t * brushes,int num_brushes,double * brushes_sum,int start,int step)
 specifier|static
 name|int
+DECL|function|choose_best_brush (ppm_t * p,ppm_t * a,int tx,int ty,ppm_t * brushes,int num_brushes,double * brushes_sum,int start,int step)
 name|choose_best_brush
 parameter_list|(
 name|ppm_t
@@ -1265,9 +1265,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|apply_brush (ppm_t * brush,ppm_t * shadow,ppm_t * p,ppm_t * a,int tx,int ty,int r,int g,int b)
 specifier|static
 name|void
+DECL|function|apply_brush (ppm_t * brush,ppm_t * shadow,ppm_t * p,ppm_t * a,int tx,int ty,int r,int g,int b)
 name|apply_brush
 parameter_list|(
 name|ppm_t
@@ -2100,8 +2100,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|repaint (ppm_t * p,ppm_t * a)
 name|void
+DECL|function|repaint (ppm_t * p,ppm_t * a)
 name|repaint
 parameter_list|(
 name|ppm_t
@@ -2828,7 +2828,7 @@ comment|/* Brush-debugging */
 if|#
 directive|if
 literal|0
-block|for(i = 0; i< num_brushes; i++) {     char tmp[1000];     g_snprintf (tmp, sizeof (tmp), "/tmp/_brush%03d.ppm", i);     ppm_save(&brushes[i], tmp);   }
+block|for (i = 0; i< num_brushes; i++)     {       char tmp[1000];       g_snprintf (tmp, sizeof (tmp), "/tmp/_brush%03d.ppm", i);       ppm_save (&brushes[i], tmp);     }
 endif|#
 directive|endif
 for|for
@@ -3161,14 +3161,14 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|autocrop(&shadows[i],1);
+block|autocrop (&shadows[i],1);
 endif|#
 directive|endif
 block|}
 if|#
 directive|if
 literal|0
-block|maxbrushwidth += shadowdepth*3;     maxbrushheight += shadowdepth*3;
+block|maxbrushwidth += shadowdepth*3;       maxbrushheight += shadowdepth*3;
 endif|#
 directive|endif
 block|}
@@ -3176,7 +3176,7 @@ comment|/* For extra annoying debugging :-) */
 if|#
 directive|if
 literal|0
-block|ppm_save(brushes, "/tmp/__brush.ppm");   if(shadows) ppm_save(shadows, "/tmp/__shadow.ppm");   system("xv /tmp/__brush.ppm& xv /tmp/__shadow.ppm& ");
+block|ppm_save (brushes, "/tmp/__brush.ppm");   if (shadows) ppm_save (shadows, "/tmp/__shadow.ppm");   system ("xv /tmp/__brush.ppm& xv /tmp/__shadow.ppm& ");
 endif|#
 directive|endif
 if|if

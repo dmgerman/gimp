@@ -125,8 +125,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|store_values (void)
 name|void
+DECL|function|store_values (void)
 name|store_values
 parameter_list|(
 name|void
@@ -145,8 +145,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|restore_values (void)
 name|void
+DECL|function|restore_values (void)
 name|restore_values
 parameter_list|(
 name|void
@@ -180,9 +180,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_one_column_list (GtkWidget * parent,void (* changed_cb)(GtkTreeSelection * selection,gpointer data))
 name|GtkWidget
 modifier|*
+DECL|function|create_one_column_list (GtkWidget * parent,void (* changed_cb)(GtkTreeSelection * selection,gpointer data))
 name|create_one_column_list
 parameter_list|(
 name|GtkWidget

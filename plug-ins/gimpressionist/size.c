@@ -101,9 +101,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|size_store (GtkWidget * wg,void * d)
 specifier|static
 name|void
+DECL|function|size_store (GtkWidget * wg,void * d)
 name|size_store
 parameter_list|(
 name|GtkWidget
@@ -148,9 +148,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|size_type_restore (void)
 specifier|static
 name|void
+DECL|function|size_type_restore (void)
 name|size_type_restore
 parameter_list|(
 name|void
@@ -175,8 +175,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|size_restore (void)
 name|void
+DECL|function|size_restore (void)
 name|size_restore
 parameter_list|(
 name|void
@@ -225,9 +225,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_sizemap_dialog_helper (void)
 specifier|static
 name|void
+DECL|function|create_sizemap_dialog_helper (void)
 name|create_sizemap_dialog_helper
 parameter_list|(
 name|void
@@ -253,9 +253,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_size_radio_button (GtkWidget * box,int orient_type,gchar * label,gchar * help_string,GSList ** radio_group)
 specifier|static
 name|void
+DECL|function|create_size_radio_button (GtkWidget * box,int orient_type,gchar * label,gchar * help_string,GSList ** radio_group)
 name|create_size_radio_button
 parameter_list|(
 name|GtkWidget
@@ -300,8 +300,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|create_sizepage (GtkNotebook * notebook)
 name|void
+DECL|function|create_sizepage (GtkNotebook * notebook)
 name|create_sizepage
 parameter_list|(
 name|GtkNotebook
