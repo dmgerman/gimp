@@ -1809,6 +1809,23 @@ block|}
 end_function
 
 begin_function
+DECL|function|global_parse_init ()
+specifier|static
+name|void
+name|global_parse_init
+parameter_list|()
+block|{
+name|parse_add_directory_tokens
+argument_list|()
+expr_stmt|;
+name|parse_buffers_init
+argument_list|()
+expr_stmt|;
+comment|/*  next_token = -1;*/
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|parse_gimprc_file2 (char * filename)
 name|parse_gimprc_file2
@@ -1829,45 +1846,21 @@ index|]
 decl_stmt|;
 if|#
 directive|if
-literal|1
-name|char
-modifier|*
-name|gimp_dir
-decl_stmt|;
-name|gimp_dir
-operator|=
-name|gimp_directory
-argument_list|()
-expr_stmt|;
-name|printf
-argument_list|(
-literal|" SET GLOBAL variables !!!\n"
-argument_list|)
-expr_stmt|;
-name|add_gimp_directory_token
-argument_list|(
-name|gimp_dir
-argument_list|)
-expr_stmt|;
+literal|0
+block|char *gimp_dir;    gimp_dir = gimp_directory ();    printf(" SET GLOBAL variables !!!\n");   add_gimp_directory_token (gimp_dir);
 ifdef|#
 directive|ifdef
 name|__EMX__
-name|add_x11root_token
-argument_list|(
-name|getenv
-argument_list|(
-literal|"X11ROOT"
-argument_list|)
-argument_list|)
-expr_stmt|;
+block|add_x11root_token(getenv("X11ROOT"));
 endif|#
 directive|endif
-name|parse_buffers_init
-argument_list|()
-expr_stmt|;
+block|parse_buffers_init();
 comment|/*  next_token = -1;*/
 endif|#
 directive|endif
+name|global_parse_init
+argument_list|()
+expr_stmt|;
 name|printf
 argument_list|(
 literal|"parse_gimprc_file2 %s\n"

@@ -74,57 +74,40 @@ block|}
 block|}
 end_function
 
-begin_function
-DECL|function|parse_add_directory_tokens (void)
-specifier|static
-name|GList
-modifier|*
-name|parse_add_directory_tokens
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-name|char
-modifier|*
-name|gimp_dir
-decl_stmt|;
-name|gimp_dir
-operator|=
-name|gimp_directory
-argument_list|()
-expr_stmt|;
-name|add_gimp_directory_token
-argument_list|(
-name|gimp_dir
-argument_list|)
-expr_stmt|;
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_ifdef
+unit|static GList *parse_add_directory_tokens (void) {   char *gimp_dir;    gimp_dir = gimp_directory ();   add_gimp_directory_token (gimp_dir);
 ifdef|#
 directive|ifdef
 name|__EMX__
-name|add_x11root_token
-argument_list|(
-name|getenv
-argument_list|(
-literal|"X11ROOT"
-argument_list|)
-argument_list|)
-expr_stmt|;
+end_ifdef
+
+begin_endif
+unit|add_x11root_token(getenv("X11ROOT"));
 endif|#
 directive|endif
-return|return
-operator|(
-name|unknown_tokens
-operator|)
-return|;
-block|}
-end_function
+end_endif
+
+begin_endif
+unit|return (unknown_tokens); }
+endif|#
+directive|endif
+end_endif
 
 begin_function
-DECL|function|global_parse_init ()
+DECL|function|global_parse_init (int showit)
 specifier|static
 name|void
 name|global_parse_init
-parameter_list|()
+parameter_list|(
+name|int
+name|showit
+parameter_list|)
 block|{
 name|GList
 modifier|*
@@ -135,6 +118,11 @@ operator|=
 name|parse_add_directory_tokens
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|showit
+condition|)
+block|{
 name|printf
 argument_list|(
 literal|"----- Directory Tokens:\n"
@@ -145,6 +133,7 @@ argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
+block|}
 name|parse_buffers_init
 argument_list|()
 expr_stmt|;
@@ -316,8 +305,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|parse_gimprc_absolute_file (char * filename)
-name|parse_gimprc_absolute_file
+DECL|function|parse_absolute_gimprc_file (char * filename)
+name|parse_absolute_gimprc_file
 parameter_list|(
 name|char
 modifier|*
@@ -518,9 +507,33 @@ decl_stmt|;
 name|gboolean
 name|status
 decl_stmt|;
-name|global_parse_init
-argument_list|()
+name|int
+name|showit
+init|=
+literal|1
+decl_stmt|;
+if|if
+condition|(
+name|argc
+operator|>
+literal|1
+condition|)
+name|showit
+operator|=
+literal|0
 expr_stmt|;
+name|global_parse_init
+argument_list|(
+name|showit
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|argc
+operator|==
+literal|1
+condition|)
+block|{
 name|parse_get_system_file
 argument_list|(
 name|alternate_system_gimprc
@@ -554,12 +567,9 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|1
 name|status
 operator|=
-name|parse_gimprc_absolute_file
+name|parse_absolute_gimprc_file
 argument_list|(
 name|libfilename
 argument_list|)
@@ -584,7 +594,7 @@ argument_list|)
 expr_stmt|;
 name|status
 operator|=
-name|parse_gimprc_absolute_file
+name|parse_absolute_gimprc_file
 argument_list|(
 name|filename
 argument_list|)
@@ -607,18 +617,18 @@ argument_list|(
 name|unknown_tokens
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
+block|}
+else|else
+block|{
 name|parse_gimprc
 argument_list|()
 expr_stmt|;
-endif|#
-directive|endif
 name|parse_show_tokens
 argument_list|(
 name|unknown_tokens
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon277bce4c0103
+DECL|enum|__anon27b638b90103
 typedef|typedef
 enum|enum
 block|{
@@ -2758,23 +2758,15 @@ block|}
 end_function
 
 begin_function
+DECL|function|parse_add_directory_tokens (void)
+specifier|static
+name|GList
+modifier|*
+name|parse_add_directory_tokens
+parameter_list|(
 name|void
-DECL|function|parse_gimprc ()
-name|parse_gimprc
-parameter_list|()
+parameter_list|)
 block|{
-name|char
-name|libfilename
-index|[
-name|MAXPATHLEN
-index|]
-decl_stmt|;
-name|char
-name|filename
-index|[
-name|MAXPATHLEN
-index|]
-decl_stmt|;
 name|char
 modifier|*
 name|gimp_dir
@@ -2802,6 +2794,36 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+comment|/* the real output is unknown_tokens list !  */
+return|return
+operator|(
+name|unknown_tokens
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|parse_gimprc ()
+name|parse_gimprc
+parameter_list|()
+block|{
+name|char
+name|libfilename
+index|[
+name|MAXPATHLEN
+index|]
+decl_stmt|;
+name|char
+name|filename
+index|[
+name|MAXPATHLEN
+index|]
+decl_stmt|;
+name|parse_add_directory_tokens
+argument_list|()
+expr_stmt|;
 name|strcpy
 argument_list|(
 name|libfilename
