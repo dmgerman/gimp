@@ -285,32 +285,8 @@ directive|include
 file|"pixmaps/locked.xbm"
 end_include
 
-begin_define
-DECL|macro|PREVIEW_EVENT_MASK
-define|#
-directive|define
-name|PREVIEW_EVENT_MASK
-value|GDK_EXPOSURE_MASK | GDK_BUTTON_PRESS_MASK | \                            GDK_ENTER_NOTIFY_MASK
-end_define
-
-begin_define
-DECL|macro|PATHS_LIST_WIDTH
-define|#
-directive|define
-name|PATHS_LIST_WIDTH
-value|200
-end_define
-
-begin_define
-DECL|macro|PATHS_LIST_HEIGHT
-define|#
-directive|define
-name|PATHS_LIST_HEIGHT
-value|150
-end_define
-
 begin_typedef
-DECL|struct|__anon2c2c39530108
+DECL|struct|__anon2a0c2d520108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +415,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c2c39530208
+DECL|struct|__anon2a0c2d520208
 typedef|typedef
 struct|struct
 block|{
@@ -468,7 +444,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2c39530308
+DECL|struct|__anon2a0c2d520308
 typedef|typedef
 struct|struct
 block|{
@@ -487,7 +463,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c2c39530408
+DECL|struct|__anon2a0c2d520408
 typedef|typedef
 struct|struct
 block|{
@@ -1485,9 +1461,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|paths_dialog_create ()
 name|GtkWidget
 modifier|*
+DECL|function|paths_dialog_create ()
 name|paths_dialog_create
 parameter_list|()
 block|{
@@ -1552,16 +1528,7 @@ argument_list|,
 name|OPS_BUTTON_RADIO
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|button_box
-argument_list|)
-argument_list|,
-literal|7
-argument_list|)
-expr_stmt|;
+comment|/*       gtk_container_set_border_width (GTK_CONTAINER (button_box), 2); */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1618,9 +1585,9 @@ name|gtk_widget_set_usize
 argument_list|(
 name|scrolled_win
 argument_list|,
-name|PATHS_LIST_WIDTH
+name|LIST_WIDTH
 argument_list|,
-name|PATHS_LIST_HEIGHT
+name|LIST_HEIGHT
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1667,10 +1634,26 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*       gtk_clist_set_column_title(GTK_CLIST(paths_list), 0, _("Locked"));    */
-comment|/*       gtk_clist_set_column_title(GTK_CLIST(paths_list), 1, _("Path"));    */
-comment|/*       gtk_clist_column_titles_show(GTK_CLIST(paths_list));   */
-comment|/*      gtk_clist_columns_autosize(GTK_CLIST(paths_list));  */
+name|gtk_clist_set_selection_mode
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|paths_list
+argument_list|)
+argument_list|,
+name|GTK_SELECTION_BROWSE
+argument_list|)
+expr_stmt|;
+name|gtk_clist_set_reorderable
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|paths_list
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_clist_set_column_width
 argument_list|(
 name|GTK_CLIST
@@ -1683,6 +1666,34 @@ argument_list|,
 name|locked_width
 argument_list|)
 expr_stmt|;
+name|gtk_clist_set_column_min_width
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|paths_list
+argument_list|)
+argument_list|,
+literal|1
+argument_list|,
+name|LIST_WIDTH
+operator|-
+name|locked_width
+operator|-
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_clist_set_column_auto_resize
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|paths_list
+argument_list|)
+argument_list|,
+literal|1
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -1691,16 +1702,6 @@ name|scrolled_win
 argument_list|)
 argument_list|,
 name|paths_list
-argument_list|)
-expr_stmt|;
-name|gtk_clist_set_selection_mode
-argument_list|(
-name|GTK_CLIST
-argument_list|(
-name|paths_list
-argument_list|)
-argument_list|,
-name|GTK_SELECTION_BROWSE
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1995,9 +1996,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|paths_dialog_realized (GtkWidget * widget)
 specifier|static
 name|void
+DECL|function|paths_dialog_realized (GtkWidget * widget)
 name|paths_dialog_realized
 parameter_list|(
 name|GtkWidget
@@ -5762,10 +5763,6 @@ modifier|*
 name|event
 parameter_list|)
 block|{
-name|GdkEventKey
-modifier|*
-name|kevent
-decl_stmt|;
 name|GdkEventButton
 modifier|*
 name|bevent
@@ -5778,7 +5775,7 @@ operator|-
 literal|1
 decl_stmt|;
 name|gint
-name|this_colunm
+name|this_column
 decl_stmt|;
 switch|switch
 condition|(
@@ -5822,7 +5819,7 @@ operator|&
 name|last_row
 argument_list|,
 operator|&
-name|this_colunm
+name|this_column
 argument_list|)
 condition|)
 name|last_row
@@ -5925,13 +5922,13 @@ argument_list|,
 name|NULL
 argument_list|,
 operator|&
-name|this_colunm
+name|this_column
 argument_list|)
 condition|)
 block|{
 if|if
 condition|(
-name|this_colunm
+name|this_column
 operator|==
 literal|1
 condition|)
@@ -5953,50 +5950,6 @@ block|}
 else|else
 return|return
 name|FALSE
-return|;
-case|case
-name|GDK_KEY_PRESS
-case|:
-name|kevent
-operator|=
-operator|(
-name|GdkEventKey
-operator|*
-operator|)
-name|event
-expr_stmt|;
-switch|switch
-condition|(
-name|kevent
-operator|->
-name|keyval
-condition|)
-block|{
-case|case
-name|GDK_Up
-case|:
-name|printf
-argument_list|(
-literal|"up arrow\n"
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|GDK_Down
-case|:
-name|printf
-argument_list|(
-literal|"down arrow\n"
-argument_list|)
-expr_stmt|;
-break|break;
-default|default:
-return|return
-name|FALSE
-return|;
-block|}
-return|return
-name|TRUE
 return|;
 default|default:
 break|break;
@@ -7179,9 +7132,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|paths_dialog_advanced_to_path_callback (GtkWidget * widget,gpointer udata)
 specifier|static
 name|void
+DECL|function|paths_dialog_advanced_to_path_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_advanced_to_path_callback
 parameter_list|(
 name|GtkWidget
@@ -7349,9 +7302,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|paths_dialog_null_callback (GtkWidget * widget,gpointer udata)
 specifier|static
 name|void
+DECL|function|paths_dialog_null_callback (GtkWidget * widget,gpointer udata)
 name|paths_dialog_null_callback
 parameter_list|(
 name|GtkWidget
