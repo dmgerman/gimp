@@ -142,7 +142,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293d22bc0103
+DECL|enum|__anon2b5f6bf50103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -162,7 +162,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d22bc0208
+DECL|struct|__anon2b5f6bf50208
 block|{
 DECL|member|title
 specifier|const
@@ -2138,11 +2138,16 @@ name|eek_png_path
 operator|=
 name|g_build_filename
 argument_list|(
-name|gimp_help_root
+name|gimp_data_directory
+argument_list|()
+argument_list|,
+literal|"themes"
+argument_list|,
+literal|"Default"
 argument_list|,
 literal|"images"
 argument_list|,
-literal|"eek.png"
+literal|"stock-wilber-eek-64.png"
 argument_list|,
 name|NULL
 argument_list|)
@@ -2223,7 +2228,7 @@ name|window
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/help.html"
+literal|"gimp-help"
 argument_list|,
 name|NULL
 argument_list|)
