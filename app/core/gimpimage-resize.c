@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27a84ee10103
+DECL|enum|__anon27d3bb320103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -5242,6 +5242,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|list
+condition|)
+block|{
+comment|//      g_warning("g_i_c_l on layerless image.");
+block|}
 comment|/* Note added by Raph Levien, 27 Jan 1998       This looks it was intended as an optimization, but it seems to      have correctness problems. In particular, if all channels are      turned off, the screen simply does not update the projected      image. It should be black. Turning off this optimization seems to      restore correct behavior. At some future point, it may be      desirable to turn the optimization back on.       */
 if|#
 directive|if
@@ -5764,6 +5772,14 @@ name|reverse_list
 init|=
 name|NULL
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|list
+condition|)
+block|{
+comment|//      g_warning("g_i_c_c on channelless image.");
+block|}
 comment|/*  reverse the channel list  */
 while|while
 condition|(
@@ -6246,8 +6262,55 @@ parameter_list|)
 block|{
 if|#
 directive|if
+literal|1
+name|int
+name|xoff
+decl_stmt|,
+name|yoff
+decl_stmt|;
+comment|/*  set the construct flag, used to determine if anything        *  has been written to the gimage raw image yet.        */
+name|gimage
+operator|->
+name|construct_flag
+operator|=
 literal|0
-block|int xoff, yoff;         	printf("************ ty:%d by:%d op:%d\n", 	       gimage_projection_type(gimage), 	       gimage_projection_bytes(gimage), 	       gimage_projection_opacity(gimage) 	       );fflush(stdout);       if (gimage->layers) 	{ 	  gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff); 	  printf("-------\n%d,%d,%d,%d,%d,%d,%d,%d,%d\n", 		 (gimage->layers != NULL) ,
+expr_stmt|;
+comment|/* 	printf("************ [%d] ty:%d by:%d op:%d\n", 	       gimage->construct_flag, 	       gimage_projection_type(gimage), 	       gimage_projection_bytes(gimage), 	       gimage_projection_opacity(gimage) 	       );fflush(stdout);*/
+if|if
+condition|(
+name|gimage
+operator|->
+name|layers
+condition|)
+block|{
+name|gimp_drawable_offsets
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+argument_list|)
+argument_list|,
+operator|&
+name|xoff
+argument_list|,
+operator|&
+name|yoff
+argument_list|)
+expr_stmt|;
+if|#
+directive|if
+literal|0
+block|printf("-------\n%d,%d,%d,%d,%d,%d,%d,%d,%d\n", 		 (gimage->layers != NULL) ,
 comment|/* There's a layer.      */
 block|(!g_slist_next(gimage->layers)) ,
 comment|/* It's the only layer.  */
@@ -6259,36 +6322,366 @@ comment|/* Covers all.           */
 comment|/* Not indexed.          */
 block|(!drawable_indexed (GIMP_DRAWABLE((Layer*)(gimage->layers->data)))) , 		 (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
 comment|/*opaq */
-block|, 		 ((xoff==0)&& (yoff==0)) 		 );fflush(stdout); 	}       else 	{ 	  printf("GIMAGE @%p HAS NO LAYERS?! %d\n", 		 gimage, 		 g_slist_length(gimage->layers)); 	  fflush(stdout); 	}        if (
-comment|//can_use_cowproject&&
-block|(gimage->layers)&&
-comment|/* There's a layer.      */
-block|(!g_slist_next(gimage->layers))&&
-comment|/* It's the only layer.  */
-block|(layer_has_alpha((Layer*)(gimage->layers->data)))&&
-comment|/* It's !flat.  */
-comment|/* It's visible.         */
-block|(drawable_visible (GIMP_DRAWABLE((Layer*)(gimage->layers->data))))&&       (drawable_width (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) ==        gimage->width)&&       (drawable_height (GIMP_DRAWABLE((Layer*)(gimage->layers->data))) ==        gimage->height)&&
-comment|/* Covers all.           */
-comment|/* Not indexed.          */
-block|(!drawable_indexed (GIMP_DRAWABLE((Layer*)(gimage->layers->data))))&&       (((Layer*)(gimage->layers->data))->opacity == OPAQUE_OPACITY)
-comment|/*opaq */
-block|)     {       int xoff, yoff;              gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);         if ((xoff==0)&& (yoff==0))
-comment|/* Starts at 0,0         */
-block|{ 	PixelRegion srcPR, destPR; 	void * pr; 	 	g_warning("Can use cow-projection hack.  Yay!");
-comment|//	gimp_image_initialize_projection (gimage, x, y, w, h);
-block|pixel_region_init (&srcPR, gimp_drawable_data 			   (GIMP_DRAWABLE 			    ((Layer*)(gimage->layers->data))), 			   x, y, w,h, FALSE); 	pixel_region_init (&destPR, 			   gimp_image_projection (gimage), 			   x, y, w,h, TRUE);
-comment|//	tile_manager_set_validate_proc(destPR.tiles, NULL);
-block|for (pr = pixel_regions_register (2,&srcPR,&destPR); 	     pr != NULL; 	     pr = pixel_regions_process (pr)) 	  { 	    tile_manager_validate (srcPR.tiles, 				   srcPR.curtile); 	    tile_manager_map_over_tile (destPR.tiles, 					destPR.curtile, srcPR.curtile); 	  }  	gimage->construct_flag = 1; 	return;       }     }    g_warning("Can NOT use cow-projection hack.  Boo!");
+block|, 		 ((xoff==0)&& (yoff==0)) 		 );fflush(stdout);
 endif|#
 directive|endif
-comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
+block|}
+else|else
+block|{
+comment|/*	  printf("GIMAGE @%p HAS NO LAYERS?! %d\n", 		 gimage, 		 g_slist_length(gimage->layers)); 		 fflush(stdout);*/
+block|}
+if|if
+condition|(
+comment|/*can_use_cowproject&&*/
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|)
+operator|&&
+comment|/* There's a layer.      */
+operator|(
+operator|!
+name|g_slist_next
+argument_list|(
+name|gimage
+operator|->
+name|layers
+argument_list|)
+operator|)
+operator|&&
+comment|/* It's the only layer.  */
+operator|(
+name|layer_has_alpha
+argument_list|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+argument_list|)
+operator|)
+operator|&&
+comment|/* It's !flat.  */
+comment|/* It's visible.         */
+operator|(
+name|drawable_visible
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+argument_list|)
+argument_list|)
+operator|)
+operator|&&
+operator|(
+name|drawable_width
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+argument_list|)
+argument_list|)
+operator|==
+name|gimage
+operator|->
+name|width
+operator|)
+operator|&&
+operator|(
+name|drawable_height
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+argument_list|)
+argument_list|)
+operator|==
+name|gimage
+operator|->
+name|height
+operator|)
+operator|&&
+comment|/* Covers all.           */
+comment|/* Not indexed.          */
+operator|(
+operator|!
+name|drawable_indexed
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+argument_list|)
+argument_list|)
+operator|)
+operator|&&
+operator|(
+operator|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+operator|)
+operator|->
+name|opacity
+operator|==
+name|OPAQUE_OPACITY
+operator|)
+comment|/*opaq */
+condition|)
+block|{
+name|int
+name|xoff
+decl_stmt|,
+name|yoff
+decl_stmt|;
+name|gimp_drawable_offsets
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+argument_list|)
+argument_list|,
+operator|&
+name|xoff
+argument_list|,
+operator|&
+name|yoff
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|(
+name|xoff
+operator|==
+literal|0
+operator|)
+operator|&&
+operator|(
+name|yoff
+operator|==
+literal|0
+operator|)
+condition|)
+comment|/* Starts at 0,0         */
+block|{
+name|PixelRegion
+name|srcPR
+decl_stmt|,
+name|destPR
+decl_stmt|;
+name|void
+modifier|*
+name|pr
+decl_stmt|;
+comment|/*	 	g_warning("Can use cow-projection hack.  Yay!"); 	 	//	gimp_image_initialize_projection (gimage, x, y, w, h); */
+name|pixel_region_init
+argument_list|(
+operator|&
+name|srcPR
+argument_list|,
+name|gimp_drawable_data
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+operator|(
+name|Layer
+operator|*
+operator|)
+operator|(
+name|gimage
+operator|->
+name|layers
+operator|->
+name|data
+operator|)
+argument_list|)
+argument_list|)
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|,
+name|w
+argument_list|,
+name|h
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|pixel_region_init
+argument_list|(
+operator|&
+name|destPR
+argument_list|,
+name|gimp_image_projection
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|,
+name|w
+argument_list|,
+name|h
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/*	 	//	tile_manager_set_validate_proc(destPR.tiles, NULL); */
+for|for
+control|(
+name|pr
+operator|=
+name|pixel_regions_register
+argument_list|(
+literal|2
+argument_list|,
+operator|&
+name|srcPR
+argument_list|,
+operator|&
+name|destPR
+argument_list|)
+init|;
+name|pr
+operator|!=
+name|NULL
+condition|;
+name|pr
+operator|=
+name|pixel_regions_process
+argument_list|(
+name|pr
+argument_list|)
+control|)
+block|{
+comment|/*if (!tile_is_valid(srcPR.curtile)) 	      tile_manager_validate (srcPR.tiles, 				     srcPR.curtile); 	    if (!tile_is_valid(destPR.curtile)) 	      tile_manager_validate (destPR.tiles, 	      destPR.curtile);*/
+name|tile_lock
+argument_list|(
+name|destPR
+operator|.
+name|curtile
+argument_list|)
+expr_stmt|;
+name|tile_lock
+argument_list|(
+name|srcPR
+operator|.
+name|curtile
+argument_list|)
+expr_stmt|;
+name|tile_manager_map_over_tile
+argument_list|(
+name|destPR
+operator|.
+name|tiles
+argument_list|,
+name|destPR
+operator|.
+name|curtile
+argument_list|,
+name|srcPR
+operator|.
+name|curtile
+argument_list|)
+expr_stmt|;
+name|tile_release
+argument_list|(
+name|srcPR
+operator|.
+name|curtile
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|tile_release
+argument_list|(
+name|destPR
+operator|.
+name|curtile
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 name|gimage
 operator|->
 name|construct_flag
 operator|=
-literal|0
+literal|1
 expr_stmt|;
+return|return;
+block|}
+block|}
+comment|/*            if (gimage->layers) 	g_warning("Can NOT use cow-projection hack.  Boo!");       else 	g_warning("gimage has no layers!  Boo!"); */
+endif|#
+directive|endif
 comment|/*  First, determine if the projection image needs to be    *  initialized--this is the case when there are no visible    *  layers that cover the entire canvas--either because layers    *  are offset or only a floating selection is visible    */
 name|gimp_image_initialize_projection
 argument_list|(

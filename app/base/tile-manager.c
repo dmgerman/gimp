@@ -1492,7 +1492,11 @@ operator|->
 name|tiles
 condition|)
 block|{
-comment|/*      g_warning ("tile_manager_map: empty tile level - init'ing.");*/
+name|g_warning
+argument_list|(
+literal|"tile_manager_map: empty tile level - init'ing."
+argument_list|)
+expr_stmt|;
 name|tm
 operator|->
 name|tiles
