@@ -1,13 +1,7 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
 
 begin_include
 include|#
@@ -26,30 +20,6 @@ include|#
 directive|include
 file|"gimpui.h"
 end_include
-
-begin_define
-DECL|macro|GRAD_CHECK_SIZE_SM
-define|#
-directive|define
-name|GRAD_CHECK_SIZE_SM
-value|4
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_DARK
-define|#
-directive|define
-name|GRAD_CHECK_DARK
-value|(1.0 / 3.0)
-end_define
-
-begin_define
-DECL|macro|GRAD_CHECK_LIGHT
-define|#
-directive|define
-name|GRAD_CHECK_LIGHT
-value|(2.0 / 3.0)
-end_define
 
 begin_define
 DECL|macro|MENU_THUMBNAIL_WIDTH
@@ -72,12 +42,12 @@ comment|/* Copy data from temp_PDB call */
 end_comment
 
 begin_struct
-DECL|struct|_GBrushData
+DECL|struct|_GimpBrushData
 struct|struct
-name|_GBrushData
+name|_GimpBrushData
 block|{
 DECL|member|busy
-name|gint
+name|gboolean
 name|busy
 decl_stmt|;
 DECL|member|bname
@@ -115,23 +85,23 @@ name|GRunBrushCallback
 name|callback
 decl_stmt|;
 DECL|member|closing
-name|gint
+name|gboolean
 name|closing
 decl_stmt|;
-DECL|member|udata
+DECL|member|data
 name|gpointer
-name|udata
+name|data
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|GBrushData
+DECL|typedef|GimpBrushData
 typedef|typedef
 name|struct
-name|_GBrushData
-name|GBrushData
+name|_GimpBrushData
+name|GimpBrushData
 typedef|;
 end_typedef
 
@@ -140,12 +110,12 @@ comment|/* Copy data from temp_PDB call */
 end_comment
 
 begin_struct
-DECL|struct|_GPatternData
+DECL|struct|_GimpPatternData
 struct|struct
-name|_GPatternData
+name|_GimpPatternData
 block|{
 DECL|member|busy
-name|gint
+name|gboolean
 name|busy
 decl_stmt|;
 DECL|member|pname
@@ -175,23 +145,23 @@ name|GRunPatternCallback
 name|callback
 decl_stmt|;
 DECL|member|closing
-name|gint
+name|gboolean
 name|closing
 decl_stmt|;
-DECL|member|udata
+DECL|member|data
 name|gpointer
-name|udata
+name|data
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|GPatternData
+DECL|typedef|GimpPatternData
 typedef|typedef
 name|struct
-name|_GPatternData
-name|GPatternData
+name|_GimpPatternData
+name|GimpPatternData
 typedef|;
 end_typedef
 
@@ -200,12 +170,12 @@ comment|/* Copy data from temp_PDB call */
 end_comment
 
 begin_struct
-DECL|struct|_GGradientData
+DECL|struct|_GimpGradientData
 struct|struct
-name|_GGradientData
+name|_GimpGradientData
 block|{
 DECL|member|busy
-name|gint
+name|gboolean
 name|busy
 decl_stmt|;
 DECL|member|gname
@@ -227,23 +197,23 @@ name|GRunGradientCallback
 name|callback
 decl_stmt|;
 DECL|member|closing
-name|gint
+name|gboolean
 name|closing
 decl_stmt|;
-DECL|member|udata
+DECL|member|data
 name|gpointer
-name|udata
+name|data
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|GGradientData
+DECL|typedef|GimpGradientData
 typedef|typedef
 name|struct
-name|_GGradientData
-name|GGradientData
+name|_GimpGradientData
+name|GimpGradientData
 typedef|;
 end_typedef
 
@@ -254,7 +224,7 @@ name|gimp_menu_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gint32
 modifier|*
@@ -268,7 +238,7 @@ specifier|static
 name|void
 name|do_brush_callback
 parameter_list|(
-name|GBrushData
+name|GimpBrushData
 modifier|*
 name|bdata
 parameter_list|)
@@ -280,7 +250,7 @@ specifier|static
 name|gint
 name|idle_test_brush
 parameter_list|(
-name|GBrushData
+name|GimpBrushData
 modifier|*
 name|bdata
 parameter_list|)
@@ -292,7 +262,7 @@ specifier|static
 name|gint
 name|idle_test_pattern
 parameter_list|(
-name|GPatternData
+name|GimpPatternData
 modifier|*
 name|pdata
 parameter_list|)
@@ -304,7 +274,7 @@ specifier|static
 name|gint
 name|idle_test_gradient
 parameter_list|(
-name|GGradientData
+name|GimpGradientData
 modifier|*
 name|gdata
 parameter_list|)
@@ -316,18 +286,18 @@ specifier|static
 name|void
 name|temp_brush_invoker
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -385,12 +355,16 @@ name|fill_preview_with_thumb
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gint32
+name|drawable_ID
 parameter_list|,
 name|gint
+name|width
 parameter_list|,
 name|gint
+name|height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -444,7 +418,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|active_brush_pdb
 specifier|static
-name|GBrushData
+name|GimpBrushData
 modifier|*
 name|active_brush_pdb
 init|=
@@ -455,7 +429,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|active_pattern_pdb
 specifier|static
-name|GPatternData
+name|GimpPatternData
 modifier|*
 name|active_pattern_pdb
 init|=
@@ -466,7 +440,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|active_gradient_pdb
 specifier|static
-name|GGradientData
+name|GimpGradientData
 modifier|*
 name|active_gradient_pdb
 init|=
@@ -2048,15 +2022,15 @@ name|GtkWidget
 modifier|*
 name|menuitem
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|image_label
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|label
 decl_stmt|;
@@ -2075,16 +2049,16 @@ decl_stmt|;
 name|gint32
 name|drawable
 decl_stmt|;
-name|int
+name|gint
 name|nimages
 decl_stmt|;
-name|int
+name|gint
 name|nlayers
 decl_stmt|;
-name|int
+name|gint
 name|nchannels
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -2299,7 +2273,7 @@ name|label
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|gchar
 argument_list|,
 name|strlen
 argument_list|(
@@ -3001,12 +2975,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_menu_callback (GtkWidget * w,gint32 * id)
+DECL|function|gimp_menu_callback (GtkWidget * widget,gint32 * id)
 name|gimp_menu_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gint32
 modifier|*
@@ -3028,7 +3002,7 @@ name|gtk_object_get_user_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 operator|->
 name|parent
 argument_list|)
@@ -3040,7 +3014,7 @@ name|gtk_object_get_data
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|w
+name|widget
 operator|->
 name|parent
 argument_list|)
@@ -3065,15 +3039,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fill_preview_with_thumb (GtkWidget * w,gint32 drawableId,gint width,gint height)
+DECL|function|fill_preview_with_thumb (GtkWidget * widget,gint32 drawable_ID,gint width,gint height)
 name|fill_preview_with_thumb
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gint32
-name|drawableId
+name|drawable_ID
 parameter_list|,
 name|gint
 name|width
@@ -3134,7 +3108,7 @@ name|drawable_data
 operator|=
 name|gimp_drawable_get_thumbnail_data
 argument_list|(
-name|drawableId
+name|drawable_ID
 argument_list|,
 operator|&
 name|width
@@ -3150,7 +3124,7 @@ name|gtk_preview_size
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 name|width
@@ -3424,7 +3398,7 @@ condition|(
 operator|(
 name|x
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
@@ -3432,25 +3406,24 @@ condition|)
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 block|}
 else|else
 block|{
 name|c0
 operator|=
-name|GRAD_CHECK_DARK
+name|GIMP_CHECK_DARK
 expr_stmt|;
 name|c1
 operator|=
-name|GRAD_CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
 expr_stmt|;
 block|}
-comment|/* else */
 operator|*
 name|p0
 operator|++
@@ -3560,23 +3533,21 @@ operator|*
 literal|255.0
 expr_stmt|;
 block|}
-comment|/* for */
 if|if
 condition|(
 operator|(
 name|y
 operator|/
-name|GRAD_CHECK_SIZE_SM
+name|GIMP_CHECK_SIZE_SM
 operator|)
 operator|&
 literal|1
 condition|)
-block|{
 name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 operator|(
@@ -3592,14 +3563,12 @@ argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 operator|(
@@ -3615,7 +3584,6 @@ argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
-block|}
 name|src
 operator|+=
 name|width
@@ -3643,10 +3611,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|do_brush_callback (GBrushData * bdata)
+DECL|function|do_brush_callback (GimpBrushData * bdata)
 name|do_brush_callback
 parameter_list|(
-name|GBrushData
+name|GimpBrushData
 modifier|*
 name|bdata
 parameter_list|)
@@ -3703,7 +3671,7 @@ name|closing
 argument_list|,
 name|bdata
 operator|->
-name|udata
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -3736,17 +3704,19 @@ name|bdata
 operator|->
 name|busy
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|bdata
 operator|->
 name|bname
 operator|=
+name|NULL
+expr_stmt|;
 name|bdata
 operator|->
 name|brush_mask_data
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -3754,10 +3724,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_pattern_callback (GPatternData * pdata)
+DECL|function|do_pattern_callback (GimpPatternData * pdata)
 name|do_pattern_callback
 parameter_list|(
-name|GPatternData
+name|GimpPatternData
 modifier|*
 name|pdata
 parameter_list|)
@@ -3806,7 +3776,7 @@ name|closing
 argument_list|,
 name|pdata
 operator|->
-name|udata
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -3839,17 +3809,19 @@ name|pdata
 operator|->
 name|busy
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|pdata
 operator|->
 name|pname
 operator|=
+name|NULL
+expr_stmt|;
 name|pdata
 operator|->
 name|pattern_mask_data
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -3857,10 +3829,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_gradient_callback (GGradientData * gdata)
+DECL|function|do_gradient_callback (GimpGradientData * gdata)
 name|do_gradient_callback
 parameter_list|(
-name|GGradientData
+name|GimpGradientData
 modifier|*
 name|gdata
 parameter_list|)
@@ -3901,7 +3873,7 @@ name|closing
 argument_list|,
 name|gdata
 operator|->
-name|udata
+name|data
 argument_list|)
 expr_stmt|;
 if|if
@@ -3934,7 +3906,7 @@ name|gdata
 operator|->
 name|busy
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|gdata
 operator|->
@@ -3954,10 +3926,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|idle_test_brush (GBrushData * bdata)
+DECL|function|idle_test_brush (GimpBrushData * bdata)
 name|idle_test_brush
 parameter_list|(
-name|GBrushData
+name|GimpBrushData
 modifier|*
 name|bdata
 parameter_list|)
@@ -3976,10 +3948,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|idle_test_pattern (GPatternData * pdata)
+DECL|function|idle_test_pattern (GimpPatternData * pdata)
 name|idle_test_pattern
 parameter_list|(
-name|GPatternData
+name|GimpPatternData
 modifier|*
 name|pdata
 parameter_list|)
@@ -3998,10 +3970,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|idle_test_gradient (GGradientData * gdata)
+DECL|function|idle_test_gradient (GimpGradientData * gdata)
 name|idle_test_gradient
 parameter_list|(
-name|GGradientData
+name|GimpGradientData
 modifier|*
 name|gdata
 parameter_list|)
@@ -4020,21 +3992,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|temp_brush_invoker (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|temp_brush_invoker (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|temp_brush_invoker
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -4056,12 +4028,14 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|GBrushData
+name|GimpBrushData
 modifier|*
 name|bdata
-init|=
+decl_stmt|;
+name|bdata
+operator|=
 operator|(
-name|GBrushData
+name|GimpBrushData
 operator|*
 operator|)
 name|g_hash_table_lookup
@@ -4070,21 +4044,18 @@ name|gbrush_ht
 argument_list|,
 name|name
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|bdata
 condition|)
-block|{
 name|g_warning
 argument_list|(
 literal|"Can't find internal brush data"
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
+elseif|else
 if|if
 condition|(
 operator|!
@@ -4093,15 +4064,6 @@ operator|->
 name|busy
 condition|)
 block|{
-comment|/*       printf("\nXX  Here I am in the temp proc\n"); */
-comment|/*       printf("String name passed is '%s'\n",param[0].data.d_string); */
-comment|/*       printf("opacity is '%g'\n",(gdouble)param[1].data.d_float); */
-comment|/*       printf("spacing is '%d'\n",param[2].data.d_int32); */
-comment|/*       printf("paint mode is '%d'\n",param[3].data.d_int32); */
-comment|/*       printf("width is '%d'\n",param[4].data.d_int32); */
-comment|/*       printf("height is '%d'\n",param[5].data.d_int32); */
-comment|/*       printf("String mask data length passed is '%d'\n",param[6].data.d_int32); */
-comment|/*       printf("closing is '%d'\n",param[8].data.d_int32); */
 name|bdata
 operator|->
 name|bname
@@ -4248,7 +4210,7 @@ name|bdata
 operator|->
 name|busy
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gtk_idle_add
 argument_list|(
@@ -4260,7 +4222,6 @@ argument_list|,
 name|active_brush_pdb
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 operator|*
 name|nreturn_vals
@@ -4298,21 +4259,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|temp_pattern_invoker (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|temp_pattern_invoker (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|temp_pattern_invoker
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -4334,12 +4295,14 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|GPatternData
+name|GimpPatternData
 modifier|*
 name|pdata
-init|=
+decl_stmt|;
+name|pdata
+operator|=
 operator|(
-name|GPatternData
+name|GimpPatternData
 operator|*
 operator|)
 name|g_hash_table_lookup
@@ -4348,21 +4311,18 @@ name|gpattern_ht
 argument_list|,
 name|name
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|pdata
 condition|)
-block|{
 name|g_warning
 argument_list|(
 literal|"Can't find internal pattern data"
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
+elseif|else
 if|if
 condition|(
 operator|!
@@ -4488,7 +4448,7 @@ name|pdata
 operator|->
 name|busy
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gtk_idle_add
 argument_list|(
@@ -4500,7 +4460,6 @@ argument_list|,
 name|active_pattern_pdb
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 operator|*
 name|nreturn_vals
@@ -4538,21 +4497,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|temp_gradient_invoker (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|temp_gradient_invoker (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|temp_gradient_invoker
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -4574,12 +4533,14 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|GGradientData
+name|GimpGradientData
 modifier|*
 name|gdata
-init|=
+decl_stmt|;
+name|gdata
+operator|=
 operator|(
-name|GGradientData
+name|GimpGradientData
 operator|*
 operator|)
 name|g_hash_table_lookup
@@ -4588,19 +4549,17 @@ name|ggradient_ht
 argument_list|,
 name|name
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|gdata
 condition|)
-block|{
 name|g_warning
 argument_list|(
 literal|"Can't find internal gradient data"
 argument_list|)
 expr_stmt|;
-block|}
 else|else
 block|{
 if|if
@@ -4611,17 +4570,17 @@ operator|->
 name|busy
 condition|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gdouble
 modifier|*
 name|pv
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 modifier|*
 name|values
 decl_stmt|;
-empty_stmt|;
 name|gdata
 operator|->
 name|gname
@@ -4655,12 +4614,10 @@ name|gdata
 operator|->
 name|gradient_data
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|gdouble
+argument_list|,
 name|param
 index|[
 literal|1
@@ -4669,11 +4626,6 @@ operator|.
 name|data
 operator|.
 name|d_int32
-operator|*
-sizeof|sizeof
-argument_list|(
-name|gdouble
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|values
@@ -4748,7 +4700,7 @@ name|gdata
 operator|->
 name|busy
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gtk_idle_add
 argument_list|(
@@ -4833,7 +4785,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|int
+name|gboolean
 name|first_time
 init|=
 name|TRUE
@@ -4843,8 +4795,7 @@ condition|(
 name|first_time
 condition|)
 block|{
-comment|/* Tie into the gdk input function */
-comment|/* only once */
+comment|/* Tie into the gdk input function only once */
 name|g_io_add_watch
 argument_list|(
 name|_readchannel
@@ -4884,10 +4835,10 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|result
 decl_stmt|;
@@ -4952,9 +4903,8 @@ comment|/* Can only be used in conjuction with gdk since we need to tie into the
 end_comment
 
 begin_function
-name|void
-modifier|*
-DECL|function|gimp_interactive_selection_brush (gchar * dialogname,gchar * brush_name,gdouble opacity,gint spacing,gint paint_mode,GRunBrushCallback callback,gpointer udata)
+name|gpointer
+DECL|function|gimp_interactive_selection_brush (gchar * dialogname,gchar * brush_name,gdouble opacity,gint spacing,gint paint_mode,GRunBrushCallback callback,gpointer data)
 name|gimp_interactive_selection_brush
 parameter_list|(
 name|gchar
@@ -4978,7 +4928,7 @@ name|GRunBrushCallback
 name|callback
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 specifier|static
@@ -5008,7 +4958,7 @@ name|PARAM_INT32
 block|,
 literal|"spacing"
 block|,
-literal|"spacing"
+literal|"Spacing"
 block|}
 block|,
 block|{
@@ -5016,7 +4966,7 @@ name|PARAM_INT32
 block|,
 literal|"paint mode"
 block|,
-literal|"paint mode"
+literal|"Paint mode"
 block|}
 block|,
 block|{
@@ -5024,15 +4974,14 @@ name|PARAM_INT32
 block|,
 literal|"mask width"
 block|,
-literal|"brush width"
+literal|"Brush width"
 block|}
 block|,
 block|{
 name|PARAM_INT32
 block|,
 literal|"mask height"
-block|,
-literal|"brush heigth"
+literal|"Brush heigth"
 block|}
 block|,
 block|{
@@ -5056,7 +5005,8 @@ name|PARAM_INT32
 block|,
 literal|"dialog status"
 block|,
-literal|"Registers if the dialog was closing [0 = No, 1 = Yes]"
+literal|"Registers if the dialog was closing "
+literal|"[0 = No, 1 = Yes]"
 block|}
 block|,   }
 decl_stmt|;
@@ -5104,19 +5054,19 @@ init|=
 name|gen_temp_plugin_name
 argument_list|()
 decl_stmt|;
-name|GBrushData
+name|GimpBrushData
 modifier|*
 name|bdata
-init|=
-name|g_malloc0
-argument_list|(
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|_GBrushData
-argument_list|)
-argument_list|)
 decl_stmt|;
+name|bdata
+operator|=
+name|g_new0
+argument_list|(
+name|GimpBrushData
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
 name|pdbname
@@ -5169,22 +5119,18 @@ name|PARAM_STRING
 argument_list|,
 name|brush_name
 argument_list|,
-comment|/*name*/
 name|PARAM_FLOAT
 argument_list|,
 name|opacity
 argument_list|,
-comment|/*Opacity*/
 name|PARAM_INT32
 argument_list|,
 name|spacing
 argument_list|,
-comment|/*default spacing*/
 name|PARAM_INT32
 argument_list|,
 name|paint_mode
 argument_list|,
-comment|/*paint mode*/
 name|PARAM_END
 argument_list|)
 expr_stmt|;
@@ -5230,9 +5176,9 @@ name|callback
 expr_stmt|;
 name|bdata
 operator|->
-name|udata
+name|data
 operator|=
-name|udata
+name|data
 expr_stmt|;
 name|g_hash_table_insert
 argument_list|(
@@ -5289,7 +5235,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gchar
@@ -5459,11 +5405,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_brush_close_popup (void * popup_pnt)
+DECL|function|gimp_brush_close_popup (gpointer popup_pnt)
 name|gimp_brush_close_popup
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|popup_pnt
 parameter_list|)
 block|{
@@ -5471,7 +5416,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint
@@ -5523,11 +5468,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_brush_set_popup (void * popup_pnt,gchar * pname,gdouble opacity,gint spacing,gint paint_mode)
+DECL|function|gimp_brush_set_popup (gpointer popup_pnt,gchar * pname,gdouble opacity,gint spacing,gint paint_mode)
 name|gimp_brush_set_popup
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|popup_pnt
 parameter_list|,
 name|gchar
@@ -5548,7 +5492,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint
@@ -5615,9 +5559,8 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|gimp_interactive_selection_pattern (gchar * dialogname,gchar * pattern_name,GRunPatternCallback callback,gpointer udata)
+name|gpointer
+DECL|function|gimp_interactive_selection_pattern (gchar * dialogname,gchar * pattern_name,GRunPatternCallback callback,gpointer data)
 name|gimp_interactive_selection_pattern
 parameter_list|(
 name|gchar
@@ -5632,7 +5575,7 @@ name|GRunPatternCallback
 name|callback
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 specifier|static
@@ -5654,7 +5597,7 @@ name|PARAM_INT32
 block|,
 literal|"mask width"
 block|,
-literal|"pattern width"
+literal|"Pattern width"
 block|}
 block|,
 block|{
@@ -5662,7 +5605,7 @@ name|PARAM_INT32
 block|,
 literal|"mask height"
 block|,
-literal|"pattern heigth"
+literal|"Pattern heigth"
 block|}
 block|,
 block|{
@@ -5670,7 +5613,7 @@ name|PARAM_INT32
 block|,
 literal|"mask bpp"
 block|,
-literal|"pattern bytes per pixel"
+literal|"Pattern bytes per pixel"
 block|}
 block|,
 block|{
@@ -5694,7 +5637,8 @@ name|PARAM_INT32
 block|,
 literal|"dialog status"
 block|,
-literal|"Registers if the dialog was closing [0 = No, 1 = Yes]"
+literal|"Registers if the dialog was closing "
+literal|"[0 = No, 1 = Yes]"
 block|}
 block|,   }
 decl_stmt|;
@@ -5742,19 +5686,19 @@ init|=
 name|gen_temp_plugin_name
 argument_list|()
 decl_stmt|;
-name|GPatternData
+name|GimpPatternData
 modifier|*
 name|pdata
-init|=
-name|g_malloc0
-argument_list|(
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|_GPatternData
-argument_list|)
-argument_list|)
 decl_stmt|;
+name|pdata
+operator|=
+name|g_new0
+argument_list|(
+name|GimpPatternData
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
 name|pdbname
@@ -5846,9 +5790,9 @@ name|callback
 expr_stmt|;
 name|pdata
 operator|->
-name|udata
+name|data
 operator|=
-name|udata
+name|data
 expr_stmt|;
 name|g_hash_table_insert
 argument_list|(
@@ -5897,7 +5841,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gchar
@@ -6043,11 +5987,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_pattern_close_popup (void * popup_pnt)
+DECL|function|gimp_pattern_close_popup (gpointer popup_pnt)
 name|gimp_pattern_close_popup
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|popup_pnt
 parameter_list|)
 block|{
@@ -6055,7 +5998,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint
@@ -6107,11 +6050,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_pattern_set_popup (void * popup_pnt,gchar * pname)
+DECL|function|gimp_pattern_set_popup (gpointer popup_pnt,gchar * pname)
 name|gimp_pattern_set_popup
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|popup_pnt
 parameter_list|,
 name|gchar
@@ -6123,7 +6065,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint
@@ -6178,9 +6120,8 @@ block|}
 end_function
 
 begin_function
-name|void
-modifier|*
-DECL|function|gimp_interactive_selection_gradient (gchar * dialogname,gchar * gradient_name,gint sample_sz,GRunGradientCallback callback,gpointer udata)
+name|gpointer
+DECL|function|gimp_interactive_selection_gradient (gchar * dialogname,gchar * gradient_name,gint sample_sz,GRunGradientCallback callback,gpointer data)
 name|gimp_interactive_selection_gradient
 parameter_list|(
 name|gchar
@@ -6198,7 +6139,7 @@ name|GRunGradientCallback
 name|callback
 parameter_list|,
 name|gpointer
-name|udata
+name|data
 parameter_list|)
 block|{
 specifier|static
@@ -6220,7 +6161,7 @@ name|PARAM_INT32
 block|,
 literal|"grad width"
 block|,
-literal|"grad width"
+literal|"Gradient width"
 block|}
 block|,
 block|{
@@ -6236,7 +6177,8 @@ name|PARAM_INT32
 block|,
 literal|"dialog status"
 block|,
-literal|"Registers if the dialog was closing [0 = No, 1 = Yes]"
+literal|"Registers if the dialog was closing "
+literal|"[0 = No, 1 = Yes]"
 block|}
 block|,   }
 decl_stmt|;
@@ -6284,19 +6226,19 @@ init|=
 name|gen_temp_plugin_name
 argument_list|()
 decl_stmt|;
-name|GGradientData
+name|GimpGradientData
 modifier|*
 name|gdata
-init|=
-name|g_malloc0
-argument_list|(
-sizeof|sizeof
-argument_list|(
-expr|struct
-name|_GGradientData
-argument_list|)
-argument_list|)
 decl_stmt|;
+name|gdata
+operator|=
+name|g_new0
+argument_list|(
+name|GimpGradientData
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 name|gimp_install_temp_proc
 argument_list|(
 name|pdbname
@@ -6393,9 +6335,9 @@ name|callback
 expr_stmt|;
 name|gdata
 operator|->
-name|udata
+name|data
 operator|=
-name|udata
+name|data
 expr_stmt|;
 name|g_hash_table_insert
 argument_list|(
@@ -6439,7 +6381,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gchar
@@ -6482,7 +6424,7 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|ret_name
@@ -6572,11 +6514,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_gradient_close_popup (void * popup_pnt)
+DECL|function|gimp_gradient_close_popup (gpointer popup_pnt)
 name|gimp_gradient_close_popup
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|popup_pnt
 parameter_list|)
 block|{
@@ -6584,7 +6525,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint
@@ -6636,11 +6577,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_gradient_set_popup (void * popup_pnt,gchar * gname)
+DECL|function|gimp_gradient_set_popup (gpointer popup_pnt,gchar * gname)
 name|gimp_gradient_set_popup
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|popup_pnt
 parameter_list|,
 name|gchar
@@ -6652,7 +6592,7 @@ name|GParam
 modifier|*
 name|return_vals
 decl_stmt|;
-name|int
+name|gint
 name|nreturn_vals
 decl_stmt|;
 name|gint
