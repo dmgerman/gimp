@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgetstypes.h"
 end_include
 
@@ -48,7 +54,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa86e910103
+DECL|enum|__anon27f153820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -64,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa86e910203
+DECL|enum|__anon27f153820203
 block|{
 DECL|enumerator|EVENT
 name|EVENT
@@ -224,6 +230,22 @@ name|NULL
 comment|/* instance_init  */
 block|}
 decl_stmt|;
+specifier|static
+specifier|const
+name|GInterfaceInfo
+name|controller_iface_info
+init|=
+block|{
+name|NULL
+block|,
+comment|/* iface_init     */
+name|NULL
+block|,
+comment|/* iface_finalize */
+name|NULL
+comment|/* iface_data     */
+block|}
+decl_stmt|;
 name|controller_type
 operator|=
 name|g_type_register_static
@@ -236,6 +258,16 @@ operator|&
 name|controller_info
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_type_add_interface_static
+argument_list|(
+name|controller_type
+argument_list|,
+name|GIMP_TYPE_CONFIG
+argument_list|,
+operator|&
+name|controller_iface_info
 argument_list|)
 expr_stmt|;
 block|}

@@ -380,35 +380,6 @@ argument_list|,
 name|manager
 argument_list|)
 expr_stmt|;
-comment|/*  EEEEEEK  */
-block|{
-specifier|static
-specifier|const
-name|GInterfaceInfo
-name|config_iface_info
-init|=
-block|{
-name|NULL
-block|,
-comment|/* iface_init     */
-name|NULL
-block|,
-comment|/* iface_finalize */
-name|NULL
-comment|/* iface_data     */
-block|}
-decl_stmt|;
-name|g_type_add_interface_static
-argument_list|(
-name|GIMP_TYPE_CONTROLLER
-argument_list|,
-name|GIMP_TYPE_CONFIG
-argument_list|,
-operator|&
-name|config_iface_info
-argument_list|)
-expr_stmt|;
-block|}
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_CONTROLLER_WHEEL
