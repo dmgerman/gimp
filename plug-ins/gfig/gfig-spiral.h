@@ -17,19 +17,16 @@ name|__GFIG_SPIRAL_H__
 end_define
 
 begin_function_decl
-name|gint
-name|spiral_button_press
+name|void
+name|tool_options_spiral
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|widget
+name|notebook
 parameter_list|,
-name|GdkEventButton
+name|GtkWidget
 modifier|*
-name|event
-parameter_list|,
-name|gpointer
-name|data
+name|button
 parameter_list|)
 function_decl|;
 end_function_decl

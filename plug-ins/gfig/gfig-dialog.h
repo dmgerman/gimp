@@ -91,6 +91,21 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|tool_option_page_update
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|button
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|notebook
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
