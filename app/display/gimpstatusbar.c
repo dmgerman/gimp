@@ -530,6 +530,16 @@ operator|->
 name|cancelbutton
 argument_list|)
 expr_stmt|;
+comment|/* Update the statusbar once to work around a resizing bug(?) in GTK+:    *    *  The first update of the statusbar used to queue a resize which    *  in term caused the canvas to be resized. That made it shrink by    *  one pixel in height resulting in the last row not being displayed.    *  Shrink-wrapping the display used to fix this reliably. With the    *  next call the resize doesn't seem to happen any longer.    */
+name|gimp_statusbar_update
+argument_list|(
+name|statusbar
+argument_list|,
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
