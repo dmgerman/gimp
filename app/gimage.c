@@ -914,7 +914,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimage_set_layer_mask_edit (GImage * gimage,Layer * layer,int edit)
+DECL|function|gimage_set_layer_mask_edit (GImage * gimage,Layer * layer,gboolean edit)
 name|gimage_set_layer_mask_edit
 parameter_list|(
 name|GImage
@@ -925,7 +925,7 @@ name|Layer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gboolean
 name|edit
 parameter_list|)
 block|{

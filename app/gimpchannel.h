@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2766a8b00103
+DECL|enum|__anon2876ecfb0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -91,7 +91,7 @@ value|127
 end_define
 
 begin_comment
-comment|/* structure declarations */
+comment|/*  structure declarations  */
 end_comment
 
 begin_define
@@ -163,39 +163,39 @@ begin_typedef
 DECL|typedef|ChannelUndo
 typedef|typedef
 name|struct
-name|_channel_undo
+name|_ChannelUndo
 name|ChannelUndo
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_channel_undo
+DECL|struct|_ChannelUndo
 struct|struct
-name|_channel_undo
+name|_ChannelUndo
 block|{
 DECL|member|channel
 name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-comment|/*  the actual channel         */
+comment|/*  the actual channel          */
 DECL|member|prev_position
-name|int
+name|gint
 name|prev_position
 decl_stmt|;
-comment|/*  former position in list    */
+comment|/*  former position in list     */
 DECL|member|prev_channel
 name|Channel
 modifier|*
 name|prev_channel
 decl_stmt|;
-comment|/*  previous active channel    */
+comment|/*  previous active channel     */
 DECL|member|undo_type
-name|int
+name|gint
 name|undo_type
 decl_stmt|;
-comment|/*  is this a new channel undo */
-comment|/*  or a remove channel undo?  */
+comment|/*  is this a new channel undo  */
+comment|/*  or a remove channel undo?   */
 block|}
 struct|;
 end_struct
@@ -208,36 +208,36 @@ begin_typedef
 DECL|typedef|MaskUndo
 typedef|typedef
 name|struct
-name|_mask_undo
+name|_MaskUndo
 name|MaskUndo
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_mask_undo
+DECL|struct|_MaskUndo
 struct|struct
-name|_mask_undo
+name|_MaskUndo
 block|{
 DECL|member|tiles
 name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-comment|/*  the actual mask  */
+comment|/*  the actual mask            */
 DECL|member|x
 DECL|member|y
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/*  offsets          */
+comment|/*  offsets                    */
 block|}
 struct|;
 end_struct
 
 begin_comment
-comment|/* function declarations */
+comment|/*  function declarations  */
 end_comment
 
 begin_function_decl
@@ -248,17 +248,16 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -297,7 +296,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|channel_get_name
 parameter_list|(
@@ -314,14 +313,14 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|channel_get_opacity
 parameter_list|(
 name|Channel
@@ -337,13 +336,13 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|channel_get_color
 parameter_list|(
@@ -371,7 +370,7 @@ name|Channel
 modifier|*
 name|channel_get_ID
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -393,9 +392,9 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -407,13 +406,13 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -429,23 +428,11 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* access functions */
+comment|/*  access functions  */
 end_comment
 
 begin_function_decl
-name|unsigned
-name|char
-modifier|*
-name|channel_data
-parameter_list|(
-name|Channel
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|int
+name|gboolean
 name|channel_toggle_visibility
 parameter_list|(
 name|Channel
@@ -462,9 +449,9 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -502,15 +489,15 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|channel_boundary
 parameter_list|(
 name|Channel
@@ -524,61 +511,61 @@ name|BoundSeg
 modifier|*
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|channel_bounds
 parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|channel_value
 parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|channel_is_empty
 parameter_list|(
 name|Channel
@@ -594,13 +581,13 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -612,13 +599,13 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -630,13 +617,13 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -648,15 +635,15 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|ChannelOps
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -668,17 +655,17 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|ChannelOps
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -693,11 +680,11 @@ parameter_list|,
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|ChannelOps
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -712,15 +699,15 @@ parameter_list|,
 name|Channel
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|int
+name|ChannelOps
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -783,10 +770,10 @@ name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|radius_x
 parameter_list|,
-name|int
+name|gint
 name|radius_y
 parameter_list|)
 function_decl|;
@@ -800,10 +787,10 @@ name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|radius_x
 parameter_list|,
-name|int
+name|gint
 name|radius_y
 parameter_list|)
 function_decl|;
@@ -817,13 +804,13 @@ name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|radius_x
 parameter_list|,
-name|int
+name|gint
 name|radius_y
 parameter_list|,
-name|int
+name|gboolean
 name|edge_lock
 parameter_list|)
 function_decl|;
@@ -836,9 +823,9 @@ parameter_list|(
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -865,13 +852,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|int
-name|channel_get_count
-decl_stmt|;
-end_decl_stmt
 
 begin_define
 DECL|macro|drawable_channel

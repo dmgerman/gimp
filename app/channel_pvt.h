@@ -56,79 +56,78 @@ name|GimpDrawable
 name|drawable
 decl_stmt|;
 DECL|member|col
-name|unsigned
-name|char
+name|guchar
 name|col
 index|[
 literal|3
 index|]
 decl_stmt|;
-comment|/*  RGB triplet for channel color*/
+comment|/*  RGB triplet for channel color  */
 DECL|member|opacity
-name|int
+name|gint
 name|opacity
 decl_stmt|;
-comment|/*  Channel opacity              */
+comment|/*  Channel opacity                */
 DECL|member|show_masked
-name|int
+name|gboolean
 name|show_masked
 decl_stmt|;
-comment|/*  Show masked areas--as        */
-comment|/*  opposed to selected areas    */
+comment|/*  Show masked areas--as          */
+comment|/*  opposed to selected areas      */
 comment|/*  Selection mask variables  */
 DECL|member|boundary_known
-name|int
+name|gboolean
 name|boundary_known
 decl_stmt|;
-comment|/*  is the current boundary valid*/
+comment|/*  is the current boundary valid  */
 DECL|member|segs_in
 name|BoundSeg
 modifier|*
 name|segs_in
 decl_stmt|;
-comment|/*  outline of selected region   */
+comment|/*  outline of selected region     */
 DECL|member|segs_out
 name|BoundSeg
 modifier|*
 name|segs_out
 decl_stmt|;
-comment|/*  outline of selected region   */
+comment|/*  outline of selected region     */
 DECL|member|num_segs_in
-name|int
+name|gint
 name|num_segs_in
 decl_stmt|;
-comment|/*  number of lines in boundary  */
+comment|/*  number of lines in boundary    */
 DECL|member|num_segs_out
-name|int
+name|gint
 name|num_segs_out
 decl_stmt|;
-comment|/*  number of lines in boundary  */
+comment|/*  number of lines in boundary    */
 DECL|member|empty
-name|int
+name|gboolean
 name|empty
 decl_stmt|;
-comment|/*  is the region empty?         */
+comment|/*  is the region empty?           */
 DECL|member|bounds_known
-name|int
+name|gboolean
 name|bounds_known
 decl_stmt|;
-comment|/*  recalculate the bounds?      */
+comment|/*  recalculate the bounds?        */
 DECL|member|x1
 DECL|member|y1
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  coordinates for bounding box */
+comment|/*  coordinates for bounding box   */
 DECL|member|x2
 DECL|member|y2
-name|int
+name|gint
 name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  lower right hand coordinate  */
+comment|/*  lower right hand coordinate    */
 block|}
 struct|;
 end_struct

@@ -108,7 +108,7 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -137,22 +137,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_drawable_mask_bounds
 parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -169,7 +169,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_drawable_dirty
 parameter_list|(
 name|GimpDrawable
@@ -179,8 +179,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_drawable_clean
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_drawable_has_alpha
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -199,17 +209,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
-name|gimp_drawable_has_alpha
-parameter_list|(
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|int
+name|GimpImageType
 name|gimp_drawable_type_with_alpha
 parameter_list|(
 name|GimpDrawable
@@ -219,7 +219,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_drawable_color
 parameter_list|(
 name|GimpDrawable
@@ -229,7 +229,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_drawable_gray
 parameter_list|(
 name|GimpDrawable
@@ -239,7 +239,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_drawable_indexed
 parameter_list|(
 name|GimpDrawable
@@ -271,7 +271,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_drawable_bytes
 parameter_list|(
 name|GimpDrawable
@@ -281,7 +281,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_drawable_width
 parameter_list|(
 name|GimpDrawable
@@ -291,7 +291,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_drawable_height
 parameter_list|(
 name|GimpDrawable
@@ -301,7 +301,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_drawable_visible
 parameter_list|(
 name|GimpDrawable
@@ -317,18 +317,17 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|gimp_drawable_cmap
 parameter_list|(
@@ -339,7 +338,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|gimp_drawable_get_name
 parameter_list|(
@@ -356,25 +355,24 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|gimp_drawable_get_color_at
 parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 function_decl|;
@@ -390,7 +388,7 @@ name|GimpDrawable
 modifier|*
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -418,7 +416,7 @@ name|GimpDrawable
 modifier|*
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -434,14 +432,14 @@ name|GimpDrawable
 modifier|*
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|gimp_drawable_parasite_list
@@ -473,7 +471,7 @@ name|GimpDrawable
 modifier|*
 name|gimp_drawable_get_ID
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl

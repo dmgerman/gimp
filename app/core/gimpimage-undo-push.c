@@ -6348,7 +6348,7 @@ name|layer
 operator|->
 name|apply_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|lmu
 operator|->
@@ -6356,7 +6356,7 @@ name|layer
 operator|->
 name|edit_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|lmu
 operator|->
@@ -6364,7 +6364,7 @@ name|layer
 operator|->
 name|show_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 comment|/*  if this is redoing a remove operation&        *  the mode of application was DISCARD or        *  this is undoing an add...        */
 if|if

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -102,15 +108,39 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
-begin_enum
-DECL|enum|__anon2b2c47d80103
-enum|enum
+begin_decl_stmt
+DECL|variable|drag_types
+specifier|static
+name|GtkTargetEntry
+name|drag_types
+index|[]
+init|=
 block|{
-DECL|enumerator|TARGET_URI_LIST
-name|TARGET_URI_LIST
+name|GIMP_TARGET_URI_LIST
 block|}
-enum|;
-end_enum
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|n_drag_types
+specifier|static
+name|gint
+name|n_drag_types
+init|=
+sizeof|sizeof
+argument_list|(
+name|drag_types
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|drag_types
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -192,7 +222,7 @@ name|info
 condition|)
 block|{
 case|case
-name|TARGET_URI_LIST
+name|GIMP_DND_TYPE_URI_LIST
 case|:
 name|data
 operator|=
@@ -321,38 +351,6 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-specifier|static
-name|GtkTargetEntry
-name|drag_types
-index|[]
-init|=
-block|{
-block|{
-literal|"text/uri-list"
-block|,
-literal|0
-block|,
-name|TARGET_URI_LIST
-block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|gint
-name|n_drag_types
-init|=
-sizeof|sizeof
-argument_list|(
-name|drag_types
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|drag_types
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gtk_drag_dest_set
 argument_list|(
 name|widget
@@ -455,7 +453,7 @@ name|info
 condition|)
 block|{
 case|case
-name|TARGET_URI_LIST
+name|GIMP_DND_TYPE_URI_LIST
 case|:
 name|data
 operator|=
@@ -583,38 +581,6 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-specifier|static
-name|GtkTargetEntry
-name|drag_types
-index|[]
-init|=
-block|{
-block|{
-literal|"text/uri-list"
-block|,
-literal|0
-block|,
-name|TARGET_URI_LIST
-block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|gint
-name|n_drag_types
-init|=
-sizeof|sizeof
-argument_list|(
-name|drag_types
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|drag_types
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
 name|gtk_drag_dest_set
 argument_list|(
 name|widget
@@ -814,23 +780,23 @@ end_function
 begin_function
 name|FILE
 modifier|*
-DECL|function|idea_manager_parse_init (int * window_x,int * window_y,int * window_width,int * window_height)
+DECL|function|idea_manager_parse_init (gint * window_x,gint * window_y,gint * window_width,gint * window_height)
 name|idea_manager_parse_init
 parameter_list|(
 comment|/* RETURNS: */
-name|int
+name|gint
 modifier|*
 name|window_x
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|window_y
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|window_width
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|window_height
 parameter_list|)
@@ -922,7 +888,7 @@ modifier|*
 name|fp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|length
 decl_stmt|;
 name|gchar
@@ -1313,7 +1279,7 @@ condition|(
 name|ideas
 condition|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -1630,8 +1596,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|raise_idea_callback (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|raise_idea_callback (GtkWidget * widget,gpointer data)
 name|raise_idea_callback
 parameter_list|(
 name|GtkWidget
@@ -1663,9 +1629,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_needed (gpointer data,gpointer user_data)
 specifier|static
 name|void
+DECL|function|check_needed (gpointer data,gpointer user_data)
 name|check_needed
 parameter_list|(
 name|gpointer
@@ -1732,9 +1698,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_needed_list (gpointer data,gpointer user_data)
 specifier|static
 name|void
+DECL|function|check_needed_list (gpointer data,gpointer user_data)
 name|check_needed_list
 parameter_list|(
 name|gpointer
@@ -1785,29 +1751,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|idea_add (gchar * title)
-name|void
-name|idea_add
-parameter_list|(
-name|gchar
-modifier|*
-name|title
-parameter_list|)
-block|{
-name|idea_add_in_position
-argument_list|(
-name|title
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-DECL|function|idea_add_in_position_with_select (gchar * title,gint position,gboolean select)
 specifier|static
 name|void
+DECL|function|idea_add_in_position_with_select (gchar * title,gint position,gboolean select)
 name|idea_add_in_position_with_select
 parameter_list|(
 name|gchar
@@ -2186,8 +2132,28 @@ block|}
 end_function
 
 begin_function
-DECL|function|idea_add_in_position (gchar * title,gint position)
 name|void
+DECL|function|idea_add (gchar * title)
+name|idea_add
+parameter_list|(
+name|gchar
+modifier|*
+name|title
+parameter_list|)
+block|{
+name|idea_add_in_position
+argument_list|(
+name|title
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|idea_add_in_position (gchar * title,gint position)
 name|idea_add_in_position
 parameter_list|(
 name|gchar
@@ -2211,9 +2177,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|idea_move (GtkWidget * widget,gint distance,gboolean select)
 specifier|static
 name|gint
+DECL|function|idea_move (GtkWidget * widget,gint distance,gboolean select)
 name|idea_move
 parameter_list|(
 name|GtkWidget
@@ -2357,9 +2323,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|idea_remove (GtkWidget * widget)
 specifier|static
 name|void
+DECL|function|idea_remove (GtkWidget * widget)
 name|idea_remove
 parameter_list|(
 name|GtkWidget
@@ -2446,8 +2412,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|idea_up_callback (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|idea_up_callback (GtkWidget * widget,gpointer data)
 name|idea_up_callback
 parameter_list|(
 name|GtkWidget
@@ -2546,8 +2512,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|idea_down_callback (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|idea_down_callback (GtkWidget * widget,gpointer data)
 name|idea_down_callback
 parameter_list|(
 name|GtkWidget
@@ -2644,8 +2610,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|idea_remove_callback (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|idea_remove_callback (GtkWidget * widget,gpointer data)
 name|idea_remove_callback
 parameter_list|(
 name|GtkWidget

@@ -50,92 +50,92 @@ name|GimpObject
 name|data
 decl_stmt|;
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-comment|/* name of drawable */
+comment|/* name of drawable               */
 DECL|member|tiles
 name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-comment|/* tiles for drawable data */
+comment|/* tiles for drawable data        */
 DECL|member|visible
-name|int
+name|gboolean
 name|visible
 decl_stmt|;
-comment|/* controls visibility */
+comment|/* controls visibility            */
 DECL|member|width
 DECL|member|height
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-comment|/* size of drawable */
+comment|/* size of drawable               */
 DECL|member|offset_x
 DECL|member|offset_y
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
 decl_stmt|;
-comment|/* offset of layer in image */
+comment|/* offset of layer in image       */
 DECL|member|bytes
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-comment|/* bytes per pixel */
+comment|/* bytes per pixel                */
 DECL|member|dirty
-name|int
+name|gboolean
 name|dirty
 decl_stmt|;
-comment|/* dirty bit */
+comment|/* dirty bit                      */
 DECL|member|ID
-name|int
+name|gint
 name|ID
 decl_stmt|;
-comment|/* provides a unique ID */
+comment|/* provides a unique ID           */
 DECL|member|tattoo
 name|guint32
 name|tattoo
 decl_stmt|;
-comment|/* provides a perminant ID */
+comment|/* provides a perminant ID        */
 DECL|member|gimage
 name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-comment|/* gimage owner */
+comment|/* gimage owner                   */
 DECL|member|type
 name|GimpImageType
 name|type
 decl_stmt|;
-comment|/* type of drawable */
+comment|/* type of drawable               */
 DECL|member|has_alpha
-name|int
+name|gboolean
 name|has_alpha
 decl_stmt|;
-comment|/* drawable has alpha */
+comment|/* drawable has alpha             */
 DECL|member|parasites
 name|ParasiteList
 modifier|*
 name|parasites
 decl_stmt|;
-comment|/* Plug-in parasite data   */
+comment|/* Plug-in parasite data          */
 comment|/*  Preview variables  */
 DECL|member|preview_cache
 name|GSList
 modifier|*
 name|preview_cache
 decl_stmt|;
-comment|/* preview caches of the channel */
+comment|/* preview caches of the channel  */
 DECL|member|preview_valid
-name|int
+name|gboolean
 name|preview_valid
 decl_stmt|;
-comment|/* is the preview valid? */
+comment|/* is the preview valid?          */
 block|}
 struct|;
 end_struct

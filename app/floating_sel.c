@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -279,13 +273,11 @@ name|gimage
 operator|=
 name|drawable_gimage
 argument_list|(
-operator|(
 name|layer
 operator|->
 name|fs
 operator|.
 name|drawable
-operator|)
 argument_list|)
 operator|)
 condition|)
@@ -444,15 +436,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|floating_sel_reset (layer)
+DECL|function|floating_sel_reset (Layer * layer)
 name|floating_sel_reset
 parameter_list|(
-name|layer
-parameter_list|)
 name|Layer
 modifier|*
 name|layer
-decl_stmt|;
+parameter_list|)
 block|{
 name|GImage
 modifier|*
@@ -477,15 +467,13 @@ return|return;
 comment|/*  set the underlying drawable to active  */
 if|if
 condition|(
-name|drawable_layer
+name|GIMP_IS_LAYER
 argument_list|(
-operator|(
 name|layer
 operator|->
 name|fs
 operator|.
 name|drawable
-operator|)
 argument_list|)
 condition|)
 name|gimage_set_active_layer
@@ -533,15 +521,13 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|drawable_channel
+name|GIMP_IS_CHANNEL
 argument_list|(
-operator|(
 name|layer
 operator|->
 name|fs
 operator|.
 name|drawable
-operator|)
 argument_list|)
 condition|)
 block|{
@@ -641,16 +627,7 @@ return|return;
 comment|/*  Check if the floating layer belongs to a channel...  */
 if|if
 condition|(
-name|drawable_channel
-argument_list|(
-name|layer
-operator|->
-name|fs
-operator|.
-name|drawable
-argument_list|)
-operator|||
-name|drawable_layer_mask
+name|GIMP_IS_CHANNEL
 argument_list|(
 name|layer
 operator|->
@@ -756,16 +733,11 @@ expr_stmt|;
 comment|/*  allocate the undo structure  */
 name|fsu
 operator|=
-operator|(
-name|FStoLayerUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|FStoLayerUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|fsu
@@ -2121,7 +2093,7 @@ expr_stmt|;
 comment|/*  a kludge here to prevent the case of the drawable 	   *  underneath having preserve transparency on, and disallowing 	   *  the composited floating selection from being shown 	   */
 if|if
 condition|(
-name|drawable_layer
+name|GIMP_IS_LAYER
 argument_list|(
 name|layer
 operator|->

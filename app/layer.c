@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a47651c0103
+DECL|enum|__anon2b11c1d00103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -635,15 +635,8 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_decl_stmt
-specifier|extern
-name|int
-name|global_drawable_ID
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|layer_get_count
-name|int
+name|gint
 name|layer_get_count
 init|=
 literal|0
@@ -656,6 +649,10 @@ end_comment
 
 begin_comment
 comment|/*  Local function definitions  */
+end_comment
+
+begin_comment
+comment|/********************************/
 end_comment
 
 begin_function
@@ -904,6 +901,10 @@ begin_comment
 comment|/*  Function definitions  */
 end_comment
 
+begin_comment
+comment|/**************************/
+end_comment
+
 begin_function
 name|Layer
 modifier|*
@@ -987,18 +988,17 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-comment|/*  allocate the memory for this layer  */
 name|layer
 operator|->
 name|linked
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|layer
 operator|->
 name|preserve_trans
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 comment|/*  no layer mask is present at start  */
 name|layer
@@ -1011,19 +1011,19 @@ name|layer
 operator|->
 name|apply_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|layer
 operator|->
 name|edit_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|layer
 operator|->
 name|show_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 comment|/*  mode and opacity  */
 name|layer
@@ -1150,18 +1150,18 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_copy (Layer * layer,gint add_alpha)
+DECL|function|layer_copy (Layer * layer,gboolean add_alpha)
 name|layer_copy
 parameter_list|(
 name|Layer
 modifier|*
 name|layer
 parameter_list|,
-name|gint
+name|gboolean
 name|add_alpha
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|layer_name
 decl_stmt|;
@@ -1172,18 +1172,18 @@ decl_stmt|;
 name|GimpImageType
 name|new_type
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|ext
 decl_stmt|;
-name|int
+name|gint
 name|number
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|int
+name|gint
 name|len
 decl_stmt|;
 name|PixelRegion
@@ -1700,6 +1700,15 @@ name|layer
 operator|->
 name|show_mask
 expr_stmt|;
+name|layer_mask_set_layer
+argument_list|(
+name|new_layer
+operator|->
+name|mask
+argument_list|,
+name|new_layer
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* copy the parasites */
 name|GIMP_DRAWABLE
@@ -1800,9 +1809,7 @@ name|layer_type
 operator|=
 name|drawable_type_with_alpha
 argument_list|(
-operator|(
 name|drawable
-operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  Create the new layer  */
@@ -2035,19 +2042,19 @@ name|layer
 operator|->
 name|apply_mask
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|layer
 operator|->
 name|edit_mask
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|layer
 operator|->
 name|show_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|drawable_update
 argument_list|(
@@ -2106,12 +2113,11 @@ name|LayerMask
 modifier|*
 name|mask
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|mask_name
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|black
 index|[
 literal|3
@@ -2125,14 +2131,12 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|white_mask
 init|=
 name|OPAQUE_OPACITY
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|black_mask
 init|=
 name|TRANSPARENT_OPACITY
@@ -2576,14 +2580,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|layer_apply_mask (Layer * layer,gint mode)
+DECL|function|layer_apply_mask (Layer * layer,MaskApplyMode mode)
 name|layer_apply_mask
 parameter_list|(
 name|Layer
 modifier|*
 name|layer
 parameter_list|,
-name|gint
+name|MaskApplyMode
 name|mode
 parameter_list|)
 block|{
@@ -2618,7 +2622,7 @@ operator|==
 name|APPLY
 condition|)
 block|{
-comment|/*  Put this apply mask operation on the undo stack        */
+comment|/*  Put this apply mask operation on the undo stack  */
 name|drawable_apply_image
 argument_list|(
 name|GIMP_DRAWABLE
@@ -2748,19 +2752,19 @@ name|layer
 operator|->
 name|apply_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|layer
 operator|->
 name|edit_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|layer
 operator|->
 name|show_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 elseif|else
@@ -2781,19 +2785,19 @@ name|layer
 operator|->
 name|apply_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|layer
 operator|->
 name|edit_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|layer
 operator|->
 name|show_mask
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 block|}
@@ -4358,7 +4362,7 @@ block|{
 comment|/*  if the owner drawable is a channel, just return nothing  */
 if|if
 condition|(
-name|drawable_channel
+name|GIMP_IS_CHANNEL
 argument_list|(
 name|layer
 operator|->
@@ -4810,7 +4814,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|layer_pick_correlate (Layer * layer,gint x,gint y)
 name|layer_pick_correlate
 parameter_list|(
@@ -5046,11 +5050,15 @@ block|}
 end_function
 
 begin_comment
-comment|/********************/
+comment|/**********************/
 end_comment
 
 begin_comment
-comment|/* access functions */
+comment|/*  access functions  */
+end_comment
+
+begin_comment
+comment|/**********************/
 end_comment
 
 begin_function
@@ -5140,7 +5148,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|layer_has_alpha (Layer * layer)
 name|layer_has_alpha
 parameter_list|(
@@ -5179,17 +5187,17 @@ operator|==
 name|INDEXEDA_GIMAGE
 condition|)
 return|return
-literal|1
+name|TRUE
 return|;
 else|else
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|layer_is_floating_sel (Layer * layer)
 name|layer_is_floating_sel
 parameter_list|(
@@ -5209,17 +5217,17 @@ operator|!=
 name|NULL
 condition|)
 return|return
-literal|1
+name|TRUE
 return|;
 else|else
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|layer_linked (Layer * layer)
 name|layer_linked
 parameter_list|(
@@ -6896,7 +6904,7 @@ name|LayerMask
 modifier|*
 name|layer_mask
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|layer_mask
@@ -6970,7 +6978,7 @@ argument_list|)
 operator|->
 name|show_masked
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 comment|/*  selection mask variables  */
 name|GIMP_CHANNEL
@@ -7419,6 +7427,29 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|layer_mask_set_layer (LayerMask * mask,Layer * layer)
+name|layer_mask_set_layer
+parameter_list|(
+name|LayerMask
+modifier|*
+name|mask
+parameter_list|,
+name|Layer
+modifier|*
+name|layer
+parameter_list|)
+block|{
+name|mask
+operator|->
+name|layer
+operator|=
+name|layer
 expr_stmt|;
 block|}
 end_function

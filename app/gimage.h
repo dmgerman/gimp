@@ -45,10 +45,10 @@ name|GImage
 modifier|*
 name|gimage_new
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|GimpImageBaseType
@@ -115,7 +115,7 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|gboolean
 name|edit
 parameter_list|)
 function_decl|;

@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -78,13 +82,13 @@ name|GimpObject
 name|gobject
 decl_stmt|;
 DECL|member|filename
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
 comment|/*  original filename            */
 DECL|member|has_filename
-name|int
+name|gboolean
 name|has_filename
 decl_stmt|;
 comment|/*  has a valid filename         */
@@ -96,19 +100,19 @@ decl_stmt|;
 comment|/*  last PDB save proc used      */
 DECL|member|width
 DECL|member|height
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
 comment|/*  width and height attributes  */
 DECL|member|xresolution
-name|double
+name|gdouble
 name|xresolution
 decl_stmt|;
 comment|/*  image x-res, in dpi          */
 DECL|member|yresolution
-name|double
+name|gdouble
 name|yresolution
 decl_stmt|;
 comment|/*  image y-res, in dpi          */
@@ -123,8 +127,7 @@ name|base_type
 decl_stmt|;
 comment|/*  base gimp_image type         */
 DECL|member|cmap
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|cmap
 decl_stmt|;
@@ -135,22 +138,22 @@ name|num_cols
 decl_stmt|;
 comment|/*  number of cols--for indexed  */
 DECL|member|dirty
-name|int
+name|gint
 name|dirty
 decl_stmt|;
 comment|/*  dirty flag -- # of ops       */
 DECL|member|undo_on
-name|int
+name|gboolean
 name|undo_on
 decl_stmt|;
 comment|/*  Is undo enabled?             */
 DECL|member|instance_count
-name|int
+name|gint
 name|instance_count
 decl_stmt|;
 comment|/*  number of instances          */
 DECL|member|ref_count
-name|int
+name|gint
 name|ref_count
 decl_stmt|;
 comment|/*  number of references         */
@@ -167,7 +170,7 @@ decl_stmt|;
 comment|/*  shadow buffer tiles          */
 comment|/*  Projection attributes  */
 DECL|member|construct_flag
-name|int
+name|gint
 name|construct_flag
 decl_stmt|;
 comment|/*  flag for construction        */
@@ -177,12 +180,12 @@ name|proj_type
 decl_stmt|;
 comment|/*  type of the projection image */
 DECL|member|proj_bytes
-name|int
+name|gint
 name|proj_bytes
 decl_stmt|;
 comment|/*  bpp in projection image      */
 DECL|member|proj_level
-name|int
+name|gint
 name|proj_level
 decl_stmt|;
 comment|/*  projection level             */
@@ -255,7 +258,7 @@ name|paths
 decl_stmt|;
 comment|/*  Paths data for this image    */
 DECL|member|visible
-name|int
+name|gint
 name|visible
 index|[
 name|MAX_CHANNELS
@@ -263,7 +266,7 @@ index|]
 decl_stmt|;
 comment|/*  visible channels             */
 DECL|member|active
-name|int
+name|gint
 name|active
 index|[
 name|MAX_CHANNELS
@@ -271,24 +274,23 @@ index|]
 decl_stmt|;
 comment|/*  active channels              */
 DECL|member|by_color_select
-name|int
+name|gboolean
 name|by_color_select
 decl_stmt|;
 comment|/*  TRUE if there's an active    */
 comment|/*  "by color" selection dialog  */
 DECL|member|qmask_state
-name|int
+name|gboolean
 name|qmask_state
 decl_stmt|;
 comment|/*  TRUE if qmask is on          */
 DECL|member|qmask_opacity
-name|double
+name|gdouble
 name|qmask_opacity
 decl_stmt|;
 comment|/*  opacity of the qmask channel */
 DECL|member|qmask_color
-name|unsigned
-name|char
+name|guchar
 name|qmask_color
 index|[
 literal|3
@@ -309,17 +311,17 @@ name|redo_stack
 decl_stmt|;
 comment|/*  stack for redo operations    */
 DECL|member|undo_bytes
-name|int
+name|gint
 name|undo_bytes
 decl_stmt|;
 comment|/*  bytes in undo stack          */
 DECL|member|undo_levels
-name|int
+name|gint
 name|undo_levels
 decl_stmt|;
 comment|/*  levels in undo stack         */
 DECL|member|pushing_undo_group
-name|int
+name|gint
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */
@@ -331,7 +333,7 @@ name|comp_preview
 decl_stmt|;
 comment|/*  the composite preview        */
 DECL|member|comp_preview_valid
-name|int
+name|gint
 name|comp_preview_valid
 index|[
 literal|3
@@ -405,7 +407,6 @@ name|GIMP_IMAGE_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-define|\
 value|GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_IMAGE, GimpImageClass)
 end_define
 
@@ -413,6 +414,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMPIMAGEP_H__ */
+end_comment
 
 end_unit
 

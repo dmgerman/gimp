@@ -113,7 +113,7 @@ name|boole
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*      gdk_raise_window( NULL, gimage-> ); */
+comment|/* gdk_raise_window( NULL, gimage-> ); */
 comment|/* FIXME */
 block|}
 block|}
@@ -240,11 +240,6 @@ argument_list|,
 name|GTK_TOOLBAR_BOTH
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|toolbar
-argument_list|)
-expr_stmt|;
 name|gtk_toolbar_set_button_relief
 argument_list|(
 name|GTK_TOOLBAR
@@ -253,6 +248,11 @@ name|toolbar
 argument_list|)
 argument_list|,
 name|GTK_RELIEF_NONE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|toolbar
 argument_list|)
 expr_stmt|;
 name|gtk_toolbar_append_item
@@ -465,8 +465,8 @@ block|}
 end_function
 
 begin_function
+name|gint
 DECL|function|getinteger (FILE * fp)
-name|int
 name|getinteger
 parameter_list|(
 name|FILE
@@ -477,7 +477,7 @@ block|{
 name|gchar
 name|nextchar
 decl_stmt|;
-name|int
+name|gint
 name|response
 init|=
 literal|0
@@ -597,8 +597,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|clear_white (FILE * fp)
 name|void
+DECL|function|clear_white (FILE * fp)
 name|clear_white
 parameter_list|(
 name|FILE
@@ -606,7 +606,7 @@ modifier|*
 name|fp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|nextchar
 decl_stmt|;
 while|while
@@ -644,8 +644,8 @@ comment|/* reset_usize  *  A callback so that the window can be resized smaller.
 end_comment
 
 begin_function
-DECL|function|reset_usize (gpointer data)
 name|gint
+DECL|function|reset_usize (gpointer data)
 name|reset_usize
 parameter_list|(
 name|gpointer
@@ -672,13 +672,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|make_idea_window (int x,int y)
+DECL|function|make_idea_window (gint x,gint y)
 name|make_idea_window
 parameter_list|(
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{

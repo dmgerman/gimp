@@ -17,6 +17,21 @@ name|__COLOR_AREA_H__
 end_define
 
 begin_comment
+comment|/*  *  Global variables  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|gint
+name|active_color
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  foreground (= 0) or background (= 1) */
+end_comment
+
+begin_comment
 comment|/*  *  Functions  */
 end_comment
 
@@ -25,10 +40,10 @@ name|GtkWidget
 modifier|*
 name|color_area_create
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|GdkPixmap
@@ -79,35 +94,17 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|r
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|g
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 name|b
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  *  Global variables  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|int
-name|active_color
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  foreground (= 0) or background (= 1) */
-end_comment
 
 begin_endif
 endif|#

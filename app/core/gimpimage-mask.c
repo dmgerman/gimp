@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -270,7 +264,7 @@ name|gimage
 argument_list|)
 operator|)
 operator|&&
-name|drawable_channel
+name|GIMP_IS_CHANNEL
 argument_list|(
 name|d
 argument_list|)
@@ -1241,7 +1235,7 @@ if|if
 condition|(
 name|cut_gimage
 operator|&&
-name|drawable_layer
+name|GIMP_IS_LAYER
 argument_list|(
 name|drawable
 argument_list|)
@@ -1282,7 +1276,7 @@ if|if
 condition|(
 name|cut_gimage
 operator|&&
-name|drawable_layer_mask
+name|GIMP_IS_LAYER_MASK
 argument_list|(
 name|drawable
 argument_list|)
@@ -1308,7 +1302,7 @@ if|if
 condition|(
 name|cut_gimage
 operator|&&
-name|drawable_channel
+name|GIMP_IS_CHANNEL
 argument_list|(
 name|drawable
 argument_list|)

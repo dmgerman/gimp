@@ -74,83 +74,83 @@ name|GimpDrawable
 name|drawable
 decl_stmt|;
 DECL|member|linked
-name|int
+name|gboolean
 name|linked
 decl_stmt|;
-comment|/* control linkage */
+comment|/*  control linkage                */
 DECL|member|preserve_trans
-name|int
+name|gboolean
 name|preserve_trans
 decl_stmt|;
-comment|/* preserve transparency */
+comment|/*  preserve transparency          */
 DECL|member|mask
 name|LayerMask
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  possible layer mask          */
+comment|/*  possible layer mask            */
 DECL|member|apply_mask
-name|int
+name|gint
 name|apply_mask
 decl_stmt|;
-comment|/*  controls mask application    */
+comment|/*  controls mask application      */
 DECL|member|edit_mask
-name|int
+name|gboolean
 name|edit_mask
 decl_stmt|;
-comment|/*  edit mask or layer?          */
+comment|/*  edit mask or layer?            */
 DECL|member|show_mask
-name|int
+name|gboolean
 name|show_mask
 decl_stmt|;
-comment|/*  show mask or layer?          */
+comment|/*  show mask or layer?            */
 DECL|member|opacity
-name|int
+name|gint
 name|opacity
 decl_stmt|;
-comment|/*  layer opacity                */
+comment|/*  layer opacity                  */
 DECL|member|mode
 name|LayerModeEffects
 name|mode
 decl_stmt|;
-comment|/*  layer combination mode       */
+comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2c3e37630108
+DECL|struct|__anon28fe523f0108
 block|{
 DECL|member|backing_store
 name|TileManager
 modifier|*
 name|backing_store
 decl_stmt|;
-comment|/*  for obscured regions         */
+comment|/*  for obscured regions           */
 DECL|member|drawable
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-comment|/*  floating sel is attached to  */
+comment|/*  floating sel is attached to    */
 DECL|member|initial
-name|int
+name|gboolean
 name|initial
 decl_stmt|;
-comment|/*  is fs composited yet?        */
+comment|/*  is fs composited yet?          */
 DECL|member|boundary_known
-name|int
+name|gboolean
 name|boundary_known
 decl_stmt|;
-comment|/*  is the current boundary valid*/
+comment|/*  is the current boundary valid  */
 DECL|member|segs
 name|BoundSeg
 modifier|*
 name|segs
 decl_stmt|;
-comment|/*  boundary of floating sel     */
+comment|/*  boundary of floating sel       */
 DECL|member|num_segs
-name|int
+name|gint
 name|num_segs
 decl_stmt|;
-comment|/*  number of segs in boundary   */
+comment|/*  number of segs in boundary     */
 DECL|member|fs
 block|}
 name|fs

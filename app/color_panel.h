@@ -38,8 +38,7 @@ name|color_panel_widget
 decl_stmt|;
 comment|/*  The actual color  */
 DECL|member|color
-name|unsigned
-name|char
+name|guchar
 name|color
 index|[
 literal|3
@@ -60,15 +59,14 @@ name|ColorPanel
 modifier|*
 name|color_panel_new
 parameter_list|(
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|initial
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 function_decl|;

@@ -162,11 +162,11 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -212,13 +212,13 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -231,13 +231,13 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -250,13 +250,13 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -272,7 +272,7 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b55de750103
+DECL|enum|__anon29f4f2ab0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -745,7 +745,7 @@ name|gimage
 operator|->
 name|has_filename
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|gimage
 operator|->
@@ -963,10 +963,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/* static functions */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -1119,20 +1115,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_allocate_shadow (GimpImage * gimage,int width,int height,int bpp)
+DECL|function|gimp_image_allocate_shadow (GimpImage * gimage,gint width,gint height,gint bpp)
 name|gimp_image_allocate_shadow
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|)
 block|{
@@ -1160,13 +1156,13 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_image_new (int width,int height,GimpImageBaseType base_type)
+DECL|function|gimp_image_new (gint width,gint height,GimpImageBaseType base_type)
 name|gimp_image_new
 parameter_list|(
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
 name|GimpImageBaseType
@@ -1186,7 +1182,7 @@ argument_list|()
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gimage
@@ -1240,8 +1236,7 @@ operator|->
 name|cmap
 operator|=
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|*
 operator|)
 name|g_malloc0
@@ -1295,7 +1290,7 @@ index|[
 name|i
 index|]
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gimage
 operator|->
@@ -1304,7 +1299,7 @@ index|[
 name|i
 index|]
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 block|}
 comment|/* create the selection mask */
@@ -1373,19 +1368,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_filename (GimpImage * gimage,char * filename)
+DECL|function|gimp_image_set_filename (GimpImage * gimage,gchar * filename)
 name|gimp_image_set_filename
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|new_filename
 decl_stmt|;
@@ -1466,17 +1461,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_resolution (GimpImage * gimage,double xresolution,double yresolution)
+DECL|function|gimp_image_set_resolution (GimpImage * gimage,gdouble xresolution,gdouble yresolution)
 name|gimp_image_set_resolution
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|double
+name|gdouble
 name|xresolution
 parameter_list|,
-name|double
+name|gdouble
 name|yresolution
 parameter_list|)
 block|{
@@ -1497,18 +1492,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_resolution (GimpImage * gimage,double * xresolution,double * yresolution)
+DECL|function|gimp_image_get_resolution (GimpImage * gimage,gdouble * xresolution,gdouble * yresolution)
 name|gimp_image_get_resolution
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|xresolution
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 name|yresolution
 parameter_list|)
@@ -1621,23 +1616,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_resize (GimpImage * gimage,int new_width,int new_height,int offset_x,int offset_y)
+DECL|function|gimp_image_resize (GimpImage * gimage,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_image_resize
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|new_width
 parameter_list|,
-name|int
+name|gint
 name|new_height
 parameter_list|,
-name|int
+name|gint
 name|offset_x
 parameter_list|,
-name|int
+name|gint
 name|offset_y
 parameter_list|)
 block|{
@@ -1975,17 +1970,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_scale (GimpImage * gimage,int new_width,int new_height)
+DECL|function|gimp_image_scale (GimpImage * gimage,gint new_width,gint new_height)
 name|gimp_image_scale
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|new_width
 parameter_list|,
-name|int
+name|gint
 name|new_height
 parameter_list|)
 block|{
@@ -2013,12 +2008,12 @@ name|Guide
 modifier|*
 name|guide
 decl_stmt|;
-name|int
+name|gint
 name|old_width
 decl_stmt|,
 name|old_height
 decl_stmt|;
-name|int
+name|gint
 name|layer_width
 decl_stmt|,
 name|layer_height
@@ -2335,20 +2330,20 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_image_shadow (GimpImage * gimage,int width,int height,int bpp)
+DECL|function|gimp_image_shadow (GimpImage * gimage,gint width,gint height,gint bpp)
 name|gimp_image_shadow
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|)
 block|{
@@ -2556,7 +2551,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,int undo,int opacity,LayerModeEffects mode,TileManager * src1_tiles,int x,int y)
+DECL|function|gimp_image_apply_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gint undo,gint opacity,LayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
 name|gimp_image_apply_image
 parameter_list|(
 name|GimpImage
@@ -2571,10 +2566,10 @@ name|PixelRegion
 modifier|*
 name|src2PR
 parameter_list|,
-name|int
+name|gint
 name|undo
 parameter_list|,
-name|int
+name|gint
 name|opacity
 parameter_list|,
 name|LayerModeEffects
@@ -2585,10 +2580,10 @@ name|TileManager
 modifier|*
 name|src1_tiles
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
@@ -2596,7 +2591,7 @@ name|Channel
 modifier|*
 name|mask
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -2605,7 +2600,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -2617,10 +2612,10 @@ name|destPR
 decl_stmt|,
 name|maskPR
 decl_stmt|;
-name|int
+name|gint
 name|operation
 decl_stmt|;
-name|int
+name|gint
 name|active
 index|[
 name|MAX_CHANNELS
@@ -3109,12 +3104,12 @@ block|}
 end_function
 
 begin_comment
-comment|/* Similar to gimp_image_apply_image but works in "replace" mode (i.e.    transparent pixels in src2 make the result transparent rather    than opaque.     Takes an additional mask pixel region as well.  */
+comment|/* Similar to gimp_image_apply_image but works in "replace" mode (i.e.    transparent pixels in src2 make the result transparent rather    than opaque.     Takes an additional mask pixel region as well. */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_replace_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,int undo,int opacity,PixelRegion * maskPR,int x,int y)
+DECL|function|gimp_image_replace_image (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * src2PR,gint undo,gint opacity,PixelRegion * maskPR,gint x,gint y)
 name|gimp_image_replace_image
 parameter_list|(
 name|GimpImage
@@ -3129,20 +3124,20 @@ name|PixelRegion
 modifier|*
 name|src2PR
 parameter_list|,
-name|int
+name|gint
 name|undo
 parameter_list|,
-name|int
+name|gint
 name|opacity
 parameter_list|,
 name|PixelRegion
 modifier|*
 name|maskPR
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
@@ -3150,7 +3145,7 @@ name|Channel
 modifier|*
 name|mask
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -3159,7 +3154,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -3174,15 +3169,14 @@ name|mask2PR
 decl_stmt|,
 name|tempPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|temp_data
 decl_stmt|;
-name|int
+name|gint
 name|operation
 decl_stmt|;
-name|int
+name|gint
 name|active
 index|[
 name|MAX_CHANNELS
@@ -3794,7 +3788,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_get_foreground (GimpImage * gimage,GimpDrawable * drawable,unsigned char * fg)
+DECL|function|gimp_image_get_foreground (GimpImage * gimage,GimpDrawable * drawable,guchar * fg)
 name|gimp_image_get_foreground
 parameter_list|(
 name|GimpImage
@@ -3805,14 +3799,12 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|fg
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|pfg
 index|[
 literal|3
@@ -3858,7 +3850,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_background (GimpImage * gimage,GimpDrawable * drawable,unsigned char * bg)
+DECL|function|gimp_image_get_background (GimpImage * gimage,GimpDrawable * drawable,guchar * bg)
 name|gimp_image_get_background
 parameter_list|(
 name|GimpImage
@@ -3869,14 +3861,12 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|bg
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|pbg
 index|[
 literal|3
@@ -3921,20 +3911,19 @@ block|}
 end_function
 
 begin_function
-name|unsigned
-name|char
+name|guchar
 modifier|*
-DECL|function|gimp_image_get_color_at (GimpImage * gimage,int x,int y)
+DECL|function|gimp_image_get_color_at (GimpImage * gimage,gint x,gint y)
 name|gimp_image_get_color_at
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
@@ -3942,13 +3931,11 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 decl_stmt|;
@@ -4090,7 +4077,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_color (GimpImage * gimage,GimpImageType d_type,unsigned char * rgb,unsigned char * src)
+DECL|function|gimp_image_get_color (GimpImage * gimage,GimpImageType d_type,guchar * rgb,guchar * src)
 name|gimp_image_get_color
 parameter_list|(
 name|GimpImage
@@ -4100,13 +4087,11 @@ parameter_list|,
 name|GimpImageType
 name|d_type
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|rgb
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 parameter_list|)
@@ -4178,7 +4163,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_transform_color (GimpImage * gimage,GimpDrawable * drawable,unsigned char * src,unsigned char * dest,GimpImageBaseType type)
+DECL|function|gimp_image_transform_color (GimpImage * gimage,GimpDrawable * drawable,guchar * src,guchar * dest,GimpImageBaseType type)
 name|gimp_image_transform_color
 parameter_list|(
 name|GimpImage
@@ -4189,13 +4174,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 parameter_list|,
@@ -4685,7 +4668,7 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_image_find_parasite (const GimpImage * gimage,const char * name)
+DECL|function|gimp_image_find_parasite (const GimpImage * gimage,const gchar * name)
 name|gimp_image_find_parasite
 parameter_list|(
 specifier|const
@@ -4694,7 +4677,7 @@ modifier|*
 name|gimage
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -4713,12 +4696,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|list_func (char * key,Parasite * p,char *** cur)
 specifier|static
 name|void
+DECL|function|list_func (gchar * key,Parasite * p,gchar *** cur)
 name|list_func
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|key
 parameter_list|,
@@ -4726,7 +4709,7 @@ name|Parasite
 modifier|*
 name|p
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 modifier|*
@@ -4741,7 +4724,7 @@ operator|)
 operator|++
 operator|=
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|g_strdup
@@ -4753,7 +4736,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 modifier|*
 DECL|function|gimp_image_parasite_list (GimpImage * image,gint * count)
@@ -4768,7 +4751,7 @@ modifier|*
 name|count
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|list
@@ -4792,7 +4775,7 @@ operator|=
 name|list
 operator|=
 operator|(
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -4800,7 +4783,7 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|char
+name|gchar
 operator|*
 argument_list|)
 operator|*
@@ -4921,7 +4904,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_detach_parasite (GimpImage * gimage,const char * parasite)
+DECL|function|gimp_image_detach_parasite (GimpImage * gimage,const gchar * parasite)
 name|gimp_image_detach_parasite
 parameter_list|(
 name|GimpImage
@@ -4929,7 +4912,7 @@ modifier|*
 name|gimage
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|parasite
 parameter_list|)
@@ -5500,7 +5483,7 @@ modifier|*
 name|src2
 parameter_list|)
 block|{
-name|int
+name|gint
 name|type
 decl_stmt|;
 if|if
@@ -5734,23 +5717,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_construct_layers (GimpImage * gimage,int x,int y,int w,int h)
+DECL|function|gimp_image_construct_layers (GimpImage * gimage,gint x,gint y,gint w,gint h)
 name|gimp_image_construct_layers
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -5758,7 +5741,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -5792,7 +5775,7 @@ name|reverse_list
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -6311,23 +6294,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_construct_channels (GimpImage * gimage,int x,int y,int w,int h)
+DECL|function|gimp_image_construct_channels (GimpImage * gimage,gint x,gint y,gint w,gint h)
 name|gimp_image_construct_channels
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -6498,23 +6481,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_initialize_projection (GimpImage * gimage,int x,int y,int w,int h)
+DECL|function|gimp_image_initialize_projection (GimpImage * gimage,gint x,gint y,gint w,gint h)
 name|gimp_image_initialize_projection
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -6526,7 +6509,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|coverage
 init|=
 literal|0
@@ -6534,8 +6517,7 @@ decl_stmt|;
 name|PixelRegion
 name|PR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|clear
 index|[
 literal|4
@@ -6709,7 +6691,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_get_active_channels (GimpImage * gimage,GimpDrawable * drawable,int * active)
+DECL|function|gimp_image_get_active_channels (GimpImage * gimage,GimpDrawable * drawable,gint * active)
 name|gimp_image_get_active_channels
 parameter_list|(
 name|GimpImage
@@ -6720,7 +6702,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|active
 parameter_list|)
@@ -6729,7 +6711,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/*  first, blindly copy the gimage active channels  */
@@ -6822,23 +6804,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_construct (GimpImage * gimage,int x,int y,int w,int h,gboolean can_use_cowproject)
+DECL|function|gimp_image_construct (GimpImage * gimage,gint x,gint y,gint w,gint h,gboolean can_use_cowproject)
 name|gimp_image_construct
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
 name|gboolean
@@ -6848,9 +6830,9 @@ block|{
 if|#
 directive|if
 literal|0
-block|int xoff, yoff;
-comment|/*  set the construct flag, used to determine if anything        *  has been written to the gimage raw image yet.        */
-block|gimage->construct_flag = 0;              if (gimage->layers) 	{ 	  gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff); 	}        if (
+block|gint xoff, yoff;
+comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
+block|gimage->construct_flag = 0;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);     }    if (
 comment|/*can_use_cowproject&&*/
 block|(gimage->layers)&&
 comment|/* There's a layer.      */
@@ -6866,7 +6848,7 @@ block|(!drawable_indexed (GIMP_DRAWABLE((Layer*)(gimage->layers->data))))&&     
 comment|/*opaq */
 block|)     {       int xoff, yoff;              gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);         if ((xoff==0)&& (yoff==0))
 comment|/* Starts at 0,0         */
-block|{ 	PixelRegion srcPR, destPR; 	void * pr; 	 	g_warning("Can use cow-projection hack.  Yay!");  	pixel_region_init (&srcPR, gimp_drawable_data 			   (GIMP_DRAWABLE 			    ((Layer*)(gimage->layers->data))), 			   x, y, w,h, FALSE); 	pixel_region_init (&destPR, 			   gimp_image_projection (gimage), 			   x, y, w,h, TRUE);  	for (pr = pixel_regions_register (2,&srcPR,&destPR); 	     pr != NULL; 	     pr = pixel_regions_process (pr)) 	  { 	    tile_manager_map_over_tile (destPR.tiles, 					destPR.curtile, srcPR.curtile); 	  }  	gimage->construct_flag = 1; 	gimp_image_construct_channels (gimage, x, y, w, h); 	return;       }     }
+block|{ 	  PixelRegion srcPR, destPR; 	  void * pr; 	 	  g_warning("Can use cow-projection hack.  Yay!");  	  pixel_region_init (&srcPR, gimp_drawable_data 			     (GIMP_DRAWABLE 			      ((Layer*)(gimage->layers->data))), 			     x, y, w,h, FALSE); 	  pixel_region_init (&destPR, 			     gimp_image_projection (gimage), 			     x, y, w,h, TRUE);  	  for (pr = pixel_regions_register (2,&srcPR,&destPR); 	       pr != NULL; 	       pr = pixel_regions_process (pr)) 	    { 	      tile_manager_map_over_tile (destPR.tiles, 					  destPR.curtile, srcPR.curtile); 	    }  	  gimage->construct_flag = 1; 	  gimp_image_construct_channels (gimage, x, y, w, h); 	  return; 	}     }
 else|#
 directive|else
 name|gimage
@@ -6923,35 +6905,35 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_invalidate_without_render (GimpImage * gimage,int x,int y,int w,int h,int x1,int y1,int x2,int y2)
+DECL|function|gimp_image_invalidate_without_render (GimpImage * gimage,gint x,gint y,gint w,gint h,gint x1,gint y1,gint x2,gint y2)
 name|gimp_image_invalidate_without_render
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|)
 block|{
@@ -6963,7 +6945,7 @@ name|TileManager
 modifier|*
 name|tm
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -7132,35 +7114,35 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_invalidate (GimpImage * gimage,int x,int y,int w,int h,int x1,int y1,int x2,int y2)
+DECL|function|gimp_image_invalidate (GimpImage * gimage,gint x,gint y,gint w,gint h,gint x1,gint y1,gint x2,gint y2)
 name|gimp_image_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|)
 block|{
@@ -7172,22 +7154,22 @@ name|TileManager
 modifier|*
 name|tm
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|startx
 decl_stmt|,
 name|starty
 decl_stmt|;
-name|int
+name|gint
 name|endx
 decl_stmt|,
 name|endy
 decl_stmt|;
-name|int
+name|gint
 name|tilex
 decl_stmt|,
 name|tiley
@@ -7586,12 +7568,12 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|w
 decl_stmt|,
 name|h
@@ -7658,7 +7640,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_get_layer_index (GimpImage * gimage,Layer * layer_arg)
 name|gimp_image_get_layer_index
 parameter_list|(
@@ -7683,7 +7665,7 @@ name|gimage
 operator|->
 name|layers
 decl_stmt|;
-name|int
+name|gint
 name|index
 init|=
 literal|0
@@ -7731,7 +7713,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_get_channel_index (GimpImage * gimage,Channel * channel_ID)
 name|gimp_image_get_channel_index
 parameter_list|(
@@ -7756,7 +7738,7 @@ name|gimage
 operator|->
 name|channels
 decl_stmt|;
-name|int
+name|gint
 name|index
 init|=
 literal|0
@@ -8048,7 +8030,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_get_component_active (GimpImage * gimage,ChannelType type)
 name|gimp_image_get_component_active
 parameter_list|(
@@ -8128,7 +8110,7 @@ return|;
 break|break;
 default|default:
 return|return
-literal|0
+name|FALSE
 return|;
 break|break;
 block|}
@@ -8136,7 +8118,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_get_component_visible (GimpImage * gimage,ChannelType type)
 name|gimp_image_get_component_visible
 parameter_list|(
@@ -8216,7 +8198,7 @@ return|;
 break|break;
 default|default:
 return|return
-literal|0
+name|FALSE
 return|;
 break|break;
 block|}
@@ -8243,7 +8225,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_image_layer_boundary (GimpImage * gimage,BoundSeg ** segs,int * num_segs)
 name|gimp_image_layer_boundary
 parameter_list|(
@@ -8288,7 +8270,7 @@ name|num_segs
 argument_list|)
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 else|else
@@ -8304,7 +8286,7 @@ operator|=
 literal|0
 expr_stmt|;
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 block|}
@@ -8554,7 +8536,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_component_active (GimpImage * gimage,ChannelType type,int value)
+DECL|function|gimp_image_set_component_active (GimpImage * gimage,ChannelType type,gint value)
 name|gimp_image_set_component_active
 parameter_list|(
 name|GimpImage
@@ -8564,7 +8546,7 @@ parameter_list|,
 name|ChannelType
 name|type
 parameter_list|,
-name|int
+name|gint
 name|value
 parameter_list|)
 block|{
@@ -8661,7 +8643,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_component_visible (GimpImage * gimage,ChannelType type,int value)
+DECL|function|gimp_image_set_component_visible (GimpImage * gimage,ChannelType type,gint value)
 name|gimp_image_set_component_visible
 parameter_list|(
 name|GimpImage
@@ -8671,7 +8653,7 @@ parameter_list|,
 name|ChannelType
 name|type
 parameter_list|,
-name|int
+name|gint
 name|value
 parameter_list|)
 block|{
@@ -8755,17 +8737,17 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimp_image_pick_correlate_layer (GimpImage * gimage,int x,int y)
+DECL|function|gimp_image_pick_correlate_layer (GimpImage * gimage,gint x,gint y)
 name|gimp_image_pick_correlate_layer
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
@@ -8857,7 +8839,7 @@ name|GSList
 modifier|*
 name|prev
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -8866,18 +8848,18 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|index
 init|=
 operator|-
 literal|1
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|int
+name|gint
 name|off2_x
 decl_stmt|,
 name|off2_y
@@ -9182,7 +9164,7 @@ name|GSList
 modifier|*
 name|next
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -9191,17 +9173,17 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|index
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|int
+name|gint
 name|off2_x
 decl_stmt|,
 name|off2_y
@@ -9494,7 +9476,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|int
+name|gint
 name|x_min
 decl_stmt|,
 name|y_min
@@ -9503,7 +9485,7 @@ name|x_max
 decl_stmt|,
 name|y_max
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -9767,7 +9749,7 @@ name|GSList
 modifier|*
 name|pos
 decl_stmt|;
-name|int
+name|gint
 name|x_min
 decl_stmt|,
 name|y_min
@@ -9776,15 +9758,15 @@ name|x_max
 decl_stmt|,
 name|y_max
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|int
+name|gint
 name|index
 decl_stmt|;
-name|int
+name|gint
 name|ex_flag
 decl_stmt|;
 name|list
@@ -10849,8 +10831,7 @@ name|Layer
 modifier|*
 name|bottom
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|bg
 index|[
 literal|4
@@ -10869,10 +10850,10 @@ decl_stmt|;
 name|GimpImageType
 name|type
 decl_stmt|;
-name|int
+name|gint
 name|count
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -10881,7 +10862,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|x3
 decl_stmt|,
 name|y3
@@ -10890,13 +10871,13 @@ name|x4
 decl_stmt|,
 name|y4
 decl_stmt|;
-name|int
+name|gint
 name|operation
 decl_stmt|;
-name|int
+name|gint
 name|position
 decl_stmt|;
-name|int
+name|gint
 name|active
 index|[
 name|MAX_CHANNELS
@@ -10912,7 +10893,7 @@ block|,
 literal|1
 block|}
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -12110,7 +12091,7 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimp_image_add_layer (GimpImage * gimage,Layer * float_layer,int position)
+DECL|function|gimp_image_add_layer (GimpImage * gimage,Layer * float_layer,gint position)
 name|gimp_image_add_layer
 parameter_list|(
 name|GimpImage
@@ -12121,13 +12102,17 @@ name|Layer
 modifier|*
 name|float_layer
 parameter_list|,
-name|int
+name|gint
 name|position
 parameter_list|)
 block|{
 name|LayerUndo
 modifier|*
 name|lu
+decl_stmt|;
+name|GSList
+modifier|*
+name|ll
 decl_stmt|;
 if|if
 condition|(
@@ -12162,20 +12147,23 @@ return|return
 name|NULL
 return|;
 block|}
-block|{
-name|GSList
-modifier|*
+for|for
+control|(
 name|ll
-init|=
+operator|=
 name|gimage
 operator|->
 name|layers
-decl_stmt|;
-while|while
-condition|(
+init|;
 name|ll
-condition|)
-block|{
+condition|;
+name|ll
+operator|=
+name|g_slist_next
+argument_list|(
+name|ll
+argument_list|)
+control|)
 if|if
 condition|(
 name|ll
@@ -12197,28 +12185,14 @@ return|return
 name|NULL
 return|;
 block|}
-name|ll
-operator|=
-name|g_slist_next
-argument_list|(
-name|ll
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 comment|/*  Prepare a layer undo and push it  */
 name|lu
 operator|=
-operator|(
-name|LayerUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|LayerUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|lu
@@ -12279,6 +12253,27 @@ argument_list|,
 name|gimage
 argument_list|)
 expr_stmt|;
+comment|/*  If the layer has a mask, set the mask's gimage and layer */
+if|if
+condition|(
+name|float_layer
+operator|->
+name|mask
+condition|)
+block|{
+name|gimp_drawable_set_gimage
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|float_layer
+operator|->
+name|mask
+argument_list|)
+argument_list|,
+name|gimage
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  add the layer to the list at the specified position  */
 if|if
 condition|(
@@ -12350,6 +12345,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gimage
 operator|->
 name|layers
@@ -12366,6 +12362,7 @@ name|float_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|gimage
 operator|->
 name|layer_stack
@@ -12447,7 +12444,7 @@ name|LayerUndo
 modifier|*
 name|lu
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -12460,16 +12457,11 @@ block|{
 comment|/*  Prepare a layer undo--push it at the end  */
 name|lu
 operator|=
-operator|(
-name|LayerUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|LayerUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|lu
@@ -12747,6 +12739,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|(
 name|drawable_width
 argument_list|(
 name|GIMP_DRAWABLE
@@ -12762,7 +12755,9 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|)
+operator|)
 operator|||
+operator|(
 name|drawable_height
 argument_list|(
 name|GIMP_DRAWABLE
@@ -12778,6 +12773,7 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|)
+operator|)
 condition|)
 block|{
 name|g_message
@@ -12802,16 +12798,11 @@ expr_stmt|;
 comment|/*  Prepare a layer undo and push it  */
 name|lmu
 operator|=
-operator|(
-name|LayerMaskUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|LayerMaskUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|lmu
@@ -12872,7 +12863,7 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|gimp_image_remove_layer_mask (GimpImage * gimage,Layer * layer,int mode)
+DECL|function|gimp_image_remove_layer_mask (GimpImage * gimage,Layer * layer,MaskApplyMode mode)
 name|gimp_image_remove_layer_mask
 parameter_list|(
 name|GimpImage
@@ -12883,7 +12874,7 @@ name|Layer
 modifier|*
 name|layer
 parameter_list|,
-name|int
+name|MaskApplyMode
 name|mode
 parameter_list|)
 block|{
@@ -12891,7 +12882,7 @@ name|LayerMaskUndo
 modifier|*
 name|lmu
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -12899,15 +12890,8 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-operator|(
 name|layer
-operator|)
-condition|)
-return|return
-name|NULL
-return|;
-if|if
-condition|(
+operator|||
 operator|!
 name|layer
 operator|->
@@ -12927,16 +12911,11 @@ expr_stmt|;
 comment|/*  Prepare a layer mask undo--push it below  */
 name|lmu
 operator|=
-operator|(
-name|LayerMaskUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|LayerMaskUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|lmu
@@ -13611,7 +13590,7 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|gimp_image_add_channel (GimpImage * gimage,Channel * channel,int position)
+DECL|function|gimp_image_add_channel (GimpImage * gimage,Channel * channel,gint position)
 name|gimp_image_add_channel
 parameter_list|(
 name|GimpImage
@@ -13622,13 +13601,17 @@ name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|position
 parameter_list|)
 block|{
 name|ChannelUndo
 modifier|*
 name|cu
+decl_stmt|;
+name|GSList
+modifier|*
+name|cc
 decl_stmt|;
 if|if
 condition|(
@@ -13663,20 +13646,23 @@ return|return
 name|NULL
 return|;
 block|}
-block|{
-name|GSList
-modifier|*
+for|for
+control|(
 name|cc
-init|=
+operator|=
 name|gimage
 operator|->
 name|channels
-decl_stmt|;
-while|while
-condition|(
+init|;
 name|cc
-condition|)
-block|{
+condition|;
+name|cc
+operator|=
+name|g_slist_next
+argument_list|(
+name|cc
+argument_list|)
+control|)
 if|if
 condition|(
 name|cc
@@ -13698,28 +13684,14 @@ return|return
 name|NULL
 return|;
 block|}
-name|cc
-operator|=
-name|g_slist_next
-argument_list|(
-name|cc
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 comment|/*  Prepare a channel undo and push it  */
 name|cu
 operator|=
-operator|(
-name|ChannelUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ChannelUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|cu
@@ -13852,16 +13824,11 @@ block|{
 comment|/*  Prepare a channel undo--push it below  */
 name|cu
 operator|=
-operator|(
-name|ChannelUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|ChannelUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|cu
@@ -14019,7 +13986,7 @@ comment|/************************************************************/
 end_comment
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_image_is_empty (GimpImage * gimage)
 name|gimp_image_is_empty
 parameter_list|(
@@ -14213,7 +14180,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_image_freeze_undo (GimpImage * gimage)
 name|gimp_image_freeze_undo
 parameter_list|(
@@ -14235,7 +14202,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_image_thaw_undo (GimpImage * gimage)
 name|gimp_image_thaw_undo
 parameter_list|(
@@ -14257,7 +14224,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_image_disable_undo (GimpImage * gimage)
 name|gimp_image_disable_undo
 parameter_list|(
@@ -14276,7 +14243,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|gimp_image_enable_undo (GimpImage * gimage)
 name|gimp_image_enable_undo
 parameter_list|(
@@ -14301,7 +14268,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_dirty (GimpImage * gimage)
 name|gimp_image_dirty
 parameter_list|(
@@ -14338,7 +14305,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_clean (GimpImage * gimage)
 name|gimp_image_clean
 parameter_list|(
@@ -14526,7 +14493,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_projection_bytes (GimpImage * gimage)
 name|gimp_image_projection_bytes
 parameter_list|(
@@ -14544,7 +14511,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_projection_opacity (GimpImage * gimage)
 name|gimp_image_projection_opacity
 parameter_list|(
@@ -14629,7 +14596,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_composite_bytes (GimpImage * gimage)
 name|gimp_image_composite_bytes
 parameter_list|(
@@ -14650,17 +14617,17 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_image_construct_composite_preview (GimpImage * gimage,int width,int height)
+DECL|function|gimp_image_construct_composite_preview (GimpImage * gimage,gint width,gint height)
 name|gimp_image_construct_composite_preview
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -14705,10 +14672,10 @@ name|reverse_list
 init|=
 name|NULL
 decl_stmt|;
-name|double
+name|gdouble
 name|ratio
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -14717,7 +14684,7 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -14726,13 +14693,13 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|;
-name|int
+name|gint
 name|construct_flag
 decl_stmt|;
-name|int
+name|gint
 name|visible
 index|[
 name|MAX_CHANNELS
@@ -14748,7 +14715,7 @@ block|,
 literal|1
 block|}
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -15457,7 +15424,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_image_composite_preview (GimpImage * gimage,ChannelType type,int width,int height)
+DECL|function|gimp_image_composite_preview (GimpImage * gimage,ChannelType type,gint width,gint height)
 name|gimp_image_composite_preview
 parameter_list|(
 name|GimpImage
@@ -15467,14 +15434,14 @@ parameter_list|,
 name|ChannelType
 name|type
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
-name|int
+name|gint
 name|channel
 decl_stmt|;
 switch|switch
@@ -15607,7 +15574,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_image_preview_valid (GimpImage * gimage,ChannelType type)
 name|gimp_image_preview_valid
 parameter_list|(

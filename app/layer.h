@@ -59,7 +59,7 @@ file|"layerF.h"
 end_include
 
 begin_comment
-comment|/* structure declarations */
+comment|/*  structure declarations  */
 end_comment
 
 begin_define
@@ -198,24 +198,23 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  the actual layer         */
+comment|/*  the actual layer          */
 DECL|member|prev_position
-name|int
+name|gint
 name|prev_position
 decl_stmt|;
-comment|/*  former position in list  */
+comment|/*  former position in list   */
 DECL|member|prev_layer
 name|Layer
 modifier|*
 name|prev_layer
 decl_stmt|;
-comment|/*  previous active layer    */
+comment|/*  previous active layer     */
 DECL|member|undo_type
-name|int
+name|gint
 name|undo_type
 decl_stmt|;
-comment|/*  is this a new layer undo */
-comment|/*  or a remove layer undo?  */
+comment|/*  is this a new layer undo  * 			     *  or a remove layer undo?   */
 block|}
 struct|;
 end_struct
@@ -230,39 +229,39 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  the layer                */
+comment|/*  the layer                 */
 DECL|member|apply_mask
-name|int
+name|gboolean
 name|apply_mask
 decl_stmt|;
-comment|/*  apply mask?              */
+comment|/*  apply mask?               */
 DECL|member|edit_mask
-name|int
+name|gboolean
 name|edit_mask
 decl_stmt|;
-comment|/*  edit mask or layer?      */
+comment|/*  edit mask or layer?       */
 DECL|member|show_mask
-name|int
+name|gboolean
 name|show_mask
 decl_stmt|;
-comment|/*  show the mask?           */
+comment|/*  show the mask?            */
 DECL|member|mask
 name|LayerMask
 modifier|*
 name|mask
 decl_stmt|;
-comment|/*  the layer mask           */
+comment|/*  the layer mask            */
 DECL|member|mode
-name|int
+name|gint
 name|mode
 decl_stmt|;
-comment|/*  the application mode     */
+comment|/*  the application mode      */
 DECL|member|undo_type
-name|int
+name|gint
 name|undo_type
 decl_stmt|;
-comment|/*  is this a new layer mask */
-comment|/*  or a remove layer mask   */
+comment|/*  is this a new layer mask  */
+comment|/*  or a remove layer mask    */
 block|}
 struct|;
 end_struct
@@ -277,19 +276,19 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  the layer                */
+comment|/*  the layer                 */
 DECL|member|drawable
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-comment|/*  drawable of floating sel */
+comment|/*  drawable of floating sel  */
 block|}
 struct|;
 end_struct
 
 begin_comment
-comment|/* function declarations */
+comment|/*  function declarations  */
 end_comment
 
 begin_function_decl
@@ -300,16 +299,16 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|GimpImageType
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|LayerModeEffects
 parameter_list|)
@@ -324,7 +323,7 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -364,10 +363,10 @@ parameter_list|,
 name|TileManager
 modifier|*
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|LayerModeEffects
 parameter_list|)
@@ -406,7 +405,7 @@ name|Layer
 modifier|*
 name|layer_get_ID
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -440,7 +439,7 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|MaskApplyMode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -452,9 +451,9 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -466,9 +465,9 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -490,11 +489,11 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -506,13 +505,13 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -525,7 +524,7 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -542,15 +541,15 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|layer_pick_correlate
 parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -563,17 +562,16 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -605,7 +603,7 @@ name|LayerMask
 modifier|*
 name|layer_mask_get_ID
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -632,6 +630,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|layer_mask_set_layer
+parameter_list|(
+name|LayerMask
+modifier|*
+parameter_list|,
+name|Layer
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|Layer
 modifier|*
 name|layer_mask_get_layer
@@ -643,7 +654,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* access functions */
+comment|/*  access functions  */
 end_comment
 
 begin_function_decl
@@ -653,14 +664,14 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|layer_get_name
 parameter_list|(
@@ -671,8 +682,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|layer_data
 parameter_list|(
@@ -694,7 +704,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|layer_has_alpha
 parameter_list|(
 name|Layer
@@ -704,7 +714,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|layer_is_floating_sel
 parameter_list|(
 name|Layer
@@ -714,7 +724,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|layer_linked
 parameter_list|(
 name|Layer
@@ -731,9 +741,9 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -746,9 +756,9 @@ parameter_list|(
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -791,7 +801,7 @@ value|GIMP_IS_LAYER_MASK
 end_define
 
 begin_comment
-comment|/* from channel.c */
+comment|/*  from channel.c  */
 end_comment
 
 begin_function_decl

@@ -1,4 +1,8 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_comment
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -204,7 +208,7 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon2c827b850103
+DECL|enum|__anon2987d0b20103
 typedef|typedef
 enum|enum
 block|{
@@ -223,7 +227,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c827b850203
+DECL|enum|__anon2987d0b20203
 typedef|typedef
 enum|enum
 block|{
@@ -244,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c827b850303
+DECL|enum|__anon2987d0b20303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -272,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c827b850403
+DECL|enum|__anon2987d0b20403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -371,9 +375,9 @@ name|GimpImage
 modifier|*
 name|gimp_image_new
 parameter_list|(
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|GimpImageBaseType
 parameter_list|)
@@ -387,7 +391,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -400,9 +404,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|,
-name|double
+name|gdouble
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -414,10 +418,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|,
-name|double
+name|gdouble
 modifier|*
 parameter_list|)
 function_decl|;
@@ -476,13 +480,13 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -494,9 +498,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -506,7 +510,7 @@ name|GimpImage
 modifier|*
 name|gimp_image_get_named
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -517,7 +521,7 @@ name|GimpImage
 modifier|*
 name|gimp_image_get_ID
 parameter_list|(
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -530,11 +534,11 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -562,18 +566,18 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|LayerModeEffects
 parameter_list|,
 name|TileManager
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -591,16 +595,16 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|PixelRegion
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -615,8 +619,7 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -632,27 +635,23 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|gimp_image_get_color_at
 parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
-name|x
+name|gint
 parameter_list|,
-name|int
-name|y
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -666,12 +665,10 @@ modifier|*
 parameter_list|,
 name|GimpImageType
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -687,12 +684,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 parameter_list|,
 name|GimpImageBaseType
@@ -771,7 +766,7 @@ name|GimpImage
 modifier|*
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -779,7 +774,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|gimp_image_parasite_list
@@ -816,7 +811,7 @@ name|GimpImage
 modifier|*
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -879,7 +874,7 @@ comment|/*  layer/channel functions  */
 end_comment
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_get_layer_index
 parameter_list|(
 name|GimpImage
@@ -892,7 +887,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_get_channel_index
 parameter_list|(
 name|GimpImage
@@ -960,7 +955,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 parameter_list|)
 function_decl|;
@@ -978,7 +973,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_get_component_active
 parameter_list|(
 name|GimpImage
@@ -990,7 +985,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_get_component_visible
 parameter_list|(
 name|GimpImage
@@ -1002,7 +997,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_image_layer_boundary
 parameter_list|(
 name|GimpImage
@@ -1012,7 +1007,7 @@ name|BoundSeg
 modifier|*
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|)
 function_decl|;
@@ -1066,7 +1061,7 @@ modifier|*
 parameter_list|,
 name|ChannelType
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1080,7 +1075,7 @@ modifier|*
 parameter_list|,
 name|ChannelType
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1093,9 +1088,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1107,7 +1102,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1122,7 +1117,7 @@ parameter_list|,
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1134,7 +1129,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1278,7 +1273,7 @@ parameter_list|,
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1325,7 +1320,7 @@ parameter_list|,
 name|Layer
 modifier|*
 parameter_list|,
-name|int
+name|MaskApplyMode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1385,7 +1380,7 @@ parameter_list|,
 name|Channel
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1411,13 +1406,13 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|gboolean
 parameter_list|)
@@ -1431,21 +1426,21 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1457,21 +1452,21 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1494,7 +1489,7 @@ comment|/*  Access functions  */
 end_comment
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_image_is_empty
 parameter_list|(
 name|GimpImage
@@ -1535,7 +1530,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|char
+name|gchar
 modifier|*
 name|gimp_image_filename
 parameter_list|(
@@ -1546,7 +1541,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_image_enable_undo
 parameter_list|(
 name|GimpImage
@@ -1556,7 +1551,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|gimp_image_disable_undo
 parameter_list|(
 name|GimpImage
@@ -1566,7 +1561,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_dirty
 parameter_list|(
 name|GimpImage
@@ -1576,7 +1571,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_clean
 parameter_list|(
 name|GimpImage
@@ -1607,8 +1602,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|gimp_image_cmap
 parameter_list|(
@@ -1644,7 +1638,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_projection_bytes
 parameter_list|(
 name|GimpImage
@@ -1654,7 +1648,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_projection_opacity
 parameter_list|(
 name|GimpImage
@@ -1699,7 +1693,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_composite_bytes
 parameter_list|(
 name|GimpImage
@@ -1718,15 +1712,15 @@ modifier|*
 parameter_list|,
 name|ChannelType
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_image_preview_valid
 parameter_list|(
 name|GimpImage
@@ -1763,13 +1757,10 @@ name|gimp_image_construct_composite_preview
 parameter_list|(
 name|GimpImage
 modifier|*
-name|gimage
 parameter_list|,
-name|int
-name|width
+name|gint
 parameter_list|,
-name|int
-name|height
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1778,6 +1769,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMPIMAGE_H__ */
+end_comment
 
 end_unit
 

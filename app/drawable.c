@@ -46,7 +46,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_function
-name|int
+name|gint
 DECL|function|drawable_ID (GimpDrawable * drawable)
 name|drawable_ID
 parameter_list|(
@@ -227,23 +227,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_update (GimpDrawable * drawable,int x,int y,int w,int h)
+DECL|function|drawable_update (GimpDrawable * drawable,gint x,gint y,gint w,gint h)
 name|drawable_update
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
@@ -251,7 +251,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -318,30 +318,30 @@ end_function
 
 begin_function
 name|void
-DECL|function|drawable_apply_image (GimpDrawable * drawable,int x1,int y1,int x2,int y2,TileManager * tiles,int sparse)
+DECL|function|drawable_apply_image (GimpDrawable * drawable,gint x1,gint y1,gint x2,gint y2,TileManager * tiles,gint sparse)
 name|drawable_apply_image
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|,
 name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|int
+name|gint
 name|sparse
 parameter_list|)
 block|{

@@ -59,7 +59,7 @@ end_define
 
 begin_function
 name|void
-DECL|function|gimp_dnd_set_drawable_preview_icon (GtkWidget * widget,GdkDragContext * context,GimpDrawable * drawable)
+DECL|function|gimp_dnd_set_drawable_preview_icon (GtkWidget * widget,GdkDragContext * context,GimpDrawable * drawable,GdkGC * gc)
 name|gimp_dnd_set_drawable_preview_icon
 parameter_list|(
 name|GtkWidget
@@ -73,6 +73,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GdkGC
+modifier|*
+name|gc
 parameter_list|)
 block|{
 name|GdkPixmap
@@ -131,12 +135,6 @@ name|width
 decl_stmt|;
 name|gint
 name|height
-decl_stmt|;
-name|GdkGC
-modifier|*
-name|gc
-init|=
-name|NULL
 decl_stmt|;
 name|gdouble
 name|ratio
@@ -256,12 +254,26 @@ name|offy
 argument_list|)
 expr_stmt|;
 name|offx
-operator|*=
+operator|=
+call|(
+name|int
+call|)
+argument_list|(
 name|ratio
+operator|*
+name|offx
+argument_list|)
 expr_stmt|;
 name|offy
-operator|*=
+operator|=
+call|(
+name|int
+call|)
+argument_list|(
 name|ratio
+operator|*
+name|offy
+argument_list|)
 expr_stmt|;
 name|drag_pixmap
 operator|=
@@ -283,9 +295,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gdk_draw_rectangle
+argument_list|(
+name|drag_pixmap
+argument_list|,
 comment|/*  Is this always valid???  */
-name|gc
-operator|=
 name|widget
 operator|->
 name|style
@@ -294,12 +308,6 @@ name|bg_gc
 index|[
 name|GTK_STATE_NORMAL
 index|]
-expr_stmt|;
-name|gdk_draw_rectangle
-argument_list|(
-name|drag_pixmap
-argument_list|,
-name|gc
 argument_list|,
 name|TRUE
 argument_list|,
@@ -315,14 +323,6 @@ name|height
 operator|+
 literal|2
 argument_list|)
-expr_stmt|;
-name|gc
-operator|=
-name|widget
-operator|->
-name|style
-operator|->
-name|black_gc
 expr_stmt|;
 name|gdk_draw_rectangle
 argument_list|(

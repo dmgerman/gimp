@@ -30,7 +30,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b17e59c0103
+DECL|enum|__anon2965b9750103
 block|{
 DECL|enumerator|GIMP_DND_TYPE_URI_LIST
 name|GIMP_DND_TYPE_URI_LIST
@@ -58,6 +58,9 @@ name|GIMP_DND_TYPE_COMPONENT
 block|,
 DECL|enumerator|GIMP_DND_TYPE_PATH
 name|GIMP_DND_TYPE_PATH
+block|,
+DECL|enumerator|GIMP_DND_TYPE_COLOR
+name|GIMP_DND_TYPE_COLOR
 block|}
 enum|;
 end_enum
@@ -143,10 +146,19 @@ define|\
 value|{ "GIMP_PATH", GTK_TARGET_SAME_APP, GIMP_DND_TYPE_PATH }
 end_define
 
+begin_define
+DECL|macro|GIMP_TARGET_COLOR
+define|#
+directive|define
+name|GIMP_TARGET_COLOR
+define|\
+value|{ "application/x-color", 0, GIMP_DND_TYPE_COLOR }
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b17e59c0203
+DECL|enum|__anon2965b9750203
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -177,6 +189,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GdkGC
+modifier|*
+name|gc
 parameter_list|)
 function_decl|;
 end_function_decl

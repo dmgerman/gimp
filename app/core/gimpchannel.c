@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -19,12 +13,6 @@ begin_include
 include|#
 directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
 end_include
 
 begin_include
@@ -319,19 +307,21 @@ block|{ }
 end_function
 
 begin_comment
-comment|/*  *  Static variables  */
+comment|/**********************/
+end_comment
+
+begin_comment
+comment|/*  Static variables  */
+end_comment
+
+begin_comment
+comment|/**********************/
 end_comment
 
 begin_decl_stmt
-specifier|extern
-name|int
-name|global_drawable_ID
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|channel_get_count
-name|int
+specifier|static
+name|gint
 name|channel_get_count
 init|=
 literal|0
@@ -344,6 +334,10 @@ end_comment
 
 begin_comment
 comment|/*  Function definitions  */
+end_comment
+
+begin_comment
+comment|/**************************/
 end_comment
 
 begin_function
@@ -387,28 +381,27 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|channel_new (GimpImage * gimage,int width,int height,char * name,int opacity,unsigned char * col)
+DECL|function|channel_new (GimpImage * gimage,gint width,gint height,gchar * name,gint opacity,guchar * col)
 name|channel_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|opacity
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|col
 parameter_list|)
@@ -417,7 +410,7 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|channel
@@ -482,7 +475,7 @@ name|channel
 operator|->
 name|show_masked
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 comment|/*  selection mask variables  */
 name|channel
@@ -531,6 +524,8 @@ name|channel
 operator|->
 name|x1
 operator|=
+literal|0
+expr_stmt|;
 name|channel
 operator|->
 name|y1
@@ -620,7 +615,7 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|channel_name
 decl_stmt|;
@@ -633,18 +628,18 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|ext
 decl_stmt|;
-name|int
+name|gint
 name|number
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|int
+name|gint
 name|len
 decl_stmt|;
 comment|/*  formulate the new channel name  */
@@ -932,14 +927,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_set_name (Channel * channel,char * name)
+DECL|function|channel_set_name (Channel * channel,gchar * name)
 name|channel_set_name
 parameter_list|(
 name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -958,7 +953,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|channel_get_name (Channel * channel)
 name|channel_get_name
@@ -994,7 +989,7 @@ modifier|*
 name|color
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if
@@ -1032,7 +1027,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 DECL|function|channel_get_color (Channel * channel)
 name|channel_get_color
@@ -1101,7 +1096,7 @@ operator|->
 name|opacity
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 name|opacity
@@ -1117,10 +1112,10 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|channel_get_ID (int ID)
+DECL|function|channel_get_ID (gint ID)
 name|channel_get_ID
 parameter_list|(
-name|int
+name|gint
 name|ID
 parameter_list|)
 block|{
@@ -1269,17 +1264,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_scale (Channel * channel,int new_width,int new_height)
+DECL|function|channel_scale (Channel * channel,gint new_width,gint new_height)
 name|channel_scale
 parameter_list|(
 name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|new_width
 parameter_list|,
-name|int
+name|gint
 name|new_height
 parameter_list|)
 block|{
@@ -1484,23 +1479,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_resize (Channel * channel,int new_width,int new_height,int offx,int offy)
+DECL|function|channel_resize (Channel * channel,gint new_width,gint new_height,gint offx,gint offy)
 name|channel_resize
 parameter_list|(
 name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|new_width
 parameter_list|,
-name|int
+name|gint
 name|new_height
 parameter_list|,
-name|int
+name|gint
 name|offx
 parameter_list|,
-name|int
+name|gint
 name|offy
 parameter_list|)
 block|{
@@ -1513,21 +1508,20 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|bg
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|clear
 decl_stmt|;
-name|int
+name|gint
 name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -1967,33 +1961,19 @@ block|}
 end_function
 
 begin_comment
-comment|/********************/
+comment|/**********************/
 end_comment
 
 begin_comment
-comment|/* access functions */
+comment|/*  access functions  */
+end_comment
+
+begin_comment
+comment|/**********************/
 end_comment
 
 begin_function
-name|unsigned
-name|char
-modifier|*
-DECL|function|channel_data (Channel * channel)
-name|channel_data
-parameter_list|(
-name|Channel
-modifier|*
-name|channel
-parameter_list|)
-block|{
-return|return
-name|NULL
-return|;
-block|}
-end_function
-
-begin_function
-name|int
+name|gboolean
 DECL|function|channel_toggle_visibility (Channel * channel)
 name|channel_toggle_visibility
 parameter_list|(
@@ -2031,17 +2011,17 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|channel_preview (Channel * channel,int width,int height)
+DECL|function|channel_preview (Channel * channel,gint width,gint height)
 name|channel_preview
 parameter_list|(
 name|Channel
 modifier|*
 name|channel
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
@@ -2054,7 +2034,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|gint
 name|subsample
 decl_stmt|;
 name|TempBuf
@@ -2297,7 +2277,7 @@ argument_list|)
 operator|->
 name|preview_valid
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|gimp_preview_cache_add
 argument_list|(
@@ -2405,32 +2385,35 @@ block|}
 end_function
 
 begin_comment
-comment|/****************************/
+comment|/******************************/
 end_comment
 
 begin_comment
-comment|/* selection mask functions */
+comment|/*  selection mask functions  */
+end_comment
+
+begin_comment
+comment|/******************************/
 end_comment
 
 begin_function
 name|Channel
 modifier|*
-DECL|function|channel_new_mask (GimpImage * gimage,int width,int height)
+DECL|function|channel_new_mask (GimpImage * gimage,gint width,gint height)
 name|channel_new_mask
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|black
 index|[
 literal|3
@@ -2489,8 +2472,8 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|channel_boundary (Channel * mask,BoundSeg ** segs_in,BoundSeg ** segs_out,int * num_segs_in,int * num_segs_out,int x1,int y1,int x2,int y2)
+name|gboolean
+DECL|function|channel_boundary (Channel * mask,BoundSeg ** segs_in,BoundSeg ** segs_out,gint * num_segs_in,gint * num_segs_out,gint x1,gint y1,gint x2,gint y2)
 name|channel_boundary
 parameter_list|(
 name|Channel
@@ -2507,28 +2490,28 @@ modifier|*
 modifier|*
 name|segs_out
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|num_segs_in
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|num_segs_out
 parameter_list|,
-name|int
+name|gint
 name|x1
 parameter_list|,
-name|int
+name|gint
 name|y1
 parameter_list|,
-name|int
+name|gint
 name|x2
 parameter_list|,
-name|int
+name|gint
 name|y2
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x3
 decl_stmt|,
 name|y3
@@ -2842,18 +2825,18 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|channel_value (Channel * mask,int x,int y)
+name|gint
+DECL|function|channel_value (Channel * mask,gint x,gint y)
 name|channel_value
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
@@ -2861,7 +2844,7 @@ name|Tile
 modifier|*
 name|tile
 decl_stmt|;
-name|int
+name|gint
 name|val
 decl_stmt|;
 comment|/*  Some checks to cut back on unnecessary work  */
@@ -2970,8 +2953,7 @@ name|val
 operator|=
 operator|*
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|*
 operator|)
 operator|(
@@ -3003,27 +2985,27 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|channel_bounds (Channel * mask,int * x1,int * y1,int * x2,int * y2)
+name|gboolean
+DECL|function|channel_bounds (Channel * mask,gint * x1,gint * y1,gint * x2,gint * y2)
 name|channel_bounds
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|x1
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|y1
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|x2
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|y2
 parameter_list|)
@@ -3031,20 +3013,19 @@ block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|,
 modifier|*
 name|data1
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|ex
 decl_stmt|,
 name|ey
@@ -3053,7 +3034,7 @@ name|void
 modifier|*
 name|pr
 decl_stmt|;
-name|int
+name|gint
 name|tx1
 decl_stmt|,
 name|tx2
@@ -3062,7 +3043,7 @@ name|ty1
 decl_stmt|,
 name|ty2
 decl_stmt|;
-name|int
+name|gint
 name|minx
 decl_stmt|,
 name|maxx
@@ -3104,15 +3085,10 @@ operator|->
 name|y2
 expr_stmt|;
 return|return
-operator|(
+operator|!
 name|mask
 operator|->
 name|empty
-operator|)
-condition|?
-name|FALSE
-else|:
-name|TRUE
 return|;
 block|}
 comment|/*  go through and calculate the bounds  */
@@ -3613,21 +3589,16 @@ operator|=
 name|ty2
 expr_stmt|;
 return|return
-operator|(
+operator|!
 name|mask
 operator|->
 name|empty
-operator|)
-condition|?
-name|FALSE
-else|:
-name|TRUE
 return|;
 block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|channel_is_empty (Channel * mask)
 name|channel_is_empty
 parameter_list|(
@@ -3639,12 +3610,11 @@ block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -3886,38 +3856,37 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_add_segment (Channel * mask,int x,int y,int width,int value)
+DECL|function|channel_add_segment (Channel * mask,gint x,gint y,gint width,gint value)
 name|channel_add_segment
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|value
 parameter_list|)
 block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|val
 decl_stmt|;
-name|int
+name|gint
 name|x2
 decl_stmt|;
 name|void
@@ -4114,38 +4083,37 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_sub_segment (Channel * mask,int x,int y,int width,int value)
+DECL|function|channel_sub_segment (Channel * mask,gint x,gint y,gint width,gint value)
 name|channel_sub_segment
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|value
 parameter_list|)
 block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|val
 decl_stmt|;
-name|int
+name|gint
 name|x2
 decl_stmt|;
 name|void
@@ -4342,30 +4310,30 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_combine_rect (Channel * mask,int op,int x,int y,int w,int h)
+DECL|function|channel_combine_rect (Channel * mask,ChannelOps op,gint x,gint y,gint w,gint h)
 name|channel_combine_rect
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|ChannelOps
 name|op
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x2
 decl_stmt|,
 name|y2
@@ -4373,8 +4341,7 @@ decl_stmt|;
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|color
 decl_stmt|;
 name|y2
@@ -4754,82 +4721,82 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_combine_ellipse (Channel * mask,int op,int x,int y,int w,int h,int aa)
+DECL|function|channel_combine_ellipse (Channel * mask,ChannelOps op,gint x,gint y,gint w,gint h,gboolean aa)
 name|channel_combine_ellipse
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|ChannelOps
 name|op
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|int
+name|gboolean
 name|aa
 comment|/*  antialias selection?  */
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
+name|gint
 name|x0
 decl_stmt|,
 name|x1
 decl_stmt|,
 name|x2
 decl_stmt|;
-name|int
+name|gint
 name|val
 decl_stmt|,
 name|last
 decl_stmt|;
-name|float
+name|gfloat
 name|a_sqr
 decl_stmt|,
 name|b_sqr
 decl_stmt|,
 name|aob_sqr
 decl_stmt|;
-name|float
+name|gfloat
 name|w_sqr
 decl_stmt|,
 name|h_sqr
 decl_stmt|;
-name|float
+name|gfloat
 name|y_sqr
 decl_stmt|;
-name|float
+name|gfloat
 name|t0
 decl_stmt|,
 name|t1
 decl_stmt|;
-name|float
+name|gfloat
 name|r
 decl_stmt|;
-name|float
+name|gfloat
 name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-name|float
+name|gfloat
 name|rad
 decl_stmt|;
-name|float
+name|gfloat
 name|dist
 decl_stmt|;
 if|if
@@ -5592,15 +5559,14 @@ modifier|*
 name|destPR
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|,
 modifier|*
 name|dest
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -5720,15 +5686,14 @@ modifier|*
 name|destPR
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|,
 modifier|*
 name|dest
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -5843,15 +5808,14 @@ modifier|*
 name|destPR
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 decl_stmt|,
 modifier|*
 name|dest
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -5937,7 +5901,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_combine_mask (Channel * mask,Channel * add_on,int op,int off_x,int off_y)
+DECL|function|channel_combine_mask (Channel * mask,Channel * add_on,ChannelOps op,gint off_x,gint off_y)
 name|channel_combine_mask
 parameter_list|(
 name|Channel
@@ -5948,13 +5912,13 @@ name|Channel
 modifier|*
 name|add_on
 parameter_list|,
-name|int
+name|ChannelOps
 name|op
 parameter_list|,
-name|int
+name|gint
 name|off_x
 parameter_list|,
-name|int
+name|gint
 name|off_y
 parameter_list|)
 block|{
@@ -5963,7 +5927,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -5972,7 +5936,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|int
+name|gint
 name|w
 decl_stmt|,
 name|h
@@ -6218,7 +6182,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_feather (Channel * input,Channel * output,double radius_x,double radius_y,int op,int off_x,int off_y)
+DECL|function|channel_feather (Channel * input,Channel * output,gdouble radius_x,gdouble radius_y,ChannelOps op,gint off_x,gint off_y)
 name|channel_feather
 parameter_list|(
 name|Channel
@@ -6229,23 +6193,23 @@ name|Channel
 modifier|*
 name|output
 parameter_list|,
-name|double
+name|gdouble
 name|radius_x
 parameter_list|,
-name|double
+name|gdouble
 name|radius_y
 parameter_list|,
-name|int
+name|ChannelOps
 name|op
 parameter_list|,
-name|int
+name|gint
 name|off_x
 parameter_list|,
-name|int
+name|gint
 name|off_y
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -6422,7 +6386,7 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -6450,16 +6414,11 @@ name|gimage
 decl_stmt|;
 name|mask_undo
 operator|=
-operator|(
-name|MaskUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|MaskUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -6621,7 +6580,7 @@ argument_list|)
 operator|->
 name|preview_valid
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 end_function
@@ -6639,8 +6598,7 @@ block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|bg
 init|=
 literal|0
@@ -7005,8 +6963,7 @@ block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|bg
 init|=
 literal|255
@@ -7112,24 +7069,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_border (Channel * mask,int radius_x,int radius_y)
+DECL|function|channel_border (Channel * mask,gint radius_x,gint radius_y)
 name|channel_border
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|gint
 name|radius_x
 parameter_list|,
-name|int
+name|gint
 name|radius_y
 parameter_list|)
 block|{
 name|PixelRegion
 name|bPR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -7324,24 +7281,24 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_grow (Channel * mask,int radius_x,int radius_y)
+DECL|function|channel_grow (Channel * mask,gint radius_x,gint radius_y)
 name|channel_grow
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|gint
 name|radius_x
 parameter_list|,
-name|int
+name|gint
 name|radius_y
 parameter_list|)
 block|{
 name|PixelRegion
 name|bPR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -7582,27 +7539,27 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_shrink (Channel * mask,int radius_x,int radius_y,int edge_lock)
+DECL|function|channel_shrink (Channel * mask,gint radius_x,gint radius_y,gboolean edge_lock)
 name|channel_shrink
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|gint
 name|radius_x
 parameter_list|,
-name|int
+name|gint
 name|radius_y
 parameter_list|,
-name|int
+name|gboolean
 name|edge_lock
 parameter_list|)
 block|{
 name|PixelRegion
 name|bPR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -7792,21 +7749,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_translate (Channel * mask,int off_x,int off_y)
+DECL|function|channel_translate (Channel * mask,gint off_x,gint off_y)
 name|channel_translate
 parameter_list|(
 name|Channel
 modifier|*
 name|mask
 parameter_list|,
-name|int
+name|gint
 name|off_x
 parameter_list|,
-name|int
+name|gint
 name|off_y
 parameter_list|)
 block|{
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -7820,13 +7777,12 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|empty
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -8262,13 +8218,12 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|empty
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
