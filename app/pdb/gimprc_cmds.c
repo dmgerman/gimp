@@ -22,12 +22,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbasetypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpmodule/gimpmodule.h"
 end_include
 

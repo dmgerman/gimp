@@ -16,19 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbasetypes.h"
 end_include
 
 begin_include
@@ -83,12 +71,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpchannel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcontainer.h"
 end_include
 
 begin_include
@@ -179,12 +161,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpviewable.h"
 end_include
 
 begin_include

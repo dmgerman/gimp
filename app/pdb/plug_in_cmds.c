@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbasetypes.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -508,7 +502,7 @@ block|{
 name|gboolean
 name|success
 init|=
-name|FALSE
+name|TRUE
 decl_stmt|;
 name|gdouble
 name|percentage
@@ -537,10 +531,6 @@ operator|->
 name|open
 condition|)
 block|{
-name|success
-operator|=
-name|TRUE
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -558,6 +548,11 @@ name|percentage
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -1549,6 +1544,11 @@ name|domain_path
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
@@ -1773,6 +1773,11 @@ name|domain_uri
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
@@ -2177,6 +2182,11 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
@@ -2557,6 +2567,11 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+else|else
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
