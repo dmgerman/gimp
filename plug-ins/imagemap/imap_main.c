@@ -3062,7 +3062,7 @@ name|dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"   Some data has been changed.   \n"
+literal|"Some data has been changed.\n"
 literal|"Do you really want to continue?"
 argument_list|)
 argument_list|)
@@ -4066,7 +4066,10 @@ name|statusbar_set_status
 argument_list|(
 name|_statusbar
 argument_list|,
+name|_
+argument_list|(
 literal|"File \"%s\" saved."
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -4202,7 +4205,7 @@ name|dialog
 argument_list|,
 name|_
 argument_list|(
-literal|"   Image size has changed.   \n"
+literal|"Image size has changed.\n"
 literal|"Resize Area's?"
 argument_list|)
 argument_list|)
@@ -4564,7 +4567,10 @@ name|statusbar_set_status
 argument_list|(
 name|_statusbar
 argument_list|,
-literal|" URL: %s"
+name|_
+argument_list|(
+literal|"URL: %s"
+argument_list|)
 argument_list|,
 name|obj
 operator|->

@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a9c7660108
+DECL|struct|__anon27cd7e780108
 block|{
 DECL|member|x
 DECL|member|y
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a9c7660208
+DECL|struct|__anon27cd7e780208
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -915,15 +915,9 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-name|_
-argument_list|(
 literal|"Pagecurl effect"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"This plug-in creates a pagecurl-effect."
-argument_list|)
 argument_list|,
 literal|"Federico Mena Quintero and Simon Budig"
 argument_list|,

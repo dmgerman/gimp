@@ -772,7 +772,7 @@ literal|"MoveUp"
 argument_list|,
 name|_
 argument_list|(
-literal|"Move up"
+literal|"Move Up"
 argument_list|)
 argument_list|,
 name|selection_command
@@ -799,7 +799,7 @@ literal|"MoveDown"
 argument_list|,
 name|_
 argument_list|(
-literal|"Move down"
+literal|"Move Down"
 argument_list|)
 argument_list|,
 name|selection_command
