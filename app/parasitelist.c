@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ce0e40103
+DECL|enum|__anon289498020103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -981,14 +981,6 @@ name|NULL
 return|;
 block|}
 end_function
-
-begin_decl_stmt
-DECL|variable|saved_bytes
-specifier|static
-name|int
-name|saved_bytes
-decl_stmt|;
-end_decl_stmt
 
 begin_function
 name|void

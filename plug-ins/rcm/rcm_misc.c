@@ -61,7 +61,6 @@ end_comment
 
 begin_function
 DECL|function|arctg (float y,float x)
-specifier|inline
 name|float
 name|arctg
 parameter_list|(
@@ -2176,7 +2175,7 @@ name|k
 operator|++
 control|)
 block|{
-comment|//	    transp = reduced->mask[i*RW*bytes+j*bytes+3] / 255.0;
+comment|/*	    transp = reduced->mask[i*RW*bytes+j*bytes+3] / 255.0; */
 name|transp
 operator|=
 name|rgb_array

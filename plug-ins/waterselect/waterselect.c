@@ -2592,7 +2592,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-endif|VERBOSE
+comment|/* VERBOSE */
 return|return
 name|TRUE
 return|;

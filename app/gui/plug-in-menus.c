@@ -9072,7 +9072,7 @@ decl_stmt|;
 name|int
 name|count
 decl_stmt|;
-name|int
+name|guint
 name|bytes
 decl_stmt|;
 if|if

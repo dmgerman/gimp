@@ -114,9 +114,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_detach_parasite (char * name)
+DECL|function|gimp_detach_parasite (const char * name)
 name|gimp_detach_parasite
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|name
@@ -135,9 +136,10 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_find_parasite (char * name)
+DECL|function|gimp_find_parasite (const char * name)
 name|gimp_find_parasite
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|name

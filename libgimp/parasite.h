@@ -52,6 +52,11 @@ define|#
 directive|define
 name|PARASITE_PERSISTENT
 value|1
+DECL|macro|PARASITE_UNDOABLE
+define|#
+directive|define
+name|PARASITE_UNDOABLE
+value|2
 DECL|macro|PARASITE_ATTACH_PARENT
 define|#
 directive|define
@@ -62,6 +67,11 @@ define|#
 directive|define
 name|PARASITE_PARENT_PERSISTENT
 value|(PARASITE_PERSISTENT<< 8)
+DECL|macro|PARASITE_PARENT_UNDOABLE
+define|#
+directive|define
+name|PARASITE_PARENT_UNDOABLE
+value|(PARASITE_UNDOABLE<< 8)
 DECL|macro|PARASITE_ATTACH_GRANDPARENT
 define|#
 directive|define
@@ -72,6 +82,11 @@ define|#
 directive|define
 name|PARASITE_GRANDPARENT_PERSISTENT
 value|(PARASITE_PERSISTENT<< 16)
+DECL|macro|PARASITE_GRANDPARENT_UNDOABLE
+define|#
+directive|define
+name|PARASITE_GRANDPARENT_UNDOABLE
+value|(PARASITE_UNDOABLE<< 16)
 name|Parasite
 modifier|*
 name|parasite_new
@@ -141,6 +156,15 @@ parameter_list|)
 function_decl|;
 name|int
 name|parasite_is_persistent
+parameter_list|(
+specifier|const
+name|Parasite
+modifier|*
+name|p
+parameter_list|)
+function_decl|;
+name|int
+name|parasite_is_undoable
 parameter_list|(
 specifier|const
 name|Parasite

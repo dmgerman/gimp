@@ -250,6 +250,10 @@ name|temp
 decl_stmt|;
 name|guchar
 modifier|*
+name|utemp
+decl_stmt|;
+name|guchar
+modifier|*
 name|src
 decl_stmt|;
 name|guchar
@@ -593,10 +597,12 @@ argument_list|,
 name|wilber_height
 argument_list|)
 expr_stmt|;
-name|temp
+name|utemp
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|wilber_width
 operator|*
 literal|3
@@ -626,7 +632,7 @@ control|)
 block|{
 name|dest
 operator|=
-name|temp
+name|utemp
 expr_stmt|;
 for|for
 control|(
@@ -661,7 +667,7 @@ argument_list|(
 name|preview
 argument_list|)
 argument_list|,
-name|temp
+name|utemp
 argument_list|,
 literal|0
 argument_list|,
@@ -673,7 +679,7 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|temp
+name|utemp
 argument_list|)
 expr_stmt|;
 name|frame

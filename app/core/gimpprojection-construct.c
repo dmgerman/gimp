@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a1f88e10103
+DECL|enum|__anon27a83e390103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -4689,7 +4689,21 @@ modifier|*
 name|parasite
 parameter_list|)
 block|{
-comment|/* only set the dirty bit if we can be saved and the new parasite differs       from the current one */
+comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we arn't undoable */
+if|if
+condition|(
+name|parasite_is_undoable
+argument_list|(
+name|parasite
+argument_list|)
+condition|)
+name|undo_push_image_parasite
+argument_list|(
+name|gimage
+argument_list|,
+name|parasite
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|parasite_is_persistent
@@ -4787,6 +4801,24 @@ argument_list|)
 operator|)
 condition|)
 return|return;
+if|if
+condition|(
+name|parasite_is_undoable
+argument_list|(
+name|p
+argument_list|)
+condition|)
+name|undo_push_image_parasite_remove
+argument_list|(
+name|gimage
+argument_list|,
+name|parasite_name
+argument_list|(
+name|p
+argument_list|)
+argument_list|)
+expr_stmt|;
+elseif|else
 if|if
 condition|(
 name|parasite_is_persistent

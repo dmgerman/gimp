@@ -879,8 +879,7 @@ expr_stmt|;
 block|}
 else|else
 comment|/* not a layer... probably a channel... abort operation */
-name|exit
-expr_stmt|;
+return|return;
 comment|/* If 'preserve transparency' was on, we need to temporatily      turn it off while rotating... */
 if|if
 condition|(

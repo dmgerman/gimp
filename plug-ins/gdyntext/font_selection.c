@@ -106,7 +106,7 @@ value|32767
 end_define
 
 begin_enum
-DECL|enum|__anon2b96cf6b0103
+DECL|enum|__anon29d9bcd30103
 enum|enum
 block|{
 DECL|enumerator|FONT_CHANGED
@@ -355,7 +355,7 @@ operator|->
 name|font
 expr_stmt|;
 comment|/* get X font list and setup font names and styles */
-comment|//#define DEBUG_SPAM
+comment|/* #define DEBUG_SPAM */
 ifndef|#
 directive|ifndef
 name|DEBUG_SPAM

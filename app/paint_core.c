@@ -1345,23 +1345,9 @@ expr_stmt|;
 comment|/* add motion memory if you press mod1 first ^ perfectmouse */
 if|if
 condition|(
-operator|(
-operator|(
-name|bevent
-operator|->
-name|state
-operator|&
-name|GDK_MOD1_MASK
-operator|)
-operator|!=
-literal|0
-operator|)
-operator|!=
-operator|(
 name|perfectmouse
-operator|!=
+operator|==
 literal|0
-operator|)
 condition|)
 name|gdk_pointer_grab
 argument_list|(
