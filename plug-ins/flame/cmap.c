@@ -27,6 +27,12 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|the_cmaps
 name|unsigned
@@ -172356,7 +172362,7 @@ name|n
 condition|)
 name|n
 operator|=
-name|random
+name|RAND_FUNC
 argument_list|()
 expr_stmt|;
 if|if

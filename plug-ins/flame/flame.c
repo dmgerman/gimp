@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"megawidget.h"
 end_include
 
@@ -433,7 +439,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2acffab20108
+DECL|struct|__anon2bb11d2d0108
 struct|struct
 block|{
 DECL|member|randomize
@@ -817,7 +823,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-name|srandom
+name|SRAND_FUNC
 argument_list|(
 name|time
 argument_list|(
@@ -3620,7 +3626,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2acffab20208
+DECL|struct|__anon2bb11d2d0208
 specifier|static
 struct|struct
 block|{

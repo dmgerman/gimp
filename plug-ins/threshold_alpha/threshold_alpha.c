@@ -491,7 +491,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28760fe60108
+DECL|struct|__anon2bcc7bb90108
 block|{
 DECL|member|threshold
 name|gint
@@ -518,7 +518,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28760fe60208
+DECL|struct|__anon2bcc7bb90208
 block|{
 DECL|member|run
 name|gint
@@ -692,7 +692,7 @@ decl_stmt|;
 name|GStatusType
 name|status
 init|=
-name|STATUS_EXECUTION_ERROR
+name|STATUS_SUCCESS
 decl_stmt|;
 name|GRunModeType
 name|run_mode
@@ -860,6 +860,12 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
 name|status
 operator|=
 name|MAIN_FUNCTION

@@ -260,7 +260,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4859e80108
+DECL|struct|__anon29ecb3270108
 block|{
 DECL|member|raw
 name|gint
@@ -276,7 +276,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4859e80208
+DECL|struct|__anon29ecb3270208
 block|{
 DECL|member|run
 name|gint
@@ -3339,8 +3339,6 @@ name|i
 operator|++
 control|)
 block|{
-name|rbcur
-operator|+=
 name|sprintf
 argument_list|(
 operator|(
@@ -3358,6 +3356,13 @@ operator|(
 name|data
 operator|++
 operator|)
+argument_list|)
+expr_stmt|;
+name|rbcur
+operator|+=
+name|strlen
+argument_list|(
+name|rbcur
 argument_list|)
 expr_stmt|;
 block|}
@@ -3434,8 +3439,6 @@ name|i
 operator|++
 control|)
 block|{
-name|rbcur
-operator|+=
 name|sprintf
 argument_list|(
 operator|(
@@ -3461,6 +3464,11 @@ argument_list|)
 expr_stmt|;
 name|rbcur
 operator|+=
+name|strlen
+argument_list|(
+name|rbcur
+argument_list|)
+expr_stmt|;
 name|sprintf
 argument_list|(
 operator|(
@@ -3486,6 +3494,11 @@ argument_list|)
 expr_stmt|;
 name|rbcur
 operator|+=
+name|strlen
+argument_list|(
+name|rbcur
+argument_list|)
+expr_stmt|;
 name|sprintf
 argument_list|(
 operator|(
@@ -3508,6 +3521,13 @@ name|data
 operator|++
 operator|)
 index|]
+argument_list|)
+expr_stmt|;
+name|rbcur
+operator|+=
+name|strlen
+argument_list|(
+name|rbcur
 argument_list|)
 expr_stmt|;
 block|}

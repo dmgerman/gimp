@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                   - Main entry - just call gimp_main()...  *   query()                  - Respond to a plug-in query...  *   run()                    - Run the plug-in...  *   print_dialog()           - Pop up the print dialog...  *   dialog_create_ivalue()   - Create an integer value control...  *   dialog_iscale_update()   - Update the value field using the scale.  *   dialog_ientry_update()   - Update the value field using the text entry.  *   print_driver_callback()  - Update the current printer driver...  *   media_size_callback()    - Update the current media size...  *   print_command_callback() - Update the print command...  *   output_type_callback()   - Update the current output type...  *   print_callback()         - Start the print...  *   cancel_callback()        - Cancel the print...  *   close_callback()         - Exit the print dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.5  1998/04/01 22:14:48  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.14  1998/03/01  17:29:42  mike  *   Added LPC/LPR/LP/LPSTAT_COMMAND definitions for portability.  *  *   Revision 1.13  1998/01/22  15:06:31  mike  *   Added "file" printer for printing to file.  *   Now you don't need the "|" in front of print commands.  *   Now "remembers" last selected printer.  *  *   Revision 1.12  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Fixed bug in dialog - didn't display correct output file/command  *   and driver for the default printer.  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.9  1997/10/22  13:07:20  mike  *   Fixed typo in run() return status (thanks Michael Schubart!)  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *   Added first cut at preview window.  *  *   Revision 1.5  1997/07/26  18:38:23  mike  *   Whoops - wasn't grabbing the colormap for indexed images properly...  *  *   Revision 1.4  1997/07/03  13:13:26  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.3  1997/07/03  13:07:05  mike  *   Updated EPSON driver short names.  *   Changed brightness lut formula for better control.  *  *   Revision 1.2  1997/07/02  15:22:17  mike  *   Added GUI with printer/media/output selection controls.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Print plug-in for the GIMP.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                   - Main entry - just call gimp_main()...  *   query()                  - Respond to a plug-in query...  *   run()                    - Run the plug-in...  *   print_dialog()           - Pop up the print dialog...  *   dialog_create_ivalue()   - Create an integer value control...  *   dialog_iscale_update()   - Update the value field using the scale.  *   dialog_ientry_update()   - Update the value field using the text entry.  *   print_driver_callback()  - Update the current printer driver...  *   media_size_callback()    - Update the current media size...  *   print_command_callback() - Update the print command...  *   output_type_callback()   - Update the current output type...  *   print_callback()         - Start the print...  *   cancel_callback()        - Cancel the print...  *   close_callback()         - Exit the print dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.6  1998/04/07 03:41:16  yosh  *   configure.in: fix for $srcdir != $builddir for data. Tightened check for  *   random() and add -lucb on systems that need it. Fix for xdelta.h check. Find  *   xemacs as well as emacs. Properly define settings for print plugin.  *  *   app/Makefile.am: ditch -DNDEBUG, since nothing uses it  *  *   flame: properly handle random() and friends  *  *   pnm: workaround for systems with old sprintfs  *  *   print, sgi: fold back in portability fixes  *  *   threshold_alpha: properly get params in non-interactive mode  *  *   bmp: updated and merged in  *  *   -Yosh  *  *   Revision 1.5  1998/04/01 22:14:48  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.14  1998/03/01  17:29:42  mike  *   Added LPC/LPR/LP/LPSTAT_COMMAND definitions for portability.  *  *   Revision 1.13  1998/01/22  15:06:31  mike  *   Added "file" printer for printing to file.  *   Now you don't need the "|" in front of print commands.  *   Now "remembers" last selected printer.  *  *   Revision 1.12  1998/01/21  21:33:47  mike  *   Added Level 2 PostScript driver.  *   Fixed bug in dialog - didn't display correct output file/command  *   and driver for the default printer.  *  *   Revision 1.11  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.10  1997/11/12  15:57:48  mike  *   Minor changes for clean compiles under Digital UNIX.  *  *   Revision 1.9  1997/10/22  13:07:20  mike  *   Fixed typo in run() return status (thanks Michael Schubart!)  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.8  1997/10/02  17:57:26  mike  *   Added printrc support.  *   Added printer list (spooler support).  *   Added gamma/dot gain correction values for all printers.  *  *   Revision 1.7  1997/07/30  20:33:05  mike  *   Final changes for 1.1 release.  *  *   Revision 1.6  1997/07/30  18:47:39  mike  *   Added scaling, orientation, and offset options.  *   Added first cut at preview window.  *  *   Revision 1.5  1997/07/26  18:38:23  mike  *   Whoops - wasn't grabbing the colormap for indexed images properly...  *  *   Revision 1.4  1997/07/03  13:13:26  mike  *   Updated documentation for 1.0 release.  *  *   Revision 1.3  1997/07/03  13:07:05  mike  *   Updated EPSON driver short names.  *   Changed brightness lut formula for better control.  *  *   Revision 1.2  1997/07/02  15:22:17  mike  *   Added GUI with printer/media/output selection controls.  *  *   Revision 1.1  1997/07/02  13:51:53  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -70,7 +70,7 @@ begin_typedef
 typedef|typedef
 struct|struct
 comment|/**** Printer List ****/
-DECL|struct|__anon2bcb6fb40108
+DECL|struct|__anon290ba3380108
 block|{
 DECL|member|name
 name|char
@@ -434,7 +434,7 @@ end_decl_stmt
 begin_struct
 struct|struct
 comment|/* Plug-in variables */
-DECL|struct|__anon2bcb6fb40208
+DECL|struct|__anon290ba3380208
 block|{
 DECL|member|output_to
 name|char
@@ -2296,6 +2296,7 @@ comment|/*  * 'print_dialog()' - Pop up the print dialog...  */
 end_comment
 
 begin_function
+specifier|static
 name|int
 DECL|function|print_dialog (void)
 name|print_dialog
@@ -6240,7 +6241,7 @@ argument_list|,
 literal|"File"
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|strcpy
 argument_list|(
 name|plist
 index|[
@@ -6250,8 +6251,6 @@ operator|.
 name|command
 argument_list|,
 literal|"file.ps"
-argument_list|,
-name|line
 argument_list|)
 expr_stmt|;
 name|strcpy

@@ -274,6 +274,8 @@ parameter_list|,
 name|int
 parameter_list|,
 name|int
+parameter_list|,
+name|int
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -311,7 +313,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bb106d20108
+DECL|struct|__anon2ab999ec0108
 block|{
 DECL|member|bfSize
 name|unsigned
@@ -345,7 +347,7 @@ end_struct
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bb106d20208
+DECL|struct|__anon2ab999ec0208
 block|{
 DECL|member|biWidth
 name|unsigned
@@ -416,7 +418,7 @@ end_struct
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bb106d20308
+DECL|struct|__anon2ab999ec0308
 block|{
 DECL|member|bcWidth
 name|unsigned

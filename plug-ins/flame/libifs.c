@@ -21,6 +21,12 @@ directive|include
 file|"libifs.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -276,7 +282,7 @@ name|fn
 init|=
 name|xform_distrib
 index|[
-name|random
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|CHOOSE_XFORM_GRAIN
@@ -6253,7 +6259,7 @@ parameter_list|()
 block|{
 return|return
 operator|(
-name|random
+name|RAND_FUNC
 argument_list|()
 operator|&
 literal|0xfffffff
@@ -6276,7 +6282,7 @@ block|{
 return|return
 operator|(
 operator|(
-name|random
+name|RAND_FUNC
 argument_list|()
 operator|&
 literal|0xfffffff
@@ -6486,7 +6492,7 @@ name|random_distrib
 parameter_list|(
 name|v
 parameter_list|)
-value|((v)[random()%vlen(v)])
+value|((v)[RAND_FUNC ()%vlen(v)])
 end_define
 
 begin_function
@@ -7537,14 +7543,14 @@ block|{
 comment|/* consider switching points with indexes n and m */
 name|n
 operator|=
-name|random
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|ncps
 expr_stmt|;
 name|m
 operator|=
-name|random
+name|RAND_FUNC
 argument_list|()
 operator|%
 name|ncps

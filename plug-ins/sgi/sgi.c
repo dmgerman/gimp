@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.4  1998/04/01 22:14:50  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   SGI image file plug-in for the GIMP.  *  *   Copyright 1997 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the plug-in...  *   load_image()                - Load a PNG image into a new image window.  *   save_image()                - Save the specified image to a PNG file.  *   save_close_callback()       - Close the save dialog window.  *   save_ok_callback()          - Destroy the save dialog and save the image.  *   save_compression_callback() - Update the image compression level.  *   save_dialog()               - Pop up the save dialog.  *  * Revision History:  *  *   $Log$  *   Revision 1.5  1998/04/07 03:41:18  yosh  *   configure.in: fix for $srcdir != $builddir for data. Tightened check for  *   random() and add -lucb on systems that need it. Fix for xdelta.h check. Find  *   xemacs as well as emacs. Properly define settings for print plugin.  *  *   app/Makefile.am: ditch -DNDEBUG, since nothing uses it  *  *   flame: properly handle random() and friends  *  *   pnm: workaround for systems with old sprintfs  *  *   print, sgi: fold back in portability fixes  *  *   threshold_alpha: properly get params in non-interactive mode  *  *   bmp: updated and merged in  *  *   -Yosh  *  *   Revision 1.4  1998/04/01 22:14:50  neo  *   Added checks for print spoolers to configure.in as suggested by Michael  *   Sweet. The print plug-in still needs some changes to Makefile.am to make  *   make use of this.  *  *   Updated print and sgi plug-ins to version on the registry.  *  *  *   --Sven  *  *   Revision 1.3  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *   Added warning message about advanced RLE compression not being supported  *   by SGI.  *  *   Revision 1.2  1997/07/25  20:44:05  mike  *   Fixed image_load_sgi load error bug (causes GIMP hang/crash).  *  *   Revision 1.1  1997/06/18  00:55:28  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -1675,12 +1675,6 @@ comment|/* Current X coordinate */
 name|y
 decl_stmt|,
 comment|/* Current Y coordinate */
-name|image_type
-decl_stmt|,
-comment|/* Type of image */
-name|layer_type
-decl_stmt|,
-comment|/* Type of drawable/layer */
 name|tile_height
 decl_stmt|,
 comment|/* Height of tile in GIMP */
@@ -2421,6 +2415,12 @@ name|argc
 argument_list|,
 operator|&
 name|argv
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|signal
