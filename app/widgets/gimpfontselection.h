@@ -102,11 +102,6 @@ name|PangoFontDescription
 modifier|*
 name|font_desc
 decl_stmt|;
-DECL|member|valid
-name|GtkWidget
-modifier|*
-name|valid
-decl_stmt|;
 DECL|member|entry
 name|GtkWidget
 modifier|*
@@ -181,7 +176,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|void
 name|gimp_font_selection_set_fontname
 parameter_list|(
 name|GimpFontSelection

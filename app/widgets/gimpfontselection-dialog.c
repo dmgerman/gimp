@@ -64,6 +64,14 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_define
+DECL|macro|FONT_SIZE
+define|#
+directive|define
+name|FONT_SIZE
+value|18
+end_define
+
+begin_define
 DECL|macro|FONT_LIST_HEIGHT
 define|#
 directive|define
@@ -88,8 +96,8 @@ value|170
 end_define
 
 begin_enum
-DECL|enum|__anon2a23ccdc0103
 enum|enum
+DECL|enum|__anon27e0abb50103
 block|{
 DECL|enumerator|FAMILY_COLUMN
 name|FAMILY_COLUMN
@@ -101,8 +109,8 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a23ccdc0203
 enum|enum
+DECL|enum|__anon27e0abb50203
 block|{
 DECL|enumerator|FACE_COLUMN
 name|FACE_COLUMN
@@ -1201,7 +1209,11 @@ name|dialog
 operator|->
 name|layout
 argument_list|,
-literal|"my mind is going ..."
+comment|/* This is a so-called pangram; it's supposed to                             contain all characters found in the alphabet. */
+name|_
+argument_list|(
+literal|"Pack my box with five dozen liquor jugs."
+argument_list|)
 argument_list|,
 operator|-
 literal|1
@@ -2236,7 +2248,7 @@ expr_stmt|;
 else|else
 name|current_name
 operator|=
-literal|"sans"
+literal|"Sans"
 expr_stmt|;
 for|for
 control|(
@@ -2866,7 +2878,7 @@ name|font_desc
 argument_list|,
 name|PANGO_SCALE
 operator|*
-literal|24
+name|FONT_SIZE
 argument_list|)
 expr_stmt|;
 name|pango_layout_set_font_description
