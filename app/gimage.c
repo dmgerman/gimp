@@ -10671,7 +10671,7 @@ argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
-comment|/*  Push the undo--Important to do it here, AFTER the call    *   to layer_apply_mask, in case the undo push fails and the    *   mask is deleted    */
+comment|/*  Push the undo--Important to do it here, AFTER the call    *   to layer_apply_mask, in case the undo push fails and the    *   mask is delete : NULL)d    */
 name|undo_push_layer_mask
 argument_list|(
 name|gimage
@@ -10744,12 +10744,7 @@ name|gdisplays_flush
 argument_list|()
 expr_stmt|;
 return|return
-name|GIMP_CHANNEL
-argument_list|(
-name|layer
-operator|->
-name|mask
-argument_list|)
+name|NULL
 return|;
 block|}
 end_function
