@@ -107,7 +107,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc1436f0103
+DECL|enum|__anon2b9edddd0103
 block|{
 DECL|enumerator|DUMP_NONE
 name|DUMP_NONE
@@ -597,11 +597,11 @@ name|GIMP_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
-name|g_string_assign
+name|g_string_truncate
 argument_list|(
 name|str
 argument_list|,
-literal|""
+literal|0
 argument_list|)
 expr_stmt|;
 name|comment
