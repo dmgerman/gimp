@@ -46,7 +46,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288f8cff0108
+DECL|struct|__anon2b1e940a0108
 block|{
 DECL|member|inner
 name|gdouble
@@ -4369,6 +4369,8 @@ name|preview_rgn
 decl_stmt|;
 name|gint32
 name|image_id
+decl_stmt|,
+name|src_image_id
 decl_stmt|;
 name|gint32
 name|preview_id
@@ -4458,6 +4460,15 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/* set up gimp drawable for rendering preview into */
+name|src_image_id
+operator|=
+name|gimp_drawable_get_image
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|)
+expr_stmt|;
 name|image_id
 operator|=
 name|gimp_image_new
@@ -4466,7 +4477,10 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GIMP_RGB
+name|gimp_image_base_type
+argument_list|(
+name|src_image_id
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|preview_id
