@@ -33,6 +33,12 @@ directive|include
 file|"imap_object_popup.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Current object with popup menu */
 end_comment
@@ -307,7 +313,10 @@ name|make_item_with_label
 argument_list|(
 name|menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Edit Area Info..."
+argument_list|)
 argument_list|,
 name|popup_edit_area_info
 argument_list|,
@@ -318,7 +327,10 @@ name|make_item_with_label
 argument_list|(
 name|menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Delete Area"
+argument_list|)
 argument_list|,
 name|popup_delete_area
 argument_list|,
@@ -333,7 +345,10 @@ name|make_item_with_label
 argument_list|(
 name|menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Move Up"
+argument_list|)
 argument_list|,
 name|popup_move_up
 argument_list|,
@@ -348,7 +363,10 @@ name|make_item_with_label
 argument_list|(
 name|menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Move Down"
+argument_list|)
 argument_list|,
 name|popup_move_down
 argument_list|,
@@ -359,7 +377,10 @@ name|make_item_with_label
 argument_list|(
 name|menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Cut"
+argument_list|)
 argument_list|,
 name|popup_cut
 argument_list|,
@@ -370,7 +391,10 @@ name|make_item_with_label
 argument_list|(
 name|menu
 argument_list|,
+name|_
+argument_list|(
 literal|"Copy"
+argument_list|)
 argument_list|,
 name|popup_copy
 argument_list|,

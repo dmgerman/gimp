@@ -113,7 +113,8 @@ literal|0
 block|,
 literal|0
 block|,
-literal|"imap"
+name|GETTEXT_PACKAGE
+literal|"-std-plug-ins"
 block|}
 block|, }
 decl_stmt|;
@@ -122,7 +123,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|add_stock_icon (GtkIconFactory * factory,const gchar * stock_id,const char ** xpm_data)
+DECL|function|add_stock_icon (GtkIconFactory * factory,const gchar * stock_id,const gchar ** xpm_data)
 name|add_stock_icon
 parameter_list|(
 name|GtkIconFactory
@@ -135,7 +136,7 @@ modifier|*
 name|stock_id
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|xpm_data
@@ -208,7 +209,7 @@ name|IMAP_STOCK_ARROW
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -223,7 +224,7 @@ name|IMAP_STOCK_CIRCLE
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -238,7 +239,7 @@ name|IMAP_STOCK_COORD
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -253,7 +254,7 @@ name|IMAP_STOCK_DIMENSION
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -268,7 +269,7 @@ name|IMAP_STOCK_JAVA
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -283,7 +284,7 @@ name|IMAP_STOCK_LINK
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -298,7 +299,7 @@ name|IMAP_STOCK_MAP_INFO
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -313,7 +314,7 @@ name|IMAP_STOCK_POLYGON
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -328,7 +329,7 @@ name|IMAP_STOCK_RECTANGLE
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -343,7 +344,7 @@ name|IMAP_STOCK_TO_BACK
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -358,7 +359,7 @@ name|IMAP_STOCK_TO_FRONT
 argument_list|,
 operator|(
 specifier|const
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
