@@ -520,6 +520,8 @@ name|requisition
 operator|->
 name|width
 operator|+=
+literal|2
+operator|*
 name|GTK_CONTAINER
 argument_list|(
 name|widget
@@ -531,6 +533,8 @@ name|requisition
 operator|->
 name|height
 operator|+=
+literal|2
+operator|*
 name|GTK_CONTAINER
 argument_list|(
 name|widget
@@ -636,6 +640,16 @@ decl_stmt|;
 name|GtkRequisition
 name|label_requisition
 decl_stmt|;
+name|gint
+name|border_width
+init|=
+name|GTK_CONTAINER
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|border_width
+decl_stmt|;
 name|gfloat
 name|xalign
 decl_stmt|;
@@ -682,6 +696,8 @@ name|allocation
 operator|->
 name|x
 operator|+
+name|border_width
+operator|+
 name|xalign
 operator|*
 call|(
@@ -705,6 +721,8 @@ operator|=
 name|allocation
 operator|->
 name|y
+operator|+
+name|border_width
 expr_stmt|;
 name|label_allocation
 operator|.

@@ -116,7 +116,7 @@ end_function_decl
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GtkFrameClass
+name|GimpFrameClass
 modifier|*
 name|parent_class
 init|=
@@ -190,7 +190,7 @@ name|type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GTK_TYPE_FRAME
+name|GIMP_TYPE_FRAME
 argument_list|,
 literal|"GimpColorFrame"
 argument_list|,

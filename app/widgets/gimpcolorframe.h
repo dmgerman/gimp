@@ -117,7 +117,7 @@ struct|struct
 name|_GimpColorFrame
 block|{
 DECL|member|parent_instance
-name|GtkFrame
+name|GimpFrame
 name|parent_instance
 decl_stmt|;
 DECL|member|sample_valid
@@ -171,7 +171,7 @@ struct|struct
 name|_GimpColorFrameClass
 block|{
 DECL|member|parent_class
-name|GtkFrameClass
+name|GimpFrameClass
 name|parent_class
 decl_stmt|;
 block|}
