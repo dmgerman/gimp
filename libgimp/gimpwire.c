@@ -456,7 +456,7 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"wire_read: unexpected EOF\n"
+literal|"wire_read: unexpected EOF (plug-in crashed?)\n"
 argument_list|)
 expr_stmt|;
 name|wire_error_val
