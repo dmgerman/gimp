@@ -2110,6 +2110,22 @@ literal|"matching"
 block|}
 block|,
 block|{
+name|GIMP_IMAGE_RESIZE_LAYERS_VISIBLE
+block|,
+literal|"GIMP_IMAGE_RESIZE_LAYERS_VISIBLE"
+block|,
+literal|"visible"
+block|}
+block|,
+block|{
+name|GIMP_IMAGE_RESIZE_LAYERS_LINKED
+block|,
+literal|"GIMP_IMAGE_RESIZE_LAYERS_LINKED"
+block|,
+literal|"linked"
+block|}
+block|,
+block|{
 name|GIMP_IMAGE_RESIZE_LAYERS_ALL
 block|,
 literal|"GIMP_IMAGE_RESIZE_LAYERS_ALL"
@@ -2150,6 +2166,28 @@ block|,
 name|N_
 argument_list|(
 literal|"Image-sized layers"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_IMAGE_RESIZE_LAYERS_VISIBLE
+block|,
+name|N_
+argument_list|(
+literal|"All visible layers"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_IMAGE_RESIZE_LAYERS_LINKED
+block|,
+name|N_
+argument_list|(
+literal|"All linked layers"
 argument_list|)
 block|,
 name|NULL
