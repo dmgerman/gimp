@@ -789,7 +789,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292b9bc30103
+DECL|enum|__anon2aad5e430103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -9517,7 +9517,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|reverse_list
 init|=
@@ -9597,7 +9597,7 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-comment|/*  only add layers that are visible and not floating selections  	  to the list  */
+comment|/*  only add layers that are visible and not floating selections         *  to the list        */
 if|if
 condition|(
 operator|!
@@ -9617,7 +9617,7 @@ condition|)
 block|{
 name|reverse_list
 operator|=
-name|g_slist_prepend
+name|g_list_prepend
 argument_list|(
 name|reverse_list
 argument_list|,
@@ -9626,10 +9626,21 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-while|while
-condition|(
+for|for
+control|(
+name|list
+operator|=
 name|reverse_list
-condition|)
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -9637,7 +9648,7 @@ operator|(
 name|GimpLayer
 operator|*
 operator|)
-name|reverse_list
+name|list
 operator|->
 name|data
 expr_stmt|;
@@ -10033,15 +10044,8 @@ operator|=
 literal|1
 expr_stmt|;
 comment|/*  something was projected  */
-name|reverse_list
-operator|=
-name|g_slist_next
-argument_list|(
-name|reverse_list
-argument_list|)
-expr_stmt|;
 block|}
-name|g_slist_free
+name|g_list_free
 argument_list|(
 name|reverse_list
 argument_list|)
@@ -10086,7 +10090,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|GSList
+name|GList
 modifier|*
 name|reverse_list
 init|=
@@ -10115,9 +10119,10 @@ argument_list|(
 name|list
 argument_list|)
 control|)
+block|{
 name|reverse_list
 operator|=
-name|g_slist_prepend
+name|g_list_prepend
 argument_list|(
 name|reverse_list
 argument_list|,
@@ -10126,10 +10131,22 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-while|while
-condition|(
+block|}
+for|for
+control|(
+name|list
+operator|=
 name|reverse_list
-condition|)
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|channel
 operator|=
@@ -10137,7 +10154,7 @@ operator|(
 name|GimpChannel
 operator|*
 operator|)
-name|reverse_list
+name|list
 operator|->
 name|data
 expr_stmt|;
@@ -10218,15 +10235,8 @@ operator|=
 literal|1
 expr_stmt|;
 block|}
-name|reverse_list
-operator|=
-name|g_slist_next
-argument_list|(
-name|reverse_list
-argument_list|)
-expr_stmt|;
 block|}
-name|g_slist_free
+name|g_list_free
 argument_list|(
 name|reverse_list
 argument_list|)
