@@ -392,7 +392,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a4a4500103
+DECL|enum|__anon295c407f0103
 block|{
 DECL|enumerator|CONTROLLER
 name|CONTROLLER
@@ -1560,7 +1560,8 @@ name|name
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"Received '%s' (class '%s') controller event '%s'\n"
+literal|"Received '%s' (class '%s')\n"
+literal|"    controller event '%s'\n"
 argument_list|,
 name|controller
 operator|->
@@ -1601,6 +1602,16 @@ condition|(
 name|action
 condition|)
 block|{
+name|g_print
+argument_list|(
+literal|"    handled by action '%s'\n\n"
+argument_list|,
+name|gtk_action_get_name
+argument_list|(
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_action_activate
 argument_list|(
 name|action
@@ -1609,6 +1620,14 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
+block|}
+else|else
+block|{
+name|g_print
+argument_list|(
+literal|"    not handled\n\n"
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|FALSE
