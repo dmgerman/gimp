@@ -1024,6 +1024,10 @@ name|GimpNavigationPreview
 modifier|*
 name|preview
 decl_stmt|;
+name|GdkScreen
+modifier|*
+name|screen
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -1286,7 +1290,14 @@ operator|->
 name|ythickness
 operator|)
 expr_stmt|;
-comment|/* If the popup doesn't fit into the screen, we have a problem.    * We move the popup onscreen and risk that the pointer is not    * in the square representing the viewable area anymore. Moving    * the pointer will make the image scroll by a large amount,    * but then it works as usual. Probably better than a popup that    * is completely unusable in the lower right of the screen.    *    * Warping the pointer would be another solution ...     */
+comment|/* If the popup doesn't fit into the screen, we have a problem.    * We move the popup onscreen and risk that the pointer is not    * in the square representing the viewable area anymore. Moving    * the pointer will make the image scroll by a large amount,    * but then it works as usual. Probably better than a popup that    * is completely unusable in the lower right of the screen.    *    * Warping the pointer would be another solution ...    */
+name|screen
+operator|=
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 name|x
 operator|=
 name|CLAMP
@@ -1296,8 +1307,10 @@ argument_list|,
 literal|0
 argument_list|,
 operator|(
-name|gdk_screen_width
-argument_list|()
+name|gdk_screen_get_width
+argument_list|(
+name|screen
+argument_list|)
 operator|-
 name|GIMP_PREVIEW
 argument_list|(
@@ -1327,8 +1340,10 @@ argument_list|,
 literal|0
 argument_list|,
 operator|(
-name|gdk_screen_height
-argument_list|()
+name|gdk_screen_get_height
+argument_list|(
+name|screen
+argument_list|)
 operator|-
 name|GIMP_PREVIEW
 argument_list|(

@@ -1048,6 +1048,10 @@ block|{
 name|GtkRequisition
 name|requisition
 decl_stmt|;
+name|GdkScreen
+modifier|*
+name|screen
+decl_stmt|;
 name|gint
 name|pointer_x
 decl_stmt|;
@@ -1106,17 +1110,31 @@ operator|&
 name|requisition
 argument_list|)
 expr_stmt|;
+name|screen
+operator|=
+name|gtk_widget_get_screen
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|menu
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|screen_width
 operator|=
-name|gdk_screen_width
-argument_list|()
+name|gdk_screen_get_width
+argument_list|(
+name|screen
+argument_list|)
 operator|+
 literal|2
 expr_stmt|;
 name|screen_height
 operator|=
-name|gdk_screen_height
-argument_list|()
+name|gdk_screen_get_height
+argument_list|(
+name|screen
+argument_list|)
 operator|+
 literal|2
 expr_stmt|;
@@ -1985,7 +2003,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_screen_resolution:  * @screen: a #GdkScreen or %NULL  * @xres: returns the horizontal screen resolution (in dpi)  * @yres: returns the vertical screen resolution (in dpi)  *   * Retrieves the screen resolution from GDK. If @screen is %NULL, the  * default screen is used.  **/
+comment|/**  * gimp_get_screen_resolution:  * @screen: a #GdkScreen or %NULL  * @xres: returns the horizontal screen resolution (in dpi)  * @yres: returns the vertical screen resolution (in dpi)  *  * Retrieves the screen resolution from GDK. If @screen is %NULL, the  * default screen is used.  **/
 end_comment
 
 begin_function
@@ -2184,7 +2202,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_get_gdk_color:  * @rgb: the source color as #GimpRGB  * @gdk_color: pointer to a #GdkColor  *   * Initializes @gdk_color from a #GimpRGB. This function does not  * allocate the color for you. Depending on how you want to use it,  * you may have to call gdk_colormap_alloc_color().  **/
+comment|/**  * gimp_rgb_get_gdk_color:  * @rgb: the source color as #GimpRGB  * @gdk_color: pointer to a #GdkColor  *  * Initializes @gdk_color from a #GimpRGB. This function does not  * allocate the color for you. Depending on how you want to use it,  * you may have to call gdk_colormap_alloc_color().  **/
 end_comment
 
 begin_function
