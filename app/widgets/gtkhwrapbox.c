@@ -274,6 +274,55 @@ block|}
 end_function
 
 begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gtk_hwrap_box_new (gboolean homogeneous)
+name|gtk_hwrap_box_new
+parameter_list|(
+name|gboolean
+name|homogeneous
+parameter_list|)
+block|{
+name|GtkHWrapBox
+modifier|*
+name|hwbox
+decl_stmt|;
+name|hwbox
+operator|=
+name|GTK_HWRAP_BOX
+argument_list|(
+name|gtk_widget_new
+argument_list|(
+name|gtk_hwrap_box_get_type
+argument_list|()
+argument_list|,
+name|NULL
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|GTK_WRAP_BOX
+argument_list|(
+name|hwbox
+argument_list|)
+operator|->
+name|homogeneous
+operator|=
+name|homogeneous
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+return|return
+name|GTK_WIDGET
+argument_list|(
+name|hwbox
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 specifier|static
 specifier|inline
 name|void
@@ -1130,23 +1179,7 @@ name|layout_height
 expr_stmt|;
 block|}
 comment|/*<h2v-off>*/
-name|g_print
-argument_list|(
-literal|"ratio for width %d height %d = %f\n"
-argument_list|,
-operator|(
-name|gint
-operator|)
-name|layout_width
-argument_list|,
-operator|(
-name|gint
-operator|)
-name|layout_height
-argument_list|,
-name|ratio
-argument_list|)
-expr_stmt|;
+comment|/* g_print ("ratio for width %d height %d = %f\n", 	       (gint) layout_width, 	       (gint) layout_height, 	       ratio); */
 comment|/*<h2v-on>*/
 block|}
 do|while
@@ -1181,19 +1214,7 @@ name|border_width
 operator|*
 literal|2
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"choosen: width %d, height %d\n"
-argument_list|,
-name|requisition
-operator|->
-name|width
-argument_list|,
-name|requisition
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
+comment|/* g_print ("choosen: width %d, height %d\n", 	   requisition->width, 	   requisition->height); */
 comment|/*<h2v-on>*/
 block|}
 end_function
@@ -2060,19 +2081,7 @@ block|}
 block|}
 else|else
 block|{
-name|g_print
-argument_list|(
-literal|"child_allocation.x %d += %d * %f "
-argument_list|,
-name|child_allocation
-operator|.
-name|x
-argument_list|,
-name|n_children
-argument_list|,
-name|extra
-argument_list|)
-expr_stmt|;
+comment|/* g_print ("child_allocation.x %d += %d * %f ", 		       child_allocation.x, n_children, extra); */
 name|child_allocation
 operator|.
 name|x
@@ -2081,15 +2090,7 @@ name|n_children
 operator|*
 name|extra
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"= %d\n"
-argument_list|,
-name|child_allocation
-operator|.
-name|x
-argument_list|)
-expr_stmt|;
+comment|/* g_print ("= %d\n", 		       child_allocation.x); */
 name|child_allocation
 operator|.
 name|width
@@ -2817,19 +2818,7 @@ literal|2
 argument_list|)
 expr_stmt|;
 comment|/*<h2v-off>*/
-name|g_print
-argument_list|(
-literal|"got: width %d, height %d\n"
-argument_list|,
-name|allocation
-operator|->
-name|width
-argument_list|,
-name|allocation
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
+comment|/* g_print ("got: width %d, height %d\n", 	   allocation->width, 	   allocation->height); */
 comment|/*<h2v-on>*/
 name|layout_rows
 argument_list|(

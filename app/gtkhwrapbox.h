@@ -130,6 +130,14 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
+name|GtkWidget
+modifier|*
+name|gtk_hwrap_box_new
+parameter_list|(
+name|gboolean
+name|homogeneous
+parameter_list|)
+function_decl|;
 ifdef|#
 directive|ifdef
 name|__cplusplus

@@ -1619,13 +1619,9 @@ decl_stmt|;
 comment|/*create_logo (parent);*/
 name|wbox
 operator|=
-name|GTK_WIDGET
+name|gtk_hwrap_box_new
 argument_list|(
-name|gtk_type_new
-argument_list|(
-name|gtk_hwrap_box_get_type
-argument_list|()
-argument_list|)
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_wrap_box_set_aspect_ratio
@@ -2574,6 +2570,20 @@ name|_
 argument_list|(
 literal|"The GIMP"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_policy
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|session_set_window_geometry

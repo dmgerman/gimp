@@ -6,13 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"gtkwrapbox.h"
+file|<math.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|"gtkwrapbox.h"
 end_include
 
 begin_comment
@@ -20,7 +20,7 @@ comment|/* --- arguments --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon29f838a80103
+DECL|enum|__anon2c75790e0103
 enum|enum
 block|{
 DECL|enumerator|ARG_0
@@ -54,7 +54,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29f838a80203
+DECL|enum|__anon2c75790e0203
 enum|enum
 block|{
 DECL|enumerator|CHILD_ARG_0
