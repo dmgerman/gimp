@@ -571,7 +571,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_type: A single MIME type, like for example \"image/jpeg\".  *  * Associates a MIME type with a file handler procedure.  *  * Registers a MIME type for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened, or saved using this  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_type: A single MIME type, like for example \"image/jpeg\".  *  * Associates a MIME type with a file handler procedure.  *  * Registers a MIME type for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened or saved using this  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

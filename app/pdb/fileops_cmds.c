@@ -3036,7 +3036,7 @@ literal|"gimp_register_file_handler_mime"
 block|,
 literal|"Associates a MIME type with a file handler procedure."
 block|,
-literal|"Registers a MIME type for a file handler procedure. This allows GIMP to determine the MIME type of the file opened, or saved using this procedure."
+literal|"Registers a MIME type for a file handler procedure. This allows GIMP to determine the MIME type of the file opened or saved using this procedure."
 block|,
 literal|"Sven Neumann"
 block|,
