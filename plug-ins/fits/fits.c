@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * FITS file plugin  * reading and writing code Copyright (C) 1997 Peter Kirchgessner  * e-mail: pkirchg@aol.com, WWW: http://members.aol.com/pkirchg  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * FITS file plugin  * reading and writing code Copyright (C) 1997 Peter Kirchgessner  * e-mail: peter@kirchgessner.net, WWW: http://www.kirchgessner.net  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 05-May-97: Creation  * V 1.01, PK, 19-May-97: Problem with compilation on Irix fixed  * V 1.02, PK, 08-Jun-97: Bug with saving gray images fixed  * V 1.03, PK, 05-Oct-97: Parse rc-file  * V 1.04, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.05, nn, 20-Dec-97: Initialize image_ID in run()  */
+comment|/* Event history:  * V 1.00, PK, 05-May-97: Creation  * V 1.01, PK, 19-May-97: Problem with compilation on Irix fixed  * V 1.02, PK, 08-Jun-97: Bug with saving gray images fixed  * V 1.03, PK, 05-Oct-97: Parse rc-file  * V 1.04, PK, 12-Oct-97: No progress bars for non-interactive mode  * V 1.05, nn, 20-Dec-97: Initialize image_ID in run()  * V 1.06, PK, 21-Nov-99: Internationalization  *                        Fix bug with gimp_export_image()  *                        (moved it from load to save)  */
 end_comment
 
 begin_decl_stmt
@@ -14,7 +14,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP FITS file-plugin v1.05  20-Dec-97"
+literal|"@(#) GIMP FITS file-plugin v1.06  21-Nov-99"
 decl_stmt|;
 end_decl_stmt
 
@@ -57,6 +57,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"fitsrw.h"
 end_include
 
@@ -67,7 +73,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbb903e0108
+DECL|struct|__anon27556af40108
 block|{
 DECL|member|replace
 name|guint
@@ -93,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbb903e0208
+DECL|struct|__anon27556af40208
 block|{
 DECL|member|run
 name|gint
@@ -363,7 +369,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbb903e0308
+DECL|struct|__anon27556af40308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -688,17 +694,26 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_fits_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"load file of the FITS file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"load file of the FITS file format (Flexible Image\  Transport System)"
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
-literal|"Peter Kirchgessner (pkirchg@aol.com)"
+literal|"Peter Kirchgessner (peter@kirchgessner.net)"
 argument_list|,
 literal|"1997"
 argument_list|,
@@ -721,13 +736,19 @@ name|gimp_install_procedure
 argument_list|(
 literal|"file_fits_save"
 argument_list|,
+name|_
+argument_list|(
 literal|"save file in the FITS file format"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"FITS saving handles all image types except \ those with alpha channels."
+argument_list|)
 argument_list|,
 literal|"Peter Kirchgessner"
 argument_list|,
-literal|"Peter Kirchgessner (pkirchg@aol.com)"
+literal|"Peter Kirchgessner (peter@kirchgessner.net)"
 argument_list|,
 literal|"1997"
 argument_list|,
@@ -818,11 +839,6 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|GimpExportReturnType
-name|export
-init|=
-name|EXPORT_CANCEL
-decl_stmt|;
 comment|/* initialize */
 name|image_ID
 operator|=
@@ -887,6 +903,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 operator|*
 name|nreturn_vals
 operator|=
@@ -913,71 +932,6 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/*  eventually export the image */
-switch|switch
-condition|(
-name|run_mode
-condition|)
-block|{
-case|case
-name|RUN_INTERACTIVE
-case|:
-case|case
-name|RUN_WITH_LAST_VALS
-case|:
-name|init_gtk
-argument_list|()
-expr_stmt|;
-name|export
-operator|=
-name|gimp_export_image
-argument_list|(
-operator|&
-name|image_ID
-argument_list|,
-operator|&
-name|drawable_ID
-argument_list|,
-literal|"FITS"
-argument_list|,
-operator|(
-name|CAN_HANDLE_RGB
-operator||
-name|CAN_HANDLE_GRAY
-operator||
-name|CAN_HANDLE_INDEXED
-operator|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|export
-operator|==
-name|EXPORT_CANCEL
-condition|)
-block|{
-operator|*
-name|nreturn_vals
-operator|=
-literal|1
-expr_stmt|;
-name|values
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|=
-name|STATUS_EXECUTION_ERROR
-expr_stmt|;
-return|return;
-block|}
-break|break;
-default|default:
-break|break;
-block|}
 switch|switch
 condition|(
 name|run_mode
@@ -1133,6 +1087,14 @@ operator|==
 literal|0
 condition|)
 block|{
+name|GimpExportReturnType
+name|export
+init|=
+name|EXPORT_CANCEL
+decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|image_ID
 operator|=
 name|param
@@ -1160,6 +1122,71 @@ name|nreturn_vals
 operator|=
 literal|1
 expr_stmt|;
+comment|/*  eventually export the image */
+switch|switch
+condition|(
+name|run_mode
+condition|)
+block|{
+case|case
+name|RUN_INTERACTIVE
+case|:
+case|case
+name|RUN_WITH_LAST_VALS
+case|:
+name|init_gtk
+argument_list|()
+expr_stmt|;
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"FITS"
+argument_list|,
+operator|(
+name|CAN_HANDLE_RGB
+operator||
+name|CAN_HANDLE_GRAY
+operator||
+name|CAN_HANDLE_INDEXED
+operator|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|EXPORT_CANCEL
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|1
+expr_stmt|;
+name|values
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+return|return;
+block|}
+break|break;
+default|default:
+break|break;
+block|}
 switch|switch
 condition|(
 name|run_mode
@@ -1311,7 +1338,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"can't open file for reading"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1344,7 +1374,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"error during open of FITS file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1365,7 +1398,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"FITS file keeps no displayable images"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fits_close
@@ -1405,7 +1441,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"out of memory"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1744,7 +1783,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"FITS save cannot handle images with alpha channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1778,7 +1820,10 @@ break|break;
 default|default:
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"cannot operate on unknown image types"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1806,7 +1851,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"cant open file for writing"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1831,14 +1879,17 @@ argument_list|(
 name|filename
 argument_list|)
 operator|+
-literal|11
+literal|64
 argument_list|)
 expr_stmt|;
 name|sprintf
 argument_list|(
 name|temp
 argument_list|,
+name|_
+argument_list|(
 literal|"Saving %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2007,7 +2058,7 @@ argument_list|(
 name|filename
 argument_list|)
 operator|+
-literal|32
+literal|64
 argument_list|)
 operator|)
 operator|!=
@@ -2056,7 +2107,10 @@ name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
+name|_
+argument_list|(
 literal|"Background"
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -3033,7 +3087,10 @@ name|err
 condition|)
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"EOF encountered on reading"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_flush
@@ -3278,7 +3335,7 @@ name|fits_add_card
 argument_list|(
 name|hdulist
 argument_list|,
-literal|"COMMENT FitsRW is (C) Peter Kirchgessner (pkirchg@aol.com), but available"
+literal|"COMMENT FitsRW is (C) Peter Kirchgessner (peter@kirchgessner.net), but available"
 argument_list|)
 expr_stmt|;
 name|fits_add_card
@@ -3292,7 +3349,7 @@ name|fits_add_card
 argument_list|(
 name|hdulist
 argument_list|,
-literal|"COMMENT For sources see ftp://members.aol.com/pkirchg/pub/gimp"
+literal|"COMMENT For sources see http://www.kirchgessner.net"
 argument_list|)
 expr_stmt|;
 name|fits_add_card
@@ -3795,7 +3852,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"write error occured"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4504,7 +4564,10 @@ condition|)
 block|{
 name|show_message
 argument_list|(
+name|_
+argument_list|(
 literal|"write error occured"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4635,21 +4698,45 @@ name|toggle_text
 index|[]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"BLANK/NaN pixel replacement"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Black"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"White"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Pixel value scaling"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Automatic"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"by DATAMIN/DATAMAX"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Image composing"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"None"
+argument_list|)
 block|,
 literal|"NAXIS=3, NAXIS3=2,...,4"
 block|}
@@ -4780,7 +4867,10 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
-literal|"Load FITS"
+name|_
+argument_list|(
+literal|"Load FITS File"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4819,7 +4909,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4883,7 +4976,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4965,12 +5061,15 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|gettext
+argument_list|(
 operator|*
-operator|(
+name|textptr
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|textptr
 operator|++
-operator|)
-argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
 argument_list|(
@@ -5068,12 +5167,15 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|gettext
+argument_list|(
 operator|*
-operator|(
+name|textptr
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|textptr
 operator|++
-operator|)
-argument_list|)
 expr_stmt|;
 name|group
 operator|=

@@ -812,6 +812,10 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* preview from nearest bigger one */
+if|if
+condition|(
+name|width
+condition|)
 name|x_ratio
 operator|=
 operator|(
@@ -824,6 +828,15 @@ name|gdouble
 operator|)
 name|width
 expr_stmt|;
+else|else
+name|x_ratio
+operator|=
+literal|0.0
+expr_stmt|;
+if|if
+condition|(
+name|height
+condition|)
 name|y_ratio
 operator|=
 operator|(
@@ -835,6 +848,11 @@ operator|(
 name|gdouble
 operator|)
 name|height
+expr_stmt|;
+else|else
+name|y_ratio
+operator|=
+literal|0.0
 expr_stmt|;
 name|src_data
 operator|=

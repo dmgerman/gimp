@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * mapcolor plugin  * Copyright (C) 1998 Peter Kirchgessner  * (email: pkirchg@aol.com, WWW: http://members.aol.com/pkirchg)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  * mapcolor plugin  * Copyright (C) 1998 Peter Kirchgessner  * email: peter@kirchgessner.net, WWW: http://www.kirchgessner.net)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_comment
-comment|/* Event history:  * V 1.00, PK, 26-Oct-98: Creation.  */
+comment|/* Event history:  * V 1.00, PK, 26-Oct-98: Creation.  * V 1.01, PK, 21-Nov-99: Fix problem with working on layered images  *                        Internationalization  */
 end_comment
 
 begin_define
@@ -12,7 +12,7 @@ DECL|macro|VERSIO
 define|#
 directive|define
 name|VERSIO
-value|1.00
+value|1.01
 end_define
 
 begin_decl_stmt
@@ -22,7 +22,7 @@ name|char
 name|dversio
 index|[]
 init|=
-literal|"v1.00  26-Oct-98"
+literal|"v1.01  21-Nov-99"
 decl_stmt|;
 end_decl_stmt
 
@@ -33,7 +33,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP mapcolor plug-in v1.00  26-Oct-98"
+literal|"@(#) GIMP mapcolor plug-in v1.01  21-Nov-99"
 decl_stmt|;
 end_decl_stmt
 
@@ -133,7 +133,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aea14010108
+DECL|struct|__anon2b6fdda30108
 block|{
 DECL|member|colors
 name|guchar
@@ -542,6 +542,9 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_color_adjust"
@@ -682,6 +685,9 @@ decl_stmt|;
 name|int
 name|j
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|l_run_mode
 operator|=
 name|run_mode
@@ -704,9 +710,6 @@ operator|*
 name|return_vals
 operator|=
 name|values
-expr_stmt|;
-name|INIT_I18N_UI
-argument_list|()
 expr_stmt|;
 name|values
 index|[
@@ -1213,7 +1216,10 @@ name|RUN_NONINTERACTIVE
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Mapping colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|color_mapping
@@ -1437,7 +1443,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Map colors"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2355,6 +2364,15 @@ decl_stmt|,
 name|ymin
 decl_stmt|,
 name|ymax
+decl_stmt|,
+name|bpp
+init|=
+operator|(
+name|gint
+operator|)
+name|drawable
+operator|->
+name|bpp
 decl_stmt|;
 name|unsigned
 name|char
@@ -2751,16 +2769,28 @@ literal|2
 index|]
 index|]
 expr_stmt|;
+if|if
+condition|(
+name|bpp
+operator|>
+literal|3
+condition|)
+name|dest
+index|[
+literal|3
+index|]
+operator|=
+name|src
+index|[
+literal|3
+index|]
+expr_stmt|;
 name|src
 operator|+=
-name|drawable
-operator|->
 name|bpp
 expr_stmt|;
 name|dest
 operator|+=
-name|drawable
-operator|->
 name|bpp
 expr_stmt|;
 name|processed
