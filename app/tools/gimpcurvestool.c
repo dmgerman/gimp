@@ -442,12 +442,6 @@ modifier|*
 name|tool
 parameter_list|,
 name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
 name|cchan
 parameter_list|)
 function_decl|;
@@ -1456,14 +1450,6 @@ name|curves_add_point
 argument_list|(
 name|c_tool
 argument_list|,
-name|coords
-operator|->
-name|x
-argument_list|,
-name|coords
-operator|->
-name|y
-argument_list|,
 name|c_tool
 operator|->
 name|channel
@@ -1509,14 +1495,6 @@ block|{
 name|curves_add_point
 argument_list|(
 name|c_tool
-argument_list|,
-name|coords
-operator|->
-name|x
-argument_list|,
-name|coords
-operator|->
-name|y
 argument_list|,
 name|i
 argument_list|)
@@ -1719,18 +1697,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|curves_add_point (GimpCurvesTool * tool,gint x,gint y,gint cchan)
+DECL|function|curves_add_point (GimpCurvesTool * tool,gint cchan)
 name|curves_add_point
 parameter_list|(
 name|GimpCurvesTool
 modifier|*
 name|tool
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
 parameter_list|,
 name|gint
 name|cchan
@@ -1930,22 +1902,7 @@ break|break;
 case|case
 name|GIMP_CURVE_FREE
 case|:
-name|tool
-operator|->
-name|curves
-operator|->
-name|curve
-index|[
-name|cchan
-index|]
-index|[
-name|x
-index|]
-operator|=
-literal|255
-operator|-
-name|y
-expr_stmt|;
+comment|/* do nothing for free form curves */
 break|break;
 block|}
 block|}
