@@ -428,7 +428,7 @@ argument_list|(
 literal|"GetModuleFilename failed\n"
 argument_list|)
 expr_stmt|;
-comment|/* If the executable file name is of the format<foobar>\bin\gimp.exe,        * use<foobar>. Otherwise, use the directory where the executable        * is.        */
+comment|/* If the executable file name is of the format        *<foobar>\bin\gimp.exe of<foobar>\plug-ins\filter.exe, * use        *<foobar>. Otherwise, use the directory where the executable        * is.        */
 name|sep1
 operator|=
 name|strrchr
@@ -468,6 +468,17 @@ operator|+
 literal|1
 argument_list|,
 literal|"bin"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|g_strcasecmp
+argument_list|(
+name|sep2
+operator|+
+literal|1
+argument_list|,
+literal|"plug-ins"
 argument_list|)
 operator|==
 literal|0
