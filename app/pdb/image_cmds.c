@@ -10159,7 +10159,7 @@ literal|"gimp_image_height"
 block|,
 literal|"Return the height of the image"
 block|,
-literal|"This procedure returns the image's width. This value is independent of any of the layers in this image. This is the \"canvas\" height."
+literal|"This procedure returns the image's height. This value is independent of any of the layers in this image. This is the \"canvas\" height."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

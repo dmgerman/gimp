@@ -3719,7 +3719,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_height:  * @image_ID: The image.  *  * Return the height of the image  *  * This procedure returns the image's width. This value is independent  * of any of the layers in this image. This is the \"canvas\" height.  *  * Returns: The image's height.  */
+comment|/**  * gimp_image_height:  * @image_ID: The image.  *  * Return the height of the image  *  * This procedure returns the image's height. This value is independent  * of any of the layers in this image. This is the \"canvas\" height.  *  * Returns: The image's height.  */
 end_comment
 
 begin_function

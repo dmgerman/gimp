@@ -4506,7 +4506,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"mean"
 block|,
-literal|"Mean itensity value"
+literal|"Mean intensity value"
 block|}
 block|,
 block|{
@@ -4522,7 +4522,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"median"
 block|,
-literal|"Median itensity value"
+literal|"Median intensity value"
 block|}
 block|,
 block|{
