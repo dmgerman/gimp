@@ -447,6 +447,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_entry_set_activates_default
+argument_list|(
+name|GTK_ENTRY
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
 name|entry
