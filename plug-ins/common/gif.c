@@ -125,7 +125,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bab5faa0103
+DECL|enum|__anon2937084d0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -142,7 +142,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab5faa0208
+DECL|struct|__anon2937084d0208
 block|{
 DECL|member|interlace
 name|gint
@@ -4243,6 +4243,16 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_scrolled_window_set_shadow_type
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|scrolled_window
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
 name|gtk_scrolled_window_set_policy

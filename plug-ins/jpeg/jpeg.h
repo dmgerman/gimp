@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f0bd60108
+DECL|struct|__anon2893382d0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f0bd60208
+DECL|struct|__anon2893382d0208
 block|{
 DECL|member|cinfo
 name|struct
@@ -7792,6 +7792,16 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_scrolled_window_set_shadow_type
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|scrolled_window
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_IN
 argument_list|)
 expr_stmt|;
 name|gtk_scrolled_window_set_policy

@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be4ebf40103
+DECL|enum|__anon2bff3d6d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2206,6 +2206,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_scrolled_window_set_shadow_type
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|scrolled_window
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_IN
+argument_list|)
+expr_stmt|;
 name|gtk_scrolled_window_set_policy
 argument_list|(
 name|GTK_SCROLLED_WINDOW
@@ -2216,16 +2226,6 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|,
 name|GTK_POLICY_AUTOMATIC
-argument_list|)
-expr_stmt|;
-name|gtk_scrolled_window_set_shadow_type
-argument_list|(
-name|GTK_SCROLLED_WINDOW
-argument_list|(
-name|scrolled_window
-argument_list|)
-argument_list|,
-name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
