@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<gdk/gdk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdk/gdk.h"
+file|"libgimp/gimp.h"
 end_include
 
 begin_include
@@ -69,7 +69,7 @@ comment|/* RAND_MAX */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b19f5b80108
+DECL|struct|__anon27439fd20108
 typedef|typedef
 struct|struct
 block|{

@@ -15,7 +15,7 @@ value|((x) * (x))
 end_define
 
 begin_typedef
-DECL|struct|__anon289d5b5e0108
+DECL|struct|__anon29bc46640108
 typedef|typedef
 struct|struct
 block|{
@@ -45,7 +45,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289d5b5e0208
+DECL|struct|__anon29bc46640208
 typedef|typedef
 struct|struct
 block|{
@@ -66,7 +66,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289d5b5e0308
+DECL|struct|__anon29bc46640308
 typedef|typedef
 struct|struct
 block|{
@@ -86,7 +86,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289d5b5e0408
+DECL|struct|__anon29bc46640408
 typedef|typedef
 struct|struct
 block|{
@@ -104,7 +104,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289d5b5e0508
+DECL|struct|__anon29bc46640508
 typedef|typedef
 struct|struct
 block|{
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d5b5e0608
+DECL|struct|__anon29bc46640608
 block|{
 DECL|member|num_elements
 name|gint
@@ -221,7 +221,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289d5b5e0708
+DECL|struct|__anon29bc46640708
 typedef|typedef
 struct|struct
 block|{
@@ -718,6 +718,44 @@ name|nhits
 parameter_list|,
 name|gint
 name|preview
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|char
+modifier|*
+name|ifsvals_stringify
+parameter_list|(
+name|IfsComposeVals
+modifier|*
+name|vals
+parameter_list|,
+name|AffElement
+modifier|*
+modifier|*
+name|elements
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|ifsvals_parse_string
+parameter_list|(
+name|char
+modifier|*
+name|str
+parameter_list|,
+name|IfsComposeVals
+modifier|*
+name|vals
+parameter_list|,
+name|AffElement
+modifier|*
+modifier|*
+modifier|*
+name|elements
 parameter_list|)
 function_decl|;
 end_function_decl
