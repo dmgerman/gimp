@@ -1321,14 +1321,12 @@ block|{
 name|GimpChannel
 modifier|*
 name|channel
-decl_stmt|;
-name|channel
-operator|=
+init|=
 name|GIMP_CHANNEL
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|channel
@@ -3688,7 +3686,7 @@ name|maskPR
 operator|.
 name|h
 expr_stmt|;
-comment|/* only check the pixels if this tile is not fully within the currently 	 computed bounds */
+comment|/*  only check the pixels if this tile is not fully within the        *  currently computed bounds        */
 if|if
 condition|(
 name|maskPR
@@ -3712,7 +3710,7 @@ operator|>
 name|ty2
 condition|)
 block|{
-comment|/* Check upper left and lower right corners to see if we can 	     avoid checking the rest of the pixels in this tile */
+comment|/* Check upper left and lower right corners to see if we can            * avoid checking the rest of the pixels in this tile            */
 if|if
 condition|(
 name|data
@@ -6801,9 +6799,7 @@ block|{
 name|GimpImage
 modifier|*
 name|gimage
-decl_stmt|;
-name|gimage
-operator|=
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -6811,7 +6807,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimage
@@ -6991,9 +6987,7 @@ block|{
 name|GimpImage
 modifier|*
 name|gimage
-decl_stmt|;
-name|gimage
-operator|=
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -7001,7 +6995,7 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|gimage
