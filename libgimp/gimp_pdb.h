@@ -133,6 +133,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpmisctools_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimppainttools_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimppalette_pdb.h>
 end_include
 
@@ -188,12 +200,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimptexttool_pdb.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimptools_pdb.h>
 end_include
 
 begin_include

@@ -252,6 +252,28 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|register_misc_tools_procs
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|register_paint_tools_procs
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|register_palette_procs
 parameter_list|(
 name|Gimp
@@ -352,17 +374,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|register_text_tool_procs
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|register_tools_procs
 parameter_list|(
 name|Gimp
 modifier|*
@@ -828,10 +839,50 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Palette"
+literal|"Misc Tool procedures"
 argument_list|)
 argument_list|,
 literal|0.63
+argument_list|)
+expr_stmt|;
+name|register_misc_tools_procs
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+call|(
+modifier|*
+name|status_callback
+call|)
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Paint Tool procedures"
+argument_list|)
+argument_list|,
+literal|0.639
+argument_list|)
+expr_stmt|;
+name|register_paint_tools_procs
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+call|(
+modifier|*
+name|status_callback
+call|)
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Palette"
+argument_list|)
+argument_list|,
+literal|0.685
 argument_list|)
 expr_stmt|;
 name|register_palette_procs
@@ -851,7 +902,7 @@ argument_list|(
 literal|"Parasite procedures"
 argument_list|)
 argument_list|,
-literal|0.664
+literal|0.718
 argument_list|)
 expr_stmt|;
 name|register_parasite_procs
@@ -871,7 +922,7 @@ argument_list|(
 literal|"Paths"
 argument_list|)
 argument_list|,
-literal|0.7
+literal|0.755
 argument_list|)
 expr_stmt|;
 name|register_paths_procs
@@ -891,7 +942,7 @@ argument_list|(
 literal|"Pattern UI"
 argument_list|)
 argument_list|,
-literal|0.739
+literal|0.794
 argument_list|)
 expr_stmt|;
 name|register_pattern_select_procs
@@ -911,7 +962,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
-literal|0.748
+literal|0.803
 argument_list|)
 expr_stmt|;
 name|register_patterns_procs
@@ -931,7 +982,7 @@ argument_list|(
 literal|"Plug-in"
 argument_list|)
 argument_list|,
-literal|0.761
+literal|0.815
 argument_list|)
 expr_stmt|;
 name|register_plug_in_procs
@@ -951,7 +1002,7 @@ argument_list|(
 literal|"Procedural database"
 argument_list|)
 argument_list|,
-literal|0.779
+literal|0.833
 argument_list|)
 expr_stmt|;
 name|register_procedural_db_procs
@@ -971,7 +1022,7 @@ argument_list|(
 literal|"Image mask"
 argument_list|)
 argument_list|,
-literal|0.803
+literal|0.858
 argument_list|)
 expr_stmt|;
 name|register_selection_procs
@@ -991,7 +1042,7 @@ argument_list|(
 literal|"Selection Tool procedures"
 argument_list|)
 argument_list|,
-literal|0.858
+literal|0.912
 argument_list|)
 expr_stmt|;
 name|register_selection_tools_procs
@@ -1011,30 +1062,10 @@ argument_list|(
 literal|"Text procedures"
 argument_list|)
 argument_list|,
-literal|0.873
+literal|0.927
 argument_list|)
 expr_stmt|;
 name|register_text_tool_procs
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-call|(
-modifier|*
-name|status_callback
-call|)
-argument_list|(
-name|NULL
-argument_list|,
-name|_
-argument_list|(
-literal|"Tool procedures"
-argument_list|)
-argument_list|,
-literal|0.885
-argument_list|)
-expr_stmt|;
-name|register_tools_procs
 argument_list|(
 name|gimp
 argument_list|)
