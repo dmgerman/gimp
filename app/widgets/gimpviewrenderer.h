@@ -405,6 +405,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_preview_renderer_unrealize
+parameter_list|(
+name|GimpPreviewRenderer
+modifier|*
+name|renderer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_preview_renderer_invalidate
 parameter_list|(
 name|GimpPreviewRenderer

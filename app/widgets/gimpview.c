@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad5ab570103
+DECL|enum|__anon2b15502a0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1024,6 +1024,19 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|preview
+operator|->
+name|renderer
+condition|)
+name|gimp_preview_renderer_unrealize
+argument_list|(
+name|preview
+operator|->
+name|renderer
+argument_list|)
+expr_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
