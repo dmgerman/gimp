@@ -260,6 +260,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_file_overwrite_dialog
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
