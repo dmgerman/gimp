@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gui/gui-types.h"
+file|"actions/actions-types.h"
 end_include
 
 begin_endif

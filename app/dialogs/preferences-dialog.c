@@ -6859,7 +6859,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b7ad1120108
+DECL|struct|__anon29307a880108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8174,7 +8174,7 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 enum|enum
-DECL|enum|__anon2b7ad1120203
+DECL|enum|__anon29307a880203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -8408,6 +8408,26 @@ argument_list|,
 literal|1
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|info
+argument_list|)
+argument_list|,
+literal|"enabled"
+argument_list|,
+name|_
+argument_list|(
+literal|"Enable this Controller"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox3
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|store
@@ -9237,7 +9257,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7ad1120308
+DECL|struct|__anon29307a880308
 block|{
 DECL|member|label
 specifier|const
@@ -9394,7 +9414,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7ad1120408
+DECL|struct|__anon29307a880408
 block|{
 DECL|member|tree_label
 specifier|const
