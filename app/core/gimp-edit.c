@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b276be90103
+DECL|enum|__anon2976dde10103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -1712,8 +1712,9 @@ name|y1
 operator|)
 condition|)
 return|return
-name|FALSE
+name|TRUE
 return|;
+comment|/*  nothing to do, but the clear succeded  */
 name|buf_tiles
 operator|=
 name|tile_manager_new
@@ -1963,8 +1964,9 @@ name|y1
 operator|)
 condition|)
 return|return
-name|FALSE
+name|TRUE
 return|;
+comment|/*  nothing to do, but the fill succeded  */
 name|buf_tiles
 operator|=
 name|tile_manager_new
