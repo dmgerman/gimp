@@ -40,6 +40,12 @@ directive|include
 file|"libgimp/gimpunit.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpwidgets.h"
+end_include
+
 begin_comment
 comment|/*  typedefs  */
 end_comment
@@ -62,84 +68,6 @@ name|gpointer
 parameter_list|)
 function_decl|;
 end_typedef
-
-begin_comment
-comment|/*  widget constructors  */
-end_comment
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_option_menu_new
-parameter_list|(
-name|GtkSignalFunc
-name|menu_item_callback
-parameter_list|,
-name|gpointer
-name|initial
-parameter_list|,
-comment|/* user_data */
-comment|/* specify menu items as va_list: 				   *  gchar          *label, 				   *  gpointer        data, 				   *  gpointer        user_data, 				   */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_radio_group_new
-parameter_list|(
-name|gboolean
-name|in_frame
-parameter_list|,
-name|gchar
-modifier|*
-name|frame_title
-parameter_list|,
-comment|/* specify radio buttons as va_list: 				   *  gchar          *label, 				   *  GtkSignalFunc   callback, 				   *  gpointer        data, 				   *  gpointer        user_data, 				   *  GtkWidget     **widget_ptr, 				   *  gboolean        active, 				   */
-modifier|...
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_spin_button_new
-parameter_list|(
-comment|/* return value: */
-name|GtkObject
-modifier|*
-modifier|*
-name|adjustment
-parameter_list|,
-name|gfloat
-name|value
-parameter_list|,
-name|gfloat
-name|lower
-parameter_list|,
-name|gfloat
-name|upper
-parameter_list|,
-name|gfloat
-name|step_increment
-parameter_list|,
-name|gfloat
-name|page_increment
-parameter_list|,
-name|gfloat
-name|page_size
-parameter_list|,
-name|gfloat
-name|climb_rate
-parameter_list|,
-name|guint
-name|digits
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  some simple query dialogs  *  if object != NULL then the query boxes will connect their cancel callback  *  to the provided signal of this object  *  *  it's the caller's job to show the returned widgets  */

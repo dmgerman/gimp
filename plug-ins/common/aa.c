@@ -12,13 +12,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|<aalib.h>
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<aalib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -31,24 +49,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
 end_include
 
 begin_include
@@ -76,18 +76,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -111,7 +111,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|aa_savable
 parameter_list|(
 name|gint32
@@ -122,13 +122,13 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_aa
 parameter_list|(
-name|int
+name|gint
 name|output_type
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -143,7 +143,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|void
 name|gimp2aa
 parameter_list|(
 name|gint32
@@ -166,21 +166,6 @@ name|type_dialog
 parameter_list|(
 name|int
 name|selected
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|type_dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -257,13 +242,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * Type the user selected. (Global for easier UI coding.  */
+comment|/**  * Type the user selected. (Global for easier UI coding.)  */
 end_comment
 
 begin_decl_stmt
 DECL|variable|selected_type
 specifier|static
-name|int
+name|gint
 name|selected_type
 init|=
 literal|0
@@ -276,15 +261,13 @@ name|MAIN
 argument_list|()
 end_macro
 
-begin_comment
-comment|/**  * Called by the GIMP to figure out what this plugin does.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -478,28 +461,24 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/**  * Called by the GIMP to run the actual plugin.  */
-end_comment
-
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -524,7 +503,7 @@ decl_stmt|;
 name|GRunModeType
 name|run_mode
 decl_stmt|;
-name|int
+name|gint
 name|output_type
 init|=
 literal|0
@@ -694,7 +673,9 @@ name|d_status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-return|return;
+goto|goto
+name|finish
+goto|;
 block|}
 switch|switch
 condition|(
@@ -780,7 +761,9 @@ name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-return|return;
+goto|goto
+name|finish
+goto|;
 block|}
 if|if
 condition|(
@@ -844,6 +827,8 @@ name|d_status
 operator|=
 name|STATUS_SUCCESS
 expr_stmt|;
+name|finish
+label|:
 if|if
 condition|(
 name|export
@@ -864,14 +849,14 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
-DECL|function|save_aa (int output_type,char * filename,gint32 image_ID,gint32 drawable_ID)
+name|gboolean
+DECL|function|save_aa (gint output_type,gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_aa
 parameter_list|(
-name|int
+name|gint
 name|output_type
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|,
@@ -986,7 +971,7 @@ operator|==
 name|NULL
 condition|)
 return|return
-literal|1
+name|TRUE
 return|;
 name|gimp2aa
 argument_list|(
@@ -1009,14 +994,14 @@ argument_list|)
 expr_stmt|;
 comment|/*fprintf(stderr, "Success!\n"); */
 return|return
-literal|0
+name|FALSE
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint
+name|void
 DECL|function|gimp2aa (gint32 image,gint32 drawable_ID,aa_context * context)
 name|gimp2aa
 parameter_list|(
@@ -1031,7 +1016,7 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -1059,7 +1044,7 @@ name|renderparams
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|bpp
 decl_stmt|;
 name|width
@@ -1101,15 +1086,6 @@ operator|*
 name|bpp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|buffer
-operator|==
-name|NULL
-condition|)
-return|return
-literal|1
-return|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1227,15 +1203,12 @@ name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-literal|0
-return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|aa_savable (gint32 drawable_ID)
 name|aa_savable
 parameter_list|(
@@ -1264,10 +1237,10 @@ operator|!=
 name|GRAYA_IMAGE
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -1279,9 +1252,11 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|init_gtk ()
+DECL|function|init_gtk (void)
 name|init_gtk
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|gchar
 modifier|*
@@ -1312,7 +1287,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-literal|"save"
+literal|"aa"
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -1392,11 +1367,11 @@ argument_list|(
 literal|"OK"
 argument_list|)
 argument_list|,
-name|type_dialog_ok_callback
+name|gtk_widget_destroy
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|1
 argument_list|,
 name|NULL
 argument_list|,
@@ -1435,7 +1410,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|type_dialog_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -1462,14 +1437,14 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1486,7 +1461,7 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1499,17 +1474,17 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|toggle_vbox
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1534,7 +1509,7 @@ name|p
 init|=
 name|aa_formats
 decl_stmt|;
-name|int
+name|gint
 name|current
 init|=
 literal|0
@@ -1596,10 +1571,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|type_dialog_toggle_update
+argument_list|)
 argument_list|,
 operator|(
 operator|*
@@ -1622,18 +1597,7 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-else|else
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|toggle
-argument_list|)
-argument_list|,
-literal|0
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1679,51 +1643,6 @@ end_function
 begin_comment
 comment|/*  * Callbacks for the dialog.  */
 end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|type_dialog_close_callback (GtkWidget * widget,gpointer data)
-name|type_dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|type_dialog_ok_callback (GtkWidget * widget,gpointer data)
-name|type_dialog_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
 
 begin_function
 specifier|static

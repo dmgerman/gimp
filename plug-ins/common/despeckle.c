@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   despeckle()                 - Despeckle an image using a median filter.  *   despeckle_dialog()          -  Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_adaptive_callback()  - Update the filter type...  *   dialog_recursive_callback() - Update the filter type...  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.22  2000/01/06 16:40:17  mitch  *   2000-01-06  Michael Natterer<mitch@gimp.org>  *  *   	* app/[all files using the dialog or action area constructors]  *   	* libgimp/gimpdialog.[ch]: added a "slot_object" agrument to the  *   	constructors' va_args lists to allow the action area buttons to be  *   	connected wich gtk_signal_connect_object().  *  *   	* libgimp/gimphelp.c: show the correct help page for plugins.  *  *   	* plug-ins/common/CEL.c  *   	* plug-ins/common/CML_explorer.c  *   	* plug-ins/common/Makefile.am  *   	* plug-ins/common/aa.c  *   	* plug-ins/common/align_layers.c  *   	* plug-ins/common/animationplay.c  *   	* plug-ins/common/apply_lens.c  *   	* plug-ins/common/blinds.c  *   	* plug-ins/common/blur.c  *   	* plug-ins/common/bumpmap.c  *   	* plug-ins/common/checkerboard.c  *   	* plug-ins/common/colorify.c  *   	* plug-ins/common/colortoalpha.c  *   	* plug-ins/common/compose.c  *   	* plug-ins/common/convmatrix.c  *   	* plug-ins/common/csource.c  *   	* plug-ins/common/cubism.c  *   	* plug-ins/common/curve_bend.c  *   	* plug-ins/common/decompose.c  *   	* plug-ins/common/deinterlace.c  *   	* plug-ins/common/depthmerge.c  *   	* plug-ins/common/despeckle.c  *   	* plug-ins/common/destripe.c  *   	* plug-ins/common/diffraction.c  *   	* plug-ins/common/displace.c  *   	* plug-ins/common/grid.c  *   	* plug-ins/helpbrowser/Makefile.am  *   	* plug-ins/helpbrowser/helpbrowser.c: use the dialog constructor  *   	and enable the "F1" help key.  *  *   Revision 1.21  1999/12/29 18:07:43  neo  *   NEVER EVER use sprintf together with _(...) !  *  *  *   --Sven  *  *   Revision 1.20  1999/12/27 18:43:09  neo  *   small dialog changes and german translation update  *  *  *   --Sven  *  *   Revision 1.19  1997/01/03 15:15:10  yasuhiro  *   1999-12-20  Shirasaki Yasuhiro<yasuhiro@gnome.gr.jp>  *  *           * plug-ins/common/blinds.c  *           * plug-ins/common/curve_bend.c  *           * plug-ins/common/deinterlace.c  *           * plug-ins/common/despeckle.c  *           * po-plug-ins/POTFILES.in: Added gettext support  *  *   -- yasuhiro  *  *   Revision 1.18  1999/11/23 23:49:42  neo  *   added dots to all menu entries of interactive plug-ins and did the usual  *   action area fixes on lots of them  *  *  *  *   --Sven  *  *   Revision 1.17  1999/10/24 20:48:58  pcg  *   api change #2, fix #1  *  *   Revision 1.16  1999/10/17 00:07:38  pcg  *   API PATCH #2 or so  *  *   Revision 1.15  1999/04/23 06:35:14  asbjoer  *   use MAIN macro  *  *   Revision 1.14  1999/01/15 17:33:24  unammx  *   1999-01-15  Federico Mena Quintero<federico@nuclecu.unam.mx>  *  *   	* Updated gtk_toggle_button_set_state() to  *   	gtk_toggle_button_set_active() in all the files.  *  *   Revision 1.13  1998/06/06 23:22:16  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.21  1998/05/17 15:57:33  mike  *   Removed extra variables.  *   Removed signal handlers (used for debugging)  *  *   Revision 1.20  1998/04/27  15:59:17  mike  *   Fixed RGB preview problem...  *  *   Revision 1.19  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.18  1998/04/27  15:39:48  mike  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.17  1998/04/23  14:39:47  mike  *   Updated preview code to handle images with alpha (preview now shows checker  *   pattern).  *   Added call to gtk_window_set_wmclass() to make sure the GIMP icon is used  *   by default.  *  *   Revision 1.16  1998/01/22  14:35:03  mike  *   Added black& white level controls.  *   Fixed bug in despeckle code that caused the borders to darken.  *  *   Revision 1.15  1998/01/21  21:33:47  mike  *   Fixed malloc buffer overflow bug - wasn't realloc'ing buffers  *   when the filter radius changed.  *  *   Revision 1.14  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.13  1997/11/12  15:53:34  mike  *   Added<string.h> header file for Digital UNIX...  *  *   Revision 1.12  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.11  1997/06/12  16:58:11  mike  *   Optimized final despeckle - now grab gimp_tile_height() rows at a time  *   for faster filtering.  *  *   Revision 1.10  1997/06/08  23:30:29  mike  *   Improved the preview update speed significantly by loading the entire  *   source (preview) image first.  *  *   Revision 1.9  1997/06/08  16:48:21  mike  *   Renamed "adaptive" argument to "type" (filter type).  *  *   Revision 1.8  1997/06/08  12:45:09  mike  *   Added recursive filter option.  *   Cleaned up UI.  *  *   Revision 1.7  1997/06/08  04:27:19  mike  *   Updated documentation.  *   Moved plug-in back to original location in menu tree.  *  *   Revision 1.6  1997/06/08  04:24:56  mike  *   Added filter type argument& control.  *  *   Revision 1.5  1997/06/08  04:12:36  mike  *   Added preview window.  *  *   Revision 1.4  1997/06/08  02:18:22  mike  *   Updated to adjust the despeckling radius based upon the window's  *   histogram.  This improves filter quality significantly as surface  *   details are preserved and not blurred...  *  *   Revision 1.3  1997/06/07  01:29:47  mike  *   Added some minor optimizations.  *   Updated version to 1.01.  *   Fixed minor bug in dialog_ientry_update() - was using gdouble instead  *   of gint for new_value...  *  *   Revision 1.2  1997/06/07  01:03:07  mike  *   Updated docos, changed maximum radius to 20.  *  *   Revision 1.1  1997/06/07  00:01:15  mike  *   Initial Revision.  */
+comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   despeckle()                 - Despeckle an image using a median filter.  *   despeckle_dialog()          -  Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_adaptive_callback()  - Update the filter type...  *   dialog_recursive_callback() - Update the filter type...  *   dialog_ok_callback()        - Start the filter...  *  * Revision History:  *  *   $Log$  *   Revision 1.23  2000/01/13 15:39:24  mitch  *   2000-01-13  Michael Natterer<mitch@gimp.org>  *  *   	* app/gimpui.[ch]  *   	* app/preferences_dialog.c: removed& renamed some functions from  *   	gimpui.[ch] (see below).  *  *   	* libgimp/Makefile.am  *   	* libgimp/gimpwidgets.[ch]; new files. Functions moved from  *   	app/gimpui.[ch]. Added a constructor for the label + hscale +  *   	entry combination used in many plugins (now hscale + spinbutton).  *  *   	* libgimp/gimpui.h: include gimpwidgets.h  *  *   	* plug-ins/megawidget/megawidget.[ch]: removed all functions  *   	except the preview stuff (I'm not yet sure how to implement this  *   	in libgimp because the libgimp preview should be general enough to  *   	replace all the other plugin previews, too).  *  *   	* plug-ins/borderaverage/Makefile.am  *   	* plug-ins/borderaverage/borderaverage.c  *   	* plug-ins/common/plugin-defs.pl  *   	* plug-ins/common/Makefile.am  *   	* plug-ins/common/aa.c  *   	* plug-ins/common/align_layers.c  *   	* plug-ins/common/animationplay.c  *   	* plug-ins/common/apply_lens.c  *   	* plug-ins/common/blinds.c  *   	* plug-ins/common/bumpmap.c  *   	* plug-ins/common/checkerboard.c  *   	* plug-ins/common/colorify.c  *   	* plug-ins/common/convmatrix.c  *   	* plug-ins/common/cubism.c  *   	* plug-ins/common/curve_bend.c  *   	* plug-ins/common/deinterlace.c  *   	* plug-ins/common/despeckle.c  *   	* plug-ins/common/destripe.c  *   	* plug-ins/common/displace.c  *   	* plug-ins/common/edge.c  *   	* plug-ins/common/emboss.c  *   	* plug-ins/common/hot.c  *   	* plug-ins/common/nlfilt.c  *   	* plug-ins/common/pixelize.c  *   	* plug-ins/common/waves.c  *   	* plug-ins/sgi/sgi.c  *   	* plug-ins/sinus/sinus.c: ui updates like removing megawidget,  *   	using the dialog constructor, I18N fixes, indentation, ...  *  *   Revision 1.22  2000/01/06 16:40:17  mitch  *   2000-01-06  Michael Natterer<mitch@gimp.org>  *  *   	* app/[all files using the dialog or action area constructors]  *   	* libgimp/gimpdialog.[ch]: added a "slot_object" agrument to the  *   	constructors' va_args lists to allow the action area buttons to be  *   	connected wich gtk_signal_connect_object().  *  *   	* libgimp/gimphelp.c: show the correct help page for plugins.  *  *   	* plug-ins/common/CEL.c  *   	* plug-ins/common/CML_explorer.c  *   	* plug-ins/common/Makefile.am  *   	* plug-ins/common/aa.c  *   	* plug-ins/common/align_layers.c  *   	* plug-ins/common/animationplay.c  *   	* plug-ins/common/apply_lens.c  *   	* plug-ins/common/blinds.c  *   	* plug-ins/common/blur.c  *   	* plug-ins/common/bumpmap.c  *   	* plug-ins/common/checkerboard.c  *   	* plug-ins/common/colorify.c  *   	* plug-ins/common/colortoalpha.c  *   	* plug-ins/common/compose.c  *   	* plug-ins/common/convmatrix.c  *   	* plug-ins/common/csource.c  *   	* plug-ins/common/cubism.c  *   	* plug-ins/common/curve_bend.c  *   	* plug-ins/common/decompose.c  *   	* plug-ins/common/deinterlace.c  *   	* plug-ins/common/depthmerge.c  *   	* plug-ins/common/despeckle.c  *   	* plug-ins/common/destripe.c  *   	* plug-ins/common/diffraction.c  *   	* plug-ins/common/displace.c  *   	* plug-ins/common/grid.c  *   	* plug-ins/helpbrowser/Makefile.am  *   	* plug-ins/helpbrowser/helpbrowser.c: use the dialog constructor  *   	and enable the "F1" help key.  *  *   Revision 1.21  1999/12/29 18:07:43  neo  *   NEVER EVER use sprintf together with _(...) !  *  *  *   --Sven  *  *   Revision 1.20  1999/12/27 18:43:09  neo  *   small dialog changes and german translation update  *  *  *   --Sven  *  *   Revision 1.19  1997/01/03 15:15:10  yasuhiro  *   1999-12-20  Shirasaki Yasuhiro<yasuhiro@gnome.gr.jp>  *  *           * plug-ins/common/blinds.c  *           * plug-ins/common/curve_bend.c  *           * plug-ins/common/deinterlace.c  *           * plug-ins/common/despeckle.c  *           * po-plug-ins/POTFILES.in: Added gettext support  *  *   -- yasuhiro  *  *   Revision 1.18  1999/11/23 23:49:42  neo  *   added dots to all menu entries of interactive plug-ins and did the usual  *   action area fixes on lots of them  *  *  *  *   --Sven  *  *   Revision 1.17  1999/10/24 20:48:58  pcg  *   api change #2, fix #1  *  *   Revision 1.16  1999/10/17 00:07:38  pcg  *   API PATCH #2 or so  *  *   Revision 1.15  1999/04/23 06:35:14  asbjoer  *   use MAIN macro  *  *   Revision 1.14  1999/01/15 17:33:24  unammx  *   1999-01-15  Federico Mena Quintero<federico@nuclecu.unam.mx>  *  *   	* Updated gtk_toggle_button_set_state() to  *   	gtk_toggle_button_set_active() in all the files.  *  *   Revision 1.13  1998/06/06 23:22:16  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.21  1998/05/17 15:57:33  mike  *   Removed extra variables.  *   Removed signal handlers (used for debugging)  *  *   Revision 1.20  1998/04/27  15:59:17  mike  *   Fixed RGB preview problem...  *  *   Revision 1.19  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.18  1998/04/27  15:39:48  mike  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.17  1998/04/23  14:39:47  mike  *   Updated preview code to handle images with alpha (preview now shows checker  *   pattern).  *   Added call to gtk_window_set_wmclass() to make sure the GIMP icon is used  *   by default.  *  *   Revision 1.16  1998/01/22  14:35:03  mike  *   Added black& white level controls.  *   Fixed bug in despeckle code that caused the borders to darken.  *  *   Revision 1.15  1998/01/21  21:33:47  mike  *   Fixed malloc buffer overflow bug - wasn't realloc'ing buffers  *   when the filter radius changed.  *  *   Revision 1.14  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.13  1997/11/12  15:53:34  mike  *   Added<string.h> header file for Digital UNIX...  *  *   Revision 1.12  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.11  1997/06/12  16:58:11  mike  *   Optimized final despeckle - now grab gimp_tile_height() rows at a time  *   for faster filtering.  *  *   Revision 1.10  1997/06/08  23:30:29  mike  *   Improved the preview update speed significantly by loading the entire  *   source (preview) image first.  *  *   Revision 1.9  1997/06/08  16:48:21  mike  *   Renamed "adaptive" argument to "type" (filter type).  *  *   Revision 1.8  1997/06/08  12:45:09  mike  *   Added recursive filter option.  *   Cleaned up UI.  *  *   Revision 1.7  1997/06/08  04:27:19  mike  *   Updated documentation.  *   Moved plug-in back to original location in menu tree.  *  *   Revision 1.6  1997/06/08  04:24:56  mike  *   Added filter type argument& control.  *  *   Revision 1.5  1997/06/08  04:12:36  mike  *   Added preview window.  *  *   Revision 1.4  1997/06/08  02:18:22  mike  *   Updated to adjust the despeckling radius based upon the window's  *   histogram.  This improves filter quality significantly as surface  *   details are preserved and not blurred...  *  *   Revision 1.3  1997/06/07  01:29:47  mike  *   Added some minor optimizations.  *   Updated version to 1.01.  *   Fixed minor bug in dialog_ientry_update() - was using gdouble instead  *   of gint for new_value...  *  *   Revision 1.2  1997/06/07  01:03:07  mike  *   Updated docos, changed maximum radius to 20.  *  *   Revision 1.1  1997/06/07  00:01:15  mike  *   Initial Revision.  */
 end_comment
 
 begin_include
@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimplimits.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -84,7 +90,7 @@ DECL|macro|SCALE_WIDTH
 define|#
 directive|define
 name|SCALE_WIDTH
-value|64
+value|80
 end_define
 
 begin_define
@@ -92,7 +98,7 @@ DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
 name|ENTRY_WIDTH
-value|64
+value|40
 end_define
 
 begin_define
@@ -101,30 +107,6 @@ define|#
 directive|define
 name|MAX_RADIUS
 value|20
-end_define
-
-begin_define
-DECL|macro|CHECK_SIZE
-define|#
-directive|define
-name|CHECK_SIZE
-value|8
-end_define
-
-begin_define
-DECL|macro|CHECK_DARK
-define|#
-directive|define
-name|CHECK_DARK
-value|85
-end_define
-
-begin_define
-DECL|macro|CHECK_LIGHT
-define|#
-directive|define
-name|CHECK_LIGHT
-value|170
 end_define
 
 begin_define
@@ -214,15 +196,15 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|GParam
 modifier|*
 parameter_list|,
-name|int
+name|gint
 modifier|*
 parameter_list|,
 name|GParam
@@ -257,20 +239,20 @@ specifier|static
 name|void
 name|dialog_create_ivalue
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 parameter_list|,
 name|GtkTable
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
 name|gint
 modifier|*
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -333,32 +315,6 @@ begin_function_decl
 specifier|static
 name|void
 name|dialog_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|dialog_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|dialog_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -448,7 +404,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_width
-name|int
+name|gint
 name|preview_width
 decl_stmt|,
 comment|/* Width of preview widget */
@@ -538,7 +494,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|sel_x1
-name|int
+name|gint
 name|sel_x1
 decl_stmt|,
 comment|/* Selection bounds */
@@ -555,7 +511,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|sel_width
-name|int
+name|gint
 name|sel_width
 decl_stmt|,
 comment|/* Selection width */
@@ -571,7 +527,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|img_bpp
-name|int
+name|gint
 name|img_bpp
 decl_stmt|;
 end_decl_stmt
@@ -597,7 +553,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|despeckle_vals
-name|int
+name|gint
 name|despeckle_vals
 index|[
 literal|4
@@ -779,15 +735,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
 comment|/* I - Name of filter program. */
-name|int
+name|gint
 name|nparams
 parameter_list|,
 comment|/* I - Number of parameters passed in */
@@ -796,7 +752,7 @@ modifier|*
 name|param
 parameter_list|,
 comment|/* I - Parameter values */
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -821,7 +777,7 @@ modifier|*
 name|values
 decl_stmt|;
 comment|/* Return values */
-comment|/*   * Initialize parameter data...   */
+comment|/*    * Initialize parameter data...    */
 name|status
 operator|=
 name|STATUS_SUCCESS
@@ -876,7 +832,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-comment|/*   * Get drawable information...   */
+comment|/*    * Get drawable information...    */
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -931,7 +887,7 @@ operator|->
 name|id
 argument_list|)
 expr_stmt|;
-comment|/*   * See how we will run   */
+comment|/*    * See how we will run    */
 switch|switch
 condition|(
 name|run_mode
@@ -943,7 +899,7 @@ case|:
 name|INIT_I18N_UI
 argument_list|()
 expr_stmt|;
-comment|/*         * Possibly retrieve data...         */
+comment|/*        * Possibly retrieve data...        */
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -952,7 +908,7 @@ operator|&
 name|despeckle_radius
 argument_list|)
 expr_stmt|;
-comment|/*         * Get information from the dialog...         */
+comment|/*        * Get information from the dialog...        */
 if|if
 condition|(
 operator|!
@@ -964,7 +920,7 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
-comment|/*         * Make sure all the arguments are present...         */
+comment|/*        * Make sure all the arguments are present...        */
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -1151,7 +1107,7 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
-comment|/*         * Possibly retrieve data...         */
+comment|/*        * Possibly retrieve data...        */
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -1163,7 +1119,7 @@ name|despeckle_vals
 argument_list|)
 expr_stmt|;
 break|break;
-default|default :
+default|default:
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
@@ -1172,7 +1128,7 @@ break|break;
 empty_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * Despeckle the image...   */
+comment|/*    * Despeckle the image...    */
 if|if
 condition|(
 name|status
@@ -1199,7 +1155,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*       * Set the tile cache size...       */
+comment|/* 	   * Set the tile cache size... 	   */
 name|gimp_tile_cache_ntiles
 argument_list|(
 literal|2
@@ -1221,11 +1177,11 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*       * Run!       */
+comment|/* 	   * Run! 	   */
 name|despeckle
 argument_list|()
 expr_stmt|;
-comment|/*       * If run mode is interactive, flush displays...       */
+comment|/* 	   * If run mode is interactive, flush displays... 	   */
 if|if
 condition|(
 name|run_mode
@@ -1235,7 +1191,7 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-comment|/*       * Store data...       */
+comment|/* 	   * Store data... 	   */
 if|if
 condition|(
 name|run_mode
@@ -1262,7 +1218,7 @@ name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * Reset the current run status...   */
+comment|/*    * Reset the current run status...    */
 name|values
 index|[
 literal|0
@@ -1274,7 +1230,7 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-comment|/*   * Detach from the drawable...   */
+comment|/*    * Detach from the drawable...    */
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
@@ -1325,7 +1281,7 @@ modifier|*
 name|sort_ptr
 decl_stmt|;
 comment|/* Current sort value */
-name|int
+name|gint
 name|sort_count
 decl_stmt|,
 comment|/* Number of soft values */
@@ -1386,7 +1342,7 @@ comment|/* Histogram count for 0 values */
 name|hist255
 decl_stmt|;
 comment|/* Histogram count for 255 values */
-comment|/*   * Let the user know what we're doing...   */
+comment|/*    * Let the user know what we're doing...    */
 name|gimp_progress_init
 argument_list|(
 name|_
@@ -1395,7 +1351,7 @@ literal|"Despeckling..."
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*   * Setup for filter...   */
+comment|/*    * Setup for filter...    */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1459,15 +1415,12 @@ name|img_bpp
 expr_stmt|;
 name|src_rows
 operator|=
-name|g_malloc
-argument_list|(
-name|max_row
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
 operator|*
-argument_list|)
+argument_list|,
+name|max_row
 argument_list|)
 expr_stmt|;
 name|src_rows
@@ -1475,16 +1428,13 @@ index|[
 literal|0
 index|]
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|max_row
 operator|*
 name|width
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1516,31 +1466,25 @@ name|width
 expr_stmt|;
 name|dst_row
 operator|=
-name|g_malloc
-argument_list|(
-name|width
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
+argument_list|,
+name|width
 argument_list|)
-argument_list|)
-expr_stmt|;
+operator|,
 name|sort
 operator|=
-name|g_malloc
-argument_list|(
-name|size
-operator|*
-name|size
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
-argument_list|)
+argument_list|,
+name|size
+operator|*
+name|size
 argument_list|)
 expr_stmt|;
-comment|/*   * Pre-load the first "size" rows for the filter...   */
+comment|/*    * Pre-load the first "size" rows for the filter...    */
 if|if
 condition|(
 name|sel_height
@@ -1587,7 +1531,7 @@ name|sel_y1
 operator|+
 name|rowcount
 expr_stmt|;
-comment|/*   * Despeckle...   */
+comment|/*    * Despeckle...    */
 for|for
 control|(
 name|y
@@ -1617,7 +1561,7 @@ operator|<
 name|sel_y2
 condition|)
 block|{
-comment|/*       * Load the next block of rows...       */
+comment|/* 	   * Load the next block of rows... 	   */
 name|rowcount
 operator|-=
 name|gimp_tile_height
@@ -1680,7 +1624,7 @@ name|max_row
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/*     * Now find the median pixels and save the results...     */
+comment|/*        * Now find the median pixels and save the results...        */
 name|radius
 operator|=
 name|despeckle_radius
@@ -1914,7 +1858,7 @@ operator|++
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/* 	* Shell sort the color values... 	*/
+comment|/* 	       * Shell sort the color values... 	       */
 name|sort_count
 operator|=
 name|sort_ptr
@@ -2022,7 +1966,7 @@ name|t
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/* 	  * Assign the median value... 	  */
+comment|/* 		   * Assign the median value... 		   */
 name|t
 operator|=
 name|sort_count
@@ -2067,7 +2011,7 @@ index|[
 name|t
 index|]
 expr_stmt|;
-comment|/* 	  * Save the change to the source image too if the user wants the 	  * recursive method... 	  */
+comment|/* 		   * Save the change to the source image too if the user 		   * wants the recursive method... 		   */
 if|if
 condition|(
 name|filter_type
@@ -2099,7 +2043,7 @@ index|]
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/* 	* Check the histogram and adjust the radius accordingly... 	*/
+comment|/* 	       * Check the histogram and adjust the radius accordingly... 	       */
 if|if
 condition|(
 name|filter_type
@@ -2187,7 +2131,7 @@ argument_list|)
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * OK, we're done.  Free all memory used...   */
+comment|/*    * OK, we're done.  Free all memory used...    */
 name|g_free
 argument_list|(
 name|src_rows
@@ -2211,7 +2155,7 @@ argument_list|(
 name|sort
 argument_list|)
 expr_stmt|;
-comment|/*   * Update the screen...   */
+comment|/*    * Update the screen...    */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
@@ -2460,11 +2404,11 @@ argument_list|(
 literal|"Cancel"
 argument_list|)
 argument_list|,
-name|dialog_cancel_callback
+name|gtk_widget_destroy
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|1
 argument_list|,
 name|NULL
 argument_list|,
@@ -2491,7 +2435,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|dialog_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -2509,7 +2453,27 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2565,16 +2529,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|ptable
-argument_list|)
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2743,10 +2697,10 @@ name|hscroll_data
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|preview_scroll_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2837,10 +2791,10 @@ name|vscroll_data
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|preview_scroll_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2929,7 +2883,7 @@ argument_list|,
 name|sel_height
 argument_list|)
 expr_stmt|;
-comment|/*   * Filter type controls...   */
+comment|/*    * Filter type controls...    */
 name|ftable
 operator|=
 name|gtk_table_new
@@ -3049,10 +3003,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|dialog_adaptive_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3129,10 +3083,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|dialog_recursive_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3142,12 +3096,12 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/*   * Box size (radius) control...   */
+comment|/*    * Box size (radius) control...    */
 name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Radius"
+literal|"Radius:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -3165,12 +3119,12 @@ argument_list|,
 name|MAX_RADIUS
 argument_list|)
 expr_stmt|;
-comment|/*   * Black level control...   */
+comment|/*    * Black level control...    */
 name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Black Level"
+literal|"Black Level:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -3188,12 +3142,12 @@ argument_list|,
 literal|256
 argument_list|)
 expr_stmt|;
-comment|/*   * White level control...   */
+comment|/*    * White level control...    */
 name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"White Level"
+literal|"White Level:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -3211,7 +3165,7 @@ argument_list|,
 literal|256
 argument_list|)
 expr_stmt|;
-comment|/*   * Show it and wait for the user to do something...   */
+comment|/*    * Show it and wait for the user to do something...    */
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -3226,15 +3180,13 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-comment|/*   * Free the preview data...   */
+comment|/*    * Free the preview data...    */
 name|preview_exit
 argument_list|()
 expr_stmt|;
-comment|/*   * Return ok/cancel...   */
+comment|/*    * Return ok/cancel...    */
 return|return
-operator|(
 name|run_filter
-operator|)
 return|;
 block|}
 end_function
@@ -3252,14 +3204,14 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|size
 decl_stmt|,
 comment|/* Size of filter box */
 name|width
 decl_stmt|;
 comment|/* Byte width of the image */
-comment|/*   * Setup for preview filter...   */
+comment|/*    * Setup for preview filter...    */
 name|size
 operator|=
 name|despeckle_radius
@@ -3297,46 +3249,40 @@ name|preview_sort
 argument_list|)
 expr_stmt|;
 block|}
-empty_stmt|;
 name|preview_src
 operator|=
-name|g_malloc
-argument_list|(
-name|width
+operator|(
+name|guchar
 operator|*
-name|preview_height
-operator|*
-sizeof|sizeof
+operator|)
+name|g_new
 argument_list|(
 name|guchar
 operator|*
-argument_list|)
+argument_list|,
+name|width
+operator|*
+name|preview_height
 argument_list|)
 expr_stmt|;
 name|preview_dst
 operator|=
-name|g_malloc
-argument_list|(
-name|width
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
-argument_list|)
+argument_list|,
+name|width
 argument_list|)
 expr_stmt|;
 name|preview_sort
 operator|=
-name|g_malloc
-argument_list|(
-name|size
-operator|*
-name|size
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
-argument_list|)
+argument_list|,
+name|size
+operator|*
+name|size
 argument_list|)
 expr_stmt|;
 block|}
@@ -3435,7 +3381,7 @@ modifier|*
 name|dst_ptr
 decl_stmt|;
 comment|/* Current destination pixel */
-name|int
+name|gint
 name|sort_count
 decl_stmt|,
 comment|/* Number of soft values */
@@ -3514,7 +3460,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*   * Pre-load the preview rectangle...   */
+comment|/*    * Pre-load the preview rectangle...    */
 name|size
 operator|=
 name|despeckle_radius
@@ -3545,7 +3491,7 @@ argument_list|,
 name|preview_height
 argument_list|)
 expr_stmt|;
-comment|/*   * Despeckle...   */
+comment|/*    * Despeckle...    */
 for|for
 control|(
 name|y
@@ -3560,7 +3506,7 @@ name|y
 operator|++
 control|)
 block|{
-comment|/*     * Now find the median pixels and save the results...     */
+comment|/*        * Now find the median pixels and save the results...        */
 name|radius
 operator|=
 name|despeckle_radius
@@ -3753,7 +3699,7 @@ operator|++
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/* 	* Shell preview_sort the color values... 	*/
+comment|/* 	       * Shell preview_sort the color values... 	       */
 name|sort_count
 operator|=
 name|sort_ptr
@@ -3861,7 +3807,7 @@ name|t
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/* 	  * Assign the median value... 	  */
+comment|/* 		   * Assign the median value... 		   */
 name|t
 operator|=
 name|sort_count
@@ -3902,7 +3848,7 @@ index|[
 name|t
 index|]
 expr_stmt|;
-comment|/* 	  * Save the change to the source image too if the user wants the 	  * recursive method... 	  */
+comment|/* 		   * Save the change to the source image too if the user 		   * wants the recursive method... 		   */
 if|if
 condition|(
 name|filter_type
@@ -3923,7 +3869,7 @@ name|dst_ptr
 expr_stmt|;
 block|}
 empty_stmt|;
-comment|/* 	* Check the histogram and adjust the radius accordingly... 	*/
+comment|/* 	       * Check the histogram and adjust the radius accordingly... 	       */
 if|if
 condition|(
 name|filter_type
@@ -3968,7 +3914,7 @@ block|}
 empty_stmt|;
 block|}
 empty_stmt|;
-comment|/*     * Draw this row...     */
+comment|/*        * Draw this row...        */
 name|rgb_ptr
 operator|=
 name|rgb
@@ -4092,23 +4038,27 @@ condition|(
 operator|(
 name|y
 operator|&
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|^
 operator|(
 name|x
 operator|&
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 condition|)
 name|check
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 else|else
 name|check
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 if|if
 condition|(
@@ -4266,23 +4216,27 @@ condition|(
 operator|(
 name|y
 operator|&
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|^
 operator|(
 name|x
 operator|&
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 condition|)
 name|check
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 else|else
 name|check
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 if|if
 condition|(
@@ -4396,7 +4350,7 @@ block|}
 empty_stmt|;
 block|}
 empty_stmt|;
-comment|/*   * Update the screen...   */
+comment|/*    * Update the screen...    */
 for|for
 control|(
 name|y
@@ -4536,14 +4490,14 @@ modifier|*
 name|scale_data
 decl_stmt|;
 comment|/* Scale data */
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
 index|]
 decl_stmt|;
 comment|/* String buffer */
-comment|/*   * Label...   */
+comment|/*    * Label...    */
 name|label
 operator|=
 name|gtk_label_new
@@ -4558,9 +4512,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
-argument_list|,
 literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4583,7 +4537,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -4593,7 +4547,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/*   * Scale...   */
+comment|/*    * Scale...    */
 name|scale_data
 operator|=
 name|gtk_adjustment_new
@@ -4645,7 +4599,8 @@ name|scale
 argument_list|,
 name|SCALE_WIDTH
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4700,7 +4655,7 @@ argument_list|(
 name|scale
 argument_list|)
 expr_stmt|;
-comment|/*   * Text entry...   */
+comment|/*    * Text entry...    */
 name|entry
 operator|=
 name|gtk_entry_new
@@ -4729,12 +4684,18 @@ name|entry
 argument_list|,
 name|ENTRY_WIDTH
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -4792,7 +4753,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -4831,7 +4792,7 @@ modifier|*
 name|entry
 decl_stmt|;
 comment|/* Text entry widget */
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -4865,9 +4826,14 @@ name|adjustment
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -5166,67 +5132,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * 'dialog_cancel_callback()' - Cancel the filter...  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_cancel_callback (GtkWidget * widget,gpointer data)
-name|dialog_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-comment|/* I - Cancel button widget */
-name|gpointer
-name|data
-parameter_list|)
-comment|/* I - Dialog window */
-block|{
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * 'dialog_close_callback()' - Exit the filter dialog application.  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_close_callback (GtkWidget * widget,gpointer data)
-name|dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-comment|/* I - Dialog window */
-name|gpointer
-name|data
-parameter_list|)
-comment|/* I - Dialog window */
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * End of "$Id$".  */
-end_comment
 
 end_unit
 

@@ -4,10 +4,6 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * Compile with (on Linux):  * gcc -I/usr/local/include -I/usr/local/include/glib -o apply_lens apply_lens.c -L/usr/local/lib -L/usr/X11/lib -lgtk -lgdk -lgimp -lglib -lXext -lX11 -lm  *  */
-end_comment
-
-begin_comment
 comment|/* Version 0.1:  *   * First release. No known serious bugs, and basically does what you want.  * All fancy features postponed until the next release, though. :)  *  */
 end_comment
 
@@ -42,13 +38,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -84,18 +80,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -156,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a47706a0108
+DECL|struct|__anon2a2301ad0108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -201,7 +197,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a47706a0208
+DECL|struct|__anon2a2301ad0208
 block|{
 DECL|member|run
 name|gint
@@ -380,21 +376,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -743,7 +739,8 @@ name|gfloat
 name|ri1
 init|=
 literal|1.0
-decl_stmt|,
+decl_stmt|;
+name|gfloat
 name|ri2
 init|=
 name|lvals
@@ -1682,26 +1679,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|lens_close_callback (GtkWidget * widget,gpointer data)
-name|lens_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|lens_ok_callback (GtkWidget * widget,gpointer data)
 name|lens_ok_callback
 parameter_list|(
@@ -1744,7 +1721,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|int
+name|gint
 modifier|*
 name|toggle_val
 decl_stmt|;
@@ -2006,7 +1983,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|lens_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -2032,14 +2009,14 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2069,17 +2046,17 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2100,7 +2077,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Keep original surroundings"
+literal|"Keep Original Surroundings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2183,12 +2160,12 @@ name|INDEXED_IMAGE
 condition|?
 name|_
 argument_list|(
-literal|"Set surroundings to index 0"
+literal|"Set Surroundings to Index 0"
 argument_list|)
 else|:
 name|_
 argument_list|(
-literal|"Set surroundings to background color"
+literal|"Set Surroundings to Background Bolor"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2284,7 +2261,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Make surroundings transparent"
+literal|"Make Surroundings Transparent"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2358,7 +2335,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2370,9 +2347,9 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -2383,7 +2360,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Lens refraction index: "
+literal|"Lens Refraction Index:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2396,7 +2373,7 @@ argument_list|)
 argument_list|,
 name|label
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,

@@ -38,12 +38,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -57,6 +51,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
@@ -179,17 +179,6 @@ define|#
 directive|define
 name|MIDDLE
 value|127
-end_define
-
-begin_define
-DECL|macro|ROUND (x)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) ((x) + 0.5))
 end_define
 
 begin_define
@@ -425,8 +414,7 @@ struct|struct
 name|_BenderValues
 block|{
 DECL|member|curve
-name|unsigned
-name|char
+name|guchar
 name|curve
 index|[
 literal|2
@@ -607,10 +595,9 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-comment|/* 0.0<= points<= 1.0 */
+comment|/*  0.0<= points<= 1.0 */
 DECL|member|curve
-name|unsigned
-name|char
+name|guchar
 name|curve
 index|[
 literal|2
@@ -619,7 +606,7 @@ index|[
 literal|256
 index|]
 decl_stmt|;
-comment|/* 0<= curve<= 255 */
+comment|/*  0<= curve<= 255 */
 DECL|member|curve_ptr
 name|gint32
 modifier|*
@@ -628,7 +615,7 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-comment|/* 0<= curve_ptr<= src_drawable_width                                         * both arrays are allocated dynamic, depending on drawable width                                        */
+comment|/*  0<= curve_ptr<= src_drawable_width  				   *  both arrays are allocated dynamic, 				   *  depending on drawable width 				   */
 DECL|member|min2
 name|gint32
 name|min2
@@ -651,7 +638,7 @@ literal|2
 index|]
 decl_stmt|;
 DECL|member|show_progress
-name|int
+name|gint
 name|show_progress
 decl_stmt|;
 DECL|member|smoothing
@@ -761,16 +748,16 @@ struct|struct
 name|_MenuItem
 block|{
 DECL|member|label
-name|char
+name|gchar
 modifier|*
 name|label
 decl_stmt|;
 DECL|member|unused_accelerator_key
-name|char
+name|gchar
 name|unused_accelerator_key
 decl_stmt|;
 DECL|member|unused_accelerator_mods
-name|int
+name|gint
 name|unused_accelerator_mods
 decl_stmt|;
 DECL|member|callback
@@ -796,55 +783,9 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|ActionCallback
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|ActionCallback
-function_decl|)
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
-DECL|struct|__anon296209510108
 typedef|typedef
 struct|struct
-block|{
-DECL|member|label
-name|char
-modifier|*
-name|label
-decl_stmt|;
-DECL|member|callback
-name|ActionCallback
-name|callback
-decl_stmt|;
-DECL|member|user_data
-name|gpointer
-name|user_data
-decl_stmt|;
-DECL|member|widget
-name|GtkWidget
-modifier|*
-name|widget
-decl_stmt|;
-DECL|typedef|ActionAreaItem
-block|}
-name|ActionAreaItem
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|struct|__anon296209510208
-typedef|typedef
-struct|struct
+DECL|struct|__anon29076b680108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -928,9 +869,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296209510308
 typedef|typedef
 struct|struct
+DECL|struct|__anon29076b680208
 block|{
 DECL|member|y
 name|gint32
@@ -968,24 +909,21 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
-comment|/* number of parameters passed in */
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* parameters passed in */
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* number of parameters returned */
 name|GParam
 modifier|*
 modifier|*
@@ -993,10 +931,6 @@ name|return_vals
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* parameters to be returned */
-end_comment
 
 begin_function_decl
 specifier|static

@@ -25,12 +25,6 @@ directive|include
 file|<stdlib.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -63,13 +57,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
@@ -123,9 +123,9 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2a1926e20108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2acce7ba0108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -162,9 +162,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a1926e20208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2acce7ba0208
 block|{
 DECL|member|amount_x
 name|GtkWidget
@@ -371,21 +371,6 @@ name|displace_map_y_callback
 parameter_list|(
 name|gint32
 name|id
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|displace_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -1315,7 +1300,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|displace_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -1342,14 +1327,14 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1384,14 +1369,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1404,52 +1389,24 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacing
+name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|0
-argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacing
+name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_col_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_col_spacing
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|1
-argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/*  on_x, on_y  */
@@ -1459,7 +1416,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"X Displacement: "
+literal|"X Displacement:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1532,7 +1489,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Y Displacement: "
+literal|"Y Displacement:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1644,9 +1601,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%f"
 argument_list|,
@@ -1745,9 +1707,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%f"
 argument_list|,
@@ -1970,7 +1937,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -4017,10 +3984,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* bilinear */
-end_comment
-
-begin_comment
 comment|/*  Displace interface functions  */
 end_comment
 
@@ -4132,26 +4095,6 @@ operator|.
 name|displace_map_y
 operator|=
 name|id
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|displace_close_callback (GtkWidget * widget,gpointer data)
-name|displace_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
 expr_stmt|;
 block|}
 end_function

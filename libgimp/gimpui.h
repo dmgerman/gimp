@@ -82,6 +82,12 @@ directive|include
 file|"libgimp/gimpunitmenu.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpwidgets.h"
+end_include
+
 begin_endif
 endif|#
 directive|endif

@@ -65,13 +65,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -81,9 +81,9 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2b86b0f00103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2b45259d0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -112,7 +112,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|channel_labels
-name|char
+name|gchar
 modifier|*
 specifier|const
 name|channel_labels
@@ -149,7 +149,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|bmode_labels
-name|char
+name|gchar
 modifier|*
 specifier|const
 name|bmode_labels
@@ -193,18 +193,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -220,7 +220,9 @@ begin_function_decl
 specifier|static
 name|gint
 name|dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -299,9 +301,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b86b0f00208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2b45259d0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -455,8 +457,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2b86b0f00308
 struct|struct
+DECL|struct|__anon2b45259d0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -526,7 +528,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -558,7 +562,7 @@ block|,
 literal|"Input drawable"
 block|}
 block|,
-comment|/*		{PARAM_FLOATARRAY, "matrix", "The 5x5 convolution matrix"}, 		{PARAM_INT32, "alpha_alg", "Enable weighting by alpha channel"}, 		{PARAM_FLOAT, "divisor", "Divisor"}, 		{PARAM_FLOAT, "offset", "Offset"},  		{PARAM_INT32ARRAY, "channels", "Mask of the channels to be filtered"}, 		{PARAM_INT32, "bmode", "Mode for treating image borders"} 		*/
+comment|/*	PARAM_FLOATARRAY, "matrix", "The 5x5 convolution matrix"}, 	{PARAM_INT32, "alpha_alg", "Enable weighting by alpha channel"}, 	{PARAM_FLOAT, "divisor", "Divisor"}, 	{PARAM_FLOAT, "offset", "Offset"},  	{PARAM_INT32ARRAY, "channels", "Mask of the channels to be filtered"}, 	{PARAM_INT32, "bmode", "Mode for treating image borders"}     */
 block|}
 decl_stmt|;
 specifier|static
@@ -638,23 +642,23 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
-name|n_params
+name|gint
+name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -742,7 +746,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|n_params
+name|nparams
 operator|!=
 literal|9
 condition|)
@@ -910,7 +914,7 @@ operator|==
 name|RUN_INTERACTIVE
 condition|)
 block|{
-comment|/* Oh boy. We get to do a dialog box, because we can't really expect the 			 * user to set us up with the right values using gdb. 			 */
+comment|/*  Oh boy. We get to do a dialog box, because we can't really 	   *  expect the user to set us up with the right values using gdb. 	   */
 name|check_config
 argument_list|()
 expr_stmt|;
@@ -1047,13 +1051,13 @@ block|}
 end_function
 
 begin_comment
-comment|/* A generic wrapper to gimp_pixel_rgn_get_row which handles unlimited  * wrapping or gives you transparent regions outside the image */
+comment|/*  A generic wrapper to gimp_pixel_rgn_get_row which handles unlimited  *  wrapping or gives you transparent regions outside the image  */
 end_comment
 
 begin_function
-DECL|function|my_get_row (GPixelRgn * PR,guchar * dest,int x,int y,int w)
 specifier|static
 name|void
+DECL|function|my_get_row (GPixelRgn * PR,guchar * dest,int x,int y,int w)
 name|my_get_row
 parameter_list|(
 name|GPixelRgn
@@ -1602,8 +1606,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|calcmatrix (guchar ** srcrow,gint xoff,int i)
+specifier|static
 name|gfloat
+DECL|function|calcmatrix (guchar ** srcrow,gint xoff,gint i)
 name|calcmatrix
 parameter_list|(
 name|guchar
@@ -1614,7 +1619,7 @@ parameter_list|,
 name|gint
 name|xoff
 parameter_list|,
-name|int
+name|gint
 name|i
 parameter_list|)
 block|{
@@ -1852,7 +1857,7 @@ name|sum
 operator|=
 literal|0
 expr_stmt|;
-comment|/*		    sum=srcrow[2][xoff+2*bytes]*my_config.matrix[2][2];*/
+comment|/* sum = srcrow[2][xoff + 2 * bytes] * my_config.matrix[2][2];*/
 block|}
 name|sum
 operator|+=
@@ -1867,9 +1872,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|doit (void)
 specifier|static
 name|void
+DECL|function|doit (void)
 name|doit
 parameter_list|(
 name|void
@@ -1924,7 +1929,7 @@ index|[
 literal|4
 index|]
 decl_stmt|;
-comment|/* Get the input area. This is the bounding box of the selection in 	 *  the image (or the entire image if there is no selection). Only 	 *  operating on the input area is simply an optimization. It doesn't 	 *  need to be done for correct operation. (It simply makes it go 	 *  faster, since fewer pixels need to be operated on). 	 */
+comment|/* Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -1956,7 +1961,7 @@ name|sy2
 operator|-
 name|sy1
 expr_stmt|;
-comment|/* Get the size of the input image. (This will/must be the same 	 *  as the size of the output image. 	 */
+comment|/* Get the size of the input image. (This will/must be the same    *  as the size of the output image.    */
 name|width
 operator|=
 name|drawable
@@ -2066,12 +2071,10 @@ index|[
 name|i
 index|]
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|w
 operator|+
@@ -2099,15 +2102,11 @@ index|[
 name|i
 index|]
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
-operator|(
+name|guchar
+argument_list|,
 name|w
-operator|)
 operator|*
 name|bytes
 argument_list|)
@@ -2560,8 +2559,9 @@ comment|/***************************************************  * GUI stuff  */
 end_comment
 
 begin_function
-DECL|function|fprint (gfloat f,gchar * buffer)
+specifier|static
 name|void
+DECL|function|fprint (gfloat f,gchar * buffer)
 name|fprint
 parameter_list|(
 name|gfloat
@@ -2649,9 +2649,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|redraw_matrix (void)
 specifier|static
 name|void
+DECL|function|redraw_matrix (void)
 name|redraw_matrix
 parameter_list|(
 name|void
@@ -2733,9 +2733,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|redraw_channels (void)
 specifier|static
 name|void
+DECL|function|redraw_channels (void)
 name|redraw_channels
 parameter_list|(
 name|void
@@ -2783,9 +2783,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|redraw_autoset (void)
 specifier|static
 name|void
+DECL|function|redraw_autoset (void)
 name|redraw_autoset
 parameter_list|(
 name|void
@@ -2809,9 +2809,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|redraw_alpha_alg (void)
 specifier|static
 name|void
+DECL|function|redraw_alpha_alg (void)
 name|redraw_alpha_alg
 parameter_list|(
 name|void
@@ -2837,9 +2837,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|redraw_off_and_div (void)
 specifier|static
 name|void
+DECL|function|redraw_off_and_div (void)
 name|redraw_off_and_div
 parameter_list|(
 name|void
@@ -2897,9 +2897,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|redraw_bmode (void)
 specifier|static
 name|void
+DECL|function|redraw_bmode (void)
 name|redraw_bmode
 parameter_list|(
 name|void
@@ -2926,9 +2926,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|redraw_all (void)
 specifier|static
 name|void
+DECL|function|redraw_all (void)
 name|redraw_all
 parameter_list|(
 name|void
@@ -2956,9 +2956,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_matrix (void)
 specifier|static
 name|void
+DECL|function|check_matrix (void)
 name|check_matrix
 parameter_list|(
 name|void
@@ -3094,7 +3094,7 @@ name|offset
 operator|=
 literal|128
 expr_stmt|;
-comment|/* The sum is 0, so this is probably some sort of 			 * embossing filter. Should divisor be autoset to 1 			 * or left undefined, ie. for the user to define? */
+comment|/* The sum is 0, so this is probably some sort of 	   * embossing filter. Should divisor be autoset to 1 	   * or left undefined, ie. for the user to define? */
 name|my_config
 operator|.
 name|divisor
@@ -3106,45 +3106,14 @@ name|redraw_off_and_div
 argument_list|()
 expr_stmt|;
 block|}
-comment|/*	gtk_widget_set_sensitive(my_widgets.ok,valid); */
+comment|/* gtk_widget_set_sensitive(my_widgets.ok,valid); */
 block|}
 end_function
 
 begin_function
-DECL|function|close_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
-name|close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-operator|(
-name|void
-operator|)
-name|widget
-expr_stmt|;
-comment|/* Shut up warnings about unused parameters. */
-operator|(
-name|void
-operator|)
-name|data
-expr_stmt|;
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|ok_callback (GtkWidget * widget,gpointer data)
-specifier|static
-name|void
 name|ok_callback
 parameter_list|(
 name|GtkWidget
@@ -3155,12 +3124,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-operator|(
-name|void
-operator|)
-name|widget
-expr_stmt|;
-comment|/* Shut up warnings about unused parameters. */
 name|run_flag
 operator|=
 literal|1
@@ -3181,9 +3144,9 @@ comment|/* Checks that the configuration is valid for the image type */
 end_comment
 
 begin_function
-DECL|function|check_config (void)
 specifier|static
 name|void
+DECL|function|check_config (void)
 name|check_config
 parameter_list|(
 name|void
@@ -3316,9 +3279,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|defaults_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|defaults_callback (GtkWidget * widget,gpointer data)
 name|defaults_callback
 parameter_list|(
 name|GtkWidget
@@ -3329,17 +3292,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-operator|(
-name|void
-operator|)
-name|widget
-expr_stmt|;
-comment|/* Shut up warnings about unused parameters. */
-operator|(
-name|void
-operator|)
-name|data
-expr_stmt|;
 name|my_config
 operator|=
 name|default_config
@@ -3354,9 +3306,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|entry_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|entry_callback (GtkWidget * widget,gpointer data)
 name|entry_callback
 parameter_list|(
 name|GtkWidget
@@ -3394,7 +3346,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|check_matrix();
+block|check_matrix ();
 else|#
 directive|else
 if|if
@@ -3440,9 +3392,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|my_toggle_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|my_toggle_callback (GtkWidget * widget,gpointer data)
 name|my_toggle_callback
 parameter_list|(
 name|GtkWidget
@@ -3569,9 +3521,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|my_bmode_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|my_bmode_callback (GtkWidget * widget,gpointer data)
 name|my_bmode_callback
 parameter_list|(
 name|GtkWidget
@@ -3582,17 +3534,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-operator|(
-name|void
-operator|)
-name|widget
-expr_stmt|;
-comment|/* Shut up warnings about unused parameters. */
-operator|(
-name|void
-operator|)
-name|data
-expr_stmt|;
 name|my_config
 operator|.
 name|bmode
@@ -3608,9 +3549,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog (void)
 specifier|static
 name|gint
+DECL|function|dialog (void)
 name|dialog
 parameter_list|(
 name|void
@@ -3622,7 +3563,11 @@ name|dlg
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|button
+name|main_hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3634,11 +3579,7 @@ name|entry
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|table
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|outbox
+name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3811,20 +3752,29 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Outbox */
-name|outbox
+name|main_hbox
 operator|=
 name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|main_hbox
+argument_list|)
+argument_list|,
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3839,7 +3789,7 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|outbox
+name|main_hbox
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3848,33 +3798,31 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* Outbox:YABox */
 name|yetanotherbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|outbox
+name|main_hbox
 argument_list|)
 argument_list|,
 name|yetanotherbox
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* Outbox:YABox:Frame */
 name|frame
 operator|=
 name|gtk_frame_new
@@ -3895,16 +3843,6 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -3914,21 +3852,30 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* Outbox:YABox:Frame:Inbox */
 name|inbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|inbox
+argument_list|)
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3941,9 +3888,6 @@ argument_list|,
 name|inbox
 argument_list|)
 expr_stmt|;
-comment|/* The main table */
-comment|/* Set its size (y, x) */
-comment|/* Outbox:YABox:Frame:Inbox:Table */
 name|table
 operator|=
 name|gtk_table_new
@@ -3952,32 +3896,7 @@ literal|5
 argument_list|,
 literal|5
 argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|inbox
-argument_list|)
-argument_list|,
-name|table
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -3987,7 +3906,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -3997,10 +3916,25 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
-comment|/* The 5x5 matrix entry fields */
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|inbox
+argument_list|)
+argument_list|,
+name|table
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|y
@@ -4043,6 +3977,15 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|entry
+argument_list|,
+literal|40
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
@@ -4077,15 +4020,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|entry
-argument_list|,
-literal|40
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
@@ -4105,10 +4039,10 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|entry_callback
+argument_list|)
 argument_list|,
 operator|&
 name|my_config
@@ -4133,25 +4067,13 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/* The remaining two parameters */
-comment|/* Outbox:YABox:Frame:Inbox:Box */
 name|box
 operator|=
 name|gtk_hbox_new
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|box
-argument_list|)
-argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4163,22 +4085,32 @@ argument_list|)
 argument_list|,
 name|box
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* divisor */
-name|label
+name|table
 operator|=
-name|gtk_label_new
+name|gtk_table_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Divisor"
+literal|1
+argument_list|,
+literal|2
+argument_list|,
+name|FALSE
 argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4188,13 +4120,53 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
-name|label
+name|table
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Divisor:"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|label
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|,
+literal|0
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4211,6 +4183,84 @@ operator|=
 name|gtk_entry_new
 argument_list|()
 expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|entry
+argument_list|,
+literal|40
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|entry
+argument_list|,
+literal|1
+argument_list|,
+literal|2
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+literal|"changed"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|entry_callback
+argument_list|)
+argument_list|,
+operator|&
+name|my_config
+operator|.
+name|divisor
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|table
+argument_list|)
+expr_stmt|;
+name|table
+operator|=
+name|gtk_table_new
+argument_list|(
+literal|1
+argument_list|,
+literal|2
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -4218,14 +4268,68 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
-name|entry
+name|table
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
+expr_stmt|;
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Offset:"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|label
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
+name|my_widgets
+operator|.
+name|offset
+operator|=
+name|entry
+operator|=
+name|gtk_entry_new
+argument_list|()
 expr_stmt|;
 name|gtk_widget_set_usize
 argument_list|(
@@ -4234,6 +4338,24 @@ argument_list|,
 literal|40
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|entry
+argument_list|,
+literal|1
+argument_list|,
+literal|2
+argument_list|,
+literal|0
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4253,103 +4375,17 @@ argument_list|,
 operator|&
 name|my_config
 operator|.
-name|divisor
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|entry
-argument_list|)
-expr_stmt|;
-comment|/* Offset */
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Offset"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|box
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|my_widgets
-operator|.
-name|offset
-operator|=
-name|entry
-operator|=
-name|gtk_entry_new
-argument_list|()
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|box
-argument_list|)
-argument_list|,
-name|entry
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|entry
-argument_list|,
-literal|40
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|entry
-argument_list|)
-argument_list|,
-literal|"changed"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|entry_callback
-argument_list|,
-operator|&
-name|my_config
-operator|.
 name|offset
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|entry
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|table
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4367,14 +4403,13 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/* Outbox:YABox:Box */
 name|box
 operator|=
-name|gtk_hbox_new
+name|gtk_vbox_new
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4386,9 +4421,9 @@ argument_list|)
 argument_list|,
 name|box
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4448,7 +4483,6 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/* Alpha-weighting */
 name|my_widgets
 operator|.
 name|alpha_alg
@@ -4476,7 +4510,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|button
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4490,7 +4524,7 @@ name|button
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4530,21 +4564,20 @@ argument_list|(
 name|yetanotherbox
 argument_list|)
 expr_stmt|;
-comment|/* Outbox:Inbox */
 name|inbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|outbox
+name|main_hbox
 argument_list|)
 argument_list|,
 name|inbox
@@ -4556,8 +4589,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* Wrap-modes */
-comment|/* OutBox:Inbox:Frame */
 name|frame
 operator|=
 name|gtk_frame_new
@@ -4578,16 +4609,6 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -4597,21 +4618,30 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* OutBox:Inbox:Frame:Box */
 name|box
 operator|=
 name|gtk_vbox_new
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4683,9 +4713,9 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4719,7 +4749,6 @@ literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Gaahh! We cast an int to a gpointer! So sue me. 		 * The +1 should protect against some null pointers */
 block|}
 name|gtk_widget_show
 argument_list|(
@@ -4731,7 +4760,6 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/* OutBox:Inbox:Frame */
 name|frame
 operator|=
 name|gtk_frame_new
@@ -4752,16 +4780,6 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -4771,21 +4789,30 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* OutBox:Inbox:Frame:Box */
 name|box
 operator|=
 name|gtk_vbox_new
 argument_list|(
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4847,7 +4874,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|button
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4882,9 +4909,9 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4912,7 +4939,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|outbox
+name|main_hbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -75,25 +75,25 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<libgimp/gimplimits.h>
 end_include
 
 begin_include
@@ -146,37 +146,13 @@ name|ENTRY_WIDTH
 value|60
 end_define
 
-begin_define
-DECL|macro|CHECK_SIZE
-define|#
-directive|define
-name|CHECK_SIZE
-value|8
-end_define
-
-begin_define
-DECL|macro|CHECK_DARK
-define|#
-directive|define
-name|CHECK_DARK
-value|((int) (1.0 / 3.0 * 255))
-end_define
-
-begin_define
-DECL|macro|CHECK_LIGHT
-define|#
-directive|define
-name|CHECK_LIGHT
-value|((int) (2.0 / 3.0 * 255))
-end_define
-
 begin_comment
 comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon28b1ba9b0103
 enum|enum
+DECL|enum|__anon291169160103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -193,8 +169,8 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28b1ba9b0203
 enum|enum
+DECL|enum|__anon291169160203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -211,9 +187,9 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28b1ba9b0308
 typedef|typedef
 struct|struct
+DECL|struct|__anon291169160308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -266,9 +242,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b1ba9b0408
 typedef|typedef
 struct|struct
+DECL|struct|__anon291169160408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -311,9 +287,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b1ba9b0508
 typedef|typedef
 struct|struct
+DECL|struct|__anon291169160508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -440,18 +416,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -944,21 +920,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/***** Variables *****/
 end_comment
@@ -983,10 +944,6 @@ comment|/* run_proc */
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/* PLUG_IN_INFO */
-end_comment
 
 begin_decl_stmt
 DECL|variable|bmvals
@@ -1031,10 +988,6 @@ comment|/* type */
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/* bmvals */
-end_comment
 
 begin_decl_stmt
 DECL|variable|bmint
@@ -1122,10 +1075,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* bmint */
-end_comment
-
 begin_decl_stmt
 DECL|variable|map_types
 specifier|static
@@ -1152,10 +1101,6 @@ argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/* map_types */
-end_comment
 
 begin_decl_stmt
 DECL|variable|drawable
@@ -1207,19 +1152,11 @@ begin_comment
 comment|/***** Functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
 argument_list|()
 end_macro
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -1348,7 +1285,6 @@ literal|"Type of map (LINEAR (0), SPHERICAL (1), SINUOSIDAL (2))"
 block|}
 block|}
 decl_stmt|;
-comment|/* args */
 specifier|static
 name|GParamDef
 modifier|*
@@ -1426,32 +1362,24 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* query */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -1791,7 +1719,6 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
-comment|/* if */
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -1809,7 +1736,6 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* switch */
 comment|/* Bumpmap the image */
 if|if
 condition|(
@@ -1892,7 +1818,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
 else|else
 name|status
@@ -1917,14 +1842,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* run */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -1994,7 +1911,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|printf("bumpmap: waiting... (pid %d)\n", getpid()); 	kill(getpid(), SIGSTOP);
+block|g_print ("bumpmap: waiting... (pid %d)\n", getpid ());   kill (getpid (), SIGSTOP);
 endif|#
 directive|endif
 name|gimp_progress_init
@@ -2122,72 +2039,57 @@ expr_stmt|;
 comment|/* Initialize row buffers */
 name|bm_row1
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bm_width
 operator|*
 name|bm_bpp
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|bm_row2
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bm_width
 operator|*
 name|bm_bpp
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|bm_row3
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bm_width
 operator|*
 name|bm_bpp
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|src_row
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|sel_width
 operator|*
 name|img_bpp
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|dest_row
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|sel_width
 operator|*
 name|img_bpp
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Initialize pixel regions */
@@ -2488,7 +2390,6 @@ name|sel_height
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 comment|/* Done */
 name|g_free
 argument_list|(
@@ -2557,14 +2458,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* bumpmap */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -2822,7 +2715,6 @@ operator|=
 name|i
 expr_stmt|;
 block|}
-comment|/* switch */
 if|if
 condition|(
 name|bmvals
@@ -2846,17 +2738,8 @@ name|i
 index|]
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
 end_function
-
-begin_comment
-comment|/* bumpmap_init_params */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -3196,9 +3079,7 @@ operator|/
 literal|255
 expr_stmt|;
 block|}
-comment|/* else */
 block|}
-comment|/* else */
 comment|/* Paint */
 if|if
 condition|(
@@ -3248,7 +3129,6 @@ name|result
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 else|else
 for|for
 control|(
@@ -3320,17 +3200,8 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
 end_function
-
-begin_comment
-comment|/* bumpmap_row */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -3493,7 +3364,6 @@ operator|+
 name|has_alpha
 expr_stmt|;
 block|}
-comment|/* for */
 else|else
 for|for
 control|(
@@ -3557,17 +3427,8 @@ operator|+
 name|has_alpha
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
 end_function
-
-begin_comment
-comment|/* bumpmap_convert_row */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -3593,6 +3454,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|right_vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -3636,7 +3501,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|printf ("bumpmap: waiting... (pid %d)\n", getpid ()); 	kill (getpid (), SIGSTOP);
+block|g_print  ("bumpmap: waiting... (pid %d)\n", getpid ());   kill (getpid (), SIGSTOP);
 endif|#
 directive|endif
 name|argc
@@ -3736,7 +3601,6 @@ name|gtk_preview_get_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/* Dialog */
 name|dialog
 operator|=
 name|gimp_dialog_new
@@ -3808,7 +3672,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|dialog_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -3872,58 +3736,6 @@ name|top_table
 argument_list|)
 expr_stmt|;
 comment|/* Preview */
-name|table
-operator|=
-name|gtk_table_new
-argument_list|(
-literal|2
-argument_list|,
-literal|2
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_table_attach
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|top_table
-argument_list|)
-argument_list|,
-name|table
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
 name|frame
 operator|=
 name|gtk_frame_new
@@ -3945,7 +3757,7 @@ name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|table
+name|top_table
 argument_list|)
 argument_list|,
 name|frame
@@ -4077,26 +3889,14 @@ expr_stmt|;
 name|dialog_init_preview
 argument_list|()
 expr_stmt|;
-comment|/* Table for upper-right controls */
-name|table
+comment|/* vbox for upper-right controls */
+name|right_vbox
 operator|=
-name|gtk_table_new
+name|gtk_vbox_new
 argument_list|(
-literal|3
-argument_list|,
-literal|1
-argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4106,7 +3906,7 @@ argument_list|(
 name|top_table
 argument_list|)
 argument_list|,
-name|table
+name|right_vbox
 argument_list|,
 literal|1
 argument_list|,
@@ -4131,7 +3931,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|table
+name|right_vbox
 argument_list|)
 expr_stmt|;
 comment|/* Compensate darkening */
@@ -4141,40 +3941,27 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Compensate for darkening"
+literal|"Compensate for Darkening"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_TABLE
+name|GTK_BOX
 argument_list|(
-name|table
+name|right_vbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-literal|0
+name|FALSE
 argument_list|,
-literal|1
-argument_list|,
-literal|0
-argument_list|,
-literal|1
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_FILL
-argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+empty_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -4220,36 +4007,22 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Invert bumpmap"
+literal|"Invert Bumpmap"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_TABLE
+name|GTK_BOX
 argument_list|(
-name|table
+name|right_vbox
 argument_list|)
 argument_list|,
 name|button
 argument_list|,
-literal|0
+name|FALSE
 argument_list|,
-literal|1
-argument_list|,
-literal|1
-argument_list|,
-literal|2
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_FILL
-argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4310,30 +4083,18 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_TABLE
+name|GTK_BOX
 argument_list|(
-name|table
+name|right_vbox
 argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-literal|0
+name|FALSE
 argument_list|,
-literal|1
-argument_list|,
-literal|2
-argument_list|,
-literal|3
-argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_FILL
-argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4349,10 +4110,10 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -4498,7 +4259,6 @@ name|button
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 comment|/* Table for bottom controls */
 name|table
 operator|=
@@ -4511,14 +4271,24 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|0
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4561,7 +4331,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Bump map"
+literal|"Bump Map:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4572,7 +4342,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -4598,7 +4368,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -4683,7 +4453,7 @@ name|dialog_create_dvalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Azimuth"
+literal|"Azimuth:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4707,7 +4477,7 @@ name|dialog_create_dvalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Elevation"
+literal|"Elevation:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4731,7 +4501,7 @@ name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Depth"
+literal|"Depth:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4757,7 +4527,7 @@ name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"X offset"
+literal|"X Offset:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4784,7 +4554,7 @@ name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Y offset"
+literal|"Y Offset:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4811,7 +4581,7 @@ name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Waterlevel"
+literal|"Waterlevel:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4837,7 +4607,7 @@ name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Ambient"
+literal|"Ambient:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -4982,14 +4752,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/* bumpmap_dialog */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -5007,32 +4769,26 @@ name|bmint
 operator|.
 name|check_row_0
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bmint
 operator|.
 name|preview_width
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|bmint
 operator|.
 name|check_row_1
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bmint
 operator|.
 name|preview_width
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -5055,7 +4811,7 @@ condition|(
 operator|(
 name|x
 operator|/
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|&
 literal|1
@@ -5068,7 +4824,9 @@ index|[
 name|x
 index|]
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 name|bmint
 operator|.
@@ -5077,7 +4835,9 @@ index|[
 name|x
 index|]
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 block|}
 else|else
@@ -5089,7 +4849,9 @@ index|[
 name|x
 index|]
 operator|=
-name|CHECK_LIGHT
+name|GIMP_CHECK_LIGHT
+operator|*
+literal|255
 expr_stmt|;
 name|bmint
 operator|.
@@ -5098,10 +4860,11 @@ index|[
 name|x
 index|]
 operator|=
-name|CHECK_DARK
+name|GIMP_CHECK_DARK
+operator|*
+literal|255
 expr_stmt|;
 block|}
-comment|/* else */
 comment|/* Initialize source rows */
 name|gimp_pixel_rgn_init
 argument_list|(
@@ -5129,17 +4892,14 @@ name|bmint
 operator|.
 name|src_rows
 operator|=
-name|g_malloc
-argument_list|(
-name|bmint
-operator|.
-name|preview_height
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
 operator|*
-argument_list|)
+argument_list|,
+name|bmint
+operator|.
+name|preview_height
 argument_list|)
 expr_stmt|;
 for|for
@@ -5164,16 +4924,13 @@ index|[
 name|x
 index|]
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|sel_width
 operator|*
 literal|4
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog_fill_src_rows
@@ -5196,24 +4953,18 @@ name|bmint
 operator|.
 name|bm_rows
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
-operator|(
+name|guchar
+operator|*
+argument_list|,
 name|bmint
 operator|.
 name|preview_height
 operator|+
 literal|2
-operator|)
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-operator|*
-argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Plus 2 for conv. matrix */
 for|for
 control|(
 name|x
@@ -5244,14 +4995,6 @@ name|NULL
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_init_preview */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5358,7 +5101,6 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* switch */
 name|bmint
 operator|.
 name|mouse_x
@@ -5404,7 +5146,6 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 break|break;
 case|case
 name|GDK_MOTION_NOTIFY
@@ -5550,7 +5291,6 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* switch */
 name|dialog_update_preview
 argument_list|()
 expr_stmt|;
@@ -5558,20 +5298,11 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* switch */
 return|return
 name|FALSE
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_preview_events */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5830,7 +5561,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 name|bumpmap_init_params
 argument_list|(
 operator|&
@@ -5854,14 +5584,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_new_bumpmap */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -6028,7 +5750,7 @@ condition|(
 operator|(
 name|y
 operator|/
-name|CHECK_SIZE
+name|GIMP_CHECK_SIZE
 operator|)
 operator|&
 literal|1
@@ -6153,7 +5875,6 @@ operator|+=
 literal|3
 expr_stmt|;
 block|}
-comment|/* for */
 name|gtk_preview_draw_row
 argument_list|(
 name|GTK_PREVIEW
@@ -6175,7 +5896,6 @@ name|preview_width
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 name|gtk_widget_draw
 argument_list|(
 name|bmint
@@ -6190,14 +5910,6 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_update_preview */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_define
 DECL|macro|SWAP_ROWS (a,b,t)
@@ -6398,6 +6110,7 @@ expr_stmt|;
 comment|/* ... and get the new ones */
 name|dialog_fill_src_rows
 argument_list|(
+operator|(
 name|bmint
 operator|.
 name|preview_height
@@ -6410,6 +6123,7 @@ name|bmint
 operator|.
 name|preview_height
 argument_list|)
+operator|)
 argument_list|,
 name|MIN
 argument_list|(
@@ -6420,6 +6134,7 @@ operator|.
 name|preview_height
 argument_list|)
 argument_list|,
+operator|(
 name|sel_y1
 operator|+
 name|yofs
@@ -6436,10 +6151,10 @@ name|bmint
 operator|.
 name|preview_height
 argument_list|)
+operator|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* else */
 name|bmint
 operator|.
 name|src_yofs
@@ -6448,14 +6163,6 @@ name|yofs
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_scroll_src */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -6686,6 +6393,7 @@ expr_stmt|;
 comment|/* ... and get the new ones */
 name|dialog_fill_bumpmap_rows
 argument_list|(
+operator|(
 name|bmint
 operator|.
 name|preview_height
@@ -6702,6 +6410,7 @@ name|preview_height
 operator|+
 literal|2
 argument_list|)
+operator|)
 argument_list|,
 name|MIN
 argument_list|(
@@ -6741,7 +6450,6 @@ name|bm_height
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* else */
 name|bmint
 operator|.
 name|bm_yofs
@@ -6750,14 +6458,6 @@ name|yofs
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_scroll_bumpmap */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -6787,7 +6487,7 @@ name|int
 name|height
 parameter_list|)
 block|{
-comment|/* This is shamelessly ripped off from gimp_pixel_rgn_get_rect(). 	 * Its function is exactly the same, but it can fetch an image 	 * rectangle to a sparse buffer which is defined as separate 	 * rows instead of one big linear region. 	 */
+comment|/* This is shamelessly ripped off from gimp_pixel_rgn_get_rect().    * Its function is exactly the same, but it can fetch an image    * rectangle to a sparse buffer which is defined as separate    * rows instead of one big linear region.    */
 name|GTile
 modifier|*
 name|tile
@@ -7062,7 +6762,6 @@ name|src
 operator|++
 expr_stmt|;
 block|}
-comment|/* for */
 name|gimp_tile_unref
 argument_list|(
 name|tile
@@ -7075,23 +6774,13 @@ operator|+=
 name|xstep
 expr_stmt|;
 block|}
-comment|/* while */
 name|y
 operator|+=
 name|ystep
 expr_stmt|;
 block|}
-comment|/* while */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_get_rows */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -7282,21 +6971,10 @@ name|sp
 operator|--
 expr_stmt|;
 block|}
-comment|/* else */
 block|}
-comment|/* for */
 block|}
-comment|/* for */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_fill_src_rows */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -7396,7 +7074,6 @@ operator|+=
 name|this_pass
 expr_stmt|;
 block|}
-comment|/* while */
 comment|/* Convert rows */
 for|for
 control|(
@@ -7439,17 +7116,8 @@ name|start
 operator|++
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_fill_bumpmap_rows */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -7481,14 +7149,6 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_compensate_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -7543,14 +7203,6 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_invert_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -7612,17 +7264,8 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_map_type_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -7666,14 +7309,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/* dialog_constrain */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -7701,14 +7336,6 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_bumpmap_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -7754,7 +7381,7 @@ name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -7774,9 +7401,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
-argument_list|,
 literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -7799,7 +7426,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -7946,9 +7573,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%0.2f"
 argument_list|,
@@ -8006,7 +7638,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -8018,14 +7650,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_create_dvalue */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -8046,7 +7670,7 @@ name|GtkWidget
 modifier|*
 name|entry
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -8079,9 +7703,14 @@ name|adjustment
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%0.2f"
 argument_list|,
@@ -8123,17 +7752,8 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_dscale_update */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -8232,19 +7852,9 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_dentry_update */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -8293,7 +7903,7 @@ name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -8313,9 +7923,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
-argument_list|,
 literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -8338,7 +7948,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -8507,9 +8117,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -8589,7 +8204,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -8601,14 +8216,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_create_ivalue */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -8629,7 +8236,7 @@ name|GtkWidget
 modifier|*
 name|entry
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -8662,9 +8269,14 @@ name|adjustment
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -8706,17 +8318,8 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_iscale_update_normal */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -8737,7 +8340,7 @@ name|GtkWidget
 modifier|*
 name|entry
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -8770,9 +8373,14 @@ name|adjustment
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -8837,17 +8445,8 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_iscale_update_full */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -8946,19 +8545,9 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_ientry_update_normal */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -9080,19 +8669,9 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_ientry_update_full */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -9124,38 +8703,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_ok_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_close_callback (GtkWidget * widget,gpointer data)
-name|dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* dialog_close_callback */
-end_comment
 
 end_unit
 

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  *   Destripe filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Marc Lehmann, heavily modified from a filter by  *   Michael Sweet.  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   destripe()                  - Destripe an image.  *   destripe_dialog()           - Popup a dialog window...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_histogram_callback()  *   dialog_ok_callback()        - Start the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *  *   1997/08/16 * Initial Revision.  *   1998/02/06 * Minor changes.  */
+comment|/*  *   Destripe filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Marc Lehmann, heavily modified from a filter by  *   Michael Sweet.  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   destripe()                  - Destripe an image.  *   destripe_dialog()           - Popup a dialog window...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_histogram_callback()  *   dialog_ok_callback()        - Start the filter...  *  *   1997/08/16 * Initial Revision.  *   1998/02/06 * Minor changes.  */
 end_comment
 
 begin_ifdef
@@ -232,19 +232,6 @@ begin_function_decl
 specifier|static
 name|void
 name|dialog_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|dialog_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1137,22 +1124,22 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|destripe_rect (int sel_x1,int sel_y1,int sel_x2,int sel_y2,int do_preview)
+DECL|function|destripe_rect (gint sel_x1,gint sel_y1,gint sel_x2,gint sel_y2,gboolean do_preview)
 name|destripe_rect
 parameter_list|(
-name|int
+name|gint
 name|sel_x1
 parameter_list|,
-name|int
+name|gint
 name|sel_y1
 parameter_list|,
-name|int
+name|gint
 name|sel_x2
 parameter_list|,
-name|int
+name|gint
 name|sel_y2
 parameter_list|,
-name|int
+name|gboolean
 name|do_preview
 parameter_list|)
 block|{
@@ -1250,7 +1237,7 @@ operator|/
 name|sel_width
 expr_stmt|;
 block|}
-comment|/*   * Setup for filter...   */
+comment|/*    * Setup for filter...    */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -1315,18 +1302,15 @@ argument_list|)
 expr_stmt|;
 name|src_rows
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|tile_width
 operator|*
 name|sel_height
 operator|*
 name|img_bpp
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|memset
@@ -1471,7 +1455,7 @@ condition|(
 literal|1
 condition|)
 block|{
-name|int
+name|gint
 name|extend
 init|=
 operator|(
@@ -1526,7 +1510,7 @@ name|sum
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|cnt
 init|=
 literal|0
@@ -1571,7 +1555,6 @@ name|cnt
 operator|++
 expr_stmt|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 name|x
@@ -1593,7 +1576,6 @@ name|cnt
 operator|--
 expr_stmt|;
 block|}
-empty_stmt|;
 if|if
 condition|(
 name|x
@@ -1621,7 +1603,6 @@ operator|*
 name|h
 expr_stmt|;
 block|}
-empty_stmt|;
 name|h
 operator|+=
 name|img_bpp
@@ -2079,7 +2060,7 @@ name|sel_x2
 argument_list|,
 name|sel_y2
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2128,28 +2109,34 @@ block|{
 name|GtkWidget
 modifier|*
 name|dialog
-decl_stmt|,
+decl_stmt|;
 comment|/* Dialog window */
+name|GtkWidget
 modifier|*
 name|table
-decl_stmt|,
+decl_stmt|;
 comment|/* Table "container" for controls */
+name|GtkWidget
 modifier|*
 name|ptable
-decl_stmt|,
+decl_stmt|;
 comment|/* Preview table */
+name|GtkWidget
 modifier|*
 name|ftable
-decl_stmt|,
+decl_stmt|;
 comment|/* Filter table */
+name|GtkWidget
 modifier|*
 name|frame
-decl_stmt|,
+decl_stmt|;
 comment|/* Frame for preview */
+name|GtkWidget
 modifier|*
 name|scrollbar
-decl_stmt|,
+decl_stmt|;
 comment|/* Horizontal + vertical scroller */
+name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
@@ -2168,7 +2155,7 @@ modifier|*
 name|color_cube
 decl_stmt|;
 comment|/* Preview color cube... */
-comment|/*   * Initialize the program's display...   */
+comment|/*    * Initialize the program's display...    */
 name|argc
 operator|=
 literal|1
@@ -2285,7 +2272,7 @@ name|gtk_preview_get_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;
-comment|/*   * Dialog window...   */
+comment|/*    * Dialog window...    */
 name|dialog
 operator|=
 name|gimp_dialog_new
@@ -2357,13 +2344,13 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|dialog_close_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*   * Top-level table for dialog...   */
+comment|/*    * Top-level table for dialog...    */
 name|table
 operator|=
 name|gtk_table_new
@@ -2375,7 +2362,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2386,6 +2373,16 @@ literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -2421,7 +2418,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/*   * Preview window...   */
+comment|/*    * Preview window...    */
 name|ptable
 operator|=
 name|gtk_table_new
@@ -2431,16 +2428,6 @@ argument_list|,
 literal|2
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|ptable
-argument_list|)
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2619,10 +2606,10 @@ name|hscroll_data
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|preview_scroll_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2719,10 +2706,10 @@ name|vscroll_data
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|preview_scroll_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2781,7 +2768,7 @@ expr_stmt|;
 name|preview_init
 argument_list|()
 expr_stmt|;
-comment|/*   * Filter type controls...   */
+comment|/*    * Filter type controls...    */
 name|ftable
 operator|=
 name|gtk_table_new
@@ -2791,16 +2778,6 @@ argument_list|,
 literal|1
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|ftable
-argument_list|)
-argument_list|,
-literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2897,10 +2874,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|dialog_histogram_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2911,12 +2888,12 @@ name|button
 argument_list|)
 expr_stmt|;
 comment|/*  button = gtk_check_button_new_with_label("Recursive");   gtk_table_attach(GTK_TABLE(ftable), button, 0, 1, 1, 2, 		   GTK_EXPAND | GTK_FILL, GTK_EXPAND | GTK_FILL, 0, 0);   gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button),                                (filter_type& FILTER_RECURSIVE) ? TRUE : FALSE);   gtk_signal_connect(GTK_OBJECT(button), "toggled", 		     (GtkSignalFunc)dialog_recursive_callback, 		     NULL);   gtk_widget_show(button);*/
-comment|/*   * Box size (radius) control...   */
+comment|/*    * Box size (radius) control...    */
 name|dialog_create_ivalue
 argument_list|(
 name|_
 argument_list|(
-literal|"Width"
+literal|"Width:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -2934,7 +2911,7 @@ argument_list|,
 name|MAX_AVG
 argument_list|)
 expr_stmt|;
-comment|/*   * Show it and wait for the user to do something...   */
+comment|/*    * Show it and wait for the user to do something...    */
 name|gtk_widget_show
 argument_list|(
 name|dialog
@@ -2949,15 +2926,13 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-comment|/*   * Free the preview data...   */
+comment|/*    * Free the preview data...    */
 name|preview_exit
 argument_list|()
 expr_stmt|;
-comment|/*   * Return ok/cancel...   */
+comment|/*    * Return ok/cancel...    */
 return|return
-operator|(
 name|run_filter
-operator|)
 return|;
 block|}
 end_function
@@ -2975,11 +2950,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|width
 decl_stmt|;
 comment|/* Byte width of the image */
-comment|/*   * Setup for preview filter...   */
+comment|/*    * Setup for preview filter...    */
 name|width
 operator|=
 name|preview_width
@@ -3113,7 +3088,7 @@ name|preview_x2
 argument_list|,
 name|preview_y2
 argument_list|,
-literal|1
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3190,14 +3165,14 @@ modifier|*
 name|scale_data
 decl_stmt|;
 comment|/* Scale data */
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
 index|]
 decl_stmt|;
 comment|/* String buffer */
-comment|/*   * Label...   */
+comment|/*    * Label...    */
 name|label
 operator|=
 name|gtk_label_new
@@ -3212,9 +3187,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
-argument_list|,
 literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3237,7 +3212,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -3247,7 +3222,7 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/*   * Scale...   */
+comment|/*    * Scale...    */
 name|scale_data
 operator|=
 name|gtk_adjustment_new
@@ -3386,9 +3361,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -3446,7 +3426,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -3485,7 +3465,7 @@ modifier|*
 name|entry
 decl_stmt|;
 comment|/* Text entry widget */
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -3519,9 +3499,14 @@ name|adjustment
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -3707,32 +3692,6 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  * 'dialog_close_callback()' - Exit the filter dialog application.  */
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_close_callback (GtkWidget * widget,gpointer data)
-name|dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-comment|/* I - Dialog window */
-name|gpointer
-name|data
-parameter_list|)
-comment|/* I - Dialog window */
-block|{
-name|gtk_main_quit
-argument_list|()
 expr_stmt|;
 block|}
 end_function
