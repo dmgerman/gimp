@@ -22,7 +22,7 @@ file|"ifscompose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2aae2b630103
+DECL|enum|__anon289cc6ea0103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -108,7 +108,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2aae2b630208
+DECL|struct|__anon289cc6ea0208
 block|{
 DECL|member|name
 name|gchar
@@ -1074,6 +1074,10 @@ name|num_elements
 operator|=
 literal|0
 expr_stmt|;
+name|i
+operator|=
+literal|0
+expr_stmt|;
 name|expected_token
 operator|=
 name|G_TOKEN_NONE
@@ -1278,9 +1282,8 @@ literal|0.0
 argument_list|,
 name|color
 argument_list|,
-name|vals
-operator|->
-name|num_elements
+operator|++
+name|i
 argument_list|)
 expr_stmt|;
 name|expected_token
