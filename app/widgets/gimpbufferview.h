@@ -103,6 +103,16 @@ DECL|member|parent_instance
 name|GimpContainerEditor
 name|parent_instance
 decl_stmt|;
+DECL|member|global_preview
+name|GtkWidget
+modifier|*
+name|global_preview
+decl_stmt|;
+DECL|member|global_label
+name|GtkWidget
+modifier|*
+name|global_label
+decl_stmt|;
 DECL|member|paste_button
 name|GtkWidget
 modifier|*
