@@ -435,11 +435,6 @@ return|;
 comment|/* inhibits error messages by caller */
 block|}
 block|}
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 block|}
 comment|/* ref the image, so it can't get deleted during save */
 name|g_object_ref
