@@ -279,7 +279,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991064b0108
+DECL|struct|__anon29b5a0490108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -307,7 +307,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991064b0208
+DECL|struct|__anon29b5a0490208
 block|{
 DECL|member|name
 name|gchar
@@ -1677,7 +1677,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991064b0308
+DECL|struct|__anon29b5a0490308
 block|{
 DECL|member|function
 name|gint
@@ -1750,7 +1750,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991064b0408
+DECL|struct|__anon29b5a0490408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2537,7 +2537,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991064b0508
+DECL|struct|__anon29b5a0490508
 block|{
 DECL|member|run
 name|gint
@@ -2585,7 +2585,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2991064b0608
+DECL|struct|__anon29b5a0490608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2819,7 +2819,7 @@ name|PARAM_STRING
 block|,
 literal|"parameter_file_name"
 block|,
-literal|"the name of paremter file. CML_explorer makes an image with its settings."
+literal|"The name of parameter file. CML_explorer makes an image with its settings."
 block|}
 block|,   }
 decl_stmt|;

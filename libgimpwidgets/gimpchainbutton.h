@@ -90,7 +90,7 @@ name|GimpChainButtonClass
 typedef|;
 typedef|typedef
 enum|enum
-DECL|enum|__anon2968091b0103
+DECL|enum|__anon2988e2ea0103
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -118,16 +118,6 @@ decl_stmt|;
 DECL|member|position
 name|GimpChainPosition
 name|position
-decl_stmt|;
-DECL|member|tooltips
-name|GtkTooltips
-modifier|*
-name|tooltips
-decl_stmt|;
-DECL|member|tip
-name|gchar
-modifier|*
-name|tip
 decl_stmt|;
 DECL|member|button
 name|GtkWidget

@@ -32,7 +32,7 @@ comment|/*  internal structures  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296a9f100108
+DECL|struct|__anon29442aa40108
 typedef|typedef
 struct|struct
 block|{
@@ -753,15 +753,15 @@ decl_stmt|;
 name|gint
 name|digits
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+if|if
+condition|(
 name|unit
-operator|>=
-name|UNIT_INCH
-argument_list|,
-literal|2.0
-argument_list|)
-expr_stmt|;
+operator|<
+literal|0
+condition|)
+return|return
+literal|0
+return|;
 if|if
 condition|(
 name|unit
@@ -794,7 +794,12 @@ argument_list|)
 expr_stmt|;
 name|digits
 operator|=
-literal|2.0
+name|gimp_unit_defs
+index|[
+name|UNIT_INCH
+index|]
+operator|.
+name|digits
 expr_stmt|;
 if|if
 condition|(
