@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294a53400108
+DECL|struct|__anon2ac5dd550108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1704,7 +1704,6 @@ name|info
 operator|->
 name|y_pixels_per_unit
 operator|)
-name|i
 operator|*
 literal|72.0
 argument_list|)
