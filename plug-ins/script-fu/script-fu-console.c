@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291d42880108
+DECL|struct|__anon28ba3d450108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -1855,7 +1855,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|apply_callback (gchar * proc_name,gchar * scheme_proc_name,gchar * proc_blurb,gchar * proc_help,gchar * proc_author,gchar * proc_copyright,gchar * proc_date,int proc_type,int nparams,int nreturn_vals,GParamDef * params,GParamDef * return_vals)
+DECL|function|apply_callback (gchar * proc_name,gchar * scheme_proc_name,gchar * proc_blurb,gchar * proc_help,gchar * proc_author,gchar * proc_copyright,gchar * proc_date,GimpPDBProcType proc_type,gint nparams,gint nreturn_vals,GimpParamDef * params,GimpParamDef * return_vals)
 name|apply_callback
 parameter_list|(
 name|gchar
@@ -1886,20 +1886,20 @@ name|gchar
 modifier|*
 name|proc_date
 parameter_list|,
-name|int
+name|GimpPDBProcType
 name|proc_type
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
-name|int
+name|gint
 name|nreturn_vals
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|params
 parameter_list|,
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 parameter_list|)

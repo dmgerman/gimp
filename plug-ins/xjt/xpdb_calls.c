@@ -86,7 +86,7 @@ decl_stmt|;
 name|int
 name|l_nreturn_vals
 decl_stmt|;
-name|int
+name|GimpPDBProcType
 name|l_proc_type
 decl_stmt|;
 name|gchar
@@ -109,11 +109,11 @@ name|gchar
 modifier|*
 name|l_proc_date
 decl_stmt|;
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|l_params
 decl_stmt|;
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|l_return_vals
 decl_stmt|;

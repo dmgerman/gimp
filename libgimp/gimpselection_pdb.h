@@ -42,7 +42,7 @@ name|image_ID
 parameter_list|,
 name|gboolean
 modifier|*
-name|is_empty
+name|none_empty
 parameter_list|,
 name|gint
 modifier|*

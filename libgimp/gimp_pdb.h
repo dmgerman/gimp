@@ -190,6 +190,12 @@ directive|include
 file|<libgimp/gimpundo_pdb.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpunit_pdb.h>
+end_include
+
 begin_endif
 endif|#
 directive|endif

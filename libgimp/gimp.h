@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpchannel.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpcolorspace.h>
 end_include
 
@@ -98,6 +104,12 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimppixelrgn.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpproceduraldb.h>
 end_include
 
 begin_include
