@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b3d581b0103
+DECL|enum|__anon27da1c300103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -77,7 +77,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b3d581b0203
+DECL|enum|__anon27da1c300203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -201,6 +201,11 @@ name|GimpCoords
 name|last_coords
 decl_stmt|;
 comment|/*  last coords                      */
+DECL|member|last_paint
+name|GimpVector2
+name|last_paint
+decl_stmt|;
+comment|/*  last point that was painted      */
 DECL|member|distance
 name|gdouble
 name|distance
