@@ -43,10 +43,10 @@ define|#
 directive|define
 name|gimp_detach_parasite
 value|gimp_parasite_detach
-DECL|macro|gimp_parasite_find
+DECL|macro|gimp_find_parasite
 define|#
 directive|define
-name|gimp_parasite_find
+name|gimp_find_parasite
 value|gimp_parasite_find
 DECL|macro|gimp_image_attach_parasite
 define|#

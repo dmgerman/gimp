@@ -52,10 +52,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|find_parasite_proc
+DECL|variable|parasite_find_proc
 specifier|static
 name|ProcRecord
-name|find_parasite_proc
+name|parasite_find_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -84,10 +84,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_find_parasite_proc
+DECL|variable|drawable_parasite_find_proc
 specifier|static
 name|ProcRecord
-name|drawable_find_parasite_proc
+name|drawable_parasite_find_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -116,10 +116,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_find_parasite_proc
+DECL|variable|image_parasite_find_proc
 specifier|static
 name|ProcRecord
-name|image_find_parasite_proc
+name|image_parasite_find_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -164,7 +164,7 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|find_parasite_proc
+name|parasite_find_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -188,7 +188,7 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|drawable_find_parasite_proc
+name|drawable_parasite_find_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -212,7 +212,7 @@ expr_stmt|;
 name|procedural_db_register
 argument_list|(
 operator|&
-name|image_find_parasite_proc
+name|image_parasite_find_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -514,8 +514,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|find_parasite_invoker (Argument * args)
-name|find_parasite_invoker
+DECL|function|parasite_find_invoker (Argument * args)
+name|parasite_find_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -577,7 +577,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|find_parasite_proc
+name|parasite_find_proc
 argument_list|,
 name|success
 argument_list|)
@@ -604,10 +604,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|find_parasite_inargs
+DECL|variable|parasite_find_inargs
 specifier|static
 name|ProcArg
-name|find_parasite_inargs
+name|parasite_find_inargs
 index|[]
 init|=
 block|{
@@ -623,10 +623,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|find_parasite_outargs
+DECL|variable|parasite_find_outargs
 specifier|static
 name|ProcArg
-name|find_parasite_outargs
+name|parasite_find_outargs
 index|[]
 init|=
 block|{
@@ -642,13 +642,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|find_parasite_proc
+DECL|variable|parasite_find_proc
 specifier|static
 name|ProcRecord
-name|find_parasite_proc
+name|parasite_find_proc
 init|=
 block|{
-literal|"gimp_find_parasite"
+literal|"gimp_parasite_find"
 block|,
 literal|"Finds the named parasite."
 block|,
@@ -664,15 +664,15 @@ name|PDB_INTERNAL
 block|,
 literal|1
 block|,
-name|find_parasite_inargs
+name|parasite_find_inargs
 block|,
 literal|1
 block|,
-name|find_parasite_outargs
+name|parasite_find_outargs
 block|,
 block|{
 block|{
-name|find_parasite_invoker
+name|parasite_find_invoker
 block|}
 block|}
 block|}
@@ -1066,8 +1066,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_find_parasite_invoker (Argument * args)
-name|drawable_find_parasite_invoker
+DECL|function|drawable_parasite_find_invoker (Argument * args)
+name|drawable_parasite_find_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -1165,7 +1165,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|drawable_find_parasite_proc
+name|drawable_parasite_find_proc
 argument_list|,
 name|success
 argument_list|)
@@ -1192,10 +1192,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|drawable_find_parasite_inargs
+DECL|variable|drawable_parasite_find_inargs
 specifier|static
 name|ProcArg
-name|drawable_find_parasite_inargs
+name|drawable_parasite_find_inargs
 index|[]
 init|=
 block|{
@@ -1219,10 +1219,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_find_parasite_outargs
+DECL|variable|drawable_parasite_find_outargs
 specifier|static
 name|ProcArg
-name|drawable_find_parasite_outargs
+name|drawable_parasite_find_outargs
 index|[]
 init|=
 block|{
@@ -1238,13 +1238,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|drawable_find_parasite_proc
+DECL|variable|drawable_parasite_find_proc
 specifier|static
 name|ProcRecord
-name|drawable_find_parasite_proc
+name|drawable_parasite_find_proc
 init|=
 block|{
-literal|"gimp_drawable_find_parasite"
+literal|"gimp_drawable_parasite_find"
 block|,
 literal|"Finds the named parasite in a drawable"
 block|,
@@ -1260,15 +1260,15 @@ name|PDB_INTERNAL
 block|,
 literal|2
 block|,
-name|drawable_find_parasite_inargs
+name|drawable_parasite_find_inargs
 block|,
 literal|1
 block|,
-name|drawable_find_parasite_outargs
+name|drawable_parasite_find_outargs
 block|,
 block|{
 block|{
-name|drawable_find_parasite_invoker
+name|drawable_parasite_find_invoker
 block|}
 block|}
 block|}
@@ -1804,8 +1804,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_find_parasite_invoker (Argument * args)
-name|image_find_parasite_invoker
+DECL|function|image_parasite_find_invoker (Argument * args)
+name|image_parasite_find_invoker
 parameter_list|(
 name|Argument
 modifier|*
@@ -1903,7 +1903,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_find_parasite_proc
+name|image_parasite_find_proc
 argument_list|,
 name|success
 argument_list|)
@@ -1930,10 +1930,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_find_parasite_inargs
+DECL|variable|image_parasite_find_inargs
 specifier|static
 name|ProcArg
-name|image_find_parasite_inargs
+name|image_parasite_find_inargs
 index|[]
 init|=
 block|{
@@ -1957,10 +1957,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_find_parasite_outargs
+DECL|variable|image_parasite_find_outargs
 specifier|static
 name|ProcArg
-name|image_find_parasite_outargs
+name|image_parasite_find_outargs
 index|[]
 init|=
 block|{
@@ -1976,13 +1976,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_find_parasite_proc
+DECL|variable|image_parasite_find_proc
 specifier|static
 name|ProcRecord
-name|image_find_parasite_proc
+name|image_parasite_find_proc
 init|=
 block|{
-literal|"gimp_image_find_parasite"
+literal|"gimp_image_parasite_find"
 block|,
 literal|"Finds the named parasite in an image"
 block|,
@@ -1998,15 +1998,15 @@ name|PDB_INTERNAL
 block|,
 literal|2
 block|,
-name|image_find_parasite_inargs
+name|image_parasite_find_inargs
 block|,
 literal|1
 block|,
-name|image_find_parasite_outargs
+name|image_parasite_find_outargs
 block|,
 block|{
 block|{
-name|image_find_parasite_invoker
+name|image_parasite_find_invoker
 block|}
 block|}
 block|}

@@ -2615,7 +2615,7 @@ parameter_list|)
 function_decl|;
 name|Parasite
 modifier|*
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 parameter_list|(
 name|gint32
 name|drawable

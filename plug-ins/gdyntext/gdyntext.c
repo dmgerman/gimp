@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c12901c0103
+DECL|enum|__anon2a117d2d0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -1482,7 +1482,7 @@ condition|(
 operator|(
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1518,7 +1518,7 @@ condition|(
 operator|(
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1539,7 +1539,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1572,7 +1572,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1605,7 +1605,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1638,7 +1638,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1668,7 +1668,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1698,7 +1698,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1728,7 +1728,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1758,7 +1758,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1788,7 +1788,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->
@@ -1818,7 +1818,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|data
 operator|->

@@ -2252,8 +2252,8 @@ end_function
 begin_function
 name|Parasite
 modifier|*
-DECL|function|gimp_drawable_find_parasite (gint32 drawable_ID,const char * name)
-name|gimp_drawable_find_parasite
+DECL|function|gimp_drawable_parasite_find (gint32 drawable_ID,const char * name)
+name|gimp_drawable_parasite_find
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -2279,7 +2279,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_drawable_find_parasite"
+literal|"gimp_drawable_parasite_find"
 argument_list|,
 operator|&
 name|nreturn_vals

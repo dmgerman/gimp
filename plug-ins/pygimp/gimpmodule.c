@@ -95,7 +95,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2977f0a10108
+DECL|struct|__anon2bb88d560108
 typedef|typedef
 struct|struct
 block|{
@@ -135,7 +135,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2977f0a10208
+DECL|struct|__anon2bb88d560208
 typedef|typedef
 struct|struct
 block|{
@@ -244,7 +244,7 @@ comment|/* Declarations for objects of type Image */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2977f0a10308
+DECL|struct|__anon2bb88d560308
 typedef|typedef
 struct|struct
 block|{
@@ -298,7 +298,7 @@ comment|/* Declarations for objects of type Display */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2977f0a10408
+DECL|struct|__anon2bb88d560408
 typedef|typedef
 struct|struct
 block|{
@@ -352,7 +352,7 @@ comment|/* Declarations for objects of type Layer and channel */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2977f0a10508
+DECL|struct|__anon2bb88d560508
 typedef|typedef
 struct|struct
 block|{
@@ -476,7 +476,7 @@ comment|/* Declarations for objects of type Tile */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2977f0a10608
+DECL|struct|__anon2bb88d560608
 typedef|typedef
 struct|struct
 block|{
@@ -542,7 +542,7 @@ comment|/* Declarations for objects of type PixelRegion */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2977f0a10708
+DECL|struct|__anon2bb88d560708
 typedef|typedef
 struct|struct
 block|{
@@ -622,7 +622,7 @@ comment|/* Declarations for objects of type Parasite */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2977f0a10808
+DECL|struct|__anon2bb88d560808
 typedef|typedef
 struct|struct
 block|{
@@ -7574,8 +7574,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|img_find_parasite (self,args)
-name|img_find_parasite
+DECL|function|img_parasite_find (self,args)
+name|img_parasite_find
 parameter_list|(
 name|self
 parameter_list|,
@@ -7601,7 +7601,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"s:find_parasite"
+literal|"s:parasite_find"
 argument_list|,
 operator|&
 name|name
@@ -8580,12 +8580,12 @@ ifdef|#
 directive|ifdef
 name|GIMP_HAVE_PARASITES
 block|{
-literal|"find_parasite"
+literal|"parasite_find"
 block|,
 operator|(
 name|PyCFunction
 operator|)
-name|img_find_parasite
+name|img_parasite_find
 block|,
 name|METH_VARARGS
 block|}
@@ -10976,8 +10976,8 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|drw_find_parasite (self,args)
-name|drw_find_parasite
+DECL|function|drw_parasite_find (self,args)
+name|drw_parasite_find
 parameter_list|(
 name|self
 parameter_list|,
@@ -11003,7 +11003,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"s:find_parasite"
+literal|"s:parasite_find"
 argument_list|,
 operator|&
 name|name
@@ -11019,7 +11019,7 @@ operator|*
 operator|)
 name|newparaobject
 argument_list|(
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|self
 operator|->
@@ -11262,7 +11262,7 @@ directive|define
 name|drw_methods
 parameter_list|()
 define|\
-value|{"flush",	(PyCFunction)drw_flush,	METH_VARARGS}, \     {"update",	(PyCFunction)drw_update,	METH_VARARGS}, \     {"merge_shadow",	(PyCFunction)drw_merge_shadow,	METH_VARARGS}, \     {"fill",	(PyCFunction)drw_fill,	METH_VARARGS}, \     {"get_tile",	(PyCFunction)drw_get_tile,	METH_VARARGS}, \     {"get_tile2",	(PyCFunction)drw_get_tile2,	METH_VARARGS}, \     {"get_pixel_rgn", (PyCFunction)drw_get_pixel_rgn, METH_VARARGS}, \     {"find_parasite",       (PyCFunction)img_find_parasite, METH_VARARGS}, \     {"attach_parasite",     (PyCFunction)img_attach_parasite, METH_VARARGS},\     {"attach_new_parasite",(PyCFunction)img_attach_new_parasite,METH_VARARGS},\     {"detach_parasite",     (PyCFunction)img_detach_parasite, METH_VARARGS}
+value|{"flush",	(PyCFunction)drw_flush,	METH_VARARGS}, \     {"update",	(PyCFunction)drw_update,	METH_VARARGS}, \     {"merge_shadow",	(PyCFunction)drw_merge_shadow,	METH_VARARGS}, \     {"fill",	(PyCFunction)drw_fill,	METH_VARARGS}, \     {"get_tile",	(PyCFunction)drw_get_tile,	METH_VARARGS}, \     {"get_tile2",	(PyCFunction)drw_get_tile2,	METH_VARARGS}, \     {"get_pixel_rgn", (PyCFunction)drw_get_pixel_rgn, METH_VARARGS}, \     {"parasite_find",       (PyCFunction)img_parasite_find, METH_VARARGS}, \     {"attach_parasite",     (PyCFunction)img_attach_parasite, METH_VARARGS},\     {"attach_new_parasite",(PyCFunction)img_attach_new_parasite,METH_VARARGS},\     {"detach_parasite",     (PyCFunction)img_detach_parasite, METH_VARARGS}
 end_define
 
 begin_else
@@ -24299,7 +24299,7 @@ name|PyArg_ParseTuple
 argument_list|(
 name|args
 argument_list|,
-literal|"s:find_parasite"
+literal|"s:parasite_find"
 argument_list|,
 operator|&
 name|name
@@ -25265,7 +25265,7 @@ name|METH_VARARGS
 block|}
 block|,
 block|{
-literal|"find_parasite"
+literal|"parasite_find"
 block|,
 operator|(
 name|PyCFunction

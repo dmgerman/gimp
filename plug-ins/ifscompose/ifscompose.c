@@ -112,7 +112,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon2b84a1710103
+DECL|enum|__anon275501c20103
 typedef|typedef
 enum|enum
 block|{
@@ -132,7 +132,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b84a1710203
+DECL|enum|__anon275501c20203
 typedef|typedef
 enum|enum
 block|{
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84a1710308
+DECL|struct|__anon275501c20308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -171,7 +171,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon2b84a171040a
+DECL|union|__anon275501c2040a
 union|union
 block|{
 DECL|member|d
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84a1710508
+DECL|struct|__anon275501c20508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84a1710608
+DECL|struct|__anon275501c20608
 block|{
 DECL|member|color
 name|IfsColor
@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84a1710708
+DECL|struct|__anon275501c20708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84a1710808
+DECL|struct|__anon275501c20808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84a1710908
+DECL|struct|__anon275501c20908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84a1710a08
+DECL|struct|__anon275501c20a08
 block|{
 DECL|member|run
 name|gint
@@ -1748,7 +1748,7 @@ case|:
 comment|/*  Possibly retrieve data; first look for a parasite -        *  if not found, fall back to global values        */
 name|parasite
 operator|=
-name|gimp_drawable_find_parasite
+name|gimp_drawable_parasite_find
 argument_list|(
 name|active_drawable
 operator|->
