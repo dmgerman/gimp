@@ -1054,7 +1054,7 @@ name|nh
 operator|!=
 name|height
 condition|)
-name|gimp_crop
+name|gimp_image_crop
 argument_list|(
 name|image_id
 argument_list|,

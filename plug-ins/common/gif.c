@@ -133,7 +133,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fea8fd0103
+DECL|enum|__anon2afc0e400103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -150,7 +150,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fea8fd0208
+DECL|struct|__anon2afc0e400208
 block|{
 DECL|member|interlace
 name|gint
@@ -181,7 +181,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fea8fd0308
+DECL|struct|__anon2afc0e400308
 block|{
 DECL|member|run
 name|gint
@@ -2379,7 +2379,7 @@ name|badbounds_dialog
 argument_list|()
 condition|)
 block|{
-name|gimp_crop
+name|gimp_image_crop
 argument_list|(
 name|image_ID
 argument_list|,
@@ -2410,11 +2410,13 @@ return|;
 block|}
 block|}
 else|else
+block|{
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_free
 argument_list|(

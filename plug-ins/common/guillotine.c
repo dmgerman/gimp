@@ -176,7 +176,9 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_guillotine"
 argument_list|,
-literal|"Slice up the image into subimages, cutting along the image's Guides.  Fooey to you and your broccoli, Pokey."
+literal|"Slice up the image into subimages, cutting along "
+literal|"the image's Guides.  Fooey to you and your "
+literal|"broccoli, Pokey."
 argument_list|,
 literal|"This function takes an image and blah blah.  Hooray!"
 argument_list|,
@@ -479,6 +481,7 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+break|break;
 block|}
 name|guide_num
 operator|=
@@ -652,6 +655,7 @@ expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+break|break;
 block|}
 name|guide_num
 operator|=
@@ -847,7 +851,7 @@ comment|/* 	  printf("(%dx%d:%d,%d:%d,%d)\n", */
 comment|/* 		 (vguides[x+1]-vguides[x]), */
 comment|/* 		 (hguides[y+1]-hguides[y]), */
 comment|/* 		 vguides[x], hguides[y],x, y);  */
-name|gimp_crop
+name|gimp_image_crop
 argument_list|(
 name|new_image
 argument_list|,

@@ -43,23 +43,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CONFIG_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* Declare local functions. */
 end_comment
@@ -233,7 +216,8 @@ name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_zealouscrop"
 argument_list|,
-literal|"Automagically crops unused space from the edges and middle of a picture."
+literal|"Automagically crops unused space from the edges "
+literal|"and middle of a picture."
 argument_list|,
 literal|""
 argument_list|,
@@ -597,25 +581,19 @@ literal|0
 expr_stmt|;
 name|killrows
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gint8
-argument_list|)
-operator|*
+argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
 name|killcols
 operator|=
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|gint8
-argument_list|)
-operator|*
+argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
@@ -1161,7 +1139,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_crop
+name|gimp_image_crop
 argument_list|(
 name|image_id
 argument_list|,
@@ -1183,10 +1161,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|colours_equal (guchar * col1,guchar * col2,int bytes)
 specifier|static
 specifier|inline
-name|int
+name|gint
+DECL|function|colours_equal (guchar * col1,guchar * col2,gint bytes)
 name|colours_equal
 parameter_list|(
 name|guchar
@@ -1197,11 +1175,11 @@ name|guchar
 modifier|*
 name|col2
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|)
 block|{
-name|int
+name|gint
 name|b
 decl_stmt|;
 for|for
@@ -1232,11 +1210,8 @@ index|]
 condition|)
 block|{
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
-break|break;
 block|}
 block|}
 return|return
