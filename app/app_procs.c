@@ -2151,8 +2151,14 @@ name|xcf_init
 argument_list|()
 expr_stmt|;
 comment|/*  initialize the xcf file format routines */
-name|RESET_BAR
-argument_list|()
+name|app_init_update_status
+argument_list|(
+literal|"Looking for data files"
+argument_list|,
+literal|"Brushes"
+argument_list|,
+literal|0.00
+argument_list|)
 expr_stmt|;
 name|brushes_init
 argument_list|(
@@ -2160,8 +2166,14 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp brushes  */
-name|RESET_BAR
-argument_list|()
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+literal|"Patterns"
+argument_list|,
+literal|0.25
+argument_list|)
 expr_stmt|;
 name|patterns_init
 argument_list|(
@@ -2169,8 +2181,14 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp patterns  */
-name|RESET_BAR
-argument_list|()
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+literal|"Palettes"
+argument_list|,
+literal|0.50
+argument_list|)
 expr_stmt|;
 name|palettes_init
 argument_list|(
@@ -2178,8 +2196,14 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp palettes  */
-name|RESET_BAR
-argument_list|()
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+literal|"Gradients"
+argument_list|,
+literal|0.75
+argument_list|)
 expr_stmt|;
 name|gradients_init
 argument_list|(
@@ -2187,8 +2211,14 @@ name|no_data
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the list of gimp gradients  */
-name|RESET_BAR
-argument_list|()
+name|app_init_update_status
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+literal|1.00
+argument_list|)
 expr_stmt|;
 name|plug_in_init
 argument_list|()

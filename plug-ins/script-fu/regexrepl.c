@@ -1666,7 +1666,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f2447f0103
+DECL|enum|__anon2742fd3a0103
 block|{
 DECL|enumerator|no_op
 name|no_op
@@ -4063,7 +4063,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2447f0208
+DECL|struct|__anon2742fd3a0208
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4170,7 +4170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2447f0308
+DECL|struct|__anon2742fd3a0308
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4631,14 +4631,14 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27f2447f040a
+DECL|union|__anon2742fd3a040a
 block|{
 DECL|member|word
 name|fail_stack_elt_t
 name|word
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27f2447f0508
+DECL|struct|__anon2742fd3a0508
 block|{
 comment|/* This field is one if this group can match the empty string,          zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
 DECL|macro|MATCH_NULL_UNSET_VALUE
@@ -5383,7 +5383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2447f0608
+DECL|struct|__anon2742fd3a0608
 block|{
 DECL|member|begalt_offset
 name|pattern_offset_t
@@ -5414,7 +5414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f2447f0708
+DECL|struct|__anon2742fd3a0708
 block|{
 DECL|member|stack
 name|compile_stack_elt_t
@@ -7978,6 +7978,7 @@ if|if
 condition|(
 name|COMPILE_STACK_EMPTY
 condition|)
+block|{
 if|if
 condition|(
 name|syntax
@@ -7993,6 +7994,7 @@ argument_list|(
 name|REG_ERPAREN
 argument_list|)
 expr_stmt|;
+block|}
 name|handle_close
 label|:
 if|if
@@ -8024,6 +8026,7 @@ if|if
 condition|(
 name|COMPILE_STACK_EMPTY
 condition|)
+block|{
 if|if
 condition|(
 name|syntax
@@ -8039,6 +8042,7 @@ argument_list|(
 name|REG_ERPAREN
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Since we just checked for an empty stack above, this                  ``can't happen''.  */
 name|assert
 argument_list|(

@@ -95,6 +95,29 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -139,7 +162,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b29ef8b0108
+DECL|struct|__anon29b367d10108
 typedef|typedef
 struct|struct
 block|{
@@ -157,7 +180,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b29ef8b0208
+DECL|struct|__anon29b367d10208
 typedef|typedef
 struct|struct
 block|{
