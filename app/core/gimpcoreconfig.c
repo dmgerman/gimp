@@ -73,6 +73,14 @@ name|gimp
 operator|->
 name|config
 operator|->
+name|tool_plug_in_path
+operator|=
+name|NULL
+expr_stmt|;
+name|gimp
+operator|->
+name|config
+operator|->
 name|plug_in_path
 operator|=
 name|NULL

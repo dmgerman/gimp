@@ -248,7 +248,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5ef13e0103
+DECL|enum|__anon294659050103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -2466,6 +2466,16 @@ name|NULL
 block|,
 name|NULL
 block|}
+block|,
+block|{
+literal|"tool-plug-in-path"
+block|,
+name|TT_PATH
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
 block|}
 decl_stmt|;
 comment|/*  this hurts badly  */
@@ -2848,6 +2858,20 @@ operator|->
 name|config
 operator|->
 name|write_thumbnails
+expr_stmt|;
+name|core_funcs
+index|[
+literal|21
+index|]
+operator|.
+name|val1p
+operator|=
+operator|&
+name|gimp
+operator|->
+name|config
+operator|->
+name|tool_plug_in_path
 expr_stmt|;
 name|parse_func_hash
 operator|=
