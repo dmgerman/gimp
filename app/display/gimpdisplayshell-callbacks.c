@@ -4255,7 +4255,7 @@ name|color_button
 operator|->
 name|item_factory
 argument_list|,
-literal|"/Default from Theme"
+literal|"/From Theme"
 argument_list|,
 operator|&
 name|color
