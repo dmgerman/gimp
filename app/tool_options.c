@@ -4571,7 +4571,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Multiply (Burn)"
+literal|"Multiply"
 argument_list|)
 argument_list|,
 operator|(
@@ -4583,7 +4583,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Divide (Dodge)"
+literal|"Divide"
 argument_list|)
 argument_list|,
 operator|(
@@ -4614,6 +4614,42 @@ operator|(
 name|gpointer
 operator|)
 name|OVERLAY_MODE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Dodge"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|DODGE_MODE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Burn"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|BURN_MODE
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Hard Light"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|HARDLIGHT_MODE
 argument_list|,
 name|NULL
 argument_list|,
