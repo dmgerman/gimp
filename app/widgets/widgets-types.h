@@ -322,6 +322,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpTemplateEditor
+typedef|typedef
+name|struct
+name|_GimpTemplateEditor
+name|GimpTemplateEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUndoEditor
 typedef|typedef
 name|struct
