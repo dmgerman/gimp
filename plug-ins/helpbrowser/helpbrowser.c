@@ -127,7 +127,7 @@ value|"help"
 end_define
 
 begin_enum
-DECL|enum|__anon2ae3e9a50103
+DECL|enum|__anon2b56f1290103
 enum|enum
 block|{
 DECL|enumerator|CONTENTS
@@ -143,7 +143,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2ae3e9a50203
+DECL|enum|__anon2b56f1290203
 enum|enum
 block|{
 DECL|enumerator|URL_UNKNOWN
@@ -175,7 +175,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3e9a50308
+DECL|struct|__anon2b56f1290308
 block|{
 DECL|member|index
 name|gint
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae3e9a50408
+DECL|struct|__anon2b56f1290408
 block|{
 DECL|member|title
 name|gchar
@@ -2819,6 +2819,21 @@ decl_stmt|;
 name|gfloat
 name|new_value
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|GTK_XMHTML
+argument_list|(
+name|html
+argument_list|)
+operator|->
+name|html
+operator|.
+name|needs_vsb
+condition|)
+return|return
+name|FALSE
+return|;
 name|adj
 operator|=
 name|GTK_ADJUSTMENT
