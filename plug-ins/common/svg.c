@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0ebc20108
+DECL|struct|__anon2b3f852b0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -485,10 +485,7 @@ literal|"Dom Lachowicz<cinamod@hotmail.com>"
 argument_list|,
 name|SVG_VERSION
 argument_list|,
-name|N_
-argument_list|(
-literal|"Scalable SVG image"
-argument_list|)
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -552,7 +549,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|2
+literal|4
 index|]
 decl_stmt|;
 name|GimpRunMode

@@ -930,6 +930,12 @@ operator|->
 name|num_args
 operator|>=
 literal|2
+operator|&&
+name|proc
+operator|->
+name|num_values
+operator|>=
+literal|2
 condition|)
 block|{
 name|GimpPDBStatusType
@@ -1084,6 +1090,15 @@ name|value
 operator|.
 name|pdb_int
 expr_stmt|;
+if|if
+condition|(
+name|proc
+operator|->
+name|num_values
+operator|>=
+literal|4
+condition|)
+block|{
 operator|*
 name|image_width
 operator|=
@@ -1118,6 +1133,7 @@ operator|.
 name|pdb_int
 argument_list|)
 expr_stmt|;
+block|}
 name|procedural_db_destroy_args
 argument_list|(
 name|return_vals

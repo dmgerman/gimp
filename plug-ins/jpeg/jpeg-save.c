@@ -371,7 +371,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3aa9a0108
+DECL|struct|__anon27c7fe8e0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -426,7 +426,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3aa9a0208
+DECL|struct|__anon27c7fe8e0208
 block|{
 DECL|member|cinfo
 name|struct
@@ -1115,10 +1115,7 @@ literal|"S. Mukund<muks@mukund.org>, Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"November 15, 2004"
 argument_list|,
-name|N_
-argument_list|(
-literal|"JPEG image"
-argument_list|)
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1236,7 +1233,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|2
+literal|4
 index|]
 decl_stmt|;
 name|GimpRunMode
@@ -8477,7 +8474,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3aa9a0308
+DECL|struct|__anon27c7fe8e0308
 block|{
 DECL|member|pub
 name|struct
@@ -9985,7 +9982,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac3aa9a0408
+DECL|struct|__anon27c7fe8e0408
 block|{
 DECL|member|pub
 name|struct
