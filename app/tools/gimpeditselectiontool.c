@@ -1497,14 +1497,23 @@ name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/* initialize the statusbar display */
-name|gimp_tool_push_status
+name|gimp_tool_push_status_coords
 argument_list|(
-name|tool
+name|GIMP_TOOL
+argument_list|(
+name|edit_select
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Move: 0, 0"
+literal|"Move: "
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|", "
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_start

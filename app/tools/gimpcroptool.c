@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aea005e0103
+DECL|enum|__anon2ba50f450103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4265,14 +4265,20 @@ operator|->
 name|gdisp
 expr_stmt|;
 comment|/* initialize the statusbar display */
-name|gimp_tool_push_status
+name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
 argument_list|,
 name|_
 argument_list|(
-literal|"Crop: 0 x 0"
+literal|"Crop: "
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|" x "
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_start

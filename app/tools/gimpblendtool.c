@@ -694,14 +694,20 @@ name|control
 argument_list|)
 expr_stmt|;
 comment|/* initialize the statusbar display */
-name|gimp_tool_push_status
+name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
 argument_list|,
 name|_
 argument_list|(
-literal|"Blend: 0, 0"
+literal|"Blend: "
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|", "
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  Start drawing the blend tool  */
