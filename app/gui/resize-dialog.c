@@ -2107,7 +2107,7 @@ operator|->
 name|ratio_x_adj
 argument_list|)
 argument_list|,
-literal|1
+literal|0.01
 argument_list|,
 literal|4
 argument_list|)
@@ -2226,7 +2226,7 @@ operator|->
 name|ratio_y_adj
 argument_list|)
 argument_list|,
-literal|1
+literal|0.01
 argument_list|,
 literal|4
 argument_list|)
