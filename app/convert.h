@@ -45,7 +45,7 @@ comment|/* adam's extra palette stuff */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2922cf3c0103
+DECL|enum|__anon28dad1910103
 typedef|typedef
 enum|enum
 block|{
@@ -119,6 +119,28 @@ name|GimpImage
 modifier|*
 parameter_list|,
 name|GimpImageBaseType
+parameter_list|,
+name|int
+parameter_list|,
+name|int
+parameter_list|,
+name|ConvertPaletteType
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|convert_image2
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GimpImageBaseType
+parameter_list|,
+name|int
+parameter_list|,
+name|int
 parameter_list|,
 name|int
 parameter_list|,
