@@ -153,6 +153,11 @@ DECL|member|line_spacing
 name|gdouble
 name|line_spacing
 decl_stmt|;
+DECL|member|size_entry
+name|GimpSizeEntry
+modifier|*
+name|size_entry
+decl_stmt|;
 block|}
 struct|;
 end_struct
