@@ -23,7 +23,7 @@ literal|0
 end_if
 
 begin_comment
-unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and glib-mkenums. All enums that are not marked with
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and gimp-mkenums. All enums that are not marked with
 comment|/*< pdb-skip>*/
 end_comment
 
@@ -78,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b06d7660103
+DECL|enum|__anon29772a660103
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -116,57 +116,67 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b06d7660203
+DECL|enum|__anon29772a660203
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_NONE
 name|GIMP_PREVIEW_SIZE_NONE
 init|=
 literal|0
 block|,
+comment|/*< desc="None">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_TINY
 name|GIMP_PREVIEW_SIZE_TINY
 init|=
 literal|16
 block|,
+comment|/*< desc="Tiny">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_EXTRA_SMALL
 name|GIMP_PREVIEW_SIZE_EXTRA_SMALL
 init|=
 literal|24
 block|,
+comment|/*< desc="Very Small">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_SMALL
 name|GIMP_PREVIEW_SIZE_SMALL
 init|=
 literal|32
 block|,
+comment|/*< desc="Small">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_MEDIUM
 name|GIMP_PREVIEW_SIZE_MEDIUM
 init|=
 literal|48
 block|,
+comment|/*< desc="Medium">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_LARGE
 name|GIMP_PREVIEW_SIZE_LARGE
 init|=
 literal|64
 block|,
+comment|/*< desc="Large">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_EXTRA_LARGE
 name|GIMP_PREVIEW_SIZE_EXTRA_LARGE
 init|=
 literal|96
 block|,
+comment|/*< desc="Very Large">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_HUGE
 name|GIMP_PREVIEW_SIZE_HUGE
 init|=
 literal|128
 block|,
+comment|/*< desc="Huge">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_ENORMOUS
 name|GIMP_PREVIEW_SIZE_ENORMOUS
 init|=
 literal|192
 block|,
+comment|/*< desc="Enormous">*/
 DECL|enumerator|GIMP_PREVIEW_SIZE_GIGANTIC
 name|GIMP_PREVIEW_SIZE_GIGANTIC
 init|=
 literal|256
+comment|/*< desc="Gigantic">*/
 DECL|typedef|GimpPreviewSize
 block|}
 name|GimpPreviewSize
@@ -195,7 +205,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b06d7660303
+DECL|enum|__anon29772a660303
 block|{
 DECL|enumerator|GIMP_SELECTION_OFF
 name|GIMP_SELECTION_OFF
@@ -238,7 +248,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b06d7660403
+DECL|enum|__anon29772a660403
 block|{
 DECL|enumerator|GIMP_RED_CHANNEL
 name|GIMP_RED_CHANNEL
@@ -271,7 +281,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b06d7660503
+DECL|enum|__anon29772a660503
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -316,7 +326,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b06d7660603
+DECL|enum|__anon29772a660603
 block|{
 DECL|enumerator|GIMP_GRAD_LINEAR
 name|GIMP_GRAD_LINEAR
@@ -345,7 +355,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b06d7660703
+DECL|enum|__anon29772a660703
 block|{
 DECL|enumerator|GIMP_GRAD_RGB
 name|GIMP_GRAD_RGB
@@ -371,7 +381,7 @@ typedef|typedef
 enum|enum
 comment|/*< chop=_MODE>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b06d7660803
+DECL|enum|__anon29772a660803
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB_MODE
 name|GIMP_FG_BG_RGB_MODE
@@ -394,7 +404,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b06d7660903
+DECL|enum|__anon29772a660903
 block|{
 DECL|enumerator|GIMP_REPEAT_NONE
 name|GIMP_REPEAT_NONE
@@ -414,7 +424,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b06d7660a03
+DECL|enum|__anon29772a660a03
 block|{
 DECL|enumerator|GIMP_RGB_IMAGE
 name|GIMP_RGB_IMAGE
@@ -443,7 +453,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2b06d7660b03
+DECL|enum|__anon29772a660b03
 block|{
 DECL|enumerator|GIMP_SHADOWS
 name|GIMP_SHADOWS
@@ -464,7 +474,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2b06d7660c03
+DECL|enum|__anon29772a660c03
 block|{
 DECL|enumerator|GIMP_TRANSFORM_FORWARD
 name|GIMP_TRANSFORM_FORWARD

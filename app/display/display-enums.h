@@ -37,16 +37,19 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e311d70103
+DECL|enum|__anon2b2c75660103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
 block|,
+comment|/*< desc="Tool Icon">*/
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 block|,
+comment|/*< desc="Tool Icon with Crosshair">*/
 DECL|enumerator|GIMP_CURSOR_MODE_CROSSHAIR
 name|GIMP_CURSOR_MODE_CROSSHAIR
+comment|/*< desc="Crosshair only">*/
 DECL|typedef|GimpCursorMode
 block|}
 name|GimpCursorMode
