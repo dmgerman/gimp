@@ -160,15 +160,6 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_decl_stmt
-DECL|variable|top_level_palette
-name|PaletteSelectP
-name|top_level_palette
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|active_dialogs
 specifier|static
 name|GSList
@@ -801,13 +792,6 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|psp
-operator|!=
-name|top_level_palette
-condition|)
-block|{
 name|gtk_widget_destroy
 argument_list|(
 name|psp
@@ -820,7 +804,6 @@ argument_list|(
 name|psp
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Free memory if poping down dialog which is not the main one */
 comment|/*   if(gsp != gradient_select_dialog) */
 comment|/*     { */
