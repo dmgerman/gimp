@@ -324,8 +324,8 @@ operator|=
 name|_
 argument_list|(
 literal|"GIMP is not properly installed for the current user.\n"
-literal|"User installation was skipped because the '--nointerface' flag was used.\n"
-literal|"To perform user installation, run the GIMP without the '--nointerface' flag."
+literal|"User installation was skipped because the '--no-interface' flag was used.\n"
+literal|"To perform user installation, run the GIMP without the '--no-interface' flag."
 argument_list|)
 expr_stmt|;
 name|g_print
