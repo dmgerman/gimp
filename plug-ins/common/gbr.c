@@ -159,7 +159,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291f603d0108
+DECL|struct|__anon2bd292790108
 block|{
 DECL|member|description
 name|gchar
@@ -1983,7 +1983,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon291f603d020a
+DECL|union|__anon2bd29279020a
 block|{
 DECL|member|u
 name|guint16
@@ -2859,7 +2859,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -2869,7 +2869,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -2879,7 +2879,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

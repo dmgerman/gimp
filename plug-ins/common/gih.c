@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bf963fd0108
+DECL|struct|__anon29c8e6d10108
 block|{
 DECL|member|spacing
 name|guint
@@ -226,7 +226,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf963fd0208
+DECL|struct|__anon29c8e6d10208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -374,7 +374,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|gih_save_dialog
 parameter_list|(
 name|gint32
@@ -3661,7 +3661,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|gih_save_dialog (gint32 image_ID)
 name|gih_save_dialog
 parameter_list|(
@@ -3785,7 +3785,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -3795,7 +3795,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -3805,7 +3805,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3877,7 +3877,7 @@ argument_list|(
 literal|"Spacing (Percent):"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -3949,7 +3949,7 @@ argument_list|(
 literal|"Description:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4289,7 +4289,7 @@ argument_list|(
 literal|"Cell Size:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4348,7 +4348,7 @@ argument_list|(
 literal|"Number of Cells:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4693,7 +4693,7 @@ argument_list|(
 literal|"Display as:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4747,7 +4747,7 @@ argument_list|(
 literal|"Dimension:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -4981,7 +4981,7 @@ argument_list|(
 literal|"Ranks:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -5062,7 +5062,7 @@ name|gtk_hbox_new
 argument_list|(
 name|TRUE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 for|for
@@ -5217,7 +5217,7 @@ argument_list|(
 literal|"Selection:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,

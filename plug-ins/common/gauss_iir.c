@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -54,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e91760108
+DECL|struct|__anon297bb9f20108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +65,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e91760208
+DECL|struct|__anon297bb9f20208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -161,7 +149,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|gauss_iir_dialog
 parameter_list|(
 name|void
@@ -171,7 +159,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|gauss_iir2_dialog
 parameter_list|(
 name|gint32
@@ -1156,7 +1144,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|gauss_iir_dialog (void)
 name|gauss_iir_dialog
 parameter_list|(
@@ -1182,10 +1170,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|toggle
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|frame
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1235,25 +1219,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  parameter settings  */
-name|frame
+name|vbox
 operator|=
-name|gtk_frame_new
+name|gtk_vbox_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Parameter Settings"
-argument_list|)
+name|FALSE
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|frame
+name|vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1268,47 +1250,13 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-name|frame
+name|vbox
 argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
-name|vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-name|vbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1442,7 +1390,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1459,6 +1407,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
 argument_list|)
 expr_stmt|;
 name|label
@@ -1558,11 +1511,6 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|hbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
@@ -1593,7 +1541,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|gauss_iir2_dialog (gint32 image_ID,GimpDrawable * drawable)
 name|gauss_iir2_dialog
 parameter_list|(
@@ -1669,7 +1617,7 @@ expr_stmt|;
 comment|/*  parameter settings  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1684,7 +1632,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1706,6 +1654,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
 argument_list|)
 expr_stmt|;
 comment|/*  Get the image resolution and unit  */
@@ -1815,16 +1768,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|size
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -1832,6 +1775,11 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
+name|size
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|size
 argument_list|)
 expr_stmt|;
@@ -1843,16 +1791,6 @@ name|size
 argument_list|)
 argument_list|,
 literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|size
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

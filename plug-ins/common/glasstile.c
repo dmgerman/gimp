@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5cd8b0108
+DECL|struct|__anon2c64176a0108
 block|{
 DECL|member|xblock
 name|gint
@@ -124,7 +124,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|glass_dialog
 parameter_list|(
 name|GimpDrawable
@@ -687,7 +687,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|glass_dialog (GimpDrawable * drawable)
 name|glass_dialog
 parameter_list|(
