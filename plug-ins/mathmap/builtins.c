@@ -96,7 +96,17 @@ name|int
 name|blue
 parameter_list|)
 block|{
-return|return
+name|double
+name|val
+decl_stmt|;
+operator|*
+operator|(
+name|int
+operator|*
+operator|)
+operator|&
+name|val
+operator|=
 operator|(
 name|red
 operator|<<
@@ -110,6 +120,9 @@ literal|8
 operator|)
 operator||
 name|blue
+expr_stmt|;
+return|return
+name|val
 return|;
 block|}
 end_function
@@ -138,6 +151,12 @@ block|{
 name|int
 name|color
 init|=
+operator|*
+operator|(
+name|int
+operator|*
+operator|)
+operator|&
 name|val
 decl_stmt|;
 operator|*
@@ -169,67 +188,100 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|builtin_if (double arg)
-name|builtin_if
+name|int
+DECL|function|red_component (double val)
+name|red_component
 parameter_list|(
 name|double
-name|arg
+name|val
 parameter_list|)
 block|{
-if|if
-condition|(
-name|stack
-index|[
-name|stackp
-operator|-
-literal|3
-index|]
-operator|!=
-literal|0.0
-condition|)
-name|stack
-index|[
-name|stackp
-operator|-
-literal|3
-index|]
-operator|=
-name|stack
-index|[
-name|stackp
-operator|-
-literal|2
-index|]
-expr_stmt|;
-else|else
-name|stack
-index|[
-name|stackp
-operator|-
-literal|3
-index|]
-operator|=
-name|stack
-index|[
-name|stackp
-operator|-
-literal|1
-index|]
-expr_stmt|;
-name|stackp
-operator|-=
-literal|2
-expr_stmt|;
+name|int
+name|color
+init|=
+operator|*
+operator|(
+name|int
+operator|*
+operator|)
+operator|&
+name|val
+decl_stmt|;
+return|return
+name|color
+operator|>>
+literal|16
+return|;
+block|}
+end_function
+
+begin_function
+name|int
+DECL|function|green_component (double val)
+name|green_component
+parameter_list|(
+name|double
+name|val
+parameter_list|)
+block|{
+name|int
+name|color
+init|=
+operator|*
+operator|(
+name|int
+operator|*
+operator|)
+operator|&
+name|val
+decl_stmt|;
+return|return
+operator|(
+name|color
+operator|>>
+literal|8
+operator|)
+operator|&
+literal|0xff
+return|;
+block|}
+end_function
+
+begin_function
+name|int
+DECL|function|blue_component (double val)
+name|blue_component
+parameter_list|(
+name|double
+name|val
+parameter_list|)
+block|{
+name|int
+name|color
+init|=
+operator|*
+operator|(
+name|int
+operator|*
+operator|)
+operator|&
+name|val
+decl_stmt|;
+return|return
+name|color
+operator|&
+literal|0xff
+return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|builtin_sin (double arg)
+DECL|function|builtin_sin (void * arg)
 name|builtin_sin
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -259,10 +311,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_cos (double arg)
+DECL|function|builtin_cos (void * arg)
 name|builtin_cos
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -292,10 +345,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_tan (double arg)
+DECL|function|builtin_tan (void * arg)
 name|builtin_tan
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -325,10 +379,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_asin (double arg)
+DECL|function|builtin_asin (void * arg)
 name|builtin_asin
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -358,10 +413,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_acos (double arg)
+DECL|function|builtin_acos (void * arg)
 name|builtin_acos
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -391,10 +447,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_atan (double arg)
+DECL|function|builtin_atan (void * arg)
 name|builtin_atan
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -424,10 +481,41 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_sign (double arg)
+DECL|function|builtin_abs (void * arg)
+name|builtin_abs
+parameter_list|(
+name|void
+modifier|*
+name|arg
+parameter_list|)
+block|{
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+operator|=
+name|fabs
+argument_list|(
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|builtin_sign (void * arg)
 name|builtin_sign
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -488,10 +576,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_min (double arg)
+DECL|function|builtin_min (void * arg)
 name|builtin_min
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -533,10 +622,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_max (double arg)
+DECL|function|builtin_max (void * arg)
 name|builtin_max
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -578,10 +668,164 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_inintv (double arg)
+DECL|function|builtin_or (void * arg)
+name|builtin_or
+parameter_list|(
+name|void
+modifier|*
+name|arg
+parameter_list|)
+block|{
+if|if
+condition|(
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|||
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+condition|)
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|=
+literal|1.0
+expr_stmt|;
+else|else
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|=
+literal|0.0
+expr_stmt|;
+operator|--
+name|stackp
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|builtin_and (void * arg)
+name|builtin_and
+parameter_list|(
+name|void
+modifier|*
+name|arg
+parameter_list|)
+block|{
+if|if
+condition|(
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|&&
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+condition|)
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|=
+literal|1.0
+expr_stmt|;
+else|else
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|=
+literal|0.0
+expr_stmt|;
+operator|--
+name|stackp
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|builtin_less (void * arg)
+name|builtin_less
+parameter_list|(
+name|void
+modifier|*
+name|arg
+parameter_list|)
+block|{
+if|if
+condition|(
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|<
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+condition|)
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|=
+literal|1.0
+expr_stmt|;
+else|else
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|=
+literal|0.0
+expr_stmt|;
+operator|--
+name|stackp
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|builtin_inintv (void * arg)
 name|builtin_inintv
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -643,10 +887,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_rand (double arg)
+DECL|function|builtin_rand (void * arg)
 name|builtin_rand
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -735,10 +980,11 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|builtin_origValXY (double arg)
+DECL|function|builtin_origValXY (void * arg)
 name|builtin_origValXY
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -818,10 +1064,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_origValXYIntersample (double arg)
+DECL|function|builtin_origValXYIntersample (void * arg)
 name|builtin_origValXYIntersample
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -1243,10 +1490,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_origValRA (double arg)
+DECL|function|builtin_origValRA (void * arg)
 name|builtin_origValRA
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -1354,10 +1602,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_origValRAIntersample (double arg)
+DECL|function|builtin_origValRAIntersample (void * arg)
 name|builtin_origValRAIntersample
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -1812,10 +2061,11 @@ end_else
 
 begin_function
 name|void
-DECL|function|builtin_origValXY (double arg)
+DECL|function|builtin_origValXY (void * arg)
 name|builtin_origValXY
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -1927,10 +2177,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_origValXYIntersample (double arg)
+DECL|function|builtin_origValXYIntersample (void * arg)
 name|builtin_origValXYIntersample
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -2334,10 +2585,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_origValRA (double arg)
+DECL|function|builtin_origValRA (void * arg)
 name|builtin_origValRA
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -2477,10 +2729,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|builtin_origValRAIntersample (double arg)
+DECL|function|builtin_origValRAIntersample (void * arg)
 name|builtin_origValRAIntersample
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{
@@ -2921,10 +3174,237 @@ end_comment
 
 begin_function
 name|void
-DECL|function|builtin_grayColor (double arg)
+DECL|function|builtin_red (void * arg)
+name|builtin_red
+parameter_list|(
+name|void
+modifier|*
+name|arg
+parameter_list|)
+block|{
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+operator|=
+name|red_component
+argument_list|(
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+argument_list|)
+operator|/
+literal|255.0
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|builtin_green (void * arg)
+name|builtin_green
+parameter_list|(
+name|void
+modifier|*
+name|arg
+parameter_list|)
+block|{
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+operator|=
+name|green_component
+argument_list|(
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+argument_list|)
+operator|/
+literal|255.0
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|builtin_blue (void * arg)
+name|builtin_blue
+parameter_list|(
+name|void
+modifier|*
+name|arg
+parameter_list|)
+block|{
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+operator|=
+name|blue_component
+argument_list|(
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+argument_list|)
+operator|/
+literal|255.0
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|builtin_rgbColor (void * arg)
+name|builtin_rgbColor
+parameter_list|(
+name|void
+modifier|*
+name|arg
+parameter_list|)
+block|{
+name|int
+name|redComponent
+init|=
+name|stack
+index|[
+name|stackp
+operator|-
+literal|3
+index|]
+operator|*
+literal|255
+decl_stmt|,
+name|greenComponent
+init|=
+name|stack
+index|[
+name|stackp
+operator|-
+literal|2
+index|]
+operator|*
+literal|255
+decl_stmt|,
+name|blueComponent
+init|=
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+operator|*
+literal|255
+decl_stmt|;
+name|stackp
+operator|-=
+literal|2
+expr_stmt|;
+if|if
+condition|(
+name|redComponent
+operator|<
+literal|0
+condition|)
+name|redComponent
+operator|=
+literal|0
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|redComponent
+operator|>
+literal|255
+condition|)
+name|redComponent
+operator|=
+literal|255
+expr_stmt|;
+if|if
+condition|(
+name|greenComponent
+operator|<
+literal|0
+condition|)
+name|greenComponent
+operator|=
+literal|0
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|greenComponent
+operator|>
+literal|255
+condition|)
+name|greenComponent
+operator|=
+literal|255
+expr_stmt|;
+if|if
+condition|(
+name|blueComponent
+operator|<
+literal|0
+condition|)
+name|blueComponent
+operator|=
+literal|0
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|blueComponent
+operator|>
+literal|255
+condition|)
+name|blueComponent
+operator|=
+literal|255
+expr_stmt|;
+name|stack
+index|[
+name|stackp
+operator|-
+literal|1
+index|]
+operator|=
+name|color_to_double
+argument_list|(
+name|redComponent
+argument_list|,
+name|greenComponent
+argument_list|,
+name|blueComponent
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|builtin_grayColor (void * arg)
 name|builtin_grayColor
 parameter_list|(
-name|double
+name|void
+modifier|*
 name|arg
 parameter_list|)
 block|{

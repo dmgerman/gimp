@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * MathMap plug-in --- generate an image by means of a mathematical expression  * Copyright (C) 1997 Mark Probst  * schani@unix.cslab.tuwien.ac.at  *  * Plug-In structure based on:  *   Whirl plug-in --- distort an image into a whirlpool  *   Copyright (C) 1997 Federico Mena Quintero  *   federico@nuclecu.unam.mx  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * MathMap plug-in --- generate an image by means of a mathematical expression  * Copyright (C) 1997 Mark Probst  * schani@unix.cslab.tuwien.ac.at  *  * Plug-In structure based on:  *   Whirl plug-in --- distort an image into a whirlpool  *   Copyright (C) 1997 Federico Mena Quintero  *   federico@nuclecu.unam.mx  *  * Version 0.2  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
 end_comment
 
 begin_include
@@ -19,6 +19,12 @@ begin_include
 include|#
 directive|include
 file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<assert.h>
 end_include
 
 begin_include
@@ -49,6 +55,12 @@ begin_include
 include|#
 directive|include
 file|"postfix.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"scanner.h"
 end_include
 
 begin_comment
@@ -146,7 +158,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2769b6b80108
+DECL|struct|__anon2c97779d0108
 typedef|typedef
 struct|struct
 block|{
@@ -168,7 +180,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2769b6b80208
+DECL|struct|__anon2c97779d0208
 typedef|typedef
 struct|struct
 block|{
@@ -825,7 +837,7 @@ block|,
 block|{
 literal|"sphere"
 block|,
-literal|"origValRA(r*(1-inintv(r/(X*2),-0.5,0.5))+X/90*asin(inintv(r/(X*2),-0.5,0.5)*r/X),a)"
+literal|"p=r/(X*2);origValRA(r*(1-inintv(p,-0.5,0.5))+X/90*asin(inintv(p,-0.5,0.5)*r/X),a)"
 block|}
 block|,
 block|{
@@ -865,6 +877,12 @@ literal|"origValXY(x+rand(-3,3),y+rand(-3,3))"
 block|}
 block|,
 block|{
+literal|"darts"
+block|,
+literal|"p=origValXY(x,y);p=if inintv((a-9)%36,0,18) then p else rgbColor(1-red(p),1-green(p),1-blue(p)) end;if inintv(r%80,68,80) then p else rgbColor(1-red(p),1-green(p),1-blue(p)) end"
+block|}
+block|,
+block|{
 literal|"?"
 block|,
 literal|"origValRA(r,a+sin(a*10)*20)"
@@ -885,7 +903,40 @@ block|,
 block|{
 literal|"grid"
 block|,
-literal|"grayColor(if((x%20)*(y%20),1,0))"
+literal|"grayColor(if (x%20)*(y%20) then 1 else 0 end)"
+block|}
+block|,
+block|{
+literal|"moire1"
+block|,
+literal|"rgbColor(abs(sin(15*r)+sin(15*a))*0.5,abs(sin(17*r)+sin(17*a))*0.5,abs(sin(19*r)+sin(19*a))*0.5)"
+block|}
+block|,
+block|{
+literal|"moire2"
+block|,
+literal|"grayColor(sin(x*y)*0.5+0.5)"
+block|}
+block|,
+block|{
+literal|"mandelbrot"
+block|,
+literal|"tx=1.5*x/X-0.5; "
+literal|"ty=1.5*y/X-0; "
+literal|"iter=0; "
+literal|"xr=0; "
+literal|"xi=0; "
+literal|"xrsq=0; "
+literal|"xisq=0; "
+literal|"while and(less(xrsq+xisq,4),less(iter,31)) "
+literal|"do "
+literal|"xrsq=xr*xr; "
+literal|"xisq=xi*xi; "
+literal|"xi=2*xr*xi+ty; "
+literal|"xr=xrsq-xisq+tx; "
+literal|"iter=iter+1 "
+literal|"end; "
+literal|"grayColor(iter/32)"
 block|}
 block|,
 block|{
@@ -1836,7 +1887,7 @@ name|theExprtree
 operator|=
 literal|0
 expr_stmt|;
-name|yy_scan_string
+name|scanFromString
 argument_list|(
 name|mmvals
 operator|.
@@ -1844,6 +1895,9 @@ name|expression
 argument_list|)
 expr_stmt|;
 name|yyparse
+argument_list|()
+expr_stmt|;
+name|endScanningFromString
 argument_list|()
 expr_stmt|;
 if|if
@@ -1858,6 +1912,7 @@ argument_list|(
 name|theExprtree
 argument_list|)
 expr_stmt|;
+comment|/*    output_postfix(); */
 comment|/* Initialize pixel region */
 name|gimp_pixel_rgn_init
 argument_list|(
@@ -2715,6 +2770,21 @@ name|sel_y1
 operator|-
 name|middleY
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|intersamplingEnabled
+condition|)
+block|{
+name|currentX
+operator|+=
+literal|0.5
+expr_stmt|;
+name|currentY
+operator|+=
+literal|0.5
+expr_stmt|;
+block|}
 name|calc_ra
 argument_list|()
 expr_stmt|;
@@ -3028,6 +3098,13 @@ argument_list|,
 name|newrow
 argument_list|,
 name|newcol
+argument_list|)
+expr_stmt|;
+name|assert
+argument_list|(
+name|the_tile
+operator|!=
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_tile_ref
@@ -3522,13 +3599,6 @@ name|gtk_widget_set_default_colormap
 argument_list|(
 name|gtk_preview_get_cmap
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"here we are5!\n"
 argument_list|)
 expr_stmt|;
 name|build_preview_source_image
@@ -4641,11 +4711,6 @@ decl_stmt|,
 name|dy
 decl_stmt|;
 name|double
-name|px
-decl_stmt|,
-name|py
-decl_stmt|;
-name|double
 name|cx
 decl_stmt|,
 name|cy
@@ -4776,10 +4841,6 @@ operator|-
 name|top
 operator|)
 expr_stmt|;
-name|py
-operator|=
-name|top
-expr_stmt|;
 name|p_ul
 operator|=
 name|wint
@@ -4802,11 +4863,7 @@ operator|-
 literal|1
 operator|)
 expr_stmt|;
-name|theExprtree
-operator|=
-literal|0
-expr_stmt|;
-name|yy_scan_string
+name|scanFromString
 argument_list|(
 name|mmvals
 operator|.
@@ -4814,6 +4871,9 @@ name|expression
 argument_list|)
 expr_stmt|;
 name|yyparse
+argument_list|()
+expr_stmt|;
+name|endScanningFromString
 argument_list|()
 expr_stmt|;
 if|if
@@ -4914,17 +4974,13 @@ operator|=
 literal|0
 init|;
 name|y
-operator|<=
+operator|<
 name|preview_height
 condition|;
 name|y
 operator|++
 control|)
 block|{
-name|px
-operator|=
-name|left
-expr_stmt|;
 for|for
 control|(
 name|x
@@ -5063,7 +5119,6 @@ operator|*
 literal|3
 expr_stmt|;
 block|}
-comment|/* for */
 name|gtk_widget_draw
 argument_list|(
 name|wint

@@ -14,7 +14,8 @@ modifier|*
 name|stackfunc
 function_decl|)
 parameter_list|(
-name|double
+name|void
+modifier|*
 parameter_list|)
 function_decl|;
 end_typedef
@@ -30,7 +31,8 @@ name|stackfunc
 name|func
 decl_stmt|;
 DECL|member|arg
-name|double
+name|void
+modifier|*
 name|arg
 decl_stmt|;
 DECL|typedef|postfix
@@ -46,6 +48,15 @@ parameter_list|(
 name|exprtree
 modifier|*
 name|tree
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|output_postfix
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
