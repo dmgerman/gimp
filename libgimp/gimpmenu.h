@@ -16,6 +16,16 @@ directive|define
 name|__GIMP_MENU_H__
 end_define
 
+begin_comment
+comment|/*  These functions are deprecated and should not be used in newly  *  written code.  */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_macro
 name|G_BEGIN_DECLS
 end_macro
@@ -142,6 +152,15 @@ end_function_decl
 begin_macro
 name|G_END_DECLS
 end_macro
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  GIMP_DISABLE_DEPRECATED  */
+end_comment
 
 begin_endif
 endif|#

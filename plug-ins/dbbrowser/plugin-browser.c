@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c106abf0108
+DECL|struct|__anon275f18b50108
 block|{
 DECL|member|list_view
 name|GtkTreeView
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c106abf0208
+DECL|struct|__anon275f18b50208
 block|{
 DECL|member|menu
 name|gchar
@@ -182,7 +182,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c106abf0303
+DECL|enum|__anon275f18b50303
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -207,7 +207,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c106abf0403
+DECL|enum|__anon275f18b50403
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -2320,64 +2320,17 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|void
-DECL|function|pinfo_free (gpointer p)
-name|pinfo_free
-parameter_list|(
-name|gpointer
-name|p
-parameter_list|)
-block|{
-name|PInfo
-modifier|*
-name|pinfo
-init|=
-name|p
-decl_stmt|;
-name|g_free
-argument_list|(
-name|pinfo
-operator|->
-name|menu
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|pinfo
-operator|->
-name|accel
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|pinfo
-operator|->
-name|prog
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|pinfo
-operator|->
-name|types
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|pinfo
-operator|->
-name|realname
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|pinfo
-argument_list|)
-expr_stmt|;
-block|}
-end_function
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static void pinfo_free (gpointer p) {   PInfo *pinfo = p;    g_free (pinfo->menu);   g_free (pinfo->accel);   g_free (pinfo->prog);   g_free (pinfo->types);   g_free (pinfo->realname);   g_free (pinfo); }
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static

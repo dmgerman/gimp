@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2958fa620103
+DECL|enum|__anon2b94e97c0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2958fa620203
+DECL|enum|__anon2b94e97c0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958fa620308
+DECL|struct|__anon2b94e97c0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -239,7 +239,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2958fa62040a
+DECL|union|__anon2b94e97c040a
 block|{
 DECL|member|d
 name|gdouble
@@ -264,7 +264,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958fa620508
+DECL|struct|__anon2b94e97c0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -294,7 +294,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958fa620608
+DECL|struct|__anon2b94e97c0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -329,7 +329,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958fa620708
+DECL|struct|__anon2b94e97c0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958fa620808
+DECL|struct|__anon2b94e97c0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -432,7 +432,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958fa620908
+DECL|struct|__anon2b94e97c0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -624,7 +624,7 @@ DECL|member|in_update
 name|gboolean
 name|in_update
 decl_stmt|;
-comment|/* true if we're currently in 				   update_values() - don't do anything 				   on updates */
+comment|/* true if we're currently in                                    update_values() - don't do anything                                    on updates */
 DECL|typedef|IfsDialog
 block|}
 name|IfsDialog
@@ -634,7 +634,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2958fa620a08
+DECL|struct|__anon2b94e97c0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -4197,7 +4197,6 @@ argument_list|)
 argument_list|,
 operator|(
 name|gpointer
-operator|*
 operator|)
 operator|&
 name|dlg
@@ -5809,7 +5808,7 @@ operator|.
 name|aspect_ratio
 condition|)
 block|{
-comment|/* Adjust things so that what fit onto the old image, fits 	     onto the new image */
+comment|/* Adjust things so that what fit onto the old image, fits              onto the new image */
 name|Aff2
 name|t1
 decl_stmt|,
@@ -6087,7 +6086,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-comment|/* boundary and spatial transformations will be computed 	 when the design_area gets a ConfigureNotify event */
+comment|/* boundary and spatial transformations will be computed          when the design_area gets a ConfigureNotify event */
 name|set_current_element
 argument_list|(
 literal|0

@@ -41,13 +41,25 @@ end_undef
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
+file|"gimp.h"
+end_include
+
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpmenu.h"
 end_include
 
 begin_include
