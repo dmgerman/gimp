@@ -178,6 +178,21 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|gimp_text_tool_set_layer
+parameter_list|(
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|,
+name|GimpTextLayer
+modifier|*
+name|text_layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

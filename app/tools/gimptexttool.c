@@ -1731,5 +1731,42 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_text_tool_set_layer (GimpTextTool * text_tool,GimpTextLayer * text_layer)
+name|gimp_text_tool_set_layer
+parameter_list|(
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|,
+name|GimpTextLayer
+modifier|*
+name|text_layer
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TEXT_TOOL
+argument_list|(
+name|text_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|text_layer
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_TEXT_LAYER
+argument_list|(
+name|text_layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 

@@ -2300,7 +2300,7 @@ argument_list|,
 operator|(
 name|GimpActivateItemFunc
 operator|)
-name|layers_edit_layer_query
+name|layers_text_tool
 argument_list|,
 name|factory
 operator|->

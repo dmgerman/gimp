@@ -104,6 +104,31 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/Te_xt Tool"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_text_tool_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_TOOL_TEXT
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_TOOL_TEXT
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/_Edit Layer Attributes..."
 argument_list|)
 block|,
@@ -958,6 +983,16 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_item_factory_set_visible (factory, menu, (condition) != 0)
+name|SET_VISIBLE
+argument_list|(
+literal|"/Text Tool"
+argument_list|,
+name|text_layer
+operator|&&
+operator|!
+name|ac
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"/Edit Layer Attributes..."
