@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -28,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -40,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -128,12 +134,12 @@ value|dummy_printf
 end_define
 
 begin_function
-DECL|function|dummy_printf (char * fmt,...)
 specifier|static
 name|void
+DECL|function|dummy_printf (gchar * fmt,...)
 name|dummy_printf
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|fmt
 parameter_list|,
@@ -152,7 +158,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27ed00140108
+DECL|struct|__anon27aa6db00108
 typedef|typedef
 struct|struct
 block|{
@@ -171,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27ed00140208
+DECL|struct|__anon27aa6db00208
 typedef|typedef
 struct|struct
 block|{
@@ -244,7 +250,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ed00140308
+DECL|struct|__anon27aa6db00308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -476,21 +482,6 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|flare_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -856,7 +847,9 @@ begin_function
 specifier|static
 name|void
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -982,9 +975,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -1311,9 +1304,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|flare_dialog (GDrawable * drawable)
 specifier|static
 name|gint
+DECL|function|flare_dialog (GDrawable * drawable)
 name|flare_dialog
 parameter_list|(
 name|GDrawable
@@ -1449,36 +1442,68 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|printf("Waiting... (pid %d)\n", getpid());   kill(getpid(), 19);
+block|g_print ("Waiting... (pid %d)\n", getpid ());   kill (getpid (), 19);
 comment|/* SIGSTOP */
 endif|#
 directive|endif
 name|dlg
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"FlareFX"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dlg
-argument_list|)
+argument_list|,
+literal|"flarefx"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/flarefx.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|flare_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1490,202 +1515,12 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|flare_close_callback
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-comment|/*  Action area  */
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|hbbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|flare_ok_callback
-argument_list|,
-name|dlg
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect_object
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|gtk_widget_destroy
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/*  parameter settings  */
@@ -1706,7 +1541,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1766,29 +1601,9 @@ comment|/* --- Interface functions --- */
 end_comment
 
 begin_function
-DECL|function|flare_close_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
-name|flare_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|flare_ok_callback (GtkWidget * widget,gpointer data)
-specifier|static
-name|void
 name|flare_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -1821,9 +1636,9 @@ comment|/* --- Filter functions --- */
 end_comment
 
 begin_function
-DECL|function|FlareFX (GDrawable * drawable)
 specifier|static
 name|void
+DECL|function|FlareFX (GDrawable * drawable)
 name|FlareFX
 parameter_list|(
 name|GDrawable
@@ -2487,8 +2302,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|mcolor (guchar * s,gfloat h)
 name|void
+DECL|function|mcolor (guchar * s,gfloat h)
 name|mcolor
 parameter_list|(
 name|guchar
@@ -2538,8 +2353,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|mglow (guchar * s,gfloat h)
 name|void
+DECL|function|mglow (guchar * s,gfloat h)
 name|mglow
 parameter_list|(
 name|guchar
@@ -2589,8 +2404,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|minner (guchar * s,gfloat h)
 name|void
+DECL|function|minner (guchar * s,gfloat h)
 name|minner
 parameter_list|(
 name|guchar
@@ -2640,8 +2455,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|mouter (guchar * s,gfloat h)
 name|void
+DECL|function|mouter (guchar * s,gfloat h)
 name|mouter
 parameter_list|(
 name|guchar
@@ -2685,8 +2500,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|mhalo (guchar * s,gfloat h)
 name|void
+DECL|function|mhalo (guchar * s,gfloat h)
 name|mhalo
 parameter_list|(
 name|guchar
@@ -2743,8 +2558,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|fixpix (guchar * data,float procent,RGBfloat colpro)
 name|void
+DECL|function|fixpix (guchar * data,float procent,RGBfloat colpro)
 name|fixpix
 parameter_list|(
 name|guchar
@@ -2837,8 +2652,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|initref (gint sx,gint sy,gint width,gint height,gint matt)
 name|void
+DECL|function|initref (gint sx,gint sy,gint width,gint height,gint matt)
 name|initref
 parameter_list|(
 name|gint
@@ -4558,8 +4373,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|mrt1 (guchar * s,gint i,gint col,gint row)
 name|void
+DECL|function|mrt1 (guchar * s,gint i,gint col,gint row)
 name|mrt1
 parameter_list|(
 name|guchar
@@ -4649,8 +4464,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|mrt2 (guchar * s,gint i,gint col,gint row)
 name|void
+DECL|function|mrt2 (guchar * s,gint i,gint col,gint row)
 name|mrt2
 parameter_list|(
 name|guchar
@@ -4750,8 +4565,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|mrt3 (guchar * s,gint i,gint col,gint row)
 name|void
+DECL|function|mrt3 (guchar * s,gint i,gint col,gint row)
 name|mrt3
 parameter_list|(
 name|guchar
@@ -4857,8 +4672,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|mrt4 (guchar * s,gint i,gint col,gint row)
 name|void
+DECL|function|mrt4 (guchar * s,gint i,gint col,gint row)
 name|mrt4
 parameter_list|(
 name|guchar
@@ -5144,7 +4959,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -5711,9 +5526,14 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -5734,9 +5554,14 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -7146,9 +6971,14 @@ name|in_call
 operator|=
 name|TRUE
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -7177,9 +7007,14 @@ argument_list|,
 name|buf
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,

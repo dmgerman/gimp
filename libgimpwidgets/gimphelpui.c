@@ -22,6 +22,21 @@ file|"gimphelpui.h"
 end_include
 
 begin_comment
+comment|/*  external functions  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_help
+parameter_list|(
+name|gchar
+modifier|*
+name|help_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
@@ -302,6 +317,25 @@ argument_list|(
 name|tips_query
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+operator|!
+name|gtk_signal_lookup
+argument_list|(
+literal|"tips_query"
+argument_list|,
+name|GTK_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|klass
+operator|->
+name|type
+argument_list|)
+condition|)
+block|{
 name|gtk_object_class_user_signal_new
 argument_list|(
 name|GTK_OBJECT

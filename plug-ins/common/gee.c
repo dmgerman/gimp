@@ -46,19 +46,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"glib.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -990,6 +990,15 @@ operator|)
 name|window_delete_callback
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|dlg
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/gee.html"
 argument_list|)
 expr_stmt|;
 comment|/* Action area - 'close' button only. */

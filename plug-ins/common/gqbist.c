@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -40,19 +46,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -349,8 +355,8 @@ comment|/** qbist functions ****************************************************
 end_comment
 
 begin_function
-DECL|function|create_info (s_info * info)
 name|void
+DECL|function|create_info (s_info * info)
 name|create_info
 parameter_list|(
 name|s_info
@@ -440,8 +446,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|modify_info (s_info * o_info,s_info * n_info)
 name|void
+DECL|function|modify_info (s_info * o_info,s_info * n_info)
 name|modify_info
 parameter_list|(
 name|s_info
@@ -605,8 +611,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|check_last_modified (s_info info,int p,int n)
 name|void
+DECL|function|check_last_modified (s_info info,int p,int n)
 name|check_last_modified
 parameter_list|(
 name|s_info
@@ -699,8 +705,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|optimize (s_info info)
 name|void
+DECL|function|optimize (s_info info)
 name|optimize
 parameter_list|(
 name|s_info
@@ -2748,27 +2754,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|dialog_close (GtkWidget * widget,gpointer data)
 name|void
-name|dialog_close
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|dialog_cancel (GtkWidget * widget,gpointer data)
-name|void
 name|dialog_cancel
 parameter_list|(
 name|GtkWidget
@@ -2819,8 +2806,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_new_variations (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|dialog_new_variations (GtkWidget * widget,gpointer data)
 name|dialog_new_variations
 parameter_list|(
 name|GtkWidget
@@ -2831,7 +2818,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -2870,8 +2857,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_update_previews (GtkWidget * widget,gpointer data)
 name|void
+DECL|function|dialog_update_previews (GtkWidget * widget,gpointer data)
 name|dialog_update_previews
 parameter_list|(
 name|GtkWidget
@@ -2882,7 +2869,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -3004,8 +2991,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_select_preview (GtkWidget * widget,s_info * n_info)
 name|void
+DECL|function|dialog_select_preview (GtkWidget * widget,s_info * n_info)
 name|dialog_select_preview
 parameter_list|(
 name|GtkWidget
@@ -3114,8 +3101,8 @@ value|fprintf(f, "%c%c", HIBITE(u), LOBITE(u));
 end_define
 
 begin_function
-DECL|function|load_data (char * name)
 name|int
+DECL|function|load_data (char * name)
 name|load_data
 parameter_list|(
 name|char
@@ -3146,9 +3133,7 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 literal|0
-operator|)
 return|;
 for|for
 control|(
@@ -3268,16 +3253,14 @@ name|f
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|save_data (char * name)
 name|void
+DECL|function|save_data (char * name)
 name|save_data
 parameter_list|(
 name|char
@@ -3424,8 +3407,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|file_selection_save (GtkWidget * widget,GtkWidget * file_select)
 name|void
+DECL|function|file_selection_save (GtkWidget * widget,GtkWidget * file_select)
 name|file_selection_save
 parameter_list|(
 name|GtkWidget
@@ -3457,8 +3440,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|file_selection_load (GtkWidget * widget,GtkWidget * file_select)
 name|void
+DECL|function|file_selection_load (GtkWidget * widget,GtkWidget * file_select)
 name|file_selection_load
 parameter_list|(
 name|GtkWidget
@@ -3504,8 +3487,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|file_selection_cancel (GtkWidget * widget,GtkWidget * file_select)
 name|void
+DECL|function|file_selection_cancel (GtkWidget * widget,GtkWidget * file_select)
 name|file_selection_cancel
 parameter_list|(
 name|GtkWidget
@@ -3526,8 +3509,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_load (GtkWidget * widget,gpointer d)
 name|void
+DECL|function|dialog_load (GtkWidget * widget,gpointer d)
 name|dialog_load
 parameter_list|(
 name|GtkWidget
@@ -3550,6 +3533,15 @@ name|_
 argument_list|(
 literal|"Load QBE file..."
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|file_select
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/gqbist.html"
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3611,8 +3603,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_save (GtkWidget * widget,gpointer d)
 name|void
+DECL|function|dialog_save (GtkWidget * widget,gpointer d)
 name|dialog_save
 parameter_list|(
 name|GtkWidget
@@ -3635,6 +3627,15 @@ name|_
 argument_list|(
 literal|"Save (middle transform) as QBE file..."
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_help_connect_help_accel
+argument_list|(
+name|file_select
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/gqbist.html"
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3696,10 +3697,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_create ()
 name|int
+DECL|function|dialog_create (void)
 name|dialog_create
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -3725,7 +3728,7 @@ decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|srand
@@ -3757,7 +3760,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-literal|"video"
+literal|"gqbist"
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -3835,17 +3838,96 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
+name|_
 argument_list|(
-name|dialog
+literal|"G-Qbist 1.10"
 argument_list|)
 argument_list|,
-literal|"G-Qbist 1.10"
+literal|"gqbist"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/gqbist.html"
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|dialog_ok
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Load"
+argument_list|)
+argument_list|,
+name|dialog_load
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Save"
+argument_list|)
+argument_list|,
+name|dialog_save
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|dialog_cancel
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3857,10 +3939,10 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_close
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3896,7 +3978,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -4120,263 +4202,6 @@ argument_list|(
 name|NULL
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_ok
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|dialog
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Load"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_load
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|dialog
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Save"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_save
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|dialog
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_cancel
-argument_list|,
-operator|(
-name|gpointer
-operator|)
-name|dialog
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

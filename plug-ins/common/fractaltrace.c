@@ -26,6 +26,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -44,12 +50,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -57,6 +57,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -208,7 +214,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2af00d680108
+DECL|struct|__anon2bb72c1b0108
 typedef|typedef
 struct|struct
 block|{
@@ -285,7 +291,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2af00d680208
+DECL|struct|__anon2bb72c1b0208
 typedef|typedef
 struct|struct
 block|{
@@ -350,9 +356,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|query (void)
 specifier|static
 name|void
+DECL|function|query (void)
 name|query
 parameter_list|(
 name|void
@@ -517,7 +523,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon2af00d680308
+DECL|struct|__anon2bb72c1b0308
 typedef|typedef
 struct|struct
 block|{
@@ -560,7 +566,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2af00d680408
+DECL|struct|__anon2bb72c1b0408
 typedef|typedef
 struct|struct
 block|{
@@ -1119,7 +1125,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2af00d680508
+DECL|struct|__anon2bb72c1b0508
 typedef|typedef
 struct|struct
 block|{
@@ -1146,9 +1152,9 @@ typedef|;
 end_typedef
 
 begin_function
-DECL|function|pixels_init (GDrawable * drawable)
 specifier|static
 name|void
+DECL|function|pixels_init (GDrawable * drawable)
 name|pixels_init
 parameter_list|(
 name|GDrawable
@@ -1337,9 +1343,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixels_free (void)
 specifier|static
 name|void
+DECL|function|pixels_free (void)
 name|pixels_free
 parameter_list|(
 name|void
@@ -1395,9 +1401,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixels_get (gint x,gint y,pixel_t * pixel)
 specifier|static
 name|void
+DECL|function|pixels_get (gint x,gint y,pixel_t * pixel)
 name|pixels_get
 parameter_list|(
 name|gint
@@ -1745,9 +1751,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixels_get_biliner (gdouble x,gdouble y,pixel_t * pixel)
 specifier|static
 name|void
+DECL|function|pixels_get_biliner (gdouble x,gdouble y,pixel_t * pixel)
 name|pixels_get_biliner
 parameter_list|(
 name|gdouble
@@ -2107,9 +2113,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixels_set (gint x,gint y,pixel_t * pixel)
 specifier|static
 name|void
+DECL|function|pixels_set (gint x,gint y,pixel_t * pixel)
 name|pixels_set
 parameter_list|(
 name|gint
@@ -2327,9 +2333,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|pixels_store (void)
 specifier|static
 name|void
+DECL|function|pixels_store (void)
 name|pixels_store
 parameter_list|(
 name|void
@@ -2384,9 +2390,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|mandelbrot (gdouble x,gdouble y,gdouble * u,gdouble * v)
 specifier|static
 name|void
+DECL|function|mandelbrot (gdouble x,gdouble y,gdouble * u,gdouble * v)
 name|mandelbrot
 parameter_list|(
 name|gdouble
@@ -2501,9 +2507,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|filter (GDrawable * drawable)
 specifier|static
 name|void
+DECL|function|filter (GDrawable * drawable)
 name|filter
 parameter_list|(
 name|GDrawable
@@ -2958,9 +2964,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|dialog_entry_gint32_callback (GtkWidget * widget,gpointer * data)
 specifier|static
 name|void
+DECL|function|dialog_entry_gint32_callback (GtkWidget * widget,gpointer * data)
 name|dialog_entry_gint32_callback
 parameter_list|(
 name|GtkWidget
@@ -3018,9 +3024,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_entry_gint32_new (char * caption,gint32 * value,GtkWidget * table,gint row)
 specifier|static
 name|void
+DECL|function|dialog_entry_gint32_new (char * caption,gint32 * value,GtkWidget * table,gint row)
 name|dialog_entry_gint32_new
 parameter_list|(
 name|char
@@ -3160,9 +3166,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|dialog_entry_gdouble_callback (GtkWidget * widget,gpointer * data)
 specifier|static
 name|void
+DECL|function|dialog_entry_gdouble_callback (GtkWidget * widget,gpointer * data)
 name|dialog_entry_gdouble_callback
 parameter_list|(
 name|GtkWidget
@@ -3220,9 +3226,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_entry_gdouble_new (char * caption,gdouble * value,GtkWidget * table,gint row)
 specifier|static
 name|void
+DECL|function|dialog_entry_gdouble_new (char * caption,gdouble * value,GtkWidget * table,gint row)
 name|dialog_entry_gdouble_new
 parameter_list|(
 name|char
@@ -3362,10 +3368,10 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|dialog_entry_table (void)
 specifier|static
 name|GtkWidget
 modifier|*
+DECL|function|dialog_entry_table (void)
 name|dialog_entry_table
 parameter_list|(
 name|void
@@ -3490,32 +3496,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|dialog_destroy_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
-name|dialog_destroy_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|dialog_ok_callback (GtkWidget * widget,gpointer data)
-specifier|static
-name|void
 name|dialog_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -3542,9 +3525,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_cancel_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|dialog_cancel_callback (GtkWidget * widget,gpointer data)
 name|dialog_cancel_callback
 parameter_list|(
 name|GtkWidget
@@ -3570,30 +3553,14 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-DECL|function|dialog_help_callback (GtkWidget * widget,gpointer data)
-specifier|static
-name|void
-name|dialog_help_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{ }
-end_function
-
 begin_comment
 comment|/******************************************************************************/
 end_comment
 
 begin_function
-DECL|function|dialog_outside_type_callback (GtkWidget * widget,gpointer * data)
 specifier|static
 name|void
+DECL|function|dialog_outside_type_callback (GtkWidget * widget,gpointer * data)
 name|dialog_outside_type_callback
 parameter_list|(
 name|GtkWidget
@@ -3650,7 +3617,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon2af00d680608
+DECL|struct|__anon2bb72c1b0608
 typedef|typedef
 struct|struct
 block|{
@@ -3702,9 +3669,9 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|dialog_preview_setpixel (gint x,gint y,pixel_t * pixel)
 specifier|static
 name|void
+DECL|function|dialog_preview_setpixel (gint x,gint y,pixel_t * pixel)
 name|dialog_preview_setpixel
 parameter_list|(
 name|gint
@@ -3814,9 +3781,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_preview_store (void)
 specifier|static
 name|void
+DECL|function|dialog_preview_store (void)
 name|dialog_preview_store
 parameter_list|(
 name|void
@@ -3883,9 +3850,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_preview_init (void)
 specifier|static
 name|void
+DECL|function|dialog_preview_init (void)
 name|dialog_preview_init
 parameter_list|(
 name|void
@@ -4309,9 +4276,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|dialog_preview_draw (void)
 specifier|static
 name|void
+DECL|function|dialog_preview_draw (void)
 name|dialog_preview_draw
 parameter_list|(
 name|void
@@ -4644,9 +4611,9 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|dialog_show (void)
 specifier|static
 name|gint
+DECL|function|dialog_show (void)
 name|dialog_show
 parameter_list|(
 name|void
@@ -4692,7 +4659,7 @@ name|g_strdup
 argument_list|(
 name|_
 argument_list|(
-literal|"Fractal Trace"
+literal|"fractaltrace"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4714,8 +4681,63 @@ expr_stmt|;
 block|}
 name|dialog
 operator|=
-name|gtk_dialog_new
-argument_list|()
+name|gimp_dialog_new
+argument_list|(
+name|_
+argument_list|(
+literal|"Fractal Trace"
+argument_list|)
+argument_list|,
+literal|"fractaltrace"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/fractaltrace.html"
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|dialog_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|dialog_cancel_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
@@ -4728,7 +4750,7 @@ literal|"destroy"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|dialog_destroy_callback
+name|gtk_main_quit
 argument_list|)
 argument_list|,
 name|NULL
@@ -4763,192 +4785,6 @@ argument_list|(
 name|mainbox
 argument_list|)
 expr_stmt|;
-block|{
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|dialog_ok_callback
-argument_list|)
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|dialog_cancel_callback
-argument_list|)
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Help"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|dialog_help_callback
-argument_list|)
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-block|}
 block|{
 name|GtkWidget
 modifier|*
@@ -5649,6 +5485,9 @@ name|dialog_preview_draw
 argument_list|()
 expr_stmt|;
 name|gtk_main
+argument_list|()
+expr_stmt|;
+name|gdk_flush
 argument_list|()
 expr_stmt|;
 return|return

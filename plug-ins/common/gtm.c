@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -28,19 +34,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -54,7 +60,7 @@ comment|/* Typedefs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a3622490108
+DECL|struct|__anon2c6b6f950108
 typedef|typedef
 struct|struct
 block|{
@@ -121,7 +127,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3622490208
+DECL|struct|__anon2c6b6f950208
 typedef|typedef
 struct|struct
 block|{
@@ -280,21 +286,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|save_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gtm_entry_callback
 parameter_list|(
 name|GtkWidget
@@ -393,27 +384,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|set_tooltip
-parameter_list|(
-name|GtkTooltips
-modifier|*
-name|tooltips
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1596,23 +1566,17 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_dialog ()
 specifier|static
 name|gint
+DECL|function|save_dialog (void)
 name|save_dialog
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
 name|dlg
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1633,15 +1597,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|toggle
-decl_stmt|;
-name|GtkTooltips
-modifier|*
-name|tips
-decl_stmt|;
-name|GdkColor
-name|tips_fg
-decl_stmt|,
-name|tips_bg
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1684,7 +1639,7 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-literal|"save"
+literal|"gtm"
 argument_list|)
 expr_stmt|;
 name|gtk_init
@@ -1704,30 +1659,62 @@ argument_list|)
 expr_stmt|;
 name|dlg
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"GIMP Table Magic"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dlg
-argument_list|)
+argument_list|,
+literal|"gtm"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/gtm.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|save_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -1739,280 +1726,17 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|save_close_callback
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Initialize Tooltips */
-comment|/* use black as foreground: */
-name|tips
-operator|=
-name|gtk_tooltips_new
+name|gimp_help_init
 argument_list|()
-expr_stmt|;
-name|tips_fg
-operator|.
-name|red
-operator|=
-literal|0
-expr_stmt|;
-name|tips_fg
-operator|.
-name|green
-operator|=
-literal|0
-expr_stmt|;
-name|tips_fg
-operator|.
-name|blue
-operator|=
-literal|0
-expr_stmt|;
-comment|/* postit yellow (khaki) as background: */
-name|gdk_color_alloc
-argument_list|(
-name|gtk_widget_get_colormap
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
-operator|&
-name|tips_fg
-argument_list|)
-expr_stmt|;
-name|tips_bg
-operator|.
-name|red
-operator|=
-literal|61669
-expr_stmt|;
-name|tips_bg
-operator|.
-name|green
-operator|=
-literal|59113
-expr_stmt|;
-name|tips_bg
-operator|.
-name|blue
-operator|=
-literal|35979
-expr_stmt|;
-name|gdk_color_alloc
-argument_list|(
-name|gtk_widget_get_colormap
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
-operator|&
-name|tips_bg
-argument_list|)
-expr_stmt|;
-name|gtk_tooltips_set_colors
-argument_list|(
-name|tips
-argument_list|,
-operator|&
-name|tips_bg
-argument_list|,
-operator|&
-name|tips_fg
-argument_list|)
-expr_stmt|;
-comment|/*  Action area  */
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|hbbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|save_ok_callback
-argument_list|,
-name|dlg
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect_object
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|gtk_widget_destroy
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
 expr_stmt|;
 comment|/* HTML Page Options */
 name|frame
@@ -2035,7 +1759,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2095,10 +1819,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_toggle_callback
+argument_list|)
 argument_list|,
 operator|&
 name|gtmvals
@@ -2123,16 +1847,18 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"If checked GTM will output a full HTML document with<HTML>,<BODY>, etc. tags instead of just the table html."
+literal|"If checked GTM will output a full HTML document "
+literal|"with<HTML>,<BODY>, etc. tags instead of just "
+literal|"the table html."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2161,7 +1887,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2268,10 +1994,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_toggle_callback
+argument_list|)
 argument_list|,
 operator|&
 name|gtmvals
@@ -2296,16 +2022,18 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"If checked GTM will replace any rectangular sections of identically colored blocks with one large cell with ROWSPAN and COLSPAN values."
+literal|"If checked GTM will replace any rectangular "
+literal|"sections of identically colored blocks with one "
+literal|"large cell with ROWSPAN and COLSPAN values."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -2353,10 +2081,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_toggle_callback
+argument_list|)
 argument_list|,
 operator|&
 name|gtmvals
@@ -2381,16 +2109,19 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Checking this tag will cause GTM to leave no whitespace between the TD tags and the cellcontent.  This is only necessary for pixel level positioning control."
+literal|"Checking this tag will cause GTM to leave no "
+literal|"whitespace between the TD tags and the "
+literal|"cellcontent.  This is only necessary for pixel "
+literal|"level positioning control."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -2438,10 +2169,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_toggle_callback
+argument_list|)
 argument_list|,
 operator|&
 name|gtmvals
@@ -2466,16 +2197,17 @@ argument_list|(
 name|toggle
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|toggle
 argument_list|,
 name|_
 argument_list|(
-literal|"Check if you would like to have the table captioned."
+literal|"Check if you would like to have the table "
+literal|"captioned."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|entry
@@ -2527,10 +2259,10 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_caption_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2552,16 +2284,16 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|entry
 argument_list|,
 name|_
 argument_list|(
 literal|"The text for the table caption."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|label
@@ -2654,10 +2386,10 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_cellcontent_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2679,16 +2411,16 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|entry
 argument_list|,
 name|_
 argument_list|(
 literal|"The text to go into each cell."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2722,7 +2454,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2874,10 +2606,10 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_entry_callback
+argument_list|)
 argument_list|,
 operator|&
 name|gtmvals
@@ -2885,9 +2617,14 @@ operator|.
 name|border
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -2911,16 +2648,17 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|entry
 argument_list|,
 name|_
 argument_list|(
-literal|"The number of pixels in the table border.  Can only be a number."
+literal|"The number of pixels in the table border.  "
+literal|"Can only be a number."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|label
@@ -3013,10 +2751,10 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_clwidth_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3038,16 +2776,17 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|entry
 argument_list|,
 name|_
 argument_list|(
-literal|"The width for each table cell.  Can be a number or a percent."
+literal|"The width for each table cell.  "
+literal|"Can be a number or a percent."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|label
@@ -3140,10 +2879,10 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_clheight_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -3165,16 +2904,17 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|entry
 argument_list|,
 name|_
 argument_list|(
-literal|"The height for each table cell.  Can be a number or a percent."
+literal|"The height for each table cell.  "
+literal|"Can be a number or a percent."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|label
@@ -3267,10 +3007,10 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_entry_callback
+argument_list|)
 argument_list|,
 operator|&
 name|gtmvals
@@ -3278,9 +3018,14 @@ operator|.
 name|cellpadding
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -3304,16 +3049,17 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|entry
 argument_list|,
 name|_
 argument_list|(
-literal|"The amount of cellpadding.  Can only be a number."
+literal|"The amount of cellpadding.  "
+literal|"Can only be a number."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|label
@@ -3406,10 +3152,10 @@ argument_list|)
 argument_list|,
 literal|"changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|gtm_entry_callback
+argument_list|)
 argument_list|,
 operator|&
 name|gtmvals
@@ -3417,9 +3163,14 @@ operator|.
 name|cellspacing
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -3443,16 +3194,17 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|set_tooltip
+name|gimp_help_set_help_data
 argument_list|(
-name|tips
-argument_list|,
 name|entry
 argument_list|,
 name|_
 argument_list|(
-literal|"The amount of cellspacing.  Can only be a number."
+literal|"The amount of cellspacing.  "
+literal|"Can only be a number."
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3485,9 +3237,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|color_comp (guchar * buffer,guchar * buf2)
 specifier|static
 name|gint
+DECL|function|color_comp (guchar * buffer,guchar * buf2)
 name|color_comp
 parameter_list|(
 name|guchar
@@ -3546,9 +3298,9 @@ comment|/*  Save interface functions  */
 end_comment
 
 begin_function
-DECL|function|gtm_toggle_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gtm_toggle_callback (GtkWidget * widget,gpointer data)
 name|gtm_toggle_callback
 parameter_list|(
 name|GtkWidget
@@ -3595,9 +3347,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gtm_entry_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gtm_entry_callback (GtkWidget * widget,gpointer data)
 name|gtm_entry_callback
 parameter_list|(
 name|GtkWidget
@@ -3638,29 +3390,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_close_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
-name|save_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
 DECL|function|save_ok_callback (GtkWidget * widget,gpointer data)
-specifier|static
-name|void
 name|save_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -3689,9 +3421,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gtm_caption_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gtm_caption_callback (GtkWidget * widget,gpointer data)
 name|gtm_caption_callback
 parameter_list|(
 name|GtkWidget
@@ -3721,9 +3453,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gtm_cellcontent_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gtm_cellcontent_callback (GtkWidget * widget,gpointer data)
 name|gtm_cellcontent_callback
 parameter_list|(
 name|GtkWidget
@@ -3753,9 +3485,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gtm_clwidth_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gtm_clwidth_callback (GtkWidget * widget,gpointer data)
 name|gtm_clwidth_callback
 parameter_list|(
 name|GtkWidget
@@ -3785,9 +3517,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gtm_clheight_callback (GtkWidget * widget,gpointer data)
 specifier|static
 name|void
+DECL|function|gtm_clheight_callback (GtkWidget * widget,gpointer data)
 name|gtm_clheight_callback
 parameter_list|(
 name|GtkWidget
@@ -3811,53 +3543,6 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|set_tooltip (GtkTooltips * tooltips,GtkWidget * widget,const char * desc)
-name|set_tooltip
-parameter_list|(
-name|GtkTooltips
-modifier|*
-name|tooltips
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|desc
-parameter_list|)
-block|{
-if|if
-condition|(
-name|desc
-operator|&&
-name|desc
-index|[
-literal|0
-index|]
-condition|)
-name|gtk_tooltips_set_tip
-argument_list|(
-name|tooltips
-argument_list|,
-name|widget
-argument_list|,
-operator|(
-name|char
-operator|*
-operator|)
-name|desc
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
