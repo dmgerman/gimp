@@ -2432,6 +2432,8 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+literal|1.0
 argument_list|)
 operator|)
 condition|)
@@ -2526,6 +2528,8 @@ name|context
 argument_list|)
 argument_list|,
 name|SOFT
+argument_list|,
+literal|1.0
 argument_list|,
 name|CONSTANT
 argument_list|)

@@ -148,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1aedab0103
+DECL|enum|__anon27de05030103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -448,6 +448,9 @@ name|GimpDrawable
 modifier|*
 parameter_list|,
 name|GimpDrawable
+modifier|*
+parameter_list|,
+name|PaintPressureOptions
 modifier|*
 parameter_list|,
 name|CloneType
@@ -1432,6 +1435,12 @@ name|src_drawable_
 argument_list|,
 name|clone_options
 operator|->
+name|paint_options
+operator|.
+name|pressure_options
+argument_list|,
+name|clone_options
+operator|->
 name|type
 argument_list|,
 name|offset_x
@@ -2100,7 +2109,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|clone_motion (PaintCore * paint_core,GimpDrawable * drawable,GimpDrawable * src_drawable,CloneType type,int offset_x,int offset_y)
+DECL|function|clone_motion (PaintCore * paint_core,GimpDrawable * drawable,GimpDrawable * src_drawable,PaintPressureOptions * pressure_options,CloneType type,int offset_x,int offset_y)
 name|clone_motion
 parameter_list|(
 name|PaintCore
@@ -2114,6 +2123,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|src_drawable
+parameter_list|,
+name|PaintPressureOptions
+modifier|*
+name|pressure_options
 parameter_list|,
 name|CloneType
 name|type
@@ -2186,6 +2199,9 @@ decl_stmt|;
 name|gint
 name|opacity
 decl_stmt|;
+name|gdouble
+name|scale
+decl_stmt|;
 name|pr
 operator|=
 name|NULL
@@ -2244,6 +2260,23 @@ argument_list|)
 operator|)
 condition|)
 return|return;
+if|if
+condition|(
+name|pressure_options
+operator|->
+name|size
+condition|)
+name|scale
+operator|=
+name|paint_core
+operator|->
+name|curpressure
+expr_stmt|;
+else|else
+name|scale
+operator|=
+literal|1.0
+expr_stmt|;
 comment|/*  Get a region which can be used to paint to  */
 if|if
 condition|(
@@ -2256,6 +2289,8 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+name|scale
 argument_list|)
 operator|)
 condition|)
@@ -2925,33 +2960,30 @@ name|rowstride
 expr_stmt|;
 block|}
 block|}
-comment|/*Make the clone tool pressure sencitive */
 name|opacity
 operator|=
-literal|255
+literal|255.0
 operator|*
 name|gimp_context_get_opacity
 argument_list|(
 name|NULL
 argument_list|)
-operator|*
-operator|(
-name|paint_core
-operator|->
-name|curpressure
-operator|/
-literal|0.5
-operator|)
 expr_stmt|;
 if|if
 condition|(
+name|pressure_options
+operator|->
 name|opacity
-operator|>
-literal|255
 condition|)
 name|opacity
 operator|=
-literal|255
+name|opacity
+operator|*
+literal|2.0
+operator|*
+name|paint_core
+operator|->
+name|curpressure
 expr_stmt|;
 comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|paint_core_paste_canvas
@@ -2960,7 +2992,12 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
+name|MIN
+argument_list|(
 name|opacity
+argument_list|,
+literal|255
+argument_list|)
 argument_list|,
 call|(
 name|int
@@ -2979,7 +3016,15 @@ argument_list|(
 name|NULL
 argument_list|)
 argument_list|,
+name|pressure_options
+operator|->
+name|pressure
+condition|?
+name|PRESSURE
+else|:
 name|SOFT
+argument_list|,
+name|scale
 argument_list|,
 name|CONSTANT
 argument_list|)
@@ -3349,6 +3394,9 @@ argument_list|,
 name|drawable
 argument_list|,
 name|non_gui_src_drawable
+argument_list|,
+operator|&
+name|non_gui_pressure_options
 argument_list|,
 name|non_gui_type
 argument_list|,

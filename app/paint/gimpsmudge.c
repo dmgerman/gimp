@@ -221,6 +221,9 @@ parameter_list|(
 name|PaintCore
 modifier|*
 parameter_list|,
+name|PaintPressureOptions
+modifier|*
+parameter_list|,
 name|double
 parameter_list|,
 name|GimpDrawable
@@ -650,6 +653,12 @@ name|paint_core
 argument_list|,
 name|smudge_options
 operator|->
+name|paint_options
+operator|.
+name|pressure_options
+argument_list|,
+name|smudge_options
+operator|->
 name|pressure
 argument_list|,
 name|drawable
@@ -906,6 +915,8 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1337,12 +1348,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|smudge_motion (PaintCore * paint_core,double smudge_pressure,GimpDrawable * drawable)
+DECL|function|smudge_motion (PaintCore * paint_core,PaintPressureOptions * pressure_options,double smudge_pressure,GimpDrawable * drawable)
 name|smudge_motion
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
+parameter_list|,
+name|PaintPressureOptions
+modifier|*
+name|pressure_options
 parameter_list|,
 name|double
 name|smudge_pressure
@@ -1370,8 +1385,8 @@ decl_stmt|;
 name|gfloat
 name|pressure
 decl_stmt|;
-name|gfloat
-name|brush_opacity
+name|gint
+name|opacity
 decl_stmt|;
 name|gint
 name|x
@@ -1435,6 +1450,7 @@ name|h
 argument_list|)
 expr_stmt|;
 comment|/*  Get the paint area */
+comment|/*  Smudge won't scale!  */
 if|if
 condition|(
 operator|!
@@ -1446,6 +1462,8 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+literal|1.0
 argument_list|)
 operator|)
 condition|)
@@ -1480,14 +1498,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|brush_opacity
-operator|=
-name|gimp_context_get_opacity
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/* Enable pressure sensitive pressure */
+if|if
+condition|(
+name|pressure_options
+operator|->
+name|pressure
+condition|)
 name|pressure
 operator|=
 operator|(
@@ -1505,6 +1522,13 @@ operator|)
 operator|/
 literal|0.5
 operator|)
+expr_stmt|;
+else|else
+name|pressure
+operator|=
+name|smudge_pressure
+operator|/
+literal|100.0
 expr_stmt|;
 comment|/* The tempPR will be the built up buffer (for smudge) */
 name|tempPR
@@ -1761,6 +1785,31 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
+name|opacity
+operator|=
+literal|255
+operator|*
+name|gimp_context_get_opacity
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|pressure_options
+operator|->
+name|opacity
+condition|)
+name|opacity
+operator|=
+name|opacity
+operator|*
+literal|2.0
+operator|*
+name|paint_core
+operator|->
+name|curpressure
+expr_stmt|;
 comment|/*Replace the newly made paint area to the gimage*/
 name|paint_core_replace_canvas
 argument_list|(
@@ -1768,16 +1817,24 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|ROUND
+name|MIN
 argument_list|(
-name|brush_opacity
-operator|*
-literal|255.0
+name|opacity
+argument_list|,
+literal|255
 argument_list|)
 argument_list|,
 name|OPAQUE_OPACITY
 argument_list|,
+name|pressure_options
+operator|->
+name|pressure
+condition|?
 name|PRESSURE
+else|:
+name|SOFT
+argument_list|,
+literal|1.0
 argument_list|,
 name|INCREMENTAL
 argument_list|)
@@ -1807,6 +1864,9 @@ block|{
 name|smudge_motion
 argument_list|(
 name|paint_core
+argument_list|,
+operator|&
+name|non_gui_pressure_options
 argument_list|,
 name|non_gui_pressure
 argument_list|,

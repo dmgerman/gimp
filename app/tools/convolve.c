@@ -549,6 +549,9 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 parameter_list|,
+name|PaintPressureOptions
+modifier|*
+parameter_list|,
 name|ConvolveType
 parameter_list|,
 name|double
@@ -1017,6 +1020,12 @@ name|drawable
 argument_list|,
 name|convolve_options
 operator|->
+name|paint_options
+operator|.
+name|pressure_options
+argument_list|,
+name|convolve_options
+operator|->
 name|type
 argument_list|,
 name|convolve_options
@@ -1229,7 +1238,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convolve_motion (PaintCore * paint_core,GimpDrawable * drawable,ConvolveType type,double pressure)
+DECL|function|convolve_motion (PaintCore * paint_core,GimpDrawable * drawable,PaintPressureOptions * pressure_options,ConvolveType type,double pressure)
 name|convolve_motion
 parameter_list|(
 name|PaintCore
@@ -1239,6 +1248,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|PaintPressureOptions
+modifier|*
+name|pressure_options
 parameter_list|,
 name|ConvolveType
 name|type
@@ -1266,6 +1279,9 @@ decl_stmt|,
 name|destPR
 decl_stmt|,
 name|tempPR
+decl_stmt|;
+name|gdouble
+name|scale
 decl_stmt|;
 if|if
 condition|(
@@ -1302,6 +1318,23 @@ name|INDEXEDA_GIMAGE
 operator|)
 condition|)
 return|return;
+if|if
+condition|(
+name|pressure_options
+operator|->
+name|size
+condition|)
+name|scale
+operator|=
+name|paint_core
+operator|->
+name|curpressure
+expr_stmt|;
+else|else
+name|scale
+operator|=
+literal|1.0
+expr_stmt|;
 comment|/*  Get a region which can be used to paint to  */
 if|if
 condition|(
@@ -1314,6 +1347,8 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+name|scale
 argument_list|)
 operator|)
 condition|)
@@ -1767,6 +1802,8 @@ argument_list|)
 argument_list|,
 name|SOFT
 argument_list|,
+name|scale
+argument_list|,
 name|INCREMENTAL
 argument_list|)
 expr_stmt|;
@@ -2082,6 +2119,9 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+operator|&
+name|non_gui_pressure_options
 argument_list|,
 name|non_gui_type
 argument_list|,

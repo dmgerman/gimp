@@ -93,7 +93,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd4780f0103
+DECL|enum|__anon29d6435d0103
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -581,6 +581,8 @@ modifier|*
 parameter_list|,
 name|GimpDrawable
 modifier|*
+parameter_list|,
+name|gdouble
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -625,6 +627,8 @@ name|LayerModeEffects
 parameter_list|,
 name|BrushApplicationMode
 parameter_list|,
+name|gdouble
+parameter_list|,
 name|PaintApplicationMode
 parameter_list|)
 function_decl|;
@@ -645,6 +649,8 @@ parameter_list|,
 name|int
 parameter_list|,
 name|BrushApplicationMode
+parameter_list|,
+name|gdouble
 parameter_list|,
 name|PaintApplicationMode
 parameter_list|)
