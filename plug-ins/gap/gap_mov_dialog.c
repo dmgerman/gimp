@@ -12,7 +12,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * gimp   1.1.8a;   1999/08/31  hof: accept anim framenames without underscore '_'  * gimp   1.1.5a;   1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.99.00; 1999.03.03  hof: bugfix: update of the preview (did'nt work with gimp1.1.2)  * version 0.98.00; 1998.11.28  hof: Port to GIMP 1.1: replaced buildmenu.h, apply layermask (before rotate)  *                                   mov_imglayer_constrain must check for drawable_id -1  * version 0.97.00; 1998.10.19  hof: Set window title to "Move Path"  * version 0.96.02; 1998.07.30  hof: added clip to frame option and tooltips  * version 0.96.00; 1998.07.09  hof: bugfix (filesel did not reopen after cancel)  * version 0.95.00; 1998.05.12  hof: added rotatation capabilities  * version 0.94.00; 1998.04.25  hof: use only one point as default  *                                   bugfix: initial value for src_paintmode  *                                           fixes the problem reported in p_my_layer_copy (cant get new layer)  * version 0.90.00; 1997.12.14  hof: 1.st (pre) release  */
+comment|/* revision history:  * gimp    1.1.13b; 1999/12/04  hof: some cosmetic gtk fixes  *                                   changed border_width spacing and Buttons in action area  *                                   to same style as used in dialogs of the gimp 1.1.13 main dialogs  * gimp   1.1.8a;   1999/08/31  hof: accept anim framenames without underscore '_'  * gimp   1.1.5a;   1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.99.00; 1999.03.03  hof: bugfix: update of the preview (did'nt work with gimp1.1.2)  * version 0.98.00; 1998.11.28  hof: Port to GIMP 1.1: replaced buildmenu.h, apply layermask (before rotate)  *                                   mov_imglayer_constrain must check for drawable_id -1  * version 0.97.00; 1998.10.19  hof: Set window title to "Move Path"  * version 0.96.02; 1998.07.30  hof: added clip to frame option and tooltips  * version 0.96.00; 1998.07.09  hof: bugfix (filesel did not reopen after cancel)  * version 0.95.00; 1998.05.12  hof: added rotatation capabilities  * version 0.94.00; 1998.04.25  hof: use only one point as default  *                                   bugfix: initial value for src_paintmode  *                                           fixes the problem reported in p_my_layer_copy (cant get new layer)  * version 0.90.00; 1997.12.14  hof: 1.st (pre) release  */
 end_comment
 
 begin_comment
@@ -197,7 +197,7 @@ value|GDK_EXPOSURE_MASK | \ 		       GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTT
 end_define
 
 begin_typedef
-DECL|struct|__anon29e62f7d0108
+DECL|struct|__anon2ae526240108
 typedef|typedef
 struct|struct
 block|{
@@ -212,7 +212,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e62f7d0208
+DECL|struct|__anon2ae526240208
 typedef|typedef
 struct|struct
 block|{
@@ -239,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e62f7d0308
+DECL|struct|__anon2ae526240308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -467,7 +467,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e62f7d0408
+DECL|struct|__anon2ae526240408
 typedef|typedef
 struct|struct
 block|{
@@ -2304,6 +2304,10 @@ name|tips_bg
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|hbbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|dlg
 decl_stmt|;
 name|GtkWidget
@@ -2591,6 +2595,77 @@ name|tips_fg
 argument_list|)
 expr_stmt|;
 comment|/*  Action area  */
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_homogeneous
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|hbbox
+operator|=
+name|gtk_hbutton_box_new
+argument_list|()
+expr_stmt|;
+name|gtk_button_box_set_spacing
+argument_list|(
+name|GTK_BUTTON_BOX
+argument_list|(
+name|hbbox
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dlg
+argument_list|)
+operator|->
+name|action_area
+argument_list|)
+argument_list|,
+name|hbbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbbox
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
@@ -2630,12 +2705,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
@@ -2698,12 +2768,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
@@ -2758,12 +2823,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
+name|hbbox
 argument_list|)
 argument_list|,
 name|button
@@ -2787,11 +2847,6 @@ literal|"Show PreviewFame with Selected       \nSrcLayer at current Controlpoint
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2827,7 +2882,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2869,7 +2924,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6648,7 +6703,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|2
 argument_list|)
 expr_stmt|;
 name|table
@@ -6669,7 +6724,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6699,7 +6754,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|5
 argument_list|)
 expr_stmt|;
 comment|/* Source Layer menu */
@@ -7539,7 +7594,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|6
+literal|2
 argument_list|)
 expr_stmt|;
 comment|/* table = gtk_table_new ( 2, 4, FALSE ); */
@@ -7561,7 +7616,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|6
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -10244,9 +10299,9 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|scale
+name|entry
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -10260,9 +10315,9 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|entry
+name|scale
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
