@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5edbcc0103
+DECL|enum|__anon2c75c3f10103
 block|{
 DECL|enumerator|BUTTON_HOME
 name|BUTTON_HOME
@@ -109,7 +109,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5edbcc0208
+DECL|struct|__anon2c75c3f10208
 block|{
 DECL|member|title
 specifier|const
@@ -2348,7 +2348,7 @@ index|[
 literal|8192
 index|]
 decl_stmt|;
-name|guint
+name|gsize
 name|bytes
 decl_stmt|;
 name|stream
