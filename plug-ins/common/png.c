@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28957af40108
+DECL|struct|__anon279d189e0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -5166,6 +5166,19 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|scale
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|scale
+argument_list|,
+name|_
+argument_list|(
+literal|"Choose a high compression level "
+literal|"for small file size"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
