@@ -746,6 +746,9 @@ operator|&
 name|GIMP_PARAM_CONFIRM
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_CONFIG_DEBUG
 name|g_print
 argument_list|(
 literal|"NOT Applying prefs change of '%s' to edit_config "
@@ -756,9 +759,14 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 else|else
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_CONFIG_DEBUG
 name|g_print
 argument_list|(
 literal|"Applying prefs change of '%s' to edit_config\n"
@@ -768,6 +776,8 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|config
@@ -6158,7 +6168,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b4a52980108
+DECL|struct|__anon2ae336000108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7760,7 +7770,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b4a52980208
+DECL|struct|__anon2ae336000208
 block|{
 DECL|member|label
 specifier|const
@@ -7919,7 +7929,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b4a52980308
+DECL|struct|__anon2ae336000308
 block|{
 DECL|member|tree_label
 specifier|const
