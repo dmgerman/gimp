@@ -22,39 +22,14 @@ directive|include
 file|"gimpintl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LC_MESSAGES
-end_ifdef
-
 begin_define
 DECL|macro|INIT_I18N ()
 define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-value|G_STMT_START{			\   setlocale(LC_MESSAGES, ""); 				\   bindtextdomain("gimp-libgimp", LOCALEDIR);            \   bindtextdomain("gimp-std-plugins", LOCALEDIR);	\   textdomain("gimp-std-plugins");			\   			}G_STMT_END
+value|G_STMT_START{		         \   bindtextdomain("gimp-libgimp", LOCALEDIR);             \   bind_textdomain_codeset ("gimp-libgimp", "UTF-8");     \   bindtextdomain("gimp-std-plugins", LOCALEDIR);         \   bind_textdomain_codeset ("gimp-std-plugins", "UTF-8"); \   textdomain("gimp-std-plugins");		         \   setlocale (LC_NUMERIC, "C");                           \ }G_STMT_END
 end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|INIT_I18N ()
-define|#
-directive|define
-name|INIT_I18N
-parameter_list|()
-value|G_STMT_START{			\   bindtextdomain("gimp-libgimp", LOCALEDIR);            \   bindtextdomain("gimp-std-plugins", LOCALEDIR);	\   textdomain("gimp-std-plugins");			\   			}G_STMT_END
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_define
 DECL|macro|INIT_I18N_UI ()
@@ -62,7 +37,7 @@ define|#
 directive|define
 name|INIT_I18N_UI
 parameter_list|()
-value|G_STMT_START{	\   gtk_set_locale();			\   setlocale (LC_NUMERIC, "C");		\   INIT_I18N();				\ 			}G_STMT_END
+value|G_STMT_START{	\   gtk_set_locale();			\   INIT_I18N();				\ }G_STMT_END
 end_define
 
 begin_endif

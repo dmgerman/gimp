@@ -168,11 +168,11 @@ name|MAGIC
 value|'G'
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|NO_DIFFTIME
-end_ifdef
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|HAVE_DIFFTIME
+end_ifndef
 
 begin_define
 DECL|macro|difftime (a,b)
@@ -337,7 +337,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947b5a20108
+DECL|struct|__anon2c4c259e0108
 block|{
 DECL|member|command
 name|gchar
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947b5a20208
+DECL|struct|__anon2c4c259e0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
