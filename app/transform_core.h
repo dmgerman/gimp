@@ -379,6 +379,27 @@ name|int
 name|bpressed
 decl_stmt|;
 comment|/* Bug work around make sure we have  				 * a button pressed before we deal with 				 * motion events. ALT. 				 */
+comment|/* The following fields are used by 				   the "new UI".  */
+DECL|member|ngx
+DECL|member|ngy
+name|int
+name|ngx
+decl_stmt|,
+name|ngy
+decl_stmt|;
+comment|/*  number of grid lines in original 				    x and y directions  */
+DECL|member|grid_coords
+name|double
+modifier|*
+name|grid_coords
+decl_stmt|;
+comment|/*  x and y coordinates of the grid 				    endpoints (a total of (ngx+ngy)*2 				    coordinate pairs)  */
+DECL|member|tgrid_coords
+name|double
+modifier|*
+name|tgrid_coords
+decl_stmt|;
+comment|/* transformed grid_coords  */
 block|}
 struct|;
 end_struct
