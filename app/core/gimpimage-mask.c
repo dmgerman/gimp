@@ -2281,6 +2281,7 @@ name|gimage_mask_stroking
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/* Note added by Raph Levien, 27 Jan 1998       The subtraction of 0.125 is to compensate for imprecision in      paint_core_subsample_mask. Ben Jackson posted a patch on 14 Jan      1998 to gimp-developers which addresses the imprecision more      directly. However, I've chosen this quick hack instead because it      is a less drastic change, and has no impact on performance. By      contrast, Ben's patch builds 25 rather than 16 subsampled brush      masks.       I'm planning to rework the subsample mechanism anyway to make way      for the natural brushes. When that happens, I'll be sure to make      it round precisely, at which point these -0.125 offsets can come      out.       */
 name|non_gui_paint_core
 operator|.
 name|startx
@@ -2299,6 +2300,8 @@ name|x1
 operator|-
 name|offx
 operator|)
+operator|-
+literal|0.125
 expr_stmt|;
 name|non_gui_paint_core
 operator|.
@@ -2318,6 +2321,8 @@ name|y1
 operator|-
 name|offy
 operator|)
+operator|-
+literal|0.125
 expr_stmt|;
 name|seg
 operator|=
@@ -2363,6 +2368,8 @@ operator|.
 name|x2
 operator|-
 name|offx
+operator|-
+literal|0.125
 operator|)
 expr_stmt|;
 name|non_gui_paint_core
@@ -2378,6 +2385,8 @@ operator|.
 name|y2
 operator|-
 name|offy
+operator|-
+literal|0.125
 operator|)
 expr_stmt|;
 name|paint_core_interpolate
