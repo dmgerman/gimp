@@ -2677,6 +2677,8 @@ name|_
 argument_list|(
 literal|"Font '%s' not found."
 argument_list|)
+argument_list|,
+name|fontname
 argument_list|)
 expr_stmt|;
 return|return
