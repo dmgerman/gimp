@@ -2715,6 +2715,10 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|show_indicators
+condition|)
 name|create_indicator_area
 argument_list|(
 name|vbox

@@ -416,6 +416,13 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|int
+name|show_indicators
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
 name|max_new_image_size
 decl_stmt|;
 end_decl_stmt

@@ -6757,12 +6757,18 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+if|if
+condition|(
+name|show_indicators
+condition|)
+block|{
 name|brush_area_update
 argument_list|()
 expr_stmt|;
 name|pattern_area_update
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
