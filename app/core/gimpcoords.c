@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcoordmath.c  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcoords.c  * Copyright (C) 2002 Simon Budig<simon@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"vectors-types.h"
+file|"core-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcoordmath.h"
+file|"gimpcoords.h"
 end_include
 
 begin_define
@@ -41,8 +41,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bezier_coords_mix (const gdouble amul,const GimpCoords * a,const gdouble bmul,const GimpCoords * b,GimpCoords * ret_val)
-name|gimp_bezier_coords_mix
+DECL|function|gimp_coords_mix (const gdouble amul,const GimpCoords * a,const gdouble bmul,const GimpCoords * b,GimpCoords * ret_val)
+name|gimp_coords_mix
 parameter_list|(
 specifier|const
 name|gdouble
@@ -241,8 +241,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bezier_coords_average (const GimpCoords * a,const GimpCoords * b,GimpCoords * ret_average)
-name|gimp_bezier_coords_average
+DECL|function|gimp_coords_average (const GimpCoords * a,const GimpCoords * b,GimpCoords * ret_average)
+name|gimp_coords_average
 parameter_list|(
 specifier|const
 name|GimpCoords
@@ -259,7 +259,7 @@ modifier|*
 name|ret_average
 parameter_list|)
 block|{
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|0.5
 argument_list|,
@@ -281,8 +281,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bezier_coords_add (const GimpCoords * a,const GimpCoords * b,GimpCoords * ret_add)
-name|gimp_bezier_coords_add
+DECL|function|gimp_coords_add (const GimpCoords * a,const GimpCoords * b,GimpCoords * ret_add)
+name|gimp_coords_add
 parameter_list|(
 specifier|const
 name|GimpCoords
@@ -299,7 +299,7 @@ modifier|*
 name|ret_add
 parameter_list|)
 block|{
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1.0
 argument_list|,
@@ -321,8 +321,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bezier_coords_difference (const GimpCoords * a,const GimpCoords * b,GimpCoords * ret_difference)
-name|gimp_bezier_coords_difference
+DECL|function|gimp_coords_difference (const GimpCoords * a,const GimpCoords * b,GimpCoords * ret_difference)
+name|gimp_coords_difference
 parameter_list|(
 specifier|const
 name|GimpCoords
@@ -339,7 +339,7 @@ modifier|*
 name|ret_difference
 parameter_list|)
 block|{
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1.0
 argument_list|,
@@ -362,8 +362,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_bezier_coords_scale (const gdouble f,const GimpCoords * a,GimpCoords * ret_product)
-name|gimp_bezier_coords_scale
+DECL|function|gimp_coords_scale (const gdouble f,const GimpCoords * a,GimpCoords * ret_product)
+name|gimp_coords_scale
 parameter_list|(
 specifier|const
 name|gdouble
@@ -379,7 +379,7 @@ modifier|*
 name|ret_product
 parameter_list|)
 block|{
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 name|f
 argument_list|,
@@ -401,8 +401,8 @@ end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_bezier_coords_scalarprod (const GimpCoords * a,const GimpCoords * b)
-name|gimp_bezier_coords_scalarprod
+DECL|function|gimp_coords_scalarprod (const GimpCoords * a,const GimpCoords * b)
+name|gimp_coords_scalarprod
 parameter_list|(
 specifier|const
 name|GimpCoords
@@ -475,8 +475,8 @@ end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_bezier_coords_length2 (const GimpCoords * a)
-name|gimp_bezier_coords_length2
+DECL|function|gimp_coords_length2 (const GimpCoords * a)
+name|gimp_coords_length2
 parameter_list|(
 specifier|const
 name|GimpCoords
@@ -544,7 +544,7 @@ operator|*
 name|INPUT_RESOLUTION
 expr_stmt|;
 return|return
-name|gimp_bezier_coords_scalarprod
+name|gimp_coords_scalarprod
 argument_list|(
 operator|&
 name|upscaled_a
@@ -558,8 +558,8 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_bezier_coords_length (const GimpCoords * a)
-name|gimp_bezier_coords_length
+DECL|function|gimp_coords_length (const GimpCoords * a)
+name|gimp_coords_length
 parameter_list|(
 specifier|const
 name|GimpCoords
@@ -570,7 +570,7 @@ block|{
 return|return
 name|sqrt
 argument_list|(
-name|gimp_bezier_coords_length2
+name|gimp_coords_length2
 argument_list|(
 name|a
 argument_list|)
@@ -581,8 +581,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_bezier_coords_equal (const GimpCoords * a,const GimpCoords * b)
-name|gimp_bezier_coords_equal
+DECL|function|gimp_coords_equal (const GimpCoords * a,const GimpCoords * b)
+name|gimp_coords_equal
 parameter_list|(
 specifier|const
 name|GimpCoords

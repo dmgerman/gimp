@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoords.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpanchor.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"gimpbezierstroke.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcoordmath.h"
 end_include
 
 begin_comment
@@ -1447,7 +1447,7 @@ index|[
 literal|3
 index|]
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -1480,7 +1480,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -1513,7 +1513,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -1546,7 +1546,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -1579,7 +1579,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -1612,7 +1612,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -2011,7 +2011,7 @@ name|feel_good
 operator|=
 literal|1
 expr_stmt|;
-name|gimp_bezier_coords_scale
+name|gimp_coords_scale
 argument_list|(
 operator|(
 literal|1
@@ -2048,7 +2048,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_scale
+name|gimp_coords_scale
 argument_list|(
 name|feel_good
 operator|/
@@ -2286,7 +2286,7 @@ operator|->
 name|anchors
 expr_stmt|;
 block|}
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 operator|(
 literal|1
@@ -2342,7 +2342,7 @@ operator|&
 name|tmp1
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|3
 operator|*
@@ -2382,7 +2382,7 @@ operator|&
 name|tmp2
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|tmp1
@@ -2394,7 +2394,7 @@ operator|&
 name|abs_pos
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 name|coord
 argument_list|,
@@ -2499,7 +2499,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_bezier_coords_equal
+name|gimp_coords_equal
 argument_list|(
 operator|&
 operator|(
@@ -2528,7 +2528,7 @@ name|position
 operator|)
 argument_list|)
 operator|&&
-name|gimp_bezier_coords_equal
+name|gimp_coords_equal
 argument_list|(
 operator|&
 operator|(
@@ -2555,7 +2555,7 @@ name|position
 operator|)
 argument_list|)
 operator|&&
-name|gimp_bezier_coords_equal
+name|gimp_coords_equal
 argument_list|(
 operator|&
 operator|(
@@ -3197,7 +3197,7 @@ name|pos1
 decl_stmt|,
 name|pos2
 decl_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 name|beziercoords
@@ -3215,7 +3215,7 @@ operator|&
 name|point1
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 name|beziercoords
@@ -3246,7 +3246,7 @@ argument_list|,
 name|precision
 argument_list|)
 operator|&&
-name|gimp_bezier_coords_length2
+name|gimp_coords_length2
 argument_list|(
 operator|&
 name|point1
@@ -3254,7 +3254,7 @@ argument_list|)
 operator|<
 name|precision
 operator|&&
-name|gimp_bezier_coords_length2
+name|gimp_coords_length2
 argument_list|(
 operator|&
 name|point2
@@ -3277,7 +3277,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 operator|(
@@ -3299,7 +3299,7 @@ operator|&
 name|line
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 name|coord
 argument_list|,
@@ -3317,7 +3317,7 @@ argument_list|)
 expr_stmt|;
 name|length2
 operator|=
-name|gimp_bezier_coords_scalarprod
+name|gimp_coords_scalarprod
 argument_list|(
 operator|&
 name|line
@@ -3328,7 +3328,7 @@ argument_list|)
 expr_stmt|;
 name|scalar
 operator|=
-name|gimp_bezier_coords_scalarprod
+name|gimp_coords_scalarprod
 argument_list|(
 operator|&
 name|line
@@ -3412,7 +3412,7 @@ name|ret_pos
 operator|=
 name|pos1
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1.0
 argument_list|,
@@ -3432,7 +3432,7 @@ argument_list|,
 name|ret_point
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 name|coord
 argument_list|,
@@ -3443,7 +3443,7 @@ name|dcoord
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_bezier_coords_length
+name|gimp_coords_length
 argument_list|(
 operator|&
 name|dcoord
@@ -3472,7 +3472,7 @@ literal|3
 index|]
 expr_stmt|;
 comment|/* if (!depth) g_printerr ("Hit rekursion depth limit!\n"); */
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -3499,7 +3499,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -3526,7 +3526,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -3553,7 +3553,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -3580,7 +3580,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -3607,7 +3607,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -5036,7 +5036,7 @@ name|wheel
 operator|=
 literal|0
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 operator|(
@@ -5107,7 +5107,7 @@ argument_list|)
 operator|->
 name|position
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|coord2
@@ -5156,7 +5156,7 @@ argument_list|)
 operator|->
 name|position
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|coord2
@@ -5286,7 +5286,7 @@ operator|==
 name|GIMP_ANCHOR_CONTROL
 condition|)
 block|{
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 operator|(
@@ -5311,7 +5311,7 @@ operator|&
 name|delta
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 operator|(
@@ -5375,7 +5375,7 @@ block|{
 name|GimpCoords
 name|deltacoord
 decl_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 name|coord
 argument_list|,
@@ -6182,7 +6182,7 @@ argument_list|)
 operator|->
 name|position
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|2.0
 operator|/
@@ -6214,7 +6214,7 @@ name|position
 operator|=
 name|coords
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|2.0
 operator|/
@@ -6730,7 +6730,7 @@ name|p123
 decl_stmt|,
 name|p0123
 decl_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -6758,7 +6758,7 @@ operator|&
 name|p01
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -6786,7 +6786,7 @@ operator|&
 name|p12
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -6814,7 +6814,7 @@ operator|&
 name|p23
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -6832,7 +6832,7 @@ operator|&
 name|p012
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -6850,7 +6850,7 @@ operator|&
 name|p123
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 operator|-
@@ -7189,7 +7189,7 @@ argument_list|(
 name|phi_e
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1
 argument_list|,
@@ -7220,7 +7220,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 name|circlemagic
 argument_list|,
@@ -7553,7 +7553,7 @@ operator|-
 name|angle_rad
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|0.5
 argument_list|,
@@ -7796,7 +7796,7 @@ name|y
 operator|=
 name|tmpy
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|0.5
 argument_list|,
@@ -7811,7 +7811,7 @@ operator|&
 name|middle
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|tmp_center
@@ -8143,7 +8143,7 @@ name|y
 operator|=
 name|tmpy
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|center
@@ -8165,7 +8165,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|center
@@ -8187,7 +8187,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|center
@@ -8477,7 +8477,7 @@ name|y
 operator|=
 name|tmpy
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|center
@@ -8499,7 +8499,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|center
@@ -8521,7 +8521,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_add
+name|gimp_coords_add
 argument_list|(
 operator|&
 name|center
@@ -8720,7 +8720,7 @@ name|s1
 decl_stmt|,
 name|s2
 decl_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 operator|(
@@ -8744,7 +8744,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_bezier_coords_length2
+name|gimp_coords_length2
 argument_list|(
 operator|&
 name|line
@@ -8755,7 +8755,7 @@ operator|*
 name|precision
 condition|)
 block|{
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 operator|(
@@ -8777,7 +8777,7 @@ operator|&
 name|tan1
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 operator|(
@@ -8802,7 +8802,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|gimp_bezier_coords_length2
+name|gimp_coords_length2
 argument_list|(
 operator|&
 name|tan1
@@ -8814,7 +8814,7 @@ name|precision
 operator|)
 operator|&&
 operator|(
-name|gimp_bezier_coords_length2
+name|gimp_coords_length2
 argument_list|(
 operator|&
 name|tan2
@@ -8840,7 +8840,7 @@ block|}
 block|}
 else|else
 block|{
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 operator|(
@@ -8862,7 +8862,7 @@ operator|&
 name|tan1
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_difference
+name|gimp_coords_difference
 argument_list|(
 operator|&
 operator|(
@@ -8886,7 +8886,7 @@ argument_list|)
 expr_stmt|;
 name|l2
 operator|=
-name|gimp_bezier_coords_scalarprod
+name|gimp_coords_scalarprod
 argument_list|(
 operator|&
 name|line
@@ -8897,7 +8897,7 @@ argument_list|)
 expr_stmt|;
 name|s1
 operator|=
-name|gimp_bezier_coords_scalarprod
+name|gimp_coords_scalarprod
 argument_list|(
 operator|&
 name|line
@@ -8910,7 +8910,7 @@ name|l2
 expr_stmt|;
 name|s2
 operator|=
-name|gimp_bezier_coords_scalarprod
+name|gimp_coords_scalarprod
 argument_list|(
 operator|&
 name|line
@@ -8949,7 +8949,7 @@ return|return
 literal|0
 return|;
 block|}
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1.0
 argument_list|,
@@ -8966,7 +8966,7 @@ operator|&
 name|d1
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_mix
+name|gimp_coords_mix
 argument_list|(
 literal|1.0
 argument_list|,
@@ -8986,7 +8986,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|gimp_bezier_coords_length2
+name|gimp_coords_length2
 argument_list|(
 operator|&
 name|d1
@@ -8998,7 +8998,7 @@ name|precision
 operator|)
 operator|||
 operator|(
-name|gimp_bezier_coords_length2
+name|gimp_coords_length2
 argument_list|(
 operator|&
 name|d2
@@ -9113,7 +9113,7 @@ literal|3
 index|]
 expr_stmt|;
 comment|/* if (!depth) g_printerr ("Hit rekursion depth limit!\n"); */
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -9140,7 +9140,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -9167,7 +9167,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -9194,7 +9194,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -9221,7 +9221,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
@@ -9248,7 +9248,7 @@ index|]
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_bezier_coords_average
+name|gimp_coords_average
 argument_list|(
 operator|&
 operator|(
