@@ -3242,7 +3242,7 @@ name|_
 argument_list|(
 literal|"Reverting %s to\n"
 literal|"%s\n\n"
-literal|"(You will loose all your changes\n"
+literal|"(You will lose all your changes\n"
 literal|"including all undo information)"
 argument_list|)
 argument_list|,
