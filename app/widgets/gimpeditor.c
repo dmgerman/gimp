@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpenumwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmenufactory.h"
 end_include
 
@@ -95,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291478240103
+DECL|enum|__anon289f2d8f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

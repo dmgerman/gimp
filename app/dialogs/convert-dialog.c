@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpenumwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -120,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2997a2230108
+DECL|struct|__anon2935e14a0108
 block|{
 DECL|member|dialog
 name|GtkWidget

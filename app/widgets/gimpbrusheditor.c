@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpenumwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpview.h"
 end_include
 

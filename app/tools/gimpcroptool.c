@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpenumwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -200,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c98bb9d0103
+DECL|enum|__anon2a3405350103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
