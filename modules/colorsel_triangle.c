@@ -202,7 +202,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon2a3bff2b0103
+DECL|enum|__anon2b8aade00103
 typedef|typedef
 enum|enum
 block|{
@@ -2069,7 +2069,7 @@ operator|<=
 literal|1
 condition|)
 block|{
-comment|// eigentlich val>=0, aber dann Grafikfehler...
+comment|/* eigentlich val>=0, aber dann Grafikfehler... */
 name|sat
 operator|=
 operator|(
@@ -2189,7 +2189,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-comment|// Marker im aeusseren Ring
+comment|/* Marker im aeusseren Ring */
 name|x0
 operator|=
 call|(
@@ -2493,7 +2493,7 @@ block|}
 block|}
 else|else
 block|{
-comment|// Marker im Dreieck loeschen
+comment|/* Marker im Dreieck loeschen */
 name|s
 operator|=
 name|coldata
@@ -2776,7 +2776,7 @@ operator|<=
 literal|1
 condition|)
 block|{
-comment|// eigentlich val>=0, aber dann Grafikfehler...
+comment|/* eigentlich val>=0, aber dann Grafikfehler... */
 name|sat
 operator|=
 operator|(
@@ -2919,7 +2919,7 @@ operator|/
 literal|100.0
 expr_stmt|;
 block|}
-comment|// Marker im Dreieck
+comment|/* Marker im Dreieck */
 name|col
 operator|=
 name|INTENSITY
@@ -3289,7 +3289,7 @@ operator|<=
 literal|1
 condition|)
 block|{
-comment|// eigentlich val>=0, aber dann Grafikfehler...
+comment|/* eigentlich val>=0, aber dann Grafikfehler... */
 name|sat
 operator|=
 operator|(
@@ -3737,7 +3737,7 @@ name|mode
 operator|=
 literal|1
 expr_stmt|;
-comment|// Dragging in the Ring
+comment|/* Dragging in the Ring */
 else|else
 name|coldata
 operator|->
@@ -3745,7 +3745,7 @@ name|mode
 operator|=
 literal|2
 expr_stmt|;
-comment|// Dragging in the Triangle
+comment|/* Dragging in the Triangle */
 break|break;
 case|case
 name|GDK_MOTION_NOTIFY
