@@ -104,11 +104,36 @@ directive|include
 file|"gimprc.h"
 end_include
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bc1436f0103
+block|{
+DECL|enumerator|DUMP_NONE
+name|DUMP_NONE
+block|,
+DECL|enumerator|DUMP_DEFAULT
+name|DUMP_DEFAULT
+block|,
+DECL|enumerator|DUMP_COMMENT
+name|DUMP_COMMENT
+block|,
+DECL|enumerator|DUMP_MANPAGE
+name|DUMP_MANPAGE
+DECL|typedef|DumpFormat
+block|}
+name|DumpFormat
+typedef|;
+end_typedef
+
 begin_function_decl
 specifier|static
 name|gint
-name|dump_system_gimprc
+name|dump_gimprc
 parameter_list|(
+name|DumpFormat
+name|format
+parameter_list|,
 name|gint
 name|fd
 parameter_list|)
@@ -117,9 +142,28 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
-name|dump_man_page
+name|void
+name|dump_gimprc_system
 parameter_list|(
+name|GObject
+modifier|*
+name|rc
+parameter_list|,
+name|gint
+name|fd
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|dump_gimprc_manpage
+parameter_list|(
+name|GObject
+modifier|*
+name|rc
+parameter_list|,
 name|gint
 name|fd
 parameter_list|)
@@ -169,13 +213,11 @@ name|argv
 index|[]
 parameter_list|)
 block|{
-name|GObject
-modifier|*
-name|rc
+name|DumpFormat
+name|format
+init|=
+name|DUMP_DEFAULT
 decl_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|argc
@@ -198,12 +240,10 @@ operator|==
 literal|0
 condition|)
 block|{
-return|return
-name|dump_system_gimprc
-argument_list|(
-literal|1
-argument_list|)
-return|;
+name|format
+operator|=
+name|DUMP_COMMENT
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -221,12 +261,10 @@ operator|==
 literal|0
 condition|)
 block|{
-return|return
-name|dump_man_page
-argument_list|(
-literal|1
-argument_list|)
-return|;
+name|format
+operator|=
+name|DUMP_MANPAGE
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -307,6 +345,46 @@ name|EXIT_FAILURE
 return|;
 block|}
 block|}
+return|return
+name|dump_gimprc
+argument_list|(
+name|format
+argument_list|,
+literal|1
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint
+DECL|function|dump_gimprc (DumpFormat format,gint fd)
+name|dump_gimprc
+parameter_list|(
+name|DumpFormat
+name|format
+parameter_list|,
+name|gint
+name|fd
+parameter_list|)
+block|{
+name|GObject
+modifier|*
+name|rc
+decl_stmt|;
+if|if
+condition|(
+name|format
+operator|==
+name|DUMP_NONE
+condition|)
+return|return
+name|EXIT_SUCCESS
+return|;
+name|g_type_init
+argument_list|()
+expr_stmt|;
 name|rc
 operator|=
 name|g_object_new
@@ -321,6 +399,14 @@ comment|/* for completeness */
 name|NULL
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|format
+condition|)
+block|{
+case|case
+name|DUMP_DEFAULT
+case|:
 name|g_print
 argument_list|(
 literal|"# Dump of the GIMP default configuration\n\n"
@@ -340,6 +426,32 @@ argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|DUMP_COMMENT
+case|:
+name|dump_gimprc_system
+argument_list|(
+name|rc
+argument_list|,
+name|fd
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|DUMP_MANPAGE
+case|:
+name|dump_gimprc_manpage
+argument_list|(
+name|rc
+argument_list|,
+name|fd
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
+break|break;
+block|}
 name|g_object_unref
 argument_list|(
 name|rc
@@ -378,10 +490,14 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|gint
-DECL|function|dump_system_gimprc (gint fd)
-name|dump_system_gimprc
+name|void
+DECL|function|dump_gimprc_system (GObject * rc,gint fd)
+name|dump_gimprc_system
 parameter_list|(
+name|GObject
+modifier|*
+name|rc
+parameter_list|,
 name|gint
 name|fd
 parameter_list|)
@@ -394,10 +510,6 @@ name|GParamSpec
 modifier|*
 modifier|*
 name|property_specs
-decl_stmt|;
-name|GObject
-modifier|*
-name|rc
 decl_stmt|;
 name|GString
 modifier|*
@@ -427,20 +539,6 @@ argument_list|,
 name|str
 operator|->
 name|len
-argument_list|)
-expr_stmt|;
-name|rc
-operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_RC
-argument_list|,
-literal|"module-load-inhibit"
-argument_list|,
-literal|"foo"
-argument_list|,
-comment|/* for completeness */
-name|NULL
 argument_list|)
 expr_stmt|;
 name|klass
@@ -586,11 +684,6 @@ argument_list|(
 name|property_specs
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|rc
-argument_list|)
-expr_stmt|;
 name|g_string_free
 argument_list|(
 name|str
@@ -598,9 +691,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-return|return
-name|EXIT_SUCCESS
-return|;
 block|}
 end_function
 
@@ -718,10 +808,14 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|gint
-DECL|function|dump_man_page (gint fd)
-name|dump_man_page
+name|void
+DECL|function|dump_gimprc_manpage (GObject * rc,gint fd)
+name|dump_gimprc_manpage
 parameter_list|(
+name|GObject
+modifier|*
+name|rc
+parameter_list|,
 name|gint
 name|fd
 parameter_list|)
@@ -735,10 +829,6 @@ modifier|*
 modifier|*
 name|property_specs
 decl_stmt|;
-name|GObject
-modifier|*
-name|rc
-decl_stmt|;
 name|GString
 modifier|*
 name|str
@@ -749,32 +839,24 @@ decl_stmt|;
 name|guint
 name|i
 decl_stmt|;
-name|write
-argument_list|(
-name|fd
-argument_list|,
-name|man_page_header
-argument_list|,
-name|strlen
-argument_list|(
-name|man_page_header
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|str
 operator|=
 name|g_string_new
 argument_list|(
-name|NULL
+name|man_page_header
 argument_list|)
 expr_stmt|;
-name|rc
-operator|=
-name|g_object_new
+name|write
 argument_list|(
-name|GIMP_TYPE_RC
+name|fd
 argument_list|,
-name|NULL
+name|str
+operator|->
+name|str
+argument_list|,
+name|str
+operator|->
+name|len
 argument_list|)
 expr_stmt|;
 name|klass
@@ -909,11 +991,6 @@ argument_list|(
 name|property_specs
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|rc
-argument_list|)
-expr_stmt|;
 name|g_string_free
 argument_list|(
 name|str
@@ -945,11 +1022,42 @@ name|man_page_footer
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return
-name|EXIT_SUCCESS
-return|;
 block|}
 end_function
+
+begin_decl_stmt
+DECL|variable|display_format_description
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|display_format_description
+init|=
+literal|"This is a format string; certain % character sequences are recognised and "
+literal|"expanded as follows:\n"
+literal|"\n"
+literal|"%%  literal percent sign\n"
+literal|"%f  bare filename, or \"Untitled\"\n"
+literal|"%F  full path to file, or \"Untitled\"\n"
+literal|"%p  PDB image id\n"
+literal|"%i  view instance number\n"
+literal|"%t  image type (RGB, grayscale, indexed)\n"
+literal|"%z  zoom factor as a percentage\n"
+literal|"%s  source scale factor\n"
+literal|"%d  destination scale factor\n"
+literal|"%Dx expands to x if the image is dirty, the empty string otherwise\n"
+literal|"%Cx expands to x if the image is clean, the empty string otherwise\n"
+literal|"%m  memory used by the image\n"
+literal|"%l  the number of layers\n"
+literal|"%L  the name of the active layer/channel\n"
+literal|"%w  image width in pixels\n"
+literal|"%W  image width in real-world units\n"
+literal|"%h  image height in pixels\n"
+literal|"%H  image height in real-world units\n"
+literal|"%u  unit symbol\n"
+literal|"%U  unit abbreviation\n\n"
+decl_stmt|;
+end_decl_stmt
 
 begin_function
 specifier|static
@@ -1222,10 +1330,42 @@ break|break;
 case|case
 name|G_TYPE_STRING
 case|:
+comment|/* eek */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|g_param_spec_get_name
+argument_list|(
+name|param_spec
+argument_list|)
+argument_list|,
+literal|"image-title-format"
+argument_list|)
+operator|&&
+name|strcmp
+argument_list|(
+name|g_param_spec_get_name
+argument_list|(
+name|param_spec
+argument_list|)
+argument_list|,
+literal|"image-status-format"
+argument_list|)
+condition|)
+block|{
 name|values
 operator|=
 literal|"This is a string value."
 expr_stmt|;
+block|}
+else|else
+block|{
+name|values
+operator|=
+name|display_format_description
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|G_TYPE_ENUM
@@ -1520,6 +1660,22 @@ argument_list|,
 literal|"\n"
 argument_list|,
 literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|*
+name|t
+operator|==
+literal|'\n'
+condition|)
+name|write
+argument_list|(
+name|fd
+argument_list|,
+literal|".br\n"
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|i

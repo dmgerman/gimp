@@ -17,7 +17,7 @@ name|__GIMP_RC_BLURBS_H__
 end_define
 
 begin_comment
-comment|/*  Not all strings defined here are used in the user interface  *  and only those that are should be marked for translation.  */
+comment|/*  Not all strings defined here are used in the user interface  *  (the preferences dialog mainly) and only those that are should  *  be marked for translation.  */
 end_comment
 
 begin_define
@@ -299,7 +299,7 @@ define|#
 directive|define
 name|IMAGE_STATUS_FORMAT_BLURB
 define|\
-value|"Sets the text to appear in image window status bars. See " \ "image-title-format for the list of possible % sequences."
+value|N_("Sets the text to appear in image window status bars.")
 end_define
 
 begin_define
@@ -308,7 +308,7 @@ define|#
 directive|define
 name|IMAGE_TITLE_FORMAT_BLURB
 define|\
-value|"Sets the text to appear in image window titles.  Certain % character " \ "sequences are recognised and expanded as follows:\n" \ "\n" \ "%%  literal percent sign\n" \ "%f  bare filename, or \"Untitled\"\n" \ "%F  full path to file, or \"Untitled\"\n" \ "%p  PDB image id\n" \ "%i  view instance number\n" \ "%t  image type (RGB, grayscale, indexed)\n" \ "%z  zoom factor as a percentage\n" \ "%s  source scale factor\n" \ "%d  destination scale factor\n" \ "%Dx expands to x if the image is dirty, the empty string otherwise\n" \ "%Cx expands to x if the image is clean, the empty string otherwise\n" \ "%m  memory used by the image\n" \ "%l  the number of layers\n" \ "%L  the name of the active layer/channel\n" \ "%w  image width in pixels\n" \ "%W  image width in real-world units\n" \ "%h  image height in pixels\n" \ "%H  image height in real-world units\n" \ "%u  unit symbol\n" \ "%U  unit abbreviation\n\n"
+value|N_("Sets the text to appear in image window titles.")
 end_define
 
 begin_define
@@ -623,7 +623,7 @@ define|#
 directive|define
 name|TEMP_PATH_BLURB
 define|\
-value|N_("Sets the temporary storage directory. Files will appear here " \    "during the course of running the GIMP.  Most files will disappear " \    "when the GIMP exits, but some files are likely to remain, so it is" \    "best if this directory not be one that is shared by other users.")
+value|N_("Sets the temporary storage directory. Files will appear here " \    "during the course of running the GIMP.  Most files will disappear " \    "when the GIMP exits, but some files are likely to remain, so it is " \    "best if this directory not be one that is shared by other users.")
 end_define
 
 begin_define

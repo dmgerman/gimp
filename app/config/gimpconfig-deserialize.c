@@ -1853,7 +1853,7 @@ operator|.
 name|v_string
 condition|)
 block|{
-comment|/*  Check if the string can be expanded        *  and converted to thde filesystem encoding.        */
+comment|/*  Check if the string can be expanded        *  and converted to the filesystem encoding.        */
 name|gchar
 modifier|*
 name|expand
