@@ -285,6 +285,8 @@ name|run_mode
 argument_list|,
 name|FALSE
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 return|;
@@ -293,7 +295,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save_as (GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_uri_and_proc,GError ** error)
+DECL|function|file_save_as (GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_uri_and_proc,gboolean set_image_clean,GError ** error)
 name|file_save_as
 parameter_list|(
 name|GimpImage
@@ -319,6 +321,9 @@ name|run_mode
 parameter_list|,
 name|gboolean
 name|set_uri_and_proc
+parameter_list|,
+name|gboolean
+name|set_image_clean
 parameter_list|,
 name|GError
 modifier|*
@@ -726,12 +731,18 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
+if|if
+condition|(
+name|set_image_clean
+condition|)
+block|{
 comment|/*  set this image to clean  */
 name|gimp_image_clean_all
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 name|documents
 operator|=
 name|GIMP_DOCUMENT_LIST

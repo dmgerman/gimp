@@ -63,6 +63,9 @@ parameter_list|,
 name|gboolean
 name|set_uri_and_proc
 parameter_list|,
+name|gboolean
+name|set_image_clean
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

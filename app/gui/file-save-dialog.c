@@ -252,6 +252,9 @@ name|save_proc
 parameter_list|,
 name|gboolean
 name|set_uri_and_proc
+parameter_list|,
+name|gboolean
+name|set_image_clean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -294,6 +297,16 @@ DECL|variable|set_uri_and_proc
 specifier|static
 name|gboolean
 name|set_uri_and_proc
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|set_image_clean
+specifier|static
+name|gboolean
+name|set_image_clean
 init|=
 name|TRUE
 decl_stmt|;
@@ -386,6 +399,10 @@ operator|=
 name|gimage
 expr_stmt|;
 name|set_uri_and_proc
+operator|=
+name|TRUE
+expr_stmt|;
+name|set_image_clean
 operator|=
 name|TRUE
 expr_stmt|;
@@ -562,6 +579,10 @@ operator|=
 name|gimage
 expr_stmt|;
 name|set_uri_and_proc
+operator|=
+name|FALSE
+expr_stmt|;
+name|set_image_clean
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1151,6 +1172,8 @@ argument_list|,
 name|save_file_proc
 argument_list|,
 name|set_uri_and_proc
+argument_list|,
+name|set_image_clean
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -1411,6 +1434,8 @@ argument_list|,
 name|save_file_proc
 argument_list|,
 name|set_uri_and_proc
+argument_list|,
+name|set_image_clean
 argument_list|)
 expr_stmt|;
 block|}
@@ -1448,7 +1473,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_uri_and_proc)
+DECL|function|file_save_dialog_save_image (GtkWidget * save_dialog,GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * save_proc,gboolean set_uri_and_proc,gboolean set_image_clean)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GtkWidget
@@ -1475,6 +1500,9 @@ name|save_proc
 parameter_list|,
 name|gboolean
 name|set_uri_and_proc
+parameter_list|,
+name|gboolean
+name|set_image_clean
 parameter_list|)
 block|{
 name|GimpPDBStatusType
@@ -1501,6 +1529,8 @@ argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|set_uri_and_proc
+argument_list|,
+name|set_image_clean
 argument_list|,
 operator|&
 name|error
