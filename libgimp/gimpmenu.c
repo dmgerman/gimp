@@ -159,6 +159,10 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_image_menu_new:  * @constraint:  * @callback:  * @data:  * @active_image:  *  * Use gimp_image_combo_box_new() instead.  *  * Return value:  */
+end_comment
+
 begin_function
 name|GtkWidget
 modifier|*
@@ -399,6 +403,10 @@ name|menu
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_layer_menu_new:  * @constraint:  * @callback:  * @data:  * @active_layer:  *  * Use gimp_layer_combo_box_new() instead.  *  * Return value:  */
+end_comment
 
 begin_function
 name|GtkWidget
@@ -720,6 +728,10 @@ name|menu
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_channel_menu_new:  * @constraint:  * @callback:  * @data:  * @active_channel:  *  * Use gimp_channel_combo_box_new() instead.  *  * Return value:  */
+end_comment
 
 begin_function
 name|GtkWidget
@@ -1043,6 +1055,10 @@ name|menu
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_drawable_menu_new:  * @constraint:  * @callback:  * @data:  * @active_drawable:  *  * Use gimp_drawable_combo_box_new() instead.  *  * Return value:  */
+end_comment
 
 begin_function
 name|GtkWidget
