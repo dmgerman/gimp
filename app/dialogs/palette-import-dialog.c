@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a03c8da0103
+DECL|enum|__anon2bfa3f180103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -1057,6 +1057,8 @@ operator|->
 name|context
 argument_list|,
 literal|24
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_option_menu_set_menu
@@ -1123,6 +1125,8 @@ operator|->
 name|context
 argument_list|,
 literal|24
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_option_menu_set_menu

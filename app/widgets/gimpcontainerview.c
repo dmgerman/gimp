@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cbe3410103
+DECL|enum|__anon2c6c847a0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -678,6 +678,12 @@ literal|0
 expr_stmt|;
 name|view
 operator|->
+name|preview_border_width
+operator|=
+literal|1
+expr_stmt|;
+name|view
+operator|->
 name|reorderable
 operator|=
 name|FALSE
@@ -855,8 +861,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|container
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_CONTAINER
 argument_list|(

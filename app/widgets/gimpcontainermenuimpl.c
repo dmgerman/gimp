@@ -411,7 +411,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_menu_new (GimpContainer * container,GimpContext * context,gint preview_size)
+DECL|function|gimp_container_menu_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width)
 name|gimp_container_menu_new
 parameter_list|(
 name|GimpContainer
@@ -424,6 +424,9 @@ name|context
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|preview_border_width
 parameter_list|)
 block|{
 name|GimpContainerMenuImpl
@@ -475,6 +478,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|preview_border_width
+operator|>=
+literal|0
+operator|&&
+name|preview_border_width
+operator|<=
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|menu_impl
 operator|=
 name|g_object_new
@@ -497,6 +513,12 @@ name|preview_size
 operator|=
 name|preview_size
 expr_stmt|;
+name|menu
+operator|->
+name|preview_border_width
+operator|=
+name|preview_border_width
+expr_stmt|;
 name|menu_impl
 operator|->
 name|empty_item
@@ -516,6 +538,10 @@ operator|-
 literal|1
 argument_list|,
 name|preview_size
+operator|+
+literal|2
+operator|*
+name|preview_border_width
 operator|+
 literal|2
 operator|*
@@ -622,6 +648,10 @@ argument_list|,
 name|menu
 operator|->
 name|preview_size
+argument_list|,
+name|menu
+operator|->
+name|preview_border_width
 argument_list|)
 expr_stmt|;
 name|gimp_menu_item_set_name_func
@@ -1152,16 +1182,9 @@ name|menu
 operator|->
 name|preview_size
 argument_list|,
-name|GIMP_PREVIEW
-argument_list|(
-name|menu_item
+name|menu
 operator|->
-name|preview
-argument_list|)
-operator|->
-name|renderer
-operator|->
-name|border_width
+name|preview_border_width
 argument_list|)
 expr_stmt|;
 block|}

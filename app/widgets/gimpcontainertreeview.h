@@ -167,10 +167,6 @@ name|GList
 modifier|*
 name|editable_cells
 decl_stmt|;
-DECL|member|preview_border_width
-name|gint
-name|preview_border_width
-decl_stmt|;
 DECL|member|invalidate_preview_handler_id
 name|GQuark
 name|invalidate_preview_handler_id

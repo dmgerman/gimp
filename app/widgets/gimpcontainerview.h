@@ -122,6 +122,10 @@ DECL|member|preview_size
 name|gint
 name|preview_size
 decl_stmt|;
+DECL|member|preview_border_width
+name|gint
+name|preview_border_width
+decl_stmt|;
 DECL|member|reorderable
 name|gboolean
 name|reorderable

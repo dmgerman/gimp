@@ -123,6 +123,10 @@ DECL|member|preview_size
 name|gint
 name|preview_size
 decl_stmt|;
+DECL|member|preview_border_width
+name|gint
+name|preview_border_width
+decl_stmt|;
 comment|/*< private>*/
 DECL|member|get_name_func
 name|GimpItemGetNameFunc
@@ -183,6 +187,9 @@ name|viewable
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|preview_border_width
 parameter_list|)
 function_decl|;
 end_function_decl

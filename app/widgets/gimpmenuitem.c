@@ -57,6 +57,12 @@ directive|include
 file|"gimppreview.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppreviewrenderer.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -327,6 +333,12 @@ literal|0
 expr_stmt|;
 name|menu_item
 operator|->
+name|preview_border_width
+operator|=
+literal|1
+expr_stmt|;
+name|menu_item
+operator|->
 name|get_name_func
 operator|=
 name|NULL
@@ -337,7 +349,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_menu_item_new (GimpViewable * viewable,gint preview_size)
+DECL|function|gimp_menu_item_new (GimpViewable * viewable,gint preview_size,gint preview_border_width)
 name|gimp_menu_item_new
 parameter_list|(
 name|GimpViewable
@@ -346,6 +358,9 @@ name|viewable
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|preview_border_width
 parameter_list|)
 block|{
 name|GimpMenuItem
@@ -375,6 +390,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|preview_border_width
+operator|>=
+literal|0
+operator|&&
+name|preview_border_width
+operator|<=
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|menu_item
 operator|=
 name|g_object_new
@@ -389,6 +417,12 @@ operator|->
 name|preview_size
 operator|=
 name|preview_size
+expr_stmt|;
+name|menu_item
+operator|->
+name|preview_border_width
+operator|=
+name|preview_border_width
 expr_stmt|;
 name|gimp_menu_item_set_viewable
 argument_list|(
@@ -463,7 +497,9 @@ name|menu_item
 operator|->
 name|preview_size
 argument_list|,
-literal|1
+name|menu_item
+operator|->
+name|preview_border_width
 argument_list|,
 name|FALSE
 argument_list|)
@@ -477,6 +513,12 @@ argument_list|,
 name|menu_item
 operator|->
 name|preview_size
+operator|+
+literal|2
+operator|*
+name|menu_item
+operator|->
+name|preview_border_width
 argument_list|,
 operator|-
 literal|1

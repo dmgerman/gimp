@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296727300103
+DECL|enum|__anon2bdab82c0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -618,12 +618,6 @@ operator|->
 name|model_column_name
 operator|=
 name|COLUMN_NAME
-expr_stmt|;
-name|tree_view
-operator|->
-name|preview_border_width
-operator|=
-literal|1
 expr_stmt|;
 name|gtk_scrolled_window_set_shadow_type
 argument_list|(
@@ -1251,7 +1245,7 @@ name|view
 operator|->
 name|preview_size
 argument_list|,
-name|tree_view
+name|view
 operator|->
 name|preview_border_width
 argument_list|,
@@ -2502,7 +2496,7 @@ name|view
 operator|->
 name|preview_size
 argument_list|,
-name|tree_view
+name|view
 operator|->
 name|preview_border_width
 argument_list|)

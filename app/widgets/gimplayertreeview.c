@@ -1097,7 +1097,10 @@ index|]
 operator|=
 name|G_TYPE_BOOLEAN
 expr_stmt|;
-name|tree_view
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|view
+argument_list|)
 operator|->
 name|preview_border_width
 operator|=
@@ -2523,7 +2526,7 @@ name|view
 operator|->
 name|preview_size
 argument_list|,
-name|tree_view
+name|view
 operator|->
 name|preview_border_width
 argument_list|)
@@ -3763,7 +3766,7 @@ name|container_view
 operator|->
 name|preview_size
 argument_list|,
-name|tree_view
+name|container_view
 operator|->
 name|preview_border_width
 argument_list|,

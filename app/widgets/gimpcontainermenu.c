@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcd8b780103
+DECL|enum|__anon2abde40b0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -606,6 +606,12 @@ name|preview_size
 operator|=
 literal|0
 expr_stmt|;
+name|menu
+operator|->
+name|preview_border_width
+operator|=
+literal|1
+expr_stmt|;
 block|}
 end_function
 
@@ -724,8 +730,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|!
 name|container
+operator|==
+name|NULL
 operator|||
 name|GIMP_IS_CONTAINER
 argument_list|(
@@ -741,7 +748,6 @@ name|menu
 operator|->
 name|container
 condition|)
-block|{
 name|GIMP_CONTAINER_MENU_GET_CLASS
 argument_list|(
 name|menu
@@ -754,7 +760,6 @@ argument_list|,
 name|container
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1322,22 +1327,12 @@ name|menu
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|menu
-operator|->
-name|get_name_func
-operator|!=
-name|get_name_func
-condition|)
-block|{
 name|menu
 operator|->
 name|get_name_func
 operator|=
 name|get_name_func
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -1355,9 +1350,6 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|gpointer
-name|insert_data
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER_MENU
@@ -1377,6 +1369,16 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|menu
+operator|->
+name|hash_table
+condition|)
+block|{
+name|gpointer
+name|insert_data
+decl_stmt|;
 name|insert_data
 operator|=
 name|g_hash_table_lookup
@@ -1405,6 +1407,7 @@ name|insert_data
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
@@ -1421,9 +1424,6 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|gpointer
-name|insert_data
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER_MENU
@@ -1440,6 +1440,16 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|menu
+operator|->
+name|hash_table
+condition|)
+block|{
+name|gpointer
+name|insert_data
+decl_stmt|;
 name|insert_data
 operator|=
 name|g_hash_table_lookup
@@ -1468,6 +1478,7 @@ name|insert_data
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_function
@@ -1484,9 +1495,6 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|gpointer
-name|insert_data
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CONTAINER_MENU
@@ -1503,6 +1511,16 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|menu
+operator|->
+name|hash_table
+condition|)
+block|{
+name|gpointer
+name|insert_data
+decl_stmt|;
 name|insert_data
 operator|=
 name|g_hash_table_lookup
@@ -1530,6 +1548,7 @@ argument_list|,
 name|insert_data
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1574,10 +1593,31 @@ operator|->
 name|context
 condition|)
 block|{
-name|gimp_context_set_by_type
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+comment|/*  ref and remember the context because menu->context may        *  become NULL by calling gimp_context_set_by_type()        */
+name|context
+operator|=
+name|g_object_ref
 argument_list|(
 name|menu
 operator|->
+name|context
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|context
+argument_list|,
+name|gimp_container_menu_context_changed
+argument_list|,
+name|menu
+argument_list|)
+expr_stmt|;
+name|gimp_context_set_by_type
+argument_list|(
 name|context
 argument_list|,
 name|menu
@@ -1590,6 +1630,20 @@ name|GIMP_OBJECT
 argument_list|(
 name|viewable
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_unblock_by_func
+argument_list|(
+name|context
+argument_list|,
+name|gimp_container_menu_context_changed
+argument_list|,
+name|menu
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|context
 argument_list|)
 expr_stmt|;
 block|}
@@ -1893,15 +1947,6 @@ condition|(
 name|insert_data
 condition|)
 block|{
-name|g_hash_table_remove
-argument_list|(
-name|menu
-operator|->
-name|hash_table
-argument_list|,
-name|viewable
-argument_list|)
-expr_stmt|;
 name|GIMP_CONTAINER_MENU_GET_CLASS
 argument_list|(
 name|menu
@@ -1914,6 +1959,15 @@ argument_list|,
 name|viewable
 argument_list|,
 name|insert_data
+argument_list|)
+expr_stmt|;
+name|g_hash_table_remove
+argument_list|(
+name|menu
+operator|->
+name|hash_table
+argument_list|,
+name|viewable
 argument_list|)
 expr_stmt|;
 block|}
