@@ -4297,6 +4297,9 @@ case|case
 name|GDK_Delete
 case|:
 case|case
+name|GDK_Escape
+case|:
+case|case
 name|GDK_Left
 case|:
 case|case

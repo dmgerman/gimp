@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795ef360103
+DECL|enum|__anon288ec6f00103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -2448,6 +2448,21 @@ argument_list|,
 name|options
 operator|->
 name|crop_mode
+argument_list|,
+name|crop
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+case|case
+name|GDK_Escape
+case|:
+name|crop_response
+argument_list|(
+name|NULL
+argument_list|,
+name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|crop
 argument_list|)
