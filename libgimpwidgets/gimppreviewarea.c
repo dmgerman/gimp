@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289faf0a0103
+DECL|enum|__anon29ebd35f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1314,7 +1314,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_draw:  * @area:      a #GimpPreviewArea widget.  * @x:         x offset in preview  * @y:         y offset in preview  * @width:     buffer width  * @height:    buffer height  * @type:      the #GimpImageType of @buf  * @buf:       a #guchar buffer that contains the preview pixel data.  * @rowstride: rowstride of @buf  *  * Draws @buf on @area and queues a redraw on the rectangle that  * changed.  *  * Since GIMP 2.2  **/
+comment|/**  * gimp_preview_area_draw:  * @area:      a #GimpPreviewArea widget.  * @x:         x offset in preview  * @y:         y offset in preview  * @width:     buffer width  * @height:    buffer height  * @type:      the #GimpImageType of @buf  * @buf:       a #guchar buffer that contains the preview pixel data.  * @rowstride: rowstride of @buf  *  * Draws @buf on @area and queues a redraw on the given rectangle.  *  * Since GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -2592,7 +2592,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_blend:  * @area:       a #GimpPreviewArea widget.  * @x:          x offset in preview  * @y:          y offset in preview  * @width:      buffer width  * @height:     buffer height  * @type:       the #GimpImageType of @buf1 and @buf2  * @buf1:       a #guchar buffer that contains the pixel data for  *              the first (on bottom) layer  * @rowstride1: rowstride of @buf1  * @buf2:       a #guchar buffer that contains the pixel data for  *              the second (on top) layer  * @rowstride2: rowstride of @buf2  * @opacity:    The opacity of the first layer.  *  * Blend @buf1 on top of @buf2 with the given @opacity on the @area  * and queues a redraw on the rectangle that changed.  *  * Since GIMP 2.2  **/
+comment|/**  * gimp_preview_area_blend:  * @area:       a #GimpPreviewArea widget.  * @x:          x offset in preview  * @y:          y offset in preview  * @width:      buffer width  * @height:     buffer height  * @type:       the #GimpImageType of @buf1 and @buf2  * @buf1:       a #guchar buffer that contains the pixel data for  *              the lower layer  * @rowstride1: rowstride of @buf1  * @buf2:       a #guchar buffer that contains the pixel data for  *              the upper layer  * @rowstride2: rowstride of @buf2  * @opacity:    The opacity of the first layer.  *  * Composites @buf1 on @buf2 with the given @opacity, draws the result  * to @area and queues a redraw on the given rectangle.  *  * Since GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -4954,12 +4954,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_mask:  * @area:           a #GimpPreviewArea widget.  * @x:              x offset in preview  * @y:              y offset in preview  * @width:          buffer width  * @height:         buffer height  * @type:           the #GimpImageType of @buf1 and @buf2  * @buf1:           a #guchar buffer that contains the pixel data for  *                  the first (on bottom) layer  * @rowstride1:     rowstride of @buf1  * @buf2:           a #guchar buffer that contains the pixel data for  *                  the second (on top) layer  * @rowstride2:     rowstride of @buf2  * @mask:           a #guchar buffer representing the mask of the second  *                  layer.  * @rowstride_mask: rowstride for the mask.  *  * Blend @buf1 on top of @buf2 with the given @mask on the @area  * and queues a redraw on the rectangle that changed.  *  * Since GIMP 2.2  **/
+comment|/**  * gimp_preview_area_mask:  * @area:           a #GimpPreviewArea widget.  * @x:              x offset in preview  * @y:              y offset in preview  * @width:          buffer width  * @height:         buffer height  * @type:           the #GimpImageType of @buf1 and @buf2  * @buf1:           a #guchar buffer that contains the pixel data for  *                  the lower layer  * @rowstride1:     rowstride of @buf1  * @buf2:           a #guchar buffer that contains the pixel data for  *                  the upper layer  * @rowstride2:     rowstride of @buf2  * @mask:           a #guchar buffer representing the mask of the second  *                  layer.  * @rowstride_mask: rowstride for the mask.  *  * Composites @buf1 on @buf2 with the given @mask, draws the result on  * @area and queues a redraw on the given rectangle.  *  * Since GIMP 2.2  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_preview_area_mask (GimpPreviewArea * area,gint x,gint y,gint width,gint height,GimpImageType type,const guchar * buf1,gint rowstride1,const guchar * buf2,gint rowstride2,guchar * mask,gint rowstride_mask)
+DECL|function|gimp_preview_area_mask (GimpPreviewArea * area,gint x,gint y,gint width,gint height,GimpImageType type,const guchar * buf1,gint rowstride1,const guchar * buf2,gint rowstride2,const guchar * mask,gint rowstride_mask)
 name|gimp_preview_area_mask
 parameter_list|(
 name|GimpPreviewArea
@@ -4997,6 +4997,7 @@ parameter_list|,
 name|gint
 name|rowstride2
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|mask
@@ -6529,7 +6530,6 @@ name|d
 operator|+=
 literal|3
 control|)
-block|{
 name|d
 index|[
 literal|0
@@ -6575,7 +6575,6 @@ operator|)
 operator|>>
 literal|8
 expr_stmt|;
-block|}
 name|src1
 operator|+=
 name|rowstride1
@@ -8223,6 +8222,7 @@ operator|=
 operator|(
 operator|(
 operator|(
+operator|(
 name|a
 operator|<<
 literal|8
@@ -8247,6 +8247,7 @@ name|inter
 index|[
 literal|3
 index|]
+operator|)
 expr_stmt|;
 block|}
 block|}
@@ -8470,7 +8471,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_area_fill:  * @area:   a #GimpPreviewArea widget.  * @x:      x offset in preview  * @y:      y offset in preview  * @width:  buffer width  * @height: buffer height  * @red:  * @green:  * @blue:  *  * Fills the @area in the given color.  *  * Since GIMP 2.2  **/
+comment|/**  * gimp_preview_area_fill:  * @area:   a #GimpPreviewArea widget.  * @x:      x offset in preview  * @y:      y offset in preview  * @width:  buffer width  * @height: buffer height  * @red:    red component of the fill color (0-255)  * @green:  green component of the fill color (0-255)  * @blue:   red component of the fill color (0-255)  *  * Fills @area in the given color and queues a redraw on the given  * rectangle.  *  * Since GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -9031,12 +9032,7 @@ specifier|const
 name|gchar
 modifier|*
 name|name
-decl_stmt|;
-name|gint
-name|value
-decl_stmt|;
-name|name
-operator|=
+init|=
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -9046,9 +9042,15 @@ argument_list|)
 argument_list|,
 literal|"gimp-preview-area-prop-name"
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+if|if
+condition|(
+name|name
+condition|)
+block|{
+name|gint
 name|value
-operator|=
+init|=
 name|GPOINTER_TO_INT
 argument_list|(
 name|g_object_get_data
@@ -9061,11 +9063,7 @@ argument_list|,
 literal|"gimp-preview-area-prop-value"
 argument_list|)
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|name
-condition|)
+decl_stmt|;
 name|g_object_set
 argument_list|(
 name|area
@@ -9077,6 +9075,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

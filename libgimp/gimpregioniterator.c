@@ -849,6 +849,13 @@ operator|-
 name|y1
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|total_area
+operator|<=
+literal|0
+condition|)
+return|return;
 name|area_so_far
 operator|=
 literal|0
@@ -1104,6 +1111,13 @@ operator|-
 name|y1
 operator|)
 expr_stmt|;
+if|if
+condition|(
+name|total_area
+operator|<=
+literal|0
+condition|)
+return|return;
 name|area_so_far
 operator|=
 literal|0

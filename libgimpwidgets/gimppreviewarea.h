@@ -349,6 +349,7 @@ parameter_list|,
 name|gint
 name|rowstride2
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|mask
