@@ -316,10 +316,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"OS/2 unsupported!\n"
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

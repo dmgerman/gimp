@@ -4747,6 +4747,10 @@ name|gchar
 modifier|*
 name|token
 decl_stmt|;
+name|gchar
+modifier|*
+name|next_token
+decl_stmt|;
 name|struct
 name|stat
 name|filestat
@@ -4868,11 +4872,15 @@ name|g_get_home_dir
 argument_list|()
 expr_stmt|;
 comment|/* Search through all directories in the  path */
+name|next_token
+operator|=
+name|path_string
+expr_stmt|;
 name|token
 operator|=
 name|strtok
 argument_list|(
-name|path_string
+name|next_token
 argument_list|,
 name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
@@ -8374,7 +8382,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d818850108
+DECL|struct|__anon2c8922170108
 block|{
 DECL|member|color_string
 name|gchar

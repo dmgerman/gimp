@@ -169,17 +169,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|create_warn_dialog
-parameter_list|(
-name|gchar
-modifier|*
-name|msg
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|save_options
 parameter_list|(
 name|FILE

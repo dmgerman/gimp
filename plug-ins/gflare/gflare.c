@@ -469,7 +469,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b546d8e0103
+DECL|enum|__anon28e4550f0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -496,7 +496,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b546d8e0203
+DECL|enum|__anon28e4550f0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -515,7 +515,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b546d8e0308
+DECL|struct|__anon28e4550f0308
 typedef|typedef
 struct|struct
 block|{
@@ -652,7 +652,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b546d8e0408
+DECL|struct|__anon28e4550f0408
 typedef|typedef
 struct|struct
 block|{
@@ -672,7 +672,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b546d8e0503
+DECL|enum|__anon28e4550f0503
 typedef|typedef
 enum|enum
 block|{
@@ -700,7 +700,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b546d8e0608
+DECL|struct|__anon28e4550f0608
 typedef|typedef
 struct|struct
 block|{
@@ -723,7 +723,7 @@ name|Preview
 modifier|*
 name|preview
 decl_stmt|;
-DECL|struct|__anon2b546d8e0708
+DECL|struct|__anon28e4550f0708
 struct|struct
 block|{
 DECL|member|x0
@@ -809,7 +809,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b546d8e0808
+DECL|struct|__anon28e4550f0808
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +881,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b546d8e0908
+DECL|struct|__anon28e4550f0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -908,7 +908,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b546d8e0a08
+DECL|struct|__anon28e4550f0a08
 block|{
 DECL|member|init
 name|gint
@@ -1078,7 +1078,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b546d8e0b08
+DECL|struct|__anon28e4550f0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1105,7 +1105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b546d8e0c08
+DECL|struct|__anon28e4550f0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1146,7 +1146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b546d8e0d08
+DECL|struct|__anon28e4550f0d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1376,7 +1376,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b546d8e0e08
+DECL|struct|__anon28e4550f0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1451,7 +1451,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2b546d8e0f03
+DECL|enum|__anon28e4550f0f03
 typedef|typedef
 enum|enum
 block|{
@@ -1485,7 +1485,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b546d8e1008
+DECL|struct|__anon28e4550f1008
 typedef|typedef
 struct|struct
 block|{
@@ -1529,7 +1529,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b546d8e1108
+DECL|struct|__anon28e4550f1108
 typedef|typedef
 struct|struct
 block|{
@@ -1587,7 +1587,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b546d8e1208
+DECL|struct|__anon28e4550f1208
 typedef|typedef
 struct|struct
 block|{
@@ -5195,6 +5195,10 @@ name|gchar
 modifier|*
 name|token
 decl_stmt|;
+name|gchar
+modifier|*
+name|next_token
+decl_stmt|;
 name|struct
 name|stat
 name|filestat
@@ -5293,13 +5297,17 @@ literal|"HOME"
 argument_list|)
 expr_stmt|;
 comment|/* Search through all directories in the  path */
+name|next_token
+operator|=
+name|path_string
+expr_stmt|;
 name|token
 operator|=
 name|strtok
 argument_list|(
-name|path_string
+name|next_token
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 while|while
@@ -5321,7 +5329,7 @@ name|strtok
 argument_list|(
 name|NULL
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -5475,7 +5483,7 @@ name|strtok
 argument_list|(
 name|NULL
 argument_list|,
-literal|":"
+name|G_SEARCHPATH_SEPARATOR_S
 argument_list|)
 expr_stmt|;
 block|}
@@ -9665,7 +9673,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2b546d8e1308
+DECL|struct|__anon28e4550f1308
 specifier|static
 struct|struct
 block|{
@@ -17081,7 +17089,7 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-DECL|struct|__anon2b546d8e1408
+DECL|struct|__anon28e4550f1408
 specifier|static
 struct|struct
 block|{
