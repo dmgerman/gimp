@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4ffa560108
+DECL|struct|__anon2c6d2a1d0108
 block|{
 DECL|member|fd
 name|gint
@@ -243,11 +243,13 @@ argument_list|)
 expr_stmt|;
 name|fd
 operator|=
-name|open
+name|g_open
 argument_list|(
 name|filename
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1117,7 +1119,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ffa560203
+DECL|enum|__anon2c6d2a1d0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

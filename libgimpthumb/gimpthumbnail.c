@@ -250,7 +250,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e9e7370103
+DECL|enum|__anon29f313870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3217,7 +3217,7 @@ ifdef|#
 directive|ifdef
 name|G_OS_WIN32
 comment|/* win32 rename can't overwrite */
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)
@@ -3226,7 +3226,7 @@ endif|#
 directive|endif
 if|if
 condition|(
-name|rename
+name|g_rename
 argument_list|(
 name|tmpname
 argument_list|,
@@ -3380,7 +3380,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|unlink
+name|g_unlink
 argument_list|(
 name|tmpname
 argument_list|)
@@ -4723,7 +4723,7 @@ condition|(
 name|filename
 condition|)
 block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)

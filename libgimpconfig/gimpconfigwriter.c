@@ -1977,7 +1977,7 @@ name|writer
 operator|->
 name|tmpname
 condition|)
-name|unlink
+name|g_unlink
 argument_list|(
 name|writer
 operator|->
@@ -2077,7 +2077,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|unlink
+name|g_unlink
 argument_list|(
 name|writer
 operator|->
@@ -2129,7 +2129,7 @@ ifdef|#
 directive|ifdef
 name|G_OS_WIN32
 comment|/* win32 rename can't overwrite */
-name|unlink
+name|g_unlink
 argument_list|(
 name|writer
 operator|->
@@ -2140,7 +2140,7 @@ endif|#
 directive|endif
 if|if
 condition|(
-name|rename
+name|g_rename
 argument_list|(
 name|writer
 operator|->
@@ -2181,7 +2181,7 @@ name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|unlink
+name|g_unlink
 argument_list|(
 name|writer
 operator|->

@@ -637,7 +637,7 @@ name|G_FILE_TEST_IS_DIR
 argument_list|)
 operator|||
 operator|(
-name|mkdir
+name|g_mkdir
 argument_list|(
 name|thumb_dir
 argument_list|,
@@ -658,7 +658,7 @@ name|size
 operator|==
 literal|0
 condition|)
-name|mkdir
+name|g_mkdir
 argument_list|(
 name|thumb_fail_subdir
 argument_list|,
@@ -669,7 +669,7 @@ operator||
 name|S_IXUSR
 argument_list|)
 expr_stmt|;
-name|mkdir
+name|g_mkdir
 argument_list|(
 name|thumb_subdirs
 index|[
@@ -867,7 +867,7 @@ name|G_FILE_TEST_IS_DIR
 argument_list|)
 operator|||
 operator|(
-name|mkdir
+name|g_mkdir
 argument_list|(
 name|thumb_dir
 argument_list|,
@@ -882,7 +882,7 @@ literal|0
 operator|)
 condition|)
 block|{
-name|mkdir
+name|g_mkdir
 argument_list|(
 name|subdir
 argument_list|,
@@ -1393,7 +1393,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|stat
+name|g_stat
 argument_list|(
 name|filename
 argument_list|,
@@ -1564,7 +1564,7 @@ condition|(
 name|filename
 condition|)
 block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)
@@ -1642,7 +1642,7 @@ condition|(
 name|filename
 condition|)
 block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)
@@ -1735,7 +1735,7 @@ condition|(
 name|filename
 condition|)
 block|{
-name|unlink
+name|g_unlink
 argument_list|(
 name|filename
 argument_list|)

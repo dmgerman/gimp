@@ -1434,10 +1434,6 @@ name|gchar
 modifier|*
 name|dir
 init|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -1597,10 +1593,6 @@ name|gchar
 modifier|*
 name|dir
 init|=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|list
 operator|->
 name|data
@@ -1608,7 +1600,7 @@ decl_stmt|;
 comment|/*  check if directory exists  */
 name|err
 operator|=
-name|stat
+name|g_stat
 argument_list|(
 name|dir
 argument_list|,
@@ -1720,14 +1712,12 @@ specifier|const
 name|gchar
 modifier|*
 name|env
-decl_stmt|;
-name|env
-operator|=
+init|=
 name|g_getenv
 argument_list|(
 name|gimp_env_name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|env
