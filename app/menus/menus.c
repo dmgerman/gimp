@@ -1888,6 +1888,10 @@ block|,
 name|select_invert_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_INVERT
 block|}
 block|,
 name|NULL
@@ -3292,7 +3296,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_RESIZE
+name|GIMP_STOCK_LAYER_TO_IMAGESIZE
 block|}
 block|,
 name|NULL
@@ -3427,6 +3431,10 @@ block|,
 name|drawable_invert_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_INVERT
 block|}
 block|,
 name|NULL
@@ -4669,7 +4677,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_RESIZE
+name|GIMP_STOCK_LAYER_TO_IMAGESIZE
 block|}
 block|,
 name|NULL
