@@ -2327,6 +2327,12 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+operator|!
+name|info_win
+condition|)
+return|return;
 name|iwd
 operator|=
 operator|(
