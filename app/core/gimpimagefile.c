@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c501ff20103
+DECL|enum|__anon291952c00103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2206,6 +2206,15 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+comment|/*  when layer previews are disabled, we won't get a pixbuf  */
+if|if
+condition|(
+operator|!
+name|pixbuf
+condition|)
+return|return
+name|TRUE
+return|;
 name|success
 operator|=
 name|gimp_thumbnail_save_thumb
