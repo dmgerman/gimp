@@ -214,7 +214,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon29c54e200103
+DECL|enum|__anon2a2bbae10103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -234,7 +234,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c54e200208
+DECL|struct|__anon2a2bbae10208
 block|{
 DECL|member|x1
 name|gdouble
@@ -430,7 +430,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c54e200308
+DECL|struct|__anon2a2bbae10308
 block|{
 DECL|member|x1
 name|gint
@@ -473,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c54e200408
+DECL|struct|__anon2a2bbae10408
 block|{
 DECL|member|width
 name|gint
@@ -1032,7 +1032,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c54e200508
+DECL|struct|__anon2a2bbae10508
 block|{
 DECL|member|r
 name|guchar
@@ -2833,7 +2833,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c54e200608
+DECL|struct|__anon2a2bbae10608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4261,7 +4261,7 @@ name|outside_type
 argument_list|,
 name|_
 argument_list|(
-literal|"Warp"
+literal|"_Warp"
 argument_list|)
 argument_list|,
 operator|(
@@ -4273,7 +4273,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Transparent"
+literal|"_Transparent"
 argument_list|)
 argument_list|,
 operator|(
@@ -4285,7 +4285,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Black"
+literal|"_Black"
 argument_list|)
 argument_list|,
 operator|(
@@ -4297,7 +4297,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"White"
+literal|"_White"
 argument_list|)
 argument_list|,
 operator|(
@@ -4433,7 +4433,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"X1:"
+literal|"X_1:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4501,7 +4501,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"X2:"
+literal|"X_2:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4569,7 +4569,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Y1:"
+literal|"Y_1:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4637,7 +4637,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Y2:"
+literal|"Y_2:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4705,7 +4705,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Depth:"
+literal|"_Depth:"
 argument_list|)
 argument_list|,
 literal|0
