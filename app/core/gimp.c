@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b31d2350103
+DECL|enum|__anon2a44536d0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1797,12 +1797,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|gimp
-operator|->
-name|user_units
-condition|)
 name|gimp_units_exit
 argument_list|(
 name|gimp

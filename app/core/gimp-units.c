@@ -146,47 +146,11 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|user_units
-condition|)
-block|{
-name|g_list_foreach
+name|gimp_user_units_free
 argument_list|(
 name|gimp
-operator|->
-name|user_units
-argument_list|,
-operator|(
-name|GFunc
-operator|)
-name|g_free
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-name|g_list_free
-argument_list|(
-name|gimp
-operator|->
-name|user_units
-argument_list|)
-expr_stmt|;
-name|gimp
-operator|->
-name|user_units
-operator|=
-name|NULL
-expr_stmt|;
-name|gimp
-operator|->
-name|n_user_units
-operator|=
-literal|0
-expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -196,7 +160,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a51449b0103
+DECL|enum|__anon278acb860103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -967,9 +931,6 @@ decl_stmt|;
 name|GTokenType
 name|token
 decl_stmt|;
-name|GimpUnit
-name|unit
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1206,8 +1167,9 @@ operator|==
 name|token
 condition|)
 block|{
+name|GimpUnit
 name|unit
-operator|=
+init|=
 name|_gimp_unit_new
 argument_list|(
 name|gimp
@@ -1226,7 +1188,7 @@ name|singular
 argument_list|,
 name|plural
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 comment|/*  make the unit definition persistent  */
 name|_gimp_unit_set_deletion_flag
 argument_list|(
