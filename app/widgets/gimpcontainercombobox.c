@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299154240103
+DECL|enum|__anon293ffcb30103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -589,8 +589,16 @@ name|cell
 expr_stmt|;
 name|cell
 operator|=
-name|gtk_cell_renderer_text_new
-argument_list|()
+name|g_object_new
+argument_list|(
+name|GTK_TYPE_CELL_RENDERER_TEXT
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_MIDDLE
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_cell_layout_pack_start
 argument_list|(
