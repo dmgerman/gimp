@@ -1169,6 +1169,27 @@ name|file_uri
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  if called without any filenames, always start a new GIMP  */
+if|if
+condition|(
+name|file_list
+operator|->
+name|len
+operator|==
+literal|0
+condition|)
+block|{
+name|start_new_gimp
+argument_list|(
+name|argv
+index|[
+literal|0
+index|]
+argument_list|,
+name|file_list
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  locate Gimp window */
 name|display
 operator|=
@@ -1201,17 +1222,6 @@ argument_list|,
 name|file_list
 argument_list|)
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"No gimp window found on display %s\n"
-argument_list|,
-name|gdk_get_display
-argument_list|()
-argument_list|)
-expr_stmt|;
-return|return
-name|EXIT_FAILURE
-return|;
 block|}
 if|if
 condition|(
