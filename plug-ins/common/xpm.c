@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6b6890108
+DECL|struct|__anon29f707bf0108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6b6890208
+DECL|struct|__anon29f707bf0208
 block|{
 DECL|member|run
 name|gboolean
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6b6890308
+DECL|struct|__anon29f707bf0308
 block|{
 DECL|member|r
 name|guchar
@@ -1094,6 +1094,8 @@ name|name
 argument_list|)
 expr_stmt|;
 comment|/* read the raw file */
+switch|switch
+condition|(
 name|XpmReadFileToXpmImage
 argument_list|(
 operator|(
@@ -1107,7 +1109,50 @@ name|xpm_image
 argument_list|,
 name|NULL
 argument_list|)
+condition|)
+block|{
+case|case
+name|XpmSuccess
+case|:
+break|break;
+case|case
+name|XpmOpenFailed
+case|:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Error opening file '%s'"
+argument_list|)
+argument_list|,
+name|filename
+argument_list|)
 expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+case|case
+name|XpmFileInvalid
+case|:
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"XPM file invalid"
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+default|default:
+return|return
+operator|-
+literal|1
+return|;
+block|}
 comment|/* parse out the colors into a cmap */
 name|cmap
 operator|=
