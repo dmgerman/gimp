@@ -47,6 +47,29 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|sqr (x)
 define|#
@@ -146,7 +169,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2edaf50108
+DECL|struct|__anon275983650108
 typedef|typedef
 struct|struct
 block|{
@@ -177,7 +200,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2edaf50208
+DECL|struct|__anon275983650208
 typedef|typedef
 struct|struct
 block|{
@@ -217,7 +240,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2edaf50308
+DECL|struct|__anon275983650308
 typedef|typedef
 struct|struct
 block|{
@@ -859,7 +882,7 @@ literal|"Offset angle"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|PARAM_INT32
 block|,
 literal|"backwards"
 block|,
@@ -867,7 +890,7 @@ literal|"Map backwards?"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|PARAM_INT32
 block|,
 literal|"inverse"
 block|,
@@ -875,7 +898,7 @@ literal|"Map from top?"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|PARAM_INT32
 block|,
 literal|"polrec"
 block|,
@@ -1388,7 +1411,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int8
+name|d_int32
 expr_stmt|;
 name|pcvals
 operator|.
@@ -1401,7 +1424,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int8
+name|d_int32
 expr_stmt|;
 name|pcvals
 operator|.
@@ -1414,7 +1437,7 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_int8
+name|d_int32
 expr_stmt|;
 block|}
 comment|/* if */
@@ -5134,7 +5157,7 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-literal|"clicked"
+literal|"toggled"
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -5203,7 +5226,7 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-literal|"clicked"
+literal|"toggled"
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -5272,7 +5295,7 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-literal|"clicked"
+literal|"toggled"
 argument_list|,
 operator|(
 name|GtkSignalFunc
@@ -6728,14 +6751,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|int
+name|gint
 modifier|*
 name|toggle_val
 decl_stmt|;
 name|toggle_val
 operator|=
 operator|(
-name|int
+name|gint
 operator|*
 operator|)
 name|data
