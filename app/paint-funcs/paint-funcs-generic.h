@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * This file is supposed to contain the generic (read: C) implementation  * of the pixelfiddeling paint-functions.   */
+comment|/*  * This file is supposed to contain the generic (read: C) implementation  * of the pixelfiddeling paint-functions.  */
 end_comment
 
 begin_ifndef
@@ -175,17 +175,6 @@ struct|;
 end_struct
 
 begin_decl_stmt
-DECL|variable|no_mask
-specifier|static
-specifier|const
-name|guchar
-name|no_mask
-init|=
-name|OPAQUE_OPACITY
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|add_lut
 specifier|static
 name|guchar
@@ -228,7 +217,7 @@ name|guint
 name|bytes
 parameter_list|)
 block|{
-comment|/* dest % bytes and color % bytes must be 0 or we will crash       when bytes = 2 or 4.      Is this safe to assume?  Lets find out.      This is 4-7X as fast as the simple version.      */
+comment|/* dest % bytes and color % bytes must be 0 or we will crash      when bytes = 2 or 4.      Is this safe to assume?  Lets find out.      This is 4-7X as fast as the simple version.      */
 if|#
 directive|if
 name|defined
@@ -731,6 +720,28 @@ condition|;
 name|b
 operator|++
 control|)
+block|{
+name|g_print
+argument_list|(
+literal|"%5d %5d %5d  "
+argument_list|,
+name|src1
+index|[
+name|b
+index|]
+operator|*
+name|a1
+argument_list|,
+name|src2
+index|[
+name|b
+index|]
+operator|+
+name|a2
+argument_list|,
+name|a
+argument_list|)
+expr_stmt|;
 name|dest
 index|[
 name|b
@@ -754,6 +765,17 @@ operator|)
 operator|/
 name|a
 expr_stmt|;
+name|g_print
+argument_list|(
+literal|"%3d\n"
+argument_list|,
+name|dest
+index|[
+name|b
+index|]
+argument_list|)
+expr_stmt|;
+block|}
 name|dest
 index|[
 name|c
@@ -6547,7 +6569,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|initial_indexed_a_pixels (const guchar * src,guchar * dest,const guchar * mask,const guchar * cmap,guint opacity,guint length)
+DECL|function|initial_indexed_a_pixels (const guchar * src,guchar * dest,const guchar * mask,const guchar * no_mask,const guchar * cmap,guint opacity,guint length)
 name|initial_indexed_a_pixels
 parameter_list|(
 specifier|const
@@ -6563,6 +6585,11 @@ specifier|const
 name|guchar
 modifier|*
 name|mask
+parameter_list|,
+specifier|const
+name|guchar
+modifier|*
+name|no_mask
 parameter_list|,
 specifier|const
 name|guchar
@@ -6601,7 +6628,6 @@ expr_stmt|;
 else|else
 name|m
 operator|=
-operator|&
 name|no_mask
 expr_stmt|;
 while|while
@@ -6695,7 +6721,7 @@ end_function
 begin_function
 specifier|inline
 name|void
-DECL|function|initial_inten_pixels (const guchar * src,guchar * dest,const guchar * mask,guint opacity,const gint * affect,guint length,guint bytes)
+DECL|function|initial_inten_pixels (const guchar * src,guchar * dest,const guchar * mask,const guchar * no_mask,guint opacity,const gint * affect,guint length,guint bytes)
 name|initial_inten_pixels
 parameter_list|(
 specifier|const
@@ -6711,6 +6737,11 @@ specifier|const
 name|guchar
 modifier|*
 name|mask
+parameter_list|,
+specifier|const
+name|guchar
+modifier|*
+name|no_mask
 parameter_list|,
 name|guint
 name|opacity
@@ -7083,7 +7114,6 @@ else|else
 block|{
 name|m
 operator|=
-operator|&
 name|no_mask
 expr_stmt|;
 comment|/*  This function assumes the source has no alpha channel and        *  the destination has an alpha channel.  So dest_bytes = bytes + 1        */

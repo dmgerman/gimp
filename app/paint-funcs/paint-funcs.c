@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6ee4060103
+DECL|enum|__anon29c1ccfe0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -497,6 +497,17 @@ name|layer_replace_mode
 block|,
 name|layer_anti_erase_mode
 block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|no_mask
+specifier|static
+specifier|const
+name|guchar
+name|no_mask
+init|=
+name|OPAQUE_OPACITY
 decl_stmt|;
 end_decl_stmt
 
@@ -20952,6 +20963,9 @@ name|d
 argument_list|,
 name|m
 argument_list|,
+operator|&
+name|no_mask
+argument_list|,
 name|data
 argument_list|,
 name|opacity
@@ -21041,6 +21055,9 @@ argument_list|,
 name|d
 argument_list|,
 name|m
+argument_list|,
+operator|&
+name|no_mask
 argument_list|,
 name|opacity
 argument_list|,

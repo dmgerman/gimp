@@ -429,6 +429,11 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
+name|no_mask
+parameter_list|,
+specifier|const
+name|guchar
+modifier|*
 name|cmap
 parameter_list|,
 name|guint
@@ -461,6 +466,11 @@ specifier|const
 name|guchar
 modifier|*
 name|mask
+parameter_list|,
+specifier|const
+name|guchar
+modifier|*
+name|no_mask
 parameter_list|,
 name|guint
 name|opacity
