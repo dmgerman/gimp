@@ -22,6 +22,22 @@ directive|include
 file|"gimpitemlistview.h"
 end_include
 
+begin_typedef
+DECL|typedef|GimpStrokeItemFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpStrokeItemFunc
+function_decl|)
+parameter_list|(
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_VECTORS_LIST_VIEW
 define|#
@@ -102,6 +118,10 @@ block|{
 DECL|member|parent_instance
 name|GimpItemListView
 name|parent_instance
+decl_stmt|;
+DECL|member|stroke_item_func
+name|GimpStrokeItemFunc
+name|stroke_item_func
 decl_stmt|;
 DECL|member|toselection_button
 name|GtkWidget

@@ -227,6 +227,22 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpActivateItemFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpActivateItemFunc
+function_decl|)
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_define
 DECL|macro|GIMP_TYPE_ITEM_LIST_VIEW
 define|#
@@ -362,6 +378,10 @@ DECL|member|edit_item_func
 name|GimpEditItemFunc
 name|edit_item_func
 decl_stmt|;
+DECL|member|activate_item_func
+name|GimpActivateItemFunc
+name|activate_item_func
+decl_stmt|;
 DECL|member|item_factory
 name|GimpItemFactory
 modifier|*
@@ -489,6 +509,9 @@ name|new_item_func
 parameter_list|,
 name|GimpEditItemFunc
 name|edit_item_func
+parameter_list|,
+name|GimpActivateItemFunc
+name|activate_item_func
 parameter_list|,
 name|GimpItemFactory
 modifier|*

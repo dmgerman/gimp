@@ -160,7 +160,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0f3e6f0103
+DECL|enum|__anon27e797350103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1055,7 +1055,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_item_list_view_new (gint preview_size,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetItemFunc get_item_func,GimpSetItemFunc set_item_func,GimpReorderItemFunc reorder_item_func,GimpAddItemFunc add_item_func,GimpRemoveItemFunc remove_item_func,GimpCopyItemFunc copy_item_func,GimpConvertItemFunc convert_item_func,GimpNewItemFunc new_item_func,GimpEditItemFunc edit_item_func,GimpItemFactory * item_factory)
+DECL|function|gimp_item_list_view_new (gint preview_size,GimpImage * gimage,GType item_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetItemFunc get_item_func,GimpSetItemFunc set_item_func,GimpReorderItemFunc reorder_item_func,GimpAddItemFunc add_item_func,GimpRemoveItemFunc remove_item_func,GimpCopyItemFunc copy_item_func,GimpConvertItemFunc convert_item_func,GimpNewItemFunc new_item_func,GimpEditItemFunc edit_item_func,GimpActivateItemFunc activate_item_func,GimpItemFactory * item_factory)
 name|gimp_item_list_view_new
 parameter_list|(
 name|gint
@@ -1102,6 +1102,9 @@ name|new_item_func
 parameter_list|,
 name|GimpEditItemFunc
 name|edit_item_func
+parameter_list|,
+name|GimpActivateItemFunc
+name|activate_item_func
 parameter_list|,
 name|GimpItemFactory
 modifier|*
@@ -1227,6 +1230,15 @@ expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|edit_item_func
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|activate_item_func
 operator|!=
 name|NULL
 argument_list|,
@@ -1419,6 +1431,12 @@ operator|->
 name|edit_item_func
 operator|=
 name|edit_item_func
+expr_stmt|;
+name|list_view
+operator|->
+name|activate_item_func
+operator|=
+name|activate_item_func
 expr_stmt|;
 name|list_view
 operator|->
@@ -2028,6 +2046,17 @@ name|gpointer
 name|insert_data
 parameter_list|)
 block|{
+name|GimpItemListView
+modifier|*
+name|item_view
+decl_stmt|;
+name|item_view
+operator|=
+name|GIMP_ITEM_LIST_VIEW
+argument_list|(
+name|view
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_CONTAINER_VIEW_CLASS
@@ -2051,17 +2080,11 @@ argument_list|,
 name|insert_data
 argument_list|)
 expr_stmt|;
-name|gtk_button_clicked
-argument_list|(
-name|GTK_BUTTON
-argument_list|(
-name|GIMP_ITEM_LIST_VIEW
-argument_list|(
-name|view
-argument_list|)
+name|item_view
 operator|->
-name|edit_button
-argument_list|)
+name|activate_item_func
+argument_list|(
+name|item
 argument_list|)
 expr_stmt|;
 block|}
