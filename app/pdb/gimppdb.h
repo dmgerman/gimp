@@ -525,6 +525,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|procedural_db_free_data
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|procedural_db_set_data
 parameter_list|(
 name|Gimp

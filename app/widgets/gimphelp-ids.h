@@ -1729,6 +1729,14 @@ value|"gimp-filter-reshow"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILTER_RESET_ALL
+define|#
+directive|define
+name|GIMP_HELP_FILTER_RESET_ALL
+value|"gimp-filter-reset-all"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOLBOX
 define|#
 directive|define
