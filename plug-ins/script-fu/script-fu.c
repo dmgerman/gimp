@@ -461,6 +461,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+specifier|extern
+name|gint
+name|server_mode
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|script_fu_done
 name|gint
 name|script_fu_done
@@ -469,12 +476,10 @@ name|FALSE
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-specifier|extern
-name|gint
-name|server_mode
-decl_stmt|;
-end_decl_stmt
+begin_comment
+DECL|variable|script_fu_done
+comment|/*  declared extern in script-fu-server.c  */
+end_comment
 
 begin_macro
 DECL|function|MAIN ()
@@ -824,7 +829,7 @@ comment|/*  Load all of the available scripts  */
 name|script_fu_find_scripts
 argument_list|()
 expr_stmt|;
-comment|/*    *  The main, automatically installed script fu extension--    *    For things like logos and effects that are runnable from GIMP menus    */
+comment|/*    *  The main, automatically installed script fu extension.    *  For things like logos and effects that are runnable from GIMP menus.    */
 if|if
 condition|(
 name|strcmp
@@ -855,7 +860,7 @@ argument_list|()
 expr_stmt|;
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 name|gimp_extension_process
 argument_list|(
@@ -1235,7 +1240,7 @@ name|code
 init|=
 name|NIL
 decl_stmt|;
-name|int
+name|gint
 name|j
 decl_stmt|;
 comment|/*  convert the names to scheme-like naming conventions  */
@@ -1519,7 +1524,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|0
+name|GIMP_NORMAL_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1534,7 +1539,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|1
+name|GIMP_DISSOLVE_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1549,7 +1554,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|2
+name|GIMP_BEHIND_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1564,7 +1569,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|3
+name|GIMP_MULTIPLY_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1579,7 +1584,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|4
+name|GIMP_SCREEN_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1594,7 +1599,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|5
+name|GIMP_OVERLAY_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1609,7 +1614,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|6
+name|GIMP_DIFFERENCE_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1624,7 +1629,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|7
+name|GIMP_ADDITION_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1639,7 +1644,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|8
+name|GIMP_SUBTRACT_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1654,7 +1659,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|9
+name|GIMP_DARKEN_ONLY_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1669,7 +1674,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|10
+name|GIMP_LIGHTEN_ONLY_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1684,7 +1689,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|11
+name|GIMP_HUE_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1699,7 +1704,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|12
+name|GIMP_SATURATION_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1714,7 +1719,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|13
+name|GIMP_COLOR_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1729,7 +1734,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|14
+name|GIMP_VALUE_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1744,7 +1749,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|15
+name|GIMP_DIVIDE_MODE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1759,7 +1764,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|0
+name|GIMP_BLUR_CONVOLVE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1774,7 +1779,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|1
+name|GIMP_SHARPEN_CONVOLVE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1789,7 +1794,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|0
+name|GIMP_RGB_IMAGE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1804,7 +1809,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|1
+name|GIMP_RGBA_IMAGE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1819,7 +1824,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|2
+name|GIMP_GRAY_IMAGE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1834,7 +1839,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|3
+name|GIMP_GRAYA_IMAGE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1849,7 +1854,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|4
+name|GIMP_INDEXED_IMAGE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1864,7 +1869,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|5
+name|GIMP_INDEXEDA_IMAGE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1880,7 +1885,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|1
+name|TRUE
 argument_list|)
 argument_list|,
 name|NIL
@@ -1895,7 +1900,7 @@ argument_list|)
 argument_list|,
 name|flocons
 argument_list|(
-literal|0
+name|FALSE
 argument_list|)
 argument_list|,
 name|NIL
@@ -2217,7 +2222,7 @@ argument_list|(
 operator|*
 operator|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -2230,7 +2235,7 @@ expr_stmt|;
 operator|*
 operator|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
@@ -2424,7 +2429,7 @@ argument_list|,
 name|NIL
 argument_list|)
 return|;
-comment|/*  Derive the pdb procedure name from the argument or first argument of a list  */
+comment|/*  Derive the pdb procedure name from the argument        or first argument of a list  */
 if|if
 condition|(
 name|TYPEP
@@ -2520,9 +2525,14 @@ operator|!=
 name|nparams
 condition|)
 block|{
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|error_str
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|error_str
+argument_list|)
 argument_list|,
 literal|"Invalid arguments supplied to %s--(# args: %ld, expecting: %d)"
 argument_list|,
@@ -2556,10 +2566,6 @@ name|nparams
 condition|)
 name|args
 operator|=
-operator|(
-name|GimpParam
-operator|*
-operator|)
 name|g_new
 argument_list|(
 name|GimpParam
@@ -4282,6 +4288,7 @@ condition|;
 name|j
 operator|++
 control|)
+block|{
 name|array
 operator|->
 name|storage_as
@@ -4307,6 +4314,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
+block|}
 name|return_val
 operator|=
 name|cons
@@ -4378,6 +4386,7 @@ condition|;
 name|j
 operator|++
 control|)
+block|{
 name|array
 operator|->
 name|storage_as
@@ -4403,6 +4412,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
+block|}
 name|return_val
 operator|=
 name|cons
@@ -4462,6 +4472,7 @@ condition|;
 name|j
 operator|++
 control|)
+block|{
 name|array
 operator|->
 name|storage_as
@@ -4487,6 +4498,7 @@ index|[
 name|j
 index|]
 expr_stmt|;
+block|}
 name|return_val
 operator|=
 name|cons
@@ -5098,10 +5110,6 @@ name|nvalues
 argument_list|)
 expr_stmt|;
 comment|/*  free up arguments and values  */
-if|if
-condition|(
-name|args
-condition|)
 name|g_free
 argument_list|(
 name|args
