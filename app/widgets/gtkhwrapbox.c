@@ -75,6 +75,36 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|GSList
+modifier|*
+name|reverse_list_row_children
+parameter_list|(
+name|GtkWrapBox
+modifier|*
+name|wbox
+parameter_list|,
+name|GtkWrapBoxChild
+modifier|*
+modifier|*
+name|child_p
+parameter_list|,
+name|GtkAllocation
+modifier|*
+name|area
+parameter_list|,
+name|guint
+modifier|*
+name|max_height
+parameter_list|,
+name|gboolean
+modifier|*
+name|can_vexpand
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* --- variables --- */
 end_comment
@@ -244,6 +274,12 @@ name|size_allocate
 operator|=
 name|gtk_hwrap_box_size_allocate
 expr_stmt|;
+name|wrap_box_class
+operator|->
+name|rlist_line_children
+operator|=
+name|reverse_list_row_children
+expr_stmt|;
 block|}
 end_function
 
@@ -293,8 +329,7 @@ name|GTK_HWRAP_BOX
 argument_list|(
 name|gtk_widget_new
 argument_list|(
-name|gtk_hwrap_box_get_type
-argument_list|()
+name|GTK_TYPE_HWRAP_BOX
 argument_list|,
 name|NULL
 argument_list|)
@@ -1178,16 +1213,13 @@ operator|=
 name|layout_height
 expr_stmt|;
 block|}
-comment|/*<h2v-off>*/
-comment|/* g_print ("ratio for width %d height %d = %f\n", 	       (gint) layout_width, 	       (gint) layout_height, 	       ratio); */
-comment|/*<h2v-on>*/
+comment|/* g_print ("ratio for width %d height %d = %f\n", 	 (gint) layout_width, 	 (gint) layout_height, 	 ratio);       */
 block|}
 do|while
 condition|(
 name|row_inc
 condition|)
 do|;
-comment|/*<h2v-off>*/
 name|requisition
 operator|->
 name|width
@@ -1201,6 +1233,7 @@ name|border_width
 operator|*
 literal|2
 expr_stmt|;
+comment|/*<h2v-skip>*/
 name|requisition
 operator|->
 name|height
@@ -1214,8 +1247,8 @@ name|border_width
 operator|*
 literal|2
 expr_stmt|;
-comment|/* g_print ("choosen: width %d, height %d\n", 	   requisition->width, 	   requisition->height); */
-comment|/*<h2v-on>*/
+comment|/*<h2v-skip>*/
+comment|/* g_print ("choosen: width %d, height %d\n",      requisition->width,      requisition->height);   */
 block|}
 end_function
 
@@ -1223,8 +1256,8 @@ begin_function
 specifier|static
 name|GSList
 modifier|*
-DECL|function|list_row_children (GtkWrapBox * wbox,GtkWrapBoxChild ** child_p,guint row_width,guint * max_height,gboolean * can_vexpand)
-name|list_row_children
+DECL|function|reverse_list_row_children (GtkWrapBox * wbox,GtkWrapBoxChild ** child_p,GtkAllocation * area,guint * max_child_size,gboolean * expand_line)
+name|reverse_list_row_children
 parameter_list|(
 name|GtkWrapBox
 modifier|*
@@ -1235,16 +1268,17 @@ modifier|*
 modifier|*
 name|child_p
 parameter_list|,
-name|guint
-name|row_width
+name|GtkAllocation
+modifier|*
+name|area
 parameter_list|,
 name|guint
 modifier|*
-name|max_height
+name|max_child_size
 parameter_list|,
 name|gboolean
 modifier|*
-name|can_vexpand
+name|expand_line
 parameter_list|)
 block|{
 name|GSList
@@ -1257,6 +1291,12 @@ name|guint
 name|width
 init|=
 literal|0
+decl_stmt|,
+name|row_width
+init|=
+name|area
+operator|->
+name|width
 decl_stmt|;
 name|GtkWrapBoxChild
 modifier|*
@@ -1266,12 +1306,12 @@ operator|*
 name|child_p
 decl_stmt|;
 operator|*
-name|max_height
+name|max_child_size
 operator|=
 literal|0
 expr_stmt|;
 operator|*
-name|can_vexpand
+name|expand_line
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1333,12 +1373,12 @@ operator|.
 name|width
 expr_stmt|;
 operator|*
-name|max_height
+name|max_child_size
 operator|=
 name|MAX
 argument_list|(
 operator|*
-name|max_height
+name|max_child_size
 argument_list|,
 name|child_requisition
 operator|.
@@ -1346,7 +1386,7 @@ name|height
 argument_list|)
 expr_stmt|;
 operator|*
-name|can_vexpand
+name|expand_line
 operator||=
 name|child
 operator|->
@@ -1432,12 +1472,12 @@ operator|.
 name|width
 expr_stmt|;
 operator|*
-name|max_height
+name|max_child_size
 operator|=
 name|MAX
 argument_list|(
 operator|*
-name|max_height
+name|max_child_size
 argument_list|,
 name|child_requisition
 operator|.
@@ -1445,7 +1485,7 @@ name|height
 argument_list|)
 expr_stmt|;
 operator|*
-name|can_vexpand
+name|expand_line
 operator||=
 name|child
 operator|->
@@ -1479,10 +1519,7 @@ expr_stmt|;
 block|}
 block|}
 return|return
-name|g_slist_reverse
-argument_list|(
 name|slist
-argument_list|)
 return|;
 block|}
 end_function
@@ -2243,7 +2280,12 @@ name|children
 expr_stmt|;
 name|slist
 operator|=
-name|list_row_children
+name|GTK_WRAP_BOX_GET_CLASS
+argument_list|(
+name|wbox
+argument_list|)
+operator|->
+name|rlist_line_children
 argument_list|(
 name|wbox
 argument_list|,
@@ -2251,14 +2293,19 @@ operator|&
 name|next_child
 argument_list|,
 name|area
-operator|->
-name|width
 argument_list|,
 operator|&
 name|min_height
 argument_list|,
 operator|&
 name|vexpand
+argument_list|)
+expr_stmt|;
+name|slist
+operator|=
+name|g_slist_reverse
+argument_list|(
+name|slist
 argument_list|)
 expr_stmt|;
 name|children_per_line
@@ -2328,7 +2375,12 @@ operator|++
 expr_stmt|;
 name|slist
 operator|=
-name|list_row_children
+name|GTK_WRAP_BOX_GET_CLASS
+argument_list|(
+name|wbox
+argument_list|)
+operator|->
+name|rlist_line_children
 argument_list|(
 name|wbox
 argument_list|,
@@ -2336,14 +2388,19 @@ operator|&
 name|next_child
 argument_list|,
 name|area
-operator|->
-name|width
 argument_list|,
 operator|&
 name|min_height
 argument_list|,
 operator|&
 name|vexpand
+argument_list|)
+expr_stmt|;
+name|slist
+operator|=
+name|g_slist_reverse
+argument_list|(
+name|slist
 argument_list|)
 expr_stmt|;
 block|}
@@ -2372,7 +2429,7 @@ if|if
 condition|(
 literal|1
 condition|)
-comment|/* reverse and shrink */
+comment|/* reverse lines and shrink */
 block|{
 name|Line
 modifier|*
@@ -2818,7 +2875,7 @@ literal|2
 argument_list|)
 expr_stmt|;
 comment|/*<h2v-off>*/
-comment|/* g_print ("got: width %d, height %d\n", 	   allocation->width, 	   allocation->height); */
+comment|/* g_print ("got: width %d, height %d\n",      allocation->width,      allocation->height);   */
 comment|/*<h2v-on>*/
 name|layout_rows
 argument_list|(
