@@ -1459,7 +1459,7 @@ literal|"gimp-channel-list"
 block|,
 literal|"gimp-vectors-list"
 block|,
-literal|"gimp-indexed-palette"
+literal|"gimp-undo-history"
 block|}
 decl_stmt|;
 name|dialogs_create_dock
