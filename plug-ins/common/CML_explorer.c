@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e476e0108
+DECL|struct|__anon2bd2e5a10108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e476e0203
+DECL|enum|__anon2bd2e5a10203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e476e0303
+DECL|enum|__anon2bd2e5a10303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e476e0403
+DECL|enum|__anon2bd2e5a10403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5e476e0503
+DECL|enum|__anon2bd2e5a10503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e476e0608
+DECL|struct|__anon2bd2e5a10608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e476e0708
+DECL|struct|__anon2bd2e5a10708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1386,7 +1386,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|force_overwrite
 parameter_list|(
 specifier|const
@@ -1545,7 +1545,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e476e0808
+DECL|struct|__anon2bd2e5a10808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -12359,7 +12359,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|force_overwrite (const gchar * filename,GtkWidget * parent)
 name|force_overwrite
 parameter_list|(
@@ -12614,6 +12614,20 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|CML_load_from_file_response
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|filesel
+argument_list|,
+literal|"delete_event"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gtk_true
 argument_list|)
 argument_list|,
 name|NULL
@@ -12899,7 +12913,7 @@ argument_list|()
 expr_stmt|;
 block|}
 block|}
-name|gtk_widget_destroy
+name|gtk_widget_hide
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
