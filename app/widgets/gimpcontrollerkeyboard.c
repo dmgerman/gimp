@@ -211,7 +211,7 @@ literal|"key-up-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Up (Shift + Control + Alt)"
+literal|"Cursor Up (Shift + Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -226,7 +226,7 @@ literal|"key-up-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Up (Control + Alt)"
+literal|"Cursor Up (Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -241,7 +241,7 @@ literal|"key-up-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Up (Shift + Alt)"
+literal|"Cursor Up (Shift + Alt)"
 argument_list|)
 block|}
 block|,
@@ -256,7 +256,7 @@ literal|"key-up-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Key Up (Shift + Control)"
+literal|"Cursor Up (Shift + Control)"
 argument_list|)
 block|}
 block|,
@@ -269,7 +269,7 @@ literal|"key-up-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Up (Alt)"
+literal|"Cursor Up (Alt)"
 argument_list|)
 block|}
 block|,
@@ -282,7 +282,7 @@ literal|"key-up-control"
 block|,
 name|N_
 argument_list|(
-literal|"Key Up (Control)"
+literal|"Cursor Up (Control)"
 argument_list|)
 block|}
 block|,
@@ -295,7 +295,7 @@ literal|"key-up-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Key Up (Shift)"
+literal|"Cursor Up (Shift)"
 argument_list|)
 block|}
 block|,
@@ -308,7 +308,7 @@ literal|"key-up"
 block|,
 name|N_
 argument_list|(
-literal|"Key Up"
+literal|"Cursor Up"
 argument_list|)
 block|}
 block|,
@@ -325,7 +325,7 @@ literal|"key-down-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Down (Shift + Control + Alt)"
+literal|"Cursor Down (Shift + Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -340,7 +340,7 @@ literal|"key-down-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Down (Control + Alt)"
+literal|"Cursor Down (Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -355,7 +355,7 @@ literal|"key-down-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Down (Shift + Alt)"
+literal|"Cursor Down (Shift + Alt)"
 argument_list|)
 block|}
 block|,
@@ -370,7 +370,7 @@ literal|"key-down-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Key Down (Shift + Control)"
+literal|"Cursor Down (Shift + Control)"
 argument_list|)
 block|}
 block|,
@@ -383,7 +383,7 @@ literal|"key-down-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Down (Alt)"
+literal|"Cursor Down (Alt)"
 argument_list|)
 block|}
 block|,
@@ -396,7 +396,7 @@ literal|"key-down-control"
 block|,
 name|N_
 argument_list|(
-literal|"Key Down (Control)"
+literal|"Cursor Down (Control)"
 argument_list|)
 block|}
 block|,
@@ -409,7 +409,7 @@ literal|"key-down-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Key Down (Shift)"
+literal|"Cursor Down (Shift)"
 argument_list|)
 block|}
 block|,
@@ -422,7 +422,7 @@ literal|"key-down"
 block|,
 name|N_
 argument_list|(
-literal|"Key Down"
+literal|"Cursor Down"
 argument_list|)
 block|}
 block|,
@@ -439,7 +439,7 @@ literal|"key-left-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Left (Shift + Control + Alt)"
+literal|"Cursor Left (Shift + Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -454,7 +454,7 @@ literal|"key-left-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Left (Control + Alt)"
+literal|"Cursor Left (Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -469,7 +469,7 @@ literal|"key-left-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Left (Shift + Alt)"
+literal|"Cursor Left (Shift + Alt)"
 argument_list|)
 block|}
 block|,
@@ -484,7 +484,7 @@ literal|"key-left-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Key Left (Shift + Control)"
+literal|"Cursor Left (Shift + Control)"
 argument_list|)
 block|}
 block|,
@@ -497,7 +497,7 @@ literal|"key-left-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Left (Alt)"
+literal|"Cursor Left (Alt)"
 argument_list|)
 block|}
 block|,
@@ -510,7 +510,7 @@ literal|"key-left-control"
 block|,
 name|N_
 argument_list|(
-literal|"Key Left (Control)"
+literal|"Cursor Left (Control)"
 argument_list|)
 block|}
 block|,
@@ -523,7 +523,7 @@ literal|"key-left-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Key Left (Shift)"
+literal|"Cursor Left (Shift)"
 argument_list|)
 block|}
 block|,
@@ -536,7 +536,7 @@ literal|"key-left"
 block|,
 name|N_
 argument_list|(
-literal|"Key Left"
+literal|"Cursor Left"
 argument_list|)
 block|}
 block|,
@@ -553,7 +553,7 @@ literal|"key-right-shift-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Right (Shift + Control + Alt)"
+literal|"Cursor Right (Shift + Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -568,7 +568,7 @@ literal|"key-right-control-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Right (Control + Alt)"
+literal|"Cursor Right (Control + Alt)"
 argument_list|)
 block|}
 block|,
@@ -583,7 +583,7 @@ literal|"key-right-shift-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Right (Shift + Alt)"
+literal|"Cursor Right (Shift + Alt)"
 argument_list|)
 block|}
 block|,
@@ -598,7 +598,7 @@ literal|"key-right-shift-control"
 block|,
 name|N_
 argument_list|(
-literal|"Key Right (Shift + Control)"
+literal|"Cursor Right (Shift + Control)"
 argument_list|)
 block|}
 block|,
@@ -611,7 +611,7 @@ literal|"key-right-alt"
 block|,
 name|N_
 argument_list|(
-literal|"Key Right (Alt)"
+literal|"Cursor Right (Alt)"
 argument_list|)
 block|}
 block|,
@@ -624,7 +624,7 @@ literal|"key-right-control"
 block|,
 name|N_
 argument_list|(
-literal|"Key Right (Control)"
+literal|"Cursor Right (Control)"
 argument_list|)
 block|}
 block|,
@@ -637,7 +637,7 @@ literal|"key-right-shift"
 block|,
 name|N_
 argument_list|(
-literal|"Key Right (Shift)"
+literal|"Cursor Right (Shift)"
 argument_list|)
 block|}
 block|,
@@ -650,7 +650,7 @@ literal|"key-right"
 block|,
 name|N_
 argument_list|(
-literal|"Key Right"
+literal|"Cursor Right"
 argument_list|)
 block|}
 block|}
