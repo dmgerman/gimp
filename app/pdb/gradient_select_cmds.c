@@ -70,7 +70,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient_select.h"
+file|"gui/gradient-select.h"
 end_include
 
 begin_decl_stmt

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -54,13 +60,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_area.h"
+file|"color-area.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color_notebook.h"
+file|"color-notebook.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"palette-editor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"palette-import-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"palette-select.h"
 end_include
 
 begin_include
@@ -115,30 +139,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette_import.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
 end_include
 
 begin_include

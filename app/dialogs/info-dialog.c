@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"info-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"info_dialog.h"
+file|"gimprc.h"
 end_include
 
 begin_include

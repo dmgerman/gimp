@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -55,6 +49,24 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lc_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/palette-import-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -91,18 +103,6 @@ begin_include
 include|#
 directive|include
 file|"gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"lc_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette_import.h"
 end_include
 
 begin_include

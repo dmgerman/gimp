@@ -54,6 +54,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"info-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"info-window.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"context_manager.h"
 end_include
 
@@ -61,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -85,18 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"info_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"info_window.h"
 end_include
 
 begin_include

@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -108,13 +102,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"gdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gui/info-window.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/layer-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
 end_include
 
 begin_include
@@ -145,18 +157,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"info_window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer_select.h"
 end_include
 
 begin_include

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -49,6 +55,36 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/paint_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layers-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"menus.h"
 end_include
 
 begin_include
@@ -78,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimage.h"
 end_include
 
@@ -97,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -138,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"layers_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layers_dialogP.h"
 end_include
 
@@ -151,12 +169,6 @@ begin_include
 include|#
 directive|include
 file|"lc_dialogP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include
@@ -181,18 +193,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/paint_options.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimplimits.h"
 end_include
 
 begin_include
@@ -10817,7 +10817,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c972cb40108
+DECL|struct|__anon2c3b552b0108
 block|{
 DECL|member|gimage
 name|GimpImage

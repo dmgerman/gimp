@@ -42,7 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimpbezierselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/paths-dialog.h"
 end_include
 
 begin_include
@@ -61,18 +73,6 @@ begin_include
 include|#
 directive|include
 file|"pathP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paths_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpbezierselecttool.h"
 end_include
 
 begin_function_decl

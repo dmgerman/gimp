@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"gui/brush-select.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
+file|"appenv.h"
 end_include
 
 begin_include

@@ -118,6 +118,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/color-notebook.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -125,12 +137,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"color_notebook.h"
 end_include
 
 begin_include
@@ -173,12 +179,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include
@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3ebc970103
+DECL|enum|__anon2c13bc0e0103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING

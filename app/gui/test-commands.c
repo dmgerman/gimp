@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/tool_manager.h"
 end_include
 
@@ -102,13 +96,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gradient_editor.h"
+file|"gradient-editor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"context_manager.h"
 end_include
 
 begin_include

@@ -70,7 +70,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pattern_select.h"
+file|"gui/pattern-select.h"
 end_include
 
 begin_decl_stmt

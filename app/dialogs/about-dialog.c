@@ -48,6 +48,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpfeatures.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -72,13 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"about-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"about_dialog.h"
+file|"appenv.h"
 end_include
 
 begin_include
@@ -97,18 +109,6 @@ begin_include
 include|#
 directive|include
 file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpfeatures.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
 end_include
 
 begin_include

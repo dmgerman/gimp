@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
+file|"brush-select.h"
 end_include
 
 begin_include
@@ -114,25 +114,43 @@ end_include
 begin_include
 include|#
 directive|include
+file|"errorconsole.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gradient_select.h"
+file|"gradient-editor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"palette.h"
+file|"gradient-select.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pattern_select.h"
+file|"lc_dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"palette-editor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pattern-select.h"
 end_include
 
 begin_include
@@ -145,12 +163,6 @@ begin_include
 include|#
 directive|include
 file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient_editor.h"
 end_include
 
 begin_include

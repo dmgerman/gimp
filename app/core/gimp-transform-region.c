@@ -48,7 +48,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/info-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpui.h"
 end_include
 
 begin_include
@@ -61,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -109,18 +121,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"info_dialog.h"
 end_include
 
 begin_include
@@ -233,7 +233,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297aa5240103
+DECL|enum|__anon2a062d520103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM

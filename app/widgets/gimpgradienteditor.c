@@ -79,6 +79,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
@@ -91,7 +103,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_notebook.h"
+file|"color-notebook.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gradient-editor.h"
 end_include
 
 begin_include
@@ -158,24 +176,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gradient_editor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimplimits.h"
 end_include
 
 begin_include
@@ -299,7 +299,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289fc2e10103
+DECL|enum|__anon2a21f0890103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289fc2e10203
+DECL|enum|__anon2a21f0890203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE

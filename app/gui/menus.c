@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/gimptoolinfo.h"
 end_include
 
@@ -72,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"channels_dialog.h"
+file|"channels-dialog.h"
 end_include
 
 begin_include
@@ -90,6 +84,42 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"layers-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paths-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"test-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-open.h"
 end_include
 
@@ -97,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"file-save.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -121,34 +145,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layers_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paths_dialog.h"
-end_include
-
-begin_comment
-comment|/* test dialogs */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"test_commands.h"
 end_include
 
 begin_include

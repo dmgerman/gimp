@@ -54,7 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
+file|"dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"indicator-area.h"
 end_include
 
 begin_include
@@ -79,18 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimppattern.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"indicator_area.h"
 end_include
 
 begin_include

@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/color-notebook.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolorpanel.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"color_notebook.h"
 end_include
 
 begin_struct

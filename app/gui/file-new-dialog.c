@@ -30,25 +30,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimplimits.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"image_new.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file_new_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
+file|"file-new-dialog.h"
 end_include
 
 begin_include
@@ -60,7 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimplimits.h"
+file|"image_new.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adcd1590108
+DECL|struct|__anon2b1f22470108
 block|{
 DECL|member|dlg
 name|GtkWidget

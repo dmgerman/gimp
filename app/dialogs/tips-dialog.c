@@ -48,25 +48,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"tips-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tips_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
 end_include
 
 begin_include

@@ -134,19 +134,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
 end_include
 
 begin_include
@@ -158,7 +146,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
+file|"gui/menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
 end_include
 
 begin_include

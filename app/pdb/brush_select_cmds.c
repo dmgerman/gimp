@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"context_manager.h"
 end_include
 
@@ -71,6 +65,12 @@ begin_include
 include|#
 directive|include
 file|"gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/brush-select.h"
 end_include
 
 begin_decl_stmt

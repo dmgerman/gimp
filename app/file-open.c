@@ -267,13 +267,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable.h"
+file|"gdisplay.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
+file|"gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawable.h"
 end_include
 
 begin_include
@@ -297,12 +309,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -316,12 +322,6 @@ begin_include
 include|#
 directive|include
 file|"file-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
 end_include
 
 begin_include

@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrushgenerated.h"
+file|"brush-editor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"brush_edit.h"
+file|"gimpbrushgenerated.h"
 end_include
 
 begin_include

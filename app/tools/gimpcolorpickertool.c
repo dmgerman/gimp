@@ -36,19 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"gui/info-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
+file|"gui/palette-editor.h"
 end_include
 
 begin_include
@@ -60,31 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
+file|"cursorutil.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"info_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"palette.h"
 end_include
 
 begin_include
@@ -109,6 +85,30 @@ begin_include
 include|#
 directive|include
 file|"tool_options.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"drawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
 end_include
 
 begin_include

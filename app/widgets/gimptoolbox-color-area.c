@@ -53,13 +53,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_area.h"
+file|"color-area.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color_notebook.h"
+file|"color-notebook.h"
 end_include
 
 begin_include
@@ -71,13 +71,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdnd.h"
+file|"gimpcontext.h"
 end_include
 
 begin_ifdef
@@ -110,7 +110,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279285130103
+DECL|enum|__anon2a3504aa0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

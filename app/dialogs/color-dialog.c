@@ -60,31 +60,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpcolorselector.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color_area.h"
+file|"color-area.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color_notebook.h"
+file|"color-notebook.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"colormaps.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorselector.h"
 end_include
 
 begin_include
@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b13bed0103
+DECL|enum|__anon288e4ca50103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK

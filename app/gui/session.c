@@ -69,6 +69,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"color-notebook.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"session.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"app_procs.h"
 end_include
 
@@ -81,19 +93,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color_notebook.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"session.h"
 end_include
 
 begin_comment

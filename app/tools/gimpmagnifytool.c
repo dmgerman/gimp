@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"cursorutil.h"
+file|"gui/info-window.h"
 end_include
 
 begin_include
@@ -54,19 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"info_window.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"scale.h"
+file|"cursorutil.h"
 end_include
 
 begin_include
@@ -85,6 +73,18 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"scale.h"
 end_include
 
 begin_include

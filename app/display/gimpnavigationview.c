@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"cursorutil.h"
 end_include
 
@@ -60,19 +54,31 @@ end_include
 begin_include
 include|#
 directive|include
-file|"info_dialog.h"
+file|"gui/info-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"info_window.h"
+file|"gui/info-window.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"nav_window.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -97,12 +103,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"nav_window.h"
 end_include
 
 begin_include
@@ -196,7 +196,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd0c11b0103
+DECL|enum|__anon27c9b1aa0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW

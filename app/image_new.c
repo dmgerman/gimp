@@ -30,7 +30,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/file-new-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -43,18 +61,6 @@ begin_include
 include|#
 directive|include
 file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file_new_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
 end_include
 
 begin_include
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"tile_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpparasite.h"
 end_include
 
 begin_include

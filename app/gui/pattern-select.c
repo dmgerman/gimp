@@ -36,7 +36,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/procedural_db.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdatafactoryview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialog_handler.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"pattern-select.h"
 end_include
 
 begin_include
@@ -49,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialog_handler.h"
 end_include
 
 begin_include
@@ -84,19 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pattern_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"temp_buf.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pdb/procedural_db.h"
 end_include
 
 begin_include

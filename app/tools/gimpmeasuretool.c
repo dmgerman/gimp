@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/info-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -54,19 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"info_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_include
@@ -90,7 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/gimpdrawtool.h"
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
 end_include
 
 begin_include

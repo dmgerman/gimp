@@ -54,19 +54,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpcolorselector.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"apptypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"color_select.h"
+file|"color-select.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"colormaps.h"
+file|"color-area.h"
 end_include
 
 begin_include
@@ -78,19 +84,13 @@ end_include
 begin_include
 include|#
 directive|include
+file|"colormaps.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"color_area.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpcolorselector.h"
 end_include
 
 begin_include
@@ -158,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8b94020103
+DECL|enum|__anon2c29a2780103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8b94020203
+DECL|enum|__anon2c29a2780203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -7235,7 +7235,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b94020308
+DECL|struct|__anon2c29a2780308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

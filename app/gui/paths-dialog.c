@@ -66,6 +66,36 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimpbezierselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"ops_buttons.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paths-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"floating_sel.h"
 end_include
 
@@ -96,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -115,18 +139,6 @@ begin_include
 include|#
 directive|include
 file|"lc_dialogP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"ops_buttons.h"
 end_include
 
 begin_include
@@ -150,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paths_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paths_dialogP.h"
 end_include
 
@@ -169,12 +175,6 @@ begin_include
 include|#
 directive|include
 file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools/gimpbezierselecttool.h"
 end_include
 
 begin_include

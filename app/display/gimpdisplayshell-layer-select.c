@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"layer-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"layer_select.h"
 end_include
 
 begin_include
