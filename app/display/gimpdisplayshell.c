@@ -340,7 +340,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a02fb040103
+DECL|enum|__anon27932f230103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1962,15 +1962,12 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_ui_manager_update
-argument_list|(
-name|shell
-operator|->
-name|menubar_manager
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_ui_manager_update (shell->menubar_manager, shell);
+endif|#
+directive|endif
 name|user_context
 operator|=
 name|gimp_get_user_context
@@ -2588,12 +2585,6 @@ argument_list|(
 name|menubar
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|menubar = gimp_ui_manager_ui_create (shell->menubar_manager,                                        "/image-menubar");   gtk_box_pack_start (GTK_BOX (main_vbox), menubar, FALSE, FALSE, 0);   gtk_widget_show (menubar);
-endif|#
-directive|endif
 comment|/*  make sure we can activate accels even if the menubar is invisible    *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)    */
 name|g_signal_connect
 argument_list|(
@@ -2652,6 +2643,16 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|menubar = gimp_ui_manager_ui_get (shell->menubar_manager,                                     "/image-menubar");   gtk_ui_manager_ensure_update (GTK_UI_MANAGER (shell->menubar_manager));   gtk_box_pack_start (GTK_BOX (main_vbox), menubar, FALSE, FALSE, 0);    if (shell->options->show_menubar)     gtk_widget_show (menubar);
+comment|/*  make sure we can activate accels even if the menubar is invisible    *  (see http://bugzilla.gnome.org/show_bug.cgi?id=137151)    */
+block|g_signal_connect (menubar, "can-activate-accel",                     G_CALLBACK (gtk_true),                     NULL);
+comment|/*  active display callback  */
+block|g_signal_connect (menubar, "button_press_event",                     G_CALLBACK (gimp_display_shell_events),                     shell);   g_signal_connect (menubar, "button_release_event",                     G_CALLBACK (gimp_display_shell_events),                     shell);   g_signal_connect (menubar, "key_press_event",                     G_CALLBACK (gimp_display_shell_events),                     shell);
+endif|#
+directive|endif
 comment|/*  another vbox for everything except the statusbar  */
 name|disp_vbox
 operator|=

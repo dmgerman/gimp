@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b15a00103
+DECL|enum|__anon292e64470103
 block|{
 DECL|enumerator|TITLE_CHANGED
 name|TITLE_CHANGED
@@ -413,7 +413,7 @@ end_function
 begin_function
 name|GimpItemFactory
 modifier|*
-DECL|function|gimp_docked_get_menu (GimpDocked * docked,gpointer * item_factory_data)
+DECL|function|gimp_docked_get_menu (GimpDocked * docked,gpointer * popup_data,GimpUIManager ** manager,const gchar ** ui_identifier)
 name|gimp_docked_get_menu
 parameter_list|(
 name|GimpDocked
@@ -422,7 +422,18 @@ name|docked
 parameter_list|,
 name|gpointer
 modifier|*
-name|item_factory_data
+name|popup_data
+parameter_list|,
+name|GimpUIManager
+modifier|*
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|ui_identifier
 parameter_list|)
 block|{
 name|GimpDockedInterface
@@ -441,7 +452,25 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|item_factory_data
+name|popup_data
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|manager
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|ui_identifier
 operator|!=
 name|NULL
 argument_list|,
@@ -455,12 +484,6 @@ argument_list|(
 name|docked
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|g_print ("gimp_docked_get_menu: docked = %p\n"            "iface->set_aux_info = %p\n"            "iface->get_aux_info = %p\n"            "iface->get_preview  = %p\n"            "iface->set_context  = %p\n"            "iface->get_menu     = %p\n\n",            docked,            docked_iface->set_aux_info,            docked_iface->get_aux_info,            docked_iface->get_preview,            docked_iface->set_context,            docked_iface->get_menu);
-endif|#
-directive|endif
 if|if
 condition|(
 name|docked_iface
@@ -474,7 +497,11 @@ name|get_menu
 argument_list|(
 name|docked
 argument_list|,
-name|item_factory_data
+name|popup_data
+argument_list|,
+name|manager
+argument_list|,
+name|ui_identifier
 argument_list|)
 return|;
 return|return

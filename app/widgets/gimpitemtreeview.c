@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpvectorstreeview.h"
 end_include
 
@@ -173,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbaa4b80103
+DECL|enum|__anon2bdb1ac30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbaa4b80203
+DECL|enum|__anon2bdb1ac30203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3668,6 +3674,12 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|if (editor->ui_manager)     {       gimp_ui_manager_update (editor->ui_manager,                               editor->popup_data);       gimp_ui_manager_ui_popup (editor->ui_manager,                                 editor->ui_identifier,                                 editor->popup_data,                                 GTK_WIDGET (editor),                                 NULL, NULL, NULL);     }
+else|#
+directive|else
 if|if
 condition|(
 name|editor
@@ -3682,7 +3694,7 @@ name|item_factory
 argument_list|,
 name|editor
 operator|->
-name|item_factory_data
+name|popup_data
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -3696,6 +3708,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 

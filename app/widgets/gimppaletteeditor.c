@@ -149,6 +149,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -2442,6 +2448,12 @@ argument_list|(
 name|editor
 argument_list|)
 decl_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_ui_manager_update (gimp_editor->ui_manager,                               gimp_editor->popup_data);       gimp_ui_manager_ui_popup (gimp_editor->ui_manager,                                 gimp_editor->ui_identifier,                                 gimp_editor->popup_data,                                 GTK_WIDGET (editor),                                 NULL, NULL, NULL);
+else|#
+directive|else
 name|gimp_item_factory_popup_with_data
 argument_list|(
 name|gimp_editor
@@ -2450,7 +2462,7 @@ name|item_factory
 argument_list|,
 name|gimp_editor
 operator|->
-name|item_factory_data
+name|popup_data
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -2464,6 +2476,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 return|return
 name|TRUE

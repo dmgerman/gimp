@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2769c60103
+DECL|enum|__anon2c2c1ea90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1837,15 +1837,12 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_ui_manager_update
-argument_list|(
-name|shell
-operator|->
-name|menubar_manager
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_ui_manager_update (shell->menubar_manager, shell);
+endif|#
+directive|endif
 name|user_context
 operator|=
 name|gimp_get_user_context

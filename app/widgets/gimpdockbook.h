@@ -113,6 +113,11 @@ name|GimpItemFactory
 modifier|*
 name|item_factory
 decl_stmt|;
+DECL|member|ui_manager
+name|GimpUIManager
+modifier|*
+name|ui_manager
+decl_stmt|;
 block|}
 struct|;
 end_struct

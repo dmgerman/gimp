@@ -190,6 +190,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -211,7 +217,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a7ef00103
+DECL|enum|__anon29e11fb00103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -3815,6 +3821,12 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_ui_manager_update (GIMP_EDITOR (editor)->ui_manager,                               GIMP_EDITOR (editor)->popup_data);       gimp_ui_manager_ui_popup (GIMP_EDITOR (editor)->ui_manager,                                 GIMP_EDITOR (editor)->ui_identifier,                                 GIMP_EDITOR (editor)->ui_manager,                                 GTK_WIDGET (editor),                                 NULL, NULL, NULL);
+else|#
+directive|else
 name|gimp_item_factory_popup_with_data
 argument_list|(
 name|GIMP_EDITOR
@@ -3829,7 +3841,7 @@ argument_list|(
 name|editor
 argument_list|)
 operator|->
-name|item_factory_data
+name|popup_data
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -3843,6 +3855,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|TRUE
 return|;

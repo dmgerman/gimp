@@ -844,6 +844,12 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_ui_manager_update (shell->menubar_manager, shell);
+else|#
+directive|else
 name|gimp_item_factory_update
 argument_list|(
 name|shell
@@ -853,15 +859,8 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_ui_manager_update
-argument_list|(
-name|shell
-operator|->
-name|menubar_manager
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|GIMP_OBJECT
 argument_list|(

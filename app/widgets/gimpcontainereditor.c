@@ -87,6 +87,12 @@ directive|include
 file|"gimppreviewrenderer.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpuimanager.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -260,7 +266,18 @@ name|docked
 parameter_list|,
 name|gpointer
 modifier|*
-name|item_factory_data
+name|popup_data
+parameter_list|,
+name|GimpUIManager
+modifier|*
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|ui_identifier
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -973,6 +990,12 @@ operator|->
 name|view
 argument_list|)
 decl_stmt|;
+if|#
+directive|if
+literal|0
+block|if (gimp_editor->ui_manager)         {           gimp_ui_manager_update (gimp_editor->ui_manager,                                   gimp_editor->popup_data);           gimp_ui_manager_ui_popup (gimp_editor->ui_manager,                                     gimp_editor->ui_identifier,                                     gimp_editor->popup_data,                                     GTK_WIDGET (editor),                                     NULL, NULL, NULL);           return;         }
+else|#
+directive|else
 if|if
 condition|(
 name|gimp_editor
@@ -987,7 +1010,7 @@ name|item_factory
 argument_list|,
 name|gimp_editor
 operator|->
-name|item_factory_data
+name|popup_data
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -1001,6 +1024,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 end_function
@@ -1100,7 +1125,7 @@ begin_function
 specifier|static
 name|GimpItemFactory
 modifier|*
-DECL|function|gimp_container_editor_get_menu (GimpDocked * docked,gpointer * item_factory_data)
+DECL|function|gimp_container_editor_get_menu (GimpDocked * docked,gpointer * popup_data,GimpUIManager ** manager,const gchar ** ui_identifier)
 name|gimp_container_editor_get_menu
 parameter_list|(
 name|GimpDocked
@@ -1109,7 +1134,18 @@ name|docked
 parameter_list|,
 name|gpointer
 modifier|*
-name|item_factory_data
+name|popup_data
+parameter_list|,
+name|GimpUIManager
+modifier|*
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+modifier|*
+name|ui_identifier
 parameter_list|)
 block|{
 name|GimpContainerEditor
@@ -1131,7 +1167,11 @@ operator|->
 name|view
 argument_list|)
 argument_list|,
-name|item_factory_data
+name|popup_data
+argument_list|,
+name|manager
+argument_list|,
+name|ui_identifier
 argument_list|)
 return|;
 block|}

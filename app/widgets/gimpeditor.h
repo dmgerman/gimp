@@ -118,9 +118,14 @@ name|GimpUIManager
 modifier|*
 name|ui_manager
 decl_stmt|;
-DECL|member|item_factory_data
+DECL|member|ui_identifier
+name|gchar
+modifier|*
+name|ui_identifier
+decl_stmt|;
+DECL|member|popup_data
 name|gpointer
-name|item_factory_data
+name|popup_data
 decl_stmt|;
 DECL|member|button_box
 name|GtkWidget

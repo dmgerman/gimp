@@ -96,12 +96,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5228560103
+DECL|enum|__anon29bd98d10103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1514,10 +1520,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|editor
-operator|->
-name|item_factory
-operator|&&
 name|gtk_tree_selection_get_selected
 argument_list|(
 name|tree_view
@@ -1530,6 +1532,19 @@ name|NULL
 argument_list|)
 condition|)
 block|{
+if|#
+directive|if
+literal|0
+block|if (editor->ui_manager)         {           gimp_ui_manager_update (editor->ui_manager,                                   editor->popup_data);           gimp_ui_manager_ui_popup (editor->ui_manager,                                     editor->ui_identifier,                                     editor->popup_data,                                     GTK_WIDGET (editor),                                     gimp_container_tree_view_menu_position,                                     editor,                                     NULL);           return TRUE;         }
+endif|#
+directive|endif
+if|if
+condition|(
+name|editor
+operator|->
+name|item_factory
+condition|)
+block|{
 name|gimp_item_factory_popup_with_data
 argument_list|(
 name|editor
@@ -1538,7 +1553,7 @@ name|item_factory
 argument_list|,
 name|editor
 operator|->
-name|item_factory_data
+name|popup_data
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -1555,6 +1570,7 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
+block|}
 block|}
 return|return
 name|FALSE
