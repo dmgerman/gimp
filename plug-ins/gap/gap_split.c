@@ -1037,7 +1037,7 @@ name|run_mode
 argument_list|,
 name|_
 argument_list|(
-literal|"OPERATION CANCELLED\nThis image is already an AnimFrame\nTry again on a Duplicate\n(image/channel ops/duplicate)"
+literal|"OPERATION CANCELLED\nThis image is already an AnimFrame\nTry again on a Duplicate\n(image/duplicate)"
 argument_list|)
 argument_list|)
 expr_stmt|;

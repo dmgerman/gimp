@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * gimp    1.1.13b; 1999/12/04  hof: some cosmetic gtk fixes  *                                   changed border_width spacing and Buttons in action area  *                                   to same style as used in dialogs of the gimp 1.1.13 main dialogs  * gimp    1.1.11b; 1999/11/20  hof: some cosmetic gtk fixes:  *                                   - allow X-expansion (useful for the scale widgets)  *                                   - use a hbox on WGT_INT_PAIR and WGT_FLT_PAIR  *                                     (reduces the waste of horizontal space  *                                      when used together with other widget types in the table)  * gimp    1.1.5.1; 1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.96.03; 1998/08/15  hof: p_arr_gtk_init   * version 0.96.01; 1998/07/09  hof: Bugfix: gtk_init should be called only  *                                           once in a plugin process   * version 0.96.00; 1998/07/09  hof: 1.st release   *                                   (re-implementation of gap_sld_dialog.c)  */
+comment|/* revision history:  * gimp    1.1.17a; 2000/02/20  hof: use gimp_help_set_help_data for tooltips  * gimp    1.1.13b; 1999/12/04  hof: some cosmetic gtk fixes  *                                   changed border_width spacing and Buttons in action area  *                                   to same style as used in dialogs of the gimp 1.1.13 main dialogs  * gimp    1.1.11b; 1999/11/20  hof: some cosmetic gtk fixes:  *                                   - allow X-expansion (useful for the scale widgets)  *                                   - use a hbox on WGT_INT_PAIR and WGT_FLT_PAIR  *                                     (reduces the waste of horizontal space  *                                      when used together with other widget types in the table)  * gimp    1.1.5.1; 1999/05/08  hof: call fileselect in gtk+1.2 style   * version 0.96.03; 1998/08/15  hof: p_arr_gtk_init   * version 0.96.01; 1998/07/09  hof: Bugfix: gtk_init should be called only  *                                           once in a plugin process   * version 0.96.00; 1998/07/09  hof: 1.st release   *                                   (re-implementation of gap_sld_dialog.c)  */
 end_comment
 
 begin_include
@@ -100,7 +100,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27709ede0108
+DECL|struct|__anon2becef280108
 typedef|typedef
 struct|struct
 block|{
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27709ede0208
+DECL|struct|__anon2becef280208
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -146,7 +146,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27709ede0308
+DECL|struct|__anon2becef280308
 typedef|typedef
 struct|struct
 block|{
@@ -201,17 +201,6 @@ end_decl_stmt
 begin_comment
 comment|/* ==0  ... dont print debug infos */
 end_comment
-
-begin_decl_stmt
-DECL|variable|g_tooltips
-specifier|static
-name|GtkTooltips
-modifier|*
-name|g_tooltips
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/* Declare local functions.  */
@@ -931,10 +920,8 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|g_tooltips
-argument_list|,
 name|entry
 argument_list|,
 name|arr_ptr
@@ -1993,10 +1980,8 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|g_tooltips
-argument_list|,
 name|check_button
 argument_list|,
 name|arr_ptr
@@ -2436,10 +2421,8 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|g_tooltips
-argument_list|,
 name|radio_button
 argument_list|,
 name|l_radio_help_txt
@@ -2657,10 +2640,8 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|g_tooltips
-argument_list|,
 name|option_menu
 argument_list|,
 name|arr_ptr
@@ -3481,10 +3462,8 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|g_tooltips
-argument_list|,
 name|pair
 operator|->
 name|scale
@@ -3599,10 +3578,8 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|g_tooltips
-argument_list|,
 name|pair
 operator|->
 name|entry
@@ -4342,10 +4319,8 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|g_tooltips
-argument_list|,
 name|pair
 operator|->
 name|scale
@@ -4460,10 +4435,8 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|g_tooltips
-argument_list|,
 name|pair
 operator|->
 name|entry
@@ -4760,6 +4733,10 @@ expr_stmt|;
 name|g_first_call
 operator|=
 name|FALSE
+expr_stmt|;
+comment|/* Initialize Tooltips */
+name|gimp_help_init
+argument_list|()
 expr_stmt|;
 block|}
 comment|/* dialog */
