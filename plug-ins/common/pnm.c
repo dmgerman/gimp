@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28999a880108
+DECL|struct|__anon27731a980108
 block|{
 DECL|member|raw
 name|gint
@@ -1046,7 +1046,7 @@ literal|"file_pnm_save"
 argument_list|,
 literal|"saves files in the pnm file format"
 argument_list|,
-literal|"PNM saving handles all image types except those with alpha channels."
+literal|"PNM saving handles all image types without transparency."
 argument_list|,
 literal|"Erik Nygren"
 argument_list|,
@@ -1075,18 +1075,104 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"file_pgm_save"
+argument_list|,
+literal|"saves files in the pnm file format"
+argument_list|,
+literal|"PGM saving produces grayscale images without transparency."
+argument_list|,
+literal|"Erik Nygren"
+argument_list|,
+literal|"Erik Nygren"
+argument_list|,
+literal|"1996"
+argument_list|,
+name|N_
+argument_list|(
+literal|"PGM image"
+argument_list|)
+argument_list|,
+literal|"RGB, GRAY, INDEXED"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|save_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|save_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+literal|"file_ppm_save"
+argument_list|,
+literal|"saves files in the pnm file format"
+argument_list|,
+literal|"PPM saving handles RGB images without transparency."
+argument_list|,
+literal|"Erik Nygren"
+argument_list|,
+literal|"Erik Nygren"
+argument_list|,
+literal|"1996"
+argument_list|,
+name|N_
+argument_list|(
+literal|"PPM image"
+argument_list|)
+argument_list|,
+literal|"RGB, GRAY, INDEXED"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|save_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|save_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_register_file_handler_mime
 argument_list|(
-literal|"file_pnm_save"
+literal|"file_pgm_save"
 argument_list|,
-literal|"image/x-portable-anymap"
+literal|"image/x-portable-graymap"
+argument_list|)
+expr_stmt|;
+name|gimp_register_file_handler_mime
+argument_list|(
+literal|"file_ppm_save"
+argument_list|,
+literal|"image/x-portable-pixmap"
 argument_list|)
 expr_stmt|;
 name|gimp_register_save_handler
 argument_list|(
-literal|"file_pnm_save"
+literal|"file_pgm_save"
 argument_list|,
-literal|"pnm,ppm,pgm"
+literal|"pgm"
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+name|gimp_register_save_handler
+argument_list|(
+literal|"file_ppm_save"
+argument_list|,
+literal|"ppm"
 argument_list|,
 literal|""
 argument_list|)
@@ -1272,6 +1358,24 @@ literal|"file_pnm_save"
 argument_list|)
 operator|==
 literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"file_pgm_save"
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"file_ppm_save"
+argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|image_ID
@@ -1315,6 +1419,17 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"file_pnm_save"
+argument_list|)
+operator|==
+literal|0
+condition|)
 name|export
 operator|=
 name|gimp_export_image
@@ -1331,6 +1446,55 @@ operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_GRAY
+operator||
+name|GIMP_EXPORT_CAN_HANDLE_INDEXED
+operator|)
+argument_list|)
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"file_pgm_save"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"PGM"
+argument_list|,
+operator|(
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
+operator|)
+argument_list|)
+expr_stmt|;
+else|else
+name|export
+operator|=
+name|gimp_export_image
+argument_list|(
+operator|&
+name|image_ID
+argument_list|,
+operator|&
+name|drawable_ID
+argument_list|,
+literal|"PPM"
+argument_list|,
+operator|(
+name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator|)
@@ -1371,7 +1535,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_pnm_save"
+name|name
 argument_list|,
 operator|&
 name|psvals
@@ -1433,7 +1597,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-literal|"file_pnm_save"
+name|name
 argument_list|,
 operator|&
 name|psvals
@@ -1472,7 +1636,7 @@ block|{
 comment|/*  Store psvals data  */
 name|gimp_set_data
 argument_list|(
-literal|"file_pnm_save"
+name|name
 argument_list|,
 operator|&
 name|psvals
