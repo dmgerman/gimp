@@ -354,11 +354,6 @@ name|grid_backup
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_ref
-argument_list|(
-name|grid_backup
-argument_list|)
-expr_stmt|;
 block|}
 else|else
 block|{
@@ -1715,10 +1710,7 @@ argument_list|(
 literal|"Remove Grid"
 argument_list|)
 argument_list|,
-name|GIMP_GRID
-argument_list|(
 name|grid_backup
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_grid
