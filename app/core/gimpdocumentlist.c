@@ -453,10 +453,8 @@ block|{
 name|gchar
 modifier|*
 name|uri
-decl_stmt|;
-name|GimpImagefile
-modifier|*
-name|imagefile
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -476,6 +474,15 @@ name|G_TOKEN_STRING
 expr_stmt|;
 break|break;
 block|}
+if|if
+condition|(
+name|uri
+condition|)
+block|{
+name|GimpImagefile
+modifier|*
+name|imagefile
+decl_stmt|;
 name|imagefile
 operator|=
 name|gimp_imagefile_new
@@ -510,6 +517,7 @@ argument_list|(
 name|imagefile
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
