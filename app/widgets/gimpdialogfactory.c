@@ -149,7 +149,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcad6bb0103
+DECL|enum|__anon2ac762030103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcad6bb0203
+DECL|enum|__anon2ac762030203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -278,9 +278,8 @@ specifier|static
 name|void
 name|gimp_dialog_factories_save_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -298,9 +297,8 @@ specifier|static
 name|void
 name|gimp_dialog_factories_restore_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -317,9 +315,8 @@ specifier|static
 name|void
 name|gimp_dialog_factories_clear_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -400,9 +397,8 @@ specifier|static
 name|void
 name|gimp_dialog_factories_hide_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -419,9 +415,8 @@ specifier|static
 name|void
 name|gimp_dialog_factories_show_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -438,9 +433,8 @@ specifier|static
 name|void
 name|gimp_dialog_factories_idle_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -457,9 +451,8 @@ specifier|static
 name|void
 name|gimp_dialog_factories_unidle_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -935,13 +928,12 @@ name|GimpDialogNewFunc
 name|new_dock_func
 parameter_list|)
 block|{
-name|GimpDialogFactoryClass
-modifier|*
-name|factory_class
-decl_stmt|;
 name|GimpDialogFactory
 modifier|*
 name|factory
+decl_stmt|;
+name|gpointer
+name|key
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -975,22 +967,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* EEK */
-name|factory_class
-operator|=
-name|g_type_class_ref
-argument_list|(
-name|GIMP_TYPE_DIALOG_FACTORY
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|g_hash_table_lookup
+name|gimp_dialog_factory_from_name
 argument_list|(
-name|factory_class
-operator|->
-name|factories
-argument_list|,
 name|name
 argument_list|)
 condition|)
@@ -1027,18 +1007,42 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|g_hash_table_insert
+comment|/*  hack to keep the toolbox on the pool position  */
+if|if
+condition|(
+name|strcmp
 argument_list|(
-name|factory_class
-operator|->
-name|factories
+name|name
 argument_list|,
+literal|"toolbox"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|key
+operator|=
+literal|""
+expr_stmt|;
+else|else
+name|key
+operator|=
 name|GIMP_OBJECT
 argument_list|(
 name|factory
 argument_list|)
 operator|->
 name|name
+expr_stmt|;
+name|g_hash_table_insert
+argument_list|(
+name|GIMP_DIALOG_FACTORY_GET_CLASS
+argument_list|(
+name|factory
+argument_list|)
+operator|->
+name|factories
+argument_list|,
+name|key
 argument_list|,
 name|factory
 argument_list|)
@@ -1102,6 +1106,30 @@ name|g_type_class_peek
 argument_list|(
 name|GIMP_TYPE_DIALOG_FACTORY
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|factory_class
+condition|)
+return|return
+name|NULL
+return|;
+comment|/*  hack to keep the toolbox on the pool position  */
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"toolbox"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|name
+operator|=
+literal|""
 expr_stmt|;
 name|factory
 operator|=
@@ -3907,12 +3935,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factories_save_foreach (gchar * name,GimpDialogFactory * factory,GimpConfigWriter * writer)
+DECL|function|gimp_dialog_factories_save_foreach (gconstpointer key,GimpDialogFactory * factory,GimpConfigWriter * writer)
 name|gimp_dialog_factories_save_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -4041,6 +4068,11 @@ name|gimp_config_writer_string
 argument_list|(
 name|writer
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|factory
+argument_list|)
+operator|->
 name|name
 argument_list|)
 expr_stmt|;
@@ -4537,12 +4569,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factories_restore_foreach (gchar * name,GimpDialogFactory * factory,gpointer data)
+DECL|function|gimp_dialog_factories_restore_foreach (gconstpointer key,GimpDialogFactory * factory,gpointer data)
 name|gimp_dialog_factories_restore_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -5061,12 +5092,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factories_clear_foreach (gchar * name,GimpDialogFactory * factory,gpointer data)
+DECL|function|gimp_dialog_factories_clear_foreach (gconstpointer key,GimpDialogFactory * factory,gpointer data)
 name|gimp_dialog_factories_clear_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -5712,12 +5742,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factories_hide_foreach (gchar * name,GimpDialogFactory * factory,gpointer data)
+DECL|function|gimp_dialog_factories_hide_foreach (gconstpointer key,GimpDialogFactory * factory,gpointer data)
 name|gimp_dialog_factories_hide_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -5828,12 +5857,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factories_show_foreach (gchar * name,GimpDialogFactory * factory,gpointer data)
+DECL|function|gimp_dialog_factories_show_foreach (gconstpointer key,GimpDialogFactory * factory,gpointer data)
 name|gimp_dialog_factories_show_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -5936,12 +5964,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factories_idle_foreach (gchar * name,GimpDialogFactory * factory,gpointer data)
+DECL|function|gimp_dialog_factories_idle_foreach (gconstpointer key,GimpDialogFactory * factory,gpointer data)
 name|gimp_dialog_factories_idle_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -6039,12 +6066,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dialog_factories_unidle_foreach (gchar * name,GimpDialogFactory * factory,gpointer data)
+DECL|function|gimp_dialog_factories_unidle_foreach (gconstpointer key,GimpDialogFactory * factory,gpointer data)
 name|gimp_dialog_factories_unidle_foreach
 parameter_list|(
-name|gchar
-modifier|*
-name|name
+name|gconstpointer
+name|key
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
