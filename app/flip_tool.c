@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paths_dialogP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"undo.h"
 end_include
 
@@ -1213,6 +1219,25 @@ name|destPR
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* flip locked paths */
+comment|/* Note that the undo structures etc are setup before we enter this        * function.        */
+if|if
+condition|(
+name|type
+operator|==
+name|ORIENTATION_HORIZONTAL
+condition|)
+name|paths_transform_flip_horz
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+else|else
+name|paths_transform_flip_vert
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|new

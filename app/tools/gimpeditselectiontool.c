@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paths_dialogP.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1043,6 +1049,24 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+else|else
+block|{
+name|paths_transform_xy
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|edit_select
+operator|.
+name|cumlx
+argument_list|,
+name|edit_select
+operator|.
+name|cumly
+argument_list|)
+expr_stmt|;
 block|}
 name|undo_push_group_end
 argument_list|(

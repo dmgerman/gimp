@@ -213,7 +213,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon291f4b120103
+DECL|enum|__anon276007e60103
 typedef|typedef
 enum|enum
 block|{
@@ -4709,6 +4709,36 @@ begin_comment
 comment|/*  Layer displacement Undo functions  */
 end_comment
 
+begin_typedef
+DECL|typedef|LayerDisplaceUndo
+typedef|typedef
+name|struct
+name|_layer_display_undo
+name|LayerDisplaceUndo
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_layer_display_undo
+struct|struct
+name|_layer_display_undo
+block|{
+DECL|member|info
+name|int
+name|info
+index|[
+literal|3
+index|]
+decl_stmt|;
+DECL|member|path_undo
+name|void
+modifier|*
+name|path_undo
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function
 name|int
 DECL|function|undo_push_layer_displace (GImage * gimage,GimpLayer * layer)
@@ -4727,9 +4757,9 @@ name|Undo
 modifier|*
 name|new
 decl_stmt|;
-name|int
+name|LayerDisplaceUndo
 modifier|*
-name|info
+name|ldu
 decl_stmt|;
 if|if
 condition|(
@@ -4761,10 +4791,8 @@ name|g_malloc
 argument_list|(
 sizeof|sizeof
 argument_list|(
-name|int
+name|LayerDisplaceUndo
 argument_list|)
-operator|*
-literal|3
 argument_list|)
 expr_stmt|;
 name|new
@@ -4779,16 +4807,18 @@ name|free_func
 operator|=
 name|undo_free_layer_displace
 expr_stmt|;
-name|info
+name|ldu
 operator|=
 operator|(
-name|int
+name|LayerDisplaceUndo
 operator|*
 operator|)
 name|new
 operator|->
 name|data
 expr_stmt|;
+name|ldu
+operator|->
 name|info
 index|[
 literal|0
@@ -4802,6 +4832,8 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|ldu
+operator|->
 name|info
 index|[
 literal|1
@@ -4814,6 +4846,8 @@ argument_list|)
 operator|->
 name|offset_x
 expr_stmt|;
+name|ldu
+operator|->
 name|info
 index|[
 literal|2
@@ -4825,6 +4859,15 @@ name|layer
 argument_list|)
 operator|->
 name|offset_y
+expr_stmt|;
+name|ldu
+operator|->
+name|path_undo
+operator|=
+name|paths_transform_start_undo
+argument_list|(
+name|gimage
+argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
@@ -4868,14 +4911,14 @@ index|[
 literal|2
 index|]
 decl_stmt|;
-name|int
+name|LayerDisplaceUndo
 modifier|*
-name|info
+name|ldu
 decl_stmt|;
-name|info
+name|ldu
 operator|=
 operator|(
-name|int
+name|LayerDisplaceUndo
 operator|*
 operator|)
 name|info_ptr
@@ -4884,6 +4927,8 @@ name|layer
 operator|=
 name|layer_get_ID
 argument_list|(
+name|ldu
+operator|->
 name|info
 index|[
 literal|0
@@ -4952,6 +4997,8 @@ argument_list|)
 operator|->
 name|offset_x
 operator|=
+name|ldu
+operator|->
 name|info
 index|[
 literal|1
@@ -4964,6 +5011,8 @@ argument_list|)
 operator|->
 name|offset_y
 operator|=
+name|ldu
+operator|->
 name|info
 index|[
 literal|2
@@ -5011,6 +5060,8 @@ argument_list|)
 operator|->
 name|offset_x
 operator|=
+name|ldu
+operator|->
 name|info
 index|[
 literal|1
@@ -5025,6 +5076,8 @@ argument_list|)
 operator|->
 name|offset_y
 operator|=
+name|ldu
+operator|->
 name|info
 index|[
 literal|2
@@ -5069,6 +5122,8 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
+name|ldu
+operator|->
 name|info
 index|[
 literal|1
@@ -5079,6 +5134,8 @@ index|[
 literal|0
 index|]
 expr_stmt|;
+name|ldu
+operator|->
 name|info
 index|[
 literal|2
@@ -5088,6 +5145,22 @@ name|old_offsets
 index|[
 literal|1
 index|]
+expr_stmt|;
+comment|/* Now undo paths bits */
+if|if
+condition|(
+name|ldu
+operator|->
+name|path_undo
+condition|)
+name|paths_transform_do_undo
+argument_list|(
+name|gimage
+argument_list|,
+name|ldu
+operator|->
+name|path_undo
+argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
@@ -5117,6 +5190,32 @@ modifier|*
 name|info_ptr
 parameter_list|)
 block|{
+name|LayerDisplaceUndo
+modifier|*
+name|ldu
+decl_stmt|;
+name|ldu
+operator|=
+operator|(
+name|LayerDisplaceUndo
+operator|*
+operator|)
+name|info_ptr
+expr_stmt|;
+comment|/* Free mem held for paths undo stuff */
+if|if
+condition|(
+name|ldu
+operator|->
+name|path_undo
+condition|)
+name|paths_transform_free_undo
+argument_list|(
+name|ldu
+operator|->
+name|path_undo
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|info_ptr
@@ -11235,7 +11334,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon291f4b120208
+DECL|struct|__anon276007e60208
 typedef|typedef
 struct|struct
 block|{
@@ -11465,7 +11564,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon291f4b120308
+DECL|struct|__anon276007e60308
 typedef|typedef
 struct|struct
 block|{

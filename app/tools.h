@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc1049e0103
+DECL|enum|__anon2b9ddaaa0103
 block|{
 DECL|enumerator|INACTIVE
 name|INACTIVE
@@ -400,6 +400,16 @@ parameter_list|,
 name|void
 modifier|*
 name|gdisp_ptr
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|guchar
+modifier|*
+name|tool_active_PDB_string
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
