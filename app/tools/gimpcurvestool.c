@@ -724,7 +724,7 @@ name|GIMP_TYPE_CURVES_TOOL
 argument_list|,
 name|GIMP_TYPE_HISTOGRAM_OPTIONS
 argument_list|,
-name|gimp_histogram_options_gui
+name|gimp_color_options_gui
 argument_list|,
 literal|0
 argument_list|,
