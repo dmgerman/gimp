@@ -517,9 +517,7 @@ DECL|variable|action_items
 specifier|static
 name|ActionAreaItem
 name|action_items
-index|[
-literal|2
-index|]
+index|[]
 init|=
 block|{
 block|{
@@ -549,15 +547,34 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|naction_items
+specifier|static
+name|gint
+name|naction_items
+init|=
+sizeof|sizeof
+argument_list|(
+name|action_items
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|action_items
+index|[
+literal|0
+index|]
+argument_list|)
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|action_labels
 specifier|static
 specifier|const
 name|char
 modifier|*
 name|action_labels
-index|[
-literal|4
-index|]
+index|[]
 init|=
 block|{
 name|N_
@@ -585,26 +602,20 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|transform_core_button_press (tool,bevent,gdisp_ptr)
+DECL|function|transform_core_button_press (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|transform_core_button_press
 parameter_list|(
-name|tool
-parameter_list|,
-name|bevent
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|GdkEventButton
 modifier|*
 name|bevent
-decl_stmt|;
+parameter_list|,
 name|gpointer
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -1310,7 +1321,7 @@ argument_list|)
 argument_list|,
 name|action_items
 argument_list|,
-literal|2
+name|naction_items
 argument_list|,
 literal|0
 argument_list|)
@@ -1351,26 +1362,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_button_release (tool,bevent,gdisp_ptr)
+DECL|function|transform_core_button_release (Tool * tool,GdkEventButton * bevent,gpointer gdisp_ptr)
 name|transform_core_button_release
 parameter_list|(
-name|tool
-parameter_list|,
-name|bevent
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|GdkEventButton
 modifier|*
 name|bevent
-decl_stmt|;
+parameter_list|,
 name|gpointer
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -1582,20 +1587,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_doit (tool,gdisp_ptr)
+DECL|function|transform_core_doit (Tool * tool,gpointer gdisp_ptr)
 name|transform_core_doit
 parameter_list|(
-name|tool
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|gpointer
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -1658,7 +1659,7 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
-comment|/*  We're going to dirty this image, but we want to keep the tool       around   */
+comment|/*  We're going to dirty this image, but we want to keep the tool    *  around    */
 name|tool
 operator|->
 name|preserve
@@ -1846,7 +1847,7 @@ name|path_undo
 operator|=
 name|pundo
 expr_stmt|;
-comment|/* Make a note of the new current drawable (since we may have 	 a floating selection, etc now. */
+comment|/*  Make a note of the new current drawable (since we may have        *  a floating selection, etc now.        */
 name|tool
 operator|->
 name|drawable
@@ -1880,7 +1881,7 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  We're done dirtying the image, and would like to be restarted       if the image gets dirty while the tool exists   */
+comment|/*  We're done dirtying the image, and would like to be restarted    *  if the image gets dirty while the tool exists    */
 name|tool
 operator|->
 name|preserve
@@ -2041,26 +2042,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_motion (tool,mevent,gdisp_ptr)
+DECL|function|transform_core_motion (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|transform_core_motion
 parameter_list|(
-name|tool
-parameter_list|,
-name|mevent
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|GdkEventMotion
 modifier|*
 name|mevent
-decl_stmt|;
+parameter_list|,
 name|gpointer
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -2097,7 +2092,7 @@ operator|==
 name|FALSE
 condition|)
 block|{
-comment|/* hey we have not got the button press yet      * so go away.      */
+comment|/*  hey we have not got the button press yet      *  so go away.      */
 return|return;
 block|}
 comment|/*  if we are creating or this tool is non-interactive, there is    *  nothing to be done so exit.    */
@@ -2206,26 +2201,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_cursor_update (tool,mevent,gdisp_ptr)
+DECL|function|transform_core_cursor_update (Tool * tool,GdkEventMotion * mevent,gpointer gdisp_ptr)
 name|transform_core_cursor_update
 parameter_list|(
-name|tool
-parameter_list|,
-name|mevent
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|GdkEventMotion
 modifier|*
 name|mevent
-decl_stmt|;
+parameter_list|,
 name|gpointer
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -2449,25 +2438,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_control (tool,action,gdisp_ptr)
+DECL|function|transform_core_control (Tool * tool,int action,gpointer gdisp_ptr)
 name|transform_core_control
 parameter_list|(
-name|tool
-parameter_list|,
-name|action
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|int
 name|action
-decl_stmt|;
+parameter_list|,
 name|gpointer
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -2554,15 +2537,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_no_draw (tool)
+DECL|function|transform_core_no_draw (Tool * tool)
 name|transform_core_no_draw
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 return|return;
 block|}
@@ -2570,15 +2551,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_draw (tool)
+DECL|function|transform_core_draw (Tool * tool)
 name|transform_core_draw
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|x1
@@ -3356,19 +3335,15 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|transform_core_new (type,interactive)
+DECL|function|transform_core_new (int type,int interactive)
 name|transform_core_new
 parameter_list|(
+name|int
 name|type
 parameter_list|,
+name|int
 name|interactive
 parameter_list|)
-name|int
-name|type
-decl_stmt|;
-name|int
-name|interactive
-decl_stmt|;
 block|{
 name|Tool
 modifier|*
@@ -3586,15 +3561,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_free (tool)
+DECL|function|transform_core_free (Tool * tool)
 name|transform_core_free
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -3710,15 +3683,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_bounding_box (tool)
+DECL|function|transform_bounding_box (Tool * tool)
 name|transform_bounding_box
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -3992,21 +3963,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_core_reset (tool,gdisp_ptr)
+DECL|function|transform_core_reset (Tool * tool,void * gdisp_ptr)
 name|transform_core_reset
 parameter_list|(
-name|tool
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|void
 modifier|*
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -4092,21 +4059,17 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|transform_core_bounds (tool,gdisp_ptr)
+DECL|function|transform_core_bounds (Tool * tool,void * gdisp_ptr)
 name|transform_core_bounds
 parameter_list|(
-name|tool
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|void
 modifier|*
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -4304,7 +4267,7 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
-comment|/* changing the bounds invalidates any grid we may have */
+comment|/*  changing the bounds invalidates any grid we may have  */
 name|transform_core_grid_recalc
 argument_list|(
 name|transform_core
@@ -4507,15 +4470,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_core_setup_grid (tool)
+DECL|function|transform_core_setup_grid (Tool * tool)
 name|transform_core_setup_grid
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -4850,21 +4811,17 @@ begin_function
 specifier|static
 name|void
 modifier|*
-DECL|function|transform_core_recalc (tool,gdisp_ptr)
+DECL|function|transform_core_recalc (Tool * tool,void * gdisp_ptr)
 name|transform_core_recalc
 parameter_list|(
-name|tool
-parameter_list|,
-name|gdisp_ptr
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|,
 name|void
 modifier|*
 name|gdisp_ptr
-decl_stmt|;
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -4912,47 +4869,33 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|transform_core_do (gimage,drawable,float_tiles,interpolation,matrix,progress_callback,progress_data)
+DECL|function|transform_core_do (GImage * gimage,GimpDrawable * drawable,TileManager * float_tiles,int interpolation,GimpMatrix matrix,progress_func_t progress_callback,gpointer progress_data)
 name|transform_core_do
 parameter_list|(
-name|gimage
-parameter_list|,
-name|drawable
-parameter_list|,
-name|float_tiles
-parameter_list|,
-name|interpolation
-parameter_list|,
-name|matrix
-parameter_list|,
-name|progress_callback
-parameter_list|,
-name|progress_data
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|TileManager
 modifier|*
 name|float_tiles
-decl_stmt|;
+parameter_list|,
 name|int
 name|interpolation
-decl_stmt|;
+parameter_list|,
 name|GimpMatrix
 name|matrix
-decl_stmt|;
+parameter_list|,
 name|progress_func_t
 name|progress_callback
-decl_stmt|;
+parameter_list|,
 name|gpointer
 name|progress_data
-decl_stmt|;
+parameter_list|)
 block|{
 name|PixelRegion
 name|destPR
@@ -7512,27 +7455,21 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|transform_core_cut (gimage,drawable,new_layer)
+DECL|function|transform_core_cut (GImage * gimage,GimpDrawable * drawable,int * new_layer)
 name|transform_core_cut
 parameter_list|(
-name|gimage
-parameter_list|,
-name|drawable
-parameter_list|,
-name|new_layer
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|int
 modifier|*
 name|new_layer
-decl_stmt|;
+parameter_list|)
 block|{
 name|TileManager
 modifier|*
@@ -7602,32 +7539,24 @@ end_comment
 begin_function
 name|Layer
 modifier|*
-DECL|function|transform_core_paste (gimage,drawable,tiles,new_layer)
+DECL|function|transform_core_paste (GImage * gimage,GimpDrawable * drawable,TileManager * tiles,int new_layer)
 name|transform_core_paste
 parameter_list|(
-name|gimage
-parameter_list|,
-name|drawable
-parameter_list|,
-name|tiles
-parameter_list|,
-name|new_layer
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|TileManager
 modifier|*
 name|tiles
-decl_stmt|;
+parameter_list|,
 name|int
 name|new_layer
-decl_stmt|;
+parameter_list|)
 block|{
 name|Layer
 modifier|*
@@ -7928,31 +7857,24 @@ end_function
 begin_function
 specifier|static
 name|double
-DECL|function|cubic (dx,jm1,j,jp1,jp2)
+DECL|function|cubic (double dx,int jm1,int j,int jp1,int jp2)
 name|cubic
 parameter_list|(
-name|dx
-parameter_list|,
-name|jm1
-parameter_list|,
-name|j
-parameter_list|,
-name|jp1
-parameter_list|,
-name|jp2
-parameter_list|)
 name|double
 name|dx
-decl_stmt|;
+parameter_list|,
 name|int
 name|jm1
-decl_stmt|,
+parameter_list|,
+name|int
 name|j
-decl_stmt|,
+parameter_list|,
+name|int
 name|jp1
-decl_stmt|,
+parameter_list|,
+name|int
 name|jp2
-decl_stmt|;
+parameter_list|)
 block|{
 name|double
 name|dx1
