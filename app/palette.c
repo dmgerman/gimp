@@ -53,6 +53,12 @@ end_ifdef
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<dirent.h>
 end_include
 
@@ -300,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276d26550103
+DECL|enum|__anon29ba76dc0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
