@@ -621,6 +621,11 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|local_path
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

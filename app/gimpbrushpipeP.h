@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296df63d0103
+DECL|enum|__anon29574d780103
 block|{
 DECL|enumerator|PIPE_SELECT_CONSTANT
 name|PIPE_SELECT_CONSTANT
@@ -94,23 +94,23 @@ name|current
 decl_stmt|;
 comment|/* Currently selected brush */
 DECL|member|dimension
-name|int
+name|gint
 name|dimension
 decl_stmt|;
 DECL|member|rank
-name|int
+name|gint
 modifier|*
 name|rank
 decl_stmt|;
 comment|/* Size in each dimension */
 DECL|member|stride
-name|int
+name|gint
 modifier|*
 name|stride
 decl_stmt|;
 comment|/* Aux for indexing */
 DECL|member|nbrushes
-name|int
+name|gint
 name|nbrushes
 decl_stmt|;
 comment|/* Might be less than the product of the 				 * ranks in some odd special case 				 */
@@ -127,7 +127,7 @@ name|select
 decl_stmt|;
 comment|/* One mode per dimension */
 DECL|member|index
-name|int
+name|gint
 modifier|*
 name|index
 decl_stmt|;

@@ -9337,8 +9337,11 @@ name|dir
 condition|)
 name|dir
 operator|=
+name|g_strdup
+argument_list|(
 name|gimp_directory
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|gtk_file_selection_set_filename
 argument_list|(
@@ -9347,6 +9350,11 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
+name|dir
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|dir
 argument_list|)
 expr_stmt|;

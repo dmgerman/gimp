@@ -121,11 +121,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gimp_object_class
+DECL|variable|gimp_brush_pixmap_class
 specifier|static
-name|GtkObjectClass
+name|GimpBrushPixmapClass
 modifier|*
-name|gimp_object_class
+name|gimp_brush_pixmap_class
 decl_stmt|;
 end_decl_stmt
 
@@ -191,11 +191,20 @@ operator|->
 name|pixmap_mask
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GTK_OBJECT_CLASS
+argument_list|(
+name|gimp_brush_class
+argument_list|)
+operator|->
+name|destroy
+condition|)
 operator|(
 operator|*
 name|GTK_OBJECT_CLASS
 argument_list|(
-name|gimp_object_class
+name|gimp_brush_class
 argument_list|)
 operator|->
 name|destroy
@@ -865,7 +874,7 @@ name|GimpBrushPipe
 modifier|*
 name|pipe
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|g_return_if_fail
@@ -919,7 +928,9 @@ condition|;
 name|i
 operator|++
 control|)
-name|gimp_object_destroy
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|pipe
 operator|->
@@ -927,6 +938,7 @@ name|brushes
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -954,7 +966,7 @@ if|if
 condition|(
 name|GTK_OBJECT_CLASS
 argument_list|(
-name|gimp_object_class
+name|gimp_brush_pixmap_class
 argument_list|)
 operator|->
 name|destroy
@@ -963,7 +975,7 @@ operator|(
 operator|*
 name|GTK_OBJECT_CLASS
 argument_list|(
-name|gimp_object_class
+name|gimp_brush_pixmap_class
 argument_list|)
 operator|->
 name|destroy
@@ -997,11 +1009,11 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
-name|gimp_object_class
+name|gimp_brush_pixmap_class
 operator|=
 name|gtk_type_class
 argument_list|(
-name|GIMP_TYPE_OBJECT
+name|GIMP_TYPE_BRUSH_PIXMAP
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -1134,10 +1146,10 @@ end_function
 begin_function
 name|GimpBrushPipe
 modifier|*
-DECL|function|gimp_brush_pipe_load (char * filename)
+DECL|function|gimp_brush_pipe_load (gchar * filename)
 name|gimp_brush_pipe_load
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -1167,13 +1179,13 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|num_of_brushes
 decl_stmt|;
-name|int
+name|gint
 name|totalcells
 decl_stmt|;
 name|gchar
@@ -1369,7 +1381,7 @@ name|rank
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 name|pipe
 operator|->
@@ -1395,7 +1407,7 @@ name|index
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 name|pipe
 operator|->
@@ -1678,7 +1690,7 @@ name|rank
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 literal|1
 argument_list|)
@@ -1718,7 +1730,7 @@ name|index
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 literal|1
 argument_list|)
@@ -1768,7 +1780,7 @@ name|stride
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 name|pipe
 operator|->
@@ -1856,27 +1868,17 @@ argument_list|)
 expr_stmt|;
 name|pattern
 operator|=
-operator|(
-name|GPattern
-operator|*
-operator|)
-name|g_malloc0
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|GPattern
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|pipe
 operator|->
 name|brushes
 operator|=
-operator|(
-name|GimpBrushPixmap
-operator|*
-operator|*
-operator|)
 name|g_new0
 argument_list|(
 name|GimpBrushPixmap
@@ -2132,10 +2134,10 @@ end_function
 begin_function
 name|GimpBrushPipe
 modifier|*
-DECL|function|gimp_brush_pixmap_load (char * filename)
+DECL|function|gimp_brush_pixmap_load (gchar * filename)
 name|gimp_brush_pixmap_load
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -2193,7 +2195,7 @@ name|rank
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 literal|1
 argument_list|)
@@ -2233,7 +2235,7 @@ name|index
 operator|=
 name|g_new
 argument_list|(
-name|int
+name|gint
 argument_list|,
 literal|1
 argument_list|)
@@ -2249,27 +2251,17 @@ literal|0
 expr_stmt|;
 name|pattern
 operator|=
-operator|(
-name|GPattern
-operator|*
-operator|)
-name|g_malloc0
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|GPattern
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|pipe
 operator|->
 name|brushes
 operator|=
-operator|(
-name|GimpBrushPixmap
-operator|*
-operator|*
-operator|)
 name|g_new
 argument_list|(
 name|GimpBrushPixmap

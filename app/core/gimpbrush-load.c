@@ -64,8 +64,8 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon297bbd820103
 enum|enum
+DECL|enum|__anon2bf7547d0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -451,10 +451,10 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_new (char * filename)
+DECL|function|gimp_brush_new (gchar * filename)
 name|gimp_brush_new
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -582,14 +582,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_set_name (GimpBrush * brush,char * name)
+DECL|function|gimp_brush_set_name (GimpBrush * brush,gchar * name)
 name|gimp_brush_set_name
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -655,7 +655,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|gimp_brush_get_spacing (GimpBrush * brush)
 name|gimp_brush_get_spacing
 parameter_list|(
@@ -693,14 +693,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_set_spacing (GimpBrush * brush,int spacing)
+DECL|function|gimp_brush_set_spacing (GimpBrush * brush,gint spacing)
 name|gimp_brush_set_spacing
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
-name|int
+name|gint
 name|spacing
 parameter_list|)
 block|{
@@ -730,14 +730,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_load (GimpBrush * brush,char * filename)
+DECL|function|gimp_brush_load (GimpBrush * brush,gchar * filename)
 name|gimp_brush_load
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
@@ -809,8 +809,8 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|gimp_brush_load_brush (GimpBrush * brush,FILE * fp,char * filename)
+name|gint
+DECL|function|gimp_brush_load_brush (GimpBrush * brush,FILE * fp,gchar * filename)
 name|gimp_brush_load_brush
 parameter_list|(
 name|GimpBrush
@@ -821,16 +821,15 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|filename
 parameter_list|)
 block|{
-name|int
+name|gint
 name|bn_size
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|buf
 index|[
 name|sz_BrushHeader
@@ -839,12 +838,11 @@ decl_stmt|;
 name|BrushHeader
 name|header
 decl_stmt|;
-name|unsigned
-name|int
+name|guint
 modifier|*
 name|hp
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/*  Read in the header size  */
@@ -884,8 +882,7 @@ comment|/*  rearrange the bytes in each unsigned int  */
 name|hp
 operator|=
 operator|(
-name|unsigned
-name|int
+name|guint
 operator|*
 operator|)
 operator|&
@@ -1049,17 +1046,10 @@ name|brush
 operator|->
 name|name
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|char
-argument_list|)
-operator|*
+name|gchar
+argument_list|,
 name|bn_size
 argument_list|)
 expr_stmt|;
