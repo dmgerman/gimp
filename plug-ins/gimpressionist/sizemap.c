@@ -2097,56 +2097,17 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-DECL|function|update_sizemap_dialog (void)
-specifier|static
-name|void
-name|update_sizemap_dialog
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|smwindow
-condition|)
-block|{
-name|initsmvectors
-argument_list|()
-expr_stmt|;
-name|gtk_adjustment_set_value
-argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
-name|smstrexpadjust
-argument_list|)
-argument_list|,
-name|pcvals
-operator|.
-name|sizestrexp
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|sizevoronoi
-argument_list|)
-argument_list|,
-name|pcvals
-operator|.
-name|sizevoronoi
-argument_list|)
-expr_stmt|;
-name|updatesmvectorprev
-argument_list|()
-expr_stmt|;
-name|updatesmpreviewprev
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-end_function
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_endif
+unit|static void update_sizemap_dialog(void) {   if (smwindow)     {       initsmvectors();        gtk_adjustment_set_value(GTK_ADJUSTMENT(smstrexpadjust), 			       pcvals.sizestrexp);       gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(sizevoronoi), 				   pcvals.sizevoronoi);        updatesmvectorprev();       updatesmpreviewprev();     } }
+endif|#
+directive|endif
+end_endif
 
 begin_function
 DECL|function|create_sizemap_dialog (void)
