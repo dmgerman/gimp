@@ -4699,6 +4699,8 @@ operator|=
 name|gimp_channel_copy
 argument_list|(
 name|active_channel
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel
@@ -4902,6 +4904,8 @@ name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask
@@ -5000,6 +5004,8 @@ name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask
@@ -5098,6 +5104,8 @@ name|gimp_image_get_mask
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_channel_combine_mask
@@ -7045,7 +7053,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c52ce890108
+DECL|struct|__anon2c1c40f50108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -7102,6 +7110,8 @@ argument_list|,
 name|cd
 operator|->
 name|dest_index
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush

@@ -108,21 +108,6 @@ modifier|*
 name|mask
 decl_stmt|;
 comment|/*  possible layer mask            */
-DECL|member|apply_mask
-name|gint
-name|apply_mask
-decl_stmt|;
-comment|/*  controls mask application      */
-DECL|member|edit_mask
-name|gboolean
-name|edit_mask
-decl_stmt|;
-comment|/*  edit mask or layer?            */
-DECL|member|show_mask
-name|gboolean
-name|show_mask
-decl_stmt|;
-comment|/*  show mask or layer?            */
 DECL|member|opacity
 name|gint
 name|opacity
@@ -135,7 +120,7 @@ decl_stmt|;
 comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b5eb5c30108
+DECL|struct|__anon27f20a180108
 block|{
 DECL|member|backing_store
 name|TileManager

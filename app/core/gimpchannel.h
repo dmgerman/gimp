@@ -307,6 +307,9 @@ specifier|const
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gboolean
+name|dummy
 parameter_list|)
 function_decl|;
 end_function_decl

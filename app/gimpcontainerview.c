@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b881160103
+DECL|enum|__anon29a212540103
 block|{
 DECL|enumerator|INSERT_ITEM
 name|INSERT_ITEM
@@ -852,6 +852,13 @@ operator|->
 name|container
 condition|)
 block|{
+name|gimp_container_view_select_item
+argument_list|(
+name|view
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_container_view_clear_items
 argument_list|(
 name|view

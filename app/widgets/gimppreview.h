@@ -299,6 +299,9 @@ name|preview
 parameter_list|,
 name|gint
 name|size
+parameter_list|,
+name|gint
+name|border_width
 parameter_list|)
 function_decl|;
 name|void

@@ -177,7 +177,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7a3e490103
+DECL|enum|__anon2c8012490103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1693,7 +1693,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_preview_set_size (GimpPreview * preview,gint preview_size)
+DECL|function|gimp_preview_set_size (GimpPreview * preview,gint preview_size,gint border_width)
 name|gimp_preview_set_size
 parameter_list|(
 name|GimpPreview
@@ -1702,6 +1702,9 @@ name|preview
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|border_width
 parameter_list|)
 block|{
 name|gint
@@ -1735,6 +1738,17 @@ operator|<=
 literal|256
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|border_width
+operator|>=
+literal|0
+operator|&&
+name|border_width
+operator|<=
+literal|16
+argument_list|)
+expr_stmt|;
 name|gimp_preview_get_size
 argument_list|(
 name|preview
@@ -1756,8 +1770,6 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|preview
-operator|->
 name|border_width
 argument_list|)
 expr_stmt|;

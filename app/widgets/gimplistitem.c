@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2912fe090103
+DECL|enum|__anon2b442cf20103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -495,7 +495,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|8
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

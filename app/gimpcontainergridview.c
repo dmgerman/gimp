@@ -1443,6 +1443,10 @@ argument_list|,
 name|view
 operator|->
 name|preview_size
+argument_list|,
+name|preview
+operator|->
+name|border_width
 argument_list|)
 expr_stmt|;
 block|}

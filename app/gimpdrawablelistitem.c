@@ -1011,6 +1011,8 @@ name|src_viewable
 argument_list|)
 argument_list|,
 name|dest_index
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush

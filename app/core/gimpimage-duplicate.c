@@ -3143,6 +3143,8 @@ operator|=
 name|gimp_channel_copy
 argument_list|(
 name|channel
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_set_gimage

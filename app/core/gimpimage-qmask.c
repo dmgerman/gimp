@@ -906,6 +906,8 @@ name|gimp_image_get_mask
 argument_list|(
 name|gimg
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_channel

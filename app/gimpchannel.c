@@ -642,14 +642,18 @@ end_function
 begin_function
 name|GimpChannel
 modifier|*
-DECL|function|gimp_channel_copy (const GimpChannel * channel)
+DECL|function|gimp_channel_copy (const GimpChannel * channel,gboolean dummy)
 name|gimp_channel_copy
 parameter_list|(
 specifier|const
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gboolean
+name|dummy
 parameter_list|)
+comment|/*  the dummy is for symmetry with                                               *  gimp_layer_copy() because                                               *  both functions are used as                                               *  function pointers in                                               *  GimpDrawableListView --Mitch                                               */
 block|{
 name|gchar
 modifier|*

@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296af0090103
+DECL|enum|__anon28b60b6f0103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296af0090203
+DECL|enum|__anon28b60b6f0203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -1885,7 +1885,10 @@ modifier|*
 name|channel
 parameter_list|,
 name|gint
-name|position
+name|new_index
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

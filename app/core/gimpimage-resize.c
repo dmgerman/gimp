@@ -743,7 +743,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a833de0103
+DECL|enum|__anon27602c940103
 block|{
 DECL|enumerator|ACTIVE_LAYER_CHANGED
 name|ACTIVE_LAYER_CHANGED
@@ -7303,6 +7303,8 @@ name|mask
 operator|&&
 name|layer
 operator|->
+name|mask
+operator|->
 name|show_mask
 condition|)
 block|{
@@ -7408,6 +7410,8 @@ operator|->
 name|mask
 operator|&&
 name|layer
+operator|->
+name|mask
 operator|->
 name|apply_mask
 condition|)
@@ -13076,6 +13080,8 @@ name|mask
 operator|&&
 name|layer
 operator|->
+name|mask
+operator|->
 name|apply_mask
 condition|)
 block|{
@@ -14043,6 +14049,8 @@ argument_list|,
 name|index
 operator|-
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 return|;
 block|}
@@ -14153,6 +14161,8 @@ argument_list|,
 name|index
 operator|+
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 return|;
 block|}
@@ -14160,7 +14170,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_position_channel (GimpImage * gimage,GimpChannel * channel,gint new_index)
+DECL|function|gimp_image_position_channel (GimpImage * gimage,GimpChannel * channel,gint new_index,gboolean push_undo)
 name|gimp_image_position_channel
 parameter_list|(
 name|GimpImage
@@ -14173,6 +14183,10 @@ name|channel
 parameter_list|,
 name|gint
 name|new_index
+parameter_list|,
+name|gboolean
+name|push_undo
+comment|/* FIXME unused */
 parameter_list|)
 block|{
 name|gint
@@ -14251,27 +14265,18 @@ operator|->
 name|channels
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|new_index
-operator|<
-literal|0
-condition|)
 name|new_index
 operator|=
+name|CLAMP
+argument_list|(
+name|new_index
+argument_list|,
 literal|0
-expr_stmt|;
-if|if
-condition|(
-name|new_index
-operator|>=
-name|num_channels
-condition|)
-name|new_index
-operator|=
+argument_list|,
 name|num_channels
 operator|-
 literal|1
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -14878,6 +14883,8 @@ operator|->
 name|mask
 operator|&&
 name|layer
+operator|->
+name|mask
 operator|->
 name|edit_mask
 condition|)
@@ -16504,6 +16511,8 @@ operator|->
 name|mask
 operator|&&
 name|layer
+operator|->
+name|mask
 operator|->
 name|apply_mask
 condition|)
