@@ -606,11 +606,26 @@ name|last
 operator|=
 name|tile
 expr_stmt|;
+comment|/* gosgood@idt.net 1999-12-04                                  */
+comment|/* bytes on cur_cache_dirty miscounted in CVS 1.12:            */
+comment|/* Invariant: test for selecting dirty list should be the same */
+comment|/* as counting files dirty.                                    */
 if|if
 condition|(
+operator|(
 name|tile
 operator|->
 name|dirty
+operator|)
+operator|||
+operator|(
+name|tile
+operator|->
+name|swap_offset
+operator|==
+operator|-
+literal|1
+operator|)
 condition|)
 block|{
 name|cur_cache_dirty
@@ -1160,6 +1175,13 @@ condition|(
 name|tile
 operator|->
 name|dirty
+operator|||
+name|tile
+operator|->
+name|swap
+operator|==
+operator|-
+literal|1
 condition|)
 block|{
 name|list

@@ -552,6 +552,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|tile_active_count
+operator|--
+expr_stmt|;
 if|if
 condition|(
 name|tile
@@ -579,9 +582,6 @@ name|tile
 argument_list|)
 expr_stmt|;
 block|}
-name|tile_active_count
-operator|--
-expr_stmt|;
 block|}
 name|TILE_MUTEX_UNLOCK
 argument_list|(
