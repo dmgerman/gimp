@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<regex.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -413,7 +407,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957465d0108
+DECL|struct|__anon28b7cbd40108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -522,7 +516,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957465d0208
+DECL|struct|__anon28b7cbd40208
 block|{
 DECL|member|menu
 name|gchar
