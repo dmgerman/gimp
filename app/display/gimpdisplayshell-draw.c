@@ -294,7 +294,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c661cc70103
+DECL|enum|__anon27de13990103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -10053,8 +10053,8 @@ name|width
 operator|-
 name|border_x
 operator|)
-operator|>>
-literal|1
+operator|/
+literal|2
 expr_stmt|;
 name|shell_y
 operator|=
@@ -10065,8 +10065,8 @@ name|height
 operator|-
 name|border_y
 operator|)
-operator|>>
-literal|1
+operator|/
+literal|2
 expr_stmt|;
 name|gdk_window_move
 argument_list|(
@@ -10077,9 +10077,19 @@ argument_list|)
 operator|->
 name|window
 argument_list|,
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|shell_x
+argument_list|)
+argument_list|,
+name|MAX
+argument_list|(
+literal|0
 argument_list|,
 name|shell_y
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
