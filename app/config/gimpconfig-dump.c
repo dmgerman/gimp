@@ -313,6 +313,11 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_RC
 argument_list|,
+literal|"module-load-inhibit"
+argument_list|,
+literal|"foo"
+argument_list|,
+comment|/* for completeness */
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -430,6 +435,11 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_RC
 argument_list|,
+literal|"module-load-inhibit"
+argument_list|,
+literal|"foo"
+argument_list|,
+comment|/* for completeness */
 name|NULL
 argument_list|)
 expr_stmt|;

@@ -128,9 +128,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|DEFAULT_THEME
+define|#
+directive|define
+name|DEFAULT_THEME
+value|"Default"
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c8ad40103
+DECL|enum|__anon29379d750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -571,7 +579,7 @@ literal|"theme"
 argument_list|,
 name|THEME_BLURB
 argument_list|,
-name|NULL
+name|DEFAULT_THEME
 argument_list|,
 literal|0
 argument_list|)

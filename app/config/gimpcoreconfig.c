@@ -128,9 +128,49 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|DEFAULT_BRUSH
+define|#
+directive|define
+name|DEFAULT_BRUSH
+value|"Circle (11)"
+end_define
+
+begin_define
+DECL|macro|DEFAULT_PATTERN
+define|#
+directive|define
+name|DEFAULT_PATTERN
+value|"Pine"
+end_define
+
+begin_define
+DECL|macro|DEFAULT_PALETTE
+define|#
+directive|define
+name|DEFAULT_PALETTE
+value|"Default"
+end_define
+
+begin_define
+DECL|macro|DEFAULT_GRADIENT
+define|#
+directive|define
+name|DEFAULT_GRADIENT
+value|"FG to BG (RGB)"
+end_define
+
+begin_define
+DECL|macro|DEFAULT_COMMENT
+define|#
+directive|define
+name|DEFAULT_COMMENT
+value|"Created with The GIMP"
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c45be2c0103
+DECL|enum|__anon2c16c9b00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -551,7 +591,7 @@ literal|"default-brush"
 argument_list|,
 name|DEFAULT_BRUSH_BLURB
 argument_list|,
-name|NULL
+name|DEFAULT_BRUSH
 argument_list|,
 literal|0
 argument_list|)
@@ -566,7 +606,7 @@ literal|"default-pattern"
 argument_list|,
 name|DEFAULT_PATTERN_BLURB
 argument_list|,
-name|NULL
+name|DEFAULT_PATTERN
 argument_list|,
 literal|0
 argument_list|)
@@ -581,7 +621,7 @@ literal|"default-palette"
 argument_list|,
 name|DEFAULT_PALETTE_BLURB
 argument_list|,
-name|NULL
+name|DEFAULT_PALETTE
 argument_list|,
 literal|0
 argument_list|)
@@ -596,7 +636,7 @@ literal|"default-gradient"
 argument_list|,
 name|DEFAULT_GRADIENT_BLURB
 argument_list|,
-name|NULL
+name|DEFAULT_GRADIENT
 argument_list|,
 literal|0
 argument_list|)
@@ -611,7 +651,7 @@ literal|"default-comment"
 argument_list|,
 name|DEFAULT_COMMENT_BLURB
 argument_list|,
-literal|"Created with The GIMP"
+name|DEFAULT_COMMENT
 argument_list|,
 literal|0
 argument_list|)
