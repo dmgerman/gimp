@@ -1957,6 +1957,10 @@ block|,
 name|view_display_filters_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_DISPLAY_FILTER
 block|}
 block|,
 name|NULL

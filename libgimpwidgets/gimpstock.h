@@ -741,6 +741,11 @@ define|#
 directive|define
 name|GIMP_STOCK_DEVICE_STATUS
 value|"gimp-device-status"
+DECL|macro|GIMP_STOCK_DISPLAY_FILTER
+define|#
+directive|define
+name|GIMP_STOCK_DISPLAY_FILTER
+value|"gimp-display-filter"
 DECL|macro|GIMP_STOCK_LIST
 define|#
 directive|define

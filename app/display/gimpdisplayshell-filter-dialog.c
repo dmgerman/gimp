@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpviewable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcolordisplayeditor.h"
 end_include
 
@@ -37,6 +43,18 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpviewabledialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdisplay.h"
 end_include
 
 begin_include
@@ -171,8 +189,17 @@ name|cdd
 operator|->
 name|dialog
 operator|=
-name|gimp_dialog_new
+name|gimp_viewable_dialog_new
 argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Color Display Filters"
@@ -180,14 +207,19 @@ argument_list|)
 argument_list|,
 literal|"gimp-display-filters"
 argument_list|,
+name|GIMP_STOCK_DISPLAY_FILTER
+argument_list|,
+name|_
+argument_list|(
+literal|"Configure Color Display Filters"
+argument_list|)
+argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|cdd
 operator|->
 name|shell
 argument_list|)
-argument_list|,
-name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -202,6 +234,18 @@ argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_destroy_with_parent
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|cdd
+operator|->
+name|dialog
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_weak_ref
