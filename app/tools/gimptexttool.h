@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimptool/gimptool.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_define
@@ -98,16 +98,22 @@ struct|struct
 name|_GimpTextTool
 block|{
 DECL|member|parent_instance
-name|GimpTool
+name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|click_x
+DECL|member|x1
+DECL|member|y1
 name|gint
-name|click_x
+name|x1
+decl_stmt|,
+name|y1
 decl_stmt|;
-DECL|member|click_y
+DECL|member|x2
+DECL|member|y2
 name|gint
-name|click_y
+name|x2
+decl_stmt|,
+name|y2
 decl_stmt|;
 DECL|member|gdisp
 name|GimpDisplay
@@ -134,7 +140,7 @@ struct|struct
 name|_GimpTextToolClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
 block|}

@@ -560,6 +560,11 @@ DECL|member|space_release_pending
 name|gboolean
 name|space_release_pending
 decl_stmt|;
+DECL|member|window_state
+name|GdkWindowState
+name|window_state
+decl_stmt|;
+comment|/* for fullscreen display              */
 block|}
 struct|;
 end_struct
@@ -984,6 +989,17 @@ name|shell
 parameter_list|,
 name|GimpSelectionControl
 name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_toggle_fullscreen
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -165,7 +165,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b81b8f80103
+DECL|enum|__anon292375280103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -3258,6 +3258,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_crop_tool_draw (GimpDrawTool * draw)
 name|gimp_crop_tool_draw

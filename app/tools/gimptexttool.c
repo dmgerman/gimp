@@ -190,7 +190,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|text_tool_control
+name|gimp_text_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -209,7 +209,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|text_tool_button_press
+name|gimp_text_tool_button_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -235,7 +235,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|text_tool_button_release
+name|gimp_text_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -261,7 +261,33 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|text_tool_cursor_update
+name|gimp_text_tool_motion
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
+name|guint32
+name|time
+parameter_list|,
+name|GdkModifierType
+name|state
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_text_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -277,6 +303,18 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_text_tool_draw
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -300,7 +338,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|text_tool_create_layer
+name|gimp_text_tool_create_layer
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -312,7 +350,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|text_tool_editor
+name|gimp_text_tool_editor
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -324,7 +362,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|text_tool_buffer_changed
+name|gimp_text_tool_buffer_changed
 parameter_list|(
 name|GtkTextBuffer
 modifier|*
@@ -344,7 +382,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
-name|GimpToolClass
+name|GimpDrawToolClass
 modifier|*
 name|parent_class
 init|=
@@ -482,7 +520,7 @@ name|tool_type
 operator|=
 name|g_type_register_static
 argument_list|(
-name|GIMP_TYPE_TOOL
+name|GIMP_TYPE_DRAW_TOOL
 argument_list|,
 literal|"GimpTextTool"
 argument_list|,
@@ -518,9 +556,20 @@ name|GimpToolClass
 modifier|*
 name|tool_class
 decl_stmt|;
+name|GimpDrawToolClass
+modifier|*
+name|draw_tool_class
+decl_stmt|;
 name|tool_class
 operator|=
 name|GIMP_TOOL_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|draw_tool_class
+operator|=
+name|GIMP_DRAW_TOOL_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -536,25 +585,37 @@ name|tool_class
 operator|->
 name|control
 operator|=
-name|text_tool_control
+name|gimp_text_tool_control
 expr_stmt|;
 name|tool_class
 operator|->
 name|button_press
 operator|=
-name|text_tool_button_press
+name|gimp_text_tool_button_press
 expr_stmt|;
 name|tool_class
 operator|->
 name|button_release
 operator|=
-name|text_tool_button_release
+name|gimp_text_tool_button_release
+expr_stmt|;
+name|tool_class
+operator|->
+name|motion
+operator|=
+name|gimp_text_tool_motion
 expr_stmt|;
 name|tool_class
 operator|->
 name|cursor_update
 operator|=
-name|text_tool_cursor_update
+name|gimp_text_tool_cursor_update
+expr_stmt|;
+name|draw_tool_class
+operator|->
+name|draw
+operator|=
+name|gimp_text_tool_draw
 expr_stmt|;
 block|}
 end_function
@@ -609,8 +670,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
-name|text_tool_control
+DECL|function|gimp_text_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * gdisp)
+name|gimp_text_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -693,8 +754,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
-name|text_tool_button_press
+DECL|function|gimp_text_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+name|gimp_text_tool_button_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -757,7 +818,7 @@ name|gdisp
 expr_stmt|;
 name|text_tool
 operator|->
-name|click_x
+name|x1
 operator|=
 name|coords
 operator|->
@@ -765,7 +826,7 @@ name|x
 expr_stmt|;
 name|text_tool
 operator|->
-name|click_y
+name|y1
 operator|=
 name|coords
 operator|->
@@ -860,7 +921,7 @@ name|text_tool
 operator|->
 name|text
 condition|)
-name|text_tool_editor
+name|gimp_text_tool_editor
 argument_list|(
 name|text_tool
 argument_list|)
@@ -881,8 +942,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
-name|text_tool_button_release
+DECL|function|gimp_text_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+name|gimp_text_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -902,16 +963,41 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|)
-block|{
-comment|/*    gimp_tool_control_halt (tool->control); */
-block|}
+block|{ }
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
-name|text_tool_cursor_update
+DECL|function|gimp_text_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * gdisp)
+name|gimp_text_tool_motion
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
+name|guint32
+name|time
+parameter_list|,
+name|GdkModifierType
+name|state
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_text_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * gdisp)
+name|gimp_text_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -951,8 +1037,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_create_layer (GimpTextTool * text_tool)
-name|text_tool_create_layer
+DECL|function|gimp_text_tool_draw (GimpDrawTool * draw_tool)
+name|gimp_text_tool_draw
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_text_tool_create_layer (GimpTextTool * text_tool)
+name|gimp_text_tool_create_layer
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -1069,7 +1168,7 @@ name|offset_x
 operator|=
 name|text_tool
 operator|->
-name|click_x
+name|x1
 expr_stmt|;
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1080,7 +1179,7 @@ name|offset_y
 operator|=
 name|text_tool
 operator|->
-name|click_y
+name|y1
 expr_stmt|;
 name|gimp_image_add_layer
 argument_list|(
@@ -1253,8 +1352,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_editor (GimpTextTool * text_tool)
-name|text_tool_editor
+DECL|function|gimp_text_tool_editor (GimpTextTool * text_tool)
+name|gimp_text_tool_editor
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -1358,7 +1457,7 @@ name|g_cclosure_new
 argument_list|(
 name|G_CALLBACK
 argument_list|(
-name|text_tool_buffer_changed
+name|gimp_text_tool_buffer_changed
 argument_list|)
 argument_list|,
 name|text_tool
@@ -1398,8 +1497,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|text_tool_buffer_changed (GtkTextBuffer * buffer,GimpTextTool * text_tool)
-name|text_tool_buffer_changed
+DECL|function|gimp_text_tool_buffer_changed (GtkTextBuffer * buffer,GimpTextTool * text_tool)
+name|gimp_text_tool_buffer_changed
 parameter_list|(
 name|GtkTextBuffer
 modifier|*
@@ -1417,7 +1516,7 @@ name|text_tool
 operator|->
 name|text
 condition|)
-name|text_tool_create_layer
+name|gimp_text_tool_create_layer
 argument_list|(
 name|text_tool
 argument_list|)
