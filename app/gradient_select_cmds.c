@@ -1124,9 +1124,6 @@ condition|)
 block|{
 name|gdouble
 modifier|*
-name|values
-decl_stmt|,
-modifier|*
 name|pv
 decl_stmt|;
 name|gdouble
