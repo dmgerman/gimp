@@ -1031,7 +1031,7 @@ init|=
 name|NULL
 decl_stmt|;
 comment|/* Print file/command */
-name|int
+name|gint
 name|ncolors
 decl_stmt|;
 comment|/* Number of colors in colormap */
@@ -1045,7 +1045,7 @@ comment|/* Return values */
 ifdef|#
 directive|ifdef
 name|__EMX__
-name|char
+name|gchar
 modifier|*
 name|tmpfile
 decl_stmt|;
@@ -1062,28 +1062,31 @@ init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
 comment|/* return value of gimp_export_image() */
-name|int
+name|gint
 name|ppid
 init|=
 name|getpid
 argument_list|()
-decl_stmt|,
+decl_stmt|;
 comment|/* PID of plugin */
+name|gint
 name|opid
-decl_stmt|,
+decl_stmt|;
 comment|/* PID of output process */
+name|gint
 name|cpid
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
 comment|/* PID of control/monitor process */
+name|gint
 name|pipefd
 index|[
 literal|2
 index|]
 decl_stmt|;
 comment|/* Fds of the pipe connecting all the above */
-name|int
+name|gint
 name|dummy
 decl_stmt|;
 ifdef|#
@@ -1099,6 +1102,13 @@ directive|endif
 comment|/*   * Initialise libgimpprint   */
 name|stp_init
 argument_list|()
+expr_stmt|;
+name|bind_textdomain_codeset
+argument_list|(
+literal|"gimp-print"
+argument_list|,
+literal|"UTF-8"
+argument_list|)
 expr_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -2354,7 +2364,7 @@ else|#
 directive|else
 block|{
 comment|/* PRINT temp file */
-name|char
+name|gchar
 modifier|*
 name|s
 decl_stmt|;
@@ -2524,9 +2534,7 @@ argument_list|()
 expr_stmt|;
 comment|/*    * Return ok/cancel...    */
 return|return
-operator|(
 name|runme
-operator|)
 return|;
 block|}
 end_function
@@ -3072,7 +3080,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/* Looping var */
@@ -3081,12 +3089,12 @@ modifier|*
 name|fp
 decl_stmt|;
 comment|/* Printrc file */
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
 comment|/* Its name */
-name|char
+name|gchar
 name|line
 index|[
 literal|1024
@@ -3105,17 +3113,17 @@ name|gp_plist_t
 name|key
 decl_stmt|;
 comment|/* Search key */
-name|int
+name|gint
 name|format
 init|=
 literal|0
 decl_stmt|;
 comment|/* rc file format version */
-name|int
+name|gint
 name|system_printers
 decl_stmt|;
 comment|/* printer count before reading printrc */
-name|char
+name|gchar
 modifier|*
 name|current_printer
 init|=
@@ -4592,12 +4600,12 @@ modifier|*
 name|fp
 decl_stmt|;
 comment|/* Printrc file */
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
 comment|/* Printrc filename */
-name|int
+name|gint
 name|i
 decl_stmt|;
 comment|/* Looping var */
