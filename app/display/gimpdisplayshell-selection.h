@@ -21,38 +21,12 @@ DECL|struct|_Selection
 struct|struct
 name|_Selection
 block|{
-comment|/*  This information is for maintaining the selection's appearance  */
-DECL|member|win
-name|GdkWindow
-modifier|*
-name|win
-decl_stmt|;
-comment|/*  Window to draw to                   */
 DECL|member|shell
 name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
-comment|/*  GimpDisplay that owns the selection */
-DECL|member|gc_in
-name|GdkGC
-modifier|*
-name|gc_in
-decl_stmt|;
-comment|/*  GC for drawing selection outline    */
-DECL|member|gc_out
-name|GdkGC
-modifier|*
-name|gc_out
-decl_stmt|;
-comment|/*  GC for selected regions outside     *                                        *  current layer                       */
-DECL|member|gc_layer
-name|GdkGC
-modifier|*
-name|gc_layer
-decl_stmt|;
-comment|/*  GC for current layer outline        */
-comment|/*  This information is for drawing the marching ants around the border   */
+comment|/*  shell that owns the selection     */
 DECL|member|segs_in
 name|GdkSegment
 modifier|*
@@ -86,9 +60,9 @@ name|gint
 name|num_segs_layer
 decl_stmt|;
 comment|/*  number of segments in segs3       */
-DECL|member|index_in
-name|gint
-name|index_in
+DECL|member|index
+name|guint
+name|index
 decl_stmt|;
 comment|/*  index of current stipple pattern  */
 DECL|member|state
@@ -127,7 +101,6 @@ modifier|*
 name|cycle_pix
 decl_stmt|;
 comment|/*  cycling pixmap                    */
-comment|/* These are used only if USE_XDRAWPOINTS is defined.                     */
 DECL|member|points_in
 name|GdkPoint
 modifier|*
@@ -145,18 +118,6 @@ literal|8
 index|]
 decl_stmt|;
 comment|/*  number of points in points_in     */
-DECL|member|gc_white
-name|GdkGC
-modifier|*
-name|gc_white
-decl_stmt|;
-comment|/*  gc for drawing white points       */
-DECL|member|gc_black
-name|GdkGC
-modifier|*
-name|gc_black
-decl_stmt|;
-comment|/*  gc for drawing black points       */
 block|}
 struct|;
 end_struct
@@ -164,21 +125,11 @@ end_struct
 begin_function_decl
 name|Selection
 modifier|*
-name|gimp_display_shell_selection_create
+name|gimp_display_shell_selection_new
 parameter_list|(
-name|GdkWindow
-modifier|*
-name|window
-parameter_list|,
 name|GimpDisplayShell
 modifier|*
-name|gdisp
-parameter_list|,
-name|gint
-name|size
-parameter_list|,
-name|gint
-name|width
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a40e2e60103
+DECL|enum|__anon2c840cc50103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2895,6 +2895,15 @@ operator|=
 name|gimp_canvas_new
 argument_list|()
 expr_stmt|;
+name|shell
+operator|->
+name|select
+operator|=
+name|gimp_display_shell_selection_new
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 comment|/*  the horizontal ruler  */
 name|shell
 operator|->
@@ -5343,11 +5352,6 @@ name|gboolean
 name|active
 parameter_list|)
 block|{
-name|GimpCanvasStyle
-name|style
-init|=
-literal|0
-decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -5528,16 +5532,6 @@ name|y2
 operator|=
 name|y
 expr_stmt|;
-name|style
-operator|=
-operator|(
-name|active
-condition|?
-name|GIMP_CANVAS_STYLE_HGUIDE_ACTIVE
-else|:
-name|GIMP_CANVAS_STYLE_HGUIDE_NORMAL
-operator|)
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_ORIENTATION_VERTICAL
@@ -5567,16 +5561,6 @@ name|x2
 operator|=
 name|x
 expr_stmt|;
-name|style
-operator|=
-operator|(
-name|active
-condition|?
-name|GIMP_CANVAS_STYLE_VGUIDE_ACTIVE
-else|:
-name|GIMP_CANVAS_STYLE_VGUIDE_NORMAL
-operator|)
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_ORIENTATION_UNKNOWN
@@ -5592,7 +5576,13 @@ operator|->
 name|canvas
 argument_list|)
 argument_list|,
-name|style
+operator|(
+name|active
+condition|?
+name|GIMP_CANVAS_STYLE_GUIDE_ACTIVE
+else|:
+name|GIMP_CANVAS_STYLE_GUIDE_NORMAL
+operator|)
 argument_list|,
 name|x1
 argument_list|,
