@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMPOLDPREVIEW  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmiscui.h  * Contains all kinds of miscellaneous routines factored out from different  * plug-ins. They stay here until their API has crystalized a bit and we can  * put them into the file where they belong (Maurits Rijk  *<lpeek.mrijk@consunet.nl> if you want to blame someone for this mess)  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMPOLDPREVIEW  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpoldpreview.h  * This file contains the implementation of the gimpoldpreview widget  * witch is used a a few plug-ins.  This shouldn't be used by any   * foreign plug-in, because it uses some deprecated stuff.  We only  * used it there since we do not a better preview widget for now.  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -37,7 +37,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff2f320108
+DECL|struct|__anon2aa82a130108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -302,24 +302,6 @@ parameter_list|,
 name|guchar
 modifier|*
 name|pixel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gchar
-modifier|*
-name|gimp_plug_in_get_path
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|path_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|dir_name
 parameter_list|)
 function_decl|;
 end_function_decl
