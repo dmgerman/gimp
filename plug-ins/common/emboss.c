@@ -70,7 +70,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990cc340103
+DECL|enum|__anon29c9fd560103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -568,7 +568,7 @@ argument_list|(
 literal|"<Image>/Filters/Distorts/Emboss..."
 argument_list|)
 argument_list|,
-literal|"RGB"
+literal|"RGB*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
