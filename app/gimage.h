@@ -334,6 +334,14 @@ value|gimp_image_get_layer_index
 end_define
 
 begin_define
+DECL|macro|gimage_get_layer_by_index
+define|#
+directive|define
+name|gimage_get_layer_by_index
+value|gimp_image_get_layer_by_index
+end_define
+
+begin_define
 DECL|macro|gimage_get_channel_index
 define|#
 directive|define

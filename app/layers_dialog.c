@@ -7454,18 +7454,11 @@ operator|->
 name|active_layer
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: don't use internal knowledge about layer lists    *  TODO : implement gimp_image_get_layer_by_index()    */
 name|new_layer
 operator|=
-operator|(
-name|Layer
-operator|*
-operator|)
-name|g_slist_nth_data
+name|gimp_image_get_layer_by_index
 argument_list|(
 name|gimage
-operator|->
-name|layers
 argument_list|,
 name|current_layer
 operator|-
@@ -7541,18 +7534,11 @@ operator|->
 name|active_layer
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: don't use internal knowledge about layer lists    *  TODO : implement gimp_image_get_layer_by_index()    */
 name|new_layer
 operator|=
-operator|(
-name|Layer
-operator|*
-operator|)
-name|g_slist_nth_data
+name|gimp_image_get_layer_by_index
 argument_list|(
 name|gimage
-operator|->
-name|layers
 argument_list|,
 name|current_layer
 operator|+
@@ -10949,7 +10935,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b191e810108
+DECL|struct|__anon2b2ce92c0108
 block|{
 DECL|member|gimage
 name|GimpImage

@@ -205,7 +205,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c012a710103
+DECL|enum|__anon2bcbb3520103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -224,7 +224,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c012a710203
+DECL|enum|__anon2bcbb3520203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c012a710303
+DECL|enum|__anon2bcbb3520303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c012a710403
+DECL|enum|__anon2bcbb3520403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -921,6 +921,19 @@ modifier|*
 parameter_list|,
 name|Layer
 modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|Layer
+modifier|*
+name|gimp_image_get_layer_by_index
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl

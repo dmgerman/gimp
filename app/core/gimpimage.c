@@ -576,7 +576,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b204ad70103
+DECL|enum|__anon2bd5db030103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -2493,10 +2493,7 @@ operator|==
 name|FALSE
 condition|)
 block|{
-comment|/* Since 0< img_scale_w, img_scale_h, failure due to one or more     */
-comment|/* vanishing scaled layer dimensions. Implicit delete implemented     */
-comment|/* here. Upstream warning implemented in resize_check_layer_scaling() */
-comment|/* [resize.c line 1295], which offers the user the chance to bail out.*/
+comment|/* Since 0< img_scale_w, img_scale_h, failure due to one or more 	   * vanishing scaled layer dimensions. Implicit delete implemented 	   * here. Upstream warning implemented in resize_check_layer_scaling() 	   * [resize.c line 1295], which offers the user the chance to bail out. 	   */
 name|remove
 operator|=
 name|g_slist_append
@@ -3439,6 +3436,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|combine_regions
 argument_list|(
 operator|&
@@ -3462,6 +3460,7 @@ argument_list|,
 name|operation
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -4121,6 +4120,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|combine_regions_replace
 argument_list|(
 operator|&
@@ -4142,6 +4142,7 @@ argument_list|,
 name|operation
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -7100,7 +7101,8 @@ name|channel
 decl_stmt|;
 name|PixelRegion
 name|src1PR
-decl_stmt|,
+decl_stmt|;
+name|PixelRegion
 name|src2PR
 decl_stmt|;
 name|GSList
@@ -7612,9 +7614,7 @@ directive|if
 literal|0
 block|gint xoff;   gint yoff;
 comment|/*  set the construct flag, used to determine if anything    *  has been written to the gimage raw image yet.    */
-block|gimage->construct_flag = 0;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE((Layer*)(gimage->layers->data)),&xoff,&yoff);     }    if (
-comment|/*can_use_cowproject&&*/
-block|(gimage->layers)&&
+block|gimage->construct_flag = 0;    if (gimage->layers)     {       gimp_drawable_offsets (GIMP_DRAWABLE ((Layer*) gimage->layers->data),&xoff,&yoff);     }    if ((gimage->layers)&&
 comment|/* There's a layer.      */
 block|(!g_slist_next(gimage->layers))&&
 comment|/* It's the only layer.  */
@@ -8522,6 +8522,64 @@ block|}
 end_function
 
 begin_function
+name|Layer
+modifier|*
+DECL|function|gimp_image_get_layer_by_index (GimpImage * gimage,gint layer_index)
+name|gimp_image_get_layer_by_index
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|gint
+name|layer_index
+parameter_list|)
+block|{
+name|Layer
+modifier|*
+name|layer
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|layer
+operator|=
+operator|(
+name|Layer
+operator|*
+operator|)
+name|g_slist_nth_data
+argument_list|(
+name|gimage
+operator|->
+name|layers
+argument_list|,
+name|layer_index
+argument_list|)
+expr_stmt|;
+return|return
+name|layer
+return|;
+block|}
+end_function
+
+begin_function
 name|gint
 DECL|function|gimp_image_get_channel_index (GimpImage * gimage,Channel * channel_ID)
 name|gimp_image_get_channel_index
@@ -8546,6 +8604,16 @@ decl_stmt|;
 name|gint
 name|index
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -8620,6 +8688,15 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE

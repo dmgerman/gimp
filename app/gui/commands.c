@@ -3301,20 +3301,13 @@ operator|->
 name|active_layer
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: don't use internal knowledge about layer lists    *  TODO : implement gimage_get_layer_by_index()    */
 name|new_layer
 operator|=
-operator|(
-name|Layer
-operator|*
-operator|)
-name|g_slist_nth_data
+name|gimage_get_layer_by_index
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|layers
 argument_list|,
 name|current_layer
 operator|-
@@ -3386,20 +3379,13 @@ operator|->
 name|active_layer
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: don't use internal knowledge about layer lists    *  TODO : implement gimage_get_layer_by_index()    */
 name|new_layer
 operator|=
-operator|(
-name|Layer
-operator|*
-operator|)
-name|g_slist_nth_data
+name|gimage_get_layer_by_index
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
-operator|->
-name|layers
 argument_list|,
 name|current_layer
 operator|+
