@@ -51,6 +51,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_displays_reconnect
+parameter_list|(
+name|gint32
+name|old_image_ID
+parameter_list|,
+name|gint32
+name|new_image_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
