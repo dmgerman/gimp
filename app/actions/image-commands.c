@@ -558,6 +558,10 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|gimage
@@ -568,6 +572,13 @@ expr_stmt|;
 name|return_if_no_widget
 argument_list|(
 name|widget
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_display
+argument_list|(
+name|gdisp
 argument_list|,
 name|data
 argument_list|)
@@ -606,6 +617,10 @@ argument_list|,
 literal|0
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -624,6 +639,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|widget
+argument_list|,
+name|gdisp
 argument_list|)
 argument_list|)
 expr_stmt|;

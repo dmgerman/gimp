@@ -216,6 +216,10 @@ argument_list|,
 literal|0
 argument_list|,
 name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
@@ -379,6 +383,10 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -788,6 +796,10 @@ argument_list|,
 name|palette_type
 argument_list|,
 name|palette
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
