@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  *  * unsharp.c 0.8 -- This is a plug-in for the GIMP 1.0  *  http://www.steppe.com/~winston/gimp/unsharp.html  *  * Copyright (C) 1999 Winston Chang  *<wchang3@students.wisc.edu>  *<winston@steppe.com>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* $Id$  *  * unsharp.c 0.10 -- This is a plug-in for the GIMP 1.0  *  http://www.steppe.com/~winston/gimp/unsharp.html  *  * Copyright (C) 1999 Winston Chang  *<wchang3@students.wisc.edu>  *<winston@steppe.com>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -56,7 +56,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"0.8"
+value|"0.10"
 end_define
 
 begin_comment
@@ -127,7 +127,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2a28ec7c0108
+DECL|struct|__anon2c63ebab0108
 typedef|typedef
 struct|struct
 block|{
@@ -150,7 +150,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a28ec7c0208
+DECL|struct|__anon2c63ebab0208
 typedef|typedef
 struct|struct
 block|{
@@ -739,7 +739,15 @@ name|PARAM_FLOAT
 block|,
 literal|"amount"
 block|,
-literal|"Strength of effect."
+literal|"Strength of effect"
+block|}
+block|,
+block|{
+name|PARAM_FLOAT
+block|,
+literal|"threshold"
+block|,
+literal|"Threshold"
 block|}
 block|}
 decl_stmt|;
@@ -789,7 +797,7 @@ literal|"Winston Chang"
 argument_list|,
 literal|"1999"
 argument_list|,
-literal|"<Image>/Filters/Enhance/Unsharp Mask..."
+literal|"<Image>/Filters/Enhance/Unsharp Mask"
 argument_list|,
 literal|"GRAY*, RGB*"
 argument_list|,
@@ -937,7 +945,7 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|4
+literal|6
 condition|)
 name|status
 operator|=
@@ -978,21 +986,28 @@ name|data
 operator|.
 name|d_float
 expr_stmt|;
-block|}
+name|unsharp_params
+operator|.
+name|threshold
+operator|=
+name|param
+index|[
+literal|5
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
 comment|/* make sure there are legal values */
 if|if
 condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-operator|&&
-operator|(
 operator|(
 name|unsharp_params
 operator|.
 name|radius
 operator|<
-literal|0
+literal|0.0
 operator|)
 operator|||
 operator|(
@@ -1000,14 +1015,14 @@ name|unsharp_params
 operator|.
 name|amount
 operator|<
-literal|0
-operator|)
+literal|0.0
 operator|)
 condition|)
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -4292,6 +4307,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* This doesn't work yet. */
+end_comment
 
 begin_ifdef
 ifdef|#
