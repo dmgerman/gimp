@@ -1644,7 +1644,6 @@ name|paint_core
 operator|->
 name|curytilt
 expr_stmt|;
-empty_stmt|;
 block|}
 else|else
 call|(
