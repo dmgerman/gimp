@@ -2829,7 +2829,7 @@ name|no_xpm
 argument_list|,
 name|_
 argument_list|(
-literal|"Delete Unit"
+literal|"Don't Save Unit"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2896,7 +2896,7 @@ name|yes_xpm
 argument_list|,
 name|_
 argument_list|(
-literal|"Undelete Unit"
+literal|"Save Unit"
 argument_list|)
 argument_list|)
 expr_stmt|;
