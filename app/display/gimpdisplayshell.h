@@ -626,6 +626,12 @@ DECL|member|last_motion_time
 name|guint32
 name|last_motion_time
 decl_stmt|;
+DECL|member|highlight
+name|GdkRectangle
+modifier|*
+name|highlight
+decl_stmt|;
+comment|/* in image coordinates, can be NULL   */
 block|}
 struct|;
 end_struct
@@ -937,6 +943,22 @@ name|shell
 parameter_list|,
 name|GimpSelectionControl
 name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_set_highlight
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+specifier|const
+name|GdkRectangle
+modifier|*
+name|highlight
 parameter_list|)
 function_decl|;
 end_function_decl
