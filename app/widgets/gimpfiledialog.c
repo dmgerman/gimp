@@ -2539,6 +2539,14 @@ operator|&
 name|name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|dialog
+operator|->
+name|file_proc
+condition|)
+return|return;
 name|label
 operator|=
 name|g_strdup_printf
@@ -2593,8 +2601,6 @@ name|file_proc
 decl_stmt|;
 if|if
 condition|(
-name|proc
-operator|&&
 name|proc
 operator|->
 name|extensions_list
