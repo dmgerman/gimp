@@ -145,7 +145,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon293363250103
+DECL|enum|__anon2b7744f50103
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -360,7 +360,7 @@ name|pick_state
 decl_stmt|;
 comment|/*  was ctrl or alt pressed when clicked? */
 DECL|member|flags
-name|int
+name|ToolFlags
 name|flags
 decl_stmt|;
 comment|/*  tool flags, see ToolFlags above       */

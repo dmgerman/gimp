@@ -237,7 +237,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|smudge_init
 parameter_list|(
 name|PaintCore
@@ -623,6 +623,13 @@ name|int
 name|state
 parameter_list|)
 block|{
+comment|/* initialization fails if the user starts outside the drawable */
+specifier|static
+name|gboolean
+name|initialized
+init|=
+name|FALSE
+decl_stmt|;
 switch|switch
 condition|(
 name|state
@@ -631,6 +638,8 @@ block|{
 case|case
 name|INIT_PAINT
 case|:
+name|initialized
+operator|=
 name|smudge_init
 argument_list|(
 name|paint_core
@@ -642,6 +651,24 @@ break|break;
 case|case
 name|MOTION_PAINT
 case|:
+if|if
+condition|(
+operator|!
+name|initialized
+condition|)
+name|initialized
+operator|=
+name|smudge_init
+argument_list|(
+name|paint_core
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|initialized
+condition|)
 name|smudge_motion
 argument_list|(
 name|paint_core
@@ -669,6 +696,10 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|)
+expr_stmt|;
+name|initialized
+operator|=
+name|FALSE
 expr_stmt|;
 break|break;
 block|}
@@ -814,7 +845,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|smudge_init (PaintCore * paint_core,GimpDrawable * drawable)
 name|smudge_init
 parameter_list|(
@@ -856,24 +887,6 @@ name|do_fill
 init|=
 name|NULL
 decl_stmt|;
-comment|/*  adjust the x and y coordinates to the upper left corner of the brush  */
-name|smudge_nonclipped_painthit_coords
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|x
-argument_list|,
-operator|&
-name|y
-argument_list|,
-operator|&
-name|w
-argument_list|,
-operator|&
-name|h
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -886,7 +899,9 @@ name|drawable
 argument_list|)
 operator|)
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 comment|/*  If the image type is indexed, don't smudge  */
 if|if
 condition|(
@@ -908,7 +923,9 @@ operator|==
 name|INDEXEDA_GIMAGE
 operator|)
 condition|)
-return|return;
+return|return
+name|FALSE
+return|;
 name|area
 operator|=
 name|paint_core_get_paint_area
@@ -925,11 +942,27 @@ condition|(
 operator|!
 name|area
 condition|)
-name|was_clipped
-operator|=
-name|TRUE
+return|return
+name|FALSE
+return|;
+comment|/*  adjust the x and y coordinates to the upper left corner of the brush  */
+name|smudge_nonclipped_painthit_coords
+argument_list|(
+name|paint_core
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|,
+operator|&
+name|w
+argument_list|,
+operator|&
+name|h
+argument_list|)
 expr_stmt|;
-elseif|else
 if|if
 condition|(
 name|x
@@ -965,13 +998,7 @@ name|was_clipped
 operator|=
 name|FALSE
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|area
-condition|)
-return|return;
-comment|/* When clipped, accum_data may contain pixels that map to      off-canvas pixels of the under-the- brush image, particularly      when the brush image contains an edge or corner of the      image. These off-canvas pixels are not a part of the current      composite, but may be composited in later generations. do_fill      contains a copy of the color of the pixel at the center of the      brush; assumed this is a reasonable choice for off- canvas pixels      that may enter into the blend */
+comment|/* When clipped, accum_data may contain pixels that map to      off-canvas pixels of the under-the-brush image, particulary      when the brush image contains an edge or corner of the      image. These off-canvas pixels are not a part of the current      composite, but may be composited in later generations. do_fill      contains a copy of the color of the pixel at the center of the      brush; assumed this is a reasonable choice for off- canvas pixels      that may enter into the blend */
 if|if
 condition|(
 name|was_clipped
@@ -982,6 +1009,8 @@ name|gimp_drawable_get_color_at
 argument_list|(
 name|drawable
 argument_list|,
+name|CLAMP
+argument_list|(
 operator|(
 name|gint
 operator|)
@@ -989,12 +1018,34 @@ name|paint_core
 operator|->
 name|curx
 argument_list|,
+literal|0
+argument_list|,
+name|gimp_drawable_width
+argument_list|(
+name|drawable
+argument_list|)
+operator|-
+literal|1
+argument_list|)
+argument_list|,
+name|CLAMP
+argument_list|(
 operator|(
 name|gint
 operator|)
 name|paint_core
 operator|->
 name|cury
+argument_list|,
+literal|0
+argument_list|,
+name|gimp_drawable_height
+argument_list|(
+name|drawable
+argument_list|)
+operator|-
+literal|1
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|smudge_allocate_accum_buffer
@@ -1003,7 +1054,7 @@ name|w
 argument_list|,
 name|h
 argument_list|,
-name|drawable_bytes
+name|gimp_drawable_bytes
 argument_list|(
 name|drawable
 argument_list|)
@@ -1195,6 +1246,9 @@ argument_list|(
 name|do_fill
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
