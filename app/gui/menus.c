@@ -2237,7 +2237,7 @@ operator|!
 name|initialize
 condition|)
 block|{
-name|gtk_object_destroy
+name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -2245,7 +2245,7 @@ name|toolbox_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_object_destroy
+name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -2253,7 +2253,7 @@ name|image_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_object_destroy
+name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
@@ -2261,7 +2261,7 @@ name|load_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_object_destroy
+name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
