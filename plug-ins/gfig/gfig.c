@@ -450,7 +450,13 @@ literal|"plug_in_gfig"
 argument_list|,
 literal|"Create Geometrical shapes with the Gimp"
 argument_list|,
-literal|"More here later"
+literal|"Draw Vector Graphics and paint them onto your images.  "
+literal|"Gfig allows you to draw many types of objects "
+literal|"inlcuding Lines, Circles, Ellipses, Curves, Polygons, "
+literal|"pointed stars, Bezier curves, and Spirals.  "
+literal|"Objects can be painted using Brushes or other tools"
+literal|"or filled using colours or patterns.  "
+literal|"Gfig objects can also be used to create selections.  "
 argument_list|,
 literal|"Andy Thomas"
 argument_list|,

@@ -84,7 +84,7 @@ name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 function_decl|;
@@ -98,7 +98,7 @@ name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 function_decl|;
