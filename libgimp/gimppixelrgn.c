@@ -200,6 +200,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/**  * gimp_pixel_rgn_init:  * @pr:        a pointer to a #GimpPixelRgn variable.  * @drawable:  the #GimpDrawable the new region will be attached to.  * @x:         the abscisse of the top-left pixel of the region in the @drawable.  * @y:         the ordinate of the top-left pixel of the region in the @drawable.  * @width:     the width of the region.  * @height:    the height of the region.  * @dirty:     a #gboolean indicating whether changing this region should  *             makes the @drawable "dirty".  * @shadow:    a #gboolean indicating whether the region is attached to the  *             shadow tiles or the real @drawable tiles.  *  * Initialize the pixel region pointed by @pr with the specified parameters.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pixel_rgn_init (GimpPixelRgn * pr,GimpDrawable * drawable,gint x,gint y,gint width,gint height,gboolean dirty,gboolean shadow)
@@ -345,6 +349,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_rgn_resize:  * @pr:      a pointer to a previously initialized #GimpPixelRgn.  * @x:       the abscisse of the new position of the region's top-left corner.  * @y:       the ordinate of the new position of the region's top-left corner.  * @width:   the new width of the region.  * @height:  the new height of the region.  *  * Change the position and size of a previously initialized pixel region.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pixel_rgn_resize (GimpPixelRgn * pr,gint x,gint y,gint width,gint height)
@@ -478,6 +486,10 @@ name|height
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pixel_rgn_get_pixel:  * @pr:    a pointer to a previously initialized #GimpPixelRgn.  * @buf:   a pointer to an array of #guchar  * @x:     the abscisse of the wanted pixel (relative to the drawable)  * @y:     the ordinate of the wanted pixel (relative to the drawable)  *  * Fill the buffer pointed by @buf with the value of the pixel at (@x, @y)  * in the region @pr. @buf should be large enough to hold the pixel value  * (1 #guchar for an indexed or grayscale drawable, 2 #guchar for  * indexed with alpha or grayscale with alpha drawable, 3 #guchar for   * rgb drawable and 4 #guchar for rgb with alpha drawable.  **/
+end_comment
 
 begin_function
 name|void
@@ -635,6 +647,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pixel_rgn_get_row:  * @pr:     a pointer to a previously initialized #GimpPixelRgn.  * @buf:  * @x:  * @y:  * @width:  *  * Get several pixels of a region in a row.  **/
+end_comment
 
 begin_function
 name|void
@@ -949,6 +965,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_rgn_get_col:  * @pr: a pointer to a previously initialized #GimpPixelRgn.  * @buf:  * @x:  * @y:  * @height:  *  * Get several pixels of a column of a region.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pixel_rgn_get_col (GimpPixelRgn * pr,guchar * buf,gint x,gint y,gint height)
@@ -1194,6 +1214,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pixel_rgn_get_rect:  * @pr: a pointer to a previously initialized #GimpPixelRgn.  * @buf:  * @x:  * @y:  * @width:  * @height:  *  * Get a rectangle of pixels from a region.  **/
+end_comment
 
 begin_function
 name|void
@@ -1621,6 +1645,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_rgn_set_pixel:  * @pr: a pointer to a previously initialized #GimpPixelRgn.  * @buf:  * @x:  * @y:  *  *  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pixel_rgn_set_pixel (GimpPixelRgn * pr,const guchar * buf,gint x,gint y)
@@ -1785,6 +1813,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pixel_rgn_set_row:  * @pr: a pointer to a previously initialized #GimpPixelRgn.  * @buf:  * @x:  * @y:  * @width:  *  *  **/
+end_comment
 
 begin_function
 name|void
@@ -2080,6 +2112,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_rgn_set_col:  * @pr: a pointer to a previously initialized #GimpPixelRgn.  * @buf:  * @x:  * @y:  * @height:  *  *  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pixel_rgn_set_col (GimpPixelRgn * pr,const guchar * buf,gint x,gint y,gint height)
@@ -2326,6 +2362,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_pixel_rgn_set_rect:  * @pr: a pointer to a previously initialized #GimpPixelRgn.  * @buf:  * @x:  * @y:  * @width:  * @height:  *  *  **/
+end_comment
 
 begin_function
 name|void
@@ -2755,6 +2795,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_rgns_register2:  * @nrgns:  * @prs:  *  *  *  * Returns: a #gpointer to   **/
+end_comment
+
 begin_function
 name|gpointer
 DECL|function|gimp_pixel_rgns_register2 (gint nrgns,GimpPixelRgn ** prs)
@@ -2959,6 +3003,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_rgns_register:  * @nrgns:  * ...  *  *  *  * Returns: a #gpointer to  **/
+end_comment
+
 begin_function
 name|gpointer
 DECL|function|gimp_pixel_rgns_register (gint nrgns,...)
@@ -3058,6 +3106,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_pixel_rgns_process:  * pri_ptr:  *  *   *  * Returns: a #gpointer to  **/
+end_comment
+
 begin_function
 name|gpointer
 DECL|function|gimp_pixel_rgns_process (gpointer pri_ptr)
@@ -3146,7 +3198,7 @@ name|process_count
 operator|)
 condition|)
 block|{
-comment|/*  This eliminates the possibility of incrementing the 	   *  same region twice 	   */
+comment|/*  This eliminates the possibility of incrementing the            *  same region twice            */
 name|prh
 operator|->
 name|pr
