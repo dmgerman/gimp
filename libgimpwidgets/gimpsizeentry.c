@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpsizeentry.c  * Copyright (C) 1999-2000 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>   *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpsizeentry.c  * Copyright (C) 1999-2000 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -66,7 +66,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298d7ff90103
+DECL|enum|__anon2a2046920103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1420,6 +1420,9 @@ name|GimpSizeEntryField
 modifier|*
 name|gsef
 decl_stmt|;
+name|gint
+name|digits
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_SIZE_ENTRY
@@ -1644,13 +1647,9 @@ name|gsef
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_spin_button_set_digits
-argument_list|(
-name|GTK_SPIN_BUTTON
-argument_list|(
-name|value_spinbutton
-argument_list|)
-argument_list|,
+name|digits
+operator|=
+operator|(
 operator|(
 name|gse
 operator|->
@@ -1679,6 +1678,16 @@ name|gse
 operator|->
 name|unit
 argument_list|)
+operator|)
+expr_stmt|;
+name|gtk_spin_button_set_digits
+argument_list|(
+name|GTK_SPIN_BUTTON
+argument_list|(
+name|value_spinbutton
+argument_list|)
+argument_list|,
+name|digits
 argument_list|)
 expr_stmt|;
 if|if
@@ -3858,7 +3867,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_unit:  * @gse: The sizeentry you want to know the unit of.  *  * Returns the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.   *  * Returns: The sizeentry's unit.  **/
+comment|/**  * gimp_size_entry_get_unit:  * @gse: The sizeentry you want to know the unit of.  *  * Returns the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * Returns: The sizeentry's unit.  **/
 end_comment
 
 begin_function
@@ -3919,6 +3928,18 @@ name|unit
 operator|=
 name|unit
 expr_stmt|;
+name|digits
+operator|=
+name|gimp_unit_menu_get_pixel_digits
+argument_list|(
+name|GIMP_UNIT_MENU
+argument_list|(
+name|gse
+operator|->
+name|unitmenu
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -3977,6 +3998,8 @@ argument_list|,
 name|gsef
 operator|->
 name|refval_digits
+operator|+
+name|digits
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -3996,6 +4019,8 @@ name|value_spinbutton
 argument_list|)
 argument_list|,
 literal|2
+operator|+
+name|digits
 argument_list|)
 expr_stmt|;
 else|else
@@ -4012,6 +4037,8 @@ name|GIMP_SIZE_ENTRY_DIGITS
 argument_list|(
 name|unit
 argument_list|)
+operator|+
+name|digits
 argument_list|)
 expr_stmt|;
 block|}
@@ -4027,20 +4054,19 @@ condition|)
 block|{
 name|digits
 operator|=
-operator|-
 operator|(
 name|_gimp_eek
 operator|.
 name|unit_get_digits
 argument_list|(
-name|unit
+name|GIMP_UNIT_INCH
 argument_list|)
 operator|-
 name|_gimp_eek
 operator|.
 name|unit_get_digits
 argument_list|(
-name|GIMP_UNIT_INCH
+name|unit
 argument_list|)
 operator|)
 expr_stmt|;
@@ -4115,7 +4141,7 @@ name|gse
 argument_list|,
 name|gimp_size_entry_signals
 index|[
-name|VALUE_CHANGED
+name|UNIT_CHANGED
 index|]
 argument_list|,
 literal|0
@@ -4227,16 +4253,62 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_signal_emit
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_size_entry_set_pixel_digits:  * @gse: a #GimpSizeEntry  * @digits: the number of digits to display for a pixel size  *  * Similar to gimp_unit_menu_set_pixel_digits(), this function allows  * you set up a #GimpSizeEntry so that sub-pixel sizes can be entered.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_size_entry_set_pixel_digits (GimpSizeEntry * gse,gint digits)
+name|gimp_size_entry_set_pixel_digits
+parameter_list|(
+name|GimpSizeEntry
+modifier|*
+name|gse
+parameter_list|,
+name|gint
+name|digits
+parameter_list|)
+block|{
+name|GimpUnitMenu
+modifier|*
+name|menu
+decl_stmt|;
+name|g_return_if_fail
 argument_list|(
-name|data
+name|GIMP_IS_SIZE_ENTRY
+argument_list|(
+name|gse
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|menu
+operator|=
+name|GIMP_UNIT_MENU
+argument_list|(
+name|gse
+operator|->
+name|unitmenu
+argument_list|)
+expr_stmt|;
+name|gimp_unit_menu_set_pixel_digits
+argument_list|(
+name|menu
 argument_list|,
-name|gimp_size_entry_signals
-index|[
-name|UNIT_CHANGED
-index|]
+name|digits
+argument_list|)
+expr_stmt|;
+name|gimp_size_entry_update_unit
+argument_list|(
+name|gse
 argument_list|,
-literal|0
+name|gimp_unit_menu_get_unit
+argument_list|(
+name|menu
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

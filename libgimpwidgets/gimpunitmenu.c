@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1999 Peter Mattis and Spencer Kimball  *  * gimpunitmenu.c  * Copyright (C) 1999 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU   * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1999 Peter Mattis and Spencer Kimball  *  * gimpunitmenu.c  * Copyright (C) 1999 Michael Natterer<mitch@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-private.h"
 end_include
 
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297740890103
+DECL|enum|__anon2a2f94e80103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297740890203
+DECL|enum|__anon2a2f94e80203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -1491,6 +1497,18 @@ operator|)
 operator|)
 argument_list|)
 expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|menu
+argument_list|,
+name|gimp_unit_menu_signals
+index|[
+name|UNIT_CHANGED
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1522,6 +1540,86 @@ return|return
 name|menu
 operator|->
 name|unit
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_unit_menu_set_pixel_digits:  * @menu: a #GimpUnitMenu  * @digits: the number of digits to display for a pixel size  *  * A GimpUnitMenu can be setup to control the number of digits shown  * by attached spinbuttons. Please refer to the documentation of  * gimp_unit_menu_update() to see how this is done.  *  * This function allows to specify the number of digits shown for a  * size in pixels. Usually this is 0 (only full pixels). If you want  * to allow the user to specify sub-pixel sizes using the attached  * spinbuttons, specify the number of digits after the decimal point  * here. You should do this after attaching your spinbuttons.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_unit_menu_set_pixel_digits (GimpUnitMenu * menu,gint digits)
+name|gimp_unit_menu_set_pixel_digits
+parameter_list|(
+name|GimpUnitMenu
+modifier|*
+name|menu
+parameter_list|,
+name|gint
+name|digits
+parameter_list|)
+block|{
+name|GimpUnit
+name|unit
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_UNIT_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|menu
+operator|->
+name|pixel_digits
+operator|=
+name|digits
+expr_stmt|;
+name|gimp_unit_menu_update
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+operator|&
+name|unit
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_unit_menu_get_pixel_digits:  * @menu: a #GimpUnitMenu  *  * Retrieve the number of digits for a pixel size as set by  * gimp_unit_set_pixel_digits().  *  * Return value: the configured number of digits for a pixel size  **/
+end_comment
+
+begin_function
+name|gint
+DECL|function|gimp_unit_menu_get_pixel_digits (GimpUnitMenu * menu)
+name|gimp_unit_menu_get_pixel_digits
+parameter_list|(
+name|GimpUnitMenu
+modifier|*
+name|menu
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_UNIT_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|menu
+operator|->
+name|pixel_digits
 return|;
 block|}
 end_function
@@ -2000,18 +2098,6 @@ argument_list|(
 name|menu
 argument_list|,
 name|unit
-argument_list|)
-expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|menu
-argument_list|,
-name|gimp_unit_menu_signals
-index|[
-name|UNIT_CHANGED
-index|]
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
@@ -2800,18 +2886,6 @@ argument_list|(
 name|menu
 argument_list|,
 name|new_unit
-argument_list|)
-expr_stmt|;
-name|g_signal_emit
-argument_list|(
-name|menu
-argument_list|,
-name|gimp_unit_menu_signals
-index|[
-name|UNIT_CHANGED
-index|]
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}

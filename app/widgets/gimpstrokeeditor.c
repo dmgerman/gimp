@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7ab1970103
+DECL|enum|__anon2b29b4680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -690,6 +690,16 @@ argument_list|,
 literal|"set_digits"
 argument_list|,
 name|spinbutton
+argument_list|)
+expr_stmt|;
+name|gimp_unit_menu_set_pixel_digits
+argument_list|(
+name|GIMP_UNIT_MENU
+argument_list|(
+name|menu
+argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

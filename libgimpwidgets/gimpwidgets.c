@@ -2920,7 +2920,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8fed800108
+DECL|struct|__anon29d1778e0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -4570,6 +4570,16 @@ argument_list|)
 operator|)
 operator|)
 operator|)
+expr_stmt|;
+name|digits
+operator|+=
+name|gimp_unit_menu_get_pixel_digits
+argument_list|(
+name|GIMP_UNIT_MENU
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|spinbutton
 operator|=
