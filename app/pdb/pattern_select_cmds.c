@@ -138,12 +138,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_popup_invoker (Gimp * gimp,Argument * args)
+DECL|function|patterns_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|patterns_popup_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -305,6 +309,8 @@ name|pattern_select_new
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|popup_title
 argument_list|,
 name|initial_pattern
@@ -408,12 +414,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_close_popup_invoker (Gimp * gimp,Argument * args)
+DECL|function|patterns_close_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|patterns_close_popup_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -591,12 +601,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_set_popup_invoker (Gimp * gimp,Argument * args)
+DECL|function|patterns_set_popup_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|patterns_set_popup_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

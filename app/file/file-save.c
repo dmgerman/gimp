@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdocumentlist.h"
 end_include
 
@@ -195,12 +201,16 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (GimpImage * gimage,GimpRunMode run_mode,GError ** error)
+DECL|function|file_save (GimpImage * gimage,GimpContext * context,GimpRunMode run_mode,GError ** error)
 name|file_save
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRunMode
 name|run_mode
@@ -225,6 +235,16 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|GIMP_PDB_CALLING_ERROR
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
@@ -275,6 +295,8 @@ name|file_save_as
 argument_list|(
 name|gimage
 argument_list|,
+name|context
+argument_list|,
 name|uri
 argument_list|,
 name|uri
@@ -295,12 +317,16 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save_as (GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_uri_and_proc,gboolean set_image_clean,GError ** error)
+DECL|function|file_save_as (GimpImage * gimage,GimpContext * context,const gchar * uri,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_uri_and_proc,gboolean set_image_clean,GError ** error)
 name|file_save_as
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -359,6 +385,16 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|GIMP_PDB_CALLING_ERROR
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
@@ -689,6 +725,8 @@ argument_list|(
 name|gimage
 operator|->
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|proc
 operator|->

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -96,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275dc5260103
+DECL|enum|__anon2a0d6fd40103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -244,12 +250,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_crop (GimpImage * gimage,gint x1,gint y1,gint x2,gint y2,gboolean active_layer_only,gboolean crop_layers)
+DECL|function|gimp_image_crop (GimpImage * gimage,GimpContext * context,gint x1,gint y1,gint x2,gint y2,gboolean active_layer_only,gboolean crop_layers)
 name|gimp_image_crop
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|x1
@@ -280,6 +290,14 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -363,6 +381,8 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,
@@ -472,6 +492,8 @@ name|gimp_item_resize
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -522,6 +544,8 @@ name|gimp_item_resize
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -544,6 +568,8 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,
@@ -720,6 +746,8 @@ condition|)
 name|gimp_item_resize
 argument_list|(
 name|item
+argument_list|,
+name|context
 argument_list|,
 name|width
 argument_list|,

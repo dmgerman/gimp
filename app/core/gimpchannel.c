@@ -317,6 +317,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -341,6 +345,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpOrientationType
 name|flip_type
 parameter_list|,
@@ -361,6 +369,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|flip_type
@@ -385,6 +397,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -2423,12 +2439,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_resize (GimpItem * item,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_channel_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_channel_resize
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|new_width
@@ -2451,6 +2471,8 @@ operator|->
 name|resize
 argument_list|(
 name|item
+argument_list|,
+name|context
 argument_list|,
 name|new_width
 argument_list|,
@@ -2490,12 +2512,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
+DECL|function|gimp_channel_flip (GimpItem * item,GimpContext * context,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_channel_flip
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
@@ -2529,6 +2555,8 @@ name|flip
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|flip_type
 argument_list|,
 name|axis
@@ -2542,12 +2570,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_rotate (GimpItem * item,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
+DECL|function|gimp_channel_rotate (GimpItem * item,GimpContext * context,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_channel_rotate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -2572,6 +2604,8 @@ name|rotate
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|rotate_type
 argument_list|,
 name|center_x
@@ -2587,12 +2621,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_channel_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_channel_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -2642,6 +2680,8 @@ operator|->
 name|transform
 argument_list|(
 name|item
+argument_list|,
+name|context
 argument_list|,
 name|matrix
 argument_list|,
@@ -2879,7 +2919,7 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|,
-name|gimp_get_current_context
+name|gimp_get_user_context
 argument_list|(
 name|gimage
 operator|->

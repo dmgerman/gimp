@@ -25,6 +25,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -63,6 +67,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -88,6 +96,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar

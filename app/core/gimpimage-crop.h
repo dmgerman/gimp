@@ -24,6 +24,10 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|x1
 parameter_list|,

@@ -168,12 +168,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_get_foreground_invoker (Gimp * gimp,Argument * args)
+DECL|function|palette_get_foreground_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palette_get_foreground_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -189,10 +193,7 @@ name|color
 decl_stmt|;
 name|gimp_context_get_foreground
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|&
 name|color
@@ -286,12 +287,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_get_background_invoker (Gimp * gimp,Argument * args)
+DECL|function|palette_get_background_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palette_get_background_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -307,10 +312,7 @@ name|color
 decl_stmt|;
 name|gimp_context_get_background
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|&
 name|color
@@ -404,12 +406,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_foreground_invoker (Gimp * gimp,Argument * args)
+DECL|function|palette_set_foreground_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palette_set_foreground_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -440,10 +446,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_set_foreground
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|&
 name|color
@@ -522,12 +525,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_background_invoker (Gimp * gimp,Argument * args)
+DECL|function|palette_set_background_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palette_set_background_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -558,10 +565,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_set_background
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|&
 name|color
@@ -640,12 +644,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_set_default_colors_invoker (Gimp * gimp,Argument * args)
+DECL|function|palette_set_default_colors_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palette_set_default_colors_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -654,10 +662,7 @@ parameter_list|)
 block|{
 name|gimp_context_set_default_colors
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 return|return
@@ -714,12 +719,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palette_swap_colors_invoker (Gimp * gimp,Argument * args)
+DECL|function|palette_swap_colors_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palette_swap_colors_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -728,10 +737,7 @@ parameter_list|)
 block|{
 name|gimp_context_swap_colors
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 return|return

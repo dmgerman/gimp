@@ -691,6 +691,8 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|col
 argument_list|)
 expr_stmt|;

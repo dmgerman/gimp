@@ -192,12 +192,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gimprc_query_invoker (Gimp * gimp,Argument * args)
+DECL|function|gimprc_query_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|gimprc_query_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -400,12 +404,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gimprc_set_invoker (Gimp * gimp,Argument * args)
+DECL|function|gimprc_set_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|gimprc_set_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -599,12 +607,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_default_comment_invoker (Gimp * gimp,Argument * args)
+DECL|function|get_default_comment_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|get_default_comment_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -720,12 +732,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_monitor_resolution_invoker (Gimp * gimp,Argument * args)
+DECL|function|get_monitor_resolution_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|get_monitor_resolution_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -871,12 +887,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_theme_dir_invoker (Gimp * gimp,Argument * args)
+DECL|function|get_theme_dir_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|get_theme_dir_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -989,12 +1009,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_module_load_inhibit_invoker (Gimp * gimp,Argument * args)
+DECL|function|get_module_load_inhibit_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|get_module_load_inhibit_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

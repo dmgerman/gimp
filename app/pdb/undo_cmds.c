@@ -190,12 +190,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_group_start_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_undo_group_start_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_undo_group_start_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -357,12 +361,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_group_end_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_undo_group_end_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_undo_group_end_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -488,12 +496,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_is_enabled_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_undo_is_enabled_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_undo_is_enabled_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -668,12 +680,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_disable_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_undo_disable_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_undo_disable_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -847,12 +863,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_enable_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_undo_enable_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_undo_enable_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1026,12 +1046,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_freeze_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_undo_freeze_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_undo_freeze_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1205,12 +1229,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_undo_thaw_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_undo_thaw_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_undo_thaw_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

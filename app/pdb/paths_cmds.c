@@ -372,12 +372,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_list_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_list_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -583,12 +587,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_current_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_get_current_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_get_current_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -792,12 +800,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_current_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_set_current_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_set_current_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -997,12 +1009,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_delete_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_delete_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_delete_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1202,12 +1218,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_points_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_get_points_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_get_points_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1646,12 +1666,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_points_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_set_points_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_set_points_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2081,12 +2105,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_stroke_current_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_stroke_current_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_stroke_current_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2167,17 +2195,12 @@ block|{
 name|GimpToolInfo
 modifier|*
 name|tool_info
-decl_stmt|;
-name|tool_info
-operator|=
+init|=
 name|gimp_context_get_tool
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
+name|context
 argument_list|)
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|success
 operator|=
 name|gimp_item_stroke
@@ -2280,12 +2303,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_point_at_dist_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_get_point_at_dist_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_get_point_at_dist_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2558,12 +2585,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_tattoo_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_get_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_get_tattoo_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2813,12 +2844,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_tattoo_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_set_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_set_tattoo_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3045,12 +3080,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|get_path_by_tattoo_invoker (Gimp * gimp,Argument * args)
+DECL|function|get_path_by_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|get_path_by_tattoo_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3278,12 +3317,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_get_locked_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_get_locked_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_get_locked_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3533,12 +3576,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_set_locked_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_set_locked_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_set_locked_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3767,12 +3814,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_to_selection_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_to_selection_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_to_selection_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4122,12 +4173,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|path_import_invoker (Gimp * gimp,Argument * args)
+DECL|function|path_import_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|path_import_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

@@ -160,6 +160,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gboolean
 name|cut_pixels
 parameter_list|)
@@ -202,7 +206,7 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_cut (GimpImage * gimage,GimpDrawable * drawable)
+DECL|function|gimp_edit_cut (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
 name|gimp_edit_cut
 parameter_list|(
 name|GimpImage
@@ -212,6 +216,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -234,12 +242,24 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|gimp_edit_extract
 argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|TRUE
 argument_list|)
@@ -251,7 +271,7 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_copy (GimpImage * gimage,GimpDrawable * drawable)
+DECL|function|gimp_edit_copy (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
 name|gimp_edit_copy
 parameter_list|(
 name|GimpImage
@@ -261,6 +281,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -283,12 +307,24 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|gimp_edit_extract
 argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|FALSE
 argument_list|)
@@ -960,7 +996,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_clear (GimpImage * gimage,GimpDrawable * drawable)
+DECL|function|gimp_edit_clear (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context)
 name|gimp_edit_clear
 parameter_list|(
 name|GimpImage
@@ -970,6 +1006,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -992,6 +1032,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 return|return
 name|gimp_edit_fill_internal
 argument_list|(
@@ -999,12 +1049,7 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|,
@@ -1019,7 +1064,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_edit_fill (GimpImage * gimage,GimpDrawable * drawable,GimpFillType fill_type)
+DECL|function|gimp_edit_fill (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,GimpFillType fill_type)
 name|gimp_edit_fill
 parameter_list|(
 name|GimpImage
@@ -1029,6 +1074,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpFillType
 name|fill_type
@@ -1054,6 +1103,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1154,12 +1213,7 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|fill_type
 argument_list|,
@@ -1177,7 +1231,7 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_extract (GimpImage * gimage,GimpDrawable * drawable,gboolean cut_pixels)
+DECL|function|gimp_edit_extract (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,gboolean cut_pixels)
 name|gimp_edit_extract
 parameter_list|(
 name|GimpImage
@@ -1187,6 +1241,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gboolean
 name|cut_pixels
@@ -1237,6 +1295,8 @@ name|gimage
 argument_list|)
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|cut_pixels
 argument_list|,
@@ -1451,6 +1511,8 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
@@ -1466,6 +1528,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|col
 argument_list|)

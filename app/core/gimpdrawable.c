@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2987d31d0103
+DECL|enum|__anon27e5e05c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -313,6 +313,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -337,6 +341,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpOrientationType
 name|flip_type
 parameter_list|,
@@ -357,6 +365,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -381,6 +393,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -1656,12 +1672,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_resize (GimpItem * item,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_drawable_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_drawable_resize
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|new_width
@@ -1841,6 +1861,8 @@ argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|bg
 argument_list|)
 expr_stmt|;
@@ -1952,12 +1974,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
+DECL|function|gimp_drawable_flip (GimpItem * item,GimpContext * context,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_drawable_flip
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
@@ -2033,6 +2059,8 @@ name|gimp_drawable_transform_tiles_flip
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|drawable
 operator|->
 name|tiles
@@ -2081,12 +2109,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_rotate (GimpItem * item,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
+DECL|function|gimp_drawable_rotate (GimpItem * item,GimpContext * context,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_drawable_rotate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -2165,6 +2197,8 @@ name|gimp_drawable_transform_tiles_rotate
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|drawable
 operator|->
 name|tiles
@@ -2215,12 +2249,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -2312,6 +2350,8 @@ operator|=
 name|gimp_drawable_transform_tiles_affine
 argument_list|(
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|drawable
 operator|->

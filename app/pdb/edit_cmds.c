@@ -242,12 +242,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_cut_invoker (Gimp * gimp,Argument * args)
+DECL|function|edit_cut_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|edit_cut_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -341,6 +345,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|)
 operator|!=
 name|NULL
@@ -457,12 +463,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_copy_invoker (Gimp * gimp,Argument * args)
+DECL|function|edit_copy_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|edit_copy_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -556,6 +566,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|)
 operator|!=
 name|NULL
@@ -672,12 +684,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_paste_invoker (Gimp * gimp,Argument * args)
+DECL|function|edit_paste_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|edit_paste_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -961,12 +977,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_clear_invoker (Gimp * gimp,Argument * args)
+DECL|function|edit_clear_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|edit_clear_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1051,6 +1071,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 block|}
@@ -1127,12 +1149,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_fill_invoker (Gimp * gimp,Argument * args)
+DECL|function|edit_fill_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|edit_fill_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1246,6 +1272,8 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 operator|(
 name|GimpFillType
 operator|)
@@ -1334,12 +1362,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_bucket_fill_invoker (Gimp * gimp,Argument * args)
+DECL|function|edit_bucket_fill_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|edit_bucket_fill_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1603,6 +1635,8 @@ name|gimp_drawable_bucket_fill
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|fill_mode
 argument_list|,
 name|paint_mode
@@ -1756,12 +1790,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_blend_invoker (Gimp * gimp,Argument * args)
+DECL|function|edit_blend_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|edit_blend_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2186,6 +2224,8 @@ name|gimp_drawable_blend
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|blend_mode
 argument_list|,
 name|paint_mode
@@ -2418,12 +2458,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|edit_stroke_invoker (Gimp * gimp,Argument * args)
+DECL|function|edit_stroke_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|edit_stroke_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2509,10 +2553,7 @@ name|tool_info
 operator|=
 name|gimp_context_get_tool
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 name|success

@@ -409,12 +409,16 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_transform_tiles_affine (GimpDrawable * drawable,GimpContext * context,TileManager * orig_tiles,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_transform_tiles_affine
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|TileManager
 modifier|*
@@ -567,6 +571,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|orig_tiles
 operator|!=
 name|NULL
@@ -635,6 +649,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|bg_color
 argument_list|)
@@ -2583,12 +2599,16 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_flip (GimpDrawable * drawable,TileManager * orig_tiles,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
+DECL|function|gimp_drawable_transform_tiles_flip (GimpDrawable * drawable,GimpContext * context,TileManager * orig_tiles,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_drawable_transform_tiles_flip
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|TileManager
 modifier|*
@@ -2648,6 +2668,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -2846,6 +2876,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|bg_color
 argument_list|)
@@ -3315,12 +3347,16 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_tiles_rotate (GimpDrawable * drawable,TileManager * orig_tiles,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
+DECL|function|gimp_drawable_transform_tiles_rotate (GimpDrawable * drawable,GimpContext * context,TileManager * orig_tiles,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_drawable_transform_tiles_rotate
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|TileManager
 modifier|*
@@ -3393,6 +3429,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -3637,6 +3683,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|bg_color
 argument_list|)
@@ -4275,12 +4323,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result)
+DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result)
 name|gimp_drawable_transform_affine
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -4324,6 +4376,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|FALSE
@@ -4381,6 +4443,8 @@ name|gimp_drawable_transform_cut
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 operator|&
 name|new_layer
 argument_list|)
@@ -4419,6 +4483,8 @@ operator|=
 name|gimp_drawable_transform_tiles_affine
 argument_list|(
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|orig_tiles
 argument_list|,
@@ -4482,12 +4548,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,GimpOrientationType flip_type)
+DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,GimpContext * context,GimpOrientationType flip_type)
 name|gimp_drawable_transform_flip
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
@@ -4514,6 +4584,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|FALSE
@@ -4561,6 +4641,8 @@ operator|=
 name|gimp_drawable_transform_cut
 argument_list|(
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 operator|&
 name|new_layer
@@ -4670,6 +4752,8 @@ name|gimp_drawable_transform_tiles_flip
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|orig_tiles
 argument_list|,
 name|flip_type
@@ -4722,12 +4806,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_transform_rotate (GimpDrawable * drawable,GimpRotationType rotate_type)
+DECL|function|gimp_drawable_transform_rotate (GimpDrawable * drawable,GimpContext * context,GimpRotationType rotate_type)
 name|gimp_drawable_transform_rotate
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -4754,6 +4842,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|FALSE
@@ -4801,6 +4899,8 @@ operator|=
 name|gimp_drawable_transform_cut
 argument_list|(
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 operator|&
 name|new_layer
@@ -4890,6 +4990,8 @@ name|gimp_drawable_transform_tiles_rotate
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|orig_tiles
 argument_list|,
 name|rotate_type
@@ -4945,12 +5047,16 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_transform_cut (GimpDrawable * drawable,gboolean * new_layer)
+DECL|function|gimp_drawable_transform_cut (GimpDrawable * drawable,GimpContext * context,gboolean * new_layer)
 name|gimp_drawable_transform_cut
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gboolean
 modifier|*
@@ -4970,6 +5076,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -5029,6 +5145,8 @@ argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
@@ -5063,6 +5181,8 @@ argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
@@ -5081,6 +5201,8 @@ name|gimage
 argument_list|)
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|FALSE
 argument_list|,

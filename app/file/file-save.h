@@ -24,6 +24,10 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpRunMode
 name|run_mode
 parameter_list|,
@@ -42,6 +46,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar

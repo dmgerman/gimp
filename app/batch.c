@@ -484,6 +484,11 @@ name|procedural_db_execute
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 literal|"plug_in_script_fu_eval"
 argument_list|,
 name|args
@@ -687,6 +692,11 @@ operator|=
 name|procedural_db_execute
 argument_list|(
 name|gimp
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 literal|"extension_perl_server"
 argument_list|,

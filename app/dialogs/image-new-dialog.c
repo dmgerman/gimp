@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc86f7c0108
+DECL|struct|__anon29bdffc80108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1230,6 +1230,11 @@ argument_list|(
 name|gimp
 argument_list|,
 name|template
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_new_set_last_template

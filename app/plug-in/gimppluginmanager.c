@@ -3707,6 +3707,10 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|PlugInProcDef
 modifier|*
 name|proc_def
@@ -3715,6 +3719,17 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
+name|context
+operator|=
+name|gimp_context_new
+argument_list|(
+name|gimp
+argument_list|,
+literal|"temp"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -3941,6 +3956,8 @@ name|procedural_db_execute
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 literal|"gimp_register_save_handler"
 argument_list|,
 name|args
@@ -3960,6 +3977,8 @@ name|procedural_db_execute
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 literal|"gimp_register_magic_load_handler"
 argument_list|,
 name|args
@@ -3973,6 +3992,11 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|g_object_unref
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

@@ -1130,6 +1130,11 @@ name|procedural_db_run_proc
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
 literal|"extension_gimp_help_temp"
 argument_list|,
 operator|&

@@ -4042,6 +4042,11 @@ name|file_open_with_display
 argument_list|(
 name|the_dnd_gimp
 argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|the_dnd_gimp
+argument_list|)
+argument_list|,
 name|uri
 argument_list|,
 operator|&

@@ -117,12 +117,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
+DECL|function|gimp_drawable_bucket_fill (GimpDrawable * drawable,GimpContext * context,GimpBucketFillMode fill_mode,gint paint_mode,gdouble opacity,gboolean do_seed_fill,gboolean fill_transparent,gdouble threshold,gboolean sample_merged,gdouble x,gdouble y)
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpBucketFillMode
 name|fill_mode
@@ -173,6 +177,14 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|=
 name|gimp_item_get_image
@@ -200,12 +212,7 @@ condition|)
 block|{
 name|gimp_context_get_foreground
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|&
 name|color
@@ -222,12 +229,7 @@ condition|)
 block|{
 name|gimp_context_get_background
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|&
 name|color
@@ -246,12 +248,7 @@ name|pattern
 operator|=
 name|gimp_context_get_pattern
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 if|if

@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ec1b0d0103
+DECL|enum|__anon2acdc5050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1403,7 +1409,7 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_template_create_image (Gimp * gimp,GimpTemplate * template)
+DECL|function|gimp_template_create_image (Gimp * gimp,GimpTemplate * template,GimpContext * context)
 name|gimp_template_create_image
 parameter_list|(
 name|Gimp
@@ -1413,6 +1419,10 @@ parameter_list|,
 name|GimpTemplate
 modifier|*
 name|template
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GimpImage
@@ -1446,6 +1456,16 @@ argument_list|(
 name|GIMP_IS_TEMPLATE
 argument_list|(
 name|template
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -1643,10 +1663,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|template
 operator|->

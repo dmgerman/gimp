@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -155,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bc56e50103
+DECL|enum|__anon2ad583d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2233,6 +2239,32 @@ argument_list|)
 operator|->
 name|mask
 condition|)
+block|{
+specifier|static
+name|GimpContext
+modifier|*
+name|unused_eek
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|unused_eek
+condition|)
+name|unused_eek
+operator|=
+name|gimp_context_new
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+literal|"eek"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_item_resize
 argument_list|(
 name|GIMP_ITEM
@@ -2245,6 +2277,8 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
+name|unused_eek
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -2254,6 +2288,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(

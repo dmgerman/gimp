@@ -1292,7 +1292,7 @@ condition|)
 block|{
 name|gimp_context_set_tool
 argument_list|(
-name|gimp_get_current_context
+name|gimp_get_user_context
 argument_list|(
 name|gimage
 operator|->

@@ -644,12 +644,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_delete_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_delete_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_delete_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -810,12 +814,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_layer_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_is_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_is_layer_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -996,12 +1004,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_layer_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_is_layer_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_is_layer_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1182,12 +1194,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_channel_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_is_channel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_is_channel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1368,12 +1384,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_type_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_type_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_type_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1550,12 +1570,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_type_with_alpha_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_type_with_alpha_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_type_with_alpha_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1732,12 +1756,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_has_alpha_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_has_alpha_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_has_alpha_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1914,12 +1942,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_rgb_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_is_rgb_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_is_rgb_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2096,12 +2128,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_gray_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_is_gray_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_is_gray_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2278,12 +2314,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_is_indexed_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_is_indexed_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_is_indexed_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2460,12 +2500,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_bpp_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_bpp_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_bpp_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2642,12 +2686,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_width_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_width_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_width_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2827,12 +2875,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_height_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_height_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_height_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3012,12 +3064,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_offsets_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_offsets_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_offsets_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3236,12 +3292,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_image_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_get_image_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_get_image_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3444,12 +3504,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_image_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_set_image_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_set_image_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3635,12 +3699,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_name_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_get_name_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_get_name_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3823,12 +3891,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_name_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_set_name_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_set_name_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4024,12 +4096,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_visible_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_get_visible_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_get_visible_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4209,12 +4285,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_visible_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_set_visible_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_set_visible_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4388,12 +4468,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_linked_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_get_linked_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_get_linked_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4573,12 +4657,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_linked_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_set_linked_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_set_linked_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4752,12 +4840,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_tattoo_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_get_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_get_tattoo_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4937,12 +5029,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_tattoo_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_set_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_set_tattoo_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5120,12 +5216,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_mask_bounds_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_mask_bounds_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_mask_bounds_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5417,12 +5517,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_merge_shadow_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_merge_shadow_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_merge_shadow_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5636,12 +5740,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_update_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_update_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_update_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5878,12 +5986,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_get_pixel_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_get_pixel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_get_pixel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6282,12 +6394,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_set_pixel_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_set_pixel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_set_pixel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6650,12 +6766,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_fill_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_fill_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_fill_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6750,10 +6870,7 @@ name|gimp_drawable_fill_by_type
 argument_list|(
 name|drawable
 argument_list|,
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|(
 name|GimpFillType
@@ -6842,12 +6959,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_offset_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_offset_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_offset_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6989,6 +7110,8 @@ name|gimp_drawable_offset
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|wrap_around
 argument_list|,
 name|fill_type
@@ -7104,12 +7227,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|drawable_thumbnail_invoker (Gimp * gimp,Argument * args)
+DECL|function|drawable_thumbnail_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|drawable_thumbnail_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

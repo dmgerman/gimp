@@ -94,12 +94,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|help_invoker (Gimp * gimp,Argument * args)
+DECL|function|help_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|help_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

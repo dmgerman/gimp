@@ -95,12 +95,16 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_offset (GimpDrawable * drawable,gboolean wrap_around,GimpOffsetType fill_type,gint offset_x,gint offset_y)
+DECL|function|gimp_drawable_offset (GimpDrawable * drawable,GimpContext * context,gboolean wrap_around,GimpOffsetType fill_type,gint offset_x,gint offset_y)
 name|gimp_drawable_offset
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gboolean
 name|wrap_around
@@ -158,6 +162,14 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1015,28 +1027,12 @@ operator|==
 name|GIMP_OFFSET_BACKGROUND
 condition|)
 block|{
-name|Gimp
-modifier|*
-name|gimp
-decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-operator|->
-name|gimp
-expr_stmt|;
 name|gimp_context_get_background
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|&
 name|color

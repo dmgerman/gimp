@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab340780103
+DECL|enum|__anon274d02150103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -348,6 +348,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|new_width
@@ -1627,12 +1631,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_real_resize (GimpItem * item,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_item_real_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_item_real_resize
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|new_width
@@ -3054,12 +3062,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_resize (GimpItem * item,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_item_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_item_resize
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|new_width
@@ -3087,6 +3099,14 @@ argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3132,6 +3152,8 @@ name|resize
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -3151,12 +3173,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
+DECL|function|gimp_item_flip (GimpItem * item,GimpContext * context,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_item_flip
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
@@ -3181,6 +3207,14 @@ argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3215,6 +3249,8 @@ name|flip
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|flip_type
 argument_list|,
 name|axis
@@ -3232,12 +3268,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_rotate (GimpItem * item,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
+DECL|function|gimp_item_rotate (GimpItem * item,GimpContext * context,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_item_rotate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -3265,6 +3305,14 @@ argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3299,6 +3347,8 @@ name|rotate
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|rotate_type
 argument_list|,
 name|center_x
@@ -3318,12 +3368,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_item_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_item_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -3368,6 +3422,14 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|item_class
 operator|=
 name|GIMP_ITEM_GET_CLASS
@@ -3398,6 +3460,8 @@ operator|->
 name|transform
 argument_list|(
 name|item
+argument_list|,
+name|context
 argument_list|,
 name|matrix
 argument_list|,

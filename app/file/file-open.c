@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -190,12 +196,16 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (Gimp * gimp,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_image (Gimp * gimp,GimpContext * context,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,GimpPDBStatusType * status,GError ** error)
 name|file_open_image
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -252,6 +262,16 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -523,6 +543,8 @@ name|procedural_db_execute
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|proc
 operator|->
 name|name
@@ -706,12 +728,16 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_display (Gimp * gimp,const gchar * uri,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_display (Gimp * gimp,GimpContext * context,const gchar * uri,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_display
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -733,6 +759,8 @@ name|file_open_with_proc_and_display
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|uri
 argument_list|,
 name|uri
@@ -750,12 +778,16 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_with_proc_and_display (Gimp * gimp,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpPDBStatusType * status,GError ** error)
+DECL|function|file_open_with_proc_and_display (Gimp * gimp,GimpContext * context,const gchar * uri,const gchar * entered_filename,PlugInProcDef * file_proc,GimpPDBStatusType * status,GError ** error)
 name|file_open_with_proc_and_display
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -797,6 +829,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|status
 operator|!=
 name|NULL
@@ -809,6 +851,8 @@ operator|=
 name|file_open_image
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|uri
 argument_list|,

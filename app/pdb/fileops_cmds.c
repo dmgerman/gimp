@@ -306,12 +306,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_load_invoker (Gimp * gimp,Argument * args)
+DECL|function|file_load_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|file_load_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -508,6 +512,8 @@ name|procedural_db_execute
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|proc
 operator|->
 name|name
@@ -622,12 +628,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_save_invoker (Gimp * gimp,Argument * args)
+DECL|function|file_save_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|file_save_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -824,6 +834,8 @@ name|procedural_db_execute
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|proc
 operator|->
 name|name
@@ -935,12 +947,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_load_thumbnail_invoker (Gimp * gimp,Argument * args)
+DECL|function|file_load_thumbnail_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|file_load_thumbnail_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1373,12 +1389,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|file_save_thumbnail_invoker (Gimp * gimp,Argument * args)
+DECL|function|file_save_thumbnail_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|file_save_thumbnail_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1649,12 +1669,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|temp_name_invoker (Gimp * gimp,Argument * args)
+DECL|function|temp_name_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|temp_name_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1904,12 +1928,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_magic_load_handler_invoker (Gimp * gimp,Argument * args)
+DECL|function|register_magic_load_handler_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|register_magic_load_handler_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2292,12 +2320,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_load_handler_invoker (Gimp * gimp,Argument * args)
+DECL|function|register_load_handler_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|register_load_handler_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2360,6 +2392,8 @@ return|return
 name|register_magic_load_handler_invoker
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|argv
 argument_list|)
@@ -2444,12 +2478,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|register_save_handler_invoker (Gimp * gimp,Argument * args)
+DECL|function|register_save_handler_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|register_save_handler_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

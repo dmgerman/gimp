@@ -530,12 +530,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_new_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_new_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_new_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -959,12 +963,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_new_from_drawable_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_new_from_drawable_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_new_from_drawable_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1281,12 +1289,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_copy_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_copy_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_copy_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1528,12 +1540,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_add_alpha_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_add_alpha_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_add_alpha_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1674,12 +1690,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_scale_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_scale_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_scale_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1929,12 +1949,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_resize_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_resize_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_resize_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2080,6 +2104,8 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -2194,12 +2220,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_resize_to_image_size_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_resize_to_image_size_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_resize_to_image_size_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2276,6 +2306,8 @@ condition|)
 name|gimp_layer_resize_to_image
 argument_list|(
 name|layer
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 else|else
@@ -2357,12 +2389,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_translate_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_translate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_translate_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2611,12 +2647,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_offsets_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_set_offsets_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_set_offsets_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2879,12 +2919,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_create_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_create_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_create_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3128,12 +3172,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_get_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_get_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3322,12 +3370,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_add_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_add_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_add_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3533,12 +3585,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_remove_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_remove_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_remove_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3719,12 +3775,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_is_floating_sel_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_is_floating_sel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_is_floating_sel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3901,12 +3961,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_preserve_trans_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_get_preserve_trans_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_get_preserve_trans_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4083,12 +4147,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_preserve_trans_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_set_preserve_trans_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_set_preserve_trans_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4259,12 +4327,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_apply_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_get_apply_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_get_apply_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4441,12 +4513,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_apply_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_set_apply_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_set_apply_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4615,12 +4691,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_show_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_get_show_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_get_show_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4797,12 +4877,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_show_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_set_show_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_set_show_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4971,12 +5055,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_edit_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_get_edit_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_get_edit_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5153,12 +5241,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_edit_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_set_edit_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_set_edit_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5327,12 +5419,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_opacity_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_get_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_get_opacity_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5511,12 +5607,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_opacity_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_set_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_set_opacity_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5699,12 +5799,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_get_mode_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_get_mode_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_get_mode_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5881,12 +5985,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|layer_set_mode_invoker (Gimp * gimp,Argument * args)
+DECL|function|layer_set_mode_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|layer_set_mode_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

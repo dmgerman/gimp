@@ -353,6 +353,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -377,6 +381,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpOrientationType
 name|flip_type
 parameter_list|,
@@ -397,6 +405,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -421,6 +433,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -856,6 +872,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -890,6 +910,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpOrientationType
 name|flip_type
 parameter_list|,
@@ -909,6 +933,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -932,6 +960,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b1fe3e0103
+DECL|enum|__anon2c2dcea40103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -314,6 +314,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -338,6 +342,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpOrientationType
 name|flip_type
 parameter_list|,
@@ -358,6 +366,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -382,6 +394,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -1847,12 +1863,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_resize (GimpItem * item,gint new_width,gint new_height,gint offset_x,gint offset_y)
+DECL|function|gimp_vectors_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y)
 name|gimp_vectors_resize
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|new_width
@@ -1948,6 +1968,8 @@ name|resize
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|image
 operator|->
 name|width
@@ -1972,12 +1994,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
+DECL|function|gimp_vectors_flip (GimpItem * item,GimpContext * context,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_vectors_flip
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
@@ -2081,12 +2107,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_rotate (GimpItem * item,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
+DECL|function|gimp_vectors_rotate (GimpItem * item,GimpContext * context,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_vectors_rotate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -2231,12 +2261,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_vectors_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_vectors_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -2515,7 +2549,7 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|,
-name|gimp_get_current_context
+name|gimp_get_user_context
 argument_list|(
 name|gimage
 operator|->

@@ -222,12 +222,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_new_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_new_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_new_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -609,12 +613,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_copy_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_copy_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_copy_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -834,12 +842,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_combine_masks_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_combine_masks_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_combine_masks_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1125,12 +1137,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_show_masked_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_get_show_masked_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_get_show_masked_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1307,12 +1323,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_show_masked_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_set_show_masked_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_set_show_masked_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1481,12 +1501,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_opacity_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_get_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_get_opacity_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1665,12 +1689,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_opacity_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_set_opacity_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_set_opacity_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1853,12 +1881,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_get_color_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_get_color_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_get_color_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2047,12 +2079,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|channel_set_color_invoker (Gimp * gimp,Argument * args)
+DECL|function|channel_set_color_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|channel_set_color_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

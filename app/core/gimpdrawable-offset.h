@@ -24,6 +24,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gboolean
 name|wrap_around
 parameter_list|,

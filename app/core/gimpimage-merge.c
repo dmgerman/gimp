@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -160,12 +166,16 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_visible_layers (GimpImage * gimage,GimpMergeType merge_type)
+DECL|function|gimp_image_merge_visible_layers (GimpImage * gimage,GimpContext * context,GimpMergeType merge_type)
 name|gimp_image_merge_visible_layers
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type
@@ -197,6 +207,16 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -300,6 +320,8 @@ name|gimage
 argument_list|,
 name|merge_list
 argument_list|,
+name|context
+argument_list|,
 name|merge_type
 argument_list|,
 name|_
@@ -359,12 +381,16 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_flatten (GimpImage * gimage)
+DECL|function|gimp_image_flatten (GimpImage * gimage,GimpContext * context)
 name|gimp_image_flatten
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GList
@@ -386,6 +412,16 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -474,6 +510,8 @@ name|gimage
 argument_list|,
 name|merge_list
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_FLATTEN_IMAGE
 argument_list|,
 name|_
@@ -508,7 +546,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_down (GimpImage * gimage,GimpLayer * current_layer,GimpMergeType merge_type)
+DECL|function|gimp_image_merge_down (GimpImage * gimage,GimpLayer * current_layer,GimpContext * context,GimpMergeType merge_type)
 name|gimp_image_merge_down
 parameter_list|(
 name|GimpImage
@@ -518,6 +556,10 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|current_layer
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type
@@ -544,6 +586,16 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -682,6 +734,8 @@ name|gimage
 argument_list|,
 name|merge_list
 argument_list|,
+name|context
+argument_list|,
 name|merge_type
 argument_list|,
 name|_
@@ -726,7 +780,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_layers (GimpImage * gimage,GSList * merge_list,GimpMergeType merge_type,const gchar * undo_desc)
+DECL|function|gimp_image_merge_layers (GimpImage * gimage,GSList * merge_list,GimpContext * context,GimpMergeType merge_type,const gchar * undo_desc)
 name|gimp_image_merge_layers
 parameter_list|(
 name|GimpImage
@@ -736,6 +790,10 @@ parameter_list|,
 name|GSList
 modifier|*
 name|merge_list
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type
@@ -855,6 +913,16 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -1361,6 +1429,8 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|merge_layer
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|bg
 argument_list|)

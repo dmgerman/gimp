@@ -413,12 +413,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|paint_tools_stroke (Gimp * gimp,GType core_type,GimpPaintOptions * options,GimpDrawable * drawable,gint n_strokes,gdouble * strokes)
+DECL|function|paint_tools_stroke (Gimp * gimp,GimpContext * context,GType core_type,GimpPaintOptions * options,GimpDrawable * drawable,gint n_strokes,gdouble * strokes)
 name|paint_tools_stroke
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GType
 name|core_type
@@ -473,10 +477,7 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 name|core
@@ -618,12 +619,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|airbrush_invoker (Gimp * gimp,Argument * args)
+DECL|function|airbrush_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|airbrush_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -794,6 +799,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_AIRBRUSH
 argument_list|,
 name|options
@@ -903,12 +910,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|airbrush_default_invoker (Gimp * gimp,Argument * args)
+DECL|function|airbrush_default_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|airbrush_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1042,6 +1053,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_AIRBRUSH
 argument_list|,
 name|options
@@ -1143,12 +1156,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|clone_invoker (Gimp * gimp,Argument * args)
+DECL|function|clone_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|clone_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1408,6 +1425,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_CLONE
 argument_list|,
 name|options
@@ -1541,12 +1560,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|clone_default_invoker (Gimp * gimp,Argument * args)
+DECL|function|clone_default_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|clone_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1680,6 +1703,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_CLONE
 argument_list|,
 name|options
@@ -1781,12 +1806,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convolve_invoker (Gimp * gimp,Argument * args)
+DECL|function|convolve_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|convolve_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1991,6 +2020,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_CONVOLVE
 argument_list|,
 name|options
@@ -2108,12 +2139,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|convolve_default_invoker (Gimp * gimp,Argument * args)
+DECL|function|convolve_default_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|convolve_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2247,6 +2282,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_CONVOLVE
 argument_list|,
 name|options
@@ -2348,12 +2385,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|dodgeburn_invoker (Gimp * gimp,Argument * args)
+DECL|function|dodgeburn_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|dodgeburn_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2590,6 +2631,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_DODGE_BURN
 argument_list|,
 name|options
@@ -2715,12 +2758,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|dodgeburn_default_invoker (Gimp * gimp,Argument * args)
+DECL|function|dodgeburn_default_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|dodgeburn_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2854,6 +2901,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_DODGE_BURN
 argument_list|,
 name|options
@@ -2955,12 +3004,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|eraser_invoker (Gimp * gimp,Argument * args)
+DECL|function|eraser_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|eraser_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3165,6 +3218,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_ERASER
 argument_list|,
 name|options
@@ -3282,12 +3337,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|eraser_default_invoker (Gimp * gimp,Argument * args)
+DECL|function|eraser_default_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|eraser_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3421,6 +3480,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_ERASER
 argument_list|,
 name|options
@@ -3522,12 +3583,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|paintbrush_invoker (Gimp * gimp,Argument * args)
+DECL|function|paintbrush_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|paintbrush_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3768,6 +3833,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_PAINTBRUSH
 argument_list|,
 name|options
@@ -3893,12 +3960,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|paintbrush_default_invoker (Gimp * gimp,Argument * args)
+DECL|function|paintbrush_default_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|paintbrush_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4032,6 +4103,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_PAINTBRUSH
 argument_list|,
 name|options
@@ -4133,12 +4206,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|pencil_invoker (Gimp * gimp,Argument * args)
+DECL|function|pencil_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|pencil_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4272,6 +4349,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_PENCIL
 argument_list|,
 name|options
@@ -4373,12 +4452,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|smudge_invoker (Gimp * gimp,Argument * args)
+DECL|function|smudge_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|smudge_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4551,6 +4634,8 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_TYPE_SMUDGE
 argument_list|,
 name|options
@@ -4660,12 +4745,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|smudge_default_invoker (Gimp * gimp,Argument * args)
+DECL|function|smudge_default_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|smudge_default_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4798,6 +4887,8 @@ operator|=
 name|paint_tools_stroke
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|GIMP_TYPE_SMUDGE
 argument_list|,

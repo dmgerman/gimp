@@ -138,12 +138,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_rgb_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_convert_rgb_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_convert_rgb_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -299,12 +303,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_grayscale_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_convert_grayscale_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_convert_grayscale_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -460,12 +468,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_convert_indexed_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_convert_indexed_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_convert_indexed_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

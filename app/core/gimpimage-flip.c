@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -71,12 +77,16 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_flip (GimpImage * gimage,GimpOrientationType flip_type,GimpProgressFunc progress_func,gpointer progress_data)
+DECL|function|gimp_image_flip (GimpImage * gimage,GimpContext * context,GimpOrientationType flip_type,GimpProgressFunc progress_func,gpointer progress_data)
 name|gimp_image_flip
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
@@ -112,6 +122,14 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -237,6 +255,8 @@ name|gimp_item_flip
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|flip_type
 argument_list|,
 name|axis
@@ -302,6 +322,8 @@ name|gimp_item_flip
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|flip_type
 argument_list|,
 name|axis
@@ -339,6 +361,8 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|flip_type
 argument_list|,
@@ -403,6 +427,8 @@ expr_stmt|;
 name|gimp_item_flip
 argument_list|(
 name|item
+argument_list|,
+name|context
 argument_list|,
 name|flip_type
 argument_list|,

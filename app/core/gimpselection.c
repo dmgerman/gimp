@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -198,6 +204,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|new_width
 parameter_list|,
@@ -222,6 +232,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpOrientationType
 name|flip_type
 parameter_list|,
@@ -242,6 +256,10 @@ parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotation_type
@@ -1094,12 +1112,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_resize (GimpItem * item,gint new_width,gint new_height,gint off_x,gint off_y)
+DECL|function|gimp_selection_resize (GimpItem * item,GimpContext * context,gint new_width,gint new_height,gint off_x,gint off_y)
 name|gimp_selection_resize
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|new_width
@@ -1122,6 +1144,8 @@ operator|->
 name|resize
 argument_list|(
 name|item
+argument_list|,
+name|context
 argument_list|,
 name|new_width
 argument_list|,
@@ -1150,12 +1174,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
+DECL|function|gimp_selection_flip (GimpItem * item,GimpContext * context,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_selection_flip
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
@@ -1176,6 +1204,8 @@ name|flip
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|flip_type
 argument_list|,
 name|axis
@@ -1189,12 +1219,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_rotate (GimpItem * item,GimpRotationType rotation_type,gdouble center_x,gdouble center_y,gboolean clip_result)
+DECL|function|gimp_selection_rotate (GimpItem * item,GimpContext * context,GimpRotationType rotation_type,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_selection_rotate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotation_type
@@ -1217,6 +1251,8 @@ operator|->
 name|rotate
 argument_list|(
 name|item
+argument_list|,
+name|context
 argument_list|,
 name|rotation_type
 argument_list|,
@@ -2686,7 +2722,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_selection_extract (GimpChannel * selection,GimpDrawable * drawable,gboolean cut_image,gboolean keep_indexed,gboolean add_alpha)
+DECL|function|gimp_selection_extract (GimpChannel * selection,GimpDrawable * drawable,GimpContext * context,gboolean cut_image,gboolean keep_indexed,gboolean add_alpha)
 name|gimp_selection_extract
 parameter_list|(
 name|GimpChannel
@@ -2696,6 +2732,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gboolean
 name|cut_image
@@ -2770,6 +2810,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -2939,6 +2989,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|bg_color
 argument_list|)
@@ -3343,7 +3395,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_selection_float (GimpChannel * selection,GimpDrawable * drawable,gboolean cut_image,gint off_x,gint off_y)
+DECL|function|gimp_selection_float (GimpChannel * selection,GimpDrawable * drawable,GimpContext * context,gboolean cut_image,gint off_x,gint off_y)
 name|gimp_selection_float
 parameter_list|(
 name|GimpChannel
@@ -3353,6 +3405,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gboolean
 name|cut_image
@@ -3404,6 +3460,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -3508,6 +3574,8 @@ argument_list|(
 name|selection
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|cut_image
 argument_list|,

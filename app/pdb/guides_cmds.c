@@ -174,12 +174,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_hguide_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_add_hguide_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_add_hguide_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -417,12 +421,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_vguide_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_add_vguide_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_add_vguide_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -660,12 +668,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_delete_guide_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_delete_guide_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_delete_guide_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -883,12 +895,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_find_next_guide_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_find_next_guide_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_find_next_guide_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1202,12 +1218,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_guide_orientation_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_guide_orientation_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_guide_orientation_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1469,12 +1489,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_guide_position_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_guide_position_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_guide_position_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

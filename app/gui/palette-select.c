@@ -207,12 +207,16 @@ end_comment
 begin_function
 name|PaletteSelect
 modifier|*
-DECL|function|palette_select_new (Gimp * gimp,const gchar * title,const gchar * initial_palette,const gchar * callback_name)
+DECL|function|palette_select_new (Gimp * gimp,GimpContext * context,const gchar * title,const gchar * initial_palette,const gchar * callback_name)
 name|palette_select_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -245,6 +249,16 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -327,10 +341,7 @@ name|active
 operator|=
 name|gimp_context_get_palette
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 if|if
@@ -876,6 +887,10 @@ operator|->
 name|context
 operator|->
 name|gimp
+argument_list|,
+name|psp
+operator|->
+name|context
 argument_list|,
 name|psp
 operator|->

@@ -164,12 +164,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|by_color_select_invoker (Gimp * gimp,Argument * args)
+DECL|function|by_color_select_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|by_color_select_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -545,12 +549,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|ellipse_select_invoker (Gimp * gimp,Argument * args)
+DECL|function|ellipse_select_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|ellipse_select_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -927,12 +935,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|free_select_invoker (Gimp * gimp,Argument * args)
+DECL|function|free_select_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|free_select_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1261,12 +1273,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|fuzzy_select_invoker (Gimp * gimp,Argument * args)
+DECL|function|fuzzy_select_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|fuzzy_select_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1666,12 +1682,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|rect_select_invoker (Gimp * gimp,Argument * args)
+DECL|function|rect_select_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|rect_select_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

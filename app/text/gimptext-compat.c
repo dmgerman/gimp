@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -114,7 +108,7 @@ end_include
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|text_render (GimpImage * gimage,GimpDrawable * drawable,gint text_x,gint text_y,const gchar * fontname,const gchar * text,gint border,gboolean antialias)
+DECL|function|text_render (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,gint text_x,gint text_y,const gchar * fontname,const gchar * text,gint border,gboolean antialias)
 name|text_render
 parameter_list|(
 name|GimpImage
@@ -124,6 +118,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|text_x
@@ -213,6 +211,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|fontname
 operator|!=
 name|NULL
@@ -277,12 +285,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_context_get_foreground
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 operator|&
 name|color

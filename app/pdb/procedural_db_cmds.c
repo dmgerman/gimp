@@ -1506,12 +1506,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_temp_name_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_temp_name_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_temp_name_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1630,12 +1634,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_dump_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_dump_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_dump_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1795,12 +1803,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_query_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_query_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_query_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2406,12 +2418,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_info_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_proc_info_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_proc_info_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2880,12 +2896,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_arg_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_proc_arg_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_proc_arg_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3218,12 +3238,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_proc_val_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_proc_val_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_proc_val_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3556,12 +3580,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_get_data_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_get_data_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_get_data_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3802,12 +3830,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_get_data_size_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_get_data_size_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_get_data_size_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4008,12 +4040,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|procedural_db_set_data_invoker (Gimp * gimp,Argument * args)
+DECL|function|procedural_db_set_data_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|procedural_db_set_data_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

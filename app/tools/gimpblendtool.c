@@ -895,6 +895,8 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|GIMP_CUSTOM_MODE
 argument_list|,
 name|gimp_context_get_paint_mode

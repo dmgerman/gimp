@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -77,12 +83,16 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_image_resize (GimpImage * gimage,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpProgressFunc progress_func,gpointer progress_data)
+DECL|function|gimp_image_resize (GimpImage * gimage,GimpContext * context,gint new_width,gint new_height,gint offset_x,gint offset_y,GimpProgressFunc progress_func,gpointer progress_data)
 name|gimp_image_resize
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|new_width
@@ -120,6 +130,14 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -235,6 +253,8 @@ name|gimp_item_resize
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -300,6 +320,8 @@ name|gimp_item_resize
 argument_list|(
 name|item
 argument_list|,
+name|context
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -339,6 +361,8 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
+argument_list|,
+name|context
 argument_list|,
 name|new_width
 argument_list|,

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -165,12 +171,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_linked_flip (GimpItem * item,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
+DECL|function|gimp_item_linked_flip (GimpItem * item,GimpContext * context,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_item_linked_flip
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpOrientationType
 name|flip_type
@@ -199,6 +209,14 @@ argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -262,6 +280,8 @@ operator|->
 name|data
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|flip_type
 argument_list|,
 name|axis
@@ -279,12 +299,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_linked_rotate (GimpItem * item,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
+DECL|function|gimp_item_linked_rotate (GimpItem * item,GimpContext * context,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_item_linked_rotate
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpRotationType
 name|rotate_type
@@ -316,6 +340,14 @@ argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -381,6 +413,8 @@ operator|->
 name|data
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|rotate_type
 argument_list|,
 name|center_x
@@ -430,6 +464,8 @@ operator|->
 name|data
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|rotate_type
 argument_list|,
 name|center_x
@@ -449,12 +485,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_linked_transform (GimpItem * item,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_item_linked_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,gboolean clip_result,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_item_linked_transform
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GimpMatrix3
@@ -500,6 +540,14 @@ argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -563,6 +611,8 @@ operator|->
 name|data
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|matrix
 argument_list|,
 name|direction
@@ -589,7 +639,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_linked_get_list:  * @gimage: The image @item is part of.  * @item:   An @item to skip in the returned list.  * @which:  Which items to return.  *   * This function returns a #GList og #GimpItem's for which the  * "linked" property is #TRUE. Note that the passed in @item   * must be linked too.  *   * Return value: The list of linked items, excluding the passed @item.  **/
+comment|/**  * gimp_item_linked_get_list:  * @gimage: The image @item is part of.  * @item:   An @item to skip in the returned list.  * @which:  Which items to return.  *  * This function returns a #GList og #GimpItem's for which the  * "linked" property is #TRUE. Note that the passed in @item  * must be linked too.  *  * Return value: The list of linked items, excluding the passed @item.  **/
 end_comment
 
 begin_function

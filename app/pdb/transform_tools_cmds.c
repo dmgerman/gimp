@@ -192,12 +192,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|flip_invoker (Gimp * gimp,Argument * args)
+DECL|function|flip_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|flip_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -312,6 +316,8 @@ operator|=
 name|gimp_drawable_transform_flip
 argument_list|(
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|flip_type
 argument_list|)
@@ -442,12 +448,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|perspective_invoker (Gimp * gimp,Argument * args)
+DECL|function|perspective_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|perspective_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -777,6 +787,8 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 operator|&
 name|matrix
 argument_list|,
@@ -983,12 +995,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|rotate_invoker (Gimp * gimp,Argument * args)
+DECL|function|rotate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|rotate_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1176,6 +1192,8 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 operator|&
 name|matrix
 argument_list|,
@@ -1325,12 +1343,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|scale_invoker (Gimp * gimp,Argument * args)
+DECL|function|scale_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|scale_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1606,6 +1628,8 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 operator|&
 name|matrix
 argument_list|,
@@ -1779,12 +1803,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|shear_invoker (Gimp * gimp,Argument * args)
+DECL|function|shear_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|shear_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2002,6 +2030,8 @@ name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 operator|&
 name|matrix
 argument_list|,
@@ -2159,12 +2189,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|transform_2d_invoker (Gimp * gimp,Argument * args)
+DECL|function|transform_2d_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|transform_2d_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2439,6 +2473,8 @@ operator|=
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 operator|&
 name|matrix

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27568f410103
+DECL|enum|__anon29b619e10103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -827,12 +833,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,gint size)
+DECL|function|gimp_imagefile_create_thumbnail (GimpImagefile * imagefile,GimpContext * context,gint size)
 name|gimp_imagefile_create_thumbnail
 parameter_list|(
 name|GimpImagefile
 modifier|*
 name|imagefile
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|size
@@ -847,6 +857,14 @@ argument_list|(
 name|GIMP_IS_IMAGEFILE
 argument_list|(
 name|imagefile
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -921,6 +939,8 @@ argument_list|(
 name|imagefile
 operator|->
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|thumbnail
 operator|->

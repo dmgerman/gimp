@@ -1262,12 +1262,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_list_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_list_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1473,12 +1477,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_new_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_new_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_new_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1735,12 +1743,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_duplicate_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_duplicate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_duplicate_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1925,12 +1937,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_delete_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_delete_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_delete_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2071,12 +2087,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_base_type_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_base_type_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_base_type_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2251,12 +2271,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_width_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_width_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_width_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2417,12 +2441,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_height_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_height_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_height_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2583,12 +2611,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_free_shadow_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_free_shadow_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_free_shadow_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2714,12 +2746,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_resize_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_resize_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_resize_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -2848,6 +2884,8 @@ name|gimp_image_resize
 argument_list|(
 name|gimage
 argument_list|,
+name|context
+argument_list|,
 name|new_width
 argument_list|,
 name|new_height
@@ -2967,12 +3005,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_scale_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_scale_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_scale_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3178,12 +3220,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_crop_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_crop_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_crop_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3371,6 +3417,8 @@ name|gimp_image_crop
 argument_list|(
 name|gimage
 argument_list|,
+name|context
+argument_list|,
 name|offx
 argument_list|,
 name|offy
@@ -3494,12 +3542,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_flip_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_flip_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_flip_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3579,6 +3631,8 @@ block|{
 name|gimp_image_flip
 argument_list|(
 name|gimage
+argument_list|,
+name|context
 argument_list|,
 name|flip_type
 argument_list|,
@@ -3669,12 +3723,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_rotate_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_rotate_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_rotate_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -3754,6 +3812,8 @@ block|{
 name|gimp_image_rotate
 argument_list|(
 name|gimage
+argument_list|,
+name|context
 argument_list|,
 name|rotate_type
 argument_list|,
@@ -3844,12 +3904,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_layers_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_layers_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_layers_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4123,12 +4187,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_channels_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_channels_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_channels_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4402,12 +4470,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_drawable_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_active_drawable_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_active_drawable_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4595,12 +4667,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_unset_active_channel_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_unset_active_channel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_unset_active_channel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4726,12 +4802,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_floating_sel_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_floating_sel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_floating_sel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -4918,12 +4998,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_floating_sel_attached_to_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_floating_sel_attached_to_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_floating_sel_attached_to_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5139,12 +5223,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_pick_color_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_pick_color_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_pick_color_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5538,12 +5626,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_pick_correlate_layer_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_pick_correlate_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_pick_correlate_layer_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -5773,12 +5865,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_layer_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_add_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_add_layer_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6022,12 +6118,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_layer_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_remove_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_remove_layer_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6210,12 +6310,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_layer_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_raise_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_raise_layer_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6400,12 +6504,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_layer_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_lower_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_lower_layer_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6590,12 +6698,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_layer_to_top_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_raise_layer_to_top_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_raise_layer_to_top_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6780,12 +6892,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_layer_to_bottom_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_lower_layer_to_bottom_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_lower_layer_to_bottom_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -6970,12 +7086,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_channel_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_add_channel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_add_channel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -7190,12 +7310,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_channel_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_remove_channel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_remove_channel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -7378,12 +7502,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_raise_channel_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_raise_channel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_raise_channel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -7568,12 +7696,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_lower_channel_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_lower_channel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_lower_channel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -7758,12 +7890,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_flatten_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_flatten_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_flatten_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -7829,6 +7965,8 @@ operator|=
 name|gimp_image_flatten
 argument_list|(
 name|gimage
+argument_list|,
+name|context
 argument_list|)
 operator|)
 operator|!=
@@ -7951,12 +8089,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_merge_visible_layers_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_merge_visible_layers_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_merge_visible_layers_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -8048,6 +8190,8 @@ operator|=
 name|gimp_image_merge_visible_layers
 argument_list|(
 name|gimage
+argument_list|,
+name|context
 argument_list|,
 name|merge_type
 argument_list|)
@@ -8184,12 +8328,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_merge_down_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_merge_down_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_merge_down_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -8330,6 +8478,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|merge_layer
+argument_list|,
+name|context
 argument_list|,
 name|merge_type
 argument_list|)
@@ -8474,12 +8624,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_add_layer_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_add_layer_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_add_layer_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -8725,12 +8879,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_remove_layer_mask_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_remove_layer_mask_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_remove_layer_mask_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -8951,12 +9109,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_cmap_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_cmap_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_cmap_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -9174,12 +9336,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_cmap_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_cmap_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_cmap_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -9376,12 +9542,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_clean_all_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_clean_all_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_clean_all_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -9507,12 +9677,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_is_dirty_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_is_dirty_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_is_dirty_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -9690,12 +9864,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_thumbnail_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_thumbnail_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_thumbnail_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -10214,12 +10392,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_layer_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_active_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_active_layer_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -10406,12 +10588,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_active_layer_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_active_layer_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_active_layer_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -10600,12 +10786,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_active_channel_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_active_channel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_active_channel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -10792,12 +10982,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_active_channel_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_active_channel_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_active_channel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -10986,12 +11180,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_selection_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_selection_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_selection_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -11179,12 +11377,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_component_active_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_component_active_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_component_active_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -11431,12 +11633,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_component_active_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_component_active_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_component_active_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -11675,12 +11881,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_component_visible_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_component_visible_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_component_visible_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -11927,12 +12137,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_component_visible_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_component_visible_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_component_visible_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -12171,12 +12385,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_filename_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_filename_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_filename_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -12338,12 +12556,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_filename_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_filename_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_filename_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -12508,12 +12730,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_name_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_name_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_name_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -12726,12 +12952,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_resolution_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_resolution_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_resolution_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -12915,12 +13145,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_resolution_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_resolution_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_resolution_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -13144,12 +13378,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_unit_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_unit_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_unit_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -13311,12 +13549,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_unit_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_unit_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_unit_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -13483,12 +13725,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_tattoo_state_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_tattoo_state_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_tattoo_state_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -13650,12 +13896,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_set_tattoo_state_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_set_tattoo_state_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_set_tattoo_state_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -13805,12 +14055,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_layer_by_tattoo_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_layer_by_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_layer_by_tattoo_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -14034,12 +14288,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_get_channel_by_tattoo_invoker (Gimp * gimp,Argument * args)
+DECL|function|image_get_channel_by_tattoo_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|image_get_channel_by_tattoo_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

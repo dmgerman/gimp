@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaf45b50103
+DECL|enum|__anon2bfe201a0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -462,6 +462,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|x1
@@ -1322,6 +1326,11 @@ argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
 argument_list|,
 name|crop
 operator|->
@@ -3570,12 +3579,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|crop_tool_crop_image (GimpImage * gimage,gint x1,gint y1,gint x2,gint y2,gboolean layer_only,GimpCropMode crop_mode)
+DECL|function|crop_tool_crop_image (GimpImage * gimage,GimpContext * context,gint x1,gint y1,gint x2,gint y2,gboolean layer_only,GimpCropMode crop_mode)
 name|crop_tool_crop_image
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gint
 name|x1
@@ -3614,6 +3627,8 @@ return|return;
 name|gimp_image_crop
 argument_list|(
 name|gimage
+argument_list|,
+name|context
 argument_list|,
 name|x1
 argument_list|,
@@ -5015,6 +5030,11 @@ operator|->
 name|gdisp
 operator|->
 name|gimage
+argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
 argument_list|,
 name|crop
 operator|->

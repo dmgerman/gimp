@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-in-run.h"
 end_include
 
@@ -351,7 +357,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27a2c5220108
+DECL|struct|__anon2b33333c0108
 block|{
 DECL|member|old_name
 specifier|const
@@ -914,12 +920,16 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|procedural_db_execute (Gimp * gimp,const gchar * name,Argument * args)
+DECL|function|procedural_db_execute (Gimp * gimp,GimpContext * context,const gchar * name,Argument * args)
 name|procedural_db_execute
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -946,6 +956,16 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -1197,6 +1217,8 @@ call|)
 argument_list|(
 name|gimp
 argument_list|,
+name|context
+argument_list|,
 name|args
 argument_list|)
 expr_stmt|;
@@ -1360,12 +1382,16 @@ end_function
 begin_function
 name|Argument
 modifier|*
-DECL|function|procedural_db_run_proc (Gimp * gimp,const gchar * name,gint * nreturn_vals,...)
+DECL|function|procedural_db_run_proc (Gimp * gimp,GimpContext * context,const gchar * name,gint * nreturn_vals,...)
 name|procedural_db_run_proc
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -1402,6 +1428,16 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -1822,6 +1858,8 @@ operator|=
 name|procedural_db_execute
 argument_list|(
 name|gimp
+argument_list|,
+name|context
 argument_list|,
 name|name
 argument_list|,

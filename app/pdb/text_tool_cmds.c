@@ -148,12 +148,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_fontname_invoker (Gimp * gimp,Argument * args)
+DECL|function|text_fontname_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|text_fontname_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -485,6 +489,8 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -704,12 +710,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_get_extents_fontname_invoker (Gimp * gimp,Argument * args)
+DECL|function|text_get_extents_fontname_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|text_get_extents_fontname_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1113,12 +1123,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_invoker (Gimp * gimp,Argument * args)
+DECL|function|text_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|text_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -1642,6 +1656,8 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
+name|context
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -1918,12 +1934,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|text_get_extents_invoker (Gimp * gimp,Argument * args)
+DECL|function|text_get_extents_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|text_get_extents_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

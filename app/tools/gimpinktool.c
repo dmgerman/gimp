@@ -3141,7 +3141,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29d83d550103
+DECL|enum|__anon2c30e98b0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -4102,6 +4102,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 name|col
 argument_list|)

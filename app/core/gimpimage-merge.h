@@ -25,6 +25,10 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpMergeType
 name|merge_type
 parameter_list|)
@@ -44,6 +48,10 @@ name|GimpLayer
 modifier|*
 name|current_layer
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpMergeType
 name|merge_type
 parameter_list|)
@@ -58,6 +66,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -74,6 +86,10 @@ parameter_list|,
 name|GSList
 modifier|*
 name|merge_list
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpMergeType
 name|merge_type

@@ -3444,6 +3444,10 @@ name|GimpTransformOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|GimpProgress
 modifier|*
 name|progress
@@ -3463,6 +3467,13 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
+argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|GIMP_CONTEXT
+argument_list|(
+name|options
 argument_list|)
 expr_stmt|;
 if|if
@@ -3512,6 +3523,8 @@ condition|)
 name|gimp_item_linked_transform
 argument_list|(
 name|active_item
+argument_list|,
+name|context
 argument_list|,
 operator|&
 name|tr_tool
@@ -3598,6 +3611,8 @@ argument_list|(
 name|active_item
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|tr_tool
 operator|->
 name|original
@@ -3642,6 +3657,8 @@ case|:
 name|gimp_item_transform
 argument_list|(
 name|active_item
+argument_list|,
+name|context
 argument_list|,
 operator|&
 name|tr_tool
@@ -3722,6 +3739,10 @@ name|GimpTransformOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|GimpItem
 modifier|*
 name|active_item
@@ -3744,6 +3765,13 @@ operator|->
 name|tool_info
 operator|->
 name|tool_options
+argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|GIMP_CONTEXT
+argument_list|(
+name|options
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -3896,6 +3924,8 @@ argument_list|(
 name|tool
 operator|->
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 operator|&
 name|new_layer

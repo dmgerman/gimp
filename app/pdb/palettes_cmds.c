@@ -182,12 +182,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_refresh_invoker (Gimp * gimp,Argument * args)
+DECL|function|palettes_refresh_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palettes_refresh_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -264,12 +268,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_get_list_invoker (Gimp * gimp,Argument * args)
+DECL|function|palettes_get_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palettes_get_list_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -485,12 +493,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_get_palette_invoker (Gimp * gimp,Argument * args)
+DECL|function|palettes_get_palette_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palettes_get_palette_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -517,10 +529,7 @@ name|palette
 operator|=
 name|gimp_context_get_palette
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 operator|)
 operator|!=
@@ -649,12 +658,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_set_palette_invoker (Gimp * gimp,Argument * args)
+DECL|function|palettes_set_palette_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palettes_set_palette_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -738,10 +751,7 @@ name|palette
 condition|)
 name|gimp_context_set_palette
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|palette
 argument_list|)
@@ -825,12 +835,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|palettes_get_palette_entry_invoker (Gimp * gimp,Argument * args)
+DECL|function|palettes_get_palette_entry_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|palettes_get_palette_entry_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -946,10 +960,7 @@ name|palette
 operator|=
 name|gimp_context_get_palette
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 block|}

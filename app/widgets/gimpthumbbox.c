@@ -2034,6 +2034,15 @@ name|box
 operator|->
 name|imagefile
 argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|box
+operator|->
+name|imagefile
+operator|->
+name|gimp
+argument_list|)
+argument_list|,
 name|size
 argument_list|)
 expr_stmt|;

@@ -708,6 +708,8 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|options
 operator|->
 name|fill_mode

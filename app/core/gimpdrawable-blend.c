@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2914b32c0108
+DECL|struct|__anon27b3ca4d0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2914b32c0208
+DECL|struct|__anon27b3ca4d0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -545,6 +545,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|PixelRegion
 modifier|*
 name|PR
@@ -648,12 +652,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gimp_drawable_blend (GimpDrawable * drawable,GimpContext * context,GimpBlendMode blend_mode,GimpLayerModeEffects paint_mode,GimpGradientType gradient_type,gdouble opacity,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble startx,gdouble starty,gdouble endx,gdouble endy,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_drawable_blend
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GimpBlendMode
 name|blend_mode
@@ -735,6 +743,14 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -852,6 +868,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|drawable
+argument_list|,
+name|context
 argument_list|,
 operator|&
 name|bufPR
@@ -4043,7 +4061,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|gradient_fill_region (GimpImage * gimage,GimpDrawable * drawable,GimpContext * context,PixelRegion * PR,gint width,gint height,GimpBlendMode blend_mode,GimpGradientType gradient_type,gdouble offset,GimpRepeatMode repeat,gboolean reverse,gboolean supersample,gint max_depth,gdouble threshold,gboolean dither,gdouble sx,gdouble sy,gdouble ex,gdouble ey,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gradient_fill_region
 parameter_list|(
 name|GimpImage
@@ -4053,6 +4071,10 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|PixelRegion
 modifier|*
@@ -4133,25 +4155,12 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
-name|GimpContext
-modifier|*
-name|context
-decl_stmt|;
 name|GRand
 modifier|*
 name|dither_rand
 init|=
 name|NULL
 decl_stmt|;
-name|context
-operator|=
-name|gimp_get_current_context
-argument_list|(
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
 name|rbd
 operator|.
 name|gradient

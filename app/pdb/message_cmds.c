@@ -126,12 +126,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_invoker (Gimp * gimp,Argument * args)
+DECL|function|message_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|message_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -297,12 +301,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_get_handler_invoker (Gimp * gimp,Argument * args)
+DECL|function|message_get_handler_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|message_get_handler_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -403,12 +411,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|message_set_handler_invoker (Gimp * gimp,Argument * args)
+DECL|function|message_set_handler_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|message_set_handler_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

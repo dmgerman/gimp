@@ -98,12 +98,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|version_invoker (Gimp * gimp,Argument * args)
+DECL|function|version_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|version_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -205,12 +209,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|quit_invoker (Gimp * gimp,Argument * args)
+DECL|function|quit_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|quit_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*

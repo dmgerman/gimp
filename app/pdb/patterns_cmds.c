@@ -182,12 +182,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_refresh_invoker (Gimp * gimp,Argument * args)
+DECL|function|patterns_refresh_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|patterns_refresh_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -264,12 +268,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_list_invoker (Gimp * gimp,Argument * args)
+DECL|function|patterns_get_list_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|patterns_get_list_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -485,12 +493,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_pattern_invoker (Gimp * gimp,Argument * args)
+DECL|function|patterns_get_pattern_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|patterns_get_pattern_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -517,10 +529,7 @@ name|pattern
 operator|=
 name|gimp_context_get_pattern
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 operator|)
 operator|!=
@@ -674,12 +683,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_set_pattern_invoker (Gimp * gimp,Argument * args)
+DECL|function|patterns_set_pattern_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|patterns_set_pattern_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -763,10 +776,7 @@ name|success
 condition|)
 name|gimp_context_set_pattern
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|,
 name|pattern
 argument_list|)
@@ -850,12 +860,16 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|patterns_get_pattern_data_invoker (Gimp * gimp,Argument * args)
+DECL|function|patterns_get_pattern_data_invoker (Gimp * gimp,GimpContext * context,Argument * args)
 name|patterns_get_pattern_data_invoker
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|Argument
 modifier|*
@@ -965,10 +979,7 @@ name|pattern
 operator|=
 name|gimp_context_get_pattern
 argument_list|(
-name|gimp_get_current_context
-argument_list|(
-name|gimp
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
 block|}

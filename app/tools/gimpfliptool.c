@@ -810,6 +810,10 @@ name|GimpFlipOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
 name|gdouble
 name|axis
 init|=
@@ -838,6 +842,13 @@ expr_stmt|;
 name|tr_options
 operator|=
 name|GIMP_TRANSFORM_OPTIONS
+argument_list|(
+name|options
+argument_list|)
+expr_stmt|;
+name|context
+operator|=
+name|GIMP_CONTEXT
 argument_list|(
 name|options
 argument_list|)
@@ -923,6 +934,8 @@ name|gimp_item_linked_flip
 argument_list|(
 name|active_item
 argument_list|,
+name|context
+argument_list|,
 name|options
 operator|->
 name|flip_type
@@ -954,6 +967,8 @@ argument_list|(
 name|active_item
 argument_list|)
 argument_list|,
+name|context
+argument_list|,
 name|trans_tool
 operator|->
 name|original
@@ -974,6 +989,8 @@ case|:
 name|gimp_item_flip
 argument_list|(
 name|active_item
+argument_list|,
+name|context
 argument_list|,
 name|options
 operator|->
