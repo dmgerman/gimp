@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp-intl.h"
 end_include
 
 begin_comment
@@ -32,7 +32,7 @@ comment|/*  internal structures  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29780fa60108
+DECL|struct|__anon2a0aa46a0108
 typedef|typedef
 struct|struct
 block|{

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphelpui.h"
 end_include
 
@@ -30,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpintl.h"
+file|"libgimp-intl.h"
 end_include
 
 begin_comment

@@ -63,7 +63,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp-intl.h"
 end_include
 
 begin_include
@@ -208,7 +208,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c946fe0103
+DECL|enum|__anon2ad0daff0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED

@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpintl.h"
+file|"libgimp-intl.h"
 end_include
 
 begin_typedef
@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0571520108
+DECL|struct|__anon28ef1ac70108
 block|{
 DECL|member|default_action
 name|ExportFunc

@@ -28,13 +28,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpintl.h"
+file|"gimplimits.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimplimits.h"
+file|"libgimp-intl.h"
 end_include
 
 begin_comment
@@ -462,7 +462,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon291304360103
+DECL|enum|__anon295a4f8e0103
 enum|enum
 block|{
 DECL|enumerator|COLOR_CHANGED
