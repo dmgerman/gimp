@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b83407e0103
+DECL|enum|__anon2b8b076d0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -319,7 +319,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpDataEditor
+name|GtkWidget
 modifier|*
 name|gimp_gradient_editor_new
 parameter_list|(

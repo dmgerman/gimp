@@ -176,7 +176,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|GimpDataEditor
+name|GtkWidget
 modifier|*
 name|gimp_brush_editor_new
 parameter_list|(

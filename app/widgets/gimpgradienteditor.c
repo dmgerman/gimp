@@ -2311,7 +2311,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|GimpDataEditor
+name|GtkWidget
 modifier|*
 DECL|function|gimp_gradient_editor_new (Gimp * gimp,GimpMenuFactory * menu_factory)
 name|gimp_gradient_editor_new
@@ -2370,7 +2370,7 @@ name|NULL
 return|;
 block|}
 return|return
-name|GIMP_DATA_EDITOR
+name|GTK_WIDGET
 argument_list|(
 name|editor
 argument_list|)

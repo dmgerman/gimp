@@ -2272,7 +2272,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|GimpDataEditor
+name|GtkWidget
 modifier|*
 DECL|function|gimp_palette_editor_new (Gimp * gimp,GimpMenuFactory * menu_factory)
 name|gimp_palette_editor_new
@@ -2288,9 +2288,9 @@ parameter_list|)
 block|{
 name|GimpPaletteEditor
 modifier|*
-name|palette_editor
+name|editor
 decl_stmt|;
-name|palette_editor
+name|editor
 operator|=
 name|g_object_new
 argument_list|(
@@ -2306,7 +2306,7 @@ name|gimp_data_editor_construct
 argument_list|(
 name|GIMP_DATA_EDITOR
 argument_list|(
-name|palette_editor
+name|editor
 argument_list|)
 argument_list|,
 name|gimp
@@ -2323,7 +2323,7 @@ condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|palette_editor
+name|editor
 argument_list|)
 expr_stmt|;
 return|return
@@ -2331,9 +2331,9 @@ name|NULL
 return|;
 block|}
 return|return
-name|GIMP_DATA_EDITOR
+name|GTK_WIDGET
 argument_list|(
-name|palette_editor
+name|editor
 argument_list|)
 return|;
 block|}
