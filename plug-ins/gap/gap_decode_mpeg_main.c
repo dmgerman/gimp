@@ -357,7 +357,7 @@ name|PARAM_INT32
 block|,
 literal|"first_frame"
 block|,
-literal|"1.st frame to extract (starting at number 1)"
+literal|"1st frame to extract (starting at number 1)"
 block|}
 block|,
 block|{
@@ -469,7 +469,7 @@ name|PARAM_INT32
 block|,
 literal|"first_frame"
 block|,
-literal|"1.st frame to extract (starting at number 1)"
+literal|"1st frame to extract (starting at number 1)"
 block|}
 block|,
 block|{
@@ -1213,7 +1213,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"OVERWRITE frame"
+literal|"Overwrite Frame"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -1234,7 +1234,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"OVERWRITE all"
+literal|"Overwrite All"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -1255,7 +1255,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"CANCEL"
+literal|"Cancel"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -1299,7 +1299,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"File already exists:"
+literal|"File already exists"
 argument_list|)
 argument_list|,
 literal|1
@@ -1723,7 +1723,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Decoding MPEG movie..."
+literal|"Decoding MPEG Movie..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2024,12 +2024,13 @@ operator|=
 name|g_strdup_printf
 argument_list|(
 literal|"Frame %d (%dms)"
-argument_list|,
-name|framenumber
-argument_list|,
-name|delay
 argument_list|)
-expr_stmt|;
+operator|,
+name|framenumber
+operator|,
+name|delay
+block|)
+empty_stmt|;
 else|else
 name|layername
 operator|=
@@ -2354,24 +2355,39 @@ name|framenumber
 operator|++
 expr_stmt|;
 block|}
+end_function
+
+begin_expr_stmt
 name|CloseMPEG
 argument_list|()
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|fclose
 argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|gimp_progress_update
 argument_list|(
 literal|1.0
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_expr_stmt
 name|g_free
 argument_list|(
 name|data
 argument_list|)
 expr_stmt|;
+end_expr_stmt
+
+begin_if
 if|if
 condition|(
 name|autoload
@@ -2386,15 +2402,17 @@ return|return
 name|first_image_ID
 return|;
 block|}
+end_if
+
+begin_return
 return|return
 operator|-
 literal|1
 return|;
-block|}
-end_function
+end_return
 
 begin_function
-specifier|static
+unit|}  static
 name|gint32
 DECL|function|load_range_dialog (gint32 * first_frame,gint32 * last_frame,char * filename,gint32 len_filename,char * basename,gint32 len_basename,gint32 * autoload)
 name|load_range_dialog
@@ -2470,10 +2488,10 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"Name of the MPEG1 videofile to READ\n"
-literal|"frames are extracted from the videofile\n"
-literal|"and written to seprate diskfiles\n"
-literal|"Audiotracks in the videofile are ignored"
+literal|"Name of the MPEG1 videofile to READ.\n"
+literal|"Frames are extracted from the videofile\n"
+literal|"and written to seperate diskfiles.\n"
+literal|"Audiotracks in the videofile are ignored."
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2523,7 +2541,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"From"
+literal|"From:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2535,7 +2553,7 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"Framenumber of 1.st frame to extract"
+literal|"Framenumber of 1st frame to extract"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2612,7 +2630,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"To"
+literal|"To:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2701,7 +2719,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Framenames"
+literal|"Framenames:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2776,7 +2794,7 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"Open the 1.st one of the extracted frames"
+literal|"Open the 1st one of the extracted frames"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2808,8 +2826,8 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"\nWARNING: do not attempt to split other files than MPEG1 videos\n"
-literal|"before you proceed, you should save all open images"
+literal|"\nWARNING: Do not attempt to split other files than MPEG1 videos.\n"
+literal|"Before you proceed, you should save all open images."
 argument_list|)
 expr_stmt|;
 if|if
@@ -2818,9 +2836,15 @@ name|TRUE
 operator|==
 name|p_array_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"Split MPEG1 Video to Frames"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Select Framerange"
+argument_list|)
 argument_list|,
 name|ARGC_DIALOG
 argument_list|,

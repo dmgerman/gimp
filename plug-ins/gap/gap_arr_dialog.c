@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f7d690108
+DECL|struct|__anon27b0c4490108
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -120,7 +120,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon297f7d690208
+DECL|struct|__anon27b0c4490208
 typedef|typedef
 struct|struct
 block|{
@@ -2210,7 +2210,7 @@ argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3726,7 +3726,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"CLOSE"
+literal|"Close"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3824,7 +3824,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3871,14 +3871,34 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3925,7 +3945,7 @@ name|l_label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Value: "
+literal|"Value:"
 argument_list|)
 expr_stmt|;
 else|else

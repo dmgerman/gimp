@@ -8,11 +8,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* TODO:  * - BUG  X11 deadlock if GAP Video Navigator runs another plugin  *          from the double-click callback procedure in the frame listbox,  *          and the other plugin opens a new gtk dialog.  *          (the new dialog does not get the focus)  *       Current workaround:  *          save frames of other types than xcf before the  *          listbox is filled.  *          (this forces the GAP p_decide_save_as Dialog  *           when the Navigator is opened or an image != xcf is  *           selected in the image optionmenu, and sets  *           the fileformat specific save parameters)  *           * - BUGFIX or workaround needed: list widget can't handle large lists  *          (test failed at 1093 items maybe there is a limit of 1092 ??)  *  * - start of a 2.nd navigator should pop up the 1.st one and exit.  * x- scroll the listbox (active image should always be in the visible (exposed) area  *     problem: 1092 limit !  * x- implement the unfinished callback procedures  * x- Updatde Button (to create all missing and out of date thumbnails)  * x- tooltips  * x- multiple selections  * x- timezoom and framerate should be stored in a video info file  * x- calculate& update for frame timing labels  * x- Render Preview defaultIcon for images without thumbnail  *          and for preview_size 0 (off)  *  * Events that sould be handled:  * - changes of the active_image (in ram)  :: update of one frame_widget  * x- change of preview_size :: update full frame_widgets list  * x- changes of the active_image (on disk) :: update of image_menu + full frame_widgets list  *   (maybe i'll set a polling timer event to watch the diskfile)  * x- close of the active_image (in ram)  :: update of image_menu + full frame_widgets list  *  * - drag& drop   *    (Problem: gimage struct is not available for plugins,  *                         need a Drag&Drop type that operates on image_id)  * - preferences should have additional video_preview_size  *   (tiny,small,normal,large,huge)  *  */
+comment|/* TODO:  * - BUG  X11 deadlock if GAP Video Navigator runs another plugin  *          from the double-click callback procedure in the frame listbox,  *          and the other plugin opens a new gtk dialog.  *          (the new dialog does not get the focus)  *       Current workaround:  *          save frames of other types than xcf before the  *          listbox is filled.  *          (this forces the GAP p_decide_save_as Dialog  *           when the Navigator is opened or an image != xcf is  *           selected in the image optionmenu, and sets  *           the fileformat specific save parameters)  *           * - BUGFIX or workaround needed: list widget can't handle large lists  *          (test failed at 1093 items maybe there is a limit of 1092 ??)  *  * - start of a 2.nd navigator should pop up the 1st one and exit.  * x- scroll the listbox (active image should always be in the visible (exposed) area  *     problem: 1092 limit !  * x- implement the unfinished callback procedures  * x- Updatde Button (to create all missing and out of date thumbnails)  * x- tooltips  * x- multiple selections  * x- timezoom and framerate should be stored in a video info file  * x- calculate& update for frame timing labels  * x- Render Preview defaultIcon for images without thumbnail  *          and for preview_size 0 (off)  *  * Events that sould be handled:  * - changes of the active_image (in ram)  :: update of one frame_widget  * x- change of preview_size :: update full frame_widgets list  * x- changes of the active_image (on disk) :: update of image_menu + full frame_widgets list  *   (maybe i'll set a polling timer event to watch the diskfile)  * x- close of the active_image (in ram)  :: update of image_menu + full frame_widgets list  *  * - drag& drop   *    (Problem: gimage struct is not available for plugins,  *                         need a Drag&Drop type that operates on image_id)  * - preferences should have additional video_preview_size  *   (tiny,small,normal,large,huge)  *  */
 end_comment
 
 begin_comment
-comment|/* revision history:  * version 1.1.14a; 2000.01.08   hof: 1.st release  */
+comment|/* revision history:  * version 1.1.14a; 2000.01.08   hof: 1st release  */
 end_comment
 
 begin_decl_stmt
@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae6c5e00103
+DECL|enum|__anon2c8908720103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae6c5e00203
+DECL|enum|__anon2c8908720203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -1545,7 +1545,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Goto 1.st Frame"
+literal|"Goto 1st Frame"
 argument_list|)
 block|,
 literal|"#goto_first"
@@ -2050,7 +2050,10 @@ name|p_msg_win
 argument_list|(
 name|RUN_INTERACTIVE
 argument_list|,
-literal|"Cant open 2 or more Video Navigator Windows"
+name|_
+argument_list|(
+literal|"Cant open two or more Video Navigator Windows."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|l_rc
@@ -2780,7 +2783,7 @@ name|image_id
 operator|)
 condition|)
 block|{
-comment|/* for other frameformats than xcf       * save the frame a 1.st time (to set filetype specific save paramters)       * this also is a workaround for a BUG that causes an X11 deadlock       * when the save dialog pops up from the double-click callback in the frames listbox       */
+comment|/* for other frameformats than xcf       * save the frame a 1st time (to set filetype specific save paramters)       * this also is a workaround for a BUG that causes an X11 deadlock       * when the save dialog pops up from the double-click callback in the frames listbox       */
 name|suspend_gimage_notify
 operator|++
 expr_stmt|;

@@ -259,7 +259,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"New Width :"
+literal|"New Width:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -336,7 +336,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"New Height :"
+literal|"New Height:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -413,7 +413,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Offest X :"
+literal|"Offset X:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -490,7 +490,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Offest Y :"
+literal|"Offset Y:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -993,7 +993,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"From :"
+literal|"From:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -1067,7 +1067,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"To :"
+literal|"To:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -1141,7 +1141,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Layerstack :"
+literal|"Layerstack:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -1805,7 +1805,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Palette and Dither Settings :"
+literal|"Palette and Dither Settings"
 argument_list|)
 argument_list|,
 name|ARGC_INDEXED
@@ -2054,22 +2054,22 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"KEEP_TYPE"
+literal|"Keep Type"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Conv to RGB"
+literal|"Convert to RGB"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Conv to GRAY"
+literal|"Convert to Gray"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Conv to INDEXED"
+literal|"Convert to Indexed"
 argument_list|)
 block|}
 decl_stmt|;
@@ -2217,7 +2217,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"To   Frame:"
+literal|"To Frame:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2423,7 +2423,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Imagetype :"
+literal|"Imagetype:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2485,7 +2485,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Flatten  :"
+literal|"Flatten:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -2535,7 +2535,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Convert Settings :"
+literal|"Convert Settings"
 argument_list|)
 argument_list|,
 literal|7
@@ -3069,7 +3069,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"From :"
+literal|"From:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -3155,7 +3155,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"To :"
+literal|"To:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -3307,7 +3307,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Layer Mergemode :"
+literal|"Layer Mergemode:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -3933,7 +3933,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Creating Layer-Animated Image .."
+literal|"Creating Layer-Animated Image..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5405,7 +5405,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Flattening Frames .."
+literal|"Flattening Frames..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5414,7 +5414,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Converting Frames .."
+literal|"Converting Frames..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5776,7 +5776,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"OVERWRITE frame"
+literal|"Overwrite Frame"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -5797,7 +5797,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"OVERWRITE all"
+literal|"Overwrite All"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -5818,7 +5818,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"CANCEL"
+literal|"Cancel"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -5894,7 +5894,9 @@ name|run_mode
 argument_list|,
 name|_
 argument_list|(
-literal|"Convert Frames: SAVE operation FAILED\n- desired save plugin can't handle type\n- or desired save plugin not available\n"
+literal|"Convert Frames: SAVE operation FAILED.\n"
+literal|"Desired save plugin can't handle type\n"
+literal|"or desired save plugin not available."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6212,7 +6214,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Cropping all Animation Frames .."
+literal|"Cropping all Animation Frames..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6224,7 +6226,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Resizing all Animation Frames .."
+literal|"Resizing all Animation Frames..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6234,7 +6236,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Scaling all Animation Frames .."
+literal|"Scaling all Animation Frames..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6745,7 +6747,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Removing Layer (pos:%ld) from Frames .."
+literal|"Removing Layer (pos:%ld) from Frames..."
 argument_list|)
 argument_list|,
 name|position

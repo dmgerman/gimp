@@ -708,7 +708,10 @@ index|]
 operator|.
 name|but_txt
 operator|=
-literal|"CANCEL"
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
 expr_stmt|;
 name|l_argv
 index|[
@@ -763,7 +766,10 @@ name|RUN_INTERACTIVE
 condition|)
 name|p_buttons_dialog
 argument_list|(
+name|_
+argument_list|(
 literal|"GAP Message"
+argument_list|)
 argument_list|,
 name|msg
 argument_list|,
@@ -3328,7 +3334,11 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 argument_list|,
-literal|"OPERATION CANCELLED\n(current frame changed while dialog was open)\n"
+name|_
+argument_list|(
+literal|"OPERATION CANCELLED.\n"
+literal|"Current frame changed while dialog was open."
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3378,7 +3388,13 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 argument_list|,
-literal|"OPERATION CANCELLED\nGAP-plugins works only with filenames\nthat ends with _0001.xcf\n==> rename your image, then try again"
+name|_
+argument_list|(
+literal|"OPERATION CANCELLED.\n"
+literal|"GAP-plugins works only with filenames\n"
+literal|"that end with _0001.xcf.\n"
+literal|"==> Rename your image, then try again."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3600,7 +3616,9 @@ name|l_msg
 operator|=
 name|_
 argument_list|(
-literal|"You are using a file format != xcf\nSave Operations may result\nin loss of layer information"
+literal|"You are using a file format != xcf\n"
+literal|"Save Operations may result\n"
+literal|"in loss of layer information."
 argument_list|)
 expr_stmt|;
 comment|/* check if there are SAVE_AS_MODE settings (from privious calls within one gimp session) */
@@ -3648,7 +3666,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"CANCEL"
+literal|"Cancel"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -3670,7 +3688,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"SAVE Flattened"
+literal|"Save Flattened"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -3691,7 +3709,7 @@ name|but_txt
 operator|=
 name|_
 argument_list|(
-literal|"SAVE As Is"
+literal|"Save As Is"
 argument_list|)
 expr_stmt|;
 name|l_argv
@@ -5275,7 +5293,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: could not rename frame %ld to %ld\n"
+literal|"Error: could not rename frame %ld to %ld"
 argument_list|)
 argument_list|,
 name|l_hi
@@ -5760,7 +5778,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Duplicating frames .."
+literal|"Duplicating frames..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5809,7 +5827,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: could not rename frame %ld to %ld\n"
+literal|"Error: could not rename frame %ld to %ld"
 argument_list|)
 argument_list|,
 name|l_lo
@@ -6168,7 +6186,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: could not rename frame %ld to %ld\n"
+literal|"Error: could not rename frame %ld to %ld"
 argument_list|)
 argument_list|,
 name|dest
@@ -6217,7 +6235,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: could not rename frame %ld to %ld\n"
+literal|"Error: could not rename frame %ld to %ld"
 argument_list|)
 argument_list|,
 name|ainfo_ptr
@@ -6268,7 +6286,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: could not rename frame %ld to %ld\n"
+literal|"Error: could not rename frame %ld to %ld"
 argument_list|)
 argument_list|,
 name|l_tmp_nr
@@ -6611,7 +6629,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Renumber Framesequence .."
+literal|"Renumber Framesequence..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6675,7 +6693,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: could not rename frame %ld to %ld\n"
+literal|"Error: could not rename frame %ld to %ld"
 argument_list|)
 argument_list|,
 name|l_lo
@@ -6815,7 +6833,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Error: could not rename frame %ld to %ld\n"
+literal|"Error: could not rename frame %ld to %ld"
 argument_list|)
 argument_list|,
 name|l_lo
@@ -7397,7 +7415,7 @@ name|l_hline
 argument_list|,
 name|_
 argument_list|(
-literal|"Number :"
+literal|"Number:"
 argument_list|)
 argument_list|,
 name|NULL
@@ -7622,7 +7640,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Delete Frames from %ld to (Number)"
+literal|"Delete Frames from %ld to (number)"
 argument_list|)
 argument_list|,
 name|ainfo_ptr
@@ -7660,7 +7678,7 @@ name|l_hline
 argument_list|,
 name|_
 argument_list|(
-literal|"Number :"
+literal|"Number:"
 argument_list|)
 argument_list|,
 name|NULL
@@ -7839,7 +7857,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"From :"
+literal|"From:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -7925,7 +7943,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"To :"
+literal|"To:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -8011,7 +8029,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"N-Times :"
+literal|"N times:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -8500,12 +8518,12 @@ name|l_title
 argument_list|,
 name|_
 argument_list|(
-literal|"With Frame (Number)"
+literal|"With Frame (number)"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Number :"
+literal|"Number:"
 argument_list|)
 argument_list|,
 name|NULL
@@ -8673,7 +8691,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"From :"
+literal|"From:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -8759,7 +8777,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"To :"
+literal|"To:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -8845,7 +8863,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"N-Shift :"
+literal|"N-Shift:"
 argument_list|)
 expr_stmt|;
 name|argv

@@ -4944,8 +4944,11 @@ argument_list|(
 literal|"No fractalexplorer-path in gimprc:\n"
 literal|"You need to add an entry like\n"
 literal|"(fractalexplorer-path \"${gimp_dir}/fractalexplorer:${gimp_data_dir}/fractalexplorer\")\n"
-literal|"to your ~/.gimp-1.1/gimprc file\n"
+literal|"to your %s/gimprc file."
 argument_list|)
+argument_list|,
+name|gimp_directory
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params

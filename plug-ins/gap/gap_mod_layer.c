@@ -251,37 +251,37 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"select all Layers where Layername is equal to Pattern"
+literal|"Select all Layers where Layername is equal to Pattern"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"select all Layers where Layername starts with Pattern"
+literal|"Select all Layers where Layername starts with Pattern"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"select all Layers where Layername ends up with Pattern"
+literal|"Select all Layers where Layername ends up with Pattern"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"select all Layers where Layername contains Pattern"
+literal|"Select all Layers where Layername contains Pattern"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"select Layerstack positions.\n0, 4-5, 8\nwhere 0 == Top-layer"
+literal|"Select Layerstack positions.\n0, 4-5, 8\nwhere 0 == Top-layer"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"select Layerstack positions.\n0, 4-5, 8\nwhere 0 == BG-layer"
+literal|"Select Layerstack positions.\n0, 4-5, 8\nwhere 0 == BG-layer"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"select all visible Layers"
+literal|"Select all visible Layers"
 argument_list|)
 block|}
 decl_stmt|;
@@ -297,67 +297,67 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"set Layer(s) visible"
+literal|"Set Layer(s) visible"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"set Layer(s) invisible"
+literal|"Set Layer(s) invisible"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"set Layer(s) linked"
+literal|"Set Layer(s) linked"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"set Layer(s) unlinked"
+literal|"Set Layer(s) unlinked"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"raise Layer(s)"
+literal|"Raise Layer(s)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"lower Layer(s)"
+literal|"Lower Layer(s)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"merge Layer(s) expand as necessary"
+literal|"Merge Layer(s) expand as necessary"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"merge Layer(s) clipped to image"
+literal|"Merge Layer(s) clipped to image"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"merge Layer(s) clipped to bg-layer"
+literal|"Merge Layer(s) clipped to bg-layer"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"apply filter on Layer(s)"
+literal|"Apply filter on Layer(s)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"duplicate Layer(s)"
+literal|"Duplicate Layer(s)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"delete Layer(s)"
+literal|"Delete Layer(s)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"rename Layer(s)"
+literal|"Rename Layer(s)"
 argument_list|)
 block|}
 decl_stmt|;
@@ -619,7 +619,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"To   Frame:"
+literal|"To Frame:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -918,7 +918,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Function :"
+literal|"Function:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -1283,7 +1283,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"2.nd call of %s\n(define end-settings)"
+literal|"2nd call of %s\n(define end-settings)"
 argument_list|)
 argument_list|,
 name|filter_procname
@@ -3174,7 +3174,7 @@ name|RUN_INTERACTIVE
 argument_list|,
 name|_
 argument_list|(
-literal|"GAP Modify: No layer selected in last handled frame\n"
+literal|"GAP Modify: No layer selected in last handled frame"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3488,7 +3488,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Modifying Frames/Layer(s) .."
+literal|"Modifying Frames/Layer(s)..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3822,7 +3822,7 @@ name|RUN_INTERACTIVE
 argument_list|,
 name|_
 argument_list|(
-literal|"No selected Layer in start frame\n"
+literal|"No selected Layer in start frame"
 argument_list|)
 argument_list|)
 expr_stmt|;

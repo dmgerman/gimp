@@ -258,7 +258,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Splitting into Frames .."
+literal|"Splitting into Frames..."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -566,7 +566,9 @@ name|run_mode
 argument_list|,
 name|_
 argument_list|(
-literal|"Split Frames: SAVE operation FAILED\n- desired save plugin can't handle type\n- or desired save plugin not available\n"
+literal|"Split Frames: SAVE operation FAILED.\n"
+literal|"desired save plugin can't handle type\n"
+literal|"or desired save plugin not available."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -757,7 +759,7 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"extension of resulting frames       \n(is also used to define Fileformat)"
+literal|"extension of resulting frames (is also used to define Fileformat)"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -798,7 +800,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Inverse Order :"
+literal|"Inverse Order:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -842,7 +844,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Flatten :"
+literal|"Flatten:"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -854,7 +856,7 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"Remove Alpha Channel in resulting Frames,    \ntransparent parts are filled with BG color"
+literal|"Remove Alpha Channel in resulting Frames. Transparent parts are filled with BG color."
 argument_list|)
 expr_stmt|;
 name|argv
@@ -879,7 +881,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Split Settings :"
+literal|"Split Settings"
 argument_list|)
 argument_list|,
 literal|4
@@ -1037,7 +1039,9 @@ name|run_mode
 argument_list|,
 name|_
 argument_list|(
-literal|"OPERATION CANCELLED\nThis image is already an AnimFrame\nTry again on a Duplicate\n(image/duplicate)"
+literal|"OPERATION CANCELLED.\n"
+literal|"This image is already an AnimFrame.\n"
+literal|"Try again on a Duplicate (Image/Duplicate)."
 argument_list|)
 argument_list|)
 expr_stmt|;

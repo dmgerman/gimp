@@ -485,7 +485,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"2.nd call of %s\n(define end-settings)"
+literal|"2nd call of %s\n(define end-settings)"
 argument_list|)
 argument_list|,
 name|plugin_name
@@ -500,7 +500,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Non-Interactive call of %s\n(for all layers inbetween)"
+literal|"Non-Interactive call of %s\n(for all layers in between)"
 argument_list|)
 argument_list|,
 name|plugin_name

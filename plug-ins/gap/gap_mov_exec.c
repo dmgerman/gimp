@@ -689,7 +689,8 @@ name|run_mode
 argument_list|,
 name|_
 argument_list|(
-literal|"No Source Image was selected\n(Please open a 2nd Image of the same type before opening Move Path)"
+literal|"No Source Image was selected.\n"
+literal|"Please open a 2nd Image of the same type before opening Move Path."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -717,7 +718,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Copying Layers into Frames .."
+literal|"Copying Layers into Frames..."
 argument_list|)
 argument_list|)
 expr_stmt|;

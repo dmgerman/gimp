@@ -217,7 +217,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon29c642570108
+DECL|struct|__anon29a5da470108
 typedef|typedef
 struct|struct
 block|{
@@ -232,7 +232,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c642570208
+DECL|struct|__anon29a5da470208
 typedef|typedef
 struct|struct
 block|{
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c642570308
+DECL|struct|__anon29a5da470308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -424,7 +424,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c642570408
+DECL|struct|__anon29a5da470408
 typedef|typedef
 struct|struct
 block|{
@@ -2588,7 +2588,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"UpdPreview"
+literal|"Update Preview"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2885,6 +2885,26 @@ argument_list|,
 literal|3
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3485,7 +3505,8 @@ name|RUN_INTERACTIVE
 argument_list|,
 name|_
 argument_list|(
-literal|"No Source Image was selected\n(Please open a 2nd Image of the same type before opening Move Path)\n"
+literal|"No Source Image was selected\n"
+literal|"(Please open a 2nd Image of the same type before opening Move Path)"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6833,7 +6854,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -6843,7 +6864,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/* Source Layer menu */
@@ -6853,7 +6874,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"SourceImage/Layer:"
+literal|"Source Image/Layer:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7764,7 +7785,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -7774,7 +7795,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -8076,7 +8097,7 @@ argument_list|,
 comment|/* lower, upper (unconstrained) */
 name|_
 argument_list|(
-literal|"Scale SrcLayer's Width\nin percent"
+literal|"Scale Source Layer's Width in percent"
 argument_list|)
 argument_list|,
 name|NULL
@@ -8494,7 +8515,7 @@ argument_list|(
 name|pv_table
 argument_list|)
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -8504,7 +8525,7 @@ argument_list|(
 name|pv_table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

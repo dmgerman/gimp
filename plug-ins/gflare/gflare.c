@@ -506,7 +506,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acf673a0103
+DECL|enum|__anon27efa0df0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acf673a0203
+DECL|enum|__anon27efa0df0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0308
+DECL|struct|__anon27efa0df0308
 block|{
 DECL|member|name
 name|gchar
@@ -695,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0408
+DECL|struct|__anon27efa0df0408
 block|{
 DECL|member|fp
 name|FILE
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acf673a0503
+DECL|enum|__anon27efa0df0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0608
+DECL|struct|__anon27efa0df0608
 block|{
 DECL|member|init
 name|gint
@@ -765,7 +765,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2acf673a0708
+DECL|struct|__anon27efa0df0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -839,7 +839,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0808
+DECL|struct|__anon27efa0df0808
 block|{
 DECL|member|init
 name|gint
@@ -909,7 +909,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0908
+DECL|struct|__anon27efa0df0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -936,7 +936,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0a08
+DECL|struct|__anon27efa0df0a08
 block|{
 DECL|member|init
 name|gint
@@ -1106,7 +1106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0b08
+DECL|struct|__anon27efa0df0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1133,7 +1133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0c08
+DECL|struct|__anon27efa0df0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1174,7 +1174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0d08
+DECL|struct|__anon27efa0df0d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1400,7 +1400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0e08
+DECL|struct|__anon27efa0df0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1477,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a0f08
+DECL|struct|__anon27efa0df0f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1535,7 +1535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf673a1008
+DECL|struct|__anon27efa0df1008
 block|{
 DECL|member|run
 name|gint
@@ -4950,10 +4950,16 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"No gflare-path in gimprc:\n\n"
 literal|"You need to add an entry like\n"
 literal|"(gfig-path \"${gimp_dir}/gfig:${gimp_data_dir}/gfig\n"
-literal|"to your ~/.gimp/gimprc file\n"
+literal|"to your %s/gimprc file."
+argument_list|)
+argument_list|,
+name|gimp_directory
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -7634,22 +7640,10 @@ modifier|*
 name|path
 decl_stmt|;
 specifier|static
-name|int
+name|gboolean
 name|message_ok
 init|=
 name|FALSE
-decl_stmt|;
-name|char
-modifier|*
-name|message
-init|=
-name|_
-argument_list|(
-literal|"GFlare `%s' is not saved.	If you add a new entry in gimprc, like:\n"
-literal|"(gflare-path \"${gimp_dir}/gflare\")\n"
-literal|"and make a directory ~/.gimp-1.1/gflare, then you can save your own GFlare's\n"
-literal|"into that directory."
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -7674,11 +7668,21 @@ name|message_ok
 condition|)
 name|g_message
 argument_list|(
-name|message
+name|_
+argument_list|(
+literal|"GFlare `%s' is not saved.\n"
+literal|"If you add a new entry in gimprc, like:\n"
+literal|"(gflare-path \"${gimp_dir}/gflare\")\n"
+literal|"and make a directory %s/gflare,\n"
+literal|"then you can save your own GFlare's into that directory."
+argument_list|)
 argument_list|,
 name|gflare
 operator|->
 name|name
+argument_list|,
+name|gimp_directory
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|message_ok
@@ -9283,7 +9287,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2acf673a1108
+DECL|struct|__anon27efa0df1108
 specifier|static
 struct|struct
 block|{
@@ -15862,7 +15866,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2acf673a1208
+DECL|struct|__anon27efa0df1208
 block|{
 DECL|member|label
 name|gchar
@@ -16561,7 +16565,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The name `%s' is used already!"
+literal|"The name '%s' is used already!"
 argument_list|)
 argument_list|,
 name|new_name
