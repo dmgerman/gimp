@@ -227,6 +227,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|rgba8_alpha_mask
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -245,6 +246,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_b1
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -263,6 +265,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_b255
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -281,6 +284,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_w1
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -299,6 +303,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_w128
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -317,6 +322,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_w256
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -335,6 +341,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_w255
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -353,6 +360,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|va8_alpha_mask
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -371,6 +379,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|va8_b255
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -389,6 +398,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|va8_w1
+specifier|const
 specifier|static
 name|unsigned
 name|long
@@ -407,6 +417,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|va8_w255
+specifier|const
 specifier|static
 name|unsigned
 name|long
