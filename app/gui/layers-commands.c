@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"image-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"resize-dialog.h"
 end_include
 
@@ -224,7 +230,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     gimage = ((GimpItemTreeView *) data)->gimage; \   else \     gimage = NULL; \   \   if (! gimage) \     return
+value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     gimage = ((GimpItemTreeView *) data)->gimage; \   else \     gimage = NULL; \   if (! gimage) \     return
 end_define
 
 begin_define
@@ -1699,6 +1705,77 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|layers_merge_layers_cmd_callback (GtkWidget * widget,gpointer data)
+name|layers_merge_layers_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+name|return_if_no_image
+argument_list|(
+name|gimage
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|image_layers_merge_query
+argument_list|(
+name|gimage
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|layers_flatten_image_cmd_callback (GtkWidget * widget,gpointer data)
+name|layers_flatten_image_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+name|return_if_no_image
+argument_list|(
+name|gimage
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|gimp_image_flatten
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

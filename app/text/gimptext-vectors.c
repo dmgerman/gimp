@@ -167,7 +167,6 @@ modifier|*
 name|font
 parameter_list|,
 name|PangoGlyph
-modifier|*
 name|glyph
 parameter_list|,
 name|FT_Int32
@@ -1164,7 +1163,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_render_vectors (PangoFont * font,PangoGlyph * pango_glyph,FT_Int32 flags,FT_Matrix * trafo,gint x,gint y,RenderContext * context)
+DECL|function|gimp_text_render_vectors (PangoFont * font,PangoGlyph pango_glyph,FT_Int32 flags,FT_Matrix * trafo,gint x,gint y,RenderContext * context)
 name|gimp_text_render_vectors
 parameter_list|(
 name|PangoFont
@@ -1172,7 +1171,6 @@ modifier|*
 name|font
 parameter_list|,
 name|PangoGlyph
-modifier|*
 name|pango_glyph
 parameter_list|,
 name|FT_Int32
