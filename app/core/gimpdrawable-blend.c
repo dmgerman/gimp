@@ -404,7 +404,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b280af0108
+DECL|struct|__anon29fdf6fe0108
 block|{
 DECL|member|offset
 name|double
@@ -456,7 +456,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b280af0208
+DECL|struct|__anon29fdf6fe0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -3508,9 +3508,9 @@ argument_list|,
 operator|(
 name|gint32
 operator|)
-name|gimp_context_get_paint_mode
+name|PAINT_OPTIONS_GET_PAINT_MODE
 argument_list|(
-name|NULL
+name|blend_options
 argument_list|)
 argument_list|,
 name|PDB_INT32
@@ -3527,9 +3527,9 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|gimp_context_get_opacity
+name|PAINT_OPTIONS_GET_OPACITY
 argument_list|(
-name|NULL
+name|blend_options
 argument_list|)
 operator|*
 literal|100
