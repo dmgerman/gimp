@@ -166,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c54fede0103
+DECL|enum|__anon297eef8e0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c54fede0203
+DECL|enum|__anon297eef8e0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -9121,11 +9121,7 @@ argument_list|,
 name|previous
 argument_list|)
 expr_stmt|;
-name|putchar
-argument_list|(
-literal|'M'
-argument_list|)
-expr_stmt|;
+comment|/*	      putchar('M');*/
 block|}
 else|else
 block|{
@@ -9140,11 +9136,7 @@ name|previous
 operator|=
 name|tile
 expr_stmt|;
-name|putchar
-argument_list|(
-literal|'.'
-argument_list|)
-expr_stmt|;
+comment|/*	      putchar('.');*/
 block|}
 name|tile_release
 argument_list|(
@@ -9187,11 +9179,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
+comment|/*  fflush(stdout);*/
 if|if
 condition|(
 name|offset
