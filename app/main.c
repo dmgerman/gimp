@@ -316,11 +316,6 @@ argument_list|(
 name|display_env
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|display_env
-argument_list|)
-expr_stmt|;
 name|no_interface
 operator|=
 name|FALSE
