@@ -544,6 +544,11 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -669,6 +674,11 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 name|values
 index|[
 literal|0

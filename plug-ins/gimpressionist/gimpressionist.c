@@ -2705,11 +2705,6 @@ name|run
 operator|=
 literal|0
 expr_stmt|;
-name|gr
-operator|=
-name|g_rand_new
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|standalone
@@ -2734,11 +2729,6 @@ expr_stmt|;
 block|}
 name|gtk_main
 argument_list|()
-expr_stmt|;
-name|g_rand_free
-argument_list|(
-name|gr
-argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()
@@ -2841,6 +2831,11 @@ argument_list|()
 expr_stmt|;
 comment|/* Testing! */
 comment|/*   copyppm(&infile,&inalpha);   img_has_alpha = 1;   */
+name|gr
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|create_gimpressionist
@@ -2880,6 +2875,11 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+name|g_rand_free
+argument_list|(
+name|gr
+argument_list|)
+expr_stmt|;
 return|return
 literal|0
 return|;
