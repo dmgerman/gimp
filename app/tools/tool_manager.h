@@ -201,7 +201,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tool_manager_arrow_key_active
+name|tool_manager_key_press_active
 parameter_list|(
 name|Gimp
 modifier|*

@@ -1182,8 +1182,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_arrow_key_active (Gimp * gimp,GdkEventKey * kevent,GimpDisplay * gdisp)
-name|tool_manager_arrow_key_active
+DECL|function|tool_manager_key_press_active (Gimp * gimp,GdkEventKey * kevent,GimpDisplay * gdisp)
+name|tool_manager_key_press_active
 parameter_list|(
 name|Gimp
 modifier|*
