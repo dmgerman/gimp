@@ -72,7 +72,7 @@ name|NEEDS_ALPHA
 value|1<< 6
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b05282d0103
+DECL|enum|__anon2c6fc1050103
 block|{
 DECL|enumerator|EXPORT_CANCEL
 name|EXPORT_CANCEL
@@ -91,20 +91,20 @@ name|gimp_export_image
 parameter_list|(
 name|gint32
 modifier|*
+name|image_ID
 parameter_list|,
-comment|/* image_ID             */
 name|gint32
 modifier|*
+name|drawable_ID
 parameter_list|,
-comment|/* drawable_ID          */
 name|gchar
 modifier|*
+name|format_name
 parameter_list|,
-comment|/* format name          */
 name|gint
+name|capabilities
 parameter_list|)
 function_decl|;
-comment|/* plug_in_capabilities */
 ifdef|#
 directive|ifdef
 name|__cplusplus
