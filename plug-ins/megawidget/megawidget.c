@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -34,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include

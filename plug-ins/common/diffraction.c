@@ -62,6 +62,12 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -137,7 +143,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon29a504e90108
+DECL|struct|__anon290b96f90108
 typedef|typedef
 struct|struct
 block|{
@@ -196,7 +202,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a504e90208
+DECL|struct|__anon290b96f90208
 typedef|typedef
 struct|struct
 block|{
@@ -815,13 +821,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_diffraction"
 argument_list|,
+name|_
+argument_list|(
 literal|"Generate diffraction patterns"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Help?  What help?  Real men do not need help :-)"
+argument_list|)
 argument_list|,
 comment|/* FIXME */
 literal|"Federico Mena Quintero"
@@ -830,7 +845,10 @@ literal|"Federico Mena Quintero& David Bleecker"
 argument_list|,
 literal|"April 1997, 0.5"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Render/Pattern/Diffraction Patterns..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -958,6 +976,9 @@ case|case
 name|RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve data */
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_diffraction"
@@ -988,6 +1009,9 @@ condition|)
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -1159,6 +1183,9 @@ case|case
 name|RUN_WITH_LAST_VALS
 case|:
 comment|/* Possibly retrieve data */
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_diffraction"
@@ -1449,7 +1476,10 @@ name|height
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Creating diffraction pattern..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Create diffraction pattern */
@@ -2360,7 +2390,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Diffraction patterns"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2649,7 +2682,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2817,7 +2853,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Red"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -2838,7 +2877,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Green"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -2859,7 +2901,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Blue"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -2882,7 +2927,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Frequencies"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2978,7 +3026,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Red"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -2999,7 +3050,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Green"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3020,7 +3074,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Blue"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3043,7 +3100,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Contours"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3139,7 +3199,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Red"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3160,7 +3223,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Green"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3181,7 +3247,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Blue"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3204,7 +3273,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Sharp edges"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3300,7 +3372,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Brightness"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3321,7 +3396,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Scattering"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3342,7 +3420,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"Polarization"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3366,7 +3447,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Other options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3474,7 +3558,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3531,7 +3618,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

@@ -32,6 +32,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -45,6 +51,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_ifdef
@@ -122,7 +134,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2a0b31a80108
+DECL|struct|__anon288125960108
 typedef|typedef
 struct|struct
 block|{
@@ -141,7 +153,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0b31a80208
+DECL|struct|__anon288125960208
 typedef|typedef
 struct|struct
 block|{
@@ -156,7 +168,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0b31a80308
+DECL|struct|__anon288125960308
 typedef|typedef
 struct|struct
 block|{
@@ -559,16 +571,22 @@ name|gchar
 modifier|*
 name|help_string
 init|=
-literal|" Perform edge detection on the contents of the specified"
-literal|" drawable. It applies, I think, convolusion with 3x3 kernel. AMOUNT"
-literal|" is an arbitrary constant, WRAPMODE is like displace plug-in"
-literal|" (useful for tilable image)."
+name|_
+argument_list|(
+literal|" Perform edge detection on the contents of the specified drawable. It applies, I think, convolusion with 3x3 kernel. AMOUNT is an arbitrary constant, WRAPMODE is like displace plug-in (useful for tilable image)."
+argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_edge"
 argument_list|,
+name|_
+argument_list|(
 literal|"Perform edge detection on the contents of the specified drawable"
+argument_list|)
 argument_list|,
 name|help_string
 argument_list|,
@@ -578,7 +596,10 @@ literal|"Peter Mattis"
 argument_list|,
 literal|"1996"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Edge-Detect/Edge..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -706,6 +727,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -774,6 +798,9 @@ operator|.
 name|d_int32
 expr_stmt|;
 block|}
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -786,6 +813,9 @@ argument_list|,
 operator|&
 name|evals
 argument_list|)
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 break|break;
 default|default:
@@ -811,7 +841,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Edge detection..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  set the tile cache size  */
@@ -2801,7 +2834,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Edge Detection"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -2907,7 +2943,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2964,7 +3003,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3020,7 +3062,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Edge Detection Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3100,7 +3145,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Amount:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3429,8 +3477,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Wrap"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -3497,8 +3548,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Smear"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -3565,7 +3619,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Black"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
