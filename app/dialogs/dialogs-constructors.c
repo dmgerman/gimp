@@ -288,18 +288,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actions/edit-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"actions/file-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actions/layers-commands.h"
 end_include
 
