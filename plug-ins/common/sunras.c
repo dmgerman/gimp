@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9e5d70108
+DECL|struct|__anon27674ebc0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9e5d70208
+DECL|struct|__anon27674ebc0208
 block|{
 DECL|member|val
 name|gint
@@ -508,7 +508,7 @@ name|unsigned
 name|char
 modifier|*
 parameter_list|,
-name|int
+name|gboolean
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9e5d70308
+DECL|struct|__anon27674ebc0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -2560,7 +2560,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|byte2bit (guchar * byteline,gint width,guchar * bitline,gint invert)
+DECL|function|byte2bit (guchar * byteline,gint width,guchar * bitline,gboolean invert)
 name|byte2bit
 parameter_list|(
 name|guchar
@@ -2574,7 +2574,7 @@ name|guchar
 modifier|*
 name|bitline
 parameter_list|,
-name|gint
+name|gboolean
 name|invert
 parameter_list|)
 block|{
