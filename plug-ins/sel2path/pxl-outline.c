@@ -151,19 +151,14 @@ argument_list|(
 name|answer
 argument_list|)
 operator|=
-name|size
-operator|>
-literal|0
-condition|?
-name|calloc
+name|g_new0
 argument_list|(
-name|size
+name|one_byte
 argument_list|,
-literal|1
+name|size
 argument_list|)
-else|:
-name|NULL
 expr_stmt|;
+comment|/* g_new returns NULL if size == 0 */
 comment|/*   printf("local_new_bitmap size = %d @[%p]\n",size,BITMAP_BITS (answer)); */
 return|return
 name|answer
@@ -509,7 +504,7 @@ operator|(
 name|pixel_outline_type
 operator|*
 operator|)
-name|realloc
+name|g_realloc
 argument_list|(
 name|outline_list
 operator|->
@@ -692,7 +687,7 @@ operator|(
 name|coordinate_type
 operator|*
 operator|)
-name|realloc
+name|g_realloc
 argument_list|(
 name|o
 operator|->

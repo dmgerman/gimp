@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<malloc.h>
+file|<glib.h>
 end_include
 
 begin_include
@@ -46,13 +46,12 @@ block|{
 name|curve_type
 name|curve
 init|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 expr|struct
 name|curve
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 decl_stmt|;
 name|curve
@@ -128,12 +127,11 @@ name|curve
 operator|->
 name|point_list
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|point_type
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|CURVE_LENGTH
@@ -302,7 +300,7 @@ name|curve
 operator|->
 name|point_list
 operator|=
-name|realloc
+name|g_realloc
 argument_list|(
 name|curve
 operator|->
@@ -455,7 +453,7 @@ name|curve_list
 operator|->
 name|data
 operator|=
-name|realloc
+name|g_realloc
 argument_list|(
 name|curve_list
 operator|->
@@ -619,7 +617,7 @@ name|l
 operator|->
 name|data
 operator|=
-name|realloc
+name|g_realloc
 argument_list|(
 name|l
 operator|->

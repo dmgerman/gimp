@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<malloc.h>
+file|<glib.h>
 end_include
 
 begin_include
@@ -4400,20 +4400,13 @@ name|A
 decl_stmt|;
 name|A
 operator|=
-operator|(
-name|vector_type
-operator|*
-operator|)
-name|calloc
-argument_list|(
-sizeof|sizeof
+name|g_new0
 argument_list|(
 name|vector_type
-argument_list|)
-operator|*
-literal|2
 argument_list|,
 name|Alen
+operator|*
+literal|2
 argument_list|)
 expr_stmt|;
 name|START_POINT
@@ -4924,7 +4917,7 @@ argument_list|)
 operator|=
 name|CUBIC
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|A
 argument_list|)
@@ -6027,12 +6020,11 @@ block|{
 operator|*
 name|curve_tangent
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|vector_type
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tangent
@@ -7052,7 +7044,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|free
+name|g_free
 argument_list|(
 name|index_list
 operator|->
@@ -7106,7 +7098,7 @@ operator|(
 name|unsigned
 operator|*
 operator|)
-name|realloc
+name|g_realloc
 argument_list|(
 name|list
 operator|->

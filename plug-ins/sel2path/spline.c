@@ -6,13 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<malloc.h>
+file|<assert.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<assert.h>
+file|<glib.h>
 end_include
 
 begin_include
@@ -572,12 +572,11 @@ name|spline_list_type
 modifier|*
 name|answer
 init|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|spline_list_type
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 decl_stmt|;
 name|SPLINE_LIST_DATA
@@ -620,12 +619,11 @@ name|spline_list_type
 modifier|*
 name|answer
 init|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|spline_list_type
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 decl_stmt|;
 name|SPLINE_LIST_DATA
@@ -634,12 +632,11 @@ operator|*
 name|answer
 argument_list|)
 operator|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|spline_type
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|SPLINE_LIST_ELT
@@ -746,7 +743,7 @@ operator|*
 name|l
 argument_list|)
 operator|=
-name|realloc
+name|g_realloc
 argument_list|(
 name|SPLINE_LIST_DATA
 argument_list|(
@@ -826,7 +823,7 @@ operator|*
 name|s1
 argument_list|)
 operator|=
-name|realloc
+name|g_realloc
 argument_list|(
 name|SPLINE_LIST_DATA
 argument_list|(
@@ -1019,7 +1016,7 @@ operator|*
 name|l
 argument_list|)
 operator|=
-name|realloc
+name|g_realloc
 argument_list|(
 name|SPLINE_LIST_ARRAY_DATA
 argument_list|(

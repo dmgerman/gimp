@@ -600,13 +600,10 @@ name|real
 modifier|*
 name|mapped_values
 init|=
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|real
-argument_list|)
-operator|*
+argument_list|,
 name|value_count
 argument_list|)
 decl_stmt|;

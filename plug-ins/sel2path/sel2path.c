@@ -2866,11 +2866,8 @@ argument_list|(
 literal|"safe_free: Attempt to free a null item."
 argument_list|)
 expr_stmt|;
-name|abort
-argument_list|()
-expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 operator|*
 name|item
