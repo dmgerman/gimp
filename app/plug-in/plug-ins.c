@@ -3165,7 +3165,7 @@ operator|->
 name|db_info
 argument_list|)
 expr_stmt|;
-comment|/*  Remove the defintion from the global list  */
+comment|/*  Add the defintion to the global list  */
 name|proc_defs
 operator|=
 name|g_slist_append
