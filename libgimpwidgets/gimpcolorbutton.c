@@ -462,7 +462,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon295a4f8e0103
+DECL|enum|__anon2b6270fb0103
 enum|enum
 block|{
 DECL|enumerator|COLOR_CHANGED
@@ -848,6 +848,10 @@ name|gcb_type
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_button_new:  * @title: String that wil be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: An array of guchar holding the color (RGB or RGBA)  * @bpp: May be 3 for RGB or 4 for RGBA.  *   * Creates a new GimpColorbutton widget. This returns a button with   * a preview showing the color. When the button is clicked a   * GtkColorSelectionDialog is opened. If the user changes the color  * the new color is written into the array that was used to pass  * the initial color and the "color_changed" signal is emitted.  *   * Returns: Pointer to the new GimpColorButton widget.  */
+end_comment
 
 begin_function
 name|GtkWidget
@@ -1276,6 +1280,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_color_button_update:  * @gcb: Pointer to a #GimpColorButton.  *   * Should be used after the color controlled by a #GimpColorButton  * was changed. The color is then reread and the change is propagated  * to the preview and the GtkColorSelectionDialog if one is open.  */
+end_comment
 
 begin_function
 name|void
