@@ -10621,7 +10621,7 @@ name|fsu
 operator|->
 name|floating_layer
 expr_stmt|;
-comment|/*  restore the contents of the drawable  */
+comment|/*  store the contents of the drawable  */
 name|floating_sel_store
 argument_list|(
 name|fsu
@@ -10686,28 +10686,6 @@ name|floating_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  update the floating layer's name  */
-name|gimp_object_name_changed
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|fsu
-operator|->
-name|floating_layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  Update the preview for the gimage and underlying drawable  */
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|fsu
-operator|->
-name|floating_layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_UNDO_MODE_REDO
@@ -10756,7 +10734,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the preview for the gimage and underlying drawable  */
+comment|/*  Update the preview for the underlying drawable  */
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
@@ -10797,7 +10775,8 @@ name|floating_sel
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  update the floating layer's name  */
+break|break;
+block|}
 name|gimp_object_name_changed
 argument_list|(
 name|GIMP_OBJECT
@@ -10808,19 +10787,38 @@ name|floating_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Update the fs drawable  */
-name|gimp_viewable_invalidate_preview
+name|gimp_drawable_update
 argument_list|(
-name|GIMP_VIEWABLE
+name|GIMP_DRAWABLE
 argument_list|(
 name|fsu
 operator|->
 name|floating_layer
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|fsu
+operator|->
+name|floating_layer
+argument_list|)
+operator|->
+name|width
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|fsu
+operator|->
+name|floating_layer
+argument_list|)
+operator|->
+name|height
 argument_list|)
 expr_stmt|;
-break|break;
-block|}
 name|gimp_image_floating_selection_changed
 argument_list|(
 name|undo
