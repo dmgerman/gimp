@@ -2389,7 +2389,7 @@ name|create_cycled_ants_pixmap
 argument_list|(
 name|win
 argument_list|,
-name|gdisp
+name|g_visual
 operator|->
 name|depth
 argument_list|)

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cd97a90103
+DECL|enum|__anon27c67d1b0103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -40,10 +40,6 @@ block|}
 name|SelectionControl
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*  *  Global variables  *  */
-end_comment
 
 begin_comment
 comment|/*  some useful macros  */
@@ -261,8 +257,16 @@ value|32
 end_define
 
 begin_typedef
-DECL|struct|_IdleRenderStruct
+DECL|typedef|IdleRenderStruct
 typedef|typedef
+name|struct
+name|_IdleRenderStruct
+name|IdleRenderStruct
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_IdleRenderStruct
 struct|struct
 name|_IdleRenderStruct
 block|{
@@ -305,11 +309,9 @@ modifier|*
 name|update_areas
 decl_stmt|;
 comment|/*  flushed update areas */
-DECL|typedef|IdleRenderStruct
 block|}
-name|IdleRenderStruct
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_struct
 DECL|struct|_GDisplay
@@ -350,25 +352,27 @@ name|vsb
 decl_stmt|;
 comment|/*  widgets for scroll bars                 */
 DECL|member|qmaskoff
-DECL|member|qmaskon
 name|GtkWidget
 modifier|*
 name|qmaskoff
-decl_stmt|,
+decl_stmt|;
+comment|/*  widgets for qmask buttons               */
+DECL|member|qmaskon
+name|GtkWidget
 modifier|*
 name|qmaskon
 decl_stmt|;
-comment|/*  widgets for qmask buttons               */
 DECL|member|hrule
-DECL|member|vrule
 name|GtkWidget
 modifier|*
 name|hrule
-decl_stmt|,
+decl_stmt|;
+comment|/*  widgets for rulers                      */
+DECL|member|vrule
+name|GtkWidget
 modifier|*
 name|vrule
 decl_stmt|;
-comment|/*  widgets for rulers                      */
 DECL|member|origin
 name|GtkWidget
 modifier|*
@@ -406,7 +410,7 @@ index|[
 name|CURSOR_FORMAT_LENGTH
 index|]
 decl_stmt|;
-comment|/* we need a variable format 						   * string because different 						   * units have different number 						   * of decimals              */
+comment|/* we need a variable format string because 				   * different units have different number 				   * of decimals 				   */
 DECL|member|cancelbutton
 name|GtkWidget
 modifier|*
@@ -436,11 +440,6 @@ modifier|*
 name|nav_popup
 decl_stmt|;
 comment|/*  widget for the popup navigation window  */
-DECL|member|color_type
-name|gint
-name|color_type
-decl_stmt|;
-comment|/*  is this an RGB or GRAY colormap         */
 DECL|member|hsbdata
 name|GtkAdjustment
 modifier|*
@@ -497,11 +496,6 @@ name|instance
 decl_stmt|;
 comment|/*  the instance # of this gdisplay as      */
 comment|/*  taken from the gimage at creation       */
-DECL|member|depth
-name|gint
-name|depth
-decl_stmt|;
-comment|/*  depth of our drawables                  */
 DECL|member|disp_width
 name|gint
 name|disp_width
@@ -667,8 +661,10 @@ name|gdisplay_new
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|guint
+name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -679,9 +675,11 @@ name|gdisplay_reconnect
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -692,6 +690,7 @@ name|gdisplay_remove_and_delete
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -702,10 +701,13 @@ name|gdisplay_mask_value
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -716,18 +718,23 @@ name|gdisplay_mask_bounds
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gint
 modifier|*
+name|x1
 parameter_list|,
 name|gint
 modifier|*
+name|y1
 parameter_list|,
 name|gint
 modifier|*
+name|x2
 parameter_list|,
 name|gint
 modifier|*
+name|y2
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -738,18 +745,24 @@ name|gdisplay_transform_coords
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
 modifier|*
+name|nx
 parameter_list|,
 name|gint
 modifier|*
+name|ny
 parameter_list|,
-name|gint
+name|gboolean
+name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -760,20 +773,27 @@ name|gdisplay_untransform_coords
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
 modifier|*
+name|nx
 parameter_list|,
 name|gint
 modifier|*
+name|ny
 parameter_list|,
 name|gboolean
+name|round
 parameter_list|,
 name|gboolean
+name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -784,18 +804,24 @@ name|gdisplay_transform_coords_f
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gdouble
+name|x
 parameter_list|,
 name|gdouble
+name|y
 parameter_list|,
 name|gdouble
 modifier|*
+name|nx
 parameter_list|,
 name|gdouble
 modifier|*
+name|ny
 parameter_list|,
 name|gboolean
+name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -806,18 +832,24 @@ name|gdisplay_untransform_coords_f
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gdouble
+name|x
 parameter_list|,
 name|gdouble
+name|y
 parameter_list|,
 name|gdouble
 modifier|*
+name|nx
 parameter_list|,
 name|gdouble
 modifier|*
+name|ny
 parameter_list|,
 name|gboolean
+name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -907,6 +939,7 @@ name|gdisplay_set_menu_sensitivity
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -917,14 +950,19 @@ name|gdisplay_expose_area
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
+name|w
 parameter_list|,
 name|gint
+name|h
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -935,9 +973,11 @@ name|gdisplay_expose_guide
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|Guide
 modifier|*
+name|guide
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -948,6 +988,7 @@ name|gdisplay_expose_full
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -958,6 +999,7 @@ name|gdisplay_flush
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -968,6 +1010,7 @@ name|gdisplay_flush_now
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -978,6 +1021,7 @@ name|gdisplay_update_icon
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -987,6 +1031,7 @@ name|gboolean
 name|gdisplay_update_icon_timer
 parameter_list|(
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -996,6 +1041,7 @@ name|gboolean
 name|gdisplay_update_icon_invoker
 parameter_list|(
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1006,8 +1052,10 @@ name|gdisplay_update_icon_scheduler
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1018,6 +1066,7 @@ name|gdisplay_draw_guides
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1028,11 +1077,14 @@ name|gdisplay_draw_guide
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|Guide
 modifier|*
+name|guide
 parameter_list|,
 name|gboolean
+name|active
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1044,10 +1096,13 @@ name|gdisplay_find_guide
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gdouble
+name|x
 parameter_list|,
 name|double
+name|y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1058,16 +1113,21 @@ name|gdisplay_snap_point
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gdouble
+name|x
 parameter_list|,
 name|gdouble
+name|y
 parameter_list|,
 name|gdouble
 modifier|*
+name|tx
 parameter_list|,
 name|gdouble
 modifier|*
+name|ty
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1078,20 +1138,27 @@ name|gdisplay_snap_rectangle
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gdouble
+name|x1
 parameter_list|,
 name|gdouble
+name|y1
 parameter_list|,
 name|gdouble
+name|x2
 parameter_list|,
 name|gdouble
+name|y2
 parameter_list|,
 name|gdouble
 modifier|*
+name|tx1
 parameter_list|,
 name|gdouble
 modifier|*
+name|ty1
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1102,10 +1169,13 @@ name|gdisplay_update_cursor
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1116,8 +1186,10 @@ name|gdisplay_set_dot_for_dot
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|gboolean
+name|dot_for_dot
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1128,6 +1200,7 @@ name|gdisplay_resize_cursor_label
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1138,6 +1211,7 @@ name|gdisplay_update_title
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1189,9 +1263,11 @@ name|gdisplays_check_valid
 parameter_list|(
 name|GDisplay
 modifier|*
+name|gdisp
 parameter_list|,
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1217,6 +1293,7 @@ name|gdisplays_update_title
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1227,6 +1304,7 @@ name|gdisplays_resize_cursor_label
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1237,6 +1315,7 @@ name|gdisplays_setup_scale
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1247,14 +1326,19 @@ name|gdisplays_update_area
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
+name|w
 parameter_list|,
 name|gint
+name|h
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1265,6 +1349,7 @@ name|gdisplays_expose_guides
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1275,9 +1360,11 @@ name|gdisplays_expose_guide
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|Guide
 modifier|*
+name|guide
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1288,6 +1375,7 @@ name|gdisplays_update_full
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1298,6 +1386,7 @@ name|gdisplays_shrink_wrap
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1317,8 +1406,10 @@ name|gdisplays_selection_visibility
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|SelectionControl
+name|function
 parameter_list|)
 function_decl|;
 end_function_decl

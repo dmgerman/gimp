@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenums.h"
+file|"context_manager.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -10391,7 +10391,7 @@ if|if
 condition|(
 name|component
 operator|<
-name|RED_CHANNEL
+name|GREEN_CHANNEL
 operator|||
 name|component
 operator|>
@@ -10634,7 +10634,7 @@ if|if
 condition|(
 name|component
 operator|<
-name|RED_CHANNEL
+name|GREEN_CHANNEL
 operator|||
 name|component
 operator|>
@@ -10871,7 +10871,7 @@ if|if
 condition|(
 name|component
 operator|<
-name|RED_CHANNEL
+name|GREEN_CHANNEL
 operator|||
 name|component
 operator|>
@@ -11114,7 +11114,7 @@ if|if
 condition|(
 name|component
 operator|<
-name|RED_CHANNEL
+name|GREEN_CHANNEL
 operator|||
 name|component
 operator|>

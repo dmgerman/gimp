@@ -23,6 +23,119 @@ file|"apptypes.h"
 end_include
 
 begin_comment
+comment|/*  enums  */
+end_comment
+
+begin_comment
+comment|/* Base image types */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b55905c0103
+block|{
+DECL|enumerator|RGB
+name|RGB
+block|,
+DECL|enumerator|GRAY
+name|GRAY
+block|,
+DECL|enumerator|INDEXED
+name|INDEXED
+DECL|typedef|GimpImageBaseType
+block|}
+name|GimpImageBaseType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Image types */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b55905c0203
+block|{
+DECL|enumerator|RGB_GIMAGE
+name|RGB_GIMAGE
+block|,
+comment|/*< nick=RGB_IMAGE>*/
+DECL|enumerator|RGBA_GIMAGE
+name|RGBA_GIMAGE
+block|,
+comment|/*< nick=RGBA_IMAGE>*/
+DECL|enumerator|GRAY_GIMAGE
+name|GRAY_GIMAGE
+block|,
+comment|/*< nick=GRAY_IMAGE>*/
+DECL|enumerator|GRAYA_GIMAGE
+name|GRAYA_GIMAGE
+block|,
+comment|/*< nick=GRAYA_IMAGE>*/
+DECL|enumerator|INDEXED_GIMAGE
+name|INDEXED_GIMAGE
+block|,
+comment|/*< nick=INDEXED_IMAGE>*/
+DECL|enumerator|INDEXEDA_GIMAGE
+name|INDEXEDA_GIMAGE
+comment|/*< nick=INDEXEDA_IMAGE>*/
+DECL|typedef|GimpImageType
+block|}
+name|GimpImageType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Channel types */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b55905c0303
+block|{
+DECL|enumerator|RED_CHANNEL
+name|RED_CHANNEL
+block|,
+DECL|enumerator|GREEN_CHANNEL
+name|GREEN_CHANNEL
+block|,
+DECL|enumerator|BLUE_CHANNEL
+name|BLUE_CHANNEL
+block|,
+DECL|enumerator|GRAY_CHANNEL
+name|GRAY_CHANNEL
+block|,
+DECL|enumerator|INDEXED_CHANNEL
+name|INDEXED_CHANNEL
+block|,
+DECL|enumerator|ALPHA_CHANNEL
+name|ALPHA_CHANNEL
+DECL|typedef|ChannelType
+block|}
+name|ChannelType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b55905c0403
+block|{
+DECL|enumerator|APPLY
+name|APPLY
+block|,
+DECL|enumerator|DISCARD
+name|DISCARD
+DECL|typedef|MaskApplyMode
+block|}
+name|MaskApplyMode
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  base objects  */
 end_comment
 

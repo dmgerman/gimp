@@ -648,14 +648,6 @@ name|NULL
 expr_stmt|;
 name|gdisp
 operator|->
-name|depth
-operator|=
-name|g_visual
-operator|->
-name|depth
-expr_stmt|;
-name|gdisp
-operator|->
 name|select
 operator|=
 name|NULL
@@ -863,24 +855,6 @@ name|gdisplay_update_title
 argument_list|(
 name|gdisp
 argument_list|)
-expr_stmt|;
-comment|/*  set the gdisplay colormap type and install the appropriate colormap  */
-name|gdisp
-operator|->
-name|color_type
-operator|=
-operator|(
-name|gimp_image_base_type
-argument_list|(
-name|gimage
-argument_list|)
-operator|==
-name|GRAY
-operator|)
-condition|?
-name|GRAY
-else|:
-name|RGB
 expr_stmt|;
 comment|/* set the qmask buttons */
 name|qmask_buttons_update
@@ -6060,7 +6034,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_set_dot_for_dot (GDisplay * gdisp,gboolean value)
+DECL|function|gdisplay_set_dot_for_dot (GDisplay * gdisp,gboolean dot_for_dot)
 name|gdisplay_set_dot_for_dot
 parameter_list|(
 name|GDisplay
@@ -6068,12 +6042,12 @@ modifier|*
 name|gdisp
 parameter_list|,
 name|gboolean
-name|value
+name|dot_for_dot
 parameter_list|)
 block|{
 if|if
 condition|(
-name|value
+name|dot_for_dot
 operator|!=
 name|gdisp
 operator|->
@@ -6084,7 +6058,7 @@ name|gdisp
 operator|->
 name|dot_for_dot
 operator|=
-name|value
+name|dot_for_dot
 expr_stmt|;
 name|gdisplay_resize_cursor_label
 argument_list|(

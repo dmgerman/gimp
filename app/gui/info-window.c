@@ -2749,7 +2749,7 @@ name|MAX_BUF
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gdisp
+name|g_visual
 operator|->
 name|depth
 argument_list|)

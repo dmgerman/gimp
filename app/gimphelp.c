@@ -64,7 +64,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"apptypes.h"
+file|"libgimp/gimpenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/core-types.h"
 end_include
 
 begin_include
@@ -89,12 +95,6 @@ begin_include
 include|#
 directive|include
 file|"plug_in.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpenv.h"
 end_include
 
 begin_include
