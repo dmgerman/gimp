@@ -109,7 +109,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28941e630108
+DECL|struct|__anon2c0b49ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -198,7 +198,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28941e630208
+DECL|struct|__anon2c0b49ed0208
 typedef|typedef
 struct|struct
 block|{
@@ -787,6 +787,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* Portability kludge */
+end_comment
+
+begin_function_decl
+specifier|static
+name|int
+name|my_fwrite
+parameter_list|(
+name|void
+modifier|*
+name|ptr
+parameter_list|,
+name|int
+name|size
+parameter_list|,
+name|int
+name|nmemb
+parameter_list|,
+name|FILE
+modifier|*
+name|stream
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
 name|GPlugInInfo
@@ -816,7 +842,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28941e630308
+DECL|struct|__anon2c0b49ed0308
 block|{
 DECL|member|rle
 name|gint
@@ -832,7 +858,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28941e630408
+DECL|struct|__anon2c0b49ed0408
 block|{
 DECL|member|run
 name|gint
@@ -6838,7 +6864,7 @@ name|WRITE_FUN
 operator|*
 operator|)
 operator|&
-name|fwrite
+name|my_fwrite
 expr_stmt|;
 if|if
 condition|(
@@ -8408,6 +8434,42 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+DECL|function|my_fwrite (void * ptr,int size,int nmemb,FILE * stream)
+specifier|static
+name|int
+name|my_fwrite
+parameter_list|(
+name|void
+modifier|*
+name|ptr
+parameter_list|,
+name|int
+name|size
+parameter_list|,
+name|int
+name|nmemb
+parameter_list|,
+name|FILE
+modifier|*
+name|stream
+parameter_list|)
+block|{
+return|return
+name|fwrite
+argument_list|(
+name|ptr
+argument_list|,
+name|size
+argument_list|,
+name|nmemb
+argument_list|,
+name|stream
+argument_list|)
+return|;
 block|}
 end_function
 
