@@ -55,6 +55,7 @@ name|widget
 parameter_list|,
 name|style
 parameter_list|)
+define|\
 value|if (style) gtk_widget_modify_style (widget, style)
 end_define
 
@@ -265,17 +266,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * resolution_calibrate_dialog:  * @resolution_entry: a #GimpSizeEntry to connect the dialog to  * @dialog_style:     a #GtkStyle for the main dialog (used by the  *                    user_installation_dialog)  * @ruler_style:      a #GtkStyle for the rulers and the entry area  *                    (used by the user_installation_dialog)  * @expose_callback:  an "expose_event" handler used by the  *                    user_installation_dialog  *  * Displays a dialog that allows the user to interactively determine  * her monitor resolution. This dialog runs it's own GTK main loop and  * is connected to a #GimpSizeEntry handling the resolution to be  * set. The style and callback parameters are supposed to be only used  * by the user_installation_dialog.  **/
+comment|/**  * resolution_calibrate_dialog:  * @resolution_entry: a #GimpSizeEntry to connect the dialog to  * @pixbuf:           an optional #GdkPixbuf for the upper left corner  * @dialog_style:     a #GtkStyle for the main dialog (used by the  *                    user_installation_dialog)  * @ruler_style:      a #GtkStyle for the rulers and the entry area  *                    (used by the user_installation_dialog)  * @expose_callback:  an "expose_event" handler used by the  *                    user_installation_dialog  *  * Displays a dialog that allows the user to interactively determine  * her monitor resolution. This dialog runs it's own GTK main loop and  * is connected to a #GimpSizeEntry handling the resolution to be  * set. The style and callback parameters are supposed to be only used  * by the user_installation_dialog.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|resolution_calibrate_dialog (GtkWidget * resolution_entry,GtkRcStyle * dialog_style,GtkRcStyle * ruler_style,GCallback expose_callback)
+DECL|function|resolution_calibrate_dialog (GtkWidget * resolution_entry,GdkPixbuf * pixbuf,GtkRcStyle * dialog_style,GtkRcStyle * ruler_style,GCallback expose_callback)
 name|resolution_calibrate_dialog
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|resolution_entry
+parameter_list|,
+name|GdkPixbuf
+modifier|*
+name|pixbuf
 parameter_list|,
 name|GtkRcStyle
 modifier|*
@@ -330,6 +335,18 @@ argument_list|(
 name|GIMP_IS_SIZE_ENTRY
 argument_list|(
 name|resolution_entry
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|pixbuf
+operator|==
+name|NULL
+operator|||
+name|GDK_IS_PIXBUF
+argument_list|(
+name|pixbuf
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -540,7 +557,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|16
+literal|8
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -563,6 +580,52 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pixbuf
+condition|)
+block|{
+name|GtkWidget
+modifier|*
+name|image
+init|=
+name|gtk_image_new_from_pixbuf
+argument_list|(
+name|pixbuf
+argument_list|)
+decl_stmt|;
+name|gtk_table_attach
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|image
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|,
+literal|0
+argument_list|,
+literal|1
+argument_list|,
+name|GTK_SHRINK
+argument_list|,
+name|GTK_SHRINK
+argument_list|,
+literal|4
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 name|ruler
 operator|=
 name|gtk_hruler_new

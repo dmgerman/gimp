@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29257f2b0103
+DECL|enum|__anon29e727bd0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -6137,6 +6137,8 @@ name|GTK_WIDGET
 argument_list|(
 name|data
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
@@ -13185,7 +13187,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29257f2b0208
+DECL|struct|__anon29e727bd0208
 block|{
 DECL|member|label
 name|gchar
@@ -13365,7 +13367,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29257f2b0308
+DECL|struct|__anon29e727bd0308
 block|{
 DECL|member|tree_label
 name|gchar

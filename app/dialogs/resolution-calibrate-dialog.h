@@ -24,6 +24,10 @@ name|GtkWidget
 modifier|*
 name|resolution_entry
 parameter_list|,
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+parameter_list|,
 name|GtkRcStyle
 modifier|*
 name|dialog_style
