@@ -1567,16 +1567,6 @@ break|break;
 default|default:
 break|break;
 block|}
-name|gimp_display_shell_expose_full
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_flush
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1742,11 +1732,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_flush
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -1802,16 +1787,6 @@ operator|&
 name|display_config
 operator|->
 name|canvas_padding_color
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_expose_full
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_flush
-argument_list|(
-name|shell
 argument_list|)
 expr_stmt|;
 block|}

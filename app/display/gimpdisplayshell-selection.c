@@ -1332,7 +1332,7 @@ name|y2
 argument_list|)
 condition|)
 block|{
-name|gimp_display_shell_add_expose_area
+name|gimp_display_shell_expose_area
 argument_list|(
 name|select
 operator|->
@@ -1546,7 +1546,7 @@ operator|-
 literal|1
 expr_stmt|;
 comment|/*  expose the region  */
-name|gimp_display_shell_add_expose_area
+name|gimp_display_shell_expose_area
 argument_list|(
 name|select
 operator|->
@@ -1573,7 +1573,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_add_expose_area
+name|gimp_display_shell_expose_area
 argument_list|(
 name|select
 operator|->
@@ -1600,7 +1600,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_add_expose_area
+name|gimp_display_shell_expose_area
 argument_list|(
 name|select
 operator|->
@@ -1627,7 +1627,7 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_add_expose_area
+name|gimp_display_shell_expose_area
 argument_list|(
 name|select
 operator|->

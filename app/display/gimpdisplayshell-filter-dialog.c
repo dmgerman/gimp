@@ -99,7 +99,7 @@ name|UPDATE_DISPLAY
 parameter_list|(
 name|cdd
 parameter_list|)
-value|G_STMT_START         \ {	                                         \   gimp_display_shell_expose_full ((cdd)->shell); \   gimp_display_shell_flush ((cdd)->shell);       \ } G_STMT_END
+value|G_STMT_START         \ {	                                         \   gimp_display_shell_expose_full ((cdd)->shell); \ } G_STMT_END
 end_define
 
 begin_typedef

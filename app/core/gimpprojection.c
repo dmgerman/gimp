@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d16be80103
+DECL|enum|__anon2bcbfa120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2188,16 +2188,6 @@ argument_list|,
 name|workh
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_flush
-argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gdisp
 operator|->
 name|idle_render
@@ -2667,7 +2657,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_add_expose_area
+name|gimp_display_shell_expose_area
 argument_list|(
 name|shell
 argument_list|,

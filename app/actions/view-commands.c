@@ -640,11 +640,6 @@ operator|->
 name|select
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_flush
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 name|gimp_item_factory_set_active
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -746,11 +741,6 @@ argument_list|(
 name|shell
 operator|->
 name|select
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_flush
-argument_list|(
-name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_item_factory_set_active
