@@ -2304,7 +2304,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|tmp_name
+name|tmpname
 argument_list|)
 expr_stmt|;
 name|_exit

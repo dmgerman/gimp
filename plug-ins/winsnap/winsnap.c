@@ -358,7 +358,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296dc8fa0108
+DECL|struct|__anon2b9329920108
 typedef|typedef
 struct|struct
 block|{
@@ -399,7 +399,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon296dc8fa0208
+DECL|struct|__anon2b9329920208
 typedef|typedef
 struct|struct
 block|{
@@ -1007,13 +1007,13 @@ expr_stmt|;
 comment|/* Get the screen's rectangle */
 name|rect
 operator|.
-name|bottom
+name|top
 operator|=
 literal|0
 expr_stmt|;
 name|rect
 operator|.
-name|top
+name|bottom
 operator|=
 name|GetDeviceCaps
 argument_list|(

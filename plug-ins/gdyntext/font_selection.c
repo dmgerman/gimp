@@ -18,8 +18,42 @@ end_include
 begin_include
 include|#
 directive|include
-file|<X11/Xlib.h>
+file|<gtk/gtk.h>
 end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtkfeatures.h>
+end_include
+
+begin_if
+if|#
+directive|if
+name|GTK_CHECK_VERSION
+argument_list|(
+literal|1
+operator|,
+literal|3
+operator|,
+literal|0
+argument_list|)
+end_if
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdkprivate.h>
+end_include
+
+begin_comment
+comment|/* For gdk_error_warnings, really needed? */
+end_comment
+
+begin_else
+else|#
+directive|else
+end_else
 
 begin_include
 include|#
@@ -27,11 +61,14 @@ directive|include
 file|<gdk/gdkx.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
+begin_comment
+comment|/* Need Xlib headers */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -106,7 +143,7 @@ value|32767
 end_define
 
 begin_enum
-DECL|enum|__anon29472cd60103
+DECL|enum|__anon2c6f4cb20103
 enum|enum
 block|{
 DECL|enumerator|FONT_CHANGED
@@ -359,6 +396,29 @@ ifndef|#
 directive|ifndef
 name|DEBUG_SPAM
 comment|/* 	// FIXME: non '-*' fonts, disabled because GIMP can't use them!!! 	xfontnames = XListFonts(GDK_DISPLAY(), "*", MAX_FONTS,&num_fonts); */
+if|#
+directive|if
+name|GTK_CHECK_VERSION
+argument_list|(
+literal|1
+operator|,
+literal|3
+operator|,
+literal|0
+argument_list|)
+comment|/* Have gdk_font_list_new() and gdk_font_list_free() */
+name|xfontnames
+operator|=
+name|gdk_font_list_new
+argument_list|(
+literal|"-*"
+argument_list|,
+operator|&
+name|num_fonts
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|xfontnames
 operator|=
 name|XListFonts
@@ -374,6 +434,8 @@ operator|&
 name|num_fonts
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 else|#
 directive|else
 block|{
@@ -722,11 +784,30 @@ argument_list|)
 expr_stmt|;
 comment|/* 		// FIXME: non '-*' fonts, disabled because GIMP can't use them!!! 		} else if (g_hash_table_lookup(fs->font_properties, xfontnames[i]) == NULL) { 			fs->font_names = g_list_insert_sorted(g_list_first(fs->font_names), g_strdup(xfontnames[i]), (GCompareFunc)strcmp); 			plist = g_list_insert_sorted(NULL, "", (GCompareFunc)strcmp); 			g_hash_table_insert(fs->font_properties, g_strdup(xfontnames[i]), g_list_first(plist)); 		} */
 block|}
+if|#
+directive|if
+name|GTK_CHECK_VERSION
+argument_list|(
+literal|1
+operator|,
+literal|3
+operator|,
+literal|0
+argument_list|)
+name|gdk_font_list_free
+argument_list|(
+name|xfontnames
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|XFreeFontNames
 argument_list|(
 name|xfontnames
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 ifdef|#
 directive|ifdef
 name|DEBUG_SPAM

@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/types.h>
 end_include
 
@@ -15,11 +21,22 @@ directive|include
 file|<sys/stat.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -43,18 +60,6 @@ begin_include
 include|#
 directive|include
 file|<gdk/gdk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdkx.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<X11/Xlib.h>
 end_include
 
 begin_include
@@ -130,7 +135,7 @@ file|"graphics/text_load.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2ae75aa90108
+DECL|struct|__anon2a56599d0108
 typedef|typedef
 struct|struct
 block|{

@@ -2639,7 +2639,7 @@ name|p
 parameter_list|)
 function_decl|;
 name|void
-name|gimp_layer_attach_new_parasite
+name|gimp_drawable_attach_new_parasite
 parameter_list|(
 name|gint32
 name|drawable

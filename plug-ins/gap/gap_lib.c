@@ -2273,7 +2273,7 @@ condition|)
 block|{
 name|l_dirname_ptr
 operator|=
-literal|"/"
+name|G_DIR_SEPARATOR_S
 expr_stmt|;
 name|l_dirflag
 operator|=

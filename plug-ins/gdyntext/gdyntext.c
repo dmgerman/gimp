@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a117d2d0103
+DECL|enum|__anon2c6f9c5a0103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -4032,7 +4032,7 @@ name|data
 operator|->
 name|rotation
 operator|*
-name|M_PI
+name|G_PI
 operator|/
 literal|180.0
 argument_list|,
