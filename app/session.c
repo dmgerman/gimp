@@ -91,9 +91,11 @@ name|sessionrc_write_info
 parameter_list|(
 name|SessionInfo
 modifier|*
+name|info
 parameter_list|,
 name|FILE
 modifier|*
+name|fp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -105,6 +107,7 @@ name|session_open_dialog
 parameter_list|(
 name|SessionInfo
 modifier|*
+name|info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -116,6 +119,7 @@ name|session_reset_open_state
 parameter_list|(
 name|SessionInfo
 modifier|*
+name|info
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -494,7 +498,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|session_set_window_geometry (GtkWidget * window,SessionInfo * info,int set_size)
+DECL|function|session_set_window_geometry (GtkWidget * window,SessionInfo * info,gboolean set_size)
 name|session_set_window_geometry
 parameter_list|(
 name|GtkWidget
@@ -505,7 +509,7 @@ name|SessionInfo
 modifier|*
 name|info
 parameter_list|,
-name|int
+name|gboolean
 name|set_size
 parameter_list|)
 block|{
@@ -611,7 +615,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -650,6 +654,7 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
+operator|(
 literal|"# GIMP sessionrc\n"
 literal|"# This file takes session-specific info (that is info,\n"
 literal|"# you want to keep between two gimp-sessions). You are\n"
@@ -657,6 +662,7 @@ literal|"# not supposed to edit it manually, but of course you\n"
 literal|"# can do. This file will be entirely rewritten every time\n"
 literal|"# you quit the gimp. If this file isn't found, defaults\n"
 literal|"# are used.\n\n"
+operator|)
 argument_list|)
 expr_stmt|;
 comment|/* save window geometries */

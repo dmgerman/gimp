@@ -3014,10 +3014,10 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|really_quit_callback (GtkButton * button,gboolean quit,gpointer data)
+DECL|function|really_quit_callback (GtkWidget * button,gboolean quit,gpointer data)
 name|really_quit_callback
 parameter_list|(
-name|GtkButton
+name|GtkWidget
 modifier|*
 name|button
 parameter_list|,
