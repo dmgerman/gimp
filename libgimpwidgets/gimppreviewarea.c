@@ -1364,7 +1364,7 @@ index|]
 operator|=
 name|d
 index|[
-literal|3
+literal|2
 index|]
 operator|=
 name|s
