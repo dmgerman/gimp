@@ -87,6 +87,29 @@ directive|include
 file|"gimptextlayout-render.h"
 end_include
 
+begin_comment
+comment|/* for compatibility with older freetype versions */
+end_comment
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|FT_GLYPH_FORMAT_OUTLINE
+end_ifndef
+
+begin_define
+DECL|macro|FT_GLYPH_FORMAT_OUTLINE
+define|#
+directive|define
+name|FT_GLYPH_FORMAT_OUTLINE
+value|ft_glyph_format_outline
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_typedef
 DECL|typedef|RenderContext
 typedef|typedef
