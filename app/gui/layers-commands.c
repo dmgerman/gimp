@@ -714,7 +714,7 @@ name|gimage
 argument_list|,
 name|active_layer
 argument_list|,
-name|EXPAND_AS_NECESSARY
+name|GIMP_EXPAND_AS_NECESSARY
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush

@@ -993,7 +993,7 @@ if|if
 condition|(
 name|fill_type
 operator|==
-name|OFFSET_BACKGROUND
+name|GIMP_OFFSET_BACKGROUND
 condition|)
 block|{
 name|Gimp

@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2791c7960103
+DECL|enum|__anon2acd2dec0103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -87,7 +87,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2791c7960203
+DECL|enum|__anon2acd2dec0203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -106,47 +106,9 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2791c7960303
-block|{
-DECL|enumerator|OFFSET_BACKGROUND
-name|OFFSET_BACKGROUND
-block|,
-DECL|enumerator|OFFSET_TRANSPARENT
-name|OFFSET_TRANSPARENT
-DECL|typedef|GimpOffsetType
-block|}
-name|GimpOffsetType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2791c7960403
-block|{
-DECL|enumerator|EXPAND_AS_NECESSARY
-name|EXPAND_AS_NECESSARY
-block|,
-DECL|enumerator|CLIP_TO_IMAGE
-name|CLIP_TO_IMAGE
-block|,
-DECL|enumerator|CLIP_TO_BOTTOM_LAYER
-name|CLIP_TO_BOTTOM_LAYER
-block|,
-DECL|enumerator|FLATTEN_IMAGE
-name|FLATTEN_IMAGE
-DECL|typedef|MergeType
-block|}
-name|MergeType
-typedef|;
-end_typedef
-
-begin_typedef
-typedef|typedef
-enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2791c7960503
+DECL|enum|__anon2acd2dec0303
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */

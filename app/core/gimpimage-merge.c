@@ -172,14 +172,14 @@ end_comment
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_visible_layers (GimpImage * gimage,MergeType merge_type)
+DECL|function|gimp_image_merge_visible_layers (GimpImage * gimage,GimpMergeType merge_type)
 name|gimp_image_merge_visible_layers
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|MergeType
+name|GimpMergeType
 name|merge_type
 parameter_list|)
 block|{
@@ -481,7 +481,7 @@ name|gimage
 argument_list|,
 name|merge_list
 argument_list|,
-name|FLATTEN_IMAGE
+name|GIMP_FLATTEN_IMAGE
 argument_list|)
 expr_stmt|;
 name|g_slist_free
@@ -510,7 +510,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_down (GimpImage * gimage,GimpLayer * current_layer,MergeType merge_type)
+DECL|function|gimp_image_merge_down (GimpImage * gimage,GimpLayer * current_layer,GimpMergeType merge_type)
 name|gimp_image_merge_down
 parameter_list|(
 name|GimpImage
@@ -521,7 +521,7 @@ name|GimpLayer
 modifier|*
 name|current_layer
 parameter_list|,
-name|MergeType
+name|GimpMergeType
 name|merge_type
 parameter_list|)
 block|{
@@ -723,7 +723,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_merge_layers (GimpImage * gimage,GSList * merge_list,MergeType merge_type)
+DECL|function|gimp_image_merge_layers (GimpImage * gimage,GSList * merge_list,GimpMergeType merge_type)
 name|gimp_image_merge_layers
 parameter_list|(
 name|GimpImage
@@ -734,7 +734,7 @@ name|GSList
 modifier|*
 name|merge_list
 parameter_list|,
-name|MergeType
+name|GimpMergeType
 name|merge_type
 parameter_list|)
 block|{
@@ -923,10 +923,10 @@ name|merge_type
 condition|)
 block|{
 case|case
-name|EXPAND_AS_NECESSARY
+name|GIMP_EXPAND_AS_NECESSARY
 case|:
 case|case
-name|CLIP_TO_IMAGE
+name|GIMP_CLIP_TO_IMAGE
 case|:
 if|if
 condition|(
@@ -1054,7 +1054,7 @@ if|if
 condition|(
 name|merge_type
 operator|==
-name|CLIP_TO_IMAGE
+name|GIMP_CLIP_TO_IMAGE
 condition|)
 block|{
 name|x1
@@ -1112,7 +1112,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|CLIP_TO_BOTTOM_LAYER
+name|GIMP_CLIP_TO_BOTTOM_LAYER
 case|:
 if|if
 condition|(
@@ -1158,7 +1158,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|FLATTEN_IMAGE
+name|GIMP_FLATTEN_IMAGE
 case|:
 if|if
 condition|(
@@ -1258,7 +1258,7 @@ if|if
 condition|(
 name|merge_type
 operator|==
-name|FLATTEN_IMAGE
+name|GIMP_FLATTEN_IMAGE
 operator|||
 name|gimp_drawable_type
 argument_list|(
@@ -1958,7 +1958,7 @@ if|if
 condition|(
 name|merge_type
 operator|==
-name|FLATTEN_IMAGE
+name|GIMP_FLATTEN_IMAGE
 condition|)
 block|{
 name|list

@@ -58,12 +58,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -4782,11 +4776,11 @@ if|if
 condition|(
 name|merge_type
 operator|<
-name|EXPAND_AS_NECESSARY
+name|GIMP_EXPAND_AS_NECESSARY
 operator|||
 name|merge_type
 operator|>
-name|CLIP_TO_BOTTOM_LAYER
+name|GIMP_CLIP_TO_BOTTOM_LAYER
 condition|)
 name|success
 operator|=
@@ -4871,7 +4865,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"merge_type"
 block|,
-literal|"The type of merge: { EXPAND_AS_NECESSARY (0), CLIP_TO_IMAGE (1), CLIP_TO_BOTTOM_LAYER (2) }"
+literal|"The type of merge: { GIMP_EXPAND_AS_NECESSARY (0), GIMP_CLIP_TO_IMAGE (1), GIMP_CLIP_TO_BOTTOM_LAYER (2) }"
 block|}
 block|}
 decl_stmt|;
@@ -5047,11 +5041,11 @@ if|if
 condition|(
 name|merge_type
 operator|<
-name|EXPAND_AS_NECESSARY
+name|GIMP_EXPAND_AS_NECESSARY
 operator|||
 name|merge_type
 operator|>
-name|CLIP_TO_BOTTOM_LAYER
+name|GIMP_CLIP_TO_BOTTOM_LAYER
 condition|)
 name|success
 operator|=
@@ -5146,7 +5140,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"merge_type"
 block|,
-literal|"The type of merge: { EXPAND_AS_NECESSARY (0), CLIP_TO_IMAGE (1), CLIP_TO_BOTTOM_LAYER (2) }"
+literal|"The type of merge: { GIMP_EXPAND_AS_NECESSARY (0), GIMP_CLIP_TO_IMAGE (1), GIMP_CLIP_TO_BOTTOM_LAYER (2) }"
 block|}
 block|}
 decl_stmt|;

@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f50240108
+DECL|struct|__anon28eb39ee0108
 block|{
 DECL|member|resize
 name|Resize
@@ -888,7 +888,7 @@ name|gboolean
 name|merge_visible
 decl_stmt|;
 DECL|member|merge_type
-name|MergeType
+name|GimpMergeType
 name|merge_type
 decl_stmt|;
 block|}
@@ -1017,7 +1017,7 @@ name|options
 operator|->
 name|merge_type
 operator|=
-name|EXPAND_AS_NECESSARY
+name|GIMP_EXPAND_AS_NECESSARY
 expr_stmt|;
 comment|/* The dialog  */
 name|options
@@ -1172,7 +1172,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|EXPAND_AS_NECESSARY
+name|GIMP_EXPAND_AS_NECESSARY
 argument_list|)
 argument_list|,
 name|NULL
@@ -1184,7 +1184,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CLIP_TO_IMAGE
+name|GIMP_CLIP_TO_IMAGE
 argument_list|)
 argument_list|,
 name|NULL
@@ -1196,7 +1196,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|CLIP_TO_BOTTOM_LAYER
+name|GIMP_CLIP_TO_BOTTOM_LAYER
 argument_list|)
 argument_list|,
 name|NULL

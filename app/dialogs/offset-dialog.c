@@ -1016,7 +1016,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|OFFSET_BACKGROUND
+name|GIMP_OFFSET_BACKGROUND
 argument_list|)
 argument_list|,
 name|NULL
@@ -1028,7 +1028,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|OFFSET_TRANSPARENT
+name|GIMP_OFFSET_TRANSPARENT
 argument_list|)
 argument_list|,
 operator|&

@@ -25,7 +25,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|MergeType
+name|GimpMergeType
 name|merge_type
 parameter_list|)
 function_decl|;
@@ -44,7 +44,7 @@ name|GimpLayer
 modifier|*
 name|current_layer
 parameter_list|,
-name|MergeType
+name|GimpMergeType
 name|merge_type
 parameter_list|)
 function_decl|;
@@ -75,7 +75,7 @@ name|GSList
 modifier|*
 name|merge_list
 parameter_list|,
-name|MergeType
+name|GimpMergeType
 name|merge_type
 parameter_list|)
 function_decl|;

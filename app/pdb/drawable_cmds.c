@@ -70,12 +70,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -5281,11 +5275,11 @@ if|if
 condition|(
 name|fill_type
 operator|<
-name|OFFSET_BACKGROUND
+name|GIMP_OFFSET_BACKGROUND
 operator|||
 name|fill_type
 operator|>
-name|OFFSET_TRANSPARENT
+name|GIMP_OFFSET_TRANSPARENT
 condition|)
 name|success
 operator|=
@@ -5373,7 +5367,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"fill_type"
 block|,
-literal|"fill vacated regions of drawable with background or transparent: OFFSET_BACKGROUND (0) or OFFSET_TRANSPARENT (1)"
+literal|"fill vacated regions of drawable with background or transparent: GIMP_OFFSET_BACKGROUND (0) or GIMP_OFFSET_TRANSPARENT (1)"
 block|}
 block|,
 block|{
