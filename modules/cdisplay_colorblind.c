@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba58ff20103
+DECL|enum|__anon27a2fe590103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_NONE
 name|COLORBLIND_DEFICIENCY_NONE
@@ -462,7 +462,7 @@ block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|select_info
+name|display_info
 init|=
 block|{
 sizeof|sizeof
@@ -516,7 +516,7 @@ argument_list|,
 literal|"CdisplayColorblind"
 argument_list|,
 operator|&
-name|select_info
+name|display_info
 argument_list|,
 literal|0
 argument_list|)

@@ -452,7 +452,7 @@ block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|select_info
+name|display_info
 init|=
 block|{
 sizeof|sizeof
@@ -506,7 +506,7 @@ argument_list|,
 literal|"CdisplayGamma"
 argument_list|,
 operator|&
-name|select_info
+name|display_info
 argument_list|,
 literal|0
 argument_list|)
