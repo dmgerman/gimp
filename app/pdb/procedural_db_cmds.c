@@ -16,7 +16,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -1702,7 +1702,7 @@ condition|(
 operator|(
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

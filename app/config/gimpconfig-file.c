@@ -118,7 +118,7 @@ name|nbytes
 decl_stmt|;
 name|sfile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|source
 argument_list|,
@@ -165,7 +165,7 @@ return|;
 block|}
 name|dfile
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|dest
 argument_list|,

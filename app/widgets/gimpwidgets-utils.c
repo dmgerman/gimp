@@ -24,19 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<sys/stat.h>
 end_include
 
 begin_include
@@ -66,6 +54,12 @@ begin_include
 include|#
 directive|include
 file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_ifdef
@@ -1847,7 +1841,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2bf7faa00108
+DECL|struct|__anon28c18b240108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -2934,7 +2928,7 @@ argument_list|)
 expr_stmt|;
 name|file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
