@@ -2,44 +2,20 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|MAPOBJECTUIH
+name|__MAPOBJECT_UI_H__
 end_ifndef
 
 begin_define
-DECL|macro|MAPOBJECTUIH
+DECL|macro|__MAPOBJECT_UI_H__
 define|#
 directive|define
-name|MAPOBJECTUIH
+name|__MAPOBJECT_UI_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gck/gck.h>
 end_include
 
 begin_include
@@ -51,37 +27,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"arcball.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"mapobject_main.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"mapobject_image.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"mapobject_apply.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"mapobject_preview.h"
+file|<gck/gck.h>
 end_include
 
 begin_comment
@@ -94,9 +40,9 @@ end_comment
 
 begin_decl_stmt
 specifier|extern
-name|GckApplicationWindow
+name|GckVisualInfo
 modifier|*
-name|appwin
+name|visinfo
 decl_stmt|;
 end_decl_stmt
 
@@ -125,11 +71,12 @@ comment|/* ============================ */
 end_comment
 
 begin_function_decl
-specifier|extern
-name|void
-name|create_main_dialog
+name|gboolean
+name|main_dialog
 parameter_list|(
-name|void
+name|GDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -138,6 +85,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __MAPOBJECT_UI_H__ */
+end_comment
 
 end_unit
 

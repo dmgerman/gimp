@@ -2,14 +2,14 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|MAPOBJECTMAINH
+name|__MAPOBJECT_MAIN_H__
 end_ifndef
 
 begin_define
-DECL|macro|MAPOBJECTMAINH
+DECL|macro|__MAPOBJECT_MAIN_H__
 define|#
 directive|define
-name|MAPOBJECTMAINH
+name|__MAPOBJECT_MAIN_H__
 end_define
 
 begin_include
@@ -22,18 +22,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
 end_include
 
 begin_include
@@ -57,7 +45,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/stdplugins-intl.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -90,6 +78,18 @@ directive|include
 file|"mapobject_preview.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/* Defines and stuff */
 end_comment
@@ -115,9 +115,9 @@ comment|/* ======== */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b575b4c0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon2bd439860103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -134,9 +134,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b575b4c0203
 typedef|typedef
 enum|enum
+DECL|enum|__anon2bd439860203
 block|{
 DECL|enumerator|MAP_PLANE
 name|MAP_PLANE
@@ -166,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b575b4c0308
+DECL|struct|__anon2bd439860308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b575b4c0408
+DECL|struct|__anon2bd439860408
 block|{
 DECL|member|type
 name|LightType
@@ -230,9 +230,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b575b4c0508
 typedef|typedef
 struct|struct
+DECL|struct|__anon2bd439860508
 block|{
 DECL|member|viewpoint
 DECL|member|firstaxis
@@ -377,6 +377,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __MAPOBJECT_MAIN_H__ */
+end_comment
 
 end_unit
 

@@ -17,6 +17,18 @@ directive|include
 file|"lighting_image.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"lighting_preview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_ui.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|input_drawable
 DECL|variable|output_drawable
@@ -183,8 +195,8 @@ comment|/******************/
 end_comment
 
 begin_function
-DECL|function|peek_map (GPixelRgn * region,gint x,gint y)
 name|guchar
+DECL|function|peek_map (GPixelRgn * region,gint x,gint y)
 name|peek_map
 parameter_list|(
 name|GPixelRgn
@@ -214,16 +226,14 @@ name|y
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|data
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|peek (gint x,gint y)
 name|GckRGB
+DECL|function|peek (gint x,gint y)
 name|peek
 parameter_list|(
 name|gint
@@ -349,16 +359,14 @@ operator|=
 literal|1.0
 expr_stmt|;
 return|return
-operator|(
 name|color
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|peek_env_map (gint x,gint y)
 name|GckRGB
+DECL|function|peek_env_map (gint x,gint y)
 name|peek_env_map
 parameter_list|(
 name|gint
@@ -490,16 +498,14 @@ operator|=
 literal|1.0
 expr_stmt|;
 return|return
-operator|(
 name|color
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|poke (gint x,gint y,GckRGB * color)
 name|void
+DECL|function|poke (gint x,gint y,GckRGB * color)
 name|poke
 parameter_list|(
 name|gint
@@ -646,8 +652,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_bounds (gint x,gint y)
 name|gint
+DECL|function|check_bounds (gint x,gint y)
 name|check_bounds
 parameter_list|(
 name|gint
@@ -676,22 +682,18 @@ operator|>=
 name|border_y2
 condition|)
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 else|else
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|int_to_pos (gint x,gint y)
 name|GimpVector3
+DECL|function|int_to_pos (gint x,gint y)
 name|int_to_pos
 parameter_list|(
 name|gint
@@ -818,16 +820,14 @@ operator|=
 literal|0.0
 expr_stmt|;
 return|return
-operator|(
 name|pos
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|int_to_posf (gdouble x,gdouble y)
 name|GimpVector3
+DECL|function|int_to_posf (gdouble x,gdouble y)
 name|int_to_posf
 parameter_list|(
 name|gdouble
@@ -942,16 +942,14 @@ operator|=
 literal|0.0
 expr_stmt|;
 return|return
-operator|(
 name|pos
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|pos_to_int (gdouble x,gdouble y,gint * scr_x,gint * scr_y)
 name|void
+DECL|function|pos_to_int (gdouble x,gdouble y,gint * scr_x,gint * scr_y)
 name|pos_to_int
 parameter_list|(
 name|gdouble
@@ -1096,8 +1094,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|pos_to_float (gdouble x,gdouble y,gdouble * xf,gdouble * yf)
 name|void
+DECL|function|pos_to_float (gdouble x,gdouble y,gdouble * xf,gdouble * yf)
 name|pos_to_float
 parameter_list|(
 name|gdouble
@@ -1222,8 +1220,8 @@ comment|/**********************************************/
 end_comment
 
 begin_function
-DECL|function|get_image_color (gdouble u,gdouble v,gint * inside)
 name|GckRGB
+DECL|function|get_image_color (gdouble u,gdouble v,gint * inside)
 name|get_image_color
 parameter_list|(
 name|gdouble
@@ -1292,9 +1290,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 return|return
-operator|(
 name|background
-operator|)
 return|;
 block|}
 name|x2
@@ -1331,14 +1327,12 @@ operator|=
 name|TRUE
 expr_stmt|;
 return|return
-operator|(
 name|peek
 argument_list|(
 name|x1
 argument_list|,
 name|y1
 argument_list|)
-operator|)
 return|;
 block|}
 operator|*
@@ -1395,7 +1389,6 @@ name|y2
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|gck_bilinear_rgba
 argument_list|(
 name|u
@@ -1404,14 +1397,13 @@ name|v
 argument_list|,
 name|p
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|get_map_value (GPixelRgn * region,gdouble u,gdouble v,gint * inside)
 name|gdouble
+DECL|function|get_map_value (GPixelRgn * region,gdouble u,gdouble v,gint * inside)
 name|get_map_value
 parameter_list|(
 name|GPixelRgn
@@ -1501,7 +1493,6 @@ name|TRUE
 expr_stmt|;
 return|return
 operator|(
-operator|(
 name|gdouble
 operator|)
 name|peek_map
@@ -1512,7 +1503,6 @@ name|x1
 argument_list|,
 name|y1
 argument_list|)
-operator|)
 return|;
 block|}
 operator|*
@@ -1589,7 +1579,6 @@ name|y2
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|gck_bilinear
 argument_list|(
 name|u
@@ -1598,14 +1587,13 @@ name|v
 argument_list|,
 name|p
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|compute_maps (void)
 name|void
+DECL|function|compute_maps (void)
 name|compute_maps
 parameter_list|(
 name|void
@@ -1780,8 +1768,8 @@ comment|/****************************************/
 end_comment
 
 begin_function
-DECL|function|image_setup (GDrawable * drawable,gint interactive)
 name|gint
+DECL|function|image_setup (GDrawable * drawable,gint interactive)
 name|image_setup
 parameter_list|(
 name|GDrawable
@@ -1906,8 +1894,6 @@ name|gdk_image_new
 argument_list|(
 name|GDK_IMAGE_FASTEST
 argument_list|,
-name|appwin
-operator|->
 name|visinfo
 operator|->
 name|visual
@@ -1924,9 +1910,7 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 name|numbytes
 operator|=
@@ -1963,9 +1947,7 @@ operator|==
 name|NULL
 condition|)
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 name|memset
 argument_list|(
@@ -1980,8 +1962,6 @@ comment|/* Convert from raw RGB to GdkImage */
 comment|/* ================================ */
 name|gck_rgb_to_gdkimage
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|preview_rgb_data
@@ -1995,9 +1975,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-operator|(
 name|TRUE
-operator|)
 return|;
 block|}
 end_function

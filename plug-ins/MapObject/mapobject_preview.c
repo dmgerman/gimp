@@ -1393,8 +1393,6 @@ comment|/* Convert to visual type */
 comment|/* ====================== */
 name|gck_rgb_to_gdkimage
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|preview_rgb_data
@@ -1543,8 +1541,6 @@ parameter_list|)
 block|{
 name|gck_gc_set_foreground
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -1558,8 +1554,6 @@ argument_list|)
 expr_stmt|;
 name|gck_gc_set_background
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -1791,8 +1785,6 @@ condition|)
 block|{
 name|gck_gc_set_foreground
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -1806,8 +1798,6 @@ argument_list|)
 expr_stmt|;
 name|gck_gc_set_background
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -2109,8 +2099,8 @@ comment|/******************************************************************/
 end_comment
 
 begin_function
-DECL|function|draw_preview_image (gint docompute)
 name|void
+DECL|function|draw_preview_image (gint docompute)
 name|draw_preview_image
 parameter_list|(
 name|gint
@@ -2128,8 +2118,6 @@ name|ph
 decl_stmt|;
 name|gck_gc_set_foreground
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -2143,8 +2131,6 @@ argument_list|)
 expr_stmt|;
 name|gck_gc_set_background
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -2216,14 +2202,33 @@ operator|==
 name|TRUE
 condition|)
 block|{
-name|gck_cursor_set
+name|GdkCursor
+modifier|*
+name|newcursor
+decl_stmt|;
+name|newcursor
+operator|=
+name|gdk_cursor_new
+argument_list|(
+name|GDK_WATCH
+argument_list|)
+expr_stmt|;
+name|gdk_window_set_cursor
 argument_list|(
 name|previewarea
 operator|->
 name|window
 argument_list|,
-name|GDK_WATCH
+name|newcursor
 argument_list|)
+expr_stmt|;
+name|gdk_cursor_destroy
+argument_list|(
+name|newcursor
+argument_list|)
+expr_stmt|;
+name|gdk_flush
+argument_list|()
 expr_stmt|;
 name|compute_preview
 argument_list|(
@@ -2244,14 +2249,29 @@ argument_list|,
 name|ph
 argument_list|)
 expr_stmt|;
-name|gck_cursor_set
+name|newcursor
+operator|=
+name|gdk_cursor_new
+argument_list|(
+name|GDK_HAND2
+argument_list|)
+expr_stmt|;
+name|gdk_window_set_cursor
 argument_list|(
 name|previewarea
 operator|->
 name|window
 argument_list|,
-name|GDK_HAND2
+name|newcursor
 argument_list|)
+expr_stmt|;
+name|gdk_cursor_destroy
+argument_list|(
+name|newcursor
+argument_list|)
+expr_stmt|;
+name|gdk_flush
+argument_list|()
 expr_stmt|;
 name|clear_light_marker
 argument_list|()
@@ -2338,8 +2358,6 @@ name|ph
 decl_stmt|;
 name|gck_gc_set_foreground
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -2353,8 +2371,6 @@ argument_list|)
 expr_stmt|;
 name|gck_gc_set_background
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc

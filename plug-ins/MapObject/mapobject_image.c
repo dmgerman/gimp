@@ -1978,8 +1978,6 @@ name|gdk_image_new
 argument_list|(
 name|GDK_IMAGE_FASTEST
 argument_list|,
-name|appwin
-operator|->
 name|visinfo
 operator|->
 name|visual
@@ -2038,8 +2036,6 @@ comment|/* Convert from raw RGB to GdkImage */
 comment|/* ================================ */
 name|gck_rgb_to_gdkimage
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|preview_rgb_data

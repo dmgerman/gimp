@@ -1,95 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*********************************************************************************/
+comment|/* Lighting Effects 0.2.2 -- image filter plug-in for The Gimp program  *  * Copyright (C) 1996-98 Tom Bech  * Copyright (C) 1996-98 Federico Mena Quintero  *  * E-mail: tomb@gimp.org (Tom) or quartic@gimp.org (Federico)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
-begin_comment
-comment|/* Lighting Effects 0.2.2 -- image filter plug-in for The Gimp program           */
-end_comment
+begin_include
+include|#
+directive|include
+file|"lighting_apply.h"
+end_include
 
-begin_comment
-comment|/* Copyright (C) 1996-98 Tom Bech                                                */
-end_comment
-
-begin_comment
-comment|/* Copyright (C) 1996-98 Federico Mena Quintero                                  */
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* E-mail: tomb@gimp.org (Tom) or quartic@gimp.org (Federico)                    */
-end_comment
-
-begin_comment
-comment|/* You can contact the original The Gimp authors at gimp@xcf.berkeley.edu        */
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* This program is free software; you can redistribute it and/or modify it under */
-end_comment
-
-begin_comment
-comment|/* the terms of the GNU General Public License as published by the Free Software */
-end_comment
-
-begin_comment
-comment|/* Foundation; either version 2 of the License, or (at your option) any later    */
-end_comment
-
-begin_comment
-comment|/* version.                                                                      */
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* This program is distributed in the hope that it will be useful, but WITHOUT   */
-end_comment
-
-begin_comment
-comment|/* ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS */
-end_comment
-
-begin_comment
-comment|/* FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.*/
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* You should have received a copy of the GNU General Public License along with  */
-end_comment
-
-begin_comment
-comment|/* this program (read the "COPYING" file); if not, write to the Free Software    */
-end_comment
-
-begin_comment
-comment|/* Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.                     */
-end_comment
-
-begin_comment
-comment|/*===============================================================================*/
-end_comment
-
-begin_comment
-comment|/* In other words, you can't sue us for whatever happens while using this ;)     */
-end_comment
-
-begin_comment
-comment|/*********************************************************************************/
-end_comment
+begin_include
+include|#
+directive|include
+file|"lighting_image.h"
+end_include
 
 begin_include
 include|#
@@ -97,13 +21,35 @@ directive|include
 file|"lighting_main.h"
 end_include
 
-begin_comment
-comment|/* Global variables */
-end_comment
+begin_include
+include|#
+directive|include
+file|"lighting_preview.h"
+end_include
 
-begin_comment
-comment|/* ================ */
-end_comment
+begin_include
+include|#
+directive|include
+file|"lighting_shade.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lighting_ui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
 
 begin_decl_stmt
 DECL|variable|mapvals
@@ -124,28 +70,6 @@ begin_comment
 comment|/******************/
 end_comment
 
-begin_function_decl
-name|void
-name|lighting_interactive
-parameter_list|(
-name|GDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|lighting_noninteractive
-parameter_list|(
-name|GDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*************************************/
 end_comment
@@ -159,8 +83,9 @@ comment|/*************************************/
 end_comment
 
 begin_function
-DECL|function|set_default_settings (void)
+specifier|static
 name|void
+DECL|function|set_default_settings (void)
 name|set_default_settings
 parameter_list|(
 name|void
@@ -318,7 +243,6 @@ name|preview_zoom_factor
 operator|=
 literal|1.0
 expr_stmt|;
-comment|/*  mapvals.bumptype=0; */
 name|mapvals
 operator|.
 name|bumpmaptype
@@ -403,15 +327,14 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_drawables (void)
+specifier|static
 name|void
+DECL|function|check_drawables (void)
 name|check_drawables
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/* Check that envmap_id and bumpmap_id references legal images (are valid drawables) */
-comment|/* ================================================================================= */
 if|if
 condition|(
 name|mapvals
@@ -487,8 +410,6 @@ operator|.
 name|bump_mapped
 condition|)
 block|{
-comment|/* Check if bump-map is grayscale and of the same size as the input drawable */
-comment|/* ========================================================================= */
 if|if
 condition|(
 operator|!
@@ -499,6 +420,7 @@ operator|.
 name|bumpmap_id
 argument_list|)
 operator|||
+operator|(
 name|gimp_drawable_width
 argument_list|(
 name|mapvals
@@ -512,7 +434,9 @@ name|mapvals
 operator|.
 name|bumpmap_id
 argument_list|)
+operator|)
 operator|||
+operator|(
 name|gimp_drawable_height
 argument_list|(
 name|mapvals
@@ -526,10 +450,9 @@ name|mapvals
 operator|.
 name|bumpmap_id
 argument_list|)
+operator|)
 condition|)
 block|{
-comment|/* If not then we silently disable bump mapping */
-comment|/* ============================================ */
 name|mapvals
 operator|.
 name|bump_mapped
@@ -552,8 +475,6 @@ operator|.
 name|env_mapped
 condition|)
 block|{
-comment|/* Check if env-map is grayscale or has alpha */
-comment|/* ========================================== */
 if|if
 condition|(
 name|gimp_drawable_is_gray
@@ -571,8 +492,6 @@ name|envmap_id
 argument_list|)
 condition|)
 block|{
-comment|/* If it has then we silently disable env mapping */
-comment|/* ============================================== */
 name|mapvals
 operator|.
 name|bump_mapped
@@ -592,9 +511,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|query (void)
 specifier|static
 name|void
+DECL|function|query (void)
 name|query
 parameter_list|(
 name|void
@@ -800,13 +719,6 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
 name|gint
 name|nargs
 init|=
@@ -822,12 +734,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -857,20 +763,20 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -1047,10 +953,16 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
-name|lighting_interactive
+if|if
+condition|(
+name|main_dialog
 argument_list|(
 name|drawable
 argument_list|)
+condition|)
+block|{
+name|compute_image
+argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
@@ -1065,6 +977,7 @@ name|LightingValues
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -1089,17 +1002,13 @@ name|nparams
 operator|!=
 literal|24
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|mapvals
 operator|.
@@ -1553,132 +1462,19 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-DECL|function|lighting_interactive (GDrawable * drawable)
-name|void
-name|lighting_interactive
-parameter_list|(
-name|GDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"lighting"
-argument_list|)
-expr_stmt|;
-name|gdk_set_show_events
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-comment|/* Create application window */
-comment|/* ========================= */
-name|create_main_dialog
-argument_list|()
-expr_stmt|;
-comment|/* Prepare images */
-comment|/* ============== */
-name|image_setup
-argument_list|(
-name|drawable
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/* Gtk main event loop */
-comment|/* =================== */
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-DECL|function|lighting_noninteractive (GDrawable * drawable)
-name|void
-name|lighting_noninteractive
-parameter_list|(
-name|GDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"Noninteractive not yet implemented! Sorry.\n"
-argument_list|)
-expr_stmt|;
-block|}
-end_function
 
 begin_macro
 name|MAIN

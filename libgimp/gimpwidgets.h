@@ -159,6 +159,51 @@ name|guint
 name|digits
 parameter_list|)
 function_decl|;
+DECL|macro|GIMP_SCALE_ENTRY_LABEL (adj)
+define|#
+directive|define
+name|GIMP_SCALE_ENTRY_LABEL
+parameter_list|(
+name|adj
+parameter_list|)
+define|\
+value|GTK_LABEL (gtk_object_get_data (GTK_OBJECT(adj), "label"))
+DECL|macro|GIMP_SCALE_ENTRY_SCALE (adj)
+define|#
+directive|define
+name|GIMP_SCALE_ENTRY_SCALE
+parameter_list|(
+name|adj
+parameter_list|)
+define|\
+value|GTK_HSCALE (gtk_object_get_data (GTK_OBJECT(adj), "scale"))
+DECL|macro|GIMP_SCALE_ENTRY_SCALE_ADJ (adj)
+define|#
+directive|define
+name|GIMP_SCALE_ENTRY_SCALE_ADJ
+parameter_list|(
+name|adj
+parameter_list|)
+define|\
+value|gtk_range_get_adjustment \         (GTK_RANGE (gtk_object_get_data (GTK_OBJECT(adj), "scale")))
+DECL|macro|GIMP_SCALE_ENTRY_SPINBUTTON (adj)
+define|#
+directive|define
+name|GIMP_SCALE_ENTRY_SPINBUTTON
+parameter_list|(
+name|adj
+parameter_list|)
+define|\
+value|GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT(adj), "spinbutton"))
+DECL|macro|GIMP_SCALE_ENTRY_SPINBUTTON_ADJ (adj)
+define|#
+directive|define
+name|GIMP_SCALE_ENTRY_SPINBUTTON_ADJ
+parameter_list|(
+name|adj
+parameter_list|)
+define|\
+value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (gtk_object_get_data (GTK_OBJECT(adj), "spinbutton")))
 name|GtkObject
 modifier|*
 name|gimp_scale_entry_new

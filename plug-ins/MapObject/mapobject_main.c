@@ -124,28 +124,6 @@ begin_comment
 comment|/******************/
 end_comment
 
-begin_function_decl
-name|void
-name|mapobject_interactive
-parameter_list|(
-name|GDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|mapobject_noninteractive
-parameter_list|(
-name|GDrawable
-modifier|*
-name|drawable
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*************************************/
 end_comment
@@ -159,8 +137,9 @@ comment|/*************************************/
 end_comment
 
 begin_function
-DECL|function|set_default_settings (void)
+specifier|static
 name|void
+DECL|function|set_default_settings (void)
 name|set_default_settings
 parameter_list|(
 name|void
@@ -305,10 +284,14 @@ name|mapvals
 operator|.
 name|alpha
 operator|=
+literal|0.0
+expr_stmt|;
 name|mapvals
 operator|.
 name|beta
 operator|=
+literal|0.0
+expr_stmt|;
 name|mapvals
 operator|.
 name|gamma
@@ -503,8 +486,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|check_drawables (GDrawable * drawable)
+specifier|static
 name|void
+DECL|function|check_drawables (GDrawable * drawable)
 name|check_drawables
 parameter_list|(
 name|GDrawable
@@ -721,9 +705,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|query (void)
 specifier|static
 name|void
+DECL|function|query (void)
 name|query
 parameter_list|(
 name|void
@@ -1129,13 +1113,6 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
 name|gint
 name|nargs
 init|=
@@ -1151,12 +1128,6 @@ index|[
 literal|0
 index|]
 argument_list|)
-decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
@@ -1183,20 +1154,20 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 specifier|static
 name|void
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -1253,6 +1224,23 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -1327,10 +1315,16 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|mapobject_interactive
+if|if
+condition|(
+name|main_dialog
 argument_list|(
 name|drawable
 argument_list|)
+condition|)
+block|{
+name|compute_image
+argument_list|()
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
@@ -1345,6 +1339,7 @@ name|MapObjectValues
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -1382,17 +1377,13 @@ name|nparams
 operator|!=
 literal|49
 condition|)
+block|{
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|status
-operator|==
-name|STATUS_SUCCESS
-condition|)
+block|}
+else|else
 block|{
 name|mapvals
 operator|.
@@ -2155,110 +2146,19 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-DECL|function|mapobject_interactive (GDrawable * drawable)
-name|void
-name|mapobject_interactive
-parameter_list|(
-name|GDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"map_object"
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-comment|/* Set up ArcBall stuff */
-comment|/* ==================== */
-comment|/*ArcBall_Init(); */
-comment|/* Create application window */
-comment|/* ========================= */
-name|create_main_dialog
-argument_list|()
-expr_stmt|;
-comment|/* Prepare images */
-comment|/* ============== */
-name|image_setup
-argument_list|(
-name|drawable
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/* Gtk main event loop */
-comment|/* =================== */
-name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
-block|}
-end_function
 
 begin_macro
 name|MAIN

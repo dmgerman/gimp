@@ -99,54 +99,9 @@ begin_comment
 comment|/* ====== */
 end_comment
 
-begin_function_decl
-name|void
-name|draw_preview_image
-parameter_list|(
-name|gint
-name|recompute
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|update_light
-parameter_list|(
-name|gint
-name|xpos
-parameter_list|,
-name|gint
-name|ypos
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|draw_light_marker
-parameter_list|(
-name|gint
-name|xpos
-parameter_list|,
-name|gint
-name|ypos
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|clear_light_marker
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
-DECL|function|compute_preview (gint startx,gint starty,gint w,gint h)
 name|void
+DECL|function|compute_preview (gint startx,gint starty,gint w,gint h)
 name|compute_preview
 parameter_list|(
 name|gint
@@ -934,8 +889,6 @@ block|}
 block|}
 name|gck_rgb_to_gdkimage
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|preview_rgb_data
@@ -951,10 +904,12 @@ block|}
 end_function
 
 begin_function
-DECL|function|blah ()
 name|void
+DECL|function|blah (void)
 name|blah
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 comment|/* First, compute the linear mapping (x,y,x+w,y+h) to (0,0,pw,ph) */
 comment|/* ============================================================== */
@@ -967,7 +922,7 @@ comment|/* ================================================= */
 comment|/*          p2=p1;           color=get_ray_color(&p1);            if (color.a<1.0)             {               f1=((xcnt % 32)<16);               f2=((ycnt % 32)<16);               f1=f1^f2;                if (f1)                 {                   if (color.a==0.0)                     color=lightcheck;                   else                     {                       gck_rgb_mul(&color,color.a);                       temp=lightcheck;                       gck_rgb_mul(&temp,1.0-color.a);                       gck_rgb_add(&color,&temp);                     }                 }               else                 {                   if (color.a==0.0)                     color=darkcheck;                   else                     {                       gck_rgb_mul(&color,color.a);                       temp=darkcheck;                       gck_rgb_mul(&temp,1.0-color.a);                       gck_rgb_add(&color,&temp);                     }                 }             }            preview_rgb_data[index++]=(guchar)(color.r*255.0);           preview_rgb_data[index++]=(guchar)(color.g*255.0);           preview_rgb_data[index++]=(guchar)(color.b*255.0);         }     } */
 comment|/* Convert to visual type */
 comment|/* ====================== */
-comment|/*  gck_rgb_to_gdkimage(appwin->visinfo,preview_rgb_data,image,pw,ph); */
+comment|/*  gck_rgb_to_gdkimage(visinfo,preview_rgb_data,image,pw,ph); */
 block|}
 end_function
 
@@ -988,8 +943,8 @@ comment|/*************************************************/
 end_comment
 
 begin_function
-DECL|function|check_light_hit (gint xpos,gint ypos)
 name|gint
+DECL|function|check_light_hit (gint xpos,gint ypos)
 name|check_light_hit
 parameter_list|(
 name|gint
@@ -1001,9 +956,7 @@ parameter_list|)
 block|{
 comment|/*  gdouble dx,dy,r;      if (mapvals.lightsource.type==POINT_LIGHT)     {       dx=(gdouble)lightx-xpos;       dy=(gdouble)lighty-ypos;       r=sqrt(dx*dx+dy*dy)+0.5;        if ((gint)r>7)         return(FALSE);       else         return(TRUE);     }    */
 return|return
-operator|(
 name|FALSE
-operator|)
 return|;
 block|}
 end_function
@@ -1021,8 +974,8 @@ comment|/****************************************/
 end_comment
 
 begin_function
-DECL|function|draw_light_marker (gint xpos,gint ypos)
 name|void
+DECL|function|draw_light_marker (gint xpos,gint ypos)
 name|draw_light_marker
 parameter_list|(
 name|gint
@@ -1032,7 +985,7 @@ name|gint
 name|ypos
 parameter_list|)
 block|{
-comment|/*  gck_gc_set_foreground(appwin->visinfo,gc,0,50,255);   gck_gc_set_background(appwin->visinfo,gc,0,0,0);    gdk_gc_set_function(gc,GDK_COPY);    if (mapvals.lightsource.type==POINT_LIGHT)     {       lightx=xpos;       lighty=ypos; */
+comment|/*  gck_gc_set_foreground(visinfo,gc,0,50,255);   gck_gc_set_background(visinfo,gc,0,0,0);    gdk_gc_set_function(gc,GDK_COPY);    if (mapvals.lightsource.type==POINT_LIGHT)     {       lightx=xpos;       lighty=ypos; */
 comment|/* Save background */
 comment|/* =============== */
 comment|/*      backbuf.x=lightx-7;       backbuf.y=lighty-7;       backbuf.w=14;       backbuf.h=14; */
@@ -1044,8 +997,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|clear_light_marker (void)
 name|void
+DECL|function|clear_light_marker (void)
 name|clear_light_marker
 parameter_list|(
 name|void
@@ -1053,13 +1006,13 @@ parameter_list|)
 block|{
 comment|/* Restore background if it has been saved */
 comment|/* ======================================= */
-comment|/*  if (backbuf.image!=NULL)     {       gck_gc_set_foreground(appwin->visinfo,gc,255,255,255);       gck_gc_set_background(appwin->visinfo,gc,0,0,0);        gdk_gc_set_function(gc,GDK_COPY);       gdk_draw_image(previewarea->window,gc,backbuf.image,0,0,backbuf.x,backbuf.y,         backbuf.w,backbuf.h);       gdk_image_destroy(backbuf.image);       backbuf.image=NULL;     } */
+comment|/*  if (backbuf.image!=NULL)     {       gck_gc_set_foreground(visinfo,gc,255,255,255);       gck_gc_set_background(visinfo,gc,0,0,0);        gdk_gc_set_function(gc,GDK_COPY);       gdk_draw_image(previewarea->window,gc,backbuf.image,0,0,backbuf.x,backbuf.y,         backbuf.w,backbuf.h);       gdk_image_destroy(backbuf.image);       backbuf.image=NULL;     } */
 block|}
 end_function
 
 begin_function
-DECL|function|draw_lights (void)
 name|void
+DECL|function|draw_lights (void)
 name|draw_lights
 parameter_list|(
 name|void
@@ -1082,8 +1035,8 @@ comment|/*************************************************/
 end_comment
 
 begin_function
-DECL|function|update_light (gint xpos,gint ypos)
 name|void
+DECL|function|update_light (gint xpos,gint ypos)
 name|update_light
 parameter_list|(
 name|gint
@@ -1098,8 +1051,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|compute_preview_rectangle (gint * xp,gint * yp,gint * wid,gint * heig)
 name|void
+DECL|function|compute_preview_rectangle (gint * xp,gint * yp,gint * wid,gint * heig)
 name|compute_preview_rectangle
 parameter_list|(
 name|gint
@@ -1291,8 +1244,8 @@ comment|/******************************************************************/
 end_comment
 
 begin_function
-DECL|function|draw_preview_image (gint recompute)
 name|void
+DECL|function|draw_preview_image (gint recompute)
 name|draw_preview_image
 parameter_list|(
 name|gint
@@ -1310,8 +1263,6 @@ name|ph
 decl_stmt|;
 name|gck_gc_set_foreground
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -1325,8 +1276,6 @@ argument_list|)
 expr_stmt|;
 name|gck_gc_set_background
 argument_list|(
-name|appwin
-operator|->
 name|visinfo
 argument_list|,
 name|gc
@@ -1367,14 +1316,33 @@ operator|==
 name|TRUE
 condition|)
 block|{
-name|gck_cursor_set
+name|GdkCursor
+modifier|*
+name|newcursor
+decl_stmt|;
+name|newcursor
+operator|=
+name|gdk_cursor_new
+argument_list|(
+name|GDK_WATCH
+argument_list|)
+expr_stmt|;
+name|gdk_window_set_cursor
 argument_list|(
 name|previewarea
 operator|->
 name|window
 argument_list|,
-name|GDK_WATCH
+name|newcursor
 argument_list|)
+expr_stmt|;
+name|gdk_cursor_destroy
+argument_list|(
+name|newcursor
+argument_list|)
+expr_stmt|;
+name|gdk_flush
+argument_list|()
 expr_stmt|;
 name|compute_preview
 argument_list|(
@@ -1387,20 +1355,34 @@ argument_list|,
 name|ph
 argument_list|)
 expr_stmt|;
-name|gck_cursor_set
+name|newcursor
+operator|=
+name|gdk_cursor_new
+argument_list|(
+name|GDK_HAND2
+argument_list|)
+expr_stmt|;
+name|gdk_window_set_cursor
 argument_list|(
 name|previewarea
 operator|->
 name|window
 argument_list|,
-name|GDK_HAND2
+name|newcursor
 argument_list|)
+expr_stmt|;
+name|gdk_cursor_destroy
+argument_list|(
+name|newcursor
+argument_list|)
+expr_stmt|;
+name|gdk_flush
+argument_list|()
 expr_stmt|;
 name|clear_light_marker
 argument_list|()
 expr_stmt|;
 block|}
-comment|/*  if (pw!=PREVIEW_WIDTH)     gdk_window_clear(previewarea->window); */
 name|gdk_draw_image
 argument_list|(
 name|previewarea
@@ -1424,7 +1406,6 @@ argument_list|,
 name|PREVIEW_HEIGHT
 argument_list|)
 expr_stmt|;
-comment|/*  draw_lights(); */
 block|}
 end_function
 
