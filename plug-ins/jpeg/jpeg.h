@@ -12,11 +12,11 @@ comment|/* 11-JAN-99 - Added support for JPEG comments and Progressive saves.  *
 end_comment
 
 begin_comment
-comment|/*   * 21-AUG-99 - Added support for JPEG previews, subsampling,  *             non-baseline JPEGs, restart markers and DCT method choice  * - Steinar H. Gunderson<sgunderson@bigfoot.com>  *  * A small preview appears and changes according to the changes to the  * compression options. The image itself works as a much bigger preview.  * For slower machines, the save operation (not the load operation) is  * done in the background, with a standard GTK+ idle loop, which turned  * out to be the most portable way. Win32 porters shouldn't have much  * difficulty porting my changes (at least I hope so...).  *  * Subsampling is a pretty obscure feature, but I thought it might be nice  * to have it in anyway, for people to play with :-) Does anybody have  * any better suggestions than the ones I've put in the menu? (See wizard.doc  * from the libjpeg distribution for a tiny bit of information on subsampling.)  *  * A baseline JPEG is often larger and/or of worse quality than a non-baseline  * one (especially at low quality settings), but all decoders are guaranteed  * to read baseline JPEGs (I think). Not all will read a non-baseline one.  *  * Restart markers are useful if you are transmitting the image over an  * unreliable network. If a file gets corrupted, it will only be corrupted  * up to the next restart marker. Of course, if there are no restart markers,  * the rest of the image will be corrupted. Restart markers take up extra  * space. The libjpeg developers recommend a restart every 1 row for  * transmitting images over unreliable networks, such as Usenet.  *  * The DCT method is said by the libjpeg docs to _only_ influence quality vs.  * speed, and nothing else. However, I've found that there _are_ size  * differences. Fast integer, on the other hand, is faster than integer,  * which in turn is faster than FP. According to the libjpeg docs (and I  * believe it's true), FP has only a theoretical advantage in quality, and  * will be slower than the two other methods, unless you're blessed with  * very a fast FPU. (In addition, images might not be identical on  * different types of FP hardware.)  *  * ...and thus ends my additions to the JPEG plug-in. I hope. *sigh* :-)  */
+comment|/*  * 21-AUG-99 - Added support for JPEG previews, subsampling,  *             non-baseline JPEGs, restart markers and DCT method choice  * - Steinar H. Gunderson<sgunderson@bigfoot.com>  *  * A small preview appears and changes according to the changes to the  * compression options. The image itself works as a much bigger preview.  * For slower machines, the save operation (not the load operation) is  * done in the background, with a standard GTK+ idle loop, which turned  * out to be the most portable way. Win32 porters shouldn't have much  * difficulty porting my changes (at least I hope so...).  *  * Subsampling is a pretty obscure feature, but I thought it might be nice  * to have it in anyway, for people to play with :-) Does anybody have  * any better suggestions than the ones I've put in the menu? (See wizard.doc  * from the libjpeg distribution for a tiny bit of information on subsampling.)  *  * A baseline JPEG is often larger and/or of worse quality than a non-baseline  * one (especially at low quality settings), but all decoders are guaranteed  * to read baseline JPEGs (I think). Not all will read a non-baseline one.  *  * Restart markers are useful if you are transmitting the image over an  * unreliable network. If a file gets corrupted, it will only be corrupted  * up to the next restart marker. Of course, if there are no restart markers,  * the rest of the image will be corrupted. Restart markers take up extra  * space. The libjpeg developers recommend a restart every 1 row for  * transmitting images over unreliable networks, such as Usenet.  *  * The DCT method is said by the libjpeg docs to _only_ influence quality vs.  * speed, and nothing else. However, I've found that there _are_ size  * differences. Fast integer, on the other hand, is faster than integer,  * which in turn is faster than FP. According to the libjpeg docs (and I  * believe it's true), FP has only a theoretical advantage in quality, and  * will be slower than the two other methods, unless you're blessed with  * very a fast FPU. (In addition, images might not be identical on  * different types of FP hardware.)  *  * ...and thus ends my additions to the JPEG plug-in. I hope. *sigh* :-)  */
 end_comment
 
 begin_comment
-comment|/*   * 21-AUG-99 - Bunch O' Fixes.  * - Adam D. Moss<adam@gimp.org>  *  * We now correctly create an alpha-padded layer for our preview --  * having a non-background non-alpha layer is a no-no in GIMP.  *  * I've also tweaked the GIMP undo API a little and changed the JPEG  * plugin to use gimp_image_{freeze,thaw}_undo so that it doesn't store  * up a whole load of superfluous tile data every time the preview is  * changed.  */
+comment|/*  * 21-AUG-99 - Bunch O' Fixes.  * - Adam D. Moss<adam@gimp.org>  *  * We now correctly create an alpha-padded layer for our preview --  * having a non-background non-alpha layer is a no-no in GIMP.  *  * I've also tweaked the GIMP undo API a little and changed the JPEG  * plugin to use gimp_image_{freeze,thaw}_undo so that it doesn't store  * up a whole load of superfluous tile data every time the preview is  * changed.  */
 end_comment
 
 begin_comment
@@ -28,7 +28,7 @@ comment|/*  * 4-SEP-01 - remove the use of GtkText  * - DindinX<David@dindinx.or
 end_comment
 
 begin_comment
-comment|/*  * 22-JUN-03 - add support for keeping EXIF information  * - Dave Neary<bolsh@gimp.org>  *  * This is little more than a modified version fo a patch from the   * libexif owner (Lutz Muller) which attaches exif information to  * a GimpImage, and if there is infoprmation available at save   * time, writes it out. No modification of the exif data is   * currently possible.  */
+comment|/*  * 22-JUN-03 - add support for keeping EXIF information  * - Dave Neary<bolsh@gimp.org>  *  * This is little more than a modified version fo a patch from the  * libexif owner (Lutz Muller) which attaches exif information to  * a GimpImage, and if there is infoprmation available at save  * time, writes it out. No modification of the exif data is  * currently possible.  */
 end_comment
 
 begin_include
@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aceb62b0108
+DECL|struct|__anon2a0becc80108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aceb62b0208
+DECL|struct|__anon2a0becc80208
 block|{
 DECL|member|run
 name|gboolean
@@ -425,7 +425,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aceb62b0308
+DECL|struct|__anon2a0becc80308
 block|{
 DECL|member|cinfo
 name|struct
@@ -2748,10 +2748,6 @@ modifier|*
 modifier|*
 name|rowbuf
 decl_stmt|;
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
 name|gint
 name|image_type
 decl_stmt|;
@@ -2851,8 +2847,16 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|preview
+condition|)
+block|{
+name|gchar
+modifier|*
 name|name
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
 name|_
@@ -2862,7 +2866,7 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_progress_init
 argument_list|(
 name|name
@@ -2873,6 +2877,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+block|}
 name|image_ID
 operator|=
 operator|-
@@ -3888,6 +3893,11 @@ argument_list|,
 name|scanlines
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|preview
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -5979,7 +5989,7 @@ operator|-
 literal|1
 condition|)
 block|{
-comment|/*  assuming that reference counting is working correctly,  	  we do not need to delete the layer, removing it from 	  the image should be sufficient  */
+comment|/*  assuming that reference counting is working correctly, 	  we do not need to delete the layer, removing it from 	  the image should be sufficient  */
 name|gimp_image_remove_layer
 argument_list|(
 name|image_ID_global
@@ -7757,7 +7767,7 @@ argument_list|(
 name|text_buffer
 argument_list|)
 expr_stmt|;
-comment|/* pw - mild hack here.  I didn't like redoing the comment string    * each time a character was typed, so I associated the text area    * with the dialog.  That way, just before the dialog destroys    * itself (once the ok button is hit) it can save whatever was in    * the comment text area to the comment string.  See the    * save-ok-callback for more details.      * [DindinX 2001-09-04]: this comment is still true with the text_buffer...    */
+comment|/* pw - mild hack here.  I didn't like redoing the comment string    * each time a character was typed, so I associated the text area    * with the dialog.  That way, just before the dialog destroys    * itself (once the ok button is hit) it can save whatever was in    * the comment text area to the comment string.  See the    * save-ok-callback for more details.    * [DindinX 2001-09-04]: this comment is still true with the text_buffer...    */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
