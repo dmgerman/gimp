@@ -639,7 +639,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2781a91d0103
+DECL|enum|__anon2a2367ab0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -2945,7 +2945,7 @@ decl_stmt|;
 name|GdkCursorType
 name|ctype
 init|=
-name|GIMP_CROSSHAIR_SMALL_CURSOR
+name|GIMP_MOUSE_CURSOR
 decl_stmt|;
 name|CursorModifier
 name|cmodifier
@@ -3048,10 +3048,6 @@ name|srh
 argument_list|)
 condition|)
 block|{
-name|ctype
-operator|=
-name|GIMP_MOUSE_CURSOR
-expr_stmt|;
 name|cmodifier
 operator|=
 name|CURSOR_MODIFIER_RESIZE
@@ -3107,10 +3103,6 @@ name|y2
 argument_list|)
 condition|)
 block|{
-name|ctype
-operator|=
-name|GIMP_MOUSE_CURSOR
-expr_stmt|;
 name|cmodifier
 operator|=
 name|CURSOR_MODIFIER_RESIZE
@@ -3229,6 +3221,8 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|!
+operator|(
 name|mevent
 operator|->
 name|x
@@ -3260,11 +3254,12 @@ operator|<
 name|crop
 operator|->
 name|y2
+operator|)
 condition|)
 block|{
 name|ctype
 operator|=
-name|GIMP_MOUSE_CURSOR
+name|GIMP_CROSSHAIR_SMALL_CURSOR
 expr_stmt|;
 block|}
 name|gdisplay_install_tool_cursor
