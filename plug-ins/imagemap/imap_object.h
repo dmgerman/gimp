@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2004 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2005 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_ifndef
@@ -846,27 +846,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GdkPixmap
-modifier|*
-name|object_get_icon
-parameter_list|(
-name|Object_t
-modifier|*
-name|obj
-parameter_list|,
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkBitmap
-modifier|*
-modifier|*
-name|mask
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|object_emit_changed_signal
 parameter_list|(
@@ -1001,8 +980,20 @@ define|\
 value|((obj)->class->fill_info_tab((obj), (data)))
 end_define
 
+begin_define
+DECL|macro|object_get_stock_icon_name (obj)
+define|#
+directive|define
+name|object_get_stock_icon_name
+parameter_list|(
+name|obj
+parameter_list|)
+define|\
+value|((obj)->class->get_stock_icon_name())
+end_define
+
 begin_typedef
-DECL|struct|__anon2b71e38f0108
+DECL|struct|__anon275a9f180108
 typedef|typedef
 struct|struct
 block|{
@@ -1106,7 +1097,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b71e38f0208
+DECL|struct|__anon275a9f180208
 typedef|typedef
 struct|struct
 block|{

@@ -795,7 +795,7 @@ name|GTK_STOCK_SAVE_AS
 block|,
 literal|"Save _as..."
 block|,
-name|NULL
+literal|"<shift><control>S"
 block|,
 name|NULL
 block|,
@@ -911,11 +911,11 @@ block|,
 block|{
 literal|"Clear"
 block|,
-name|GTK_STOCK_CLEAR
+name|GTK_STOCK_DELETE
 block|,
 name|NULL
 block|,
-literal|"<control>K"
+literal|"Delete"
 block|,
 name|NULL
 block|,
@@ -1077,7 +1077,7 @@ name|GTK_STOCK_ZOOM_IN
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"plus"
 block|,
 literal|"Zoom in"
 block|,
@@ -1091,7 +1091,7 @@ name|GTK_STOCK_ZOOM_OUT
 block|,
 name|NULL
 block|,
-name|NULL
+literal|"minus"
 block|,
 literal|"Zoom out"
 block|,

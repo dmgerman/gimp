@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2004 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2005 Maurits Rijk  m.rijk@chello.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -31,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"imap_main.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_misc.h"
 end_include
 
 begin_include
@@ -345,6 +339,11 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|message
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|dialog
@@ -556,26 +555,23 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-specifier|static
-name|Alert_t
+name|GtkWidget
 modifier|*
-name|alert
+name|dialog
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|alert
-condition|)
-name|alert
+name|dialog
 operator|=
-name|create_alert
+name|gtk_message_dialog_new_with_markup
 argument_list|(
-name|GTK_STOCK_DIALOG_ERROR
-argument_list|)
-expr_stmt|;
-name|alert_set_text
-argument_list|(
-name|alert
+name|NULL
+argument_list|,
+name|GTK_DIALOG_DESTROY_WITH_PARENT
+argument_list|,
+name|GTK_MESSAGE_ERROR
+argument_list|,
+name|GTK_BUTTONS_CLOSE
+argument_list|,
+literal|"<span weight=\"bold\" size=\"larger\">%s</span>\n\n%s"
 argument_list|,
 name|error
 argument_list|,
@@ -585,20 +581,26 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|alert_set_text
+name|g_signal_connect_swapped
 argument_list|(
-name|alert
+name|dialog
 argument_list|,
-name|error
+literal|"response"
 argument_list|,
-name|filename
+name|G_CALLBACK
+argument_list|(
+name|gtk_widget_destroy
+argument_list|)
+argument_list|,
+name|dialog
 argument_list|)
 expr_stmt|;
-name|default_dialog_show
+name|gtk_dialog_run
 argument_list|(
-name|alert
-operator|->
+name|GTK_DIALOG
+argument_list|(
 name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
