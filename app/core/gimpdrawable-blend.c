@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62a5ea0108
+DECL|struct|__anon2c408e670108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -162,8 +162,10 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+DECL|member|repeat
 name|GimpRepeatMode
 name|repeat
+decl_stmt|;
 DECL|typedef|RenderBlendData
 block|}
 name|RenderBlendData
@@ -173,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62a5ea0208
+DECL|struct|__anon2c408e670208
 block|{
 DECL|member|PR
 name|PixelRegion
