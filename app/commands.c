@@ -4740,11 +4740,6 @@ operator|->
 name|resize_shell
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|image_resize
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
