@@ -67,6 +67,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_displays_invalidate
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_displays_finish_draw
 parameter_list|(
 name|Gimp
