@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -20,6 +26,23 @@ include|#
 directive|include
 file|<string.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<unistd.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -32,6 +55,23 @@ include|#
 directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpwin32-io.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -101,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29225cfe0103
+DECL|enum|__anon2b534b2e0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -126,6 +166,20 @@ name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  private variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|sessionrc_deleted
+specifier|static
+name|gboolean
+name|sessionrc_deleted
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -497,6 +551,27 @@ end_function
 
 begin_function
 name|void
+DECL|function|session_exit (Gimp * gimp)
+name|session_exit
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|session_restore (Gimp * gimp)
 name|session_restore
 parameter_list|(
@@ -521,12 +596,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|session_save (Gimp * gimp)
+DECL|function|session_save (Gimp * gimp,gboolean always_save)
 name|session_save
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|always_save
 parameter_list|)
 block|{
 name|GimpConfigWriter
@@ -545,6 +623,14 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|sessionrc_deleted
+operator|&&
+operator|!
+name|always_save
+condition|)
+return|return;
 name|filename
 operator|=
 name|session_filename
@@ -634,32 +720,126 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|sessionrc_deleted
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
 begin_function
-name|void
-DECL|function|session_clear (Gimp * gimp)
+name|gboolean
+DECL|function|session_clear (Gimp * gimp,GError ** error)
 name|session_clear
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_print
+name|g_return_val_if_fail
 argument_list|(
-literal|"TODO: implement session_clear()\n"
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
+name|filename
+operator|=
+name|session_filename
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|unlink
+argument_list|(
+name|filename
+argument_list|)
+operator|!=
+literal|0
+operator|&&
+name|errno
+operator|!=
+name|ENOENT
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Deleting \"%s\" failed: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+else|else
+block|{
+name|sessionrc_deleted
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
 block|}
 end_function
 

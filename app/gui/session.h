@@ -29,6 +29,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|session_exit
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|session_restore
 parameter_list|(
 name|Gimp
@@ -45,17 +56,25 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|always_save
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|session_clear
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1971,6 +1971,8 @@ argument_list|(
 name|status
 operator|->
 name|gimp
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

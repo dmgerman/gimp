@@ -1663,6 +1663,8 @@ condition|)
 name|session_save
 argument_list|(
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|color_history_save
@@ -1677,6 +1679,8 @@ condition|)
 name|menus_save
 argument_list|(
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1688,6 +1692,8 @@ condition|)
 name|gimp_devices_save
 argument_list|(
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1779,6 +1785,11 @@ expr_stmt|;
 name|image_ui_manager
 operator|=
 name|NULL
+expr_stmt|;
+name|session_exit
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|menus_exit
 argument_list|(
