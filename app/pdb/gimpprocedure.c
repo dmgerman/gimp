@@ -351,7 +351,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon292518e70108
+DECL|struct|__anon2c0b8ecb0108
 block|{
 DECL|member|old_name
 specifier|const
@@ -557,9 +557,6 @@ literal|"gimp_image_undo_group_end"
 block|}
 block|}
 struct|;
-name|gint
-name|i
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -582,6 +579,18 @@ argument_list|,
 name|status_callback
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|pdb_compat_mode
+operator|!=
+name|GIMP_PDB_COMPAT_OFF
+condition|)
+block|{
+name|gint
+name|i
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -625,6 +634,7 @@ operator|.
 name|new_name
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

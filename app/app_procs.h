@@ -117,6 +117,9 @@ name|console_messages
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
+parameter_list|,
+name|GimpPDBCompatMode
+name|pdb_compat_mode
 parameter_list|)
 function_decl|;
 end_function_decl

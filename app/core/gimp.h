@@ -507,6 +507,10 @@ DECL|member|stack_trace_mode
 name|GimpStackTraceMode
 name|stack_trace_mode
 decl_stmt|;
+DECL|member|pdb_compat_mode
+name|GimpPDBCompatMode
+name|pdb_compat_mode
+decl_stmt|;
 DECL|member|gui_threads_enter_func
 name|GimpThreadEnterFunc
 name|gui_threads_enter_func
@@ -934,6 +938,9 @@ name|console_messages
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
+parameter_list|,
+name|GimpPDBCompatMode
+name|pdb_compat_mode
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b503f4c0103
+DECL|enum|__anon2be8e5420103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -832,6 +832,12 @@ operator|->
 name|stack_trace_mode
 operator|=
 name|GIMP_STACK_TRACE_NEVER
+expr_stmt|;
+name|gimp
+operator|->
+name|pdb_compat_mode
+operator|=
+name|GIMP_PDB_COMPAT_OFF
 expr_stmt|;
 name|gimp
 operator|->
@@ -2854,7 +2860,7 @@ end_function
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_new (const gchar * name,const gchar * session_name,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
+DECL|function|gimp_new (const gchar * name,const gchar * session_name,gboolean be_verbose,gboolean no_data,gboolean no_fonts,gboolean no_interface,gboolean use_shm,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|gimp_new
 parameter_list|(
 specifier|const
@@ -2887,6 +2893,9 @@ name|console_messages
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
+parameter_list|,
+name|GimpPDBCompatMode
+name|pdb_compat_mode
 parameter_list|)
 block|{
 name|Gimp
@@ -2989,6 +2998,12 @@ operator|->
 name|stack_trace_mode
 operator|=
 name|stack_trace_mode
+expr_stmt|;
+name|gimp
+operator|->
+name|pdb_compat_mode
+operator|=
+name|pdb_compat_mode
 expr_stmt|;
 return|return
 name|gimp

@@ -1351,6 +1351,7 @@ if|if
 condition|(
 name|proc_name
 condition|)
+block|{
 name|proc_rec
 operator|=
 name|procedural_db_lookup
@@ -1362,6 +1363,40 @@ argument_list|,
 name|proc_name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|plug_in
+operator|->
+name|gimp
+operator|->
+name|pdb_compat_mode
+operator|==
+name|GIMP_PDB_COMPAT_WARN
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"WARNING: Plug-In '%s'\n\n(%s)\n\n"
+literal|"called deprecated procedure '%s'.\n"
+literal|"It should call '%s' instead!"
+argument_list|,
+name|plug_in
+operator|->
+name|name
+argument_list|,
+name|plug_in
+operator|->
+name|prog
+argument_list|,
+name|proc_run
+operator|->
+name|name
+argument_list|,
+name|proc_name
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 block|}
 if|if
 condition|(

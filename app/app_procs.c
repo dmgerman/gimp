@@ -234,7 +234,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_run (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,GimpStackTraceMode stack_trace_mode)
+DECL|function|app_run (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar * session_name,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_fonts,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_cpu_accel,gboolean console_messages,GimpStackTraceMode stack_trace_mode,GimpPDBCompatMode pdb_compat_mode)
 name|app_run
 parameter_list|(
 specifier|const
@@ -300,6 +300,9 @@ name|console_messages
 parameter_list|,
 name|GimpStackTraceMode
 name|stack_trace_mode
+parameter_list|,
+name|GimpPDBCompatMode
+name|pdb_compat_mode
 parameter_list|)
 block|{
 name|GimpInitStatusFunc
@@ -337,6 +340,8 @@ argument_list|,
 name|console_messages
 argument_list|,
 name|stack_trace_mode
+argument_list|,
+name|pdb_compat_mode
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler

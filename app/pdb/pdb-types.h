@@ -49,6 +49,25 @@ name|ProcRecord
 typedef|;
 end_typedef
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b48f0580103
+block|{
+DECL|enumerator|GIMP_PDB_COMPAT_OFF
+name|GIMP_PDB_COMPAT_OFF
+block|,
+DECL|enumerator|GIMP_PDB_COMPAT_ON
+name|GIMP_PDB_COMPAT_ON
+block|,
+DECL|enumerator|GIMP_PDB_COMPAT_WARN
+name|GIMP_PDB_COMPAT_WARN
+DECL|typedef|GimpPDBCompatMode
+block|}
+name|GimpPDBCompatMode
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif
