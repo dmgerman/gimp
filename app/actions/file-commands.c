@@ -639,16 +639,17 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|)
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 comment|/*  Only save if the gimage has been modified  */
 if|if
 condition|(

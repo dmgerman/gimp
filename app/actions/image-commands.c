@@ -378,6 +378,20 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  private variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|image_merge_layers_type
+specifier|static
+name|GimpMergeType
+name|image_merge_layers_type
+init|=
+name|GIMP_EXPAND_AS_NECESSARY
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -1468,7 +1482,7 @@ argument_list|)
 argument_list|,
 name|widget
 argument_list|,
-name|GIMP_EXPAND_AS_NECESSARY
+name|image_merge_layers_type
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2513,6 +2527,12 @@ operator|==
 name|GTK_RESPONSE_OK
 condition|)
 block|{
+name|image_merge_layers_type
+operator|=
+name|dialog
+operator|->
+name|merge_type
+expr_stmt|;
 name|gimp_image_merge_visible_layers
 argument_list|(
 name|dialog
@@ -2523,9 +2543,7 @@ name|dialog
 operator|->
 name|context
 argument_list|,
-name|dialog
-operator|->
-name|merge_type
+name|image_merge_layers_type
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

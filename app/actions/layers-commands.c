@@ -447,10 +447,10 @@ comment|/*  private variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|fill_type
+DECL|variable|layer_fill_type
 specifier|static
 name|GimpFillType
-name|fill_type
+name|layer_fill_type
 init|=
 name|GIMP_TRANSPARENT_FILL
 decl_stmt|;
@@ -464,6 +464,26 @@ modifier|*
 name|layer_name
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|layer_add_mask_type
+specifier|static
+name|GimpAddMaskType
+name|layer_add_mask_type
+init|=
+name|GIMP_ADD_WHITE_MASK
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|layer_mask_invert
+specifier|static
+name|gboolean
+name|layer_mask_invert
+init|=
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -699,7 +719,7 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|fill_type
+name|layer_fill_type
 argument_list|,
 name|_
 argument_list|(
@@ -836,7 +856,7 @@ argument_list|(
 literal|"New Layer"
 argument_list|)
 argument_list|,
-name|fill_type
+name|layer_fill_type
 argument_list|,
 name|_
 argument_list|(
@@ -1114,7 +1134,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|fill_type
+name|layer_fill_type
 argument_list|)
 expr_stmt|;
 name|gimp_item_translate
@@ -2254,9 +2274,9 @@ name|layer
 argument_list|,
 name|widget
 argument_list|,
-name|GIMP_ADD_WHITE_MASK
+name|layer_add_mask_type
 argument_list|,
-name|FALSE
+name|layer_mask_invert
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3247,7 +3267,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fill_type
+name|layer_fill_type
 operator|=
 name|dialog
 operator|->
@@ -3337,7 +3357,7 @@ name|dialog
 operator|->
 name|context
 argument_list|,
-name|fill_type
+name|layer_fill_type
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer
@@ -3558,6 +3578,18 @@ name|GimpLayerMask
 modifier|*
 name|mask
 decl_stmt|;
+name|layer_add_mask_type
+operator|=
+name|dialog
+operator|->
+name|add_mask_type
+expr_stmt|;
+name|layer_mask_invert
+operator|=
+name|dialog
+operator|->
+name|invert
+expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
@@ -3576,16 +3608,12 @@ name|gimp_layer_create_mask
 argument_list|(
 name|layer
 argument_list|,
-name|dialog
-operator|->
-name|add_mask_type
+name|layer_add_mask_type
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|dialog
-operator|->
-name|invert
+name|layer_mask_invert
 condition|)
 name|gimp_channel_invert
 argument_list|(

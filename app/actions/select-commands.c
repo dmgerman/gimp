@@ -212,58 +212,62 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  local variables  */
+comment|/*  private variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|selection_feather_radius
+DECL|variable|select_feather_radius
 specifier|static
 name|gdouble
-name|selection_feather_radius
+name|select_feather_radius
 init|=
 literal|5.0
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|selection_border_radius
+DECL|variable|select_border_radius
 specifier|static
 name|gint
-name|selection_border_radius
+name|select_border_radius
 init|=
 literal|5
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|selection_grow_pixels
+DECL|variable|select_grow_pixels
 specifier|static
 name|gint
-name|selection_grow_pixels
+name|select_grow_pixels
 init|=
 literal|1
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|selection_shrink_pixels
+DECL|variable|select_shrink_pixels
 specifier|static
 name|gint
-name|selection_shrink_pixels
+name|select_shrink_pixels
 init|=
 literal|1
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|selection_shrink_edge_lock
+DECL|variable|select_shrink_edge_lock
 specifier|static
 name|gboolean
-name|selection_shrink_edge_lock
+name|select_shrink_edge_lock
 init|=
 name|FALSE
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|void
@@ -499,7 +503,7 @@ argument_list|(
 literal|"Feather selection by"
 argument_list|)
 argument_list|,
-name|selection_feather_radius
+name|select_feather_radius
 argument_list|,
 literal|0
 argument_list|,
@@ -653,7 +657,7 @@ argument_list|(
 literal|"Shrink selection by"
 argument_list|)
 argument_list|,
-name|selection_shrink_pixels
+name|select_shrink_pixels
 argument_list|,
 literal|1
 argument_list|,
@@ -752,7 +756,7 @@ name|edge_lock
 argument_list|)
 argument_list|,
 operator|!
-name|selection_shrink_edge_lock
+name|select_shrink_edge_lock
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -818,7 +822,7 @@ argument_list|(
 literal|"Grow selection by"
 argument_list|)
 argument_list|,
-name|selection_grow_pixels
+name|select_grow_pixels
 argument_list|,
 literal|1
 argument_list|,
@@ -926,7 +930,7 @@ argument_list|(
 literal|"Border selection by"
 argument_list|)
 argument_list|,
-name|selection_border_radius
+name|select_border_radius
 argument_list|,
 literal|1
 argument_list|,
@@ -1320,7 +1324,7 @@ decl_stmt|;
 name|gdouble
 name|radius_y
 decl_stmt|;
-name|selection_feather_radius
+name|select_feather_radius
 operator|=
 name|size
 expr_stmt|;
@@ -1328,7 +1332,7 @@ name|radius_x
 operator|=
 name|radius_y
 operator|=
-name|selection_feather_radius
+name|select_feather_radius
 expr_stmt|;
 if|if
 condition|(
@@ -1450,7 +1454,7 @@ decl_stmt|;
 name|gdouble
 name|radius_y
 decl_stmt|;
-name|selection_border_radius
+name|select_border_radius
 operator|=
 name|ROUND
 argument_list|(
@@ -1461,7 +1465,7 @@ name|radius_x
 operator|=
 name|radius_y
 operator|=
-name|selection_border_radius
+name|select_border_radius
 expr_stmt|;
 if|if
 condition|(
@@ -1583,7 +1587,7 @@ decl_stmt|;
 name|gdouble
 name|radius_y
 decl_stmt|;
-name|selection_grow_pixels
+name|select_grow_pixels
 operator|=
 name|ROUND
 argument_list|(
@@ -1594,7 +1598,7 @@ name|radius_x
 operator|=
 name|radius_y
 operator|=
-name|selection_grow_pixels
+name|select_grow_pixels
 expr_stmt|;
 if|if
 condition|(
@@ -1716,7 +1720,7 @@ decl_stmt|;
 name|gint
 name|radius_y
 decl_stmt|;
-name|selection_shrink_pixels
+name|select_shrink_pixels
 operator|=
 name|ROUND
 argument_list|(
@@ -1727,9 +1731,9 @@ name|radius_x
 operator|=
 name|radius_y
 operator|=
-name|selection_shrink_pixels
+name|select_shrink_pixels
 expr_stmt|;
-name|selection_shrink_edge_lock
+name|select_shrink_edge_lock
 operator|=
 operator|!
 name|GTK_TOGGLE_BUTTON
@@ -1821,7 +1825,7 @@ name|radius_x
 argument_list|,
 name|radius_y
 argument_list|,
-name|selection_shrink_edge_lock
+name|select_shrink_edge_lock
 argument_list|,
 name|TRUE
 argument_list|)
