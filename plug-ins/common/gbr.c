@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * gbr plug-in version 1.00  * Loads/saves version 2 GIMP .gbr files, by Tim Newsome<drz@frody.bloke.com>  * Some bits stolen from the .99.7 source tree.  */
+comment|/*  * gbr plug-in version 1.00  * Loads/saves version 2 GIMP .gbr files, by Tim Newsome<drz@frody.bloke.com>  * Some bits stolen from the .99.7 source tree.  *   * Added in GBR version 1 support after learning that there wasn't a   * tool to read them.    * July 6, 1998 by Seth Burgess<sjburges@gimp.org>  *  * TODO: Give some better error reporting on not opening files/bad headers  *       etc.   */
 end_comment
 
 begin_include
@@ -92,7 +92,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27ba00e40108
+DECL|struct|__anon2c0b16460108
 typedef|typedef
 struct|struct
 block|{
@@ -942,6 +942,9 @@ decl_stmt|;
 name|GPixelRgn
 name|pixel_rgn
 decl_stmt|;
+name|int
+name|version_extra
+decl_stmt|;
 name|temp
 operator|=
 name|g_malloc
@@ -1104,8 +1107,54 @@ operator|.
 name|spacing
 argument_list|)
 expr_stmt|;
+comment|/* How much extra to add ot the header seek - 1 needs a bit more */
+name|version_extra
+operator|=
+literal|0
+expr_stmt|;
 if|if
 condition|(
+name|ph
+operator|.
+name|version
+operator|==
+literal|1
+condition|)
+block|{
+comment|/* Version 1 didn't know about spacing */
+name|ph
+operator|.
+name|spacing
+operator|=
+literal|25
+expr_stmt|;
+comment|/* And we need to rewind the handle a bit too */
+name|lseek
+argument_list|(
+name|fd
+argument_list|,
+operator|-
+literal|8
+argument_list|,
+name|SEEK_CUR
+argument_list|)
+expr_stmt|;
+name|version_extra
+operator|=
+literal|8
+expr_stmt|;
+block|}
+comment|/* Version 1 didn't know about magic either */
+if|if
+condition|(
+operator|(
+name|ph
+operator|.
+name|version
+operator|!=
+literal|1
+operator|&&
+operator|(
 name|ph
 operator|.
 name|magic_number
@@ -1117,6 +1166,8 @@ operator|.
 name|version
 operator|!=
 literal|2
+operator|)
+operator|)
 operator|||
 name|ph
 operator|.
@@ -1152,6 +1203,8 @@ sizeof|sizeof
 argument_list|(
 name|ph
 argument_list|)
+operator|+
+name|version_extra
 argument_list|,
 name|SEEK_CUR
 argument_list|)
@@ -1172,7 +1225,7 @@ literal|1
 return|;
 block|}
 comment|/* Now there's just raw data left. */
-comment|/* 	 * Create a new image of the proper size and associate the filename with it.    */
+comment|/* 	  * Create a new image of the proper size and            * associate the filename with it. 	  */
 name|image_ID
 operator|=
 name|gimp_image_new
