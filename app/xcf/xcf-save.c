@@ -205,16 +205,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_comment
-comment|/* define that to enable the new code for vectors saving */
-end_comment
-
-begin_undef
-undef|#
-directive|undef
-name|NEW_SAVE_CODE
-end_undef
-
 begin_function_decl
 specifier|static
 name|gboolean
@@ -1602,9 +1592,6 @@ name|unit
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|NEW_SAVE_CODE
 if|if
 condition|(
 name|gimp_container_num_children
@@ -1624,12 +1611,6 @@ argument_list|(
 name|gimage
 argument_list|)
 condition|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"entering PATHS compatibility mode\n"
-argument_list|)
-expr_stmt|;
 name|xcf_check_error
 argument_list|(
 name|xcf_save_prop
@@ -1644,14 +1625,7 @@ name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
-name|g_printerr
-argument_list|(
-literal|"using new VECTORS mode for saving the path\n"
-argument_list|)
-expr_stmt|;
 name|xcf_check_error
 argument_list|(
 name|xcf_save_prop
@@ -1667,36 +1641,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-else|#
-directive|else
-if|if
-condition|(
-name|gimp_container_num_children
-argument_list|(
-name|gimage
-operator|->
-name|vectors
-argument_list|)
-operator|>
-literal|0
-condition|)
-name|xcf_check_error
-argument_list|(
-name|xcf_save_prop
-argument_list|(
-name|info
-argument_list|,
-name|gimage
-argument_list|,
-name|PROP_PATHS
-argument_list|,
-name|error
-argument_list|)
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|gimage
@@ -6603,7 +6547,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afbea400108
+DECL|struct|__anon27a807860108
 block|{
 DECL|member|info
 name|XcfInfo
