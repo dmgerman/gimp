@@ -968,13 +968,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|cut_named_buffer_callback (GtkWidget * widget,gchar * name,gpointer data)
+DECL|function|cut_named_buffer_callback (GtkWidget * widget,const gchar * name,gpointer data)
 name|cut_named_buffer_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
