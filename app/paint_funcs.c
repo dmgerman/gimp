@@ -201,7 +201,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299c0e0e0103
+DECL|enum|__anon29faad540103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -820,6 +820,11 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+name|tile_sanitize_rowhints
+argument_list|(
+name|tile
+argument_list|)
+expr_stmt|;
 name|bpp
 operator|=
 name|tile_bpp

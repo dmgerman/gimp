@@ -121,41 +121,42 @@ range|:
 literal|1
 decl_stmt|;
 comment|/* is the tile valid? */
-comment|/* An array of hints for rendering purposes */
+DECL|member|bpp
+name|unsigned
+name|char
+name|bpp
+decl_stmt|;
+comment|/* the bytes per pixel (1, 2, 3 or 4) */
+DECL|member|ewidth
+name|unsigned
+name|short
+name|ewidth
+decl_stmt|;
+comment|/* the effective width of the tile */
+DECL|member|eheight
+name|unsigned
+name|short
+name|eheight
+decl_stmt|;
+comment|/* the effective height of the tile */
+comment|/*  a tile's effective width and height may be smaller 			   *  (but not larger) than TILE_WIDTH and TILE_HEIGHT. 			   *  this is to handle edge tiles of a drawable. 			   */
 DECL|member|rowhint
 name|TileRowHint
+modifier|*
 name|rowhint
-index|[
-name|TILE_HEIGHT
-index|]
 decl_stmt|;
+comment|/* An array of hints for rendering purposes */
 DECL|member|data
 name|guchar
 modifier|*
 name|data
 decl_stmt|;
 comment|/* the data for the tile. this may be NULL in which 		       *  case the tile data is on disk. 		       */
-DECL|member|ewidth
-name|int
-name|ewidth
-decl_stmt|;
-comment|/* the effective width of the tile */
-DECL|member|eheight
-name|int
-name|eheight
-decl_stmt|;
-comment|/* the effective height of the tile */
-comment|/*  a tile's effective width and height may be smaller 		       *  (but not larger) than TILE_WIDTH and TILE_HEIGHT. 		       *  this is to handle edge tiles of a drawable. 		       */
-DECL|member|bpp
-name|int
-name|bpp
-decl_stmt|;
-comment|/* the bytes per pixel (1, 2, 3 or 4) */
 DECL|member|swap_num
 name|int
 name|swap_num
 decl_stmt|;
-comment|/* the index into the file table of the file to be used 		       *  for swapping. swap_num 1 is always the global swap file. 		       */
+comment|/* the index into the file table of the file to be used 		 *  for swapping. swap_num 1 is always the global swap file. 		 */
 DECL|member|swap_offset
 name|off_t
 name|swap_offset

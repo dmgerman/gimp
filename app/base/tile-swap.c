@@ -153,6 +153,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile_swap.h"
 end_include
 
@@ -903,6 +909,31 @@ DECL|function|tile_swap_exit ()
 name|tile_swap_exit
 parameter_list|()
 block|{
+ifdef|#
+directive|ifdef
+name|HINTS_SANITY
+specifier|extern
+name|int
+name|tile_exist_peak
+decl_stmt|;
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Tile exist peak was %d Tile structs (%d bytes)"
+argument_list|,
+name|tile_exist_peak
+argument_list|,
+name|tile_exist_peak
+operator|*
+sizeof|sizeof
+argument_list|(
+name|Tile
+argument_list|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|swap_files

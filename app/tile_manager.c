@@ -630,10 +630,11 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"WRITE-ONLY TILE... OUCHIE"
+literal|"WRITE-ONLY TILE... UNTESTED!"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*   if ((*tile_ptr)->share_count&&       (*tile_ptr)->write_count)     fprintf(stderr,">> MEEPITY %d,%d<< ", 	    (*tile_ptr)->share_count, 	    (*tile_ptr)->write_count 	    ); */
 if|if
 condition|(
 name|wantread
@@ -733,6 +734,33 @@ name|newtile
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|newtile
+operator|->
+name|valid
+condition|)
+name|g_warning
+argument_list|(
+literal|"Oh boy, r/w tile is invalid... we suck.  Please report."
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|(
+operator|*
+name|tile_ptr
+operator|)
+operator|->
+name|rowhint
+condition|)
+block|{
+name|tile_sanitize_rowhints
+argument_list|(
+name|newtile
+argument_list|)
+expr_stmt|;
 name|i
 operator|=
 name|newtile
@@ -762,6 +790,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -876,9 +905,10 @@ operator|)
 operator|->
 name|dirty
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 block|}
+comment|/*       else 	{ 	  if ((*tile_ptr)->write_count) 	    fprintf(stderr,"STINK! r/o on r/w tile /%d\007  ",(*tile_ptr)->write_count); 	} */
 name|TILE_MUTEX_UNLOCK
 argument_list|(
 operator|*
@@ -995,6 +1025,7 @@ argument_list|,
 name|tile
 argument_list|)
 expr_stmt|;
+comment|/* DEBUG STUFF ->  if (tm->user_data)     {       //      fprintf(stderr,"V%p  ",tm->user_data);       fprintf(stderr,"V");     }   else     {       fprintf(stderr,"v");     } */
 block|}
 end_function
 
@@ -1764,6 +1795,18 @@ name|tile_num
 index|]
 expr_stmt|;
 comment|/*  printf(")");fflush(stdout);*/
+if|if
+condition|(
+operator|!
+name|srctile
+operator|->
+name|valid
+condition|)
+name|g_warning
+argument_list|(
+literal|"tile_manager_map: srctile not validated yet!  please report."
+argument_list|)
+expr_stmt|;
 name|TILE_MUTEX_LOCK
 argument_list|(
 operator|*

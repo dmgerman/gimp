@@ -1579,7 +1579,7 @@ operator|->
 name|PR
 operator|->
 name|dirty
-operator|*
+operator|&&
 name|PRI
 operator|->
 name|dirty_tiles
