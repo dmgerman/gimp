@@ -103,6 +103,14 @@ DECL|member|parent_instance
 name|GtkDrawingArea
 name|parent_instance
 decl_stmt|;
+DECL|member|check_size
+name|GimpCheckSize
+name|check_size
+decl_stmt|;
+DECL|member|check_type
+name|GimpCheckType
+name|check_type
+decl_stmt|;
 DECL|member|width
 name|gint
 name|width

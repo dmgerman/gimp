@@ -355,6 +355,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|check_combos
 specifier|static
+specifier|const
 name|guchar
 name|check_combos
 index|[
@@ -373,9 +374,9 @@ block|}
 block|,
 comment|/*  LIGHT_CHECKS  */
 block|{
-literal|102
-block|,
 literal|153
+block|,
+literal|102
 block|}
 block|,
 comment|/*  GRAY_CHECKS   */
@@ -405,7 +406,7 @@ literal|0
 block|,
 literal|0
 block|}
-comment|/*  BACK_ONLY     */
+comment|/*  BLACK_ONLY    */
 block|}
 decl_stmt|;
 end_decl_stmt
