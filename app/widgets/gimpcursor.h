@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gdk/gdktypes.h>
 end_include
 
@@ -51,10 +57,16 @@ endif|#
 directive|endif
 end_endif
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2933e8a00103
+DECL|enum|__anon28e40fe70103
 block|{
 DECL|enumerator|GIMP_MOUSE1_CURSOR
 name|GIMP_MOUSE1_CURSOR
@@ -150,10 +162,29 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|gimp_remove_busy_cursors
 parameter_list|(
 name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gtkutil_compress_motion
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gdouble
+modifier|*
+name|lastmotion_x
+parameter_list|,
+name|gdouble
+modifier|*
+name|lastmotion_y
 parameter_list|)
 function_decl|;
 end_function_decl

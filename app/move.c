@@ -593,6 +593,7 @@ name|state
 operator|==
 name|ACTIVE
 condition|)
+block|{
 name|gdk_pointer_grab
 argument_list|(
 name|gdisp
@@ -618,6 +619,7 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

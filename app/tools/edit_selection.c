@@ -24,13 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdk/gdkkeysyms.h"
+file|<gdk/gdkkeysyms.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"appenv.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"cursorutil.h"
 end_include
 
 begin_include
@@ -1194,6 +1200,11 @@ index|[
 name|STATUSBAR_SIZE
 index|]
 decl_stmt|;
+name|gdouble
+name|lastmotion_x
+decl_stmt|,
+name|lastmotion_y
+decl_stmt|;
 if|if
 condition|(
 name|tool
@@ -1205,7 +1216,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Tracking motion while !ACTIVE"
+literal|"BUG: Tracking motion while !ACTIVE"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1230,20 +1241,59 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
+comment|/* Perform motion compression so that we don't lag and/or waste time. */
+if|if
+condition|(
+operator|!
+name|gtkutil_compress_motion
+argument_list|(
+name|gtk_get_event_widget
+argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
+name|mevent
+argument_list|)
+argument_list|,
+operator|&
+name|lastmotion_x
+argument_list|,
+operator|&
+name|lastmotion_y
+argument_list|)
+condition|)
+block|{
+name|lastmotion_x
+operator|=
+name|mevent
+operator|->
+name|x
+expr_stmt|;
+name|lastmotion_y
+operator|=
+name|mevent
+operator|->
+name|y
+expr_stmt|;
+block|}
+comment|/* now do the actual move. */
 name|edit_selection_snap
 argument_list|(
 name|gdisp
 argument_list|,
-name|mevent
-operator|->
-name|x
+name|RINT
+argument_list|(
+name|lastmotion_x
+argument_list|)
 argument_list|,
-name|mevent
-operator|->
-name|y
+name|RINT
+argument_list|(
+name|lastmotion_y
+argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**********************************************adam hack*************/
+comment|/******************************************* adam's live move *******/
 comment|/********************************************************************/
 block|{
 name|gint
@@ -3082,7 +3132,7 @@ name|discard_event
 condition|)
 name|list
 operator|=
-name|g_list_prepend
+name|g_list_append
 argument_list|(
 name|list
 argument_list|,
