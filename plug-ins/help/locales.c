@@ -24,16 +24,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"locales.h"
+file|"help.h"
 end_include
 
-begin_define
-DECL|macro|GIMP_HELP_DEFAULT_LOCALE
-define|#
-directive|define
-name|GIMP_HELP_DEFAULT_LOCALE
-value|"en"
-end_define
+begin_include
+include|#
+directive|include
+file|"locales.h"
+end_include
 
 begin_function
 name|GList
@@ -140,7 +138,7 @@ name|s
 condition|)
 name|locales
 operator|=
-name|g_list_prepend
+name|g_list_append
 argument_list|(
 name|locales
 argument_list|,
@@ -150,7 +148,7 @@ name|s
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  append locales w/o variants unless they exist already */
+comment|/*  add locales w/o variants unless they exist already */
 for|for
 control|(
 name|list

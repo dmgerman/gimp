@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"help.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"locales.h"
 end_include
 
@@ -85,18 +91,10 @@ name|GIMP_HELP_ENV_URI
 value|"GIMP2_HELP_URI"
 end_define
 
-begin_define
-DECL|macro|GIMP_HELP_DEFAULT_ID
-define|#
-directive|define
-name|GIMP_HELP_DEFAULT_ID
-value|"gimp-main"
-end_define
-
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c533120108
+DECL|struct|__anon28c56ab60108
 block|{
 DECL|member|procedure
 name|gchar

@@ -6,75 +6,46 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DOMAIN_H__
+name|__HELP_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DOMAIN_H__
+DECL|macro|__HELP_H__
 define|#
 directive|define
-name|__DOMAIN_H__
+name|__HELP_H__
 end_define
 
-begin_typedef
-DECL|typedef|HelpDomain
-typedef|typedef
-name|struct
-name|_HelpDomain
-name|HelpDomain
-typedef|;
-end_typedef
+begin_define
+DECL|macro|GIMP_HELP_DEFAULT_DOMAIN
+define|#
+directive|define
+name|GIMP_HELP_DEFAULT_DOMAIN
+value|"http://www.gimp.org/help"
+end_define
 
-begin_function_decl
-name|void
-name|domain_register
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|domain_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|domain_uri
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_define
+DECL|macro|GIMP_HELP_DEFAULT_ID
+define|#
+directive|define
+name|GIMP_HELP_DEFAULT_ID
+value|"gimp-main"
+end_define
 
-begin_function_decl
-name|HelpDomain
-modifier|*
-name|domain_lookup
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|domain_name
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_define
+DECL|macro|GIMP_HELP_DEFAULT_LOCALE
+define|#
+directive|define
+name|GIMP_HELP_DEFAULT_LOCALE
+value|"en"
+end_define
 
-begin_function_decl
-name|gchar
-modifier|*
-name|domain_map
-parameter_list|(
-name|HelpDomain
-modifier|*
-name|domain
-parameter_list|,
-name|GList
-modifier|*
-name|help_locales
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|help_id
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_define
+DECL|macro|GIMP_HELP_DEBUG
+define|#
+directive|define
+name|GIMP_HELP_DEBUG
+end_define
 
 begin_endif
 endif|#
@@ -82,7 +53,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ! __DOMAIN_H__ */
+comment|/* ! __HELP_H__ */
 end_comment
 
 end_unit
