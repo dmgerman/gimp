@@ -9407,6 +9407,10 @@ name|dheight
 condition|)
 name|req_height
 operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
 operator|(
 name|req_width
 operator|*
@@ -9414,10 +9418,15 @@ name|dheight
 operator|)
 operator|/
 name|dwidth
+argument_list|)
 expr_stmt|;
 else|else
 name|req_width
 operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
 operator|(
 name|req_height
 operator|*
@@ -9425,6 +9434,7 @@ name|dwidth
 operator|)
 operator|/
 name|dheight
+argument_list|)
 expr_stmt|;
 name|buf
 operator|=
@@ -9440,6 +9450,11 @@ argument_list|,
 name|req_height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|buf
+condition|)
+block|{
 name|num_bytes
 operator|=
 name|buf
@@ -9498,6 +9513,7 @@ argument_list|(
 name|buf
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|return_args

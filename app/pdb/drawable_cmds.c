@@ -4986,6 +4986,10 @@ name|dheight
 condition|)
 name|req_height
 operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
 operator|(
 name|req_width
 operator|*
@@ -4993,10 +4997,15 @@ name|dheight
 operator|)
 operator|/
 name|dwidth
+argument_list|)
 expr_stmt|;
 else|else
 name|req_width
 operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
 operator|(
 name|req_height
 operator|*
@@ -5004,6 +5013,7 @@ name|dwidth
 operator|)
 operator|/
 name|dheight
+argument_list|)
 expr_stmt|;
 name|buf
 operator|=
@@ -5019,6 +5029,11 @@ argument_list|,
 name|req_height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|buf
+condition|)
+block|{
 name|num_pixels
 operator|=
 name|buf
@@ -5072,6 +5087,7 @@ name|buf
 operator|->
 name|bytes
 expr_stmt|;
+block|}
 block|}
 block|}
 name|return_args
@@ -5248,7 +5264,7 @@ literal|"gimp_drawable_thumbnail"
 block|,
 literal|"Get a thumbnail of a drawable."
 block|,
-literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 128 pixels. The pixels are returned in the RGB[A] format. The bpp return value gives the number of bytes in the image. The alpha channel also returned if the drawable has one."
+literal|"This function gets data from which a thumbnail of a drawable preview can be created. Maximum x or y dimension is 128 pixels. The pixels are returned in the RGB[A] format. The bpp return value gives the number of bytes in the image. The alpha channel is also returned if the drawable has one."
 block|,
 literal|"Andy Thomas"
 block|,

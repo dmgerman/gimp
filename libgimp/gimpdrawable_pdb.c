@@ -1543,7 +1543,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The thumbnail width.  * @height: The thumbnail height.  * @ret_width: The previews width.  * @ret_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of pixels in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 128 pixels. The pixels  * are returned in the RGB[A] format. The bpp return value gives the  * number of bytes in the image. The alpha channel also returned if the  * drawable has one.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The thumbnail width.  * @height: The thumbnail height.  * @ret_width: The previews width.  * @ret_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of pixels in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 128 pixels. The pixels  * are returned in the RGB[A] format. The bpp return value gives the  * number of bytes in the image. The alpha channel is also returned if  * the drawable has one.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
