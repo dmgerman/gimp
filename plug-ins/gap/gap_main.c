@@ -2292,7 +2292,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Encode/MPEG2 mpeg2encode...)"
+literal|"<Image>/Video/Encode/MPEG2..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2414,7 +2414,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c76d0330108
+DECL|struct|__anon2bae58740108
 block|{
 DECL|member|lock
 name|long
