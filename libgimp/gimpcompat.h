@@ -58,10 +58,10 @@ define|#
 directive|define
 name|gimp_image_detach_parasite
 value|gimp_image_parasite_detach
-DECL|macro|gimp_image_parasite_find
+DECL|macro|gimp_image_find_parasite
 define|#
 directive|define
-name|gimp_image_parasite_find
+name|gimp_image_find_parasite
 value|gimp_image_parasite_find
 DECL|macro|gimp_drawable_attach_parasite
 define|#

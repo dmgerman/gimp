@@ -264,7 +264,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29879a7e0108
+DECL|struct|__anon277dc1f70108
 block|{
 DECL|member|resize
 name|Resize

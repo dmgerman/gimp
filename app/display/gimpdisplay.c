@@ -8680,9 +8680,11 @@ end_comment
 begin_function
 name|GDisplay
 modifier|*
-DECL|function|gdisplay_active ()
+DECL|function|gdisplay_active (void)
 name|gdisplay_active
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GdkEvent
 modifier|*
