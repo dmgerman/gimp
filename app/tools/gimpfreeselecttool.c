@@ -601,7 +601,7 @@ name|gdisp_ptr
 argument_list|,
 name|bevent
 argument_list|,
-name|MaskTranslate
+name|EDIT_MASK_TRANSLATE
 argument_list|)
 expr_stmt|;
 return|return;
@@ -616,7 +616,7 @@ name|gdisp_ptr
 argument_list|,
 name|bevent
 argument_list|,
-name|MaskToLayerTranslate
+name|EDIT_MASK_TO_LAYER_TRANSLATE
 argument_list|)
 expr_stmt|;
 return|return;

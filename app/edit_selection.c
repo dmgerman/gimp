@@ -266,7 +266,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  static EditSelection structure--there is ever only one present  */
+comment|/*  static EditSelection structure -- there is ever only one present  */
 end_comment
 
 begin_decl_stmt
@@ -467,9 +467,12 @@ operator|.
 name|x
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
+name|RINT
+argument_list|(
 name|x1
+argument_list|)
 operator|-
 operator|(
 name|edit_select
@@ -486,9 +489,12 @@ operator|.
 name|y
 operator|=
 operator|(
-name|int
+name|gint
 operator|)
+name|RINT
+argument_list|(
 name|y1
+argument_list|)
 operator|-
 operator|(
 name|edit_select
@@ -641,7 +647,7 @@ if|if
 condition|(
 name|edit_type
 operator|==
-name|MaskToLayerTranslate
+name|EDIT_MASK_TO_LAYER_TRANSLATE
 operator|&&
 name|gimage_floating_sel
 argument_list|(
@@ -652,13 +658,13 @@ argument_list|)
 condition|)
 name|edit_type
 operator|=
-name|FloatingSelTranslate
+name|EDIT_FLOATING_SEL_TRANSLATE
 expr_stmt|;
 if|if
 condition|(
 name|edit_type
 operator|==
-name|LayerTranslate
+name|EDIT_LAYER_TRANSLATE
 condition|)
 block|{
 name|layer
@@ -679,7 +685,7 @@ argument_list|)
 condition|)
 name|edit_type
 operator|=
-name|FloatingSelTranslate
+name|EDIT_FLOATING_SEL_TRANSLATE
 expr_stmt|;
 block|}
 name|edit_select
@@ -742,7 +748,7 @@ name|first_move
 operator|=
 name|TRUE
 expr_stmt|;
-comment|/*  find the bounding box of the selection mask -    *  this is used for the case of a MaskToLayerTranslate,    *  where the translation will result in floating the selection    *  mask and translating the resulting layer    */
+comment|/*  find the bounding box of the selection mask -    *  this is used for the case of a EDIT_MASK_TO_LAYER_TRANSLATE,    *  where the translation will result in floating the selection    *  mask and translating the resulting layer    */
 name|drawable_mask_bounds
 argument_list|(
 name|gimage_active_drawable
@@ -1042,14 +1048,14 @@ name|edit_select
 operator|.
 name|old_auto_snap_to
 expr_stmt|;
-comment|/* MaskTranslate is performed here at movement end, not 'live' like    *  the other translation types.    */
+comment|/* EDIT_MASK_TRANSLATE is performed here at movement end, not 'live' like    *  the other translation types.    */
 if|if
 condition|(
 name|edit_select
 operator|.
 name|edit_type
 operator|==
-name|MaskTranslate
+name|EDIT_MASK_TRANSLATE
 condition|)
 block|{
 name|edit_selection_snap
@@ -1139,14 +1145,14 @@ literal|0
 condition|)
 block|{
 comment|/* The user either didn't actually move the selection, 	 or moved it around and eventually just put it back in 	 exactly the same spot. */
-comment|/*  If no movement occured and the type is FloatingSelTranslate, 	  check if the layer is a floating selection.  If so, anchor. */
+comment|/*  If no movement occured and the type is EDIT_FLOATING_SEL_TRANSLATE, 	  check if the layer is a floating selection.  If so, anchor. */
 if|if
 condition|(
 name|edit_select
 operator|.
 name|edit_type
 operator|==
-name|FloatingSelTranslate
+name|EDIT_FLOATING_SEL_TRANSLATE
 condition|)
 block|{
 name|layer
@@ -1431,7 +1437,7 @@ name|edit_type
 condition|)
 block|{
 case|case
-name|MaskTranslate
+name|EDIT_MASK_TRANSLATE
 case|:
 comment|/*  we don't do the actual edit selection move here.  */
 name|edit_select
@@ -1448,7 +1454,7 @@ name|y
 expr_stmt|;
 break|break;
 case|case
-name|LayerTranslate
+name|EDIT_LAYER_TRANSLATE
 case|:
 if|if
 condition|(
@@ -1471,6 +1477,8 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  translate the layer--and any "linked" layers as well  */
+for|for
+control|(
 name|layer_list
 operator|=
 name|gdisp
@@ -1478,11 +1486,16 @@ operator|->
 name|gimage
 operator|->
 name|layers
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|layer_list
-condition|)
+condition|;
+name|layer_list
+operator|=
+name|g_slist_next
+argument_list|(
+name|layer_list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -1520,13 +1533,6 @@ name|yoffset
 argument_list|)
 expr_stmt|;
 block|}
-name|layer_list
-operator|=
-name|g_slist_next
-argument_list|(
-name|layer_list
-argument_list|)
-expr_stmt|;
 block|}
 if|if
 condition|(
@@ -1562,7 +1568,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|MaskToLayerTranslate
+name|EDIT_MASK_TO_LAYER_TRANSLATE
 case|:
 if|if
 condition|(
@@ -1598,7 +1604,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-comment|/* this is always the first move, since we switch to  	       FloatingSelTranslate when finished here */
+comment|/* this is always the first move, since we switch to  	       EDIT_FLOATING_SEL_TRANSLATE when finished here */
 name|gimp_image_undo_freeze
 argument_list|(
 name|gdisp
@@ -1660,11 +1666,11 @@ name|edit_select
 operator|.
 name|edit_type
 operator|=
-name|FloatingSelTranslate
+name|EDIT_FLOATING_SEL_TRANSLATE
 expr_stmt|;
 break|break;
 case|case
-name|FloatingSelTranslate
+name|EDIT_FLOATING_SEL_TRANSLATE
 case|:
 name|layer
 operator|=
@@ -1877,7 +1883,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selection_transform_segs (GDisplay * gdisp,BoundSeg * src_segs,GdkSegment * dest_segs,int num_segs)
+DECL|function|selection_transform_segs (GDisplay * gdisp,BoundSeg * src_segs,GdkSegment * dest_segs,gint num_segs)
 name|selection_transform_segs
 parameter_list|(
 name|GDisplay
@@ -1892,16 +1898,16 @@ name|GdkSegment
 modifier|*
 name|dest_segs
 parameter_list|,
-name|int
+name|gint
 name|num_segs
 parameter_list|)
 block|{
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -1950,7 +1956,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest_segs
@@ -2003,7 +2009,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dest_segs
@@ -2108,7 +2114,7 @@ name|edit_type
 condition|)
 block|{
 case|case
-name|MaskTranslate
+name|EDIT_MASK_TRANSLATE
 case|:
 name|layer
 operator|=
@@ -2241,7 +2247,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|MaskToLayerTranslate
+name|EDIT_MASK_TO_LAYER_TRANSLATE
 case|:
 name|gdisplay_transform_coords
 argument_list|(
@@ -2320,7 +2326,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|LayerTranslate
+name|EDIT_LAYER_TRANSLATE
 case|:
 name|gdisplay_transform_coords
 argument_list|(
@@ -2377,6 +2383,8 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  Now, expand the rectangle to include all linked layers as well  */
+for|for
+control|(
 name|layer_list
 operator|=
 name|gdisp
@@ -2384,11 +2392,16 @@ operator|->
 name|gimage
 operator|->
 name|layers
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|layer_list
-condition|)
+condition|;
+name|layer_list
+operator|=
+name|g_slist_next
+argument_list|(
+name|layer_list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -2525,13 +2538,6 @@ operator|=
 name|y4
 expr_stmt|;
 block|}
-name|layer_list
-operator|=
-name|g_slist_next
-argument_list|(
-name|layer_list
-argument_list|)
-expr_stmt|;
 block|}
 name|gdk_draw_rectangle
 argument_list|(
@@ -2564,7 +2570,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|FloatingSelTranslate
+name|EDIT_FLOATING_SEL_TRANSLATE
 case|:
 name|segs_copy
 operator|=
@@ -2771,9 +2777,13 @@ name|event
 decl_stmt|;
 name|GList
 modifier|*
-name|list
+name|event_list
 init|=
 name|NULL
+decl_stmt|;
+name|GList
+modifier|*
+name|list
 decl_stmt|;
 name|guint
 name|keys
@@ -2805,11 +2815,13 @@ decl_stmt|,
 name|value
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|done
 init|=
-literal|0
-decl_stmt|,
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|discard_event
 decl_stmt|;
 name|GtkWidget
@@ -2867,7 +2879,7 @@ name|va_arg
 argument_list|(
 name|argp
 argument_list|,
-name|int
+name|gint
 argument_list|)
 expr_stmt|;
 name|nkeys
@@ -2892,6 +2904,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|kevent
@@ -2919,6 +2932,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
+block|}
 name|orig_widget
 operator|=
 name|gtk_get_event_widget
@@ -2943,7 +2957,7 @@ condition|)
 block|{
 name|discard_event
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|event
 operator|=
@@ -2965,7 +2979,7 @@ condition|)
 block|{
 name|done
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 block|}
 else|else
@@ -3021,7 +3035,7 @@ condition|)
 block|{
 name|discard_event
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 name|value
 operator|+=
@@ -3038,7 +3052,7 @@ name|discard_event
 condition|)
 name|done
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 block|}
 comment|/* should there be more types here? */
@@ -3071,7 +3085,7 @@ name|GDK_EXPOSE
 condition|)
 name|done
 operator|=
-literal|1
+name|FALSE
 expr_stmt|;
 block|}
 if|if
@@ -3087,11 +3101,11 @@ condition|(
 operator|!
 name|discard_event
 condition|)
-name|list
+name|event_list
 operator|=
-name|g_list_append
+name|g_list_prepend
 argument_list|(
-name|list
+name|event_list
 argument_list|,
 name|event
 argument_list|)
@@ -3103,11 +3117,29 @@ name|event
 argument_list|)
 expr_stmt|;
 block|}
-while|while
-condition|(
-name|list
-condition|)
+name|event_list
+operator|=
+name|g_list_reverse
+argument_list|(
+name|event_list
+argument_list|)
+expr_stmt|;
 comment|/* unget the unused events and free the list */
+for|for
+control|(
+name|list
+operator|=
+name|event_list
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 name|gdk_event_put
 argument_list|(
@@ -3131,16 +3163,12 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|list
-operator|=
-name|g_list_remove_link
+block|}
+name|g_list_free
 argument_list|(
-name|list
-argument_list|,
-name|list
+name|event_list
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|value
 return|;
@@ -3239,6 +3267,8 @@ name|GDK_Right
 argument_list|,
 name|GDK_SHIFT_MASK
 argument_list|,
+literal|1
+operator|*
 name|ARROW_VELOCITY
 argument_list|,
 literal|0
@@ -3276,6 +3306,8 @@ name|GDK_Down
 argument_list|,
 name|GDK_SHIFT_MASK
 argument_list|,
+literal|1
+operator|*
 name|ARROW_VELOCITY
 argument_list|,
 literal|0
@@ -3321,6 +3353,8 @@ operator||
 name|GDK_SHIFT_MASK
 operator|)
 argument_list|,
+literal|1
+operator|*
 name|ARROW_VELOCITY
 argument_list|,
 literal|0
@@ -3366,6 +3400,8 @@ operator||
 name|GDK_SHIFT_MASK
 operator|)
 argument_list|,
+literal|1
+operator|*
 name|ARROW_VELOCITY
 argument_list|,
 literal|0
@@ -3449,12 +3485,12 @@ argument_list|)
 condition|)
 name|edit_type
 operator|=
-name|FloatingSelTranslate
+name|EDIT_FLOATING_SEL_TRANSLATE
 expr_stmt|;
 else|else
 name|edit_type
 operator|=
-name|LayerTranslate
+name|EDIT_LAYER_TRANSLATE
 expr_stmt|;
 switch|switch
 condition|(
@@ -3462,29 +3498,15 @@ name|edit_type
 condition|)
 block|{
 case|case
-name|MaskToLayerTranslate
+name|EDIT_MASK_TRANSLATE
 case|:
-name|gimage_mask_float
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
-name|gimage_active_drawable
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-argument_list|,
-name|inc_x
-argument_list|,
-name|inc_y
-argument_list|)
-expr_stmt|;
+case|case
+name|EDIT_MASK_TO_LAYER_TRANSLATE
+case|:
+comment|/*  this won't happen  */
 break|break;
 case|case
-name|LayerTranslate
+name|EDIT_LAYER_TRANSLATE
 case|:
 if|if
 condition|(
@@ -3506,7 +3528,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  translate the layer--and any "linked" layers as well  */
+comment|/*  translate the layer -- and any "linked" layers as well  */
+for|for
+control|(
 name|layer_list
 operator|=
 name|gdisp
@@ -3514,11 +3538,16 @@ operator|->
 name|gimage
 operator|->
 name|layers
-expr_stmt|;
-while|while
-condition|(
+init|;
 name|layer_list
-condition|)
+condition|;
+name|layer_list
+operator|=
+name|g_slist_next
+argument_list|(
+name|layer_list
+argument_list|)
+control|)
 block|{
 name|layer
 operator|=
@@ -3549,6 +3578,7 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
 name|layer_translate
 argument_list|(
 name|layer
@@ -3558,13 +3588,7 @@ argument_list|,
 name|inc_y
 argument_list|)
 expr_stmt|;
-name|layer_list
-operator|=
-name|g_slist_next
-argument_list|(
-name|layer_list
-argument_list|)
-expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -3579,7 +3603,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|FloatingSelTranslate
+name|EDIT_FLOATING_SEL_TRANSLATE
 case|:
 name|floating_sel_relax
 argument_list|(
@@ -3604,9 +3628,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-break|break;
-default|default:
-comment|/*  this won't occur  */
 break|break;
 block|}
 block|}

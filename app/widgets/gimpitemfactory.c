@@ -308,6 +308,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_DEBUG_ENTRY
+end_ifdef
+
 begin_function_decl
 specifier|static
 name|void
@@ -344,6 +350,15 @@ name|callback_action
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  ENABLE_DEBUG_ENTRY  */
+end_comment
 
 begin_decl_stmt
 DECL|variable|last_opened_raw_filenames
@@ -1022,6 +1037,9 @@ block|,
 name|NULL
 block|}
 block|,
+ifdef|#
+directive|ifdef
+name|ENABLE_DEBUG_ENTRY
 block|{
 block|{
 name|N_
@@ -1040,6 +1058,8 @@ name|NULL
 block|,
 name|NULL
 block|}
+endif|#
+directive|endif
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -7816,15 +7836,6 @@ condition|(
 name|list
 condition|)
 block|{
-name|last_opened_raw_filenames
-operator|=
-name|g_slist_remove_link
-argument_list|(
-name|last_opened_raw_filenames
-argument_list|,
-name|list
-argument_list|)
-expr_stmt|;
 name|g_string_free
 argument_list|(
 operator|(
@@ -7838,8 +7849,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|g_slist_free
+name|last_opened_raw_filenames
+operator|=
+name|g_slist_remove
 argument_list|(
+name|last_opened_raw_filenames
+argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
@@ -10133,6 +10148,12 @@ block|}
 block|}
 end_function
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ENABLE_DEBUG_ENTRY
+end_ifdef
+
 begin_function
 specifier|static
 name|void
@@ -10682,6 +10703,15 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*  ENABLE_DEBUG_ENTRY  */
+end_comment
 
 end_unit
 

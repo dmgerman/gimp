@@ -478,23 +478,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|layer_temporarily_translate
-parameter_list|(
-name|Layer
-modifier|*
-name|layer
-parameter_list|,
-name|gint
-name|off_x
-parameter_list|,
-name|gint
-name|off_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|layer_translate
 parameter_list|(
 name|Layer

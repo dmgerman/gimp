@@ -1571,7 +1571,7 @@ name|gdisp_ptr
 argument_list|,
 name|bevent
 argument_list|,
-name|LayerTranslate
+name|EDIT_LAYER_TRANSLATE
 argument_list|)
 expr_stmt|;
 return|return;

@@ -277,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c141c650108
+DECL|struct|__anon2ac2d8650108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c141c650208
+DECL|struct|__anon2ac2d8650208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c141c650308
+DECL|struct|__anon2ac2d8650308
 typedef|typedef
 struct|struct
 block|{
@@ -3632,14 +3632,14 @@ name|gdisp_ptr
 expr_stmt|;
 comment|/*       if (bevent->state& GDK_MOD1_MASK) */
 comment|/* 	{ */
-comment|/* 	  init_edit_selection (tool, gdisp_ptr, bevent, MaskTranslate); */
+comment|/* 	  init_edit_selection (tool, gdisp_ptr, bevent, EDIT_MASK_TRANSLATE); */
 comment|/* 	  break; */
 comment|/* 	} */
 comment|/*       else if (!(bevent->state& GDK_SHIFT_MASK)&& !(bevent->state& GDK_CONTROL_MASK)) */
 comment|/* 	if (! (layer_is_floating_sel (gimage_get_active_layer (gdisp->gimage)))&& */
 comment|/* 	    gdisplay_mask_value (gdisp, bevent->x, bevent->y)> HALF_WAY) */
 comment|/* 	  { */
-comment|/* 	    init_edit_selection (tool, gdisp_ptr, bevent, MaskToLayerTranslate); */
+comment|/* 	    init_edit_selection (tool, gdisp_ptr, bevent, EDIT_MASK_TO_LAYER_TRANSLATE); */
 comment|/* 	    break; */
 comment|/* 	  } */
 name|bezier_sel
