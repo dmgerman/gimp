@@ -257,6 +257,43 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|gboolean
+DECL|function|gdisplay_get_accel_context (gpointer data)
+name|gdisplay_get_accel_context
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|gdisp
+operator|=
+operator|(
+name|GDisplay
+operator|*
+operator|)
+name|data
+expr_stmt|;
+if|if
+condition|(
+name|gdisp
+condition|)
+return|return
+name|gdisp
+operator|->
+name|gimage
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|create_display_shell (GDisplay * gdisp,gint width,gint height,gchar * title,gint type)
 name|create_display_shell
@@ -760,7 +797,7 @@ name|menus_get_image_factory
 argument_list|()
 expr_stmt|;
 comment|/*  The accelerator table for images  */
-name|gtk_window_add_accel_group
+name|gimp_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -772,8 +809,10 @@ argument_list|,
 name|gdisp
 operator|->
 name|ifactory
-operator|->
-name|accel_group
+argument_list|,
+name|gdisplay_get_accel_context
+argument_list|,
+name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  connect the "F1" help key  */

@@ -584,23 +584,6 @@ block|{
 case|case
 name|GDK_KEY_PRESS
 case|:
-name|gtk_object_set_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|gdisp
-operator|->
-name|ifactory
-argument_list|)
-argument_list|,
-literal|"gimp-accel-context"
-argument_list|,
-name|gdisp
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
-comment|/* fallthrough */
 case|case
 name|GDK_BUTTON_PRESS
 case|:
