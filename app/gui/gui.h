@@ -43,9 +43,6 @@ name|gimp
 parameter_list|,
 name|gboolean
 name|no_spash
-parameter_list|,
-name|gboolean
-name|no_splash_image
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -20,8 +20,7 @@ begin_function_decl
 name|void
 name|splash_create
 parameter_list|(
-name|gboolean
-name|show_image
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

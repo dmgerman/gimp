@@ -808,7 +808,7 @@ end_function
 
 begin_function
 name|GimpInitStatusFunc
-DECL|function|gui_init (Gimp * gimp,gboolean no_splash,gboolean no_splash_image)
+DECL|function|gui_init (Gimp * gimp,gboolean no_splash)
 name|gui_init
 parameter_list|(
 name|Gimp
@@ -817,9 +817,6 @@ name|gimp
 parameter_list|,
 name|gboolean
 name|no_splash
-parameter_list|,
-name|gboolean
-name|no_splash_image
 parameter_list|)
 block|{
 name|GimpInitStatusFunc
@@ -909,10 +906,7 @@ name|no_splash
 condition|)
 block|{
 name|splash_create
-argument_list|(
-operator|!
-name|no_splash_image
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|status_callback
 operator|=

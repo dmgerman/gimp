@@ -101,9 +101,6 @@ name|gboolean
 name|no_splash
 parameter_list|,
 name|gboolean
-name|no_splash_image
-parameter_list|,
-name|gboolean
 name|be_verbose
 parameter_list|,
 name|gboolean
