@@ -92,7 +92,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-config.h"
+file|"config/gimpbaseconfig.h"
 end_include
 
 begin_include
@@ -1587,7 +1587,12 @@ name|name
 operator|=
 name|g_build_filename
 argument_list|(
-name|base_config
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
 operator|->
 name|temp_path
 argument_list|,

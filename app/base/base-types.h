@@ -34,6 +34,12 @@ directive|include
 file|"base/base-enums.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config/config-types.h"
+end_include
+
 begin_comment
 comment|/*  magic constants  */
 end_comment
@@ -113,6 +119,18 @@ directive|define
 name|ALPHA_I_PIX
 value|1
 end_define
+
+begin_comment
+comment|/* global config variable (temporary) */
+end_comment
+
+begin_decl_stmt
+DECL|variable|base_config
+name|GimpBaseConfig
+modifier|*
+name|base_config
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/* types */

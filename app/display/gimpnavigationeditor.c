@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -84,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -563,6 +569,18 @@ modifier|*
 name|view
 parameter_list|)
 block|{
+comment|/* FIXME!! */
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|the_gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|abox
@@ -648,12 +666,12 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|abox
 argument_list|,
-name|gimprc
-operator|.
+name|config
+operator|->
 name|nav_preview_size
 argument_list|,
-name|gimprc
-operator|.
+name|config
+operator|->
 name|nav_preview_size
 argument_list|)
 expr_stmt|;
@@ -682,8 +700,8 @@ name|gimp_navigation_preview_new
 argument_list|(
 name|NULL
 argument_list|,
-name|gimprc
-operator|.
+name|config
+operator|->
 name|nav_preview_size
 argument_list|)
 expr_stmt|;

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -108,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -171,7 +171,6 @@ DECL|member|threshold
 name|gdouble
 name|threshold
 decl_stmt|;
-comment|/* gdouble          threshold_d; (from gimprc) */
 DECL|member|threshold_w
 name|GtkObject
 modifier|*
@@ -1285,8 +1284,15 @@ name|options
 operator|->
 name|threshold
 operator|=
-name|gimprc
-operator|.
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|default_threshold
 expr_stmt|;
 name|options
@@ -1680,9 +1686,9 @@ argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|gimprc
-operator|.
-name|default_threshold
+name|options
+operator|->
+name|threshold
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1814,8 +1820,17 @@ operator|->
 name|threshold_w
 argument_list|)
 argument_list|,
-name|gimprc
-operator|.
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|default_threshold
 argument_list|)
 expr_stmt|;

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde9a140103
+DECL|enum|__anon2ae3df570103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -465,6 +465,17 @@ name|LAST_TIP_SHOWN
 argument_list|)
 condition|)
 block|{
+name|GimpGuiConfig
+modifier|*
+name|config
+init|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|token
 operator|=
 name|G_TOKEN_INT
@@ -477,8 +488,8 @@ argument_list|(
 name|scanner
 argument_list|,
 operator|&
-name|gimprc
-operator|.
+name|config
+operator|->
 name|last_tip
 argument_list|)
 condition|)
@@ -668,8 +679,13 @@ name|fp
 argument_list|,
 literal|"(last-tip-shown %d)\n\n"
 argument_list|,
-name|gimprc
-operator|.
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|last_tip
 operator|+
 literal|1

@@ -63,6 +63,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -76,6 +82,12 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -111,12 +123,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -147,7 +153,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277a71e80108
+DECL|struct|__anon2b1c5e640108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -198,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277a71e80208
+DECL|struct|__anon2b1c5e640208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -3373,8 +3379,12 @@ name|st
 operator|->
 name|preview_size
 operator|=
-name|gimprc
-operator|.
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
 name|preview_size
 expr_stmt|;
 comment|/*  gimage signals  */

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpdisplayconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -198,7 +204,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -824,6 +830,18 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+comment|/* FIXME!! */
+name|GimpDisplayConfig
+modifier|*
+name|config
+init|=
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|the_gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|GimpDisplay
 modifier|*
 name|gdisp
@@ -1093,9 +1111,9 @@ name|gimage
 operator|->
 name|width
 argument_list|,
-name|gimprc
-operator|.
-name|marching_speed
+name|config
+operator|->
+name|marching_ants_speed
 argument_list|)
 expr_stmt|;
 name|shell
@@ -1544,6 +1562,10 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|GimpCoords
 name|display_coords
 decl_stmt|;
@@ -1640,20 +1662,22 @@ name|gdisp
 operator|->
 name|gimage
 expr_stmt|;
+name|gimp
+operator|=
+name|gimage
+operator|->
+name|gimp
+expr_stmt|;
 comment|/*  Find out what device the event occurred upon  */
 if|if
 condition|(
 operator|!
-name|gimage
-operator|->
 name|gimp
 operator|->
 name|busy
 operator|&&
 name|gimp_devices_check_change
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 name|event
@@ -1674,8 +1698,6 @@ name|event
 argument_list|,
 name|gimp_devices_get_current
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -1691,8 +1713,6 @@ name|event
 argument_list|,
 name|gimp_devices_get_current
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -1865,8 +1885,6 @@ argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -1910,8 +1928,6 @@ argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -1974,8 +1990,6 @@ argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -1994,8 +2008,6 @@ block|}
 comment|/*  ignore new mouse events  */
 if|if
 condition|(
-name|gimage
-operator|->
 name|gimp
 operator|->
 name|busy
@@ -2007,8 +2019,6 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -2040,17 +2050,20 @@ operator|==
 name|GIMP_MOTION_MODE_EXACT
 operator|)
 operator|&&
-name|gimprc
-operator|.
-name|perfectmouse
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|perfect_mouse
 operator|)
 operator|||
 comment|/*  don't request motion hins for XInput devices because                  *  the wacom driver is known to report crappy hints                  *  (#6901) --mitch                  */
 operator|(
 name|gimp_devices_get_current
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 operator|!=
@@ -2188,8 +2201,6 @@ condition|)
 block|{
 name|tool_manager_initialize_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 name|gdisp
@@ -2224,16 +2235,12 @@ name|gimp_context_tool_changed
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_manager_initialize_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 name|gdisp
@@ -2242,8 +2249,6 @@ expr_stmt|;
 block|}
 name|tool_manager_button_press_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -2354,15 +2359,11 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimage
-operator|->
 name|gimp
 operator|->
 name|busy
@@ -2466,8 +2467,6 @@ expr_stmt|;
 block|}
 name|tool_manager_button_release_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -2499,8 +2498,6 @@ argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -2536,8 +2533,6 @@ name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -2559,8 +2554,6 @@ argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -2768,8 +2761,6 @@ argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -2814,8 +2805,6 @@ name|event
 expr_stmt|;
 if|if
 condition|(
-name|gimage
-operator|->
 name|gimp
 operator|->
 name|busy
@@ -2827,8 +2816,6 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -2879,8 +2866,6 @@ name|compressed_motion
 argument_list|,
 name|gimp_devices_get_current
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -2896,8 +2881,6 @@ name|compressed_motion
 argument_list|,
 name|gimp_devices_get_current
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -3238,8 +3221,6 @@ expr_stmt|;
 block|}
 name|tool_manager_motion_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -3316,8 +3297,6 @@ condition|)
 block|{
 name|tool_manager_oper_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -3377,8 +3356,6 @@ condition|)
 block|{
 name|tool_manager_arrow_key_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 name|kevent
@@ -3404,8 +3381,6 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -3459,8 +3434,6 @@ name|move_tool_info
 operator|=
 name|tool_manager_get_info_by_type
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 name|GIMP_TYPE_MOVE_TOOL
@@ -3470,8 +3443,6 @@ name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -3624,8 +3595,6 @@ condition|)
 block|{
 name|tool_manager_modifier_key_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 name|key
@@ -3643,8 +3612,6 @@ break|break;
 block|}
 name|tool_manager_oper_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -3715,8 +3682,6 @@ name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -3797,8 +3762,6 @@ condition|)
 block|{
 name|tool_manager_modifier_key_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 name|key
@@ -3816,10 +3779,6 @@ break|break;
 block|}
 name|tool_manager_oper_update_active
 argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -3838,8 +3797,6 @@ block|}
 comment|/*  if we reached this point in gimp_busy mode, return now  */
 if|if
 condition|(
-name|gimage
-operator|->
 name|gimp
 operator|->
 name|busy
@@ -3850,10 +3807,14 @@ return|;
 comment|/*  cursor update support  */
 if|if
 condition|(
-operator|!
-name|gimprc
-operator|.
-name|no_cursor_updating
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|cursor_updating
 condition|)
 block|{
 name|GimpTool
@@ -3864,8 +3825,6 @@ name|active_tool
 operator|=
 name|tool_manager_get_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -3907,8 +3866,6 @@ condition|)
 block|{
 name|tool_manager_cursor_update_active
 argument_list|(
-name|gimage
-operator|->
 name|gimp
 argument_list|,
 operator|&

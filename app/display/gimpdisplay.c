@@ -120,18 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290282340103
+DECL|enum|__anon2b54bbc10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

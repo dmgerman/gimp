@@ -87,12 +87,6 @@ directive|include
 file|"gimpdisplayshell-render.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
 begin_typedef
 DECL|typedef|RenderInfo
 typedef|typedef

@@ -51,7 +51,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base-config.h"
+file|"config/gimpbaseconfig.h"
 end_include
 
 begin_include

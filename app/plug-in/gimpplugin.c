@@ -343,6 +343,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -350,12 +356,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -458,12 +458,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -3481,16 +3475,20 @@ name|config
 operator|.
 name|gamma
 operator|=
-name|gimprc
-operator|.
+name|gimp
+operator|->
+name|config
+operator|->
 name|gamma_val
 expr_stmt|;
 name|config
 operator|.
 name|install_cmap
 operator|=
-name|gimprc
-operator|.
+name|gimp
+operator|->
+name|config
+operator|->
 name|install_cmap
 expr_stmt|;
 name|config
@@ -3505,8 +3503,10 @@ name|min_colors
 operator|=
 name|CLAMP
 argument_list|(
-name|gimprc
-operator|.
+name|gimp
+operator|->
+name|config
+operator|->
 name|min_colors
 argument_list|,
 literal|27

@@ -81,15 +81,6 @@ value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_GUI_CONFIG))
 end_define
 
 begin_typedef
-DECL|typedef|GimpGuiConfig
-typedef|typedef
-name|struct
-name|_GimpGuiConfig
-name|GimpGuiConfig
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpGuiConfigClass
 typedef|typedef
 name|struct
@@ -118,10 +109,6 @@ decl_stmt|;
 DECL|member|transparency_type
 name|GimpCheckType
 name|transparency_type
-decl_stmt|;
-DECL|member|perfect_mouse
-name|gboolean
-name|perfect_mouse
 decl_stmt|;
 DECL|member|default_threshold
 name|gint
@@ -185,6 +172,11 @@ DECL|member|help_browser
 name|GimpHelpBrowserType
 name|help_browser
 decl_stmt|;
+DECL|member|last_tip
+name|gint
+name|last_tip
+decl_stmt|;
+comment|/* saved in sessionrc */
 block|}
 struct|;
 end_struct

@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -113,12 +119,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -441,10 +441,11 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gimp_core_config_init
-argument_list|(
 name|gimp
-argument_list|)
+operator|->
+name|config
+operator|=
+name|NULL
 expr_stmt|;
 name|gimp
 operator|->
@@ -2115,7 +2116,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_width
+name|default_image_width
 expr_stmt|;
 name|gimp
 operator|->
@@ -2127,7 +2128,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_height
+name|default_image_height
 expr_stmt|;
 name|gimp
 operator|->
@@ -2139,7 +2140,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_units
+name|default_unit
 expr_stmt|;
 name|gimp
 operator|->
@@ -2175,7 +2176,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_resolution_units
+name|default_resolution_unit
 expr_stmt|;
 name|gimp
 operator|->
@@ -2187,7 +2188,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_type
+name|default_image_type
 expr_stmt|;
 name|gimp
 operator|->

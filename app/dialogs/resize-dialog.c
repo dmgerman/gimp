@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"config/gimpcoreconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcoreconfig.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -3792,7 +3792,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_resolution_units
+name|default_resolution_unit
 argument_list|,
 name|_
 argument_list|(

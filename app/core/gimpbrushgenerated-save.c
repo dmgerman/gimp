@@ -59,13 +59,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-config.h"
+file|"base/temp-buf.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"base/temp-buf.h"
+file|"config/gimpbaseconfig.h"
 end_include
 
 begin_include

@@ -42,13 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/core-enums.h"
+file|"config-types.h"
 end_include
 
 begin_include

@@ -42,6 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpdisplayconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -90,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -118,10 +124,9 @@ name|GimpToolOptions
 name|tool_options
 decl_stmt|;
 DECL|member|allow_resize
-name|gint
+name|gboolean
 name|allow_resize
 decl_stmt|;
-comment|/* default from gimprc.resize_windows_on_zoom */
 DECL|member|allow_resize_w
 name|GtkWidget
 modifier|*
@@ -1780,8 +1785,15 @@ name|options
 operator|->
 name|allow_resize
 operator|=
-name|gimprc
-operator|.
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|resize_windows_on_zoom
 expr_stmt|;
 name|options
@@ -2116,8 +2128,17 @@ operator|->
 name|allow_resize_w
 argument_list|)
 argument_list|,
-name|gimprc
-operator|.
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|tool_options
+operator|->
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|resize_windows_on_zoom
 argument_list|)
 expr_stmt|;

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/pixel-region.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -251,7 +251,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8283890103
+DECL|enum|__anon29eba0380103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

@@ -30,6 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpdisplayconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -67,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimpstatusbar.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_comment
@@ -852,8 +858,15 @@ name|gimp_display_shell_scale_resize
 argument_list|(
 name|shell
 argument_list|,
-name|gimprc
-operator|.
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|resize_windows_on_resize
 argument_list|,
 name|TRUE

@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/pixel-region.h"
 end_include
 

@@ -123,12 +123,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/brush-scale.h"
 end_include
 
@@ -136,6 +130,12 @@ begin_include
 include|#
 directive|include
 file|"base/temp-buf.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpbaseconfig.h"
 end_include
 
 begin_include
@@ -170,7 +170,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b423dda0103
+DECL|enum|__anon277bde9e0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED

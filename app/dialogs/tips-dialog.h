@@ -21,7 +21,9 @@ name|GtkWidget
 modifier|*
 name|tips_dialog_create
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -234,7 +234,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e971330103
+DECL|enum|__anon299e56e90103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3952,7 +3952,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_units
+name|default_unit
 expr_stmt|;
 switch|switch
 condition|(

@@ -369,11 +369,9 @@ directive|include
 file|"patterns-commands.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"preferences-dialog.h"
-end_include
+begin_comment
+comment|/* #include "preferences-dialog.h" */
+end_comment
 
 begin_include
 include|#
@@ -391,12 +389,6 @@ begin_include
 include|#
 directive|include
 file|"vectors-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -893,13 +885,9 @@ name|preview_size
 parameter_list|)
 block|{
 return|return
-name|preferences_dialog_create
-argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|)
+name|NULL
 return|;
+comment|/* return preferences_dialog_create (context->gimp); */
 block|}
 end_function
 
@@ -1108,7 +1096,11 @@ parameter_list|)
 block|{
 return|return
 name|tips_dialog_create
-argument_list|()
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 return|;
 block|}
 end_function

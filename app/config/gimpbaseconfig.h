@@ -75,15 +75,6 @@ value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_BASE_CONFIG))
 end_define
 
 begin_typedef
-DECL|typedef|GimpBaseConfig
-typedef|typedef
-name|struct
-name|_GimpBaseConfig
-name|GimpBaseConfig
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpBaseConfigClass
 typedef|typedef
 name|struct

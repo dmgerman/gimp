@@ -81,15 +81,6 @@ value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DISPLAY_CONFIG))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDisplayConfig
-typedef|typedef
-name|struct
-name|_GimpDisplayConfig
-name|GimpDisplayConfig
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpDisplayConfigClass
 typedef|typedef
 name|struct
@@ -126,6 +117,10 @@ decl_stmt|;
 DECL|member|default_dot_for_dot
 name|gboolean
 name|default_dot_for_dot
+decl_stmt|;
+DECL|member|perfect_mouse
+name|gboolean
+name|perfect_mouse
 decl_stmt|;
 DECL|member|cursor_mode
 name|GimpCursorMode

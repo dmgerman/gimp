@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpbaseconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"base.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base-config.h"
 end_include
 
 begin_include
@@ -135,6 +135,16 @@ directive|include
 file|"appenv.h"
 end_include
 
+begin_decl_stmt
+DECL|variable|base_config
+name|GimpBaseConfig
+modifier|*
+name|base_config
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 specifier|static
 name|void
@@ -151,10 +161,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|base_init (void)
+DECL|function|base_init (GimpBaseConfig * config)
 name|base_init
 parameter_list|(
-name|void
+name|GimpBaseConfig
+modifier|*
+name|config
 parameter_list|)
 block|{
 name|gchar
@@ -165,6 +177,25 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_BASE_CONFIG
+argument_list|(
+name|config
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|base_config
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
+name|base_config
+operator|=
+name|config
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_MMX
@@ -208,21 +239,23 @@ directive|endif
 name|toast_old_temp_files
 argument_list|()
 expr_stmt|;
-comment|/* Add the swap file  */
+comment|/* Add the swap file */
 if|if
 condition|(
+operator|!
 name|base_config
 operator|->
 name|swap_path
-operator|==
-name|NULL
 condition|)
-name|base_config
-operator|->
-name|swap_path
-operator|=
-name|g_strdup
+name|g_object_set
 argument_list|(
+name|G_OBJECT
+argument_list|(
+name|base_config
+argument_list|)
+argument_list|,
+literal|"swap_path"
+argument_list|,
 name|g_get_tmp_dir
 argument_list|()
 argument_list|)
@@ -295,6 +328,10 @@ argument_list|()
 expr_stmt|;
 name|tile_swap_exit
 argument_list|()
+expr_stmt|;
+name|base_config
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function

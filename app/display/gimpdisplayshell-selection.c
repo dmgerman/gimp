@@ -24,7 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpdisplayconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/boundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -61,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell-selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_undef
@@ -387,9 +393,20 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimprc
-operator|.
-name|cycled_marching_ants
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|shell
+operator|->
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|colormap_cycling
 condition|)
 block|{
 name|new

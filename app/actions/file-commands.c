@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -121,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -486,18 +486,25 @@ return|return;
 comment|/*  Only save if the gimage has been modified  */
 if|if
 condition|(
-operator|!
-name|gimprc
-operator|.
-name|trust_dirty_flag
-operator|||
 name|gdisp
 operator|->
 name|gimage
 operator|->
 name|dirty
-operator|!=
-literal|0
+operator|||
+operator|!
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|trust_dirty_flag
 condition|)
 block|{
 specifier|const

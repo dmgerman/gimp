@@ -74,7 +74,7 @@ name|SCREEN_XRES
 parameter_list|(
 name|s
 parameter_list|)
-value|(s->dot_for_dot ? \                            s->gdisp->gimage->xresolution : gimprc.monitor_xres)
+value|(s->dot_for_dot ? \                            s->gdisp->gimage->xresolution : s->gdisp->monitor_xres)
 end_define
 
 begin_define
@@ -85,7 +85,7 @@ name|SCREEN_YRES
 parameter_list|(
 name|s
 parameter_list|)
-value|(s->dot_for_dot ? \                            s->gdisp->gimage->yresolution : gimprc.monitor_yres)
+value|(s->dot_for_dot ? \                            s->gdisp->gimage->yresolution : s->gdisp->monitor_yres)
 end_define
 
 begin_comment

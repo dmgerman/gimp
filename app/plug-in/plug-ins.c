@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -365,7 +365,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|pluginrc_path
+name|plug_in_rc_path
 condition|)
 block|{
 if|if
@@ -376,7 +376,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|pluginrc_path
+name|plug_in_rc_path
 argument_list|)
 condition|)
 name|filename
@@ -387,7 +387,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|pluginrc_path
+name|plug_in_rc_path
 argument_list|)
 expr_stmt|;
 else|else
@@ -402,7 +402,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|pluginrc_path
+name|plug_in_rc_path
 argument_list|,
 name|NULL
 argument_list|)

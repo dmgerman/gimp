@@ -75,12 +75,6 @@ directive|include
 file|"gimpdisplayshell-scroll.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
 begin_function
 name|gboolean
 DECL|function|gimp_display_shell_scroll (GimpDisplayShell * shell,gint x_offset,gint y_offset)

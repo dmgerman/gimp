@@ -160,6 +160,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -167,12 +173,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcoreconfig.h"
 end_include
 
 begin_include
@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c63b2c0103
+DECL|enum|__anon2c9771160103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -299,7 +299,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c63b2c0208
+DECL|struct|__anon2c9771160208
 block|{
 DECL|member|dirname
 specifier|const

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -43,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimp-documents.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcoreconfig.h"
 end_include
 
 begin_include

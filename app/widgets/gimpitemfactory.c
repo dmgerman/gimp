@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -90,12 +96,6 @@ begin_include
 include|#
 directive|include
 file|"gimphelp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -842,6 +842,9 @@ name|GtkWidget
 modifier|*
 name|menu_item
 decl_stmt|;
+name|gboolean
+name|tearoffs
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_ITEM_FACTORY
@@ -856,6 +859,19 @@ name|entry
 operator|!=
 name|NULL
 argument_list|)
+expr_stmt|;
+name|tearoffs
+operator|=
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|item_factory
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|tearoff_menus
 expr_stmt|;
 if|if
 condition|(
@@ -876,10 +892,7 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
-name|gimprc
-operator|.
-name|disable_tearoff_menus
+name|tearoffs
 operator|&&
 name|create_tearoff
 condition|)
@@ -898,9 +911,8 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gimprc
-operator|.
-name|disable_tearoff_menus
+operator|!
+name|tearoffs
 operator|||
 operator|!
 name|create_tearoff

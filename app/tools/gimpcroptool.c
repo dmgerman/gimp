@@ -132,18 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -165,7 +153,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64fb170103
+DECL|enum|__anon2b89370e0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

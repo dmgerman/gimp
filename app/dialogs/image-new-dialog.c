@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"config/gimpguiconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcoreconfig.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -104,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f656c20108
+DECL|struct|__anon29630a610108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1815,7 +1809,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|default_resolution_units
+name|default_resolution_unit
 argument_list|,
 name|_
 argument_list|(
@@ -2435,8 +2429,15 @@ name|info
 operator|->
 name|size
 operator|>
-name|gimprc
-operator|.
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|max_new_image_size
 condition|)
 block|{
@@ -2596,7 +2597,7 @@ argument_list|)
 argument_list|,
 name|config
 operator|->
-name|default_resolution_units
+name|default_resolution_unit
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
@@ -2662,7 +2663,7 @@ literal|0
 argument_list|,
 name|config
 operator|->
-name|default_width
+name|default_image_width
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -2678,7 +2679,7 @@ literal|1
 argument_list|,
 name|config
 operator|->
-name|default_height
+name|default_image_height
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_unit
@@ -2692,7 +2693,7 @@ argument_list|)
 argument_list|,
 name|config
 operator|->
-name|default_units
+name|default_unit
 argument_list|)
 expr_stmt|;
 name|gimp_radio_group_set_active
@@ -2708,7 +2709,7 @@ name|GINT_TO_POINTER
 argument_list|(
 name|config
 operator|->
-name|default_type
+name|default_image_type
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2913,8 +2914,15 @@ name|max_size
 operator|=
 name|gimp_image_new_get_memsize_string
 argument_list|(
-name|gimprc
-operator|.
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|max_new_image_size
 argument_list|)
 expr_stmt|;

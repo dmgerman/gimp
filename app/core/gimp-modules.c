@@ -71,13 +71,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|"config/gimpcoreconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcoreconfig.h"
+file|"gimp.h"
 end_include
 
 begin_include
@@ -90,12 +90,6 @@ begin_include
 include|#
 directive|include
 file|"gimpmodules.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -197,10 +191,6 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|filename
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -209,23 +199,12 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|filename
-operator|=
-name|gimp_personal_rc_file
-argument_list|(
-literal|"modulerc"
-argument_list|)
-expr_stmt|;
-name|gimprc_parse_file
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gchar *filename = gimp_personal_rc_file ("modulerc");   gimprc_parse_file (filename);   g_free (filename);
+endif|#
+directive|endif
 name|gimp_module_db_set_load_inhibit
 argument_list|(
 name|gimp
@@ -236,7 +215,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|module_db_load_inhibit
+name|module_load_inhibit
 argument_list|)
 expr_stmt|;
 name|gimp_module_db_load
@@ -479,7 +458,7 @@ name|gimp
 operator|->
 name|config
 operator|->
-name|module_db_load_inhibit
+name|module_load_inhibit
 argument_list|)
 expr_stmt|;
 name|gimp_module_db_refresh

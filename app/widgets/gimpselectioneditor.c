@@ -149,12 +149,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -489,6 +483,12 @@ name|GtkWidget
 modifier|*
 name|abox
 decl_stmt|;
+comment|/* FIXME: take value from GimpGuiConfig */
+name|GimpPreviewSize
+name|nav_preview_size
+init|=
+name|GIMP_PREVIEW_SIZE_HUGE
+decl_stmt|;
 name|selection_editor
 operator|->
 name|gimage
@@ -565,12 +565,8 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|abox
 argument_list|,
-name|gimprc
-operator|.
 name|nav_preview_size
 argument_list|,
-name|gimprc
-operator|.
 name|nav_preview_size
 argument_list|)
 expr_stmt|;
@@ -599,8 +595,6 @@ name|gimp_preview_new_by_type
 argument_list|(
 name|GIMP_TYPE_DRAWABLE
 argument_list|,
-name|gimprc
-operator|.
 name|nav_preview_size
 argument_list|,
 literal|0

@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -4475,7 +4469,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2abfc85b0103
+DECL|enum|__anon29c16e1d0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

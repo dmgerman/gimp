@@ -71,6 +71,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpdisplayconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -263,7 +269,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -288,7 +294,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a4e9db0103
+DECL|enum|__anon29a2fc210103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -812,9 +818,7 @@ name|shell
 operator|->
 name|dot_for_dot
 operator|=
-name|gimprc
-operator|.
-name|default_dot_for_dot
+name|TRUE
 expr_stmt|;
 name|shell
 operator|->
@@ -1546,6 +1550,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GimpDisplayConfig
+modifier|*
+name|config
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|main_vbox
@@ -1649,6 +1657,27 @@ operator|->
 name|gimage
 operator|->
 name|height
+expr_stmt|;
+name|config
+operator|=
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|dot_for_dot
+operator|=
+name|config
+operator|->
+name|default_dot_for_dot
 expr_stmt|;
 comment|/* adjust the initial scale -- so that window fits on screen the 75%    * value is the same as in gimp_display_shell_shrink_wrap. It    * probably should be a user-configurable option.    */
 name|s_width
@@ -3118,8 +3147,8 @@ expr_stmt|;
 comment|/*  show everything  *******************************************************/
 if|if
 condition|(
-name|gimprc
-operator|.
+name|config
+operator|->
 name|show_rulers
 condition|)
 block|{
@@ -3187,8 +3216,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimprc
-operator|.
+name|config
+operator|->
 name|show_statusbar
 condition|)
 block|{
@@ -3232,6 +3261,18 @@ name|gboolean
 name|kill_it
 parameter_list|)
 block|{
+comment|/* FIXME!! */
+name|GimpDisplayConfig
+modifier|*
+name|config
+init|=
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|the_gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|gimage
@@ -3270,8 +3311,8 @@ name|gimage
 operator|->
 name|dirty
 operator|&&
-name|gimprc
-operator|.
+name|config
+operator|->
 name|confirm_on_close
 condition|)
 block|{
@@ -7716,6 +7757,18 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+comment|/* FIXME!! */
+name|GimpDisplayConfig
+modifier|*
+name|config
+init|=
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|the_gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|gchar
 name|title
 index|[
@@ -7742,8 +7795,8 @@ argument_list|(
 name|title
 argument_list|)
 argument_list|,
-name|gimprc
-operator|.
+name|config
+operator|->
 name|image_title_format
 argument_list|)
 expr_stmt|;
@@ -7764,12 +7817,12 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
-name|gimprc
-operator|.
+name|config
+operator|->
 name|image_title_format
 argument_list|,
-name|gimprc
-operator|.
+name|config
+operator|->
 name|image_status_format
 argument_list|)
 condition|)
@@ -7785,8 +7838,8 @@ argument_list|(
 name|title
 argument_list|)
 argument_list|,
-name|gimprc
-operator|.
+name|config
+operator|->
 name|image_status_format
 argument_list|)
 expr_stmt|;
@@ -9964,6 +10017,18 @@ name|gboolean
 name|always_install
 parameter_list|)
 block|{
+comment|/* FIXME!! */
+name|GimpDisplayConfig
+modifier|*
+name|config
+init|=
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|the_gimp
+operator|->
+name|config
+argument_list|)
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -9981,8 +10046,8 @@ condition|)
 block|{
 switch|switch
 condition|(
-name|gimprc
-operator|.
+name|config
+operator|->
 name|cursor_mode
 condition|)
 block|{

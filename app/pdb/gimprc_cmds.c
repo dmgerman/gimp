@@ -40,19 +40,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpdisplayconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_decl_stmt
@@ -202,30 +214,15 @@ operator|=
 operator|(
 name|value
 operator|=
-name|g_strdup
+name|gimp_rc_query
 argument_list|(
-name|gimprc_find_token
+name|GIMP_RC
 argument_list|(
-name|token
+name|gimp
+operator|->
+name|config
 argument_list|)
-argument_list|)
-operator|)
-operator|!=
-name|NULL
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|success
-condition|)
-comment|/* custom ones failed, try the standard ones */
-name|success
-operator|=
-operator|(
-name|value
-operator|=
-name|gimprc_value_to_str
-argument_list|(
+argument_list|,
 name|token
 argument_list|)
 operator|)
@@ -423,13 +420,26 @@ if|if
 condition|(
 name|success
 condition|)
-name|save_gimprc_strings
+block|{
+name|gimp_config_add_unknown_token
 argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|,
 name|token
 argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 return|return
 name|procedural_db_return_args
 argument_list|(
@@ -480,7 +490,7 @@ literal|"gimp_gimprc_set"
 block|,
 literal|"Sets a gimprc token to a value and saves it in the gimprc."
 block|,
-literal|"This procedure is used to add or change additional information in the gimprc file that is considered extraneous to the operation of the GIMP. Plug-ins that need configuration information can use this function to store it, and gimp_gimprc_query to retrieve it. This will accept _only_ parameters in the format of (<token><value>), where<token> and<value> must be strings. Entries not corresponding to this format will be eaten and no action will be performed. If the gimprc can not be written for whatever reason, gimp will complain loudly and the old gimprc will be saved in gimprc.old."
+literal|"This procedure is used to add or change additional information in the gimprc file that is considered extraneous to the operation of the GIMP. Plug-ins that need configuration information can use this function to store it, and gimp_gimprc_query to retrieve it. This will accept _only_ parameters in the format of (<token><value>), where<token> and<value> must be strings. Entries not corresponding to this format will be eaten and no action will be performed."
 block|,
 literal|"Seth Burgess"
 block|,
@@ -672,14 +682,24 @@ name|yres
 decl_stmt|;
 name|xres
 operator|=
-name|gimprc
-operator|.
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|monitor_xres
 expr_stmt|;
 name|yres
 operator|=
-name|gimprc
-operator|.
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
 name|monitor_yres
 expr_stmt|;
 name|success
@@ -768,7 +788,7 @@ literal|"gimp_get_monitor_resolution"
 block|,
 literal|"Get the monitor resolution as specified in the Preferences."
 block|,
-literal|"Returns the resolution of the monitor in pixels/inch. This value is taken from the Preferences (or the X-Server if this is set in the Preferences) and there's no guarantee for the value to be reasonable."
+literal|"Returns the resolution of the monitor in pixels/inch. This value is taken from the Preferences (or the windowing system if this is set in the Preferences) and there's no guarantee for the value to be reasonable."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,

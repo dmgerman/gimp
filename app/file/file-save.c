@@ -120,13 +120,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"config/gimpcoreconfig.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcoreconfig.h"
+file|"core/gimp.h"
 end_include
 
 begin_include

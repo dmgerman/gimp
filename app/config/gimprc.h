@@ -75,15 +75,6 @@ value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_RC))
 end_define
 
 begin_typedef
-DECL|typedef|GimpRc
-typedef|typedef
-name|struct
-name|_GimpRc
-name|GimpRc
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpRcClass
 typedef|typedef
 name|struct
@@ -151,6 +142,17 @@ specifier|const
 name|gchar
 modifier|*
 name|key
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_rc_load
+parameter_list|(
+name|GimpRc
+modifier|*
+name|gimprc
 parameter_list|)
 function_decl|;
 end_function_decl

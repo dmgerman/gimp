@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"path.h"
 end_include
 
@@ -286,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65dfe0108
+DECL|struct|__anon2793c7810108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65dfe0208
+DECL|struct|__anon2793c7810208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65dfe0308
+DECL|struct|__anon2793c7810308
 block|{
 DECL|member|curve_count
 name|CountCurves

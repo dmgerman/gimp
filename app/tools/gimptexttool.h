@@ -114,11 +114,6 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-DECL|member|pango_context
-name|PangoContext
-modifier|*
-name|pango_context
-decl_stmt|;
 DECL|member|buffer
 name|GtkTextBuffer
 modifier|*
