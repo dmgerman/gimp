@@ -2752,9 +2752,12 @@ name|img_bpp
 argument_list|)
 expr_stmt|;
 comment|/*    * Setup for filter...    */
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
+argument_list|(
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|x1

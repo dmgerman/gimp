@@ -99,7 +99,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baf11540103
+DECL|enum|__anon28b805fb0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baf11540208
+DECL|struct|__anon28b805fb0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3901,9 +3901,9 @@ name|alpha
 operator|--
 expr_stmt|;
 comment|/*    * Setup for filter...    */
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

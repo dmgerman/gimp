@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e99afa0108
+DECL|struct|__anon2b50fedf0108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -3290,9 +3290,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

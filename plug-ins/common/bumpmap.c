@@ -130,7 +130,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c768d230103
+DECL|enum|__anon2c1c19a80103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c768d230203
+DECL|enum|__anon2c1c19a80203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +164,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c768d230308
+DECL|struct|__anon2c1c19a80308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c768d230408
+DECL|struct|__anon2c1c19a80408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c768d230508
+DECL|struct|__anon2c1c19a80508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -5455,9 +5455,12 @@ decl_stmt|;
 name|gint
 name|bytes
 decl_stmt|;
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
+argument_list|(
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|x1

@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5835d0108
+DECL|struct|__anon2768e0ef0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -665,7 +665,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5835d0208
+DECL|struct|__anon2768e0ef0208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1185,9 +1185,12 @@ operator|*
 name|bpp
 argument_list|)
 expr_stmt|;
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
+argument_list|(
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
+argument_list|)
 argument_list|,
 operator|&
 name|x_off

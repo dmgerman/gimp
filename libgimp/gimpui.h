@@ -49,6 +49,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpaspectpreview.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpbrushmenu.h>
 end_include
 

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<libgimpwidgets/gimppreview.h>
+file|<libgimpwidgets/gimpscrolledpreview.h>
 end_include
 
 begin_macro
@@ -108,7 +108,7 @@ struct|struct
 name|_GimpDrawablePreview
 block|{
 DECL|member|parent_instance
-name|GimpPreview
+name|GimpScrolledPreview
 name|parent_instance
 decl_stmt|;
 DECL|member|drawable
@@ -126,7 +126,7 @@ struct|struct
 name|_GimpDrawablePreviewClass
 block|{
 DECL|member|parent_class
-name|GimpPreviewClass
+name|GimpScrolledPreviewClass
 name|parent_class
 decl_stmt|;
 block|}

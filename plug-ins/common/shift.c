@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adc468a0108
+DECL|struct|__anon28c826950108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -794,9 +794,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

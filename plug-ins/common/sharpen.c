@@ -333,7 +333,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293099af0108
+DECL|struct|__anon2b1ad45a0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -2047,9 +2047,9 @@ name|compute_luts
 argument_list|()
 expr_stmt|;
 comment|/*    * Setup for filter...    */
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276062160108
+DECL|struct|__anon2781067d0108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -943,9 +943,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

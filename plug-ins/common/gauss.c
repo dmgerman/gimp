@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2746c3430103
+DECL|enum|__anon2b19c6280103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2746c3430208
+DECL|struct|__anon2b19c6280208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -2626,9 +2626,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8c69e0108
+DECL|struct|__anon2b2b30720108
 block|{
 DECL|member|height
 name|gint
@@ -1140,7 +1140,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8c69e0208
+DECL|struct|__anon2b2b30720208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1233,9 +1233,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_preview_get_position
+name|gimp_scrolled_preview_get_position
 argument_list|(
-name|GIMP_PREVIEW
+name|GIMP_SCROLLED_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

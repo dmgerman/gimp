@@ -31,6 +31,15 @@ comment|/* For information look into the html documentation */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpAspectPreview
+typedef|typedef
+name|struct
+name|_GimpAspectPreview
+name|GimpAspectPreview
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDrawablePreview
 typedef|typedef
 name|struct
