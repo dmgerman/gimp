@@ -427,14 +427,13 @@ expr_stmt|;
 block|}
 end_function
 
-begin_expr_stmt
+begin_macro
+DECL|function|MAIN ()
 name|MAIN
 argument_list|()
-expr_stmt|;
-end_expr_stmt
+end_macro
 
 begin_function
-DECL|function|query (void)
 specifier|static
 name|void
 name|query
