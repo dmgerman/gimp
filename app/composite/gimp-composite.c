@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29b36f520108
+DECL|struct|__anon2c03333b0108
 block|{
 DECL|member|announce_function
 name|gchar
@@ -1334,7 +1334,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_init:  *  * Initialise the Gimp Compositing subsystem.  This includes checking  * for user options and environment, installing the generic set of  * compositing operation handlers, followed by overloading those which  * are supported by the current cpu/hardware.  *  **/
+comment|/**  * gimp_composite_init:  * @use_cpu_accel: whether to use accelerated routines like MMX  *  * Initialise the Gimp Compositing subsystem.  This includes checking  * for user options and environment, installing the generic set of  * compositing operation handlers, followed by overloading those which  * are supported by the current cpu/hardware.  **/
 end_comment
 
 begin_function
