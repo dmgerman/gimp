@@ -124,6 +124,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppencil.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint/gimppenciloptions.h"
 end_include
 
@@ -4100,7 +4106,7 @@ name|paint_tools_stroke
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_TYPE_PAINTBRUSH
+name|GIMP_TYPE_PENCIL
 argument_list|,
 name|options
 argument_list|,
