@@ -2119,10 +2119,7 @@ argument_list|(
 name|active_tool
 argument_list|)
 argument_list|,
-name|GIMP_TEXT_LAYER
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
