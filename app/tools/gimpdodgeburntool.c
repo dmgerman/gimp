@@ -1721,8 +1721,10 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* Enable pressure sensitive exposure */
 name|exposure
 operator|=
+operator|(
 operator|(
 name|dodgeburn_options
 operator|->
@@ -1730,6 +1732,15 @@ name|exposure
 operator|)
 operator|/
 literal|100.0
+operator|*
+operator|(
+name|paint_core
+operator|->
+name|curpressure
+operator|)
+operator|/
+literal|0.5
+operator|)
 expr_stmt|;
 comment|/*  DodgeBurn the region  */
 name|gimp_lut_process

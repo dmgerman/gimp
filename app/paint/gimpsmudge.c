@@ -1459,8 +1459,10 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* Enable pressure sensitive pressure */
 name|pressure
 operator|=
+operator|(
 operator|(
 name|smudge_options
 operator|->
@@ -1468,6 +1470,15 @@ name|pressure
 operator|)
 operator|/
 literal|100.0
+operator|*
+operator|(
+name|paint_core
+operator|->
+name|curpressure
+operator|)
+operator|/
+literal|0.5
+operator|)
 expr_stmt|;
 comment|/* The tempPR will be the built up buffer (for smudge) */
 name|tempPR

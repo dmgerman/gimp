@@ -122,7 +122,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be4f6c70103
+DECL|enum|__anon2bc0283c0103
 block|{
 DECL|enumerator|AlignNo
 name|AlignNo
@@ -2122,6 +2122,9 @@ decl_stmt|;
 name|GPatternP
 name|pattern
 decl_stmt|;
+name|gint
+name|opacity
+decl_stmt|;
 name|pr
 operator|=
 name|NULL
@@ -2861,6 +2864,34 @@ name|rowstride
 expr_stmt|;
 block|}
 block|}
+comment|/*Make the clone tool pressure sencitive */
+name|opacity
+operator|=
+literal|255
+operator|*
+name|gimp_context_get_opacity
+argument_list|(
+name|NULL
+argument_list|)
+operator|*
+operator|(
+name|paint_core
+operator|->
+name|curpressure
+operator|/
+literal|0.5
+operator|)
+expr_stmt|;
+if|if
+condition|(
+name|opacity
+operator|>
+literal|255
+condition|)
+name|opacity
+operator|=
+literal|255
+expr_stmt|;
 comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|paint_core_paste_canvas
 argument_list|(
@@ -2868,7 +2899,7 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|OPAQUE_OPACITY
+name|opacity
 argument_list|,
 call|(
 name|int

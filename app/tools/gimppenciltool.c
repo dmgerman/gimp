@@ -319,6 +319,9 @@ index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
+name|gint
+name|opacity
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -392,6 +395,34 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+comment|/*Make the opacity dependent on the current pressure      This makes a more natural pencil since light pressure     on a graphite pen will give transparent line */
+name|opacity
+operator|=
+literal|255
+operator|*
+name|gimp_context_get_opacity
+argument_list|(
+name|NULL
+argument_list|)
+operator|*
+operator|(
+name|paint_core
+operator|->
+name|curpressure
+operator|/
+literal|0.5
+operator|)
+expr_stmt|;
+if|if
+condition|(
+name|opacity
+operator|>
+literal|255
+condition|)
+name|opacity
+operator|=
+literal|255
+expr_stmt|;
 comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|paint_core_paste_canvas
 argument_list|(
@@ -399,7 +430,7 @@ name|paint_core
 argument_list|,
 name|drawable
 argument_list|,
-name|OPAQUE_OPACITY
+name|opacity
 argument_list|,
 call|(
 name|int
