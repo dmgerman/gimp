@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f444b0103
+DECL|enum|__anon2ac1e5710103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298f444b0203
+DECL|enum|__anon2ac1e5710203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -174,7 +174,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|parse_ms_tag
 parameter_list|(
 specifier|const
@@ -254,7 +254,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|is_disposal_tag
 parameter_list|(
 specifier|const
@@ -275,7 +275,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|is_ms_tag
 parameter_list|(
 specifier|const
