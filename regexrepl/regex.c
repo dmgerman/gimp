@@ -989,7 +989,10 @@ end_undef
 begin_if
 if|#
 directive|if
+name|defined
+argument_list|(
 name|__STDC__
+argument_list|)
 end_if
 
 begin_define
@@ -1614,7 +1617,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2783c0810103
+DECL|enum|__anon2b1999430103
 block|{
 DECL|enumerator|no_op
 name|no_op
@@ -3960,7 +3963,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2783c0810208
+DECL|struct|__anon2b1999430208
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4013,7 +4016,7 @@ DECL|variable|re_max_failures
 name|int
 name|re_max_failures
 init|=
-literal|20000
+literal|4000
 decl_stmt|;
 end_decl_stmt
 
@@ -4067,7 +4070,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2783c0810308
+DECL|struct|__anon2b1999430308
 block|{
 DECL|member|stack
 name|fail_stack_elt_t
@@ -4530,14 +4533,14 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2783c081040a
+DECL|union|__anon2b199943040a
 block|{
 DECL|member|word
 name|fail_stack_elt_t
 name|word
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2783c0810508
+DECL|struct|__anon2b1999430508
 block|{
 comment|/* This field is one if this group can match the empty string,          zero if not.  If not yet determined,  `MATCH_NULL_UNSET_VALUE'.  */
 DECL|macro|MATCH_NULL_UNSET_VALUE
@@ -5282,7 +5285,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2783c0810608
+DECL|struct|__anon2b1999430608
 block|{
 DECL|member|begalt_offset
 name|pattern_offset_t
@@ -5313,7 +5316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2783c0810708
+DECL|struct|__anon2b1999430708
 block|{
 DECL|member|stack
 name|compile_stack_elt_t

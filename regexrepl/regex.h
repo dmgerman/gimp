@@ -355,7 +355,7 @@ value|(1<< 1)
 comment|/* If any error codes are removed, changed, or added, update the    `re_error_msg' table in regex.c.  */
 typedef|typedef
 enum|enum
-DECL|enum|__anon2956abbb0103
+DECL|enum|__anon27e827860103
 block|{
 DECL|enumerator|REG_NOERROR
 name|REG_NOERROR
@@ -604,7 +604,7 @@ directive|endif
 comment|/* POSIX specification for registers.  Aside from the different names than    `re_registers', POSIX uses an array of structures, instead of a    structure of arrays.  */
 typedef|typedef
 struct|struct
-DECL|struct|__anon2956abbb0208
+DECL|struct|__anon27e827860208
 block|{
 DECL|member|rm_so
 name|regoff_t
@@ -624,7 +624,10 @@ comment|/* Declarations for routines.  */
 comment|/* To avoid duplicating every routine declaration -- once with a    prototype (if we are ANSI), and once without (if we aren't) -- we    use the following macro to declare argument types.  This    unfortunately clutters up the declarations a bit, but I think it's    worth it.  */
 if|#
 directive|if
+name|defined
+argument_list|(
 name|__STDC__
+argument_list|)
 DECL|macro|_RE_ARGS (args)
 define|#
 directive|define
