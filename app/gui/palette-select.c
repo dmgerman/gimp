@@ -117,7 +117,8 @@ name|GtkWidget
 modifier|*
 name|scrolled_win
 decl_stmt|;
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|p_entries
 init|=
 name|NULL
@@ -494,7 +495,8 @@ block|{
 name|p_entries
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|list
 operator|->
@@ -642,14 +644,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_select_clist_insert_all (PaletteEntriesP p_entries)
+DECL|function|palette_select_clist_insert_all (PaletteEntries * p_entries)
 name|palette_select_clist_insert_all
 parameter_list|(
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|p_entries
 parameter_list|)
 block|{
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|chk_entries
 decl_stmt|;
 name|PaletteSelect
@@ -684,7 +688,8 @@ block|{
 name|chk_entries
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|list
 operator|->
@@ -789,14 +794,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_select_set_text_all (PaletteEntriesP entries)
+DECL|function|palette_select_set_text_all (PaletteEntries * entries)
 name|palette_select_set_text_all
 parameter_list|(
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|entries
 parameter_list|)
 block|{
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|p_entries
 init|=
 name|NULL
@@ -837,7 +844,8 @@ block|{
 name|p_entries
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|list
 operator|->
@@ -1032,7 +1040,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|p_entries
 init|=
 name|NULL
@@ -1082,7 +1091,8 @@ expr_stmt|;
 name|p_entries
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|gtk_clist_get_row_data
 argument_list|(

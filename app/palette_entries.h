@@ -24,14 +24,10 @@ end_include
 
 begin_typedef
 DECL|typedef|PaletteEntries
-DECL|typedef|PaletteEntriesP
 typedef|typedef
 name|struct
 name|_PaletteEntries
 name|PaletteEntries
-typedef|,
-modifier|*
-name|PaletteEntriesP
 typedef|;
 end_typedef
 
@@ -74,14 +70,10 @@ end_struct
 
 begin_typedef
 DECL|typedef|PaletteEntry
-DECL|typedef|PaletteEntryP
 typedef|typedef
 name|struct
 name|_PaletteEntry
 name|PaletteEntry
-typedef|,
-modifier|*
-name|PaletteEntryP
 typedef|;
 end_typedef
 

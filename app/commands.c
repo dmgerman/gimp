@@ -150,7 +150,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient.h"
+file|"gradient_select.h"
 end_include
 
 begin_include
@@ -264,7 +264,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a21c99b0108
+DECL|struct|__anon2c5a774e0108
 block|{
 DECL|member|resize
 name|Resize
@@ -4037,8 +4037,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|dialogs_gradient_editor_cmd_callback (GtkWidget * widget,gpointer client_data)
-name|dialogs_gradient_editor_cmd_callback
+DECL|function|dialogs_gradient_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|dialogs_gradient_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4048,7 +4048,7 @@ name|gpointer
 name|client_data
 parameter_list|)
 block|{
-name|grad_create_gradient_editor
+name|gradient_dialog_create
 argument_list|()
 expr_stmt|;
 block|}

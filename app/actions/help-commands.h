@@ -1028,7 +1028,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialogs_gradient_editor_cmd_callback
+name|dialogs_gradient_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

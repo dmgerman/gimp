@@ -585,9 +585,12 @@ operator|)
 operator|)
 condition|)
 block|{
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|entries
-decl_stmt|,
+decl_stmt|;
+name|PaletteEntries
+modifier|*
 name|the_palette
 init|=
 name|NULL
@@ -685,7 +688,8 @@ block|{
 name|entries
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|list
 operator|->

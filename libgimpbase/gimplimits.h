@@ -56,6 +56,46 @@ name|GIMP_MAX_RESOLUTION
 value|65536.0
 end_define
 
+begin_comment
+comment|/*  the size of the checks which indicate transparency...  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_CHECK_SIZE
+define|#
+directive|define
+name|GIMP_CHECK_SIZE
+value|8
+end_define
+
+begin_define
+DECL|macro|GIMP_CHECK_SIZE_SM
+define|#
+directive|define
+name|GIMP_CHECK_SIZE_SM
+value|4
+end_define
+
+begin_comment
+comment|/*  ...and their colors  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_CHECK_DARK
+define|#
+directive|define
+name|GIMP_CHECK_DARK
+value|(1.0 / 3.0)
+end_define
+
+begin_define
+DECL|macro|GIMP_CHECK_LIGHT
+define|#
+directive|define
+name|GIMP_CHECK_LIGHT
+value|(2.0 / 3.0)
+end_define
+
 begin_endif
 endif|#
 directive|endif

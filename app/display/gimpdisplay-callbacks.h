@@ -22,6 +22,12 @@ directive|include
 file|"gdisplay.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"patterns.h"
+end_include
+
 begin_define
 DECL|macro|CANVAS_EVENT_MASK
 define|#
@@ -133,7 +139,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gdisplay_set_color
+name|gdisplay_drop_color
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -147,6 +153,24 @@ name|g
 parameter_list|,
 name|guchar
 name|b
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gdisplay_drop_pattern
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GPattern
+modifier|*
+name|pattern
 parameter_list|,
 name|gpointer
 name|data

@@ -191,20 +191,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|pattern_change_callbacks
-parameter_list|(
-name|PatternSelect
-modifier|*
-name|psp
-parameter_list|,
-name|gint
-name|closing
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|patterns_check_dialogs
 parameter_list|(
 name|void

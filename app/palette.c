@@ -136,13 +136,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient.h"
+file|"gradient_header.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gradient_header.h"
+file|"gradient_select.h"
 end_include
 
 begin_include
@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2938d2be0103
+DECL|enum|__anon2a2f079c0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -818,12 +818,13 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|PaletteEntries
+modifier|*
+name|entries
+decl_stmt|;
 name|GSList
 modifier|*
 name|list
-decl_stmt|;
-name|PaletteEntriesP
-name|entries
 decl_stmt|;
 for|for
 control|(
@@ -844,7 +845,8 @@ block|{
 name|entries
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|list
 operator|->
@@ -4588,7 +4590,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PaletteEntryP
+name|PaletteEntry
+modifier|*
 name|entry
 decl_stmt|;
 name|PaletteDialog
@@ -6295,7 +6298,8 @@ name|gint
 name|column_highlight
 parameter_list|)
 block|{
-name|PaletteEntryP
+name|PaletteEntry
+modifier|*
 name|entry
 decl_stmt|;
 name|guchar
@@ -7664,7 +7668,8 @@ expr_stmt|;
 name|p_entries
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|gtk_clist_get_row_data
 argument_list|(
@@ -7690,7 +7695,8 @@ condition|(
 name|cols
 condition|)
 block|{
-name|PaletteEntryP
+name|PaletteEntry
+modifier|*
 name|entry
 init|=
 name|cols
@@ -9810,7 +9816,7 @@ name|data
 parameter_list|)
 block|{
 comment|/*  Popup grad edit box ....  */
-name|grad_create_gradient_editor
+name|gradient_dialog_create
 argument_list|()
 expr_stmt|;
 block|}
@@ -12567,14 +12573,15 @@ modifier|*
 name|name
 parameter_list|)
 block|{
+name|PaletteEntries
+modifier|*
+name|entries
+decl_stmt|;
 name|GSList
 modifier|*
 name|sorted_list
 init|=
 name|NULL
-decl_stmt|;
-name|PaletteEntriesP
-name|entries
 decl_stmt|;
 name|g_hash_table_foreach
 argument_list|(
@@ -13041,13 +13048,14 @@ modifier|*
 name|pname
 parameter_list|)
 block|{
+name|PaletteEntries
+modifier|*
+name|entries
+decl_stmt|;
 name|gint
 name|samples
 decl_stmt|,
 name|count
-decl_stmt|;
-name|PaletteEntriesP
-name|entries
 decl_stmt|;
 name|samples
 operator|=

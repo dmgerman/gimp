@@ -45,9 +45,9 @@ comment|/* adam's extra palette stuff */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bbfda3c0103
 typedef|typedef
 enum|enum
+DECL|enum|__anon29d78a480103
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -84,9 +84,9 @@ comment|/* adam's extra dither stuff */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2bbfda3c0203
 typedef|typedef
 enum|enum
+DECL|enum|__anon29d78a480203
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -170,15 +170,15 @@ modifier|*
 parameter_list|,
 name|GimpImageBaseType
 parameter_list|,
-name|int
+name|gint
 name|num_cols
 parameter_list|,
 name|ConvertDitherType
 parameter_list|,
-name|int
+name|gint
 name|alpha_dither
 parameter_list|,
-name|int
+name|gint
 name|remdups
 parameter_list|,
 name|ConvertPaletteType
@@ -188,7 +188,8 @@ end_function_decl
 
 begin_decl_stmt
 specifier|extern
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|theCustomPalette
 decl_stmt|;
 end_decl_stmt

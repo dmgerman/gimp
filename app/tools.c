@@ -393,7 +393,7 @@ argument_list|(
 literal|"Select rectangular regions"
 argument_list|)
 block|,
-literal|"rect_select"
+literal|"tools/rect_select.html"
 block|,
 name|RECT_SELECT
 block|,
@@ -433,7 +433,7 @@ argument_list|(
 literal|"Select elliptical regions"
 argument_list|)
 block|,
-literal|"ellipse_select"
+literal|"tools/ellipse_select.html"
 block|,
 name|ELLIPSE_SELECT
 block|,
@@ -473,7 +473,7 @@ argument_list|(
 literal|"Select hand-drawn regions"
 argument_list|)
 block|,
-literal|"free_select"
+literal|"tools/free_select.html"
 block|,
 name|FREE_SELECT
 block|,
@@ -513,7 +513,7 @@ argument_list|(
 literal|"Select contiguous regions"
 argument_list|)
 block|,
-literal|"fuzzy_select"
+literal|"tools/fuzzy_select.html"
 block|,
 name|FUZZY_SELECT
 block|,
@@ -553,7 +553,7 @@ argument_list|(
 literal|"Select regions using Bezier curves"
 argument_list|)
 block|,
-literal|"bezier_select"
+literal|"tools/bezier_select.html"
 block|,
 name|BEZIER_SELECT
 block|,
@@ -593,7 +593,7 @@ argument_list|(
 literal|"Select shapes from image"
 argument_list|)
 block|,
-literal|"intelligent_scissors"
+literal|"tools/intelligent_scissors.html"
 block|,
 name|ISCISSORS
 block|,
@@ -633,7 +633,7 @@ argument_list|(
 literal|"Move layers& selections"
 argument_list|)
 block|,
-literal|"move"
+literal|"tools/move.html"
 block|,
 name|MOVE
 block|,
@@ -673,7 +673,7 @@ argument_list|(
 literal|"Zoom in& out"
 argument_list|)
 block|,
-literal|"magnify"
+literal|"tools/magnify.html"
 block|,
 name|MAGNIFY
 block|,
@@ -713,7 +713,7 @@ argument_list|(
 literal|"Crop or resize the image"
 argument_list|)
 block|,
-literal|"crop"
+literal|"tools/crop.html"
 block|,
 name|CROP
 block|,
@@ -753,7 +753,7 @@ argument_list|(
 literal|"Transform the layer or selection"
 argument_list|)
 block|,
-literal|"transform"
+literal|"tools/transform.html"
 block|,
 name|ROTATE
 block|,
@@ -781,9 +781,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Transform the layer or selection"
+argument_list|)
 block|,
-literal|"transform"
+literal|"tools/transform.html"
 block|,
 name|SCALE
 block|,
@@ -811,9 +814,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Transform the layer or selection"
+argument_list|)
 block|,
-literal|"transform"
+literal|"tools/transform.html"
 block|,
 name|SHEAR
 block|,
@@ -841,9 +847,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Transform the layer or selection"
+argument_list|)
 block|,
-literal|"transform"
+literal|"tools/transform.html"
 block|,
 name|PERSPECTIVE
 block|,
@@ -884,7 +893,7 @@ argument_list|(
 literal|"Flip the layer or selection"
 argument_list|)
 block|,
-literal|"flip"
+literal|"tools/flip.html"
 block|,
 name|FLIP
 block|,
@@ -924,7 +933,7 @@ argument_list|(
 literal|"Add text to the image"
 argument_list|)
 block|,
-literal|"text"
+literal|"tools/text.html"
 block|,
 name|TEXT
 block|,
@@ -964,7 +973,7 @@ argument_list|(
 literal|"Pick colors from the image"
 argument_list|)
 block|,
-literal|"color_picker"
+literal|"tools/color_picker.html"
 block|,
 name|COLOR_PICKER
 block|,
@@ -1004,7 +1013,7 @@ argument_list|(
 literal|"Fill with a color or pattern"
 argument_list|)
 block|,
-literal|"bucket_fill"
+literal|"tools/bucket_fill.html"
 block|,
 name|BUCKET_FILL
 block|,
@@ -1044,7 +1053,7 @@ argument_list|(
 literal|"Fill with a color gradient"
 argument_list|)
 block|,
-literal|"blend"
+literal|"tools/blend.html"
 block|,
 name|BLEND
 block|,
@@ -1084,7 +1093,7 @@ argument_list|(
 literal|"Draw sharp pencil strokes"
 argument_list|)
 block|,
-literal|"pencil"
+literal|"tools/pencil.html"
 block|,
 name|PENCIL
 block|,
@@ -1124,7 +1133,7 @@ argument_list|(
 literal|"Paint fuzzy brush strokes"
 argument_list|)
 block|,
-literal|"paintbrush"
+literal|"tools/paintbrush.html"
 block|,
 name|PAINTBRUSH
 block|,
@@ -1164,7 +1173,7 @@ argument_list|(
 literal|"Erase to background or transparency"
 argument_list|)
 block|,
-literal|"eraser"
+literal|"tools/eraser.html"
 block|,
 name|ERASER
 block|,
@@ -1204,7 +1213,7 @@ argument_list|(
 literal|"Airbrush with variable pressure"
 argument_list|)
 block|,
-literal|"airbrush"
+literal|"tools/airbrush.html"
 block|,
 name|AIRBRUSH
 block|,
@@ -1244,7 +1253,7 @@ argument_list|(
 literal|"Paint using patterns or image regions"
 argument_list|)
 block|,
-literal|"clone"
+literal|"tools/clone.html"
 block|,
 name|CLONE
 block|,
@@ -1284,7 +1293,7 @@ argument_list|(
 literal|"Blur or sharpen"
 argument_list|)
 block|,
-literal|"convolve"
+literal|"tools/convolve.html"
 block|,
 name|CONVOLVE
 block|,
@@ -1324,7 +1333,7 @@ argument_list|(
 literal|"Draw in ink"
 argument_list|)
 block|,
-literal|"ink"
+literal|"tools/ink.html"
 block|,
 name|INK
 block|,
@@ -1364,7 +1373,7 @@ argument_list|(
 literal|"Dodge or Burn"
 argument_list|)
 block|,
-literal|"dodgeburn"
+literal|"tools/dodgeburn.html"
 block|,
 name|DODGEBURN
 block|,
@@ -1404,7 +1413,7 @@ argument_list|(
 literal|"Smudge"
 argument_list|)
 block|,
-literal|"smudge"
+literal|"tools/smudge.html"
 block|,
 name|SMUDGE
 block|,
@@ -1444,7 +1453,7 @@ argument_list|(
 literal|"Measure distances and angles"
 argument_list|)
 block|,
-literal|"measure"
+literal|"tools/measure.html"
 block|,
 name|MEASURE
 block|,
@@ -1484,7 +1493,7 @@ argument_list|(
 literal|"Natural Airbrush"
 argument_list|)
 block|,
-literal|"xinput_airbrush"
+literal|"tools/xinput_airbrush.html"
 block|,
 name|XINPUT_AIRBRUSH
 block|,
@@ -1524,7 +1533,7 @@ argument_list|(
 literal|"Manipulate paths"
 argument_list|)
 block|,
-literal|"path"
+literal|"tools/path.html"
 block|,
 name|PATH_TOOL
 block|,
@@ -1555,9 +1564,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Select regions by color"
+argument_list|)
 block|,
-literal|"by_color_select"
+literal|"tools/by_color_select.html"
 block|,
 name|BY_COLOR_SELECT
 block|,
@@ -1587,9 +1599,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Adjust color balance"
+argument_list|)
 block|,
-literal|"color_balance"
+literal|"tools/color_balance.html"
 block|,
 name|COLOR_BALANCE
 block|,
@@ -1619,9 +1634,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Adjust brightness and contrast"
+argument_list|)
 block|,
-literal|"brightness_contrast"
+literal|"tools/brightness_contrast.html"
 block|,
 name|BRIGHTNESS_CONTRAST
 block|,
@@ -1651,9 +1669,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Adjust hue and saturation"
+argument_list|)
 block|,
-literal|"hue_saturation"
+literal|"tools/hue_saturation.html"
 block|,
 name|HUE_SATURATION
 block|,
@@ -1683,9 +1704,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Reduce image to a fixed numer of colors"
+argument_list|)
 block|,
-literal|"posterize"
+literal|"tools/posterize.html"
 block|,
 name|POSTERIZE
 block|,
@@ -1715,9 +1739,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Reduce image to two colors using a threshold"
+argument_list|)
 block|,
-literal|"threshold"
+literal|"tools/threshold.html"
 block|,
 name|THRESHOLD
 block|,
@@ -1747,9 +1774,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Adjust color curves"
+argument_list|)
 block|,
-literal|"curves"
+literal|"tools/curves.html"
 block|,
 name|CURVES
 block|,
@@ -1779,9 +1809,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Adjust color levels"
+argument_list|)
 block|,
-literal|"levels"
+literal|"tools/levels.html"
 block|,
 name|LEVELS
 block|,
@@ -1811,9 +1844,12 @@ name|NULL
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"View image historgam"
+argument_list|)
 block|,
-literal|"histogram"
+literal|"tools/histogram.html"
 block|,
 name|HISTOGRAM
 block|,
@@ -1928,7 +1964,7 @@ operator|*
 name|tool_info
 index|[
 operator|(
-name|int
+name|gint
 operator|)
 name|active_tool
 operator|->
@@ -1976,7 +2012,7 @@ operator|*
 name|tool_info
 index|[
 operator|(
-name|int
+name|gint
 operator|)
 name|tool_type
 index|]
@@ -2015,7 +2051,7 @@ condition|(
 name|tool_info
 index|[
 operator|(
-name|int
+name|gint
 operator|)
 name|tool_type
 index|]
@@ -2042,7 +2078,7 @@ condition|(
 name|tool_info
 index|[
 operator|(
-name|int
+name|gint
 operator|)
 name|tool_type
 index|]
@@ -2055,7 +2091,7 @@ operator|*
 name|tool_info
 index|[
 operator|(
-name|int
+name|gint
 operator|)
 name|tool_type
 index|]
@@ -2084,9 +2120,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_options_dialog_show ()
+DECL|function|tools_options_dialog_show (void)
 name|tools_options_dialog_show
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -2637,9 +2675,11 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tools_options_dialog_new ()
+DECL|function|tools_options_dialog_new (void)
 name|tools_options_dialog_new
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
@@ -2929,9 +2969,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_options_dialog_free ()
+DECL|function|tools_options_dialog_free (void)
 name|tools_options_dialog_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|session_get_window_info
 argument_list|(
@@ -2958,20 +3000,12 @@ name|gpointer
 name|help_data
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|help_page
-decl_stmt|;
-name|help_page
-operator|=
-name|g_strdup_printf
+name|gimp_help
 argument_list|(
-literal|"tools/%s.html"
-argument_list|,
 name|tool_info
 index|[
 operator|(
-name|int
+name|gint
 operator|)
 name|active_tool
 operator|->
@@ -2979,16 +3013,6 @@ name|type
 index|]
 operator|.
 name|private_tip
-argument_list|)
-expr_stmt|;
-name|gimp_help
-argument_list|(
-name|help_page
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|help_page
 argument_list|)
 expr_stmt|;
 block|}
@@ -3320,9 +3344,11 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|tool_active_PDB_string ()
+DECL|function|tool_active_PDB_string (void)
 name|tool_active_PDB_string
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|guchar
 modifier|*
@@ -3330,8 +3356,7 @@ name|toolStr
 init|=
 literal|"gimp_paintbrush_default"
 decl_stmt|;
-comment|/* Return the correct PDB function for the active tool */
-comment|/* The default is paintbrush if the tool is not recognised */
+comment|/*  Return the correct PDB function for the active tool    *  The default is paintbrush if the tool is not recognised    */
 if|if
 condition|(
 operator|!
@@ -3342,9 +3367,11 @@ name|toolStr
 return|;
 switch|switch
 condition|(
-name|active_tool
-operator|->
-name|type
+name|gimp_context_get_tool
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|)
 condition|)
 block|{
 case|case

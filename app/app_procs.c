@@ -252,6 +252,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gradient_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient.h"
 end_include
 
@@ -2936,7 +2942,7 @@ expr_stmt|;
 name|palettes_free
 argument_list|()
 expr_stmt|;
-name|grad_free_gradient_editor
+name|gradient_dialog_free
 argument_list|()
 expr_stmt|;
 name|gradients_free

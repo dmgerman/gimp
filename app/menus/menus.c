@@ -563,7 +563,7 @@ argument_list|)
 block|,
 literal|"<control>G"
 block|,
-name|dialogs_gradient_editor_cmd_callback
+name|dialogs_gradient_cmd_callback
 block|,
 literal|0
 block|}
@@ -3238,7 +3238,7 @@ argument_list|)
 block|,
 literal|"<control>G"
 block|,
-name|dialogs_gradient_editor_cmd_callback
+name|dialogs_gradient_cmd_callback
 block|,
 literal|0
 block|}
@@ -5339,18 +5339,9 @@ name|entry
 operator|.
 name|help_page
 operator|=
-name|g_strconcat
-argument_list|(
-literal|"tools/"
-argument_list|,
 name|tool_info
 operator|->
 name|private_tip
-argument_list|,
-literal|".html"
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 name|entry
 operator|.

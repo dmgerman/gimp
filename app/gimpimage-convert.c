@@ -34887,7 +34887,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfb57f0108
+DECL|struct|__anon29065e580108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34964,7 +34964,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfb57f0208
+DECL|struct|__anon29065e580208
 block|{
 DECL|member|ncolors
 name|long
@@ -34983,7 +34983,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfb57f0308
+DECL|struct|__anon29065e580308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35349,7 +35349,8 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|theCustomPalette
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|theCustomPalette
 init|=
 name|NULL
@@ -37499,7 +37500,8 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|entries
 decl_stmt|;
 name|int
@@ -37576,7 +37578,8 @@ block|{
 name|entries
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|list
 operator|->
@@ -37697,7 +37700,8 @@ block|{
 name|theCustomPalette
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|palette_entries_list
 operator|->
@@ -37732,7 +37736,8 @@ block|{
 name|theCustomPalette
 operator|=
 operator|(
-name|PaletteEntriesP
+name|PaletteEntries
+operator|*
 operator|)
 name|data
 expr_stmt|;
@@ -38262,7 +38267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfb57f0408
+DECL|struct|__anon29065e580408
 block|{
 DECL|member|used_count
 name|signed
@@ -47311,7 +47316,8 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|PaletteEntryP
+name|PaletteEntry
+modifier|*
 name|entry
 decl_stmt|;
 comment|/*  fprintf(stderr, "custompal_pass1: using (theCustomPalette %s) from (file %s)\n", 			 theCustomPalette->name, theCustomPalette->filename);*/
@@ -47343,7 +47349,8 @@ block|{
 name|entry
 operator|=
 operator|(
-name|PaletteEntryP
+name|PaletteEntry
+operator|*
 operator|)
 name|list
 operator|->

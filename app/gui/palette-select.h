@@ -34,14 +34,10 @@ end_define
 
 begin_typedef
 DECL|typedef|PaletteSelect
-DECL|typedef|PaletteSelectP
 typedef|typedef
 name|struct
 name|_PaletteSelect
 name|PaletteSelect
-typedef|,
-modifier|*
-name|PaletteSelectP
 typedef|;
 end_typedef
 
@@ -94,7 +90,8 @@ begin_function_decl
 name|void
 name|palette_select_clist_insert_all
 parameter_list|(
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|p_entries
 parameter_list|)
 function_decl|;
@@ -104,7 +101,8 @@ begin_function_decl
 name|void
 name|palette_select_set_text_all
 parameter_list|(
-name|PaletteEntriesP
+name|PaletteEntries
+modifier|*
 name|entries
 parameter_list|)
 function_decl|;

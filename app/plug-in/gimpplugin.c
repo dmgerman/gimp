@@ -435,7 +435,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient.h"
+file|"gradient_select.h"
 end_include
 
 begin_include
