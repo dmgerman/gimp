@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952471d0108
+DECL|struct|__anon2be88be10108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952471d0208
+DECL|struct|__anon2be88be10208
 block|{
 DECL|member|cinfo
 name|struct
@@ -2553,17 +2553,18 @@ typedef|typedef
 struct|struct
 name|my_error_mgr
 block|{
+comment|/* This field should be first to guarantee proper alignment of the    * setjmp_buffer on all platforms. Specifically, on linux ia64 this    * needs to be 16-byte aligned and some glibc/icc combinations don't     * guarantee this. See bug #138357 for details.    */
+DECL|member|setjmp_buffer
+name|jmp_buf
+name|setjmp_buffer
+decl_stmt|;
+comment|/* for return to caller */
 DECL|member|pub
 name|struct
 name|jpeg_error_mgr
 name|pub
 decl_stmt|;
 comment|/* "public" fields */
-DECL|member|setjmp_buffer
-name|jmp_buf
-name|setjmp_buffer
-decl_stmt|;
-comment|/* for return to caller */
 DECL|typedef|my_error_ptr
 block|}
 typedef|*
