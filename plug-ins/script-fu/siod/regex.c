@@ -23,11 +23,33 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|HAVE_GLIBC_REGEX
+end_ifndef
+
 begin_include
 include|#
 directive|include
-file|"regex.h"
+file|"regexrepl.h"
 end_include
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_include
+include|#
+directive|include
+file|<regex.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
