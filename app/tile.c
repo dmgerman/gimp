@@ -241,6 +241,21 @@ name|tile
 argument_list|)
 expr_stmt|;
 comment|/* Call 'tile_manager_validate' if the tile was invalid.    */
+if|#
+directive|if
+name|USE_PTHREADS
+name|pthread_mutex_unlock
+argument_list|(
+operator|&
+operator|(
+name|tile
+operator|->
+name|mutex
+operator|)
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -261,21 +276,6 @@ argument_list|,
 name|tile
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-name|USE_PTHREADS
-name|pthread_mutex_unlock
-argument_list|(
-operator|&
-operator|(
-name|tile
-operator|->
-name|mutex
-operator|)
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
