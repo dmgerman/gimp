@@ -76,12 +76,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -135,7 +129,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c591f110103
+DECL|enum|__anon28cc4f8a0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2111,7 +2105,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -2915,7 +2909,7 @@ name|push_undo
 condition|)
 block|{
 comment|/*  Put this apply mask operation on the undo stack  */
-name|drawable_apply_image
+name|gimp_drawable_apply_image
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3092,7 +3086,7 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3167,7 +3161,7 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  update the affected region  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3219,7 +3213,7 @@ operator|+=
 name|off_y
 expr_stmt|;
 comment|/*  update the affected region  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3576,7 +3570,7 @@ modifier|*
 name|new_tiles
 decl_stmt|;
 comment|/*  Update the old layer position  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3836,7 +3830,7 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  Update the new layer position  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4506,7 +4500,7 @@ literal|0
 expr_stmt|;
 block|}
 comment|/*  Update the old layer position  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -4837,7 +4831,7 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  update the new layer area  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5901,6 +5895,32 @@ name|OPACITY_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_update
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|width
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -6001,6 +6021,32 @@ name|layer_signals
 index|[
 name|MODE_CHANGED
 index|]
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_update
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|width
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|height
 argument_list|)
 expr_stmt|;
 block|}

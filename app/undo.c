@@ -156,12 +156,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -251,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29232e730103
+DECL|enum|__anon2c94defe0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -4096,7 +4090,7 @@ block|}
 block|}
 block|}
 block|}
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|image_undo
 operator|->
@@ -5052,7 +5046,7 @@ argument_list|)
 operator|->
 name|offset_y
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5106,7 +5100,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -5171,7 +5165,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6235,7 +6229,7 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6357,7 +6351,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -6978,7 +6972,7 @@ operator|=
 name|temp
 expr_stmt|;
 comment|/*  Issue the second update  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7593,7 +7587,7 @@ name|prev_channel
 argument_list|)
 expr_stmt|;
 comment|/*  update the area  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7669,7 +7663,7 @@ name|channel
 argument_list|)
 expr_stmt|;
 comment|/*  update the area  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7981,7 +7975,7 @@ literal|1
 index|]
 expr_stmt|;
 comment|/*  Issue the first update  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -8068,7 +8062,7 @@ operator|=
 name|temp
 expr_stmt|;
 comment|/*  Issue the second update  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

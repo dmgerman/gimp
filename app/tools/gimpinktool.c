@@ -108,30 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpinktool.h"
 end_include
 
@@ -157,6 +133,24 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -6086,7 +6080,7 @@ name|drawable
 parameter_list|)
 block|{
 comment|/*  push an undo  */
-name|drawable_apply_image
+name|gimp_drawable_apply_image
 argument_list|(
 name|drawable
 argument_list|,
@@ -6395,7 +6389,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c3da8660103
+DECL|enum|__anon2bf6bf6b0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

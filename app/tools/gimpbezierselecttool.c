@@ -138,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
@@ -275,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c88030108
+DECL|struct|__anon2c914c3f0108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -311,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c88030208
+DECL|struct|__anon2c914c3f0208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -366,7 +360,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c88030308
+DECL|struct|__anon2c914c3f0308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -532,7 +526,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c88030403
+DECL|enum|__anon2c914c3f0403
 block|{
 DECL|enumerator|BEZIER_SELECT
 name|BEZIER_SELECT

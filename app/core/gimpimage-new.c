@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1195,7 +1189,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|drawable_fill
+name|gimp_drawable_fill_by_type
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

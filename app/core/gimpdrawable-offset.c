@@ -87,12 +87,6 @@ directive|include
 file|"gimpimage.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"drawable.h"
-end_include
-
 begin_function
 name|void
 DECL|function|gimp_drawable_offset (GimpDrawable * drawable,gboolean wrap_around,GimpOffsetType fill_type,gint offset_x,gint offset_y)
@@ -1403,7 +1397,7 @@ expr_stmt|;
 block|}
 block|}
 comment|/*  push an undo  */
-name|drawable_apply_image
+name|gimp_drawable_apply_image
 argument_list|(
 name|drawable
 argument_list|,
@@ -1437,7 +1431,7 @@ operator|=
 name|new_tiles
 expr_stmt|;
 comment|/*  update the drawable  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,

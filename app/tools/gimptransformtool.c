@@ -204,12 +204,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -233,7 +227,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc994f30103
+DECL|enum|__anon28acc6ea0103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
@@ -7216,7 +7210,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,

@@ -138,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
@@ -360,7 +354,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88f6330108
+DECL|struct|__anon28fb43130108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -417,7 +411,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b88f6330208
+DECL|struct|__anon28fb43130208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -4632,7 +4626,7 @@ name|y1
 argument_list|)
 expr_stmt|;
 comment|/*  update the image  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,

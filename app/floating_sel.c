@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -794,7 +788,7 @@ argument_list|)
 expr_stmt|;
 comment|/*  if the floating selection exceeds the attached layer's extents,       update the new layer  */
 comment|/*  I don't think that the preview is ever valid as is, since the layer       will be added on top of the others.  Revert this if I'm wrong.       msw@gimp.org   */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

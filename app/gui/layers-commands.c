@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -804,7 +798,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-name|gdisplays_flush_now
+name|gdisplays_flush
 argument_list|()
 expr_stmt|;
 block|}
@@ -1825,7 +1819,7 @@ condition|(
 name|layer
 condition|)
 block|{
-name|drawable_fill
+name|gimp_drawable_fill_by_type
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1834,7 +1828,9 @@ argument_list|)
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimage
+operator|->
+name|gimp
 argument_list|)
 argument_list|,
 name|fill_type

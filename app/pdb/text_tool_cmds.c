@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -71,12 +77,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"drawable.h"
 end_include
 
 begin_include

@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage.h"
 end_include
 
@@ -997,6 +991,21 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_rgba_distance
+argument_list|(
+operator|&
+name|channel
+operator|->
+name|color
+argument_list|,
+name|color
+argument_list|)
+operator|>
+literal|0.0001
+condition|)
+block|{
 name|channel
 operator|->
 name|color
@@ -1004,6 +1013,33 @@ operator|=
 operator|*
 name|color
 expr_stmt|;
+name|gimp_drawable_update
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+operator|->
+name|width
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1184,7 +1220,7 @@ literal|0
 condition|)
 return|return;
 comment|/*  Update the old channel position  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1333,7 +1369,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 comment|/*  Update the new channel position  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1555,7 +1591,7 @@ literal|0
 expr_stmt|;
 block|}
 comment|/*  Update the old channel position  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -1774,7 +1810,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 comment|/*  update the new channel area  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer.h"
+file|"core/gimpdrawable.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"drawable.h"
+file|"core/gimplayer.h"
 end_include
 
 begin_include

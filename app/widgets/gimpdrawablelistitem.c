@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pixmaps/eye.xpm"
 end_include
 
@@ -1175,23 +1169,6 @@ argument_list|,
 name|gimp_drawable_list_item_visibility_changed
 argument_list|,
 name|list_item
-argument_list|)
-expr_stmt|;
-name|drawable_update
-argument_list|(
-name|drawable
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|drawable
-operator|->
-name|width
-argument_list|,
-name|drawable
-operator|->
-name|height
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush

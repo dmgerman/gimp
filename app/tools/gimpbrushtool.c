@@ -174,12 +174,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -245,7 +239,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b5d590103
+DECL|enum|__anon2c5299c50103
 block|{
 DECL|enumerator|PAINT
 name|PAINT
@@ -4963,7 +4957,7 @@ name|pu
 argument_list|)
 expr_stmt|;
 comment|/*  push an undo  */
-name|drawable_apply_image
+name|gimp_drawable_apply_image
 argument_list|(
 name|drawable
 argument_list|,

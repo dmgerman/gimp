@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -1261,7 +1255,7 @@ name|y1
 argument_list|)
 expr_stmt|;
 comment|/*  update the image  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,
@@ -1658,7 +1652,7 @@ name|y1
 argument_list|)
 expr_stmt|;
 comment|/*  update the image  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,

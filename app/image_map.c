@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -330,13 +324,11 @@ operator|->
 name|gdisp
 condition|)
 block|{
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
-operator|(
 name|image_map
 operator|->
 name|drawable
-operator|)
 argument_list|,
 name|x
 argument_list|,
@@ -1155,7 +1147,7 @@ operator|->
 name|undo_tiles
 argument_list|)
 expr_stmt|;
-name|drawable_apply_image
+name|gimp_drawable_apply_image
 argument_list|(
 name|image_map
 operator|->
@@ -1414,7 +1406,7 @@ name|destPR
 argument_list|)
 expr_stmt|;
 comment|/*  Update the area  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|image_map
 operator|->

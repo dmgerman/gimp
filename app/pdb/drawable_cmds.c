@@ -112,12 +112,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb_glue.h"
 end_include
 
@@ -738,7 +732,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|drawable_fill
+name|gimp_drawable_fill_by_type
 argument_list|(
 name|drawable
 argument_list|,
@@ -939,7 +933,7 @@ if|if
 condition|(
 name|success
 condition|)
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,

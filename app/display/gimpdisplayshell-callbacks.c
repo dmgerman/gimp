@@ -192,12 +192,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -4093,7 +4087,7 @@ name|buf_tiles
 argument_list|)
 expr_stmt|;
 comment|/*  Update the displays  */
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,

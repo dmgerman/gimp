@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -77,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcebe6b0103
+DECL|enum|__anon2a2f16ed0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -998,7 +992,7 @@ operator|->
 name|layer
 argument_list|)
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,
@@ -1232,7 +1226,7 @@ operator|->
 name|layer
 argument_list|)
 expr_stmt|;
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|drawable
 argument_list|,

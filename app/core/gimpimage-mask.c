@@ -94,12 +94,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"drawable.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"floating_sel.h"
 end_include
 
@@ -551,7 +545,7 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
-name|drawable_update
+name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -949,7 +943,7 @@ name|cut_gimage
 operator|&&
 name|non_empty
 condition|)
-name|drawable_apply_image
+name|gimp_drawable_apply_image
 argument_list|(
 name|drawable
 argument_list|,
