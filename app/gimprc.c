@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2764eca60103
+DECL|enum|__anon2770af0d0103
 typedef|typedef
 enum|enum
 block|{
@@ -931,6 +931,15 @@ name|int
 name|thumbnail_mode
 init|=
 literal|1
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|trust_dirty_flag
+name|int
+name|trust_dirty_flag
+init|=
+literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -2525,6 +2534,17 @@ name|TT_INT
 block|,
 operator|&
 name|thumbnail_mode
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"trust-dirty-flag"
+block|,
+name|TT_INT
+block|,
+operator|&
+name|trust_dirty_flag
 block|,
 name|NULL
 block|}

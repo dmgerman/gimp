@@ -743,6 +743,14 @@ name|old_show_indicators
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|old_trust_dirty_flag
+specifier|static
+name|int
+name|old_trust_dirty_flag
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  variables which can't be changed on the fly  */
 end_comment
@@ -2512,6 +2520,21 @@ argument_list|,
 literal|"thumbnail-mode"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|trust_dirty_flag
+operator|!=
+name|old_trust_dirty_flag
+condition|)
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"trust-dirty-flag"
+argument_list|)
+expr_stmt|;
 name|save_gimprc
 argument_list|(
 operator|&
@@ -2752,6 +2775,10 @@ expr_stmt|;
 name|show_indicators
 operator|=
 name|old_show_indicators
+expr_stmt|;
+name|trust_dirty_flag
+operator|=
+name|old_trust_dirty_flag
 expr_stmt|;
 if|if
 condition|(
@@ -3330,6 +3357,11 @@ name|data
 operator|==
 operator|&
 name|interpolation_type
+operator|||
+name|data
+operator|==
+operator|&
+name|trust_dirty_flag
 condition|)
 block|{
 name|val
@@ -6484,6 +6516,10 @@ expr_stmt|;
 name|old_show_indicators
 operator|=
 name|show_indicators
+expr_stmt|;
+name|old_trust_dirty_flag
+operator|=
+name|trust_dirty_flag
 expr_stmt|;
 name|file_prefs_strset
 argument_list|(
@@ -10967,7 +11003,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"File Previews / Thumbnails"
+literal|"File Saving"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11060,7 +11096,7 @@ name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|1
+literal|2
 argument_list|,
 literal|2
 argument_list|,
@@ -11170,6 +11206,69 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Try to Write a Thumbnail File:"
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
+argument_list|,
+name|optionmenu
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|optionmenu
+operator|=
+name|gimp_option_menu_new
+argument_list|(
+name|file_prefs_toggle_callback
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|trust_dirty_flag
+argument_list|,
+name|_
+argument_list|(
+literal|"Only when modified"
+argument_list|)
+argument_list|,
+operator|&
+name|trust_dirty_flag
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+literal|1
+argument_list|,
+name|_
+argument_list|(
+literal|"Always"
+argument_list|)
+argument_list|,
+operator|&
+name|trust_dirty_flag
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_table_attach_aligned
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|1
+argument_list|,
+name|_
+argument_list|(
+literal|"'File> Save' saves the image:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -12266,7 +12365,7 @@ name|page_index
 operator|++
 expr_stmt|;
 block|{
-DECL|struct|__anon27c4ce390108
+DECL|struct|__anon2b296a930108
 specifier|static
 specifier|const
 struct|struct
@@ -12491,7 +12590,7 @@ block|}
 block|}
 comment|/* Directories /<paths> */
 block|{
-DECL|struct|__anon27c4ce390208
+DECL|struct|__anon2b296a930208
 specifier|static
 specifier|const
 struct|struct
