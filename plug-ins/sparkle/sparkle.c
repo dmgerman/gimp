@@ -43,6 +43,29 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -102,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bab3ea0108
+DECL|struct|__anon298140420108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -133,7 +156,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bab3ea0208
+DECL|struct|__anon298140420208
 block|{
 DECL|member|run
 name|gint

@@ -146,10 +146,6 @@ parameter_list|)
 value|((x) * (x))
 end_define
 
-begin_comment
-comment|/* define pi */
-end_comment
-
 begin_ifndef
 ifndef|#
 directive|ifndef

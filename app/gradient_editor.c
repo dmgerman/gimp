@@ -129,6 +129,29 @@ begin_comment
 comment|/***** Magic numbers *****/
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|EPSILON
 define|#
@@ -311,7 +334,7 @@ comment|/* Gradient segment type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon289078b00103
+DECL|enum|__anon2960f36f0103
 typedef|typedef
 enum|enum
 block|{
@@ -338,7 +361,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon289078b00203
+DECL|enum|__anon2960f36f0203
 typedef|typedef
 enum|enum
 block|{
@@ -483,7 +506,7 @@ comment|/* Gradient editor type */
 end_comment
 
 begin_typedef
-DECL|enum|__anon289078b00303
+DECL|enum|__anon2960f36f0303
 typedef|typedef
 enum|enum
 block|{
@@ -507,7 +530,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289078b00408
+DECL|struct|__anon2960f36f0408
 typedef|typedef
 struct|struct
 block|{
@@ -787,7 +810,7 @@ name|int
 name|replicate_times
 decl_stmt|;
 comment|/* Saved colors */
-DECL|struct|__anon289078b00508
+DECL|struct|__anon2960f36f0508
 struct|struct
 block|{
 DECL|member|r

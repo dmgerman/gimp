@@ -48,6 +48,29 @@ parameter_list|)
 value|((a) * (a))
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -115,7 +138,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2cb8250108
+DECL|struct|__anon2bf945960108
 block|{
 DECL|member|x
 DECL|member|y
@@ -133,7 +156,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2cb8250208
+DECL|struct|__anon2bf945960208
 block|{
 DECL|member|npts
 name|gint
@@ -155,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2cb8250308
+DECL|struct|__anon2bf945960308
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -178,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2cb8250408
+DECL|struct|__anon2bf945960408
 block|{
 DECL|member|run
 name|gint

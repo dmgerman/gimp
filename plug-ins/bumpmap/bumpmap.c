@@ -77,6 +77,29 @@ begin_comment
 comment|/***** Magic numbers *****/
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -146,7 +169,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon2b325a980103
+DECL|enum|__anon28c7d3b20103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -164,7 +187,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2b325a980203
+DECL|enum|__anon28c7d3b20203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -182,7 +205,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2b325a980308
+DECL|struct|__anon28c7d3b20308
 typedef|typedef
 struct|struct
 block|{
@@ -237,7 +260,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b325a980408
+DECL|struct|__anon28c7d3b20408
 typedef|typedef
 struct|struct
 block|{
@@ -282,7 +305,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b325a980508
+DECL|struct|__anon28c7d3b20508
 typedef|typedef
 struct|struct
 block|{

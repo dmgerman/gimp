@@ -108,6 +108,29 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|ROUND_TO_INT (val)
 define|#
@@ -214,7 +237,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon2b92fecd0108
+DECL|struct|__anon278055210108
 typedef|typedef
 struct|struct
 block|{
@@ -315,7 +338,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b92fecd0208
+DECL|struct|__anon278055210208
 typedef|typedef
 struct|struct
 block|{
@@ -1463,7 +1486,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2b92fecd0308
+DECL|struct|__anon278055210308
 DECL|member|r
 DECL|member|g
 DECL|member|b

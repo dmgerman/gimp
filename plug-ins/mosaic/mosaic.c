@@ -47,6 +47,29 @@ directive|include
 file|"mosaic_logo.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -197,7 +220,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7c8ad0108
+DECL|struct|__anon2c6d9c750108
 block|{
 DECL|member|x
 DECL|member|y
@@ -215,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7c8ad0208
+DECL|struct|__anon2c6d9c750208
 block|{
 DECL|member|npts
 name|gint
@@ -237,7 +260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7c8ad0308
+DECL|struct|__anon2c6d9c750308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -266,7 +289,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7c8ad0408
+DECL|struct|__anon2c6d9c750408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -321,7 +344,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf7c8ad0508
+DECL|struct|__anon2c6d9c750508
 block|{
 DECL|member|run
 name|gint

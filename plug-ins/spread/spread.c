@@ -43,6 +43,29 @@ begin_comment
 comment|/* Some useful macros */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -68,7 +91,7 @@ value|50
 end_define
 
 begin_typedef
-DECL|struct|__anon2b698acd0108
+DECL|struct|__anon29193a590108
 typedef|typedef
 struct|struct
 block|{
@@ -87,7 +110,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b698acd0208
+DECL|struct|__anon29193a590208
 typedef|typedef
 struct|struct
 block|{

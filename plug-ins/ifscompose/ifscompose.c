@@ -55,6 +55,29 @@ directive|include
 file|"ifscompose.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|SCALE_WIDTH
 define|#
@@ -96,7 +119,7 @@ value|10
 end_define
 
 begin_typedef
-DECL|enum|__anon2c85a7270103
+DECL|enum|__anon2bd5873a0103
 typedef|typedef
 enum|enum
 block|{
@@ -116,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c85a7270203
+DECL|enum|__anon2bd5873a0203
 typedef|typedef
 enum|enum
 block|{
@@ -134,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85a7270308
+DECL|struct|__anon2bd5873a0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -155,7 +178,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon2c85a727040a
+DECL|union|__anon2bd5873a040a
 union|union
 block|{
 DECL|member|d
@@ -185,7 +208,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85a7270508
+DECL|struct|__anon2bd5873a0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -215,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85a7270608
+DECL|struct|__anon2bd5873a0608
 block|{
 DECL|member|color
 name|IfsColor
@@ -264,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85a7270708
+DECL|struct|__anon2bd5873a0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -300,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85a7270808
+DECL|struct|__anon2bd5873a0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -367,7 +390,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85a7270908
+DECL|struct|__anon2bd5873a0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -538,7 +561,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c85a7270a08
+DECL|struct|__anon2bd5873a0a08
 block|{
 DECL|member|run
 name|gint

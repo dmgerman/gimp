@@ -39,6 +39,29 @@ directive|include
 file|"gtk/gtk.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|ENTRY_WIDTH
 define|#
@@ -138,7 +161,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3dfbf30108
+DECL|struct|__anon2c1532e30108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -183,7 +206,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3dfbf30208
+DECL|struct|__anon2c1532e30208
 block|{
 DECL|member|run
 name|gint

@@ -61,6 +61,29 @@ begin_comment
 comment|/* for seed of random number */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_define
 DECL|macro|PARAM_FILE_FORMAT_VERSION
 define|#
@@ -244,7 +267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0b99e0108
+DECL|struct|__anon2bf8a4190108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -272,7 +295,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0b99e0208
+DECL|struct|__anon2bf8a4190208
 block|{
 DECL|member|name
 name|guchar
@@ -1498,7 +1521,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0b99e0308
+DECL|struct|__anon2bf8a4190308
 block|{
 DECL|member|function
 name|gint
@@ -1571,7 +1594,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0b99e0408
+DECL|struct|__anon2bf8a4190408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2337,7 +2360,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0b99e0508
+DECL|struct|__anon2bf8a4190508
 block|{
 DECL|member|run
 name|gint
@@ -2385,7 +2408,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b0b99e0608
+DECL|struct|__anon2bf8a4190608
 block|{
 DECL|member|widget
 name|GtkWidget

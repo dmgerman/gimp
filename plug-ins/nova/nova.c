@@ -69,6 +69,29 @@ begin_comment
 comment|/* Some useful macros */
 end_comment
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_if
 if|#
 directive|if
@@ -180,7 +203,7 @@ value|GDK_EXPOSURE_MASK | \ 		       GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTT
 end_define
 
 begin_typedef
-DECL|struct|__anon28e641160108
+DECL|struct|__anon28a553ab0108
 typedef|typedef
 struct|struct
 block|{
@@ -213,7 +236,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e641160208
+DECL|struct|__anon28a553ab0208
 typedef|typedef
 struct|struct
 block|{
@@ -228,7 +251,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28e641160308
+DECL|struct|__anon28a553ab0308
 typedef|typedef
 struct|struct
 block|{
@@ -255,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e641160408
+DECL|struct|__anon28a553ab0408
 block|{
 DECL|member|drawable
 name|GDrawable

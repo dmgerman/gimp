@@ -160,6 +160,29 @@ parameter_list|)
 value|((x) * (x))
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|M_PI
+end_ifndef
+
+begin_define
+DECL|macro|M_PI
+define|#
+directive|define
+name|M_PI
+value|3.14159265358979323846
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* M_PI */
+end_comment
+
 begin_comment
 comment|/*  the Blend structures  */
 end_comment
@@ -167,7 +190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4e1fa00103
+DECL|enum|__anon29809bc30103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -204,7 +227,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4e1fa00203
+DECL|enum|__anon29809bc30203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -226,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4e1fa00303
+DECL|enum|__anon29809bc30303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -360,7 +383,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2c4e1fa00408
+DECL|struct|__anon29809bc30408
 typedef|typedef
 struct|struct
 block|{
@@ -412,7 +435,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c4e1fa00508
+DECL|struct|__anon29809bc30508
 typedef|typedef
 struct|struct
 block|{
