@@ -297,14 +297,12 @@ block|{
 name|GimpPreviewRendererBrush
 modifier|*
 name|renderer
-decl_stmt|;
-name|renderer
-operator|=
+init|=
 name|GIMP_PREVIEW_RENDERER_BRUSH
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|renderer
@@ -528,12 +526,6 @@ name|brush
 argument_list|)
 condition|)
 block|{
-if|#
-directive|if
-literal|0
-block|if (renderer->width  != brush_width ||               renderer->height != brush_height) 	    { 	      g_warning ("%s(): non-fullsize pipe popups are not supported yet.", 			 G_GNUC_FUNCTION); 	      return; 	    }
-endif|#
-directive|endif
 name|renderbrush
 operator|->
 name|pipe_animation_index
