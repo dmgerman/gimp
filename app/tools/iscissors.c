@@ -4085,6 +4085,19 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+name|drawable
+operator|=
+name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/* construct the geometry matrix from the segment */
 comment|/* assumes that a valid segment containing 4 points is passed in */
 for|for
@@ -4669,22 +4682,25 @@ operator|)
 condition|)
 block|{
 comment|/* add the point to the point buffer */
-name|gdisplay_transform_coords
+comment|/*gdisplay_transform_coords (gdisp, newx, newy,&tx,&ty,1 );*/
+name|drawable_offsets
 argument_list|(
-name|gdisp
-argument_list|,
-name|newx
-argument_list|,
-name|newy
+name|drawable
 argument_list|,
 operator|&
 name|tx
 argument_list|,
 operator|&
 name|ty
-argument_list|,
-literal|1
 argument_list|)
+expr_stmt|;
+name|tx
+operator|+=
+name|newx
+expr_stmt|;
+name|ty
+operator|+=
+name|newy
 expr_stmt|;
 name|gdk_points
 index|[
