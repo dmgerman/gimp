@@ -903,7 +903,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_combine_ellipse:  * @mask:      the channel with which to combine the ellipse  * @op:        whether to replace, add to, or subtract from the current contents  * @x:         x coordinate of upper left corner of ellipse  * @y:         y coordinate of upper left corner of ellipse  * @w:         width of ellipse bounding box  * @h:         height of ellipse bounding box  * @antialias: if %TRUE, antialias the ellipse  *  * Mainly used for elliptical selections.  If @op is %GIMP_CHANNEL_OP_REPLACE or  * %GIMP_CHANNEL_OP_ADD, sets  pixels within the ellipse to 255.  If @op is  * %GIMP_CHANNEL_OP_SUBTRACT, sets pixels within to zero.  If antialiasing is  * turned on, a pixels that impinge on the edge of the ellipse   * are set to intermediate values, depending on how much they  * overlap.  **/
+comment|/**  * gimp_channel_combine_ellipse:  * @mask:      the channel with which to combine the ellipse  * @op:        whether to replace, add to, or subtract from the current  *             contents  * @x:         x coordinate of upper left corner of ellipse  * @y:         y coordinate of upper left corner of ellipse  * @w:         width of ellipse bounding box  * @h:         height of ellipse bounding box  * @antialias: if %TRUE, antialias the ellipse  *  * Mainly used for elliptical selections.  If @op is  * %GIMP_CHANNEL_OP_REPLACE or %GIMP_CHANNEL_OP_ADD, sets pixels  * within the ellipse to 255.  If @op is %GIMP_CHANNEL_OP_SUBTRACT,  * sets pixels within to zero.  If @antialias is %TRUE, pixels that  * impinge on the edge of the ellipse are set to intermediate values,  * depending on how much they overlap.  **/
 end_comment
 
 begin_function
@@ -939,18 +939,6 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|gint
-name|x0
-decl_stmt|,
-name|x1
-decl_stmt|,
-name|x2
-decl_stmt|;
-name|gint
-name|val
-decl_stmt|,
-name|last
-decl_stmt|;
 name|gfloat
 name|a
 decl_stmt|,
@@ -964,31 +952,9 @@ decl_stmt|,
 name|aob_sqr
 decl_stmt|;
 name|gfloat
-name|y_sqr
-decl_stmt|;
-name|gfloat
-name|xj
-decl_stmt|,
-name|yi
-decl_stmt|;
-name|gfloat
-name|xdist
-decl_stmt|,
-name|ydist
-decl_stmt|;
-name|gfloat
 name|cx
 decl_stmt|,
 name|cy
-decl_stmt|;
-name|gfloat
-name|rad
-decl_stmt|;
-name|gfloat
-name|dist
-decl_stmt|;
-name|gfloat
-name|r
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1011,33 +977,27 @@ name|a
 operator|=
 name|w
 operator|/
-literal|2.
+literal|2.0
 expr_stmt|;
 name|b
 operator|=
 name|h
 operator|/
-literal|2.
+literal|2.0
 expr_stmt|;
 name|a_sqr
 operator|=
-operator|(
-name|w
-operator|*
-name|w
-operator|/
-literal|4.0
-operator|)
+name|SQR
+argument_list|(
+name|a
+argument_list|)
 expr_stmt|;
 name|b_sqr
 operator|=
-operator|(
-name|h
-operator|*
-name|h
-operator|/
-literal|4.0
-operator|)
+name|SQR
+argument_list|(
+name|b
+argument_list|)
 expr_stmt|;
 name|aob_sqr
 operator|=
@@ -1049,17 +1009,13 @@ name|cx
 operator|=
 name|x
 operator|+
-name|w
-operator|/
-literal|2.0
+name|a
 expr_stmt|;
 name|cy
 operator|=
 name|y
 operator|+
-name|h
-operator|/
-literal|2.0
+name|b
 expr_stmt|;
 for|for
 control|(
@@ -1095,15 +1051,15 @@ operator|->
 name|height
 condition|)
 block|{
-comment|/*  Non-antialiased code  */
 if|if
 condition|(
 operator|!
 name|antialias
 condition|)
 block|{
+name|gfloat
 name|y_sqr
-operator|=
+init|=
 operator|(
 name|i
 operator|+
@@ -1119,9 +1075,10 @@ literal|0.5
 operator|-
 name|cy
 operator|)
-expr_stmt|;
+decl_stmt|;
+name|gfloat
 name|rad
-operator|=
+init|=
 name|sqrt
 argument_list|(
 name|a_sqr
@@ -1131,29 +1088,31 @@ operator|*
 name|y_sqr
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|b_sqr
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|x1
-operator|=
+init|=
 name|ROUND
 argument_list|(
 name|cx
 operator|-
 name|rad
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gint
 name|x2
-operator|=
+init|=
 name|ROUND
 argument_list|(
 name|cx
 operator|+
 name|rad
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|op
@@ -1205,25 +1164,43 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_warning
-argument_list|(
-literal|"Only ADD, REPLACE, and SUBTRACT are valid for channel_combine!"
-argument_list|)
+name|g_return_if_reached
+argument_list|()
 expr_stmt|;
 break|break;
 block|}
 block|}
-comment|/*  antialiasing  */
 else|else
+comment|/*  antialiasing  */
 block|{
 comment|/* algorithm changed 7-18-04, because the previous one did not                * work well for eccentric ellipses.  The new algorithm                * measures the distance to the ellipse in the X and Y directions,                * and uses trigonometry to approximate the distance to the                * ellipse as the distance to the hypotenuse of a right triangle                * whose legs are the X and Y distances.  (WES)                */
+name|gint
+name|val
+decl_stmt|,
+name|last
+decl_stmt|;
+name|gint
+name|x0
+decl_stmt|;
+name|gfloat
+name|xj
+decl_stmt|,
+name|yi
+decl_stmt|;
+name|gfloat
+name|xdist
+decl_stmt|,
+name|ydist
+decl_stmt|;
+name|gfloat
+name|r
+decl_stmt|;
+name|gfloat
+name|dist
+decl_stmt|;
 name|x0
 operator|=
 name|x
-expr_stmt|;
-name|last
-operator|=
-literal|0
 expr_stmt|;
 name|yi
 operator|=
@@ -1235,6 +1212,10 @@ literal|0.5
 operator|-
 name|cy
 argument_list|)
+expr_stmt|;
+name|last
+operator|=
+literal|0
 expr_stmt|;
 for|for
 control|(
@@ -1291,7 +1272,7 @@ expr_stmt|;
 else|else
 name|xdist
 operator|=
-literal|100.
+literal|100.0
 expr_stmt|;
 comment|/* anything large will work */
 if|if
@@ -1320,7 +1301,7 @@ expr_stmt|;
 else|else
 name|ydist
 operator|=
-literal|100.
+literal|100.0
 expr_stmt|;
 comment|/* anything large will work */
 name|r
@@ -1351,12 +1332,12 @@ name|ydist
 operator|/
 name|r
 expr_stmt|;
-comment|/* trig formula for dist to hypotenuse */
+comment|/* trig formula for distance                                                * to hypotenuse                                                */
 if|if
 condition|(
 name|xdist
 operator|<
-literal|0.
+literal|0.0
 condition|)
 name|dist
 operator|*=
@@ -1384,7 +1365,7 @@ condition|)
 name|val
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 literal|255
@@ -1461,10 +1442,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_warning
-argument_list|(
-literal|"Only ADD, REPLACE, and SUBTRACT are valid for channel_combine!"
-argument_list|)
+name|g_return_if_reached
+argument_list|()
 expr_stmt|;
 break|break;
 block|}
@@ -1484,7 +1463,7 @@ name|last
 operator|=
 name|val
 expr_stmt|;
-comment|/* because we are symetric accross the y axis we can                          skip ahead a bit if we are inside the ellipse*/
+comment|/*  because we are symetric accross the y axis we can                        *  skip ahead a bit if we are inside the ellipse                        */
 if|if
 condition|(
 name|val
@@ -1561,10 +1540,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_warning
-argument_list|(
-literal|"Only ADD, REPLACE, and SUBTRACT are valid for channel_combine!"
-argument_list|)
+name|g_return_if_reached
+argument_list|()
 expr_stmt|;
 break|break;
 block|}
@@ -1572,7 +1549,7 @@ block|}
 block|}
 block|}
 block|}
-comment|/*  Determine new boundary  */
+comment|/*  determine new boundary  */
 if|if
 condition|(
 name|mask
@@ -1712,12 +1689,14 @@ name|h
 expr_stmt|;
 block|}
 else|else
+block|{
 name|mask
 operator|->
 name|bounds_known
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 name|mask
 operator|->
 name|x1
