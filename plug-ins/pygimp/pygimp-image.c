@@ -4790,7 +4790,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_image_get_filename
+name|gimp_image_get_name
 argument_list|(
 name|self
 operator|->
