@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ebbfab0103
+DECL|enum|__anon28afb9640103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -514,7 +514,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|name
+name|new_name
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -3417,7 +3417,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_name_edited (GtkCellRendererText * cell,const gchar * path_str,const gchar * new_text,GimpItemTreeView * view)
+DECL|function|gimp_item_tree_view_name_edited (GtkCellRendererText * cell,const gchar * path_str,const gchar * new_name,GimpItemTreeView * view)
 name|gimp_item_tree_view_name_edited
 parameter_list|(
 name|GtkCellRendererText
@@ -3432,7 +3432,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|new_text
+name|new_name
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -3487,6 +3487,11 @@ name|GimpItem
 modifier|*
 name|item
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|old_name
+decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
 name|tree_view
@@ -3516,13 +3521,48 @@ operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
+name|old_name
+operator|=
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+operator|!
+name|old_name
+condition|)
+name|old_name
+operator|=
+literal|""
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|new_name
+condition|)
+name|new_name
+operator|=
+literal|""
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|old_name
+argument_list|,
+name|new_name
+argument_list|)
+operator|&&
 name|gimp_item_rename
 argument_list|(
 name|item
 argument_list|,
-name|new_text
+name|new_name
 argument_list|)
 condition|)
 block|{
