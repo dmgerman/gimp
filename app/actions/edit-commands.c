@@ -367,6 +367,8 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|gimp_edit_copy
 argument_list|(
 name|gimage
@@ -376,7 +378,12 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
+condition|)
+block|{
+name|gdisplays_flush
+argument_list|()
 expr_stmt|;
+block|}
 block|}
 end_function
 
