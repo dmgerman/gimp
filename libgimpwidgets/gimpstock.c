@@ -1352,7 +1352,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon296f98ec0108
+DECL|struct|__anon27df96e40108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1778,7 +1778,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon296f98ec0208
+DECL|struct|__anon27df96e40208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1958,7 +1958,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon296f98ec0308
+DECL|struct|__anon27df96e40308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2118,7 +2118,7 @@ name|i
 operator|<
 name|G_N_ELEMENTS
 argument_list|(
-name|gimp_stock_menu_pixbufs
+name|gimp_stock_dialog_pixbufs
 argument_list|)
 condition|;
 name|i
