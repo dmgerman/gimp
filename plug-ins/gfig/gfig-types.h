@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510103
+DECL|enum|__anon29a52f630103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -40,7 +40,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510203
+DECL|enum|__anon29a52f630203
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -64,7 +64,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510303
+DECL|enum|__anon29a52f630303
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510403
+DECL|enum|__anon29a52f630403
 block|{
 DECL|enumerator|FILL_NONE
 name|FILL_NONE
@@ -97,6 +97,12 @@ name|FILL_PATTERN
 block|,
 DECL|enumerator|FILL_GRADIENT
 name|FILL_GRADIENT
+block|,
+DECL|enumerator|FILL_VERTICAL
+name|FILL_VERTICAL
+block|,
+DECL|enumerator|FILL_HORIZONTAL
+name|FILL_HORIZONTAL
 DECL|typedef|FillType
 block|}
 name|FillType
@@ -106,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510503
+DECL|enum|__anon29a52f630503
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -127,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510603
+DECL|enum|__anon29a52f630603
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -154,7 +160,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510703
+DECL|enum|__anon29a52f630703
 block|{
 DECL|enumerator|PAINT_NONE
 name|PAINT_NONE
@@ -174,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510803
+DECL|enum|__anon29a52f630803
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -198,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ff4c510903
+DECL|enum|__anon29a52f630903
 block|{
 DECL|enumerator|OBJ_TYPE_NONE
 name|OBJ_TYPE_NONE
@@ -207,6 +213,9 @@ literal|0
 block|,
 DECL|enumerator|LINE
 name|LINE
+block|,
+DECL|enumerator|RECTANGLE
+name|RECTANGLE
 block|,
 DECL|enumerator|CIRCLE
 name|CIRCLE

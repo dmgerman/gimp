@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5ea7e0108
+DECL|struct|__anon2779b8240108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5ea7e0208
+DECL|struct|__anon2779b8240208
 block|{
 DECL|member|type
 name|SelectionType
@@ -282,7 +282,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5ea7e0308
+DECL|struct|__anon2779b8240308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -477,7 +477,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5ea7e0408
+DECL|struct|__anon2779b8240408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -983,7 +983,17 @@ begin_function_decl
 name|void
 name|paint_layer_fill
 parameter_list|(
-name|void
+name|gdouble
+name|x1
+parameter_list|,
+name|gdouble
+name|y1
+parameter_list|,
+name|gdouble
+name|x2
+parameter_list|,
+name|gdouble
+name|y2
 parameter_list|)
 function_decl|;
 end_function_decl
