@@ -2409,7 +2409,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279d3ac40108
+DECL|struct|__anon2c2563c50108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3293,7 +3293,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279d3ac40208
+DECL|struct|__anon2c2563c50208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
@@ -3517,7 +3517,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|3
+literal|2
 condition|;
 name|i
 operator|++
