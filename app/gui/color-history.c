@@ -39,14 +39,6 @@ directive|include
 file|"color-history.h"
 end_include
 
-begin_define
-DECL|macro|COLOR_HISTORY_SIZE
-define|#
-directive|define
-name|COLOR_HISTORY_SIZE
-value|16
-end_define
-
 begin_function_decl
 specifier|static
 name|void

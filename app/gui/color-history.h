@@ -21,7 +21,7 @@ DECL|macro|COLOR_HISTORY_SIZE
 define|#
 directive|define
 name|COLOR_HISTORY_SIZE
-value|16
+value|12
 end_define
 
 begin_function_decl
