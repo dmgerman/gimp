@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2347710103
+DECL|enum|__anon28b764320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1763,6 +1763,8 @@ comment|/*  Next the displays...  */
 name|gimp_display_shell_flush
 argument_list|(
 name|shell
+argument_list|,
+name|now
 argument_list|)
 expr_stmt|;
 comment|/*  ensure the consistency of the menus  */
@@ -1840,7 +1842,7 @@ decl_stmt|,
 modifier|*
 name|new_area
 decl_stmt|;
-comment|/* We need to merge the IdleRender's and the GimpDisplay's update_areas list    * to keep track of which of the updates have been flushed and hence need    * to be drawn.     */
+comment|/* We need to merge the IdleRender's and the GimpDisplay's update_areas list    * to keep track of which of the updates have been flushed and hence need    * to be drawn.    */
 for|for
 control|(
 name|list

@@ -298,7 +298,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e6933a0103
+DECL|enum|__anon27663c8f0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5124,12 +5124,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_flush (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_flush (GimpDisplayShell * shell,gboolean now)
 name|gimp_display_shell_flush
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gboolean
+name|now
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -5143,6 +5146,21 @@ expr_stmt|;
 name|gimp_display_shell_update_title
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|now
+condition|)
+name|gdk_window_process_updates
+argument_list|(
+name|shell
+operator|->
+name|canvas
+operator|->
+name|window
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
