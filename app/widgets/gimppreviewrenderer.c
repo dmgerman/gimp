@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c27122f0103
+DECL|enum|__anon27d6172a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2114,21 +2114,9 @@ name|height
 argument_list|,
 name|GDK_RGB_DITHER_NORMAL
 argument_list|,
-name|expose_area
-operator|->
-name|x
-operator|-
-name|draw_area
-operator|->
-name|x
+literal|0
 argument_list|,
-name|expose_area
-operator|->
-name|y
-operator|-
-name|draw_area
-operator|->
-name|y
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

@@ -427,7 +427,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s Component Copy"
+literal|"%s Channel Copy"
 argument_list|)
 argument_list|,
 name|gettext
@@ -659,7 +659,7 @@ name|gimage
 argument_list|,
 name|_
 argument_list|(
-literal|"Component to Selection"
+literal|"Channel to Selection"
 argument_list|)
 argument_list|,
 name|channel
