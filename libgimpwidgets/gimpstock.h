@@ -766,6 +766,16 @@ define|#
 directive|define
 name|GIMP_STOCK_DISPLAY_FILTER
 value|"gimp-display-filter"
+DECL|macro|GIMP_STOCK_CURSOR
+define|#
+directive|define
+name|GIMP_STOCK_CURSOR
+value|"gimp-cursor"
+DECL|macro|GIMP_STOCK_SAMPLE_POINT
+define|#
+directive|define
+name|GIMP_STOCK_SAMPLE_POINT
+value|"gimp-sample-point"
 DECL|macro|GIMP_STOCK_LIST
 define|#
 directive|define
