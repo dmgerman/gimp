@@ -979,6 +979,13 @@ condition|(
 name|tile
 operator|->
 name|dirty
+operator|||
+name|tile
+operator|->
+name|swap_offset
+operator|==
+operator|-
+literal|1
 condition|)
 block|{
 name|tile_swap_out
