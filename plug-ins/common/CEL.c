@@ -906,6 +906,7 @@ block|{
 name|FILE
 modifier|*
 name|fp
+decl_stmt|;
 name|guchar
 name|header
 index|[
