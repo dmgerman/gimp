@@ -19,12 +19,6 @@ begin_comment
 comment|/* For G_OS_WIN32 */
 end_comment
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
-end_ifndef
-
 begin_include
 include|#
 directive|include
@@ -79,6 +73,23 @@ directive|include
 file|<sys/types.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<winsock2.h>
+end_include
+
+begin_else
+else|#
+directive|else
+end_else
+
 begin_include
 include|#
 directive|include
@@ -102,6 +113,11 @@ include|#
 directive|include
 file|<netdb.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
@@ -353,7 +369,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a425a70108
+DECL|struct|__anon2a2acda80108
 block|{
 DECL|member|command
 name|gchar
@@ -377,7 +393,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a425a70208
+DECL|struct|__anon2a2acda80208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -420,6 +436,7 @@ parameter_list|(
 name|gint
 name|port
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|logfile
@@ -466,14 +483,24 @@ specifier|static
 name|void
 name|server_log
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|format
 parameter_list|,
 modifier|...
 parameter_list|)
-function_decl|;
+function_decl|G_GNUC_PRINTF
+parameter_list|(
+function_decl|1
+operator|,
+function_decl|2
 end_function_decl
+
+begin_empty_stmt
+unit|)
+empty_stmt|;
+end_empty_stmt
 
 begin_function_decl
 specifier|static
@@ -623,18 +650,18 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/*  port entry widget  */
+comment|/*  port entry widget    */
 name|NULL
 block|,
-comment|/*  log entry widget  */
+comment|/*  log entry widget     */
 literal|10008
 block|,
 comment|/*  default port number  */
 name|NULL
 block|,
-comment|/*  use stdout  */
+comment|/*  use stdout           */
 name|FALSE
-comment|/*  run  */
+comment|/*  run                  */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -858,6 +885,8 @@ name|struct
 name|timeval
 modifier|*
 name|tvp
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|i
@@ -893,11 +922,6 @@ operator|&
 name|tv
 expr_stmt|;
 block|}
-else|else
-name|tvp
-operator|=
-name|NULL
-expr_stmt|;
 comment|/* Block until input arrives on one or more active sockets      or timeout occurs. */
 name|server_read
 operator|=
@@ -1173,12 +1197,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|server_start (gint port,gchar * logfile)
+DECL|function|server_start (gint port,const gchar * logfile)
 name|server_start
 parameter_list|(
 name|gint
 name|port
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|logfile
@@ -1262,7 +1287,7 @@ argument_list|)
 expr_stmt|;
 name|server_log
 argument_list|(
-literal|"Script-fu initialized and listening...\n"
+literal|"Script-fu server initialized and listening...\n"
 argument_list|)
 expr_stmt|;
 comment|/* Initialize the set of active sockets. */
@@ -1980,6 +2005,67 @@ name|v
 init|=
 literal|1
 decl_stmt|;
+comment|/*  Win32 needs the winsock library initialized.  */
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+specifier|static
+name|gboolean
+name|winsock_initialized
+init|=
+name|FALSE
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|winsock_initialized
+condition|)
+block|{
+name|WORD
+name|wVersionRequested
+init|=
+name|MAKEWORD
+argument_list|(
+literal|2
+argument_list|,
+literal|2
+argument_list|)
+decl_stmt|;
+name|WSADATA
+name|wsaData
+decl_stmt|;
+if|if
+condition|(
+name|WSAStartup
+argument_list|(
+name|wVersionRequested
+argument_list|,
+operator|&
+name|wsaData
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|winsock_initialized
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
+else|else
+block|{
+name|perror
+argument_list|(
+literal|"Can't initialize the Winsock DLL"
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+block|}
+block|}
+endif|#
+directive|endif
 comment|/* Create the socket. */
 name|sock
 operator|=
@@ -2093,9 +2179,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|server_log (gchar * format,...)
+DECL|function|server_log (const gchar * format,...)
 name|server_log
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|format
@@ -2599,23 +2686,11 @@ expr_stmt|;
 block|}
 name|gtk_widget_destroy
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
 name|widget
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* G_OS_WIN32 */
-end_comment
 
 end_unit
 

@@ -445,9 +445,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_script_fu_server"
@@ -493,8 +490,6 @@ literal|"<Toolbox>/Xtns/Script-Fu"
 argument_list|)
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_script_fu_eval"
@@ -735,9 +730,6 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 block|}
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
 elseif|else
 if|if
 condition|(
@@ -766,8 +758,6 @@ name|return_vals
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
 elseif|else
 if|if
 condition|(
