@@ -238,7 +238,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|struct|__anon2c6b90d20108
+DECL|struct|__anon2c75a80d0108
 typedef|typedef
 struct|struct
 block|{
@@ -275,7 +275,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6b90d20208
+DECL|struct|__anon2c75a80d0208
 typedef|typedef
 struct|struct
 block|{
@@ -290,7 +290,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6b90d20308
+DECL|struct|__anon2c75a80d0308
 typedef|typedef
 struct|struct
 block|{
@@ -317,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6b90d20408
+DECL|struct|__anon2c75a80d0408
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1009,6 +1009,9 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param

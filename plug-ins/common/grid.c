@@ -178,7 +178,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a33a4780108
+DECL|struct|__anon2b1902b10108
 block|{
 DECL|member|hwidth
 name|gint
@@ -589,6 +589,9 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 name|run_mode
 operator|=

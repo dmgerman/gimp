@@ -52,6 +52,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimp/gimpui.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"ifscompose.h"
 end_include
 
@@ -112,7 +124,7 @@ value|"plug_in_ifscompose"
 end_define
 
 begin_typedef
-DECL|enum|__anon275501c20103
+DECL|enum|__anon2b5f25260103
 typedef|typedef
 enum|enum
 block|{
@@ -132,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon275501c20203
+DECL|enum|__anon2b5f25260203
 typedef|typedef
 enum|enum
 block|{
@@ -150,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275501c20308
+DECL|struct|__anon2b5f25260308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -171,7 +183,7 @@ DECL|member|type
 name|ValuePairType
 name|type
 decl_stmt|;
-DECL|union|__anon275501c2040a
+DECL|union|__anon2b5f2526040a
 union|union
 block|{
 DECL|member|d
@@ -201,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275501c20508
+DECL|struct|__anon2b5f25260508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -231,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275501c20608
+DECL|struct|__anon2b5f25260608
 block|{
 DECL|member|color
 name|IfsColor
@@ -280,7 +292,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275501c20708
+DECL|struct|__anon2b5f25260708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -316,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275501c20808
+DECL|struct|__anon2b5f25260808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -383,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275501c20908
+DECL|struct|__anon2b5f25260908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -554,7 +566,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275501c20a08
+DECL|struct|__anon2b5f25260a08
 block|{
 DECL|member|run
 name|gint
@@ -1721,6 +1733,9 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/* kill (getpid(), 19); */
 comment|/*  Get the active drawable  */
 name|active_drawable
@@ -2153,7 +2168,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"X"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2265,7 +2283,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Y"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2377,7 +2398,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scale"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2489,7 +2513,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Angle"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2602,7 +2629,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Asymmetry"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2714,7 +2744,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Shear"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -2829,7 +2862,10 @@ name|flip_check_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Flip"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3001,7 +3037,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Simple"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3103,7 +3142,10 @@ name|target_cmap
 operator|=
 name|color_map_create
 argument_list|(
+name|_
+argument_list|(
 literal|"IfsCompose: Target"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3160,7 +3202,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scale hue by:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3310,7 +3355,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Scale value by:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -3465,7 +3513,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Full"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3548,7 +3599,10 @@ name|red_cmap
 operator|=
 name|color_map_create
 argument_list|(
+name|_
+argument_list|(
 literal|"IfsCompose: Red"
+argument_list|)
 argument_list|,
 operator|&
 name|color
@@ -3635,7 +3689,10 @@ name|green_cmap
 operator|=
 name|color_map_create
 argument_list|(
+name|_
+argument_list|(
 literal|"IfsCompose: Green"
+argument_list|)
 argument_list|,
 operator|&
 name|color
@@ -3722,7 +3779,10 @@ name|blue_cmap
 operator|=
 name|color_map_create
 argument_list|(
+name|_
+argument_list|(
 literal|"IfsCompose: Blue"
+argument_list|)
 argument_list|,
 operator|&
 name|color
@@ -3809,7 +3869,10 @@ name|black_cmap
 operator|=
 name|color_map_create
 argument_list|(
+name|_
+argument_list|(
 literal|"IfsCompose: Black"
+argument_list|)
 argument_list|,
 operator|&
 name|color
@@ -4166,7 +4229,10 @@ argument_list|(
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"IfsCompose"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -4202,7 +4268,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"New"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4259,7 +4328,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Delete"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4316,7 +4388,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Defaults"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4373,7 +4448,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4435,7 +4513,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4787,7 +4868,10 @@ name|move_button
 operator|=
 name|gtk_toggle_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Move"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4852,7 +4936,10 @@ name|rotate_button
 operator|=
 name|gtk_toggle_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotate/Scale"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4917,7 +5004,10 @@ name|stretch_button
 operator|=
 name|gtk_toggle_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Stretch"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5045,7 +5135,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Render Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object
@@ -5090,7 +5183,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Preview"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect_object
@@ -5140,7 +5236,10 @@ name|check_button
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Auto"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5366,7 +5465,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Color Transformation"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5428,7 +5530,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Relative Probability:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -6304,7 +6409,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Move"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -6370,7 +6478,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Rotate/Scale"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -6436,7 +6547,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Stretch"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -6525,7 +6639,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Select All"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -6583,7 +6700,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Recompute Center"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -6641,7 +6761,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Undo"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -6699,7 +6822,10 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Redo"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_menu_append
@@ -6844,7 +6970,10 @@ operator|->
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"IfsCompose Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -6905,7 +7034,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Close"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -7034,7 +7166,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Max. Memory:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7143,7 +7278,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Iterations:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7257,7 +7395,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Subdivide:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7366,7 +7507,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Spot Radius:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -7813,7 +7957,10 @@ name|sprintf
 argument_list|(
 name|buffer
 argument_list|,
+name|_
+argument_list|(
 literal|"Rendering IFS (%d/%d)..."
+argument_list|)
 argument_list|,
 name|band_no
 operator|+
@@ -7916,7 +8063,10 @@ name|sprintf
 argument_list|(
 name|buffer
 argument_list|,
+name|_
+argument_list|(
 literal|"Copying IFS to image (%d/%d)..."
+argument_list|)
 argument_list|,
 name|band_no
 operator|+

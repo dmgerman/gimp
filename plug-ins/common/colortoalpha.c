@@ -60,7 +60,7 @@ value|20
 end_define
 
 begin_typedef
-DECL|struct|__anon28b95b640108
+DECL|struct|__anon2ad30dc60108
 typedef|typedef
 struct|struct
 block|{
@@ -78,7 +78,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b95b640208
+DECL|struct|__anon2ad30dc60208
 typedef|typedef
 struct|struct
 block|{
@@ -93,7 +93,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b95b640308
+DECL|struct|__anon2ad30dc60308
 typedef|typedef
 struct|struct
 block|{
@@ -484,6 +484,9 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 name|values
 index|[

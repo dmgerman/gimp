@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291938eb0108
+DECL|struct|__anon2781ebb10108
 block|{
 DECL|member|colors
 name|guchar
@@ -680,6 +680,9 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 name|values
 index|[

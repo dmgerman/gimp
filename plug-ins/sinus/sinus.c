@@ -224,7 +224,7 @@ value|1L
 end_define
 
 begin_typedef
-DECL|struct|__anon2b2d66190108
+DECL|struct|__anon2c09fd9a0108
 typedef|typedef
 struct|struct
 block|{
@@ -333,7 +333,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b2d66190208
+DECL|struct|__anon2c09fd9a0208
 typedef|typedef
 struct|struct
 block|{
@@ -979,6 +979,9 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1488,7 +1491,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2b2d66190308
+DECL|struct|__anon2c09fd9a0308
 DECL|member|r
 DECL|member|g
 DECL|member|b

@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278eba4a0103
+DECL|enum|__anon2a1f1c940103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278eba4a0203
+DECL|enum|__anon2a1f1c940203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -201,7 +201,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon278eba4a0308
+DECL|struct|__anon2a1f1c940308
 specifier|static
 struct|struct
 block|{
@@ -222,7 +222,7 @@ DECL|member|drawable_has_alpha
 name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
-DECL|struct|__anon278eba4a0408
+DECL|struct|__anon2a1f1c940408
 struct|struct
 block|{
 DECL|member|x0
@@ -591,7 +591,7 @@ comment|/*======================================================================
 end_comment
 
 begin_struct
-DECL|struct|__anon278eba4a0508
+DECL|struct|__anon2a1f1c940508
 specifier|static
 struct|struct
 block|{
@@ -5951,6 +5951,9 @@ block|{
 name|GStatusType
 name|status
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|status
 operator|=
 name|STATUS_SUCCESS
