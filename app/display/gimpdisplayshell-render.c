@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -352,65 +358,6 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|check_combos
-specifier|static
-specifier|const
-name|guchar
-name|check_combos
-index|[
-literal|6
-index|]
-index|[
-literal|2
-index|]
-init|=
-block|{
-block|{
-literal|204
-block|,
-literal|255
-block|}
-block|,
-comment|/*  LIGHT_CHECKS  */
-block|{
-literal|153
-block|,
-literal|102
-block|}
-block|,
-comment|/*  GRAY_CHECKS   */
-block|{
-literal|0
-block|,
-literal|51
-block|}
-block|,
-comment|/*  DARK_CHECKS   */
-block|{
-literal|255
-block|,
-literal|255
-block|}
-block|,
-comment|/*  WHITE_ONLY    */
-block|{
-literal|127
-block|,
-literal|127
-block|}
-block|,
-comment|/*  GRAY_ONLY     */
-block|{
-literal|0
-block|,
-literal|0
-block|}
-comment|/*  BLACK_ONLY    */
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
 DECL|function|render_init (Gimp * gimp)
@@ -651,6 +598,11 @@ decl_stmt|;
 name|GimpCheckSize
 name|check_size
 decl_stmt|;
+name|guchar
+name|light
+decl_stmt|,
+name|dark
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
@@ -750,6 +702,17 @@ argument_list|,
 literal|65536
 argument_list|)
 expr_stmt|;
+name|gimp_checks_get_shades
+argument_list|(
+name|check_type
+argument_list|,
+operator|&
+name|light
+argument_list|,
+operator|&
+name|dark
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -797,13 +760,7 @@ name|j
 operator|*
 name|i
 operator|+
-name|check_combos
-index|[
-name|check_type
-index|]
-index|[
-literal|0
-index|]
+name|dark
 operator|*
 operator|(
 literal|255
@@ -835,13 +792,7 @@ name|j
 operator|*
 name|i
 operator|+
-name|check_combos
-index|[
-name|check_type
-index|]
-index|[
-literal|1
-index|]
+name|light
 operator|*
 operator|(
 literal|255
