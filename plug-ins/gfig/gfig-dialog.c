@@ -465,7 +465,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0ef72a0108
+DECL|struct|__anon27c2848d0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -7422,7 +7422,55 @@ operator|=
 name|GIMP_PATTERN_BUCKET_FILL
 expr_stmt|;
 break|break;
-default|default:
+case|case
+name|FILL_GRADIENT
+case|:
+name|gimp_edit_blend
+argument_list|(
+name|gfig_context
+operator|->
+name|drawable_id
+argument_list|,
+name|GIMP_CUSTOM_MODE
+argument_list|,
+name|GIMP_NORMAL_MODE
+argument_list|,
+name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
+argument_list|,
+literal|100.0
+argument_list|,
+comment|/* opacity            */
+literal|0.0
+argument_list|,
+comment|/* offset             */
+name|GIMP_REPEAT_NONE
+argument_list|,
+name|FALSE
+argument_list|,
+comment|/* reverse            */
+name|FALSE
+argument_list|,
+comment|/* supersampling      */
+literal|0
+argument_list|,
+comment|/* max_depth          */
+literal|0.0
+argument_list|,
+comment|/* threshold          */
+name|FALSE
+argument_list|,
+comment|/* dither             */
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|,
+comment|/* (x1, y1) - ignored */
+literal|0.0
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
+comment|/* (x2, y2) - ignored */
 return|return;
 block|}
 name|gimp_edit_bucket_fill
