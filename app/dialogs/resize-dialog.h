@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b246890103
+DECL|enum|__anon278b61fd0103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27b246890203
+DECL|enum|__anon278b61fd0203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -114,27 +114,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon27b246890308
-block|{
-DECL|member|resize
-name|Resize
-modifier|*
-name|resize
-decl_stmt|;
-DECL|member|gimage
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
-DECL|typedef|ImageResize
-block|}
-name|ImageResize
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  If resolution_x is zero, then don't show resolution modification  *  parts of the dialog.  *  *  If object and signal are non-NULL, then attach the cancel callback to signal.  *  *  If cancel_callback is NULL, then the dialog will be destroyed on "Cancel".  */

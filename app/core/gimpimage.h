@@ -948,6 +948,12 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|GimpProgressFunc
+name|progress_func
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl

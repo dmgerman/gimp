@@ -1352,6 +1352,9 @@ expr_stmt|;
 name|gimp_dialog_factories_idle
 argument_list|()
 expr_stmt|;
+name|gdk_flush
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -1370,6 +1373,9 @@ name|gdisplays_unset_busy
 argument_list|()
 expr_stmt|;
 name|gimp_dialog_factories_unidle
+argument_list|()
+expr_stmt|;
+name|gdk_flush
 argument_list|()
 expr_stmt|;
 block|}

@@ -789,7 +789,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b3ca2c0103
+DECL|enum|__anon2a150d370103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -4066,7 +4066,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_scale (GimpImage * gimage,gint new_width,gint new_height)
+DECL|function|gimp_image_scale (GimpImage * gimage,gint new_width,gint new_height,GimpProgressFunc progress_func,gpointer progress_data)
 name|gimp_image_scale
 parameter_list|(
 name|GimpImage
@@ -4078,6 +4078,12 @@ name|new_width
 parameter_list|,
 name|gint
 name|new_height
+parameter_list|,
+name|GimpProgressFunc
+name|progress_func
+parameter_list|,
+name|gpointer
+name|progress_data
 parameter_list|)
 block|{
 name|GimpChannel
@@ -4126,6 +4132,17 @@ name|img_scale_h
 init|=
 literal|1.0
 decl_stmt|;
+name|gint
+name|num_channels
+decl_stmt|;
+name|gint
+name|num_layers
+decl_stmt|;
+name|gint
+name|progress_current
+init|=
+literal|1
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -4151,6 +4168,22 @@ name|gimage
 operator|->
 name|gimp
 argument_list|)
+expr_stmt|;
+name|num_channels
+operator|=
+name|gimage
+operator|->
+name|channels
+operator|->
+name|num_children
+expr_stmt|;
+name|num_layers
+operator|=
+name|gimage
+operator|->
+name|layers
+operator|->
+name|num_children
 expr_stmt|;
 comment|/*  Get the floating layer if one exists  */
 name|floating_layer
@@ -4277,6 +4310,29 @@ argument_list|,
 name|new_height
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|progress_func
+condition|)
+block|{
+call|(
+modifier|*
+name|progress_func
+call|)
+argument_list|(
+literal|0
+argument_list|,
+name|num_channels
+operator|+
+name|num_layers
+argument_list|,
+name|progress_current
+operator|++
+argument_list|,
+name|progress_data
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/*  Don't forget the selection mask!  */
 comment|/*  if (channel_is_empty(gimage->selection_mask))         gimp_channel_resize(gimage->selection_mask, new_width, new_height, 0, 0)       else   */
@@ -4351,6 +4407,29 @@ argument_list|(
 name|remove
 argument_list|,
 name|layer
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|progress_func
+condition|)
+block|{
+call|(
+modifier|*
+name|progress_func
+call|)
+argument_list|(
+literal|0
+argument_list|,
+name|num_channels
+operator|+
+name|num_layers
+argument_list|,
+name|progress_current
+operator|++
+argument_list|,
+name|progress_data
 argument_list|)
 expr_stmt|;
 block|}

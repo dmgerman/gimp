@@ -180,7 +180,7 @@ name|GimpUnsetBusyFunc
 name|gui_unset_busy_func
 decl_stmt|;
 DECL|member|busy
-name|gboolean
+name|gint
 name|busy
 decl_stmt|;
 DECL|member|busy_idle_id

@@ -1773,11 +1773,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimp_set_busy_until_idle
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|gimp_image_resize
 argument_list|(
 name|gimage
@@ -1997,11 +1992,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|gimp_set_busy_until_idle
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|gimp_image_scale
 argument_list|(
 name|gimage
@@ -2009,6 +1999,10 @@ argument_list|,
 name|new_width
 argument_list|,
 name|new_height
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
