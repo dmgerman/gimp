@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ead1120108
+DECL|struct|__anon2ac43beb0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -543,7 +543,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't Handle Layers"
+literal|"can't handle layers"
 argument_list|)
 block|,
 block|{
@@ -573,7 +573,7 @@ name|export_merge
 block|,
 name|N_
 argument_list|(
-literal|"can only Handle Layers as Animation Frames"
+literal|"can only handle layers as animation frames"
 argument_list|)
 block|,
 block|{
@@ -606,7 +606,7 @@ name|export_flatten
 block|,
 name|N_
 argument_list|(
-literal|"can only Handle Layers as Animation Frames"
+literal|"can only handle layers as animation frames"
 argument_list|)
 block|,
 block|{
@@ -639,7 +639,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't Handle Layers"
+literal|"can't handle layers"
 argument_list|)
 block|,
 block|{
@@ -669,7 +669,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't Handle Transparency"
+literal|"can't handle transparency"
 argument_list|)
 block|,
 block|{
@@ -699,7 +699,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only Handle RGB Images"
+literal|"can only handle RGB images"
 argument_list|)
 block|,
 block|{
@@ -729,7 +729,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only Handle Grayscale Images"
+literal|"can only handle grayscale images"
 argument_list|)
 block|,
 block|{
@@ -759,13 +759,13 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only Handle Indexed Images"
+literal|"can only handle indexed images"
 argument_list|)
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Convert to indexed using default settings\n"
+literal|"Convert to Indexed using default settings\n"
 literal|"(Do it manually to tune the result)"
 argument_list|)
 block|,
@@ -790,7 +790,7 @@ name|export_convert_grayscale
 block|,
 name|N_
 argument_list|(
-literal|"can only Handle RGB or Grayscale Images"
+literal|"can only handle RGB or grayscale images"
 argument_list|)
 block|,
 block|{
@@ -823,7 +823,7 @@ name|export_convert_indexed
 block|,
 name|N_
 argument_list|(
-literal|"can only Handle RGB or Indexed Images"
+literal|"can only handle RGB or indexed images"
 argument_list|)
 block|,
 block|{
@@ -834,7 +834,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Convert to indexed using default settings\n"
+literal|"Convert to Indexed using default settings\n"
 literal|"(Do it manually to tune the result)"
 argument_list|)
 block|}
@@ -857,13 +857,13 @@ name|export_convert_grayscale
 block|,
 name|N_
 argument_list|(
-literal|"can only Handle Grayscale or Indexed Images"
+literal|"can only handle grayscale or indexed images"
 argument_list|)
 block|,
 block|{
 name|N_
 argument_list|(
-literal|"Convert to indexed using default settings\n"
+literal|"Convert to Indexed using default settings\n"
 literal|"(Do it manually to tune the result)"
 argument_list|)
 block|,
@@ -891,7 +891,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"needs an Alpha Channel"
+literal|"needs an alpha channel"
 argument_list|)
 block|,
 block|{
