@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -1046,6 +1052,10 @@ name|gchar
 modifier|*
 name|basename
 decl_stmt|;
+name|gchar
+modifier|*
+name|escaped
+decl_stmt|;
 name|uri
 operator|=
 name|gimp_object_get_name
@@ -1070,6 +1080,18 @@ argument_list|(
 name|uri
 argument_list|)
 expr_stmt|;
+name|escaped
+operator|=
+name|gimp_escape_uline
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|basename
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|G_OBJECT
@@ -1079,7 +1101,7 @@ argument_list|)
 argument_list|,
 literal|"label"
 argument_list|,
-name|basename
+name|escaped
 argument_list|,
 literal|"tooltip"
 argument_list|,
@@ -1099,7 +1121,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|basename
+name|escaped
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
