@@ -5205,7 +5205,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9f0bb0108
+DECL|struct|__anon2a0dd1bc0108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -8281,6 +8281,10 @@ operator|>
 name|bsp
 operator|->
 name|cell_width
+operator|-
+literal|2
+operator|*
+name|MARGIN_WIDTH
 operator|||
 name|brush
 operator|->
@@ -8291,6 +8295,10 @@ operator|>
 name|bsp
 operator|->
 name|cell_height
+operator|-
+literal|2
+operator|*
+name|MARGIN_HEIGHT
 operator|||
 name|GIMP_IS_REALLY_A_BRUSH_PIPE
 argument_list|(
