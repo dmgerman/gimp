@@ -132,6 +132,12 @@ argument_list|,
 name|display_ID
 argument_list|)
 expr_stmt|;
+name|plug_in
+operator|->
+name|progress_cancel_id
+operator|=
+literal|0
+expr_stmt|;
 if|if
 condition|(
 name|plug_in
