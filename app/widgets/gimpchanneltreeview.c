@@ -9,29 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -489,6 +466,15 @@ operator|=
 name|_
 argument_list|(
 literal|"Lower Channel to Bottom"
+argument_list|)
+expr_stmt|;
+name|item_view_class
+operator|->
+name|reorder_desc
+operator|=
+name|_
+argument_list|(
+literal|"Reorder Channel"
 argument_list|)
 expr_stmt|;
 block|}

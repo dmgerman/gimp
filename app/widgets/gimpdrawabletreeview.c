@@ -780,6 +780,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  GimpContainerView methods  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -945,6 +949,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  GimpItemTreeView methods  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1065,6 +1073,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/*  callbacks  */
+end_comment
 
 begin_function
 specifier|static
@@ -1204,13 +1216,6 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|g_print
-argument_list|(
-literal|"gimp_drawable_tree_view_select: floating sel present (%d)\n"
-argument_list|,
-name|retval
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|renderer

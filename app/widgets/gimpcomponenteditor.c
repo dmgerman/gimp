@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f1e4950103
+DECL|enum|__anon2b5ce2740103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -188,7 +188,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_component_editor_toggled
+name|gimp_component_editor_clicked
 parameter_list|(
 name|GtkCellRendererToggle
 modifier|*
@@ -197,6 +197,9 @@ parameter_list|,
 name|gchar
 modifier|*
 name|path
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpComponentEditor
 modifier|*
@@ -658,11 +661,11 @@ name|editor
 operator|->
 name|eye_cell
 argument_list|,
-literal|"toggled"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_component_editor_toggled
+name|gimp_component_editor_clicked
 argument_list|)
 argument_list|,
 name|editor
@@ -1645,8 +1648,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_component_editor_toggled (GtkCellRendererToggle * cellrenderertoggle,gchar * path_str,GimpComponentEditor * editor)
-name|gimp_component_editor_toggled
+DECL|function|gimp_component_editor_clicked (GtkCellRendererToggle * cellrenderertoggle,gchar * path_str,GdkModifierType state,GimpComponentEditor * editor)
+name|gimp_component_editor_clicked
 parameter_list|(
 name|GtkCellRendererToggle
 modifier|*
@@ -1655,6 +1658,9 @@ parameter_list|,
 name|gchar
 modifier|*
 name|path_str
+parameter_list|,
+name|GdkModifierType
+name|state
 parameter_list|,
 name|GimpComponentEditor
 modifier|*

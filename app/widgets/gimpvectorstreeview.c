@@ -444,6 +444,15 @@ argument_list|(
 literal|"Lower Path to Bottom"
 argument_list|)
 expr_stmt|;
+name|item_view_class
+operator|->
+name|reorder_desc
+operator|=
+name|_
+argument_list|(
+literal|"Reorder Path"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

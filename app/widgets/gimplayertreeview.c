@@ -928,6 +928,15 @@ argument_list|(
 literal|"Lower Layer to Bottom"
 argument_list|)
 expr_stmt|;
+name|item_view_class
+operator|->
+name|reorder_desc
+operator|=
+name|_
+argument_list|(
+literal|"Reorder Layer"
+argument_list|)
+expr_stmt|;
 name|gimp_rgba_set
 argument_list|(
 operator|&

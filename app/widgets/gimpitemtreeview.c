@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b46fa80103
+DECL|enum|__anon2c5ba6590103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2708,10 +2708,9 @@ name|dest_index
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
-argument_list|(
-literal|"Reorder Item"
-argument_list|)
+name|item_view_class
+operator|->
+name|reorder_desc
 argument_list|)
 expr_stmt|;
 block|}

@@ -483,6 +483,12 @@ name|gchar
 modifier|*
 name|lower_to_bottom_desc
 decl_stmt|;
+DECL|member|reorder_desc
+specifier|const
+name|gchar
+modifier|*
+name|reorder_desc
+decl_stmt|;
 block|}
 struct|;
 end_struct
