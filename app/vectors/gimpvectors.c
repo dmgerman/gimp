@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3d3e70103
+DECL|enum|__anon2b61c9280103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -166,6 +166,30 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interp_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_vectors_resize
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|gint
+name|new_width
+parameter_list|,
+name|gint
+name|new_height
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -412,6 +436,12 @@ operator|->
 name|scale
 operator|=
 name|gimp_vectors_scale
+expr_stmt|;
+name|item_class
+operator|->
+name|resize
+operator|=
+name|gimp_vectors_resize
 expr_stmt|;
 name|item_class
 operator|->
@@ -753,6 +783,31 @@ name|new_offset_y
 parameter_list|,
 name|GimpInterpolationType
 name|interp_type
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_vectors_resize (GimpItem * item,gint new_width,gint new_height,gint offset_x,gint offset_y)
+name|gimp_vectors_resize
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|gint
+name|new_width
+parameter_list|,
+name|gint
+name|new_height
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
 parameter_list|)
 block|{ }
 end_function
