@@ -164,7 +164,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f536640103
+DECL|enum|__anon2bbd2c6d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1392,10 +1392,16 @@ name|GIMP_THUMB_STATE_UNKNOWN
 argument_list|,
 literal|"image-filesize"
 argument_list|,
+operator|(
+name|gint64
+operator|)
 literal|0
 argument_list|,
 literal|"image-mtime"
 argument_list|,
+operator|(
+name|gint64
+operator|)
 literal|0
 argument_list|,
 literal|"image-width"
