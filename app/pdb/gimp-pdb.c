@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -357,7 +357,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27baa5930108
+DECL|struct|__anon28c843710108
 block|{
 DECL|member|old_name
 specifier|const
