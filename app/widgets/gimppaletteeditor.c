@@ -294,7 +294,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275833ef0103
+DECL|enum|__anon298669cc0103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -473,7 +473,8 @@ modifier|*
 name|edit_menu_item
 decl_stmt|;
 DECL|member|color_notebook
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|color_notebook
 decl_stmt|;
 DECL|member|color_notebook_active

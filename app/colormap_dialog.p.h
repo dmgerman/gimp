@@ -202,7 +202,8 @@ modifier|*
 name|add_item
 decl_stmt|;
 DECL|member|color_notebook
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|color_notebook
 decl_stmt|;
 block|}

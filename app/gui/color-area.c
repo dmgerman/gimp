@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ebcebc0103
+DECL|enum|__anon2783beaf0103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -243,7 +243,8 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|color_notebook
 specifier|static
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|color_notebook
 init|=
 name|NULL

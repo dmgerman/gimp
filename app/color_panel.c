@@ -82,7 +82,8 @@ name|gboolean
 name|button_down
 decl_stmt|;
 DECL|member|color_notebook
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|color_notebook
 decl_stmt|;
 DECL|member|color_notebook_active

@@ -41,11 +41,9 @@ directive|include
 file|<string.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"appenv.h"
-end_include
+begin_comment
+comment|/*#include "appenv.h"*/
+end_comment
 
 begin_include
 include|#
@@ -78,8 +76,10 @@ name|color_notebook_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -91,8 +91,10 @@ name|color_notebook_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -102,14 +104,13 @@ specifier|static
 name|void
 name|color_notebook_update_callback
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -137,7 +138,7 @@ name|color_notebook_help_func
 parameter_list|(
 name|gchar
 modifier|*
-name|data
+name|help_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -147,8 +148,16 @@ comment|/* information we keep on each registered colour selector */
 end_comment
 
 begin_typedef
-DECL|struct|_ColorSelectorInfo
+DECL|typedef|ColorSelectorInfo
 typedef|typedef
+name|struct
+name|_ColorSelectorInfo
+name|ColorSelectorInfo
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_ColorSelectorInfo
 struct|struct
 name|_ColorSelectorInfo
 block|{
@@ -194,25 +203,21 @@ modifier|*
 name|death_data
 decl_stmt|;
 DECL|member|next
-name|struct
-name|_ColorSelectorInfo
+name|ColorSelectorInfo
 modifier|*
 name|next
 decl_stmt|;
-DECL|typedef|ColorSelectorInfo
 block|}
-name|ColorSelectorInfo
-typedef|;
-end_typedef
+struct|;
+end_struct
 
-begin_typedef
+begin_struct
 DECL|struct|_ColorSelectorInstance
-typedef|typedef
 struct|struct
 name|_ColorSelectorInstance
 block|{
 DECL|member|color_notebook
-name|_ColorNotebook
+name|ColorNotebook
 modifier|*
 name|color_notebook
 decl_stmt|;
@@ -232,16 +237,13 @@ name|gpointer
 name|selector_data
 decl_stmt|;
 DECL|member|next
-name|struct
-name|_ColorSelectorInstance
+name|ColorSelectorInstance
 modifier|*
 name|next
 decl_stmt|;
-DECL|typedef|ColorSelectorInstance
 block|}
-name|ColorSelectorInstance
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_function_decl
 specifier|static
@@ -270,64 +272,52 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_define
-DECL|macro|RED
-define|#
-directive|define
+begin_enum
+enum|enum
+DECL|enum|__anon2b8bae670103
+block|{
+DECL|enumerator|RED
 name|RED
-value|0
-end_define
-
-begin_define
-DECL|macro|GREEN
-define|#
-directive|define
+block|,
+DECL|enumerator|GREEN
 name|GREEN
-value|1
-end_define
-
-begin_define
-DECL|macro|BLUE
-define|#
-directive|define
+block|,
+DECL|enumerator|BLUE
 name|BLUE
-value|2
-end_define
-
-begin_define
-DECL|macro|NUM_COLORS
-define|#
-directive|define
+block|,
+DECL|enumerator|NUM_COLORS
 name|NUM_COLORS
-value|3
-end_define
+block|}
+enum|;
+end_enum
 
 begin_function
-name|ColorNotebookP
-DECL|function|color_notebook_new (int r,int g,int b,ColorNotebookCallback callback,void * client_data,int wants_updates)
+name|ColorNotebook
+modifier|*
+DECL|function|color_notebook_new (gint red,gint green,gint blue,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates)
 name|color_notebook_new
 parameter_list|(
-name|int
-name|r
+name|gint
+name|red
 parameter_list|,
-name|int
-name|g
+name|gint
+name|green
 parameter_list|,
-name|int
-name|b
+name|gint
+name|blue
 parameter_list|,
 name|ColorNotebookCallback
 name|callback
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|client_data
 parameter_list|,
-name|int
+name|gboolean
 name|wants_updates
 parameter_list|)
 block|{
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 decl_stmt|;
 name|GtkWidget
@@ -355,7 +345,7 @@ name|cnp
 operator|=
 name|g_new
 argument_list|(
-name|_ColorNotebook
+name|ColorNotebook
 argument_list|,
 literal|1
 argument_list|)
@@ -404,7 +394,7 @@ index|[
 name|RED
 index|]
 operator|=
-name|r
+name|red
 operator|&
 literal|0xff
 expr_stmt|;
@@ -422,7 +412,7 @@ index|[
 name|GREEN
 index|]
 operator|=
-name|g
+name|green
 operator|&
 literal|0xff
 expr_stmt|;
@@ -440,7 +430,7 @@ index|[
 name|BLUE
 index|]
 operator|=
-name|b
+name|blue
 operator|&
 literal|0xff
 expr_stmt|;
@@ -635,11 +625,11 @@ name|m
 operator|.
 name|new
 argument_list|(
-name|r
+name|red
 argument_list|,
-name|g
+name|green
 argument_list|,
-name|b
+name|blue
 argument_list|,
 name|color_notebook_update_callback
 argument_list|,
@@ -837,10 +827,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_show (ColorNotebookP cnp)
+DECL|function|color_notebook_show (ColorNotebook * cnp)
 name|color_notebook_show
 parameter_list|(
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 parameter_list|)
 block|{
@@ -863,10 +854,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_hide (ColorNotebookP cnp)
+DECL|function|color_notebook_hide (ColorNotebook * cnp)
 name|color_notebook_hide
 parameter_list|(
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 parameter_list|)
 block|{
@@ -889,10 +881,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_free (ColorNotebookP cnp)
+DECL|function|color_notebook_free (ColorNotebook * cnp)
 name|color_notebook_free
 parameter_list|(
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 parameter_list|)
 block|{
@@ -999,22 +992,23 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_notebook_set_color (ColorNotebookP cnp,int r,int g,int b,int set_current)
+DECL|function|color_notebook_set_color (ColorNotebook * cnp,gint red,gint green,gint blue,gboolean set_current)
 name|color_notebook_set_color
 parameter_list|(
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 parameter_list|,
-name|int
-name|r
+name|gint
+name|red
 parameter_list|,
-name|int
-name|g
+name|gint
+name|green
 parameter_list|,
-name|int
-name|b
+name|gint
+name|blue
 parameter_list|,
-name|int
+name|gboolean
 name|set_current
 parameter_list|)
 block|{
@@ -1036,7 +1030,7 @@ index|[
 name|RED
 index|]
 operator|=
-name|r
+name|red
 expr_stmt|;
 name|cnp
 operator|->
@@ -1045,7 +1039,7 @@ index|[
 name|GREEN
 index|]
 operator|=
-name|g
+name|green
 expr_stmt|;
 name|cnp
 operator|->
@@ -1054,7 +1048,7 @@ index|[
 name|BLUE
 index|]
 operator|=
-name|b
+name|blue
 expr_stmt|;
 if|if
 condition|(
@@ -1068,7 +1062,7 @@ index|[
 name|RED
 index|]
 operator|=
-name|r
+name|red
 expr_stmt|;
 name|cnp
 operator|->
@@ -1077,7 +1071,7 @@ index|[
 name|GREEN
 index|]
 operator|=
-name|g
+name|green
 expr_stmt|;
 name|cnp
 operator|->
@@ -1086,7 +1080,7 @@ index|[
 name|BLUE
 index|]
 operator|=
-name|b
+name|blue
 expr_stmt|;
 block|}
 name|csel
@@ -1107,11 +1101,11 @@ name|csel
 operator|->
 name|selector_data
 argument_list|,
-name|r
+name|red
 argument_list|,
-name|g
+name|green
 argument_list|,
-name|b
+name|blue
 argument_list|,
 name|set_current
 argument_list|)
@@ -1126,28 +1120,28 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|color_notebook_update_callback (void * data,int r,int g,int b)
+DECL|function|color_notebook_update_callback (gpointer data,gint red,gint green,gint blue)
 name|color_notebook_update_callback
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|,
-name|int
-name|r
+name|gint
+name|red
 parameter_list|,
-name|int
-name|g
+name|gint
+name|green
 parameter_list|,
-name|int
-name|b
+name|gint
+name|blue
 parameter_list|)
 block|{
 name|ColorSelectorInstance
 modifier|*
 name|csel
 decl_stmt|;
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 decl_stmt|;
 name|g_return_if_fail
@@ -1178,7 +1172,7 @@ index|[
 name|RED
 index|]
 operator|=
-name|r
+name|red
 expr_stmt|;
 name|cnp
 operator|->
@@ -1187,7 +1181,7 @@ index|[
 name|GREEN
 index|]
 operator|=
-name|g
+name|green
 expr_stmt|;
 name|cnp
 operator|->
@@ -1196,7 +1190,7 @@ index|[
 name|BLUE
 index|]
 operator|=
-name|b
+name|blue
 expr_stmt|;
 if|if
 condition|(
@@ -1262,13 +1256,15 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 decl_stmt|;
 name|cnp
 operator|=
 operator|(
-name|ColorNotebookP
+name|ColorNotebook
+operator|*
 operator|)
 name|data
 expr_stmt|;
@@ -1330,13 +1326,15 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 decl_stmt|;
 name|cnp
 operator|=
 operator|(
-name|ColorNotebookP
+name|ColorNotebook
+operator|*
 operator|)
 name|data
 expr_stmt|;
@@ -1402,7 +1400,8 @@ name|guint
 name|page_num
 parameter_list|)
 block|{
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 decl_stmt|;
 name|ColorSelectorInstance
@@ -1500,7 +1499,8 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|ColorNotebookP
+name|ColorNotebook
+modifier|*
 name|cnp
 decl_stmt|;
 name|gchar
@@ -1510,7 +1510,8 @@ decl_stmt|;
 name|cnp
 operator|=
 operator|(
-name|ColorNotebookP
+name|ColorNotebook
+operator|*
 operator|)
 name|data
 expr_stmt|;
@@ -1555,16 +1556,16 @@ end_comment
 begin_function
 name|G_MODULE_EXPORT
 name|GimpColorSelectorID
-DECL|function|gimp_color_selector_register (const char * name,const char * help_page,GimpColorSelectorMethods * methods)
+DECL|function|gimp_color_selector_register (const gchar * name,const gchar * help_page,GimpColorSelectorMethods * methods)
 name|gimp_color_selector_register
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|help_page
 parameter_list|,
@@ -1674,7 +1675,7 @@ end_function
 begin_function
 name|G_MODULE_EXPORT
 name|gboolean
-DECL|function|gimp_color_selector_unregister (GimpColorSelectorID id,void (* callback)(void * data),void * data)
+DECL|function|gimp_color_selector_unregister (GimpColorSelectorID id,void (* callback)(gpointer data),gpointer data)
 name|gimp_color_selector_unregister
 parameter_list|(
 name|GimpColorSelectorID
@@ -1686,13 +1687,11 @@ modifier|*
 name|callback
 function_decl|)
 parameter_list|(
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 parameter_list|,
-name|void
-modifier|*
+name|gpointer
 name|data
 parameter_list|)
 block|{
@@ -1880,10 +1879,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* End of color_notebook.c */
-end_comment
 
 end_unit
 
