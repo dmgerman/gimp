@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db0aa20103
+DECL|enum|__anon29d243de0103
 block|{
 DECL|enumerator|BUTTON_INDEX
 name|BUTTON_INDEX
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db0aa20203
+DECL|enum|__anon29d243de0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -612,17 +612,6 @@ name|G_CALLBACK
 argument_list|(
 name|gtk_main_quit
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_help_connect
-argument_list|(
-name|window
-argument_list|,
-name|gimp_standard_help_func
-argument_list|,
-literal|"gimp-help"
 argument_list|,
 name|NULL
 argument_list|)
