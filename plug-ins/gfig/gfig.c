@@ -386,10 +386,6 @@ name|need_to_scale
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* Don't you just like BIGGG source files? */
-end_comment
-
 begin_function_decl
 specifier|static
 name|gint
@@ -402,6 +398,22 @@ parameter_list|,
 name|FILE
 modifier|*
 name|fp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|match_element
+parameter_list|(
+name|gchar
+modifier|*
+name|buf
+parameter_list|,
+name|gchar
+modifier|*
+name|element_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -919,6 +931,10 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+comment|/* initialize */
+name|gfig_init_object_classes
+argument_list|()
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
@@ -1404,6 +1420,60 @@ end_function
 
 begin_function
 specifier|static
+name|gboolean
+DECL|function|match_element (gchar * buf,gchar * element_name)
+name|match_element
+parameter_list|(
+name|gchar
+modifier|*
+name|buf
+parameter_list|,
+name|gchar
+modifier|*
+name|element_name
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|ptr
+init|=
+name|buf
+decl_stmt|;
+if|if
+condition|(
+operator|*
+name|ptr
+operator|!=
+literal|'<'
+condition|)
+return|return
+name|FALSE
+return|;
+name|ptr
+operator|++
+expr_stmt|;
+if|if
+condition|(
+name|ptr
+operator|==
+name|strstr
+argument_list|(
+name|ptr
+argument_list|,
+name|element_name
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|gfig_load_objs (GFigObj * gfig,gint load_count,FILE * fp)
 name|gfig_load_objs
@@ -1480,12 +1550,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|strcmp
+name|match_element
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"<Object Line>"
+literal|"Line"
 argument_list|)
 condition|)
 block|{
@@ -1500,12 +1569,11 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
-name|strcmp
+name|match_element
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"<Object Circle>"
+literal|"Circle"
 argument_list|)
 condition|)
 block|{
@@ -1520,12 +1588,11 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
-name|strcmp
+name|match_element
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"<Object Ellipse>"
+literal|"Ellipse"
 argument_list|)
 condition|)
 block|{
@@ -1540,12 +1607,11 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
-name|strcmp
+name|match_element
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"<Object Poly>"
+literal|"Poly"
 argument_list|)
 condition|)
 block|{
@@ -1560,12 +1626,11 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
-name|strcmp
+name|match_element
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"<Object Star>"
+literal|"Star"
 argument_list|)
 condition|)
 block|{
@@ -1580,12 +1645,11 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
-name|strcmp
+name|match_element
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"<Object Spiral>"
+literal|"Spiral"
 argument_list|)
 condition|)
 block|{
@@ -1600,12 +1664,11 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
-name|strcmp
+name|match_element
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"<Object Bezier>"
+literal|"Bezier"
 argument_list|)
 condition|)
 block|{
@@ -1620,12 +1683,11 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
-name|strcmp
+name|match_element
 argument_list|(
 name|load_buf
 argument_list|,
-literal|"<Object Arc>"
+literal|"Arc"
 argument_list|)
 condition|)
 block|{
@@ -2334,7 +2396,7 @@ name|g_string_append_printf
 argument_list|(
 name|string
 argument_list|,
-literal|"<Object Line>\n"
+literal|"<Line>\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2345,7 +2407,7 @@ name|g_string_append_printf
 argument_list|(
 name|string
 argument_list|,
-literal|"<Object Circle>\n"
+literal|"<Circle>\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2356,7 +2418,7 @@ name|g_string_append_printf
 argument_list|(
 name|string
 argument_list|,
-literal|"<Object Ellipse>\n"
+literal|"<Ellipse>\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2367,7 +2429,7 @@ name|g_string_append_printf
 argument_list|(
 name|string
 argument_list|,
-literal|"<Object Arc>\n"
+literal|"<Arc>\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2378,7 +2440,7 @@ name|g_string_append_printf
 argument_list|(
 name|string
 argument_list|,
-literal|"<Object Poly>\n"
+literal|"<Poly>\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2389,7 +2451,7 @@ name|g_string_append_printf
 argument_list|(
 name|string
 argument_list|,
-literal|"<Object Star>\n"
+literal|"<Star>\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2400,7 +2462,7 @@ name|g_string_append_printf
 argument_list|(
 name|string
 argument_list|,
-literal|"<Object Spiral>\n"
+literal|"<Spiral>\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2411,7 +2473,7 @@ name|g_string_append_printf
 argument_list|(
 name|string
 argument_list|,
-literal|"<Object Bezier>\n"
+literal|"<Bezier>\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3124,6 +3186,8 @@ block|{
 name|objs
 operator|->
 name|obj
+operator|->
+name|class
 operator|->
 name|savefunc
 argument_list|(

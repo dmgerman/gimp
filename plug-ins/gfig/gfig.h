@@ -113,9 +113,27 @@ function_decl|;
 end_typedef
 
 begin_typedef
+DECL|typedef|DobjCreateFunc
+typedef|typedef
+name|struct
+name|Dobject
+modifier|*
+function_decl|(
+modifier|*
+name|DobjCreateFunc
+function_decl|)
+parameter_list|(
+name|gint
+parameter_list|,
+name|gint
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0103
+DECL|enum|__anon2bdf6d140103
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -136,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b7acb0208
+DECL|struct|__anon2bdf6d140208
 block|{
 DECL|member|gridspacing
 name|gint
@@ -171,7 +189,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0303
+DECL|enum|__anon2bdf6d140303
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -195,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0403
+DECL|enum|__anon2bdf6d140403
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -213,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0503
+DECL|enum|__anon2bdf6d140503
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -234,7 +252,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0603
+DECL|enum|__anon2bdf6d140603
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -252,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b7acb0708
+DECL|struct|__anon2bdf6d140708
 block|{
 DECL|member|type
 name|SelectionType
@@ -303,7 +321,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0803
+DECL|enum|__anon2bdf6d140803
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -324,7 +342,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0903
+DECL|enum|__anon2bdf6d140903
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -351,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0a03
+DECL|enum|__anon2bdf6d140a03
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -372,7 +390,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0b03
+DECL|enum|__anon2bdf6d140b03
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -396,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0c03
+DECL|enum|__anon2bdf6d140c03
 block|{
 DECL|enumerator|STYLE_SOURCE_GIMP
 name|STYLE_SOURCE_GIMP
@@ -420,7 +438,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b7acb0d08
+DECL|struct|__anon2bdf6d140d08
 block|{
 DECL|member|name
 name|gchar
@@ -523,10 +541,12 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288b7acb0e03
+DECL|enum|__anon2bdf6d140e03
 block|{
 DECL|enumerator|LINE
 name|LINE
+init|=
+literal|0
 block|,
 DECL|enumerator|CIRCLE
 name|CIRCLE
@@ -598,42 +618,21 @@ name|DobjPoints
 typedef|;
 end_typedef
 
-begin_comment
-comment|/* The object itself */
-end_comment
-
 begin_typedef
-DECL|struct|Dobject
 typedef|typedef
 struct|struct
-name|Dobject
+DECL|struct|__anon2bdf6d140f08
 block|{
 DECL|member|type
 name|DobjType
 name|type
 decl_stmt|;
-comment|/* What is the type? */
-DECL|member|type_data
-name|gint
-name|type_data
-decl_stmt|;
-comment|/* Extra data needed by the object */
-DECL|member|points
-name|DobjPoints
+comment|/* the object type for this class */
+DECL|member|name
+name|gchar
 modifier|*
-name|points
+name|name
 decl_stmt|;
-comment|/* List of points */
-DECL|member|style
-name|Style
-name|style
-decl_stmt|;
-comment|/* this object's individual style settings */
-DECL|member|style_no
-name|gint
-name|style_no
-decl_stmt|;
-comment|/* style index of this specific object */
 DECL|member|drawfunc
 name|DobjFunc
 name|drawfunc
@@ -659,6 +658,69 @@ name|DobjSaveFunc
 name|savefunc
 decl_stmt|;
 comment|/* Save me out */
+DECL|member|createfunc
+name|DobjCreateFunc
+name|createfunc
+decl_stmt|;
+comment|/* create a new one */
+DECL|typedef|DobjClass
+block|}
+name|DobjClass
+typedef|;
+end_typedef
+
+begin_decl_stmt
+DECL|variable|dobj_class
+name|DobjClass
+name|dobj_class
+index|[
+literal|10
+index|]
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* The object itself */
+end_comment
+
+begin_typedef
+DECL|struct|Dobject
+typedef|typedef
+struct|struct
+name|Dobject
+block|{
+DECL|member|type
+name|DobjType
+name|type
+decl_stmt|;
+comment|/* What is the type? */
+DECL|member|class
+name|DobjClass
+modifier|*
+name|class
+decl_stmt|;
+comment|/* What class does it belong to? */
+DECL|member|type_data
+name|gint
+name|type_data
+decl_stmt|;
+comment|/* Extra data needed by the object */
+DECL|member|points
+name|DobjPoints
+modifier|*
+name|points
+decl_stmt|;
+comment|/* List of points */
+DECL|member|style
+name|Style
+name|style
+decl_stmt|;
+comment|/* this object's individual style settings */
+DECL|member|style_no
+name|gint
+name|style_no
+decl_stmt|;
+comment|/* style index of this specific object */
 DECL|typedef|Dobject
 block|}
 name|Dobject
@@ -1010,7 +1072,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b7acb0f08
+DECL|struct|__anon2bdf6d141008
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1212,7 +1274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288b7acb1008
+DECL|struct|__anon2bdf6d141108
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -1317,6 +1379,10 @@ DECL|member|bg_color
 name|GimpRGB
 modifier|*
 name|bg_color
+decl_stmt|;
+DECL|member|enable_repaint
+name|gboolean
+name|enable_repaint
 decl_stmt|;
 DECL|typedef|GFigContext
 block|}

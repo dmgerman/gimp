@@ -251,6 +251,39 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function
+name|void
+DECL|function|gfig_init_object_classes ()
+name|gfig_init_object_classes
+parameter_list|()
+block|{
+name|d_arc_object_class_init
+argument_list|()
+expr_stmt|;
+name|d_line_object_class_init
+argument_list|()
+expr_stmt|;
+name|d_circle_object_class_init
+argument_list|()
+expr_stmt|;
+name|d_ellipse_object_class_init
+argument_list|()
+expr_stmt|;
+name|d_poly_object_class_init
+argument_list|()
+expr_stmt|;
+name|d_spiral_object_class_init
+argument_list|()
+expr_stmt|;
+name|d_star_object_class_init
+argument_list|()
+expr_stmt|;
+name|d_bezier_object_class_init
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/* Delete a list of points */
 end_comment
@@ -974,6 +1007,8 @@ operator|*
 operator|)
 name|operation_obj
 operator|->
+name|class
+operator|->
 name|copyfunc
 argument_list|(
 name|operation_obj
@@ -1028,6 +1063,8 @@ operator|=
 name|MOVE_COPY_OBJ
 expr_stmt|;
 name|new_obj
+operator|->
+name|class
 operator|->
 name|drawfunc
 argument_list|(
@@ -1110,6 +1147,11 @@ name|operation_obj
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|operation_obj
+condition|)
+block|{
 name|gfig_style_set_context_from_style
 argument_list|(
 operator|&
@@ -1118,6 +1160,10 @@ operator|->
 name|style
 argument_list|)
 expr_stmt|;
+name|gfig_paint_callback
+argument_list|()
+expr_stmt|;
+block|}
 name|operation_obj
 operator|=
 name|NULL
@@ -1477,6 +1523,8 @@ name|next
 expr_stmt|;
 comment|/* Draw obj (which will actually undraw it! */
 name|del_obj
+operator|->
+name|class
 operator|->
 name|drawfunc
 argument_list|(
@@ -1957,6 +2005,8 @@ name|objs
 operator|->
 name|obj
 operator|->
+name|class
+operator|->
 name|copyfunc
 argument_list|(
 name|objs
@@ -1993,6 +2043,8 @@ name|obj
 parameter_list|)
 block|{
 name|obj
+operator|->
+name|class
 operator|->
 name|drawfunc
 argument_list|(
@@ -2253,7 +2305,6 @@ name|nobj
 argument_list|)
 expr_stmt|;
 comment|/* initialize style when we add the object */
-comment|/*   gfig_style_copy (&obj->style,&gfig_context->gimp_style, "Object"); */
 name|gfig_context
 operator|->
 name|selected_obj
@@ -2274,6 +2325,10 @@ end_function
 
 begin_comment
 comment|/* First button press -- start drawing object */
+end_comment
+
+begin_comment
+comment|/*  * object_start() creates a new object of the type specified in the  * button panel.  It is activated by a button press, and causes  * a small square to be drawn at the initial point.  The style of  * the new object is set to values taken from the style control  * widgets.   */
 end_comment
 
 begin_function
@@ -2469,6 +2524,19 @@ condition|(
 name|obj_creating
 condition|)
 block|{
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|debug_styles
+condition|)
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Creating object, setting style from context\n"
+argument_list|)
+expr_stmt|;
 name|gfig_style_set_style_from_context
 argument_list|(
 operator|&

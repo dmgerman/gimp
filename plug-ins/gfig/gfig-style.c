@@ -1025,6 +1025,19 @@ operator|->
 name|brush_name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+operator|&
+name|style
+operator|->
+name|brush_name
+condition|)
+name|g_message
+argument_list|(
+literal|"Error loading style: got NULL for brush name."
+argument_list|)
+expr_stmt|;
 name|gfig_read_parameter_string
 argument_list|(
 name|style_text
@@ -1321,6 +1334,27 @@ modifier|*
 name|string
 parameter_list|)
 block|{
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|debug_styles
+condition|)
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Saving style %s, brush name '%s'\n"
+argument_list|,
+name|style
+operator|->
+name|name
+argument_list|,
+name|style
+operator|->
+name|brush_name
+argument_list|)
+expr_stmt|;
 name|g_string_append_printf
 argument_list|(
 name|string
@@ -1341,6 +1375,22 @@ argument_list|,
 name|style
 operator|->
 name|brush_name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|style
+operator|->
+name|brush_name
+condition|)
+name|g_message
+argument_list|(
+literal|"Error saving style %s: saving NULL for brush name"
+argument_list|,
+name|style
+operator|->
+name|name
 argument_list|)
 expr_stmt|;
 name|g_string_append_printf
@@ -1527,6 +1577,33 @@ block|{
 name|gint
 name|k
 decl_stmt|;
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|debug_styles
+condition|)
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Saving global styles.\n"
+argument_list|)
+expr_stmt|;
+name|gfig_style_copy
+argument_list|(
+operator|&
+name|gfig_context
+operator|->
+name|default_style
+argument_list|,
+name|gfig_context
+operator|->
+name|current_style
+argument_list|,
+literal|"object"
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|k
@@ -1557,6 +1634,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * set_foreground_callback() is the callback for the Foreground color select  * widget.  It reads the color from the widget, and applies this color  * to both the default style and the current style.  It then produces a  * repaint (which will be suppressed if gfig_context->enable_repaint is  * FALSE).  */
+end_comment
+
 begin_function
 name|void
 DECL|function|set_foreground_callback (GimpColorButton * button,gpointer data)
@@ -1573,6 +1654,19 @@ block|{
 name|GimpRGB
 name|color2
 decl_stmt|;
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|debug_styles
+condition|)
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Setting foreground color from color selector\n"
+argument_list|)
+expr_stmt|;
 name|gimp_color_button_get_color
 argument_list|(
 name|button
@@ -1721,6 +1815,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * gfig_brush_changed_callback() is the callback for the brush  * selector widget.  It reads the brush name from the widget, and  * applies this to both the default style and the current style,  * as well as the gfig_context->bdesc values.  It then produces a  * repaint (which will be suppressed if gfig_context->enable_repaint is  * FALSE).  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gfig_brush_changed_callback (const gchar * brush_name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean dialog_closing,gpointer user_data)
@@ -1758,6 +1856,16 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|brush_name
+condition|)
+name|g_message
+argument_list|(
+literal|"Error: setting brush name to NULL in color selector callback."
+argument_list|)
+expr_stmt|;
 name|gfig_context
 operator|->
 name|current_style
@@ -2019,6 +2127,31 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+else|else
+name|g_message
+argument_list|(
+literal|"Eror: name is NULL in gfig_style_copy."
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|debug_styles
+condition|)
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Copying style %s as style %s\n"
+argument_list|,
+name|style0
+operator|->
+name|name
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
 name|gfig_rgba_copy
 argument_list|(
 operator|&
@@ -2043,6 +2176,22 @@ operator|&
 name|style0
 operator|->
 name|background
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|style0
+operator|->
+name|brush_name
+condition|)
+name|g_message
+argument_list|(
+literal|"Error copying style %s: brush name is NULL."
+argument_list|,
+name|style0
+operator|->
+name|name
 argument_list|)
 expr_stmt|;
 name|style1
@@ -2080,6 +2229,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  * gfig_style_apply() applies the settings from the specified style to  * the Gimp core.  It does not change any widgets, and does not cause  * a repaint.  */
+end_comment
 
 begin_function
 name|void
@@ -2238,6 +2391,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * gfig_read_gimp_style() reads the style settings from the Gimp core,  * and applies them to the specified style, giving that style the  * specified name.  This is mainly useful as a way of initializing  * a style.  The function does not cause a repaint.  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gfig_read_gimp_style (Style * style,const gchar * name)
@@ -2258,6 +2415,31 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|name
+condition|)
+name|g_message
+argument_list|(
+literal|"Error: name is NULL in gfig_read_gimp_style."
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|debug_styles
+condition|)
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Reading Gimp settings as style %s\n"
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
 name|style
 operator|->
 name|name
@@ -2329,8 +2511,42 @@ operator|&
 name|h
 argument_list|)
 expr_stmt|;
+name|gfig_context
+operator|->
+name|bdesc
+operator|.
+name|name
+operator|=
+name|style
+operator|->
+name|brush_name
+expr_stmt|;
+name|gfig_context
+operator|->
+name|bdesc
+operator|.
+name|width
+operator|=
+name|style
+operator|->
+name|brush_width
+expr_stmt|;
+name|gfig_context
+operator|->
+name|bdesc
+operator|.
+name|height
+operator|=
+name|style
+operator|->
+name|brush_height
+expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  * gfig_style_set_content_from_style() sets all of the style control widgets  * to values from the specified style.  This in turn sets the Gimp core's  * values to the same things.  Repainting is suppressed while this happens,  * so calling this function will not produce a repaint.  *  */
+end_comment
 
 begin_function
 name|void
@@ -2342,6 +2558,9 @@ modifier|*
 name|style
 parameter_list|)
 block|{
+name|gboolean
+name|enable_repaint
+decl_stmt|;
 if|if
 condition|(
 name|gfig_context
@@ -2358,6 +2577,18 @@ name|style
 operator|->
 name|name
 argument_list|)
+expr_stmt|;
+name|enable_repaint
+operator|=
+name|gfig_context
+operator|->
+name|enable_repaint
+expr_stmt|;
+name|gfig_context
+operator|->
+name|enable_repaint
+operator|=
+name|FALSE
 expr_stmt|;
 name|gfig_context
 operator|->
@@ -2458,8 +2689,18 @@ argument_list|,
 literal|"done.\n"
 argument_list|)
 expr_stmt|;
+name|gfig_context
+operator|->
+name|enable_repaint
+operator|=
+name|enable_repaint
+expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  * gfig_style_set_style_from_context() sets the values in the specified  * style to those that appear in the style control widgets f  */
+end_comment
 
 begin_function
 name|void
@@ -2474,6 +2715,12 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
+name|style
+operator|->
+name|name
+operator|=
+literal|"object"
+expr_stmt|;
 name|gimp_color_button_get_color
 argument_list|(
 name|GIMP_COLOR_BUTTON
@@ -2485,6 +2732,31 @@ argument_list|)
 argument_list|,
 operator|&
 name|color
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gfig_context
+operator|->
+name|debug_styles
+condition|)
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Setting foreground color to %lg %lg %lg\n"
+argument_list|,
+name|color
+operator|.
+name|r
+argument_list|,
+name|color
+operator|.
+name|g
+argument_list|,
+name|color
+operator|.
+name|b
 argument_list|)
 expr_stmt|;
 name|gfig_rgba_copy

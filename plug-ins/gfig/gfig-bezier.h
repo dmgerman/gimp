@@ -88,6 +88,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|d_bezier_object_class_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|bezier_dialog
 parameter_list|(
 name|void

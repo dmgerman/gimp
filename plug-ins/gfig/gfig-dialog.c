@@ -544,7 +544,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b88eda0108
+DECL|struct|__anon297642f10108
 block|{
 DECL|member|gridspacing
 name|void
@@ -1079,15 +1079,17 @@ literal|0
 expr_stmt|;
 name|gfig_context
 operator|->
-name|current_style
+name|enable_repaint
 operator|=
-operator|&
-name|gfig_context
-operator|->
-name|default_style
+name|FALSE
 expr_stmt|;
 comment|/* debug */
-comment|/*   gfig_context->debug_styles = TRUE; */
+name|gfig_context
+operator|->
+name|debug_styles
+operator|=
+name|FALSE
+expr_stmt|;
 comment|/* initial gimp and default styles */
 name|gfig_read_gimp_style
 argument_list|(
@@ -1098,6 +1100,15 @@ name|gimp_style
 argument_list|,
 literal|"Gimp"
 argument_list|)
+expr_stmt|;
+name|gfig_context
+operator|->
+name|current_style
+operator|=
+operator|&
+name|gfig_context
+operator|->
+name|default_style
 expr_stmt|;
 name|gfig_style_set_all_sources
 argument_list|(
@@ -2399,6 +2410,12 @@ name|default_style
 argument_list|)
 expr_stmt|;
 block|}
+name|gfig_context
+operator|->
+name|enable_repaint
+operator|=
+name|TRUE
+expr_stmt|;
 name|gfig_paint_callback
 argument_list|()
 expr_stmt|;
@@ -2618,7 +2635,7 @@ name|gfig_context
 operator|->
 name|current_style
 argument_list|,
-name|NULL
+literal|"object"
 argument_list|)
 expr_stmt|;
 name|gfig_save_as_parasite
@@ -6276,6 +6293,16 @@ name|obj
 operator|->
 name|style
 expr_stmt|;
+name|gfig_style_set_context_from_style
+argument_list|(
+operator|&
+name|objs
+operator|->
+name|obj
+operator|->
+name|style
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 name|objs
@@ -7740,6 +7767,11 @@ condition|(
 operator|!
 name|gfig_context
 operator|->
+name|enable_repaint
+operator|||
+operator|!
+name|gfig_context
+operator|->
 name|current_obj
 condition|)
 return|return;
@@ -7810,6 +7842,8 @@ expr_stmt|;
 name|objs
 operator|->
 name|obj
+operator|->
+name|class
 operator|->
 name|paintfunc
 argument_list|(
