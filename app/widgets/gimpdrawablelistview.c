@@ -72,18 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpchannellistview.h"
 end_include
 
@@ -115,6 +103,12 @@ begin_include
 include|#
 directive|include
 file|"gimppreview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gdisplay.h"
 end_include
 
 begin_include
@@ -161,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c10fa480103
+DECL|enum|__anon27b926b70103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1639,9 +1633,12 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_drawable_list_view_new (GimpImage * gimage,GtkType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func,GimpNewDrawableFunc new_drawable_func,GimpEditDrawableFunc edit_drawable_func,GimpDrawableContextFunc drawable_context_func)
+DECL|function|gimp_drawable_list_view_new (gint preview_size,GimpImage * gimage,GtkType drawable_type,const gchar * signal_name,GimpGetContainerFunc get_container_func,GimpGetDrawableFunc get_drawable_func,GimpSetDrawableFunc set_drawable_func,GimpReorderDrawableFunc reorder_drawable_func,GimpAddDrawableFunc add_drawable_func,GimpRemoveDrawableFunc remove_drawable_func,GimpCopyDrawableFunc copy_drawable_func,GimpNewDrawableFunc new_drawable_func,GimpEditDrawableFunc edit_drawable_func,GimpDrawableContextFunc drawable_context_func)
 name|gimp_drawable_list_view_new
 parameter_list|(
+name|gint
+name|preview_size
+parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
@@ -1693,6 +1690,19 @@ name|GimpContainerView
 modifier|*
 name|view
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|preview_size
+operator|>
+literal|0
+operator|&&
+name|preview_size
+operator|<=
+literal|64
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 operator|!
@@ -1857,8 +1867,6 @@ name|view
 operator|->
 name|preview_size
 operator|=
-name|gimprc
-operator|.
 name|preview_size
 expr_stmt|;
 name|list_view

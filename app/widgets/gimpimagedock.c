@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -655,7 +661,7 @@ name|dock
 operator|->
 name|context
 operator|=
-name|gimp_context_new
+name|gimp_create_context
 argument_list|(
 name|factory
 operator|->

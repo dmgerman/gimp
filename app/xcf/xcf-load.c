@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -137,12 +143,6 @@ begin_include
 include|#
 directive|include
 file|"floating_sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
 end_include
 
 begin_include
@@ -2157,14 +2157,14 @@ argument_list|)
 expr_stmt|;
 name|xres
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_xresolution
 expr_stmt|;
 name|yres
 operator|=
-name|gimprc
-operator|.
+name|core_config
+operator|->
 name|default_yresolution
 expr_stmt|;
 block|}

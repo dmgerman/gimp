@@ -421,6 +421,9 @@ name|GtkWidget
 modifier|*
 name|gimp_drawable_list_view_new
 parameter_list|(
+name|gint
+name|preview_size
+parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
