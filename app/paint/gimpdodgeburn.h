@@ -143,11 +143,11 @@ name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|type
-name|DodgeBurnType
+name|GimpDodgeBurnType
 name|type
 decl_stmt|;
 DECL|member|type_d
-name|DodgeBurnType
+name|GimpDodgeBurnType
 name|type_d
 decl_stmt|;
 DECL|member|type_w

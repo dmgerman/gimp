@@ -362,7 +362,7 @@ name|GimpPaintCore
 modifier|*
 name|core
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
@@ -397,7 +397,7 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -426,7 +426,7 @@ parameter_list|,
 name|gdouble
 name|image_opacity
 parameter_list|,
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -591,7 +591,7 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -2910,7 +2910,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_get_color_from_gradient (GimpPaintCore * core,GimpGradient * gradient,gdouble gradient_length,GimpRGB * color,GradientPaintMode mode)
+DECL|function|gimp_paint_core_get_color_from_gradient (GimpPaintCore * core,GimpGradient * gradient,gdouble gradient_length,GimpRGB * color,GimpGradientPaintMode mode)
 name|gimp_paint_core_get_color_from_gradient
 parameter_list|(
 name|GimpPaintCore
@@ -2928,7 +2928,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|GradientPaintMode
+name|GimpGradientPaintMode
 name|mode
 parameter_list|)
 block|{
@@ -2952,11 +2952,11 @@ condition|(
 operator|(
 name|mode
 operator|==
-name|ONCE_FORWARD
+name|GIMP_GRADIENT_ONCE_FORWARD
 operator|||
 name|mode
 operator|==
-name|ONCE_BACKWARDS
+name|GIMP_GRADIENT_ONCE_BACKWARD
 operator|)
 operator|&&
 name|pos
@@ -2981,12 +2981,12 @@ operator|)
 operator|&&
 name|mode
 operator|!=
-name|LOOP_SAWTOOTH
+name|GIMP_GRADIENT_LOOP_SAWTOOTH
 operator|)
 operator|||
 name|mode
 operator|==
-name|ONCE_BACKWARDS
+name|GIMP_GRADIENT_ONCE_BACKWARD
 condition|)
 name|pos
 operator|=
@@ -3768,7 +3768,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_paste_canvas (GimpPaintCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
+DECL|function|gimp_paint_core_paste_canvas (GimpPaintCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble brush_scale,GimpPaintApplicationMode mode)
 name|gimp_paint_core_paste_canvas
 parameter_list|(
 name|GimpPaintCore
@@ -3788,13 +3788,13 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
 name|brush_scale
 parameter_list|,
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -3841,7 +3841,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_replace_canvas (GimpPaintCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,BrushApplicationMode brush_hardness,gdouble brush_scale,PaintApplicationMode mode)
+DECL|function|gimp_paint_core_replace_canvas (GimpPaintCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,gdouble brush_scale,GimpPaintApplicationMode mode)
 name|gimp_paint_core_replace_canvas
 parameter_list|(
 name|GimpPaintCore
@@ -3858,13 +3858,13 @@ parameter_list|,
 name|gdouble
 name|image_opacity
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
 name|brush_scale
 parameter_list|,
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -5452,14 +5452,14 @@ begin_function
 specifier|static
 name|MaskBuf
 modifier|*
-DECL|function|gimp_paint_core_get_brush_mask (GimpPaintCore * core,BrushApplicationMode brush_hardness,gdouble scale)
+DECL|function|gimp_paint_core_get_brush_mask (GimpPaintCore * core,GimpBrushApplicationMode brush_hardness,gdouble scale)
 name|gimp_paint_core_get_brush_mask
 parameter_list|(
 name|GimpPaintCore
 modifier|*
 name|core
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
@@ -5511,7 +5511,7 @@ name|brush_hardness
 condition|)
 block|{
 case|case
-name|SOFT
+name|GIMP_BRUSH_SOFT
 case|:
 name|mask
 operator|=
@@ -5536,7 +5536,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|HARD
+name|GIMP_BRUSH_HARD
 case|:
 name|mask
 operator|=
@@ -5549,7 +5549,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PRESSURE
+name|GIMP_BRUSH_PRESSURE
 case|:
 name|mask
 operator|=
@@ -5591,7 +5591,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_paste (GimpPaintCore * core,MaskBuf * brush_mask,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,PaintApplicationMode mode)
+DECL|function|gimp_paint_core_paste (GimpPaintCore * core,MaskBuf * brush_mask,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpPaintApplicationMode mode)
 name|gimp_paint_core_paste
 parameter_list|(
 name|GimpPaintCore
@@ -5615,7 +5615,7 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -5685,7 +5685,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|CONSTANT
+name|GIMP_PAINT_CONSTANT
 condition|)
 block|{
 comment|/*  initialize any invalid canvas tiles  */
@@ -5990,7 +5990,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_replace (GimpPaintCore * core,MaskBuf * brush_mask,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,PaintApplicationMode mode)
+DECL|function|gimp_paint_core_replace (GimpPaintCore * core,MaskBuf * brush_mask,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpPaintApplicationMode mode)
 name|gimp_paint_core_replace
 parameter_list|(
 name|GimpPaintCore
@@ -6011,7 +6011,7 @@ parameter_list|,
 name|gdouble
 name|image_opacity
 parameter_list|,
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -6111,7 +6111,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|CONSTANT
+name|GIMP_PAINT_CONSTANT
 condition|)
 block|{
 comment|/*  initialize any invalid canvas tiles  */
@@ -7476,7 +7476,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_color_area_with_pixmap (GimpPaintCore * core,GimpImage * dest,GimpDrawable * drawable,TempBuf * area,gdouble scale,BrushApplicationMode mode)
+DECL|function|gimp_paint_core_color_area_with_pixmap (GimpPaintCore * core,GimpImage * dest,GimpDrawable * drawable,TempBuf * area,gdouble scale,GimpBrushApplicationMode mode)
 name|gimp_paint_core_color_area_with_pixmap
 parameter_list|(
 name|GimpPaintCore
@@ -7498,7 +7498,7 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -7577,7 +7577,7 @@ if|if
 condition|(
 name|mode
 operator|==
-name|SOFT
+name|GIMP_BRUSH_SOFT
 condition|)
 name|brush_mask
 operator|=
@@ -7807,7 +7807,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|paint_line_pixmap_mask (GimpImage * dest,GimpDrawable * drawable,TempBuf * pixmap_mask,TempBuf * brush_mask,guchar * d,gint x,gint y,gint bytes,gint width,BrushApplicationMode mode)
+DECL|function|paint_line_pixmap_mask (GimpImage * dest,GimpDrawable * drawable,TempBuf * pixmap_mask,TempBuf * brush_mask,guchar * d,gint x,gint y,gint bytes,gint width,GimpBrushApplicationMode mode)
 name|paint_line_pixmap_mask
 parameter_list|(
 name|GimpImage
@@ -7842,7 +7842,7 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|mode
 parameter_list|)
 block|{
@@ -7928,12 +7928,12 @@ if|if
 condition|(
 name|mode
 operator|==
-name|SOFT
+name|GIMP_BRUSH_SOFT
 operator|&&
 name|brush_mask
 condition|)
 block|{
-comment|/* ditto, except for the brush mask, so we can pre-multiply the alpha value */
+comment|/* ditto, except for the brush mask,           so we can pre-multiply the alpha value */
 name|mask
 operator|=
 name|temp_buf_data

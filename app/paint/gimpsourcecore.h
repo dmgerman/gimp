@@ -33,7 +33,7 @@ typedef|typedef
 enum|enum
 comment|/*< skip>*/
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2887aadc0103
+DECL|enum|__anon274ee3480103
 block|{
 DECL|enumerator|ALIGN_NO
 name|ALIGN_NO
@@ -256,11 +256,11 @@ name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|type
-name|CloneType
+name|GimpCloneType
 name|type
 decl_stmt|;
 DECL|member|type_d
-name|CloneType
+name|GimpCloneType
 name|type_d
 decl_stmt|;
 DECL|member|type_w

@@ -2579,7 +2579,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ONCE_FORWARD
+name|GIMP_GRADIENT_ONCE_FORWARD
 argument_list|)
 argument_list|,
 name|NULL
@@ -2591,7 +2591,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ONCE_BACKWARDS
+name|GIMP_GRADIENT_ONCE_BACKWARD
 argument_list|)
 argument_list|,
 name|NULL
@@ -2603,7 +2603,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|LOOP_SAWTOOTH
+name|GIMP_GRADIENT_LOOP_SAWTOOTH
 argument_list|)
 argument_list|,
 name|NULL
@@ -2615,7 +2615,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|LOOP_TRIANGLE
+name|GIMP_GRADIENT_LOOP_TRIANGLE
 argument_list|)
 argument_list|,
 name|NULL

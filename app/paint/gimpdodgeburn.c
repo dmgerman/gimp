@@ -117,7 +117,7 @@ parameter_list|,
 name|gdouble
 name|db_exposure
 parameter_list|,
-name|DodgeBurnType
+name|GimpDodgeBurnType
 name|type
 parameter_list|,
 name|GimpTransferMode
@@ -433,7 +433,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dodgeburn_make_luts (GimpPaintCore * paint_core,gdouble db_exposure,DodgeBurnType type,GimpTransferMode mode,GimpLut * lut,GimpDrawable * drawable)
+DECL|function|gimp_dodgeburn_make_luts (GimpPaintCore * paint_core,gdouble db_exposure,GimpDodgeBurnType type,GimpTransferMode mode,GimpLut * lut,GimpDrawable * drawable)
 name|gimp_dodgeburn_make_luts
 parameter_list|(
 name|GimpPaintCore
@@ -443,7 +443,7 @@ parameter_list|,
 name|gdouble
 name|db_exposure
 parameter_list|,
-name|DodgeBurnType
+name|GimpDodgeBurnType
 name|type
 parameter_list|,
 name|GimpTransferMode
@@ -484,7 +484,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|BURN
+name|GIMP_BURN
 condition|)
 name|exposure
 operator|=
@@ -1203,17 +1203,19 @@ argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
+operator|(
 name|pressure_options
 operator|->
 name|pressure
 condition|?
-name|PRESSURE
+name|GIMP_BRUSH_PRESSURE
 else|:
-name|SOFT
+name|GIMP_BRUSH_SOFT
+operator|)
 argument_list|,
 name|scale
 argument_list|,
-name|CONSTANT
+name|GIMP_PAINT_CONSTANT
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1554,7 +1556,7 @@ DECL|macro|DODGEBURN_DEFAULT_TYPE
 define|#
 directive|define
 name|DODGEBURN_DEFAULT_TYPE
-value|DODGE
+value|GIMP_DODGE
 end_define
 
 begin_define

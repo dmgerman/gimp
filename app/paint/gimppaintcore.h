@@ -58,7 +58,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29d2cb610103
+DECL|enum|__anon292011cf0103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -97,7 +97,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon29d2cb610203
+DECL|enum|__anon292011cf0203
 block|{
 comment|/*  Set for tools that don't mind if    *  the brush changes while painting.    */
 DECL|enumerator|CORE_HANDLES_CHANGING_BRUSH
@@ -543,7 +543,7 @@ name|GimpRGB
 modifier|*
 name|color
 parameter_list|,
-name|GradientPaintMode
+name|GimpGradientPaintMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -617,13 +617,13 @@ parameter_list|,
 name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
 name|brush_scale
 parameter_list|,
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -647,13 +647,13 @@ parameter_list|,
 name|gdouble
 name|image_opacity
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
 name|brush_scale
 parameter_list|,
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
 function_decl|;
@@ -682,7 +682,7 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|BrushApplicationMode
+name|GimpBrushApplicationMode
 name|mode
 parameter_list|)
 function_decl|;

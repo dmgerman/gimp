@@ -843,7 +843,7 @@ decl_stmt|;
 name|gdouble
 name|scale
 decl_stmt|;
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|paint_appl_mode
 decl_stmt|;
 name|gdouble
@@ -876,13 +876,15 @@ argument_list|)
 expr_stmt|;
 name|paint_appl_mode
 operator|=
+operator|(
 name|paint_options
 operator|->
 name|incremental
 condition|?
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 else|:
-name|CONSTANT
+name|GIMP_PAINT_CONSTANT
+operator|)
 expr_stmt|;
 name|pressure
 operator|=
@@ -998,7 +1000,7 @@ argument_list|)
 expr_stmt|;
 name|paint_appl_mode
 operator|=
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 expr_stmt|;
 name|color_pixels
 argument_list|(
@@ -1039,7 +1041,7 @@ condition|)
 block|{
 name|paint_appl_mode
 operator|=
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 expr_stmt|;
 name|gimp_paint_core_color_area_with_pixmap
 argument_list|(
@@ -1053,7 +1055,7 @@ name|area
 argument_list|,
 name|scale
 argument_list|,
-name|SOFT
+name|GIMP_BRUSH_SOFT
 argument_list|)
 expr_stmt|;
 block|}
@@ -1146,7 +1148,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|SOFT
+name|GIMP_BRUSH_SOFT
 argument_list|,
 name|scale
 argument_list|,

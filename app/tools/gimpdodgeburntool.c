@@ -479,7 +479,7 @@ name|type
 condition|)
 block|{
 case|case
-name|DODGE
+name|GIMP_DODGE
 case|:
 name|gimp_radio_group_set_active
 argument_list|(
@@ -495,13 +495,13 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BURN
+name|GIMP_BURN
 argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|BURN
+name|GIMP_BURN
 case|:
 name|gimp_radio_group_set_active
 argument_list|(
@@ -517,7 +517,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|DODGE
+name|GIMP_DODGE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -535,7 +535,7 @@ name|options
 operator|->
 name|type
 operator|==
-name|BURN
+name|GIMP_BURN
 operator|)
 expr_stmt|;
 block|}
@@ -588,7 +588,7 @@ name|options
 operator|->
 name|type
 operator|==
-name|BURN
+name|GIMP_BURN
 operator|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -719,7 +719,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|DODGE
+name|GIMP_DODGE
 argument_list|)
 argument_list|,
 operator|&
@@ -737,7 +737,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BURN
+name|GIMP_BURN
 argument_list|)
 argument_list|,
 operator|&

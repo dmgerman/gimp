@@ -128,7 +128,7 @@ DECL|macro|DEFAULT_GRADIENT_TYPE
 define|#
 directive|define
 name|DEFAULT_GRADIENT_TYPE
-value|LOOP_TRIANGLE
+value|GIMP_GRADIENT_LOOP_TRIANGLE
 end_define
 
 begin_function_decl

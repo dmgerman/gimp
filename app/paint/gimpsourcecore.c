@@ -173,7 +173,7 @@ name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
-name|CloneType
+name|GimpCloneType
 name|type
 parameter_list|,
 name|gint
@@ -961,7 +961,7 @@ name|options
 operator|->
 name|type
 operator|==
-name|PATTERN_CLONE
+name|GIMP_PATTERN_CLONE
 condition|)
 if|if
 condition|(
@@ -1035,7 +1035,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpDrawable * src_drawable,GimpPressureOptions * pressure_options,CloneType type,gint offset_x,gint offset_y)
+DECL|function|gimp_clone_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpDrawable * src_drawable,GimpPressureOptions * pressure_options,GimpCloneType type,gint offset_x,gint offset_y)
 name|gimp_clone_motion
 parameter_list|(
 name|GimpPaintCore
@@ -1054,7 +1054,7 @@ name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
-name|CloneType
+name|GimpCloneType
 name|type
 parameter_list|,
 name|gint
@@ -1143,7 +1143,7 @@ if|if
 condition|(
 name|type
 operator|==
-name|IMAGE_CLONE
+name|GIMP_IMAGE_CLONE
 condition|)
 block|{
 if|if
@@ -1246,7 +1246,7 @@ name|type
 condition|)
 block|{
 case|case
-name|IMAGE_CLONE
+name|GIMP_IMAGE_CLONE
 case|:
 comment|/*  Set the paint area to transparent  */
 name|temp_buf_data_clear
@@ -1673,7 +1673,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PATTERN_CLONE
+name|GIMP_PATTERN_CLONE
 case|:
 name|pattern
 operator|=
@@ -1806,7 +1806,7 @@ name|type
 condition|)
 block|{
 case|case
-name|IMAGE_CLONE
+name|GIMP_IMAGE_CLONE
 case|:
 name|gimp_clone_line_image
 argument_list|(
@@ -1845,7 +1845,7 @@ name|rowstride
 expr_stmt|;
 break|break;
 case|case
-name|PATTERN_CLONE
+name|GIMP_PATTERN_CLONE
 case|:
 name|gimp_clone_line_pattern
 argument_list|(
@@ -1939,17 +1939,19 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
+operator|(
 name|pressure_options
 operator|->
 name|pressure
 condition|?
-name|PRESSURE
+name|GIMP_BRUSH_PRESSURE
 else|:
-name|SOFT
+name|GIMP_BRUSH_SOFT
+operator|)
 argument_list|,
 name|scale
 argument_list|,
-name|CONSTANT
+name|GIMP_PAINT_CONSTANT
 argument_list|)
 expr_stmt|;
 block|}
@@ -2411,7 +2413,7 @@ DECL|macro|CLONE_DEFAULT_TYPE
 define|#
 directive|define
 name|CLONE_DEFAULT_TYPE
-value|IMAGE_CLONE
+value|GIMP_IMAGE_CLONE
 end_define
 
 begin_define

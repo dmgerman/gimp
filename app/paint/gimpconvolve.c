@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3d3ca60103
+DECL|enum|__anon291e4e4f0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -215,7 +215,7 @@ name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
-name|ConvolveType
+name|GimpConvolveType
 name|type
 parameter_list|,
 name|gdouble
@@ -229,7 +229,7 @@ specifier|static
 name|void
 name|gimp_convolve_calculate_matrix
 parameter_list|(
-name|ConvolveType
+name|GimpConvolveType
 name|type
 parameter_list|,
 name|gdouble
@@ -751,7 +751,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_convolve_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPressureOptions * pressure_options,ConvolveType type,gdouble rate)
+DECL|function|gimp_convolve_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPressureOptions * pressure_options,GimpConvolveType type,gdouble rate)
 name|gimp_convolve_motion
 parameter_list|(
 name|GimpPaintCore
@@ -766,7 +766,7 @@ name|GimpPressureOptions
 modifier|*
 name|pressure_options
 parameter_list|,
-name|ConvolveType
+name|GimpConvolveType
 name|type
 parameter_list|,
 name|gdouble
@@ -1973,17 +1973,19 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
+operator|(
 name|pressure_options
 operator|->
 name|pressure
 condition|?
-name|PRESSURE
+name|GIMP_BRUSH_PRESSURE
 else|:
-name|SOFT
+name|GIMP_BRUSH_SOFT
+operator|)
 argument_list|,
 name|scale
 argument_list|,
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1992,10 +1994,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_convolve_calculate_matrix (ConvolveType type,gdouble rate)
+DECL|function|gimp_convolve_calculate_matrix (GimpConvolveType type,gdouble rate)
 name|gimp_convolve_calculate_matrix
 parameter_list|(
-name|ConvolveType
+name|GimpConvolveType
 name|type
 parameter_list|,
 name|gdouble
@@ -2024,7 +2026,7 @@ name|type
 condition|)
 block|{
 case|case
-name|BLUR_CONVOLVE
+name|GIMP_BLUR_CONVOLVE
 case|:
 name|matrix_size
 operator|=
@@ -2056,7 +2058,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHARPEN_CONVOLVE
+name|GIMP_SHARPEN_CONVOLVE
 case|:
 name|matrix_size
 operator|=
@@ -2088,7 +2090,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CUSTOM_CONVOLVE
+name|GIMP_CUSTOM_CONVOLVE
 case|:
 name|matrix_size
 operator|=
@@ -2289,7 +2291,7 @@ DECL|macro|DEFAULT_CONVOLVE_TYPE
 define|#
 directive|define
 name|DEFAULT_CONVOLVE_TYPE
-value|BLUR_CONVOLVE
+value|GIMP_BLUR_CONVOLVE
 end_define
 
 begin_function

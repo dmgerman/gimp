@@ -597,7 +597,7 @@ name|type
 condition|)
 block|{
 case|case
-name|BLUR_CONVOLVE
+name|GIMP_BLUR_CONVOLVE
 case|:
 name|gimp_radio_group_set_active
 argument_list|(
@@ -613,13 +613,13 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SHARPEN_CONVOLVE
+name|GIMP_SHARPEN_CONVOLVE
 argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SHARPEN_CONVOLVE
+name|GIMP_SHARPEN_CONVOLVE
 case|:
 name|gimp_radio_group_set_active
 argument_list|(
@@ -635,7 +635,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BLUR_CONVOLVE
+name|GIMP_BLUR_CONVOLVE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -694,7 +694,7 @@ name|options
 operator|->
 name|type
 operator|==
-name|SHARPEN_CONVOLVE
+name|GIMP_SHARPEN_CONVOLVE
 operator|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -824,7 +824,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BLUR_CONVOLVE
+name|GIMP_BLUR_CONVOLVE
 argument_list|)
 argument_list|,
 operator|&
@@ -842,7 +842,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|SHARPEN_CONVOLVE
+name|GIMP_SHARPEN_CONVOLVE
 argument_list|)
 argument_list|,
 operator|&

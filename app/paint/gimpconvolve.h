@@ -154,11 +154,11 @@ name|GimpPaintOptions
 name|paint_options
 decl_stmt|;
 DECL|member|type
-name|ConvolveType
+name|GimpConvolveType
 name|type
 decl_stmt|;
 DECL|member|type_d
-name|ConvolveType
+name|GimpConvolveType
 name|type_d
 decl_stmt|;
 DECL|member|type_w

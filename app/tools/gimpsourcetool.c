@@ -963,7 +963,7 @@ name|options
 operator|->
 name|type
 operator|==
-name|IMAGE_CLONE
+name|GIMP_IMAGE_CLONE
 condition|)
 block|{
 if|if
@@ -1079,7 +1079,7 @@ name|options
 operator|->
 name|type
 operator|==
-name|IMAGE_CLONE
+name|GIMP_IMAGE_CLONE
 condition|)
 block|{
 name|GimpClone
@@ -1394,7 +1394,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|IMAGE_CLONE
+name|GIMP_IMAGE_CLONE
 argument_list|)
 argument_list|,
 operator|&
@@ -1412,7 +1412,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|PATTERN_CLONE
+name|GIMP_PATTERN_CLONE
 argument_list|)
 argument_list|,
 operator|&

@@ -106,6 +106,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/paint-enums.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -1158,11 +1164,11 @@ if|if
 condition|(
 name|clone_type
 operator|<
-name|IMAGE_CLONE
+name|GIMP_IMAGE_CLONE
 operator|||
 name|clone_type
 operator|>
-name|PATTERN_CLONE
+name|GIMP_PATTERN_CLONE
 condition|)
 name|success
 operator|=
@@ -1319,7 +1325,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"clone_type"
 block|,
-literal|"The type of clone: { IMAGE_CLONE (0), PATTERN_CLONE (1) }"
+literal|"The type of clone: { GIMP_IMAGE_CLONE (0), GIMP_PATTERN_CLONE (1) }"
 block|}
 block|,
 block|{
@@ -1734,11 +1740,11 @@ if|if
 condition|(
 name|convolve_type
 operator|<
-name|BLUR_CONVOLVE
+name|GIMP_BLUR_CONVOLVE
 operator|||
 name|convolve_type
 operator|>
-name|SHARPEN_CONVOLVE
+name|GIMP_SHARPEN_CONVOLVE
 condition|)
 name|success
 operator|=
@@ -1873,7 +1879,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"convolve_type"
 block|,
-literal|"Convolve type: { BLUR_CONVOLVE (0), SHARPEN_CONVOLVE (1) }"
+literal|"Convolve type: { GIMP_BLUR_CONVOLVE (0), GIMP_SHARPEN_CONVOLVE (1) }"
 block|}
 block|,
 block|{
@@ -2275,11 +2281,11 @@ if|if
 condition|(
 name|dodgeburn_type
 operator|<
-name|DODGE
+name|GIMP_DODGE
 operator|||
 name|dodgeburn_type
 operator|>
-name|BURN
+name|GIMP_BURN
 condition|)
 name|success
 operator|=
@@ -2445,7 +2451,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"dodgeburn_type"
 block|,
-literal|"The type either dodge or burn: { DODGE (0), BURN (1) }"
+literal|"The type either dodge or burn: { GIMP_DODGE (0), GIMP_BURN (1) }"
 block|}
 block|,
 block|{
@@ -2871,11 +2877,11 @@ if|if
 condition|(
 name|hardness
 operator|<
-name|HARD
+name|GIMP_BRUSH_HARD
 operator|||
 name|hardness
 operator|>
-name|SOFT
+name|GIMP_BRUSH_SOFT
 condition|)
 name|success
 operator|=
@@ -2896,11 +2902,11 @@ if|if
 condition|(
 name|method
 operator|<
-name|CONSTANT
+name|GIMP_PAINT_CONSTANT
 operator|||
 name|method
 operator|>
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 condition|)
 name|success
 operator|=
@@ -3001,7 +3007,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"hardness"
 block|,
-literal|"HARD (0) or SOFT (1)"
+literal|"GIMP_BRUSH_HARD (0) or GIMP_BRUSH_SOFT (1)"
 block|}
 block|,
 block|{
@@ -3009,7 +3015,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
-literal|"CONSTANT (0) or INCREMENTAL (1)"
+literal|"GIMP_PAINT_CONSTANT (0) or GIMP_PAINT_INCREMENTAL (1)"
 block|}
 block|}
 decl_stmt|;
@@ -3435,11 +3441,11 @@ if|if
 condition|(
 name|method
 operator|<
-name|CONSTANT
+name|GIMP_PAINT_CONSTANT
 operator|||
 name|method
 operator|>
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 condition|)
 name|success
 operator|=
@@ -3577,7 +3583,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
-literal|"CONSTANT (0) or INCREMENTAL (1)"
+literal|"GIMP_PAINT_CONSTANT (0) or GIMP_PAINT_INCREMENTAL (1)"
 block|}
 block|,
 block|{

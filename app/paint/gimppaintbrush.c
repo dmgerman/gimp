@@ -176,7 +176,7 @@ parameter_list|,
 name|gboolean
 name|incremental
 parameter_list|,
-name|GradientPaintMode
+name|GimpGradientPaintMode
 name|gradient_type
 parameter_list|)
 function_decl|;
@@ -658,7 +658,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paintbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPressureOptions * pressure_options,GimpGradientOptions * gradient_options,gdouble fade_out,gdouble gradient_length,gboolean incremental,GradientPaintMode gradient_type)
+DECL|function|gimp_paintbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPressureOptions * pressure_options,GimpGradientOptions * gradient_options,gdouble fade_out,gdouble gradient_length,gboolean incremental,GimpGradientPaintMode gradient_type)
 name|gimp_paintbrush_motion
 parameter_list|(
 name|GimpPaintCore
@@ -686,7 +686,7 @@ parameter_list|,
 name|gboolean
 name|incremental
 parameter_list|,
-name|GradientPaintMode
+name|GimpGradientPaintMode
 name|gradient_type
 parameter_list|)
 block|{
@@ -732,14 +732,16 @@ decl_stmt|;
 name|gdouble
 name|scale
 decl_stmt|;
-name|PaintApplicationMode
+name|GimpPaintApplicationMode
 name|paint_appl_mode
 init|=
+operator|(
 name|incremental
 condition|?
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 else|:
-name|CONSTANT
+name|GIMP_PAINT_CONSTANT
+operator|)
 decl_stmt|;
 name|gimage
 operator|=
@@ -964,7 +966,7 @@ comment|/* always use incremental mode with gradients */
 comment|/* make the gui cool later */
 name|paint_appl_mode
 operator|=
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 expr_stmt|;
 name|color_pixels
 argument_list|(
@@ -1016,12 +1018,12 @@ name|area
 argument_list|,
 name|scale
 argument_list|,
-name|SOFT
+name|GIMP_BRUSH_SOFT
 argument_list|)
 expr_stmt|;
 name|paint_appl_mode
 operator|=
-name|INCREMENTAL
+name|GIMP_PAINT_INCREMENTAL
 expr_stmt|;
 block|}
 else|else
@@ -1119,13 +1121,15 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
+operator|(
 name|pressure_options
 operator|->
 name|pressure
 condition|?
-name|PRESSURE
+name|GIMP_BRUSH_PRESSURE
 else|:
-name|SOFT
+name|GIMP_BRUSH_SOFT
+operator|)
 argument_list|,
 name|scale
 argument_list|,
