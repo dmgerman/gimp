@@ -211,6 +211,9 @@ name|gimp_locale_directory
 argument_list|()
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_BIND_TEXTDOMAIN_CODESET
 name|bind_textdomain_codeset
 argument_list|(
 name|std_plugins_domain
@@ -218,6 +221,8 @@ argument_list|,
 literal|"UTF-8"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 for|for
 control|(
 name|tmp
@@ -341,6 +346,9 @@ argument_list|,
 name|locale_path
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_BIND_TEXTDOMAIN_CODESET
 name|bind_textdomain_codeset
 argument_list|(
 name|locale_domain
@@ -348,6 +356,8 @@ argument_list|,
 literal|"UTF-8"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 name|g_slist_free
