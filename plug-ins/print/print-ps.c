@@ -464,7 +464,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|strcasecmp
+name|g_strcasecmp
 argument_list|(
 name|lname
 argument_list|,
@@ -1115,7 +1115,7 @@ decl_stmt|;
 comment|/* Number of commands */
 struct|struct
 comment|/* PostScript commands... */
-DECL|struct|__anon2bb1f4eb0108
+DECL|struct|__anon296bca400108
 block|{
 DECL|member|command
 name|char
@@ -3230,7 +3230,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|strncasecmp
+name|g_strncasecmp
 argument_list|(
 name|line
 argument_list|,
@@ -3276,7 +3276,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|strcasecmp
+name|g_strcasecmp
 argument_list|(
 name|lname
 argument_list|,
@@ -3285,7 +3285,7 @@ argument_list|)
 operator|==
 literal|0
 operator|&&
-name|strcasecmp
+name|g_strcasecmp
 argument_list|(
 name|loption
 argument_list|,
