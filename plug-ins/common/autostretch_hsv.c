@@ -368,7 +368,7 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
-literal|"Auto-Stretching Contrast..."
+literal|"Auto-Stretching HSV..."
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
