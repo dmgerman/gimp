@@ -31,12 +31,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasiteF.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"parasitelistF.h"
 end_include
 
@@ -44,6 +38,12 @@ begin_include
 include|#
 directive|include
 file|"gimpobject.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/parasiteF.h"
 end_include
 
 begin_define
@@ -124,9 +124,9 @@ name|ParasiteList
 modifier|*
 name|list
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -140,7 +140,7 @@ modifier|*
 name|list
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -187,7 +187,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite_list_find
 parameter_list|(
@@ -196,7 +196,7 @@ modifier|*
 name|list
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -207,9 +207,9 @@ begin_function_decl
 name|void
 name|parasite_shift_parent
 parameter_list|(
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -220,7 +220,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_PARASITE_H__  */
+comment|/*  __PARASITE_LIST_H__  */
 end_comment
 
 end_unit

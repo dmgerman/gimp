@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a154ed20108
+DECL|struct|__anon292c86380108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a154ed20208
+DECL|struct|__anon292c86380208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a154ed20308
+DECL|struct|__anon292c86380308
 block|{
 DECL|member|ID
 name|gint32
@@ -823,7 +823,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_HAVE_PARASITES
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -1088,7 +1088,7 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -1159,7 +1159,7 @@ operator|->
 name|compression
 expr_stmt|;
 block|}
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -1317,7 +1317,7 @@ operator|->
 name|compression
 expr_stmt|;
 block|}
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -1588,7 +1588,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_HAVE_PARASITES
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -2014,7 +2014,7 @@ directive|ifdef
 name|GIMP_HAVE_PARASITES
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"tiff-save-options"
 argument_list|,
@@ -2036,7 +2036,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -2098,11 +2098,11 @@ literal|'\000'
 expr_stmt|;
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|len
 argument_list|,
@@ -2116,7 +2116,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -6579,7 +6579,7 @@ operator|!=
 literal|'\000'
 condition|)
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -6594,11 +6594,11 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-literal|1
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -6617,7 +6617,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)

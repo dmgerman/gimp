@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * parasite.c  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpparasite.c  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -10,7 +10,7 @@ file|"gimp.h"
 end_include
 
 begin_function
-name|Parasite
+name|GimpParasite
 modifier|*
 DECL|function|gimp_parasite_find (const gchar * name)
 name|gimp_parasite_find
@@ -28,7 +28,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -64,7 +64,7 @@ condition|)
 block|{
 name|parasite
 operator|=
-name|parasite_copy
+name|gimp_parasite_copy
 argument_list|(
 operator|&
 name|return_vals
@@ -98,13 +98,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_parasite_attach (const Parasite * p)
+DECL|function|gimp_parasite_attach (const GimpParasite * parasite)
 name|gimp_parasite_attach
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 name|GParam
@@ -125,7 +125,7 @@ name|nreturn_vals
 argument_list|,
 name|PARAM_PARASITE
 argument_list|,
-name|p
+name|parasite
 argument_list|,
 name|PARAM_END
 argument_list|)
@@ -168,11 +168,11 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 init|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 name|name
 argument_list|,
@@ -199,7 +199,7 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|p
 argument_list|)

@@ -3297,7 +3297,7 @@ block|}
 end_function
 
 begin_function
-name|Parasite
+name|GimpParasite
 modifier|*
 DECL|function|gimp_image_parasite_find (gint32 image_ID,const gchar * name)
 name|gimp_image_parasite_find
@@ -3318,7 +3318,7 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -3358,7 +3358,7 @@ condition|)
 block|{
 name|parasite
 operator|=
-name|parasite_copy
+name|gimp_parasite_copy
 argument_list|(
 operator|&
 name|return_vals
@@ -3392,16 +3392,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_parasite_attach (gint32 image_ID,const Parasite * p)
+DECL|function|gimp_image_parasite_attach (gint32 image_ID,const GimpParasite * parasite)
 name|gimp_image_parasite_attach
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 name|GParam
@@ -3426,7 +3426,7 @@ name|image_ID
 argument_list|,
 name|PARAM_PARASITE
 argument_list|,
-name|p
+name|parasite
 argument_list|,
 name|PARAM_END
 argument_list|)
@@ -3472,11 +3472,11 @@ decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 init|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 name|name
 argument_list|,
@@ -3507,7 +3507,7 @@ argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|p
 argument_list|)

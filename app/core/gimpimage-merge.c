@@ -552,7 +552,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27afa1ac0103
+DECL|enum|__anon2ae964860103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -5090,7 +5090,7 @@ block|}
 end_function
 
 begin_function
-name|Parasite
+name|GimpParasite
 modifier|*
 DECL|function|gimp_image_parasite_find (const GimpImage * gimage,const gchar * name)
 name|gimp_image_parasite_find
@@ -5132,14 +5132,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|list_func (gchar * key,Parasite * p,gchar *** cur)
+DECL|function|list_func (gchar * key,GimpParasite * p,gchar *** cur)
 name|list_func
 parameter_list|(
 name|gchar
 modifier|*
 name|key
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|,
@@ -5258,14 +5258,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_parasite_attach (GimpImage * gimage,Parasite * parasite)
+DECL|function|gimp_image_parasite_attach (GimpImage * gimage,GimpParasite * parasite)
 name|gimp_image_parasite_attach
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
@@ -5281,7 +5281,7 @@ expr_stmt|;
 comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we aren't undoable */
 if|if
 condition|(
-name|parasite_is_undoable
+name|gimp_parasite_is_undoable
 argument_list|(
 name|parasite
 argument_list|)
@@ -5295,13 +5295,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parasite_is_persistent
+name|gimp_parasite_is_persistent
 argument_list|(
 name|parasite
 argument_list|)
 operator|&&
 operator|!
-name|parasite_compare
+name|gimp_parasite_compare
 argument_list|(
 name|parasite
 argument_list|,
@@ -5309,7 +5309,7 @@ name|gimp_image_parasite_find
 argument_list|(
 name|gimage
 argument_list|,
-name|parasite_name
+name|gimp_parasite_name
 argument_list|(
 name|parasite
 argument_list|)
@@ -5337,11 +5337,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parasite_has_flag
+name|gimp_parasite_has_flag
 argument_list|(
 name|parasite
 argument_list|,
-name|PARASITE_ATTACH_PARENT
+name|GIMP_PARASITE_ATTACH_PARENT
 argument_list|)
 condition|)
 block|{
@@ -5374,7 +5374,7 @@ modifier|*
 name|parasite
 parameter_list|)
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 decl_stmt|;
@@ -5405,7 +5405,7 @@ condition|)
 return|return;
 if|if
 condition|(
-name|parasite_is_undoable
+name|gimp_parasite_is_undoable
 argument_list|(
 name|p
 argument_list|)
@@ -5414,7 +5414,7 @@ name|undo_push_image_parasite_remove
 argument_list|(
 name|gimage
 argument_list|,
-name|parasite_name
+name|gimp_parasite_name
 argument_list|(
 name|p
 argument_list|)
@@ -5423,7 +5423,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|parasite_is_persistent
+name|gimp_parasite_is_persistent
 argument_list|(
 name|p
 argument_list|)

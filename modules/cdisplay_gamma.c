@@ -108,7 +108,7 @@ name|gpointer
 name|cancel_data
 decl_stmt|;
 DECL|member|gamma
-name|double
+name|gdouble
 name|gamma
 decl_stmt|;
 DECL|member|lookup
@@ -210,7 +210,7 @@ parameter_list|(
 name|gpointer
 name|cd_ID
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|state
 parameter_list|)
@@ -219,7 +219,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Parasite
+name|GimpParasite
 modifier|*
 name|gamma_save
 parameter_list|(
@@ -656,7 +656,7 @@ call|(
 name|guchar
 call|)
 argument_list|(
-name|int
+name|gint
 argument_list|)
 argument_list|(
 literal|255
@@ -822,13 +822,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gamma_load (gpointer cd_ID,Parasite * state)
+DECL|function|gamma_load (gpointer cd_ID,GimpParasite * state)
 name|gamma_load
 parameter_list|(
 name|gpointer
 name|cd_ID
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|state
 parameter_list|)
@@ -851,14 +851,14 @@ name|context
 operator|->
 name|gamma
 argument_list|,
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|state
 argument_list|)
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|double
+name|gdouble
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -873,7 +873,7 @@ decl_stmt|,
 modifier|*
 name|data
 init|=
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|state
 argument_list|)
@@ -915,7 +915,7 @@ name|buf
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|double
+name|gdouble
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -931,7 +931,7 @@ end_function
 
 begin_function
 specifier|static
-name|Parasite
+name|GimpParasite
 modifier|*
 DECL|function|gamma_save (gpointer cd_ID)
 name|gamma_save
@@ -1008,11 +1008,11 @@ block|}
 endif|#
 directive|endif
 return|return
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"Display/Gamma"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 sizeof|sizeof
 argument_list|(

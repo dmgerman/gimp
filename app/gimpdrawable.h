@@ -385,7 +385,7 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 parameter_list|)
 function_decl|;
@@ -406,7 +406,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Parasite
+name|GimpParasite
 modifier|*
 name|gimp_drawable_parasite_find
 parameter_list|(

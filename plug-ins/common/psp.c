@@ -137,7 +137,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00103
+DECL|enum|__anon2999a2a50103
 typedef|typedef
 enum|enum
 block|{
@@ -201,7 +201,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00203
+DECL|enum|__anon2999a2a50203
 typedef|typedef
 enum|enum
 block|{
@@ -241,7 +241,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00303
+DECL|enum|__anon2999a2a50303
 typedef|typedef
 enum|enum
 block|{
@@ -273,7 +273,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00403
+DECL|enum|__anon2999a2a50403
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +301,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00503
+DECL|enum|__anon2999a2a50503
 typedef|typedef
 enum|enum
 block|{
@@ -329,7 +329,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00603
+DECL|enum|__anon2999a2a50603
 typedef|typedef
 enum|enum
 block|{
@@ -351,7 +351,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00703
+DECL|enum|__anon2999a2a50703
 typedef|typedef
 enum|enum
 block|{
@@ -387,7 +387,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00803
+DECL|enum|__anon2999a2a50803
 typedef|typedef
 enum|enum
 block|{
@@ -407,7 +407,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00903
+DECL|enum|__anon2999a2a50903
 typedef|typedef
 enum|enum
 block|{
@@ -455,7 +455,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00a03
+DECL|enum|__anon2999a2a50a03
 typedef|typedef
 enum|enum
 block|{
@@ -479,7 +479,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00b03
+DECL|enum|__anon2999a2a50b03
 typedef|typedef
 enum|enum
 block|{
@@ -540,7 +540,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon287020e00c03
+DECL|enum|__anon2999a2a50c03
 typedef|typedef
 enum|enum
 block|{
@@ -613,7 +613,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287020e00d08
+DECL|struct|__anon2999a2a50d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -761,7 +761,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287020e00e08
+DECL|struct|__anon2999a2a50e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -776,7 +776,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287020e00f08
+DECL|struct|__anon2999a2a50f08
 block|{
 DECL|member|run
 name|gint
@@ -2242,7 +2242,7 @@ name|GString
 modifier|*
 name|comment
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|comment_parasite
 decl_stmt|;
@@ -2745,11 +2745,11 @@ condition|)
 block|{
 name|comment_parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -2772,7 +2772,7 @@ argument_list|,
 name|comment_parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)
@@ -5816,10 +5816,10 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|PixPipeParams
+name|GimpPixPipeParams
 name|params
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|pipe_parasite
 decl_stmt|;
@@ -5827,7 +5827,7 @@ name|gchar
 modifier|*
 name|parasite_text
 decl_stmt|;
-name|pixpipeparams_init
+name|gimp_pixpipe_params_init
 argument_list|(
 operator|&
 name|params
@@ -6202,7 +6202,7 @@ operator|)
 expr_stmt|;
 name|parasite_text
 operator|=
-name|pixpipeparams_build
+name|gimp_pixpipe_params_build
 argument_list|(
 operator|&
 name|params
@@ -6221,11 +6221,11 @@ argument_list|)
 expr_stmt|;
 name|pipe_parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-brush-pipe-parameters"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -6244,7 +6244,7 @@ argument_list|,
 name|pipe_parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|pipe_parasite
 argument_list|)

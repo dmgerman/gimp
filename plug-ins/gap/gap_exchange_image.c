@@ -215,7 +215,7 @@ decl_stmt|;
 name|gint32
 name|l_num_points
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|l_parasite
 decl_stmt|;

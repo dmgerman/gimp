@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bef1f490103
+DECL|enum|__anon2a0833900103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -367,7 +367,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bef1f490203
+DECL|enum|__anon2a0833900203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -3105,14 +3105,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_a_parasite (gchar * key,Parasite * p,XcfInfo * info)
+DECL|function|write_a_parasite (gchar * key,GimpParasite * p,XcfInfo * info)
 name|write_a_parasite
 parameter_list|(
 name|gchar
 modifier|*
 name|key
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|,
@@ -3128,7 +3128,7 @@ name|p
 operator|->
 name|flags
 operator|&
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 operator|)
 condition|)
 block|{
@@ -3211,7 +3211,7 @@ end_function
 
 begin_function
 specifier|static
-name|Parasite
+name|GimpParasite
 modifier|*
 DECL|function|read_a_parasite (XcfInfo * info)
 name|read_a_parasite
@@ -3221,7 +3221,7 @@ modifier|*
 name|info
 parameter_list|)
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 decl_stmt|;
@@ -3229,7 +3229,7 @@ name|p
 operator|=
 name|g_new
 argument_list|(
-name|Parasite
+name|GimpParasite
 argument_list|,
 literal|1
 argument_list|)
@@ -6049,7 +6049,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/* because we don't know how much room the parasite list will take 	     we save the file position and write the length later */
+comment|/* because we don't know how much room the parasite list will take 	     * we save the file position and write the length later 	     */
 name|pos
 operator|=
 name|ftell
@@ -9449,7 +9449,7 @@ name|info
 operator|->
 name|cp
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 decl_stmt|;
@@ -9478,7 +9478,7 @@ argument_list|,
 name|p
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|p
 argument_list|)
@@ -10290,7 +10290,7 @@ name|info
 operator|->
 name|cp
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 decl_stmt|;
@@ -10322,7 +10322,7 @@ argument_list|,
 name|p
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|p
 argument_list|)
@@ -10653,7 +10653,7 @@ name|info
 operator|->
 name|cp
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 decl_stmt|;
@@ -10687,7 +10687,7 @@ argument_list|,
 name|p
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|p
 argument_list|)

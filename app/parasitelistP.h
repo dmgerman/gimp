@@ -67,7 +67,7 @@ name|ParasiteList
 modifier|*
 name|list
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
@@ -83,7 +83,7 @@ name|ParasiteList
 modifier|*
 name|list
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
@@ -111,7 +111,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_PARASITE_P_H__  */
+comment|/*  __PARASITE_LIST_P_H__  */
 end_comment
 
 end_unit

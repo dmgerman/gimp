@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * parasiteio.h  * Copyright (C) 1999 Tor Lillqvist<tml@iki.fi>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpparasiteio.h  * Copyright (C) 1999 Tor Lillqvist<tml@iki.fi>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PARASITEIO_H__
+name|__GIMP_PARASITE_IO_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PARASITEIO_H__
+DECL|macro|__GIMP_PARASITE_IO_H__
 define|#
 directive|define
-name|__PARASITEIO_H__
+name|__GIMP_PARASITE_IO_H__
 end_define
 
 begin_ifdef
@@ -29,16 +29,16 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-comment|/* Data structures for various standard parasites used by plug-ins and  * the GIMP core, and functions to build and parse their string  * representations.  */
-comment|/*  * Pixmap brush pipes.  */
-DECL|macro|PIXPIPE_MAXDIM
+comment|/*  Data structures for various standard parasites used by plug-ins and  *  the GIMP core, and functions to build and parse their string  *  representations.  */
+comment|/*  *  Pixmap brush pipes.  */
+DECL|macro|GIMP_PIXPIPE_MAXDIM
 define|#
 directive|define
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 value|4
-DECL|struct|__anon29a1d7210108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2bdd4b230108
 block|{
 DECL|member|step
 name|gint
@@ -81,7 +81,7 @@ DECL|member|rank
 name|gint
 name|rank
 index|[
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 index|]
 decl_stmt|;
 DECL|member|selection
@@ -89,45 +89,45 @@ name|gchar
 modifier|*
 name|selection
 index|[
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 index|]
 decl_stmt|;
 DECL|member|free_selection_string
 name|gboolean
 name|free_selection_string
 decl_stmt|;
-DECL|typedef|PixPipeParams
+DECL|typedef|GimpPixPipeParams
 block|}
-name|PixPipeParams
+name|GimpPixPipeParams
 typedef|;
 comment|/* Initalize with dummy values */
 name|void
-name|pixpipeparams_init
+name|gimp_pixpipe_params_init
 parameter_list|(
-name|PixPipeParams
+name|GimpPixPipeParams
 modifier|*
 name|params
 parameter_list|)
 function_decl|;
-comment|/* Parse a string into a PixPipeParams */
+comment|/* Parse a string into a GimpPixPipeParams */
 name|void
-name|pixpipeparams_parse
+name|gimp_pixpipe_params_parse
 parameter_list|(
 name|gchar
 modifier|*
 name|parameters
 parameter_list|,
-name|PixPipeParams
+name|GimpPixPipeParams
 modifier|*
 name|params
 parameter_list|)
 function_decl|;
-comment|/* Build a string representation of PixPipeParams */
+comment|/* Build a string representation of GimpPixPipeParams */
 name|gchar
 modifier|*
-name|pixpipeparams_build
+name|gimp_pixpipe_params_build
 parameter_list|(
-name|PixPipeParams
+name|GimpPixPipeParams
 modifier|*
 name|params
 parameter_list|)
@@ -153,7 +153,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PARASITEIO_H__ */
+comment|/* __GIMP_PARASITE_IO_H__ */
 end_comment
 
 end_unit

@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad6d13e0108
+DECL|struct|__anon2c3cb4400108
 block|{
 DECL|member|quality
 name|gdouble
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad6d13e0208
+DECL|struct|__anon2c3cb4400208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad6d13e0308
+DECL|struct|__anon2c3cb4400308
 block|{
 DECL|member|cinfo
 name|struct
@@ -1139,7 +1139,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|GIMP_HAVE_PARASITES
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -1443,7 +1443,7 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -1697,7 +1697,7 @@ operator|)
 operator|->
 name|preview
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -2157,7 +2157,7 @@ name|preview
 operator|=
 name|FALSE
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -2272,11 +2272,11 @@ condition|)
 block|{
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -2295,7 +2295,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -2310,7 +2310,7 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"jpeg-save-options"
 argument_list|,
@@ -2332,7 +2332,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -2709,14 +2709,14 @@ name|GIMP_HAVE_PARASITES
 name|JpegSaveVals
 name|local_save_vals
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 specifier|volatile
 name|comment_parasite
 init|=
 name|NULL
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 specifier|volatile
 name|vals_parasite
@@ -2941,11 +2941,11 @@ name|NULL
 expr_stmt|;
 name|comment_parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -3039,7 +3039,7 @@ name|DEFAULT_PREVIEW
 expr_stmt|;
 name|vals_parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"jpeg-save-options"
 argument_list|,
@@ -3807,7 +3807,7 @@ argument_list|,
 name|comment_parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)
@@ -3825,7 +3825,7 @@ argument_list|,
 name|vals_parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|vals_parasite
 argument_list|)

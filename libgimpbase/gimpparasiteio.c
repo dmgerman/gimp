@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * Copyright (C) 1999 Tor Lillqvist<tml@iki.fi>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpparasiteio.c  * Copyright (C) 1999 Tor Lillqvist<tml@iki.fi>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -40,20 +40,20 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/parasiteio.h"
+file|"parasiteio.h"
 end_include
 
 begin_function
 name|void
-DECL|function|pixpipeparams_init (PixPipeParams * params)
-name|pixpipeparams_init
+DECL|function|gimp_pixpipe_params_init (GimpPixPipeParams * params)
+name|gimp_pixpipe_params_init
 parameter_list|(
-name|PixPipeParams
+name|GimpPixPipeParams
 modifier|*
 name|params
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|params
@@ -118,7 +118,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 condition|;
 name|i
 operator|++
@@ -157,7 +157,7 @@ literal|1
 init|;
 name|i
 operator|<
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 condition|;
 name|i
 operator|++
@@ -176,14 +176,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|pixpipeparams_parse (gchar * string,PixPipeParams * params)
-name|pixpipeparams_parse
+DECL|function|gimp_pixpipe_params_parse (gchar * string,GimpPixPipeParams * params)
+name|gimp_pixpipe_params_parse
 parameter_list|(
 name|gchar
 modifier|*
 name|string
 parameter_list|,
-name|PixPipeParams
+name|GimpPixPipeParams
 modifier|*
 name|params
 parameter_list|)
@@ -638,10 +638,10 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|pixpipeparams_build (PixPipeParams * params)
-name|pixpipeparams_build
+DECL|function|gimp_pixpipe_params_build (GimpPixPipeParams * params)
+name|gimp_pixpipe_params_build
 parameter_list|(
-name|PixPipeParams
+name|GimpPixPipeParams
 modifier|*
 name|params
 parameter_list|)
@@ -659,7 +659,7 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|g_string_sprintf

@@ -108,7 +108,7 @@ name|gpointer
 name|cancel_data
 decl_stmt|;
 DECL|member|contrast
-name|double
+name|gdouble
 name|contrast
 decl_stmt|;
 DECL|member|lookup
@@ -135,7 +135,7 @@ specifier|static
 name|gpointer
 name|contrast_new
 parameter_list|(
-name|int
+name|gint
 name|type
 parameter_list|)
 function_decl|;
@@ -187,16 +187,16 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|bpl
 parameter_list|)
 function_decl|;
@@ -210,7 +210,7 @@ parameter_list|(
 name|gpointer
 name|cd_ID
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|state
 parameter_list|)
@@ -219,7 +219,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|Parasite
+name|GimpParasite
 modifier|*
 name|contrast_save
 parameter_list|(
@@ -793,13 +793,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|contrast_load (gpointer cd_ID,Parasite * state)
+DECL|function|contrast_load (gpointer cd_ID,GimpParasite * state)
 name|contrast_load
 parameter_list|(
 name|gpointer
 name|cd_ID
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|state
 parameter_list|)
@@ -822,14 +822,14 @@ name|context
 operator|->
 name|contrast
 argument_list|,
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|state
 argument_list|)
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|double
+name|gdouble
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -844,7 +844,7 @@ decl_stmt|,
 modifier|*
 name|data
 init|=
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|state
 argument_list|)
@@ -886,7 +886,7 @@ name|buf
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|double
+name|gdouble
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -902,7 +902,7 @@ end_function
 
 begin_function
 specifier|static
-name|Parasite
+name|GimpParasite
 modifier|*
 DECL|function|contrast_save (gpointer cd_ID)
 name|contrast_save
@@ -934,7 +934,7 @@ name|contrast
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|double
+name|gdouble
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -979,15 +979,15 @@ block|}
 endif|#
 directive|endif
 return|return
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"Display/Contrast"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|double
+name|gdouble
 argument_list|)
 argument_list|,
 operator|&

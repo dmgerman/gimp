@@ -657,7 +657,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 DECL|member|d_parasite
-name|Parasite
+name|GimpParasite
 name|d_parasite
 decl_stmt|;
 DECL|member|d_status
@@ -1640,7 +1640,7 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|gimp_image_parasite_find
 parameter_list|(
@@ -1660,9 +1660,9 @@ name|gint32
 name|image_ID
 parameter_list|,
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 name|void
@@ -2664,7 +2664,7 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|gimp_drawable_parasite_find
 parameter_list|(
@@ -2684,9 +2684,9 @@ name|gint32
 name|drawable
 parameter_list|,
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 name|void
@@ -3216,7 +3216,7 @@ name|positions
 parameter_list|)
 function_decl|;
 comment|/****************************************  *            Parasites                 *  ****************************************/
-name|Parasite
+name|GimpParasite
 modifier|*
 name|gimp_parasite_find
 parameter_list|(
@@ -3230,9 +3230,9 @@ name|void
 name|gimp_parasite_attach
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 name|void

@@ -995,7 +995,7 @@ decl_stmt|;
 name|GimpImageType
 name|type
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|comment_parasite
 decl_stmt|;
@@ -1118,11 +1118,11 @@ condition|)
 block|{
 name|comment_parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -1144,7 +1144,7 @@ argument_list|,
 name|comment_parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)

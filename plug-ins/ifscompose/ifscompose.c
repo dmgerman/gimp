@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e4fe030103
+DECL|enum|__anon2b442ba70103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e4fe030203
+DECL|enum|__anon2b442ba70203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4fe030308
+DECL|struct|__anon2b442ba70308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29e4fe03040a
+DECL|union|__anon2b442ba7040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4fe030508
+DECL|struct|__anon2b442ba70508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4fe030608
+DECL|struct|__anon2b442ba70608
 block|{
 DECL|member|color
 name|IfsColor
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4fe030708
+DECL|struct|__anon2b442ba70708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4fe030808
+DECL|struct|__anon2b442ba70808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4fe030908
+DECL|struct|__anon2b442ba70908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -558,7 +558,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4fe030a08
+DECL|struct|__anon2b442ba70a08
 block|{
 DECL|member|run
 name|gint
@@ -1659,7 +1659,7 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 init|=
@@ -1761,7 +1761,7 @@ name|found_parasite
 operator|=
 name|ifsvals_parse_string
 argument_list|(
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|parasite
 argument_list|)
@@ -1773,7 +1773,7 @@ operator|&
 name|elements
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -1945,7 +1945,7 @@ operator|==
 name|RUN_INTERACTIVE
 condition|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|str
 init|=
@@ -1957,7 +1957,7 @@ argument_list|,
 name|elements
 argument_list|)
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -1977,13 +1977,13 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 name|IFSCOMPOSE_PARASITE
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 operator||
-name|PARASITE_UNDOABLE
+name|GIMP_PARASITE_UNDOABLE
 argument_list|,
 name|strlen
 argument_list|(
@@ -2004,7 +2004,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)

@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * parasiteP.h  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpparasiteP.h  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PARASITEP_H__
+name|__GIMP_PARASITE_P_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PARASITEP_H__
+DECL|macro|__GIMP_PARASITE_P_H__
 define|#
 directive|define
-name|__PARASITEP_H__
+name|__GIMP_PARASITE_P_H__
 end_define
 
 begin_include
@@ -35,12 +35,12 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-DECL|struct|_Parasite
+DECL|struct|_GimpParasite
 struct|struct
-name|_Parasite
+name|_GimpParasite
 block|{
 DECL|member|name
-name|char
+name|gchar
 modifier|*
 name|name
 decl_stmt|;
@@ -56,8 +56,7 @@ name|size
 decl_stmt|;
 comment|/* amount of data                                 */
 DECL|member|data
-name|void
-modifier|*
+name|gpointer
 name|data
 decl_stmt|;
 comment|/* a pointer to the data.  plugin is              * 			 * responsible for tracking byte order            */
@@ -84,7 +83,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PARASITEP_H__ */
+comment|/* __GIMP_PARASITE_P_H__ */
 end_comment
 
 end_unit

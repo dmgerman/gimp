@@ -6,13 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<math.h>
+file|<stdlib.h>
 end_include
 
 begin_include
@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_include
@@ -82,8 +82,8 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2ae9df8d0103
 enum|enum
+DECL|enum|__anon2baf58770103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1905,7 +1905,7 @@ block|}
 end_function
 
 begin_function
-name|Parasite
+name|GimpParasite
 modifier|*
 DECL|function|gimp_drawable_parasite_find (const GimpDrawable * drawable,const gchar * name)
 name|gimp_drawable_parasite_find
@@ -1947,14 +1947,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|list_func (gchar * key,Parasite * p,gchar *** cur)
+DECL|function|list_func (gchar * key,GimpParasite * p,gchar *** cur)
 name|list_func
 parameter_list|(
 name|gchar
 modifier|*
 name|key
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|,
@@ -2066,14 +2066,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_parasite_attach (GimpDrawable * drawable,Parasite * parasite)
+DECL|function|gimp_drawable_parasite_attach (GimpDrawable * drawable,GimpParasite * parasite)
 name|gimp_drawable_parasite_attach
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
@@ -2089,7 +2089,7 @@ expr_stmt|;
 comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we arn't undoable */
 if|if
 condition|(
-name|parasite_is_undoable
+name|gimp_parasite_is_undoable
 argument_list|(
 name|parasite
 argument_list|)
@@ -2120,13 +2120,13 @@ block|}
 elseif|else
 if|if
 condition|(
-name|parasite_is_persistent
+name|gimp_parasite_is_persistent
 argument_list|(
 name|parasite
 argument_list|)
 operator|&&
 operator|!
-name|parasite_compare
+name|gimp_parasite_compare
 argument_list|(
 name|parasite
 argument_list|,
@@ -2134,7 +2134,7 @@ name|gimp_drawable_parasite_find
 argument_list|(
 name|drawable
 argument_list|,
-name|parasite_name
+name|gimp_parasite_name
 argument_list|(
 name|parasite
 argument_list|)
@@ -2164,11 +2164,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|parasite_has_flag
+name|gimp_parasite_has_flag
 argument_list|(
 name|parasite
 argument_list|,
-name|PARASITE_ATTACH_PARENT
+name|GIMP_PARASITE_ATTACH_PARENT
 argument_list|)
 condition|)
 block|{
@@ -2190,11 +2190,11 @@ block|}
 elseif|else
 if|if
 condition|(
-name|parasite_has_flag
+name|gimp_parasite_has_flag
 argument_list|(
 name|parasite
 argument_list|,
-name|PARASITE_ATTACH_GRANDPARENT
+name|GIMP_PARASITE_ATTACH_GRANDPARENT
 argument_list|)
 condition|)
 block|{
@@ -2216,7 +2216,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|parasite_is_undoable
+name|gimp_parasite_is_undoable
 argument_list|(
 name|parasite
 argument_list|)
@@ -2248,7 +2248,7 @@ modifier|*
 name|parasite
 parameter_list|)
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 decl_stmt|;
@@ -2279,7 +2279,7 @@ condition|)
 return|return;
 if|if
 condition|(
-name|parasite_is_undoable
+name|gimp_parasite_is_undoable
 argument_list|(
 name|p
 argument_list|)
@@ -2292,7 +2292,7 @@ name|gimage
 argument_list|,
 name|drawable
 argument_list|,
-name|parasite_name
+name|gimp_parasite_name
 argument_list|(
 name|p
 argument_list|)
@@ -2301,7 +2301,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|parasite_is_persistent
+name|gimp_parasite_is_persistent
 argument_list|(
 name|p
 argument_list|)

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * parasite.c  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpparasite.c  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -86,24 +86,24 @@ end_ifdef
 begin_function
 specifier|static
 name|void
-DECL|function|parasite_print (Parasite * p)
-name|parasite_print
+DECL|function|gimp_parasite_print (GimpParasite * parasite)
+name|gimp_parasite_print
 parameter_list|(
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 operator|==
 name|NULL
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
-literal|"(pid %d)attempt to print a null parasite\n"
+literal|"pid %d: attempt to print a null parasite\n"
 argument_list|,
 name|getpid
 argument_list|()
@@ -111,68 +111,68 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|printf
+name|g_print
 argument_list|(
-literal|"(pid %d), parasite: %p\n"
+literal|"pid %d: parasite: %p\n"
 argument_list|,
 name|getpid
 argument_list|()
 argument_list|,
-name|p
+name|parasite
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|p
+name|parasite
 operator|->
 name|name
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"\tname: %s\n"
 argument_list|,
-name|p
+name|parasite
 operator|->
 name|name
 argument_list|)
 expr_stmt|;
 else|else
-name|printf
+name|g_print
 argument_list|(
 literal|"\tname: NULL\n"
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\tflags: %d\n"
 argument_list|,
-name|p
+name|parasite
 operator|->
 name|flags
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\tsize: %d\n"
 argument_list|,
-name|p
+name|parasite
 operator|->
 name|size
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|p
+name|parasite
 operator|->
 name|size
 operator|>
 literal|0
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"\tdata: %p\n"
 argument_list|,
-name|p
+name|parasite
 operator|->
 name|data
 argument_list|)
@@ -186,10 +186,10 @@ directive|endif
 end_endif
 
 begin_function
-name|Parasite
+name|GimpParasite
 modifier|*
-DECL|function|parasite_new (const gchar * name,guint32 flags,guint32 size,const gpointer data)
-name|parasite_new
+DECL|function|gimp_parasite_new (const gchar * name,guint32 flags,guint32 size,const gpointer data)
+name|gimp_parasite_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -207,24 +207,28 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 decl_stmt|;
-name|p
+if|if
+condition|(
+operator|!
+name|name
+condition|)
+return|return
+name|NULL
+return|;
+name|parasite
 operator|=
 name|g_new
 argument_list|(
-name|Parasite
+name|GimpParasite
 argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|name
-condition|)
-name|p
+name|parasite
 operator|->
 name|name
 operator|=
@@ -233,18 +237,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-else|else
-block|{
-name|g_free
-argument_list|(
-name|p
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-name|p
+name|parasite
 operator|->
 name|flags
 operator|=
@@ -254,7 +247,7 @@ operator|&
 literal|0xFF
 operator|)
 expr_stmt|;
-name|p
+name|parasite
 operator|->
 name|size
 operator|=
@@ -264,7 +257,7 @@ if|if
 condition|(
 name|size
 condition|)
-name|p
+name|parasite
 operator|->
 name|data
 operator|=
@@ -276,24 +269,24 @@ name|size
 argument_list|)
 expr_stmt|;
 else|else
-name|p
+name|parasite
 operator|->
 name|data
 operator|=
 name|NULL
 expr_stmt|;
 return|return
-name|p
+name|parasite
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|parasite_free (Parasite * parasite)
-name|parasite_free
+DECL|function|gimp_parasite_free (GimpParasite * parasite)
+name|gimp_parasite_free
 parameter_list|(
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
@@ -340,12 +333,12 @@ block|}
 end_function
 
 begin_function
-name|int
-DECL|function|parasite_is_type (const Parasite * parasite,const gchar * name)
-name|parasite_is_type
+name|gboolean
+DECL|function|gimp_parasite_is_type (const GimpParasite * parasite,const gchar * name)
+name|gimp_parasite_is_type
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|,
@@ -386,13 +379,13 @@ block|}
 end_function
 
 begin_function
-name|Parasite
+name|GimpParasite
 modifier|*
-DECL|function|parasite_copy (const Parasite * parasite)
-name|parasite_copy
+DECL|function|gimp_parasite_copy (const GimpParasite * parasite)
+name|gimp_parasite_copy
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
@@ -407,7 +400,7 @@ return|return
 name|NULL
 return|;
 return|return
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 name|parasite
 operator|->
@@ -431,16 +424,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|parasite_compare (const Parasite * a,const Parasite * b)
-name|parasite_compare
+DECL|function|gimp_parasite_compare (const GimpParasite * a,const GimpParasite * b)
+name|gimp_parasite_compare
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
 name|a
 parameter_list|,
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
 name|b
 parameter_list|)
@@ -546,18 +539,18 @@ end_function
 
 begin_function
 name|gulong
-DECL|function|parasite_flags (const Parasite * p)
-name|parasite_flags
+DECL|function|gimp_parasite_flags (const GimpParasite * parasite)
+name|gimp_parasite_flags
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 operator|==
 name|NULL
 condition|)
@@ -565,7 +558,7 @@ return|return
 literal|0
 return|;
 return|return
-name|p
+name|parasite
 operator|->
 name|flags
 return|;
@@ -574,18 +567,18 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|parasite_is_persistent (const Parasite * p)
-name|parasite_is_persistent
+DECL|function|gimp_parasite_is_persistent (const GimpParasite * parasite)
+name|gimp_parasite_is_persistent
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 operator|==
 name|NULL
 condition|)
@@ -594,11 +587,11 @@ name|FALSE
 return|;
 return|return
 operator|(
-name|p
+name|parasite
 operator|->
 name|flags
 operator|&
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 operator|)
 return|;
 block|}
@@ -606,18 +599,18 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|parasite_is_undoable (const Parasite * p)
-name|parasite_is_undoable
+DECL|function|gimp_parasite_is_undoable (const GimpParasite * parasite)
+name|gimp_parasite_is_undoable
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 operator|==
 name|NULL
 condition|)
@@ -626,11 +619,11 @@ name|FALSE
 return|;
 return|return
 operator|(
-name|p
+name|parasite
 operator|->
 name|flags
 operator|&
-name|PARASITE_UNDOABLE
+name|GIMP_PARASITE_UNDOABLE
 operator|)
 return|;
 block|}
@@ -638,13 +631,13 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|parasite_has_flag (const Parasite * p,gulong flag)
-name|parasite_has_flag
+DECL|function|gimp_parasite_has_flag (const GimpParasite * parasite,gulong flag)
+name|gimp_parasite_has_flag
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|,
 name|gulong
 name|flag
@@ -652,7 +645,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 operator|==
 name|NULL
 condition|)
@@ -661,7 +654,7 @@ name|FALSE
 return|;
 return|return
 operator|(
-name|p
+name|parasite
 operator|->
 name|flags
 operator|&
@@ -675,21 +668,21 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|parasite_name (const Parasite * p)
-name|parasite_name
+DECL|function|gimp_parasite_name (const GimpParasite * parasite)
+name|gimp_parasite_name
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 condition|)
 return|return
-name|p
+name|parasite
 operator|->
 name|name
 return|;
@@ -702,21 +695,21 @@ end_function
 begin_function
 name|void
 modifier|*
-DECL|function|parasite_data (const Parasite * p)
-name|parasite_data
+DECL|function|gimp_parasite_data (const GimpParasite * parasite)
+name|gimp_parasite_data
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 condition|)
 return|return
-name|p
+name|parasite
 operator|->
 name|data
 return|;
@@ -728,21 +721,21 @@ end_function
 
 begin_function
 name|glong
-DECL|function|parasite_data_size (const Parasite * p)
-name|parasite_data_size
+DECL|function|gimp_parasite_data_size (const GimpParasite * parasite)
+name|gimp_parasite_data_size
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 block|{
 if|if
 condition|(
-name|p
+name|parasite
 condition|)
 return|return
-name|p
+name|parasite
 operator|->
 name|size
 return|;

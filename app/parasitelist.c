@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac1d49c0103
+DECL|enum|__anon29195ae40103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -334,7 +334,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gint
 DECL|function|free_a_parasite (void * key,void * parasite,void * unused)
 name|free_a_parasite
 parameter_list|(
@@ -351,10 +351,10 @@ modifier|*
 name|unused
 parameter_list|)
 block|{
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 operator|(
-name|Parasite
+name|GimpParasite
 operator|*
 operator|)
 name|parasite
@@ -462,12 +462,12 @@ operator|*
 operator|)
 name|data
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 init|=
 operator|(
-name|Parasite
+name|GimpParasite
 operator|*
 operator|)
 name|p
@@ -528,14 +528,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|parasite_list_add (ParasiteList * list,Parasite * p)
+DECL|function|parasite_list_add (ParasiteList * list,GimpParasite * p)
 name|parasite_list_add
 parameter_list|(
 name|ParasiteList
 modifier|*
 name|list
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|)
@@ -593,7 +593,7 @@ argument_list|)
 expr_stmt|;
 name|p
 operator|=
-name|parasite_copy
+name|gimp_parasite_copy
 argument_list|(
 name|p
 argument_list|)
@@ -631,7 +631,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|parasite_list_remove (ParasiteList * list,const char * name)
+DECL|function|parasite_list_remove (ParasiteList * list,const gchar * name)
 name|parasite_list_remove
 parameter_list|(
 name|ParasiteList
@@ -639,12 +639,12 @@ modifier|*
 name|list
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 decl_stmt|;
@@ -700,7 +700,7 @@ argument_list|,
 name|p
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|p
 argument_list|)
@@ -753,25 +753,25 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ppcount_func (char * key,Parasite * p,int * count)
+DECL|function|ppcount_func (gchar * key,GimpParasite * p,gint * count)
 name|ppcount_func
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|key
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|count
 parameter_list|)
 block|{
 if|if
 condition|(
-name|parasite_is_persistent
+name|gimp_parasite_is_persistent
 argument_list|(
 name|p
 argument_list|)
@@ -797,7 +797,7 @@ modifier|*
 name|list
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ppcount
 init|=
 literal|0
@@ -886,9 +886,9 @@ block|}
 end_function
 
 begin_function
-name|Parasite
+name|GimpParasite
 modifier|*
-DECL|function|parasite_list_find (ParasiteList * list,const char * name)
+DECL|function|parasite_list_find (ParasiteList * list,const gchar * name)
 name|parasite_list_find
 parameter_list|(
 name|ParasiteList
@@ -896,7 +896,7 @@ modifier|*
 name|list
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -918,7 +918,7 @@ name|table
 condition|)
 return|return
 operator|(
-name|Parasite
+name|GimpParasite
 operator|*
 operator|)
 name|g_hash_table_lookup
@@ -939,10 +939,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|parasite_shift_parent (Parasite * p)
+DECL|function|parasite_shift_parent (GimpParasite * p)
 name|parasite_shift_parent
 parameter_list|(
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|)

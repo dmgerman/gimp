@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe0108
+DECL|struct|__anon29d48e500108
 block|{
 DECL|member|run
 name|gint
@@ -195,7 +195,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b320ffe0203
+DECL|enum|__anon29d48e500203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b320ffe0303
+DECL|enum|__anon29d48e500303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -455,7 +455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b320ffe0403
+DECL|enum|__anon29d48e500403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -485,7 +485,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b320ffe0503
+DECL|enum|__anon29d48e500503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b320ffe0603
+DECL|enum|__anon29d48e500603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -527,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b320ffe0703
+DECL|enum|__anon29d48e500703
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -562,7 +562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b320ffe0803
+DECL|enum|__anon29d48e500803
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -652,7 +652,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe0908
+DECL|struct|__anon29d48e500908
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe0a08
+DECL|struct|__anon29d48e500a08
 block|{
 DECL|member|int_val1
 name|gint32
@@ -737,7 +737,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe0b08
+DECL|struct|__anon29d48e500b08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -774,7 +774,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe0c08
+DECL|struct|__anon29d48e500c08
 block|{
 DECL|member|path_type
 name|gint32
@@ -824,7 +824,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe0d08
+DECL|struct|__anon29d48e500d08
 block|{
 DECL|member|active_channel
 name|gint
@@ -898,7 +898,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe0e08
+DECL|struct|__anon29d48e500e08
 block|{
 DECL|member|active_layer
 name|gint
@@ -983,7 +983,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe0f08
+DECL|struct|__anon29d48e500f08
 block|{
 DECL|member|position
 name|gint32
@@ -1007,7 +1007,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b320ffe1008
+DECL|struct|__anon29d48e501008
 block|{
 DECL|member|version
 name|gchar
@@ -5171,7 +5171,7 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|p_write_parasite (gchar * dirname,FILE * fp,Parasite * parasite,gint wr_all_prp)
+DECL|function|p_write_parasite (gchar * dirname,FILE * fp,GimpParasite * parasite,gint wr_all_prp)
 name|p_write_parasite
 parameter_list|(
 name|gchar
@@ -5182,7 +5182,7 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|,
@@ -5223,7 +5223,7 @@ name|parasite
 operator|->
 name|flags
 operator|&
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 condition|)
 comment|/* check if Parasite should be saved */
 block|{
@@ -5799,7 +5799,7 @@ name|gint
 name|wr_all_prp
 parameter_list|)
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|l_parasite
 decl_stmt|;
@@ -5921,7 +5921,7 @@ name|gint
 name|wr_all_prp
 parameter_list|)
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|l_parasite
 decl_stmt|;
@@ -8951,7 +8951,7 @@ name|l_new_prop
 operator|->
 name|flags
 operator|=
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 expr_stmt|;
 name|l_new_prop
 operator|->
@@ -11093,7 +11093,7 @@ name|gchar
 modifier|*
 name|l_parasite_file
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 name|l_parasite
 decl_stmt|;
 name|struct
@@ -11219,7 +11219,7 @@ name|parasite_props
 operator|->
 name|flags
 operator||
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 expr_stmt|;
 if|if
 condition|(

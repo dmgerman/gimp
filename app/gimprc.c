@@ -230,7 +230,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289ef37a0103
+DECL|enum|__anon296b1b370103
 block|{
 DECL|enumerator|TT_STRING
 name|TT_STRING
@@ -12003,7 +12003,7 @@ name|flags
 init|=
 literal|0
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -12060,7 +12060,7 @@ name|error
 goto|;
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 name|identifier
 argument_list|,
@@ -12077,7 +12077,7 @@ name|parasite
 argument_list|)
 expr_stmt|;
 comment|/* attaches a copy */
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)

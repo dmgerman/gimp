@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c95d480108
+DECL|struct|__anon2bc021ab0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -499,7 +499,7 @@ name|data
 operator|.
 name|d_int32
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -594,7 +594,7 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -732,11 +732,11 @@ else|else
 block|{
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -759,7 +759,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|parasite
 argument_list|)

@@ -211,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2ba5608f0103
+DECL|enum|__anon2b8715190103
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -230,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba5608f0203
+DECL|enum|__anon2b8715190203
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -249,7 +249,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba5608f0303
+DECL|enum|__anon2b8715190303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -277,7 +277,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba5608f0403
+DECL|enum|__anon2b8715190403
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -780,7 +780,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Parasite
+name|GimpParasite
 modifier|*
 name|gimp_image_parasite_find
 parameter_list|(
@@ -820,7 +820,7 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 parameter_list|)
 function_decl|;

@@ -1,19 +1,19 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * parasite.h  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpparasite.h  * Copyright (C) 1998 Jay Cox<jaycox@earthlink.net>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PARASITE_H__
+name|__GIMP_PARASITE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PARASITE_H__
+DECL|macro|__GIMP_PARASITE_H__
 define|#
 directive|define
-name|__PARASITE_H__
+name|__GIMP_PARASITE_H__
 end_define
 
 begin_include
@@ -47,49 +47,49 @@ block|{
 endif|#
 directive|endif
 comment|/* __cplusplus */
-DECL|macro|PARASITE_PERSISTENT
+DECL|macro|GIMP_PARASITE_PERSISTENT
 define|#
 directive|define
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 value|1
-DECL|macro|PARASITE_UNDOABLE
+DECL|macro|GIMP_PARASITE_UNDOABLE
 define|#
 directive|define
-name|PARASITE_UNDOABLE
+name|GIMP_PARASITE_UNDOABLE
 value|2
-DECL|macro|PARASITE_ATTACH_PARENT
+DECL|macro|GIMP_PARASITE_ATTACH_PARENT
 define|#
 directive|define
-name|PARASITE_ATTACH_PARENT
+name|GIMP_PARASITE_ATTACH_PARENT
 value|(0x80<< 8)
-DECL|macro|PARASITE_PARENT_PERSISTENT
+DECL|macro|GIMP_PARASITE_PARENT_PERSISTENT
 define|#
 directive|define
-name|PARASITE_PARENT_PERSISTENT
-value|(PARASITE_PERSISTENT<< 8)
-DECL|macro|PARASITE_PARENT_UNDOABLE
+name|GIMP_PARASITE_PARENT_PERSISTENT
+value|(GIMP_PARASITE_PERSISTENT<< 8)
+DECL|macro|GIMP_PARASITE_PARENT_UNDOABLE
 define|#
 directive|define
-name|PARASITE_PARENT_UNDOABLE
-value|(PARASITE_UNDOABLE<< 8)
-DECL|macro|PARASITE_ATTACH_GRANDPARENT
+name|GIMP_PARASITE_PARENT_UNDOABLE
+value|(GIMP_PARASITE_UNDOABLE<< 8)
+DECL|macro|GIMP_PARASITE_ATTACH_GRANDPARENT
 define|#
 directive|define
-name|PARASITE_ATTACH_GRANDPARENT
+name|GIMP_PARASITE_ATTACH_GRANDPARENT
 value|(0x80<< 16)
-DECL|macro|PARASITE_GRANDPARENT_PERSISTENT
+DECL|macro|GIMP_PARASITE_GRANDPARENT_PERSISTENT
 define|#
 directive|define
-name|PARASITE_GRANDPARENT_PERSISTENT
-value|(PARASITE_PERSISTENT<< 16)
-DECL|macro|PARASITE_GRANDPARENT_UNDOABLE
+name|GIMP_PARASITE_GRANDPARENT_PERSISTENT
+value|(GIMP_PARASITE_PERSISTENT<< 16)
+DECL|macro|GIMP_PARASITE_GRANDPARENT_UNDOABLE
 define|#
 directive|define
-name|PARASITE_GRANDPARENT_UNDOABLE
-value|(PARASITE_UNDOABLE<< 16)
-name|Parasite
+name|GIMP_PARASITE_GRANDPARENT_UNDOABLE
+value|(GIMP_PARASITE_UNDOABLE<< 16)
+name|GimpParasite
 modifier|*
-name|parasite_new
+name|gimp_parasite_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -108,42 +108,42 @@ name|data
 parameter_list|)
 function_decl|;
 name|void
-name|parasite_free
+name|gimp_parasite_free
 parameter_list|(
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
-name|Parasite
+name|GimpParasite
 modifier|*
-name|parasite_copy
+name|gimp_parasite_copy
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|)
 function_decl|;
 name|gboolean
-name|parasite_compare
+name|gimp_parasite_compare
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
 name|a
 parameter_list|,
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
 name|b
 parameter_list|)
 function_decl|;
 name|gboolean
-name|parasite_is_type
+name|gimp_parasite_is_type
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 parameter_list|,
@@ -154,72 +154,72 @@ name|name
 parameter_list|)
 function_decl|;
 name|gboolean
-name|parasite_is_persistent
+name|gimp_parasite_is_persistent
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 name|gboolean
-name|parasite_is_undoable
+name|gimp_parasite_is_undoable
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 name|gboolean
-name|parasite_has_flag
+name|gimp_parasite_has_flag
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|,
 name|gulong
 name|flag
 parameter_list|)
 function_decl|;
 name|gulong
-name|parasite_flags
+name|gimp_parasite_flags
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 specifier|const
 name|gchar
 modifier|*
-name|parasite_name
+name|gimp_parasite_name
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 name|void
 modifier|*
-name|parasite_data
+name|gimp_parasite_data
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 name|glong
-name|parasite_data_size
+name|gimp_parasite_data_size
 parameter_list|(
 specifier|const
-name|Parasite
+name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|)
 function_decl|;
 ifdef|#
@@ -243,7 +243,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PARASITE_H__ */
+comment|/* __GIMP_PARASITE_H__ */
 end_comment
 
 end_unit

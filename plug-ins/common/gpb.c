@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b5530ac0108
+DECL|struct|__anon29d148d70108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -165,7 +165,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|gihparms
 specifier|static
-name|PixPipeParams
+name|GimpPixPipeParams
 name|gihparms
 decl_stmt|;
 end_decl_stmt
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5530ac0208
+DECL|struct|__anon29d148d70208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -1094,7 +1094,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 condition|;
 name|i
 operator|++
@@ -2586,7 +2586,7 @@ name|gtk_table_new
 argument_list|(
 literal|1
 argument_list|,
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2609,7 +2609,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 condition|;
 name|i
 operator|++
@@ -2880,7 +2880,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|PIXPIPE_MAXDIM
+name|GIMP_PIXPIPE_MAXDIM
 condition|;
 name|i
 operator|++
@@ -4019,7 +4019,7 @@ name|FILE
 modifier|*
 name|file
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|pipe_parasite
 decl_stmt|;
@@ -4149,7 +4149,7 @@ return|;
 block|}
 name|parstring
 operator|=
-name|pixpipeparams_build
+name|gimp_pixpipe_params_build
 argument_list|(
 operator|&
 name|gihparms
@@ -4267,11 +4267,11 @@ return|;
 block|}
 name|pipe_parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-brush-pipe-parameters"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -4290,7 +4290,7 @@ argument_list|,
 name|pipe_parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|pipe_parasite
 argument_list|)
@@ -4647,7 +4647,7 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|pipe_parasite
 decl_stmt|;
@@ -5196,7 +5196,7 @@ argument_list|,
 literal|"gimp-brush-pipe-parameters"
 argument_list|)
 expr_stmt|;
-name|pixpipeparams_init
+name|gimp_pixpipe_params_init
 argument_list|(
 operator|&
 name|gihparms
@@ -5206,7 +5206,7 @@ if|if
 condition|(
 name|pipe_parasite
 condition|)
-name|pixpipeparams_parse
+name|gimp_pixpipe_params_parse
 argument_list|(
 name|pipe_parasite
 operator|->
@@ -5309,7 +5309,7 @@ argument_list|,
 literal|"gimp-brush-pipe-parameters"
 argument_list|)
 expr_stmt|;
-name|pixpipeparams_init
+name|gimp_pixpipe_params_init
 argument_list|(
 operator|&
 name|gihparms
@@ -5319,7 +5319,7 @@ if|if
 condition|(
 name|pipe_parasite
 condition|)
-name|pixpipeparams_parse
+name|gimp_pixpipe_params_parse
 argument_list|(
 name|pipe_parasite
 operator|->

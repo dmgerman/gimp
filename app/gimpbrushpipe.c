@@ -1162,7 +1162,7 @@ name|GPattern
 modifier|*
 name|pattern
 decl_stmt|;
-name|PixPipeParams
+name|GimpPixPipeParams
 name|params
 decl_stmt|;
 name|FILE
@@ -1353,13 +1353,13 @@ operator|*
 name|paramstring
 condition|)
 block|{
-name|pixpipeparams_init
+name|gimp_pixpipe_params_init
 argument_list|(
 operator|&
 name|params
 argument_list|)
 expr_stmt|;
-name|pixpipeparams_parse
+name|gimp_pixpipe_params_parse
 argument_list|(
 name|paramstring
 argument_list|,

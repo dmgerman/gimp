@@ -87,9 +87,11 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_init_parasites ()
+DECL|function|gimp_init_parasites (void)
 name|gimp_init_parasites
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
@@ -111,10 +113,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_parasite_attach (Parasite * p)
+DECL|function|gimp_parasite_attach (GimpParasite * p)
 name|gimp_parasite_attach
 parameter_list|(
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|)
@@ -131,11 +133,11 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_parasite_detach (const char * name)
+DECL|function|gimp_parasite_detach (const gchar * name)
 name|gimp_parasite_detach
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -151,13 +153,13 @@ block|}
 end_function
 
 begin_function
-name|Parasite
+name|GimpParasite
 modifier|*
-DECL|function|gimp_parasite_find (const char * name)
+DECL|function|gimp_parasite_find (const gchar * name)
 name|gimp_parasite_find
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -176,18 +178,18 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|list_func (char * key,Parasite * p,char *** cur)
+DECL|function|list_func (gchar * key,GimpParasite * p,gchar *** cur)
 name|list_func
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|key
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 modifier|*
 modifier|*
@@ -214,7 +216,7 @@ block|}
 end_function
 
 begin_function
-name|char
+name|gchar
 modifier|*
 modifier|*
 DECL|function|gimp_parasite_list (gint * count)
@@ -229,7 +231,8 @@ name|gchar
 modifier|*
 modifier|*
 name|list
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 modifier|*
 name|cur
@@ -246,19 +249,11 @@ name|cur
 operator|=
 name|list
 operator|=
-operator|(
-name|char
-operator|*
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|char
+name|gchar
 operator|*
-argument_list|)
-operator|*
+argument_list|,
 operator|*
 name|count
 argument_list|)
@@ -285,14 +280,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_func (char * key,Parasite * p,FILE * fp)
+DECL|function|save_func (gchar * key,GimpParasite * p,FILE * fp)
 name|save_func
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|key
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 parameter_list|,
@@ -303,7 +298,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|parasite_is_persistent
+name|gimp_parasite_is_persistent
 argument_list|(
 name|p
 argument_list|)
@@ -322,12 +317,12 @@ name|fp
 argument_list|,
 literal|"(parasite \"%s\" %lu \""
 argument_list|,
-name|parasite_name
+name|gimp_parasite_name
 argument_list|(
 name|p
 argument_list|)
 argument_list|,
-name|parasite_flags
+name|gimp_parasite_flags
 argument_list|(
 name|p
 argument_list|)
@@ -342,14 +337,14 @@ operator|(
 name|gchar
 operator|*
 operator|)
-name|parasite_data
+name|gimp_parasite_data
 argument_list|(
 name|p
 argument_list|)
 operator|,
 name|l
 operator|=
-name|parasite_data_size
+name|gimp_parasite_data_size
 argument_list|(
 name|p
 argument_list|)
@@ -447,7 +442,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;
@@ -608,7 +603,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|filename
 decl_stmt|;

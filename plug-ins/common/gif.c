@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acfff920103
+DECL|enum|__anon2b5698170103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acfff920208
+DECL|struct|__anon2b5698170208
 block|{
 DECL|member|interlace
 name|gint
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acfff920308
+DECL|struct|__anon2b5698170308
 block|{
 DECL|member|run
 name|gint
@@ -376,7 +376,7 @@ end_ifdef
 
 begin_decl_stmt
 DECL|variable|comment_parasite
-name|Parasite
+name|GimpParasite
 modifier|*
 name|comment_parasite
 init|=
@@ -2575,11 +2575,11 @@ condition|)
 block|{
 name|comment_parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 literal|"gimp-comment"
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 argument_list|,
 name|strlen
 argument_list|(
@@ -2602,7 +2602,7 @@ argument_list|,
 name|comment_parasite
 argument_list|)
 expr_stmt|;
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)
@@ -3872,7 +3872,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|FACEHUGGERS
-name|Parasite
+name|GimpParasite
 modifier|*
 name|GIF2_CMNT
 decl_stmt|;
@@ -4369,7 +4369,7 @@ ifdef|#
 directive|ifdef
 name|FACEHUGGERS
 block|}
-name|parasite_free
+name|gimp_parasite_free
 argument_list|(
 name|GIF2_CMNT
 argument_list|)

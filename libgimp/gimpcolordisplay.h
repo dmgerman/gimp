@@ -57,7 +57,7 @@ modifier|*
 name|GimpColorDisplayNew
 function_decl|)
 parameter_list|(
-name|int
+name|gint
 name|type
 parameter_list|)
 function_decl|;
@@ -94,16 +94,16 @@ name|guchar
 modifier|*
 name|buf
 parameter_list|,
-name|int
+name|gint
 name|width
 parameter_list|,
-name|int
+name|gint
 name|height
 parameter_list|,
-name|int
+name|gint
 name|bpp
 parameter_list|,
-name|int
+name|gint
 name|bpl
 parameter_list|)
 function_decl|;
@@ -150,7 +150,7 @@ parameter_list|(
 name|gpointer
 name|cd_ID
 parameter_list|,
-name|Parasite
+name|GimpParasite
 modifier|*
 name|state
 parameter_list|)
@@ -160,7 +160,7 @@ end_typedef
 begin_typedef
 DECL|typedef|GimpColorDisplaySaveState
 typedef|typedef
-name|Parasite
+name|GimpParasite
 modifier|*
 function_decl|(
 modifier|*

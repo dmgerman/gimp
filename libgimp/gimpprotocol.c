@@ -7006,12 +7006,12 @@ case|case
 name|PARAM_PARASITE
 case|:
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 init|=
 operator|(
-name|Parasite
+name|GimpParasite
 operator|*
 operator|)
 operator|&

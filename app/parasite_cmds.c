@@ -271,7 +271,7 @@ name|gchar
 modifier|*
 name|data
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 init|=
@@ -374,7 +374,7 @@ operator|=
 operator|(
 name|parasite
 operator|=
-name|parasite_new
+name|gimp_parasite_new
 argument_list|(
 name|name
 argument_list|,
@@ -545,7 +545,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 init|=
@@ -583,7 +583,7 @@ condition|)
 block|{
 name|parasite
 operator|=
-name|parasite_copy
+name|gimp_parasite_copy
 argument_list|(
 name|gimp_parasite_find
 argument_list|(
@@ -722,14 +722,14 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
 name|parasite
 operator|=
 operator|(
-name|Parasite
+name|GimpParasite
 operator|*
 operator|)
 name|args
@@ -1117,7 +1117,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 init|=
@@ -1179,7 +1179,7 @@ condition|)
 block|{
 name|parasite
 operator|=
-name|parasite_copy
+name|gimp_parasite_copy
 argument_list|(
 name|gimp_drawable_parasite_find
 argument_list|(
@@ -1332,7 +1332,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -1363,7 +1363,7 @@ expr_stmt|;
 name|parasite
 operator|=
 operator|(
-name|Parasite
+name|GimpParasite
 operator|*
 operator|)
 name|args
@@ -1865,7 +1865,7 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 init|=
@@ -1927,7 +1927,7 @@ condition|)
 block|{
 name|parasite
 operator|=
-name|parasite_copy
+name|gimp_parasite_copy
 argument_list|(
 name|gimp_image_parasite_find
 argument_list|(
@@ -2080,7 +2080,7 @@ name|GimpImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Parasite
+name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -2111,7 +2111,7 @@ expr_stmt|;
 name|parasite
 operator|=
 operator|(
-name|Parasite
+name|GimpParasite
 operator|*
 operator|)
 name|args

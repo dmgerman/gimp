@@ -3569,7 +3569,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|Parasite
+name|GimpParasite
 operator|*
 argument_list|)
 expr_stmt|;
@@ -4159,7 +4159,7 @@ case|case
 name|PARAM_PARASITE
 case|:
 block|{
-name|Parasite
+name|GimpParasite
 modifier|*
 name|p
 init|=
@@ -4167,7 +4167,7 @@ name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|Parasite
+name|GimpParasite
 operator|*
 argument_list|)
 decl_stmt|;
