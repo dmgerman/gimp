@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -87,15 +81,9 @@ directive|include
 file|"gimptoolcontrol.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2b5fde890103
+DECL|enum|__anon27b2bfcf0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
