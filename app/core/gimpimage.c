@@ -491,7 +491,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b9d5f5a0103
+DECL|enum|__anon2742ea1f0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -904,6 +904,12 @@ operator|->
 name|yresolution
 operator|=
 literal|72.0
+expr_stmt|;
+name|gimage
+operator|->
+name|unit
+operator|=
+name|UNIT_PIXEL
 expr_stmt|;
 name|gimage
 operator|->
@@ -1478,6 +1484,46 @@ name|gimage
 operator|->
 name|yresolution
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_image_set_unit (GimpImage * gimage,GUnit unit)
+name|gimp_image_set_unit
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GUnit
+name|unit
+parameter_list|)
+block|{
+name|gimage
+operator|->
+name|unit
+operator|=
+name|unit
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|GUnit
+DECL|function|gimp_image_get_unit (GimpImage * gimage)
+name|gimp_image_get_unit
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|unit
+return|;
 block|}
 end_function
 

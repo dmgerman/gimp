@@ -57,6 +57,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpunit.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug_in.h"
 end_include
 
@@ -109,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43293b0103
+DECL|enum|__anon2c6bf5eb0103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -212,7 +218,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43293b0203
+DECL|enum|__anon2c6bf5eb0203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -255,7 +261,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43293b0303
+DECL|enum|__anon2c6bf5eb0303
 block|{
 DECL|enumerator|Red
 name|Red
@@ -283,7 +289,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b43293b0403
+DECL|enum|__anon2c6bf5eb0403
 block|{
 DECL|enumerator|ExpandAsNecessary
 name|ExpandAsNecessary
@@ -429,6 +435,28 @@ name|float
 modifier|*
 parameter_list|,
 name|float
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_set_unit
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GUnit
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GUnit
+name|gimp_image_get_unit
+parameter_list|(
+name|GimpImage
 modifier|*
 parameter_list|)
 function_decl|;

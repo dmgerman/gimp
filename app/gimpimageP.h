@@ -112,6 +112,11 @@ name|float
 name|yresolution
 decl_stmt|;
 comment|/*  image y-res, in dpi          */
+DECL|member|unit
+name|GUnit
+name|unit
+decl_stmt|;
+comment|/*  image unit                   */
 DECL|member|base_type
 name|int
 name|base_type

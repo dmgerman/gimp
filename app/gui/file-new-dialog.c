@@ -90,7 +90,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bf3773c0108
+DECL|struct|__anon28c134540108
 typedef|typedef
 struct|struct
 block|{
@@ -2412,6 +2412,22 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
+name|gtk_window_set_policy
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|vals
+operator|->
+name|dlg
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 comment|/* handle the wm close signal */
 name|gtk_signal_connect
 argument_list|(
@@ -3517,9 +3533,7 @@ name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,
-name|GTK_EXPAND
-operator||
-name|GTK_FILL
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -4022,7 +4036,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4116,7 +4130,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
