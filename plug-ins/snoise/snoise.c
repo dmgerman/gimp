@@ -26,6 +26,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|<time.h>
+end_include
+
+begin_comment
+comment|/* For random seeding */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -87,7 +97,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e3296b0108
+DECL|struct|__anon2be74ccb0108
 typedef|typedef
 struct|struct
 block|{
@@ -115,6 +125,11 @@ DECL|member|ysize
 name|gdouble
 name|ysize
 decl_stmt|;
+comment|/* Interface only */
+DECL|member|timeseed
+name|gboolean
+name|timeseed
+decl_stmt|;
 DECL|typedef|SolidNoiseValues
 block|}
 name|SolidNoiseValues
@@ -122,7 +137,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e3296b0208
+DECL|struct|__anon2be74ccb0208
 typedef|typedef
 struct|struct
 block|{
@@ -137,7 +152,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e3296b0308
+DECL|struct|__anon2be74ccb0308
 typedef|typedef
 struct|struct
 block|{
@@ -385,7 +400,10 @@ literal|4.0
 block|,
 comment|/* xsize */
 literal|4.0
+block|,
 comment|/* ysize */
+name|TRUE
+comment|/* Time seed? */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -931,6 +949,16 @@ condition|(
 name|run_mode
 operator|==
 name|RUN_INTERACTIVE
+operator|||
+operator|(
+name|snvals
+operator|.
+name|timeseed
+operator|&&
+name|run_mode
+operator|==
+name|RUN_WITH_LAST_VALS
+operator|)
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1411,6 +1439,21 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/*  Define the pseudo-random number generator seed  */
+if|if
+condition|(
+name|snvals
+operator|.
+name|timeseed
+condition|)
+name|snvals
+operator|.
+name|seed
+operator|=
+name|time
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
 name|srand
 argument_list|(
 name|snvals
@@ -2098,6 +2141,14 @@ name|entry
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|seed_hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|time_button
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|scale
 decl_stmt|;
 name|GtkObject
@@ -2310,10 +2361,14 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|entry
+name|seed_hbox
 operator|=
-name|gtk_entry_new
-argument_list|()
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|2
+argument_list|)
 expr_stmt|;
 name|gtk_table_attach
 argument_list|(
@@ -2322,7 +2377,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|entry
+name|seed_hbox
 argument_list|,
 literal|1
 argument_list|,
@@ -2337,6 +2392,27 @@ argument_list|,
 name|GTK_FILL
 argument_list|,
 literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|entry
+operator|=
+name|gtk_entry_new
+argument_list|()
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|seed_hbox
+argument_list|)
+argument_list|,
+name|entry
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2394,6 +2470,71 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|entry
+argument_list|)
+expr_stmt|;
+name|time_button
+operator|=
+name|gtk_toggle_button_new_with_label
+argument_list|(
+literal|"Time"
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_state
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|time_button
+argument_list|)
+argument_list|,
+name|snvals
+operator|.
+name|timeseed
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|time_button
+argument_list|)
+argument_list|,
+literal|"toggled"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|dialog_toggle_update
+argument_list|,
+operator|&
+name|snvals
+operator|.
+name|timeseed
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|seed_hbox
+argument_list|)
+argument_list|,
+name|time_button
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|time_button
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|seed_hbox
 argument_list|)
 expr_stmt|;
 comment|/*  Entry #2  */
