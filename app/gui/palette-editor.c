@@ -134,7 +134,7 @@ DECL|macro|ENTRY_WIDTH
 define|#
 directive|define
 name|ENTRY_WIDTH
-value|14
+value|12
 end_define
 
 begin_define
@@ -166,7 +166,7 @@ DECL|macro|ROWS
 define|#
 directive|define
 name|ROWS
-value|16
+value|11
 end_define
 
 begin_define
