@@ -142,8 +142,8 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b849d380103
 enum|enum
+DECL|enum|__anon289e32d50103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -237,9 +237,11 @@ end_decl_stmt
 
 begin_function
 name|GtkType
-DECL|function|gimp_channel_get_type ()
+DECL|function|gimp_channel_get_type (void)
 name|gimp_channel_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GtkType
@@ -295,8 +297,7 @@ name|channel_type
 operator|=
 name|gtk_type_unique
 argument_list|(
-name|gimp_drawable_get_type
-argument_list|()
+name|GIMP_TYPE_DRAWABLE
 argument_list|,
 operator|&
 name|channel_info
@@ -444,7 +445,7 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|channel_new (GimpImage * gimage,gint width,gint height,gchar * name,gint opacity,guchar * col)
+DECL|function|channel_new (GimpImage * gimage,gint width,gint height,const gchar * name,gint opacity,const guchar * col)
 name|channel_new
 parameter_list|(
 name|GimpImage
@@ -457,6 +458,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -464,6 +466,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col
@@ -616,63 +619,10 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|channel_ref (Channel * channel)
-name|channel_ref
-parameter_list|(
-name|Channel
-modifier|*
-name|channel
-parameter_list|)
-block|{
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|channel
-return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|channel_unref (Channel * channel)
-name|channel_unref
-parameter_list|(
-name|Channel
-modifier|*
-name|channel
-parameter_list|)
-block|{
-name|gtk_object_unref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|Channel
-modifier|*
-DECL|function|channel_copy (Channel * channel)
+DECL|function|channel_copy (const Channel * channel)
 name|channel_copy
 parameter_list|(
+specifier|const
 name|Channel
 modifier|*
 name|channel
@@ -698,6 +648,7 @@ decl_stmt|;
 name|gint
 name|number
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -708,9 +659,12 @@ decl_stmt|;
 comment|/*  formulate the new channel name  */
 name|name
 operator|=
-name|channel_get_name
+name|drawable_get_name
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|ext
@@ -990,13 +944,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_set_name (Channel * channel,gchar * name)
+DECL|function|channel_set_name (Channel * channel,const gchar * name)
 name|channel_set_name
 parameter_list|(
 name|Channel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1016,11 +971,13 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
-DECL|function|channel_get_name (Channel * channel)
+DECL|function|channel_get_name (const Channel * channel)
 name|channel_get_name
 parameter_list|(
+specifier|const
 name|Channel
 modifier|*
 name|channel
@@ -1040,13 +997,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|channel_set_color (Channel * channel,guchar * color)
+DECL|function|channel_set_color (Channel * channel,const guchar * color)
 name|channel_set_color
 parameter_list|(
 name|Channel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|color
@@ -1090,34 +1048,35 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|guchar
 modifier|*
-DECL|function|channel_get_color (Channel * channel)
+DECL|function|channel_get_color (const Channel * channel)
 name|channel_get_color
 parameter_list|(
+specifier|const
 name|Channel
 modifier|*
 name|channel
 parameter_list|)
 block|{
 return|return
-operator|(
 name|GIMP_CHANNEL
 argument_list|(
 name|channel
 argument_list|)
 operator|->
 name|col
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
-name|int
-DECL|function|channel_get_opacity (Channel * channel)
+name|gint
+DECL|function|channel_get_opacity (const Channel * channel)
 name|channel_get_opacity
 parameter_list|(
+specifier|const
 name|Channel
 modifier|*
 name|channel
@@ -1309,18 +1268,15 @@ argument_list|)
 operator|->
 name|destroy
 condition|)
-operator|(
-operator|*
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|destroy
-operator|)
-operator|(
+argument_list|(
 name|object
-operator|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -1331,15 +1287,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|channel_removed (Channel * channel,gpointer data)
+DECL|function|channel_removed (Channel * channel)
 name|channel_removed
 parameter_list|(
 name|Channel
 modifier|*
 name|channel
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2213,7 +2166,7 @@ return|return
 name|tb
 return|;
 block|}
-comment|/* Second call - should NOT visit the tile cache...*/
+comment|/* Second call - should NOT visit the tile cache... */
 return|return
 name|channel_preview_private
 argument_list|(
@@ -2312,9 +2265,11 @@ name|height
 argument_list|)
 operator|)
 condition|)
+block|{
 return|return
 name|ret_buf
 return|;
+block|}
 comment|/*  The hard way  */
 else|else
 block|{
@@ -2620,7 +2575,6 @@ name|channel
 parameter_list|)
 block|{
 return|return
-operator|(
 name|gimp_drawable_get_tattoo
 argument_list|(
 name|GIMP_DRAWABLE
@@ -2628,17 +2582,15 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|channel_set_tattoo (const Channel * channel,Tattoo value)
+DECL|function|channel_set_tattoo (Channel * channel,Tattoo value)
 name|channel_set_tattoo
 parameter_list|(
-specifier|const
 name|Channel
 modifier|*
 name|channel

@@ -292,6 +292,7 @@ parameter_list|,
 name|GimpImageType
 name|type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -316,29 +317,6 @@ name|layer
 parameter_list|,
 name|gboolean
 name|add_alpha
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|Layer
-modifier|*
-name|layer_ref
-parameter_list|(
-name|Layer
-modifier|*
-name|layer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|layer_unref
-parameter_list|(
-name|Layer
-modifier|*
-name|layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -738,6 +716,7 @@ name|Layer
 modifier|*
 name|layer
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -746,10 +725,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|layer_get_name
 parameter_list|(
+specifier|const
 name|Layer
 modifier|*
 name|layer
@@ -877,7 +858,6 @@ begin_function_decl
 name|void
 name|layer_set_tattoo
 parameter_list|(
-specifier|const
 name|Layer
 modifier|*
 name|layer

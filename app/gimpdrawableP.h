@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPDRAWABLEP_H__
+name|__GIMP_DRAWABLE_P_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPDRAWABLEP_H__
+DECL|macro|__GIMP_DRAWABLE_P_H__
 define|#
 directive|define
-name|__GIMPDRAWABLEP_H__
+name|__GIMP_DRAWABLE_P_H__
 end_define
 
 begin_include
@@ -27,6 +27,37 @@ include|#
 directive|include
 file|"gimpdrawable.h"
 end_include
+
+begin_define
+DECL|macro|GIMP_DRAWABLE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_DRAWABLE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE, GimpDrawableClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DRAWABLE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_DRAWABLE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE))
+end_define
+
+begin_typedef
+DECL|typedef|GimpDrawableClass
+typedef|typedef
+name|struct
+name|_GimpDrawableClass
+name|GimpDrawableClass
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpDrawable
@@ -139,44 +170,14 @@ modifier|*
 name|invalidate_preview
 function_decl|)
 parameter_list|(
-name|GtkObject
+name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpDrawableClass
-typedef|typedef
-name|struct
-name|_GimpDrawableClass
-name|GimpDrawableClass
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_DRAWABLE_CLASS (klass)
-define|#
-directive|define
-name|GIMP_DRAWABLE_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DRAWABLE, GimpDrawableClass))
-end_define
-
-begin_define
-DECL|macro|GIMP_IS_DRAWABLE_CLASS (klass)
-define|#
-directive|define
-name|GIMP_IS_DRAWABLE_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DRAWABLE))
-end_define
 
 begin_function_decl
 name|void
@@ -184,18 +185,25 @@ name|gimp_drawable_configure
 parameter_list|(
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|gint
+name|width
 parameter_list|,
 name|gint
+name|height
 parameter_list|,
 name|GimpImageType
+name|type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -206,7 +214,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMPDRAWABLEP_H__ */
+comment|/* __GIMP_DRAWABLE_P_H__ */
 end_comment
 
 end_unit

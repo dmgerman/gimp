@@ -477,14 +477,17 @@ name|GimpImage
 modifier|*
 name|file_open_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|open_mode
@@ -3288,17 +3291,20 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|file_open_image (gchar * filename,gchar * raw_filename,gchar * open_mode,RunModeType run_mode,gint * status)
+DECL|function|file_open_image (const gchar * filename,const gchar * raw_filename,const gchar * open_mode,RunModeType run_mode,gint * status)
 name|file_open_image
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|raw_filename
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|open_mode
@@ -3609,6 +3615,10 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|filename
 expr_stmt|;
 name|args
@@ -3620,6 +3630,10 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|raw_filename
 expr_stmt|;
 name|return_vals
@@ -8473,6 +8487,7 @@ name|GimpImage
 modifier|*
 name|new_gimage
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -8558,13 +8573,14 @@ begin_function
 specifier|static
 name|PlugInProcDef
 modifier|*
-DECL|function|file_proc_find_by_name (GSList * procs,gchar * filename,gboolean skip_magic)
+DECL|function|file_proc_find_by_name (GSList * procs,const gchar * filename,gboolean skip_magic)
 name|file_proc_find_by_name
 parameter_list|(
 name|GSList
 modifier|*
 name|procs
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -8809,13 +8825,14 @@ end_function
 begin_function
 name|PlugInProcDef
 modifier|*
-DECL|function|file_proc_find (GSList * procs,gchar * filename)
+DECL|function|file_proc_find (GSList * procs,const gchar * filename)
 name|file_proc_find
 parameter_list|(
 name|GSList
 modifier|*
 name|procs
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|filename

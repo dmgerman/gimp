@@ -4048,6 +4048,8 @@ return|return
 name|guide
 return|;
 break|break;
+default|default:
+break|break;
 block|}
 block|}
 block|}
@@ -4365,6 +4367,8 @@ name|TRUE
 expr_stmt|;
 block|}
 block|}
+break|break;
+default|default:
 break|break;
 block|}
 block|}
@@ -8933,6 +8937,8 @@ operator|->
 name|disp_height
 argument_list|)
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 block|}

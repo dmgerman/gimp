@@ -116,7 +116,7 @@ decl_stmt|;
 comment|/*  layer combination mode         */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28fe523f0108
+DECL|struct|__anon293f6bed0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -168,6 +168,18 @@ DECL|member|parent_class
 name|GimpDrawableClass
 name|parent_class
 decl_stmt|;
+DECL|member|removed
+name|void
+function_decl|(
+modifier|*
+name|removed
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -186,7 +198,6 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-comment|/*  ID of layer */
 block|}
 struct|;
 end_struct

@@ -884,6 +884,7 @@ argument_list|(
 literal|"mdg / BAD FALLTHROUGH"
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 end_function
@@ -1144,6 +1145,8 @@ name|delete_guide
 operator|=
 name|TRUE
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 name|gdisplays_expose_guide

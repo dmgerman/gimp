@@ -223,6 +223,7 @@ name|gimp_image_free_projection
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -234,12 +235,16 @@ name|gimp_image_allocate_shadow
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|gint
+name|width
 parameter_list|,
 name|gint
+name|height
 parameter_list|,
 name|gint
+name|bpp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -251,6 +256,7 @@ name|gimp_image_allocate_projection
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -262,6 +268,7 @@ name|gimp_image_free_layers
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -273,6 +280,7 @@ name|gimp_image_free_channels
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -284,14 +292,19 @@ name|gimp_image_construct_layers
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
+name|w
 parameter_list|,
 name|gint
+name|h
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -303,14 +316,19 @@ name|gimp_image_construct_channels
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
+name|w
 parameter_list|,
 name|gint
+name|h
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -322,14 +340,19 @@ name|gimp_image_initialize_projection
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|gint
+name|x
 parameter_list|,
 name|gint
+name|y
 parameter_list|,
 name|gint
+name|w
 parameter_list|,
 name|gint
+name|h
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -341,12 +364,15 @@ name|gimp_image_get_active_channels
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|gint
 modifier|*
+name|active
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -362,18 +388,23 @@ name|project_intensity
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|Layer
 modifier|*
+name|layer
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|src
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|dest
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -385,18 +416,23 @@ name|project_intensity_alpha
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|Layer
 modifier|*
+name|layer
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|src
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|dest
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -408,15 +444,47 @@ name|project_indexed
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|Layer
 modifier|*
+name|layer
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|src
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|dest
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|project_indexed_alpha
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|Layer
+modifier|*
+name|layer
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|src
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|dest
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -428,15 +496,19 @@ name|project_channel
 parameter_list|(
 name|GimpImage
 modifier|*
+name|gimage
 parameter_list|,
 name|Channel
 modifier|*
+name|layer
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|src
 parameter_list|,
 name|PixelRegion
 modifier|*
+name|src2
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -576,8 +648,8 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon28da91b80103
 enum|enum
+DECL|enum|__anon2a30f7a40103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -617,6 +689,10 @@ name|gimp_image_signals
 index|[
 name|LAST_SIGNAL
 index|]
+init|=
+block|{
+literal|0
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -626,6 +702,8 @@ specifier|static
 name|GimpObjectClass
 modifier|*
 name|parent_class
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -667,12 +745,6 @@ operator|=
 name|object_class
 operator|->
 name|type
-expr_stmt|;
-name|object_class
-operator|->
-name|destroy
-operator|=
-name|gimp_image_destroy
 expr_stmt|;
 name|gimp_image_signals
 index|[
@@ -826,6 +898,60 @@ name|gimp_image_signals
 argument_list|,
 name|LAST_SIGNAL
 argument_list|)
+expr_stmt|;
+name|object_class
+operator|->
+name|destroy
+operator|=
+name|gimp_image_destroy
+expr_stmt|;
+name|klass
+operator|->
+name|clean
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|dirty
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|repaint
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|rename
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|resize
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|restructure
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|colormap_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|undo_event
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -1683,9 +1809,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_resolution (GimpImage * gimage,gdouble * xresolution,gdouble * yresolution)
+DECL|function|gimp_image_get_resolution (const GimpImage * gimage,gdouble * xresolution,gdouble * yresolution)
 name|gimp_image_get_resolution
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -1752,9 +1879,10 @@ end_function
 
 begin_function
 name|GimpUnit
-DECL|function|gimp_image_get_unit (GimpImage * gimage)
+DECL|function|gimp_image_get_unit (const GimpImage * gimage)
 name|gimp_image_get_unit
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -1794,9 +1922,10 @@ end_function
 begin_function
 name|PlugInProcDef
 modifier|*
-DECL|function|gimp_image_get_save_proc (GimpImage * gimage)
+DECL|function|gimp_image_get_save_proc (const GimpImage * gimage)
 name|gimp_image_get_save_proc
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -1806,6 +1935,44 @@ return|return
 name|gimage
 operator|->
 name|save_proc
+return|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_image_get_width (const GimpImage * gimage)
+name|gimp_image_get_width
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|width
+return|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_image_get_height (const GimpImage * gimage)
+name|gimp_image_get_height
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+return|return
+name|gimage
+operator|->
+name|height
 return|;
 block|}
 end_function
@@ -2175,44 +2342,6 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|gint
-DECL|function|gimp_image_get_width (const GimpImage * gimage)
-name|gimp_image_get_width
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
-return|return
-name|gimage
-operator|->
-name|width
-return|;
-block|}
-end_function
-
-begin_function
-name|gint
-DECL|function|gimp_image_get_height (const GimpImage * gimage)
-name|gimp_image_get_height
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
-return|return
-name|gimage
-operator|->
-name|height
-return|;
 block|}
 end_function
 
@@ -2872,11 +3001,14 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|channel_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|gimage
 operator|->
 name|selection_mask
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4152,13 +4284,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_get_foreground (GimpImage * gimage,GimpDrawable * drawable,guchar * fg)
+DECL|function|gimp_image_get_foreground (const GimpImage * gimage,const GimpDrawable * drawable,guchar * fg)
 name|gimp_image_get_foreground
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4216,13 +4350,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_background (GimpImage * gimage,GimpDrawable * drawable,guchar * bg)
+DECL|function|gimp_image_get_background (const GimpImage * gimage,const GimpDrawable * drawable,guchar * bg)
 name|gimp_image_get_background
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4346,7 +4482,7 @@ name|dest
 operator|=
 name|g_new
 argument_list|(
-argument|unsigned char
+name|guchar
 argument_list|,
 literal|5
 argument_list|)
@@ -4453,9 +4589,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_color (GimpImage * gimage,GimpImageType d_type,guchar * rgb,guchar * src)
+DECL|function|gimp_image_get_color (const GimpImage * gimage,GimpImageType d_type,guchar * rgb,guchar * src)
 name|gimp_image_get_color
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -4547,13 +4684,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_transform_color (GimpImage * gimage,GimpDrawable * drawable,guchar * src,guchar * dest,GimpImageBaseType type)
+DECL|function|gimp_image_transform_color (const GimpImage * gimage,const GimpDrawable * drawable,guchar * src,guchar * dest,GimpImageBaseType type)
 name|gimp_image_transform_color
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -4589,7 +4728,7 @@ operator|!=
 name|NULL
 operator|)
 condition|?
-name|drawable_type
+name|gimp_drawable_type
 argument_list|(
 name|drawable
 argument_list|)
@@ -5190,9 +5329,10 @@ begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_image_parasite_list (GimpImage * gimage,gint * count)
+DECL|function|gimp_image_parasite_list (const GimpImage * gimage,gint * count)
 name|gimp_image_parasite_list
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -5447,11 +5587,9 @@ literal|"Tattoo state has become corrupt (2.1 billion operation limit exceded)"
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|image
 operator|->
 name|tattoo_state
-operator|)
 return|;
 block|}
 end_function
@@ -5787,9 +5925,71 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_colormap_changed (GimpImage * gimage,gint col)
+DECL|function|gimp_image_set_paths (GimpImage * gimage,PathList * paths)
+name|gimp_image_set_paths
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|PathList
+modifier|*
+name|paths
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimage
+operator|->
+name|paths
+operator|=
+name|paths
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|PathList
+modifier|*
+DECL|function|gimp_image_get_paths (const GimpImage * gimage)
+name|gimp_image_get_paths
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimage
+operator|->
+name|paths
+return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_image_colormap_changed (const GimpImage * gimage,gint col)
 name|gimp_image_colormap_changed
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -5830,66 +6030,6 @@ argument_list|,
 name|col
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_image_set_paths (GimpImage * gimage,PathList * paths)
-name|gimp_image_set_paths
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|PathList
-modifier|*
-name|paths
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimage
-operator|->
-name|paths
-operator|=
-name|paths
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|PathList
-modifier|*
-DECL|function|gimp_image_get_paths (GimpImage * gimage)
-name|gimp_image_get_paths
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|gimage
-operator|->
-name|paths
-return|;
 block|}
 end_function
 
@@ -6487,9 +6627,12 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|channel_delete
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7581,7 +7724,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_construct (GimpImage * gimage,gint x,gint y,gint w,gint h,gboolean can_use_cowproject)
+DECL|function|gimp_image_construct (GimpImage * gimage,gint x,gint y,gint w,gint h)
 name|gimp_image_construct
 parameter_list|(
 name|GimpImage
@@ -7599,9 +7742,6 @@ name|w
 parameter_list|,
 name|gint
 name|h
-parameter_list|,
-name|gboolean
-name|can_use_cowproject
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -8340,8 +8480,6 @@ name|endy
 operator|-
 name|starty
 operator|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -8429,8 +8567,6 @@ argument_list|,
 name|w
 argument_list|,
 name|h
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -8438,13 +8574,15 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_layer_index (GimpImage * gimage,Layer * layer_arg)
+DECL|function|gimp_image_get_layer_index (const GimpImage * gimage,const Layer * layer_arg)
 name|gimp_image_get_layer_index
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|Layer
 modifier|*
 name|layer_arg
@@ -8527,9 +8665,10 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimp_image_get_layer_by_index (GimpImage * gimage,gint layer_index)
+DECL|function|gimp_image_get_layer_by_index (const GimpImage * gimage,gint layer_index)
 name|gimp_image_get_layer_by_index
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -8584,16 +8723,18 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_get_channel_index (GimpImage * gimage,Channel * channel_ID)
+DECL|function|gimp_image_get_channel_index (const GimpImage * gimage,const Channel * channel_arg)
 name|gimp_image_get_channel_index
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|Channel
 modifier|*
-name|channel_ID
+name|channel_arg
 parameter_list|)
 block|{
 name|Channel
@@ -8667,7 +8808,7 @@ if|if
 condition|(
 name|channel
 operator|==
-name|channel_ID
+name|channel_arg
 condition|)
 return|return
 name|index
@@ -8683,9 +8824,10 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimp_image_get_active_layer (GimpImage * gimage)
+DECL|function|gimp_image_get_active_layer (const GimpImage * gimage)
 name|gimp_image_get_active_layer
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -8721,9 +8863,10 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|gimp_image_get_active_channel (GimpImage * gimage)
+DECL|function|gimp_image_get_active_channel (const GimpImage * gimage)
 name|gimp_image_get_active_channel
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -8750,9 +8893,10 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimp_image_get_layer_by_tattoo (GimpImage * gimage,Tattoo tattoo)
+DECL|function|gimp_image_get_layer_by_tattoo (const GimpImage * gimage,Tattoo tattoo)
 name|gimp_image_get_layer_by_tattoo
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -8829,9 +8973,10 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|gimp_image_get_channel_by_tattoo (GimpImage * gimage,Tattoo tattoo)
+DECL|function|gimp_image_get_channel_by_tattoo (const GimpImage * gimage,Tattoo tattoo)
 name|gimp_image_get_channel_by_tattoo
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -8908,14 +9053,16 @@ end_function
 begin_function
 name|Channel
 modifier|*
-DECL|function|gimp_image_get_channel_by_name (GimpImage * gimage,char * name)
+DECL|function|gimp_image_get_channel_by_name (const GimpImage * gimage,const gchar * name)
 name|gimp_image_get_channel_by_name
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|name
 parameter_list|)
@@ -8971,9 +9118,12 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
-name|channel_get_name
+name|drawable_get_name
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 argument_list|,
 name|name
@@ -8990,187 +9140,12 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|gimp_image_get_component_active (GimpImage * gimage,ChannelType type)
-name|gimp_image_get_component_active
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|ChannelType
-name|type
-parameter_list|)
-block|{
-comment|/*  No sanity checking here...  */
-switch|switch
-condition|(
-name|type
-condition|)
-block|{
-case|case
-name|RED_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|active
-index|[
-name|RED_PIX
-index|]
-return|;
-break|break;
-case|case
-name|GREEN_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|active
-index|[
-name|GREEN_PIX
-index|]
-return|;
-break|break;
-case|case
-name|BLUE_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|active
-index|[
-name|BLUE_PIX
-index|]
-return|;
-break|break;
-case|case
-name|GRAY_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|active
-index|[
-name|GRAY_PIX
-index|]
-return|;
-break|break;
-case|case
-name|INDEXED_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|active
-index|[
-name|INDEXED_PIX
-index|]
-return|;
-break|break;
-default|default:
-return|return
-name|FALSE
-return|;
-break|break;
-block|}
-block|}
-end_function
-
-begin_function
-name|gint
-DECL|function|gimp_image_get_component_visible (GimpImage * gimage,ChannelType type)
-name|gimp_image_get_component_visible
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|ChannelType
-name|type
-parameter_list|)
-block|{
-comment|/*  No sanity checking here...  */
-switch|switch
-condition|(
-name|type
-condition|)
-block|{
-case|case
-name|RED_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|visible
-index|[
-name|RED_PIX
-index|]
-return|;
-break|break;
-case|case
-name|GREEN_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|visible
-index|[
-name|GREEN_PIX
-index|]
-return|;
-break|break;
-case|case
-name|BLUE_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|visible
-index|[
-name|BLUE_PIX
-index|]
-return|;
-break|break;
-case|case
-name|GRAY_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|visible
-index|[
-name|GRAY_PIX
-index|]
-return|;
-break|break;
-case|case
-name|INDEXED_CHANNEL
-case|:
-return|return
-name|gimage
-operator|->
-name|visible
-index|[
-name|INDEXED_PIX
-index|]
-return|;
-break|break;
-default|default:
-return|return
-name|FALSE
-return|;
-break|break;
-block|}
-block|}
-end_function
-
-begin_function
 name|Channel
 modifier|*
-DECL|function|gimp_image_get_mask (GimpImage * gimage)
+DECL|function|gimp_image_get_mask (const GimpImage * gimage)
 name|gimp_image_get_mask
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -9196,9 +9171,188 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_layer_boundary (GimpImage * gimage,BoundSeg ** segs,int * num_segs)
+DECL|function|gimp_image_get_component_active (const GimpImage * gimage,ChannelType type)
+name|gimp_image_get_component_active
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|ChannelType
+name|type
+parameter_list|)
+block|{
+comment|/*  No sanity checking here...  */
+switch|switch
+condition|(
+name|type
+condition|)
+block|{
+case|case
+name|RED_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|active
+index|[
+name|RED_PIX
+index|]
+return|;
+break|break;
+case|case
+name|GREEN_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|active
+index|[
+name|GREEN_PIX
+index|]
+return|;
+break|break;
+case|case
+name|BLUE_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|active
+index|[
+name|BLUE_PIX
+index|]
+return|;
+break|break;
+case|case
+name|GRAY_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|active
+index|[
+name|GRAY_PIX
+index|]
+return|;
+break|break;
+case|case
+name|INDEXED_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|active
+index|[
+name|INDEXED_PIX
+index|]
+return|;
+break|break;
+default|default:
+return|return
+name|FALSE
+return|;
+break|break;
+block|}
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_get_component_visible (const GimpImage * gimage,ChannelType type)
+name|gimp_image_get_component_visible
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|ChannelType
+name|type
+parameter_list|)
+block|{
+comment|/*  No sanity checking here...  */
+switch|switch
+condition|(
+name|type
+condition|)
+block|{
+case|case
+name|RED_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|visible
+index|[
+name|RED_PIX
+index|]
+return|;
+break|break;
+case|case
+name|GREEN_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|visible
+index|[
+name|GREEN_PIX
+index|]
+return|;
+break|break;
+case|case
+name|BLUE_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|visible
+index|[
+name|BLUE_PIX
+index|]
+return|;
+break|break;
+case|case
+name|GRAY_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|visible
+index|[
+name|GRAY_PIX
+index|]
+return|;
+break|break;
+case|case
+name|INDEXED_CHANNEL
+case|:
+return|return
+name|gimage
+operator|->
+name|visible
+index|[
+name|INDEXED_PIX
+index|]
+return|;
+break|break;
+default|default:
+return|return
+name|FALSE
+return|;
+break|break;
+block|}
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_layer_boundary (const GimpImage * gimage,BoundSeg ** segs,gint * n_segs)
 name|gimp_image_layer_boundary
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -9208,9 +9362,9 @@ modifier|*
 modifier|*
 name|segs
 parameter_list|,
-name|int
+name|gint
 modifier|*
-name|num_segs
+name|n_segs
 parameter_list|)
 block|{
 name|Layer
@@ -9223,6 +9377,24 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|segs
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|n_segs
+operator|!=
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -9246,7 +9418,7 @@ name|layer_boundary
 argument_list|(
 name|layer
 argument_list|,
-name|num_segs
+name|n_segs
 argument_list|)
 expr_stmt|;
 return|return
@@ -9261,7 +9433,7 @@ operator|=
 name|NULL
 expr_stmt|;
 operator|*
-name|num_segs
+name|n_segs
 operator|=
 literal|0
 expr_stmt|;
@@ -9292,6 +9464,16 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_LAYER
+argument_list|(
+name|layer
 argument_list|)
 argument_list|,
 name|NULL
@@ -9546,7 +9728,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_component_active (GimpImage * gimage,ChannelType type,gint value)
+DECL|function|gimp_image_set_component_active (GimpImage * gimage,ChannelType type,gboolean active)
 name|gimp_image_set_component_active
 parameter_list|(
 name|GimpImage
@@ -9556,8 +9738,8 @@ parameter_list|,
 name|ChannelType
 name|type
 parameter_list|,
-name|gint
-name|value
+name|gboolean
+name|active
 parameter_list|)
 block|{
 comment|/*  No sanity checking here...  */
@@ -9576,7 +9758,7 @@ index|[
 name|RED_PIX
 index|]
 operator|=
-name|value
+name|active
 expr_stmt|;
 break|break;
 case|case
@@ -9589,7 +9771,7 @@ index|[
 name|GREEN_PIX
 index|]
 operator|=
-name|value
+name|active
 expr_stmt|;
 break|break;
 case|case
@@ -9602,7 +9784,7 @@ index|[
 name|BLUE_PIX
 index|]
 operator|=
-name|value
+name|active
 expr_stmt|;
 break|break;
 case|case
@@ -9615,7 +9797,7 @@ index|[
 name|GRAY_PIX
 index|]
 operator|=
-name|value
+name|active
 expr_stmt|;
 break|break;
 case|case
@@ -9628,7 +9810,7 @@ index|[
 name|INDEXED_PIX
 index|]
 operator|=
-name|value
+name|active
 expr_stmt|;
 break|break;
 case|case
@@ -9653,7 +9835,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_component_visible (GimpImage * gimage,ChannelType type,gint value)
+DECL|function|gimp_image_set_component_visible (GimpImage * gimage,ChannelType type,gboolean visible)
 name|gimp_image_set_component_visible
 parameter_list|(
 name|GimpImage
@@ -9663,8 +9845,8 @@ parameter_list|,
 name|ChannelType
 name|type
 parameter_list|,
-name|gint
-name|value
+name|gboolean
+name|visible
 parameter_list|)
 block|{
 comment|/*  No sanity checking here...  */
@@ -9683,7 +9865,7 @@ index|[
 name|RED_PIX
 index|]
 operator|=
-name|value
+name|visible
 expr_stmt|;
 break|break;
 case|case
@@ -9696,7 +9878,7 @@ index|[
 name|GREEN_PIX
 index|]
 operator|=
-name|value
+name|visible
 expr_stmt|;
 break|break;
 case|case
@@ -9709,7 +9891,7 @@ index|[
 name|BLUE_PIX
 index|]
 operator|=
-name|value
+name|visible
 expr_stmt|;
 break|break;
 case|case
@@ -9722,7 +9904,7 @@ index|[
 name|GRAY_PIX
 index|]
 operator|=
-name|value
+name|visible
 expr_stmt|;
 break|break;
 case|case
@@ -9735,7 +9917,7 @@ index|[
 name|INDEXED_PIX
 index|]
 operator|=
-name|value
+name|visible
 expr_stmt|;
 break|break;
 default|default:
@@ -9747,9 +9929,10 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimp_image_pick_correlate_layer (GimpImage * gimage,gint x,gint y)
+DECL|function|gimp_image_pick_correlate_layer (const GimpImage * gimage,gint x,gint y)
 name|gimp_image_pick_correlate_layer
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -12679,12 +12862,25 @@ name|gimage
 operator|->
 name|layers
 argument_list|,
-name|layer_ref
+name|float_layer
+argument_list|,
+name|position
+argument_list|)
+expr_stmt|;
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|float_layer
 argument_list|)
-argument_list|,
-name|position
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|float_layer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -12700,7 +12896,20 @@ name|gimage
 operator|->
 name|layers
 argument_list|,
-name|layer_ref
+name|float_layer
+argument_list|)
+expr_stmt|;
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|float_layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|float_layer
 argument_list|)
@@ -14132,7 +14341,20 @@ name|gimage
 operator|->
 name|channels
 argument_list|,
-name|channel_ref
+name|channel
+argument_list|)
+expr_stmt|;
+name|gtk_object_ref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_sink
+argument_list|(
+name|GTK_OBJECT
 argument_list|(
 name|channel
 argument_list|)
@@ -14356,8 +14578,6 @@ comment|/* Send out REMOVED signal from channel */
 name|channel_removed
 argument_list|(
 name|channel
-argument_list|,
-name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Important to push the undo here in case the push fails  */
@@ -14390,14 +14610,24 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_is_empty (GimpImage * gimage)
+DECL|function|gimp_image_is_empty (const GimpImage * gimage)
 name|gimp_image_is_empty
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -14409,12 +14639,10 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 operator|!
 name|gimage
 operator|->
 name|layers
-operator|)
 return|;
 block|}
 end_function
@@ -14422,9 +14650,10 @@ end_function
 begin_function
 name|GimpDrawable
 modifier|*
-DECL|function|gimp_image_active_drawable (GimpImage * gimage)
+DECL|function|gimp_image_active_drawable (const GimpImage * gimage)
 name|gimp_image_active_drawable
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -14434,6 +14663,15 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -14453,6 +14691,7 @@ name|active_channel
 operator|!=
 name|NULL
 condition|)
+block|{
 return|return
 name|GIMP_DRAWABLE
 argument_list|(
@@ -14461,6 +14700,7 @@ operator|->
 name|active_channel
 argument_list|)
 return|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -14503,7 +14743,6 @@ name|layer
 argument_list|)
 return|;
 block|}
-else|else
 return|return
 name|NULL
 return|;
@@ -14512,14 +14751,25 @@ end_function
 
 begin_function
 name|GimpImageBaseType
-DECL|function|gimp_image_base_type (GimpImage * gimage)
+DECL|function|gimp_image_base_type (const GimpImage * gimage)
 name|gimp_image_base_type
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -14541,14 +14791,25 @@ end_function
 
 begin_function
 name|GimpImageType
-DECL|function|gimp_image_base_type_with_alpha (GimpImage * gimage)
+DECL|function|gimp_image_base_type_with_alpha (const GimpImage * gimage)
 name|gimp_image_base_type_with_alpha
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -14593,16 +14854,27 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_image_filename (GimpImage * gimage)
+DECL|function|gimp_image_filename (const GimpImage * gimage)
 name|gimp_image_filename
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimage
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -14636,9 +14908,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_undo_is_enabled (GimpImage * gimage)
+DECL|function|gimp_image_undo_is_enabled (const GimpImage * gimage)
 name|gimp_image_undo_is_enabled
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -14792,14 +15065,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_undo_event (GimpImage * gimage,int event)
+DECL|function|gimp_image_undo_event (GimpImage * gimage,gint event)
 name|gimp_image_undo_event
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|int
+name|gint
 name|event
 parameter_list|)
 block|{
@@ -14998,9 +15271,10 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|gimp_image_floating_sel (GimpImage * gimage)
+DECL|function|gimp_image_floating_sel (const GimpImage * gimage)
 name|gimp_image_floating_sel
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -15039,9 +15313,10 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|gimp_image_cmap (GimpImage * gimage)
+DECL|function|gimp_image_cmap (const GimpImage * gimage)
 name|gimp_image_cmap
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -15128,11 +15403,13 @@ operator|->
 name|height
 operator|)
 condition|)
+block|{
 name|gimp_image_allocate_projection
 argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|gimage
 operator|->
@@ -15143,9 +15420,10 @@ end_function
 
 begin_function
 name|GimpImageType
-DECL|function|gimp_image_projection_type (GimpImage * gimage)
+DECL|function|gimp_image_projection_type (const GimpImage * gimage)
 name|gimp_image_projection_type
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -15172,9 +15450,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_projection_bytes (GimpImage * gimage)
+DECL|function|gimp_image_projection_bytes (const GimpImage * gimage)
 name|gimp_image_projection_bytes
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -15201,9 +15480,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_projection_opacity (GimpImage * gimage)
+DECL|function|gimp_image_projection_opacity (const GimpImage * gimage)
 name|gimp_image_projection_opacity
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -15278,9 +15558,10 @@ end_function
 
 begin_function
 name|GimpImageType
-DECL|function|gimp_image_composite_type (GimpImage * gimage)
+DECL|function|gimp_image_composite_type (const GimpImage * gimage)
 name|gimp_image_composite_type
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -15297,9 +15578,10 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_image_composite_bytes (GimpImage * gimage)
+DECL|function|gimp_image_composite_bytes (const GimpImage * gimage)
 name|gimp_image_composite_bytes
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage
@@ -16336,9 +16618,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_preview_valid (GimpImage * gimage,ChannelType type)
+DECL|function|gimp_image_preview_valid (const GimpImage * gimage,ChannelType type)
 name|gimp_image_preview_valid
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|gimage

@@ -145,7 +145,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf520410103
+DECL|enum|__anon29b9fb1b0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -197,7 +197,7 @@ specifier|static
 name|void
 name|layer_invalidate_preview
 parameter_list|(
-name|GtkObject
+name|GimpDrawable
 modifier|*
 name|object
 parameter_list|)
@@ -381,8 +381,7 @@ name|layer_type
 operator|=
 name|gtk_type_unique
 argument_list|(
-name|gimp_drawable_get_type
-argument_list|()
+name|GIMP_TYPE_DRAWABLE
 argument_list|,
 operator|&
 name|layer_info
@@ -398,12 +397,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_class_init (GimpLayerClass * class)
+DECL|function|gimp_layer_class_init (GimpLayerClass * klass)
 name|gimp_layer_class_init
 parameter_list|(
 name|GimpLayerClass
 modifier|*
-name|class
+name|klass
 parameter_list|)
 block|{
 name|GtkObjectClass
@@ -420,7 +419,7 @@ operator|(
 name|GtkObjectClass
 operator|*
 operator|)
-name|class
+name|klass
 expr_stmt|;
 name|drawable_class
 operator|=
@@ -428,14 +427,13 @@ operator|(
 name|GimpDrawableClass
 operator|*
 operator|)
-name|class
+name|klass
 expr_stmt|;
 name|layer_parent_class
 operator|=
 name|gtk_type_class
 argument_list|(
-name|gimp_drawable_get_type
-argument_list|()
+name|GIMP_TYPE_DRAWABLE
 argument_list|)
 expr_stmt|;
 name|layer_signals
@@ -478,6 +476,12 @@ operator|->
 name|invalidate_preview
 operator|=
 name|layer_invalidate_preview
+expr_stmt|;
+name|klass
+operator|->
+name|removed
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -710,12 +714,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|layer_invalidate_preview (GtkObject * object)
+DECL|function|layer_invalidate_preview (GimpDrawable * drawable)
 name|layer_invalidate_preview
 parameter_list|(
-name|GtkObject
+name|GimpDrawable
 modifier|*
-name|object
+name|drawable
 parameter_list|)
 block|{
 name|GimpLayer
@@ -724,7 +728,7 @@ name|layer
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|object
+name|drawable
 operator|!=
 name|NULL
 argument_list|)
@@ -733,7 +737,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_LAYER
 argument_list|(
-name|object
+name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -741,7 +745,7 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|object
+name|drawable
 argument_list|)
 expr_stmt|;
 if|if
@@ -960,7 +964,7 @@ end_comment
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_new (GimpImage * gimage,gint width,gint height,GimpImageType type,gchar * name,gint opacity,LayerModeEffects mode)
+DECL|function|layer_new (GimpImage * gimage,gint width,gint height,GimpImageType type,const gchar * name,gint opacity,LayerModeEffects mode)
 name|layer_new
 parameter_list|(
 name|GimpImage
@@ -976,6 +980,7 @@ parameter_list|,
 name|GimpImageType
 name|type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1148,60 +1153,6 @@ end_function
 begin_function
 name|Layer
 modifier|*
-DECL|function|layer_ref (Layer * layer)
-name|layer_ref
-parameter_list|(
-name|Layer
-modifier|*
-name|layer
-parameter_list|)
-block|{
-name|gtk_object_ref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_object_sink
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|layer
-return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|layer_unref (Layer * layer)
-name|layer_unref
-parameter_list|(
-name|Layer
-modifier|*
-name|layer
-parameter_list|)
-block|{
-name|gtk_object_unref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|layer
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|Layer
-modifier|*
 DECL|function|layer_copy (Layer * layer,gboolean add_alpha)
 name|layer_copy
 parameter_list|(
@@ -1231,6 +1182,7 @@ decl_stmt|;
 name|gint
 name|number
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -5470,13 +5422,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|layer_set_name (Layer * layer,gchar * name)
+DECL|function|layer_set_name (Layer * layer,const gchar * name)
 name|layer_set_name
 parameter_list|(
 name|Layer
 modifier|*
 name|layer
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -5496,11 +5449,13 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
-DECL|function|layer_get_name (Layer * layer)
+DECL|function|layer_get_name (const Layer * layer)
 name|layer_get_name
 parameter_list|(
+specifier|const
 name|Layer
 modifier|*
 name|layer
@@ -6642,7 +6597,6 @@ name|layer
 parameter_list|)
 block|{
 return|return
-operator|(
 name|gimp_drawable_get_tattoo
 argument_list|(
 name|GIMP_DRAWABLE
@@ -6650,17 +6604,15 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-operator|)
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|layer_set_tattoo (const Layer * layer,Tattoo value)
+DECL|function|layer_set_tattoo (Layer * layer,Tattoo value)
 name|layer_set_tattoo
 parameter_list|(
-specifier|const
 name|Layer
 modifier|*
 name|layer

@@ -657,7 +657,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0a50440103
+DECL|enum|__anon27b2f5bc0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1941,7 +1941,7 @@ name|Guide
 modifier|*
 name|guide
 decl_stmt|;
-name|gint
+name|gboolean
 name|remove_guide
 decl_stmt|;
 for|for
@@ -2034,6 +2034,8 @@ name|remove_guide
 operator|=
 name|TRUE
 expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 comment|/* edit the guide */

@@ -10935,7 +10935,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2ce92c0108
+DECL|struct|__anon274caffa0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -15075,6 +15075,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|name

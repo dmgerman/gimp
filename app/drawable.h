@@ -23,7 +23,7 @@ file|"gimpdrawable.h"
 end_include
 
 begin_function_decl
-name|int
+name|gint
 name|drawable_ID
 parameter_list|(
 name|GimpDrawable
@@ -114,22 +114,6 @@ define|#
 directive|define
 name|drawable_invalidate_preview
 value|gimp_drawable_invalidate_preview
-end_define
-
-begin_define
-DECL|macro|drawable_dirty
-define|#
-directive|define
-name|drawable_dirty
-value|gimp_drawable_dirty
-end_define
-
-begin_define
-DECL|macro|drawable_clean
-define|#
-directive|define
-name|drawable_clean
-value|gimp_drawable_clean
 end_define
 
 begin_define

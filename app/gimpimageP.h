@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMPIMAGEP_H__
+name|__GIMP_IMAGE_P_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMPIMAGEP_H__
+DECL|macro|__GIMP_IMAGE_P_H__
 define|#
 directive|define
-name|__GIMPIMAGEP_H__
+name|__GIMP_IMAGE_P_H__
 end_define
 
 begin_include
@@ -81,6 +81,26 @@ directive|define
 name|MAX_CHANNELS
 value|4
 end_define
+
+begin_define
+DECL|macro|GIMP_IMAGE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IMAGE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_IMAGE, GimpImageClass)
+end_define
+
+begin_typedef
+DECL|typedef|GimpImageClass
+typedef|typedef
+name|struct
+name|_GimpImageClass
+name|GimpImageClass
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_GimpImage
@@ -268,7 +288,7 @@ name|paths
 decl_stmt|;
 comment|/*  Paths data for this image    */
 DECL|member|visible
-name|gint
+name|gboolean
 name|visible
 index|[
 name|MAX_CHANNELS
@@ -276,7 +296,7 @@ index|]
 decl_stmt|;
 comment|/*  visible channels             */
 DECL|member|active
-name|gint
+name|gboolean
 name|active
 index|[
 name|MAX_CHANNELS
@@ -374,6 +394,18 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
+DECL|member|clean
+name|void
+function_decl|(
+modifier|*
+name|clean
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
 DECL|member|dirty
 name|void
 function_decl|(
@@ -381,8 +413,9 @@ modifier|*
 name|dirty
 function_decl|)
 parameter_list|(
-name|GtkObject
+name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 DECL|member|repaint
@@ -392,8 +425,9 @@ modifier|*
 name|repaint
 function_decl|)
 parameter_list|(
-name|GtkObject
+name|GimpImage
 modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 DECL|member|rename
@@ -403,33 +437,62 @@ modifier|*
 name|rename
 function_decl|)
 parameter_list|(
-name|GtkObject
+name|GimpImage
 modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+DECL|member|resize
+name|void
+function_decl|(
+modifier|*
+name|resize
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+DECL|member|restructure
+name|void
+function_decl|(
+modifier|*
+name|restructure
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+DECL|member|colormap_changed
+name|void
+function_decl|(
+modifier|*
+name|colormap_changed
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+DECL|member|undo_event
+name|void
+function_decl|(
+modifier|*
+name|undo_event
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 block|}
 struct|;
 end_struct
-
-begin_typedef
-DECL|typedef|GimpImageClass
-typedef|typedef
-name|struct
-name|_GimpImageClass
-name|GimpImageClass
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_IMAGE_CLASS (klass)
-define|#
-directive|define
-name|GIMP_IMAGE_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|GTK_CHECK_CLASS_CAST (klass, GIMP_TYPE_IMAGE, GimpImageClass)
-end_define
 
 begin_endif
 endif|#
@@ -437,7 +500,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMPIMAGEP_H__ */
+comment|/* __GIMP_IMAGE_P_H__ */
 end_comment
 
 end_unit

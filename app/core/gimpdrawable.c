@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a289ed0103
+DECL|enum|__anon27c802b00103
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -184,25 +184,67 @@ parameter_list|)
 block|{
 specifier|static
 name|GtkType
-name|type
+name|drawable_type
+init|=
+literal|0
 decl_stmt|;
-name|GIMP_TYPE_INIT
+if|if
+condition|(
+operator|!
+name|drawable_type
+condition|)
+block|{
+name|GtkTypeInfo
+name|drawable_info
+init|=
+block|{
+literal|"GimpDrawable"
+block|,
+sizeof|sizeof
 argument_list|(
-name|type
-argument_list|,
 name|GimpDrawable
-argument_list|,
+argument_list|)
+block|,
+sizeof|sizeof
+argument_list|(
 name|GimpDrawableClass
-argument_list|,
-name|gimp_drawable_init
-argument_list|,
+argument_list|)
+block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
 name|gimp_drawable_class_init
-argument_list|,
+block|,
+operator|(
+name|GtkObjectInitFunc
+operator|)
+name|gimp_drawable_init
+block|,
+comment|/* reserved_1 */
+name|NULL
+block|,
+comment|/* reserved_2 */
+name|NULL
+block|,
+operator|(
+name|GtkClassInitFunc
+operator|)
+name|NULL
+block|,       }
+decl_stmt|;
+name|drawable_type
+operator|=
+name|gtk_type_unique
+argument_list|(
 name|GIMP_TYPE_OBJECT
+argument_list|,
+operator|&
+name|drawable_info
 argument_list|)
 expr_stmt|;
+block|}
 return|return
-name|type
+name|drawable_type
 return|;
 block|}
 end_function
@@ -210,12 +252,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_class_init (GimpDrawableClass * class)
+DECL|function|gimp_drawable_class_init (GimpDrawableClass * klass)
 name|gimp_drawable_class_init
 parameter_list|(
 name|GimpDrawableClass
 modifier|*
-name|class
+name|klass
 parameter_list|)
 block|{
 name|GtkObjectClass
@@ -231,7 +273,7 @@ name|object_class
 operator|=
 name|GTK_OBJECT_CLASS
 argument_list|(
-name|class
+name|klass
 argument_list|)
 expr_stmt|;
 name|parent_class
@@ -278,6 +320,12 @@ operator|->
 name|destroy
 operator|=
 name|gimp_drawable_destroy
+expr_stmt|;
+name|klass
+operator|->
+name|invalidate_preview
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 end_function
@@ -372,7 +420,7 @@ decl_stmt|;
 name|PixelRegion
 name|shadowPR
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -381,6 +429,13 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
@@ -521,6 +576,13 @@ decl_stmt|;
 name|guchar
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
@@ -776,6 +838,15 @@ name|off_y
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
@@ -947,6 +1018,13 @@ name|gimage
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
@@ -1022,9 +1100,10 @@ end_function
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|gimp_drawable_gimage (GimpDrawable * drawable)
+DECL|function|gimp_drawable_gimage (const GimpDrawable * drawable)
 name|gimp_drawable_gimage
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1117,9 +1196,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_has_alpha (GimpDrawable * drawable)
+DECL|function|gimp_drawable_has_alpha (const GimpDrawable * drawable)
 name|gimp_drawable_has_alpha
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1145,9 +1225,10 @@ end_function
 
 begin_function
 name|GimpImageType
-DECL|function|gimp_drawable_type (GimpDrawable * drawable)
+DECL|function|gimp_drawable_type (const GimpDrawable * drawable)
 name|gimp_drawable_type
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1174,9 +1255,10 @@ end_function
 
 begin_function
 name|GimpImageType
-DECL|function|gimp_drawable_type_with_alpha (GimpDrawable * drawable)
+DECL|function|gimp_drawable_type_with_alpha (const GimpDrawable * drawable)
 name|gimp_drawable_type_with_alpha
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1217,10 +1299,13 @@ if|if
 condition|(
 name|has_alpha
 condition|)
+block|{
 return|return
 name|type
 return|;
+block|}
 else|else
+block|{
 switch|switch
 condition|(
 name|type
@@ -1253,6 +1338,7 @@ argument_list|()
 expr_stmt|;
 break|break;
 block|}
+block|}
 return|return
 literal|0
 return|;
@@ -1261,9 +1347,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_visible (GimpDrawable * drawable)
+DECL|function|gimp_drawable_visible (const GimpDrawable * drawable)
 name|gimp_drawable_visible
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1288,11 +1375,13 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_drawable_get_name (GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_name (const GimpDrawable * drawable)
 name|gimp_drawable_get_name
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -1318,13 +1407,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_set_name (GimpDrawable * drawable,gchar * name)
+DECL|function|gimp_drawable_set_name (GimpDrawable * drawable,const gchar * name)
 name|gimp_drawable_set_name
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -2019,9 +2109,10 @@ begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_drawable_parasite_list (GimpDrawable * drawable,gint * count)
+DECL|function|gimp_drawable_parasite_list (const GimpDrawable * drawable,gint * count)
 name|gimp_drawable_parasite_list
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -2043,10 +2134,28 @@ name|cur
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|drawable
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|count
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -2172,6 +2281,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 condition|)
+block|{
 name|undo_push_cantundo
 argument_list|(
 name|drawable
@@ -2184,6 +2294,7 @@ literal|"parasite attach to drawable"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|parasite_list_add
 argument_list|(
 name|drawable
@@ -2422,9 +2533,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_is_rgb (GimpDrawable * drawable)
+DECL|function|gimp_drawable_is_rgb (const GimpDrawable * drawable)
 name|gimp_drawable_is_rgb
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -2468,9 +2580,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_is_gray (GimpDrawable * drawable)
+DECL|function|gimp_drawable_is_gray (const GimpDrawable * drawable)
 name|gimp_drawable_is_gray
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -2514,9 +2627,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_is_indexed (GimpDrawable * drawable)
+DECL|function|gimp_drawable_is_indexed (const GimpDrawable * drawable)
 name|gimp_drawable_is_indexed
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -2561,9 +2675,10 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_data (GimpDrawable * drawable)
+DECL|function|gimp_drawable_data (const GimpDrawable * drawable)
 name|gimp_drawable_data
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -2781,9 +2896,10 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|gimp_drawable_cmap (GimpDrawable * drawable)
+DECL|function|gimp_drawable_cmap (const GimpDrawable * drawable)
 name|gimp_drawable_cmap
 parameter_list|(
+specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -3140,7 +3256,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,gint width,gint height,GimpImageType type,gchar * name)
+DECL|function|gimp_drawable_configure (GimpDrawable * drawable,GimpImage * gimage,gint width,gint height,GimpImageType type,const gchar * name)
 name|gimp_drawable_configure
 parameter_list|(
 name|GimpDrawable
@@ -3160,6 +3276,7 @@ parameter_list|,
 name|GimpImageType
 name|type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

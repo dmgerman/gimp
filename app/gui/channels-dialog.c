@@ -6263,9 +6263,12 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|channel_get_name
+name|drawable_get_name
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6884,7 +6887,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275275bc0108
+DECL|struct|__anon2c971da20108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -11267,9 +11270,12 @@ name|gimage
 condition|)
 block|{
 comment|/*  Set the new channel name  */
-name|channel_set_name
+name|drawable_set_name
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel
+argument_list|)
 argument_list|,
 name|gtk_entry_get_text
 argument_list|(
@@ -11293,9 +11299,12 @@ operator|->
 name|label
 argument_list|)
 argument_list|,
-name|channel_get_name
+name|drawable_get_name
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11831,11 +11840,14 @@ operator|->
 name|name_entry
 argument_list|)
 argument_list|,
-name|channel_get_name
+name|drawable_get_name
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|channel_widget
 operator|->
 name|channel
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -53,7 +53,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273d06560103
+DECL|enum|__anon275601050103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -211,7 +211,7 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-comment|/*  the actual mask            */
+comment|/*  the actual mask  */
 DECL|member|x
 DECL|member|y
 name|gint
@@ -219,7 +219,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/*  offsets                    */
+comment|/*  offsets          */
 block|}
 struct|;
 end_struct
@@ -243,6 +243,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -250,6 +251,7 @@ parameter_list|,
 name|gint
 name|opacity
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|col
@@ -262,6 +264,7 @@ name|Channel
 modifier|*
 name|channel_copy
 parameter_list|(
+specifier|const
 name|Channel
 modifier|*
 name|channel
@@ -270,33 +273,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Channel
-modifier|*
-name|channel_ref
-parameter_list|(
-name|Channel
-modifier|*
-name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|channel_unref
-parameter_list|(
-name|Channel
-modifier|*
-name|channel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|channel_get_name
 parameter_list|(
+specifier|const
 name|Channel
 modifier|*
 name|channel
@@ -312,6 +294,7 @@ name|Channel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -323,6 +306,7 @@ begin_function_decl
 name|gint
 name|channel_get_opacity
 parameter_list|(
+specifier|const
 name|Channel
 modifier|*
 name|channel
@@ -345,10 +329,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|guchar
 modifier|*
 name|channel_get_color
 parameter_list|(
+specifier|const
 name|Channel
 modifier|*
 name|channel
@@ -364,6 +350,7 @@ name|Channel
 modifier|*
 name|channel
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|color
@@ -400,9 +387,6 @@ parameter_list|(
 name|Channel
 modifier|*
 name|channel
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -518,7 +502,6 @@ begin_function_decl
 name|void
 name|channel_set_tattoo
 parameter_list|(
-specifier|const
 name|Channel
 modifier|*
 name|channel

@@ -860,9 +860,12 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
-name|channel_set_name
+name|drawable_set_name
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|gmask
+argument_list|)
 argument_list|,
 literal|"Qmask"
 argument_list|)
