@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3f4250108
+DECL|struct|__anon2ba50fe10108
 block|{
 DECL|member|film_height
 name|gint
@@ -213,7 +213,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3f4250208
+DECL|struct|__anon2ba50fe10208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -1818,7 +1818,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_layer_is_floating_selection
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layers
 index|[
@@ -1863,7 +1863,7 @@ block|}
 ifdef|#
 directive|ifdef
 name|FILM_DEBUG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"film_height = %d, film_width = %d\n"
 argument_list|,
@@ -1872,7 +1872,7 @@ argument_list|,
 name|film_width
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printerr
 argument_list|(
 literal|"picture_height = %d, picture_space = %d, picture_y0 = %d\n"
 argument_list|,
@@ -1883,7 +1883,7 @@ argument_list|,
 name|picture_y0
 argument_list|)
 expr_stmt|;
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Number of pictures = %d\n"
 argument_list|,
@@ -2050,7 +2050,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|FILM_DEBUG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"hole_x %d hole_offset %d hole_width %d hole_height %d hole_space %d\n"
 argument_list|,
@@ -2232,7 +2232,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_layer_is_floating_selection
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layers
 index|[
@@ -2243,11 +2243,9 @@ condition|)
 continue|continue;
 name|picture_x0
 operator|+=
-operator|(
 name|picture_space
 operator|/
 literal|2
-operator|)
 expr_stmt|;
 name|layer_ID_src
 operator|=
@@ -2284,7 +2282,7 @@ name|picture_height
 argument_list|)
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"film: error during scale_layer\n"
 argument_list|)
@@ -2457,7 +2455,7 @@ expr_stmt|;
 comment|/* Drawing text/numbers leaves us with a floating selection. Stop it */
 name|gimp_floating_sel_anchor
 argument_list|(
-name|gimp_image_floating_selection
+name|gimp_image_get_floating_sel
 argument_list|(
 name|image_ID_dst
 argument_list|)
@@ -2915,7 +2913,7 @@ block|}
 block|}
 break|break;
 default|default:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"convert_to_rgb: unknown image type\n"
 argument_list|)

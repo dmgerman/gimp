@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273dd2c50108
+DECL|struct|__anon2904bf000108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273dd2c50208
+DECL|struct|__anon2904bf000208
 block|{
 DECL|member|ID
 name|gint32
@@ -1690,7 +1690,7 @@ operator|->
 name|drawable_id
 argument_list|)
 operator|&&
-name|gimp_layer_is_floating_selection
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|active_drawable
 operator|->
@@ -2193,13 +2193,14 @@ name|image_ID
 argument_list|)
 operator|&&
 operator|!
-name|gimp_layer_is_floating_selection
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|active_drawable
 operator|->
 name|drawable_id
 argument_list|)
 condition|)
+block|{
 name|active_drawable
 operator|=
 name|gimp_drawable_get
@@ -2218,6 +2219,7 @@ literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|rotate_drawable
 argument_list|(
 name|active_drawable

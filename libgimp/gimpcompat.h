@@ -152,6 +152,11 @@ define|#
 directive|define
 name|gimp_layer_set_tattoo
 value|gimp_drawable_set_tattoo
+DECL|macro|gimp_layer_is_floating_selection
+define|#
+directive|define
+name|gimp_layer_is_floating_selection
+value|gimp_layer_is_floating_sel
 DECL|macro|gimp_layer_mask
 define|#
 directive|define
@@ -187,6 +192,11 @@ define|#
 directive|define
 name|gimp_drawable_bytes
 value|gimp_drawable_bpp
+DECL|macro|gimp_image_floating_selection
+define|#
+directive|define
+name|gimp_image_floating_selection
+value|gimp_image_get_floating_sel
 DECL|macro|gimp_gradients_get_active
 define|#
 directive|define
@@ -352,7 +362,7 @@ directive|define
 name|GIMP_IS_FILE_SELECTION
 value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon2909e73c0103
+DECL|enum|__anon2a4619280103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -384,7 +394,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon2909e73c0203
+DECL|enum|__anon2a4619280203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -411,7 +421,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909e73c0303
+DECL|enum|__anon2a4619280303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -438,7 +448,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909e73c0403
+DECL|enum|__anon2a4619280403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -470,7 +480,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909e73c0503
+DECL|enum|__anon2a4619280503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -487,7 +497,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909e73c0603
+DECL|enum|__anon2a4619280603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -504,7 +514,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909e73c0703
+DECL|enum|__anon2a4619280703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -521,7 +531,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909e73c0803
+DECL|enum|__anon2a4619280803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -543,7 +553,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909e73c0903
+DECL|enum|__anon2a4619280903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR

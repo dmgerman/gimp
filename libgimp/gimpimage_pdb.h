@@ -481,7 +481,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_image_floating_selection
+name|gimp_image_get_floating_sel
 parameter_list|(
 name|gint32
 name|image_ID

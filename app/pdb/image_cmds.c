@@ -440,10 +440,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_floating_selection_proc
+DECL|variable|image_get_floating_sel_proc
 specifier|static
 name|ProcRecord
-name|image_floating_selection_proc
+name|image_get_floating_sel_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -926,7 +926,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|image_floating_selection_proc
+name|image_get_floating_sel_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -8047,8 +8047,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_floating_selection_invoker (Gimp * gimp,Argument * args)
-name|image_floating_selection_invoker
+DECL|function|image_get_floating_sel_invoker (Gimp * gimp,Argument * args)
+name|image_get_floating_sel_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -8122,7 +8122,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_floating_selection_proc
+name|image_get_floating_sel_proc
 argument_list|,
 name|success
 argument_list|)
@@ -8160,10 +8160,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_floating_selection_inargs
+DECL|variable|image_get_floating_sel_inargs
 specifier|static
 name|ProcArg
-name|image_floating_selection_inargs
+name|image_get_floating_sel_inargs
 index|[]
 init|=
 block|{
@@ -8179,10 +8179,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_floating_selection_outargs
+DECL|variable|image_get_floating_sel_outargs
 specifier|static
 name|ProcArg
-name|image_floating_selection_outargs
+name|image_get_floating_sel_outargs
 index|[]
 init|=
 block|{
@@ -8198,17 +8198,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_floating_selection_proc
+DECL|variable|image_get_floating_sel_proc
 specifier|static
 name|ProcRecord
-name|image_floating_selection_proc
+name|image_get_floating_sel_proc
 init|=
 block|{
-literal|"gimp_image_floating_selection"
+literal|"gimp_image_get_floating_sel"
 block|,
 literal|"Return the floating selection of the image."
 block|,
-literal|"This procedure returns the image's floating_sel, if it exists. If it doesn't exist, -1 is returned as the layer ID."
+literal|"This procedure returns the image's floating selection, if it exists. If it doesn't exist, -1 is returned as the layer ID."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
@@ -8220,15 +8220,15 @@ name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|image_floating_selection_inargs
+name|image_get_floating_sel_inargs
 block|,
 literal|1
 block|,
-name|image_floating_selection_outargs
+name|image_get_floating_sel_outargs
 block|,
 block|{
 block|{
-name|image_floating_selection_invoker
+name|image_get_floating_sel_invoker
 block|}
 block|}
 block|}

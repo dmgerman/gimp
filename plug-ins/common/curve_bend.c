@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a92eb0108
+DECL|struct|__anon2b3bcaa50108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a92eb0208
+DECL|struct|__anon2b3bcaa50208
 block|{
 DECL|member|y
 name|gint32
@@ -2084,7 +2084,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_layer_is_floating_selection
+name|gimp_layer_is_floating_sel
 argument_list|(
 name|layer_id
 argument_list|)

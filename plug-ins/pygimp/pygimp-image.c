@@ -3723,7 +3723,7 @@ name|id
 decl_stmt|;
 name|id
 operator|=
-name|gimp_image_floating_selection
+name|gimp_image_get_floating_sel
 argument_list|(
 name|self
 operator|->

@@ -2806,13 +2806,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_floating_selection:  * @image_ID: The image.  *  * Return the floating selection of the image.  *  * This procedure returns the image's floating_sel, if it exists. If it  * doesn't exist, -1 is returned as the layer ID.  *  * Returns: The image's floating selection.  */
+comment|/**  * gimp_image_get_floating_sel:  * @image_ID: The image.  *  * Return the floating selection of the image.  *  * This procedure returns the image's floating selection, if it exists.  * If it doesn't exist, -1 is returned as the layer ID.  *  * Returns: The image's floating selection.  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_floating_selection (gint32 image_ID)
-name|gimp_image_floating_selection
+DECL|function|gimp_image_get_floating_sel (gint32 image_ID)
+name|gimp_image_get_floating_sel
 parameter_list|(
 name|gint32
 name|image_ID
@@ -2835,7 +2835,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_floating_selection"
+literal|"gimp_image_get_floating_sel"
 argument_list|,
 operator|&
 name|nreturn_vals

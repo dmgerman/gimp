@@ -351,7 +351,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7ae3f90108
+DECL|struct|__anon292518e70108
 block|{
 DECL|member|old_name
 specifier|const
@@ -464,6 +464,12 @@ block|{
 literal|"gimp_gradients_set_active"
 block|,
 literal|"gimp_gradients_set_gradient"
+block|}
+block|,
+block|{
+literal|"gimp_image_floating_selection"
+block|,
+literal|"gimp_image_get_floating_sel"
 block|}
 block|,
 block|{
