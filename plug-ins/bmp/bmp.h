@@ -223,5 +223,29 @@ name|Bitmap_Head
 struct|;
 end_struct
 
+begin_typedef
+DECL|struct|_Bitmap_Channel
+typedef|typedef
+struct|struct
+name|_Bitmap_Channel
+block|{
+DECL|member|mask
+name|guint32
+name|mask
+decl_stmt|;
+DECL|member|shiftin
+name|guint32
+name|shiftin
+decl_stmt|;
+DECL|member|shiftout
+name|guint32
+name|shiftout
+decl_stmt|;
+DECL|typedef|Bitmap_Channel
+block|}
+name|Bitmap_Channel
+typedef|;
+end_typedef
+
 end_unit
 
