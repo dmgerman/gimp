@@ -118,7 +118,10 @@ name|gchar
 modifier|*
 name|gimp_get_default_language
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|category
 parameter_list|)
 function_decl|;
 end_function_decl

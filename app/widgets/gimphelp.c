@@ -311,7 +311,9 @@ operator|->
 name|help_locales
 operator|=
 name|gimp_get_default_language
-argument_list|()
+argument_list|(
+literal|"LC_MESSAGES"
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

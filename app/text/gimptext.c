@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2770af0103
+DECL|enum|__anon28d165a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -467,7 +467,9 @@ expr_stmt|;
 name|language
 operator|=
 name|gimp_get_default_language
-argument_list|()
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_STRING
 argument_list|(
