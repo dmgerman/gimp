@@ -293,7 +293,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbd0f1d0103
+DECL|enum|__anon28ddf56d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -876,6 +876,8 @@ argument_list|,
 name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
+operator||
+name|GIMP_MODULE_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -898,6 +900,8 @@ argument_list|,
 name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
+operator||
+name|GIMP_MODULE_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -920,6 +924,8 @@ argument_list|,
 name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
+operator||
+name|GIMP_MODULE_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;

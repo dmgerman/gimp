@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9ea58e0103
+DECL|enum|__anon2c6575250103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -331,7 +331,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9ea58e0203
+DECL|enum|__anon2c6575250203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -874,6 +874,8 @@ argument_list|,
 name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
+operator||
+name|GIMP_MODULE_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;

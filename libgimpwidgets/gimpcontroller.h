@@ -24,18 +24,10 @@ begin_comment
 comment|/* For information look at the html documentation */
 end_comment
 
-begin_define
-DECL|macro|GIMP_CONTROLLER_PARAM_SERIALIZE
-define|#
-directive|define
-name|GIMP_CONTROLLER_PARAM_SERIALIZE
-value|(1<< (0 + G_PARAM_USER_SHIFT))
-end_define
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a806fe0103
+DECL|enum|__anon2baf84f10103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_EVENT_TRIGGER
 name|GIMP_CONTROLLER_EVENT_TRIGGER

@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288945660108
+DECL|struct|__anon27de48750108
 block|{
 DECL|member|name
 name|gchar
@@ -92,7 +92,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon288945660203
+DECL|enum|__anon27de48750203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -714,7 +714,7 @@ name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 operator||
-name|GIMP_CONTROLLER_PARAM_SERIALIZE
+name|GIMP_MODULE_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -750,7 +750,7 @@ name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 operator||
-name|GIMP_CONTROLLER_PARAM_SERIALIZE
+name|GIMP_MODULE_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2258,7 +2258,7 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"MIDI (ch %02d): note on (%02x vel %02x)\n"
+literal|"MIDI (ch %02d): note on  (%02x vel %02x)\n"
 argument_list|,
 name|midi
 operator|->

@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299d2d420108
+DECL|struct|__anon2bfa6db70108
 block|{
 DECL|member|code
 name|__u16
@@ -418,7 +418,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d2d420203
+DECL|enum|__anon2bfa6db70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -951,7 +951,7 @@ name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
 operator||
-name|GIMP_CONTROLLER_PARAM_SERIALIZE
+name|GIMP_MODULE_PARAM_SERIALIZE
 argument_list|)
 argument_list|)
 expr_stmt|;
