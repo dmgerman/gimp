@@ -224,6 +224,17 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_progress_get_value
+argument_list|(
+name|proc_frame
+operator|->
+name|progress
+argument_list|)
+operator|>
+literal|0.0
+condition|)
 name|gimp_progress_set_value
 argument_list|(
 name|proc_frame
