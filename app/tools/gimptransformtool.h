@@ -302,6 +302,12 @@ name|gchar
 modifier|*
 name|shell_desc
 decl_stmt|;
+DECL|member|progress_text
+specifier|const
+name|gchar
+modifier|*
+name|progress_text
+decl_stmt|;
 DECL|member|info_dialog
 name|InfoDialog
 modifier|*
@@ -411,23 +417,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|TileManager
-modifier|*
-name|gimp_transform_tool_transform_tiles
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|progress_text
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|void

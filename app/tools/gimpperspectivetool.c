@@ -200,23 +200,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|TileManager
-modifier|*
-name|gimp_perspective_tool_transform
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
 name|perspective_info_update
 parameter_list|(
@@ -454,12 +437,6 @@ name|recalc
 operator|=
 name|gimp_perspective_tool_recalc
 expr_stmt|;
-name|trans_class
-operator|->
-name|transform
-operator|=
-name|gimp_perspective_tool_transform
-expr_stmt|;
 block|}
 end_function
 
@@ -512,6 +489,15 @@ operator|=
 name|_
 argument_list|(
 literal|"Perspective Transform Information"
+argument_list|)
+expr_stmt|;
+name|tr_tool
+operator|->
+name|progress_text
+operator|=
+name|_
+argument_list|(
+literal|"Perspective..."
 argument_list|)
 expr_stmt|;
 block|}
@@ -1029,36 +1015,6 @@ argument_list|(
 name|tr_tool
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|TileManager
-modifier|*
-DECL|function|gimp_perspective_tool_transform (GimpTransformTool * tr_tool,GimpDisplay * gdisp)
-name|gimp_perspective_tool_transform
-parameter_list|(
-name|GimpTransformTool
-modifier|*
-name|tr_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-block|{
-return|return
-name|gimp_transform_tool_transform_tiles
-argument_list|(
-name|tr_tool
-argument_list|,
-name|_
-argument_list|(
-literal|"Perspective..."
-argument_list|)
-argument_list|)
-return|;
 block|}
 end_function
 
