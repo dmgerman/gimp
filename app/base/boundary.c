@@ -416,6 +416,8 @@ decl_stmt|,
 name|l_num_empty
 decl_stmt|,
 name|dstep
+init|=
+literal|0
 decl_stmt|;
 name|data
 operator|=
