@@ -28,7 +28,7 @@ file|"gimputils.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_utf8_strtrim:  * @str: an UTF-8 encoded string (or %NULL)  * @max_chars: the maximum number of characters before the string get trimmed  *  * Creates a (possibly trimmed) copy of @str. The string is cut if it exceeds  * @max_chars characters or on the first newline. The fact that the string was  * trimmed is indicated by appending an ellipsis.  *   * Returns: A (possibly trimmed) copy of @str which should be freed using  * g_free() when it is not needed any longer.  **/
+comment|/**  * gimp_utf8_strtrim:  * @str: an UTF-8 encoded string (or %NULL)  * @max_chars: the maximum number of characters before the string get  * trimmed  *  * Creates a (possibly trimmed) copy of @str. The string is cut if it  * exceeds @max_chars characters or on the first newline. The fact  * that the string was trimmed is indicated by appending an ellipsis.  *   * Returns: A (possibly trimmed) copy of @str which should be freed  * using g_free() when it is not needed any longer.  **/
 end_comment
 
 begin_function
@@ -145,6 +145,7 @@ break|break;
 block|}
 if|if
 condition|(
+operator|*
 name|p
 condition|)
 block|{

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2976758b0103
+DECL|enum|__anon28d1ab2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -371,7 +371,7 @@ literal|"text"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"GIMP"
+name|NULL
 argument_list|,
 literal|0
 argument_list|)
