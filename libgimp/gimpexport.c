@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -59,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6e8fe70108
+DECL|struct|__anon2c3903730108
 block|{
 DECL|member|default_action
 name|ExportFunc
