@@ -6,20 +6,78 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DODGEBURN_H__
+name|__GIMP_DODGE_BURN_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DODGEBURN_H__
+DECL|macro|__GIMP_DODGE_BURN_TOOL_H__
 define|#
 directive|define
-name|__DODGEBURN_H__
+name|__GIMP_DODGE_BURN_TOOL_H__
+end_define
+
+begin_include
+include|#
+directive|include
+file|"gimppainttool.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_DODGEBURN_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_DODGEBURN_TOOL
+value|(gimp_dodgeburn_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_DODGEBURN_TOOL (obj)
+define|#
+directive|define
+name|GIMP_DODGEBURN_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_DODGEBURN_TOOL, GimpDodgeBurnTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DODGEBURN_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_DODGEBURN_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_DODGEBURN_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_DODGEBURN_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_DODGEBURN_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DODGEBURN_TOOL, GimpDodgeBurnToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DODGEBURN_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_DODGEBURN_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DODGEBURN_TOOL))
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fb5a510103
+DECL|enum|__anon29334fb10103
 block|{
 DECL|enumerator|DODGE
 name|DODGE
@@ -35,7 +93,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29fb5a510203
+DECL|enum|__anon29334fb10203
 block|{
 DECL|enumerator|DODGEBURN_HIGHLIGHTS
 name|DODGEBURN_HIGHLIGHTS
@@ -50,6 +108,72 @@ block|}
 name|DodgeBurnMode
 typedef|;
 end_typedef
+
+begin_typedef
+DECL|typedef|GimpDodgeBurnTool
+typedef|typedef
+name|struct
+name|_GimpDodgeBurnTool
+name|GimpDodgeBurnTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDodgeBurnToolClass
+typedef|typedef
+name|struct
+name|_GimpDodgeBurnToolClass
+name|GimpDodgeBurnToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpDodgeBurnTool
+struct|struct
+name|_GimpDodgeBurnTool
+block|{
+DECL|member|parent_instance
+name|GimpPaintTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpDodgeBurnToolClass
+struct|struct
+name|_GimpDodgeBurnToolClass
+block|{
+DECL|member|parent_class
+name|GimpPaintToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|void
+name|gimp_dodgeburn_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_dodgeburn_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* FIXME: Get rid of this non_gui stuff someday.  Preferably make  *        everything use it interally for ease of macro recording.  */
+end_comment
 
 begin_function_decl
 name|gboolean
@@ -96,34 +220,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_dodgeburn
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_dodgeburn
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __DODGEBURN_H__  */
+comment|/*  __GIMP_DODGEBURN_TOOL_H__  */
 end_comment
 
 end_unit

@@ -212,7 +212,9 @@ block|{
 comment|/*  register tools in reverse order  */
 comment|/*  paint tools  */
 comment|/* gimp_smudge_tool_register (); */
-comment|/* gimp_dodgeburn_tool_register (); */
+name|gimp_dodgeburn_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_ink_tool_register
 argument_list|()
 expr_stmt|;

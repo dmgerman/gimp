@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28016bb30103
+DECL|enum|__anon28de4bd00103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2121,20 +2121,6 @@ begin_macro
 name|STUB
 argument_list|(
 argument|paths_dialog_edit_path_attributes_callback
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|dodgeburn_non_gui
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|dodgeburn_non_gui_default
 argument_list|)
 end_macro
 
