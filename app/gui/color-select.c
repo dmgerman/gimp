@@ -153,7 +153,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efd6c60103
+DECL|enum|__anon2c665d2c0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efd6c60203
+DECL|enum|__anon2c665d2c0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -918,46 +918,6 @@ name|color_select_update_red_blue
 block|,
 name|color_select_update_green_blue
 block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  dnd stuff  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|color_select_target_table
-specifier|static
-name|GtkTargetEntry
-name|color_select_target_table
-index|[]
-init|=
-block|{
-name|GIMP_TARGET_COLOR
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|n_color_select_targets
-specifier|static
-name|guint
-name|n_color_select_targets
-init|=
-operator|(
-sizeof|sizeof
-argument_list|(
-name|color_select_target_table
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|color_select_target_table
-index|[
-literal|0
-index|]
-argument_list|)
-operator|)
 decl_stmt|;
 end_decl_stmt
 
@@ -7197,7 +7157,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efd6c60308
+DECL|struct|__anon2c665d2c0308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

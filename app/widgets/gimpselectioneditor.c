@@ -380,19 +380,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|selection_editor_targets
-specifier|static
-name|GtkTargetEntry
-name|selection_editor_targets
-index|[]
-init|=
-block|{
-name|GIMP_TARGET_COLOR
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|GType
 DECL|function|gimp_selection_editor_get_type (void)

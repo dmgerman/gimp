@@ -430,33 +430,6 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|toolbox_target_table
-specifier|static
-name|GtkTargetEntry
-name|toolbox_target_table
-index|[]
-init|=
-block|{
-name|GIMP_TARGET_URI_LIST
-block|,
-name|GIMP_TARGET_TEXT_PLAIN
-block|,
-name|GIMP_TARGET_NETSCAPE_URL
-block|,
-name|GIMP_TARGET_LAYER
-block|,
-name|GIMP_TARGET_CHANNEL
-block|,
-name|GIMP_TARGET_LAYER_MASK
-block|,
-name|GIMP_TARGET_TOOL
-block|,
-name|GIMP_TARGET_BUFFER
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|GType
 DECL|function|gimp_toolbox_get_type (void)
