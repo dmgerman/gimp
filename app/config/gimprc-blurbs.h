@@ -205,7 +205,7 @@ define|#
 directive|define
 name|GFIG_PATH_BLURB
 define|\
-value|"Where to search for GFig figures used by the GFig plug-in."
+value|"Where to search for Gfig figures used by the Gfig plug-in."
 end_define
 
 begin_define
