@@ -1952,7 +1952,7 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install<Toolbox> procedure \"%s\"\n"
+literal|"attempted to install<Toolbox> procedure \"%s\" "
 literal|"which does not take the standard<Toolbox> Plug-In "
 literal|"args.\n"
 literal|"(INT32)"
@@ -2043,7 +2043,7 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install<Image> procedure \"%s\"\n"
+literal|"attempted to install<Image> procedure \"%s\" "
 literal|"which does not take the standard<Image> Plug-In "
 literal|"args.\n"
 literal|"(INT32, IMAGE, DRAWABLE)"
@@ -2134,7 +2134,7 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install<Load> procedure \"%s\"\n"
+literal|"attempted to install<Load> procedure \"%s\" "
 literal|"which does not take the standard<Load> Plug-In "
 literal|"args.\n"
 literal|"(INT32, STRING, STRING)"
@@ -2251,7 +2251,7 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install<Save> procedure \"%s\"\n"
+literal|"attempted to install<Save> procedure \"%s\" "
 literal|"which does not take the standard<Save> Plug-In "
 literal|"args.\n"
 literal|"(INT32, IMAGE, DRAWABLE, STRING, STRING)"
@@ -2277,7 +2277,7 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install procedure \"%s\"\n"
+literal|"attempted to install procedure \"%s\" "
 literal|"in an invalid menu location.\n"
 literal|"Use either \"<Toolbox>\", \"<Image>\", "
 literal|"\"<Load>\", or \"<Save>\"."
@@ -2380,8 +2380,8 @@ block|{
 name|g_message
 argument_list|(
 literal|"Plug-In \"%s\"\n(%s)\n"
-literal|"attempted to install procedure \"%s\"\n"
-literal|"which fails to comply with the array parameter\n"
+literal|"attempted to install procedure \"%s\" "
+literal|"which fails to comply with the array parameter "
 literal|"passing standard.  Argument %d is noncompliant."
 argument_list|,
 name|plug_in

@@ -344,7 +344,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Not enough visible layers for a merge.\n"
+literal|"Not enough visible layers for a merge. "
 literal|"There must be at least two."
 argument_list|)
 argument_list|)
@@ -2401,7 +2401,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Not enough visible paths for a merge.\n"
+literal|"Not enough visible paths for a merge. "
 literal|"There must be at least two."
 argument_list|)
 argument_list|)

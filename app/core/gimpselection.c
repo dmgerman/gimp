@@ -2758,7 +2758,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to cut or copy because the\n"
+literal|"Unable to cut or copy because the "
 literal|"selected region is empty."
 argument_list|)
 argument_list|)
@@ -3393,7 +3393,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot float selection because the\n"
+literal|"Cannot float selection because the "
 literal|"selected region is empty."
 argument_list|)
 argument_list|)

@@ -254,7 +254,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to open file: '%s': %s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename

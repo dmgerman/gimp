@@ -457,7 +457,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"can not expand ${%s}"
+literal|"Cannot expand ${%s}"
 argument_list|)
 argument_list|,
 name|token

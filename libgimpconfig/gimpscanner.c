@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c50e1780108
+DECL|struct|__anon2ab3d1ee0108
 block|{
 DECL|member|fd
 name|gint
@@ -285,7 +285,7 @@ name|code
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to open file: '%s': %s"
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1007,7 +1007,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c50e1780203
+DECL|enum|__anon2ab3d1ee0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
@@ -1780,7 +1780,7 @@ name|GIMP_CONFIG_ERROR_PARSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Error while parsing '%s' in line %d:\n%s"
+literal|"Error while parsing '%s' in line %d: %s"
 argument_list|)
 argument_list|,
 name|data

@@ -749,6 +749,16 @@ argument_list|,
 literal|0.5
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_line_wrap
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX

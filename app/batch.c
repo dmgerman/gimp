@@ -283,7 +283,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"script-fu not available: batch mode disabled\n"
+literal|"script-fu not available: batch mode disabled"
 argument_list|)
 expr_stmt|;
 return|return;

@@ -6392,9 +6392,18 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+name|c_tool
+operator|->
+name|is_save
+condition|?
 name|_
 argument_list|(
-literal|"Failed to open file: '%s': %s"
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
+else|:
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -6436,9 +6445,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-operator|(
 literal|"Error in reading file '%s'."
-operator|)
 argument_list|,
 name|filename
 argument_list|)

@@ -1625,7 +1625,7 @@ name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
 name|_
 argument_list|(
-literal|"Do you really want to reset all\n"
+literal|"Do you really want to reset all "
 literal|"tool options to default values?"
 argument_list|)
 argument_list|,

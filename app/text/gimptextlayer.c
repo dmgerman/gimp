@@ -1402,7 +1402,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Due to lack of any fonts,\n"
+literal|"Due to lack of any fonts, "
 literal|"text functionality is not available."
 argument_list|)
 argument_list|)

@@ -1439,7 +1439,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Transformations do not work on\n"
+literal|"Transformations do not work on "
 literal|"layers that contain layer masks."
 argument_list|)
 argument_list|)

@@ -2747,8 +2747,8 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Plug-In crashed: \"%s\"\n(%s)\n\n"
-literal|"The dying Plug-In may have messed up GIMP's internal state.\n"
-literal|"You may want to save your images and restart GIMP\n"
+literal|"The dying Plug-In may have messed up GIMP's internal state. "
+literal|"You may want to save your images and restart GIMP "
 literal|"to be on the safe side."
 argument_list|)
 argument_list|,

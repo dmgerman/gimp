@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdabc630108
+DECL|struct|__anon2bc86f7c0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1081,14 +1081,14 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"You are trying to create an image with\n"
+literal|"You are trying to create an image with "
 literal|"an initial size of %s.\n\n"
 literal|"Choose OK to create this image anyway.\n"
-literal|"Choose Cancel if you did not intend to\n"
+literal|"Choose Cancel if you did not intend to "
 literal|"create such a large image.\n\n"
-literal|"To prevent this dialog from appearing,\n"
-literal|"increase the \"Maximum Image Size\"\n"
-literal|"setting (currently %s) in the\n"
+literal|"To prevent this dialog from appearing, "
+literal|"increase the \"Maximum Image Size\" "
+literal|"setting (currently %s) in the "
 literal|"Preferences dialog."
 argument_list|)
 argument_list|,

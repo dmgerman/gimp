@@ -225,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29114b3f0103
+DECL|enum|__anon2b176e580103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -239,7 +239,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29114b3f0208
+DECL|struct|__anon2b176e580208
 block|{
 DECL|member|dirname
 specifier|const
@@ -1835,7 +1835,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to write thumbnail for '%s' as '%s': %s"
+literal|"Could not write thumbnail for '%s' as '%s': %s"
 argument_list|)
 argument_list|,
 name|uri
@@ -1868,7 +1868,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to set permissions of thumbnail '%s': %s"
+literal|"Could not set permissions of thumbnail '%s': %s"
 argument_list|)
 argument_list|,
 name|thumb_name
@@ -3000,7 +3000,7 @@ name|description
 operator|=
 name|_
 argument_list|(
-literal|"Failed to open"
+literal|"Could not open"
 argument_list|)
 expr_stmt|;
 name|imagefile
@@ -3391,7 +3391,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* PNG thumbnail handling routines according to the     Thumbnail Managing Standard  http://triq.net/~pearl/thumbnail-spec/  */
+comment|/* PNG thumbnail handling routines according to the    Thumbnail Managing Standard  http://triq.net/~pearl/thumbnail-spec/  */
 end_comment
 
 begin_function
@@ -3534,7 +3534,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to open thumbnail file '%s': %s"
+literal|"Could not open thumbnail '%s': %s"
 argument_list|)
 argument_list|,
 name|thumbname
@@ -4262,7 +4262,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to write thumbnail for '%s' as '%s': %s"
+literal|"Could not write thumbnail for '%s' as '%s': %s"
 argument_list|)
 argument_list|,
 name|uri
@@ -4295,7 +4295,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to set permissions of thumbnail '%s': %s"
+literal|"Could not set permissions of thumbnail '%s': %s"
 argument_list|)
 argument_list|,
 name|thumb_name
@@ -4716,7 +4716,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Failed to create thumbnail folder '%s'."
+literal|"Could not create thumbnail folder '%s'."
 argument_list|)
 argument_list|,
 name|thumb_subdirs

@@ -362,7 +362,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot anchor this layer because\n"
+literal|"Cannot anchor this layer because "
 literal|"it is not a floating selection."
 argument_list|)
 argument_list|)
@@ -665,9 +665,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot create a new layer from the floating\n"
-literal|"selection because it belongs to a\n"
-literal|"layer mask or channel."
+literal|"Cannot create a new layer from the floating selection "
+literal|"because it belongs to a layer mask or channel."
 argument_list|)
 argument_list|)
 expr_stmt|;

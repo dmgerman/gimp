@@ -1343,7 +1343,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to run brush callback.\n"
+literal|"Unable to run brush callback. "
 literal|"The corresponding plug-in may have crashed."
 argument_list|)
 argument_list|)

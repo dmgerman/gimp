@@ -821,7 +821,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Hue-Saturation operates only on RGB color drawables."
+literal|"Hue-Saturation operates only on RGB color layers."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -970,7 +970,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon276fea420108
+DECL|struct|__anon2b99d2d80108
 block|{
 DECL|member|label
 specifier|const

@@ -1076,8 +1076,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Revert failed.\n"
-literal|"No file name associated with this image."
+literal|"Revert failed. No file name associated with this image."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -236,7 +236,7 @@ name|GIMP_HELP_PALETTE_MERGE
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter a name for merged palette"
+literal|"Enter a name for the merged palette"
 argument_list|)
 argument_list|,
 name|NULL

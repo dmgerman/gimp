@@ -712,9 +712,10 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Could not find the GIMP Help Browser procedure.\n"
-literal|"It probably was not compiled because\n"
-literal|"you don't have GtkXmHTML installed."
+literal|"Could not find the GIMP Help Browser "
+literal|"procedure. It probably was not compiled "
+literal|"because you don't have GtkHtml2 "
+literal|"installed."
 argument_list|)
 argument_list|,
 name|_

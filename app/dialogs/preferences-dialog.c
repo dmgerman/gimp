@@ -1114,7 +1114,7 @@ name|g_string_new
 argument_list|(
 name|_
 argument_list|(
-literal|"You will have to restart GIMP for\n"
+literal|"You will have to restart GIMP for "
 literal|"the following changes to take effect:"
 argument_list|)
 argument_list|)
@@ -6818,7 +6818,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bc1880f0108
+DECL|struct|__anon292e412a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9089,7 +9089,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bc1880f0208
+DECL|struct|__anon292e412a0208
 block|{
 DECL|member|label
 specifier|const
@@ -9248,7 +9248,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bc1880f0308
+DECL|struct|__anon292e412a0308
 block|{
 DECL|member|tree_label
 specifier|const

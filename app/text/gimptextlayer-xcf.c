@@ -180,10 +180,11 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Problems parsing the text parasite for layer %s:\n"
+literal|"Problems parsing the text parasite for layer '%s':\n"
 literal|"%s\n\n"
-literal|"Some text properties may be wrong.  Unless you want to\n"
-literal|"edit the text layer, you don't need to worry about this."
+literal|"Some text properties may be wrong. "
+literal|"Unless you want to edit the text layer, "
+literal|"you don't need to worry about this."
 argument_list|)
 argument_list|,
 name|gimp_object_get_name

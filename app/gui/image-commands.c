@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c10e140108
+DECL|struct|__anon2b96010d0108
 block|{
 DECL|member|resize
 name|Resize
@@ -1908,8 +1908,8 @@ name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
 name|_
 argument_list|(
-literal|"The chosen image size will shrink\n"
-literal|"some layers completely away.\n"
+literal|"The chosen image size will shrink "
+literal|"some layers completely away. "
 literal|"Is this what you want?"
 argument_list|)
 argument_list|,

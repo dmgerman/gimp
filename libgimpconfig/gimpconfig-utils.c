@@ -1952,9 +1952,9 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"There was an error parsing your %s file.\n"
-literal|"Default values will be used. A backup of your configuration has been\n"
-literal|"created at '%s'."
+literal|"There was an error parsing your '%s' file. "
+literal|"Default values will be used. A backup of your "
+literal|"configuration has been created at '%s'."
 argument_list|)
 argument_list|,
 name|name

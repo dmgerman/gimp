@@ -839,6 +839,47 @@ name|fp
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|gchar
+modifier|*
+name|utf8_filename
+init|=
+name|g_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
+argument_list|,
+name|utf8_filename
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|utf8_filename
+argument_list|)
+expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
@@ -1101,7 +1142,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open '%s' for writing:\n%s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|utf8_filename

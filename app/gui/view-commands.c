@@ -1769,7 +1769,7 @@ name|NULL
 argument_list|,
 literal|0
 argument_list|,
-literal|"Enter Destination Screen:"
+literal|"Enter destination screen"
 argument_list|,
 name|cur_screen
 argument_list|,

@@ -1533,8 +1533,8 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Are you sure you want to delete\n"
-literal|"template \"%s\" from the list?"
+literal|"Are you sure you want to delete template '%s' "
+literal|"from the list and from disk?"
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT

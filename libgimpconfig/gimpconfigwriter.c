@@ -315,7 +315,7 @@ name|GIMP_CONFIG_ERROR_WRITE
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to create temporary file for '%s': %s"
+literal|"Could not create temporary file for '%s': %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -365,7 +365,7 @@ name|GIMP_CONFIG_ERROR_WRITE
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to open '%s' for writing: %s"
+literal|"Could not open '%s' for writing: %s"
 argument_list|)
 argument_list|,
 name|filename
@@ -1950,7 +1950,7 @@ name|GIMP_CONFIG_ERROR_WRITE
 argument_list|,
 name|_
 argument_list|(
-literal|"Failed to create file '%s': %s"
+literal|"Could not create '%s': %s"
 argument_list|)
 argument_list|,
 name|writer

@@ -1447,7 +1447,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal Parse Error: '%s' is not a GIMP Gradient file"
+literal|"Fatal parse error in gradient file '%s': "
+literal|"Not a GIMP gradient file."
 argument_list|)
 argument_list|,
 name|filename
@@ -1643,7 +1644,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error:\nGradient file '%s' is corrupt."
+literal|"Fatal parse error in gradient file '%s': "
+literal|"File is corrupt."
 argument_list|)
 argument_list|,
 name|filename

@@ -1720,8 +1720,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Loading palette '%s':\n"
-literal|"Corrupt palette: missing magic header\n"
+literal|"Fatal parse error in palette file '%s': "
+literal|"Missing magic header.\n"
 literal|"Does this file need converting from DOS?"
 argument_list|)
 argument_list|,
@@ -1739,8 +1739,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Loading palette '%s':\n"
-literal|"Corrupt palette: missing magic header"
+literal|"Fatal parse error in palette file '%s': "
+literal|"Missing magic header."
 argument_list|)
 argument_list|,
 name|filename
@@ -1797,7 +1797,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Loading palette '%s':\nRead error in line %d."
+literal|"Fatal parse error in palette file '%s': "
+literal|"Read error in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1909,7 +1910,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Loading palette '%s':\nRead error in line %d."
+literal|"Fatal parse error in palette file '%s': "
+literal|"Read error in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -1985,8 +1987,9 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette '%s':\n"
-literal|"Invalid number of columns in line %d."
+literal|"Reading palette file '%s': "
+literal|"Invalid number of columns in line %d. "
+literal|"Using default value."
 argument_list|)
 argument_list|,
 name|filename
@@ -2028,7 +2031,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Loading palette '%s':\nRead error in line %d."
+literal|"Fatal parse error in palette file '%s': "
+literal|"Read error in line %d."
 argument_list|)
 argument_list|,
 name|filename
@@ -2155,7 +2159,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette '%s':\n"
+literal|"Reading palette file '%s': "
 literal|"Missing RED component in line %d."
 argument_list|)
 argument_list|,
@@ -2189,7 +2193,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette '%s':\n"
+literal|"Reading palette '%s': "
 literal|"Missing GREEN component in line %d."
 argument_list|)
 argument_list|,
@@ -2223,7 +2227,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette '%s':\n"
+literal|"Reading palette file '%s': "
 literal|"Missing BLUE component in line %d."
 argument_list|)
 argument_list|,
@@ -2272,7 +2276,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading palette '%s':\n"
+literal|"Reading palette file '%s': "
 literal|"RGB value out of range in line %d."
 argument_list|)
 argument_list|,
@@ -2346,7 +2350,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Loading palette '%s':\nRead error in line %d."
+literal|"Fatal parse error in palette file '%s': "
+literal|"Read error in line %d."
 argument_list|)
 argument_list|,
 name|filename

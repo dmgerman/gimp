@@ -163,10 +163,7 @@ block|}
 block|,
 block|{
 block|{
-name|N_
-argument_list|(
 literal|"/Save Options to/new-separator"
-argument_list|)
 block|,
 literal|""
 block|,

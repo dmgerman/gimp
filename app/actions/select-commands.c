@@ -507,7 +507,7 @@ name|GIMP_HELP_SELECTION_FEATHER
 argument_list|,
 name|_
 argument_list|(
-literal|"Feather Selection by:"
+literal|"Feather selection by"
 argument_list|)
 argument_list|,
 name|selection_feather_radius
@@ -665,7 +665,7 @@ name|GIMP_HELP_SELECTION_SHRINK
 argument_list|,
 name|_
 argument_list|(
-literal|"Shrink Selection by:"
+literal|"Shrink selection by"
 argument_list|)
 argument_list|,
 name|selection_shrink_pixels
@@ -834,7 +834,7 @@ name|GIMP_HELP_SELECTION_GROW
 argument_list|,
 name|_
 argument_list|(
-literal|"Grow Selection by:"
+literal|"Grow selection by"
 argument_list|)
 argument_list|,
 name|selection_grow_pixels
@@ -946,7 +946,7 @@ name|GIMP_HELP_SELECTION_BORDER
 argument_list|,
 name|_
 argument_list|(
-literal|"Border Selection by:"
+literal|"Border selection by"
 argument_list|)
 argument_list|,
 name|selection_border_radius

@@ -2225,7 +2225,7 @@ name|scanner
 argument_list|,
 name|_
 argument_list|(
-literal|"while parsing token %s: %s"
+literal|"while parsing token '%s': %s"
 argument_list|)
 argument_list|,
 name|prop_spec

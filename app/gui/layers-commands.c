@@ -2107,7 +2107,7 @@ else|else
 block|{
 name|g_message
 argument_list|(
-literal|"new_layer_query_response():\n"
+literal|"new_layer_query_response: "
 literal|"could not allocate new layer"
 argument_list|)
 expr_stmt|;
@@ -4410,8 +4410,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid width or height.\n"
-literal|"Both must be positive."
+literal|"Invalid width or height. Both must be positive."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4773,8 +4772,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invalid width or height.\n"
-literal|"Both must be positive."
+literal|"Invalid width or height. Both must be positive."
 argument_list|)
 argument_list|)
 expr_stmt|;

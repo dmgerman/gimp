@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b038bbc0103
+DECL|enum|__anon2aafe0560103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7559,19 +7559,13 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Changes were made to %s.\n"
+literal|"Changes were made to '%s'. "
 literal|"Close anyway?"
 argument_list|)
 argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|shell->warning_dialog = gtk_message_dialog_new (shell->window, 						  0, 						  GTK_MESSAGE_QUESTION,);
-endif|#
-directive|endif
 name|shell
 operator|->
 name|warning_dialog

@@ -258,7 +258,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4026790103
+DECL|enum|__anon28ebfd690103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -10684,7 +10684,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Layer \"%s\" has no alpha.\nLayer was placed above it."
+literal|"Layer '%s' has no alpha. Layer was placed above it."
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT

@@ -1623,8 +1623,8 @@ name|GIMP_STOCK_WILBER_EEK
 argument_list|,
 name|_
 argument_list|(
-literal|"Some files are unsaved.\n"
-literal|"\nReally quit The GIMP?"
+literal|"Some files are unsaved.\n\n"
+literal|"Really quit The GIMP?"
 argument_list|)
 argument_list|,
 name|GTK_STOCK_QUIT

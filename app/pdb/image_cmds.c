@@ -13564,7 +13564,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Image resolution is out of bounds,\n"
+literal|"Image resolution is out of bounds, "
 literal|"using the default resolution instead."
 argument_list|)
 argument_list|)

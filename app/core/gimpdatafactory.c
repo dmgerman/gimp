@@ -1664,8 +1664,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Trying legacy loader on\n"
-literal|"file '%s'\n"
+literal|"Trying legacy loader on file '%s' "
 literal|"with unknown extension."
 argument_list|)
 argument_list|,

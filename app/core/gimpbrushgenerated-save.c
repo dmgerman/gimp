@@ -1708,7 +1708,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal Parse Error: '%s' is not a GIMP Brush file"
+literal|"Fatal parse error in brush file '%s': "
+literal|"Not a GIMP brush file."
 argument_list|)
 argument_list|,
 name|filename
@@ -1750,7 +1751,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal Parse Error: '%s': unknown GIMP Brush version"
+literal|"Fatal parse error in brush file '%s': "
+literal|"Unknown GIMP brush version."
 argument_list|)
 argument_list|,
 name|filename

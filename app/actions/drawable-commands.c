@@ -194,7 +194,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Desaturate operates only on RGB color drawables."
+literal|"Desaturate operates only on RGB color layers."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -255,7 +255,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Invert does not operate on indexed drawables."
+literal|"Invert does not operate on indexed layers."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -316,7 +316,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Equalize does not operate on indexed drawables."
+literal|"Equalize does not operate on indexed layers."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1119,7 +1119,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"There is no active layer or channel to stroke to"
+literal|"There is no active layer or channel to stroke to."
 argument_list|)
 argument_list|)
 expr_stmt|;

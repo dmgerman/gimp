@@ -1657,8 +1657,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error:\n"
-literal|"Brush file '%s' is corrupt."
+literal|"Fatal parse error in brush file '%s': "
+literal|"File is corrupt."
 argument_list|)
 argument_list|,
 name|filename
@@ -1759,8 +1759,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error:\n"
-literal|"Brush file '%s' is corrupt."
+literal|"Fatal parse error in brush file '%s': "
+literal|"File is corrupt."
 argument_list|)
 argument_list|,
 name|filename
@@ -2408,8 +2408,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error:\n"
-literal|"Brush file '%s' is corrupt."
+literal|"Fatal parse error in brush file '%s': "
+literal|"File is corrupt."
 argument_list|)
 argument_list|,
 name|filename

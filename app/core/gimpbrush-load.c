@@ -182,7 +182,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce9bba0103
+DECL|enum|__anon2a0e7c680103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -2381,15 +2381,15 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error (unknown depth %d):\n"
-literal|"Brush file '%s'"
+literal|"Fatal parse error in brush file '%s': "
+literal|"Unknown depth %d."
 argument_list|)
+argument_list|,
+name|filename
 argument_list|,
 name|header
 operator|.
 name|bytes
-argument_list|,
-name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -2420,15 +2420,15 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error (unknown version %d):\n"
-literal|"Brush file '%s'"
+literal|"Fatal parse error in brush file '%s': "
+literal|"Unknown version %d."
 argument_list|)
+argument_list|,
+name|filename
 argument_list|,
 name|header
 operator|.
 name|version
-argument_list|,
-name|filename
 argument_list|)
 expr_stmt|;
 return|return
@@ -2493,8 +2493,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error:\n"
-literal|"Brush file '%s' appears truncated."
+literal|"Fatal parse error in brush file '%s': "
+literal|"File appears truncated."
 argument_list|)
 argument_list|,
 name|filename
@@ -2727,7 +2727,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29ce9bba020a
+DECL|union|__anon2a0e7c68020a
 block|{
 DECL|member|u
 name|guint16
@@ -3004,8 +3004,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
+literal|"Fatal parse error in brush file '%s': "
 literal|"Unsupported brush depth %d\n"
-literal|"in file '%s'.\n"
 literal|"GIMP brushes must be GRAY or RGBA."
 argument_list|)
 argument_list|,
@@ -3046,8 +3046,8 @@ name|GIMP_DATA_ERROR_READ
 argument_list|,
 name|_
 argument_list|(
-literal|"Fatal parsing error:\n"
-literal|"Brush file '%s' appears truncated."
+literal|"Fatal parse error in brush file '%s': "
+literal|"File appears truncated."
 argument_list|)
 argument_list|,
 name|filename

@@ -598,7 +598,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"querying plug-in: \"%s\"\n"
+literal|"Querying plug-in: '%s'\n"
 argument_list|)
 argument_list|,
 name|plug_in_def
@@ -792,7 +792,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"writing \"%s\"\n"
+literal|"Writing '%s'\n"
 argument_list|)
 argument_list|,
 name|filename
@@ -1166,7 +1166,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"Initializing plug-in: \"%s\"\n"
+literal|"Initializing plug-in: '%s'\n"
 argument_list|)
 argument_list|,
 name|plug_in_def
@@ -1335,7 +1335,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"Starting extension: \"%s\"\n"
+literal|"Starting extension: '%s'\n"
 argument_list|)
 argument_list|,
 name|proc_def
@@ -2217,7 +2217,7 @@ name|TRUE
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"executable not found: \"%s\"\n"
+literal|"executable not found: '%s'\n"
 argument_list|,
 name|plug_in_def
 operator|->
@@ -3523,7 +3523,7 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"skipping duplicate plug-in: \"%s\"\n"
+literal|"skipping duplicate plug-in: '%s'\n"
 argument_list|,
 name|file_data
 operator|->
