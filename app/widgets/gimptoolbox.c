@@ -1814,8 +1814,6 @@ argument_list|,
 name|GDK_HINT_MIN_SIZE
 operator||
 name|GDK_HINT_RESIZE_INC
-operator||
-name|GDK_HINT_USER_POS
 argument_list|)
 expr_stmt|;
 block|}
