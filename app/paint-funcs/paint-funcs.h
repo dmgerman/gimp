@@ -1271,14 +1271,14 @@ name|PixelRegion
 modifier|*
 name|destR
 parameter_list|,
-name|gint
+name|gfloat
 modifier|*
 name|matrix
 parameter_list|,
 name|gint
 name|size
 parameter_list|,
-name|gint
+name|gdouble
 name|divisor
 parameter_list|,
 name|GimpConvolutionType

@@ -1010,7 +1010,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|horz_deriv
 specifier|static
-name|gint
+name|gfloat
 name|horz_deriv
 index|[
 literal|9
@@ -1044,7 +1044,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|vert_deriv
 specifier|static
-name|gint
+name|gfloat
 name|vert_deriv
 index|[
 literal|9
@@ -1078,7 +1078,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|blur_32
 specifier|static
-name|gint
+name|gfloat
 name|blur_32
 index|[
 literal|9
