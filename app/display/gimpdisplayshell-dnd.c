@@ -243,6 +243,14 @@ name|GimpItem
 modifier|*
 name|new_item
 decl_stmt|;
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"drop drawable on canvas\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimage
@@ -480,6 +488,14 @@ name|GimpItem
 modifier|*
 name|new_item
 decl_stmt|;
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"drop vectors on canvas\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimage
@@ -618,6 +634,14 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"drop SVG on canvas\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimage
@@ -627,14 +651,6 @@ operator|->
 name|busy
 condition|)
 return|return;
-name|D
-argument_list|(
-name|g_print
-argument_list|(
-literal|"drop SVG on canvas\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -649,6 +665,9 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 operator|&
 name|error
@@ -853,6 +872,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"drop pattern on canvas\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_PATTERN
@@ -898,6 +925,14 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"drop color on canvas\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_bucket_fill
 argument_list|(
 name|GIMP_DISPLAY_SHELL
@@ -964,6 +999,14 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"drop buffer on canvas\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimage
@@ -1087,6 +1130,14 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|D
+argument_list|(
+name|g_print
+argument_list|(
+literal|"drop files on canvas\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|context
 operator|=
 name|gimp_get_user_context

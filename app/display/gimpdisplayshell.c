@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c24e290103
+DECL|enum|__anon277c7fa50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -350,7 +350,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c24e290203
+DECL|enum|__anon277c7fa50203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1506,18 +1506,6 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_svg_dest_add
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|,
-name|gimp_display_shell_drop_svg
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
 name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|GTK_WIDGET
@@ -1568,6 +1556,18 @@ name|shell
 argument_list|)
 argument_list|,
 name|gimp_display_shell_drop_color
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_dnd_svg_dest_add
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|gimp_display_shell_drop_svg
 argument_list|,
 name|shell
 argument_list|)

@@ -2658,6 +2658,9 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
+operator|-
+literal|1
+argument_list|,
 operator|&
 name|error
 argument_list|)

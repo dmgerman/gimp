@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a28d0470108
+DECL|struct|__anon2c8537f70108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a28d0470208
+DECL|struct|__anon2c8537f70208
 block|{
 DECL|member|id
 name|gchar
@@ -261,6 +261,9 @@ name|merge
 parameter_list|,
 name|gboolean
 name|scale
+parameter_list|,
+name|gint
+name|position
 parameter_list|,
 name|GError
 modifier|*
@@ -577,7 +580,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,GError ** error)
+DECL|function|gimp_vectors_import_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,gint position,GError ** error)
 name|gimp_vectors_import_file
 parameter_list|(
 name|GimpImage
@@ -594,6 +597,9 @@ name|merge
 parameter_list|,
 name|gboolean
 name|scale
+parameter_list|,
+name|gint
+name|position
 parameter_list|,
 name|GError
 modifier|*
@@ -649,6 +655,8 @@ name|merge
 argument_list|,
 name|scale
 argument_list|,
+name|position
+argument_list|,
 name|error
 argument_list|)
 return|;
@@ -661,7 +669,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_buffer (GimpImage * image,const gchar * buffer,gint len,gboolean merge,gboolean scale,GError ** error)
+DECL|function|gimp_vectors_import_buffer (GimpImage * image,const gchar * buffer,gint len,gboolean merge,gboolean scale,gint position,GError ** error)
 name|gimp_vectors_import_buffer
 parameter_list|(
 name|GimpImage
@@ -682,6 +690,9 @@ parameter_list|,
 name|gboolean
 name|scale
 parameter_list|,
+name|gint
+name|position
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -740,6 +751,8 @@ name|merge
 argument_list|,
 name|scale
 argument_list|,
+name|position
+argument_list|,
 name|error
 argument_list|)
 return|;
@@ -749,7 +762,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_import (GimpImage * image,const gchar * filename,const gchar * str,gint len,gboolean merge,gboolean scale,GError ** error)
+DECL|function|gimp_vectors_import (GimpImage * image,const gchar * filename,const gchar * str,gint len,gboolean merge,gboolean scale,gint position,GError ** error)
 name|gimp_vectors_import
 parameter_list|(
 name|GimpImage
@@ -774,6 +787,9 @@ name|merge
 parameter_list|,
 name|gboolean
 name|scale
+parameter_list|,
+name|gint
+name|position
 parameter_list|,
 name|GError
 modifier|*
@@ -1034,14 +1050,23 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
-operator|-
-literal|1
+name|position
 argument_list|)
 expr_stmt|;
 name|gimp_vectors_freeze
 argument_list|(
 name|vectors
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|position
+operator|!=
+operator|-
+literal|1
+condition|)
+name|position
+operator|++
 expr_stmt|;
 block|}
 for|for
@@ -3653,7 +3678,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a28d0470308
+DECL|struct|__anon2c8537f70308
 block|{
 DECL|member|strokes
 name|GList
