@@ -681,7 +681,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64e8440103
+DECL|enum|__anon294f45b80103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2034,7 +2034,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c64e8440208
+DECL|struct|__anon294f45b80208
 typedef|typedef
 struct|struct
 block|{
@@ -2765,13 +2765,13 @@ specifier|static
 name|popup_timeout_args_t
 name|popup_timeout_args
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
+if|if
+condition|(
 name|gcp_popup_timer
-operator|==
+operator|!=
 literal|0
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|popup_timeout_args
 operator|.
 name|gcp

@@ -186,6 +186,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|layers_dialog_delete_layer_mask_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|layers_dialog_anchor_layer_callback
 parameter_list|(
 name|GtkWidget

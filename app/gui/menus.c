@@ -4904,7 +4904,26 @@ block|,
 literal|0
 block|}
 block|,
-literal|"dialogs/apply_mask.html"
+literal|"apply_mask.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Delete Layer Mask..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|layers_dialog_delete_layer_mask_callback
+block|,
+literal|0
+block|}
+block|,
+literal|"delete_mask.html"
 block|,
 name|NULL
 block|}
