@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Session-managment stuff     I include a short description here on what is done and what problems     are left.     Right now session-managment is limited to window geometry. I plan to add     at least the saving of Last-Used-Images (using nuke's patch).     There is a problem with the offset introduced by the window-manager adding    decorations to the windows. This is annoying and should be fixed somehow.        Still not sure how to implement stuff for opening windows on start-up.    Probably the best thing to do, would be to have a list of dialogs in    the preferences-dialog that should always be opened.  */
+comment|/* Session-managment stuff     I include a short description here on what is done and what problems     are left.     Since everything saved in sessionrc changes often (with each session?)     the whole file is rewritten each time the gimp exits. I don't see any    use in implementing a more flexible scheme like it is used for gimprc.     Right now session-managment is limited to window geometry. I plan to add     at least the saving of Last-Used-Images (using nuke's patch).     There is a problem with the offset introduced by the window-manager adding    decorations to the windows. This is annoying and should be fixed somehow.    ( Update: I was promised that this will be fixed in gtk. )        Still not sure how to implement stuff for opening windows on start-up.    Probably the best thing to do, would be to have a list of dialogs in    the preferences-dialog that should always be opened.  */
 end_comment
 
 begin_include
@@ -503,6 +503,7 @@ argument_list|,
 literal|"# are used.\n\n"
 argument_list|)
 expr_stmt|;
+comment|/* save window geometries */
 name|g_list_foreach
 argument_list|(
 name|session_geometry_updates
@@ -513,6 +514,18 @@ operator|)
 name|sessionrc_write_geometry
 argument_list|,
 name|fp
+argument_list|)
+expr_stmt|;
+comment|/* save last tip shown */
+name|fprintf
+argument_list|(
+name|fp
+argument_list|,
+literal|"(last-tip-shown %d)\n\n"
+argument_list|,
+name|last_tip
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 name|fclose

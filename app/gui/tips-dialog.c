@@ -889,16 +889,7 @@ argument_list|(
 name|tips_dialog
 argument_list|)
 expr_stmt|;
-name|update
-operator|=
-name|g_list_append
-argument_list|(
-name|update
-argument_list|,
-literal|"last-tip-shown"
-argument_list|)
-expr_stmt|;
-comment|/* always save this */
+comment|/* the last-shown-tip is now saved in sessionrc */
 if|if
 condition|(
 name|show_tips
@@ -928,10 +919,6 @@ name|old_show_tips
 operator|=
 name|show_tips
 expr_stmt|;
-block|}
-name|last_tip
-operator|++
-expr_stmt|;
 name|save_gimprc
 argument_list|(
 operator|&
@@ -941,9 +928,7 @@ operator|&
 name|remove
 argument_list|)
 expr_stmt|;
-name|last_tip
-operator|--
-expr_stmt|;
+block|}
 name|g_list_free
 argument_list|(
 name|update

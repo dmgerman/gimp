@@ -142,7 +142,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon298eeeb10103
+DECL|enum|__anon2b27c8440103
 typedef|typedef
 enum|enum
 block|{
@@ -1567,6 +1567,17 @@ operator|&
 name|allow_resize_windows
 block|,
 name|NULL
+block|}
+block|,
+block|{
+literal|"dont-allow-resize-windows"
+block|,
+name|TT_BOOLEAN
+block|,
+name|NULL
+block|,
+operator|&
+name|allow_resize_windows
 block|}
 block|,
 block|{
