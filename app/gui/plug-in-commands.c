@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb1135d0103
+DECL|enum|__anon2c802d5a0103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -2374,7 +2374,7 @@ operator|->
 name|prefixes
 argument_list|)
 expr_stmt|;
-comment|/* MAGICS can be proc_def->prefixes  */
+comment|/* MAGICS can be proc_def->magics  */
 if|if
 condition|(
 name|proc_def
