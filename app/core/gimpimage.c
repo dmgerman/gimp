@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e11d160103
+DECL|enum|__anon291d292b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -3602,6 +3602,23 @@ block|{
 name|gimp_image_projection_allocate
 argument_list|(
 name|gimage
+argument_list|)
+expr_stmt|;
+name|gimp_image_update
+argument_list|(
+name|gimage
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|gimage
+operator|->
+name|width
+argument_list|,
+name|gimage
+operator|->
+name|height
 argument_list|)
 expr_stmt|;
 block|}
