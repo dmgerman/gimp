@@ -152,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d253230108
+DECL|struct|__anon2b1e81150108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -160,23 +160,23 @@ modifier|*
 name|adj
 decl_stmt|;
 DECL|member|value
-name|gfloat
+name|gdouble
 name|value
 decl_stmt|;
 DECL|member|lower
-name|gfloat
+name|gdouble
 name|lower
 decl_stmt|;
 DECL|member|upper
-name|gfloat
+name|gdouble
 name|upper
 decl_stmt|;
 DECL|member|step
-name|gfloat
+name|gdouble
 name|step
 decl_stmt|;
 DECL|member|page
-name|gfloat
+name|gdouble
 name|page
 decl_stmt|;
 DECL|member|digits
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d253230208
+DECL|struct|__anon2b1e81150208
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d253230308
+DECL|struct|__anon2b1e81150308
 block|{
 DECL|member|name
 name|gchar
@@ -233,7 +233,7 @@ name|gint
 name|spacing
 decl_stmt|;
 DECL|member|paint_mode
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 decl_stmt|;
 DECL|typedef|SFBrush
@@ -245,7 +245,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d253230408
+DECL|struct|__anon2b1e81150408
 block|{
 DECL|member|list
 name|GSList
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29d25323050a
+DECL|union|__anon2b1e8115050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d253230608
+DECL|struct|__anon2b1e81150608
 block|{
 DECL|member|script_name
 name|gchar
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d253230708
+DECL|struct|__anon2b1e81150708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -704,6 +704,7 @@ specifier|static
 name|void
 name|script_fu_pattern_preview
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -717,7 +718,8 @@ parameter_list|,
 name|gint
 name|bytes
 parameter_list|,
-name|gchar
+specifier|const
+name|guchar
 modifier|*
 name|mask_data
 parameter_list|,
@@ -735,6 +737,7 @@ specifier|static
 name|void
 name|script_fu_gradient_preview
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -742,6 +745,7 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|mask_data
@@ -760,6 +764,7 @@ specifier|static
 name|void
 name|script_fu_font_preview
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -778,6 +783,7 @@ specifier|static
 name|void
 name|script_fu_brush_preview
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -788,7 +794,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|gint
@@ -797,7 +803,8 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+specifier|const
+name|guchar
 modifier|*
 name|mask_data
 parameter_list|,
@@ -5902,11 +5909,23 @@ name|i
 operator|++
 control|)
 block|{
-comment|/*  we add a colon after the label;  	  some languages want an extra space here */
 name|gchar
 modifier|*
 name|label_text
+decl_stmt|;
+name|gfloat
+name|label_yalign
 init|=
+literal|0.5
+decl_stmt|;
+name|gboolean
+name|widget_leftalign
+init|=
+name|TRUE
+decl_stmt|;
+comment|/*  we add a colon after the label;           some languages want an extra space here  */
+name|label_text
+operator|=
 name|g_strdup_printf
 argument_list|(
 name|_
@@ -5924,17 +5943,7 @@ name|i
 index|]
 argument_list|)
 argument_list|)
-decl_stmt|;
-name|gfloat
-name|label_yalign
-init|=
-literal|0.5
-decl_stmt|;
-name|gboolean
-name|widget_leftalign
-init|=
-name|TRUE
-decl_stmt|;
+expr_stmt|;
 switch|switch
 condition|(
 name|script
@@ -7403,9 +7412,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_pattern_preview (gchar * name,gint width,gint height,gint bytes,gchar * mask_data,gboolean closing,gpointer data)
+DECL|function|script_fu_pattern_preview (const gchar * name,gint width,gint height,gint bytes,const guchar * mask_data,gboolean closing,gpointer data)
 name|script_fu_pattern_preview
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -7419,7 +7429,8 @@ parameter_list|,
 name|gint
 name|bytes
 parameter_list|,
-name|gchar
+specifier|const
+name|guchar
 modifier|*
 name|mask_data
 parameter_list|,
@@ -7464,9 +7475,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_gradient_preview (gchar * name,gint width,gdouble * mask_data,gboolean closing,gpointer data)
+DECL|function|script_fu_gradient_preview (const gchar * name,gint width,const gdouble * mask_data,gboolean closing,gpointer data)
 name|script_fu_gradient_preview
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -7474,6 +7486,7 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|mask_data
@@ -7519,9 +7532,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_font_preview (gchar * name,gboolean closing,gpointer data)
+DECL|function|script_fu_font_preview (const gchar * name,gboolean closing,gpointer data)
 name|script_fu_font_preview
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -7567,9 +7581,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|script_fu_brush_preview (gchar * name,gdouble opacity,gint spacing,gint paint_mode,gint width,gint height,gchar * mask_data,gboolean closing,gpointer data)
+DECL|function|script_fu_brush_preview (const gchar * name,gdouble opacity,gint spacing,GimpLayerModeEffects paint_mode,gint width,gint height,const guchar * mask_data,gboolean closing,gpointer data)
 name|script_fu_brush_preview
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -7580,7 +7595,7 @@ parameter_list|,
 name|gint
 name|spacing
 parameter_list|,
-name|gint
+name|GimpLayerModeEffects
 name|paint_mode
 parameter_list|,
 name|gint
@@ -7589,7 +7604,8 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|gchar
+specifier|const
+name|guchar
 modifier|*
 name|mask_data
 parameter_list|,

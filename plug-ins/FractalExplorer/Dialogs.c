@@ -819,9 +819,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|gradient_name
-operator|==
-name|NULL
 condition|)
 name|gradient_name
 operator|=
@@ -855,9 +854,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|explorer_gradient_select_callback (gchar * name,gint width,gdouble * gradient_data,gint dialog_closing,gpointer data)
+DECL|function|explorer_gradient_select_callback (const gchar * name,gint width,const gdouble * gradient_data,gboolean dialog_closing,gpointer data)
 name|explorer_gradient_select_callback
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -865,11 +865,12 @@ parameter_list|,
 name|gint
 name|width
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|gradient_data
 parameter_list|,
-name|gint
+name|gboolean
 name|dialog_closing
 parameter_list|,
 name|gpointer

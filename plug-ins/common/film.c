@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff8afc0108
+DECL|struct|__anon2a0e18d20108
 block|{
 DECL|member|film_height
 name|gint
@@ -219,7 +219,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bff8afc0208
+DECL|struct|__anon2a0e18d20208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -240,7 +240,7 @@ modifier|*
 name|image_list_film
 decl_stmt|;
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|FilmInterface
@@ -560,7 +560,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|film_dialog
 parameter_list|(
 name|gint32
@@ -604,6 +604,7 @@ specifier|static
 name|void
 name|film_font_select_callback
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -7154,7 +7155,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|film_dialog (gint32 image_ID)
 name|film_dialog
 parameter_list|(
@@ -7332,9 +7333,6 @@ name|dlg
 argument_list|)
 expr_stmt|;
 name|gtk_main
-argument_list|()
-expr_stmt|;
-name|gdk_flush
 argument_list|()
 expr_stmt|;
 return|return
@@ -7525,9 +7523,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|film_font_select_callback (gchar * name,gboolean closing,gpointer data)
+DECL|function|film_font_select_callback (const gchar * name,gboolean closing,gpointer data)
 name|film_font_select_callback
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
