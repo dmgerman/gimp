@@ -2361,7 +2361,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid file data\n"
+literal|"Received invalid file data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2376,9 +2376,7 @@ name|vals
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"%s: raw buffer>>%s<<\n"
-argument_list|,
-name|G_GNUC_FUNCTION
+literal|"gimp_dnd_set_file_data: raw buffer>>%s<<\n"
 argument_list|,
 name|buffer
 argument_list|)
@@ -2421,23 +2419,20 @@ literal|0
 decl_stmt|;
 while|while
 condition|(
-operator|(
+name|len
+operator|<
+sizeof|sizeof
+argument_list|(
+name|name_buffer
+argument_list|)
+operator|&&
 operator|*
 name|buffer
-operator|!=
-literal|0
-operator|)
 operator|&&
-operator|(
 operator|*
 name|buffer
 operator|!=
 literal|'\n'
-operator|)
-operator|&&
-name|len
-operator|<
-literal|1024
 condition|)
 block|{
 operator|*
@@ -2471,33 +2466,12 @@ operator|==
 literal|0xd
 condition|)
 comment|/* gmc uses RETURN+NEWLINE as delimiter */
-operator|*
-operator|(
-name|name
-operator|-
-literal|1
-operator|)
-operator|=
-literal|'\0'
-expr_stmt|;
-else|else
-operator|*
-name|name
-operator|=
-literal|'\0'
-expr_stmt|;
-name|name
-operator|=
-name|name_buffer
+name|len
+operator|--
 expr_stmt|;
 if|if
 condition|(
-name|name
-operator|&&
-name|strlen
-argument_list|(
-name|name
-argument_list|)
+name|len
 operator|>
 literal|2
 condition|)
@@ -2507,9 +2481,11 @@ name|g_list_append
 argument_list|(
 name|files
 argument_list|,
-name|g_strdup
+name|g_strndup
 argument_list|(
-name|name
+name|name_buffer
+argument_list|,
+name|len
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2981,6 +2957,10 @@ specifier|const
 name|gchar
 modifier|*
 name|dnd_crap
+init|=
+name|list
+operator|->
+name|data
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2992,22 +2972,15 @@ name|uri
 init|=
 name|NULL
 decl_stmt|;
+if|if
+condition|(
+operator|!
 name|dnd_crap
-operator|=
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|)
-name|list
-operator|->
-name|data
-expr_stmt|;
+condition|)
+continue|continue;
 name|g_print
 argument_list|(
-literal|"%s: trying to convert \"%s\" to an uri...\n"
-argument_list|,
-name|G_GNUC_FUNCTION
+literal|"gimp_dnd_open_files: trying to convert \"%s\" to an uri...\n"
 argument_list|,
 name|dnd_crap
 argument_list|)
@@ -3049,14 +3022,13 @@ block|}
 else|else
 comment|/*  else to evil things...  */
 block|{
-name|filename
-operator|=
-operator|(
+specifier|const
 name|gchar
-operator|*
-operator|)
+modifier|*
+name|start
+init|=
 name|dnd_crap
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -3073,7 +3045,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|filename
+name|start
 operator|+=
 name|strlen
 argument_list|(
@@ -3098,7 +3070,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|filename
+name|start
 operator|+=
 name|strlen
 argument_list|(
@@ -3108,12 +3080,8 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|filename
+name|start
 operator|!=
-operator|(
-name|gchar
-operator|*
-operator|)
 name|dnd_crap
 condition|)
 block|{
@@ -3136,7 +3104,7 @@ name|unescaped_filename
 operator|=
 name|gimp_unescape_uri_string
 argument_list|(
-name|filename
+name|start
 argument_list|,
 operator|-
 literal|1
@@ -3153,7 +3121,7 @@ name|unescaped_filename
 operator|=
 name|g_strdup
 argument_list|(
-name|filename
+name|start
 argument_list|)
 expr_stmt|;
 block|}
@@ -3188,9 +3156,7 @@ block|}
 block|}
 name|g_print
 argument_list|(
-literal|"%s: ...trying to open resulting uri \"%s\"\n"
-argument_list|,
-name|G_GNUC_FUNCTION
+literal|"gimp_dnd_open_files: ...trying to open resulting uri \"%s\"\n"
 argument_list|,
 name|uri
 argument_list|)
@@ -3237,14 +3203,12 @@ block|{
 name|gchar
 modifier|*
 name|filename
-decl_stmt|;
-name|filename
-operator|=
+init|=
 name|file_utils_uri_to_utf8_filename
 argument_list|(
 name|uri
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_message
 argument_list|(
 name|_
@@ -3569,7 +3533,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid color data\n"
+literal|"Received invalid color data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4747,9 +4711,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): received invalid image ID data"
-argument_list|,
-name|G_GNUC_FUNCTION
+literal|"Received invalid image ID data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4974,7 +4936,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid item ID data"
+literal|"Received invalid item ID data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5217,7 +5179,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid brush data\n"
+literal|"Received invalid brush data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5363,7 +5325,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid pattern data\n"
+literal|"Received invalid pattern data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5502,7 +5464,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid gradient data\n"
+literal|"Received invalid gradient data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5641,7 +5603,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid palette data\n"
+literal|"Received invalid palette data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5780,7 +5742,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid font data\n"
+literal|"Received invalid font data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -5914,7 +5876,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid buffer data\n"
+literal|"Received invalid buffer data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6031,7 +5993,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid buffer data\n"
+literal|"Received invalid buffer data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6148,7 +6110,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid buffer data\n"
+literal|"Received invalid buffer data!"
 argument_list|)
 expr_stmt|;
 return|return;
@@ -6265,7 +6227,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid tool data\n"
+literal|"Received invalid tool data!"
 argument_list|)
 expr_stmt|;
 return|return;
