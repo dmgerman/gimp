@@ -6357,7 +6357,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_file_chooser_button_new:  * @config:        object to which property is attached.  * @property_name: name of Path property.  * @title:         the title of the browse dialog.  * @action:        the open mode for the widget.  *  * Creates a #GtkFileChooserButton to set and display the specified  * Path property.  *  * Return value:  A new #GimpFileButton widget.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_file_chooser_button_new:  * @config:        object to which property is attached.  * @property_name: name of Path property.  * @title:         the title of the browse dialog.  * @action:        the open mode for the widget.  *  * Creates a #GtkFileChooserButton to edit the specified path  * property.  *  * Note that #GtkFileChooserButton implements the #GtkFileChooser  * interface; you can use the #GtkFileChooser API with it.  *  * Return value:  A new #GtkFileChooserButton.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
