@@ -128,11 +128,6 @@ decl_stmt|,
 name|h
 decl_stmt|;
 comment|/*  width and height            */
-DECL|member|op
-name|GimpZoomType
-name|op
-decl_stmt|;
-comment|/*  magnify operation           */
 block|}
 struct|;
 end_struct
