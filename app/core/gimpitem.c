@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4f5630103
+DECL|enum|__anon2bd05d4c0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -2270,7 +2270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_scale_by_origin:  * @item:         The item to be transformed by width& height scale factors  * @new_width:    The width that item will acquire  * @new_height:   The height that the item will acquire  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets item dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * TRUE, the fixed point of the scaling transform coincides  * with the item's center point.  Otherwise, the fixed  * point is taken to be [-item->offset_x, -item->offset_y].  *  * Since this function derives scale factors from new and  * current item dimensions, these factors will vary from  * item to item because of aliasing artifacts; factor  * variations among items can be quite large where item  * dimensions approach pixel dimensions. Use   * gimp_item_scale_by_factors() where constant scales are to  * be uniformly applied to a number of items.  *  * Side effects: undo set created for item.  *               Old item imagery scaled   *& painted to new item tiles   **/
+comment|/**  * gimp_item_scale_by_origin:  * @item:         The item to be transformed by width& height scale factors  * @new_width:    The width that item will acquire  * @new_height:   The height that the item will acquire  * @interpolation:  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets item dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * TRUE, the fixed point of the scaling transform coincides  * with the item's center point.  Otherwise, the fixed  * point is taken to be [-item->offset_x, -item->offset_y].  *  * Since this function derives scale factors from new and  * current item dimensions, these factors will vary from  * item to item because of aliasing artifacts; factor  * variations among items can be quite large where item  * dimensions approach pixel dimensions. Use   * gimp_item_scale_by_factors() where constant scales are to  * be uniformly applied to a number of items.  *  * Side effects: undo set created for item.  *               Old item imagery scaled   *& painted to new item tiles   **/
 end_comment
 
 begin_function
