@@ -308,7 +308,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277eccd90108
+DECL|struct|__anon2b9695710108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -336,7 +336,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277eccd90208
+DECL|struct|__anon2b9695710208
 block|{
 DECL|member|name
 name|gchar
@@ -1270,7 +1270,7 @@ value|4
 block|{
 name|N_
 argument_list|(
-literal|"Mix (x, -)"
+literal|"Min (x, -)"
 argument_list|)
 block|,
 name|NULL
@@ -1706,7 +1706,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277eccd90308
+DECL|struct|__anon2b9695710308
 block|{
 DECL|member|function
 name|gint
@@ -1779,7 +1779,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277eccd90408
+DECL|struct|__anon2b9695710408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2566,7 +2566,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277eccd90508
+DECL|struct|__anon2b9695710508
 block|{
 DECL|member|run
 name|gint
@@ -2614,7 +2614,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277eccd90608
+DECL|struct|__anon2b9695710608
 block|{
 DECL|member|widget
 name|GtkWidget
