@@ -218,7 +218,7 @@ block|,
 name|GTK_STOCK_OPEN
 block|}
 block|,
-literal|"gimp-document-list"
+literal|"gimp-document-list|gimp-document-grid"
 block|,
 name|GIMP_HELP_DOCUMENT_DIALOG
 block|,
@@ -672,7 +672,7 @@ block|,
 name|GIMP_STOCK_TOOL_BLEND
 block|}
 block|,
-literal|"gimp-gradient-list"
+literal|"gimp-gradient-list|gimp-gradient-grid"
 block|,
 name|GIMP_HELP_GRADIENT_DIALOG
 block|,
@@ -697,7 +697,7 @@ block|,
 name|GTK_STOCK_SELECT_COLOR
 block|}
 block|,
-literal|"gimp-palette-list"
+literal|"gimp-palette-list|gimp-palette-list"
 block|,
 name|GIMP_HELP_PALETTE_DIALOG
 block|,
@@ -722,7 +722,7 @@ block|,
 name|GTK_STOCK_SELECT_FONT
 block|}
 block|,
-literal|"gimp-font-list"
+literal|"gimp-font-list, gimp-font-grid"
 block|,
 name|GIMP_HELP_FONT_DIALOG
 block|,
@@ -747,7 +747,7 @@ block|,
 name|GTK_STOCK_PASTE
 block|}
 block|,
-literal|"gimp-buffer-list"
+literal|"gimp-buffer-list|gimp-buffer-grid"
 block|,
 name|GIMP_HELP_BUFFER_DIALOG
 block|,
@@ -777,7 +777,7 @@ block|,
 name|GIMP_STOCK_IMAGES
 block|}
 block|,
-literal|"gimp-image-list"
+literal|"gimp-image-list|gimp-image-grid"
 block|,
 name|GIMP_HELP_IMAGE_DIALOG
 block|,
@@ -802,7 +802,7 @@ block|,
 name|GTK_STOCK_OPEN
 block|}
 block|,
-literal|"gimp-document-list"
+literal|"gimp-document-list|gimp-document-grid"
 block|,
 name|GIMP_HELP_DOCUMENT_DIALOG
 block|,
@@ -827,7 +827,7 @@ block|,
 name|GIMP_STOCK_TEMPLATE
 block|}
 block|,
-literal|"gimp-template-list"
+literal|"gimp-template-list|gimp-template-grid"
 block|,
 name|GIMP_HELP_TEMPLATE_DIALOG
 block|,

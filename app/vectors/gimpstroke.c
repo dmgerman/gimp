@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4afa2b0103
+DECL|enum|__anon2a305a380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3637,7 +3637,7 @@ argument_list|(
 name|stroke
 argument_list|)
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
