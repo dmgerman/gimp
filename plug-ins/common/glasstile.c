@@ -48,7 +48,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27b3865a0108
+DECL|struct|__anon2ae80a590108
 typedef|typedef
 struct|struct
 block|{
@@ -67,7 +67,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27b3865a0208
+DECL|struct|__anon2ae80a590208
 typedef|typedef
 struct|struct
 block|{
@@ -753,14 +753,6 @@ name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|scale
 decl_stmt|;
 name|GtkWidget
@@ -927,7 +919,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -962,7 +954,26 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* table height, width */
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gtk_container_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -970,7 +981,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -990,7 +1001,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Tile Width"
+literal|"Tile Width:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1001,9 +1012,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
-literal|0.5
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1025,9 +1036,9 @@ literal|1
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|0
+name|GTK_FILL
 argument_list|,
-literal|5
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -1176,7 +1187,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Tile Height"
+literal|"Tile Height:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1187,9 +1198,9 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
-literal|0.5
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1211,9 +1222,9 @@ literal|2
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|0
+name|GTK_FILL
 argument_list|,
-literal|5
+literal|0
 argument_list|,
 literal|0
 argument_list|)

@@ -93,7 +93,7 @@ value|(r * 0.30 + g * 0.59 + b * 0.11)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c09b21d0108
+DECL|struct|__anon2c0bed070108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c09b21d0208
+DECL|struct|__anon2c0bed070208
 typedef|typedef
 struct|struct
 block|{
@@ -846,14 +846,6 @@ name|table
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|toggle
 decl_stmt|;
 name|gchar
@@ -1008,7 +1000,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1043,6 +1035,26 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -1050,7 +1062,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1084,7 +1096,7 @@ name|toggle
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+literal|3
 argument_list|,
 literal|0
 argument_list|,
@@ -1140,7 +1152,7 @@ name|dialog_create_value
 argument_list|(
 name|_
 argument_list|(
-literal|"Height"
+literal|"Height:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -1964,7 +1976,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c09b21d0308
+DECL|struct|__anon2c0bed070308
 typedef|typedef
 struct|struct
 block|{
@@ -2880,7 +2892,7 @@ name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -2900,7 +2912,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -2925,7 +2937,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -3026,16 +3038,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_scale_set_digits
-argument_list|(
-name|GTK_SCALE
-argument_list|(
-name|scale
-argument_list|)
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
 name|gtk_range_set_update_policy
 argument_list|(
 name|GTK_RANGE
@@ -3082,9 +3084,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -3142,7 +3149,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)

@@ -158,7 +158,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27aa6db00108
+DECL|struct|__anon27f11e510108
 typedef|typedef
 struct|struct
 block|{
@@ -177,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27aa6db00208
+DECL|struct|__anon27f11e510208
 typedef|typedef
 struct|struct
 block|{
@@ -250,7 +250,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa6db00308
+DECL|struct|__anon27f11e510308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1322,14 +1322,6 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
 name|guchar
 modifier|*
 name|color_cube
@@ -1548,7 +1540,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4966,7 +4958,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|table
@@ -4980,6 +4972,26 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
 name|gtk_container_border_width
 argument_list|(
 name|GTK_CONTAINER
@@ -4987,7 +4999,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5000,33 +5012,13 @@ argument_list|,
 name|table
 argument_list|)
 expr_stmt|;
-name|gtk_table_set_row_spacings
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|3
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_col_spacings
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|5
-argument_list|)
-expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"X: "
+literal|"X:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5059,7 +5051,7 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,
@@ -5165,7 +5157,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Y: "
+literal|"Y:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5198,7 +5190,7 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_EXPAND
+name|GTK_SHRINK
 operator||
 name|GTK_FILL
 argument_list|,

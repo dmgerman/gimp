@@ -55,13 +55,19 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
 end_include
 
 begin_define
@@ -137,9 +143,9 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bbabf0b0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2959c2d60108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -160,9 +166,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbabf0b0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2959c2d60208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -200,9 +206,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bbabf0b0308
 typedef|typedef
 struct|struct
+DECL|struct|__anon2959c2d60308
 block|{
 DECL|member|col
 DECL|member|row
@@ -520,37 +526,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|dialog_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|dialog_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -587,10 +563,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* PLUG_IN_INFO */
-end_comment
-
 begin_decl_stmt
 DECL|variable|wpvals
 specifier|static
@@ -609,10 +581,6 @@ comment|/* radius */
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/* wpvals */
-end_comment
 
 begin_decl_stmt
 DECL|variable|wpint
@@ -641,10 +609,6 @@ comment|/* run */
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/* wpint */
-end_comment
 
 begin_decl_stmt
 DECL|variable|drawable
@@ -748,19 +712,11 @@ begin_comment
 comment|/***** Functions *****/
 end_comment
 
-begin_comment
-comment|/*****/
-end_comment
-
 begin_macro
 DECL|function|MAIN ()
 name|MAIN
 argument_list|()
 end_macro
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -892,14 +848,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* query */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -1183,7 +1131,6 @@ operator|=
 literal|1.0
 expr_stmt|;
 block|}
-comment|/* else */
 name|radius
 operator|=
 name|MAX
@@ -1239,7 +1186,6 @@ operator|/
 name|sel_height
 expr_stmt|;
 block|}
-comment|/* else */
 name|preview_width
 operator|=
 name|MAX
@@ -1347,7 +1293,6 @@ operator|.
 name|d_float
 expr_stmt|;
 block|}
-comment|/* if */
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -1365,7 +1310,6 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* switch */
 comment|/* Distort the image */
 if|if
 condition|(
@@ -1477,14 +1421,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* run */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -1568,7 +1504,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|printf("Waiting... (pid %d)\n", getpid()); 	kill(getpid(), SIGSTOP);
+block|g_printf ("Waiting... (pid %d)\n", getpid ());   kill (getpid (), SIGSTOP);
 endif|#
 directive|endif
 comment|/* Initialize rows */
@@ -2011,7 +1947,6 @@ name|values
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 comment|/* Bottom */
 name|cx
 operator|=
@@ -2231,7 +2166,6 @@ name|values
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 name|bot_p
 operator|-=
 literal|2
@@ -2242,7 +2176,7 @@ comment|/* We move backwards! */
 block|}
 else|else
 block|{
-comment|/* We are outside the distortion area; just copy the source pixels */
+comment|/*  We are outside the distortion area; 	       *  just copy the source pixels 	       */
 comment|/* Top */
 name|pixel_fetcher_get_pixel
 argument_list|(
@@ -2351,9 +2285,7 @@ name|img_bpp
 expr_stmt|;
 comment|/* We move backwards! */
 block|}
-comment|/* else */
 block|}
-comment|/* for */
 comment|/* Paint rows to image */
 name|gimp_pixel_rgn_set_row
 argument_list|(
@@ -2411,7 +2343,6 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for */
 name|pixel_fetcher_destroy
 argument_list|(
 name|pft
@@ -2463,14 +2394,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* whirl_pinch */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -2554,7 +2477,7 @@ name|dy
 operator|*
 name|dy
 expr_stmt|;
-comment|/* If we are inside circle, then distort.  Else, just return the same position */
+comment|/*  If we are inside circle, then distort.    *  Else, just return the same position    */
 name|inside
 operator|=
 operator|(
@@ -2682,20 +2605,11 @@ operator|=
 name|wy
 expr_stmt|;
 block|}
-comment|/* else */
 return|return
 name|inside
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* calc_undistorted_coords */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -2829,14 +2743,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* bilinear */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -2990,14 +2896,6 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/* pixel_fetcher_new */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3069,14 +2967,6 @@ name|a
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* pixel_fetcher_set_bg_color */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -3172,7 +3062,6 @@ index|]
 expr_stmt|;
 return|return;
 block|}
-comment|/* if */
 name|col
 operator|=
 name|x
@@ -3286,7 +3175,6 @@ operator|=
 name|row
 expr_stmt|;
 block|}
-comment|/* if */
 name|p
 operator|=
 name|pf
@@ -3335,14 +3223,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* pixel_fetcher_get_pixel */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -3378,14 +3258,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* pixel_fetcher_destroy */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -3438,64 +3310,52 @@ name|wpint
 operator|.
 name|check_row_0
 operator|=
-name|g_malloc
-argument_list|(
-name|preview_width
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
-argument_list|)
+argument_list|,
+name|preview_width
 argument_list|)
 expr_stmt|;
 name|wpint
 operator|.
 name|check_row_1
 operator|=
-name|g_malloc
-argument_list|(
-name|preview_width
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
-argument_list|)
+argument_list|,
+name|preview_width
 argument_list|)
 expr_stmt|;
 name|wpint
 operator|.
 name|image
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|preview_width
 operator|*
 name|preview_height
 operator|*
 literal|4
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|wpint
 operator|.
 name|dimage
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|preview_width
 operator|*
 name|preview_height
 operator|*
 literal|3
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|left
@@ -3647,7 +3507,6 @@ operator|=
 name|CHECK_DARK
 expr_stmt|;
 block|}
-comment|/* else */
 comment|/* Thumbnail image */
 name|pixel_fetcher_get_pixel
 argument_list|(
@@ -3770,13 +3629,11 @@ operator|+=
 name|dx
 expr_stmt|;
 block|}
-comment|/* for */
 name|py
 operator|+=
 name|dy
 expr_stmt|;
 block|}
-comment|/* for */
 name|pixel_fetcher_destroy
 argument_list|(
 name|pf
@@ -3784,14 +3641,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* build_preview_source_image */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -3818,14 +3667,6 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
@@ -3841,7 +3682,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|printf("Waiting... (pid %d)\n", getpid()); 	kill(getpid(), SIGSTOP);
+block|g_print ("Waiting... (pid %d)\n", getpid ());   kill (getpid (), SIGSTOP);
 endif|#
 directive|endif
 name|argc
@@ -3946,37 +3787,53 @@ argument_list|()
 expr_stmt|;
 name|dialog
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
 literal|"Whirl and Pinch"
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
+argument_list|,
+literal|"whirlpinch"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/whirlpinch.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|dialog
-argument_list|)
 argument_list|,
-literal|0
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|"OK"
+argument_list|,
+name|dialog_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|"Cancel"
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -3988,10 +3845,10 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_close_callback
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -4007,7 +3864,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -4156,14 +4013,24 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_table_set_col_spacings
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_TABLE
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|0
+literal|4
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4201,7 +4068,7 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
-literal|"Whirl angle"
+literal|"Whirl Angle:"
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4225,7 +4092,7 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
-literal|"Pinch amount"
+literal|"Pinch Amount:"
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4249,7 +4116,7 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
-literal|"Radius"
+literal|"Radius:"
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -4268,187 +4135,6 @@ argument_list|,
 literal|2.0
 argument_list|,
 literal|0.01
-argument_list|)
-expr_stmt|;
-comment|/*  Action area  */
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_end
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-name|hbbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-literal|"OK"
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_ok_callback
-argument_list|,
-name|dialog
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-literal|"Cancel"
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|dialog_cancel_callback
-argument_list|,
-name|dialog
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
 argument_list|)
 expr_stmt|;
 comment|/* Done */
@@ -4501,14 +4187,6 @@ name|run
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* whirl_pinch_dialog */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -4652,7 +4330,6 @@ literal|0
 index|]
 expr_stmt|;
 block|}
-comment|/* if */
 name|left
 operator|=
 name|sel_x1
@@ -5219,13 +4896,11 @@ operator|+=
 name|dx
 expr_stmt|;
 block|}
-comment|/* for */
 name|py
 operator|+=
 name|dy
 expr_stmt|;
 block|}
-comment|/* for */
 name|p
 operator|=
 name|wpint
@@ -5271,7 +4946,6 @@ operator|*
 literal|3
 expr_stmt|;
 block|}
-comment|/* for */
 name|gtk_widget_draw
 argument_list|(
 name|wpint
@@ -5286,14 +4960,6 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_update_preview */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5342,7 +5008,7 @@ name|GtkObject
 modifier|*
 name|scale_data
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -5362,7 +5028,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -5387,7 +5053,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -5544,9 +5210,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%0.3f"
 argument_list|,
@@ -5604,7 +5275,7 @@ name|GTK_FILL
 argument_list|,
 name|GTK_FILL
 argument_list|,
-literal|4
+literal|0
 argument_list|,
 literal|0
 argument_list|)
@@ -5616,14 +5287,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_create_value */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5644,7 +5307,7 @@ name|GtkWidget
 modifier|*
 name|entry
 decl_stmt|;
-name|char
+name|gchar
 name|buf
 index|[
 literal|256
@@ -5677,9 +5340,14 @@ name|adjustment
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buf
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buf
+argument_list|)
 argument_list|,
 literal|"%0.3f"
 argument_list|,
@@ -5721,17 +5389,8 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_scale_update */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5830,47 +5489,9 @@ name|dialog_update_preview
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* if */
 block|}
-comment|/* if */
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_entry_update */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_close_callback (GtkWidget * widget,gpointer data)
-name|dialog_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* dialog_close_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
 
 begin_function
 specifier|static
@@ -5902,43 +5523,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* dialog_ok_callback */
-end_comment
-
-begin_comment
-comment|/*****/
-end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|dialog_cancel_callback (GtkWidget * widget,gpointer data)
-name|dialog_cancel_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/* dialog_cancel_callback */
-end_comment
 
 end_unit
 

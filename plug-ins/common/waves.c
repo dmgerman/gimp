@@ -24,13 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -901,12 +907,10 @@ name|bpp
 expr_stmt|;
 name|src
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|height
@@ -916,12 +920,10 @@ argument_list|)
 expr_stmt|;
 name|dst
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|height
@@ -1038,12 +1040,12 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|src
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dst
 argument_list|)
@@ -1083,6 +1085,45 @@ expr_stmt|;
 return|return
 name|retval
 return|;
+block|}
+end_function
+
+begin_decl_stmt
+DECL|variable|run_flag
+specifier|static
+name|gboolean
+name|run_flag
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+specifier|static
+name|void
+DECL|function|waves_ok_callback (GtkWidget * widget,gpointer data)
+name|waves_ok_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|run_flag
+operator|=
+name|TRUE
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1131,8 +1172,13 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+name|gchar
+modifier|*
+modifier|*
+name|argv
+decl_stmt|;
 name|gint
-name|runp
+name|argc
 decl_stmt|;
 specifier|static
 name|struct
@@ -1159,14 +1205,6 @@ block|,
 literal|0
 block|}
 block|,   }
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
 decl_stmt|;
 comment|/* Set args */
 name|argc
@@ -1210,14 +1248,70 @@ argument_list|)
 expr_stmt|;
 name|dlg
 operator|=
-name|mw_app_new
+name|gimp_dialog_new
 argument_list|(
-literal|"plug_in_waves"
-argument_list|,
 literal|"Waves"
 argument_list|,
-operator|&
-name|runp
+literal|"waves"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/waves.html"
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|"OK"
+argument_list|,
+name|waves_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|"Cancel"
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|dlg
+argument_list|)
+argument_list|,
+literal|"destroy"
+argument_list|,
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -1226,7 +1320,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -1236,7 +1330,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|5
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1271,7 +1365,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1356,7 +1450,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1436,7 +1530,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|5
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -1453,7 +1547,7 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
-literal|"Amplitude"
+literal|"Amplitude:"
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1483,7 +1577,7 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
-literal|"Phase"
+literal|"Phase:"
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1513,7 +1607,7 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
-literal|"Wavelength"
+literal|"Wavelength:"
 argument_list|,
 literal|0.1
 argument_list|,
@@ -1580,7 +1674,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|runp
+name|run_flag
 condition|)
 block|{
 if|#
@@ -1588,7 +1682,7 @@ directive|if
 literal|0
 block|fprintf(stderr, "running:\n");
 comment|/*fprintf(stderr, "\t(image %d)\n", argp->image);*/
-block|fprintf(stderr, "\t(drawable %d)\n", argp->drawable);     fprintf(stderr, "\t(amplitude %f)\n", argp->amplitude);     fprintf(stderr, "\t(phase %f)\n", argp->phase);     fprintf(stderr, "\t(wavelength %f)\n", argp->wavelength);     fprintf(stderr, "\t(type %d)\n", argp->type);     fprintf(stderr, "\t(reflective %d)\n", argp->reflective);
+block|fprintf(stderr, "\t(drawable %d)\n", argp->drawable);       fprintf(stderr, "\t(amplitude %f)\n", argp->amplitude);       fprintf(stderr, "\t(phase %f)\n", argp->phase);       fprintf(stderr, "\t(wavelength %f)\n", argp->wavelength);       fprintf(stderr, "\t(type %d)\n", argp->type);       fprintf(stderr, "\t(reflective %d)\n", argp->reflective);
 endif|#
 directive|endif
 return|return
@@ -1691,12 +1785,10 @@ argument_list|)
 expr_stmt|;
 name|dst
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|mwp
 operator|->
 name|width
@@ -1824,7 +1916,7 @@ expr_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dst
 argument_list|)
@@ -2121,7 +2213,6 @@ operator|=
 literal|1.0
 expr_stmt|;
 block|}
-comment|/* else */
 name|radius
 operator|=
 name|MAX
@@ -2250,7 +2341,7 @@ argument_list|)
 expr_stmt|;
 comment|/* Use the formula described above. */
 comment|/* Calculate waved point and scale again to ellipsify */
-comment|/*        * Reflective waves are strange - the effect is much        * more like a mirror which is in the shape of        * the wave than anything else.        */
+comment|/* 	   * Reflective waves are strange - the effect is much 	   * more like a mirror which is in the shape of 	   * the wave than anything else. 	   */
 if|if
 condition|(
 name|reflective
@@ -2654,15 +2745,12 @@ operator|=
 name|val
 expr_stmt|;
 block|}
-comment|/* for */
 block|}
-comment|/* for */
 name|dst
 operator|+=
 name|rowsiz
 expr_stmt|;
 block|}
-comment|/* for */
 if|if
 condition|(
 name|verbose
@@ -2674,10 +2762,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* wave */
-end_comment
 
 begin_function
 specifier|static
@@ -2799,18 +2883,6 @@ argument_list|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* bilinear */
-end_comment
-
-begin_comment
-comment|/*  * Local Variables:  * c-file-style: GNU  * mode: C  * c-auto-newline: t  *  * End:  */
-end_comment
-
-begin_comment
-comment|/* end of file waves/waves.c */
-end_comment
 
 end_unit
 

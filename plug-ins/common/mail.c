@@ -153,13 +153,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|<libgimp/gimpui.h>
 end_include
 
 begin_include
@@ -457,7 +457,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2883b7100108
+DECL|struct|__anon29512a180108
 block|{
 DECL|member|receipt
 name|char
@@ -2018,7 +2018,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -2164,7 +2164,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -2310,7 +2310,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -2456,7 +2456,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -2605,7 +2605,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -2953,7 +2953,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)

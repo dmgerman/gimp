@@ -305,7 +305,7 @@ block|}
 end_function
 
 begin_struct
-DECL|struct|__anon275399c10108
+DECL|struct|__anon29eb7a0b0108
 specifier|static
 struct|struct
 block|{
@@ -2065,7 +2065,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_print
+name|fprintf
 argument_list|(
 name|stderr
 argument_list|,

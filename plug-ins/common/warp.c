@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -13,12 +19,6 @@ begin_include
 include|#
 directive|include
 file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
 end_include
 
 begin_include
@@ -46,31 +46,31 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"gtk/gtk.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpmath.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimpui.h"
 end_include
 
 begin_comment
@@ -144,7 +144,7 @@ value|3
 end_define
 
 begin_typedef
-DECL|struct|__anon29e91dd10108
+DECL|struct|__anon2b3f0e9c0108
 typedef|typedef
 struct|struct
 block|{
@@ -211,7 +211,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e91dd10208
+DECL|struct|__anon2b3f0e9c0208
 typedef|typedef
 struct|struct
 block|{
@@ -612,21 +612,6 @@ name|warp_map_vector_callback
 parameter_list|(
 name|gint32
 name|id
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|warp_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -1781,15 +1766,11 @@ name|dlg
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1846,15 +1827,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|vectormenu
-decl_stmt|;
-name|GtkTooltips
-modifier|*
-name|tooltips
-decl_stmt|;
-name|GdkColor
-name|tips_fg
-decl_stmt|,
-name|tips_bg
 decl_stmt|;
 name|GSList
 modifier|*
@@ -1981,32 +1953,70 @@ operator|&
 name|argv
 argument_list|)
 expr_stmt|;
+name|gtk_rc_parse
+argument_list|(
+name|gimp_gtkrc
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|dlg
 operator|=
-name|gtk_dialog_new
-argument_list|()
-expr_stmt|;
-name|gtk_window_set_title
+name|gimp_dialog_new
 argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
 literal|"Warp"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_window_position
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dlg
-argument_list|)
+argument_list|,
+literal|"warp"
+argument_list|,
+name|gimp_plugin_help_func
+argument_list|,
+literal|"filters/warp.html"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"OK"
+argument_list|)
+argument_list|,
+name|warp_ok_callback
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|,
+name|_
+argument_list|(
+literal|"Cancel"
+argument_list|)
+argument_list|,
+name|gtk_widget_destroy
+argument_list|,
+name|NULL
+argument_list|,
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -2018,141 +2028,37 @@ argument_list|)
 argument_list|,
 literal|"destroy"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|warp_close_callback
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gtk_main_quit
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* use black as foreground: */
-name|tooltips
-operator|=
-name|gtk_tooltips_new
+name|gimp_help_init
 argument_list|()
 expr_stmt|;
-comment|/* obtain a tooltips widget */
-name|tips_fg
-operator|.
-name|red
+name|vbox
 operator|=
-literal|0
-expr_stmt|;
-name|tips_fg
-operator|.
-name|green
-operator|=
-literal|0
-expr_stmt|;
-name|tips_fg
-operator|.
-name|blue
-operator|=
-literal|0
-expr_stmt|;
-comment|/* postit yellow (khaki) as background: */
-name|gdk_color_alloc
+name|gtk_vbox_new
 argument_list|(
-name|gtk_widget_get_colormap
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
-operator|&
-name|tips_fg
-argument_list|)
-expr_stmt|;
-name|tips_bg
-operator|.
-name|red
-operator|=
-literal|61669
-expr_stmt|;
-name|tips_bg
-operator|.
-name|green
-operator|=
-literal|59113
-expr_stmt|;
-name|tips_bg
-operator|.
-name|blue
-operator|=
-literal|35979
-expr_stmt|;
-name|gdk_color_alloc
-argument_list|(
-name|gtk_widget_get_colormap
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|,
-operator|&
-name|tips_bg
-argument_list|)
-expr_stmt|;
-name|gtk_tooltips_set_colors
-argument_list|(
-name|tooltips
-argument_list|,
-operator|&
-name|tips_bg
-argument_list|,
-operator|&
-name|tips_fg
-argument_list|)
-expr_stmt|;
-comment|/*  gtk_tooltips_set_delay  (tooltips, 0);*/
-comment|/* any longer and the tooltip will persist and                       obscure the popup menu if mouse button clicked before 1 second */
-comment|/*        This call does not seem to work. leaves tooltip 100% black, no color          gtk_tooltips_set_colors (tooltips,&yellow_color,&grey_color);        void gtk_tooltips_set_colors (GtkTooltips *tooltips,                                      GdkColor    *background,                                      GdkColor    *foreground);    */
-comment|/*  Action area  */
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_homogeneous
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
-name|action_area
-argument_list|)
-argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|hbbox
-operator|=
-name|gtk_hbutton_box_new
-argument_list|()
-expr_stmt|;
-name|gtk_button_box_set_spacing
-argument_list|(
-name|GTK_BUTTON_BOX
-argument_list|(
-name|hbbox
-argument_list|)
 argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_end
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2161,142 +2067,23 @@ argument_list|(
 name|dlg
 argument_list|)
 operator|->
-name|action_area
+name|vbox
 argument_list|)
 argument_list|,
-name|hbbox
+name|vbox
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbbox
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"OK"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|warp_ok_callback
-argument_list|,
-name|dlg
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_grab_default
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
-argument_list|)
-expr_stmt|;
-name|button
-operator|=
-name|gtk_button_new_with_label
-argument_list|(
-name|_
-argument_list|(
-literal|"Cancel"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
-argument_list|(
-name|button
-argument_list|,
-name|GTK_CAN_DEFAULT
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect_object
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-literal|"clicked"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|gtk_widget_destroy
-argument_list|,
-name|GTK_OBJECT
-argument_list|(
-name|dlg
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|hbbox
-argument_list|)
-argument_list|,
-name|button
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|button
+name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*  The main table  */
 name|frame
 operator|=
 name|gtk_frame_new
@@ -2317,57 +2104,41 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
 name|vbox
 argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* table params: rows, columns */
 name|table
 operator|=
 name|gtk_table_new
 argument_list|(
-literal|4
+literal|3
 argument_list|,
 literal|3
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2387,7 +2158,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -2397,7 +2168,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/*  on_x, on_y  */
@@ -2407,8 +2178,20 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Step Size"
+literal|"Step Size:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2448,8 +2231,20 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Iterations"
+literal|"Iterations:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2528,9 +2323,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%3.3f"
 argument_list|,
@@ -2618,9 +2418,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -2775,7 +2580,7 @@ argument_list|(
 name|option_menu
 argument_list|)
 expr_stmt|;
-comment|/* ================================================================================== */
+comment|/* ======================================================================= */
 comment|/*  Displacement Type  */
 name|toggle_hbox
 operator|=
@@ -2783,17 +2588,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|10
-argument_list|)
-expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|toggle_hbox
-argument_list|)
-argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -2809,9 +2604,9 @@ literal|0
 argument_list|,
 literal|3
 argument_list|,
-literal|3
+literal|2
 argument_list|,
-literal|4
+literal|3
 argument_list|,
 name|GTK_FILL
 argument_list|,
@@ -2828,7 +2623,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"On Edges: "
+literal|"On Edges:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3174,38 +2969,22 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
 name|vbox
 argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* table params: rows, columns */
 name|table
 operator|=
 name|gtk_table_new
@@ -3224,7 +3003,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -3244,7 +3023,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -3254,7 +3033,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|label
@@ -3263,8 +3042,20 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Dither Size"
+literal|"Dither Size:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3342,9 +3133,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%3.3f"
 argument_list|,
@@ -3394,8 +3190,20 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Substeps"
+literal|"Substeps:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3473,9 +3281,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -3519,7 +3332,6 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/* -------------------------------------------------------- */
 name|label
 operator|=
 name|gtk_label_new
@@ -3528,6 +3340,18 @@ name|_
 argument_list|(
 literal|"Rotation Angle"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -3605,9 +3429,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%3.1f"
 argument_list|,
@@ -3770,7 +3599,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_border_width
@@ -3815,7 +3644,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Use Mag Map: "
+literal|"Use Mag Map:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4019,33 +3848,18 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dlg
-argument_list|)
-operator|->
 name|vbox
 argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4062,14 +3876,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
 name|otable
 argument_list|)
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4089,7 +3903,7 @@ argument_list|(
 name|otable
 argument_list|)
 argument_list|,
-literal|1
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -4099,7 +3913,7 @@ argument_list|(
 name|otable
 argument_list|)
 argument_list|,
-literal|1
+literal|4
 argument_list|)
 expr_stmt|;
 name|label
@@ -4108,8 +3922,20 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Gradient Scale"
+literal|"Gradient Scale:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4187,9 +4013,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%3.3f"
 argument_list|,
@@ -4298,10 +4129,8 @@ argument_list|,
 name|gradmenu
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tooltips
-argument_list|,
 name|option_menu_grad
 argument_list|,
 name|_
@@ -4324,8 +4153,20 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Vector Mag"
+literal|"Vector Mag:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4403,9 +4244,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%3.3f"
 argument_list|,
@@ -4456,8 +4302,20 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Angle"
+literal|"Angle:"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_misc_set_alignment
+argument_list|(
+name|GTK_MISC
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+literal|1.0
+argument_list|,
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4535,9 +4393,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|buffer
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|buffer
+argument_list|)
 argument_list|,
 literal|"%3.1f"
 argument_list|,
@@ -4646,10 +4509,8 @@ argument_list|,
 name|vectormenu
 argument_list|)
 expr_stmt|;
-name|gtk_tooltips_set_tip
+name|gimp_help_set_help_data
 argument_list|(
-name|tooltips
-argument_list|,
 name|option_menu_vector
 argument_list|,
 name|_
@@ -4665,7 +4526,6 @@ argument_list|(
 name|option_menu_vector
 argument_list|)
 expr_stmt|;
-comment|/* -------------------------------------------------------- */
 name|gtk_widget_show
 argument_list|(
 name|otable
@@ -4676,7 +4536,6 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-comment|/* --------------------------------------------------------------- */
 name|gtk_widget_show
 argument_list|(
 name|dlg
@@ -4685,13 +4544,8 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
-name|gtk_object_unref
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|tooltips
-argument_list|)
-argument_list|)
+name|gimp_help_free
+argument_list|()
 expr_stmt|;
 name|gdk_flush
 argument_list|()
@@ -5637,15 +5491,19 @@ block|}
 end_function
 
 begin_comment
-comment|/* --------------------------------------------------------------------------------------------- */
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_comment
-comment|/*  'diff' combines the input drawables to prepare the two 16-bit (X,Y) vector displacement maps */
+comment|/*  'diff' combines the input drawables to prepare the two                    */
 end_comment
 
 begin_comment
-comment|/* --------------------------------------------------------------------------------------------- */
+comment|/*  16-bit (X,Y) vector displacement maps                                     */
+end_comment
+
+begin_comment
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_function
@@ -5918,7 +5776,7 @@ name|has_alpha
 decl_stmt|,
 name|ind
 decl_stmt|;
-comment|/* -------------------------------------------------------------------------------------------------- */
+comment|/* ----------------------------------------------------------------------- */
 if|if
 condition|(
 name|dvals
@@ -7593,7 +7451,7 @@ operator|+=
 name|dest_bytes_inc
 expr_stmt|;
 block|}
-comment|/* ------------------------------- for (col...) ---------------------------  */
+comment|/* ------------------------------- for (col...) ----------------  */
 comment|/*  store the dest  */
 name|gimp_pixel_rgn_set_row
 argument_list|(
@@ -7858,15 +7716,15 @@ comment|/* end diff() */
 end_comment
 
 begin_comment
-comment|/* -------------------------------------------------------------------------------- */
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_comment
-comment|/*                  The Warp displacement is done here.                             */
+comment|/*            The Warp displacement is done here.                             */
 end_comment
 
 begin_comment
-comment|/* -------------------------------------------------------------------------------- */
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_function
@@ -8188,7 +8046,7 @@ comment|/* Warp */
 end_comment
 
 begin_comment
-comment|/* -------------------------------------------------------------------------------- */
+comment|/* -------------------------------------------------------------------------- */
 end_comment
 
 begin_function
@@ -8487,7 +8345,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* seed random # generator */
-comment|/* ================ Outer Loop calculation =================================== */
+comment|/* ================ Outer Loop calculation ================================ */
 comment|/* Get selection area */
 name|gimp_drawable_mask_bounds
 argument_list|(
@@ -10233,7 +10091,7 @@ comment|/* warp_one */
 end_comment
 
 begin_comment
-comment|/* -------------------------------------------------------------------------------- */
+comment|/* ------------------------------------------------------------------------- */
 end_comment
 
 begin_function
@@ -11132,26 +10990,6 @@ operator|.
 name|vector_map
 operator|=
 name|id
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|warp_close_callback (GtkWidget * widget,gpointer data)
-name|warp_close_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|gtk_main_quit
-argument_list|()
 expr_stmt|;
 block|}
 end_function

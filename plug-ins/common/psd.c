@@ -149,7 +149,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782b54a0103
+DECL|enum|__anon2b0d8f990103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -524,7 +524,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2782b54a0208
+DECL|struct|__anon2b0d8f990208
 specifier|static
 struct|struct
 block|{
@@ -7241,12 +7241,6 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|cmykbuf
-decl_stmt|;
-specifier|static
-name|int
-name|number
-init|=
-literal|1
 decl_stmt|;
 name|guchar
 modifier|*

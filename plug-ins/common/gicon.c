@@ -111,7 +111,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c16ed210108
+DECL|struct|__anon29d837110108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c16ed210208
+DECL|struct|__anon29d837110208
 block|{
 DECL|member|run
 name|gint
@@ -1845,14 +1845,6 @@ name|dlg
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|label
 decl_stmt|;
 name|GtkWidget
@@ -1959,7 +1951,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1995,7 +1987,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
@@ -2005,7 +1997,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|10
+literal|4
 argument_list|)
 expr_stmt|;
 comment|/**********************    * label    **********************/
@@ -2026,7 +2018,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
 literal|0.5
 argument_list|)
