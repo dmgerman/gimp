@@ -140,7 +140,7 @@ name|g
 parameter_list|,
 name|x
 parameter_list|)
-value|((int)(x * SCALEFACTOR_X(g)))
+value|((int)(x * SCALEFACTOR_X(g) + 0.5))
 end_define
 
 begin_define
@@ -153,7 +153,7 @@ name|g
 parameter_list|,
 name|y
 parameter_list|)
-value|((int)(y * SCALEFACTOR_Y(g)))
+value|((int)(y * SCALEFACTOR_Y(g) + 0.5))
 end_define
 
 begin_comment
@@ -170,7 +170,7 @@ name|g
 parameter_list|,
 name|x
 parameter_list|)
-value|((int)(x / SCALEFACTOR_X(g)))
+value|((int)(x / SCALEFACTOR_X(g) + 0.5))
 end_define
 
 begin_define
@@ -183,7 +183,7 @@ name|g
 parameter_list|,
 name|y
 parameter_list|)
-value|((int)(y / SCALEFACTOR_Y(g)))
+value|((int)(y / SCALEFACTOR_Y(g) + 0.5))
 end_define
 
 begin_comment

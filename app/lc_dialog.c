@@ -1459,14 +1459,12 @@ argument_list|,
 name|MENU_THUMBNAIL_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|menu_preview
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1676,7 +1674,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b0f630108
+DECL|struct|__anon29d762030108
 block|{
 DECL|member|def
 name|GImage

@@ -540,7 +540,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c61930b0103
+DECL|enum|__anon2c30ce820103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -14053,6 +14053,10 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
+name|Layer
+modifier|*
+name|floating_sel
+decl_stmt|;
 name|PixelRegion
 name|src1PR
 decl_stmt|,
@@ -14226,6 +14230,10 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+name|floating_sel
+operator|=
+name|NULL
+expr_stmt|;
 while|while
 condition|(
 name|list
@@ -14241,15 +14249,9 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-comment|/*  only add layers that are visible and not floating selections to the list  */
+comment|/*  only add layers that are visible to the list  */
 if|if
 condition|(
-operator|!
-name|layer_is_floating_sel
-argument_list|(
-name|layer
-argument_list|)
-operator|&&
 name|drawable_visible
 argument_list|(
 name|GIMP_DRAWABLE
@@ -14258,6 +14260,45 @@ name|layer
 argument_list|)
 argument_list|)
 condition|)
+block|{
+comment|/* floating selections are added right above the layer they are attached to */
+if|if
+condition|(
+name|layer_is_floating_sel
+argument_list|(
+name|layer
+argument_list|)
+condition|)
+name|floating_sel
+operator|=
+name|layer
+expr_stmt|;
+else|else
+block|{
+if|if
+condition|(
+name|floating_sel
+operator|&&
+name|GIMP_LAYER
+argument_list|(
+name|floating_sel
+argument_list|)
+operator|->
+name|fs
+operator|.
+name|drawable
+operator|==
+name|layer
+condition|)
+name|reverse_list
+operator|=
+name|g_slist_prepend
+argument_list|(
+name|reverse_list
+argument_list|,
+name|floating_sel
+argument_list|)
+expr_stmt|;
 name|reverse_list
 operator|=
 name|g_slist_prepend
@@ -14267,6 +14308,8 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 name|list
 operator|=
 name|g_slist_next

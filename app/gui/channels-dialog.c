@@ -10021,13 +10021,11 @@ if|if
 condition|(
 name|update_preview
 condition|)
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|channel_widget
 operator|->
 name|channel_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

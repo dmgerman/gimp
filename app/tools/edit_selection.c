@@ -211,6 +211,11 @@ name|gboolean
 name|old_auto_snap_to
 decl_stmt|;
 comment|/*  old value of auto snap to       */
+DECL|member|first_move
+name|gboolean
+name|first_move
+decl_stmt|;
+comment|/*  we undo_freeze after the first  */
 DECL|member|context_id
 name|guint
 name|context_id
@@ -644,6 +649,12 @@ name|tool
 operator|->
 name|auto_snap_to
 expr_stmt|;
+name|edit_select
+operator|.
+name|first_move
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/*  find the bounding box of the selection mask -    *  this is used for the case of a MaskToLayerTranslate,    *  where the translation will result in floating the selection    *  mask and translating the resulting layer    */
 name|drawable_mask_bounds
 argument_list|(
@@ -972,9 +983,17 @@ block|layer_list = gdisp->gimage->layers; 	      while (layer_list) 		{ 		  laye
 comment|/*  if no movement has occured, clear the current selection  */
 block|else if ((edit_select.edit_type == MaskTranslate) || 	       (edit_select.edit_type == MaskToLayerTranslate)) 	gimage_mask_clear (gdisp->gimage);
 comment|/*  if no movement occured and the type is LayerTranslate,        *  check if the layer is a floating selection.  If so, anchor.        */
-block|else if (edit_select.edit_type == FloatingSelTranslate) 	{ 	  layer = gimage_get_active_layer (gdisp->gimage); 	  if (layer_is_floating_sel (layer)) 	    floating_sel_anchor (layer); 	}     }   undo_push_group_end (gdisp->gimage);
+block|else if (edit_select.edit_type == FloatingSelTranslate) 	{ 	  layer = gimage_get_active_layer (gdisp->gimage); 	  if (layer_is_floating_sel (layer)) 	    floating_sel_anchor (layer); 	}     }    undo_push_group_end (gdisp->gimage);
 else|#
 directive|else
+comment|/* thaw the undo again */
+name|gimp_image_undo_thaw
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|edit_select
@@ -1081,7 +1100,7 @@ name|bevent
 operator|->
 name|state
 operator|&
-name|GDK_BUTTON2_MASK
+name|GDK_BUTTON3_MASK
 condition|)
 comment|/* OPERATION CANCELLED */
 block|{
@@ -1295,6 +1314,27 @@ name|yoffset
 argument_list|)
 expr_stmt|;
 comment|/*g_warning("%d,%d  %d,%d  %d,%d  %d,%d  %d,%d  %d,%d", 		      edit_select.origx,edit_select.origy, 		      edit_select.cumlx,edit_select.cumly, 		      xoffset,yoffset, 		      x,y, 		      edit_select.x1,edit_select.y1, 		      edit_select.x2,edit_select.y2);*/
+if|if
+condition|(
+name|edit_select
+operator|.
+name|first_move
+condition|)
+block|{
+name|gimp_image_undo_freeze
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+name|edit_select
+operator|.
+name|first_move
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|edit_select
 operator|.
 name|origx
@@ -1400,6 +1440,27 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|edit_select
+operator|.
+name|first_move
+condition|)
+block|{
+name|gimp_image_undo_freeze
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+name|edit_select
+operator|.
+name|first_move
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|MaskToLayerTranslate
@@ -1422,6 +1483,27 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|edit_select
+operator|.
+name|first_move
+condition|)
+block|{
+name|gimp_image_undo_freeze
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+name|edit_select
+operator|.
+name|first_move
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 name|edit_select
 operator|.
 name|edit_type
@@ -1480,6 +1562,27 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|edit_select
+operator|.
+name|first_move
+condition|)
+block|{
+name|gimp_image_undo_freeze
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+name|edit_select
+operator|.
+name|first_move
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 break|break;
 default|default:
 name|g_warning
@@ -1942,7 +2045,7 @@ operator|->
 name|num_segs_out
 argument_list|)
 expr_stmt|;
-comment|/*  reset the the current selection  */
+comment|/*  reset the current selection  */
 name|seg
 operator|=
 name|select
@@ -2113,21 +2216,13 @@ name|y1
 operator|+
 name|diff_y
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
-operator|-
-literal|1
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2369,21 +2464,13 @@ name|y1
 operator|+
 name|diff_y
 argument_list|,
-operator|(
 name|x2
 operator|-
 name|x1
-operator|)
-operator|-
-literal|1
 argument_list|,
-operator|(
 name|y2
 operator|-
 name|y1
-operator|)
-operator|-
-literal|1
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3274,7 +3361,7 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|MISC_UNDO
+name|LAYER_DISPLACE_UNDO
 argument_list|)
 expr_stmt|;
 if|if
