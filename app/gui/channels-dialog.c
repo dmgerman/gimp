@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"channels-commands.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -7115,7 +7115,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ecb0590108
+DECL|struct|__anon2b3bc3870108
 block|{
 DECL|member|gimage
 name|GimpImage

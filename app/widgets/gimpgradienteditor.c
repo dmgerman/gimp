@@ -97,6 +97,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color-notebook.h"
 end_include
 
@@ -121,12 +127,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"datafiles.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
@@ -146,12 +146,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdatafactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -293,7 +287,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5c2ce30103
+DECL|enum|__anon2c66a2720103
 block|{
 DECL|enumerator|GRAD_UPDATE_GRADIENT
 name|GRAD_UPDATE_GRADIENT
@@ -333,7 +327,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5c2ce30203
+DECL|enum|__anon2c66a2720203
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE

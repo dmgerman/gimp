@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/file-open-dialog.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a433e2d0108
+DECL|struct|__anon29346eb70108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a433e2d0208
+DECL|struct|__anon29346eb70208
 block|{
 DECL|member|boole
 name|gboolean

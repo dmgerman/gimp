@@ -66,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"color-notebook.h"
+file|"widgets/gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdnd.h"
+file|"color-notebook.h"
 end_include
 
 begin_include
@@ -135,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292695620103
+DECL|enum|__anon277278140103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -5601,7 +5601,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292695620208
+DECL|struct|__anon277278140208
 block|{
 DECL|member|def
 name|GimpImage

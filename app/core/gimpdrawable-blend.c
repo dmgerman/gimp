@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -347,7 +347,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a80a20108
+DECL|struct|__anon2c5a08fc0108
 block|{
 DECL|member|offset
 name|gdouble
@@ -399,7 +399,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0a80a20208
+DECL|struct|__anon2c5a08fc0208
 block|{
 DECL|member|PR
 name|PixelRegion

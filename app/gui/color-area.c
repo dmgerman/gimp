@@ -53,6 +53,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdnd.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"color-area.h"
 end_include
 
@@ -66,12 +72,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdnd.h"
 end_include
 
 begin_include
@@ -110,7 +110,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3504aa0103
+DECL|enum|__anon2ad393040103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA

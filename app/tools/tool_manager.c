@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdnd.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage.h"
 end_include
 
