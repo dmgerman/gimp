@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|PRINT_GIMP_HEADER
+name|__PRINT_GIMP_H__
 end_ifndef
 
 begin_define
-DECL|macro|PRINT_GIMP_HEADER
+DECL|macro|__PRINT_GIMP_H__
 define|#
 directive|define
-name|PRINT_GIMP_HEADER
+name|__PRINT_GIMP_H__
 end_define
 
 begin_include
@@ -31,6 +31,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpui.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"print.h"
 end_include
 
@@ -43,7 +49,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"3.0.10 - 01 Apr 2000"
+value|VERSION " - " RELEASE_DATE
 end_define
 
 begin_define
@@ -84,18 +90,80 @@ DECL|macro|PREVIEW_SIZE_HORIZ
 comment|/* Assuming max media size of 24" A2 */
 end_comment
 
+begin_if
+if|#
+directive|if
+operator|!
+name|defined
+argument_list|(
+name|GIMP_MINOR_VERSION
+argument_list|)
+operator|||
+operator|(
+name|GIMP_MAJOR_VERSION
+operator|==
+literal|1
+operator|&&
+name|GIMP_MINOR_VERSION
+operator|==
+literal|0
+operator|)
+operator|||
+operator|(
+name|GIMP_MAJOR_VERSION
+operator|==
+literal|1
+operator|&&
+name|GIMP_MINOR_VERSION
+operator|==
+literal|1
+operator|&&
+name|GIMP_MICRO_VERSION
+operator|<
+literal|21
+operator|)
+end_if
+
 begin_define
-DECL|macro|MAX_PLIST
+DECL|macro|GIMP_1_0
 define|#
 directive|define
-name|MAX_PLIST
-value|100
+name|GIMP_1_0
 end_define
 
 begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/*  * Function prototypes  */
+end_comment
+
+begin_comment
+comment|/* How to create an Image wrapping a Gimp drawable */
+end_comment
+
+begin_function_decl
+specifier|extern
+name|Image
+name|Image_GDrawable_new
+parameter_list|(
+name|GDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* __PRINT_GIMP_H__ */
+end_comment
 
 end_unit
 

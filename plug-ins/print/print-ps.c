@@ -18,7 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<limits.h>
 end_include
 
 begin_comment
@@ -97,12 +103,15 @@ name|char
 modifier|*
 name|ppd_find
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 parameter_list|,
@@ -121,11 +130,13 @@ name|char
 modifier|*
 modifier|*
 comment|/* O - Parameter values */
-DECL|function|ps_parameters (int model,char * ppd_file,char * name,int * count)
+DECL|function|ps_parameters (const printer_t * printer,char * ppd_file,char * name,int * count)
 name|ps_parameters
 parameter_list|(
-name|int
-name|model
+specifier|const
+name|printer_t
+modifier|*
+name|printer
 parameter_list|,
 comment|/* I - Printer model */
 name|char
@@ -167,38 +178,6 @@ name|char
 modifier|*
 modifier|*
 name|valptrs
-decl_stmt|;
-specifier|static
-name|char
-modifier|*
-name|media_sizes
-index|[]
-init|=
-block|{
-operator|(
-literal|"Letter"
-operator|)
-block|,
-operator|(
-literal|"Legal"
-operator|)
-block|,
-operator|(
-literal|"A4"
-operator|)
-block|,
-operator|(
-literal|"Tabloid"
-operator|)
-block|,
-operator|(
-literal|"A3"
-operator|)
-block|,
-operator|(
-literal|"12x18"
-operator|)
-block|}
 decl_stmt|;
 if|if
 condition|(
@@ -302,24 +281,32 @@ operator|==
 literal|0
 condition|)
 block|{
-operator|*
-name|count
-operator|=
-literal|6
-expr_stmt|;
+specifier|const
+name|papersize_t
+modifier|*
+name|papersizes
+init|=
+name|get_papersizes
+argument_list|()
+decl_stmt|;
 name|valptrs
 operator|=
 name|malloc
 argument_list|(
-operator|*
-name|count
-operator|*
 sizeof|sizeof
 argument_list|(
 name|char
 operator|*
 argument_list|)
+operator|*
+name|known_papersizes
+argument_list|()
 argument_list|)
+expr_stmt|;
+operator|*
+name|count
+operator|=
+literal|0
 expr_stmt|;
 for|for
 control|(
@@ -329,27 +316,44 @@ literal|0
 init|;
 name|i
 operator|<
-operator|*
-name|count
+name|known_papersizes
+argument_list|()
 condition|;
 name|i
 operator|++
 control|)
 block|{
-comment|/* strdup doesn't appear to be POSIX... */
-name|valptrs
+if|if
+condition|(
+name|strlen
+argument_list|(
+name|papersizes
 index|[
 name|i
+index|]
+operator|.
+name|name
+argument_list|)
+operator|>
+literal|0
+condition|)
+block|{
+name|valptrs
+index|[
+operator|*
+name|count
 index|]
 operator|=
 name|malloc
 argument_list|(
 name|strlen
 argument_list|(
-name|media_sizes
+name|papersizes
 index|[
 name|i
 index|]
+operator|.
+name|name
 argument_list|)
 operator|+
 literal|1
@@ -359,15 +363,25 @@ name|strcpy
 argument_list|(
 name|valptrs
 index|[
-name|i
+operator|*
+name|count
 index|]
 argument_list|,
-name|media_sizes
+name|papersizes
 index|[
 name|i
 index|]
+operator|.
+name|name
 argument_list|)
 expr_stmt|;
+operator|(
+operator|*
+name|count
+operator|)
+operator|++
+expr_stmt|;
+block|}
 block|}
 return|return
 operator|(
@@ -450,7 +464,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|g_strcasecmp
+name|strcasecmp
 argument_list|(
 name|lname
 argument_list|,
@@ -533,23 +547,21 @@ end_comment
 
 begin_function
 name|void
-DECL|function|ps_media_size (int model,char * ppd_file,char * media_size,int * width,int * length)
+DECL|function|ps_media_size (const printer_t * printer,const vars_t * v,int * width,int * length)
 name|ps_media_size
 parameter_list|(
-name|int
-name|model
+specifier|const
+name|printer_t
+modifier|*
+name|printer
 parameter_list|,
 comment|/* I - Printer model */
-name|char
+specifier|const
+name|vars_t
 modifier|*
-name|ppd_file
+name|v
 parameter_list|,
-comment|/* I - PPD file (not used) */
-name|char
-modifier|*
-name|media_size
-parameter_list|,
-comment|/* I - Media size */
+comment|/* I */
 name|int
 modifier|*
 name|width
@@ -594,10 +606,14 @@ name|dimensions
 operator|=
 name|ppd_find
 argument_list|(
+name|v
+operator|->
 name|ppd_file
 argument_list|,
 literal|"PaperDimension"
 argument_list|,
+name|v
+operator|->
 name|media_size
 argument_list|,
 name|NULL
@@ -620,11 +636,9 @@ expr_stmt|;
 else|else
 name|default_media_size
 argument_list|(
-name|model
+name|printer
 argument_list|,
-name|ppd_file
-argument_list|,
-name|media_size
+name|v
 argument_list|,
 name|width
 argument_list|,
@@ -640,23 +654,21 @@ end_comment
 
 begin_function
 name|void
-DECL|function|ps_imageable_area (int model,char * ppd_file,char * media_size,int * left,int * right,int * bottom,int * top)
+DECL|function|ps_imageable_area (const printer_t * printer,const vars_t * v,int * left,int * right,int * bottom,int * top)
 name|ps_imageable_area
 parameter_list|(
-name|int
-name|model
+specifier|const
+name|printer_t
+modifier|*
+name|printer
 parameter_list|,
 comment|/* I - Printer model */
-name|char
+specifier|const
+name|vars_t
 modifier|*
-name|ppd_file
+name|v
 parameter_list|,
-comment|/* I - PPD file (not used) */
-name|char
-modifier|*
-name|media_size
-parameter_list|,
-comment|/* I - Media size */
+comment|/* I */
 name|int
 modifier|*
 name|left
@@ -700,10 +712,14 @@ name|area
 operator|=
 name|ppd_find
 argument_list|(
+name|v
+operator|->
 name|ppd_file
 argument_list|,
 literal|"ImageableArea"
 argument_list|,
+name|v
+operator|->
 name|media_size
 argument_list|,
 name|NULL
@@ -803,11 +819,9 @@ else|else
 block|{
 name|default_media_size
 argument_list|(
-name|model
+name|printer
 argument_list|,
-name|ppd_file
-argument_list|,
-name|media_size
+name|v
 argument_list|,
 name|right
 argument_list|,
@@ -838,17 +852,79 @@ block|}
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|ps_limit (const printer_t * printer,const vars_t * v,int * width,int * length)
+name|ps_limit
+parameter_list|(
+specifier|const
+name|printer_t
+modifier|*
+name|printer
+parameter_list|,
+comment|/* I - Printer model */
+specifier|const
+name|vars_t
+modifier|*
+name|v
+parameter_list|,
+comment|/* I */
+name|int
+modifier|*
+name|width
+parameter_list|,
+comment|/* O - Left position in points */
+name|int
+modifier|*
+name|length
+parameter_list|)
+comment|/* O - Top position in points */
+block|{
+operator|*
+name|width
+operator|=
+name|INT_MAX
+expr_stmt|;
+operator|*
+name|length
+operator|=
+name|INT_MAX
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|char
+modifier|*
+DECL|function|ps_default_resolution (const printer_t * printer)
+name|ps_default_resolution
+parameter_list|(
+specifier|const
+name|printer_t
+modifier|*
+name|printer
+parameter_list|)
+block|{
+return|return
+literal|"default"
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*  * 'ps_print()' - Print an image to a PostScript printer.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|ps_print (int model,int copies,FILE * prn,Image image,unsigned char * cmap,lut_t * lut,vars_t * v)
+DECL|function|ps_print (const printer_t * printer,int copies,FILE * prn,Image image,const vars_t * v)
 name|ps_print
 parameter_list|(
-name|int
-name|model
+specifier|const
+name|printer_t
+modifier|*
+name|printer
 parameter_list|,
 comment|/* I - Model (Level 1 or 2) */
 name|int
@@ -864,22 +940,28 @@ name|Image
 name|image
 parameter_list|,
 comment|/* I - Image to print */
-name|unsigned
-name|char
-modifier|*
-name|cmap
-parameter_list|,
-comment|/* I - Colormap (for indexed images) */
-name|lut_t
-modifier|*
-name|lut
-parameter_list|,
-comment|/* I - Brightness lookup table */
+specifier|const
 name|vars_t
 modifier|*
 name|v
 parameter_list|)
 block|{
+name|unsigned
+name|char
+modifier|*
+name|cmap
+init|=
+name|v
+operator|->
+name|cmap
+decl_stmt|;
+name|int
+name|model
+init|=
+name|printer
+operator|->
+name|model
+decl_stmt|;
 name|char
 modifier|*
 name|ppd_file
@@ -962,8 +1044,6 @@ name|j
 decl_stmt|;
 comment|/* Looping vars */
 name|int
-name|x
-decl_stmt|,
 name|y
 decl_stmt|;
 comment|/* Looping vars */
@@ -1011,17 +1091,8 @@ name|out_length
 decl_stmt|,
 comment|/* Output length (Level 2 output) */
 name|out_offset
-decl_stmt|,
-comment|/* Output offset (Level 2 output) */
-name|temp_width
-decl_stmt|,
-comment|/* Temporary width of image on page */
-name|temp_height
-decl_stmt|,
-comment|/* Temporary height of image on page */
-name|landscape
 decl_stmt|;
-comment|/* True if we rotate the output 90 degrees */
+comment|/* Output offset (Level 2 output) */
 name|time_t
 name|curtime
 decl_stmt|;
@@ -1044,7 +1115,7 @@ decl_stmt|;
 comment|/* Number of commands */
 struct|struct
 comment|/* PostScript commands... */
-DECL|struct|__anon295c85500108
+DECL|struct|__anon2bb1f4eb0108
 block|{
 DECL|member|command
 name|char
@@ -1068,6 +1139,22 @@ name|image_width
 decl_stmt|,
 name|image_bpp
 decl_stmt|;
+name|vars_t
+name|nv
+decl_stmt|;
+name|memcpy
+argument_list|(
+operator|&
+name|nv
+argument_list|,
+name|v
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|vars_t
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*   * Setup a read-only pixel region for the entire image...   */
 name|Image_init
 argument_list|(
@@ -1105,84 +1192,40 @@ operator|&&
 name|cmap
 operator|==
 name|NULL
-condition|)
-name|output_type
-operator|=
-name|OUTPUT_GRAY
-expr_stmt|;
-comment|/* Force grayscale output */
-if|if
-condition|(
+operator|&&
 name|output_type
 operator|==
 name|OUTPUT_COLOR
 condition|)
-block|{
-name|out_bpp
+name|output_type
 operator|=
-literal|3
+name|OUTPUT_GRAY_COLOR
 expr_stmt|;
-if|if
-condition|(
+comment|/* Force grayscale output */
+name|colorfunc
+operator|=
+name|choose_colorfunc
+argument_list|(
+name|output_type
+argument_list|,
 name|image_bpp
-operator|>=
-literal|3
-condition|)
-name|colorfunc
-operator|=
-name|rgb_to_rgb
-expr_stmt|;
-else|else
-name|colorfunc
-operator|=
-name|indexed_to_rgb
-expr_stmt|;
-block|}
-else|else
-block|{
-name|out_bpp
-operator|=
-literal|1
-expr_stmt|;
-if|if
-condition|(
-name|image_bpp
-operator|>=
-literal|3
-condition|)
-name|colorfunc
-operator|=
-name|rgb_to_gray
-expr_stmt|;
-elseif|else
-if|if
-condition|(
+argument_list|,
 name|cmap
-operator|==
-name|NULL
-condition|)
-name|colorfunc
-operator|=
-name|gray_to_gray
+argument_list|,
+operator|&
+name|out_bpp
+argument_list|,
+operator|&
+name|nv
+argument_list|)
 expr_stmt|;
-else|else
-name|colorfunc
-operator|=
-name|indexed_to_gray
-expr_stmt|;
-block|}
 comment|/*   * Compute the output size...   */
-name|landscape
-operator|=
-literal|0
-expr_stmt|;
 name|ps_imageable_area
 argument_list|(
-name|model
+name|printer
 argument_list|,
-name|ppd_file
-argument_list|,
-name|media_size
+operator|&
+name|nv
 argument_list|,
 operator|&
 name|page_left
@@ -1197,296 +1240,61 @@ operator|&
 name|page_top
 argument_list|)
 expr_stmt|;
-name|page_width
-operator|=
+name|compute_page_parameters
+argument_list|(
 name|page_right
-operator|-
+argument_list|,
 name|page_left
-expr_stmt|;
-name|page_height
-operator|=
+argument_list|,
 name|page_top
-operator|-
+argument_list|,
 name|page_bottom
-expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG
-name|printf
-argument_list|(
-literal|"page_width = %d, page_height = %d\n"
 argument_list|,
-name|page_width
-argument_list|,
-name|page_height
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"image_width = %d, image_height = %d\n"
+name|scaling
 argument_list|,
 name|image_width
 argument_list|,
 name|image_height
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"scaling = %.1f\n"
 argument_list|,
-name|scaling
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DEBUG */
-comment|/*   * Portrait width/height...   */
-if|if
-condition|(
-name|scaling
-operator|<
-literal|0.0
-condition|)
-block|{
-comment|/*     * Scale to pixels per inch...     */
-name|out_width
-operator|=
-name|image_width
-operator|*
-operator|-
-literal|72.0
-operator|/
-name|scaling
-expr_stmt|;
-name|out_height
-operator|=
-name|image_height
-operator|*
-operator|-
-literal|72.0
-operator|/
-name|scaling
-expr_stmt|;
-block|}
-else|else
-block|{
-comment|/*     * Scale by percent...     */
-name|out_width
-operator|=
+name|image
+argument_list|,
+operator|&
+name|orientation
+argument_list|,
+operator|&
 name|page_width
-operator|*
-name|scaling
-operator|/
-literal|100.0
-expr_stmt|;
-name|out_height
-operator|=
-name|out_width
-operator|*
-name|image_height
-operator|/
-name|image_width
-expr_stmt|;
-if|if
-condition|(
-name|out_height
-operator|>
+argument_list|,
+operator|&
 name|page_height
-condition|)
-block|{
-name|out_height
-operator|=
-name|page_height
-operator|*
-name|scaling
-operator|/
-literal|100.0
-expr_stmt|;
+argument_list|,
+operator|&
 name|out_width
-operator|=
+argument_list|,
+operator|&
 name|out_height
-operator|*
-name|image_width
-operator|/
-name|image_height
-expr_stmt|;
-block|}
-block|}
-comment|/*   * Landscape width/height...   */
-if|if
-condition|(
-name|scaling
-operator|<
-literal|0.0
-condition|)
-block|{
-comment|/*     * Scale to pixels per inch...     */
-name|temp_width
-operator|=
-name|image_height
-operator|*
-operator|-
-literal|72.0
-operator|/
-name|scaling
-expr_stmt|;
-name|temp_height
-operator|=
-name|image_width
-operator|*
-operator|-
-literal|72.0
-operator|/
-name|scaling
-expr_stmt|;
-block|}
-else|else
-block|{
-comment|/*     * Scale by percent...     */
-name|temp_width
-operator|=
-name|page_width
-operator|*
-name|scaling
-operator|/
-literal|100.0
-expr_stmt|;
-name|temp_height
-operator|=
-name|temp_width
-operator|*
-name|image_width
-operator|/
-name|image_height
-expr_stmt|;
-if|if
-condition|(
-name|temp_height
-operator|>
-name|page_height
-condition|)
-block|{
-name|temp_height
-operator|=
-name|page_height
-expr_stmt|;
-name|temp_width
-operator|=
-name|temp_height
-operator|*
-name|image_height
-operator|/
-name|image_width
-expr_stmt|;
-block|}
-block|}
-comment|/*   * See which orientation has the greatest area (or if we need to rotate the   * image to fit it on the page...)   */
-if|if
-condition|(
-name|orientation
-operator|==
-name|ORIENT_AUTO
-condition|)
-block|{
-if|if
-condition|(
-name|scaling
-operator|<
-literal|0.0
-condition|)
-block|{
-if|if
-condition|(
-operator|(
-name|out_width
-operator|>
-name|page_width
-operator|&&
-name|out_height
-operator|<
-name|page_width
-operator|)
-operator|||
-operator|(
-name|out_height
-operator|>
-name|page_height
-operator|&&
-name|out_width
-operator|<
-name|page_height
-operator|)
-condition|)
-name|orientation
-operator|=
-name|ORIENT_LANDSCAPE
-expr_stmt|;
-else|else
-name|orientation
-operator|=
-name|ORIENT_PORTRAIT
-expr_stmt|;
-block|}
-else|else
-block|{
-if|if
-condition|(
-operator|(
-name|temp_width
-operator|*
-name|temp_height
-operator|)
-operator|>
-operator|(
-name|out_width
-operator|*
-name|out_height
-operator|)
-condition|)
-name|orientation
-operator|=
-name|ORIENT_LANDSCAPE
-expr_stmt|;
-else|else
-name|orientation
-operator|=
-name|ORIENT_PORTRAIT
-expr_stmt|;
-block|}
-block|}
-if|if
-condition|(
-name|orientation
-operator|==
-name|ORIENT_LANDSCAPE
-condition|)
-block|{
-name|out_width
-operator|=
-name|temp_width
-expr_stmt|;
-name|out_height
-operator|=
-name|temp_height
-expr_stmt|;
-name|landscape
-operator|=
-literal|1
-expr_stmt|;
-comment|/*     * Swap left/top offsets...     */
-name|x
-operator|=
-name|top
-expr_stmt|;
-name|top
-operator|=
+argument_list|,
+operator|&
 name|left
+argument_list|,
+operator|&
+name|top
+argument_list|)
 expr_stmt|;
-name|left
+comment|/*    * Recompute the image height and width.  If the image has been    * rotated, these will change from previously.    */
+name|image_height
 operator|=
-name|x
+name|Image_height
+argument_list|(
+name|image
+argument_list|)
 expr_stmt|;
-block|}
+name|image_width
+operator|=
+name|Image_width
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 comment|/*   * Let the user know what we're doing...   */
 name|Image_progress_init
 argument_list|(
@@ -1517,6 +1325,11 @@ operator|)
 operator|/
 literal|2
 operator|+
+name|page_left
+expr_stmt|;
+else|else
+name|left
+operator|+=
 name|page_left
 expr_stmt|;
 if|if
@@ -1606,9 +1419,9 @@ name|fprintf
 argument_list|(
 name|prn
 argument_list|,
-literal|"%%Creator: %s\n"
+literal|"%%%%Creator: %s\n"
 argument_list|,
-name|Image_get_pluginname
+name|Image_get_appname
 argument_list|(
 name|image
 argument_list|)
@@ -1629,7 +1442,7 @@ argument_list|)
 expr_stmt|;
 name|fputs
 argument_list|(
-literal|"%%Copyright: 1997-1999 by Michael Sweet (mike@easysw.com) and Robert Krawitz (rlk@alum.mit.edu)\n"
+literal|"%%Copyright: 1997-2000 by Michael Sweet (mike@easysw.com) and Robert Krawitz (rlk@alum.mit.edu)\n"
 argument_list|,
 name|prn
 argument_list|)
@@ -2131,7 +1944,7 @@ name|prn
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*   * Output the page, rotating as necessary...   */
+comment|/*   * Output the page...   */
 name|fputs
 argument_list|(
 literal|"%%Page: 1\n"
@@ -2146,58 +1959,6 @@ argument_list|,
 name|prn
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|landscape
-condition|)
-block|{
-name|fprintf
-argument_list|(
-name|prn
-argument_list|,
-literal|"%d %d translate\n"
-argument_list|,
-name|left
-argument_list|,
-name|top
-operator|-
-name|out_height
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|prn
-argument_list|,
-literal|"%.3f %.3f scale\n"
-argument_list|,
-operator|(
-name|float
-operator|)
-name|out_width
-operator|/
-operator|(
-operator|(
-name|float
-operator|)
-name|image_height
-operator|)
-argument_list|,
-operator|(
-name|float
-operator|)
-name|out_height
-operator|/
-operator|(
-operator|(
-name|float
-operator|)
-name|image_width
-operator|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
 name|fprintf
 argument_list|(
 name|prn
@@ -2240,7 +2001,6 @@ name|image_height
 operator|)
 argument_list|)
 expr_stmt|;
-block|}
 name|in
 operator|=
 name|malloc
@@ -2263,6 +2023,14 @@ literal|3
 operator|)
 operator|*
 literal|2
+argument_list|)
+expr_stmt|;
+name|compute_lut
+argument_list|(
+literal|256
+argument_list|,
+operator|&
+name|nv
 argument_list|)
 expr_stmt|;
 if|if
@@ -2294,18 +2062,6 @@ argument_list|,
 name|image_height
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|landscape
-condition|)
-name|fputs
-argument_list|(
-literal|"[ 0 1 1 0 0 0 ]\n"
-argument_list|,
-name|prn
-argument_list|)
-expr_stmt|;
-else|else
 name|fputs
 argument_list|(
 literal|"[ 1 0 0 -1 0 1 ]\n"
@@ -2389,11 +2145,10 @@ name|image_width
 argument_list|,
 name|image_bpp
 argument_list|,
-name|lut
-argument_list|,
 name|cmap
 argument_list|,
-name|v
+operator|&
+name|nv
 argument_list|)
 expr_stmt|;
 name|ps_hex
@@ -2518,18 +2273,6 @@ argument_list|,
 name|prn
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|landscape
-condition|)
-name|fputs
-argument_list|(
-literal|"\t/ImageMatrix [ 0 1 1 0 0 0 ]\n"
-argument_list|,
-name|prn
-argument_list|)
-expr_stmt|;
-else|else
 name|fputs
 argument_list|(
 literal|"\t/ImageMatrix [ 1 0 0 -1 0 1 ]\n"
@@ -2612,11 +2355,10 @@ name|image_width
 argument_list|,
 name|image_bpp
 argument_list|,
-name|lut
-argument_list|,
 name|cmap
 argument_list|,
-name|v
+operator|&
+name|nv
 argument_list|)
 expr_stmt|;
 name|out_length
@@ -2698,6 +2440,17 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|Image_progress_conclude
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|free_lut
+argument_list|(
+operator|&
+name|nv
+argument_list|)
+expr_stmt|;
 name|free
 argument_list|(
 name|in
@@ -3280,19 +3033,22 @@ specifier|static
 name|char
 modifier|*
 comment|/* O - Control string */
-DECL|function|ppd_find (char * ppd_file,char * name,char * option,int * order)
+DECL|function|ppd_find (const char * ppd_file,const char * name,const char * option,int * order)
 name|ppd_find
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|ppd_file
 parameter_list|,
 comment|/* I - Name of PPD file */
+specifier|const
 name|char
 modifier|*
 name|name
 parameter_list|,
 comment|/* I - Name of parameter */
+specifier|const
 name|char
 modifier|*
 name|option
@@ -3329,10 +3085,10 @@ decl_stmt|;
 comment|/* Current control string pointer */
 specifier|static
 name|char
+modifier|*
 name|value
-index|[
-literal|32768
-index|]
+init|=
+name|NULL
 decl_stmt|;
 comment|/* Current control string value */
 if|if
@@ -3354,6 +3110,18 @@ operator|(
 name|NULL
 operator|)
 return|;
+if|if
+condition|(
+operator|!
+name|value
+condition|)
+name|value
+operator|=
+name|malloc
+argument_list|(
+literal|32768
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|ps_ppd_file
@@ -3462,7 +3230,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|g_strncasecmp
+name|strncasecmp
 argument_list|(
 name|line
 argument_list|,
@@ -3508,7 +3276,7 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|g_strcasecmp
+name|strcasecmp
 argument_list|(
 name|lname
 argument_list|,
@@ -3517,7 +3285,7 @@ argument_list|)
 operator|==
 literal|0
 operator|&&
-name|g_strcasecmp
+name|strcasecmp
 argument_list|(
 name|loption
 argument_list|,
@@ -3658,10 +3426,6 @@ operator|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * End of "$Id$".  */
-end_comment
 
 end_unit
 
