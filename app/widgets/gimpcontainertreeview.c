@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee48730103
+DECL|enum|__anon278f651c0103
 block|{
 DECL|enumerator|COLUMN_VIEWABLE
 name|COLUMN_VIEWABLE
@@ -1745,7 +1745,8 @@ argument_list|,
 operator|&
 name|selected_viewable
 argument_list|,
-name|NULL
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
