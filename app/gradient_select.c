@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -221,7 +215,8 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|gradient_dialog_create (void)
 name|gradient_dialog_create
 parameter_list|(
@@ -274,6 +269,11 @@ name|window
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|gradient_select_dialog
+operator|->
+name|shell
+return|;
 block|}
 end_function
 
@@ -290,16 +290,6 @@ condition|(
 name|gradient_select_dialog
 condition|)
 block|{
-name|session_get_window_info
-argument_list|(
-name|gradient_select_dialog
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|gradient_select_session_info
-argument_list|)
-expr_stmt|;
 name|gradient_select_free
 argument_list|(
 name|gradient_select_dialog
@@ -475,18 +465,6 @@ name|context
 operator|=
 name|gimp_context_get_user
 argument_list|()
-expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|gsp
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|gradient_select_session_info
-argument_list|,
-name|TRUE
-argument_list|)
 expr_stmt|;
 name|dialog_register
 argument_list|(

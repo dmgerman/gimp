@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e70a130103
+DECL|enum|__anon29c464050103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -4488,15 +4488,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|g_list_free
-argument_list|(
-name|session_info_updates
-argument_list|)
-expr_stmt|;
-name|session_info_updates
-operator|=
-name|NULL
-expr_stmt|;
+comment|/* FIXME */
+comment|/*   g_list_free (session_info_updates);   session_info_updates = NULL;   */
 block|}
 end_function
 
@@ -12468,7 +12461,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27e70a130208
+DECL|struct|__anon29c464050208
 block|{
 DECL|member|label
 name|gchar
@@ -12697,7 +12690,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27e70a130308
+DECL|struct|__anon29c464050308
 block|{
 DECL|member|tree_label
 name|gchar

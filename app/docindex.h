@@ -16,8 +16,15 @@ directive|define
 name|__DOCINDEX_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<stdio.h>
+end_include
+
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|document_index_create
 parameter_list|(
 name|void

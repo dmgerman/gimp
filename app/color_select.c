@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"color_area.h"
 end_include
 
@@ -164,7 +158,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ea0870103
+DECL|enum|__anon2b8b94020103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -215,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2ea0870203
+DECL|enum|__anon2b8b94020203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -7241,7 +7235,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2ea0870308
+DECL|struct|__anon2b8b94020308
 block|{
 DECL|member|callback
 name|GimpColorSelectorCallback

@@ -142,7 +142,8 @@ comment|/*  the main gradient selection  */
 end_comment
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|gradient_dialog_create
 parameter_list|(
 name|void

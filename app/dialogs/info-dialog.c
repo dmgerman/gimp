@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -788,16 +782,6 @@ argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|shell
-argument_list|,
-operator|&
-name|info_dialog_session_info
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|dialog_register
 argument_list|(
 name|shell
@@ -1137,16 +1121,6 @@ argument_list|(
 name|idialog
 operator|->
 name|shell
-argument_list|)
-expr_stmt|;
-name|session_get_window_info
-argument_list|(
-name|idialog
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|info_dialog_session_info
 argument_list|)
 expr_stmt|;
 comment|/*  Destroy the associated widgets  */

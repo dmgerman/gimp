@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"devices.h"
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"image_render.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"lc_dialog.h"
 end_include
 
 begin_include
@@ -163,8 +175,12 @@ expr_stmt|;
 name|session_init
 argument_list|()
 expr_stmt|;
-name|toolbox_create
-argument_list|()
+name|gimp_dialog_factory_dialog_new
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp:toolbox"
+argument_list|)
 expr_stmt|;
 comment|/*  Fill the "last opened" menu items with the first last_opened_size    *  elements of the docindex    */
 block|{
@@ -272,9 +288,6 @@ name|filenames
 argument_list|)
 expr_stmt|;
 block|}
-name|tool_options_dialog_new
-argument_list|()
-expr_stmt|;
 block|}
 end_function
 
@@ -303,6 +316,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|session_save
+argument_list|()
+expr_stmt|;
 name|device_status_free
 argument_list|()
 expr_stmt|;
@@ -320,25 +336,26 @@ block|{
 name|menus_quit
 argument_list|()
 expr_stmt|;
-name|toolbox_free
-argument_list|()
-expr_stmt|;
-name|document_index_free
-argument_list|()
-expr_stmt|;
 name|gximage_free
 argument_list|()
 expr_stmt|;
 name|render_free
 argument_list|()
 expr_stmt|;
+name|dialogs_exit
+argument_list|()
+expr_stmt|;
+comment|/*  handle this in the dialog factory:  */
+name|lc_dialog_free
+argument_list|()
+expr_stmt|;
+name|document_index_free
+argument_list|()
+expr_stmt|;
 name|tool_options_dialog_free
 argument_list|()
 expr_stmt|;
-name|save_sessionrc
-argument_list|()
-expr_stmt|;
-name|dialogs_exit
+name|toolbox_free
 argument_list|()
 expr_stmt|;
 block|}

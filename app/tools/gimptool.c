@@ -66,18 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -107,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28cc0f9d0103
+DECL|enum|__anon27e512500103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

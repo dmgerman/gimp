@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29804baf0103
+DECL|enum|__anon2c8fe16d0103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE
@@ -133,7 +133,8 @@ comment|/*  Create the device status dialog  */
 end_comment
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|device_status_create
 parameter_list|(
 name|void

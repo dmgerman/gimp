@@ -140,7 +140,8 @@ comment|/*  the main pattern selection  */
 end_comment
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|pattern_dialog_create
 parameter_list|(
 name|void

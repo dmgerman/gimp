@@ -45,7 +45,8 @@ value|2
 end_define
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|palette_dialog_create
 parameter_list|(
 name|void

@@ -179,12 +179,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -304,14 +298,17 @@ if|if
 condition|(
 name|error_console
 condition|)
-name|session_get_window_info
+block|{
+name|gtk_widget_destroy
 argument_list|(
 name|error_console
-argument_list|,
-operator|&
-name|error_console_session_info
 argument_list|)
 expr_stmt|;
+name|error_console
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1065,10 +1062,10 @@ block|}
 end_function
 
 begin_function
-specifier|static
-name|void
-DECL|function|error_console_create_window (void)
-name|error_console_create_window
+name|GtkWidget
+modifier|*
+DECL|function|error_console_create (void)
+name|error_console_create
 parameter_list|(
 name|void
 parameter_list|)
@@ -1089,6 +1086,13 @@ name|GtkWidget
 modifier|*
 name|menuitem
 decl_stmt|;
+if|if
+condition|(
+name|error_console
+condition|)
+return|return
+name|error_console
+return|;
 name|error_console
 operator|=
 name|gimp_dialog_new
@@ -1153,16 +1157,6 @@ comment|/* register this one only */
 name|dialog_register
 argument_list|(
 name|error_console
-argument_list|)
-expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|error_console
-argument_list|,
-operator|&
-name|error_console_session_info
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* The next line should disappear when setting the size works in SM */
@@ -1483,6 +1477,14 @@ argument_list|(
 name|error_console
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: interact with preferences */
+name|message_handler
+operator|=
+name|ERROR_CONSOLE
+expr_stmt|;
+return|return
+name|error_console
+return|;
 block|}
 end_function
 
@@ -1502,13 +1504,8 @@ operator|!
 name|error_console
 condition|)
 block|{
-name|error_console_create_window
+name|error_console_create
 argument_list|()
-expr_stmt|;
-comment|/* FIMXE: interact with preferences */
-name|message_handler
-operator|=
-name|ERROR_CONSOLE
 expr_stmt|;
 block|}
 else|else

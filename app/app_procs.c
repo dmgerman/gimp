@@ -1071,9 +1071,6 @@ block|}
 name|module_db_free
 argument_list|()
 expr_stmt|;
-name|lc_dialog_free
-argument_list|()
-expr_stmt|;
 name|gdisplays_delete
 argument_list|()
 expr_stmt|;

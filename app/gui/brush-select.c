@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"temp_buf.h"
 end_include
 
@@ -384,7 +378,8 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|brush_dialog_create (void)
 name|brush_dialog_create
 parameter_list|(
@@ -443,6 +438,11 @@ name|window
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|brush_select_dialog
+operator|->
+name|shell
+return|;
 block|}
 end_function
 
@@ -459,41 +459,6 @@ condition|(
 name|brush_select_dialog
 condition|)
 block|{
-name|session_get_window_info
-argument_list|(
-name|brush_select_dialog
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|brush_select_session_info
-argument_list|)
-expr_stmt|;
-comment|/*  save the size of the preview  */
-name|brush_select_session_info
-operator|.
-name|width
-operator|=
-name|brush_select_dialog
-operator|->
-name|view
-operator|->
-name|allocation
-operator|.
-name|width
-expr_stmt|;
-name|brush_select_session_info
-operator|.
-name|height
-operator|=
-name|brush_select_dialog
-operator|->
-name|view
-operator|->
-name|allocation
-operator|.
-name|height
-expr_stmt|;
 name|brush_select_free
 argument_list|(
 name|brush_select_dialog
@@ -695,18 +660,6 @@ name|context
 operator|=
 name|gimp_context_get_user
 argument_list|()
-expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|bsp
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|brush_select_session_info
-argument_list|,
-name|FALSE
-argument_list|)
 expr_stmt|;
 name|dialog_register
 argument_list|(

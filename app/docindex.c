@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -138,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1882930108
+DECL|struct|__anon2b7b059e0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -159,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1882930208
+DECL|struct|__anon2b7b059e0208
 block|{
 DECL|member|boole
 name|gboolean
@@ -643,7 +637,8 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|document_index_create (void)
 name|document_index_create
 parameter_list|(
@@ -667,6 +662,11 @@ else|else
 name|open_idea_window
 argument_list|()
 expr_stmt|;
+return|return
+name|ideas
+operator|->
+name|window
+return|;
 block|}
 end_function
 
@@ -3011,16 +3011,6 @@ operator|->
 name|window
 argument_list|)
 expr_stmt|;
-name|session_get_window_info
-argument_list|(
-name|ideas
-operator|->
-name|window
-argument_list|,
-operator|&
-name|document_index_session_info
-argument_list|)
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|ideas
@@ -3287,18 +3277,6 @@ argument_list|(
 name|ideas
 operator|->
 name|window
-argument_list|)
-expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|ideas
-operator|->
-name|window
-argument_list|,
-operator|&
-name|document_index_session_info
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|main_vbox

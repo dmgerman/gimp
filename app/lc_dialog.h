@@ -17,7 +17,8 @@ name|__LC_DIALOG_H__
 end_define
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|lc_dialog_create
 parameter_list|(
 name|GimpImage

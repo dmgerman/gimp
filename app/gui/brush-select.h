@@ -191,8 +191,9 @@ comment|/*  the main brush selection  */
 end_comment
 
 begin_function_decl
-name|void
-name|brush_dialog_free
+name|GtkWidget
+modifier|*
+name|brush_dialog_create
 parameter_list|(
 name|void
 parameter_list|)
@@ -201,7 +202,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|brush_dialog_create
+name|brush_dialog_free
 parameter_list|(
 name|void
 parameter_list|)

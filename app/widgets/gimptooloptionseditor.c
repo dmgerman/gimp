@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptool.h"
 end_include
 
@@ -279,9 +273,10 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|void
-DECL|function|tool_options_dialog_new (void)
-name|tool_options_dialog_new
+name|GtkWidget
+modifier|*
+DECL|function|tool_options_dialog_create (void)
+name|tool_options_dialog_create
 parameter_list|(
 name|void
 parameter_list|)
@@ -306,6 +301,13 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+if|if
+condition|(
+name|options_shell
+condition|)
+return|return
+name|options_shell
+return|;
 name|tool_info
 operator|=
 name|gimp_context_get_tool
@@ -419,16 +421,6 @@ comment|/*  Register dialog  */
 name|dialog_register
 argument_list|(
 name|options_shell
-argument_list|)
-expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|options_shell
-argument_list|,
-operator|&
-name|tool_options_session_info
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  The outer frame  */
@@ -818,42 +810,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|tool_options_dialog_show (void)
-name|tool_options_dialog_show
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|GTK_WIDGET_VISIBLE
-argument_list|(
+return|return
 name|options_shell
-argument_list|)
-condition|)
-block|{
-name|gtk_widget_show
-argument_list|(
-name|options_shell
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gdk_window_raise
-argument_list|(
-name|options_shell
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-block|}
+return|;
 block|}
 end_function
 
@@ -865,19 +824,21 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|session_get_window_info
-argument_list|(
+if|if
+condition|(
 name|options_shell
-argument_list|,
-operator|&
-name|tool_options_session_info
-argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|gtk_widget_destroy
 argument_list|(
 name|options_shell
 argument_list|)
 expr_stmt|;
+name|options_shell
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 block|}
 end_function
 

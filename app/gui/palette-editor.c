@@ -138,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpenv.h"
 end_include
 
@@ -782,7 +776,8 @@ comment|/*  public functions  **************************************************
 end_comment
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|palette_dialog_create (void)
 name|palette_dialog_create
 parameter_list|(
@@ -801,18 +796,6 @@ operator|=
 name|palette_dialog_new
 argument_list|(
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|top_level_palette
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|palette_session_info
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|dialog_register
@@ -842,7 +825,6 @@ operator|->
 name|shell
 argument_list|)
 condition|)
-block|{
 name|gtk_widget_show
 argument_list|(
 name|top_level_palette
@@ -850,9 +832,7 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|gdk_window_raise
 argument_list|(
 name|top_level_palette
@@ -863,7 +843,11 @@ name|window
 argument_list|)
 expr_stmt|;
 block|}
-block|}
+return|return
+name|top_level_palette
+operator|->
+name|shell
+return|;
 block|}
 end_function
 
@@ -936,16 +920,6 @@ condition|(
 name|top_level_palette
 condition|)
 block|{
-name|session_get_window_info
-argument_list|(
-name|top_level_palette
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|palette_session_info
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|top_level_palette

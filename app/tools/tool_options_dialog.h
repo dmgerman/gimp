@@ -17,17 +17,9 @@ name|__TOOL_OPTIONS_DIALOG_H__
 end_define
 
 begin_function_decl
-name|void
-name|tool_options_dialog_new
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tool_options_dialog_show
+name|GtkWidget
+modifier|*
+name|tool_options_dialog_create
 parameter_list|(
 name|void
 parameter_list|)

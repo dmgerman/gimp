@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tool_options_dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/tool_manager.h"
 end_include
 
@@ -67,6 +61,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gtkhwrapbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/dialogs-commands.h"
 end_include
 
 begin_include
@@ -145,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"menus.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"session.h"
 end_include
 
 begin_include
@@ -504,9 +498,20 @@ operator|==
 literal|1
 operator|)
 condition|)
-name|tool_options_dialog_show
-argument_list|()
+block|{
+name|dialogs_create_toplevel_cmd_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GPOINTER_TO_UINT
+argument_list|(
+literal|"gimp:tool-options-dialog"
+argument_list|)
+argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|FALSE
 return|;
@@ -1353,7 +1358,8 @@ block|}
 end_function
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|toolbox_create (void)
 name|toolbox_create
 parameter_list|(
@@ -1566,16 +1572,6 @@ name|toolbox_style_set_callback
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|window
-argument_list|,
-operator|&
-name|toolbox_session_info
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|main_vbox
@@ -1858,6 +1854,9 @@ name|toolbox_shell
 operator|=
 name|window
 expr_stmt|;
+return|return
+name|toolbox_shell
+return|;
 block|}
 end_function
 
@@ -1869,14 +1868,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|session_get_window_info
-argument_list|(
-name|toolbox_shell
-argument_list|,
-operator|&
-name|toolbox_session_info
-argument_list|)
-expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|toolbox_shell

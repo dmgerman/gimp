@@ -42,13 +42,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimppreview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"brush_select.h"
+file|"gui/dialogs.h"
 end_include
 
 begin_include
@@ -84,19 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gradient_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"indicator_area.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"pattern_select.h"
 end_include
 
 begin_include
@@ -202,8 +196,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|brush_dialog_create
-argument_list|()
+name|gimp_dialog_factory_dialog_new
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp:brush-select-dialog"
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -264,8 +262,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|pattern_dialog_create
-argument_list|()
+name|gimp_dialog_factory_dialog_new
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp:pattern-select-dialog"
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -326,8 +328,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gradient_dialog_create
-argument_list|()
+name|gimp_dialog_factory_dialog_new
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp:gradient-select-dialog"
+argument_list|)
 expr_stmt|;
 block|}
 end_function

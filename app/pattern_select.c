@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"temp_buf.h"
 end_include
 
@@ -250,7 +244,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|void
+name|GtkWidget
+modifier|*
 DECL|function|pattern_dialog_create (void)
 name|pattern_dialog_create
 parameter_list|(
@@ -303,6 +298,11 @@ name|window
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|pattern_select_dialog
+operator|->
+name|shell
+return|;
 block|}
 end_function
 
@@ -319,16 +319,6 @@ condition|(
 name|pattern_select_dialog
 condition|)
 block|{
-name|session_get_window_info
-argument_list|(
-name|pattern_select_dialog
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|pattern_select_session_info
-argument_list|)
-expr_stmt|;
 name|pattern_select_free
 argument_list|(
 name|pattern_select_dialog
@@ -508,18 +498,6 @@ name|context
 operator|=
 name|gimp_context_get_user
 argument_list|()
-expr_stmt|;
-name|session_set_window_geometry
-argument_list|(
-name|psp
-operator|->
-name|shell
-argument_list|,
-operator|&
-name|pattern_select_session_info
-argument_list|,
-name|TRUE
-argument_list|)
 expr_stmt|;
 name|dialog_register
 argument_list|(

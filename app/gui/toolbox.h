@@ -17,7 +17,8 @@ name|__TOOLBOX_H__
 end_define
 
 begin_function_decl
-name|void
+name|GtkWidget
+modifier|*
 name|toolbox_create
 parameter_list|(
 name|void
