@@ -137,7 +137,7 @@ argument_list|(
 literal|"/_New Brush"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_new_data_cmd_callback
 block|,
@@ -187,7 +187,7 @@ argument_list|(
 literal|"/_Delete Brush..."
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_delete_data_cmd_callback
 block|,
@@ -217,7 +217,7 @@ argument_list|(
 literal|"/_Refresh Brushes"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_refresh_data_cmd_callback
 block|,

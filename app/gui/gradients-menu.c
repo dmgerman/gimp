@@ -143,7 +143,7 @@ argument_list|(
 literal|"/_New Gradient"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_new_data_cmd_callback
 block|,
@@ -193,7 +193,7 @@ argument_list|(
 literal|"/Save as _POV-Ray..."
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|gradients_save_as_pov_ray_cmd_callback
 block|,
@@ -218,7 +218,7 @@ argument_list|(
 literal|"/_Delete Gradient..."
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_delete_data_cmd_callback
 block|,
@@ -248,7 +248,7 @@ argument_list|(
 literal|"/_Refresh Gradients"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_refresh_data_cmd_callback
 block|,

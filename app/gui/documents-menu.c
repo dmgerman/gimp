@@ -200,7 +200,7 @@ argument_list|(
 literal|"/Recreate _Preview"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|documents_recreate_preview_cmd_callback
 block|,
@@ -225,7 +225,7 @@ argument_list|(
 literal|"/Reload _all Previews"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|documents_reload_previews_cmd_callback
 block|,
@@ -250,7 +250,7 @@ argument_list|(
 literal|"/Remove Dangling E_ntries"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|documents_delete_dangling_documents_cmd_callback
 block|,

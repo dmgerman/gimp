@@ -143,7 +143,7 @@ argument_list|(
 literal|"/_New Palette"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_new_data_cmd_callback
 block|,
@@ -168,7 +168,7 @@ argument_list|(
 literal|"/_Import Palette..."
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|palettes_import_palette_cmd_callback
 block|,
@@ -239,7 +239,7 @@ argument_list|(
 literal|"/_Delete Palette..."
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_delete_data_cmd_callback
 block|,
@@ -269,7 +269,7 @@ argument_list|(
 literal|"/_Refresh Palettes"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|data_refresh_data_cmd_callback
 block|,

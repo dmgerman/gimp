@@ -508,7 +508,7 @@ argument_list|(
 literal|"/_Remove Tab"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|dialogs_remove_tab_cmd_callback
 block|,

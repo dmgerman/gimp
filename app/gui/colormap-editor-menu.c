@@ -102,7 +102,7 @@ argument_list|(
 literal|"/_Add Color"
 argument_list|)
 block|,
-name|NULL
+literal|""
 block|,
 name|colormap_editor_add_color_cmd_callback
 block|,
