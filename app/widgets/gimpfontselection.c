@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<pango/pangoft2.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -190,9 +196,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|PangoContext
+modifier|*
+name|gimp_font_selection_get_default_context
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_enum
 enum|enum
-DECL|enum|__anon27e19e320103
+DECL|enum|__anon2b1d16b80103
 block|{
 DECL|enumerator|FONT_CHANGED
 name|FONT_CHANGED
@@ -227,6 +244,17 @@ specifier|static
 name|GtkHBoxClass
 modifier|*
 name|parent_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|default_context
+specifier|static
+name|PangoContext
+modifier|*
+name|default_context
 init|=
 name|NULL
 decl_stmt|;
@@ -732,7 +760,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_selection_new:  * @context: the #PangoContext to select a font from.  *  * Creates a new #GimpFontSelection widget.  *  * Returns: A pointer to the new #GimpFontSelection widget.  **/
+comment|/**  * gimp_font_selection_new:  * @context: the #PangoContext to select a font from or %NULL to use a  * default context.  *  * Creates a new #GimpFontSelection widget.  *  * Returns: A pointer to the new #GimpFontSelection widget.  **/
 end_comment
 
 begin_function
@@ -752,6 +780,10 @@ name|fontsel
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|context
+operator|==
+name|NULL
+operator|||
 name|PANGO_IS_CONTEXT
 argument_list|(
 name|context
@@ -768,6 +800,16 @@ name|GIMP_TYPE_FONT_SELECTION
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|context
+condition|)
+name|context
+operator|=
+name|gimp_font_selection_get_default_context
+argument_list|()
 expr_stmt|;
 name|fontsel
 operator|->
@@ -1384,6 +1426,53 @@ argument_list|)
 expr_stmt|;
 return|return
 name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|PangoContext
+modifier|*
+DECL|function|gimp_font_selection_get_default_context (void)
+name|gimp_font_selection_get_default_context
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+name|default_context
+condition|)
+return|return
+name|default_context
+return|;
+name|default_context
+operator|=
+name|pango_ft2_get_context
+argument_list|(
+literal|72.0
+argument_list|,
+literal|72.0
+argument_list|)
+expr_stmt|;
+name|g_object_add_weak_pointer
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|default_context
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|*
+operator|)
+operator|&
+name|default_context
+argument_list|)
+expr_stmt|;
+return|return
+name|default_context
 return|;
 block|}
 end_function
