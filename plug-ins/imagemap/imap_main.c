@@ -3400,9 +3400,7 @@ block|{
 name|GtkWidget
 modifier|*
 name|dialog
-decl_stmt|;
-name|dialog
-operator|=
+init|=
 name|gtk_message_dialog_new_with_markup
 argument_list|(
 name|NULL
@@ -3425,10 +3423,9 @@ argument_list|(
 literal|"Do you really want to discard your changes?"
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gint
-name|result
-init|=
+decl_stmt|;
+if|if
+condition|(
 name|gtk_dialog_run
 argument_list|(
 name|GTK_DIALOG
@@ -3436,10 +3433,6 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|result
 operator|==
 name|GTK_RESPONSE_YES
 condition|)
@@ -4481,9 +4474,7 @@ block|{
 name|GtkWidget
 modifier|*
 name|dialog
-decl_stmt|;
-name|dialog
-operator|=
+init|=
 name|gtk_message_dialog_new_with_markup
 argument_list|(
 name|NULL
@@ -4506,10 +4497,9 @@ argument_list|(
 literal|"Resize area's?"
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gint
-name|result
-init|=
+decl_stmt|;
+if|if
+condition|(
 name|gtk_dialog_run
 argument_list|(
 name|GTK_DIALOG
@@ -4517,10 +4507,6 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|result
 operator|==
 name|GTK_RESPONSE_YES
 condition|)
