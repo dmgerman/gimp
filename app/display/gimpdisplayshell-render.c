@@ -622,12 +622,21 @@ argument_list|(
 name|render_temp_buf
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|#define MAX_PREVIEW_SIZE 1024
+comment|/* GIMP_PREVIEW_MAX_SIZE (EEK) */
+endif|#
+directive|endif
 DECL|macro|MAX_PREVIEW_SIZE
 define|#
 directive|define
 name|MAX_PREVIEW_SIZE
-value|256
-comment|/* EEK */
+value|1024
+comment|/* GIMP_PREVIEW_MAX_SIZE (EEK) */
 comment|/*  calculate check buffer for previews  */
 if|if
 condition|(
