@@ -1271,22 +1271,22 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Generate optimal palette"
+literal|"Generate Optimal Palette"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"WEB palette"
+literal|"WEB Palette"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Use custom palette"
+literal|"Use Custom Palette"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Use black/white (1-bit) palette"
+literal|"Use Black/White (1-Bit) Palette"
 argument_list|)
 block|}
 decl_stmt|;
@@ -1301,22 +1301,22 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Floyd-Steinberg colour dithering (normal)"
+literal|"Floyd-Steinberg Color Dithering (Normal)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Floyd-Steinberg colour dithering (reduced colour bleeding)"
+literal|"Floyd-Steinberg Color Dithering (Reduced Color Bleeding)"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Positioned colour dithering"
+literal|"Positioned Color Dithering"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"No colour dithering"
+literal|"No Color Dithering"
 argument_list|)
 block|}
 decl_stmt|;
@@ -1463,7 +1463,7 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"name of a cutom palette\n(is ignored if Palette Type is not custom)"
+literal|"Name of a cutom palette\n(is ignored if Palette Type is not custom)"
 argument_list|)
 expr_stmt|;
 name|argv
@@ -1504,7 +1504,7 @@ name|label_txt
 operator|=
 name|_
 argument_list|(
-literal|"Remove unused"
+literal|"Remove Unused"
 argument_list|)
 expr_stmt|;
 name|argv

@@ -248,7 +248,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Painter-style colour selector as a pluggable colour selector"
+literal|"Painter-style color selector as a pluggable color selector"
 argument_list|)
 block|,
 literal|"Simon Budig<Simon.Budig@unix-ag.org>"
@@ -336,7 +336,7 @@ value|GDK_EXPOSURE_MASK | \                        GDK_BUTTON_PRESS_MASK | \    
 end_define
 
 begin_typedef
-DECL|enum|__anon2b0faa570103
+DECL|enum|__anon291949a00103
 typedef|typedef
 enum|enum
 block|{

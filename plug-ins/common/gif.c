@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278b731a0103
+DECL|enum|__anon2931b7640103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278b731a0208
+DECL|struct|__anon2931b7640208
 block|{
 DECL|member|interlace
 name|gint
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278b731a0308
+DECL|struct|__anon2931b7640308
 block|{
 DECL|member|run
 name|gint
@@ -1833,7 +1833,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIF: Couldn't simply reduce colours further.  Saving as opaque.\n"
+literal|"GIF: Couldn't simply reduce colors further.\nSaving as opaque.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3295,11 +3295,8 @@ endif|#
 directive|endif
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"Transparent colour *might* be incorrect on viewers which"
-literal|" don't support transparency."
-argument_list|)
+literal|"Transparent colour *might* be incorrect "
+literal|"on viewers which don't support transparency."
 argument_list|)
 expr_stmt|;
 block|}

@@ -140,7 +140,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad6e82e0108
+DECL|struct|__anon27d6df390108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -229,7 +229,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad6e82e0208
+DECL|struct|__anon27d6df390208
 block|{
 DECL|member|val
 name|int
@@ -840,7 +840,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad6e82e0308
+DECL|struct|__anon27d6df390308
 block|{
 DECL|member|rle
 name|gint
@@ -856,7 +856,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad6e82e0408
+DECL|struct|__anon27d6df390408
 block|{
 DECL|member|run
 name|gint
@@ -1631,8 +1631,7 @@ comment|/* Just to satisfy gcc/lint */
 name|L_SUNFILEHEADER
 name|sunhdr
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|suncolmap
 init|=
@@ -1771,42 +1770,15 @@ condition|)
 block|{
 name|suncolmap
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|sunhdr
 operator|.
 name|l_ras_maplength
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|suncolmap
-operator|==
-name|NULL
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"Can't get memory for colour map"
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|ifp
-argument_list|)
-expr_stmt|;
-return|return
-operator|(
-operator|-
-literal|1
-operator|)
-return|;
-block|}
 name|read_sun_cols
 argument_list|(
 name|ifp
@@ -1896,7 +1868,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Can't read colour entries"
+name|_
+argument_list|(
+literal|"Can't read color entries"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -1926,7 +1901,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Type of colourmap not supported"
+literal|"Type of colormap not supported"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2082,18 +2057,8 @@ argument_list|(
 name|ifp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|suncolmap
-operator|!=
-name|NULL
-condition|)
-name|free
+name|g_free
 argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
 name|suncolmap
 argument_list|)
 expr_stmt|;

@@ -147,7 +147,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"GTK colour selector as a pluggable colour selector"
+literal|"GTK color selector as a pluggable color selector"
 argument_list|)
 block|,
 literal|"Austin Donnelly<austin@gimp.org>"
@@ -303,7 +303,7 @@ comment|/* GTK colour selector methods */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b52d5040108
+DECL|struct|__anon2a3a83bd0108
 typedef|typedef
 struct|struct
 block|{

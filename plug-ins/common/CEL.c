@@ -1648,7 +1648,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unsupported number of colours (%d)"
+literal|"Unsupported number of colors (%d)"
 argument_list|)
 argument_list|,
 name|colours

@@ -531,7 +531,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35ded0108
+DECL|struct|__anon2875d5ef0108
 block|{
 DECL|member|name
 specifier|const
@@ -791,7 +791,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35ded0208
+DECL|struct|__anon2875d5ef0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -864,7 +864,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35ded0308
+DECL|struct|__anon2875d5ef0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -890,7 +890,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35ded0408
+DECL|struct|__anon2875d5ef0408
 block|{
 DECL|member|run
 name|gint
@@ -909,7 +909,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35ded0508
+DECL|struct|__anon2875d5ef0508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -1016,7 +1016,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35ded0608
+DECL|struct|__anon2875d5ef0608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1200,7 +1200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35ded0708
+DECL|struct|__anon2875d5ef0708
 block|{
 DECL|member|name
 specifier|const
@@ -1840,7 +1840,7 @@ block|,
 block|{
 name|PARAM_INT32
 block|,
-literal|"colourspace"
+literal|"colorspace"
 block|,
 literal|"separate to 0:RGB, 1:CMYK, 2:Intensity"
 block|}
@@ -1958,7 +1958,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Halftone the image, trading off resolution to represent colours or grey levels using the process described both in the PostScript language definition, and also by Robert Ulichney, \"Digital halftoning\", MIT Press, 1987."
+literal|"Halftone the image, trading off resolution to represent colors or grey levels using the process described both in the PostScript language definition, and also by Robert Ulichney, \"Digital halftoning\", MIT Press, 1987."
 argument_list|)
 argument_list|,
 literal|"Austin Donnelly"
@@ -7025,7 +7025,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d35ded0808
+DECL|struct|__anon2875d5ef0808
 block|{
 DECL|member|index
 name|gint

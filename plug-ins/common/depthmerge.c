@@ -849,7 +849,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Taking as input two full-colour, full-alpha "
+literal|"Taking as input two full-color, full-alpha "
 literal|"images and two corresponding grayscale depth "
 literal|"maps, this plug-in combines the images based "
 literal|"on which is closer (has a lower depth map value) "
