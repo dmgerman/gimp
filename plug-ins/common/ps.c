@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c528b190108
+DECL|struct|__anon2910a19b0108
 block|{
 DECL|member|resolution
 name|guint
@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c528b190208
+DECL|struct|__anon2910a19b0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -851,7 +851,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c528b190308
+DECL|struct|__anon2910a19b0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1707,7 +1707,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c528b190408
+DECL|struct|__anon2910a19b0408
 block|{
 DECL|member|eol
 name|long
@@ -13342,7 +13342,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/ps.html"
+literal|"file-ps-load"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -14342,7 +14342,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/ps.html"
+literal|"file-ps-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

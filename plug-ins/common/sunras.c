@@ -143,7 +143,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5669a0108
+DECL|struct|__anon2b30c24b0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -232,7 +232,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5669a0208
+DECL|struct|__anon2b30c24b0208
 block|{
 DECL|member|val
 name|gint
@@ -827,7 +827,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5669a0308
+DECL|struct|__anon2b30c24b0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -7748,7 +7748,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/sunras.html"
+literal|"file-sunras-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

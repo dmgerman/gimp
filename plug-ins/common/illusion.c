@@ -73,6 +73,14 @@ name|PLUG_IN_VERSION
 value|"v0.8 (May 14 2000)"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-illusion"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -150,7 +158,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e010a0108
+DECL|struct|__anon2b24ad1e0108
 block|{
 DECL|member|division
 name|gint32
@@ -642,7 +650,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c2e010a0208
+DECL|struct|__anon2b24ad1e0208
 typedef|typedef
 struct|struct
 block|{
@@ -1987,7 +1995,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/illusion.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

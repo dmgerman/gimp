@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b41b6fe0108
+DECL|struct|__anon28b8f8520108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -1219,7 +1219,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/spread.html"
+literal|"plug-in-spread"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a45df0108
+DECL|struct|__anon2b727b0c0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a45df0208
+DECL|struct|__anon2b727b0c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -5741,7 +5741,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/png.html"
+literal|"file-png-save-defaults"
 argument_list|,
 name|_
 argument_list|(

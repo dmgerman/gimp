@@ -289,7 +289,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon275a754d0108
+DECL|struct|__anon2960647c0108
 block|{
 DECL|member|width
 name|gint
@@ -2027,7 +2027,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/smooth_palette.html"
+literal|"plug-in-smooth-palette"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -95,7 +95,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c78b20108
+DECL|struct|__anon2c47e8fc0108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -1303,7 +1303,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/exchange.html"
+literal|"plug-in-exchange"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0da930108
+DECL|struct|__anon279e26b30108
 block|{
 DECL|member|radius
 name|gdouble
@@ -688,7 +688,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/sel_gauss.html"
+literal|"plug-in-sel-gauss"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

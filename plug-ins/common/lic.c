@@ -163,7 +163,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c7fa6f0108
+DECL|struct|__anon2c6477360108
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3280,7 +3280,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/lic.html"
+literal|"plug-in-lic"
 argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|,

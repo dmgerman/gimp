@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e43f320103
+DECL|enum|__anon2bb709d00103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e43f320208
+DECL|struct|__anon2bb709d00208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1564,7 +1564,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/warp.html"
+literal|"plug-in-warp"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

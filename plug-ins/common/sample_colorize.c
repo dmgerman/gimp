@@ -125,6 +125,14 @@ value|13
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-sample-colorize"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -370,7 +378,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2ae552170108
+DECL|struct|__anon28a442020108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +447,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ae552170208
+DECL|struct|__anon28a442020208
 typedef|typedef
 struct|struct
 block|{
@@ -547,7 +555,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ae552170308
+DECL|struct|__anon28a442020308
 typedef|typedef
 struct|struct
 block|{
@@ -576,7 +584,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ae552170408
+DECL|struct|__anon28a442020408
 typedef|typedef
 struct|struct
 block|{
@@ -603,7 +611,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ae552170508
+DECL|struct|__anon28a442020508
 typedef|typedef
 struct|struct
 block|{
@@ -6583,7 +6591,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/sample_colorize.html"
+name|HELP_ID
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,

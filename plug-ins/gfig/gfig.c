@@ -902,7 +902,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296661f30108
+DECL|struct|__anon275d4dff0108
 block|{
 DECL|member|gridspacing
 name|void
@@ -6095,7 +6095,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gfig.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
@@ -13802,7 +13802,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gfig.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_UNDO
 argument_list|,
@@ -14522,7 +14522,7 @@ name|widget
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gfig.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_DIALOG_WARNING
 argument_list|,
@@ -15088,7 +15088,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gfig.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -15445,7 +15445,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gfig.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -16435,7 +16435,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gfig.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
@@ -17209,7 +17209,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gfig.html"
+name|HELP_ID
 argument_list|,
 name|FALSE
 argument_list|,

@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b564d710108
+DECL|struct|__anon28ad4adc0108
 block|{
 DECL|member|posx
 name|gint
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b564d710208
+DECL|struct|__anon28ad4adc0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1248,7 +1248,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/flarefx.html"
+literal|"plug-in-flarefx"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

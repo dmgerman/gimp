@@ -1889,7 +1889,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/pat.html"
+literal|"file-pat-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

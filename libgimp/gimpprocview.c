@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c839cd30108
+DECL|struct|__anon29b76e720108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -391,7 +391,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/dbbrowser.html"
+literal|"plug-in-db-browser"
 argument_list|,
 name|_
 argument_list|(
@@ -440,7 +440,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/dbbrowser.html"
+literal|"plug-in-db-browser"
 argument_list|,
 name|_
 argument_list|(

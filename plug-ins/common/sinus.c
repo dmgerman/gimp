@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295cc8350108
+DECL|struct|__anon2b66352b0108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -265,7 +265,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295cc8350208
+DECL|struct|__anon2b66352b0208
 block|{
 DECL|member|height
 DECL|member|width
@@ -347,7 +347,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295cc8350308
+DECL|struct|__anon2b66352b0308
 block|{
 DECL|member|width
 name|gint
@@ -864,9 +864,6 @@ literal|"Power used to strech the blend"
 block|}
 block|,   }
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sinus"
@@ -3438,7 +3435,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/sinus.html"
+literal|"plug-in-sinus"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

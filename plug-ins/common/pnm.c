@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43ca5b0108
+DECL|struct|__anon2b3127e90108
 block|{
 DECL|member|raw
 name|gint
@@ -4435,7 +4435,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/pnm.html"
+literal|"file-pnm-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

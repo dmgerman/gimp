@@ -2475,7 +2475,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gimpressionst.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

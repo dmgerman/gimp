@@ -605,7 +605,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28e32ccc0108
+DECL|struct|__anon29bb00b30108
 typedef|typedef
 struct|struct
 block|{
@@ -1121,7 +1121,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/checkerboard.html"
+literal|"plug-in-checkerboard"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

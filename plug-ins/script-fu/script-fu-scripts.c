@@ -166,7 +166,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb95790108
+DECL|struct|__anon29ac056c0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -210,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb95790208
+DECL|struct|__anon29ac056c0208
 block|{
 DECL|member|file_entry
 name|GtkWidget
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb95790308
+DECL|struct|__anon29ac056c0308
 block|{
 DECL|member|name
 name|gchar
@@ -259,7 +259,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb95790408
+DECL|struct|__anon29ac056c0408
 block|{
 DECL|member|list
 name|GSList
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon27cb9579050a
+DECL|union|__anon29ac056c050a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb95790608
+DECL|struct|__anon29ac056c0608
 block|{
 DECL|member|script_name
 name|gchar
@@ -436,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb95790708
+DECL|struct|__anon29ac056c0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -5539,7 +5539,9 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/script-fu.html"
+name|script
+operator|->
+name|pdb_name
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -9172,7 +9174,9 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/script-fu.html"
+name|script
+operator|->
+name|pdb_name
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

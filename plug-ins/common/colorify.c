@@ -60,6 +60,14 @@ value|"1.1"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-colorify"
+end_define
+
+begin_define
 DECL|macro|COLOR_SIZE
 define|#
 directive|define
@@ -149,7 +157,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a324a490108
+DECL|struct|__anon27bb2ee90108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -985,7 +993,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/colorify.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

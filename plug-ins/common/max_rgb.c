@@ -51,10 +51,6 @@ directive|include
 file|"gimpoldpreview.h"
 end_include
 
-begin_comment
-comment|/* Replace them with the right ones */
-end_comment
-
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -69,6 +65,14 @@ define|#
 directive|define
 name|SHORT_NAME
 value|"max_rgb"
+end_define
+
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-max-rgb"
 end_define
 
 begin_function_decl
@@ -177,7 +181,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a362ec60103
+DECL|enum|__anon2c4e6b390103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -195,7 +199,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a362ec60208
+DECL|struct|__anon2c4e6b390208
 block|{
 DECL|member|max_p
 name|gint
@@ -568,7 +572,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a362ec60308
+DECL|struct|__anon2c4e6b390308
 typedef|typedef
 struct|struct
 block|{
@@ -952,7 +956,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/max_rgb.html"
+literal|"plug-in-max-rgb"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -395,7 +395,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a360108
+DECL|struct|__anon2c194c6a0108
 block|{
 DECL|member|name
 specifier|const
@@ -655,7 +655,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a360208
+DECL|struct|__anon2c194c6a0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a360308
+DECL|struct|__anon2c194c6a0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -758,7 +758,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a360408
+DECL|struct|__anon2c194c6a0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -865,7 +865,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a360508
+DECL|struct|__anon2c194c6a0508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1036,7 +1036,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a360608
+DECL|struct|__anon2c194c6a0608
 block|{
 DECL|member|name
 specifier|const
@@ -4814,7 +4814,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/newsprint.html"
+literal|"plug-in-newsprint"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -6693,7 +6693,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cf8a360708
+DECL|struct|__anon2c194c6a0708
 block|{
 DECL|member|index
 name|gint

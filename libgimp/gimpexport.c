@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3ac4a0108
+DECL|struct|__anon2ae2b2720108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -1356,7 +1356,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/confirm_save.html"
+literal|"gimp-export-confirm-dialog"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -1709,7 +1709,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/export_file.html"
+literal|"gimp-export-dialog"
 argument_list|,
 name|_
 argument_list|(

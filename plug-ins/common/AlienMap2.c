@@ -30529,7 +30529,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f0f0dc0108
+DECL|struct|__anon2c05d9e40108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -30580,7 +30580,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f0f0dc0208
+DECL|struct|__anon2c05d9e40208
 block|{
 DECL|member|run
 name|gint
@@ -31998,7 +31998,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/alienmap2.html"
+literal|"plug-in-alienmap2"
 argument_list|,
 name|_
 argument_list|(
@@ -33282,7 +33282,7 @@ name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/alienmap2.html"
+literal|"plug-in-alienmap2"
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

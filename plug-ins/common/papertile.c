@@ -59,6 +59,14 @@ name|PLUGIN_PROCEDURE_NAME
 value|"plug_in_papertile"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-papertile"
+end_define
+
 begin_comment
 comment|/*===========================================================================*/
 end_comment
@@ -74,7 +82,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b911d70103
+DECL|enum|__anon297870370103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b911d70203
+DECL|enum|__anon297870370203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +198,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b911d70308
+DECL|struct|__anon297870370308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +218,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28b911d70408
+DECL|struct|__anon297870370408
 block|{
 DECL|member|x0
 name|gint
@@ -577,7 +585,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b911d70508
+DECL|struct|__anon297870370508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -1012,7 +1020,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/papertile.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -4,11 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*   * dbbrowser   * 0.08 26th sept 97  by Thomas NOEL<thomas@minet.net>   */
+comment|/*  * dbbrowser  * 0.08 26th sept 97  by Thomas NOEL<thomas@minet.net>  */
 end_comment
 
 begin_comment
-comment|/*  * This plugin gives you the list of available procedure, with the  * name, description and parameters for each procedure.  * You can do regexp search (by name and by description)  * Useful for scripts development.  *  * NOTE :  * this is only a exercice for me (my first "plug-in" (extension))  * so it's very (very) dirty.   * Btw, hope it gives you some ideas about gimp possibilities.  *  * The core of the plugin is not here. See dbbrowser_utils (shared  * with script-fu-console).  *  * TODO  * - bug fixes... (my method : rewrite from scratch :)  */
+comment|/*  * This plugin gives you the list of available procedure, with the  * name, description and parameters for each procedure.  * You can do regexp search (by name and by description)  * Useful for scripts development.  *  * NOTE :  * this is only a exercice for me (my first "plug-in" (extension))  * so it's very (very) dirty.  * Btw, hope it gives you some ideas about gimp possibilities.  *  * The core of the plugin is not here. See dbbrowser_utils (shared  * with script-fu-console).  *  * TODO  * - bug fixes... (my method : rewrite from scratch :)  */
 end_comment
 
 begin_include

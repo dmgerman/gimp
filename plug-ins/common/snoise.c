@@ -107,7 +107,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288a71f20108
+DECL|struct|__anon29237b7a0108
 block|{
 DECL|member|tilable
 name|gint
@@ -2009,7 +2009,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/snoise.html"
+literal|"plug-in-solid-noise"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

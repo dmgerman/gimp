@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296581c10108
+DECL|struct|__anon295fbc1e0108
 block|{
 DECL|member|seed
 name|guint32
@@ -1002,7 +1002,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/plasma.html"
+literal|"plug-in-plasma"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

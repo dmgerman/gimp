@@ -82,7 +82,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279dffd40103
+DECL|enum|__anon29afc85c0103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279dffd40208
+DECL|struct|__anon29afc85c0208
 block|{
 DECL|member|img
 name|gint32
@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279dffd40308
+DECL|struct|__anon29afc85c0308
 block|{
 DECL|member|width
 name|gint
@@ -2277,7 +2277,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/emboss.html"
+literal|"plug-in-emboss"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

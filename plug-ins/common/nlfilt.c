@@ -81,7 +81,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3bfb130108
+DECL|struct|__anon27d9d7570108
 block|{
 DECL|member|img
 name|gint32
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3bfb130203
+DECL|enum|__anon27d9d7570203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1446,7 +1446,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/nlfilt.html"
+literal|"plug-in-nlfilt"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -95,7 +95,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3152730108
+DECL|struct|__anon29e2dd740108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -906,7 +906,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/displace.html"
+literal|"plug-in-displace"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

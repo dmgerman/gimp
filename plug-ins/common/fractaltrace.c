@@ -19,6 +19,14 @@ name|PLUG_IN_VERSION
 value|"v0.4 test version (Dec. 25 1997)"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-fractal-trace"
+end_define
+
 begin_comment
 comment|/******************************************************************************/
 end_comment
@@ -216,7 +224,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2c89e8390103
+DECL|enum|__anon29107ae90103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -236,7 +244,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c89e8390208
+DECL|struct|__anon29107ae90208
 block|{
 DECL|member|x1
 name|gdouble
@@ -432,7 +440,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c89e8390308
+DECL|struct|__anon29107ae90308
 block|{
 DECL|member|x1
 name|gint
@@ -475,7 +483,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c89e8390408
+DECL|struct|__anon29107ae90408
 block|{
 DECL|member|width
 name|gint
@@ -1030,7 +1038,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c89e8390508
+DECL|struct|__anon29107ae90508
 block|{
 DECL|member|r
 name|guchar
@@ -2914,7 +2922,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c89e8390608
+DECL|struct|__anon29107ae90608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -4112,7 +4120,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/fractaltrace.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -48,6 +48,14 @@ value|4
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-filter-pack"
+end_define
+
+begin_define
 DECL|macro|RANGE_ADJUST_MASK
 define|#
 directive|define
@@ -56,7 +64,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon29b5cb1d0108
+DECL|struct|__anon277d3d770108
 typedef|typedef
 struct|struct
 block|{
@@ -71,7 +79,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b5cb1d0208
+DECL|struct|__anon277d3d770208
 typedef|typedef
 struct|struct
 block|{
@@ -105,7 +113,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29b5cb1d0303
+DECL|enum|__anon277d3d770303
 typedef|typedef
 enum|enum
 block|{
@@ -127,7 +135,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon29b5cb1d0403
+DECL|enum|__anon277d3d770403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -159,7 +167,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29b5cb1d0503
+DECL|enum|__anon277d3d770503
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -187,7 +195,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29b5cb1d0603
+DECL|enum|__anon277d3d770603
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -205,7 +213,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon29b5cb1d0703
+DECL|enum|__anon277d3d770703
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -224,7 +232,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon29b5cb1d0808
+DECL|struct|__anon277d3d770808
 typedef|typedef
 struct|struct
 block|{
@@ -270,7 +278,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29b5cb1d0908
+DECL|struct|__anon277d3d770908
 typedef|typedef
 struct|struct
 block|{

@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27ead2f70108
+DECL|struct|__anon2bc9948b0108
 block|{
 DECL|member|spacing
 name|guint
@@ -226,7 +226,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ead2f70208
+DECL|struct|__anon2bc9948b0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3719,7 +3719,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gih.html"
+literal|"file-gih-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -141,7 +141,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274b57470108
+DECL|struct|__anon28c7d2bc0108
 block|{
 DECL|member|img_bpp
 name|gint
@@ -880,7 +880,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/blinds.html"
+literal|"plug-in-blinds"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

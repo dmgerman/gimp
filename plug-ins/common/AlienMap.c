@@ -30525,7 +30525,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922c5140108
+DECL|struct|__anon27966a070108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30560,7 +30560,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922c5140208
+DECL|struct|__anon27966a070208
 block|{
 DECL|member|run
 name|gint
@@ -31784,7 +31784,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/alienmap.html"
+literal|"plug-in-alienmap"
 argument_list|,
 name|_
 argument_list|(
@@ -32888,7 +32888,7 @@ name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/alienmap.html"
+literal|"plug-in-alienmap"
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

@@ -49,7 +49,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc1a3c0103
+DECL|enum|__anon2c47d6900103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -170,7 +170,7 @@ end_macro
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc1a3c0208
+DECL|struct|__anon2c47d6900208
 block|{
 DECL|member|title
 specifier|const
@@ -562,7 +562,7 @@ name|GTK_DIALOG_MODAL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/uniteditor.html"
+literal|"plug-in-unit-editor"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -2226,7 +2226,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/uniteditor.html"
+literal|"plug-in-unit-editor"
 argument_list|,
 name|GTK_STOCK_REFRESH
 argument_list|,

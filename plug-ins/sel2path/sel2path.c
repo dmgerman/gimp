@@ -1252,7 +1252,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/sel2path.html"
+literal|"plug-in-sel2path-advanced"
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,

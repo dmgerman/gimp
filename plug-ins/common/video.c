@@ -60925,7 +60925,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be27abc0108
+DECL|struct|__anon2a2e3fed0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -62592,7 +62592,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/video.html"
+literal|"plug-in-video"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

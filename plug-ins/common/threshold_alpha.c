@@ -62,6 +62,14 @@ value|"threshold_alpha"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-threshold-alpha"
+end_define
+
+begin_define
 DECL|macro|PROGRESS_UPDATE_NUM
 define|#
 directive|define
@@ -171,7 +179,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40f0870108
+DECL|struct|__anon29f3c81d0108
 block|{
 DECL|member|threshold
 name|gint
@@ -761,7 +769,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"threshold_alpha"
+name|SHORT_NAME
 argument_list|,
 name|FALSE
 argument_list|)
@@ -775,7 +783,7 @@ argument_list|(
 literal|"Threshold Alpha"
 argument_list|)
 argument_list|,
-literal|"threshold_alpha"
+name|SHORT_NAME
 argument_list|,
 name|NULL
 argument_list|,
@@ -783,7 +791,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/threshold_alpha.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

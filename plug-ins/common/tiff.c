@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275de9970108
+DECL|struct|__anon295445040108
 block|{
 DECL|member|compression
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275de9970208
+DECL|struct|__anon295445040208
 block|{
 DECL|member|ID
 name|gint32
@@ -8597,7 +8597,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/tiff.html"
+literal|"file-tiff-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

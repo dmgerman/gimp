@@ -105,7 +105,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b211fbb0108
+DECL|struct|__anon2b3f16520108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -1697,7 +1697,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gicon.html"
+literal|"file-gicon-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

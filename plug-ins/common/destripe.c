@@ -95,6 +95,14 @@ value|"0.2"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-destripe"
+end_define
+
+begin_define
 DECL|macro|PREVIEW_SIZE
 define|#
 directive|define
@@ -347,7 +355,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c64f9870108
+DECL|struct|__anon2b82e5d40108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -2043,7 +2051,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/destripe.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

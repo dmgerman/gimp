@@ -313,7 +313,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/imagemap.html"
+literal|"plug-in-imagemap"
 argument_list|,
 name|NULL
 argument_list|)

@@ -70,7 +70,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c9ebea0108
+DECL|struct|__anon2a45f7e90108
 block|{
 DECL|member|image
 name|gint32
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c9ebea0203
+DECL|enum|__anon2a45f7e90203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c9ebea0303
+DECL|enum|__anon2a45f7e90303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -165,7 +165,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon28c9ebea0408
+DECL|struct|__anon2a45f7e90408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2360,7 +2360,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/hot.html"
+literal|"plug-in-hot"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

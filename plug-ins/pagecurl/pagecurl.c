@@ -122,6 +122,14 @@ value|"May 1998, 0.9"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-pagecurl"
+end_define
+
+begin_define
 DECL|macro|NGRADSAMPLES
 define|#
 directive|define
@@ -136,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba770a10108
+DECL|struct|__anon296e4f2c0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -1869,7 +1877,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/pagecurl.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

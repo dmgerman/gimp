@@ -164,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be761020108
+DECL|struct|__anon28ea1bd00108
 block|{
 DECL|member|run
 name|gboolean
@@ -1955,7 +1955,7 @@ comment|/*********** Save dialog ************/
 end_comment
 
 begin_comment
-comment|/* static gboolean save_dialog (void) {   GtkWidget *dlg;   gboolean   run;    dlg = gimp_dialog_new (_("Save as HRZ"), "hrz", 			 NULL, 0,                          gimp_standard_help_func, "filters/hrz.html",  			 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, 			 GTK_STOCK_OK,     GTK_RESPONSE_OK,  			 NULL);    gtk_widget_show (dlg);    run = (gimp_dialog_run (GIMP_DIALOG (dlg)) == GTK_RESPONSE_OK);    gtk_widget_destroy (dlg);    return run; } */
+comment|/* static gboolean save_dialog (void) {   GtkWidget *dlg;   gboolean   run;    dlg = gimp_dialog_new (_("Save as HRZ"), "hrz", 			 NULL, 0,                          gimp_standard_help_func, "file-hrz-save",  			 GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL, 			 GTK_STOCK_OK,     GTK_RESPONSE_OK,  			 NULL);    gtk_widget_show (dlg);    run = (gimp_dialog_run (GIMP_DIALOG (dlg)) == GTK_RESPONSE_OK);    gtk_widget_destroy (dlg);    return run; } */
 end_comment
 
 end_unit

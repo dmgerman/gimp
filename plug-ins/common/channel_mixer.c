@@ -126,6 +126,14 @@ value|"Channel Mixer 0.8"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-colors-channel-mixer"
+end_define
+
+begin_define
 DECL|macro|PROGRESS_UPDATE_NUM
 define|#
 directive|define
@@ -144,7 +152,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275082880103
+DECL|enum|__anon28ddd7eb0103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -163,7 +171,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275082880208
+DECL|struct|__anon28ddd7eb0208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -186,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275082880308
+DECL|struct|__anon28ddd7eb0308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -278,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275082880408
+DECL|struct|__anon28ddd7eb0408
 block|{
 DECL|member|width
 name|gint
@@ -2367,7 +2375,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/channel_mixer.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -4851,7 +4859,7 @@ name|filesel
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/channel_mixer.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)
@@ -5691,7 +5699,7 @@ name|filesel
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/channel_mixer.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)
@@ -6021,7 +6029,7 @@ name|GTK_DIALOG_MODAL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/channel_mixer.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

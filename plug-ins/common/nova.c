@@ -155,7 +155,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2986a2a10108
+DECL|struct|__anon2c498eeb0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2986a2a10208
+DECL|struct|__anon2c498eeb0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -1074,7 +1074,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/nova.html"
+literal|"plug-in-nova"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -158,6 +158,14 @@ name|PLUG_IN_VERSION
 value|"January 2001, 1.12"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-qbist"
+end_define
+
 begin_comment
 comment|/** types *******************************************************************/
 end_comment
@@ -180,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e555fb0103
+DECL|enum|__anon28d928df0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -225,7 +233,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e555fb0208
+DECL|struct|__anon28d928df0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -264,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e555fb0308
+DECL|struct|__anon28d928df0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -3856,7 +3864,7 @@ name|file_select
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gqbist.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)
@@ -3945,7 +3953,7 @@ name|file_select
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gqbist.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)
@@ -4076,7 +4084,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gqbist.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

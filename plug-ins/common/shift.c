@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5162460108
+DECL|struct|__anon2b8dc2d00108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -1216,7 +1216,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/shift.html"
+literal|"plug-in-shift"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -154,7 +154,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b680a270108
+DECL|struct|__anon2bdfc0c20108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -1704,7 +1704,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/apply_lens.html"
+literal|"plug-in-applylens"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

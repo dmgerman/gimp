@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292587de0103
+DECL|enum|__anon275b262f0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292587de0203
+DECL|enum|__anon275b262f0203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2191,7 +2191,7 @@ name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"dialogs/unit_selection.html"
+literal|"gimp-unit-dialog"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b324620103
+DECL|enum|__anon2b7611380103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b324620203
+DECL|enum|__anon2b7611380203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -14761,7 +14761,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/jigsaw.html"
+literal|"plug-in-jigsaw"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -90,6 +90,14 @@ name|PLUG_IN_NAME
 value|"plug_in_screenshot"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-screenshot"
+end_define
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -134,7 +142,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b8875f0108
+DECL|struct|__anon2b8ca9a50108
 block|{
 DECL|member|root
 name|gboolean
@@ -1810,7 +1818,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/screenshot.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4f35a00108
+DECL|struct|__anon2a104ed70108
 block|{
 DECL|member|horizontal
 name|gint
@@ -734,7 +734,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/sobel.html"
+literal|"plug-in-sobel"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

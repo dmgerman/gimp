@@ -141,6 +141,14 @@ value|"Bends a layer using 2 spline-curves"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-curve-bend"
+end_define
+
+begin_define
 DECL|macro|PLUG_IN_ITER_NAME
 define|#
 directive|define
@@ -738,7 +746,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8538e60108
+DECL|struct|__anon2bb7b4740108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +800,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8538e60208
+DECL|struct|__anon2bb7b4740208
 block|{
 DECL|member|y
 name|gint32
@@ -5557,7 +5565,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/curve_bend.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

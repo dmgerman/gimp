@@ -217,6 +217,14 @@ value|1
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-gflare"
+end_define
+
+begin_define
 DECL|macro|GRADIENT_NAME_MAX
 define|#
 directive|define
@@ -444,7 +452,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c816b4e0103
+DECL|enum|__anon2b2fbb2f0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -471,7 +479,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c816b4e0203
+DECL|enum|__anon2b2fbb2f0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -492,7 +500,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0308
+DECL|struct|__anon2b2fbb2f0308
 block|{
 DECL|member|name
 name|gchar
@@ -629,7 +637,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0408
+DECL|struct|__anon2b2fbb2f0408
 block|{
 DECL|member|fp
 name|FILE
@@ -649,7 +657,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c816b4e0503
+DECL|enum|__anon2b2fbb2f0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -677,7 +685,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0608
+DECL|struct|__anon2b2fbb2f0608
 block|{
 DECL|member|init
 name|gint
@@ -699,7 +707,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c816b4e0708
+DECL|struct|__anon2b2fbb2f0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -773,7 +781,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0808
+DECL|struct|__anon2b2fbb2f0808
 block|{
 DECL|member|init
 name|gint
@@ -843,7 +851,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0908
+DECL|struct|__anon2b2fbb2f0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -870,7 +878,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0a08
+DECL|struct|__anon2b2fbb2f0a08
 block|{
 DECL|member|init
 name|gint
@@ -1040,7 +1048,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0b08
+DECL|struct|__anon2b2fbb2f0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1067,7 +1075,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0c08
+DECL|struct|__anon2b2fbb2f0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1302,7 +1310,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0d08
+DECL|struct|__anon2b2fbb2f0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1379,7 +1387,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c816b4e0e08
+DECL|struct|__anon2b2fbb2f0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8583,7 +8591,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2c816b4e0f08
+DECL|struct|__anon2b2fbb2f0f08
 specifier|static
 struct|struct
 block|{
@@ -11672,7 +11680,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gflare.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -14513,7 +14521,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2c816b4e1008
+DECL|struct|__anon2b2fbb2f1008
 block|{
 DECL|member|label
 specifier|const
@@ -15072,7 +15080,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gflare.html"
+name|HELP_ID
 argument_list|,
 name|_
 argument_list|(
@@ -15340,7 +15348,7 @@ argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gflare.html"
+name|HELP_ID
 argument_list|,
 name|_
 argument_list|(
@@ -15554,7 +15562,7 @@ name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gflare.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
@@ -15927,7 +15935,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gflare.html"
+name|HELP_ID
 argument_list|,
 name|_
 argument_list|(

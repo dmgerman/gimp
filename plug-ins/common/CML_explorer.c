@@ -105,6 +105,14 @@ value|"CML_explorer"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-cml-explorer"
+end_define
+
+begin_define
 DECL|macro|VALS
 define|#
 directive|define
@@ -202,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fd7bb60108
+DECL|struct|__anon2c0208620108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -229,7 +237,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd7bb60203
+DECL|enum|__anon2c0208620203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -352,7 +360,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd7bb60303
+DECL|enum|__anon2c0208620303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -491,7 +499,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd7bb60403
+DECL|enum|__anon2c0208620403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -590,7 +598,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd7bb60503
+DECL|enum|__anon2c0208620503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -682,7 +690,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fd7bb60608
+DECL|struct|__anon2c0208620608
 block|{
 DECL|member|function
 name|gint
@@ -755,7 +763,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fd7bb60708
+DECL|struct|__anon2c0208620708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1533,7 +1541,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fd7bb60808
+DECL|struct|__anon2c0208620808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6561,7 +6569,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/cml_explorer.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -10619,7 +10627,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/cml_explorer.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_OK
 argument_list|,
@@ -11598,7 +11606,7 @@ name|filesel
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/cml_explorer.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)
@@ -12338,7 +12346,7 @@ name|GTK_DIALOG_MODAL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/cml_explorer.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -12530,7 +12538,7 @@ name|filesel
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/cml_explorer.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)

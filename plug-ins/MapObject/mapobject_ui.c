@@ -7289,7 +7289,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/mapobject.html"
+literal|"plug-in-map-object"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

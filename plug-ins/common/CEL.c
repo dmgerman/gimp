@@ -3310,7 +3310,7 @@ name|dialog
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/cel.html"
+literal|"file-cel-load"
 argument_list|,
 name|NULL
 argument_list|)

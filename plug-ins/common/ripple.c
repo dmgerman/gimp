@@ -124,7 +124,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be274fa0108
+DECL|struct|__anon27cecec30108
 block|{
 DECL|member|period
 name|gint
@@ -904,7 +904,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2be274fa0208
+DECL|struct|__anon27cecec30208
 typedef|typedef
 struct|struct
 block|{
@@ -1860,7 +1860,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/ripple.html"
+literal|"plug-in-ripple"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

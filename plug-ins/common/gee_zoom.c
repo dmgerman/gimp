@@ -767,7 +767,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gee_zoom.html"
+literal|"plug-in-the-old-egg"
 argument_list|,
 name|NULL
 argument_list|)

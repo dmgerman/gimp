@@ -131,6 +131,23 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|HELP_ID
+name|gchar
+modifier|*
+name|HELP_ID
+index|[]
+init|=
+block|{
+literal|"plug-in-randomize-hurl"
+block|,
+literal|"plug-in-randomize-pick"
+block|,
+literal|"plug-in-randomize-slur"
+block|, }
+decl_stmt|;
+end_decl_stmt
+
 begin_define
 DECL|macro|RNDM_HURL
 define|#
@@ -200,7 +217,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fee65f0108
+DECL|struct|__anon2c5179870108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -2402,7 +2419,12 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/randomize.html"
+name|HELP_ID
+index|[
+name|rndm_type
+operator|-
+literal|1
+index|]
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

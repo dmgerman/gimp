@@ -77,6 +77,14 @@ value|"Sep 1997, 1.2"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-mblur"
+end_define
+
+begin_define
 DECL|macro|MBLUR_LINEAR
 define|#
 directive|define
@@ -111,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29adfcea0108
+DECL|struct|__anon2a5211150108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -3221,7 +3229,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/mblur.html"
+literal|"plug-in-mblur"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

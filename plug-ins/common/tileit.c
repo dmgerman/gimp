@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907ac9e0108
+DECL|struct|__anon2979ddd80108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2907ac9e0203
+DECL|enum|__anon2979ddd80203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -538,7 +538,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907ac9e0308
+DECL|struct|__anon2979ddd80308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -608,7 +608,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907ac9e0408
+DECL|struct|__anon2979ddd80408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1368,7 +1368,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/tileit.html"
+literal|"plug-in-small-tiles"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -4412,7 +4412,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/xbm.html"
+literal|"file-xbm-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

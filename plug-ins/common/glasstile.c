@@ -62,7 +62,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a43a6ef0108
+DECL|struct|__anon2895de190108
 block|{
 DECL|member|xblock
 name|gint
@@ -733,7 +733,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/glasstile.html"
+literal|"plug-in-glasstile"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

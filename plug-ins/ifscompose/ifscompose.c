@@ -170,10 +170,18 @@ name|IFSCOMPOSE_DATA
 value|"plug_in_ifscompose"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-ifs-compose"
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5ad2b20103
+DECL|enum|__anon290eef840103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -193,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5ad2b20203
+DECL|enum|__anon290eef840203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -209,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ad2b20308
+DECL|struct|__anon290eef840308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -231,7 +239,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c5ad2b2040a
+DECL|union|__anon290eef84040a
 block|{
 DECL|member|d
 name|gdouble
@@ -260,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ad2b20508
+DECL|struct|__anon290eef840508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -290,7 +298,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ad2b20608
+DECL|struct|__anon290eef840608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -325,7 +333,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ad2b20708
+DECL|struct|__anon290eef840708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -361,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ad2b20808
+DECL|struct|__anon290eef840808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -428,7 +436,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ad2b20908
+DECL|struct|__anon290eef840908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -630,7 +638,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5ad2b20a08
+DECL|struct|__anon290eef840a08
 block|{
 DECL|member|run
 name|gboolean
@@ -4175,7 +4183,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/ifscompose.html"
+name|HELP_ID
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,
@@ -6733,7 +6741,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/ifscompose.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,
@@ -14430,7 +14438,7 @@ name|file_select
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/ifscompose.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)
@@ -14529,7 +14537,7 @@ name|file_select
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/ifscompose.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)

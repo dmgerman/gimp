@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abd56b10108
+DECL|struct|__anon27b7d97c0108
 block|{
 DECL|member|threshold
 name|gint
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abd56b10208
+DECL|struct|__anon27b7d97c0208
 block|{
 DECL|member|r
 name|guchar
@@ -3069,7 +3069,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/xpm.html"
+literal|"file-xpm-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

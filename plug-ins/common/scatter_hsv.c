@@ -84,6 +84,14 @@ name|SHORT_NAME
 value|"scatter_hsv"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-scatter-hsv"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -322,7 +330,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293715580108
+DECL|struct|__anon2c179bae0108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -1507,7 +1515,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/scatter_hsv.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

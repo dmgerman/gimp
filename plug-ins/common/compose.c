@@ -519,7 +519,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6651850108
+DECL|struct|__anon291ddb360108
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1013,7 +1013,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6651850208
+DECL|struct|__anon291ddb360208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -1044,7 +1044,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6651850308
+DECL|struct|__anon291ddb360308
 block|{
 DECL|member|width
 DECL|member|height
@@ -6128,7 +6128,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/compose.html"
+literal|"plug-in-compose"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

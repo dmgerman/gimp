@@ -68,6 +68,14 @@ value|"align_layers"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-align-layers"
+end_define
+
+begin_define
 DECL|macro|SCALE_WIDTH
 define|#
 directive|define
@@ -77,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b811e700103
+DECL|enum|__anon2c29106b0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b811e700203
+DECL|enum|__anon2c29106b0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b811e700303
+DECL|enum|__anon2c29106b0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b811e700403
+DECL|enum|__anon2c29106b0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -260,7 +268,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b811e700508
+DECL|struct|__anon2c29106b0508
 block|{
 DECL|member|h_style
 name|gint
@@ -1559,7 +1567,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/align_layers.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -95,6 +95,14 @@ value|"1.3.2 - 17 May 1998"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-despeckle"
+end_define
+
+begin_define
 DECL|macro|PREVIEW_SIZE
 define|#
 directive|define
@@ -2191,7 +2199,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/despeckle.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

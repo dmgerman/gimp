@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19e2890103
+DECL|enum|__anon2c75e5d10103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -67,7 +67,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a19e2890208
+DECL|struct|__anon2c75e5d10208
 block|{
 DECL|member|amplitude
 name|gdouble
@@ -1221,7 +1221,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/waves.html"
+literal|"plug-in-waves"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

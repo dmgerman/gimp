@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aebb2860108
+DECL|struct|__anon295703250108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3020,7 +3020,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/csource.html"
+literal|"file-csource-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

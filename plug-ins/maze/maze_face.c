@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6a628c0108
+DECL|struct|__anon28deb9480108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -603,7 +603,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/maze.html"
+literal|"plug-in-maze"
 argument_list|,
 name|GTK_STOCK_HELP
 argument_list|,

@@ -846,7 +846,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/print.html"
+literal|"file-print-gimp"
 argument_list|,
 name|GIMP_STOCK_RESET
 argument_list|,

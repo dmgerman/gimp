@@ -97,7 +97,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc05d9e0108
+DECL|struct|__anon2bee8fad0108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -2074,7 +2074,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/oilify.html"
+literal|"plug-in-oilify"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

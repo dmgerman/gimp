@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e8a30108
+DECL|struct|__anon2ae960f20108
 block|{
 DECL|member|radius
 name|gdouble
@@ -77,7 +77,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922e8a30208
+DECL|struct|__anon2ae960f20208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -1189,7 +1189,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gauss_rle.html"
+literal|"plug-in-gauss-rle"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -1620,7 +1620,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gauss_rle.html"
+literal|"plug-in-gauss-rle2"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -80,6 +80,14 @@ value|"vpropagate"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-vpropagate"
+end_define
+
+begin_define
 DECL|macro|ERODE_PLUG_IN_NAME
 define|#
 directive|define
@@ -701,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c91c8240108
+DECL|struct|__anon2c4fd2010108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -853,7 +861,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c91c8240208
+DECL|struct|__anon2c4fd2010208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -3896,7 +3904,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c91c8240308
+DECL|struct|__anon2c4fd2010308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5612,7 +5620,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/vpropagate.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1570420108
+DECL|struct|__anon286f7e4f0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1570420208
+DECL|struct|__anon286f7e4f0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -966,7 +966,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/pixelize.html"
+literal|"plug-in-pixelize"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b13e6d0108
+DECL|struct|__anon27aafe980108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -588,7 +588,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/script-fu.html"
+literal|"plug-in-script-fu-console"
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

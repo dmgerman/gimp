@@ -109,6 +109,14 @@ name|PLUG_IN_VERSION
 value|"May 1997, 2.09"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-whirl-pinch"
+end_define
+
 begin_comment
 comment|/***** Magic numbers *****/
 end_comment
@@ -144,7 +152,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a356e450108
+DECL|struct|__anon2aabdece0108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -167,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a356e450208
+DECL|struct|__anon2aabdece0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -2681,7 +2689,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/whirlpinch.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -163,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27967a890108
+DECL|struct|__anon2c3d1c8e0108
 block|{
 DECL|member|description
 name|gchar
@@ -1805,7 +1805,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon27967a89020a
+DECL|union|__anon2c3d1c8e020a
 block|{
 DECL|member|u
 name|guint16
@@ -2631,7 +2631,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/gbr.html"
+literal|"file-gbr-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -40878,7 +40878,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ff4d90103
+DECL|enum|__anon2a3da0fb0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40898,7 +40898,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276ff4d90208
+DECL|struct|__anon2a3da0fb0208
 block|{
 DECL|member|direction
 name|gint
@@ -41539,7 +41539,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/struc.html"
+literal|"plug-in-apply-canvas"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

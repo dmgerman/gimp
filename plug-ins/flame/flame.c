@@ -117,6 +117,14 @@ name|VARIATION_SAME
 value|(-2)
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-flame"
+end_define
+
 begin_comment
 comment|/* Declare local functions. */
 end_comment
@@ -488,7 +496,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a4d1aff0108
+DECL|struct|__anon2946488c0108
 block|{
 DECL|member|randomize
 name|gint
@@ -2238,7 +2246,7 @@ name|file_dlg
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/flame.html"
+name|HELP_ID
 argument_list|,
 name|NULL
 argument_list|)
@@ -2889,7 +2897,7 @@ name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/flame.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -4403,7 +4411,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/flame.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

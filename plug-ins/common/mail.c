@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772000c0108
+DECL|struct|__anon2bd1ef1c0108
 block|{
 DECL|member|receipt
 name|gchar
@@ -1434,7 +1434,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/mail.html"
+literal|"plug-in-mail-image"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

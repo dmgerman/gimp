@@ -15,6 +15,14 @@ name|PLUG_IN_VERSION
 value|"v1.0, November 2003"
 end_define
 
+begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-gimppressionist"
+end_define
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -128,7 +136,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0988360108
+DECL|struct|__anon2c4198450108
 typedef|typedef
 struct|struct
 block|{

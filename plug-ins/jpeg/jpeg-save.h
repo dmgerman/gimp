@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae247360108
+DECL|struct|__anon28ee07580108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae247360208
+DECL|struct|__anon28ee07580208
 block|{
 DECL|member|cinfo
 name|struct
@@ -6084,7 +6084,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/jpeg.html"
+literal|"file-jpeg-save"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

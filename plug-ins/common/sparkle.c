@@ -127,7 +127,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1e6de10108
+DECL|struct|__anon2c63493f0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -1464,7 +1464,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/sparkle.html"
+literal|"plug-in-sparkle"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

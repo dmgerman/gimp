@@ -2195,7 +2195,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/fractalexplorer.html"
+name|HELP_ID
 argument_list|,
 name|_
 argument_list|(
@@ -8343,7 +8343,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/fractalexplorer.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

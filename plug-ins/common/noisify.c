@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f1b420108
+DECL|struct|__anon28d07caf0108
 block|{
 DECL|member|independent
 name|gint
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f1b420208
+DECL|struct|__anon28d07caf0208
 block|{
 DECL|member|channels
 name|gint
@@ -1184,7 +1184,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/noisify.html"
+literal|"plug-in-noisify"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec95290108
+DECL|struct|__anon2c3003960108
 block|{
 DECL|member|radius
 name|gdouble
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec95290208
+DECL|struct|__anon2c3003960208
 block|{
 DECL|member|run
 name|gboolean
@@ -2876,7 +2876,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/unsharp.html"
+literal|"plug-in-unsharp-mask"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad09250103
+DECL|enum|__anon2a43322c0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad09250208
+DECL|struct|__anon2a43322c0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3105,7 +3105,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/edge.html"
+literal|"plug-in-edge"
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

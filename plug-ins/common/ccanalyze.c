@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baca08f0103
+DECL|enum|__anon2a169ee10103
 block|{
 DECL|enumerator|RED
 name|RED
@@ -2082,7 +2082,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/ccanalyze.html"
+literal|"plug-in-ccanalyze"
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

@@ -97,6 +97,14 @@ value|"plug_in_blur"
 end_define
 
 begin_define
+DECL|macro|HELP_ID
+define|#
+directive|define
+name|HELP_ID
+value|"plug-in-blur"
+end_define
+
+begin_define
 DECL|macro|SEED_DEFAULT
 define|#
 directive|define
@@ -127,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6e09240108
+DECL|struct|__anon2b8cafde0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -2290,7 +2298,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"filters/blur.html"
+name|HELP_ID
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
