@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5485d70103
+DECL|enum|__anon2b62f0ae0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5485d70203
+DECL|enum|__anon2b62f0ae0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1104,27 +1104,24 @@ name|GTK_CELL_RENDERER_SELECTED
 operator|)
 condition|)
 block|{
-name|GimpRGB
-name|black
-init|=
-block|{
-literal|0.0
-block|,
-literal|0.0
-block|,
-literal|0.0
-block|,
-literal|1.0
-block|}
-decl_stmt|;
-name|gimp_preview_renderer_set_border_color
+comment|/* this is an ugly hack. The cell state should be passed to            * the preview renderer, so that it can adjust its border.            * (or something like this) */
+if|if
+condition|(
+name|cellviewable
+operator|->
+name|renderer
+operator|->
+name|border_type
+operator|==
+name|GIMP_PREVIEW_BORDER_WHITE
+condition|)
+name|gimp_preview_renderer_set_border_type
 argument_list|(
 name|cellviewable
 operator|->
 name|renderer
 argument_list|,
-operator|&
-name|black
+name|GIMP_PREVIEW_BORDER_BLACK
 argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_remove_idle

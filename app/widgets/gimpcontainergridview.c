@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2910fe8f0103
+DECL|enum|__anon28e4fc610103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -1719,7 +1719,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_preview_renderer_set_border_color
+name|gimp_preview_renderer_set_border_type
 argument_list|(
 name|GIMP_PREVIEW
 argument_list|(
@@ -1728,8 +1728,7 @@ argument_list|)
 operator|->
 name|renderer
 argument_list|,
-operator|&
-name|white_color
+name|GIMP_PREVIEW_BORDER_WHITE
 argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_remove_idle
@@ -2450,7 +2449,7 @@ operator|!=
 name|preview
 condition|)
 block|{
-name|gimp_preview_renderer_set_border_color
+name|gimp_preview_renderer_set_border_type
 argument_list|(
 name|grid_view
 operator|->
@@ -2458,8 +2457,7 @@ name|selected_item
 operator|->
 name|renderer
 argument_list|,
-operator|&
-name|white_color
+name|GIMP_PREVIEW_BORDER_WHITE
 argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_update
@@ -2607,14 +2605,13 @@ name|page_size
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_preview_renderer_set_border_color
+name|gimp_preview_renderer_set_border_type
 argument_list|(
 name|preview
 operator|->
 name|renderer
 argument_list|,
-operator|&
-name|black_color
+name|GIMP_PREVIEW_BORDER_BLACK
 argument_list|)
 expr_stmt|;
 name|gimp_preview_renderer_update
