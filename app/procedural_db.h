@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2936dfca0103
+DECL|enum|__anon2c694f590103
 block|{
 DECL|enumerator|PDB_INT32
 name|PDB_INT32
@@ -91,6 +91,9 @@ block|,
 DECL|enumerator|PDB_PATH
 name|PDB_PATH
 block|,
+DECL|enumerator|PDB_PARASITE
+name|PDB_PARASITE
+block|,
 DECL|enumerator|PDB_STATUS
 name|PDB_STATUS
 block|,
@@ -109,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2936dfca0203
+DECL|enum|__anon2c694f590203
 block|{
 DECL|enumerator|PDB_EXECUTION_ERROR
 name|PDB_EXECUTION_ERROR
@@ -135,7 +138,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2936dfca0303
+DECL|enum|__anon2c694f590303
 block|{
 DECL|enumerator|PDB_INTERNAL
 name|PDB_INTERNAL

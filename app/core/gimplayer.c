@@ -114,7 +114,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b5301110103
+DECL|enum|__anon29d136e80103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -1645,6 +1645,24 @@ operator|->
 name|show_mask
 expr_stmt|;
 block|}
+comment|/* copy the parasites */
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_layer
+argument_list|)
+operator|->
+name|parasites
+operator|=
+name|parasite_gslist_copy
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|parasites
+argument_list|)
+expr_stmt|;
 name|cleanup
 label|:
 comment|/*  free up the layer_name memory  */

@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"parasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"temp_buf.h"
 end_include
 
@@ -872,6 +878,24 @@ name|srcPR
 argument_list|,
 operator|&
 name|destPR
+argument_list|)
+expr_stmt|;
+comment|/* copy the parasites */
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_channel
+argument_list|)
+operator|->
+name|parasites
+operator|=
+name|parasite_gslist_copy
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+operator|->
+name|parasites
 argument_list|)
 expr_stmt|;
 comment|/*  free up the channel_name memory  */

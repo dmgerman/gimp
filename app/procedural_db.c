@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"parasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config.h"
 end_include
 
@@ -433,6 +439,8 @@ literal|"PDB_BOUNDARY"
 block|,
 literal|"PDB_PATH"
 block|,
+literal|"PDB_PARASITE"
+block|,
 literal|"PDB_STATUS"
 block|,
 literal|"PDB_END"
@@ -717,7 +725,7 @@ name|PDB_INT32
 block|,
 literal|"arg_type"
 block|,
-literal|"the type of argument { PDB_INT32 (0), PDB_INT16 (1), PDB_INT8 (2), PDB_FLOAT (3), PDB_STRING (4), PDB_INT32ARRAY (5), PDB_INT16ARRAY (6), PDB_INT8ARRAY (7), PDB_FLOATARRAY (8), PDB_STRINGARRAY (9), PDB_COLOR (10), PDB_REGION (11), PDB_DISPLAY (12), PDB_IMAGE (13), PDB_LAYER (14), PDB_CHANNEL (15), PDB_DRAWABLE (16), PDB_SELECTION (17), PDB_BOUNDARY (18), PDB_PATH (19), PDB_STATUS (20) }"
+literal|"the type of argument { PDB_INT32 (0), PDB_INT16 (1), PDB_INT8 (2), PDB_FLOAT (3), PDB_STRING (4), PDB_INT32ARRAY (5), PDB_INT16ARRAY (6), PDB_INT8ARRAY (7), PDB_FLOATARRAY (8), PDB_STRINGARRAY (9), PDB_COLOR (10), PDB_REGION (11), PDB_DISPLAY (12), PDB_IMAGE (13), PDB_LAYER (14), PDB_CHANNEL (15), PDB_DRAWABLE (16), PDB_SELECTION (17), PDB_BOUNDARY (18), PDB_PATH (19), PDB_PARASITE (20), PDB_STATUS (21) }"
 block|}
 block|,
 block|{
@@ -827,7 +835,7 @@ name|PDB_INT32
 block|,
 literal|"val_type"
 block|,
-literal|"the type of return value { PDB_INT32 (0), PDB_INT16 (1), PDB_INT8 (2), PDB_FLOAT (3), PDB_STRING (4), PDB_INT32ARRAY (5), PDB_INT16ARRAY (6), PDB_INT8ARRAY (7), PDB_FLOATARRAY (8), PDB_STRINGARRAY (9), PDB_COLOR (10), PDB_REGION (11), PDB_DISPLAY (12), PDB_IMAGE (13), PDB_LAYER (14), PDB_CHANNEL (15), PDB_DRAWABLE (16), PDB_SELECTION (17), PDB_BOUNDARY (18), PDB_PATH (19), PDB_STATUS (20) }"
+literal|"the type of return value { PDB_INT32 (0), PDB_INT16 (1), PDB_INT8 (2), PDB_FLOAT (3), PDB_STRING (4), PDB_INT32ARRAY (5), PDB_INT16ARRAY (6), PDB_INT8ARRAY (7), PDB_FLOATARRAY (8), PDB_STRINGARRAY (9), PDB_COLOR (10), PDB_REGION (11), PDB_DISPLAY (12), PDB_IMAGE (13), PDB_LAYER (14), PDB_CHANNEL (15), PDB_DRAWABLE (16), PDB_SELECTION (17), PDB_BOUNDARY (18), PDB_PATH (19), PDB_PARASITE (20), PDB_STATUS (21) }"
 block|}
 block|,
 block|{
@@ -2226,6 +2234,47 @@ case|:
 case|case
 name|PDB_PATH
 case|:
+name|params
+index|[
+name|i
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_int
+operator|=
+operator|(
+name|gint32
+operator|)
+name|va_arg
+argument_list|(
+name|args
+argument_list|,
+name|int
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PDB_PARASITE
+case|:
+name|params
+index|[
+name|i
+index|]
+operator|.
+name|value
+operator|.
+name|pdb_pointer
+operator|=
+name|va_arg
+argument_list|(
+name|args
+argument_list|,
+name|void
+operator|*
+argument_list|)
+expr_stmt|;
+break|break;
 case|case
 name|PDB_STATUS
 case|:
@@ -2613,6 +2662,9 @@ name|PDB_BOUNDARY
 case|:
 case|case
 name|PDB_PATH
+case|:
+case|case
+name|PDB_PARASITE
 case|:
 case|case
 name|PDB_STATUS

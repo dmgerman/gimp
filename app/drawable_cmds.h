@@ -162,6 +162,27 @@ name|drawable_get_pixel_proc
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gimp_drawable_find_parasite_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gimp_drawable_attach_parasite_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gimp_drawable_detach_parasite_proc
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif

@@ -209,6 +209,12 @@ modifier|*
 name|selection_mask
 decl_stmt|;
 comment|/*  selection mask channel       */
+DECL|member|parasites
+name|GSList
+modifier|*
+name|parasites
+decl_stmt|;
+comment|/*  Plug-in parasite data        */
 DECL|member|visible
 name|int
 name|visible

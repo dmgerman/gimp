@@ -101,6 +101,12 @@ name|int
 name|has_alpha
 decl_stmt|;
 comment|/* drawable has alpha */
+DECL|member|parasites
+name|GSList
+modifier|*
+name|parasites
+decl_stmt|;
+comment|/* Plug-in parasite data   */
 comment|/*  Preview variables  */
 DECL|member|preview
 name|TempBuf

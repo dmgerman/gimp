@@ -3408,6 +3408,12 @@ return|return
 literal|"PATH"
 return|;
 case|case
+name|PARAM_PARASITE
+case|:
+return|return
+literal|"PARASITE"
+return|;
+case|case
 name|PARAM_STATUS
 case|:
 return|return

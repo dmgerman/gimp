@@ -403,6 +403,27 @@ name|gimp_image_get_guide_position_proc
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gimp_image_find_parasite_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gimp_image_attach_parasite_proc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|ProcRecord
+name|gimp_image_detach_parasite_proc
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif
