@@ -145,12 +145,6 @@ modifier|*
 name|temp_proc_defs
 decl_stmt|;
 comment|/*  Temporary procedures                    */
-DECL|member|current_temp_proc
-name|ProcRecord
-modifier|*
-name|current_temp_proc
-decl_stmt|;
-comment|/*  The temp proc the plug-in is busy with  */
 DECL|member|ext_main_loop
 name|GMainLoop
 modifier|*
@@ -169,6 +163,12 @@ modifier|*
 name|temp_main_loops
 decl_stmt|;
 comment|/*  for waiting for temp_proc_returns       */
+DECL|member|temp_proc_recs
+name|GList
+modifier|*
+name|temp_proc_recs
+decl_stmt|;
+comment|/*  The temp procs the plug-in is busy with */
 DECL|member|return_vals
 name|Argument
 modifier|*

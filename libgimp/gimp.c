@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acc42570103
+DECL|enum|__anon2c66dcab0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -5700,6 +5700,14 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_define
+DECL|macro|ENABLE_TEMP_RETURN
+define|#
+directive|define
+name|ENABLE_TEMP_RETURN
+value|1
+end_define
 
 begin_function
 specifier|static

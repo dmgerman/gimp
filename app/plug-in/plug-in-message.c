@@ -105,6 +105,14 @@ directive|include
 file|"plug-in-shm.h"
 end_include
 
+begin_define
+DECL|macro|ENABLE_TEMP_RETURN
+define|#
+directive|define
+name|ENABLE_TEMP_RETURN
+value|1
+end_define
+
 begin_typedef
 DECL|typedef|PlugInBlocked
 typedef|typedef

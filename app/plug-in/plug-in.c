@@ -1012,12 +1012,6 @@ name|NULL
 expr_stmt|;
 name|plug_in
 operator|->
-name|current_temp_proc
-operator|=
-name|NULL
-expr_stmt|;
-name|plug_in
-operator|->
 name|ext_main_loop
 operator|=
 name|NULL
@@ -1031,6 +1025,12 @@ expr_stmt|;
 name|plug_in
 operator|->
 name|temp_main_loops
+operator|=
+name|NULL
+expr_stmt|;
+name|plug_in
+operator|->
+name|temp_proc_recs
 operator|=
 name|NULL
 expr_stmt|;
@@ -3364,7 +3364,7 @@ if|if
 condition|(
 name|plug_in
 operator|->
-name|current_temp_proc
+name|temp_proc_recs
 condition|)
 name|proc_def
 operator|=
@@ -3376,7 +3376,9 @@ name|gimp
 argument_list|,
 name|plug_in
 operator|->
-name|current_temp_proc
+name|temp_proc_recs
+operator|->
+name|data
 argument_list|)
 expr_stmt|;
 elseif|else
