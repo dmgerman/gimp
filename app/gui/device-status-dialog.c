@@ -906,10 +906,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|devices_init (void)
+DECL|function|devices_init (Gimp * gimp)
 name|devices_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|GdkDevice
@@ -924,6 +926,14 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|current_device
 operator|=
 name|gdk_device_get_core_pointer
@@ -1031,7 +1041,7 @@ name|context
 operator|=
 name|gimp_create_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|device_info
 operator|->
@@ -1055,7 +1065,7 @@ name|gimp_context_copy_properties
 argument_list|(
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 argument_list|,
 name|device_info
@@ -1091,10 +1101,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|devices_restore (void)
+DECL|function|devices_restore (Gimp * gimp)
 name|devices_restore
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 block|{
 name|DeviceInfo
@@ -1109,6 +1121,14 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Augment with information from rc file */
 name|filename
 operator|=
@@ -1149,7 +1169,7 @@ name|context
 operator|=
 name|gimp_get_user_context
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_context_copy_properties

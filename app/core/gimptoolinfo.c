@@ -968,6 +968,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+operator|!
+name|stock_pixbuf
+operator|||
 name|GDK_IS_PIXBUF
 argument_list|(
 name|stock_pixbuf
@@ -1103,6 +1106,10 @@ name|stock_pixbuf
 operator|=
 name|stock_pixbuf
 expr_stmt|;
+if|if
+condition|(
+name|stock_pixbuf
+condition|)
 name|g_object_ref
 argument_list|(
 name|G_OBJECT

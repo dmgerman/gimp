@@ -1930,10 +1930,19 @@ comment|/* add the plug-in procs to the procedure database */
 name|plug_in_add_to_db
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+condition|)
+block|{
 comment|/* make the menu */
 name|plug_in_make_menu
 argument_list|()
 expr_stmt|;
+block|}
 comment|/* run the available extensions */
 if|if
 condition|(
@@ -5452,8 +5461,10 @@ operator|->
 name|recurse
 condition|)
 block|{
-name|gtk_main_quit
-argument_list|()
+name|gimp_main_loop_quit
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|plug_in
 operator|->
@@ -5914,9 +5925,13 @@ operator|==
 literal|0
 operator|)
 condition|)
-name|gtk_main
-argument_list|()
+block|{
+name|gimp_main_loop
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|plug_in
@@ -5924,8 +5939,10 @@ operator|->
 name|recurse
 condition|)
 block|{
-name|gtk_main
-argument_list|()
+name|gimp_main_loop
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 name|return_vals
 operator|=
@@ -6674,8 +6691,10 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|gtk_main_quit
-argument_list|()
+name|gimp_main_loop_quit
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -6703,8 +6722,10 @@ break|break;
 case|case
 name|GP_EXTENSION_ACK
 case|:
-name|gtk_main_quit
-argument_list|()
+name|gimp_main_loop_quit
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
@@ -9328,6 +9349,14 @@ argument_list|,
 name|proc
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|the_gimp
+operator|->
+name|no_interface
+condition|)
+block|{
 comment|/*  If there is a menu path specified, create a menu entry  */
 if|if
 condition|(
@@ -9351,7 +9380,7 @@ name|proc_def
 operator|=
 name|proc_def
 expr_stmt|;
-comment|/*  Below we use a hack to allow translations of Script-Fu paths.            *  Would be nice if we could solve this properly, but I haven't             *  found a way yet ...  (Sven) 	   */
+comment|/*  Below we use a hack to allow translations of Script-Fu paths.                *  Would be nice if we could solve this properly, but I haven't                 *  found a way yet ...  (Sven)                */
 if|if
 condition|(
 name|plug_in_def
@@ -9428,6 +9457,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 block|}
@@ -12586,6 +12616,14 @@ modifier|*
 name|proc_def
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|the_gimp
+operator|->
+name|no_interface
+condition|)
+block|{
 comment|/*  Destroy the menu item  */
 if|if
 condition|(
@@ -12600,6 +12638,7 @@ operator|->
 name|menu_path
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  Unregister the procedural database entry  */
 name|procedural_db_unregister
 argument_list|(

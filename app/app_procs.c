@@ -398,15 +398,9 @@ operator|!
 name|no_interface
 condition|)
 block|{
-name|gui_libs_init
+name|gui_themes_init
 argument_list|(
 name|the_gimp
-argument_list|,
-operator|&
-name|gimp_argc
-argument_list|,
-operator|&
-name|gimp_argv
 argument_list|)
 expr_stmt|;
 name|get_standard_colormaps
@@ -436,17 +430,20 @@ argument_list|,
 name|app_init_update_status
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|no_interface
+condition|)
+block|{
 name|tool_manager_init
 argument_list|(
 name|the_gimp
 argument_list|)
 expr_stmt|;
-comment|/*  Now we are ready to draw the splash-screen-image    *  to the start-up window    */
+comment|/*  Now we are ready to draw the splash-screen-image        *  to the start-up window        */
 if|if
 condition|(
-operator|!
-name|no_interface
-operator|&&
 operator|!
 name|no_splash
 operator|&&
@@ -457,6 +454,7 @@ block|{
 name|splash_logo_load
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 comment|/*  Load all data files    */
 name|gimp_restore
@@ -474,15 +472,6 @@ operator|!
 name|no_interface
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DISPLAY_FILTERS
-name|color_display_init
-argument_list|()
-expr_stmt|;
-endif|#
-directive|endif
-comment|/* DISPLAY_FILTERS */
 name|gui_init
 argument_list|(
 name|the_gimp
@@ -587,8 +576,10 @@ name|the_gimp
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_main
-argument_list|()
+name|gimp_main_loop
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -703,17 +694,17 @@ block|}
 name|plug_in_kill
 argument_list|()
 expr_stmt|;
-name|tool_manager_exit
-argument_list|(
-name|the_gimp
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
 name|no_interface
 condition|)
 block|{
+name|tool_manager_exit
+argument_list|(
+name|the_gimp
+argument_list|)
+expr_stmt|;
 name|gui_exit
 argument_list|(
 name|the_gimp
@@ -740,8 +731,8 @@ expr_stmt|;
 name|base_exit
 argument_list|()
 expr_stmt|;
-comment|/*  There used to be gtk_main_quit() here, but there's a chance     *  that gtk_main() was never called before we reach this point. --Sven      */
-name|gtk_exit
+comment|/*  There used to be foo_main_quit() here, but there's a chance     *  that foo_main() was never called before we reach this point. --Sven      */
+name|exit
 argument_list|(
 literal|0
 argument_list|)

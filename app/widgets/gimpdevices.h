@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d813bf0103
+DECL|enum|__anon29d7acc60103
 block|{
 DECL|enumerator|DEVICE_MODE
 name|DEVICE_MODE
@@ -97,7 +97,9 @@ begin_function_decl
 name|void
 name|devices_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -110,7 +112,9 @@ begin_function_decl
 name|void
 name|devices_restore
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
