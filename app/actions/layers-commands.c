@@ -2104,7 +2104,7 @@ name|GTK_STOCK_NEW
 argument_list|,
 name|_
 argument_list|(
-literal|"New Layer Options"
+literal|"Create a New Layer"
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
@@ -3552,6 +3552,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|mask
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_image_flush
 argument_list|(
 name|gimage
@@ -3637,7 +3645,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Mask"
+literal|"Add Layer Mask"
 argument_list|)
 argument_list|,
 literal|"add_mask_options"
@@ -3646,7 +3654,7 @@ name|GTK_STOCK_ADD
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Layer Mask Options"
+literal|"Add a Mask to the Layer"
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
