@@ -87,37 +87,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/* .xvpics thumbnail stuff  */
-end_comment
-
-begin_function_decl
-name|guchar
-modifier|*
-name|file_utils_readXVThumb
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|fnam
-parameter_list|,
-name|gint
-modifier|*
-name|w
-parameter_list|,
-name|gint
-modifier|*
-name|h
-parameter_list|,
-name|gchar
-modifier|*
-modifier|*
-name|imginfo
-comment|/* caller frees if != NULL */
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
