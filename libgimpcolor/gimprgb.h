@@ -16,13 +16,30 @@ directive|define
 name|__GIMP_RGB_H__
 end_define
 
-begin_macro
+begin_decl_stmt
 name|G_BEGIN_DECLS
-end_macro
-
-begin_comment
 comment|/* For information look into the C source or the html documentation */
-end_comment
+DECL|macro|GIMP_TYPE_RGB
+define|#
+directive|define
+name|GIMP_TYPE_RGB
+value|(gimp_rgb_get_type ())
+DECL|macro|GIMP_VALUE_HOLDS_RGB (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_RGB
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_RGB))
+name|GType
+name|gimp_rgb_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  RGB and RGBA color types and operations taken from LibGCK  */
@@ -31,7 +48,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f162fc0103
+DECL|enum|__anon29bbe9460103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE

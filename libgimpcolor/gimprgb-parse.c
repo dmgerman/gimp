@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -139,7 +139,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e56cfd0108
+DECL|struct|__anon28c01a270108
 block|{
 DECL|member|name
 specifier|const
