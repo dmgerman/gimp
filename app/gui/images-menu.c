@@ -86,12 +86,12 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_Raise Displays"
+literal|"/_Raise Views"
 argument_list|)
 block|,
 literal|""
 block|,
-name|images_raise_displays_cmd_callback
+name|images_raise_views_cmd_callback
 block|,
 literal|0
 block|,
@@ -111,12 +111,12 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/_New Display"
+literal|"/_New View"
 argument_list|)
 block|,
 literal|""
 block|,
-name|images_new_display_cmd_callback
+name|images_new_view_cmd_callback
 block|,
 literal|0
 block|,
@@ -223,14 +223,14 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Raise Displays"
+literal|"/Raise Viewss"
 argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/New Display"
+literal|"/New View"
 argument_list|,
 name|image
 argument_list|)

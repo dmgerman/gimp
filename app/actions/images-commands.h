@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|images_raise_displays_cmd_callback
+name|images_raise_views_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -32,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|images_new_display_cmd_callback
+name|images_new_view_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

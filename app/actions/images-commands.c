@@ -39,8 +39,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|images_raise_displays_cmd_callback (GtkWidget * widget,gpointer data)
-name|images_raise_displays_cmd_callback
+DECL|function|images_raise_views_cmd_callback (GtkWidget * widget,gpointer data)
+name|images_raise_views_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -53,14 +53,12 @@ block|{
 name|GimpImageView
 modifier|*
 name|view
-decl_stmt|;
-name|view
-operator|=
+init|=
 name|GIMP_IMAGE_VIEW
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_button_clicked
 argument_list|(
 name|GTK_BUTTON
@@ -76,8 +74,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|images_new_display_cmd_callback (GtkWidget * widget,gpointer data)
-name|images_new_display_cmd_callback
+DECL|function|images_new_view_cmd_callback (GtkWidget * widget,gpointer data)
+name|images_new_view_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -90,14 +88,12 @@ block|{
 name|GimpImageView
 modifier|*
 name|view
-decl_stmt|;
-name|view
-operator|=
+init|=
 name|GIMP_IMAGE_VIEW
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_button_clicked
 argument_list|(
 name|GTK_BUTTON
@@ -127,14 +123,12 @@ block|{
 name|GimpImageView
 modifier|*
 name|view
-decl_stmt|;
-name|view
-operator|=
+init|=
 name|GIMP_IMAGE_VIEW
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_button_clicked
 argument_list|(
 name|GTK_BUTTON
