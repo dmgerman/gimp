@@ -286,7 +286,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21b0700103
+DECL|enum|__anon29a42fe10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -302,7 +302,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21b0700203
+DECL|enum|__anon29a42fe10203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4575,6 +4575,34 @@ literal|"unit"
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|GimpUnit
+DECL|function|gimp_display_shell_get_unit (GimpDisplayShell * shell)
+name|gimp_display_shell_get_unit
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|GIMP_UNIT_PIXEL
+argument_list|)
+expr_stmt|;
+return|return
+name|shell
+operator|->
+name|unit
+return|;
 block|}
 end_function
 

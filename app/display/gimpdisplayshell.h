@@ -783,6 +783,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpUnit
+name|gimp_display_shell_get_unit
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_display_shell_snap_coords
 parameter_list|(
