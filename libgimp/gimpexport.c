@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf53fd60108
+DECL|struct|__anon2a31d4060108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -629,7 +629,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Flatten"
+literal|"Flatten Image"
 argument_list|)
 block|}
 block|,
