@@ -101,6 +101,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpviewabledialog.h"
 end_include
 
@@ -114,6 +120,12 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gui/dialogs.h"
 end_include
 
 begin_include
@@ -1520,6 +1532,17 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_factory_add_foreign
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-measure-tool-dialog"
+argument_list|,
+name|measure_tool_info
+operator|->
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
