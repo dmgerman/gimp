@@ -953,24 +953,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|guchar
-modifier|*
-name|gimp_drawable_get_color_at
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

@@ -487,6 +487,24 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  interfaces  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpPickable
+typedef|typedef
+name|struct
+name|_GimpPickable
+name|GimpPickable
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpPickable
+comment|/* dummy typedef */
+end_comment
+
+begin_comment
 comment|/*  non-object types  */
 end_comment
 

@@ -301,24 +301,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|guchar
-modifier|*
-name|gimp_projection_get_color_at
-parameter_list|(
-name|GimpProjection
-modifier|*
-name|proj
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_projection_flush
 parameter_list|(

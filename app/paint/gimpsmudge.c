@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsmudge.h"
 end_include
 
@@ -779,9 +785,12 @@ name|fill
 decl_stmt|;
 name|fill
 operator|=
-name|gimp_drawable_get_color_at
+name|gimp_pickable_get_color_at
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|CLAMP
 argument_list|(

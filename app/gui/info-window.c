@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpprojection.h"
+file|"core/gimppickable.h"
 end_include
 
 begin_include
@@ -1968,13 +1968,16 @@ block|}
 comment|/* fill in color information */
 name|color
 operator|=
-name|gimp_projection_get_color_at
+name|gimp_pickable_get_color_at
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 operator|->
 name|projection
+argument_list|)
 argument_list|,
 name|tx
 argument_list|,
@@ -2028,13 +2031,16 @@ name|rgb
 decl_stmt|;
 name|sample_type
 operator|=
-name|gimp_projection_get_image_type
+name|gimp_pickable_get_image_type
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 operator|->
 name|projection
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_rgba_set_uchar

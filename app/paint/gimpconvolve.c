@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconvolve.h"
 end_include
 
@@ -138,7 +144,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5fb3890103
+DECL|enum|__anon2781183f0103
 block|{
 DECL|enumerator|CONVOLVE_NCLIP
 name|CONVOLVE_NCLIP
@@ -1403,9 +1409,12 @@ name|fillcolor
 decl_stmt|;
 name|fillcolor
 operator|=
-name|gimp_drawable_get_color_at
+name|gimp_pickable_get_color_at
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 name|CLAMP
 argument_list|(
