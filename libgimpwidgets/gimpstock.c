@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"themes/Default/gimp-stock-pixbufs.h"
+file|"themes/Default/images/gimp-stock-pixbufs.h"
 end_include
 
 begin_include
@@ -992,7 +992,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b47b230108
+DECL|struct|__anon2aa539650108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1049,7 +1049,7 @@ block|,
 block|{
 name|GIMP_STOCK_RESET
 block|,
-name|stock_button_refresh
+name|stock_button_reset
 block|}
 block|,
 block|{
@@ -1364,7 +1364,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29b47b230208
+DECL|struct|__anon2aa539650208
 block|{
 DECL|member|stock_id
 specifier|const

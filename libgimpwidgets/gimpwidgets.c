@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"themes/Default/gimp-wilber-pixbufs.h"
+file|"themes/Default/images/gimp-wilber-pixbufs.h"
 end_include
 
 begin_include
@@ -2677,7 +2677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd66ebc0108
+DECL|struct|__anon2bcd9a640108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -3557,7 +3557,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd66ebc0208
+DECL|struct|__anon2bcd9a640208
 block|{
 DECL|member|adjustment
 name|GtkAdjustment
