@@ -4653,7 +4653,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon275d717a0103
+DECL|enum|__anon2b9cb2e30103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -7279,7 +7279,7 @@ argument_list|)
 expr_stmt|;
 name|pixmap_widget
 operator|=
-name|gtk_pixmap_new
+name|gtk_image_new_from_pixmap
 argument_list|(
 name|pixmap
 argument_list|,
@@ -7384,7 +7384,7 @@ argument_list|)
 expr_stmt|;
 name|pixmap_widget
 operator|=
-name|gtk_pixmap_new
+name|gtk_image_new_from_pixmap
 argument_list|(
 name|pixmap
 argument_list|,
@@ -7492,7 +7492,7 @@ argument_list|)
 expr_stmt|;
 name|pixmap_widget
 operator|=
-name|gtk_pixmap_new
+name|gtk_image_new_from_pixmap
 argument_list|(
 name|pixmap
 argument_list|,
