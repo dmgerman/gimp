@@ -7951,7 +7951,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_PASTE
+name|GTK_STOCK_PASTE
 block|}
 block|,
 name|NULL

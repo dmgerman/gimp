@@ -489,7 +489,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-name|GIMP_STOCK_PASTE
+name|GTK_STOCK_PASTE
 argument_list|,
 name|_
 argument_list|(

@@ -197,7 +197,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c08090c0103
+DECL|enum|__anon28b3ca0c0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -13606,7 +13606,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c08090c0208
+DECL|struct|__anon28b3ca0c0208
 block|{
 DECL|member|label
 name|gchar
@@ -13786,7 +13786,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c08090c0308
+DECL|struct|__anon28b3ca0c0308
 block|{
 DECL|member|tree_label
 name|gchar
@@ -13955,7 +13955,7 @@ argument_list|(
 literal|"Tool Plug-In Folders"
 argument_list|)
 block|,
-literal|"folders.png"
+literal|"folders-tool-plug-ins.png"
 block|,
 literal|"dialogs/preferences/folders.html#tool_plug_ins"
 block|,
@@ -13979,7 +13979,7 @@ argument_list|(
 literal|"Module Folders"
 argument_list|)
 block|,
-literal|"folders.png"
+literal|"folders-modules.png"
 block|,
 literal|"dialogs/preferences/folders.html#modules"
 block|,
@@ -14003,7 +14003,7 @@ argument_list|(
 literal|"Theme Folders"
 argument_list|)
 block|,
-literal|"folders.png"
+literal|"folders-themes.png"
 block|,
 literal|"dialogs/preferences/folders.html#themes"
 block|,

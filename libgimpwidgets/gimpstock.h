@@ -39,11 +39,6 @@ define|#
 directive|define
 name|GIMP_STOCK_LINKED
 value|"gimp-linked"
-DECL|macro|GIMP_STOCK_PASTE
-define|#
-directive|define
-name|GIMP_STOCK_PASTE
-value|"gimp-paste"
 DECL|macro|GIMP_STOCK_PASTE_AS_NEW
 define|#
 directive|define
