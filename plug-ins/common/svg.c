@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29149a990108
+DECL|struct|__anon2796c5700108
 block|{
 DECL|member|scale
 name|gdouble
@@ -88,7 +88,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29149a990208
+DECL|struct|__anon2796c5700208
 block|{
 DECL|member|run
 name|gboolean
@@ -695,6 +695,15 @@ condition|)
 return|return
 name|NULL
 return|;
+name|g_io_channel_set_encoding
+argument_list|(
+name|io
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|handle
 operator|=
 name|rsvg_handle_new
@@ -891,6 +900,7 @@ operator|!
 name|pixbuf
 condition|)
 block|{
+comment|/*  Do not rely on librsvg setting GError on failure!  */
 name|g_message
 argument_list|(
 name|_
@@ -902,8 +912,12 @@ argument_list|,
 name|filename
 argument_list|,
 name|error
+condition|?
+name|error
 operator|->
 name|message
+else|:
+literal|"unknown reason"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
