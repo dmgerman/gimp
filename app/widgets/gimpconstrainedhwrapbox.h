@@ -100,6 +100,14 @@ DECL|member|parent_instance
 name|GtkHWrapBox
 name|parent_instance
 decl_stmt|;
+DECL|member|rows
+name|gint
+name|rows
+decl_stmt|;
+DECL|member|columns
+name|gint
+name|columns
+decl_stmt|;
 block|}
 struct|;
 DECL|struct|_GimpConstrainedHWrapBoxClass
