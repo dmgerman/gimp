@@ -262,6 +262,10 @@ name|tile
 argument_list|)
 expr_stmt|;
 block|}
+name|tile_active_count
+operator|++
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|tile
@@ -276,10 +280,6 @@ name|tile_swap_in
 argument_list|(
 name|tile
 argument_list|)
-expr_stmt|;
-block|}
-name|tile_active_count
-operator|++
 expr_stmt|;
 block|}
 name|TILE_MUTEX_UNLOCK

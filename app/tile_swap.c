@@ -1669,7 +1669,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* NOTE: if you change this function, check to see if your changes  * apply to tile_swap_in_attempt() near the end of the file.  The  * difference is that this version makes guarantees about what it  * provides, but tile_swap_in_attempt() just tries and gives up if  * anything goes wrong.  *  * I'm not sure that it is worthwhile to try to pull out common  * bits; I think the two functions are (at least for now) different  * enough to keep as two functions.  */
+comment|/* NOTE: if you change this function, check to see if your changes  * apply to tile_swap_in_attempt() near the end of the file.  The  * difference is that this version makes guarantees about what it  * provides, but tile_swap_in_attempt() just tries and gives up if  * anything goes wrong.  *  * I'm not sure that it is worthwhile to try to pull out common  * bits; I think the two functions are (at least for now) different  * enough to keep as two functions.  *  * N.B. the mutex on the tile must already have been locked on entry  * to this function.  DO NOT LOCK IT HERE.  */
 end_comment
 
 begin_function
@@ -1707,11 +1707,6 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-name|TILE_MUTEX_LOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|tile
@@ -1719,11 +1714,6 @@ operator|->
 name|data
 condition|)
 block|{
-name|TILE_MUTEX_UNLOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 return|return;
 block|}
 if|if
@@ -1892,12 +1882,6 @@ name|bytes
 expr_stmt|;
 comment|/*  Do not delete the swap from the file  */
 comment|/*  tile_swap_default_delete (def_swap_file, fd, tile);  */
-comment|/* FIXME: can this be moved upwards? */
-name|TILE_MUTEX_UNLOCK
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 name|read_err_msg
 operator|=
 name|seek_err_msg
