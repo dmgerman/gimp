@@ -108,6 +108,13 @@ name|GimpText
 modifier|*
 name|text
 decl_stmt|;
+DECL|member|text_parasite
+specifier|const
+name|gchar
+modifier|*
+name|text_parasite
+decl_stmt|;
+comment|/*  parasite name that this text was set from,                                  *  and that should be removed when the text                                  *  is changed.                                  */
 DECL|member|idle_render_id
 name|guint
 name|idle_render_id
@@ -132,10 +139,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|/*  function declarations  */
-end_comment
 
 begin_decl_stmt
 name|GType
@@ -164,22 +167,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
-name|gimp_text_layer_from_layer
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|,
-name|GimpText
-modifier|*
-name|text
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpText
 modifier|*
 name|gimp_text_layer_get_text
@@ -187,6 +174,21 @@ parameter_list|(
 name|GimpTextLayer
 modifier|*
 name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_text_layer_set_text
+parameter_list|(
+name|GimpTextLayer
+modifier|*
+name|layer
+parameter_list|,
+name|GimpText
+modifier|*
+name|text
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -187,13 +187,18 @@ end_function
 begin_function
 name|GimpText
 modifier|*
-DECL|function|gimp_text_from_parasite (const GimpParasite * parasite)
+DECL|function|gimp_text_from_parasite (const GimpParasite * parasite,GError ** error)
 name|gimp_text_from_parasite
 parameter_list|(
 specifier|const
 name|GimpParasite
 modifier|*
 name|parasite
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpText
@@ -205,19 +210,13 @@ name|gchar
 modifier|*
 name|str
 decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|parasite
 operator|!=
 name|NULL
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -235,7 +234,21 @@ argument_list|)
 operator|==
 literal|0
 argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
 name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|str
@@ -251,7 +264,7 @@ name|str
 operator|!=
 name|NULL
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|text
@@ -263,9 +276,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
 name|gimp_config_deserialize_string
 argument_list|(
 name|GIMP_CONFIG
@@ -282,26 +292,9 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-operator|&
-name|error
-argument_list|)
-condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"Failed to deserialize text parasite: %s"
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_error_free
-argument_list|(
 name|error
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|text
 return|;
@@ -342,7 +335,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2991ab150103
+DECL|enum|__anon29fbc0280103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
