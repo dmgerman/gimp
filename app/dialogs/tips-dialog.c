@@ -314,11 +314,6 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -421,6 +416,11 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 block|}
 name|tips_count
 operator|=
