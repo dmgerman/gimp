@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"transform_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"paths_dialogP.h"
 end_include
 
@@ -134,11 +128,11 @@ name|ToolOptions
 name|tool_options
 decl_stmt|;
 DECL|member|type
-name|ToolType
+name|InternalOrientationType
 name|type
 decl_stmt|;
 DECL|member|type_d
-name|ToolType
+name|InternalOrientationType
 name|type_d
 decl_stmt|;
 DECL|member|type_w
@@ -265,16 +259,11 @@ decl_stmt|;
 comment|/*  the new flip tool options structure  */
 name|options
 operator|=
-operator|(
-name|FlipOptions
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|FlipOptions
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tool_options_init
@@ -478,9 +467,9 @@ block|}
 end_function
 
 begin_function
-name|void
+name|TileManager
 modifier|*
-DECL|function|flip_tool_transform (Tool * tool,gpointer gdisp_ptr,int state)
+DECL|function|flip_tool_transform (Tool * tool,gpointer gdisp_ptr,TransformState state)
 name|flip_tool_transform
 parameter_list|(
 name|Tool
@@ -490,7 +479,7 @@ parameter_list|,
 name|gpointer
 name|gdisp_ptr
 parameter_list|,
-name|int
+name|TransformState
 name|state
 parameter_list|)
 block|{
@@ -829,7 +818,7 @@ name|transform_core_new
 argument_list|(
 name|FLIP
 argument_list|,
-name|NON_INTERACTIVE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|private
@@ -924,7 +913,7 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 if|if

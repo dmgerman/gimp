@@ -5465,7 +5465,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gboolean
 name|new_layer
 decl_stmt|;
 name|drawable
@@ -7234,7 +7234,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gboolean
 name|new_layer
 decl_stmt|;
 name|double
@@ -8168,7 +8168,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gboolean
 name|new_layer
 decl_stmt|;
 name|double
@@ -8559,7 +8559,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gboolean
 name|new_layer
 decl_stmt|;
 name|double
@@ -9104,7 +9104,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gboolean
 name|new_layer
 decl_stmt|;
 name|double

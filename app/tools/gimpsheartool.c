@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -54,18 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"transform_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"transform_tool.h"
 end_include
 
@@ -85,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimpintl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmath.h"
 end_include
 
 begin_comment
@@ -154,7 +142,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-modifier|*
 name|shear_tool_recalc
 parameter_list|(
 name|Tool
@@ -202,8 +189,10 @@ name|shear_x_mag_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,16 +204,18 @@ name|shear_y_mag_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function
-name|void
+name|TileManager
 modifier|*
-DECL|function|shear_tool_transform (Tool * tool,gpointer gdisp_ptr,int state)
+DECL|function|shear_tool_transform (Tool * tool,gpointer gdisp_ptr,TransformState state)
 name|shear_tool_transform
 parameter_list|(
 name|Tool
@@ -234,7 +225,7 @@ parameter_list|,
 name|gpointer
 name|gdisp_ptr
 parameter_list|,
-name|int
+name|TransformState
 name|state
 parameter_list|)
 block|{
@@ -287,9 +278,9 @@ argument_list|(
 literal|"Shear Information"
 argument_list|)
 argument_list|,
-name|tools_help_func
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+literal|"tools/transform_shear.html"
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_spinbutton
@@ -410,30 +401,24 @@ argument_list|,
 name|gdisp_ptr
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
 name|shear_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|)
-operator|)
-return|;
+expr_stmt|;
 break|break;
 case|case
 name|RECALC
 case|:
-return|return
-operator|(
 name|shear_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|)
-operator|)
-return|;
+expr_stmt|;
 break|break;
 case|case
 name|FINISH
@@ -509,7 +494,7 @@ name|transform_core_new
 argument_list|(
 name|SHEAR
 argument_list|,
-name|INTERACTIVE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|private
@@ -616,12 +601,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|shear_x_mag_changed (GtkWidget * w,gpointer data)
+DECL|function|shear_x_mag_changed (GtkWidget * widget,gpointer data)
 name|shear_x_mag_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -639,7 +624,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|value
 decl_stmt|;
 name|tool
@@ -679,7 +664,7 @@ name|value
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 operator|->
 name|value
@@ -738,12 +723,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|shear_y_mag_changed (GtkWidget * w,gpointer data)
+DECL|function|shear_y_mag_changed (GtkWidget * widget,gpointer data)
 name|shear_y_mag_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -761,7 +746,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|int
+name|gint
 name|value
 decl_stmt|;
 name|tool
@@ -801,7 +786,7 @@ name|value
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 operator|->
 name|value
@@ -876,12 +861,12 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|int
+name|gint
 name|diffx
 decl_stmt|,
 name|diffy
 decl_stmt|;
-name|int
+name|gint
 name|dir
 decl_stmt|;
 name|transform_core
@@ -1164,8 +1149,8 @@ operator|+=
 name|diffy
 expr_stmt|;
 break|break;
-default|default :
-return|return;
+default|default:
+break|break;
 block|}
 block|}
 block|}
@@ -1174,7 +1159,6 @@ end_function
 begin_function
 specifier|static
 name|void
-modifier|*
 DECL|function|shear_tool_recalc (Tool * tool,void * gdisp_ptr)
 name|shear_tool_recalc
 parameter_list|(
@@ -1195,12 +1179,12 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|float
+name|gfloat
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|float
+name|gfloat
 name|cx
 decl_stmt|,
 name|cy
@@ -1379,7 +1363,7 @@ name|cy
 argument_list|)
 expr_stmt|;
 comment|/*  transform the bounding box  */
-name|transform_bounding_box
+name|transform_core_transform_bounding_box
 argument_list|(
 name|tool
 argument_list|)
@@ -1390,20 +1374,13 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
-return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|TileManager
 modifier|*
-DECL|function|shear_tool_shear (GimpImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,int interpolation,GimpMatrix matrix)
+DECL|function|shear_tool_shear (GimpImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix)
 name|shear_tool_shear
 parameter_list|(
 name|GimpImage
@@ -1422,20 +1399,20 @@ name|TileManager
 modifier|*
 name|float_tiles
 parameter_list|,
-name|int
+name|gboolean
 name|interpolation
 parameter_list|,
 name|GimpMatrix
 name|matrix
 parameter_list|)
 block|{
-name|void
-modifier|*
-name|ret
-decl_stmt|;
 name|gimp_progress
 modifier|*
 name|progress
+decl_stmt|;
+name|TileManager
+modifier|*
+name|ret
 decl_stmt|;
 name|progress
 operator|=

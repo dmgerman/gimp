@@ -236,7 +236,8 @@ specifier|static
 name|void
 name|transform_change_type
 parameter_list|(
-name|int
+name|ToolType
+name|new_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1825,10 +1826,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_change_type (gint new_type)
+DECL|function|transform_change_type (ToolType new_type)
 name|transform_change_type
 parameter_list|(
-name|gint
+name|ToolType
 name|new_type
 parameter_list|)
 block|{
@@ -1848,14 +1849,36 @@ name|type
 operator|=
 name|new_type
 expr_stmt|;
+if|if
+condition|(
+name|gimp_context_get_tool
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|)
+operator|!=
+name|new_type
+condition|)
 name|gimp_context_set_tool
 argument_list|(
 name|gimp_context_get_user
 argument_list|()
 argument_list|,
-name|transform_options
-operator|->
-name|type
+name|new_type
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_signal_emit_by_name
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimp_context_get_user
+argument_list|()
+argument_list|)
+argument_list|,
+literal|"tool_changed"
+argument_list|,
+name|new_type
 argument_list|)
 expr_stmt|;
 block|}
@@ -1863,7 +1886,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|transform_tool_smoothing (void)
 name|transform_tool_smoothing
 parameter_list|(
@@ -1888,7 +1911,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|transform_tool_showpath (void)
 name|transform_tool_showpath
 parameter_list|(
@@ -1913,7 +1936,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|transform_tool_clip (void)
 name|transform_tool_clip
 parameter_list|(
@@ -1938,7 +1961,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|transform_tool_direction (void)
 name|transform_tool_direction
 parameter_list|(
@@ -1963,7 +1986,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gint
 DECL|function|transform_tool_grid_size (void)
 name|transform_tool_grid_size
 parameter_list|(
@@ -1988,7 +2011,7 @@ block|}
 end_function
 
 begin_function
-name|int
+name|gboolean
 DECL|function|transform_tool_show_grid (void)
 name|transform_tool_show_grid
 parameter_list|(

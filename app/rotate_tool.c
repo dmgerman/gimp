@@ -54,18 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"transform_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"transform_tool.h"
 end_include
 
@@ -199,7 +187,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-modifier|*
 name|rotate_tool_recalc
 parameter_list|(
 name|Tool
@@ -271,9 +258,9 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|void
+name|TileManager
 modifier|*
-DECL|function|rotate_tool_transform (Tool * tool,gpointer gdisp_ptr,int state)
+DECL|function|rotate_tool_transform (Tool * tool,gpointer gdisp_ptr,TransformState state)
 name|rotate_tool_transform
 parameter_list|(
 name|Tool
@@ -283,7 +270,7 @@ parameter_list|,
 name|gpointer
 name|gdisp_ptr
 parameter_list|,
-name|int
+name|TransformState
 name|state
 parameter_list|)
 block|{
@@ -366,9 +353,9 @@ argument_list|(
 literal|"Rotation Information"
 argument_list|)
 argument_list|,
-name|tools_help_func
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+literal|"tools/transform_rotate.html"
 argument_list|)
 expr_stmt|;
 name|widget
@@ -833,26 +820,24 @@ argument_list|,
 name|gdisp_ptr
 argument_list|)
 expr_stmt|;
-return|return
 name|rotate_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|)
-return|;
+expr_stmt|;
 break|break;
 case|case
 name|RECALC
 case|:
-return|return
 name|rotate_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|)
-return|;
+expr_stmt|;
 break|break;
 case|case
 name|FINISH
@@ -915,9 +900,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_rotate_tool ()
+DECL|function|tools_new_rotate_tool (void)
 name|tools_new_rotate_tool
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -933,7 +920,7 @@ name|transform_core_new
 argument_list|(
 name|ROTATE
 argument_list|,
-name|INTERACTIVE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|private
@@ -1091,12 +1078,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rotate_angle_changed (GtkWidget * w,gpointer data)
+DECL|function|rotate_angle_changed (GtkWidget * widget,gpointer data)
 name|rotate_angle_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -1114,7 +1101,7 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|double
+name|gdouble
 name|value
 decl_stmt|;
 name|tool
@@ -1154,7 +1141,7 @@ name|value
 operator|=
 name|GTK_ADJUSTMENT
 argument_list|(
-name|w
+name|widget
 argument_list|)
 operator|->
 name|value
@@ -1217,12 +1204,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|rotate_center_changed (GtkWidget * w,gpointer data)
+DECL|function|rotate_center_changed (GtkWidget * widget,gpointer data)
 name|rotate_center_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -1240,10 +1227,10 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|int
+name|gint
 name|cx
 decl_stmt|;
-name|int
+name|gint
 name|cy
 decl_stmt|;
 name|tool
@@ -1289,7 +1276,7 @@ name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|0
@@ -1308,7 +1295,7 @@ name|gimp_size_entry_get_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|w
+name|widget
 argument_list|)
 argument_list|,
 literal|1
@@ -1397,19 +1384,19 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|double
+name|gdouble
 name|angle1
 decl_stmt|,
 name|angle2
 decl_stmt|,
 name|angle
 decl_stmt|;
-name|double
+name|gdouble
 name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-name|double
+name|gdouble
 name|x1
 decl_stmt|,
 name|y1
@@ -1690,7 +1677,6 @@ end_function
 begin_function
 specifier|static
 name|void
-modifier|*
 DECL|function|rotate_tool_recalc (Tool * tool,void * gdisp_ptr)
 name|rotate_tool_recalc
 parameter_list|(
@@ -1711,7 +1697,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|double
+name|gdouble
 name|cx
 decl_stmt|,
 name|cy
@@ -1797,7 +1783,7 @@ name|cy
 argument_list|)
 expr_stmt|;
 comment|/*  transform the bounding box  */
-name|transform_bounding_box
+name|transform_core_transform_bounding_box
 argument_list|(
 name|tool
 argument_list|)
@@ -1808,24 +1794,13 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
-return|;
 block|}
 end_function
 
-begin_comment
-comment|/*  This procedure returns a valid pointer to a new selection if the  *  requested angle is a multiple of 90 degrees...  */
-end_comment
-
 begin_function
-name|void
+name|TileManager
 modifier|*
-DECL|function|rotate_tool_rotate (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,double angle,TileManager * float_tiles,int interpolation,GimpMatrix matrix)
+DECL|function|rotate_tool_rotate (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,gdouble angle,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix)
 name|rotate_tool_rotate
 parameter_list|(
 name|GImage
@@ -1840,27 +1815,27 @@ name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|double
+name|gdouble
 name|angle
 parameter_list|,
 name|TileManager
 modifier|*
 name|float_tiles
 parameter_list|,
-name|int
+name|gboolean
 name|interpolation
 parameter_list|,
 name|GimpMatrix
 name|matrix
 parameter_list|)
 block|{
-name|void
-modifier|*
-name|ret
-decl_stmt|;
 name|gimp_progress
 modifier|*
 name|progress
+decl_stmt|;
+name|TileManager
+modifier|*
+name|ret
 decl_stmt|;
 name|progress
 operator|=

@@ -211,7 +211,7 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|int
+name|void
 name|transform_core_bounds
 parameter_list|(
 name|Tool
@@ -226,7 +226,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-modifier|*
 name|transform_core_recalc
 parameter_list|(
 name|Tool
@@ -253,18 +252,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|double
+name|gdouble
 name|cubic
 parameter_list|(
-name|double
+name|gdouble
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|,
-name|int
+name|gint
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -451,7 +450,7 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * t,int w,int h,guchar bg[MAX_CHANNELS])
+DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * t,gint w,gint h,guchar bg[MAX_CHANNELS])
 name|pixel_surround_init
 parameter_list|(
 name|PixelSurround
@@ -462,10 +461,10 @@ name|TileManager
 modifier|*
 name|t
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|,
-name|int
+name|gint
 name|h
 parameter_list|,
 name|guchar
@@ -475,7 +474,7 @@ name|MAX_CHANNELS
 index|]
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 for|for
@@ -587,32 +586,30 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|pixel_surround_lock (PixelSurround * ps,int x,int y)
+DECL|function|pixel_surround_lock (PixelSurround * ps,gint x,gint y)
 name|pixel_surround_lock
 parameter_list|(
 name|PixelSurround
 modifier|*
 name|ps
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|k
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|ptr
 decl_stmt|;
@@ -810,8 +807,7 @@ condition|(
 name|tile
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|buff
 init|=
@@ -1022,15 +1018,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_ok_callback (GtkWidget * w,gpointer client_data)
+DECL|function|transform_ok_callback (GtkWidget * widget,gpointer data)
 name|transform_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|Tool
@@ -1043,7 +1039,7 @@ operator|(
 name|Tool
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|transform_core_doit
 argument_list|(
@@ -1060,15 +1056,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_reset_callback (GtkWidget * w,gpointer client_data)
+DECL|function|transform_reset_callback (GtkWidget * widget,gpointer data)
 name|transform_reset_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
-name|client_data
+name|data
 parameter_list|)
 block|{
 name|Tool
@@ -1079,7 +1075,7 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|tool
@@ -1088,7 +1084,7 @@ operator|(
 name|Tool
 operator|*
 operator|)
-name|client_data
+name|data
 expr_stmt|;
 name|transform_core
 operator|=
@@ -1209,13 +1205,13 @@ name|gpointer
 name|gdisp_ptr
 parameter_list|)
 block|{
-name|TransformCore
-modifier|*
-name|transform_core
-decl_stmt|;
 name|GDisplay
 modifier|*
 name|gdisp
+decl_stmt|;
+name|TransformCore
+modifier|*
+name|transform_core
 decl_stmt|;
 name|Layer
 modifier|*
@@ -1225,21 +1221,21 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|int
+name|gint
 name|dist
 decl_stmt|;
-name|int
+name|gint
 name|closest_dist
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|off_x
 decl_stmt|,
 name|off_y
@@ -1619,7 +1615,7 @@ name|ACTIVE
 expr_stmt|;
 return|return;
 block|}
-comment|/* Initialisation stuff: if the cursor is clicked inside the current    * selection, show the bounding box and handles...  */
+comment|/*  Initialisation stuff: if the cursor is clicked inside the current    *  selection, show the bounding box and handles...    */
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -1762,7 +1758,7 @@ name|INACTIVE
 expr_stmt|;
 return|return;
 block|}
-comment|/* If the tool is already active, clear the current state              * and reset */
+comment|/*  If the tool is already active, clear the current state              *  and reset 	     */
 if|if
 condition|(
 name|tool
@@ -1832,7 +1828,7 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
-comment|/* Find the transform bounds for some tools (like scale, 	     * perspective) that actually need the bounds for 	     * initializing */
+comment|/*  Find the transform bounds for some tools (like scale, 	     *  perspective) that actually need the bounds for 	     *  initializing 	     */
 name|transform_core_bounds
 argument_list|(
 name|tool
@@ -1869,8 +1865,6 @@ expr_stmt|;
 if|if
 condition|(
 name|transform_info
-operator|!=
-name|NULL
 operator|&&
 operator|!
 name|transform_info_inited
@@ -1984,7 +1978,7 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gdisp
@@ -2201,10 +2195,6 @@ name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-name|void
-modifier|*
-name|pundo
-decl_stmt|;
 name|TransformCore
 modifier|*
 name|transform_core
@@ -2217,10 +2207,14 @@ name|TransformUndo
 modifier|*
 name|tu
 decl_stmt|;
-name|int
+name|void
+modifier|*
+name|pundo
+decl_stmt|;
+name|gboolean
 name|new_layer
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|x
@@ -2387,16 +2381,11 @@ expr_stmt|;
 comment|/*  create and initialize the transform_undo structure  */
 name|tu
 operator|=
-operator|(
-name|TransformUndo
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|TransformUndo
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|tu
@@ -2833,7 +2822,7 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
-name|int
+name|gboolean
 name|use_transform_cursor
 init|=
 name|FALSE
@@ -2843,7 +2832,7 @@ name|ctype
 init|=
 name|GDK_TOP_LEFT_ARROW
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -3092,15 +3081,13 @@ break|break;
 case|case
 name|RESUME
 case|:
-if|if
-condition|(
 name|transform_core_recalc
 argument_list|(
 name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|)
-condition|)
+expr_stmt|;
 name|draw_core_resume
 argument_list|(
 name|transform_core
@@ -3110,20 +3097,6 @@ argument_list|,
 name|tool
 argument_list|)
 expr_stmt|;
-else|else
-block|{
-name|info_dialog_popdown
-argument_list|(
-name|transform_info
-argument_list|)
-expr_stmt|;
-name|tool
-operator|->
-name|state
-operator|=
-name|INACTIVE
-expr_stmt|;
-block|}
 break|break;
 case|case
 name|HALT
@@ -3166,7 +3139,15 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|int
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|TransformCore
+modifier|*
+name|transform_core
+decl_stmt|;
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -3183,27 +3164,19 @@ name|x4
 decl_stmt|,
 name|y4
 decl_stmt|;
-name|TransformCore
-modifier|*
-name|transform_core
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
-decl_stmt|;
-name|int
+name|gint
 name|srw
 decl_stmt|,
 name|srh
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|k
 decl_stmt|,
 name|gci
 decl_stmt|;
-name|int
+name|gint
 name|xa
 decl_stmt|,
 name|ya
@@ -3942,13 +3915,13 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|transform_core_new (ToolType type,int interactive)
+DECL|function|transform_core_new (ToolType type,gint interactive)
 name|transform_core_new
 parameter_list|(
 name|ToolType
 name|type
 parameter_list|,
-name|int
+name|gint
 name|interactive
 parameter_list|)
 block|{
@@ -3960,7 +3933,7 @@ name|TransformCore
 modifier|*
 name|private
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|tool
@@ -4242,8 +4215,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|transform_bounding_box (Tool * tool)
-name|transform_bounding_box
+DECL|function|transform_core_transform_bounding_box (Tool * tool)
+name|transform_core_transform_bounding_box
 parameter_list|(
 name|Tool
 modifier|*
@@ -4254,17 +4227,13 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|k
 decl_stmt|;
-name|int
+name|gint
 name|gci
-decl_stmt|;
-name|GDisplay
-modifier|*
-name|gdisp
 decl_stmt|;
 name|transform_core
 operator|=
@@ -4507,16 +4476,6 @@ literal|2
 expr_stmt|;
 block|}
 block|}
-name|gdisp
-operator|=
-operator|(
-name|GDisplay
-operator|*
-operator|)
-name|tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
 block|}
 end_function
 
@@ -4623,7 +4582,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|void
 DECL|function|transform_core_bounds (Tool * tool,void * gdisp_ptr)
 name|transform_core_bounds
 parameter_list|(
@@ -4652,7 +4611,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|int
+name|gint
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -4838,17 +4797,16 @@ argument_list|(
 name|transform_core
 argument_list|)
 expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|transform_core_grid_density_changed ()
+DECL|function|transform_core_grid_density_changed (void)
 name|transform_core_grid_density_changed
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|TransformCore
 modifier|*
@@ -4887,7 +4845,7 @@ argument_list|(
 name|transform_core
 argument_list|)
 expr_stmt|;
-name|transform_bounding_box
+name|transform_core_transform_bounding_box
 argument_list|(
 name|active_tool
 argument_list|)
@@ -5047,12 +5005,12 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|gci
 decl_stmt|;
-name|double
+name|gdouble
 modifier|*
 name|coords
 decl_stmt|;
@@ -5133,12 +5091,10 @@ name|grid_coords
 operator|=
 name|coords
 operator|=
-operator|(
-name|double
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|double
+argument_list|,
 operator|(
 name|transform_core
 operator|->
@@ -5150,23 +5106,16 @@ name|ngy
 operator|)
 operator|*
 literal|4
-operator|*
-sizeof|sizeof
-argument_list|(
-name|double
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|transform_core
 operator|->
 name|tgrid_coords
 operator|=
-operator|(
-name|double
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|double
+argument_list|,
 operator|(
 name|transform_core
 operator|->
@@ -5178,11 +5127,6 @@ name|ngy
 operator|)
 operator|*
 literal|4
-operator|*
-sizeof|sizeof
-argument_list|(
-name|double
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gci
@@ -5375,7 +5319,6 @@ end_function
 begin_function
 specifier|static
 name|void
-modifier|*
 DECL|function|transform_core_recalc (Tool * tool,void * gdisp_ptr)
 name|transform_core_recalc
 parameter_list|(
@@ -5409,7 +5352,6 @@ argument_list|,
 name|gdisp_ptr
 argument_list|)
 expr_stmt|;
-return|return
 call|(
 modifier|*
 name|transform_core
@@ -5423,7 +5365,7 @@ name|gdisp_ptr
 argument_list|,
 name|RECALC
 argument_list|)
-return|;
+expr_stmt|;
 block|}
 end_function
 
@@ -5434,7 +5376,7 @@ end_comment
 begin_function
 name|TileManager
 modifier|*
-DECL|function|transform_core_do (GImage * gimage,GimpDrawable * drawable,TileManager * float_tiles,int interpolation,GimpMatrix matrix,progress_func_t progress_callback,gpointer progress_data)
+DECL|function|transform_core_do (GImage * gimage,GimpDrawable * drawable,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix,progress_func_t progress_callback,gpointer progress_data)
 name|transform_core_do
 parameter_list|(
 name|GImage
@@ -5449,7 +5391,7 @@ name|TileManager
 modifier|*
 name|float_tiles
 parameter_list|,
-name|int
+name|gboolean
 name|interpolation
 parameter_list|,
 name|GimpMatrix
@@ -5475,12 +5417,12 @@ decl_stmt|;
 name|GimpMatrix
 name|im
 decl_stmt|;
-name|int
+name|gint
 name|itx
 decl_stmt|,
 name|ity
 decl_stmt|;
-name|int
+name|gint
 name|tx1
 decl_stmt|,
 name|ty1
@@ -5489,30 +5431,30 @@ name|tx2
 decl_stmt|,
 name|ty2
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|int
+name|gint
 name|alpha
 decl_stmt|;
-name|int
+name|gint
 name|bytes
 decl_stmt|,
 name|b
 decl_stmt|;
-name|int
+name|gint
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|int
+name|gint
 name|sx
 decl_stmt|,
 name|sy
 decl_stmt|;
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -5521,21 +5463,21 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|double
+name|gdouble
 name|xinc
 decl_stmt|,
 name|yinc
 decl_stmt|,
 name|winc
 decl_stmt|;
-name|double
+name|gdouble
 name|tx
 decl_stmt|,
 name|ty
 decl_stmt|,
 name|tw
 decl_stmt|;
-name|double
+name|gdouble
 name|ttx
 init|=
 literal|0.0
@@ -5544,16 +5486,15 @@ name|tty
 init|=
 literal|0.0
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|d
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|src
 index|[
@@ -5567,22 +5508,21 @@ index|[
 literal|16
 index|]
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 name|bg_col
 index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|double
+name|gdouble
 name|a_val
 decl_stmt|,
 name|a_recip
 decl_stmt|;
-name|int
+name|gint
 name|newval
 decl_stmt|;
 name|PixelSurround
@@ -5790,7 +5730,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|double
+name|gdouble
 name|dx1
 decl_stmt|,
 name|dy1
@@ -5869,7 +5809,7 @@ argument_list|)
 expr_stmt|;
 name|tx1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|dx1
 argument_list|,
@@ -5878,7 +5818,7 @@ argument_list|)
 expr_stmt|;
 name|tx1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|tx1
 argument_list|,
@@ -5887,7 +5827,7 @@ argument_list|)
 expr_stmt|;
 name|tx1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|tx1
 argument_list|,
@@ -5896,7 +5836,7 @@ argument_list|)
 expr_stmt|;
 name|ty1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|dy1
 argument_list|,
@@ -5905,7 +5845,7 @@ argument_list|)
 expr_stmt|;
 name|ty1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ty1
 argument_list|,
@@ -5914,7 +5854,7 @@ argument_list|)
 expr_stmt|;
 name|ty1
 operator|=
-name|MINIMUM
+name|MIN
 argument_list|(
 name|ty1
 argument_list|,
@@ -5923,7 +5863,7 @@ argument_list|)
 expr_stmt|;
 name|tx2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|dx1
 argument_list|,
@@ -5932,7 +5872,7 @@ argument_list|)
 expr_stmt|;
 name|tx2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|tx2
 argument_list|,
@@ -5941,7 +5881,7 @@ argument_list|)
 expr_stmt|;
 name|tx2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|tx2
 argument_list|,
@@ -5950,7 +5890,7 @@ argument_list|)
 expr_stmt|;
 name|ty2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|dy1
 argument_list|,
@@ -5959,7 +5899,7 @@ argument_list|)
 expr_stmt|;
 name|ty2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ty2
 argument_list|,
@@ -5968,7 +5908,7 @@ argument_list|)
 expr_stmt|;
 name|ty2
 operator|=
-name|MAXIMUM
+name|MAX
 argument_list|(
 name|ty2
 argument_list|,
@@ -6120,13 +6060,10 @@ name|bpp
 expr_stmt|;
 name|dest
 operator|=
-operator|(
-name|unsigned
-name|char
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|bytes
@@ -6300,6 +6237,7 @@ name|tw
 operator|==
 literal|0.0
 condition|)
+block|{
 name|g_message
 argument_list|(
 name|_
@@ -6308,6 +6246,7 @@ literal|"homogeneous coordinate = 0...\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -6353,7 +6292,7 @@ operator|==
 name|CUBIC_INTERPOLATION
 condition|)
 block|{
-comment|/*  ttx& tty are the subpixel coordinates of the point in the original                    *  selection's floating buffer.  We need the four integer pixel coords 	           *  around them: itx to itx + 3, ity to ity + 3                    */
+comment|/*  ttx& tty are the subpixel coordinates of the point in 		   *  the original selection's floating buffer. 		   *  We need the four integer pixel coords around them: 		   *  itx to itx + 3, ity to ity + 3                    */
 name|itx
 operator|=
 name|floor
@@ -6404,21 +6343,19 @@ operator|<
 name|y2
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|row
 decl_stmt|;
-name|double
+name|gdouble
 name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|start
 decl_stmt|;
@@ -6588,7 +6525,7 @@ name|a_val
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for colour channels c,                         * result = bicubic(c * alpha) / bicubic(alpha) 	               */
+comment|/* for colour channels c,                        * result = bicubic (c * alpha) / bicubic (alpha) 	               */
 for|for
 control|(
 name|i
@@ -6774,8 +6711,7 @@ argument_list|(
 name|tty
 argument_list|)
 expr_stmt|;
-comment|/* expand source area to cover interpolation region */
-comment|/* (which runs from itx to itx + 1, same in y) */
+comment|/*  expand source area to cover interpolation region 		   *  (which runs from itx to itx + 1, same in y) 		   */
 if|if
 condition|(
 operator|(
@@ -6803,12 +6739,11 @@ operator|<
 name|y2
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|gint
 name|row
 decl_stmt|;
 name|double
@@ -6816,8 +6751,7 @@ name|dx
 decl_stmt|,
 name|dy
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|chan
 decl_stmt|;
@@ -6959,7 +6893,7 @@ name|a_val
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* for colour channels c, 		       * result = bilinear(c * alpha) / bilinear(alpha) 		       */
+comment|/*  for colour channels c, 		       *  result = bilinear (c * alpha) / bilinear (alpha) 		       */
 for|for
 control|(
 name|i
@@ -7302,7 +7236,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|transform_core_cut (GImage * gimage,GimpDrawable * drawable,int * new_layer)
+DECL|function|transform_core_cut (GImage * gimage,GimpDrawable * drawable,gboolean * new_layer)
 name|transform_core_cut
 parameter_list|(
 name|GImage
@@ -7313,7 +7247,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|int
+name|gboolean
 modifier|*
 name|new_layer
 parameter_list|)
@@ -7386,7 +7320,7 @@ end_comment
 begin_function
 name|Layer
 modifier|*
-DECL|function|transform_core_paste (GImage * gimage,GimpDrawable * drawable,TileManager * tiles,int new_layer)
+DECL|function|transform_core_paste (GImage * gimage,GimpDrawable * drawable,TileManager * tiles,gboolean new_layer)
 name|transform_core_paste
 parameter_list|(
 name|GImage
@@ -7401,7 +7335,7 @@ name|TileManager
 modifier|*
 name|tiles
 parameter_list|,
-name|int
+name|gboolean
 name|new_layer
 parameter_list|)
 block|{
@@ -7676,7 +7610,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* if we were operating on the floating selection, then it's boundary         * and previews need invalidating */
+comment|/*  if we were operating on the floating selection, then it's boundary         *  and previews need invalidating        */
 if|if
 condition|(
 name|layer
@@ -7701,27 +7635,27 @@ end_comment
 
 begin_function
 specifier|static
-name|double
-DECL|function|cubic (double dx,int jm1,int j,int jp1,int jp2)
+name|gdouble
+DECL|function|cubic (gdouble dx,gint jm1,gint j,gint jp1,gint jp2)
 name|cubic
 parameter_list|(
-name|double
+name|gdouble
 name|dx
 parameter_list|,
-name|int
+name|gint
 name|jm1
 parameter_list|,
-name|int
+name|gint
 name|j
 parameter_list|,
-name|int
+name|gint
 name|jp1
 parameter_list|,
-name|int
+name|gint
 name|jp2
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|result
 decl_stmt|;
 if|#

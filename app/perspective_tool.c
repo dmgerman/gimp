@@ -48,18 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"transform_core.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"transform_tool.h"
 end_include
 
@@ -88,7 +76,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|matrix_row_buf
 specifier|static
-name|char
+name|gchar
 name|matrix_row_buf
 index|[
 literal|3
@@ -106,7 +94,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-modifier|*
 name|perspective_tool_recalc
 parameter_list|(
 name|Tool
@@ -144,9 +131,9 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|void
+name|TileManager
 modifier|*
-DECL|function|perspective_tool_transform (Tool * tool,gpointer gdisp_ptr,int state)
+DECL|function|perspective_tool_transform (Tool * tool,gpointer gdisp_ptr,TransformState state)
 name|perspective_tool_transform
 parameter_list|(
 name|Tool
@@ -156,7 +143,7 @@ parameter_list|,
 name|gpointer
 name|gdisp_ptr
 parameter_list|,
-name|int
+name|TransformState
 name|state
 parameter_list|)
 block|{
@@ -209,9 +196,9 @@ argument_list|(
 literal|"Perspective Transform Information"
 argument_list|)
 argument_list|,
-name|tools_help_func
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+literal|"tools/transform_perspective.html"
 argument_list|)
 expr_stmt|;
 name|info_dialog_add_label
@@ -392,30 +379,24 @@ argument_list|,
 name|gdisp_ptr
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
 name|perspective_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|)
-operator|)
-return|;
+expr_stmt|;
 break|break;
 case|case
 name|RECALC
 case|:
-return|return
-operator|(
 name|perspective_tool_recalc
 argument_list|(
 name|tool
 argument_list|,
 name|gdisp_ptr
 argument_list|)
-operator|)
-return|;
+expr_stmt|;
 break|break;
 case|case
 name|FINISH
@@ -472,9 +453,11 @@ end_function
 begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_perspective_tool ()
+DECL|function|tools_new_perspective_tool (void)
 name|tools_new_perspective_tool
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -490,7 +473,7 @@ name|transform_core_new
 argument_list|(
 name|PERSPECTIVE
 argument_list|,
-name|INTERACTIVE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|private
@@ -625,7 +608,7 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|transform_core
@@ -652,7 +635,7 @@ name|i
 operator|++
 control|)
 block|{
-name|char
+name|gchar
 modifier|*
 name|p
 init|=
@@ -661,7 +644,7 @@ index|[
 name|i
 index|]
 decl_stmt|;
-name|int
+name|gint
 name|j
 decl_stmt|;
 for|for
@@ -747,7 +730,7 @@ name|TransformCore
 modifier|*
 name|transform_core
 decl_stmt|;
-name|int
+name|gint
 name|diff_x
 decl_stmt|,
 name|diff_y
@@ -885,8 +868,8 @@ operator|+=
 name|diff_y
 expr_stmt|;
 break|break;
-default|default :
-return|return;
+default|default:
+break|break;
 block|}
 block|}
 end_function
@@ -894,7 +877,6 @@ end_function
 begin_function
 specifier|static
 name|void
-modifier|*
 DECL|function|perspective_tool_recalc (Tool * tool,void * gdisp_ptr)
 name|perspective_tool_recalc
 parameter_list|(
@@ -918,12 +900,12 @@ decl_stmt|;
 name|GimpMatrix
 name|m
 decl_stmt|;
-name|double
+name|gdouble
 name|cx
 decl_stmt|,
 name|cy
 decl_stmt|;
-name|double
+name|gdouble
 name|scalex
 decl_stmt|,
 name|scaley
@@ -1068,7 +1050,7 @@ name|transform
 argument_list|)
 expr_stmt|;
 comment|/*  transform the bounding box  */
-name|transform_bounding_box
+name|transform_core_transform_bounding_box
 argument_list|(
 name|tool
 argument_list|)
@@ -1079,30 +1061,23 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-return|return
-operator|(
-name|void
-operator|*
-operator|)
-literal|1
-return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|perspective_find_transform (double * coords,GimpMatrix m)
+DECL|function|perspective_find_transform (gdouble * coords,GimpMatrix matrix)
 name|perspective_find_transform
 parameter_list|(
-name|double
+name|gdouble
 modifier|*
 name|coords
 parameter_list|,
 name|GimpMatrix
-name|m
+name|matrix
 parameter_list|)
 block|{
-name|double
+name|gdouble
 name|dx1
 decl_stmt|,
 name|dx2
@@ -1115,7 +1090,7 @@ name|dy2
 decl_stmt|,
 name|dy3
 decl_stmt|;
-name|double
+name|gdouble
 name|det1
 decl_stmt|,
 name|det2
@@ -1228,7 +1203,7 @@ literal|0.0
 operator|)
 condition|)
 block|{
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1246,7 +1221,7 @@ index|[
 name|X0
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1264,7 +1239,7 @@ index|[
 name|X1
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1277,7 +1252,7 @@ index|[
 name|X0
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1295,7 +1270,7 @@ index|[
 name|Y0
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1313,7 +1288,7 @@ index|[
 name|Y1
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1326,7 +1301,7 @@ index|[
 name|Y0
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1336,7 +1311,7 @@ index|]
 operator|=
 literal|0.0
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1369,7 +1344,7 @@ name|dy1
 operator|*
 name|dx2
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1401,7 +1376,7 @@ name|dy1
 operator|*
 name|dx2
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1413,7 +1388,7 @@ name|det1
 operator|/
 name|det2
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1431,7 +1406,7 @@ index|[
 name|X0
 index|]
 operator|+
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1444,7 +1419,7 @@ index|[
 name|X1
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1462,7 +1437,7 @@ index|[
 name|X0
 index|]
 operator|+
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1475,7 +1450,7 @@ index|[
 name|X2
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|0
 index|]
@@ -1488,7 +1463,7 @@ index|[
 name|X0
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1506,7 +1481,7 @@ index|[
 name|Y0
 index|]
 operator|+
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1519,7 +1494,7 @@ index|[
 name|Y1
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1537,7 +1512,7 @@ index|[
 name|Y0
 index|]
 operator|+
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1550,7 +1525,7 @@ index|[
 name|Y2
 index|]
 expr_stmt|;
-name|m
+name|matrix
 index|[
 literal|1
 index|]
@@ -1564,7 +1539,7 @@ name|Y0
 index|]
 expr_stmt|;
 block|}
-name|m
+name|matrix
 index|[
 literal|2
 index|]
@@ -1578,9 +1553,9 @@ block|}
 end_function
 
 begin_function
-name|void
+name|TileManager
 modifier|*
-DECL|function|perspective_tool_perspective (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,int interpolation,GimpMatrix matrix)
+DECL|function|perspective_tool_perspective (GImage * gimage,GimpDrawable * drawable,GDisplay * gdisp,TileManager * float_tiles,gboolean interpolation,GimpMatrix matrix)
 name|perspective_tool_perspective
 parameter_list|(
 name|GImage
@@ -1599,20 +1574,20 @@ name|TileManager
 modifier|*
 name|float_tiles
 parameter_list|,
-name|int
+name|gboolean
 name|interpolation
 parameter_list|,
 name|GimpMatrix
 name|matrix
 parameter_list|)
 block|{
-name|void
-modifier|*
-name|ret
-decl_stmt|;
 name|gimp_progress
 modifier|*
 name|progress
+decl_stmt|;
+name|TileManager
+modifier|*
+name|ret
 decl_stmt|;
 name|progress
 operator|=

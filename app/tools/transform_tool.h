@@ -17,6 +17,26 @@ name|__TRANSFORM_TOOL_H__
 end_define
 
 begin_comment
+comment|/*  transform directions  */
+end_comment
+
+begin_define
+DECL|macro|TRANSFORM_TRADITIONAL
+define|#
+directive|define
+name|TRANSFORM_TRADITIONAL
+value|0
+end_define
+
+begin_define
+DECL|macro|TRANSFORM_CORRECTIVE
+define|#
+directive|define
+name|TRANSFORM_CORRECTIVE
+value|1
+end_define
+
+begin_comment
 comment|/*  tool functions  */
 end_comment
 
@@ -36,12 +56,13 @@ name|tools_free_transform_tool
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|transform_tool_smoothing
 parameter_list|(
 name|void
@@ -50,7 +71,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|transform_tool_showpath
 parameter_list|(
 name|void
@@ -59,7 +80,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|transform_tool_clip
 parameter_list|(
 name|void
@@ -68,7 +89,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|transform_tool_direction
 parameter_list|(
 name|void
@@ -77,7 +98,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gint
 name|transform_tool_grid_size
 parameter_list|(
 name|void
@@ -86,33 +107,13 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|int
+name|gboolean
 name|transform_tool_show_grid
 parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  transform directions  */
-end_comment
-
-begin_define
-DECL|macro|TRANSFORM_TRADITIONAL
-define|#
-directive|define
-name|TRANSFORM_TRADITIONAL
-value|0
-end_define
-
-begin_define
-DECL|macro|TRANSFORM_CORRECTIVE
-define|#
-directive|define
-name|TRANSFORM_CORRECTIVE
-value|1
-end_define
 
 begin_endif
 endif|#

@@ -19,13 +19,19 @@ end_define
 begin_include
 include|#
 directive|include
-file|"info_dialog.h"
+file|"draw_core.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"draw_core.h"
+file|"gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"info_dialog.h"
 end_include
 
 begin_include
@@ -40,99 +46,63 @@ directive|include
 file|"libgimp/gimpmatrix.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpprogress.h"
-end_include
-
 begin_comment
-comment|/* possible scaling functions */
+comment|/* possible transform functions */
 end_comment
 
-begin_define
-DECL|macro|CREATING
-define|#
-directive|define
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon296c5dfd0103
+block|{
+DECL|enumerator|CREATING
 name|CREATING
-value|0
-end_define
-
-begin_define
-DECL|macro|HANDLE_1
-define|#
-directive|define
+block|,
+DECL|enumerator|HANDLE_1
 name|HANDLE_1
-value|1
-end_define
-
-begin_define
-DECL|macro|HANDLE_2
-define|#
-directive|define
+block|,
+DECL|enumerator|HANDLE_2
 name|HANDLE_2
-value|2
-end_define
-
-begin_define
-DECL|macro|HANDLE_3
-define|#
-directive|define
+block|,
+DECL|enumerator|HANDLE_3
 name|HANDLE_3
-value|3
-end_define
-
-begin_define
-DECL|macro|HANDLE_4
-define|#
-directive|define
+block|,
+DECL|enumerator|HANDLE_4
 name|HANDLE_4
-value|4
-end_define
-
-begin_define
-DECL|macro|HANDLE_CENTER
-define|#
-directive|define
+block|,
+DECL|enumerator|HANDLE_CENTER
 name|HANDLE_CENTER
-value|5
-end_define
+DECL|typedef|TransformAction
+block|}
+name|TransformAction
+typedef|;
+end_typedef
 
 begin_comment
-comment|/* the different states that the transformation function can be called with  */
+comment|/* the different states that the transformation function can be called with */
 end_comment
 
-begin_define
-DECL|macro|INIT
-define|#
-directive|define
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon296c5dfd0203
+block|{
+DECL|enumerator|INIT
 name|INIT
-value|0
-end_define
-
-begin_define
-DECL|macro|MOTION
-define|#
-directive|define
+block|,
+DECL|enumerator|MOTION
 name|MOTION
-value|1
-end_define
-
-begin_define
-DECL|macro|RECALC
-define|#
-directive|define
+block|,
+DECL|enumerator|RECALC
 name|RECALC
-value|2
-end_define
-
-begin_define
-DECL|macro|FINISH
-define|#
-directive|define
+block|,
+DECL|enumerator|FINISH
 name|FINISH
-value|3
-end_define
+DECL|typedef|TransformState
+block|}
+name|TransformState
+typedef|;
+end_typedef
 
 begin_comment
 comment|/* buffer sizes for scaling information strings (for the info dialog) */
@@ -152,26 +122,6 @@ define|#
 directive|define
 name|TRAN_INFO_SIZE
 value|8
-end_define
-
-begin_comment
-comment|/* control whether the transform tool draws a bounding box */
-end_comment
-
-begin_define
-DECL|macro|NON_INTERACTIVE
-define|#
-directive|define
-name|NON_INTERACTIVE
-value|0
-end_define
-
-begin_define
-DECL|macro|INTERACTIVE
-define|#
-directive|define
-name|INTERACTIVE
-value|1
 end_define
 
 begin_enum
@@ -209,7 +159,7 @@ end_enum
 begin_typedef
 DECL|typedef|TranInfo
 typedef|typedef
-name|double
+name|gdouble
 name|TranInfo
 index|[
 name|TRAN_INFO_SIZE
@@ -220,7 +170,7 @@ end_typedef
 begin_typedef
 DECL|typedef|TransformFunc
 typedef|typedef
-name|void
+name|TileManager
 modifier|*
 function_decl|(
 modifier|*
@@ -233,7 +183,7 @@ parameter_list|,
 name|void
 modifier|*
 parameter_list|,
-name|int
+name|TransformState
 parameter_list|)
 function_decl|;
 end_typedef
@@ -259,43 +209,43 @@ name|core
 decl_stmt|;
 comment|/*  Core select object          */
 DECL|member|startx
-name|int
+name|gint
 name|startx
 decl_stmt|;
 comment|/*  starting x coord            */
 DECL|member|starty
-name|int
+name|gint
 name|starty
 decl_stmt|;
 comment|/*  starting y coord            */
 DECL|member|curx
-name|int
+name|gint
 name|curx
 decl_stmt|;
 comment|/*  current x coord             */
 DECL|member|cury
-name|int
+name|gint
 name|cury
 decl_stmt|;
 comment|/*  current y coord             */
 DECL|member|lastx
-name|int
+name|gint
 name|lastx
 decl_stmt|;
 comment|/*  last x coord                */
 DECL|member|lasty
-name|int
+name|gint
 name|lasty
 decl_stmt|;
 comment|/*  last y coord                */
 DECL|member|state
-name|int
+name|gint
 name|state
 decl_stmt|;
 comment|/*  state of buttons and keys   */
 DECL|member|x1
 DECL|member|y1
-name|int
+name|gint
 name|x1
 decl_stmt|,
 name|y1
@@ -303,7 +253,7 @@ decl_stmt|;
 comment|/*  upper left hand coordinate  */
 DECL|member|x2
 DECL|member|y2
-name|int
+name|gint
 name|x2
 decl_stmt|,
 name|y2
@@ -311,7 +261,7 @@ decl_stmt|;
 comment|/*  lower right hand coords     */
 DECL|member|cx
 DECL|member|cy
-name|int
+name|gint
 name|cx
 decl_stmt|,
 name|cy
@@ -319,7 +269,7 @@ decl_stmt|;
 comment|/*  center point (for rotation) */
 DECL|member|tx1
 DECL|member|ty1
-name|double
+name|gdouble
 name|tx1
 decl_stmt|,
 name|ty1
@@ -327,7 +277,7 @@ decl_stmt|;
 comment|/*  transformed coords          */
 DECL|member|tx2
 DECL|member|ty2
-name|double
+name|gdouble
 name|tx2
 decl_stmt|,
 name|ty2
@@ -335,7 +285,7 @@ decl_stmt|;
 comment|/*                              */
 DECL|member|tx3
 DECL|member|ty3
-name|double
+name|gdouble
 name|tx3
 decl_stmt|,
 name|ty3
@@ -343,7 +293,7 @@ decl_stmt|;
 comment|/*                              */
 DECL|member|tx4
 DECL|member|ty4
-name|double
+name|gdouble
 name|tx4
 decl_stmt|,
 name|ty4
@@ -351,7 +301,7 @@ decl_stmt|;
 comment|/*                              */
 DECL|member|tcx
 DECL|member|tcy
-name|double
+name|gdouble
 name|tcx
 decl_stmt|,
 name|tcy
@@ -359,7 +309,7 @@ decl_stmt|;
 comment|/*                              */
 DECL|member|sx1
 DECL|member|sy1
-name|int
+name|gint
 name|sx1
 decl_stmt|,
 name|sy1
@@ -367,7 +317,7 @@ decl_stmt|;
 comment|/*  transformed screen coords   */
 DECL|member|sx2
 DECL|member|sy2
-name|int
+name|gint
 name|sx2
 decl_stmt|,
 name|sy2
@@ -375,7 +325,7 @@ decl_stmt|;
 comment|/*  position of four handles    */
 DECL|member|sx3
 DECL|member|sy3
-name|int
+name|gint
 name|sx3
 decl_stmt|,
 name|sy3
@@ -383,7 +333,7 @@ decl_stmt|;
 comment|/*                              */
 DECL|member|sx4
 DECL|member|sy4
-name|int
+name|gint
 name|sx4
 decl_stmt|,
 name|sy4
@@ -391,7 +341,7 @@ decl_stmt|;
 comment|/*                              */
 DECL|member|scx
 DECL|member|scy
-name|int
+name|gint
 name|scx
 decl_stmt|,
 name|scy
@@ -419,40 +369,40 @@ name|trans_func
 decl_stmt|;
 comment|/*  transformation function     */
 DECL|member|function
-name|int
+name|TransformAction
 name|function
 decl_stmt|;
 comment|/*  current tool activity       */
 DECL|member|interactive
-name|int
+name|gboolean
 name|interactive
 decl_stmt|;
 comment|/*  tool is interactive         */
 DECL|member|bpressed
-name|int
+name|gboolean
 name|bpressed
 decl_stmt|;
-comment|/* Bug work around make sure we have  				 * a button pressed before we deal with 				 * motion events. ALT. 				 */
+comment|/*  Bug work around make sure we have  				 *  a button pressed before we deal with 				 *  motion events. ALT. 				 */
 DECL|member|ngx
 DECL|member|ngy
-name|int
+name|gint
 name|ngx
 decl_stmt|,
 name|ngy
 decl_stmt|;
-comment|/*  number of grid lines in original 				    x and y directions  */
+comment|/*  number of grid lines in original 				 *  x and y directions 				 */
 DECL|member|grid_coords
-name|double
+name|gdouble
 modifier|*
 name|grid_coords
 decl_stmt|;
-comment|/*  x and y coordinates of the grid 				    endpoints (a total of (ngx+ngy)*2 				    coordinate pairs)  */
+comment|/*  x and y coordinates of the grid 				 *  endpoints (a total of (ngx+ngy)*2 				 *  coordinate pairs) 				 */
 DECL|member|tgrid_coords
-name|double
+name|gdouble
 modifier|*
 name|tgrid_coords
 decl_stmt|;
-comment|/* transformed grid_coords  */
+comment|/*  transformed grid_coords     */
 block|}
 struct|;
 end_struct
@@ -476,11 +426,11 @@ struct|struct
 name|_TransformUndo
 block|{
 DECL|member|tool_ID
-name|int
+name|gint
 name|tool_ID
 decl_stmt|;
 DECL|member|tool_type
-name|int
+name|gint
 name|tool_type
 decl_stmt|;
 DECL|member|trans_info
@@ -596,33 +546,15 @@ comment|/*  transform tool functions  */
 end_comment
 
 begin_function_decl
-name|void
-name|transform_core_draw
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|transform_core_no_draw
-parameter_list|(
-name|Tool
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|Tool
 modifier|*
 name|transform_core_new
 parameter_list|(
 name|ToolType
+name|tool_type
 parameter_list|,
-name|int
+name|gboolean
+name|interactive
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -633,6 +565,40 @@ name|transform_core_free
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|transform_core_draw
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|transform_core_no_draw
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|transform_core_transform_bounding_box
+parameter_list|(
+name|Tool
+modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -643,9 +609,11 @@ name|transform_core_reset
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|void
 modifier|*
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -664,6 +632,7 @@ name|void
 name|transform_core_showpath_changed
 parameter_list|(
 name|gint
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -679,20 +648,27 @@ name|transform_core_do
 parameter_list|(
 name|GImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|TileManager
 modifier|*
+name|float_tiles
 parameter_list|,
-name|int
+name|gboolean
+name|interpolation
 parameter_list|,
 name|GimpMatrix
+name|matrix
 parameter_list|,
 name|progress_func_t
+name|progress_callback
 parameter_list|,
 name|gpointer
+name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -704,12 +680,15 @@ name|transform_core_cut
 parameter_list|(
 name|GImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
-name|int
+name|gboolean
 modifier|*
+name|new_layer
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -721,24 +700,18 @@ name|transform_core_paste
 parameter_list|(
 name|GImage
 modifier|*
+name|gimage
 parameter_list|,
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|TileManager
 modifier|*
+name|tiles
 parameter_list|,
-name|int
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|transform_bounding_box
-parameter_list|(
-name|Tool
-modifier|*
+name|gboolean
+name|new_layer
 parameter_list|)
 function_decl|;
 end_function_decl
