@@ -3363,7 +3363,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3233a80108
+DECL|struct|__anon29f3c8d40108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -5593,7 +5593,7 @@ name|PANGO_ATTR_SIZE
 case|:
 name|attr
 operator|=
-name|pango_attr_stretch_new
+name|pango_attr_size_new
 argument_list|(
 name|va_arg
 argument_list|(
