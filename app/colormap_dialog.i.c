@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -1595,9 +1601,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_color_source_set
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|ipal
 operator|->
 name|palette
+argument_list|)
 argument_list|,
 name|palette_drag_color
 argument_list|,
@@ -1628,9 +1637,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_color_dest_set
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|ipal
 operator|->
 name|palette
+argument_list|)
 argument_list|,
 name|palette_drop_color
 argument_list|,
@@ -1859,6 +1871,19 @@ argument_list|,
 literal|1
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+comment|/*  Connect the "F1" help key  */
+name|gimp_help_connect_help_accel
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|ipal
+argument_list|)
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+literal|"dialogs/indexed_palette_dialog.html"
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show_all
@@ -5193,7 +5218,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b03d5960108
+DECL|struct|__anon2957e1730108
 typedef|typedef
 struct|struct
 block|{
