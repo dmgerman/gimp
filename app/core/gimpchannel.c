@@ -3391,6 +3391,11 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE_CLASS
 argument_list|(
 name|parent_class
@@ -3408,6 +3413,15 @@ name|tiles
 argument_list|,
 name|type
 argument_list|)
+expr_stmt|;
+name|GIMP_CHANNEL
+argument_list|(
+name|drawable
+argument_list|)
+operator|->
+name|bounds_known
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 end_function
