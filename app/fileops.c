@@ -2492,7 +2492,7 @@ argument_list|)
 expr_stmt|;
 else|else
 block|{
-name|filename
+name|raw_filename
 operator|=
 name|gimage_filename
 argument_list|(
@@ -2501,7 +2501,7 @@ operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
-name|raw_filename
+name|filename
 operator|=
 name|g_basename
 argument_list|(
@@ -2512,7 +2512,7 @@ name|gimage
 operator|=
 name|file_open_image
 argument_list|(
-name|filename
+name|raw_filename
 argument_list|,
 name|raw_filename
 argument_list|,
