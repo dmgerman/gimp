@@ -73,6 +73,15 @@ name|GimpTextLayout
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpTextUndo
+typedef|typedef
+name|struct
+name|_GimpTextUndo
+name|GimpTextUndo
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif
