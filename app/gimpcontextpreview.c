@@ -395,7 +395,7 @@ comment|/*  signals  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a53248f0103
+DECL|enum|__anon2aaed88b0103
 enum|enum
 block|{
 DECL|enumerator|CLICKED
@@ -1545,7 +1545,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 end_function
@@ -1593,7 +1593,7 @@ argument_list|()
 expr_stmt|;
 block|}
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 end_function
