@@ -115,6 +115,59 @@ begin_comment
 comment|/* unused - == MIN */
 end_comment
 
+begin_typedef
+DECL|struct|_IdleRenderStruct
+typedef|typedef
+struct|struct
+name|_IdleRenderStruct
+block|{
+DECL|member|gimage
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
+DECL|member|width
+name|int
+name|width
+decl_stmt|;
+DECL|member|height
+name|int
+name|height
+decl_stmt|;
+DECL|member|x
+name|int
+name|x
+decl_stmt|;
+DECL|member|y
+name|int
+name|y
+decl_stmt|;
+DECL|member|basex
+name|int
+name|basex
+decl_stmt|;
+DECL|member|basey
+name|int
+name|basey
+decl_stmt|;
+DECL|member|idleid
+name|guint
+name|idleid
+decl_stmt|;
+DECL|member|handlerid
+name|guint
+name|handlerid
+decl_stmt|;
+DECL|member|active
+name|gboolean
+name|active
+decl_stmt|;
+DECL|typedef|IdleRenderStruct
+block|}
+name|IdleRenderStruct
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GDisplay
 struct|struct
@@ -296,7 +349,7 @@ name|GdkGC
 modifier|*
 name|scroll_gc
 decl_stmt|;
-comment|/*  GC for scrolling */
+comment|/*  GC for scrolling                        */
 DECL|member|update_areas
 name|GSList
 modifier|*
@@ -318,27 +371,32 @@ DECL|member|draw_cursor
 name|short
 name|draw_cursor
 decl_stmt|;
-comment|/* should we draw software cursor ? */
+comment|/* should we draw software cursor ?         */
 DECL|member|cursor_x
 name|int
 name|cursor_x
 decl_stmt|;
-comment|/* software cursor X value */
+comment|/* software cursor X value                  */
 DECL|member|cursor_y
 name|int
 name|cursor_y
 decl_stmt|;
-comment|/* software cursor Y value */
+comment|/* software cursor Y value                  */
 DECL|member|proximity
 name|short
 name|proximity
 decl_stmt|;
-comment|/* is a device in proximity of gdisplay ? */
+comment|/* is a device in proximity of gdisplay ?   */
 DECL|member|have_cursor
 name|short
 name|have_cursor
 decl_stmt|;
-comment|/* is cursor currently drawn ? */
+comment|/* is cursor currently drawn ?              */
+DECL|member|idle_render
+name|IdleRenderStruct
+name|idle_render
+decl_stmt|;
+comment|/* state of this gdisplay's render thread   */
 block|}
 struct|;
 end_struct

@@ -461,7 +461,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2783aeb70103
+DECL|enum|__anon2b0944270103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -9820,16 +9820,6 @@ name|float_layer
 argument_list|)
 expr_stmt|;
 comment|/*  update the new layer's area  */
-name|printf
-argument_list|(
-literal|" gimp_image_add_layer "
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
 name|drawable_update
 argument_list|(
 name|GIMP_DRAWABLE

@@ -827,15 +827,34 @@ argument_list|(
 name|stdout
 argument_list|)
 expr_stmt|;
-comment|/*   drawable_update (GIMP_DRAWABLE(layer), 0, 0, 		   GIMP_DRAWABLE(layer)->width, GIMP_DRAWABLE(layer)->height);   */
-comment|/* This may be undesirable when invoked non-interactively... we'll see. */
-name|reinit_layer_idlerender
+name|drawable_update
 argument_list|(
-name|gimage
-argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|width
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|height
+argument_list|)
 expr_stmt|;
+comment|/* This may be undesirable when invoked non-interactively... we'll see. */
+comment|/*reinit_layer_idlerender (gimage, layer);*/
 block|}
 end_function
 

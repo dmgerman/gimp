@@ -4914,18 +4914,6 @@ block|}
 block|}
 end_function
 
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
-begin_warning
-warning|#
-directive|warning
-warning|AIE
-end_warning
-
 begin_function
 name|int
 DECL|function|undo_pop_layer (GImage * gimage,int state,int type,void * lu_ptr)
@@ -5111,26 +5099,40 @@ name|layer
 argument_list|)
 expr_stmt|;
 block|}
-name|printf
+comment|/*printf (" undo_pop1 ");fflush(stdout);*/
+name|drawable_update
 argument_list|(
-literal|" undo_pop1 "
-argument_list|)
-expr_stmt|;
-name|fflush
+name|GIMP_DRAWABLE
 argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-comment|/*      drawable_update (GIMP_DRAWABLE(lu->layer), 0, 0, GIMP_DRAWABLE(lu->layer)->width, GIMP_DRAWABLE(lu->layer)->height);*/
-name|reinit_layer_idlerender
-argument_list|(
-name|gimage
-argument_list|,
 name|lu
 operator|->
 name|layer
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|lu
+operator|->
+name|layer
+argument_list|)
+operator|->
+name|width
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|lu
+operator|->
+name|layer
+argument_list|)
+operator|->
+name|height
+argument_list|)
 expr_stmt|;
+comment|/*reinit_layer_idlerender (gimage, lu->layer);*/
 block|}
 comment|/*  restore layer  */
 else|else
@@ -5223,26 +5225,40 @@ name|lu
 operator|->
 name|layer
 expr_stmt|;
-name|printf
+comment|/*printf (" undo_pop2 ");fflush(stdout);*/
+name|drawable_update
 argument_list|(
-literal|" undo_pop2 "
-argument_list|)
-expr_stmt|;
-name|fflush
+name|GIMP_DRAWABLE
 argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-comment|/*drawable_update (GIMP_DRAWABLE(lu->layer), 0, 0, GIMP_DRAWABLE(lu->layer)->width, GIMP_DRAWABLE(lu->layer)->height);*/
-name|reinit_layer_idlerender
-argument_list|(
-name|gimage
-argument_list|,
 name|lu
 operator|->
 name|layer
 argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|lu
+operator|->
+name|layer
+argument_list|)
+operator|->
+name|width
+argument_list|,
+name|GIMP_DRAWABLE
+argument_list|(
+name|lu
+operator|->
+name|layer
+argument_list|)
+operator|->
+name|height
+argument_list|)
 expr_stmt|;
+comment|/*reinit_layer_idlerender (gimage, lu->layer);*/
 block|}
 return|return
 name|TRUE
