@@ -91,21 +91,9 @@ begin_comment
 comment|/* ick. */
 end_comment
 
-begin_define
-DECL|macro|NO
-define|#
-directive|define
-name|NO
-value|0
-end_define
-
-begin_define
-DECL|macro|YES
-define|#
-directive|define
-name|YES
-value|1
-end_define
+begin_comment
+comment|/*  the fuzzy selection structures  */
+end_comment
 
 begin_typedef
 DECL|typedef|FuzzySelect
@@ -158,6 +146,57 @@ comment|/*  selection operation (ADD, SUB, etc)     */
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  the fuzzy selection tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|fuzzy_options
+specifier|static
+name|SelectionOptions
+modifier|*
+name|fuzzy_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  XSegments which make up the fuzzy selection boundary  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|segs
+specifier|static
+name|GdkSegment
+modifier|*
+name|segs
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|num_segs
+specifier|static
+name|int
+name|num_segs
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|fuzzy_mask
+specifier|static
+name|Channel
+modifier|*
+name|fuzzy_mask
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  fuzzy select action functions  */
@@ -258,53 +297,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*  XSegments which make up the fuzzy selection boundary  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|segs
-specifier|static
-name|GdkSegment
-modifier|*
-name|segs
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|num_segs
-specifier|static
-name|int
-name|num_segs
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|fuzzy_mask
-specifier|static
-name|Channel
-modifier|*
-name|fuzzy_mask
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|fuzzy_options
-specifier|static
-name|SelectionOptions
-modifier|*
-name|fuzzy_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -2936,6 +2928,23 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|fuzzy_select_reset_options (void)
+name|fuzzy_select_reset_options
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|reset_selection_options
+argument_list|(
+name|fuzzy_options
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|Tool
 modifier|*
 DECL|function|tools_new_fuzzy_select (void)
@@ -2963,6 +2972,8 @@ operator|=
 name|create_selection_options
 argument_list|(
 name|FUZZY_SELECT
+argument_list|,
+name|fuzzy_select_reset_options
 argument_list|)
 expr_stmt|;
 name|tool

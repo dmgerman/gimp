@@ -88,6 +88,26 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
+comment|/*  pencil tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|pencil_options
+specifier|static
+name|void
+modifier|*
+name|pencil_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|pencil_options
+comment|/* dummy */
+end_comment
+
+begin_comment
 comment|/*  forward function declarations  */
 end_comment
 
@@ -117,40 +137,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|pencil_options
-specifier|static
-name|void
-modifier|*
-name|pencil_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/*  functions  */
+end_comment
 
 begin_function
 name|void
 modifier|*
-DECL|function|pencil_paint_func (paint_core,drawable,state)
+DECL|function|pencil_paint_func (PaintCore * paint_core,GimpDrawable * drawable,int state)
 name|pencil_paint_func
 parameter_list|(
-name|paint_core
-parameter_list|,
-name|drawable
-parameter_list|,
-name|state
-parameter_list|)
 name|PaintCore
 modifier|*
 name|paint_core
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|,
 name|int
 name|state
-decl_stmt|;
+parameter_list|)
 block|{
 switch|switch
 condition|(
@@ -205,18 +212,30 @@ condition|(
 operator|!
 name|pencil_options
 condition|)
-name|pencil_options
-operator|=
-name|tools_register_no_options
+block|{
+name|tools_register
 argument_list|(
 name|PENCIL
+argument_list|,
+name|NULL
 argument_list|,
 name|_
 argument_list|(
 literal|"Pencil Options"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+name|pencil_options
+operator|=
+operator|(
+name|void
+operator|*
+operator|)
+literal|1
+expr_stmt|;
+block|}
 name|tool
 operator|=
 name|paint_core_new
@@ -248,15 +267,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_free_pencil (tool)
+DECL|function|tools_free_pencil (Tool * tool)
 name|tools_free_pencil
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|paint_core_free
 argument_list|(
@@ -269,21 +286,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pencil_motion (paint_core,drawable)
+DECL|function|pencil_motion (PaintCore * paint_core,GimpDrawable * drawable)
 name|pencil_motion
 parameter_list|(
-name|paint_core
-parameter_list|,
-name|drawable
-parameter_list|)
 name|PaintCore
 modifier|*
 name|paint_core
-decl_stmt|;
+parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
+parameter_list|)
 block|{
 name|GImage
 modifier|*
@@ -517,15 +530,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|pencil_invoker (args)
+DECL|function|pencil_invoker (Argument * args)
 name|pencil_invoker
 parameter_list|(
-name|args
-parameter_list|)
 name|Argument
 modifier|*
 name|args
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|success

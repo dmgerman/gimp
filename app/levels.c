@@ -257,6 +257,10 @@ name|LEVELS_DA_MASK
 value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \ 			GDK_BUTTON_PRESS_MASK | \ 			GDK_BUTTON_RELEASE_MASK | \ 			GDK_BUTTON1_MOTION_MASK | \ 			GDK_POINTER_MOTION_HINT_MASK
 end_define
 
+begin_comment
+comment|/*  the levels structures  */
+end_comment
+
 begin_typedef
 DECL|typedef|Levels
 typedef|typedef
@@ -446,6 +450,41 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  the levels tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|levels_options
+specifier|static
+name|void
+modifier|*
+name|levels_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|levels_options
+comment|/* dummy */
+end_comment
+
+begin_comment
+comment|/*  the levels tool dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|levels_dialog
+specifier|static
+name|LevelsDialog
+modifier|*
+name|levels_dialog
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  levels action functions  */
@@ -807,28 +846,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|levels_options
-specifier|static
-name|void
-modifier|*
-name|levels_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|levels_dialog
-specifier|static
-name|LevelsDialog
-modifier|*
-name|levels_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -1482,18 +1499,30 @@ condition|(
 operator|!
 name|levels_options
 condition|)
-name|levels_options
-operator|=
-name|tools_register_no_options
+block|{
+name|tools_register
 argument_list|(
 name|LEVELS
+argument_list|,
+name|NULL
 argument_list|,
 name|_
 argument_list|(
 literal|"Levels Options"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+name|levels_options
+operator|=
+operator|(
+name|void
+operator|*
+operator|)
+literal|1
+expr_stmt|;
+block|}
 name|tool
 operator|=
 operator|(

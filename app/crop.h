@@ -29,7 +29,7 @@ file|"procedural_db.h"
 end_include
 
 begin_comment
-comment|/*   select functions  */
+comment|/*  select functions  */
 end_comment
 
 begin_function_decl
@@ -61,33 +61,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/*   tool options  */
-end_comment
-
-begin_typedef
-DECL|struct|__anon2ab0c63a0108
-typedef|typedef
-struct|struct
-block|{
-DECL|member|layer_only
-name|int
-name|layer_only
-decl_stmt|;
-DECL|member|default_to_enlarge
-name|int
-name|default_to_enlarge
-decl_stmt|;
-DECL|member|default_to_crop
-name|int
-name|default_to_crop
-decl_stmt|;
-DECL|typedef|CropToolOptions
-block|}
-name|CropToolOptions
-typedef|;
-end_typedef
 
 begin_comment
 comment|/*  Procedure definition and marshalling function  */

@@ -28,40 +28,9 @@ directive|include
 file|"procedural_db.h"
 end_include
 
-begin_typedef
-DECL|enum|__anon2c03e5e20103
-typedef|typedef
-enum|enum
-block|{
-DECL|enumerator|PIXELS
-name|PIXELS
-block|,
-DECL|enumerator|POINTS
-name|POINTS
-DECL|typedef|SizeType
-block|}
-name|SizeType
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|struct|__anon2c03e5e20208
-typedef|typedef
-struct|struct
-block|{
-DECL|member|antialias
-name|int
-name|antialias
-decl_stmt|;
-DECL|member|border
-name|int
-name|border
-decl_stmt|;
-DECL|typedef|TextToolOptions
-block|}
-name|TextToolOptions
-typedef|;
-end_typedef
+begin_comment
+comment|/*  text functions  */
+end_comment
 
 begin_function_decl
 name|Tool

@@ -105,6 +105,10 @@ name|HISTOGRAM_HEIGHT
 value|150
 end_define
 
+begin_comment
+comment|/*  the threshold structures  */
+end_comment
+
 begin_typedef
 DECL|typedef|Threshold
 typedef|typedef
@@ -198,6 +202,41 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  the threshold tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|threshold_options
+specifier|static
+name|void
+modifier|*
+name|threshold_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|threshold_options
+comment|/* dummy */
+end_comment
+
+begin_comment
+comment|/*  the threshold tool dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|threshold_dialog
+specifier|static
+name|ThresholdDialog
+modifier|*
+name|threshold_dialog
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  threshold action functions  */
@@ -384,28 +423,6 @@ name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|threshold_options
-specifier|static
-name|void
-modifier|*
-name|threshold_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|threshold_dialog
-specifier|static
-name|ThresholdDialog
-modifier|*
-name|threshold_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -1116,18 +1133,30 @@ condition|(
 operator|!
 name|threshold_options
 condition|)
-name|threshold_options
-operator|=
-name|tools_register_no_options
+block|{
+name|tools_register
 argument_list|(
 name|THRESHOLD
+argument_list|,
+name|NULL
 argument_list|,
 name|_
 argument_list|(
 literal|"Threshold Options"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+name|threshold_options
+operator|=
+operator|(
+name|void
+operator|*
+operator|)
+literal|1
+expr_stmt|;
+block|}
 comment|/*  The threshold dialog  */
 if|if
 condition|(

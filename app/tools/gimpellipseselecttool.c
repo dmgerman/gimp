@@ -61,21 +61,9 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_define
-DECL|macro|NO
-define|#
-directive|define
-name|NO
-value|0
-end_define
-
-begin_define
-DECL|macro|YES
-define|#
-directive|define
-name|YES
-value|1
-end_define
+begin_comment
+comment|/*  ellipse select tool options  */
+end_comment
 
 begin_decl_stmt
 DECL|variable|ellipse_options
@@ -86,6 +74,10 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
 
 begin_function_decl
 name|void
@@ -135,53 +127,37 @@ end_comment
 
 begin_function
 name|void
-DECL|function|ellipse_select (gimage,x,y,w,h,op,antialias,feather,feather_radius)
+DECL|function|ellipse_select (GImage * gimage,int x,int y,int w,int h,int op,int antialias,int feather,double feather_radius)
 name|ellipse_select
 parameter_list|(
-name|gimage
-parameter_list|,
-name|x
-parameter_list|,
-name|y
-parameter_list|,
-name|w
-parameter_list|,
-name|h
-parameter_list|,
-name|op
-parameter_list|,
-name|antialias
-parameter_list|,
-name|feather
-parameter_list|,
-name|feather_radius
-parameter_list|)
 name|GImage
 modifier|*
 name|gimage
-decl_stmt|;
+parameter_list|,
 name|int
 name|x
-decl_stmt|,
+parameter_list|,
+name|int
 name|y
-decl_stmt|;
+parameter_list|,
 name|int
 name|w
-decl_stmt|,
+parameter_list|,
+name|int
 name|h
-decl_stmt|;
+parameter_list|,
 name|int
 name|op
-decl_stmt|;
+parameter_list|,
 name|int
 name|antialias
-decl_stmt|;
+parameter_list|,
 name|int
 name|feather
-decl_stmt|;
+parameter_list|,
 name|double
 name|feather_radius
-decl_stmt|;
+parameter_list|)
 block|{
 name|Channel
 modifier|*
@@ -355,15 +331,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|ellipse_select_draw (tool)
+DECL|function|ellipse_select_draw (Tool * tool)
 name|ellipse_select_draw
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|GDisplay
 modifier|*
@@ -545,11 +519,30 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|ellipse_select_reset_options (void)
+name|ellipse_select_reset_options
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|reset_selection_options
+argument_list|(
+name|ellipse_options
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|Tool
 modifier|*
-DECL|function|tools_new_ellipse_select ()
+DECL|function|tools_new_ellipse_select (void)
 name|tools_new_ellipse_select
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|Tool
 modifier|*
@@ -570,6 +563,8 @@ operator|=
 name|create_selection_options
 argument_list|(
 name|ELLIPSE_SELECT
+argument_list|,
+name|ellipse_select_reset_options
 argument_list|)
 expr_stmt|;
 name|tool
@@ -715,15 +710,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_free_ellipse_select (tool)
+DECL|function|tools_free_ellipse_select (Tool * tool)
 name|tools_free_ellipse_select
 parameter_list|(
-name|tool
-parameter_list|)
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|EllipseSelect
 modifier|*
@@ -884,15 +877,13 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|ellipse_select_invoker (args)
+DECL|function|ellipse_select_invoker (Argument * args)
 name|ellipse_select_invoker
 parameter_list|(
-name|args
-parameter_list|)
 name|Argument
 modifier|*
 name|args
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|success

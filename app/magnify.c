@@ -58,7 +58,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
-comment|/*   types of magnify operations  */
+comment|/*  types of magnify operations  */
 end_comment
 
 begin_define
@@ -78,30 +78,8 @@ value|1
 end_define
 
 begin_comment
-comment|/*  local structures  */
+comment|/*  the magnify structures  */
 end_comment
-
-begin_typedef
-DECL|typedef|MagnifyOptions
-typedef|typedef
-name|struct
-name|_MagnifyOptions
-name|MagnifyOptions
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_MagnifyOptions
-struct|struct
-name|_MagnifyOptions
-block|{
-DECL|member|dummy
-name|int
-name|dummy
-decl_stmt|;
-block|}
-struct|;
-end_struct
 
 begin_typedef
 DECL|typedef|Magnify
@@ -147,6 +125,49 @@ comment|/*  magnify operation           */
 block|}
 struct|;
 end_struct
+
+begin_typedef
+DECL|typedef|MagnifyOptions
+typedef|typedef
+name|struct
+name|_MagnifyOptions
+name|MagnifyOptions
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_MagnifyOptions
+struct|struct
+name|_MagnifyOptions
+block|{
+comment|/* int     allow_resize_windows; (from gimprc) */
+DECL|member|allow_resize_d
+name|int
+name|allow_resize_d
+decl_stmt|;
+DECL|member|allow_resize_w
+name|GtkWidget
+modifier|*
+name|allow_resize_w
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_comment
+comment|/*  magnify tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|magnify_options
+specifier|static
+name|void
+modifier|*
+name|magnify_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*   magnify utility functions  */
@@ -266,17 +287,6 @@ name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|magnify_options
-specifier|static
-name|void
-modifier|*
-name|magnify_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*   magnify utility functions  */
@@ -447,6 +457,38 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|reset_magnify_options (void)
+name|reset_magnify_options
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|MagnifyOptions
+modifier|*
+name|options
+init|=
+name|magnify_options
+decl_stmt|;
+name|gtk_toggle_button_set_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|options
+operator|->
+name|allow_resize_w
+argument_list|)
+argument_list|,
+name|options
+operator|->
+name|allow_resize_d
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|MagnifyOptions
 modifier|*
 DECL|function|create_magnify_options (void)
@@ -463,14 +505,6 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|allow_resize_toggle
-decl_stmt|;
 comment|/*  the new options structure  */
 name|options
 operator|=
@@ -486,6 +520,12 @@ name|MagnifyOptions
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|options
+operator|->
+name|allow_resize_d
+operator|=
+name|allow_resize_windows
+expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
@@ -496,63 +536,12 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-comment|/*  the main label  */
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Magnify Options"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
 comment|/*  the allow_resize toggle button  */
-name|allow_resize_toggle
+name|options
+operator|->
+name|allow_resize_w
 operator|=
-name|gtk_check_button_new
-argument_list|()
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|allow_resize_toggle
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
+name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
@@ -560,38 +549,13 @@ literal|"Allow Window Resizing"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|label
-argument_list|)
-argument_list|,
-literal|0.0
-argument_list|,
-literal|0.5
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|allow_resize_toggle
-argument_list|)
-argument_list|,
-name|label
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|allow_resize_toggle
+name|options
+operator|->
+name|allow_resize_w
 argument_list|)
 argument_list|,
 literal|"toggled"
@@ -605,27 +569,56 @@ operator|&
 name|allow_resize_windows
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|allow_resize_toggle
-argument_list|)
-expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
-name|allow_resize_toggle
+name|options
+operator|->
+name|allow_resize_w
 argument_list|)
 argument_list|,
 name|allow_resize_windows
 argument_list|)
 expr_stmt|;
-comment|/*  Register this selection options widget with the main tools options dialog  */
-name|tools_register_options
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|options
+operator|->
+name|allow_resize_w
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|options
+operator|->
+name|allow_resize_w
+argument_list|)
+expr_stmt|;
+comment|/*  Register this selection options widget with the main tools options dialog    */
+name|tools_register
 argument_list|(
 name|MAGNIFY
 argument_list|,
 name|vbox
+argument_list|,
+name|_
+argument_list|(
+literal|"Magnify Options"
+argument_list|)
+argument_list|,
+name|reset_magnify_options
 argument_list|)
 expr_stmt|;
 return|return

@@ -75,6 +75,10 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_comment
+comment|/*  the move structures  */
+end_comment
+
 begin_typedef
 DECL|typedef|MoveTool
 typedef|typedef
@@ -107,6 +111,41 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  move tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|move_options
+specifier|static
+name|void
+modifier|*
+name|move_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|move_options
+comment|/* dummy */
+end_comment
+
+begin_comment
+comment|/*  local variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|move_gc
+specifier|static
+name|GdkGC
+modifier|*
+name|move_gc
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  move tool action functions  */
@@ -201,28 +240,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|move_options
-specifier|static
-name|void
-modifier|*
-name|move_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|move_gc
-specifier|static
-name|GdkGC
-modifier|*
-name|move_gc
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  move action functions  */
@@ -1978,18 +1995,30 @@ condition|(
 operator|!
 name|move_options
 condition|)
-name|move_options
-operator|=
-name|tools_register_no_options
+block|{
+name|tools_register
 argument_list|(
 name|MOVE
+argument_list|,
+name|NULL
 argument_list|,
 name|_
 argument_list|(
 literal|"Move Tool Options"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+name|move_options
+operator|=
+operator|(
+name|void
+operator|*
+operator|)
+literal|1
+expr_stmt|;
+block|}
 name|tool
 operator|=
 operator|(

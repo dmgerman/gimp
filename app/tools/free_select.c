@@ -69,6 +69,45 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|DEFAULT_MAX_INC
+define|#
+directive|define
+name|DEFAULT_MAX_INC
+value|1024
+end_define
+
+begin_define
+DECL|macro|ROUND (x)
+define|#
+directive|define
+name|ROUND
+parameter_list|(
+name|x
+parameter_list|)
+value|((int) (x + 0.5))
+end_define
+
+begin_define
+DECL|macro|SUPERSAMPLE
+define|#
+directive|define
+name|SUPERSAMPLE
+value|3
+end_define
+
+begin_define
+DECL|macro|SUPERSAMPLE2
+define|#
+directive|define
+name|SUPERSAMPLE2
+value|9
+end_define
+
+begin_comment
+comment|/* the free select structures  */
+end_comment
+
 begin_typedef
 DECL|typedef|FreeSelect
 typedef|typedef
@@ -128,56 +167,20 @@ block|}
 struct|;
 end_struct
 
-begin_define
-DECL|macro|DEFAULT_MAX_INC
-define|#
-directive|define
-name|DEFAULT_MAX_INC
-value|1024
-end_define
+begin_comment
+comment|/*  free select tool options  */
+end_comment
 
-begin_define
-DECL|macro|ROUND (x)
-define|#
-directive|define
-name|ROUND
-parameter_list|(
-name|x
-parameter_list|)
-value|((int) (x + 0.5))
-end_define
-
-begin_define
-DECL|macro|SUPERSAMPLE
-define|#
-directive|define
-name|SUPERSAMPLE
-value|3
-end_define
-
-begin_define
-DECL|macro|SUPERSAMPLE2
-define|#
-directive|define
-name|SUPERSAMPLE2
-value|9
-end_define
-
-begin_define
-DECL|macro|NO
-define|#
-directive|define
-name|NO
-value|0
-end_define
-
-begin_define
-DECL|macro|YES
-define|#
-directive|define
-name|YES
-value|1
-end_define
+begin_decl_stmt
+DECL|variable|free_options
+specifier|static
+name|SelectionOptions
+modifier|*
+name|free_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  The global array of XPoints for drawing the polygon...  */
@@ -204,16 +207,9 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|free_options
-specifier|static
-name|SelectionOptions
-modifier|*
-name|free_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -226,6 +222,10 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  functions  */
+end_comment
 
 begin_function
 specifier|static
@@ -2370,6 +2370,21 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|free_select_reset_options ()
+name|free_select_reset_options
+parameter_list|()
+block|{
+name|reset_selection_options
+argument_list|(
+name|free_options
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|Tool
 modifier|*
 DECL|function|tools_new_free_select (void)
@@ -2397,6 +2412,8 @@ operator|=
 name|create_selection_options
 argument_list|(
 name|FREE_SELECT
+argument_list|,
+name|free_select_reset_options
 argument_list|)
 expr_stmt|;
 name|tool

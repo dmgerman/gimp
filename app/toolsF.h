@@ -27,7 +27,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae82adf0103
+DECL|enum|__anon2c28fcf40103
 block|{
 DECL|enumerator|FIRST_TOOLBOX_TOOL
 name|FIRST_TOOLBOX_TOOL
@@ -292,7 +292,7 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|/* ToolInfo function declarations */
+comment|/*  ToolInfo function declarations  */
 end_comment
 
 begin_typedef
@@ -336,6 +336,24 @@ function_decl|)
 parameter_list|(
 name|GDisplay
 modifier|*
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_comment
+comment|/*  Tool options function declarations  */
+end_comment
+
+begin_typedef
+DECL|typedef|ToolOptionsResetFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|ToolOptionsResetFunc
+function_decl|)
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_typedef

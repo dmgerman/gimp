@@ -135,6 +135,10 @@ name|PREVIEW_EVENT_MASK
 value|GDK_EXPOSURE_MASK | \                             GDK_BUTTON_PRESS_MASK | \                             GDK_ENTER_NOTIFY_MASK
 end_define
 
+begin_comment
+comment|/*  the by color selection structures  */
+end_comment
+
 begin_typedef
 DECL|typedef|ByColorSelect
 typedef|typedef
@@ -214,6 +218,36 @@ comment|/*  gimage which is currently under examination  */
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  by color selection tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|by_color_options
+specifier|static
+name|SelectionOptions
+modifier|*
+name|by_color_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/*  the by color selection dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|by_color_dialog
+specifier|static
+name|ByColorDialog
+modifier|*
+name|by_color_dialog
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  by_color select action functions  */
@@ -435,28 +469,6 @@ modifier|*
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|by_color_options
-specifier|static
-name|SelectionOptions
-modifier|*
-name|by_color_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|by_color_dialog
-specifier|static
-name|ByColorDialog
-modifier|*
-name|by_color_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -2060,6 +2072,21 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|by_color_select_reset_options ()
+name|by_color_select_reset_options
+parameter_list|()
+block|{
+name|reset_selection_options
+argument_list|(
+name|by_color_options
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|Tool
 modifier|*
 DECL|function|tools_new_by_color_select ()
@@ -2085,6 +2112,8 @@ operator|=
 name|create_selection_options
 argument_list|(
 name|BY_COLOR_SELECT
+argument_list|,
+name|by_color_select_reset_options
 argument_list|)
 expr_stmt|;
 comment|/*  The "by color" dialog  */
@@ -2556,7 +2585,7 @@ literal|"By Color Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2603,7 +2632,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2811,7 +2840,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

@@ -175,6 +175,10 @@ name|ALL
 value|0xFF
 end_define
 
+begin_comment
+comment|/*  the color balance structures  */
+end_comment
+
 begin_typedef
 DECL|typedef|ColorBalance
 typedef|typedef
@@ -316,6 +320,41 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  the color balance tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|color_balance_options
+specifier|static
+name|void
+modifier|*
+name|color_balance_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|color_balance_options
+comment|/* dummy */
+end_comment
+
+begin_comment
+comment|/*  the color balance dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|color_balance_dialog
+specifier|static
+name|ColorBalanceDialog
+modifier|*
+name|color_balance_dialog
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  color balance action functions  */
@@ -619,28 +658,6 @@ name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|color_balance_options
-specifier|static
-name|void
-modifier|*
-name|color_balance_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|color_balance_dialog
-specifier|static
-name|ColorBalanceDialog
-modifier|*
-name|color_balance_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -1195,18 +1212,30 @@ condition|(
 operator|!
 name|color_balance_options
 condition|)
-name|color_balance_options
-operator|=
-name|tools_register_no_options
+block|{
+name|tools_register
 argument_list|(
 name|COLOR_BALANCE
+argument_list|,
+name|NULL
 argument_list|,
 name|_
 argument_list|(
 literal|"Color Balance Options"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+name|color_balance_options
+operator|=
+operator|(
+name|void
+operator|*
+operator|)
+literal|1
+expr_stmt|;
+block|}
 name|tool
 operator|=
 operator|(

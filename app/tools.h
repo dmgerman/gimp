@@ -210,7 +210,7 @@ DECL|member|preserve
 name|int
 name|preserve
 decl_stmt|;
-comment|/*  Perserve this tool through the current image changes */
+comment|/*  Preserve this tool through the current image changes */
 comment|/*  Action functions  */
 DECL|member|button_press_func
 name|ButtonPressFunc
@@ -249,6 +249,15 @@ DECL|member|tool_options
 name|GtkWidget
 modifier|*
 name|tool_options
+decl_stmt|;
+DECL|member|tool_options_title
+name|char
+modifier|*
+name|tool_options_title
+decl_stmt|;
+DECL|member|tool_options_reset_func
+name|ToolOptionsResetFunc
+name|tool_options_reset_func
 decl_stmt|;
 DECL|member|tool_name
 name|char
@@ -399,25 +408,21 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_register_options
+name|tools_register
 parameter_list|(
 name|ToolType
+name|tool_type
 parameter_list|,
 name|GtkWidget
 modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-modifier|*
-name|tools_register_no_options
-parameter_list|(
-name|ToolType
+name|tool_options
 parameter_list|,
-name|char
+name|gchar
 modifier|*
+name|tool_options_title
+parameter_list|,
+name|ToolOptionsResetFunc
+name|tool_options_reset_func
 parameter_list|)
 function_decl|;
 end_function_decl

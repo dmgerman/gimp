@@ -117,6 +117,10 @@ name|HISTOGRAM_HEIGHT
 value|150
 end_define
 
+begin_comment
+comment|/*  the histogram structures  */
+end_comment
+
 begin_typedef
 DECL|typedef|HistogramTool
 typedef|typedef
@@ -229,6 +233,41 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/*  the histogram tool options  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|histogram_tool_options
+specifier|static
+name|void
+modifier|*
+name|histogram_tool_options
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|histogram_tool_options
+comment|/* dummy */
+end_comment
+
+begin_comment
+comment|/*  the histogram tool dialog  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|histogram_tool_dialog
+specifier|static
+name|HistogramToolDialog
+modifier|*
+name|histogram_tool_dialog
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  histogram_tool action functions  */
@@ -404,28 +443,6 @@ name|gpointer
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-DECL|variable|histogram_tool_options
-specifier|static
-name|void
-modifier|*
-name|histogram_tool_options
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|histogram_tool_dialog
-specifier|static
-name|HistogramToolDialog
-modifier|*
-name|histogram_tool_dialog
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -1138,15 +1155,30 @@ condition|(
 operator|!
 name|histogram_tool_options
 condition|)
-name|histogram_tool_options
-operator|=
-name|tools_register_no_options
+block|{
+name|tools_register
 argument_list|(
 name|HISTOGRAM
 argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
 literal|"Histogram Options"
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
+name|histogram_tool_options
+operator|=
+operator|(
+name|void
+operator|*
+operator|)
+literal|1
+expr_stmt|;
+block|}
 name|tool
 operator|=
 operator|(

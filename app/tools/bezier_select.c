@@ -288,7 +288,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon27fe09450108
+DECL|struct|__anon2c1873120108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27fe09450208
+DECL|struct|__anon2c1873120208
 typedef|typedef
 struct|struct
 block|{
@@ -883,6 +883,21 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
+name|void
+DECL|function|bezier_select_reset_options ()
+name|bezier_select_reset_options
+parameter_list|()
+block|{
+name|reset_selection_options
+argument_list|(
+name|bezier_options
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|Tool
 modifier|*
 DECL|function|tools_new_bezier_select ()
@@ -908,6 +923,8 @@ operator|=
 name|create_selection_options
 argument_list|(
 name|BEZIER_SELECT
+argument_list|,
+name|bezier_select_reset_options
 argument_list|)
 expr_stmt|;
 name|tool
