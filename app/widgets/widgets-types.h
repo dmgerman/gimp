@@ -237,6 +237,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpControllerInfo
+typedef|typedef
+name|struct
+name|_GimpControllerInfo
+name|GimpControllerInfo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpControllerWheel
 typedef|typedef
 name|struct
