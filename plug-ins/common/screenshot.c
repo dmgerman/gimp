@@ -128,7 +128,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9b2d360108
+DECL|struct|__anon2acd016a0108
 block|{
 DECL|member|root
 name|gboolean
@@ -1203,6 +1203,18 @@ operator|=
 name|gimp_drawable_get
 argument_list|(
 name|layer
+argument_list|)
+expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+operator|(
+name|width
+operator|/
+name|gimp_tile_width
+argument_list|()
+operator|)
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 name|gimp_pixel_rgn_init
