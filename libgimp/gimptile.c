@@ -944,6 +944,12 @@ condition|)
 name|gimp_quit
 argument_list|()
 expr_stmt|;
+name|wire_destroy
+argument_list|(
+operator|&
+name|msg
+argument_list|)
+expr_stmt|;
 name|gimp_read_expect_msg
 argument_list|(
 operator|&

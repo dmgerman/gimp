@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c78b6a70103
+DECL|enum|__anon2bacfe670103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3521,10 +3521,11 @@ condition|(
 name|msg
 operator|->
 name|type
-operator|!=
+operator|==
 name|type
 condition|)
-block|{
+return|return;
+comment|/* up to the caller to call wire_destroy() */
 if|if
 condition|(
 name|msg
@@ -3545,9 +3546,9 @@ argument_list|(
 name|msg
 argument_list|)
 expr_stmt|;
-continue|continue;
 block|}
 else|else
+block|{
 name|g_error
 argument_list|(
 literal|"unexpected message: %d"
@@ -3558,8 +3559,11 @@ name|type
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-break|break;
+name|wire_destroy
+argument_list|(
+name|msg
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
@@ -5144,6 +5148,12 @@ block|{
 case|case
 name|GP_QUIT
 case|:
+name|wire_destroy
+argument_list|(
+operator|&
+name|msg
+argument_list|)
+expr_stmt|;
 name|gimp_close
 argument_list|()
 expr_stmt|;
@@ -5182,6 +5192,12 @@ argument_list|(
 name|msg
 operator|.
 name|data
+argument_list|)
+expr_stmt|;
+name|wire_destroy
+argument_list|(
+operator|&
+name|msg
 argument_list|)
 expr_stmt|;
 name|gimp_close
