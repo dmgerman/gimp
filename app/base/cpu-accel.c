@@ -330,7 +330,7 @@ argument_list|)
 operator|&&
 name|defined
 argument_list|(
-name|ENABLE_ALTIVEC
+name|USE_ALTIVEC
 argument_list|)
 end_if
 
@@ -397,9 +397,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|arch_accel (void)
 specifier|static
 name|guint32
+DECL|function|arch_accel (void)
 name|arch_accel
 parameter_list|(
 name|void
@@ -485,7 +485,7 @@ argument_list|)
 operator|&&
 name|defined
 argument_list|(
-name|ENABLE_ALTIVEC
+name|USE_ALTIVEC
 argument_list|)
 operator|)
 specifier|static
@@ -566,7 +566,7 @@ name|accel
 return|;
 else|#
 directive|else
-comment|/* !ARCH_X86&& !ARCH_PPC/ENABLE_ALTIVEC */
+comment|/* !ARCH_X86&& !ARCH_PPC/USE_ALTIVEC */
 return|return
 literal|0
 return|;

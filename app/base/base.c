@@ -230,25 +230,22 @@ name|base_config
 operator|=
 name|config
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|USE_MMX
 if|if
 condition|(
 name|use_mmx
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|ARCH_X86
 name|g_printerr
 argument_list|(
 literal|"Testing CPU features...\n"
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ARCH_X86
 name|g_printerr
 argument_list|(
-literal|"  mmx    : %s\n"
+literal|"  mmx     : %s\n"
 argument_list|,
 operator|(
 name|cpu_accel
@@ -264,7 +261,7 @@ argument_list|)
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"  3dnow  : %s\n"
+literal|"  3dnow   : %s\n"
 argument_list|,
 operator|(
 name|cpu_accel
@@ -280,7 +277,7 @@ argument_list|)
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"  mmxext : %s\n"
+literal|"  mmxext  : %s\n"
 argument_list|,
 operator|(
 name|cpu_accel
@@ -296,7 +293,7 @@ argument_list|)
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"  sse    : %s\n"
+literal|"  sse     : %s\n"
 argument_list|,
 operator|(
 name|cpu_accel
@@ -312,7 +309,7 @@ argument_list|)
 expr_stmt|;
 name|g_printerr
 argument_list|(
-literal|"  sse2   : %s\n"
+literal|"  sse2    : %s\n"
 argument_list|,
 operator|(
 name|cpu_accel
@@ -326,16 +323,35 @@ else|:
 literal|"no"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|ARCH_PPC
+name|g_printerr
+argument_list|(
+literal|"  altivec : %s\n"
+argument_list|,
+operator|(
+name|cpu_accel
+argument_list|()
+operator|&
+name|CPU_ACCEL_PPC_ALTIVEC
+operator|)
+condition|?
+literal|"yes"
+else|:
+literal|"no"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|g_printerr
 argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
-endif|#
-directive|endif
 name|tile_cache_init
 argument_list|(
 name|config
