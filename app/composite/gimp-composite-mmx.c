@@ -798,26 +798,6 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-name|printf
-argument_list|(
-literal|"A=%d B=%d %d  "
-argument_list|,
-name|op
-operator|.
-name|pixelformat_A
-argument_list|,
-name|op
-operator|.
-name|pixelformat_B
-argument_list|,
-name|GIMP_PIXELFORMAT_RGBA8
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
 asm|asm
 specifier|volatile
 asm|("  movq    %0, %%mm0\n"                 "\tmovq    %1, %%mm7\n"                 :                 : "m" (*rgba8_alpha_mask), "m" (*rgba8_w1)                 : "%mm0", "%mm7");
@@ -908,8 +888,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_dodge_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_dodge_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_dodge_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
+name|xxxgimp_composite_dodge_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*

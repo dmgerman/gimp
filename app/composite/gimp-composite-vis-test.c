@@ -181,7 +181,7 @@ return|;
 block|}
 name|rgba8A
 operator|=
-name|gimp_composite_regression_fixed_rgba8
+name|gimp_composite_regression_random_rgba8
 argument_list|(
 name|n_pixels
 operator|+
@@ -190,7 +190,7 @@ argument_list|)
 expr_stmt|;
 name|rgba8B
 operator|=
-name|gimp_composite_regression_fixed_rgba8
+name|gimp_composite_regression_random_rgba8
 argument_list|(
 name|n_pixels
 operator|+
@@ -199,7 +199,7 @@ argument_list|)
 expr_stmt|;
 name|rgba8M
 operator|=
-name|gimp_composite_regression_fixed_rgba8
+name|gimp_composite_regression_random_rgba8
 argument_list|(
 name|n_pixels
 operator|+
@@ -580,11 +580,10 @@ argument_list|(
 literal|"Usage: gimp-composites-*-test [-i|--iterations n] [-n|--n-pixels n]"
 argument_list|)
 expr_stmt|;
-name|argc
-operator|--
-operator|,
-name|argv
-operator|++
+name|exit
+argument_list|(
+literal|1
+argument_list|)
 expr_stmt|;
 block|}
 block|}

@@ -1040,8 +1040,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_dodge_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
-name|gimp_composite_dodge_rgba8_rgba8_rgba8_sse2
+DECL|function|xxxgimp_composite_dodge_rgba8_rgba8_rgba8_sse2 (GimpCompositeContext * _op)
+name|xxxgimp_composite_dodge_rgba8_rgba8_rgba8_sse2
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
