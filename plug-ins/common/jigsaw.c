@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2789d4020103
+DECL|enum|__anon29b324620103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2789d4020203
+DECL|enum|__anon29b324620203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -2581,6 +2581,16 @@ name|rowstride
 operator|*
 name|height
 expr_stmt|;
+if|if
+condition|(
+name|buffer_size
+operator|==
+literal|0
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 block|}
 else|else
 block|{
