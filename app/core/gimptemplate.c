@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acdc5050103
+DECL|enum|__anon28d9d8a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -458,11 +458,11 @@ literal|"The unit used for coordinate display "
 literal|"when not in dot-for-dot mode."
 argument_list|)
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-name|GIMP_UNIT_INCH
+name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|0
 argument_list|)

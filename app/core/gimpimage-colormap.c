@@ -118,13 +118,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_colormap (GimpImage * gimage,guchar * cmap,gint n_colors,gboolean push_undo)
+DECL|function|gimp_image_set_colormap (GimpImage * gimage,const guchar * cmap,gint n_colors,gboolean push_undo)
 name|gimp_image_set_colormap
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|cmap

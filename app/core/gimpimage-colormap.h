@@ -57,6 +57,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|cmap

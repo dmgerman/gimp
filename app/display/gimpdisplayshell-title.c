@@ -1271,31 +1271,17 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-literal|'w'
-case|:
-comment|/* width in pixels */
-name|i
-operator|+=
-name|print
-argument_list|(
-name|title
-argument_list|,
-name|title_len
-argument_list|,
-name|i
-argument_list|,
-literal|"%d"
-argument_list|,
-name|gimage
-operator|->
-name|width
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 literal|'W'
 case|:
 comment|/* width in real-world units */
+if|if
+condition|(
+name|gimage
+operator|->
+name|unit
+operator|!=
+name|GIMP_UNIT_PIXEL
+condition|)
 block|{
 name|gchar
 name|unit_format
@@ -1350,12 +1336,13 @@ name|xresolution
 operator|)
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
+block|}
+comment|/* else fallthru */
 case|case
-literal|'h'
+literal|'w'
 case|:
-comment|/* height in pixels */
+comment|/* width in pixels */
 name|i
 operator|+=
 name|print
@@ -1370,7 +1357,7 @@ literal|"%d"
 argument_list|,
 name|gimage
 operator|->
-name|height
+name|width
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1378,6 +1365,14 @@ case|case
 literal|'H'
 case|:
 comment|/* height in real-world units */
+if|if
+condition|(
+name|gimage
+operator|->
+name|unit
+operator|!=
+name|GIMP_UNIT_PIXEL
+condition|)
 block|{
 name|gchar
 name|unit_format
@@ -1432,7 +1427,30 @@ name|yresolution
 operator|)
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
+comment|/* else fallthru */
+case|case
+literal|'h'
+case|:
+comment|/* height in pixels */
+name|i
+operator|+=
+name|print
+argument_list|(
+name|title
+argument_list|,
+name|title_len
+argument_list|,
+name|i
+argument_list|,
+literal|"%d"
+argument_list|,
+name|gimage
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 literal|'u'

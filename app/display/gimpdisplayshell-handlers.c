@@ -1704,14 +1704,6 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|shell
-operator|->
-name|dot_for_dot
-condition|)
-block|{
 name|gimp_display_shell_scale_setup
 argument_list|(
 name|shell
@@ -1722,7 +1714,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_statusbar_resize_cursor
 argument_list|(
 name|GIMP_STATUSBAR
@@ -1751,14 +1742,6 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|!
-name|shell
-operator|->
-name|dot_for_dot
-condition|)
-block|{
 name|gimp_display_shell_scale_setup
 argument_list|(
 name|shell
@@ -1769,7 +1752,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_statusbar_resize_cursor
 argument_list|(
 name|GIMP_STATUSBAR

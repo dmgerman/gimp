@@ -870,7 +870,7 @@ name|GIMP_FOREGROUND_FILL
 block|,
 name|N_
 argument_list|(
-literal|"Foreground"
+literal|"Foreground Color"
 argument_list|)
 block|,
 literal|"foreground-fill"
@@ -881,7 +881,7 @@ name|GIMP_BACKGROUND_FILL
 block|,
 name|N_
 argument_list|(
-literal|"Background"
+literal|"Background Color"
 argument_list|)
 block|,
 literal|"background-fill"
@@ -903,7 +903,7 @@ name|GIMP_TRANSPARENT_FILL
 block|,
 name|N_
 argument_list|(
-literal|"Transparent"
+literal|"Transparency"
 argument_list|)
 block|,
 literal|"transparent-fill"
@@ -1699,7 +1699,7 @@ name|GIMP_RGB
 block|,
 name|N_
 argument_list|(
-literal|"RGB"
+literal|"RGB Color"
 argument_list|)
 block|,
 literal|"rgb"
@@ -1721,7 +1721,7 @@ name|GIMP_INDEXED
 block|,
 name|N_
 argument_list|(
-literal|"Indexed"
+literal|"Indexed Color"
 argument_list|)
 block|,
 literal|"indexed"
