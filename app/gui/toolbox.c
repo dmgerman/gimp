@@ -1764,11 +1764,11 @@ literal|1
 operator|)
 condition|)
 block|{
-name|gimp_dialog_factory_dialog_new
+name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dialog_factory
+name|global_dock_factory
 argument_list|,
-literal|"gimp:tool-options-dialog"
+literal|"gimp:tool-options"
 argument_list|,
 operator|-
 literal|1

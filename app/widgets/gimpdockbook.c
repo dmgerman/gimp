@@ -69,20 +69,10 @@ directive|include
 file|"gimpitemfactory.h"
 end_include
 
-begin_comment
-comment|/* EEK, see below  */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|"gimpcontainerview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcontainerview-utils.h"
+file|"gimppreview.h"
 end_include
 
 begin_define
@@ -843,7 +833,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_IS_LABEL
+name|GTK_WIDGET_NO_WINDOW
 argument_list|(
 name|tab_widget
 argument_list|)
@@ -1031,8 +1021,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|GTK_IS_LABEL
+name|GIMP_IS_PREVIEW
 argument_list|(
 name|menu_widget
 argument_list|)
@@ -1111,7 +1100,14 @@ operator|=
 name|hbox
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|GTK_IS_LABEL
+argument_list|(
+name|menu_widget
+argument_list|)
+condition|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
