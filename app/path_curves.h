@@ -16,11 +16,12 @@ directive|define
 name|__PATH_CURVES_H__
 end_define
 
-begin_undef
-undef|#
-directive|undef
+begin_define
+DECL|macro|PATH_TOOL_DEBUG
+define|#
+directive|define
 name|PATH_TOOL_DEBUG
-end_undef
+end_define
 
 begin_ifdef
 ifdef|#
@@ -112,7 +113,7 @@ value|1000
 end_define
 
 begin_typedef
-DECL|enum|__anon2b6d83ec0103
+DECL|enum|__anon28d2bd8c0103
 DECL|enumerator|SEGMENT_LINE
 DECL|enumerator|SEGMENT_BEZIER
 DECL|typedef|SegmentType
@@ -130,7 +131,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b6d83ec0203
+DECL|enum|__anon28d2bd8c0203
 DECL|enumerator|ON_ANCHOR
 DECL|enumerator|ON_HANDLE
 DECL|enumerator|ON_CURVE
@@ -657,7 +658,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6d83ec0308
+DECL|struct|__anon28d2bd8c0308
 typedef|typedef
 struct|struct
 block|{

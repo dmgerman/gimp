@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af055ef0103
+DECL|enum|__anon2a4e210d0103
 block|{
 DECL|enumerator|DRAW
 name|DRAW
@@ -946,6 +946,8 @@ argument_list|,
 literal|0
 argument_list|,
 literal|360
+operator|*
+literal|64
 argument_list|)
 expr_stmt|;
 block|}

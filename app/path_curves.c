@@ -310,7 +310,7 @@ name|fprintf
 argument_list|(
 name|stderr
 argument_list|,
-literal|"path_curve_get_point called without valid curve"
+literal|"path_curve_get_points called without valid curve"
 argument_list|)
 expr_stmt|;
 endif|#
@@ -387,8 +387,49 @@ else|else
 block|{
 if|#
 directive|if
-literal|0
-block|*x = segment->x + (segment->next->x - segment->x) * position;          *y = segment->y + (segment->next->y - segment->y) * position;
+literal|1
+operator|*
+name|x
+operator|=
+name|segment
+operator|->
+name|x
+operator|+
+operator|(
+name|segment
+operator|->
+name|next
+operator|->
+name|x
+operator|-
+name|segment
+operator|->
+name|x
+operator|)
+operator|*
+name|position
+expr_stmt|;
+operator|*
+name|y
+operator|=
+name|segment
+operator|->
+name|y
+operator|+
+operator|(
+name|segment
+operator|->
+name|next
+operator|->
+name|y
+operator|-
+name|segment
+operator|->
+name|y
+operator|)
+operator|*
+name|position
+expr_stmt|;
 else|#
 directive|else
 comment|/* Only here for debugging purposes: A bezier curve with fixed tangents */

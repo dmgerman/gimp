@@ -104,12 +104,12 @@ name|click_type
 decl_stmt|;
 comment|/* where did the user click?         */
 DECL|member|click_x
-name|gint
+name|gdouble
 name|click_x
 decl_stmt|;
 comment|/* X-coordinate of the click         */
 DECL|member|click_y
-name|gint
+name|gdouble
 name|click_y
 decl_stmt|;
 comment|/* Y-coordinate of the click         */

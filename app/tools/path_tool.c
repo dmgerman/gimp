@@ -41,6 +41,12 @@ directive|include
 file|"path_tool.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppathtool.h"
+end_include
+
 begin_comment
 comment|/*  * Every new curve-type has to have a parameter between 0 and 1, and  * should go from a starting to a target point.  */
 end_comment
@@ -223,9 +229,9 @@ parameter_list|(
 name|NPath
 modifier|*
 parameter_list|,
-name|gint
+name|gdouble
 parameter_list|,
-name|gint
+name|gdouble
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -243,9 +249,9 @@ modifier|*
 parameter_list|,
 name|SegmentType
 parameter_list|,
-name|gint
+name|gdouble
 parameter_list|,
-name|gint
+name|gdouble
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -263,9 +269,9 @@ modifier|*
 parameter_list|,
 name|SegmentType
 parameter_list|,
-name|gint
+name|gdouble
 parameter_list|,
-name|gint
+name|gdouble
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -744,17 +750,17 @@ end_comment
 begin_function
 name|PathCurve
 modifier|*
-DECL|function|path_add_curve (NPath * cur_path,gint x,gint y)
+DECL|function|path_add_curve (NPath * cur_path,gdouble x,gdouble y)
 name|path_add_curve
 parameter_list|(
 name|NPath
 modifier|*
 name|cur_path
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -890,7 +896,7 @@ end_function
 begin_function
 name|PathSegment
 modifier|*
-DECL|function|path_append_segment (NPath * cur_path,PathCurve * cur_curve,SegmentType type,gint x,gint y)
+DECL|function|path_append_segment (NPath * cur_path,PathCurve * cur_curve,SegmentType type,gdouble x,gdouble y)
 name|path_append_segment
 parameter_list|(
 name|NPath
@@ -904,10 +910,10 @@ parameter_list|,
 name|SegmentType
 name|type
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -1103,7 +1109,7 @@ end_function
 begin_function
 name|PathSegment
 modifier|*
-DECL|function|path_prepend_segment (NPath * cur_path,PathCurve * cur_curve,SegmentType type,gint x,gint y)
+DECL|function|path_prepend_segment (NPath * cur_path,PathCurve * cur_curve,SegmentType type,gdouble x,gdouble y)
 name|path_prepend_segment
 parameter_list|(
 name|NPath
@@ -1117,10 +1123,10 @@ parameter_list|,
 name|SegmentType
 name|type
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|)
 block|{
@@ -2540,17 +2546,17 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|path_tool_cursor_position (NPath * path,gint x,gint y,gint halfwidth,NPath ** pathP,PathCurve ** curveP,PathSegment ** segmentP,gdouble * positionP,gint * handle_idP)
+DECL|function|path_tool_cursor_position (NPath * path,gdouble x,gdouble y,gint halfwidth,NPath ** pathP,PathCurve ** curveP,PathSegment ** segmentP,gdouble * positionP,gint * handle_idP)
 name|path_tool_cursor_position
 parameter_list|(
 name|NPath
 modifier|*
 name|path
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|,
 name|gint
@@ -3092,7 +3098,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d398bc0108
+DECL|struct|__anon28c3697d0108
 typedef|typedef
 struct|struct
 block|{
@@ -3450,7 +3456,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d398bc0208
+DECL|struct|__anon28c3697d0208
 typedef|typedef
 struct|struct
 block|{
@@ -3470,11 +3476,11 @@ modifier|*
 name|segment
 decl_stmt|;
 DECL|member|testx
-name|gint
+name|gdouble
 name|testx
 decl_stmt|;
 DECL|member|testy
-name|gint
+name|gdouble
 name|testy
 decl_stmt|;
 DECL|member|distance
@@ -3632,17 +3638,17 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|path_tool_on_anchors (NPath * path,gint x,gint y,gint halfwidth,NPath ** ret_pathP,PathCurve ** ret_curveP,PathSegment ** ret_segmentP)
+DECL|function|path_tool_on_anchors (NPath * path,gdouble x,gdouble y,gint halfwidth,NPath ** ret_pathP,PathCurve ** ret_curveP,PathSegment ** ret_segmentP)
 name|path_tool_on_anchors
 parameter_list|(
 name|NPath
 modifier|*
 name|path
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|,
 name|gint
@@ -3792,7 +3798,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d398bc0308
+DECL|struct|__anon28c3697d0308
 typedef|typedef
 struct|struct
 block|{
@@ -3812,11 +3818,11 @@ modifier|*
 name|segment
 decl_stmt|;
 DECL|member|testx
-name|gint
+name|gdouble
 name|testx
 decl_stmt|;
 DECL|member|testy
-name|gint
+name|gdouble
 name|testy
 decl_stmt|;
 DECL|member|halfwidth
@@ -3948,17 +3954,17 @@ end_function
 
 begin_function
 name|gint
-DECL|function|path_tool_on_handles (NPath * path,gint x,gint y,gint halfwidth,NPath ** ret_pathP,PathCurve ** ret_curveP,PathSegment ** ret_segmentP)
+DECL|function|path_tool_on_handles (NPath * path,gdouble x,gdouble y,gint halfwidth,NPath ** ret_pathP,PathCurve ** ret_curveP,PathSegment ** ret_segmentP)
 name|path_tool_on_handles
 parameter_list|(
 name|NPath
 modifier|*
 name|path
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|,
-name|gint
+name|gdouble
 name|y
 parameter_list|,
 name|gint
@@ -4110,7 +4116,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d398bc0408
+DECL|struct|__anon28c3697d0408
 typedef|typedef
 struct|struct
 block|{
@@ -4268,7 +4274,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d398bc0508
+DECL|struct|__anon28c3697d0508
 typedef|typedef
 struct|struct
 block|{
@@ -4363,15 +4369,82 @@ operator|->
 name|bits_set
 expr_stmt|;
 comment|/*         * Some black magic: We try to remember, which is the single active        * segment.  We count, how many segments are active (in        * path_tool->active_count) and XOR path_tool->single_active_segment        * every time we select or deselect an anchor. So if exactly one anchor        * is active, path_tool->single_active_segment points to it.        */
-if|#
-directive|if
-literal|0
 comment|/* If SEGMENT_ACTIVE state has changed change the PathTool data        * accordingly.        */
-block|if (((segment->flags ^ oldflags)& SEGMENT_ACTIVE)&& tmp&& tmp->path_tool) { 	 if (segment->flags& SEGMENT_ACTIVE) 	    tmp->path_tool->active_count++; 	 else 	    tmp->path_tool->active_count--;
+if|if
+condition|(
+operator|(
+operator|(
+name|segment
+operator|->
+name|flags
+operator|^
+name|oldflags
+operator|)
+operator|&
+name|SEGMENT_ACTIVE
+operator|)
+operator|&&
+name|tmp
+operator|&&
+name|tmp
+operator|->
+name|path_tool
+condition|)
+block|{
+if|if
+condition|(
+name|segment
+operator|->
+name|flags
+operator|&
+name|SEGMENT_ACTIVE
+condition|)
+name|tmp
+operator|->
+name|path_tool
+operator|->
+name|active_count
+operator|++
+expr_stmt|;
+else|else
+name|tmp
+operator|->
+name|path_tool
+operator|->
+name|active_count
+operator|--
+expr_stmt|;
 comment|/* Does this work on all (16|32|64)-bit Machines? */
-block|tmp_uint = GPOINTER_TO_UINT(tmp->path_tool->single_active_segment);          tmp_uint ^= GPOINTER_TO_UINT(segment); 	 tmp->path_tool->single_active_segment = GUINT_TO_POINTER(tmp_uint);       }
-endif|#
-directive|endif
+name|tmp_uint
+operator|=
+name|GPOINTER_TO_UINT
+argument_list|(
+name|tmp
+operator|->
+name|path_tool
+operator|->
+name|single_active_segment
+argument_list|)
+expr_stmt|;
+name|tmp_uint
+operator|^=
+name|GPOINTER_TO_UINT
+argument_list|(
+name|segment
+argument_list|)
+expr_stmt|;
+name|tmp
+operator|->
+name|path_tool
+operator|->
+name|single_active_segment
+operator|=
+name|GUINT_TO_POINTER
+argument_list|(
+name|tmp_uint
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_function
