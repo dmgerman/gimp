@@ -807,12 +807,6 @@ name|GList
 modifier|*
 name|context_list
 decl_stmt|;
-comment|/*  the hardcoded standard context  */
-DECL|member|standard_context
-name|GimpContext
-modifier|*
-name|standard_context
-decl_stmt|;
 comment|/*  the default context which is initialized from gimprc  */
 DECL|member|default_context
 name|GimpContext
@@ -1353,18 +1347,6 @@ name|gimage
 parameter_list|,
 name|gdouble
 name|scale
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GimpContext
-modifier|*
-name|gimp_get_standard_context
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
