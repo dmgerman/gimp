@@ -286,7 +286,7 @@ file|"pixmaps/locked.xbm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2a0c2d520108
+DECL|struct|__anon2b41286c0108
 typedef|typedef
 struct|struct
 block|{
@@ -415,7 +415,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a0c2d520208
+DECL|struct|__anon2b41286c0208
 typedef|typedef
 struct|struct
 block|{
@@ -444,7 +444,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0c2d520308
+DECL|struct|__anon2b41286c0308
 typedef|typedef
 struct|struct
 block|{
@@ -463,7 +463,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0c2d520408
+DECL|struct|__anon2b41286c0408
 typedef|typedef
 struct|struct
 block|{
@@ -3713,6 +3713,11 @@ operator|->
 name|image_height
 operator|+
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|rgb_buf
 argument_list|)
 expr_stmt|;
 block|}

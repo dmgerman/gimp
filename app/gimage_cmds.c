@@ -8065,6 +8065,11 @@ name|buf
 operator|->
 name|bytes
 expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 name|return_args

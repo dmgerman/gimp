@@ -1704,7 +1704,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af883bc0108
+DECL|struct|__anon2a3bb7c90108
 block|{
 DECL|member|def
 name|GImage
@@ -2296,6 +2296,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|odd
+argument_list|)
+expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|buf
 argument_list|)
 expr_stmt|;
 block|}

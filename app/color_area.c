@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292475210103
+DECL|enum|__anon2b73b9e70103
 block|{
 DECL|enumerator|FORE_AREA
 name|FORE_AREA
@@ -570,6 +570,8 @@ name|color_area_rgb_buf
 operator|=
 name|g_malloc
 argument_list|(
+name|color_area_rgb_buf_size
+operator|=
 name|rowstride
 operator|*
 name|height
