@@ -216,7 +216,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gradient_editor_left_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_left_color_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_left_color_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -225,9 +225,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -685,7 +682,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_right_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_right_color_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_right_color_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -694,9 +691,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -1386,7 +1380,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_flip_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_flip_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_flip_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -1395,9 +1389,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -1814,7 +1805,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_replicate_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_replicate_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_replicate_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -1823,9 +1814,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -2177,7 +2165,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_split_midpoint_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_split_midpoint_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_split_midpoint_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -2186,9 +2174,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -2289,7 +2274,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_split_uniformly_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_split_uniformly_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_split_uniformly_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -2298,9 +2283,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -2654,7 +2636,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_delete_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_delete_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_delete_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -2663,9 +2645,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -2950,7 +2929,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_recenter_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_recenter_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_recenter_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -2959,9 +2938,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -3060,7 +3036,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_redistribute_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_redistribute_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_redistribute_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -3069,9 +3045,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -3288,7 +3261,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blend_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_blend_color_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_blend_color_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -3297,9 +3270,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor
@@ -3357,7 +3327,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gradient_editor_blend_opacity_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|gradient_editor_blend_opacity_cmd_callback (GtkWidget * widget,gpointer data)
 name|gradient_editor_blend_opacity_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -3366,9 +3336,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpGradientEditor

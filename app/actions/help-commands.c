@@ -35,7 +35,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|help_help_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|help_help_cmd_callback (GtkWidget * widget,gpointer data)
 name|help_help_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -44,9 +44,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|gimp_standard_help_func
@@ -61,7 +58,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|help_context_help_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|help_context_help_cmd_callback (GtkWidget * widget,gpointer data)
 name|help_context_help_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -70,9 +67,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|gimp_context_help

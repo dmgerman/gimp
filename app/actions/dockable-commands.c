@@ -198,7 +198,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_close_tab_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_close_tab_cmd_callback (GtkWidget * widget,gpointer data)
 name|dockable_close_tab_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -207,9 +207,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook
@@ -270,7 +267,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_detach_tab_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_detach_tab_cmd_callback (GtkWidget * widget,gpointer data)
 name|dockable_detach_tab_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -279,9 +276,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook
@@ -895,7 +889,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_toggle_image_menu_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_toggle_image_menu_cmd_callback (GtkWidget * widget,gpointer data)
 name|dockable_toggle_image_menu_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -904,9 +898,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook
@@ -949,7 +940,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_toggle_auto_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_toggle_auto_cmd_callback (GtkWidget * widget,gpointer data)
 name|dockable_toggle_auto_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -958,9 +949,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook
@@ -1086,7 +1074,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|dockable_change_screen_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|dockable_change_screen_cmd_callback (GtkWidget * widget,gpointer data)
 name|dockable_change_screen_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -1095,9 +1083,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDockbook

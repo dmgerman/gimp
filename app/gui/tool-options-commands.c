@@ -155,7 +155,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|tool_options_save_to_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tool_options_save_to_cmd_callback (GtkWidget * widget,gpointer data)
 name|tool_options_save_to_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -164,9 +164,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpToolOptions
@@ -234,7 +231,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_save_new_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tool_options_save_new_cmd_callback (GtkWidget * widget,gpointer data)
 name|tool_options_save_new_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -243,9 +240,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpEditor
@@ -334,7 +328,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_restore_from_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tool_options_restore_from_cmd_callback (GtkWidget * widget,gpointer data)
 name|tool_options_restore_from_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -343,9 +337,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpToolOptions
@@ -381,7 +372,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_rename_saved_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tool_options_rename_saved_cmd_callback (GtkWidget * widget,gpointer data)
 name|tool_options_rename_saved_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -390,9 +381,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpToolOptions
@@ -454,7 +442,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_delete_saved_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tool_options_delete_saved_cmd_callback (GtkWidget * widget,gpointer data)
 name|tool_options_delete_saved_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -463,9 +451,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpToolOptions
@@ -496,7 +481,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_reset_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tool_options_reset_cmd_callback (GtkWidget * widget,gpointer data)
 name|tool_options_reset_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -505,9 +490,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpToolOptionsEditor
@@ -543,7 +525,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_options_reset_all_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|tool_options_reset_all_cmd_callback (GtkWidget * widget,gpointer data)
 name|tool_options_reset_all_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -552,9 +534,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpToolOptionsEditor

@@ -45,7 +45,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|error_console_clear_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|error_console_clear_cmd_callback (GtkWidget * widget,gpointer data)
 name|error_console_clear_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -54,9 +54,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpErrorConsole
@@ -92,7 +89,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_save_all_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|error_console_save_all_cmd_callback (GtkWidget * widget,gpointer data)
 name|error_console_save_all_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -101,9 +98,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpErrorConsole
@@ -139,7 +133,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_save_selection_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|error_console_save_selection_cmd_callback (GtkWidget * widget,gpointer data)
 name|error_console_save_selection_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -148,9 +142,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpErrorConsole

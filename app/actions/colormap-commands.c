@@ -45,7 +45,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|colormap_editor_edit_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|colormap_editor_edit_color_cmd_callback (GtkWidget * widget,gpointer data)
 name|colormap_editor_edit_color_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -54,9 +54,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpColormapEditor

@@ -98,7 +98,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|debug_dump_menus_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|debug_dump_menus_cmd_callback (GtkWidget * widget,gpointer data)
 name|debug_dump_menus_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -107,9 +107,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GList
@@ -236,7 +233,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_mem_profile_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|debug_mem_profile_cmd_callback (GtkWidget * widget,gpointer data)
 name|debug_mem_profile_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -245,9 +242,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 specifier|extern

@@ -208,7 +208,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|qmask_toggle_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|qmask_toggle_cmd_callback (GtkWidget * widget,gpointer data)
 name|qmask_toggle_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -217,9 +217,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -363,7 +360,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_configure_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|qmask_configure_cmd_callback (GtkWidget * widget,gpointer data)
 name|qmask_configure_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -372,9 +369,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpDisplayShell
