@@ -1253,6 +1253,13 @@ name|guide_orientation
 operator|=
 name|GIMP_ORIENTATION_UNKNOWN
 expr_stmt|;
+name|gimp_display_shell_selection_visibility
+argument_list|(
+name|shell
+argument_list|,
+name|GIMP_SELECTION_RESUME
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|gimp_display_shell_untransform_xy
