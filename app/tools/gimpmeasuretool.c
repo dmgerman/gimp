@@ -351,6 +351,26 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gdouble
+name|measure_get_angle
+parameter_list|(
+name|gint
+name|dx
+parameter_list|,
+name|gint
+name|dy
+parameter_list|,
+name|gdouble
+name|xres
+parameter_list|,
+name|gdouble
+name|yres
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|MeasureOptions
 modifier|*
 name|measure_tool_options_new
@@ -465,6 +485,8 @@ block|{
 name|tool_manager_register_tool
 argument_list|(
 name|GIMP_TYPE_MEASURE_TOOL
+argument_list|,
+name|FALSE
 argument_list|,
 literal|"gimp:measure_tool"
 argument_list|,

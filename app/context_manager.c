@@ -153,6 +153,14 @@ directive|include
 file|"gimprc.h"
 end_include
 
+begin_define
+DECL|macro|PAINT_OPTIONS_MASK
+define|#
+directive|define
+name|PAINT_OPTIONS_MASK
+value|GIMP_CONTEXT_OPACITY_MASK | \                            GIMP_CONTEXT_PAINT_MODE_MASK
+end_define
+
 begin_comment
 comment|/*  *  the list of all images  */
 end_comment
@@ -211,9 +219,12 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  *  the global tool context  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|global_tool_context
-specifier|static
 name|GimpContext
 modifier|*
 name|global_tool_context
@@ -221,14 +232,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_define
-DECL|macro|PAINT_OPTIONS_MASK
-define|#
-directive|define
-name|PAINT_OPTIONS_MASK
-value|GIMP_CONTEXT_OPACITY_MASK | \                            GIMP_CONTEXT_PAINT_MODE_MASK
-end_define
 
 begin_function
 specifier|static
@@ -871,16 +874,9 @@ operator|&&
 operator|(
 name|tool_context
 operator|=
-name|tool_manager_get_info_by_type
-argument_list|(
-name|GTK_OBJECT
+name|tool_manager_get_info_by_tool
 argument_list|(
 name|active_tool
-argument_list|)
-operator|->
-name|klass
-operator|->
-name|type
 argument_list|)
 operator|->
 name|context

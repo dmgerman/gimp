@@ -323,6 +323,8 @@ name|tool_manager_register_tool
 argument_list|(
 name|GIMP_TYPE_MOVE_TOOL
 argument_list|,
+name|FALSE
+argument_list|,
 literal|"gimp:move_tool"
 argument_list|,
 name|_

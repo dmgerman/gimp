@@ -697,6 +697,8 @@ name|tool_manager_register_tool
 argument_list|(
 name|GIMP_TYPE_TEXT_TOOL
 argument_list|,
+name|FALSE
+argument_list|,
 literal|"gimp:text_tool"
 argument_list|,
 name|_

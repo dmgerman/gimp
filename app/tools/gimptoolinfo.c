@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"context_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -771,11 +783,14 @@ end_function
 begin_function
 name|GimpToolInfo
 modifier|*
-DECL|function|gimp_tool_info_new (GtkType tool_type,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar ** icon_data)
+DECL|function|gimp_tool_info_new (GtkType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar ** icon_data)
 name|gimp_tool_info_new
 parameter_list|(
 name|GtkType
 name|tool_type
+parameter_list|,
+name|gboolean
+name|tool_context
 parameter_list|,
 specifier|const
 name|gchar
@@ -906,6 +921,23 @@ name|icon_data
 operator|=
 name|icon_data
 expr_stmt|;
+if|if
+condition|(
+name|tool_context
+condition|)
+block|{
+name|tool_info
+operator|->
+name|context
+operator|=
+name|gimp_context_new
+argument_list|(
+name|identifier
+argument_list|,
+name|global_tool_context
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|tool_info
 return|;
@@ -939,6 +971,8 @@ operator|=
 name|gimp_tool_info_new
 argument_list|(
 name|GIMP_TYPE_COLOR_PICKER_TOOL
+argument_list|,
+name|FALSE
 argument_list|,
 literal|"gimp:standard_tool"
 argument_list|,

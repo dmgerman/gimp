@@ -98,6 +98,9 @@ parameter_list|(
 name|GtkType
 name|tool_type
 parameter_list|,
+name|gboolean
+name|tool_context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911c9530103
+DECL|enum|__anon29fb47480103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1747,20 +1747,6 @@ name|x
 parameter_list|)
 value|void * x (void){return NULL;}
 end_define
-
-begin_macro
-name|STUB
-argument_list|(
-argument|gimp_paintbrush_tool_non_gui
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|gimp_paintbrush_tool_non_gui_default
-argument_list|)
-end_macro
 
 begin_macro
 name|STUB

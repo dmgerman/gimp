@@ -641,6 +641,8 @@ name|tool_manager_register_tool
 argument_list|(
 name|GIMP_TYPE_COLOR_PICKER_TOOL
 argument_list|,
+name|FALSE
+argument_list|,
 literal|"gimp:color_picker_tool"
 argument_list|,
 name|_

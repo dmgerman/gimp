@@ -586,11 +586,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_register_tool (GtkType tool_type,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar ** icon_data)
+DECL|function|tool_manager_register_tool (GtkType tool_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar ** icon_data)
 name|tool_manager_register_tool
 parameter_list|(
 name|GtkType
 name|tool_type
+parameter_list|,
+name|gboolean
+name|tool_context
 parameter_list|,
 specifier|const
 name|gchar
@@ -643,6 +646,8 @@ operator|=
 name|gimp_tool_info_new
 argument_list|(
 name|tool_type
+argument_list|,
+name|tool_context
 argument_list|,
 name|identifier
 argument_list|,

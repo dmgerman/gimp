@@ -64,6 +64,18 @@ name|global_palette_factory
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/*  *  the global tool context  */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|GimpContext
+modifier|*
+name|global_tool_context
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|void
 name|context_manager_init
