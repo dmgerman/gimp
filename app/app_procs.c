@@ -193,6 +193,10 @@ name|gimp
 parameter_list|,
 name|gboolean
 name|kill_it
+parameter_list|,
+name|GMainLoop
+modifier|*
+name|loop
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -200,28 +204,6 @@ end_function_decl
 begin_comment
 comment|/*  private variables  */
 end_comment
-
-begin_decl_stmt
-DECL|variable|the_gimp
-specifier|static
-name|Gimp
-modifier|*
-name|the_gimp
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|loop
-specifier|static
-name|GMainLoop
-modifier|*
-name|loop
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_comment
 comment|/*  public functions  */
@@ -329,8 +311,16 @@ name|update_status_func
 init|=
 name|NULL
 decl_stmt|;
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|GMainLoop
+modifier|*
+name|loop
+decl_stmt|;
 comment|/*  Create an instance of the "Gimp" object which is the root of the    *  core object system    */
-name|the_gimp
+name|gimp
 operator|=
 name|gimp_new
 argument_list|(
@@ -362,7 +352,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -374,7 +364,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -386,7 +376,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -398,7 +388,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -410,7 +400,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -422,7 +412,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -434,7 +424,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -446,7 +436,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -458,7 +448,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -470,7 +460,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -482,7 +472,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -494,7 +484,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -506,7 +496,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -518,7 +508,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -530,7 +520,7 @@ argument_list|,
 name|gimp_message_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler
@@ -544,12 +534,12 @@ argument_list|,
 name|gimp_error_log_func
 argument_list|,
 operator|&
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|units_init
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  Check if the user's gimp_directory exists    */
@@ -608,7 +598,7 @@ block|}
 block|}
 name|gimp_load_config
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|alternate_system_gimprc
 argument_list|,
@@ -620,7 +610,7 @@ name|base_init
 argument_list|(
 name|GIMP_BASE_CONFIG
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|config
 argument_list|)
@@ -637,7 +627,7 @@ name|update_status_func
 operator|=
 name|gui_init
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|no_splash
 argument_list|,
@@ -653,25 +643,10 @@ name|update_status_func
 operator|=
 name|app_init_update_none
 expr_stmt|;
-comment|/*  connect our "exit" callbacks after gui_init() so they are    *  invoked after the GUI's "exit" callbacks    */
-name|g_signal_connect_after
-argument_list|(
-name|the_gimp
-argument_list|,
-literal|"exit"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|app_exit_after_callback
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/*  Create all members of the global Gimp instance which need an already    *  parsed gimprc, e.g. the data factories    */
 name|gimp_initialize
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|update_status_func
 argument_list|)
@@ -679,7 +654,7 @@ expr_stmt|;
 comment|/*  Load all data files    */
 name|gimp_restore
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|update_status_func
 argument_list|)
@@ -689,7 +664,7 @@ name|gimp_rc_set_autosave
 argument_list|(
 name|GIMP_RC
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|edit_config
 argument_list|)
@@ -782,7 +757,7 @@ name|uri
 operator|=
 name|file_utils_filename_to_uri
 argument_list|(
-name|the_gimp
+name|gimp
 operator|->
 name|load_procs
 argument_list|,
@@ -831,7 +806,7 @@ name|gimage
 operator|=
 name|file_open_with_display
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|uri
 argument_list|,
@@ -898,9 +873,9 @@ block|}
 block|}
 block|}
 block|}
-name|batch_init
+name|batch_run
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|,
 name|batch_cmds
 argument_list|)
@@ -909,7 +884,6 @@ if|if
 condition|(
 name|no_interface
 condition|)
-block|{
 name|loop
 operator|=
 name|g_main_loop_new
@@ -919,9 +893,33 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+else|else
+name|loop
+operator|=
+name|NULL
+expr_stmt|;
+name|g_signal_connect_after
+argument_list|(
+name|gimp
+argument_list|,
+literal|"exit"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|app_exit_after_callback
+argument_list|)
+argument_list|,
+name|loop
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|loop
+condition|)
+block|{
 name|gimp_threads_leave
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_main_loop_run
@@ -931,7 +929,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_threads_enter
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|g_main_loop_unref
@@ -944,7 +942,7 @@ else|else
 block|{
 name|gui_post_init
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|gtk_main
@@ -953,7 +951,7 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|the_gimp
+name|gimp
 argument_list|)
 expr_stmt|;
 name|base_exit
@@ -991,7 +989,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|app_exit_after_callback (Gimp * gimp,gboolean kill_it)
+DECL|function|app_exit_after_callback (Gimp * gimp,gboolean kill_it,GMainLoop * loop)
 name|app_exit_after_callback
 parameter_list|(
 name|Gimp
@@ -1000,6 +998,10 @@ name|gimp
 parameter_list|,
 name|gboolean
 name|kill_it
+parameter_list|,
+name|GMainLoop
+modifier|*
+name|loop
 parameter_list|)
 block|{
 if|if

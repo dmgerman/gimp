@@ -82,6 +82,21 @@ end_include
 
 begin_function_decl
 specifier|static
+name|gboolean
+name|batch_exit_after_callback
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|kill_it
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|batch_run_cmd
 parameter_list|(
@@ -131,8 +146,8 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|batch_init (Gimp * gimp,const gchar ** batch_cmds)
-name|batch_init
+DECL|function|batch_run (Gimp * gimp,const gchar ** batch_cmds)
+name|batch_run
 parameter_list|(
 name|Gimp
 modifier|*
@@ -150,9 +165,28 @@ name|perl_server_already_running
 init|=
 name|FALSE
 decl_stmt|;
+name|gulong
+name|exit_id
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|exit_id
+operator|=
+name|g_signal_connect_after
+argument_list|(
+name|gimp
+argument_list|,
+literal|"exit"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|batch_exit_after_callback
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|batch_cmds
@@ -299,6 +333,49 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+name|g_signal_handler_disconnect
+argument_list|(
+name|gimp
+argument_list|,
+name|exit_id
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|batch_exit_after_callback (Gimp * gimp,gboolean kill_it)
+name|batch_exit_after_callback
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|gboolean
+name|kill_it
+parameter_list|)
+block|{
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+name|g_print
+argument_list|(
+literal|"EXIT: batch_exit_after_callback\n"
+argument_list|)
+expr_stmt|;
+name|exit
+argument_list|(
+name|EXIT_SUCCESS
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

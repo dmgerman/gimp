@@ -35,7 +35,7 @@ end_endif
 
 begin_function_decl
 name|void
-name|batch_init
+name|batch_run
 parameter_list|(
 name|Gimp
 modifier|*
