@@ -42,6 +42,15 @@ name|GimpModuleInfo
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpModuleDB
+typedef|typedef
+name|struct
+name|_GimpModuleDB
+name|GimpModuleDB
+typedef|;
+end_typedef
+
 begin_macro
 name|G_END_DECLS
 end_macro

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-types.h"
 end_include
 
@@ -35,12 +41,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdatafiles.h"
 end_include
 
 begin_comment
@@ -301,25 +301,25 @@ end_include
 
 begin_function
 name|void
-DECL|function|cheesey_module_loading_hack (const gchar * filename,gpointer loader_data)
+DECL|function|cheesey_module_loading_hack (GimpDatafileData * file_data)
 name|cheesey_module_loading_hack
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpDatafileData
 modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|loader_data
+name|file_data
 parameter_list|)
 block|{
 name|gimp_tool_module_new
 argument_list|(
+name|file_data
+operator|->
 name|filename
 argument_list|,
 name|tool_manager_register_tool
 argument_list|,
-name|loader_data
+name|file_data
+operator|->
+name|user_data
 argument_list|)
 expr_stmt|;
 block|}

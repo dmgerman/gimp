@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdatafiles.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -285,13 +279,9 @@ specifier|static
 name|void
 name|gui_themes_dir_foreach_func
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpDatafileData
 modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|loader_data
+name|file_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -529,7 +519,7 @@ name|gimprc
 operator|.
 name|theme_path
 argument_list|,
-name|TYPE_DIRECTORY
+name|G_FILE_TEST_IS_DIR
 argument_list|,
 name|gui_themes_dir_foreach_func
 argument_list|,
@@ -1630,16 +1620,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_themes_dir_foreach_func (const gchar * filename,gpointer loader_data)
+DECL|function|gui_themes_dir_foreach_func (GimpDatafileData * file_data)
 name|gui_themes_dir_foreach_func
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpDatafileData
 modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|loader_data
+name|file_data
 parameter_list|)
 block|{
 name|Gimp
@@ -1656,12 +1642,16 @@ operator|(
 name|Gimp
 operator|*
 operator|)
-name|loader_data
+name|file_data
+operator|->
+name|user_data
 expr_stmt|;
 name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
+name|file_data
+operator|->
 name|filename
 argument_list|)
 expr_stmt|;
@@ -1680,6 +1670,8 @@ argument_list|)
 argument_list|,
 name|basename
 argument_list|,
+name|file_data
+operator|->
 name|filename
 argument_list|)
 expr_stmt|;
@@ -1691,6 +1683,8 @@ name|basename
 argument_list|,
 name|g_strdup
 argument_list|(
+name|file_data
+operator|->
 name|filename
 argument_list|)
 argument_list|)

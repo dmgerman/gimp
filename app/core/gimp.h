@@ -268,10 +268,10 @@ name|GimpContainer
 modifier|*
 name|paint_info_list
 decl_stmt|;
-DECL|member|modules
-name|GimpContainer
+DECL|member|module_db
+name|GimpModuleDB
 modifier|*
-name|modules
+name|module_db
 decl_stmt|;
 DECL|member|write_modulerc
 name|gboolean

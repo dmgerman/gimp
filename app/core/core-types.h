@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cdd3230103
+DECL|enum|__anon27cdc7e70103
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -91,7 +91,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon27cdd3230203
+DECL|enum|__anon27cdc7e70203
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -110,7 +110,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cdd3230303
+DECL|enum|__anon27cdc7e70303
 block|{
 DECL|enumerator|PIXELS
 name|PIXELS
@@ -128,7 +128,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon27cdd3230403
+DECL|enum|__anon27cdc7e70403
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -707,26 +707,6 @@ name|text2
 parameter_list|,
 name|gdouble
 name|percentage
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDataFileLoaderFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpDataFileLoaderFunc
-function_decl|)
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|loader_data
 parameter_list|)
 function_decl|;
 end_typedef

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdatafactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdatafiles.h"
 end_include
 
 begin_include
@@ -110,13 +110,9 @@ specifier|static
 name|void
 name|gimp_data_factory_data_load_callback
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpDatafileData
 modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|callback_data
+name|file_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -618,7 +614,7 @@ name|factory
 operator|->
 name|data_path
 argument_list|,
-literal|0
+name|G_FILE_TEST_EXISTS
 argument_list|,
 name|gimp_data_factory_data_load_callback
 argument_list|,
@@ -1089,16 +1085,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_factory_data_load_callback (const gchar * filename,gpointer callback_data)
+DECL|function|gimp_data_factory_data_load_callback (GimpDatafileData * file_data)
 name|gimp_data_factory_data_load_callback
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpDatafileData
 modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|callback_data
+name|file_data
 parameter_list|)
 block|{
 name|GimpDataFactory
@@ -1114,7 +1106,9 @@ operator|(
 name|GimpDataFactory
 operator|*
 operator|)
-name|callback_data
+name|file_data
+operator|->
+name|user_data
 expr_stmt|;
 for|for
 control|(
@@ -1148,6 +1142,8 @@ if|if
 condition|(
 name|gimp_datafiles_check_extension
 argument_list|(
+name|file_data
+operator|->
 name|filename
 argument_list|,
 name|factory
@@ -1177,6 +1173,8 @@ literal|"file '%s'\n"
 literal|"with unknown extension."
 argument_list|)
 argument_list|,
+name|file_data
+operator|->
 name|filename
 argument_list|)
 expr_stmt|;
@@ -1211,6 +1209,8 @@ operator|.
 name|load_func
 operator|)
 operator|(
+name|file_data
+operator|->
 name|filename
 operator|)
 expr_stmt|;
@@ -1227,6 +1227,8 @@ argument_list|(
 literal|"Warning: Failed to load data from\n'%s'"
 argument_list|)
 argument_list|,
+name|file_data
+operator|->
 name|filename
 argument_list|)
 expr_stmt|;

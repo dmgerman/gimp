@@ -396,7 +396,7 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Painter-style color selector as a pluggable color selector"
+literal|"Painter-style triangle color selector"
 argument_list|)
 block|,
 literal|"Simon Budig<Simon.Budig@unix-ag.org>"

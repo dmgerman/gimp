@@ -416,7 +416,7 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Watercolor style color selector as a pluggable module"
+literal|"Watercolor style color selector"
 argument_list|)
 block|,
 literal|"Raph Levien<raph@acm.org>, Sven Neumann<sven@gimp.org>"
@@ -1959,9 +1959,24 @@ name|water
 operator|->
 name|last_pressure
 operator|=
-literal|1.0
+literal|0.5
 expr_stmt|;
-comment|/* FIXME: event->pressure */
+name|gdk_event_get_axis
+argument_list|(
+operator|(
+name|GdkEvent
+operator|*
+operator|)
+name|event
+argument_list|,
+name|GDK_AXIS_PRESSURE
+argument_list|,
+operator|&
+name|water
+operator|->
+name|last_pressure
+argument_list|)
+expr_stmt|;
 name|water
 operator|->
 name|button_state

@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdatafiles.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -168,13 +162,9 @@ specifier|static
 name|void
 name|plug_ins_init_file
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpDatafileData
 modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|loader_data
+name|file_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -361,7 +351,7 @@ name|config
 operator|->
 name|plug_in_path
 argument_list|,
-name|MODE_EXECUTABLE
+name|G_FILE_TEST_IS_EXECUTABLE
 argument_list|,
 name|plug_ins_init_file
 argument_list|,
@@ -2091,16 +2081,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|plug_ins_init_file (const gchar * filename,gpointer loader_data)
+DECL|function|plug_ins_init_file (GimpDatafileData * file_data)
 name|plug_ins_init_file
 parameter_list|(
-specifier|const
-name|gchar
+name|GimpDatafileData
 modifier|*
-name|filename
-parameter_list|,
-name|gpointer
-name|loader_data
+name|file_data
 parameter_list|)
 block|{
 name|GSList
@@ -2123,6 +2109,8 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
+name|file_data
+operator|->
 name|filename
 argument_list|)
 expr_stmt|;
@@ -2173,6 +2161,8 @@ name|g_print
 argument_list|(
 literal|"duplicate plug-in: \"%s\" (skipping)\n"
 argument_list|,
+name|file_data
+operator|->
 name|filename
 argument_list|)
 expr_stmt|;
@@ -2193,6 +2183,8 @@ name|plug_in_def
 operator|=
 name|plug_in_def_new
 argument_list|(
+name|file_data
+operator|->
 name|filename
 argument_list|)
 expr_stmt|;
@@ -2200,8 +2192,9 @@ name|plug_in_def
 operator|->
 name|mtime
 operator|=
-name|gimp_datafile_mtime
-argument_list|()
+name|file_data
+operator|->
+name|mtime
 expr_stmt|;
 name|plug_in_def
 operator|->

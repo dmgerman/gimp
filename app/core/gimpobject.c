@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d4c7060103
+DECL|enum|__anon2b129ad90103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -51,7 +51,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d4c7060203
+DECL|enum|__anon2b129ad90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1124,12 +1124,11 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|gsize
-DECL|function|gimp_object_real_get_memsize (GimpObject * object)
-name|gimp_object_real_get_memsize
+DECL|function|gimp_g_object_get_memsize (GObject * object)
+name|gimp_g_object_get_memsize
 parameter_list|(
-name|GimpObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -1142,6 +1141,16 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|G_IS_OBJECT
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|g_type_query
 argument_list|(
 name|G_TYPE_FROM_INSTANCE
@@ -1159,6 +1168,28 @@ name|type_query
 operator|.
 name|instance_size
 expr_stmt|;
+return|return
+name|memsize
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gsize
+DECL|function|gimp_object_real_get_memsize (GimpObject * object)
+name|gimp_object_real_get_memsize
+parameter_list|(
+name|GimpObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|gsize
+name|memsize
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 name|object
@@ -1178,6 +1209,15 @@ literal|1
 expr_stmt|;
 return|return
 name|memsize
+operator|+
+name|gimp_g_object_get_memsize
+argument_list|(
+operator|(
+name|GObject
+operator|*
+operator|)
+name|object
+argument_list|)
 return|;
 block|}
 end_function

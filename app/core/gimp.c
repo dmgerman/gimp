@@ -1284,7 +1284,7 @@ if|if
 condition|(
 name|gimp
 operator|->
-name|modules
+name|module_db
 condition|)
 name|gimp_modules_exit
 argument_list|(
@@ -1388,7 +1388,6 @@ expr_stmt|;
 comment|/* FIXME */
 name|memsize
 operator|+=
-operator|(
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1398,17 +1397,18 @@ operator|->
 name|parasites
 argument_list|)
 argument_list|)
-operator|+
-name|gimp_object_get_memsize
+expr_stmt|;
+name|memsize
+operator|+=
+name|gimp_g_object_get_memsize
 argument_list|(
-name|GIMP_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimp
 operator|->
-name|modules
+name|module_db
 argument_list|)
 argument_list|)
-operator|)
 expr_stmt|;
 name|memsize
 operator|+=
