@@ -572,7 +572,10 @@ name|labelAvalue
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -614,7 +617,10 @@ name|labelBvalue
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -656,7 +662,10 @@ name|labelGvalue
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -698,7 +707,10 @@ name|labelRvalue
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"N/A"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -740,7 +752,10 @@ name|labelA
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"A:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -782,7 +797,10 @@ name|labelB
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"B:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -824,7 +842,10 @@ name|labelG
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"G:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -866,7 +887,10 @@ name|labelR
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"R:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -951,18 +975,6 @@ argument_list|(
 name|pixmap
 argument_list|,
 name|mask
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|pixmapwid
-argument_list|)
-argument_list|,
-literal|0.2
-argument_list|,
-literal|0.2
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1930,7 +1942,10 @@ argument_list|(
 name|format_buf
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"%%d x %%d pixels (%%.%df x %%.%df %s)"
+argument_list|)
 argument_list|,
 name|unit_digits
 operator|+
