@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5e1a870103
+DECL|enum|__anon2bfa58090103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -835,26 +835,6 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.5
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_padding
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|grid_view
-operator|->
-name|name_label
-argument_list|)
-argument_list|,
-name|grid_view
-operator|->
-name|name_label
-operator|->
-name|style
-operator|->
-name|xthickness
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
