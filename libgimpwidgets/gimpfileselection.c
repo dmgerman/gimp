@@ -135,7 +135,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7c3c280103
+DECL|enum|__anon29e54ac90103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -1301,6 +1301,15 @@ argument_list|(
 name|gfs
 operator|->
 name|title
+condition|?
+name|gfs
+operator|->
+name|title
+else|:
+name|_
+argument_list|(
+literal|"Select Directory"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  hiding these widgets uses internal gtk+ knowledge, but it's 	   *  easier than creating my own directory browser -- michael 	   */
@@ -1339,6 +1348,14 @@ name|file_selection
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|gfs
+operator|->
+name|title
+condition|?
+name|gfs
+operator|->
+name|title
+else|:
 name|_
 argument_list|(
 literal|"Select File"
