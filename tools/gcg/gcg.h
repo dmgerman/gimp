@@ -184,7 +184,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2c0b607b0103
+DECL|enum|__anon2757ba820103
 typedef|typedef
 enum|enum
 block|{
@@ -384,6 +384,14 @@ name|PrimType
 modifier|*
 name|parent
 decl_stmt|;
+DECL|member|self_type
+name|Type
+name|self_type
+index|[
+literal|2
+index|]
+decl_stmt|;
+comment|/* both non-const and const */
 DECL|member|members
 name|GSList
 modifier|*
@@ -394,7 +402,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2c0b607b0203
+DECL|enum|__anon2757ba820203
 typedef|typedef
 enum|enum
 block|{
@@ -413,7 +421,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c0b607b0303
+DECL|enum|__anon2757ba820303
 typedef|typedef
 enum|enum
 block|{
@@ -429,7 +437,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c0b607b0403
+DECL|enum|__anon2757ba820403
 typedef|typedef
 enum|enum
 block|{
