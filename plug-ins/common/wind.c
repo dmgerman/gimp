@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a301d10103
+DECL|enum|__anon290b8e180103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a301d10203
+DECL|enum|__anon290b8e180203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -144,7 +144,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a301d10303
+DECL|enum|__anon290b8e180303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -4464,6 +4464,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
+condition|)
+block|{
 name|drawable
 operator|=
 name|gtk_object_get_data
@@ -4489,6 +4499,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

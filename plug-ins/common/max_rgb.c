@@ -228,7 +228,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a5654e0103
+DECL|enum|__anon2b3193aa0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -246,7 +246,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5654e0208
+DECL|struct|__anon2b3193aa0208
 block|{
 DECL|member|max_p
 name|gint
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a5654e0308
+DECL|struct|__anon2b3193aa0308
 block|{
 DECL|member|run
 name|gint
@@ -1967,6 +1967,16 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
+condition|)
+block|{
 name|drawable
 operator|=
 name|gtk_object_get_data
@@ -1986,6 +1996,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -150,7 +150,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb128650103
+DECL|enum|__anon29b11e3b0103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1380,6 +1380,13 @@ expr_stmt|;
 if|if
 condition|(
 name|do_preview
+operator|&&
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
 condition|)
 name|nlfilt_do_preview
 argument_list|(

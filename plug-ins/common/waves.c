@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aea04c30103
+DECL|enum|__anon2a0e51df0103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -1299,6 +1299,13 @@ expr_stmt|;
 if|if
 condition|(
 name|do_preview
+operator|&&
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
 condition|)
 name|waves_do_preview
 argument_list|(

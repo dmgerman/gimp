@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd59f470103
+DECL|enum|__anon27b0d4350103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd59f470203
+DECL|enum|__anon27b0d4350203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -16003,6 +16003,15 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|active
+condition|)
 name|jigsaw
 argument_list|(
 name|TRUE
