@@ -282,7 +282,7 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|GTK_LABEL (g_object_get_data (G_OBJECT (adj), "label"))
+value|(g_object_get_data (G_OBJECT (adj), "label"))
 end_define
 
 begin_define
@@ -294,7 +294,7 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|GTK_HSCALE (g_object_get_data (G_OBJECT (adj), "scale"))
+value|(g_object_get_data (G_OBJECT (adj), "scale"))
 end_define
 
 begin_define
@@ -318,7 +318,7 @@ parameter_list|(
 name|adj
 parameter_list|)
 define|\
-value|GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (adj), "spinbutton"))
+value|(g_object_get_data (G_OBJECT (adj), "spinbutton"))
 end_define
 
 begin_define
@@ -408,7 +408,7 @@ parameter_list|(
 name|hbox
 parameter_list|)
 define|\
-value|GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (hbox), "spinbutton"))
+value|(g_object_get_data (G_OBJECT (hbox), "spinbutton"))
 end_define
 
 begin_define
@@ -432,7 +432,7 @@ parameter_list|(
 name|hbox
 parameter_list|)
 define|\
-value|GTK_TOGGLE_BUTTON (g_object_get_data (G_OBJECT (hbox), "togglebutton"))
+value|(g_object_get_data (G_OBJECT (hbox), "togglebutton"))
 end_define
 
 begin_function_decl
@@ -466,7 +466,7 @@ parameter_list|(
 name|sizeentry
 parameter_list|)
 define|\
-value|GIMP_CHAIN_BUTTON (g_object_get_data (G_OBJECT (sizeentry), \                                               "chainbutton"))
+value|(g_object_get_data (G_OBJECT (sizeentry), "chainbutton"))
 end_define
 
 begin_function_decl
@@ -562,7 +562,7 @@ parameter_list|(
 name|memsize
 parameter_list|)
 define|\
-value|GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (memsize), "spinbutton"))
+value|(g_object_get_data (G_OBJECT (memsize), "spinbutton"))
 end_define
 
 begin_define
@@ -586,7 +586,7 @@ parameter_list|(
 name|memsize
 parameter_list|)
 define|\
-value|GTK_OPTION_MENU (g_object_get_data (G_OBJECT (memsize), "optionmenu"))
+value|(g_object_get_data (G_OBJECT (memsize), "optionmenu"))
 end_define
 
 begin_function_decl

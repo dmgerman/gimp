@@ -410,14 +410,11 @@ name|view
 operator|->
 name|spacing_scale
 operator|=
-name|GTK_WIDGET
-argument_list|(
 name|GIMP_SCALE_ENTRY_SCALE
 argument_list|(
 name|view
 operator|->
 name|spacing_adjustment
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

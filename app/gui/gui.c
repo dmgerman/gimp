@@ -204,12 +204,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"toolbox.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprc.h"
 end_include
 
@@ -1126,12 +1120,6 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_devices_exit
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-comment|/*  handle this in the dialog factory:  */
-name|toolbox_free
 argument_list|(
 name|gimp
 argument_list|)

@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac4371a0103
+DECL|enum|__anon294abc9f0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -123,7 +123,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac4371a0203
+DECL|enum|__anon294abc9f0203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -159,6 +159,18 @@ parameter_list|(
 name|GimpDialogFactory
 modifier|*
 name|factory
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_dialog_factory_dispose
+parameter_list|(
+name|GObject
+modifier|*
+name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -479,6 +491,12 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
+name|dispose
+operator|=
+name|gimp_dialog_factory_dispose
+expr_stmt|;
+name|object_class
+operator|->
 name|finalize
 operator|=
 name|gimp_dialog_factory_finalize
@@ -537,6 +555,109 @@ operator|->
 name|open_dialogs
 operator|=
 name|NULL
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_dialog_factory_dispose (GObject * object)
+name|gimp_dialog_factory_dispose
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|GimpDialogFactory
+modifier|*
+name|factory
+decl_stmt|;
+name|GList
+modifier|*
+name|list
+decl_stmt|;
+name|factory
+operator|=
+name|GIMP_DIALOG_FACTORY
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+while|while
+condition|(
+name|factory
+operator|->
+name|open_dialogs
+condition|)
+block|{
+for|for
+control|(
+name|list
+operator|=
+name|factory
+operator|->
+name|open_dialogs
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_list_next
+argument_list|(
+name|list
+argument_list|)
+control|)
+block|{
+if|if
+condition|(
+name|GTK_WIDGET_TOPLEVEL
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+condition|)
+block|{
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|list
+operator|->
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
+block|}
+if|if
+condition|(
+operator|!
+name|list
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"%s: stale entries in factory->open_dialogs"
+argument_list|,
+name|G_GNUC_FUNCTION
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
+block|}
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|dispose
+argument_list|(
+name|object
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -769,7 +890,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): dialog factory \"%s\" already exists"
+literal|"%s: dialog factory \"%s\" already exists"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
@@ -1323,7 +1444,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): no entry entry registered for \"%s\""
+literal|"%s: no entry entry registered for \"%s\""
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
@@ -1344,7 +1465,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): entry for \"%s\" has no constructor"
+literal|"%s: entry for \"%s\" has no constructor"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
@@ -1586,7 +1707,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): GimpDialogFactory is a dockable factory "
+literal|"%s: GimpDialogFactory is a dockable factory "
 literal|"but constructor for \"%s\" did not return a "
 literal|"GimpDockable"
 argument_list|,
@@ -1615,7 +1736,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): constructor for \"%s\" returned NULL"
+literal|"%s: constructor for \"%s\" returned NULL"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
@@ -2145,7 +2266,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): dialog already registered"
+literal|"%s: dialog already registered"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
@@ -2195,7 +2316,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): dialog was not created by a GimpDialogFactory"
+literal|"%s: dialog was not created by a GimpDialogFactory"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
@@ -2211,7 +2332,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): dialog was created by a different GimpDialogFactory"
+literal|"%s: dialog was created by a different GimpDialogFactory"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
@@ -2314,7 +2435,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): singleton dialog \"%s\" created twice"
+literal|"%s: singleton dialog \"%s\" created twice"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
@@ -2700,7 +2821,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): dialog not registered"
+literal|"%s: dialog not registered"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
@@ -2763,7 +2884,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): dialog was not created by a GimpDialogFactory"
+literal|"%s: dialog was not created by a GimpDialogFactory"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
@@ -2779,7 +2900,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): dialog was created by a different GimpDialogFactory"
+literal|"%s: dialog was created by a different GimpDialogFactory"
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|)
