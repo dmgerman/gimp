@@ -3185,10 +3185,21 @@ name|GIMP_UNDO_DRAWABLE
 block|,
 name|N_
 argument_list|(
-literal|"Drawable Mod"
+literal|"Drawable"
 argument_list|)
 block|,
 literal|"drawable"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_DRAWABLE_MOD
+block|,
+name|N_
+argument_list|(
+literal|"Drawable Mod"
+argument_list|)
+block|,
+literal|"drawable-mod"
 block|}
 block|,
 block|{
@@ -3266,17 +3277,6 @@ literal|"Delete Layer"
 argument_list|)
 block|,
 literal|"layer-remove"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_LAYER_MOD
-block|,
-name|N_
-argument_list|(
-literal|"Layer Mod"
-argument_list|)
-block|,
-literal|"layer-mod"
 block|}
 block|,
 block|{
@@ -3376,17 +3376,6 @@ literal|"Delete Channel"
 argument_list|)
 block|,
 literal|"channel-remove"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_CHANNEL_MOD
-block|,
-name|N_
-argument_list|(
-literal|"Channel Mod"
-argument_list|)
-block|,
-literal|"channel-mod"
 block|}
 block|,
 block|{

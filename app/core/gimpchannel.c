@@ -1181,6 +1181,24 @@ name|swap_pixels
 operator|=
 name|gimp_channel_swap_pixels
 expr_stmt|;
+name|drawable_class
+operator|->
+name|scale_desc
+operator|=
+name|_
+argument_list|(
+literal|"Scale Channel"
+argument_list|)
+expr_stmt|;
+name|drawable_class
+operator|->
+name|resize_desc
+operator|=
+name|_
+argument_list|(
+literal|"Resize Channel"
+argument_list|)
+expr_stmt|;
 name|klass
 operator|->
 name|boundary
@@ -2353,30 +2371,6 @@ name|gpointer
 name|progress_data
 parameter_list|)
 block|{
-name|GimpChannel
-modifier|*
-name|channel
-init|=
-name|GIMP_CHANNEL
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_push_channel_mod
-argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Scale Channel"
-argument_list|)
-argument_list|,
-name|channel
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|G_TYPE_FROM_INSTANCE
@@ -2420,13 +2414,6 @@ argument_list|,
 name|progress_data
 argument_list|)
 expr_stmt|;
-comment|/*  bounds are now unknown  */
-name|channel
-operator|->
-name|bounds_known
-operator|=
-name|FALSE
-expr_stmt|;
 block|}
 end_function
 
@@ -2453,30 +2440,6 @@ name|gint
 name|offset_y
 parameter_list|)
 block|{
-name|GimpChannel
-modifier|*
-name|channel
-init|=
-name|GIMP_CHANNEL
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_push_channel_mod
-argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Resize Channel"
-argument_list|)
-argument_list|,
-name|channel
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -2518,13 +2481,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-comment|/*  bounds are now unknown  */
-name|channel
-operator|->
-name|bounds_known
-operator|=
-name|FALSE
-expr_stmt|;
 block|}
 end_function
 
@@ -3381,28 +3337,6 @@ name|gint
 name|offset_y
 parameter_list|)
 block|{
-if|if
-condition|(
-name|push_undo
-condition|)
-name|gimp_image_undo_push_channel_mod
-argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-argument_list|,
-name|undo_desc
-argument_list|,
-name|GIMP_CHANNEL
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_DRAWABLE_CLASS
 argument_list|(
 name|parent_class

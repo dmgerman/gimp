@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27832cf00103
+DECL|enum|__anon2b8af7630103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1077,6 +1077,24 @@ name|set_tiles
 operator|=
 name|gimp_layer_set_tiles
 expr_stmt|;
+name|drawable_class
+operator|->
+name|scale_desc
+operator|=
+name|_
+argument_list|(
+literal|"Scale Layer"
+argument_list|)
+expr_stmt|;
+name|drawable_class
+operator|->
+name|resize_desc
+operator|=
+name|_
+argument_list|(
+literal|"Resize Layer"
+argument_list|)
+expr_stmt|;
 name|klass
 operator|->
 name|opacity_changed
@@ -1723,28 +1741,6 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|push_undo
-condition|)
-name|gimp_image_undo_push_layer_mod
-argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-argument_list|,
-name|undo_desc
-argument_list|,
-name|GIMP_LAYER
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|GIMP_DRAWABLE_CLASS
 argument_list|(
 name|parent_class
@@ -2779,18 +2775,6 @@ literal|"Scale Layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_undo_push_layer_mod
-argument_list|(
-name|gimage
-argument_list|,
-name|_
-argument_list|(
-literal|"Scale Layer"
-argument_list|)
-argument_list|,
-name|layer
-argument_list|)
-expr_stmt|;
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
@@ -2915,18 +2899,6 @@ name|_
 argument_list|(
 literal|"Resize Layer"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_push_layer_mod
-argument_list|(
-name|gimage
-argument_list|,
-name|_
-argument_list|(
-literal|"Resize Layer"
-argument_list|)
-argument_list|,
-name|layer
 argument_list|)
 expr_stmt|;
 name|GIMP_ITEM_CLASS
