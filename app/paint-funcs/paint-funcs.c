@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c07c1800103
+DECL|enum|__anon28db90610103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -1317,7 +1317,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_pixels (unsigned char * dest,unsigned char * color,int w,int bytes)
+DECL|function|color_pixels (unsigned char * dest,const unsigned char * color,int w,int bytes)
 name|color_pixels
 parameter_list|(
 name|unsigned
@@ -1325,6 +1325,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -1563,14 +1564,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|blend_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int blend,int w,int bytes,int has_alpha)
+DECL|function|blend_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int blend,int w,int bytes,int has_alpha)
 name|blend_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -1696,9 +1699,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|shade_pixels (unsigned char * src,unsigned char * dest,unsigned char * col,int blend,int w,int bytes,int has_alpha)
+DECL|function|shade_pixels (const unsigned char * src,unsigned char * dest,const unsigned char * col,int blend,int w,int bytes,int has_alpha)
 name|shade_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -1709,6 +1713,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -1825,14 +1830,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_alpha_pixels (unsigned char * src,unsigned char * mask,unsigned char * dest,int w,int bytes)
+DECL|function|extract_alpha_pixels (const unsigned char * src,const unsigned char * mask,unsigned char * dest,int w,int bytes)
 name|extract_alpha_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -1853,6 +1860,7 @@ block|{
 name|int
 name|alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -1918,14 +1926,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|darken_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|darken_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|darken_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -1940,16 +1950,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -1966,21 +1976,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -2034,9 +2044,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2059,7 +2069,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2073,15 +2083,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -2089,14 +2099,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|lighten_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|lighten_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|lighten_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -2111,16 +2123,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -2137,21 +2149,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -2205,9 +2217,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2230,7 +2242,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2244,15 +2256,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -2260,14 +2272,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|hsv_only_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int mode,int length,int bytes1,int bytes2,int ha1,int ha2)
+DECL|function|hsv_only_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int mode,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|hsv_only_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -2291,10 +2305,10 @@ name|int
 name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -2450,9 +2464,9 @@ name|b1
 expr_stmt|;
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2475,7 +2489,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2505,14 +2519,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|color_only_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int mode,int length,int bytes1,int bytes2,int ha1,int ha2)
+DECL|function|color_only_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int mode,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|color_only_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -2536,10 +2552,10 @@ name|int
 name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -2648,7 +2664,7 @@ operator|&
 name|g1
 argument_list|,
 operator|&
-name|b1
+name|bytes1
 argument_list|)
 expr_stmt|;
 name|dest
@@ -2674,9 +2690,9 @@ name|b1
 expr_stmt|;
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2699,7 +2715,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2729,14 +2745,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|multiply_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|multiply_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|multiply_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -2751,16 +2769,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -2771,21 +2789,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -2827,9 +2845,9 @@ literal|255
 expr_stmt|;
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2852,7 +2870,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -2866,15 +2884,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -2882,14 +2900,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|divide_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|divide_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|divide_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -2904,16 +2924,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -2926,21 +2946,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -2999,9 +3019,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3024,7 +3044,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3038,15 +3058,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -3054,14 +3074,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|screen_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|screen_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|screen_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -3076,16 +3098,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -3096,21 +3118,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -3162,9 +3184,9 @@ literal|255
 expr_stmt|;
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3187,7 +3209,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3201,15 +3223,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -3217,14 +3239,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|overlay_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|overlay_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|overlay_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -3239,16 +3263,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -3264,21 +3288,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -3372,9 +3396,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3397,7 +3421,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3411,15 +3435,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -3427,14 +3451,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|add_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|add_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|add_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -3449,16 +3475,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -3472,21 +3498,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -3536,9 +3562,9 @@ comment|/* older, little slower */
 block|}
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3561,7 +3587,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3575,15 +3601,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -3591,14 +3617,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|subtract_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|subtract_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|subtract_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -3613,16 +3641,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -3636,21 +3664,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -3702,9 +3730,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3727,7 +3755,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3741,15 +3769,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -3757,14 +3785,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|difference_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|difference_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|difference_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -3779,16 +3809,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -3802,21 +3832,21 @@ decl_stmt|;
 name|alpha
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|||
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|MAXIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 operator|-
 literal|1
 else|:
-name|b1
+name|bytes1
 expr_stmt|;
 while|while
 condition|(
@@ -3869,9 +3899,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3894,7 +3924,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -3908,15 +3938,15 @@ index|]
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 block|}
 block|}
@@ -3924,9 +3954,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|dissolve_pixels (unsigned char * src,unsigned char * dest,int x,int y,int opacity,int length,int sb,int db,int has_alpha)
+DECL|function|dissolve_pixels (const unsigned char * src,unsigned char * dest,int x,int y,int opacity,int length,int sb,int db,int has_alpha)
 name|dissolve_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -4092,7 +4123,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|replace_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int length,int opacity,int * affect,int b1,int b2)
+DECL|function|replace_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int length,int opacity,int * affect,int bytes1,int bytes2)
 name|replace_pixels
 parameter_list|(
 name|unsigned
@@ -4126,10 +4157,10 @@ modifier|*
 name|affect
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|)
 block|{
 name|int
@@ -4158,9 +4189,9 @@ name|new_val
 decl_stmt|;
 if|if
 condition|(
-name|b1
+name|bytes1
 operator|!=
-name|b2
+name|bytes2
 condition|)
 block|{
 name|g_message
@@ -4172,7 +4203,7 @@ return|return;
 block|}
 name|alpha
 operator|=
-name|b1
+name|bytes1
 operator|-
 literal|1
 expr_stmt|;
@@ -4334,15 +4365,15 @@ name|s1_a
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|mask
 operator|++
@@ -4415,9 +4446,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|scale_pixels (unsigned char * src,unsigned char * dest,int length,int scale)
+DECL|function|scale_pixels (const unsigned char * src,unsigned char * dest,int length,int scale)
 name|scale_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -4465,9 +4497,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|add_alpha_pixels (unsigned char * src,unsigned char * dest,int length,int bytes)
+DECL|function|add_alpha_pixels (const unsigned char * src,unsigned char * dest,int length,int bytes)
 name|add_alpha_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -4546,9 +4579,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|flatten_pixels (unsigned char * src,unsigned char * dest,unsigned char * bg,int length,int bytes)
+DECL|function|flatten_pixels (const unsigned char * src,unsigned char * dest,const unsigned char * bg,int length,int bytes)
 name|flatten_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -4559,6 +4593,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -4659,9 +4694,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gray_to_rgb_pixels (unsigned char * src,unsigned char * dest,int length,int bytes)
+DECL|function|gray_to_rgb_pixels (const unsigned char * src,unsigned char * dest,int length,int bytes)
 name|gray_to_rgb_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -4767,7 +4803,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|apply_mask_to_alpha_channel (unsigned char * src,unsigned char * mask,int opacity,int length,int bytes)
+DECL|function|apply_mask_to_alpha_channel (unsigned char * src,const unsigned char * mask,int opacity,int length,int bytes)
 name|apply_mask_to_alpha_channel
 parameter_list|(
 name|unsigned
@@ -4775,6 +4811,7 @@ name|char
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -4835,7 +4872,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_mask_and_alpha_channel (unsigned char * src,unsigned char * mask,int opacity,int length,int bytes)
+DECL|function|combine_mask_and_alpha_channel (unsigned char * src,const unsigned char * mask,int opacity,int length,int bytes)
 name|combine_mask_and_alpha_channel
 parameter_list|(
 name|unsigned
@@ -4843,6 +4880,7 @@ name|char
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -4924,9 +4962,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|copy_gray_to_inten_a_pixels (unsigned char * src,unsigned char * dest,int length,int bytes)
+DECL|function|copy_gray_to_inten_a_pixels (const unsigned char * src,unsigned char * dest,int length,int bytes)
 name|copy_gray_to_inten_a_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5003,9 +5042,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_channel_pixels (unsigned char * src,unsigned char * dest,int length,int bytes)
+DECL|function|initial_channel_pixels (const unsigned char * src,unsigned char * dest,int length,int bytes)
 name|initial_channel_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5083,9 +5123,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_indexed_pixels (unsigned char * src,unsigned char * dest,unsigned char * cmap,int length)
+DECL|function|initial_indexed_pixels (const unsigned char * src,unsigned char * dest,const unsigned char * cmap,int length)
 name|initial_indexed_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5096,6 +5137,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5165,9 +5207,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_indexed_a_pixels (unsigned char * src,unsigned char * dest,unsigned char * mask,unsigned char * cmap,int opacity,int length)
+DECL|function|initial_indexed_a_pixels (const unsigned char * src,unsigned char * dest,const unsigned char * mask,const unsigned char * cmap,int opacity,int length)
 name|initial_indexed_a_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5178,11 +5221,13 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5202,6 +5247,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5308,9 +5354,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_inten_pixels (unsigned char * src,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|initial_inten_pixels (const unsigned char * src,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|initial_inten_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5321,6 +5368,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5329,6 +5377,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -5345,6 +5394,7 @@ name|b
 decl_stmt|,
 name|dest_bytes
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5515,9 +5565,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_inten_a_pixels (unsigned char * src,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|initial_inten_a_pixels (const unsigned char * src,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|initial_inten_a_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5528,6 +5579,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5536,6 +5588,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -5552,6 +5605,7 @@ name|alpha
 decl_stmt|,
 name|b
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5721,14 +5775,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_and_indexed_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|combine_indexed_and_indexed_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|combine_indexed_and_indexed_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5739,6 +5795,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5747,6 +5804,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -5765,6 +5823,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5922,14 +5981,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_and_indexed_a_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|combine_indexed_and_indexed_a_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|combine_indexed_and_indexed_a_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5940,6 +6001,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -5948,6 +6010,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -5968,6 +6031,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6150,14 +6214,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_a_and_indexed_a_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|combine_indexed_a_and_indexed_a_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|combine_indexed_a_and_indexed_a_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6168,6 +6234,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6176,6 +6243,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -6196,6 +6264,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6417,14 +6486,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_indexed_a_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,unsigned char * cmap,int opacity,int length,int bytes)
+DECL|function|combine_inten_a_and_indexed_a_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,const unsigned char * cmap,int opacity,int length,int bytes)
 name|combine_inten_a_and_indexed_a_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6435,11 +6506,13 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6483,6 +6556,7 @@ condition|(
 name|mask
 condition|)
 block|{
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6702,14 +6776,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_and_inten_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|combine_inten_and_inten_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|combine_inten_and_inten_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6720,6 +6796,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6728,6 +6805,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -6746,6 +6824,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6929,14 +7008,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_and_inten_a_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|combine_inten_and_inten_a_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|combine_inten_and_inten_a_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6947,6 +7028,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -6955,6 +7037,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -6978,6 +7061,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -7211,14 +7295,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_inten_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int mode_affect,int length,int bytes)
+DECL|function|combine_inten_a_and_inten_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int mode_affect,int length,int bytes)
 name|combine_inten_a_and_inten_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -7229,6 +7315,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -7237,6 +7324,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -7269,6 +7357,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -7666,14 +7755,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_inten_a_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int mode_affect,int length,int bytes)
+DECL|function|combine_inten_a_and_inten_a_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int mode_affect,int length,int bytes)
 name|combine_inten_a_and_inten_a_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -7684,6 +7775,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -7692,6 +7784,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -7721,6 +7814,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8271,14 +8365,16 @@ end_undef
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_channel_mask_pixels (unsigned char * src,unsigned char * channel,unsigned char * dest,unsigned char * col,int opacity,int length,int bytes)
+DECL|function|combine_inten_a_and_channel_mask_pixels (const unsigned char * src,const unsigned char * channel,unsigned char * dest,const unsigned char * col,int opacity,int length,int bytes)
 name|combine_inten_a_and_channel_mask_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8289,6 +8385,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8480,14 +8577,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_channel_selection_pixels (unsigned char * src,unsigned char * channel,unsigned char * dest,unsigned char * col,int opacity,int length,int bytes)
+DECL|function|combine_inten_a_and_channel_selection_pixels (const unsigned char * src,const unsigned char * channel,unsigned char * dest,const unsigned char * col,int opacity,int length,int bytes)
 name|combine_inten_a_and_channel_selection_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8498,6 +8597,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8687,14 +8787,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|behind_inten_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|behind_inten_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|behind_inten_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8705,6 +8807,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8713,6 +8816,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -8721,16 +8825,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -8750,6 +8854,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8777,7 +8882,7 @@ expr_stmt|;
 comment|/*  the alpha channel  */
 name|alpha
 operator|=
-name|b1
+name|bytes1
 operator|-
 literal|1
 expr_stmt|;
@@ -8930,15 +9035,15 @@ operator|++
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 block|}
 block|}
@@ -8946,14 +9051,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|behind_indexed_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|behind_indexed_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|behind_indexed_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8964,6 +9071,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -8972,6 +9080,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -8980,16 +9089,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -9009,6 +9118,7 @@ name|unsigned
 name|char
 name|new_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9031,7 +9141,7 @@ expr_stmt|;
 comment|/*  the alpha channel  */
 name|alpha
 operator|=
-name|b1
+name|bytes1
 operator|-
 literal|1
 expr_stmt|;
@@ -9084,7 +9194,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|b1
+name|bytes1
 condition|;
 name|b
 operator|++
@@ -9130,15 +9240,15 @@ operator|++
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 block|}
 block|}
@@ -9146,14 +9256,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|replace_inten_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|replace_inten_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|replace_inten_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9164,6 +9276,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9172,6 +9285,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -9180,16 +9294,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -9201,6 +9315,7 @@ name|unsigned
 name|char
 name|mask_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9224,9 +9339,9 @@ name|bytes
 operator|=
 name|MINIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 expr_stmt|;
 while|while
@@ -9300,10 +9415,10 @@ index|]
 expr_stmt|;
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
 operator|!
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -9324,15 +9439,15 @@ operator|++
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 block|}
 block|}
@@ -9340,14 +9455,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|replace_indexed_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int b1,int b2,int ha1,int ha2)
+DECL|function|replace_indexed_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes1,int bytes2,int has_alpha1,int has_alpha2)
 name|replace_indexed_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9358,6 +9475,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9366,6 +9484,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -9374,16 +9493,16 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 block|{
 name|int
@@ -9395,6 +9514,7 @@ name|unsigned
 name|char
 name|mask_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9418,9 +9538,9 @@ name|bytes
 operator|=
 name|MINIMUM
 argument_list|(
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 expr_stmt|;
 while|while
@@ -9479,10 +9599,10 @@ index|]
 expr_stmt|;
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
 operator|!
-name|ha2
+name|has_alpha2
 condition|)
 name|dest
 index|[
@@ -9503,15 +9623,15 @@ operator|++
 expr_stmt|;
 name|src1
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 name|src2
 operator|+=
-name|b2
+name|bytes2
 expr_stmt|;
 name|dest
 operator|+=
-name|b1
+name|bytes1
 expr_stmt|;
 block|}
 block|}
@@ -9519,14 +9639,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|erase_inten_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|erase_inten_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|erase_inten_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9537,6 +9659,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9545,6 +9668,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -9565,6 +9689,7 @@ name|unsigned
 name|char
 name|src2_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9681,14 +9806,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|erase_indexed_pixels (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int opacity,int * affect,int length,int bytes)
+DECL|function|erase_indexed_pixels (const unsigned char * src1,const unsigned char * src2,unsigned char * dest,const unsigned char * mask,int opacity,const int * affect,int length,int bytes)
 name|erase_indexed_pixels
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|src1
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9699,6 +9826,7 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9707,6 +9835,7 @@ parameter_list|,
 name|int
 name|opacity
 parameter_list|,
+specifier|const
 name|int
 modifier|*
 name|affect
@@ -9727,6 +9856,7 @@ name|unsigned
 name|char
 name|src2_alpha
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9840,7 +9970,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_inten_pixels (unsigned char * src,unsigned char * dest,unsigned char * mask,unsigned char * bg,int cut,int length,int bytes,int has_alpha)
+DECL|function|extract_from_inten_pixels (unsigned char * src,unsigned char * dest,const unsigned char * mask,const unsigned char * bg,int cut,int length,int bytes,int has_alpha)
 name|extract_from_inten_pixels
 parameter_list|(
 name|unsigned
@@ -9853,11 +9983,13 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -9884,6 +10016,7 @@ decl_stmt|;
 name|int
 name|dest_bytes
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -10082,7 +10215,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|extract_from_indexed_pixels (unsigned char * src,unsigned char * dest,unsigned char * mask,unsigned char * cmap,unsigned char * bg,int cut,int length,int bytes,int has_alpha)
+DECL|function|extract_from_indexed_pixels (unsigned char * src,unsigned char * dest,const unsigned char * mask,const unsigned char * cmap,const unsigned char * bg,int cut,int length,int bytes,int has_alpha)
 name|extract_from_indexed_pixels
 parameter_list|(
 name|unsigned
@@ -10095,16 +10228,19 @@ name|char
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|cmap
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -10129,6 +10265,7 @@ decl_stmt|;
 name|int
 name|index
 decl_stmt|;
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -10299,17 +10436,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|map_to_color (int src_type,unsigned char * cmap,unsigned char * src,unsigned char * rgb)
+DECL|function|map_to_color (int src_type,const unsigned char * cmap,const unsigned char * src,unsigned char * rgb)
 name|map_to_color
 parameter_list|(
 name|int
 name|src_type
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
 name|cmap
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -10429,9 +10568,10 @@ end_function
 
 begin_function
 name|int
-DECL|function|map_rgb_to_indexed (unsigned char * cmap,int num_cols,GimpImage * gimage,int r,int g,int b)
+DECL|function|map_rgb_to_indexed (const unsigned char * cmap,int num_cols,GimpImage * gimage,int r,int g,int b)
 name|map_rgb_to_indexed
 parameter_list|(
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -10524,6 +10664,7 @@ block|}
 comment|/*  Hash table lookup miss  */
 else|else
 block|{
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -10676,13 +10817,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|color_region (PixelRegion * src,unsigned char * col)
+DECL|function|color_region (PixelRegion * dest,const unsigned char * col)
 name|color_region
 parameter_list|(
 name|PixelRegion
 modifier|*
-name|src
+name|dest
 parameter_list|,
+specifier|const
 name|unsigned
 name|char
 modifier|*
@@ -10709,7 +10851,7 @@ name|pixel_regions_register
 argument_list|(
 literal|1
 argument_list|,
-name|src
+name|dest
 argument_list|)
 init|;
 name|pr
@@ -10726,13 +10868,13 @@ control|)
 block|{
 name|h
 operator|=
-name|src
+name|dest
 operator|->
 name|h
 expr_stmt|;
 name|s
 operator|=
-name|src
+name|dest
 operator|->
 name|data
 expr_stmt|;
@@ -10748,18 +10890,18 @@ name|s
 argument_list|,
 name|col
 argument_list|,
-name|src
+name|dest
 operator|->
 name|w
 argument_list|,
-name|src
+name|dest
 operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
 name|s
 operator|+=
-name|src
+name|dest
 operator|->
 name|rowstride
 expr_stmt|;
@@ -22039,9 +22181,9 @@ name|int
 name|h
 decl_stmt|;
 name|int
-name|ha1
+name|has_alpha1
 decl_stmt|,
-name|ha2
+name|has_alpha2
 decl_stmt|;
 name|int
 name|combine
@@ -22093,9 +22235,9 @@ case|:
 case|case
 name|COMBINE_INDEXED_INDEXED
 case|:
-name|ha1
+name|has_alpha1
 operator|=
-name|ha2
+name|has_alpha2
 operator|=
 literal|0
 expr_stmt|;
@@ -22103,11 +22245,11 @@ break|break;
 case|case
 name|COMBINE_INTEN_A_INTEN
 case|:
-name|ha1
+name|has_alpha1
 operator|=
 literal|1
 expr_stmt|;
-name|ha2
+name|has_alpha2
 operator|=
 literal|0
 expr_stmt|;
@@ -22118,11 +22260,11 @@ case|:
 case|case
 name|COMBINE_INDEXED_INDEXED_A
 case|:
-name|ha1
+name|has_alpha1
 operator|=
 literal|0
 expr_stmt|;
-name|ha2
+name|has_alpha2
 operator|=
 literal|1
 expr_stmt|;
@@ -22133,17 +22275,17 @@ case|:
 case|case
 name|COMBINE_INDEXED_A_INDEXED_A
 case|:
-name|ha1
+name|has_alpha1
 operator|=
-name|ha2
+name|has_alpha2
 operator|=
 literal|1
 expr_stmt|;
 break|break;
 default|default:
-name|ha1
+name|has_alpha1
 operator|=
-name|ha2
+name|has_alpha2
 operator|=
 literal|0
 expr_stmt|;
@@ -22287,9 +22429,9 @@ name|s
 argument_list|,
 name|mode
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -22343,9 +22485,9 @@ name|src2
 operator|->
 name|bytes
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|,
 operator|&
 name|mode_affect
@@ -22662,9 +22804,9 @@ name|src2
 operator|->
 name|bytes
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -22697,9 +22839,9 @@ name|src2
 operator|->
 name|bytes
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -22732,9 +22874,9 @@ name|src2
 operator|->
 name|bytes
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -22767,9 +22909,9 @@ name|src2
 operator|->
 name|bytes
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24259,7 +24401,7 @@ end_comment
 
 begin_function
 name|int
-DECL|function|apply_layer_mode (unsigned char * src1,unsigned char * src2,unsigned char ** dest,int x,int y,int opacity,int length,int mode,int b1,int b2,int ha1,int ha2,int * mode_affect)
+DECL|function|apply_layer_mode (unsigned char * src1,unsigned char * src2,unsigned char ** dest,int x,int y,int opacity,int length,int mode,int bytes1,int bytes2,int has_alpha1,int has_alpha2,int * mode_affect)
 name|apply_layer_mode
 parameter_list|(
 name|unsigned
@@ -24294,19 +24436,19 @@ name|int
 name|mode
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 comment|/* bytes */
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 comment|/* bytes */
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 comment|/* has alpha */
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|,
 comment|/* has alpha */
 name|int
@@ -24320,10 +24462,10 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|ha1
+name|has_alpha1
 operator|&&
 operator|!
-name|ha2
+name|has_alpha2
 condition|)
 name|combine
 operator|=
@@ -24333,9 +24475,9 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|combine
 operator|=
@@ -24344,10 +24486,10 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
 operator|!
-name|ha2
+name|has_alpha2
 condition|)
 name|combine
 operator|=
@@ -24380,7 +24522,7 @@ comment|/*  Since dissolve requires an alpha channels...  */
 if|if
 condition|(
 operator|!
-name|ha2
+name|has_alpha2
 condition|)
 name|add_alpha_pixels
 argument_list|(
@@ -24391,7 +24533,7 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 expr_stmt|;
 name|dissolve_pixels
@@ -24409,27 +24551,27 @@ name|opacity
 argument_list|,
 name|length
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
 operator|(
 operator|(
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
-name|b2
+name|bytes2
 else|:
-name|b2
+name|bytes2
 operator|+
 literal|1
 operator|)
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 name|combine
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|)
 condition|?
 name|COMBINE_INTEN_A_INTEN_A
@@ -24451,13 +24593,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24475,13 +24617,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24499,13 +24641,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24523,13 +24665,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24547,13 +24689,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24571,13 +24713,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24595,13 +24737,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24619,13 +24761,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24643,13 +24785,13 @@ name|dest
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 break|break;
@@ -24665,7 +24807,7 @@ case|:
 comment|/*  only works on RGB color images  */
 if|if
 condition|(
-name|b1
+name|bytes1
 operator|>
 literal|2
 condition|)
@@ -24682,13 +24824,13 @@ name|mode
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 else|else
@@ -24704,7 +24846,7 @@ case|:
 comment|/*  only works on RGB color images  */
 if|if
 condition|(
-name|b1
+name|bytes1
 operator|>
 literal|2
 condition|)
@@ -24721,13 +24863,13 @@ name|mode
 argument_list|,
 name|length
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|,
-name|ha1
+name|has_alpha1
 argument_list|,
-name|ha2
+name|has_alpha2
 argument_list|)
 expr_stmt|;
 else|else
@@ -24747,7 +24889,7 @@ name|src2
 expr_stmt|;
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 condition|)
 name|combine
 operator|=
@@ -24784,9 +24926,9 @@ comment|/*  If both sources have alpha channels, call erase function.        *  
 name|combine
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|ERASE_INTEN
@@ -24816,7 +24958,7 @@ end_function
 
 begin_function
 name|int
-DECL|function|apply_indexed_layer_mode (unsigned char * src1,unsigned char * src2,unsigned char ** dest,int mode,int ha1,int ha2)
+DECL|function|apply_indexed_layer_mode (unsigned char * src1,unsigned char * src2,unsigned char ** dest,int mode,int has_alpha1,int has_alpha2)
 name|apply_indexed_layer_mode
 parameter_list|(
 name|unsigned
@@ -24839,11 +24981,11 @@ name|int
 name|mode
 parameter_list|,
 name|int
-name|ha1
+name|has_alpha1
 parameter_list|,
 comment|/* has alpha */
 name|int
-name|ha2
+name|has_alpha2
 parameter_list|)
 comment|/* has alpha */
 block|{
@@ -24853,10 +24995,10 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|ha1
+name|has_alpha1
 operator|&&
 operator|!
-name|ha2
+name|has_alpha2
 condition|)
 name|combine
 operator|=
@@ -24866,9 +25008,9 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|combine
 operator|=
@@ -24877,9 +25019,9 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 condition|)
 name|combine
 operator|=
@@ -24919,7 +25061,7 @@ name|src2
 expr_stmt|;
 if|if
 condition|(
-name|ha1
+name|has_alpha1
 condition|)
 name|combine
 operator|=
@@ -24943,9 +25085,9 @@ comment|/*  If both sources have alpha channels, call erase function.        *  
 name|combine
 operator|=
 operator|(
-name|ha1
+name|has_alpha1
 operator|&&
-name|ha2
+name|has_alpha2
 operator|)
 condition|?
 name|ERASE_INDEXED
@@ -24965,7 +25107,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|apply_layer_mode_replace (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int x,int y,int opacity,int length,int b1,int b2,int * affect)
+DECL|function|apply_layer_mode_replace (unsigned char * src1,unsigned char * src2,unsigned char * dest,unsigned char * mask,int x,int y,int opacity,int length,int bytes1,int bytes2,int * affect)
 name|apply_layer_mode_replace
 parameter_list|(
 name|unsigned
@@ -25001,11 +25143,11 @@ name|int
 name|length
 parameter_list|,
 name|int
-name|b1
+name|bytes1
 parameter_list|,
 comment|/* bytes */
 name|int
-name|b2
+name|bytes2
 parameter_list|,
 comment|/* bytes */
 name|int
@@ -25029,9 +25171,9 @@ name|opacity
 argument_list|,
 name|affect
 argument_list|,
-name|b1
+name|bytes1
 argument_list|,
-name|b2
+name|bytes2
 argument_list|)
 expr_stmt|;
 block|}

@@ -163,6 +163,7 @@ name|GimpBrushGenerated
 modifier|*
 name|gimp_brush_generated_load
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|file_name
@@ -178,6 +179,7 @@ name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|file_name
@@ -267,6 +269,7 @@ begin_function_decl
 name|float
 name|gimp_brush_generated_get_radius
 parameter_list|(
+specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -278,6 +281,7 @@ begin_function_decl
 name|float
 name|gimp_brush_generated_get_hardness
 parameter_list|(
+specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -289,6 +293,7 @@ begin_function_decl
 name|float
 name|gimp_brush_generated_get_angle
 parameter_list|(
+specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -300,6 +305,7 @@ begin_function_decl
 name|float
 name|gimp_brush_generated_get_aspect_ratio
 parameter_list|(
+specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush

@@ -335,9 +335,10 @@ end_function
 begin_function
 name|GimpBrushGenerated
 modifier|*
-DECL|function|gimp_brush_generated_load (char * file_name)
+DECL|function|gimp_brush_generated_load (const char * file_name)
 name|gimp_brush_generated_load
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|file_name
@@ -600,13 +601,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_generated_save (GimpBrushGenerated * brush,char * file_name)
+DECL|function|gimp_brush_generated_save (GimpBrushGenerated * brush,const char * file_name)
 name|gimp_brush_generated_save
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|file_name
@@ -2104,9 +2106,10 @@ end_function
 
 begin_function
 name|float
-DECL|function|gimp_brush_generated_get_radius (GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_radius (const GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_radius
 parameter_list|(
+specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -2133,9 +2136,10 @@ end_function
 
 begin_function
 name|float
-DECL|function|gimp_brush_generated_get_hardness (GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_hardness (const GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_hardness
 parameter_list|(
+specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -2162,9 +2166,10 @@ end_function
 
 begin_function
 name|float
-DECL|function|gimp_brush_generated_get_angle (GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_angle (const GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_angle
 parameter_list|(
+specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
@@ -2191,9 +2196,10 @@ end_function
 
 begin_function
 name|float
-DECL|function|gimp_brush_generated_get_aspect_ratio (GimpBrushGenerated * brush)
+DECL|function|gimp_brush_generated_get_aspect_ratio (const GimpBrushGenerated * brush)
 name|gimp_brush_generated_get_aspect_ratio
 parameter_list|(
+specifier|const
 name|GimpBrushGenerated
 modifier|*
 name|brush
