@@ -4932,7 +4932,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab207bd0108
+DECL|struct|__anon2a56ee740108
 typedef|typedef
 struct|struct
 block|{
@@ -5286,7 +5286,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab207bd0208
+DECL|struct|__anon2a56ee740208
 typedef|typedef
 struct|struct
 block|{
@@ -5445,7 +5445,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ab207bd0308
+DECL|struct|__anon2a56ee740308
 typedef|typedef
 struct|struct
 block|{
@@ -5506,6 +5506,9 @@ name|ptr
 decl_stmt|;
 name|guint32
 name|oldflags
+decl_stmt|;
+name|guint
+name|tmp_uint
 decl_stmt|;
 if|if
 condition|(
@@ -5584,6 +5587,8 @@ name|active_count
 operator|--
 expr_stmt|;
 comment|/* Does this work on all (16|32|64)-bit Machines? */
+name|tmp_uint
+operator|=
 name|GPOINTER_TO_UINT
 argument_list|(
 name|tmp
@@ -5592,10 +5597,23 @@ name|path_tool
 operator|->
 name|single_active_segment
 argument_list|)
+expr_stmt|;
+name|tmp_uint
 operator|^=
 name|GPOINTER_TO_UINT
 argument_list|(
 name|segment
+argument_list|)
+expr_stmt|;
+name|tmp
+operator|->
+name|path_tool
+operator|->
+name|single_active_segment
+operator|=
+name|GUINT_TO_POINTER
+argument_list|(
+name|tmp_uint
 argument_list|)
 expr_stmt|;
 block|}
