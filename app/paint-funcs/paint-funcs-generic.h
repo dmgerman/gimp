@@ -20,95 +20,6 @@ directive|define
 name|__PAINT_FUNCS_GENERIC_H__
 end_define
 
-begin_comment
-comment|/* FIXME: Still ugly as butt but working and the MMX code doesn't   * belong here!! */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_ASM_MMX
-end_ifdef
-
-begin_define
-DECL|macro|MMX_PIXEL_OP (x)
-define|#
-directive|define
-name|MMX_PIXEL_OP
-parameter_list|(
-name|x
-parameter_list|)
-define|\
-value|void \ x( \   const unsigned char *src1, \   const unsigned char *src2, \   unsigned count, \   unsigned char *dst) __attribute((regparm(3)));
-end_define
-
-begin_define
-DECL|macro|MMX_PIXEL_OP_3A_1A (op)
-define|#
-directive|define
-name|MMX_PIXEL_OP_3A_1A
-parameter_list|(
-name|op
-parameter_list|)
-define|\
-value|MMX_PIXEL_OP(op##_pixels_3a_3a) \   MMX_PIXEL_OP(op##_pixels_1a_1a)
-end_define
-
-begin_define
-DECL|macro|USE_MMX_PIXEL_OP_3A_1A (op)
-define|#
-directive|define
-name|USE_MMX_PIXEL_OP_3A_1A
-parameter_list|(
-name|op
-parameter_list|)
-define|\
-value|if (use_mmx&& has_alpha1&& has_alpha2) \     { \       if (bytes1==2&& bytes2==2) \ 	return op##_pixels_1a_1a(src1, src2, length, dest); \       if (bytes1==4&& bytes2==4) \ 	return op##_pixels_3a_3a(src1, src2, length, dest); \     }
-end_define
-
-begin_comment
-unit|\
-comment|/*fprintf(stderr, "non-MMX: %s(%d, %d, %d, %d)\n", #op, \     bytes1, bytes2, has_alpha1, has_alpha2);*/
-end_comment
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_comment
-comment|/* ! HAVE_ASM_MMX */
-end_comment
-
-begin_define
-DECL|macro|MMX_PIXEL_OP_3A_1A (op)
-define|#
-directive|define
-name|MMX_PIXEL_OP_3A_1A
-parameter_list|(
-name|op
-parameter_list|)
-end_define
-
-begin_define
-DECL|macro|USE_MMX_PIXEL_OP_3A_1A (op)
-define|#
-directive|define
-name|USE_MMX_PIXEL_OP_3A_1A
-parameter_list|(
-name|op
-parameter_list|)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* HAVE_ASM_MMX */
-end_comment
-
 begin_define
 DECL|macro|INT_MULT (a,b,t)
 define|#
@@ -182,6 +93,10 @@ begin_comment
 comment|/* A drawable has an alphachannel if contains either 4 or 2 bytes data  * aka GRAYA and RGBA and thus the macro below works. This will have  * to change if we support bigger formats. We'll do it so for now because  * masking is always cheaper than passing parameters over the stack.      */
 end_comment
 
+begin_comment
+comment|/* FIXME: Move to a global place */
+end_comment
+
 begin_define
 DECL|macro|HAS_ALPHA (bytes)
 define|#
@@ -192,6 +107,10 @@ name|bytes
 parameter_list|)
 value|(~##bytes& 1)
 end_define
+
+begin_comment
+comment|/* FIXME: Move to a more global place */
+end_comment
 
 begin_struct
 DECL|struct|apply_layer_mode_struct
@@ -1028,18 +947,11 @@ block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MMX_PIXEL_OP_3A_1A (darken)
-name|MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|darken
-argument_list|)
-end_macro
-
 begin_function
 specifier|static
 specifier|inline
 name|void
+DECL|function|darken_pixels (const guchar * src1,const guchar * src2,guchar * dest,guint length,guint bytes1,guint bytes2)
 name|darken_pixels
 parameter_list|(
 specifier|const
@@ -1113,10 +1025,6 @@ name|s1
 decl_stmt|,
 name|s2
 decl_stmt|;
-name|USE_MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|darken
-argument_list|)
 while|while
 condition|(
 name|length
@@ -1222,18 +1130,11 @@ block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MMX_PIXEL_OP_3A_1A (lighten)
-name|MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|lighten
-argument_list|)
-end_macro
-
 begin_function
 specifier|static
 specifier|inline
 name|void
+DECL|function|lighten_pixels (const guchar * src1,const guchar * src2,guchar * dest,guint length,guint bytes1,guint bytes2)
 name|lighten_pixels
 parameter_list|(
 specifier|const
@@ -1307,10 +1208,6 @@ name|s1
 decl_stmt|,
 name|s2
 decl_stmt|;
-name|USE_MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|lighten
-argument_list|)
 while|while
 condition|(
 name|length
@@ -2337,18 +2234,11 @@ block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MMX_PIXEL_OP_3A_1A (multiply)
-name|MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|multiply
-argument_list|)
-end_macro
-
 begin_function
 specifier|static
 specifier|inline
 name|void
+DECL|function|multiply_pixels (const guchar * src1,const guchar * src2,guchar * dest,guint length,guint bytes1,guint bytes2)
 name|multiply_pixels
 parameter_list|(
 specifier|const
@@ -2419,10 +2309,6 @@ name|b
 decl_stmt|,
 name|tmp
 decl_stmt|;
-name|USE_MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|multiply
-argument_list|)
 if|if
 condition|(
 name|has_alpha1
@@ -2813,18 +2699,11 @@ block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MMX_PIXEL_OP_3A_1A (screen)
-name|MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|screen
-argument_list|)
-end_macro
-
 begin_function
 specifier|static
 specifier|inline
 name|void
+DECL|function|screen_pixels (const guchar * src1,const guchar * src2,guchar * dest,guint length,guint bytes1,guint bytes2)
 name|screen_pixels
 parameter_list|(
 specifier|const
@@ -2895,10 +2774,6 @@ name|b
 decl_stmt|,
 name|tmp
 decl_stmt|;
-name|USE_MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|screen
-argument_list|)
 while|while
 condition|(
 name|length
@@ -3003,18 +2878,11 @@ block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MMX_PIXEL_OP_3A_1A (overlay)
-name|MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|overlay
-argument_list|)
-end_macro
-
 begin_function
 specifier|static
 specifier|inline
 name|void
+DECL|function|overlay_pixels (const guchar * src1,const guchar * src2,guchar * dest,guint length,guint bytes1,guint bytes2)
 name|overlay_pixels
 parameter_list|(
 specifier|const
@@ -3843,18 +3711,11 @@ block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MMX_PIXEL_OP_3A_1A (add)
-name|MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|add
-argument_list|)
-end_macro
-
 begin_function
 specifier|static
 specifier|inline
 name|void
+DECL|function|add_pixels (const guchar * src1,const guchar * src2,guchar * dest,guint length,guint bytes1,guint bytes2)
 name|add_pixels
 parameter_list|(
 specifier|const
@@ -3923,10 +3784,6 @@ decl_stmt|;
 name|guint
 name|b
 decl_stmt|;
-name|USE_MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|add
-argument_list|)
 while|while
 condition|(
 name|length
@@ -4027,18 +3884,11 @@ block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MMX_PIXEL_OP_3A_1A (substract)
-name|MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|substract
-argument_list|)
-end_macro
-
 begin_function
 specifier|static
 specifier|inline
 name|void
+DECL|function|subtract_pixels (const guchar * src1,const guchar * src2,guchar * dest,guint length,guint bytes1,guint bytes2)
 name|subtract_pixels
 parameter_list|(
 specifier|const
@@ -4110,10 +3960,6 @@ decl_stmt|;
 name|gint
 name|diff
 decl_stmt|;
-name|USE_MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|substract
-argument_list|)
 while|while
 condition|(
 name|length
@@ -4217,18 +4063,11 @@ block|}
 block|}
 end_function
 
-begin_macro
-DECL|function|MMX_PIXEL_OP_3A_1A (difference)
-name|MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|difference
-argument_list|)
-end_macro
-
 begin_function
 specifier|static
 specifier|inline
 name|void
+DECL|function|difference_pixels (const guchar * src1,const guchar * src2,guchar * dest,guint length,guint bytes1,guint bytes2)
 name|difference_pixels
 parameter_list|(
 specifier|const
@@ -4300,10 +4139,6 @@ decl_stmt|;
 name|gint
 name|diff
 decl_stmt|;
-name|USE_MMX_PIXEL_OP_3A_1A
-argument_list|(
-argument|difference
-argument_list|)
 while|while
 condition|(
 name|length
