@@ -247,9 +247,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1197,7 +1197,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_selection_stroke (GimpItem * item,GimpDrawable * drawable,GimpPaintInfo * paint_info)
+DECL|function|gimp_selection_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc)
 name|gimp_selection_stroke
 parameter_list|(
 name|GimpItem
@@ -1208,9 +1208,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 block|{
 name|GimpSelection
@@ -1329,7 +1329,7 @@ name|item
 argument_list|,
 name|drawable
 argument_list|,
-name|paint_info
+name|stroke_desc
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end

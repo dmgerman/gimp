@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9789a60103
+DECL|enum|__anon2a1ba7820103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -189,6 +189,15 @@ typedef|typedef
 name|struct
 name|_GimpPaintInfo
 name|GimpPaintInfo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpStrokeOptions
+typedef|typedef
+name|struct
+name|_GimpStrokeOptions
+name|GimpStrokeOptions
 typedef|;
 end_typedef
 

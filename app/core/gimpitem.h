@@ -430,9 +430,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 function_decl|;
 DECL|member|default_name
@@ -831,9 +831,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 function_decl|;
 end_function_decl

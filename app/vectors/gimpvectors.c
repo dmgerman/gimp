@@ -142,7 +142,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29881d7f0103
+DECL|enum|__anon27c196a90103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -412,9 +412,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2202,7 +2202,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_stroke (GimpItem * item,GimpDrawable * drawable,GimpPaintInfo * paint_info)
+DECL|function|gimp_vectors_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc)
 name|gimp_vectors_stroke
 parameter_list|(
 name|GimpItem
@@ -2213,14 +2213,23 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 block|{
 name|GimpVectors
 modifier|*
 name|vectors
+decl_stmt|;
+name|GimpPaintInfo
+modifier|*
+name|paint_info
+init|=
+name|GIMP_PAINT_INFO
+argument_list|(
+name|stroke_desc
+argument_list|)
 decl_stmt|;
 name|gboolean
 name|retval

@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpstrokeoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -131,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b44b8a0103
+DECL|enum|__anon290061a20103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -2965,7 +2971,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpPaintInfo * paint_info)
+DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc)
 name|gimp_item_stroke
 parameter_list|(
 name|GimpItem
@@ -2976,9 +2982,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 block|{
 name|GimpItemClass
@@ -3009,7 +3015,12 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PAINT_INFO
 argument_list|(
-name|paint_info
+name|stroke_desc
+argument_list|)
+operator|||
+name|GIMP_IS_STROKE_OPTIONS
+argument_list|(
+name|stroke_desc
 argument_list|)
 argument_list|,
 name|FALSE
@@ -3037,7 +3048,7 @@ name|item
 argument_list|,
 name|drawable
 argument_list|,
-name|paint_info
+name|stroke_desc
 argument_list|)
 return|;
 return|return

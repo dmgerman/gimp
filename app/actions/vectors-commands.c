@@ -659,9 +659,12 @@ argument_list|)
 argument_list|,
 name|active_drawable
 argument_list|,
+name|GIMP_OBJECT
+argument_list|(
 name|tool_info
 operator|->
 name|paint_info
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

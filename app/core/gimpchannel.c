@@ -392,9 +392,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2556,7 +2556,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpPaintInfo * paint_info)
+DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpObject * stroke_desc)
 name|gimp_channel_stroke
 parameter_list|(
 name|GimpItem
@@ -2567,9 +2567,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpPaintInfo
+name|GimpObject
 modifier|*
-name|paint_info
+name|stroke_desc
 parameter_list|)
 block|{
 name|GimpChannel
@@ -2600,6 +2600,10 @@ name|GimpPaintCore
 modifier|*
 name|core
 decl_stmt|;
+name|GimpPaintInfo
+modifier|*
+name|paint_info
+decl_stmt|;
 name|gboolean
 name|retval
 decl_stmt|;
@@ -2628,6 +2632,13 @@ name|gimage
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|paint_info
+operator|=
+name|GIMP_PAINT_INFO
+argument_list|(
+name|stroke_desc
 argument_list|)
 expr_stmt|;
 if|if
