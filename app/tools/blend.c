@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aee260a0103
+DECL|enum|__anon2ab172940103
 block|{
 DECL|enumerator|Linear
 name|Linear
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aee260a0203
+DECL|enum|__anon2ab172940203
 block|{
 DECL|enumerator|FG_BG_RGB_MODE
 name|FG_BG_RGB_MODE
@@ -287,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aee260a0303
+DECL|enum|__anon2ab172940303
 block|{
 DECL|enumerator|REPEAT_NONE
 name|REPEAT_NONE
@@ -434,7 +434,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2aee260a0408
+DECL|struct|__anon2ab172940408
 typedef|typedef
 struct|struct
 block|{
@@ -486,7 +486,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aee260a0508
+DECL|struct|__anon2ab172940508
 typedef|typedef
 struct|struct
 block|{
@@ -4274,15 +4274,26 @@ operator|->
 name|context_id
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gdisp
+operator|->
+name|dot_for_dot
+condition|)
+block|{
 name|g_snprintf
 argument_list|(
 name|vector
 argument_list|,
 name|STATUSBAR_SIZE
 argument_list|,
+name|gdisp
+operator|->
+name|cursor_format_str
+argument_list|,
 name|_
 argument_list|(
-literal|"Blend: %d, %d"
+literal|"Blend: "
 argument_list|)
 argument_list|,
 name|abs
@@ -4296,6 +4307,8 @@ operator|->
 name|startx
 argument_list|)
 argument_list|,
+literal|", "
+argument_list|,
 name|abs
 argument_list|(
 name|blend_tool
@@ -4308,6 +4321,79 @@ name|starty
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+comment|/* show real world units */
+block|{
+name|float
+name|unit_factor
+init|=
+name|gimp_unit_get_factor
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|unit
+argument_list|)
+decl_stmt|;
+name|g_snprintf
+argument_list|(
+name|vector
+argument_list|,
+name|STATUSBAR_SIZE
+argument_list|,
+name|gdisp
+operator|->
+name|cursor_format_str
+argument_list|,
+name|_
+argument_list|(
+literal|"Blend: "
+argument_list|)
+argument_list|,
+name|abs
+argument_list|(
+name|blend_tool
+operator|->
+name|endx
+operator|-
+name|blend_tool
+operator|->
+name|startx
+argument_list|)
+operator|*
+name|unit_factor
+operator|/
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|xresolution
+argument_list|,
+literal|", "
+argument_list|,
+name|abs
+argument_list|(
+name|blend_tool
+operator|->
+name|endy
+operator|-
+name|blend_tool
+operator|->
+name|starty
+argument_list|)
+operator|*
+name|unit_factor
+operator|/
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|yresolution
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_statusbar_push
 argument_list|(
 name|GTK_STATUSBAR

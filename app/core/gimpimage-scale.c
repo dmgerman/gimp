@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -491,7 +497,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon27a609000103
+DECL|enum|__anon2aceb1230103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -896,20 +902,19 @@ name|gimage
 operator|->
 name|xresolution
 operator|=
-literal|72.0
+name|default_xresolution
 expr_stmt|;
-comment|/* maybe should be rc-supplied default? */
 name|gimage
 operator|->
 name|yresolution
 operator|=
-literal|72.0
+name|default_yresolution
 expr_stmt|;
 name|gimage
 operator|->
 name|unit
 operator|=
-name|UNIT_PIXEL
+name|default_units
 expr_stmt|;
 name|gimage
 operator|->

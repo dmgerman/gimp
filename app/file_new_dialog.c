@@ -102,7 +102,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b72d56c0108
+DECL|struct|__anon2b3e8e400108
 typedef|typedef
 struct|struct
 block|{
@@ -1222,10 +1222,6 @@ name|advanced_options
 init|=
 name|FALSE
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|advanced_button
-decl_stmt|;
 name|GSList
 modifier|*
 name|group
@@ -1422,13 +1418,18 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|ABS
+argument_list|(
 name|vals
 operator|->
 name|xresolution
-operator|!=
+operator|-
 name|vals
 operator|->
 name|yresolution
+argument_list|)
+operator|>
+literal|1e-5
 condition|)
 name|advanced_options
 operator|=
@@ -2174,18 +2175,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|advanced_options
-condition|)
-name|gtk_widget_show
-argument_list|(
-name|vals
-operator|->
-name|simple_res
-argument_list|)
-expr_stmt|;
 comment|/* the advanced resolution stuff      (not shown by default, but used to keep track of all the variables) */
 name|vals
 operator|->
@@ -2367,6 +2356,21 @@ argument_list|(
 name|GIMP_CHAIN_BOTTOM
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|ABS
+argument_list|(
+name|vals
+operator|->
+name|xresolution
+operator|-
+name|vals
+operator|->
+name|yresolution
+argument_list|)
+operator|<
+literal|1e-5
+condition|)
 name|gimp_chain_button_set_active
 argument_list|(
 name|GIMP_CHAIN_BUTTON
@@ -2460,6 +2464,8 @@ expr_stmt|;
 if|if
 condition|(
 name|advanced_options
+operator|!=
+name|FALSE
 condition|)
 block|{
 name|gtk_widget_show
@@ -2477,23 +2483,16 @@ name|couple_resolutions
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* This code is commented out since it seems to be overkill...    * vals->change_size = gtk_check_button_new_with_label (_("Change image size with resolution changes"));    * gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (vals->change_size), TRUE);    * gtk_box_pack_start (GTK_BOX (vbox2), vals->change_size, TRUE, TRUE, 0);    * gtk_widget_show (vals->change_size);   */
-if|if
-condition|(
-name|advanced_options
-condition|)
-name|advanced_button
-operator|=
-name|gtk_button_new_with_label
+else|else
+block|{
+name|gtk_widget_show
 argument_list|(
-name|_
-argument_list|(
-literal|"Advanced options<<"
-argument_list|)
+name|vals
+operator|->
+name|simple_res
 argument_list|)
 expr_stmt|;
-else|else
-name|advanced_button
+name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
@@ -2510,7 +2509,7 @@ argument_list|(
 name|vbox2
 argument_list|)
 argument_list|,
-name|advanced_button
+name|button
 argument_list|,
 name|FALSE
 argument_list|,
@@ -2523,7 +2522,7 @@ name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
 argument_list|(
-name|advanced_button
+name|button
 argument_list|)
 argument_list|,
 literal|"clicked"
@@ -2538,9 +2537,10 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|advanced_button
+name|button
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* hbox containing the Image type and fill type frames */
 name|hbox
 operator|=

@@ -4709,7 +4709,11 @@ name|gdisp
 operator|->
 name|cursor_format_str
 argument_list|,
+literal|""
+argument_list|,
 name|t_x
+argument_list|,
+literal|", "
 argument_list|,
 name|t_y
 argument_list|)
@@ -4740,6 +4744,8 @@ name|gdisp
 operator|->
 name|cursor_format_str
 argument_list|,
+literal|""
+argument_list|,
 operator|(
 name|float
 operator|)
@@ -4753,6 +4759,8 @@ name|gimage
 operator|->
 name|xresolution
 argument_list|,
+literal|", "
+argument_list|,
 operator|(
 name|float
 operator|)
@@ -4765,15 +4773,6 @@ operator|->
 name|gimage
 operator|->
 name|yresolution
-argument_list|,
-name|gimp_unit_get_symbol
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|unit
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -4910,7 +4909,7 @@ operator|->
 name|cursor_format_str
 argument_list|)
 argument_list|,
-literal|"%%d, %%d"
+literal|"%%s%%d%%s%%d"
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -4926,11 +4925,15 @@ name|gdisp
 operator|->
 name|cursor_format_str
 argument_list|,
+literal|""
+argument_list|,
 name|gdisp
 operator|->
 name|gimage
 operator|->
 name|width
+argument_list|,
+literal|", "
 argument_list|,
 name|gdisp
 operator|->
@@ -4968,7 +4971,7 @@ operator|->
 name|cursor_format_str
 argument_list|)
 argument_list|,
-literal|"%%.%df, %%.%df %%s"
+literal|"%%s%%.%df%%s%%.%df %s"
 argument_list|,
 name|gimp_unit_get_digits
 argument_list|(
@@ -4980,6 +4983,15 @@ name|unit
 argument_list|)
 argument_list|,
 name|gimp_unit_get_digits
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|unit
+argument_list|)
+argument_list|,
+name|gimp_unit_get_symbol
 argument_list|(
 name|gdisp
 operator|->
@@ -5002,6 +5014,8 @@ name|gdisp
 operator|->
 name|cursor_format_str
 argument_list|,
+literal|""
+argument_list|,
 operator|(
 name|float
 operator|)
@@ -5019,6 +5033,8 @@ name|gimage
 operator|->
 name|xresolution
 argument_list|,
+literal|", "
+argument_list|,
 operator|(
 name|float
 operator|)
@@ -5035,15 +5051,6 @@ operator|->
 name|gimage
 operator|->
 name|yresolution
-argument_list|,
-name|gimp_unit_get_symbol
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|unit
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
