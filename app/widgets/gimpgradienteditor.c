@@ -332,7 +332,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c020eb0103
+DECL|enum|__anon2b8871ca0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -356,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c020eb0208
+DECL|struct|__anon2b8871ca0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -639,7 +639,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon29c020eb0308
+DECL|struct|__anon2b8871ca0308
 block|{
 DECL|member|r
 DECL|member|g
@@ -4884,6 +4884,16 @@ argument_list|,
 name|mask
 argument_list|)
 expr_stmt|;
+name|gdk_pixmap_unref
+argument_list|(
+name|pixmap
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -4982,6 +4992,16 @@ name|gtk_pixmap_new
 argument_list|(
 name|pixmap
 argument_list|,
+name|mask
+argument_list|)
+expr_stmt|;
+name|gdk_pixmap_unref
+argument_list|(
+name|pixmap
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
 name|mask
 argument_list|)
 expr_stmt|;

@@ -171,6 +171,16 @@ argument_list|,
 name|mask
 argument_list|)
 expr_stmt|;
+name|gdk_pixmap_unref
+argument_list|(
+name|pixmap
+argument_list|)
+expr_stmt|;
+name|gdk_bitmap_unref
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|ops_type

@@ -94,7 +94,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f418680108
+DECL|struct|__anon2bb79e870108
 block|{
 DECL|member|gimage
 name|GImage
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f418680208
+DECL|struct|__anon2bb79e870208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1176,10 +1176,7 @@ argument_list|)
 operator|->
 name|style
 operator|->
-name|bg_gc
-index|[
-name|GTK_STATE_NORMAL
-index|]
+name|black_gc
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3508,7 +3505,7 @@ argument_list|,
 literal|16
 argument_list|)
 operator|+
-literal|4
+literal|6
 operator|)
 argument_list|)
 expr_stmt|;
@@ -3564,7 +3561,7 @@ argument_list|,
 literal|16
 argument_list|)
 operator|+
-literal|2
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_clist_set_column_width
