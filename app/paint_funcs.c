@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_manager_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile_pvt.h"
 end_include
 
@@ -229,7 +223,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bbf1c820103
+DECL|enum|__anon28edaf780103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY

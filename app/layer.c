@@ -1761,12 +1761,12 @@ name|layer_new
 argument_list|(
 literal|0
 argument_list|,
-name|tile_manager_level_width
+name|tile_manager_width
 argument_list|(
 name|tiles
 argument_list|)
 argument_list|,
-name|tile_manager_level_height
+name|tile_manager_height
 argument_list|(
 name|tiles
 argument_list|)
@@ -1860,7 +1860,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|tile_manager_level_bpp
+name|tile_manager_bpp
 argument_list|(
 name|tiles
 argument_list|)
@@ -1878,7 +1878,7 @@ name|RGBA_GIMAGE
 operator|)
 operator|||
 operator|(
-name|tile_manager_level_bpp
+name|tile_manager_bpp
 argument_list|(
 name|tiles
 argument_list|)
@@ -1923,7 +1923,7 @@ name|new_layer
 argument_list|)
 argument_list|,
 operator|(
-name|tile_manager_level_bpp
+name|tile_manager_bpp
 argument_list|(
 name|tiles
 argument_list|)

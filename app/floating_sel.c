@@ -96,16 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_manager_pvt.h"
-end_include
-
-begin_comment
-comment|/* ick. */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpmath.h"
 end_include
 
@@ -898,13 +888,15 @@ decl_stmt|;
 comment|/*  Check the backing store& make sure it has the correct dimensions  */
 if|if
 condition|(
+operator|(
+name|tile_manager_width
+argument_list|(
 name|layer
 operator|->
 name|fs
 operator|.
 name|backing_store
-operator|->
-name|width
+argument_list|)
 operator|!=
 name|gimp_drawable_width
 argument_list|(
@@ -913,14 +905,17 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+operator|)
 operator|||
+operator|(
+name|tile_manager_height
+argument_list|(
 name|layer
 operator|->
 name|fs
 operator|.
 name|backing_store
-operator|->
-name|height
+argument_list|)
 operator|!=
 name|gimp_drawable_height
 argument_list|(
@@ -929,14 +924,17 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+operator|)
 operator|||
+operator|(
+name|tile_manager_bpp
+argument_list|(
 name|layer
 operator|->
 name|fs
 operator|.
 name|backing_store
-operator|->
-name|bpp
+argument_list|)
 operator|!=
 name|gimp_drawable_bytes
 argument_list|(
@@ -946,6 +944,7 @@ name|fs
 operator|.
 name|drawable
 argument_list|)
+operator|)
 condition|)
 block|{
 comment|/*  free the backing store and allocate anew  */

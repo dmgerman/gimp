@@ -675,7 +675,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b83e8f40103
+DECL|enum|__anon27c1bcb40103
 block|{
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -3002,7 +3002,7 @@ operator|(
 operator|(
 name|width
 operator|!=
-name|tile_manager_level_width
+name|tile_manager_width
 argument_list|(
 name|gimage
 operator|->
@@ -3013,7 +3013,7 @@ operator|||
 operator|(
 name|height
 operator|!=
-name|tile_manager_level_height
+name|tile_manager_height
 argument_list|(
 name|gimage
 operator|->
@@ -3024,7 +3024,7 @@ operator|||
 operator|(
 name|bpp
 operator|!=
-name|tile_manager_level_bpp
+name|tile_manager_bpp
 argument_list|(
 name|gimage
 operator|->
@@ -15596,7 +15596,7 @@ name|NULL
 operator|)
 operator|||
 operator|(
-name|tile_manager_level_width
+name|tile_manager_width
 argument_list|(
 name|gimage
 operator|->
@@ -15609,7 +15609,7 @@ name|width
 operator|)
 operator|||
 operator|(
-name|tile_manager_level_height
+name|tile_manager_height
 argument_list|(
 name|gimage
 operator|->

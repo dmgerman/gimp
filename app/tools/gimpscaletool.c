@@ -78,13 +78,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"scale_tool.h"
+file|"selection.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"selection.h"
+file|"tile_manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"scale_tool.h"
 end_include
 
 begin_include
@@ -109,18 +121,6 @@ begin_include
 include|#
 directive|include
 file|"transform_tool.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tile_manager_pvt.h"
 end_include
 
 begin_include

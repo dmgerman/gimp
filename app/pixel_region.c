@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_manager_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tile.h"
 end_include
 
@@ -202,9 +196,10 @@ name|PR
 operator|->
 name|bytes
 operator|=
+name|tile_manager_bpp
+argument_list|(
 name|tiles
-operator|->
-name|bpp
+argument_list|)
 expr_stmt|;
 name|PR
 operator|->

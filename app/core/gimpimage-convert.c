@@ -146,16 +146,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_manager_pvt.h"
-end_include
-
-begin_comment
-comment|/* ick ick ick. */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|"tools/brightness_contrast.h"
 end_include
 
@@ -34951,7 +34941,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955aeb00108
+DECL|struct|__anon296dbdb70108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35028,7 +35018,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955aeb00208
+DECL|struct|__anon296dbdb70208
 block|{
 DECL|member|ncolors
 name|long
@@ -35047,7 +35037,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955aeb00308
+DECL|struct|__anon296dbdb70308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -38400,7 +38390,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955aeb00408
+DECL|struct|__anon296dbdb70408
 block|{
 DECL|member|used_count
 name|signed
@@ -50481,9 +50471,10 @@ name|bytes
 expr_stmt|;
 name|dest_bytes
 operator|=
+name|tile_manager_bpp
+argument_list|(
 name|new_tiles
-operator|->
-name|bpp
+argument_list|)
 expr_stmt|;
 name|width
 operator|=
@@ -51584,9 +51575,10 @@ name|bytes
 expr_stmt|;
 name|dest_bytes
 operator|=
+name|tile_manager_bpp
+argument_list|(
 name|new_tiles
-operator|->
-name|bpp
+argument_list|)
 expr_stmt|;
 name|width
 operator|=

@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile_manager_pvt.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gdisplay.h"
 end_include
 
@@ -91,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"paint_funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tile_manager.h"
 end_include
 
 begin_include
@@ -594,17 +594,19 @@ name|values
 operator|->
 name|width
 operator|=
+name|tile_manager_width
+argument_list|(
 name|global_buf
-operator|->
-name|width
+argument_list|)
 expr_stmt|;
 name|values
 operator|->
 name|height
 operator|=
+name|tile_manager_height
+argument_list|(
 name|global_buf
-operator|->
-name|height
+argument_list|)
 expr_stmt|;
 block|}
 name|ui_new_image_window_create
