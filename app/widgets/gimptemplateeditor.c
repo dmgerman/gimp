@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64e9270103
+DECL|enum|__anon29f827870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1572,6 +1572,9 @@ operator|->
 name|more_label
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_MEMSIZE_LABEL
 name|editor
 operator|->
 name|memsize_label
@@ -1641,6 +1644,8 @@ operator|->
 name|memsize_label
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|text
 operator|=
 name|g_strdup_printf
@@ -3470,6 +3475,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+ifdef|#
+directive|ifdef
+name|ENABLE_MEMSIZE_LABEL
 name|text
 operator|=
 name|gimp_memsize_to_string
@@ -3496,6 +3504,8 @@ argument_list|(
 name|text
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|text
 operator|=
 name|g_strdup_printf
