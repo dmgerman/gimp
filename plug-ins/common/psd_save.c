@@ -8,7 +8,7 @@ comment|/*  * Adobe and Adobe Photoshop are trademarks of Adobe Systems  * Incor
 end_comment
 
 begin_comment
-comment|/*  * Revision history:  *  *  2000.02 / v1.0 / Monigotes  *       First version.  *  */
+comment|/*  * Revision history:  *  *  2000.02 / v1.0 / Monigotes  *       First version.  *  *  2003-05-10  Pedro Gimeno<pggimeno@wanadoo.es>  *       - Cleaned up and GNUstylized.  *       - Translated all comments and vars in Spanish to English.  *  */
 end_comment
 
 begin_comment
@@ -60,7 +60,7 @@ DECL|macro|IF_DEEP_DBG
 define|#
 directive|define
 name|IF_DEEP_DBG
-value|if (DEBUG&& DEBUG_LEVEL==2)
+value|if (DEBUG&& DEBUG_LEVEL == 2)
 end_define
 
 begin_comment
@@ -162,30 +162,30 @@ DECL|member|nChannels
 name|gint
 name|nChannels
 decl_stmt|;
-comment|/* Numero de canales de usuario de la imagen */
+comment|/* Number of user channels in the image */
 DECL|member|lChannels
 name|gint32
 modifier|*
 name|lChannels
 decl_stmt|;
-comment|/* Canales de usuario de la imagen */
+comment|/* User channels in the image */
 DECL|member|nLayers
 name|gint
 name|nLayers
 decl_stmt|;
-comment|/* Num de capas de la imagen */
+comment|/* Number of layers in the image */
 DECL|member|lLayers
 name|gint32
 modifier|*
 name|lLayers
 decl_stmt|;
-comment|/* Identificador de cada capa */
+comment|/* Identifier of each layer */
 DECL|member|layersDim
 name|PSD_Layer_Dimension
 modifier|*
 name|layersDim
 decl_stmt|;
-comment|/* Dimensiones de cada capa */
+comment|/* Dimensions of each layer */
 DECL|typedef|PSD_Image_Data
 block|}
 name|PSD_Image_Data
@@ -223,14 +223,14 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -329,7 +329,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|save_layerAndMask
+name|save_layer_and_mask
 parameter_list|(
 name|FILE
 modifier|*
@@ -358,7 +358,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|save_image
 parameter_list|(
 name|gchar
@@ -408,7 +408,7 @@ modifier|*
 name|val
 parameter_list|,
 name|gint
-name|paded
+name|padding
 parameter_list|,
 name|gchar
 modifier|*
@@ -605,7 +605,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|nsave_args
 init|=
 sizeof|sizeof
@@ -665,21 +665,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GimpParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -780,7 +780,7 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-comment|/* Nombre del fichero */
+comment|/* File name */
 name|param
 index|[
 literal|1
@@ -791,7 +791,7 @@ operator|.
 name|d_image
 argument_list|)
 condition|)
-comment|/* Identificador de la imagen */
+comment|/* Image identifier */
 block|{
 name|values
 index|[
@@ -893,9 +893,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|psd_lmode_layer (gint32 idLayer,gchar * psdMode)
 specifier|static
 name|void
+DECL|function|psd_lmode_layer (gint32 idLayer,gchar * psdMode)
 name|psd_lmode_layer
 parameter_list|(
 name|gint32
@@ -1048,8 +1048,8 @@ literal|"over"
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/*    case GIMP_BEHIND_MODE:                 Estos son de GIMP 1.1.14*/
-comment|/*    case GIMP_DIVIDE_MODE:                 Estos son de GIMP 1.1.14*/
+comment|/*    case GIMP_BEHIND_MODE:                 These are from GIMP 1.1.14*/
+comment|/*    case GIMP_DIVIDE_MODE:                 These are from GIMP 1.1.14*/
 case|case
 name|GIMP_ADDITION_MODE
 case|:
@@ -1095,9 +1095,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_string (FILE * fd,char * val,gchar * why)
 specifier|static
 name|void
+DECL|function|write_string (FILE * fd,char * val,gchar * why)
 name|write_string
 parameter_list|(
 name|FILE
@@ -1143,9 +1143,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_pascalstring (FILE * fd,char * val,gint paded,gchar * why)
 specifier|static
 name|void
+DECL|function|write_pascalstring (FILE * fd,char * val,gint padding,gchar * why)
 name|write_pascalstring
 parameter_list|(
 name|FILE
@@ -1157,7 +1157,7 @@ modifier|*
 name|val
 parameter_list|,
 name|gint
-name|paded
+name|padding
 parameter_list|,
 name|gchar
 modifier|*
@@ -1166,13 +1166,13 @@ parameter_list|)
 block|{
 name|unsigned
 name|char
-name|valLength
+name|len
 decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-comment|/* Calcula la longitud del string a grabar y lo limita a 255 */
-name|valLength
+comment|/* Calculate string length to write and limit it to 255 */
+name|len
 operator|=
 operator|(
 name|strlen
@@ -1194,10 +1194,10 @@ argument_list|(
 name|val
 argument_list|)
 expr_stmt|;
-comment|/* Se realiza la grabacion */
+comment|/* Perform actual writing */
 if|if
 condition|(
-name|valLength
+name|len
 operator|!=
 literal|0
 condition|)
@@ -1206,7 +1206,7 @@ name|write_gchar
 argument_list|(
 name|fd
 argument_list|,
-name|valLength
+name|len
 argument_list|,
 name|why
 argument_list|)
@@ -1217,7 +1217,7 @@ name|fd
 argument_list|,
 name|val
 argument_list|,
-name|valLength
+name|len
 argument_list|,
 name|why
 argument_list|)
@@ -1233,17 +1233,17 @@ argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
-comment|/* Si la longitud total (longitud + contenido) no es multiplo del valor 'paded',      se añaden los ceros necesarios para rellenar */
-name|valLength
+comment|/* If total length (length byte + content) is not a multiple of PADDING,      add zeros to pad it.  */
+name|len
 operator|++
 expr_stmt|;
-comment|/* Le añado el campo longitud */
+comment|/* Add the length field */
 if|if
 condition|(
 operator|(
-name|valLength
+name|len
 operator|%
-name|paded
+name|padding
 operator|)
 operator|==
 literal|0
@@ -1258,12 +1258,12 @@ init|;
 name|i
 operator|<
 operator|(
-name|paded
+name|padding
 operator|-
 operator|(
-name|valLength
+name|len
 operator|%
-name|paded
+name|padding
 operator|)
 operator|)
 condition|;
@@ -1283,9 +1283,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|xfwrite (FILE * fd,void * buf,long len,gchar * why)
 specifier|static
 name|void
+DECL|function|xfwrite (FILE * fd,void * buf,long len,gchar * why)
 name|xfwrite
 parameter_list|(
 name|FILE
@@ -1323,7 +1323,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: xfwrite: Error mientras grababa '%s'\n"
+literal|" Function: xfwrite: Error while writing '%s'\n"
 argument_list|,
 name|why
 argument_list|)
@@ -1336,9 +1336,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_gchar (FILE * fd,unsigned char val,gchar * why)
 specifier|static
 name|void
+DECL|function|write_gchar (FILE * fd,unsigned char val,gchar * why)
 name|write_gchar
 parameter_list|(
 name|FILE
@@ -1405,7 +1405,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: write_gchar: Error mientras grababa '%s'\n"
+literal|" Function: write_gchar: Error while writing '%s'\n"
 argument_list|,
 name|why
 argument_list|)
@@ -1429,9 +1429,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_gshort (FILE * fd,gshort val,gchar * why)
 specifier|static
 name|void
+DECL|function|write_gshort (FILE * fd,gshort val,gchar * why)
 name|write_gshort
 parameter_list|(
 name|FILE
@@ -1496,7 +1496,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: write_gshort: Error mientras grababa '%s'\n"
+literal|" Function: write_gshort: Error while writing '%s'\n"
 argument_list|,
 name|why
 argument_list|)
@@ -1509,9 +1509,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|write_glong (FILE * fd,glong val,gchar * why)
 specifier|static
 name|void
+DECL|function|write_glong (FILE * fd,glong val,gchar * why)
 name|write_glong
 parameter_list|(
 name|FILE
@@ -1602,7 +1602,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: write_glong: Error mientras grababa '%s'\n"
+literal|" Function: write_glong: Error while writing '%s'\n"
 argument_list|,
 name|why
 argument_list|)
@@ -1615,55 +1615,55 @@ block|}
 end_function
 
 begin_function
-DECL|function|pack_pb_line (guchar * ini,guchar * fin,guchar * datosRes,gshort * longitud)
 specifier|static
 name|void
+DECL|function|pack_pb_line (guchar * start,guchar * end,guchar * dest_ptr,gshort * length)
 name|pack_pb_line
 parameter_list|(
 name|guchar
 modifier|*
-name|ini
+name|start
 parameter_list|,
 name|guchar
 modifier|*
-name|fin
+name|end
 parameter_list|,
 name|guchar
 modifier|*
-name|datosRes
+name|dest_ptr
 parameter_list|,
 name|gshort
 modifier|*
-name|longitud
+name|length
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
 name|gint32
-name|restantes
+name|remaining
 decl_stmt|;
-name|restantes
+name|remaining
 operator|=
-name|fin
+name|end
 operator|-
-name|ini
+name|start
 expr_stmt|;
 operator|*
-name|longitud
+name|length
 operator|=
 literal|0
 expr_stmt|;
 while|while
 condition|(
-name|restantes
+name|remaining
 operator|>
 literal|0
 condition|)
 block|{
-comment|/* Busca caracteres iguales a la muestra */
+comment|/* Look for characters matching the first */
 name|i
 operator|=
 literal|0
@@ -1677,25 +1677,23 @@ literal|128
 operator|)
 operator|&&
 operator|(
-name|ini
+name|start
 operator|+
 name|i
 operator|<
-name|fin
+name|end
 operator|)
 operator|&&
 operator|(
-operator|(
-operator|*
-name|ini
-operator|)
+name|start
+index|[
+literal|0
+index|]
 operator|==
-operator|*
-operator|(
-name|ini
-operator|+
+name|start
+index|[
 name|i
-operator|)
+index|]
 operator|)
 condition|)
 name|i
@@ -1707,15 +1705,15 @@ name|i
 operator|>
 literal|1
 condition|)
-comment|/* Ha encontrado iguales */
+comment|/* Match found */
 block|{
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"Repeticion: '%d', %d veces ------------> "
+literal|"Repetition: '%d', %d times ------------> "
 argument_list|,
 operator|*
-name|ini
+name|start
 argument_list|,
 name|i
 argument_list|)
@@ -1723,7 +1721,7 @@ decl_stmt|;
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"Grabo: '%d' %d\n"
+literal|"Writing: '%d' %d\n"
 argument_list|,
 operator|-
 operator|(
@@ -1733,14 +1731,12 @@ literal|1
 operator|)
 argument_list|,
 operator|*
-name|ini
+name|start
 argument_list|)
 decl_stmt|;
 operator|*
-operator|(
-name|datosRes
+name|dest_ptr
 operator|++
-operator|)
 operator|=
 operator|-
 operator|(
@@ -1750,30 +1746,28 @@ literal|1
 operator|)
 expr_stmt|;
 operator|*
-operator|(
-name|datosRes
+name|dest_ptr
 operator|++
-operator|)
 operator|=
 operator|*
-name|ini
+name|start
 expr_stmt|;
-name|ini
+name|start
 operator|+=
 name|i
 expr_stmt|;
-name|restantes
+name|remaining
 operator|-=
 name|i
 expr_stmt|;
 operator|*
-name|longitud
+name|length
 operator|+=
 literal|2
 expr_stmt|;
 block|}
 else|else
-comment|/* Busca caracteres distintos al anterior */
+comment|/* Look for characters different from the previous */
 block|{
 name|i
 operator|=
@@ -1788,40 +1782,36 @@ literal|128
 operator|)
 operator|&&
 operator|(
-name|ini
+name|start
 operator|+
 name|i
 operator|+
 literal|1
 operator|<=
-name|fin
+name|end
 operator|)
 operator|&&
 operator|(
-operator|*
-operator|(
-name|ini
-operator|+
+name|start
+index|[
 name|i
-operator|)
+index|]
 operator|!=
-operator|*
-operator|(
-name|ini
-operator|+
+name|start
+index|[
 name|i
 operator|+
 literal|1
-operator|)
+index|]
 operator|)
 condition|)
 name|i
 operator|++
 expr_stmt|;
-comment|/* Si solo quedaba 1 en la linea, el while anterior no lo coje  */
+comment|/* If there's only 1 remaining, the previous WHILE stmt doesn't              catch it */
 if|if
 condition|(
-name|restantes
+name|remaining
 operator|==
 literal|1
 condition|)
@@ -1829,7 +1819,7 @@ block|{
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"1 Restante:\t"
+literal|"1 Remaining:\t"
 argument_list|)
 decl_stmt|;
 name|i
@@ -1843,12 +1833,12 @@ name|i
 operator|>
 literal|0
 condition|)
-comment|/* Ha encontrado distintos */
+comment|/* Some distinct ones found */
 block|{
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"%d distintos              ------------> Grabo: '%d' "
+literal|"%d distinct              ------------> Writing: '%d' "
 argument_list|,
 name|i
 argument_list|,
@@ -1858,10 +1848,8 @@ literal|1
 argument_list|)
 decl_stmt|;
 operator|*
-operator|(
-name|datosRes
+name|dest_ptr
 operator|++
-operator|)
 operator|=
 name|i
 operator|-
@@ -1886,26 +1874,20 @@ name|printf
 argument_list|(
 literal|"%d "
 argument_list|,
-operator|*
-operator|(
-name|ini
-operator|+
+name|start
+index|[
 name|j
-operator|)
+index|]
 argument_list|)
 decl_stmt|;
 operator|*
-operator|(
-name|datosRes
+name|dest_ptr
 operator|++
-operator|)
 operator|=
-operator|*
-operator|(
-name|ini
-operator|+
+name|start
+index|[
 name|j
-operator|)
+index|]
 expr_stmt|;
 block|}
 name|IF_DEEP_DBG
@@ -1914,53 +1896,49 @@ argument_list|(
 literal|"\n"
 argument_list|)
 decl_stmt|;
-name|ini
+name|start
 operator|+=
 name|i
 expr_stmt|;
-name|restantes
+name|remaining
 operator|-=
 name|i
 expr_stmt|;
 operator|*
-name|longitud
+name|length
 operator|+=
-operator|(
 name|i
 operator|+
 literal|1
-operator|)
 expr_stmt|;
 block|}
 block|}
-comment|/* else */
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"Restantes: %d\n"
+literal|"Remaining: %d\n"
 argument_list|,
-name|restantes
+name|remaining
 argument_list|)
 decl_stmt|;
 block|}
-comment|/* while principal */
 name|IF_DEEP_DBG
 name|printf
 argument_list|(
-literal|"\nLongitud total: %d\n"
+literal|"\nTotal length: %d\n"
 argument_list|,
 operator|*
-name|longitud
+name|length
 argument_list|)
 decl_stmt|;
-comment|/*  if ( *longitud& 1 )		// longitud impar, se añade un nop (128)   {     *longitud += 1;     *(datosRes++) = 128;      IF_DEEP_DBG printf("Longitud total modificada: %d\n", *longitud);   } */
+comment|/*  if (*length& 1)        // length is odd, NOP added (128)     {       *length += 1;       *dest_ptr++ = 128;        IF_DEEP_DBG printf ("Total modified length: %d\n", *length);     } */
 block|}
 end_function
 
 begin_function
-DECL|function|GRAYA_to_chans (guchar * greyA,gint numpix,guchar ** grey,guchar ** alpha)
 specifier|static
 name|void
+DECL|function|GRAYA_to_chans (guchar * greyA,gint numpix,guchar ** grey,guchar ** alpha)
 name|GRAYA_to_chans
 parameter_list|(
 name|guchar
@@ -1981,7 +1959,7 @@ modifier|*
 name|alpha
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gint
@@ -1997,7 +1975,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"greyA es un canal nulo"
+literal|"greyA is a null channel"
 argument_list|)
 decl_stmt|;
 operator|*
@@ -2085,9 +2063,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|RGB_to_chans (guchar * rgb,gint numpix,guchar ** red,guchar ** green,guchar ** blue)
 specifier|static
 name|void
+DECL|function|RGB_to_chans (guchar * rgb,gint numpix,guchar ** red,guchar ** green,guchar ** blue)
 name|RGB_to_chans
 parameter_list|(
 name|guchar
@@ -2113,7 +2091,7 @@ modifier|*
 name|blue
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gint
@@ -2129,7 +2107,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"rgb es un canal nulo"
+literal|"rgb is a null channel"
 argument_list|)
 decl_stmt|;
 operator|*
@@ -2247,9 +2225,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|RGBA_to_chans (guchar * rgbA,gint numpix,guchar ** red,guchar ** green,guchar ** blue,guchar ** alpha)
 specifier|static
 name|void
+DECL|function|RGBA_to_chans (guchar * rgbA,gint numpix,guchar ** red,guchar ** green,guchar ** blue,guchar ** alpha)
 name|RGBA_to_chans
 parameter_list|(
 name|guchar
@@ -2280,7 +2258,7 @@ modifier|*
 name|alpha
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gint
@@ -2296,7 +2274,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"rgb es un canal nulo"
+literal|"rgb is a null channel"
 argument_list|)
 decl_stmt|;
 operator|*
@@ -2444,9 +2422,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimpBaseTypeToPsdMode (gint gimpBaseType)
 specifier|static
 name|gint
+DECL|function|gimpBaseTypeToPsdMode (gint gimpBaseType)
 name|gimpBaseTypeToPsdMode
 parameter_list|(
 name|gint
@@ -2462,27 +2440,21 @@ case|case
 name|GIMP_RGB_IMAGE
 case|:
 return|return
-operator|(
 literal|3
-operator|)
 return|;
 comment|/* RGB */
 case|case
 name|GIMP_GRAY_IMAGE
 case|:
 return|return
-operator|(
 literal|1
-operator|)
 return|;
 comment|/* Grayscale */
 case|case
 name|GIMP_INDEXED_IMAGE
 case|:
 return|return
-operator|(
 literal|2
-operator|)
 return|;
 comment|/* Indexed */
 default|default:
@@ -2494,7 +2466,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"PSD Save: el gimpBaseType vale %d, no puede convertirlo a PSD mode"
+literal|"PSD Save: gimpBaseType value is %d, can't convert to PSD mode"
 argument_list|,
 name|gimpBaseType
 argument_list|)
@@ -2503,20 +2475,18 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 return|return
-operator|(
 literal|3
-operator|)
 return|;
-comment|/* Retorno RGB por defecto */
+comment|/* Return RGB by default */
 block|}
 block|}
 end_function
 
 begin_function
-DECL|function|nCanalesLayer (gint gimpBaseType,gint hasAlpha)
 specifier|static
 name|gint
-name|nCanalesLayer
+DECL|function|nChansLayer (gint gimpBaseType,gint hasAlpha)
+name|nChansLayer
 parameter_list|(
 name|gint
 name|gimpBaseType
@@ -2525,7 +2495,7 @@ name|gint
 name|hasAlpha
 parameter_list|)
 block|{
-name|int
+name|gint
 name|incAlpha
 init|=
 literal|0
@@ -2551,50 +2521,42 @@ case|case
 name|GIMP_RGB_IMAGE
 case|:
 return|return
-operator|(
 literal|3
 operator|+
 name|incAlpha
-operator|)
 return|;
-comment|/* R,G,B y Alpha (Si existe) */
+comment|/* R,G,B& Alpha (if any) */
 case|case
 name|GIMP_GRAY_IMAGE
 case|:
 return|return
-operator|(
 literal|1
 operator|+
 name|incAlpha
-operator|)
 return|;
-comment|/* G y Alpha (Si existe) */
+comment|/* G& Alpha (if any) */
 case|case
 name|GIMP_INDEXED_IMAGE
 case|:
 return|return
-operator|(
 literal|1
 operator|+
 name|incAlpha
-operator|)
 return|;
-comment|/* I y Alpha (Si existe) */
+comment|/* I& Alpha (if any) */
 default|default:
 return|return
-operator|(
 literal|0
-operator|)
 return|;
-comment|/* Retorno 0 cananles por defecto */
+comment|/* Return 0 channels by default */
 block|}
 block|}
 end_function
 
 begin_function
-DECL|function|reshuffle_cmap_write (guchar * mapGimp)
 specifier|static
 name|void
+DECL|function|reshuffle_cmap_write (guchar * mapGimp)
 name|reshuffle_cmap_write
 parameter_list|(
 name|guchar
@@ -2606,7 +2568,7 @@ name|guchar
 modifier|*
 name|mapPSD
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|mapPSD
@@ -2709,9 +2671,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_header (FILE * fd,gint32 image_id)
 specifier|static
 name|void
+DECL|function|save_header (FILE * fd,gint32 image_id)
 name|save_header
 parameter_list|(
 name|FILE
@@ -2725,13 +2687,13 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: save_header\n"
+literal|" Function: save_header\n"
 argument_list|)
 decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Filas: %d\n"
+literal|"      Rows: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -2741,7 +2703,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Columnas: %d\n"
+literal|"      Columns: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -2751,7 +2713,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Tipo base: %d\n"
+literal|"      Base type: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -2761,7 +2723,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Numero de canales: %d\n"
+literal|"      Number of channels: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -2797,7 +2759,7 @@ argument_list|,
 literal|"reserved 1"
 argument_list|)
 expr_stmt|;
-comment|/* 6 bytes para el campo 'reservado'. 4 bytes de un long */
+comment|/* 6 for the 'reserved' field + 4 bytes for a long */
 name|write_gshort
 argument_list|(
 name|fd
@@ -2807,16 +2769,17 @@ argument_list|,
 literal|"reserved 1"
 argument_list|)
 expr_stmt|;
-comment|/* y 2 bytes de un short */
+comment|/* and 2 bytes for a short */
 name|write_gshort
 argument_list|(
 name|fd
 argument_list|,
+operator|(
 name|PSDImageData
 operator|.
 name|nChannels
 operator|+
-name|nCanalesLayer
+name|nChansLayer
 argument_list|(
 name|PSDImageData
 operator|.
@@ -2824,6 +2787,7 @@ name|baseType
 argument_list|,
 literal|0
 argument_list|)
+operator|)
 argument_list|,
 literal|"channels"
 argument_list|)
@@ -2859,7 +2823,7 @@ argument_list|,
 literal|"depth"
 argument_list|)
 expr_stmt|;
-comment|/* Parece que GIMP solo soporta las                                            imagenes PSD de 8 bits de profundidad */
+comment|/* Apparently GIMP only supports 8 bit deep                                      PSD images.  */
 name|write_gshort
 argument_list|(
 name|fd
@@ -2878,9 +2842,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_color_mode_data (FILE * fd,gint32 image_id)
 specifier|static
 name|void
+DECL|function|save_color_mode_data (FILE * fd,gint32 image_id)
 name|save_color_mode_data
 parameter_list|(
 name|FILE
@@ -2897,9 +2861,9 @@ name|cmap
 decl_stmt|;
 name|guchar
 modifier|*
-name|cmap_modificado
+name|cmap_modified
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gint32
@@ -2908,7 +2872,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: save_color_mode_data\n"
+literal|" Function: save_color_mode_data\n"
 argument_list|)
 decl_stmt|;
 switch|switch
@@ -2924,7 +2888,7 @@ case|:
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Tipo de la imagen: INDEXED\n"
+literal|"      Image type: INDEXED\n"
 argument_list|)
 decl_stmt|;
 name|cmap
@@ -2940,7 +2904,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Longitud del colormap devuelto por gimp_image_get_cmap: %d\n"
+literal|"      Length of colormap returned by gimp_image_get_cmap: %d\n"
 argument_list|,
 name|nColors
 argument_list|)
@@ -2955,7 +2919,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      La imagen indexada no tiene colormap\n"
+literal|"      The indexed image lacks a colormap\n"
 argument_list|)
 decl_stmt|;
 name|write_glong
@@ -2979,7 +2943,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      La imagen indexada tiene %d!=256 colores\n"
+literal|"      The indexed image has %d!=256 colors\n"
 argument_list|,
 name|nColors
 argument_list|)
@@ -2987,7 +2951,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Relleno hasta llegar a 256 con ceros\n"
+literal|"      Padding with zeros up to 256\n"
 argument_list|)
 decl_stmt|;
 name|write_glong
@@ -2999,8 +2963,8 @@ argument_list|,
 literal|"color data length"
 argument_list|)
 expr_stmt|;
-comment|/* Para este tipo, longitud siempre 768 */
-name|cmap_modificado
+comment|/* For this type, length is always 768 */
+name|cmap_modified
 operator|=
 name|xmalloc
 argument_list|(
@@ -3022,7 +2986,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|cmap_modificado
+name|cmap_modified
 index|[
 name|i
 index|]
@@ -3047,7 +3011,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|cmap_modificado
+name|cmap_modified
 index|[
 name|i
 index|]
@@ -3056,29 +3020,29 @@ literal|0
 expr_stmt|;
 name|reshuffle_cmap_write
 argument_list|(
-name|cmap_modificado
+name|cmap_modified
 argument_list|)
 expr_stmt|;
 name|xfwrite
 argument_list|(
 name|fd
 argument_list|,
-name|cmap_modificado
+name|cmap_modified
 argument_list|,
 literal|768
 argument_list|,
 literal|"colormap"
 argument_list|)
 expr_stmt|;
-comment|/* Graba el mapa de colores reajustado */
+comment|/* Write readjusted colormap */
 name|g_free
 argument_list|(
-name|cmap_modificado
+name|cmap_modified
 argument_list|)
 expr_stmt|;
 block|}
 else|else
-comment|/* nColors es igual a 256 */
+comment|/* nColors equals 256 */
 block|{
 name|write_glong
 argument_list|(
@@ -3089,7 +3053,7 @@ argument_list|,
 literal|"color data length"
 argument_list|)
 expr_stmt|;
-comment|/* Para este tipo, longitud siempre 768 */
+comment|/* For this type, length is always 768 */
 name|reshuffle_cmap_write
 argument_list|(
 name|cmap
@@ -3106,14 +3070,14 @@ argument_list|,
 literal|"colormap"
 argument_list|)
 expr_stmt|;
-comment|/* Graba el mapa de colores reajustado */
+comment|/* Write readjusted colormap */
 block|}
 break|break;
 default|default:
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Tipo de la imagen: No INDEXED\n"
+literal|"      Image type: Not INDEXED\n"
 argument_list|)
 decl_stmt|;
 name|write_glong
@@ -3130,9 +3094,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_resources (FILE * fd,gint32 image_id)
 specifier|static
 name|void
+DECL|function|save_resources (FILE * fd,gint32 image_id)
 name|save_resources
 parameter_list|(
 name|FILE
@@ -3143,57 +3107,57 @@ name|gint32
 name|image_id
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 modifier|*
 name|chName
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Nombres de los canales */
-name|char
+comment|/* Channel names */
+name|gchar
 modifier|*
 name|fileName
 decl_stmt|;
-comment|/* Nombre del fichero de la imagen */
+comment|/* Image file name */
 name|gint32
 name|idActLayer
 decl_stmt|;
-comment|/* Id de la capa activa */
+comment|/* Id of the active layer */
 name|guint
 name|nActiveLayer
 init|=
 literal|0
 decl_stmt|;
-comment|/* Num de la capa activa */
+comment|/* Number of the active layer */
 name|gboolean
-name|hayActiveLayer
+name|ActiveLayerPresent
 decl_stmt|;
-comment|/* TRUE si hay alguna capa activa */
+comment|/* TRUE if there's an active layer */
 name|gint32
-name|posActual
+name|eof_pos
 decl_stmt|;
-comment|/* Posicion: Fin de fichero */
+comment|/* Position for End of file */
 name|gint32
-name|posTotal
+name|rsc_pos
 decl_stmt|;
-comment|/* Posicion: Longitud de la seccion recursos */
+comment|/* Position for Lengths of Resources section */
 name|gint32
-name|posNombres
+name|name_sec
 decl_stmt|;
-comment|/* Posicion: Longitud de Nombres de canales */
-comment|/* Los unicos recursos relevantes en GIMP son: 0x03EE, 0x03F0 y 0x0400 */
-comment|/* Para la version 4.0 de Adobe Photoshop, estudiar: 0x0408, 0x040A y 0x040B */
+comment|/* Position for Lengths of Channel Names */
+comment|/* Only relevant resources in GIMP are: 0x03EE, 0x03F0& 0x0400 */
+comment|/* For Adobe Photoshop version 4.0 these can also be considered:      0x0408, 0x040A& 0x040B */
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: save_resources\n"
+literal|" Function: save_resources\n"
 argument_list|)
 decl_stmt|;
-comment|/* Obtiene los nombres de los canales */
+comment|/* Get channel names */
 if|if
 condition|(
 name|PSDImageData
@@ -3256,7 +3220,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Nombre del canal %d: %s\n"
+literal|"      Channel %d name: %s\n"
 argument_list|,
 name|i
 argument_list|,
@@ -3267,7 +3231,7 @@ index|]
 argument_list|)
 decl_stmt|;
 block|}
-comment|/* Obtiene el titulo de la imagen, su nombre de fichero */
+comment|/* Get the image title from its filename */
 name|fileName
 operator|=
 name|gimp_image_get_filename
@@ -3278,12 +3242,12 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Titulo de la imagen: %s\n"
+literal|"      Image title: %s\n"
 argument_list|,
 name|fileName
 argument_list|)
 decl_stmt|;
-comment|/* Obtiene el numero de la capa activa */
+comment|/* Get the active layer number id */
 name|idActLayer
 operator|=
 name|gimp_image_get_active_layer
@@ -3294,12 +3258,12 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Identificador de capa activa es: %d\n"
+literal|"      Current layer id: %d\n"
 argument_list|,
 name|idActLayer
 argument_list|)
 decl_stmt|;
-name|hayActiveLayer
+name|ActiveLayerPresent
 operator|=
 name|FALSE
 expr_stmt|;
@@ -3334,20 +3298,20 @@ name|nActiveLayer
 operator|=
 name|i
 expr_stmt|;
-name|hayActiveLayer
+name|ActiveLayerPresent
 operator|=
 name|TRUE
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|hayActiveLayer
+name|ActiveLayerPresent
 condition|)
 block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      El numero de capa activa es: %d\n"
+literal|"      Active layer number is: %d\n"
 argument_list|,
 name|nActiveLayer
 argument_list|)
@@ -3358,12 +3322,12 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      No hay capa activa\n"
+literal|"      No active layer\n"
 argument_list|)
 decl_stmt|;
 block|}
-comment|/* Aqui empiezo a grabar toda la historia */
-name|posTotal
+comment|/* Here's where actual writing starts */
+name|rsc_pos
 operator|=
 name|ftell
 argument_list|(
@@ -3379,7 +3343,7 @@ argument_list|,
 literal|"image resources length"
 argument_list|)
 expr_stmt|;
-comment|/* --------------- Voy a grabar: Nombres de los canales --------------- */
+comment|/* --------------- Write Channel names --------------- */
 if|if
 condition|(
 name|PSDImageData
@@ -3409,7 +3373,7 @@ argument_list|,
 literal|"0x03EE Id"
 argument_list|)
 expr_stmt|;
-comment|/* write_pascalstring(fd, Name, "Id name"); */
+comment|/* write_pascalstring (fd, Name, "Id name"); */
 name|write_gshort
 argument_list|(
 name|fd
@@ -3419,9 +3383,9 @@ argument_list|,
 literal|"Id name"
 argument_list|)
 expr_stmt|;
-comment|/* Pongo un string nulo, dos ceros */
-comment|/* Marco la posicion actual del fichero */
-name|posNombres
+comment|/* Set to null string (two zeros) */
+comment|/* Mark current position in the file */
+name|name_sec
 operator|=
 name|ftell
 argument_list|(
@@ -3437,7 +3401,7 @@ argument_list|,
 literal|"0x03EE resource size"
 argument_list|)
 expr_stmt|;
-comment|/* Grabo todos los strings */
+comment|/* Write all strings */
 for|for
 control|(
 name|i
@@ -3455,7 +3419,7 @@ condition|;
 name|i
 operator|--
 control|)
-comment|/*      write_pascalstring(fd, chName[i], 2, "chanel name"); */
+comment|/*write_pascalstring (fd, chName[i], 2, "chanel name"); */
 name|write_string
 argument_list|(
 name|fd
@@ -3468,20 +3432,19 @@ argument_list|,
 literal|"channel name"
 argument_list|)
 expr_stmt|;
-comment|/* Calculo y grabo la longitud real de este recurso */
-name|posActual
+comment|/* Calculate and write actual resource's length */
+name|eof_pos
 operator|=
 name|ftell
 argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-comment|/* Posicion del fin de fichero */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posNombres
+name|name_sec
 argument_list|,
 name|SEEK_SET
 argument_list|)
@@ -3490,9 +3453,9 @@ name|write_glong
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 operator|-
-name|posNombres
+name|name_sec
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -3505,15 +3468,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n      Longitud total de 0x03EE resource: %d\n"
+literal|"\n      Total length of 0x03EE resource: %d\n"
 argument_list|,
 call|(
 name|int
 call|)
 argument_list|(
-name|posActual
+name|eof_pos
 operator|-
-name|posNombres
+name|name_sec
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -3522,23 +3485,23 @@ argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/* Vuelve al final de fichero para continuar con la grabacion */
+comment|/* Return to EOF to continue writing */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
-comment|/* Si la longitud es impar, añado un cero */
+comment|/* Pad if length is odd */
 if|if
 condition|(
 operator|(
-name|posActual
+name|eof_pos
 operator|-
-name|posNombres
+name|name_sec
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -3558,10 +3521,10 @@ literal|"pad byte"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* --------------- Voy a grabar: Numero de capa activa --------------- */
+comment|/* --------------- Write Active Layer Number --------------- */
 if|if
 condition|(
-name|hayActiveLayer
+name|ActiveLayerPresent
 condition|)
 block|{
 name|xfwrite
@@ -3584,7 +3547,7 @@ argument_list|,
 literal|"0x0400 Id"
 argument_list|)
 expr_stmt|;
-comment|/* write_pascalstring(fd, Name, "Id name"); */
+comment|/* write_pascalstring (fd, Name, "Id name"); */
 name|write_gshort
 argument_list|(
 name|fd
@@ -3594,7 +3557,7 @@ argument_list|,
 literal|"Id name"
 argument_list|)
 expr_stmt|;
-comment|/* Pongo un string nulo, que son dos ceros */
+comment|/* Set to null string (two zeros) */
 name|write_glong
 argument_list|(
 name|fd
@@ -3607,7 +3570,7 @@ argument_list|,
 literal|"0x0400 resource size"
 argument_list|)
 expr_stmt|;
-comment|/* Grabo el titulo como gshort, tendra siempre una longitud par */
+comment|/* Save title as gshort (length always even) */
 name|write_gshort
 argument_list|(
 name|fd
@@ -3620,7 +3583,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Longitud total de 0x0400 resource: %d\n"
+literal|"      Total length of 0x0400 resource: %d\n"
 argument_list|,
 operator|(
 name|int
@@ -3632,20 +3595,19 @@ argument_list|)
 argument_list|)
 decl_stmt|;
 block|}
-comment|/* --------------- Voy a grabar: Longitud total de la seccion --------------- */
-name|posActual
+comment|/* --------------- Write Total Section Length --------------- */
+name|eof_pos
 operator|=
 name|ftell
 argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-comment|/* Posicion del fin de fichero */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posTotal
+name|rsc_pos
 argument_list|,
 name|SEEK_SET
 argument_list|)
@@ -3654,9 +3616,9 @@ name|write_glong
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 operator|-
-name|posTotal
+name|rsc_pos
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -3669,15 +3631,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Longitud total de la seccion de recursos: %d\n"
+literal|"      Resource section total length: %d\n"
 argument_list|,
 call|(
 name|int
 call|)
 argument_list|(
-name|posActual
+name|eof_pos
 operator|-
-name|posTotal
+name|rsc_pos
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -3686,12 +3648,12 @@ argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/* Vuelve al final de fichero para continuar con la grabacion */
+comment|/* Return to EOF to continue writing */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 argument_list|,
 name|SEEK_SET
 argument_list|)
@@ -3705,9 +3667,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|get_compress_channel_data (guchar * channel_data,gint32 channel_cols,gint32 channel_rows,gshort ** tablaLongitudes,guchar ** datosRes,glong * longTotalComprimido)
 specifier|static
 name|void
+DECL|function|get_compress_channel_data (guchar * channel_data,gint32 channel_cols,gint32 channel_rows,gshort ** LengthsTable,guchar ** remdata,glong * TotalCompressedLen)
 name|get_compress_channel_data
 parameter_list|(
 name|guchar
@@ -3723,43 +3685,43 @@ parameter_list|,
 name|gshort
 modifier|*
 modifier|*
-name|tablaLongitudes
+name|LengthsTable
 parameter_list|,
 name|guchar
 modifier|*
 modifier|*
-name|datosRes
+name|remdata
 parameter_list|,
 name|glong
 modifier|*
-name|longTotalComprimido
+name|TotalCompressedLen
 parameter_list|)
 block|{
 name|gint
 name|i
 decl_stmt|;
 name|gint32
-name|longitud
+name|len
 decl_stmt|;
-comment|/* Longitud de datos comprimidos */
+comment|/* Length of compressed data */
 name|gshort
-name|longAux
+name|rowlen
 decl_stmt|;
-comment|/* Auxiliar */
+comment|/* Length of current row */
 name|guchar
 modifier|*
-name|ini
+name|start
 decl_stmt|;
-comment|/* Posicion de inicio de una fila en channel_data */
+comment|/* Starting position of a row in channel_data */
 name|guchar
 modifier|*
-name|fin
+name|end
 decl_stmt|;
-comment|/* Posicion de fin de una fila en channel_data */
+comment|/* End position of a row in channel_data */
 name|gint32
 name|channel_length
 decl_stmt|;
-comment|/* Longitud total del canal */
+comment|/* Total channel's length */
 name|channel_length
 operator|=
 name|channel_cols
@@ -3767,7 +3729,7 @@ operator|*
 name|channel_rows
 expr_stmt|;
 operator|*
-name|datosRes
+name|remdata
 operator|=
 name|g_new
 argument_list|(
@@ -3779,7 +3741,7 @@ literal|2
 argument_list|)
 expr_stmt|;
 operator|*
-name|tablaLongitudes
+name|LengthsTable
 operator|=
 name|g_new
 argument_list|(
@@ -3788,8 +3750,8 @@ argument_list|,
 name|channel_rows
 argument_list|)
 expr_stmt|;
-comment|/* Para cada una de las filas del canal */
-name|longitud
+comment|/* For every row in the channel */
+name|len
 operator|=
 literal|0
 expr_stmt|;
@@ -3807,7 +3769,7 @@ name|i
 operator|++
 control|)
 block|{
-name|ini
+name|start
 operator|=
 name|channel_data
 operator|+
@@ -3817,50 +3779,51 @@ operator|*
 name|channel_cols
 operator|)
 expr_stmt|;
-name|fin
+name|end
 operator|=
-name|ini
+name|start
 operator|+
 name|channel_cols
 expr_stmt|;
-comment|/* Creando los datos comprimidos de la linea */
+comment|/* Create packed data for this row */
 name|pack_pb_line
 argument_list|(
-name|ini
+name|start
 argument_list|,
-name|fin
+name|end
 argument_list|,
 operator|(
 operator|*
-name|datosRes
+name|remdata
 operator|)
 operator|+
-name|longitud
+name|len
 argument_list|,
 operator|&
-name|longAux
+name|rowlen
 argument_list|)
 expr_stmt|;
 operator|(
 operator|*
-name|tablaLongitudes
+name|LengthsTable
 operator|)
 index|[
 name|i
 index|]
 operator|=
-name|longAux
+name|rowlen
 expr_stmt|;
-name|longitud
+name|len
 operator|+=
-name|longAux
+name|rowlen
 expr_stmt|;
 block|}
 operator|*
-name|longTotalComprimido
+name|TotalCompressedLen
 operator|=
 operator|(
-name|longitud
+operator|(
+name|len
 operator|+
 name|channel_rows
 operator|*
@@ -3874,14 +3837,18 @@ sizeof|sizeof
 argument_list|(
 name|gshort
 argument_list|)
+operator|)
 expr_stmt|;
 block|}
 end_function
 
+begin_escape
+end_escape
+
 begin_function
-DECL|function|save_channel_data (FILE * fd,guchar * channel_data,gint32 channel_cols,gint32 channel_rows,gint32 posLong,gchar * why)
 specifier|static
 name|void
+DECL|function|save_channel_data (FILE * fd,guchar * channel_data,gint32 channel_cols,gint32 channel_rows,gint32 posLong,gchar * why)
 name|save_channel_data
 parameter_list|(
 name|FILE
@@ -3910,52 +3877,52 @@ name|gint
 name|i
 decl_stmt|;
 name|gint32
-name|longitud
+name|len
 decl_stmt|;
-comment|/* Longitud de datos comprimidos */
+comment|/* Length of compressed data */
 name|glong
-name|longTotalCrudo
+name|TotalRawLen
 decl_stmt|;
-comment|/* Longitud total de los datos en crudo */
+comment|/* Total length of raw data */
 name|glong
-name|longTotalComprimido
+name|TotalCompressedLen
 decl_stmt|;
-comment|/* Longitud total de los datos coprimidos */
+comment|/* Total length of compressed data */
 name|gshort
 modifier|*
-name|tablaLongitudes
+name|LengthsTable
 decl_stmt|;
-comment|/* Longitudes de cada linea comprimida */
+comment|/* Lengths of every compressed row */
 name|gshort
-name|longAux
+name|rowlen
 decl_stmt|;
-comment|/* Auxiliar */
+comment|/* Length of row currently being handled */
 name|guchar
 modifier|*
-name|datosRes
+name|remdata
 decl_stmt|;
-comment|/* Datos comprimidos de una linea */
+comment|/* Compressed data from a row */
 name|guchar
 modifier|*
-name|ini
+name|start
 decl_stmt|;
-comment|/* Posicion de inicio de una fila en channel_data */
+comment|/* Start position of a row in channel_data */
 name|guchar
 modifier|*
-name|fin
+name|end
 decl_stmt|;
-comment|/* Posicion de fin de una fila en channel_data */
+comment|/* End position of a row in channel_data */
 name|gint32
 name|channel_length
 decl_stmt|;
-comment|/* Longitud total del canal */
+comment|/* Total channel's length */
 name|channel_length
 operator|=
 name|channel_cols
 operator|*
 name|channel_rows
 expr_stmt|;
-name|datosRes
+name|remdata
 operator|=
 name|g_new
 argument_list|(
@@ -3966,7 +3933,7 @@ operator|*
 literal|2
 argument_list|)
 expr_stmt|;
-name|tablaLongitudes
+name|LengthsTable
 operator|=
 name|g_new
 argument_list|(
@@ -3975,8 +3942,8 @@ argument_list|,
 name|channel_rows
 argument_list|)
 expr_stmt|;
-comment|/* Para cada una de las filas del canal */
-name|longitud
+comment|/* For every row in the channel */
+name|len
 operator|=
 literal|0
 expr_stmt|;
@@ -3994,7 +3961,7 @@ name|i
 operator|++
 control|)
 block|{
-name|ini
+name|start
 operator|=
 name|channel_data
 operator|+
@@ -4004,41 +3971,41 @@ operator|*
 name|channel_cols
 operator|)
 expr_stmt|;
-name|fin
+name|end
 operator|=
-name|ini
+name|start
 operator|+
 name|channel_cols
 expr_stmt|;
-comment|/* Creando los datos comprimidos de la linea */
+comment|/* Create compressed data for this row */
 name|pack_pb_line
 argument_list|(
-name|ini
+name|start
 argument_list|,
-name|fin
+name|end
 argument_list|,
-name|datosRes
+name|remdata
 operator|+
-name|longitud
+name|len
 argument_list|,
 operator|&
-name|longAux
+name|rowlen
 argument_list|)
 expr_stmt|;
-name|tablaLongitudes
+name|LengthsTable
 index|[
 name|i
 index|]
 operator|=
-name|longAux
+name|rowlen
 expr_stmt|;
-name|longitud
+name|len
 operator|+=
-name|longAux
+name|rowlen
 expr_stmt|;
 block|}
-comment|/* Calcula las longitudes totales de los dos tipos */
-name|longTotalCrudo
+comment|/* Calculate total lengths of both kinds */
+name|TotalRawLen
 operator|=
 operator|(
 name|channel_rows
@@ -4051,10 +4018,11 @@ argument_list|(
 name|gshort
 argument_list|)
 expr_stmt|;
-name|longTotalComprimido
+name|TotalCompressedLen
 operator|=
 operator|(
-name|longitud
+operator|(
+name|len
 operator|+
 name|channel_rows
 operator|*
@@ -4068,21 +4036,22 @@ sizeof|sizeof
 argument_list|(
 name|gshort
 argument_list|)
+operator|)
 expr_stmt|;
-comment|/*  IFDBG printf("\nLongitud comprimida: %ld\n", longTotalComprimido );    IFDBG printf("\nLongitud cruda: %ld\n", longTotalCrudo ); */
+comment|/*  IFDBG printf ("\nCompressed length: %ld\n", TotalCompressedLen);   IFDBG printf ("\nRaw length: %ld\n", TotalRawLen); */
 if|if
 condition|(
-name|longTotalComprimido
+name|TotalCompressedLen
 operator|<
-name|longTotalCrudo
+name|TotalRawLen
 condition|)
 block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabo datos (RLE): %ld\n"
+literal|"        Saving data (RLE): %ld\n"
 argument_list|,
-name|longTotalComprimido
+name|TotalCompressedLen
 argument_list|)
 decl_stmt|;
 name|write_gshort
@@ -4094,8 +4063,8 @@ argument_list|,
 literal|"Compression"
 argument_list|)
 expr_stmt|;
-comment|/* Graba el tipo de compresion */
-comment|/* Graba la tabla de longitudes de linea comprimida */
+comment|/* Write compression type */
+comment|/* Write compressed lengths table */
 for|for
 control|(
 name|i
@@ -4113,7 +4082,7 @@ name|write_gshort
 argument_list|(
 name|fd
 argument_list|,
-name|tablaLongitudes
+name|LengthsTable
 index|[
 name|i
 index|]
@@ -4125,15 +4094,15 @@ name|xfwrite
 argument_list|(
 name|fd
 argument_list|,
-name|datosRes
+name|remdata
 argument_list|,
-name|longitud
+name|len
 argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
-comment|/* Graba los datos comprimidos */
-comment|/* Actualiza el valor correspondiente a la longitud de los datos del canal */
+comment|/* Write compressed data */
+comment|/* Update total compressed length */
 name|fseek
 argument_list|(
 name|fd
@@ -4147,7 +4116,7 @@ name|write_glong
 argument_list|(
 name|fd
 argument_list|,
-name|longTotalComprimido
+name|TotalCompressedLen
 argument_list|,
 literal|"channel data length"
 argument_list|)
@@ -4167,9 +4136,9 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabo datos (raw): %ld\n"
+literal|"        Write raw data: %ld\n"
 argument_list|,
-name|longTotalCrudo
+name|TotalRawLen
 argument_list|)
 decl_stmt|;
 name|write_gshort
@@ -4181,7 +4150,7 @@ argument_list|,
 literal|"Compression"
 argument_list|)
 expr_stmt|;
-comment|/* Graba el tipo de compresion */
+comment|/* Save compression type */
 name|xfwrite
 argument_list|(
 name|fd
@@ -4193,16 +4162,16 @@ argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
-comment|/* Graba los datos en crudo */
+comment|/* Save raw data */
 block|}
 block|}
 end_function
 
 begin_function
-DECL|function|save_layerAndMask (FILE * fd,gint32 image_id)
 specifier|static
 name|void
-name|save_layerAndMask
+DECL|function|save_layer_and_mask (FILE * fd,gint32 image_id)
+name|save_layer_and_mask
 parameter_list|(
 name|FILE
 modifier|*
@@ -4212,90 +4181,88 @@ name|gint32
 name|image_id
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
-name|idCanal
+name|gint
+name|idChannel
 decl_stmt|;
 name|gint
 name|offset_x
 decl_stmt|;
-comment|/* Offset x de cada capa */
+comment|/* X offset for each layer */
 name|gint
 name|offset_y
 decl_stmt|;
-comment|/* Offset y de cada capa*/
-name|gint32
-name|layerHeight
-decl_stmt|;
-comment|/* Altura de cada capa */
+comment|/* Y offset for each layer */
 name|gint32
 name|layerWidth
 decl_stmt|;
-comment|/* Anchura de cada capa*/
+comment|/* Width of each layer */
+name|gint32
+name|layerHeight
+decl_stmt|;
+comment|/* Height of each layer */
 name|gchar
 name|blendMode
 index|[
 literal|5
 index|]
 decl_stmt|;
-comment|/* Blend mode de la capa */
-name|unsigned
-name|char
+comment|/* Blending mode of the layer */
+name|guchar
 name|layerOpacity
 decl_stmt|;
-comment|/* Opacidad de la capa */
-name|unsigned
-name|char
+comment|/* Opacity of the layer */
+name|guchar
 name|flags
 decl_stmt|;
-comment|/* Banderas de la capa */
+comment|/* Layer flags */
 name|gint
 name|nChannelsLayer
 decl_stmt|;
-comment|/* Numero de canales de una capa */
+comment|/* Number of channels of a layer */
 name|gint32
-name|longCanal
+name|ChanSize
 decl_stmt|;
-comment|/* Longitud de los datos de un canal */
-name|char
+comment|/* Data length for a channel */
+name|gchar
 modifier|*
 name|layerName
 decl_stmt|;
-comment|/* Nombre de la capa */
+comment|/* Layer name */
 name|gint32
-name|posActual
+name|eof_pos
 decl_stmt|;
-comment|/* Posicion: Fin de fichero */
+comment|/* Position: End of file */
 name|gint32
-name|posExtraData
+name|ExtraDataPos
 decl_stmt|;
-comment|/* Posicion: Longitud de Extra data */
+comment|/* Position: Extra data length */
 name|gint32
-name|posLayerMask
+name|LayerMaskPos
 decl_stmt|;
-comment|/* Posicion: Longitud Layer& Mask section */
+comment|/* Position: Layer& Mask section length */
 name|gint32
-name|posLayerInfo
+name|LayerInfoPos
 decl_stmt|;
-comment|/* Posicion: Longitud Layer info section */
+comment|/* Position: Layer info section length*/
 name|gint32
 modifier|*
 modifier|*
-name|posLongChannel
+name|ChannelLengthPos
 decl_stmt|;
-comment|/* Posicion: Longitud de un canal */
+comment|/* Position: Channel length */
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: save_layer&mask\n"
+literal|" Function: save_layer&mask\n"
 argument_list|)
 decl_stmt|;
-comment|/* Creo la primera dimension del array (capas, canales) */
-name|posLongChannel
+comment|/* Create first array dimension (layers, channels) */
+name|ChannelLengthPos
 operator|=
 name|g_new
 argument_list|(
@@ -4307,8 +4274,8 @@ operator|.
 name|nLayers
 argument_list|)
 expr_stmt|;
-comment|/* Seccion Layer and mask information  */
-name|posLayerMask
+comment|/* Layer and mask information section */
+name|LayerMaskPos
 operator|=
 name|ftell
 argument_list|(
@@ -4324,8 +4291,8 @@ argument_list|,
 literal|"layers& mask information length"
 argument_list|)
 expr_stmt|;
-comment|/* Seccion Layer info */
-name|posLayerInfo
+comment|/* Layer info section */
+name|LayerInfoPos
 operator|=
 name|ftell
 argument_list|(
@@ -4341,7 +4308,7 @@ argument_list|,
 literal|"layers info section length"
 argument_list|)
 expr_stmt|;
-comment|/* Seccion Layer structure */
+comment|/* Layer structure section */
 name|write_gshort
 argument_list|(
 name|fd
@@ -4353,8 +4320,8 @@ argument_list|,
 literal|"Layer structure count"
 argument_list|)
 expr_stmt|;
-comment|/* Seccion Layer records */
-comment|/* La ultima capa que tiene GIMP debe grabarse la primera */
+comment|/* Layer records section */
+comment|/* GIMP layers must be written in reverse order */
 for|for
 control|(
 name|i
@@ -4389,9 +4356,9 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|layerHeight
+name|layerWidth
 operator|=
-name|gimp_drawable_height
+name|gimp_drawable_width
 argument_list|(
 name|PSDImageData
 operator|.
@@ -4401,9 +4368,9 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|layerWidth
+name|layerHeight
 operator|=
-name|gimp_drawable_width
+name|gimp_drawable_height
 argument_list|(
 name|PSDImageData
 operator|.
@@ -4442,9 +4409,9 @@ index|[
 name|i
 index|]
 operator|.
-name|height
+name|width
 operator|=
-name|layerHeight
+name|layerWidth
 expr_stmt|;
 name|PSDImageData
 operator|.
@@ -4453,14 +4420,14 @@ index|[
 name|i
 index|]
 operator|.
-name|width
+name|height
 operator|=
-name|layerWidth
+name|layerHeight
 expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Capa numero: %d\n"
+literal|"      Layer number: %d\n"
 argument_list|,
 name|i
 argument_list|)
@@ -4498,21 +4465,6 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Height: %d\n"
-argument_list|,
-name|PSDImageData
-operator|.
-name|layersDim
-index|[
-name|i
-index|]
-operator|.
-name|height
-argument_list|)
-decl_stmt|;
-name|IFDBG
-name|printf
-argument_list|(
 literal|"         Width: %d\n"
 argument_list|,
 name|PSDImageData
@@ -4523,6 +4475,21 @@ name|i
 index|]
 operator|.
 name|width
+argument_list|)
+decl_stmt|;
+name|IFDBG
+name|printf
+argument_list|(
+literal|"         Height: %d\n"
+argument_list|,
+name|PSDImageData
+operator|.
+name|layersDim
+index|[
+name|i
+index|]
+operator|.
+name|height
 argument_list|)
 decl_stmt|;
 name|write_glong
@@ -4561,6 +4528,7 @@ name|write_glong
 argument_list|(
 name|fd
 argument_list|,
+operator|(
 name|PSDImageData
 operator|.
 name|layersDim
@@ -4578,14 +4546,16 @@ name|i
 index|]
 operator|.
 name|top
+operator|)
 argument_list|,
-literal|"Layer top"
+literal|"Layer bottom"
 argument_list|)
 expr_stmt|;
 name|write_glong
 argument_list|(
 name|fd
 argument_list|,
+operator|(
 name|PSDImageData
 operator|.
 name|layersDim
@@ -4603,13 +4573,14 @@ name|i
 index|]
 operator|.
 name|left
+operator|)
 argument_list|,
 literal|"Layer right"
 argument_list|)
 expr_stmt|;
 name|nChannelsLayer
 operator|=
-name|nCanalesLayer
+name|nChansLayer
 argument_list|(
 name|PSDImageData
 operator|.
@@ -4638,13 +4609,13 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"         Numero de canales: %d\n"
+literal|"         Number of channels: %d\n"
 argument_list|,
 name|nChannelsLayer
 argument_list|)
 decl_stmt|;
-comment|/* Creo la segunda dimension del array (capas, canales) */
-name|posLongChannel
+comment|/* Create second array dimension (layers, channels) */
+name|ChannelLengthPos
 index|[
 name|i
 index|]
@@ -4656,7 +4627,7 @@ argument_list|,
 name|nChannelsLayer
 argument_list|)
 expr_stmt|;
-comment|/* Probar con gimp_drawable_bytes() */
+comment|/* Try with gimp_drawable_bytes() */
 for|for
 control|(
 name|j
@@ -4683,14 +4654,14 @@ name|i
 index|]
 argument_list|)
 condition|)
-name|idCanal
+name|idChannel
 operator|=
 name|j
 operator|-
 literal|1
 expr_stmt|;
 else|else
-name|idCanal
+name|idChannel
 operator|=
 name|j
 expr_stmt|;
@@ -4698,7 +4669,7 @@ name|write_gshort
 argument_list|(
 name|fd
 argument_list|,
-name|idCanal
+name|idChannel
 argument_list|,
 literal|"Channel ID"
 argument_list|)
@@ -4706,13 +4677,13 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"           - Identificador: %d\n"
+literal|"           - Identifier: %d\n"
 argument_list|,
-name|idCanal
+name|idChannel
 argument_list|)
 decl_stmt|;
-comment|/* Grabo la longitud como si no hubiese compression. Si en realidad          la hay, lo modifico mas tarde, cuando grabe los datos */
-name|posLongChannel
+comment|/* Write the length assuming no compression.  In case there is,              will modify it later when writing data.  */
+name|ChannelLengthPos
 index|[
 name|i
 index|]
@@ -4725,7 +4696,7 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-name|longCanal
+name|ChanSize
 operator|=
 sizeof|sizeof
 argument_list|(
@@ -4756,7 +4727,7 @@ name|write_glong
 argument_list|(
 name|fd
 argument_list|,
-name|longCanal
+name|ChanSize
 argument_list|,
 literal|"Channel ID"
 argument_list|)
@@ -4764,9 +4735,9 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"             Longitud: %d\n"
+literal|"             Length: %d\n"
 argument_list|,
-name|longCanal
+name|ChanSize
 argument_list|)
 decl_stmt|;
 block|}
@@ -4847,7 +4818,7 @@ argument_list|,
 literal|"Opacity"
 argument_list|)
 expr_stmt|;
-comment|/* Parece que el siguiente campo no se usa en GIMP */
+comment|/* Apparently this field is not used in GIMP */
 name|write_gchar
 argument_list|(
 name|fd
@@ -4874,9 +4845,7 @@ index|]
 argument_list|)
 condition|)
 name|flags
-operator|=
-name|flags
-operator||
+operator||=
 literal|1
 expr_stmt|;
 if|if
@@ -4893,9 +4862,7 @@ index|]
 argument_list|)
 condition|)
 name|flags
-operator|=
-name|flags
-operator||
+operator||=
 literal|2
 expr_stmt|;
 name|IFDBG
@@ -4915,7 +4882,7 @@ argument_list|,
 literal|"Flags"
 argument_list|)
 expr_stmt|;
-comment|/* Byte de relleno para parear */
+comment|/* Padding byte to make the length even */
 name|write_gchar
 argument_list|(
 name|fd
@@ -4925,14 +4892,14 @@ argument_list|,
 literal|"Filler"
 argument_list|)
 expr_stmt|;
-name|posExtraData
+name|ExtraDataPos
 operator|=
 name|ftell
 argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-comment|/* Posicion de Extra Data size */
+comment|/* Position of Extra Data size */
 name|write_glong
 argument_list|(
 name|fd
@@ -4942,7 +4909,7 @@ argument_list|,
 literal|"Extra data size"
 argument_list|)
 expr_stmt|;
-comment|/* OJO Pongo vacia Layer mask / adjustment layer data */
+comment|/* NOTE Writing empty Layer mask / adjustment layer data */
 name|write_glong
 argument_list|(
 name|fd
@@ -4960,7 +4927,7 @@ argument_list|,
 literal|0
 argument_list|)
 decl_stmt|;
-comment|/* OJO Pongo vacia Layer blending ranges data */
+comment|/* NOTE Writing empty Layer blending ranges data */
 name|write_glong
 argument_list|(
 name|fd
@@ -5009,20 +4976,19 @@ argument_list|,
 name|layerName
 argument_list|)
 decl_stmt|;
-comment|/* Graba la longitud real de: Extra data */
-name|posActual
+comment|/* Write real length for: Extra data */
+name|eof_pos
 operator|=
 name|ftell
 argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-comment|/* Posicion del fin de fichero */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posExtraData
+name|ExtraDataPos
 argument_list|,
 name|SEEK_SET
 argument_list|)
@@ -5031,9 +4997,9 @@ name|write_glong
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 operator|-
-name|posExtraData
+name|ExtraDataPos
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -5046,15 +5012,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Longitud total de ExtraData: %d\n"
+literal|"      ExtraData size: %d\n"
 argument_list|,
 call|(
 name|int
 call|)
 argument_list|(
-name|posActual
+name|eof_pos
 operator|-
-name|posExtraData
+name|ExtraDataPos
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -5063,19 +5029,19 @@ argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/* Vuelve al final de fichero para continuar con la grabacion */
+comment|/* Return to EOF to continue writing */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 argument_list|,
 name|SEEK_SET
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Seccion channel image data */
-comment|/* La ultima capa que tiene GIMP debe grabarse la primera */
+comment|/* Channel image data section */
+comment|/* Gimp layers must be written in reverse order */
 for|for
 control|(
 name|i
@@ -5094,8 +5060,8 @@ name|i
 operator|--
 control|)
 block|{
-name|int
-name|nCanal
+name|gint
+name|nChannel
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -5104,51 +5070,52 @@ decl_stmt|;
 name|GimpPixelRgn
 name|region
 decl_stmt|;
-comment|/* Region de la imagen */
+comment|/* Image region */
 name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/* Bytes que componen un layer con todos sus canales */
+comment|/* Full layer data including all channels */
 name|guchar
 modifier|*
 name|red
 decl_stmt|;
-comment|/* Bytes que componen un canal R */
+comment|/* R channel data */
 name|guchar
 modifier|*
 name|green
 decl_stmt|;
-comment|/* Bytes que componen un canal G */
+comment|/* G channel data */
 name|guchar
 modifier|*
 name|blue
 decl_stmt|;
-comment|/* Bytes que componen un canal B */
+comment|/* B channel data */
 name|guchar
 modifier|*
 name|gray
 decl_stmt|;
-comment|/* Bytes que componen un canal G */
+comment|/* Gray channel data */
 name|guchar
 modifier|*
 name|alpha
 decl_stmt|;
-comment|/* Bytes que componen un canal Alpha */
+comment|/* Alpha channel data */
 name|gint32
-name|longCanal
+name|ChanSize
 decl_stmt|;
-comment|/* Longitud de los datos de un canal */
+comment|/* Length of channel data */
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n     Chanels image data. Layer: %d\n"
+literal|"\n     Channels image data. Layer: %d\n"
 argument_list|,
 name|i
 argument_list|)
 decl_stmt|;
-name|longCanal
+name|ChanSize
 operator|=
+operator|(
 name|PSDImageData
 operator|.
 name|layersDim
@@ -5166,10 +5133,11 @@ name|i
 index|]
 operator|.
 name|height
+operator|)
 expr_stmt|;
 name|nChannelsLayer
 operator|=
-name|nCanalesLayer
+name|nChansLayer
 argument_list|(
 name|PSDImageData
 operator|.
@@ -5192,7 +5160,7 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|longCanal
+name|ChanSize
 operator|*
 name|nChannelsLayer
 argument_list|)
@@ -5276,12 +5244,12 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Longitud canal: %d\n"
+literal|"        Channeel size: %d\n"
 argument_list|,
-name|longCanal
+name|ChanSize
 argument_list|)
 decl_stmt|;
-name|nCanal
+name|nChannel
 operator|=
 literal|0
 expr_stmt|;
@@ -5312,7 +5280,7 @@ name|RGBA_to_chans
 argument_list|(
 name|data
 argument_list|,
-name|longCanal
+name|ChanSize
 operator|*
 name|nChannelsLayer
 argument_list|,
@@ -5332,7 +5300,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabando canal alpha...\n"
+literal|"        Writing alpha channel...\n"
 argument_list|)
 decl_stmt|;
 name|save_channel_data
@@ -5359,12 +5327,12 @@ index|]
 operator|.
 name|height
 argument_list|,
-name|posLongChannel
+name|ChannelLengthPos
 index|[
 name|i
 index|]
 index|[
-name|nCanal
+name|nChannel
 operator|++
 index|]
 argument_list|,
@@ -5377,7 +5345,7 @@ name|RGB_to_chans
 argument_list|(
 name|data
 argument_list|,
-name|longCanal
+name|ChanSize
 operator|*
 name|nChannelsLayer
 argument_list|,
@@ -5394,7 +5362,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabando canal red...\n"
+literal|"        Writing red channel...\n"
 argument_list|)
 decl_stmt|;
 name|save_channel_data
@@ -5421,12 +5389,12 @@ index|]
 operator|.
 name|height
 argument_list|,
-name|posLongChannel
+name|ChannelLengthPos
 index|[
 name|i
 index|]
 index|[
-name|nCanal
+name|nChannel
 operator|++
 index|]
 argument_list|,
@@ -5436,7 +5404,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabando canal green...\n"
+literal|"        Writing green channel...\n"
 argument_list|)
 decl_stmt|;
 name|save_channel_data
@@ -5463,12 +5431,12 @@ index|]
 operator|.
 name|height
 argument_list|,
-name|posLongChannel
+name|ChannelLengthPos
 index|[
 name|i
 index|]
 index|[
-name|nCanal
+name|nChannel
 operator|++
 index|]
 argument_list|,
@@ -5478,7 +5446,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabando canal blue...\n"
+literal|"        Writing blue channel...\n"
 argument_list|)
 decl_stmt|;
 name|save_channel_data
@@ -5505,12 +5473,12 @@ index|]
 operator|.
 name|height
 argument_list|,
-name|posLongChannel
+name|ChannelLengthPos
 index|[
 name|i
 index|]
 index|[
-name|nCanal
+name|nChannel
 operator|++
 index|]
 argument_list|,
@@ -5538,7 +5506,7 @@ name|GRAYA_to_chans
 argument_list|(
 name|data
 argument_list|,
-name|longCanal
+name|ChanSize
 operator|*
 name|nChannelsLayer
 argument_list|,
@@ -5552,7 +5520,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabando canal alpha...\n"
+literal|"        Writing alpha channel...\n"
 argument_list|)
 decl_stmt|;
 name|save_channel_data
@@ -5579,12 +5547,12 @@ index|]
 operator|.
 name|height
 argument_list|,
-name|posLongChannel
+name|ChannelLengthPos
 index|[
 name|i
 index|]
 index|[
-name|nCanal
+name|nChannel
 operator|++
 index|]
 argument_list|,
@@ -5594,7 +5562,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabando canal gray...\n"
+literal|"        Writing gray channel...\n"
 argument_list|)
 decl_stmt|;
 name|save_channel_data
@@ -5621,12 +5589,12 @@ index|]
 operator|.
 name|height
 argument_list|,
-name|posLongChannel
+name|ChannelLengthPos
 index|[
 name|i
 index|]
 index|[
-name|nCanal
+name|nChannel
 operator|++
 index|]
 argument_list|,
@@ -5639,7 +5607,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabando canal gray...\n"
+literal|"        Writing gray channel...\n"
 argument_list|)
 decl_stmt|;
 name|save_channel_data
@@ -5666,12 +5634,12 @@ index|]
 operator|.
 name|height
 argument_list|,
-name|posLongChannel
+name|ChannelLengthPos
 index|[
 name|i
 index|]
 index|[
-name|nCanal
+name|nChannel
 operator|++
 index|]
 argument_list|,
@@ -5686,7 +5654,7 @@ case|:
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Grabando canal indexed...\n"
+literal|"        Writing indexed channel...\n"
 argument_list|)
 decl_stmt|;
 name|save_channel_data
@@ -5713,12 +5681,12 @@ index|]
 operator|.
 name|height
 argument_list|,
-name|posLongChannel
+name|ChannelLengthPos
 index|[
 name|i
 index|]
 index|[
-name|nCanal
+name|nChannel
 operator|++
 index|]
 argument_list|,
@@ -5728,20 +5696,19 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-name|posActual
+name|eof_pos
 operator|=
 name|ftell
 argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-comment|/* Posicion del fin de fichero */
-comment|/* Graba la longitud real de: Seccion Layer info */
+comment|/* Write actual size of Layer info section */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posLayerInfo
+name|LayerInfoPos
 argument_list|,
 name|SEEK_SET
 argument_list|)
@@ -5750,9 +5717,9 @@ name|write_glong
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 operator|-
-name|posLayerInfo
+name|LayerInfoPos
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -5765,15 +5732,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n      Longitud total de layers info section: %d\n"
+literal|"\n      Total layers info section length: %d\n"
 argument_list|,
 call|(
 name|int
 call|)
 argument_list|(
-name|posActual
+name|eof_pos
 operator|-
-name|posLayerInfo
+name|LayerInfoPos
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -5782,12 +5749,12 @@ argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/* Graba la longitud real de: Seccion Layer and mask information  */
+comment|/* Write actual size of Layer and mask information secton */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posLayerMask
+name|LayerMaskPos
 argument_list|,
 name|SEEK_SET
 argument_list|)
@@ -5796,9 +5763,9 @@ name|write_glong
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 operator|-
-name|posLayerMask
+name|LayerMaskPos
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -5811,15 +5778,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Longitud total de layers& mask information: %d\n"
+literal|"      Total layers& mask information length: %d\n"
 argument_list|,
 call|(
 name|int
 call|)
 argument_list|(
-name|posActual
+name|eof_pos
 operator|-
-name|posLayerMask
+name|LayerMaskPos
 operator|-
 sizeof|sizeof
 argument_list|(
@@ -5828,12 +5795,12 @@ argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/* Vuelve al final de fichero para continuar con la grabacion */
+comment|/* Return to EOF to continue writing */
 name|fseek
 argument_list|(
 name|fd
 argument_list|,
-name|posActual
+name|eof_pos
 argument_list|,
 name|SEEK_SET
 argument_list|)
@@ -5842,9 +5809,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|save_data (FILE * fd,gint32 image_id)
 specifier|static
 name|void
+DECL|function|save_data (FILE * fd,gint32 image_id)
 name|save_data
 parameter_list|(
 name|FILE
@@ -5855,33 +5822,33 @@ name|gint32
 name|image_id
 parameter_list|)
 block|{
-name|int
-name|nCanales
+name|gint
+name|ChanCount
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|int
-name|nCanal
+name|gint
+name|nChannel
 decl_stmt|;
 name|gint
 name|offset_x
 decl_stmt|;
-comment|/* Offset x de cada capa */
+comment|/* X offset for each layer */
 name|gint
 name|offset_y
 decl_stmt|;
-comment|/* Offset y de cada capa*/
-name|gint32
-name|layerHeight
-decl_stmt|;
-comment|/* Altura de cada capa */
+comment|/* Y offset for each layer */
 name|gint32
 name|layerWidth
 decl_stmt|;
-comment|/* Anchura de cada capa*/
+comment|/* Width of each layer */
+name|gint32
+name|layerHeight
+decl_stmt|;
+comment|/* Height of each layer */
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -5889,42 +5856,42 @@ decl_stmt|;
 name|GimpPixelRgn
 name|region
 decl_stmt|;
-comment|/* Region de la imagen */
+comment|/* Image region */
 name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/* Bytes que componen un layer con todos sus canales */
+comment|/* Full layer data including all channels */
 name|guchar
 modifier|*
 name|red
 decl_stmt|;
-comment|/* Bytes que componen un canal R */
+comment|/* R channel data */
 name|guchar
 modifier|*
 name|green
 decl_stmt|;
-comment|/* Bytes que componen un canal G */
+comment|/* G channel data */
 name|guchar
 modifier|*
 name|blue
 decl_stmt|;
-comment|/* Bytes que componen un canal B */
+comment|/* B channel data */
 name|guchar
 modifier|*
 name|gray_indexed
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Bytes que componen un canal B */
+comment|/* Gray/indexed channel data */
 name|gint32
-name|longCanal
+name|ChanSize
 decl_stmt|;
-comment|/* Longitud de los datos de un canal */
+comment|/* Length of channel data */
 name|gint
 name|nChannelsLayer
 decl_stmt|;
-comment|/* Numero de canales de una capa */
+comment|/* Number of channels in a layer */
 name|gshort
 modifier|*
 modifier|*
@@ -5937,24 +5904,25 @@ name|dataCompress
 decl_stmt|;
 name|glong
 modifier|*
-name|longDataCompress
+name|CompressDataSize
 decl_stmt|;
 name|glong
-name|longTotal
+name|TotalSize
 decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n Funcion: save_data\n"
+literal|"\n Function: save_data\n"
 argument_list|)
 decl_stmt|;
-name|nCanales
+name|ChanCount
 operator|=
+operator|(
 name|PSDImageData
 operator|.
 name|nChannels
 operator|+
-name|nCanalesLayer
+name|nChansLayer
 argument_list|(
 name|PSDImageData
 operator|.
@@ -5962,6 +5930,7 @@ name|baseType
 argument_list|,
 literal|0
 argument_list|)
+operator|)
 expr_stmt|;
 name|TLdataCompress
 operator|=
@@ -5970,7 +5939,7 @@ argument_list|(
 name|gshort
 operator|*
 argument_list|,
-name|nCanales
+name|ChanCount
 argument_list|)
 expr_stmt|;
 name|dataCompress
@@ -5980,16 +5949,16 @@ argument_list|(
 name|guchar
 operator|*
 argument_list|,
-name|nCanales
+name|ChanCount
 argument_list|)
 expr_stmt|;
-name|longDataCompress
+name|CompressDataSize
 operator|=
 name|g_new
 argument_list|(
 name|glong
 argument_list|,
-name|nCanales
+name|ChanCount
 argument_list|)
 expr_stmt|;
 name|i
@@ -6000,11 +5969,11 @@ name|nLayers
 operator|-
 literal|1
 expr_stmt|;
-comment|/* Canal a grabar */
+comment|/* Channel to be written */
 name|IFDBG
 name|printf
 argument_list|(
-literal|"     Procesando capa %d\n"
+literal|"     Processing layer %d\n"
 argument_list|,
 name|i
 argument_list|)
@@ -6049,7 +6018,7 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|longCanal
+name|ChanSize
 operator|=
 name|layerWidth
 operator|*
@@ -6057,7 +6026,7 @@ name|layerHeight
 expr_stmt|;
 name|nChannelsLayer
 operator|=
-name|nCanalesLayer
+name|nChansLayer
 argument_list|(
 name|PSDImageData
 operator|.
@@ -6080,7 +6049,7 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|longCanal
+name|ChanSize
 operator|*
 name|nChannelsLayer
 argument_list|)
@@ -6133,7 +6102,7 @@ argument_list|,
 name|layerHeight
 argument_list|)
 expr_stmt|;
-name|nCanal
+name|nChannel
 operator|=
 literal|0
 expr_stmt|;
@@ -6151,7 +6120,7 @@ name|RGB_to_chans
 argument_list|(
 name|data
 argument_list|,
-name|longCanal
+name|ChanSize
 operator|*
 name|nChannelsLayer
 argument_list|,
@@ -6177,7 +6146,7 @@ operator|&
 operator|(
 name|TLdataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
@@ -6185,15 +6154,15 @@ operator|&
 operator|(
 name|dataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
 operator|&
 operator|(
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|)
@@ -6201,15 +6170,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Longitud comprimida canal rojo: %ld\n"
+literal|"        Compressed length of red channel: %ld\n"
 argument_list|,
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 argument_list|)
 decl_stmt|;
-name|nCanal
+name|nChannel
 operator|++
 expr_stmt|;
 name|get_compress_channel_data
@@ -6224,7 +6193,7 @@ operator|&
 operator|(
 name|TLdataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
@@ -6232,15 +6201,15 @@ operator|&
 operator|(
 name|dataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
 operator|&
 operator|(
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|)
@@ -6248,15 +6217,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Longitud comprimida canal verde: %ld\n"
+literal|"        Compressed length of green channel: %ld\n"
 argument_list|,
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 argument_list|)
 decl_stmt|;
-name|nCanal
+name|nChannel
 operator|++
 expr_stmt|;
 name|get_compress_channel_data
@@ -6271,7 +6240,7 @@ operator|&
 operator|(
 name|TLdataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
@@ -6279,15 +6248,15 @@ operator|&
 operator|(
 name|dataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
 operator|&
 operator|(
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|)
@@ -6295,15 +6264,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Longitud comprimida canal azul: %ld\n"
+literal|"        Compressed length of blue channel: %ld\n"
 argument_list|,
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 argument_list|)
 decl_stmt|;
-name|nCanal
+name|nChannel
 operator|++
 expr_stmt|;
 break|break;
@@ -6329,7 +6298,7 @@ operator|&
 operator|(
 name|TLdataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
@@ -6337,15 +6306,15 @@ operator|&
 operator|(
 name|dataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
 operator|&
 operator|(
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|)
@@ -6353,15 +6322,15 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"        Longitud comprimida canal gray o indexed: %ld\n"
+literal|"        Compressed length for gray or indexed channel: %ld\n"
 argument_list|,
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 argument_list|)
 decl_stmt|;
-name|nCanal
+name|nChannel
 operator|++
 expr_stmt|;
 break|break;
@@ -6384,8 +6353,9 @@ name|i
 operator|--
 control|)
 block|{
-name|longCanal
+name|ChanSize
 operator|=
+operator|(
 name|PSDImageData
 operator|.
 name|image_width
@@ -6393,6 +6363,7 @@ operator|*
 name|PSDImageData
 operator|.
 name|image_height
+operator|)
 expr_stmt|;
 name|drawable
 operator|=
@@ -6462,7 +6433,7 @@ operator|&
 operator|(
 name|TLdataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
@@ -6470,15 +6441,15 @@ operator|&
 operator|(
 name|dataCompress
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|,
 operator|&
 operator|(
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 operator|)
 argument_list|)
@@ -6486,20 +6457,20 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"     Longitud comprimida canal usuario: %ld\n"
+literal|"     Compressed length of user-defined channel: %ld\n"
 argument_list|,
-name|longDataCompress
+name|CompressDataSize
 index|[
-name|nCanal
+name|nChannel
 index|]
 argument_list|)
 decl_stmt|;
-name|nCanal
+name|nChannel
 operator|++
 expr_stmt|;
 block|}
-comment|/* Calculo la longitud de todos los canales comprimidos */
-name|longTotal
+comment|/* Calculate length of all compressed channels */
+name|TotalSize
 operator|=
 literal|0
 expr_stmt|;
@@ -6511,14 +6482,14 @@ literal|0
 init|;
 name|i
 operator|<
-name|nCanales
+name|ChanCount
 condition|;
 name|i
 operator|++
 control|)
-name|longTotal
+name|TotalSize
 operator|+=
-name|longDataCompress
+name|CompressDataSize
 index|[
 name|i
 index|]
@@ -6526,36 +6497,36 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n     Longitud total de datos comprimidos: %ld\n"
+literal|"\n     Total size of compressed data: %ld\n"
 argument_list|,
-name|longTotal
+name|TotalSize
 argument_list|)
 decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"     Longitud total de datos en crudo: %d\n"
+literal|"     Total size of raw data: %d\n"
 argument_list|,
-name|nCanales
+name|ChanCount
 operator|*
-name|longCanal
+name|ChanSize
 argument_list|)
 decl_stmt|;
-comment|/* Decido si grabo los datos comprimidos o crudos */
+comment|/* Decide whether to write compressed or raw data */
 if|if
 condition|(
-name|longTotal
+name|TotalSize
 operator|<
-name|nCanales
+name|ChanCount
 operator|*
-name|longCanal
+name|ChanSize
 condition|)
-comment|/* Grabo comprimidos */
+comment|/* Write compressed data */
 block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n     Grabando los datos comprimidos\n"
+literal|"\n     Writing compressed data\n"
 argument_list|)
 decl_stmt|;
 name|write_gshort
@@ -6567,7 +6538,7 @@ argument_list|,
 literal|"RLE compression"
 argument_list|)
 expr_stmt|;
-comment|/* Se graban primero todas las longitudes de linea */
+comment|/* Write all line lengths first */
 for|for
 control|(
 name|i
@@ -6576,7 +6547,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|nCanales
+name|ChanCount
 condition|;
 name|i
 operator|++
@@ -6609,7 +6580,7 @@ argument_list|,
 literal|"line lengths"
 argument_list|)
 expr_stmt|;
-comment|/* Y ahora los datos comprimidos */
+comment|/* Now compressed data */
 for|for
 control|(
 name|i
@@ -6618,13 +6589,13 @@ literal|0
 init|;
 name|i
 operator|<
-name|nCanales
+name|ChanCount
 condition|;
 name|i
 operator|++
 control|)
 block|{
-name|longTotal
+name|TotalSize
 operator|=
 literal|0
 expr_stmt|;
@@ -6641,7 +6612,7 @@ condition|;
 name|j
 operator|++
 control|)
-name|longTotal
+name|TotalSize
 operator|+=
 name|TLdataCompress
 index|[
@@ -6660,7 +6631,7 @@ index|[
 name|i
 index|]
 argument_list|,
-name|longTotal
+name|TotalSize
 argument_list|,
 literal|"channel data"
 argument_list|)
@@ -6668,12 +6639,12 @@ expr_stmt|;
 block|}
 block|}
 else|else
-comment|/* Grabo crudos */
+comment|/* Write raw */
 block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"\n     Grabando los datos en crudo\n"
+literal|"\n     Writing raw data\n"
 argument_list|)
 decl_stmt|;
 name|write_gshort
@@ -6685,7 +6656,6 @@ argument_list|,
 literal|"RLE compression"
 argument_list|)
 expr_stmt|;
-comment|/* Los canales de la capa a grabar ya los tengo de antes */
 switch|switch
 condition|(
 name|PSDImageData
@@ -6702,7 +6672,7 @@ name|fd
 argument_list|,
 name|red
 argument_list|,
-name|longCanal
+name|ChanSize
 argument_list|,
 literal|"red channel data"
 argument_list|)
@@ -6713,7 +6683,7 @@ name|fd
 argument_list|,
 name|green
 argument_list|,
-name|longCanal
+name|ChanSize
 argument_list|,
 literal|"green channel data"
 argument_list|)
@@ -6724,7 +6694,7 @@ name|fd
 argument_list|,
 name|blue
 argument_list|,
-name|longCanal
+name|ChanSize
 argument_list|,
 literal|"blue channel data"
 argument_list|)
@@ -6742,14 +6712,14 @@ name|fd
 argument_list|,
 name|gray_indexed
 argument_list|,
-name|longCanal
+name|ChanSize
 argument_list|,
 literal|"gray or indexed channel data"
 argument_list|)
 expr_stmt|;
 break|break;
 block|}
-comment|/* Y ahora voy a por los canales de usuario */
+comment|/* Now for user channels */
 for|for
 control|(
 name|i
@@ -6830,21 +6800,20 @@ name|fd
 argument_list|,
 name|data
 argument_list|,
-name|longCanal
+name|ChanSize
 argument_list|,
 literal|"channel data"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* ¡¡¡ y... YATAAAAA !!!  (¿Como?,¿Yataaa?) */
 block|}
 block|}
 end_function
 
 begin_function
-DECL|function|get_image_data (FILE * fd,gint32 image_id)
 specifier|static
 name|void
+DECL|function|get_image_data (FILE * fd,gint32 image_id)
 name|get_image_data
 parameter_list|(
 name|FILE
@@ -6858,7 +6827,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: get_image_data\n"
+literal|" Function: get_image_data\n"
 argument_list|)
 decl_stmt|;
 name|PSDImageData
@@ -6867,7 +6836,7 @@ name|compression
 operator|=
 literal|0
 expr_stmt|;
-comment|/* No hay compresion */
+comment|/* No compression */
 name|PSDImageData
 operator|.
 name|image_height
@@ -6880,7 +6849,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Obtenido numero de filas: %d\n"
+literal|"      Got number of rows: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -6899,7 +6868,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Obtenido numero de columnas: %d\n"
+literal|"      Got number of cols: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -6918,14 +6887,14 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Obtenido tipo base: %d\n"
+literal|"      Got base type: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
 name|baseType
 argument_list|)
 decl_stmt|;
-comment|/* El formato PSD no permite imagenes indexadas con capas */
+comment|/* PSD format does not support indexed layered images */
 if|if
 condition|(
 name|PSDImageData
@@ -6938,7 +6907,7 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Realizo el flatten de la imagen indexada\n"
+literal|"      Flattening indexed image\n"
 argument_list|)
 decl_stmt|;
 name|gimp_image_flatten
@@ -6964,7 +6933,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Obtenido numero de canales: %d\n"
+literal|"      Got number of channels: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -6988,7 +6957,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Obtenido numero de capas: %d\n"
+literal|"      Got number of layers: %d\n"
 argument_list|,
 name|PSDImageData
 operator|.
@@ -7012,8 +6981,8 @@ block|}
 end_function
 
 begin_function
+name|gint
 DECL|function|save_image (gchar * filename,gint32 image_id)
-name|int
 name|save_image
 parameter_list|(
 name|gchar
@@ -7035,7 +7004,7 @@ decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|" Funcion: save_image\n"
+literal|" Function: save_image\n"
 argument_list|)
 decl_stmt|;
 name|name_buf
@@ -7073,7 +7042,7 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Se ha puesto el mensaje en GIMP\n"
+literal|"      Wrote message to GIMP\n"
 argument_list|)
 decl_stmt|;
 name|fd
@@ -7095,22 +7064,20 @@ block|{
 name|IFDBG
 name|printf
 argument_list|(
-literal|"PSD Save: no pudo abrir \"%s\"\n"
+literal|"PSD Save: can't open \"%s\"\n"
 argument_list|,
 name|filename
 argument_list|)
 decl_stmt|;
 return|return
-operator|(
 operator|-
 literal|1
-operator|)
 return|;
 block|}
 name|IFDBG
 name|printf
 argument_list|(
-literal|"      Se ha abierto el fichero \"%s\"\n"
+literal|"      File \"%s\" has been opened\n"
 argument_list|,
 name|filename
 argument_list|)
@@ -7143,7 +7110,7 @@ argument_list|,
 name|image_id
 argument_list|)
 expr_stmt|;
-comment|/* El formato PSD no permite imagenes indexadas con capas */
+comment|/* PSD format does not support layers in indexed images */
 if|if
 condition|(
 name|PSDImageData
@@ -7162,14 +7129,14 @@ literal|"layers info section length"
 argument_list|)
 expr_stmt|;
 else|else
-name|save_layerAndMask
+name|save_layer_and_mask
 argument_list|(
 name|fd
 argument_list|,
 name|image_id
 argument_list|)
 expr_stmt|;
-comment|/* Si es una indexada, aqui irá la información de la capa y los canales */
+comment|/* If this is an indexed image, write now channel and layer info */
 name|save_data
 argument_list|(
 name|fd
