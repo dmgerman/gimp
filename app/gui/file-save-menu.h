@@ -42,6 +42,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|file_save_menu_update
+parameter_list|(
+name|GtkItemFactory
+modifier|*
+name|item_factory
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

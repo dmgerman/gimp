@@ -92,20 +92,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|file_dialog_update_menus
-parameter_list|(
-name|GSList
-modifier|*
-name|procs
-parameter_list|,
-name|GimpImageType
-name|image_type
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
