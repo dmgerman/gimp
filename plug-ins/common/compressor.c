@@ -1956,9 +1956,9 @@ if|if
 condition|(
 name|spawn_gzip
 argument_list|(
-name|filename
-argument_list|,
 name|tmpname
+argument_list|,
+name|filename
 argument_list|,
 literal|"-cfd"
 argument_list|,
