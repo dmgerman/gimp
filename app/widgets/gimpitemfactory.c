@@ -3107,7 +3107,7 @@ name|NULL
 condition|)
 name|active_tool_control
 argument_list|(
-name|DESTROY
+name|RECREATE
 argument_list|,
 name|active_tool
 operator|->
@@ -3149,7 +3149,7 @@ name|gimage
 condition|)
 name|active_tool_control
 argument_list|(
-name|DESTROY
+name|RECREATE
 argument_list|,
 name|active_tool
 operator|->
