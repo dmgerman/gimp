@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e931970108
+DECL|struct|__anon2796263a0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -819,7 +819,7 @@ name|rect
 operator|.
 name|height
 operator|+
-literal|8
+literal|6
 operator|)
 expr_stmt|;
 name|y
@@ -892,7 +892,7 @@ name|rect
 operator|.
 name|height
 operator|+
-literal|8
+literal|6
 operator|)
 expr_stmt|;
 if|if
