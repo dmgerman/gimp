@@ -32,6 +32,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -116,7 +122,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a9a46ed0108
+DECL|struct|__anon2c1304ff0108
 typedef|typedef
 struct|struct
 block|{
@@ -156,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a9a46ed0208
+DECL|struct|__anon2c1304ff0208
 typedef|typedef
 struct|struct
 block|{
@@ -171,7 +177,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a9a46ed0308
+DECL|struct|__anon2c1304ff0308
 typedef|typedef
 struct|struct
 block|{

@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<math.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -8246,7 +8252,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299d932b0108
+DECL|struct|__anon2a8d38580108
 block|{
 DECL|member|color_string
 name|gchar

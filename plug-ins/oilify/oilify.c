@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -79,7 +85,7 @@ value|((unsigned int) (p[0]*77+p[1]*150+p[2]*29)>> 8)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c0604f50108
+DECL|struct|__anon2c2588230108
 typedef|typedef
 struct|struct
 block|{
@@ -98,7 +104,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c0604f50208
+DECL|struct|__anon2c2588230208
 typedef|typedef
 struct|struct
 block|{

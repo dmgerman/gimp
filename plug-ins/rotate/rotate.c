@@ -18,6 +18,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -165,7 +171,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b572df20108
+DECL|struct|__anon2b626a870108
 typedef|typedef
 struct|struct
 block|{
@@ -184,7 +190,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b572df20208
+DECL|struct|__anon2b626a870208
 typedef|typedef
 struct|struct
 block|{

@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -106,7 +112,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon274dc2870108
+DECL|struct|__anon2befab080108
 typedef|typedef
 struct|struct
 block|{
@@ -155,7 +161,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon274dc2870208
+DECL|struct|__anon2befab080208
 typedef|typedef
 struct|struct
 block|{

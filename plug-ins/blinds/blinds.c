@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<math.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -177,7 +183,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2895fded0108
+DECL|struct|__anon28acfe920108
 typedef|typedef
 struct|struct
 block|{

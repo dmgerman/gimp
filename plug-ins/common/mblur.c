@@ -10,6 +10,18 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<math.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<signal.h>
 end_include
 
@@ -103,7 +115,7 @@ value|MBLUR_ZOOM
 end_define
 
 begin_typedef
-DECL|struct|__anon28b5cc9a0108
+DECL|struct|__anon2ad50a8f0108
 typedef|typedef
 struct|struct
 block|{
@@ -126,7 +138,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28b5cc9a0208
+DECL|struct|__anon2ad50a8f0208
 typedef|typedef
 struct|struct
 block|{

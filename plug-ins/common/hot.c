@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -131,7 +137,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2ab3f4760103
+DECL|enum|__anon2ae81d0b0103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +162,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ab3f4760203
+DECL|enum|__anon2ae81d0b0203
 typedef|typedef
 enum|enum
 block|{
@@ -206,7 +212,7 @@ comment|/*  * RGB to YIQ encoding matrix.  */
 end_comment
 
 begin_struct
-DECL|struct|__anon2ab3f4760308
+DECL|struct|__anon2ae81d0b0308
 struct|struct
 block|{
 DECL|member|pedestal

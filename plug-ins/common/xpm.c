@@ -32,6 +32,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<math.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<X11/Xlib.h>
 end_include
 
@@ -80,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acbafa00108
+DECL|struct|__anon2a0ec2df0108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -95,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acbafa00208
+DECL|struct|__anon2a0ec2df0208
 block|{
 DECL|member|run
 name|gint
@@ -110,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acbafa00308
+DECL|struct|__anon2a0ec2df0308
 block|{
 DECL|member|r
 name|guchar

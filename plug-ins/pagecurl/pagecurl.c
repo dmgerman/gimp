@@ -174,7 +174,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a09b0eb0108
+DECL|struct|__anon294792b40108
 typedef|typedef
 struct|struct
 block|{
@@ -192,7 +192,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a09b0eb0208
+DECL|struct|__anon294792b40208
 typedef|typedef
 struct|struct
 block|{
@@ -4371,8 +4371,6 @@ decl_stmt|,
 name|progress
 decl_stmt|,
 name|max_progress
-decl_stmt|,
-name|nreturn_vals
 decl_stmt|;
 name|gdouble
 name|intensity

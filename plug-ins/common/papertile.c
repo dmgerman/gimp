@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -133,7 +139,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2770a7d00108
+DECL|struct|__anon28fe61ca0108
 typedef|typedef
 struct|struct
 block|{

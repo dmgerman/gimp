@@ -42,6 +42,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gtk/gtk.h"
 end_include
 
@@ -58,7 +64,7 @@ file|"dbbrowser.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c5b74790108
+DECL|struct|__anon29a161000108
 typedef|typedef
 struct|struct
 block|{
@@ -79,7 +85,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5b74790208
+DECL|struct|__anon29a161000208
 typedef|typedef
 struct|struct
 block|{

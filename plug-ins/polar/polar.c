@@ -20,6 +20,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<signal.h>
 end_include
 
@@ -169,7 +175,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c61b32d0108
+DECL|struct|__anon2c2c89e10108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +206,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c61b32d0208
+DECL|struct|__anon2c2c89e10208
 typedef|typedef
 struct|struct
 block|{
@@ -240,7 +246,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c61b32d0308
+DECL|struct|__anon2c2c89e10308
 typedef|typedef
 struct|struct
 block|{

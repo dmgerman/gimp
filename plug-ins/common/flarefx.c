@@ -10,6 +10,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -134,7 +140,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2779da970108
+DECL|struct|__anon29d950080108
 typedef|typedef
 struct|struct
 block|{
@@ -153,7 +159,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2779da970208
+DECL|struct|__anon29d950080208
 typedef|typedef
 struct|struct
 block|{
@@ -226,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2779da970308
+DECL|struct|__anon29d950080308
 block|{
 DECL|member|drawable
 name|GDrawable

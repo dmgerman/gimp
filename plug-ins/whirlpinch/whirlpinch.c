@@ -32,6 +32,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<unistd.h>
 end_include
 
@@ -166,7 +172,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon297bfd6d0108
+DECL|struct|__anon2b8dabcd0108
 typedef|typedef
 struct|struct
 block|{
@@ -189,7 +195,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon297bfd6d0208
+DECL|struct|__anon2b8dabcd0208
 typedef|typedef
 struct|struct
 block|{
@@ -229,7 +235,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon297bfd6d0308
+DECL|struct|__anon2b8dabcd0308
 typedef|typedef
 struct|struct
 block|{

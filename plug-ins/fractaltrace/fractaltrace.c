@@ -42,6 +42,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -206,7 +212,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon290b48fc0108
+DECL|struct|__anon2b20a5ce0108
 typedef|typedef
 struct|struct
 block|{
@@ -283,7 +289,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon290b48fc0208
+DECL|struct|__anon2b20a5ce0208
 typedef|typedef
 struct|struct
 block|{
@@ -503,7 +509,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_typedef
-DECL|struct|__anon290b48fc0308
+DECL|struct|__anon2b20a5ce0308
 typedef|typedef
 struct|struct
 block|{
@@ -546,7 +552,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290b48fc0408
+DECL|struct|__anon2b20a5ce0408
 typedef|typedef
 struct|struct
 block|{
@@ -1096,7 +1102,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon290b48fc0508
+DECL|struct|__anon2b20a5ce0508
 typedef|typedef
 struct|struct
 block|{
@@ -3621,7 +3627,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon290b48fc0608
+DECL|struct|__anon2b20a5ce0608
 typedef|typedef
 struct|struct
 block|{
