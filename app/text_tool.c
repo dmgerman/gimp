@@ -982,7 +982,7 @@ operator|->
 name|border_w
 argument_list|)
 argument_list|,
-literal|"changed"
+literal|"value_changed"
 argument_list|,
 operator|(
 name|GtkSignalFunc
