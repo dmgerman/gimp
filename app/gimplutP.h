@@ -16,9 +16,8 @@ directive|define
 name|__GIMPLUT_P_H__
 end_define
 
-begin_typedef
+begin_struct
 DECL|struct|_GimpLut
-typedef|typedef
 struct|struct
 name|_GimpLut
 block|{
@@ -33,11 +32,9 @@ DECL|member|nchannels
 name|int
 name|nchannels
 decl_stmt|;
-DECL|typedef|GimpLut
 block|}
-name|GimpLut
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_endif
 endif|#
