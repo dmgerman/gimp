@@ -539,123 +539,123 @@ comment|/* private convieniece macros */
 end_comment
 
 begin_define
-DECL|macro|xcf_write_int32_check_error (fp,data,count)
+DECL|macro|xcf_write_int32_check_error (info,data,count)
 define|#
 directive|define
 name|xcf_write_int32_check_error
 parameter_list|(
-name|fp
+name|info
 parameter_list|,
 name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int32 (fp, data, count,&tmp_error);  \   if (tmp_error)                                              \     {                                                         \       g_propagate_error (error, tmp_error);                   \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int32 (info->fp, data, count,&tmp_error); \   if (tmp_error)                                                   \     {                                                              \       g_propagate_error (error, tmp_error);                        \       return FALSE;                                                \     }                                                              \   } G_STMT_END
 end_define
 
 begin_define
-DECL|macro|xcf_write_int8_check_error (fp,data,count)
+DECL|macro|xcf_write_int8_check_error (info,data,count)
 define|#
 directive|define
 name|xcf_write_int8_check_error
 parameter_list|(
-name|fp
+name|info
 parameter_list|,
 name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int8 (fp, data, count,&tmp_error);   \   if (tmp_error)                                              \     {                                                         \       g_propagate_error (error, tmp_error);                   \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int8 (info->fp, data, count,&tmp_error); \   if (tmp_error)                                                  \     {                                                             \       g_propagate_error (error, tmp_error);                       \       return FALSE;                                               \     }                                                             \   } G_STMT_END
 end_define
 
 begin_define
-DECL|macro|xcf_write_float_check_error (fp,data,count)
+DECL|macro|xcf_write_float_check_error (info,data,count)
 define|#
 directive|define
 name|xcf_write_float_check_error
 parameter_list|(
-name|fp
+name|info
 parameter_list|,
 name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_float (fp, data, count,&tmp_error);  \   if (tmp_error)                                              \     {                                                         \       g_propagate_error (error, tmp_error);                   \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_float (info->fp, data, count,&tmp_error); \   if (tmp_error)                                                   \     {                                                              \       g_propagate_error (error, tmp_error);                        \       return FALSE;                                                \     }                                                              \   } G_STMT_END
 end_define
 
 begin_define
-DECL|macro|xcf_write_string_check_error (fp,data,count)
+DECL|macro|xcf_write_string_check_error (info,data,count)
 define|#
 directive|define
 name|xcf_write_string_check_error
 parameter_list|(
-name|fp
+name|info
 parameter_list|,
 name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_string (fp, data, count,&tmp_error); \   if (tmp_error)                                              \     {                                                         \       g_propagate_error (error, tmp_error);                   \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&tmp_error); \   if (tmp_error)                                                    \     {                                                               \       g_propagate_error (error, tmp_error);                         \       return FALSE;                                                 \     }                                                               \   } G_STMT_END
 end_define
 
 begin_define
-DECL|macro|xcf_write_int32_print_error (fp,data,count)
+DECL|macro|xcf_write_int32_print_error (info,data,count)
 define|#
 directive|define
 name|xcf_write_int32_print_error
 parameter_list|(
-name|fp
+name|info
 parameter_list|,
 name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int32 (fp, data, count,&error);      \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int32 (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       g_message (_("Error saving XCF file: %s"),               \                  error->message);                              \       return FALSE;                                            \     }                                                          \   } G_STMT_END
 end_define
 
 begin_define
-DECL|macro|xcf_write_int8_print_error (fp,data,count)
+DECL|macro|xcf_write_int8_print_error (info,data,count)
 define|#
 directive|define
 name|xcf_write_int8_print_error
 parameter_list|(
-name|fp
+name|info
 parameter_list|,
 name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int8 (fp, data, count,&error);       \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_int8 (info->fp, data, count,&error); \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
-DECL|macro|xcf_write_float_print_error (fp,data,count)
+DECL|macro|xcf_write_float_print_error (info,data,count)
 define|#
 directive|define
 name|xcf_write_float_print_error
 parameter_list|(
-name|fp
+name|info
 parameter_list|,
 name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_float (fp, data, count,&error);      \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_float (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       g_message (_("Error saving XCF file: %s"),               \                  error->message);                              \       return FALSE;                                            \     }                                                          \   } G_STMT_END
 end_define
 
 begin_define
-DECL|macro|xcf_write_string_print_error (fp,data,count)
+DECL|macro|xcf_write_string_print_error (info,data,count)
 define|#
 directive|define
 name|xcf_write_string_print_error
 parameter_list|(
-name|fp
+name|info
 parameter_list|,
 name|data
 parameter_list|,
 name|count
 parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_string (fp, data, count,&error);     \   if (error)                                                  \     {                                                         \       g_message (_("Error saving XCF file: %s"),              \                  error->message);                             \       return FALSE;                                           \     }                                                         \   } G_STMT_END
+value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&error); \   if (error)                                                    \     {                                                           \       g_message (_("Error saving XCF file: %s"),                \                  error->message);                               \       return FALSE;                                             \     }                                                           \   } G_STMT_END
 end_define
 
 begin_define
@@ -912,8 +912,6 @@ block|}
 name|xcf_write_int8_print_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint8
@@ -928,8 +926,6 @@ comment|/* write out the width, height and image type information for the image 
 name|xcf_write_int32_print_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -946,8 +942,6 @@ expr_stmt|;
 name|xcf_write_int32_print_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -964,8 +958,6 @@ expr_stmt|;
 name|xcf_write_int32_print_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -1155,8 +1147,6 @@ expr_stmt|;
 name|xcf_write_int32_print_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -1205,8 +1195,6 @@ expr_stmt|;
 name|xcf_write_int32_print_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -1325,8 +1313,6 @@ expr_stmt|;
 name|xcf_write_int32_print_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -1375,8 +1361,6 @@ expr_stmt|;
 name|xcf_write_int32_print_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -2677,8 +2661,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -2693,8 +2675,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -2742,8 +2722,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -2758,8 +2736,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -2770,8 +2746,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|ncolors
@@ -2782,8 +2756,6 @@ expr_stmt|;
 name|xcf_write_int8_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 name|colors
 argument_list|,
@@ -2810,8 +2782,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -2826,8 +2796,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -2854,8 +2822,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -2870,8 +2836,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -2890,8 +2854,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|dummy
@@ -2933,8 +2895,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -2949,8 +2909,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -2961,8 +2919,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|uint_opacity
@@ -2995,8 +2951,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3011,8 +2965,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3023,8 +2975,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3061,8 +3011,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3077,8 +3025,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3089,8 +3035,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|visible
@@ -3123,8 +3067,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3139,8 +3081,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3151,8 +3091,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|linked
@@ -3185,8 +3123,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3201,8 +3137,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3213,8 +3147,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|preserve_trans
@@ -3247,8 +3179,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3263,8 +3193,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3275,8 +3203,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|apply_mask
@@ -3309,8 +3235,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3325,8 +3249,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3337,8 +3259,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|edit_mask
@@ -3371,8 +3291,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3387,8 +3305,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3399,8 +3315,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|show_mask
@@ -3433,8 +3347,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3449,8 +3361,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3461,8 +3371,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|show_masked
@@ -3513,8 +3421,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3529,8 +3435,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3541,8 +3445,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3580,8 +3482,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3596,8 +3496,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3608,8 +3506,6 @@ expr_stmt|;
 name|xcf_write_int8_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 name|color
 argument_list|,
@@ -3644,8 +3540,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3660,8 +3554,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3672,8 +3564,6 @@ expr_stmt|;
 name|xcf_write_int8_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|compression
@@ -3734,8 +3624,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3750,8 +3638,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3822,8 +3708,6 @@ block|}
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3838,8 +3722,6 @@ expr_stmt|;
 name|xcf_write_int8_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint8
@@ -3891,8 +3773,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3907,8 +3787,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3919,8 +3797,6 @@ expr_stmt|;
 name|xcf_write_float_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|xresolution
@@ -3931,8 +3807,6 @@ expr_stmt|;
 name|xcf_write_float_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|yresolution
@@ -3965,8 +3839,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -3981,8 +3853,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -3993,8 +3863,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|tattoo
@@ -4043,8 +3911,6 @@ block|{
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -4066,8 +3932,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|length
@@ -4181,8 +4045,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -4197,8 +4059,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -4209,8 +4069,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|unit
@@ -4235,8 +4093,6 @@ decl_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -4258,8 +4114,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|length
@@ -4581,8 +4435,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -4597,8 +4449,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|size
@@ -4609,8 +4459,6 @@ expr_stmt|;
 name|xcf_write_float_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|factor
@@ -4621,8 +4469,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|digits
@@ -4633,8 +4479,6 @@ expr_stmt|;
 name|xcf_write_string_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|gchar
@@ -4663,8 +4507,6 @@ decl_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -4686,8 +4528,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|length
@@ -4868,8 +4708,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|saved_pos
@@ -4894,8 +4732,6 @@ comment|/* write out the width, height and image type information for the layer 
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -4915,8 +4751,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -4936,8 +4770,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -4958,8 +4790,6 @@ comment|/* write out the layers name */
 name|xcf_write_string_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|GIMP_OBJECT
@@ -5046,8 +4876,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -5125,8 +4953,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -5212,8 +5038,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5244,8 +5068,6 @@ comment|/* write out the width and height information for the channel */
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5265,8 +5087,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5287,8 +5107,6 @@ comment|/* write out the channels name */
 name|xcf_write_string_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|GIMP_OBJECT
@@ -5375,8 +5193,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -5514,8 +5330,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5530,8 +5344,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5546,8 +5358,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5673,8 +5483,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5689,8 +5497,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5705,8 +5511,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5735,8 +5539,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -5783,8 +5585,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -5863,8 +5663,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -5879,8 +5677,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|(
 name|guint32
@@ -6062,8 +5858,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -6116,8 +5910,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|offset
@@ -6165,8 +5957,6 @@ expr_stmt|;
 name|xcf_write_int8_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 name|tile_data_pointer
 argument_list|(
@@ -6701,8 +6491,6 @@ block|}
 name|xcf_write_int8_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 name|rlebuf
 argument_list|,
@@ -6759,8 +6547,6 @@ decl_stmt|;
 name|xcf_write_string_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|parasite
@@ -6773,8 +6559,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|parasite
@@ -6787,8 +6571,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|parasite
@@ -6801,8 +6583,6 @@ expr_stmt|;
 name|xcf_write_int8_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 name|parasite
 operator|->
@@ -6823,7 +6603,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757da530108
+DECL|struct|__anon27d5dfd90108
 block|{
 DECL|member|info
 name|XcfInfo
@@ -7038,8 +6818,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|active_index
@@ -7050,8 +6828,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|num_paths
@@ -7192,8 +6968,6 @@ expr_stmt|;
 name|xcf_write_string_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|name
@@ -7204,8 +6978,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|locked
@@ -7216,8 +6988,6 @@ expr_stmt|;
 name|xcf_write_int8_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|state
@@ -7228,8 +6998,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|closed
@@ -7240,8 +7008,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|num_points
@@ -7252,8 +7018,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|version
@@ -7264,8 +7028,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|pathtype
@@ -7276,8 +7038,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|tattoo
@@ -7327,8 +7087,6 @@ comment|/*            * type (gint)            * x (gfloat)            * y (gflo
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|points
@@ -7344,8 +7102,6 @@ expr_stmt|;
 name|xcf_write_float_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|x
@@ -7356,8 +7112,6 @@ expr_stmt|;
 name|xcf_write_float_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|y
@@ -7467,8 +7221,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|version
@@ -7479,8 +7231,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|active_index
@@ -7491,8 +7241,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|num_paths
@@ -7625,8 +7373,6 @@ expr_stmt|;
 name|xcf_write_string_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|name
@@ -7637,8 +7383,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|tattoo
@@ -7649,8 +7393,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|linked
@@ -7661,8 +7403,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|num_parasites
@@ -7673,8 +7413,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|num_strokes
@@ -7810,8 +7548,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|stroke_type
@@ -7822,8 +7558,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|closed
@@ -7834,8 +7568,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|num_axes
@@ -7846,8 +7578,6 @@ expr_stmt|;
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|control_points
@@ -7982,8 +7712,6 @@ comment|/*                * type (gint)                *                * the fi
 name|xcf_write_int32_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 operator|&
 name|type
@@ -7994,8 +7722,6 @@ expr_stmt|;
 name|xcf_write_float_check_error
 argument_list|(
 name|info
-operator|->
-name|fp
 argument_list|,
 name|coords
 argument_list|,
