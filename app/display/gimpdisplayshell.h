@@ -32,9 +32,39 @@ directive|include
 file|"gui/gui-types.h"
 end_include
 
-begin_comment
-comment|/*  some useful macros  */
-end_comment
+begin_typedef
+DECL|typedef|GimpDisplayShellVisibility
+typedef|typedef
+name|struct
+name|_GimpDisplayShellVisibility
+name|GimpDisplayShellVisibility
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpDisplayShellVisibility
+struct|struct
+name|_GimpDisplayShellVisibility
+block|{
+DECL|member|menubar
+name|gboolean
+name|menubar
+decl_stmt|;
+DECL|member|rulers
+name|gboolean
+name|rulers
+decl_stmt|;
+DECL|member|scrollbars
+name|gboolean
+name|scrollbars
+decl_stmt|;
+DECL|member|statusbar
+name|gboolean
+name|statusbar
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_comment
 comment|/* finding the effective screen resolution (double) */
@@ -565,6 +595,14 @@ name|GdkWindowState
 name|window_state
 decl_stmt|;
 comment|/* for fullscreen display              */
+DECL|member|visibility
+name|GimpDisplayShellVisibility
+name|visibility
+decl_stmt|;
+DECL|member|fullscreen_visibility
+name|GimpDisplayShellVisibility
+name|fullscreen_visibility
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -952,24 +990,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_padding
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|GimpDisplayPaddingMode
-name|mode
-parameter_list|,
-name|GimpRGB
-modifier|*
-name|color
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_display_shell_shrink_wrap
 parameter_list|(
 name|GimpDisplayShell
@@ -989,20 +1009,6 @@ name|shell
 parameter_list|,
 name|GimpSelectionControl
 name|control
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_set_fullscreen
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|gboolean
-name|fullscreen
 parameter_list|)
 function_decl|;
 end_function_decl
