@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c780b090108
+DECL|struct|__anon27b26ebe0108
 block|{
 DECL|member|root
 name|gboolean
@@ -1727,6 +1727,11 @@ operator|&
 name|shootvals
 operator|.
 name|root
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|button
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
