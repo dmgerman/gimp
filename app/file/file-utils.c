@@ -76,46 +76,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<direct.h>
-end_include
-
-begin_comment
-comment|/* For _mkdir() */
-end_comment
-
-begin_define
-DECL|macro|mkdir (path,mode)
-define|#
-directive|define
-name|mkdir
-parameter_list|(
-name|path
-parameter_list|,
-name|mode
-parameter_list|)
-value|_mkdir(path)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -2099,7 +2059,7 @@ operator|(
 literal|0
 operator|)
 return|;
-comment|/*         * to anybody reading this: is strtol's parsing behaviour (e.g. "0x" prefix)        * broken on some systems or why do we do the base detection ourselves?        * */
+comment|/*         * to anybody reading this: is strtol's parsing behaviour        * (e.g. "0x" prefix) broken on some systems or why do we        * do the base detection ourselves?        * */
 if|if
 condition|(
 name|value

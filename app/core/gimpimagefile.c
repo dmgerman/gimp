@@ -285,7 +285,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785ff760103
+DECL|enum|__anon297af5d70103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -299,7 +299,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785ff760208
+DECL|struct|__anon297af5d70208
 block|{
 DECL|member|dirname
 specifier|const
@@ -4404,7 +4404,11 @@ name|mkdir
 argument_list|(
 name|thumb_dir
 argument_list|,
-literal|0700
+name|S_IRUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IXUSR
 argument_list|)
 operator|==
 literal|0
@@ -4421,7 +4425,11 @@ name|mkdir
 argument_list|(
 name|thumb_fail_subdir
 argument_list|,
-literal|0700
+name|S_IRUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IXUSR
 argument_list|)
 expr_stmt|;
 name|mkdir
@@ -4431,7 +4439,11 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|0700
+name|S_IRUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IXUSR
 argument_list|)
 expr_stmt|;
 block|}
