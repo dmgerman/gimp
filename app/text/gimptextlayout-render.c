@@ -170,12 +170,16 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|FT_Matrix
+name|void
 name|gimp_text_layout_render_trafo
 parameter_list|(
 name|GimpTextLayout
 modifier|*
 name|layout
+parameter_list|,
+name|FT_Matrix
+modifier|*
+name|trafo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -502,11 +506,12 @@ argument_list|(
 name|layout
 argument_list|)
 expr_stmt|;
-name|trafo
-operator|=
 name|gimp_text_layout_render_trafo
 argument_list|(
 name|layout
+argument_list|,
+operator|&
+name|trafo
 argument_list|)
 expr_stmt|;
 for|for
@@ -684,13 +689,17 @@ end_function
 
 begin_function
 specifier|static
-name|FT_Matrix
-DECL|function|gimp_text_layout_render_trafo (GimpTextLayout * layout)
+name|void
+DECL|function|gimp_text_layout_render_trafo (GimpTextLayout * layout,FT_Matrix * trafo)
 name|gimp_text_layout_render_trafo
 parameter_list|(
 name|GimpTextLayout
 modifier|*
 name|layout
+parameter_list|,
+name|FT_Matrix
+modifier|*
+name|trafo
 parameter_list|)
 block|{
 name|GimpText
@@ -701,11 +710,8 @@ name|layout
 operator|->
 name|text
 decl_stmt|;
-name|FT_Matrix
 name|trafo
-decl_stmt|;
-name|trafo
-operator|.
+operator|->
 name|xx
 operator|=
 name|text
@@ -723,7 +729,7 @@ operator|*
 literal|65536.0
 expr_stmt|;
 name|trafo
-operator|.
+operator|->
 name|xy
 operator|=
 name|text
@@ -741,7 +747,7 @@ operator|*
 literal|65536.0
 expr_stmt|;
 name|trafo
-operator|.
+operator|->
 name|yx
 operator|=
 name|text
@@ -759,7 +765,7 @@ operator|*
 literal|65536.0
 expr_stmt|;
 name|trafo
-operator|.
+operator|->
 name|yy
 operator|=
 name|text
@@ -776,9 +782,6 @@ index|]
 operator|*
 literal|65536.0
 expr_stmt|;
-return|return
-name|trafo
-return|;
 block|}
 end_function
 

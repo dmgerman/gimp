@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b29e14e0103
+DECL|enum|__anon2c0c91240103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -4165,7 +4165,8 @@ comment|/* BODY */
 name|mask_ip
 operator|=
 operator|(
-name|int
+specifier|const
+name|gint
 operator|*
 operator|)
 name|m
@@ -4719,7 +4720,8 @@ comment|/* BODY */
 name|mask_ip
 operator|=
 operator|(
-name|int
+specifier|const
+name|gint
 operator|*
 operator|)
 name|m

@@ -143,7 +143,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties:  * @object: a #GObject.   * @writer: a #GimpConfigWriter.  *   * This function writes all object properties to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_properties:  * @object: a #GObject.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -273,7 +273,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_changed_properties:  * @object: a #GObject.   * @writer: a #GimpConfigWriter.  *   * This function writes all object properties that have been changed from  * their default values to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_changed_properties:  * @object: a #GObject.  * @writer: a #GimpConfigWriter.  *  * This function writes all object properties that have been changed from  * their default values to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -451,7 +451,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties_diff:  * @object: a #GObject.   * @compare: a #GObject of the same type as @object.   * @writer: a #GimpConfigWriter.  *   * This function compares @object and @compare and writes all  * properties of @object that have different values than @compare to  * the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_properties_diff:  * @object: a #GObject.  * @compare: a #GObject of the same type as @object.  * @writer: a #GimpConfigWriter.  *  * This function compares @object and @compare and writes all  * properties of @object that have different values than @compare to  * the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -1017,7 +1017,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *   * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
+comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  **/
 end_comment
 
 begin_function
@@ -1679,7 +1679,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_unknown_tokens:  * @object: a #GObject.  * @writer: a #GimpConfigWriter.  *   * Writes all unknown tokens attached to #object to the @writer.  See  * gimp_config_add_unknown_token().  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
+comment|/**  * gimp_config_serialize_unknown_tokens:  * @object: a #GObject.  * @writer: a #GimpConfigWriter.  *  * Writes all unknown tokens attached to #object to the @writer.  See  * gimp_config_add_unknown_token().  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  **/
 end_comment
 
 begin_function
@@ -1735,7 +1735,7 @@ value|75
 end_define
 
 begin_comment
-comment|/**  * gimp_config_serialize_comment:  * @str: a #GString.  * @comment: the comment to serialize (ASCII only)  *   * Appends the @comment to @str and inserts linebreaks and hash-marks to  * format it as a comment. Note that this function does not handle non-ASCII  * characters.  **/
+comment|/**  * gimp_config_serialize_comment:  * @str: a #GString.  * @comment: the comment to serialize (ASCII only)  *  * Appends the @comment to @str and inserts linebreaks and hash-marks to  * format it as a comment. Note that this function does not handle non-ASCII  * characters.  **/
 end_comment
 
 begin_function

@@ -123,7 +123,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/*    *  All functions return G_TOKEN_RIGHT_PAREN on success,  *  the GTokenType they would have expected but didn't get  *  or G_TOKEN_NONE if they got the expected token but  *  couldn't parse it.  */
+comment|/*  *  All functions return G_TOKEN_RIGHT_PAREN on success,  *  the GTokenType they would have expected but didn't get  *  or G_TOKEN_NONE if they got the expected token but  *  couldn't parse it.  */
 end_comment
 
 begin_function_decl
@@ -395,7 +395,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_config_deserialize_properties:  * @object: a #GObject.  * @scanner: a #GScanner.  * @nest_level:  * @store_unknown_tokens: %TRUE if you want to store unknown tokens.  *   * This function uses the @scanner to configure the properties of @object.  *  * The store_unknown_tokens parameter is a special feature for #GimpRc.  * If it set to %TRUE, unknown tokens (e.g. tokens that don't refer to  * a property of @object) with string values are attached to @object as  * unknown tokens. GimpConfig has a couple of functions to handle the  * attached key/value pairs.  *   * Return value:   **/
+comment|/**  * gimp_config_deserialize_properties:  * @object: a #GObject.  * @scanner: a #GScanner.  * @nest_level:  * @store_unknown_tokens: %TRUE if you want to store unknown tokens.  *  * This function uses the @scanner to configure the properties of @object.  *  * The store_unknown_tokens parameter is a special feature for #GimpRc.  * If it set to %TRUE, unknown tokens (e.g. tokens that don't refer to  * a property of @object) with string values are attached to @object as  * unknown tokens. GimpConfig has a couple of functions to handle the  * attached key/value pairs.  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -1048,8 +1048,8 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-if|#
-directive|if
+ifdef|#
+directive|ifdef
 name|CONFIG_DEBUG
 else|else
 block|{

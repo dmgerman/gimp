@@ -1278,12 +1278,9 @@ expr_stmt|;
 comment|/* don't let the events come in too fast, ignore below a delay of 100 ms */
 if|if
 condition|(
-name|ABS
-argument_list|(
 name|time
 operator|-
 name|last_time
-argument_list|)
 operator|<
 literal|100
 condition|)

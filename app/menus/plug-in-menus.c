@@ -306,6 +306,7 @@ argument_list|(
 name|locale_domain
 argument_list|,
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)

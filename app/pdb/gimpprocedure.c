@@ -338,9 +338,6 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|procedure
 operator|->
 name|name
@@ -422,9 +419,6 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|name
 argument_list|)
 expr_stmt|;
@@ -459,9 +453,6 @@ name|gpointer
 operator|)
 name|name
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|list
 argument_list|)
 expr_stmt|;
@@ -472,9 +463,6 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|name
 argument_list|)
 expr_stmt|;
@@ -529,9 +517,6 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|name
 argument_list|)
 expr_stmt|;
@@ -612,9 +597,6 @@ name|gimp
 operator|->
 name|procedural_ht
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|name
 argument_list|)
 expr_stmt|;

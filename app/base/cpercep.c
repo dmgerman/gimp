@@ -1823,7 +1823,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 specifier|static
 specifier|inline
 name|double
@@ -1869,7 +1868,6 @@ block|}
 end_function
 
 begin_function
-specifier|const
 specifier|static
 specifier|inline
 name|double

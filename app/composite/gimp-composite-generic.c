@@ -3453,11 +3453,9 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|CLAMP
+name|MIN
 argument_list|(
 name|tmp
-argument_list|,
-literal|0
 argument_list|,
 literal|255
 argument_list|)
@@ -3923,7 +3921,7 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|CLAMP
+name|MIN
 argument_list|(
 literal|255
 operator|-
@@ -3932,8 +3930,6 @@ name|tmp
 operator|>>
 literal|8
 operator|)
-argument_list|,
-literal|0
 argument_list|,
 literal|255
 argument_list|)
@@ -3971,13 +3967,11 @@ operator|=
 operator|(
 name|guchar
 operator|)
-name|CLAMP
+name|MIN
 argument_list|(
 name|tmp
 operator|>>
 literal|8
-argument_list|,
-literal|0
 argument_list|,
 literal|255
 argument_list|)

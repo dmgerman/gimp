@@ -1818,10 +1818,6 @@ comment|/*  prepare the tool cursor  */
 if|if
 condition|(
 name|tool_cursor
-operator|<
-name|GIMP_TOOL_CURSOR_NONE
-operator|||
-name|tool_cursor
 operator|>=
 name|GIMP_LAST_STOCK_TOOL_CURSOR_ENTRY
 condition|)
@@ -1869,10 +1865,6 @@ block|}
 comment|/*  prepare the cursor modifier  */
 if|if
 condition|(
-name|modifier
-operator|<
-name|GIMP_CURSOR_MODIFIER_NONE
-operator|||
 name|modifier
 operator|>=
 name|GIMP_LAST_CURSOR_MODIFIER_ENTRY
