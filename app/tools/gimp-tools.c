@@ -414,9 +414,9 @@ block|,
 name|gimp_color_balance_tool_register
 block|,
 comment|/*  paint tools  */
-name|gimp_smudge_tool_register
-block|,
 name|gimp_dodgeburn_tool_register
+block|,
+name|gimp_smudge_tool_register
 block|,
 name|gimp_convolve_tool_register
 block|,
