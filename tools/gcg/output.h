@@ -118,7 +118,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2a15992a0108
+DECL|struct|__anon2b8302280108
 typedef|typedef
 struct|struct
 block|{
@@ -146,6 +146,18 @@ block|}
 name|ParamOptions
 typedef|;
 end_typedef
+
+begin_function_decl
+name|PNode
+modifier|*
+name|p_prim_varname
+parameter_list|(
+name|PrimType
+modifier|*
+name|t
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|PNode

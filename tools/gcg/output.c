@@ -353,6 +353,28 @@ block|}
 end_function
 
 begin_function
+DECL|function|p_prim_varname (PrimType * t)
+name|PNode
+modifier|*
+name|p_prim_varname
+parameter_list|(
+name|PrimType
+modifier|*
+name|t
+parameter_list|)
+block|{
+return|return
+name|p_c_ident
+argument_list|(
+name|t
+operator|->
+name|name
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
 DECL|function|p_primtype (PrimType * t)
 name|PNode
 modifier|*
