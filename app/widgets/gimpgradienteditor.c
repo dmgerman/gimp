@@ -139,12 +139,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"session.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -338,7 +332,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2792a0bb0103
+DECL|enum|__anon29c020eb0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -362,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2792a0bb0208
+DECL|struct|__anon29c020eb0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -645,7 +639,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon2792a0bb0308
+DECL|struct|__anon29c020eb0308
 block|{
 DECL|member|r
 DECL|member|g

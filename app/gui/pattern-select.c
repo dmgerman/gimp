@@ -737,6 +737,10 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/pattern_selection.html"
 argument_list|,
+name|title
+condition|?
+name|GTK_WIN_POS_MOUSE
+else|:
 name|GTK_WIN_POS_NONE
 argument_list|,
 name|FALSE
@@ -2185,7 +2189,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c7f5750108
+DECL|struct|__anon2ae7205b0108
 block|{
 DECL|member|psp
 name|PatternSelect

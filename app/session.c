@@ -316,7 +316,7 @@ name|SessionInfo
 name|gradient_select_session_info
 init|=
 block|{
-literal|"gradient-editor"
+literal|"gradient-select"
 block|,
 operator|(
 name|GtkItemFactoryCallback

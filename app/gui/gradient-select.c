@@ -504,6 +504,10 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/gradient_selection.html"
 argument_list|,
+name|title
+condition|?
+name|GTK_WIN_POS_MOUSE
+else|:
 name|GTK_WIN_POS_NONE
 argument_list|,
 name|FALSE

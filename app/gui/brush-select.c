@@ -1582,6 +1582,10 @@ name|gimp_standard_help_func
 argument_list|,
 literal|"dialogs/brush_selection.html"
 argument_list|,
+name|title
+condition|?
+name|GTK_WIN_POS_MOUSE
+else|:
 name|GTK_WIN_POS_NONE
 argument_list|,
 name|FALSE
@@ -5188,7 +5192,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d3c0d0108
+DECL|struct|__anon28e948180108
 block|{
 DECL|member|bsp
 name|BrushSelect
