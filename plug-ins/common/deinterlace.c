@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27827db20103
+DECL|enum|__anon293d29ee0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -49,7 +49,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27827db20208
+DECL|struct|__anon293d29ee0208
 block|{
 DECL|member|evenness
 name|gint
@@ -640,9 +640,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_scrolled_preview_get_position
+name|gimp_preview_get_position
 argument_list|(
-name|GIMP_SCROLLED_PREVIEW
+name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

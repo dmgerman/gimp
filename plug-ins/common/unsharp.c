@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d7e1d0108
+DECL|struct|__anon2c7919060108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d7e1d0208
+DECL|struct|__anon2c7919060208
 block|{
 DECL|member|run
 name|gboolean
@@ -3454,12 +3454,9 @@ operator|->
 name|bpp
 expr_stmt|;
 comment|/*    * Setup for filter...    */
-name|gimp_scrolled_preview_get_position
-argument_list|(
-name|GIMP_SCROLLED_PREVIEW
+name|gimp_preview_get_position
 argument_list|(
 name|preview
-argument_list|)
 argument_list|,
 operator|&
 name|preview_x1

@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c730fcb0108
+DECL|struct|__anon274742610108
 block|{
 DECL|member|radius
 name|gdouble
@@ -2066,9 +2066,9 @@ operator|->
 name|bpp
 expr_stmt|;
 comment|/*    * Setup for filter...    */
-name|gimp_scrolled_preview_get_position
+name|gimp_preview_get_position
 argument_list|(
-name|GIMP_SCROLLED_PREVIEW
+name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

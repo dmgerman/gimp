@@ -104,7 +104,7 @@ specifier|static
 name|void
 name|gimp_drawable_preview_draw_thumb
 parameter_list|(
-name|GimpScrolledPreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -248,15 +248,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpScrolledPreviewClass
-modifier|*
-name|scrolled_preview_class
-init|=
-name|GIMP_SCROLLED_PREVIEW_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -276,7 +267,7 @@ name|draw
 operator|=
 name|gimp_drawable_preview_draw_original
 expr_stmt|;
-name|scrolled_preview_class
+name|preview_class
 operator|->
 name|draw_thumb
 operator|=
@@ -450,15 +441,6 @@ argument_list|(
 name|preview
 argument_list|)
 decl_stmt|;
-name|GimpScrolledPreview
-modifier|*
-name|scrolled_preview
-init|=
-name|GIMP_SCROLLED_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -506,13 +488,13 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|scrolled_preview
+name|preview
 operator|->
 name|xoff
 operator|=
 name|CLAMP
 argument_list|(
-name|scrolled_preview
+name|preview
 operator|->
 name|xoff
 argument_list|,
@@ -531,13 +513,13 @@ operator|->
 name|width
 argument_list|)
 expr_stmt|;
-name|scrolled_preview
+name|preview
 operator|->
 name|yoff
 operator|=
 name|CLAMP
 argument_list|(
-name|scrolled_preview
+name|preview
 operator|->
 name|yoff
 argument_list|,
@@ -563,7 +545,7 @@ name|srcPR
 argument_list|,
 name|drawable
 argument_list|,
-name|scrolled_preview
+name|preview
 operator|->
 name|xoff
 operator|+
@@ -571,7 +553,7 @@ name|preview
 operator|->
 name|xmin
 argument_list|,
-name|scrolled_preview
+name|preview
 operator|->
 name|yoff
 operator|+
@@ -599,7 +581,7 @@ name|srcPR
 argument_list|,
 name|buffer
 argument_list|,
-name|scrolled_preview
+name|preview
 operator|->
 name|xoff
 operator|+
@@ -607,7 +589,7 @@ name|preview
 operator|->
 name|xmin
 argument_list|,
-name|scrolled_preview
+name|preview
 operator|->
 name|yoff
 operator|+
@@ -668,10 +650,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_preview_draw_thumb (GimpScrolledPreview * preview,GimpPreviewArea * area,gint width,gint height)
+DECL|function|gimp_drawable_preview_draw_thumb (GimpPreview * preview,GimpPreviewArea * area,gint width,gint height)
 name|gimp_drawable_preview_draw_thumb
 parameter_list|(
-name|GimpScrolledPreview
+name|GimpPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -885,15 +867,6 @@ argument_list|(
 name|preview
 argument_list|)
 decl_stmt|;
-name|GimpScrolledPreview
-modifier|*
-name|scrolled_preview
-init|=
-name|GIMP_SCROLLED_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -933,7 +906,7 @@ argument_list|)
 argument_list|,
 name|x
 operator|-
-name|scrolled_preview
+name|gimp_preview
 operator|->
 name|xoff
 operator|-
@@ -943,7 +916,7 @@ name|xmin
 argument_list|,
 name|y
 operator|-
-name|scrolled_preview
+name|gimp_preview
 operator|->
 name|yoff
 operator|-
@@ -1106,7 +1079,7 @@ argument_list|)
 argument_list|,
 name|x
 operator|-
-name|scrolled_preview
+name|gimp_preview
 operator|->
 name|xoff
 operator|-
@@ -1116,7 +1089,7 @@ name|xmin
 argument_list|,
 name|y
 operator|-
-name|scrolled_preview
+name|gimp_preview
 operator|->
 name|yoff
 operator|-
@@ -1523,10 +1496,6 @@ name|GimpPreview
 modifier|*
 name|gimp_preview
 decl_stmt|;
-name|GimpScrolledPreview
-modifier|*
-name|scrolled_preview
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE_PREVIEW
@@ -1558,13 +1527,6 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
-name|scrolled_preview
-operator|=
-name|GIMP_SCROLLED_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_preview_draw_area
 argument_list|(
 name|preview
@@ -1573,7 +1535,7 @@ name|gimp_preview
 operator|->
 name|xmin
 operator|+
-name|scrolled_preview
+name|gimp_preview
 operator|->
 name|xoff
 argument_list|,
@@ -1581,7 +1543,7 @@ name|gimp_preview
 operator|->
 name|ymin
 operator|+
-name|scrolled_preview
+name|gimp_preview
 operator|->
 name|yoff
 argument_list|,

@@ -40873,7 +40873,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278bdae20103
+DECL|enum|__anon2b3c52d90103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40893,7 +40893,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278bdae20208
+DECL|struct|__anon2b3c52d90208
 block|{
 DECL|member|direction
 name|gint
@@ -42057,9 +42057,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_scrolled_preview_get_position
+name|gimp_preview_get_position
 argument_list|(
-name|GIMP_SCROLLED_PREVIEW
+name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

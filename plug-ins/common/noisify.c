@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c06f7cc0108
+DECL|struct|__anon2a9ffb150108
 block|{
 DECL|member|independent
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c06f7cc0208
+DECL|struct|__anon2a9ffb150208
 block|{
 DECL|member|channels
 name|gint
@@ -1052,9 +1052,9 @@ init|=
 name|g_rand_new
 argument_list|()
 decl_stmt|;
-name|gimp_scrolled_preview_get_position
+name|gimp_preview_get_position
 argument_list|(
-name|GIMP_SCROLLED_PREVIEW
+name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)

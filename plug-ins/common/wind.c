@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29344e590103
+DECL|enum|__anon2c0509dc0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29344e590203
+DECL|enum|__anon2c0509dc0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29344e590303
+DECL|enum|__anon2c0509dc0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -1158,9 +1158,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_scrolled_preview_get_position
+name|gimp_preview_get_position
 argument_list|(
-name|GIMP_SCROLLED_PREVIEW
+name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
@@ -1713,9 +1713,9 @@ condition|(
 name|preview
 condition|)
 block|{
-name|gimp_scrolled_preview_get_position
+name|gimp_preview_get_position
 argument_list|(
-name|GIMP_SCROLLED_PREVIEW
+name|GIMP_PREVIEW
 argument_list|(
 name|preview
 argument_list|)
