@@ -119,6 +119,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core-types.h"
 end_include
 
@@ -1662,6 +1668,10 @@ operator|)
 operator|)
 condition|)
 block|{
+name|gchar
+modifier|*
+name|utf8
+decl_stmt|;
 name|name
 operator|=
 name|g_new
@@ -1707,22 +1717,15 @@ goto|goto
 name|error
 goto|;
 block|}
-if|if
-condition|(
-operator|!
-name|g_utf8_validate
+name|utf8
+operator|=
+name|gimp_any_to_utf8
 argument_list|(
 name|name
 argument_list|,
 operator|-
 literal|1
 argument_list|,
-name|NULL
-argument_list|)
-condition|)
-block|{
-name|g_message
-argument_list|(
 name|_
 argument_list|(
 literal|"Invalid UTF-8 string in pattern file '%s'."
@@ -1738,9 +1741,8 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|NULL
+name|utf8
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
