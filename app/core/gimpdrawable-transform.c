@@ -179,6 +179,10 @@ begin_comment
 comment|/* recursion level should be a usersettable parameter,    3 seems to be a reasonable default */
 end_comment
 
+begin_comment
+comment|/* temporarily set to 0 - http://bugzilla.gnome.org/show_bug.cgi?id=136702 */
+end_comment
+
 begin_define
 DECL|macro|RECURSION_LEVEL
 define|#
