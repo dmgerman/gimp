@@ -107,7 +107,7 @@ comment|/* Parameters applicable each time we save a gpb or gih, saved  * in the
 end_comment
 
 begin_struct
-DECL|struct|__anon2b85d7050108
+DECL|struct|__anon2b5322b80108
 specifier|static
 struct|struct
 block|{
@@ -167,7 +167,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b85d7050208
+DECL|struct|__anon2b5322b80208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -6033,6 +6033,8 @@ operator|(
 name|CAN_HANDLE_RGB
 operator||
 name|CAN_HANDLE_ALPHA
+operator||
+name|NEEDS_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -6290,6 +6292,8 @@ operator||
 name|CAN_HANDLE_ALPHA
 operator||
 name|CAN_HANDLE_LAYERS
+operator||
+name|NEEDS_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;

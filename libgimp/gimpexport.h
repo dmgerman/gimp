@@ -70,10 +70,18 @@ name|CAN_HANDLE_LAYERS_AS_ANIMATION
 value|1<< 5
 end_define
 
+begin_define
+DECL|macro|NEEDS_ALPHA
+define|#
+directive|define
+name|NEEDS_ALPHA
+value|1<< 6
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3b56000103
+DECL|enum|__anon2c4260c00103
 block|{
 DECL|enumerator|EXPORT_CANCEL
 name|EXPORT_CANCEL
