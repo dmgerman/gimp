@@ -192,10 +192,10 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_channel_init
 block|,
-comment|/* reversed_1 */
+comment|/* reserved_1 */
 name|NULL
 block|,
-comment|/* reversed_2 */
+comment|/* reserved_2 */
 name|NULL
 block|,
 operator|(

@@ -86,7 +86,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2772ff210103
+DECL|enum|__anon2a21e4620103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -248,10 +248,10 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_layer_init
 block|,
-comment|/* reversed_1 */
+comment|/* reserved_1 */
 name|NULL
 block|,
-comment|/* reversed_2 */
+comment|/* reserved_2 */
 name|NULL
 block|,
 operator|(
@@ -394,10 +394,10 @@ name|GtkObjectInitFunc
 operator|)
 name|gimp_layer_mask_init
 block|,
-comment|/* reversed_1 */
+comment|/* reserved_1 */
 name|NULL
 block|,
-comment|/* reversed_2 */
+comment|/* reserved_2 */
 name|NULL
 block|,
 operator|(

@@ -142,7 +142,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b27c8440103
+DECL|enum|__anon2c8494310103
 typedef|typedef
 enum|enum
 block|{
@@ -7012,7 +7012,6 @@ operator|=
 name|get_next_token
 argument_list|()
 expr_stmt|;
-comment|// FIXME   menus_add_path (menu_path, accelerator);
 return|return
 name|OK
 return|;

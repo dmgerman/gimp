@@ -6348,15 +6348,7 @@ name|list
 init|=
 name|display_list
 decl_stmt|;
-name|int
-name|x1
-decl_stmt|,
-name|y1
-decl_stmt|,
-name|x2
-decl_stmt|,
-name|y2
-decl_stmt|;
+comment|/* int x1, y1, x2, y2; */
 comment|/*  int count = 0; */
 comment|/*  traverse the linked list of displays  */
 while|while

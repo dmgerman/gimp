@@ -457,6 +457,26 @@ endif|#
 directive|endif
 end_endif
 
+begin_decl_stmt
+DECL|variable|seek_err_msg
+DECL|variable|read_err_msg
+DECL|variable|write_err_msg
+specifier|static
+name|gboolean
+name|seek_err_msg
+init|=
+name|TRUE
+decl_stmt|,
+name|read_err_msg
+init|=
+name|TRUE
+decl_stmt|,
+name|write_err_msg
+init|=
+name|TRUE
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
@@ -550,7 +570,7 @@ name|tile_ref_count
 operator|!=
 literal|0
 condition|)
-name|g_print
+name|g_message
 argument_list|(
 literal|"tile ref count balance: %d\n"
 argument_list|,
@@ -585,7 +605,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_print
+name|g_message
 argument_list|(
 literal|"swap file not empty: \"%s\"\n"
 argument_list|,
@@ -1491,12 +1511,20 @@ operator|-
 literal|1
 condition|)
 block|{
+if|if
+condition|(
+name|seek_err_msg
+condition|)
 name|g_message
 argument_list|(
 literal|"unable to seek to tile location on disk: %d"
 argument_list|,
 name|err
 argument_list|)
+expr_stmt|;
+name|seek_err_msg
+operator|=
+name|FALSE
 expr_stmt|;
 return|return;
 block|}
@@ -1575,6 +1603,10 @@ operator|<=
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+name|read_err_msg
+condition|)
 name|g_message
 argument_list|(
 literal|"unable to read tile data from disk: %d/%d ( %d ) bytes read"
@@ -1585,6 +1617,10 @@ name|errno
 argument_list|,
 name|nleft
 argument_list|)
+expr_stmt|;
+name|read_err_msg
+operator|=
+name|FALSE
 expr_stmt|;
 return|return;
 block|}
@@ -1601,6 +1637,12 @@ name|bytes
 expr_stmt|;
 comment|/*  Do not delete the swap from the file  */
 comment|/*  tile_swap_default_delete (def_swap_file, fd, tile);  */
+name|read_err_msg
+operator|=
+name|seek_err_msg
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
@@ -1717,12 +1759,20 @@ operator|-
 literal|1
 condition|)
 block|{
+if|if
+condition|(
+name|seek_err_msg
+condition|)
 name|g_message
 argument_list|(
 literal|"unable to seek to tile location on disk: %d"
 argument_list|,
 name|errno
 argument_list|)
+expr_stmt|;
+name|seek_err_msg
+operator|=
+name|FALSE
 expr_stmt|;
 return|return;
 block|}
@@ -1762,6 +1812,10 @@ operator|<=
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+name|write_err_msg
+condition|)
 name|g_message
 argument_list|(
 literal|"unable to write tile data to disk: %d ( %d ) bytes written"
@@ -1770,6 +1824,10 @@ name|err
 argument_list|,
 name|nleft
 argument_list|)
+expr_stmt|;
+name|write_err_msg
+operator|=
+name|FALSE
 expr_stmt|;
 return|return;
 block|}
@@ -1790,6 +1848,12 @@ operator|->
 name|dirty
 operator|=
 name|FALSE
+expr_stmt|;
+name|write_err_msg
+operator|=
+name|seek_err_msg
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function
