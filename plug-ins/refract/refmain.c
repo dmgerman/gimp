@@ -123,7 +123,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2b4ad11d0108
+DECL|struct|__anon2c86ae440108
 typedef|typedef
 struct|struct
 block|{
@@ -563,7 +563,7 @@ literal|"Kevin Turner"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Refract&Reflect..."
+literal|"<Image>/Filters/Glass Effects/Refract"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

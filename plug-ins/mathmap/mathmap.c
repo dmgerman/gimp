@@ -158,7 +158,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c97779d0108
+DECL|struct|__anon28fc4edf0108
 typedef|typedef
 struct|struct
 block|{
@@ -180,7 +180,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c97779d0208
+DECL|struct|__anon28fc4edf0208
 typedef|typedef
 struct|struct
 block|{
@@ -1109,7 +1109,7 @@ literal|"Mark Probst"
 argument_list|,
 literal|"October 1997, 0.1"
 argument_list|,
-literal|"<Image>/Filters/Distorts/MathMap"
+literal|"<Image>/Filters/Generic/MathMap"
 argument_list|,
 literal|"RGB"
 argument_list|,

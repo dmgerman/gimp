@@ -366,7 +366,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2959a3d30108
+DECL|struct|__anon2795ebf60108
 typedef|typedef
 struct|struct
 block|{
@@ -381,7 +381,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2959a3d30208
+DECL|struct|__anon2795ebf60208
 typedef|typedef
 struct|struct
 block|{
@@ -419,7 +419,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2959a3d30308
+DECL|struct|__anon2795ebf60308
 typedef|typedef
 struct|struct
 block|{
@@ -609,7 +609,7 @@ literal|"Xavier Bouchoux"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Holes"
+literal|"<Image>/Image/Alpha/Holes"
 argument_list|,
 literal|"RGBA, GRAYA, INDEXEDA"
 argument_list|,

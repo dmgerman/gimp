@@ -68,7 +68,7 @@ DECL|macro|PLUG_IN_NAME
 define|#
 directive|define
 name|PLUG_IN_NAME
-value|"New Filter..."
+value|"User Filter"
 end_define
 
 begin_define
@@ -76,7 +76,7 @@ DECL|macro|PLUG_IN_PLACE
 define|#
 directive|define
 name|PLUG_IN_PLACE
-value|"User Filters"
+value|"Generic"
 end_define
 
 begin_define

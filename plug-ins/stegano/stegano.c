@@ -58,7 +58,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon29259cfe0108
+DECL|struct|__anon298e13d30108
 typedef|typedef
 struct|struct
 block|{
@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29259cfe0208
+DECL|struct|__anon298e13d30208
 typedef|typedef
 struct|struct
 block|{
@@ -507,7 +507,7 @@ literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
 literal|"December, 1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Stegano"
+literal|"<Image>/Filters/Crypt/Stegano"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -1110,7 +1110,7 @@ name|gchar
 modifier|*
 name|point
 decl_stmt|;
-DECL|struct|__anon29259cfe0308
+DECL|struct|__anon298e13d30308
 typedef|typedef
 struct|struct
 block|{
@@ -1996,7 +1996,7 @@ index|[
 literal|200
 index|]
 decl_stmt|;
-DECL|struct|__anon29259cfe0408
+DECL|struct|__anon298e13d30408
 typedef|typedef
 struct|struct
 block|{

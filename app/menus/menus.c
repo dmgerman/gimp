@@ -382,6 +382,16 @@ name|NULL
 block|}
 block|,
 block|{
+literal|"<Image>/File/<separator>"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"<Image>/Edit/Cut"
 block|,
 literal|"<control>X"
@@ -507,6 +517,16 @@ block|,
 literal|"<control><shift>V"
 block|,
 name|edit_named_paste_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"<Image>/Edit/<separator>"
+block|,
+name|NULL
+block|,
+name|NULL
 block|,
 name|NULL
 block|}
@@ -812,7 +832,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Map/Equalize"
+literal|"<Image>/Image/Colors/Equalize"
 block|,
 name|NULL
 block|,
@@ -822,7 +842,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Map/Invert"
+literal|"<Image>/Image/Colors/Invert"
 block|,
 name|NULL
 block|,
@@ -832,7 +852,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Map/Posterize"
+literal|"<Image>/Image/Colors/Posterize"
 block|,
 name|NULL
 block|,
@@ -842,7 +862,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Map/Threshold"
+literal|"<Image>/Image/Colors/Threshold"
 block|,
 name|NULL
 block|,
@@ -852,7 +872,17 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Adjust/Color Balance"
+literal|"<Image>/Image/Colors/<separator>"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"<Image>/Image/Colors/Color Balance"
 block|,
 name|NULL
 block|,
@@ -862,7 +892,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Adjust/Brightness-Contrast"
+literal|"<Image>/Image/Colors/Brightness-Contrast"
 block|,
 name|NULL
 block|,
@@ -872,7 +902,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Adjust/Hue-Saturation"
+literal|"<Image>/Image/Colors/Hue-Saturation"
 block|,
 name|NULL
 block|,
@@ -882,7 +912,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Adjust/Curves"
+literal|"<Image>/Image/Colors/Curves"
 block|,
 name|NULL
 block|,
@@ -892,7 +922,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Adjust/Levels"
+literal|"<Image>/Image/Colors/Levels"
 block|,
 name|NULL
 block|,
@@ -902,7 +932,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Adjust/<separator>"
+literal|"<Image>/Image/Colors/<separator>"
 block|,
 name|NULL
 block|,
@@ -912,7 +942,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"<Image>/Image/Adjust/Desaturate"
+literal|"<Image>/Image/Colors/Desaturate"
 block|,
 name|NULL
 block|,
@@ -1027,6 +1057,16 @@ block|,
 name|NULL
 block|,
 name|image_histogram_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"<Image>/Image/<separator>"
+block|,
+name|NULL
+block|,
+name|NULL
 block|,
 name|NULL
 block|}

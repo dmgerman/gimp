@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ca1910108
+DECL|struct|__anon27f0ec890108
 block|{
 DECL|member|independent
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4ca1910208
+DECL|struct|__anon27f0ec890208
 block|{
 DECL|member|run
 name|gint
@@ -464,7 +464,7 @@ literal|"Torsten Martinsen"
 argument_list|,
 literal|"1996"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Noisify"
+literal|"<Image>/Filters/Noise/Noisify"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

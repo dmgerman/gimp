@@ -75,7 +75,7 @@ value|(r * 0.30 + g * 0.59 + b * 0.11)
 end_define
 
 begin_typedef
-DECL|struct|__anon2a521c4b0108
+DECL|struct|__anon275e004d0108
 typedef|typedef
 struct|struct
 block|{
@@ -94,7 +94,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a521c4b0208
+DECL|struct|__anon275e004d0208
 typedef|typedef
 struct|struct
 block|{
@@ -483,7 +483,7 @@ literal|"Spencer Kimball& Peter Mattis, Eiichi Takamori, Torsten Martinsen"
 argument_list|,
 literal|"1995,1996,1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Engrave"
+literal|"<Image>/Filters/Distorts/Engrave"
 argument_list|,
 literal|"RGB, GRAY"
 argument_list|,
@@ -2030,7 +2030,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a521c4b0308
+DECL|struct|__anon275e004d0308
 typedef|typedef
 struct|struct
 block|{

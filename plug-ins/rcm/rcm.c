@@ -163,7 +163,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"Colormap Rotation Plug-in"
+literal|"plug_in_colormap_rotation"
 argument_list|,
 literal|"Does that xv rotation thingy"
 argument_list|,
@@ -175,7 +175,7 @@ literal|"Pavel Grinfeld (pavel@ml.com)"
 argument_list|,
 literal|"27th March 1997"
 argument_list|,
-literal|"<Image>/Filters/Darkroom/Colormap Rotation"
+literal|"<Image>/Filters/Colors/Colormap Rotation"
 argument_list|,
 literal|"RGB*,INDEXED*,GRAY"
 argument_list|,

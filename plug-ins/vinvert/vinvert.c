@@ -261,7 +261,7 @@ literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
 literal|"27th March 1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Value Invert"
+literal|"<Image>/Filters/Colors/Value Invert"
 argument_list|,
 literal|"RGB*, INDEXED*"
 argument_list|,

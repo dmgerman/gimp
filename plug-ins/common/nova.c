@@ -180,7 +180,7 @@ value|GDK_EXPOSURE_MASK | \ 		       GDK_BUTTON_PRESS_MASK | \ 		       GDK_BUTT
 end_define
 
 begin_typedef
-DECL|struct|__anon27e32d280108
+DECL|struct|__anon28e641160108
 typedef|typedef
 struct|struct
 block|{
@@ -213,7 +213,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27e32d280208
+DECL|struct|__anon28e641160208
 typedef|typedef
 struct|struct
 block|{
@@ -228,7 +228,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27e32d280308
+DECL|struct|__anon28e641160308
 typedef|typedef
 struct|struct
 block|{
@@ -255,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e32d280408
+DECL|struct|__anon28e641160408
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -814,7 +814,7 @@ literal|"Eiichi Takamori"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Effects/SuperNova"
+literal|"<Image>/Filters/Light Effects/SuperNova"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -141,7 +141,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292434ac0108
+DECL|struct|__anon2c4f8a520108
 block|{
 DECL|member|src_drawable_id
 name|gint32
@@ -167,7 +167,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292434ac0208
+DECL|struct|__anon2c4f8a520208
 block|{
 DECL|member|run
 name|gint
@@ -543,7 +543,7 @@ literal|"Michael Schubart"
 argument_list|,
 literal|"Sep 1 1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Coordinate Map"
+literal|"<Image>/Filters/Map/Coordinate Map"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

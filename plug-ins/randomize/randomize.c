@@ -144,7 +144,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b4edfcc0108
+DECL|struct|__anon2a2300bb0108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +200,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b4edfcc0208
+DECL|struct|__anon2a2300bb0208
 typedef|typedef
 struct|struct
 block|{
@@ -651,7 +651,7 @@ operator|*
 operator|)
 name|copyright_date
 argument_list|,
-literal|"<Image>/Filters/Distorts/Randomize"
+literal|"<Image>/Filters/Noise/Randomize"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

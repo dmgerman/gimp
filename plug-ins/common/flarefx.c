@@ -48,7 +48,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27612d500108
+DECL|struct|__anon2b1d86730108
 typedef|typedef
 struct|struct
 block|{
@@ -67,7 +67,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27612d500208
+DECL|struct|__anon2b1d86730208
 typedef|typedef
 struct|struct
 block|{
@@ -676,7 +676,7 @@ argument_list|,
 comment|/* Copyright */
 literal|"1998"
 argument_list|,
-literal|"<Image>/Filters/Effects/FlareFX"
+literal|"<Image>/Filters/Light Effects/FlareFX"
 argument_list|,
 literal|"RGB*"
 argument_list|,

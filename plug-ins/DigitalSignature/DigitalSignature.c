@@ -52,7 +52,7 @@ value|200
 end_define
 
 begin_typedef
-DECL|struct|__anon2768a0350108
+DECL|struct|__anon2c8361f20108
 typedef|typedef
 struct|struct
 block|{
@@ -107,7 +107,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2768a0350208
+DECL|struct|__anon2c8361f20208
 typedef|typedef
 struct|struct
 block|{
@@ -478,7 +478,7 @@ literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
 literal|"December, 1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Digital Signature"
+literal|"<Image>/Filters/Crypt/Digital Signature"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -1236,7 +1236,7 @@ name|finished_atleast_once
 init|=
 literal|0
 decl_stmt|;
-DECL|struct|__anon2768a0350308
+DECL|struct|__anon2c8361f20308
 typedef|typedef
 struct|struct
 block|{
@@ -2160,7 +2160,7 @@ name|char
 modifier|*
 name|point2
 decl_stmt|;
-DECL|struct|__anon2768a0350408
+DECL|struct|__anon2c8361f20408
 typedef|typedef
 struct|struct
 block|{

@@ -92,7 +92,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon27c16d7a0108
+DECL|struct|__anon295aca7a0108
 typedef|typedef
 struct|struct
 block|{
@@ -110,7 +110,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27c16d7a0208
+DECL|struct|__anon295aca7a0208
 typedef|typedef
 struct|struct
 block|{
@@ -125,7 +125,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27c16d7a0308
+DECL|struct|__anon295aca7a0308
 typedef|typedef
 struct|struct
 block|{
@@ -473,7 +473,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"Colorify"
+literal|"plug_in_colorify"
 argument_list|,
 literal|"Similar to the \"Color\" mode for layers."
 argument_list|,
@@ -485,7 +485,7 @@ literal|"Francisco Bustamante"
 argument_list|,
 literal|"0.0.1"
 argument_list|,
-literal|"<Image>/Filters/Image/Colorify"
+literal|"<Image>/Filters/Colors/Colorify"
 argument_list|,
 literal|"RGB"
 argument_list|,

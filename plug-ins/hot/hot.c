@@ -131,7 +131,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon292c4a2b0103
+DECL|enum|__anon28a6752c0103
 typedef|typedef
 enum|enum
 block|{
@@ -156,7 +156,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon292c4a2b0203
+DECL|enum|__anon28a6752c0203
 typedef|typedef
 enum|enum
 block|{
@@ -206,7 +206,7 @@ comment|/*  * RGB to YIQ encoding matrix.  */
 end_comment
 
 begin_struct
-DECL|struct|__anon292c4a2b0308
+DECL|struct|__anon28a6752c0308
 struct|struct
 block|{
 DECL|member|pedestal
@@ -683,7 +683,7 @@ literal|"Eric L. Hernes"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Hot"
+literal|"<Image>/Filters/Colors/Hot"
 argument_list|,
 literal|"RGB"
 argument_list|,

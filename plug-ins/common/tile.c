@@ -54,7 +54,7 @@ value|25
 end_define
 
 begin_typedef
-DECL|struct|__anon2b2bb26e0108
+DECL|struct|__anon2c539df40108
 typedef|typedef
 struct|struct
 block|{
@@ -81,7 +81,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2bb26e0208
+DECL|struct|__anon2c539df40208
 typedef|typedef
 struct|struct
 block|{
@@ -461,7 +461,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"1996-1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/Tile"
+literal|"<Image>/Filters/Map/Tile"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

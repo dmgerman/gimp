@@ -274,7 +274,7 @@ literal|"Tim Newsome"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/Autocrop"
+literal|"<Image>/Image/Transforms/Autocrop"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

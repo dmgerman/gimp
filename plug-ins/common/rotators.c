@@ -199,7 +199,7 @@ literal|"Adam D. Moss (adam@gimp.org)"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/Layer/Rotate 90"
+literal|"<Image>/Image/Transforms/Layer/Rotate 90"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -228,7 +228,7 @@ literal|"Adam D. Moss (adam@gimp.org)"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/Layer/Rotate 270"
+literal|"<Image>/Image/Transforms/Layer/Rotate 270"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -257,7 +257,7 @@ literal|"Adam D. Moss (adam@gimp.org)"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/Image/Rotate 90"
+literal|"<Image>/Image/Transforms/Image/Rotate 90"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
@@ -286,7 +286,7 @@ literal|"Adam D. Moss (adam@gimp.org)"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/Image/Rotate 270"
+literal|"<Image>/Image/Transforms/Image/Rotate 270"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

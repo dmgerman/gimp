@@ -42,7 +42,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b02274a0108
+DECL|struct|__anon278aaf1a0108
 typedef|typedef
 struct|struct
 block|{
@@ -61,7 +61,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b02274a0208
+DECL|struct|__anon278aaf1a0208
 typedef|typedef
 struct|struct
 block|{
@@ -349,7 +349,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_struc"
+literal|"plug_in_apply_canvas"
 argument_list|,
 literal|"Adds a canvas texture map to the picture"
 argument_list|,
@@ -363,7 +363,7 @@ argument_list|,
 comment|/* Copyright */
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Artistic/Struc"
+literal|"<Image>/Filters/Artistic/Apply Canvas"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

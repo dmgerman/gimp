@@ -60,7 +60,7 @@ comment|/*---- Typedefs ----*/
 end_comment
 
 begin_typedef
-DECL|struct|__anon296755920108
+DECL|struct|__anon2b3939410108
 typedef|typedef
 struct|struct
 block|{
@@ -92,7 +92,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296755920208
+DECL|struct|__anon2b3939410208
 typedef|typedef
 struct|struct
 block|{
@@ -107,7 +107,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296755920308
+DECL|struct|__anon2b3939410308
 typedef|typedef
 struct|struct
 block|{
@@ -143,7 +143,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296755920408
+DECL|struct|__anon2b3939410408
 typedef|typedef
 struct|struct
 block|{
@@ -825,7 +825,7 @@ literal|"O. Steinfatt"
 argument_list|,
 literal|"June 1997, 0.0"
 argument_list|,
-literal|"<Image>/Filters/Image/Universal..."
+literal|"<Image>/Filters/Generic/Universal"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -2077,7 +2077,7 @@ index|[
 literal|32
 index|]
 decl_stmt|;
-DECL|struct|__anon296755920508
+DECL|struct|__anon2b3939410508
 specifier|static
 struct|struct
 block|{

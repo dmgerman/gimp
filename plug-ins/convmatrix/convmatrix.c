@@ -58,7 +58,7 @@ file|<unistd.h>
 end_include
 
 begin_typedef
-DECL|enum|__anon2754a2fd0103
+DECL|enum|__anon29ce2f8b0103
 typedef|typedef
 enum|enum
 block|{
@@ -252,7 +252,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2754a2fd0208
+DECL|struct|__anon29ce2f8b0208
 typedef|typedef
 struct|struct
 block|{
@@ -408,7 +408,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2754a2fd0308
+DECL|struct|__anon29ce2f8b0308
 struct|struct
 block|{
 DECL|member|matrix
@@ -563,7 +563,7 @@ literal|"Lauri Alanko"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Convolution Matrix"
+literal|"<Image>/Filters/Generic/Convolution Matrix"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

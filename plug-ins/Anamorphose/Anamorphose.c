@@ -136,7 +136,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2908a5670108
+DECL|struct|__anon29f074a20108
 block|{
 DECL|member|cone_radius
 name|gdouble
@@ -202,7 +202,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2908a5670208
+DECL|struct|__anon29f074a20208
 block|{
 DECL|member|run
 name|gint
@@ -424,7 +424,7 @@ literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
 literal|"October, 1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Conical Anamorphose"
+literal|"<Image>/Filters/Glass Effects/Conical Anamorphose"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

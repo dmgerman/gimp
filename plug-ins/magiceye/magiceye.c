@@ -213,7 +213,7 @@ literal|"Alexander Schulz"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Render/Magic Eye"
+literal|"<Image>/Filters/Misc/Magic Eye"
 argument_list|,
 literal|"GRAY"
 argument_list|,

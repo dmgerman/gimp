@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    *  Rotate plug-in v0.5 by Sven Neumann, neumanns@uni-duesseldorf.de    *  1998/01/09  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  A lot of changes in version 0.3 were inspired by (or even simply   *  copied from) the similar rotators-plug-in by Adam D. Moss.   *  *  As I still prefer my version I have not stopped developing it.  *  Probably this will result in one plug-in that includes the advantages   *  of both approaches.  */
+comment|/*    *  Rotate plug-in v0.6 by Sven Neumann, neumanns@uni-duesseldorf.de    *  1998/01/15  *  *  Any suggestions, bug-reports or patches are very welcome.  *   *  A lot of changes in version 0.3 were inspired by (or even simply   *  copied from) the similar rotators-plug-in by Adam D. Moss.   *  *  As I still prefer my version I have not stopped developing it.  *  Probably this will result in one plug-in that includes the advantages   *  of both approaches.  */
 end_comment
 
 begin_comment
@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *                    */
+comment|/* Revision history  *  (09/28/97)  v0.1   first development release   *  (09/29/97)  v0.2   nicer dialog,  *                     changed the menu-location to Filters/Transforms  *  (10/01/97)  v0.3   now handles layered images and undo  *  (10/13/97)  v0.3a  small bugfix, no real changes  *  (10/17/97)  v0.4   now handles selections  *  (01/09/98)  v0.5   a few fixes to support portability  *  (01/15/98)  v0.6   fixed a line that caused rotate to crash on some   *                     systems                  */
 end_comment
 
 begin_comment
@@ -58,7 +58,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"v0.5 (01/09/98)"
+value|"v0.6 (01/15/98)"
 end_define
 
 begin_define
@@ -66,7 +66,7 @@ DECL|macro|PLUG_IN_MENU_PATH
 define|#
 directive|define
 name|PLUG_IN_MENU_PATH
-value|"<Image>/Filters/Transforms/Rotate"
+value|"<Image>/Image/Transforms/Rotate"
 end_define
 
 begin_define
@@ -171,7 +171,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon291474a80108
+DECL|struct|__anon2aeadc020108
 typedef|typedef
 struct|struct
 block|{
@@ -190,7 +190,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon291474a80208
+DECL|struct|__anon2aeadc020208
 typedef|typedef
 struct|struct
 block|{
@@ -2414,12 +2414,6 @@ expr_stmt|;
 name|gdk_set_use_xshm
 argument_list|(
 name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
 argument_list|()
 argument_list|)
 expr_stmt|;

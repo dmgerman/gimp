@@ -285,7 +285,7 @@ literal|"Adam D. Moss"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/ZealousCrop(tm)"
+literal|"<Image>/Image/Transforms/Zealous Crop"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

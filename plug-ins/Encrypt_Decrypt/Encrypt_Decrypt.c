@@ -184,7 +184,7 @@ comment|/********************************************************************** 
 end_comment
 
 begin_typedef
-DECL|struct|__anon289eee860108
+DECL|struct|__anon29220edc0108
 typedef|typedef
 struct|struct
 block|{
@@ -214,7 +214,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon289eee860208
+DECL|struct|__anon29220edc0208
 typedef|typedef
 struct|struct
 block|{
@@ -511,7 +511,7 @@ literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
 literal|"October, 1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Encrypt& Decrypt"
+literal|"<Image>/Filters/Crypt/Encrypt and Decrypt"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

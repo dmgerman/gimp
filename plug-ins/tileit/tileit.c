@@ -146,7 +146,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a22d8060108
+DECL|struct|__anon2c071a850108
 typedef|typedef
 struct|struct
 block|{
@@ -611,7 +611,7 @@ comment|/* The "explict tile"& family */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a22d8060203
+DECL|enum|__anon2c071a850203
 typedef|typedef
 enum|enum
 block|{
@@ -630,7 +630,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a22d8060308
+DECL|struct|__anon2c071a850308
 typedef|typedef
 struct|struct
 block|{
@@ -716,7 +716,7 @@ comment|/* The reset button needs to know some toggle widgets.. */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a22d8060408
+DECL|struct|__anon2c071a850408
 typedef|typedef
 struct|struct
 block|{
@@ -951,7 +951,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_tileit"
+literal|"plug_in_small_tiles"
 argument_list|,
 literal|"Tiles image into smaller versions of the orginal"
 argument_list|,
@@ -963,7 +963,7 @@ literal|"Andy Thomas"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/TileIt"
+literal|"<Image>/Filters/Map/Small Tiles"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

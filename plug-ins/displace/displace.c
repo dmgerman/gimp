@@ -100,7 +100,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon29c0b7e80108
+DECL|struct|__anon2ad8f1ed0108
 typedef|typedef
 struct|struct
 block|{
@@ -139,7 +139,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29c0b7e80208
+DECL|struct|__anon2ad8f1ed0208
 typedef|typedef
 struct|struct
 block|{
@@ -694,7 +694,7 @@ literal|"Stephen Robert Norris"
 argument_list|,
 literal|"1996"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Displace"
+literal|"<Image>/Filters/Map/Displace"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

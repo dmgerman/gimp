@@ -307,7 +307,7 @@ literal|"Daniel Skarda"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Artistic/GAG"
+literal|"<Image>/Filters/Render/GAG"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -336,7 +336,7 @@ literal|"Daniel Skarda"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Artistic/GAG"
+literal|"<Image>/Filters/Render/GAG"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

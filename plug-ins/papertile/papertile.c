@@ -133,7 +133,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|struct|__anon2c05bfe10108
+DECL|struct|__anon2b88ed830108
 typedef|typedef
 struct|struct
 block|{
@@ -403,7 +403,7 @@ literal|"Hirotsuna Mizuno"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Image>/Filters/Effects/Paper Tile"
+literal|"<Image>/Filters/Map/Paper Tile"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

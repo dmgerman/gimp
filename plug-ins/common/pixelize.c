@@ -92,7 +92,7 @@ value|40
 end_define
 
 begin_typedef
-DECL|struct|__anon2b4285bd0108
+DECL|struct|__anon2be7ec0a0108
 typedef|typedef
 struct|struct
 block|{
@@ -107,7 +107,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b4285bd0208
+DECL|struct|__anon2be7ec0a0208
 typedef|typedef
 struct|struct
 block|{
@@ -122,7 +122,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b4285bd0308
+DECL|struct|__anon2be7ec0a0308
 typedef|typedef
 struct|struct
 block|{
@@ -173,7 +173,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b4285bd0408
+DECL|struct|__anon2be7ec0a0408
 typedef|typedef
 struct|struct
 block|{
@@ -588,7 +588,7 @@ literal|"Spencer Kimball& Peter Mattis, Tracy Scott"
 argument_list|,
 literal|"1995"
 argument_list|,
-literal|"<Image>/Filters/Image/Pixelize"
+literal|"<Image>/Filters/Blur/Pixelize"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

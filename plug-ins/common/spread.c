@@ -68,7 +68,7 @@ value|50
 end_define
 
 begin_typedef
-DECL|struct|__anon2ad42d100108
+DECL|struct|__anon2b698acd0108
 typedef|typedef
 struct|struct
 block|{
@@ -87,7 +87,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2ad42d100208
+DECL|struct|__anon2b698acd0208
 typedef|typedef
 struct|struct
 block|{
@@ -434,7 +434,7 @@ literal|"Federico Mena Quintero and Brian Degenhardt"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Spread"
+literal|"<Image>/Filters/Noise/Spread"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

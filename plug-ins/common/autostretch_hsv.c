@@ -244,7 +244,7 @@ literal|"Scott Goehring and Federico Mena Quintero"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Auto-Stretch HSV"
+literal|"<Image>/Image/Colors/Auto-Stretch HSV"
 argument_list|,
 literal|"RGB*, INDEXED*"
 argument_list|,

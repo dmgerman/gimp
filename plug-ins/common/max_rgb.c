@@ -72,7 +72,7 @@ DECL|macro|MENU_POSITION
 define|#
 directive|define
 name|MENU_POSITION
-value|"<Image>/Filters/Image/Max RGB"
+value|"<Image>/Filters/Colors/Max RGB"
 end_define
 
 begin_define
@@ -438,7 +438,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeb227d0108
+DECL|struct|__anon2c2f623c0108
 block|{
 DECL|member|max_p
 name|gint
@@ -466,7 +466,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aeb227d0208
+DECL|struct|__anon2c2f623c0208
 block|{
 DECL|member|run
 name|gint

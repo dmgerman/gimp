@@ -247,7 +247,7 @@ literal|"Pavel Grinfeld (pavel@ml.com)"
 argument_list|,
 literal|"27th March 1997"
 argument_list|,
-literal|"<Image>/Filters/Darkroom/Filter Pack"
+literal|"<Image>/Filters/Colors/Filter Pack"
 argument_list|,
 literal|"RGB*,INDEXED*,GRAY*"
 argument_list|,

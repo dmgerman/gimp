@@ -102,7 +102,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5718a0108
+DECL|struct|__anon294654780108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5718a0208
+DECL|struct|__anon294654780208
 block|{
 DECL|member|run
 name|gint
@@ -636,7 +636,7 @@ literal|"John Beale"
 argument_list|,
 literal|"1996"
 argument_list|,
-literal|"<Image>/Filters/Artistic/Sparkle"
+literal|"<Image>/Filters/Light Effects/Sparkle"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

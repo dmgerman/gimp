@@ -136,7 +136,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be6998f0108
+DECL|struct|__anon288c7c5b0108
 block|{
 DECL|member|cone_radius
 name|gdouble
@@ -191,7 +191,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be6998f0208
+DECL|struct|__anon288c7c5b0208
 block|{
 DECL|member|run
 name|gint
@@ -397,7 +397,7 @@ literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
 literal|"October, 1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Central-Reflection"
+literal|"<Image>/Filters/Glass Effects/Central Reflection"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

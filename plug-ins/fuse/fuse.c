@@ -146,7 +146,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c5aede10108
+DECL|struct|__anon28b3a3650108
 typedef|typedef
 struct|struct
 block|{
@@ -251,7 +251,7 @@ value|100
 end_define
 
 begin_struct
-DECL|struct|__anon2c5aede10208
+DECL|struct|__anon28b3a3650208
 struct|struct
 block|{
 DECL|member|ninputs
@@ -410,7 +410,7 @@ literal|"Scott Draves"
 argument_list|,
 literal|"Nov 1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/Fuse"
+literal|"<Image>/Filters/Combine/Fuse"
 argument_list|,
 literal|"RGB*"
 argument_list|,

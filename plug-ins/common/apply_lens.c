@@ -138,7 +138,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f68710108
+DECL|struct|__anon2b3dfbf30108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -183,7 +183,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f68710208
+DECL|struct|__anon2b3dfbf30208
 block|{
 DECL|member|run
 name|gint
@@ -329,7 +329,7 @@ literal|"Morten Eriksen"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Apply lens"
+literal|"<Image>/Filters/Glass Effects/Apply Lens"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

@@ -209,7 +209,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_tiler"
+literal|"plug_in_make_seamless"
 argument_list|,
 literal|"Seamless tile creation"
 argument_list|,
@@ -221,7 +221,7 @@ literal|"Tim Rowley"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Transforms/Tiler"
+literal|"<Image>/Filters/Map/Make Seamless"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -214,7 +214,7 @@ value|1
 end_define
 
 begin_typedef
-DECL|struct|__anon2892819f0108
+DECL|struct|__anon2c425bbe0108
 typedef|typedef
 struct|struct
 block|{
@@ -315,7 +315,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2892819f0208
+DECL|struct|__anon2c425bbe0208
 typedef|typedef
 struct|struct
 block|{
@@ -865,7 +865,7 @@ literal|"Xavier Bouchoux"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Textures/Sinus"
+literal|"<Image>/Filters/Render/Sinus"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -1463,7 +1463,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2892819f0308
+DECL|struct|__anon2c425bbe0308
 DECL|member|r
 DECL|member|g
 DECL|member|b

@@ -72,7 +72,7 @@ value|16
 end_define
 
 begin_typedef
-DECL|struct|__anon29c54d160108
+DECL|struct|__anon2c03448f0108
 typedef|typedef
 struct|struct
 block|{
@@ -246,7 +246,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon29c54d160208
+DECL|struct|__anon2c03448f0208
 typedef|typedef
 struct|struct
 block|{
@@ -410,7 +410,7 @@ literal|"Francisco Bustamante"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Render/Stereogram"
+literal|"<Image>/Filters/Misc/Stereogram"
 argument_list|,
 literal|"GRAY"
 argument_list|,

@@ -72,7 +72,7 @@ DECL|macro|MENU_POSITION
 define|#
 directive|define
 name|MENU_POSITION
-value|"<Image>/Filters/Image/Threshold alpha"
+value|"<Image>/Image/Alpha/Threshold Alpha"
 end_define
 
 begin_define
@@ -491,7 +491,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3af130108
+DECL|struct|__anon29a81ff30108
 block|{
 DECL|member|threshold
 name|gint
@@ -518,7 +518,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3af130208
+DECL|struct|__anon29a81ff30208
 block|{
 DECL|member|run
 name|gint

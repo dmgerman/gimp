@@ -199,7 +199,7 @@ literal|"Federico Mena Quintero"
 argument_list|,
 literal|"1996"
 argument_list|,
-literal|"<Image>/Filters/Image/Contrast Auto-Stretch"
+literal|"<Image>/Image/Colors/Auto-Stretch Contrast"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

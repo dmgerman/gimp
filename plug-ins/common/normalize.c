@@ -199,7 +199,7 @@ literal|"Adam D. Moss, Federico Mena Quintero"
 argument_list|,
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Normalize"
+literal|"<Image>/Image/Colors/Normalize"
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,

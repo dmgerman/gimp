@@ -30,7 +30,7 @@ comment|/* --- Typedefs --- */
 end_comment
 
 begin_typedef
-DECL|struct|__anon275cc14e0108
+DECL|struct|__anon2b034ccd0108
 typedef|typedef
 struct|struct
 block|{
@@ -49,7 +49,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275cc14e0208
+DECL|struct|__anon2b034ccd0208
 typedef|typedef
 struct|struct
 block|{
@@ -336,7 +336,7 @@ argument_list|,
 comment|/* Copyright */
 literal|"1997"
 argument_list|,
-literal|"<Image>/Filters/Distorts/Glass Tile"
+literal|"<Image>/Filters/Glass Effects/Glass Tile"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

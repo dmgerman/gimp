@@ -146,7 +146,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon2aaf9a600103
+DECL|enum|__anon28db02770103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -164,7 +164,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2aaf9a600203
+DECL|enum|__anon28db02770203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -182,7 +182,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2aaf9a600308
+DECL|struct|__anon28db02770308
 typedef|typedef
 struct|struct
 block|{
@@ -237,7 +237,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aaf9a600408
+DECL|struct|__anon28db02770408
 typedef|typedef
 struct|struct
 block|{
@@ -282,7 +282,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aaf9a600508
+DECL|struct|__anon28db02770508
 typedef|typedef
 struct|struct
 block|{
@@ -1373,7 +1373,7 @@ literal|"Federico Mena Quintero and Jens Lautenbacher"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Image>/Filters/Effects/Bump map"
+literal|"<Image>/Filters/Map/Bump Map"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

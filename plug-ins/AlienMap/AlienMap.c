@@ -130,7 +130,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon29fe2d850108
+DECL|struct|__anon29989fd00108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +165,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29fe2d850208
+DECL|struct|__anon29989fd00208
 typedef|typedef
 struct|struct
 block|{
@@ -910,7 +910,7 @@ literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
 literal|"1th May 1997"
 argument_list|,
-literal|"<Image>/Filters/Image/Alien-Map"
+literal|"<Image>/Filters/Colors/Alien Map"
 argument_list|,
 literal|"RGB*"
 argument_list|,

@@ -961,7 +961,7 @@ literal|"Sean Cier"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-literal|"<Image>/Filters/Effects/Depth merge"
+literal|"<Image>/Filters/Combine/Depth Merge"
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,

@@ -5170,14 +5170,7 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
-literal|"<Image>/Image/Map"
-argument_list|,
-name|lp
-argument_list|)
-expr_stmt|;
-name|menus_set_sensitive
-argument_list|(
-literal|"<Image>/Image/Adjust"
+literal|"<Image>/Image/Colors"
 argument_list|,
 name|lp
 argument_list|)
