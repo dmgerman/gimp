@@ -18,6 +18,19 @@ directive|include
 file|<glib.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtktypeutils.h>
+end_include
+
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|in_ident
+decl_stmt|;
+end_decl_stmt
+
 begin_typedef
 DECL|typedef|Id
 typedef|typedef
@@ -183,25 +196,6 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|enum|__anon2757ba820103
-typedef|typedef
-enum|enum
-block|{
-DECL|enumerator|TYPE_CLASS
-name|TYPE_CLASS
-block|,
-DECL|enumerator|TYPE_OPAQUE
-name|TYPE_OPAQUE
-block|,
-DECL|enumerator|TYPE_TRANSPARENT
-name|TYPE_TRANSPARENT
-DECL|typedef|TypeKind
-block|}
-name|TypeKind
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_PrimType
 struct|struct
@@ -212,7 +206,7 @@ name|TypeName
 name|name
 decl_stmt|;
 DECL|member|kind
-name|TypeKind
+name|GtkFundamentalType
 name|kind
 decl_stmt|;
 DECL|member|decl_header
@@ -281,11 +275,6 @@ DECL|struct|_Def
 struct|struct
 name|_Def
 block|{
-DECL|member|klass
-name|DefClass
-modifier|*
-name|klass
-decl_stmt|;
 DECL|member|type
 name|PrimType
 modifier|*
@@ -402,7 +391,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon2757ba820203
+DECL|enum|__anon2abb07440103
 typedef|typedef
 enum|enum
 block|{
@@ -421,23 +410,26 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2757ba820303
+DECL|enum|__anon2abb07440203
 typedef|typedef
 enum|enum
 block|{
-DECL|enumerator|METH_PUBLIC
-name|METH_PUBLIC
+DECL|enumerator|VIS_PUBLIC
+name|VIS_PUBLIC
 block|,
-DECL|enumerator|METH_PROTECTED
-name|METH_PROTECTED
-DECL|typedef|MethodProtection
+DECL|enumerator|VIS_PROTECTED
+name|VIS_PROTECTED
+block|,
+DECL|enumerator|VIS_PRIVATE
+name|VIS_PRIVATE
+DECL|typedef|Visibility
 block|}
-name|MethodProtection
+name|Visibility
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2757ba820403
+DECL|enum|__anon2abb07440303
 typedef|typedef
 enum|enum
 block|{
@@ -568,7 +560,7 @@ name|Member
 name|member
 decl_stmt|;
 DECL|member|prot
-name|MethodProtection
+name|Visibility
 name|prot
 decl_stmt|;
 DECL|member|params

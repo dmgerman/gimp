@@ -6,7 +6,7 @@ file|"output.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon276f4bc60108
+DECL|struct|__anon279e8aa70108
 typedef|typedef
 struct|struct
 block|{
@@ -26,14 +26,11 @@ typedef|;
 end_typedef
 
 begin_function
-DECL|function|pr_flags_member (File * s,Id id,FlagData * d)
-name|void
-name|pr_flags_member
-parameter_list|(
-name|File
+DECL|function|p_flags_member (Id id,FlagData * d)
+name|PNode
 modifier|*
-name|s
-parameter_list|,
+name|p_flags_member
+parameter_list|(
 name|Id
 name|id
 parameter_list|,
@@ -42,14 +39,18 @@ modifier|*
 name|d
 parameter_list|)
 block|{
-name|pr
+name|d
+operator|->
+name|i
+operator|++
+expr_stmt|;
+return|return
+name|p_fmt
 argument_list|(
-name|s
+literal|"\t~ = 1<< ~,\n"
 argument_list|,
-literal|"\t%3 = 1<< %d,\n"
-argument_list|,
-name|pr_macro_name
-argument_list|,
+name|p_macro_name
+argument_list|(
 name|d
 operator|->
 name|t
@@ -57,29 +58,27 @@ argument_list|,
 name|NULL
 argument_list|,
 name|id
+argument_list|)
+argument_list|,
+name|p_prf
+argument_list|(
+literal|"%d"
 argument_list|,
 name|d
 operator|->
 name|i
 argument_list|)
-expr_stmt|;
-name|d
-operator|->
-name|i
-operator|++
-expr_stmt|;
+argument_list|)
+return|;
 block|}
 end_function
 
 begin_function
-DECL|function|pr_flags_decl (File * s,FlagsDef * e)
-name|void
-name|pr_flags_decl
-parameter_list|(
-name|File
+DECL|function|p_flags_decl (FlagsDef * e)
+name|PNode
 modifier|*
-name|s
-parameter_list|,
+name|p_flags_decl
+parameter_list|(
 name|FlagsDef
 modifier|*
 name|e
@@ -89,7 +88,8 @@ name|FlagData
 name|d
 init|=
 block|{
-literal|0
+operator|-
+literal|1
 block|,
 name|DEF
 argument_list|(
@@ -99,40 +99,42 @@ operator|->
 name|type
 block|}
 decl_stmt|;
-name|pr
+return|return
+name|p_fmt
 argument_list|(
-name|s
-argument_list|,
 literal|"typedef enum {\n"
-literal|"%3"
-literal|"} %1;\n"
-literal|"const %1 %3 = %3;\n"
+literal|"~"
+literal|"} ~;\n"
+literal|"const ~ ~ = ~;\n"
 argument_list|,
-name|pr_list_foreach
-argument_list|,
+name|p_for
+argument_list|(
 name|e
 operator|->
 name|flags
 argument_list|,
-name|pr_flags_member
+name|p_flags_member
 argument_list|,
 operator|&
 name|d
+argument_list|)
 argument_list|,
-name|pr_primtype
-argument_list|,
+name|p_primtype
+argument_list|(
 name|d
 operator|.
 name|t
+argument_list|)
 argument_list|,
-name|pr_primtype
-argument_list|,
+name|p_primtype
+argument_list|(
 name|d
 operator|.
 name|t
+argument_list|)
 argument_list|,
-name|pr_macro_name
-argument_list|,
+name|p_macro_name
+argument_list|(
 name|d
 operator|.
 name|t
@@ -140,9 +142,10 @@ argument_list|,
 name|NULL
 argument_list|,
 literal|"LAST"
+argument_list|)
 argument_list|,
-name|pr_macro_name
-argument_list|,
+name|p_macro_name
+argument_list|(
 name|d
 operator|.
 name|t
@@ -158,19 +161,17 @@ argument_list|)
 operator|->
 name|data
 argument_list|)
-expr_stmt|;
+argument_list|)
+return|;
 block|}
 end_function
 
 begin_function
-DECL|function|pr_flags_value (File * s,Id i,PrimType * t)
-name|void
-name|pr_flags_value
-parameter_list|(
-name|File
+DECL|function|p_flags_value (Id i,PrimType * t)
+name|PNode
 modifier|*
-name|s
-parameter_list|,
+name|p_flags_value
+parameter_list|(
 name|Id
 name|i
 parameter_list|,
@@ -179,41 +180,49 @@ modifier|*
 name|t
 parameter_list|)
 block|{
-name|pr
+return|return
+name|p_fmt
 argument_list|(
-name|s
+literal|"\t\t{~,\n"
+literal|"\t\t\"~\",\n"
+literal|"\t\t\"~\"},\n"
 argument_list|,
-literal|"\t\t{%3,\n"
-literal|"\t\t\"%3\",\n"
-literal|"\t\t\"%s\"},\n"
-argument_list|,
-name|pr_macro_name
-argument_list|,
+name|p_macro_name
+argument_list|(
 name|t
 argument_list|,
 name|NULL
-argument_list|,
-name|i
-argument_list|,
-name|pr_macro_name
-argument_list|,
-name|t
-argument_list|,
-name|NULL
-argument_list|,
-name|i
 argument_list|,
 name|i
 argument_list|)
-expr_stmt|;
+argument_list|,
+name|p_macro_name
+argument_list|(
+name|t
+argument_list|,
+name|NULL
+argument_list|,
+name|i
+argument_list|)
+argument_list|,
+name|p_str
+argument_list|(
+name|i
+argument_list|)
+argument_list|)
+return|;
 block|}
 end_function
 
 begin_function
-DECL|function|output_flags_type_init (FlagsDef * e)
+DECL|function|output_flags_type_init (OutCtx * ctx,FlagsDef * e)
 name|void
 name|output_flags_type_init
 parameter_list|(
+name|OutCtx
+modifier|*
+name|ctx
+parameter_list|,
 name|FlagsDef
 modifier|*
 name|e
@@ -232,6 +241,8 @@ name|type
 decl_stmt|;
 name|output_func
 argument_list|(
+name|ctx
+argument_list|,
 name|t
 argument_list|,
 literal|"init_type"
@@ -240,7 +251,7 @@ name|NULL
 argument_list|,
 name|type_gtk_type
 argument_list|,
-name|type_hdr
+name|VIS_PUBLIC
 argument_list|,
 name|NULL
 argument_list|,
@@ -248,12 +259,18 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|"\tstatic GtkFlagValue values[%d] = {\n"
-literal|"%3"
+name|p_fmt
+argument_list|(
+literal|"\tstatic GtkFlagValue values[~] = {\n"
+literal|"~"
 literal|"\t\t{0, NULL, NULL}\n"
 literal|"\t};\n"
-literal|"\t%2 = gtk_type_register_flags (\"%1\", values);\n"
-literal|"\treturn %2;\n"
+literal|"\t~ = gtk_type_register_flags (\"~\", values);\n"
+literal|"\treturn ~;\n"
+argument_list|,
+name|p_prf
+argument_list|(
+literal|"%d"
 argument_list|,
 name|g_slist_length
 argument_list|(
@@ -263,88 +280,78 @@ name|flags
 argument_list|)
 operator|+
 literal|1
+argument_list|)
 argument_list|,
-name|pr_list_foreach
-argument_list|,
+name|p_for
+argument_list|(
 name|e
 operator|->
 name|flags
 argument_list|,
-name|pr_flags_value
+name|p_flags_value
 argument_list|,
 name|t
+argument_list|)
 argument_list|,
-name|pr_internal_varname
-argument_list|,
-name|t
-argument_list|,
-literal|"type"
-argument_list|,
-name|pr_primtype
-argument_list|,
-name|t
-argument_list|,
-name|pr_internal_varname
-argument_list|,
+name|p_internal_varname
+argument_list|(
 name|t
 argument_list|,
 literal|"type"
+argument_list|)
+argument_list|,
+name|p_primtype
+argument_list|(
+name|t
+argument_list|)
+argument_list|,
+name|p_internal_varname
+argument_list|(
+name|t
+argument_list|,
+literal|"type"
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|output_flags (FlagsDef * e)
+DECL|function|output_flags (OutCtx * ctx,FlagsDef * e)
 name|void
 name|output_flags
 parameter_list|(
+name|OutCtx
+modifier|*
+name|ctx
+parameter_list|,
 name|FlagsDef
 modifier|*
 name|e
 parameter_list|)
 block|{
-name|output_def
+name|pr_add
 argument_list|(
-name|DEF
-argument_list|(
-name|e
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|pr_flags_decl
-argument_list|(
+name|ctx
+operator|->
 name|type_hdr
 argument_list|,
+name|p_flags_decl
+argument_list|(
 name|e
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|output_flags_type_init
 argument_list|(
+name|ctx
+argument_list|,
 name|e
 argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_decl_stmt
-DECL|variable|flags_class
-name|DefClass
-name|flags_class
-init|=
-block|{
-name|output_flags
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|type_gtk_type
-name|Type
-modifier|*
-name|type_gtk_type
-decl_stmt|;
-end_decl_stmt
 
 end_unit
 
