@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abd18d40103
+DECL|enum|__anon287861b50103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -2957,6 +2957,12 @@ expr_stmt|;
 name|plug_in
 operator|->
 name|his_write
+operator|=
+literal|0
+expr_stmt|;
+name|plug_in
+operator|->
+name|input_id
 operator|=
 literal|0
 expr_stmt|;

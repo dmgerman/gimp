@@ -3588,9 +3588,7 @@ decl_stmt|;
 name|int
 name|offs
 decl_stmt|;
-name|int
-name|rowy
-decl_stmt|;
+comment|/* int rowy; */
 name|offs
 operator|=
 name|bsp

@@ -2075,7 +2075,7 @@ argument_list|(
 name|fileload
 argument_list|)
 argument_list|,
-literal|"."
+literal|"./"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
@@ -2516,7 +2516,7 @@ argument_list|(
 name|filesave
 argument_list|)
 argument_list|,
-literal|"."
+literal|"./"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title
