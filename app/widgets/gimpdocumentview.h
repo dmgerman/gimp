@@ -108,10 +108,10 @@ name|GtkWidget
 modifier|*
 name|open_button
 decl_stmt|;
-DECL|member|delete_button
+DECL|member|remove_button
 name|GtkWidget
 modifier|*
-name|delete_button
+name|remove_button
 decl_stmt|;
 DECL|member|refresh_button
 name|GtkWidget

@@ -60,7 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|documents_delete_document_cmd_callback
+name|documents_remove_document_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -8730,13 +8730,13 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|documents_delete_document_cmd_callback
+name|documents_remove_document_cmd_callback
 block|,
 literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_DELETE
+name|GTK_STOCK_REMOVE
 block|}
 block|,
 name|NULL

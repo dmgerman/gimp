@@ -196,7 +196,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_document_view_delete_clicked
+name|gimp_document_view_remove_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -433,7 +433,7 @@ name|NULL
 expr_stmt|;
 name|view
 operator|->
-name|delete_button
+name|remove_button
 operator|=
 name|NULL
 expr_stmt|;
@@ -581,7 +581,7 @@ argument_list|)
 expr_stmt|;
 name|document_view
 operator|->
-name|delete_button
+name|remove_button
 operator|=
 name|gimp_editor_add_button
 argument_list|(
@@ -592,7 +592,7 @@ operator|->
 name|view
 argument_list|)
 argument_list|,
-name|GTK_STOCK_DELETE
+name|GTK_STOCK_REMOVE
 argument_list|,
 name|_
 argument_list|(
@@ -603,7 +603,7 @@ name|NULL
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_document_view_delete_clicked
+name|gimp_document_view_remove_clicked
 argument_list|)
 argument_list|,
 name|NULL
@@ -703,7 +703,7 @@ name|GTK_BUTTON
 argument_list|(
 name|document_view
 operator|->
-name|delete_button
+name|remove_button
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_IMAGEFILE
@@ -1122,8 +1122,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_document_view_delete_clicked (GtkWidget * widget,GimpDocumentView * view)
-name|gimp_document_view_delete_clicked
+DECL|function|gimp_document_view_remove_clicked (GtkWidget * widget,GimpDocumentView * view)
+name|gimp_document_view_remove_clicked
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1453,7 +1453,7 @@ modifier|*
 name|view
 decl_stmt|;
 name|gboolean
-name|delete_sensitive
+name|remove_sensitive
 init|=
 name|FALSE
 decl_stmt|;
@@ -1504,7 +1504,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|delete_sensitive
+name|remove_sensitive
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1513,9 +1513,9 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|view
 operator|->
-name|delete_button
+name|remove_button
 argument_list|,
-name|delete_sensitive
+name|remove_sensitive
 argument_list|)
 expr_stmt|;
 block|}

@@ -232,8 +232,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|documents_delete_document_cmd_callback (GtkWidget * widget,gpointer data)
-name|documents_delete_document_cmd_callback
+DECL|function|documents_remove_document_cmd_callback (GtkWidget * widget,gpointer data)
+name|documents_remove_document_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -270,7 +270,7 @@ name|GTK_BUTTON
 argument_list|(
 name|view
 operator|->
-name|delete_button
+name|remove_button
 argument_list|)
 argument_list|)
 expr_stmt|;
