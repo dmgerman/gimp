@@ -843,11 +843,11 @@ return|;
 block|}
 name|minxdist
 operator|=
-name|G_MAXINT
+name|G_MAXDOUBLE
 expr_stmt|;
 name|minydist
 operator|=
-name|G_MAXINT
+name|G_MAXDOUBLE
 expr_stmt|;
 if|if
 condition|(
