@@ -149,7 +149,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon29d03bb50108
+DECL|struct|__anon2adec7400108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +200,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29d03bb50208
+DECL|struct|__anon2adec7400208
 typedef|typedef
 struct|struct
 block|{
@@ -676,11 +676,11 @@ literal|0.0
 block|,
 name|RGB
 block|,
-name|FALSE
+name|TRUE
 block|,
-name|FALSE
+name|TRUE
 block|,
-name|FALSE
+name|TRUE
 block|, }
 decl_stmt|;
 end_decl_stmt
