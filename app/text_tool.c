@@ -5011,6 +5011,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|text_load_font
 argument_list|(
 name|the_text_tool

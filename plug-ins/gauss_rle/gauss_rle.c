@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ca2890108
+DECL|struct|__anon27b1468a0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ca2890208
+DECL|struct|__anon27b1468a0208
 block|{
 DECL|member|run
 name|gint
@@ -667,6 +667,37 @@ break|break;
 default|default:
 break|break;
 block|}
+if|if
+condition|(
+operator|!
+operator|(
+name|bvals
+operator|.
+name|horizontal
+operator|||
+name|bvals
+operator|.
+name|vertical
+operator|)
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+literal|"gauss_rle: you must specify either horizontal or vertical (or both)"
+argument_list|)
+expr_stmt|;
+name|status
+operator|=
+name|STATUS_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|==
+name|STATUS_SUCCESS
+condition|)
+block|{
 comment|/*  Get the specified drawable  */
 name|drawable
 operator|=
@@ -811,10 +842,20 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* gimp_message ("gauss_rle: cannot operate on indexed color images"); */
+name|gimp_message
+argument_list|(
+literal|"gauss_rle: cannot operate on indexed color images"
+argument_list|)
+expr_stmt|;
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
+expr_stmt|;
+block|}
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
 expr_stmt|;
 block|}
 name|values
@@ -827,11 +868,6 @@ operator|.
 name|d_status
 operator|=
 name|status
-expr_stmt|;
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
 expr_stmt|;
 block|}
 end_function
