@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276a646c0103
+DECL|enum|__anon28cb8b570103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1301,7 +1301,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"%s is a gimp plug-in and must be run by the gimp to be used\n"
+literal|"%s is a GIMP plug-in and must be run by GIMP to be used\n"
 argument_list|,
 name|argv
 index|[
@@ -3712,12 +3712,11 @@ block|{
 case|case
 name|GIMP_PDB_EXECUTION_ERROR
 case|:
-comment|/*g_warning ("an execution error occured while trying to run: \"%s\"", name);*/
 break|break;
 case|case
 name|GIMP_PDB_CALLING_ERROR
 case|:
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"a calling error occured while trying to run: \"%s\""
 argument_list|,
