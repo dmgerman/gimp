@@ -142,7 +142,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b3a26860103
+DECL|enum|__anon2a2e46570103
 typedef|typedef
 enum|enum
 block|{
@@ -463,6 +463,20 @@ end_decl_stmt
 begin_comment
 DECL|variable|levels_of_undo
 comment|/* 1 level of undo default */
+end_comment
+
+begin_decl_stmt
+DECL|variable|last_opened_size
+name|int
+name|last_opened_size
+init|=
+literal|4
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|last_opened_size
+comment|/* 4 documents in the MRU list */
 end_comment
 
 begin_decl_stmt
@@ -1486,6 +1500,17 @@ name|TT_INT
 block|,
 operator|&
 name|marching_speed
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"last-opened-size"
+block|,
+name|TT_INT
+block|,
+operator|&
+name|last_opened_size
 block|,
 name|NULL
 block|}

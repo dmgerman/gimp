@@ -144,6 +144,13 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
+name|int
+name|last_opened_size
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
 name|double
 name|gamma_val
 decl_stmt|;

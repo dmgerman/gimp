@@ -859,9 +859,6 @@ name|DeviceInfo
 modifier|*
 name|device_info
 decl_stmt|;
-name|GimpBrushP
-name|brushp
-decl_stmt|;
 comment|/* Find device if we have it */
 name|tmp_list
 operator|=

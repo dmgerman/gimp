@@ -3782,6 +3782,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|menus_last_opened_add
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|s
