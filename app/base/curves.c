@@ -7027,11 +7027,6 @@ literal|255
 operator|-
 name|y
 expr_stmt|;
-name|curves_calculate_curve
-argument_list|(
-name|cd
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GFREE
@@ -7066,6 +7061,11 @@ name|y
 expr_stmt|;
 break|break;
 block|}
+name|curves_calculate_curve
+argument_list|(
+name|cd
+argument_list|)
+expr_stmt|;
 name|curves_update
 argument_list|(
 name|cd
