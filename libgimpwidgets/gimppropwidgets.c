@@ -9179,6 +9179,7 @@ name|old_unit_value
 operator|)
 condition|)
 return|return;
+comment|/*    * FIXME: if the entry was created using gimp_coordinates_new, then    * the chain button is handled automatically and the following block    * of code is unnecessary (and, in fact, redundant).    */
 if|if
 condition|(
 name|x_value
@@ -9212,6 +9213,17 @@ name|GIMP_CHAIN_BUTTON
 argument_list|(
 name|chainbutton
 argument_list|)
+argument_list|)
+operator|&&
+operator|!
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|chainbutton
+argument_list|)
+argument_list|,
+literal|"constrains-ratio"
 argument_list|)
 condition|)
 block|{
