@@ -163,7 +163,7 @@ argument_list|(
 literal|"Tool_box"
 argument_list|)
 block|,
-name|NULL
+literal|"<control>B"
 block|,
 name|NULL
 block|,
