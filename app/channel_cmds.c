@@ -428,13 +428,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|channel_set_opacity
-argument_list|(
-name|channel
-argument_list|,
-name|opacity
-argument_list|)
-expr_stmt|;
 name|channel
 operator|=
 name|channel_new
