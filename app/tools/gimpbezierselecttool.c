@@ -286,7 +286,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f6d3220108
+DECL|struct|__anon2c6d1c290108
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -322,7 +322,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f6d3220208
+DECL|struct|__anon2c6d1c290208
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -377,7 +377,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f6d3220308
+DECL|struct|__anon2c6d1c290308
 block|{
 DECL|member|curve_count
 name|CountCurves
@@ -2661,7 +2661,7 @@ condition|)
 block|{
 name|op
 operator|=
-name|CHANNEL_OP_SUB
+name|CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
 else|else

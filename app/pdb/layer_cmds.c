@@ -1341,7 +1341,7 @@ name|ADD_WHITE_MASK
 operator|||
 name|mask_type
 operator|>
-name|ADD_INV_COPY_MASK
+name|ADD_INVERSE_COPY_MASK
 condition|)
 name|success
 operator|=
@@ -1427,7 +1427,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mask_type"
 block|,
-literal|"The type of mask: { WHITE_MASK (0), BLACK_MASK (1), ALPHA_MASK (2), SELECTION_MASK (3), INV_SELECTION_MASK (4), COPY_MASK (5), INV_COPY_MASK (6) }"
+literal|"The type of mask: { ADD_WHITE_MASK (0), ADD_BLACK_MASK (1), ADD_ALPHA_MASK (2), ADD_SELECTION_MASK (3), ADD_INVERSE_SELECTION_MASK (4), ADD_COPY_MASK (5), ADD_INVERSE_COPY_MASK (6) }"
 block|}
 block|}
 decl_stmt|;

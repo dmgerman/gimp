@@ -200,7 +200,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Paint fuzzy brush strokes"
+literal|"Erase to background or transparency"
 argument_list|)
 argument_list|,
 name|N_

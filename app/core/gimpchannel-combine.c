@@ -4384,7 +4384,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CHANNEL_OP_SUB
+name|CHANNEL_OP_SUBTRACT
 case|:
 name|gimp_channel_sub_segment
 argument_list|(
@@ -4407,7 +4407,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Only ADD, REPLACE, and SUB are valid for channel_combine!"
+literal|"Only ADD, REPLACE, and SUBTRACT are valid for channel_combine!"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4613,7 +4613,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CHANNEL_OP_SUB
+name|CHANNEL_OP_SUBTRACT
 case|:
 name|gimp_channel_sub_segment
 argument_list|(
@@ -4634,7 +4634,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"Only ADD, REPLACE, and SUB are valid for channel_combine!"
+literal|"Only ADD, REPLACE, and SUBTRACT are valid for channel_combine!"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4715,7 +4715,7 @@ if|if
 condition|(
 name|op
 operator|==
-name|CHANNEL_OP_SUB
+name|CHANNEL_OP_SUBTRACT
 condition|)
 name|gimp_channel_sub_segment
 argument_list|(
@@ -4735,7 +4735,7 @@ expr_stmt|;
 else|else
 name|g_warning
 argument_list|(
-literal|"Only ADD, REPLACE, and SUB are valid for channel_combine!"
+literal|"Only ADD, REPLACE, and SUBTRACT are valid for channel_combine!"
 argument_list|)
 expr_stmt|;
 block|}
@@ -5564,7 +5564,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|CHANNEL_OP_SUB
+name|CHANNEL_OP_SUBTRACT
 case|:
 name|pixel_regions_process_parallel
 argument_list|(

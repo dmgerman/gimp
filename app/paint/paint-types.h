@@ -97,7 +97,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29934e550103
+DECL|enum|__anon2c3a23390103
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -123,12 +123,11 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29934e550203
+DECL|enum|__anon2c3a23390203
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
 block|,
-comment|/*< nick=CONTINUOUS>*/
 comment|/* pencil, paintbrush, airbrush, clone */
 DECL|enumerator|INCREMENTAL
 name|INCREMENTAL
@@ -146,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29934e550303
+DECL|enum|__anon2c3a23390303
 block|{
 DECL|enumerator|ONCE_FORWARD
 name|ONCE_FORWARD
@@ -176,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29934e550403
+DECL|enum|__anon2c3a23390403
 block|{
 DECL|enumerator|DODGE
 name|DODGE
@@ -192,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29934e550503
+DECL|enum|__anon2c3a23390503
 block|{
 DECL|enumerator|BLUR_CONVOLVE
 name|BLUR_CONVOLVE
@@ -211,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29934e550603
+DECL|enum|__anon2c3a23390603
 block|{
 DECL|enumerator|IMAGE_CLONE
 name|IMAGE_CLONE

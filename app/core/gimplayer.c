@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b62988d0103
+DECL|enum|__anon29e12ca20103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -2563,7 +2563,7 @@ case|case
 name|ADD_SELECTION_MASK
 case|:
 case|case
-name|ADD_INV_SELECTION_MASK
+name|ADD_INVERSE_SELECTION_MASK
 case|:
 block|{
 name|GimpDrawable
@@ -2637,7 +2637,7 @@ case|case
 name|ADD_COPY_MASK
 case|:
 case|case
-name|ADD_INV_COPY_MASK
+name|ADD_INVERSE_COPY_MASK
 case|:
 block|{
 name|TileManager
@@ -2817,10 +2817,10 @@ name|ADD_COPY_MASK
 case|:
 break|break;
 case|case
-name|ADD_INV_SELECTION_MASK
+name|ADD_INVERSE_SELECTION_MASK
 case|:
 case|case
-name|ADD_INV_COPY_MASK
+name|ADD_INVERSE_COPY_MASK
 case|:
 name|gimp_drawable_invert
 argument_list|(

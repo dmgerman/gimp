@@ -501,14 +501,14 @@ literal|"fg-bg-hsv-mode"
 block|}
 block|,
 block|{
-name|GIMP_FG_TRANS_MODE
+name|GIMP_FG_TRANSPARENT_MODE
 block|,
 name|N_
 argument_list|(
 literal|"FG to Transparent"
 argument_list|)
 block|,
-literal|"fg-trans-mode"
+literal|"fg-transparent-mode"
 block|}
 block|,
 block|{

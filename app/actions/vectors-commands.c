@@ -507,7 +507,7 @@ name|widget
 argument_list|,
 name|data
 argument_list|,
-name|CHANNEL_OP_SUB
+name|CHANNEL_OP_SUBTRACT
 argument_list|)
 expr_stmt|;
 block|}

@@ -1719,7 +1719,7 @@ name|sel_tool
 operator|->
 name|op
 operator|=
-name|SELECTION_SUB
+name|SELECTION_SUBTRACT
 expr_stmt|;
 comment|/* subtract from the selection */
 block|}
@@ -3694,7 +3694,7 @@ operator|)
 condition|)
 name|operation
 operator|=
-name|SELECTION_SUB
+name|SELECTION_SUBTRACT
 expr_stmt|;
 elseif|else
 if|if

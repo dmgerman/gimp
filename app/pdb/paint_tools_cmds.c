@@ -3009,7 +3009,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
-literal|"CONTINUOUS (0) or INCREMENTAL (1)"
+literal|"CONSTANT (0) or INCREMENTAL (1)"
 block|}
 block|}
 decl_stmt|;
@@ -3577,7 +3577,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
-literal|"CONTINUOUS (0) or INCREMENTAL (1)"
+literal|"CONSTANT (0) or INCREMENTAL (1)"
 block|}
 block|,
 block|{

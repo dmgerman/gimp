@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f13c180103
+DECL|enum|__anon2c40aa2d0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f13c180208
+DECL|struct|__anon2c40aa2d0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f13c180308
+DECL|struct|__anon2c40aa2d0308
 block|{
 DECL|member|run
 name|gint
@@ -4964,14 +4964,14 @@ name|gimp_drawable_fill
 argument_list|(
 name|xlayer_id
 argument_list|,
-name|GIMP_BG_IMAGE_FILL
+name|GIMP_BACKGROUND_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_fill
 argument_list|(
 name|ylayer_id
 argument_list|,
-name|GIMP_BG_IMAGE_FILL
+name|GIMP_BACKGROUND_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_layer

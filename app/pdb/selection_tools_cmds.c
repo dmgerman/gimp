@@ -449,7 +449,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
-literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
+literal|"The selection operation: { CHANNEL_OP_ADD (0), CHANNEL_OP_SUBTRACT (1), CHANNEL_OP_REPLACE (2), CHANNEL_OP_INTERSECT (3) }"
 block|}
 block|,
 block|{
@@ -834,7 +834,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
-literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
+literal|"The selection operation: { CHANNEL_OP_ADD (0), CHANNEL_OP_SUBTRACT (1), CHANNEL_OP_REPLACE (2), CHANNEL_OP_INTERSECT (3) }"
 block|}
 block|,
 block|{
@@ -1158,7 +1158,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
-literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
+literal|"The selection operation: { CHANNEL_OP_ADD (0), CHANNEL_OP_SUBTRACT (1), CHANNEL_OP_REPLACE (2), CHANNEL_OP_INTERSECT (3) }"
 block|}
 block|,
 block|{
@@ -1538,7 +1538,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
-literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
+literal|"The selection operation: { CHANNEL_OP_ADD (0), CHANNEL_OP_SUBTRACT (1), CHANNEL_OP_REPLACE (2), CHANNEL_OP_INTERSECT (3) }"
 block|}
 block|,
 block|{
@@ -1904,7 +1904,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"operation"
 block|,
-literal|"The selection operation: { ADD (0), SUB (1), REPLACE (2), INTERSECT (3) }"
+literal|"The selection operation: { CHANNEL_OP_ADD (0), CHANNEL_OP_SUBTRACT (1), CHANNEL_OP_REPLACE (2), CHANNEL_OP_INTERSECT (3) }"
 block|}
 block|,
 block|{

@@ -25,7 +25,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"WHITE-MASK"
+literal|"ADD-WHITE-MASK"
 argument_list|)
 argument_list|,
 name|flocons
@@ -40,7 +40,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"BLACK-MASK"
+literal|"ADD-BLACK-MASK"
 argument_list|)
 argument_list|,
 name|flocons
@@ -55,7 +55,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"ALPHA-MASK"
+literal|"ADD-ALPHA-MASK"
 argument_list|)
 argument_list|,
 name|flocons
@@ -70,7 +70,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SELECTION-MASK"
+literal|"ADD-SELECTION-MASK"
 argument_list|)
 argument_list|,
 name|flocons
@@ -85,7 +85,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"INV-SELECTION-MASK"
+literal|"ADD-INVERSE-SELECTION-MASK"
 argument_list|)
 argument_list|,
 name|flocons
@@ -100,7 +100,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"COPY-MASK"
+literal|"ADD-COPY-MASK"
 argument_list|)
 argument_list|,
 name|flocons
@@ -115,7 +115,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"INV-COPY-MASK"
+literal|"ADD-INVERSE-COPY-MASK"
 argument_list|)
 argument_list|,
 name|flocons
@@ -220,7 +220,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"ADD"
+literal|"CHANNEL-OP-ADD"
 argument_list|)
 argument_list|,
 name|flocons
@@ -235,7 +235,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"SUB"
+literal|"CHANNEL-OP-SUBTRACT"
 argument_list|)
 argument_list|,
 name|flocons
@@ -250,7 +250,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"REPLACE"
+literal|"CHANNEL-OP-REPLACE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -265,7 +265,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"INTERSECT"
+literal|"CHANNEL-OP-INTERSECT"
 argument_list|)
 argument_list|,
 name|flocons
@@ -535,7 +535,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"FG-BG-RGB"
+literal|"FG-BG-RGB-MODE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -550,7 +550,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"FG-BG-HSV"
+literal|"FG-BG-HSV-MODE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -565,7 +565,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"FG-TRANS"
+literal|"FG-TRANSPARENT-MODE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -580,7 +580,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"CUSTOM"
+literal|"CUSTOM-MODE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -805,7 +805,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"FG-IMAGE-FILL"
+literal|"FOREGROUND-FILL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -820,7 +820,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"BG-IMAGE-FILL"
+literal|"BACKGROUND-FILL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -835,7 +835,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"WHITE-IMAGE-FILL"
+literal|"WHITE-FILL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -850,7 +850,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"TRANS-IMAGE-FILL"
+literal|"TRANSPARENT-FILL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -865,7 +865,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"NO-IMAGE-FILL"
+literal|"NO-FILL"
 argument_list|)
 argument_list|,
 name|flocons
@@ -2620,7 +2620,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"CONTINUOUS"
+literal|"CONSTANT"
 argument_list|)
 argument_list|,
 name|flocons

@@ -145,7 +145,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7189c40103
+DECL|enum|__anon28d3d3e00103
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7189c40203
+DECL|enum|__anon28d3d3e00203
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -209,7 +209,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c7189c40308
+DECL|struct|__anon28d3d3e00308
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -1289,7 +1289,7 @@ name|gimp_drawable_fill
 argument_list|(
 name|nl
 argument_list|,
-name|GIMP_TRANS_IMAGE_FILL
+name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

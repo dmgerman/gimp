@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298c31e10108
+DECL|struct|__anon29599b4d0108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298c31e10208
+DECL|struct|__anon29599b4d0208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -3855,7 +3855,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_FG_TRANS_MODE
+name|GIMP_FG_TRANSPARENT_MODE
 case|:
 comment|/* Color does not change, just the opacity */
 name|rbd

@@ -816,7 +816,7 @@ condition|)
 block|{
 name|operation
 operator|=
-name|CHANNEL_OP_SUB
+name|CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
 name|gimp_vectors_list_view_to_selection

@@ -537,7 +537,7 @@ condition|)
 block|{
 name|button_op
 operator|=
-name|SELECTION_SUB
+name|SELECTION_SUBTRACT
 expr_stmt|;
 block|}
 if|if
@@ -784,7 +784,7 @@ name|selection_tool
 operator|->
 name|op
 operator|=
-name|SELECTION_SUB
+name|SELECTION_SUBTRACT
 expr_stmt|;
 comment|/* subtract from the selection */
 block|}
@@ -881,7 +881,7 @@ name|GIMP_CURSOR_MODIFIER_PLUS
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_SUB
+name|SELECTION_SUBTRACT
 case|:
 name|cmodifier
 operator|=

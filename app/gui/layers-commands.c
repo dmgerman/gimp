@@ -3584,7 +3584,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_INV_SELECTION_MASK
+name|ADD_INVERSE_SELECTION_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3608,7 +3608,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_INV_COPY_MASK
+name|ADD_INVERSE_COPY_MASK
 argument_list|)
 argument_list|,
 name|NULL
@@ -3702,7 +3702,7 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|ADD_INV_COPY_MASK
+name|ADD_INVERSE_COPY_MASK
 argument_list|)
 argument_list|,
 name|NULL

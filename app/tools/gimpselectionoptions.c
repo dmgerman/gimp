@@ -397,7 +397,7 @@ name|SELECTION_REPLACE
 block|,
 name|SELECTION_ADD
 block|,
-name|SELECTION_SUB
+name|SELECTION_SUBTRACT
 block|,
 name|SELECTION_INTERSECT
 block|}

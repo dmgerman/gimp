@@ -880,7 +880,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|SELECTION_SUB
+name|SELECTION_SUBTRACT
 case|:
 name|gimp_tool_push_status
 argument_list|(

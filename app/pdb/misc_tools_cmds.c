@@ -611,7 +611,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"blend_mode"
 block|,
-literal|"The type of blend: { GIMP_FG_BG_RGB (0), GIMP_FG_BG_HSV (1), GIMP_FG_TRANS (2), GIMP_CUSTOM (3) }"
+literal|"The type of blend: { GIMP_FG_BG_RGB_MODE (0), GIMP_FG_BG_HSV_MODE (1), GIMP_FG_TRANSPARENT_MODE (2), GIMP_CUSTOM_MODE (3) }"
 block|}
 block|,
 block|{
