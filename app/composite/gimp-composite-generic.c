@@ -28,13 +28,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
+file|"libgimpcolor/gimpcolor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpcolor/gimpcolor.h"
+file|"base/base-types.h"
 end_include
 
 begin_include
