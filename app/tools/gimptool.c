@@ -1020,7 +1020,6 @@ operator|->
 name|control
 argument_list|)
 condition|)
-block|{
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -1035,7 +1034,6 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_tool_control_pause
 argument_list|(
 name|tool
@@ -1074,7 +1072,6 @@ operator|->
 name|control
 argument_list|)
 condition|)
-block|{
 name|GIMP_TOOL_GET_CLASS
 argument_list|(
 name|tool
@@ -1089,7 +1086,6 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -1118,6 +1114,15 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_tool_control_is_active
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+condition|)
 name|gimp_tool_control_halt
 argument_list|(
 name|tool

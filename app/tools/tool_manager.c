@@ -1377,6 +1377,17 @@ operator|==
 name|HALT
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_tool_control_is_active
+argument_list|(
+name|tool_manager
+operator|->
+name|active_tool
+operator|->
+name|control
+argument_list|)
+condition|)
 name|gimp_tool_control_halt
 argument_list|(
 name|tool_manager

@@ -79,7 +79,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2742d5650103
+DECL|enum|__anon2c2698a00103
 block|{
 DECL|enumerator|GIMP_CROP
 name|GIMP_CROP
@@ -103,7 +103,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2742d5650203
+DECL|enum|__anon2c2698a00203
 block|{
 DECL|enumerator|SELECTION_ADD
 name|SELECTION_ADD
@@ -140,28 +140,6 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  The possible states for tools  */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-comment|/*< skip>*/
-DECL|enum|__anon2742d5650303
-block|{
-DECL|enumerator|INACTIVE
-name|INACTIVE
-block|,
-DECL|enumerator|ACTIVE
-name|ACTIVE
-DECL|typedef|GimpToolState
-block|}
-name|GimpToolState
-typedef|;
-end_typedef
-
-begin_comment
 comment|/*  Tool control actions  */
 end_comment
 
@@ -170,7 +148,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2742d5650403
+DECL|enum|__anon2c2698a00303
 block|{
 DECL|enumerator|PAUSE
 name|PAUSE
@@ -195,7 +173,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2742d5650503
+DECL|enum|__anon2c2698a00403
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -233,7 +211,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2742d5650603
+DECL|enum|__anon2c2698a00503
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -274,7 +252,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2742d5650703
+DECL|enum|__anon2c2698a00603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_NONE
 name|GIMP_TRANSFORM_GRID_TYPE_NONE
@@ -302,7 +280,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon2742d5650803
+DECL|enum|__anon2c2698a00703
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING

@@ -103,9 +103,9 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-DECL|member|state
-name|GimpToolState
-name|state
+DECL|member|active
+name|gboolean
+name|active
 decl_stmt|;
 comment|/*  state of tool activity               */
 DECL|member|paused_count
