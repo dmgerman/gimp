@@ -233,7 +233,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"Filter Pack Simulation"
+literal|"plug_in_filter_pack"
 argument_list|,
 literal|"Allows the user to change H, S, or C with many previews"
 argument_list|,
