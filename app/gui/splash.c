@@ -134,7 +134,7 @@ argument_list|(
 name|win_initstatus
 argument_list|)
 argument_list|,
-name|GDK_WINDOW_TYPE_HINT_DIALOG
+name|GDK_WINDOW_TYPE_HINT_SPLASHSCREEN
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_title

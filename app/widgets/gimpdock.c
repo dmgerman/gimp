@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1117e30103
+DECL|enum|__anon2a2015100103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -574,6 +574,16 @@ argument_list|,
 literal|"dock"
 argument_list|,
 literal|"Gimp"
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_type_hint
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+name|GDK_WINDOW_TYPE_HINT_UTILITY
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_resizable
