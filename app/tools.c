@@ -1561,6 +1561,20 @@ DECL|function|tools_options_dialog_show ()
 name|tools_options_dialog_show
 parameter_list|()
 block|{
+comment|/* menus_activate_callback() will destroy the active tool in many      cases.  if the user tries to bring up the options before      switching tools, the dialog will be empty.  recreate the active      tool here if necessary to avoid this behavior */
+if|if
+condition|(
+operator|!
+name|active_tool
+condition|)
+name|active_tool_control
+argument_list|(
+name|RECREATE
+argument_list|,
+name|gdisplay_active
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1928,6 +1942,11 @@ name|DESTROY
 case|:
 name|active_tool_free
 argument_list|()
+expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|options_shell
+argument_list|)
 expr_stmt|;
 break|break;
 block|}
