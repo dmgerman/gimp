@@ -155,8 +155,6 @@ condition|)
 block|{
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|viewable
-argument_list|,
 name|gimage
 operator|->
 name|width
@@ -191,8 +189,6 @@ else|else
 block|{
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|viewable
-argument_list|,
 name|item
 operator|->
 name|width
@@ -307,8 +303,6 @@ name|scaling_up
 decl_stmt|;
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|viewable
-argument_list|,
 name|item
 operator|->
 name|width

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f71630103
+DECL|enum|__anon2c085a470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f71630203
+DECL|enum|__anon2c085a470203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1294,13 +1294,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_viewable_calc_preview_size (GimpViewable * viewable,gint aspect_width,gint aspect_height,gint width,gint height,gboolean dot_for_dot,gdouble xresolution,gdouble yresolution,gint * return_width,gint * return_height,gboolean * scaling_up)
+DECL|function|gimp_viewable_calc_preview_size (gint aspect_width,gint aspect_height,gint width,gint height,gboolean dot_for_dot,gdouble xresolution,gdouble yresolution,gint * return_width,gint * return_height,gboolean * scaling_up)
 name|gimp_viewable_calc_preview_size
 parameter_list|(
-name|GimpViewable
-modifier|*
-name|viewable
-parameter_list|,
 name|gint
 name|aspect_width
 parameter_list|,
@@ -1341,14 +1337,6 @@ decl_stmt|;
 name|gdouble
 name|yratio
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_VIEWABLE
-argument_list|(
-name|viewable
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|aspect_width
@@ -1724,8 +1712,6 @@ condition|)
 block|{
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|viewable
-argument_list|,
 name|w
 argument_list|,
 name|h

@@ -225,7 +225,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b176e580103
+DECL|enum|__anon2c5afb870103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -239,7 +239,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b176e580208
+DECL|struct|__anon2c5afb870208
 block|{
 DECL|member|dirname
 specifier|const
@@ -2672,8 +2672,6 @@ name|preview_height
 decl_stmt|;
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|viewable
-argument_list|,
 name|temp_buf
 operator|->
 name|width

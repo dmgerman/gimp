@@ -182,7 +182,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2796c1730103
+DECL|enum|__anon2c06ab9b0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -585,6 +585,12 @@ operator|->
 name|get_memsize
 operator|=
 name|gimp_brush_get_memsize
+expr_stmt|;
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-tool-paintbrush"
 expr_stmt|;
 name|viewable_class
 operator|->
@@ -2727,7 +2733,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2796c173020a
+DECL|union|__anon2c06ab9b020a
 block|{
 DECL|member|u
 name|guint16

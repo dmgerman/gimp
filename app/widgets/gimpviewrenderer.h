@@ -105,6 +105,10 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
+DECL|member|viewable_type
+name|GType
+name|viewable_type
+decl_stmt|;
 DECL|member|viewable
 name|GimpViewable
 modifier|*

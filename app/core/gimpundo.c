@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298c82060103
+DECL|enum|__anon2931b7560103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -476,6 +476,12 @@ name|gimp_undo_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
+name|default_stock_id
+operator|=
+literal|"gtk-undo"
+expr_stmt|;
+name|viewable_class
+operator|->
 name|get_popup_size
 operator|=
 name|gimp_undo_get_popup_size
@@ -841,8 +847,6 @@ name|preview_height
 decl_stmt|;
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|viewable
-argument_list|,
 name|undo
 operator|->
 name|preview

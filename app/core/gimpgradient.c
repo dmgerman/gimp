@@ -526,6 +526,12 @@ name|gimp_gradient_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-tool-blend"
+expr_stmt|;
+name|viewable_class
+operator|->
 name|get_preview_size
 operator|=
 name|gimp_gradient_get_preview_size

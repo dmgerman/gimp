@@ -352,10 +352,6 @@ begin_function_decl
 name|void
 name|gimp_viewable_calc_preview_size
 parameter_list|(
-name|GimpViewable
-modifier|*
-name|viewable
-parameter_list|,
 name|gint
 name|aspect_width
 parameter_list|,

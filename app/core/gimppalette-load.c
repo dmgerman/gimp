@@ -491,6 +491,12 @@ name|gimp_palette_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
+name|default_stock_id
+operator|=
+literal|"gtk-select-color"
+expr_stmt|;
+name|viewable_class
+operator|->
 name|get_preview_size
 operator|=
 name|gimp_palette_get_preview_size

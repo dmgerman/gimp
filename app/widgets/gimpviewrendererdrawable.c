@@ -397,10 +397,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|renderer
-operator|->
-name|viewable
-argument_list|,
 name|item
 operator|->
 name|width
@@ -440,10 +436,6 @@ else|else
 block|{
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|renderer
-operator|->
-name|viewable
-argument_list|,
 name|item
 operator|->
 name|width

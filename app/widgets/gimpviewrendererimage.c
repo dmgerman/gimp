@@ -294,10 +294,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_viewable_calc_preview_size
 argument_list|(
-name|renderer
-operator|->
-name|viewable
-argument_list|,
 name|gimage
 operator|->
 name|width

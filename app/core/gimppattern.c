@@ -485,6 +485,12 @@ name|gimp_pattern_get_memsize
 expr_stmt|;
 name|viewable_class
 operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-tool-bucket-fill"
+expr_stmt|;
+name|viewable_class
+operator|->
 name|get_popup_size
 operator|=
 name|gimp_pattern_get_popup_size
