@@ -1848,6 +1848,12 @@ condition|(
 name|gimp
 operator|->
 name|current_plug_in
+operator|&&
+name|gimp
+operator|->
+name|current_plug_in
+operator|->
+name|plug_in_def
 condition|)
 name|list
 operator|=
@@ -2100,6 +2106,12 @@ condition|(
 name|gimp
 operator|->
 name|current_plug_in
+operator|&&
+name|gimp
+operator|->
+name|current_plug_in
+operator|->
+name|plug_in_def
 condition|)
 name|list
 operator|=
@@ -2176,10 +2188,10 @@ argument_list|(
 name|mime_type
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|proc_def
 return|;
+block|}
 block|}
 return|return
 name|NULL
