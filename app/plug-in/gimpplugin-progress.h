@@ -19,18 +19,28 @@ end_define
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|<time.h>
 end_include
 
 begin_comment
 comment|/* time_t */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|<sys/types.h>
+end_include
+
+begin_comment
+comment|/* pid_t  */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"pdb/procedural_db.h"
+end_include
 
 begin_define
 DECL|macro|WRITE_BUFFER_SIZE
@@ -87,31 +97,6 @@ directive|define
 name|PLUG_IN_INDEXEDA_IMAGE
 value|0x20
 end_define
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28ffd6c00103
-block|{
-DECL|enumerator|RUN_INTERACTIVE
-name|RUN_INTERACTIVE
-init|=
-literal|0
-block|,
-DECL|enumerator|RUN_NONINTERACTIVE
-name|RUN_NONINTERACTIVE
-init|=
-literal|1
-block|,
-DECL|enumerator|RUN_WITH_LAST_VALS
-name|RUN_WITH_LAST_VALS
-init|=
-literal|2
-DECL|typedef|RunModeType
-block|}
-name|RunModeType
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_PlugIn

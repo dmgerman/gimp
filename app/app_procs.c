@@ -192,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/file-open-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/gui.h"
 end_include
 
@@ -241,12 +247,6 @@ begin_include
 include|#
 directive|include
 file|"context_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-open.h"
 end_include
 
 begin_include
@@ -456,7 +456,7 @@ condition|(
 operator|*
 name|gimp_argv
 condition|)
-name|file_open
+name|file_open_with_display
 argument_list|(
 operator|*
 name|gimp_argv

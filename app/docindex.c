@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/file-open-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"docindex.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-open.h"
 end_include
 
 begin_include
@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b059e0108
+DECL|struct|__anon2b8311970108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7b059e0208
+DECL|struct|__anon2b8311970208
 block|{
 DECL|member|boole
 name|gboolean
@@ -2066,7 +2066,7 @@ operator|.
 name|boole
 condition|)
 block|{
-name|file_open
+name|file_open_with_display
 argument_list|(
 name|file_name
 argument_list|,
@@ -2077,7 +2077,7 @@ block|}
 block|}
 else|else
 block|{
-name|file_open
+name|file_open_with_display
 argument_list|(
 name|file_name
 argument_list|,

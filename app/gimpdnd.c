@@ -72,13 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"context_manager.h"
+file|"gui/file-open-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"file-open.h"
+file|"context_manager.h"
 end_include
 
 begin_include
@@ -190,7 +190,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4a0b500103
+DECL|enum|__anon2b38208d0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE
@@ -5562,7 +5562,7 @@ argument_list|)
 operator|>
 literal|2
 condition|)
-name|file_open
+name|file_open_with_display
 argument_list|(
 name|name
 argument_list|,

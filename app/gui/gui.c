@@ -78,6 +78,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file-open-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file-save-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprc.h"
 end_include
 
@@ -145,18 +157,6 @@ begin_include
 include|#
 directive|include
 file|"app_procs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-open.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-save.h"
 end_include
 
 begin_include

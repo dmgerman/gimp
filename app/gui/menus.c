@@ -90,6 +90,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file-open-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"file-save-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay.h"
 end_include
 
@@ -115,18 +127,6 @@ begin_include
 include|#
 directive|include
 file|"test-commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-open.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"file-save.h"
 end_include
 
 begin_include
@@ -8410,7 +8410,7 @@ argument_list|)
 expr_stmt|;
 name|status
 operator|=
-name|file_open
+name|file_open_with_display
 argument_list|(
 name|raw_filename
 argument_list|,
