@@ -64,6 +64,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|eraser_non_gui_default
+parameter_list|(
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|int
+parameter_list|,
+name|double
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|Tool
 modifier|*
 name|tools_new_eraser

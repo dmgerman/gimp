@@ -123,6 +123,18 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_comment
+comment|/* default defines */
+end_comment
+
+begin_define
+DECL|macro|SMUDGE_DEFAULT_PRESSURE
+define|#
+directive|define
+name|SMUDGE_DEFAULT_PRESSURE
+value|50.0
+end_define
+
+begin_comment
 comment|/*  the smudge structures  */
 end_comment
 
@@ -194,6 +206,18 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* Loca varibles */
+end_comment
+
+begin_decl_stmt
+DECL|variable|non_gui_pressure
+specifier|static
+name|double
+name|non_gui_pressure
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 specifier|static
 name|void
@@ -201,6 +225,8 @@ name|smudge_motion
 parameter_list|(
 name|PaintCore
 modifier|*
+parameter_list|,
+name|double
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -395,7 +421,7 @@ name|options
 operator|->
 name|pressure_d
 operator|=
-literal|50.0
+name|SMUDGE_DEFAULT_PRESSURE
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -626,6 +652,10 @@ case|:
 name|smudge_motion
 argument_list|(
 name|paint_core
+argument_list|,
+name|smudge_options
+operator|->
+name|pressure
 argument_list|,
 name|drawable
 argument_list|)
@@ -1312,12 +1342,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|smudge_motion (PaintCore * paint_core,GimpDrawable * drawable)
+DECL|function|smudge_motion (PaintCore * paint_core,double smudge_pressure,GimpDrawable * drawable)
 name|smudge_motion
 parameter_list|(
 name|PaintCore
 modifier|*
 name|paint_core
+parameter_list|,
+name|double
+name|smudge_pressure
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -1464,9 +1497,7 @@ name|pressure
 operator|=
 operator|(
 operator|(
-name|smudge_options
-operator|->
-name|pressure
+name|smudge_pressure
 operator|)
 operator|/
 literal|100.0
@@ -1782,11 +1813,68 @@ name|smudge_motion
 argument_list|(
 name|paint_core
 argument_list|,
+name|non_gui_pressure
+argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
 return|return
 name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|smudge_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+name|smudge_non_gui_default
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|int
+name|num_strokes
+parameter_list|,
+name|double
+modifier|*
+name|stroke_array
+parameter_list|)
+block|{
+name|double
+name|pressure
+init|=
+name|SMUDGE_DEFAULT_PRESSURE
+decl_stmt|;
+name|SmudgeOptions
+modifier|*
+name|options
+init|=
+name|smudge_options
+decl_stmt|;
+if|if
+condition|(
+name|options
+condition|)
+block|{
+name|pressure
+operator|=
+name|options
+operator|->
+name|pressure
+expr_stmt|;
+block|}
+return|return
+name|smudge_non_gui
+argument_list|(
+name|drawable
+argument_list|,
+name|pressure
+argument_list|,
+name|num_strokes
+argument_list|,
+name|stroke_array
+argument_list|)
 return|;
 block|}
 end_function
@@ -1835,12 +1923,24 @@ index|]
 argument_list|)
 condition|)
 block|{
+name|smudge_init
+argument_list|(
+operator|&
+name|non_gui_paint_core
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
 comment|/* Set the paint core's paint func */
 name|non_gui_paint_core
 operator|.
 name|paint_func
 operator|=
 name|smudge_non_gui_paint_func
+expr_stmt|;
+name|non_gui_pressure
+operator|=
+name|pressure
 expr_stmt|;
 name|non_gui_paint_core
 operator|.
@@ -1964,6 +2064,14 @@ expr_stmt|;
 comment|/* Cleanup */
 name|paint_core_cleanup
 argument_list|()
+expr_stmt|;
+name|smudge_finish
+argument_list|(
+operator|&
+name|non_gui_paint_core
+argument_list|,
+name|drawable
+argument_list|)
 expr_stmt|;
 return|return
 name|TRUE

@@ -32,7 +32,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_CONVOLVE>*/
-DECL|enum|__anon2b327a840103
+DECL|enum|__anon299ed4d70103
 block|{
 DECL|enumerator|BLUR_CONVOLVE
 name|BLUR_CONVOLVE
@@ -72,6 +72,23 @@ name|GimpDrawable
 modifier|*
 parameter_list|,
 name|double
+parameter_list|,
+name|ConvolveType
+parameter_list|,
+name|int
+parameter_list|,
+name|double
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|convolve_non_gui_default
+parameter_list|(
+name|GimpDrawable
+modifier|*
 parameter_list|,
 name|int
 parameter_list|,

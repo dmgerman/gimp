@@ -150,6 +150,26 @@ value|-64
 end_define
 
 begin_comment
+comment|/* defaults */
+end_comment
+
+begin_define
+DECL|macro|DEFAULT_CONVOLVE_PRESSURE
+define|#
+directive|define
+name|DEFAULT_CONVOLVE_PRESSURE
+value|50.0
+end_define
+
+begin_define
+DECL|macro|DEFAULT_CONVOLVE_TYPE
+define|#
+directive|define
+name|DEFAULT_CONVOLVE_TYPE
+value|BLUR_CONVOLVE
+end_define
+
+begin_comment
 comment|/*  the convolve structures  */
 end_comment
 
@@ -247,6 +267,22 @@ DECL|variable|matrix_divisor
 specifier|static
 name|int
 name|matrix_divisor
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|non_gui_type
+specifier|static
+name|ConvolveType
+name|non_gui_type
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|non_gui_pressure
+specifier|static
+name|double
+name|non_gui_pressure
 decl_stmt|;
 end_decl_stmt
 
@@ -512,6 +548,10 @@ modifier|*
 parameter_list|,
 name|GimpDrawable
 modifier|*
+parameter_list|,
+name|ConvolveType
+parameter_list|,
+name|double
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -679,7 +719,7 @@ name|options
 operator|->
 name|type_d
 operator|=
-name|BLUR_CONVOLVE
+name|DEFAULT_CONVOLVE_TYPE
 expr_stmt|;
 name|options
 operator|->
@@ -689,7 +729,7 @@ name|options
 operator|->
 name|pressure_d
 operator|=
-literal|50.0
+name|DEFAULT_CONVOLVE_PRESSURE
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -974,6 +1014,14 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+name|convolve_options
+operator|->
+name|type
+argument_list|,
+name|convolve_options
+operator|->
+name|pressure
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1181,7 +1229,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|convolve_motion (PaintCore * paint_core,GimpDrawable * drawable)
+DECL|function|convolve_motion (PaintCore * paint_core,GimpDrawable * drawable,ConvolveType type,double pressure)
 name|convolve_motion
 parameter_list|(
 name|PaintCore
@@ -1191,6 +1239,12 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|ConvolveType
+name|type
+parameter_list|,
+name|double
+name|pressure
 parameter_list|)
 block|{
 name|GImage
@@ -1353,12 +1407,8 @@ argument_list|)
 expr_stmt|;
 name|calculate_matrix
 argument_list|(
-name|convolve_options
-operator|->
 name|type
 argument_list|,
-name|convolve_options
-operator|->
 name|pressure
 argument_list|,
 name|paint_core
@@ -2032,6 +2082,10 @@ argument_list|(
 name|paint_core
 argument_list|,
 name|drawable
+argument_list|,
+name|non_gui_type
+argument_list|,
+name|non_gui_pressure
 argument_list|)
 expr_stmt|;
 return|return
@@ -2042,7 +2096,75 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|convolve_non_gui (GimpDrawable * drawable,double pressure,int num_strokes,double * stroke_array)
+DECL|function|convolve_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+name|convolve_non_gui_default
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|int
+name|num_strokes
+parameter_list|,
+name|double
+modifier|*
+name|stroke_array
+parameter_list|)
+block|{
+name|double
+name|pressure
+init|=
+name|DEFAULT_CONVOLVE_PRESSURE
+decl_stmt|;
+name|ConvolveType
+name|type
+init|=
+name|DEFAULT_CONVOLVE_TYPE
+decl_stmt|;
+name|ConvolveOptions
+modifier|*
+name|options
+init|=
+name|convolve_options
+decl_stmt|;
+if|if
+condition|(
+name|options
+condition|)
+block|{
+name|pressure
+operator|=
+name|options
+operator|->
+name|pressure
+expr_stmt|;
+name|type
+operator|=
+name|options
+operator|->
+name|type
+expr_stmt|;
+block|}
+return|return
+name|convolve_non_gui
+argument_list|(
+name|drawable
+argument_list|,
+name|pressure
+argument_list|,
+name|type
+argument_list|,
+name|num_strokes
+argument_list|,
+name|stroke_array
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|convolve_non_gui (GimpDrawable * drawable,double pressure,ConvolveType type,int num_strokes,double * stroke_array)
 name|convolve_non_gui
 parameter_list|(
 name|GimpDrawable
@@ -2051,6 +2173,9 @@ name|drawable
 parameter_list|,
 name|double
 name|pressure
+parameter_list|,
+name|ConvolveType
+name|type
 parameter_list|,
 name|int
 name|num_strokes
@@ -2090,6 +2215,14 @@ operator|.
 name|paint_func
 operator|=
 name|convolve_non_gui_paint_func
+expr_stmt|;
+name|non_gui_type
+operator|=
+name|type
+expr_stmt|;
+name|non_gui_pressure
+operator|=
+name|pressure
 expr_stmt|;
 name|non_gui_paint_core
 operator|.

@@ -641,7 +641,7 @@ literal|"1999"
 argument_list|,
 name|NULL
 argument_list|,
-literal|"RGB*, GRAY*"
+literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -741,7 +741,7 @@ literal|"1999"
 argument_list|,
 literal|"<Image>/Select/To Path"
 argument_list|,
-literal|"RGB*, GRAY*"
+literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,

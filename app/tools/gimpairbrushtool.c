@@ -111,6 +111,18 @@ name|MAX_PRESSURE
 value|0.075
 end_define
 
+begin_comment
+comment|/* Default pressure setting */
+end_comment
+
+begin_define
+DECL|macro|AIRBRUSH_PRESSURE_DEFAULT
+define|#
+directive|define
+name|AIRBRUSH_PRESSURE_DEFAULT
+value|10.0
+end_define
+
 begin_define
 DECL|macro|OFF
 define|#
@@ -435,7 +447,7 @@ name|options
 operator|->
 name|pressure_d
 operator|=
-literal|10.0
+name|AIRBRUSH_PRESSURE_DEFAULT
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -1353,6 +1365,59 @@ end_function
 
 begin_function
 name|gboolean
+DECL|function|airbrush_non_gui_default (GimpDrawable * drawable,int num_strokes,double * stroke_array)
+name|airbrush_non_gui_default
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|int
+name|num_strokes
+parameter_list|,
+name|double
+modifier|*
+name|stroke_array
+parameter_list|)
+block|{
+name|AirbrushOptions
+modifier|*
+name|options
+init|=
+name|airbrush_options
+decl_stmt|;
+name|gdouble
+name|pressure
+init|=
+name|AIRBRUSH_PRESSURE_DEFAULT
+decl_stmt|;
+if|if
+condition|(
+name|options
+condition|)
+name|pressure
+operator|=
+name|options
+operator|->
+name|pressure
+expr_stmt|;
+return|return
+name|airbrush_non_gui
+argument_list|(
+name|drawable
+argument_list|,
+name|pressure
+argument_list|,
+name|num_strokes
+argument_list|,
+name|stroke_array
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
 DECL|function|airbrush_non_gui (GimpDrawable * drawable,double pressure,int num_strokes,double * stroke_array)
 name|airbrush_non_gui
 parameter_list|(
@@ -1401,6 +1466,10 @@ operator|.
 name|paint_func
 operator|=
 name|airbrush_non_gui_paint_func
+expr_stmt|;
+name|non_gui_pressure
+operator|=
+name|pressure
 expr_stmt|;
 name|non_gui_paint_core
 operator|.
