@@ -99,6 +99,8 @@ argument_list|,
 name|gimp_paint_options_gui
 argument_list|,
 name|GIMP_PAINT_OPTIONS_CONTEXT_MASK
+operator||
+name|GIMP_CONTEXT_GRADIENT_MASK
 argument_list|,
 literal|"gimp-pencil-tool"
 argument_list|,
