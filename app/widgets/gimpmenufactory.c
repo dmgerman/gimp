@@ -313,6 +313,13 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|entry
+operator|->
+name|help_id
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -390,7 +397,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_menu_factory_menu_register (GimpMenuFactory * factory,const gchar * identifier,GimpItemFactorySetupFunc setup_func,GimpItemFactoryUpdateFunc update_func,gboolean update_on_popup,guint n_entries,GimpItemFactoryEntry * entries)
+DECL|function|gimp_menu_factory_menu_register (GimpMenuFactory * factory,const gchar * identifier,const gchar * help_id,GimpItemFactorySetupFunc setup_func,GimpItemFactoryUpdateFunc update_func,gboolean update_on_popup,guint n_entries,GimpItemFactoryEntry * entries)
 name|gimp_menu_factory_menu_register
 parameter_list|(
 name|GimpMenuFactory
@@ -401,6 +408,11 @@ specifier|const
 name|gchar
 modifier|*
 name|identifier
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 name|GimpItemFactorySetupFunc
 name|setup_func
@@ -440,6 +452,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|help_id
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|n_entries
 operator|>
 literal|0
@@ -468,6 +487,15 @@ operator|=
 name|g_strdup
 argument_list|(
 name|identifier
+argument_list|)
+expr_stmt|;
+name|entry
+operator|->
+name|help_id
+operator|=
+name|g_strdup
+argument_list|(
+name|help_id
 argument_list|)
 expr_stmt|;
 name|entry
@@ -624,6 +652,10 @@ argument_list|,
 name|entry
 operator|->
 name|identifier
+argument_list|,
+name|entry
+operator|->
+name|help_id
 argument_list|,
 name|entry
 operator|->

@@ -390,6 +390,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<Toolbox>"
 argument_list|,
+name|GIMP_HELP_TOOLBOX
+argument_list|,
 name|toolbox_menu_setup
 argument_list|,
 name|NULL
@@ -406,6 +408,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Image>"
+argument_list|,
+name|GIMP_HELP_IMAGE_WINDOW
 argument_list|,
 name|image_menu_setup
 argument_list|,
@@ -424,6 +428,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<Load>"
 argument_list|,
+name|GIMP_HELP_FILE_OPEN
+argument_list|,
 name|file_open_menu_setup
 argument_list|,
 name|NULL
@@ -440,6 +446,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Save>"
+argument_list|,
+name|GIMP_HELP_FILE_SAVE
 argument_list|,
 name|file_save_menu_setup
 argument_list|,
@@ -458,6 +466,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<Layers>"
 argument_list|,
+name|GIMP_HELP_LAYER_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|layers_menu_update
@@ -474,6 +484,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Channels>"
+argument_list|,
+name|GIMP_HELP_CHANNEL_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -492,6 +504,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<Vectors>"
 argument_list|,
+name|GIMP_HELP_PATH_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|vectors_menu_update
@@ -508,6 +522,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Dialogs>"
+argument_list|,
+name|GIMP_HELP_DOCK
 argument_list|,
 name|NULL
 argument_list|,
@@ -526,6 +542,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<Brushes>"
 argument_list|,
+name|GIMP_HELP_BRUSH_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|brushes_menu_update
@@ -542,6 +560,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Patterns>"
+argument_list|,
+name|GIMP_HELP_PATTERN_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -560,6 +580,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<Gradients>"
 argument_list|,
+name|GIMP_HELP_GRADIENT_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|gradients_menu_update
@@ -576,6 +598,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Palettes>"
+argument_list|,
+name|GIMP_HELP_PALETTE_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -594,6 +618,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<Buffers>"
 argument_list|,
+name|GIMP_HELP_BUFFER_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|buffers_menu_update
@@ -610,6 +636,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Documents>"
+argument_list|,
+name|GIMP_HELP_DOCUMENT_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -628,6 +656,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<Templates>"
 argument_list|,
+name|GIMP_HELP_TEMPLATE_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|templates_menu_update
@@ -644,6 +674,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<Images>"
+argument_list|,
+name|GIMP_HELP_IMAGE_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -662,6 +694,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<GradientEditor>"
 argument_list|,
+name|GIMP_HELP_GRADIENT_EDITOR_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|gradient_editor_menu_update
@@ -678,6 +712,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<PaletteEditor>"
+argument_list|,
+name|GIMP_HELP_PALETTE_EDITOR_DIALOG
 argument_list|,
 name|NULL
 argument_list|,
@@ -696,6 +732,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<ColormapEditor>"
 argument_list|,
+name|GIMP_HELP_INDEXED_PALETTE_DIALOG
+argument_list|,
 name|NULL
 argument_list|,
 name|colormap_editor_menu_update
@@ -713,6 +751,8 @@ name|global_menu_factory
 argument_list|,
 literal|"<QMask>"
 argument_list|,
+name|GIMP_HELP_QMASK
+argument_list|,
 name|NULL
 argument_list|,
 name|qmask_menu_update
@@ -729,6 +769,8 @@ argument_list|(
 name|global_menu_factory
 argument_list|,
 literal|"<ErrorConsole>"
+argument_list|,
+name|GIMP_HELP_ERRORS_DIALOG
 argument_list|,
 name|NULL
 argument_list|,

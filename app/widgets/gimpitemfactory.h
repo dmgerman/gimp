@@ -145,6 +145,11 @@ DECL|member|update_on_popup
 name|gboolean
 name|update_on_popup
 decl_stmt|;
+DECL|member|help_id
+name|gchar
+modifier|*
+name|help_id
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -193,6 +198,11 @@ specifier|const
 name|gchar
 modifier|*
 name|factory_path
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|,
 name|GimpItemFactoryUpdateFunc
 name|update_func

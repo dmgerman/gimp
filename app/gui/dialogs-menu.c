@@ -134,7 +134,7 @@ parameter_list|,
 name|size
 parameter_list|)
 define|\
-value|{ { (path), NULL, dialogs_preview_size_cmd_callback, \       (size), "/Preview Size/Tiny" }, NULL, NULL, NULL }
+value|{ { (path), NULL, dialogs_preview_size_cmd_callback, \       (size), "/Preview Size/Tiny" }, \     NULL, GIMP_HELP_DOCK_PREVIEW_SIZE, NULL }
 end_define
 
 begin_define
@@ -148,7 +148,7 @@ parameter_list|,
 name|style
 parameter_list|)
 define|\
-value|{ { (path), NULL, dialogs_tab_style_cmd_callback, \       (style), "/Tab Style/Icon" }, NULL, NULL, NULL }
+value|{ { (path), NULL, dialogs_tab_style_cmd_callback, \       (style), "/Tab Style/Icon" }, \     NULL, GIMP_HELP_DOCK_TAB_STYLE, NULL }
 end_define
 
 begin_decl_stmt
@@ -518,7 +518,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCK_TAB_REMOVE
 block|,
 name|NULL
 block|}
@@ -551,7 +551,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCK_PREVIEW_SIZE
 block|,
 name|NULL
 block|}
@@ -659,7 +659,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCK_TAB_STYLE
 block|,
 name|NULL
 block|}
@@ -722,7 +722,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCK_VIEW_AS_LIST
 block|,
 name|NULL
 block|}
@@ -745,7 +745,7 @@ block|}
 block|,
 name|NULL
 block|,
-name|NULL
+name|GIMP_HELP_DOCK_VIEW_AS_GRID
 block|,
 name|NULL
 block|}
