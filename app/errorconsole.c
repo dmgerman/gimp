@@ -289,10 +289,12 @@ block|}
 end_function
 
 begin_function
-name|gint
-DECL|function|error_console_write_file (gchar * path,gint textscope)
+specifier|static
+name|gboolean
+DECL|function|error_console_write_file (const gchar * path,gint textscope)
 name|error_console_write_file
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|path
@@ -456,7 +458,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|text_clicked_callback (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|text_clicked_callback
 parameter_list|(
@@ -781,9 +783,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|error_console_add (gchar * errormsg)
+DECL|function|error_console_add (const gchar * errormsg)
 name|error_console_add
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|errormsg

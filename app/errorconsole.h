@@ -20,6 +20,7 @@ begin_function_decl
 name|void
 name|error_console_add
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|errormsg
