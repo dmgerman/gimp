@@ -105,7 +105,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|GimpPDBStatusType
 name|main_function
 parameter_list|(
 name|GimpDrawable
@@ -184,7 +184,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfbd220103
+DECL|enum|__anon27942a5a0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -202,7 +202,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfbd220208
+DECL|struct|__anon27942a5a0208
 block|{
 DECL|member|max_p
 name|gint
@@ -217,7 +217,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbfbd220308
+DECL|struct|__anon27942a5a0308
 block|{
 DECL|member|run
 name|gint
@@ -517,6 +517,19 @@ case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/* You must copy the values of parameters to pvals or dialog variables. */
+name|pvals
+operator|.
+name|max_p
+operator|=
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
@@ -531,6 +544,8 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+name|status
+operator|=
 name|main_function
 argument_list|(
 name|drawable
@@ -585,7 +600,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2bbfbd220408
+DECL|struct|__anon27942a5a0408
 typedef|typedef
 struct|struct
 block|{
@@ -797,7 +812,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|GimpPDBStatusType
 DECL|function|main_function (GimpDrawable * drawable,gboolean preview_mode)
 name|main_function
 parameter_list|(
@@ -901,6 +916,9 @@ name|drawable
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|GIMP_PDB_SUCCESS
+return|;
 block|}
 end_function
 
