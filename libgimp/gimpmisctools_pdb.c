@@ -288,12 +288,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_picker:  * @image_ID: The image.  * @drawable_ID: The affected drawable.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @save_color: Save the color to the active palette.  * @color: The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is non-zero, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_color_picker:  * @image_ID: The image.  * @drawable_ID: The affected drawable.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is non-zero, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_color_picker (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,gboolean save_color,GimpRGB * color)
+DECL|function|gimp_color_picker (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,GimpRGB * color)
 name|gimp_color_picker
 parameter_list|(
 name|gint32
@@ -316,9 +316,6 @@ name|sample_average
 parameter_list|,
 name|gdouble
 name|average_radius
-parameter_list|,
-name|gboolean
-name|save_color
 parameter_list|,
 name|GimpRGB
 modifier|*
@@ -373,10 +370,6 @@ argument_list|,
 name|GIMP_PDB_FLOAT
 argument_list|,
 name|average_radius
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|save_color
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

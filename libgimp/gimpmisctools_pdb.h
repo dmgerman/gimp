@@ -127,9 +127,6 @@ parameter_list|,
 name|gdouble
 name|average_radius
 parameter_list|,
-name|gboolean
-name|save_color
-parameter_list|,
 name|GimpRGB
 modifier|*
 name|color

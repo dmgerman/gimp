@@ -735,9 +735,11 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|free_paint_buffers
+name|gimp_paint_tool_free_buffers
 parameter_list|(
-name|void
+name|GimpPaintTool
+modifier|*
+name|paint_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1216,7 +1218,9 @@ name|FINISH_PAINT
 argument_list|)
 expr_stmt|;
 name|gimp_paint_tool_cleanup
-argument_list|()
+argument_list|(
+name|paint_tool
+argument_list|)
 expr_stmt|;
 break|break;
 default|default:
@@ -4742,10 +4746,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_tool_cleanup (void)
+DECL|function|gimp_paint_tool_cleanup (GimpPaintTool * paint_tool)
 name|gimp_paint_tool_cleanup
 parameter_list|(
-name|void
+name|GimpPaintTool
+modifier|*
+name|paint_tool
 parameter_list|)
 block|{
 comment|/*  CLEANUP  */
@@ -4782,8 +4788,10 @@ name|NULL
 expr_stmt|;
 block|}
 comment|/*  Free the temporary buffers if they exist  */
-name|free_paint_buffers
-argument_list|()
+name|gimp_paint_tool_free_buffers
+argument_list|(
+name|paint_tool
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -9115,10 +9123,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|free_paint_buffers (void)
-name|free_paint_buffers
+DECL|function|gimp_paint_tool_free_buffers (GimpPaintTool * paint_tool)
+name|gimp_paint_tool_free_buffers
 parameter_list|(
-name|void
+name|GimpPaintTool
+modifier|*
+name|paint_tool
 parameter_list|)
 block|{
 if|if

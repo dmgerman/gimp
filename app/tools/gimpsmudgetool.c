@@ -2184,7 +2184,9 @@ name|drawable
 argument_list|)
 expr_stmt|;
 name|gimp_paint_tool_cleanup
-argument_list|()
+argument_list|(
+name|paint_tool
+argument_list|)
 expr_stmt|;
 name|gimp_smudge_tool_finish
 argument_list|(

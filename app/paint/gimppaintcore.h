@@ -30,7 +30,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon275564d40103
+DECL|enum|__anon2abbc3560103
 block|{
 DECL|enumerator|INIT_PAINT
 name|INIT_PAINT
@@ -69,7 +69,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon275564d40203
+DECL|enum|__anon2abbc3560203
 block|{
 DECL|enumerator|TOOL_CAN_HANDLE_CHANGING_BRUSH
 name|TOOL_CAN_HANDLE_CHANGING_BRUSH
@@ -331,7 +331,7 @@ name|gimp_paint_tool_paint
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -344,23 +344,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_paint_tool_no_draw
-parameter_list|(
-name|GimpPaintTool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|gimp_paint_tool_start
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -381,7 +370,7 @@ name|gimp_paint_tool_interpolate
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -396,7 +385,7 @@ name|gimp_paint_tool_finish
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -409,7 +398,9 @@ begin_function_decl
 name|void
 name|gimp_paint_tool_cleanup
 parameter_list|(
-name|void
+name|GimpPaintTool
+modifier|*
+name|paint_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -420,7 +411,7 @@ name|gimp_paint_tool_get_color_from_gradient
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpGradient
 modifier|*
@@ -450,7 +441,7 @@ name|gimp_paint_tool_get_paint_area
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -469,7 +460,7 @@ name|gimp_paint_tool_get_orig_image
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -496,7 +487,7 @@ name|gimp_paint_tool_paste_canvas
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -529,7 +520,7 @@ name|gimp_paint_tool_replace_canvas
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -559,7 +550,7 @@ name|gimp_paint_tool_color_area_with_pixmap
 parameter_list|(
 name|GimpPaintTool
 modifier|*
-name|tool
+name|paint_tool
 parameter_list|,
 name|GimpImage
 modifier|*
