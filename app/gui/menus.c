@@ -285,6 +285,25 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gint
+name|tearoff_delete_cb
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|menus_debug_recurse_menu
 parameter_list|(
