@@ -495,6 +495,13 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+name|gimp_container_freeze
+argument_list|(
+name|gimp
+operator|->
+name|tool_info_list
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i

@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"fonts-menu.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gradient-editor-menu.h"
 end_include
 
@@ -676,6 +682,30 @@ argument_list|,
 name|n_palettes_menu_entries
 argument_list|,
 name|palettes_menu_entries
+argument_list|)
+expr_stmt|;
+name|gimp_menu_factory_menu_register
+argument_list|(
+name|global_menu_factory
+argument_list|,
+literal|"<Fonts>"
+argument_list|,
+name|_
+argument_list|(
+literal|"Fonts Menu"
+argument_list|)
+argument_list|,
+name|GIMP_HELP_FONT_DIALOG
+argument_list|,
+name|NULL
+argument_list|,
+name|fonts_menu_update
+argument_list|,
+name|TRUE
+argument_list|,
+name|n_fonts_menu_entries
+argument_list|,
+name|fonts_menu_entries
 argument_list|)
 expr_stmt|;
 name|gimp_menu_factory_menu_register

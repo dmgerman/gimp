@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpfontview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpgradienteditor.h"
 end_include
 
@@ -1325,8 +1331,10 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-name|gimp_container_tree_view_new
+name|gimp_font_view_new
 argument_list|(
+name|GIMP_VIEW_TYPE_LIST
+argument_list|,
 name|context
 operator|->
 name|gimp
@@ -1339,7 +1347,9 @@ name|preview_size
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|factory
+operator|->
+name|menu_factory
 argument_list|)
 expr_stmt|;
 return|return
@@ -2024,8 +2034,10 @@ name|view
 decl_stmt|;
 name|view
 operator|=
-name|gimp_container_grid_view_new
+name|gimp_font_view_new
 argument_list|(
+name|GIMP_VIEW_TYPE_GRID
+argument_list|,
 name|context
 operator|->
 name|gimp
@@ -2038,7 +2050,9 @@ name|preview_size
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|factory
+operator|->
+name|menu_factory
 argument_list|)
 expr_stmt|;
 return|return

@@ -466,6 +466,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFontView
+typedef|typedef
+name|struct
+name|_GimpFontView
+name|GimpFontView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageView
 typedef|typedef
 name|struct

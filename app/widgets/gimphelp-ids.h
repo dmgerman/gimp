@@ -2097,6 +2097,14 @@ value|"gimp-font-dialog"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FONT_REFRESH
+define|#
+directive|define
+name|GIMP_HELP_FONT_REFRESH
+value|"gimp-font-refresh"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_BUFFER_DIALOG
 define|#
 directive|define
