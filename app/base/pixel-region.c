@@ -485,6 +485,8 @@ argument_list|,
 name|y
 argument_list|,
 name|end
+operator|-
+literal|1
 argument_list|,
 name|y
 argument_list|,
@@ -678,6 +680,8 @@ argument_list|,
 name|y
 argument_list|,
 name|end
+operator|-
+literal|1
 argument_list|,
 name|y
 argument_list|,
@@ -964,6 +968,8 @@ argument_list|,
 name|x
 argument_list|,
 name|end
+operator|-
+literal|1
 argument_list|,
 name|data
 argument_list|,
