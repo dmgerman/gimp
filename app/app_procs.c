@@ -441,7 +441,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools/tools.h"
+file|"tools/tool_options_dialog.h"
 end_include
 
 begin_include
