@@ -498,7 +498,7 @@ literal|"tab_border"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"Width of the border around the tab contents"
 argument_list|,
 literal|0
 argument_list|,
@@ -520,7 +520,7 @@ literal|"tab_icon_size"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+literal|"Size for icons displayed in the tab"
 argument_list|,
 name|GTK_TYPE_ICON_SIZE
 argument_list|,
