@@ -589,7 +589,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_struct
-DECL|struct|__anon2c4e20290108
+DECL|struct|__anon2c0b068d0108
 struct|struct
 block|{
 DECL|member|announce_function
@@ -607,6 +607,10 @@ DECL|variable|gimp_composite_options
 name|struct
 name|GimpCompositeOptions
 name|gimp_composite_options
+init|=
+block|{
+name|GIMP_COMPOSITE_OPTION_USE
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -1359,31 +1363,36 @@ argument_list|,
 literal|16
 argument_list|)
 expr_stmt|;
+block|}
 name|g_printerr
 argument_list|(
-literal|"gimp_composite_options: %08lx\n"
+literal|"gimp_composite: use=%s, verbose=%s\n"
 argument_list|,
-name|gimp_composite_options
-operator|.
-name|bits
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+operator|(
 name|gimp_composite_options
 operator|.
 name|bits
 operator|&
 name|GIMP_COMPOSITE_OPTION_USE
-condition|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"gimp_composite: yes\n"
+operator|)
+condition|?
+literal|"yes"
+else|:
+literal|"no"
+argument_list|,
+operator|(
+name|gimp_composite_options
+operator|.
+name|bits
+operator|&
+name|GIMP_COMPOSITE_OPTION_VERBOSE
+operator|)
+condition|?
+literal|"yes"
+else|:
+literal|"no"
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 if|if
 condition|(
 operator|!
@@ -1398,6 +1407,11 @@ condition|)
 block|{
 name|gimp_composite_generic_install
 argument_list|()
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"gimp-composite:"
+argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -1416,7 +1430,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"gimp-composite: installing mmx optimisations\n"
+literal|" mmx"
 argument_list|)
 expr_stmt|;
 name|gimp_composite_mmx_install
@@ -1433,7 +1447,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"gimp-composite: installing sse optimisations\n"
+literal|" sse"
 argument_list|)
 expr_stmt|;
 name|gimp_composite_sse_install
@@ -1443,19 +1457,19 @@ block|}
 if|#
 directive|if
 literal|0
-block|if (cpu_accel()& CPU_ACCEL_X86_MMXEXT) { 								g_printerr ("gimp-composite: installing mmxext optimisations\n"); 								gimp_composite_mmxext_install(); 						}
+block|if (cpu_accel()& CPU_ACCEL_X86_MMXEXT) { 								g_printerr (" mmxext"); 								gimp_composite_mmxext_install(); 						}
 endif|#
 directive|endif
 if|#
 directive|if
 literal|0
-block|if (cpu_accel()& CPU_ACCEL_X86_SSE2) { 								g_printerr ("gimp-composite: installing sse2 optimisations\n"); 								gimp_composite_sse2_install(); 						}
+block|if (cpu_accel()& CPU_ACCEL_X86_SSE2) { 								g_printerr (" sse2"); 								gimp_composite_sse2_install(); 						}
 endif|#
 directive|endif
 if|#
 directive|if
 literal|0
-block|if (cpu_accel()& CPU_ACCEL_X86_3DNOW) { 								g_printerr ("gimp-composite: installing 3dnow optimisations\n"); 								gimp_composite_3dnow_install(); 						}
+block|if (cpu_accel()& CPU_ACCEL_X86_3DNOW) { 								g_printerr (" 3dnow"); 								gimp_composite_3dnow_install(); 						}
 endif|#
 directive|endif
 endif|#
@@ -1466,13 +1480,29 @@ name|ARCH_PPC
 if|#
 directive|if
 literal|0
-block|if (cpu_accel()& CPU_ACCEL_PPC_ALTIVEC) { 								g_printerr ("gimp-composite: installing altivec optimisations\n"); 								gimp_composite_altivec_install(); 						}
+block|if (cpu_accel()& CPU_ACCEL_PPC_ALTIVEC) { 								g_printerr (" altivec"); 								gimp_composite_altivec_install(); 						}
+endif|#
+directive|endif
+endif|#
+directive|endif
+ifdef|#
+directive|ifdef
+name|ARCH_SPARC
+if|#
+directive|if
+literal|0
+block|g_printerr (" vis"); 						gimp_composite_vis_install();
 endif|#
 directive|endif
 endif|#
 directive|endif
 endif|#
 directive|endif
+name|g_printerr
+argument_list|(
+literal|"\n"
+argument_list|)
+expr_stmt|;
 name|gimp_composite_options
 operator|.
 name|bits
