@@ -32,6 +32,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"orientation.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
