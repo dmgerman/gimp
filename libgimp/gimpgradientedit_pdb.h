@@ -249,7 +249,7 @@ parameter_list|,
 name|gint
 name|segment
 parameter_list|,
-name|gint
+name|GimpGradientSegmentType
 modifier|*
 name|blend_func
 parameter_list|)
@@ -289,7 +289,7 @@ parameter_list|,
 name|gint
 name|segment
 parameter_list|,
-name|gint
+name|GimpGradientSegmentColor
 modifier|*
 name|coloring_type
 parameter_list|)

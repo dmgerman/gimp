@@ -4081,7 +4081,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"blend_func"
 block|,
-literal|"The blending function of the segment"
+literal|"The blending function of the segment: { GIMP_GRADIENT_SEGMENT_LINEAR (0), GIMP_GRADIENT_SEGMENT_CURVED (1), GIMP_GRADIENT_SEGMENT_SINE (2), GIMP_GRADIENT_SEGMENT_SPHERE_INCREASING (3), GIMP_GRADIENT_SEGMENT_SPHERE_DECREASING (4) }"
 block|}
 block|}
 decl_stmt|;
@@ -4765,7 +4765,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"coloring_type"
 block|,
-literal|"The coloring type of the segment"
+literal|"The coloring type of the segment: { GIMP_GRADIENT_SEGMENT_RGB (0), GIMP_GRADIENT_SEGMENT_HSV_CCW (1), GIMP_GRADIENT_SEGMENT_HSV_CW (2) }"
 block|}
 block|}
 decl_stmt|;

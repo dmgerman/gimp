@@ -1074,7 +1074,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradient_segment_get_blending_function (const gchar * name,gint segment,gint * blend_func)
+DECL|function|gimp_gradient_segment_get_blending_function (const gchar * name,gint segment,GimpGradientSegmentType * blend_func)
 name|gimp_gradient_segment_get_blending_function
 parameter_list|(
 specifier|const
@@ -1085,7 +1085,7 @@ parameter_list|,
 name|gint
 name|segment
 parameter_list|,
-name|gint
+name|GimpGradientSegmentType
 modifier|*
 name|blend_func
 parameter_list|)
@@ -1265,7 +1265,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradient_segment_get_coloring_type (const gchar * name,gint segment,gint * coloring_type)
+DECL|function|gimp_gradient_segment_get_coloring_type (const gchar * name,gint segment,GimpGradientSegmentColor * coloring_type)
 name|gimp_gradient_segment_get_coloring_type
 parameter_list|(
 specifier|const
@@ -1276,7 +1276,7 @@ parameter_list|,
 name|gint
 name|segment
 parameter_list|,
-name|gint
+name|GimpGradientSegmentColor
 modifier|*
 name|coloring_type
 parameter_list|)
