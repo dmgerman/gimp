@@ -906,7 +906,7 @@ literal|"menu-factory"
 argument_list|,
 name|menu_factory
 argument_list|,
-literal|"menu-dentifier"
+literal|"menu-identifier"
 argument_list|,
 literal|"<ErrorConsole>"
 argument_list|,
