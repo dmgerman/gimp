@@ -151,6 +151,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  private function  */
+end_comment
+
+begin_function_decl
+name|void
+name|_gimp_tile_cache_flush_drawable
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

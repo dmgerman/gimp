@@ -181,6 +181,12 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+comment|/*  nuke all references to this drawable from the cache  */
+name|_gimp_tile_cache_flush_drawable
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|drawable
