@@ -52,7 +52,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292efcd00108
+DECL|struct|__anon2a1eea2b0108
 typedef|typedef
 struct|struct
 block|{
@@ -1356,6 +1356,17 @@ name|k
 decl_stmt|,
 name|len
 decl_stmt|;
+comment|/* avoid a FP exception */
+if|if
+condition|(
+name|size
+operator|==
+literal|1
+condition|)
+name|size
+operator|=
+literal|2
+expr_stmt|;
 name|len
 operator|=
 name|size
