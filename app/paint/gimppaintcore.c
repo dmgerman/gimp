@@ -260,21 +260,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|rotate_pointers
-parameter_list|(
-name|gpointer
-modifier|*
-name|p
-parameter_list|,
-name|guint32
-name|n
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|MaskBuf
 modifier|*
 name|gimp_paint_core_subsample_mask
@@ -4868,11 +4853,13 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|void
-DECL|function|rotate_pointers (gpointer * p,guint32 n)
+DECL|function|rotate_pointers (gulong ** p,guint32 n)
 name|rotate_pointers
 parameter_list|(
-name|gpointer
+name|gulong
+modifier|*
 modifier|*
 name|p
 parameter_list|,
@@ -4883,7 +4870,8 @@ block|{
 name|guint32
 name|i
 decl_stmt|;
-name|gpointer
+name|gulong
+modifier|*
 name|tmp
 decl_stmt|;
 name|tmp
