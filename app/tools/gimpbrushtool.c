@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimperasertool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppainttool.h"
 end_include
 
@@ -215,7 +221,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a06beb0103
+DECL|enum|__anon2b04b69a0103
 block|{
 DECL|enumerator|PAINT
 name|PAINT

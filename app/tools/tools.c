@@ -219,8 +219,9 @@ expr_stmt|;
 comment|/* gimp_convolve_tool_register (): */
 comment|/* gimp_clone_tool_register (); */
 comment|/* gimp_airbrush_tool_register (); */
-comment|/* gimp_eraser_tool_register (); */
-comment|/* gimp_pencil_tool_register (); */
+name|gimp_eraser_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_paintbrush_tool_register
 argument_list|()
 expr_stmt|;

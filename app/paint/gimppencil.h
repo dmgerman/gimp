@@ -140,16 +140,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GimpTool
-modifier|*
-name|gimp_pencil_tool_new
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* FIXME: Get rid of this non_gui stuff someday.  Preferably make  *        everything use it interally for ease of macro recording.  */
 end_comment
@@ -178,7 +168,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __PENCIL_H__  */
+comment|/*  __GIMP_PENCIL_TOOL_H__  */
 end_comment
 
 end_unit

@@ -136,16 +136,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GimpTool
-modifier|*
-name|gimp_paintbrush_tool_new
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* FIXME: this antique code doesn't follow the coding style */
 end_comment
@@ -156,17 +146,23 @@ name|gimp_paintbrush_tool_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|gint
+name|num_srokes
 parameter_list|,
 name|gdouble
 modifier|*
+name|stroke_array
 parameter_list|,
 name|gdouble
+name|fade_out
 parameter_list|,
 name|gint
+name|incremental
 parameter_list|,
 name|gdouble
+name|gradient_length
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -177,11 +173,14 @@ name|gimp_paintbrush_tool_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*
+name|drawable
 parameter_list|,
 name|gint
+name|num_strokes
 parameter_list|,
 name|gdouble
 modifier|*
+name|stroke_array
 parameter_list|)
 function_decl|;
 end_function_decl

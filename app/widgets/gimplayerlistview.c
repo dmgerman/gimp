@@ -660,6 +660,17 @@ operator|->
 name|paint_mode_menu
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|view
+operator|->
+name|paint_mode_menu
+argument_list|,
+name|NULL
+argument_list|,
+literal|"#paint_mode_menu"
+argument_list|)
+expr_stmt|;
 comment|/*  Preserve transparency toggle  */
 name|view
 operator|->
@@ -715,6 +726,20 @@ name|gimp_layer_list_view_preserve_button_toggled
 argument_list|)
 argument_list|,
 name|view
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|view
+operator|->
+name|preserve_trans_toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"Keep Transparency"
+argument_list|)
+argument_list|,
+literal|"#keep_trans_button"
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -860,6 +885,15 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|slider
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|slider
+argument_list|,
+name|NULL
+argument_list|,
+literal|"#opacity_scale"
 argument_list|)
 expr_stmt|;
 comment|/*  Anchor button  */
