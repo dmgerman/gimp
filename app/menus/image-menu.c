@@ -4890,10 +4890,6 @@ block|}
 name|menus_last_opened_add
 argument_list|(
 name|factory
-argument_list|,
-name|factory
-operator|->
-name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  create tool menu items  */
