@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275cac340103
+DECL|enum|__anon2a9c3e070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -647,7 +647,7 @@ literal|"layer-only"
 argument_list|,
 name|_
 argument_list|(
-literal|"Current Layer only"
+literal|"Active Layer only"
 argument_list|)
 argument_list|)
 expr_stmt|;
