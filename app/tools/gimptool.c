@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfc8950103
+DECL|enum|__anon28db52910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -281,7 +281,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_real_arrow_key
+name|gimp_tool_real_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -554,9 +554,9 @@ name|gimp_tool_real_motion
 expr_stmt|;
 name|klass
 operator|->
-name|arrow_key
+name|key_press
 operator|=
-name|gimp_tool_real_arrow_key
+name|gimp_tool_real_key_press
 expr_stmt|;
 name|klass
 operator|->
@@ -1032,8 +1032,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
-name|gimp_tool_real_arrow_key
+DECL|function|gimp_tool_real_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+name|gimp_tool_real_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1719,8 +1719,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
-name|gimp_tool_arrow_key
+DECL|function|gimp_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+name|gimp_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1765,7 +1765,7 @@ argument_list|(
 name|tool
 argument_list|)
 operator|->
-name|arrow_key
+name|key_press
 argument_list|(
 name|tool
 argument_list|,

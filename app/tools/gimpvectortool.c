@@ -343,7 +343,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_vector_tool_arrow_key
+name|gimp_vector_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -893,9 +893,9 @@ name|gimp_vector_tool_motion
 expr_stmt|;
 name|tool_class
 operator|->
-name|arrow_key
+name|key_press
 operator|=
-name|gimp_vector_tool_arrow_key
+name|gimp_vector_tool_key_press
 expr_stmt|;
 name|tool_class
 operator|->
@@ -3058,8 +3058,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vector_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
-name|gimp_vector_tool_arrow_key
+DECL|function|gimp_vector_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+name|gimp_vector_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*

@@ -455,7 +455,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_edit_selection_tool_arrow_key
+name|gimp_edit_selection_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -4198,8 +4198,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_edit_selection_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
-name|gimp_edit_selection_tool_arrow_key
+DECL|function|gimp_edit_selection_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+name|gimp_edit_selection_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*

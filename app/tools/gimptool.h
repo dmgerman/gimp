@@ -267,11 +267,11 @@ modifier|*
 name|gdisp
 parameter_list|)
 function_decl|;
-DECL|member|arrow_key
+DECL|member|key_press
 name|void
 function_decl|(
 modifier|*
-name|arrow_key
+name|key_press
 function_decl|)
 parameter_list|(
 name|GimpTool
@@ -482,7 +482,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_arrow_key
+name|gimp_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*

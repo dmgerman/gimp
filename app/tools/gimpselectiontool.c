@@ -309,9 +309,9 @@ name|gimp_selection_tool_modifier_key
 expr_stmt|;
 name|tool_class
 operator|->
-name|arrow_key
+name|key_press
 operator|=
-name|gimp_edit_selection_tool_arrow_key
+name|gimp_edit_selection_tool_key_press
 expr_stmt|;
 name|tool_class
 operator|->

@@ -797,9 +797,9 @@ name|gimp_text_tool_button_press
 expr_stmt|;
 name|tool_class
 operator|->
-name|arrow_key
+name|key_press
 operator|=
-name|gimp_edit_selection_tool_arrow_key
+name|gimp_edit_selection_tool_key_press
 expr_stmt|;
 name|tool_class
 operator|->

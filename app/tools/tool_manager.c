@@ -1224,7 +1224,7 @@ operator|->
 name|active_tool
 condition|)
 block|{
-name|gimp_tool_arrow_key
+name|gimp_tool_key_press
 argument_list|(
 name|tool_manager
 operator|->

@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d7e09e0103
+DECL|enum|__anon278f05930103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -350,7 +350,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_crop_tool_arrow_key
+name|gimp_crop_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -874,9 +874,9 @@ name|gimp_crop_tool_motion
 expr_stmt|;
 name|tool_class
 operator|->
-name|arrow_key
+name|key_press
 operator|=
-name|gimp_crop_tool_arrow_key
+name|gimp_crop_tool_key_press
 expr_stmt|;
 name|tool_class
 operator|->
@@ -2361,8 +2361,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_arrow_key (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
-name|gimp_crop_tool_arrow_key
+DECL|function|gimp_crop_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * gdisp)
+name|gimp_crop_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*

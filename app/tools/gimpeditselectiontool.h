@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad23c030103
+DECL|enum|__anon291f86eb0103
 block|{
 DECL|enumerator|EDIT_VECTORS_TRANSLATE
 name|EDIT_VECTORS_TRANSLATE
@@ -74,7 +74,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_edit_selection_tool_arrow_key
+name|gimp_edit_selection_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
