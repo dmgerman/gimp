@@ -1459,6 +1459,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|combo_box
+argument_list|,
+name|gimp_prop_enum_combo_box_callback
+argument_list|,
+name|config
+argument_list|)
+expr_stmt|;
 name|gimp_int_combo_box_set_active
 argument_list|(
 name|GIMP_INT_COMBO_BOX
@@ -1468,11 +1477,24 @@ argument_list|)
 argument_list|,
 name|value
 argument_list|)
-expr_stmt|;
-block|}
+block|)
+function|;
 end_function
 
+begin_expr_stmt
+name|g_signal_handlers_unblock_by_func
+argument_list|(
+name|combo_box
+argument_list|,
+name|gimp_prop_enum_combo_box_callback
+argument_list|,
+name|config
+argument_list|)
+expr_stmt|;
+end_expr_stmt
+
 begin_comment
+unit|}
 comment|/************************/
 end_comment
 
@@ -1485,7 +1507,7 @@ comment|/************************/
 end_comment
 
 begin_function_decl
-specifier|static
+unit|static
 name|void
 name|gimp_prop_boolean_combo_box_callback
 parameter_list|(
