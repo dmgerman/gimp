@@ -63,7 +63,7 @@ end_if
 begin_include
 include|#
 directive|include
-file|<gdk/x11/gdkx.h>
+file|<gdk/gdkx.h>
 end_include
 
 begin_elif
@@ -74,6 +74,10 @@ argument_list|(
 name|GDK_WINDOWING_WIN32
 argument_list|)
 end_elif
+
+begin_comment
+comment|/* the win32 headers aren't installed so the source location is needed */
+end_comment
 
 begin_include
 include|#
@@ -108,7 +112,7 @@ end_elif
 begin_include
 include|#
 directive|include
-file|<gdk/linux-fb/gdkfb.h>
+file|<gdk/gdkfb.h>
 end_include
 
 begin_endif
@@ -176,7 +180,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289cd4520103
+DECL|enum|__anon2b13b36f0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
