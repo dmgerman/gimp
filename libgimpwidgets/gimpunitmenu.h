@@ -156,7 +156,7 @@ function_decl|)
 parameter_list|(
 name|GimpUnitMenu
 modifier|*
-name|gum
+name|menu
 parameter_list|)
 function_decl|;
 block|}
@@ -204,7 +204,7 @@ name|gimp_unit_menu_set_unit
 parameter_list|(
 name|GimpUnitMenu
 modifier|*
-name|gum
+name|menu
 parameter_list|,
 name|GimpUnit
 name|unit
@@ -218,7 +218,7 @@ name|gimp_unit_menu_get_unit
 parameter_list|(
 name|GimpUnitMenu
 modifier|*
-name|gum
+name|menu
 parameter_list|)
 function_decl|;
 end_function_decl
