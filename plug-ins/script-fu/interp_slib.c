@@ -18247,7 +18247,7 @@ name|fprintf
 argument_list|(
 name|siod_output
 argument_list|,
-literal|"\thttp://www.xcf.berkeley.edu/~gimp/script-fu/script-fu.html\n\n"
+literal|"\thttp://www.gimp.org/scripts.html\n\n"
 argument_list|)
 expr_stmt|;
 return|return
