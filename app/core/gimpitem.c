@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -143,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2927454f0103
+DECL|enum|__anon2a0ba5070103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED

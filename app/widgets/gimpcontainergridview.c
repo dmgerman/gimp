@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -107,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c50e10a0103
+DECL|enum|__anon2910fe8f0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR

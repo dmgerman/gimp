@@ -117,12 +117,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -182,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fb6df50103
+DECL|enum|__anon2a0bc79a0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -2708,7 +2702,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon28fb6df5020a
+DECL|union|__anon2a0bc79a020a
 block|{
 DECL|member|u
 name|guint16

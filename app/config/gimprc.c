@@ -15,45 +15,11 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_UNISTD_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<unistd.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
 file|<glib-object.h>
 end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<io.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -123,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29beb6010103
+DECL|enum|__anon2b54c87a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -644,6 +610,16 @@ argument_list|(
 name|rc
 argument_list|)
 expr_stmt|;
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|dispose
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -662,11 +638,10 @@ name|GimpRc
 modifier|*
 name|rc
 init|=
-operator|(
-name|GimpRc
-operator|*
-operator|)
+name|GIMP_RC
+argument_list|(
 name|object
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
