@@ -1873,6 +1873,7 @@ directive|ifndef
 name|G_OS_WIN32
 comment|/* No use catching these on Win32, the user won't get any     * stack trace from glib anyhow. It's better to let Windows inform    * about the program error, and offer debugging (if the user    * has installed MSVC or some other compiler that knows how to    * install itself as a handler for program errors).    */
 comment|/* Handle fatal signals */
+comment|/* these are handled by gimp_terminate() */
 name|gimp_signal_private
 argument_list|(
 name|SIGHUP
@@ -1911,6 +1912,23 @@ argument_list|)
 expr_stmt|;
 name|gimp_signal_private
 argument_list|(
+name|SIGTERM
+argument_list|,
+name|gimp_sigfatal_handler
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|stack_trace_mode
+operator|!=
+name|STACK_TRACE_NEVER
+condition|)
+block|{
+comment|/* these are handled by gimp_fatal_error() */
+name|gimp_signal_private
+argument_list|(
 name|SIGBUS
 argument_list|,
 name|gimp_sigfatal_handler
@@ -1929,15 +1947,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_signal_private
 argument_list|(
-name|SIGTERM
-argument_list|,
-name|gimp_sigfatal_handler
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gimp_signal_private
-argument_list|(
 name|SIGFPE
 argument_list|,
 name|gimp_sigfatal_handler
@@ -1945,6 +1954,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Ignore SIGPIPE because plug_in.c handles broken pipes */
 name|gimp_signal_private
 argument_list|(
