@@ -174,6 +174,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_image_attach_new_parasite:  * @image_ID: the ID of the image to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to the GIMP.  *  * See Also: gimp_image_parasite_attach()  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_image_attach_new_parasite (gint32 image_ID,const gchar * name,gint flags,gint size,const gpointer data)

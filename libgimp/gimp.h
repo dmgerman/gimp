@@ -523,6 +523,10 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/**  * MAIN():  *  * A macro that expands to the appropriate main() function for the  * platform being compiled for.  *  * To use this macro, simply place a line that contains just the code  * MAIN() at the toplevel of your file.  No semicolon should be used.   *  */
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
