@@ -51,6 +51,10 @@ name|float
 name|aspect_ratio
 decl_stmt|;
 comment|/* y/x        */
+DECL|member|freeze
+name|int
+name|freeze
+decl_stmt|;
 comment|/*GSpline *profile_curve */
 comment|/* Some lazy day...  */
 DECL|typedef|GimpBrushGenerated
@@ -156,7 +160,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_brush_generated_generate
+name|gimp_brush_generated_freeze
+parameter_list|(
+name|GimpBrushGenerated
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_brush_generated_thaw
 parameter_list|(
 name|GimpBrushGenerated
 modifier|*

@@ -885,7 +885,7 @@ name|NULL
 block|,
 name|NULL
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -2219,6 +2219,7 @@ argument_list|(
 name|bsp
 argument_list|)
 expr_stmt|;
+comment|/*  add callbacks to keep the display area current  */
 name|gimp_list_foreach
 argument_list|(
 name|GIMP_LIST
