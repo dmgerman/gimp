@@ -175,12 +175,12 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|QueryBox
-modifier|*
+name|void
 name|query_box_disconnect
 parameter_list|(
-name|gpointer
-name|data
+name|QueryBox
+modifier|*
+name|query_box
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -197,8 +197,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
+name|QueryBox
+modifier|*
+name|query_box
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,8 +216,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
+name|QueryBox
+modifier|*
+name|query_box
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -233,8 +235,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
+name|QueryBox
+modifier|*
+name|query_box
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -251,8 +254,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
+name|QueryBox
+modifier|*
+name|query_box
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -269,8 +273,9 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
+name|QueryBox
+modifier|*
+name|query_box
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -280,12 +285,9 @@ specifier|static
 name|void
 name|query_box_cancel_callback
 parameter_list|(
-name|GtkWidget
+name|QueryBox
 modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
+name|query_box
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -397,7 +399,7 @@ argument_list|)
 expr_stmt|;
 name|query_box
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|QueryBox
 argument_list|,
@@ -480,7 +482,7 @@ name|closure
 decl_stmt|;
 name|closure
 operator|=
-name|g_cclosure_new
+name|g_cclosure_new_swap
 argument_list|(
 name|G_CALLBACK
 argument_list|(
@@ -611,7 +613,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|g_object_set_data
@@ -1641,27 +1643,15 @@ end_comment
 
 begin_function
 specifier|static
-name|QueryBox
-modifier|*
-DECL|function|query_box_disconnect (gpointer data)
+name|void
+DECL|function|query_box_disconnect (QueryBox * query_box)
 name|query_box_disconnect
 parameter_list|(
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|QueryBox
 modifier|*
 name|query_box
-decl_stmt|;
-name|query_box
-operator|=
-operator|(
-name|QueryBox
-operator|*
-operator|)
-name|data
-expr_stmt|;
+parameter_list|)
+block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|query_box
@@ -1678,7 +1668,6 @@ name|query_box
 operator|->
 name|object
 condition|)
-block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|query_box
@@ -1691,16 +1680,12 @@ name|query_box
 argument_list|)
 expr_stmt|;
 block|}
-return|return
-name|query_box
-return|;
-block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|string_query_box_response (GtkWidget * widget,gint response_id,gpointer data)
+DECL|function|string_query_box_response (GtkWidget * widget,gint response_id,QueryBox * query_box)
 name|string_query_box_response
 parameter_list|(
 name|GtkWidget
@@ -1710,24 +1695,19 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|QueryBox
 modifier|*
 name|query_box
-decl_stmt|;
+parameter_list|)
+block|{
 specifier|const
 name|gchar
 modifier|*
 name|string
 decl_stmt|;
-name|query_box
-operator|=
 name|query_box_disconnect
 argument_list|(
-name|data
+name|query_box
 argument_list|)
 expr_stmt|;
 comment|/*  Get the entry data  */
@@ -1796,7 +1776,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|int_query_box_response (GtkWidget * widget,gint response_id,gpointer data)
+DECL|function|int_query_box_response (GtkWidget * widget,gint response_id,QueryBox * query_box)
 name|int_query_box_response
 parameter_list|(
 name|GtkWidget
@@ -1806,22 +1786,17 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|QueryBox
 modifier|*
 name|query_box
-decl_stmt|;
+parameter_list|)
+block|{
 name|gint
 name|value
 decl_stmt|;
-name|query_box
-operator|=
 name|query_box_disconnect
 argument_list|(
-name|data
+name|query_box
 argument_list|)
 expr_stmt|;
 comment|/*  Get the spinbutton data  */
@@ -1890,7 +1865,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|double_query_box_response (GtkWidget * widget,gint response_id,gpointer data)
+DECL|function|double_query_box_response (GtkWidget * widget,gint response_id,QueryBox * query_box)
 name|double_query_box_response
 parameter_list|(
 name|GtkWidget
@@ -1900,22 +1875,17 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|QueryBox
 modifier|*
 name|query_box
-decl_stmt|;
+parameter_list|)
+block|{
 name|gdouble
 name|value
 decl_stmt|;
-name|query_box
-operator|=
 name|query_box_disconnect
 argument_list|(
-name|data
+name|query_box
 argument_list|)
 expr_stmt|;
 comment|/*  Get the spinbutton data  */
@@ -1984,7 +1954,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|size_query_box_response (GtkWidget * widget,gint response_id,gpointer data)
+DECL|function|size_query_box_response (GtkWidget * widget,gint response_id,QueryBox * query_box)
 name|size_query_box_response
 parameter_list|(
 name|GtkWidget
@@ -1994,25 +1964,20 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|QueryBox
 modifier|*
 name|query_box
-decl_stmt|;
+parameter_list|)
+block|{
 name|gdouble
 name|size
 decl_stmt|;
 name|GimpUnit
 name|unit
 decl_stmt|;
-name|query_box
-operator|=
 name|query_box_disconnect
 argument_list|(
-name|data
+name|query_box
 argument_list|)
 expr_stmt|;
 comment|/*  Get the sizeentry data  */
@@ -2097,7 +2062,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|boolean_query_box_response (GtkWidget * widget,gint response_id,gpointer data)
+DECL|function|boolean_query_box_response (GtkWidget * widget,gint response_id,QueryBox * query_box)
 name|boolean_query_box_response
 parameter_list|(
 name|GtkWidget
@@ -2107,19 +2072,14 @@ parameter_list|,
 name|gint
 name|response_id
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|QueryBox
 modifier|*
 name|query_box
-decl_stmt|;
-name|query_box
-operator|=
+parameter_list|)
+block|{
 name|query_box_disconnect
 argument_list|(
-name|data
+name|query_box
 argument_list|)
 expr_stmt|;
 comment|/*  Call the user defined callback  */
@@ -2173,26 +2133,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|query_box_cancel_callback (GtkWidget * widget,gpointer data)
+DECL|function|query_box_cancel_callback (QueryBox * query_box)
 name|query_box_cancel_callback
 parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|QueryBox
 modifier|*
 name|query_box
-decl_stmt|;
-name|query_box
-operator|=
+parameter_list|)
+block|{
 name|query_box_disconnect
 argument_list|(
-name|data
+name|query_box
 argument_list|)
 expr_stmt|;
 comment|/*  Destroy the box  */
