@@ -1914,7 +1914,7 @@ name|fli_header
 operator|.
 name|height
 argument_list|,
-name|INDEXED
+name|GIMP_INDEXED
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
