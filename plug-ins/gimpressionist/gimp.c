@@ -74,6 +74,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"size.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -718,6 +724,9 @@ name|preset_free
 argument_list|()
 expr_stmt|;
 name|orientation_map_free_resources
+argument_list|()
+expr_stmt|;
+name|size_map_free_resources
 argument_list|()
 expr_stmt|;
 name|values
