@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c029db20103
+DECL|enum|__anon29bfe9890103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -628,7 +628,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|drop_files
+name|drop_uri_list
 operator|=
 name|NULL
 expr_stmt|;

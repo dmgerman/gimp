@@ -22,7 +22,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_selection_data_set_uris
+name|gimp_selection_data_set_uri_list
 parameter_list|(
 name|GtkSelectionData
 modifier|*
@@ -41,7 +41,7 @@ end_function_decl
 begin_function_decl
 name|GList
 modifier|*
-name|gimp_selection_data_get_uris
+name|gimp_selection_data_get_uri_list
 parameter_list|(
 name|GtkSelectionData
 modifier|*

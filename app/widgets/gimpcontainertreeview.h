@@ -286,11 +286,11 @@ name|GtkTreeViewDropPosition
 name|drop_pos
 parameter_list|)
 function_decl|;
-DECL|member|drop_files
+DECL|member|drop_uri_list
 name|void
 function_decl|(
 modifier|*
-name|drop_files
+name|drop_uri_list
 function_decl|)
 parameter_list|(
 name|GimpContainerTreeView
@@ -299,7 +299,7 @@ name|tree_view
 parameter_list|,
 name|GList
 modifier|*
-name|files
+name|uri_list
 parameter_list|,
 name|GimpViewable
 modifier|*

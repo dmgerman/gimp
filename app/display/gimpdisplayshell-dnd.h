@@ -131,7 +131,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_drop_files
+name|gimp_display_shell_drop_uri_list
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -139,7 +139,7 @@ name|widget
 parameter_list|,
 name|GList
 modifier|*
-name|files
+name|uri_list
 parameter_list|,
 name|gpointer
 name|data

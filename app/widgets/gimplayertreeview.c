@@ -422,7 +422,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_layer_tree_view_drop_files
+name|gimp_layer_tree_view_drop_uri_list
 parameter_list|(
 name|GimpContainerTreeView
 modifier|*
@@ -430,7 +430,7 @@ name|view
 parameter_list|,
 name|GList
 modifier|*
-name|files
+name|uri_list
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -977,9 +977,9 @@ name|gimp_layer_tree_view_drop_color
 expr_stmt|;
 name|tree_view_class
 operator|->
-name|drop_files
+name|drop_uri_list
 operator|=
-name|gimp_layer_tree_view_drop_files
+name|gimp_layer_tree_view_drop_uri_list
 expr_stmt|;
 name|item_view_class
 operator|->
@@ -1895,7 +1895,7 @@ argument_list|,
 name|layer_view
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_file_dest_add
+name|gimp_dnd_uri_list_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -3338,8 +3338,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_tree_view_drop_files (GimpContainerTreeView * view,GList * files,GimpViewable * dest_viewable,GtkTreeViewDropPosition drop_pos)
-name|gimp_layer_tree_view_drop_files
+DECL|function|gimp_layer_tree_view_drop_uri_list (GimpContainerTreeView * view,GList * uri_list,GimpViewable * dest_viewable,GtkTreeViewDropPosition drop_pos)
+name|gimp_layer_tree_view_drop_uri_list
 parameter_list|(
 name|GimpContainerTreeView
 modifier|*
@@ -3347,7 +3347,7 @@ name|view
 parameter_list|,
 name|GList
 modifier|*
-name|files
+name|uri_list
 parameter_list|,
 name|GimpViewable
 modifier|*
@@ -3406,7 +3406,7 @@ for|for
 control|(
 name|list
 operator|=
-name|files
+name|uri_list
 init|;
 name|list
 condition|;

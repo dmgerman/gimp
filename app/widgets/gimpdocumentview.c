@@ -137,7 +137,7 @@ begin_function_decl
 specifier|static
 name|GList
 modifier|*
-name|gimp_document_view_drag_file
+name|gimp_document_view_drag_uri_list
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -608,11 +608,11 @@ operator|->
 name|view
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_file_source_add
+name|gimp_dnd_uri_list_source_add
 argument_list|(
 name|dnd_widget
 argument_list|,
-name|gimp_document_view_drag_file
+name|gimp_document_view_drag_uri_list
 argument_list|,
 name|editor
 argument_list|)
@@ -732,8 +732,8 @@ begin_function
 specifier|static
 name|GList
 modifier|*
-DECL|function|gimp_document_view_drag_file (GtkWidget * widget,gpointer data)
-name|gimp_document_view_drag_file
+DECL|function|gimp_document_view_drag_uri_list (GtkWidget * widget,gpointer data)
+name|gimp_document_view_drag_uri_list
 parameter_list|(
 name|GtkWidget
 modifier|*

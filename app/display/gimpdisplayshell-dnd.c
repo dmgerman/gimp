@@ -1087,8 +1087,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_drop_files (GtkWidget * widget,GList * files,gpointer data)
-name|gimp_display_shell_drop_files
+DECL|function|gimp_display_shell_drop_uri_list (GtkWidget * widget,GList * uri_list,gpointer data)
+name|gimp_display_shell_drop_uri_list
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1096,7 +1096,7 @@ name|widget
 parameter_list|,
 name|GList
 modifier|*
-name|files
+name|uri_list
 parameter_list|,
 name|gpointer
 name|data
@@ -1134,7 +1134,7 @@ name|D
 argument_list|(
 name|g_print
 argument_list|(
-literal|"drop files on canvas\n"
+literal|"drop uri list on canvas\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1151,7 +1151,7 @@ for|for
 control|(
 name|list
 operator|=
-name|files
+name|uri_list
 init|;
 name|list
 condition|;

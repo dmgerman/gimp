@@ -389,17 +389,17 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dnd_get_file_data
+name|gimp_dnd_get_uri_list_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 name|GCallback
-name|get_file_func
+name|get_uri_list_func
 parameter_list|,
 name|gpointer
-name|get_file_data
+name|get_uri_list_data
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -414,17 +414,17 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_dnd_set_file_data
+name|gimp_dnd_set_uri_list_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 name|GCallback
-name|set_file_func
+name|set_uri_list_func
 parameter_list|,
 name|gpointer
-name|set_file_data
+name|set_uri_list_data
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -876,19 +876,19 @@ block|,
 block|{
 name|GIMP_TARGET_URI_LIST
 block|,
-literal|"gimp-dnd-get-file-func"
+literal|"gimp-dnd-get-uri-list-func"
 block|,
-literal|"gimp-dnd-get-file-data"
+literal|"gimp-dnd-get-uri-list-data"
 block|,
-literal|"gimp-dnd-set-file-func"
+literal|"gimp-dnd-set-uri-list-func"
 block|,
-literal|"gimp-dnd-set-file-data"
+literal|"gimp-dnd-set-uri-list-data"
 block|,
 name|NULL
 block|,
-name|gimp_dnd_get_file_data
+name|gimp_dnd_get_uri_list_data
 block|,
-name|gimp_dnd_set_file_data
+name|gimp_dnd_set_uri_list_data
 block|}
 block|,
 block|{
@@ -898,15 +898,15 @@ name|NULL
 block|,
 name|NULL
 block|,
-literal|"gimp-dnd-set-file-func"
+literal|"gimp-dnd-set-uri-list-func"
 block|,
-literal|"gimp-dnd-set-file-data"
-block|,
-name|NULL
+literal|"gimp-dnd-set-uri-list-data"
 block|,
 name|NULL
 block|,
-name|gimp_dnd_set_file_data
+name|NULL
+block|,
+name|gimp_dnd_set_uri_list_data
 block|}
 block|,
 block|{
@@ -916,15 +916,15 @@ name|NULL
 block|,
 name|NULL
 block|,
-literal|"gimp-dnd-set-file-func"
+literal|"gimp-dnd-set-uri-list-func"
 block|,
-literal|"gimp-dnd-set-file-data"
-block|,
-name|NULL
+literal|"gimp-dnd-set-uri-list-data"
 block|,
 name|NULL
 block|,
-name|gimp_dnd_set_file_data
+name|NULL
+block|,
+name|gimp_dnd_set_uri_list_data
 block|}
 block|,
 block|{
@@ -2766,32 +2766,32 @@ block|}
 end_function
 
 begin_comment
-comment|/************************/
+comment|/****************************/
 end_comment
 
 begin_comment
-comment|/*  file dnd functions  */
+comment|/*  uri list dnd functions  */
 end_comment
 
 begin_comment
-comment|/************************/
+comment|/****************************/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dnd_get_file_data (GtkWidget * widget,GCallback get_file_func,gpointer get_file_data,GtkSelectionData * selection,GdkAtom atom)
-name|gimp_dnd_get_file_data
+DECL|function|gimp_dnd_get_uri_list_data (GtkWidget * widget,GCallback get_uri_list_func,gpointer get_uri_list_data,GtkSelectionData * selection,GdkAtom atom)
+name|gimp_dnd_get_uri_list_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 name|GCallback
-name|get_file_func
+name|get_uri_list_func
 parameter_list|,
 name|gpointer
-name|get_file_data
+name|get_uri_list_data
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -2810,14 +2810,14 @@ operator|=
 operator|(
 operator|*
 operator|(
-name|GimpDndDragFileFunc
+name|GimpDndDragUriListFunc
 operator|)
-name|get_file_func
+name|get_uri_list_func
 operator|)
 operator|(
 name|widget
 operator|,
-name|get_file_data
+name|get_uri_list_data
 operator|)
 expr_stmt|;
 if|if
@@ -2825,13 +2825,25 @@ condition|(
 name|uri_list
 condition|)
 block|{
-name|gimp_selection_data_set_uris
+name|gimp_selection_data_set_uri_list
 argument_list|(
 name|selection
 argument_list|,
 name|atom
 argument_list|,
 name|uri_list
+argument_list|)
+expr_stmt|;
+name|g_list_foreach
+argument_list|(
+name|uri_list
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|g_free
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_list_free
@@ -2846,18 +2858,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dnd_set_file_data (GtkWidget * widget,GCallback set_file_func,gpointer set_file_data,GtkSelectionData * selection)
-name|gimp_dnd_set_file_data
+DECL|function|gimp_dnd_set_uri_list_data (GtkWidget * widget,GCallback set_uri_list_func,gpointer set_uri_list_data,GtkSelectionData * selection)
+name|gimp_dnd_set_uri_list_data
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
 name|GCallback
-name|set_file_func
+name|set_uri_list_func
 parameter_list|,
 name|gpointer
-name|set_file_data
+name|set_uri_list_data
 parameter_list|,
 name|GtkSelectionData
 modifier|*
@@ -2868,7 +2880,7 @@ name|GList
 modifier|*
 name|uri_list
 init|=
-name|gimp_selection_data_get_uris
+name|gimp_selection_data_get_uri_list
 argument_list|(
 name|selection
 argument_list|)
@@ -2884,16 +2896,16 @@ return|;
 operator|(
 operator|*
 operator|(
-name|GimpDndDropFileFunc
+name|GimpDndDropUriListFunc
 operator|)
-name|set_file_func
+name|set_uri_list_func
 operator|)
 operator|(
 name|widget
 operator|,
 name|uri_list
 operator|,
-name|set_file_data
+name|set_uri_list_data
 operator|)
 expr_stmt|;
 name|g_list_foreach
@@ -2921,15 +2933,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_file_source_add (GtkWidget * widget,GimpDndDragFileFunc get_file_func,gpointer data)
-name|gimp_dnd_file_source_add
+DECL|function|gimp_dnd_uri_list_source_add (GtkWidget * widget,GimpDndDragUriListFunc get_uri_list_func,gpointer data)
+name|gimp_dnd_uri_list_source_add
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDndDragFileFunc
-name|get_file_func
+name|GimpDndDragUriListFunc
+name|get_uri_list_func
 parameter_list|,
 name|gpointer
 name|data
@@ -2951,7 +2963,7 @@ name|widget
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|get_file_func
+name|get_uri_list_func
 argument_list|)
 argument_list|,
 name|data
@@ -2962,8 +2974,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_file_source_remove (GtkWidget * widget)
-name|gimp_dnd_file_source_remove
+DECL|function|gimp_dnd_uri_list_source_remove (GtkWidget * widget)
+name|gimp_dnd_uri_list_source_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2990,15 +3002,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_file_dest_add (GtkWidget * widget,GimpDndDropFileFunc set_file_func,gpointer data)
-name|gimp_dnd_file_dest_add
+DECL|function|gimp_dnd_uri_list_dest_add (GtkWidget * widget,GimpDndDropUriListFunc set_uri_list_func,gpointer data)
+name|gimp_dnd_uri_list_dest_add
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDndDropFileFunc
-name|set_file_func
+name|GimpDndDropUriListFunc
+name|set_uri_list_func
 parameter_list|,
 name|gpointer
 name|data
@@ -3049,7 +3061,7 @@ name|widget
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|set_file_func
+name|set_uri_list_func
 argument_list|)
 argument_list|,
 name|data
@@ -3063,7 +3075,7 @@ name|widget
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|set_file_func
+name|set_uri_list_func
 argument_list|)
 argument_list|,
 name|data
@@ -3077,7 +3089,7 @@ name|widget
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|set_file_func
+name|set_uri_list_func
 argument_list|)
 argument_list|,
 name|data
@@ -3088,8 +3100,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dnd_file_dest_remove (GtkWidget * widget)
-name|gimp_dnd_file_dest_remove
+DECL|function|gimp_dnd_uri_list_dest_remove (GtkWidget * widget)
+name|gimp_dnd_uri_list_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*

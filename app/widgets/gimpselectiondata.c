@@ -166,8 +166,8 @@ end_endif
 
 begin_function
 name|void
-DECL|function|gimp_selection_data_set_uris (GtkSelectionData * selection,GdkAtom atom,GList * uris)
-name|gimp_selection_data_set_uris
+DECL|function|gimp_selection_data_set_uri_list (GtkSelectionData * selection,GdkAtom atom,GList * uri_list)
+name|gimp_selection_data_set_uri_list
 parameter_list|(
 name|GtkSelectionData
 modifier|*
@@ -178,7 +178,7 @@ name|atom
 parameter_list|,
 name|GList
 modifier|*
-name|uris
+name|uri_list
 parameter_list|)
 block|{
 name|GList
@@ -207,7 +207,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|uris
+name|uri_list
 operator|!=
 name|NULL
 argument_list|)
@@ -216,7 +216,7 @@ for|for
 control|(
 name|list
 operator|=
-name|uris
+name|uri_list
 init|;
 name|list
 condition|;
@@ -603,8 +603,8 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_selection_data_get_uris (GtkSelectionData * selection)
-name|gimp_selection_data_get_uris
+DECL|function|gimp_selection_data_get_uri_list (GtkSelectionData * selection)
+name|gimp_selection_data_get_uri_list
 parameter_list|(
 name|GtkSelectionData
 modifier|*

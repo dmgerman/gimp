@@ -239,17 +239,17 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  file / url dnd functions  */
+comment|/*  uri list  dnd functions  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpDndDragFileFunc
+DECL|typedef|GimpDndDragUriListFunc
 typedef|typedef
 name|GList
 modifier|*
 function_decl|(
 modifier|*
-name|GimpDndDragFileFunc
+name|GimpDndDragUriListFunc
 function_decl|)
 parameter_list|(
 name|GtkWidget
@@ -263,12 +263,12 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDndDropFileFunc
+DECL|typedef|GimpDndDropUriListFunc
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|GimpDndDropFileFunc
+name|GimpDndDropUriListFunc
 function_decl|)
 parameter_list|(
 name|GtkWidget
@@ -277,7 +277,7 @@ name|widget
 parameter_list|,
 name|GList
 modifier|*
-name|files
+name|uri_list
 parameter_list|,
 name|gpointer
 name|data
@@ -287,14 +287,14 @@ end_typedef
 
 begin_function_decl
 name|void
-name|gimp_dnd_file_source_add
+name|gimp_dnd_uri_list_source_add
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDndDragFileFunc
-name|get_file_func
+name|GimpDndDragUriListFunc
+name|get_uri_list_func
 parameter_list|,
 name|gpointer
 name|data
@@ -304,7 +304,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dnd_file_source_remove
+name|gimp_dnd_uri_list_source_remove
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -315,14 +315,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dnd_file_dest_add
+name|gimp_dnd_uri_list_dest_add
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpDndDropFileFunc
-name|set_file_func
+name|GimpDndDropUriListFunc
+name|set_uri_list_func
 parameter_list|,
 name|gpointer
 name|data
@@ -332,7 +332,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dnd_file_dest_remove
+name|gimp_dnd_uri_list_dest_remove
 parameter_list|(
 name|GtkWidget
 modifier|*

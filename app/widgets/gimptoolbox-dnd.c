@@ -124,7 +124,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_toolbox_drop_files
+name|gimp_toolbox_drop_uri_list
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -132,7 +132,7 @@ name|widget
 parameter_list|,
 name|GList
 modifier|*
-name|files
+name|uri_list
 parameter_list|,
 name|gpointer
 name|data
@@ -230,27 +230,27 @@ argument_list|(
 name|toolbox
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_file_dest_add
+name|gimp_dnd_uri_list_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|toolbox
 argument_list|)
 argument_list|,
-name|gimp_toolbox_drop_files
+name|gimp_toolbox_drop_uri_list
 argument_list|,
 name|dock
 operator|->
 name|context
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_file_dest_add
+name|gimp_dnd_uri_list_dest_add
 argument_list|(
 name|toolbox
 operator|->
 name|tool_wbox
 argument_list|,
-name|gimp_toolbox_drop_files
+name|gimp_toolbox_drop_uri_list
 argument_list|,
 name|dock
 operator|->
@@ -342,8 +342,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_toolbox_drop_files (GtkWidget * widget,GList * files,gpointer data)
-name|gimp_toolbox_drop_files
+DECL|function|gimp_toolbox_drop_uri_list (GtkWidget * widget,GList * uri_list,gpointer data)
+name|gimp_toolbox_drop_uri_list
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -351,7 +351,7 @@ name|widget
 parameter_list|,
 name|GList
 modifier|*
-name|files
+name|uri_list
 parameter_list|,
 name|gpointer
 name|data
@@ -374,7 +374,7 @@ for|for
 control|(
 name|list
 operator|=
-name|files
+name|uri_list
 init|;
 name|list
 condition|;

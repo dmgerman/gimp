@@ -1215,7 +1215,7 @@ if|if
 condition|(
 name|tree_view_class
 operator|->
-name|drop_files
+name|drop_uri_list
 condition|)
 block|{
 name|GList
@@ -1224,7 +1224,7 @@ name|uri_list
 decl_stmt|;
 name|uri_list
 operator|=
-name|gimp_selection_data_get_uris
+name|gimp_selection_data_get_uri_list
 argument_list|(
 name|selection_data
 argument_list|)
@@ -1236,7 +1236,7 @@ condition|)
 block|{
 name|tree_view_class
 operator|->
-name|drop_files
+name|drop_uri_list
 argument_list|(
 name|tree_view
 argument_list|,

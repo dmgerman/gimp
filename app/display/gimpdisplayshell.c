@@ -334,7 +334,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277c7fa50103
+DECL|enum|__anon29e1430d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -350,7 +350,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277c7fa50203
+DECL|enum|__anon29e1430d0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1452,14 +1452,14 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  dnd stuff  */
-name|gimp_dnd_file_dest_add
+name|gimp_dnd_uri_list_dest_add
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
 argument_list|)
 argument_list|,
-name|gimp_display_shell_drop_files
+name|gimp_display_shell_drop_uri_list
 argument_list|,
 name|shell
 argument_list|)
