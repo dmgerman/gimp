@@ -12,24 +12,6 @@ directive|define
 name|__FRACTALEXPLORER_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
 begin_comment
 comment|/**********************************************************************  Magic numbers    *********************************************************************/
 end_comment
@@ -108,7 +90,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd187a10103
+DECL|enum|__anon29243bad0103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -124,7 +106,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd187a10203
+DECL|enum|__anon29243bad0203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -166,7 +148,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd187a10308
+DECL|struct|__anon29243bad0308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -261,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd187a10408
+DECL|struct|__anon29243bad0408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -308,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd187a10508
+DECL|struct|__anon29243bad0508
 block|{
 DECL|member|text
 name|GtkWidget

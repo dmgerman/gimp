@@ -31,43 +31,6 @@ directive|include
 file|<math.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|GTK_DISABLE_DEPRECATED
-end_ifdef
-
-begin_comment
-comment|/* eeek... really bad hack for the time being */
-end_comment
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2b50f55e0103
-block|{
-DECL|enumerator|GTK_PREVIEW_COLOR
-name|GTK_PREVIEW_COLOR
-block|,
-DECL|enumerator|GTK_PREVIEW_GRAYSCALE
-name|GTK_PREVIEW_GRAYSCALE
-DECL|typedef|GtkPreviewType
-block|}
-name|GtkPreviewType
-typedef|;
-end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -94,7 +57,7 @@ end_undef
 begin_include
 include|#
 directive|include
-file|<gtk/gtkpreview.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
