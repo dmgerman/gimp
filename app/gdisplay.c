@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tools.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layer_pvt.h"
 end_include
 
@@ -5698,6 +5692,15 @@ argument_list|(
 name|event
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|event_widget
+operator|==
+name|NULL
+condition|)
+return|return
+name|NULL
+return|;
 name|toplevel_widget
 operator|=
 name|gtk_widget_get_toplevel
@@ -5726,13 +5729,6 @@ condition|(
 name|popup_shell
 condition|)
 block|{
-name|active_tool_control
-argument_list|(
-name|DESTROY
-argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
 name|gdisp
 operator|=
 name|gtk_object_get_user_data

@@ -268,44 +268,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
-name|gint
-DECL|function|expose_predicate (GdkEvent * event,gpointer data)
-name|expose_predicate
-parameter_list|(
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-return|return
-operator|(
-operator|(
-name|event
-operator|->
-name|type
-operator|==
-name|GDK_EXPOSE
-operator|)
-operator|&&
-operator|(
-name|event
-operator|->
-name|any
-operator|.
-name|window
-operator|==
-name|data
-operator|)
-operator|)
-return|;
-block|}
-end_function
-
-begin_function
 name|gint
 DECL|function|gdisplay_canvas_events (GtkWidget * canvas,GdkEvent * event)
 name|gdisplay_canvas_events
@@ -1202,7 +1164,6 @@ operator|&
 name|GDK_BUTTON2_MASK
 condition|)
 block|{
-comment|/* int flush; */
 name|grab_and_scroll
 argument_list|(
 name|gdisp
@@ -1210,7 +1171,6 @@ argument_list|,
 name|mevent
 argument_list|)
 expr_stmt|;
-comment|/* if (flush) 	    gdisplays_flush (); */
 block|}
 break|break;
 case|case

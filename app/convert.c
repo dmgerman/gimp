@@ -1816,7 +1816,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3c65710108
+DECL|struct|__anon2a3ffab90108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1863,7 +1863,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3c65710208
+DECL|struct|__anon2a3ffab90208
 block|{
 DECL|member|ncolors
 name|long
@@ -1882,7 +1882,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3c65710308
+DECL|struct|__anon2a3ffab90308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -6440,7 +6440,7 @@ expr_stmt|;
 if|if
 condition|(
 name|num_found_cols
-operator|>
+operator|>=
 name|col_limit
 condition|)
 block|{
