@@ -462,7 +462,7 @@ begin_function_decl
 name|void
 name|gimp_transform_tool_draw
 parameter_list|(
-name|GimpTransformTool
+name|GimpDrawTool
 modifier|*
 name|tool
 parameter_list|)
@@ -473,7 +473,7 @@ begin_function_decl
 name|void
 name|gimp_transform_tool_no_draw
 parameter_list|(
-name|GimpTransformTool
+name|GimpDrawTool
 modifier|*
 name|tool
 parameter_list|)

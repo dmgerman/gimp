@@ -3,6 +3,18 @@ begin_comment
 comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995-2001 Spencer Kimball, Peter Mattis, and others  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
+begin_comment
+comment|/* FIXME */
+end_comment
+
+begin_define
+DECL|macro|TRANSFORM_CORRECTIVE
+define|#
+directive|define
+name|TRANSFORM_CORRECTIVE
+value|1
+end_define
+
 begin_include
 include|#
 directive|include
@@ -183,14 +195,11 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27944a300103
-DECL|enum|__anon27944a300203
+DECL|enum|__anon27f1f3620103
 block|{
-DECL|enumerator|TRANSFORM
 DECL|enumerator|TRANSFORM
 name|TRANSFORM
 block|,
-DECL|enumerator|LAST_SIGNAL
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
 block|}
@@ -207,50 +216,41 @@ end_comment
 
 begin_typedef
 DECL|struct|_PixelSurround
-DECL|struct|_PixelSurround
 typedef|typedef
 struct|struct
 name|_PixelSurround
 block|{
-DECL|member|tile
 DECL|member|tile
 name|Tile
 modifier|*
 name|tile
 decl_stmt|;
 DECL|member|mgr
-DECL|member|mgr
 name|TileManager
 modifier|*
 name|mgr
 decl_stmt|;
-DECL|member|buff
 DECL|member|buff
 name|guchar
 modifier|*
 name|buff
 decl_stmt|;
 DECL|member|buff_size
-DECL|member|buff_size
 name|gint
 name|buff_size
 decl_stmt|;
-DECL|member|bpp
 DECL|member|bpp
 name|gint
 name|bpp
 decl_stmt|;
 DECL|member|w
-DECL|member|w
 name|gint
 name|w
 decl_stmt|;
 DECL|member|h
-DECL|member|h
 name|gint
 name|h
 decl_stmt|;
-DECL|member|bg
 DECL|member|bg
 name|guchar
 name|bg
@@ -259,11 +259,9 @@ name|MAX_CHANNELS
 index|]
 decl_stmt|;
 DECL|member|row_stride
-DECL|member|row_stride
 name|gint
 name|row_stride
 decl_stmt|;
-DECL|typedef|PixelSurround
 DECL|typedef|PixelSurround
 block|}
 name|PixelSurround
@@ -271,7 +269,6 @@ typedef|;
 end_typedef
 
 begin_define
-DECL|macro|BILINEAR (jk,j1k,jk1,j1k1,dx,dy)
 DECL|macro|BILINEAR (jk,j1k,jk1,j1k1,dx,dy)
 define|#
 directive|define
@@ -299,7 +296,6 @@ end_comment
 
 begin_define
 DECL|macro|CUBIC_ROW (dx,row,step)
-DECL|macro|CUBIC_ROW (dx,row,step)
 define|#
 directive|define
 name|CUBIC_ROW
@@ -315,7 +311,6 @@ value|gimp_transform_tool_cubic(dx, (row)[0], (row)[step], (row)[step+step], (ro
 end_define
 
 begin_define
-DECL|macro|CUBIC_SCALED_ROW (dx,row,step,i)
 DECL|macro|CUBIC_SCALED_ROW (dx,row,step,i)
 define|#
 directive|define
@@ -334,7 +329,6 @@ value|gimp_transform_tool_cubic(dx, (row)[0] * (row)[i], \             (row)[ste
 end_define
 
 begin_define
-DECL|macro|REF_TILE (i,x,y)
 DECL|macro|REF_TILE (i,x,y)
 define|#
 directive|define
@@ -473,12 +467,105 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_transform_tool_button_press
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_transform_tool_button_release
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventButton
+modifier|*
+name|bevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_transform_tool_motion
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_transform_tool_cursor_update
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_transform_tool_control
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|ToolAction
+name|action
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|old_trans_info
 DECL|variable|old_trans_info
 specifier|static
 name|TranInfo
@@ -487,7 +574,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|transform_info
 DECL|variable|transform_info
 name|InfoDialog
 modifier|*
@@ -499,7 +585,6 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|transform_info_inited
-DECL|variable|transform_info_inited
 specifier|static
 name|gboolean
 name|transform_info_inited
@@ -509,7 +594,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|parent_class
 DECL|variable|parent_class
 specifier|static
 name|GimpDrawToolClass
@@ -521,7 +605,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gimp_transform_tool_signals
 DECL|variable|gimp_transform_tool_signals
 specifier|static
 name|guint
@@ -538,7 +621,6 @@ end_decl_stmt
 
 begin_function
 name|GtkType
-DECL|function|gimp_transform_tool_get_type (void)
 DECL|function|gimp_transform_tool_get_type (void)
 name|gimp_transform_tool_get_type
 parameter_list|(
@@ -613,7 +695,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_tool_class_init (GimpTransformToolClass * klass)
 DECL|function|gimp_transform_tool_class_init (GimpTransformToolClass * klass)
 name|gimp_transform_tool_class_init
 parameter_list|(
@@ -758,7 +839,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_transform_tool_init (GimpTransformTool * tr_tool)
-DECL|function|gimp_transform_tool_init (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_init
 parameter_list|(
 name|GimpTransformTool
@@ -848,7 +928,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * tm,gint w,gint h,guchar bg[MAX_CHANNELS])
 DECL|function|pixel_surround_init (PixelSurround * ps,TileManager * tm,gint w,gint h,guchar bg[MAX_CHANNELS])
 name|pixel_surround_init
 parameter_list|(
@@ -985,7 +1064,6 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|pixel_surround_lock (PixelSurround * ps,gint x,gint y)
 DECL|function|pixel_surround_lock (PixelSurround * ps,gint x,gint y)
 name|pixel_surround_lock
 parameter_list|(
@@ -1321,7 +1399,6 @@ begin_function
 specifier|static
 name|gint
 DECL|function|pixel_surround_rowstride (PixelSurround * ps)
-DECL|function|pixel_surround_rowstride (PixelSurround * ps)
 name|pixel_surround_rowstride
 parameter_list|(
 name|PixelSurround
@@ -1340,7 +1417,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pixel_surround_release (PixelSurround * ps)
 DECL|function|pixel_surround_release (PixelSurround * ps)
 name|pixel_surround_release
 parameter_list|(
@@ -1379,7 +1455,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pixel_surround_clear (PixelSurround * ps)
 DECL|function|pixel_surround_clear (PixelSurround * ps)
 name|pixel_surround_clear
 parameter_list|(
@@ -1422,7 +1497,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|transform_ok_callback (GtkWidget * widget,gpointer data)
-DECL|function|transform_ok_callback (GtkWidget * widget,gpointer data)
 name|transform_ok_callback
 parameter_list|(
 name|GtkWidget
@@ -1462,7 +1536,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|transform_reset_callback (GtkWidget * widget,gpointer data)
 DECL|function|transform_reset_callback (GtkWidget * widget,gpointer data)
 name|transform_reset_callback
 parameter_list|(
@@ -1555,7 +1628,6 @@ end_function
 
 begin_decl_stmt
 DECL|variable|action_labels
-DECL|variable|action_labels
 specifier|static
 specifier|const
 name|gchar
@@ -1589,13 +1661,12 @@ end_decl_stmt
 
 begin_function
 name|void
-DECL|function|gimp_transform_tool_button_press (GimpTransformTool * gt_tool,GdkEventButton * bevent,GDisplay * gdisp)
-DECL|function|gimp_transform_tool_button_press (GimpTransformTool * gt_tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_button_press (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|gimp_transform_tool_button_press
 parameter_list|(
-name|GimpTransformTool
+name|GimpTool
 modifier|*
-name|gt_tool
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -1606,9 +1677,9 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GimpTool
+name|GimpTransformTool
 modifier|*
-name|tool
+name|gt_tool
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -1633,11 +1704,11 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|tool
-operator|=
-name|GIMP_TOOL
-argument_list|(
 name|gt_tool
+operator|=
+name|GIMP_TRANSFORM_TOOL
+argument_list|(
+name|tool
 argument_list|)
 expr_stmt|;
 name|gt_tool
@@ -2212,15 +2283,9 @@ name|tool
 argument_list|)
 expr_stmt|;
 comment|/*  Initialize the transform tool */
-comment|/*FIXME*/
-call|(
-modifier|*
-name|gt_tool
-operator|->
-name|trans_func
-call|)
+name|gimp_transform_tool_transform
 argument_list|(
-name|tool
+name|gt_tool
 argument_list|,
 name|gdisp
 argument_list|,
@@ -2244,17 +2309,8 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|gettext
-argument_list|(
-name|action_labels
-index|[
-name|tool
-operator|->
-name|type
-operator|-
-name|ROTATE
-index|]
-argument_list|)
+comment|/* FIXME!!! gettext (action_labels[tool->type - ROTATE])*/
+literal|"I need to be fixed badly."
 argument_list|,
 name|transform_ok_callback
 argument_list|,
@@ -2304,7 +2360,7 @@ expr_stmt|;
 comment|/*  recall this function to find which handle we're dragging  */
 if|if
 condition|(
-name|gimp_transform_tool
+name|gt_tool
 operator|->
 name|interactive
 condition|)
@@ -2323,13 +2379,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_transform_tool_button_release (GimpTransformTool * gt_tool,GdkEventButton * bevent,GDisplay * gdisp)
-DECL|function|gimp_transform_tool_button_release (GimpTransformTool * gt_tool,GdkEventButton * bevent,GDisplay * gdisp)
+DECL|function|gimp_transform_tool_button_release (GimpTool * tool,GdkEventButton * bevent,GDisplay * gdisp)
 name|gimp_transform_tool_button_release
 parameter_list|(
-name|GimpTransformTool
+name|GimpTool
 modifier|*
-name|gt_tool
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -2340,16 +2395,16 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GimpTool
+name|GimpTransformTool
 modifier|*
-name|tool
+name|gt_tool
 decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|tool
+name|gt_tool
 operator|=
-name|GIMP_TOOL
+name|GIMP_TRANSFORM_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -2409,19 +2464,12 @@ name|state
 operator|&
 name|GDK_SHIFT_MASK
 operator|)
-operator|||
-operator|(
-name|tool
-operator|->
-name|type
-operator|==
-name|FLIP
-operator|)
+comment|/* FIXME || (tool->type == FLIP) */
 condition|)
 block|{
 name|gimp_transform_tool_doit
 argument_list|(
-name|tool
+name|gt_tool
 argument_list|,
 name|gdisp
 argument_list|)
@@ -2493,78 +2541,646 @@ expr_stmt|;
 comment|/*  resume drawing the current tool  */
 name|gimp_draw_tool_resume
 argument_list|(
-argument|GIMP_DRAW_TOOL(gt_tool);
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|gt_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Update the paths preview */
-argument|path_transform_current_path (gdisp->gimage, 				   gt_tool->transform, TRUE);     }
+name|path_transform_current_path
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|gt_tool
+operator|->
+name|transform
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  if this tool is non-interactive, make it inactive after use  */
-argument|if (!gt_tool->interactive)     tool->state = INACTIVE; }  void gimp_transform_tool_doit (GimpTransformTool  *gt_tool, 		          GDisplay           *gdisp) {   GimpTool      *tool;   TileManager   *new_tiles;   TransformUndo *tu;   PathUndo      *pundo;   gboolean       new_layer;   gint           i
-argument_list|,
-argument|x
-argument_list|,
-argument|y;    gimp_add_busy_cursors ();    gimp_transform_tool = GIMP_TOOL(tool);
+if|if
+condition|(
+operator|!
+name|gt_tool
+operator|->
+name|interactive
+condition|)
+name|tool
+operator|->
+name|state
+operator|=
+name|INACTIVE
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_transform_tool_doit (GimpTransformTool * gt_tool,GDisplay * gdisp)
+name|gimp_transform_tool_doit
+parameter_list|(
+name|GimpTransformTool
+modifier|*
+name|gt_tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{
+name|GimpTool
+modifier|*
+name|tool
+decl_stmt|;
+name|TileManager
+modifier|*
+name|new_tiles
+decl_stmt|;
+name|TransformUndo
+modifier|*
+name|tu
+decl_stmt|;
+name|PathUndo
+modifier|*
+name|pundo
+decl_stmt|;
+name|gboolean
+name|new_layer
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|,
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+name|gimp_add_busy_cursors
+argument_list|()
+expr_stmt|;
+name|tool
+operator|=
+name|GIMP_TOOL
+argument_list|(
+name|gt_tool
+argument_list|)
+expr_stmt|;
 comment|/* undraw the tool before we muck around with the transform matrix */
-argument|gimp_draw_tool_pause (GIMP_DRAW_TOOL(gt_tool));
+name|gimp_draw_tool_pause
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|gt_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  We're going to dirty this image, but we want to keep the tool    *  around    */
-argument|tool->preserve = TRUE;
+name|tool
+operator|->
+name|preserve
+operator|=
+name|TRUE
+expr_stmt|;
 comment|/*  Start a transform undo group  */
-argument|undo_push_group_start (gdisp->gimage, TRANSFORM_CORE_UNDO);
+name|undo_push_group_start
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|TRANSFORM_CORE_UNDO
+argument_list|)
+expr_stmt|;
 comment|/*  With the old UI, if original is NULL, then this is the       first transformation. In the new UI, it is always so, right?  */
-argument|g_assert (gt_tool->original == NULL);
+name|g_assert
+argument_list|(
+name|gt_tool
+operator|->
+name|original
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* If we're in interactive mode, we need to copy the current    *  selection to the transform tool's private selection pointer, so    *  that the original source can be repeatedly modified.    */
-argument|tool->drawable = gimp_image_active_drawable (gdisp->gimage);    gt_tool->original = gimp_transform_tool_cut (gdisp->gimage, 					       tool->drawable,&new_layer);    pundo = path_transform_start_undo (gdisp->gimage);
+name|tool
+operator|->
+name|drawable
+operator|=
+name|gimp_image_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+name|gt_tool
+operator|->
+name|original
+operator|=
+name|gimp_transform_tool_cut
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|tool
+operator|->
+name|drawable
+argument_list|,
+operator|&
+name|new_layer
+argument_list|)
+expr_stmt|;
+name|pundo
+operator|=
+name|path_transform_start_undo
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 comment|/*  Send the request for the transformation to the tool...    */
-comment|/* FIXME */
-argument|new_tiles = (* gimp_transform_tool->trans_func) (gt_tool, gdisp, 					      TRANSFORM_FINISH);
-comment|/* FIXME TOO */
-argument|(* gimp_transform_tool->trans_func) (gt_tool, gdisp, TRANSFORM_INIT);    gimp_transform_tool_recalc (gt_tool, gdisp);    if (new_tiles)     {
+name|new_tiles
+operator|=
+name|gimp_transform_tool_transform
+argument_list|(
+name|gt_tool
+argument_list|,
+name|gdisp
+argument_list|,
+name|TRANSFORM_FINISH
+argument_list|)
+expr_stmt|;
+name|gimp_transform_tool_transform
+argument_list|(
+name|gt_tool
+argument_list|,
+name|gdisp
+argument_list|,
+name|TRANSFORM_INIT
+argument_list|)
+expr_stmt|;
+name|gimp_transform_tool_recalc
+argument_list|(
+name|gt_tool
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|new_tiles
+condition|)
+block|{
 comment|/*  paste the new transformed image to the gimage...also implement        *  undo...        */
 comment|/*  FIXME: we should check if the drawable is still valid  */
-argument|gimp_transform_tool_paste (gdisp->gimage, tool->drawable, 			    new_tiles, new_layer);
-comment|/*  create and initialize the transform_undo structure  */
-argument|tu = g_new (TransformUndo,
-literal|1
-argument|);       tu->tool_ID = tool->ID;       tu->tool_type = tool->type;       for (i =
-literal|0
-argument|; i< TRAN_INFO_SIZE; i++) 	tu->trans_info[i] = old_trans_info[i];       tu->original = NULL;       tu->path_undo = pundo;
-comment|/*  Make a note of the new current drawable (since we may have        *  a floating selection, etc now.        */
-argument|tool->drawable = gimp_image_active_drawable (gdisp->gimage);        undo_push_transform (gdisp->gimage, (void *) tu);     }
-comment|/*  push the undo group end  */
-argument|undo_push_group_end (gdisp->gimage);
-comment|/*  We're done dirtying the image, and would like to be restarted    *  if the image gets dirty while the tool exists    */
-argument|tool->preserve = FALSE;
-comment|/*  Flush the gdisplays  */
-argument|if (gdisp->disp_xoffset || gdisp->disp_yoffset)     {       gdk_window_get_size (gdisp->canvas->window,&x,&y);       if (gdisp->disp_yoffset) 	{ 	  gdisplay_expose_area (gdisp,
-literal|0
-argument|,
-literal|0
-argument|, gdisp->disp_width, 				gdisp->disp_yoffset); 	  gdisplay_expose_area (gdisp,
-literal|0
-argument|, gdisp->disp_yoffset + y, 				gdisp->disp_width, gdisp->disp_height); 	}       if (gdisp->disp_xoffset) 	{ 	  gdisplay_expose_area (gdisp,
-literal|0
-argument|,
-literal|0
-argument|, gdisp->disp_xoffset, 				gdisp->disp_height); 	  gdisplay_expose_area (gdisp, gdisp->disp_xoffset + x,
-literal|0
-argument|, 				gdisp->disp_width, gdisp->disp_height); 	}     }    gimp_remove_busy_cursors (NULL);    gdisplays_flush ();    gimp_transform_tool_reset (tool, gdisp);
-comment|/*  if this tool is non-interactive, make it inactive after use  */
-argument|if (!gimp_transform_tool->interactive)     tool->state = INACTIVE; }   void gimp_transform_tool_motion (GimpTransformTool  *tr_tool, 		            GdkEventMotion     *mevent, 		            GDisplay           *gdisp) {   GimpTool *tool;    tool = GIMP_TOOL(tr_tool);    if (tr_tool->bpressed == FALSE)   {
-comment|/*  hey we have not got the button press yet      *  so go away.      */
-argument|return;   }
-comment|/*  if we are creating or this tool is non-interactive, there is    *  nothing to be done so exit.    */
-argument|if (tr_tool->function == TRANSFORM_CREATING ||       !tr_tool->interactive)     return;
-comment|/*  stop the current tool drawing process  */
-argument|gimp_draw_tool_pause (GIMP_DRAW_TOOL(tool));    gdisplay_untransform_coords (gdisp, mevent->x, mevent->y,&tr_tool->curx,&tr_tool->cury, TRUE,
-literal|0
-argument|);   tr_tool->state = mevent->state;
-comment|/*  recalculate the tool's transformation matrix  */
-comment|/* FIXME */
-argument|(* gimp_transform_tool->trans_func) (tool, gdisp, TRANSFORM_MOTION);    tr_tool->lastx = tr_tool->curx;   tr_tool->lasty = tr_tool->cury;
-comment|/*  resume drawing the current tool  */
-argument|gimp_draw_tool_resume (GIMP_DRAW_TOOL(tool)); }  void gimp_transform_tool_cursor_update (GimpTransformTool  *tr_tool, 			           GdkEventMotion     *mevent, 			           GDisplay           *gdisp) {   GimpTool      *tool;   GimpDrawable  *drawable;   GdkCursorType  ctype = GDK_TOP_LEFT_ARROW;   gint           x
+name|gimp_transform_tool_paste
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
 argument_list|,
-argument|y;    tool = GIMP_TOOL(tool)
+name|tool
+operator|->
+name|drawable
+argument_list|,
+name|new_tiles
+argument_list|,
+name|new_layer
 argument_list|)
-empty_stmt|;
+expr_stmt|;
+comment|/*  create and initialize the transform_undo structure  */
+name|tu
+operator|=
+name|g_new
+argument_list|(
+name|TransformUndo
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|tu
+operator|->
+name|tool
+operator|=
+name|gt_tool
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|TRAN_INFO_SIZE
+condition|;
+name|i
+operator|++
+control|)
+name|tu
+operator|->
+name|trans_info
+index|[
+name|i
+index|]
+operator|=
+name|old_trans_info
+index|[
+name|i
+index|]
+expr_stmt|;
+name|tu
+operator|->
+name|original
+operator|=
+name|NULL
+expr_stmt|;
+name|tu
+operator|->
+name|path_undo
+operator|=
+name|pundo
+expr_stmt|;
+comment|/*  Make a note of the new current drawable (since we may have        *  a floating selection, etc now.        */
+name|tool
+operator|->
+name|drawable
+operator|=
+name|gimp_image_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+name|undo_push_transform
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+operator|(
+name|void
+operator|*
+operator|)
+name|tu
+argument_list|)
+expr_stmt|;
+block|}
+comment|/*  push the undo group end  */
+name|undo_push_group_end
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
+comment|/*  We're done dirtying the image, and would like to be restarted    *  if the image gets dirty while the tool exists    */
+name|tool
+operator|->
+name|preserve
+operator|=
+name|FALSE
+expr_stmt|;
+comment|/*  Flush the gdisplays  */
+if|if
+condition|(
+name|gdisp
+operator|->
+name|disp_xoffset
+operator|||
+name|gdisp
+operator|->
+name|disp_yoffset
+condition|)
+block|{
+name|gdk_window_get_size
+argument_list|(
+name|gdisp
+operator|->
+name|canvas
+operator|->
+name|window
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gdisp
+operator|->
+name|disp_yoffset
+condition|)
+block|{
+name|gdisplay_expose_area
+argument_list|(
+name|gdisp
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|gdisp
+operator|->
+name|disp_width
+argument_list|,
+name|gdisp
+operator|->
+name|disp_yoffset
+argument_list|)
+expr_stmt|;
+name|gdisplay_expose_area
+argument_list|(
+name|gdisp
+argument_list|,
+literal|0
+argument_list|,
+name|gdisp
+operator|->
+name|disp_yoffset
+operator|+
+name|y
+argument_list|,
+name|gdisp
+operator|->
+name|disp_width
+argument_list|,
+name|gdisp
+operator|->
+name|disp_height
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gdisp
+operator|->
+name|disp_xoffset
+condition|)
+block|{
+name|gdisplay_expose_area
+argument_list|(
+name|gdisp
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|gdisp
+operator|->
+name|disp_xoffset
+argument_list|,
+name|gdisp
+operator|->
+name|disp_height
+argument_list|)
+expr_stmt|;
+name|gdisplay_expose_area
+argument_list|(
+name|gdisp
+argument_list|,
+name|gdisp
+operator|->
+name|disp_xoffset
+operator|+
+name|x
+argument_list|,
+literal|0
+argument_list|,
+name|gdisp
+operator|->
+name|disp_width
+argument_list|,
+name|gdisp
+operator|->
+name|disp_height
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|gimp_remove_busy_cursors
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gdisplays_flush
+argument_list|()
+expr_stmt|;
+name|gimp_transform_tool_reset
+argument_list|(
+name|tool
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
+comment|/*  if this tool is non-interactive, make it inactive after use  */
+if|if
+condition|(
+operator|!
+name|gt_tool
+operator|->
+name|interactive
+condition|)
+name|tool
+operator|->
+name|state
+operator|=
+name|INACTIVE
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_transform_tool_motion (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+name|gimp_transform_tool_motion
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+decl_stmt|;
+name|tr_tool
+operator|=
+name|GIMP_TRANSFORM_TOOL
+argument_list|(
+name|tool
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|bpressed
+operator|==
+name|FALSE
+condition|)
+block|{
+comment|/*  hey we have not got the button press yet      *  so go away.      */
+return|return;
+block|}
+comment|/*  if we are creating or this tool is non-interactive, there is    *  nothing to be done so exit.    */
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|function
+operator|==
+name|TRANSFORM_CREATING
+operator|||
+operator|!
+name|tr_tool
+operator|->
+name|interactive
+condition|)
+return|return;
+comment|/*  stop the current tool drawing process  */
+name|gimp_draw_tool_pause
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gdisplay_untransform_coords
+argument_list|(
+name|gdisp
+argument_list|,
+name|mevent
+operator|->
+name|x
+argument_list|,
+name|mevent
+operator|->
+name|y
+argument_list|,
+operator|&
+name|tr_tool
+operator|->
+name|curx
+argument_list|,
+operator|&
+name|tr_tool
+operator|->
+name|cury
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|tr_tool
+operator|->
+name|state
+operator|=
+name|mevent
+operator|->
+name|state
+expr_stmt|;
+comment|/*  recalculate the tool's transformation matrix  */
+name|gimp_transform_tool_transform
+argument_list|(
+name|tr_tool
+argument_list|,
+name|gdisp
+argument_list|,
+name|TRANSFORM_MOTION
+argument_list|)
+expr_stmt|;
+name|tr_tool
+operator|->
+name|lastx
+operator|=
+name|tr_tool
+operator|->
+name|curx
+expr_stmt|;
+name|tr_tool
+operator|->
+name|lasty
+operator|=
+name|tr_tool
+operator|->
+name|cury
+expr_stmt|;
+comment|/*  resume drawing the current tool  */
+name|gimp_draw_tool_resume
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_transform_tool_cursor_update (GimpTool * tool,GdkEventMotion * mevent,GDisplay * gdisp)
+name|gimp_transform_tool_cursor_update
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
+parameter_list|,
+name|GdkEventMotion
+modifier|*
+name|mevent
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+block|{
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+name|GdkCursorType
+name|ctype
+init|=
+name|GDK_TOP_LEFT_ARROW
+decl_stmt|;
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+name|tool
+operator|=
+name|GIMP_TRANSFORM_TOOL
+argument_list|(
+name|tool
+argument_list|)
+expr_stmt|;
 name|gdisplay_untransform_coords
 argument_list|(
 name|gdisp
@@ -2705,14 +3321,18 @@ name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 name|void
+DECL|function|gimp_transform_tool_control (GimpTool * tool,ToolAction action,GDisplay * gdisp)
 name|gimp_transform_tool_control
 parameter_list|(
-name|GimpTransformTool
+name|GimpTool
 modifier|*
-name|tr_tool
+name|tool
 parameter_list|,
-name|GimpTransformToolAction
+name|ToolAction
 name|action
 parameter_list|,
 name|GDisplay
@@ -2722,11 +3342,22 @@ parameter_list|)
 block|{
 name|GimpDrawTool
 modifier|*
-name|tool
+name|dr_tool
 decl_stmt|;
-name|tool
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+decl_stmt|;
+name|dr_tool
 operator|=
 name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+expr_stmt|;
+name|tr_tool
+operator|=
+name|GIMP_TRANSFORM_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -2741,7 +3372,7 @@ name|PAUSE
 case|:
 name|gimp_draw_tool_pause
 argument_list|(
-name|tool
+name|dr_tool
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2757,7 +3388,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(
-name|tool
+name|dr_tool
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2776,35 +3407,43 @@ default|default:
 break|break;
 block|}
 block|}
+end_function
+
+begin_function
 name|void
+DECL|function|gimp_transform_tool_no_draw (GimpDrawTool * tool)
 name|gimp_transform_tool_no_draw
 parameter_list|(
-name|GimpTransformTool
+name|GimpDrawTool
 modifier|*
 name|tool
 parameter_list|)
 block|{
 return|return;
 block|}
+end_function
+
+begin_function
 name|void
+DECL|function|gimp_transform_tool_draw (GimpDrawTool * dr_tool)
 name|gimp_transform_tool_draw
 parameter_list|(
-name|GimpTransformTool
+name|GimpDrawTool
 modifier|*
-name|tr_tool
+name|dr_tool
 parameter_list|)
 block|{
 name|GDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
+name|GimpTransformTool
+modifier|*
+name|tr_tool
+decl_stmt|;
 name|GimpTool
 modifier|*
 name|tool
-decl_stmt|;
-name|GimpDrawTool
-modifier|*
-name|dr_tool
 decl_stmt|;
 name|gint
 name|x1
@@ -2844,6 +3483,13 @@ name|xb
 decl_stmt|,
 name|yb
 decl_stmt|;
+name|tr_tool
+operator|=
+name|GIMP_TRANSFORM_TOOL
+argument_list|(
+name|dr_tool
+argument_list|)
+expr_stmt|;
 name|tool
 operator|=
 name|GIMP_TOOL
@@ -3109,46 +3755,7 @@ name|tgrid_coords
 operator|!=
 name|NULL
 operator|)
-operator|&&
-operator|(
-operator|(
-name|tool
-operator|->
-name|type
-operator|!=
-name|PERSPECTIVE
-operator|)
-operator|||
-operator|(
-operator|(
-name|tr_tool
-operator|->
-name|transform
-index|[
-literal|0
-index|]
-index|[
-literal|0
-index|]
-operator|>=
-literal|0.0
-operator|)
-operator|&&
-operator|(
-name|tr_tool
-operator|->
-name|transform
-index|[
-literal|1
-index|]
-index|[
-literal|1
-index|]
-operator|>=
-literal|0.0
-operator|)
-operator|)
-operator|)
+comment|/* FIXME!!! this doesn't belong here&&       ((tool->type != PERSPECTIVE)  ||        ((tr_tool->transform[0][0]>=0.0)&& 	(tr_tool->transform[1][1]>=0.0)) */
 condition|)
 block|{
 name|gci
@@ -3533,10 +4140,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
 name|void
+DECL|function|gimp_transform_tool_destroy (GtkObject * object)
 name|gimp_transform_tool_destroy
 parameter_list|(
 name|GtkObject
+modifier|*
 name|object
 parameter_list|)
 block|{
@@ -3577,12 +4189,6 @@ operator|==
 name|ACTIVE
 condition|)
 name|gimp_draw_tool_stop
-argument_list|(
-name|dr_tool
-argument_list|)
-expr_stmt|;
-comment|/*  Free the selection core  */
-name|gimp_draw_tool_free
 argument_list|(
 name|dr_tool
 argument_list|)
@@ -3651,7 +4257,11 @@ name|tgrid_coords
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 name|void
+DECL|function|gimp_transform_tool_transform_bounding_box (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_transform_bounding_box
 parameter_list|(
 name|GimpTransformTool
@@ -3778,39 +4388,7 @@ operator|->
 name|ty4
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|tool
-operator|->
-name|type
-operator|==
-name|ROTATE
-condition|)
-name|gimp_matrix3_transform_point
-argument_list|(
-name|tr_tool
-operator|->
-name|transform
-argument_list|,
-name|tr_tool
-operator|->
-name|cx
-argument_list|,
-name|tr_tool
-operator|->
-name|cy
-argument_list|,
-operator|&
-name|tr_tool
-operator|->
-name|tcx
-argument_list|,
-operator|&
-name|tr_tool
-operator|->
-name|tcy
-argument_list|)
-expr_stmt|;
+comment|/* FIXME  if (tool->type == ROTATE)     gimp_matrix3_transform_point (tr_tool->transform, 				  tr_tool->cx, tr_tool->cy,&tr_tool->tcx,&tr_tool->tcy); */
 if|if
 condition|(
 name|tr_tool
@@ -3910,7 +4488,11 @@ expr_stmt|;
 block|}
 block|}
 block|}
+end_function
+
+begin_function
 name|void
+DECL|function|gimp_transform_tool_reset (GimpTransformTool * tr_tool,GDisplay * gdisp)
 name|gimp_transform_tool_reset
 parameter_list|(
 name|GimpTransformTool
@@ -3930,7 +4512,7 @@ name|tool
 operator|=
 name|GIMP_TOOL
 argument_list|(
-name|tool
+name|tr_tool
 argument_list|)
 expr_stmt|;
 if|if
@@ -3991,8 +4573,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|void
+DECL|function|gimp_transform_tool_bounds (GimpTransformTool * tr_tool,GDisplay * gdisp)
 name|gimp_transform_tool_bounds
 parameter_list|(
 name|GimpTransformTool
@@ -4186,7 +4772,11 @@ name|tr_tool
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 name|void
+DECL|function|gimp_transform_tool_grid_density_changed (void)
 name|gimp_transform_tool_grid_density_changed
 parameter_list|(
 name|void
@@ -4245,7 +4835,11 @@ name|dr_tool
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 name|void
+DECL|function|gimp_transform_tool_showpath_changed (gint type)
 name|gimp_transform_tool_showpath_changed
 parameter_list|(
 name|gint
@@ -4265,8 +4859,6 @@ name|GimpTransformTool
 operator|*
 operator|)
 name|active_tool
-operator|->
-name|private
 expr_stmt|;
 if|if
 condition|(
@@ -4299,8 +4891,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|void
+DECL|function|gimp_transform_tool_grid_recalc (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_grid_recalc
 parameter_list|(
 name|GimpTransformTool
@@ -4369,8 +4965,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
 specifier|static
 name|void
+DECL|function|gimp_transform_tool_setup_grid (GimpTransformTool * tr_tool)
 name|gimp_transform_tool_setup_grid
 parameter_list|(
 name|GimpTransformTool
@@ -4688,8 +5288,12 @@ literal|4
 expr_stmt|;
 block|}
 block|}
+end_function
+
+begin_function
 specifier|static
 name|void
+DECL|function|gimp_transform_tool_recalc (GimpTransformTool * tr_tool,GDisplay * gdisp)
 name|gimp_transform_tool_recalc
 parameter_list|(
 name|GimpTransformTool
@@ -4708,15 +5312,9 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-comment|/* FIXME */
-call|(
-modifier|*
-name|gimp_transform_tool
-operator|->
-name|trans_func
-call|)
+name|gimp_transform_tool_transform
 argument_list|(
-name|tool
+name|tr_tool
 argument_list|,
 name|gdisp
 argument_list|,
@@ -4724,12 +5322,19 @@ name|TRANSFORM_RECALC
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_comment
 comment|/*  Actually carry out a transformation  */
+end_comment
+
+begin_function
 name|TileManager
 modifier|*
+DECL|function|gimp_transform_tool_do (GimpImage * gimage,GimpDrawable * drawable,TileManager * float_tiles,gboolean interpolation,GimpMatrix3 matrix,GimpProgressFunc progress_callback,gpointer progress_data)
 name|gimp_transform_tool_do
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -6616,11 +7221,15 @@ return|return
 name|tiles
 return|;
 block|}
+end_function
+
+begin_function
 name|TileManager
 modifier|*
+DECL|function|gimp_transform_tool_cut (GimpImage * gimage,GimpDrawable * drawable,gboolean * new_layer)
 name|gimp_transform_tool_cut
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -6720,11 +7329,18 @@ return|return
 name|tiles
 return|;
 block|}
+end_function
+
+begin_comment
 comment|/*  Paste a transform to the gdisplay  */
+end_comment
+
+begin_function
 name|gboolean
+DECL|function|gimp_transform_tool_paste (GimpImage * gimage,GimpDrawable * drawable,TileManager * tiles,gboolean new_layer)
 name|gimp_transform_tool_paste
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -7063,9 +7679,16 @@ name|TRUE
 return|;
 block|}
 block|}
+end_function
+
+begin_comment
 comment|/* Note: cubic function no longer clips result */
+end_comment
+
+begin_function
 specifier|static
 name|gdouble
+DECL|function|gimp_transform_tool_cubic (gdouble dx,gint jm1,gint j,gint jp1,gint jp2)
 name|gimp_transform_tool_cubic
 parameter_list|(
 name|gdouble
