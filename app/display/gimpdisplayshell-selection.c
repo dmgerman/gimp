@@ -441,8 +441,13 @@ name|visual
 decl_stmt|;
 name|visual
 operator|=
-name|gdk_rgb_get_visual
-argument_list|()
+name|gdk_screen_get_rgb_visual
+argument_list|(
+name|gdk_drawable_get_screen
+argument_list|(
+name|win
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|cycled_ants_pixmap
 operator|=

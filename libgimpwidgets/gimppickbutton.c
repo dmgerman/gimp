@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28edff2c0103
+DECL|enum|__anon2adf1ab20103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -582,7 +582,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_pick_button_new:  *  * Creates a new #GimpPickButton widget.  *   * Returns: A new #GimpPickButton widget.  **/
+comment|/**  * gimp_pick_button_new:  *  * Creates a new #GimpPickButton widget.  *  * Returns: A new #GimpPickButton widget.  **/
 end_comment
 
 begin_function
@@ -1126,8 +1126,15 @@ operator|!=
 name|GDK_GRAB_SUCCESS
 condition|)
 block|{
-name|gdk_keyboard_ungrab
+name|gdk_display_keyboard_ungrab
 argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|button
+operator|->
+name|grab_widget
+argument_list|)
+argument_list|,
 name|GDK_CURRENT_TIME
 argument_list|)
 expr_stmt|;
@@ -1470,14 +1477,29 @@ modifier|*
 name|button
 parameter_list|)
 block|{
-name|gdk_keyboard_ungrab
+name|GdkDisplay
+modifier|*
+name|display
+init|=
+name|gtk_widget_get_display
 argument_list|(
+name|button
+operator|->
+name|grab_widget
+argument_list|)
+decl_stmt|;
+name|gdk_display_keyboard_ungrab
+argument_list|(
+name|display
+argument_list|,
 name|gtk_get_current_event_time
 argument_list|()
 argument_list|)
 expr_stmt|;
-name|gdk_pointer_ungrab
+name|gdk_display_pointer_ungrab
 argument_list|(
+name|display
+argument_list|,
 name|gtk_get_current_event_time
 argument_list|()
 argument_list|)

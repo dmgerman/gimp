@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296317780103
+DECL|enum|__anon2c2c58440103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1249,7 +1249,7 @@ name|window
 argument_list|,
 name|cursor
 argument_list|,
-literal|0
+name|GDK_CURRENT_TIME
 argument_list|)
 expr_stmt|;
 name|gdk_cursor_unref
@@ -1510,9 +1510,14 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-name|gdk_pointer_ungrab
+name|gdk_display_pointer_ungrab
 argument_list|(
-literal|0
+name|gtk_widget_get_display
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|GDK_CURRENT_TIME
 argument_list|)
 expr_stmt|;
 break|break;

@@ -112,7 +112,7 @@ endif|#
 directive|endif
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad2bfc10103
+DECL|enum|__anon27a63ed00103
 block|{
 DECL|enumerator|DITHER_NONE
 name|DITHER_NONE
@@ -125,7 +125,7 @@ name|GckDitherType
 typedef|;
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad2bfc10208
+DECL|struct|__anon27a63ed00208
 block|{
 DECL|member|visual
 name|GdkVisual
@@ -234,7 +234,9 @@ name|GckVisualInfo
 modifier|*
 name|gck_visualinfo_new
 parameter_list|(
-name|void
+name|GdkScreen
+modifier|*
+name|screen
 parameter_list|)
 function_decl|;
 name|void

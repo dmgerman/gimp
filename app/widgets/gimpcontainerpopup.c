@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaf21170103
+DECL|enum|__anon2889095a0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -877,11 +877,9 @@ else|else
 block|{
 name|gdk_display_pointer_ungrab
 argument_list|(
-name|gdk_drawable_get_display
+name|gtk_widget_get_display
 argument_list|(
 name|widget
-operator|->
-name|window
 argument_list|)
 argument_list|,
 name|GDK_CURRENT_TIME

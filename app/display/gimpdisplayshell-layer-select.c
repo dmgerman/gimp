@@ -676,8 +676,15 @@ name|guint32
 name|time
 parameter_list|)
 block|{
-name|gdk_keyboard_ungrab
+name|gdk_display_keyboard_ungrab
 argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|layer_select
+operator|->
+name|shell
+argument_list|)
+argument_list|,
 name|time
 argument_list|)
 expr_stmt|;

@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf29d630103
+DECL|enum|__anon2bb046e10103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -909,7 +909,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* static int parse_ms_tag (char *str) {   gint sum = 0;   gint offset = 0;   gint length;    length = strlen(str);  find_another_bra:    while ((offset<length)&& (str[offset]!='('))     offset++;      if (offset>=length)     return(-1);    if (!isdigit(str[++offset]))     goto find_another_bra;    do     {       sum *= 10;       sum += str[offset] - '0';       offset++;     }   while ((offset<length)&& (isdigit(str[offset])));      if (length-offset<= 2)     return(-3);    if ((toupper(str[offset]) != 'M') || (toupper(str[offset+1]) != 'S'))     return(-4);    return (sum); }   static DisposeType parse_disposal_tag (char *str) {   gint offset = 0;   gint length;    length = strlen(str);    while ((offset+9)<=length)     {       if (strncmp(&str[offset],"(combine)",9)==0)  	return(DISPOSE_COMBINE);       if (strncmp(&str[offset],"(replace)",9)==0)  	return(DISPOSE_REPLACE);       offset++;     }    return (DISPOSE_UNDEFINED); }*/
+comment|/* static int parse_ms_tag (char *str) {   gint sum = 0;   gint offset = 0;   gint length;    length = strlen(str);  find_another_bra:    while ((offset<length)&& (str[offset]!='('))     offset++;    if (offset>=length)     return(-1);    if (!isdigit(str[++offset]))     goto find_another_bra;    do     {       sum *= 10;       sum += str[offset] - '0';       offset++;     }   while ((offset<length)&& (isdigit(str[offset])));    if (length-offset<= 2)     return(-3);    if ((toupper(str[offset]) != 'M') || (toupper(str[offset+1]) != 'S'))     return(-4);    return (sum); }   static DisposeType parse_disposal_tag (char *str) {   gint offset = 0;   gint length;    length = strlen(str);    while ((offset+9)<=length)     {       if (strncmp(&str[offset],"(combine)",9)==0) 	return(DISPOSE_COMBINE);       if (strncmp(&str[offset],"(replace)",9)==0) 	return(DISPOSE_REPLACE);       offset++;     }    return (DISPOSE_UNDEFINED); }*/
 end_comment
 
 begin_function
@@ -1198,8 +1198,13 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-name|gdk_pointer_ungrab
+name|gdk_display_pointer_ungrab
 argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
@@ -2390,8 +2395,13 @@ argument_list|)
 expr_stmt|;
 name|cursor
 operator|=
-name|gdk_cursor_new
+name|gdk_cursor_new_for_display
 argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|shape_window
+argument_list|)
+argument_list|,
 name|GDK_CENTER_PTR
 argument_list|)
 expr_stmt|;

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2910d4e30103
+DECL|enum|__anon2b21b62f0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2910d4e30203
+DECL|enum|__anon2b21b62f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1249,8 +1249,16 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
-name|gdk_pointer_ungrab
+name|gdk_display_pointer_ungrab
 argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+argument_list|,
 name|bevent
 operator|->
 name|time

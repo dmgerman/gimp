@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299921e50108
+DECL|struct|__anon295c5b210108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299921e50208
+DECL|struct|__anon295c5b210208
 block|{
 DECL|member|y
 name|gint32
@@ -5263,7 +5263,11 @@ name|GtkObject
 modifier|*
 name|data
 decl_stmt|;
-name|int
+name|GdkDisplay
+modifier|*
+name|display
+decl_stmt|;
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -5616,12 +5620,23 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  active and waiting cursor  */
+name|display
+operator|=
+name|gtk_widget_get_display
+argument_list|(
+name|cd
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
 name|cd
 operator|->
 name|cursor_wait
 operator|=
-name|gdk_cursor_new
+name|gdk_cursor_new_for_display
 argument_list|(
+name|display
+argument_list|,
 name|GDK_WATCH
 argument_list|)
 expr_stmt|;
@@ -5629,8 +5644,10 @@ name|cd
 operator|->
 name|cursor_acitve
 operator|=
-name|gdk_cursor_new
+name|gdk_cursor_new_for_display
 argument_list|(
+name|display
+argument_list|,
 name|GDK_TOP_LEFT_ARROW
 argument_list|)
 expr_stmt|;

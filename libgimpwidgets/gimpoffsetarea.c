@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball   *  * gimpoffsetarea.c  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpoffsetarea.c  * Copyright (C) 2001  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296de2220103
+DECL|enum|__anon29f0b5a30103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -393,7 +393,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_offset_area_new:  * @orig_width: the original width  * @orig_height: the original height  *   * Creates a new #GimpOffsetArea widget. A #GimpOffsetArea can be used   * when resizing an image or a drawable to allow the user to interactively   * specify the new offsets.  *   * Return value: the new #GimpOffsetArea widget.  **/
+comment|/**  * gimp_offset_area_new:  * @orig_width: the original width  * @orig_height: the original height  *  * Creates a new #GimpOffsetArea widget. A #GimpOffsetArea can be used  * when resizing an image or a drawable to allow the user to interactively  * specify the new offsets.  *  * Return value: the new #GimpOffsetArea widget.  **/
 end_comment
 
 begin_function
@@ -475,7 +475,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_offset_area_set_size:  * @offset_area: a #GimpOffsetArea.  * @width: the new width  * @height: the new height  *   * Sets the size of the image/drawable displayed by the #GimpOffsetArea.  * If the offsets change as a result of this change, the %offsets_changed  * signal is emitted.  **/
+comment|/**  * gimp_offset_area_set_size:  * @offset_area: a #GimpOffsetArea.  * @width: the new width  * @height: the new height  *  * Sets the size of the image/drawable displayed by the #GimpOffsetArea.  * If the offsets change as a result of this change, the %offsets_changed  * signal is emitted.  **/
 end_comment
 
 begin_function
@@ -710,7 +710,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_offset_area_set_offsets:  * @offset_area: a #GimpOffsetArea.  * @offset_x: the X offset  * @offset_y: the Y offset  *   * Sets the offsets of the image/drawable displayed by the #GimpOffsetArea.  * It does not emit the %offsets_changed signal.  **/
+comment|/**  * gimp_offset_area_set_offsets:  * @offset_area: a #GimpOffsetArea.  * @offset_x: the X offset  * @offset_y: the Y offset  *  * Sets the offsets of the image/drawable displayed by the #GimpOffsetArea.  * It does not emit the %offsets_changed signal.  **/
 end_comment
 
 begin_function
@@ -1327,8 +1327,13 @@ break|break;
 case|case
 name|GDK_BUTTON_RELEASE
 case|:
-name|gdk_pointer_ungrab
+name|gdk_display_pointer_ungrab
 argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|event
 operator|->
 name|button

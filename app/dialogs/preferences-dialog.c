@@ -6295,7 +6295,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon289bc69f0108
+DECL|struct|__anon2947b6b60108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -6895,27 +6895,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gdk_rgb_get_visual
-argument_list|()
-operator|->
-name|depth
-operator|!=
-literal|8
-condition|)
-name|gtk_widget_set_sensitive
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|vbox2
-operator|->
-name|parent
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
+comment|/*  disabling this entry is not multi-head safe  */
+if|#
+directive|if
+literal|0
+block|if (gdk_rgb_get_visual ()->depth != 8)     gtk_widget_set_sensitive (GTK_WIDGET (vbox2->parent), FALSE);
+endif|#
+directive|endif
 name|table
 operator|=
 name|prefs_table_new
@@ -8623,7 +8609,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289bc69f0208
+DECL|struct|__anon2947b6b60208
 block|{
 DECL|member|label
 specifier|const
@@ -8782,7 +8768,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon289bc69f0308
+DECL|struct|__anon2947b6b60308
 block|{
 DECL|member|tree_label
 specifier|const

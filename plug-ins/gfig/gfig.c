@@ -1162,7 +1162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c55f320108
+DECL|struct|__anon2935d2100108
 block|{
 DECL|member|gridspacing
 name|void
@@ -5019,7 +5019,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
-comment|/*     * draw_name     * version    * obj_list    *    */
+comment|/*    * draw_name    * version    * obj_list    *    */
 name|gfig_name_encode
 argument_list|(
 name|conv_buf
@@ -5555,19 +5555,6 @@ block|}
 end_function
 
 begin_comment
-comment|/* HACK WARNING */
-end_comment
-
-begin_decl_stmt
-DECL|variable|xxx
-specifier|static
-name|void
-modifier|*
-name|xxx
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/* Cache the preview image - updates are a lot faster. */
 end_comment
 
@@ -5871,50 +5858,57 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GdkCursorType
-name|ctype1
+specifier|static
+name|GdkCursor
+modifier|*
+name|preview_cursor1
 init|=
+name|NULL
+decl_stmt|;
+specifier|static
+name|GdkCursor
+modifier|*
+name|preview_cursor2
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|preview_cursor1
+condition|)
+block|{
+name|GdkDisplay
+modifier|*
+name|display
+init|=
+name|gtk_widget_get_display
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|gfig_preview
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|preview_cursor1
+operator|=
+name|gdk_cursor_new_for_display
+argument_list|(
+name|display
+argument_list|,
 name|GDK_WATCH
-decl_stmt|;
-name|GdkCursorType
-name|ctype2
-init|=
+argument_list|)
+expr_stmt|;
+name|preview_cursor2
+operator|=
+name|gdk_cursor_new_for_display
+argument_list|(
+name|display
+argument_list|,
 name|GDK_TOP_LEFT_ARROW
-decl_stmt|;
-specifier|static
-name|GdkCursor
-modifier|*
-name|preview_cursor1
-decl_stmt|;
-specifier|static
-name|GdkCursor
-modifier|*
-name|preview_cursor2
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|preview_cursor1
-condition|)
-name|preview_cursor1
-operator|=
-name|gdk_cursor_new
-argument_list|(
-name|ctype1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|preview_cursor2
-condition|)
-name|preview_cursor2
-operator|=
-name|gdk_cursor_new
-argument_list|(
-name|ctype2
-argument_list|)
-expr_stmt|;
+block|}
 name|gdk_window_set_cursor
 argument_list|(
 name|gtk_widget_get_toplevel
@@ -9107,7 +9101,7 @@ modifier|*
 name|bdesc
 parameter_list|)
 block|{
-comment|/* Given the name of a brush then paint it and return the ID of the image     * the preview can be got from    */
+comment|/* Given the name of a brush then paint it and return the ID of the image    * the preview can be got from    */
 specifier|static
 name|gint32
 name|layer_ID
@@ -12018,7 +12012,7 @@ argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
-comment|/* The secltion settings -     * 1) Type (option menu)    * 2) Anti A (toggle)    * 3) Feather (toggle)    * 4) F radius (slider)    * 5) Fill type (option menu)     * 6) Opacity (slider)    * 7) When to fill (toggle)    * 8) Arc as segment/sector     */
+comment|/* The secltion settings -    * 1) Type (option menu)    * 2) Anti A (toggle)    * 3) Feather (toggle)    * 4) F radius (slider)    * 5) Fill type (option menu)    * 6) Opacity (slider)    * 7) When to fill (toggle)    * 8) Arc as segment/sector    */
 comment|/* 1 */
 name|menu
 operator|=
@@ -13817,7 +13811,7 @@ if|#
 directive|if
 literal|0
 comment|/* 17/10/2003 (Maurits): this option is not implemented. Therefore removing      it from the user interface */
-block|toggle = gtk_check_button_new_with_label (_("Lock on Grid"));   gtk_box_pack_start (GTK_BOX (hbox), toggle, FALSE, FALSE, 0);    g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&selvals.opts.lockongrid);   gtk_widget_show (toggle);   gfig_opt_widget.lockongrid = toggle;
+block|toggle = gtk_check_button_new_with_label (_("Lock on Grid"));   gtk_box_pack_start (GTK_BOX (hbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled",                     G_CALLBACK (gimp_toggle_button_update),&selvals.opts.lockongrid);   gtk_widget_show (toggle);   gfig_opt_widget.lockongrid = toggle;
 endif|#
 directive|endif
 name|table
@@ -14810,12 +14804,12 @@ comment|/* NOT USED */
 end_comment
 
 begin_comment
-unit|static void gfig_obj_size_update (gint sz) {   static gchar buf[256];      sprintf (buf, "%6d", sz);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf); }    static GtkWidget * gfig_obj_size_label (void) {   GtkWidget *label;   GtkWidget *hbox;    hbox = gtk_hbox_new (TRUE, 6);
+unit|static void gfig_obj_size_update (gint sz) {   static gchar buf[256];    sprintf (buf, "%6d", sz);   gtk_label_set_text (GTK_LABEL (obj_size_label), buf); }  static GtkWidget * gfig_obj_size_label (void) {   GtkWidget *label;   GtkWidget *hbox;    hbox = gtk_hbox_new (TRUE, 6);
 comment|/* Position labels */
 end_comment
 
 begin_endif
-unit|label = gtk_label_new (_("Size:"));   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);   gtk_widget_show (label);    obj_size_label = gtk_label_new ("0");   gtk_misc_set_alignment (GTK_MISC (obj_size_label), 0.5, 0.5);       gtk_box_pack_start (GTK_BOX (hbox), obj_size_label, FALSE, FALSE, 0);   gtk_widget_show (obj_size_label);    gtk_widget_show (hbox);    return (hbox); }
+unit|label = gtk_label_new (_("Size:"));   gtk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);   gtk_widget_show (label);    obj_size_label = gtk_label_new ("0");   gtk_misc_set_alignment (GTK_MISC (obj_size_label), 0.5, 0.5);   gtk_box_pack_start (GTK_BOX (hbox), obj_size_label, FALSE, FALSE, 0);   gtk_widget_show (obj_size_label);    gtk_widget_show (hbox);    return (hbox); }
 endif|#
 directive|endif
 end_endif
@@ -15828,26 +15822,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_grid_colours (GtkWidget * widget,GdkColormap * cmap)
+DECL|function|gfig_grid_colours (GtkWidget * widget)
 name|gfig_grid_colours
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
-parameter_list|,
-name|GdkColormap
-modifier|*
-name|cmap
 parameter_list|)
 block|{
+name|GdkColormap
+modifier|*
+name|colormap
+decl_stmt|;
 name|GdkGCValues
 name|values
 decl_stmt|;
 name|GdkColor
-name|new_col1
+name|col1
 decl_stmt|;
 name|GdkColor
-name|new_col2
+name|col2
 decl_stmt|;
 name|guchar
 name|stipple
@@ -15882,20 +15876,30 @@ block|,
 comment|/*  -####---  */
 block|}
 decl_stmt|;
+name|colormap
+operator|=
+name|gdk_screen_get_rgb_colormap
+argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gdk_color_parse
 argument_list|(
 literal|"gray50"
 argument_list|,
 operator|&
-name|new_col1
+name|col1
 argument_list|)
 expr_stmt|;
 name|gdk_colormap_alloc_color
 argument_list|(
-name|xxx
+name|colormap
 argument_list|,
 operator|&
-name|new_col1
+name|col1
 argument_list|,
 name|FALSE
 argument_list|,
@@ -15907,15 +15911,15 @@ argument_list|(
 literal|"gray80"
 argument_list|,
 operator|&
-name|new_col2
+name|col2
 argument_list|)
 expr_stmt|;
 name|gdk_colormap_alloc_color
 argument_list|(
-name|xxx
+name|colormap
 argument_list|,
 operator|&
-name|new_col2
+name|col2
 argument_list|,
 name|FALSE
 argument_list|,
@@ -15928,7 +15932,7 @@ name|background
 operator|.
 name|pixel
 operator|=
-name|new_col1
+name|col1
 operator|.
 name|pixel
 expr_stmt|;
@@ -15938,7 +15942,7 @@ name|foreground
 operator|.
 name|pixel
 operator|=
-name|new_col2
+name|col2
 operator|.
 name|pixel
 expr_stmt|;
@@ -16029,11 +16033,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 name|gfig_stock_init
-argument_list|()
-expr_stmt|;
-name|xxx
-operator|=
-name|gdk_rgb_get_colormap
 argument_list|()
 expr_stmt|;
 name|gfig_path
@@ -16523,8 +16522,6 @@ expr_stmt|;
 name|gfig_grid_colours
 argument_list|(
 name|gfig_preview
-argument_list|,
-name|xxx
 argument_list|)
 expr_stmt|;
 comment|/* Popup for list area */
@@ -16752,24 +16749,27 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-name|GdkCursor
+name|GdkDisplay
 modifier|*
-name|preview_cursor
-decl_stmt|;
-name|preview_cursor
-operator|=
-name|gdk_cursor_new
+name|display
+init|=
+name|gtk_widget_get_display
 argument_list|(
-name|GDK_CROSSHAIR
+name|widget
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
 name|gfig_preview
 operator|->
 name|window
 argument_list|,
-name|preview_cursor
+name|gdk_cursor_new_for_display
+argument_list|(
+name|display
+argument_list|,
+name|GDK_CROSSHAIR
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -20520,7 +20520,7 @@ argument_list|(
 name|old_current
 argument_list|)
 expr_stmt|;
-comment|/* If have old object and NOT scaleing currently then force     * back to saved coord type.    */
+comment|/* If have old object and NOT scaleing currently then force    * back to saved coord type.    */
 name|gfig_update_stat_labels
 argument_list|()
 expr_stmt|;
@@ -22594,7 +22594,7 @@ operator|==
 name|ISO_GRID
 condition|)
 block|{
-comment|/*        * This really needs a picture to show the math...        *        * Consider an isometric grid with one of the sets of lines parallel to the         * y axis (vertical alignment). Further define that the origin of a Cartesian         * grid is at a isometric vertex.  For simplicity consider the first quadrant only.        *         *  - Let one line segment between vertices be r        *  - Define the value of r as the grid spacing        *  - Assign an integer n identifier to each vertical grid line along the x axis.        *    with n=0 being the y axis. n can be any integer        *  - Let m to be any integer        *  - Let h be the spacing between vertical grid lines measured along the x axis.        *    It follows from the isometric grid that h has a value of r * COS(1/6 Pi Rad)        *         *  Consider a Vertex V at the Cartesian location [Xv, Yv]        *        *   It follows that vertices belong to the set...        *   V[Xv, Yv] = [ [ n * h ] ,        *                 [ m * r + ( 0.5 * r (n % 2) ) ] ]        *   for all integers n and m        *        * Who cares? Me. It's useful in solving this problem:        * Consider an arbitrary point P[Xp,Yp], find the closest vertex in the set V.        *        * Restated this problem is "find values for m and n that are drive V closest to P"        *         * A Solution method (there may be a better one?):        *         * Step 1) bound n to the two closest values for Xp        *         n_lo = (int) (Xp / h)         *         n_hi = n_lo + 1        *         * Step 2) Consider the two closes vertices for each n_lo and n_hi. The further of        *         the vertices in each pair can readily be discarded.        *         m_lo_n_lo = (int) ( (Yp / r) - 0.5 (n_lo % 2) )        *         m_hi_n_lo = m_lo_n_lo + 1        *        *         m_lo_n_hi = (int) ( (Yp / r) - 0.5 (n_hi % 2) )        *         m_hi_n_hi = m_hi_n_hi        *         * Step 3) compute the distance from P to V1 and V2. Snap to the closer point.        */
+comment|/*        * This really needs a picture to show the math...        *        * Consider an isometric grid with one of the sets of lines parallel to the        * y axis (vertical alignment). Further define that the origin of a Cartesian        * grid is at a isometric vertex.  For simplicity consider the first quadrant only.        *        *  - Let one line segment between vertices be r        *  - Define the value of r as the grid spacing        *  - Assign an integer n identifier to each vertical grid line along the x axis.        *    with n=0 being the y axis. n can be any integer        *  - Let m to be any integer        *  - Let h be the spacing between vertical grid lines measured along the x axis.        *    It follows from the isometric grid that h has a value of r * COS(1/6 Pi Rad)        *        *  Consider a Vertex V at the Cartesian location [Xv, Yv]        *        *   It follows that vertices belong to the set...        *   V[Xv, Yv] = [ [ n * h ] ,        *                 [ m * r + ( 0.5 * r (n % 2) ) ] ]        *   for all integers n and m        *        * Who cares? Me. It's useful in solving this problem:        * Consider an arbitrary point P[Xp,Yp], find the closest vertex in the set V.        *        * Restated this problem is "find values for m and n that are drive V closest to P"        *        * A Solution method (there may be a better one?):        *        * Step 1) bound n to the two closest values for Xp        *         n_lo = (int) (Xp / h)        *         n_hi = n_lo + 1        *        * Step 2) Consider the two closes vertices for each n_lo and n_hi. The further of        *         the vertices in each pair can readily be discarded.        *         m_lo_n_lo = (int) ( (Yp / r) - 0.5 (n_lo % 2) )        *         m_hi_n_lo = m_lo_n_lo + 1        *        *         m_lo_n_hi = (int) ( (Yp / r) - 0.5 (n_hi % 2) )        *         m_hi_n_hi = m_hi_n_hi        *        * Step 3) compute the distance from P to V1 and V2. Snap to the closer point.        */
 name|gint
 name|n_lo
 decl_stmt|;
@@ -22846,7 +22846,7 @@ operator|=
 name|m_hi_n_hi
 expr_stmt|;
 block|}
-comment|/* Now, which is closer to [x,y]? we can use a somewhat abbreviated form of the         * distance formula since we only care about relative values. */
+comment|/* Now, which is closer to [x,y]? we can use a somewhat abbreviated form of the        * distance formula since we only care about relative values. */
 name|x1
 operator|=
 call|(
@@ -23186,11 +23186,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GdkCursorType
-name|ctype
-init|=
-name|GDK_LAST_CURSOR
-decl_stmt|;
 specifier|static
 name|GdkCursor
 modifier|*
@@ -23200,6 +23195,11 @@ name|DEL_OBJ
 operator|+
 literal|1
 index|]
+decl_stmt|;
+name|GdkCursorType
+name|ctype
+init|=
+name|GDK_LAST_CURSOR
 decl_stmt|;
 if|if
 condition|(
@@ -23344,6 +23344,16 @@ operator|.
 name|otype
 index|]
 condition|)
+block|{
+name|GdkDisplay
+modifier|*
+name|display
+init|=
+name|gtk_widget_get_display
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|p_cursors
 index|[
 name|selvals
@@ -23351,11 +23361,14 @@ operator|.
 name|otype
 index|]
 operator|=
-name|gdk_cursor_new
+name|gdk_cursor_new_for_display
 argument_list|(
+name|display
+argument_list|,
 name|ctype
 argument_list|)
 expr_stmt|;
+block|}
 name|gdk_window_set_cursor
 argument_list|(
 name|gfig_preview
@@ -24235,7 +24248,7 @@ comment|/* Stuff for the generation/deletion of objects. */
 end_comment
 
 begin_comment
-comment|/* Objects are easy one they are created - you just go down the object   * list calling the draw function for each object but... when they   * are been created we have to be a little more careful. When   * the first point is placed on the canvas we create the object,   * the mouse position then defines the next point that can move around.  * careful how we draw this position.  */
+comment|/* Objects are easy one they are created - you just go down the object  * list calling the draw function for each object but... when they  * are been created we have to be a little more careful. When  * the first point is placed on the canvas we create the object,  * the mouse position then defines the next point that can move around.  * careful how we draw this position.  */
 end_comment
 
 begin_function

@@ -242,8 +242,11 @@ name|manager
 operator|->
 name|current_device
 operator|=
-name|gdk_device_get_core_pointer
+name|gdk_display_get_core_pointer
+argument_list|(
+name|gdk_display_get_default
 argument_list|()
+argument_list|)
 expr_stmt|;
 name|manager
 operator|->

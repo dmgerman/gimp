@@ -498,7 +498,7 @@ comment|/*****************************/
 end_comment
 
 begin_comment
-comment|/* static void togglebump_update (GtkWidget *widget, 		   gpointer   data) {   gimp_toggle_button_update (widget, data);      if (mapvals.bump_mapped)     {       bump_page_pos = g_list_length (options_note_book->children);        bump_page = create_bump_page ();       gtk_notebook_append_page (options_note_book, bump_page, 				gtk_label_new (_("Bumpmap")));     }   else   {       gtk_notebook_remove_page (options_note_book, bump_page_pos);       if (bump_page_pos< env_page_pos)         env_page_pos--;       bump_page_pos = 0;     } } */
+comment|/* static void togglebump_update (GtkWidget *widget, 		   gpointer   data) {   gimp_toggle_button_update (widget, data);    if (mapvals.bump_mapped)     {       bump_page_pos = g_list_length (options_note_book->children);        bump_page = create_bump_page ();       gtk_notebook_append_page (options_note_book, bump_page, 				gtk_label_new (_("Bumpmap")));     }   else   {       gtk_notebook_remove_page (options_note_book, bump_page_pos);       if (bump_page_pos< env_page_pos)         env_page_pos--;       bump_page_pos = 0;     } } */
 end_comment
 
 begin_comment
@@ -1043,7 +1043,7 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*   toggle = gtk_check_button_new_with_label (_("Use Bump Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.bump_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled", 		    G_CALLBACK (togglebump_update),&mapvals.bump_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable bump-mapping (image depth)"), 			   NULL);      toggle = gtk_check_button_new_with_label (_("Use Environment Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.env_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled", 		    G_CALLBACK (toggleenvironment_update),&mapvals.env_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable environment mapping (reflection)"), 			   NULL);   */
+comment|/*   toggle = gtk_check_button_new_with_label (_("Use Bump Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.bump_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled", 		    G_CALLBACK (togglebump_update),&mapvals.bump_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable bump-mapping (image depth)"), 			   NULL);    toggle = gtk_check_button_new_with_label (_("Use Environment Mapping"));   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (toggle), 				mapvals.env_mapped);   gtk_box_pack_start (GTK_BOX (vbox), toggle, FALSE, FALSE, 0);   g_signal_connect (toggle, "toggled", 		    G_CALLBACK (toggleenvironment_update),&mapvals.env_mapped);   gtk_widget_show (toggle);    gimp_help_set_help_data (toggle, 			   _("Enable/disable environment mapping (reflection)"), 			   NULL);   */
 name|toggle
 operator|=
 name|gtk_check_button_new_with_mnemonic
@@ -5138,7 +5138,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*   if (mapvals.bump_mapped == TRUE)     {       bump_page = create_bump_page ();       bump_page_pos = g_list_length (options_note_book->children);       gtk_notebook_append_page (options_note_book, bump_page, 				gtk_label_new (_("Bumpmap")));     }      if (mapvals.env_mapped == TRUE)     {       env_page = create_environment_page ();       env_page_pos = g_list_length (options_note_book->children);       gtk_notebook_append_page (options_note_book, env_page, 				gtk_label_new (_("Environment")));     }   */
+comment|/*   if (mapvals.bump_mapped == TRUE)     {       bump_page = create_bump_page ();       bump_page_pos = g_list_length (options_note_book->children);       gtk_notebook_append_page (options_note_book, bump_page, 				gtk_label_new (_("Bumpmap")));     }    if (mapvals.env_mapped == TRUE)     {       env_page = create_environment_page ();       env_page_pos = g_list_length (options_note_book->children);       gtk_notebook_append_page (options_note_book, env_page, 				gtk_label_new (_("Environment")));     }   */
 name|gtk_widget_show
 argument_list|(
 name|GTK_WIDGET
@@ -5203,11 +5203,6 @@ literal|"Lighting"
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|visinfo
-operator|=
-name|gck_visualinfo_new
-argument_list|()
 expr_stmt|;
 name|appwin
 operator|=
@@ -5478,6 +5473,16 @@ argument_list|(
 name|previewarea
 argument_list|)
 expr_stmt|;
+name|visinfo
+operator|=
+name|gck_visualinfo_new
+argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|previewarea
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* create preview options, frame and vbox */
 name|hbox
 operator|=
@@ -5705,12 +5710,17 @@ expr_stmt|;
 block|{
 name|GdkCursor
 modifier|*
-name|newcursor
+name|cursor
 decl_stmt|;
-name|newcursor
+name|cursor
 operator|=
-name|gdk_cursor_new
+name|gdk_cursor_new_for_display
 argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|previewarea
+argument_list|)
+argument_list|,
 name|GDK_HAND2
 argument_list|)
 expr_stmt|;
@@ -5720,16 +5730,13 @@ name|previewarea
 operator|->
 name|window
 argument_list|,
-name|newcursor
+name|cursor
 argument_list|)
 expr_stmt|;
 name|gdk_cursor_unref
 argument_list|(
-name|newcursor
+name|cursor
 argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 block|}
 name|image_setup
