@@ -90,6 +90,126 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_define
+DECL|macro|return_if_no_gimp (gimp,data)
+define|#
+directive|define
+name|return_if_no_gimp
+parameter_list|(
+name|gimp
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|gimp = action_data_get_gimp (data); \   if (! gimp) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_image (gimage,data)
+define|#
+directive|define
+name|return_if_no_image
+parameter_list|(
+name|gimage
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|gimage = action_data_get_image (data); \   if (! gimage) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_display (gdisp,data)
+define|#
+directive|define
+name|return_if_no_display
+parameter_list|(
+name|gdisp
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|gdisp = action_data_get_display (data); \   if (! gdisp) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_widget (widget,data)
+define|#
+directive|define
+name|return_if_no_widget
+parameter_list|(
+name|widget
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|widget = action_data_get_widget (data); \   if (! widget) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_drawable (gimage,drawable,data)
+define|#
+directive|define
+name|return_if_no_drawable
+parameter_list|(
+name|gimage
+parameter_list|,
+name|drawable
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|return_if_no_image (gimage,data); \   drawable = gimp_image_active_drawable (gimage); \   if (! drawable) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_layer (gimage,layer,data)
+define|#
+directive|define
+name|return_if_no_layer
+parameter_list|(
+name|gimage
+parameter_list|,
+name|layer
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|return_if_no_image (gimage,data); \   layer = gimp_image_get_active_layer (gimage); \   if (! layer) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_channel (gimage,channel,data)
+define|#
+directive|define
+name|return_if_no_channel
+parameter_list|(
+name|gimage
+parameter_list|,
+name|channel
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|return_if_no_image (gimage,data); \   channel = gimp_image_get_active_channel (gimage); \   if (! channel) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_vectors (gimage,vectors,data)
+define|#
+directive|define
+name|return_if_no_vectors
+parameter_list|(
+name|gimage
+parameter_list|,
+name|vectors
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|return_if_no_image (gimage,data); \   vectors = gimp_image_get_active_vectors (gimage); \   if (! vectors) \     return
+end_define
+
 begin_endif
 endif|#
 directive|endif

@@ -143,34 +143,6 @@ block|}
 struct|;
 end_struct
 
-begin_define
-DECL|macro|return_if_no_display (gdisp,data)
-define|#
-directive|define
-name|return_if_no_display
-parameter_list|(
-name|gdisp
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gdisp = action_data_get_display (data); \   if (! gdisp) \     return
-end_define
-
-begin_define
-DECL|macro|return_if_no_image (gimage,data)
-define|#
-directive|define
-name|return_if_no_image
-parameter_list|(
-name|gimage
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gimage = action_data_get_image (data); \   if (! gimage) \     return
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment

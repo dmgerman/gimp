@@ -142,20 +142,6 @@ file|"view-commands.h"
 end_include
 
 begin_define
-DECL|macro|return_if_no_display (gdisp,data)
-define|#
-directive|define
-name|return_if_no_display
-parameter_list|(
-name|gdisp
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gdisp = action_data_get_display (data); \   if (! gdisp) \     return
-end_define
-
-begin_define
 DECL|macro|SET_ACTIVE (manager,group_name,action_name,active)
 define|#
 directive|define
@@ -184,6 +170,10 @@ parameter_list|)
 define|\
 value|((gdisp) == \    gimp_context_get_display (gimp_get_user_context ((gdisp)->gimage->gimp)))
 end_define
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|void

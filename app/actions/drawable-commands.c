@@ -99,50 +99,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|return_if_no_image (gimage,data)
-define|#
-directive|define
-name|return_if_no_image
-parameter_list|(
-name|gimage
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gimage = action_data_get_image (data); \   if (! gimage) \     return
-end_define
-
-begin_define
-DECL|macro|return_if_no_drawable (gimage,drawable,data)
-define|#
-directive|define
-name|return_if_no_drawable
-parameter_list|(
-name|gimage
-parameter_list|,
-name|drawable
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|return_if_no_image (gimage,data); \   drawable = gimp_image_active_drawable (gimage); \   if (! drawable) \     return
-end_define
-
-begin_define
-DECL|macro|return_if_no_widget (widget,data)
-define|#
-directive|define
-name|return_if_no_widget
-parameter_list|(
-name|widget
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|widget = action_data_get_widget (data); \   if (! widget) \     return
-end_define
-
 begin_comment
 comment|/*  public functions  */
 end_comment

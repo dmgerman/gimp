@@ -111,36 +111,8 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|return_if_no_display (gdisp,data)
-define|#
-directive|define
-name|return_if_no_display
-parameter_list|(
-name|gdisp
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gdisp = action_data_get_display (data); \   if (! gdisp) \     return
-end_define
-
-begin_define
-DECL|macro|return_if_no_image (gimage,data)
-define|#
-directive|define
-name|return_if_no_image
-parameter_list|(
-name|gimage
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gimage = action_data_get_image (data); \   if (! gimage) \     return
-end_define
-
 begin_comment
-comment|/*  local functions  */
+comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
@@ -1105,13 +1077,24 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpDisplay
+name|GimpImage
 modifier|*
-name|gdisp
+name|gimage
 decl_stmt|;
-name|return_if_no_display
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
+name|return_if_no_image
 argument_list|(
-name|gdisp
+name|gimage
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
 argument_list|,
 name|data
 argument_list|)
@@ -1120,16 +1103,12 @@ name|gimp_selection_save
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|gdisp
-operator|->
 name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|gdisp
-operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -1139,9 +1118,7 @@ name|global_dock_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
-name|gdisp
-operator|->
-name|shell
+name|widget
 argument_list|)
 argument_list|,
 literal|"gimp-channel-list"

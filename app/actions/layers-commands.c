@@ -283,50 +283,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_define
-DECL|macro|return_if_no_image (gimage,data)
-define|#
-directive|define
-name|return_if_no_image
-parameter_list|(
-name|gimage
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gimage = action_data_get_image (data); \   if (! gimage) \     return
-end_define
-
-begin_define
-DECL|macro|return_if_no_layer (gimage,layer,data)
-define|#
-directive|define
-name|return_if_no_layer
-parameter_list|(
-name|gimage
-parameter_list|,
-name|layer
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|return_if_no_image (gimage,data); \   layer = gimp_image_get_active_layer (gimage); \   if (! layer) \     return
-end_define
-
-begin_define
-DECL|macro|return_if_no_widget (widget,data)
-define|#
-directive|define
-name|return_if_no_widget
-parameter_list|(
-name|widget
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|widget = action_data_get_widget (data); \   if (! widget) \     return
-end_define
-
 begin_comment
 comment|/*  public functions  */
 end_comment

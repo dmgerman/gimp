@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -72,13 +66,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"gui/dialogs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gui/dialogs.h"
+file|"actions.h"
 end_include
 
 begin_include
@@ -86,20 +80,6 @@ include|#
 directive|include
 file|"dialogs-commands.h"
 end_include
-
-begin_define
-DECL|macro|return_if_no_widget (widget,data)
-define|#
-directive|define
-name|return_if_no_widget
-parameter_list|(
-name|widget
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|if (GIMP_IS_DISPLAY (data)) \     widget = ((GimpDisplay *) data)->shell; \   else if (GIMP_IS_GIMP (data)) \     widget = dialogs_get_toolbox (); \   else if (GIMP_IS_DOCK (data)) \     widget = data; \   else \     widget = NULL; \   \   if (! widget) \     return
-end_define
 
 begin_comment
 comment|/*  local function prototypes  */

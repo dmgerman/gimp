@@ -179,48 +179,6 @@ name|REVERT_DATA_KEY
 value|"revert-confirm-dialog"
 end_define
 
-begin_define
-DECL|macro|return_if_no_gimp (gimp,data)
-define|#
-directive|define
-name|return_if_no_gimp
-parameter_list|(
-name|gimp
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gimp = action_data_get_gimp (data); \   if (! gimp) \     return
-end_define
-
-begin_define
-DECL|macro|return_if_no_display (gdisp,data)
-define|#
-directive|define
-name|return_if_no_display
-parameter_list|(
-name|gdisp
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|gdisp = action_data_get_display (data); \   if (! gdisp) \     return
-end_define
-
-begin_define
-DECL|macro|return_if_no_widget (widget,data)
-define|#
-directive|define
-name|return_if_no_widget
-parameter_list|(
-name|widget
-parameter_list|,
-name|data
-parameter_list|)
-define|\
-value|widget = action_data_get_widget (data); \   if (! widget) \     return
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
