@@ -228,49 +228,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  pure wrappers around the resp. GimpItem::foo() functions:  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_image_mask_translate
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|gint
-name|off_x
-parameter_list|,
-name|gint
-name|off_y
-parameter_list|,
-name|gboolean
-name|push_undo
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_image_mask_stroke
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|GimpPaintInfo
-modifier|*
-name|paint_info
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  pure wrappers around the resp. GimpSelection functions:  */
 end_comment
 

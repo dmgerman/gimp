@@ -1646,11 +1646,17 @@ name|y
 argument_list|)
 expr_stmt|;
 comment|/* move the selection -- whether there has been net movement or not!        * (to ensure that there's something on the undo stack)        */
-name|gimp_image_mask_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+argument_list|)
 argument_list|,
 name|edit_select
 operator|->
@@ -3955,11 +3961,17 @@ condition|(
 name|translate_mask
 condition|)
 block|{
-name|gimp_image_mask_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
+argument_list|)
 argument_list|,
 name|mask_inc_x
 argument_list|,

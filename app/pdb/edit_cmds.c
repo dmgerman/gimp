@@ -64,12 +64,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -1198,9 +1192,15 @@ argument_list|)
 expr_stmt|;
 name|success
 operator|=
-name|gimp_image_mask_stroke
+name|gimp_item_stroke
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,

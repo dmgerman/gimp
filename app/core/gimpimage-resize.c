@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-projection.h"
 end_include
 
@@ -376,9 +370,10 @@ name|gimp_item_resize
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+name|gimp_image_get_mask
+argument_list|(
 name|gimage
-operator|->
-name|selection_mask
+argument_list|)
 argument_list|)
 argument_list|,
 name|new_width
@@ -388,11 +383,6 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_invalidate
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 if|if
@@ -633,11 +623,6 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_changed
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy

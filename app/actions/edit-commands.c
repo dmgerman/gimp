@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage-undo.h"
 end_include
 
@@ -940,9 +934,15 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_stroke
+name|gimp_item_stroke
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
 argument_list|,
 name|active_drawable
 argument_list|,

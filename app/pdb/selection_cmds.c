@@ -1129,9 +1129,15 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_image_mask_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
 argument_list|,
 name|offx
 argument_list|,

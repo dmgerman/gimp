@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-projection.h"
 end_include
 
@@ -437,9 +431,10 @@ name|gimp_item_scale
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+name|gimp_image_get_mask
+argument_list|(
 name|gimage
-operator|->
-name|selection_mask
+argument_list|)
 argument_list|)
 argument_list|,
 name|new_width
@@ -451,11 +446,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|interpolation_type
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_invalidate
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 if|if
@@ -725,11 +715,6 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_changed
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gimp_unset_busy
 argument_list|(
 name|gimage
@@ -741,7 +726,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_check_scaling:  * @gimage:     A #GimpImage.  * @new_width:  The new width.  * @new_height: The new height.  *   * Inventory the layer list in gimage and return #TRUE if, after  * scaling, they all retain positive x and y pixel dimensions.  *   * Return value: #TRUE if scaling the image will shrink none of it's  *               layers completely away.  **/
+comment|/**  * gimp_image_check_scaling:  * @gimage:     A #GimpImage.  * @new_width:  The new width.  * @new_height: The new height.  *  * Inventory the layer list in gimage and return #TRUE if, after  * scaling, they all retain positive x and y pixel dimensions.  *  * Return value: #TRUE if scaling the image will shrink none of it's  *               layers completely away.  **/
 end_comment
 
 begin_function

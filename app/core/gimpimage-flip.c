@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-projection.h"
 end_include
 
@@ -376,9 +370,10 @@ name|gimp_item_flip
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+name|gimp_image_get_mask
+argument_list|(
 name|gimage
-operator|->
-name|selection_mask
+argument_list|)
 argument_list|)
 argument_list|,
 name|flip_type
@@ -386,11 +381,6 @@ argument_list|,
 name|axis
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_invalidate
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 if|if
@@ -588,11 +578,6 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-name|gimp_image_mask_changed
 argument_list|(
 name|gimage
 argument_list|)
