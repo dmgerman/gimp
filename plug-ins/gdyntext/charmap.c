@@ -72,7 +72,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2bdd4ee50103
+DECL|enum|__anon290131e70103
 enum|enum
 block|{
 DECL|enumerator|CHAR_SELECTED
@@ -456,7 +456,7 @@ name|i
 operator|==
 literal|32
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -677,7 +677,7 @@ argument_list|)
 operator|->
 name|active
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -702,7 +702,7 @@ argument_list|)
 operator|->
 name|active
 condition|)
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

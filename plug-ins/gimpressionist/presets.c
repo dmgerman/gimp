@@ -2528,7 +2528,7 @@ name|window
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3950,7 +3950,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -4306,7 +4306,7 @@ argument_list|(
 name|box2
 argument_list|)
 expr_stmt|;
-comment|/* gtk_container_border_width (GTK_CONTAINER (box2), 5); */
+comment|/* gtk_container_set_border_width (GTK_CONTAINER (box2), 5); */
 name|tmpw
 operator|=
 name|gtk_button_new_with_label
