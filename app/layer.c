@@ -144,7 +144,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2b69fa500103
+DECL|enum|__anon2af3aa1b0103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -1711,6 +1711,19 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* copy the parasites */
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|new_layer
+argument_list|)
+operator|->
+name|parasites
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE
 argument_list|(
 name|new_layer

@@ -32,8 +32,8 @@ block|{ }
 end_function
 
 begin_function
-DECL|function|gimp_object_get_type (void)
 name|GtkType
+DECL|function|gimp_object_get_type (void)
 name|gimp_object_get_type
 parameter_list|(
 name|void
@@ -42,6 +42,8 @@ block|{
 specifier|static
 name|GtkType
 name|type
+init|=
+literal|0
 decl_stmt|;
 name|GIMP_TYPE_INIT
 argument_list|(

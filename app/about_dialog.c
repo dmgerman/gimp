@@ -977,6 +977,11 @@ argument_list|(
 name|style
 argument_list|)
 expr_stmt|;
+name|gtk_style_unref
+argument_list|(
+name|style
+argument_list|)
+expr_stmt|;
 name|label_text
 operator|=
 name|g_strdup_printf

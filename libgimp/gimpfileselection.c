@@ -209,7 +209,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon29fc4e590103
+DECL|enum|__anon2761c89b0103
 enum|enum
 block|{
 DECL|enumerator|FILENAME_CHANGED
@@ -1023,10 +1023,7 @@ operator|->
 name|entry
 argument_list|)
 argument_list|,
-name|g_strdup
-argument_list|(
 name|filename
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  update everything    */
@@ -1833,6 +1830,11 @@ name|no_mask
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
