@@ -1,4 +1,17 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|gimp_composite_regression_h
+end_ifndef
+
+begin_define
+DECL|macro|gimp_composite_regression_h
+define|#
+directive|define
+name|gimp_composite_regression_h
+end_define
+
 begin_comment
 comment|/*  * The following typedefs are temporary and only used in regression testing. 	*/
 end_comment
@@ -6,7 +19,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250108
+DECL|struct|__anon2a45d4b00108
 block|{
 DECL|member|v
 name|guint8
@@ -21,7 +34,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250208
+DECL|struct|__anon2a45d4b00208
 block|{
 DECL|member|v
 name|guint8
@@ -40,7 +53,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250308
+DECL|struct|__anon2a45d4b00308
 block|{
 DECL|member|r
 name|guint8
@@ -63,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250408
+DECL|struct|__anon2a45d4b00408
 block|{
 DECL|member|r
 name|guint8
@@ -96,7 +109,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250508
+DECL|struct|__anon2a45d4b00508
 block|{
 DECL|member|v
 name|guint16
@@ -111,7 +124,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250608
+DECL|struct|__anon2a45d4b00608
 block|{
 DECL|member|v
 name|guint16
@@ -130,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250708
+DECL|struct|__anon2a45d4b00708
 block|{
 DECL|member|r
 name|guint16
@@ -153,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250808
+DECL|struct|__anon2a45d4b00808
 block|{
 DECL|member|r
 name|guint16
@@ -191,7 +204,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250908
+DECL|struct|__anon2a45d4b00908
 block|{
 DECL|member|v
 name|guint32
@@ -206,7 +219,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250a08
+DECL|struct|__anon2a45d4b00a08
 block|{
 DECL|member|v
 name|guint32
@@ -225,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250b08
+DECL|struct|__anon2a45d4b00b08
 block|{
 DECL|member|r
 name|guint32
@@ -248,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279224250c08
+DECL|struct|__anon2a45d4b00c08
 block|{
 DECL|member|r
 name|guint32
@@ -439,6 +452,11 @@ name|long
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 end_unit
 

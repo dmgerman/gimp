@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * -*- mode: c tab-width: 2; -*-  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * -*- mode: c tab-width: 2; c-basic-indent: 2; indent-tabs-mode: nil -*-  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_comment
@@ -17,6 +17,12 @@ begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<stdio.h>
 end_include
 
 begin_include
@@ -807,7 +813,7 @@ literal|0
 end_if
 
 begin_comment
-unit|void gimp_composite_shade_generic(const guchar *src, guchar *dest, const guchar *col, guchar blend, guint w, guint bytes, guint has_alpha) {   const guchar blend2 = (255 - blend);   const guint alpha = (has_alpha) ? bytes - 1 : bytes;   guint b;    while (w--)     {       for (b = 0; b< alpha; b++)         dest[b] = (src[b] * blend2 + col[b] * blend) / 255;        if (has_alpha)         dest[alpha] = src[alpha];
+unit|void gimp_composite_shade_generic (const guchar *src, guchar *dest, const guchar *col, guchar blend, guint w, guint bytes, guint has_alpha) {   const guchar blend2 = (255 - blend);   const guint alpha = (has_alpha) ? bytes - 1 : bytes;   guint b;    while (w--)     {       for (b = 0; b< alpha; b++)         dest[b] = (src[b] * blend2 + col[b] * blend) / 255;        if (has_alpha)         dest[alpha] = src[alpha];
 comment|/* alpha channel */
 end_comment
 
@@ -3873,6 +3879,38 @@ literal|1
 operator|)
 operator|)
 expr_stmt|;
+name|printf
+argument_list|(
+literal|"tmp %04x\n"
+argument_list|,
+name|tmp
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"%d\n"
+argument_list|,
+operator|(
+operator|(
+name|gint
+operator|)
+literal|255
+operator|-
+operator|(
+operator|(
+name|src2
+index|[
+name|b
+index|]
+operator|-
+literal|128
+operator|)
+operator|<<
+literal|1
+operator|)
+operator|)
+argument_list|)
+expr_stmt|;
 name|dest
 index|[
 name|b
@@ -5581,7 +5619,7 @@ operator|->
 name|pixelformat_D
 index|]
 expr_stmt|;
-comment|/*gimp_composite_convert_any_any_any_generic(ctx);*/
+comment|/*gimp_composite_convert_any_any_any_generic (ctx);*/
 block|}
 name|gr
 operator|=
