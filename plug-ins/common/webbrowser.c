@@ -437,6 +437,10 @@ name|browser
 decl_stmt|;
 name|gchar
 modifier|*
+name|argument
+decl_stmt|;
+name|gchar
+modifier|*
 name|cmd
 decl_stmt|;
 name|gchar
@@ -494,6 +498,14 @@ return|return
 name|FALSE
 return|;
 block|}
+comment|/* quote the url since it might contains special chars */
+name|argument
+operator|=
+name|g_shell_quote
+argument_list|(
+name|url
+argument_list|)
+expr_stmt|;
 comment|/* replace %s with URL */
 if|if
 condition|(
@@ -512,7 +524,7 @@ name|browser
 argument_list|,
 literal|"%s"
 argument_list|,
-name|url
+name|argument
 argument_list|)
 expr_stmt|;
 else|else
@@ -524,9 +536,14 @@ name|browser
 argument_list|,
 literal|" "
 argument_list|,
-name|url
+name|argument
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|argument
 argument_list|)
 expr_stmt|;
 comment|/* parse the cmd line */
