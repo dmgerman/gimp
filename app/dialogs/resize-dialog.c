@@ -2688,7 +2688,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"_X:"
 argument_list|)
 argument_list|,
 literal|0
@@ -2709,7 +2709,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|,
 literal|1
@@ -2870,11 +2870,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_with_label
+name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Center"
+literal|"C_enter"
 argument_list|)
 argument_list|)
 expr_stmt|;
