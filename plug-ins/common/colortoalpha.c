@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc12a50108
+DECL|struct|__anon295a1bd00108
 block|{
 DECL|member|color
 name|guchar
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc12a50208
+DECL|struct|__anon295a1bd00208
 block|{
 DECL|member|run
 name|gint
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fc12a50308
+DECL|struct|__anon295a1bd00308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -387,7 +387,7 @@ argument_list|(
 literal|"<Image>/Filters/Colors/Color to Alpha..."
 argument_list|)
 argument_list|,
-literal|"RGBA"
+literal|"RGB*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -650,7 +650,24 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
-comment|/*  Make sure that the drawable is indexed or RGB color  */
+comment|/*  Add alpha if not present */
+name|gimp_layer_add_alpha
+argument_list|(
+name|drawable
+operator|->
+name|id
+argument_list|)
+expr_stmt|;
+name|drawable
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|drawable
+operator|->
+name|id
+argument_list|)
+expr_stmt|;
+comment|/*  Make sure that the drawable is RGB color  */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
@@ -660,7 +677,7 @@ operator|->
 name|id
 argument_list|)
 operator|&&
-name|gimp_drawable_has_alpha
+name|gimp_drawable_is_layer
 argument_list|(
 name|drawable
 operator|->
