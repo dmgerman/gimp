@@ -4315,7 +4315,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2af201980108
+DECL|struct|__anon2b6816b20108
 typedef|typedef
 struct|struct
 block|{
@@ -14712,6 +14712,41 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|new_layer_foreground_callback (GtkWidget * w,gpointer client_data)
+name|new_layer_foreground_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|w
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|NewLayerOptions
+modifier|*
+name|options
+decl_stmt|;
+name|options
+operator|=
+operator|(
+name|NewLayerOptions
+operator|*
+operator|)
+name|client_data
+expr_stmt|;
+name|options
+operator|->
+name|fill_type
+operator|=
+name|FOREGROUND_FILL
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|new_layer_white_callback (GtkWidget * w,gpointer client_data)
 name|new_layer_white_callback
 parameter_list|(
@@ -14866,7 +14901,7 @@ name|char
 modifier|*
 name|button_names
 index|[
-literal|3
+literal|4
 index|]
 init|=
 block|{
@@ -14875,12 +14910,14 @@ block|,
 literal|"White"
 block|,
 literal|"Transparent"
+block|,
+literal|"Foreground"
 block|}
 decl_stmt|;
 name|ActionCallback
 name|button_callbacks
 index|[
-literal|3
+literal|4
 index|]
 init|=
 block|{
@@ -14889,6 +14926,8 @@ block|,
 name|new_layer_white_callback
 block|,
 name|new_layer_transparent_callback
+block|,
+name|new_layer_foreground_callback
 block|}
 decl_stmt|;
 comment|/*  the new options structure  */
@@ -15505,7 +15544,7 @@ literal|0
 init|;
 name|i
 operator|<
-literal|3
+literal|4
 condition|;
 name|i
 operator|++
