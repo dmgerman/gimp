@@ -89,11 +89,8 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290dce110103
+DECL|enum|__anon28aeea6d0103
 block|{
-DECL|enumerator|BUTTON_HOME
-name|BUTTON_HOME
-block|,
 DECL|enumerator|BUTTON_INDEX
 name|BUTTON_INDEX
 block|,
@@ -108,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290dce110203
+DECL|enum|__anon28aeea6d0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -561,7 +558,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GIMP Help Browser"
+literal|"GIMP Help browser"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -665,7 +662,7 @@ name|button
 operator|=
 name|gtk_button_new_from_stock
 argument_list|(
-name|GTK_STOCK_HOME
+name|GTK_STOCK_INDEX
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -696,16 +693,10 @@ argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|BUTTON_HOME
+name|BUTTON_INDEX
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|button = gtk_button_new_from_stock (GTK_STOCK_INDEX);   gtk_container_add (GTK_CONTAINER (bbox), button);   gtk_widget_show (button);    g_signal_connect (button, "clicked",                     G_CALLBACK (button_callback),                     GINT_TO_POINTER (BUTTON_INDEX));
-endif|#
-directive|endif
 name|back_button
 operator|=
 name|button
@@ -1598,9 +1589,6 @@ name|data
 argument_list|)
 condition|)
 block|{
-case|case
-name|BUTTON_HOME
-case|:
 case|case
 name|BUTTON_INDEX
 case|:
