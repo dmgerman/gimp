@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29763e400108
+DECL|struct|__anon27820f000108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -652,7 +652,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29763e400208
+DECL|struct|__anon27820f000208
 typedef|typedef
 struct|struct
 block|{
@@ -997,6 +997,13 @@ expr_stmt|;
 name|gimp_rgn_iterator_free
 argument_list|(
 name|iter
+argument_list|)
+expr_stmt|;
+name|g_rand_free
+argument_list|(
+name|param
+operator|.
+name|gr
 argument_list|)
 expr_stmt|;
 block|}
