@@ -23,7 +23,7 @@ end_macro
 begin_typedef
 DECL|typedef|GimpConstraintFunc
 typedef|typedef
-name|gint
+name|gboolean
 function_decl|(
 modifier|*
 name|GimpConstraintFunc
