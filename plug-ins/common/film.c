@@ -18,7 +18,7 @@ name|char
 name|ident
 index|[]
 init|=
-literal|"@(#) GIMP Film plug-in v1.03 20-Dec-97"
+literal|"@(#) GIMP Film plug-in v1.03a 1999-07-22"
 decl_stmt|;
 end_decl_stmt
 
@@ -127,7 +127,7 @@ comment|/* to film_height (i.e. it should be a value from 0.0 to 1.0) */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ac4a8320108
+DECL|struct|__anon2c844b1b0108
 typedef|typedef
 struct|struct
 block|{
@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac4a8320208
+DECL|struct|__anon2c844b1b0208
 block|{
 DECL|member|activate
 name|GtkWidget
@@ -283,7 +283,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac4a8320308
+DECL|struct|__anon2c844b1b0308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -4729,6 +4729,14 @@ argument_list|,
 literal|"*"
 argument_list|,
 comment|/* spacing */
+name|PARAM_STRING
+argument_list|,
+literal|"*"
+argument_list|,
+name|PARAM_STRING
+argument_list|,
+literal|"*"
+argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
@@ -4884,6 +4892,14 @@ argument_list|,
 literal|"*"
 argument_list|,
 comment|/* spacing */
+name|PARAM_STRING
+argument_list|,
+literal|"*"
+argument_list|,
+name|PARAM_STRING
+argument_list|,
+literal|"*"
+argument_list|,
 name|PARAM_END
 argument_list|)
 expr_stmt|;
