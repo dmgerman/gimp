@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -131,6 +137,8 @@ specifier|const
 name|gchar
 modifier|*
 name|var_name
+init|=
+name|NULL
 decl_stmt|;
 if|#
 directive|if
