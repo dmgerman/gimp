@@ -1,22 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
-begin_comment
-comment|/* $Id$ */
-end_comment
-
 begin_define
 DECL|macro|MAZE_TITLE
 define|#
 directive|define
 name|MAZE_TITLE
 value|N_("Maze")
-end_define
-
-begin_define
-DECL|macro|MAZE_URL
-define|#
-directive|define
-name|MAZE_URL
-value|"http://gimp-plug-ins.sourceforge.net/maze/help.html"
 end_define
 
 begin_define
@@ -52,7 +40,7 @@ value|256
 end_define
 
 begin_comment
-comment|/* Don't draw in anything that has less than     this value in the selection channel. */
+comment|/* Don't draw in anything that has less than    this value in the selection channel. */
 end_comment
 
 begin_define
@@ -70,7 +58,7 @@ file|"glib.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon276b8d8d0103
+DECL|enum|__anon2a17d2750103
 typedef|typedef
 enum|enum
 block|{
@@ -86,7 +74,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon276b8d8d0208
+DECL|struct|__anon2a17d2750208
 typedef|typedef
 struct|struct
 block|{

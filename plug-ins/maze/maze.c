@@ -476,28 +476,15 @@ literal|"Offset (use 1)"
 block|}
 block|}
 decl_stmt|;
-name|gchar
-modifier|*
-name|help
-decl_stmt|;
-name|help
-operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"Generates a maze using either the depth-first "
-literal|"search method or Prim's algorithm.  Can make "
-literal|"tileable mazes too.  See %s for more help."
-argument_list|,
-name|MAZE_URL
-argument_list|)
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_maze"
 argument_list|,
 literal|"Draws a maze."
 argument_list|,
-name|help
+literal|"Generates a maze using either the depth-first "
+literal|"search method or Prim's algorithm.  Can make "
+literal|"tileable mazes too."
 argument_list|,
 literal|"Kevin Turner<kevint@poboxes.com>"
 argument_list|,
@@ -531,11 +518,6 @@ argument_list|(
 literal|"plug_in_maze"
 argument_list|,
 literal|"<Image>/Filters/Render/Pattern"
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|help
 argument_list|)
 expr_stmt|;
 block|}
