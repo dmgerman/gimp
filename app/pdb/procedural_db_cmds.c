@@ -463,6 +463,14 @@ modifier|*
 name|a
 parameter_list|)
 block|{
+if|if
+condition|(
+operator|!
+name|a
+condition|)
+return|return
+literal|0
+return|;
 return|return
 name|regexec
 argument_list|(
