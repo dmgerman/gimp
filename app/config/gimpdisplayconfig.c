@@ -158,7 +158,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5bd5e60103
+DECL|enum|__anon29346b1a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -569,7 +569,7 @@ literal|"show-menubar"
 argument_list|,
 name|SHOW_MENUBAR_BLURB
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
