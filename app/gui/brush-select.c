@@ -5184,7 +5184,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5918a0108
+DECL|struct|__anon2c2e733a0108
 block|{
 DECL|member|bsp
 name|BrushSelect
@@ -8865,17 +8865,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|brush_select_freeze_all
-argument_list|()
-expr_stmt|;
 comment|/*  re-init the brush list  */
 name|brushes_init
 argument_list|(
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|brush_select_thaw_all
-argument_list|()
 expr_stmt|;
 block|}
 end_function

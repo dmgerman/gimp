@@ -1114,10 +1114,10 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset"
+literal|"OK"
 argument_list|)
 argument_list|,
-name|color_balance_reset_callback
+name|color_balance_ok_callback
 argument_list|,
 name|cbd
 argument_list|,
@@ -1129,10 +1129,10 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"OK"
+literal|"Reset"
 argument_list|)
 argument_list|,
-name|color_balance_ok_callback
+name|color_balance_reset_callback
 argument_list|,
 name|cbd
 argument_list|,

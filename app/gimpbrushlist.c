@@ -106,6 +106,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"brush_select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"datafiles.h"
 end_include
 
@@ -450,9 +456,11 @@ end_function
 begin_function
 name|GimpBrushList
 modifier|*
-DECL|function|gimp_brush_list_new ()
+DECL|function|gimp_brush_list_new (void)
 name|gimp_brush_list_new
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GimpBrushList
 modifier|*
@@ -528,6 +536,10 @@ operator|&&
 operator|!
 name|no_data
 condition|)
+block|{
+name|brush_select_freeze_all
+argument_list|()
+expr_stmt|;
 name|datafiles_read_directories
 argument_list|(
 name|brush_path
@@ -540,6 +552,10 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|brush_select_thaw_all
+argument_list|()
+expr_stmt|;
+block|}
 name|gimp_context_refresh_brushes
 argument_list|()
 expr_stmt|;
@@ -894,15 +910,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|brushes_free ()
+DECL|function|brushes_free (void)
 name|brushes_free
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 if|if
 condition|(
 name|brush_list
 condition|)
 block|{
+name|brush_select_freeze_all
+argument_list|()
+expr_stmt|;
 while|while
 condition|(
 name|GIMP_LIST
@@ -1202,6 +1223,9 @@ name|b
 argument_list|)
 expr_stmt|;
 block|}
+name|brush_select_thaw_all
+argument_list|()
+expr_stmt|;
 block|}
 block|}
 end_function

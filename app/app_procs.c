@@ -2922,15 +2922,6 @@ expr_stmt|;
 name|brush_dialog_free
 argument_list|()
 expr_stmt|;
-comment|/*  there may be dialogs still waiting for brush signals  */
-if|if
-condition|(
-operator|!
-name|no_interface
-condition|)
-name|brush_select_freeze_all
-argument_list|()
-expr_stmt|;
 name|brushes_free
 argument_list|()
 expr_stmt|;
@@ -3205,7 +3196,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3220,7 +3211,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
