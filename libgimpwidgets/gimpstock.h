@@ -611,6 +611,11 @@ define|#
 directive|define
 name|GIMP_STOCK_INDEXED_PALETTE
 value|"gimp-indexed-palette"
+DECL|macro|GIMP_STOCK_TRANSPARENCY
+define|#
+directive|define
+name|GIMP_STOCK_TRANSPARENCY
+value|"gimp-transparency"
 DECL|macro|GIMP_STOCK_IMAGES
 define|#
 directive|define
