@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e666290108
+DECL|struct|__anon2bd31edf0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3283,7 +3283,7 @@ argument_list|(
 name|chain_button
 argument_list|)
 expr_stmt|;
-comment|/*  connect to the 'value_changed' and "unit_changed" signals because we have to        take care of keeping the entries in sync when the chainbutton is active        */
+comment|/*  connect to the 'value_changed' signal because we have to take care        of keeping the entries in sync when the chainbutton is active        */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -3292,23 +3292,6 @@ name|width
 argument_list|)
 argument_list|,
 literal|"value_changed"
-argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|entry_callback
-argument_list|,
-name|chain_button
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|width
-argument_list|)
-argument_list|,
-literal|"unit_changed"
 argument_list|,
 operator|(
 name|GtkSignalFunc
