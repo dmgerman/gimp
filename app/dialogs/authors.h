@@ -122,7 +122,7 @@ literal|"Michael Hammel"
 block|,
 literal|"Henrik Hansen"
 block|,
-literal|"Ville HautamÃ¤ki"
+literal|"Ville HautamÂ¤ki"
 block|,
 literal|"James Henstridge"
 block|,
@@ -246,6 +246,10 @@ literal|"Erik Nygren"
 block|,
 literal|"Miles O'Neal"
 block|,
+literal|"David Neary"
+block|,
+literal|"David Necas"
+block|,
 literal|"David Odin "
 block|,
 literal|"Thom van Os"
@@ -257,6 +261,8 @@ block|,
 literal|"Jay Painter"
 block|,
 literal|"Sergey Panov"
+block|,
+literal|"Ville PÃ¤tsi"
 block|,
 literal|"Asbjorn Pettersen"
 block|,
@@ -277,6 +283,8 @@ block|,
 literal|"Daniel Risacher"
 block|,
 literal|"James Robinson"
+block|,
+literal|"Guillermo S. Romero"
 block|,
 literal|"Tim Rowley"
 block|,
@@ -303,6 +311,8 @@ block|,
 literal|"Daniel Skarda"
 block|,
 literal|"Adam Spiers"
+block|,
+literal|"Jakub Steiner"
 block|,
 literal|"Nathan Summers"
 block|,
