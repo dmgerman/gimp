@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad2de9b0103
+DECL|enum|__anon292974260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2598,7 +2598,7 @@ literal|"<b>%s</b>"
 argument_list|,
 name|_
 argument_list|(
-literal|"Image _Comment"
+literal|"Image Co_mment"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2613,6 +2613,10 @@ argument_list|,
 name|text
 argument_list|,
 literal|"use_markup"
+argument_list|,
+name|TRUE
+argument_list|,
+literal|"use_underline"
 argument_list|,
 name|TRUE
 argument_list|,
