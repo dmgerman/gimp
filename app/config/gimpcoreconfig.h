@@ -166,7 +166,15 @@ DECL|member|default_image_type
 name|GimpImageBaseType
 name|default_image_type
 decl_stmt|;
-comment|/* the remaining fields are not yet implemented as properties    gint                 default_width;   gint                 default_height;    GimpUnit             default_units;   gdouble              default_xresolution;   gdouble              default_yresolution;   GimpUnit             default_resolution_units;    gint                 levels_of_undo;   gchar               *pluginrc_path;   gchar               *module_db_load_inhibit;   gint                 thumbnail_mode;    */
+DECL|member|default_image_width
+name|gint
+name|default_image_width
+decl_stmt|;
+DECL|member|default_image_height
+name|gint
+name|default_image_height
+decl_stmt|;
+comment|/* the remaining fields are not yet implemented as properties    GimpUnit             default_units;   gdouble              default_xresolution;   gdouble              default_yresolution;   GimpUnit             default_resolution_units;    gint                 levels_of_undo;   gchar               *pluginrc_path;   gchar               *module_db_load_inhibit;   gint                 thumbnail_mode;    */
 block|}
 struct|;
 end_struct

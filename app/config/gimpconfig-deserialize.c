@@ -69,6 +69,12 @@ directive|include
 file|"gimpconfig-types.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_comment
 comment|/*    *  All functions return G_TOKEN_RIGHT_PAREN on success,  *  the GTokenType they would have expected but didn't get  *  or G_TOKEN_NONE if they got the expected token but  *  couldn't parse it.  */
 end_comment
@@ -369,6 +375,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|g_free
+argument_list|(
+name|property_specs
+argument_list|)
+expr_stmt|;
 name|token
 operator|=
 name|G_TOKEN_LEFT_PAREN
@@ -498,21 +509,15 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
 literal|"fatal parse error"
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|property_specs
-condition|)
-name|g_free
-argument_list|(
-name|property_specs
-argument_list|)
-expr_stmt|;
 name|g_scanner_set_scope
 argument_list|(
 name|scanner
@@ -1066,11 +1071,15 @@ argument_list|)
 expr_stmt|;
 else|else
 block|{
+comment|/* don't translate 'yes' and 'no' */
 name|g_scanner_warn
 argument_list|(
 name|scanner
 argument_list|,
+name|_
+argument_list|(
 literal|"expected 'yes' or 'no' for boolean token %s, got '%s'"
+argument_list|)
 argument_list|,
 name|prop_spec
 operator|->
@@ -1291,7 +1300,10 @@ name|g_scanner_warn
 argument_list|(
 name|scanner
 argument_list|,
-literal|"invalid value '%s' for enum property %s"
+name|_
+argument_list|(
+literal|"invalid value '%s' for token %s"
+argument_list|)
 argument_list|,
 name|scanner
 operator|->
@@ -1673,18 +1685,17 @@ argument_list|,
 name|NULL
 argument_list|)
 condition|)
-block|{
 return|return
 name|TRUE
 return|;
-block|}
-else|else
-block|{
 name|g_scanner_warn
 argument_list|(
 name|scanner
 argument_list|,
+name|_
+argument_list|(
 literal|"value for token %s is not a valid UTF-8 string"
+argument_list|)
 argument_list|,
 name|token_name
 argument_list|)
@@ -1692,7 +1703,6 @@ expr_stmt|;
 return|return
 name|FALSE
 return|;
-block|}
 block|}
 end_function
 

@@ -45,6 +45,14 @@ directive|include
 file|"gimpconfig-substitute.h"
 end_include
 
+begin_define
+DECL|macro|SUBSTS_ALLOC
+define|#
+directive|define
+name|SUBSTS_ALLOC
+value|4
+end_define
+
 begin_function_decl
 specifier|static
 specifier|inline
@@ -83,12 +91,12 @@ block|{
 specifier|const
 name|gchar
 modifier|*
-name|s
+name|p
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|p
+name|s
 decl_stmt|;
 name|gchar
 modifier|*
@@ -111,12 +119,12 @@ name|substs
 init|=
 name|NULL
 decl_stmt|;
-name|gint
+name|guint
 name|n_substs
 init|=
 literal|0
 decl_stmt|;
-name|glong
+name|gint
 name|length
 init|=
 literal|0
@@ -414,6 +422,14 @@ goto|goto
 name|cleanup
 goto|;
 block|}
+if|if
+condition|(
+name|n_substs
+operator|%
+name|SUBSTS_ALLOC
+operator|==
+literal|0
+condition|)
 name|substs
 operator|=
 name|g_renew
@@ -428,7 +444,7 @@ operator|*
 operator|(
 name|n_substs
 operator|+
-literal|1
+name|SUBSTS_ALLOC
 operator|)
 argument_list|)
 expr_stmt|;
@@ -493,7 +509,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|substs
+name|n_substs
 condition|)
 return|return
 name|g_strdup

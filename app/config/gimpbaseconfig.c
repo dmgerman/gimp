@@ -106,7 +106,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc209640103
+DECL|enum|__anon2bae1f6c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,17 +131,6 @@ name|PROP_INTERPOLATION_TYPE
 block|, }
 enum|;
 end_enum
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GObjectClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
 
 begin_function
 name|GType
@@ -262,13 +251,6 @@ name|GObjectClass
 modifier|*
 name|object_class
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|=
 name|G_OBJECT_CLASS
