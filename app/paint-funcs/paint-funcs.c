@@ -201,7 +201,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27cf64cd0103
+DECL|enum|__anon2a10205e0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -18808,7 +18808,7 @@ name|LINEAR_INTERPOLATION
 case|:
 block|{
 name|double
-name|dy
+name|idy
 init|=
 operator|(
 operator|(
@@ -18823,11 +18823,11 @@ operator|-
 name|new_y
 decl_stmt|;
 name|double
-name|idy
+name|dy
 init|=
 literal|1.0
 operator|-
-name|dy
+name|idy
 decl_stmt|;
 for|for
 control|(
