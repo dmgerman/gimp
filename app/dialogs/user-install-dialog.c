@@ -234,7 +234,7 @@ value|gtk_widget_modify_style (widget, title_style)
 end_define
 
 begin_enum
-DECL|enum|__anon2c19c3d60103
+DECL|enum|__anon27451c820103
 enum|enum
 block|{
 DECL|enumerator|DIRENT_COLUMN
@@ -480,23 +480,23 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c19c3d60203
+DECL|enum|__anon27451c820203
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
 block|,
-comment|/* Don't pre-create */
+comment|/*  Don't pre-create             */
 DECL|enumerator|TREE_ITEM_MKDIR_ONLY
 name|TREE_ITEM_MKDIR_ONLY
 block|,
-comment|/* Just mkdir */
+comment|/*  Just mkdir                   */
 DECL|enumerator|TREE_ITEM_FROM_SYSCONF_DIR
 name|TREE_ITEM_FROM_SYSCONF_DIR
 block|,
-comment|/* Copy from sysconf directory */
+comment|/*  Copy from sysconf directory  */
 DECL|enumerator|TREE_ITEM_FROM_DATA_DIR
 name|TREE_ITEM_FROM_DATA_DIR
-comment|/* ... from data directory */
+comment|/*  ... from data directory      */
 DECL|typedef|TreeItemType
 block|}
 name|TreeItemType
@@ -506,7 +506,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c19c3d60308
+DECL|struct|__anon27451c820308
 block|{
 DECL|member|directory
 name|gboolean
@@ -4771,7 +4771,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Creating directory %s\n"
+literal|"Creating folder %s\n"
 argument_list|)
 argument_list|,
 name|gimp_directory
@@ -4808,7 +4808,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot create directory -- %s"
+literal|"Cannot create folder: %s"
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -4887,7 +4887,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Creating directory %s\n"
+literal|"Creating folder %s\n"
 argument_list|)
 argument_list|,
 name|dest
@@ -4922,7 +4922,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Cannot create directory -- %s"
+literal|"Cannot create folder: %s"
 argument_list|)
 argument_list|,
 name|g_strerror
@@ -5129,7 +5129,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"  Failure -- %s\n"
+literal|"  Failure: %s\n"
 argument_list|)
 argument_list|,
 name|install_error_message
