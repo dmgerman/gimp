@@ -30,10 +30,18 @@ name|GIMP_GRADIENT_FILE_EXTENSION
 value|".ggr"
 end_define
 
+begin_define
+DECL|macro|GIMP_GRADIENT_DEFAULT_SAMPLE_SIZE
+define|#
+directive|define
+name|GIMP_GRADIENT_DEFAULT_SAMPLE_SIZE
+value|40
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296e59a60103
+DECL|enum|__anon28fd6a610103
 block|{
 DECL|enumerator|GRAD_LINEAR
 name|GRAD_LINEAR
@@ -60,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296e59a60203
+DECL|enum|__anon28fd6a610203
 block|{
 DECL|enumerator|GRAD_RGB
 name|GRAD_RGB

@@ -680,7 +680,7 @@ argument_list|(
 literal|"Gradient UI"
 argument_list|)
 argument_list|,
-literal|0.307
+literal|0.31
 argument_list|)
 expr_stmt|;
 name|register_gradient_select_procs

@@ -16,14 +16,6 @@ directive|define
 name|__GRADIENT_SELECT_H__
 end_define
 
-begin_define
-DECL|macro|GRADIENT_SAMPLE_SIZE
-define|#
-directive|define
-name|GRADIENT_SAMPLE_SIZE
-value|40
-end_define
-
 begin_typedef
 DECL|typedef|GradientSelect
 typedef|typedef
