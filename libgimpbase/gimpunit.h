@@ -41,7 +41,7 @@ directive|endif
 comment|/* __cplusplus */
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a031710103
+DECL|enum|__anon29e1ba630103
 block|{
 DECL|enumerator|UNIT_PIXEL
 name|UNIT_PIXEL
@@ -103,7 +103,7 @@ name|gchar
 modifier|*
 name|identifier
 parameter_list|,
-name|gfloat
+name|gdouble
 name|factor
 parameter_list|,
 name|gint
@@ -146,7 +146,7 @@ name|deletion_flag
 parameter_list|)
 function_decl|;
 comment|/* The meaning of 'factor' is:  * distance_in_units == ( factor * distance_in_inches )  *  * Returns 0 for unit == UNIT_PIXEL as we don't have resolution info here  */
-name|gfloat
+name|gdouble
 name|gimp_unit_get_factor
 parameter_list|(
 name|GUnit

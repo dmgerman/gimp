@@ -57,7 +57,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acee81d0108
+DECL|struct|__anon2992463d0108
 block|{
 DECL|member|compression
 name|gint
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acee81d0208
+DECL|struct|__anon2992463d0208
 block|{
 DECL|member|run
 name|gint
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2acee81d0308
+DECL|struct|__anon2992463d0308
 typedef|typedef
 struct|struct
 block|{
@@ -5686,10 +5686,10 @@ directive|ifdef
 name|GIMP_HAVE_RESOLUTION_INFO
 comment|/* resolution fields */
 block|{
-name|float
+name|double
 name|xresolution
 decl_stmt|;
-name|float
+name|double
 name|yresolution
 decl_stmt|;
 name|unsigned
@@ -5729,7 +5729,7 @@ argument_list|(
 name|unit
 argument_list|)
 expr_stmt|;
-comment|/*  if we have a metric unit, save the resolution as centimeters        */
+comment|/*  if we have a metric unit, save the resolution as centimeters      */
 if|if
 condition|(
 operator|(

@@ -73,7 +73,7 @@ comment|/* static int  gimp_size_entry_focus_in_callback  (GtkWidget *widget, 		
 end_comment
 
 begin_enum
-DECL|enum|__anon29785a490103
+DECL|enum|__anon27b6cb9d0103
 enum|enum
 block|{
 DECL|enumerator|GSE_VALUE_CHANGED_SIGNAL
@@ -101,20 +101,16 @@ name|GimpSizeEntry
 modifier|*
 name|gse
 decl_stmt|;
-DECL|member|index
-name|gint
-name|index
-decl_stmt|;
 DECL|member|resolution
-name|gfloat
+name|gdouble
 name|resolution
 decl_stmt|;
 DECL|member|lower
-name|gfloat
+name|gdouble
 name|lower
 decl_stmt|;
 DECL|member|upper
-name|gfloat
+name|gdouble
 name|upper
 decl_stmt|;
 DECL|member|value_adjustment
@@ -128,15 +124,15 @@ modifier|*
 name|value_spinbutton
 decl_stmt|;
 DECL|member|value
-name|gfloat
+name|gdouble
 name|value
 decl_stmt|;
 DECL|member|min_value
-name|gfloat
+name|gdouble
 name|min_value
 decl_stmt|;
 DECL|member|max_value
-name|gfloat
+name|gdouble
 name|max_value
 decl_stmt|;
 DECL|member|refval_adjustment
@@ -150,15 +146,15 @@ modifier|*
 name|refval_spinbutton
 decl_stmt|;
 DECL|member|refval
-name|gfloat
+name|gdouble
 name|refval
 decl_stmt|;
 DECL|member|min_refval
-name|gfloat
+name|gdouble
 name|min_refval
 decl_stmt|;
 DECL|member|max_refval
-name|gfloat
+name|gdouble
 name|max_refval
 decl_stmt|;
 DECL|member|refval_digits
@@ -781,12 +777,6 @@ name|gse
 expr_stmt|;
 name|gsef
 operator|->
-name|index
-operator|=
-name|i
-expr_stmt|;
-name|gsef
-operator|->
 name|resolution
 operator|=
 literal|1.0
@@ -1379,12 +1369,6 @@ name|gse
 expr_stmt|;
 name|gsef
 operator|->
-name|index
-operator|=
-literal|0
-expr_stmt|;
-name|gsef
-operator|->
 name|resolution
 operator|=
 literal|1.0
@@ -1709,7 +1693,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_set_resolution (GimpSizeEntry * gse,gint field,gfloat resolution,guint keep_size)
+DECL|function|gimp_size_entry_set_resolution (GimpSizeEntry * gse,gint field,gdouble resolution,guint keep_size)
 name|gimp_size_entry_set_resolution
 parameter_list|(
 name|GimpSizeEntry
@@ -1719,7 +1703,7 @@ parameter_list|,
 name|gint
 name|field
 parameter_list|,
-name|gfloat
+name|gdouble
 name|resolution
 parameter_list|,
 name|guint
@@ -1843,7 +1827,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_set_size (GimpSizeEntry * gse,gint field,gfloat lower,gfloat upper)
+DECL|function|gimp_size_entry_set_size (GimpSizeEntry * gse,gint field,gdouble lower,gdouble upper)
 name|gimp_size_entry_set_size
 parameter_list|(
 name|GimpSizeEntry
@@ -1853,10 +1837,10 @@ parameter_list|,
 name|gint
 name|field
 parameter_list|,
-name|gfloat
+name|gdouble
 name|lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|upper
 parameter_list|)
 block|{
@@ -1950,7 +1934,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_set_value_boundaries (GimpSizeEntry * gse,gint field,gfloat lower,gfloat upper)
+DECL|function|gimp_size_entry_set_value_boundaries (GimpSizeEntry * gse,gint field,gdouble lower,gdouble upper)
 name|gimp_size_entry_set_value_boundaries
 parameter_list|(
 name|GimpSizeEntry
@@ -1960,10 +1944,10 @@ parameter_list|,
 name|gint
 name|field
 parameter_list|,
-name|gfloat
+name|gdouble
 name|lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|upper
 parameter_list|)
 block|{
@@ -2266,7 +2250,7 @@ block|}
 end_function
 
 begin_function
-name|gfloat
+name|gdouble
 DECL|function|gimp_size_entry_get_value (GimpSizeEntry * gse,gint field)
 name|gimp_size_entry_get_value
 parameter_list|(
@@ -2346,14 +2330,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_size_entry_update_value (GimpSizeEntryField * gsef,gfloat value)
+DECL|function|gimp_size_entry_update_value (GimpSizeEntryField * gsef,gdouble value)
 name|gimp_size_entry_update_value
 parameter_list|(
 name|GimpSizeEntryField
 modifier|*
 name|gsef
 parameter_list|,
-name|gfloat
+name|gdouble
 name|value
 parameter_list|)
 block|{
@@ -2560,7 +2544,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_set_value (GimpSizeEntry * gse,gint field,gfloat value)
+DECL|function|gimp_size_entry_set_value (GimpSizeEntry * gse,gint field,gdouble value)
 name|gimp_size_entry_set_value
 parameter_list|(
 name|GimpSizeEntry
@@ -2570,7 +2554,7 @@ parameter_list|,
 name|gint
 name|field
 parameter_list|,
-name|gfloat
+name|gdouble
 name|value
 parameter_list|)
 block|{
@@ -2680,7 +2664,7 @@ name|GimpSizeEntryField
 modifier|*
 name|gsef
 decl_stmt|;
-name|gfloat
+name|gdouble
 name|new_value
 decl_stmt|;
 name|gsef
@@ -2741,7 +2725,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_set_refval_boundaries (GimpSizeEntry * gse,gint field,gfloat lower,gfloat upper)
+DECL|function|gimp_size_entry_set_refval_boundaries (GimpSizeEntry * gse,gint field,gdouble lower,gdouble upper)
 name|gimp_size_entry_set_refval_boundaries
 parameter_list|(
 name|GimpSizeEntry
@@ -2751,10 +2735,10 @@ parameter_list|,
 name|gint
 name|field
 parameter_list|,
-name|gfloat
+name|gdouble
 name|lower
 parameter_list|,
-name|gfloat
+name|gdouble
 name|upper
 parameter_list|)
 block|{
@@ -3213,7 +3197,7 @@ block|}
 end_function
 
 begin_function
-name|gfloat
+name|gdouble
 DECL|function|gimp_size_entry_get_refval (GimpSizeEntry * gse,gint field)
 name|gimp_size_entry_get_refval
 parameter_list|(
@@ -3294,14 +3278,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_size_entry_update_refval (GimpSizeEntryField * gsef,gfloat refval)
+DECL|function|gimp_size_entry_update_refval (GimpSizeEntryField * gsef,gdouble refval)
 name|gimp_size_entry_update_refval
 parameter_list|(
 name|GimpSizeEntryField
 modifier|*
 name|gsef
 parameter_list|,
-name|gfloat
+name|gdouble
 name|refval
 parameter_list|)
 block|{
@@ -3494,7 +3478,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_size_entry_set_refval (GimpSizeEntry * gse,gint field,gfloat refval)
+DECL|function|gimp_size_entry_set_refval (GimpSizeEntry * gse,gint field,gdouble refval)
 name|gimp_size_entry_set_refval
 parameter_list|(
 name|GimpSizeEntry
@@ -3504,7 +3488,7 @@ parameter_list|,
 name|gint
 name|field
 parameter_list|,
-name|gfloat
+name|gdouble
 name|refval
 parameter_list|)
 block|{
@@ -3622,7 +3606,7 @@ name|GimpSizeEntryField
 modifier|*
 name|gsef
 decl_stmt|;
-name|gfloat
+name|gdouble
 name|new_refval
 decl_stmt|;
 name|gsef

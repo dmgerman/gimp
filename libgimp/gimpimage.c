@@ -3440,17 +3440,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_resolution (gint32 image_ID,float * xresolution,float * yresolution)
+DECL|function|gimp_image_get_resolution (gint32 image_ID,double * xresolution,double * yresolution)
 name|gimp_image_get_resolution
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|float
+name|double
 modifier|*
 name|xresolution
 parameter_list|,
-name|float
+name|double
 modifier|*
 name|yresolution
 parameter_list|)
@@ -3462,10 +3462,10 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|float
+name|double
 name|xres
 decl_stmt|;
-name|float
+name|double
 name|yres
 decl_stmt|;
 name|g_return_if_fail
@@ -3559,16 +3559,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_resolution (gint32 image_ID,float xresolution,float yresolution)
+DECL|function|gimp_image_set_resolution (gint32 image_ID,double xresolution,double yresolution)
 name|gimp_image_set_resolution
 parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|float
+name|double
 name|xresolution
 parameter_list|,
-name|float
+name|double
 name|yresolution
 parameter_list|)
 block|{

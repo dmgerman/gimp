@@ -540,7 +540,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon278579c00108
+DECL|struct|__anon2a1ce9640108
 typedef|typedef
 struct|struct
 block|{
@@ -785,7 +785,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon278579c00208
+DECL|struct|__anon2a1ce9640208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +858,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278579c00308
+DECL|struct|__anon2a1ce9640308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +884,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278579c00408
+DECL|struct|__anon2a1ce9640408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +917,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon278579c00503
+DECL|enum|__anon2a1ce9640503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +933,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon278579c00608
+DECL|struct|__anon2a1ce9640608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +991,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278579c00708
+DECL|struct|__anon2a1ce9640708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1093,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon278579c00808
+DECL|struct|__anon2a1ce9640808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1281,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278579c00908
+DECL|struct|__anon2a1ce9640908
 typedef|typedef
 struct|struct
 block|{
@@ -5421,7 +5421,7 @@ ifdef|#
 directive|ifdef
 name|GIMP_HAVE_RESOLUTION_INFO
 block|{
-name|float
+name|double
 name|xres
 decl_stmt|,
 name|yres
@@ -5442,7 +5442,7 @@ operator|&
 name|yres
 argument_list|)
 expr_stmt|;
-comment|/* XXX hack: should really note both resolutions, and use 	 * rectangular cells, not square cells.  But I'm being lazy, 	 * and the majority of the world works with xres == yres */
+comment|/* XXX hack: should really note both resolutions, and use        * rectangular cells, not square cells.  But I'm being lazy,        * and the majority of the world works with xres == yres */
 name|pvals_ui
 operator|.
 name|input_spi
@@ -7363,7 +7363,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon278579c00a08
+DECL|struct|__anon2a1ce9640a08
 typedef|typedef
 struct|struct
 block|{

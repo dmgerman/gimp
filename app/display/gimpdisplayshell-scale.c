@@ -653,7 +653,7 @@ name|gdouble
 name|a
 parameter_list|)
 block|{
-name|float
+name|gdouble
 name|res
 decl_stmt|;
 if|if

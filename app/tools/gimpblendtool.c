@@ -402,7 +402,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon28a24d720108
+DECL|struct|__anon2ae7c49b0108
 typedef|typedef
 struct|struct
 block|{
@@ -454,7 +454,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28a24d720208
+DECL|struct|__anon2ae7c49b0208
 typedef|typedef
 struct|struct
 block|{
@@ -3919,7 +3919,7 @@ block|}
 else|else
 comment|/* show real world units */
 block|{
-name|float
+name|gdouble
 name|unit_factor
 init|=
 name|gimp_unit_get_factor

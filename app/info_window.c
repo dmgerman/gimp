@@ -714,7 +714,7 @@ decl_stmt|;
 name|int
 name|type
 decl_stmt|;
-name|gfloat
+name|gdouble
 name|unit_factor
 decl_stmt|;
 name|gint

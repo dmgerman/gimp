@@ -1524,7 +1524,7 @@ block|}
 else|else
 comment|/* show real world units */
 block|{
-name|float
+name|gdouble
 name|unit_factor
 init|=
 name|gimp_unit_get_factor

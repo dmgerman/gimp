@@ -420,7 +420,7 @@ name|unit
 init|=
 name|UNIT_PIXEL
 decl_stmt|;
-name|float
+name|double
 name|unit_factor
 decl_stmt|;
 name|gdisp
@@ -1944,7 +1944,7 @@ block|}
 else|else
 comment|/* show real world units */
 block|{
-name|float
+name|gdouble
 name|unit_factor
 init|=
 name|gimp_unit_get_factor
@@ -1972,7 +1972,7 @@ literal|"Selection: "
 argument_list|)
 argument_list|,
 operator|(
-name|float
+name|gdouble
 operator|)
 name|abs
 argument_list|(
@@ -1992,7 +1992,7 @@ argument_list|,
 literal|" x "
 argument_list|,
 operator|(
-name|float
+name|gdouble
 operator|)
 name|abs
 argument_list|(

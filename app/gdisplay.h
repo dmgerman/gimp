@@ -75,7 +75,7 @@ value|(g->scale>> 8)
 end_define
 
 begin_comment
-comment|/* finding the effective screen resolution (float) */
+comment|/* finding the effective screen resolution (double) */
 end_comment
 
 begin_define
@@ -101,7 +101,7 @@ value|(g->dot_for_dot? g->gimage->yresolution : monitor_yres)
 end_define
 
 begin_comment
-comment|/* calculate scale factors (float) */
+comment|/* calculate scale factors (double) */
 end_comment
 
 begin_define

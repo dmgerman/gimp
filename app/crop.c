@@ -631,7 +631,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27eba8860103
+DECL|enum|__anon295976db0103
 typedef|typedef
 enum|enum
 block|{
@@ -2829,7 +2829,7 @@ block|}
 else|else
 comment|/* show real world units */
 block|{
-name|float
+name|gdouble
 name|unit_factor
 init|=
 name|gimp_unit_get_factor
@@ -2857,7 +2857,7 @@ literal|"Crop: "
 argument_list|)
 argument_list|,
 call|(
-name|float
+name|gdouble
 call|)
 argument_list|(
 name|crop
@@ -2880,7 +2880,7 @@ argument_list|,
 literal|" x "
 argument_list|,
 call|(
-name|float
+name|gdouble
 call|)
 argument_list|(
 name|crop

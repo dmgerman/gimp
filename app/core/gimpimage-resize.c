@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2792d83c0103
+DECL|enum|__anon2ad0d9230103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -1426,17 +1426,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_resolution (GimpImage * gimage,float xresolution,float yresolution)
+DECL|function|gimp_image_set_resolution (GimpImage * gimage,double xresolution,double yresolution)
 name|gimp_image_set_resolution
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|float
+name|double
 name|xresolution
 parameter_list|,
-name|float
+name|double
 name|yresolution
 parameter_list|)
 block|{
@@ -1457,18 +1457,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_get_resolution (GimpImage * gimage,float * xresolution,float * yresolution)
+DECL|function|gimp_image_get_resolution (GimpImage * gimage,double * xresolution,double * yresolution)
 name|gimp_image_get_resolution
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|float
+name|double
 modifier|*
 name|xresolution
 parameter_list|,
-name|float
+name|double
 modifier|*
 name|yresolution
 parameter_list|)

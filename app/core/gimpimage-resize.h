@@ -122,7 +122,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_GIMAGE>*/
-DECL|enum|__anon2c1424db0103
+DECL|enum|__anon275a2a4c0103
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -225,7 +225,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1424db0203
+DECL|enum|__anon275a2a4c0203
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -250,7 +250,7 @@ value|768
 end_define
 
 begin_typedef
-DECL|enum|__anon2c1424db0303
+DECL|enum|__anon275a2a4c0303
 typedef|typedef
 enum|enum
 block|{
@@ -271,7 +271,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1424db0403
+DECL|enum|__anon275a2a4c0403
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1424db0503
+DECL|enum|__anon275a2a4c0503
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -427,9 +427,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|float
+name|double
 parameter_list|,
-name|float
+name|double
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -441,10 +441,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 parameter_list|,
-name|float
+name|double
 modifier|*
 parameter_list|,
-name|float
+name|double
 modifier|*
 parameter_list|)
 function_decl|;

@@ -226,14 +226,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gdisplay_xserver_resolution (float * xres,float * yres)
+DECL|function|gdisplay_xserver_resolution (gdouble * xres,gdouble * yres)
 name|gdisplay_xserver_resolution
 parameter_list|(
-name|float
+name|gdouble
 modifier|*
 name|xres
 parameter_list|,
-name|float
+name|gdouble
 modifier|*
 name|yres
 parameter_list|)
@@ -280,7 +280,7 @@ operator|)
 operator|/
 operator|(
 operator|(
-name|float
+name|gdouble
 operator|)
 name|widthMM
 operator|)
@@ -296,7 +296,7 @@ operator|)
 operator|/
 operator|(
 operator|(
-name|float
+name|gdouble
 operator|)
 name|heightMM
 operator|)

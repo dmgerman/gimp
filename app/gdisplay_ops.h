@@ -72,10 +72,10 @@ begin_function_decl
 name|void
 name|gdisplay_xserver_resolution
 parameter_list|(
-name|float
+name|gdouble
 modifier|*
 parameter_list|,
-name|float
+name|gdouble
 modifier|*
 parameter_list|)
 function_decl|;

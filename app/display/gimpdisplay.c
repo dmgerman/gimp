@@ -4733,7 +4733,7 @@ block|}
 else|else
 comment|/* show real world units */
 block|{
-name|float
+name|double
 name|unit_factor
 init|=
 name|gimp_unit_get_factor
@@ -4758,7 +4758,7 @@ argument_list|,
 literal|""
 argument_list|,
 operator|(
-name|float
+name|double
 operator|)
 name|t_x
 operator|*
@@ -4773,7 +4773,7 @@ argument_list|,
 literal|", "
 argument_list|,
 operator|(
-name|float
+name|double
 operator|)
 name|t_y
 operator|*
@@ -4957,7 +4957,7 @@ block|}
 else|else
 comment|/* show real world units */
 block|{
-name|float
+name|gdouble
 name|unit_factor
 init|=
 name|gimp_unit_get_factor
@@ -5028,7 +5028,7 @@ argument_list|,
 literal|""
 argument_list|,
 operator|(
-name|float
+name|gdouble
 operator|)
 name|gdisp
 operator|->
@@ -5047,7 +5047,7 @@ argument_list|,
 literal|", "
 argument_list|,
 operator|(
-name|float
+name|gdouble
 operator|)
 name|gdisp
 operator|->

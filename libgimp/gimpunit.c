@@ -26,7 +26,7 @@ comment|/*  internal structures  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27983c5c0108
+DECL|struct|__anon2b81f3520108
 typedef|typedef
 struct|struct
 block|{
@@ -35,7 +35,7 @@ name|guint
 name|delete_on_exit
 decl_stmt|;
 DECL|member|factor
-name|float
+name|gdouble
 name|factor
 decl_stmt|;
 DECL|member|digits
@@ -336,14 +336,14 @@ end_function
 
 begin_function
 name|GUnit
-DECL|function|gimp_unit_new (gchar * identifier,gfloat factor,gint digits,gchar * symbol,gchar * abbreviation,gchar * singular,gchar * plural)
+DECL|function|gimp_unit_new (gchar * identifier,gdouble factor,gint digits,gchar * symbol,gchar * abbreviation,gchar * singular,gchar * plural)
 name|gimp_unit_new
 parameter_list|(
 name|gchar
 modifier|*
 name|identifier
 parameter_list|,
-name|gfloat
+name|gdouble
 name|factor
 parameter_list|,
 name|gint
@@ -630,7 +630,7 @@ block|}
 end_function
 
 begin_function
-name|gfloat
+name|gdouble
 DECL|function|gimp_unit_get_factor (GUnit unit)
 name|gimp_unit_get_factor
 parameter_list|(
@@ -645,7 +645,7 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|gfloat
+name|gdouble
 name|factor
 decl_stmt|;
 name|g_return_val_if_fail

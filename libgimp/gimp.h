@@ -1629,10 +1629,10 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|float
+name|double
 name|xresolution
 parameter_list|,
-name|float
+name|double
 name|yresolution
 parameter_list|)
 function_decl|;
@@ -1642,11 +1642,11 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|float
+name|double
 modifier|*
 name|xresolution
 parameter_list|,
-name|float
+name|double
 modifier|*
 name|yresolution
 parameter_list|)

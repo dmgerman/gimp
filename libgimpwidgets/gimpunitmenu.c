@@ -52,7 +52,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon29c65d850103
+DECL|enum|__anon2bbb69ab0103
 enum|enum
 block|{
 DECL|enumerator|GUM_UNIT_CHANGED_SIGNAL
@@ -2016,7 +2016,7 @@ operator|->
 name|selection
 argument_list|)
 argument_list|,
-literal|"unitselection"
+literal|"unit_selection"
 argument_list|,
 literal|"Gimp"
 argument_list|)
@@ -2050,6 +2050,18 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_window_position
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|gum
+operator|->
+name|selection
+argument_list|)
+argument_list|,
+name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
 name|vbox

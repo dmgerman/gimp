@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99f2ec0108
+DECL|struct|__anon2b1b33dd0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1320,7 +1320,7 @@ operator|->
 name|confirm_dlg
 argument_list|)
 argument_list|,
-literal|"really_create"
+literal|"confirm_size"
 argument_list|,
 literal|"Gimp"
 argument_list|)
@@ -1338,6 +1338,22 @@ name|_
 argument_list|(
 literal|"Confirm Image Size"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_policy
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|vals
+operator|->
+name|confirm_dlg
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
