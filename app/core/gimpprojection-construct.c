@@ -1190,12 +1190,11 @@ block|{
 comment|/*  If the tile is not valid, make sure we get the entire tile              *   in the construction extents              */
 if|if
 condition|(
+operator|!
 name|tile_is_valid
 argument_list|(
 name|tile
 argument_list|)
-operator|==
-name|FALSE
 condition|)
 block|{
 name|tilex

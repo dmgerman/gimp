@@ -1155,8 +1155,6 @@ name|tile_is_valid
 argument_list|(
 name|src_tile
 argument_list|)
-operator|==
-name|TRUE
 condition|)
 block|{
 comment|/* swap tiles, not pixels! */
