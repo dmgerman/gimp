@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9cdade0103
+DECL|enum|__anon2acc2ccf0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1412,7 +1412,7 @@ name|y
 expr_stmt|;
 block|}
 else|else
-comment|/* image_map->undo_tiles exist AND drawable dimensions have not changed... */
+comment|/* image_map->undo_tiles exist AND drawable dimensions have not changed         */
 block|{
 comment|/* Reset to initial drawable conditions.            */
 comment|/* Copy from the backup undo tiles to the drawable  */
