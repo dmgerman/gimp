@@ -244,7 +244,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Reset to default values"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -266,7 +269,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Reset all tool options"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

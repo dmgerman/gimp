@@ -1896,7 +1896,7 @@ argument_list|,
 name|tree_view
 argument_list|)
 expr_stmt|;
-comment|/*  Hide basically useless Edit button  */
+comment|/*  hide basically useless edit button  */
 name|gtk_widget_hide
 argument_list|(
 name|GIMP_ITEM_TREE_VIEW
@@ -1925,6 +1925,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_container_view_enable_dnd
+argument_list|(
+name|GIMP_CONTAINER_VIEW
+argument_list|(
+name|layer_view
+argument_list|)
+argument_list|,
+name|GTK_BUTTON
+argument_list|(
+name|layer_view
+operator|->
+name|anchor_button
+argument_list|)
+argument_list|,
+name|GIMP_TYPE_LAYER
+argument_list|)
+expr_stmt|;
 name|gtk_box_reorder_child
 argument_list|(
 name|GTK_BOX
@@ -1942,23 +1959,6 @@ operator|->
 name|anchor_button
 argument_list|,
 literal|5
-argument_list|)
-expr_stmt|;
-name|gimp_container_view_enable_dnd
-argument_list|(
-name|GIMP_CONTAINER_VIEW
-argument_list|(
-name|layer_view
-argument_list|)
-argument_list|,
-name|GTK_BUTTON
-argument_list|(
-name|layer_view
-operator|->
-name|anchor_button
-argument_list|)
-argument_list|,
-name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
 return|return

@@ -133,7 +133,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Raise window if already open"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -155,7 +158,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Open image dialog"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -227,7 +233,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Reload all previews"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -249,7 +258,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Remove dangling entries"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4103df0103
+DECL|enum|__anon289f43020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2412,7 +2412,7 @@ name|action
 expr_stmt|;
 name|extended
 operator|=
-name|g_list_append
+name|g_list_prepend
 argument_list|(
 name|extended
 argument_list|,
@@ -2477,13 +2477,6 @@ expr_stmt|;
 name|tooltip
 operator|=
 name|tmp
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"created extended tooltip:\n%s\n\n"
-argument_list|,
-name|tooltip
-argument_list|)
 expr_stmt|;
 block|}
 block|}

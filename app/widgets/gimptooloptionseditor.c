@@ -683,10 +683,6 @@ name|GimpToolOptionsEditor
 modifier|*
 name|editor
 decl_stmt|;
-name|gchar
-modifier|*
-name|str
-decl_stmt|;
 name|object
 operator|=
 name|G_OBJECT_CLASS
@@ -800,22 +796,6 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-name|str
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Reset to default values\n"
-literal|"%s  Reset all Tool Options"
-argument_list|)
-argument_list|,
-name|gimp_get_mod_string
-argument_list|(
-name|GDK_SHIFT_MASK
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|editor
 operator|->
 name|reset_button
@@ -836,22 +816,6 @@ argument_list|,
 name|GDK_SHIFT_MASK
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|editor
-operator|->
-name|reset_button
-argument_list|,
-name|str
-argument_list|,
-name|GIMP_HELP_TOOL_OPTIONS_RESET
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|str
 argument_list|)
 expr_stmt|;
 return|return

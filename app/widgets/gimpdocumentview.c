@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpuimanager.h"
 end_include
 
@@ -347,10 +341,6 @@ name|GimpContainerEditor
 modifier|*
 name|editor
 decl_stmt|;
-name|gchar
-modifier|*
-name|str
-decl_stmt|;
 name|document_view
 operator|=
 name|g_object_new
@@ -404,28 +394,6 @@ argument_list|(
 name|document_view
 argument_list|)
 expr_stmt|;
-name|str
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Open the selected entry\n"
-literal|"%s  Raise window if already open\n"
-literal|"%s  Open image dialog"
-argument_list|)
-argument_list|,
-name|gimp_get_mod_string
-argument_list|(
-name|GDK_SHIFT_MASK
-argument_list|)
-argument_list|,
-name|gimp_get_mod_string
-argument_list|(
-name|GDK_CONTROL_MASK
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|document_view
 operator|->
 name|open_button
@@ -454,17 +422,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|document_view
-operator|->
-name|open_button
-argument_list|,
-name|str
-argument_list|,
-name|GIMP_HELP_DOCUMENT_OPEN
-argument_list|)
-expr_stmt|;
 name|gimp_container_view_enable_dnd
 argument_list|(
 name|editor
@@ -479,11 +436,6 @@ name|open_button
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_IMAGEFILE
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|str
 argument_list|)
 expr_stmt|;
 name|document_view
@@ -522,28 +474,6 @@ argument_list|,
 name|GIMP_TYPE_IMAGEFILE
 argument_list|)
 expr_stmt|;
-name|str
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Recreate preview\n"
-literal|"%s  Reload all previews\n"
-literal|"%s  Remove Dangling Entries"
-argument_list|)
-argument_list|,
-name|gimp_get_mod_string
-argument_list|(
-name|GDK_SHIFT_MASK
-argument_list|)
-argument_list|,
-name|gimp_get_mod_string
-argument_list|(
-name|GDK_CONTROL_MASK
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|document_view
 operator|->
 name|refresh_button
@@ -570,22 +500,6 @@ argument_list|,
 name|GDK_CONTROL_MASK
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|document_view
-operator|->
-name|refresh_button
-argument_list|,
-name|str
-argument_list|,
-name|GIMP_HELP_DOCUMENT_REFRESH
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|str
 argument_list|)
 expr_stmt|;
 if|if

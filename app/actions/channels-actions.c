@@ -356,7 +356,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Channel to selection"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
@@ -375,7 +378,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Add"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_ADD
 block|,
@@ -394,7 +400,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Subtract"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
@@ -413,7 +422,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Intersect"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
 block|,

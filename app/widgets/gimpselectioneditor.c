@@ -131,12 +131,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmenufactory.h"
 end_include
 
@@ -620,10 +614,6 @@ name|GimpSelectionEditor
 modifier|*
 name|editor
 decl_stmt|;
-name|gchar
-modifier|*
-name|str
-decl_stmt|;
 name|object
 operator|=
 name|G_OBJECT_CLASS
@@ -719,22 +709,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|str
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Selection to path\n"
-literal|"%s  Advanced options"
-argument_list|)
-argument_list|,
-name|gimp_get_mod_string
-argument_list|(
-name|GDK_SHIFT_MASK
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|editor
 operator|->
 name|path_button
@@ -755,22 +729,6 @@ argument_list|,
 name|GDK_SHIFT_MASK
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|editor
-operator|->
-name|path_button
-argument_list|,
-name|str
-argument_list|,
-name|GIMP_HELP_SELECTION_TO_PATH
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|str
 argument_list|)
 expr_stmt|;
 name|editor

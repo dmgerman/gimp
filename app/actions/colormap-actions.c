@@ -147,7 +147,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Add color from FG"
+argument_list|)
 block|,
 name|FALSE
 block|,
@@ -166,7 +169,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Add color from BG"
+argument_list|)
 block|,
 name|TRUE
 block|,

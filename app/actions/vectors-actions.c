@@ -572,7 +572,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Path to selection"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
@@ -610,7 +613,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Add"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_ADD
 block|,
@@ -629,7 +635,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Subtract"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
@@ -648,7 +657,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Intersect"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
 block|,
@@ -678,7 +690,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Selection to path"
+argument_list|)
 block|,
 name|FALSE
 block|,
@@ -716,7 +731,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Advanced options"
+argument_list|)
 block|,
 name|TRUE
 block|,

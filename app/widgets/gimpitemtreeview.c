@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2d6cfd0103
+DECL|enum|__anon2bc9e7db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2d6cfd0203
+DECL|enum|__anon2bc9e7db0203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
