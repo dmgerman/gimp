@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8fb950108
+DECL|struct|__anon29406aff0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f8fb950208
+DECL|struct|__anon29406aff0208
 block|{
 DECL|member|boole
 name|gboolean
@@ -2170,6 +2170,14 @@ argument_list|)
 control|)
 comment|/* empty statement */
 empty_stmt|;
+if|if
+condition|(
+operator|!
+name|feof
+argument_list|(
+name|fp
+argument_list|)
+condition|)
 name|ungetc
 argument_list|(
 name|nextchar
@@ -2222,9 +2230,11 @@ comment|/* empty statement */
 empty_stmt|;
 if|if
 condition|(
-name|nextchar
-operator|!=
-name|EOF
+operator|!
+name|feof
+argument_list|(
+name|fp
+argument_list|)
 condition|)
 name|ungetc
 argument_list|(
