@@ -45,7 +45,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_prop_boolean_option_menu_new
+name|gimp_prop_boolean_combo_box_new
 parameter_list|(
 name|GObject
 modifier|*

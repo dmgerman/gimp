@@ -3373,8 +3373,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|prefs_boolean_option_menu_add (GObject * config,const gchar * property_name,const gchar * true_text,const gchar * false_text,const gchar * label,GtkTable * table,gint table_row)
-name|prefs_boolean_option_menu_add
+DECL|function|prefs_boolean_combo_box_add (GObject * config,const gchar * property_name,const gchar * true_text,const gchar * false_text,const gchar * label,GtkTable * table,gint table_row)
+name|prefs_boolean_combo_box_add
 parameter_list|(
 name|GObject
 modifier|*
@@ -3414,7 +3414,7 @@ name|menu
 decl_stmt|;
 name|menu
 operator|=
-name|gimp_prop_boolean_option_menu_new
+name|gimp_prop_boolean_combo_box_new
 argument_list|(
 name|config
 argument_list|,
@@ -6817,7 +6817,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|prefs_boolean_option_menu_add
+name|prefs_boolean_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -7139,7 +7139,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2acf85f80108
+DECL|struct|__anon28b7d1a10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8809,7 +8809,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|prefs_boolean_option_menu_add
+name|prefs_boolean_combo_box_add
 argument_list|(
 name|object
 argument_list|,
@@ -9580,7 +9580,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2acf85f80208
+DECL|struct|__anon28b7d1a10208
 block|{
 DECL|member|label
 specifier|const
@@ -9739,7 +9739,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2acf85f80308
+DECL|struct|__anon28b7d1a10308
 block|{
 DECL|member|tree_label
 specifier|const
