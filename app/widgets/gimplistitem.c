@@ -361,11 +361,10 @@ name|widget_class
 decl_stmt|;
 name|widget_class
 operator|=
-operator|(
-name|GtkWidgetClass
-operator|*
-operator|)
+name|GTK_WIDGET_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=

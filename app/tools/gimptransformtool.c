@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool_manager.h"
 end_include
 
@@ -233,7 +239,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894bcc90103
+DECL|enum|__anon2a0e9cb00103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM

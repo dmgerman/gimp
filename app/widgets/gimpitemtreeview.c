@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28de56b10103
+DECL|enum|__anon28e09b1e0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE

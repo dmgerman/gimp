@@ -82,12 +82,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/tools-types.h"
 end_include
 
@@ -130,7 +124,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include

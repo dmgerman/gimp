@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimpbycolorselecttool.h"
 end_include
 
@@ -239,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9b7a500103
+DECL|enum|__anon2b190b580103
 block|{
 DECL|enumerator|UNDO
 name|UNDO

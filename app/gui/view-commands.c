@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay-ops.h"
 end_include
 
@@ -121,7 +127,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,
@@ -153,7 +159,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,
@@ -188,7 +194,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,
@@ -786,7 +792,7 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
-name|shrink_wrap_display
+name|gimp_display_scale_shrink_wrap
 argument_list|(
 name|gdisp
 argument_list|)

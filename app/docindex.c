@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui/gui-types.h"
 end_include
 
 begin_include
@@ -67,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -132,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a102ed00108
+DECL|struct|__anon2af7cd730108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a102ed00208
+DECL|struct|__anon2af7cd730208
 block|{
 DECL|member|boole
 name|gboolean

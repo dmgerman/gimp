@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay-ops.h"
 end_include
 
@@ -168,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a506ee80103
+DECL|enum|__anon28cbaf3a0103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -13552,7 +13558,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a506ee80208
+DECL|struct|__anon28cbaf3a0208
 block|{
 DECL|member|label
 name|gchar
@@ -13781,7 +13787,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a506ee80308
+DECL|struct|__anon28cbaf3a0308
 block|{
 DECL|member|tree_label
 name|gchar

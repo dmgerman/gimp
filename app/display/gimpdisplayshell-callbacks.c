@@ -186,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay-selection.h"
 end_include
 
@@ -511,7 +517,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|scroll_display
+name|gimp_display_scroll
 argument_list|(
 name|gdisp
 argument_list|,
@@ -546,7 +552,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|scroll_display
+name|gimp_display_scroll
 argument_list|(
 name|gdisp
 argument_list|,
@@ -850,7 +856,7 @@ name|gdisp
 argument_list|)
 expr_stmt|;
 comment|/*  setup scale properly  */
-name|setup_scale
+name|gimp_display_scale_setup
 argument_list|(
 name|gdisp
 argument_list|)
@@ -984,7 +990,7 @@ name|allocation
 operator|.
 name|height
 expr_stmt|;
-name|resize_display
+name|gimp_display_scale_resize
 argument_list|(
 name|gdisp
 argument_list|,
@@ -1600,7 +1606,7 @@ name|direction
 operator|==
 name|GDK_SCROLL_UP
 condition|)
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,
@@ -1608,7 +1614,7 @@ name|GIMP_ZOOM_IN
 argument_list|)
 expr_stmt|;
 else|else
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,

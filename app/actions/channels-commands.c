@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui-types.h"
 end_include
 
 begin_include
@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include

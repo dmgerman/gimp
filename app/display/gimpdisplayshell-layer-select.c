@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include

@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawtool.h"
 end_include
 
@@ -245,7 +251,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae327c20103
+DECL|enum|__anon29fe14990103
 block|{
 DECL|enumerator|PAINT
 name|PAINT

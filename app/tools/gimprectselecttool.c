@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpeditselectiontool.h"
 end_include
 
@@ -139,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cb81570103
+DECL|enum|__anon28ea6c040103
 block|{
 DECL|enumerator|RECT_SELECT
 name|RECT_SELECT

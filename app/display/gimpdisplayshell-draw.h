@@ -6,21 +6,134 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__INTERFACE_H__
+name|__GIMP_DISPLAY_SHELL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__INTERFACE_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_H__
 define|#
 directive|define
-name|__INTERFACE_H__
+name|__GIMP_DISPLAY_SHELL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtkwindow.h>
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_DISPLAY_SHELL
+define|#
+directive|define
+name|GIMP_TYPE_DISPLAY_SHELL
+value|(gimp_display_shell_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY_SHELL (obj)
+define|#
+directive|define
+name|GIMP_DISPLAY_SHELL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DISPLAY_SHELL, GimpDisplayShell))
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY_SHELL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_DISPLAY_SHELL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DISPLAY_SHELL, GimpDisplayShellClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DISPLAY_SHELL (obj)
+define|#
+directive|define
+name|GIMP_IS_DISPLAY_SHELL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DISPLAY_SHELL))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_DISPLAY_SHELL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_DISPLAY_SHELL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DISPLAY_SHELL))
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY_SHELL_GET_CLASS (obj)
+define|#
+directive|define
+name|GIMP_DISPLAY_SHELL_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DISPLAY_SHELL, GimpDisplayShellClass))
+end_define
+
+begin_typedef
+DECL|typedef|GimpDisplayShellClass
+typedef|typedef
+name|struct
+name|_GimpDisplayShellClass
+name|GimpDisplayShellClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpDisplayShell
+struct|struct
+name|_GimpDisplayShell
+block|{
+DECL|member|parent_instance
+name|GtkWindow
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpDisplayShellClass
+struct|struct
+name|_GimpDisplayShellClass
+block|{
+DECL|member|parent_class
+name|GtkWindowClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|GType
+name|gimp_display_shell_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
 name|create_display_shell
 parameter_list|(
-name|GDisplay
+name|GimpDisplay
 modifier|*
 name|gdisp
 parameter_list|,
@@ -46,7 +159,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __INTERFACE_H__ */
+comment|/* __GIMP_DISPLAY_SHELL_H__ */
 end_comment
 
 end_unit

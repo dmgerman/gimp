@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -351,7 +351,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_layer_list_item_get_type (void)
 name|gimp_layer_list_item_get_type
 parameter_list|(
@@ -359,7 +359,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|list_item_type
 init|=
 literal|0
@@ -438,10 +438,6 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
-modifier|*
-name|object_class
-decl_stmt|;
 name|GtkWidgetClass
 modifier|*
 name|widget_class
@@ -450,35 +446,25 @@ name|GimpListItemClass
 modifier|*
 name|list_item_class
 decl_stmt|;
-name|object_class
-operator|=
-operator|(
-name|GtkObjectClass
-operator|*
-operator|)
-name|klass
-expr_stmt|;
 name|widget_class
 operator|=
-operator|(
-name|GtkWidgetClass
-operator|*
-operator|)
+name|GTK_WIDGET_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|list_item_class
 operator|=
-operator|(
-name|GimpListItemClass
-operator|*
-operator|)
+name|GIMP_LIST_ITEM_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=
-name|gtk_type_class
+name|g_type_class_peek_parent
 argument_list|(
-name|GIMP_TYPE_DRAWABLE_LIST_ITEM
+name|klass
 argument_list|)
 expr_stmt|;
 name|widget_class

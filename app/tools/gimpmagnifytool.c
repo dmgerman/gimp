@@ -1591,7 +1591,7 @@ literal|2
 operator|)
 expr_stmt|;
 comment|/*  resize the image  */
-name|resize_display
+name|gimp_display_scale_resize
 argument_list|(
 name|gdisp
 argument_list|,

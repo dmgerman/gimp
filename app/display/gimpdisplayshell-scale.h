@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SCALE_H__
+name|__GIMP_DISPLAY_SCALE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SCALE_H__
+DECL|macro|__GIMP_DISPLAY_SCALE_H__
 define|#
 directive|define
-name|__SCALE_H__
+name|__GIMP_DISPLAY_SCALE_H__
 end_define
 
 begin_function_decl
 name|void
-name|change_scale
+name|gimp_display_scale
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -32,7 +32,18 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|resize_display
+name|gimp_display_scale_setup
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_scale_resize
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -49,29 +60,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|shrink_wrap_display
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|setup_scale
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|gdisp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|bounds_checking
+name|gimp_display_scale_shrink_wrap
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -86,7 +75,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SCALE_H__  */
+comment|/*  __GIMP_DISPLAY_SCALE_H__  */
 end_comment
 
 end_unit

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay-scroll.h"
 end_include
 
@@ -194,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afd16b00103
+DECL|enum|__anon2942b18e0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -695,7 +701,7 @@ name|gdisp
 operator|->
 name|offset_y
 expr_stmt|;
-name|scroll_display
+name|gimp_display_scroll
 argument_list|(
 name|gdisp
 argument_list|,
@@ -725,7 +731,7 @@ modifier|*
 name|nav_dialog
 parameter_list|)
 block|{
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|nav_dialog
 operator|->
@@ -5335,7 +5341,7 @@ name|gdisp
 operator|->
 name|offset_y
 expr_stmt|;
-name|scroll_display
+name|gimp_display_scroll
 argument_list|(
 name|nav_dialog
 operator|->
@@ -5912,7 +5918,7 @@ operator|&
 name|GDK_SHIFT_MASK
 condition|)
 block|{
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,
@@ -5995,7 +6001,7 @@ operator|&
 name|GDK_SHIFT_MASK
 condition|)
 block|{
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,
@@ -6267,7 +6273,7 @@ break|break;
 case|case
 name|GDK_equal
 case|:
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,
@@ -6278,7 +6284,7 @@ break|break;
 case|case
 name|GDK_minus
 case|:
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|gdisp
 argument_list|,
@@ -6474,7 +6480,7 @@ operator|->
 name|frozen
 condition|)
 return|return;
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|nav_dialog
 operator|->
@@ -6522,7 +6528,7 @@ operator|->
 name|frozen
 condition|)
 return|return;
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|nav_dialog
 operator|->
@@ -6631,7 +6637,7 @@ name|block_adj_sig
 operator|=
 name|TRUE
 expr_stmt|;
-name|change_scale
+name|gimp_display_scale
 argument_list|(
 name|nav_dialog
 operator|->

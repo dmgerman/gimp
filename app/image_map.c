@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"display/display-types.h"
 end_include
 
 begin_include
@@ -66,13 +66,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"image_map.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c583f6f0103
+DECL|enum|__anon2c610bd80103
 block|{
 DECL|enumerator|IMAGE_MAP_WAITING
 name|IMAGE_MAP_WAITING

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SCROLL_H__
+name|__GIMP_DISPLAY_SCROLL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SCROLL_H__
+DECL|macro|__GIMP_DISPLAY_SCROLL_H__
 define|#
 directive|define
-name|__SCROLL_H__
+name|__GIMP_DISPLAY_SCROLL_H__
 end_define
 
 begin_comment
@@ -86,7 +86,7 @@ end_comment
 
 begin_function_decl
 name|gboolean
-name|scroll_display
+name|gimp_display_scroll
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -101,13 +101,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_display_scroll_clamp_offsets
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SCROLL_H__  */
+comment|/*  __GIMP_DISPLAY_SCROLL_H__  */
 end_comment
 
 end_unit

@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpinktool.h"
 end_include
 
@@ -6451,7 +6457,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c261f440103
+DECL|enum|__anon2b3e780a0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

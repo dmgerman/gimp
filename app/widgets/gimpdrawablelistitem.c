@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay.h"
+file|"display/gimpdisplay-foreach.h"
 end_include
 
 begin_include
@@ -170,7 +170,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GtkType
+name|GType
 DECL|function|gimp_drawable_list_item_get_type (void)
 name|gimp_drawable_list_item_get_type
 parameter_list|(
@@ -178,7 +178,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|list_item_type
 init|=
 literal|0
@@ -267,19 +267,17 @@ name|list_item_class
 decl_stmt|;
 name|widget_class
 operator|=
-operator|(
-name|GtkWidgetClass
-operator|*
-operator|)
+name|GTK_WIDGET_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|list_item_class
 operator|=
-operator|(
-name|GimpListItemClass
-operator|*
-operator|)
+name|GIMP_LIST_ITEM_CLASS
+argument_list|(
 name|klass
+argument_list|)
 expr_stmt|;
 name|parent_class
 operator|=

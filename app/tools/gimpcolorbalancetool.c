@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay-foreach.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolorbalancetool.h"
 end_include
 
