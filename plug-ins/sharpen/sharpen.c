@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   $Log$  *   Revision 1.6  1998/04/28 03:50:19  yosh  *   * plug-ins/animationplay/animationplay.c  *   * plug-ins/CEL/CEL.c  *   * plug-ins/psd/psd.c  *   * plug-ins/xd/xd.c: applied gimp-joke-980427-0, warning cleanups  *  *   * app/temp_buf.c: applied gimp-entity-980427-0, temp_buf swap speedups and  *   more robust tempfile handling  *  *   -Yosh  *  *   Revision 1.5  1998/04/27 22:01:01  neo  *   Updated sharpen and despeckle. Wow, sharpen is balzingly fast now, while  *   despeckle is still sort of lame...  *  *  *   --Sven  *  *   Revision 1.13  1998/04/27  15:55:38  mike  *   Sharpen would shift the image down one pixel; was using the wrong "source"  *   row...  *  *   Revision 1.12  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.11  1998/04/27  15:33:45  mike  *   Updated to use LUTs for coefficients.  *   Broke out filter code for GRAY, GRAYA, RGB, RGBA modes.  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.10  1998/04/23  14:39:47  mike  *   Whoops - wasn't copying the preview image over for RGB mode...  *  *   Revision 1.9  1998/04/23  13:56:02  mike  *   Updated preview to do checkerboard pattern for transparency (thanks Yosh!)  *   Added gtk_window_set_wmclass() call to make sure this plug-in gets to use  *   the standard GIMP icon if none is otherwise created...  *  *   Revision 1.8  1998/04/22  16:25:45  mike  *   Fixed RGBA preview problems...  *  *   Revision 1.7  1998/03/12  18:48:52  mike  *   Fixed pixel errors around the edge of the bounding rectangle - the  *   original pixels weren't being written back to the image...  *  *   Revision 1.6  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.5  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.4  1997/09/29  17:16:29  mike  *   To average 8 numbers you do *not* divide by 9!  This caused the brightening  *   problem when sharpening was "turned up".  *  *   Revision 1.2  1997/06/08  22:27:35  mike  *   Updated sharpen code for hard-coded 3x3 convolution matrix.  *  *   Revision 1.1  1997/06/08  16:46:07  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   $Log$  *   Revision 1.7  1998/06/06 23:22:22  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.14  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.13  1998/04/27  15:55:38  mike  *   Sharpen would shift the image down one pixel; was using the wrong "source"  *   row...  *  *   Revision 1.12  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.11  1998/04/27  15:33:45  mike  *   Updated to use LUTs for coefficients.  *   Broke out filter code for GRAY, GRAYA, RGB, RGBA modes.  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.10  1998/04/23  14:39:47  mike  *   Whoops - wasn't copying the preview image over for RGB mode...  *  *   Revision 1.9  1998/04/23  13:56:02  mike  *   Updated preview to do checkerboard pattern for transparency (thanks Yosh!)  *   Added gtk_window_set_wmclass() call to make sure this plug-in gets to use  *   the standard GIMP icon if none is otherwise created...  *  *   Revision 1.8  1998/04/22  16:25:45  mike  *   Fixed RGBA preview problems...  *  *   Revision 1.7  1998/03/12  18:48:52  mike  *   Fixed pixel errors around the edge of the bounding rectangle - the  *   original pixels weren't being written back to the image...  *  *   Revision 1.6  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.5  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.4  1997/09/29  17:16:29  mike  *   To average 8 numbers you do *not* divide by 9!  This caused the brightening  *   problem when sharpening was "turned up".  *  *   Revision 1.2  1997/06/08  22:27:35  mike  *   Updated sharpen code for hard-coded 3x3 convolution matrix.  *  *   Revision 1.1  1997/06/08  16:46:07  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -92,7 +92,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"1.3 - 27 April 1998"
+value|"1.4.2 - 3 June 1998"
 end_define
 
 begin_define
@@ -1075,7 +1075,9 @@ operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
 break|break;
+empty_stmt|;
 block|}
+empty_stmt|;
 comment|/*   * Sharpen the image...   */
 if|if
 condition|(
@@ -1166,6 +1168,7 @@ operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
 block|}
+empty_stmt|;
 comment|/*   * Reset the current run status...   */
 name|values
 index|[
@@ -1258,6 +1261,7 @@ operator|/
 name|fact
 expr_stmt|;
 block|}
+empty_stmt|;
 block|}
 end_function
 
@@ -1449,6 +1453,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+empty_stmt|;
 name|dst_row
 operator|=
 name|g_malloc
@@ -1568,6 +1573,7 @@ name|rgba_filter
 expr_stmt|;
 break|break;
 block|}
+empty_stmt|;
 comment|/*   * Sharpen...   */
 for|for
 control|(
@@ -1688,6 +1694,7 @@ name|count
 operator|--
 expr_stmt|;
 block|}
+empty_stmt|;
 comment|/*     * Now sharpen pixels and save the results...     */
 if|if
 condition|(
@@ -1772,6 +1779,57 @@ name|sel_width
 argument_list|)
 expr_stmt|;
 block|}
+elseif|else
+if|if
+condition|(
+name|count
+operator|==
+literal|2
+condition|)
+block|{
+if|if
+condition|(
+name|y
+operator|==
+name|sel_y1
+condition|)
+name|gimp_pixel_rgn_set_row
+argument_list|(
+operator|&
+name|dst_rgn
+argument_list|,
+name|src_rows
+index|[
+literal|0
+index|]
+argument_list|,
+name|sel_x1
+argument_list|,
+name|y
+argument_list|,
+name|sel_width
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_pixel_rgn_set_row
+argument_list|(
+operator|&
+name|dst_rgn
+argument_list|,
+name|src_rows
+index|[
+literal|2
+index|]
+argument_list|,
+name|sel_x1
+argument_list|,
+name|y
+argument_list|,
+name|sel_width
+argument_list|)
+expr_stmt|;
+block|}
+empty_stmt|;
 if|if
 condition|(
 operator|(
@@ -1800,6 +1858,7 @@ name|sel_height
 argument_list|)
 expr_stmt|;
 block|}
+empty_stmt|;
 comment|/*   * OK, we're done.  Free all memory used...   */
 for|for
 control|(
@@ -1832,6 +1891,7 @@ index|]
 argument_list|)
 expr_stmt|;
 block|}
+empty_stmt|;
 name|g_free
 argument_list|(
 name|dst_row
@@ -2019,20 +2079,6 @@ name|gtk_widget_set_default_colormap
 argument_list|(
 name|gtk_preview_get_cmap
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|signal
-argument_list|(
-name|SIGBUS
-argument_list|,
-name|SIG_DFL
-argument_list|)
-expr_stmt|;
-name|signal
-argument_list|(
-name|SIGSEGV
-argument_list|,
-name|SIG_DFL
 argument_list|)
 expr_stmt|;
 comment|/*   * Dialog window...   */
@@ -3048,6 +3094,7 @@ name|rgba_filter
 expr_stmt|;
 break|break;
 block|}
+empty_stmt|;
 comment|/*   * Sharpen...   */
 name|memcpy
 argument_list|(
@@ -3370,6 +3417,7 @@ operator|/
 literal|255
 expr_stmt|;
 block|}
+empty_stmt|;
 break|break;
 case|case
 literal|3
@@ -3603,9 +3651,12 @@ operator|/
 literal|255
 expr_stmt|;
 block|}
+empty_stmt|;
 block|}
+empty_stmt|;
 break|break;
 block|}
+empty_stmt|;
 comment|/*   * Draw the preview image on the screen...   */
 for|for
 control|(
@@ -4127,6 +4178,7 @@ name|preview_update
 argument_list|()
 expr_stmt|;
 block|}
+empty_stmt|;
 block|}
 end_function
 
@@ -4236,7 +4288,9 @@ name|preview_update
 argument_list|()
 expr_stmt|;
 block|}
+empty_stmt|;
 block|}
+empty_stmt|;
 block|}
 end_function
 
@@ -4492,6 +4546,7 @@ name|width
 operator|--
 expr_stmt|;
 block|}
+empty_stmt|;
 operator|*
 name|dst
 operator|++
@@ -4682,6 +4737,7 @@ name|width
 operator|--
 expr_stmt|;
 block|}
+empty_stmt|;
 operator|*
 name|dst
 operator|++
@@ -5048,6 +5104,7 @@ name|width
 operator|--
 expr_stmt|;
 block|}
+empty_stmt|;
 operator|*
 name|dst
 operator|++
@@ -5438,6 +5495,7 @@ name|width
 operator|--
 expr_stmt|;
 block|}
+empty_stmt|;
 operator|*
 name|dst
 operator|++
