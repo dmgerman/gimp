@@ -149,7 +149,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae6af870103
+DECL|enum|__anon274aaa7a0103
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
@@ -323,7 +323,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6af870208
+DECL|struct|__anon274aaa7a0208
 block|{
 DECL|member|parent_instance
 name|GtkObject
@@ -438,7 +438,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6af870308
+DECL|struct|__anon274aaa7a0308
 block|{
 DECL|member|table
 name|GtkWidget
@@ -1780,7 +1780,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6af870403
+DECL|enum|__anon274aaa7a0403
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -3306,22 +3306,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|g_signal_handlers_disconnect_matched
+name|g_signal_handlers_disconnect_by_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
 name|modules
 argument_list|)
-argument_list|,
-name|G_SIGNAL_MATCH_DATA
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
 argument_list|,
 name|data
 argument_list|)
@@ -4763,7 +4753,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6af870508
+DECL|struct|__anon274aaa7a0508
 block|{
 DECL|member|search_key
 specifier|const

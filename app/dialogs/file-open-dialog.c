@@ -3024,9 +3024,9 @@ argument_list|,
 name|RGBbuf_h
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gimage_to_be_thumbed
 argument_list|)

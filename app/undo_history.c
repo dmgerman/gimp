@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785163a0108
+DECL|struct|__anon299a55f80108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785163a0208
+DECL|struct|__anon299a55f80208
 block|{
 DECL|member|clist
 name|GtkCList
@@ -1988,7 +1988,7 @@ name|st
 operator|->
 name|gimage
 condition|)
-name|g_signal_handlers_disconnect_matched
+name|g_signal_handlers_disconnect_by_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1996,16 +1996,6 @@ name|st
 operator|->
 name|gimage
 argument_list|)
-argument_list|,
-name|G_SIGNAL_MATCH_DATA
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|,
 name|st
 argument_list|)

@@ -319,9 +319,9 @@ operator|->
 name|container
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|factory
 operator|->

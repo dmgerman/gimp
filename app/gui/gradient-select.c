@@ -687,9 +687,9 @@ argument_list|,
 name|gsp
 argument_list|)
 expr_stmt|;
-name|gtk_signal_disconnect_by_data
+name|g_signal_handlers_disconnect_by_data
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gsp
 operator|->
@@ -713,9 +713,9 @@ operator|->
 name|callback_name
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gsp
 operator|->

@@ -23,6 +23,24 @@ file|"apptypes.h"
 end_include
 
 begin_comment
+comment|/* EEEK, we will submit this a patch for glib */
+end_comment
+
+begin_define
+DECL|macro|g_signal_handlers_disconnect_by_data (instance,data)
+define|#
+directive|define
+name|g_signal_handlers_disconnect_by_data
+parameter_list|(
+name|instance
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|g_signal_handlers_disconnect_matched (instance,\   G_SIGNAL_MATCH_DATA, 0, 0, NULL, NULL, data);
+end_define
+
+begin_comment
 comment|/*  enums  */
 end_comment
 
@@ -33,7 +51,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00103
+DECL|enum|__anon2bef9f170103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -56,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00203
+DECL|enum|__anon2bef9f170203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -94,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00303
+DECL|enum|__anon2bef9f170303
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -122,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00403
+DECL|enum|__anon2bef9f170403
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -142,7 +160,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a5b2f00503
+DECL|enum|__anon2bef9f170503
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL

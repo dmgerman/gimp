@@ -1005,7 +1005,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac25d80103
+DECL|enum|__anon2afb65ae0103
 block|{
 DECL|enumerator|ARG_0
 name|ARG_0
@@ -1051,7 +1051,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac25d80203
+DECL|enum|__anon2afb65ae0203
 block|{
 DECL|enumerator|IMAGE_CHANGED
 name|IMAGE_CHANGED
@@ -2355,9 +2355,9 @@ operator|->
 name|tool_info
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|context
 operator|->
@@ -2400,9 +2400,9 @@ operator|->
 name|brush
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|context
 operator|->
@@ -2445,9 +2445,9 @@ operator|->
 name|pattern
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|context
 operator|->
@@ -2490,9 +2490,9 @@ operator|->
 name|gradient
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|context
 operator|->
@@ -2535,9 +2535,9 @@ operator|->
 name|palette
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|context
 operator|->
@@ -2580,9 +2580,9 @@ operator|->
 name|buffer
 condition|)
 block|{
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|context
 operator|->

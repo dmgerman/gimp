@@ -65,7 +65,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b91bb5f0103
+DECL|enum|__anon2b0c4b500103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1324,9 +1324,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gtk_object_ref
+name|g_object_ref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|object
 argument_list|)
@@ -1342,9 +1342,9 @@ block|{
 case|case
 name|GIMP_CONTAINER_POLICY_STRONG
 case|:
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|object
 argument_list|)
@@ -1378,7 +1378,7 @@ operator|--
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|container
 argument_list|)
@@ -1393,9 +1393,9 @@ argument_list|,
 name|object
 argument_list|)
 expr_stmt|;
-name|gtk_object_unref
+name|g_object_unref
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|object
 argument_list|)
