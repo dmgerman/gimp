@@ -184,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2936f8620103
+DECL|enum|__anon28a5a93a0103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -1422,6 +1422,8 @@ operator|*
 name|iwd
 operator|->
 name|ratio
+operator|+
+literal|0.5
 expr_stmt|;
 name|iwd
 operator|->
@@ -1444,6 +1446,8 @@ operator|*
 name|iwd
 operator|->
 name|ratio
+operator|+
+literal|0.5
 expr_stmt|;
 block|}
 else|else
@@ -1483,6 +1487,8 @@ operator|*
 name|iwd
 operator|->
 name|ratio
+operator|+
+literal|0.5
 expr_stmt|;
 name|iwd
 operator|->
@@ -1505,6 +1511,8 @@ operator|*
 name|iwd
 operator|->
 name|ratio
+operator|+
+literal|0.5
 expr_stmt|;
 block|}
 if|if
