@@ -76,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0c0b90103
+DECL|enum|__anon2b38de5d0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -625,7 +625,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_new:  * @verbose: Pass %TRUE to enable debugging output.  *   * Creates a new #GimpModuleDB instance. The @verbose parameter will be  * passed to the created #GimpModule instances using gimp_module_new().  *   * Return value: The new #GimpModuleDB instance.  **/
+comment|/**  * gimp_module_db_new:  * @verbose: Pass %TRUE to enable debugging output.  *  * Creates a new #GimpModuleDB instance. The @verbose parameter will be  * passed to the created #GimpModule instances using gimp_module_new().  *  * Return value: The new #GimpModuleDB instance.  **/
 end_comment
 
 begin_function
@@ -811,7 +811,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_set_load_inhibit:  * @db:           A #GimpModuleDB.  * @load_inhibit: A #G_SEARCHPATH_SEPARATOR delimited list of module  *                filenames to exclude from auto-loading.  *   * Sets the @load_inhibit flag for all #GimpModule's which are kept  * by @db (using gimp_module_set_load_inhibit()).  **/
+comment|/**  * gimp_module_db_set_load_inhibit:  * @db:           A #GimpModuleDB.  * @load_inhibit: A #G_SEARCHPATH_SEPARATOR delimited list of module  *                filenames to exclude from auto-loading.  *  * Sets the @load_inhibit flag for all #GimpModule's which are kept  * by @db (using gimp_module_set_load_inhibit()).  **/
 end_comment
 
 begin_function
@@ -914,7 +914,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_get_load_inhibit:  * @db: A #GimpModuleDB.  *   * Return the #G_SEARCHPATH_SEPARATOR selimited list of module filenames  * which are excluded from auto-loading.  *   * Return value: the @db's @load_inhibit string.  **/
+comment|/**  * gimp_module_db_get_load_inhibit:  * @db: A #GimpModuleDB.  *  * Return the #G_SEARCHPATH_SEPARATOR selimited list of module filenames  * which are excluded from auto-loading.  *  * Return value: the @db's @load_inhibit string.  **/
 end_comment
 
 begin_function
@@ -948,7 +948,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_load:  * @db:          A #GimpModuleDB.  * @module_path: A #G_SEARCHPATH_SEPARATOR delimited list of directories  *               to load modules from.  *   * Scans the directories contained in @module_path using  * gimp_datafiles_read_directories() and creates a #GimpModule  * instance for every loadable module contained in the directories.  **/
+comment|/**  * gimp_module_db_load:  * @db:          A #GimpModuleDB.  * @module_path: A #G_SEARCHPATH_SEPARATOR delimited list of directories  *               to load modules from.  *  * Scans the directories contained in @module_path using  * gimp_datafiles_read_directories() and creates a #GimpModule  * instance for every loadable module contained in the directories.  **/
 end_comment
 
 begin_function
@@ -1017,7 +1017,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_db_refresh:  * @db:          A #GimpModuleDB.  * @module_path: A #G_SEARCHPATH_SEPARATOR delimited list of directories  *               to load modules from.  *   * Does the same as gimp_module_db_load(), plus removes all #GimpModule  * instances whose modules have been deleted from disk.  *  * Note that the #GimpModule's will just be removed from the internal  * list and not freed as this is not possible with #GTypeModule  * instances which actually implement types.  **/
+comment|/**  * gimp_module_db_refresh:  * @db:          A #GimpModuleDB.  * @module_path: A #G_SEARCHPATH_SEPARATOR delimited list of directories  *               to load modules from.  *  * Does the same as gimp_module_db_load(), plus removes all #GimpModule  * instances whose modules have been deleted from disk.  *  * Note that the #GimpModule's will just be removed from the internal  * list and not freed as this is not possible with #GTypeModule  * instances which actually implement types.  **/
 end_comment
 
 begin_function

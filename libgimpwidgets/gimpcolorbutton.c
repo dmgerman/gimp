@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ea747d0103
+DECL|enum|__anon2b3cd7c40103
 block|{
 DECL|enumerator|GIMP_COLOR_BUTTON_COLOR_FG
 name|GIMP_COLOR_BUTTON_COLOR_FG
@@ -143,7 +143,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea747d0203
+DECL|enum|__anon2b3cd7c40203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -346,7 +346,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Foreground Color"
+literal|"/_Foreground Color"
 argument_list|)
 block|,
 name|NULL
@@ -361,7 +361,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Background Color"
+literal|"/_Background Color"
 argument_list|)
 block|,
 name|NULL
@@ -388,7 +388,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Black"
+literal|"/Blac_k"
 argument_list|)
 block|,
 name|NULL
@@ -403,7 +403,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/White"
+literal|"/_White"
 argument_list|)
 block|,
 name|NULL

@@ -322,7 +322,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aafe0560103
+DECL|enum|__anon29ed16a80103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3282,7 +3282,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/From Theme"
+literal|"/From _Theme"
 argument_list|)
 block|,
 name|NULL
@@ -3297,7 +3297,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Light Check Color"
+literal|"/_Light Check Color"
 argument_list|)
 block|,
 name|NULL
@@ -3312,7 +3312,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Dark Check Color"
+literal|"/_Dark Check Color"
 argument_list|)
 block|,
 name|NULL
@@ -3339,7 +3339,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/Select Custom Color..."
+literal|"/Select _Custom Color..."
 argument_list|)
 block|,
 name|NULL
@@ -3356,7 +3356,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"/As in Preferences"
+literal|"/As in _Preferences"
 argument_list|)
 block|,
 name|NULL

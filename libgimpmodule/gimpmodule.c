@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9532c0103
+DECL|enum|__anon2c030bff0103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -660,7 +660,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Module '%s' load error:\n%s"
+literal|"Module '%s' load error: %s"
 argument_list|)
 argument_list|,
 name|gimp_module
@@ -721,7 +721,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Module '%s' load error:\n%s"
+literal|"Module '%s' load error: %s"
 argument_list|)
 argument_list|,
 name|gimp_module
@@ -812,7 +812,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_module_new:  * @filename:     The filename of a loadable module.  * @load_inhibit: Pass %TRUE to exclude this module from auto-loading.  * @verbose:      Pass %TRUE to enable debugging output.  *   * Creates a new #GimpModule instance.  *   * Return value: The new #GimpModule object.  **/
+comment|/**  * gimp_module_new:  * @filename:     The filename of a loadable module.  * @load_inhibit: Pass %TRUE to exclude this module from auto-loading.  * @verbose:      Pass %TRUE to enable debugging output.  *  * Creates a new #GimpModule instance.  *  * Return value: The new #GimpModule object.  **/
 end_comment
 
 begin_function
@@ -947,7 +947,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_query_module:  * @module: A #GimpModule.  *   * Queries the module without actually registering any of the types it  * may implement. After successful query, the @info field of the  * #GimpModule struct will be available for further inspection.  *   * Return value: %TRUE on success.  **/
+comment|/**  * gimp_module_query_module:  * @module: A #GimpModule.  *  * Queries the module without actually registering any of the types it  * may implement. After successful query, the @info field of the  * #GimpModule struct will be available for further inspection.  *  * Return value: %TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1045,7 +1045,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Module '%s' load error:\n%s"
+literal|"Module '%s' load error: %s"
 argument_list|)
 argument_list|,
 name|module
@@ -1144,7 +1144,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Module '%s' load error:\n%s"
+literal|"Module '%s' load error: %s"
 argument_list|)
 argument_list|,
 name|module
@@ -1197,7 +1197,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_modified:  * @module: A #GimpModule.  *   * Emits the "modified" signal. Call it whenever you have modified the module  * manually (which you shouldn't do).  **/
+comment|/**  * gimp_module_modified:  * @module: A #GimpModule.  *  * Emits the "modified" signal. Call it whenever you have modified the module  * manually (which you shouldn't do).  **/
 end_comment
 
 begin_function
@@ -1234,7 +1234,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_set_load_inhibit:  * @module:       A #GimpModule.  * @load_inhibit: Pass %TRUE to exclude this module from auto-loading.  *   * Sets the @load_inhibit property if the module. Emits "modified".  **/
+comment|/**  * gimp_module_set_load_inhibit:  * @module:       A #GimpModule.  * @load_inhibit: Pass %TRUE to exclude this module from auto-loading.  *  * Sets the @load_inhibit property if the module. Emits "modified".  **/
 end_comment
 
 begin_function
@@ -1287,7 +1287,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_state_name:  * @state: A #GimpModuleState.  *   * Returns the translated textual representation of a #GimpModuleState.  * The returned string must not be freed.  *   * Return value: The @state's name.  **/
+comment|/**  * gimp_module_state_name:  * @state: A #GimpModuleState.  *  * Returns the translated textual representation of a #GimpModuleState.  * The returned string must not be freed.  *  * Return value: The @state's name.  **/
 end_comment
 
 begin_function
@@ -1416,7 +1416,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Module '%s' load error:\n%s"
+literal|"Module '%s' load error: %s"
 argument_list|)
 argument_list|,
 name|module
@@ -1533,7 +1533,7 @@ comment|/*  GimpModuleInfo functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_module_info_new:  * @abi_version: The #GIMP_MODULE_ABI_VERSION the module was compiled against.  * @purpose:     The module's general purpose.  * @author:      The module's author.  * @version:     The module's version.  * @copyright:   The module's copyright.  * @date:        The module's release date.  *   * Creates a newly allocated #GimpModuleInfo struct.  *   * Return value: The new #GimpModuleInfo struct.  **/
+comment|/**  * gimp_module_info_new:  * @abi_version: The #GIMP_MODULE_ABI_VERSION the module was compiled against.  * @purpose:     The module's general purpose.  * @author:      The module's author.  * @version:     The module's version.  * @copyright:   The module's copyright.  * @date:        The module's release date.  *  * Creates a newly allocated #GimpModuleInfo struct.  *  * Return value: The new #GimpModuleInfo struct.  **/
 end_comment
 
 begin_function
@@ -1642,7 +1642,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_info_copy:  * @info: The #GimpModuleInfo struct to copy.  *   * Copies a #GimpModuleInfo struct.  *   * Return value: The new copy.  **/
+comment|/**  * gimp_module_info_copy:  * @info: The #GimpModuleInfo struct to copy.  *  * Copies a #GimpModuleInfo struct.  *  * Return value: The new copy.  **/
 end_comment
 
 begin_function
@@ -1698,7 +1698,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_info_free:  * @info: The #GimpModuleInfo struct to free  *   * Frees the passed #GimpModuleInfo.  **/
+comment|/**  * gimp_module_info_free:  * @info: The #GimpModuleInfo struct to free  *  * Frees the passed #GimpModuleInfo.  **/
 end_comment
 
 begin_function
