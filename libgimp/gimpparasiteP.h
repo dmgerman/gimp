@@ -27,38 +27,28 @@ DECL|struct|_Parasite
 struct|struct
 name|_Parasite
 block|{
-DECL|member|creator
-name|guchar
-name|creator
-index|[
-literal|4
-index|]
+DECL|member|name
+name|char
+modifier|*
+name|name
 decl_stmt|;
-comment|/* the creator code of the plug-in/author   */
-DECL|member|type
-name|guchar
-name|type
-index|[
-literal|4
-index|]
-decl_stmt|;
-comment|/* the data type of the parasite            */
+comment|/* The name of the parasite. USE A UNIQUE PREFIX! */
 DECL|member|flags
 name|guint32
 name|flags
 decl_stmt|;
-comment|/* save Parasite in XCF file, etc.          */
+comment|/* save Parasite in XCF file, etc.                */
 DECL|member|size
 name|guint32
 name|size
 decl_stmt|;
-comment|/* amount of data                           */
+comment|/* amount of data                                 */
 DECL|member|data
 name|void
 modifier|*
 name|data
 decl_stmt|;
-comment|/* a pointer to the data.  plugin is        * 			 * responsible for tracking byte order      */
+comment|/* a pointer to the data.  plugin is              * 			 * responsible for tracking byte order            */
 block|}
 struct|;
 end_struct

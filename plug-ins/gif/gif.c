@@ -122,7 +122,7 @@ end_comment
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|_GIMPPARASITE_H_
+name|_PARASITE_H_
 end_ifdef
 
 begin_define
@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d716310108
+DECL|struct|__anon29d2cabe0108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d716310208
+DECL|struct|__anon29d2cabe0208
 block|{
 DECL|member|run
 name|gint
@@ -523,7 +523,7 @@ end_ifdef
 
 begin_decl_stmt
 DECL|variable|comment_parasite
-name|GParasite
+name|Parasite
 modifier|*
 name|comment_parasite
 init|=
@@ -1610,7 +1610,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28d716310308
+DECL|struct|__anon29d2cabe0308
 block|{
 DECL|member|Width
 name|unsigned
@@ -1660,7 +1660,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28d716310408
+DECL|struct|__anon29d2cabe0408
 block|{
 DECL|member|transparent
 name|int
@@ -2656,7 +2656,7 @@ argument_list|,
 name|comment_parasite
 argument_list|)
 expr_stmt|;
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)
@@ -3087,7 +3087,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|comment_parasite
 argument_list|)
@@ -3095,11 +3095,9 @@ expr_stmt|;
 block|}
 name|comment_parasite
 operator|=
-name|gparasite_new
+name|parasite_new
 argument_list|(
-literal|"GIF2"
-argument_list|,
-literal|"CMNT"
+literal|"gimp-comment"
 argument_list|,
 name|TRUE
 argument_list|,
@@ -8244,7 +8242,7 @@ decl_stmt|;
 ifdef|#
 directive|ifdef
 name|FACEHUGGERS
-name|GParasite
+name|Parasite
 modifier|*
 name|GIF2_CMNT
 decl_stmt|;
@@ -8728,15 +8726,13 @@ name|gimp_image_find_parasite
 argument_list|(
 name|image_ID
 argument_list|,
-literal|"GIF2"
-argument_list|,
-literal|"CMNT"
+literal|"gimp-comment"
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gparasite_is_error
+name|parasite_is_error
 argument_list|(
 name|GIF2_CMNT
 argument_list|)
@@ -8788,7 +8784,7 @@ ifdef|#
 directive|ifdef
 name|FACEHUGGERS
 block|}
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|GIF2_CMNT
 argument_list|)

@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasite.h"
+file|"libgimp/parasite.h"
 end_include
 
 begin_include
@@ -4323,19 +4323,11 @@ block|,
 block|{
 name|PDB_STRING
 block|,
-literal|"creator"
+literal|"name"
 block|,
-literal|"The creator ID of the parasite to find"
+literal|"The name of the parasite to find"
 block|}
-block|,
-block|{
-name|PDB_STRING
-block|,
-literal|"type"
-block|,
-literal|"The type ID of the parasite to find"
-block|}
-block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -4365,9 +4357,9 @@ init|=
 block|{
 literal|"gimp_drawable_find_parasite"
 block|,
-literal|"Finds a parasite of a specified type and creator in an drawable."
+literal|"Finds a parasite in a drawable."
 block|,
-literal|"Finds a parasite of a specified type and creator in an drawable."
+literal|"Finds a parasite in a drawable."
 block|,
 literal|"Jay Cox"
 block|,
@@ -4378,7 +4370,7 @@ block|,
 name|PDB_INTERNAL
 block|,
 comment|/*  Input arguments  */
-literal|3
+literal|2
 block|,
 name|gimp_drawable_find_parasite_args
 block|,
@@ -4427,10 +4419,9 @@ name|return_args
 decl_stmt|;
 name|char
 modifier|*
-name|creator
-decl_stmt|,
-modifier|*
-name|type
+name|name
+init|=
+name|NULL
 decl_stmt|;
 comment|/*  the GimpDrawable  */
 if|if
@@ -4472,7 +4463,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|creator
+name|name
 operator|=
 operator|(
 name|char
@@ -4481,28 +4472,6 @@ operator|)
 name|args
 index|[
 literal|1
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_pointer
-expr_stmt|;
-block|}
-comment|/*  type  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|type
-operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|args
-index|[
-literal|2
 index|]
 operator|.
 name|value
@@ -4539,9 +4508,7 @@ name|gimp_drawable_find_parasite
 argument_list|(
 name|gdrawable
 argument_list|,
-name|creator
-argument_list|,
-name|type
+name|name
 argument_list|)
 expr_stmt|;
 if|if
@@ -4794,11 +4761,11 @@ literal|"the input drawable"
 block|}
 block|,
 block|{
-name|PDB_PARASITE
+name|PDB_STRING
 block|,
 literal|"parasite"
 block|,
-literal|"The parasite to detach to the drawable"
+literal|"The name of the parasite to detach from the drawable"
 block|}
 block|}
 decl_stmt|;
@@ -4868,7 +4835,7 @@ name|GimpDrawable
 modifier|*
 name|gdrawable
 decl_stmt|;
-name|Parasite
+name|char
 modifier|*
 name|parasite
 init|=
@@ -4920,7 +4887,7 @@ block|{
 name|parasite
 operator|=
 operator|(
-name|Parasite
+name|char
 operator|*
 operator|)
 name|args

@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasite.h"
+file|"libgimp/parasite.h"
 end_include
 
 begin_include
@@ -10845,14 +10845,15 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_set_gimage
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|new_layer
 argument_list|)
-operator|->
-name|gimage
-operator|=
+argument_list|,
 name|new_gimage
+argument_list|)
 expr_stmt|;
 comment|/*  Make sure the copied layer doesn't say: "<old layer> copy"  */
 name|layer_set_name
@@ -10998,14 +10999,15 @@ argument_list|(
 name|channel
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_set_gimage
+argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
 name|new_channel
 argument_list|)
-operator|->
-name|gimage
-operator|=
+argument_list|,
 name|new_gimage
+argument_list|)
 expr_stmt|;
 comment|/*  Make sure the copied channel doesn't say: "<old channel> copy"  */
 name|gimp_drawable_set_name
@@ -13374,19 +13376,11 @@ block|,
 block|{
 name|PDB_STRING
 block|,
-literal|"creator"
+literal|"name"
 block|,
-literal|"The creator ID of the parasite to find"
+literal|"The name of the parasite to find"
 block|}
-block|,
-block|{
-name|PDB_STRING
-block|,
-literal|"type"
-block|,
-literal|"The type ID of the parasite to find"
-block|}
-block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
@@ -13429,7 +13423,7 @@ block|,
 name|PDB_INTERNAL
 block|,
 comment|/*  Input arguments  */
-literal|3
+literal|2
 block|,
 name|gimp_image_find_parasite_args
 block|,
@@ -13478,10 +13472,9 @@ name|return_args
 decl_stmt|;
 name|char
 modifier|*
-name|creator
-decl_stmt|,
-modifier|*
-name|type
+name|name
+init|=
+name|NULL
 decl_stmt|;
 comment|/*  the gimage  */
 if|if
@@ -13517,13 +13510,13 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-comment|/*  creator  */
+comment|/*  name  */
 if|if
 condition|(
 name|success
 condition|)
 block|{
-name|creator
+name|name
 operator|=
 operator|(
 name|char
@@ -13532,28 +13525,6 @@ operator|)
 name|args
 index|[
 literal|1
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_pointer
-expr_stmt|;
-block|}
-comment|/*  type  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|type
-operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|args
-index|[
-literal|2
 index|]
 operator|.
 name|value
@@ -13590,9 +13561,7 @@ name|gimp_image_find_parasite
 argument_list|(
 name|gimage
 argument_list|,
-name|creator
-argument_list|,
-name|type
+name|name
 argument_list|)
 expr_stmt|;
 if|if
@@ -13845,11 +13814,11 @@ literal|"the input image"
 block|}
 block|,
 block|{
-name|PDB_PARASITE
+name|PDB_STRING
 block|,
-literal|"parasite"
+literal|"name"
 block|,
-literal|"The parasite to detach to the image"
+literal|"The name of the parasite to detach from the image"
 block|}
 block|}
 decl_stmt|;
@@ -13863,7 +13832,7 @@ init|=
 block|{
 literal|"gimp_image_detach_parasite"
 block|,
-literal|"Add a parasite to an image"
+literal|"Removes a parasite from an image"
 block|,
 literal|"This procedure detaches a parasite to an image.  It has no return values."
 block|,
@@ -13919,7 +13888,7 @@ name|GImage
 modifier|*
 name|gimage
 decl_stmt|;
-name|Parasite
+name|char
 modifier|*
 name|parasite
 init|=
@@ -13971,7 +13940,7 @@ block|{
 name|parasite
 operator|=
 operator|(
-name|Parasite
+name|char
 operator|*
 operator|)
 name|args

@@ -114,7 +114,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a35edfc0103
+DECL|enum|__anon2c0a364c0103
 enum|enum
 block|{
 DECL|enumerator|LAST_SIGNAL
@@ -5846,6 +5846,31 @@ operator|->
 name|preview
 return|;
 block|}
+block|}
+end_function
+
+begin_function
+name|guint32
+DECL|function|layer_get_tattoo (const Layer * layer)
+name|layer_get_tattoo
+parameter_list|(
+specifier|const
+name|Layer
+modifier|*
+name|layer
+parameter_list|)
+block|{
+return|return
+operator|(
+name|gimp_drawable_get_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+operator|)
+return|;
 block|}
 end_function
 

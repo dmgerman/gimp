@@ -25,19 +25,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpenums.h>
+file|"libgimp/gimpenums.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpfeatures.h>
+file|"libgimp/gimpfeatures.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpparasite.h>
+file|"libgimp/parasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/parasiteP.h"
 end_include
 
 begin_ifdef
@@ -539,7 +545,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 DECL|member|d_parasite
-name|GParasite
+name|Parasite
 name|d_parasite
 decl_stmt|;
 DECL|member|d_status
@@ -1410,7 +1416,7 @@ modifier|*
 name|name
 parameter_list|)
 function_decl|;
-name|GParasite
+name|Parasite
 modifier|*
 name|gimp_image_find_parasite
 parameter_list|(
@@ -1420,12 +1426,7 @@ parameter_list|,
 specifier|const
 name|char
 modifier|*
-name|creator
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|type
+name|name
 parameter_list|)
 function_decl|;
 name|void
@@ -1435,7 +1436,7 @@ name|gint32
 name|image_ID
 parameter_list|,
 specifier|const
-name|GParasite
+name|Parasite
 modifier|*
 name|p
 parameter_list|)
@@ -1446,9 +1447,10 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|GParasite
+specifier|const
+name|char
 modifier|*
-name|p
+name|name
 parameter_list|)
 function_decl|;
 name|void
@@ -1856,7 +1858,7 @@ name|gint
 name|visible
 parameter_list|)
 function_decl|;
-name|GParasite
+name|Parasite
 modifier|*
 name|gimp_layer_find_parasite
 parameter_list|(
@@ -1866,12 +1868,7 @@ parameter_list|,
 specifier|const
 name|char
 modifier|*
-name|creator
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|type
+name|name
 parameter_list|)
 function_decl|;
 name|void
@@ -1881,7 +1878,7 @@ name|gint32
 name|layer_ID
 parameter_list|,
 specifier|const
-name|GParasite
+name|Parasite
 modifier|*
 name|p
 parameter_list|)
@@ -1892,9 +1889,10 @@ parameter_list|(
 name|gint32
 name|layer_ID
 parameter_list|,
-name|GParasite
+specifier|const
+name|char
 modifier|*
-name|p
+name|name
 parameter_list|)
 function_decl|;
 comment|/****************************************  *             Channels                 *  ****************************************/
@@ -2335,7 +2333,7 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
-name|GParasite
+name|Parasite
 modifier|*
 name|gimp_drawable_find_parasite
 parameter_list|(
@@ -2345,12 +2343,7 @@ parameter_list|,
 specifier|const
 name|char
 modifier|*
-name|creator
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|type
+name|name
 parameter_list|)
 function_decl|;
 name|void
@@ -2360,7 +2353,7 @@ name|gint32
 name|drawable
 parameter_list|,
 specifier|const
-name|GParasite
+name|Parasite
 modifier|*
 name|p
 parameter_list|)
@@ -2371,9 +2364,10 @@ parameter_list|(
 name|gint32
 name|drawable
 parameter_list|,
-name|GParasite
+specifier|const
+name|char
 modifier|*
-name|p
+name|name
 parameter_list|)
 function_decl|;
 comment|/****************************************  *               GTiles                  *  ****************************************/

@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasite.h"
+file|"libgimp/parasite.h"
 end_include
 
 begin_include

@@ -458,6 +458,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|guint32
+name|channel_get_tattoo
+parameter_list|(
+specifier|const
+name|Channel
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* selection mask functions  */
 end_comment

@@ -25,7 +25,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<parasiteF.h>
+file|<libgimp/parasiteF.h>
 end_include
 
 begin_define
@@ -44,12 +44,7 @@ parameter_list|(
 specifier|const
 name|char
 modifier|*
-name|creator
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|type
+name|name
 parameter_list|,
 name|guint32
 name|flags
@@ -78,7 +73,7 @@ end_function_decl
 
 begin_function_decl
 name|int
-name|parasite_has_type
+name|parasite_is_type
 parameter_list|(
 specifier|const
 name|Parasite
@@ -88,12 +83,7 @@ parameter_list|,
 specifier|const
 name|char
 modifier|*
-name|creator
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|type
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -177,12 +167,7 @@ parameter_list|,
 specifier|const
 name|char
 modifier|*
-name|creator
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|type
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl

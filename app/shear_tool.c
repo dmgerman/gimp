@@ -214,7 +214,7 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|Matrix
+name|GimpMatrix
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -547,7 +547,7 @@ operator|=
 name|shear_tool_transform
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|identity_matrix
+name|gimp_matrix_identity
 argument_list|(
 name|private
 operator|->
@@ -1374,14 +1374,14 @@ operator|=
 literal|1
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|identity_matrix
+name|gimp_matrix_identity
 argument_list|(
 name|transform_core
 operator|->
 name|transform
 argument_list|)
 expr_stmt|;
-name|translate_matrix
+name|gimp_matrix_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1406,7 +1406,7 @@ index|]
 operator|==
 name|HORZ
 condition|)
-name|xshear_matrix
+name|gimp_matrix_xshear
 argument_list|(
 name|transform_core
 operator|->
@@ -1426,7 +1426,7 @@ name|height
 argument_list|)
 expr_stmt|;
 else|else
-name|yshear_matrix
+name|gimp_matrix_yshear
 argument_list|(
 name|transform_core
 operator|->
@@ -1445,7 +1445,7 @@ operator|/
 name|width
 argument_list|)
 expr_stmt|;
-name|translate_matrix
+name|gimp_matrix_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1512,7 +1512,7 @@ decl_stmt|;
 name|int
 name|interpolation
 decl_stmt|;
-name|Matrix
+name|GimpMatrix
 name|matrix
 decl_stmt|;
 block|{
@@ -1692,7 +1692,7 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
-name|Matrix
+name|GimpMatrix
 name|matrix
 decl_stmt|;
 name|int
@@ -1941,12 +1941,12 @@ name|height
 operator|/
 literal|2.0
 expr_stmt|;
-name|identity_matrix
+name|gimp_matrix_identity
 argument_list|(
 name|matrix
 argument_list|)
 expr_stmt|;
-name|translate_matrix
+name|gimp_matrix_translate
 argument_list|(
 name|matrix
 argument_list|,
@@ -1964,7 +1964,7 @@ name|shear_type
 operator|==
 name|HORZ
 condition|)
-name|xshear_matrix
+name|gimp_matrix_xshear
 argument_list|(
 name|matrix
 argument_list|,
@@ -1982,7 +1982,7 @@ name|shear_type
 operator|==
 name|VERT
 condition|)
-name|yshear_matrix
+name|gimp_matrix_yshear
 argument_list|(
 name|matrix
 argument_list|,
@@ -1993,7 +1993,7 @@ operator|->
 name|width
 argument_list|)
 expr_stmt|;
-name|translate_matrix
+name|gimp_matrix_translate
 argument_list|(
 name|matrix
 argument_list|,

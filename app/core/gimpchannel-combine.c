@@ -78,7 +78,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"parasite.h"
+file|"libgimp/parasite.h"
 end_include
 
 begin_include
@@ -2177,6 +2177,31 @@ name|tmp
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|guint32
+DECL|function|channel_get_tattoo (const Channel * channel)
+name|channel_get_tattoo
+parameter_list|(
+specifier|const
+name|Channel
+modifier|*
+name|channel
+parameter_list|)
+block|{
+return|return
+operator|(
+name|gimp_drawable_get_tattoo
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+operator|)
+return|;
 block|}
 end_function
 

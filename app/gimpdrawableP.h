@@ -28,6 +28,12 @@ directive|include
 file|"gimpdrawable.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmatrix.h"
+end_include
+
 begin_struct
 DECL|struct|_GimpDrawable
 struct|struct
@@ -85,6 +91,11 @@ name|int
 name|ID
 decl_stmt|;
 comment|/* provides a unique ID */
+DECL|member|tattoo
+name|guint32
+name|tattoo
+decl_stmt|;
+comment|/* provides a perminant ID */
 DECL|member|gimage
 name|GimpImage
 modifier|*
@@ -107,6 +118,11 @@ modifier|*
 name|parasites
 decl_stmt|;
 comment|/* Plug-in parasite data   */
+DECL|member|transform
+name|GimpMatrix
+name|transform
+decl_stmt|;
+comment|/* a matrix describing all of the 					   transformations this drawable 					   has undergone */
 comment|/*  Preview variables  */
 DECL|member|preview
 name|TempBuf

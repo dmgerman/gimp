@@ -48,6 +48,12 @@ directive|include
 file|"layer.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpmatrix.h"
+end_include
+
 begin_define
 DECL|macro|MAX_CHANNELS
 define|#
@@ -126,6 +132,11 @@ name|int
 name|ref_count
 decl_stmt|;
 comment|/*  number of references         */
+DECL|member|tattoo_state
+name|guint32
+name|tattoo_state
+decl_stmt|;
+comment|/*  the next unique tattoo to use*/
 DECL|member|shadow
 name|TileManager
 modifier|*
@@ -215,6 +226,11 @@ modifier|*
 name|parasites
 decl_stmt|;
 comment|/*  Plug-in parasite data        */
+DECL|member|transform
+name|GimpMatrix
+name|transform
+decl_stmt|;
+comment|/* a matrix describing all of the 					 transformations this image 					 has undergone */
 DECL|member|visible
 name|int
 name|visible

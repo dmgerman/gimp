@@ -239,7 +239,7 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|Matrix
+name|GimpMatrix
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -697,7 +697,7 @@ operator|/
 literal|2
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|identity_matrix
+name|gimp_matrix_identity
 argument_list|(
 name|private
 operator|->
@@ -1637,14 +1637,14 @@ operator|->
 name|cy
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|identity_matrix
+name|gimp_matrix_identity
 argument_list|(
 name|transform_core
 operator|->
 name|transform
 argument_list|)
 expr_stmt|;
-name|translate_matrix
+name|gimp_matrix_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1657,7 +1657,7 @@ operator|-
 name|cy
 argument_list|)
 expr_stmt|;
-name|rotate_matrix
+name|gimp_matrix_rotate
 argument_list|(
 name|transform_core
 operator|->
@@ -1671,7 +1671,7 @@ name|ANGLE
 index|]
 argument_list|)
 expr_stmt|;
-name|translate_matrix
+name|gimp_matrix_translate
 argument_list|(
 name|transform_core
 operator|->
@@ -1747,7 +1747,7 @@ decl_stmt|;
 name|int
 name|interpolation
 decl_stmt|;
-name|Matrix
+name|GimpMatrix
 name|matrix
 decl_stmt|;
 block|{
@@ -1916,7 +1916,7 @@ name|TileManager
 modifier|*
 name|new_tiles
 decl_stmt|;
-name|Matrix
+name|GimpMatrix
 name|matrix
 decl_stmt|;
 name|int
@@ -2115,12 +2115,12 @@ operator|/
 literal|2.0
 expr_stmt|;
 comment|/*  assemble the transformation matrix  */
-name|identity_matrix
+name|gimp_matrix_identity
 argument_list|(
 name|matrix
 argument_list|)
 expr_stmt|;
-name|translate_matrix
+name|gimp_matrix_translate
 argument_list|(
 name|matrix
 argument_list|,
@@ -2131,14 +2131,14 @@ operator|-
 name|cy
 argument_list|)
 expr_stmt|;
-name|rotate_matrix
+name|gimp_matrix_rotate
 argument_list|(
 name|matrix
 argument_list|,
 name|angle
 argument_list|)
 expr_stmt|;
-name|translate_matrix
+name|gimp_matrix_translate
 argument_list|(
 name|matrix
 argument_list|,

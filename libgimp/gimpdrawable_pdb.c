@@ -2244,9 +2244,9 @@ block|}
 end_function
 
 begin_function
-name|GParasite
+name|Parasite
 modifier|*
-DECL|function|gimp_drawable_find_parasite (gint32 drawable_ID,const char * creator,const char * type)
+DECL|function|gimp_drawable_find_parasite (gint32 drawable_ID,const char * name)
 name|gimp_drawable_find_parasite
 parameter_list|(
 name|gint32
@@ -2255,12 +2255,7 @@ parameter_list|,
 specifier|const
 name|char
 modifier|*
-name|creator
-parameter_list|,
-specifier|const
-name|char
-modifier|*
-name|type
+name|name
 parameter_list|)
 block|{
 name|GParam
@@ -2270,7 +2265,7 @@ decl_stmt|;
 name|int
 name|nreturn_vals
 decl_stmt|;
-name|GParasite
+name|Parasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -2289,11 +2284,7 @@ name|drawable_ID
 argument_list|,
 name|PARAM_STRING
 argument_list|,
-name|creator
-argument_list|,
-name|PARAM_STRING
-argument_list|,
-name|type
+name|name
 argument_list|,
 name|PARAM_END
 argument_list|)
@@ -2314,7 +2305,7 @@ condition|)
 block|{
 name|parasite
 operator|=
-name|gparasite_copy
+name|parasite_copy
 argument_list|(
 operator|&
 name|return_vals
@@ -2348,14 +2339,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_attach_parasite (gint32 drawable_ID,const GParasite * p)
+DECL|function|gimp_drawable_attach_parasite (gint32 drawable_ID,const Parasite * p)
 name|gimp_drawable_attach_parasite
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
 specifier|const
-name|GParasite
+name|Parasite
 modifier|*
 name|p
 parameter_list|)
@@ -2399,15 +2390,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_detach_parasite (gint32 drawable_ID,GParasite * p)
+DECL|function|gimp_drawable_detach_parasite (gint32 drawable_ID,const char * name)
 name|gimp_drawable_detach_parasite
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|GParasite
+specifier|const
+name|char
 modifier|*
-name|p
+name|name
 parameter_list|)
 block|{
 name|GParam
@@ -2430,9 +2422,9 @@ name|PARAM_DRAWABLE
 argument_list|,
 name|drawable_ID
 argument_list|,
-name|PARAM_PARASITE
+name|PARAM_STRING
 argument_list|,
-name|p
+name|name
 argument_list|,
 name|PARAM_END
 argument_list|)

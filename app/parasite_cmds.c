@@ -6,7 +6,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"parasite.h"
+file|"libgimp/parasite.h"
 end_include
 
 begin_include
@@ -50,17 +50,9 @@ block|{
 block|{
 name|PDB_STRING
 block|,
-literal|"creator"
+literal|"name"
 block|,
-literal|"The creator ID of the parasite to create"
-block|}
-block|,
-block|{
-name|PDB_STRING
-block|,
-literal|"type"
-block|,
-literal|"The type ID of the parasite to create"
+literal|"The name of the parasite to create"
 block|}
 block|,
 block|{
@@ -129,7 +121,7 @@ block|,
 name|PDB_INTERNAL
 block|,
 comment|/*  Input arguments  */
-literal|5
+literal|4
 block|,
 name|parasite_new_args
 block|,
@@ -171,10 +163,7 @@ name|return_args
 decl_stmt|;
 name|char
 modifier|*
-name|creator
-decl_stmt|,
-modifier|*
-name|type
+name|name
 decl_stmt|;
 name|guint32
 name|flags
@@ -191,7 +180,7 @@ condition|(
 name|success
 condition|)
 block|{
-name|creator
+name|name
 operator|=
 operator|(
 name|char
@@ -200,28 +189,6 @@ operator|)
 name|args
 index|[
 literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_pointer
-expr_stmt|;
-block|}
-comment|/*  type  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|type
-operator|=
-operator|(
-name|char
-operator|*
-operator|)
-name|args
-index|[
-literal|1
 index|]
 operator|.
 name|value
@@ -239,7 +206,7 @@ name|flags
 operator|=
 name|args
 index|[
-literal|2
+literal|1
 index|]
 operator|.
 name|value
@@ -257,7 +224,7 @@ name|size
 operator|=
 name|args
 index|[
-literal|3
+literal|2
 index|]
 operator|.
 name|value
@@ -275,7 +242,7 @@ name|data
 operator|=
 name|args
 index|[
-literal|4
+literal|3
 index|]
 operator|.
 name|value
@@ -324,9 +291,7 @@ name|pdb_pointer
 operator|=
 name|parasite_new
 argument_list|(
-name|creator
-argument_list|,
-name|type
+name|name
 argument_list|,
 name|flags
 argument_list|,

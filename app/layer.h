@@ -736,6 +736,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|guint32
+name|layer_get_tattoo
+parameter_list|(
+specifier|const
+name|Layer
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_define
 DECL|macro|drawable_layer
 define|#

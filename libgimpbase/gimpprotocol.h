@@ -35,7 +35,7 @@ value|0x0003
 end_define
 
 begin_enum
-DECL|enum|__anon27c3d4340103
+DECL|enum|__anon29b6e5e40103
 enum|enum
 block|{
 DECL|enumerator|GP_QUIT
@@ -287,7 +287,7 @@ DECL|member|type
 name|guint32
 name|type
 decl_stmt|;
-DECL|union|__anon27c3d434020a
+DECL|union|__anon29b6e5e4020a
 union|union
 block|{
 DECL|member|d_int32
@@ -337,7 +337,7 @@ modifier|*
 modifier|*
 name|d_stringarray
 decl_stmt|;
-DECL|struct|__anon27c3d4340308
+DECL|struct|__anon29b6e5e40308
 struct|struct
 block|{
 DECL|member|red
@@ -356,7 +356,7 @@ DECL|member|d_color
 block|}
 name|d_color
 struct|;
-DECL|struct|__anon27c3d4340408
+DECL|struct|__anon29b6e5e40408
 struct|struct
 block|{
 DECL|member|x
@@ -412,21 +412,12 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27c3d4340508
+DECL|struct|__anon29b6e5e40508
 block|{
-DECL|member|creator
-name|guchar
-name|creator
-index|[
-literal|4
-index|]
-decl_stmt|;
-DECL|member|type
-name|guchar
-name|type
-index|[
-literal|4
-index|]
+DECL|member|name
+name|char
+modifier|*
+name|name
 decl_stmt|;
 DECL|member|flags
 name|guint32

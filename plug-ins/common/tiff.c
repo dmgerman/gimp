@@ -40,7 +40,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f298fe0108
+DECL|struct|__anon2c1e094b0108
 block|{
 DECL|member|compression
 name|gint
@@ -59,7 +59,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f298fe0208
+DECL|struct|__anon2c1e094b0208
 block|{
 DECL|member|run
 name|gint
@@ -732,7 +732,7 @@ name|d_int32
 decl_stmt|;
 comment|/* get the image comment either from a parasite, or from our        * compiled-in default */
 block|{
-name|GParasite
+name|Parasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -746,15 +746,13 @@ name|gimp_image_find_parasite
 argument_list|(
 name|image
 argument_list|,
-literal|"GIF2"
-argument_list|,
-literal|"CMNT"
+literal|"gimp-comment"
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gparasite_is_error
+name|parasite_is_error
 argument_list|(
 name|parasite
 argument_list|)
@@ -768,7 +766,7 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -795,7 +793,7 @@ case|case
 name|RUN_INTERACTIVE
 case|:
 block|{
-name|GParasite
+name|Parasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -814,15 +812,13 @@ name|gimp_image_find_parasite
 argument_list|(
 name|image
 argument_list|,
-literal|"tiff"
-argument_list|,
-literal|"sopt"
+literal|"tiff-save-options"
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gparasite_is_error
+name|parasite_is_error
 argument_list|(
 name|parasite
 argument_list|)
@@ -861,7 +857,7 @@ operator|->
 name|fillorder
 expr_stmt|;
 block|}
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -991,7 +987,7 @@ name|RUN_WITH_LAST_VALS
 case|:
 comment|/*  Possibly retrieve data  */
 block|{
-name|GParasite
+name|Parasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -1009,15 +1005,13 @@ name|gimp_image_find_parasite
 argument_list|(
 name|image
 argument_list|,
-literal|"tiff"
-argument_list|,
-literal|"sopt"
+literal|"tiff-save-options"
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gparasite_is_error
+name|parasite_is_error
 argument_list|(
 name|parasite
 argument_list|)
@@ -1056,7 +1050,7 @@ operator|->
 name|fillorder
 expr_stmt|;
 block|}
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -1285,7 +1279,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-DECL|struct|__anon27f298fe0308
+DECL|struct|__anon2c1e094b0308
 typedef|typedef
 struct|struct
 block|{
@@ -1325,7 +1319,7 @@ decl_stmt|;
 name|TiffSaveVals
 name|save_vals
 decl_stmt|;
-name|GParasite
+name|Parasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -1794,11 +1788,9 @@ name|tmp
 expr_stmt|;
 name|parasite
 operator|=
-name|gparasite_new
+name|parasite_new
 argument_list|(
-literal|"tiff"
-argument_list|,
-literal|"sopt"
+literal|"tiff-save-options"
 argument_list|,
 literal|0
 argument_list|,
@@ -1818,12 +1810,12 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-comment|/* Attach a parasite containing the image description.  Pretend to    * be a GIF2 comment so other plugins will use this description as    * an image comment where appropriate. */
+comment|/* Attach a parasite containing the image description.  Pretend to    * be a gimp comment so other plugins will use this description as    * an image comment where appropriate. */
 block|{
 name|char
 modifier|*
@@ -1874,11 +1866,9 @@ literal|'\000'
 expr_stmt|;
 name|parasite
 operator|=
-name|gparasite_new
+name|parasite_new
 argument_list|(
-literal|"GIF2"
-argument_list|,
-literal|"CMNT"
+literal|"gimp-comment"
 argument_list|,
 literal|1
 argument_list|,
@@ -1894,7 +1884,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|parasite
 argument_list|)
@@ -3900,7 +3890,7 @@ operator|!=
 literal|'\000'
 condition|)
 block|{
-name|GParasite
+name|Parasite
 modifier|*
 name|parasite
 decl_stmt|;
@@ -3915,11 +3905,9 @@ argument_list|)
 expr_stmt|;
 name|parasite
 operator|=
-name|gparasite_new
+name|parasite_new
 argument_list|(
-literal|"GIF2"
-argument_list|,
-literal|"CMNT"
+literal|"gimp-comment"
 argument_list|,
 literal|1
 argument_list|,
@@ -3940,7 +3928,7 @@ argument_list|,
 name|parasite
 argument_list|)
 expr_stmt|;
-name|gparasite_free
+name|parasite_free
 argument_list|(
 name|parasite
 argument_list|)
