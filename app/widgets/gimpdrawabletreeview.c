@@ -18,18 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets-types.h"
 end_include
 
@@ -37,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpchannel.h"
 end_include
 
 begin_include
@@ -78,18 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimppattern.h"
 end_include
 
@@ -102,37 +72,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcellrenderertoggle.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpchanneltreeview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpitemfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplayertreeview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimppreviewrenderer.h"
+file|"gimpdrawabletreeview.h"
 end_include
 
 begin_include
