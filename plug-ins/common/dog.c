@@ -46,7 +46,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9327930108
+DECL|struct|__anon2ba2b5000108
 block|{
 DECL|member|inner
 name|gdouble
@@ -89,7 +89,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9327930208
+DECL|struct|__anon2ba2b5000208
 block|{
 DECL|member|gimpimageid
 name|gint32
@@ -1960,12 +1960,6 @@ argument_list|,
 name|show_progress
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|_gimp_tile_cache_flush_drawable (drawable1);   _gimp_tile_cache_flush_drawable (drawable2);
-endif|#
-directive|endif
 name|compute_difference
 argument_list|(
 name|drawable
@@ -2062,12 +2056,6 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|_gimp_tile_cache_flush_drawable (drawable);
-endif|#
-directive|endif
 block|}
 if|if
 condition|(
