@@ -2349,6 +2349,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_viewable_button_set_view_type
+argument_list|(
+name|GIMP_VIEWABLE_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GIMP_VIEW_TYPE_GRID
+argument_list|)
+expr_stmt|;
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE

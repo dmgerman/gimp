@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c92350d0103
+DECL|enum|__anon2b5e930d0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1325,7 +1325,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_popup_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_container_popup_new (GimpContainer * container,GimpContext * context,GimpViewType view_type,gint preview_size,gint preview_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
 name|gimp_container_popup_new
 parameter_list|(
 name|GimpContainer
@@ -1335,6 +1335,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpViewType
+name|view_type
 parameter_list|,
 name|gint
 name|preview_size
@@ -1585,7 +1588,7 @@ name|gimp_container_popup_create_view
 argument_list|(
 name|popup
 argument_list|,
-name|GIMP_VIEW_TYPE_LIST
+name|view_type
 argument_list|)
 expr_stmt|;
 return|return
