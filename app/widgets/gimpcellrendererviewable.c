@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2767c3680103
+DECL|enum|__anon2b21575f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -238,6 +238,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|parent_class
+specifier|static
 name|GtkCellRendererClass
 modifier|*
 name|parent_class
@@ -314,7 +315,7 @@ name|g_type_register_static
 argument_list|(
 name|GTK_TYPE_CELL_RENDERER
 argument_list|,
-literal|"GtkCellRendererViewable"
+literal|"GimpCellRendererViewable"
 argument_list|,
 operator|&
 name|cell_info
@@ -706,10 +707,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|GTK_CELL_RENDERER
-argument_list|(
 name|cell
-argument_list|)
 operator|->
 name|xpad
 operator|*
@@ -722,10 +720,7 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|GTK_CELL_RENDERER
-argument_list|(
 name|cell
-argument_list|)
 operator|->
 name|ypad
 operator|*
@@ -773,10 +768,7 @@ operator|*
 name|x_offset
 operator|=
 operator|(
-name|GTK_CELL_RENDERER
-argument_list|(
-name|cellviewable
-argument_list|)
+name|cell
 operator|->
 name|xalign
 operator|*
@@ -787,16 +779,11 @@ name|width
 operator|-
 name|calc_width
 operator|-
-operator|(
 literal|2
 operator|*
-name|GTK_CELL_RENDERER
-argument_list|(
-name|cellviewable
-argument_list|)
+name|cell
 operator|->
 name|xpad
-operator|)
 operator|)
 operator|)
 expr_stmt|;
@@ -812,10 +799,7 @@ argument_list|,
 literal|0
 argument_list|)
 operator|+
-name|GTK_CELL_RENDERER
-argument_list|(
-name|cellviewable
-argument_list|)
+name|cell
 operator|->
 name|xpad
 operator|)
@@ -830,10 +814,7 @@ operator|*
 name|y_offset
 operator|=
 operator|(
-name|GTK_CELL_RENDERER
-argument_list|(
-name|cellviewable
-argument_list|)
+name|cell
 operator|->
 name|yalign
 operator|*
@@ -844,16 +825,11 @@ name|height
 operator|-
 name|calc_height
 operator|-
-operator|(
 literal|2
 operator|*
-name|GTK_CELL_RENDERER
-argument_list|(
-name|cellviewable
-argument_list|)
+name|cell
 operator|->
 name|ypad
-operator|)
 operator|)
 operator|)
 expr_stmt|;
@@ -869,10 +845,7 @@ argument_list|,
 literal|0
 argument_list|)
 operator|+
-name|GTK_CELL_RENDERER
-argument_list|(
-name|cellviewable
-argument_list|)
+name|cell
 operator|->
 name|ypad
 operator|)

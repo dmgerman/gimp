@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcellrenderertoggle.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcellrendererviewable.h"
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5455fb0103
+DECL|enum|__anon2bf435c40103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -611,8 +617,10 @@ argument_list|)
 expr_stmt|;
 name|cell
 operator|=
-name|gtk_cell_renderer_toggle_new
-argument_list|()
+name|gimp_cell_renderer_toggle_new
+argument_list|(
+name|GIMP_STOCK_VISIBLE
+argument_list|)
 expr_stmt|;
 name|gtk_tree_view_column_pack_start
 argument_list|(

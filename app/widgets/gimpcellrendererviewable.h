@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_CELL_RENDERER_PIXBUF_H__
+name|__GIMP_CELL_RENDERER_VIEWABLE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_CELL_RENDERER_PIXBUF_H__
+DECL|macro|__GIMP_CELL_RENDERER_VIEWABLE_H__
 define|#
 directive|define
-name|__GIMP_CELL_RENDERER_PIXBUF_H__
+name|__GIMP_CELL_RENDERER_VIEWABLE_H__
 end_define
 
 begin_include
