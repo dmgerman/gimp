@@ -96,6 +96,34 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_enum_stock_box_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_prefix
+parameter_list|,
+name|gint
+name|minimum
+parameter_list|,
+name|gint
+name|maximum
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  GParamInt, GParamUInt, GParamLong, GParamULong, GParamDouble  */
 end_comment

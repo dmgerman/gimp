@@ -51,9 +51,15 @@ directive|include
 file|"gimptext.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2bf28f1e0103
+DECL|enum|__anon2af9c7e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -468,7 +474,11 @@ name|PROP_INDENTATION
 argument_list|,
 literal|"indent"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"How many pixels the "
+literal|"first line should be shorter."
+argument_list|)
 argument_list|,
 operator|-
 literal|8192.0
@@ -488,7 +498,10 @@ name|PROP_LINE_SPACING
 argument_list|,
 literal|"line-spacing"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Additional line spacing (in pixels)."
+argument_list|)
 argument_list|,
 operator|-
 literal|8192.0
@@ -510,11 +523,12 @@ literal|"letter-spacing"
 argument_list|,
 name|NULL
 argument_list|,
+operator|-
+literal|8192.0
+argument_list|,
+literal|8192.0
+argument_list|,
 literal|0.0
-argument_list|,
-literal|64.0
-argument_list|,
-literal|1.0
 argument_list|,
 literal|0
 argument_list|)
@@ -569,7 +583,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_GRAVITY_TYPE
 argument_list|,
-name|GIMP_GRAVITY_CENTER
+name|GIMP_GRAVITY_NONE
 argument_list|,
 literal|0
 argument_list|)
