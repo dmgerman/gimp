@@ -10284,7 +10284,7 @@ argument_list|,
 name|layer_widget
 argument_list|)
 expr_stmt|;
-comment|/*  Free the widget  */
+comment|/*  Release the widget  */
 name|gtk_widget_unref
 argument_list|(
 name|layer_widget

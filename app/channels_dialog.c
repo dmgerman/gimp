@@ -3491,6 +3491,19 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
+name|channelsD
+operator|->
+name|channel_widgets
+operator|=
+name|g_slist_remove
+argument_list|(
+name|channelsD
+operator|->
+name|channel_widgets
+argument_list|,
+name|channel_widget
+argument_list|)
+expr_stmt|;
 name|suspend_gimage_notify
 operator|--
 expr_stmt|;
@@ -3505,6 +3518,25 @@ name|channel_list
 argument_list|)
 argument_list|,
 name|list
+argument_list|,
+name|new_index
+operator|+
+name|channelsD
+operator|->
+name|num_components
+argument_list|)
+expr_stmt|;
+name|channelsD
+operator|->
+name|channel_widgets
+operator|=
+name|g_slist_insert
+argument_list|(
+name|channelsD
+operator|->
+name|channel_widgets
+argument_list|,
+name|channel_widget
 argument_list|,
 name|new_index
 operator|+
@@ -5046,12 +5078,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_ref
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
 name|channel_widget
 operator|->
 name|list_item
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -5098,7 +5127,7 @@ argument_list|,
 name|channel_widget
 argument_list|)
 expr_stmt|;
-comment|/*  Free the widget  */
+comment|/*  Release the widget  */
 name|gtk_widget_unref
 argument_list|(
 name|channel_widget
