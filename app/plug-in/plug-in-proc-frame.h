@@ -130,21 +130,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|plug_in_proc_frame_free
-parameter_list|(
-name|PlugInProcFrame
-modifier|*
-name|proc_frame
-parameter_list|,
-name|PlugIn
-modifier|*
-name|plug_in
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|PlugInProcFrame
 modifier|*
 name|plug_in_proc_frame_ref

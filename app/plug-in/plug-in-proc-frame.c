@@ -45,6 +45,22 @@ directive|include
 file|"plug-in-progress.h"
 end_include
 
+begin_function_decl
+specifier|static
+name|void
+name|plug_in_proc_frame_free
+parameter_list|(
+name|PlugInProcFrame
+modifier|*
+name|proc_frame
+parameter_list|,
+name|PlugIn
+modifier|*
+name|plug_in
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  publuc functions  */
 end_comment
@@ -375,6 +391,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|plug_in_proc_frame_free (PlugInProcFrame * proc_frame,PlugIn * plug_in)
 name|plug_in_proc_frame_free
