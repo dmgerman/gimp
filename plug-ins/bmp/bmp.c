@@ -100,6 +100,18 @@ comment|/*            19.12.1999 Resolution support added */
 end_comment
 
 begin_comment
+comment|/*            06.05.2000 Overhaul for 16&24-bit   */
+end_comment
+
+begin_comment
+comment|/*                       plus better OS/2 code    */
+end_comment
+
+begin_comment
+comment|/*                       by njl195@zepler.org.uk  */
+end_comment
+
+begin_comment
 comment|/*   * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  * ----------------------------------------------------------------------------  */
 end_comment
 
@@ -203,14 +215,6 @@ DECL|variable|Bitmap_Head
 name|struct
 name|Bitmap_Head_Struct
 name|Bitmap_Head
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|Bitmap_OS2_Head
-name|struct
-name|Bitmap_OS2_Head_Struct
-name|Bitmap_OS2_Head
 decl_stmt|;
 end_decl_stmt
 

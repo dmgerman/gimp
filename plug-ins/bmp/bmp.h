@@ -299,16 +299,29 @@ specifier|extern
 struct|struct
 name|Bitmap_File_Head_Struct
 block|{
+DECL|member|zzMagic
+name|gchar
+name|zzMagic
+index|[
+literal|2
+index|]
+decl_stmt|;
+comment|/* 00 "BM" */
 DECL|member|bfSize
 name|gulong
 name|bfSize
 decl_stmt|;
 comment|/* 02 */
-DECL|member|reserverd
-name|gulong
-name|reserverd
+DECL|member|zzHotX
+name|gushort
+name|zzHotX
 decl_stmt|;
 comment|/* 06 */
+DECL|member|zzHotY
+name|gushort
+name|zzHotY
+decl_stmt|;
+comment|/* 08 */
 DECL|member|bfOffs
 name|gulong
 name|bfOffs
@@ -385,38 +398,6 @@ comment|/* 36 */
 DECL|variable|Bitmap_Head
 block|}
 name|Bitmap_Head
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|Bitmap_OS2_Head_Struct
-specifier|extern
-struct|struct
-name|Bitmap_OS2_Head_Struct
-block|{
-DECL|member|bcWidth
-name|gushort
-name|bcWidth
-decl_stmt|;
-comment|/* 12 */
-DECL|member|bcHeight
-name|gushort
-name|bcHeight
-decl_stmt|;
-comment|/* 14 */
-DECL|member|bcPlanes
-name|gushort
-name|bcPlanes
-decl_stmt|;
-comment|/* 16 */
-DECL|member|bcBitCnt
-name|gushort
-name|bcBitCnt
-decl_stmt|;
-comment|/* 18 */
-DECL|variable|Bitmap_OS2_Head
-block|}
-name|Bitmap_OS2_Head
 struct|;
 end_struct
 
