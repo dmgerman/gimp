@@ -1019,7 +1019,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/*  eventually export the image */
 switch|switch
 condition|(
 name|run_mode
@@ -1050,7 +1049,7 @@ name|drawable_ID
 argument_list|,
 literal|"XBM"
 argument_list|,
-name|GIMP_EXPORT_CAN_HANDLE_INDEXED
+name|GIMP_EXPORT_CAN_HANDLE_BITMAP
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 argument_list|)
@@ -3589,9 +3588,9 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The image which you are trying to save as\n"
+literal|"The image which you are trying to save as "
 literal|"an XBM contains more than two colors.\n\n"
-literal|"Please convert it to a black and white\n"
+literal|"Please convert it to a black and white "
 literal|"(1-bit) indexed image and try again."
 argument_list|)
 argument_list|)
