@@ -154,6 +154,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpStroke
+modifier|*
+name|gimp_bezier_stroke_new_from_coords
+parameter_list|(
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
+specifier|const
+name|gint
+name|ncoords
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpAnchor
 modifier|*
 name|gimp_bezier_stroke_extend
@@ -162,6 +179,7 @@ name|GimpBezierStroke
 modifier|*
 name|bezier_stroke
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

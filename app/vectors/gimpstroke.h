@@ -98,7 +98,12 @@ name|GimpStroke
 modifier|*
 name|next
 decl_stmt|;
-comment|/* Stuff missing */
+DECL|member|temp_anchor
+name|GimpAnchor
+modifier|*
+name|temp_anchor
+decl_stmt|;
+comment|/* Stuff missing? */
 block|}
 struct|;
 end_struct

@@ -29,6 +29,7 @@ DECL|member|type
 name|gint
 name|type
 decl_stmt|;
+comment|/* Interpretation dependant on GimpStroke type */
 block|}
 struct|;
 end_struct

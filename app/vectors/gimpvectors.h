@@ -104,6 +104,7 @@ name|gboolean
 name|locked
 decl_stmt|;
 comment|/* transformation locking         */
+comment|/* Should the following be a GList of GimpStrokes? */
 DECL|member|strokes
 name|GimpStroke
 modifier|*
