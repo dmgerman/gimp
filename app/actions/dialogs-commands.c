@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpsessioninfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs.h"
 end_include
 
