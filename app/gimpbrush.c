@@ -62,11 +62,21 @@ directive|include
 file|<fcntl.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
 end_ifdef
+
+begin_comment
+comment|/* gets defined by glib.h */
+end_comment
 
 begin_include
 include|#
@@ -101,12 +111,6 @@ end_endif
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdio.h>
 end_include
 
@@ -120,6 +124,12 @@ begin_include
 include|#
 directive|include
 file|"brush_header.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"brush_scale.h"
 end_include
 
 begin_include
@@ -170,7 +180,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba4456c0103
+DECL|enum|__anon29ea63070103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY

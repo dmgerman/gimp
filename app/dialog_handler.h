@@ -16,7 +16,14 @@ directive|define
 name|__DIALOG_HANDLER_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<gmodule.h>
+end_include
+
 begin_function_decl
+name|G_MODULE_EXPORT
 name|void
 name|dialog_register
 parameter_list|(
@@ -28,6 +35,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|G_MODULE_EXPORT
 name|void
 name|dialog_unregister
 parameter_list|(

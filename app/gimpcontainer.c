@@ -65,7 +65,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7946290103
+DECL|enum|__anon29e6fc580103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -844,7 +844,7 @@ name|g_warning
 argument_list|(
 literal|"%s(): container already contains object %p"
 argument_list|,
-name|__FUNCTION__
+name|G_GNUC_FUNCTION
 argument_list|,
 name|object
 argument_list|)
@@ -1076,7 +1076,7 @@ name|g_warning
 argument_list|(
 literal|"%s(): container does not contains object %p"
 argument_list|,
-name|__FUNCTION__
+name|G_GNUC_FUNCTION
 argument_list|,
 name|object
 argument_list|)

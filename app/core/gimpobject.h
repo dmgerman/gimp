@@ -75,6 +75,15 @@ value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_OBJECT))
 end_define
 
 begin_typedef
+DECL|typedef|GimpObject
+typedef|typedef
+name|struct
+name|_GimpObject
+name|GimpObject
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpObjectClass
 typedef|typedef
 name|struct

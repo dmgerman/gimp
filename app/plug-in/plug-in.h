@@ -22,6 +22,16 @@ directive|include
 file|"pdb/procedural_db.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<time.h>
+end_include
+
+begin_comment
+comment|/* time_t */
+end_comment
+
 begin_define
 DECL|macro|WRITE_BUFFER_SIZE
 define|#
@@ -81,7 +91,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ede1500103
+DECL|enum|__anon28ffd6c00103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
