@@ -1097,7 +1097,7 @@ index|[
 name|i
 index|]
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|GIMP_IMAGE
 argument_list|(
@@ -1358,7 +1358,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)
@@ -1496,7 +1496,7 @@ name|offy
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1734,7 +1734,7 @@ name|new_height
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1924,7 +1924,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2050,7 +2050,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2195,7 +2195,7 @@ name|i
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2464,7 +2464,7 @@ name|i
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2711,7 +2711,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2850,7 +2850,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3065,7 +3065,7 @@ name|layer
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3232,7 +3232,7 @@ name|layer
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3399,7 +3399,7 @@ name|layer
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3566,7 +3566,7 @@ name|layer
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3742,7 +3742,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3971,7 +3971,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4231,7 +4231,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4413,7 +4413,7 @@ name|position
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4667,7 +4667,7 @@ name|layer
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -4836,7 +4836,7 @@ name|mask
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5046,7 +5046,7 @@ name|mode
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5246,7 +5246,7 @@ name|channel
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5413,7 +5413,7 @@ name|layer
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5583,7 +5583,7 @@ name|position
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5777,7 +5777,7 @@ name|channel
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -5948,7 +5948,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -6132,7 +6132,7 @@ literal|0
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -6310,7 +6310,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -6525,7 +6525,7 @@ name|cmap
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -6785,7 +6785,7 @@ name|FALSE
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -6952,7 +6952,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7123,7 +7123,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7294,7 +7294,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7465,7 +7465,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7632,7 +7632,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7765,7 +7765,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -7953,7 +7953,7 @@ name|floating_sel
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -8188,7 +8188,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -8618,7 +8618,7 @@ name|tattoo
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -8775,7 +8775,7 @@ literal|0
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -8944,7 +8944,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9102,7 +9102,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9266,7 +9266,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9444,7 +9444,7 @@ name|active_layer
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9615,7 +9615,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9793,7 +9793,7 @@ name|active_channel
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -9964,7 +9964,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -10146,7 +10146,7 @@ name|component
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -10389,7 +10389,7 @@ name|active
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -10626,7 +10626,7 @@ name|component
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -10869,7 +10869,7 @@ name|visible
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -11103,7 +11103,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -11265,7 +11265,7 @@ name|filename
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -11427,7 +11427,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -11610,7 +11610,7 @@ name|yresolution
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -11832,7 +11832,7 @@ name|gimage
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -11989,7 +11989,7 @@ name|unit
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -12160,7 +12160,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -12381,7 +12381,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[

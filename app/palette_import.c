@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -148,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae974a90103
+DECL|enum|__anon29fc86530103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -1123,7 +1117,7 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|import_dialog
 operator|->
@@ -1184,7 +1178,7 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)
@@ -1621,7 +1615,7 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|import_dialog
 operator|->
@@ -1679,7 +1673,7 @@ name|gimage
 argument_list|)
 argument_list|)
 argument_list|,
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|import_dialog
 operator|->

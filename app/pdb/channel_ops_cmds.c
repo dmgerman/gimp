@@ -49,6 +49,12 @@ directive|include
 file|"gimage.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
 begin_decl_stmt
 DECL|variable|channel_ops_offset_proc
 specifier|static
@@ -376,7 +382,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -438,7 +444,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|new_gimage
 argument_list|)

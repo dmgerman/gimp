@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimplimits.h"
 end_include
 
@@ -1706,7 +1700,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf63adf0108
+DECL|struct|__anon293e5f8b0108
 block|{
 DECL|member|def
 name|GimpImage
@@ -2541,7 +2535,7 @@ literal|"%s-%d"
 argument_list|,
 name|image_name
 argument_list|,
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)

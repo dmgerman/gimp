@@ -236,7 +236,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a304d090103
+DECL|enum|__anon2c7195a90103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -371,7 +371,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a304d090203
+DECL|enum|__anon2c7195a90203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -1740,7 +1740,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)
@@ -1795,7 +1795,7 @@ name|FALSE
 expr_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[

@@ -1371,7 +1371,7 @@ name|i
 argument_list|,
 literal|"%d"
 argument_list|,
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)

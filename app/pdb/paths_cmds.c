@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"path.h"
 end_include
 
@@ -291,7 +297,7 @@ name|plist
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -578,7 +584,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1024,7 +1030,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1234,7 +1240,7 @@ name|pname
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1417,7 +1423,7 @@ name|FALSE
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1708,7 +1714,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -1924,7 +1930,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2227,7 +2233,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2519,7 +2525,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2746,7 +2752,7 @@ name|pname
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -2929,7 +2935,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3222,7 +3228,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[
@@ -3504,7 +3510,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[

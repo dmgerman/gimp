@@ -5951,7 +5951,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gdisplay
 operator|->
@@ -11466,7 +11466,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gdisplay
 operator|->
@@ -11581,7 +11581,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gdisplay
 operator|->

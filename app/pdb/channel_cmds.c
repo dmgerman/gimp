@@ -345,7 +345,7 @@ name|NULL
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[

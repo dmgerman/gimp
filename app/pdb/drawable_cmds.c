@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -1301,7 +1307,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)
@@ -4271,7 +4277,7 @@ name|FALSE
 expr_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[

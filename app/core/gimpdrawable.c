@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e6ec90103
+DECL|enum|__anon2c5beb5c0103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -694,12 +694,12 @@ name|g_hash_table_remove
 argument_list|(
 name|gimp_drawable_table
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|drawable
 operator|->
 name|ID
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1506,10 +1506,10 @@ name|g_hash_table_lookup
 argument_list|(
 name|gimp_drawable_table
 argument_list|,
-operator|(
-name|gpointer
-operator|)
+name|GINT_TO_POINTER
+argument_list|(
 name|drawable_id
+argument_list|)
 argument_list|)
 return|;
 block|}

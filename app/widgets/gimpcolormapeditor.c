@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -141,7 +135,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2978b2750103
+DECL|enum|__anon2ba57f920103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -5607,7 +5601,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2978b2750208
+DECL|struct|__anon2ba57f920208
 block|{
 DECL|member|def
 name|GimpImage
@@ -5778,7 +5772,7 @@ literal|"%s-%d"
 argument_list|,
 name|image_name
 argument_list|,
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)

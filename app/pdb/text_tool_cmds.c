@@ -58,6 +58,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -715,7 +721,7 @@ name|real_fontname
 decl_stmt|;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|args
 index|[

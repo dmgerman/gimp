@@ -2005,7 +2005,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)
@@ -2506,7 +2506,7 @@ name|value
 operator|.
 name|pdb_int
 operator|=
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|the_gimage
 argument_list|)
@@ -2529,9 +2529,10 @@ name|value
 operator|.
 name|pdb_int
 operator|=
+name|gimp_drawable_get_ID
+argument_list|(
 name|the_drawable
-operator|->
-name|ID
+argument_list|)
 expr_stmt|;
 name|plug_in_run
 argument_list|(

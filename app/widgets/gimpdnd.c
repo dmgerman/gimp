@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/procedural_db.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"tools/gimptool.h"
 end_include
 
@@ -196,7 +190,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ba10b80103
+DECL|enum|__anon2b4a0b500103
 block|{
 DECL|enumerator|GIMP_DND_DATA_NONE
 name|GIMP_DND_DATA_NONE
@@ -3258,7 +3252,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%d"
 argument_list|,
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gimage
 argument_list|)
@@ -3374,7 +3368,7 @@ condition|)
 return|return;
 name|gimage
 operator|=
-name|pdb_id_to_image
+name|gimp_image_get_by_ID
 argument_list|(
 name|ID
 argument_list|)

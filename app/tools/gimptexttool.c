@@ -1667,7 +1667,7 @@ operator|=
 operator|(
 name|gint32
 operator|)
-name|pdb_image_to_id
+name|gimp_image_get_ID
 argument_list|(
 name|gdisp
 operator|->
@@ -1695,14 +1695,15 @@ operator|=
 operator|(
 name|gint32
 operator|)
+name|gimp_drawable_get_ID
+argument_list|(
 name|gimp_image_active_drawable
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
 argument_list|)
-operator|->
-name|ID
+argument_list|)
 expr_stmt|;
 name|plug_in_run
 argument_list|(
