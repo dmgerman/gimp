@@ -243,7 +243,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b74ba5a0103
+DECL|enum|__anon27bba2000103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -900,7 +900,11 @@ operator|->
 name|fonts
 operator|=
 name|gimp_font_list_new
-argument_list|()
+argument_list|(
+literal|72.0
+argument_list|,
+literal|72.0
+argument_list|)
 expr_stmt|;
 name|gimp_object_set_name
 argument_list|(
@@ -3165,7 +3169,7 @@ argument_list|(
 literal|"Brushes"
 argument_list|)
 argument_list|,
-literal|0.18
+literal|0.15
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -3190,7 +3194,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
-literal|0.36
+literal|0.30
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -3215,7 +3219,7 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 argument_list|,
-literal|0.54
+literal|0.45
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -3240,7 +3244,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.72
+literal|0.60
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -3250,6 +3254,46 @@ operator|->
 name|gradient_factory
 argument_list|,
 name|no_data
+argument_list|)
+expr_stmt|;
+comment|/*  initialize the list of gimp fonts  */
+call|(
+modifier|*
+name|status_callback
+call|)
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Fonts"
+argument_list|)
+argument_list|,
+literal|0.75
+argument_list|)
+expr_stmt|;
+name|gimp_container_freeze
+argument_list|(
+name|gimp
+operator|->
+name|fonts
+argument_list|)
+expr_stmt|;
+name|gimp_font_list_restore
+argument_list|(
+name|GIMP_FONT_LIST
+argument_list|(
+name|gimp
+operator|->
+name|fonts
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_container_thaw
+argument_list|(
+name|gimp
+operator|->
+name|fonts
 argument_list|)
 expr_stmt|;
 comment|/*  initialize the document history  */

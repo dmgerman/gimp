@@ -995,7 +995,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|gimp_item_factory_set_visible
 argument_list|(
 name|GTK_ITEM_FACTORY
@@ -1015,7 +1014,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_item_factory_set_sensitive
 argument_list|(
 name|GTK_ITEM_FACTORY

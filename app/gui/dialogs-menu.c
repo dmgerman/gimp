@@ -349,6 +349,20 @@ name|ADD_TAB
 argument_list|(
 name|N_
 argument_list|(
+literal|"/Add Tab/Fonts..."
+argument_list|)
+argument_list|,
+literal|"gimp-font-list"
+argument_list|,
+literal|"<StockItem>"
+argument_list|,
+name|GTK_STOCK_SELECT_FONT
+argument_list|)
+block|,
+name|ADD_TAB
+argument_list|(
+name|N_
+argument_list|(
 literal|"/Add Tab/Buffers..."
 argument_list|)
 argument_list|,
