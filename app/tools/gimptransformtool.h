@@ -303,6 +303,10 @@ DECL|member|type
 name|GimpTransformType
 name|type
 decl_stmt|;
+DECL|member|direction
+name|GimpTransformDirection
+name|direction
+decl_stmt|;
 comment|/*  transform info dialog  */
 DECL|member|shell_identifier
 specifier|const
