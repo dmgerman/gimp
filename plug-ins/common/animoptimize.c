@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29daebad0103
+DECL|enum|__anon29bcbcd70103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -89,7 +89,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29daebad0203
+DECL|enum|__anon29bcbcd70203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -1581,6 +1581,11 @@ argument_list|,
 name|height
 argument_list|,
 name|imagetype
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|new_image_id
 argument_list|)
 expr_stmt|;
 if|if
@@ -3847,6 +3852,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gimp_image_undo_enable
+argument_list|(
+name|new_image_id
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|run_mode

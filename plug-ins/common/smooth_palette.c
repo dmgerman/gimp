@@ -308,7 +308,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2af8a1660108
+DECL|struct|__anon27c5e68b0108
 block|{
 DECL|member|width
 name|gint
@@ -1883,7 +1883,7 @@ name|height
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 for|for
@@ -1947,15 +1947,6 @@ argument_list|(
 name|new_layer
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_merge_shadow
-argument_list|(
-name|new_layer
-operator|->
-name|drawable_id
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
 name|new_layer
@@ -1973,6 +1964,11 @@ argument_list|,
 name|config
 operator|.
 name|height
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_enable
+argument_list|(
+name|new_image_id
 argument_list|)
 expr_stmt|;
 return|return

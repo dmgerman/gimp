@@ -134,7 +134,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb149c00108
+DECL|struct|__anon295c212a0108
 block|{
 DECL|member|root
 name|gboolean
@@ -1442,6 +1442,11 @@ name|comment
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_image_undo_enable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 return|return
 name|image
 return|;

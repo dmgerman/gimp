@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28af1b180108
+DECL|struct|__anon2b20cfbf0108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28af1b180208
+DECL|struct|__anon2b20cfbf0208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -1411,6 +1411,11 @@ operator|.
 name|new_image
 condition|)
 block|{
+name|gimp_image_undo_enable
+argument_list|(
+name|new_image_id
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_flush
 argument_list|(
 name|new_layer
