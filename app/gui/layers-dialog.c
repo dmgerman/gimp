@@ -4716,7 +4716,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c523ceb0108
+DECL|struct|__anon28e64e870108
 typedef|typedef
 struct|struct
 block|{
@@ -5178,12 +5178,9 @@ name|layersD
 operator|->
 name|layer_widgets
 condition|)
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"layersD->layer_widgets not empty!"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|layersD

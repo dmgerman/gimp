@@ -5813,12 +5813,9 @@ break|break;
 case|case
 name|GP_CONFIG
 case|:
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug_in_handle_message(): received a config message (should not happen)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5843,12 +5840,9 @@ break|break;
 case|case
 name|GP_TILE_ACK
 case|:
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug_in_handle_message(): received a config message (should not happen)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5862,12 +5856,9 @@ break|break;
 case|case
 name|GP_TILE_DATA
 case|:
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug_in_handle_message(): received a config message (should not happen)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -5910,12 +5901,9 @@ break|break;
 case|case
 name|GP_TEMP_PROC_RUN
 case|:
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug_in_handle_message(): received a temp proc run message (should not happen)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6125,12 +6113,9 @@ name|tile_data
 argument_list|)
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6154,12 +6139,9 @@ name|msg
 argument_list|)
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6180,12 +6162,9 @@ operator|!=
 name|GP_TILE_DATA
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"expected tile data and received: %d"
-argument_list|)
 argument_list|,
 name|msg
 operator|.
@@ -6244,12 +6223,9 @@ operator|!
 name|tm
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug-in requested invalid drawable (killing)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6282,12 +6258,9 @@ operator|!
 name|tile
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug-in requested invalid tile (killing)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6368,12 +6341,9 @@ name|current_writechannel
 argument_list|)
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6425,12 +6395,9 @@ operator|!
 name|tm
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug-in requested invalid drawable (killing)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6463,12 +6430,9 @@ operator|!
 name|tile
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug-in requested invalid tile (killing)"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6599,10 +6563,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6635,10 +6596,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug_in_handle_tile_req: ERROR"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -6659,12 +6617,9 @@ operator|!=
 name|GP_TILE_ACK
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"expected tile ack and received: %d"
-argument_list|)
 argument_list|,
 name|msg
 operator|.
@@ -6751,12 +6706,9 @@ name|proc_rec
 condition|)
 block|{
 comment|/* THIS IS PROBABLY NOT CORRECT -josh */
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"PDB lookup failed on %s"
-argument_list|)
 argument_list|,
 name|proc_run
 operator|->
@@ -6867,12 +6819,9 @@ name|proc_return
 argument_list|)
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"plug_in_handle_proc_run: ERROR"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -7078,10 +7027,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"plug_in_handle_proc_run: ERROR"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|plug_in_close
@@ -10399,12 +10345,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Uh-oh, no active gdisplay for the plug-in!"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -10517,12 +10460,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Uh-oh, no active gdisplay for the temporary procedure!"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

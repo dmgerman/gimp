@@ -2597,12 +2597,9 @@ operator|||
 operator|!
 name|widget
 condition|)
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Unable to set sensitivity for menu which doesn't exist:\n%s"
-argument_list|)
 argument_list|,
 name|path
 argument_list|)
@@ -2694,12 +2691,9 @@ operator|||
 operator|!
 name|widget
 condition|)
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"Unable to set state for menu which doesn't exist:\n%s\n"
-argument_list|)
 argument_list|,
 name|path
 argument_list|)

@@ -3266,10 +3266,7 @@ name|image
 condition|)
 name|fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"sanity check failed: could not get gdk image"
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3282,10 +3279,7 @@ literal|1
 condition|)
 name|fatal_error
 argument_list|(
-name|_
-argument_list|(
 literal|"sanity check failed: image should have 1 bit per pixel"
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* convert the GdkImage bitmap to a region */

@@ -646,10 +646,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"tried to destroy a ref'd tile"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -663,10 +660,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"tried to destroy an attached tile"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1095,10 +1089,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"Tried to detach a nonattached tile"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

@@ -306,7 +306,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1ead2c0103
+DECL|enum|__anon27b60be00103
 block|{
 DECL|enumerator|GRAD_IMPORT
 name|GRAD_IMPORT
@@ -2594,10 +2594,7 @@ argument_list|)
 expr_stmt|;
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"failed to open palette file %s: can't happen?"
-argument_list|)
 argument_list|,
 name|filename
 argument_list|)

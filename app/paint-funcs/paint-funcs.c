@@ -223,7 +223,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27fab6560103
+DECL|enum|__anon2881263c0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -5448,12 +5448,9 @@ operator|!=
 name|bytes2
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"replace_pixels only works on commensurate pixel regions"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -22371,10 +22368,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-name|_
-argument_list|(
 literal|"border_region: negative radius specified."
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

@@ -4200,12 +4200,9 @@ name|hsd
 operator|->
 name|image_map
 condition|)
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"hue_saturation_preview(): No image map"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|active_tool

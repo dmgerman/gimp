@@ -754,12 +754,9 @@ name|tile_ref_count
 operator|!=
 literal|0
 condition|)
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"tile ref count balance: %d\n"
-argument_list|)
 argument_list|,
 name|tile_ref_count
 argument_list|)
@@ -792,12 +789,9 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"swap file not empty: \"%s\"\n"
-argument_list|)
 argument_list|,
 name|swap_file
 operator|->
@@ -1413,12 +1407,9 @@ operator|!
 name|swap_file
 condition|)
 block|{
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"could not find swap file for tile"
-argument_list|)
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -1741,12 +1732,9 @@ break|break;
 case|case
 name|SWAP_COMPRESS
 case|:
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"tile_swap_default: SWAP_COMPRESS: UNFINISHED"
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

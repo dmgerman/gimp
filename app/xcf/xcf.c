@@ -234,7 +234,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6b2dc0103
+DECL|enum|__anon2c4221490103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d6b2dc0203
+DECL|enum|__anon2c4221490203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -8442,11 +8442,11 @@ name|tile
 argument_list|)
 operator|)
 condition|)
-name|g_print
+name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"xcf: uh oh! xcf rle tile saving error: %d\n"
+literal|"xcf: uh oh! xcf rle tile saving error: %d"
 argument_list|)
 argument_list|,
 name|count
@@ -12519,10 +12519,7 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"encountered garbage after reading level: %d"
-argument_list|)
 argument_list|,
 name|offset
 argument_list|)

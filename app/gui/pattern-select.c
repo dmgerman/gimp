@@ -1393,12 +1393,9 @@ name|pdb_int
 operator|!=
 name|PDB_SUCCESS
 condition|)
-name|g_message
-argument_list|(
-name|_
+name|g_warning
 argument_list|(
 literal|"failed to run pattern callback function"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|procedural_db_destroy_args
@@ -1566,7 +1563,7 @@ comment|/*  *  Local functions  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bf756480108
+DECL|struct|__anon290a41c00108
 typedef|typedef
 struct|struct
 block|{

@@ -132,6 +132,12 @@ directive|include
 file|"errors.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_decl_stmt
 specifier|extern
 name|char
@@ -239,28 +245,29 @@ directive|ifndef
 name|NATIVE_WIN32
 name|printf
 argument_list|(
-literal|"%s fatal error: "
+name|_
+argument_list|(
+literal|"%s: fatal error: %s\n"
+argument_list|)
 argument_list|,
 name|prog_name
-argument_list|)
-expr_stmt|;
-name|vprintf
+argument_list|,
+name|g_strdup_vprintf
 argument_list|(
 name|fmt
 argument_list|,
 name|args
 argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"\n"
 argument_list|)
 expr_stmt|;
 else|#
 directive|else
 name|g_error
 argument_list|(
-literal|"%s: %s\n"
+name|_
+argument_list|(
+literal|"%s: fatal error: %s\n"
+argument_list|)
 argument_list|,
 name|prog_name
 argument_list|,
