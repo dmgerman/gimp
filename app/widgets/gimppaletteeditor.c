@@ -131,12 +131,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolbox-color-area.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
