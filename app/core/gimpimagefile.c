@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af65af10103
+DECL|enum|__anon2a1c2c080103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2699,11 +2699,6 @@ name|enum_desc
 decl_stmt|;
 name|GimpImageType
 name|type
-decl_stmt|;
-specifier|const
-name|gchar
-modifier|*
-name|type_str
 decl_stmt|;
 name|gint
 name|num_layers
