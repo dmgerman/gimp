@@ -184,6 +184,19 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_image_rotate
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|GimpRotationType
+name|rotate_type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 modifier|*
 name|gimp_image_get_layers
