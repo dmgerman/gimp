@@ -382,6 +382,8 @@ name|gchar
 modifier|*
 modifier|*
 name|path_list
+init|=
+name|NULL
 decl_stmt|;
 name|gimage
 operator|=
