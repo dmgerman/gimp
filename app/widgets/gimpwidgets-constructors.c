@@ -118,6 +118,18 @@ name|BEHIND_MODE
 argument_list|,
 name|NULL
 argument_list|,
+name|_
+argument_list|(
+literal|"Color Erase"
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|COLOR_ERASE_MODE
+argument_list|,
+name|NULL
+argument_list|,
 literal|"---"
 argument_list|,
 operator|(

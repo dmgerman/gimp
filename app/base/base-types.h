@@ -103,7 +103,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29057ab70103
+DECL|enum|__anon290028600103
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -162,6 +162,9 @@ block|,
 DECL|enumerator|HARDLIGHT_MODE
 name|HARDLIGHT_MODE
 block|,
+DECL|enumerator|COLOR_ERASE_MODE
+name|COLOR_ERASE_MODE
+block|,
 DECL|enumerator|ERASE_MODE
 name|ERASE_MODE
 block|,
@@ -186,7 +189,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29057ab70203
+DECL|enum|__anon290028600203
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -208,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29057ab70303
+DECL|enum|__anon290028600303
 block|{
 DECL|enumerator|LINEAR_INTERPOLATION
 name|LINEAR_INTERPOLATION
@@ -227,7 +230,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29057ab70403
+DECL|enum|__anon290028600403
 block|{
 DECL|enumerator|VALUE_LUT
 name|VALUE_LUT
@@ -263,7 +266,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29057ab70503
+DECL|enum|__anon290028600503
 block|{
 DECL|enumerator|LIGHT_CHECKS
 name|LIGHT_CHECKS
@@ -304,7 +307,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29057ab70603
+DECL|enum|__anon290028600603
 block|{
 DECL|enumerator|SMALL_CHECKS
 name|SMALL_CHECKS
@@ -330,7 +333,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon29057ab70703
+DECL|enum|__anon290028600703
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE

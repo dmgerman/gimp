@@ -1545,7 +1545,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c66808c0103
+DECL|enum|__anon2bef10460103
 block|{
 DECL|enumerator|INITIAL_CHANNEL_MASK
 name|INITIAL_CHANNEL_MASK
@@ -1580,7 +1580,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2c66808c0203
+DECL|enum|__anon2bef10460203
 block|{
 DECL|enumerator|NO_COMBINATION
 name|NO_COMBINATION
@@ -1641,6 +1641,9 @@ name|ANTI_ERASE_INTEN
 block|,
 DECL|enumerator|ANTI_ERASE_INDEXED
 name|ANTI_ERASE_INDEXED
+block|,
+DECL|enumerator|COLOR_ERASE_INTEN
+name|COLOR_ERASE_INTEN
 block|, }
 DECL|typedef|CombinationMode
 name|CombinationMode
