@@ -664,7 +664,7 @@ name|cmap
 operator|=
 name|gimp_image_get_cmap
 argument_list|(
-name|gimp_drawable_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|srcrgn
 operator|->

@@ -1372,7 +1372,7 @@ block|{
 return|return
 name|pygimp_image_new
 argument_list|(
-name|gimp_drawable_image
+name|gimp_drawable_get_image
 argument_list|(
 name|self
 operator|->

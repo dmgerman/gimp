@@ -24,11 +24,6 @@ define|#
 directive|define
 name|gimp_layer_get_mask_id
 value|gimp_layer_mask
-DECL|macro|gimp_layer_get_image_id
-define|#
-directive|define
-name|gimp_layer_get_image_id
-value|gimp_drawable_image
 DECL|macro|gimp_layer_is_floating_selection
 define|#
 directive|define

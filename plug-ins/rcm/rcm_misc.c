@@ -4,7 +4,7 @@ comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is 
 end_comment
 
 begin_comment
-comment|/*-----------------------------------------------------------------------------------  * Change log:  *   * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
+comment|/*-----------------------------------------------------------------------------------  * Change log:  *  * Version 2.0, 04 April 1999.  *  Nearly complete rewrite, made plug-in stable.  *  (Works with GIMP 1.1 and GTK+ 1.2)  *  * Version 1.0, 27 March 1997.  *  Initial (unstable) release by Pavel Grinfeld  *  *-----------------------------------------------------------------------------------*/
 end_comment
 
 begin_include
@@ -998,7 +998,7 @@ argument_list|)
 expr_stmt|;
 name|gimage
 operator|=
-name|gimp_drawable_image
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable
 operator|->

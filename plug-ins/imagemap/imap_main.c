@@ -2022,7 +2022,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 init|=
-name|gimp_drawable_image
+name|gimp_drawable_get_image
 argument_list|(
 name|_drawable
 operator|->

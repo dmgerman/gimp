@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f10da0108
+DECL|struct|__anon2935e6ae0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f10da0208
+DECL|struct|__anon2935e6ae0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -994,7 +994,7 @@ argument_list|)
 expr_stmt|;
 name|image_id
 operator|=
-name|gimp_drawable_image
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable
 operator|->

@@ -170,7 +170,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ca7f00108
+DECL|struct|__anon29fc1e280108
 block|{
 DECL|member|resolution
 name|guint
@@ -259,7 +259,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ca7f00208
+DECL|struct|__anon29fc1e280208
 block|{
 DECL|member|width
 DECL|member|height
@@ -851,7 +851,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ca7f00308
+DECL|struct|__anon29fc1e280308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1707,7 +1707,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ca7f00408
+DECL|struct|__anon29fc1e280408
 block|{
 DECL|member|eol
 name|long
@@ -10103,7 +10103,7 @@ operator|*
 operator|)
 name|gimp_image_get_cmap
 argument_list|(
-name|gimp_drawable_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable_ID
 argument_list|)

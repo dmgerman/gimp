@@ -289,7 +289,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon278f49300108
+DECL|struct|__anon28b94a4a0108
 block|{
 DECL|member|width
 name|gint
@@ -2058,7 +2058,7 @@ argument_list|)
 expr_stmt|;
 name|image_id
 operator|=
-name|gimp_drawable_image
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable
 operator|->

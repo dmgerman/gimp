@@ -525,7 +525,7 @@ operator|!=
 operator|-
 literal|1
 operator|&&
-name|gimp_drawable_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|mapvals
 operator|.
@@ -626,7 +626,7 @@ operator|!=
 operator|-
 literal|1
 operator|&&
-name|gimp_drawable_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|mapvals
 operator|.

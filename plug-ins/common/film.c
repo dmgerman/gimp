@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c25d5060108
+DECL|struct|__anon29d3f4250108
 block|{
 DECL|member|film_height
 name|gint
@@ -213,7 +213,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c25d5060208
+DECL|struct|__anon29d3f4250208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -2819,7 +2819,7 @@ name|cmap
 operator|=
 name|gimp_image_get_cmap
 argument_list|(
-name|gimp_drawable_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|srcdrawable
 operator|->
@@ -4125,7 +4125,7 @@ argument_list|)
 expr_stmt|;
 name|image_ID
 operator|=
-name|gimp_drawable_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|layer_ID
 argument_list|)

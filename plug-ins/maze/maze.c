@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  * This is a plug-in for the GIMP.  * It draws mazes...  *   * Implemented as a GIMP 0.99 Plugin by   * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  *   * Code generously borrowed from assorted GIMP plugins  * and used as a template to get me started on this one.  :)  *   * TO DO:  *   maze_face.c: Rework the divboxes to be more like spinbuttons.  *  *   Maybe add an option to kill the outer border.  *   *   Fix that stray line down there between maze wall and dead space border...  *  *   handy.c: Make get_colors() work with indexed.  * HELP! *  *  */
+comment|/* $Id$  * This is a plug-in for the GIMP.  * It draws mazes...  *  * Implemented as a GIMP 0.99 Plugin by  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  *  * Code generously borrowed from assorted GIMP plugins  * and used as a template to get me started on this one.  :)  *  * TO DO:  *   maze_face.c: Rework the divboxes to be more like spinbuttons.  *  *   Maybe add an option to kill the outer border.  *  *   Fix that stray line down there between maze wall and dead space border...  *  *   handy.c: Make get_colors() work with indexed.  * HELP! *  *  */
 end_comment
 
 begin_comment
@@ -512,19 +512,6 @@ literal|"Offset (use 1)"
 block|}
 block|}
 decl_stmt|;
-specifier|static
-name|GimpParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|gchar
 modifier|*
 name|help
@@ -535,7 +522,9 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Generates a maze using either the depth-first search method or Prim's algorithm.  Can make tileable mazes too.  See %s for more help."
+literal|"Generates a maze using either the depth-first "
+literal|"search method or Prim's algorithm.  Can make "
+literal|"tileable mazes too.  See %s for more help."
 argument_list|)
 argument_list|,
 name|MAZE_URL
@@ -572,11 +561,11 @@ argument_list|(
 name|args
 argument_list|)
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -794,12 +783,10 @@ name|nparams
 operator|!=
 literal|10
 condition|)
-block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|status
@@ -1472,7 +1459,6 @@ block|{
 case|case
 name|DEPTH_FIRST
 case|:
-break|break;
 case|case
 name|PRIMS_ALGORITHM
 case|:
@@ -1535,7 +1521,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
 block|}
 else|else
@@ -1546,7 +1532,7 @@ condition|(
 name|active_selection
 condition|)
 block|{
-comment|/* Mask and draw mazes until there's no  				* more room left. */
+comment|/* Mask and draw mazes until there's no            * more room left. */
 name|mask_maze
 argument_list|(
 name|drawable
@@ -1666,15 +1652,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
-comment|/* switch */
 block|}
-comment|/* if maz[] == 0 */
 block|}
-comment|/* next maz_xx */
 block|}
-comment|/* next maz_yy */
 block|}
 else|else
 block|{
@@ -1727,13 +1709,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
-comment|/* switch */
 block|}
-comment|/* no active selection */
 block|}
-comment|/* not tileable */
 comment|/************** Begin Drawing *********************/
 comment|/* Initialize pixel region (?) */
 name|gimp_pixel_rgn_init
@@ -1844,7 +1823,7 @@ name|y1
 operator|-
 name|deady
 expr_stmt|;
-comment|/* First boxes by edge of tile must be handled specially  	     because they may have started on a previous tile, 	     unbeknownst to us. */
+comment|/* First boxes by edge of tile must be handled specially          because they may have started on a previous tile,          unbeknownst to us. */
 name|dx
 operator|=
 name|mvals
@@ -2200,7 +2179,7 @@ comment|/* Shaped mazes: */
 end_comment
 
 begin_comment
-comment|/* With  * Depth first: Nonzero cells will not be connected to or visited.  * Prim's Algorithm:   *  Cells that are not IN will not be connected to.  *  Cells that are not OUT will not be converted to FRONTIER.  *   * So we'll put unavailable cells in a non-zero non-in non-out class   * called MASKED.  */
+comment|/* With  * Depth first: Nonzero cells will not be connected to or visited.  * Prim's Algorithm:  *  Cells that are not IN will not be connected to.  *  Cells that are not OUT will not be converted to FRONTIER.  *  * So we'll put unavailable cells in a non-zero non-in non-out class  * called MASKED.  */
 end_comment
 
 begin_comment
@@ -2208,7 +2187,7 @@ comment|/* But first...  A little discussion about cells. */
 end_comment
 
 begin_comment
-comment|/* In the eyes of the generation algorithms, the world is made up of  * two sorts of things: Cells, and the walls between them.  Walls can  * be knocked out, and then you have a passage between cells.  The  * drawing routine has a simpler view of life...  Everything is a  * pixel.  Or a block of pixels.  It makes no distinction between  * passages, walls, and cells.  *  *  We may also make the distinction between two different types of  * passages: horizontal and vertical.  With that in mind, a  * part of the world looks something like this:  *   * @-@-@-@-  Where @ is a cell, | is a vertical passage, and - is a  * | | | |   horizontal passsage.  * @-@-@-@-  * | | | |   Remember, the maze generation routines will not rest  *          until the maze is full, that is, every cell is connected  * to another.  Already, we can determine a few things about the final   * maze.  We know which blocks will be cells, which blocks may become  * passages (and we know what sort), and we also notice that there are  * some blocks that will never be either cells or passages.  *  * Now, back to our masking routine...  To save a little time, lets  * just take sample points from the block.  We'll sample a point from  * the top and the bottom of vertical passages, left/right for  * horizontal, and, hmm, left/right/top/bottom for cells.  And of  * course, we needn't concern ourselves with the others.  We could  * also sample the midpoint of each...  * Then what we'll do is see if the average is higher than some magic   * threshold number, and if so, we let maze happen there.  Otherwise  * we mask it out.  */
+comment|/* In the eyes of the generation algorithms, the world is made up of  * two sorts of things: Cells, and the walls between them.  Walls can  * be knocked out, and then you have a passage between cells.  The  * drawing routine has a simpler view of life...  Everything is a  * pixel.  Or a block of pixels.  It makes no distinction between  * passages, walls, and cells.  *  *  We may also make the distinction between two different types of  * passages: horizontal and vertical.  With that in mind, a  * part of the world looks something like this:  *  * @-@-@-@-  Where @ is a cell, | is a vertical passage, and - is a  * | | | |   horizontal passsage.  * @-@-@-@-  * | | | |   Remember, the maze generation routines will not rest  *          until the maze is full, that is, every cell is connected  * to another.  Already, we can determine a few things about the final  * maze.  We know which blocks will be cells, which blocks may become  * passages (and we know what sort), and we also notice that there are  * some blocks that will never be either cells or passages.  *  * Now, back to our masking routine...  To save a little time, lets  * just take sample points from the block.  We'll sample a point from  * the top and the bottom of vertical passages, left/right for  * horizontal, and, hmm, left/right/top/bottom for cells.  And of  * course, we needn't concern ourselves with the others.  We could  * also sample the midpoint of each...  * Then what we'll do is see if the average is higher than some magic  * threshold number, and if so, we let maze happen there.  Otherwise  * we mask it out.  */
 end_comment
 
 begin_comment
@@ -2311,7 +2290,7 @@ name|selection_ID
 operator|=
 name|gimp_image_get_selection
 argument_list|(
-name|gimp_drawable_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable_ID
 argument_list|)
@@ -2438,7 +2417,7 @@ name|height
 operator|-
 literal|1
 expr_stmt|;
-comment|/* Here, yy is with respect to the drawable (or something),         whereas xx is with respect to the row buffer. */
+comment|/* Here, yy is with respect to the drawable (or something),      whereas xx is with respect to the row buffer. */
 name|yy
 operator|=
 name|yy0
@@ -2601,7 +2580,7 @@ name|height
 expr_stmt|;
 block|}
 comment|/* next cur_row += 2 */
-comment|/* Done doing horizontal scans, change this from a row buffer to         a column buffer. */
+comment|/* Done doing horizontal scans, change this from a row buffer to      a column buffer. */
 name|g_free
 argument_list|(
 name|linebuf
@@ -2622,7 +2601,7 @@ operator|.
 name|bpp
 argument_list|)
 expr_stmt|;
-comment|/* Now xx is with respect to the drawable (or whatever),         and yy is with respect to the row buffer. */
+comment|/* Now xx is with respect to the drawable (or whatever),      and yy is with respect to the row buffer. */
 name|xx
 operator|=
 name|xx0
@@ -2832,15 +2811,9 @@ name|foo
 operator|++
 expr_stmt|;
 block|}
-comment|/* next xx */
 block|}
-comment|/* next yy*/
 block|}
 end_function
-
-begin_comment
-comment|/* mask_maze */
-end_comment
 
 begin_comment
 comment|/* The attempt to implement this with tiles: (it wasn't fun) */
@@ -2853,44 +2826,35 @@ literal|0
 end_if
 
 begin_comment
-comment|/* Tiles make my life decidedly difficult here.  There are too       * many special cases...  "What if a tile starts less/more than       * halfway through a block?  What if we get a narrow edge-tile       * that..." etc, etc.  I shall investigate other options.       * Possibly a row buffer, or can we use something other than this        * black-magic gimp_pixel_rgns_register call to get tiles of       * different sizes?  Now that'd be nice...  */
+unit|{
+comment|/* Tiles make my life decidedly difficult here.  There are too    * many special cases...  "What if a tile starts less/more than    * halfway through a block?  What if we get a narrow edge-tile    * that..." etc, etc.  I shall investigate other options.    * Possibly a row buffer, or can we use something other than this    * black-magic gimp_pixel_rgns_register call to get tiles of    * different sizes?  Now that'd be nice...  */
 end_comment
 
 begin_comment
-unit|for (pr = gimp_pixel_rgns_register (1,&sel_rgn);  	  pr != NULL;  	  pr = gimp_pixel_rgns_process (pr)) {
-comment|/* This gives us coordinates relative to the starting point 	   * of the maze grid.  Negative values happen here if there 	   * is dead space. */
+unit|for (pr = gimp_pixel_rgns_register (1,&sel_rgn);        pr != NULL;        pr = gimp_pixel_rgns_process (pr))     {
+comment|/* This gives us coordinates relative to the starting point        * of the maze grid.  Negative values happen here if there        * is dead space. */
 end_comment
 
 begin_comment
-unit|x = sel_rgn.x - x1 - deadx; 	  y = sel_rgn.y - y1 - deady;
+unit|x = sel_rgn.x - x1 - deadx;       y = sel_rgn.y - y1 - deady;
 comment|/* These coordinates are relative to the current tile. */
 end_comment
 
 begin_comment
-comment|/* This starts us off at the first block boundary in the 	   * tile. */
+comment|/* This starts us off at the first block boundary in the        * tile. */
 end_comment
 
 begin_comment
-comment|/* e.g. with x=16 and width=10.  * 16 % 10 = 6  * 10 - 6 = 4    x: 6789!123456789!123456789!12      ....|.........|.........|..  xx: 0123456789!123456789!123456   So to start on the boundary, begin at 4.   For the case x=0, 10-0=10. So xx0 will always between 1 and width. */
+comment|/* e.g. with x=16 and width=10.        * 16 % 10 = 6        * 10 - 6 = 4    x: 6789!123456789!123456789!12      ....|.........|.........|..  xx: 0123456789!123456789!123456   So to start on the boundary, begin at 4.   For the case x=0, 10-0=10. So xx0 will always between 1 and width. */
 end_comment
 
 begin_comment
-unit|xx0 = mvals.width  - (x % mvals.width); 	  yy0 = mvals.height - (y % mvals.height);
+unit|xx0 = mvals.width  - (x % mvals.width);       yy0 = mvals.height - (y % mvals.height);
 comment|/* Find the corresponding row and column in the maze. */
 end_comment
 
 begin_comment
-unit|maz_x = (x+xx0)/mvals.width; 	  maz_row = mw * ((y + yy0)/mvals.height); 	   	  for (yy=yy0*sel_rgn.rowstride; 	       yy< sel_rgn.h*sel_rgn.rowstride; 	       yy+=(mvals.height * sel_rgn.rowstride)) { 	       maz_xx = maz_x; 	       for(xx=xx0*sel_rgn.bpp;  		   xx< sel_rgn.w;  		   xx+=mvals.width*sel_rgn.bpp) { 		    if (sel_rgn.data[yy+xx]< MAZE_ALPHA_THRESHOLD) 			 maz[maz_row+maz_xx]=MASKED; 		    maz_xx++; 	       }
-comment|/* next xx */
-end_comment
-
-begin_comment
-unit|maz_row+=mw; 	  }
-comment|/* next yy */
-end_comment
-
-begin_comment
-unit|}
+unit|maz_x = (x+xx0)/mvals.width;       maz_row = mw * ((y + yy0)/mvals.height);        for (yy = yy0 * sel_rgn.rowstride;            yy< sel_rgn.h * sel_rgn.rowstride;            yy += (mvals.height * sel_rgn.rowstride))         {           maz_xx = maz_x;           for (xx = xx0 * sel_rgn.bpp;                xx< sel_rgn.w;                xx += mvals.width * sel_rgn.bpp)             {               if (sel_rgn.data[yy+xx]< MAZE_ALPHA_THRESHOLD)                 maz[maz_row+maz_xx]=MASKED;               maz_xx++;             }            maz_row += mw;         }      }
 comment|/* next pr sel_rgn tile thing */
 end_comment
 
@@ -2909,12 +2873,8 @@ endif|#
 directive|endif
 end_endif
 
-begin_comment
-unit|}
-comment|/* mask_maze */
-end_comment
-
 begin_endif
+unit|}
 endif|#
 directive|endif
 end_endif

@@ -738,7 +738,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d347a0108
+DECL|struct|__anon2c6457040108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296d347a0208
+DECL|struct|__anon2c6457040208
 block|{
 DECL|member|y
 name|gint32
@@ -13928,7 +13928,7 @@ name|PREVIEW_SIZE_Y
 argument_list|,
 name|gimp_image_base_type
 argument_list|(
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|src_drawable
 operator|->
@@ -14249,7 +14249,7 @@ name|stack_position
 decl_stmt|;
 name|image_id
 operator|=
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|src_drawable
 operator|->
@@ -16518,7 +16518,7 @@ name|smoothing
 expr_stmt|;
 name|l_image_id
 operator|=
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|original_drawable
 operator|->

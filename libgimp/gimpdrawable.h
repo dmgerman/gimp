@@ -25,14 +25,6 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_define
-DECL|macro|gimp_drawable_image_id
-define|#
-directive|define
-name|gimp_drawable_image_id
-value|gimp_drawable_image
-end_define
-
-begin_define
 DECL|macro|gimp_drawable_bpp
 define|#
 directive|define

@@ -98,7 +98,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_drawable_image
+name|gimp_drawable_get_image
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -107,11 +107,14 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpImageType
-name|gimp_drawable_type
+name|gboolean
+name|gimp_drawable_set_image
 parameter_list|(
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|gint32
+name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -129,6 +132,16 @@ end_function_decl
 begin_function_decl
 name|GimpImageType
 name|gimp_drawable_type_with_alpha
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpImageType
+name|gimp_drawable_type
 parameter_list|(
 name|gint32
 name|drawable_ID
@@ -380,19 +393,6 @@ specifier|const
 name|guint8
 modifier|*
 name|pixel
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_drawable_set_image
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|gint32
-name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * version 0.52  * This version requires gtk-1.0.4 or above.  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  *  * 0.52: 10 Jan 1999<austin@greenend.org.uk>  *    gtk_label_set() -> gtk_label_set_text()  * 0.60: 18 Jun 2001<austin@gimp.org>  *    fixed long-standing bug where newsprint() function in GREYA images  *    treated them as RGB (bpp rather than colour_bpp) to select  *    colourspace to use.  Thanks to warner-gnome.bugzilla@lothar.com for  *    spotting this and providing the patch.  Bug #52981.  */
+comment|/*  * version 0.60  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  *  * 0.52: 10 Jan 1999<austin@greenend.org.uk>  *    gtk_label_set() -> gtk_label_set_text()  * 0.60: 18 Jun 2001<austin@gimp.org>  *    fixed long-standing bug where newsprint() function in GREYA images  *    treated them as RGB (bpp rather than colour_bpp) to select  *    colourspace to use.  Thanks to warner-gnome.bugzilla@lothar.com for  *    spotting this and providing the patch.  Bug #52981.  */
 end_comment
 
 begin_include
@@ -395,7 +395,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68ad610108
+DECL|struct|__anon2bd2373b0108
 block|{
 DECL|member|name
 specifier|const
@@ -655,7 +655,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68ad610208
+DECL|struct|__anon2bd2373b0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68ad610308
+DECL|struct|__anon2bd2373b0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -758,7 +758,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68ad610408
+DECL|struct|__anon2bd2373b0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -865,7 +865,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68ad610508
+DECL|struct|__anon2bd2373b0508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1036,7 +1036,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68ad610608
+DECL|struct|__anon2bd2373b0608
 block|{
 DECL|member|name
 specifier|const
@@ -4964,7 +4964,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|gimp_drawable_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable
 operator|->
@@ -6723,7 +6723,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68ad610708
+DECL|struct|__anon2bd2373b0708
 block|{
 DECL|member|index
 name|gint

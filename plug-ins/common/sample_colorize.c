@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2a456bd00108
+DECL|struct|__anon2c3f7e750108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a456bd00208
+DECL|struct|__anon2c3f7e750208
 typedef|typedef
 struct|struct
 block|{
@@ -547,7 +547,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a456bd00308
+DECL|struct|__anon2c3f7e750308
 typedef|typedef
 struct|struct
 block|{
@@ -576,7 +576,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a456bd00408
+DECL|struct|__anon2c3f7e750408
 typedef|typedef
 struct|struct
 block|{
@@ -603,7 +603,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a456bd00508
+DECL|struct|__anon2c3f7e750508
 typedef|typedef
 struct|struct
 block|{
@@ -12892,7 +12892,7 @@ return|;
 block|}
 if|if
 condition|(
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -13223,7 +13223,7 @@ comment|/* there is no alpha channel */
 block|}
 name|l_image_id
 operator|=
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable
 operator|->
@@ -13586,10 +13586,6 @@ comment|/* selection is FALSE */
 block|}
 block|}
 end_function
-
-begin_comment
-comment|/* end p_init_gdrw */
-end_comment
 
 begin_comment
 comment|/* analyze the colors in the sample_drawable */
@@ -14241,7 +14237,7 @@ operator|<
 name|l_ct
 condition|)
 block|{
-comment|/* printf("RND_remap: rnd: %d all:%d  ct:%d idx:%d\n",           * l_rnd, (int)g_lum_tab[lum].all_samples, l_ct, l_idx);           */
+comment|/* printf("RND_remap: rnd: %d all:%d  ct:%d idx:%d\n",                * l_rnd, (int)g_lum_tab[lum].all_samples, l_ct, l_idx);                */
 name|memcpy
 argument_list|(
 name|mapped_color
@@ -14283,10 +14279,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* end p_rnd_remap */
-end_comment
 
 begin_function
 specifier|static
@@ -14640,7 +14632,7 @@ operator|/
 name|l_mb
 expr_stmt|;
 block|}
-comment|/* on overflow: Calculate real RGB values 	 * (this may change the hue and saturation, 	 * more and more into white) 	 */
+comment|/* on overflow: Calculate real RGB values            * (this may change the hue and saturation,            * more and more into white)            */
 if|if
 condition|(
 name|l_red
@@ -15241,10 +15233,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* end p_remap_pixel */
-end_comment
-
 begin_function
 specifier|static
 name|void
@@ -15624,7 +15612,7 @@ condition|)
 block|{
 name|gimp_convert_rgb
 argument_list|(
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|g_values
 operator|.
@@ -15659,10 +15647,6 @@ name|l_rc
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/* end p_main_colorize */
-end_comment
 
 end_unit
 

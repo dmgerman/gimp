@@ -85,7 +85,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba1aca0103
+DECL|enum|__anon2bf56ff20103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -105,7 +105,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba1aca0208
+DECL|struct|__anon2bf56ff20208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1414,7 +1414,7 @@ name|status
 expr_stmt|;
 name|image_ID
 operator|=
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|map_x
 operator|->
@@ -4677,7 +4677,6 @@ name|drawable
 operator|->
 name|bpp
 expr_stmt|;
-comment|/* bytes per pixel in SOURCE drawable */
 name|has_alpha
 operator|=
 name|gimp_drawable_has_alpha
@@ -4691,7 +4690,7 @@ comment|/* -- Add two layers: X and Y Displacement vectors -- */
 comment|/* -- I'm using a RGB  drawable and using the first two bytes for a         16-bit pixel value. This is either clever, or a kluge,         depending on your point of view.  */
 name|image_id
 operator|=
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|drawable
 operator|->
@@ -4814,7 +4813,6 @@ name|draw_xd
 operator|->
 name|bpp
 expr_stmt|;
-comment|/* bytes per pixel in destination drawable(s) */
 comment|/* for a GRAYA drawable, I would expect this to be two bytes; any more would be excess */
 name|dest_bytes_inc
 operator|=
@@ -5054,16 +5052,14 @@ name|NULL
 operator|)
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Warp diff: error allocating memory.\n"
 argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
-literal|1
+name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
 block|}
@@ -6736,7 +6732,7 @@ argument_list|)
 expr_stmt|;
 name|orig_image_id
 operator|=
-name|gimp_layer_get_image_id
+name|gimp_drawable_get_image
 argument_list|(
 name|orig_draw
 operator|->
@@ -6851,7 +6847,6 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-comment|/*  end for (warp_iter) */
 comment|/* gimp_image_add_layer (orig_image_id, new_layer_id, 1); */
 comment|/* make layer visible in 'layers' dialog */
 block|}
