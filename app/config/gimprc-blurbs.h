@@ -497,7 +497,7 @@ define|#
 directive|define
 name|LAYER_PREVIEWS_BLURB
 define|\
-value|N_("Sets whether GIMP should create previews of layers and channels.")
+value|N_("Sets whether GIMP should create previews of layers and channels. " \    "Previews in the layers and channels dialog are nice to have but they " \    "can slow things down when working with large images.")
 end_define
 
 begin_define
@@ -668,7 +668,7 @@ define|#
 directive|define
 name|THUMBNAIL_SIZE_BLURB
 define|\
-value|N_("Sets the size of the thumbnail saved with each image.")
+value|N_("Sets the size of the thumbnail saved with each image. Note that GIMP " \    "can not save thumbnails if layer previews are disabled.")
 end_define
 
 begin_define
