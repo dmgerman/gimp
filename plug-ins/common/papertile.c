@@ -74,7 +74,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af192860103
+DECL|enum|__anon294207f20103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af192860203
+DECL|enum|__anon294207f20203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -190,7 +190,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2af192860308
+DECL|struct|__anon294207f20308
 block|{
 DECL|member|params
 name|PluginParams
@@ -210,7 +210,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2af192860408
+DECL|struct|__anon294207f20408
 block|{
 DECL|member|x0
 name|gint
@@ -577,7 +577,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2af192860508
+DECL|struct|__anon294207f20508
 block|{
 DECL|member|tile_size_adj
 name|GtkObject
@@ -3047,7 +3047,10 @@ name|overlap_RGB
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Paper Tile..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* TILES */

@@ -53,6 +53,18 @@ directive|include
 file|"lighting_shade.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/*************/
 end_comment
@@ -420,7 +432,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Lighting Effects"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  if (mapvals.antialiasing==FALSE)     { */
