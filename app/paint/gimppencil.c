@@ -438,7 +438,7 @@ index|[
 name|MAX_CHANNELS
 index|]
 decl_stmt|;
-name|gint
+name|gdouble
 name|opacity
 decl_stmt|;
 name|gdouble
@@ -686,8 +686,6 @@ expr_stmt|;
 block|}
 name|opacity
 operator|=
-literal|255
-operator|*
 name|gimp_context_get_opacity
 argument_list|(
 name|context
@@ -724,15 +722,13 @@ name|MIN
 argument_list|(
 name|opacity
 argument_list|,
-literal|255
+name|GIMP_OPACITY_OPAQUE
 argument_list|)
 argument_list|,
 name|gimp_context_get_opacity
 argument_list|(
 name|context
 argument_list|)
-operator|*
-literal|255
 argument_list|,
 name|gimp_context_get_paint_mode
 argument_list|(
