@@ -182,7 +182,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcb5690103
+DECL|enum|__anon27f05be00103
 block|{
 DECL|enumerator|GPL_PAGE
 name|GPL_PAGE
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcb5690203
+DECL|enum|__anon27f05be00203
 block|{
 DECL|enumerator|DIRENT_COLUMN
 name|DIRENT_COLUMN
@@ -455,7 +455,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28dcb5690303
+DECL|enum|__anon27f05be00303
 block|{
 DECL|enumerator|TREE_ITEM_DONT
 name|TREE_ITEM_DONT
@@ -481,7 +481,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28dcb5690408
+DECL|struct|__anon27f05be00408
 block|{
 DECL|member|directory
 name|gboolean
@@ -4170,7 +4170,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Error while closing '%s': %s"
+literal|"Error while writing '%s': %s"
 argument_list|)
 argument_list|,
 name|dest
