@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -81,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c1bab0103
+DECL|enum|__anon2c4cb1090103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1198,6 +1204,10 @@ argument_list|,
 literal|"help-func"
 argument_list|,
 name|gimp_color_dialog_help_func
+argument_list|,
+literal|"help-id"
+argument_list|,
+name|GIMP_HELP_COLOR_DIALOG
 argument_list|,
 literal|"stock-id"
 argument_list|,
