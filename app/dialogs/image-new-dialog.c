@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-new-dialog.h"
 end_include
 
@@ -54,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"image_new.h"
+file|"app_procs.h"
 end_include
 
 begin_include
@@ -72,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baf5a260108
+DECL|struct|__anon29695c8c0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -379,12 +385,14 @@ operator|->
 name|dlg
 argument_list|)
 expr_stmt|;
-name|image_new_create_image
+name|gimp_image_new_create_image
 argument_list|(
+name|the_gimp
+argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
-name|image_new_values_free
+name|gimp_image_new_values_free
 argument_list|(
 name|values
 argument_list|)
@@ -667,7 +675,7 @@ operator|->
 name|dlg
 argument_list|)
 expr_stmt|;
-name|image_new_values_free
+name|gimp_image_new_values_free
 argument_list|(
 name|info
 operator|->
@@ -733,14 +741,16 @@ operator|->
 name|dlg
 argument_list|)
 expr_stmt|;
-name|image_new_create_image
+name|gimp_image_new_create_image
 argument_list|(
+name|the_gimp
+argument_list|,
 name|info
 operator|->
 name|values
 argument_list|)
 expr_stmt|;
-name|image_new_values_free
+name|gimp_image_new_values_free
 argument_list|(
 name|info
 operator|->
@@ -802,7 +812,7 @@ argument_list|)
 expr_stmt|;
 name|size
 operator|=
-name|image_new_get_size_string
+name|gimp_image_new_get_size_string
 argument_list|(
 name|info
 operator|->
@@ -811,7 +821,7 @@ argument_list|)
 expr_stmt|;
 name|max_size
 operator|=
-name|image_new_get_size_string
+name|gimp_image_new_get_size_string
 argument_list|(
 name|gimprc
 operator|.
@@ -1211,7 +1221,7 @@ name|info
 operator|->
 name|size
 operator|=
-name|image_new_calculate_size
+name|gimp_image_new_calculate_size
 argument_list|(
 name|info
 operator|->
@@ -1229,7 +1239,7 @@ argument_list|)
 argument_list|,
 name|text
 operator|=
-name|image_new_get_size_string
+name|gimp_image_new_get_size_string
 argument_list|(
 name|info
 operator|->
@@ -1264,22 +1274,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|ui_new_image_window_create (const GimpImageNewValues * values_orig)
-name|ui_new_image_window_create
+DECL|function|file_new_dialog_create (GimpImage * gimage)
+name|file_new_dialog_create
 parameter_list|(
-specifier|const
-name|GimpImageNewValues
+name|GimpImage
 modifier|*
-name|values_orig
+name|gimage
 parameter_list|)
 block|{
 name|NewImageInfo
 modifier|*
 name|info
-decl_stmt|;
-name|GimpImageNewValues
-modifier|*
-name|values
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1343,7 +1348,7 @@ name|list
 decl_stmt|;
 name|info
 operator|=
-name|g_new
+name|g_new0
 argument_list|(
 name|NewImageInfo
 argument_list|,
@@ -1354,11 +1359,11 @@ name|info
 operator|->
 name|values
 operator|=
-name|values
-operator|=
-name|image_new_values_new
+name|gimp_image_new_values_new
 argument_list|(
-name|values_orig
+name|the_gimp
+argument_list|,
+name|gimage
 argument_list|)
 expr_stmt|;
 name|info
@@ -1962,6 +1967,8 @@ name|gimp_size_entry_new
 argument_list|(
 literal|0
 argument_list|,
+name|info
+operator|->
 name|values
 operator|->
 name|unit
@@ -2504,6 +2511,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|info
+operator|->
 name|values
 operator|->
 name|xresolution
@@ -2522,6 +2531,8 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|info
+operator|->
 name|values
 operator|->
 name|yresolution
@@ -2572,6 +2583,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|info
+operator|->
 name|values
 operator|->
 name|width
@@ -2588,6 +2601,8 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|info
+operator|->
 name|values
 operator|->
 name|height
@@ -2997,6 +3012,8 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|info
+operator|->
 name|values
 operator|->
 name|xresolution
@@ -3013,6 +3030,8 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|info
+operator|->
 name|values
 operator|->
 name|yresolution
@@ -3058,10 +3077,14 @@ argument_list|)
 argument_list|,
 name|ABS
 argument_list|(
+name|info
+operator|->
 name|values
 operator|->
 name|xresolution
 operator|-
+name|info
+operator|->
 name|values
 operator|->
 name|yresolution
@@ -3205,8 +3228,10 @@ name|list
 operator|=
 name|g_list_first
 argument_list|(
-name|image_new_get_image_base_type_names
-argument_list|()
+name|gimp_image_new_get_base_type_names
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 while|while
@@ -3295,6 +3320,8 @@ name|gimp_radio_button_update
 argument_list|)
 argument_list|,
 operator|&
+name|info
+operator|->
 name|values
 operator|->
 name|type
@@ -3319,6 +3346,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|info
+operator|->
 name|values
 operator|->
 name|type
@@ -3435,8 +3464,10 @@ name|list
 operator|=
 name|g_list_first
 argument_list|(
-name|image_new_get_fill_type_names
-argument_list|()
+name|gimp_image_new_get_fill_type_names
+argument_list|(
+name|the_gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 while|while
@@ -3525,6 +3556,8 @@ name|gimp_radio_button_update
 argument_list|)
 argument_list|,
 operator|&
+name|info
+operator|->
 name|values
 operator|->
 name|fill_type
@@ -3549,6 +3582,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|info
+operator|->
 name|values
 operator|->
 name|fill_type

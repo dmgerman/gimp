@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"image_new.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"menus.h"
 end_include
 
@@ -115,7 +109,7 @@ name|gdisp
 decl_stmt|;
 name|GimpImage
 modifier|*
-name|image
+name|gimage
 init|=
 name|NULL
 decl_stmt|;
@@ -134,18 +128,16 @@ if|if
 condition|(
 name|gdisp
 condition|)
-name|image
+name|gimage
 operator|=
 name|gdisp
 operator|->
 name|gimage
 expr_stmt|;
 block|}
-name|image_new_create_window
+name|file_new_dialog_create
 argument_list|(
-name|NULL
-argument_list|,
-name|image
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}

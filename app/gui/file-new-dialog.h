@@ -18,12 +18,11 @@ end_define
 
 begin_function_decl
 name|void
-name|ui_new_image_window_create
+name|file_new_dialog_create
 parameter_list|(
-specifier|const
-name|GimpImageNewValues
+name|GimpImage
 modifier|*
-name|values
+name|gimage
 parameter_list|)
 function_decl|;
 end_function_decl

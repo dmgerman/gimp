@@ -84,15 +84,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpImageNewValues
-typedef|typedef
-name|struct
-name|_GimpImageNewValues
-name|GimpImageNewValues
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpProgress
 typedef|typedef
 name|struct

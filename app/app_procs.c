@@ -558,7 +558,9 @@ name|splash_destroy
 argument_list|()
 expr_stmt|;
 name|gui_init
-argument_list|()
+argument_list|(
+name|the_gimp
+argument_list|)
 expr_stmt|;
 comment|/*  FIXME: This needs to go in preferences  */
 name|message_handler
@@ -646,7 +648,7 @@ operator|&&
 operator|!
 name|no_interface
 condition|)
-name|really_quit_dialog
+name|gui_really_quit_dialog
 argument_list|()
 expr_stmt|;
 else|else

@@ -20,7 +20,9 @@ begin_function_decl
 name|void
 name|gui_init
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -81,7 +83,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|really_quit_dialog
+name|gui_really_quit_dialog
 parameter_list|(
 name|void
 parameter_list|)
