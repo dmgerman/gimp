@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Revision history  *  (2003/08/24)  v1.3.18 hof: #119937 show busy cursor when recalculating preview  *  (2002/09/xx)  v1.1.18 mitch and gsr: clean interface  *  (2000/02/16)  v1.1.17b hof: added spinbuttons for rotate entry  *  (2000/02/16)  v1.1.17 hof: undo bugfix (#6012)  *                             don't call gimp_undo_push_group_end  *                             after gimp_displays_flush  *  (1999/09/13)  v1.01  hof: PDB-calls updated for gimp 1.1.9  *  (1999/05/10)  v1.0   hof: first public release  *  (1999/04/23)  v0.0   hof: coding started,  *                            splines and dialog parts are similar to curves.c  */
+comment|/* Revision history  *  (2004/02/08)  v1.3.18 hof: #133244 exit with execution error if there is  *                             an empty selection  *  (2003/08/24)  v1.3.18 hof: #119937 show busy cursor when recalculating  *                             preview  *  (2002/09/xx)  v1.1.18 mitch and gsr: clean interface  *  (2000/02/16)  v1.1.17b hof: added spinbuttons for rotate entry  *  (2000/02/16)  v1.1.17 hof: undo bugfix (#6012)  *                             don't call gimp_undo_push_group_end  *                             after gimp_displays_flush  *  (1999/09/13)  v1.01  hof: PDB-calls updated for gimp 1.1.9  *  (1999/05/10)  v1.0   hof: first public release  *  (1999/04/23)  v0.0   hof: coding started,  *                            splines and dialog parts are similar to curves.c  */
 end_comment
 
 begin_include
@@ -746,7 +746,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb7b4740108
+DECL|struct|__anon289f4bba0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -800,7 +800,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb7b4740208
+DECL|struct|__anon289f4bba0208
 block|{
 DECL|member|y
 name|gint32
@@ -2151,11 +2151,14 @@ literal|0
 condition|)
 block|{
 comment|/* selection is TRUE, make a layer (floating selection) from 	     the selection  */
+if|if
+condition|(
 name|gimp_edit_copy
 argument_list|(
 name|layer_id
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|layer_id
 operator|=
 name|gimp_edit_paste
@@ -2165,6 +2168,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+return|return
+operator|-
+literal|1
+return|;
+block|}
 block|}
 block|}
 return|return
@@ -2549,6 +2560,12 @@ init|=
 name|NULL
 decl_stmt|;
 name|gint32
+name|l_active_drawable_id
+init|=
+operator|-
+literal|1
+decl_stmt|;
+name|gint32
 name|l_image_id
 init|=
 operator|-
@@ -2930,7 +2947,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"CurveBend operates on layers only (but was called on channel or mask)"
+literal|"Can operate on layers only (but was called on channel or mask)."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2965,18 +2982,54 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* if there is a selection, make it the floating selection layer */
-name|l_active_drawable
+name|l_active_drawable_id
 operator|=
-name|gimp_drawable_get
-argument_list|(
 name|p_if_selection_float_it
 argument_list|(
 name|l_image_id
 argument_list|,
 name|l_layer_id
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|l_active_drawable_id
+operator|<
+literal|0
+condition|)
+block|{
+comment|/* could not float the selection because selection rectangle        * is completely empty return GIMP_PDB_EXECUTION_ERROR        */
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|!=
+name|GIMP_RUN_NONINTERACTIVE
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Cannot operate on empty selections."
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|l_active_drawable
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|l_active_drawable_id
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* how are we running today? */
 if|if
 condition|(
@@ -13752,7 +13805,7 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|gint
+name|guint
 name|l_row
 decl_stmt|;
 name|guchar
@@ -13892,7 +13945,7 @@ decl_stmt|;
 name|GimpImageType
 name|l_type
 decl_stmt|;
-name|gint
+name|guint
 name|l_x
 decl_stmt|,
 name|l_y
