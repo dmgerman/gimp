@@ -265,6 +265,31 @@ argument_list|(
 name|path_str
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__EMX__
+comment|/*    *  Change drive so opendir works.    */
+if|if
+condition|(
+name|local_path
+index|[
+literal|1
+index|]
+operator|==
+literal|':'
+condition|)
+block|{
+name|_chdrive
+argument_list|(
+name|local_path
+index|[
+literal|0
+index|]
+argument_list|)
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 comment|/* Search through all directories in the local path */
 name|next_token
 operator|=
