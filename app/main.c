@@ -608,7 +608,7 @@ index|[
 name|i
 index|]
 argument_list|,
-literal|"-n"
+literal|"-i"
 argument_list|)
 operator|==
 literal|0
@@ -890,6 +890,7 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|(
 name|strcmp
 argument_list|(
 name|argv
@@ -901,7 +902,9 @@ literal|"--version"
 argument_list|)
 operator|==
 literal|0
+operator|)
 operator|||
+operator|(
 name|strcmp
 argument_list|(
 name|argv
@@ -913,6 +916,7 @@ literal|"-v"
 argument_list|)
 operator|==
 literal|0
+operator|)
 condition|)
 block|{
 name|show_version
@@ -930,6 +934,7 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|(
 name|strcmp
 argument_list|(
 name|argv
@@ -941,6 +946,21 @@ literal|"--no-data"
 argument_list|)
 operator|==
 literal|0
+operator|)
+operator|||
+operator|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"-d"
+argument_list|)
+operator|==
+literal|0
+operator|)
 condition|)
 block|{
 name|no_data
@@ -958,6 +978,7 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|(
 name|strcmp
 argument_list|(
 name|argv
@@ -969,6 +990,21 @@ literal|"--no-splash"
 argument_list|)
 operator|==
 literal|0
+operator|)
+operator|||
+operator|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"-s"
+argument_list|)
+operator|==
+literal|0
+operator|)
 condition|)
 block|{
 name|no_splash
@@ -986,6 +1022,7 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|(
 name|strcmp
 argument_list|(
 name|argv
@@ -997,6 +1034,21 @@ literal|"--no-splash-image"
 argument_list|)
 operator|==
 literal|0
+operator|)
+operator|||
+operator|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"-S"
+argument_list|)
+operator|==
+literal|0
+operator|)
 condition|)
 block|{
 name|no_splash_image
@@ -1098,6 +1150,7 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|(
 name|strcmp
 argument_list|(
 name|argv
@@ -1109,6 +1162,21 @@ literal|"--console-messages"
 argument_list|)
 operator|==
 literal|0
+operator|)
+operator|||
+operator|(
+name|strcmp
+argument_list|(
+name|argv
+index|[
+name|i
+index|]
+argument_list|,
+literal|"-c"
+argument_list|)
+operator|==
+literal|0
+operator|)
 condition|)
 block|{
 name|console_messages
@@ -1287,6 +1355,14 @@ operator|==
 literal|'-'
 condition|)
 block|{
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"\nInvalid option.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|show_help
 operator|=
 name|TRUE
@@ -1341,7 +1417,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"Usage: %s [option ...] [files ...]\n"
+literal|"\nUsage: %s [option ... ] [file ... ]\n\n"
 argument_list|)
 argument_list|,
 name|argv
@@ -1354,7 +1430,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"Valid options are:\n"
+literal|"Options:\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1362,7 +1438,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  -h --help                Output this help.\n"
+literal|"  -b, --batch<commands>   Run in batch mode.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1370,7 +1446,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  -v --version             Output version info.\n"
+literal|"  -c, --console-messages   Display warnings to console instead of a dialog box.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1378,7 +1454,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  -b --batch<commands>    Run in batch mode.\n"
+literal|"  -d, --no-data            Do not load brushes, gradients, palettes, patterns.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1386,7 +1462,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  -g --gimprc<gimprc>     Use an alternate gimprc file.\n"
+literal|"  -i, --no-interface       Run without a user interface.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1394,7 +1470,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  -n --no-interface        Run without a user interface.\n"
+literal|"  -g, --gimprc<gimprc>    Use an alternate gimprc file.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1402,7 +1478,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  -r --restore-session     Try to restore saved session.\n"
+literal|"  -h, --help               Output this help.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1410,7 +1486,31 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  --no-data                Do not load patterns, gradients, palettes, brushes.\n"
+literal|"  -r, --restore-session    Try to restore saved session.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -s, --no-splash          Do not show the startup window.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -S, --no-splash-image    Do not add an image to the startup window.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"  -v, --version            Output version information.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1426,23 +1526,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  --no-splash              Do not show the startup window.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  --no-splash-image        Do not add an image to the startup window.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  --no-shm                 Do not use shared memory between GIMP and its plugins.\n"
+literal|"  --no-shm                 Do not use shared memory between GIMP and plugins.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1458,28 +1542,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"  --console-messages       Display warnings to console instead of a dialog box.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"  --debug-handlers         Enable debugging signal handlers for non-fatal signals.\n"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"  --enable-stack-trace {never|query|always}\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-name|_
-argument_list|(
-literal|"                           Debugging mode for fatal signals.\n"
+literal|"  --debug-handlers         Enable non-fatal debugging signal handlers.\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1496,6 +1559,19 @@ argument_list|(
 name|_
 argument_list|(
 literal|"  --system-gimprc<gimprc> Use an alternate system gimprc file.\n"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"  --enable-stack-trace<never | query | always>\n"
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"                           Debugging mode for fatal signals.\n\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
