@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/cpu-accel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-composite.h"
 end_include
 
@@ -1838,13 +1844,55 @@ comment|/* USE_SSE */
 end_comment
 
 begin_function
-name|void
+name|int
 DECL|function|gimp_composite_sse_init (void)
 name|gimp_composite_sse_init
 parameter_list|(
 name|void
 parameter_list|)
-block|{  }
+block|{
+if|#
+directive|if
+name|defined
+argument_list|(
+name|USE_SSE
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|ARCH_X86
+argument_list|)
+name|guint32
+name|cpu
+init|=
+name|cpu_accel
+argument_list|()
+decl_stmt|;
+if|if
+condition|(
+name|cpu
+operator|&
+name|CPU_ACCEL_X86_SSE
+operator|||
+name|cpu
+operator|&
+name|CPU_ACCEL_X86_MMXEXT
+condition|)
+block|{
+return|return
+operator|(
+literal|1
+operator|)
+return|;
+block|}
+endif|#
+directive|endif
+return|return
+operator|(
+literal|0
+operator|)
+return|;
+block|}
 end_function
 
 end_unit

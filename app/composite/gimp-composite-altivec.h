@@ -14,7 +14,7 @@ end_define
 
 begin_function_decl
 specifier|extern
-name|void
+name|int
 name|gimp_composite_altivec_init
 parameter_list|(
 name|void

@@ -72,13 +72,37 @@ comment|/* ARCH_PPC */
 end_comment
 
 begin_function
-name|void
+name|int
 DECL|function|gimp_composite_altivec_init (void)
 name|gimp_composite_altivec_init
 parameter_list|(
 name|void
 parameter_list|)
-block|{  }
+block|{
+ifdef|#
+directive|ifdef
+name|ARCH_PPC
+if|if
+condition|(
+name|cpu
+operator|&
+name|CPU_ACCEL_PPC_ALTIVEC
+condition|)
+block|{
+return|return
+operator|(
+literal|1
+operator|)
+return|;
+block|}
+endif|#
+directive|endif
+return|return
+operator|(
+literal|0
+operator|)
+return|;
+block|}
 end_function
 
 end_unit

@@ -93,13 +93,31 @@ comment|/* defined(USE_VIS) */
 end_comment
 
 begin_function
-name|void
+name|int
 DECL|function|gimp_composite_vis_init (void)
 name|gimp_composite_vis_init
 parameter_list|(
 name|void
 parameter_list|)
-block|{  }
+block|{
+ifdef|#
+directive|ifdef
+name|ARCH_SPARC
+return|return
+operator|(
+literal|1
+operator|)
+return|;
+else|#
+directive|else
+return|return
+operator|(
+literal|0
+operator|)
+return|;
+endif|#
+directive|endif
+block|}
 end_function
 
 end_unit

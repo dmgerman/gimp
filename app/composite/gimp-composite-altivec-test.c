@@ -100,6 +100,25 @@ name|defined
 argument_list|(
 name|ARCH_PPC
 argument_list|)
+if|if
+condition|(
+name|gimp_composite_altivec_init
+argument_list|()
+operator|==
+literal|0
+condition|)
+block|{
+name|printf
+argument_list|(
+literal|"gimp_composite_altivec: Instruction set is not available.\n"
+argument_list|)
+expr_stmt|;
+return|return
+operator|(
+literal|0
+operator|)
+return|;
+block|}
 name|GimpCompositeContext
 name|generic_ctx
 decl_stmt|;
