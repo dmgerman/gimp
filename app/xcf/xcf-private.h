@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c190c170103
+DECL|enum|__anon2793f4cc0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -159,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c190c170203
+DECL|enum|__anon2793f4cc0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c190c170303
+DECL|enum|__anon2793f4cc0303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -211,7 +211,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c190c170403
+DECL|enum|__anon2793f4cc0403
 block|{
 DECL|enumerator|XCF_STROKETYPE_STROKE
 name|XCF_STROKETYPE_STROKE
@@ -255,6 +255,10 @@ DECL|member|filename
 name|gchar
 modifier|*
 name|filename
+decl_stmt|;
+DECL|member|tattoo_state
+name|GimpTattoo
+name|tattoo_state
 decl_stmt|;
 DECL|member|active_layer
 name|GimpLayer

@@ -623,6 +623,12 @@ name|filename
 expr_stmt|;
 name|info
 operator|.
+name|tattoo_state
+operator|=
+literal|0
+expr_stmt|;
+name|info
+operator|.
 name|active_layer
 operator|=
 name|NULL
