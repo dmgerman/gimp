@@ -103,7 +103,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2bc716570103
+DECL|enum|__anon2bf68c020103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
@@ -1082,9 +1082,6 @@ block|{
 name|gchar
 modifier|*
 name|title
-decl_stmt|;
-name|gint
-name|length
 decl_stmt|;
 name|clear_white
 argument_list|(

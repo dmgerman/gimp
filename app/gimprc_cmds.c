@@ -118,7 +118,7 @@ if|if
 condition|(
 name|success
 condition|)
-comment|/* tests the custom tokens only */
+block|{
 name|success
 operator|=
 operator|(
@@ -137,7 +137,7 @@ condition|(
 operator|!
 name|success
 condition|)
-comment|/* try the standard ones, and do necessary conversions */
+comment|/* custom ones failed, try the standard ones */
 name|success
 operator|=
 operator|(
@@ -151,6 +151,7 @@ operator|)
 operator|!=
 name|NULL
 expr_stmt|;
+block|}
 name|return_args
 operator|=
 name|procedural_db_return_args
