@@ -254,6 +254,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_tool_info_init (GimpToolInfo * tool_info)
 name|gimp_tool_info_init

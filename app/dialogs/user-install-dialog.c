@@ -522,7 +522,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29fb5b820108
+DECL|struct|__anon2c4bffab0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -3980,7 +3980,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s %s %s %s"
 argument_list|,
-name|fn
+name|filename
 argument_list|,
 name|quoted_data_dir
 argument_list|,
