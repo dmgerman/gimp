@@ -361,7 +361,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Split Video to Frames/Any XANIM readable"
+literal|"<Image>/Video/Split Video to Frames/Any XANIM readable..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -396,7 +396,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Toolbox>/Xtns/Split Video to Frames/Any XANIM readable"
+literal|"<Toolbox>/Xtns/Split Video to Frames/Any XANIM readable..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -466,7 +466,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Encode/MPEG2 mpeg2encode..."
+literal|"<Image>/Video/Encode/MPEG2..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -518,7 +518,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c241ca50108
+DECL|struct|__anon29c022570108
 block|{
 DECL|member|lock
 name|long

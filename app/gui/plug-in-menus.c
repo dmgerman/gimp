@@ -5684,14 +5684,14 @@ condition|)
 block|{
 name|menus_set_sensitive
 argument_list|(
-literal|"<Image>/Filters/Repeat last"
+literal|"<Image>/Filters/Repeat Last"
 argument_list|,
 name|sensitive
 argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
-literal|"<Image>/Filters/Re-show last"
+literal|"<Image>/Filters/Re-Show Last"
 argument_list|,
 name|sensitive
 argument_list|)

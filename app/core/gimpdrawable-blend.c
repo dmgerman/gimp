@@ -352,7 +352,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5481ae0108
+DECL|struct|__anon2c8f32d60108
 block|{
 DECL|member|offset
 name|double
@@ -404,7 +404,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5481ae0208
+DECL|struct|__anon2c8f32d60208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1362,7 +1362,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Custom from editor"
+literal|"Custom from Editor"
 argument_list|)
 block|,
 literal|0
@@ -1694,7 +1694,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Sawtooth wave"
+literal|"Sawtooth Wave"
 argument_list|)
 block|,
 literal|0
@@ -1716,7 +1716,7 @@ block|,
 block|{
 name|N_
 argument_list|(
-literal|"Triangular wave"
+literal|"Triangular Wave"
 argument_list|)
 block|,
 literal|0
@@ -2264,7 +2264,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Adaptive supersampling"
+literal|"Adaptive Supersampling"
 argument_list|)
 argument_list|)
 expr_stmt|;

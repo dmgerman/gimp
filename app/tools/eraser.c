@@ -396,7 +396,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Hard edge"
+literal|"Hard Edge"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -470,7 +470,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Anti erase"
+literal|"Anti Erase"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -7769,7 +7769,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"File/Save as..."
+literal|"File/Save As..."
 argument_list|,
 name|gdisp
 argument_list|)
@@ -7861,7 +7861,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Edit/Paste As New"
+literal|"Edit/Paste as New"
 argument_list|,
 name|lp
 argument_list|)
@@ -7920,7 +7920,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Select/Save To Channel"
+literal|"Select/Save to Channel"
 argument_list|,
 operator|!
 name|fs
@@ -7984,7 +7984,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-literal|"View/Snap To Guides"
+literal|"View/Snap to Guides"
 argument_list|,
 name|gdisp
 operator|->
@@ -8009,7 +8009,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-literal|"View/Dot for dot"
+literal|"View/Dot for Dot"
 argument_list|,
 name|gdisp
 operator|->
@@ -8443,7 +8443,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Layers/Alpha To Selection"
+literal|"Layers/Alpha to Selection"
 argument_list|,
 name|gdisp
 operator|&&
@@ -8457,7 +8457,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Layers/Mask To Selection"
+literal|"Layers/Mask to Selection"
 argument_list|,
 name|gdisp
 operator|&&

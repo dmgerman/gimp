@@ -255,7 +255,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e85c10108
+DECL|struct|__anon2957c8800108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e85c10208
+DECL|struct|__anon2957c8800208
 block|{
 DECL|member|name
 name|gchar
@@ -1653,7 +1653,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e85c10308
+DECL|struct|__anon2957c8800308
 block|{
 DECL|member|function
 name|gint
@@ -1726,7 +1726,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e85c10408
+DECL|struct|__anon2957c8800408
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -2513,7 +2513,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e85c10508
+DECL|struct|__anon2957c8800508
 block|{
 DECL|member|run
 name|gint
@@ -2561,7 +2561,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e85c10608
+DECL|struct|__anon2957c8800608
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2855,7 +2855,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/CML explorer..."
+literal|"<Image>/Filters/Render/Pattern/CML Explorer..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

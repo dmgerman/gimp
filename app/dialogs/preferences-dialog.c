@@ -10454,7 +10454,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Clear Saved Window Positions"
+literal|"Clear Saved Window Positions Now"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -11231,7 +11231,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd63e440108
+DECL|struct|__anon2b1f8b5f0108
 block|{
 DECL|member|label
 name|gchar
@@ -11456,7 +11456,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd63e440208
+DECL|struct|__anon2b1f8b5f0208
 block|{
 DECL|member|tree_label
 name|gchar

@@ -384,7 +384,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"/Xtns/Script-Fu/Web page themes"
+literal|"/Xtns/Script-Fu/Web Page Themes"
 argument_list|)
 block|,
 name|N_
@@ -1176,7 +1176,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Help/Tip of the day..."
+literal|"/Help/Tip of the Day..."
 argument_list|)
 block|,
 name|NULL
@@ -1379,7 +1379,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/File/Save as..."
+literal|"/File/Save As..."
 argument_list|)
 block|,
 name|NULL
@@ -1645,7 +1645,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Edit/Paste As New"
+literal|"/Edit/Paste as New"
 argument_list|)
 block|,
 name|NULL
@@ -2065,7 +2065,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Select/Save To Channel"
+literal|"/Select/Save to Channel"
 argument_list|)
 block|,
 name|NULL
@@ -2337,7 +2337,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Dot for dot"
+literal|"/View/Dot for Dot"
 argument_list|)
 block|,
 name|NULL
@@ -2414,7 +2414,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Undo history..."
+literal|"/View/Undo History..."
 argument_list|)
 block|,
 name|NULL
@@ -2535,7 +2535,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/View/Snap To Guides"
+literal|"/View/Snap to Guides"
 argument_list|)
 block|,
 name|NULL
@@ -3335,7 +3335,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Resize to Image"
+literal|"/Layers/Layer to Imagesize"
 argument_list|)
 block|,
 name|NULL
@@ -3447,7 +3447,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Mask To Selection"
+literal|"/Layers/Mask to Selection"
 argument_list|)
 block|,
 name|NULL
@@ -3503,7 +3503,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Layers/Alpha To Selection"
+literal|"/Layers/Alpha to Selection"
 argument_list|)
 block|,
 name|NULL
@@ -3659,7 +3659,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Filters/Repeat last"
+literal|"/Filters/Repeat Last"
 argument_list|)
 block|,
 literal|"<alt>F"
@@ -3678,7 +3678,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Filters/Re-show last"
+literal|"/Filters/Re-Show Last"
 argument_list|)
 block|,
 literal|"<alt><shift>F"
@@ -4919,7 +4919,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Resize to Image"
+literal|"/Layer to Imagesize"
 argument_list|)
 block|,
 name|NULL
@@ -5344,7 +5344,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Subtract From Selection"
+literal|"/Subtract from Selection"
 argument_list|)
 block|,
 name|NULL
@@ -5363,7 +5363,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/Intersect With Selection"
+literal|"/Intersect with Selection"
 argument_list|)
 block|,
 name|NULL

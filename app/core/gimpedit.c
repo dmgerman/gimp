@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4dcc770103
+DECL|enum|__anon2b1c28ee0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -3019,7 +3019,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Paste As New"
+literal|"Paste as New"
 argument_list|)
 block|,   }
 decl_stmt|;

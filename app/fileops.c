@@ -7253,7 +7253,7 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
-literal|"<Image>/File/Save as..."
+literal|"<Image>/File/Save As..."
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7311,7 +7311,7 @@ argument_list|)
 expr_stmt|;
 name|menus_set_sensitive
 argument_list|(
-literal|"<Image>/File/Save as..."
+literal|"<Image>/File/Save As..."
 argument_list|,
 name|TRUE
 argument_list|)

@@ -3148,14 +3148,14 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Subtract From Selection"
+literal|"Subtract from Selection"
 argument_list|,
 name|aux_sens
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Intersect With Selection"
+literal|"Intersect with Selection"
 argument_list|,
 name|aux_sens
 argument_list|)

@@ -5830,7 +5830,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"Resize to Image"
+literal|"Layer to Imagesize"
 argument_list|,
 name|ac
 operator|&&

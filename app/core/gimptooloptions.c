@@ -1857,7 +1857,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Fixed size / aspect ratio"
+literal|"Fixed Size / Aspect Ratio"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3841,7 +3841,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Pressure sensitivity"
+literal|"Pressure Sensitivity"
 argument_list|)
 argument_list|)
 expr_stmt|;
