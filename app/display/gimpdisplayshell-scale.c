@@ -209,12 +209,6 @@ block|{
 name|gdouble
 name|ratio
 decl_stmt|;
-comment|/* The golden ratio is (1 + sqrt 5)/2. It has some nice     * properties which make it a good choice for a zoom ratio.    */
-DECL|macro|GOLDEN_RATIO
-define|#
-directive|define
-name|GOLDEN_RATIO
-value|1.618033989
 name|g_return_if_fail
 argument_list|(
 name|scalesrc
@@ -250,7 +244,7 @@ name|GIMP_ZOOM_IN
 case|:
 name|ratio
 operator|*=
-name|GOLDEN_RATIO
+name|G_SQRT2
 expr_stmt|;
 break|break;
 case|case
@@ -258,7 +252,7 @@ name|GIMP_ZOOM_OUT
 case|:
 name|ratio
 operator|/=
-name|GOLDEN_RATIO
+name|G_SQRT2
 expr_stmt|;
 break|break;
 default|default:
