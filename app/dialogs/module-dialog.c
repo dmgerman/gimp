@@ -137,26 +137,26 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2c64df010103
+DECL|enum|__anon28c1d5eb0103
 typedef|typedef
 enum|enum
 block|{
 DECL|enumerator|ST_MODULE_ERROR
 name|ST_MODULE_ERROR
 block|,
-comment|/* missing module_load function or other error */
+comment|/* missing module_load function or other error    */
 DECL|enumerator|ST_LOADED_OK
 name|ST_LOADED_OK
 block|,
-comment|/* happy and running (normal state of affairs) */
+comment|/* happy and running (normal state of affairs)    */
 DECL|enumerator|ST_LOAD_FAILED
 name|ST_LOAD_FAILED
 block|,
-comment|/* module_load returned GIMP_MODULE_UNLOAD */
+comment|/* module_load returned GIMP_MODULE_UNLOAD        */
 DECL|enumerator|ST_UNLOAD_REQUESTED
 name|ST_UNLOAD_REQUESTED
 block|,
-comment|/* sent unload request, waiting for callback */
+comment|/* sent unload request, waiting for callback      */
 DECL|enumerator|ST_UNLOADED_OK
 name|ST_UNLOADED_OK
 comment|/* callback arrived, module not in memory anymore */
@@ -231,8 +231,8 @@ name|func
 function_decl|)
 parameter_list|()
 function_decl|;
-DECL|variable|gimp_main_funcs
 block|}
+DECL|variable|gimp_main_funcs
 name|gimp_main_funcs
 index|[]
 init|=
@@ -268,7 +268,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c64df010208
+DECL|struct|__anon28c1d5eb0208
 typedef|typedef
 struct|struct
 block|{
@@ -281,40 +281,40 @@ name|gchar
 modifier|*
 name|fullpath
 decl_stmt|;
-comment|/* path to the module */
+comment|/* path to the module                        */
 DECL|member|state
 name|module_state
 name|state
 decl_stmt|;
-comment|/* what's happened to the module */
+comment|/* what's happened to the module             */
 DECL|member|ondisk
 name|gboolean
 name|ondisk
 decl_stmt|;
-comment|/* TRUE if file still exists */
+comment|/* TRUE if file still exists                 */
 DECL|member|load_inhibit
 name|gboolean
 name|load_inhibit
 decl_stmt|;
-comment|/* user requests not to load at boot time */
+comment|/* user requests not to load at boot time    */
 DECL|member|refs
 name|gint
 name|refs
 decl_stmt|;
 comment|/* how many time we're running in the module */
-comment|/* stuff from now on may be NULL depending on the state the module is in */
+comment|/* stuff from now on may be NULL depending on the state the module is in   */
 DECL|member|info
 name|GimpModuleInfo
 modifier|*
 name|info
 decl_stmt|;
-comment|/* returned values from module_init */
+comment|/* returned values from module_init          */
 DECL|member|module
 name|GModule
 modifier|*
 name|module
 decl_stmt|;
-comment|/* handle on the module */
+comment|/* handle on the module                      */
 DECL|member|last_module_error
 name|gchar
 modifier|*
@@ -385,7 +385,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2c64df010308
+DECL|struct|__anon28c1d5eb0308
 typedef|typedef
 struct|struct
 block|{
@@ -1627,7 +1627,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c64df010408
+DECL|struct|__anon28c1d5eb0408
 typedef|typedef
 struct|struct
 block|{
@@ -1642,7 +1642,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2c64df010503
+DECL|enum|__anon28c1d5eb0503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -4475,7 +4475,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2c64df010608
+DECL|struct|__anon28c1d5eb0608
 typedef|typedef
 struct|struct
 block|{

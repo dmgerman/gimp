@@ -1046,6 +1046,10 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|GList
+modifier|*
+name|next
+decl_stmt|;
 name|gtk_widget_hide
 argument_list|(
 name|GTK_WIDGET
@@ -1084,6 +1088,12 @@ condition|(
 name|list
 condition|)
 block|{
+name|next
+operator|=
+name|list
+operator|->
+name|next
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1111,8 +1121,6 @@ argument_list|)
 expr_stmt|;
 name|list
 operator|=
-name|list
-operator|->
 name|next
 expr_stmt|;
 block|}

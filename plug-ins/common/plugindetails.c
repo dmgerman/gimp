@@ -52,7 +52,7 @@ DECL|macro|DBL_WIDTH
 define|#
 directive|define
 name|DBL_WIDTH
-value|DBL_LIST_WIDTH+450
+value|(DBL_LIST_WIDTH + 300)
 end_define
 
 begin_define
@@ -407,7 +407,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7cbd40108
+DECL|struct|__anon27856e920108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -494,19 +494,16 @@ DECL|member|details_showing
 name|gboolean
 name|details_showing
 decl_stmt|;
-DECL|typedef|PLUGINDESC
-DECL|typedef|PLUGINDESCP
+DECL|typedef|PDesc
 block|}
-name|PLUGINDESC
-operator|,
-typedef|*
-name|PLUGINDESCP
+name|PDesc
 typedef|;
 end_typedef
 
 begin_decl_stmt
 DECL|variable|plugindesc
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|plugindesc
 init|=
 name|NULL
@@ -516,7 +513,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7cbd40208
+DECL|struct|__anon27856e920208
 block|{
 DECL|member|menu
 name|gchar
@@ -547,13 +544,9 @@ DECL|member|instime
 name|gint
 name|instime
 decl_stmt|;
-DECL|typedef|PINFO
-DECL|typedef|PINFOP
+DECL|typedef|PInfo
 block|}
-name|PINFO
-operator|,
-typedef|*
-name|PINFOP
+name|PInfo
 typedef|;
 end_typedef
 
@@ -572,7 +565,8 @@ name|data
 parameter_list|)
 comment|/* end of the dialog */
 block|{
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 init|=
 name|data
@@ -609,7 +603,8 @@ name|data
 parameter_list|)
 block|{
 comment|/* Show or hide the details window */
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 init|=
 name|data
@@ -628,6 +623,91 @@ operator|->
 name|child
 argument_list|)
 decl_stmt|;
+comment|/* This is a lame hack:       We add the description on the right on the first details_callback.      Otherwise the window reacts quite weird on resizes */
+if|if
+condition|(
+name|pdesc
+operator|->
+name|descr_scroll
+operator|==
+name|NULL
+condition|)
+block|{
+name|pdesc
+operator|->
+name|descr_scroll
+operator|=
+name|gtk_scrolled_window_new
+argument_list|(
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_scrolled_window_set_policy
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|pdesc
+operator|->
+name|descr_scroll
+argument_list|)
+argument_list|,
+name|GTK_POLICY_ALWAYS
+argument_list|,
+name|GTK_POLICY_ALWAYS
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_usize
+argument_list|(
+name|pdesc
+operator|->
+name|descr_scroll
+argument_list|,
+name|DBL_WIDTH
+operator|-
+name|DBL_LIST_WIDTH
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gtk_paned_pack2
+argument_list|(
+name|GTK_PANED
+argument_list|(
+name|pdesc
+operator|->
+name|paned
+argument_list|)
+argument_list|,
+name|pdesc
+operator|->
+name|descr_scroll
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_clist_select_row
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|pdesc
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+name|pdesc
+operator|->
+name|clist_row
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|pdesc
@@ -676,7 +756,7 @@ name|gtk_label_set_text
 argument_list|(
 name|lab
 argument_list|,
-literal|"Details<<<"
+literal|" Details<<< "
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -758,7 +838,7 @@ name|gtk_label_set_text
 argument_list|(
 name|lab
 argument_list|,
-literal|"Details>>>"
+literal|" Details>>> "
 argument_list|)
 expr_stmt|;
 name|gtk_widget_hide
@@ -860,13 +940,15 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|procedure_general_select_callback (PLUGINDESCP pdesc,PINFOP pinfo)
+DECL|function|procedure_general_select_callback (PDesc * pdesc,PInfo * pinfo)
 name|procedure_general_select_callback
 parameter_list|(
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 parameter_list|,
-name|PINFOP
+name|PInfo
+modifier|*
 name|pinfo
 parameter_list|)
 block|{
@@ -954,6 +1036,17 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|pdesc
+operator|->
+name|descr_scroll
+operator|==
+name|NULL
+condition|)
+return|return
+name|FALSE
+return|;
 name|selected_proc_blurb
 operator|=
 name|NULL
@@ -2314,10 +2407,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|expand_to (PLUGINDESCP pdesc,GtkCTreeNode * parent)
+DECL|function|expand_to (PDesc * pdesc,GtkCTreeNode * parent)
 name|expand_to
 parameter_list|(
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 parameter_list|,
 name|GtkCTreeNode
@@ -2384,14 +2478,16 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PINFOP
+name|PInfo
+modifier|*
 name|pinfo
 decl_stmt|;
 name|GtkCTreeNode
 modifier|*
 name|found_node
 decl_stmt|;
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 init|=
 name|data
@@ -2408,7 +2504,8 @@ expr_stmt|;
 name|pinfo
 operator|=
 operator|(
-name|PINFOP
+name|PInfo
+operator|*
 operator|)
 name|gtk_clist_get_row_data
 argument_list|(
@@ -2643,7 +2740,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 init|=
 name|data
@@ -2689,7 +2787,7 @@ literal|0
 argument_list|,
 literal|0.5
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -2729,7 +2827,7 @@ literal|0
 argument_list|,
 literal|0.5
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -2760,10 +2858,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PINFOP
+name|PInfo
+modifier|*
 name|pinfo
 decl_stmt|;
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 decl_stmt|;
 name|gboolean
@@ -2808,11 +2908,9 @@ condition|(
 operator|!
 name|is_leaf
 condition|)
-block|{
 return|return
 name|FALSE
 return|;
-block|}
 name|pdesc
 operator|=
 name|data
@@ -2820,7 +2918,8 @@ expr_stmt|;
 name|pinfo
 operator|=
 operator|(
-name|PINFOP
+name|PInfo
+operator|*
 operator|)
 name|gtk_ctree_node_get_row_data
 argument_list|(
@@ -2945,7 +3044,8 @@ name|gpointer
 name|p
 parameter_list|)
 block|{
-name|PINFOP
+name|PInfo
+modifier|*
 name|pinfo
 init|=
 name|p
@@ -2997,10 +3097,11 @@ begin_function
 specifier|static
 name|GtkCTreeNode
 modifier|*
-DECL|function|get_parent (PLUGINDESCP pdesc,GHashTable * ghash,gchar * mpath)
+DECL|function|get_parent (PDesc * pdesc,GHashTable * ghash,gchar * mpath)
 name|get_parent
 parameter_list|(
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 parameter_list|,
 name|GHashTable
@@ -3217,10 +3318,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|insert_into_ctree (PLUGINDESCP pdesc,gchar * name,gchar * xtimestr,gchar * menu_str,gchar * types_str,GHashTable * ghash,PINFOP pinfo)
+DECL|function|insert_into_ctree (PDesc * pdesc,gchar * name,gchar * xtimestr,gchar * menu_str,gchar * types_str,GHashTable * ghash,PInfo * pinfo)
 name|insert_into_ctree
 parameter_list|(
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 parameter_list|,
 name|gchar
@@ -3243,7 +3345,8 @@ name|GHashTable
 modifier|*
 name|ghash
 parameter_list|,
-name|PINFOP
+name|PInfo
+modifier|*
 name|pinfo
 parameter_list|)
 block|{
@@ -3414,10 +3517,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_plugin_info (PLUGINDESCP pdesc,gchar * search_text)
+DECL|function|get_plugin_info (PDesc * pdesc,gchar * search_text)
 name|get_plugin_info
 parameter_list|(
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 parameter_list|,
 name|gchar
@@ -3619,7 +3723,8 @@ name|loop
 operator|++
 control|)
 block|{
-name|PINFOP
+name|PInfo
+modifier|*
 name|pinfo
 decl_stmt|;
 name|gchar
@@ -3684,7 +3789,7 @@ name|pinfo
 operator|=
 name|g_new0
 argument_list|(
-name|PINFO
+name|PInfo
 argument_list|,
 literal|1
 argument_list|)
@@ -3860,12 +3965,9 @@ name|gtk_clist_insert
 argument_list|(
 name|GTK_CLIST
 argument_list|(
-name|GTK_CLIST
-argument_list|(
 name|pdesc
 operator|->
 name|clist
-argument_list|)
 argument_list|)
 argument_list|,
 name|row_count
@@ -3942,7 +4044,8 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PLUGINDESCP
+name|PDesc
+modifier|*
 name|pdesc
 init|=
 name|data
@@ -4114,14 +4217,16 @@ operator|)
 name|ptr2
 decl_stmt|;
 comment|/* Get the data for the row */
-name|PINFOP
+name|PInfo
+modifier|*
 name|row1_pinfo
 init|=
 name|row1
 operator|->
 name|data
 decl_stmt|;
-name|PINFOP
+name|PInfo
+modifier|*
 name|row2_pinfo
 init|=
 name|row2
@@ -4352,7 +4457,7 @@ name|plugindesc
 operator|=
 name|g_new0
 argument_list|(
-name|PLUGINDESC
+name|PDesc
 argument_list|,
 literal|1
 argument_list|)
@@ -4423,7 +4528,7 @@ operator|->
 name|dlg
 argument_list|)
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4512,7 +4617,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-name|gtk_paned_add1
+name|gtk_paned_pack1
 argument_list|(
 name|GTK_PANED
 argument_list|(
@@ -4520,6 +4625,10 @@ name|hbox
 argument_list|)
 argument_list|,
 name|vbox
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4963,7 +5072,7 @@ name|searchhbox
 argument_list|,
 name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -4977,7 +5086,7 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-literal|"Search :"
+literal|"Search : "
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -5001,9 +5110,9 @@ argument_list|)
 argument_list|,
 name|label
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -5049,7 +5158,7 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
-literal|"Details>>>"
+literal|" Details>>> "
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5083,64 +5192,15 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 comment|/* right = description */
-name|plugindesc
-operator|->
-name|descr_scroll
-operator|=
-name|gtk_scrolled_window_new
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_scrolled_window_set_policy
-argument_list|(
-name|GTK_SCROLLED_WINDOW
-argument_list|(
-name|plugindesc
-operator|->
-name|descr_scroll
-argument_list|)
-argument_list|,
-name|GTK_POLICY_ALWAYS
-argument_list|,
-name|GTK_POLICY_ALWAYS
-argument_list|)
-expr_stmt|;
-name|gtk_paned_add2
-argument_list|(
-name|GTK_PANED
-argument_list|(
-name|hbox
-argument_list|)
-argument_list|,
-name|plugindesc
-operator|->
-name|descr_scroll
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_usize
-argument_list|(
-name|plugindesc
-operator|->
-name|descr_scroll
-argument_list|,
-name|DBL_WIDTH
-operator|-
-name|DBL_LIST_WIDTH
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
+comment|/* the right description is build on first click of the Details button */
 comment|/* buttons in dlg->action_area */
 name|gtk_container_border_width
 argument_list|(
@@ -5310,6 +5370,38 @@ argument_list|(
 name|plugindesc
 operator|->
 name|dlg
+argument_list|)
+expr_stmt|;
+name|gtk_clist_select_row
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|plugindesc
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_clist_moveto
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|plugindesc
+operator|->
+name|clist
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|plugindesc

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"nav_window.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"scroll.h"
 end_include
 
@@ -178,7 +184,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d5e2490103
+DECL|enum|__anon2936f8620103
 block|{
 DECL|enumerator|NAV_WINDOW
 name|NAV_WINDOW
@@ -426,16 +432,6 @@ name|void
 name|create_preview_widget
 parameter_list|(
 name|NavWinData
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|nav_window_update_window_marker
-parameter_list|(
-name|InfoDialog
 modifier|*
 parameter_list|)
 function_decl|;
@@ -4747,13 +4743,11 @@ operator|->
 name|gdisp_ptr
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|iwd
 operator|->
 name|preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|iwd
@@ -6342,6 +6336,16 @@ operator|==
 name|TRUE
 condition|)
 return|return;
+name|update_zoom_label
+argument_list|(
+name|iwd
+argument_list|)
+expr_stmt|;
+name|update_zoom_adjustment
+argument_list|(
+name|iwd
+argument_list|)
+expr_stmt|;
 comment|/* Undraw old size */
 name|nav_window_draw_sqr
 argument_list|(
@@ -6398,16 +6402,6 @@ argument_list|,
 name|iwd
 operator|->
 name|dispheight
-argument_list|)
-expr_stmt|;
-name|update_zoom_label
-argument_list|(
-name|iwd
-argument_list|)
-expr_stmt|;
-name|update_zoom_adjustment
-argument_list|(
-name|iwd
 argument_list|)
 expr_stmt|;
 block|}
