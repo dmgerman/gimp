@@ -1569,7 +1569,7 @@ operator|->
 name|histogram
 argument_list|)
 argument_list|,
-literal|"rangechanged"
+literal|"range_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
