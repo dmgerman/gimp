@@ -199,6 +199,10 @@ DECL|member|threshold
 name|double
 name|threshold
 decl_stmt|;
+DECL|member|elasticity
+name|double
+name|elasticity
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -708,51 +712,6 @@ end_decl_stmt
 
 begin_comment
 comment|/*  boundary resolution variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|resolution
-specifier|static
-name|int
-name|resolution
-init|=
-literal|20
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|resolution
-comment|/* in pixels */
-end_comment
-
-begin_decl_stmt
-DECL|variable|threshold
-specifier|static
-name|int
-name|threshold
-init|=
-literal|15
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|threshold
-comment|/* in intensity */
-end_comment
-
-begin_decl_stmt
-DECL|variable|elasticity
-specifier|static
-name|double
-name|elasticity
-init|=
-literal|0.30
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|elasticity
-comment|/* between 0.0 -> 1.0 */
 end_comment
 
 begin_decl_stmt
@@ -1797,11 +1756,11 @@ name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|hbox
+name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|label
+name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1892,6 +1851,12 @@ name|threshold
 operator|=
 literal|15.0
 expr_stmt|;
+name|options
+operator|->
+name|elasticity
+operator|=
+literal|0.30
+expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
 operator|=
@@ -1934,9 +1899,21 @@ expr_stmt|;
 comment|/*  the antialias toggle button  */
 name|antialias_toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_toggle_button_new_with_label
 argument_list|(
 literal|"Antialiasing"
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_state
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|antialias_toggle
+argument_list|)
+argument_list|,
+name|options
+operator|->
+name|antialias
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1983,9 +1960,21 @@ expr_stmt|;
 comment|/*  the feather toggle button  */
 name|feather_toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_toggle_button_new_with_label
 argument_list|(
 literal|"Feather"
+argument_list|)
+expr_stmt|;
+name|gtk_toggle_button_set_state
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|feather_toggle
+argument_list|)
+argument_list|,
+name|options
+operator|->
+name|feather
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2087,7 +2076,9 @@ name|feather_scale_data
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-literal|10.0
+name|options
+operator|->
+name|feather_radius
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2234,7 +2225,9 @@ name|resolution_scale_data
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-literal|4.0
+name|options
+operator|->
+name|resolution
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2381,7 +2374,9 @@ name|threshold_scale_data
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-literal|15.0
+name|options
+operator|->
+name|threshold
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2528,7 +2523,9 @@ name|elasticity_scale_data
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-literal|.01
+name|options
+operator|->
+name|elasticity
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2602,6 +2599,8 @@ operator|)
 name|selection_scale_update
 argument_list|,
 operator|&
+name|options
+operator|->
 name|elasticity
 argument_list|)
 expr_stmt|;
@@ -6174,6 +6173,16 @@ decl_stmt|;
 name|int
 name|b
 decl_stmt|;
+name|int
+name|threshold
+init|=
+operator|(
+name|int
+operator|)
+name|iscissors_options
+operator|->
+name|threshold
+decl_stmt|;
 name|bytes
 operator|=
 name|edge_buf
@@ -6677,6 +6686,16 @@ name|int
 name|i
 decl_stmt|,
 name|j
+decl_stmt|;
+name|int
+name|resolution
+init|=
+operator|(
+name|int
+operator|)
+name|iscissors_options
+operator|->
+name|resolution
 decl_stmt|;
 comment|/* int x, y; */
 comment|/*  This function determines the kinkiness at each point in the    *  original free-hand curve by finding the dotproduct between    *  the two vectors formed at each point from that point to its    *  immediate neighbors.  A smoothing function is applied to    *  determine the vectors to ameliorate the otherwise excessive    *  jitter associated with original selection.    */
@@ -7670,6 +7689,15 @@ decl_stmt|;
 name|double
 name|res
 decl_stmt|;
+name|double
+name|i_resolution
+init|=
+literal|1.0
+operator|/
+name|iscissors_options
+operator|->
+name|resolution
+decl_stmt|;
 name|int
 name|i
 decl_stmt|,
@@ -7805,8 +7833,8 @@ name|int
 call|)
 argument_list|(
 name|dist
-operator|/
-name|resolution
+operator|*
+name|i_resolution
 argument_list|)
 expr_stmt|;
 name|res
@@ -9076,6 +9104,15 @@ name|moved
 init|=
 literal|0
 decl_stmt|;
+name|double
+name|elasticity
+init|=
+name|iscissors_options
+operator|->
+name|elasticity
+operator|+
+literal|1.0
+decl_stmt|;
 name|gdisp
 operator|=
 operator|(
@@ -9325,11 +9362,7 @@ operator|/
 literal|2.0
 operator|)
 operator|*
-operator|(
-literal|1.0
-operator|+
 name|elasticity
-operator|)
 expr_stmt|;
 comment|/*  If moving the point along it's directional vector 	   *  still satisfies the elasticity constraints (OR) 	   *  the point is a kink (in which case it can violate 	   *  elasticity completely. 	   */
 if|if
