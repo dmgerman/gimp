@@ -256,7 +256,7 @@ argument_list|(
 literal|"themerc"
 argument_list|)
 expr_stmt|;
-name|gtk_rc_add_default_file
+name|gtk_rc_parse
 argument_list|(
 name|themerc
 argument_list|)
