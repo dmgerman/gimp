@@ -42,16 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"commands.h"
+file|"help-commands.h"
 end_include
-
-begin_comment
-comment|/*****  Help  *****/
-end_comment
 
 begin_function
 name|void
-DECL|function|help_help_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|help_help_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|help_help_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -60,6 +56,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|gimp_standard_help_func
@@ -72,7 +71,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|help_context_help_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|help_context_help_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|help_context_help_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -81,50 +80,13 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|gimp_context_help
 argument_list|()
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*****  Debug  *****/
-end_comment
-
-begin_function
-name|void
-DECL|function|debug_mem_profile_cmd_callback (GtkWidget * widget,gpointer data)
-name|debug_mem_profile_cmd_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-specifier|extern
-name|gboolean
-name|gimp_debug_memsize
-decl_stmt|;
-name|gimp_debug_memsize
-operator|=
-name|TRUE
-expr_stmt|;
-name|gimp_object_get_memsize
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|data
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_debug_memsize
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 end_function

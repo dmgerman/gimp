@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"commands.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"data-commands.h"
 end_include
 
@@ -157,6 +151,12 @@ begin_include
 include|#
 directive|include
 file|"gradients-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"help-commands.h"
 end_include
 
 begin_include
@@ -394,6 +394,24 @@ begin_function_decl
 specifier|static
 name|void
 name|menus_debug_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|guint
+name|action
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|menus_mem_profile_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -910,7 +928,7 @@ literal|"/File/Debug/Mem Profile"
 block|,
 name|NULL
 block|,
-name|debug_mem_profile_cmd_callback
+name|menus_mem_profile_cmd_callback
 block|,
 literal|0
 block|}
@@ -1053,6 +1071,10 @@ block|,
 name|help_context_help_cmd_callback
 block|,
 literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GTK_STOCK_HELP
 block|}
 block|,
 name|NULL
@@ -11745,6 +11767,46 @@ comment|/*  toolbox needs special treatment  */
 block|g_print ("%s\n", factories[0]->path);    menu_item = gtk_item_factory_get_item (factories[0], "/File");   if (menu_item&& menu_item->parent&& GTK_IS_MENU_BAR (menu_item->parent))     menus_debug_recurse_menu (menu_item->parent, 1, factories[0]->path);    g_print ("\n");    for (i = 1; i< n_factories; i++)     {       g_print ("%s\n", factories[i]->path);        menu_item = gtk_item_factory_get_item (factories[i], entries[i][0].entry.path);       if (menu_item&& menu_item->parent&& GTK_IS_MENU (menu_item->parent)) 	menus_debug_recurse_menu (menu_item->parent, 1, factories[i]->path);        g_print ("\n");     }
 endif|#
 directive|endif
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|menus_mem_profile_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+name|menus_mem_profile_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|,
+name|guint
+name|action
+parameter_list|)
+block|{
+specifier|extern
+name|gboolean
+name|gimp_debug_memsize
+decl_stmt|;
+name|gimp_debug_memsize
+operator|=
+name|TRUE
+expr_stmt|;
+name|gimp_object_get_memsize
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_debug_memsize
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
