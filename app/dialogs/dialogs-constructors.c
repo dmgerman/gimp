@@ -1151,9 +1151,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Tool Options"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Tool Options"
+argument_list|)
 argument_list|,
 name|dialogs_tool_options_tab_func
 argument_list|,
@@ -1224,9 +1230,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Error Console"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Errors"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1288,9 +1300,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Image List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Images"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1357,9 +1375,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Brush List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Brushes"
+argument_list|)
 argument_list|,
 name|dialogs_brush_tab_func
 argument_list|,
@@ -1424,9 +1448,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Pattern List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Patterns"
+argument_list|)
 argument_list|,
 name|dialogs_pattern_tab_func
 argument_list|,
@@ -1491,9 +1521,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradients"
+argument_list|)
 argument_list|,
 name|dialogs_gradient_tab_func
 argument_list|,
@@ -1558,9 +1594,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Palette List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Palettes"
+argument_list|)
 argument_list|,
 name|dialogs_palette_tab_func
 argument_list|,
@@ -1618,9 +1660,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Tool List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Tools"
+argument_list|)
 argument_list|,
 name|dialogs_tool_tab_func
 argument_list|,
@@ -1683,9 +1731,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Buffer List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Buffers"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1747,9 +1801,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Image Grid"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Images"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -1816,9 +1876,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Brush Grid"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Brushes"
+argument_list|)
 argument_list|,
 name|dialogs_brush_tab_func
 argument_list|,
@@ -1883,9 +1949,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Pattern Grid"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Patterns"
+argument_list|)
 argument_list|,
 name|dialogs_pattern_tab_func
 argument_list|,
@@ -1950,9 +2022,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient Grid"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradients"
+argument_list|)
 argument_list|,
 name|dialogs_gradient_tab_func
 argument_list|,
@@ -2017,9 +2095,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Palette Grid"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Palettes"
+argument_list|)
 argument_list|,
 name|dialogs_palette_tab_func
 argument_list|,
@@ -2077,9 +2161,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Tool Grid"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Tools"
+argument_list|)
 argument_list|,
 name|dialogs_tool_tab_func
 argument_list|,
@@ -2142,9 +2232,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Buffer Grid"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Buffers"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2291,9 +2387,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Layer List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Layers"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2432,9 +2534,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Channel List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Channels"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2638,9 +2746,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Paths List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Paths"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2725,9 +2839,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Old Path List"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Old Paths"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2800,9 +2920,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Indexed Palette"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Colormap"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2899,9 +3025,15 @@ name|dialogs_dockable_new
 argument_list|(
 name|view
 argument_list|,
+name|_
+argument_list|(
 literal|"Document History"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"History"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2965,9 +3097,15 @@ argument_list|(
 name|brush_editor
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Brush Editor"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Brush Editor"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3057,9 +3195,15 @@ argument_list|(
 name|gradient_editor
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient Editor"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Gradient Editor"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -3149,9 +3293,15 @@ argument_list|(
 name|palette_editor
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Palette Editor"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Palette Editor"
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
