@@ -36,31 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gdisplay_ops.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"resolution_calibrate.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"unitrc.h"
+file|"resolution-calibrate-dialog.h"
 end_include
 
 begin_include
@@ -287,7 +263,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * resolution_calibrate_dialog:  * @resolution_entry: a GimpSizeEntry to connect the dialog to  * @dialog_style: a GtkStyle for the main dialog (used by the user_installation_dialog)  * @ruler_style: a GtkStyle for the rulers and the entry area (used by the   *               user_installation_dialog)  * @expose_callback: an "expose_event" handler used by the user_installation_dialog  *   * Displays a dialog that allows the user to interactively determine her monitor  * resolution. This dialog runs it's own GTK main loop and is connected to a   * GimpSizeEntry handling the resolution to be set. The style and callback parameters  * are supposed to be only used by the user_installation_dialog.  */
+comment|/**  * resolution_calibrate_dialog:  * @resolution_entry: a #GimpSizeEntry to connect the dialog to  * @dialog_style:     a #GtkStyle for the main dialog (used by the  *                    user_installation_dialog)  * @ruler_style:      a #GtkStyle for the rulers and the entry area  *                    (used by the user_installation_dialog)  * @expose_callback:  an "expose_event" handler used by the  *                    user_installation_dialog  *  * Displays a dialog that allows the user to interactively determine  * her monitor resolution. This dialog runs it's own GTK main loop and  * is connected to a #GimpSizeEntry handling the resolution to be  * set. The style and callback parameters are supposed to be only used  * by the user_installation_dialog.  **/
 end_comment
 
 begin_function
@@ -493,14 +469,6 @@ argument_list|(
 name|dialog
 argument_list|,
 name|dialog_style
-argument_list|)
-expr_stmt|;
-name|gimp_dialog_set_icon
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width

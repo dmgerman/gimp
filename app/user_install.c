@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gui/resolution-calibrate-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -108,12 +114,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"resolution_calibrate.h"
 end_include
 
 begin_include
@@ -661,7 +661,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bba31e30108
+DECL|struct|__anon29000ba10108
 block|{
 DECL|member|directory
 name|gboolean

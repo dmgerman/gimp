@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"resolution-calibrate-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"session.h"
 end_include
 
@@ -126,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"resolution_calibrate.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -150,7 +150,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5f49530103
+DECL|enum|__anon289649950103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -12471,7 +12471,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5f49530208
+DECL|struct|__anon289649950208
 block|{
 DECL|member|label
 name|gchar
@@ -12700,7 +12700,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c5f49530308
+DECL|struct|__anon289649950308
 block|{
 DECL|member|tree_label
 name|gchar

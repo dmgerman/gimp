@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293202a30103
+DECL|enum|__anon29c9780d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -3871,7 +3871,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_check_scaling:  * @layer:      Layer to check  * @new_width:  proposed width of layer, in pixels  * @new_height: proposed height of layer, in pixels  *  * Scales layer dimensions, then snaps them to pixel centers  *  * Returns FALSE if any dimension reduces to zero as a result   *         of this; otherwise, returns TRUE.  */
+comment|/**  * gimp_layer_check_scaling:  * @layer:      Layer to check  * @new_width:  proposed width of layer's image, in pixels  * @new_height: proposed height of layer's image, in pixels  *  * Scales layer dimensions, then snaps them to pixel centers  *  * Returns: #FALSE if any dimension reduces to zero as a result   *          of this; otherwise, returns #TRUE.  **/
 end_comment
 
 begin_function
@@ -3992,7 +3992,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_scale_by_factors:  * @layer: Layer to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  *   * Scales layer dimensions and offsets by uniform width and  * height factors.  *   * Use gimp_layer_scale_by_factors() in circumstances when the  * same width and height scaling factors are to be uniformly  * applied to a set of layers. In this context, the layer's  * dimensions and offsets from the sides of the containing  * image all change by these predetermined factors. By fiat,  * the fixed point of the transform is the upper left hand  * corner of the image. Returns gboolean FALSE if a requested  * scale factor is zero or if a scaling zero's out a layer  * dimension; returns TRUE otherwise.  *  * Use gimp_layer_scale() in circumstances where new layer width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for layer. Old layer imagery   *               scaled& painted to new layer tiles.   *  * Returns: TRUE, if the scaled layer has positive dimensions  *          FALSE if the scaled layer has at least one zero dimension  */
+comment|/**  * gimp_layer_scale_by_factors:  * @layer:    Layer to be transformed by explicit width and height factors.  * @w_factor: scale factor to apply to width and horizontal offset  * @h_factor: scale factor to apply to height and vertical offset  *   * Scales layer dimensions and offsets by uniform width and  * height factors.  *  * Use gimp_layer_scale_by_factors() in circumstances when the  * same width and height scaling factors are to be uniformly  * applied to a set of layers. In this context, the layer's  * dimensions and offsets from the sides of the containing  * image all change by these predetermined factors. By fiat,  * the fixed point of the transform is the upper left hand  * corner of the image. Returns gboolean FALSE if a requested  * scale factor is zero or if a scaling zero's out a layer  * dimension; returns #TRUE otherwise.  *  * Use gimp_layer_scale() in circumstances where new layer width  * and height dimensions are predetermined instead.  *  * Side effects: Undo set created for layer. Old layer imagery   *               scaled& painted to new layer tiles.   *  * Returns: #TRUE, if the scaled layer has positive dimensions  *          #FALSE if the scaled layer has at least one zero dimension  **/
 end_comment
 
 begin_function
@@ -4144,7 +4144,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_scale:  * @layer:        The layer to be transformed by width& height scale factors  * @new_width:    The width that layer will acquire  * @new_height:   The height that the layer will acquire  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets layer dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * TRUE, the fixed point of the scaling transform coincides  * with the layer's center point.  Otherwise, the fixed  * point is taken to be [-GIMP_DRAWABLE(layer)->offset_x,  * -GIMP_DRAWABLE(layer)->offset_y].  *  * Since this function derives scale factors from new and  * current layer dimensions, these factors will vary from  * layer to layer because of aliasing artifacts; factor  * variations among layers can be quite large where layer  * dimensions approach pixel dimensions. Use   * gimp_layer_scale_by_factors() where constant scales are to  * be uniformly applied to a number of layers.  *  * Side effects: undo set created for layer.  *               Old layer imagery scaled   *& painted to new layer tiles   */
+comment|/**  * gimp_layer_scale:  * @layer:        The layer to be transformed by width& height scale factors  * @new_width:    The width that layer will acquire  * @new_height:   The height that the layer will acquire  * @local_origin: sets fixed point of the scaling transform. See below.  *  * Sets layer dimensions to new_width and  * new_height. Derives vertical and horizontal scaling  * transforms from new width and height. If local_origin is  * TRUE, the fixed point of the scaling transform coincides  * with the layer's center point.  Otherwise, the fixed  * point is taken to be [-GIMP_DRAWABLE(layer)->offset_x,  * -GIMP_DRAWABLE(layer)->offset_y].  *  * Since this function derives scale factors from new and  * current layer dimensions, these factors will vary from  * layer to layer because of aliasing artifacts; factor  * variations among layers can be quite large where layer  * dimensions approach pixel dimensions. Use   * gimp_layer_scale_by_factors() where constant scales are to  * be uniformly applied to a number of layers.  *  * Side effects: undo set created for layer.  *               Old layer imagery scaled   *& painted to new layer tiles   **/
 end_comment
 
 begin_function
