@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29d2fa360108
+DECL|struct|__anon27f585da0108
 typedef|typedef
 struct|struct
 block|{
@@ -623,6 +623,16 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|view
+argument_list|)
+expr_stmt|;
 name|swin
 operator|=
 name|gtk_scrolled_window_new
@@ -727,7 +737,7 @@ argument_list|)
 argument_list|,
 name|frame
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|2
 argument_list|,
@@ -742,7 +752,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -801,9 +811,9 @@ name|data
 operator|->
 name|ncsa
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -861,9 +871,9 @@ name|data
 operator|->
 name|cern
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -921,9 +931,9 @@ name|data
 operator|->
 name|csim
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)

@@ -5604,6 +5604,25 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|imap_help (void)
+name|imap_help
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|gimp_standard_help_func
+argument_list|(
+literal|"plug-in-imagemap"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|Command_t
 modifier|*
 DECL|function|factory_save (void)
@@ -6179,6 +6198,25 @@ begin_function
 specifier|static
 name|Command_t
 modifier|*
+DECL|function|factory_help (void)
+name|factory_help
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|command_new
+argument_list|(
+name|imap_help
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|Command_t
+modifier|*
 DECL|function|factory_about_dialog (void)
 name|factory_about_dialog
 parameter_list|(
@@ -6590,6 +6628,13 @@ argument_list|(
 name|menu
 argument_list|,
 name|factory_use_gimp_guides_dialog
+argument_list|)
+expr_stmt|;
+name|menu_set_help_command
+argument_list|(
+name|menu
+argument_list|,
+name|factory_help
 argument_list|)
 expr_stmt|;
 name|menu_set_about_command

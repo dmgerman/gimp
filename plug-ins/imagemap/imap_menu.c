@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gdk/gdkkeysyms.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"imap_circle.h"
 end_include
 
@@ -2223,6 +2229,10 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
+name|item
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|help_menu
 init|=
 name|make_menu_bar_item
@@ -2235,13 +2245,41 @@ literal|"_Help"
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|item
+operator|=
 name|make_item_with_label
 argument_list|(
 name|help_menu
 argument_list|,
 name|_
 argument_list|(
-literal|"About ImageMap..."
+literal|"_Contents"
+argument_list|)
+argument_list|,
+name|menu_command
+argument_list|,
+operator|&
+name|_menu
+operator|.
+name|cmd_help
+argument_list|)
+expr_stmt|;
+name|add_accelerator
+argument_list|(
+name|item
+argument_list|,
+name|GDK_F1
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|make_item_with_label
+argument_list|(
+name|help_menu
+argument_list|,
+name|_
+argument_list|(
+literal|"_About ImageMap"
 argument_list|)
 argument_list|,
 name|menu_command

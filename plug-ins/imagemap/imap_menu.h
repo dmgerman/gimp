@@ -29,7 +29,7 @@ file|"imap_mru.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c7e7b6c0108
+DECL|struct|__anon27a261300108
 typedef|typedef
 struct|struct
 block|{
@@ -244,6 +244,10 @@ decl_stmt|;
 DECL|member|cmd_use_gimp_guides
 name|CommandFactory_t
 name|cmd_use_gimp_guides
+decl_stmt|;
+DECL|member|cmd_help
+name|CommandFactory_t
+name|cmd_help
 decl_stmt|;
 DECL|member|cmd_about
 name|CommandFactory_t
@@ -603,6 +607,20 @@ name|command
 parameter_list|)
 define|\
 value|((menu)->cmd_use_gimp_guides = (command))
+end_define
+
+begin_define
+DECL|macro|menu_set_help_command (menu,command)
+define|#
+directive|define
+name|menu_set_help_command
+parameter_list|(
+name|menu
+parameter_list|,
+name|command
+parameter_list|)
+define|\
+value|((menu)->cmd_help = (command))
 end_define
 
 begin_define

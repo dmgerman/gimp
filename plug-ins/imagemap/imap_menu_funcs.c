@@ -66,14 +66,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|add_accelerator (GtkWidget * widget,guchar accelerator_key,guint8 accelerator_mods)
+DECL|function|add_accelerator (GtkWidget * widget,guint accelerator_key,guint8 accelerator_mods)
 name|add_accelerator
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|guchar
+name|guint
 name|accelerator_key
 parameter_list|,
 name|guint8

@@ -265,7 +265,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|guchar
+name|guint
 name|accelerator_key
 parameter_list|,
 name|guint8
