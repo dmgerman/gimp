@@ -45,6 +45,23 @@ directive|include
 file|<gdk-pixbuf/gdk-pixbuf.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<libgimpbase/gimpwin32-io.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_include
 include|#
 directive|include
@@ -143,7 +160,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b05b9d80103
+DECL|enum|__anon28c6a7690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -3097,7 +3097,7 @@ argument_list|)
 expr_stmt|;
 else|else
 block|{
-name|gimp_layer_set_visible
+name|gimp_drawable_set_visible
 argument_list|(
 name|drawable_ID
 argument_list|,

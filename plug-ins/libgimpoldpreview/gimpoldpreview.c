@@ -47,7 +47,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -59,7 +59,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp-intl.h"
+file|<libgimp/libgimp-intl.h>
 end_include
 
 begin_define

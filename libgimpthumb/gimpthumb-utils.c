@@ -696,6 +696,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+operator|*
 name|size
 operator|>
 name|GIMP_THUMB_SIZE_FAIL

@@ -59,6 +59,32 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|__GLIBC__
+end_ifndef
+
+begin_comment
+comment|/* cbrt() is a GNU extension */
+end_comment
+
+begin_define
+DECL|macro|cbrt (x)
+define|#
+directive|define
+name|cbrt
+parameter_list|(
+name|x
+parameter_list|)
+value|(pow(x, 1.0/3.0))
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/* Declare local functions  */
 end_comment
@@ -791,7 +817,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d16800108
+DECL|struct|__anon2b15ca160108
 block|{
 DECL|member|type
 name|gchar
@@ -1412,7 +1438,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d16800208
+DECL|struct|__anon2b15ca160208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1434,7 +1460,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d16800308
+DECL|struct|__anon2b15ca160308
 block|{
 DECL|member|extract_flag
 name|gint
