@@ -356,6 +356,8 @@ literal|"Jens Lautenbacher"
 block|,
 literal|"Laramie Leavitt"
 block|,
+literal|"Elliot Lee"
+block|,
 literal|"Raph Levien"
 block|,
 literal|"Adrian Likins"
@@ -1092,6 +1094,34 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|scroll_area
+argument_list|)
+expr_stmt|;
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
+literal|"Please visit http://www.gimp.org/ for more info"
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|label
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 name|gtk_widget_realize
