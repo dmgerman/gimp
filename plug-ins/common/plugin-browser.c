@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b7e860103
+DECL|enum|__anon29578c150103
 block|{
 DECL|enumerator|LIST_NAME_COLUMN
 name|LIST_NAME_COLUMN
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b7e860203
+DECL|enum|__anon29578c150203
 block|{
 DECL|enumerator|TREE_PATH_NAME_COLUMN
 name|TREE_PATH_NAME_COLUMN
@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b7e860308
+DECL|struct|__anon29578c150308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0b7e860408
+DECL|struct|__anon29578c150408
 block|{
 DECL|member|menu
 name|gchar
@@ -1448,6 +1448,25 @@ name|data
 operator|.
 name|d_stringarray
 expr_stmt|;
+if|if
+condition|(
+name|browser
+operator|->
+name|num_plugins
+operator|==
+literal|1
+condition|)
+name|str
+operator|=
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"1 Plug-In Interface"
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
 name|str
 operator|=
 name|g_strdup_printf

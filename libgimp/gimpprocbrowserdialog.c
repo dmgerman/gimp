@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a11ecf90103
+DECL|enum|__anon2770d04c0103
 block|{
 DECL|enumerator|COLUMN_LABEL
 name|COLUMN_LABEL
@@ -128,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a11ecf90208
+DECL|struct|__anon2770d04c0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1757,6 +1757,23 @@ name|proc_list
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|num_procs
+operator|==
+literal|1
+condition|)
+name|str
+operator|=
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"1 Procedure"
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
 name|str
 operator|=
 name|g_strdup_printf
