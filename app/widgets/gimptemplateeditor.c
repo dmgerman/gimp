@@ -2281,6 +2281,8 @@ name|stock_id_context
 argument_list|,
 name|GIMP_PREVIEW_SIZE_SMALL
 argument_list|,
+literal|0
+argument_list|,
 name|NULL
 argument_list|,
 name|NULL

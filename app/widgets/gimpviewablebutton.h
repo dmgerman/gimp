@@ -117,6 +117,14 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
+DECL|member|preview_size
+name|gint
+name|preview_size
+decl_stmt|;
+DECL|member|preview_border_width
+name|gint
+name|preview_border_width
+decl_stmt|;
 DECL|member|dialog_factory
 name|GimpDialogFactory
 modifier|*
@@ -184,6 +192,9 @@ name|context
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|preview_border_width
 parameter_list|,
 name|GimpDialogFactory
 modifier|*

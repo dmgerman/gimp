@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286f44500103
+DECL|enum|__anon2c424b400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -918,7 +918,9 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-literal|24
+name|GIMP_PREVIEW_SIZE_SMALL
+argument_list|,
+literal|1
 argument_list|,
 name|dialog_factory
 argument_list|,

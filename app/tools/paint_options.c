@@ -559,7 +559,9 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-literal|24
+name|GIMP_PREVIEW_SIZE_SMALL
+argument_list|,
+literal|1
 argument_list|,
 name|dialog_factory
 argument_list|,
@@ -636,7 +638,9 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-literal|24
+name|GIMP_PREVIEW_SIZE_SMALL
+argument_list|,
+literal|1
 argument_list|,
 name|dialog_factory
 argument_list|,
@@ -705,7 +709,11 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-literal|32
+name|GIMP_PREVIEW_SIZE_SMALL
+operator|*
+literal|2
+argument_list|,
+literal|1
 argument_list|,
 name|dialog_factory
 argument_list|,

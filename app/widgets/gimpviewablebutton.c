@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppreviewrenderer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpviewablebutton.h"
 end_include
 
@@ -319,7 +325,20 @@ name|GimpViewableButton
 modifier|*
 name|button
 parameter_list|)
-block|{ }
+block|{
+name|button
+operator|->
+name|preview_size
+operator|=
+name|GIMP_PREVIEW_SIZE_SMALL
+expr_stmt|;
+name|button
+operator|->
+name|preview_border_width
+operator|=
+literal|1
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -644,6 +663,14 @@ name|context
 argument_list|,
 name|viewable_button
 operator|->
+name|preview_size
+argument_list|,
+name|viewable_button
+operator|->
+name|preview_border_width
+argument_list|,
+name|viewable_button
+operator|->
 name|dialog_factory
 argument_list|,
 name|viewable_button
@@ -678,7 +705,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,gint preview_size,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
+DECL|function|gimp_viewable_button_new (GimpContainer * container,GimpContext * context,gint preview_size,gint preview_border_width,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const gchar * dialog_stock_id,const gchar * dialog_tooltip)
 name|gimp_viewable_button_new
 parameter_list|(
 name|GimpContainer
@@ -691,6 +718,9 @@ name|context
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gint
+name|preview_border_width
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -750,6 +780,19 @@ operator|&&
 name|preview_size
 operator|<=
 name|GIMP_VIEWABLE_MAX_POPUP_SIZE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|preview_border_width
+operator|>=
+literal|0
+operator|&&
+name|preview_border_width
+operator|<=
+name|GIMP_PREVIEW_MAX_BORDER_WIDTH
 argument_list|,
 name|NULL
 argument_list|)
@@ -821,6 +864,18 @@ operator|->
 name|context
 operator|=
 name|context
+expr_stmt|;
+name|button
+operator|->
+name|preview_size
+operator|=
+name|preview_size
+expr_stmt|;
+name|button
+operator|->
+name|preview_border_width
+operator|=
+name|preview_border_width
 expr_stmt|;
 if|if
 condition|(
