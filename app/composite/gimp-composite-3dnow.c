@@ -127,7 +127,7 @@ condition|)
 block|{
 return|return
 operator|(
-name|FALSE
+name|TRUE
 operator|)
 return|;
 block|}
@@ -135,7 +135,7 @@ endif|#
 directive|endif
 return|return
 operator|(
-name|TRUE
+name|FALSE
 operator|)
 return|;
 block|}

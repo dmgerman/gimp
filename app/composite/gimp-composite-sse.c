@@ -755,8 +755,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_divide_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
-name|gimp_composite_divide_rgba8_rgba8_rgba8_sse
+DECL|function|xxxgimp_composite_divide_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
+name|xxxgimp_composite_divide_rgba8_rgba8_rgba8_sse
 parameter_list|(
 name|GimpCompositeContext
 modifier|*

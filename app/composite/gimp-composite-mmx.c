@@ -784,8 +784,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_composite_divide_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
-name|gimp_composite_divide_rgba8_rgba8_rgba8_mmx
+DECL|function|xxxgimp_composite_divide_rgba8_rgba8_rgba8_mmx (GimpCompositeContext * _op)
+name|xxxgimp_composite_divide_rgba8_rgba8_rgba8_mmx
 parameter_list|(
 name|GimpCompositeContext
 modifier|*
@@ -798,9 +798,29 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
+name|printf
+argument_list|(
+literal|"A=%d B=%d %d  "
+argument_list|,
+name|op
+operator|.
+name|pixelformat_A
+argument_list|,
+name|op
+operator|.
+name|pixelformat_B
+argument_list|,
+name|GIMP_PIXELFORMAT_RGBA8
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
+argument_list|)
+expr_stmt|;
 asm|asm
 specifier|volatile
-asm|("movq    %0, %%mm0\n"                 "\tmovq    %1, %%mm7\n"                 :                 : "m" (*rgba8_alpha_mask), "m" (*rgba8_w1)                 : "%mm0", "%mm7");
+asm|("  movq    %0, %%mm0\n"                 "\tmovq    %1, %%mm7\n"                 :                 : "m" (*rgba8_alpha_mask), "m" (*rgba8_w1)                 : "%mm0", "%mm7");
 for|for
 control|(
 init|;
@@ -1740,9 +1760,9 @@ condition|)
 block|{
 asm|asm
 specifier|volatile
-asm|("  movd       %0,%%mm2\n"                   "\tmovd       %1,%%mm3\n"                   "\tmovd    %%mm3,%0\n"                   "\tmovd    %%mm2,%1\n"                   :
+asm|("  movd       %0,%%mm2\n"                     "\tmovd       %1,%%mm3\n"                     "\tmovd    %%mm3,%0\n"                     "\tmovd    %%mm2,%1\n"                     :
 comment|/* empty */
-asm|: "m" (*op.A), "m" (*op.B)                   : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|: "m" (*op.A), "m" (*op.B)                     : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 asm|asm("emms");
 block|}

@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a335f6e0108
+DECL|struct|__anon288d741d0108
 block|{
 DECL|member|announce_function
 name|gchar
@@ -1417,7 +1417,7 @@ name|gimp_composite_options
 operator|.
 name|bits
 operator|&
-name|GIMP_COMPOSITE_OPTION_INITIALISED
+name|GIMP_COMPOSITE_OPTION_NOEXTENSIONS
 operator|)
 condition|)
 block|{
@@ -1546,12 +1546,6 @@ name|g_printerr
 argument_list|(
 literal|" -vis"
 argument_list|)
-expr_stmt|;
-name|gimp_composite_options
-operator|.
-name|bits
-operator||=
-name|GIMP_COMPOSITE_OPTION_INITIALISED
 expr_stmt|;
 block|}
 name|g_printerr
