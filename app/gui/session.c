@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Session-managment stuff   Copyright (C) 1998 Sven Neumann<sven@gimp.org>     I include a short description here on what is done and what problems     are left:     Since everything saved in sessionrc changes often (with each session?)     the whole file is rewritten each time the gimp exits. I don't see any    use in implementing a more flexible scheme like it is used for gimprc.     Right now session-managment is limited to window geometry. Restoring     openend images is planned, but I'm still not sure how to deal with dirty    images.     There is a problem with the offset introduced by the window-manager adding    decorations to the windows. This is annoying and should be fixed somehow.    ( Update: I was promised that this will be fixed in gtk. )        Dialogs are now reopened if the gimp is called with the command-line-option    --restore-session or if the related entry is set in gimprc.    Probably there should alternatively be a list of dialogs in the preferences     that should always be opened on start-up.      Please point me into the right direction to make this work with Gnome-SM.  */
+comment|/* Session-managment stuff   Copyright (C) 1998 Sven Neumann<sven@gimp.org>     I include a short description here on what is done and what problems     are left:     Since everything saved in sessionrc changes often (with each session?)     the whole file is rewritten each time the gimp exits. I don't see any    use in implementing a more flexible scheme like it is used for gimprc.     Right now session-managment is limited to window geometry. Restoring     openend images is planned, but I'm still not sure how to deal with dirty    images.     Dialogs are now reopened if the gimp is called with the command-line-option    --restore-session or if the related entry is set in gimprc.    Probably there should alternatively be a list of dialogs in the preferences     that should always be opened on start-up.      Please point me into the right direction to make this work with Gnome-SM.  */
 end_comment
 
 begin_include
@@ -405,7 +405,7 @@ operator|==
 name|NULL
 condition|)
 return|return;
-name|gdk_window_get_origin
+name|gdk_window_get_root_origin
 argument_list|(
 name|window
 operator|->
@@ -438,14 +438,6 @@ name|info
 operator|->
 name|height
 argument_list|)
-expr_stmt|;
-comment|/* This is a very ugly hack to work against the offset       introduced by window decorations.      The problem should be handled in gtk ... */
-name|info
-operator|->
-name|y
-operator|+=
-operator|-
-literal|20
 expr_stmt|;
 if|if
 condition|(

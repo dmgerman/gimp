@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fa21f0108
+DECL|struct|__anon295924950108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -191,7 +191,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fa21f0208
+DECL|struct|__anon295924950208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fa21f0308
+DECL|struct|__anon295924950308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fa21f0408
+DECL|struct|__anon295924950408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -287,7 +287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fa21f0508
+DECL|struct|__anon295924950508
 block|{
 DECL|member|name
 name|gchar
@@ -315,7 +315,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2c2fa21f060a
+DECL|union|__anon29592495060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fa21f0708
+DECL|struct|__anon295924950708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -462,7 +462,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fa21f0808
+DECL|struct|__anon295924950808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -7334,7 +7334,7 @@ index|]
 operator|=
 name|gimp_gradient_select_widget
 argument_list|(
-literal|"Script-fu Pattern Selection"
+literal|"Script-Fu Gradient Selection"
 argument_list|,
 name|script
 operator|->
@@ -7371,7 +7371,7 @@ index|]
 operator|=
 name|gimp_brush_select_widget
 argument_list|(
-literal|"Script-fu brush Selection"
+literal|"Script-Fu Brush Selection"
 argument_list|,
 name|script
 operator|->
@@ -12087,7 +12087,7 @@ name|dialog
 operator|=
 name|gtk_file_selection_new
 argument_list|(
-literal|"Script-Fu File Selector"
+literal|"Script-Fu File Selection"
 argument_list|)
 expr_stmt|;
 name|fs
@@ -12397,7 +12397,7 @@ name|dialog
 operator|=
 name|gtk_font_selection_dialog_new
 argument_list|(
-literal|"Script-Fu Font Selector"
+literal|"Script-Fu Font Selection"
 argument_list|)
 expr_stmt|;
 name|fsd
