@@ -217,7 +217,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1561960103
+DECL|enum|__anon29556acb0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -1983,7 +1983,7 @@ argument_list|(
 name|RANDOM_SEED
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: Why creating an array of random values and shuffly it randomly    * afterwards???     */
+comment|/* FIXME: Why creating an array of random values and shuffle it randomly    * afterwards???     */
 for|for
 control|(
 name|i
@@ -2097,7 +2097,6 @@ name|j
 operator|+
 name|k
 expr_stmt|;
-comment|/* printf("tmp_sum: %d", tmp_sum); */
 if|if
 condition|(
 name|tmp_sum
@@ -2108,7 +2107,6 @@ name|tmp_sum
 operator|=
 literal|255
 expr_stmt|;
-comment|/* printf("  max: %d  \n", add_lut[j][k]); */
 name|add_lut
 index|[
 name|j
@@ -2121,15 +2119,6 @@ name|tmp_sum
 expr_stmt|;
 block|}
 block|}
-comment|/*   for (j = 0; j< 255; j++) */
-comment|/*     {    rows */
-comment|/*       for (k = 0; k< 255; k++) */
-comment|/* 	{   column */
-comment|/* 	  printf ("%d",add_lut[j][k]); */
-comment|/* 	  printf(" "); */
-comment|/* 	} */
-comment|/*       printf("\n"); */
-comment|/*     } */
 block|}
 end_function
 
@@ -4515,7 +4504,6 @@ name|length
 operator|--
 condition|)
 block|{
-comment|/*      for (b = 0; b< alpha; b++) 	{ 	  screen = 255 - INT_MULT((255 - src1[b]), (255 - src2[b]), tmp); 	  mult = INT_MULT(src1[b] ,src2[b], tmp); 	  dest[b] = INT_BLEND(screen , mult, src1[b], tmp); 	} 	*/
 for|for
 control|(
 name|b
@@ -4668,7 +4656,6 @@ name|alpha
 decl_stmt|,
 name|b
 decl_stmt|;
-comment|/* int sum; */
 name|alpha
 operator|=
 operator|(
@@ -4708,7 +4695,7 @@ name|b
 operator|++
 control|)
 block|{
-comment|/* sum = src1[b] + src2[b]; */
+comment|/* TODO: wouldn't it be better use a 1 dimensional lut ie. add_lut[src1+src2]; */
 name|dest
 index|[
 name|b
@@ -4732,10 +4719,6 @@ index|]
 operator|)
 index|]
 expr_stmt|;
-comment|/* dest[b] = MAX255 (sum); */
-comment|/* dest[b] = sum | ((sum&256) - ((sum&256)>> 8)); */
-comment|/* dest[b] = (sum> 255) ? 255 : sum; */
-comment|/* older, little slower */
 block|}
 if|if
 condition|(
@@ -19374,7 +19357,6 @@ operator|>
 name|orig_height
 condition|)
 block|{
-comment|/* new_y = floor((y - 0.5) * y_rat); */
 name|new_y
 operator|=
 name|floor
@@ -19444,7 +19426,6 @@ name|p2
 decl_stmt|,
 name|p3
 decl_stmt|;
-comment|/* double dy = ((y - 0.5) * y_rat) - new_y; */
 name|double
 name|dy
 init|=
@@ -21471,7 +21452,7 @@ name|gint16
 name|yradius
 parameter_list|)
 block|{
-comment|/*   Any bugs in this fuction are probably also in thin_region     Blame all bugs in this function on jaycox@earthlink.net */
+comment|/*   Any bugs in this fuction are probably also in thin_region     Blame all bugs in this function on jaycox@gimp.org */
 specifier|register
 name|gint32
 name|i
@@ -21753,6 +21734,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+comment|/* offset the max pointer by xradius so the range of the array      is [-xradius] to [src->w + xradius] */
 name|max
 operator|+=
 name|xradius
@@ -21806,6 +21788,7 @@ argument_list|,
 name|yradius
 argument_list|)
 expr_stmt|;
+comment|/* offset the circ pointer by xradius so the range of the array      is [-xradius] to [xradius] */
 name|circ
 operator|+=
 name|xradius
@@ -22382,6 +22365,7 @@ name|out
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* undo the offsets to the pointers so we can free the malloced memmory */
 name|circ
 operator|-=
 name|xradius
@@ -22460,7 +22444,7 @@ name|int
 name|edge_lock
 parameter_list|)
 block|{
-comment|/*   pretty much the same as fatten_region only different   blame all bugs in this function on jaycox@earthlink.net */
+comment|/*   pretty much the same as fatten_region only different   blame all bugs in this function on jaycox@gimp.org */
 comment|/* If edge_lock is true  we assume that pixels outside the region      we are passed are identical to the edge pixels.      If edge_lock is false, we assume that pixels outside the region are 0   */
 specifier|register
 name|gint32
@@ -22856,6 +22840,7 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+comment|/* offset the max pointer by xradius so the range of the array      is [-xradius] to [src->w + xradius] */
 name|max
 operator|+=
 name|xradius
@@ -22904,6 +22889,7 @@ argument_list|,
 name|yradius
 argument_list|)
 expr_stmt|;
+comment|/* offset the circ pointer by xradius so the range of the array      is [-xradius] to [xradius] */
 name|circ
 operator|+=
 name|xradius
@@ -24027,7 +24013,7 @@ name|gint16
 name|yradius
 parameter_list|)
 block|{
-comment|/*   This function has no bugs, but if you imagine some you can   blame them on jaycox@earthlink.net */
+comment|/*   This function has no bugs, but if you imagine some you can   blame them on jaycox@gimp.org */
 specifier|register
 name|gint32
 name|i
