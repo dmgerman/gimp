@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppixmap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpsizeentry.h"
 end_include
 
@@ -61,6 +55,18 @@ begin_include
 include|#
 directive|include
 file|"gimpunitmenu.h"
+end_include
+
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimppixmap.h"
 end_include
 
 begin_include
@@ -2668,7 +2674,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8175000108
+DECL|struct|__anon2ab0c65b0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

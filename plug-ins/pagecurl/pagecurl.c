@@ -33,11 +33,28 @@ directive|include
 file|<stdlib.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GIMP_DISABLE_DEPRECATED
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
 
 begin_include
 include|#
@@ -144,7 +161,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b895dd90108
+DECL|struct|__anon27b5f40d0108
 block|{
 DECL|member|do_curl_shade
 name|gint
