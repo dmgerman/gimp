@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8e5d1b0103
+DECL|enum|__anon295b1d240103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -490,7 +490,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_get_filename
+name|gimp_image_get_uri
 argument_list|(
 name|gimage
 argument_list|)

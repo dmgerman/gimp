@@ -298,7 +298,7 @@ name|proc
 decl_stmt|;
 name|file_proc
 operator|=
-name|file_proc_find
+name|file_utils_find_proc
 argument_list|(
 name|gimp
 operator|->
@@ -383,7 +383,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
-literal|"The name entered"
+literal|"The name as entered by the user"
 block|}
 block|}
 decl_stmt|;
@@ -483,7 +483,7 @@ name|i
 decl_stmt|;
 name|file_proc
 operator|=
-name|file_proc_find
+name|file_utils_find_proc
 argument_list|(
 name|gimp
 operator|->
@@ -694,7 +694,7 @@ name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
-literal|"The name of the file to save the image in"
+literal|"The name as entered by the user"
 block|}
 block|}
 decl_stmt|;

@@ -166,10 +166,10 @@ DECL|struct|_OverwriteData
 struct|struct
 name|_OverwriteData
 block|{
-DECL|member|full_filename
+DECL|member|uri
 name|gchar
 modifier|*
-name|full_filename
+name|uri
 decl_stmt|;
 DECL|member|raw_filename
 name|gchar
@@ -198,7 +198,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|,
 specifier|const
 name|gchar
@@ -301,10 +301,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|set_filename
+DECL|variable|set_uri
 specifier|static
 name|gboolean
-name|set_filename
+name|set_uri
 init|=
 name|TRUE
 decl_stmt|;
@@ -579,7 +579,13 @@ block|{
 specifier|const
 name|gchar
 modifier|*
+name|uri
+decl_stmt|;
+name|gchar
+modifier|*
 name|filename
+init|=
+name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -602,11 +608,11 @@ name|the_gimage
 operator|=
 name|gimage
 expr_stmt|;
-name|set_filename
+name|set_uri
 operator|=
 name|TRUE
 expr_stmt|;
-name|filename
+name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
@@ -614,6 +620,21 @@ name|GIMP_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|uri
+condition|)
+name|filename
+operator|=
+name|g_filename_from_uri
+argument_list|(
+name|uri
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -708,7 +729,13 @@ block|{
 specifier|const
 name|gchar
 modifier|*
+name|uri
+decl_stmt|;
+name|gchar
+modifier|*
 name|filename
+init|=
+name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -731,11 +758,11 @@ name|the_gimage
 operator|=
 name|gimage
 expr_stmt|;
-name|set_filename
+name|set_uri
 operator|=
 name|FALSE
 expr_stmt|;
-name|filename
+name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
@@ -743,6 +770,21 @@ name|GIMP_OBJECT
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|uri
+condition|)
+name|filename
+operator|=
+name|g_filename_from_uri
+argument_list|(
+name|uri
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1253,6 +1295,10 @@ name|raw_filename
 decl_stmt|;
 name|gchar
 modifier|*
+name|uri
+decl_stmt|;
+name|gchar
+modifier|*
 name|dot
 decl_stmt|;
 name|gint
@@ -1296,6 +1342,17 @@ argument_list|(
 name|filename
 operator|&&
 name|raw_filename
+argument_list|)
+expr_stmt|;
+name|uri
+operator|=
+name|g_filename_to_uri
+argument_list|(
+name|filename
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 for|for
@@ -1598,7 +1655,7 @@ argument_list|)
 expr_stmt|;
 name|file_overwrite
 argument_list|(
-name|filename
+name|uri
 argument_list|,
 name|raw_filename
 argument_list|)
@@ -1626,7 +1683,7 @@ name|file_save
 argument_list|(
 name|the_gimage
 argument_list|,
-name|filename
+name|uri
 argument_list|,
 name|raw_filename
 argument_list|,
@@ -1634,7 +1691,7 @@ name|save_file_proc
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
-name|set_filename
+name|set_uri
 argument_list|)
 expr_stmt|;
 if|if
@@ -1656,7 +1713,7 @@ argument_list|(
 literal|"Saving %s failed."
 argument_list|)
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 block|}
@@ -1688,13 +1745,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_overwrite (const gchar * filename,const gchar * raw_filename)
+DECL|function|file_overwrite (const gchar * uri,const gchar * raw_filename)
 name|file_overwrite
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|,
 specifier|const
 name|gchar
@@ -1725,11 +1782,11 @@ argument_list|)
 expr_stmt|;
 name|overwrite_data
 operator|->
-name|full_filename
+name|uri
 operator|=
 name|g_strdup
 argument_list|(
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 name|overwrite_data
@@ -1751,7 +1808,7 @@ literal|"File '%s' exists.\n"
 literal|"Overwrite it?"
 argument_list|)
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 name|query_box
@@ -1842,7 +1899,7 @@ name|the_gimage
 argument_list|,
 name|overwrite_data
 operator|->
-name|full_filename
+name|uri
 argument_list|,
 name|overwrite_data
 operator|->
@@ -1852,7 +1909,7 @@ name|save_file_proc
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
-name|set_filename
+name|set_uri
 argument_list|)
 expr_stmt|;
 if|if
@@ -1876,7 +1933,7 @@ argument_list|)
 argument_list|,
 name|overwrite_data
 operator|->
-name|full_filename
+name|uri
 argument_list|)
 expr_stmt|;
 block|}
@@ -1907,7 +1964,7 @@ name|g_free
 argument_list|(
 name|overwrite_data
 operator|->
-name|full_filename
+name|uri
 argument_list|)
 expr_stmt|;
 name|g_free

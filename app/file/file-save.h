@@ -27,7 +27,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|,
 specifier|const
 name|gchar
@@ -42,7 +42,7 @@ name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gboolean
-name|set_filename
+name|set_uri
 parameter_list|)
 function_decl|;
 end_function_decl

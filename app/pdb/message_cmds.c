@@ -166,11 +166,9 @@ name|success
 condition|)
 name|g_message
 argument_list|(
+literal|"%s"
+argument_list|,
 name|message
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return

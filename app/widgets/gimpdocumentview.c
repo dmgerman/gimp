@@ -820,7 +820,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 decl_stmt|;
 name|gdisp
 operator|=
@@ -838,7 +838,7 @@ operator|*
 operator|)
 name|user_data
 expr_stmt|;
-name|filename
+name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
@@ -852,7 +852,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|filename
+name|uri
 operator|&&
 operator|!
 name|strcmp
@@ -861,7 +861,7 @@ name|closure
 operator|->
 name|name
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 condition|)
 block|{

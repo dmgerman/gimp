@@ -213,7 +213,7 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (GimpImage * gimage,const gchar * filename,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_filename)
+DECL|function|file_save (GimpImage * gimage,const gchar * uri,const gchar * raw_filename,PlugInProcDef * file_proc,GimpRunMode run_mode,gboolean set_uri)
 name|file_save
 parameter_list|(
 name|GimpImage
@@ -223,7 +223,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 parameter_list|,
 specifier|const
 name|gchar
@@ -238,7 +238,7 @@ name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gboolean
-name|set_filename
+name|set_uri
 parameter_list|)
 block|{
 name|ProcRecord
@@ -259,9 +259,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|struct
-name|stat
-name|statbuf
+name|gchar
+modifier|*
+name|filename
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -315,7 +315,7 @@ name|file_proc
 condition|)
 name|file_proc
 operator|=
-name|file_proc_find
+name|file_utils_find_proc
 argument_list|(
 name|gimage
 operator|->
@@ -340,7 +340,7 @@ literal|"Save failed.\n"
 literal|"%s: Unknown file type."
 argument_list|)
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 return|return
@@ -349,6 +349,26 @@ return|;
 comment|/* inhibits error messages by caller */
 block|}
 block|}
+name|filename
+operator|=
+name|g_filename_from_uri
+argument_list|(
+name|uri
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|filename
+condition|)
+block|{
+name|struct
+name|stat
+name|statbuf
+decl_stmt|;
 comment|/* check if we are saving to a file */
 if|if
 condition|(
@@ -383,7 +403,7 @@ literal|"Save failed.\n"
 literal|"%s is not a regular file."
 argument_list|)
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 return|return
@@ -411,7 +431,7 @@ literal|"Save failed.\n"
 literal|"%s: %s."
 argument_list|)
 argument_list|,
-name|filename
+name|uri
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -423,6 +443,7 @@ return|return
 name|GIMP_PDB_CANCEL
 return|;
 comment|/* inhibits error messages by caller */
+block|}
 block|}
 block|}
 comment|/* ref the image, so it can't get deleted during save */
@@ -537,10 +558,16 @@ name|value
 operator|.
 name|pdb_pointer
 operator|=
-operator|(
+call|(
 name|gpointer
-operator|)
+call|)
+argument_list|(
 name|filename
+condition|?
+name|filename
+else|:
+name|uri
+argument_list|)
 expr_stmt|;
 name|args
 index|[
@@ -569,6 +596,15 @@ operator|->
 name|name
 argument_list|,
 name|args
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|filename
+condition|)
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|status
@@ -601,7 +637,7 @@ name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 comment|/*  use the same plug-in for this image next time  */
@@ -642,18 +678,15 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|set_filename
+name|set_uri
 condition|)
 block|{
 comment|/*  set the image title  */
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
+name|gimp_image_set_uri
 argument_list|(
 name|gimage
-argument_list|)
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 block|}

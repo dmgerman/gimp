@@ -384,7 +384,7 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
-comment|/* This string needs to be fixed. Mitch is supposed to do it.  Needs a : added at the end followed by the error.  Also something about the GIMP_OBJECT  needs to be changed. --bex */
+comment|/* This string needs to be fixed. Mitch is supposed to do            * it.  Needs a : added at the end followed by the error.            * Also something about the GIMP_OBJECT needs to be            * changed. --bex            */
 name|g_message
 argument_list|(
 name|_
@@ -476,14 +476,13 @@ operator|!=
 literal|0
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 decl_stmt|;
-name|filename
+name|uri
 operator|=
-name|g_strdup
-argument_list|(
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
@@ -493,12 +492,11 @@ operator|->
 name|gimage
 argument_list|)
 argument_list|)
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|!
-name|filename
+name|uri
 condition|)
 block|{
 name|file_save_as_cmd_callback
@@ -511,20 +509,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gchar
-modifier|*
-name|basename
-decl_stmt|;
-name|gint
+name|GimpPDBStatusType
 name|status
 decl_stmt|;
-name|basename
-operator|=
-name|g_path_get_basename
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 name|status
 operator|=
 name|file_save
@@ -533,20 +520,15 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
-name|filename
+name|uri
 argument_list|,
-name|basename
+name|uri
 argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_RUN_WITH_LAST_VALS
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|basename
 argument_list|)
 expr_stmt|;
 if|if
@@ -568,16 +550,11 @@ argument_list|(
 literal|"Saving '%s' failed."
 argument_list|)
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -674,7 +651,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 decl_stmt|;
 name|return_if_no_display
 argument_list|(
@@ -683,7 +660,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|filename
+name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
@@ -712,7 +689,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|filename
+name|uri
 condition|)
 block|{
 name|g_message
@@ -753,7 +730,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 name|text
@@ -770,7 +747,7 @@ argument_list|)
 argument_list|,
 name|basename
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -960,12 +937,12 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|filename
+name|uri
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
-name|filename
+name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
@@ -983,9 +960,9 @@ name|old_gimage
 operator|->
 name|gimp
 argument_list|,
-name|filename
+name|uri
 argument_list|,
-name|filename
+name|uri
 argument_list|,
 name|_
 argument_list|(
@@ -1044,7 +1021,7 @@ argument_list|(
 literal|"Reverting '%s' failed."
 argument_list|)
 argument_list|,
-name|filename
+name|uri
 argument_list|)
 expr_stmt|;
 block|}

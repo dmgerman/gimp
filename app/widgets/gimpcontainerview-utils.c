@@ -831,7 +831,7 @@ name|basename
 operator|=
 name|g_path_get_basename
 argument_list|(
-name|gimp_image_get_filename
+name|gimp_image_get_uri
 argument_list|(
 name|gimage
 argument_list|)
@@ -865,7 +865,7 @@ name|tooltip
 operator|=
 name|g_strdup
 argument_list|(
-name|gimp_image_get_filename
+name|gimp_image_get_uri
 argument_list|(
 name|gimage
 argument_list|)

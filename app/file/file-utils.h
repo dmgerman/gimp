@@ -23,9 +23,31 @@ file|<stdio.h>
 end_include
 
 begin_function_decl
+name|gchar
+modifier|*
+name|file_utils_filename_to_uri
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|PlugInProcDef
 modifier|*
-name|file_proc_find
+name|file_utils_find_proc
 parameter_list|(
 name|GSList
 modifier|*
@@ -40,30 +62,8 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Return values are 0: no match, 1: magic match, 2: size match */
+comment|/* .xvpics thumbnail stuff  */
 end_comment
-
-begin_function_decl
-name|gint
-name|file_check_magic_list
-parameter_list|(
-name|GSList
-modifier|*
-name|magics_list
-parameter_list|,
-name|gint
-name|headsize
-parameter_list|,
-name|guchar
-modifier|*
-name|head
-parameter_list|,
-name|FILE
-modifier|*
-name|ifp
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|TempBuf

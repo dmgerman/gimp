@@ -14,7 +14,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_file_load:  * @run_mode: The run mode.  * @filename: The name of the file to load.  * @raw_filename: The name entered.  *  * Loads a file by extension.  *  * This procedure invokes the correct file load handler according to  * the file's extension and/or prefix. The name of the file to load is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types http://www.xcf/~gimp/ he wants to  * fetch a URL, and the full pathname will not look like a URL.  *  * Returns: The output image.  */
+comment|/**  * gimp_file_load:  * @run_mode: The run mode.  * @filename: The name of the file to load.  * @raw_filename: The name as entered by the user.  *  * Loads a file by extension.  *  * This procedure invokes the correct file load handler according to  * the file's extension and/or prefix. The name of the file to load is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types http://www.xcf/~gimp/ he wants to  * fetch a URL, and the full pathname will not look like a URL.  *  * Returns: The output image.  */
 end_comment
 
 begin_function
@@ -109,7 +109,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image_ID: Input image.  * @drawable_ID: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name of the file to save the image in.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types http://www.xcf/~gimp/ she wants to  * fetch a URL, and the full pathname will not look like a URL.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image_ID: Input image.  * @drawable_ID: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name as entered by the user.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types http://www.xcf/~gimp/ she wants to  * fetch a URL, and the full pathname will not look like a URL.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
