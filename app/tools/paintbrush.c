@@ -2234,7 +2234,12 @@ operator|=
 name|INCREMENTAL
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+operator|!
+name|gradient_length
+condition|)
 block|{
 name|gimage_get_foreground
 argument_list|(
