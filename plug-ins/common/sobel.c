@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289230560108
+DECL|struct|__anon295aa2030108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289230560208
+DECL|struct|__anon295aa2030208
 block|{
 DECL|member|run
 name|gint
@@ -118,18 +118,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -198,21 +198,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|sobel_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|sobel_prepare_row
 parameter_list|(
 name|GPixelRgn
@@ -223,13 +208,13 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 function_decl|;
@@ -243,16 +228,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -269,9 +254,9 @@ block|,
 comment|/*  horizontal sobel  */
 name|TRUE
 block|,
-comment|/*  vertical sobel  */
+comment|/*  vertical sobel    */
 name|TRUE
-comment|/*  keep sign  */
+comment|/*  keep sign         */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -356,17 +341,10 @@ literal|"keep_sign"
 block|,
 literal|"Keep sign of result (one direction only)"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -382,22 +360,21 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sobel"
 argument_list|,
 literal|"Edge Detection with Sobel Operation"
 argument_list|,
-literal|"This plugin calculates the gradient with a sobel operator. The user can specify which direction to use. When both directions are used, the result is the RMS of the two gradients; if only one direction is used, the result either the absolut value of the gradient, or 127 + gradient (if the 'keep sign' switch is on). This way, information about the direction of the gradient is preserved. Resulting images are not autoscaled."
+literal|"This plugin calculates the gradient with a sobel "
+literal|"operator. The user can specify which direction to "
+literal|"use. When both directions are used, the result is "
+literal|"the RMS of the two gradients; if only one direction "
+literal|"is used, the result either the absolut value of the "
+literal|"gradient, or 127 + gradient (if the 'keep sign' "
+literal|"switch is on). This way, information about the "
+literal|"direction of the gradient is preserved. Resulting "
+literal|"images are not autoscaled."
 argument_list|,
 literal|"Thorsten Schnier"
 argument_list|,
@@ -416,11 +393,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -739,7 +716,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* gimp_message ("sobel: cannot operate on indexed color images"); */
+comment|/* g_message ("sobel: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
@@ -789,51 +766,11 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"sobel"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -974,7 +911,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1029,10 +966,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|sobel_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|bvals
@@ -1092,10 +1029,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|sobel_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|bvals
@@ -1155,10 +1092,10 @@ argument_list|)
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
-name|sobel_toggle_update
+name|GTK_SIGNAL_FUNC
+argument_list|(
+name|gimp_toggle_button_update
+argument_list|)
 argument_list|,
 operator|&
 name|bvals
@@ -1215,7 +1152,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|sobel_prepare_row (GPixelRgn * pixel_rgn,guchar * data,int x,int y,int w)
+DECL|function|sobel_prepare_row (GPixelRgn * pixel_rgn,guchar * data,gint x,gint y,gint w)
 name|sobel_prepare_row
 parameter_list|(
 name|GPixelRgn
@@ -1226,17 +1163,17 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 block|{
-name|int
+name|gint
 name|b
 decl_stmt|;
 if|if
@@ -1542,12 +1479,10 @@ expr_stmt|;
 comment|/*  allocate row buffers  */
 name|prev_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -1561,12 +1496,10 @@ argument_list|)
 expr_stmt|;
 name|cur_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -1580,12 +1513,10 @@ argument_list|)
 expr_stmt|;
 name|next_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -1599,12 +1530,10 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -2109,22 +2038,22 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|prev_row
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|cur_row
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|next_row
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|dest
 argument_list|)
@@ -2163,55 +2092,6 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|sobel_toggle_update (GtkWidget * widget,gpointer data)
-name|sobel_toggle_update
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|int
-modifier|*
-name|toggle_val
-decl_stmt|;
-name|toggle_val
-operator|=
-operator|(
-name|int
-operator|*
-operator|)
-name|data
-expr_stmt|;
-if|if
-condition|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|active
-condition|)
-operator|*
-name|toggle_val
-operator|=
-name|TRUE
-expr_stmt|;
-else|else
-operator|*
-name|toggle_val
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 end_function

@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5ce200108
+DECL|struct|__anon2c806ef40108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5ce200208
+DECL|struct|__anon2c806ef40208
 block|{
 DECL|member|run
 name|gint
@@ -373,7 +373,7 @@ literal|"orientation"
 block|,
 literal|"vertical, horizontal orientation"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -392,9 +392,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_shift"
@@ -1166,7 +1163,6 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
-comment|/* for */
 for|for
 control|(
 name|k
@@ -1184,7 +1180,6 @@ name|destline
 operator|++
 expr_stmt|;
 block|}
-comment|/* for */
 name|progress
 operator|+=
 name|dest_rgn
@@ -1360,7 +1355,6 @@ name|k
 index|]
 expr_stmt|;
 block|}
-comment|/* for */
 name|destline
 operator|+=
 name|dest_rgn
@@ -1368,7 +1362,6 @@ operator|.
 name|rowstride
 expr_stmt|;
 block|}
-comment|/* for */
 name|progress
 operator|+=
 name|dest_rgn
@@ -1394,7 +1387,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* for  */
 if|if
 condition|(
 name|tile
@@ -1447,10 +1439,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* shift */
-end_comment
-
 begin_function
 specifier|static
 name|gint
@@ -1484,51 +1472,11 @@ name|GtkObject
 modifier|*
 name|amount_data
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"shift"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

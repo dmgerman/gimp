@@ -14,6 +14,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdio.h>
 end_include
 
@@ -26,13 +32,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -60,18 +60,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -122,35 +122,11 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
-name|PLUG_IN_INFO
-init|=
-block|{
-name|NULL
-block|,
-comment|/* init_proc */
-name|NULL
-block|,
-comment|/* quit_proc */
-name|query
-block|,
-comment|/* query_proc */
-name|run
-block|,
-comment|/* run_proc */
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_macro
-name|MAIN
-argument_list|()
-end_macro
-
-begin_decl_stmt
-name|unsigned
-name|char
+DECL|variable|bgred
+DECL|variable|bggreen
+DECL|variable|bgblue
+specifier|static
+name|guchar
 name|bgred
 decl_stmt|,
 name|bggreen
@@ -159,12 +135,41 @@ name|bgblue
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|PLUG_IN_INFO
+name|GPlugInInfo
+name|PLUG_IN_INFO
+init|=
+block|{
+name|NULL
+block|,
+comment|/* init_proc  */
+name|NULL
+block|,
+comment|/* quit_proc  */
+name|query
+block|,
+comment|/* query_proc */
+name|run
+block|,
+comment|/* run_proc   */
+block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_macro
+DECL|function|MAIN ()
+name|MAIN
+argument_list|()
+end_macro
+
 begin_function
 specifier|static
 name|void
-DECL|function|query ()
 name|query
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GParamDef
@@ -195,17 +200,10 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -221,22 +219,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_semiflatten"
 argument_list|,
-literal|"Flatten pixels in an RGBA image that aren't completely transparent against the current GIMP background color"
+literal|"Flatten pixels in an RGBA image that aren't "
+literal|"completely transparent against the current GIMP "
+literal|"background color"
 argument_list|,
-literal|"This plugin flattens pixels in an RGBA image that aren't completely transparent against the current GIMP background color"
+literal|"This plugin flattens pixels in an RGBA image that "
+literal|"aren't completely transparent against the current "
+literal|"GIMP background color"
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
@@ -255,11 +248,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -268,21 +261,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -769,12 +762,10 @@ expr_stmt|;
 comment|/*  allocate row buffers  */
 name|src_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-
@@ -786,12 +777,10 @@ argument_list|)
 expr_stmt|;
 name|dest_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|x2
 operator|-

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ok_callback()        - Start the filter...  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   See ChangeLog  */
+comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                    - Main entry - just call gimp_main()...  *   query()                   - Respond to a plug-in query...  *   run()                     - Run the filter...  *   sharpen()                 - Sharpen an image using a median filter.  *   sharpen_dialog()          - Popup a dialog window for the filter box size...  *   preview_init()            - Initialize the preview window...  *   preview_scroll_callback() - Update the preview when a scrollbar is moved.  *   preview_update()          - Update the preview window.  *   preview_exit()            - Free all memory used by the preview window...  *   dialog_iscale_update()    - Update the value field using the scale.  *   dialog_ok_callback()      - Start the filter...  *   gray_filter()             - Sharpen grayscale pixels.  *   graya_filter()            - Sharpen grayscale+alpha pixels.  *   rgb_filter()              - Sharpen RGB pixels.  *   rgba_filter()             - Sharpen RGBA pixels.  *  * Revision History:  *  *   See ChangeLog  */
 end_comment
 
 begin_include
@@ -399,6 +399,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|preview
+specifier|static
 name|GtkWidget
 modifier|*
 name|preview
@@ -412,27 +413,73 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_width
-name|int
+specifier|static
+name|gint
 name|preview_width
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_width
 comment|/* Width of preview widget */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_height
+specifier|static
+name|gint
 name|preview_height
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_height
 comment|/* Height of preview widget */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_x1
+specifier|static
+name|gint
 name|preview_x1
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_x1
 comment|/* Upper-left X of preview */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_y1
+specifier|static
+name|gint
 name|preview_y1
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_y1
 comment|/* Upper-left Y of preview */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_x2
+specifier|static
+name|gint
 name|preview_x2
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_x2
 comment|/* Lower-right X of preview */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_y2
+specifier|static
+name|gint
 name|preview_y2
 decl_stmt|;
 end_decl_stmt
@@ -444,6 +491,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_src
+specifier|static
 name|guchar
 modifier|*
 name|preview_src
@@ -457,6 +505,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_neg
+specifier|static
 name|intneg
 modifier|*
 name|preview_neg
@@ -470,12 +519,22 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_dst
+specifier|static
 name|guchar
 modifier|*
 name|preview_dst
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_dst
 comment|/* Destination pixel image */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_image
+specifier|static
+name|guchar
 modifier|*
 name|preview_image
 decl_stmt|;
@@ -488,12 +547,22 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|hscroll_data
+specifier|static
 name|GtkObject
 modifier|*
 name|hscroll_data
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|hscroll_data
 comment|/* Horizontal scrollbar data */
+end_comment
+
+begin_decl_stmt
 DECL|variable|vscroll_data
+specifier|static
+name|GtkObject
 modifier|*
 name|vscroll_data
 decl_stmt|;
@@ -506,6 +575,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|drawable
+specifier|static
 name|GDrawable
 modifier|*
 name|drawable
@@ -521,28 +591,58 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|sel_x1
-name|int
+specifier|static
+name|gint
 name|sel_x1
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|sel_x1
 comment|/* Selection bounds */
+end_comment
+
+begin_decl_stmt
 DECL|variable|sel_y1
+specifier|static
+name|gint
 name|sel_y1
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|sel_x2
+specifier|static
+name|gint
 name|sel_x2
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|sel_y2
+specifier|static
+name|gint
 name|sel_y2
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|sel_width
-name|int
+specifier|static
+name|gint
 name|sel_width
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|sel_width
 comment|/* Selection width */
+end_comment
+
+begin_decl_stmt
 DECL|variable|sel_height
+specifier|static
+name|gint
 name|sel_height
 decl_stmt|;
 end_decl_stmt
@@ -554,7 +654,8 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|img_bpp
-name|int
+specifier|static
+name|gint
 name|img_bpp
 decl_stmt|;
 end_decl_stmt
@@ -566,7 +667,8 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|sharpen_percent
-name|int
+specifier|static
+name|gint
 name|sharpen_percent
 init|=
 literal|10
@@ -580,6 +682,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|run_filter
+specifier|static
 name|gint
 name|run_filter
 init|=
@@ -594,6 +697,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|neg_lut
+specifier|static
 name|intneg
 name|neg_lut
 index|[
@@ -609,6 +713,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|pos_lut
+specifier|static
 name|intpos
 name|pos_lut
 index|[
@@ -692,14 +797,11 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"Sharpen filter, typically used to \'sharpen\' a photographic image."
+literal|"Sharpen filter, typically used to 'sharpen' a photographic image."
 argument_list|,
 literal|"This plug-in selectively performs a convolution filter on an image."
 argument_list|,
@@ -956,7 +1058,7 @@ name|sharpen_percent
 argument_list|)
 expr_stmt|;
 break|break;
-default|default :
+default|default:
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
@@ -1210,7 +1312,7 @@ modifier|*
 name|neg_ptr
 decl_stmt|;
 comment|/* Current negative coefficient */
-name|int
+name|gint
 name|i
 decl_stmt|,
 comment|/* Looping vars */
@@ -1332,14 +1434,11 @@ index|[
 name|row
 index|]
 operator|=
-name|g_malloc
-argument_list|(
-name|width
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
-argument_list|)
+argument_list|,
+name|width
 argument_list|)
 expr_stmt|;
 name|neg_rows
@@ -1347,28 +1446,22 @@ index|[
 name|row
 index|]
 operator|=
-name|g_malloc
-argument_list|(
-name|width
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|intneg
-argument_list|)
+argument_list|,
+name|width
 argument_list|)
 expr_stmt|;
 block|}
 empty_stmt|;
 name|dst_row
 operator|=
-name|g_malloc
-argument_list|(
-name|width
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|guchar
-argument_list|)
+argument_list|,
+name|width
 argument_list|)
 expr_stmt|;
 comment|/*    * Pre-load the first row for the filter...    */
@@ -1748,7 +1841,7 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|y
@@ -1757,7 +1850,7 @@ name|sel_y1
 argument_list|)
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|sel_height
 argument_list|)
@@ -1880,117 +1973,15 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
 name|gchar
 modifier|*
 name|title
 decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"sharpen"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_install_cmap
-argument_list|(
-name|gimp_install_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|color_cube
-operator|=
-name|gimp_color_cube
-argument_list|()
-expr_stmt|;
-name|gtk_preview_set_color_cube
-argument_list|(
-name|color_cube
-index|[
-literal|0
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|1
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|2
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|3
-index|]
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gtk_preview_get_cmap
-argument_list|()
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|title
@@ -2455,10 +2446,10 @@ name|vscroll_data
 argument_list|,
 literal|"value_changed"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|GTK_SIGNAL_FUNC
+argument_list|(
 name|preview_scroll_callback
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2694,7 +2685,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|int
+name|gint
 name|width
 decl_stmt|;
 comment|/* Byte width of the image */
@@ -2710,60 +2701,48 @@ name|img_bpp
 expr_stmt|;
 name|preview_src
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|preview_height
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|preview_neg
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|intneg
+argument_list|,
 name|width
 operator|*
 name|preview_height
-operator|*
-sizeof|sizeof
-argument_list|(
-name|intneg
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|preview_dst
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|preview_height
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|preview_image
 operator|=
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|preview_width
 operator|*
 name|preview_height
 operator|*
 literal|3
-operator|*
-sizeof|sizeof
-argument_list|(
-name|guchar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|preview_x1
@@ -2883,7 +2862,7 @@ name|guchar
 name|check
 decl_stmt|;
 comment|/* Current check mark pixel */
-name|int
+name|gint
 name|i
 decl_stmt|,
 comment|/* Looping var */
@@ -2923,7 +2902,7 @@ name|filter
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*   * Setup for filter...   */
+comment|/*    * Setup for filter...    */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -2950,7 +2929,7 @@ name|preview_width
 operator|*
 name|img_bpp
 expr_stmt|;
-comment|/*   * Load the preview area...   */
+comment|/*    * Load the preview area...    */
 name|gimp_pixel_rgn_get_rect
 argument_list|(
 operator|&
@@ -3001,7 +2980,7 @@ name|src_ptr
 operator|++
 index|]
 expr_stmt|;
-comment|/*   * Select the filter...   */
+comment|/*    * Select the filter...    */
 switch|switch
 condition|(
 name|img_bpp
@@ -3041,7 +3020,7 @@ expr_stmt|;
 break|break;
 block|}
 empty_stmt|;
-comment|/*   * Sharpen...   */
+comment|/*    * Sharpen...    */
 name|memcpy
 argument_list|(
 name|preview_dst
@@ -3145,7 +3124,7 @@ operator|+
 name|width
 argument_list|)
 expr_stmt|;
-comment|/*   * Fill the preview image buffer...   */
+comment|/*    * Fill the preview image buffer...    */
 switch|switch
 condition|(
 name|img_bpp
@@ -3611,7 +3590,7 @@ empty_stmt|;
 break|break;
 block|}
 empty_stmt|;
-comment|/*   * Draw the preview image on the screen...   */
+comment|/*    * Draw the preview image on the screen...    */
 for|for
 control|(
 name|y
@@ -3825,6 +3804,7 @@ condition|)
 block|{
 name|pixel
 operator|=
+operator|(
 name|pos_lut
 index|[
 operator|*
@@ -3874,6 +3854,7 @@ name|neg2
 index|[
 literal|1
 index|]
+operator|)
 expr_stmt|;
 name|pixel
 operator|=
@@ -4015,6 +3996,7 @@ condition|)
 block|{
 name|pixel
 operator|=
+operator|(
 name|pos_lut
 index|[
 operator|*
@@ -4064,6 +4046,7 @@ name|neg2
 index|[
 literal|2
 index|]
+operator|)
 expr_stmt|;
 name|pixel
 operator|=
@@ -4232,6 +4215,7 @@ condition|)
 block|{
 name|pixel
 operator|=
+operator|(
 name|pos_lut
 index|[
 operator|*
@@ -4281,6 +4265,7 @@ name|neg2
 index|[
 literal|3
 index|]
+operator|)
 expr_stmt|;
 name|pixel
 operator|=
@@ -4326,6 +4311,7 @@ literal|255
 expr_stmt|;
 name|pixel
 operator|=
+operator|(
 name|pos_lut
 index|[
 operator|*
@@ -4375,6 +4361,7 @@ name|neg2
 index|[
 literal|4
 index|]
+operator|)
 expr_stmt|;
 name|pixel
 operator|=
@@ -4420,6 +4407,7 @@ literal|255
 expr_stmt|;
 name|pixel
 operator|=
+operator|(
 name|pos_lut
 index|[
 operator|*
@@ -4469,6 +4457,7 @@ name|neg2
 index|[
 literal|5
 index|]
+operator|)
 expr_stmt|;
 name|pixel
 operator|=
@@ -4645,6 +4634,7 @@ condition|)
 block|{
 name|pixel
 operator|=
+operator|(
 name|pos_lut
 index|[
 operator|*
@@ -4694,6 +4684,7 @@ name|neg2
 index|[
 literal|4
 index|]
+operator|)
 expr_stmt|;
 name|pixel
 operator|=
@@ -4739,6 +4730,7 @@ literal|255
 expr_stmt|;
 name|pixel
 operator|=
+operator|(
 name|pos_lut
 index|[
 operator|*
@@ -4788,6 +4780,7 @@ name|neg2
 index|[
 literal|5
 index|]
+operator|)
 expr_stmt|;
 name|pixel
 operator|=
@@ -4833,6 +4826,7 @@ literal|255
 expr_stmt|;
 name|pixel
 operator|=
+operator|(
 name|pos_lut
 index|[
 operator|*
@@ -4882,6 +4876,7 @@ name|neg2
 index|[
 literal|6
 index|]
+operator|)
 expr_stmt|;
 name|pixel
 operator|=

@@ -90,38 +90,6 @@ name|PLUG_IN_NAME
 value|"extension_screenshot"
 end_define
 
-begin_define
-DECL|macro|NUMBER_IN_ARGS
-define|#
-directive|define
-name|NUMBER_IN_ARGS
-value|3
-end_define
-
-begin_define
-DECL|macro|IN_ARGS
-define|#
-directive|define
-name|IN_ARGS
-value|{ PARAM_INT32,    "run_mode",  "Interactive, non-interactive" },\                 { PARAM_INT32,    "root",      "Root window { TRUE, FALSE }" },\                 { PARAM_STRING,   "window_id", "Window id" }
-end_define
-
-begin_define
-DECL|macro|NUMBER_OUT_ARGS
-define|#
-directive|define
-name|NUMBER_OUT_ARGS
-value|1
-end_define
-
-begin_define
-DECL|macro|OUT_ARGS
-define|#
-directive|define
-name|OUT_ARGS
-value|{ PARAM_IMAGE,   "image",     "Output image" }
-end_define
-
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -142,9 +110,9 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|struct|__anon2c65894e0108
 typedef|typedef
 struct|struct
+DECL|struct|__anon2b83eaed0108
 block|{
 DECL|member|root
 name|gint
@@ -170,9 +138,9 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c65894e0208
 typedef|typedef
 struct|struct
+DECL|struct|__anon2b83eaed0208
 block|{
 DECL|member|decor_button
 name|GtkWidget
@@ -431,14 +399,47 @@ name|args
 index|[]
 init|=
 block|{
-name|IN_ARGS
+block|{
+name|PARAM_INT32
+block|,
+literal|"run_mode"
+block|,
+literal|"Interactive, non-interactive"
+block|}
+block|,
+block|{
+name|PARAM_INT32
+block|,
+literal|"root"
+block|,
+literal|"Root window { TRUE, FALSE }"
+block|}
+block|,
+block|{
+name|PARAM_STRING
+block|,
+literal|"window_id"
+block|,
+literal|"Window id"
+block|}
 block|}
 decl_stmt|;
 specifier|static
 name|gint
 name|nargs
 init|=
-name|NUMBER_IN_ARGS
+sizeof|sizeof
+argument_list|(
+name|args
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -446,32 +447,46 @@ name|return_vals
 index|[]
 init|=
 block|{
-name|OUT_ARGS
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Output image"
+block|}
 block|}
 decl_stmt|;
 specifier|static
 name|gint
 name|nreturn_vals
 init|=
-name|NUMBER_OUT_ARGS
+sizeof|sizeof
+argument_list|(
+name|return_vals
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|return_vals
+index|[
+literal|0
+index|]
+argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
-comment|/* the actual installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 literal|"Creates a screenshot of a single window or the whole screen"
 argument_list|,
-literal|"This extension serves as a simple frontend to the X-window "
-literal|"utility xwd and the xwd-file-plug-in. After specifying some "
-literal|"options, xwd is called, the user selects a window, and the "
-literal|"resulting image is loaded into the gimp. Alternatively the "
-literal|"whole screen can be grabbed. When called non-interactively "
-literal|"it may grab the root window or use the window-id passed as "
-literal|"a parameter."
+literal|"This extension serves as a simple frontend to the "
+literal|"X-window utility xwd and the xwd-file-plug-in. "
+literal|"After specifying some options, xwd is called, the "
+literal|"user selects a window, and the resulting image is "
+literal|"loaded into the gimp. Alternatively the whole "
+literal|"screen can be grabbed. When called non-interactively "
+literal|"it may grab the root window or use the window-id "
+literal|"passed as a parameter."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -510,27 +525,22 @@ name|gchar
 modifier|*
 name|name
 parameter_list|,
-comment|/* name of plugin           */
 name|gint
 name|nparams
 parameter_list|,
-comment|/* number of in-paramters   */
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-comment|/* in-parameters            */
 name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-comment|/* number of out-parameters */
 name|GParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
-comment|/* out-parameters           */
 block|{
 comment|/* Get the runmode from the in-parameters */
 name|GRunModeType
@@ -545,13 +555,13 @@ name|data
 operator|.
 name|d_int32
 decl_stmt|;
-comment|/* status variable, use it to check for errors in invocation usualy only       during non-interactive calling */
+comment|/* status variable, use it to check for errors in invocation usualy only     * during non-interactive calling    */
 name|GStatusType
 name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
-comment|/*always return at least the status to the caller. */
+comment|/* always return at least the status to the caller. */
 specifier|static
 name|GParam
 name|values
@@ -590,7 +600,7 @@ name|return_vals
 operator|=
 name|values
 expr_stmt|;
-comment|/*how are we running today? */
+comment|/* how are we running today? */
 switch|switch
 condition|(
 name|run_mode
@@ -633,7 +643,7 @@ if|if
 condition|(
 name|nparams
 operator|==
-name|NUMBER_IN_ARGS
+literal|3
 condition|)
 block|{
 name|shootvals
@@ -704,7 +714,6 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/* switch */
 if|if
 condition|(
 name|status
@@ -841,11 +850,11 @@ decl_stmt|;
 name|gint
 name|retvals
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|tmpname
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|xwdargv
 index|[
@@ -1349,34 +1358,6 @@ decl_stmt|;
 name|guint
 name|delay
 decl_stmt|;
-name|gint
-name|argc
-init|=
-literal|1
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-init|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-decl_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"ScreenShot"
-argument_list|)
-expr_stmt|;
 name|radio_pressed
 index|[
 literal|0
@@ -1416,25 +1397,11 @@ operator|.
 name|delay
 expr_stmt|;
 comment|/* Init GTK  */
-name|gtk_init
+name|gimp_ui_init
 argument_list|(
-operator|&
-name|argc
+literal|"screenshot"
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Main Dialog */

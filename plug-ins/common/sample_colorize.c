@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2bf84d7c0108
+DECL|struct|__anon29e5e6b30108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf84d7c0208
+DECL|struct|__anon29e5e6b30208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf84d7c0308
+DECL|struct|__anon29e5e6b30308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf84d7c0408
+DECL|struct|__anon29e5e6b30408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bf84d7c0508
+DECL|struct|__anon29e5e6b30508
 typedef|typedef
 struct|struct
 block|{
@@ -709,6 +709,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|g_di
+specifier|static
 name|t_samp_interface
 name|g_di
 decl_stmt|;
@@ -721,6 +722,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|g_values
+specifier|static
 name|t_values
 name|g_values
 init|=
@@ -756,6 +758,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_lum_tab
+specifier|static
 name|t_samp_table_elem
 name|g_lum_tab
 index|[
@@ -766,6 +769,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_lvl_trans_tab
+specifier|static
 name|guchar
 name|g_lvl_trans_tab
 index|[
@@ -776,6 +780,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_out_trans_tab
+specifier|static
 name|guchar
 name|g_out_trans_tab
 index|[
@@ -786,6 +791,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_sample_color_tab
+specifier|static
 name|guchar
 name|g_sample_color_tab
 index|[
@@ -798,6 +804,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_dst_preview_buffer
+specifier|static
 name|guchar
 name|g_dst_preview_buffer
 index|[
@@ -817,6 +824,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|g_tol_col_err
+specifier|static
 name|gint32
 name|g_tol_col_err
 decl_stmt|;
@@ -824,6 +832,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_max_col_err
+specifier|static
 name|gint32
 name|g_max_col_err
 decl_stmt|;
@@ -831,6 +840,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_Sdebug
+specifier|static
 name|gint
 name|g_Sdebug
 init|=
@@ -840,6 +850,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|g_show_progress
+specifier|static
 name|gint
 name|g_show_progress
 init|=
@@ -1193,16 +1204,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1330,14 +1341,7 @@ literal|"out_high"
 block|,
 literal|"highest sample color intensity (1<= out_high<= 255)"
 block|}
-block|,    }
-decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -1357,16 +1361,11 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
 name|gchar
 modifier|*
 name|help_string
 init|=
-literal|" This plug-in colorizes the contents of the specified (gray) layer"
+literal|"This plug-in colorizes the contents of the specified (gray) layer"
 literal|" with the help of a  sample (color) layer."
 literal|" It analyzes all colors in the sample layer."
 literal|" The sample colors are sorted by brightness (== intentisty) and amount"
@@ -1399,9 +1398,6 @@ literal|" Works on both Grayscale and RGB image with/without alpha channel."
 literal|" (the image with the dst_drawable is converted to RGB if necessary)"
 literal|" The sample_drawable should be of type RGB or RGBA"
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -1427,11 +1423,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -6583,41 +6579,9 @@ name|GtkObject
 modifier|*
 name|data
 decl_stmt|;
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
 name|gint
 name|l_ty
 decl_stmt|;
-name|gint
-name|argc
-init|=
-literal|1
-decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-init|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-decl_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"sample_colorize"
-argument_list|)
-expr_stmt|;
 comment|/* set flags for check buttons from mode value bits */
 if|if
 condition|(
@@ -6666,77 +6630,11 @@ operator|=
 name|NULL
 expr_stmt|;
 comment|/* Init GTK  */
-name|gtk_init
+name|gimp_ui_init
 argument_list|(
-operator|&
-name|argc
+literal|"sample_colorize"
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_set_use_xshm
-argument_list|(
-name|gimp_use_xshm
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_install_cmap
-argument_list|(
-name|gimp_install_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|color_cube
-operator|=
-name|gimp_color_cube
-argument_list|()
-expr_stmt|;
-name|gtk_preview_set_color_cube
-argument_list|(
-name|color_cube
-index|[
-literal|0
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|1
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|2
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|3
-index|]
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gtk_preview_get_cmap
-argument_list|()
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Main Dialog */

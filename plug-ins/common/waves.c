@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2eed3c0103
+DECL|enum|__anon2a11d2120103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -393,16 +393,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init  */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit  */
+comment|/* quit_proc  */
 name|query
 block|,
-comment|/* query */
+comment|/* query_proc */
 name|run
 block|,
-comment|/* run   */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -490,7 +490,7 @@ literal|"reflective"
 block|,
 literal|"Use Reflection"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -509,9 +509,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_waves"
@@ -1406,51 +1403,11 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"waves"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -2758,62 +2715,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|guchar
-modifier|*
-name|color_cube
-decl_stmt|;
-name|gtk_preview_set_gamma
-argument_list|(
-name|gimp_gamma
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_preview_set_install_cmap
-argument_list|(
-name|gimp_install_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|color_cube
-operator|=
-name|gimp_color_cube
-argument_list|()
-expr_stmt|;
-name|gtk_preview_set_color_cube
-argument_list|(
-name|color_cube
-index|[
-literal|0
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|1
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|2
-index|]
-argument_list|,
-name|color_cube
-index|[
-literal|3
-index|]
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_visual
-argument_list|(
-name|gtk_preview_get_visual
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gtk_preview_get_cmap
-argument_list|()
-argument_list|)
-expr_stmt|;
 name|frame
 operator|=
 name|gtk_frame_new

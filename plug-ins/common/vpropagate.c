@@ -160,18 +160,18 @@ specifier|static
 name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b414c630108
+DECL|struct|__anon291dd9780108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -758,6 +758,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|propagate_alpha
+specifier|static
 name|gint
 name|propagate_alpha
 decl_stmt|;
@@ -765,6 +766,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|propagate_value
+specifier|static
 name|gint
 name|propagate_value
 decl_stmt|;
@@ -772,6 +774,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|direction_mask_vec
+specifier|static
 name|gint
 name|direction_mask_vec
 index|[
@@ -782,6 +785,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|channel_mask
+specifier|static
 name|gint
 name|channel_mask
 index|[]
@@ -798,6 +802,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|peak_max
+specifier|static
 name|gint
 name|peak_max
 init|=
@@ -807,6 +812,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|peak_min
+specifier|static
 name|gint
 name|peak_min
 init|=
@@ -816,6 +822,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|peak_includes_equals
+specifier|static
 name|gint
 name|peak_includes_equals
 init|=
@@ -825,6 +832,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|fore
+specifier|static
 name|guchar
 name|fore
 index|[
@@ -836,7 +844,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b414c630208
+DECL|struct|__anon291dd9780208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1061,7 +1069,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b414c630308
+DECL|struct|__anon291dd9780308
 block|{
 DECL|member|run
 name|gint
@@ -1087,6 +1095,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable_id
+specifier|static
 name|gint
 name|drawable_id
 decl_stmt|;
@@ -1183,7 +1192,7 @@ literal|"upper-limit"
 block|,
 literal|"0<= upper-limit<= 255"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -1202,9 +1211,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -1768,7 +1774,7 @@ decl_stmt|,
 modifier|*
 name|swap
 decl_stmt|;
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -1777,7 +1783,7 @@ name|bytes
 decl_stmt|,
 name|index
 decl_stmt|;
-name|int
+name|gint
 name|begx
 decl_stmt|,
 name|begy
@@ -1792,7 +1798,7 @@ name|y
 decl_stmt|,
 name|dx
 decl_stmt|;
-name|int
+name|gint
 name|left_index
 decl_stmt|,
 name|right_index
@@ -1947,12 +1953,10 @@ name|bpp
 expr_stmt|;
 name|prev_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|endx
 operator|-
@@ -1966,12 +1970,10 @@ argument_list|)
 expr_stmt|;
 name|cur_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|endx
 operator|-
@@ -1985,12 +1987,10 @@ argument_list|)
 expr_stmt|;
 name|next_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|endx
 operator|-
@@ -2004,12 +2004,10 @@ argument_list|)
 expr_stmt|;
 name|dest_row
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 operator|(
 name|endx
 operator|-
@@ -2121,12 +2119,10 @@ argument_list|)
 expr_stmt|;
 name|best
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|bytes
 argument_list|)
 expr_stmt|;
@@ -2586,7 +2582,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prepare_row (GPixelRgn * pixel_rgn,guchar * data,int x,int y,int w)
+DECL|function|prepare_row (GPixelRgn * pixel_rgn,guchar * data,gint x,gint y,gint w)
 name|prepare_row
 parameter_list|(
 name|GPixelRgn
@@ -2597,17 +2593,17 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 block|{
-name|int
+name|gint
 name|b
 decl_stmt|;
 if|if
@@ -2741,13 +2737,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_value (GImageType dtype,int bytes,guchar * best,guchar * here,guchar * dest,void * tmp)
+DECL|function|set_value (GImageType dtype,gint bytes,guchar * best,guchar * here,guchar * dest,void * tmp)
 name|set_value
 parameter_list|(
 name|GImageType
 name|dtype
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
 name|guchar
@@ -2767,17 +2763,17 @@ modifier|*
 name|tmp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|value_chs
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|alpha
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|ch
 decl_stmt|;
 switch|switch
@@ -2955,7 +2951,7 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|value_difference_check (CH * pos1,CH * pos2,int ch)
+DECL|function|value_difference_check (CH * pos1,CH * pos2,gint ch)
 name|value_difference_check
 parameter_list|(
 name|CH
@@ -2966,11 +2962,11 @@ name|CH
 modifier|*
 name|pos2
 parameter_list|,
-name|int
+name|gint
 name|ch
 parameter_list|)
 block|{
-name|int
+name|gint
 name|index
 decl_stmt|;
 name|int
@@ -3052,13 +3048,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_white (GImageType dtype,int bytes,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_white (GImageType dtype,gint bytes,CH * best,CH * here,void ** tmp)
 name|initialize_white
 parameter_list|(
 name|GImageType
 name|dtype
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
 name|CH
@@ -3089,12 +3085,11 @@ operator|(
 name|void
 operator|*
 operator|)
-name|malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|float
-argument_list|)
+name|gfloat
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 operator|*
@@ -3159,13 +3154,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_white (GImageType dtype,int bytes,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_white (GImageType dtype,gint bytes,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_white
 parameter_list|(
 name|GImageType
 name|dtype
 parameter_list|,
-name|int
+name|gint
 name|bytes
 parameter_list|,
 name|CH
@@ -3335,13 +3330,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_black (GImageType dtype,int channels,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_black (GImageType dtype,gint channels,CH * best,CH * here,void ** tmp)
 name|initialize_black
 parameter_list|(
 name|GImageType
 name|dtype
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -3372,12 +3367,11 @@ operator|(
 name|void
 operator|*
 operator|)
-name|malloc
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-name|float
-argument_list|)
+name|gfloat
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 operator|*
@@ -3442,13 +3436,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_black (GImageType image_type,int channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_black (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_black
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -3618,22 +3612,22 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b414c630408
+DECL|struct|__anon291dd9780408
 block|{
 DECL|member|min_modified
-name|short
+name|gshort
 name|min_modified
 decl_stmt|;
 DECL|member|max_modified
-name|short
+name|gshort
 name|max_modified
 decl_stmt|;
 DECL|member|original_value
-name|long
+name|glong
 name|original_value
 decl_stmt|;
 DECL|member|minv
-name|long
+name|glong
 name|minv
 decl_stmt|;
 DECL|member|min
@@ -3644,7 +3638,7 @@ literal|3
 index|]
 decl_stmt|;
 DECL|member|maxv
-name|long
+name|glong
 name|maxv
 decl_stmt|;
 DECL|member|max
@@ -3663,13 +3657,13 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_middle (GImageType image_type,int channels,CH * best,CH * here,void ** tmp)
+DECL|function|initialize_middle (GImageType image_type,gint channels,CH * best,CH * here,void ** tmp)
 name|initialize_middle
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -3707,12 +3701,11 @@ operator|(
 name|void
 operator|*
 operator|)
-name|malloc
-argument_list|(
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|MiddlePacket
-argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 name|data
@@ -3865,13 +3858,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_middle (GImageType image_type,int channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_middle (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_middle
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -4162,13 +4155,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_middle_to_peak (GImageType image_type,int channels,CH * here,CH * best,CH * dest,void * tmp)
+DECL|function|set_middle_to_peak (GImageType image_type,gint channels,CH * here,CH * best,CH * dest,void * tmp)
 name|set_middle_to_peak
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -4188,17 +4181,17 @@ modifier|*
 name|tmp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|value_chs
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|alpha
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|ch
 decl_stmt|;
 name|MiddlePacket
@@ -4467,13 +4460,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_foreground_to_peak (GImageType image_type,int channels,CH * here,CH * best,CH * dest,void * tmp)
+DECL|function|set_foreground_to_peak (GImageType image_type,gint channels,CH * here,CH * best,CH * dest,void * tmp)
 name|set_foreground_to_peak
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -4493,17 +4486,17 @@ modifier|*
 name|tmp
 parameter_list|)
 block|{
-name|int
+name|gint
 name|value_chs
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|alpha
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|ch
 decl_stmt|;
 name|MiddlePacket
@@ -4700,13 +4693,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_foreground (GImageType image_type,int channels,CH * here,CH * best,void ** tmp)
+DECL|function|initialize_foreground (GImageType image_type,gint channels,CH * here,CH * best,void ** tmp)
 name|initialize_foreground
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -4742,14 +4735,11 @@ operator|(
 name|void
 operator|*
 operator|)
-name|malloc
-argument_list|(
-literal|3
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|CH
-argument_list|)
+argument_list|,
+literal|3
 argument_list|)
 expr_stmt|;
 name|ch
@@ -4789,13 +4779,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|initialize_background (GImageType image_type,int channels,CH * here,CH * best,void ** tmp)
+DECL|function|initialize_background (GImageType image_type,gint channels,CH * here,CH * best,void ** tmp)
 name|initialize_background
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -4831,14 +4821,11 @@ operator|(
 name|void
 operator|*
 operator|)
-name|malloc
-argument_list|(
-literal|3
-operator|*
-sizeof|sizeof
+name|g_new
 argument_list|(
 name|CH
-argument_list|)
+argument_list|,
+literal|3
 argument_list|)
 expr_stmt|;
 name|ch
@@ -4878,13 +4865,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_a_color (GImageType image_type,int channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_a_color (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_a_color
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -5000,13 +4987,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_opaque (GImageType image_type,int channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_opaque (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_opaque
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -5118,13 +5105,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|propagate_transparent (GImageType image_type,int channels,CH * orig,CH * here,CH * best,void * tmp)
+DECL|function|propagate_transparent (GImageType image_type,gint channels,CH * orig,CH * here,CH * best,void * tmp)
 name|propagate_transparent
 parameter_list|(
 name|GImageType
 name|image_type
 parameter_list|,
-name|int
+name|gint
 name|channels
 parameter_list|,
 name|CH
@@ -5285,56 +5272,16 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
 name|gint
 name|index
 init|=
 literal|0
 decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
+name|gimp_ui_init
 argument_list|(
-name|gchar
-operator|*
+literal|"vpropagate"
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-name|SHORT_NAME
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

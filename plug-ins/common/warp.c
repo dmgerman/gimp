@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a517e770103
+DECL|enum|__anon2974e7360103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a517e770208
+DECL|struct|__anon2974e7360208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a517e770308
+DECL|struct|__anon2974e7360308
 block|{
 DECL|member|run
 name|gint
@@ -914,7 +914,7 @@ literal|"vector_angle"
 block|,
 literal|"Angle for fixed vector map"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -933,16 +933,16 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_warp"
 argument_list|,
 literal|"Twist or smear an image. (only first six arguments are required)"
 argument_list|,
-literal|"Smears an image along vector paths calculated as the gradient of a separate control matrix. The effect can look like brushstrokes of acrylic or watercolor paint, in some cases."
+literal|"Smears an image along vector paths calculated as "
+literal|"the gradient of a separate control matrix. The "
+literal|"effect can look like brushstrokes of acrylic or "
+literal|"watercolor paint, in some cases."
 argument_list|,
 literal|"John P. Beale"
 argument_list|,
@@ -1644,51 +1644,11 @@ name|group
 init|=
 name|NULL
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
+name|gimp_ui_init
 argument_list|(
-name|gchar
-operator|*
+literal|"warp"
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"Warp"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

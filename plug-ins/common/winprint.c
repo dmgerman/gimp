@@ -28,7 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -65,7 +65,7 @@ end_define
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28f87e6a0108
+DECL|struct|__anon27cef6eb0108
 block|{
 DECL|member|prDlg
 name|PRINTDLG
@@ -645,7 +645,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|print_nargs
 init|=
 sizeof|sizeof
@@ -690,12 +690,13 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|int
+name|gint
 name|pagesetup_nargs
 init|=
+operator|(
 sizeof|sizeof
 argument_list|(
 name|pagesetup_args
@@ -708,10 +709,8 @@ index|[
 literal|0
 index|]
 argument_list|)
+operator|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|NAME_PRINT
@@ -786,21 +785,21 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -2704,16 +2703,16 @@ comment|/* Plug-in information */
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt

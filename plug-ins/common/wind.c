@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293320530103
+DECL|enum|__anon28a7709e0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293320530203
+DECL|enum|__anon28a7709e0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -136,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293320530303
+DECL|enum|__anon28a7709e0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -408,15 +408,15 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -431,6 +431,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|dialog_result
+specifier|static
 name|gint
 name|dialog_result
 init|=
@@ -608,9 +609,6 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_wind"
@@ -3184,51 +3182,11 @@ name|GtkWidget
 modifier|*
 name|dlg
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
+name|gimp_ui_init
 argument_list|(
-name|gchar
-operator|*
+literal|"wind"
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-name|PLUG_IN_NAME
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

@@ -18,19 +18,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
@@ -78,7 +78,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b06fcb90108
+DECL|struct|__anon2c25f1310108
 block|{
 DECL|member|angle
 name|gint
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b06fcb90208
+DECL|struct|__anon2c25f1310208
 block|{
 DECL|member|ID
 name|gint32
@@ -252,6 +252,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|active_drawable
+specifier|static
 name|GDrawable
 modifier|*
 name|active_drawable
@@ -262,6 +263,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|image_ID
+specifier|static
 name|gint32
 name|image_ID
 init|=
@@ -301,7 +303,7 @@ literal|"run_mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
-block|,\
+block|,
 block|{
 name|PARAM_IMAGE
 block|,
@@ -309,7 +311,7 @@ literal|"image"
 block|,
 literal|"Input image"
 block|}
-block|,\
+block|,
 block|{
 name|PARAM_DRAWABLE
 block|,
@@ -317,7 +319,7 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,\
+block|,
 block|{
 name|PARAM_INT32
 block|,
@@ -325,7 +327,7 @@ literal|"angle"
 block|,
 literal|"Angle { 90 (1), 180 (2), 270 (3) } degrees"
 block|}
-block|,\
+block|,
 block|{
 name|PARAM_INT32
 block|,
@@ -365,7 +367,7 @@ literal|"run_mode"
 block|,
 literal|"Interactive, non-interactive"
 block|}
-block|,\
+block|,
 block|{
 name|PARAM_IMAGE
 block|,
@@ -373,7 +375,7 @@ literal|"image"
 block|,
 literal|"Input image"
 block|}
-block|,\
+block|,
 block|{
 name|PARAM_DRAWABLE
 block|,
@@ -381,7 +383,7 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,\ }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -400,30 +402,16 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
-comment|/*install the plugin */
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_rotate"
 argument_list|,
 literal|"Rotates a layer or the whole image by 90, 180 or 270 degrees"
 argument_list|,
-literal|"This plug-in does rotate the active layer or the whole image clockwise by multiples of 90 degrees. When the whole image is choosen, the image is resized if necessary."
+literal|"This plug-in does rotate the active layer or the "
+literal|"whole image clockwise by multiples of 90 degrees. "
+literal|"When the whole image is choosen, the image is "
+literal|"resized if necessary."
 argument_list|,
 name|PLUG_IN_AUTHOR
 argument_list|,
@@ -439,11 +427,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -471,11 +459,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nmenuargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|menuargs
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -503,11 +491,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nmenuargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|menuargs
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -535,11 +523,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nmenuargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|menuargs
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -567,11 +555,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nmenuargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|menuargs
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -599,11 +587,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nmenuargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|menuargs
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -631,11 +619,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nmenuargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|menuargs
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

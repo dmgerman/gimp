@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31fade0108
+DECL|struct|__anon27500b080108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31fade0208
+DECL|struct|__anon27500b080208
 block|{
 DECL|member|run
 name|gint
@@ -274,14 +274,7 @@ literal|"maxdelta"
 block|,
 literal|"Maximum delta"
 block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -300,22 +293,19 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|gint
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_sel_gauss"
 argument_list|,
 literal|"Applies a selective gaussian blur to the specified drawable."
 argument_list|,
-literal|"This filter functions similar to the regular gaussian blur filter except that neighbouring pixels that differ more than the given maxdelta parameter will not be blended with. This way with the correct parameters, an image can be smoothed out without losing details. However, this filter can be rather slow."
+literal|"This filter functions similar to the regular "
+literal|"gaussian blur filter except that neighbouring "
+literal|"pixels that differ more than the given maxdelta "
+literal|"parameter will not be blended with. This way with "
+literal|"the correct parameters, an image can be smoothed "
+literal|"out without losing details. However, this filter "
+literal|"can be rather slow."
 argument_list|,
 literal|"Thom van Os"
 argument_list|,
@@ -334,11 +324,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -730,51 +720,11 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
+name|gimp_ui_init
 argument_list|(
-name|gchar
-operator|*
+literal|"sel_gauss"
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
-argument_list|(
-literal|"gauss"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -1175,7 +1125,7 @@ name|gint
 name|num
 parameter_list|)
 block|{
-name|int
+name|gint
 name|dx
 decl_stmt|,
 name|dy
@@ -1872,20 +1822,12 @@ argument_list|)
 expr_stmt|;
 name|mat
 operator|=
-operator|(
+name|g_new
+argument_list|(
 name|gdouble
 operator|*
-operator|*
-operator|)
-name|g_malloc
-argument_list|(
+argument_list|,
 name|numrad
-operator|*
-sizeof|sizeof
-argument_list|(
-name|gdouble
-operator|*
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1906,18 +1848,11 @@ index|[
 name|i
 index|]
 operator|=
-operator|(
-name|gdouble
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|gdouble
+argument_list|,
 name|numrad
-operator|*
-sizeof|sizeof
-argument_list|(
-name|gdouble
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|init_matrix
@@ -1931,12 +1866,10 @@ argument_list|)
 expr_stmt|;
 name|src
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|height
@@ -1946,12 +1879,10 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|height

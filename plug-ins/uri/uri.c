@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -65,13 +71,13 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_comment
@@ -198,22 +204,7 @@ literal|"raw_filename"
 block|,
 literal|"The name entered"
 block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|GParamDef
-name|load_return_vals
-index|[]
-init|=
-block|{
-block|{
-name|PARAM_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Output image"
 block|}
-block|,   }
 decl_stmt|;
 specifier|static
 name|gint
@@ -231,6 +222,21 @@ index|[
 literal|0
 index|]
 argument_list|)
+decl_stmt|;
+specifier|static
+name|GParamDef
+name|load_return_vals
+index|[]
+init|=
+block|{
+block|{
+name|PARAM_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Output image"
+block|}
+block|}
 decl_stmt|;
 specifier|static
 name|gint

@@ -58,31 +58,20 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|indexed_vinvert
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|run
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|name
 parameter_list|,
-name|int
+name|gint
 name|nparams
 parameter_list|,
 name|GParam
 modifier|*
 name|param
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
@@ -102,6 +91,17 @@ parameter_list|(
 name|GDrawable
 modifier|*
 name|drawable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|indexed_vinvert
+parameter_list|(
+name|gint32
+name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -146,16 +146,16 @@ init|=
 block|{
 name|NULL
 block|,
-comment|/* init_proc */
+comment|/* init_proc  */
 name|NULL
 block|,
-comment|/* quit_proc */
+comment|/* quit_proc  */
 name|query
 block|,
 comment|/* query_proc */
 name|run
 block|,
-comment|/* run_proc */
+comment|/* run_proc   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -201,17 +201,10 @@ literal|"drawable"
 block|,
 literal|"Input drawable"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
-modifier|*
-name|return_vals
-init|=
-name|NULL
-decl_stmt|;
-specifier|static
-name|int
+name|gint
 name|nargs
 init|=
 sizeof|sizeof
@@ -227,22 +220,19 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-specifier|static
-name|int
-name|nreturn_vals
-init|=
-literal|0
-decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_vinvert"
 argument_list|,
 literal|"Invert the 'value' component of an indexed/RGB image in HSV colorspace"
 argument_list|,
-literal|"This function takes an indexed/RGB image and inverts its 'value' in HSV space.  The upshot of this is that the color and saturation at any given point remains the same, but its brightness is effectively inverted.  Quite strange.  Sometimes produces unpleasant color artifacts on images from lossy sources (ie. JPEG)."
+literal|"This function takes an indexed/RGB image and "
+literal|"inverts its 'value' in HSV space.  The upshot of "
+literal|"this is that the color and saturation at any given "
+literal|"point remains the same, but its brightness is "
+literal|"effectively inverted.  Quite strange.  Sometimes "
+literal|"produces unpleasant color artifacts on images from "
+literal|"lossy sources (ie. JPEG)."
 argument_list|,
 literal|"Adam D. Moss (adam@foxbox.org)"
 argument_list|,
@@ -261,11 +251,11 @@ name|PROC_PLUG_IN
 argument_list|,
 name|nargs
 argument_list|,
-name|nreturn_vals
+literal|0
 argument_list|,
 name|args
 argument_list|,
-name|return_vals
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -520,7 +510,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"vinvert: cmap was NULL!  Quitting...\n"
 argument_list|)
@@ -582,7 +572,7 @@ name|col
 operator|--
 condition|)
 block|{
-name|int
+name|gint
 name|v1
 decl_stmt|,
 name|v2

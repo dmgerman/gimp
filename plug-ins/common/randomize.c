@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29380c1f0108
+DECL|struct|__anon27ce5b860108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29380c1f0208
+DECL|struct|__anon27ce5b860208
 block|{
 DECL|member|run
 name|gint
@@ -316,28 +316,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
-name|PLUG_IN_INFO
-init|=
-block|{
-name|NULL
-block|,
-comment|/* init_proc  */
-name|NULL
-block|,
-comment|/* quit_proc  */
-name|query
-block|,
-comment|/* query_proc */
-name|run
-block|,
-comment|/* run_proc   */
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_function_decl
 specifier|static
 name|void
@@ -364,13 +342,13 @@ name|guchar
 modifier|*
 name|data
 parameter_list|,
-name|int
+name|gint
 name|x
 parameter_list|,
-name|int
+name|gint
 name|y
 parameter_list|,
-name|int
+name|gint
 name|w
 parameter_list|)
 function_decl|;
@@ -404,6 +382,28 @@ end_function_decl
 begin_comment
 comment|/************************************ Guts ***********************************/
 end_comment
+
+begin_decl_stmt
+DECL|variable|PLUG_IN_INFO
+name|GPlugInInfo
+name|PLUG_IN_INFO
+init|=
+block|{
+name|NULL
+block|,
+comment|/* init_proc  */
+name|NULL
+block|,
+comment|/* quit_proc  */
+name|query
+block|,
+comment|/* query_proc */
+name|run
+block|,
+comment|/* run_proc   */
+block|}
+decl_stmt|;
+end_decl_stmt
 
 begin_macro
 DECL|function|MAIN ()
@@ -484,7 +484,7 @@ literal|"rndm_seed"
 block|,
 literal|"Seed value (used only if seed type is 11)"
 block|}
-block|,   }
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -566,9 +566,6 @@ name|copyright_date
 init|=
 literal|"1995-1998"
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
@@ -2394,51 +2391,11 @@ name|GtkObject
 modifier|*
 name|adj
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"randomize"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg

@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b78e18a0108
+DECL|struct|__anon2c5927880108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b78e18a0208
+DECL|struct|__anon2c5927880208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -323,7 +323,24 @@ literal|"new_image"
 block|,
 literal|"Create a new image?"
 block|}
-block|,   }
+block|}
+decl_stmt|;
+specifier|static
+name|gint
+name|nargs
+init|=
+sizeof|sizeof
+argument_list|(
+name|args
+argument_list|)
+operator|/
+sizeof|sizeof
+argument_list|(
+name|args
+index|[
+literal|0
+index|]
+argument_list|)
 decl_stmt|;
 specifier|static
 name|GParamDef
@@ -346,24 +363,7 @@ literal|"new_layer"
 block|,
 literal|"Output layer (N/A if new_image == FALSE)"
 block|}
-block|,   }
-decl_stmt|;
-specifier|static
-name|gint
-name|nargs
-init|=
-sizeof|sizeof
-argument_list|(
-name|args
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|args
-index|[
-literal|0
-index|]
-argument_list|)
+block|}
 decl_stmt|;
 specifier|static
 name|gint
@@ -382,16 +382,18 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_tile"
 argument_list|,
 literal|"Create a new image which is a tiled version of the input drawable"
 argument_list|,
-literal|"This function creates a new image with a single layer sized to the specified 'new_width' and 'new_height' parameters.  The specified drawable is tiled into this layer.  The new layer will have the same type as the specified drawable and the new image will have a corresponding base type"
+literal|"This function creates a new image with a single "
+literal|"layer sized to the specified 'new_width' and "
+literal|"'new_height' parameters.  The specified drawable "
+literal|"is tiled into this layer.  The new layer will have "
+literal|"the same type as the specified drawable and the new "
+literal|"image will have a corresponding base type"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -1519,51 +1521,11 @@ decl_stmt|;
 name|GimpUnit
 name|unit
 decl_stmt|;
-name|gchar
-modifier|*
-modifier|*
-name|argv
-decl_stmt|;
-name|gint
-name|argc
-decl_stmt|;
-name|argc
-operator|=
-literal|1
-expr_stmt|;
-name|argv
-operator|=
-name|g_new
-argument_list|(
-name|gchar
-operator|*
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|argv
-index|[
-literal|0
-index|]
-operator|=
-name|g_strdup
+name|gimp_ui_init
 argument_list|(
 literal|"tile"
-argument_list|)
-expr_stmt|;
-name|gtk_init
-argument_list|(
-operator|&
-name|argc
 argument_list|,
-operator|&
-name|argv
-argument_list|)
-expr_stmt|;
-name|gtk_rc_parse
-argument_list|(
-name|gimp_gtkrc
-argument_list|()
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|width
