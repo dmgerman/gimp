@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon29e5e6b30108
+DECL|struct|__anon2c59604d0108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e5e6b30208
+DECL|struct|__anon2c59604d0208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e5e6b30308
+DECL|struct|__anon2c59604d0308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e5e6b30408
+DECL|struct|__anon2c59604d0408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e5e6b30508
+DECL|struct|__anon2c59604d0508
 typedef|typedef
 struct|struct
 block|{
@@ -16209,6 +16209,16 @@ name|l_progress
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  reset the progress to zero to indiciate that the plug-in has done its job  */
+if|if
+condition|(
+name|g_show_progress
+condition|)
+name|gimp_progress_update
+argument_list|(
+literal|0.0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
