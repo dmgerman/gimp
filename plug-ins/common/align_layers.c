@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aedb97c0103
+DECL|enum|__anon29aebb060103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aedb97c0203
+DECL|enum|__anon29aebb060203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aedb97c0303
+DECL|enum|__anon29aebb060303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aedb97c0403
+DECL|enum|__anon29aebb060403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aedb97c0508
+DECL|struct|__anon29aebb060508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aedb97c0608
+DECL|struct|__anon29aebb060608
 block|{
 DECL|member|run
 name|gint
@@ -857,30 +857,25 @@ operator|<
 name|visible_layer_num
 condition|)
 block|{
-name|gboolean
-name|uninitialized
-init|=
-name|TRUE
-decl_stmt|;
 name|gint
 name|min_x
 init|=
-literal|0
+name|G_MAXINT
 decl_stmt|;
 name|gint
 name|min_y
 init|=
-literal|0
+name|G_MAXINT
 decl_stmt|;
 name|gint
 name|max_x
 init|=
-literal|0
+name|G_MININT
 decl_stmt|;
 name|gint
 name|max_y
 init|=
-literal|0
+name|G_MININT
 decl_stmt|;
 comment|/* 0 is the top layer */
 for|for
@@ -946,34 +941,6 @@ name|offset_y
 expr_stmt|;
 if|if
 condition|(
-name|uninitialized
-condition|)
-block|{
-name|base_x
-operator|=
-name|min_x
-operator|=
-name|max_x
-operator|=
-name|orig_x
-expr_stmt|;
-name|base_y
-operator|=
-name|min_y
-operator|=
-name|max_y
-operator|=
-name|orig_y
-expr_stmt|;
-name|uninitialized
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-else|else
-block|{
-if|if
-condition|(
 name|orig_x
 operator|<
 name|min_x
@@ -1012,7 +979,6 @@ name|max_y
 operator|=
 name|orig_y
 expr_stmt|;
-block|}
 block|}
 block|}
 if|if
@@ -1889,7 +1855,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal Style:"
+literal|"_Horizontal Style:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -1978,7 +1944,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal Base:"
+literal|"Ho_rizontal Base:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2091,7 +2057,7 @@ literal|2
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical Style:"
+literal|"_Vertical Style:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2180,7 +2146,7 @@ literal|3
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical Base:"
+literal|"Ver_tical Base:"
 argument_list|)
 argument_list|,
 literal|1.0
@@ -2196,11 +2162,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Ignore the Bottom Layer even if Visible"
+literal|"_Ignore the Bottom Layer even if Visible"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2261,11 +2227,11 @@ argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use the (Invisible) Bottom Layer as the Base"
+literal|"_Use the (Invisible) Bottom Layer as the Base"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2339,7 +2305,7 @@ literal|6
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Size:"
+literal|"_Grid Size:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
