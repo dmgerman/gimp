@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2003 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -18,19 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_delete.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_cut.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_main.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -75,18 +63,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|cut_command_redo
-parameter_list|(
-name|Command_t
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|cut_command_class
 specifier|static
@@ -100,13 +76,14 @@ name|cut_command_execute
 block|,
 name|cut_command_undo
 block|,
-name|cut_command_redo
+name|NULL
+comment|/* cut_command_redo */
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b63abfb0108
+DECL|struct|__anon29aa8c7f0108
 typedef|typedef
 struct|struct
 block|{
@@ -326,10 +303,6 @@ argument_list|,
 name|id
 argument_list|)
 expr_stmt|;
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 return|return
 name|CMD_APPEND
 return|;
@@ -367,28 +340,6 @@ operator|->
 name|paste_buffer
 argument_list|)
 expr_stmt|;
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|cut_command_redo (Command_t * command)
-name|cut_command_redo
-parameter_list|(
-name|Command_t
-modifier|*
-name|command
-parameter_list|)
-block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 block|}
 end_function
 

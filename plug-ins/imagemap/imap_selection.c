@@ -47,25 +47,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_edit_object.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_unselect.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_unselect_all.h"
+file|"imap_commands.h"
 end_include
 
 begin_include

@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_copy.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_main.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -88,7 +82,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon276d36e90108
+DECL|struct|__anon298ad2f80108
 typedef|typedef
 struct|struct
 block|{
@@ -236,10 +230,6 @@ operator|->
 name|obj
 argument_list|)
 expr_stmt|;
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* fix me! */
 return|return
 name|CMD_APPEND
 return|;
@@ -278,10 +268,6 @@ operator|->
 name|obj
 argument_list|)
 expr_stmt|;
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* fix me! */
 block|}
 end_function
 

@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_delete.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_main.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -89,7 +83,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c36c3ce0108
+DECL|struct|__anon2acb08c50108
 typedef|typedef
 struct|struct
 block|{

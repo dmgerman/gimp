@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2003 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -18,19 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_select_all.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_main.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -51,30 +39,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|select_all_command_undo
-parameter_list|(
-name|Command_t
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|select_all_command_redo
-parameter_list|(
-name|Command_t
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|select_all_command_class
 specifier|static
@@ -87,15 +51,17 @@ block|,
 comment|/* select_all_command_destruct, */
 name|select_all_command_execute
 block|,
-name|select_all_command_undo
+name|NULL
 block|,
-name|select_all_command_redo
+comment|/* select_all_command_undo */
+name|NULL
+comment|/* select_all_command_redo */
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2bffbd640108
+DECL|struct|__anon29cfa2640108
 typedef|typedef
 struct|struct
 block|{
@@ -242,32 +208,21 @@ argument_list|,
 name|command
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|rvalue
+operator|=
+operator|(
 name|object_list_select_all
 argument_list|(
 name|command
 operator|->
 name|list
 argument_list|)
-condition|)
-block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
-name|rvalue
-operator|=
+operator|)
+condition|?
 name|CMD_APPEND
-expr_stmt|;
-block|}
-else|else
-block|{
-name|rvalue
-operator|=
+else|:
 name|CMD_DESTRUCT
 expr_stmt|;
-block|}
 name|object_list_remove_select_cb
 argument_list|(
 name|command
@@ -280,42 +235,6 @@ expr_stmt|;
 return|return
 name|rvalue
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|select_all_command_undo (Command_t * parent)
-name|select_all_command_undo
-parameter_list|(
-name|Command_t
-modifier|*
-name|parent
-parameter_list|)
-block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|select_all_command_redo (Command_t * parent)
-name|select_all_command_redo
-parameter_list|(
-name|Command_t
-modifier|*
-name|parent
-parameter_list|)
-block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 block|}
 end_function
 

@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_edit_object.h"
+file|"imap_commands.h"
 end_include
 
 begin_include

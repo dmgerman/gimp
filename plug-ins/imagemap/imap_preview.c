@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2003 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -47,7 +47,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_edit_object.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -1522,7 +1522,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|arrow_cb (GtkWidget * widget,GdkEventButton * event,gpointer data)
 name|arrow_cb
 parameter_list|(
@@ -1569,7 +1569,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|preview_expose (GtkWidget * widget,GdkEventExpose * event)
 name|preview_expose
 parameter_list|(
@@ -1582,55 +1582,6 @@ modifier|*
 name|event
 parameter_list|)
 block|{
-name|Preview_t
-modifier|*
-name|data
-init|=
-name|preview_user_data
-argument_list|(
-name|widget
-argument_list|)
-decl_stmt|;
-name|g_signal_handler_block
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-name|data
-operator|->
-name|exp_id
-argument_list|)
-expr_stmt|;
-name|gtk_widget_draw
-argument_list|(
-name|widget
-argument_list|,
-operator|(
-name|event
-operator|)
-condition|?
-operator|&
-name|event
-operator|->
-name|area
-else|:
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_handler_unblock
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-name|data
-operator|->
-name|exp_id
-argument_list|)
-expr_stmt|;
 name|draw_grid
 argument_list|(
 name|widget
@@ -1649,20 +1600,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|add_preview_motion_event (Preview_t * preview,GtkSignalFunc func)
+DECL|function|add_preview_motion_event (Preview_t * preview,GCallback func)
 name|add_preview_motion_event
 parameter_list|(
 name|Preview_t
 modifier|*
 name|preview
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|func
 parameter_list|)
 block|{
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|preview
 operator|->
@@ -1681,20 +1632,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|add_enter_notify_event (Preview_t * preview,GtkSignalFunc func)
+DECL|function|add_enter_notify_event (Preview_t * preview,GCallback func)
 name|add_enter_notify_event
 parameter_list|(
 name|Preview_t
 modifier|*
 name|preview
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|func
 parameter_list|)
 block|{
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|preview
 operator|->
@@ -1713,20 +1664,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|add_leave_notify_event (Preview_t * preview,GtkSignalFunc func)
+DECL|function|add_leave_notify_event (Preview_t * preview,GCallback func)
 name|add_leave_notify_event
 parameter_list|(
 name|Preview_t
 modifier|*
 name|preview
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|func
 parameter_list|)
 block|{
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|preview
 operator|->
@@ -1745,20 +1696,20 @@ end_function
 
 begin_function
 name|void
-DECL|function|add_preview_button_press_event (Preview_t * preview,GtkSignalFunc func)
+DECL|function|add_preview_button_press_event (Preview_t * preview,GCallback func)
 name|add_preview_button_press_event
 parameter_list|(
 name|Preview_t
 modifier|*
 name|preview
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|func
 parameter_list|)
 block|{
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|preview
 operator|->
@@ -1785,13 +1736,11 @@ modifier|*
 name|preview
 parameter_list|)
 block|{
-name|preview_expose
+name|gtk_widget_queue_draw
 argument_list|(
 name|preview
 operator|->
 name|preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2186,23 +2135,19 @@ argument_list|,
 name|PREVIEW_MASK
 argument_list|)
 expr_stmt|;
-name|data
-operator|->
-name|exp_id
-operator|=
-name|gtk_signal_connect_after
+name|g_signal_connect_after
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|preview
 argument_list|)
 argument_list|,
 literal|"expose_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|G_CALLBACK
+argument_list|(
 name|preview_expose
+argument_list|)
 argument_list|,
 name|data
 argument_list|)
@@ -2221,16 +2166,16 @@ argument_list|,
 name|GDK_ACTION_COPY
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|preview
 argument_list|)
 argument_list|,
 literal|"drag_data_received"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|handle_drop
 argument_list|)
@@ -2321,7 +2266,7 @@ name|data
 operator|->
 name|height
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|window
 argument_list|,
@@ -2474,19 +2419,19 @@ operator||
 name|GDK_BUTTON_RELEASE_MASK
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|button
 argument_list|)
 argument_list|,
 literal|"button_press_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|G_CALLBACK
+argument_list|(
 name|arrow_cb
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2548,26 +2493,26 @@ argument_list|,
 name|PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|g_signal_connect_swapped
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|preview
 argument_list|)
 argument_list|,
 literal|"motion_notify_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|G_CALLBACK
+argument_list|(
 name|GTK_WIDGET_GET_CLASS
 argument_list|(
 name|ruler
 argument_list|)
 operator|->
 name|motion_notify_event
+argument_list|)
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|ruler
 argument_list|)
@@ -2632,26 +2577,26 @@ argument_list|,
 name|PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_object
+name|g_signal_connect_swapped
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|preview
 argument_list|)
 argument_list|,
 literal|"motion_notify_event"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|G_CALLBACK
+argument_list|(
 name|GTK_WIDGET_GET_CLASS
 argument_list|(
 name|ruler
 argument_list|)
 operator|->
 name|motion_notify_event
+argument_list|)
 argument_list|,
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|ruler
 argument_list|)

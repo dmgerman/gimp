@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for the GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2003 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
 end_comment
 
 begin_include
@@ -18,19 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_unselect.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_unselect_all.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_main.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -58,15 +46,17 @@ name|unselect_all_command_destruct
 block|,
 name|unselect_all_command_execute
 block|,
-name|unselect_all_command_undo
+name|NULL
 block|,
-name|unselect_all_command_redo
+comment|/* unselect_all_command_undo */
+name|NULL
+comment|/* unselect_all_command_redo */
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b841cc40108
+DECL|struct|__anon275f8fb40108
 typedef|typedef
 struct|struct
 block|{
@@ -288,10 +278,6 @@ name|exception
 argument_list|)
 condition|)
 block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 name|rvalue
 operator|=
 name|CMD_APPEND
@@ -316,42 +302,6 @@ expr_stmt|;
 return|return
 name|rvalue
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|unselect_all_command_undo (Command_t * command)
-name|unselect_all_command_undo
-parameter_list|(
-name|Command_t
-modifier|*
-name|command
-parameter_list|)
-block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|unselect_all_command_redo (Command_t * command)
-name|unselect_all_command_redo
-parameter_list|(
-name|Command_t
-modifier|*
-name|command
-parameter_list|)
-block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 block|}
 end_function
 

@@ -30,13 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_delete_point.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_insert_point.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -1678,7 +1672,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28edb1860108
+DECL|struct|__anon28b69d690108
 typedef|typedef
 struct|struct
 block|{

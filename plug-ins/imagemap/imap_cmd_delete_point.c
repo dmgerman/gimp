@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_delete_point.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_main.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -84,7 +78,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b60430b0108
+DECL|struct|__anon2a4415860108
 typedef|typedef
 struct|struct
 block|{
@@ -269,10 +263,6 @@ argument_list|,
 name|p
 argument_list|)
 expr_stmt|;
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 return|return
 name|CMD_APPEND
 return|;

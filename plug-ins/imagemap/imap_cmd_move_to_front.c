@@ -18,25 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"imap_cmd_create.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_delete.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_cmd_move_to_front.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"imap_main.h"
+file|"imap_commands.h"
 end_include
 
 begin_include
@@ -57,30 +39,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|move_to_front_command_undo
-parameter_list|(
-name|Command_t
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|move_to_front_command_redo
-parameter_list|(
-name|Command_t
-modifier|*
-name|parent
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|move_to_front_command_class
 specifier|static
@@ -93,15 +51,17 @@ block|,
 comment|/* move_to_front_command_destruct, */
 name|move_to_front_command_execute
 block|,
-name|move_to_front_command_undo
+name|NULL
 block|,
-name|move_to_front_command_redo
+comment|/* move_to_front_command_undo */
+name|NULL
+comment|/* move_to_front_command_redo */
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29b40f1e0108
+DECL|struct|__anon295a81e70108
 typedef|typedef
 struct|struct
 block|{
@@ -315,10 +275,6 @@ operator|->
 name|list
 argument_list|)
 expr_stmt|;
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 name|object_list_remove_remove_cb
 argument_list|(
 name|command
@@ -340,42 +296,6 @@ expr_stmt|;
 return|return
 name|CMD_APPEND
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|move_to_front_command_undo (Command_t * command)
-name|move_to_front_command_undo
-parameter_list|(
-name|Command_t
-modifier|*
-name|command
-parameter_list|)
-block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|move_to_front_command_redo (Command_t * command)
-name|move_to_front_command_redo
-parameter_list|(
-name|Command_t
-modifier|*
-name|command
-parameter_list|)
-block|{
-name|redraw_preview
-argument_list|()
-expr_stmt|;
-comment|/* Fix me! */
 block|}
 end_function
 
