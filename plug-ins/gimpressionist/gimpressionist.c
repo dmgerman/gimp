@@ -3037,7 +3037,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 decl_stmt|;
 end_decl_stmt

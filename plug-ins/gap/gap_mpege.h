@@ -37,7 +37,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29312c690103
+DECL|enum|__anon2c8a2cec0103
 block|{
 DECL|enumerator|MPEG_ENCODE
 name|MPEG_ENCODE
@@ -54,7 +54,7 @@ begin_function_decl
 name|int
 name|gap_mpeg_encode
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32

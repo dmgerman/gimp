@@ -169,7 +169,7 @@ parameter_list|,
 name|int
 name|nparam
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -177,7 +177,7 @@ name|int
 modifier|*
 name|nretvals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|retvals
@@ -187,7 +187,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -220,13 +220,13 @@ name|query
 parameter_list|()
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_std
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -234,7 +234,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -242,7 +242,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -268,13 +268,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_goto
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -282,7 +282,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -290,7 +290,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -298,7 +298,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"nr"
 block|,
@@ -324,13 +324,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_del
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -338,7 +338,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -346,7 +346,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -354,7 +354,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"nr"
 block|,
@@ -380,13 +380,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_dup
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -394,7 +394,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -402,7 +402,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -410,7 +410,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"nr"
 block|,
@@ -418,7 +418,7 @@ literal|"how often to copy current frame"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -426,7 +426,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -452,13 +452,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_exchg
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -466,7 +466,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -474,7 +474,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -482,7 +482,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"nr"
 block|,
@@ -508,13 +508,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_mov
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -522,7 +522,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -530,7 +530,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -556,13 +556,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_f2multi
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -570,7 +570,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -578,7 +578,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -586,7 +586,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -594,7 +594,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -602,7 +602,7 @@ literal|"frame nr to stop (can be lower than range_from)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"flatten_mode"
 block|,
@@ -610,7 +610,7 @@ literal|"{ expand-as-necessary(0), CLIP-TO_IMG(1), CLIP-TO-BG-LAYER(2), FLATTEN(
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"bg_visible"
 block|,
@@ -618,7 +618,7 @@ literal|"{ BG_NOT_VISIBLE (0), BG_VISIBLE(1) }"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"framerate"
 block|,
@@ -626,7 +626,7 @@ literal|"frame delaytime in ms"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"frame_basename"
 block|,
@@ -634,7 +634,7 @@ literal|"basename for all generated layers"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"select_mode"
 block|,
@@ -642,7 +642,7 @@ literal|"Mode how to identify a layer: 0-3 by layername 0=equal, 1=prefix, 2=suf
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"select_case"
 block|,
@@ -650,7 +650,7 @@ literal|"0: ignore case 1: select_string is case sensitive"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"select_invert"
 block|,
@@ -658,7 +658,7 @@ literal|"0: select normal 1: invert (select all unselected layers)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"select_string"
 block|,
@@ -684,13 +684,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|return_f2multi
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"new_image"
 block|,
@@ -716,13 +716,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_rflatt
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -730,7 +730,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -738,7 +738,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -746,7 +746,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -754,7 +754,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -780,13 +780,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_rlayerdel
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -794,7 +794,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -802,7 +802,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -810,7 +810,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -818,7 +818,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -826,7 +826,7 @@ literal|"frame nr to stop (can be lower than range_from)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"nr"
 block|,
@@ -852,13 +852,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_rconv
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -866,7 +866,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -874,7 +874,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -882,7 +882,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -890,7 +890,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -898,7 +898,7 @@ literal|"frame nr to stop (can be lower than range_from)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"flatten"
 block|,
@@ -906,7 +906,7 @@ literal|"0 .. dont flatten image before save"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dest_type"
 block|,
@@ -914,7 +914,7 @@ literal|"0=RGB, 1=GRAY, 2=INDEXED"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dest_colors"
 block|,
@@ -922,7 +922,7 @@ literal|"1 upto 256 (used only for dest_type INDEXED)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dest_dither"
 block|,
@@ -930,7 +930,7 @@ literal|"0=no, 1=floyd-steinberg  2=fs/low-bleed, 3=fixed (used only for dest_ty
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"extension"
 block|,
@@ -938,7 +938,7 @@ literal|"extension for the destination filetype (jpg, tif ...or any other gimp s
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"basename"
 block|,
@@ -964,13 +964,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_rconv2
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -978,7 +978,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -986,7 +986,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -994,7 +994,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -1002,7 +1002,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -1010,7 +1010,7 @@ literal|"frame nr to stop (can be lower than range_from)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"flatten"
 block|,
@@ -1018,7 +1018,7 @@ literal|"0 .. dont flatten image before save"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dest_type"
 block|,
@@ -1026,7 +1026,7 @@ literal|"0=RGB, 1=GRAY, 2=INDEXED"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dest_colors"
 block|,
@@ -1034,7 +1034,7 @@ literal|"1 upto 256 (used only for dest_type INDEXED)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dest_dither"
 block|,
@@ -1042,7 +1042,7 @@ literal|"0=no, 1=floyd-steinberg 2=fs/low-bleed, 3=fixed(used only for dest_type
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"extension"
 block|,
@@ -1050,7 +1050,7 @@ literal|"extension for the destination filetype (jpg, tif ...or any other gimp s
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"basename"
 block|,
@@ -1058,7 +1058,7 @@ literal|"(optional parameter) here you may specify the basename of the destinati
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"palette_type"
 block|,
@@ -1066,7 +1066,7 @@ literal|"0 == MAKE_PALETTE, 2 == WEB_PALETTE, 3 == MONO_PALETTE (bw) 4 == CUSTOM
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"alpha_dither"
 block|,
@@ -1074,7 +1074,7 @@ literal|"dither transparency to fake partial opacity (used only for dest_type IN
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"remove_unused"
 block|,
@@ -1082,7 +1082,7 @@ literal|"remove unused or double colors from final palette (used only for dest_t
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"palette"
 block|,
@@ -1109,13 +1109,13 @@ argument_list|)
 decl_stmt|;
 comment|/* resize and crop share the same parameters */
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_resize
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1123,7 +1123,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1131,7 +1131,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1139,7 +1139,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_width"
 block|,
@@ -1147,7 +1147,7 @@ literal|"width of the resulting  anim_frame images in pixels"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_height"
 block|,
@@ -1155,7 +1155,7 @@ literal|"height of the resulting  anim_frame images in pixels"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offset_x"
 block|,
@@ -1163,7 +1163,7 @@ literal|"X offset in pixels"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"offset_y"
 block|,
@@ -1189,13 +1189,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_scale
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1203,7 +1203,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1211,7 +1211,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1219,7 +1219,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_width"
 block|,
@@ -1227,7 +1227,7 @@ literal|"width of the resulting  anim_frame images in pixels"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"new_height"
 block|,
@@ -1253,13 +1253,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_split
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1267,7 +1267,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1275,7 +1275,7 @@ literal|"Input image (NO Anim Frame allowed)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1283,7 +1283,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"inverse_order"
 block|,
@@ -1291,7 +1291,7 @@ literal|"True/False"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"no_alpha"
 block|,
@@ -1299,7 +1299,7 @@ literal|"True: remove alpha channel(s) in the destination frames"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"extension"
 block|,
@@ -1325,13 +1325,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|return_split
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"new_image"
 block|,
@@ -1357,7 +1357,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 init|=
@@ -1370,13 +1370,13 @@ init|=
 literal|0
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_shift
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1384,7 +1384,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1392,7 +1392,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1400,7 +1400,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"nr"
 block|,
@@ -1408,7 +1408,7 @@ literal|"how many framenumbers to shift the framesequence"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -1416,7 +1416,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -1442,13 +1442,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_modify
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1456,7 +1456,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1464,7 +1464,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1472,7 +1472,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -1480,7 +1480,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -1488,7 +1488,7 @@ literal|"frame nr to stop"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"action_mode"
 block|,
@@ -1496,7 +1496,7 @@ literal|"0:set_visible, 1:set_invisible, 2:set_linked, 3:set_unlinked, 4:raise, 
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"select_mode"
 block|,
@@ -1504,7 +1504,7 @@ literal|"Mode how to identify a layer: 0-3 by layername 0=equal, 1=prefix, 2=suf
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"select_case"
 block|,
@@ -1512,7 +1512,7 @@ literal|"0: ignore case 1: select_string is case sensitive"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"select_invert"
 block|,
@@ -1520,7 +1520,7 @@ literal|"0: select normal 1: invert (select all unselected layers)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"select_string"
 block|,
@@ -1528,7 +1528,7 @@ literal|"string to match with layername (how to match is defined by select_mode)
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"new_layername"
 block|,
@@ -1554,13 +1554,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_video_copy
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1568,7 +1568,7 @@ literal|"always non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1576,7 +1576,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1584,7 +1584,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_from"
 block|,
@@ -1592,7 +1592,7 @@ literal|"frame nr to start"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"range_to"
 block|,
@@ -1618,13 +1618,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_video_paste
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1632,7 +1632,7 @@ literal|"always non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1640,7 +1640,7 @@ literal|"Input image (current one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1648,7 +1648,7 @@ literal|"Input drawable (unused)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"paste_mode"
 block|,
@@ -1676,13 +1676,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_video_clear
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1690,7 +1690,7 @@ literal|"always non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1698,7 +1698,7 @@ literal|"Input image (is ignored)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1747,7 +1747,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_std
 argument_list|,
@@ -1779,7 +1779,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_std
 argument_list|,
@@ -1811,7 +1811,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_std
 argument_list|,
@@ -1843,7 +1843,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_std
 argument_list|,
@@ -1875,7 +1875,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_goto
 argument_list|,
@@ -1907,7 +1907,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_del
 argument_list|,
@@ -1939,7 +1939,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_dup
 argument_list|,
@@ -1971,7 +1971,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_exchg
 argument_list|,
@@ -2003,7 +2003,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_mov
 argument_list|,
@@ -2035,7 +2035,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_f2multi
 argument_list|,
@@ -2067,7 +2067,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_rflatt
 argument_list|,
@@ -2099,7 +2099,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_rlayerdel
 argument_list|,
@@ -2129,7 +2129,7 @@ argument_list|,
 comment|/* do not appear in menus */
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_rconv
 argument_list|,
@@ -2161,7 +2161,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_rconv2
 argument_list|,
@@ -2193,7 +2193,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_resize
 argument_list|,
@@ -2225,7 +2225,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_resize
 argument_list|,
@@ -2257,7 +2257,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_scale
 argument_list|,
@@ -2289,7 +2289,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_split
 argument_list|,
@@ -2321,7 +2321,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_shift
 argument_list|,
@@ -2353,7 +2353,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_modify
 argument_list|,
@@ -2385,7 +2385,7 @@ argument_list|,
 comment|/* do not appear in menus */
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_video_copy
 argument_list|,
@@ -2422,7 +2422,7 @@ argument_list|,
 comment|/* do not appear in menus */
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_video_paste
 argument_list|,
@@ -2454,7 +2454,7 @@ argument_list|,
 comment|/* do not appear in menus */
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_video_clear
 argument_list|,
@@ -2475,7 +2475,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (char * name,int n_params,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -2485,7 +2485,7 @@ parameter_list|,
 name|int
 name|n_params
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -2493,7 +2493,7 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -2501,7 +2501,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c607f0108
+DECL|struct|__anon28b6070c0108
 block|{
 DECL|member|lock
 name|long
@@ -2562,19 +2562,19 @@ modifier|*
 name|l_palette_ptr
 decl_stmt|;
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_id
@@ -2587,7 +2587,7 @@ name|range_from
 decl_stmt|,
 name|range_to
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|dest_type
 decl_stmt|;
 name|gint32
@@ -2795,7 +2795,7 @@ argument_list|)
 expr_stmt|;
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|values
 index|[
@@ -2804,7 +2804,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -2849,7 +2849,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|INIT_I18N
@@ -2878,7 +2878,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -2890,7 +2890,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -2898,7 +2898,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -2940,7 +2940,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -2952,7 +2952,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -2960,7 +2960,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3002,7 +3002,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -3014,7 +3014,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -3022,7 +3022,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3064,7 +3064,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -3076,7 +3076,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -3084,7 +3084,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3126,7 +3126,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -3138,7 +3138,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -3146,7 +3146,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3202,7 +3202,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -3214,7 +3214,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -3222,7 +3222,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3278,7 +3278,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 comment|/* accept the old interface with 4 parameters */
@@ -3299,7 +3299,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -3307,7 +3307,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3412,7 +3412,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -3424,7 +3424,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -3432,7 +3432,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3488,20 +3488,20 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 comment|/* if (n_params != ?? ) */
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3548,7 +3548,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -3574,7 +3574,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -3582,7 +3582,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3862,7 +3862,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -3894,7 +3894,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -3906,7 +3906,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -3914,7 +3914,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -3984,7 +3984,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -3996,7 +3996,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -4004,7 +4004,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -4121,7 +4121,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -4147,7 +4147,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -4262,7 +4262,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -4397,7 +4397,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -4409,7 +4409,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -4417,7 +4417,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -4513,7 +4513,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -4525,7 +4525,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -4533,7 +4533,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -4629,7 +4629,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -4641,7 +4641,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -4649,7 +4649,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -4728,7 +4728,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -4740,7 +4740,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -4784,7 +4784,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -4848,7 +4848,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -4880,7 +4880,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -4892,7 +4892,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -4900,7 +4900,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -4989,14 +4989,14 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -5071,14 +5071,14 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -5134,7 +5134,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 if|if
@@ -5177,7 +5177,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -5189,7 +5189,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -5296,7 +5296,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -5416,14 +5416,14 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -5435,7 +5435,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[

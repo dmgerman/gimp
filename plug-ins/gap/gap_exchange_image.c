@@ -296,7 +296,7 @@ argument_list|(
 name|src_image_id
 argument_list|)
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 name|l_cmap

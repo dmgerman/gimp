@@ -254,7 +254,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|,
@@ -403,7 +403,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon27a244de0108
+DECL|struct|__anon2b7e600f0108
 block|{
 DECL|member|bna
 name|GtkWidget

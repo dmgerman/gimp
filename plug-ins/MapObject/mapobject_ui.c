@@ -7509,10 +7509,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|main_dialog (GDrawable * drawable)
+DECL|function|main_dialog (GimpDrawable * drawable)
 name|main_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)

@@ -29,7 +29,7 @@ modifier|*
 name|t_iter_ALT_func
 function_decl|)
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32

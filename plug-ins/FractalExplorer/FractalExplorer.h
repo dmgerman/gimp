@@ -108,7 +108,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293456fa0103
+DECL|enum|__anon2bd187a10103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293456fa0203
+DECL|enum|__anon2bd187a10203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -166,7 +166,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293456fa0308
+DECL|struct|__anon2bd187a10308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -261,7 +261,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293456fa0408
+DECL|struct|__anon2bd187a10408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -308,7 +308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293456fa0508
+DECL|struct|__anon2bd187a10508
 block|{
 DECL|member|text
 name|GtkWidget
@@ -745,7 +745,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -804,7 +804,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GTile
+name|GimpTile
 modifier|*
 name|the_tile
 decl_stmt|;

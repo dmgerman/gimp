@@ -506,7 +506,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec81ea0103
+DECL|enum|__anon275827a30103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec81ea0203
+DECL|enum|__anon275827a30203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0308
+DECL|struct|__anon275827a30308
 block|{
 DECL|member|name
 name|gchar
@@ -695,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0408
+DECL|struct|__anon275827a30408
 block|{
 DECL|member|fp
 name|FILE
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ec81ea0503
+DECL|enum|__anon275827a30503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0608
+DECL|struct|__anon275827a30608
 block|{
 DECL|member|init
 name|gint
@@ -765,7 +765,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28ec81ea0708
+DECL|struct|__anon275827a30708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -839,7 +839,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0808
+DECL|struct|__anon275827a30808
 block|{
 DECL|member|init
 name|gint
@@ -909,7 +909,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0908
+DECL|struct|__anon275827a30908
 block|{
 DECL|member|x0
 name|gdouble
@@ -936,7 +936,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0a08
+DECL|struct|__anon275827a30a08
 block|{
 DECL|member|init
 name|gint
@@ -1106,7 +1106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0b08
+DECL|struct|__anon275827a30b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1133,7 +1133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0c08
+DECL|struct|__anon275827a30c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1174,10 +1174,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0d08
+DECL|struct|__anon275827a30d08
 block|{
 DECL|member|tile
-name|GTile
+name|GimpTile
 modifier|*
 name|tile
 decl_stmt|;
@@ -1400,7 +1400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0e08
+DECL|struct|__anon275827a30e08
 block|{
 DECL|member|tag
 name|gint
@@ -1477,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea0f08
+DECL|struct|__anon275827a30f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1535,7 +1535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec81ea1008
+DECL|struct|__anon275827a31008
 block|{
 DECL|member|run
 name|gint
@@ -1592,7 +1592,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1600,7 +1600,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -2212,7 +2212,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -2483,7 +2483,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -4153,13 +4153,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -4167,7 +4167,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -4175,7 +4175,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -4183,7 +4183,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"gflare_name"
 block|,
@@ -4191,7 +4191,7 @@ literal|"The name of GFlare"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"xcenter"
 block|,
@@ -4199,7 +4199,7 @@ literal|"X coordinate of center of GFlare"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"ycenter"
 block|,
@@ -4207,7 +4207,7 @@ literal|"Y coordinate of center of GFlare"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"radius"
 block|,
@@ -4215,7 +4215,7 @@ literal|"Radius of GFlare (pixel)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"rotation"
 block|,
@@ -4223,7 +4223,7 @@ literal|"Rotation of GFlare (degree)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"hue"
 block|,
@@ -4231,7 +4231,7 @@ literal|"Hue rotation of GFlare (degree)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"vangle"
 block|,
@@ -4239,7 +4239,7 @@ literal|"Vector angle for second flares (degree)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"vlength"
 block|,
@@ -4247,7 +4247,7 @@ literal|"Vector length for second flares (percentage to Radius)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"use_asupsample"
 block|,
@@ -4255,7 +4255,7 @@ literal|"Whether it uses or not adaptive supersampling while rendering (boolean)
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"asupsample_max_depth"
 block|,
@@ -4263,7 +4263,7 @@ literal|"Max depth for adaptive supersampling"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"asupsample_threshold"
 block|,
@@ -4320,7 +4320,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -4336,7 +4336,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|plugin_run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|plugin_run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|plugin_run
 parameter_list|(
 name|gchar
@@ -4346,7 +4346,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -4354,26 +4354,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 comment|/* Initialize */
 name|run_mode
@@ -4404,7 +4404,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -4535,7 +4535,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -4566,12 +4566,12 @@ return|return;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|#
 directive|if
 literal|0
-block|printf("Currently non interactive call of gradient flare is not supported\n");       status = STATUS_CALLING_ERROR;       break;
+block|printf("Currently non interactive call of gradient flare is not supported\n");       status = GIMP_PDB_CALLING_ERROR;       break;
 endif|#
 directive|endif
 if|if
@@ -4583,7 +4583,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -4744,12 +4744,12 @@ literal|0
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
@@ -4768,7 +4768,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/*  Make sure that the drawable is gray or RGB color  */
@@ -4804,7 +4804,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -4814,7 +4814,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -4842,7 +4842,7 @@ argument_list|)
 expr_stmt|;
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -5237,7 +5237,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|,
 name|dest_rgn
@@ -9328,7 +9328,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon28ec81ea1108
+DECL|struct|__anon275827a31108
 specifier|static
 struct|struct
 block|{
@@ -13955,7 +13955,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|;
 name|gint
@@ -15796,7 +15796,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon28ec81ea1208
+DECL|struct|__anon275827a31208
 block|{
 DECL|member|label
 name|gchar

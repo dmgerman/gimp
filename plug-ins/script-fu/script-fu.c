@@ -1138,7 +1138,7 @@ argument_list|,
 name|script_fu_quit_call
 argument_list|)
 expr_stmt|;
-name|gimp_query_database
+name|gimp_procedural_db_query
 argument_list|(
 literal|".*"
 argument_list|,
@@ -1784,7 +1784,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"RGB_IMAGE"
+literal|"GIMP_RGB_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1799,7 +1799,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"RGBA_IMAGE"
+literal|"GIMP_RGBA_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1814,7 +1814,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAY_IMAGE"
+literal|"GIMP_GRAY_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1829,7 +1829,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"GRAYA_IMAGE"
+literal|"GIMP_GRAYA_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1844,7 +1844,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"INDEXED_IMAGE"
+literal|"GIMP_INDEXED_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons
@@ -1859,7 +1859,7 @@ name|setvar
 argument_list|(
 name|cintern
 argument_list|(
-literal|"INDEXEDA_IMAGE"
+literal|"GIMP_INDEXEDA_IMAGE"
 argument_list|)
 argument_list|,
 name|flocons

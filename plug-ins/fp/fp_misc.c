@@ -38,7 +38,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|,
@@ -241,16 +241,16 @@ block|}
 end_function
 
 begin_function
-DECL|function|Reduce_The_Image (GDrawable * drawable,GDrawable * mask,gint LongerSize,gint Slctn)
+DECL|function|Reduce_The_Image (GimpDrawable * drawable,GimpDrawable * mask,gint LongerSize,gint Slctn)
 name|ReducedImage
 modifier|*
 name|Reduce_The_Image
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|mask
 parameter_list|,
@@ -328,7 +328,7 @@ name|y1
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|,
 name|srcMask

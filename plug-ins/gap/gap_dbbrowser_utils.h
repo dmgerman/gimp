@@ -77,7 +77,7 @@ file|"gap_filter.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon275b85850108
+DECL|struct|__anon2c6abc1b0108
 typedef|typedef
 struct|struct
 block|{
@@ -98,7 +98,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275b85850208
+DECL|struct|__anon2c6abc1b0208
 typedef|typedef
 struct|struct
 block|{
@@ -365,7 +365,7 @@ name|gchar
 modifier|*
 name|GParamType2char
 parameter_list|(
-name|GParamType
+name|GimpPDBArgType
 name|t
 parameter_list|)
 function_decl|;

@@ -337,7 +337,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8fd6c0108
+DECL|struct|__anon2bc38e740108
 block|{
 DECL|member|command
 name|gchar
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8fd6c0208
+DECL|struct|__anon2bc38e740208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -636,7 +636,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|script_fu_server_run (char * name,int nparams,GParam * params,int * nreturn_vals,GParam ** return_vals)
+DECL|function|script_fu_server_run (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_server_run
 parameter_list|(
 name|char
@@ -646,7 +646,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -654,25 +654,25 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -692,7 +692,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 if|if
 condition|(
@@ -719,7 +719,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Set server_mode to TRUE  */
 name|server_mode
@@ -750,15 +750,15 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|g_warning
 argument_list|(
-literal|"Script-Fu server does handle \"RUN_WITH_LAST_VALS\""
+literal|"Script-Fu server does handle \"GIMP_RUN_WITH_LAST_VALS\""
 argument_list|)
 expr_stmt|;
 default|default:
@@ -781,7 +781,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[

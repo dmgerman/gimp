@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * gimp   1.1.6;     1999/06/21  hof: bugix: wrong iterator total_steps and direction  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GDrawableType with GImageType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
+comment|/* revision history:  * gimp   1.1.6;     1999/06/21  hof: bugix: wrong iterator total_steps and direction  * gimp   1.1.15.1;  1999/05/08  hof: bugix (dont mix GimpImageType with GimpImageBaseType)  * version 0.98.00   1998.11.27  hof: - use new module gap_pdb_calls.h  * version 0.97.00   1998.10.19  hof: - created module  */
 end_comment
 
 begin_comment
@@ -1686,7 +1686,7 @@ name|gint32
 name|image_id
 parameter_list|)
 block|{
-name|GImageType
+name|GimpImageBaseType
 name|l_type
 decl_stmt|;
 name|guint
@@ -1770,7 +1770,7 @@ operator|*
 literal|2
 operator|)
 expr_stmt|;
-comment|/* convert from GImageType to GDrawableType */
+comment|/* convert from GimpImageBaseType to GimpImageType */
 comment|/* add a transparent dummy layer */
 name|l_layer_id
 operator|=
@@ -2475,7 +2475,7 @@ name|image_id
 argument_list|,
 name|l_layer_id
 argument_list|,
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 argument_list|)
 expr_stmt|;
 if|if
@@ -2694,7 +2694,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_gtk_init
@@ -2895,7 +2895,7 @@ name|image_id
 argument_list|,
 name|l_layer_id
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|)
 expr_stmt|;
 comment|/* OOPS: cant delete the display here, because    *       closing the last display seems to free up    *       at least parts of the image,    *       and causes crashes if the image_id is used    *       in further gimp procedures    */
@@ -3170,7 +3170,7 @@ condition|)
 block|{
 name|p_msg_win
 argument_list|(
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|_
 argument_list|(
@@ -3211,7 +3211,7 @@ name|l_last_image_id
 argument_list|,
 name|l_layer_id
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|)
 expr_stmt|;
 comment|/* get values, then store with suffix "_ITER_TO" */
@@ -3405,7 +3405,7 @@ name|t_LayliElem
 modifier|*
 name|l_layli_ptr
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -3481,7 +3481,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gimp_progress_init
@@ -3818,7 +3818,7 @@ condition|)
 block|{
 name|p_msg_win
 argument_list|(
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|_
 argument_list|(
@@ -4176,16 +4176,16 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|l_total_steps
 argument_list|,
 comment|/* total steps  */
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 argument_list|,
 operator|(
 name|gdouble
@@ -4193,12 +4193,12 @@ operator|)
 name|l_cur_step
 argument_list|,
 comment|/* current step */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|l_plugin_data_len
 argument_list|,
 comment|/* length of stored data struct */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -4276,7 +4276,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -4397,11 +4397,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_mod_layer (GRunModeType run_mode,gint32 image_id,gint32 range_from,gint32 range_to,gint32 action_mode,gint32 sel_mode,gint32 sel_case,gint32 sel_invert,char * sel_pattern,char * new_layername)
+DECL|function|gap_mod_layer (GimpRunModeType run_mode,gint32 image_id,gint32 range_from,gint32 range_to,gint32 action_mode,gint32 sel_mode,gint32 sel_case,gint32 sel_invert,char * sel_pattern,char * new_layername)
 name|gint
 name|gap_mod_layer
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -4505,7 +4505,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_rc

@@ -40,7 +40,7 @@ begin_function_decl
 name|int
 name|gap_move
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32

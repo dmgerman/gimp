@@ -151,7 +151,7 @@ parameter_list|,
 name|int
 name|nparam
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -159,7 +159,7 @@ name|int
 modifier|*
 name|nretvals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|retvals
@@ -169,7 +169,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -202,13 +202,13 @@ name|query
 parameter_list|()
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_xanim
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -216,7 +216,7 @@ literal|"Interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -224,7 +224,7 @@ literal|"(unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -250,13 +250,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_xanim_ext
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -282,13 +282,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args_mpege
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -296,7 +296,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -304,7 +304,7 @@ literal|"Input image (one of the Anim Frames)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -330,7 +330,7 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 init|=
@@ -363,7 +363,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_xanim
 argument_list|,
@@ -395,7 +395,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|nargs_xanim_ext
 argument_list|,
@@ -427,7 +427,7 @@ argument_list|)
 argument_list|,
 literal|"*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_mpege
 argument_list|,
@@ -459,7 +459,7 @@ argument_list|)
 argument_list|,
 literal|"*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs_mpege
 argument_list|,
@@ -480,7 +480,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int n_params,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (char * name,int n_params,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -490,7 +490,7 @@ parameter_list|,
 name|int
 name|n_params
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -498,7 +498,7 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -506,7 +506,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c35c7670108
+DECL|struct|__anon2b6792f30108
 block|{
 DECL|member|lock
 name|long
@@ -547,19 +547,19 @@ literal|32
 index|]
 decl_stmt|;
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_id
@@ -732,7 +732,7 @@ argument_list|)
 expr_stmt|;
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|values
 index|[
@@ -741,7 +741,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -787,7 +787,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|INIT_I18N
@@ -829,12 +829,12 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 comment|/* planed: define non interactive PARAMS */
 block|}
@@ -842,7 +842,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/* planed: define non interactive PARAMS */
@@ -873,7 +873,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -885,7 +885,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -909,7 +909,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -955,7 +955,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 if|if
@@ -967,7 +967,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -991,7 +991,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|image_id
@@ -1030,14 +1030,14 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1049,7 +1049,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[

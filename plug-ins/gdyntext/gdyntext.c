@@ -499,7 +499,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|memset
 argument_list|(
@@ -649,7 +649,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 ifdef|#
 directive|ifdef
@@ -679,7 +679,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 return|return;
 block|}
@@ -865,7 +865,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
@@ -938,7 +938,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gdtvals
@@ -1573,9 +1573,9 @@ name|gimp_parasite_new
 argument_list|(
 name|GDYNTEXT_PARASITE
 argument_list|,
-name|PARASITE_PERSISTENT
+name|GIMP_PARASITE_PERSISTENT
 operator||
-name|PARASITE_UNDOABLE
+name|GIMP_PARASITE_UNDOABLE
 argument_list|,
 name|strlen
 argument_list|(
@@ -1585,7 +1585,7 @@ argument_list|,
 name|lname
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_attach_parasite
+name|gimp_drawable_parasite_attach
 argument_list|(
 name|data
 operator|->
@@ -2227,7 +2227,7 @@ argument_list|)
 argument_list|,
 literal|100.0
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|gimp_layer_add_alpha

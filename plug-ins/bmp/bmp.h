@@ -140,7 +140,7 @@ end_function_decl
 
 begin_function_decl
 specifier|extern
-name|GStatusType
+name|GimpPDBStatusType
 name|WriteBMP
 parameter_list|(
 name|gchar

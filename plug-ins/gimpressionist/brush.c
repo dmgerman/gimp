@@ -271,7 +271,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|;
 name|guchar
@@ -313,7 +313,7 @@ name|row
 decl_stmt|,
 name|col
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;

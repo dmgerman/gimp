@@ -179,7 +179,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5f737b0108
+DECL|struct|__anon2926a9fa0108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -480,7 +480,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|script_fu_console_run (char * name,int nparams,GParam * params,int * nreturn_vals,GParam ** return_vals)
+DECL|function|script_fu_console_run (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_console_run
 parameter_list|(
 name|char
@@ -490,7 +490,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -498,25 +498,25 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -536,7 +536,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*  Enable SIOD output  */
 name|script_fu_open_siod_console
@@ -552,14 +552,14 @@ argument_list|()
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|gimp_message
 argument_list|(
@@ -590,7 +590,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -3008,7 +3008,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|script_fu_eval_run (char * name,int nparams,GParam * params,int * nreturn_vals,GParam ** return_vals)
+DECL|function|script_fu_eval_run (char * name,int nparams,GimpParam * params,int * nreturn_vals,GimpParam ** return_vals)
 name|script_fu_eval_run
 parameter_list|(
 name|char
@@ -3018,7 +3018,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|params
 parameter_list|,
@@ -3026,25 +3026,25 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|run_mode
@@ -3064,7 +3064,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -3090,18 +3090,18 @@ literal|0
 condition|)
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 break|break;
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|gimp_message
 argument_list|(
@@ -3132,7 +3132,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[

@@ -156,7 +156,7 @@ modifier|*
 name|old_filename
 decl_stmt|;
 DECL|member|run_mode
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 DECL|member|width
@@ -271,7 +271,7 @@ parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|)
 function_decl|;
@@ -360,7 +360,7 @@ name|char
 modifier|*
 name|sav_name
 parameter_list|,
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|)
 function_decl|;
@@ -485,7 +485,7 @@ begin_function_decl
 name|int
 name|gap_next
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -498,7 +498,7 @@ begin_function_decl
 name|int
 name|gap_prev
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -511,7 +511,7 @@ begin_function_decl
 name|int
 name|gap_first
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -524,7 +524,7 @@ begin_function_decl
 name|int
 name|gap_last
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -537,7 +537,7 @@ begin_function_decl
 name|int
 name|gap_goto
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -553,7 +553,7 @@ begin_function_decl
 name|int
 name|gap_dup
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -575,7 +575,7 @@ begin_function_decl
 name|int
 name|gap_del
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -591,7 +591,7 @@ begin_function_decl
 name|int
 name|gap_exchg
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -607,7 +607,7 @@ begin_function_decl
 name|int
 name|gap_shift
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -629,7 +629,7 @@ begin_function_decl
 name|void
 name|p_msg_win
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|char
@@ -671,7 +671,7 @@ begin_function_decl
 name|gint
 name|gap_vid_edit_copy
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -690,7 +690,7 @@ begin_function_decl
 name|gint
 name|gap_vid_edit_paste
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32

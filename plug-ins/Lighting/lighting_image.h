@@ -14,7 +14,7 @@ end_define
 
 begin_decl_stmt
 specifier|extern
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|input_drawable
 decl_stmt|,
@@ -25,7 +25,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GPixelRgn
+name|GimpPixelRgn
 name|source_region
 decl_stmt|,
 name|dest_region
@@ -34,7 +34,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|bump_drawable
 decl_stmt|;
@@ -42,14 +42,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GPixelRgn
+name|GimpPixelRgn
 name|bump_region
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|env_drawable
 decl_stmt|;
@@ -57,7 +57,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|GPixelRgn
+name|GimpPixelRgn
 name|env_region
 decl_stmt|;
 end_decl_stmt
@@ -148,7 +148,7 @@ begin_function_decl
 name|guchar
 name|peek_map
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|region
 parameter_list|,
@@ -306,7 +306,7 @@ begin_function_decl
 name|gdouble
 name|get_map_value
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|region
 parameter_list|,
@@ -327,7 +327,7 @@ begin_function_decl
 name|gint
 name|image_setup
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,

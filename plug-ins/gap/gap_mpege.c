@@ -5176,11 +5176,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_mpeg_encode (GRunModeType run_mode,gint32 image_id,t_gap_mpeg_encoder encoder)
+DECL|function|gap_mpeg_encode (GimpRunModeType run_mode,gint32 image_id,t_gap_mpeg_encoder encoder)
 name|int
 name|gap_mpeg_encode
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -5522,7 +5522,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_genmode

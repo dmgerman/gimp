@@ -56,7 +56,7 @@ end_include
 begin_decl_stmt
 DECL|variable|input_drawable
 DECL|variable|output_drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|input_drawable
 decl_stmt|,
@@ -68,7 +68,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|source_region
 DECL|variable|dest_region
-name|GPixelRgn
+name|GimpPixelRgn
 name|source_region
 decl_stmt|,
 name|dest_region
@@ -77,7 +77,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|bump_drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|bump_drawable
 init|=
@@ -87,14 +87,14 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|bump_region
-name|GPixelRgn
+name|GimpPixelRgn
 name|bump_region
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|env_drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|env_drawable
 init|=
@@ -104,7 +104,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|env_region
-name|GPixelRgn
+name|GimpPixelRgn
 name|env_region
 decl_stmt|;
 end_decl_stmt
@@ -220,10 +220,10 @@ end_comment
 
 begin_function
 name|guchar
-DECL|function|peek_map (GPixelRgn * region,gint x,gint y)
+DECL|function|peek_map (GimpPixelRgn * region,gint x,gint y)
 name|peek_map
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|region
 parameter_list|,
@@ -1427,10 +1427,10 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|get_map_value (GPixelRgn * region,gdouble u,gdouble v,gint * inside)
+DECL|function|get_map_value (GimpPixelRgn * region,gdouble u,gdouble v,gint * inside)
 name|get_map_value
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|region
 parameter_list|,
@@ -1794,10 +1794,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|image_setup (GDrawable * drawable,gint interactive)
+DECL|function|image_setup (GimpDrawable * drawable,gint interactive)
 name|image_setup
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,

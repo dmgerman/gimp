@@ -51,7 +51,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_my_layer_copy (gint32 dst_image_id,gint32 src_layer_id,gdouble opacity,GLayerMode mode,gint * src_offset_x,gint * src_offset_y)
+DECL|function|p_my_layer_copy (gint32 dst_image_id,gint32 src_layer_id,gdouble opacity,GimpLayerModeEffects mode,gint * src_offset_x,gint * src_offset_y)
 name|gint32
 name|p_my_layer_copy
 parameter_list|(
@@ -65,7 +65,7 @@ name|gdouble
 name|opacity
 parameter_list|,
 comment|/* 0.0 upto 100.0 */
-name|GLayerMode
+name|GimpLayerModeEffects
 name|mode
 parameter_list|,
 name|gint
@@ -87,7 +87,7 @@ name|char
 modifier|*
 name|l_name
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|l_src_type
 decl_stmt|;
 if|if
@@ -138,7 +138,7 @@ argument_list|)
 expr_stmt|;
 name|l_src_type
 operator|=
-name|gimp_layer_type
+name|gimp_drawable_type
 argument_list|(
 name|src_layer_id
 argument_list|)
@@ -149,11 +149,11 @@ name|l_src_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 comment|/* 0 */
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 comment|/* 1 */
 if|if
@@ -163,7 +163,7 @@ argument_list|(
 name|dst_image_id
 argument_list|)
 operator|!=
-name|RGB
+name|GIMP_RGB
 condition|)
 block|{
 return|return
@@ -173,11 +173,11 @@ return|;
 block|}
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 comment|/* 2 */
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 comment|/* 3 */
 if|if
@@ -187,7 +187,7 @@ argument_list|(
 name|dst_image_id
 argument_list|)
 operator|!=
-name|GRAY
+name|GIMP_GRAY
 condition|)
 block|{
 return|return
@@ -197,11 +197,11 @@ return|;
 block|}
 break|break;
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 comment|/* 4 */
 case|case
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 comment|/* 5 */
 if|if
@@ -211,7 +211,7 @@ argument_list|(
 name|dst_image_id
 argument_list|)
 operator|!=
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 return|return

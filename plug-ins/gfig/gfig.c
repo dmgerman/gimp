@@ -361,7 +361,7 @@ end_define
 begin_decl_stmt
 DECL|variable|gfig_select_drawable
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|gfig_select_drawable
 decl_stmt|;
@@ -486,7 +486,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -494,7 +494,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -1090,7 +1090,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -1121,7 +1121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290103
+DECL|enum|__anon288446620103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1173,7 +1173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290203
+DECL|enum|__anon288446620203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1194,7 +1194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290303
+DECL|enum|__anon288446620303
 block|{
 DECL|enumerator|SINGLE_LAYER
 name|SINGLE_LAYER
@@ -1215,7 +1215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290403
+DECL|enum|__anon288446620403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1239,7 +1239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290503
+DECL|enum|__anon288446620503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1260,7 +1260,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290603
+DECL|enum|__anon288446620603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1428,7 +1428,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3435290708
+DECL|struct|__anon288446620708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1467,7 +1467,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3435290808
+DECL|struct|__anon288446620808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1516,7 +1516,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3435290908
+DECL|struct|__anon288446620908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1687,7 +1687,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290a03
+DECL|enum|__anon288446620a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1717,7 +1717,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290b03
+DECL|enum|__anon288446620b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1733,7 +1733,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290c03
+DECL|enum|__anon288446620c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1758,7 +1758,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3435290d03
+DECL|enum|__anon288446620d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -3760,13 +3760,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -3774,7 +3774,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -3782,7 +3782,7 @@ literal|"Input image (unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -3790,7 +3790,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"dummy"
 block|,
@@ -3836,7 +3836,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -3853,7 +3853,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -3863,7 +3863,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -3871,34 +3871,34 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|values
 init|=
 name|g_new
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|,
 literal|1
 argument_list|)
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint
 name|pwidth
@@ -3956,7 +3956,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -4131,7 +4131,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*gimp_get_data ("plug_in_gfig",&selvals);*/
 name|INIT_I18N_UI
@@ -4153,15 +4153,15 @@ return|return;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*gimp_get_data ("plug_in_gfig",&selvals);*/
 break|break;
@@ -4210,7 +4210,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -4218,7 +4218,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|if (run_mode == RUN_INTERACTIVE) 	gimp_set_data ("plug_in_gfig",&selvals, sizeof (SelectItVals));
+block|if (run_mode == GIMP_RUN_INTERACTIVE) 	gimp_set_data ("plug_in_gfig",&selvals, sizeof (SelectItVals));
 endif|#
 directive|endif
 comment|/* 0 */
@@ -4227,7 +4227,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -4259,7 +4259,7 @@ name|gint32
 name|image_ID
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -4276,11 +4276,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -7733,7 +7733,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|;
 name|int
@@ -7850,10 +7850,10 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|isgrey
 operator|=
@@ -11572,10 +11572,10 @@ modifier|*
 name|bdesc
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|brushdrawable
 decl_stmt|;
@@ -11714,7 +11714,7 @@ modifier|*
 name|bname
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -11730,11 +11730,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|bname
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -11748,7 +11748,7 @@ name|data
 operator|.
 name|d_status
 operator|!=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|g_message
@@ -11777,7 +11777,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -11801,7 +11801,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -11815,7 +11815,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|strncpy
@@ -11878,7 +11878,7 @@ modifier|*
 name|height
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -11894,7 +11894,7 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -11908,7 +11908,7 @@ name|data
 operator|.
 name|d_status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 operator|*
@@ -22353,10 +22353,10 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|isgrey
 operator|=
@@ -32778,7 +32778,7 @@ modifier|*
 name|obj
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -33087,11 +33087,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|gfig_image
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -34883,7 +34883,7 @@ modifier|*
 name|obj
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -35231,11 +35231,11 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|gfig_image
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params

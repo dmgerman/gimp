@@ -73,7 +73,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7fc5870103
+DECL|enum|__anon2bcf15870103
 block|{
 DECL|enumerator|ASIZ_SCALE
 name|ASIZ_SCALE
@@ -93,7 +93,7 @@ begin_function_decl
 name|gint32
 name|gap_range_to_multilayer
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -141,7 +141,7 @@ begin_function_decl
 name|int
 name|gap_range_flatten
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -160,7 +160,7 @@ begin_function_decl
 name|int
 name|gap_range_layer_del
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -182,7 +182,7 @@ begin_function_decl
 name|int
 name|gap_range_conv
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -197,7 +197,7 @@ parameter_list|,
 name|long
 name|flatten
 parameter_list|,
-name|GImageType
+name|GimpImageBaseType
 name|dest_type
 parameter_list|,
 name|gint32
@@ -234,7 +234,7 @@ begin_function_decl
 name|int
 name|gap_anim_sizechange
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|t_gap_asiz

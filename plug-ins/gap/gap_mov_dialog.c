@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon276075920108
+DECL|struct|__anon2b4e281f0108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon276075920208
+DECL|struct|__anon2b4e281f0208
 typedef|typedef
 struct|struct
 block|{
@@ -265,10 +265,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276075920308
+DECL|struct|__anon2b4e281f0308
 block|{
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -289,7 +289,7 @@ modifier|*
 name|preview
 decl_stmt|;
 DECL|member|src_rgn
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|;
 DECL|member|PixelRgnIsInitialized
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon276075920408
+DECL|struct|__anon2b4e281f0408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276075920503
+DECL|enum|__anon2b4e281f0503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -715,7 +715,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|p_get_flattened_drawable
 parameter_list|(
@@ -727,7 +727,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|p_get_prevw_drawable
 parameter_list|(
@@ -743,7 +743,7 @@ specifier|static
 name|gint
 name|mov_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -766,7 +766,7 @@ name|GtkWidget
 modifier|*
 name|mov_path_prevw_create
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -1377,7 +1377,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 block|,
 name|NULL
 block|,
@@ -1399,7 +1399,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|DISSOLVE_MODE
+name|GIMP_DISSOLVE_MODE
 block|,
 name|NULL
 block|,
@@ -1421,7 +1421,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|MULTIPLY_MODE
+name|GIMP_MULTIPLY_MODE
 block|,
 name|NULL
 block|,
@@ -1443,7 +1443,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|SCREEN_MODE
+name|GIMP_SCREEN_MODE
 block|,
 name|NULL
 block|,
@@ -1465,7 +1465,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|OVERLAY_MODE
+name|GIMP_OVERLAY_MODE
 block|,
 name|NULL
 block|,
@@ -1487,7 +1487,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|DIFFERENCE_MODE
+name|GIMP_DIFFERENCE_MODE
 block|,
 name|NULL
 block|,
@@ -1509,7 +1509,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|ADDITION_MODE
+name|GIMP_ADDITION_MODE
 block|,
 name|NULL
 block|,
@@ -1531,7 +1531,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|SUBTRACT_MODE
+name|GIMP_SUBTRACT_MODE
 block|,
 name|NULL
 block|,
@@ -1553,7 +1553,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|DARKEN_ONLY_MODE
+name|GIMP_DARKEN_ONLY_MODE
 block|,
 name|NULL
 block|,
@@ -1575,7 +1575,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|LIGHTEN_ONLY_MODE
+name|GIMP_LIGHTEN_ONLY_MODE
 block|,
 name|NULL
 block|,
@@ -1597,7 +1597,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|HUE_MODE
+name|GIMP_HUE_MODE
 block|,
 name|NULL
 block|,
@@ -1619,7 +1619,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|SATURATION_MODE
+name|GIMP_SATURATION_MODE
 block|,
 name|NULL
 block|,
@@ -1641,7 +1641,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|COLOR_MODE
+name|GIMP_COLOR_MODE
 block|,
 name|NULL
 block|,
@@ -1663,7 +1663,7 @@ block|,
 operator|(
 name|gpointer
 operator|)
-name|VALUE_MODE
+name|GIMP_VALUE_MODE
 block|,
 name|NULL
 block|,
@@ -2038,7 +2038,7 @@ modifier|*
 name|mov_ptr
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_drawable_ptr
 decl_stmt|;
@@ -2199,7 +2199,7 @@ name|pvals
 operator|->
 name|src_paintmode
 operator|=
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 expr_stmt|;
 name|pvals
 operator|->
@@ -2422,10 +2422,10 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|mov_dialog (GDrawable * drawable,t_mov_path_preview * path_ptr,gint first_nr,gint last_nr)
+DECL|function|mov_dialog (GimpDrawable * drawable,t_mov_path_preview * path_ptr,gint first_nr,gint last_nr)
 name|mov_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -3908,7 +3908,7 @@ condition|)
 block|{
 name|p_msg_win
 argument_list|(
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|_
 argument_list|(
@@ -4222,7 +4222,7 @@ decl_stmt|;
 name|gint32
 name|l_new_image_id
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -4818,7 +4818,7 @@ condition|)
 block|{
 name|p_msg_win
 argument_list|(
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|_
 argument_list|(
@@ -4838,21 +4838,21 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|l_new_image_id
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 operator|-
 literal|1
 argument_list|,
 comment|/* dummy */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 block|}
@@ -10206,10 +10206,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|mov_path_prevw_create (GDrawable * drawable,t_mov_path_preview * path_ptr)
+DECL|function|mov_path_prevw_create (GimpDrawable * drawable,t_mov_path_preview * path_ptr)
 name|mov_path_prevw_create
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -12951,7 +12951,7 @@ name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|srcrgn
 parameter_list|)
@@ -13072,14 +13072,14 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|render_preview (GtkWidget * preview,GPixelRgn * srcrgn)
+DECL|function|render_preview (GtkWidget * preview,GimpPixelRgn * srcrgn)
 name|render_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|srcrgn
 parameter_list|)
@@ -15641,7 +15641,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-name|GDrawable
+name|GimpDrawable
 modifier|*
 DECL|function|p_get_flattened_drawable (gint32 image_id)
 name|p_get_flattened_drawable
@@ -15650,11 +15650,11 @@ name|gint32
 name|image_id
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_drawable_ptr
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|l_type
 decl_stmt|;
 name|guint
@@ -15695,7 +15695,7 @@ operator|*
 literal|2
 operator|)
 expr_stmt|;
-comment|/* convert from GImageType to GDrawableType */
+comment|/* convert from GimpImageBaseType to GimpImageType */
 comment|/* add 2 full transparent dummy layers at top    * (because gimp_image_merge_visible_layers complains    * if there are less than 2 visible layers)    */
 name|l_layer_id
 operator|=
@@ -15784,7 +15784,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-name|GDrawable
+name|GimpDrawable
 modifier|*
 DECL|function|p_get_prevw_drawable (t_mov_path_preview * path_ptr)
 name|p_get_prevw_drawable
@@ -16505,14 +16505,14 @@ literal|0
 expr_stmt|;
 name|l_orig_width
 operator|=
-name|gimp_layer_width
+name|gimp_drawable_width
 argument_list|(
 name|l_cp_layer_id
 argument_list|)
 expr_stmt|;
 name|l_orig_height
 operator|=
-name|gimp_layer_height
+name|gimp_drawable_height
 argument_list|(
 name|l_cp_layer_id
 argument_list|)
@@ -16644,14 +16644,14 @@ argument_list|)
 expr_stmt|;
 name|l_new_width
 operator|=
-name|gimp_layer_width
+name|gimp_drawable_width
 argument_list|(
 name|l_cp_layer_id
 argument_list|)
 expr_stmt|;
 name|l_new_height
 operator|=
-name|gimp_layer_height
+name|gimp_drawable_height
 argument_list|(
 name|l_cp_layer_id
 argument_list|)

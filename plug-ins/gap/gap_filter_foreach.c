@@ -167,7 +167,7 @@ name|gint32
 name|image_id
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -195,11 +195,11 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 comment|/* Note: gimp_displays_update_full is not available in the official release gimp 0.99.16       *       (dont care if procedure is not there,       *        --> the user may not see the current layer, because       *            gimp_displays_flush() does not update on changes       *            of the visibility.       */
@@ -220,12 +220,12 @@ comment|/* pitstop dialog  *   return -1 on cancel, 0 .. on continue, 1 .. on sk
 end_comment
 
 begin_function
-DECL|function|p_pitstop (GRunModeType run_mode,char * plugin_name,gint text_flag,char * step_backup_file,gint len_step_backup_file,gint32 layer_idx)
+DECL|function|p_pitstop (GimpRunModeType run_mode,char * plugin_name,gint text_flag,char * step_backup_file,gint len_step_backup_file,gint32 layer_idx)
 specifier|static
 name|gint
 name|p_pitstop
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|char
@@ -432,7 +432,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_env
@@ -828,11 +828,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_foreach_multilayer (GRunModeType run_mode,gint32 image_id,char * plugin_name,t_apply_mode apply_mode)
+DECL|function|p_foreach_multilayer (GimpRunModeType run_mode,gint32 image_id,char * plugin_name,t_apply_mode apply_mode)
 name|int
 name|p_foreach_multilayer
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -881,7 +881,7 @@ name|l_percentage
 decl_stmt|,
 name|l_percentage_step
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -981,7 +981,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gimp_progress_init
@@ -1267,7 +1267,7 @@ name|image_id
 argument_list|,
 name|l_layer_id
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|)
 expr_stmt|;
 comment|/* get values, then store with suffix "_ITER_FROM" */
@@ -1312,7 +1312,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -1484,7 +1484,7 @@ name|image_id
 argument_list|,
 name|l_layer_id
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|)
 expr_stmt|;
 comment|/* get values, then store with suffix "_ITER_TO" */
@@ -1529,7 +1529,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -1618,7 +1618,7 @@ name|image_id
 argument_list|,
 name|l_layer_id
 argument_list|,
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 argument_list|)
 expr_stmt|;
 name|l_top_layer
@@ -1629,7 +1629,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -1659,7 +1659,7 @@ literal|2
 operator|)
 condition|)
 block|{
-comment|/* call plugin foreach layer inbetween           * with runmode RUN_WITH_LAST_VALS          * and modify the last values          */
+comment|/* call plugin foreach layer inbetween           * with runmode GIMP_RUN_WITH_LAST_VALS          * and modify the last values          */
 name|l_pit_rc
 operator|=
 literal|1
@@ -1834,18 +1834,18 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|l_nlayers
 operator|-
 literal|1
 argument_list|,
 comment|/* total steps  */
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 argument_list|,
 operator|(
 name|gdouble
@@ -1853,12 +1853,12 @@ operator|)
 name|l_idx
 argument_list|,
 comment|/* current step */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|l_plugin_data_len
 argument_list|,
 comment|/* length of stored data struct */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -1922,7 +1922,7 @@ name|image_id
 argument_list|,
 name|l_layer_id
 argument_list|,
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 argument_list|)
 expr_stmt|;
 comment|/* check if to save each step to backup file */
@@ -1972,7 +1972,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -2033,11 +2033,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_proc_anim_apply (GRunModeType run_mode,gint32 image_id,char * plugin_name)
+DECL|function|gap_proc_anim_apply (GimpRunModeType run_mode,gint32 image_id,char * plugin_name)
 name|gint
 name|gap_proc_anim_apply
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -2066,7 +2066,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 if|if

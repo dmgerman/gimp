@@ -2110,7 +2110,7 @@ modifier|*
 name|ext2
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|return_vals
 decl_stmt|;
@@ -2153,79 +2153,79 @@ argument_list|,
 operator|&
 name|nreturn_vals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 comment|/* runmode  */
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|l_tmp_image_id
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 literal|0
 argument_list|,
 comment|/* (unused)  */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|frame_from
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|frame_to
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|0
 argument_list|,
 comment|/* dont flatten */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|4444
 argument_list|,
 comment|/* dest type (keep type) */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|256
 argument_list|,
 comment|/* colors (unused)  */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|0
 argument_list|,
 comment|/* no dither (unused)  */
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|ext2
 argument_list|,
 comment|/* extension for dest. filetype  */
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|basename
 argument_list|,
 comment|/* basename for dest. filetype  */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|0
 argument_list|,
 comment|/* (unused)  */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|0
 argument_list|,
 comment|/* (unused)  */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|0
 argument_list|,
 comment|/* (unused)  */
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 literal|"none"
 argument_list|,
 comment|/* (unused) palettename */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 comment|/* destroy the tmp image */
@@ -2245,7 +2245,7 @@ name|data
 operator|.
 name|d_status
 operator|!=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 return|return
@@ -4082,10 +4082,10 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|gap_xanim_decode (GRunModeType run_mode)
+DECL|function|gap_xanim_decode (GimpRunModeType run_mode)
 name|gap_xanim_decode
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|)
 block|{

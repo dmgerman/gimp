@@ -153,10 +153,10 @@ begin_function
 specifier|static
 name|char
 modifier|*
-DECL|function|p_type_to_string (GParamType t)
+DECL|function|p_type_to_string (GimpPDBArgType t)
 name|p_type_to_string
 parameter_list|(
-name|GParamType
+name|GimpPDBArgType
 name|t
 parameter_list|)
 block|{
@@ -166,133 +166,133 @@ name|t
 condition|)
 block|{
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 return|return
 literal|"long     "
 return|;
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 return|return
 literal|"short    "
 return|;
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 return|return
 literal|"char     "
 return|;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 return|return
 literal|"gdouble  "
 return|;
 case|case
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 case|:
 return|return
 literal|"char     *"
 return|;
 case|case
-name|PARAM_INT32ARRAY
+name|GIMP_PDB_INT32ARRAY
 case|:
 return|return
 literal|"INT32ARRAY"
 return|;
 case|case
-name|PARAM_INT16ARRAY
+name|GIMP_PDB_INT16ARRAY
 case|:
 return|return
 literal|"INT16ARRAY"
 return|;
 case|case
-name|PARAM_INT8ARRAY
+name|GIMP_PDB_INT8ARRAY
 case|:
 return|return
 literal|"INT8ARRAY"
 return|;
 case|case
-name|PARAM_FLOATARRAY
+name|GIMP_PDB_FLOATARRAY
 case|:
 return|return
 literal|"FLOATARRAY"
 return|;
 case|case
-name|PARAM_STRINGARRAY
+name|GIMP_PDB_STRINGARRAY
 case|:
 return|return
 literal|"STRINGARRAY"
 return|;
 case|case
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 case|:
 return|return
 literal|"t_color  "
 return|;
 case|case
-name|PARAM_REGION
+name|GIMP_PDB_REGION
 case|:
 return|return
 literal|"REGION"
 return|;
 case|case
-name|PARAM_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 return|return
 literal|"gint32   "
 return|;
 case|case
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 return|return
 literal|"gint32   "
 return|;
 case|case
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 case|:
 return|return
 literal|"gint32   "
 return|;
 case|case
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 return|return
 literal|"gint32   "
 return|;
 case|case
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 return|return
 literal|"gint32   "
 return|;
 case|case
-name|PARAM_SELECTION
+name|GIMP_PDB_SELECTION
 case|:
 return|return
 literal|"SELECTION"
 return|;
 case|case
-name|PARAM_BOUNDARY
+name|GIMP_PDB_BOUNDARY
 case|:
 return|return
 literal|"BOUNDARY"
 return|;
 case|case
-name|PARAM_PATH
+name|GIMP_PDB_PATH
 case|:
 return|return
 literal|"PATH"
 return|;
 case|case
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 case|:
 return|return
 literal|"STATUS"
 return|;
 case|case
-name|PARAM_END
+name|GIMP_PDB_END
 case|:
 return|return
 literal|"END"
@@ -772,7 +772,7 @@ if|if
 condition|(
 name|l_proc_type
 operator|!=
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 condition|)
 block|{
 name|l_rc
@@ -803,7 +803,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 condition|)
 block|{
 name|l_rc
@@ -821,7 +821,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 condition|)
 block|{
 name|l_rc
@@ -839,7 +839,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 condition|)
 block|{
 name|l_rc
@@ -907,7 +907,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"gint p_%s_iter_ALT(GRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct) \n"
+literal|"gint p_%s_iter_ALT(GimpRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct) \n"
 argument_list|,
 name|l_clean_proc_name
 argument_list|)
@@ -1170,7 +1170,7 @@ name|type
 condition|)
 block|{
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 name|fprintf
 argument_list|(
@@ -1187,7 +1187,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 name|fprintf
 argument_list|(
@@ -1204,7 +1204,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 name|fprintf
 argument_list|(
@@ -1221,7 +1221,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|fprintf
 argument_list|(
@@ -1238,7 +1238,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 case|:
 name|fprintf
 argument_list|(
@@ -1255,7 +1255,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 name|fprintf
 argument_list|(
@@ -1428,7 +1428,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"static gint p_%s_iter_ALT (GRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct);\n"
+literal|"static gint p_%s_iter_ALT (GimpRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct);\n"
 argument_list|,
 name|l_clean_proc_name
 argument_list|)
@@ -1682,7 +1682,7 @@ if|if
 condition|(
 name|l_proc_type
 operator|!=
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 condition|)
 block|{
 name|l_rc
@@ -1713,7 +1713,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 condition|)
 block|{
 name|l_rc
@@ -1731,7 +1731,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 condition|)
 block|{
 name|l_rc
@@ -1749,7 +1749,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 condition|)
 block|{
 name|l_rc
@@ -2026,7 +2026,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"static void run(char *name, int nparam, GParam *param, int *nretvals, GParam **retvals); \n"
+literal|"static void run(char *name, int nparam, GimpParam *param, int *nretvals, GimpParam **retvals); \n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -2040,7 +2040,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"GPlugInInfo PLUG_IN_INFO = \n"
+literal|"GimpPlugInInfo PLUG_IN_INFO = \n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -2966,7 +2966,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"gint p_%s_iter(GRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct) \n"
+literal|"gint p_%s_iter(GimpRunModeType run_mode, gint32 total_steps, gdouble current_step, gint32 len_struct) \n"
 argument_list|,
 name|l_clean_proc_name
 argument_list|)
@@ -3204,7 +3204,7 @@ name|type
 condition|)
 block|{
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 name|fprintf
 argument_list|(
@@ -3221,7 +3221,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 name|fprintf
 argument_list|(
@@ -3238,7 +3238,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 name|fprintf
 argument_list|(
@@ -3255,7 +3255,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|fprintf
 argument_list|(
@@ -3272,7 +3272,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 case|:
 name|fprintf
 argument_list|(
@@ -3289,7 +3289,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 name|fprintf
 argument_list|(
@@ -3427,7 +3427,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  static GParamDef args_iter[] =\n"
+literal|"  static GimpParamDef args_iter[] =\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3441,28 +3441,28 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"    {PARAM_INT32, \"run_mode\", \"non-interactive\"},\n"
+literal|"    {GIMP_PDB_INT32, \"run_mode\", \"non-interactive\"},\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"    {PARAM_INT32, \"total_steps\", \"total number of steps (# of layers-1 to apply the related plug-in)\"},\n"
+literal|"    {GIMP_PDB_INT32, \"total_steps\", \"total number of steps (# of layers-1 to apply the related plug-in)\"},\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"    {PARAM_FLOAT, \"current_step\", \"current (for linear iterations this is the layerstack position, otherwise some value inbetween)\"},\n"
+literal|"    {GIMP_PDB_FLOAT, \"current_step\", \"current (for linear iterations this is the layerstack position, otherwise some value inbetween)\"},\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"    {PARAM_INT32, \"len_struct\", \"length of stored data structure with id is equal to the plug_in  proc_name\"},\n"
+literal|"    {GIMP_PDB_INT32, \"len_struct\", \"length of stored data structure with id is equal to the plug_in  proc_name\"},\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3490,7 +3490,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  static GParamDef *return_vals = NULL;\n"
+literal|"  static GimpParamDef *return_vals = NULL;\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3588,7 +3588,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"                         PROC_EXTENSION,\n"
+literal|"                         GIMP_EXTENSION,\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3700,7 +3700,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"     GParam  *param,\n"
+literal|"     GimpParam  *param,\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3714,7 +3714,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"     GParam **return_vals)\n"
+literal|"     GimpParam **return_vals)\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3728,21 +3728,21 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  static GParam values[1];\n"
+literal|"  static GimpParam values[1];\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  GRunModeType run_mode;\n"
+literal|"  GimpRunModeType run_mode;\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  GStatusType status = STATUS_SUCCESS;\n"
+literal|"  GimpPDBStatusType status = GIMP_PDB_SUCCESS;\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3840,7 +3840,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  if ((run_mode == RUN_NONINTERACTIVE)&& (n_params == 4))\n"
+literal|"  if ((run_mode == GIMP_RUN_NONINTERACTIVE)&& (n_params == 4))\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3898,7 +3898,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"       status = STATUS_EXECUTION_ERROR;\n"
+literal|"       status = GIMP_PDB_EXECUTION_ERROR;\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3919,7 +3919,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  else status = STATUS_CALLING_ERROR;\n"
+literal|"  else status = GIMP_PDB_CALLING_ERROR;\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -3933,7 +3933,7 @@ name|fprintf
 argument_list|(
 name|l_fp
 argument_list|,
-literal|"  values[0].type = PARAM_STATUS;\n"
+literal|"  values[0].type = GIMP_PDB_STATUS;\n"
 argument_list|)
 expr_stmt|;
 name|fprintf

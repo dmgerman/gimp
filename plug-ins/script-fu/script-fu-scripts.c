@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f80140108
+DECL|struct|__anon2a288b0d0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f80140208
+DECL|struct|__anon2a288b0d0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f80140308
+DECL|struct|__anon2a288b0d0308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f80140408
+DECL|struct|__anon2a288b0d0408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f80140508
+DECL|struct|__anon2a288b0d0508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a1f8014060a
+DECL|union|__anon2a288b0d060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f80140708
+DECL|struct|__anon2a288b0d0708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -599,7 +599,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f80140808
+DECL|struct|__anon2a288b0d0808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -4371,7 +4371,7 @@ name|script
 operator|->
 name|img_types
 argument_list|,
-name|PROC_TEMPORARY
+name|GIMP_TEMPORARY
 argument_list|,
 name|script
 operator|->
@@ -4478,7 +4478,7 @@ decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpRunModeType
 name|run_mode
@@ -4519,7 +4519,7 @@ operator|)
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 else|else
 block|{
@@ -4533,7 +4533,7 @@ literal|0
 condition|)
 name|run_mode
 operator|=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 expr_stmt|;
 switch|switch
 condition|(
@@ -4541,10 +4541,10 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  Determine whether the script is image based (runs on an image)  */
 if|if
@@ -4644,7 +4644,7 @@ expr_stmt|;
 break|break;
 block|}
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
 if|if
@@ -4661,13 +4661,13 @@ operator|)
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|gchar

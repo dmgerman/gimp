@@ -56,7 +56,7 @@ begin_function_decl
 name|gboolean
 name|main_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)

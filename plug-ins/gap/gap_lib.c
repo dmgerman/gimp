@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history:  * 1.1.20a; 2000/04/25   hof: new: p_get_video_paste_name p_vid_edit_clear  * 1.1.17b; 2000/02/27   hof: bug/style fixes  * 1.1.14a; 1999/12/18   hof: handle .xvpics on fileops (copy, rename and delete)  *                            new: p_get_frame_nr,  * 1.1.9a;  1999/09/14   hof: handle frame filenames with framenumbers  *                            that are not the 4digit style. (like frame1.xcf)  * 1.1.8a;  1999/08/31   hof: for AnimFrame Filtypes != XCF:  *                            p_decide_save_as does save INTERACTIVE at 1.st time  *                            and uses RUN_WITH_LAST_VALS for subsequent calls  *                            (this enables to set Fileformat specific save-Parameters  *                            at least at the 1.st call, using the save dialog  *                            of the selected (by gimp_file_save) file_save procedure.  *                            in NONINTERACTIVE mode we have no access to  *                            the Fileformat specific save-Parameters  *          1999/07/22   hof: accept anim framenames without underscore '_'  *                            (suggested by Samuel Meder)  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
+comment|/* revision history:  * 1.1.20a; 2000/04/25   hof: new: p_get_video_paste_name p_vid_edit_clear  * 1.1.17b; 2000/02/27   hof: bug/style fixes  * 1.1.14a; 1999/12/18   hof: handle .xvpics on fileops (copy, rename and delete)  *                            new: p_get_frame_nr,  * 1.1.9a;  1999/09/14   hof: handle frame filenames with framenumbers  *                            that are not the 4digit style. (like frame1.xcf)  * 1.1.8a;  1999/08/31   hof: for AnimFrame Filtypes != XCF:  *                            p_decide_save_as does save INTERACTIVE at 1.st time  *                            and uses GIMP_RUN_WITH_LAST_VALS for subsequent calls  *                            (this enables to set Fileformat specific save-Parameters  *                            at least at the 1.st call, using the save dialog  *                            of the selected (by gimp_file_save) file_save procedure.  *                            in NONINTERACTIVE mode we have no access to  *                            the Fileformat specific save-Parameters  *          1999/07/22   hof: accept anim framenames without underscore '_'  *                            (suggested by Samuel Meder)  * 0.99.00; 1999/03/15   hof: prepared for win/dos filename conventions  * 0.98.00; 1998/11/30   hof: started Port to GIMP 1.1:  *                               exchange of Images (by next frame) is now handled in the  *                               new module: gap_exchange_image.c  * 0.96.02; 1998/07/30   hof: extended gap_dup (duplicate range instead of singele frame)  *                            added gap_shift  * 0.96.00               hof: - now using gap_arr_dialog.h  * 0.95.00               hof:  increased duplicate frames limit from 50 to 99  * 0.93.01               hof: fixup bug when frames are not in the current directory  * 0.90.00;              hof: 1.st (pre) release  */
 end_comment
 
 begin_include
@@ -713,11 +713,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_msg_win (GRunModeType run_mode,char * msg)
+DECL|function|p_msg_win (GimpRunModeType run_mode,char * msg)
 name|void
 name|p_msg_win
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|char
@@ -796,7 +796,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|p_buttons_dialog
 argument_list|(
@@ -2277,7 +2277,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_alloc_ainfo (gint32 image_id,GRunModeType run_mode)
+DECL|function|p_alloc_ainfo (gint32 image_id,GimpRunModeType run_mode)
 name|t_anim_info
 modifier|*
 name|p_alloc_ainfo
@@ -2285,7 +2285,7 @@ parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|)
 block|{
@@ -3643,7 +3643,7 @@ decl_stmt|;
 name|int
 name|l_save_as_mode
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|l_run_mode
 decl_stmt|;
 name|l_msg
@@ -3806,14 +3806,14 @@ literal|1
 return|;
 name|l_run_mode
 operator|=
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 expr_stmt|;
 block|}
 else|else
 block|{
 name|l_run_mode
 operator|=
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 expr_stmt|;
 block|}
 name|gimp_set_data
@@ -3866,7 +3866,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|p_save_named_image (gint32 image_id,char * sav_name,GRunModeType run_mode)
+DECL|function|p_save_named_image (gint32 image_id,char * sav_name,GimpRunModeType run_mode)
 name|gint32
 name|p_save_named_image
 parameter_list|(
@@ -3877,11 +3877,11 @@ name|char
 modifier|*
 name|sav_name
 parameter_list|,
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|)
 block|{
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|l_drawable
 decl_stmt|;
@@ -3892,7 +3892,7 @@ name|gint32
 modifier|*
 name|l_layers_list
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -3985,30 +3985,30 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|run_mode
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 name|l_drawable
 operator|->
 name|id
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|sav_name
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|sav_name
 argument_list|,
 comment|/* raw name ? */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -4131,7 +4131,7 @@ modifier|*
 name|sav_name
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -4283,7 +4283,7 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 operator|&
 name|l_ext
@@ -4291,7 +4291,7 @@ index|[
 literal|1
 index|]
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -4400,28 +4400,28 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 literal|0
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|l_tmpname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|l_tmpname
 argument_list|,
 comment|/* raw name ? */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -4683,7 +4683,7 @@ modifier|*
 name|lod_name
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -4761,7 +4761,7 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 operator|&
 name|l_ext
@@ -4770,7 +4770,7 @@ literal|1
 index|]
 argument_list|,
 comment|/* extension */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -4859,20 +4859,20 @@ comment|/* "gimp_xcf_load" */
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|l_tmpname
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|l_tmpname
 argument_list|,
 comment|/* raw name ? */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|l_tmp_image_id
@@ -5839,7 +5839,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gimp_progress_init
@@ -5949,7 +5949,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -6043,7 +6043,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -6690,7 +6690,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gimp_progress_init
@@ -6794,7 +6794,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -6934,7 +6934,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -7024,11 +7024,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_next (GRunModeType run_mode,gint32 image_id)
+DECL|function|gap_next (GimpRunModeType run_mode,gint32 image_id)
 name|int
 name|gap_next
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7100,11 +7100,11 @@ comment|/* end gap_next */
 end_comment
 
 begin_function
-DECL|function|gap_prev (GRunModeType run_mode,gint32 image_id)
+DECL|function|gap_prev (GimpRunModeType run_mode,gint32 image_id)
 name|int
 name|gap_prev
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7180,11 +7180,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_first (GRunModeType run_mode,gint32 image_id)
+DECL|function|gap_first (GimpRunModeType run_mode,gint32 image_id)
 name|int
 name|gap_first
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7265,11 +7265,11 @@ comment|/* end gap_first */
 end_comment
 
 begin_function
-DECL|function|gap_last (GRunModeType run_mode,gint32 image_id)
+DECL|function|gap_last (GimpRunModeType run_mode,gint32 image_id)
 name|int
 name|gap_last
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7350,15 +7350,15 @@ comment|/* end gap_last */
 end_comment
 
 begin_comment
-comment|/* ============================================================================  * gap_goto  *   * store the current Gimp Image to disk  * and load it from the anim Frame on disk that has the specified frame Nr.  * RUN_INTERACTIVE:  *    show dialogwindow where user can enter the destination frame Nr.  * ============================================================================  */
+comment|/* ============================================================================  * gap_goto  *   * store the current Gimp Image to disk  * and load it from the anim Frame on disk that has the specified frame Nr.  * GIMP_RUN_INTERACTIVE:  *    show dialogwindow where user can enter the destination frame Nr.  * ============================================================================  */
 end_comment
 
 begin_function
-DECL|function|gap_goto (GRunModeType run_mode,gint32 image_id,int nr)
+DECL|function|gap_goto (GimpRunModeType run_mode,gint32 image_id,int nr)
 name|int
 name|gap_goto
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7434,7 +7434,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_title
@@ -7598,11 +7598,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_del (GRunModeType run_mode,gint32 image_id,int nr)
+DECL|function|gap_del (GimpRunModeType run_mode,gint32 image_id,int nr)
 name|int
 name|gap_del
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7681,7 +7681,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_title
@@ -8258,11 +8258,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_dup (GRunModeType run_mode,gint32 image_id,int nr,long range_from,long range_to)
+DECL|function|gap_dup (GimpRunModeType run_mode,gint32 image_id,int nr,long range_from,long range_to)
 name|int
 name|gap_dup
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -8327,7 +8327,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 if|if
@@ -8449,11 +8449,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_exchg (GRunModeType run_mode,gint32 image_id,int nr)
+DECL|function|gap_exchg (GimpRunModeType run_mode,gint32 image_id,int nr)
 name|int
 name|gap_exchg
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -8532,7 +8532,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 if|if
@@ -9086,11 +9086,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_shift (GRunModeType run_mode,gint32 image_id,int nr,long range_from,long range_to)
+DECL|function|gap_shift (GimpRunModeType run_mode,gint32 image_id,int nr,long range_from,long range_to)
 name|int
 name|gap_shift
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -9155,7 +9155,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_cnt
@@ -9773,10 +9773,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gap_vid_edit_copy (GRunModeType run_mode,gint32 image_id,long range_from,long range_to)
+DECL|function|gap_vid_edit_copy (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to)
 name|gap_vid_edit_copy
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -10211,10 +10211,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gap_vid_edit_paste (GRunModeType run_mode,gint32 image_id,long paste_mode)
+DECL|function|gap_vid_edit_paste (GimpRunModeType run_mode,gint32 image_id,long paste_mode)
 name|gap_vid_edit_paste
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -10275,14 +10275,14 @@ decl_stmt|;
 name|gint
 name|l_rc
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
 name|gint
 name|l_retvals
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|l_orig_basetype
 decl_stmt|;
 name|l_cnt2
@@ -10630,7 +10630,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -10684,19 +10684,19 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|l_tmp_image_id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|l_size_x
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|l_size_y
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 block|}
@@ -10740,7 +10740,7 @@ name|l_ncolors
 decl_stmt|;
 comment|/* convert tmp image to dest type */
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|l_cmap
 operator|=
@@ -10775,11 +10775,11 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 literal|"gimp_dir"
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|l_gimp_dir
@@ -10845,7 +10845,7 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -10864,41 +10864,41 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|l_tmp_image_id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|1
 argument_list|,
 comment|/* dither  value 1== floyd-steinberg */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|4
 argument_list|,
 comment|/* palette_type 4 == CUSTOM_PALETTE */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|l_ncolors
 argument_list|,
 comment|/* number of colors */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|0
 argument_list|,
 comment|/* alpha_dither */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 literal|0
 argument_list|,
 comment|/* remove_unused */
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|CUSTOM_PALETTE_NAME
 argument_list|,
 comment|/* name of the custom palette */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -10936,7 +10936,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 if|if
 condition|(
@@ -10956,11 +10956,11 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|l_tmp_image_id
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params
@@ -10972,7 +10972,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 if|if
 condition|(
@@ -10992,11 +10992,11 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|l_tmp_image_id
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_params

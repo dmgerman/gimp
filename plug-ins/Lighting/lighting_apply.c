@@ -172,7 +172,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 if|if
@@ -198,11 +198,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100.0
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 block|}
@@ -222,11 +222,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100.0
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 block|}

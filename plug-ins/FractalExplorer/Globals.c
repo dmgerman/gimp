@@ -105,7 +105,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -172,7 +172,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|the_tile
-name|GTile
+name|GimpTile
 modifier|*
 name|the_tile
 init|=

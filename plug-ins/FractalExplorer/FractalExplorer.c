@@ -261,7 +261,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -269,7 +269,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -282,7 +282,7 @@ specifier|static
 name|void
 name|explorer
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -657,7 +657,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -700,13 +700,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -714,7 +714,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -722,7 +722,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -730,7 +730,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"fractaltype"
 block|,
@@ -738,7 +738,7 @@ literal|"0: Mandelbrot; 1: Julia; 2: Barnsley 1; 3: Barnsley 2; 4: Barnsley 3; 5
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"xmin"
 block|,
@@ -746,7 +746,7 @@ literal|"xmin fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"xmax"
 block|,
@@ -754,7 +754,7 @@ literal|"xmax fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"ymin"
 block|,
@@ -762,7 +762,7 @@ literal|"ymin fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"ymax"
 block|,
@@ -770,7 +770,7 @@ literal|"ymax fractal image delimiter"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"iter"
 block|,
@@ -778,7 +778,7 @@ literal|"Iteration value"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"cx"
 block|,
@@ -786,7 +786,7 @@ literal|"cx value ( only Julia)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"cy"
 block|,
@@ -794,7 +794,7 @@ literal|"cy value ( only Julia)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"colormode"
 block|,
@@ -802,7 +802,7 @@ literal|"0: Apply colormap as specified by the parameters below; 1: Apply active
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"redstretch"
 block|,
@@ -810,7 +810,7 @@ literal|"Red stretching factor"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"greenstretch"
 block|,
@@ -818,7 +818,7 @@ literal|"Green stretching factor"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"bluestretch"
 block|,
@@ -826,7 +826,7 @@ literal|"Blue stretching factor"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"redmode"
 block|,
@@ -834,7 +834,7 @@ literal|"Red application mode (0:SIN;1:COS;2:NONE)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"greenmode"
 block|,
@@ -842,7 +842,7 @@ literal|"Green application mode (0:SIN;1:COS;2:NONE)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"bluemode"
 block|,
@@ -850,7 +850,7 @@ literal|"Blue application mode (0:SIN;1:COS;2:NONE)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"redinvert"
 block|,
@@ -858,7 +858,7 @@ literal|"Red inversion mode (1: enabled; 0: disabled)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"greeninvert"
 block|,
@@ -866,7 +866,7 @@ literal|"Green inversion mode (1: enabled; 0: disabled)"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"blueinvert"
 block|,
@@ -915,7 +915,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -936,7 +936,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -946,7 +946,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -954,14 +954,14 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
@@ -970,7 +970,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|gdouble
@@ -985,10 +985,10 @@ decl_stmt|;
 name|gint
 name|pheight
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|run_mode
 operator|=
@@ -1008,7 +1008,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1255,7 +1255,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
@@ -1276,7 +1276,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/* Make sure all the arguments are present */
 if|if
@@ -1288,7 +1288,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -1546,7 +1546,7 @@ argument_list|()
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
@@ -1604,7 +1604,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 comment|/*  Make sure that the drawable is indexed or RGB color  */
@@ -1653,7 +1653,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1663,7 +1663,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1683,7 +1683,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -1713,18 +1713,18 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|explorer (GDrawable * drawable)
+DECL|function|explorer (GimpDrawable * drawable)
 name|explorer
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|srcPR
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|destPR
 decl_stmt|;
 name|gint

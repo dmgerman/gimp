@@ -34,7 +34,7 @@ begin_function_decl
 name|int
 name|gap_split_image
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32

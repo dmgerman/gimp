@@ -80,7 +80,7 @@ end_include
 begin_decl_stmt
 DECL|variable|input_drawable
 DECL|variable|output_drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|input_drawable
 decl_stmt|,
@@ -92,7 +92,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|source_region
 DECL|variable|dest_region
-name|GPixelRgn
+name|GimpPixelRgn
 name|source_region
 decl_stmt|,
 name|dest_region
@@ -101,7 +101,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|box_drawables
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|box_drawables
 index|[
@@ -112,7 +112,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|box_regions
-name|GPixelRgn
+name|GimpPixelRgn
 name|box_regions
 index|[
 literal|6
@@ -122,7 +122,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|cylinder_drawables
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|cylinder_drawables
 index|[
@@ -133,7 +133,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|cylinder_regions
-name|GPixelRgn
+name|GimpPixelRgn
 name|cylinder_regions
 index|[
 literal|2
@@ -1881,10 +1881,10 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|image_setup (GDrawable * drawable,gint interactive)
+DECL|function|image_setup (GimpDrawable * drawable,gint interactive)
 name|image_setup
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,

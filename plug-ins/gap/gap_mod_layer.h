@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae542a0108
+DECL|struct|__anon2b68fdb10108
 block|{
 DECL|member|layer_id
 name|gint32
@@ -223,7 +223,7 @@ begin_function_decl
 name|gint
 name|gap_mod_layer
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32

@@ -56,7 +56,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon2c4132680108
+DECL|struct|__anon2a24586f0108
 typedef|typedef
 struct|struct
 block|{
@@ -79,7 +79,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c4132680208
+DECL|struct|__anon2a24586f0208
 typedef|typedef
 struct|struct
 block|{
@@ -113,7 +113,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c4132680303
+DECL|enum|__anon2a24586f0303
 typedef|typedef
 enum|enum
 block|{
@@ -135,7 +135,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2c4132680403
+DECL|enum|__anon2a24586f0403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -167,7 +167,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2c4132680503
+DECL|enum|__anon2a24586f0503
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -195,7 +195,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2c4132680603
+DECL|enum|__anon2a24586f0603
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -213,7 +213,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2c4132680703
+DECL|enum|__anon2a24586f0703
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -232,7 +232,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2c4132680808
+DECL|struct|__anon2a24586f0808
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +278,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c4132680908
+DECL|struct|__anon2a24586f0908
 typedef|typedef
 struct|struct
 block|{
@@ -509,10 +509,10 @@ name|ReducedImage
 modifier|*
 name|Reduce_The_Image
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 parameter_list|,
-name|GDrawable
+name|GimpDrawable
 modifier|*
 parameter_list|,
 name|gint
@@ -877,7 +877,7 @@ begin_function_decl
 name|void
 name|fp
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)

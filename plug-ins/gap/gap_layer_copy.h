@@ -70,7 +70,7 @@ name|gdouble
 name|opacity
 parameter_list|,
 comment|/* 0.0 upto 100.0 */
-name|GLayerMode
+name|GimpLayerModeEffects
 name|mode
 parameter_list|,
 name|gint

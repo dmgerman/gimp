@@ -197,7 +197,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -205,7 +205,7 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -274,7 +274,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -307,13 +307,13 @@ name|query
 parameter_list|()
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -321,7 +321,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -329,7 +329,7 @@ literal|"(unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -337,7 +337,7 @@ literal|"(unused)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -345,7 +345,7 @@ literal|"The name of the file to load"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -353,7 +353,7 @@ literal|"The name entered"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"first_frame"
 block|,
@@ -361,7 +361,7 @@ literal|"1st frame to extract (starting at number 1)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"last_frame"
 block|,
@@ -369,7 +369,7 @@ literal|"last frame to extract (use 0 to load all remaining frames)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"animframe_basename"
 block|,
@@ -377,7 +377,7 @@ literal|"The name for the single frames _0001.xcf is added"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"autoload"
 block|,
@@ -386,13 +386,13 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|load_return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -435,13 +435,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|ext_args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -449,7 +449,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"filename"
 block|,
@@ -457,7 +457,7 @@ literal|"The name of the file to load"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"raw_filename"
 block|,
@@ -465,7 +465,7 @@ literal|"The name entered"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"first_frame"
 block|,
@@ -473,7 +473,7 @@ literal|"1st frame to extract (starting at number 1)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"last_frame"
 block|,
@@ -481,7 +481,7 @@ literal|"last frame to extract (use 0 to load all remaining frames)"
 block|}
 block|,
 block|{
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 block|,
 literal|"animframe_basename"
 block|,
@@ -489,7 +489,7 @@ literal|"The name for the single frames _0001.xcf is added"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"autoload"
 block|,
@@ -538,7 +538,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nload_args
 argument_list|,
@@ -570,7 +570,7 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 argument_list|,
 name|next_args
 argument_list|,
@@ -587,7 +587,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (char * name,int nparams,GParam * param,int * nreturn_vals,GParam ** return_vals)
+DECL|function|run (char * name,int nparams,GimpParam * param,int * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|char
@@ -597,7 +597,7 @@ parameter_list|,
 name|int
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -605,20 +605,20 @@ name|int
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
 name|gint32
@@ -676,7 +676,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -687,7 +687,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 name|run_mode
 operator|=
@@ -832,7 +832,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 block|{
 name|l_filename
@@ -1070,7 +1070,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 expr_stmt|;
 name|values
 index|[
@@ -1079,7 +1079,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 expr_stmt|;
 name|values
 index|[
@@ -1104,7 +1104,7 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -1586,10 +1586,10 @@ name|gint32
 name|autoload
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -2052,11 +2052,11 @@ name|wwidth
 argument_list|,
 name|wheight
 argument_list|,
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2251,7 +2251,7 @@ argument_list|)
 expr_stmt|;
 comment|/* save each image as frame to disk */
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -2296,28 +2296,28 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_ID
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 literal|0
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|framename
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|framename
 argument_list|,
 comment|/* raw name ? */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 name|p_gimp_file_save_thumbnail

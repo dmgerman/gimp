@@ -164,7 +164,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|p_call_plugin (char * plugin_name,gint32 image_id,gint32 layer_id,GRunModeType run_mode)
+DECL|function|p_call_plugin (char * plugin_name,gint32 image_id,gint32 layer_id,GimpRunModeType run_mode)
 name|gint
 name|p_call_plugin
 parameter_list|(
@@ -178,7 +178,7 @@ parameter_list|,
 name|gint32
 name|layer_id
 parameter_list|,
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|)
 block|{
@@ -304,7 +304,7 @@ name|l_argv
 operator|=
 name|g_new
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|,
 name|l_nparams
 argument_list|)
@@ -318,7 +318,7 @@ argument_list|,
 operator|(
 sizeof|sizeof
 argument_list|(
-name|GParam
+name|GimpParam
 argument_list|)
 operator|*
 name|l_nparams
@@ -365,7 +365,7 @@ name|type
 condition|)
 block|{
 case|case
-name|PARAM_DISPLAY
+name|GIMP_PDB_DISPLAY
 case|:
 name|l_argv
 index|[
@@ -381,13 +381,13 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 case|:
 case|case
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 case|:
 case|case
-name|PARAM_CHANNEL
+name|GIMP_PDB_CHANNEL
 case|:
 name|l_argv
 index|[
@@ -403,7 +403,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 case|:
 name|l_argv
 index|[
@@ -419,13 +419,13 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 case|:
 case|case
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 case|:
 case|case
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 case|:
 name|l_argv
 index|[
@@ -440,7 +440,7 @@ literal|0
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 case|:
 name|l_argv
 index|[
@@ -455,7 +455,7 @@ literal|0.0
 expr_stmt|;
 break|break;
 case|case
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 case|:
 name|l_argv
 index|[
@@ -650,7 +650,7 @@ modifier|*
 name|sav_name
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -667,28 +667,28 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 argument_list|,
 literal|0
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|sav_name
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|sav_name
 argument_list|,
 comment|/* raw name ? */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 if|if
@@ -974,7 +974,7 @@ if|if
 condition|(
 name|l_proc_type
 operator|!=
-name|PROC_EXTENSION
+name|GIMP_EXTENSION
 condition|)
 block|{
 name|l_rc
@@ -1007,7 +1007,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 condition|)
 block|{
 name|l_rc
@@ -1026,7 +1026,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 condition|)
 block|{
 name|l_rc
@@ -1045,7 +1045,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 condition|)
 block|{
 name|l_rc
@@ -1064,7 +1064,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 condition|)
 block|{
 name|l_rc
@@ -1083,7 +1083,7 @@ if|if
 condition|(
 name|l_proc_type
 operator|!=
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 condition|)
 block|{
 name|l_rc
@@ -1116,7 +1116,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 condition|)
 block|{
 name|l_rc
@@ -1135,7 +1135,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 condition|)
 block|{
 name|l_rc
@@ -1154,7 +1154,7 @@ index|]
 operator|.
 name|type
 operator|!=
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 condition|)
 block|{
 name|l_rc
@@ -1332,7 +1332,7 @@ block|{
 name|int
 name|l_rc
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|l_base_type
 decl_stmt|;
 comment|/* here we should check, if proc_name    * can operate on the current Imagetype (RGB, INDEXED, GRAY)    * if not, 0 should be returned.    *    * I did not find a way to do this with the PDB Interface of gimp 0.99.16    */
@@ -1357,13 +1357,13 @@ name|l_base_type
 condition|)
 block|{
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 name|l_rc
 operator|=

@@ -809,7 +809,7 @@ operator|=
 name|gimp_gradients_get_active
 argument_list|()
 expr_stmt|;
-name|gimp_gradient_get_gradient_data
+name|gimp_gradients_get_gradient_data
 argument_list|(
 name|gradient_name
 argument_list|,
@@ -877,7 +877,7 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_gradient_get_gradient_data
+name|gimp_gradients_get_gradient_data
 argument_list|(
 name|gradient_name
 argument_list|,

@@ -37,7 +37,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b5343650103
+DECL|enum|__anon2b72c8230103
 block|{
 DECL|enumerator|XAENC_XCF
 name|XAENC_XCF
@@ -58,7 +58,7 @@ begin_function_decl
 name|int
 name|gap_xanim_decode
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|)
 function_decl|;

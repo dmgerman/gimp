@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.9a;  1999/09/21   hof: bugfix RUN_NONINTERACTIVE mode did not work  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 1.1.5a;  1999/05/08   hof: bugix (dont mix GDrawableType with GImageType)  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
+comment|/* revision history  * 1.1.9a;  1999/09/21   hof: bugfix GIMP_RUN_NONINTERACTIVE mode did not work  * 1.1.8a;  1999/08/31   hof: accept anim framenames without underscore '_'  * 1.1.5a;  1999/05/08   hof: bugix (dont mix GimpImageType with GimpImageBaseType)  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
 end_comment
 
 begin_include
@@ -154,7 +154,7 @@ name|gint
 name|no_alpha
 parameter_list|)
 block|{
-name|GImageType
+name|GimpImageBaseType
 name|l_type
 decl_stmt|;
 name|guint
@@ -162,7 +162,7 @@ name|l_width
 decl_stmt|,
 name|l_height
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|l_run_mode
 decl_stmt|;
 name|gint32
@@ -251,7 +251,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gimp_progress_init
@@ -478,7 +478,7 @@ operator|+
 literal|1
 operator|)
 argument_list|,
-comment|/* convert from GImageType to GDrawableType, and add alpha */
+comment|/* convert from GimpImageBaseType to GimpImageType, and add alpha */
 literal|0.0
 argument_list|,
 comment|/* Opacity full transparent */
@@ -576,7 +576,7 @@ break|break;
 block|}
 name|l_run_mode
 operator|=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 expr_stmt|;
 comment|/* for all further calls */
 comment|/* set image name */
@@ -606,7 +606,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -943,11 +943,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_split_image (GRunModeType run_mode,gint32 image_id,gint32 inverse_order,gint32 no_alpha,char * extension)
+DECL|function|gap_split_image (GimpRunModeType run_mode,gint32 image_id,gint32 inverse_order,gint32 no_alpha,char * extension)
 name|int
 name|gap_split_image
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -1056,7 +1056,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_rc

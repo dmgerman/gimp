@@ -153,7 +153,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2762e13e0103
+DECL|enum|__anon29b381150103
 block|{
 DECL|enumerator|C_TEXT
 name|C_TEXT
@@ -238,7 +238,7 @@ DECL|macro|gimp_drawable_parasite_find
 define|#
 directive|define
 name|gimp_drawable_parasite_find
-value|gimp_drawable_find_parasite
+value|gimp_drawable_parasite_find
 end_define
 
 begin_endif

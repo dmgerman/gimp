@@ -1331,7 +1331,7 @@ name|v
 decl_stmt|,
 name|wieviel
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|gint
@@ -1349,7 +1349,7 @@ decl_stmt|;
 name|gint32
 name|layer
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -1404,7 +1404,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB
+name|GIMP_RGB
 argument_list|)
 expr_stmt|;
 name|layer
@@ -1422,11 +1422,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|channels
@@ -1448,7 +1448,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GRAY
+name|GIMP_GRAY
 argument_list|)
 expr_stmt|;
 name|layer
@@ -1466,11 +1466,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|channels
@@ -1488,7 +1488,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|INDEXED
+name|GIMP_INDEXED
 argument_list|)
 expr_stmt|;
 name|layer
@@ -1506,11 +1506,11 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 name|channels

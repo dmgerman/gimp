@@ -466,10 +466,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|check_drawables (GDrawable * drawable)
+DECL|function|check_drawables (GimpDrawable * drawable)
 name|check_drawables
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -692,13 +692,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -706,7 +706,7 @@ literal|"Interactive (0), non-interactive (1)"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -714,7 +714,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -722,7 +722,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"maptype"
 block|,
@@ -730,7 +730,7 @@ literal|"Type of mapping (0=plane,1=sphere,2=box,3=cylinder)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"viewpoint_x"
 block|,
@@ -738,7 +738,7 @@ literal|"Position of viewpoint (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"viewpoint_y"
 block|,
@@ -746,7 +746,7 @@ literal|"Position of viewpoint (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"viewpoint_z"
 block|,
@@ -754,7 +754,7 @@ literal|"Position of viewpoint (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"position_x"
 block|,
@@ -762,7 +762,7 @@ literal|"Object position (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"position_y"
 block|,
@@ -770,7 +770,7 @@ literal|"Object position (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"position_z"
 block|,
@@ -778,7 +778,7 @@ literal|"Object position (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"firstaxis_x"
 block|,
@@ -786,7 +786,7 @@ literal|"First axis of object [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"firstaxis_y"
 block|,
@@ -794,7 +794,7 @@ literal|"First axis of object [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"firstaxis_z"
 block|,
@@ -802,7 +802,7 @@ literal|"First axis of object [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"secondaxis_x"
 block|,
@@ -810,7 +810,7 @@ literal|"Second axis of object [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"secondaxis_y"
 block|,
@@ -818,7 +818,7 @@ literal|"Second axis of object [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"secondaxis_z"
 block|,
@@ -826,7 +826,7 @@ literal|"Second axis of object [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"rotationangle_x"
 block|,
@@ -834,7 +834,7 @@ literal|"Rotation about X axis in degrees"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"rotationangle_y"
 block|,
@@ -842,7 +842,7 @@ literal|"Rotation about Y axis in degrees"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"rotationangle_z"
 block|,
@@ -850,7 +850,7 @@ literal|"Rotation about Z axis in degrees"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"lighttype"
 block|,
@@ -858,7 +858,7 @@ literal|"Type of lightsource (0=point,1=directional,3=none)"
 block|}
 block|,
 block|{
-name|PARAM_COLOR
+name|GIMP_PDB_COLOR
 block|,
 literal|"lightcolor"
 block|,
@@ -866,7 +866,7 @@ literal|"Lightsource color (r,g,b)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"lightposition_x"
 block|,
@@ -874,7 +874,7 @@ literal|"Lightsource position (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"lightposition_y"
 block|,
@@ -882,7 +882,7 @@ literal|"Lightsource position (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"lightposition_z"
 block|,
@@ -890,7 +890,7 @@ literal|"Lightsource position (x,y,z)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"lightdirection_x"
 block|,
@@ -898,7 +898,7 @@ literal|"Lightsource direction [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"lightdirection_y"
 block|,
@@ -906,7 +906,7 @@ literal|"Lightsource direction [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"lightdirection_z"
 block|,
@@ -914,7 +914,7 @@ literal|"Lightsource direction [x,y,z]"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"ambient_intensity"
 block|,
@@ -922,7 +922,7 @@ literal|"Material ambient intensity (0..1)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"diffuse_intensity"
 block|,
@@ -930,7 +930,7 @@ literal|"Material diffuse intensity (0..1)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"diffuse_reflectivity"
 block|,
@@ -938,7 +938,7 @@ literal|"Material diffuse reflectivity (0..1)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"specular_reflectivity"
 block|,
@@ -946,7 +946,7 @@ literal|"Material specular reflectivity (0..1)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"highlight"
 block|,
@@ -954,7 +954,7 @@ literal|"Material highlight (0..->), note: it's expotential"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"antialiasing"
 block|,
@@ -962,7 +962,7 @@ literal|"Apply antialiasing (TRUE/FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"tiled"
 block|,
@@ -970,7 +970,7 @@ literal|"Tile source image (TRUE/FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"newimage"
 block|,
@@ -978,7 +978,7 @@ literal|"Create a new image (TRUE/FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"transparentbackground"
 block|,
@@ -986,7 +986,7 @@ literal|"Make background transparent (TRUE/FALSE)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"radius"
 block|,
@@ -994,7 +994,7 @@ literal|"Sphere/cylinder radius (only used when maptype=1 or 3)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"x_scale"
 block|,
@@ -1002,7 +1002,7 @@ literal|"Box x size (0..->)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"y_scale"
 block|,
@@ -1010,7 +1010,7 @@ literal|"Box y size (0..->)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"z_scale"
 block|,
@@ -1018,7 +1018,7 @@ literal|"Box z size (0..->)"
 block|}
 block|,
 block|{
-name|PARAM_FLOAT
+name|GIMP_PDB_FLOAT
 block|,
 literal|"cylinder_length"
 block|,
@@ -1026,7 +1026,7 @@ literal|"Cylinder length (0..->)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"box_front_drawable"
 block|,
@@ -1034,7 +1034,7 @@ literal|"Box front face (set these to -1 if not used)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"box_back_drawable"
 block|,
@@ -1042,7 +1042,7 @@ literal|"Box back face"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"box_top_drawable"
 block|,
@@ -1050,7 +1050,7 @@ literal|"Box top face"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"box_bottom_drawable"
 block|,
@@ -1058,7 +1058,7 @@ literal|"Box bottom face"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"box_left_drawable"
 block|,
@@ -1066,7 +1066,7 @@ literal|"Box left face"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"box_right_drawable"
 block|,
@@ -1074,7 +1074,7 @@ literal|"Box right face"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"cyl_top_drawable"
 block|,
@@ -1082,7 +1082,7 @@ literal|"Cylinder top face (set these to -1 if not used)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"cyl_bottom_drawable"
 block|,
@@ -1131,7 +1131,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -1148,7 +1148,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -1158,7 +1158,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1166,30 +1166,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint
 name|i
@@ -1209,7 +1209,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|INIT_I18N_UI
@@ -1229,7 +1229,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1279,7 +1279,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve data */
 comment|/* ====================== */
@@ -1323,7 +1323,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
@@ -1350,7 +1350,7 @@ argument_list|()
 expr_stmt|;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -1361,7 +1361,7 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 else|else
@@ -2106,7 +2106,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -2121,7 +2121,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{

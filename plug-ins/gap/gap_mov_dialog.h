@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a5371fd0103
+DECL|enum|__anon2a8d36900103
 block|{
 DECL|enumerator|GAP_STEP_LOOP
 name|GAP_STEP_LOOP
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a5371fd0203
+DECL|enum|__anon2a8d36900203
 block|{
 DECL|enumerator|GAP_HANDLE_LEFT_TOP
 name|GAP_HANDLE_LEFT_TOP
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a5371fd0303
+DECL|enum|__anon2a8d36900303
 block|{
 DECL|enumerator|GAP_APV_EXACT
 name|GAP_APV_EXACT
@@ -125,7 +125,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a5371fd0408
+DECL|struct|__anon2a8d36900408
 typedef|typedef
 struct|struct
 block|{
@@ -211,7 +211,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a5371fd0508
+DECL|struct|__anon2a8d36900508
 typedef|typedef
 struct|struct
 block|{
@@ -270,7 +270,7 @@ comment|/*  * Notes:  * - exchange of frames (load replace)  *   keeps an images
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a5371fd0608
+DECL|struct|__anon2a8d36900608
 typedef|typedef
 struct|struct
 block|{
@@ -340,7 +340,7 @@ DECL|member|dst_combination_mode
 name|gint
 name|dst_combination_mode
 decl_stmt|;
-comment|/* GLayerMode */
+comment|/* GimpLayerModeEffects */
 comment|/* for dialog only */
 DECL|member|dst_image_id
 name|gint32
@@ -392,7 +392,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a5371fd0708
+DECL|struct|__anon2a8d36900708
 typedef|typedef
 struct|struct
 block|{

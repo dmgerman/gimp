@@ -8,7 +8,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* revision history  * 1.1.24a  2000/07/01   hof: bugfix: flatten of singlelayer images has to remove alpha channel  * 1.1.17b  2000/02/26   hof: bugfixes  * 1.1.14a  2000/01/06   hof: gap_range_to_multilayer: use framerate (from video info file) in framenames  *                            bugfix: gap_range_to_multilayer: first save current frame  * 1.1.10a  1999/10/22   hof: bugfix: have to use the changed PDB-Interface  *                            for gimp_convert_indexed  *                            (with extended dither options and extra dialog window)  * 1.1.9a   1999/09/21   hof: bugfix RUN_NONINTERACTIVE did not work in  *                            plug_in_gap_range_convert  *                            plug_in_gap_range_layer_del  *                            plug_in_gap_range_flatten  * 1.1.8    1999/08/31   hof: frames convert: save subsequent frames  *                            with rumode RUN_WITH_LAST_VALS   * 0.97.00; 1998/10/19   hof: gap_range_to_multilayer: extended layer selection  * 0.96.03; 1998/08/31   hof: gap_range_to_multilayer: all params available  *                            in non-interactive runmode  * 0.96.02; 1998/08/05   hof: - p_frames_to_multilayer added framerate support  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
+comment|/* revision history  * 1.1.24a  2000/07/01   hof: bugfix: flatten of singlelayer images has to remove alpha channel  * 1.1.17b  2000/02/26   hof: bugfixes  * 1.1.14a  2000/01/06   hof: gap_range_to_multilayer: use framerate (from video info file) in framenames  *                            bugfix: gap_range_to_multilayer: first save current frame  * 1.1.10a  1999/10/22   hof: bugfix: have to use the changed PDB-Interface  *                            for gimp_convert_indexed  *                            (with extended dither options and extra dialog window)  * 1.1.9a   1999/09/21   hof: bugfix GIMP_RUN_NONINTERACTIVE did not work in  *                            plug_in_gap_range_convert  *                            plug_in_gap_range_layer_del  *                            plug_in_gap_range_flatten  * 1.1.8    1999/08/31   hof: frames convert: save subsequent frames  *                            with rumode GIMP_RUN_WITH_LAST_VALS   * 0.97.00; 1998/10/19   hof: gap_range_to_multilayer: extended layer selection  * 0.96.03; 1998/08/31   hof: gap_range_to_multilayer: all params available  *                            in non-interactive runmode  * 0.96.02; 1998/08/05   hof: - p_frames_to_multilayer added framerate support  * 0.96.00; 1998/07/01   hof: - added scale, resize and crop   *                              (affects full range == all anim frames)  *                            - now using gap_arr_dialog.h  * 0.94.01; 1998/04/28   hof: added flatten_mode to plugin: gap_range_to_multilayer  * 0.92.00  1998.01.10   hof: bugfix in p_frames_to_multilayer  *                            layers need alpha (to be raise/lower able)   * 0.90.00               first development release  */
 end_comment
 
 begin_include
@@ -1971,7 +1971,7 @@ end_comment
 begin_function
 specifier|static
 name|long
-DECL|function|p_convert_dialog (t_anim_info * ainfo_ptr,long * range_from,long * range_to,long * flatten,GImageType * dest_type,gint32 * dest_colors,gint32 * dest_dither,char * basename,gint len_base,char * extension,gint len_ext,gint32 * palette_type,gint32 * alpha_dither,gint32 * remove_unused,char * palette,gint len_palette)
+DECL|function|p_convert_dialog (t_anim_info * ainfo_ptr,long * range_from,long * range_to,long * flatten,GimpImageBaseType * dest_type,gint32 * dest_colors,gint32 * dest_dither,char * basename,gint len_base,char * extension,gint len_ext,gint32 * palette_type,gint32 * alpha_dither,gint32 * remove_unused,char * palette,gint len_palette)
 name|p_convert_dialog
 parameter_list|(
 name|t_anim_info
@@ -1990,7 +1990,7 @@ name|long
 modifier|*
 name|flatten
 parameter_list|,
-name|GImageType
+name|GimpImageBaseType
 modifier|*
 name|dest_type
 parameter_list|,
@@ -2590,7 +2590,7 @@ case|:
 operator|*
 name|dest_type
 operator|=
-name|RGB
+name|GIMP_RGB
 expr_stmt|;
 break|break;
 case|case
@@ -2599,7 +2599,7 @@ case|:
 operator|*
 name|dest_type
 operator|=
-name|GRAY
+name|GIMP_GRAY
 expr_stmt|;
 break|break;
 case|case
@@ -2608,7 +2608,7 @@ case|:
 operator|*
 name|dest_type
 operator|=
-name|INDEXED
+name|GIMP_INDEXED
 expr_stmt|;
 break|break;
 default|default:
@@ -2617,6 +2617,7 @@ name|dest_type
 operator|=
 literal|9444
 expr_stmt|;
+comment|/*  huh ??  */
 break|break;
 block|}
 operator|*
@@ -2665,7 +2666,7 @@ condition|(
 operator|*
 name|dest_type
 operator|==
-name|INDEXED
+name|GIMP_INDEXED
 condition|)
 block|{
 comment|/* Open a 2.nd dialog for the Dither Options */
@@ -3838,7 +3839,7 @@ modifier|*
 name|sel_pattern
 parameter_list|)
 block|{
-name|GImageType
+name|GimpImageBaseType
 name|l_type
 decl_stmt|;
 name|guint
@@ -3926,7 +3927,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gimp_progress_init
@@ -4584,7 +4585,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -4641,11 +4642,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_range_to_multilayer (GRunModeType run_mode,gint32 image_id,long range_from,long range_to,long flatten_mode,long bg_visible,long framerate,char * frame_basename,int frame_basename_len,gint32 sel_mode,gint32 sel_case,gint32 sel_invert,char * sel_pattern)
+DECL|function|gap_range_to_multilayer (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to,long flatten_mode,long bg_visible,long framerate,char * frame_basename,int frame_basename_len,gint32 sel_mode,gint32 sel_case,gint32 sel_invert,char * sel_pattern)
 name|gint32
 name|gap_range_to_multilayer
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -4759,7 +4760,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_framerate
@@ -5027,13 +5028,13 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|p_type_convert (gint32 image_id,GImageType dest_type,gint32 dest_colors,gint32 dest_dither,gint32 palette_type,gint32 alpha_dither,gint32 remove_unused,char * palette)
+DECL|function|p_type_convert (gint32 image_id,GimpImageBaseType dest_type,gint32 dest_colors,gint32 dest_dither,gint32 palette_type,gint32 alpha_dither,gint32 remove_unused,char * palette)
 name|p_type_convert
 parameter_list|(
 name|gint32
 name|image_id
 parameter_list|,
-name|GImageType
+name|GimpImageBaseType
 name|dest_type
 parameter_list|,
 name|gint32
@@ -5056,7 +5057,7 @@ modifier|*
 name|palette
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -5080,7 +5081,7 @@ name|dest_type
 condition|)
 block|{
 case|case
-name|INDEXED
+name|GIMP_INDEXED
 case|:
 if|if
 condition|(
@@ -5114,43 +5115,43 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|dest_dither
 argument_list|,
 comment|/* value 1== floyd-steinberg */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|palette_type
 argument_list|,
 comment|/* value 0: MAKE_PALETTE, 2: WEB_PALETTE 4:CUSTOM_PALETTE */
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|dest_colors
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|alpha_dither
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|remove_unused
 argument_list|,
-name|PARAM_STRING
+name|GIMP_PDB_STRING
 argument_list|,
 name|palette
 argument_list|,
 comment|/* name of custom palette */
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAY
+name|GIMP_GRAY
 case|:
 if|if
 condition|(
@@ -5172,16 +5173,16 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RGB
+name|GIMP_RGB
 case|:
 if|if
 condition|(
@@ -5203,11 +5204,11 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5272,7 +5273,7 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|p_frames_convert (t_anim_info * ainfo_ptr,long range_from,long range_to,char * save_proc_name,char * new_basename,char * new_extension,int flatten,GImageType dest_type,gint32 dest_colors,gint32 dest_dither,gint32 palette_type,gint32 alpha_dither,gint32 remove_unused,char * palette)
+DECL|function|p_frames_convert (t_anim_info * ainfo_ptr,long range_from,long range_to,char * save_proc_name,char * new_basename,char * new_extension,int flatten,GimpImageBaseType dest_type,gint32 dest_colors,gint32 dest_dither,gint32 palette_type,gint32 alpha_dither,gint32 remove_unused,char * palette)
 name|p_frames_convert
 parameter_list|(
 name|t_anim_info
@@ -5300,7 +5301,7 @@ parameter_list|,
 name|int
 name|flatten
 parameter_list|,
-name|GImageType
+name|GimpImageBaseType
 name|dest_type
 parameter_list|,
 name|gint32
@@ -5323,7 +5324,7 @@ modifier|*
 name|palette
 parameter_list|)
 block|{
-name|GRunModeType
+name|GimpRunModeType
 name|l_run_mode
 decl_stmt|;
 name|gint32
@@ -5395,7 +5396,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 if|if
@@ -6069,12 +6070,12 @@ if|if
 condition|(
 name|l_run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_run_mode
 operator|=
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 expr_stmt|;
 comment|/* for all further calls */
 block|}
@@ -6097,7 +6098,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -6170,7 +6171,7 @@ name|long
 name|offs_y
 parameter_list|)
 block|{
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -6194,27 +6195,27 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|size_x
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|size_y
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|offs_x
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|offs_y
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6257,19 +6258,19 @@ argument_list|,
 operator|&
 name|l_retvals
 argument_list|,
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 argument_list|,
 name|image_id
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|size_x
 argument_list|,
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 argument_list|,
 name|size_y
 argument_list|,
-name|PARAM_END
+name|GIMP_PDB_END
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6337,7 +6338,7 @@ name|l_percentage
 decl_stmt|,
 name|l_percentage_step
 decl_stmt|;
-name|GParam
+name|GimpParam
 modifier|*
 name|l_params
 decl_stmt|;
@@ -6362,7 +6363,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 switch|switch
@@ -6585,7 +6586,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -6627,11 +6628,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_range_flatten (GRunModeType run_mode,gint32 image_id,long range_from,long range_to)
+DECL|function|gap_range_flatten (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to)
 name|int
 name|gap_range_flatten
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -6691,7 +6692,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_rc
@@ -6901,7 +6902,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_buff
@@ -7216,7 +7217,7 @@ name|ainfo_ptr
 operator|->
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_percentage
@@ -7265,11 +7266,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_range_layer_del (GRunModeType run_mode,gint32 image_id,long range_from,long range_to,long position)
+DECL|function|gap_range_layer_del (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to,long position)
 name|int
 name|gap_range_layer_del
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7339,7 +7340,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_rc
@@ -7469,11 +7470,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_range_conv (GRunModeType run_mode,gint32 image_id,long range_from,long range_to,long flatten,GImageType dest_type,gint32 dest_colors,gint32 dest_dither,char * basename,char * extension,gint32 palette_type,gint32 alpha_dither,gint32 remove_unused,char * palette)
+DECL|function|gap_range_conv (GimpRunModeType run_mode,gint32 image_id,long range_from,long range_to,long flatten,GimpImageBaseType dest_type,gint32 dest_colors,gint32 dest_dither,char * basename,char * extension,gint32 palette_type,gint32 alpha_dither,gint32 remove_unused,char * palette)
 name|gint32
 name|gap_range_conv
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|gint32
@@ -7488,7 +7489,7 @@ parameter_list|,
 name|long
 name|flatten
 parameter_list|,
-name|GImageType
+name|GimpImageBaseType
 name|dest_type
 parameter_list|,
 name|gint32
@@ -7545,7 +7546,7 @@ decl_stmt|;
 name|gint32
 name|l_remove_unused
 decl_stmt|;
-name|GImageType
+name|GimpImageBaseType
 name|l_dest_type
 decl_stmt|;
 name|t_anim_info
@@ -7660,7 +7661,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_flatten
@@ -7982,11 +7983,11 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
-DECL|function|gap_anim_sizechange (GRunModeType run_mode,t_gap_asiz asiz_mode,gint32 image_id,long size_x,long size_y,long offs_x,long offs_y)
+DECL|function|gap_anim_sizechange (GimpRunModeType run_mode,t_gap_asiz asiz_mode,gint32 image_id,long size_x,long size_y,long offs_x,long offs_y)
 name|int
 name|gap_anim_sizechange
 parameter_list|(
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 parameter_list|,
 name|t_gap_asiz
@@ -8059,7 +8060,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|l_rc

@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b76ae200108
+DECL|struct|__anon2923ac1c0108
 block|{
 DECL|member|run
 name|gint
@@ -187,7 +187,7 @@ function_decl|;
 end_function_decl
 
 begin_function
-name|GStatusType
+name|GimpPDBStatusType
 DECL|function|WriteBMP (gchar * filename,gint32 image,gint32 drawable_ID)
 name|WriteBMP
 parameter_list|(
@@ -255,14 +255,14 @@ name|guchar
 modifier|*
 name|pixels
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|drawable_type
 decl_stmt|;
 name|guchar
@@ -319,13 +319,13 @@ name|drawable_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 break|break;
 default|default:
@@ -338,7 +338,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 break|break;
 block|}
@@ -349,7 +349,7 @@ name|drawable_type
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 name|colors
 operator|=
@@ -369,7 +369,7 @@ literal|3
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|colors
 operator|=
@@ -425,7 +425,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 name|cmap
 operator|=
@@ -527,7 +527,7 @@ name|prog_name
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 comment|/* Perhaps someone wants RLE encoded Bitmaps */
@@ -557,7 +557,7 @@ name|save_dialog
 argument_list|()
 condition|)
 return|return
-name|STATUS_CANCEL
+name|GIMP_PDB_CANCEL
 return|;
 block|}
 comment|/* Let's take some file */
@@ -587,7 +587,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 comment|/* fetch the image */
@@ -1335,7 +1335,7 @@ name|pixels
 argument_list|)
 expr_stmt|;
 return|return
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 return|;
 block|}
 end_function
