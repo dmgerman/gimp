@@ -4427,7 +4427,7 @@ name|file_open
 argument_list|(
 name|raw_filename
 argument_list|,
-name|filename
+name|raw_filename
 argument_list|)
 condition|)
 name|g_message
