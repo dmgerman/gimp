@@ -817,23 +817,13 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file 0, magick = %c%c"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
-argument_list|,
-name|magick
-index|[
-literal|0
-index|]
-argument_list|,
-name|magick
-index|[
-literal|1
-index|]
 argument_list|)
 expr_stmt|;
 return|return
@@ -871,7 +861,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file 1"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -902,7 +892,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file 2"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -934,7 +924,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file 3"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -1828,7 +1818,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"'%s' is not a valid BMP file 4"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
