@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287b98500103
+DECL|enum|__anon298f444b0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -83,7 +83,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287b98500203
+DECL|enum|__anon298f444b0203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -178,7 +178,7 @@ name|int
 name|parse_ms_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -191,7 +191,7 @@ name|DisposeType
 name|parse_disposal_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -203,7 +203,6 @@ specifier|static
 name|DisposeType
 name|get_frame_disposal
 parameter_list|(
-specifier|const
 name|guint
 name|whichframe
 parameter_list|)
@@ -215,7 +214,6 @@ specifier|static
 name|guint32
 name|get_frame_duration
 parameter_list|(
-specifier|const
 name|guint
 name|whichframe
 parameter_list|)
@@ -227,11 +225,11 @@ specifier|static
 name|void
 name|remove_disposal_tag
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|dest
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|src
 parameter_list|)
@@ -243,11 +241,11 @@ specifier|static
 name|void
 name|remove_ms_tag
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|dest
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|src
 parameter_list|)
@@ -256,11 +254,11 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|is_disposal_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|,
@@ -268,7 +266,7 @@ name|DisposeType
 modifier|*
 name|disposal
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|taglength
 parameter_list|)
@@ -277,19 +275,19 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|int
+name|gint
 name|is_ms_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|duration
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|taglength
 parameter_list|)
@@ -507,7 +505,7 @@ literal|"1997-2003"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/_Optimize (for GIF)"
+literal|"<Image>/Filters/Animation/Optimize (for _GIF)"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -550,7 +548,7 @@ literal|"1997-2001"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Animation/_Optimize (difference)"
+literal|"<Image>/Filters/Animation/_Optimize (Difference)"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1003,38 +1001,35 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|compose_row (int frame_num,DisposeType dispose,int row_num,unsigned char * dest,int dest_width,GimpDrawable * drawable,const gboolean cleanup)
+DECL|function|compose_row (gint frame_num,DisposeType dispose,gint row_num,guchar * dest,gint dest_width,GimpDrawable * drawable,gboolean cleanup)
 name|compose_row
 parameter_list|(
-name|int
+name|gint
 name|frame_num
 parameter_list|,
 name|DisposeType
 name|dispose
 parameter_list|,
-name|int
+name|gint
 name|row_num
 parameter_list|,
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|dest
 parameter_list|,
-name|int
+name|gint
 name|dest_width
 parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-specifier|const
 name|gboolean
 name|cleanup
 parameter_list|)
 block|{
 specifier|static
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|line_buf
 init|=
@@ -1058,7 +1053,7 @@ name|rawwidth
 decl_stmt|,
 name|rawheight
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gboolean
@@ -1286,7 +1281,7 @@ literal|128
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|pi
 decl_stmt|;
 for|for
@@ -1414,21 +1409,21 @@ name|back_frame
 init|=
 name|NULL
 decl_stmt|;
-name|int
+name|gint
 name|this_delay
 decl_stmt|;
-name|int
+name|gint
 name|cumulated_delay
 init|=
 literal|0
 decl_stmt|;
-name|int
+name|gint
 name|last_true_frame
 init|=
 operator|-
 literal|1
 decl_stmt|;
-name|int
+name|gint
 name|buflen
 decl_stmt|;
 name|gchar
@@ -1707,7 +1702,7 @@ name|OPFOREGROUND
 condition|)
 block|{
 comment|/* iterate through all rows of all frames, find statistical 	 mode for each pixel position. */
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -1798,11 +1793,6 @@ argument_list|(
 name|guint
 argument_list|,
 name|width
-argument_list|)
-expr_stmt|;
-name|g_warning
-argument_list|(
-literal|"stat fun"
 argument_list|)
 expr_stmt|;
 for|for
@@ -1922,7 +1912,6 @@ name|this_frame_num
 operator|++
 control|)
 block|{
-comment|/*g_warning("stat fun : %d / %d", row, this_frame_num);*/
 name|drawable
 operator|=
 name|gimp_drawable_get
@@ -1972,7 +1961,6 @@ name|drawable
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*	  g_warning("eh2."); */
 for|for
 control|(
 name|this_frame_num
@@ -2001,7 +1989,6 @@ name|i
 operator|++
 control|)
 block|{
-comment|/*		  g_warning("eh4(%d).", i); */
 if|if
 condition|(
 name|these_rows
@@ -2021,8 +2008,6 @@ operator|>=
 literal|128
 condition|)
 block|{
-comment|/*		      fprintf(stderr, "%d ", */
-comment|/*			      these_rows[this_frame_num][i * pixelstep + pixelstep -1]); */
 for|for
 control|(
 name|j
@@ -2040,7 +2025,6 @@ name|j
 operator|++
 control|)
 block|{
-comment|/*		      g_warning("eh3(%d,%d).", i,j); */
 switch|switch
 condition|(
 name|pixelstep
@@ -2274,14 +2258,12 @@ index|]
 operator|++
 expr_stmt|;
 block|}
-comment|/*		  else 				  g_warning("OOH!");*/
 name|same
 label|:
 comment|/* nop */
 empty_stmt|;
 block|}
 block|}
-comment|/*	  g_warning("eh."); */
 for|for
 control|(
 name|i
@@ -2486,11 +2468,6 @@ expr_stmt|;
 block|}
 comment|/*	  memcpy(&back_frame[width * pixelstep * row], 		  these_rows[0], 		  width * pixelstep);*/
 block|}
-name|g_warning
-argument_list|(
-literal|"stat fun over"
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|this_frame_num
@@ -2786,18 +2763,13 @@ operator|==
 name|OPFOREGROUND
 condition|)
 block|{
-name|int
+name|gint
 name|xit
 decl_stmt|,
 name|yit
 decl_stmt|,
 name|byteit
 decl_stmt|;
-name|g_warning
-argument_list|(
-literal|"matcher"
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|yit
@@ -2969,7 +2941,7 @@ name|OPOPTIMIZE
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|xit
 decl_stmt|,
 name|yit
@@ -4292,14 +4264,8 @@ name|gimp_layer_translate
 argument_list|(
 name|new_layer_id
 argument_list|,
-operator|(
-name|gint
-operator|)
 name|bbox_left
 argument_list|,
-operator|(
-name|gint
-operator|)
 name|bbox_top
 argument_list|)
 expr_stmt|;
@@ -4308,7 +4274,7 @@ name|gimp_progress_update
 argument_list|(
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|this_frame_num
 operator|+
@@ -4317,7 +4283,7 @@ operator|)
 operator|/
 operator|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|total_frames
 operator|)
@@ -4377,21 +4343,15 @@ name|opti_frame
 operator|=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
-name|back_frame
-condition|)
-block|{
 name|g_free
 argument_list|(
-name|opti_frame
+name|back_frame
 argument_list|)
 expr_stmt|;
-name|opti_frame
+name|back_frame
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 return|return
 name|new_image_id
 return|;
@@ -4405,10 +4365,9 @@ end_comment
 begin_function
 specifier|static
 name|DisposeType
-DECL|function|get_frame_disposal (const guint whichframe)
+DECL|function|get_frame_disposal (guint whichframe)
 name|get_frame_disposal
 parameter_list|(
-specifier|const
 name|guint
 name|whichframe
 parameter_list|)
@@ -4459,10 +4418,9 @@ end_function
 begin_function
 specifier|static
 name|guint32
-DECL|function|get_frame_duration (const guint whichframe)
+DECL|function|get_frame_duration (guint whichframe)
 name|get_frame_duration
 parameter_list|(
-specifier|const
 name|guint
 name|whichframe
 parameter_list|)
@@ -4547,20 +4505,20 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|is_ms_tag (const char * str,int * duration,int * taglength)
+name|gboolean
+DECL|function|is_ms_tag (const gchar * str,gint * duration,gint * taglength)
 name|is_ms_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|duration
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|taglength
 parameter_list|)
@@ -4593,7 +4551,7 @@ operator|!=
 literal|'('
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|offset
 operator|=
@@ -4689,7 +4647,7 @@ operator|<=
 literal|2
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 comment|/* eat any spaces between number and 'ms' */
 while|while
@@ -4749,7 +4707,7 @@ literal|'S'
 operator|)
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|offset
 operator|+=
@@ -4796,7 +4754,7 @@ literal|')'
 operator|)
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 name|offset
 operator|++
@@ -4812,7 +4770,7 @@ operator|=
 name|offset
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 end_function
@@ -4829,16 +4787,16 @@ modifier|*
 name|str
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
-name|int
+name|gint
 name|rtn
 decl_stmt|;
-name|int
+name|gint
 name|dummy
 decl_stmt|;
-name|int
+name|gint
 name|length
 decl_stmt|;
 name|length
@@ -4892,12 +4850,12 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|is_disposal_tag (const char * str,DisposeType * disposal,int * taglength)
+name|gboolean
+DECL|function|is_disposal_tag (const gchar * str,DisposeType * disposal,gint * taglength)
 name|is_disposal_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|,
@@ -4905,7 +4863,7 @@ name|DisposeType
 modifier|*
 name|disposal
 parameter_list|,
-name|int
+name|gint
 modifier|*
 name|taglength
 parameter_list|)
@@ -4920,7 +4878,7 @@ operator|!=
 literal|9
 condition|)
 return|return
-literal|0
+name|FALSE
 return|;
 if|if
 condition|(
@@ -4947,7 +4905,7 @@ operator|=
 name|DISPOSE_COMBINE
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 elseif|else
@@ -4976,7 +4934,7 @@ operator|=
 name|DISPOSE_REPLACE
 expr_stmt|;
 return|return
-literal|1
+name|TRUE
 return|;
 block|}
 return|return
@@ -4988,11 +4946,11 @@ end_function
 begin_function
 specifier|static
 name|DisposeType
-DECL|function|parse_disposal_tag (const char * str)
+DECL|function|parse_disposal_tag (const gchar * str)
 name|parse_disposal_tag
 parameter_list|(
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|str
 parameter_list|)
@@ -5000,7 +4958,7 @@ block|{
 name|DisposeType
 name|rtn
 decl_stmt|;
-name|int
+name|gint
 name|i
 decl_stmt|,
 name|dummy
@@ -5053,9 +5011,7 @@ return|;
 block|}
 block|}
 return|return
-operator|(
 name|DISPOSE_UNDEFINED
-operator|)
 return|;
 comment|/* FIXME */
 block|}
@@ -5064,14 +5020,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|remove_disposal_tag (char * dest,char * src)
+DECL|function|remove_disposal_tag (gchar * dest,gchar * src)
 name|remove_disposal_tag
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|dest
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|src
 parameter_list|)
@@ -5169,14 +5125,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|remove_ms_tag (char * dest,char * src)
+DECL|function|remove_ms_tag (gchar * dest,gchar * src)
 name|remove_ms_tag
 parameter_list|(
-name|char
+name|gchar
 modifier|*
 name|dest
 parameter_list|,
-name|char
+name|gchar
 modifier|*
 name|src
 parameter_list|)
@@ -5194,10 +5150,10 @@ decl_stmt|;
 name|gint
 name|length
 decl_stmt|;
-name|int
+name|gint
 name|taglength
 decl_stmt|;
-name|int
+name|gint
 name|dummy
 decl_stmt|;
 name|length
