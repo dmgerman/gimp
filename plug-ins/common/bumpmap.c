@@ -130,7 +130,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad15bf50103
+DECL|enum|__anon29a456f20103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -148,7 +148,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad15bf50203
+DECL|enum|__anon29a456f20203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -164,7 +164,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad15bf50308
+DECL|struct|__anon29a456f20308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -223,7 +223,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad15bf50408
+DECL|struct|__anon29a456f20408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -268,7 +268,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad15bf50508
+DECL|struct|__anon29a456f20508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -3720,7 +3720,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|row
-operator|++
 argument_list|,
 name|_
 argument_list|(
@@ -3736,6 +3735,19 @@ argument_list|,
 literal|2
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_row_spacing
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|row
+operator|++
+argument_list|,
+literal|12
 argument_list|)
 expr_stmt|;
 comment|/* Compensate darkening */
@@ -3758,7 +3770,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|3
 argument_list|,
@@ -3840,7 +3852,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|3
 argument_list|,
@@ -3922,7 +3934,7 @@ argument_list|)
 argument_list|,
 name|button
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|3
 argument_list|,
@@ -3938,8 +3950,18 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_row_spacing
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
 name|row
 operator|++
+argument_list|,
+literal|12
+argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
