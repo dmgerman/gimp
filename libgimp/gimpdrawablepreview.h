@@ -19,13 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimppreview.h"
+file|<libgimpwidgets/gimppreview.h>
 end_include
 
 begin_macro

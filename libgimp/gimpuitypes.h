@@ -16,12 +16,32 @@ directive|define
 name|__GIMP_UI_TYPES_H__
 end_define
 
-begin_expr_stmt
+begin_include
+include|#
+directive|include
+file|<libgimpwidgets/gimpwidgetstypes.h>
+end_include
+
+begin_macro
 name|G_BEGIN_DECLS
+end_macro
+
+begin_comment
 comment|/* For information look into the html documentation */
-comment|/* empty at the moment because most stuff went to libgimpwidgets.  *  * left here because it will contain stuff again  --Mitch  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpDrawablePreview
+typedef|typedef
+name|struct
+name|_GimpDrawablePreview
+name|GimpDrawablePreview
+typedef|;
+end_typedef
+
+begin_macro
 name|G_END_DECLS
-end_expr_stmt
+end_macro
 
 begin_endif
 endif|#

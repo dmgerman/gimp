@@ -18,13 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpuitypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
+file|"gimp.h"
 end_include
 
 begin_include
@@ -908,17 +914,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_preview_draw:  *  **/
+comment|/**  * gimp_drawable_preview_draw:  * @preview: a #GimpDrawablePreview widget  * @buf:  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_preview_draw (GimpDrawablePreview * drawable_preview,guchar * buf)
+DECL|function|gimp_drawable_preview_draw (GimpDrawablePreview * preview,guchar * buf)
 name|gimp_drawable_preview_draw
 parameter_list|(
 name|GimpDrawablePreview
 modifier|*
-name|drawable_preview
+name|preview
 parameter_list|,
 name|guchar
 modifier|*
@@ -927,7 +933,7 @@ parameter_list|)
 block|{
 name|GimpPreview
 modifier|*
-name|preview
+name|gimp_preview
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -937,7 +943,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE_PREVIEW
 argument_list|(
-name|drawable_preview
+name|preview
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -948,16 +954,16 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|preview
+name|gimp_preview
 operator|=
 name|GIMP_PREVIEW
 argument_list|(
-name|drawable_preview
+name|preview
 argument_list|)
 expr_stmt|;
 name|drawable
 operator|=
-name|drawable_preview
+name|preview
 operator|->
 name|drawable
 expr_stmt|;
@@ -965,7 +971,7 @@ name|gimp_preview_area_draw
 argument_list|(
 name|GIMP_PREVIEW_AREA
 argument_list|(
-name|preview
+name|gimp_preview
 operator|->
 name|area
 argument_list|)
@@ -974,11 +980,11 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|preview
+name|gimp_preview
 operator|->
 name|width
 argument_list|,
-name|preview
+name|gimp_preview
 operator|->
 name|height
 argument_list|,
@@ -991,7 +997,7 @@ argument_list|)
 argument_list|,
 name|buf
 argument_list|,
-name|preview
+name|gimp_preview
 operator|->
 name|width
 operator|*
