@@ -579,6 +579,13 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
+if|#
+directive|if
+literal|0
+comment|/*  stop rendering and free all update area lists because    *  their coordinates have been invalidated by the resize    */
+block|if (gdisp->idle_render.idle_id)     {       g_source_remove (gdisp->idle_render.idle_id);       gdisp->idle_render.idle_id = 0;     }    gimp_display_area_list_free (gdisp->update_areas);   gimp_display_area_list_free (gdisp->idle_render.update_areas);   gdisp->update_areas = NULL;   gdisp->idle_render.update_areas = NULL;
+endif|#
+directive|endif
 name|gimp_display_add_update_area
 argument_list|(
 name|gdisp

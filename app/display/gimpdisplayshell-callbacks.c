@@ -198,6 +198,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-draw.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-layer-select.h"
 end_include
 
