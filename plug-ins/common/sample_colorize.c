@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2bcc90de0108
+DECL|struct|__anon2bf84d7c0108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bcc90de0208
+DECL|struct|__anon2bf84d7c0208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bcc90de0308
+DECL|struct|__anon2bf84d7c0308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bcc90de0408
+DECL|struct|__anon2bf84d7c0408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2bcc90de0508
+DECL|struct|__anon2bf84d7c0508
 typedef|typedef
 struct|struct
 block|{
@@ -6575,6 +6575,10 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|sep
+decl_stmt|;
 name|GtkObject
 modifier|*
 name|data
@@ -6910,7 +6914,7 @@ name|gtk_table_new
 argument_list|(
 literal|7
 argument_list|,
-literal|4
+literal|5
 argument_list|,
 name|FALSE
 argument_list|)
@@ -6953,6 +6957,35 @@ name|frame
 argument_list|)
 argument_list|,
 name|table
+argument_list|)
+expr_stmt|;
+comment|/* separator */
+name|sep
+operator|=
+name|gtk_vseparator_new
+argument_list|()
+expr_stmt|;
+name|gtk_table_attach_defaults
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+name|sep
+argument_list|,
+literal|2
+argument_list|,
+literal|3
+argument_list|,
+literal|0
+argument_list|,
+literal|7
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|sep
 argument_list|)
 expr_stmt|;
 name|l_ty
@@ -7123,9 +7156,9 @@ argument_list|)
 argument_list|,
 name|label
 argument_list|,
-literal|2
-argument_list|,
 literal|3
+argument_list|,
+literal|4
 argument_list|,
 name|l_ty
 argument_list|,
@@ -7161,9 +7194,9 @@ argument_list|)
 argument_list|,
 name|option_menu
 argument_list|,
-literal|3
-argument_list|,
 literal|4
+argument_list|,
+literal|5
 argument_list|,
 name|l_ty
 argument_list|,
@@ -7506,9 +7539,9 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-literal|2
+literal|3
 argument_list|,
-literal|4
+literal|5
 argument_list|,
 name|l_ty
 argument_list|,
@@ -7781,9 +7814,9 @@ argument_list|)
 argument_list|,
 name|pframe
 argument_list|,
-literal|2
+literal|3
 argument_list|,
-literal|4
+literal|5
 argument_list|,
 name|l_ty
 argument_list|,
@@ -8124,9 +8157,9 @@ argument_list|)
 argument_list|,
 name|pframe
 argument_list|,
-literal|2
+literal|3
 argument_list|,
-literal|4
+literal|5
 argument_list|,
 name|l_ty
 argument_list|,
@@ -8688,9 +8721,9 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-literal|2
+literal|3
 argument_list|,
-literal|4
+literal|5
 argument_list|,
 name|l_ty
 argument_list|,
@@ -9161,9 +9194,9 @@ argument_list|)
 argument_list|,
 name|hbox
 argument_list|,
-literal|2
+literal|3
 argument_list|,
-literal|4
+literal|5
 argument_list|,
 name|l_ty
 argument_list|,

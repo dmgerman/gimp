@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon275d2a4d0103
+DECL|enum|__anon2c733b3c0103
 block|{
 DECL|enumerator|GIMP_DND_DATA_COLOR
 name|GIMP_DND_DATA_COLOR
@@ -707,7 +707,9 @@ block|,
 name|NULL
 block|,
 name|NULL
-block|,   }
+block|,
+name|NULL
+block|}
 block|,
 block|{
 name|GIMP_TARGET_COLOR
