@@ -978,6 +978,16 @@ name|NULL
 block|}
 block|,
 block|{
+literal|"<Image>/Image/Alpha/Add Alpha Channel"
+block|,
+name|NULL
+block|,
+name|layers_add_alpha_channel_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"<Image>/Image/<separator>"
 block|,
 name|NULL
@@ -1153,6 +1163,16 @@ block|,
 name|NULL
 block|,
 name|layers_mask_select_cmd_callback
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"<Image>/Layers/Add Alpha Channel"
+block|,
+name|NULL
+block|,
+name|layers_add_alpha_channel_cmd_callback
 block|,
 name|NULL
 block|}

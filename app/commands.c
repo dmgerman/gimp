@@ -309,7 +309,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon27a33ec70108
+DECL|struct|__anon2b1a150a0108
 typedef|typedef
 struct|struct
 block|{
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a33ec70208
+DECL|struct|__anon2b1a150a0208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -4509,7 +4509,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon27a33ec70308
+DECL|struct|__anon2b1a150a0308
 struct|struct
 block|{
 DECL|member|label
@@ -4578,7 +4578,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon27a33ec70408
+DECL|struct|__anon2b1a150a0408
 struct|struct
 block|{
 DECL|member|label
@@ -11069,6 +11069,43 @@ name|gdisp
 operator|->
 name|gimage
 argument_list|,
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|active_layer
+argument_list|)
+expr_stmt|;
+name|gdisplays_flush
+argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|layers_add_alpha_channel_cmd_callback (GtkWidget * widget,gpointer client_data)
+name|layers_add_alpha_channel_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|client_data
+parameter_list|)
+block|{
+name|GDisplay
+modifier|*
+name|gdisp
+decl_stmt|;
+name|gdisp
+operator|=
+name|gdisplay_active
+argument_list|()
+expr_stmt|;
+name|layer_add_alpha
+argument_list|(
 name|gdisp
 operator|->
 name|gimage
