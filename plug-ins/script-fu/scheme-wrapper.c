@@ -632,14 +632,6 @@ name|proc_list
 decl_stmt|;
 name|gchar
 modifier|*
-name|proc_name
-decl_stmt|;
-name|gchar
-modifier|*
-name|arg_name
-decl_stmt|;
-name|gchar
-modifier|*
 name|proc_blurb
 decl_stmt|;
 name|gchar
@@ -748,22 +740,15 @@ name|i
 operator|++
 control|)
 block|{
-name|proc_name
-operator|=
-name|g_strdup
-argument_list|(
-name|proc_list
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
 comment|/*  lookup the procedure  */
 if|if
 condition|(
 name|gimp_procedural_db_proc_info
 argument_list|(
-name|proc_name
+name|proc_list
+index|[
+name|i
+index|]
 argument_list|,
 operator|&
 name|proc_blurb
@@ -807,15 +792,13 @@ name|code
 init|=
 name|NIL
 decl_stmt|;
+name|gchar
+modifier|*
+name|proc_name
+decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
-comment|/*  convert the names to scheme-like naming conventions  */
-name|convert_string
-argument_list|(
-name|proc_name
-argument_list|)
-expr_stmt|;
 comment|/*  create a new scheme func that calls gimp-proc-db-call  */
 for|for
 control|(
@@ -831,18 +814,17 @@ name|j
 operator|++
 control|)
 block|{
+name|gchar
+modifier|*
 name|arg_name
-operator|=
-name|g_strdup
-argument_list|(
+init|=
 name|params
 index|[
 name|j
 index|]
 operator|.
 name|name
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|convert_string
 argument_list|(
 name|arg_name
@@ -852,7 +834,7 @@ name|args
 operator|=
 name|cons
 argument_list|(
-name|cintern
+name|rintern
 argument_list|(
 name|arg_name
 argument_list|)
@@ -864,7 +846,7 @@ name|code
 operator|=
 name|cons
 argument_list|(
-name|cintern
+name|rintern
 argument_list|(
 name|arg_name
 argument_list|)
@@ -888,12 +870,28 @@ argument_list|(
 name|code
 argument_list|)
 expr_stmt|;
+comment|/*  convert the procedure name to scheme-like naming conventions  */
+name|proc_name
+operator|=
+name|g_strdup
+argument_list|(
+name|proc_list
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
+name|convert_string
+argument_list|(
+name|proc_name
+argument_list|)
+expr_stmt|;
 comment|/*  set the scheme-based procedure name  */
 name|args
 operator|=
 name|cons
 argument_list|(
-name|cintern
+name|rintern
 argument_list|(
 name|proc_name
 argument_list|)
@@ -901,7 +899,12 @@ argument_list|,
 name|args
 argument_list|)
 expr_stmt|;
-comment|/*  set the acture pdb procedure name  */
+name|g_free
+argument_list|(
+name|proc_name
+argument_list|)
+expr_stmt|;
+comment|/*  set the actual pdb procedure name  */
 name|code
 operator|=
 name|cons
@@ -915,7 +918,7 @@ argument_list|)
 argument_list|,
 name|cons
 argument_list|(
-name|cintern
+name|rintern
 argument_list|(
 name|proc_list
 index|[
@@ -1000,6 +1003,14 @@ name|nreturn_vals
 argument_list|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|proc_list
+index|[
+name|i
+index|]
+argument_list|)
+expr_stmt|;
 block|}
 name|g_free
 argument_list|(

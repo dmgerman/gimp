@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b688210108
+DECL|struct|__anon2b44bf120108
 block|{
 DECL|member|script
 name|SFScript
@@ -4442,6 +4442,13 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|script
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  Uninstall the temporary procedure for this script  */
 name|gimp_uninstall_temp_proc
 argument_list|(
@@ -4450,11 +4457,13 @@ operator|->
 name|pdb_name
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|g_free
+argument_list|(
 name|script
-condition|)
-block|{
+operator|->
+name|pdb_name
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|script
@@ -4849,7 +4858,6 @@ argument_list|(
 name|script
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
