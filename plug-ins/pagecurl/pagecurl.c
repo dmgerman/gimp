@@ -8,7 +8,7 @@ comment|/* TODO for v0.5 - in 0.9 still to do...  * As of version 0.5 alpha, the
 end_comment
 
 begin_comment
-comment|/*  * Ported to the 0.99.x architecture by Simon Budig, Simon.Budig@unix-ag.org  *  *** Why does gimp_drawable_add_alpha cause the plugin to produce an  *      ** WARNING **: received tile info did not match computed tile info  *      ** WARNING **: expected tile ack and received: 0  */
+comment|/*  * Ported to the 0.99.x architecture by Simon Budig, Simon.Budig@unix-ag.org  */
 end_comment
 
 begin_comment
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bcd7960108
+DECL|struct|__anon2bef4feb0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -736,7 +736,7 @@ argument_list|(
 literal|"<Image>/Filters/Distorts/Pagecurl..."
 argument_list|)
 argument_list|,
-literal|"RGBA, GRAYA"
+literal|"RGB*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -902,7 +902,6 @@ name|d_image
 expr_stmt|;
 if|if
 condition|(
-operator|(
 name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable
@@ -911,14 +910,6 @@ name|drawable_id
 argument_list|)
 operator|||
 name|gimp_drawable_is_gray
-argument_list|(
-name|drawable
-operator|->
-name|drawable_id
-argument_list|)
-operator|)
-operator|&&
-name|gimp_drawable_has_alpha
 argument_list|(
 name|drawable
 operator|->
@@ -5090,6 +5081,22 @@ block|{
 name|gimp_undo_push_group_start
 argument_list|(
 name|image_id
+argument_list|)
+expr_stmt|;
+name|gimp_layer_add_alpha
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
+argument_list|)
+expr_stmt|;
+name|drawable
+operator|=
+name|gimp_drawable_get
+argument_list|(
+name|drawable
+operator|->
+name|drawable_id
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
