@@ -100,7 +100,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29908c080108
+DECL|struct|__anon2c41bdd40108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -650,10 +650,6 @@ decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
-name|INIT_LOCALE
-argument_list|(
-literal|"script-fu"
-argument_list|)
 name|argc
 operator|=
 literal|1
@@ -692,6 +688,9 @@ argument_list|(
 name|gimp_gtkrc
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 name|dlg
 operator|=

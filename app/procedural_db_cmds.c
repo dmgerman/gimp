@@ -2172,7 +2172,7 @@ name|PDB_INT32
 block|,
 literal|"proc_type"
 block|,
-literal|"The procedure type: { INTERNAL (0), PLUGIN (1), EXTENSION (2) }"
+literal|"The procedure type: { INTERNAL (0), PLUGIN (1), EXTENSION (2), TEMPORARY (3) }"
 block|}
 block|,
 block|{

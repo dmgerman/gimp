@@ -103,7 +103,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -348,7 +348,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288852590108
+DECL|struct|__anon28767c180108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -383,7 +383,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288852590208
+DECL|struct|__anon28767c180208
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288852590308
+DECL|struct|__anon28767c180308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -453,7 +453,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288852590408
+DECL|struct|__anon28767c180408
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -474,7 +474,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288852590508
+DECL|struct|__anon28767c180508
 block|{
 DECL|member|name
 name|gchar
@@ -502,7 +502,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon28885259060a
+DECL|union|__anon28767c18060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -568,7 +568,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288852590708
+DECL|struct|__anon28767c180708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -649,7 +649,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288852590808
+DECL|struct|__anon28767c180808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -5923,10 +5923,6 @@ argument_list|(
 literal|"script-fu"
 argument_list|)
 expr_stmt|;
-name|INIT_LOCALE
-argument_list|(
-literal|"script-fu"
-argument_list|)
 name|gtk_init
 argument_list|(
 operator|&
@@ -5941,6 +5937,9 @@ argument_list|(
 name|gimp_gtkrc
 argument_list|()
 argument_list|)
+expr_stmt|;
+name|INIT_I18N_UI
+argument_list|()
 expr_stmt|;
 name|gdk_set_use_xshm
 argument_list|(

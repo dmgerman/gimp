@@ -12,6 +12,12 @@ directive|define
 name|__GIMPINTL_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<locale.h>
+end_include
+
 begin_comment
 comment|/* Copied from gnome-i18n.h by Tom Tromey<tromey@creche.cygnus.com> *  * Heavily modified by Daniel Egger<Daniel.Egger@t-online.de>       *  * So be sure to hit me instead of him if something is wrong here    */
 end_comment
@@ -211,6 +217,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* __GIMPINTL_H__ */
+end_comment
 
 end_unit
 
