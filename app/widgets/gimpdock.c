@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be337080103
+DECL|enum|__anon2b2770c80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be337080203
+DECL|enum|__anon2b2770c80203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1458,8 +1458,8 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
-operator|==
-name|GTK_RESPONSE_CANCEL
+operator|!=
+name|GTK_RESPONSE_OK
 operator|)
 expr_stmt|;
 name|gtk_widget_destroy
