@@ -96,7 +96,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ca0aaf0103
+DECL|enum|__anon291fde500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1968,7 +1968,7 @@ block|}
 end_function
 
 begin_function
-name|GimpData
+name|GList
 modifier|*
 DECL|function|gimp_brush_generated_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_brush_generated_load
@@ -2499,8 +2499,10 @@ name|mask
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_DATA
+name|g_list_prepend
 argument_list|(
+name|NULL
+argument_list|,
 name|brush
 argument_list|)
 return|;

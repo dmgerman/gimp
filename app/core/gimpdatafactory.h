@@ -46,7 +46,7 @@ end_typedef
 begin_typedef
 DECL|typedef|GimpDataLoadFunc
 typedef|typedef
-name|GimpData
+name|GList
 modifier|*
 function_decl|(
 modifier|*
@@ -107,6 +107,10 @@ specifier|const
 name|gchar
 modifier|*
 name|extension
+decl_stmt|;
+DECL|member|writable
+name|gboolean
+name|writable
 decl_stmt|;
 block|}
 struct|;

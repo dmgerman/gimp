@@ -261,7 +261,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955182c0103
+DECL|enum|__anon295812c70103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2187,24 +2187,32 @@ block|{
 name|gimp_brush_load
 block|,
 name|GIMP_BRUSH_FILE_EXTENSION
+block|,
+name|FALSE
 block|}
 block|,
 block|{
 name|gimp_brush_load
 block|,
 name|GIMP_BRUSH_PIXMAP_FILE_EXTENSION
+block|,
+name|FALSE
 block|}
 block|,
 block|{
 name|gimp_brush_generated_load
 block|,
 name|GIMP_BRUSH_GENERATED_FILE_EXTENSION
+block|,
+name|TRUE
 block|}
 block|,
 block|{
 name|gimp_brush_pipe_load
 block|,
 name|GIMP_BRUSH_PIPE_FILE_EXTENSION
+block|,
+name|FALSE
 block|}
 block|}
 decl_stmt|;
@@ -2219,12 +2227,16 @@ block|{
 name|gimp_pattern_load
 block|,
 name|GIMP_PATTERN_FILE_EXTENSION
+block|,
+name|FALSE
 block|}
 block|,
 block|{
 name|gimp_pattern_load_pixbuf
 block|,
 name|NULL
+block|,
+name|FALSE
 block|}
 block|}
 decl_stmt|;
@@ -2239,12 +2251,16 @@ block|{
 name|gimp_gradient_load
 block|,
 name|GIMP_GRADIENT_FILE_EXTENSION
+block|,
+name|TRUE
 block|}
 block|,
 block|{
 name|gimp_gradient_load_svg
 block|,
 name|GIMP_GRADIENT_SVG_FILE_EXTENSION
+block|,
+name|FALSE
 block|}
 block|,
 block|{
@@ -2252,6 +2268,8 @@ name|gimp_gradient_load
 block|,
 name|NULL
 comment|/* legacy loader */
+block|,
+name|TRUE
 block|}
 block|}
 decl_stmt|;
@@ -2266,6 +2284,8 @@ block|{
 name|gimp_palette_load
 block|,
 name|GIMP_PALETTE_FILE_EXTENSION
+block|,
+name|TRUE
 block|}
 block|,
 block|{
@@ -2273,6 +2293,8 @@ name|gimp_palette_load
 block|,
 name|NULL
 comment|/* legacy loader */
+block|,
+name|TRUE
 block|}
 block|}
 decl_stmt|;

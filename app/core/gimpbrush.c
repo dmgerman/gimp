@@ -176,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab075170103
+DECL|enum|__anon28eb04bd0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1504,7 +1504,7 @@ block|}
 end_function
 
 begin_function
-name|GimpData
+name|GList
 modifier|*
 DECL|function|gimp_brush_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_brush_load
@@ -1662,8 +1662,10 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|GIMP_DATA
+name|g_list_prepend
 argument_list|(
+name|NULL
+argument_list|,
 name|brush
 argument_list|)
 return|;
@@ -2694,7 +2696,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2ab07517020a
+DECL|union|__anon28eb04bd020a
 block|{
 DECL|member|u
 name|guint16

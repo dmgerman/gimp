@@ -1470,7 +1470,7 @@ block|}
 end_function
 
 begin_function
-name|GimpData
+name|GList
 modifier|*
 DECL|function|gimp_palette_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_palette_load
@@ -2417,8 +2417,10 @@ name|colors
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_DATA
+name|g_list_prepend
 argument_list|(
+name|NULL
+argument_list|,
 name|palette
 argument_list|)
 return|;

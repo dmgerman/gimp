@@ -255,7 +255,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpData
+name|GList
 modifier|*
 name|gimp_brush_load
 parameter_list|(

@@ -1374,7 +1374,7 @@ block|}
 end_function
 
 begin_function
-name|GimpData
+name|GList
 modifier|*
 DECL|function|gimp_brush_pipe_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_brush_pipe_load
@@ -2505,8 +2505,10 @@ operator|->
 name|pixmap
 expr_stmt|;
 return|return
-name|GIMP_DATA
+name|g_list_prepend
 argument_list|(
+name|NULL
+argument_list|,
 name|pipe
 argument_list|)
 return|;

@@ -17,7 +17,7 @@ name|__GIMP_GRADIENT_LOAD_H__
 end_define
 
 begin_function_decl
-name|GimpData
+name|GList
 modifier|*
 name|gimp_gradient_load
 parameter_list|(
@@ -38,7 +38,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpData
+name|GList
 modifier|*
 name|gimp_gradient_load_svg
 parameter_list|(

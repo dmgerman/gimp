@@ -82,7 +82,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_function
-name|GimpData
+name|GList
 modifier|*
 DECL|function|gimp_gradient_load (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_gradient_load
@@ -815,8 +815,10 @@ name|file
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_DATA
+name|g_list_prepend
 argument_list|(
+name|NULL
+argument_list|,
 name|gradient
 argument_list|)
 return|;
@@ -830,7 +832,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29380c510103
+DECL|enum|__anon29f2b2c60103
 block|{
 DECL|enumerator|SVG_STATE_OUT
 name|SVG_STATE_OUT
@@ -852,7 +854,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29380c510208
+DECL|struct|__anon29f2b2c60208
 block|{
 DECL|member|state
 name|SvgParserState
@@ -877,7 +879,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29380c510308
+DECL|struct|__anon29f2b2c60308
 block|{
 DECL|member|offset
 name|gdouble
@@ -1014,7 +1016,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-name|GimpData
+name|GList
 modifier|*
 DECL|function|gimp_gradient_load_svg (const gchar * filename,gboolean stingy_memory_use,GError ** error)
 name|gimp_gradient_load_svg
@@ -1276,7 +1278,12 @@ name|stops
 argument_list|)
 expr_stmt|;
 return|return
+name|g_list_prepend
+argument_list|(
+name|NULL
+argument_list|,
 name|data
+argument_list|)
 return|;
 block|}
 end_function
