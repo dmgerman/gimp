@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   $Log$  *   Revision 1.7  1998/06/06 23:22:22  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.14  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.13  1998/04/27  15:55:38  mike  *   Sharpen would shift the image down one pixel; was using the wrong "source"  *   row...  *  *   Revision 1.12  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.11  1998/04/27  15:33:45  mike  *   Updated to use LUTs for coefficients.  *   Broke out filter code for GRAY, GRAYA, RGB, RGBA modes.  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.10  1998/04/23  14:39:47  mike  *   Whoops - wasn't copying the preview image over for RGB mode...  *  *   Revision 1.9  1998/04/23  13:56:02  mike  *   Updated preview to do checkerboard pattern for transparency (thanks Yosh!)  *   Added gtk_window_set_wmclass() call to make sure this plug-in gets to use  *   the standard GIMP icon if none is otherwise created...  *  *   Revision 1.8  1998/04/22  16:25:45  mike  *   Fixed RGBA preview problems...  *  *   Revision 1.7  1998/03/12  18:48:52  mike  *   Fixed pixel errors around the edge of the bounding rectangle - the  *   original pixels weren't being written back to the image...  *  *   Revision 1.6  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.5  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.4  1997/09/29  17:16:29  mike  *   To average 8 numbers you do *not* divide by 9!  This caused the brightening  *   problem when sharpening was "turned up".  *  *   Revision 1.2  1997/06/08  22:27:35  mike  *   Updated sharpen code for hard-coded 3x3 convolution matrix.  *  *   Revision 1.1  1997/06/08  16:46:07  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   Sharpen filters for The GIMP -- an image manipulation program  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   sharpen()                   - Sharpen an image using a median filter.  *   sharpen_dialog()            - Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *   gray_filter()               - Sharpen grayscale pixels.  *   graya_filter()              - Sharpen grayscale+alpha pixels.  *   rgb_filter()                - Sharpen RGB pixels.  *   rgba_filter()               - Sharpen RGBA pixels.  *  * Revision History:  *  *   $Log$  *   Revision 1.8  1999/03/15 22:38:36  raph  *   Improved the quality of the algorithm in the sharpen plugin.  *  *   Revision 1.7  1998/06/06 23:22:22  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.14  1998/05/17 16:01:33  mike  *   Removed signal handler stuff used for debugging.  *   Added gtk_rc_parse().  *   Removed extra variables.  *  *   Revision 1.13  1998/04/27  15:55:38  mike  *   Sharpen would shift the image down one pixel; was using the wrong "source"  *   row...  *  *   Revision 1.12  1998/04/27  15:45:27  mike  *   OK, put the shadow buffer stuff back in - without shadowing the undo stuff  *   will *not* work...  sigh...  *   Doubled tile cache to avoid cache thrashing with shadow buffer.  *  *   Revision 1.11  1998/04/27  15:33:45  mike  *   Updated to use LUTs for coefficients.  *   Broke out filter code for GRAY, GRAYA, RGB, RGBA modes.  *   Fixed destination region code - was using a shadow buffer when it wasn't  *   needed.  *   Now add 1 to the number of tiles needed in the cache to avoid possible  *   rounding error and resulting cache thrashing.  *  *   Revision 1.10  1998/04/23  14:39:47  mike  *   Whoops - wasn't copying the preview image over for RGB mode...  *  *   Revision 1.9  1998/04/23  13:56:02  mike  *   Updated preview to do checkerboard pattern for transparency (thanks Yosh!)  *   Added gtk_window_set_wmclass() call to make sure this plug-in gets to use  *   the standard GIMP icon if none is otherwise created...  *  *   Revision 1.8  1998/04/22  16:25:45  mike  *   Fixed RGBA preview problems...  *  *   Revision 1.7  1998/03/12  18:48:52  mike  *   Fixed pixel errors around the edge of the bounding rectangle - the  *   original pixels weren't being written back to the image...  *  *   Revision 1.6  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.5  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.4  1997/09/29  17:16:29  mike  *   To average 8 numbers you do *not* divide by 9!  This caused the brightening  *   problem when sharpening was "turned up".  *  *   Revision 1.2  1997/06/08  22:27:35  mike  *   Updated sharpen code for hard-coded 3x3 convolution matrix.  *  *   Revision 1.1  1997/06/08  16:46:07  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -340,6 +340,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_typedef
+DECL|typedef|intneg
+typedef|typedef
+name|gint32
+name|intneg
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|intpos
+typedef|typedef
+name|gint32
+name|intpos
+typedef|;
+end_typedef
+
 begin_function_decl
 specifier|static
 name|void
@@ -356,15 +372,15 @@ name|guchar
 modifier|*
 name|dst
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg0
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg1
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg2
 parameter_list|)
@@ -387,15 +403,15 @@ name|guchar
 modifier|*
 name|dst
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg0
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg1
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg2
 parameter_list|)
@@ -418,15 +434,15 @@ name|guchar
 modifier|*
 name|dst
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg0
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg1
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg2
 parameter_list|)
@@ -449,15 +465,15 @@ name|guchar
 modifier|*
 name|dst
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg0
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg1
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 name|neg2
 parameter_list|)
@@ -539,14 +555,30 @@ DECL|variable|preview_src
 name|guchar
 modifier|*
 name|preview_src
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_src
 comment|/* Source pixel image */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_neg
+name|intneg
 modifier|*
 name|preview_neg
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_neg
 comment|/* Negative coefficient pixels */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_dst
+name|guchar
 modifier|*
 name|preview_dst
 decl_stmt|,
@@ -670,7 +702,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|neg_lut
-name|guchar
+name|intneg
 name|neg_lut
 index|[
 literal|256
@@ -685,7 +717,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|pos_lut
-name|gint16
+name|intpos
 name|pos_lut
 index|[
 literal|256
@@ -1241,7 +1273,7 @@ index|[
 name|i
 index|]
 operator|=
-literal|100
+literal|800
 operator|*
 name|i
 operator|/
@@ -1252,13 +1284,22 @@ index|[
 name|i
 index|]
 operator|=
-name|sharpen_percent
-operator|*
+operator|(
+literal|4
+operator|+
+name|pos_lut
+index|[
 name|i
-operator|/
-literal|8
-operator|/
-name|fact
+index|]
+operator|-
+operator|(
+name|i
+operator|<<
+literal|3
+operator|)
+operator|)
+operator|>>
+literal|3
 expr_stmt|;
 block|}
 empty_stmt|;
@@ -1299,8 +1340,9 @@ decl_stmt|,
 comment|/* Current source pixel */
 modifier|*
 name|dst_row
-decl_stmt|,
+decl_stmt|;
 comment|/* Destination pixel row */
+name|intneg
 modifier|*
 name|neg_rows
 index|[
@@ -1342,13 +1384,13 @@ parameter_list|,
 name|guchar
 modifier|*
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 parameter_list|)
 function_decl|;
@@ -1448,7 +1490,7 @@ name|width
 operator|*
 sizeof|sizeof
 argument_list|(
-name|guchar
+name|intneg
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2783,7 +2825,7 @@ name|preview_height
 operator|*
 sizeof|sizeof
 argument_list|(
-name|guchar
+name|intneg
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2931,8 +2973,9 @@ decl_stmt|,
 comment|/* Current destination pixel */
 modifier|*
 name|image_ptr
-decl_stmt|,
+decl_stmt|;
 comment|/* Current image pixel */
+name|intneg
 modifier|*
 name|neg_ptr
 decl_stmt|;
@@ -2967,13 +3010,13 @@ parameter_list|,
 name|guchar
 modifier|*
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 parameter_list|,
-name|guchar
+name|intneg
 modifier|*
 parameter_list|)
 function_decl|;
@@ -4393,7 +4436,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gray_filter (int width,guchar * src,guchar * dst,guchar * neg0,guchar * neg1,guchar * neg2)
+DECL|function|gray_filter (int width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
 name|gray_filter
 parameter_list|(
 name|int
@@ -4410,23 +4453,23 @@ modifier|*
 name|dst
 parameter_list|,
 comment|/* O - Destination line */
-name|guchar
+name|intneg
 modifier|*
 name|neg0
 parameter_list|,
 comment|/* I - Top negative coefficient line */
-name|guchar
+name|intneg
 modifier|*
 name|neg1
 parameter_list|,
 comment|/* I - Middle negative coefficient line */
-name|guchar
+name|intneg
 modifier|*
 name|neg2
 parameter_list|)
 comment|/* I - Bottom negative coefficient line */
 block|{
-name|gint16
+name|intpos
 name|pixel
 decl_stmt|;
 comment|/* New pixel value */
@@ -4565,7 +4608,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|graya_filter (int width,guchar * src,guchar * dst,guchar * neg0,guchar * neg1,guchar * neg2)
+DECL|function|graya_filter (int width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
 name|graya_filter
 parameter_list|(
 name|int
@@ -4582,23 +4625,23 @@ modifier|*
 name|dst
 parameter_list|,
 comment|/* O - Destination line */
-name|guchar
+name|intneg
 modifier|*
 name|neg0
 parameter_list|,
 comment|/* I - Top negative coefficient line */
-name|guchar
+name|intneg
 modifier|*
 name|neg1
 parameter_list|,
 comment|/* I - Middle negative coefficient line */
-name|guchar
+name|intneg
 modifier|*
 name|neg2
 parameter_list|)
 comment|/* I - Bottom negative coefficient line */
 block|{
-name|gint16
+name|intpos
 name|pixel
 decl_stmt|;
 comment|/* New pixel value */
@@ -4764,7 +4807,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|rgb_filter (int width,guchar * src,guchar * dst,guchar * neg0,guchar * neg1,guchar * neg2)
+DECL|function|rgb_filter (int width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
 name|rgb_filter
 parameter_list|(
 name|int
@@ -4781,23 +4824,23 @@ modifier|*
 name|dst
 parameter_list|,
 comment|/* O - Destination line */
-name|guchar
+name|intneg
 modifier|*
 name|neg0
 parameter_list|,
 comment|/* I - Top negative coefficient line */
-name|guchar
+name|intneg
 modifier|*
 name|neg1
 parameter_list|,
 comment|/* I - Middle negative coefficient line */
-name|guchar
+name|intneg
 modifier|*
 name|neg2
 parameter_list|)
 comment|/* I - Bottom negative coefficient line */
 block|{
-name|gint16
+name|intpos
 name|pixel
 decl_stmt|;
 comment|/* New pixel value */
@@ -4888,6 +4931,16 @@ index|[
 literal|3
 index|]
 expr_stmt|;
+name|pixel
+operator|=
+operator|(
+name|pixel
+operator|+
+literal|4
+operator|)
+operator|>>
+literal|3
+expr_stmt|;
 if|if
 condition|(
 name|pixel
@@ -4972,6 +5025,16 @@ index|[
 literal|4
 index|]
 expr_stmt|;
+name|pixel
+operator|=
+operator|(
+name|pixel
+operator|+
+literal|4
+operator|)
+operator|>>
+literal|3
+expr_stmt|;
 if|if
 condition|(
 name|pixel
@@ -5055,6 +5118,16 @@ name|neg2
 index|[
 literal|5
 index|]
+expr_stmt|;
+name|pixel
+operator|=
+operator|(
+name|pixel
+operator|+
+literal|4
+operator|)
+operator|>>
+literal|3
 expr_stmt|;
 if|if
 condition|(
@@ -5139,7 +5212,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|rgba_filter (int width,guchar * src,guchar * dst,guchar * neg0,guchar * neg1,guchar * neg2)
+DECL|function|rgba_filter (int width,guchar * src,guchar * dst,intneg * neg0,intneg * neg1,intneg * neg2)
 name|rgba_filter
 parameter_list|(
 name|int
@@ -5156,23 +5229,23 @@ modifier|*
 name|dst
 parameter_list|,
 comment|/* O - Destination line */
-name|guchar
+name|intneg
 modifier|*
 name|neg0
 parameter_list|,
 comment|/* I - Top negative coefficient line */
-name|guchar
+name|intneg
 modifier|*
 name|neg1
 parameter_list|,
 comment|/* I - Middle negative coefficient line */
-name|guchar
+name|intneg
 modifier|*
 name|neg2
 parameter_list|)
 comment|/* I - Bottom negative coefficient line */
 block|{
-name|gint16
+name|intpos
 name|pixel
 decl_stmt|;
 comment|/* New pixel value */
