@@ -513,6 +513,14 @@ value|"gimp-view-fullscreen"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_VIEW_CHANGE_SCREEN
+define|#
+directive|define
+name|GIMP_HELP_VIEW_CHANGE_SCREEN
+value|"gimp-view-change-screen"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_WINDOW
 define|#
 directive|define
@@ -2614,6 +2622,14 @@ define|#
 directive|define
 name|GIMP_HELP_DOCK_VIEW_AS_GRID
 value|"gimp-dock-view-as-grid"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_DOCK_CHANGE_SCREEN
+define|#
+directive|define
+name|GIMP_HELP_DOCK_CHANGE_SCREEN
+value|"gimp-dock-change-screen"
 end_define
 
 begin_define

@@ -2147,6 +2147,29 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/View/Move to Screen..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|view_change_screen_cmd_callback
+block|,
+literal|0
+block|,
+name|NULL
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_VIEW_CHANGE_SCREEN
+block|,
+name|NULL
+block|}
+block|,
 comment|/*<Image>/Image  */
 name|MENU_BRANCH
 argument_list|(
@@ -5900,6 +5923,11 @@ name|fullscreen
 init|=
 name|FALSE
 decl_stmt|;
+name|gint
+name|n_screens
+init|=
+literal|1
+decl_stmt|;
 name|gimp
 operator|=
 name|GIMP_ITEM_FACTORY
@@ -6116,6 +6144,19 @@ name|shell
 operator|->
 name|options
 expr_stmt|;
+name|n_screens
+operator|=
+name|gdk_display_get_n_screens
+argument_list|(
+name|gtk_widget_get_display
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_context_get_foreground
 argument_list|(
@@ -6150,6 +6191,17 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_item_factory_set_active (item_factory, menu, (condition) != 0)
+DECL|macro|SET_VISIBLE (menu,condition)
+define|#
+directive|define
+name|SET_VISIBLE
+parameter_list|(
+name|menu
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_item_factory_set_visible (item_factory, menu, (condition) != 0)
 DECL|macro|SET_LABEL (menu,label)
 define|#
 directive|define
@@ -6926,6 +6978,17 @@ operator|&&
 name|fullscreen
 argument_list|)
 expr_stmt|;
+name|SET_VISIBLE
+argument_list|(
+literal|"/View/Move to Screen..."
+argument_list|,
+name|gdisp
+operator|&&
+name|n_screens
+operator|>
+literal|1
+argument_list|)
+expr_stmt|;
 comment|/*  Image  */
 name|SET_SENSITIVE
 argument_list|(
@@ -7638,6 +7701,9 @@ expr_stmt|;
 undef|#
 directive|undef
 name|SET_ACTIVE
+undef|#
+directive|undef
+name|SET_VISIBLE
 undef|#
 directive|undef
 name|SET_LABEL
