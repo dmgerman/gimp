@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"commands.h"
+file|"file_new_dialog.h"
 end_include
 
 begin_include
@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a239a80108
+DECL|struct|__anon28cf85be0108
 block|{
 DECL|member|dlg
 name|GtkWidget

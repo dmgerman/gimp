@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<ctype.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -19,6 +25,24 @@ begin_include
 include|#
 directive|include
 file|"docindexif.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"fileops.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_function

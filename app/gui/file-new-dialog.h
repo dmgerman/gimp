@@ -2,14 +2,14 @@ begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__file_dialog_new_h__
+name|__FILE_NEW_DIALOG_H__
 end_ifndef
 
 begin_define
-DECL|macro|__file_dialog_new_h__
+DECL|macro|__FILE_NEW_DIALOG_H__
 define|#
 directive|define
-name|__file_dialog_new_h__
+name|__FILE_NEW_DIALOG_H__
 end_define
 
 begin_include
@@ -48,7 +48,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __FILE_DIALOG_NEW_H__ */
+comment|/* __FILE_NEW_DIALOG_H_H__ */
 end_comment
 
 end_unit

@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"menus.h"
+file|"libgimp/gimpenv.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpenv.h"
+file|"libgimp/gimpintl.h"
 end_include
 
 begin_decl_stmt
@@ -103,7 +103,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2bf68c020103
+DECL|enum|__anon2b2c47d80103
 enum|enum
 block|{
 DECL|enumerator|TARGET_URI_LIST
