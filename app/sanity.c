@@ -254,7 +254,7 @@ name|result
 operator|=
 name|g_filename_to_utf8
 argument_list|(
-literal|"foobar"
+literal|""
 argument_list|,
 operator|-
 literal|1
