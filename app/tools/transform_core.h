@@ -659,6 +659,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|transform_core_showpath_changed
+parameter_list|(
+name|gint
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  transform functions  */
 end_comment

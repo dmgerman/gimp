@@ -51,6 +51,15 @@ end_function_decl
 
 begin_function_decl
 name|int
+name|transform_tool_showpath
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
 name|transform_tool_clip
 parameter_list|(
 name|void

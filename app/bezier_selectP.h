@@ -105,7 +105,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2b6fbdac0103
+DECL|enum|__anon27cddd2b0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -176,6 +176,11 @@ modifier|*
 name|next_curve
 decl_stmt|;
 comment|/* Next curve segment                */
+DECL|member|pointflags
+name|gint
+name|pointflags
+decl_stmt|;
+comment|/* Status of point 0 = not selected  			       * 1 = selected  			       */
 block|}
 struct|;
 end_struct
@@ -266,7 +271,7 @@ comment|/* All udata that are passed to the bezier_draw_curve must  * have this 
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b6fbdac0208
+DECL|struct|__anon27cddd2b0208
 typedef|typedef
 struct|struct
 block|{
@@ -435,6 +440,19 @@ name|gint
 modifier|*
 parameter_list|,
 name|gdouble
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|bezier_draw
+parameter_list|(
+name|GDisplay
+modifier|*
+parameter_list|,
+name|BezierSelect
 modifier|*
 parameter_list|)
 function_decl|;
