@@ -2660,11 +2660,6 @@ argument_list|,
 name|mode
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|template
-condition|)
-block|{
 name|gimp_drawable_fill_by_type
 argument_list|(
 name|GIMP_DRAWABLE
@@ -2696,7 +2691,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 name|gimp_image_add_layer
 argument_list|(
 name|gimage
