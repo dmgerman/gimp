@@ -426,27 +426,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|n_xcf_loaders
-specifier|static
-name|gint
-name|n_xcf_loaders
-init|=
-sizeof|sizeof
-argument_list|(
-name|xcf_loaders
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|xcf_loaders
-index|[
-literal|0
-index|]
-argument_list|)
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
 DECL|function|xcf_init (Gimp * gimp)
@@ -791,7 +770,10 @@ name|info
 operator|.
 name|file_version
 operator|<
-name|n_xcf_loaders
+name|G_N_ELEMENTS
+argument_list|(
+name|xcf_loaders
+argument_list|)
 condition|)
 block|{
 name|gimage
