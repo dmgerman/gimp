@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|<sys/types.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<sys/stat.h>
 end_include
 
@@ -124,7 +130,7 @@ file|"graphics/text_load.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c1798d50108
+DECL|struct|__anon2978a9e60108
 typedef|typedef
 struct|struct
 block|{
