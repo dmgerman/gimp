@@ -10653,8 +10653,6 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-comment|/* int x1, y1, x2, y2; */
-comment|/*  int count = 0; */
 comment|/*  traverse the linked list of displays  */
 for|for
 control|(
@@ -10690,10 +10688,6 @@ name|gimage
 operator|==
 name|gimage
 condition|)
-block|{
-comment|/*  We only need to update the first instance that 	      we find of this gimage ID.  Otherwise, we would 	      be reconverting the same region unnecessarily.   */
-comment|/* Um.. I don't think so. If you only do this to the first 	     instance, you don't update other gdisplays pointing to this 	     gimage.  I'm going to comment this out to show how it was in 	     case we need to change it back.  msw 4/15/1998 	  */
-comment|/* 	  if (! count) 	    gdisplay_add_update_area (gdisp, x, y, w, h); 	  else 	    { 	      gdisplay_transform_coords (gdisp, x, y,&x1,&y1, 0); 	      gdisplay_transform_coords (gdisp, x + w, y + h,&x2,&y2, 0); 	      gdisplay_add_display_area (gdisp, x1, y1, (x2 - x1), (y2 - y1)); 	    } 	  */
 name|gdisplay_add_update_area
 argument_list|(
 name|gdisp
@@ -10707,8 +10701,6 @@ argument_list|,
 name|h
 argument_list|)
 expr_stmt|;
-comment|/* Seems like this isn't needed, it's done in 	     gdisplay_flush. -la 	  gdisplay_transform_coords (gdisp, x, y,&x1,&y1, 0); 	  gdisplay_transform_coords (gdisp, x + w, y + h,&x2,&y2, 0); 	  gdisplay_add_display_area (gdisp, x1, y1, (x2 - x1), (y2 - y1)); 	  */
-block|}
 block|}
 block|}
 end_function
@@ -10892,11 +10884,6 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|gint
-name|count
-init|=
-literal|0
-decl_stmt|;
 comment|/*  traverse the linked list of displays, handling each one  */
 for|for
 control|(
@@ -10932,12 +10919,6 @@ name|gimage
 operator|==
 name|gimage
 condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|count
-condition|)
 name|gdisplay_add_update_area
 argument_list|(
 name|gdisp
@@ -10959,28 +10940,6 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-else|else
-name|gdisplay_add_display_area
-argument_list|(
-name|gdisp
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|gdisp
-operator|->
-name|disp_width
-argument_list|,
-name|gdisp
-operator|->
-name|disp_height
-argument_list|)
-expr_stmt|;
-name|count
-operator|++
-expr_stmt|;
-block|}
 block|}
 block|}
 end_function

@@ -1270,7 +1270,10 @@ comment|/*  If we're cutting, remove either the layer (or floating selection),  
 if|if
 condition|(
 name|cut_gimage
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|GIMP_IS_LAYER
 argument_list|(
 name|drawable
@@ -1310,8 +1313,6 @@ block|}
 elseif|else
 if|if
 condition|(
-name|cut_gimage
-operator|&&
 name|GIMP_IS_LAYER_MASK
 argument_list|(
 name|drawable
@@ -1337,13 +1338,12 @@ block|}
 elseif|else
 if|if
 condition|(
-name|cut_gimage
-operator|&&
 name|GIMP_IS_CHANNEL
 argument_list|(
 name|drawable
 argument_list|)
 condition|)
+block|{
 name|gimp_image_remove_channel
 argument_list|(
 name|gimage
@@ -1354,6 +1354,8 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 block|}
 return|return
 name|tiles
