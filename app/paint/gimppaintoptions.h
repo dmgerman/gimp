@@ -312,7 +312,9 @@ name|GimpPaintOptions
 modifier|*
 name|gimp_paint_options_new
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -324,6 +326,10 @@ parameter_list|(
 name|GimpPaintOptions
 modifier|*
 name|options
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1879,16 +1879,28 @@ end_define
 begin_function
 name|GimpSmudgeOptions
 modifier|*
-DECL|function|gimp_smudge_options_new (void)
+DECL|function|gimp_smudge_options_new (GimpContext * context)
 name|gimp_smudge_options_new
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GimpSmudgeOptions
 modifier|*
 name|options
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|options
 operator|=
 name|g_new0
@@ -1905,6 +1917,8 @@ name|GimpPaintOptions
 operator|*
 operator|)
 name|options
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 name|options

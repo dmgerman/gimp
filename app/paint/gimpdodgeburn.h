@@ -220,7 +220,9 @@ name|GimpDodgeBurnOptions
 modifier|*
 name|gimp_dodgeburn_options_new
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

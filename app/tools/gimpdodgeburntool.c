@@ -650,7 +650,11 @@ decl_stmt|;
 name|options
 operator|=
 name|gimp_dodgeburn_options_new
-argument_list|()
+argument_list|(
+name|tool_info
+operator|->
+name|context
+argument_list|)
 expr_stmt|;
 name|paint_options_init
 argument_list|(

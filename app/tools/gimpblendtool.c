@@ -1790,6 +1790,10 @@ name|GimpPaintOptions
 operator|*
 operator|)
 name|options
+argument_list|,
+name|tool_info
+operator|->
+name|context
 argument_list|)
 expr_stmt|;
 name|paint_options_init

@@ -305,7 +305,9 @@ name|GimpCloneOptions
 modifier|*
 name|gimp_clone_options_new
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -360,7 +360,11 @@ decl_stmt|;
 name|options
 operator|=
 name|gimp_paint_options_new
-argument_list|()
+argument_list|(
+name|tool_info
+operator|->
+name|context
+argument_list|)
 expr_stmt|;
 name|paint_options_init
 argument_list|(
@@ -428,14 +432,6 @@ operator|->
 name|reset_func
 operator|=
 name|paint_options_reset
-expr_stmt|;
-name|options
-operator|->
-name|context
-operator|=
-name|tool_info
-operator|->
-name|context
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintoptions.h"
 end_include
 
@@ -160,16 +166,28 @@ end_comment
 begin_function
 name|GimpPaintOptions
 modifier|*
-DECL|function|gimp_paint_options_new (void)
+DECL|function|gimp_paint_options_new (GimpContext * context)
 name|gimp_paint_options_new
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GimpPaintOptions
 modifier|*
 name|options
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|options
 operator|=
 name|g_new0
@@ -182,6 +200,8 @@ expr_stmt|;
 name|gimp_paint_options_init
 argument_list|(
 name|options
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 return|return
@@ -192,12 +212,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_options_init (GimpPaintOptions * options)
+DECL|function|gimp_paint_options_init (GimpPaintOptions * options,GimpContext * context)
 name|gimp_paint_options_init
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
 name|options
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -205,6 +229,14 @@ argument_list|(
 name|options
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|options
@@ -223,7 +255,7 @@ name|options
 operator|->
 name|context
 operator|=
-name|NULL
+name|context
 expr_stmt|;
 name|options
 operator|->
