@@ -4901,9 +4901,9 @@ argument_list|)
 argument_list|,
 name|editor
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -6798,7 +6798,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bb7f4e50108
+DECL|struct|__anon2b1d88b50108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -9239,7 +9239,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bb7f4e50208
+DECL|struct|__anon2b1d88b50208
 block|{
 DECL|member|label
 specifier|const
@@ -9398,7 +9398,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bb7f4e50308
+DECL|struct|__anon2b1d88b50308
 block|{
 DECL|member|tree_label
 specifier|const
