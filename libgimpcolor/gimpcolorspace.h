@@ -242,50 +242,6 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_rgb_to_hsv_double
-parameter_list|(
-name|gdouble
-modifier|*
-name|red
-comment|/* returns hue        */
-parameter_list|,
-name|gdouble
-modifier|*
-name|green
-comment|/* returns saturation */
-parameter_list|,
-name|gdouble
-modifier|*
-name|blue
-comment|/* returns value      */
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_hsv_to_rgb_double
-parameter_list|(
-name|gdouble
-modifier|*
-name|hue
-comment|/* returns red        */
-parameter_list|,
-name|gdouble
-modifier|*
-name|saturation
-parameter_list|,
-comment|/* returns green      */
-name|gdouble
-modifier|*
-name|value
-comment|/* returns blue       */
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_rgb_to_hsv4
 parameter_list|(
 name|guchar

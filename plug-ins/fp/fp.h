@@ -56,7 +56,7 @@ value|GDK_EXPOSURE_MASK | \                         GDK_ENTER_NOTIFY_MASK | \   
 end_define
 
 begin_typedef
-DECL|struct|__anon2a24586f0108
+DECL|struct|__anon296134bc0108
 typedef|typedef
 struct|struct
 block|{
@@ -71,15 +71,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|hsv
-typedef|typedef
-name|double
-name|hsv
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|struct|__anon2a24586f0208
+DECL|struct|__anon296134bc0208
 typedef|typedef
 struct|struct
 block|{
@@ -97,7 +89,7 @@ modifier|*
 name|rgb
 decl_stmt|;
 DECL|member|hsv
-name|hsv
+name|gdouble
 modifier|*
 name|hsv
 decl_stmt|;
@@ -113,7 +105,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a24586f0303
+DECL|enum|__anon296134bc0303
 typedef|typedef
 enum|enum
 block|{
@@ -135,7 +127,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2a24586f0403
+DECL|enum|__anon296134bc0403
 enum|enum
 block|{
 DECL|enumerator|NONEATALL
@@ -167,7 +159,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a24586f0503
+DECL|enum|__anon296134bc0503
 enum|enum
 block|{
 DECL|enumerator|RED
@@ -195,7 +187,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a24586f0603
+DECL|enum|__anon296134bc0603
 enum|enum
 block|{
 DECL|enumerator|DOWN
@@ -213,7 +205,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2a24586f0703
+DECL|enum|__anon296134bc0703
 enum|enum
 block|{
 DECL|enumerator|BY_HUE
@@ -232,7 +224,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2a24586f0808
+DECL|struct|__anon296134bc0808
 typedef|typedef
 struct|struct
 block|{
@@ -278,7 +270,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a24586f0908
+DECL|struct|__anon296134bc0908
 typedef|typedef
 struct|struct
 block|{
