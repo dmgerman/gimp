@@ -274,6 +274,7 @@ argument_list|,
 literal|"mpg,mpeg"
 argument_list|,
 literal|""
+argument_list|,
 literal|"0,long,0x000001b3,0,long,0x000001ba"
 argument_list|)
 expr_stmt|;
