@@ -242,7 +242,7 @@ argument_list|(
 name|file
 argument_list|,
 literal|"<path d=\"%s\"\n"
-literal|"        fill=\"none\" stroke=\"black\", stroke-width=\"1\">\n"
+literal|"        fill=\"none\" stroke=\"black\", stroke-width=\"1\" />\n"
 argument_list|,
 name|data
 argument_list|)
