@@ -58,11 +58,11 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2b4bd7e00103
+DECL|enum|__anon2c7639480103
 enum|enum
 block|{
-DECL|enumerator|GUM_UNIT_CHANGED_SIGNAL
-name|GUM_UNIT_CHANGED_SIGNAL
+DECL|enumerator|UNIT_CHANGED
+name|UNIT_CHANGED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -99,8 +99,8 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_unit_menu_class_destroy (GtkObject * object)
-name|gimp_unit_menu_class_destroy
+DECL|function|gimp_unit_menu_destroy (GtkObject * object)
+name|gimp_unit_menu_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -133,6 +133,12 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gum
+operator|->
+name|format
+condition|)
 name|g_free
 argument_list|(
 name|gum
@@ -198,7 +204,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_unit_menu_signals
 index|[
-name|GUM_UNIT_CHANGED_SIGNAL
+name|UNIT_CHANGED
 index|]
 operator|=
 name|gtk_signal_new
@@ -215,7 +221,7 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpUnitMenuClass
 argument_list|,
-name|gimp_unit_menu
+name|unit_changed
 argument_list|)
 argument_list|,
 name|gtk_signal_default_marshaller
@@ -234,17 +240,17 @@ argument_list|,
 name|LAST_SIGNAL
 argument_list|)
 expr_stmt|;
+name|class
+operator|->
+name|unit_changed
+operator|=
+name|NULL
+expr_stmt|;
 name|object_class
 operator|->
 name|destroy
 operator|=
-name|gimp_unit_menu_class_destroy
-expr_stmt|;
-name|class
-operator|->
-name|gimp_unit_menu
-operator|=
-name|NULL
+name|gimp_unit_menu_destroy
 expr_stmt|;
 block|}
 end_function
@@ -300,13 +306,13 @@ block|}
 end_function
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|gimp_unit_menu_get_type ()
 name|gimp_unit_menu_get_type
 parameter_list|()
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|gum_type
 init|=
 literal|0
@@ -1747,6 +1753,9 @@ expr_stmt|;
 return|return
 name|buffer
 return|;
+undef|#
+directive|undef
+name|BUFFER_LEN
 block|}
 end_function
 
@@ -1845,7 +1854,7 @@ argument_list|)
 argument_list|,
 name|gimp_unit_menu_signals
 index|[
-name|GUM_UNIT_CHANGED_SIGNAL
+name|UNIT_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
@@ -2940,7 +2949,7 @@ argument_list|)
 argument_list|,
 name|gimp_unit_menu_signals
 index|[
-name|GUM_UNIT_CHANGED_SIGNAL
+name|UNIT_CHANGED
 index|]
 argument_list|)
 expr_stmt|;

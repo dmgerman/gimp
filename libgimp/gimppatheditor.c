@@ -52,7 +52,7 @@ file|"pixmaps/lower.xpm"
 end_include
 
 begin_comment
-comment|/*  callbacks  */
+comment|/*  forward declaration  */
 end_comment
 
 begin_function_decl
@@ -177,11 +177,11 @@ comment|/* static void gimp_path_editor_check_path (GimpPathEditor *gpe, 					 G
 end_comment
 
 begin_enum
-DECL|enum|__anon2a98b8e90103
+DECL|enum|__anon27dbf8600103
 enum|enum
 block|{
-DECL|enumerator|GPE_PATH_CHANGED_SIGNAL
-name|GPE_PATH_CHANGED_SIGNAL
+DECL|enumerator|PATH_CHANGED
+name|PATH_CHANGED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -248,7 +248,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_path_editor_signals
 index|[
-name|GPE_PATH_CHANGED_SIGNAL
+name|PATH_CHANGED
 index|]
 operator|=
 name|gtk_signal_new
@@ -265,7 +265,7 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpPathEditorClass
 argument_list|,
-name|gimp_path_editor
+name|path_changed
 argument_list|)
 argument_list|,
 name|gtk_signal_default_marshaller
@@ -286,7 +286,7 @@ argument_list|)
 expr_stmt|;
 name|class
 operator|->
-name|gimp_path_editor
+name|path_changed
 operator|=
 name|NULL
 expr_stmt|;
@@ -717,7 +717,7 @@ operator|->
 name|dir_list
 argument_list|)
 expr_stmt|;
-comment|/*  this callback does the rest (pixmap creation etc.)    */
+comment|/*  this callback does the rest (pixmap creation etc.)  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -739,13 +739,13 @@ block|}
 end_function
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|gimp_path_editor_get_type ()
 name|gimp_path_editor_get_type
 parameter_list|()
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|gpe_type
 init|=
 literal|0
@@ -956,7 +956,7 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
-comment|/*  split up the path    */
+comment|/*  split up the path  */
 while|while
 condition|(
 name|strlen
@@ -2113,7 +2113,7 @@ argument_list|)
 argument_list|,
 name|gimp_path_editor_signals
 index|[
-name|GPE_PATH_CHANGED_SIGNAL
+name|PATH_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
@@ -2335,7 +2335,7 @@ argument_list|)
 argument_list|,
 name|gimp_path_editor_signals
 index|[
-name|GPE_PATH_CHANGED_SIGNAL
+name|PATH_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
@@ -2567,7 +2567,7 @@ argument_list|)
 argument_list|,
 name|gimp_path_editor_signals
 index|[
-name|GPE_PATH_CHANGED_SIGNAL
+name|PATH_CHANGED
 index|]
 argument_list|)
 expr_stmt|;

@@ -155,11 +155,11 @@ DECL|member|parent_class
 name|GtkHBoxClass
 name|parent_class
 decl_stmt|;
-DECL|member|gimp_file_selection
+DECL|member|filename_changed
 name|void
 function_decl|(
 modifier|*
-name|gimp_file_selection
+name|filename_changed
 function_decl|)
 parameter_list|(
 name|GimpFileSelection
@@ -169,7 +169,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|guint
+name|GtkType
 name|gimp_file_selection_get_type
 parameter_list|(
 name|void

@@ -144,10 +144,8 @@ name|gimp_file_selection_realize
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|widget
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -159,10 +157,8 @@ name|gimp_file_selection_entry_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|widget
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -174,14 +170,11 @@ name|gimp_file_selection_entry_focus_out_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|widget
 parameter_list|,
 name|GdkEvent
 modifier|*
-name|event
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -193,10 +186,8 @@ name|gimp_file_selection_browse_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|widget
 parameter_list|,
 name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -218,11 +209,11 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2b27bf7c0103
+DECL|enum|__anon28fcbc250103
 enum|enum
 block|{
-DECL|enumerator|GFS_FILENAME_CHANGED_SIGNAL
-name|GFS_FILENAME_CHANGED_SIGNAL
+DECL|enumerator|FILENAME_CHANGED
+name|FILENAME_CHANGED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -259,8 +250,8 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_selection_class_destroy (GtkObject * object)
-name|gimp_file_selection_class_destroy
+DECL|function|gimp_file_selection_destroy (GtkObject * object)
+name|gimp_file_selection_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -377,7 +368,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_file_selection_signals
 index|[
-name|GFS_FILENAME_CHANGED_SIGNAL
+name|FILENAME_CHANGED
 index|]
 operator|=
 name|gtk_signal_new
@@ -394,7 +385,7 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpFileSelectionClass
 argument_list|,
-name|gimp_file_selection
+name|filename_changed
 argument_list|)
 argument_list|,
 name|gtk_signal_default_marshaller
@@ -413,17 +404,17 @@ argument_list|,
 name|LAST_SIGNAL
 argument_list|)
 expr_stmt|;
+name|class
+operator|->
+name|filename_changed
+operator|=
+name|NULL
+expr_stmt|;
 name|object_class
 operator|->
 name|destroy
 operator|=
-name|gimp_file_selection_class_destroy
-expr_stmt|;
-name|class
-operator|->
-name|gimp_file_selection
-operator|=
-name|NULL
+name|gimp_file_selection_destroy
 expr_stmt|;
 block|}
 end_function
@@ -606,7 +597,7 @@ operator|->
 name|entry
 argument_list|)
 expr_stmt|;
-comment|/*  this callback does the rest (pixmap creation etc.)    */
+comment|/*  this callback does the rest (pixmap creation etc.)  */
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -628,13 +619,13 @@ block|}
 end_function
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|gimp_file_selection_get_type ()
 name|gimp_file_selection_get_type
 parameter_list|()
 block|{
 specifier|static
-name|guint
+name|GtkType
 name|gfs_type
 init|=
 literal|0
@@ -1228,7 +1219,7 @@ argument_list|)
 argument_list|,
 name|gimp_file_selection_signals
 index|[
-name|GFS_FILENAME_CHANGED_SIGNAL
+name|FILENAME_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
@@ -1267,7 +1258,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  these are local callbacks of gimp_file_selection_browse_callback()  */
+comment|/*  local callbacks of gimp_file_selection_browse_callback()  */
 end_comment
 
 begin_function
@@ -1323,7 +1314,7 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/*  update everything    */
+comment|/*  update everything  */
 name|gimp_file_selection_entry_callback
 argument_list|(
 name|gfs

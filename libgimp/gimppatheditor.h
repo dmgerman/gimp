@@ -146,11 +146,11 @@ DECL|member|parent_class
 name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
-DECL|member|gimp_path_editor
+DECL|member|path_changed
 name|void
 function_decl|(
 modifier|*
-name|gimp_path_editor
+name|path_changed
 function_decl|)
 parameter_list|(
 name|GimpPathEditor
@@ -160,7 +160,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|guint
+name|GtkType
 name|gimp_path_editor_get_type
 parameter_list|(
 name|void

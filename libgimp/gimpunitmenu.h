@@ -137,11 +137,11 @@ DECL|member|parent_class
 name|GtkOptionMenuClass
 name|parent_class
 decl_stmt|;
-DECL|member|gimp_unit_menu
+DECL|member|unit_changed
 name|void
 function_decl|(
 modifier|*
-name|gimp_unit_menu
+name|unit_changed
 function_decl|)
 parameter_list|(
 name|GimpUnitMenu
@@ -151,7 +151,7 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
-name|guint
+name|GtkType
 name|gimp_unit_menu_get_type
 parameter_list|(
 name|void

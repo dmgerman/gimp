@@ -75,7 +75,7 @@ name|struct
 name|_GimpChainButtonClass
 name|GimpChainButtonClass
 typedef|;
-DECL|enum|__anon276b79b30103
+DECL|enum|__anon2900e4a20103
 typedef|typedef
 enum|enum
 block|{
@@ -170,18 +170,6 @@ DECL|member|parent_class
 name|GtkButtonClass
 name|parent_class
 decl_stmt|;
-DECL|member|gimp_chain_button
-name|void
-function_decl|(
-modifier|*
-name|gimp_chain_button
-function_decl|)
-parameter_list|(
-name|GimpChainButton
-modifier|*
-name|gcb
-parameter_list|)
-function_decl|;
 block|}
 struct|;
 name|GtkType

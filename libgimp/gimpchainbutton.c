@@ -101,6 +101,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+DECL|variable|parent_class
+specifier|static
+name|GtkWidgetClass
+modifier|*
+name|parent_class
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
@@ -124,11 +135,13 @@ operator|*
 operator|)
 name|class
 expr_stmt|;
-name|class
-operator|->
-name|gimp_chain_button
+name|parent_class
 operator|=
-name|NULL
+name|gtk_type_class
+argument_list|(
+name|gtk_widget_get_type
+argument_list|()
+argument_list|)
 expr_stmt|;
 block|}
 end_function

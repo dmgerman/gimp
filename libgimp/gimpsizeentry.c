@@ -73,17 +73,17 @@ comment|/* static int  gimp_size_entry_focus_in_callback  (GtkWidget *widget, 		
 end_comment
 
 begin_enum
-DECL|enum|__anon27b6cb9d0103
+DECL|enum|__anon27bb1b670103
 enum|enum
 block|{
-DECL|enumerator|GSE_VALUE_CHANGED_SIGNAL
-name|GSE_VALUE_CHANGED_SIGNAL
+DECL|enumerator|VALUE_CHANGED
+name|VALUE_CHANGED
 block|,
-DECL|enumerator|GSE_REFVAL_CHANGED_SIGNAL
-name|GSE_REFVAL_CHANGED_SIGNAL
+DECL|enumerator|REFVAL_CHANGED
+name|REFVAL_CHANGED
 block|,
-DECL|enumerator|GSE_UNIT_CHANGED_SIGNAL
-name|GSE_UNIT_CHANGED_SIGNAL
+DECL|enumerator|UNIT_CHANGED
+name|UNIT_CHANGED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -198,8 +198,8 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_size_entry_class_destroy (GtkObject * object)
-name|gimp_size_entry_class_destroy
+DECL|function|gimp_size_entry_destroy (GtkObject * object)
+name|gimp_size_entry_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -325,7 +325,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_size_entry_signals
 index|[
-name|GSE_VALUE_CHANGED_SIGNAL
+name|VALUE_CHANGED
 index|]
 operator|=
 name|gtk_signal_new
@@ -342,7 +342,7 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpSizeEntryClass
 argument_list|,
-name|gimp_size_entry
+name|value_changed
 argument_list|)
 argument_list|,
 name|gtk_signal_default_marshaller
@@ -354,7 +354,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_size_entry_signals
 index|[
-name|GSE_REFVAL_CHANGED_SIGNAL
+name|REFVAL_CHANGED
 index|]
 operator|=
 name|gtk_signal_new
@@ -371,7 +371,7 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpSizeEntryClass
 argument_list|,
-name|gimp_size_entry
+name|refval_changed
 argument_list|)
 argument_list|,
 name|gtk_signal_default_marshaller
@@ -383,7 +383,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_size_entry_signals
 index|[
-name|GSE_UNIT_CHANGED_SIGNAL
+name|UNIT_CHANGED
 index|]
 operator|=
 name|gtk_signal_new
@@ -400,7 +400,7 @@ name|GTK_SIGNAL_OFFSET
 argument_list|(
 name|GimpSizeEntryClass
 argument_list|,
-name|gimp_size_entry
+name|unit_changed
 argument_list|)
 argument_list|,
 name|gtk_signal_default_marshaller
@@ -419,17 +419,29 @@ argument_list|,
 name|LAST_SIGNAL
 argument_list|)
 expr_stmt|;
+name|class
+operator|->
+name|value_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|class
+operator|->
+name|refval_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|class
+operator|->
+name|unit_changed
+operator|=
+name|NULL
+expr_stmt|;
 name|object_class
 operator|->
 name|destroy
 operator|=
-name|gimp_size_entry_class_destroy
-expr_stmt|;
-name|class
-operator|->
-name|gimp_size_entry
-operator|=
-name|NULL
+name|gimp_size_entry_destroy
 expr_stmt|;
 block|}
 end_function
@@ -497,7 +509,7 @@ block|}
 end_function
 
 begin_function
-name|guint
+name|GtkType
 DECL|function|gimp_size_entry_get_type ()
 name|gimp_size_entry_get_type
 parameter_list|()
@@ -2711,7 +2723,7 @@ argument_list|)
 argument_list|,
 name|gimp_size_entry_signals
 index|[
-name|GSE_VALUE_CHANGED_SIGNAL
+name|VALUE_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
@@ -3653,7 +3665,7 @@ argument_list|)
 argument_list|,
 name|gimp_size_entry_signals
 index|[
-name|GSE_REFVAL_CHANGED_SIGNAL
+name|REFVAL_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
@@ -4020,7 +4032,7 @@ argument_list|)
 argument_list|,
 name|gimp_size_entry_signals
 index|[
-name|GSE_UNIT_CHANGED_SIGNAL
+name|UNIT_CHANGED
 index|]
 argument_list|)
 expr_stmt|;
