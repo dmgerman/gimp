@@ -237,7 +237,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279173170103
+DECL|enum|__anon27aa19e40103
 block|{
 DECL|enumerator|EXIT
 name|EXIT
@@ -2461,18 +2461,6 @@ operator|->
 name|config
 argument_list|)
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_rc_set_autosave
-argument_list|(
-name|GIMP_RC
-argument_list|(
-name|gimp
-operator|->
-name|edit_config
-argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object

@@ -540,6 +540,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  enable autosave late so we don't autosave when the    *  monitor resolution is set in gui_init()    */
+name|gimp_rc_set_autosave
+argument_list|(
+name|GIMP_RC
+argument_list|(
+name|the_gimp
+operator|->
+name|edit_config
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 comment|/*  Parse the rest of the command line arguments as images to load    */
 if|if
 condition|(

@@ -304,7 +304,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad13b9c0103
+DECL|enum|__anon2979ec270103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1803,13 +1803,14 @@ if|if
 condition|(
 name|scalesrc
 operator|<
-literal|0xff
+literal|0xFF
 condition|)
 name|scalesrc
 operator|++
 expr_stmt|;
 name|n_width
 operator|=
+operator|(
 name|image_width
 operator|*
 operator|(
@@ -1830,9 +1831,11 @@ name|gimage
 operator|->
 name|xresolution
 operator|)
+operator|)
 expr_stmt|;
 name|n_height
 operator|=
+operator|(
 name|image_height
 operator|*
 operator|(
@@ -1853,7 +1856,19 @@ name|gimage
 operator|->
 name|xresolution
 operator|)
+operator|)
 expr_stmt|;
+if|if
+condition|(
+name|scaledest
+operator|==
+literal|1
+operator|&&
+name|scalesrc
+operator|==
+literal|0xFF
+condition|)
+break|break;
 block|}
 name|shell
 operator|->

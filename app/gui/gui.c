@@ -1418,15 +1418,22 @@ operator|=
 literal|75.0
 expr_stmt|;
 block|}
+comment|/*  round the value to full integers to give more pleasant results  */
 operator|*
 name|xres
 operator|=
+name|RINT
+argument_list|(
 name|x
+argument_list|)
 expr_stmt|;
 operator|*
 name|yres
 operator|=
+name|RINT
+argument_list|(
 name|y
+argument_list|)
 expr_stmt|;
 block|}
 end_function
