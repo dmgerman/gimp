@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bc0c3f10108
+DECL|struct|__anon28e9dabb0108
 block|{
 DECL|member|announce_function
 name|gchar
@@ -902,7 +902,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_mode_astext:  * @op:  *  * Given a GimpCompositeOperatin, return a string representation of the name  * of that operation.  *  * Return value:  **/
+comment|/**  * gimp_composite_mode_astext:  * @op:  *  * Given a GimpCompositeOperatin, return a string representation of the name  * of that operation.  *  * Returns: gchar *, the name  **/
 end_comment
 
 begin_function
@@ -1189,7 +1189,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_pixelformat_astext:  * @format:  The format.  *  * Given a GimpPixelFormat, return a string representation of the name  * of that format.  *  * Return value:  **/
+comment|/**  * gimp_composite_pixelformat_astext:  * @format:  The format.  *  * Given a GimpPixelFormat, return a string representation of the name  * of that format.  *  * Returns: gchar *, the name  **/
 end_comment
 
 begin_function
@@ -1334,7 +1334,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_init:  *  * Initialise the Gimp Compositing subsystem.  This includes checking  * for user options and environment, installing the generic set of  * compositing operation handlers, followed by overloading those which  * are supported by the current cpu/hardware.  *  * Return value: void  **/
+comment|/**  * gimp_composite_init:  *  * Initialise the Gimp Compositing subsystem.  This includes checking  * for user options and environment, installing the generic set of  * compositing operation handlers, followed by overloading those which  * are supported by the current cpu/hardware.  *  * Return: void  **/
 end_comment
 
 begin_function

@@ -690,7 +690,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_blend_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_blend_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform a blend operation between sources ctx->A and ctx->B, using  * the generalised algorithm: D = A * (255 -&beta;) + B *&beta;  *  * The result is left in ctx->D  **/
 end_comment
 
 begin_function
@@ -842,7 +842,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * gimp_composite_darken_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_darken_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform a darken operation between sources ctx->A and ctx->B, using  * the generalised algorithm:  * D_r = min(A_r, B_r);  * D_g = min(A_g, B_g);  * D_b = min(A_b, B_b);  * D_a = min(A_a, B_a);  *  **/
 end_comment
 
 begin_function
@@ -1061,7 +1061,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_lighten_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_lighten_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform a lighten operation between sources ctx->A and ctx->B, using the  * generalised algorithm:  * D_r = max(A_r, B_r);  * D_g = max(A_g, B_g);  * D_b = max(A_b, B_b);  * D_a = min(A_a, B_a);  *  **/
 end_comment
 
 begin_function
@@ -1280,7 +1280,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_hue_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_hue_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform a conversion to hue only of the source ctx->A using  * the hue of ctx->B.  **/
 end_comment
 
 begin_function
@@ -1545,7 +1545,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_saturation_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_saturation_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform a conversion to saturation only of the source ctx->A using  * the saturation level of ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -1810,7 +1810,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_value_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_value_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform a conversion to value only of the source ctx->A using  * the value of ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -2075,7 +2075,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_color_only_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_color_only_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform a conversion to of the source ctx->A using  * the hue and saturation values of ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -2345,7 +2345,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_behind_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_behind_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform a behind operation to between the pixel sources ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -2385,7 +2385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_multiply_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_multiply_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] multiply operation between the pixel sources  * ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -2701,7 +2701,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_divide_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_divide_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] divide operation between the pixel sources  * ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -2922,7 +2922,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_screen_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_screen_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] screen operation between the pixel sources  * ctx->A and ctx->B, using the generalised algorithm:  *  * D = 255 - (255 - A) * (255 - B)  *  **/
 end_comment
 
 begin_function
@@ -3137,7 +3137,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_overlay_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_overlay_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] overlay operation between the pixel sources  * ctx->A and ctx->B, using the generalised algorithm:  *  * D =  A * (B + (2 * B) * (255 - A))  *  **/
 end_comment
 
 begin_function
@@ -3363,7 +3363,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_dodge_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_dodge_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] dodge operation between the pixel sources  * ctx->A and ctx->B, using the generalised algorithm:  *  * D = saturation of 255 or (A * 256) / (256 - B)  *  **/
 end_comment
 
 begin_function
@@ -3583,7 +3583,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_burn_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_burn_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] dodge operation between the pixel sources  * ctx->A and ctx->B, using the generalised algorithm:  *  * D = saturation of 255 or depletion of 0, of ((255 - A) * 256) / (B + 1)  *  **/
 end_comment
 
 begin_function
@@ -3813,7 +3813,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_hardlight_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_hardlight_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] hardlight operation between the pixel sources  * ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -4108,7 +4108,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_softlight_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_softlight_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] softlight operation between the pixel sources  * ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -4385,7 +4385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_grain_extract_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_grain_extract_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] grain-extract operation between the pixel sources  * ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -4608,7 +4608,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_grain_merge_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_grain_merge_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] grain-merge operation between the pixel sources  * ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -4828,7 +4828,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_addition_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_addition_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] addition operation of the pixel sources ctx->A  * and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -5140,7 +5140,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_subtract_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_subtract_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] subtract operation of the pixel source  * ctx-B from ctx->A.  *  **/
 end_comment
 
 begin_function
@@ -5359,7 +5359,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_difference_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_difference_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] difference operation between the pixel sources  * ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -5579,7 +5579,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_dissolve_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_dissolve_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] alpha dissolve operation between the pixel  * sources ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -5917,7 +5917,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_replace_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_replace_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] replace operation of the pixel  * source ctx->A with the ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -5948,7 +5948,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_swap_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_swap_any_any_any_generic:  * @ctx: The compositing context.  *  * Swap the contents of ctx->A and ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -6042,7 +6042,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_normal_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_normal_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] over operation of the pixel  * source ctx->B on ctx->A.  *  **/
 end_comment
 
 begin_function
@@ -6067,7 +6067,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_erase_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_erase_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] "erase" operation of the pixel  * source ctx->A using the alpha information in ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -6116,7 +6116,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_anti_erase_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_anti_erase_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] "anti-erase" operation of the pixel  * source ctx->A using the alpha information in ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -6165,7 +6165,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_color_erase_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_color_erase_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] "color-erase" operation of the pixel  * source ctx->A using the alpha information in ctx->B.  *  **/
 end_comment
 
 begin_function
@@ -6214,7 +6214,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_scale_any_any_any_generic:  * @ctx:  *  *  **/
+comment|/**  * gimp_composite_scale_any_any_any_generic:  * @ctx: The compositing context.  *  * Perform an RGB[A] scale operation of the pixel source ctx->A using  * the scale coefficient on the compositing context, @ctx.  *  **/
 end_comment
 
 begin_function
@@ -6342,7 +6342,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_composite_generic_init:  *  *  *  * Return value:  **/
+comment|/**  * gimp_composite_generic_init:  *  * Initialise the generic set of compositing functions.  *  * Return value:  **/
 end_comment
 
 begin_function
