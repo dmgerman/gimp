@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1c28ee0103
+DECL|enum|__anon28bf0f020103
 block|{
 DECL|enumerator|PASTE
 name|PASTE
@@ -1399,7 +1399,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-comment|/*  create a new image  */
+comment|/*  create a new image  (always of type RGB)  */
 name|gimage
 operator|=
 name|gimage_new
@@ -1412,9 +1412,7 @@ name|paste
 operator|->
 name|height
 argument_list|,
-name|invoke
-operator|->
-name|base_type
+name|RGB
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_resolution
@@ -1453,17 +1451,7 @@ name|gimage
 operator|->
 name|height
 argument_list|,
-operator|(
-name|invoke
-operator|->
-name|base_type
-operator|==
-name|RGB
-operator|)
-condition|?
 name|RGBA_GIMAGE
-else|:
-name|GRAYA_GIMAGE
 argument_list|,
 name|_
 argument_list|(
