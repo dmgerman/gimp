@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ac34af0103
+DECL|enum|__anon2ad525df0103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_EVENT_TRIGGER
 name|GIMP_CONTROLLER_EVENT_TRIGGER
@@ -251,6 +251,11 @@ block|{
 DECL|member|parent_instance
 name|GObject
 name|parent_instance
+decl_stmt|;
+DECL|member|name
+name|gchar
+modifier|*
+name|name
 decl_stmt|;
 DECL|member|enabled
 name|gboolean
