@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/****************************************************************************  * This is a plugin for the GIMP v 0.99.8 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * Blur code Copyright (C) 1995 Spencer Kimball and Peter Mattis  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
+comment|/****************************************************************************  * This is a plugin for the GIMP v 0.99.8 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
 end_comment
 
 begin_comment
-comment|/****************************************************************************  * Randomize:  *  * randomize version 1.4 (3 Feb 1998, MEO)  * history  *     1.4 -  3 Feb 1998 MEO  *         added details to PDB parameter help strings  *     1.3 -  3 Feb 1998 MEO  *         removed tooltips from action buttons  *         fixed param[5] type (was int32, should have been float)  *     1.2 -  2 Feb 1998 MEO  *         converted macro'd functions from 0.5 to inline functions  *         2 casts added for portability by 0.99.18 release coordinator  *         moved from Distorts to Noise menu  *         went to GUI convenience routines as much as reasonable  *         broke out GUI convenience routines into gpc.h and gpc.c  *     1.1 - 30 Nov 1997 MEO  *         added tooltips  *     1.0 - 19 Nov 1997 MEO  *         final cleanup for 1.0 GIMP release  *         - added email and URL info for author  *         - added doc URL info  *         - final FCS comment cleanup  *         - standardized constant strings  *         - restored proper behavior when repeating  *         - final UI labels  *         - better help text (for when GIMP help arrives)  *     0.5 - 20 May 1997 MEO  *         added seed initialization choices (current time or user value)  *         added randomization type to progress label  *         added RNDM_VERSION macro so version changes made in one place  *         speed optimizations:  *             - changed randomize_prepare_row to #define  *             - moved updates back outside main loop  *             - less frequent progress updates  *         minor intialization string and comment cleanup  *     0.4c - 17 May 1997 MEO  *         minor comment cleanup  *     0.4b - 17 May 1997 MEO  *         minor comment cleanup  *     0.4a - 16 May 1997 MEO  *         added, corrected& cleaned up comments  *         removed unused variables, code  *         cleaned up wrong names  *         added version to popups  *     0.4 - 13 May 1997 MEO  *         added SLUR function  *     0.3 - 12 May 1997 MEO  *         added HURL function  *         moved from Blurs menu to Distorts menu.  *     0.2 - 11 May 1997 MEO  *         converted percentage control from text to scale  *         standardized tab stops, style  *     0.1 - 10 May 1997 MEO  *         initial release, with BLUR and PICK  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * This plug-in adds a user-defined amount of randomization to an  * image.  Variations include:  *   *  - blurring  *  - hurling (spewing random colors)  *  - picking a nearby pixel at random  *  - slurring (a crude form of melting)  *   * In any case, for each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  For  * blurring, an average is determined from the current and adjacent  * pixels. *(Except for the random factor, the blur code came  * straight from the original S&P blur plug-in.)*  Picking  * one selects the new pixel value at random from the current and  * adjacent pixels.  Hurling assigns a random value to the pixel.  * Slurring sort of melts downwards; if a pixel is to be slurred,  * there is an 80% chance the pixel above be used; otherwise, one  * of the pixels adjacent to the one above is used (even odds as  * to which it will be).  *   * Picking, hurling and slurring work with any image type.  Blurring  * works only with RGB and grayscale images.  If randomize is  * run against an indexed image, "blur" is not presented as an  * option.  *   * This plug-in's effectiveness varies a lot with the type  * and clarity of the image being "randomized".  *   * Hurling more than 75% or so onto an existing image will  * make the image nearly unrecognizable.  By 90% hurl, most  * images are indistinguishable from random noise.  *   * The repeat count is especially useful with slurring.  *   * TODO List  *   *  - add a real melt function  *  - split into multiple files  ****************************************************************************/
+comment|/****************************************************************************  * Randomize:  *  * randomize version 1.6 (29 Apr 1998, MEO)  * history  *     1.6 -  29 Apr 1998 MEO  *         moved blur to separate plugin (blur 2.0)  *     1.5 -  5 Feb 1998 MEO  *         added alpha layer handling to blur code  *     1.4 -  3 Feb 1998 MEO  *         added details to PDB parameter help strings  *     1.3 -  3 Feb 1998 MEO  *         removed tooltips from action buttons  *         fixed param[5] type (was int32, should have been float)  *     1.2 -  2 Feb 1998 MEO  *         converted macro'd functions from 0.5 to inline functions  *         2 casts added for portability by 0.99.18 release coordinator  *         moved from Distorts to Noise menu  *         went to GUI convenience routines as much as reasonable  *         broke out GUI convenience routines into gpc.h and gpc.c  *     1.1 - 30 Nov 1997 MEO  *         added tooltips  *     1.0 - 19 Nov 1997 MEO  *         final cleanup for 1.0 GIMP release  *         - added email and URL info for author  *         - added doc URL info  *         - final FCS comment cleanup  *         - standardized constant strings  *         - restored proper behavior when repeating  *         - final UI labels  *         - better help text (for when GIMP help arrives)  *     0.5 - 20 May 1997 MEO  *         added seed initialization choices (current time or user value)  *         added randomization type to progress label  *         added RNDM_VERSION macro so version changes made in one place  *         speed optimizations:  *             - changed randomize_prepare_row to #define  *             - moved updates back outside main loop  *             - less frequent progress updates  *         minor intialization string and comment cleanup  *     0.4c - 17 May 1997 MEO  *         minor comment cleanup  *     0.4b - 17 May 1997 MEO  *         minor comment cleanup  *     0.4a - 16 May 1997 MEO  *         added, corrected& cleaned up comments  *         removed unused variables, code  *         cleaned up wrong names  *         added version to popups  *     0.4 - 13 May 1997 MEO  *         added SLUR function  *     0.3 - 12 May 1997 MEO  *         added HURL function  *         moved from Blurs menu to Distorts menu.  *     0.2 - 11 May 1997 MEO  *         converted percentage control from text to scale  *         standardized tab stops, style  *     0.1 - 10 May 1997 MEO  *         initial release, with BLUR and PICK  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   * This plug-in adds a user-defined amount of randomization to an  * image.  Variations include:  *   *  - hurling (spewing random colors)  *  - picking a nearby pixel at random  *  - slurring (a crude form of melting)  *   * In any case, for each pixel in the selection or image,  * whether to change the pixel is decided by picking a  * random number, weighted by the user's "randomization" percentage.  * If the random number is in range, the pixel is modified.  Picking  * one selects the new pixel value at random from the current and  * adjacent pixels.  Hurling assigns a random value to the pixel.  * Slurring sort of melts downwards; if a pixel is to be slurred,  * there is an 80% chance the pixel above be used; otherwise, one  * of the pixels adjacent to the one above is used (even odds as  * to which it will be).  *   * Picking, hurling and slurring work with any image type.  *   * This plug-in's effectiveness varies a lot with the type  * and clarity of the image being "randomized".  *   * Hurling more than 75% or so onto an existing image will  * make the image nearly unrecognizable.  By 90% hurl, most  * images are indistinguishable from random noise.  *   * The repeat count is especially useful with slurring.  *   * TODO List  *   *  - add a real melt function  *  - split into multiple files  ****************************************************************************/
 end_comment
 
 begin_include
@@ -34,7 +34,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gpc.h"
+file|<plug-ins/gpc/gpc.h>
 end_include
 
 begin_comment
@@ -66,15 +66,7 @@ DECL|macro|RNDM_VERSION
 define|#
 directive|define
 name|RNDM_VERSION
-value|"Randomize 1.4"
-end_define
-
-begin_define
-DECL|macro|RNDM_BLUR
-define|#
-directive|define
-name|RNDM_BLUR
-value|1
+value|"Randomize 1.6"
 end_define
 
 begin_define
@@ -82,7 +74,7 @@ DECL|macro|RNDM_HURL
 define|#
 directive|define
 name|RNDM_HURL
-value|2
+value|1
 end_define
 
 begin_define
@@ -90,7 +82,7 @@ DECL|macro|RNDM_PICK
 define|#
 directive|define
 name|RNDM_PICK
-value|3
+value|2
 end_define
 
 begin_define
@@ -98,7 +90,7 @@ DECL|macro|RNDM_SLUR
 define|#
 directive|define
 name|RNDM_SLUR
-value|4
+value|3
 end_define
 
 begin_define
@@ -138,7 +130,7 @@ comment|/*********************************  *  *  PLUGIN-SPECIFIC STRUCTURES AND
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a44a3df0108
+DECL|struct|__anon2c4a77c50108
 typedef|typedef
 struct|struct
 block|{
@@ -180,7 +172,7 @@ name|RandomizeVals
 name|pivals
 init|=
 block|{
-name|RNDM_BLUR
+name|RNDM_HURL
 block|,
 literal|50.0
 block|,
@@ -194,7 +186,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a44a3df0208
+DECL|struct|__anon2c4a77c50208
 typedef|typedef
 struct|struct
 block|{
@@ -218,16 +210,6 @@ block|{
 name|FALSE
 comment|/*  have we run? */
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|is_indexed_drawable
-specifier|static
-name|gint
-name|is_indexed_drawable
-init|=
-name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -411,7 +393,7 @@ name|PARAM_INT32
 block|,
 literal|"rndm_type"
 block|,
-literal|"Randomization type (1=blur 2=hurl 3=pick 4=slur)"
+literal|"Randomization type (1=hurl 2=pick 3=slur)"
 block|}
 block|,
 block|{
@@ -466,14 +448,14 @@ name|char
 modifier|*
 name|blurb
 init|=
-literal|"Add a random factor to the image, by blurring, picking a nearby pixel, slurring (similar to melting), or just hurling on it."
+literal|"Add a random factor to the image, by picking a nearby pixel, slurring (similar to melting), or just hurling on it."
 decl_stmt|;
 specifier|const
 name|char
 modifier|*
 name|help
 init|=
-literal|"This function randomly ``blurs'' the specified drawable, using either a 3x3 blur, picking a nearby pixel, slurring (cheezy melting), or hurling (spewing colors).  The type and percentage are user selectable.  Blurring is not supported for indexed images."
+literal|"This function randomly modified the drawable, either by picking a nearby pixel, slurring (cheezy melting), or hurling (spewing colors).  The type and percentage are user selectable."
 decl_stmt|;
 specifier|const
 name|char
@@ -545,54 +527,6 @@ argument_list|,
 name|return_vals
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  *  If it's indexed and the current action is BLUR,  *  use something else.  PICK seems the likeliest  *  candidate, although in the spirit of randomity  *  we could pick one at random!  */
-end_comment
-
-begin_function
-name|void
-DECL|function|fix_index_blur (GDrawable * drawable)
-name|fix_index_blur
-parameter_list|(
-name|GDrawable
-modifier|*
-name|drawable
-parameter_list|)
-block|{
-if|if
-condition|(
-name|gimp_drawable_indexed
-argument_list|(
-name|drawable
-operator|->
-name|id
-argument_list|)
-condition|)
-block|{
-name|is_indexed_drawable
-operator|=
-name|TRUE
-expr_stmt|;
-if|if
-condition|(
-name|pivals
-operator|.
-name|rndm_type
-operator|==
-name|RNDM_BLUR
-condition|)
-block|{
-name|pivals
-operator|.
-name|rndm_type
-operator|=
-name|RNDM_PICK
-expr_stmt|;
-block|}
-block|}
 block|}
 end_function
 
@@ -749,11 +683,6 @@ comment|/*  *  If we're running interactively, pop up the dialog box.  */
 case|case
 name|RUN_INTERACTIVE
 case|:
-name|fix_index_blur
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -775,11 +704,6 @@ comment|/*  *  If we're not interactive (probably scripting), we  *  get the par
 case|case
 name|RUN_NONINTERACTIVE
 case|:
-name|fix_index_blur
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -866,12 +790,6 @@ name|pivals
 operator|.
 name|rndm_type
 operator|!=
-name|RNDM_BLUR
-operator|&&
-name|pivals
-operator|.
-name|rndm_type
-operator|!=
 name|RNDM_SLUR
 operator|&&
 name|pivals
@@ -949,14 +867,6 @@ operator|.
 name|rndm_type
 condition|)
 block|{
-case|case
-name|RNDM_BLUR
-case|:
-name|rndm_type_str
-operator|=
-literal|"blur"
-expr_stmt|;
-break|break;
 case|case
 name|RNDM_HURL
 case|:
@@ -1362,6 +1272,11 @@ decl_stmt|;
 name|gint
 name|cnt
 decl_stmt|;
+name|gint
+name|has_alpha
+decl_stmt|,
+name|ind
+decl_stmt|;
 comment|/*  *  Get the input area. This is the bounding box of the selection in  *  the image (or the entire image if there is no selection). Only  *  operating on the input area is simply an optimization. It doesn't  *  need to be done for correct operation. (It simply makes it go  *  faster, since fewer pixels need to be operated on).  */
 name|gimp_drawable_mask_bounds
 argument_list|(
@@ -1382,7 +1297,7 @@ operator|&
 name|y2
 argument_list|)
 expr_stmt|;
-comment|/*  *  Get the size of the input image. (This will/must be the same  *  as the size of the output image.  */
+comment|/*  *  Get the size of the input image. (This will/must be the same  *  as the size of the output image.  Also get alpha info.  */
 name|width
 operator|=
 name|drawable
@@ -1400,6 +1315,15 @@ operator|=
 name|drawable
 operator|->
 name|bpp
+expr_stmt|;
+name|has_alpha
+operator|=
+name|gimp_drawable_has_alpha
+argument_list|(
+name|drawable
+operator|->
+name|id
+argument_list|)
 expr_stmt|;
 comment|/*  *  allocate row buffers  */
 name|prev_row
@@ -1661,6 +1585,10 @@ name|d
 operator|=
 name|dest
 expr_stmt|;
+name|ind
+operator|=
+literal|0
+expr_stmt|;
 for|for
 control|(
 name|col
@@ -1707,103 +1635,6 @@ operator|.
 name|rndm_type
 condition|)
 block|{
-comment|/*  *  BLUR  *      Use the average of the neighboring pixels.  */
-case|case
-name|RNDM_BLUR
-case|:
-operator|*
-name|d
-operator|++
-operator|=
-operator|(
-operator|(
-name|gint
-operator|)
-name|pr
-index|[
-name|col
-operator|-
-name|bytes
-index|]
-operator|+
-operator|(
-name|gint
-operator|)
-name|pr
-index|[
-name|col
-index|]
-operator|+
-operator|(
-name|gint
-operator|)
-name|pr
-index|[
-name|col
-operator|+
-name|bytes
-index|]
-operator|+
-operator|(
-name|gint
-operator|)
-name|cr
-index|[
-name|col
-operator|-
-name|bytes
-index|]
-operator|+
-operator|(
-name|gint
-operator|)
-name|cr
-index|[
-name|col
-index|]
-operator|+
-operator|(
-name|gint
-operator|)
-name|cr
-index|[
-name|col
-operator|+
-name|bytes
-index|]
-operator|+
-operator|(
-name|gint
-operator|)
-name|nr
-index|[
-name|col
-operator|-
-name|bytes
-index|]
-operator|+
-operator|(
-name|gint
-operator|)
-name|nr
-index|[
-name|col
-index|]
-operator|+
-operator|(
-name|gint
-operator|)
-name|nr
-index|[
-name|col
-operator|+
-name|bytes
-index|]
-operator|)
-operator|/
-literal|9
-expr_stmt|;
-break|break;
 comment|/*  *  HURL  *      Just assign a random value.  */
 case|case
 name|RNDM_HURL
@@ -2312,17 +2143,6 @@ index|]
 decl_stmt|;
 comment|/*  *  various initializations  */
 name|gint
-name|do_blur
-init|=
-operator|(
-name|pivals
-operator|.
-name|rndm_type
-operator|==
-name|RNDM_BLUR
-operator|)
-decl_stmt|;
-name|gint
 name|do_pick
 init|=
 operator|(
@@ -2560,7 +2380,8 @@ operator|)
 name|randomize_ok_callback
 argument_list|,
 name|dlg
-comment|/* , "Accept settings and apply filter to image" */
+argument_list|,
+literal|"Accept settings and apply filter to image"
 argument_list|)
 expr_stmt|;
 name|gpc_add_action_button
@@ -2573,7 +2394,8 @@ operator|)
 name|gpc_cancel_callback
 argument_list|,
 name|dlg
-comment|/* , "Close plug-in without making any changes" */
+argument_list|,
+literal|"Close plug-in without making any changes"
 argument_list|)
 expr_stmt|;
 comment|/*  *  Randomization Type - label& radio buttons  */
@@ -2639,29 +2461,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  *  Blur button (won't work with indexed - if the drawable is indexed,  *      don't allow blur as an option)  */
-if|if
-condition|(
-operator|!
-name|is_indexed_drawable
-condition|)
-block|{
-name|gpc_add_radio_button
-argument_list|(
-operator|&
-name|type_group
-argument_list|,
-literal|"Blur"
-argument_list|,
-name|toggle_hbox
-argument_list|,
-operator|&
-name|do_blur
-argument_list|,
-literal|"Blur each pixel by averaging its value with those of its neighbors"
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  *  Hurl, Pick and Slur buttons  */
 name|gpc_add_radio_button
 argument_list|(
@@ -3031,19 +2830,6 @@ name|gdk_flush
 argument_list|()
 expr_stmt|;
 comment|/*  *  Figure out which type of randomization to apply.  */
-if|if
-condition|(
-name|do_blur
-condition|)
-block|{
-name|pivals
-operator|.
-name|rndm_type
-operator|=
-name|RNDM_BLUR
-expr_stmt|;
-block|}
-elseif|else
 if|if
 condition|(
 name|do_pick

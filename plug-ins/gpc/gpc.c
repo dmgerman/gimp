@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/****************************************************************************  * This is a convenience library for plugins for the GIMP v 0.99.8 or later.  * Documentation is available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * Blur code Copyright (C) 1995 Spencer Kimball and Peter Mattis  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
+comment|/****************************************************************************  * This is a convenience library for plugins for the GIMP v 0.99.8 or later.  * Documentation is available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997, 1998 Miles O'Neal<meo@rru.com> http://www.rru.com/~meo/  * GUI may include GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
 end_comment
 
 begin_comment
-comment|/****************************************************************************  * gpc:  *  * gpc version 1.1 (3 Feb 1998, MEO)  * history  *     1.1 -  3 Feb 1998 MEO  *         removed tooltips from action buttons  *     1.0 -  2 Feb 1998 MEO  *         FCS  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   ****************************************************************************/
+comment|/****************************************************************************  * gpc: GTK Plug-in Convenience library  *  * history  *     1.4 - 30 Apr 1998 MEO  *         added man page  *     1.3 - 29 Apr 1998 MEO  *         GTK 1.0 port (minor tooltips change)  *         restored tooltips to action buttons  *     1.2 - 11 Feb 1998 MEO  *         added basic comments  *     1.1 -  3 Feb 1998 MEO  *         removed tooltips from action buttons  *     1.0 -  2 Feb 1998 MEO  *         FCS  *  * Please send any patches or suggestions to the author: meo@rru.com .  *   ****************************************************************************/
 end_comment
 
 begin_include
@@ -32,7 +32,7 @@ file|"gtk/gtk.h"
 end_include
 
 begin_comment
-comment|/*  *  TOGGLE UPDATE callback  */
+comment|/*  *  TOGGLE UPDATE callback - toggles the TOGGLE widget's data  */
 end_comment
 
 begin_function
@@ -85,7 +85,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  DESTROY callback  */
+comment|/*  *  DESTROY callback - quit this plug-in  */
 end_comment
 
 begin_function
@@ -108,7 +108,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  CANCEL BUTTON callback  */
+comment|/*  *  CANCEL BUTTON callback - go away without saving state, etc.  */
 end_comment
 
 begin_function
@@ -136,7 +136,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  SCALE UPDATE callback  */
+comment|/*  *  SCALE UPDATE callback - update the SCALE widget's data  */
 end_comment
 
 begin_function
@@ -164,7 +164,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  TEXT UPDATE callback  */
+comment|/*  *  TEXT UPDATE callback - update the TEXT widget's data  */
 end_comment
 
 begin_function
@@ -221,6 +221,10 @@ modifier|*
 name|tips
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/*  *  TOOLTIP INITIALIZATION  */
+end_comment
 
 begin_function
 name|void
@@ -317,6 +321,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  *  SET TOOLTIP for a widget  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gpc_set_tooltip (GtkWidget * widget,const char * tip)
@@ -359,9 +367,13 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  *  ADD ACTION BUTTON to a dialog  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gpc_add_action_button (char * label,GtkSignalFunc callback,GtkWidget * dialog)
+DECL|function|gpc_add_action_button (char * label,GtkSignalFunc callback,GtkWidget * dialog,char * tip)
 name|gpc_add_action_button
 parameter_list|(
 name|char
@@ -374,7 +386,10 @@ parameter_list|,
 name|GtkWidget
 modifier|*
 name|dialog
-comment|/* , char *tip */
+parameter_list|,
+name|char
+modifier|*
+name|tip
 parameter_list|)
 block|{
 name|GtkWidget
@@ -440,9 +455,19 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
-comment|/* gpc_set_tooltip(button, tip); */
+name|gpc_set_tooltip
+argument_list|(
+name|button
+argument_list|,
+name|tip
+argument_list|)
+expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  *  ADD RADIO BUTTON to a dialog  */
+end_comment
 
 begin_function
 name|void
@@ -560,6 +585,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  *  ADD LABEL widget to a dialog at given location  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gpc_add_label (char * value,GtkWidget * table,int left,int right,int top,int bottom)
@@ -644,6 +673,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  *  ADD HORIZONTAL SCALE widget to a dialog at given location  */
+end_comment
 
 begin_function
 name|void
