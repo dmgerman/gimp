@@ -90,9 +90,17 @@ name|GdkPixmap
 modifier|*
 name|default_pixmap
 parameter_list|,
+name|GdkBitmap
+modifier|*
+name|default_mask
+parameter_list|,
 name|GdkPixmap
 modifier|*
 name|swap_pixmap
+parameter_list|,
+name|GdkBitmap
+modifier|*
+name|swap_mask
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -171,10 +171,10 @@ end_comment
 begin_decl_stmt
 DECL|variable|filestat_valid
 specifier|static
-name|gint
+name|gboolean
 name|filestat_valid
 init|=
-literal|0
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -194,10 +194,11 @@ name|G_OS_WIN32
 end_ifdef
 
 begin_comment
-comment|/*  * On Windows there is no concept like the Unix executable flag. There  * There is a weak emulation provided by the MS C Runtime using file  * extensions (com, exe, cmd, bat). This needs to be extended to treat  * scripts (Python, Perl, ...) as executables, too. We use the PATHEXT  * variable, which is also used by cmd.exe.  */
+comment|/*  * On Windows there is no concept like the Unix executable flag.  * There is a weak emulation provided by the MS C Runtime using file  * extensions (com, exe, cmd, bat). This needs to be extended to treat  * scripts (Python, Perl, ...) as executables, too. We use the PATHEXT  * variable, which is also used by cmd.exe.  */
 end_comment
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|is_script (const gchar * filename)
 name|is_script
@@ -362,7 +363,7 @@ end_endif
 
 begin_function
 name|void
-DECL|function|datafiles_read_directories (gchar * path_str,GimpDataFileLoaderFunc loader_func,gint flags)
+DECL|function|datafiles_read_directories (gchar * path_str,GimpDataFileLoaderFunc loader_func,GimpDataFileFlags flags)
 name|datafiles_read_directories
 parameter_list|(
 name|gchar
@@ -372,7 +373,7 @@ parameter_list|,
 name|GimpDataFileLoaderFunc
 name|loader_func
 parameter_list|,
-name|gint
+name|GimpDataFileFlags
 name|flags
 parameter_list|)
 block|{
@@ -587,7 +588,7 @@ condition|)
 block|{
 name|filestat_valid
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 call|(
 modifier|*
@@ -599,7 +600,7 @@ argument_list|)
 expr_stmt|;
 name|filestat_valid
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 block|}
 name|g_free
