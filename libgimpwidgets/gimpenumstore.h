@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297aa2cb0103
+DECL|enum|__anon29b620fa0103
 block|{
 DECL|enumerator|GIMP_ENUM_STORE_VALUE
 name|GIMP_ENUM_STORE_VALUE

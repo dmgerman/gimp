@@ -319,6 +319,69 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_enum_store_add_value (GtkListStore * store,GEnumValue * value)
+name|gimp_enum_store_add_value
+parameter_list|(
+name|GtkListStore
+modifier|*
+name|store
+parameter_list|,
+name|GEnumValue
+modifier|*
+name|value
+parameter_list|)
+block|{
+name|GtkTreeIter
+name|iter
+decl_stmt|;
+name|gtk_list_store_append
+argument_list|(
+name|store
+argument_list|,
+operator|&
+name|iter
+argument_list|)
+expr_stmt|;
+name|gtk_list_store_set
+argument_list|(
+name|store
+argument_list|,
+operator|&
+name|iter
+argument_list|,
+name|GIMP_ENUM_STORE_VALUE
+argument_list|,
+name|value
+operator|->
+name|value
+argument_list|,
+name|GIMP_ENUM_STORE_LABEL
+argument_list|,
+name|gettext
+argument_list|(
+name|value
+operator|->
+name|value_name
+argument_list|)
+argument_list|,
+name|GIMP_ENUM_STORE_ICON
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_ENUM_STORE_USER_DATA
+argument_list|,
+name|NULL
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/**  * gimp_enum_store_new:  * @enum_type: the #GType of an enum.  *  * Creates a new #GimpEnumStore, derived from #GtkListStore and fills  * it with enum values. The enum needs to be registered to the type  * system and should have translatable value names.  *  * Return value: a new #GimpEnumStore.  **/
 end_comment
@@ -383,6 +446,10 @@ name|store
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_enum_store_new_with_range:  * @enum_type: the #GType of an enum.  * @minimum: the minimum value to include  * @maximum: the maximum value to include  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to limit the enum values to a certain range.  *  * Return value: a new #GimpEnumStore.  **/
+end_comment
 
 begin_function
 name|GtkListStore
@@ -489,6 +556,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_enum_store_new_with_values  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @...:       a list of enum values (exactly @n_values)  *  * Creates a new #GimpEnumStore like gimp_enum_store_new() but allows  * to list the enum values that should be added to the store.  *  * Return value: a new #GimpEnumStore.  **/
+end_comment
+
 begin_function
 name|GtkListStore
 modifier|*
@@ -539,6 +610,10 @@ name|store
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_enum_store_new_with_values_valist:  * @enum_type: the #GType of an enum.  * @n_values:  the number of enum values to include  * @args:      a va_list of enum values (exactly @n_values)  *  * See gimp_enum_store_new_with_values().  *  * Return value: a new #GimpEnumStore.  **/
+end_comment
 
 begin_function
 name|GtkListStore
@@ -658,6 +733,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_enum_store_lookup_by_value:  * @model: a #GimpEnumStore  * @value: an enum values to lookup in the @model  * @iter:  return location for the iter of the given @value  *  * Iterate over the @model looking for @value.  *  * Return value: %TRUE if the value has been located and @iter is  *               valid, %FALSE otherwise.  **/
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_enum_store_lookup_by_value (GtkTreeModel * model,gint value,GtkTreeIter * iter)
@@ -751,6 +830,10 @@ name|iter_valid
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_enum_store_lookup_by_value:  * @store:        a #GimpEnumStore  * @widget:       the widget used to create the icon pixbufs  * @stock_prefix: a prefix to create icon stock ID from enum values  *  * Creates a stock ID for each enum value in the @store by appending  * the value's nick to the given @stock_prefix inserting a hyphen  * between them. If an icon is registered for the resulting stock ID,  * it is rendered by @widget (which should be the @combo_box using  * this @store as it's model). The rendered pixbuf is then added to  * the @store in the %GIMP_ENUM_STORE_PIXBUF column.  **/
+end_comment
 
 begin_function
 name|void
@@ -959,69 +1042,6 @@ name|pixbuf
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_enum_store_add_value (GtkListStore * store,GEnumValue * value)
-name|gimp_enum_store_add_value
-parameter_list|(
-name|GtkListStore
-modifier|*
-name|store
-parameter_list|,
-name|GEnumValue
-modifier|*
-name|value
-parameter_list|)
-block|{
-name|GtkTreeIter
-name|iter
-decl_stmt|;
-name|gtk_list_store_append
-argument_list|(
-name|store
-argument_list|,
-operator|&
-name|iter
-argument_list|)
-expr_stmt|;
-name|gtk_list_store_set
-argument_list|(
-name|store
-argument_list|,
-operator|&
-name|iter
-argument_list|,
-name|GIMP_ENUM_STORE_VALUE
-argument_list|,
-name|value
-operator|->
-name|value
-argument_list|,
-name|GIMP_ENUM_STORE_LABEL
-argument_list|,
-name|gettext
-argument_list|(
-name|value
-operator|->
-name|value_name
-argument_list|)
-argument_list|,
-name|GIMP_ENUM_STORE_ICON
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_ENUM_STORE_USER_DATA
-argument_list|,
-name|NULL
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
