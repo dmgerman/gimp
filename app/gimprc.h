@@ -28,6 +28,12 @@ directive|include
 file|"libgimp/gimpunit.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
 begin_comment
 comment|/*  global gimprc variables  */
 end_comment
@@ -281,6 +287,13 @@ begin_decl_stmt
 specifier|extern
 name|int
 name|cubic_interpolation
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|InterpolationType
+name|interpolation_type
 decl_stmt|;
 end_decl_stmt
 

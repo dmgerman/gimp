@@ -1207,6 +1207,39 @@ block|}
 end_function
 
 begin_function
+name|int
+DECL|function|pixel_region_has_alpha (PixelRegion * PR)
+name|pixel_region_has_alpha
+parameter_list|(
+name|PixelRegion
+modifier|*
+name|PR
+parameter_list|)
+block|{
+if|if
+condition|(
+name|PR
+operator|->
+name|bytes
+operator|==
+literal|2
+operator|||
+name|PR
+operator|->
+name|bytes
+operator|==
+literal|4
+condition|)
+return|return
+literal|1
+return|;
+return|return
+literal|0
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 modifier|*
 DECL|function|pixel_regions_register (int num_regions,...)

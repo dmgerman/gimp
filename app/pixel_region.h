@@ -266,6 +266,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|int
+name|pixel_region_has_alpha
+parameter_list|(
+name|PixelRegion
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 modifier|*
 name|pixel_regions_register

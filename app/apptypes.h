@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27624ff50103
+DECL|enum|__anon2ba374320103
 block|{
 DECL|enumerator|RGB
 name|RGB
@@ -54,7 +54,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27624ff50203
+DECL|enum|__anon2ba374320203
 block|{
 DECL|enumerator|RGB_GIMAGE
 name|RGB_GIMAGE
@@ -92,7 +92,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27624ff50303
+DECL|enum|__anon2ba374320303
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27624ff50403
+DECL|enum|__anon2ba374320403
 block|{
 DECL|enumerator|NORMAL_MODE
 name|NORMAL_MODE
@@ -201,7 +201,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27624ff50503
+DECL|enum|__anon2ba374320503
 block|{
 DECL|enumerator|NORMAL_CONVOL
 name|NORMAL_CONVOL
@@ -227,7 +227,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27624ff50603
+DECL|enum|__anon2ba374320603
 block|{
 DECL|enumerator|HARD
 name|HARD
@@ -253,7 +253,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27624ff50703
+DECL|enum|__anon2ba374320703
 block|{
 DECL|enumerator|CONSTANT
 name|CONSTANT
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27624ff50803
+DECL|enum|__anon2ba374320803
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -289,7 +289,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon27624ff50903
+DECL|enum|__anon2ba374320903
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -310,7 +310,7 @@ comment|/* gradient paint modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27624ff50a03
+DECL|enum|__anon2ba374320a03
 typedef|typedef
 enum|enum
 block|{
@@ -337,6 +337,29 @@ comment|/* paint once, but keep painting with the end color */
 DECL|typedef|GradientPaintMode
 block|}
 name|GradientPaintMode
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* gradient paint modes */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2ba374320b03
+block|{
+DECL|enumerator|LINEAR_INTERPOLATION
+name|LINEAR_INTERPOLATION
+block|,
+DECL|enumerator|CUBIC_INTERPOLATION
+name|CUBIC_INTERPOLATION
+block|,
+DECL|enumerator|NEAREST_NEIGHBOR_INTERPOLATION
+name|NEAREST_NEIGHBOR_INTERPOLATION
+DECL|typedef|InterpolationType
+block|}
+name|InterpolationType
 typedef|;
 end_typedef
 
