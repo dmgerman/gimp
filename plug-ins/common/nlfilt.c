@@ -150,7 +150,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon298a60b20103
+DECL|enum|__anon27b6aace0103
 typedef|typedef
 enum|enum
 block|{
@@ -2415,10 +2415,10 @@ comment|/* round and scale floating point to scaled integer */
 end_comment
 
 begin_define
-DECL|macro|ROUND (x)
+DECL|macro|SROUND (x)
 define|#
 directive|define
-name|ROUND
+name|SROUND
 parameter_list|(
 name|x
 parameter_list|)
@@ -3622,7 +3622,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3634,7 +3634,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3646,7 +3646,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3658,7 +3658,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3670,7 +3670,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3682,7 +3682,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3694,7 +3694,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3706,7 +3706,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3718,7 +3718,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3730,7 +3730,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3742,7 +3742,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 name|fi
 operator|*
@@ -3774,7 +3774,7 @@ index|[
 name|i
 index|]
 operator|=
-name|ROUND
+name|SROUND
 argument_list|(
 operator|(
 name|gdouble
