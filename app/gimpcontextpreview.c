@@ -706,7 +706,7 @@ comment|/*  signals  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2aa1fbdc0103
+DECL|enum|__anon2c157a400103
 enum|enum
 block|{
 DECL|enumerator|CLICKED
@@ -3919,11 +3919,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gtk_widget_draw
+name|gtk_widget_queue_draw
 argument_list|(
 name|gcp_popup_preview
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
