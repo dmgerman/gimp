@@ -80,7 +80,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947d9ca0103
+DECL|enum|__anon276d34a20103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -333,6 +333,7 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpFileEntry::filename-changed:    *    * This signal is emitted whenever the user changes the filename.    **/
 name|gimp_file_entry_signals
 index|[
 name|FILENAME_CHANGED

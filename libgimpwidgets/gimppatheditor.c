@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64ca280103
+DECL|enum|__anon2ba7b99d0103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -71,7 +71,7 @@ name|gimp_path_editor_init
 parameter_list|(
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -87,7 +87,7 @@ name|widget
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -103,7 +103,7 @@ name|widget
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -119,7 +119,7 @@ name|widget
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -135,7 +135,7 @@ name|widget
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -151,7 +151,7 @@ name|sel
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -215,20 +215,20 @@ parameter_list|)
 block|{
 specifier|static
 name|GType
-name|gpe_type
+name|type
 init|=
 literal|0
 decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gpe_type
+name|type
 condition|)
 block|{
 specifier|static
 specifier|const
 name|GTypeInfo
-name|gpe_info
+name|info
 init|=
 block|{
 sizeof|sizeof
@@ -271,7 +271,7 @@ operator|)
 name|gimp_path_editor_init
 block|,       }
 decl_stmt|;
-name|gpe_type
+name|type
 operator|=
 name|g_type_register_static
 argument_list|(
@@ -280,14 +280,14 @@ argument_list|,
 literal|"GimpPathEditor"
 argument_list|,
 operator|&
-name|gpe_info
+name|info
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gpe_type
+name|type
 return|;
 block|}
 end_function
@@ -310,6 +310,7 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpPathEditor::path-changed:    *    * This signal is emitted whenever the user adds, deletes, modifies    * or reorders an element of the search path.    **/
 name|gimp_path_editor_signals
 index|[
 name|PATH_CHANGED
@@ -356,12 +357,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_path_editor_init (GimpPathEditor * gpe)
+DECL|function|gimp_path_editor_init (GimpPathEditor * editor)
 name|gimp_path_editor_init
 parameter_list|(
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 block|{
 name|GtkWidget
@@ -384,25 +385,25 @@ name|GtkWidget
 modifier|*
 name|tv
 decl_stmt|;
-name|gpe
+name|editor
 operator|->
 name|file_entry
 operator|=
 name|NULL
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|sel_path
 operator|=
 name|NULL
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|num_items
 operator|=
 literal|0
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|upper_hbox
 operator|=
@@ -417,10 +418,10 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gpe
+name|editor
 argument_list|)
 argument_list|,
-name|gpe
+name|editor
 operator|->
 name|upper_hbox
 argument_list|,
@@ -433,7 +434,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|upper_hbox
 argument_list|)
@@ -451,7 +452,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|upper_hbox
 argument_list|)
@@ -470,7 +471,7 @@ argument_list|(
 name|button_box
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|new_button
 operator|=
@@ -535,10 +536,10 @@ argument_list|(
 name|gimp_path_editor_new_clicked
 argument_list|)
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|up_button
 operator|=
@@ -610,10 +611,10 @@ argument_list|(
 name|gimp_path_editor_move_clicked
 argument_list|)
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|down_button
 operator|=
@@ -685,10 +686,10 @@ argument_list|(
 name|gimp_path_editor_move_clicked
 argument_list|)
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|delete_button
 operator|=
@@ -760,7 +761,7 @@ argument_list|(
 name|gimp_path_editor_delete_clicked
 argument_list|)
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 name|scrolled_window
@@ -798,7 +799,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gpe
+name|editor
 argument_list|)
 argument_list|,
 name|scrolled_window
@@ -815,7 +816,7 @@ argument_list|(
 name|scrolled_window
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|dir_list
 operator|=
@@ -832,7 +833,7 @@ name|gtk_tree_view_new_with_model
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -840,7 +841,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -892,7 +893,7 @@ argument_list|(
 name|tv
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|sel
 operator|=
@@ -906,7 +907,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel
 argument_list|,
@@ -917,14 +918,14 @@ argument_list|(
 name|gimp_path_editor_selection_changed
 argument_list|)
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_editor_new:  * @filesel_title: The title of the #GtkFileSelection dialog which can be  *                 popped up by the attached #GimpFileSelection.  * @path: The initial search path.  *  * Creates a new #GimpPathEditor widget.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Returns: A pointer to the new #GimpPathEditor widget.  **/
+comment|/**  * gimp_path_editor_new:  * @filesel_title: The title of the #GtkFileSelection dialog which can be  *                 popped up by the attached #GimpFileSelection.  * @path:          The initial search path.  *  * Creates a new #GimpPathEditor widget.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Returns: A pointer to the new #GimpPathEditor widget.  **/
 end_comment
 
 begin_function
@@ -946,7 +947,7 @@ parameter_list|)
 block|{
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -957,7 +958,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|=
 name|g_object_new
 argument_list|(
@@ -966,7 +967,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|file_entry
 operator|=
@@ -983,7 +984,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
@@ -994,12 +995,12 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|upper_hbox
 argument_list|)
 argument_list|,
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
@@ -1012,14 +1013,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
@@ -1030,7 +1031,7 @@ argument_list|(
 name|gimp_path_editor_file_entry_changed
 argument_list|)
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 if|if
@@ -1039,7 +1040,7 @@ name|path
 condition|)
 name|gimp_path_editor_set_path
 argument_list|(
-name|gpe
+name|editor
 argument_list|,
 name|path
 argument_list|)
@@ -1047,25 +1048,25 @@ expr_stmt|;
 return|return
 name|GTK_WIDGET
 argument_list|(
-name|gpe
+name|editor
 argument_list|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_editor_get_path:  * @gpe: The path editor you want to get the search path from.  *  * The elements of the returned search path string are separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Note that you have to g_free() the returned string.  *  * Returns: The search path the user has selected in the path editor.  **/
+comment|/**  * gimp_path_editor_get_path:  * @editor: The path editor you want to get the search path from.  *  * The elements of the returned search path string are separated with the  * #G_SEARCHPATH_SEPARATOR character.  *  * Note that you have to g_free() the returned string.  *  * Returns: The search path the user has selected in the path editor.  **/
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_path_editor_get_path (GimpPathEditor * gpe)
+DECL|function|gimp_path_editor_get_path (GimpPathEditor * editor)
 name|gimp_path_editor_get_path
 parameter_list|(
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 block|{
 name|GString
@@ -1076,7 +1077,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PATH_EDITOR
 argument_list|(
-name|gpe
+name|editor
 argument_list|)
 argument_list|,
 name|g_strdup
@@ -1096,7 +1097,7 @@ name|gtk_tree_model_foreach
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -1118,17 +1119,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_path_editor_set_path:  * @gpe:  The path editor you want to set the search path from.  * @path: The new path to set.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  **/
+comment|/**  * gimp_path_editor_set_path:  * @editor: The path editor you want to set the search path from.  * @path:   The new path to set.  *  * The elements of the initial search path must be separated with the  * #G_SEARCHPATH_SEPARATOR character.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_path_editor_set_path (GimpPathEditor * gpe,const gchar * path)
+DECL|function|gimp_path_editor_set_path (GimpPathEditor * editor,const gchar * path)
 name|gimp_path_editor_set_path
 parameter_list|(
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|,
 specifier|const
 name|gchar
@@ -1151,7 +1152,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_PATH_EDITOR
 argument_list|(
-name|gpe
+name|editor
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1166,7 +1167,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_list_store_clear
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -1206,7 +1207,7 @@ literal|'\0'
 expr_stmt|;
 name|gtk_list_store_append
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|,
@@ -1216,7 +1217,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|,
@@ -1231,7 +1232,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|num_items
 operator|++
@@ -1256,6 +1257,18 @@ argument_list|(
 name|mypath
 argument_list|)
 expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|editor
+argument_list|,
+name|gimp_path_editor_signals
+index|[
+name|PATH_CHANGED
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1266,7 +1279,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_path_editor_new_clicked (GtkWidget * widget,GimpPathEditor * gpe)
+DECL|function|gimp_path_editor_new_clicked (GtkWidget * widget,GimpPathEditor * editor)
 name|gimp_path_editor_new_clicked
 parameter_list|(
 name|GtkWidget
@@ -1275,57 +1288,57 @@ name|widget
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 block|{
 if|if
 condition|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 condition|)
 block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel
 argument_list|,
 name|gimp_path_editor_selection_changed
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 name|gtk_tree_selection_unselect_path
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel
 argument_list|,
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel
 argument_list|,
 name|gimp_path_editor_selection_changed
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 name|gtk_tree_path_free
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|sel_path
 operator|=
@@ -1334,7 +1347,7 @@ expr_stmt|;
 block|}
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|delete_button
 argument_list|,
@@ -1343,7 +1356,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|up_button
 argument_list|,
@@ -1352,7 +1365,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|down_button
 argument_list|,
@@ -1361,7 +1374,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
@@ -1374,7 +1387,7 @@ name|GTK_EDITABLE
 argument_list|(
 name|GIMP_FILE_ENTRY
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|)
@@ -1392,7 +1405,7 @@ name|GTK_WIDGET
 argument_list|(
 name|GIMP_FILE_ENTRY
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|)
@@ -1407,7 +1420,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_path_editor_move_clicked (GtkWidget * widget,GimpPathEditor * gpe)
+DECL|function|gimp_path_editor_move_clicked (GtkWidget * widget,GimpPathEditor * editor)
 name|gimp_path_editor_move_clicked
 parameter_list|(
 name|GtkWidget
@@ -1416,7 +1429,7 @@ name|widget
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 block|{
 name|GtkTreePath
@@ -1441,7 +1454,7 @@ name|dir2
 decl_stmt|;
 if|if
 condition|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 operator|==
@@ -1452,7 +1465,7 @@ name|path
 operator|=
 name|gtk_tree_path_copy
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
@@ -1461,7 +1474,7 @@ if|if
 condition|(
 name|widget
 operator|==
-name|gpe
+name|editor
 operator|->
 name|up_button
 condition|)
@@ -1480,7 +1493,7 @@ name|model
 operator|=
 name|GTK_TREE_MODEL
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -1492,7 +1505,7 @@ argument_list|,
 operator|&
 name|iter1
 argument_list|,
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
@@ -1541,7 +1554,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|,
@@ -1558,7 +1571,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|,
@@ -1585,7 +1598,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_tree_selection_select_iter
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel
 argument_list|,
@@ -1595,7 +1608,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|gpe
+name|editor
 argument_list|,
 name|gimp_path_editor_signals
 index|[
@@ -1611,7 +1624,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_path_editor_delete_clicked (GtkWidget * widget,GimpPathEditor * gpe)
+DECL|function|gimp_path_editor_delete_clicked (GtkWidget * widget,GimpPathEditor * editor)
 name|gimp_path_editor_delete_clicked
 parameter_list|(
 name|GtkWidget
@@ -1620,7 +1633,7 @@ name|widget
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 block|{
 name|GtkTreeIter
@@ -1632,7 +1645,7 @@ name|indices
 decl_stmt|;
 if|if
 condition|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 operator|==
@@ -1643,7 +1656,7 @@ name|gtk_tree_model_get_iter
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -1651,14 +1664,14 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_remove
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|,
@@ -1666,14 +1679,14 @@ operator|&
 name|iter
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|num_items
 operator|--
 expr_stmt|;
 if|if
 condition|(
-name|gpe
+name|editor
 operator|->
 name|num_items
 operator|==
@@ -1682,12 +1695,12 @@ condition|)
 block|{
 name|gtk_tree_path_free
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|sel_path
 operator|=
@@ -1695,20 +1708,20 @@ name|NULL
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
 name|gimp_path_editor_file_entry_changed
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 name|gimp_file_entry_set_filename
 argument_list|(
 name|GIMP_FILE_ENTRY
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|)
@@ -1718,18 +1731,18 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
 name|gimp_path_editor_file_entry_changed
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|delete_button
 argument_list|,
@@ -1738,7 +1751,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|up_button
 argument_list|,
@@ -1747,7 +1760,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|down_button
 argument_list|,
@@ -1756,7 +1769,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
@@ -1769,7 +1782,7 @@ name|indices
 operator|=
 name|gtk_tree_path_get_indices
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
@@ -1782,7 +1795,7 @@ index|[
 literal|0
 index|]
 operator|==
-name|gpe
+name|editor
 operator|->
 name|num_items
 operator|)
@@ -1798,25 +1811,25 @@ operator|)
 condition|)
 name|gtk_tree_path_prev
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
 name|gtk_tree_selection_select_path
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel
 argument_list|,
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|gpe
+name|editor
 argument_list|,
 name|gimp_path_editor_signals
 index|[
@@ -1832,7 +1845,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_path_editor_file_entry_changed (GtkWidget * widget,GimpPathEditor * gpe)
+DECL|function|gimp_path_editor_file_entry_changed (GtkWidget * widget,GimpPathEditor * editor)
 name|gimp_path_editor_file_entry_changed
 parameter_list|(
 name|GtkWidget
@@ -1841,7 +1854,7 @@ name|widget
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 block|{
 name|gchar
@@ -1882,7 +1895,7 @@ return|return;
 block|}
 if|if
 condition|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 operator|==
@@ -1891,7 +1904,7 @@ condition|)
 block|{
 name|gtk_list_store_append
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|,
@@ -1901,7 +1914,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|,
@@ -1916,14 +1929,14 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|num_items
 operator|++
 expr_stmt|;
 name|gtk_tree_selection_select_iter
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel
 argument_list|,
@@ -1938,7 +1951,7 @@ name|gtk_tree_model_get_iter
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -1946,14 +1959,14 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|,
@@ -1976,7 +1989,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|gpe
+name|editor
 argument_list|,
 name|gimp_path_editor_signals
 index|[
@@ -1992,7 +2005,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_path_editor_selection_changed (GtkTreeSelection * sel,GimpPathEditor * gpe)
+DECL|function|gimp_path_editor_selection_changed (GtkTreeSelection * sel,GimpPathEditor * editor)
 name|gimp_path_editor_selection_changed
 parameter_list|(
 name|GtkTreeSelection
@@ -2001,7 +2014,7 @@ name|sel
 parameter_list|,
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 block|{
 name|GtkTreeIter
@@ -2032,7 +2045,7 @@ name|gtk_tree_model_get
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -2051,20 +2064,20 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
 name|gimp_path_editor_file_entry_changed
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 name|gimp_file_entry_set_filename
 argument_list|(
 name|GIMP_FILE_ENTRY
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|)
@@ -2074,13 +2087,13 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
 name|gimp_path_editor_file_entry_changed
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2090,18 +2103,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 condition|)
 name|gtk_tree_path_free
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
-name|gpe
+name|editor
 operator|->
 name|sel_path
 operator|=
@@ -2109,7 +2122,7 @@ name|gtk_tree_model_get_path
 argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|dir_list
 argument_list|)
@@ -2122,14 +2135,14 @@ name|indices
 operator|=
 name|gtk_tree_path_get_indices
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|delete_button
 argument_list|,
@@ -2138,7 +2151,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|up_button
 argument_list|,
@@ -2154,7 +2167,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|down_button
 argument_list|,
@@ -2165,7 +2178,7 @@ literal|0
 index|]
 operator|<
 operator|(
-name|gpe
+name|editor
 operator|->
 name|num_items
 operator|-
@@ -2176,7 +2189,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|file_entry
 argument_list|,
@@ -2192,16 +2205,16 @@ name|sel
 argument_list|,
 name|gimp_path_editor_selection_changed
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 name|gtk_tree_selection_select_path
 argument_list|(
-name|gpe
+name|editor
 operator|->
 name|sel
 argument_list|,
-name|gpe
+name|editor
 operator|->
 name|sel_path
 argument_list|)
@@ -2212,7 +2225,7 @@ name|sel
 argument_list|,
 name|gimp_path_editor_selection_changed
 argument_list|,
-name|gpe
+name|editor
 argument_list|)
 expr_stmt|;
 block|}

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b4fc6f0103
+DECL|enum|__anon292587de0103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b4fc6f0203
+DECL|enum|__anon292587de0203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -300,6 +300,7 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
+comment|/**    * GimpUnitMenu::unit-changed:    *    * This signal is emitted whenever the user selects a #GimpUnit from    * the #GimpUnitMenu.    **/
 name|gimp_unit_menu_signals
 index|[
 name|UNIT_CHANGED

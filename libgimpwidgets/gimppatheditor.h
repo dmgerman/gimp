@@ -176,7 +176,7 @@ function_decl|)
 parameter_list|(
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 function_decl|;
 block|}
@@ -222,7 +222,7 @@ name|gimp_path_editor_get_path
 parameter_list|(
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -233,7 +233,7 @@ name|gimp_path_editor_set_path
 parameter_list|(
 name|GimpPathEditor
 modifier|*
-name|gpe
+name|editor
 parameter_list|,
 specifier|const
 name|gchar
