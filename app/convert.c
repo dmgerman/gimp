@@ -142,38 +142,6 @@ comment|/* ick ick ick. */
 end_comment
 
 begin_define
-DECL|macro|NODITHER
-define|#
-directive|define
-name|NODITHER
-value|0
-end_define
-
-begin_define
-DECL|macro|FSDITHER
-define|#
-directive|define
-name|FSDITHER
-value|1
-end_define
-
-begin_define
-DECL|macro|NODESTRUCTDITHER
-define|#
-directive|define
-name|NODESTRUCTDITHER
-value|2
-end_define
-
-begin_define
-DECL|macro|FIXEDDITHER
-define|#
-directive|define
-name|FIXEDDITHER
-value|3
-end_define
-
-begin_define
 DECL|macro|PRECISION_R
 define|#
 directive|define
@@ -34908,7 +34876,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f241e0108
+DECL|struct|__anon298c8f980108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -34985,7 +34953,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f241e0208
+DECL|struct|__anon298c8f980208
 block|{
 DECL|member|ncolors
 name|long
@@ -35004,7 +34972,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f241e0308
+DECL|struct|__anon298c8f980308
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -35281,9 +35249,9 @@ name|int
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|ConvertDitherType
 parameter_list|,
-name|int
+name|ConvertPaletteType
 parameter_list|,
 name|int
 parameter_list|)
@@ -35524,6 +35492,10 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gdisplays_flush
@@ -35547,6 +35519,10 @@ argument_list|(
 name|gimage
 argument_list|,
 name|GRAY
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -37836,10 +37812,10 @@ name|IndexedDialog
 modifier|*
 name|dialog
 decl_stmt|;
-name|int
+name|ConvertPaletteType
 name|palette_type
 decl_stmt|;
-name|int
+name|ConvertDitherType
 name|dither_type
 decl_stmt|;
 name|dialog
@@ -37925,7 +37901,7 @@ operator|=
 name|FIXEDDITHER
 expr_stmt|;
 comment|/*  Convert the image to indexed color  */
-name|convert_image2
+name|convert_image
 argument_list|(
 name|dialog
 operator|->
@@ -38348,49 +38324,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|convert_image (GImage * gimage,GimpImageBaseType new_type,int num_cols,int dither,ConvertPaletteType palette_type)
-name|convert_image
-parameter_list|(
-name|GImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpImageBaseType
-name|new_type
-parameter_list|,
-comment|/* The following three params used only for 		* new_type == INDEXED 		*/
-name|int
-name|num_cols
-parameter_list|,
-name|int
-name|dither
-parameter_list|,
-name|ConvertPaletteType
-name|palette_type
-parameter_list|)
-block|{
-name|convert_image2
-argument_list|(
-name|gimage
-argument_list|,
-name|new_type
-argument_list|,
-name|num_cols
-argument_list|,
-name|dither
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|palette_type
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
 begin_comment
 comment|/**********************************************************/
 end_comment
@@ -38398,7 +38331,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275f241e0408
+DECL|struct|__anon298c8f980408
 block|{
 DECL|member|used_count
 name|signed
@@ -39350,8 +39283,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|convert_image2 (GImage * gimage,GimpImageBaseType new_type,int num_cols,int dither,int alpha_dither,int remdups,ConvertPaletteType palette_type)
-name|convert_image2
+DECL|function|convert_image (GImage * gimage,GimpImageBaseType new_type,int num_cols,ConvertDitherType dither,int alpha_dither,int remdups,ConvertPaletteType palette_type)
+name|convert_image
 parameter_list|(
 name|GImage
 modifier|*
@@ -39364,7 +39297,7 @@ comment|/* The following three params used only for 		* new_type == INDEXED 		*/
 name|int
 name|num_cols
 parameter_list|,
-name|int
+name|ConvertDitherType
 name|dither
 parameter_list|,
 name|int
@@ -52889,7 +52822,7 @@ begin_function
 specifier|static
 name|QuantizeObj
 modifier|*
-DECL|function|initialize_median_cut (int type,int num_colors,int dither_type,int palette_type,int want_alpha_dither)
+DECL|function|initialize_median_cut (int type,int num_colors,ConvertDitherType dither_type,ConvertPaletteType palette_type,int want_alpha_dither)
 name|initialize_median_cut
 parameter_list|(
 name|int
@@ -52898,10 +52831,10 @@ parameter_list|,
 name|int
 name|num_colors
 parameter_list|,
-name|int
+name|ConvertDitherType
 name|dither_type
 parameter_list|,
-name|int
+name|ConvertPaletteType
 name|palette_type
 parameter_list|,
 name|int
