@@ -45,7 +45,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|palette_editor_edit_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|palette_editor_edit_color_cmd_callback (GtkWidget * widget,gpointer data)
 name|palette_editor_edit_color_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -54,9 +54,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpPaletteEditor
@@ -92,8 +89,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_new_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
-name|palette_editor_new_color_cmd_callback
+DECL|function|palette_editor_new_color_fg_cmd_callback (GtkWidget * widget,gpointer data)
+name|palette_editor_new_color_fg_cmd_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -101,9 +98,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpPaletteEditor
@@ -133,10 +127,6 @@ operator|->
 name|new_button
 argument_list|)
 argument_list|,
-name|action
-condition|?
-name|GDK_CONTROL_MASK
-else|:
 literal|0
 argument_list|)
 expr_stmt|;
@@ -145,7 +135,53 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_delete_color_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|palette_editor_new_color_bg_cmd_callback (GtkWidget * widget,gpointer data)
+name|palette_editor_new_color_bg_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpPaletteEditor
+modifier|*
+name|editor
+init|=
+name|GIMP_PALETTE_EDITOR
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|GTK_WIDGET_SENSITIVE
+argument_list|(
+name|editor
+operator|->
+name|new_button
+argument_list|)
+condition|)
+name|gimp_button_extended_clicked
+argument_list|(
+name|GIMP_BUTTON
+argument_list|(
+name|editor
+operator|->
+name|new_button
+argument_list|)
+argument_list|,
+name|GDK_CONTROL_MASK
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|palette_editor_delete_color_cmd_callback (GtkWidget * widget,gpointer data)
 name|palette_editor_delete_color_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -154,9 +190,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpPaletteEditor
@@ -192,7 +225,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_zoom_in_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|palette_editor_zoom_in_cmd_callback (GtkWidget * widget,gpointer data)
 name|palette_editor_zoom_in_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -201,9 +234,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpPaletteEditor
@@ -239,7 +269,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_zoom_out_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|palette_editor_zoom_out_cmd_callback (GtkWidget * widget,gpointer data)
 name|palette_editor_zoom_out_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -248,9 +278,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpPaletteEditor
@@ -286,7 +313,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|palette_editor_zoom_all_cmd_callback (GtkWidget * widget,gpointer data,guint action)
+DECL|function|palette_editor_zoom_all_cmd_callback (GtkWidget * widget,gpointer data)
 name|palette_editor_zoom_all_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -295,9 +322,6 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
-parameter_list|,
-name|guint
-name|action
 parameter_list|)
 block|{
 name|GimpPaletteEditor

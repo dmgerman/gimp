@@ -90,7 +90,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs-commands.h"
+file|"dockable-commands.h"
 end_include
 
 begin_include
@@ -126,7 +126,7 @@ parameter_list|,
 name|help_id
 parameter_list|)
 define|\
-value|{ { (path), "", dialogs_add_tab_cmd_callback, 0, \       "<StockItem>", (stock_id) }, \     (id), (help_id), NULL }
+value|{ { (path), "", dockable_add_tab_cmd_callback, 0, \       "<StockItem>", (stock_id) }, \     (id), (help_id), NULL }
 end_define
 
 begin_define
@@ -140,7 +140,7 @@ parameter_list|,
 name|size
 parameter_list|)
 define|\
-value|{ { (path), NULL, dialogs_preview_size_cmd_callback, \       (size), "/Preview Size/Tiny" }, \     NULL, GIMP_HELP_DOCK_PREVIEW_SIZE, NULL }
+value|{ { (path), NULL, dockable_preview_size_cmd_callback, \       (size), "/Preview Size/Tiny" }, \     NULL, GIMP_HELP_DOCK_PREVIEW_SIZE, NULL }
 end_define
 
 begin_define
@@ -154,7 +154,7 @@ parameter_list|,
 name|style
 parameter_list|)
 define|\
-value|{ { (path), NULL, dialogs_tab_style_cmd_callback, \       (style), "/Tab Style/Icon" }, \     NULL, GIMP_HELP_DOCK_TAB_STYLE, NULL }
+value|{ { (path), NULL, dockable_tab_style_cmd_callback, \       (style), "/Tab Style/Icon" }, \     NULL, GIMP_HELP_DOCK_TAB_STYLE, NULL }
 end_define
 
 begin_decl_stmt
@@ -526,7 +526,7 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|dialogs_close_tab_cmd_callback
+name|dockable_close_tab_cmd_callback
 block|,
 literal|0
 block|,
@@ -551,7 +551,7 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|dialogs_detach_tab_cmd_callback
+name|dockable_detach_tab_cmd_callback
 block|,
 literal|0
 block|,
@@ -589,7 +589,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_preview_size_cmd_callback
+name|dockable_preview_size_cmd_callback
 block|,
 name|GIMP_PREVIEW_SIZE_TINY
 block|,
@@ -700,7 +700,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_tab_style_cmd_callback
+name|dockable_tab_style_cmd_callback
 block|,
 name|GIMP_TAB_STYLE_ICON
 block|,
@@ -763,7 +763,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_toggle_view_cmd_callback
+name|dockable_toggle_view_cmd_callback
 block|,
 name|GIMP_VIEW_TYPE_LIST
 block|,
@@ -786,7 +786,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_toggle_view_cmd_callback
+name|dockable_toggle_view_cmd_callback
 block|,
 name|GIMP_VIEW_TYPE_GRID
 block|,
@@ -814,7 +814,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_toggle_image_menu_cmd_callback
+name|dockable_toggle_image_menu_cmd_callback
 block|,
 literal|0
 block|,
@@ -837,7 +837,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_toggle_auto_cmd_callback
+name|dockable_toggle_auto_cmd_callback
 block|,
 literal|0
 block|,
@@ -860,7 +860,7 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|dialogs_change_screen_cmd_callback
+name|dockable_change_screen_cmd_callback
 block|,
 literal|0
 block|,

@@ -115,7 +115,7 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|palette_editor_new_color_cmd_callback
+name|palette_editor_new_color_fg_cmd_callback
 block|,
 literal|0
 block|,
@@ -140,9 +140,9 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|palette_editor_new_color_cmd_callback
+name|palette_editor_new_color_bg_cmd_callback
 block|,
-name|TRUE
+literal|0
 block|,
 literal|"<StockItem>"
 block|,
