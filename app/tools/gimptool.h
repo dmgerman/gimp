@@ -130,6 +130,16 @@ modifier|*
 name|drawable
 decl_stmt|;
 comment|/*  pointer to the tool's current drawable */
+comment|/*  focus_display and modifier_state are *private* state of    *  gimp_tool_set_focus_display() and gimp_tool_set_modifier_state().    *  ignore them in tool implementations, they don't exist!    */
+DECL|member|focus_display
+name|GimpDisplay
+modifier|*
+name|focus_display
+decl_stmt|;
+DECL|member|modifier_state
+name|GdkModifierType
+name|modifier_state
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -491,17 +501,26 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_tool_modifier_key
+name|gimp_tool_set_focus_display
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
-name|GdkModifierType
-name|key
-parameter_list|,
-name|gboolean
-name|press
+name|GimpDisplay
+modifier|*
+name|gdisp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_set_modifier_state
+parameter_list|(
+name|GimpTool
+modifier|*
+name|tool
 parameter_list|,
 name|GdkModifierType
 name|state

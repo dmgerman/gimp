@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c5fd40103
+DECL|enum|__anon293ec24f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -862,11 +862,33 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-comment|/*  clear out the pointer to this gdisp from the active tool  */
 if|if
 condition|(
 name|active_tool
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
+name|active_tool
+operator|->
+name|focus_display
+operator|==
+name|gdisp
+condition|)
+name|tool_manager_focus_display_active
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/*  clear out the pointer to this gdisp from the active tool  */
+if|if
+condition|(
 name|active_tool
 operator|->
 name|gdisp
@@ -886,6 +908,7 @@ name|gdisp
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 block|}
 comment|/* If this gdisplay was idlerendering at the time when it was deleted,    * deactivate the idlerendering thread before deletion!    */
 if|if
