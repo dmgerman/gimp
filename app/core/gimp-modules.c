@@ -93,6 +93,14 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+condition|)
+block|{
 name|gimp
 operator|->
 name|module_db
@@ -110,6 +118,7 @@ name|write_modulerc
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -191,6 +200,13 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|no_interface
+condition|)
+return|return;
 name|filename
 operator|=
 name|gimp_personal_rc_file
@@ -524,6 +540,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+operator|&&
 name|gimp
 operator|->
 name|write_modulerc
@@ -701,10 +722,6 @@ modifier|*
 name|gimp
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|path
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -713,6 +730,18 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+condition|)
+block|{
+name|gchar
+modifier|*
+name|path
+decl_stmt|;
 name|path
 operator|=
 name|gimp_config_path_expand
@@ -742,6 +771,7 @@ argument_list|(
 name|path
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
