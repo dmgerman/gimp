@@ -195,7 +195,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 name|gchar
@@ -460,6 +460,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*   *  Description:  *      perform registered plug-in function   *  *  Arguments:  *      name         - name of the function to perform  *      nparams      - number of parameters passed to the function  *      param        - parameters passed to the function  *      nreturn_vals - number of parameters returned by the function  *      return_vals  - parameters returned by the function  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -487,7 +491,6 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
-comment|/*     *  Description:    *      perform registered plug-in function     *    *  Arguments:    *      name         - name of the function to perform    *      nparams      - number of parameters passed to the function    *      param        - parameters passed to the function    *      nreturn_vals - number of parameters returned by the function    *      return_vals  - parameters returned by the function    */
 specifier|static
 name|GimpParam
 name|values
@@ -798,6 +801,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     bit ordering should not matter   */
+end_comment
+
 begin_function
 specifier|static
 name|guint16
@@ -809,7 +816,6 @@ modifier|*
 name|file
 parameter_list|)
 block|{
-comment|/*     * Description:    *     Reads a 16-bit integer from a file in such a way that the machine's    *     bit ordering should not matter     */
 name|guchar
 name|buf
 index|[
@@ -849,6 +855,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*   * Description:  *     Reads a 16-bit integer from a file in such a way that the machine's  *     bit ordering should not matter   */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -863,7 +873,6 @@ modifier|*
 name|file
 parameter_list|)
 block|{
-comment|/*     * Description:    *     Reads a 16-bit integer from a file in such a way that the machine's    *     bit ordering should not matter     */
 name|guchar
 name|buf
 index|[
@@ -912,6 +921,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  *  Description:  *      load the given image into gimp  *   *  Arguments:  *      filename      - name on the file to read  *  *  Return Value:  *      Image id for the loaded image  *        */
+end_comment
+
 begin_function
 specifier|static
 name|gint32
@@ -923,7 +936,6 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-comment|/*    *  Description:    *      load the given image into gimp    *     *  Arguments:    *      filename      - name on the file to read    *    *  Return Value:    *      Image id for the loaded image    *          */
 name|gint
 name|i
 decl_stmt|,
@@ -998,7 +1010,7 @@ argument_list|(
 name|progMessage
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|progMessage
 argument_list|)
@@ -1281,12 +1293,10 @@ operator|<
 name|height
 condition|;
 name|i
-operator|+=
-literal|1
+operator|++
 operator|,
 name|row
-operator|+=
-literal|1
+operator|++
 control|)
 block|{
 name|guchar
@@ -1420,7 +1430,7 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-name|free
+name|g_free
 argument_list|(
 name|dest_base
 argument_list|)
@@ -1482,12 +1492,10 @@ operator|<
 name|height
 condition|;
 name|i
-operator|+=
-literal|1
+operator|++
 operator|,
 name|row
-operator|+=
-literal|1
+operator|++
 control|)
 block|{
 name|guchar
@@ -1628,9 +1636,13 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*   *  Description:  *      save the given file out as an alias pix or matte file  *   *  Arguments:   *      filename    - name of file to save to  *      image_ID    - ID of image to save  *      drawable_ID - current drawable  */
+end_comment
+
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_image (gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
@@ -1645,7 +1657,6 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
-comment|/*   *  Description:  *      save the given file out as an alias pix or matte file  *   *  Arguments:   *      filename    - name of file to save to  *      image_ID    - ID of image to save  *      drawable_ID - current drawable  */
 name|gint
 name|depth
 decl_stmt|,
@@ -1661,7 +1672,6 @@ name|writelen
 decl_stmt|,
 name|rectHeight
 decl_stmt|;
-comment|/* gboolean   savingAlpha = FALSE; */
 name|gboolean
 name|savingColor
 init|=
@@ -1722,68 +1732,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-switch|switch
-condition|(
-name|gimp_drawable_type
+name|savingColor
+operator|=
+name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_ID
 argument_list|)
-condition|)
-block|{
-case|case
-name|GIMP_GRAY_IMAGE
-case|:
-name|savingColor
-operator|=
-name|FALSE
 expr_stmt|;
 name|depth
 operator|=
-literal|1
+name|gimp_drawable_bytes
+argument_list|(
+name|drawable_ID
+argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_GRAYA_IMAGE
-case|:
-name|savingColor
-operator|=
-name|FALSE
-expr_stmt|;
-name|depth
-operator|=
-literal|2
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_RGB_IMAGE
-case|:
-name|savingColor
-operator|=
-name|TRUE
-expr_stmt|;
-name|depth
-operator|=
-literal|3
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_RGBA_IMAGE
-case|:
-name|savingColor
-operator|=
-name|TRUE
-expr_stmt|;
-name|depth
-operator|=
-literal|4
-expr_stmt|;
-break|break;
-default|default:
-return|return
-name|FALSE
-return|;
-block|}
-empty_stmt|;
 comment|/* Open the output file. */
 name|file
 operator|=
@@ -1820,7 +1782,7 @@ argument_list|(
 name|progMessage
 argument_list|)
 expr_stmt|;
-name|free
+name|g_free
 argument_list|(
 name|progMessage
 argument_list|)
@@ -1876,29 +1838,6 @@ argument_list|,
 name|file
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|savingColor
-condition|)
-block|{
-name|put_short
-argument_list|(
-literal|24
-argument_list|,
-name|file
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|put_short
-argument_list|(
-literal|8
-argument_list|,
-name|file
-argument_list|)
-expr_stmt|;
-block|}
 name|tile_height
 operator|=
 name|gimp_tile_height
@@ -1931,6 +1870,13 @@ index|[
 literal|4
 index|]
 decl_stmt|;
+name|put_short
+argument_list|(
+literal|24
+argument_list|,
+name|file
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -2234,6 +2180,13 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+name|put_short
+argument_list|(
+literal|8
+argument_list|,
+name|file
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
