@@ -188,24 +188,11 @@ comment|/* paint once, then stop, but run the gradient the other way */
 end_comment
 
 begin_define
-DECL|macro|ONCE_END_COLOR
-define|#
-directive|define
-name|ONCE_END_COLOR
-value|2
-end_define
-
-begin_comment
-DECL|macro|ONCE_END_COLOR
-comment|/* paint once, but keep painting with the end color */
-end_comment
-
-begin_define
 DECL|macro|LOOP_SAWTOOTH
 define|#
 directive|define
 name|LOOP_SAWTOOTH
-value|3
+value|2
 end_define
 
 begin_comment
@@ -218,12 +205,25 @@ DECL|macro|LOOP_TRIANGLE
 define|#
 directive|define
 name|LOOP_TRIANGLE
-value|4
+value|3
 end_define
 
 begin_comment
 DECL|macro|LOOP_TRIANGLE
 comment|/* keep paiting, looping though the grad start->end,end->start /\/\/\/  */
+end_comment
+
+begin_define
+DECL|macro|ONCE_END_COLOR
+define|#
+directive|define
+name|ONCE_END_COLOR
+value|4
+end_define
+
+begin_comment
+DECL|macro|ONCE_END_COLOR
+comment|/* paint once, but keep painting with the end color */
 end_comment
 
 begin_typedef
