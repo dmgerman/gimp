@@ -26,7 +26,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"../ppport.h"
+file|"../gppport.h"
 end_include
 
 begin_decl_stmt
