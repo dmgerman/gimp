@@ -110,7 +110,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint32
-name|doit
+name|smooth_palette
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -299,7 +299,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2afb7fcc0108
+DECL|struct|__anon2784ee6a0108
 block|{
 DECL|member|width
 name|gint
@@ -664,7 +664,7 @@ name|data
 operator|.
 name|d_image
 operator|=
-name|doit
+name|smooth_palette
 argument_list|(
 name|drawable
 argument_list|,
@@ -916,8 +916,8 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|doit (GimpDrawable * drawable,gint32 * layer_id)
-name|doit
+DECL|function|smooth_palette (GimpDrawable * drawable,gint32 * layer_id)
+name|smooth_palette
 parameter_list|(
 name|GimpDrawable
 modifier|*

@@ -172,7 +172,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|doit
+name|flame
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -496,7 +496,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bf39ccd0108
+DECL|struct|__anon27bf18230108
 block|{
 DECL|member|randomize
 name|gint
@@ -1027,7 +1027,7 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|doit
+name|flame
 argument_list|(
 name|drawable
 argument_list|)
@@ -1424,8 +1424,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|doit (GimpDrawable * drawable)
-name|doit
+DECL|function|flame (GimpDrawable * drawable)
+name|flame
 parameter_list|(
 name|GimpDrawable
 modifier|*

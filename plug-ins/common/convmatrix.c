@@ -91,7 +91,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2766c9c80103
+DECL|enum|__anon2969b55d0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -242,7 +242,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|doit
+name|convmatrix
 parameter_list|(
 name|void
 parameter_list|)
@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2766c9c80208
+DECL|struct|__anon2969b55d0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -459,7 +459,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2766c9c80308
+DECL|struct|__anon2969b55d0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -1105,7 +1105,7 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|doit
+name|convmatrix
 argument_list|()
 expr_stmt|;
 if|if
@@ -2006,8 +2006,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|doit (void)
-name|doit
+DECL|function|convmatrix (void)
+name|convmatrix
 parameter_list|(
 name|void
 parameter_list|)
