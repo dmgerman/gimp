@@ -401,11 +401,6 @@ specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
-parameter_list|,
-specifier|const
-name|GimpAnchor
-modifier|*
-name|active
 parameter_list|)
 function_decl|;
 DECL|member|get_draw_lines
@@ -420,11 +415,6 @@ specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
-parameter_list|,
-specifier|const
-name|GimpAnchor
-modifier|*
-name|active
 parameter_list|)
 function_decl|;
 block|}
@@ -719,11 +709,6 @@ specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
-parameter_list|,
-specifier|const
-name|GimpAnchor
-modifier|*
-name|active
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -737,11 +722,6 @@ specifier|const
 name|GimpStroke
 modifier|*
 name|stroke
-parameter_list|,
-specifier|const
-name|GimpAnchor
-modifier|*
-name|active
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -187,6 +187,9 @@ parameter_list|,
 name|GimpAnchor
 modifier|*
 name|neighbor
+parameter_list|,
+name|GimpVectorExtendMode
+name|extend_mode
 parameter_list|)
 function_decl|;
 end_function_decl
