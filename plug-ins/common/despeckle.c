@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Michael Sweet.  This code is based off Quartic's bumpmap  *   filter and the median filter (described in most image processing books...)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   despeckle()                 - Despeckle an image using a median filter.  *   despeckle_dialog()          -  Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_adaptive_callback()  - Update the filter type...  *   dialog_recursive_callback() - Update the filter type...  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.2  1997/12/09 05:57:27  adrian  *   	added glasstile, colorify, papertile, and illusion plugins  *  *   	updated despeckle, and math map  *  *   Revision 1.14  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.13  1997/11/12  15:53:34  mike  *   Added<string.h> header file for Digital UNIX...  *  *   Revision 1.12  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.11  1997/06/12  16:58:11  mike  *   Optimized final despeckle - now grab gimp_tile_height() rows at a time  *   for faster filtering.  *  *   Revision 1.10  1997/06/08  23:30:29  mike  *   Improved the preview update speed significantly by loading the entire  *   source (preview) image first.  *  *   Revision 1.9  1997/06/08  16:48:21  mike  *   Renamed "adaptive" argument to "type" (filter type).  *  *   Revision 1.8  1997/06/08  12:45:09  mike  *   Added recursive filter option.  *   Cleaned up UI.  *  *   Revision 1.7  1997/06/08  04:27:19  mike  *   Updated documentation.  *   Moved plug-in back to original location in menu tree.  *  *   Revision 1.6  1997/06/08  04:24:56  mike  *   Added filter type argument& control.  *  *   Revision 1.5  1997/06/08  04:12:36  mike  *   Added preview window.  *  *   Revision 1.4  1997/06/08  02:18:22  mike  *   Updated to adjust the despeckling radius based upon the window's  *   histogram.  This improves filter quality significantly as surface  *   details are preserved and not blurred...  *  *   Revision 1.3  1997/06/07  01:29:47  mike  *   Added some minor optimizations.  *   Updated version to 1.01.  *   Fixed minor bug in dialog_ientry_update() - was using gdouble instead  *   of gint for new_value...  *  *   Revision 1.2  1997/06/07  01:03:07  mike  *   Updated docos, changed maximum radius to 20.  *  *   Revision 1.1  1997/06/07  00:01:15  mike  *   Initial Revision.  */
+comment|/*  * "$Id$"  *  *   Despeckle (adaptive median) filter for The GIMP -- an image manipulation  *   program  *  *   Copyright 1997 Michael Sweet.  This code is based off Quartic's bumpmap  *   filter and the median filter (described in most image processing books...)  *  *   This program is free software; you can redistribute it and/or modify  *   it under the terms of the GNU General Public License as published by  *   the Free Software Foundation; either version 2 of the License, or  *   (at your option) any later version.  *  *   This program is distributed in the hope that it will be useful,  *   but WITHOUT ANY WARRANTY; without even the implied warranty of  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  *   GNU General Public License for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  * Contents:  *  *   main()                      - Main entry - just call gimp_main()...  *   query()                     - Respond to a plug-in query...  *   run()                       - Run the filter...  *   despeckle()                 - Despeckle an image using a median filter.  *   despeckle_dialog()          -  Popup a dialog window for the filter box size...  *   preview_init()              - Initialize the preview window...  *   preview_scroll_callback()   - Update the preview when a scrollbar is moved.  *   preview_update()            - Update the preview window.  *   preview_exit()              - Free all memory used by the preview window...  *   dialog_create_ivalue()      - Create an integer value control...  *   dialog_iscale_update()      - Update the value field using the scale.  *   dialog_ientry_update()      - Update the value field using the text entry.  *   dialog_adaptive_callback()  - Update the filter type...  *   dialog_recursive_callback() - Update the filter type...  *   dialog_ok_callback()        - Start the filter...  *   dialog_cancel_callback()    - Cancel the filter...  *   dialog_close_callback()     - Exit the filter dialog application.  *  * Revision History:  *  *   $Log$  *   Revision 1.3  1998/01/04 19:20:55  scott  *   * plug-ins/despeckle/despeckle.c: realloc buffers when the radius  *   of effect changes; save all values (not just radius) in plugin  *   data store; adjusted parameter handling to match PDB registration.  *   The algorithm still generates artifacts in the top rows of the  *   image. --sg  *   #  *  *   Revision 1.2  1997/12/09 05:57:27  adrian  *   	added glasstile, colorify, papertile, and illusion plugins  *  *   	updated despeckle, and math map  *  *   Revision 1.14  1997/11/14  17:17:59  mike  *   Updated to dynamically allocate return params in the run() function.  *  *   Revision 1.13  1997/11/12  15:53:34  mike  *   Added<string.h> header file for Digital UNIX...  *  *   Revision 1.12  1997/10/17  13:56:54  mike  *   Updated author/contact information.  *  *   Revision 1.11  1997/06/12  16:58:11  mike  *   Optimized final despeckle - now grab gimp_tile_height() rows at a time  *   for faster filtering.  *  *   Revision 1.10  1997/06/08  23:30:29  mike  *   Improved the preview update speed significantly by loading the entire  *   source (preview) image first.  *  *   Revision 1.9  1997/06/08  16:48:21  mike  *   Renamed "adaptive" argument to "type" (filter type).  *  *   Revision 1.8  1997/06/08  12:45:09  mike  *   Added recursive filter option.  *   Cleaned up UI.  *  *   Revision 1.7  1997/06/08  04:27:19  mike  *   Updated documentation.  *   Moved plug-in back to original location in menu tree.  *  *   Revision 1.6  1997/06/08  04:24:56  mike  *   Added filter type argument& control.  *  *   Revision 1.5  1997/06/08  04:12:36  mike  *   Added preview window.  *  *   Revision 1.4  1997/06/08  02:18:22  mike  *   Updated to adjust the despeckling radius based upon the window's  *   histogram.  This improves filter quality significantly as surface  *   details are preserved and not blurred...  *  *   Revision 1.3  1997/06/07  01:29:47  mike  *   Added some minor optimizations.  *   Updated version to 1.01.  *   Fixed minor bug in dialog_ientry_update() - was using gdouble instead  *   of gint for new_value...  *  *   Revision 1.2  1997/06/07  01:03:07  mike  *   Updated docos, changed maximum radius to 20.  *  *   Revision 1.1  1997/06/07  00:01:15  mike  *   Initial Revision.  */
 end_comment
 
 begin_include
@@ -142,6 +142,26 @@ directive|define
 name|FILTER_RECURSIVE
 value|0x02
 end_define
+
+begin_typedef
+DECL|struct|_despeckle_values
+typedef|typedef
+struct|struct
+name|_despeckle_values
+block|{
+DECL|member|radius
+name|int
+name|radius
+decl_stmt|;
+DECL|member|filter_type
+name|int
+name|filter_type
+decl_stmt|;
+DECL|typedef|DespeckleVals
+block|}
+name|DespeckleVals
+typedef|;
+end_typedef
 
 begin_comment
 comment|/*  * Local functions...  */
@@ -427,6 +447,18 @@ comment|/* Lower-right Y of preview */
 end_comment
 
 begin_decl_stmt
+DECL|variable|preview_buf_size
+name|int
+name|preview_buf_size
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|preview_buf_size
+comment|/* Allocated buffer size */
+end_comment
+
+begin_decl_stmt
 DECL|variable|preview_src
 name|guchar
 modifier|*
@@ -528,33 +560,6 @@ comment|/* Bytes-per-pixel in image */
 end_comment
 
 begin_decl_stmt
-DECL|variable|despeckle_radius
-name|int
-name|despeckle_radius
-init|=
-literal|3
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|despeckle_radius
-comment|/* Radius of median filter box */
-end_comment
-
-begin_decl_stmt
-DECL|variable|filter_type
-name|int
-name|filter_type
-init|=
-name|FILTER_ADAPTIVE
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/* Type of filter */
-end_comment
-
-begin_decl_stmt
 DECL|variable|run_filter
 name|gint
 name|run_filter
@@ -567,6 +572,21 @@ begin_comment
 DECL|variable|run_filter
 comment|/* True if we should run the filter */
 end_comment
+
+begin_decl_stmt
+DECL|variable|despeckle_vals
+name|DespeckleVals
+name|despeckle_vals
+init|=
+block|{
+literal|3
+block|,
+comment|/* Radius of median filter box */
+name|FILTER_ADAPTIVE
+comment|/* Type of filter */
+block|}
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  * 'main()' - Main entry - just call gimp_main()...  */
@@ -895,7 +915,7 @@ argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 operator|&
-name|despeckle_radius
+name|despeckle_vals
 argument_list|)
 expr_stmt|;
 comment|/*         * Get information from the dialog...         */
@@ -915,14 +935,17 @@ if|if
 condition|(
 name|nparams
 operator|!=
-literal|4
+literal|5
 condition|)
 name|status
 operator|=
 name|STATUS_CALLING_ERROR
 expr_stmt|;
 else|else
-name|despeckle_radius
+block|{
+name|despeckle_vals
+operator|.
+name|radius
 operator|=
 name|param
 index|[
@@ -933,6 +956,20 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
+name|despeckle_vals
+operator|.
+name|filter_type
+operator|=
+name|param
+index|[
+literal|4
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
@@ -943,7 +980,7 @@ argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 operator|&
-name|despeckle_radius
+name|despeckle_vals
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1027,11 +1064,11 @@ argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
 operator|&
-name|despeckle_radius
+name|despeckle_vals
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|despeckle_radius
+name|despeckle_vals
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1216,7 +1253,9 @@ argument_list|)
 expr_stmt|;
 name|size
 operator|=
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 operator|*
 literal|2
 operator|+
@@ -1385,7 +1424,9 @@ condition|(
 operator|(
 name|y
 operator|+
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 operator|)
 operator|>=
 name|lasty
@@ -1461,7 +1502,9 @@ empty_stmt|;
 comment|/*     * Now find the median pixels and save the results...     */
 name|radius
 operator|=
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 expr_stmt|;
 for|for
 control|(
@@ -1793,6 +1836,8 @@ expr_stmt|;
 comment|/*       * Save the change to the source image too if the user wants the       * recursive method...       */
 if|if
 condition|(
+name|despeckle_vals
+operator|.
 name|filter_type
 operator|&
 name|FILTER_RECURSIVE
@@ -1823,6 +1868,8 @@ expr_stmt|;
 comment|/*       * Check the histogram and adjust the radius accordingly...       */
 if|if
 condition|(
+name|despeckle_vals
+operator|.
 name|filter_type
 operator|&
 name|FILTER_ADAPTIVE
@@ -1843,7 +1890,9 @@ if|if
 condition|(
 name|radius
 operator|<
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 condition|)
 name|radius
 operator|++
@@ -2685,6 +2734,8 @@ name|button
 argument_list|)
 argument_list|,
 operator|(
+name|despeckle_vals
+operator|.
 name|filter_type
 operator|&
 name|FILTER_ADAPTIVE
@@ -2762,6 +2813,8 @@ name|button
 argument_list|)
 argument_list|,
 operator|(
+name|despeckle_vals
+operator|.
 name|filter_type
 operator|&
 name|FILTER_RECURSIVE
@@ -2807,7 +2860,9 @@ argument_list|,
 literal|2
 argument_list|,
 operator|&
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 argument_list|,
 literal|1
 argument_list|,
@@ -2991,9 +3046,6 @@ name|void
 parameter_list|)
 block|{
 name|int
-name|row
-decl_stmt|,
-comment|/* Current row in preview_srcs */
 name|size
 decl_stmt|,
 comment|/* Size of filter box */
@@ -3001,9 +3053,13 @@ name|width
 decl_stmt|;
 comment|/* Byte width of the image */
 comment|/*   * Setup for preview filter...   */
+name|preview_buf_size
+operator|=
 name|size
 operator|=
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 operator|*
 literal|2
 operator|+
@@ -3259,7 +3315,9 @@ expr_stmt|;
 comment|/*   * Pre-load the preview rectangle...   */
 name|size
 operator|=
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 operator|*
 literal|2
 operator|+
@@ -3271,6 +3329,61 @@ name|preview_width
 operator|*
 name|img_bpp
 expr_stmt|;
+if|if
+condition|(
+name|size
+operator|!=
+name|preview_buf_size
+condition|)
+block|{
+name|preview_src
+operator|=
+name|g_realloc
+argument_list|(
+name|preview_src
+argument_list|,
+name|width
+operator|*
+name|preview_height
+operator|*
+sizeof|sizeof
+argument_list|(
+name|guchar
+operator|*
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|preview_dst
+operator|=
+name|g_realloc
+argument_list|(
+name|preview_dst
+argument_list|,
+name|width
+operator|*
+sizeof|sizeof
+argument_list|(
+name|guchar
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|preview_sort
+operator|=
+name|g_realloc
+argument_list|(
+name|preview_sort
+argument_list|,
+name|size
+operator|*
+name|size
+operator|*
+sizeof|sizeof
+argument_list|(
+name|guchar
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_pixel_rgn_get_rect
 argument_list|(
 operator|&
@@ -3305,7 +3418,9 @@ block|{
 comment|/*     * Now find the median pixels and save the results...     */
 name|radius
 operator|=
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 expr_stmt|;
 if|if
 condition|(
@@ -3634,6 +3749,8 @@ expr_stmt|;
 comment|/* 	* Save the change to the source image too if the user wants the 	* recursive method... 	*/
 if|if
 condition|(
+name|despeckle_vals
+operator|.
 name|filter_type
 operator|&
 name|FILTER_RECURSIVE
@@ -3653,6 +3770,8 @@ expr_stmt|;
 comment|/* 	* Check the histogram and adjust the radius accordingly... 	*/
 if|if
 condition|(
+name|despeckle_vals
+operator|.
 name|filter_type
 operator|&
 name|FILTER_ADAPTIVE
@@ -3673,7 +3792,9 @@ if|if
 condition|(
 name|radius
 operator|<
-name|despeckle_radius
+name|despeckle_vals
+operator|.
+name|radius
 condition|)
 name|radius
 operator|++
@@ -3904,9 +4025,6 @@ name|void
 parameter_list|)
 block|{
 name|int
-name|row
-decl_stmt|,
-comment|/* Looping var */
 name|size
 decl_stmt|;
 comment|/* Size of row buffer */
@@ -4507,11 +4625,15 @@ argument_list|)
 operator|->
 name|active
 condition|)
+name|despeckle_vals
+operator|.
 name|filter_type
 operator||=
 name|FILTER_ADAPTIVE
 expr_stmt|;
 else|else
+name|despeckle_vals
+operator|.
 name|filter_type
 operator|&=
 operator|~
@@ -4552,11 +4674,15 @@ argument_list|)
 operator|->
 name|active
 condition|)
+name|despeckle_vals
+operator|.
 name|filter_type
 operator||=
 name|FILTER_RECURSIVE
 expr_stmt|;
 else|else
+name|despeckle_vals
+operator|.
 name|filter_type
 operator|&=
 operator|~
