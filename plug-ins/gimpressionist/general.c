@@ -1380,7 +1380,7 @@ literal|4
 argument_list|,
 name|_
 argument_list|(
-literal|"Deviation treshold:"
+literal|"Deviation threshold:"
 argument_list|)
 argument_list|,
 literal|150
