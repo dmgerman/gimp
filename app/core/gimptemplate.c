@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b3ef750103
+DECL|enum|__anon29b6b9960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1562,7 +1562,7 @@ name|gimage
 argument_list|,
 name|template
 operator|->
-name|unit
+name|resolution_unit
 argument_list|)
 expr_stmt|;
 name|width
@@ -1685,6 +1685,10 @@ argument_list|(
 name|gimp
 argument_list|,
 name|gimage
+argument_list|,
+name|template
+operator|->
+name|unit
 argument_list|,
 literal|1.0
 argument_list|)

@@ -618,11 +618,7 @@ name|gimp_size_entry_new
 argument_list|(
 literal|1
 argument_list|,
-name|off_d
-operator|->
-name|gimage
-operator|->
-name|unit
+name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|"%a"
 argument_list|,

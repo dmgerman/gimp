@@ -261,11 +261,14 @@ begin_function_decl
 specifier|static
 name|GimpObject
 modifier|*
-name|gui_display_new
+name|gui_create_display
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpUnit
+name|unit
 parameter_list|,
 name|gdouble
 name|scale
@@ -532,7 +535,7 @@ name|gimp
 operator|->
 name|gui_create_display_func
 operator|=
-name|gui_display_new
+name|gui_create_display
 expr_stmt|;
 name|gimp
 operator|->
@@ -801,12 +804,15 @@ begin_function
 specifier|static
 name|GimpObject
 modifier|*
-DECL|function|gui_display_new (GimpImage * gimage,gdouble scale)
-name|gui_display_new
+DECL|function|gui_create_display (GimpImage * gimage,GimpUnit unit,gdouble scale)
+name|gui_create_display
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpUnit
+name|unit
 parameter_list|,
 name|gdouble
 name|scale
@@ -836,6 +842,8 @@ operator|=
 name|gimp_display_new
 argument_list|(
 name|gimage
+argument_list|,
+name|unit
 argument_list|,
 name|scale
 argument_list|,

@@ -225,6 +225,9 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
+name|GimpUnit
+name|unit
+parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,

@@ -267,7 +267,7 @@ DECL|member|unit
 name|GimpUnit
 name|unit
 decl_stmt|;
-comment|/*  image unit                   */
+comment|/*  resolution unit              */
 DECL|member|base_type
 name|GimpImageBaseType
 name|base_type

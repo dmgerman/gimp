@@ -255,7 +255,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29740cba0103
+DECL|enum|__anon29f400250103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -5003,7 +5003,7 @@ end_function
 begin_function
 name|GimpObject
 modifier|*
-DECL|function|gimp_create_display (Gimp * gimp,GimpImage * gimage,gdouble scale)
+DECL|function|gimp_create_display (Gimp * gimp,GimpImage * gimage,GimpUnit unit,gdouble scale)
 name|gimp_create_display
 parameter_list|(
 name|Gimp
@@ -5013,6 +5013,9 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GimpUnit
+name|unit
 parameter_list|,
 name|gdouble
 name|scale
@@ -5058,6 +5061,8 @@ operator|->
 name|gui_create_display_func
 argument_list|(
 name|gimage
+argument_list|,
+name|unit
 argument_list|,
 name|scale
 argument_list|)

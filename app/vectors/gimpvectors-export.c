@@ -635,6 +635,7 @@ name|image
 operator|->
 name|yresolution
 expr_stmt|;
+comment|/*  FIXME: should probably use the display unit here  */
 name|unit
 operator|=
 name|image

@@ -460,7 +460,7 @@ end_function_decl
 begin_function
 name|ResizeDialog
 modifier|*
-DECL|function|resize_dialog_new (GimpViewable * viewable,GtkWidget * parent,ResizeType type,gint width,gint height,gdouble resolution_x,gdouble resolution_y,GimpUnit unit,gboolean dot_for_dot,GCallback ok_cb,gpointer user_data)
+DECL|function|resize_dialog_new (GimpViewable * viewable,GtkWidget * parent,ResizeType type,gint width,gint height,gdouble resolution_x,gdouble resolution_y,GimpUnit unit,GCallback ok_cb,gpointer user_data)
 name|resize_dialog_new
 parameter_list|(
 name|GimpViewable
@@ -488,9 +488,6 @@ name|resolution_y
 parameter_list|,
 name|GimpUnit
 name|unit
-parameter_list|,
-name|gboolean
-name|dot_for_dot
 parameter_list|,
 name|GCallback
 name|ok_cb
@@ -1742,22 +1739,6 @@ operator|->
 name|size_se
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|dot_for_dot
-condition|)
-name|gimp_size_entry_set_unit
-argument_list|(
-name|GIMP_SIZE_ENTRY
-argument_list|(
-name|private
-operator|->
-name|size_se
-argument_list|)
-argument_list|,
-name|GIMP_UNIT_PIXEL
-argument_list|)
-expr_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -2712,22 +2693,6 @@ argument_list|(
 name|private
 operator|->
 name|offset_se
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|dot_for_dot
-condition|)
-name|gimp_size_entry_set_unit
-argument_list|(
-name|GIMP_SIZE_ENTRY
-argument_list|(
-name|private
-operator|->
-name|offset_se
-argument_list|)
-argument_list|,
-name|GIMP_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_resolution

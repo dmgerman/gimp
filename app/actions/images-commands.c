@@ -238,6 +238,8 @@ name|gimp
 argument_list|,
 name|image
 argument_list|,
+name|GIMP_UNIT_PIXEL
+argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;

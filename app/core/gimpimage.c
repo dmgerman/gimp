@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon290d85b40103
+DECL|enum|__anon27fe9ab20103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1933,7 +1933,7 @@ name|gimage
 operator|->
 name|unit
 operator|=
-name|GIMP_UNIT_PIXEL
+name|GIMP_UNIT_INCH
 expr_stmt|;
 name|gimage
 operator|->
@@ -4404,7 +4404,7 @@ name|config
 operator|->
 name|default_image
 operator|->
-name|unit
+name|resolution_unit
 expr_stmt|;
 name|gimage
 operator|->
@@ -5264,6 +5264,13 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|unit
+operator|>
+name|GIMP_UNIT_PIXEL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimage
@@ -5316,7 +5323,7 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|,
-name|GIMP_UNIT_PIXEL
+name|GIMP_UNIT_INCH
 argument_list|)
 expr_stmt|;
 return|return

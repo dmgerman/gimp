@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c357980103
+DECL|enum|__anon2c4cb5ee0103
 block|{
 DECL|enumerator|SCALE_DIALOG
 name|SCALE_DIALOG
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c357980203
+DECL|enum|__anon2c4cb5ee0203
 block|{
 DECL|enumerator|RESIZE_IMAGE
 name|RESIZE_IMAGE
@@ -158,9 +158,6 @@ name|resolution_y
 parameter_list|,
 name|GimpUnit
 name|unit
-parameter_list|,
-name|gboolean
-name|dot_for_dot
 parameter_list|,
 name|GCallback
 name|ok_cb

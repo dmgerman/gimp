@@ -13620,7 +13620,7 @@ if|if
 condition|(
 name|unit
 operator|<
-name|GIMP_UNIT_PIXEL
+name|GIMP_UNIT_INCH
 operator|||
 name|unit
 operator|>=
