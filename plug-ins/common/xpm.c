@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c53990108
+DECL|struct|__anon275d69aa0108
 block|{
 DECL|member|threshold
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c53990208
+DECL|struct|__anon275d69aa0208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c53990308
+DECL|struct|__anon275d69aa0308
 block|{
 DECL|member|r
 name|guchar
@@ -699,9 +699,6 @@ name|d_status
 operator|=
 name|STATUS_EXECUTION_ERROR
 expr_stmt|;
-name|INIT_I18N
-argument_list|()
-expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -714,6 +711,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|image_ID
 operator|=
 name|load_image
@@ -783,6 +783,9 @@ operator|==
 literal|0
 condition|)
 block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|init_gtk
 argument_list|()
 expr_stmt|;
