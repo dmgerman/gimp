@@ -4128,13 +4128,11 @@ name|flip_type
 condition|)
 block|{
 case|case
-literal|0
+name|FLIP_HORZ
 case|:
-comment|/* horz */
 case|case
-literal|1
+name|FLIP_VERT
 case|:
-comment|/* vert */
 name|new_tiles
 operator|=
 name|flip_tool_flip
