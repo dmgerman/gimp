@@ -35,7 +35,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5c87890103
+DECL|enum|__anon2c3fe56b0103
 block|{
 DECL|enumerator|GIMP_DROP_NONE
 name|GIMP_DROP_NONE
@@ -54,7 +54,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5c87890203
+DECL|enum|__anon2c3fe56b0203
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5c87890303
+DECL|enum|__anon2c3fe56b0303
 block|{
 DECL|enumerator|GIMP_MOUSE_CURSOR
 name|GIMP_MOUSE_CURSOR
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5c87890403
+DECL|enum|__anon2c3fe56b0403
 block|{
 DECL|enumerator|GIMP_TOOL_CURSOR_NONE
 name|GIMP_TOOL_CURSOR_NONE
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5c87890503
+DECL|enum|__anon2c3fe56b0503
 block|{
 DECL|enumerator|GIMP_CURSOR_MODIFIER_NONE
 name|GIMP_CURSOR_MODIFIER_NONE
@@ -617,6 +617,11 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|tooltip
 parameter_list|)
 function_decl|;
 end_typedef

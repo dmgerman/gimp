@@ -1789,6 +1789,8 @@ name|GTK_WIDGET
 argument_list|(
 name|preview
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text

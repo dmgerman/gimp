@@ -175,6 +175,11 @@ parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|tooltip
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1374,12 +1379,17 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_component_list_item_get_name (GtkWidget * widget)
+DECL|function|gimp_component_list_item_get_name (GtkWidget * widget,gchar ** tooltip)
 name|gimp_component_list_item_get_name
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+name|tooltip
 parameter_list|)
 block|{
 name|GimpComponentListItem
@@ -1392,6 +1402,15 @@ name|GIMP_COMPONENT_LIST_ITEM
 argument_list|(
 name|widget
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tooltip
+condition|)
+operator|*
+name|tooltip
+operator|=
+name|NULL
 expr_stmt|;
 switch|switch
 condition|(
