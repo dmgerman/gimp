@@ -123,10 +123,6 @@ directive|include
 file|"high2.xpm"
 end_include
 
-begin_comment
-comment|/* #include "pixmaps/zoom_in.xpm" #include "pixmaps/zoom_out.xpm" */
-end_comment
-
 begin_decl_stmt
 specifier|extern
 name|LightingValues
@@ -5397,6 +5393,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
+comment|/*   GtkWidget *image;   */
 name|gimp_ui_init
 argument_list|(
 literal|"Lighting"
@@ -5791,7 +5788,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*   button = gimp_pixmap_button_new (zoom_out_xpm, NULL);   gtk_box_pack_end (GTK_BOX (hbox), button, FALSE, FALSE, 0);   g_signal_connect (G_OBJECT (button), "clicked", 		    G_CALLBACK (zoomout_callback), 		    NULL);   gtk_widget_show (button);    gimp_help_set_help_data (button, _("Zoom out (make image smaller)"), NULL);    button = gimp_pixmap_button_new (zoom_in_xpm, NULL);   gtk_box_pack_end (GTK_BOX (hbox), button, FALSE, FALSE, 0);   g_signal_connect (G_OBJECT (button), "clicked", 		    G_CALLBACK (zoomin_callback), 		    NULL);   gtk_widget_show (button);    gimp_help_set_help_data (button, _("Zoom in (make image bigger)"), NULL);   */
+comment|/*   button = gtk_button_new ();   gtk_box_pack_end (GTK_BOX (hbox), button, FALSE, FALSE, 0);   gtk_widget_show (button);    gimp_help_set_help_data (button, _("Zoom out (make image smaller)"), NULL);    image = gtk_image_new_from_stock (GTK_STOCK_ZOOM_OUT, GTK_ICON_SIZE_MENU);   gtk_container_add (GTK_CONTAINER (button), image);   gtk_widget_show (image);    g_signal_connect (G_OBJECT (button), "clicked", 		    G_CALLBACK (zoomout_callback), 		    NULL);    button = gtk_button_new ();   gtk_box_pack_end (GTK_BOX (hbox), button, FALSE, FALSE, 0);   gtk_widget_show (button);    gimp_help_set_help_data (button, _("Zoom in (make image bigger)"), NULL);    image = gtk_image_new_from_stock (GTK_STOCK_ZOOM_IN, GTK_ICON_SIZE_MENU);   gtk_container_add (GTK_CONTAINER (button), image);   gtk_widget_show (image);    g_signal_connect (G_OBJECT (button), "clicked", 		    G_CALLBACK (zoomin_callback), 		    NULL);   */
 name|create_main_notebook
 argument_list|(
 name|main_hbox
