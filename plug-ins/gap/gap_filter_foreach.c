@@ -988,7 +988,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Applying Filter to all Layers .."
+literal|"Applying Filter to all Layers..."
 argument_list|)
 argument_list|)
 expr_stmt|;

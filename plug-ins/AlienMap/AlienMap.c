@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af517d0108
+DECL|struct|__anon294004860108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29af517d0208
+DECL|struct|__anon294004860208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1581,7 +1581,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"AlienMap: Transforming ..."
+literal|"AlienMap: Transforming..."
 argument_list|)
 argument_list|)
 expr_stmt|;

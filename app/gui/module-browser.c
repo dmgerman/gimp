@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2b65341e0103
+DECL|enum|__anon2b82d9780103
 typedef|typedef
 enum|enum
 block|{
@@ -311,7 +311,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b65341e0208
+DECL|struct|__anon2b82d9780208
 typedef|typedef
 struct|struct
 block|{
@@ -428,7 +428,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2b65341e0308
+DECL|struct|__anon2b82d9780308
 typedef|typedef
 struct|struct
 block|{
@@ -1420,6 +1420,18 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|st
+operator|->
+name|table
+argument_list|)
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1706,7 +1718,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b65341e0408
+DECL|struct|__anon2b82d9780408
 typedef|typedef
 struct|struct
 block|{
@@ -1721,7 +1733,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b65341e0503
+DECL|enum|__anon2b82d9780503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -3777,37 +3789,37 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Purpose: "
+literal|"Purpose:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Author: "
+literal|"Author:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Version: "
+literal|"Version:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Copyright: "
+literal|"Copyright:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Date: "
+literal|"Date:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Location: "
+literal|"Location:"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"State: "
+literal|"State:"
 argument_list|)
 block|}
 decl_stmt|;
@@ -4564,7 +4576,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b65341e0608
+DECL|struct|__anon2b82d9780608
 typedef|typedef
 struct|struct
 block|{

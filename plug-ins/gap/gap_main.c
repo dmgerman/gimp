@@ -1572,7 +1572,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Goto Next"
+literal|"<Image>/Video/Goto/Next Frame"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1604,7 +1604,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Goto Prev"
+literal|"<Image>/Video/Goto/Previous Frame"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1636,7 +1636,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Goto First"
+literal|"<Image>/Video/Goto/First Frame"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1668,7 +1668,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Goto Last"
+literal|"<Image>/Video/Goto/Last Frame"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1700,7 +1700,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Goto Any"
+literal|"<Image>/Video/Goto/Any Frame..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -1732,7 +1732,7 @@ name|gap_main_version
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Video/Delete Frames"
+literal|"<Image>/Video/Delete Frames..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
@@ -2230,7 +2230,7 @@ parameter_list|)
 block|{
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a20d1230108
+DECL|struct|__anon27a997a40108
 block|{
 DECL|member|lock
 name|long

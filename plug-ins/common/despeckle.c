@@ -2305,11 +2305,11 @@ name|plugin_name
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s%s"
+literal|"%s %s"
 argument_list|,
 name|_
 argument_list|(
-literal|"Despeckle "
+literal|"Despeckle"
 argument_list|)
 argument_list|,
 name|PLUG_IN_VERSION

@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757f3e50108
+DECL|struct|__anon2b862c0d0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -976,7 +976,7 @@ name|gimp_progress_init
 argument_list|(
 name|_
 argument_list|(
-literal|"Adding Blinds ..."
+literal|"Adding Blinds..."
 argument_list|)
 argument_list|)
 expr_stmt|;
