@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed20b20108
+DECL|struct|__anon2b7ac9260108
 block|{
 DECL|member|width
 DECL|member|height
@@ -930,7 +930,6 @@ block|}
 block|}
 else|else
 block|{
-comment|/* Just copy shit */
 for|for
 control|(
 name|w
