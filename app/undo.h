@@ -376,6 +376,16 @@ end_function_decl
 
 begin_function_decl
 name|int
+name|undo_push_resolution
+parameter_list|(
+name|GImage
+modifier|*
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|int
 name|undo_push_layer_rename
 parameter_list|(
 name|GImage
@@ -533,7 +543,7 @@ comment|/* Argument to undo_event signal emitted by gimages: */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c14d8d80103
+DECL|enum|__anon29d8fe080103
 typedef|typedef
 enum|enum
 block|{

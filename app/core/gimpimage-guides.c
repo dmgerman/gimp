@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2bd2986a0103
+DECL|enum|__anon290a8b7f0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -1523,6 +1523,11 @@ name|gdouble
 name|yresolution
 parameter_list|)
 block|{
+name|undo_push_resolution
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|->
 name|xresolution
@@ -1593,6 +1598,11 @@ name|GUnit
 name|unit
 parameter_list|)
 block|{
+name|undo_push_resolution
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
 name|gimage
 operator|->
 name|unit
