@@ -56,12 +56,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -75,27 +69,6 @@ end_comment
 
 begin_comment
 comment|/*************/
-end_comment
-
-begin_decl_stmt
-DECL|variable|ray_func
-name|get_ray_func
-name|ray_func
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-name|void
-DECL|function|init_compute (void)
-name|init_compute
-parameter_list|(
-name|void
-parameter_list|)
-block|{ }
-end_function
-
-begin_comment
-comment|/* static void render (gdouble  x, 	gdouble  y, 	GimpRGB  *col) {   GimpVector3 pos;    pos=int_to_pos(x,y);    *col=(*ray_func)(&pos); }  static void show_progress (gint min, 	       gint max, 	       gint curr) {   gimp_progress_update ((gdouble)curr / (gdouble)max); } */
 end_comment
 
 begin_function
@@ -146,12 +119,12 @@ decl_stmt|;
 name|guchar
 name|obpp
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha
 decl_stmt|;
-name|init_compute
-argument_list|()
-expr_stmt|;
+name|get_ray_func
+name|ray_func
+decl_stmt|;
 if|if
 condition|(
 name|mapvals
@@ -627,7 +600,6 @@ name|width
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*    }   else     gck_adaptive_supersample_area(0,0,width-1,height-1,(gint)mapvals.max_depth,       mapvals.pixel_treshold,render,poke,show_progress); */
 name|g_free
 argument_list|(
 name|row

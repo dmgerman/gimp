@@ -171,7 +171,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|light_hit
-name|guint
+name|gboolean
 name|light_hit
 init|=
 name|FALSE
@@ -180,7 +180,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|left_button_pressed
-name|guint
+name|gboolean
 name|left_button_pressed
 init|=
 name|FALSE
@@ -483,9 +483,6 @@ name|gdouble
 operator|)
 name|h
 operator|)
-expr_stmt|;
-name|init_compute
-argument_list|()
 expr_stmt|;
 name|precompute_init
 argument_list|(
@@ -2184,10 +2181,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|draw_preview_image (gint recompute)
+DECL|function|draw_preview_image (gboolean recompute)
 name|draw_preview_image
 parameter_list|(
-name|gint
+name|gboolean
 name|recompute
 parameter_list|)
 block|{
@@ -2251,8 +2248,6 @@ expr_stmt|;
 if|if
 condition|(
 name|recompute
-operator|==
-name|TRUE
 condition|)
 block|{
 name|GdkDisplay
@@ -2404,7 +2399,7 @@ comment|/******************************/
 end_comment
 
 begin_function
-name|gint
+name|gboolean
 DECL|function|preview_events (GtkWidget * area,GdkEvent * event)
 name|preview_events
 parameter_list|(

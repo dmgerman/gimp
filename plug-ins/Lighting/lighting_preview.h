@@ -35,7 +35,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf1910c0108
+DECL|struct|__anon2ba3d67d0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -94,14 +94,14 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|guint
+name|gboolean
 name|light_hit
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|guint
+name|gboolean
 name|left_button_pressed
 decl_stmt|;
 end_decl_stmt
@@ -162,7 +162,7 @@ begin_function_decl
 name|void
 name|draw_preview_image
 parameter_list|(
-name|gint
+name|gboolean
 name|recompute
 parameter_list|)
 function_decl|;
@@ -180,7 +180,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
+name|gboolean
 name|preview_events
 parameter_list|(
 name|GtkWidget
@@ -190,19 +190,6 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gint
-name|check_marker_hit
-parameter_list|(
-name|gint
-name|xpos
-parameter_list|,
-name|gint
-name|ypos
 parameter_list|)
 function_decl|;
 end_function_decl
