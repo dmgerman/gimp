@@ -129,6 +129,11 @@ name|GtkWidget
 modifier|*
 name|editor
 decl_stmt|;
+DECL|member|filesel
+name|GtkWidget
+modifier|*
+name|filesel
+decl_stmt|;
 block|}
 struct|;
 end_struct
