@@ -552,7 +552,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2bd4f34a0103
+DECL|enum|__anon27d961910103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -3963,9 +3963,13 @@ name|tempPR
 operator|.
 name|rowstride
 operator|=
-name|mask2PR
+name|tempPR
 operator|.
-name|rowstride
+name|w
+operator|*
+name|tempPR
+operator|.
+name|bytes
 expr_stmt|;
 name|temp_data
 operator|=
