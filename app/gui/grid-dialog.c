@@ -588,14 +588,14 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/* the appearence frame */
+comment|/* the appearance frame */
 name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Appearence"
+literal|"Appearance"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -727,7 +727,7 @@ literal|"fgcolor"
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Foreground Color"
+literal|"Change Grid Foreground Color"
 argument_list|)
 argument_list|,
 name|GRID_COLOR_SIZE
@@ -777,7 +777,7 @@ literal|"bgcolor"
 argument_list|,
 name|_
 argument_list|(
-literal|"Grid Background Color"
+literal|"Change Grid Background Color"
 argument_list|)
 argument_list|,
 name|GRID_COLOR_SIZE
