@@ -281,140 +281,122 @@ asm|asm("emms");
 block|}
 end_function
 
-begin_function
-name|void
-DECL|function|gimp_composite_burn_rgba8_rgba8_rgba8_sse (GimpCompositeContext * _op)
-name|gimp_composite_burn_rgba8_rgba8_rgba8_sse
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-name|_op
-parameter_list|)
-block|{
-name|uint64
-modifier|*
-name|d
-init|=
-operator|(
-name|uint64
-operator|*
-operator|)
-name|_op
-operator|->
-name|D
-decl_stmt|;
-name|uint64
-modifier|*
-name|a
-init|=
-operator|(
-name|uint64
-operator|*
-operator|)
-name|_op
-operator|->
-name|A
-decl_stmt|;
-name|uint64
-modifier|*
-name|b
-init|=
-operator|(
-name|uint64
-operator|*
-operator|)
-name|_op
-operator|->
-name|B
-decl_stmt|;
-name|gulong
-name|n_pixels
-init|=
-name|_op
-operator|->
-name|n_pixels
-decl_stmt|;
-for|for
-control|(
-init|;
-name|n_pixels
-operator|>=
-literal|2
-condition|;
-name|n_pixels
-operator|-=
-literal|2
-control|)
-block|{
-asm|asm
-specifier|volatile
-asm|("  movq         %1,%%mm0\n"                     "\tmovq         %2,%%mm1\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
-comment|/* mm2 = 255 - A */
-asm|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpcklbw %%mm2,%%mm4\n"
-comment|/* mm4 = (255- A) * 256  */
-asm|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpcklbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
-comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm7) "\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
-comment|/* mm2 = 255 - A */
-asm|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpckhbw %%mm2,%%mm4\n"
-comment|/* mm4 = (255- A) * 256  */
-asm|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpckhbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
-comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm6) "\n"                      "\tmovq         %5,%%mm4\n"                     "\tmovq      %%mm4,%%mm5\n"                     "\tpsubusw   %%mm6,%%mm4\n"                     "\tpsubusw   %%mm7,%%mm5\n"                      "\tpackuswb  %%mm4,%%mm5\n"                      "\t" pminub(mm0,mm1,mm3) "\n"
-comment|/* mm1 = min(mm0,mm1) clobber mm3 */
-asm|"\tmovq         %6,%%mm7\n"
-comment|/* mm6 = rgba8_alpha_mask_64 */
-asm|"\tpand      %%mm7,%%mm1\n"
-comment|/* mm1 = mm7& alpha_mask */
-asm|"\tpandn     %%mm5,%%mm7\n"
-comment|/* mm7 = ~mm7& mm5 */
-asm|"\tpor       %%mm1,%%mm7\n"
-comment|/* mm7 = mm7 | mm1 */
-asm|"\tmovq      %%mm7,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64)                     : pdivwqX_clobber, "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
-name|d
-operator|++
-expr_stmt|;
-name|b
-operator|++
-expr_stmt|;
-name|a
-operator|++
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|n_pixels
-operator|>
+begin_if
+if|#
+directive|if
 literal|0
-condition|)
-block|{
-asm|asm
-specifier|volatile
-asm|("  movd         %1,%%mm0\n"                     "\tmovd         %2,%%mm1\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
+end_if
+
+begin_comment
+unit|void gimp_composite_burn_rgba8_rgba8_rgba8_sse (GimpCompositeContext *_op) {   uint64 *d = (uint64 *) _op->D;   uint64 *a = (uint64 *) _op->A;   uint64 *b = (uint64 *) _op->B;   gulong n_pixels = _op->n_pixels;    for (; n_pixels>= 2; n_pixels -= 2)     {       asm volatile ("  movq         %1,%%mm0\n"                     "\tmovq         %2,%%mm1\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
-asm|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpcklbw %%mm2,%%mm4\n"
+end_comment
+
+begin_comment
+unit|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpcklbw %%mm2,%%mm4\n"
 comment|/* mm4 = (255- A) * 256  */
-asm|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpcklbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
+end_comment
+
+begin_comment
+unit|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpcklbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
 comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm7) "\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
+end_comment
+
+begin_comment
+unit|"\t" pdivwqX(mm4,mm5,mm7) "\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
 comment|/* mm2 = 255 - A */
-asm|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpckhbw %%mm2,%%mm4\n"
+end_comment
+
+begin_comment
+unit|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpckhbw %%mm2,%%mm4\n"
 comment|/* mm4 = (255- A) * 256  */
-asm|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpckhbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
+end_comment
+
+begin_comment
+unit|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpckhbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
 comment|/* mm5 = B + 1 */
-asm|"\t" pdivwqX(mm4,mm5,mm6) "\n"                      "\tmovq         %5,%%mm4\n"                     "\tmovq      %%mm4,%%mm5\n"                     "\tpsubusw   %%mm6,%%mm4\n"                     "\tpsubusw   %%mm7,%%mm5\n"                      "\tpackuswb  %%mm4,%%mm5\n"                      "\t" pminub(mm0,mm1,mm3) "\n"
+end_comment
+
+begin_comment
+unit|"\t" pdivwqX(mm4,mm5,mm6) "\n"                      "\tmovq         %5,%%mm4\n"                     "\tmovq      %%mm4,%%mm5\n"                     "\tpsubusw   %%mm6,%%mm4\n"                     "\tpsubusw   %%mm7,%%mm5\n"                      "\tpackuswb  %%mm4,%%mm5\n"                      "\t" pminub(mm0,mm1,mm3) "\n"
 comment|/* mm1 = min(mm0,mm1) clobber mm3 */
-asm|"\tmovq         %6,%%mm7\n"                     "\tpand      %%mm7,%%mm1\n"
+end_comment
+
+begin_comment
+unit|"\tmovq         %6,%%mm7\n"
+comment|/* mm6 = rgba8_alpha_mask_64 */
+end_comment
+
+begin_comment
+unit|"\tpand      %%mm7,%%mm1\n"
 comment|/* mm1 = mm7& alpha_mask */
-asm|"\tpandn     %%mm5,%%mm7\n"
+end_comment
+
+begin_comment
+unit|"\tpandn     %%mm5,%%mm7\n"
 comment|/* mm7 = ~mm7& mm5 */
-asm|"\tpor       %%mm1,%%mm7\n"
+end_comment
+
+begin_comment
+unit|"\tpor       %%mm1,%%mm7\n"
 comment|/* mm7 = mm7 | mm1 */
-asm|"\tmovd      %%mm7,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64)                     : pdivwqX_clobber, "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
-block|}
-asm|asm("emms");
-block|}
-end_function
+end_comment
+
+begin_comment
+unit|"\tmovq      %%mm7,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64)                     : pdivwqX_clobber, "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");       d++;       b++;       a++;     }    if (n_pixels> 0)     {       asm volatile ("  movd         %1,%%mm0\n"                     "\tmovd         %2,%%mm1\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
+comment|/* mm2 = 255 - A */
+end_comment
+
+begin_comment
+unit|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpcklbw %%mm2,%%mm4\n"
+comment|/* mm4 = (255- A) * 256  */
+end_comment
+
+begin_comment
+unit|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpcklbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
+comment|/* mm5 = B + 1 */
+end_comment
+
+begin_comment
+unit|"\t" pdivwqX(mm4,mm5,mm7) "\n"                      "\tmovq         %3,%%mm2\n"                     "\tpsubb     %%mm0,%%mm2\n"
+comment|/* mm2 = 255 - A */
+end_comment
+
+begin_comment
+unit|"\tpxor      %%mm4,%%mm4\n"                     "\tpunpckhbw %%mm2,%%mm4\n"
+comment|/* mm4 = (255- A) * 256  */
+end_comment
+
+begin_comment
+unit|"\tmovq      %%mm1,%%mm3\n"                     "\tpxor      %%mm5,%%mm5\n"                     "\tpunpckhbw %%mm5,%%mm3\n"                     "\tmovq         %4,%%mm5\n"                     "\tpaddusw   %%mm3,%%mm5\n"
+comment|/* mm5 = B + 1 */
+end_comment
+
+begin_comment
+unit|"\t" pdivwqX(mm4,mm5,mm6) "\n"                      "\tmovq         %5,%%mm4\n"                     "\tmovq      %%mm4,%%mm5\n"                     "\tpsubusw   %%mm6,%%mm4\n"                     "\tpsubusw   %%mm7,%%mm5\n"                      "\tpackuswb  %%mm4,%%mm5\n"                      "\t" pminub(mm0,mm1,mm3) "\n"
+comment|/* mm1 = min(mm0,mm1) clobber mm3 */
+end_comment
+
+begin_comment
+unit|"\tmovq         %6,%%mm7\n"                     "\tpand      %%mm7,%%mm1\n"
+comment|/* mm1 = mm7& alpha_mask */
+end_comment
+
+begin_comment
+unit|"\tpandn     %%mm5,%%mm7\n"
+comment|/* mm7 = ~mm7& mm5 */
+end_comment
+
+begin_comment
+unit|"\tpor       %%mm1,%%mm7\n"
+comment|/* mm7 = mm7 | mm1 */
+end_comment
+
+begin_endif
+unit|"\tmovd      %%mm7,%0\n"                     : "=m" (*d)                     : "m" (*a), "m" (*b), "m" (*rgba8_b255_64), "m" (*rgba8_w1_64), "m" (*rgba8_w255_64), "m" (*rgba8_alpha_mask_64)                     : pdivwqX_clobber, "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");     }    asm("emms"); }
+endif|#
+directive|endif
+end_endif
 
 begin_function
 name|void
