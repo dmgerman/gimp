@@ -6,43 +6,13 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdio.h>
+file|"config.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<math.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawableP.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"temp_buf.h"
+file|<glib.h>
 end_include
 
 begin_include
@@ -50,6 +20,70 @@ include|#
 directive|include
 file|"gimppreviewcache.h"
 end_include
+
+begin_define
+DECL|macro|MAX_CACHE_PREVIEWS
+define|#
+directive|define
+name|MAX_CACHE_PREVIEWS
+value|5
+end_define
+
+begin_undef
+undef|#
+directive|undef
+name|PREVIEW_CACHE_DEBUG
+end_undef
+
+begin_typedef
+DECL|struct|_PreviewCache
+typedef|typedef
+struct|struct
+name|_PreviewCache
+block|{
+DECL|member|preview
+name|TempBuf
+modifier|*
+name|preview
+decl_stmt|;
+DECL|member|width
+name|gint
+name|width
+decl_stmt|;
+DECL|member|height
+name|gint
+name|height
+decl_stmt|;
+DECL|typedef|PreviewCache
+block|}
+name|PreviewCache
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|struct|_PreviewNearest
+typedef|typedef
+struct|struct
+name|_PreviewNearest
+block|{
+DECL|member|pc
+name|PreviewCache
+modifier|*
+name|pc
+decl_stmt|;
+DECL|member|width
+name|gint
+name|width
+decl_stmt|;
+DECL|member|height
+name|gint
+name|height
+decl_stmt|;
+DECL|typedef|PreviewNearest
+block|}
+name|PreviewNearest
+typedef|;
+end_typedef
 
 begin_function
 specifier|static
@@ -145,9 +179,9 @@ operator|*
 operator|)
 name|udata
 decl_stmt|;
-comment|/*   printf("this value w,h [%d,%d]\n",pc->width,pc->height); */
-comment|/*   if(pNearest->pc) */
-comment|/*       printf("current nearest value w,h [%d,%d]\n",pNearest->pc->width,pNearest->pc->height); */
+comment|/*   g_print ("this value w,h [%d,%d]\n",pc->width,pc->height); */
+comment|/*   if (pNearest->pc) */
+comment|/*       g_print ("current nearest value w,h [%d,%d]\n",                  pNearest->pc->width,pNearest->pc->height); */
 if|if
 condition|(
 name|pNearest
@@ -219,9 +253,9 @@ operator|*
 operator|)
 name|udata
 decl_stmt|;
-comment|/*   printf("this value w,h [%d,%d]\n",pc->width,pc->height); */
-comment|/*   if(pNearest->pc) */
-comment|/*       printf("current nearest value w,h [%d,%d]\n",pNearest->pc->width,pNearest->pc->height); */
+comment|/*   g_print ("this value w,h [%d,%d]\n",pc->width,pc->height); */
+comment|/*   if (pNearest->pc) */
+comment|/*       g_print ("current nearest value w,h [%d,%d]\n",                  pNearest->pc->width,pNearest->pc->height); */
 if|if
 condition|(
 name|pc
@@ -297,10 +331,7 @@ parameter_list|)
 block|{
 name|GSList
 modifier|*
-name|cur
-init|=
-operator|*
-name|plist
+name|list
 decl_stmt|;
 name|PreviewCache
 modifier|*
@@ -308,14 +339,23 @@ name|smallest
 init|=
 name|NULL
 decl_stmt|;
-comment|/*   printf("Removing smallest\n"); */
-if|if
-condition|(
-operator|!
-name|cur
-condition|)
-return|return;
-do|do
+comment|/*   g_print ("Removing smallest\n"); */
+for|for
+control|(
+name|list
+operator|=
+operator|*
+name|plist
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
 if|if
 condition|(
@@ -325,11 +365,11 @@ condition|)
 block|{
 name|smallest
 operator|=
-name|cur
+name|list
 operator|->
 name|data
 expr_stmt|;
-comment|/* 	  printf("init smallest  %d,%d\n",smallest->width,smallest->height); */
+comment|/* 	  g_print ("init smallest  %d,%d\n", 	            smallest->width,smallest->height); */
 block|}
 else|else
 block|{
@@ -337,11 +377,11 @@ name|PreviewCache
 modifier|*
 name|pcthis
 init|=
-name|cur
+name|list
 operator|->
 name|data
 decl_stmt|;
-comment|/* 	  printf("Checking %d,%d\n",pcthis->width,pcthis->height); */
+comment|/* 	  g_print ("Checking %d,%d\n",pcthis->width,pcthis->height); */
 if|if
 condition|(
 operator|(
@@ -369,22 +409,17 @@ name|smallest
 operator|=
 name|pcthis
 expr_stmt|;
-comment|/* 	      printf("smallest now  %d,%d\n",smallest->width,smallest->height); */
+comment|/* 	      g_print ("smallest now  %d,%d\n",                       smallest->width,smallest->height); */
 block|}
 block|}
 block|}
-do|while
+if|if
 condition|(
-operator|(
-name|cur
-operator|=
-name|g_slist_next
-argument_list|(
-name|cur
-argument_list|)
-operator|)
+operator|*
+name|plist
+operator|&&
+name|smallest
 condition|)
-do|;
 operator|*
 name|plist
 operator|=
@@ -396,8 +431,8 @@ argument_list|,
 name|smallest
 argument_list|)
 expr_stmt|;
-comment|/*   printf("removed %d,%d\n",smallest->width,smallest->height); */
-comment|/*   printf("removed smallest\n"); */
+comment|/*   g_print ("removed %d,%d\n",smallest->width,smallest->height); */
+comment|/*   g_print ("removed smallest\n"); */
 block|}
 end_function
 
@@ -442,27 +477,77 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|preview_cache_print (gpointer data,gpointer udata)
+DECL|function|preview_cache_print (GSList * plist)
 name|preview_cache_print
 parameter_list|(
-name|gpointer
-name|data
-parameter_list|,
-name|gpointer
-name|udata
+name|GSList
+modifier|*
+name|plist
 parameter_list|)
 block|{
-comment|/*   PreviewCache *pc = (PreviewCache *)data; */
-if|if
-condition|(
-operator|!
-name|data
-condition|)
+ifdef|#
+directive|ifdef
+name|PREVIEW_CACHE_DEBUG
+name|GSList
+modifier|*
+name|list
+decl_stmt|;
+name|PreviewCache
+modifier|*
+name|pc
+decl_stmt|;
+name|g_print
+argument_list|(
+literal|"preview cache dump:\n"
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|plist
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|g_slist_next
+argument_list|(
+name|list
+argument_list|)
+control|)
 block|{
-comment|/*       printf("\tNo Cache\n"); */
-return|return;
+name|pc
+operator|=
+operator|(
+name|PreviewCache
+operator|*
+operator|)
+name|list
+operator|->
+name|data
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\tvalue w,h [%d,%d] => %p\n"
+argument_list|,
+name|pc
+operator|->
+name|width
+argument_list|,
+name|pc
+operator|->
+name|height
+argument_list|,
+name|pc
+operator|->
+name|preview
+argument_list|)
+expr_stmt|;
 block|}
-comment|/*   printf("\tvalue w,h [%d,%d] => %p\n",pc->width,pc->height,pc->preview); */
+endif|#
+directive|endif
+comment|/* PREVIEW_CACHE_DEBUG */
 block|}
 end_function
 
@@ -477,15 +562,11 @@ modifier|*
 name|plist
 parameter_list|)
 block|{
-comment|/*   printf("gimp_preview_cache_invalidate\n"); */
-name|g_slist_foreach
+comment|/*   g_print ("gimp_preview_cache_invalidate\n"); */
+name|preview_cache_print
 argument_list|(
 operator|*
 name|plist
-argument_list|,
-name|preview_cache_print
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_slist_foreach
@@ -525,15 +606,11 @@ name|PreviewCache
 modifier|*
 name|pc
 decl_stmt|;
-comment|/*   printf("gimp_preview_cache_add %d %d\n",buf->width,buf->height); */
-name|g_slist_foreach
+comment|/*   g_print ("gimp_preview_cache_add %d %d\n",buf->width,buf->height); */
+name|preview_cache_print
 argument_list|(
 operator|*
 name|plist
-argument_list|,
-name|preview_cache_print
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -626,15 +703,11 @@ name|PreviewCache
 modifier|*
 name|pc
 decl_stmt|;
-comment|/*   printf("gimp_preview_cache_get %d %d\n",width,height); */
-name|g_slist_foreach
+comment|/*   g_print ("gimp_preview_cache_get %d %d\n",width,height); */
+name|preview_cache_print
 argument_list|(
 operator|*
 name|plist
-argument_list|,
-name|preview_cache_print
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|pn
@@ -679,7 +752,7 @@ operator|->
 name|preview
 condition|)
 block|{
-comment|/*       printf("extact value w,h [%d,%d] => %p\n",pn.pc->width,pn.pc->height,pn.pc->preview);  */
+comment|/*       g_print ("extact value w,h [%d,%d] => %p\n", 	           pn.pc->width,pn.pc->height,pn.pc->preview);  */
 return|return
 name|pn
 operator|.
@@ -728,13 +801,14 @@ name|dest_data
 decl_stmt|;
 name|gint
 name|loop1
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|loop2
 decl_stmt|;
-comment|/*       printf("nearest value w,h [%d,%d] => %p\n",pn.pc->width,pn.pc->height,pn.pc->preview); */
+comment|/*       g_print ("nearest value w,h [%d,%d] => %p\n",                    pn.pc->width,pn.pc->height,pn.pc->preview); */
 comment|/*       if(pn.pc->width == width&& */
-comment|/* 	 pn.pc->height == height) */
-comment|/* 	return pn.pc->preview; */
+comment|/* 	   pn.pc->height == height) */
+comment|/* 	 return pn.pc->preview; */
 if|if
 condition|(
 operator|!
@@ -776,7 +850,7 @@ operator|->
 name|height
 expr_stmt|;
 comment|/* Now get the real one and add to cache */
-comment|/*       printf("Must create from large preview\n"); */
+comment|/*       g_print ("Must create from large preview\n"); */
 name|pc
 operator|=
 name|g_new0
@@ -874,7 +948,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-comment|/*       printf("x_ratio , y_ratio [%f,%f]\n",x_ratio,y_ratio); */
+comment|/*       g_print ("x_ratio , y_ratio [%f,%f]\n",x_ratio,y_ratio); */
 for|for
 control|(
 name|loop1
@@ -902,13 +976,19 @@ name|loop2
 operator|++
 control|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|guchar
 modifier|*
 name|src_pixel
-init|=
+decl_stmt|;
+name|guchar
+modifier|*
+name|dest_pixel
+decl_stmt|;
+name|src_pixel
+operator|=
 name|src_data
 operator|+
 operator|(
@@ -950,11 +1030,9 @@ operator|->
 name|preview
 operator|->
 name|bytes
-decl_stmt|;
-name|guchar
-modifier|*
+expr_stmt|;
 name|dest_pixel
-init|=
+operator|=
 name|dest_data
 operator|+
 operator|(
@@ -972,7 +1050,7 @@ operator|->
 name|preview
 operator|->
 name|bytes
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -1026,14 +1104,14 @@ argument_list|,
 name|preview_cache_compare
 argument_list|)
 expr_stmt|;
-comment|/*       printf("New preview created [%d,%d] => %p\n",pc->width,pc->height,pc->preview);  */
+comment|/*       g_print ("New preview created [%d,%d] => %p\n", 	           pc->width,pc->height,pc->preview);  */
 return|return
 name|pc
 operator|->
 name|preview
 return|;
 block|}
-comment|/*   printf("gimp_preview_cache_get returning NULL\n");  */
+comment|/*   g_print ("gimp_preview_cache_get returning NULL\n");  */
 return|return
 name|NULL
 return|;

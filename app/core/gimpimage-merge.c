@@ -564,7 +564,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2bfa44e80103
+DECL|enum|__anon2b93363b0103
 enum|enum
 block|{
 DECL|enumerator|CLEAN
@@ -15341,17 +15341,22 @@ name|layers
 expr_stmt|;
 name|ratio
 operator|=
+name|MIN
+argument_list|(
+literal|1.0
+argument_list|,
 operator|(
-name|double
+name|gdouble
 operator|)
 name|width
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|gimage
 operator|->
 name|width
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(

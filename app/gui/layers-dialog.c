@@ -3904,7 +3904,7 @@ operator|=
 name|buf
 expr_stmt|;
 block|}
-comment|/*  The interesting stuff between leading& trailing vertical transparency  */
+comment|/*  The interesting stuff between leading& trailing  	  vertical transparency  */
 if|if
 condition|(
 name|i
@@ -5108,6 +5108,10 @@ name|layersD
 operator|->
 name|ratio
 operator|=
+name|MIN
+argument_list|(
+literal|1.0
+argument_list|,
 operator|(
 name|gdouble
 operator|)
@@ -5119,12 +5123,17 @@ operator|)
 name|gimage
 operator|->
 name|width
+argument_list|)
 expr_stmt|;
 else|else
 name|layersD
 operator|->
 name|ratio
 operator|=
+name|MIN
+argument_list|(
+literal|1.0
+argument_list|,
 operator|(
 name|gdouble
 operator|)
@@ -5136,6 +5145,7 @@ operator|)
 name|gimage
 operator|->
 name|height
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -5235,23 +5245,23 @@ block|{
 name|gboolean
 name|fs
 decl_stmt|;
-comment|/*  no floating sel  */
+comment|/*  no floating sel        */
 name|gboolean
 name|ac
 decl_stmt|;
-comment|/*  no active channel  */
+comment|/*  no active channel      */
 name|gboolean
 name|lm
 decl_stmt|;
-comment|/*  layer mask  */
+comment|/*  layer mask             */
 name|gboolean
 name|gimage
 decl_stmt|;
-comment|/*  is there a gimage  */
+comment|/*  is there a gimage      */
 name|gboolean
 name|lp
 decl_stmt|;
-comment|/*  layers present  */
+comment|/*  layers present         */
 name|gboolean
 name|alpha
 decl_stmt|;
@@ -5259,7 +5269,7 @@ comment|/*  alpha channel present  */
 name|gboolean
 name|indexed
 decl_stmt|;
-comment|/*  is indexed  */
+comment|/*  is indexed             */
 name|gboolean
 name|next_alpha
 decl_stmt|;
@@ -10903,7 +10913,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcbe91c0108
+DECL|struct|__anon2801d5de0108
 block|{
 DECL|member|gimage
 name|GimpImage
