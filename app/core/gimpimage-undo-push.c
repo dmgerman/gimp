@@ -1540,13 +1540,6 @@ name|base_type
 operator|=
 name|tmp
 expr_stmt|;
-name|gimp_image_projection_allocate
-argument_list|(
-name|undo
-operator|->
-name|gimage
-argument_list|)
-expr_stmt|;
 name|gimp_image_colormap_changed
 argument_list|(
 name|undo

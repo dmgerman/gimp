@@ -417,7 +417,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b5761440103
+DECL|enum|__anon2b04699a0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1445,7 +1445,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5761440208
+DECL|struct|__anon2b04699a0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1522,7 +1522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5761440308
+DECL|struct|__anon2b04699a0308
 block|{
 DECL|member|ncolors
 name|long
@@ -1682,7 +1682,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5761440408
+DECL|struct|__anon2b04699a0408
 block|{
 DECL|member|used_count
 name|signed
@@ -3892,12 +3892,6 @@ operator|->
 name|delete_func
 argument_list|(
 name|quantobj
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure the projection is up to date  */
-name|gimp_image_projection_allocate
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Rigor the floating selection  */
