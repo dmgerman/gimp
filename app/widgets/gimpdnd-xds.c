@@ -555,13 +555,6 @@ argument_list|(
 name|uri
 argument_list|)
 expr_stmt|;
-name|gimp_dnd_xds_source_set
-argument_list|(
-name|context
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
