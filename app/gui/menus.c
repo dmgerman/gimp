@@ -214,6 +214,16 @@ literal|0
 block|}
 block|,
 block|{
+literal|"/File/Dialogs/Layers& Channels..."
+block|,
+literal|"<control>L"
+block|,
+name|dialogs_lc_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+block|{
 literal|"/File/Dialogs/Tool Options..."
 block|,
 literal|"<control><shift>T"
