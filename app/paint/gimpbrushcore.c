@@ -104,8 +104,8 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4f2b560103
-DECL|enum|__anon2b4f2b560203
+DECL|enum|__anon2786fbfa0103
+DECL|enum|__anon2786fbfa0203
 block|{
 DECL|enumerator|SET_BRUSH
 DECL|enumerator|SET_BRUSH
@@ -2984,6 +2984,10 @@ name|core
 operator|->
 name|scale
 operator|=
+literal|1.0
+operator|-
+literal|0.9
+operator|*
 name|paint_core
 operator|->
 name|cur_coords
