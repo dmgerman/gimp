@@ -1067,7 +1067,7 @@ literal|1.0
 expr_stmt|;
 name|s
 operator|+=
-literal|3
+literal|4
 expr_stmt|;
 block|}
 break|break;
