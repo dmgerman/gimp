@@ -150,7 +150,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c492b70108
+DECL|struct|__anon277fd7730108
 block|{
 DECL|member|r
 DECL|member|g
@@ -219,7 +219,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c492b70208
+DECL|struct|__anon277fd7730208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -4825,7 +4825,7 @@ argument_list|)
 argument_list|,
 literal|"lic"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/lic.html"
 argument_list|,

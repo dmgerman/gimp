@@ -115,7 +115,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791611b0108
+DECL|struct|__anon2a2301ab0108
 block|{
 DECL|member|film_height
 name|gint
@@ -225,7 +225,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791611b0208
+DECL|struct|__anon2a2301ab0208
 block|{
 DECL|member|font_entry
 name|GtkWidget
@@ -5592,7 +5592,7 @@ argument_list|)
 argument_list|,
 literal|"film"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/film.html"
 argument_list|,

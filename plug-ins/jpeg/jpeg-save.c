@@ -307,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c080ba10108
+DECL|struct|__anon2ad6d13e0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -354,7 +354,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c080ba10208
+DECL|struct|__anon2ad6d13e0208
 block|{
 DECL|member|run
 name|gint
@@ -369,7 +369,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c080ba10308
+DECL|struct|__anon2ad6d13e0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -5905,7 +5905,7 @@ argument_list|)
 argument_list|,
 literal|"jpeg"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/jpeg.html"
 argument_list|,

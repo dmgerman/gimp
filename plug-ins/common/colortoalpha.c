@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b209f440108
+DECL|struct|__anon29f4d8590108
 block|{
 DECL|member|color
 name|guchar
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b209f440208
+DECL|struct|__anon29f4d8590208
 block|{
 DECL|member|run
 name|gint
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b209f440308
+DECL|struct|__anon29f4d8590308
 block|{
 DECL|member|color_button
 name|GtkWidget
@@ -1647,7 +1647,7 @@ argument_list|)
 argument_list|,
 literal|"colortoalpha"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/colortoalpha.html"
 argument_list|,

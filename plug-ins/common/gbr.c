@@ -163,7 +163,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b67881d0108
+DECL|struct|__anon2907b34b0108
 block|{
 DECL|member|description
 name|gchar
@@ -2024,7 +2024,7 @@ argument_list|)
 argument_list|,
 literal|"gbr"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gbr.html"
 argument_list|,

@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae52970108
+DECL|struct|__anon2b87622e0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -2081,7 +2081,7 @@ argument_list|)
 argument_list|,
 literal|"pagecurl"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/pagecurl.html"
 argument_list|,

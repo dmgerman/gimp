@@ -111,7 +111,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c79fb0108
+DECL|struct|__anon2bc3c3790108
 block|{
 DECL|member|icon_name
 name|gchar
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c79fb0208
+DECL|struct|__anon2bc3c3790208
 block|{
 DECL|member|run
 name|gint
@@ -1776,7 +1776,7 @@ argument_list|)
 argument_list|,
 literal|"gicon"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gicon.html"
 argument_list|,

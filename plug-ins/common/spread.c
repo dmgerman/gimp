@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4b2ca0108
+DECL|struct|__anon2760025f0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -101,7 +101,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4b2ca0208
+DECL|struct|__anon2760025f0208
 block|{
 DECL|member|size
 name|GtkWidget
@@ -1452,7 +1452,7 @@ argument_list|)
 argument_list|,
 literal|"spread"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/spread.html"
 argument_list|,

@@ -1046,7 +1046,7 @@ literal|"Fractal Explorer<Daniel Cotting/cotting@multimania.com>"
 argument_list|,
 literal|"fractalexplorer"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fractalexplorer.html"
 argument_list|,
@@ -7506,7 +7506,7 @@ argument_list|)
 argument_list|,
 literal|"fractalexplorer"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fractalexplorer.html"
 argument_list|,

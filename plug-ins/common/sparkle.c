@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29795cef0108
+DECL|struct|__anon29ae24c40108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29795cef0208
+DECL|struct|__anon29ae24c40208
 block|{
 DECL|member|run
 name|gint
@@ -1503,7 +1503,7 @@ argument_list|)
 argument_list|,
 literal|"sparkle"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/sparkle.html"
 argument_list|,

@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd1cd20108
+DECL|struct|__anon289a25c50108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd1cd20208
+DECL|struct|__anon289a25c50208
 block|{
 DECL|member|col
 DECL|member|row
@@ -3572,7 +3572,7 @@ argument_list|)
 argument_list|,
 literal|"mblur"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/mblur.html"
 argument_list|,

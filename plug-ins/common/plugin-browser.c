@@ -447,7 +447,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a84370108
+DECL|struct|__anon2bf4fdf20108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -553,7 +553,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a84370208
+DECL|struct|__anon2bf4fdf20208
 block|{
 DECL|member|menu
 name|gchar
@@ -4510,7 +4510,7 @@ argument_list|)
 argument_list|,
 literal|"plugindetails"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/plugindetails.html"
 argument_list|,

@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dabc3f0108
+DECL|struct|__anon279e72e30108
 block|{
 DECL|member|colors
 name|guchar
@@ -192,7 +192,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dabc3f0208
+DECL|struct|__anon279e72e30208
 block|{
 DECL|member|width
 DECL|member|height
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dabc3f0308
+DECL|struct|__anon279e72e30308
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -2623,7 +2623,7 @@ argument_list|)
 argument_list|,
 literal|"mapcolor"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/mapcolor.html"
 argument_list|,

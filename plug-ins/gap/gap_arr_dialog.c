@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b0c4490108
+DECL|struct|__anon2956c3710108
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -120,7 +120,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27b0c4490208
+DECL|struct|__anon2956c3710208
 typedef|typedef
 struct|struct
 block|{

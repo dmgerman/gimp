@@ -3465,7 +3465,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|file_select
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gqbist.html"
 argument_list|)
@@ -3560,7 +3560,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|file_select
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gqbist.html"
 argument_list|)
@@ -3681,7 +3681,7 @@ argument_list|)
 argument_list|,
 literal|"gqbist"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gqbist.html"
 argument_list|,

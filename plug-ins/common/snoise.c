@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890c43b0108
+DECL|struct|__anon28b5ae0d0108
 block|{
 DECL|member|tilable
 name|gint
@@ -145,7 +145,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890c43b0208
+DECL|struct|__anon28b5ae0d0208
 block|{
 DECL|member|run
 name|gint
@@ -2079,7 +2079,7 @@ argument_list|)
 argument_list|,
 literal|"snoise"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/snoise.html"
 argument_list|,

@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3e84b0108
+DECL|struct|__anon2b425ca30108
 block|{
 DECL|member|threshold
 name|gint
@@ -203,7 +203,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d3e84b0208
+DECL|struct|__anon2b425ca30208
 block|{
 DECL|member|run
 name|gint
@@ -1088,7 +1088,7 @@ argument_list|)
 argument_list|,
 literal|"threshold_alpha"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/threshold_alpha.html"
 argument_list|,

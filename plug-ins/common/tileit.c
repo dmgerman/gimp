@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aafea100108
+DECL|struct|__anon2c24b6d30108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -563,7 +563,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aafea100203
+DECL|enum|__anon2c24b6d30203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aafea100308
+DECL|struct|__anon2c24b6d30308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -652,7 +652,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aafea100408
+DECL|struct|__anon2c24b6d30408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1422,7 +1422,7 @@ argument_list|)
 argument_list|,
 literal|"tileit"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/tileit.html"
 argument_list|,

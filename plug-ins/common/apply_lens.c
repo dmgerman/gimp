@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2804dda00108
+DECL|struct|__anon2919a6220108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -199,7 +199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2804dda00208
+DECL|struct|__anon2919a6220208
 block|{
 DECL|member|run
 name|gint
@@ -1770,7 +1770,7 @@ argument_list|)
 argument_list|,
 literal|"apply_lens"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/apply_lens.html"
 argument_list|,

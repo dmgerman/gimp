@@ -620,7 +620,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0240980108
+DECL|struct|__anon2b3094720108
 block|{
 DECL|member|type
 name|gchar
@@ -1089,7 +1089,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0240980208
+DECL|struct|__anon2b3094720208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -1107,7 +1107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0240980308
+DECL|struct|__anon2b3094720308
 block|{
 DECL|member|extract_flag
 name|gint
@@ -4437,7 +4437,7 @@ argument_list|)
 argument_list|,
 literal|"decompose"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/decompose.html"
 argument_list|,

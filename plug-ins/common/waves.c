@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a11d2120103
+DECL|enum|__anon2aea04c30103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -1421,7 +1421,7 @@ argument_list|)
 argument_list|,
 literal|"waves"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/waves.html"
 argument_list|,

@@ -337,7 +337,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791dac40108
+DECL|struct|__anon28e8fd6c0108
 block|{
 DECL|member|command
 name|gchar
@@ -361,7 +361,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791dac40208
+DECL|struct|__anon28e8fd6c0208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2077,7 +2077,7 @@ argument_list|)
 argument_list|,
 literal|"script-fu"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/script-fu.html"
 argument_list|,

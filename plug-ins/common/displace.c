@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05f6990108
+DECL|struct|__anon2a219bea0108
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a05f6990208
+DECL|struct|__anon2a219bea0208
 block|{
 DECL|member|run
 name|gint
@@ -1048,7 +1048,7 @@ argument_list|)
 argument_list|,
 literal|"displace"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/displace.html"
 argument_list|,

@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0680dc0108
+DECL|struct|__anon2bb113ff0108
 block|{
 DECL|member|height
 name|gint
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0680dc0208
+DECL|struct|__anon2bb113ff0208
 block|{
 DECL|member|run
 name|gint
@@ -751,7 +751,7 @@ argument_list|)
 argument_list|,
 literal|"engrave"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/engrave.html"
 argument_list|,
@@ -1866,7 +1866,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0680dc0308
+DECL|struct|__anon2bb113ff0308
 block|{
 DECL|member|x
 DECL|member|y

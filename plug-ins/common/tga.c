@@ -313,7 +313,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a21ec4e0108
+DECL|struct|__anon2945d8960108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -5515,7 +5515,7 @@ argument_list|)
 argument_list|,
 literal|"tga"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/tga.html"
 argument_list|,

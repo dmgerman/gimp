@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3034020108
+DECL|struct|__anon2c1c68230108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1099,7 +1099,7 @@ argument_list|)
 argument_list|,
 literal|"blinds"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/blinds.html"
 argument_list|,

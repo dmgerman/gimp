@@ -485,7 +485,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a31cedb0108
+DECL|struct|__anon28af697e0108
 block|{
 DECL|member|randomize
 name|gint
@@ -2339,7 +2339,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|file_dlg
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/flame.html"
 argument_list|)
@@ -2974,7 +2974,7 @@ argument_list|)
 argument_list|,
 literal|"flame"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/flame.html"
 argument_list|,
@@ -4537,7 +4537,7 @@ argument_list|)
 argument_list|,
 literal|"flame"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/flame.html"
 argument_list|,

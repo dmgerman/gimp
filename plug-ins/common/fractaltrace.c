@@ -191,7 +191,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2b37f48b0103
+DECL|enum|__anon29433d470103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -211,7 +211,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b37f48b0208
+DECL|struct|__anon29433d470208
 block|{
 DECL|member|x1
 name|gdouble
@@ -421,7 +421,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b37f48b0308
+DECL|struct|__anon29433d470308
 block|{
 DECL|member|x1
 name|gint
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b37f48b0408
+DECL|struct|__anon29433d470408
 block|{
 DECL|member|width
 name|gint
@@ -1023,7 +1023,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b37f48b0508
+DECL|struct|__anon29433d470508
 block|{
 DECL|member|r
 name|guchar
@@ -2824,7 +2824,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b37f48b0608
+DECL|struct|__anon29433d470608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3973,7 +3973,7 @@ argument_list|)
 argument_list|,
 literal|"fractaltrace"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fractaltrace.html"
 argument_list|,

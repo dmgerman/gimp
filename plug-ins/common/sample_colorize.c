@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon2c59604d0108
+DECL|struct|__anon2c96eb9e0108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c59604d0208
+DECL|struct|__anon2c96eb9e0208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c59604d0308
+DECL|struct|__anon2c96eb9e0308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c59604d0408
+DECL|struct|__anon2c96eb9e0408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c59604d0508
+DECL|struct|__anon2c96eb9e0508
 typedef|typedef
 struct|struct
 block|{
@@ -6653,7 +6653,7 @@ argument_list|)
 argument_list|,
 literal|"sample_colorize"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/sample_colorize.html"
 argument_list|,

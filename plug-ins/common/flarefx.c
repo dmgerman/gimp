@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ab3880108
+DECL|struct|__anon2bf5efac0108
 block|{
 DECL|member|posx
 name|gint
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ab3880208
+DECL|struct|__anon2bf5efac0208
 block|{
 DECL|member|run
 name|gint
@@ -244,7 +244,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ab3880308
+DECL|struct|__anon2bf5efac0308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1315,7 +1315,7 @@ argument_list|)
 argument_list|,
 literal|"flarefx"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/flarefx.html"
 argument_list|,

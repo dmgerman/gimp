@@ -114,7 +114,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bbe5720108
+DECL|struct|__anon2bae56590108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bbe5720208
+DECL|struct|__anon2bae56590208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -2730,7 +2730,7 @@ argument_list|)
 argument_list|,
 literal|"alienmap"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/alienmap.html"
 argument_list|,
@@ -4239,7 +4239,7 @@ argument_list|)
 argument_list|,
 literal|"alienmap"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/alienmap.html"
 argument_list|,

@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba5959d0108
+DECL|struct|__anon2a18d8a00108
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -161,7 +161,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba5959d0208
+DECL|struct|__anon2a18d8a00208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -2998,7 +2998,7 @@ argument_list|)
 argument_list|,
 literal|"alienmap2"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/alienmap2.html"
 argument_list|,
@@ -4652,7 +4652,7 @@ argument_list|)
 argument_list|,
 literal|"alienmap2"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/alienmap2.html"
 argument_list|,

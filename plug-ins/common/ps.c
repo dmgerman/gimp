@@ -134,7 +134,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35b2340108
+DECL|struct|__anon28d711070108
 block|{
 DECL|member|resolution
 name|guint
@@ -186,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35b2340208
+DECL|struct|__anon28d711070208
 block|{
 DECL|member|run
 name|gint
@@ -252,7 +252,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35b2340308
+DECL|struct|__anon28d711070308
 block|{
 DECL|member|width
 DECL|member|height
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35b2340408
+DECL|struct|__anon28d711070408
 block|{
 DECL|member|run
 name|gint
@@ -854,7 +854,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35b2340508
+DECL|struct|__anon28d711070508
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1725,7 +1725,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35b2340608
+DECL|struct|__anon28d711070608
 block|{
 DECL|member|eol
 name|long
@@ -13063,7 +13063,7 @@ argument_list|)
 argument_list|,
 literal|"ps"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/ps.html"
 argument_list|,
@@ -14181,7 +14181,7 @@ argument_list|)
 argument_list|,
 literal|"ps"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/ps.html"
 argument_list|,

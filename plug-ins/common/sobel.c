@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295aa2030108
+DECL|struct|__anon29aae8520108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295aa2030208
+DECL|struct|__anon29aae8520208
 block|{
 DECL|member|run
 name|gint
@@ -784,7 +784,7 @@ argument_list|)
 argument_list|,
 literal|"sobel"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/sobel.html"
 argument_list|,

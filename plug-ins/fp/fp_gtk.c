@@ -403,7 +403,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29912aff0108
+DECL|struct|__anon27a244de0108
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1364,7 +1364,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|win
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
 argument_list|)
@@ -2234,7 +2234,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|win
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
 argument_list|)
@@ -2562,7 +2562,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|win
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
 argument_list|)
@@ -5153,7 +5153,7 @@ argument_list|)
 argument_list|,
 literal|"fp"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
 argument_list|,
@@ -5859,7 +5859,7 @@ name|AW
 operator|.
 name|window
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fp.html"
 argument_list|)

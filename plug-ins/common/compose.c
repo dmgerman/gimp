@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e073ab0108
+DECL|struct|__anon2a187faa0108
 block|{
 DECL|member|compose_type
 name|gchar
@@ -671,7 +671,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e073ab0208
+DECL|struct|__anon2a187faa0208
 block|{
 DECL|member|compose_ID
 name|gint32
@@ -702,7 +702,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e073ab0308
+DECL|struct|__anon2a187faa0308
 block|{
 DECL|member|width
 DECL|member|height
@@ -3944,7 +3944,7 @@ argument_list|)
 argument_list|,
 literal|"compose"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/compose.html"
 argument_list|,

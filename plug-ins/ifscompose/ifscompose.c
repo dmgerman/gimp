@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9f50460103
+DECL|enum|__anon29e4fe030103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9f50460203
+DECL|enum|__anon29e4fe030203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f50460308
+DECL|struct|__anon29e4fe030308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b9f5046040a
+DECL|union|__anon29e4fe03040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f50460508
+DECL|struct|__anon29e4fe030508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f50460608
+DECL|struct|__anon29e4fe030608
 block|{
 DECL|member|color
 name|IfsColor
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f50460708
+DECL|struct|__anon29e4fe030708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f50460808
+DECL|struct|__anon29e4fe030808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f50460908
+DECL|struct|__anon29e4fe030908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -558,7 +558,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f50460a08
+DECL|struct|__anon29e4fe030a08
 block|{
 DECL|member|run
 name|gint
@@ -4149,7 +4149,7 @@ argument_list|)
 argument_list|,
 literal|"ifscompose"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/ifscompose.html"
 argument_list|,
@@ -6697,7 +6697,7 @@ argument_list|)
 argument_list|,
 literal|"ifscompose"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/ifscompose.html"
 argument_list|,

@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288fc2910108
+DECL|struct|__anon27cbac060108
 block|{
 DECL|member|run
 name|gint
@@ -1380,7 +1380,7 @@ argument_list|)
 argument_list|,
 literal|"checkerboard"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/checkerboard.html"
 argument_list|,

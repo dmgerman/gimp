@@ -185,7 +185,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c297fe70108
+DECL|struct|__anon291d42880108
 block|{
 DECL|member|console
 name|GtkWidget
@@ -676,7 +676,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|dlg
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/script-fu.html"
 argument_list|)

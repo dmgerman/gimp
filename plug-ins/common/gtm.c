@@ -68,7 +68,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad25a840108
+DECL|struct|__anon27c73e230108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad25a840208
+DECL|struct|__anon27c73e230208
 block|{
 DECL|member|run
 name|gint
@@ -1638,7 +1638,7 @@ argument_list|)
 argument_list|,
 literal|"gtm"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gtm.html"
 argument_list|,

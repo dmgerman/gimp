@@ -3807,7 +3807,7 @@ argument_list|)
 argument_list|,
 literal|"depthmerge"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/depthmerge.html"
 argument_list|,

@@ -132,7 +132,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2930ea8d0103
+DECL|enum|__anon2a54cd1e0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2930ea8d0203
+DECL|enum|__anon2a54cd1e0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -169,7 +169,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2930ea8d0308
+DECL|struct|__anon2a54cd1e0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -228,7 +228,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2930ea8d0408
+DECL|struct|__anon2a54cd1e0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -273,7 +273,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2930ea8d0508
+DECL|struct|__anon2a54cd1e0508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3538,7 +3538,7 @@ argument_list|)
 argument_list|,
 literal|"bumpmap"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/bumpmap.html"
 argument_list|,

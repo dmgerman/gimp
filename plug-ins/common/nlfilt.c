@@ -150,7 +150,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2879eeca0103
+DECL|enum|__anon2bb128650103
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -1487,7 +1487,7 @@ argument_list|)
 argument_list|,
 literal|"nlfilt"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/nlfilt.html"
 argument_list|,

@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c83797f0108
+DECL|struct|__anon2c82a1510108
 block|{
 DECL|member|label
 name|gchar
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c83797f0208
+DECL|struct|__anon2c82a1510208
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -499,7 +499,7 @@ argument_list|)
 argument_list|,
 literal|"dbbrowser"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/dbbrowser.html"
 argument_list|,
@@ -604,7 +604,7 @@ argument_list|)
 argument_list|,
 literal|"dbbrowser"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/dbbrowser.html"
 argument_list|,

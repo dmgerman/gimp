@@ -2961,7 +2961,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|dialog
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/cel.html"
 argument_list|)

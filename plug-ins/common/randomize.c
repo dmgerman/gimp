@@ -200,7 +200,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce5b860108
+DECL|struct|__anon2c7fba8f0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -249,7 +249,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce5b860208
+DECL|struct|__anon2c7fba8f0208
 block|{
 DECL|member|run
 name|gint
@@ -2414,7 +2414,7 @@ argument_list|)
 argument_list|,
 literal|"randomize"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/randomize.html"
 argument_list|,

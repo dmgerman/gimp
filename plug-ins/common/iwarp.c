@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af3cc4c0103
+DECL|enum|__anon2bc8147b0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af3cc4c0208
+DECL|struct|__anon2bc8147b0208
 block|{
 DECL|member|run
 name|gint
@@ -141,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af3cc4c0308
+DECL|struct|__anon2bc8147b0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -6305,7 +6305,7 @@ argument_list|)
 argument_list|,
 literal|"iwarp"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/iwarp.html"
 argument_list|,

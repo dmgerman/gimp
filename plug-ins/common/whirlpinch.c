@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4868480108
+DECL|struct|__anon29212ab80108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4868480208
+DECL|struct|__anon29212ab80208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -190,7 +190,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4868480308
+DECL|struct|__anon29212ab80308
 block|{
 DECL|member|col
 DECL|member|row
@@ -3636,7 +3636,7 @@ argument_list|)
 argument_list|,
 literal|"whirlpinch"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/whirlpinch.html"
 argument_list|,

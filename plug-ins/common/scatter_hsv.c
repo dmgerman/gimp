@@ -302,7 +302,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f64eb30108
+DECL|struct|__anon292229120108
 block|{
 comment|/* gint, gdouble, and so on */
 DECL|member|holdness
@@ -348,7 +348,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f64eb30208
+DECL|struct|__anon292229120208
 block|{
 DECL|member|run
 name|gint
@@ -1860,7 +1860,7 @@ argument_list|)
 argument_list|,
 name|SHORT_NAME
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/scatter_hsv.html"
 argument_list|,

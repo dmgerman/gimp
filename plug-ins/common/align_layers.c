@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eab0970103
+DECL|enum|__anon27d169b70103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eab0970203
+DECL|enum|__anon27d169b70203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eab0970303
+DECL|enum|__anon27d169b70303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -137,7 +137,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eab0970403
+DECL|enum|__anon27d169b70403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eab0970508
+DECL|struct|__anon27d169b70508
 block|{
 DECL|member|h_style
 name|gint
@@ -336,7 +336,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eab0970608
+DECL|struct|__anon27d169b70608
 block|{
 DECL|member|run
 name|gint
@@ -1642,7 +1642,7 @@ argument_list|)
 argument_list|,
 name|SHORT_NAME
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/align_layers.html"
 argument_list|,

@@ -171,7 +171,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon292b18a90103
+DECL|enum|__anon2998b98a0103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -189,7 +189,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b18a90208
+DECL|struct|__anon2998b98a0208
 block|{
 DECL|member|max_p
 name|gint
@@ -205,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b18a90308
+DECL|struct|__anon2998b98a0308
 block|{
 DECL|member|run
 name|gint
@@ -1129,7 +1129,7 @@ argument_list|)
 argument_list|,
 literal|"max_rgb"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/max_rgb.html"
 argument_list|,

@@ -135,7 +135,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69c3300108
+DECL|struct|__anon2b61e31d0108
 block|{
 DECL|member|blur_pct
 name|gdouble
@@ -184,7 +184,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69c3300208
+DECL|struct|__anon2b61e31d0208
 block|{
 DECL|member|run
 name|gint
@@ -2454,7 +2454,7 @@ name|BLUR_VERSION
 argument_list|,
 literal|"blur"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/blur.html"
 argument_list|,

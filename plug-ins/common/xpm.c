@@ -98,7 +98,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdb09040108
+DECL|struct|__anon2adc40190108
 block|{
 DECL|member|threshold
 name|gint
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdb09040208
+DECL|struct|__anon2adc40190208
 block|{
 DECL|member|run
 name|gint
@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdb09040308
+DECL|struct|__anon2adc40190308
 block|{
 DECL|member|r
 name|guchar
@@ -3166,7 +3166,7 @@ argument_list|)
 argument_list|,
 literal|"xpm"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/xpm.html"
 argument_list|,

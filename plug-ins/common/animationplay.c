@@ -189,7 +189,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295a5c600103
+DECL|enum|__anon2b9f02160103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -2180,7 +2180,7 @@ name|windowname
 argument_list|,
 literal|"animationplay"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/animationplay.html"
 argument_list|,

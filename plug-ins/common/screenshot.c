@@ -112,7 +112,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83eaed0108
+DECL|struct|__anon2acdc2b30108
 block|{
 DECL|member|root
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83eaed0208
+DECL|struct|__anon2acdc2b30208
 block|{
 DECL|member|decor_button
 name|GtkWidget
@@ -1416,7 +1416,7 @@ argument_list|)
 argument_list|,
 literal|"screenshot"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/screenshot.html"
 argument_list|,

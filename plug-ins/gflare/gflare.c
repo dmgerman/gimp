@@ -506,7 +506,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b14d6cb0103
+DECL|enum|__anon2c017bfe0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b14d6cb0203
+DECL|enum|__anon2c017bfe0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0308
+DECL|struct|__anon2c017bfe0308
 block|{
 DECL|member|name
 name|gchar
@@ -695,7 +695,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0408
+DECL|struct|__anon2c017bfe0408
 block|{
 DECL|member|fp
 name|FILE
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b14d6cb0503
+DECL|enum|__anon2c017bfe0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0608
+DECL|struct|__anon2c017bfe0608
 block|{
 DECL|member|init
 name|gint
@@ -765,7 +765,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b14d6cb0708
+DECL|struct|__anon2c017bfe0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -839,7 +839,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0808
+DECL|struct|__anon2c017bfe0808
 block|{
 DECL|member|init
 name|gint
@@ -909,7 +909,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0908
+DECL|struct|__anon2c017bfe0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -936,7 +936,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0a08
+DECL|struct|__anon2c017bfe0a08
 block|{
 DECL|member|init
 name|gint
@@ -1106,7 +1106,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0b08
+DECL|struct|__anon2c017bfe0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -1133,7 +1133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0c08
+DECL|struct|__anon2c017bfe0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1174,7 +1174,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0d08
+DECL|struct|__anon2c017bfe0d08
 block|{
 DECL|member|tile
 name|GTile
@@ -1400,7 +1400,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0e08
+DECL|struct|__anon2c017bfe0e08
 block|{
 DECL|member|tag
 name|gint
@@ -1477,7 +1477,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb0f08
+DECL|struct|__anon2c017bfe0f08
 block|{
 DECL|member|xcenter
 name|gint
@@ -1535,7 +1535,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b14d6cb1008
+DECL|struct|__anon2c017bfe1008
 block|{
 DECL|member|run
 name|gint
@@ -9375,7 +9375,7 @@ DECL|function|calc_sample_one_gradient ()
 name|calc_sample_one_gradient
 parameter_list|()
 block|{
-DECL|struct|__anon2b14d6cb1108
+DECL|struct|__anon2c017bfe1108
 specifier|static
 struct|struct
 block|{
@@ -12481,7 +12481,7 @@ argument_list|)
 argument_list|,
 literal|"gflare"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gflare.html"
 argument_list|,
@@ -15843,7 +15843,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2b14d6cb1208
+DECL|struct|__anon2c017bfe1208
 block|{
 DECL|member|label
 name|gchar
@@ -16467,7 +16467,7 @@ argument_list|(
 literal|"New GFlare"
 argument_list|)
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gflare.html"
 argument_list|,
@@ -16722,7 +16722,7 @@ argument_list|(
 literal|"Copy GFlare"
 argument_list|)
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gflare.html"
 argument_list|,
@@ -16931,7 +16931,7 @@ argument_list|(
 literal|"Delete GFlare"
 argument_list|)
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gflare.html"
 argument_list|,
@@ -17299,7 +17299,7 @@ argument_list|)
 argument_list|,
 literal|"gflare"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gflare.html"
 argument_list|,

@@ -1925,7 +1925,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a4570890108
+DECL|struct|__anon29383da30108
 typedef|typedef
 struct|struct
 block|{

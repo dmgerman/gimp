@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2888f6fc0108
+DECL|struct|__anon2a21e7a70108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -283,7 +283,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2888f6fc0208
+DECL|struct|__anon2a21e7a70208
 block|{
 DECL|member|height
 DECL|member|width
@@ -1512,7 +1512,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2888f6fc0308
+DECL|struct|__anon2a21e7a70308
 DECL|member|r
 DECL|member|g
 DECL|member|b
@@ -4459,7 +4459,7 @@ argument_list|)
 argument_list|,
 literal|"sinus"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/sinus.html"
 argument_list|,

@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291dd9780108
+DECL|struct|__anon2bf4cf6d0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -844,7 +844,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291dd9780208
+DECL|struct|__anon2bf4cf6d0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1069,7 +1069,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291dd9780308
+DECL|struct|__anon2bf4cf6d0308
 block|{
 DECL|member|run
 name|gint
@@ -3612,7 +3612,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291dd9780408
+DECL|struct|__anon2bf4cf6d0408
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5295,7 +5295,7 @@ argument_list|)
 argument_list|,
 literal|"vpropagate"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/vpropagate.html"
 argument_list|,

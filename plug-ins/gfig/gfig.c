@@ -1169,7 +1169,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30103
+DECL|enum|__anon2a5678a40103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1221,7 +1221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30203
+DECL|enum|__anon2a5678a40203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1242,7 +1242,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30303
+DECL|enum|__anon2a5678a40303
 block|{
 DECL|enumerator|SINGLE_LAYER
 name|SINGLE_LAYER
@@ -1263,7 +1263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30403
+DECL|enum|__anon2a5678a40403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1287,7 +1287,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30503
+DECL|enum|__anon2a5678a40503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1308,7 +1308,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30603
+DECL|enum|__anon2a5678a40603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1476,7 +1476,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a65cf30708
+DECL|struct|__anon2a5678a40708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1515,7 +1515,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a65cf30808
+DECL|struct|__anon2a5678a40808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1564,7 +1564,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a65cf30908
+DECL|struct|__anon2a5678a40908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1735,7 +1735,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30a03
+DECL|enum|__anon2a5678a40a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1765,7 +1765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30b03
+DECL|enum|__anon2a5678a40b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1781,7 +1781,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30c03
+DECL|enum|__anon2a5678a40c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1806,7 +1806,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a65cf30d03
+DECL|enum|__anon2a5678a40d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -9301,7 +9301,7 @@ name|d_title
 argument_list|,
 literal|"gfig"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,
@@ -9604,7 +9604,7 @@ argument_list|)
 argument_list|,
 literal|"gfig"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,
@@ -19502,7 +19502,7 @@ argument_list|)
 argument_list|,
 literal|"gfig"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,
@@ -20219,7 +20219,7 @@ argument_list|(
 literal|"Warning"
 argument_list|)
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,
@@ -21581,7 +21581,7 @@ argument_list|)
 argument_list|,
 literal|"gfig"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,
@@ -21970,7 +21970,7 @@ argument_list|)
 argument_list|,
 literal|"gfig"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,
@@ -23203,7 +23203,7 @@ argument_list|)
 argument_list|,
 literal|"gfig"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,
@@ -24102,7 +24102,7 @@ argument_list|(
 literal|"Delete Gfig Drawing"
 argument_list|)
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gfig.html"
 argument_list|,

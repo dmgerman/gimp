@@ -218,7 +218,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7286a80108
+DECL|struct|__anon2b1d74bc0108
 block|{
 DECL|member|color
 name|guchar
@@ -236,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7286a80208
+DECL|struct|__anon2b1d74bc0208
 block|{
 DECL|member|run
 name|gint
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7286a80308
+DECL|struct|__anon2b1d74bc0308
 block|{
 DECL|member|red
 name|guchar
@@ -1416,7 +1416,7 @@ argument_list|)
 argument_list|,
 literal|"colorify"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/colorify.html"
 argument_list|,

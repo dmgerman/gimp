@@ -132,7 +132,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54528d0108
+DECL|struct|__anon2b8175810108
 block|{
 DECL|member|division
 name|gint32
@@ -1418,7 +1418,7 @@ argument_list|)
 argument_list|,
 literal|"illusion"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/illusion.html"
 argument_list|,

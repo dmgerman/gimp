@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e7d6a0108
+DECL|struct|__anon2c2c490e0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e7d6a0208
+DECL|struct|__anon2c2c490e0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e7d6a0308
+DECL|struct|__anon2c2c490e0308
 block|{
 DECL|member|col
 DECL|member|row
@@ -4374,7 +4374,7 @@ argument_list|)
 argument_list|,
 literal|"polar"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/polar.html"
 argument_list|,

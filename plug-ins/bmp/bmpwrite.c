@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a23747f0108
+DECL|struct|__anon2b76ae200108
 block|{
 DECL|member|run
 name|gint
@@ -2787,7 +2787,7 @@ argument_list|)
 argument_list|,
 literal|"bmp"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/bmp.html"
 argument_list|,

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba74df0108
+DECL|struct|__anon2bc41ce40108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba74df0208
+DECL|struct|__anon2bc41ce40208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ba74df0308
+DECL|struct|__anon2bc41ce40308
 block|{
 DECL|member|run
 name|gint
@@ -1215,7 +1215,7 @@ argument_list|)
 argument_list|,
 literal|"cubism"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/cubism.html"
 argument_list|,

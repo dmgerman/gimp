@@ -282,7 +282,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b261cf40108
+DECL|struct|__anon2b859c2c0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3651,7 +3651,7 @@ argument_list|)
 argument_list|,
 literal|"grid"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/grid.html"
 argument_list|,

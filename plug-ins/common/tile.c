@@ -58,7 +58,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5927880108
+DECL|struct|__anon2b0a247d0108
 block|{
 DECL|member|new_width
 name|gint
@@ -85,7 +85,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5927880208
+DECL|struct|__anon2b0a247d0208
 block|{
 DECL|member|sizeentry
 name|GtkWidget
@@ -1583,7 +1583,7 @@ argument_list|)
 argument_list|,
 literal|"tile"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/tile.html"
 argument_list|,

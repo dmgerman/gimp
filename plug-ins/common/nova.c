@@ -194,7 +194,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3537d0108
+DECL|struct|__anon2934ddb10108
 block|{
 DECL|member|xcenter
 DECL|member|ycenter
@@ -231,7 +231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3537d0208
+DECL|struct|__anon2934ddb10208
 block|{
 DECL|member|run
 name|gint
@@ -246,7 +246,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3537d0308
+DECL|struct|__anon2934ddb10308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -1217,7 +1217,7 @@ argument_list|)
 argument_list|,
 literal|"nova"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/nova.html"
 argument_list|,

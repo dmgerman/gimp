@@ -2004,7 +2004,7 @@ name|title
 argument_list|,
 literal|"sharpen"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/sharpen.html"
 argument_list|,

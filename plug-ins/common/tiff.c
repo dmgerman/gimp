@@ -52,7 +52,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c14f12c0108
+DECL|struct|__anon2a154ed20108
 block|{
 DECL|member|compression
 name|gint
@@ -71,7 +71,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c14f12c0208
+DECL|struct|__anon2a154ed20208
 block|{
 DECL|member|run
 name|gint
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c14f12c0308
+DECL|struct|__anon2a154ed20308
 block|{
 DECL|member|ID
 name|gint32
@@ -7122,7 +7122,7 @@ argument_list|)
 argument_list|,
 literal|"tiff"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/tiff.html"
 argument_list|,

@@ -145,7 +145,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299216e50103
+DECL|enum|__anon2a3de4250103
 block|{
 DECL|enumerator|act_lredux
 name|act_lredux
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299216e50203
+DECL|enum|__anon2a3de4250203
 block|{
 DECL|enumerator|mode_ntsc
 name|mode_ntsc
@@ -219,7 +219,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon299216e50308
+DECL|struct|__anon2a3de4250308
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2425,7 +2425,7 @@ argument_list|)
 argument_list|,
 literal|"hot"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/hot.html"
 argument_list|,

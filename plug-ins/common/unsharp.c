@@ -141,7 +141,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7b1640108
+DECL|struct|__anon2b3a94330108
 block|{
 DECL|member|radius
 name|gdouble
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7b1640208
+DECL|struct|__anon2b3a94330208
 block|{
 DECL|member|run
 name|gint
@@ -3758,7 +3758,7 @@ argument_list|)
 argument_list|,
 literal|"unsharp"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/unsharp.html"
 argument_list|,

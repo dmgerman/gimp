@@ -89,7 +89,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fc854e0103
+DECL|enum|__anon276fed800103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -106,7 +106,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc854e0208
+DECL|struct|__anon276fed800208
 block|{
 DECL|member|amount
 name|gdouble
@@ -125,7 +125,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc854e0308
+DECL|struct|__anon276fed800308
 block|{
 DECL|member|run
 name|gint
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fc854e0408
+DECL|struct|__anon276fed800408
 block|{
 DECL|member|tile
 name|GTile
@@ -2651,7 +2651,7 @@ argument_list|)
 argument_list|,
 literal|"edge"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/edge.html"
 argument_list|,

@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b44b91a0108
+DECL|struct|__anon27a1e5af0108
 block|{
 DECL|member|interlaced
 name|gint
@@ -3933,7 +3933,7 @@ argument_list|)
 argument_list|,
 literal|"png"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/png.html"
 argument_list|,

@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfeb0140108
+DECL|struct|__anon2b1f44980108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfeb0140203
+DECL|enum|__anon2b1f44980203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfeb0140303
+DECL|enum|__anon2b1f44980303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfeb0140403
+DECL|enum|__anon2b1f44980403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfeb0140503
+DECL|enum|__anon2b1f44980503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfeb0140608
+DECL|struct|__anon2b1f44980608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfeb0140708
+DECL|struct|__anon2b1f44980708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1538,7 +1538,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfeb0140808
+DECL|struct|__anon2b1f44980808
 block|{
 DECL|member|run
 name|gint
@@ -1588,7 +1588,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfeb0140908
+DECL|struct|__anon2b1f44980908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -6549,7 +6549,7 @@ argument_list|)
 argument_list|,
 literal|"cml_explorer"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/cml_explorer.html"
 argument_list|,
@@ -11068,7 +11068,7 @@ argument_list|)
 argument_list|,
 literal|"cml_explorer"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/cml_explorer.html"
 argument_list|,
@@ -12191,7 +12191,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|filesel
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/cml_explorer.html"
 argument_list|)
@@ -12867,7 +12867,7 @@ argument_list|)
 argument_list|,
 literal|"cml_explorer"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/cml_explorer.html"
 argument_list|,
@@ -13218,7 +13218,7 @@ name|gimp_help_connect_help_accel
 argument_list|(
 name|filesel
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/cml_explorer.html"
 argument_list|)

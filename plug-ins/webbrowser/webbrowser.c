@@ -375,7 +375,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec8bad0108
+DECL|struct|__anon2b9f33e60108
 block|{
 DECL|member|url
 name|gchar
@@ -1029,7 +1029,7 @@ argument_list|)
 argument_list|,
 literal|"webbbrowser"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/webbrowser.html"
 argument_list|,

@@ -46,7 +46,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2c1af6d20103
+DECL|enum|__anon2b07abec0103
 DECL|enumerator|BEZIER_1
 DECL|enumerator|BEZIER_2
 DECL|typedef|style_t
@@ -62,7 +62,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c1af6d20203
+DECL|enum|__anon2b07abec0203
 DECL|enumerator|LEFT
 DECL|enumerator|RIGHT
 DECL|enumerator|UP
@@ -14048,7 +14048,7 @@ argument_list|)
 argument_list|,
 literal|"jigsaw"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/jigsaw.html"
 argument_list|,

@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbc6e30108
+DECL|struct|__anon297eb9fd0108
 block|{
 DECL|member|fromred
 DECL|member|fromgreen
@@ -1245,7 +1245,7 @@ argument_list|)
 argument_list|,
 literal|"exchange"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/exchange.html"
 argument_list|,

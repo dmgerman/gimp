@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afacca10103
+DECL|enum|__anon2b8b8a710103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1041,7 +1041,7 @@ argument_list|)
 argument_list|,
 literal|"deinterlace"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/deinterlace.html"
 argument_list|,

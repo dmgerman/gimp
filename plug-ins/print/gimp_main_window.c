@@ -1315,7 +1315,7 @@ name|plug_in_name
 argument_list|,
 literal|"print"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/print.html"
 argument_list|,
@@ -3742,7 +3742,7 @@ argument_list|)
 argument_list|,
 literal|"print"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/print.html"
 argument_list|,

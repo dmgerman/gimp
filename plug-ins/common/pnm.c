@@ -321,7 +321,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b803e670108
+DECL|struct|__anon2b70f1320108
 block|{
 DECL|member|raw
 name|gint
@@ -337,7 +337,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b803e670208
+DECL|struct|__anon2b70f1320208
 block|{
 DECL|member|run
 name|gint
@@ -4511,7 +4511,7 @@ argument_list|)
 argument_list|,
 literal|"pnm"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/pnm.html"
 argument_list|,

@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b714e910108
+DECL|struct|__anon27c95d480108
 block|{
 DECL|member|file_name
 name|gchar
@@ -3093,7 +3093,7 @@ argument_list|)
 argument_list|,
 literal|"csource"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/csource.html"
 argument_list|,

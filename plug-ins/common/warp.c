@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2974e7360103
+DECL|enum|__anon28bfa26f0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974e7360208
+DECL|struct|__anon28bfa26f0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974e7360308
+DECL|struct|__anon28bfa26f0308
 block|{
 DECL|member|run
 name|gint
@@ -1662,7 +1662,7 @@ argument_list|)
 argument_list|,
 literal|"warp"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/warp.html"
 argument_list|,

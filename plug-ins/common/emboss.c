@@ -70,7 +70,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ecc71f0103
+DECL|enum|__anon2990cc340103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -2377,7 +2377,7 @@ argument_list|)
 argument_list|,
 literal|"emboss"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/emboss.html"
 argument_list|,

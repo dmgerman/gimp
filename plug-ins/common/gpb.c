@@ -115,7 +115,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2af2c3560108
+DECL|struct|__anon2b5530ac0108
 block|{
 comment|/* Use by both gpb and gih: */
 DECL|member|spacing
@@ -173,7 +173,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af2c3560208
+DECL|struct|__anon2b5530ac0208
 block|{
 DECL|member|orientation
 name|GOrientation
@@ -1380,7 +1380,7 @@ argument_list|)
 argument_list|,
 literal|"gpb"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gpb.html"
 argument_list|,
@@ -1661,7 +1661,7 @@ argument_list|)
 argument_list|,
 literal|"gpb"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gpb.html"
 argument_list|,

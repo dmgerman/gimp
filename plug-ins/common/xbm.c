@@ -3265,7 +3265,7 @@ argument_list|)
 argument_list|,
 literal|"xbm"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/xbm.html"
 argument_list|,
@@ -4289,7 +4289,7 @@ argument_list|)
 argument_list|,
 literal|"xbm"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/xbm.html"
 argument_list|,

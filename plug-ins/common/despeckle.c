@@ -2212,7 +2212,7 @@ name|plugin_name
 argument_list|,
 literal|"despeckle"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/despeckle.html"
 argument_list|,

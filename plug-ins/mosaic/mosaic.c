@@ -182,7 +182,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74e7ed0108
+DECL|struct|__anon2a58abf10108
 block|{
 DECL|member|x
 DECL|member|y
@@ -200,7 +200,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74e7ed0208
+DECL|struct|__anon2a58abf10208
 block|{
 DECL|member|npts
 name|gint
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74e7ed0308
+DECL|struct|__anon2a58abf10308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -251,7 +251,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74e7ed0408
+DECL|struct|__anon2a58abf10408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c74e7ed0508
+DECL|struct|__anon2a58abf10508
 block|{
 DECL|member|run
 name|gint
@@ -2460,7 +2460,7 @@ argument_list|)
 argument_list|,
 literal|"mosaic"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/mosaic.html"
 argument_list|,

@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beb009b0108
+DECL|struct|__anon2c25154f0108
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beb009b0208
+DECL|struct|__anon2c25154f0208
 block|{
 DECL|member|y
 name|gint32
@@ -6315,7 +6315,7 @@ argument_list|)
 argument_list|,
 literal|"curve_bend"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/curve_bend.html"
 argument_list|,

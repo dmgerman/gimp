@@ -437,7 +437,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae3fd30103
+DECL|enum|__anon2bf13f210103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -598,7 +598,7 @@ argument_list|)
 argument_list|,
 literal|"uniteditor"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/uniteditor.html"
 argument_list|,
@@ -2366,7 +2366,7 @@ argument_list|)
 argument_list|,
 literal|"uniteditor"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/uniteditor.html"
 argument_list|,

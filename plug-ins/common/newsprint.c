@@ -512,7 +512,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a39f3370108
+DECL|struct|__anon2bf31b570108
 block|{
 DECL|member|name
 specifier|const
@@ -772,7 +772,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a39f3370208
+DECL|struct|__anon2bf31b570208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -845,7 +845,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a39f3370308
+DECL|struct|__anon2bf31b570308
 block|{
 DECL|member|input_spi
 name|gint
@@ -871,7 +871,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a39f3370408
+DECL|struct|__anon2bf31b570408
 block|{
 DECL|member|run
 name|gint
@@ -890,7 +890,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a39f3370508
+DECL|struct|__anon2bf31b570508
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -997,7 +997,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a39f3370608
+DECL|struct|__anon2bf31b570608
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1181,7 +1181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a39f3370708
+DECL|struct|__anon2bf31b570708
 block|{
 DECL|member|name
 specifier|const
@@ -4911,7 +4911,7 @@ argument_list|)
 argument_list|,
 literal|"newsprint"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/newsprint.html"
 argument_list|,
@@ -6935,7 +6935,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a39f3370808
+DECL|struct|__anon2bf31b570808
 block|{
 DECL|member|index
 name|gint

@@ -79,7 +79,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83470e0108
+DECL|struct|__anon2a3c281f0108
 block|{
 DECL|member|replace
 name|gint
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83470e0208
+DECL|struct|__anon2a3c281f0208
 block|{
 DECL|member|run
 name|gint
@@ -4439,7 +4439,7 @@ argument_list|)
 argument_list|,
 literal|"fits"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/fits.html"
 argument_list|,

@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5c04fb0108
+DECL|struct|__anon2c149f9e0108
 block|{
 DECL|member|run
 name|gint
@@ -1959,7 +1959,7 @@ comment|/*********** Save dialog ************/
 end_comment
 
 begin_comment
-comment|/* static gint save_dialog (void) {   GtkWidget *dlg;    dlg = gimp_dialog_new (_("Save as HRZ"), "hrz", 			 gimp_plugin_help_func, "filters/hrz.html", 			 GTK_WIN_POS_MOUSE, 			 FALSE, TRUE, FALSE,  			 _("OK"), save_ok_callback, 			 NULL, NULL, NULL, TRUE, FALSE, 			 _("Cancel"), gtk_widget_destroy, 			 NULL, 1, NULL, FALSE, TRUE,  			 NULL);    gtk_signal_connect (GTK_OBJECT (dlg), "destroy", 		      GTK_SIGNAL_FUNC (gtk_main_quit), 		      NULL);    gtk_main ();   gdk_flush ();    return psint.run; }  static void save_ok_callback (GtkWidget *widget, 		  gpointer   data) {   psint.run = TRUE;    gtk_widget_destroy (GTK_WIDGET (data)); } */
+comment|/* static gint save_dialog (void) {   GtkWidget *dlg;    dlg = gimp_dialog_new (_("Save as HRZ"), "hrz", 			 gimp_standard_help_func, "filters/hrz.html", 			 GTK_WIN_POS_MOUSE, 			 FALSE, TRUE, FALSE,  			 _("OK"), save_ok_callback, 			 NULL, NULL, NULL, TRUE, FALSE, 			 _("Cancel"), gtk_widget_destroy, 			 NULL, 1, NULL, FALSE, TRUE,  			 NULL);    gtk_signal_connect (GTK_OBJECT (dlg), "destroy", 		      GTK_SIGNAL_FUNC (gtk_main_quit), 		      NULL);    gtk_main ();   gdk_flush ();    return psint.run; }  static void save_ok_callback (GtkWidget *widget, 		  gpointer   data) {   psint.run = TRUE;    gtk_widget_destroy (GTK_WIDGET (data)); } */
 end_comment
 
 end_unit

@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f7524c0103
+DECL|enum|__anon2acfff920103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,7 +161,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7524c0208
+DECL|struct|__anon2acfff920208
 block|{
 DECL|member|interlace
 name|gint
@@ -188,7 +188,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f7524c0308
+DECL|struct|__anon2acfff920308
 block|{
 DECL|member|run
 name|gint
@@ -3600,7 +3600,7 @@ argument_list|)
 argument_list|,
 literal|"gif_warning"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gif.html#warning"
 argument_list|,
@@ -3900,7 +3900,7 @@ argument_list|)
 argument_list|,
 literal|"gif"
 argument_list|,
-name|gimp_plugin_help_func
+name|gimp_standard_help_func
 argument_list|,
 literal|"filters/gif.html"
 argument_list|,
