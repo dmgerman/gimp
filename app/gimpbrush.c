@@ -58,7 +58,7 @@ file|"libgimp/gimpintl.h"
 end_include
 
 begin_enum
-DECL|enum|__anon296d326a0103
+DECL|enum|__anon27a402860103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
