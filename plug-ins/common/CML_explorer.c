@@ -202,7 +202,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287e68e90108
+DECL|struct|__anon294fa7600108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -229,7 +229,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon287e68e90203
+DECL|enum|__anon294fa7600203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -352,7 +352,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287e68e90303
+DECL|enum|__anon294fa7600303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -491,7 +491,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287e68e90403
+DECL|enum|__anon294fa7600403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -590,7 +590,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon287e68e90503
+DECL|enum|__anon294fa7600503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -682,7 +682,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287e68e90608
+DECL|struct|__anon294fa7600608
 block|{
 DECL|member|function
 name|gint
@@ -755,7 +755,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287e68e90708
+DECL|struct|__anon294fa7600708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1019,7 +1019,7 @@ specifier|static
 name|GimpPDBStatusType
 name|CML_main_function
 parameter_list|(
-name|gint
+name|gboolean
 name|preview_p
 parameter_list|)
 function_decl|;
@@ -1533,7 +1533,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287e68e90808
+DECL|struct|__anon294fa7600808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -2081,10 +2081,10 @@ end_function
 begin_function
 specifier|static
 name|GimpPDBStatusType
-DECL|function|CML_main_function (gint preview_p)
+DECL|function|CML_main_function (gboolean preview_p)
 name|CML_main_function
 parameter_list|(
-name|gint
+name|gboolean
 name|preview_p
 parameter_list|)
 block|{
@@ -2276,10 +2276,6 @@ name|preview_p
 condition|)
 block|{
 name|dest_has_alpha
-operator|=
-name|FALSE
-expr_stmt|;
-name|dest_is_gray
 operator|=
 name|FALSE
 expr_stmt|;
@@ -2740,6 +2736,7 @@ name|index
 index|]
 operator|=
 operator|(
+operator|(
 name|index
 operator|%
 operator|(
@@ -2765,6 +2762,7 @@ operator|.
 name|hue
 operator|.
 name|power
+operator|)
 expr_stmt|;
 break|break;
 default|default:
@@ -2883,6 +2881,7 @@ name|index
 index|]
 operator|=
 operator|(
+operator|(
 name|index
 operator|%
 operator|(
@@ -2908,6 +2907,7 @@ operator|.
 name|sat
 operator|.
 name|power
+operator|)
 expr_stmt|;
 break|break;
 default|default:
@@ -3026,6 +3026,7 @@ name|index
 index|]
 operator|=
 operator|(
+operator|(
 name|index
 operator|%
 operator|(
@@ -3051,6 +3052,7 @@ operator|.
 name|val
 operator|.
 name|power
+operator|)
 expr_stmt|;
 break|break;
 default|default:
@@ -3844,6 +3846,7 @@ operator|==
 name|CML_KEEP_VALUES
 operator|)
 condition|)
+block|{
 name|b
 operator|=
 name|rgbi
@@ -3851,6 +3854,7 @@ index|[
 literal|0
 index|]
 expr_stmt|;
+block|}
 else|else
 block|{
 name|gimp_rgb_to_hsv_int
@@ -3959,6 +3963,7 @@ if|if
 condition|(
 name|dest_is_gray
 condition|)
+block|{
 name|dest_buffer
 index|[
 name|dest_offset
@@ -3967,6 +3972,29 @@ index|]
 operator|=
 name|b
 expr_stmt|;
+if|if
+condition|(
+name|preview_p
+condition|)
+block|{
+name|dest_buffer
+index|[
+name|dest_offset
+operator|++
+index|]
+operator|=
+name|b
+expr_stmt|;
+name|dest_buffer
+index|[
+name|dest_offset
+operator|++
+index|]
+operator|=
+name|b
+expr_stmt|;
+block|}
+block|}
 else|else
 block|{
 name|dest_buffer
@@ -4110,9 +4138,6 @@ name|gtk_widget_queue_draw
 argument_list|(
 name|preview
 argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 block|}
 else|else
@@ -11230,9 +11255,6 @@ expr_stmt|;
 name|CML_initial_value_sensitives_update
 argument_list|()
 expr_stmt|;
-name|gdk_flush
-argument_list|()
-expr_stmt|;
 name|CML_preview_defer
 operator|=
 name|FALSE
@@ -11275,9 +11297,6 @@ argument_list|(
 literal|"Warning: the source and the destination are the same channel."
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 return|return;
 block|}
@@ -11346,9 +11365,6 @@ name|widgets
 operator|+
 name|index
 operator|)
-expr_stmt|;
-name|gdk_flush
-argument_list|()
 expr_stmt|;
 name|CML_preview_defer
 operator|=
