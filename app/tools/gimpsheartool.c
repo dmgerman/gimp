@@ -132,14 +132,6 @@ comment|/*  variables local to this file  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|direction_unknown
-specifier|static
-name|gint
-name|direction_unknown
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|xshear_val
 specifier|static
 name|gdouble
@@ -377,10 +369,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|direction_unknown
-operator|=
-literal|1
-expr_stmt|;
 name|transform_core
 operator|->
 name|trans_info
@@ -388,7 +376,7 @@ index|[
 name|HORZ_OR_VERT
 index|]
 operator|=
-name|ORIENTATION_HORIZONTAL
+name|ORIENTATION_UNKNOWN
 expr_stmt|;
 name|transform_core
 operator|->
@@ -461,10 +449,6 @@ argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
-expr_stmt|;
-name|direction_unknown
-operator|=
-literal|1
 expr_stmt|;
 return|return
 name|shear_tool_shear
@@ -933,7 +917,14 @@ expr_stmt|;
 comment|/*  If we haven't yet decided on which way to control shearing    *  decide using the maximum differential    */
 if|if
 condition|(
-name|direction_unknown
+name|transform_core
+operator|->
+name|trans_info
+index|[
+name|HORZ_OR_VERT
+index|]
+operator|==
+name|ORIENTATION_UNKNOWN
 condition|)
 block|{
 if|if
@@ -1006,10 +997,6 @@ operator|=
 literal|0.0
 expr_stmt|;
 block|}
-name|direction_unknown
-operator|=
-literal|0
-expr_stmt|;
 block|}
 comment|/*  set the current coords to the last ones  */
 else|else
@@ -1035,8 +1022,14 @@ block|}
 comment|/*  if the direction is known, keep track of the magnitude  */
 if|if
 condition|(
-operator|!
-name|direction_unknown
+name|transform_core
+operator|->
+name|trans_info
+index|[
+name|HORZ_OR_VERT
+index|]
+operator|!=
+name|ORIENTATION_UNKNOWN
 condition|)
 block|{
 name|dir
