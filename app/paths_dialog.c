@@ -258,7 +258,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pixmaps/ptoselection.xpm"
+file|"pixmaps/toselection.xpm"
 end_include
 
 begin_include
@@ -292,7 +292,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon29ec7c000108
+DECL|struct|__anon28b009e70108
 typedef|typedef
 struct|struct
 block|{
@@ -401,7 +401,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29ec7c000208
+DECL|struct|__anon28b009e70208
 typedef|typedef
 struct|struct
 block|{
@@ -1008,7 +1008,7 @@ name|NULL
 block|}
 block|,
 block|{
-name|ptoselection_xpm
+name|toselection_xpm
 block|,
 name|paths_dialog_path_to_sel_callback
 block|,
