@@ -6,12 +6,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -24,14 +18,12 @@ end_include
 begin_function
 name|DrawCore
 modifier|*
-DECL|function|draw_core_new (draw_func)
+DECL|function|draw_core_new (DrawCoreDraw draw_func)
 name|draw_core_new
 parameter_list|(
-name|draw_func
-parameter_list|)
 name|DrawCoreDraw
 name|draw_func
-decl_stmt|;
+parameter_list|)
 block|{
 name|DrawCore
 modifier|*
@@ -113,27 +105,21 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_start (core,win,tool)
+DECL|function|draw_core_start (DrawCore * core,GdkWindow * win,Tool * tool)
 name|draw_core_start
 parameter_list|(
-name|core
-parameter_list|,
-name|win
-parameter_list|,
-name|tool
-parameter_list|)
 name|DrawCore
 modifier|*
 name|core
-decl_stmt|;
+parameter_list|,
 name|GdkWindow
 modifier|*
 name|win
-decl_stmt|;
+parameter_list|,
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|GdkColor
 name|fg
@@ -280,21 +266,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_stop (core,tool)
+DECL|function|draw_core_stop (DrawCore * core,Tool * tool)
 name|draw_core_stop
 parameter_list|(
-name|core
-parameter_list|,
-name|tool
-parameter_list|)
 name|DrawCore
 modifier|*
 name|core
-decl_stmt|;
+parameter_list|,
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -326,21 +308,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_resume (core,tool)
+DECL|function|draw_core_resume (DrawCore * core,Tool * tool)
 name|draw_core_resume
 parameter_list|(
-name|core
-parameter_list|,
-name|tool
-parameter_list|)
 name|DrawCore
 modifier|*
 name|core
-decl_stmt|;
+parameter_list|,
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 name|core
 operator|->
@@ -393,21 +371,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_pause (core,tool)
+DECL|function|draw_core_pause (DrawCore * core,Tool * tool)
 name|draw_core_pause
 parameter_list|(
-name|core
-parameter_list|,
-name|tool
-parameter_list|)
 name|DrawCore
 modifier|*
 name|core
-decl_stmt|;
+parameter_list|,
 name|Tool
 modifier|*
 name|tool
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(
@@ -445,15 +419,13 @@ end_function
 
 begin_function
 name|void
-DECL|function|draw_core_free (core)
+DECL|function|draw_core_free (DrawCore * core)
 name|draw_core_free
 parameter_list|(
-name|core
-parameter_list|)
 name|DrawCore
 modifier|*
 name|core
-decl_stmt|;
+parameter_list|)
 block|{
 if|if
 condition|(

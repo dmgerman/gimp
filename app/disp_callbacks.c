@@ -998,23 +998,17 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-comment|/*  reset the current tool if ...  */
+comment|/* reset the current tool if ... */
 if|if
 condition|(
-comment|/* it has no display */
-operator|!
-name|active_tool
-operator|->
-name|gdisp_ptr
-operator|||
-comment|/* or no drawable */
+operator|(
+comment|/* it has no drawable */
 operator|!
 name|active_tool
 operator|->
 name|drawable
 operator|||
-comment|/* or a drawable different from it's current one... */
-operator|(
+comment|/* or a drawable different from the current one */
 operator|(
 name|gimage_active_drawable
 argument_list|(
@@ -1027,13 +1021,13 @@ name|active_tool
 operator|->
 name|drawable
 operator|)
+operator|)
 operator|&&
-comment|/* ...and doesn't want to preserve it */
+comment|/* and doesn't want to be preserved across drawable changes */
 operator|!
 name|active_tool
 operator|->
 name|preserve
-operator|)
 condition|)
 block|{
 name|tools_initialize
@@ -1043,6 +1037,28 @@ operator|->
 name|type
 argument_list|,
 name|gdisp
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* otherwise set it's drawable if it has none */
+elseif|else
+if|if
+condition|(
+operator|!
+name|active_tool
+operator|->
+name|drawable
+condition|)
+block|{
+name|active_tool
+operator|->
+name|drawable
+operator|=
+name|gimage_active_drawable
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}
@@ -1116,6 +1132,10 @@ name|bevent
 operator|->
 name|time
 argument_list|)
+expr_stmt|;
+name|return_val
+operator|=
+name|TRUE
 expr_stmt|;
 break|break;
 default|default:

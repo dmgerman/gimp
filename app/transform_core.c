@@ -541,10 +541,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|naction_items
+DECL|variable|n_action_items
 specifier|static
 name|gint
-name|naction_items
+name|n_action_items
 init|=
 sizeof|sizeof
 argument_list|(
@@ -623,6 +623,10 @@ name|Layer
 modifier|*
 name|layer
 decl_stmt|;
+name|GimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
 name|int
 name|dist
 decl_stmt|;
@@ -667,8 +671,6 @@ operator|=
 name|TRUE
 expr_stmt|;
 comment|/* ALT */
-name|tool
-operator|->
 name|drawable
 operator|=
 name|gimage_active_drawable
@@ -724,7 +726,7 @@ comment|/*  if we have already displayed the bounding box and handles,    *  che
 if|if
 condition|(
 operator|(
-name|gdisp_ptr
+name|gdisp
 operator|==
 name|tool
 operator|->
@@ -1178,12 +1180,18 @@ argument_list|,
 name|gdisp_ptr
 argument_list|)
 expr_stmt|;
-comment|/*  Set the pointer to the gdisplay that owns this tool  */
+comment|/*  Set the pointer to the active display  */
 name|tool
 operator|->
 name|gdisp_ptr
 operator|=
-name|gdisp_ptr
+name|gdisp
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|drawable
 expr_stmt|;
 name|tool
 operator|->
@@ -1315,7 +1323,7 @@ argument_list|)
 argument_list|,
 name|action_items
 argument_list|,
-name|naction_items
+name|n_action_items
 argument_list|,
 literal|0
 argument_list|)
@@ -3500,7 +3508,19 @@ name|preserve
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/*  Destroy when the image is dirtied. */
+comment|/*  Destroy when the image is dirtied  */
+name|tool
+operator|->
+name|gdisp_ptr
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 name|tool
 operator|->
 name|button_press_func
@@ -4040,6 +4060,12 @@ expr_stmt|;
 name|tool
 operator|->
 name|gdisp_ptr
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
 operator|=
 name|NULL
 expr_stmt|;

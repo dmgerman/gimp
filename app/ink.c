@@ -6456,7 +6456,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon28fdf8130103
+DECL|enum|__anon27e800fd0103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum
@@ -8330,6 +8330,18 @@ operator|->
 name|preserve
 operator|=
 name|TRUE
+expr_stmt|;
+name|tool
+operator|->
+name|gdisp_ptr
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|NULL
 expr_stmt|;
 name|tool
 operator|->

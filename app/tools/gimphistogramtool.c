@@ -12,18 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<math.h>
 end_include
 
@@ -554,9 +542,11 @@ literal|12
 index|]
 decl_stmt|;
 comment|/*  mean  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+literal|12
 argument_list|,
 literal|"%3.1f"
 argument_list|,
@@ -581,9 +571,11 @@ name|text
 argument_list|)
 expr_stmt|;
 comment|/*  std dev  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+literal|12
 argument_list|,
 literal|"%3.1f"
 argument_list|,
@@ -608,9 +600,11 @@ name|text
 argument_list|)
 expr_stmt|;
 comment|/*  median  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+literal|12
 argument_list|,
 literal|"%3.1f"
 argument_list|,
@@ -635,9 +629,11 @@ name|text
 argument_list|)
 expr_stmt|;
 comment|/*  pixels  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+literal|12
 argument_list|,
 literal|"%8.1f"
 argument_list|,
@@ -668,9 +664,11 @@ name|start
 operator|==
 name|end
 condition|)
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+literal|12
 argument_list|,
 literal|"%d"
 argument_list|,
@@ -678,9 +676,11 @@ name|start
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+literal|12
 argument_list|,
 literal|"%d..%d"
 argument_list|,
@@ -705,9 +705,11 @@ name|text
 argument_list|)
 expr_stmt|;
 comment|/*  count  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+literal|12
 argument_list|,
 literal|"%8.1f"
 argument_list|,
@@ -732,9 +734,11 @@ name|text
 argument_list|)
 expr_stmt|;
 comment|/*  percentile  */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|text
+argument_list|,
+literal|12
 argument_list|,
 literal|"%2.2f"
 argument_list|,
@@ -792,6 +796,12 @@ decl_stmt|;
 name|gdisp
 operator|=
 name|gdisp_ptr
+expr_stmt|;
+name|tool
+operator|->
+name|gdisp_ptr
+operator|=
+name|gdisp
 expr_stmt|;
 name|tool
 operator|->
@@ -1046,6 +1056,24 @@ name|private
 expr_stmt|;
 name|tool
 operator|->
+name|preserve
+operator|=
+name|FALSE
+expr_stmt|;
+name|tool
+operator|->
+name|gdisp_ptr
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
 name|button_press_func
 operator|=
 name|histogram_tool_button_press
@@ -1085,12 +1113,6 @@ operator|->
 name|control_func
 operator|=
 name|histogram_tool_control
-expr_stmt|;
-name|tool
-operator|->
-name|preserve
-operator|=
-name|FALSE
 expr_stmt|;
 return|return
 name|tool

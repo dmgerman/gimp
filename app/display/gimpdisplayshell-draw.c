@@ -3482,8 +3482,6 @@ operator||
 name|GDK_BUTTON_RELEASE_MASK
 argument_list|)
 expr_stmt|;
-comment|/* Still need to sort out the best way of using this metrics stuff.    * For the moment, we do everything in terms of pixels    *    -- austin 25/Jan/99 */
-comment|/*gtk_ruler_set_metric (GTK_RULER (gdisp->hrule), ruler_units);*/
 name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
@@ -3560,7 +3558,6 @@ operator||
 name|GDK_BUTTON_RELEASE_MASK
 argument_list|)
 expr_stmt|;
-comment|/*gtk_ruler_set_metric (GTK_RULER (gdisp->vrule), ruler_units);*/
 name|gtk_signal_connect_object
 argument_list|(
 name|GTK_OBJECT
@@ -3704,6 +3701,41 @@ argument_list|,
 name|GTK_CAN_FOCUS
 argument_list|)
 expr_stmt|;
+name|gtk_object_set_user_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gdisp
+operator|->
+name|canvas
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|)
+name|gdisp
+argument_list|)
+expr_stmt|;
+comment|/* set the active display before doing any other canvas event processing  */
+name|gtk_signal_connect
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gdisp
+operator|->
+name|canvas
+argument_list|)
+argument_list|,
+literal|"event"
+argument_list|,
+operator|(
+name|GtkSignalFunc
+operator|)
+name|gdisplay_shell_events
+argument_list|,
+name|gdisp
+argument_list|)
+expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
 name|GTK_OBJECT
@@ -3720,21 +3752,6 @@ name|GtkSignalFunc
 operator|)
 name|gdisplay_canvas_events
 argument_list|,
-name|gdisp
-argument_list|)
-expr_stmt|;
-name|gtk_object_set_user_data
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|gdisp
-operator|->
-name|canvas
-argument_list|)
-argument_list|,
-operator|(
-name|gpointer
-operator|)
 name|gdisp
 argument_list|)
 expr_stmt|;

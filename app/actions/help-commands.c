@@ -318,7 +318,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976ca520108
+DECL|struct|__anon29e1ba2e0108
 block|{
 DECL|member|resize
 name|Resize
@@ -3663,7 +3663,7 @@ operator|=
 name|gdisplay_active
 argument_list|()
 expr_stmt|;
-comment|/*  Activate the approriate widget.    *  Implicitly calls tools_select()    */
+comment|/*  Activate the appropriate widget.    *  Implicitly calls tools_select()    */
 name|gtk_widget_activate
 argument_list|(
 name|tool_info
@@ -3674,6 +3674,13 @@ operator|.
 name|tool_widget
 argument_list|)
 expr_stmt|;
+comment|/*  Paranoia  */
+name|active_tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 comment|/*  Complete the initialisation by doing the same stuff    *  tools_initialize() does after it did what tools_select() does    */
 if|if
 condition|(
@@ -3683,8 +3690,6 @@ name|callback_action
 index|]
 operator|.
 name|init_func
-operator|&&
-name|gdisp
 condition|)
 block|{
 operator|(
@@ -3702,12 +3707,6 @@ operator|)
 expr_stmt|;
 name|active_tool
 operator|->
-name|gdisp_ptr
-operator|=
-name|gdisp
-expr_stmt|;
-name|active_tool
-operator|->
 name|drawable
 operator|=
 name|gimage_active_drawable
@@ -3718,6 +3717,13 @@ name|gimage
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  setting the gdisp_ptr here is a HACK to allow the tools'    *  dialog windows being hidden if the tool was selected from    *  a tear-off-menu and there was no mouse click in the display    *  before deleting it    */
+name|active_tool
+operator|->
+name|gdisp_ptr
+operator|=
+name|gdisp
+expr_stmt|;
 block|}
 end_function
 
