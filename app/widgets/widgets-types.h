@@ -555,6 +555,15 @@ name|GimpHistogramBox
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpTextEditor
+typedef|typedef
+name|struct
+name|_GimpTextEditor
+name|GimpTextEditor
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  structs  */
 end_comment

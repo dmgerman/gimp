@@ -17,6 +17,42 @@ name|__TEXT_ENUMS_H__
 end_define
 
 begin_define
+DECL|macro|GIMP_TYPE_TEXT_DIRECTION
+define|#
+directive|define
+name|GIMP_TYPE_TEXT_DIRECTION
+value|(gimp_text_direction_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_text_direction_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon29c1df710103
+block|{
+DECL|enumerator|GIMP_TEXT_DIRECTION_LTR
+name|GIMP_TEXT_DIRECTION_LTR
+block|,
+comment|/*< desc="From Left to Right">*/
+DECL|enumerator|GIMP_TEXT_DIRECTION_RTL
+name|GIMP_TEXT_DIRECTION_RTL
+comment|/*< desc="From Right to Left">*/
+DECL|typedef|GimpTextDirection
+block|}
+name|GimpTextDirection
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_TEXT_JUSTIFICATION
 define|#
 directive|define
@@ -37,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2e1dbc0103
+DECL|enum|__anon29c1df710203
 block|{
 DECL|enumerator|GIMP_TEXT_JUSTIFY_LEFT
 name|GIMP_TEXT_JUSTIFY_LEFT

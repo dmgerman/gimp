@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c24b0f50103
+DECL|enum|__anon29d1ddd30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -560,9 +560,9 @@ literal|"base-direction"
 argument_list|,
 name|NULL
 argument_list|,
-name|PANGO_TYPE_DIRECTION
+name|GIMP_TYPE_TEXT_DIRECTION
 argument_list|,
-name|PANGO_DIRECTION_LTR
+name|GIMP_TEXT_DIRECTION_LTR
 argument_list|,
 literal|0
 argument_list|)

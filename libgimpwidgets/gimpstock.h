@@ -205,6 +205,16 @@ define|#
 directive|define
 name|GIMP_STOCK_LINE_SPACING
 value|"gimp-line-spacing"
+DECL|macro|GIMP_STOCK_TEXT_DIR_LTR
+define|#
+directive|define
+name|GIMP_STOCK_TEXT_DIR_LTR
+value|"gimp-text-dir-ltr"
+DECL|macro|GIMP_STOCK_TEXT_DIR_RTL
+define|#
+directive|define
+name|GIMP_STOCK_TEXT_DIR_RTL
+value|"gimp-text-dir-rtl"
 DECL|macro|GIMP_STOCK_TOOL_AIRBRUSH
 define|#
 directive|define

@@ -148,6 +148,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_text_options_editor_new
+parameter_list|(
+name|GimpTextOptions
+modifier|*
+name|options
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|title
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

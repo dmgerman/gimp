@@ -126,12 +126,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimptexteditor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -1401,16 +1395,14 @@ name|text_tool
 operator|->
 name|editor
 operator|=
-name|gimp_text_editor_new
+name|gimp_text_options_editor_new
 argument_list|(
+name|options
+argument_list|,
 name|_
 argument_list|(
 literal|"GIMP Text Editor"
 argument_list|)
-argument_list|,
-name|options
-operator|->
-name|buffer
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
