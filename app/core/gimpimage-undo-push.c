@@ -7337,15 +7337,13 @@ argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
+return|return
 name|gimp_image_undo_push_undo
 argument_list|(
 name|gimage
 argument_list|,
 name|undo
 argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function
