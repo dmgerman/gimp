@@ -173,7 +173,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e120b0108
+DECL|struct|__anon28944f8f0108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -968,7 +968,15 @@ literal|"along with this program; if not, write to the Free Software\n"
 block|,
 literal|"weak"
 block|,
-literal|"Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n\n\n"
+literal|"Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.\n\n"
+block|,
+literal|"strong"
+block|,
+literal|"Welcome to SIOD, Scheme In One Defun\n"
+block|,
+literal|"weak"
+block|,
+literal|"(C) Copyright 1988-1994 Paradigm Associates Inc.\n\n\n"
 block|,
 literal|"strong"
 block|,
