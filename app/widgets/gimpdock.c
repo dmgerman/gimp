@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290068f30103
+DECL|enum|__anon2ab134d60103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -737,13 +737,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-condition|)
 name|GTK_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -1156,12 +1149,8 @@ name|dock
 operator|->
 name|context
 operator|=
-name|context
-expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|dock
-operator|->
 name|context
 argument_list|)
 expr_stmt|;
@@ -1278,17 +1267,6 @@ argument_list|(
 name|dockable
 operator|->
 name|dockbook
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|dockable
-operator|->
-name|dockbook
-operator|->
-name|dock
 operator|!=
 name|NULL
 argument_list|)
