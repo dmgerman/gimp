@@ -999,7 +999,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_attach (Tile * tile,void * tm,guint tile_num)
+DECL|function|tile_attach (Tile * tile,void * tm,gint tile_num)
 name|tile_attach
 parameter_list|(
 name|Tile
@@ -1010,7 +1010,7 @@ name|void
 modifier|*
 name|tm
 parameter_list|,
-name|guint
+name|gint
 name|tile_num
 parameter_list|)
 block|{
@@ -1122,7 +1122,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_detach (Tile * tile,void * tm,guint tile_num)
+DECL|function|tile_detach (Tile * tile,void * tm,gint tile_num)
 name|tile_detach
 parameter_list|(
 name|Tile
@@ -1133,7 +1133,7 @@ name|void
 modifier|*
 name|tm
 parameter_list|,
-name|guint
+name|gint
 name|tile_num
 parameter_list|)
 block|{

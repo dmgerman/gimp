@@ -104,7 +104,7 @@ name|GimpDrawable
 name|parent_instance
 decl_stmt|;
 DECL|member|opacity
-name|guint
+name|gint
 name|opacity
 decl_stmt|;
 comment|/*  layer opacity                  */
@@ -114,12 +114,12 @@ name|mode
 decl_stmt|;
 comment|/*  layer combination mode         */
 DECL|member|preserve_trans
-name|guint
+name|gboolean
 name|preserve_trans
 decl_stmt|;
-comment|/*  preserve transparency      */
+comment|/*  preserve transparency          */
 DECL|member|linked
-name|guint
+name|gboolean
 name|linked
 decl_stmt|;
 comment|/*  control linkage                */
@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask            */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b7741920108
+DECL|struct|__anon29089d650108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -146,17 +146,13 @@ name|drawable
 decl_stmt|;
 comment|/*  floating sel is attached to    */
 DECL|member|initial
-name|guint
+name|gboolean
 name|initial
-range|:
-literal|1
 decl_stmt|;
 comment|/*  is fs composited yet?          */
 DECL|member|boundary_known
-name|guint
+name|gboolean
 name|boundary_known
-range|:
-literal|1
 decl_stmt|;
 comment|/*  is the current boundary valid  */
 DECL|member|segs
@@ -166,7 +162,7 @@ name|segs
 decl_stmt|;
 comment|/*  boundary of floating sel       */
 DECL|member|num_segs
-name|guint
+name|gint
 name|num_segs
 decl_stmt|;
 comment|/*  number of segs in boundary     */

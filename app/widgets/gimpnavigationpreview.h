@@ -113,11 +113,11 @@ name|gint
 name|y
 decl_stmt|;
 DECL|member|width
-name|guint
+name|gint
 name|width
 decl_stmt|;
 DECL|member|height
-name|guint
+name|gint
 name|height
 decl_stmt|;
 comment|/*  values in preview coordinates  */
@@ -130,11 +130,11 @@ name|gint
 name|p_y
 decl_stmt|;
 DECL|member|p_width
-name|guint
+name|gint
 name|p_width
 decl_stmt|;
 DECL|member|p_height
-name|guint
+name|gint
 name|p_height
 decl_stmt|;
 DECL|member|motion_offset_x
@@ -146,10 +146,8 @@ name|gint
 name|motion_offset_y
 decl_stmt|;
 DECL|member|has_grab
-name|guint
+name|gboolean
 name|has_grab
-range|:
-literal|1
 decl_stmt|;
 DECL|member|gc
 name|GdkGC

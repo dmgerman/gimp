@@ -42,21 +42,6 @@ define|\
 value|void \ x( \   const guchar *src1, \   const guchar *src2, \   guint count, \   guchar *dst) __attribute((regparm(3)));
 end_define
 
-begin_comment
-comment|/* A drawable has an alphachannel if contains either 4 or 2 bytes data  * aka GRAYA and RGBA and thus the macro below works. This will have  * to change if we support bigger formats. We'll do it so for now because  * masking is always cheaper than passing parameters over the stack.      */
-end_comment
-
-begin_define
-DECL|macro|HAS_ALPHA (bytes)
-define|#
-directive|define
-name|HAS_ALPHA
-parameter_list|(
-name|bytes
-parameter_list|)
-value|(~##bytes& 1)
-end_define
-
 begin_define
 DECL|macro|MMX_PIXEL_OP_3A_1A (op)
 define|#

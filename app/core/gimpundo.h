@@ -150,10 +150,8 @@ name|size
 decl_stmt|;
 comment|/* size of undo item          */
 DECL|member|dirties_image
-name|guint
+name|gboolean
 name|dirties_image
-range|:
-literal|1
 decl_stmt|;
 comment|/* TRUE if undo mutates image */
 DECL|member|pop_func

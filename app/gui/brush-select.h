@@ -68,7 +68,7 @@ modifier|*
 name|context
 decl_stmt|;
 DECL|member|spacing_value
-name|guint
+name|gint
 name|spacing_value
 decl_stmt|;
 block|}

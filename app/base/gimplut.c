@@ -129,7 +129,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_lut_setup (GimpLut * lut,GimpLutFunc func,void * user_data,guint nchannels)
+DECL|function|gimp_lut_setup (GimpLut * lut,GimpLutFunc func,void * user_data,gint nchannels)
 name|gimp_lut_setup
 parameter_list|(
 name|GimpLut
@@ -143,7 +143,7 @@ name|void
 modifier|*
 name|user_data
 parameter_list|,
-name|guint
+name|gint
 name|nchannels
 parameter_list|)
 block|{
@@ -307,7 +307,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_lut_setup_exact (GimpLut * lut,GimpLutFunc func,void * user_data,guint nchannels)
+DECL|function|gimp_lut_setup_exact (GimpLut * lut,GimpLutFunc func,void * user_data,gint nchannels)
 name|gimp_lut_setup_exact
 parameter_list|(
 name|GimpLut
@@ -321,7 +321,7 @@ name|void
 modifier|*
 name|user_data
 parameter_list|,
-name|guint
+name|gint
 name|nchannels
 parameter_list|)
 block|{

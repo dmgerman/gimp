@@ -201,7 +201,7 @@ modifier|*
 name|loader_entries
 decl_stmt|;
 DECL|member|n_loader_entries
-name|guint
+name|gint
 name|n_loader_entries
 decl_stmt|;
 DECL|member|data_new_func
@@ -258,7 +258,7 @@ name|GimpDataFactoryLoaderEntry
 modifier|*
 name|loader_entries
 parameter_list|,
-name|guint
+name|gint
 name|n_loader_entries
 parameter_list|,
 name|GimpDataNewFunc

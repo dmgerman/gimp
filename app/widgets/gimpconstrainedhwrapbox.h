@@ -113,11 +113,11 @@ name|GtkHWrapBox
 name|parent_instance
 decl_stmt|;
 DECL|member|rows
-name|guint
+name|gint
 name|rows
 decl_stmt|;
 DECL|member|columns
-name|guint
+name|gint
 name|columns
 decl_stmt|;
 block|}

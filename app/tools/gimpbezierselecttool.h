@@ -174,7 +174,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2a0e19250103
+DECL|enum|__anon2920ab230103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -250,12 +250,10 @@ name|next_curve
 decl_stmt|;
 comment|/* Next curve segment                */
 DECL|member|pointflags
-name|guint
+name|gint
 name|pointflags
-range|:
-literal|1
 decl_stmt|;
-comment|/* Status of point 0 = not selected  			        * 1 = selected */
+comment|/* Status of point 0 = not selected  			       * 1 = selected  			       */
 block|}
 struct|;
 end_struct
@@ -309,7 +307,7 @@ name|last_point
 decl_stmt|;
 comment|/* the last point on the curve       */
 DECL|member|num_points
-name|guint
+name|gint
 name|num_points
 decl_stmt|;
 comment|/* number of points in the curve     */
@@ -372,10 +370,10 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0e19250208
+DECL|struct|__anon2920ab230208
 block|{
 DECL|member|count
-name|guint
+name|gint
 name|count
 decl_stmt|;
 DECL|typedef|CountCurves

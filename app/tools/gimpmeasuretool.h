@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a6f26a0103
+DECL|enum|__anon27f8032f0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -165,7 +165,7 @@ name|point
 decl_stmt|;
 comment|/*  what are we manipulating?  */
 DECL|member|num_points
-name|guint
+name|gint
 name|num_points
 decl_stmt|;
 comment|/*  how many points?           */

@@ -165,7 +165,7 @@ name|click_handle_id
 decl_stmt|;
 comment|/* The handle ID of the segment      */
 DECL|member|active_count
-name|guint
+name|gint
 name|active_count
 decl_stmt|;
 comment|/* How many segments are active?     */

@@ -123,7 +123,7 @@ modifier|*
 name|hash_table
 decl_stmt|;
 DECL|member|preview_size
-name|guint
+name|gint
 name|preview_size
 decl_stmt|;
 DECL|member|get_name_func

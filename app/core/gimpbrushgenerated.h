@@ -132,7 +132,7 @@ decl_stmt|;
 comment|/* y/x        */
 comment|/* private */
 DECL|member|freeze
-name|guint
+name|gint
 name|freeze
 decl_stmt|;
 block|}

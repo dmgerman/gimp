@@ -65,8 +65,7 @@ end_include
 
 begin_function_decl
 specifier|static
-specifier|inline
-name|gboolean
+name|gint
 name|tile_manager_get_tile_num
 parameter_list|(
 name|TileManager
@@ -78,10 +77,6 @@ name|xpixel
 parameter_list|,
 name|gint
 name|ypixel
-parameter_list|,
-name|guint
-modifier|*
-name|tile_num
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -89,16 +84,16 @@ end_function_decl
 begin_function
 name|TileManager
 modifier|*
-DECL|function|tile_manager_new (guint toplevel_width,guint toplevel_height,guint bpp)
+DECL|function|tile_manager_new (gint toplevel_width,gint toplevel_height,gint bpp)
 name|tile_manager_new
 parameter_list|(
-name|guint
+name|gint
 name|toplevel_width
 parameter_list|,
-name|guint
+name|gint
 name|toplevel_height
 parameter_list|,
-name|guint
+name|gint
 name|bpp
 parameter_list|)
 block|{
@@ -221,10 +216,10 @@ modifier|*
 name|tm
 parameter_list|)
 block|{
-name|guint
+name|gint
 name|ntiles
 decl_stmt|;
-name|guint
+name|gint
 name|i
 decl_stmt|;
 name|g_return_if_fail
@@ -338,7 +333,7 @@ end_function
 begin_function
 name|Tile
 modifier|*
-DECL|function|tile_manager_get_tile (TileManager * tm,gint xpixel,gint ypixel,gboolean wantread,gboolean wantwrite)
+DECL|function|tile_manager_get_tile (TileManager * tm,gint xpixel,gint ypixel,gint wantread,gint wantwrite)
 name|tile_manager_get_tile
 parameter_list|(
 name|TileManager
@@ -351,14 +346,14 @@ parameter_list|,
 name|gint
 name|ypixel
 parameter_list|,
-name|gboolean
+name|gint
 name|wantread
 parameter_list|,
-name|gboolean
+name|gint
 name|wantwrite
 parameter_list|)
 block|{
-name|guint
+name|gint
 name|tile_num
 decl_stmt|;
 name|g_return_val_if_fail
@@ -370,9 +365,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|tile_num
+operator|=
 name|tile_manager_get_tile_num
 argument_list|(
 name|tm
@@ -380,10 +374,13 @@ argument_list|,
 name|xpixel
 argument_list|,
 name|ypixel
-argument_list|,
-operator|&
-name|tile_num
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tile_num
+operator|<
+literal|0
 condition|)
 return|return
 name|NULL
@@ -406,20 +403,20 @@ end_function
 begin_function
 name|Tile
 modifier|*
-DECL|function|tile_manager_get (TileManager * tm,guint tile_num,gboolean wantread,gboolean wantwrite)
+DECL|function|tile_manager_get (TileManager * tm,gint tile_num,gint wantread,gint wantwrite)
 name|tile_manager_get
 parameter_list|(
 name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|guint
+name|gint
 name|tile_num
 parameter_list|,
-name|gboolean
+name|gint
 name|wantread
 parameter_list|,
-name|gboolean
+name|gint
 name|wantwrite
 parameter_list|)
 block|{
@@ -433,10 +430,10 @@ modifier|*
 modifier|*
 name|tile_ptr
 decl_stmt|;
-name|guint
+name|gint
 name|ntiles
 decl_stmt|;
-name|guint
+name|gint
 name|nrows
 decl_stmt|,
 name|ncols
@@ -447,7 +444,7 @@ decl_stmt|;
 name|gint
 name|bottom_tile
 decl_stmt|;
-name|guint
+name|gint
 name|i
 decl_stmt|,
 name|j
@@ -475,9 +472,17 @@ name|ntile_cols
 expr_stmt|;
 if|if
 condition|(
+operator|(
+name|tile_num
+operator|<
+literal|0
+operator|)
+operator|||
+operator|(
 name|tile_num
 operator|>=
 name|ntiles
+operator|)
 condition|)
 return|return
 name|NULL
@@ -688,6 +693,7 @@ literal|"WRITE-ONLY TILE... UNTESTED!"
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*   if ((*tile_ptr)->share_count&&       (*tile_ptr)->write_count)     fprintf(stderr,">> MEEPITY %d,%d<< ", 	    (*tile_ptr)->share_count, 	    (*tile_ptr)->write_count 	    ); */
 if|if
 condition|(
 name|wantread
@@ -961,6 +967,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+comment|/*       else 	{ 	  if ((*tile_ptr)->write_count) 	    fprintf(stderr,"STINK! r/o on r/w tile /%d\007  ",(*tile_ptr)->write_count); 	} */
 name|TILE_MUTEX_UNLOCK
 argument_list|(
 operator|*
@@ -1001,7 +1008,7 @@ name|Tile
 modifier|*
 name|tile_ptr
 decl_stmt|;
-name|guint
+name|gint
 name|tile_num
 decl_stmt|;
 name|g_return_if_fail
@@ -1011,9 +1018,8 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|tile_num
+operator|=
 name|tile_manager_get_tile_num
 argument_list|(
 name|tm
@@ -1021,10 +1027,13 @@ argument_list|,
 name|xpixel
 argument_list|,
 name|ypixel
-argument_list|,
-operator|&
-name|tile_num
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tile_num
+operator|<
+literal|0
 condition|)
 return|return;
 name|tile_ptr
@@ -1096,6 +1105,7 @@ argument_list|,
 name|tile
 argument_list|)
 expr_stmt|;
+comment|/* DEBUG STUFF ->  if (tm->user_data)     {             fprintf(stderr,"V%p  ",tm->user_data);       fprintf(stderr,"V");     }   else     {       fprintf(stderr,"v");     } */
 block|}
 end_function
 
@@ -1283,7 +1293,7 @@ name|gint
 name|ypixel
 parameter_list|)
 block|{
-name|guint
+name|gint
 name|tile_num
 decl_stmt|;
 name|g_return_if_fail
@@ -1300,9 +1310,8 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
+name|tile_num
+operator|=
 name|tile_manager_get_tile_num
 argument_list|(
 name|tm
@@ -1310,10 +1319,13 @@ argument_list|,
 name|xpixel
 argument_list|,
 name|ypixel
-argument_list|,
-operator|&
-name|tile_num
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tile_num
+operator|<
+literal|0
 condition|)
 return|return;
 name|tile_invalidate
@@ -1330,7 +1342,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_invalidate (Tile ** tile_ptr,TileManager * tm,guint tile_num)
+DECL|function|tile_invalidate (Tile ** tile_ptr,TileManager * tm,gint tile_num)
 name|tile_invalidate
 parameter_list|(
 name|Tile
@@ -1342,7 +1354,7 @@ name|TileManager
 modifier|*
 name|tm
 parameter_list|,
-name|guint
+name|gint
 name|tile_num
 parameter_list|)
 block|{
@@ -1544,9 +1556,22 @@ modifier|*
 name|srctile
 parameter_list|)
 block|{
-name|guint
+name|gint
+name|tile_row
+decl_stmt|;
+name|gint
+name|tile_col
+decl_stmt|;
+name|gint
 name|tile_num
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|tm
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|srctile
@@ -1556,20 +1581,64 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|tile_manager_get_tile_num
-argument_list|(
-name|tm
-argument_list|,
+operator|(
 name|xpixel
-argument_list|,
+operator|<
+literal|0
+operator|)
+operator|||
+operator|(
+name|xpixel
+operator|>=
+name|tm
+operator|->
+name|width
+operator|)
+operator|||
+operator|(
 name|ypixel
-argument_list|,
-operator|&
-name|tile_num
-argument_list|)
+operator|<
+literal|0
+operator|)
+operator|||
+operator|(
+name|ypixel
+operator|>=
+name|tm
+operator|->
+name|height
+operator|)
 condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"tile_manager_map_tile: tile co-ord out of range."
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
+name|tile_row
+operator|=
+name|ypixel
+operator|/
+name|TILE_HEIGHT
+expr_stmt|;
+name|tile_col
+operator|=
+name|xpixel
+operator|/
+name|TILE_WIDTH
+expr_stmt|;
+name|tile_num
+operator|=
+name|tile_row
+operator|*
+name|tm
+operator|->
+name|ntile_cols
+operator|+
+name|tile_col
+expr_stmt|;
 name|tile_manager_map
 argument_list|(
 name|tm
@@ -1786,6 +1855,7 @@ name|k
 operator|++
 control|)
 block|{
+comment|/*	      printf(",");fflush(stdout);*/
 name|tiles
 index|[
 name|k
@@ -1862,6 +1932,7 @@ name|bottom_tile
 expr_stmt|;
 block|}
 block|}
+comment|/*      g_warning ("tile_manager_map: empty tile level - done.");*/
 block|}
 name|tile_ptr
 operator|=
@@ -1873,6 +1944,7 @@ index|[
 name|tile_num
 index|]
 expr_stmt|;
+comment|/*  printf(")");fflush(stdout);*/
 if|if
 condition|(
 operator|!
@@ -1948,11 +2020,13 @@ argument_list|,
 name|tile_num
 argument_list|)
 expr_stmt|;
+comment|/*  printf(">");fflush(stdout);*/
 name|TILE_MUTEX_LOCK
 argument_list|(
 name|srctile
 argument_list|)
 expr_stmt|;
+comment|/*  printf(" [src:%p tm:%p tn:%d] ", srctile, tm, tile_num); fflush(stdout);*/
 name|tile_attach
 argument_list|(
 name|srctile
@@ -1972,14 +2046,14 @@ argument_list|(
 name|srctile
 argument_list|)
 expr_stmt|;
+comment|/*  printf("}");fflush(stdout);*/
 block|}
 end_function
 
 begin_function
 specifier|static
-specifier|inline
-name|gboolean
-DECL|function|tile_manager_get_tile_num (TileManager * tm,gint xpixel,gint ypixel,guint * tile_num)
+name|gint
+DECL|function|tile_manager_get_tile_num (TileManager * tm,gint xpixel,gint ypixel)
 name|tile_manager_get_tile_num
 parameter_list|(
 name|TileManager
@@ -1991,17 +2065,16 @@ name|xpixel
 parameter_list|,
 name|gint
 name|ypixel
-parameter_list|,
-name|guint
-modifier|*
-name|tile_num
 parameter_list|)
 block|{
-name|guint
+name|gint
 name|tile_row
 decl_stmt|;
-name|guint
+name|gint
 name|tile_col
+decl_stmt|;
+name|gint
+name|tile_num
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2009,19 +2082,14 @@ name|tm
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 operator|(
 name|xpixel
-operator|<
-literal|0
-operator|)
-operator|||
-operator|(
-name|ypixel
 operator|<
 literal|0
 operator|)
@@ -2036,6 +2104,12 @@ operator|)
 operator|||
 operator|(
 name|ypixel
+operator|<
+literal|0
+operator|)
+operator|||
+operator|(
+name|ypixel
 operator|>=
 name|tm
 operator|->
@@ -2043,7 +2117,8 @@ name|height
 operator|)
 condition|)
 return|return
-name|FALSE
+operator|-
+literal|1
 return|;
 name|tile_row
 operator|=
@@ -2057,7 +2132,6 @@ name|xpixel
 operator|/
 name|TILE_WIDTH
 expr_stmt|;
-operator|*
 name|tile_num
 operator|=
 name|tile_row
@@ -2069,7 +2143,7 @@ operator|+
 name|tile_col
 expr_stmt|;
 return|return
-name|TRUE
+name|tile_num
 return|;
 block|}
 end_function
@@ -2642,6 +2716,8 @@ operator|)
 operator|+
 literal|1
 expr_stmt|;
+name|tile_num_1
+operator|=
 name|tile_manager_get_tile_num
 argument_list|(
 name|tm
@@ -2649,11 +2725,10 @@ argument_list|,
 name|x1
 argument_list|,
 name|y1
-argument_list|,
-operator|&
-name|tile_num_1
 argument_list|)
 expr_stmt|;
+name|tile_num_2
+operator|=
 name|tile_manager_get_tile_num
 argument_list|(
 name|tm
@@ -2661,12 +2736,8 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
-argument_list|,
-operator|&
-name|tile_num_2
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: What if both nums are -1 aka inavlid? */
 if|if
 condition|(
 name|tile_num_1

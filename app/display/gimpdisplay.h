@@ -209,11 +209,11 @@ struct|struct
 name|_IdleRenderStruct
 block|{
 DECL|member|width
-name|guint
+name|gint
 name|width
 decl_stmt|;
 DECL|member|height
-name|guint
+name|gint
 name|height
 decl_stmt|;
 DECL|member|x
@@ -368,26 +368,20 @@ name|scale
 decl_stmt|;
 comment|/*  scale factor from original raw image    */
 DECL|member|dot_for_dot
-name|guint
+name|gboolean
 name|dot_for_dot
-range|:
-literal|1
 decl_stmt|;
 comment|/*  is monitor resolution being ignored?    */
 DECL|member|draw_guides
-name|guint
+name|gboolean
 name|draw_guides
-range|:
-literal|1
 decl_stmt|;
 comment|/*  should the guides be drawn?             */
 DECL|member|snap_to_guides
-name|guint
+name|gboolean
 name|snap_to_guides
-range|:
-literal|1
 decl_stmt|;
-comment|/*  should the guides be snapped to?      */
+comment|/*  should the guides be snapped to?        */
 DECL|member|update_areas
 name|GSList
 modifier|*

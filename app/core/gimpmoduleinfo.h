@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b931e500103
+DECL|enum|__anon2b3234cd0103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -151,22 +151,18 @@ name|state
 decl_stmt|;
 comment|/* what's happened to the module             */
 DECL|member|on_disk
-name|guint
+name|gboolean
 name|on_disk
-range|:
-literal|1
 decl_stmt|;
 comment|/* TRUE if file still exists                 */
 DECL|member|load_inhibit
-name|guint
+name|gboolean
 name|load_inhibit
-range|:
-literal|1
 decl_stmt|;
 comment|/* user requests not to load at boot time    */
 comment|/* Count of times main gimp is within the module.  Normally, this    * will be 1, and we assume that the module won't call its    * unload callback until it is satisfied that it's not in use any    * more.  refs can be 2 temporarily while we're running the module's    * unload function, to stop the module attempting to unload    * itself.    */
 DECL|member|refs
-name|guint
+name|gint
 name|refs
 decl_stmt|;
 comment|/* stuff from now on may be NULL depending on the state the module is in   */

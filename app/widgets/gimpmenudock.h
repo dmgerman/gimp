@@ -109,10 +109,8 @@ modifier|*
 name|image_container
 decl_stmt|;
 DECL|member|show_image_menu
-name|guint
+name|gboolean
 name|show_image_menu
-range|:
-literal|1
 decl_stmt|;
 DECL|member|auto_follow_active
 name|gboolean

@@ -118,11 +118,11 @@ modifier|*
 name|points
 decl_stmt|;
 DECL|member|num_points
-name|guint
+name|gint
 name|num_points
 decl_stmt|;
 DECL|member|max_segs
-name|guint
+name|gint
 name|max_segs
 decl_stmt|;
 block|}

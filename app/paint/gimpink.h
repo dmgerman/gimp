@@ -198,10 +198,8 @@ name|lasty
 decl_stmt|;
 comment|/*  previous position of a motion event  */
 DECL|member|init_velocity
-name|guint
+name|gboolean
 name|init_velocity
-range|:
-literal|1
 decl_stmt|;
 block|}
 struct|;

@@ -122,7 +122,7 @@ decl_stmt|;
 comment|/*  upper left hand coordinate  */
 DECL|member|w
 DECL|member|h
-name|guint
+name|gint
 name|w
 decl_stmt|,
 name|h

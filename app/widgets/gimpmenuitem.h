@@ -120,7 +120,7 @@ name|name_label
 decl_stmt|;
 comment|/*< protected>*/
 DECL|member|preview_size
-name|guint
+name|gint
 name|preview_size
 decl_stmt|;
 comment|/*< private>*/

@@ -120,15 +120,13 @@ name|name_label
 decl_stmt|;
 comment|/*< protected>*/
 DECL|member|preview_size
-name|guint
+name|gint
 name|preview_size
 decl_stmt|;
 comment|/*< private>*/
 DECL|member|reorderable
-name|guint
+name|gboolean
 name|reorderable
-range|:
-literal|1
 decl_stmt|;
 DECL|member|container
 name|GimpContainer

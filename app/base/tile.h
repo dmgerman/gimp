@@ -324,7 +324,7 @@ name|void
 modifier|*
 name|tm
 parameter_list|,
-name|guint
+name|gint
 name|tile_num
 parameter_list|)
 function_decl|;
@@ -342,7 +342,7 @@ name|void
 modifier|*
 name|tm
 parameter_list|,
-name|guint
+name|gint
 name|tile_num
 parameter_list|)
 function_decl|;

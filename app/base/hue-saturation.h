@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28000c230103
+DECL|enum|__anon2b526e910103
 block|{
 DECL|enumerator|ALL_HUES
 name|ALL_HUES
@@ -238,10 +238,8 @@ name|HueRange
 name|hue_partition
 decl_stmt|;
 DECL|member|preview
-name|guint
+name|gboolean
 name|preview
-range|:
-literal|1
 decl_stmt|;
 block|}
 struct|;
