@@ -61,7 +61,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|plug_in_progress_install
 parameter_list|(
 name|PlugIn
@@ -77,7 +77,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|plug_in_progress_uninstall
 parameter_list|(
 name|PlugIn
@@ -93,7 +93,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|plug_in_progress_cancel
 parameter_list|(
 name|PlugIn

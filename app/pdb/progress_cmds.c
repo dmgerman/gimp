@@ -576,6 +576,8 @@ name|current_plug_in
 operator|->
 name|open
 condition|)
+name|success
+operator|=
 name|plug_in_progress_install
 argument_list|(
 name|gimp
@@ -746,6 +748,8 @@ name|current_plug_in
 operator|->
 name|open
 condition|)
+name|success
+operator|=
 name|plug_in_progress_uninstall
 argument_list|(
 name|gimp
@@ -916,6 +920,8 @@ name|current_plug_in
 operator|->
 name|open
 condition|)
+name|success
+operator|=
 name|plug_in_progress_cancel
 argument_list|(
 name|gimp
