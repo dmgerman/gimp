@@ -241,7 +241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1063990108
+DECL|struct|__anon297453bf0108
 block|{
 DECL|member|resolution
 name|guint
@@ -330,7 +330,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1063990208
+DECL|struct|__anon297453bf0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -904,7 +904,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1063990308
+DECL|struct|__anon297453bf0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1760,7 +1760,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1063990408
+DECL|struct|__anon297453bf0408
 block|{
 DECL|member|eol
 name|long
@@ -7260,12 +7260,6 @@ name|gint
 name|ChildPid
 parameter_list|)
 block|{
-name|guchar
-name|buf
-index|[
-literal|8192
-index|]
-decl_stmt|;
 ifndef|#
 directive|ifndef
 name|USE_REAL_OUTPUTFILE
@@ -7275,8 +7269,16 @@ decl_stmt|;
 name|pid_t
 name|RetVal
 decl_stmt|;
-comment|/* Even if we dont want all images, we have to read the pipe until EOF. */
-comment|/* Otherwise the subprocess may not finish. */
+comment|/* Enabling the code below causes us to read the pipe until EOF even    * if we dont want all images. Should be enabled if people report that    * the gs subprocess does not finish. For now it is disabled since it    * causes a significant slowdown.    */
+ifdef|#
+directive|ifdef
+name|EMPTY_PIPE
+name|guchar
+name|buf
+index|[
+literal|8192
+index|]
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|PS_DEBUG
@@ -7302,10 +7304,11 @@ literal|1
 argument_list|,
 name|ifp
 argument_list|)
-operator|==
-literal|8192
 condition|)
 empty_stmt|;
+endif|#
+directive|endif
+comment|/*  EMPTY_PIPE  */
 comment|/* Finish reading from pipe. */
 name|fclose
 argument_list|(
@@ -7371,6 +7374,7 @@ directive|endif
 block|}
 else|#
 directive|else
+comment|/*  USE_REAL_OUTPUTFILE  */
 comment|/* If a real outputfile was used, close the file and remove it. */
 name|fclose
 argument_list|(
@@ -8019,6 +8023,8 @@ name|fread
 argument_list|(
 name|buf
 argument_list|,
+literal|1
+argument_list|,
 name|MIN
 argument_list|(
 name|len
@@ -8028,8 +8034,6 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|)
-argument_list|,
-literal|1
 argument_list|,
 name|ifp
 argument_list|)
