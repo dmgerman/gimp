@@ -851,6 +851,8 @@ argument_list|,
 name|pf
 operator|->
 name|img_width
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|y
@@ -864,6 +866,8 @@ argument_list|,
 name|pf
 operator|->
 name|img_height
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 break|break;
