@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a80280108
+DECL|struct|__anon2c2a130a0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291a80280208
+DECL|struct|__anon2c2a130a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -228,6 +228,7 @@ name|gdouble
 modifier|*
 name|gen_lookup_table
 parameter_list|(
+specifier|const
 name|gdouble
 modifier|*
 name|cmatrix
@@ -2575,9 +2576,10 @@ begin_function
 specifier|static
 name|gdouble
 modifier|*
-DECL|function|gen_lookup_table (gdouble * cmatrix,gint cmatrix_length)
+DECL|function|gen_lookup_table (const gdouble * cmatrix,gint cmatrix_length)
 name|gen_lookup_table
 parameter_list|(
+specifier|const
 name|gdouble
 modifier|*
 name|cmatrix
@@ -2586,11 +2588,6 @@ name|gint
 name|cmatrix_length
 parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|,
-name|j
-decl_stmt|;
 name|gdouble
 modifier|*
 name|lookup_table
@@ -2610,11 +2607,17 @@ name|lookup_table_p
 init|=
 name|lookup_table
 decl_stmt|;
+specifier|const
 name|gdouble
 modifier|*
 name|cmatrix_p
 init|=
 name|cmatrix
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|,
+name|j
 decl_stmt|;
 for|for
 control|(
@@ -2643,7 +2646,6 @@ condition|;
 name|j
 operator|++
 control|)
-block|{
 operator|*
 operator|(
 name|lookup_table_p
@@ -2658,7 +2660,6 @@ name|gdouble
 operator|)
 name|j
 expr_stmt|;
-block|}
 name|cmatrix_p
 operator|++
 expr_stmt|;
@@ -3344,13 +3345,17 @@ name|unsharp_params
 operator|.
 name|amount
 argument_list|,
-name|x1
+name|x
 argument_list|,
-name|x2
+name|x
+operator|+
+name|width
 argument_list|,
-name|y1
+name|y
 argument_list|,
-name|y2
+name|y
+operator|+
+name|width
 argument_list|,
 name|FALSE
 argument_list|)
