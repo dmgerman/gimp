@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Animation Playback plug-in version 0.81.7  *  * by Adam D. Moss, 1997  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
+comment|/*  * Animation Playback plug-in version 0.83.0  *  * by Adam D. Moss, 1997  *     adam@gimp.org  *     adam@foxbox.org  *  * This is part of the GIMP package and falls under the GPL.  */
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY:  *  * 97.09.16 : version 0.81.7  *            Fixed progress bar's off-by-one problem with  *            the new timing.  Fixed erroneous black bars which  *            were sometimes visible when the first frame was  *            smaller than the image itself.  Made playback  *            controls inactive when image doesn't have multiple  *            frames.  Moved progress bar above control buttons,  *            it's less distracting there.  More cosmetic stuff.  *  * 97.09.15 : version 0.81.0  *            Now plays INDEXED and GRAY animations.  *  * 97.09.15 : version 0.75.0  *            Next frame is generated ahead of time - results  *            in more precise timing.  *  * 97.09.14 : version 0.70.0  *            Initial release.  RGB only.  */
+comment|/*  * REVISION HISTORY:  *  * 97.12.11 : version 0.83.0  *            GTK's timer logic changed a little... adjusted  *            plugin to fit.  *  * 97.09.16 : version 0.81.7  *            Fixed progress bar's off-by-one problem with  *            the new timing.  Fixed erroneous black bars which  *            were sometimes visible when the first frame was  *            smaller than the image itself.  Made playback  *            controls inactive when image doesn't have multiple  *            frames.  Moved progress bar above control buttons,  *            it's less distracting there.  More cosmetic stuff.  *  * 97.09.15 : version 0.81.0  *            Now plays INDEXED and GRAY animations.  *  * 97.09.15 : version 0.75.0  *            Next frame is generated ahead of time - results  *            in more precise timing.  *  * 97.09.14 : version 0.70.0  *            Initial release.  RGB only.  */
 end_comment
 
 begin_comment
@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd1dc750103
+DECL|enum|__anon29810ed00103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -967,6 +967,18 @@ name|button
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|toggle
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|entry
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|frame
 decl_stmt|;
 name|GtkWidget
@@ -979,6 +991,10 @@ name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|vbox2
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|hbox
 decl_stmt|;
 name|GtkWidget
@@ -988,6 +1004,12 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|color_cube
+decl_stmt|;
+name|GSList
+modifier|*
+name|group
+init|=
+name|NULL
 decl_stmt|;
 name|argc
 operator|=
@@ -1711,7 +1733,18 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|GPixelRgn
+name|srcPR
+decl_stmt|,
+name|destPR
+decl_stmt|;
+name|guchar
+modifier|*
+name|buffer
+decl_stmt|;
 name|int
+name|nreturn_vals
+decl_stmt|,
 name|i
 decl_stmt|;
 name|width
@@ -3825,7 +3858,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gint
 DECL|function|advance_frame_callback (GtkWidget * widget,gpointer data)
 name|advance_frame_callback
 parameter_list|(
@@ -3863,6 +3896,9 @@ expr_stmt|;
 name|do_step
 argument_list|()
 expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
