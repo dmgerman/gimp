@@ -176,7 +176,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293764690103
+DECL|enum|__anon2a1a3fdc0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -1438,6 +1438,8 @@ name|GIMP_BRUSH_GENERATED_CIRCLE
 argument_list|,
 literal|5.0
 argument_list|,
+literal|2
+argument_list|,
 literal|0.5
 argument_list|,
 literal|1.0
@@ -2698,7 +2700,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29376469020a
+DECL|union|__anon2a1a3fdc020a
 block|{
 DECL|member|u
 name|guint16

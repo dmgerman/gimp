@@ -123,6 +123,11 @@ name|GtkAdjustment
 modifier|*
 name|radius_data
 decl_stmt|;
+DECL|member|spikes_data
+name|GtkAdjustment
+modifier|*
+name|spikes_data
+decl_stmt|;
 DECL|member|hardness_data
 name|GtkAdjustment
 modifier|*

@@ -119,6 +119,11 @@ DECL|member|radius
 name|gfloat
 name|radius
 decl_stmt|;
+DECL|member|spikes
+name|gint
+name|spikes
+decl_stmt|;
+comment|/* 2 - 20     */
 DECL|member|hardness
 name|gfloat
 name|hardness
@@ -176,6 +181,9 @@ name|shape
 parameter_list|,
 name|gfloat
 name|radius
+parameter_list|,
+name|gint
+name|spikes
 parameter_list|,
 name|gfloat
 name|hardness
@@ -242,6 +250,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_brush_generated_set_spikes
+parameter_list|(
+name|GimpBrushGenerated
+modifier|*
+name|brush
+parameter_list|,
+name|gint
+name|spikes
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gfloat
 name|gimp_brush_generated_set_hardness
 parameter_list|(
@@ -298,6 +320,18 @@ end_function_decl
 begin_function_decl
 name|gfloat
 name|gimp_brush_generated_get_radius
+parameter_list|(
+specifier|const
+name|GimpBrushGenerated
+modifier|*
+name|brush
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_brush_generated_get_spikes
 parameter_list|(
 specifier|const
 name|GimpBrushGenerated
