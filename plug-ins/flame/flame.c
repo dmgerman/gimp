@@ -439,7 +439,7 @@ value|(-4)
 end_define
 
 begin_struct
-DECL|struct|__anon2bccd6c30108
+DECL|struct|__anon2b6412580108
 struct|struct
 block|{
 DECL|member|randomize
@@ -827,7 +827,7 @@ name|SRAND_FUNC
 argument_list|(
 name|time
 argument_list|(
-literal|0
+name|NULL
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3626,7 +3626,7 @@ name|button
 argument_list|)
 expr_stmt|;
 block|{
-DECL|struct|__anon2bccd6c30208
+DECL|struct|__anon2b6412580208
 specifier|static
 struct|struct
 block|{

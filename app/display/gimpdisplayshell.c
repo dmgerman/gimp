@@ -1125,9 +1125,6 @@ name|ToolType
 name|type
 parameter_list|)
 block|{
-name|int
-name|i
-decl_stmt|;
 comment|/*    * FIXME this really should be dones without using the #defined tool names    * but it should work this way for now    */
 if|if
 condition|(

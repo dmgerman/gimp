@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<stdlib.h>
 end_include
 
@@ -169,7 +175,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_enum
-DECL|enum|__anon28eca2b00103
+DECL|enum|__anon29b7b5dc0103
 enum|enum
 block|{
 DECL|enumerator|LINEAR
@@ -187,7 +193,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon28eca2b00203
+DECL|enum|__anon29b7b5dc0203
 enum|enum
 block|{
 DECL|enumerator|DRAG_NONE
@@ -205,7 +211,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon28eca2b00308
+DECL|struct|__anon29b7b5dc0308
 typedef|typedef
 struct|struct
 block|{
@@ -260,7 +266,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28eca2b00408
+DECL|struct|__anon29b7b5dc0408
 typedef|typedef
 struct|struct
 block|{
@@ -305,7 +311,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon28eca2b00508
+DECL|struct|__anon29b7b5dc0508
 typedef|typedef
 struct|struct
 block|{
