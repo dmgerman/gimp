@@ -350,7 +350,7 @@ value|150
 end_define
 
 begin_typedef
-DECL|struct|__anon2c96f02a0108
+DECL|struct|__anon27854b7d0108
 typedef|typedef
 struct|struct
 block|{
@@ -479,7 +479,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c96f02a0208
+DECL|struct|__anon27854b7d0208
 typedef|typedef
 struct|struct
 block|{
@@ -508,7 +508,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c96f02a0308
+DECL|struct|__anon27854b7d0308
 typedef|typedef
 struct|struct
 block|{
@@ -527,7 +527,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c96f02a0408
+DECL|struct|__anon27854b7d0408
 typedef|typedef
 struct|struct
 block|{
@@ -4858,19 +4858,9 @@ condition|)
 return|return;
 name|bzp
 operator|=
-operator|(
-name|PATHP
-operator|)
-name|g_slist_nth_data
-argument_list|(
-name|paths_dialog
+name|pwidget
 operator|->
-name|current_path_list
-operator|->
-name|bz_paths
-argument_list|,
-name|row
-argument_list|)
+name|bzp
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -6384,6 +6374,43 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* Remove from the clist ... */
+name|gtk_signal_handler_block_by_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|paths_dialog
+operator|->
+name|paths_list
+argument_list|)
+argument_list|,
+name|paths_dialog
+argument_list|)
+expr_stmt|;
+name|gtk_clist_remove
+argument_list|(
+name|GTK_CLIST
+argument_list|(
+name|paths_dialog
+operator|->
+name|paths_list
+argument_list|)
+argument_list|,
+name|row
+argument_list|)
+expr_stmt|;
+name|gtk_signal_handler_unblock_by_data
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|paths_dialog
+operator|->
+name|paths_list
+argument_list|)
+argument_list|,
+name|paths_dialog
+argument_list|)
+expr_stmt|;
 comment|/* If now empty free everything up */
 if|if
 condition|(
@@ -6437,20 +6464,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/* Do this last since it might cause a new row to become selected */
-comment|/* Remove from the clist ... */
-name|gtk_clist_remove
-argument_list|(
-name|GTK_CLIST
-argument_list|(
-name|paths_dialog
-operator|->
-name|paths_list
-argument_list|)
-argument_list|,
-name|row
-argument_list|)
-expr_stmt|;
 name|paths_ops_button_set_sensitive
 argument_list|(
 name|DUP_PATH_BUTTON
