@@ -202,10 +202,6 @@ DECL|member|thumbnail_size
 name|GimpThumbnailSize
 name|thumbnail_size
 decl_stmt|;
-DECL|member|gamma_val
-name|gdouble
-name|gamma_val
-decl_stmt|;
 DECL|member|install_cmap
 name|gboolean
 name|install_cmap

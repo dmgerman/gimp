@@ -336,11 +336,7 @@ name|config
 operator|.
 name|gamma
 operator|=
-name|gimp
-operator|->
-name|config
-operator|->
-name|gamma_val
+literal|1.0
 expr_stmt|;
 name|config
 operator|.
