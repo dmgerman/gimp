@@ -184,6 +184,78 @@ parameter_list|)
 value|gimp_drawable_get_tattoo(GIMP_DRAWABLE(c))
 end_define
 
+begin_define
+DECL|macro|gimp_layer_get_apply_mask (l)
+define|#
+directive|define
+name|gimp_layer_get_apply_mask
+parameter_list|(
+name|l
+parameter_list|)
+value|(l)->mask ? gimp_layer_mask_get_apply((l)->mask) : FALSE;
+end_define
+
+begin_define
+DECL|macro|gimp_layer_get_show_mask (l)
+define|#
+directive|define
+name|gimp_layer_get_show_mask
+parameter_list|(
+name|l
+parameter_list|)
+value|(l)->mask ? gimp_layer_mask_get_show((l)->mask) : FALSE;
+end_define
+
+begin_define
+DECL|macro|gimp_layer_get_edit_mask (l)
+define|#
+directive|define
+name|gimp_layer_get_edit_mask
+parameter_list|(
+name|l
+parameter_list|)
+value|(l)->mask ? gimp_layer_mask_get_edit((l)->mask) : FALSE;
+end_define
+
+begin_define
+DECL|macro|gimp_layer_set_apply_mask (l,a)
+define|#
+directive|define
+name|gimp_layer_set_apply_mask
+parameter_list|(
+name|l
+parameter_list|,
+name|a
+parameter_list|)
+value|{ if((l)->mask) gimp_layer_mask_set_apply((l)->mask,(a)); else success = FALSE; }
+end_define
+
+begin_define
+DECL|macro|gimp_layer_set_show_mask (l,s)
+define|#
+directive|define
+name|gimp_layer_set_show_mask
+parameter_list|(
+name|l
+parameter_list|,
+name|s
+parameter_list|)
+value|{ if((l)->mask) gimp_layer_mask_set_show((l)->mask,(s)); else success = FALSE; }
+end_define
+
+begin_define
+DECL|macro|gimp_layer_set_edit_mask (l,e)
+define|#
+directive|define
+name|gimp_layer_set_edit_mask
+parameter_list|(
+name|l
+parameter_list|,
+name|e
+parameter_list|)
+value|{ if((l)->mask) gimp_layer_mask_set_edit((l)->mask,(e)); else success = FALSE; }
+end_define
+
 begin_endif
 endif|#
 directive|endif
