@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297eaa700103
+DECL|enum|__anon28712a9b0103
 block|{
 DECL|enumerator|GIMP_RUN_INTERACTIVE
 name|GIMP_RUN_INTERACTIVE
@@ -44,7 +44,9 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297eaa700203
+comment|/*< pdb-skip>*/
+comment|/*< skip>*/
+DECL|enum|__anon28712a9b0203
 block|{
 DECL|enumerator|PLUG_IN_RGB_IMAGE
 name|PLUG_IN_RGB_IMAGE

@@ -819,7 +819,7 @@ name|NULL
 condition|)
 name|gradient_name
 operator|=
-name|gimp_gradients_get_active
+name|gimp_gradients_get_gradient
 argument_list|()
 expr_stmt|;
 name|gimp_gradients_get_gradient_data
@@ -5190,7 +5190,7 @@ argument_list|)
 expr_stmt|;
 name|gradient_name
 operator|=
-name|gimp_gradients_get_active
+name|gimp_gradients_get_gradient
 argument_list|()
 expr_stmt|;
 name|gradient_samples

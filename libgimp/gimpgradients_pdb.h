@@ -47,7 +47,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_gradients_get_active
+name|gimp_gradients_get_gradient
 parameter_list|(
 name|void
 parameter_list|)
@@ -56,7 +56,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_gradients_set_active
+name|gimp_gradients_set_gradient
 parameter_list|(
 name|gchar
 modifier|*

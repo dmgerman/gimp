@@ -217,14 +217,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_get_active:  *  * Retrieve the name of the active gradient.  *  * This procedure returns the name of the active gradient in the  * gradient editor.  *  * Returns: The name of the active gradient.  */
+comment|/**  * gimp_gradients_get_gradient:  *  * Retrieve the name of the active gradient.  *  * This procedure returns the name of the active gradient in the  * gradient editor.  *  * Returns: The name of the active gradient.  */
 end_comment
 
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_gradients_get_active (void)
-name|gimp_gradients_get_active
+DECL|function|gimp_gradients_get_gradient (void)
+name|gimp_gradients_get_gradient
 parameter_list|(
 name|void
 parameter_list|)
@@ -246,7 +246,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_get_active"
+literal|"gimp_gradients_get_gradient"
 argument_list|,
 operator|&
 name|nreturn_vals
@@ -295,13 +295,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_set_active:  * @name: The name of the gradient to set.  *  * Sets the specified gradient as the active gradient.  *  * This procedure lets you set the specified gradient as the active or  * \"current\" one. The name is simply a string which corresponds to  * one of the loaded gradients in the gradient editor. If no matching  * gradient is found, this procedure will return an error. Otherwise,  * the specified gradient will become active and will be used for  * subsequent custom gradient operations.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gradients_set_gradient:  * @name: The name of the gradient to set.  *  * Sets the specified gradient as the active gradient.  *  * This procedure lets you set the specified gradient as the active or  * \"current\" one. The name is simply a string which corresponds to  * one of the loaded gradients in the gradient editor. If no matching  * gradient is found, this procedure will return an error. Otherwise,  * the specified gradient will become active and will be used for  * subsequent custom gradient operations.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_gradients_set_active (gchar * name)
-name|gimp_gradients_set_active
+DECL|function|gimp_gradients_set_gradient (gchar * name)
+name|gimp_gradients_set_gradient
 parameter_list|(
 name|gchar
 modifier|*
@@ -324,7 +324,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_gradients_set_active"
+literal|"gimp_gradients_set_gradient"
 argument_list|,
 operator|&
 name|nreturn_vals

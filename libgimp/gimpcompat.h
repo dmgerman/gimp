@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_COMPAT_H__
 end_define
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GIMP_ENABLE_COMPAT_CRUFT
+end_ifdef
+
 begin_expr_stmt
 name|G_BEGIN_DECLS
 comment|/* This file contains aliases that are kept for historical  * reasons, because a wide code base depends on them.  *  * These defines will be removed in the next development cycle.   */
@@ -24,8 +30,42 @@ define|#
 directive|define
 name|GimpRunModeType
 value|GimpRunMode
+DECL|macro|gimp_use_xshm
+define|#
+directive|define
+name|gimp_use_xshm
+value|TRUE
+DECL|macro|gimp_color_cube
+define|#
+directive|define
+name|gimp_color_cube
+value|((guchar *) { 6, 6, 4, 24 })
+DECL|macro|gimp_crop
+define|#
+directive|define
+name|gimp_crop
+value|gimp_image_crop
+DECL|macro|gimp_gradients_get_active
+define|#
+directive|define
+name|gimp_gradients_get_active
+value|gimp_gradients_get_gradient
+DECL|macro|gimp_gradients_set_active
+define|#
+directive|define
+name|gimp_gradients_set_active
+value|gimp_gradients_set_gradient
 name|G_END_DECLS
 end_expr_stmt
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_ENABLE_COMPAT_CRUFT */
+end_comment
 
 begin_endif
 endif|#

@@ -96,18 +96,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_get_active_proc
+DECL|variable|gradients_get_gradient_proc
 specifier|static
 name|ProcRecord
-name|gradients_get_active_proc
+name|gradients_get_gradient_proc
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_set_active_proc
+DECL|variable|gradients_set_gradient_proc
 specifier|static
 name|ProcRecord
-name|gradients_set_active_proc
+name|gradients_set_gradient_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -166,7 +166,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|gradients_get_active_proc
+name|gradients_get_gradient_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -174,7 +174,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|gradients_set_active_proc
+name|gradients_set_gradient_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -512,8 +512,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_get_active_invoker (Gimp * gimp,Argument * args)
-name|gradients_get_active_invoker
+DECL|function|gradients_get_gradient_invoker (Gimp * gimp,Argument * args)
+name|gradients_get_gradient_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -550,7 +550,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|gradients_get_active_proc
+name|gradients_get_gradient_proc
 argument_list|,
 name|success
 argument_list|)
@@ -591,10 +591,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gradients_get_active_outargs
+DECL|variable|gradients_get_gradient_outargs
 specifier|static
 name|ProcArg
-name|gradients_get_active_outargs
+name|gradients_get_gradient_outargs
 index|[]
 init|=
 block|{
@@ -610,13 +610,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_get_active_proc
+DECL|variable|gradients_get_gradient_proc
 specifier|static
 name|ProcRecord
-name|gradients_get_active_proc
+name|gradients_get_gradient_proc
 init|=
 block|{
-literal|"gimp_gradients_get_active"
+literal|"gimp_gradients_get_gradient"
 block|,
 literal|"Retrieve the name of the active gradient."
 block|,
@@ -636,11 +636,11 @@ name|NULL
 block|,
 literal|1
 block|,
-name|gradients_get_active_outargs
+name|gradients_get_gradient_outargs
 block|,
 block|{
 block|{
-name|gradients_get_active_invoker
+name|gradients_get_gradient_invoker
 block|}
 block|}
 block|}
@@ -651,8 +651,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|gradients_set_active_invoker (Gimp * gimp,Argument * args)
-name|gradients_set_active_invoker
+DECL|function|gradients_set_gradient_invoker (Gimp * gimp,Argument * args)
+name|gradients_set_gradient_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -752,7 +752,7 @@ return|return
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|gradients_set_active_proc
+name|gradients_set_gradient_proc
 argument_list|,
 name|success
 argument_list|)
@@ -761,10 +761,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|gradients_set_active_inargs
+DECL|variable|gradients_set_gradient_inargs
 specifier|static
 name|ProcArg
-name|gradients_set_active_inargs
+name|gradients_set_gradient_inargs
 index|[]
 init|=
 block|{
@@ -780,13 +780,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gradients_set_active_proc
+DECL|variable|gradients_set_gradient_proc
 specifier|static
 name|ProcRecord
-name|gradients_set_active_proc
+name|gradients_set_gradient_proc
 init|=
 block|{
-literal|"gimp_gradients_set_active"
+literal|"gimp_gradients_set_gradient"
 block|,
 literal|"Sets the specified gradient as the active gradient."
 block|,
@@ -802,7 +802,7 @@ name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|gradients_set_active_inargs
+name|gradients_set_gradient_inargs
 block|,
 literal|0
 block|,
@@ -810,7 +810,7 @@ name|NULL
 block|,
 block|{
 block|{
-name|gradients_set_active_invoker
+name|gradients_set_gradient_invoker
 block|}
 block|}
 block|}

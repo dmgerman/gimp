@@ -175,11 +175,7 @@ name|initial_palette
 decl_stmt|;
 name|ProcRecord
 modifier|*
-name|prec
-decl_stmt|;
-name|PaletteSelect
-modifier|*
-name|newdialog
+name|proc
 decl_stmt|;
 name|palette_callback
 operator|=
@@ -253,8 +249,13 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+operator|&&
 operator|(
-name|prec
+name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -274,8 +275,6 @@ argument_list|(
 name|initial_palette
 argument_list|)
 condition|)
-name|newdialog
-operator|=
 name|palette_select_new
 argument_list|(
 name|gimp
@@ -290,8 +289,6 @@ name|palette_callback
 argument_list|)
 expr_stmt|;
 else|else
-name|newdialog
-operator|=
 name|palette_select_new
 argument_list|(
 name|gimp
@@ -374,7 +371,7 @@ literal|"Invokes the Gimp palette selection."
 block|,
 literal|"This procedure popups the palette selection dialog."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -426,7 +423,7 @@ name|palette_callback
 decl_stmt|;
 name|ProcRecord
 modifier|*
-name|prec
+name|proc
 decl_stmt|;
 name|PaletteSelect
 modifier|*
@@ -464,8 +461,13 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+operator|&&
 operator|(
-name|prec
+name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -543,7 +545,7 @@ literal|"Popdown the Gimp palette selection."
 block|,
 literal|"This procedure closes an opened palette selection dialog."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
@@ -599,7 +601,7 @@ name|palette_name
 decl_stmt|;
 name|ProcRecord
 modifier|*
-name|prec
+name|proc
 decl_stmt|;
 name|PaletteSelect
 modifier|*
@@ -662,8 +664,13 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
+name|gimp
+operator|->
+name|no_interface
+operator|&&
 operator|(
-name|prec
+name|proc
 operator|=
 name|procedural_db_lookup
 argument_list|(
@@ -702,12 +709,18 @@ argument_list|,
 name|palette_name
 argument_list|)
 decl_stmt|;
+name|success
+operator|=
+operator|(
+name|active
+operator|!=
+name|NULL
+operator|)
+expr_stmt|;
 if|if
 condition|(
-name|active
+name|success
 condition|)
-block|{
-comment|/* Must alter the wigdets on screen as well */
 name|gimp_context_set_palette
 argument_list|(
 name|psp
@@ -716,12 +729,6 @@ name|context
 argument_list|,
 name|active
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-name|success
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 else|else
@@ -782,7 +789,7 @@ literal|"Sets the current palette selection in a popup."
 block|,
 literal|"Sets the current palette selection in a popup."
 block|,
-literal|"Michael Natterer"
+literal|"Michael Natterer<mitch@gimp.org>"
 block|,
 literal|"Michael Natterer"
 block|,
