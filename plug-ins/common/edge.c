@@ -12,7 +12,7 @@ comment|/*  *  Ported to GIMP Plug-in API 1.0  *  version 1.07  *  This version 
 end_comment
 
 begin_comment
-comment|/*  29 July 2003   Dave Neary<bolsh@gimp.org>  *  Added more edge detection routines, from the thin_line   *  plug-in by iccii  */
+comment|/*  29 July 2003   Dave Neary<bolsh@gimp.org>  *  Added more edge detection routines, from the thin_line  *  plug-in by iccii  */
 end_comment
 
 begin_include
@@ -105,7 +105,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b07924c0103
+DECL|enum|__anon2c3df26a0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -131,7 +131,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b07924c0208
+DECL|struct|__anon2c3df26a0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b07924c0308
+DECL|struct|__anon2c3df26a0308
 block|{
 DECL|member|run
 name|gboolean
@@ -640,12 +640,18 @@ if|if
 condition|(
 name|nparams
 operator|!=
+literal|5
+operator|||
+name|nparams
+operator|!=
 literal|6
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|status
@@ -683,6 +689,10 @@ name|evals
 operator|.
 name|edgemode
 operator|=
+name|nparams
+operator|>
+literal|5
+condition|?
 name|param
 index|[
 literal|5
@@ -691,6 +701,8 @@ operator|.
 name|data
 operator|.
 name|d_int32
+else|:
+name|SOBEL
 expr_stmt|;
 block|}
 break|break;
@@ -1273,7 +1285,7 @@ name|chan
 operator|++
 control|)
 block|{
-comment|/* get the 3x3 kernel into a guchar array,                         * and send it to edge_detect */
+comment|/* get the 3x3 kernel into a guchar array,                        * and send it to edge_detect */
 name|guchar
 name|kernel
 index|[
