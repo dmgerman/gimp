@@ -554,7 +554,7 @@ literal|"1997, 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/Maze..."
+literal|"<Image>/Filters/Render/Pattern/_Maze..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"

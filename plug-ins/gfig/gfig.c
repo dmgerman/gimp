@@ -954,7 +954,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10103
+DECL|enum|__anon2b0a0b9f0103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1006,7 +1006,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10203
+DECL|enum|__anon2b0a0b9f0203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1027,7 +1027,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10303
+DECL|enum|__anon2b0a0b9f0303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1048,7 +1048,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10403
+DECL|enum|__anon2b0a0b9f0403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1075,7 +1075,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10503
+DECL|enum|__anon2b0a0b9f0503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1096,7 +1096,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10603
+DECL|enum|__anon2b0a0b9f0603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1264,7 +1264,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294796e10708
+DECL|struct|__anon2b0a0b9f0708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1303,7 +1303,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294796e10808
+DECL|struct|__anon2b0a0b9f0808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1352,7 +1352,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294796e10908
+DECL|struct|__anon2b0a0b9f0908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1522,7 +1522,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10a03
+DECL|enum|__anon2b0a0b9f0a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1546,7 +1546,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10b03
+DECL|enum|__anon2b0a0b9f0b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1564,7 +1564,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10c03
+DECL|enum|__anon2b0a0b9f0c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1585,7 +1585,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294796e10d03
+DECL|enum|__anon2b0a0b9f0d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -3679,7 +3679,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Gfig..."
+literal|"<Image>/Filters/Render/_Gfig..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"

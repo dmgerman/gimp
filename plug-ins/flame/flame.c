@@ -498,7 +498,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2a1d68070108
+DECL|struct|__anon2c61e8be0108
 block|{
 DECL|member|randomize
 name|gint
@@ -605,7 +605,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Nature/Flame..."
+literal|"<Image>/Filters/Render/Nature/_Flame..."
 argument_list|)
 argument_list|,
 literal|"RGB*"

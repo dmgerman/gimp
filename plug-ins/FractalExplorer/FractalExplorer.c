@@ -818,7 +818,7 @@ literal|"December, 1998"
 argument_list|,
 name|N_
 argument_list|(
-literal|"<Image>/Filters/Render/Pattern/Fractal Explorer..."
+literal|"<Image>/Filters/Render/Pattern/_Fractal Explorer..."
 argument_list|)
 argument_list|,
 literal|"RGB*"
