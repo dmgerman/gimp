@@ -775,10 +775,7 @@ name|g_ascii_formatd
 argument_list|(
 name|tkbuffer
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|tkbuffer
-argument_list|)
+name|TKBUFFERN
 argument_list|,
 literal|"%g"
 argument_list|,
