@@ -540,6 +540,12 @@ name|gchar
 modifier|*
 name|transform_desc
 decl_stmt|;
+DECL|member|stroke_desc
+specifier|const
+name|gchar
+modifier|*
+name|stroke_desc
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac007880103
+DECL|enum|__anon28d4c95b0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1078,6 +1078,15 @@ operator|=
 name|_
 argument_list|(
 literal|"Transform Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|stroke_desc
+operator|=
+name|_
+argument_list|(
+literal|"Stroke Path"
 argument_list|)
 expr_stmt|;
 name|klass

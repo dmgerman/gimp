@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad583d20103
+DECL|enum|__anon2c0a24c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -617,15 +617,6 @@ literal|"gimp-text-layer"
 expr_stmt|;
 name|item_class
 operator|->
-name|default_name
-operator|=
-name|_
-argument_list|(
-literal|"Text Layer"
-argument_list|)
-expr_stmt|;
-name|item_class
-operator|->
 name|duplicate
 operator|=
 name|gimp_text_layer_duplicate
@@ -642,6 +633,78 @@ literal|0
 block|item_class->scale                = gimp_text_layer_scale;   item_class->flip                 = gimp_text_layer_flip;   item_class->rotate               = gimp_text_layer_rotate;   item_class->transform            = gimp_text_layer_transform;
 endif|#
 directive|endif
+name|item_class
+operator|->
+name|default_name
+operator|=
+name|_
+argument_list|(
+literal|"Text Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|rename_desc
+operator|=
+name|_
+argument_list|(
+literal|"Rename Text Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|translate_desc
+operator|=
+name|_
+argument_list|(
+literal|"Move Text Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|scale_desc
+operator|=
+name|_
+argument_list|(
+literal|"Scale Text Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|resize_desc
+operator|=
+name|_
+argument_list|(
+literal|"Resize Text Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|flip_desc
+operator|=
+name|_
+argument_list|(
+literal|"Flip Text Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|rotate_desc
+operator|=
+name|_
+argument_list|(
+literal|"Rotate Text Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|transform_desc
+operator|=
+name|_
+argument_list|(
+literal|"Transform Text Layer"
+argument_list|)
+expr_stmt|;
 name|drawable_class
 operator|->
 name|set_tiles

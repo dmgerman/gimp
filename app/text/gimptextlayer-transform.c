@@ -116,27 +116,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_TRANSFORM
-argument_list|,
-name|_
-argument_list|(
-literal|"Flip Text Layer"
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|{
 name|GimpText
 modifier|*
@@ -234,7 +213,6 @@ literal|"transformation"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  If there is a layer mask, make sure it gets flipped as well  */
 if|if
 condition|(
 name|layer
@@ -257,11 +235,6 @@ argument_list|,
 name|axis
 argument_list|,
 name|clip_result
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure we're not caching any old selection info  */
@@ -311,15 +284,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-init|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-decl_stmt|;
 name|gdouble
 name|cos
 init|=
@@ -330,18 +294,6 @@ name|sin
 init|=
 literal|0.0
 decl_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_TRANSFORM
-argument_list|,
-name|_
-argument_list|(
-literal|"Rotate Text Layer"
-argument_list|)
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|rotate_type
@@ -472,7 +424,6 @@ literal|"transformation"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  If there is a layer mask, make sure it gets rotates as well  */
 if|if
 condition|(
 name|layer
@@ -497,11 +448,6 @@ argument_list|,
 name|center_y
 argument_list|,
 name|clip_result
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure we're not caching any old selection info  */

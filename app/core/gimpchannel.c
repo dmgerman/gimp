@@ -1203,6 +1203,15 @@ argument_list|(
 literal|"Transform Channel"
 argument_list|)
 expr_stmt|;
+name|item_class
+operator|->
+name|stroke_desc
+operator|=
+name|_
+argument_list|(
+literal|"Stroke Channel"
+argument_list|)
+expr_stmt|;
 name|drawable_class
 operator|->
 name|invalidate_boundary

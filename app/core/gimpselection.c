@@ -794,6 +794,15 @@ argument_list|(
 literal|"Move Selection"
 argument_list|)
 expr_stmt|;
+name|item_class
+operator|->
+name|stroke_desc
+operator|=
+name|_
+argument_list|(
+literal|"Stroke Selection"
+argument_list|)
+expr_stmt|;
 name|drawable_class
 operator|->
 name|invalidate_boundary
@@ -1305,10 +1314,6 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|gimage
-decl_stmt|;
 specifier|const
 name|BoundSeg
 modifier|*
@@ -1372,30 +1377,11 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimage
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-expr_stmt|;
 name|selection
 operator|->
 name|stroking
 operator|=
 name|TRUE
-expr_stmt|;
-name|gimp_image_undo_group_start
-argument_list|(
-name|gimage
-argument_list|,
-name|GIMP_UNDO_GROUP_PAINT
-argument_list|,
-name|_
-argument_list|(
-literal|"Stroke Selection"
-argument_list|)
-argument_list|)
 expr_stmt|;
 name|retval
 operator|=
@@ -1415,11 +1401,6 @@ argument_list|,
 name|stroke_desc
 argument_list|,
 name|use_default_values
-argument_list|)
-expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|gimage
 argument_list|)
 expr_stmt|;
 name|selection
