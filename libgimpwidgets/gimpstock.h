@@ -280,11 +280,6 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_AIRBRUSH
 value|"gimp-tool-airbrush"
-DECL|macro|GIMP_STOCK_TOOL_BEZIER_SELECT
-define|#
-directive|define
-name|GIMP_STOCK_TOOL_BEZIER_SELECT
-value|"gimp-tool-bezier-select"
 DECL|macro|GIMP_STOCK_TOOL_BLEND
 define|#
 directive|define
