@@ -111,7 +111,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon2c48a27a0103
+DECL|enum|__anon2aeb174f0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -255,13 +255,13 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* All udata that are passed to the bezier_draw_curve must  * have this structure as the first element.  */
+comment|/* All data that are passed to the bezier_draw_curve must  * have this structure as the first element.  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c48a27a0208
+DECL|struct|__anon2aeb174f0208
 block|{
 DECL|member|count
 name|gint
@@ -284,13 +284,17 @@ function_decl|)
 parameter_list|(
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|,
 name|GdkPoint
 modifier|*
+name|points
 parameter_list|,
-name|int
+name|gint
+name|n_points
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_typedef
@@ -300,18 +304,22 @@ comment|/*  Functions  */
 end_comment
 
 begin_function_decl
-name|int
+name|gint
 name|bezier_select_load
 parameter_list|(
 name|void
 modifier|*
+name|gdisp_ptr
 parameter_list|,
 name|BezierPoint
 modifier|*
+name|points
 parameter_list|,
 name|gint
+name|n_points
 parameter_list|,
 name|gint
+name|closed
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -322,12 +330,16 @@ name|bezier_draw_curve
 parameter_list|(
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|,
 name|BezierPointsFunc
+name|func
 parameter_list|,
 name|gint
+name|coord
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -360,12 +372,16 @@ name|bezier_add_point
 parameter_list|(
 name|BezierSelect
 modifier|*
+name|bezier_sel
 parameter_list|,
 name|gint
+name|type
 parameter_list|,
 name|gdouble
+name|x
 parameter_list|,
 name|gdouble
+name|y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -407,8 +423,10 @@ modifier|*
 name|gdisp
 parameter_list|,
 name|gint
+name|subdivisions
 parameter_list|,
 name|gint
+name|open_path
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -437,17 +455,22 @@ modifier|*
 name|bezier_sel
 parameter_list|,
 name|gint
+name|open_path
 parameter_list|,
 name|gdouble
+name|dist
 parameter_list|,
 name|gint
 modifier|*
+name|x
 parameter_list|,
 name|gint
 modifier|*
+name|y
 parameter_list|,
 name|gdouble
 modifier|*
+name|gradient
 parameter_list|)
 function_decl|;
 end_function_decl
