@@ -2097,7 +2097,16 @@ block|{
 name|PangoFontDescription
 modifier|*
 name|desc_a
-init|=
+decl_stmt|;
+name|PangoFontDescription
+modifier|*
+name|desc_b
+decl_stmt|;
+name|gint
+name|ord
+decl_stmt|;
+name|desc_a
+operator|=
 name|pango_font_face_describe
 argument_list|(
 operator|*
@@ -2108,11 +2117,9 @@ operator|*
 operator|)
 name|a
 argument_list|)
-decl_stmt|;
-name|PangoFontDescription
-modifier|*
+expr_stmt|;
 name|desc_b
-init|=
+operator|=
 name|pango_font_face_describe
 argument_list|(
 operator|*
@@ -2123,17 +2130,28 @@ operator|*
 operator|)
 name|b
 argument_list|)
-decl_stmt|;
-name|gint
+expr_stmt|;
+comment|/* FIXME: shouldn't need to check this, but there's a PangoFT2 bug */
+if|if
+condition|(
+name|desc_a
+operator|&&
+name|desc_b
+condition|)
 name|ord
-init|=
+operator|=
 name|compare_font_descriptions
 argument_list|(
 name|desc_a
 argument_list|,
 name|desc_b
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+else|else
+name|ord
+operator|=
+literal|0
+expr_stmt|;
 name|pango_font_description_free
 argument_list|(
 name|desc_a
@@ -2295,9 +2313,6 @@ operator|->
 name|family
 condition|)
 block|{
-comment|/*        g_print ("%s: %s\n",  */
-comment|/*                 G_GNUC_FUNCTION, pango_font_family_get_name (dialog->family));  */
-comment|/*        G_BREAKPOINT(); */
 name|pango_font_family_list_faces
 argument_list|(
 name|dialog
@@ -2313,6 +2328,12 @@ operator|&
 name|n_faces
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|n_faces
+operator|>
+literal|0
+condition|)
 name|qsort
 argument_list|(
 name|dialog
@@ -2391,7 +2412,7 @@ name|font_style_clist
 argument_list|)
 argument_list|,
 operator|(
-name|char
+name|gchar
 operator|*
 operator|*
 operator|)
