@@ -100,6 +100,11 @@ name|defined
 argument_list|(
 name|ARCH_PPC
 argument_list|)
+name|printf
+argument_list|(
+literal|"\nRunning gimp_composite_altivec tests...\n"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_composite_altivec_init

@@ -100,6 +100,11 @@ name|defined
 argument_list|(
 name|ARCH_SPARC
 argument_list|)
+name|printf
+argument_list|(
+literal|"\nRunning gimp_composite_vis tests...\n"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_composite_vis_init

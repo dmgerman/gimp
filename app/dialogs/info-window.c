@@ -3809,6 +3809,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|gimage
+decl_stmt|;
 name|InfoWinData
 modifier|*
 name|iwd
@@ -3907,19 +3911,21 @@ operator|!=
 name|gdisp
 condition|)
 return|return;
+name|gimage
+operator|=
+name|gdisp
+operator|->
+name|gimage
+expr_stmt|;
 comment|/*  width and height  */
 name|unit_factor
 operator|=
 name|_gimp_unit_get_factor
 argument_list|(
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|unit
@@ -3929,14 +3935,10 @@ name|unit_digits
 operator|=
 name|_gimp_unit_get_digits
 argument_list|(
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|unit
@@ -3958,8 +3960,6 @@ argument_list|,
 operator|(
 name|int
 operator|)
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|width
@@ -3967,8 +3967,6 @@ argument_list|,
 operator|(
 name|int
 operator|)
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|height
@@ -3995,14 +3993,10 @@ literal|1
 argument_list|,
 name|_gimp_unit_get_plural
 argument_list|(
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|gimp
 argument_list|,
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|unit
@@ -4019,30 +4013,22 @@ name|MAX_BUF
 argument_list|,
 name|format_buf
 argument_list|,
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|width
 operator|*
 name|unit_factor
 operator|/
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|xresolution
 argument_list|,
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|height
 operator|*
 name|unit_factor
 operator|/
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|yresolution
@@ -4051,8 +4037,6 @@ expr_stmt|;
 comment|/*  image resolution  */
 name|res_unit
 operator|=
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|gimp
@@ -4065,8 +4049,6 @@ name|res_unit_factor
 operator|=
 name|_gimp_unit_get_factor
 argument_list|(
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|gimp
@@ -4090,8 +4072,6 @@ argument_list|)
 argument_list|,
 name|_gimp_unit_get_abbreviation
 argument_list|(
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|gimp
@@ -4113,16 +4093,12 @@ argument_list|(
 literal|"%g x %g %s"
 argument_list|)
 argument_list|,
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|xresolution
 operator|/
 name|res_unit_factor
 argument_list|,
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|yresolution
@@ -4167,8 +4143,6 @@ name|type
 operator|=
 name|gimp_image_base_type
 argument_list|(
-name|gdisp
-operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -4236,8 +4210,6 @@ argument_list|(
 literal|"Indexed Color"
 argument_list|)
 argument_list|,
-name|gdisp
-operator|->
 name|gimage
 operator|->
 name|num_cols

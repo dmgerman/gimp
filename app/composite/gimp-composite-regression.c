@@ -866,7 +866,7 @@ operator|++
 expr_stmt|;
 name|printf
 argument_list|(
-literal|"%s %8d A="
+literal|"%s %8lu A="
 argument_list|,
 name|str
 argument_list|,
