@@ -32,7 +32,7 @@ name|GtkRcStyle
 modifier|*
 name|ruler_style
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|expose_callback
 parameter_list|)
 function_decl|;

@@ -145,7 +145,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a169f30103
+DECL|enum|__anon2c0362c40103
 block|{
 DECL|enumerator|BUTTON_ADD
 name|BUTTON_ADD
@@ -804,9 +804,9 @@ operator|->
 name|src
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|cdd
 operator|->
@@ -815,7 +815,7 @@ argument_list|)
 argument_list|,
 literal|"select_row"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|select_src
 argument_list|)
@@ -823,9 +823,9 @@ argument_list|,
 name|cdd
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|cdd
 operator|->
@@ -834,7 +834,7 @@ argument_list|)
 argument_list|,
 literal|"unselect_row"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|unselect_src
 argument_list|)
@@ -976,9 +976,9 @@ operator|->
 name|dest
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|cdd
 operator|->
@@ -987,7 +987,7 @@ argument_list|)
 argument_list|,
 literal|"select_row"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|select_dest
 argument_list|)
@@ -995,9 +995,9 @@ argument_list|,
 name|cdd
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|cdd
 operator|->
@@ -1006,7 +1006,7 @@ argument_list|)
 argument_list|,
 literal|"unselect_row"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|unselect_dest
 argument_list|)
@@ -1069,9 +1069,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|cdd
 operator|->
@@ -1083,7 +1083,7 @@ argument_list|)
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|buttons
 index|[

@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29733e4f0108
+DECL|struct|__anon27c68b720108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -153,7 +153,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29733e4f0208
+DECL|struct|__anon27c68b720208
 block|{
 DECL|member|boole
 name|gboolean
@@ -3520,9 +3520,9 @@ argument_list|(
 name|ideas
 argument_list|)
 expr_stmt|;
-name|gtk_signal_connect_after
+name|g_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|ideas
 operator|->
@@ -3531,7 +3531,7 @@ argument_list|)
 argument_list|,
 literal|"selection_changed"
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|ops_buttons_update
 argument_list|)

@@ -926,9 +926,9 @@ name|step_increment
 operator|=
 name|stepy
 expr_stmt|;
-name|gtk_signal_emit_by_name
+name|g_signal_emit_by_name
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -936,11 +936,13 @@ name|hsbdata
 argument_list|)
 argument_list|,
 literal|"changed"
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_signal_emit_by_name
+name|g_signal_emit_by_name
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|gdisp
 operator|->
@@ -948,6 +950,8 @@ name|vsbdata
 argument_list|)
 argument_list|,
 literal|"changed"
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|hruler
