@@ -1240,7 +1240,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_load:  * @channel_ID: The channel.  *  * Transfer the specified channel to the selection mask.  *  * This procedure loads the specified channel into the selection mask.  * This essentially involves a copy of the channel's content in to the  * selection mask. Therefore, the channel must have the same width and  * height of the image, or an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_load:  * @channel_ID: The channel.  *  * Transfer the specified channel to the selection mask.  *  * This procedure loads the specified channel into the selection mask.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1386,7 +1386,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_combine:  * @channel_ID: The channel.  * @operation: The selection operation.  *  * Combines the specified channel with the selection mask.  *  * This procedure combines the specified channel into the selection  * mask. It essentially involves a transfer of the channel's content  * into the selection mask. Therefore, the channel must have the same  * width and height of the image, or an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_combine:  * @channel_ID: The channel.  * @operation: The selection operation.  *  * Combines the specified channel with the selection mask.  *  * This procedure combines the specified channel into the selection  * mask.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
