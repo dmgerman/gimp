@@ -324,10 +324,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+literal|"_delete_event_"
 argument_list|,
 name|tool_options_close_callback
 argument_list|,
