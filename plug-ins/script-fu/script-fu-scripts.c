@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfedae0108
+DECL|struct|__anon2bddf3500108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -222,7 +222,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfedae0208
+DECL|struct|__anon2bddf3500208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -248,7 +248,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfedae0308
+DECL|struct|__anon2bddf3500308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -269,7 +269,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfedae0408
+DECL|struct|__anon2bddf3500408
 block|{
 DECL|member|name
 name|gchar
@@ -297,7 +297,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfedae0508
+DECL|struct|__anon2bddf3500508
 block|{
 DECL|member|list
 name|GSList
@@ -317,7 +317,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29bfedae060a
+DECL|union|__anon2bddf350060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -387,7 +387,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfedae0708
+DECL|struct|__anon2bddf3500708
 block|{
 DECL|member|script_name
 name|gchar
@@ -473,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bfedae0808
+DECL|struct|__anon2bddf3500808
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -2927,7 +2927,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|GIMP_PDB_STRING
+name|GIMP_PDB_FLOAT
 expr_stmt|;
 name|args
 index|[
