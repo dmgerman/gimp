@@ -329,6 +329,18 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_group_start
+argument_list|(
+name|gimage
+argument_list|,
+name|GIMP_UNDO_GROUP_FS_REMOVE
+argument_list|,
+name|_
+argument_list|(
+literal|"Remove Floating Selection"
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/*  store the affected area from the drawable in the backing store  */
 name|floating_sel_relax
 argument_list|(
@@ -352,6 +364,11 @@ argument_list|(
 name|gimage
 argument_list|,
 name|layer
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_group_end
+argument_list|(
+name|gimage
 argument_list|)
 expr_stmt|;
 block|}

@@ -3016,6 +3016,17 @@ literal|"group-fs-anchor"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_FS_REMOVE
+block|,
+name|N_
+argument_list|(
+literal|"Remove Floating Selection"
+argument_list|)
+block|,
+literal|"group-fs-remove"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_EDIT_PASTE
 block|,
 name|N_
