@@ -702,7 +702,10 @@ argument_list|)
 expr_stmt|;
 name|opacity
 operator|=
-name|OPAQUE_OPACITY
+literal|255
+operator|*
+name|get_brush_opacity
+argument_list|()
 operator|*
 operator|(
 name|paint_core
@@ -716,11 +719,11 @@ if|if
 condition|(
 name|opacity
 operator|>
-literal|255
+name|OPAQUE_OPACITY
 condition|)
 name|opacity
 operator|=
-literal|255
+name|OPAQUE_OPACITY
 expr_stmt|;
 comment|/*  paste the newly painted canvas to the gimage which is being worked on  */
 name|paint_core_paste_canvas
