@@ -74,9 +74,15 @@ directive|include
 file|"gimpmarshal.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/gimpintl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c7441f90103
+DECL|enum|__anon2bad4cd90103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -852,12 +858,17 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_data_delete_from_disk (GimpData * data)
+DECL|function|gimp_data_delete_from_disk (GimpData * data,GError ** error)
 name|gimp_data_delete_from_disk
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -876,6 +887,20 @@ name|data
 operator|->
 name|filename
 operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
 name|NULL
 argument_list|,
 name|FALSE
@@ -903,11 +928,18 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"%s(): could not unlink() %s: %s"
+name|error
 argument_list|,
-name|G_GNUC_FUNCTION
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not delete '%s': %s"
+argument_list|)
 argument_list|,
 name|data
 operator|->
