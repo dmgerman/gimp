@@ -431,7 +431,7 @@ literal|0
 expr_stmt|;
 name|guide_num
 operator|=
-name|gimp_image_findnext_guide
+name|gimp_image_find_next_guide
 argument_list|(
 name|image_ID
 argument_list|,
@@ -484,7 +484,7 @@ expr_stmt|;
 block|}
 name|guide_num
 operator|=
-name|gimp_image_findnext_guide
+name|gimp_image_find_next_guide
 argument_list|(
 name|image_ID
 argument_list|,
@@ -585,7 +585,7 @@ literal|0
 expr_stmt|;
 name|guide_num
 operator|=
-name|gimp_image_findnext_guide
+name|gimp_image_find_next_guide
 argument_list|(
 name|image_ID
 argument_list|,
@@ -657,7 +657,7 @@ expr_stmt|;
 block|}
 name|guide_num
 operator|=
-name|gimp_image_findnext_guide
+name|gimp_image_find_next_guide
 argument_list|(
 name|image_ID
 argument_list|,

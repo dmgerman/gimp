@@ -1713,7 +1713,7 @@ name|guide_ID
 parameter_list|)
 function_decl|;
 name|gint32
-name|gimp_image_findnext_guide
+name|gimp_image_find_next_guide
 parameter_list|(
 name|gint32
 name|image_ID

@@ -234,8 +234,8 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|gimp_image_findnext_guide (gint32 image_id,gint32 guide_id)
-name|gimp_image_findnext_guide
+DECL|function|gimp_image_find_next_guide (gint32 image_id,gint32 guide_id)
+name|gimp_image_find_next_guide
 parameter_list|(
 name|gint32
 name|image_id
@@ -258,7 +258,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_findnext_guide"
+literal|"gimp_image_find_next_guide"
 argument_list|,
 operator|&
 name|nreturn_vals
