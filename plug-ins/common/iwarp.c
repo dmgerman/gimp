@@ -121,7 +121,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2dafd00103
+DECL|enum|__anon2ac486430103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2dafd00208
+DECL|struct|__anon2ac486430208
 block|{
 DECL|member|run
 name|gint
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2dafd00308
+DECL|struct|__anon2ac486430308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -4885,11 +4885,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Animate"
+literal|"A_nimate"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5060,7 +5060,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Number of Frames:"
+literal|"Number of _Frames:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5073,11 +5073,11 @@ literal|2
 argument_list|,
 name|MAX_NUM_FRAMES
 argument_list|,
-literal|1.0
-argument_list|,
-literal|10.0
-argument_list|,
 literal|1
+argument_list|,
+literal|10
+argument_list|,
+literal|0
 argument_list|,
 name|TRUE
 argument_list|,
@@ -5110,11 +5110,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Reverse"
+literal|"R_everse"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5173,11 +5173,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Ping Pong"
+literal|"_Ping Pong"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5248,11 +5248,11 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Animate"
+literal|"_Animate"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -5403,7 +5403,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Deform Radius:"
+literal|"_Deform Radius:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5470,7 +5470,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Deform Amount:"
+literal|"D_eform Amount:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -5614,7 +5614,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Move"
+literal|"_Move"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5626,7 +5626,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Grow"
+literal|"_Grow"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5638,7 +5638,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Swirl CCW"
+literal|"S_wirl CCW"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5650,7 +5650,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Remove"
+literal|"Remo_ve"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5666,7 +5666,7 @@ index|]
 argument_list|,
 name|_
 argument_list|(
-literal|"Shrink"
+literal|"S_hrink"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5682,7 +5682,7 @@ index|]
 argument_list|,
 name|_
 argument_list|(
-literal|"Swirl CW"
+literal|"Sw_irl CW"
 argument_list|)
 argument_list|,
 name|GINT_TO_POINTER
@@ -5825,11 +5825,11 @@ expr_stmt|;
 block|}
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Bilinear"
+literal|"_Bilinear"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5950,11 +5950,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Adaptive Supersample"
+literal|"Adaptive S_upersample"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6099,7 +6099,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Max Depth:"
+literal|"Ma_x Depth:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6166,7 +6166,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Threshold:"
+literal|"Thresho_ld:"
 argument_list|)
 argument_list|,
 name|SCALE_WIDTH
@@ -6232,11 +6232,11 @@ argument_list|)
 argument_list|,
 name|vbox
 argument_list|,
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Settings"
+literal|"_Settings"
 argument_list|)
 argument_list|)
 argument_list|)
@@ -6312,7 +6312,7 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Reset"
+literal|"_Reset"
 argument_list|)
 argument_list|,
 name|iwarp_reset_callback
