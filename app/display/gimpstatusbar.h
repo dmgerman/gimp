@@ -141,10 +141,10 @@ index|[
 name|CURSOR_FORMAT_LENGTH
 index|]
 decl_stmt|;
-DECL|member|combo
+DECL|member|unit_combo
 name|GtkWidget
 modifier|*
-name|combo
+name|unit_combo
 decl_stmt|;
 DECL|member|progressbar
 name|GtkWidget
