@@ -2234,6 +2234,11 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gimp_color_selector_color_changed
+argument_list|(
+name|selector
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
