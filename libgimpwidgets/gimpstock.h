@@ -324,6 +324,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_ZOOM
 value|"gimp-tool-zoom"
+DECL|macro|GIMP_STOCK_WILBER_EEK
+define|#
+directive|define
+name|GIMP_STOCK_WILBER_EEK
+value|"gimp-wilber-eek"
 name|void
 name|gimp_stock_init
 parameter_list|(

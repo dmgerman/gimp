@@ -186,7 +186,7 @@ name|gchar
 modifier|*
 name|stock_id
 init|=
-name|GTK_STOCK_DIALOG_INFO
+name|GTK_STOCK_DIALOG_WARNING
 decl_stmt|;
 if|if
 condition|(

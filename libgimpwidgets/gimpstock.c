@@ -1016,7 +1016,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a2282b60108
+DECL|struct|__anon2c0b3ec20108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -1381,6 +1381,12 @@ name|GIMP_STOCK_TOOL_ZOOM
 block|,
 name|stock_tool_button_zoom
 block|}
+block|,
+block|{
+name|GIMP_STOCK_WILBER_EEK
+block|,
+name|stock_wilber_eek
+block|}
 block|}
 struct|;
 end_struct
@@ -1388,7 +1394,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a2282b60208
+DECL|struct|__anon2c0b3ec20208
 block|{
 DECL|member|stock_id
 specifier|const
