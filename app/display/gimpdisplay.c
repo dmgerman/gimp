@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gdisplay_color.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gdisplay_ops.h"
 end_include
 
@@ -646,6 +652,12 @@ operator|.
 name|active
 operator|=
 name|FALSE
+expr_stmt|;
+name|gdisp
+operator|->
+name|cd_name
+operator|=
+name|NULL
 expr_stmt|;
 comment|/* format the title */
 name|gdisplay_format_title
@@ -7690,7 +7702,7 @@ define|\
 value|menus_set_state_locale ("<Image>", (menu), (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/File/Save"
 argument_list|)
@@ -7700,7 +7712,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/File/Save as"
 argument_list|)
@@ -7710,7 +7722,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/File/Revert"
 argument_list|)
@@ -7720,7 +7732,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/File/Close"
 argument_list|)
@@ -7730,7 +7742,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit"
 argument_list|)
@@ -7745,7 +7757,7 @@ condition|)
 block|{
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Cut"
 argument_list|)
@@ -7755,7 +7767,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Copy"
 argument_list|)
@@ -7765,7 +7777,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Paste"
 argument_list|)
@@ -7775,7 +7787,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Paste Into"
 argument_list|)
@@ -7785,7 +7797,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Paste As New"
 argument_list|)
@@ -7795,7 +7807,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Clear"
 argument_list|)
@@ -7805,7 +7817,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Fill"
 argument_list|)
@@ -7815,7 +7827,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Stroke"
 argument_list|)
@@ -7825,7 +7837,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Cut Named"
 argument_list|)
@@ -7835,7 +7847,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Copy Named"
 argument_list|)
@@ -7845,7 +7857,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Edit/Paste Named"
 argument_list|)
@@ -7856,7 +7868,7 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Select"
 argument_list|)
@@ -7868,7 +7880,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Select/Save To Channel"
 argument_list|)
@@ -7879,7 +7891,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/View"
 argument_list|)
@@ -7894,7 +7906,7 @@ condition|)
 block|{
 name|SET_STATE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/View/Toggle Selection"
 argument_list|)
@@ -7909,7 +7921,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/View/Toggle Rulers"
 argument_list|)
@@ -7928,7 +7940,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/View/Toggle Guides"
 argument_list|)
@@ -7940,7 +7952,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/View/Snap To Guides"
 argument_list|)
@@ -7952,7 +7964,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/View/Toggle Statusbar"
 argument_list|)
@@ -7971,7 +7983,7 @@ argument_list|)
 expr_stmt|;
 name|SET_STATE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/View/Dot for dot"
 argument_list|)
@@ -7984,7 +7996,7 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image"
 argument_list|)
@@ -7994,7 +8006,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors"
 argument_list|)
@@ -8004,7 +8016,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Channel Ops"
 argument_list|)
@@ -8014,7 +8026,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Alpha"
 argument_list|)
@@ -8029,7 +8041,7 @@ condition|)
 block|{
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/RGB"
 argument_list|)
@@ -8043,7 +8055,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Grayscale"
 argument_list|)
@@ -8057,7 +8069,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Indexed"
 argument_list|)
@@ -8071,7 +8083,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Histogram"
 argument_list|)
@@ -8081,7 +8093,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors"
 argument_list|)
@@ -8091,7 +8103,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Threshold"
 argument_list|)
@@ -8105,7 +8117,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Posterize"
 argument_list|)
@@ -8119,7 +8131,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Equalize"
 argument_list|)
@@ -8133,7 +8145,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Invert"
 argument_list|)
@@ -8147,7 +8159,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Color Balance"
 argument_list|)
@@ -8161,7 +8173,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Brightness-Contrast"
 argument_list|)
@@ -8175,7 +8187,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Hue-Saturation"
 argument_list|)
@@ -8189,7 +8201,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Curves"
 argument_list|)
@@ -8203,7 +8215,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Levels"
 argument_list|)
@@ -8217,7 +8229,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Colors/Desaturate"
 argument_list|)
@@ -8231,7 +8243,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Alpha/Add Alpha Channel"
 argument_list|)
@@ -8253,7 +8265,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Image/Channel Ops/Offset"
 argument_list|)
@@ -8264,7 +8276,7 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Stack"
 argument_list|)
@@ -8279,7 +8291,7 @@ condition|)
 block|{
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Stack/Previous Layer"
 argument_list|)
@@ -8299,7 +8311,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Stack/Next Layer"
 argument_list|)
@@ -8323,7 +8335,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Stack/Raise Layer"
 argument_list|)
@@ -8345,7 +8357,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Stack/Lower Layer"
 argument_list|)
@@ -8371,7 +8383,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Stack/Layer to Top"
 argument_list|)
@@ -8393,7 +8405,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Stack/Layer to Bottom"
 argument_list|)
@@ -8420,7 +8432,7 @@ expr_stmt|;
 block|}
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Anchor Layer"
 argument_list|)
@@ -8437,7 +8449,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Merge Visible Layers"
 argument_list|)
@@ -8455,7 +8467,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Flatten Image"
 argument_list|)
@@ -8473,7 +8485,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Alpha To Selection"
 argument_list|)
@@ -8490,7 +8502,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Mask To Selection"
 argument_list|)
@@ -8507,7 +8519,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Layers/Add Alpha Channel"
 argument_list|)
@@ -8531,7 +8543,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Filters"
 argument_list|)
@@ -8543,7 +8555,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-name|_
+name|N_
 argument_list|(
 literal|"/Script-Fu"
 argument_list|)
