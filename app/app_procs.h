@@ -93,6 +93,11 @@ begin_function_decl
 name|void
 name|app_init
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|full_prog_name
+parameter_list|,
 name|gint
 name|gimp_argc
 parameter_list|,
@@ -140,6 +145,9 @@ name|use_mmx
 parameter_list|,
 name|gboolean
 name|console_messages
+parameter_list|,
+name|GimpStackTraceMode
+name|stack_trace_mode
 parameter_list|,
 name|gboolean
 name|restore_session

@@ -35,6 +35,24 @@ end_endif
 
 begin_function_decl
 name|void
+name|gimp_errors_init
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|full_prog_name
+parameter_list|,
+name|gboolean
+name|use_debug_handler
+parameter_list|,
+name|GimpStackTraceMode
+name|stack_trace_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_message_log_func
 parameter_list|(
 specifier|const
@@ -86,6 +104,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|message
 parameter_list|,
 modifier|...
 parameter_list|)
@@ -99,6 +118,7 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|message
 parameter_list|,
 modifier|...
 parameter_list|)

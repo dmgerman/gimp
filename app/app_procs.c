@@ -148,12 +148,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -266,47 +260,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/*  command-line options  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|use_debug_handler
-name|gboolean
-name|use_debug_handler
-init|=
-name|FALSE
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|stack_trace_mode
-name|GimpStackTraceMode
-name|stack_trace_mode
-init|=
-name|GIMP_STACK_TRACE_QUERY
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-comment|/*  other global variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|prog_name
-name|gchar
-modifier|*
-name|prog_name
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|prog_name
-comment|/* our executable name */
-end_comment
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -339,9 +292,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|app_init (gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean console_messages,gboolean restore_session)
+DECL|function|app_init (const gchar * full_prog_name,gint gimp_argc,gchar ** gimp_argv,const gchar * alternate_system_gimprc,const gchar * alternate_gimprc,const gchar ** batch_cmds,gboolean no_interface,gboolean no_data,gboolean no_splash,gboolean no_splash_image,gboolean be_verbose,gboolean use_shm,gboolean use_mmx,gboolean console_messages,GimpStackTraceMode stack_trace_mode,gboolean restore_session)
 name|app_init
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|full_prog_name
+parameter_list|,
 name|gint
 name|gimp_argc
 parameter_list|,
@@ -389,6 +347,9 @@ name|use_mmx
 parameter_list|,
 name|gboolean
 name|console_messages
+parameter_list|,
+name|GimpStackTraceMode
+name|stack_trace_mode
 parameter_list|,
 name|gboolean
 name|restore_session
@@ -446,7 +407,7 @@ argument_list|(
 name|the_gimp
 argument_list|)
 argument_list|,
-name|prog_name
+name|full_prog_name
 argument_list|)
 expr_stmt|;
 name|g_log_set_handler

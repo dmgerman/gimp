@@ -119,12 +119,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"app_procs.h"
 end_include
 
@@ -238,6 +232,12 @@ parameter_list|)
 block|{
 name|gchar
 modifier|*
+name|full_prog_name
+init|=
+name|NULL
+decl_stmt|;
+name|gchar
+modifier|*
 name|alternate_system_gimprc
 init|=
 name|NULL
@@ -301,6 +301,16 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
+name|use_debug_handler
+init|=
+name|FALSE
+decl_stmt|;
+name|GimpStackTraceMode
+name|stack_trace_mode
+init|=
+name|GIMP_STACK_TRACE_QUERY
+decl_stmt|;
+name|gboolean
 name|restore_session
 init|=
 name|FALSE
@@ -317,7 +327,7 @@ block|g_mem_set_vtable (glib_mem_profiler_table);   g_atexit (g_mem_profile);
 endif|#
 directive|endif
 comment|/* Initialize variables */
-name|prog_name
+name|full_prog_name
 operator|=
 name|argv
 index|[
@@ -505,10 +515,7 @@ condition|)
 block|{
 name|gimp_show_help
 argument_list|(
-name|argv
-index|[
-literal|0
-index|]
+name|full_prog_name
 argument_list|)
 expr_stmt|;
 name|gimp_text_console_exit
@@ -1452,10 +1459,7 @@ condition|)
 block|{
 name|gimp_show_help
 argument_list|(
-name|argv
-index|[
-literal|0
-index|]
+name|full_prog_name
 argument_list|)
 expr_stmt|;
 name|gimp_text_console_exit
@@ -1574,9 +1578,19 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* G_OS_WIN32 */
-comment|/* Initialize the application */
+name|gimp_errors_init
+argument_list|(
+name|full_prog_name
+argument_list|,
+name|use_debug_handler
+argument_list|,
+name|stack_trace_mode
+argument_list|)
+expr_stmt|;
 name|app_init
 argument_list|(
+name|full_prog_name
+argument_list|,
 name|argc
 operator|-
 literal|1
@@ -1612,6 +1626,8 @@ argument_list|,
 name|use_mmx
 argument_list|,
 name|console_messages
+argument_list|,
+name|stack_trace_mode
 argument_list|,
 name|restore_session
 argument_list|)

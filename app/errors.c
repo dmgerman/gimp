@@ -71,12 +71,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"errors.h"
 end_include
 
@@ -96,6 +90,41 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/*  private variables  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|use_debug_handler
+specifier|static
+name|gboolean
+name|use_debug_handler
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|stack_trace_mode
+specifier|static
+name|GimpStackTraceMode
+name|stack_trace_mode
+init|=
+name|GIMP_STACK_TRACE_QUERY
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|full_prog_name
+specifier|static
+name|gchar
+modifier|*
+name|full_prog_name
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -125,6 +154,52 @@ end_function_decl
 begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_function
+name|void
+DECL|function|gimp_errors_init (const gchar * _full_prog_name,gboolean _use_debug_handler,GimpStackTraceMode _stack_trace_mode)
+name|gimp_errors_init
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|_full_prog_name
+parameter_list|,
+name|gboolean
+name|_use_debug_handler
+parameter_list|,
+name|GimpStackTraceMode
+name|_stack_trace_mode
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|_full_prog_name
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|use_debug_handler
+operator|=
+name|_use_debug_handler
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|stack_trace_mode
+operator|=
+name|_stack_trace_mode
+expr_stmt|;
+name|full_prog_name
+operator|=
+name|g_strdup
+argument_list|(
+name|_full_prog_name
+argument_list|)
+expr_stmt|;
+block|}
+end_function
 
 begin_function
 name|void
@@ -187,7 +262,7 @@ name|g_printerr
 argument_list|(
 literal|"%s: %s\n"
 argument_list|,
-name|prog_name
+name|full_prog_name
 argument_list|,
 name|message
 argument_list|)
@@ -362,7 +437,7 @@ name|g_printerr
 argument_list|(
 literal|"%s: %s: %s\n"
 argument_list|,
-name|prog_name
+name|full_prog_name
 argument_list|,
 name|reason
 argument_list|,
@@ -408,7 +483,7 @@ argument_list|)
 expr_stmt|;
 name|g_on_error_query
 argument_list|(
-name|prog_name
+name|full_prog_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -438,7 +513,7 @@ argument_list|)
 expr_stmt|;
 name|g_on_error_stack_trace
 argument_list|(
-name|prog_name
+name|full_prog_name
 argument_list|)
 expr_stmt|;
 block|}
