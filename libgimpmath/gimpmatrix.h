@@ -354,6 +354,18 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_matrix3_is_identity
+parameter_list|(
+specifier|const
+name|GimpMatrix3
+modifier|*
+name|matrix
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_matrix3_is_diagonal
 parameter_list|(
 specifier|const
@@ -366,7 +378,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_matrix3_is_identity
+name|gimp_matrix3_is_affine
 parameter_list|(
 specifier|const
 name|GimpMatrix3
