@@ -590,6 +590,15 @@ index|[
 name|i
 index|]
 operator|.
+name|value_variable
+operator|=
+name|FALSE
+expr_stmt|;
+name|entries
+index|[
+name|i
+index|]
+operator|.
 name|help_id
 operator|=
 name|GIMP_HELP_FILE_OPEN_RECENT

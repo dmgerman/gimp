@@ -703,6 +703,12 @@ literal|0
 expr_stmt|;
 name|entry
 operator|.
+name|value_variable
+operator|=
+name|FALSE
+expr_stmt|;
+name|entry
+operator|.
 name|help_id
 operator|=
 name|help_id
