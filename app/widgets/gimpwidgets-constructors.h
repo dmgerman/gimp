@@ -36,6 +36,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_paint_mode_menu_set_history
+parameter_list|(
+name|GtkOptionMenu
+modifier|*
+name|menu
+parameter_list|,
+name|GimpLayerModeEffects
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

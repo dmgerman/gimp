@@ -551,5 +551,28 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_paint_mode_menu_set_history (GtkOptionMenu * menu,GimpLayerModeEffects value)
+name|gimp_paint_mode_menu_set_history
+parameter_list|(
+name|GtkOptionMenu
+modifier|*
+name|menu
+parameter_list|,
+name|GimpLayerModeEffects
+name|value
+parameter_list|)
+block|{
+name|gimp_int_option_menu_set_history
+argument_list|(
+name|menu
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 

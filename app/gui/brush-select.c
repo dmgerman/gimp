@@ -1497,7 +1497,7 @@ modifier|*
 name|bsp
 parameter_list|)
 block|{
-name|gimp_int_option_menu_set_history
+name|gimp_paint_mode_menu_set_history
 argument_list|(
 name|GTK_OPTION_MENU
 argument_list|(
