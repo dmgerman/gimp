@@ -277,6 +277,10 @@ argument_list|)
 expr_stmt|;
 name|nl
 operator|=
+name|MAX
+argument_list|(
+literal|0.
+argument_list|,
 literal|2.0
 operator|*
 name|gimp_vector3_inner_product
@@ -286,6 +290,7 @@ name|n
 argument_list|,
 operator|&
 name|l
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|lnormal
@@ -345,7 +350,7 @@ name|rv
 operator|=
 name|MAX
 argument_list|(
-literal|0.
+literal|0.01
 argument_list|,
 name|gimp_vector3_inner_product
 argument_list|(
