@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee8fb90103
+DECL|enum|__anon28011cf60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -658,6 +658,27 @@ expr_stmt|;
 name|editor
 operator|->
 name|stroke_options
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|editor
+operator|->
+name|segments
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|editor
+operator|->
+name|segments
+argument_list|)
+expr_stmt|;
+name|editor
+operator|->
+name|segments
 operator|=
 name|NULL
 expr_stmt|;
