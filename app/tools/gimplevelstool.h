@@ -153,6 +153,11 @@ name|GtkWidget
 modifier|*
 name|hist_view
 decl_stmt|;
+DECL|member|active_picker
+name|GtkWidget
+modifier|*
+name|active_picker
+decl_stmt|;
 DECL|member|low_input_data
 name|GtkAdjustment
 modifier|*

@@ -112,6 +112,11 @@ name|GtkWidget
 modifier|*
 name|gradient
 decl_stmt|;
+DECL|member|gradient_buf
+name|guchar
+modifier|*
+name|gradient_buf
+decl_stmt|;
 DECL|member|low_adj
 name|GtkAdjustment
 modifier|*

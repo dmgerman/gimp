@@ -158,7 +158,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|levels_auto (Levels * levels,GimpHistogram * hist,gboolean color)
+DECL|function|levels_auto (Levels * levels,GimpHistogram * hist,gboolean is_color)
 name|levels_auto
 parameter_list|(
 name|Levels
@@ -170,7 +170,7 @@ modifier|*
 name|hist
 parameter_list|,
 name|gboolean
-name|color
+name|is_color
 parameter_list|)
 block|{
 name|GimpHistogramChannel
@@ -192,7 +192,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|color
+name|is_color
 condition|)
 block|{
 comment|/*  Set the overall value to defaults  */
@@ -523,6 +523,74 @@ break|break;
 block|}
 block|}
 block|}
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|levels_adjust_by_colors (Levels * levels,GimpHistogramChannel channel,guchar * black,guchar * gray,guchar * white)
+name|levels_adjust_by_colors
+parameter_list|(
+name|Levels
+modifier|*
+name|levels
+parameter_list|,
+name|GimpHistogramChannel
+name|channel
+parameter_list|,
+name|guchar
+modifier|*
+name|black
+parameter_list|,
+name|guchar
+modifier|*
+name|gray
+parameter_list|,
+name|guchar
+modifier|*
+name|white
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|levels
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|black
+condition|)
+name|levels
+operator|->
+name|low_input
+index|[
+name|channel
+index|]
+operator|=
+name|black
+index|[
+name|channel
+index|]
+expr_stmt|;
+comment|/* FIXME: gray adjustment */
+if|if
+condition|(
+name|white
+condition|)
+name|levels
+operator|->
+name|high_input
+index|[
+name|channel
+index|]
+operator|=
+name|white
+index|[
+name|channel
+index|]
+expr_stmt|;
 block|}
 end_function
 
