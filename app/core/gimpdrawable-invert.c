@@ -69,35 +69,12 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|void
-name|invert
-parameter_list|(
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|Argument
-modifier|*
-name|invert_invoker
-parameter_list|(
-name|Argument
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 name|void
-DECL|function|image_invert (GImage * gimage)
+DECL|function|image_invert (GimpImage * gimage)
 name|image_invert
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|)
@@ -122,7 +99,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|drawable_indexed
+name|gimp_drawable_indexed
 argument_list|(
 name|drawable
 argument_list|)
@@ -196,7 +173,6 @@ comment|/*  Inverter  */
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|invert (GimpDrawable * drawable)
 name|invert
@@ -360,187 +336,6 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  ------------------------------------------------------------------  */
-end_comment
-
-begin_comment
-comment|/*  ----------------- The invert procedure definition ----------------  */
-end_comment
-
-begin_comment
-comment|/*  ------------------------------------------------------------------  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|invert_args
-name|ProcArg
-name|invert_args
-index|[]
-init|=
-block|{
-block|{
-name|PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"the drawable"
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|invert_proc
-name|ProcRecord
-name|invert_proc
-init|=
-block|{
-literal|"gimp_invert"
-block|,
-literal|"Invert the contents of the specified drawable"
-block|,
-literal|"This procedure inverts the contents of the specified drawable.  Each intensity channel is inverted independently.  The inverted intensity is given as inten' = (255 - inten).  Indexed color drawables are not valid for this operation."
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"1995-1996"
-block|,
-name|PDB_INTERNAL
-block|,
-comment|/*  Input arguments  */
-literal|1
-block|,
-name|invert_args
-block|,
-comment|/*  Output arguments  */
-literal|0
-block|,
-name|NULL
-block|,
-comment|/*  Exec method  */
-block|{
-block|{
-name|invert_invoker
-block|}
-block|}
-block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-specifier|static
-name|Argument
-modifier|*
-DECL|function|invert_invoker (args)
-name|invert_invoker
-parameter_list|(
-name|args
-parameter_list|)
-name|Argument
-modifier|*
-name|args
-decl_stmt|;
-block|{
-name|int
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|int
-name|int_value
-decl_stmt|;
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-name|drawable
-operator|=
-name|NULL
-expr_stmt|;
-comment|/*  the drawable  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|int_value
-operator|=
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-name|drawable
-operator|=
-name|drawable_get_ID
-argument_list|(
-name|int_value
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|drawable
-operator|==
-name|NULL
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-else|else
-name|gimage
-operator|=
-name|drawable_gimage
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-block|}
-comment|/*  make sure the drawable is not indexed color  */
-if|if
-condition|(
-name|success
-condition|)
-name|success
-operator|=
-operator|!
-name|drawable_indexed
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-name|invert
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-return|return
-name|procedural_db_return_args
-argument_list|(
-operator|&
-name|invert_proc
-argument_list|,
-name|success
-argument_list|)
-return|;
 block|}
 end_function
 

@@ -19,7 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|"procedural_db.h"
+file|"gimpimageF.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdrawableF.h"
 end_include
 
 begin_comment
@@ -36,16 +42,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  Procedure definition and marshalling function  */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|ProcRecord
-name|equalize_proc
-decl_stmt|;
-end_decl_stmt
+begin_function_decl
+name|void
+name|equalize
+parameter_list|(
+name|GimpImage
+modifier|*
+parameter_list|,
+name|GimpDrawable
+modifier|*
+parameter_list|,
+name|gboolean
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

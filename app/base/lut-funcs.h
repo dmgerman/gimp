@@ -32,7 +32,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=_LUT>*/
-DECL|enum|__anon2c431f590103
+DECL|enum|__anon2ad0cf810103
 block|{
 DECL|enumerator|VALUE_LUT
 name|VALUE_LUT
@@ -46,6 +46,9 @@ name|GREEN_LUT
 block|,
 DECL|enumerator|BLUE_LUT
 name|BLUE_LUT
+block|,
+DECL|enumerator|ALPHA_LUT
+name|ALPHA_LUT
 block|,
 DECL|enumerator|GRAY_LUT
 name|GRAY_LUT

@@ -19,6 +19,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"gimpdrawableF.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pixel_region.h"
 end_include
 

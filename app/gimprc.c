@@ -200,7 +200,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2bbe42090103
+DECL|enum|__anon2a3ee8bf0103
 typedef|typedef
 enum|enum
 block|{
@@ -1428,19 +1428,6 @@ parameter_list|,
 name|char
 modifier|*
 name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|Argument
-modifier|*
-name|gimprc_query
-parameter_list|(
-name|Argument
-modifier|*
-name|args
 parameter_list|)
 function_decl|;
 end_function_decl

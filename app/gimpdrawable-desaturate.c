@@ -63,29 +63,6 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|void
-name|desaturate
-parameter_list|(
-name|GimpDrawable
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|Argument
-modifier|*
-name|desaturate_invoker
-parameter_list|(
-name|Argument
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 name|void
 DECL|function|image_desaturate (gimage_ptr)
@@ -149,11 +126,10 @@ block|}
 end_function
 
 begin_comment
-comment|/*  Desaturateer  */
+comment|/*  Desaturater  */
 end_comment
 
 begin_function
-specifier|static
 name|void
 DECL|function|desaturate (GimpDrawable * drawable)
 name|desaturate
@@ -529,178 +505,6 @@ name|y1
 operator|)
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/*  The desaturate procedure definition  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|desaturate_args
-name|ProcArg
-name|desaturate_args
-index|[]
-init|=
-block|{
-block|{
-name|PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"the drawable"
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|desaturate_proc
-name|ProcRecord
-name|desaturate_proc
-init|=
-block|{
-literal|"gimp_desaturate"
-block|,
-literal|"Desaturate the contents of the specified drawable"
-block|,
-literal|"This procedure desaturates the contents of the specified drawable.  This procedure only works on drawables of type RGB color."
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"Spencer Kimball& Peter Mattis"
-block|,
-literal|"1995-1996"
-block|,
-name|PDB_INTERNAL
-block|,
-comment|/*  Input arguments  */
-literal|1
-block|,
-name|desaturate_args
-block|,
-comment|/*  Output arguments  */
-literal|0
-block|,
-name|NULL
-block|,
-comment|/*  Exec method  */
-block|{
-block|{
-name|desaturate_invoker
-block|}
-block|}
-block|, }
-decl_stmt|;
-end_decl_stmt
-
-begin_function
-specifier|static
-name|Argument
-modifier|*
-DECL|function|desaturate_invoker (args)
-name|desaturate_invoker
-parameter_list|(
-name|args
-parameter_list|)
-name|Argument
-modifier|*
-name|args
-decl_stmt|;
-block|{
-name|int
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|int
-name|int_value
-decl_stmt|;
-name|GImage
-modifier|*
-name|gimage
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
-decl_stmt|;
-name|drawable
-operator|=
-name|NULL
-expr_stmt|;
-comment|/*  the drawable  */
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|int_value
-operator|=
-name|args
-index|[
-literal|0
-index|]
-operator|.
-name|value
-operator|.
-name|pdb_int
-expr_stmt|;
-name|drawable
-operator|=
-name|drawable_get_ID
-argument_list|(
-name|int_value
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|drawable
-operator|==
-name|NULL
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-else|else
-name|gimage
-operator|=
-name|drawable_gimage
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-block|}
-comment|/*  check to make sure the drawable is color  */
-if|if
-condition|(
-name|success
-condition|)
-name|success
-operator|=
-name|drawable_color
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-name|desaturate
-argument_list|(
-name|drawable
-argument_list|)
-expr_stmt|;
-return|return
-name|procedural_db_return_args
-argument_list|(
-operator|&
-name|desaturate_proc
-argument_list|,
-name|success
-argument_list|)
-return|;
 block|}
 end_function
 
