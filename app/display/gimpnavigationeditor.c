@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimphelp-ids.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpnavigationpreview.h"
 end_include
 
@@ -1564,7 +1570,7 @@ argument_list|(
 literal|"Zoom out"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_VIEW_ZOOM_OUT
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1594,7 +1600,7 @@ argument_list|(
 literal|"Zoom in"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_VIEW_ZOOM_IN
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1624,7 +1630,7 @@ argument_list|(
 literal|"Zoom 1:1"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_VIEW_ZOOM_100
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1654,7 +1660,7 @@ argument_list|(
 literal|"Zoom to fit window"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_VIEW_ZOOM_FIT
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1684,7 +1690,7 @@ argument_list|(
 literal|"Shrink Wrap"
 argument_list|)
 argument_list|,
-name|NULL
+name|GIMP_HELP_VIEW_SHRINK_WRAP
 argument_list|,
 name|G_CALLBACK
 argument_list|(
