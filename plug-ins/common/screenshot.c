@@ -128,7 +128,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c1cbeb0108
+DECL|struct|__anon296a81ff0108
 block|{
 DECL|member|root
 name|gboolean
@@ -927,7 +927,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Screen Shot: Error grabbing the pointer"
+literal|"Error grabbing the pointer"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1539,7 +1539,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Screen Shot: Specified window not found"
+literal|"Specified window not found"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1746,7 +1746,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Screen Shot: Error obtaining screenshot"
+literal|"Error obtaining screenshot"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2077,7 +2077,7 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"_Single Window"
+literal|"a _Single Window"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2166,7 +2166,7 @@ name|radio_group
 argument_list|,
 name|_
 argument_list|(
-literal|"_Whole Screen"
+literal|"the _Whole Screen"
 argument_list|)
 argument_list|)
 expr_stmt|;
