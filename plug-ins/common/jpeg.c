@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0775970108
+DECL|struct|__anon277168d60108
 block|{
 DECL|member|quality
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0775970208
+DECL|struct|__anon277168d60208
 block|{
 DECL|member|cinfo
 name|struct
@@ -7414,6 +7414,17 @@ argument_list|,
 name|jsvals
 operator|.
 name|save_exif
+operator|&&
+name|exif_data
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|exif_toggle
+argument_list|,
+name|exif_data
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 endif|#
