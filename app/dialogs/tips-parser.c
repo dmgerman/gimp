@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c861e670103
+DECL|enum|__anon29ea02d30103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -70,7 +70,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c861e670203
+DECL|enum|__anon29ea02d30203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -1320,6 +1320,16 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
+name|TipsParser
+modifier|*
+name|parser
+init|=
+operator|(
+name|TipsParser
+operator|*
+operator|)
+name|user_data
+decl_stmt|;
 name|g_warning
 argument_list|(
 literal|"%s: %s"
