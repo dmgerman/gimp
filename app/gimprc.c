@@ -206,7 +206,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2b3d8e180103
+DECL|enum|__anon278adc810103
 typedef|typedef
 enum|enum
 block|{
@@ -12726,7 +12726,7 @@ condition|)
 return|return
 name|g_strdup
 argument_list|(
-literal|"large"
+literal|"huge"
 argument_list|)
 return|;
 elseif|else
@@ -12735,6 +12735,19 @@ condition|(
 name|preview_size
 operator|>=
 literal|64
+condition|)
+return|return
+name|g_strdup
+argument_list|(
+literal|"large"
+argument_list|)
+return|;
+elseif|else
+if|if
+condition|(
+name|preview_size
+operator|>=
+literal|48
 condition|)
 return|return
 name|g_strdup
@@ -12753,6 +12766,19 @@ return|return
 name|g_strdup
 argument_list|(
 literal|"small"
+argument_list|)
+return|;
+elseif|else
+if|if
+condition|(
+name|preview_size
+operator|>=
+literal|24
+condition|)
+return|return
+name|g_strdup
+argument_list|(
+literal|"tiny"
 argument_list|)
 return|;
 else|else
