@@ -137,7 +137,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|enum|__anon2b2948c60103
+DECL|enum|__anon2c64d5f50103
 typedef|typedef
 enum|enum
 block|{
@@ -227,6 +227,22 @@ parameter_list|()
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|extern
+name|void
+name|gimp_color_display_register
+parameter_list|()
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|extern
+name|void
+name|gimp_color_display_unregister
+parameter_list|()
+function_decl|;
+end_function_decl
+
 begin_struct
 DECL|struct|main_funcs_struc
 specifier|static
@@ -265,6 +281,18 @@ name|gimp_color_selector_unregister
 block|}
 block|,
 block|{
+literal|"gimp_color_display_register"
+block|,
+name|gimp_color_display_register
+block|}
+block|,
+block|{
+literal|"gimp_color_display_unregister"
+block|,
+name|gimp_color_display_unregister
+block|}
+block|,
+block|{
 name|NULL
 block|,
 name|NULL
@@ -283,7 +311,7 @@ comment|/* one of these objects is kept per-module */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2948c60208
+DECL|struct|__anon2c64d5f50208
 typedef|typedef
 struct|struct
 block|{
@@ -400,7 +428,7 @@ value|7
 end_define
 
 begin_typedef
-DECL|struct|__anon2b2948c60308
+DECL|struct|__anon2c64d5f50308
 typedef|typedef
 struct|struct
 block|{
@@ -1678,7 +1706,7 @@ comment|/* module_info object glue */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2948c60408
+DECL|struct|__anon2c64d5f50408
 typedef|typedef
 struct|struct
 block|{
@@ -1693,7 +1721,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b2948c60503
+DECL|enum|__anon2c64d5f50503
 enum|enum
 block|{
 DECL|enumerator|MODIFIED
@@ -4533,7 +4561,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b2948c60608
+DECL|struct|__anon2c64d5f50608
 typedef|typedef
 struct|struct
 block|{
