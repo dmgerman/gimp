@@ -1063,7 +1063,7 @@ name|dialog
 decl_stmt|;
 name|dialog
 operator|=
-name|gimp_dialog_factory_dialog_raise
+name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,
@@ -1074,6 +1074,8 @@ literal|"gimp-error-dialog"
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1093,6 +1095,14 @@ argument_list|,
 name|domain
 argument_list|,
 name|message
+argument_list|)
+expr_stmt|;
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

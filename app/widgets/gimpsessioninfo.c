@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2990cb350103
+DECL|enum|__anon27a1fb080103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -2897,6 +2897,8 @@ operator|->
 name|toplevel_entry
 operator|->
 name|preview_size
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if

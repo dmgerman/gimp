@@ -440,12 +440,15 @@ literal|"gimp-file-new-dialog"
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|dialog
 condition|)
+block|{
 name|file_new_dialog_set
 argument_list|(
 name|dialog
@@ -455,6 +458,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -501,6 +513,8 @@ literal|"gimp-file-new-dialog"
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -528,6 +542,14 @@ argument_list|,
 name|gimage
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

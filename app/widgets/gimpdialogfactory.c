@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d0a38f0103
+DECL|enum|__anon2bce6ee10103
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1530,7 +1530,6 @@ return|return
 name|NULL
 return|;
 block|}
-comment|/*  a singleton dialog is always only raised if it already exisits  */
 if|if
 condition|(
 name|raise_if_found
@@ -1841,6 +1840,10 @@ argument_list|,
 name|screen
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|raise_if_found
+condition|)
 name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
@@ -1950,13 +1953,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @preview_size:  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Implicitly raises singleton dialogs.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @preview_size:  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifier,gint preview_size)
+DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifier,gint preview_size,gboolean present)
 name|gimp_dialog_factory_dialog_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1974,6 +1977,9 @@ name|identifier
 parameter_list|,
 name|gint
 name|preview_size
+parameter_list|,
+name|gboolean
+name|present
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2020,7 +2026,7 @@ name|identifier
 argument_list|,
 name|preview_size
 argument_list|,
-name|FALSE
+name|present
 argument_list|)
 return|;
 block|}
