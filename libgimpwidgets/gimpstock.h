@@ -671,6 +671,16 @@ define|#
 directive|define
 name|GIMP_STOCK_QMASK_ON
 value|"gimp-qmask-on"
+DECL|macro|GIMP_STOCK_CLOSE
+define|#
+directive|define
+name|GIMP_STOCK_CLOSE
+value|"gimp-close"
+DECL|macro|GIMP_STOCK_MENU
+define|#
+directive|define
+name|GIMP_STOCK_MENU
+value|"gimp-menu"
 DECL|macro|GIMP_STOCK_DEFAULT_COLORS
 define|#
 directive|define

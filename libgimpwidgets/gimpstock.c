@@ -2084,7 +2084,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2773a5210108
+DECL|struct|__anon2b1e230f0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -2720,7 +2720,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2773a5210208
+DECL|struct|__anon2b1e230f0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3030,6 +3030,18 @@ block|{
 name|GIMP_STOCK_LANDSCAPE
 block|,
 name|stock_landscape_16
+block|}
+block|,
+block|{
+name|GIMP_STOCK_CLOSE
+block|,
+name|stock_close_12
+block|}
+block|,
+block|{
+name|GIMP_STOCK_MENU
+block|,
+name|stock_menu_12
 block|}
 block|,
 block|{
@@ -3380,7 +3392,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2773a5210308
+DECL|struct|__anon2b1e230f0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3464,7 +3476,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2773a5210408
+DECL|struct|__anon2b1e230f0408
 block|{
 DECL|member|stock_id
 specifier|const
