@@ -186,6 +186,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpbezierselecttool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprotatetool.h"
 end_include
 
@@ -223,7 +229,9 @@ parameter_list|)
 block|{
 comment|/*  register tools in reverse order  */
 comment|/*  paint tools  */
-comment|/* gimp_smudge_tool_register (); */
+name|gimp_smudge_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_dodgeburn_tool_register
 argument_list|()
 expr_stmt|;
@@ -287,6 +295,9 @@ name|gimp_bezier_select_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_iscissors_tool_register
+argument_list|()
+expr_stmt|;
+name|gimp_bezier_select_tool_register
 argument_list|()
 expr_stmt|;
 name|gimp_fuzzy_select_tool_register

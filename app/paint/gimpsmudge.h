@@ -6,20 +6,26 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SMUDGE_H__
+name|__GIMP_SMUDGE_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SMUDGE_H__
+DECL|macro|__GIMP_SMUDGE_TOOL_H__
 define|#
 directive|define
-name|__SMUDGE_H__
+name|__GIMP_SMUDGE_TOOL_H__
 end_define
+
+begin_include
+include|#
+directive|include
+file|"gimppainttool.h"
+end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a11abf40103
+DECL|enum|__anon2bc3379a0103
 block|{
 DECL|enumerator|SMUDGE_TYPE_SMUDGE
 name|SMUDGE_TYPE_SMUDGE
@@ -35,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a11abf40203
+DECL|enum|__anon2bc3379a0203
 block|{
 DECL|enumerator|SMUDGE_MODE_HIGHLIGHTS
 name|SMUDGE_MODE_HIGHLIGHTS
@@ -51,9 +57,127 @@ name|SmudgeMode
 typedef|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_TYPE_SMUDGE_TOOL
+define|#
+directive|define
+name|GIMP_TYPE_SMUDGE_TOOL
+value|(gimp_smudge_tool_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_SMUDGE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_SMUDGE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_CAST ((obj), GIMP_TYPE_SMUDGE_TOOL, GimpSmudgeTool))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_SMUDGE_TOOL (obj)
+define|#
+directive|define
+name|GIMP_IS_SMUDGE_TOOL
+parameter_list|(
+name|obj
+parameter_list|)
+value|(GTK_CHECK_TYPE ((obj), GIMP_TYPE_SMUDGE_TOOL))
+end_define
+
+begin_define
+DECL|macro|GIMP_SMUDGE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_SMUDGE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SMUDGE_TOOL, GimpSmudgeToolClass))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_SMUDGE_TOOL_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_SMUDGE_TOOL_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(GTK_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SMUDGE_TOOL))
+end_define
+
+begin_typedef
+DECL|typedef|GimpSmudgeTool
+typedef|typedef
+name|struct
+name|_GimpSmudgeTool
+name|GimpSmudgeTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpSmudgeToolClass
+typedef|typedef
+name|struct
+name|_GimpSmudgeToolClass
+name|GimpSmudgeToolClass
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpSmudgeTool
+struct|struct
+name|_GimpSmudgeTool
+block|{
+DECL|member|parent_instance
+name|GimpPaintTool
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
+DECL|struct|_GimpSmudgeToolClass
+struct|struct
+name|_GimpSmudgeToolClass
+block|{
+DECL|member|parent_class
+name|GimpPaintToolClass
+name|parent_class
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|void
+name|gimp_smudge_tool_register
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkType
+name|gimp_smudge_tool_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* FIXME: this antique code doesn't follow the coding style */
+end_comment
+
 begin_function_decl
 name|gboolean
-name|smudge_non_gui
+name|gimp_smudge_tool_non_gui
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -74,7 +198,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|smudge_non_gui_default
+name|gimp_smudge_tool_non_gui_default
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -90,34 +214,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|Tool
-modifier|*
-name|tools_new_smudge
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|tools_free_smudge
-parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SMUDGE_H__  */
+comment|/*  __GIMP_SMUDGE_TOOL_H__  */
 end_comment
 
 end_unit

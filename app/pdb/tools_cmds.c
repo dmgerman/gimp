@@ -9696,7 +9696,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|smudge_non_gui
+name|gimp_smudge_tool_non_gui
 argument_list|(
 name|drawable
 argument_list|,
@@ -9902,7 +9902,7 @@ name|success
 condition|)
 name|success
 operator|=
-name|smudge_non_gui_default
+name|gimp_smudge_tool_non_gui_default
 argument_list|(
 name|drawable
 argument_list|,

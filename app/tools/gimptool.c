@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f5a1c0103
+DECL|enum|__anon28cc0f9d0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1798,20 +1798,6 @@ begin_macro
 name|STUB
 argument_list|(
 argument|shear_tool_shear
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|smudge_non_gui
-argument_list|)
-end_macro
-
-begin_macro
-name|STUB
-argument_list|(
-argument|smudge_non_gui_default
 argument_list|)
 end_macro
 
