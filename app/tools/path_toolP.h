@@ -22,12 +22,6 @@ directive|undef
 name|PATH_TOOL_DEBUG
 end_undef
 
-begin_include
-include|#
-directive|include
-file|"draw_core.h"
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -44,6 +38,12 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
 
 begin_define
 DECL|macro|IMAGE_COORDS
@@ -118,7 +118,7 @@ value|1000
 end_define
 
 begin_typedef
-DECL|enum|__anon2b788e830103
+DECL|enum|__anon29115d170103
 DECL|enumerator|SEGMENT_LINE
 DECL|enumerator|SEGMENT_BEZIER
 DECL|typedef|SegmentType
@@ -136,7 +136,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2b788e830203
+DECL|enum|__anon29115d170203
 DECL|enumerator|ON_ANCHOR
 DECL|enumerator|ON_HANDLE
 DECL|enumerator|ON_CURVE
@@ -173,20 +173,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Path
+DECL|typedef|NPath
 typedef|typedef
 name|struct
-name|_path
-name|Path
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PathTool
-typedef|typedef
-name|struct
-name|_path_tool
-name|PathTool
+name|_npath
+name|NPath
 typedef|;
 end_typedef
 
@@ -258,7 +249,7 @@ name|cur_segment
 decl_stmt|;
 comment|/* the current segment */
 DECL|member|parent
-name|Path
+name|NPath
 modifier|*
 name|parent
 decl_stmt|;
@@ -280,9 +271,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_path
+DECL|struct|_npath
 struct|struct
-name|_path
+name|_npath
 block|{
 DECL|member|curves
 name|PathCurve
@@ -307,116 +298,102 @@ name|guint32
 name|state
 decl_stmt|;
 comment|/* is the path locked? */
-DECL|member|path_tool
-name|PathTool
-modifier|*
-name|path_tool
-decl_stmt|;
+comment|/* GimpPathTool  *path_tool; */
 comment|/* The parent Path Tool */
 block|}
 struct|;
 end_struct
 
-begin_struct
-DECL|struct|_path_tool
-struct|struct
-name|_path_tool
-block|{
-DECL|member|click_type
-name|gint
-name|click_type
-decl_stmt|;
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
+begin_comment
+unit|struct _path_tool {    gint         click_type;
 comment|/* where did the user click?         */
-DECL|member|click_x
-name|gint
-name|click_x
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint         click_x;
 comment|/* X-coordinate of the click         */
-DECL|member|click_y
-name|gint
-name|click_y
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint         click_y;
 comment|/* Y-coordinate of the click         */
-DECL|member|click_halfwidth
-name|gint
-name|click_halfwidth
-decl_stmt|;
-DECL|member|click_modifier
-name|guint
-name|click_modifier
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint         click_halfwidth;    guint        click_modifier;
 comment|/* what modifiers were pressed?      */
-DECL|member|click_path
-name|Path
-modifier|*
-name|click_path
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|NPath        *click_path;
 comment|/* On which Path/Curve/Segment       */
-DECL|member|click_curve
-name|PathCurve
-modifier|*
-name|click_curve
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|PathCurve   *click_curve;
 comment|/* was the click?                    */
-DECL|member|click_segment
-name|PathSegment
-modifier|*
-name|click_segment
-decl_stmt|;
-DECL|member|click_position
-name|gdouble
-name|click_position
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|PathSegment *click_segment;    gdouble      click_position;
 comment|/* The position on the segment       */
-DECL|member|click_handle_id
-name|gint
-name|click_handle_id
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint         click_handle_id;
 comment|/* The handle ID of the segment      */
-DECL|member|active_count
-name|gint
-name|active_count
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint         active_count;
 comment|/* How many segments are active?     */
+end_comment
+
+begin_comment
 comment|/*     * WARNING: single_active_segment may contain non NULL Values     * which point to the nirvana. But they are important!     * The pointer is garantueed to be valid, when active_count==1     */
-DECL|member|single_active_segment
-name|PathSegment
-modifier|*
-name|single_active_segment
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|PathSegment *single_active_segment;
 comment|/* The only active segment    */
-DECL|member|state
-name|gint
-name|state
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint         state;
 comment|/* state of tool                     */
-DECL|member|draw
-name|gint
-name|draw
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|gint         draw;
 comment|/* all or part                       */
-DECL|member|core
-name|DrawCore
-modifier|*
-name|core
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|DrawCore    *core;
 comment|/* Core drawing object               */
-DECL|member|cur_path
-name|Path
-modifier|*
-name|cur_path
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|NPath        *cur_path;
 comment|/* the current active path           */
-DECL|member|scanlines
-name|GSList
-modifier|*
-modifier|*
-name|scanlines
-decl_stmt|;
+end_comment
+
+begin_comment
+unit|GSList     **scanlines;
 comment|/* used in converting a path         */
-block|}
-struct|;
-end_struct
+end_comment
+
+begin_endif
+unit|};
+endif|#
+directive|endif
+end_endif
 
 begin_typedef
 typedef|typedef
@@ -427,7 +404,7 @@ modifier|*
 name|PathTraverseFunc
 function_decl|)
 parameter_list|(
-name|Path
+name|NPath
 modifier|*
 parameter_list|,
 name|PathCurve
@@ -447,7 +424,7 @@ modifier|*
 name|CurveTraverseFunc
 function_decl|)
 parameter_list|(
-name|Path
+name|NPath
 modifier|*
 parameter_list|,
 name|PathCurve
@@ -470,7 +447,7 @@ modifier|*
 name|SegmentTraverseFunc
 function_decl|)
 parameter_list|(
-name|Path
+name|NPath
 modifier|*
 parameter_list|,
 name|PathCurve

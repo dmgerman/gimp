@@ -12,6 +12,24 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gdk/gdk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"apptypes.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"path_curves.h"
 end_include
 
@@ -19,6 +37,12 @@ begin_include
 include|#
 directive|include
 file|"path_bezier.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"tools/gimpdrawtool.h"
 end_include
 
 begin_comment
@@ -84,8 +108,9 @@ block|,
 comment|/* path_bezier_get_points, */
 name|path_bezier_get_point
 block|,
-name|path_bezier_draw_handles
+name|NULL
 block|,
+comment|/* path_bezier_draw_handles, */
 name|NULL
 block|,
 comment|/* path_bezier_draw_segment, */
@@ -121,18 +146,14 @@ end_comment
 
 begin_function
 name|guint
-DECL|function|path_curve_get_points (PathTool * path_tool,PathSegment * segment,GdkPoint * points,guint npoints,gdouble start,gdouble end)
+DECL|function|path_curve_get_points (PathSegment * segment,gdouble * points,guint npoints,gdouble start,gdouble end)
 name|path_curve_get_points
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
 parameter_list|,
-name|GdkPoint
+name|gdouble
 modifier|*
 name|points
 parameter_list|,
@@ -191,8 +212,6 @@ operator|.
 name|get_points
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|,
 name|points
@@ -246,49 +265,27 @@ control|)
 block|{
 name|path_curve_get_point
 argument_list|(
-name|path_tool
-argument_list|,
 name|segment
 argument_list|,
 name|pos
 argument_list|,
 operator|&
-name|x
+name|points
+index|[
+name|index
+operator|*
+literal|2
+index|]
 argument_list|,
 operator|&
-name|y
-argument_list|)
-expr_stmt|;
 name|points
 index|[
 name|index
-index|]
-operator|.
-name|x
-operator|=
-call|(
-name|guint
-call|)
-argument_list|(
-name|x
+operator|*
+literal|2
 operator|+
-literal|0.5
-argument_list|)
-expr_stmt|;
-name|points
-index|[
-name|index
+literal|1
 index|]
-operator|.
-name|y
-operator|=
-call|(
-name|guint
-call|)
-argument_list|(
-name|y
-operator|+
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|index
@@ -326,13 +323,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_get_point (PathTool * path_tool,PathSegment * segment,gdouble position,gdouble * x,gdouble * y)
+DECL|function|path_curve_get_point (PathSegment * segment,gdouble position,gdouble * x,gdouble * y)
 name|path_curve_get_point
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -381,8 +374,6 @@ operator|.
 name|get_point
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|,
 name|position
@@ -400,7 +391,7 @@ literal|0
 block|*x = segment->x + (segment->next->x - segment->x) * position;          *y = segment->y + (segment->next->y - segment->y) * position;
 else|#
 directive|else
-comment|/* Only here for debugging purposes: A bezier curve fith fixed tangents */
+comment|/* Only here for debugging purposes: A bezier curve with fixed tangents */
 operator|*
 name|x
 operator|=
@@ -594,10 +585,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_draw_handles (Tool * tool,PathSegment * segment)
+DECL|function|path_curve_draw_handles (GimpDrawTool * tool,PathSegment * segment)
 name|path_curve_draw_handles
 parameter_list|(
-name|Tool
+name|GimpDrawTool
 modifier|*
 name|tool
 parameter_list|,
@@ -643,10 +634,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_draw_segment (Tool * tool,PathSegment * segment)
+DECL|function|path_curve_draw_segment (GimpDrawTool * tool,PathSegment * segment)
 name|path_curve_draw_segment
 parameter_list|(
-name|Tool
+name|GimpDrawTool
 modifier|*
 name|tool
 parameter_list|,
@@ -706,31 +697,21 @@ return|return;
 block|}
 else|else
 block|{
-name|GdkPoint
+name|gdouble
 modifier|*
 name|coordinates
 init|=
 name|g_new
 argument_list|(
-name|GdkPoint
+name|gdouble
 argument_list|,
-literal|100
+literal|200
 argument_list|)
 decl_stmt|;
 name|numpts
 operator|=
 name|path_curve_get_points
 argument_list|(
-operator|(
-operator|(
-name|PathTool
-operator|*
-operator|)
-name|tool
-operator|->
-name|private
-operator|)
-argument_list|,
 name|segment
 argument_list|,
 name|coordinates
@@ -742,101 +723,15 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-name|index
-operator|=
-literal|0
-init|;
-name|index
-operator|<
-name|numpts
-condition|;
-name|index
-operator|++
-control|)
-block|{
-name|gdisplay_transform_coords
+name|gimp_draw_tool_draw_lines
 argument_list|(
 name|tool
-operator|->
-name|gdisp
 argument_list|,
 name|coordinates
-index|[
-name|index
-index|]
-operator|.
-name|x
 argument_list|,
-name|coordinates
-index|[
-name|index
-index|]
-operator|.
-name|y
-argument_list|,
-operator|&
-name|x
-argument_list|,
-operator|&
-name|y
+literal|100
 argument_list|,
 name|FALSE
-argument_list|)
-expr_stmt|;
-name|coordinates
-index|[
-name|index
-index|]
-operator|.
-name|x
-operator|=
-name|x
-expr_stmt|;
-name|coordinates
-index|[
-name|index
-index|]
-operator|.
-name|y
-operator|=
-name|y
-expr_stmt|;
-block|}
-name|gdk_draw_lines
-argument_list|(
-operator|(
-operator|(
-name|PathTool
-operator|*
-operator|)
-name|tool
-operator|->
-name|private
-operator|)
-operator|->
-name|core
-operator|->
-name|win
-argument_list|,
-operator|(
-operator|(
-name|PathTool
-operator|*
-operator|)
-name|tool
-operator|->
-name|private
-operator|)
-operator|->
-name|core
-operator|->
-name|gc
-argument_list|,
-name|coordinates
-argument_list|,
-name|numpts
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -867,13 +762,9 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|path_curve_on_segment (Tool * tool,PathSegment * segment,gint x,gint y,gint halfwidth,gint * distance)
+DECL|function|path_curve_on_segment (PathSegment * segment,gint x,gint y,gint halfwidth,gint * distance)
 name|path_curve_on_segment
 parameter_list|(
-name|Tool
-modifier|*
-name|tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -918,8 +809,6 @@ operator|.
 name|on_segment
 operator|)
 operator|(
-name|tool
-operator|,
 name|segment
 operator|,
 name|x
@@ -954,16 +843,9 @@ name|numpts
 decl_stmt|,
 name|index
 decl_stmt|;
-name|GdkPoint
+name|gdouble
 modifier|*
 name|coordinates
-init|=
-name|g_new
-argument_list|(
-name|GdkPoint
-argument_list|,
-literal|100
-argument_list|)
 decl_stmt|;
 name|gint
 name|bestindex
@@ -971,6 +853,15 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|coordinates
+operator|=
+name|g_new
+argument_list|(
+name|gdouble
+argument_list|,
+literal|200
+argument_list|)
+expr_stmt|;
 operator|*
 name|distance
 operator|=
@@ -984,16 +875,6 @@ name|numpts
 operator|=
 name|path_curve_get_points
 argument_list|(
-operator|(
-operator|(
-name|PathTool
-operator|*
-operator|)
-name|tool
-operator|->
-name|private
-operator|)
-argument_list|,
 name|segment
 argument_list|,
 name|coordinates
@@ -1023,19 +904,21 @@ name|x1
 operator|=
 name|coordinates
 index|[
+literal|2
+operator|*
 name|index
 index|]
-operator|.
-name|x
 expr_stmt|;
 name|y1
 operator|=
 name|coordinates
 index|[
+literal|2
+operator|*
 name|index
+operator|+
+literal|1
 index|]
-operator|.
-name|y
 expr_stmt|;
 if|if
 condition|(
@@ -1401,13 +1284,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_drag_segment (PathTool * path_tool,PathSegment * segment,gdouble position,gdouble dx,gdouble dy)
+DECL|function|path_curve_drag_segment (PathSegment * segment,gdouble position,gdouble dx,gdouble dy)
 name|path_curve_drag_segment
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -1447,8 +1326,6 @@ operator|.
 name|drag_segment
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|,
 name|position
@@ -1464,13 +1341,9 @@ end_function
 
 begin_function
 name|gint
-DECL|function|path_curve_on_handle (PathTool * path_tool,PathSegment * segment,gdouble x,gdouble y,gdouble halfwidth)
+DECL|function|path_curve_on_handle (PathSegment * segment,gdouble x,gdouble y,gdouble halfwidth)
 name|path_curve_on_handle
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -1511,8 +1384,6 @@ operator|.
 name|on_handles
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|,
 name|x
@@ -1530,13 +1401,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_drag_handle (PathTool * path_tool,PathSegment * segment,gdouble dx,gdouble dy,gint handle_id)
+DECL|function|path_curve_drag_handle (PathSegment * segment,gdouble dx,gdouble dy,gint handle_id)
 name|path_curve_drag_handle
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -1576,8 +1443,6 @@ operator|.
 name|drag_handle
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|,
 name|dx
@@ -1593,13 +1458,9 @@ end_function
 begin_function
 name|PathSegment
 modifier|*
-DECL|function|path_curve_insert_anchor (PathTool * path_tool,PathSegment * segment,gdouble position)
+DECL|function|path_curve_insert_anchor (PathSegment * segment,gdouble position)
 name|path_curve_insert_anchor
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -1634,8 +1495,6 @@ operator|.
 name|insert_anchor
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|,
 name|position
@@ -1699,13 +1558,9 @@ end_function
 
 begin_function
 name|void
-DECL|function|path_curve_update_segment (PathTool * path_tool,PathSegment * segment)
+DECL|function|path_curve_update_segment (PathSegment * segment)
 name|path_curve_update_segment
 parameter_list|(
-name|PathTool
-modifier|*
-name|path_tool
-parameter_list|,
 name|PathSegment
 modifier|*
 name|segment
@@ -1736,8 +1591,6 @@ operator|.
 name|update_segment
 operator|)
 operator|(
-name|path_tool
-operator|,
 name|segment
 operator|)
 expr_stmt|;

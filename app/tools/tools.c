@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppathtool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppenciltool.h"
 end_include
 
@@ -264,6 +270,9 @@ name|gimp_move_tool_register
 argument_list|()
 expr_stmt|;
 comment|/*  non-modifying tools  */
+name|gimp_path_tool_register
+argument_list|()
+expr_stmt|;
 name|gimp_measure_tool_register
 argument_list|()
 expr_stmt|;

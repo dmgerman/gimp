@@ -270,6 +270,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPathTool
+typedef|typedef
+name|struct
+name|_GimpPathTool
+name|GimpPathTool
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTransformTool
 typedef|typedef
 name|struct
