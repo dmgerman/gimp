@@ -119,6 +119,10 @@ DECL|member|color
 name|GimpRGB
 name|color
 decl_stmt|;
+DECL|member|alignment
+name|GimpTextAlignment
+name|alignment
+decl_stmt|;
 DECL|member|letter_spacing
 name|gdouble
 name|letter_spacing

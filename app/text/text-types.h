@@ -22,6 +22,12 @@ directive|include
 file|"core/core-types.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"text/text-enums.h"
+end_include
+
 begin_typedef
 DECL|typedef|GimpText
 typedef|typedef
@@ -37,6 +43,15 @@ typedef|typedef
 name|struct
 name|_GimpTextLayer
 name|GimpTextLayer
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTextLayout
+typedef|typedef
+name|struct
+name|_GimpTextLayout
+name|GimpTextLayout
 typedef|;
 end_typedef
 
