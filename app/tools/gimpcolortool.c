@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297db6aa0103
+DECL|enum|__anon2a0fd9b40103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -616,6 +616,24 @@ modifier|*
 name|color_tool
 parameter_list|)
 block|{
+name|GimpTool
+modifier|*
+name|tool
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|color_tool
+argument_list|)
+decl_stmt|;
+name|gimp_tool_control_set_action_value_1
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+literal|"tools/tools-color-average-radius-set"
+argument_list|)
+expr_stmt|;
 name|color_tool
 operator|->
 name|enabled
