@@ -764,7 +764,7 @@ name|gint64
 name|current_size
 decl_stmt|;
 name|gint64
-name|fixed_size
+name|scalable_size
 decl_stmt|;
 name|gint64
 name|undo_size
@@ -773,7 +773,7 @@ name|gint64
 name|redo_size
 decl_stmt|;
 name|gint64
-name|scaled_size
+name|fixed_size
 decl_stmt|;
 name|gint64
 name|new_size
@@ -809,7 +809,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|scaled_size
+comment|/*  the part of the image's memsize that scales linearly with the image  */
+name|scalable_size
 operator|=
 name|gimp_object_get_memsize
 argument_list|(
@@ -854,6 +855,7 @@ operator|->
 name|projection
 argument_list|)
 expr_stmt|;
+comment|/*  treat the undo stacks separately  */
 name|undo_size
 operator|=
 name|gimp_object_get_memsize
@@ -882,23 +884,33 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  calculate the part of the memsize that won't change by scaling  */
 name|fixed_size
 operator|=
+operator|(
 name|current_size
 operator|-
-name|scaled_size
+comment|/*  the overall size                 */
+name|scalable_size
 operator|-
+comment|/*  minus the part that scales       */
 name|undo_size
 operator|-
+comment|/*  minus undo (special, see below)  */
 name|redo_size
+operator|)
 expr_stmt|;
+comment|/*  minus redo (will be blown)       */
+comment|/*  calculate the new size, which is:  */
 name|new_size
 operator|=
 operator|(
 name|fixed_size
 operator|+
-name|scaled_size
+comment|/*  the fixed part                */
+name|scalable_size
 operator|*
+comment|/*  plus the part that scales...  */
 operator|(
 operator|(
 name|gdouble
@@ -924,11 +936,12 @@ argument_list|)
 operator|)
 operator|)
 expr_stmt|;
+comment|/*  ...plus the new undo size which is...  */
 if|if
 condition|(
 name|undo_size
 operator|+
-name|scaled_size
+name|scalable_size
 operator|<
 name|gimage
 operator|->
@@ -939,17 +952,18 @@ operator|->
 name|undo_size
 condition|)
 block|{
+comment|/*  ...the old undo size plus the old drawables (if within limits)  */
 name|new_size
 operator|+=
 name|undo_size
 operator|+
-name|scaled_size
+name|scalable_size
 expr_stmt|;
 block|}
 elseif|else
 if|if
 condition|(
-name|scaled_size
+name|scalable_size
 operator|<
 name|gimage
 operator|->
@@ -960,6 +974,7 @@ operator|->
 name|undo_size
 condition|)
 block|{
+comment|/*  ...the limit (if the old drawables are not larger than the limit)  */
 name|new_size
 operator|+=
 name|gimage
@@ -973,9 +988,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/*  ...the old drawables otherwise  */
 name|new_size
 operator|+=
-name|scaled_size
+name|scalable_size
 expr_stmt|;
 block|}
 operator|*
