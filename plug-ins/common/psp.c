@@ -106,18 +106,6 @@ directive|include
 file|<libgimp/stdplugins-intl.h>
 end_include
 
-begin_define
-DECL|macro|gimp_message_printf (x)
-define|#
-directive|define
-name|gimp_message_printf
-parameter_list|(
-name|x
-parameter_list|)
-define|\
-value|G_STMT_START { \     gchar *_t = g_strdup_printf x; \     gimp_message (_t); \     g_free (_t); \   } G_STMT_END
-end_define
-
 begin_comment
 comment|/* Note that the upcoming PSP version 6 writes PSP file format version  * 4.0, but the documentation for that apparently isn't publicly  * available (yet). The format is luckily designed to be somwehat  * downward compatible, however. The semantics of many of the  * additional fields and block types can be relatively easily reverse  * engineered.  */
 end_comment
@@ -131,7 +119,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0103
+DECL|enum|__anon2b1fffbe0103
 typedef|typedef
 enum|enum
 block|{
@@ -195,7 +183,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0203
+DECL|enum|__anon2b1fffbe0203
 typedef|typedef
 enum|enum
 block|{
@@ -235,7 +223,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0303
+DECL|enum|__anon2b1fffbe0303
 typedef|typedef
 enum|enum
 block|{
@@ -267,7 +255,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0403
+DECL|enum|__anon2b1fffbe0403
 typedef|typedef
 enum|enum
 block|{
@@ -295,7 +283,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0503
+DECL|enum|__anon2b1fffbe0503
 typedef|typedef
 enum|enum
 block|{
@@ -323,7 +311,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0603
+DECL|enum|__anon2b1fffbe0603
 typedef|typedef
 enum|enum
 block|{
@@ -345,7 +333,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0703
+DECL|enum|__anon2b1fffbe0703
 typedef|typedef
 enum|enum
 block|{
@@ -381,7 +369,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0803
+DECL|enum|__anon2b1fffbe0803
 typedef|typedef
 enum|enum
 block|{
@@ -401,7 +389,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0903
+DECL|enum|__anon2b1fffbe0903
 typedef|typedef
 enum|enum
 block|{
@@ -449,7 +437,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0a03
+DECL|enum|__anon2b1fffbe0a03
 typedef|typedef
 enum|enum
 block|{
@@ -473,7 +461,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0b03
+DECL|enum|__anon2b1fffbe0b03
 typedef|typedef
 enum|enum
 block|{
@@ -534,7 +522,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon296b23bc0c03
+DECL|enum|__anon2b1fffbe0c03
 typedef|typedef
 enum|enum
 block|{
@@ -607,7 +595,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b23bc0d08
+DECL|struct|__anon2b1fffbe0d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -767,7 +755,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b23bc0e08
+DECL|struct|__anon2b1fffbe0e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -782,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b23bc0f08
+DECL|struct|__anon2b1fffbe0f08
 block|{
 DECL|member|run
 name|gint
@@ -2006,7 +1994,7 @@ literal|1
 operator|)
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading block header"
 argument_list|)
@@ -2035,13 +2023,11 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Invalid block header at %d"
-operator|,
+argument_list|,
 name|header_start
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2058,18 +2044,16 @@ name|IFDBG
 argument_list|(
 literal|3
 argument_list|)
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: %s at %d"
-operator|,
+argument_list|,
 name|block_name
 argument_list|(
 name|id
 argument_list|)
-operator|,
+argument_list|,
 name|header_start
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2178,7 +2162,7 @@ operator|<
 literal|38
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Invalid general image attribute chunk size"
 argument_list|)
@@ -2382,7 +2366,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading general image attribute block"
 argument_list|)
@@ -2594,15 +2578,13 @@ operator|>
 name|PSP_COMP_LZ77
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Unknown compression type %d"
-operator|,
+argument_list|,
 name|ia
 operator|->
 name|compression
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2635,15 +2617,13 @@ operator|!=
 literal|24
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Unsupported bit depth %d"
-operator|,
+argument_list|,
 name|ia
 operator|->
 name|depth
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -2715,7 +2695,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Seek error"
 argument_list|)
@@ -2891,7 +2871,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading creator keyword chunk"
 argument_list|)
@@ -2925,7 +2905,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Invalid keyword chunk header"
 argument_list|)
@@ -3001,7 +2981,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading creator keyword data"
 argument_list|)
@@ -3115,7 +3095,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading creator keyword data"
 argument_list|)
@@ -4338,7 +4318,7 @@ operator|!=
 name|Z_OK
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: zlib error"
 argument_list|)
@@ -4403,7 +4383,7 @@ operator|!=
 name|Z_STREAM_END
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: zlib error"
 argument_list|)
@@ -4693,17 +4673,14 @@ operator|!=
 name|PSP_LAYER_BLOCK
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
-literal|"PSP: Invalid layer sub-block %s, "
-literal|"should be LAYER"
-operator|,
+literal|"PSP: Invalid layer sub-block %s, should be LAYER"
+argument_list|,
 name|block_name
 argument_list|(
 name|sub_id
 argument_list|)
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -5010,7 +4987,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading layer information chunk"
 argument_list|)
@@ -5282,7 +5259,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading layer information chunk"
 argument_list|)
@@ -5314,7 +5291,7 @@ name|type
 operator|==
 name|PSP_LAYER_FLOATING_SELECTION
 condition|)
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Floating selection restored as normal layer"
 argument_list|)
@@ -5371,19 +5348,17 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Unsupported PSP layer blend mode %s "
 literal|"for layer %s, setting layer invisible"
-operator|,
+argument_list|,
 name|blend_mode_name
 argument_list|(
 name|blend_mode
 argument_list|)
-operator|,
+argument_list|,
 name|name
-operator|)
 argument_list|)
 expr_stmt|;
 name|layer_mode
@@ -5423,14 +5398,13 @@ name|IFDBG
 argument_list|(
 literal|2
 argument_list|)
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: layer: %s %dx%d (%dx%d) @%d,%d opacity %d blend_mode %s "
 literal|"%d bitmaps %d channels"
-operator|,
+argument_list|,
 name|name
-operator|,
+argument_list|,
 name|image_rect
 index|[
 literal|2
@@ -5440,7 +5414,7 @@ name|image_rect
 index|[
 literal|0
 index|]
-operator|,
+argument_list|,
 name|image_rect
 index|[
 literal|3
@@ -5450,43 +5424,41 @@ name|image_rect
 index|[
 literal|1
 index|]
-operator|,
+argument_list|,
 name|width
-operator|,
+argument_list|,
 name|height
-operator|,
+argument_list|,
 name|saved_image_rect
 index|[
 literal|0
 index|]
-operator|,
+argument_list|,
 name|saved_image_rect
 index|[
 literal|1
 index|]
-operator|,
+argument_list|,
 name|opacity
-operator|,
+argument_list|,
 name|blend_mode_name
 argument_list|(
 name|blend_mode
 argument_list|)
-operator|,
+argument_list|,
 name|bitmap_count
-operator|,
+argument_list|,
 name|channel_count
-operator|)
 argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
 literal|2
 argument_list|)
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: mask %dx%d (%dx%d) @%d,%d"
-operator|,
+argument_list|,
 name|mask_rect
 index|[
 literal|2
@@ -5496,7 +5468,7 @@ name|mask_rect
 index|[
 literal|0
 index|]
-operator|,
+argument_list|,
 name|mask_rect
 index|[
 literal|3
@@ -5506,7 +5478,7 @@ name|mask_rect
 index|[
 literal|1
 index|]
-operator|,
+argument_list|,
 name|saved_mask_rect
 index|[
 literal|2
@@ -5516,7 +5488,7 @@ name|saved_mask_rect
 index|[
 literal|0
 index|]
-operator|,
+argument_list|,
 name|saved_mask_rect
 index|[
 literal|3
@@ -5526,17 +5498,16 @@ name|saved_mask_rect
 index|[
 literal|1
 index|]
-operator|,
+argument_list|,
 name|saved_mask_rect
 index|[
 literal|0
 index|]
-operator|,
+argument_list|,
 name|saved_mask_rect
 index|[
 literal|1
 index|]
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -5659,7 +5630,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error creating layer"
 argument_list|)
@@ -5921,17 +5892,14 @@ operator|!=
 name|PSP_CHANNEL_BLOCK
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
-literal|"PSP: Invalid layer sub-block %s, "
-literal|"should be CHANNEL"
-operator|,
+literal|"PSP: Invalid layer sub-block %s, should be CHANNEL"
+argument_list|,
 name|block_name
 argument_list|(
 name|sub_id
 argument_list|)
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -6031,7 +5999,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading channel information chunk"
 argument_list|)
@@ -6086,14 +6054,12 @@ operator|>
 name|PSP_DIB_USER_MASK
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Invalid bitmap type %d "
 literal|"in channel information chunk"
-operator|,
+argument_list|,
 name|bitmap_type
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -6118,14 +6084,12 @@ operator|>
 name|PSP_CHANNEL_BLUE
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Invalid channel type %d "
 literal|"in channel information chunk"
-operator|,
+argument_list|,
 name|channel_type
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -6147,28 +6111,26 @@ name|IFDBG
 argument_list|(
 literal|2
 argument_list|)
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: channel: %s %s %d (%d) bytes "
 literal|"%d bytespp"
-operator|,
+argument_list|,
 name|bitmap_type_name
 argument_list|(
 name|bitmap_type
 argument_list|)
-operator|,
+argument_list|,
 name|channel_type_name
 argument_list|(
 name|channel_type
 argument_list|)
-operator|,
+argument_list|,
 name|uncompressed_len
-operator|,
+argument_list|,
 name|compressed_len
-operator|,
+argument_list|,
 name|bytespp
-operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -6523,7 +6485,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading tube data chunk"
 argument_list|)
@@ -6728,11 +6690,6 @@ operator|)
 operator|)
 operator|)
 operator|)
-argument_list|)
-expr_stmt|;
-name|gimp_message
-argument_list|(
-name|parasite_text
 argument_list|)
 expr_stmt|;
 name|hose_parasite
@@ -6953,7 +6910,7 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Error reading file header"
 argument_list|)
@@ -6982,7 +6939,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Incorrect file signature"
 argument_list|)
@@ -7019,16 +6976,14 @@ operator|<
 literal|3
 condition|)
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Unsupported PSP file format version "
 literal|"%d.%d, only knows 3.0 (and later?)"
-operator|,
+argument_list|,
 name|major
-operator|,
+argument_list|,
 name|minor
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -7061,7 +7016,7 @@ name|minor
 operator|==
 literal|0
 condition|)
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Warning: PSP file format version "
 literal|"4.0. Support for this format version "
@@ -7071,15 +7026,13 @@ argument_list|)
 expr_stmt|;
 else|else
 block|{
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Unsupported PSP file format version %d.%d"
-operator|,
+argument_list|,
 name|major
-operator|,
+argument_list|,
 name|minor
-operator|)
 argument_list|)
 expr_stmt|;
 name|fclose
@@ -7101,15 +7054,13 @@ name|IFDBG
 argument_list|(
 literal|3
 argument_list|)
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: size = %d"
-operator|,
+argument_list|,
 name|st
 operator|.
 name|st_size
-operator|)
 argument_list|)
 expr_stmt|;
 while|while
@@ -7163,7 +7114,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Duplicate General Image Attributes block"
 argument_list|)
@@ -7203,33 +7154,31 @@ name|IFDBG
 argument_list|(
 literal|2
 argument_list|)
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: %d dpi %dx%d %s"
-operator|,
+argument_list|,
 operator|(
 name|int
 operator|)
 name|ia
 operator|.
 name|resolution
-operator|,
+argument_list|,
 name|ia
 operator|.
 name|width
-operator|,
+argument_list|,
 name|ia
 operator|.
 name|height
-operator|,
+argument_list|,
 name|compression_name
 argument_list|(
 name|ia
 operator|.
 name|compression
 argument_list|)
-operator|)
 argument_list|)
 expr_stmt|;
 name|image_ID
@@ -7300,7 +7249,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Missing General Image Attributes block"
 argument_list|)
@@ -7434,28 +7383,24 @@ case|:
 case|case
 name|PSP_ALPHA_CHANNEL_BLOCK
 case|:
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Sub-block %s should not occur "
 literal|"at main level of file"
-operator|,
+argument_list|,
 name|block_name
 argument_list|(
 name|id
 argument_list|)
-operator|)
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|gimp_message_printf
+name|g_message
 argument_list|(
-operator|(
 literal|"PSP: Unrecognized block id %d"
-operator|,
+argument_list|,
 name|id
-operator|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -7553,7 +7498,7 @@ name|gint32
 name|drawable_ID
 parameter_list|)
 block|{
-name|gimp_message
+name|g_message
 argument_list|(
 literal|"PSP: Saving not implemented yet"
 argument_list|)

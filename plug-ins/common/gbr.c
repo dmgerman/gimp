@@ -149,7 +149,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon276c22cd0108
+DECL|struct|__anon2c186fa00108
 typedef|typedef
 struct|struct
 block|{
@@ -1648,9 +1648,9 @@ operator|-
 literal|1
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"Unable to open %s\n"
+literal|"Unable to open %s"
 argument_list|,
 name|filename
 argument_list|)
@@ -1824,22 +1824,6 @@ operator|->
 name|bpp
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|buffer
-operator|==
-name|NULL
-condition|)
-block|{
-name|close
-argument_list|(
-name|fd
-argument_list|)
-expr_stmt|;
-return|return
-literal|0
-return|;
-block|}
 for|for
 control|(
 name|line
