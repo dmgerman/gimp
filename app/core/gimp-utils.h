@@ -217,6 +217,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_check_glib_version
+parameter_list|(
+name|guint
+name|required_major
+parameter_list|,
+name|guint
+name|required_minor
+parameter_list|,
+name|guint
+name|required_micro
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

@@ -1192,5 +1192,92 @@ block|}
 block|}
 end_function
 
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_check_glib_version (guint required_major,guint required_minor,guint required_micro)
+name|gimp_check_glib_version
+parameter_list|(
+name|guint
+name|required_major
+parameter_list|,
+name|guint
+name|required_minor
+parameter_list|,
+name|guint
+name|required_micro
+parameter_list|)
+block|{
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: remove this function as soon as we depend on GLib 2.6.0
+endif|#
+directive|endif
+name|gint
+name|glib_effective_micro
+init|=
+literal|100
+operator|*
+name|glib_minor_version
+operator|+
+name|glib_micro_version
+decl_stmt|;
+name|gint
+name|required_effective_micro
+init|=
+literal|100
+operator|*
+name|required_minor
+operator|+
+name|required_micro
+decl_stmt|;
+if|if
+condition|(
+name|required_major
+operator|>
+name|glib_major_version
+condition|)
+return|return
+literal|"GLib version too old (major mismatch)"
+return|;
+if|if
+condition|(
+name|required_major
+operator|<
+name|glib_major_version
+condition|)
+return|return
+literal|"GLib version too new (major mismatch)"
+return|;
+if|if
+condition|(
+name|required_effective_micro
+operator|<
+name|glib_effective_micro
+operator|-
+name|glib_binary_age
+condition|)
+return|return
+literal|"GLib version too new (micro mismatch)"
+return|;
+if|if
+condition|(
+name|required_effective_micro
+operator|>
+name|glib_effective_micro
+condition|)
+return|return
+literal|"GLib version too old (micro mismatch)"
+return|;
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
 end_unit
 
