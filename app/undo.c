@@ -175,6 +175,10 @@ directive|include
 file|"gimpparasite.h"
 end_include
 
+begin_comment
+comment|/*#define DEBUG*/
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -213,7 +217,7 @@ directive|endif
 end_endif
 
 begin_typedef
-DECL|enum|__anon28b7c0dd0103
+DECL|enum|__anon2c643b250103
 typedef|typedef
 enum|enum
 block|{
@@ -11418,7 +11422,7 @@ comment|/* Layer re-position */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28b7c0dd0208
+DECL|struct|__anon2c643b250208
 typedef|typedef
 struct|struct
 block|{
@@ -11648,7 +11652,7 @@ comment|/* Layer name change */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28b7c0dd0308
+DECL|struct|__anon2c643b250308
 typedef|typedef
 struct|struct
 block|{
@@ -12265,6 +12269,15 @@ block|,
 name|N_
 argument_list|(
 literal|"guide"
+argument_list|)
+block|}
+block|,
+block|{
+name|TEXT_UNDO
+block|,
+name|N_
+argument_list|(
+literal|"text"
 argument_list|)
 block|}
 block|,

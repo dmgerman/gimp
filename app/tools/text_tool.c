@@ -3392,7 +3392,7 @@ name|undo_push_group_start
 argument_list|(
 name|gimage
 argument_list|,
-name|EDIT_PASTE_UNDO
+name|TEXT_UNDO
 argument_list|)
 expr_stmt|;
 comment|/*  Set the layer offsets  */

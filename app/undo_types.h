@@ -27,7 +27,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f313b50103
+DECL|enum|__anon2784d0ca0103
 block|{
 comment|/* Type 0 is special - in the gimpimage structure it means      * there is no undo group currently being added to. */
 DECL|enumerator|IMAGE_UNDO
@@ -95,12 +95,11 @@ block|,
 DECL|enumerator|GUIDE_UNDO
 name|GUIDE_UNDO
 block|,
-comment|/*  18 */
-comment|/*  Aggregate undo types  */
+DECL|enumerator|TEXT_UNDO
+name|TEXT_UNDO
+block|,
 DECL|enumerator|FLOAT_MASK_UNDO
 name|FLOAT_MASK_UNDO
-init|=
-literal|20
 block|,
 DECL|enumerator|EDIT_PASTE_UNDO
 name|EDIT_PASTE_UNDO
@@ -126,7 +125,6 @@ block|,
 DECL|enumerator|LAYER_MERGE_UNDO
 name|LAYER_MERGE_UNDO
 block|,
-comment|/*  28  */
 DECL|enumerator|FS_ANCHOR_UNDO
 name|FS_ANCHOR_UNDO
 block|,
@@ -145,7 +143,6 @@ block|,
 DECL|enumerator|QMASK_UNDO
 name|QMASK_UNDO
 block|,
-comment|/*  34 */
 DECL|enumerator|PARASITE_ATTACH_UNDO
 name|PARASITE_ATTACH_UNDO
 block|,
