@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287933bb0108
+DECL|struct|__anon2ab1e4e00108
 block|{
 DECL|member|interlaced
 name|gint
@@ -418,7 +418,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/* If there is no alpha, then the index associated with         * this pixel is taken */
+comment|/* If alpha is over a threshold, the colour index in the         * palette is taken. Otherwise, this pixel is transparent. */
 if|if
 condition|(
 name|pixels
@@ -429,6 +429,8 @@ literal|2
 operator|+
 literal|1
 index|]
+operator|>
+literal|127
 condition|)
 name|ix_used
 index|[
@@ -3893,15 +3895,30 @@ index|[
 name|k
 index|]
 operator|=
+operator|(
+name|fixed
+index|[
+name|k
+operator|*
+literal|2
+operator|+
+literal|1
+index|]
+operator|>
+literal|127
+operator|)
+condition|?
 name|remap
 index|[
 name|fixed
 index|[
-literal|2
-operator|*
 name|k
+operator|*
+literal|2
 index|]
 index|]
+else|:
+literal|0
 expr_stmt|;
 block|}
 block|}
