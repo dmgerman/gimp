@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmagnifytool.h"
 end_include
 
@@ -1749,6 +1755,10 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|options
 operator|=
 name|g_new0
@@ -1900,6 +1910,19 @@ name|allow_resize
 argument_list|)
 expr_stmt|;
 comment|/*  tool toggle  */
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Tool Toggle  %s"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gimp_enum_radio_frame_new
@@ -1908,10 +1931,7 @@ name|GIMP_TYPE_ZOOM_TYPE
 argument_list|,
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Tool Toggle (<Ctrl>)"
-argument_list|)
+name|str
 argument_list|)
 argument_list|,
 literal|2
@@ -1968,6 +1988,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 comment|/*  window threshold */

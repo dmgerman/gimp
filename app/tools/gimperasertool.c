@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimperasertool.h"
 end_include
 
@@ -592,6 +598,10 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|options
 operator|=
 name|gimp_eraser_options_new
@@ -638,16 +648,26 @@ operator|->
 name|main_vbox
 expr_stmt|;
 comment|/* the anti_erase toggle */
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Anti Erase  %s"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|options
 operator|->
 name|anti_erase_w
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-name|_
-argument_list|(
-literal|"Anti Erase (<Ctrl>)"
-argument_list|)
+name|str
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -687,6 +707,11 @@ argument_list|(
 name|options
 operator|->
 name|anti_erase_w
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -172,6 +172,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-dialog-utils.h"
 end_include
 
@@ -1011,6 +1017,10 @@ name|GtkStyle
 modifier|*
 name|style
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 comment|/* Catch file-list clicks so we can update the preview thumbnail */
 name|g_signal_connect
 argument_list|(
@@ -1125,18 +1135,33 @@ argument_list|,
 name|open_dialog
 argument_list|)
 expr_stmt|;
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Click to update preview\n"
+literal|"%s  Click to force update even "
+literal|"if preview is up-to-date"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|ebox
 argument_list|,
-name|_
-argument_list|(
-literal|"Click to update preview\n"
-literal|"<Ctrl> Click to force update even "
-literal|"if preview is up-to-date"
-argument_list|)
+name|str
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 name|vbox

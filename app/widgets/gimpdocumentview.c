@@ -131,6 +131,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -485,6 +491,10 @@ name|GimpContainerEditor
 modifier|*
 name|editor
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|document_view
 operator|=
 name|g_object_new
@@ -542,6 +552,24 @@ argument_list|(
 name|document_view
 argument_list|)
 expr_stmt|;
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Open the selected entry\n"
+literal|"%s  Raise window if already open\n"
+literal|"%s  Open image dialog"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|document_view
 operator|->
 name|open_button
@@ -557,12 +585,7 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_OPEN
 argument_list|,
-name|_
-argument_list|(
-literal|"Open the selected entry\n"
-literal|"<Shift> Raise window if already open\n"
-literal|"<Ctrl> Open image dialog"
-argument_list|)
+name|str
 argument_list|,
 name|NULL
 argument_list|,
@@ -577,6 +600,11 @@ name|gimp_document_view_open_extended_clicked
 argument_list|)
 argument_list|,
 name|editor
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 name|document_view
@@ -611,6 +639,24 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Recreate preview\n"
+literal|"%s  Reload all previews\n"
+literal|"%s  Remove Dangling Entries"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|document_view
 operator|->
 name|refresh_button
@@ -626,12 +672,7 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_REFRESH
 argument_list|,
-name|_
-argument_list|(
-literal|"Recreate preview\n"
-literal|"<Shift> Reload all previews\n"
-literal|"<Ctrl> Remove Dangling Entries"
-argument_list|)
+name|str
 argument_list|,
 name|NULL
 argument_list|,
@@ -646,6 +687,11 @@ name|gimp_document_view_refresh_extended_clicked
 argument_list|)
 argument_list|,
 name|editor
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 comment|/*  set button sensitivity  */

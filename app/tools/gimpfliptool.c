@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -991,6 +997,10 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|options
 operator|=
 name|g_new0
@@ -1043,16 +1053,26 @@ operator|.
 name|main_vbox
 expr_stmt|;
 comment|/*  tool toggle  */
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Tool Toggle  %s"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gimp_radio_group_new2
 argument_list|(
 name|TRUE
 argument_list|,
-name|_
-argument_list|(
-literal|"Tool Toggle (<Ctrl>)"
-argument_list|)
+name|str
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1129,6 +1149,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 return|return

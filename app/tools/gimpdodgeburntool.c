@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdodgeburntool.h"
 end_include
 
@@ -647,6 +653,10 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|options
 operator|=
 name|gimp_dodgeburn_options_new
@@ -693,6 +703,19 @@ operator|->
 name|main_vbox
 expr_stmt|;
 comment|/* the type (dodge or burn) */
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Type  %s"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gimp_enum_radio_frame_new
@@ -701,10 +724,7 @@ name|GIMP_TYPE_DODGE_BURN_TYPE
 argument_list|,
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Type (<Ctrl>)"
-argument_list|)
+name|str
 argument_list|)
 argument_list|,
 literal|2
@@ -761,6 +781,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 comment|/*  mode (highlights, midtones, or shadows)  */

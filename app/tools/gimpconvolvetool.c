@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconvolvetool.h"
 end_include
 
@@ -753,6 +759,10 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|options
 operator|=
 name|gimp_convolve_options_new
@@ -798,6 +808,19 @@ operator|)
 operator|->
 name|main_vbox
 expr_stmt|;
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Convolve Type  %s"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gimp_enum_radio_frame_new
@@ -806,10 +829,7 @@ name|GIMP_TYPE_CONVOLVE_TYPE
 argument_list|,
 name|gtk_label_new
 argument_list|(
-name|_
-argument_list|(
-literal|"Convolve Type (<Ctrl>)"
-argument_list|)
+name|str
 argument_list|)
 argument_list|,
 literal|2
@@ -866,6 +886,11 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|frame
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 comment|/*  the rate scale  */

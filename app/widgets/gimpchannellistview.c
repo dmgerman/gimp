@@ -113,6 +113,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -452,6 +458,10 @@ name|GimpContainerView
 modifier|*
 name|container_view
 decl_stmt|;
+name|gchar
+modifier|*
+name|str
+decl_stmt|;
 name|drawable_view
 operator|=
 name|GIMP_DRAWABLE_LIST_VIEW
@@ -571,6 +581,34 @@ operator|->
 name|component_list
 argument_list|)
 expr_stmt|;
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"Channel to Selection\n"
+literal|"%s  Add\n"
+literal|"%s  Subtract\n"
+literal|"%s%s%s  Intersect"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_separator
+argument_list|()
+argument_list|,
+name|gimp_get_mod_name_control
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|/*  To Selection button  */
 name|view
 operator|->
@@ -585,13 +623,7 @@ argument_list|)
 argument_list|,
 name|GIMP_STOCK_SELECTION_REPLACE
 argument_list|,
-name|_
-argument_list|(
-literal|"Channel to Selection\n"
-literal|"<Shift> Add\n"
-literal|"<Ctrl> Subtract\n"
-literal|"<Shift><Ctrl> Intersect"
-argument_list|)
+name|str
 argument_list|,
 name|NULL
 argument_list|,
@@ -606,6 +638,11 @@ name|gimp_channel_list_view_toselection_extended_clicked
 argument_list|)
 argument_list|,
 name|view
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 name|gtk_box_reorder_child

@@ -139,6 +139,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui/color-notebook.h"
 end_include
 
@@ -5306,8 +5312,12 @@ decl_stmt|;
 name|gboolean
 name|in_handle
 decl_stmt|;
-name|double
+name|gdouble
 name|pos
+decl_stmt|;
+name|gchar
+modifier|*
+name|str
 decl_stmt|;
 name|gradient
 operator|=
@@ -5403,6 +5413,23 @@ name|prev
 operator|!=
 name|NULL
 condition|)
+block|{
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"%s%sDrag: move& compress"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_separator
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|gradient_editor_set_hint
 argument_list|(
 name|editor
@@ -5414,33 +5441,33 @@ argument_list|(
 literal|"Drag: move"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"<Shift>+Drag: move& compress"
-argument_list|)
+name|str
 argument_list|)
 expr_stmt|;
-else|else
-name|gradient_editor_set_hint
+name|g_free
 argument_list|(
-name|editor
-argument_list|,
-literal|""
-argument_list|,
-name|_
-argument_list|(
-literal|"Click: select"
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"<Shift>+Click: extend selection"
-argument_list|)
+name|str
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"%s%sClick: extend selection"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_separator
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|gradient_editor_set_hint
 argument_list|(
 name|editor
@@ -5452,10 +5479,51 @@ argument_list|(
 literal|"Click: select"
 argument_list|)
 argument_list|,
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
-literal|"<Shift>+Click: extend selection"
+literal|"%s%sClick: extend selection"
 argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_separator
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|gradient_editor_set_hint
+argument_list|(
+name|editor
+argument_list|,
+literal|""
+argument_list|,
+name|_
+argument_list|(
+literal|"Click: select"
+argument_list|)
+argument_list|,
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 block|}
@@ -5463,6 +5531,22 @@ break|break;
 case|case
 name|GRAD_DRAG_MIDDLE
 case|:
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"%s%sClick: extend selection"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_separator
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|gradient_editor_set_hint
 argument_list|(
 name|editor
@@ -5474,10 +5558,12 @@ argument_list|(
 literal|"Click: select    Drag: move"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"<Shift>+Click: extend selection"
+name|str
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5496,6 +5582,42 @@ block|}
 block|}
 else|else
 block|{
+name|gchar
+modifier|*
+name|str2
+decl_stmt|;
+name|str
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"%s%sClick: extend selection"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_separator
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|str2
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
+literal|"%s%sDrag: move& compress"
+argument_list|)
+argument_list|,
+name|gimp_get_mod_name_shift
+argument_list|()
+argument_list|,
+name|gimp_get_mod_separator
+argument_list|()
+argument_list|)
+expr_stmt|;
 name|gradient_editor_set_hint
 argument_list|(
 name|editor
@@ -5505,15 +5627,19 @@ argument_list|(
 literal|"Click: select    Drag: move"
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"<Shift>+Click: extend selection"
-argument_list|)
+name|str
 argument_list|,
-name|_
-argument_list|(
-literal|"<Shift>+Drag: move& compress"
+name|str2
 argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str2
 argument_list|)
 expr_stmt|;
 block|}
