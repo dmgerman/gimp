@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIF loading file filter for The GIMP version 1.0/1.1  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 1.0.0 - 99/03/20  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
+comment|/* GIF loading file filter for The GIMP version 1.0/1.1  *  *    - Adam D. Moss  *    - Peter Mattis  *    - Spencer Kimball  *  *      Based around original GIF code by David Koblas.  *  *  * Version 1.0.1 - 99/11/11  *                        Adam D. Moss -<adam@gimp.org><adam@foxbox.org>  */
 end_comment
 
 begin_comment
@@ -12,7 +12,7 @@ comment|/*  *  "The Graphics Interchange Format(c) is the Copyright property of 
 end_comment
 
 begin_comment
-comment|/*  * REVISION HISTORY  *  * 99/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
+comment|/*  * REVISION HISTORY  *  * 99/11/11  * 1.00.01 - Fixed an uninitialized variable which has been around  *     forever... thanks to jrb@redhat.com for noticing that there  *     was a problem somewhere!  *  * 99/03/20  * 1.00.00 - GIF load-only code split from main GIF plugin.  *  * For previous revision information, please consult the comments  * in the 'gif' plugin.  */
 end_comment
 
 begin_comment
@@ -660,10 +660,10 @@ value|2
 end_define
 
 begin_define
-DECL|macro|MAX_LWZ_BITS
+DECL|macro|MAX_LZW_BITS
 define|#
 directive|define
-name|MAX_LWZ_BITS
+name|MAX_LZW_BITS
 value|12
 end_define
 
@@ -758,7 +758,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon275568e70108
+DECL|struct|__anon27ea62d90108
 block|{
 DECL|member|Width
 name|unsigned
@@ -808,7 +808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon275568e70208
+DECL|struct|__anon27ea62d90208
 block|{
 DECL|member|transparent
 name|int
@@ -946,7 +946,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|int
-name|LWZReadByte
+name|LZWReadByte
 parameter_list|(
 name|FILE
 modifier|*
@@ -2678,6 +2678,10 @@ name|done
 operator|=
 name|FALSE
 expr_stmt|;
+name|last_byte
+operator|=
+literal|0
+expr_stmt|;
 return|return
 literal|0
 return|;
@@ -2709,7 +2713,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"GIF: ran off the end of by bits\n"
+literal|"GIF: ran off the end of my bits\n"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2860,8 +2864,8 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|LWZReadByte (FILE * fd,int flag,int input_code_size)
-name|LWZReadByte
+DECL|function|LZWReadByte (FILE * fd,int flag,int input_code_size)
+name|LZWReadByte
 parameter_list|(
 name|FILE
 modifier|*
@@ -2919,7 +2923,7 @@ index|[
 operator|(
 literal|1
 operator|<<
-name|MAX_LWZ_BITS
+name|MAX_LZW_BITS
 operator|)
 index|]
 decl_stmt|;
@@ -2931,7 +2935,7 @@ operator|(
 literal|1
 operator|<<
 operator|(
-name|MAX_LWZ_BITS
+name|MAX_LZW_BITS
 operator|)
 operator|)
 operator|*
@@ -3040,7 +3044,7 @@ operator|<
 operator|(
 literal|1
 operator|<<
-name|MAX_LWZ_BITS
+name|MAX_LZW_BITS
 operator|)
 condition|;
 operator|++
@@ -3188,7 +3192,7 @@ operator|<
 operator|(
 literal|1
 operator|<<
-name|MAX_LWZ_BITS
+name|MAX_LZW_BITS
 operator|)
 condition|;
 operator|++
@@ -3414,7 +3418,7 @@ operator|<
 operator|(
 literal|1
 operator|<<
-name|MAX_LWZ_BITS
+name|MAX_LZW_BITS
 operator|)
 condition|)
 block|{
@@ -3455,7 +3459,7 @@ operator|<
 operator|(
 literal|1
 operator|<<
-name|MAX_LWZ_BITS
+name|MAX_LZW_BITS
 operator|)
 operator|)
 condition|)
@@ -3644,7 +3648,7 @@ return|;
 block|}
 if|if
 condition|(
-name|LWZReadByte
+name|LZWReadByte
 argument_list|(
 name|fd
 argument_list|,
@@ -4305,7 +4309,7 @@ condition|(
 operator|(
 name|v
 operator|=
-name|LWZReadByte
+name|LZWReadByte
 argument_list|(
 name|fd
 argument_list|,
@@ -4690,7 +4694,7 @@ name|fini
 label|:
 if|if
 condition|(
-name|LWZReadByte
+name|LZWReadByte
 argument_list|(
 name|fd
 argument_list|,
