@@ -162,7 +162,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aafe980108
+DECL|struct|__anon297af1d80108
 block|{
 DECL|member|console
 name|GtkTextBuffer
@@ -964,7 +964,7 @@ literal|"Script-Fu Console - "
 block|,
 literal|"emphasis"
 block|,
-literal|"Interactive Scheme Development\n\n"
+literal|"Interactive Scheme Development"
 block|,
 name|NULL
 block|}
@@ -1929,7 +1929,7 @@ argument_list|,
 operator|&
 name|cursor
 argument_list|,
-literal|"=> "
+literal|"\n=> "
 argument_list|,
 operator|-
 literal|1
@@ -1975,7 +1975,7 @@ argument_list|,
 operator|&
 name|cursor
 argument_list|,
-literal|"\n\n"
+literal|"\n"
 argument_list|,
 operator|-
 literal|1
