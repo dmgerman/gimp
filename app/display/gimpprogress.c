@@ -277,8 +277,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"gimp_progress_start(): "
-literal|"%d progress bars already active for display %p"
+literal|"%s: %d progress bars already active for display %p"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|GIMP_STATUSBAR
 argument_list|(

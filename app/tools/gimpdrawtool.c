@@ -1040,8 +1040,9 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"gimp_draw_tool_resume(): "
-literal|"called with draw_tool->paused_count == 0"
+literal|"%s: called with draw_tool->paused_count == 0"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}
@@ -2872,7 +2873,7 @@ name|g_warning
 argument_list|(
 literal|"%s: invalid handle type %d"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|type
 argument_list|)
@@ -3137,7 +3138,7 @@ name|g_warning
 argument_list|(
 literal|"%s: invalid handle type %d"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|type
 argument_list|)

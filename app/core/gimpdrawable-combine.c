@@ -206,7 +206,7 @@ name|g_warning
 argument_list|(
 literal|"%s: illegal parameters."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -793,7 +793,7 @@ name|g_warning
 argument_list|(
 literal|"%s: illegal parameters."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;

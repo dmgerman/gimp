@@ -1063,7 +1063,9 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"couldn't deserialize property %s::%s of type %s"
+literal|"%s: couldn't deserialize property %s::%s of type %s"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|g_type_name
 argument_list|(
@@ -2643,7 +2645,7 @@ name|g_warning
 argument_list|(
 literal|"%s: %s can not be transformed from a string"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|g_type_name
 argument_list|(

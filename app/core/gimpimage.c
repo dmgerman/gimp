@@ -270,7 +270,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fceae40103
+DECL|enum|__anon2c5bd9670103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -8481,7 +8481,7 @@ name|g_warning
 argument_list|(
 literal|"%s: Tattoo state corrupted (integer overflow)."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -10235,7 +10235,7 @@ name|g_warning
 argument_list|(
 literal|"%s: attempting to add layer to wrong image."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -10261,7 +10261,7 @@ name|g_warning
 argument_list|(
 literal|"%s: trying to add layer to image twice."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -10290,7 +10290,7 @@ argument_list|(
 literal|"%s: trying to add floating layer to image which alyready "
 literal|"has a floating selection."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -11559,7 +11559,7 @@ name|g_warning
 argument_list|(
 literal|"%s: attempting to add channel to wrong image."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -11585,7 +11585,7 @@ name|g_warning
 argument_list|(
 literal|"%s: trying to add channel to image twice."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -12561,7 +12561,7 @@ name|g_warning
 argument_list|(
 literal|"%s: attempting to add vectors to wrong image."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -12587,7 +12587,7 @@ name|g_warning
 argument_list|(
 literal|"%s: trying to add vectors to image twice."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return

@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3001a40103
+DECL|enum|__anon28d85a010103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -277,8 +277,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"gimp_standard_help_func(): you must call gimp_widgets_init() "
-literal|"before using the help system"
+literal|"%s: you must call gimp_widgets_init() before using "
+literal|"the help system"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;

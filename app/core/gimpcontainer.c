@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4841620103
+DECL|enum|__anon2b92f0500103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -167,7 +167,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4841620203
+DECL|enum|__anon2b92f0500203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1279,7 +1279,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4841620308
+DECL|struct|__anon2b92f0500308
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -2049,9 +2049,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): container %p already contains object %p"
+literal|"%s: container %p already contains object %p"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|container
 argument_list|,
@@ -2258,9 +2258,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): container %p does not contain object %p"
+literal|"%s: container %p does not contain object %p"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|container
 argument_list|,
@@ -2477,9 +2477,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): container %p already contains object %p"
+literal|"%s: container %p already contains object %p"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|container
 argument_list|,
@@ -2596,9 +2596,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): container %p does not contain object %p"
+literal|"%s: container %p does not contain object %p"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|container
 argument_list|,
@@ -3446,7 +3446,7 @@ name|g_print
 argument_list|(
 literal|"%s: key = %s, id = %d\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|key
 argument_list|,
@@ -3643,7 +3643,7 @@ name|g_warning
 argument_list|(
 literal|"%s: tried to remove handler which unknown id %d"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|id
 argument_list|)
@@ -3656,7 +3656,7 @@ name|g_print
 argument_list|(
 literal|"%s: id = %d\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|handler
 operator|->

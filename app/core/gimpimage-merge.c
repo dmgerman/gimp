@@ -1395,7 +1395,7 @@ name|g_warning
 argument_list|(
 literal|"%s: could not allocate merge layer."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -1524,7 +1524,7 @@ name|g_warning
 argument_list|(
 literal|"%s: could not allocate merge layer"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -1724,7 +1724,7 @@ name|g_warning
 argument_list|(
 literal|"%s: attempting to merge incompatible layers."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return

@@ -4752,7 +4752,7 @@ name|g_warning
 argument_list|(
 literal|"%s: in_handle is true, but received handle type %d."
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|in_handle
 argument_list|)
@@ -5187,7 +5187,7 @@ name|g_warning
 argument_list|(
 literal|"%s: in_handle is true, but received handle type %d."
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|in_handle
 argument_list|)
@@ -5348,7 +5348,7 @@ name|g_warning
 argument_list|(
 literal|"%s: Cannot handle drag mode %d."
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|handle
 argument_list|)
@@ -5803,7 +5803,7 @@ name|g_warning
 argument_list|(
 literal|"%s: Attempting to move bogus handle %d."
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|editor
 operator|->

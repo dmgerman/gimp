@@ -186,7 +186,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("%s: gimage->ref_count before refing: %d\n",            G_GNUC_FUNCTION, G_OBJECT (gdisp->gimage)->ref_count);
+block|g_print ("%s: gimage->ref_count before refing: %d\n",            G_STRFUNC, G_OBJECT (gdisp->gimage)->ref_count);
 endif|#
 directive|endif
 name|g_object_ref
@@ -314,7 +314,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("%s: gimage->ref_count before unrefing: %d\n",            G_GNUC_FUNCTION, G_OBJECT (gdisp->gimage)->ref_count);
+block|g_print ("%s: gimage->ref_count before unrefing: %d\n",            G_STRFUNC, G_OBJECT (gdisp->gimage)->ref_count);
 endif|#
 directive|endif
 comment|/*  set gdisp->gimage to NULL before unrefing because there may be code    *  that listenes for image removals and then iterates the display list    *  to find a valid display.    */

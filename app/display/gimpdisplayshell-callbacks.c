@@ -1688,7 +1688,7 @@ name|g_warning
 argument_list|(
 literal|"%s: called unrealized"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -2798,7 +2798,7 @@ name|g_printerr
 argument_list|(
 literal|"%s: popping move tool\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 endif|#
@@ -3885,7 +3885,7 @@ name|g_printerr
 argument_list|(
 literal|"%s: pushing move tool\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 endif|#
@@ -4149,7 +4149,7 @@ name|g_printerr
 argument_list|(
 literal|"%s: popping move tool\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 endif|#

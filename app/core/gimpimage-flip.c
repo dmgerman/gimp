@@ -178,7 +178,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"gimp_image_flip(): unknown flip_type"
+literal|"%s: unknown flip_type"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;

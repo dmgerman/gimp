@@ -349,7 +349,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_BOOLEAN
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -671,7 +671,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_ENUM
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -1179,7 +1179,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_ENUM
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -1526,7 +1526,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_BOOLEAN
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -1843,7 +1843,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_ENUM
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -2165,7 +2165,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_ENUM
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -2361,7 +2361,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_ENUM
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -2547,7 +2547,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_BOOLEAN
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -2704,7 +2704,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_ENUM
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -3063,7 +3063,7 @@ name|config
 argument_list|,
 name|property_name
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -3092,7 +3092,7 @@ argument_list|,
 operator|&
 name|upper
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 condition|)
 return|return
@@ -3259,7 +3259,7 @@ name|config
 argument_list|,
 name|property_name
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -3288,7 +3288,7 @@ argument_list|,
 operator|&
 name|upper
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 condition|)
 return|return
@@ -3505,7 +3505,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_DOUBLE
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -4204,7 +4204,7 @@ name|g_warning
 argument_list|(
 literal|"%s: unhandled param spec of type %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|G_PARAM_SPEC_TYPE_NAME
 argument_list|(
@@ -4341,7 +4341,7 @@ name|property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_MEMSIZE
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -4692,7 +4692,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_STRING
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -5043,7 +5043,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_STRING
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -5525,7 +5525,7 @@ name|property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_PATH
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -5983,7 +5983,7 @@ name|path_property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_PATH
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -6009,7 +6009,7 @@ name|writable_property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_PATH
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -6845,7 +6845,7 @@ name|config
 argument_list|,
 name|property_name
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -6874,7 +6874,7 @@ argument_list|,
 operator|&
 name|upper
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 condition|)
 return|return
@@ -6902,7 +6902,7 @@ name|unit_property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_UNIT
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -7926,7 +7926,7 @@ name|config
 argument_list|,
 name|x_property_name
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -7945,7 +7945,7 @@ name|config
 argument_list|,
 name|y_property_name
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -7974,7 +7974,7 @@ argument_list|,
 operator|&
 name|x_upper
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 operator|||
 operator|!
@@ -7993,7 +7993,7 @@ argument_list|,
 operator|&
 name|y_upper
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 condition|)
 return|return
@@ -8014,7 +8014,7 @@ name|unit_property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_UNIT
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -9264,7 +9264,7 @@ name|property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_COLOR
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -9617,7 +9617,7 @@ name|property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_COLOR
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -9966,7 +9966,7 @@ name|property_name
 argument_list|,
 name|GIMP_TYPE_PARAM_UNIT
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -10357,7 +10357,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_OBJECT
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -10385,7 +10385,7 @@ name|g_warning
 argument_list|(
 literal|"%s: property '%s' of %s is not a GimpViewable"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|property_name
 argument_list|,
@@ -10429,7 +10429,7 @@ name|g_warning
 argument_list|(
 literal|"%s: cannot create preview for type '%s'"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|g_type_name
 argument_list|(
@@ -10718,7 +10718,7 @@ name|property_name
 argument_list|,
 name|G_TYPE_PARAM_STRING
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if

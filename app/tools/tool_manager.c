@@ -1711,9 +1711,9 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"%s(): tool_info->tool_type is no GimpTool subclass"
+literal|"%s: tool_info->tool_type is no GimpTool subclass"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;

@@ -3372,7 +3372,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"plug_in_main_loop_quit: called without a temp main loop running"
+literal|"%s: called without a temp main loop running"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;

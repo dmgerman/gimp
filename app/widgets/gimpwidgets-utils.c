@@ -1709,8 +1709,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"gimp_button_menu_position: "
-literal|"unhandled position (%d)"
+literal|"%s: unhandled position (%d)"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|position
 argument_list|)

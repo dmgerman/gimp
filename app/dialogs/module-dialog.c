@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be023300103
+DECL|enum|__anon2a4304d10103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -1274,7 +1274,7 @@ name|g_warning
 argument_list|(
 literal|"%s: bad tree path?"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1654,7 +1654,7 @@ name|g_warning
 argument_list|(
 literal|"%s: Tried to remove a module not in the browser's list."
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}

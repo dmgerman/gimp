@@ -3577,7 +3577,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"xcf_save_prop: skipping guide with bad orientation"
+literal|"%s: skipping guide with bad orientation"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 continue|continue;
@@ -6467,7 +6469,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be0dcfe0108
+DECL|struct|__anon2c1276170108
 block|{
 DECL|member|info
 name|XcfInfo

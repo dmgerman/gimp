@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287687340103
+DECL|enum|__anon2b9bafc30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2399,7 +2399,7 @@ argument_list|(
 literal|"%s: Unable to set visibility of action "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|action_name
 argument_list|)
@@ -2484,7 +2484,7 @@ argument_list|(
 literal|"%s: Unable to set sensitivity of action "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|action_name
 argument_list|)
@@ -2569,7 +2569,7 @@ argument_list|(
 literal|"%s: Unable to set \"active\" of action "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|action_name
 argument_list|)
@@ -2590,7 +2590,7 @@ argument_list|(
 literal|"%s: Unable to set \"active\" of action "
 literal|"which is not a GtkToggleAction: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|action_name
 argument_list|)
@@ -2676,7 +2676,7 @@ argument_list|(
 literal|"%s: Unable to set label of action "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|action_name
 argument_list|)
@@ -2773,7 +2773,7 @@ argument_list|(
 literal|"%s: Unable to set color of action "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|action_name
 argument_list|)
@@ -3186,7 +3186,7 @@ argument_list|(
 literal|"%s: Unable to set viewable of action "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|action_name
 argument_list|)
@@ -3529,7 +3529,7 @@ argument_list|(
 literal|"%s: Unable to set \"is-important\" of action "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|action_name
 argument_list|)

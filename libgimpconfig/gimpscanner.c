@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a73f2f0108
+DECL|struct|__anon2bc6ae130108
 block|{
 DECL|member|fd
 name|gint
@@ -595,7 +595,7 @@ name|g_warning
 argument_list|(
 literal|"%s: could not close file descriptor: %s"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|g_strerror
 argument_list|(
@@ -1014,7 +1014,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a73f2f0203
+DECL|enum|__anon2bc6ae130203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

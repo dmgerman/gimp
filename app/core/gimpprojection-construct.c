@@ -2976,7 +2976,7 @@ name|g_warning
 argument_list|(
 literal|"%s: unable to project indexed image."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}

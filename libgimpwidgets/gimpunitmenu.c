@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bb8f650103
+DECL|enum|__anon2991b5b00103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bb8f650203
+DECL|enum|__anon2991b5b00203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -1759,7 +1759,9 @@ literal|0
 case|:
 name|g_warning
 argument_list|(
-literal|"unit-menu-format string ended within %%-sequence"
+literal|"%s: unit-menu-format string ended within %%-sequence"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1908,9 +1910,10 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"gimp_unit_menu_build_string(): "
-literal|"unit-menu-format contains unknown format sequence "
-literal|"'%%%c'"
+literal|"%s: unit-menu-format contains unknown format "
+literal|"sequence '%%%c'"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 operator|*
 name|format

@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e5e05c0103
+DECL|enum|__anon2bbc9d5d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4122,7 +4122,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"gimp_drawable_push_undo: tried to push empty region"
+literal|"%s: tried to push empty region"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -4779,7 +4781,7 @@ name|g_warning
 argument_list|(
 literal|"%s: unknown fill type %d"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|fill_type
 argument_list|)

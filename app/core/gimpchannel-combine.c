@@ -2406,9 +2406,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"%s: unknown operation type\n"
+literal|"%s: unknown operation type"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 break|break;

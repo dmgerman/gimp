@@ -3331,7 +3331,7 @@ name|g_warning
 argument_list|(
 literal|"%s: Unknown gradient type %d."
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|seg
 operator|->
@@ -3647,9 +3647,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"%s(): Unknown coloring mode %d"
+literal|"%s: Unknown coloring mode %d"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|,
 operator|(
 name|gint
@@ -3822,9 +3822,9 @@ block|}
 comment|/* Oops: we should have found a segment, but we didn't */
 name|g_warning
 argument_list|(
-literal|"%s(): no matching segment for position %0.15f"
+literal|"%s: no matching segment for position %0.15f"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|pos
 argument_list|)

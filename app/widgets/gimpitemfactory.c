@@ -1822,7 +1822,7 @@ argument_list|(
 literal|"%s: Unable to set \"active\" for menu item "
 literal|"of type \"%s\": %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|g_type_name
 argument_list|(
@@ -1854,7 +1854,7 @@ argument_list|(
 literal|"%s: Unable to set \"active\" for menu item "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|path
 argument_list|)
@@ -2022,7 +2022,7 @@ argument_list|(
 literal|"%s: Unable to set color of menu item "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|path
 argument_list|)
@@ -2543,7 +2543,7 @@ argument_list|(
 literal|"%s: Unable to set label of menu item "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|path
 argument_list|)
@@ -2711,7 +2711,7 @@ argument_list|(
 literal|"%s: Unable to set sensitivity of menu item "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|path
 argument_list|)
@@ -2885,7 +2885,7 @@ argument_list|(
 literal|"%s: Unable to set visibility of menu item "
 literal|"which doesn't exist: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|path
 argument_list|)
@@ -3033,7 +3033,7 @@ name|g_warning
 argument_list|(
 literal|"%s: tearoff menu not in top level window"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}
@@ -3093,7 +3093,7 @@ name|g_warning
 argument_list|(
 literal|"%s: can't unregister tearoff menu top level window"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}
@@ -4348,7 +4348,7 @@ name|g_warning
 argument_list|(
 literal|"%s: bad translation for menupath: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|full_path
 argument_list|)
@@ -4494,7 +4494,7 @@ name|g_warning
 argument_list|(
 literal|"%s: bad translation for menupath: %s"
 argument_list|,
-name|G_STRLOC
+name|G_STRFUNC
 argument_list|,
 name|path
 argument_list|)

@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae2b2720108
+DECL|struct|__anon2c59c1a30108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -2699,7 +2699,9 @@ block|{
 comment|/* this should not happen */
 name|g_warning
 argument_list|(
-literal|"gimp_export_image: unknown drawable type!"
+literal|"%s: unknown drawable type!"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 block|}

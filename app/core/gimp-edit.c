@@ -1190,7 +1190,7 @@ name|g_warning
 argument_list|(
 literal|"%s: unknown fill type"
 argument_list|,
-name|G_GNUC_PRETTY_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|fill_type

@@ -131,7 +131,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c9a2fa0103
+DECL|enum|__anon2bf5db510103
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -660,7 +660,7 @@ name|g_warning
 argument_list|(
 literal|"%s: stale non-toplevel entries in factory->open_dialogs"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 break|break;
@@ -896,7 +896,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog factory \"%s\" already exists"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|name
 argument_list|)
@@ -1500,7 +1500,7 @@ name|g_warning
 argument_list|(
 literal|"%s: no entry registered for \"%s\""
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|identifier
 argument_list|)
@@ -1521,7 +1521,7 @@ name|g_warning
 argument_list|(
 literal|"%s: entry for \"%s\" has no constructor"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|identifier
 argument_list|)
@@ -1754,7 +1754,7 @@ literal|"%s: GimpDialogFactory is a dockable factory "
 literal|"but constructor for \"%s\" did not return a "
 literal|"GimpDockable"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|identifier
 argument_list|)
@@ -1790,7 +1790,7 @@ name|g_warning
 argument_list|(
 literal|"%s: constructor for \"%s\" returned NULL"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|identifier
 argument_list|)
@@ -2472,7 +2472,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog already registered"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2508,7 +2508,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog was not created by a GimpDialogFactory"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2524,7 +2524,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog was created by a different GimpDialogFactory"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2548,7 +2548,7 @@ name|g_print
 argument_list|(
 literal|"%s: adding %s \"%s\"\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|toplevel
 condition|?
@@ -2627,7 +2627,7 @@ name|g_warning
 argument_list|(
 literal|"%s: singleton dialog \"%s\" created twice"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|entry
 operator|->
@@ -2640,7 +2640,7 @@ name|g_print
 argument_list|(
 literal|"%s: corrupt session info: %p (widget %p)\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|info
 argument_list|,
@@ -2666,7 +2666,7 @@ name|g_print
 argument_list|(
 literal|"%s: updating session info %p (widget %p) for %s \"%s\"\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|info
 argument_list|,
@@ -2730,7 +2730,7 @@ name|g_print
 argument_list|(
 literal|"%s: creating session info %p (widget %p) for %s \"%s\"\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|info
 argument_list|,
@@ -2816,7 +2816,7 @@ name|g_print
 argument_list|(
 literal|"%s: adding dock\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2879,7 +2879,7 @@ name|g_print
 argument_list|(
 literal|"%s: updating session info %p (widget %p) for dock\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|info
 argument_list|,
@@ -2925,7 +2925,7 @@ name|g_print
 argument_list|(
 literal|"%s: creating session info %p (widget %p) for dock\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|info
 argument_list|,
@@ -3102,7 +3102,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog was created by a GimpDialogFactory"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3126,7 +3126,7 @@ name|g_warning
 argument_list|(
 literal|"%s: no entry registered for \"%s\""
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|identifier
 argument_list|)
@@ -3144,7 +3144,7 @@ name|g_warning
 argument_list|(
 literal|"%s: entry for \"%s\" has a constructor (is not foreign)"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|identifier
 argument_list|)
@@ -3233,7 +3233,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog not registered"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3282,7 +3282,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog was not created by a GimpDialogFactory"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3298,7 +3298,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog was created by a different GimpDialogFactory"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -3309,7 +3309,7 @@ name|g_print
 argument_list|(
 literal|"%s: removing \"%s\"\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|entry
 condition|?
@@ -3364,7 +3364,7 @@ name|g_print
 argument_list|(
 literal|"%s: clearing session info %p (widget %p) for \"%s\"\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|session_info
 argument_list|,
@@ -3962,7 +3962,7 @@ name|g_print
 argument_list|(
 literal|"%s: setting GDK_HINT_USER_POS for \"%s\"\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|entry
 operator|->
@@ -4049,7 +4049,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog not registered"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -4079,7 +4079,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog was not created by a GimpDialogFactory"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -4097,7 +4097,7 @@ name|g_warning
 argument_list|(
 literal|"%s: dialog was created by a different GimpDialogFactory"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
@@ -4145,7 +4145,7 @@ name|g_print
 argument_list|(
 literal|"%s: updating session info for \"%s\" from window geometry\n"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRFUNC
 argument_list|,
 name|entry
 operator|->
