@@ -2667,6 +2667,24 @@ argument_list|(
 name|fontname
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|font
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Font '%s' not found."
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 name|xfs
 operator|=
 name|GDK_FONT_XFONT
