@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a18d770108
+DECL|struct|__anon2955ec350108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -843,7 +843,7 @@ name|hbox
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -855,7 +855,7 @@ argument_list|)
 argument_list|,
 name|trow
 argument_list|,
-literal|8
+literal|12
 argument_list|)
 expr_stmt|;
 name|trow
@@ -965,7 +965,7 @@ name|hbox
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -977,7 +977,7 @@ argument_list|)
 argument_list|,
 name|trow
 argument_list|,
-literal|8
+literal|12
 argument_list|)
 expr_stmt|;
 name|trow
@@ -2867,7 +2867,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
