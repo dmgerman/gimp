@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpintl.h"
+file|"libgimp/gimpwidgets.h"
 end_include
 
 begin_include
@@ -147,7 +147,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2881ecb90103
+DECL|enum|__anon279bb2960103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
