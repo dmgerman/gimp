@@ -1787,11 +1787,12 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+comment|/* Please add error. (: %s) --bex */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Save failed:\n%s"
+literal|"Saving %s failed."
 argument_list|)
 argument_list|,
 name|filename
@@ -1885,7 +1886,7 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"%s exists, overwrite?"
+literal|"%s exists. Overwrite?"
 argument_list|)
 argument_list|,
 name|filename
@@ -2003,11 +2004,12 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+comment|/* Another error required. --bex */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Save failed:\n%s"
+literal|"Saving '%s' failed."
 argument_list|)
 argument_list|,
 name|overwrite_data

@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf7a0750103
+DECL|enum|__anon298f68fc0103
 block|{
 DECL|enumerator|ERRORS_ALL
 name|ERRORS_ALL
@@ -698,7 +698,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"error_console_add(): error_console widget is NULL"
+literal|"%s: error_console widget is NULL"
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 name|message_handler
@@ -1011,7 +1013,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't save, nothing selected!"
+literal|"Cannot save. Nothing is selected."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1272,7 +1274,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error opening file \"%s\":\n%s"
+literal|"Error opening file '%s':\n%s"
 argument_list|)
 argument_list|,
 name|filename

@@ -385,7 +385,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b20a9fe0108
+DECL|struct|__anon2ae0095e0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -2928,7 +2928,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Sorry, this brush can't be edited."
+literal|"This brush cannot be edited."
 argument_list|)
 argument_list|)
 expr_stmt|;

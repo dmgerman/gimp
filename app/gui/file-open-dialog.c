@@ -1493,7 +1493,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"No Selection."
+literal|"No Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1933,7 +1933,9 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"UNKNOWN TempBuf width in make_RGBbuf_from_tempbuf()"
+literal|"%s: Unknown TempBuf width."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 block|}
@@ -2394,7 +2396,7 @@ name|thumb_may_be_outdated
 condition|?
 name|_
 argument_list|(
-literal|"(This thumbnail may be out of date)"
+literal|"This thumbnail may be out of date"
 argument_list|)
 else|:
 operator|(
@@ -2404,7 +2406,7 @@ name|imginfo
 else|:
 name|_
 argument_list|(
-literal|"(No Information)"
+literal|"No Information"
 argument_list|)
 operator|)
 argument_list|)
@@ -2442,7 +2444,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"(Thumbnail saving is disabled)"
+literal|"Thumbnail saving is disabled."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2459,7 +2461,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"(Could not write thumbnail file)"
+literal|"Could not write thumbnail file."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2474,7 +2476,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"(Thumbnail file not written)"
+literal|"Thumbnail file not written."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2772,7 +2774,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Tried to generate thumbnail for NULL filename."
+literal|"%s: Tried to generate thumbnail for NULL file name."
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2989,7 +2993,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"(could not make preview)"
+literal|"Failed to generate preview."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3294,11 +3298,12 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+comment|/* Hackery required. Please add error message. --bex */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Open failed.\n%s"
+literal|"Opening '%s' failed."
 argument_list|)
 argument_list|,
 name|full_filename
@@ -3443,11 +3448,12 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+comment|/* same as previous. --bex */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Open failed.\n%s"
+literal|"Opening '%s' failed."
 argument_list|)
 argument_list|,
 name|full_filename

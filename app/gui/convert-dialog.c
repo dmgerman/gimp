@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2ba7790108
+DECL|struct|__anon29f53cfc0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -819,7 +819,7 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Generate Optimal Palette:"
+literal|"Generate Optimum Palette:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -996,7 +996,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"# of Colors:"
+literal|"Number of Colors:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1564,7 +1564,7 @@ name|group
 argument_list|,
 name|_
 argument_list|(
-literal|"Use Black/White (1-Bit) Palette"
+literal|"Use Black and White (1-Bit) Palette"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1642,7 +1642,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Dither Options"
+literal|"Dithering Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2332,8 +2332,8 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"You are attempting to convert an image with alpha/layers "
-literal|"from RGB/GRAY to INDEXED.\nYou should not generate a "
+literal|"You are attempting to convert an image with an alpha channel or layers "
+literal|"from RGB or GRAY to INDEXED.\nDo not generate a "
 literal|"palette of more than 255 colors if you intend to create "
 literal|"a transparent or animated GIF file from this image."
 argument_list|)

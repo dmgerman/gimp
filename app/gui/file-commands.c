@@ -384,11 +384,12 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+comment|/* This string needs to be fixed. Mitch is supposed to do it.  Needs a : added at the end followed by the error.  Also something about the GIMP_OBJECT  needs to be changed. --bex */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error opening file: %s\n"
+literal|"Error opening file '%s'"
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT
@@ -559,11 +560,12 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+comment|/* Error message should be added. --bex */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Save failed.\n%s"
+literal|"Saving '%s' failed."
 argument_list|)
 argument_list|,
 name|filename
@@ -718,7 +720,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Revert failed.\n"
-literal|"No filename associated with this image."
+literal|"No file name associated with this image."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -760,9 +762,9 @@ name|g_strdup_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Reverting %s to\n"
-literal|"%s\n\n"
-literal|"(You will lose all your changes\n"
+literal|"Revert '%s' to\n"
+literal|"'%s'?"
+literal|"(You will lose all your changes,\n"
 literal|"including all undo information)"
 argument_list|)
 argument_list|,
@@ -782,7 +784,7 @@ name|gimp_query_boolean_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Revert Image?"
+literal|"Revert Image"
 argument_list|)
 argument_list|,
 name|gimp_standard_help_func
@@ -1034,11 +1036,12 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+comment|/* Needs error information. --bex */
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Revert failed.\n%s"
+literal|"Reverting '%s' failed."
 argument_list|)
 argument_list|,
 name|filename
