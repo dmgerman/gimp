@@ -16,6 +16,40 @@ directive|define
 name|__GIMPBRUSHPIPEP_H__
 end_define
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon296df63d0103
+block|{
+DECL|enumerator|PIPE_SELECT_CONSTANT
+name|PIPE_SELECT_CONSTANT
+block|,
+DECL|enumerator|PIPE_SELECT_INCREMENTAL
+name|PIPE_SELECT_INCREMENTAL
+block|,
+DECL|enumerator|PIPE_SELECT_ANGULAR
+name|PIPE_SELECT_ANGULAR
+block|,
+DECL|enumerator|PIPE_SELECT_VELOCITY
+name|PIPE_SELECT_VELOCITY
+block|,
+DECL|enumerator|PIPE_SELECT_RANDOM
+name|PIPE_SELECT_RANDOM
+block|,
+DECL|enumerator|PIPE_SELECT_PRESSURE
+name|PIPE_SELECT_PRESSURE
+block|,
+DECL|enumerator|PIPE_SELECT_TILT_X
+name|PIPE_SELECT_TILT_X
+block|,
+DECL|enumerator|PIPE_SELECT_TILT_Y
+name|PIPE_SELECT_TILT_Y
+DECL|typedef|PipeSelectModes
+block|}
+name|PipeSelectModes
+typedef|;
+end_typedef
+
 begin_comment
 comment|/* A GimpBrushPixmap always exists as part in one and only one GimpBrushPipe  * It contains a back-pointer to the GimpBrushPipe so that we can select  * the next brush in the pipe with just a reference to the GimpBrushPipe.  */
 end_comment
@@ -69,11 +103,17 @@ modifier|*
 name|rank
 decl_stmt|;
 comment|/* Size in each dimension */
+DECL|member|stride
+name|int
+modifier|*
+name|stride
+decl_stmt|;
+comment|/* Aux for indexing */
 DECL|member|nbrushes
 name|int
 name|nbrushes
 decl_stmt|;
-comment|/* Might be less than the product of the 				 * ranks in some special case */
+comment|/* Might be less than the product of the 				 * ranks in some odd special case 				 */
 DECL|member|brushes
 name|GimpBrushPixmap
 modifier|*
