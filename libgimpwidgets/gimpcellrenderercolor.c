@@ -39,9 +39,17 @@ directive|include
 file|"gimpcellrenderercolor.h"
 end_include
 
+begin_define
+DECL|macro|DEFAULT_ICON_SIZE
+define|#
+directive|define
+name|DEFAULT_ICON_SIZE
+value|GTK_ICON_SIZE_MENU
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon293047bc0103
+DECL|enum|__anon299932fd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -414,7 +422,7 @@ literal|0
 argument_list|,
 name|G_MAXINT
 argument_list|,
-name|GTK_ICON_SIZE_MENU
+name|DEFAULT_ICON_SIZE
 argument_list|,
 name|G_PARAM_READWRITE
 operator||

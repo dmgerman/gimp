@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcellrenderertoggle.c  * Copyright (C) 2003  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcellrenderertoggle.c  * Copyright (C) 2003-2004  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Library General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -18,13 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets-types.h"
+file|"gimpwidgetstypes.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpmarshal.h"
+file|"gimpwidgetsmarshal.h"
 end_include
 
 begin_include
@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29daa6420103
+DECL|enum|__anon279f79360103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29daa6420203
+DECL|enum|__anon279f79360203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,18 +78,6 @@ parameter_list|(
 name|GimpCellRendererToggleClass
 modifier|*
 name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_cell_renderer_toggle_init
-parameter_list|(
-name|GimpCellRendererToggle
-modifier|*
-name|toggle
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -335,10 +323,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-comment|/* base_init */
+comment|/* base_init      */
 name|NULL
 block|,
-comment|/* base_finalize */
+comment|/* base_finalize  */
 operator|(
 name|GClassInitFunc
 operator|)
@@ -349,7 +337,7 @@ block|,
 comment|/* class_finalize */
 name|NULL
 block|,
-comment|/* class_data */
+comment|/* class_data     */
 sizeof|sizeof
 argument_list|(
 name|GimpCellRendererToggle
@@ -357,12 +345,10 @@ argument_list|)
 block|,
 literal|0
 block|,
-comment|/* n_preallocs */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|gimp_cell_renderer_toggle_init
-block|,       }
+comment|/* n_preallocs    */
+name|NULL
+comment|/* instance_init  */
+block|}
 decl_stmt|;
 name|cell_type
 operator|=
@@ -399,25 +385,21 @@ block|{
 name|GObjectClass
 modifier|*
 name|object_class
-decl_stmt|;
-name|GtkCellRendererClass
-modifier|*
-name|cell_class
-decl_stmt|;
-name|object_class
-operator|=
+init|=
 name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GtkCellRendererClass
+modifier|*
 name|cell_class
-operator|=
+init|=
 name|GTK_CELL_RENDERER_CLASS
 argument_list|(
 name|klass
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|parent_class
 operator|=
 name|g_type_class_peek_parent
@@ -452,7 +434,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__STRING_FLAGS
+name|_gimp_widgets_marshal_VOID__STRING_FLAGS
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
@@ -516,6 +498,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|G_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -525,7 +509,7 @@ name|object_class
 argument_list|,
 name|PROP_STOCK_SIZE
 argument_list|,
-name|g_param_spec_enum
+name|g_param_spec_int
 argument_list|(
 literal|"stock_size"
 argument_list|,
@@ -533,57 +517,17 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_TYPE_ICON_SIZE
+literal|0
+argument_list|,
+name|G_MAXINT
 argument_list|,
 name|DEFAULT_ICON_SIZE
 argument_list|,
 name|G_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_cell_renderer_toggle_init (GimpCellRendererToggle * cell)
-name|gimp_cell_renderer_toggle_init
-parameter_list|(
-name|GimpCellRendererToggle
-modifier|*
-name|cell
-parameter_list|)
-block|{
-name|GTK_CELL_RENDERER
-argument_list|(
-name|cell
-argument_list|)
-operator|->
-name|xpad
-operator|=
-literal|0
-expr_stmt|;
-name|GTK_CELL_RENDERER
-argument_list|(
-name|cell
-argument_list|)
-operator|->
-name|ypad
-operator|=
-literal|0
-expr_stmt|;
-name|cell
-operator|->
-name|stock_id
-operator|=
-name|NULL
-expr_stmt|;
-name|cell
-operator|->
-name|stock_size
-operator|=
-name|DEFAULT_ICON_SIZE
 expr_stmt|;
 block|}
 end_function
@@ -690,14 +634,12 @@ block|{
 name|GimpCellRendererToggle
 modifier|*
 name|toggle
-decl_stmt|;
-name|toggle
-operator|=
+init|=
 name|GIMP_CELL_RENDERER_TOGGLE
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|param_id
@@ -719,7 +661,7 @@ break|break;
 case|case
 name|PROP_STOCK_SIZE
 case|:
-name|g_value_set_enum
+name|g_value_set_int
 argument_list|(
 name|value
 argument_list|,
@@ -770,14 +712,12 @@ block|{
 name|GimpCellRendererToggle
 modifier|*
 name|toggle
-decl_stmt|;
-name|toggle
-operator|=
+init|=
 name|GIMP_CELL_RENDERER_TOGGLE
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|param_id
@@ -816,7 +756,7 @@ name|toggle
 operator|->
 name|stock_size
 operator|=
-name|g_value_get_enum
+name|g_value_get_int
 argument_list|(
 name|value
 argument_list|)
@@ -896,6 +836,11 @@ block|{
 name|GimpCellRendererToggle
 modifier|*
 name|toggle
+init|=
+name|GIMP_CELL_RENDERER_TOGGLE
+argument_list|(
+name|cell
+argument_list|)
 decl_stmt|;
 name|gint
 name|calc_width
@@ -909,13 +854,6 @@ decl_stmt|;
 name|gint
 name|pixbuf_height
 decl_stmt|;
-name|toggle
-operator|=
-name|GIMP_CELL_RENDERER_TOGGLE
-argument_list|(
-name|cell
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1193,6 +1131,11 @@ block|{
 name|GimpCellRendererToggle
 modifier|*
 name|toggle
+init|=
+name|GIMP_CELL_RENDERER_TOGGLE
+argument_list|(
+name|cell
+argument_list|)
 decl_stmt|;
 name|GdkRectangle
 name|toggle_rect
@@ -1206,13 +1149,6 @@ decl_stmt|;
 name|gboolean
 name|active
 decl_stmt|;
-name|toggle
-operator|=
-name|GIMP_CELL_RENDERER_TOGGLE
-argument_list|(
-name|cell
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1608,18 +1544,16 @@ parameter_list|)
 block|{
 name|GtkCellRendererToggle
 modifier|*
-name|celltoggle
-decl_stmt|;
-name|celltoggle
-operator|=
+name|toggle
+init|=
 name|GTK_CELL_RENDERER_TOGGLE
 argument_list|(
 name|cell
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
-name|celltoggle
+name|toggle
 operator|->
 name|activatable
 condition|)
@@ -1729,6 +1663,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_cell_renderer_toggle_new:  * @stock_id: the stock_id of the icon to use for the active state  *  * Creates a custom version of the #GtkCellRendererToggle. Instead of  * showing the standard toggle button, it shows a stock icon if the  * cell is active and no icon otherwise. This cell renderer is for  * example used in the Layers treeview to indicate and control the  * layer's visibility by showing %GIMP_STOCK_VISIBLE.  *  * Return value: a new #GimpCellRendererToggle  *  * Since: GIMP 2.2  **/
+end_comment
+
 begin_function
 name|GtkCellRenderer
 modifier|*
@@ -1755,6 +1693,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cell_renderer_toggle_clicked:  * @cell: a #GimpCellRendererToggle  * @path:  * @state:  *  * Emits the "clicked" signal from a #GimpCellRendererToggle.  *  * Since: GIMP 2.2  **/
+end_comment
 
 begin_function
 name|void

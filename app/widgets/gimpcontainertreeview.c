@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -49,12 +55,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpviewable.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcellrenderertoggle.h"
 end_include
 
 begin_include
@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5658360103
+DECL|enum|__anon277a8ac60103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER

@@ -110,7 +110,7 @@ name|gboolean
 name|opaque
 decl_stmt|;
 DECL|member|size
-name|gint
+name|GtkIconSize
 name|size
 decl_stmt|;
 DECL|member|border

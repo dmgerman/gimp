@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcellrenderertoggle.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainerview.h"
 end_include
 
@@ -173,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2979956a0103
+DECL|enum|__anon28b42cae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -189,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2979956a0203
+DECL|enum|__anon28b42cae0203
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE

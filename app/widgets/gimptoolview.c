@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcellrenderertoggle.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainertreeview.h"
 end_include
 

@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcellrenderertoggle.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpchainbutton.h>
 end_include
 

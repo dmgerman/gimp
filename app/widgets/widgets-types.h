@@ -933,15 +933,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCellRendererToggle
-typedef|typedef
-name|struct
-name|_GimpCellRendererToggle
-name|GimpCellRendererToggle
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCellRendererViewable
 typedef|typedef
 name|struct

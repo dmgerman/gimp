@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcellrenderertoggle.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcellrendererviewable.h"
 end_include
 
@@ -83,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fd6e640103
+DECL|enum|__anon2b7b04b70103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
