@@ -339,7 +339,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1884650103
+DECL|enum|__anon2760bd3b0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -2334,7 +2334,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  *  * This function calls a GIMP procedure and returns its return values.  *  * The procedues parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by #GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array  * and passes them to gimp_run_procedure2().  *  * Return value: the procedure's return values.  **/
+comment|/**  * gimp_run_procedure:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @Varargs:       list of procedure parameters    *  * This function calls a GIMP procedure and returns its return values.  *  * The procedure's parameters are given by a va_list in the format  * (type, value, type, value) and must be terminated by #GIMP_PDB_END.  *  * This function converts the va_list of parameters into an array  * and passes them to gimp_run_procedure2().  *  * Return value: the procedure's return values.  **/
 end_comment
 
 begin_function

@@ -840,7 +840,7 @@ name|name
 parameter_list|,
 name|gint
 modifier|*
-name|nreturn_vals
+name|n_return_vals
 parameter_list|,
 modifier|...
 parameter_list|)
