@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bcd6c370103
+DECL|enum|__anon2be5c8820103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -888,14 +888,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|edit_num_processors
-specifier|static
-name|gint
-name|edit_num_processors
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|edit_show_indicators
 specifier|static
 name|gint
@@ -1042,7 +1034,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* Some information regarding preferences, compiled by Raph Levien 11/3/97.    updated by Michael Natterer 27/3/99     The following preference items cannot be set on the fly (at least    according to the existing pref code - it may be that changing them    so they're set on the fly is not hard).     stingy-memory-use    min-colors    install-cmap    cycled-marching-ants    last-opened-size    num-processors    show-indicators    nav-window-per-display    info_window_follows_mouse    temp-path    swap-path    brush-path    pattern-path    palette-path    gradient-path    plug-in-path    module-path     All of these now have variables of the form edit_temp_path, which    are copied from the actual variables (e.g. temp_path) the first time    the dialog box is started.     Variables of the form old_temp_path represent the values at the    time the dialog is opened - a cancel copies them back from old to    the real variables or the edit variables, depending on whether they    can be set on the fly.     Here are the remaining issues as I see them:     Still no settings for default-gradient, default-palette,    gamma-correction.     No widget for confirm-on-close although a lot of stuff is there.     The semantics of "save" are a little funny - it only saves the    settings that are different from the way they were when the dialog    was opened. So you can set something, close the window, open it    up again, click "save" and have nothing happen. To change this    to more intuitive semantics, we should have a whole set of init_    variables that are set the first time the dialog is opened (along    with the edit_ variables that are currently set). Then, the save    callback checks against the init_ variable rather than the old_. */
+comment|/* Some information regarding preferences, compiled by Raph Levien 11/3/97.    updated by Michael Natterer 27/3/99     The following preference items cannot be set on the fly (at least    according to the existing pref code - it may be that changing them    so they're set on the fly is not hard).     stingy-memory-use    min-colors    install-cmap    cycled-marching-ants    last-opened-size    show-indicators    nav-window-per-display    info_window_follows_mouse    temp-path    swap-path    brush-path    pattern-path    palette-path    gradient-path    plug-in-path    module-path     All of these now have variables of the form edit_temp_path, which    are copied from the actual variables (e.g. temp_path) the first time    the dialog box is started.     Variables of the form old_temp_path represent the values at the    time the dialog is opened - a cancel copies them back from old to    the real variables or the edit variables, depending on whether they    can be set on the fly.     Here are the remaining issues as I see them:     Still no settings for default-gradient, default-palette,    gamma-correction.     No widget for confirm-on-close although a lot of stuff is there.     The semantics of "save" are a little funny - it only saves the    settings that are different from the way they were when the dialog    was opened. So you can set something, close the window, open it    up again, click "save" and have nothing happen. To change this    to more intuitive semantics, we should have a whole set of init_    variables that are set the first time the dialog is opened (along    with the edit_ variables that are currently set). Then, the save    callback checks against the init_ variable rather than the old_. */
 end_comment
 
 begin_comment
@@ -1405,11 +1397,11 @@ return|;
 block|}
 if|if
 condition|(
-name|edit_num_processors
+name|num_processors
 operator|<
 literal|1
 operator|||
-name|edit_num_processors
+name|num_processors
 operator|>
 literal|30
 condition|)
@@ -1422,7 +1414,7 @@ literal|"Error: Number of processors must be between 1 and 30."
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|edit_num_processors
+name|num_processors
 operator|=
 name|old_num_processors
 expr_stmt|;
@@ -1452,10 +1444,6 @@ operator|||
 name|edit_last_opened_size
 operator|!=
 name|old_last_opened_size
-operator|||
-name|edit_num_processors
-operator|!=
-name|old_num_processors
 operator|||
 name|edit_show_indicators
 operator|!=
@@ -1917,9 +1905,6 @@ name|gint
 name|save_last_opened_size
 decl_stmt|;
 name|gint
-name|save_num_processors
-decl_stmt|;
-name|gint
 name|save_show_indicators
 decl_stmt|;
 name|gint
@@ -2057,10 +2042,6 @@ expr_stmt|;
 name|save_last_opened_size
 operator|=
 name|last_opened_size
-expr_stmt|;
-name|save_num_processors
-operator|=
-name|num_processors
 expr_stmt|;
 name|save_show_indicators
 operator|=
@@ -2909,6 +2890,23 @@ literal|"default-threshold"
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|num_processors
+operator|!=
+name|old_num_processors
+condition|)
+block|{
+name|update
+operator|=
+name|g_list_append
+argument_list|(
+name|update
+argument_list|,
+literal|"num-processors"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  values which can't be changed on the fly  */
 if|if
 condition|(
@@ -3012,27 +3010,6 @@ argument_list|(
 name|update
 argument_list|,
 literal|"last-opened-size"
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|edit_num_processors
-operator|!=
-name|old_num_processors
-condition|)
-block|{
-name|num_processors
-operator|=
-name|edit_num_processors
-expr_stmt|;
-name|update
-operator|=
-name|g_list_append
-argument_list|(
-name|update
-argument_list|,
-literal|"num-processors"
 argument_list|)
 expr_stmt|;
 block|}
@@ -3407,10 +3384,6 @@ name|last_opened_size
 operator|=
 name|save_last_opened_size
 expr_stmt|;
-name|num_processors
-operator|=
-name|save_num_processors
-expr_stmt|;
 name|show_indicators
 operator|=
 name|save_show_indicators
@@ -3622,6 +3595,10 @@ name|default_threshold
 operator|=
 name|old_default_threshold
 expr_stmt|;
+name|num_processors
+operator|=
+name|old_num_processors
+expr_stmt|;
 comment|/*  restore variables which need some magic  */
 if|if
 condition|(
@@ -3745,10 +3722,6 @@ expr_stmt|;
 name|edit_last_opened_size
 operator|=
 name|old_last_opened_size
-expr_stmt|;
-name|edit_num_processors
-operator|=
-name|old_num_processors
 expr_stmt|;
 name|edit_show_indicators
 operator|=
@@ -5768,10 +5741,6 @@ name|edit_last_opened_size
 operator|=
 name|last_opened_size
 expr_stmt|;
-name|edit_num_processors
-operator|=
-name|num_processors
-expr_stmt|;
 name|edit_show_indicators
 operator|=
 name|show_indicators
@@ -6002,6 +5971,10 @@ name|old_default_threshold
 operator|=
 name|default_threshold
 expr_stmt|;
+name|old_num_processors
+operator|=
+name|num_processors
+expr_stmt|;
 name|file_prefs_strset
 argument_list|(
 operator|&
@@ -6038,10 +6011,6 @@ expr_stmt|;
 name|old_last_opened_size
 operator|=
 name|edit_last_opened_size
-expr_stmt|;
-name|old_num_processors
-operator|=
-name|edit_num_processors
 expr_stmt|;
 name|old_show_indicators
 operator|=
@@ -10734,7 +10703,7 @@ argument_list|(
 operator|&
 name|adjustment
 argument_list|,
-name|edit_num_processors
+name|num_processors
 argument_list|,
 literal|1
 argument_list|,
@@ -10766,7 +10735,7 @@ name|gimp_int_adjustment_update
 argument_list|)
 argument_list|,
 operator|&
-name|edit_num_processors
+name|num_processors
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -12195,7 +12164,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bcd6c370208
+DECL|struct|__anon2be5c8820208
 block|{
 DECL|member|label
 name|gchar
@@ -12424,7 +12393,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bcd6c370308
+DECL|struct|__anon2be5c8820308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -1041,7 +1041,9 @@ argument|)     {       int i;       pthread_t threads[MAX_THREADS];       pthrea
 literal|0
 argument|; i< nthreads; i++)       { 	pthread_create (&threads[i],&pthread_attr, 			(void *(*)(void *)) do_parallel_regions, 			p_s);       }       for (i =
 literal|0
-argument|; i< nthreads; i++)       { 	pthread_join(threads[i], NULL);       }       if (p_s->nthreads !=
+argument|; i< nthreads; i++)       { 	int ret; 	if ((ret = pthread_join(threads[i], NULL))) 	  { 	    fprintf(stderr,
+literal|"pixel_regions_do_parallel:: pthread_join returned: %d\n"
+argument|, ret); 	  }       }       if (p_s->nthreads !=
 literal|0
 argument|) 	fprintf(stderr,
 literal|"pixel_regions_do_prarallel: we lost a thread\n"
@@ -1096,7 +1098,7 @@ name|g_new
 argument_list|(
 name|PixelProcessor
 argument_list|,
-literal|200
+literal|1
 argument_list|)
 expr_stmt|;
 for|for
@@ -1298,12 +1300,8 @@ return|return
 name|NULL
 return|;
 block|}
-name|IF_THREAD
-argument_list|(
-argument|p_s->PRI->dirty_tiles =
-literal|0
-argument|;
-argument_list|)
+comment|/* Why would we wan't to set dirty_tiles to 0 here? */
+comment|/*  IF_THREAD(p_s->PRI->dirty_tiles = 0;) */
 name|p_s
 operator|->
 name|f
