@@ -110,7 +110,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc861c0108
+DECL|struct|__anon2b98e92a0108
 block|{
 DECL|member|seed
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afc861c0208
+DECL|struct|__anon2b98e92a0208
 block|{
 DECL|member|run
 name|gint
@@ -784,6 +784,12 @@ operator|.
 name|data
 operator|.
 name|d_float
+expr_stmt|;
+name|pvals
+operator|.
+name|timeseed
+operator|=
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
