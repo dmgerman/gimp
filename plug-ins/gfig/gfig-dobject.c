@@ -1341,13 +1341,11 @@ condition|)
 block|{
 name|move_all_pnt
 operator|=
-name|g_malloc0
+name|g_new
 argument_list|(
-sizeof|sizeof
-argument_list|(
-operator|*
-name|move_all_pnt
-argument_list|)
+name|GdkPoint
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 operator|*
@@ -2771,14 +2769,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|object_start (GdkPoint * pnt,gint shift_down)
+DECL|function|object_start (GdkPoint * pnt,gboolean shift_down)
 name|object_start
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
