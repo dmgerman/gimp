@@ -649,7 +649,7 @@ name|gdouble
 name|feather_radius_y
 parameter_list|)
 block|{
-name|GimpStroke
+name|GList
 modifier|*
 name|stroke
 decl_stmt|;
@@ -692,7 +692,12 @@ name|coords
 operator|=
 name|gimp_stroke_interpolate
 argument_list|(
+name|GIMP_STROKE
+argument_list|(
 name|stroke
+operator|->
+name|data
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,

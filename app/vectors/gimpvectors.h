@@ -106,11 +106,11 @@ decl_stmt|;
 comment|/* transformation locking         */
 comment|/* Should the following be a GList of GimpStrokes? */
 DECL|member|strokes
-name|GimpStroke
+name|GList
 modifier|*
 name|strokes
 decl_stmt|;
-comment|/* The first stroke               */
+comment|/* The List of GimpStrokes        */
 comment|/* Stuff missing */
 block|}
 struct|;
