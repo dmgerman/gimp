@@ -1125,6 +1125,10 @@ operator|)
 name|size
 argument_list|)
 expr_stmt|;
+else|else
+name|gimp_progress_pulse
+argument_list|()
+expr_stmt|;
 block|}
 elseif|else
 if|if
