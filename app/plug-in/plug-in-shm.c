@@ -765,6 +765,7 @@ name|shm_addr
 operator|!=
 name|MAP_FAILED
 condition|)
+block|{
 name|gimp
 operator|->
 name|plug_in_shm
@@ -773,6 +774,7 @@ name|shm_ID
 operator|=
 name|pid
 expr_stmt|;
+block|}
 else|else
 block|{
 name|g_warning
@@ -812,6 +814,11 @@ name|shm_handle
 argument_list|)
 expr_stmt|;
 block|}
+name|close
+argument_list|(
+name|shm_fd
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{

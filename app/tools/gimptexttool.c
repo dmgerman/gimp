@@ -1580,12 +1580,9 @@ name|NULL
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|G_OBJECT
-argument_list|(
 name|text_tool
 operator|->
 name|proxy
-argument_list|)
 argument_list|,
 literal|"text"
 argument_list|,
