@@ -608,8 +608,6 @@ argument_list|,
 name|token
 argument_list|,
 name|nest_level
-argument_list|,
-name|document_symbol
 argument_list|)
 return|;
 block|}

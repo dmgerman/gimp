@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274bc42e0103
+DECL|enum|__anon29fdb33e0103
 block|{
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
 name|GIMP_CONFIG_ERROR_OPEN
@@ -320,11 +320,6 @@ name|expected_token
 parameter_list|,
 name|gint
 name|nest_level
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|symbol_name
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -153,7 +153,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c243f950103
+DECL|enum|__anon2b54cf120103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -178,7 +178,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c243f950203
+DECL|enum|__anon2b54cf120203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1353,7 +1353,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c243f950308
+DECL|struct|__anon2b54cf120308
 block|{
 DECL|member|fd
 name|gint
@@ -2057,8 +2057,6 @@ argument_list|,
 name|token
 argument_list|,
 name|nest_level
-argument_list|,
-name|NULL
 argument_list|)
 return|;
 block|}

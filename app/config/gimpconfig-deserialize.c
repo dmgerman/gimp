@@ -605,8 +605,6 @@ argument_list|,
 name|token
 argument_list|,
 name|nest_level
-argument_list|,
-name|NULL
 argument_list|)
 return|;
 block|}

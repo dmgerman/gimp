@@ -1159,7 +1159,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_config_deserialize_return (GScanner * scanner,GTokenType expected_token,gint nest_level,const gchar * symbol_name)
+DECL|function|gimp_config_deserialize_return (GScanner * scanner,GTokenType expected_token,gint nest_level)
 name|gimp_config_deserialize_return
 parameter_list|(
 name|GScanner
@@ -1171,11 +1171,6 @@ name|expected_token
 parameter_list|,
 name|gint
 name|nest_level
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|symbol_name
 parameter_list|)
 block|{
 name|GTokenType
@@ -1219,7 +1214,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|symbol_name
+name|NULL
 argument_list|,
 name|_
 argument_list|(
@@ -1273,7 +1268,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|symbol_name
+name|NULL
 argument_list|,
 name|_
 argument_list|(
@@ -1539,7 +1534,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab14abf0108
+DECL|struct|__anon2c36e9600108
 block|{
 DECL|member|key
 name|gchar

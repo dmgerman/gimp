@@ -76,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ce4ef0103
+DECL|enum|__anon28bcd1410103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1153,8 +1153,6 @@ argument_list|,
 name|token
 argument_list|,
 name|nest_level
-argument_list|,
-name|parasite_symbol
 argument_list|)
 return|;
 block|}

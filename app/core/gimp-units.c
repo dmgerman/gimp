@@ -198,7 +198,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac2c5500103
+DECL|enum|__anon2c0512c00103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -504,14 +504,6 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|scanner
-operator|->
-name|scope_id
-operator|==
-literal|0
-condition|?
-literal|"unit-info"
-else|:
 name|NULL
 argument_list|,
 name|_
