@@ -22,6 +22,12 @@ directive|include
 file|<stdio.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
 begin_comment
 comment|/*  * Default values for #define'd symbols  */
 end_comment
@@ -574,7 +580,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon293231cf010a
+DECL|union|__anon28992193010a
 union|union
 block|{
 DECL|member|ivalue
@@ -967,7 +973,7 @@ name|scheme
 modifier|*
 name|sc
 parameter_list|,
-name|int
+name|gunichar
 name|c
 parameter_list|)
 function_decl|;
@@ -1178,7 +1184,7 @@ name|scheme
 modifier|*
 name|sc
 parameter_list|,
-name|int
+name|gunichar
 name|c
 parameter_list|)
 function_decl|;
@@ -1276,7 +1282,7 @@ name|scheme
 modifier|*
 name|sc
 parameter_list|,
-name|int
+name|gunichar
 name|c
 parameter_list|)
 function_decl|;
@@ -1392,7 +1398,7 @@ name|p
 parameter_list|)
 function_decl|;
 DECL|member|charvalue
-name|long
+name|gunichar
 function_decl|(
 modifier|*
 name|charvalue

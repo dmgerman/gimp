@@ -375,10 +375,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon29d84c7b010a
+DECL|union|__anon2b57548b010a
 union|union
 block|{
-DECL|struct|__anon29d84c7b0208
+DECL|struct|__anon2b57548b0208
 struct|struct
 block|{
 DECL|member|file
@@ -394,7 +394,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon29d84c7b0308
+DECL|struct|__anon2b57548b0308
 struct|struct
 block|{
 DECL|member|start
@@ -440,10 +440,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon29d84c7b040a
+DECL|union|__anon2b57548b040a
 union|union
 block|{
-DECL|struct|__anon29d84c7b0508
+DECL|struct|__anon2b57548b0508
 struct|struct
 block|{
 DECL|member|_avalue
@@ -463,7 +463,7 @@ DECL|member|_array
 block|}
 name|_array
 struct|;
-DECL|struct|__anon29d84c7b0608
+DECL|struct|__anon2b57548b0608
 struct|struct
 block|{
 DECL|member|_svalue
@@ -492,7 +492,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon29d84c7b0708
+DECL|struct|__anon2b57548b0708
 struct|struct
 block|{
 DECL|member|_car
@@ -846,6 +846,14 @@ name|int
 name|dump_size
 decl_stmt|;
 comment|/* number of frames allocated for dump stack */
+DECL|member|backchar
+name|gunichar
+name|backchar
+decl_stmt|;
+DECL|member|bc_flag
+name|int
+name|bc_flag
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -1008,7 +1016,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|long
+name|gunichar
 name|charvalue
 parameter_list|(
 name|pointer
