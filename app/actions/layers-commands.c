@@ -3903,6 +3903,14 @@ condition|(
 name|gimage
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_layer_is_floating_sel
+argument_list|(
+name|layer
+argument_list|)
+condition|)
+block|{
 name|gimp_image_undo_group_start
 argument_list|(
 name|gimage
@@ -3915,13 +3923,6 @@ literal|"Scale Layer"
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_layer_is_floating_sel
-argument_list|(
-name|layer
-argument_list|)
-condition|)
 name|floating_sel_relax
 argument_list|(
 name|layer
@@ -3929,7 +3930,8 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_layer_scale
+block|}
+name|gimp_layer_scale_by_origin
 argument_list|(
 name|layer
 argument_list|,
@@ -3961,6 +3963,7 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
 name|floating_sel_rigor
 argument_list|(
 name|layer
@@ -3973,6 +3976,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_flush
 argument_list|(
 name|gimage

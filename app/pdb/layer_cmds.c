@@ -1705,7 +1705,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_layer_scale
+name|gimp_layer_scale_by_origin
 argument_list|(
 name|layer
 argument_list|,

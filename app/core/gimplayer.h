@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2c1b70fb0108
+DECL|struct|__anon2ac51dda0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -462,7 +462,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_layer_scale
+name|gimp_layer_scale_by_origin
 parameter_list|(
 name|GimpLayer
 modifier|*
