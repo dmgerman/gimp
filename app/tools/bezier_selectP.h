@@ -65,6 +65,14 @@ value|2
 end_define
 
 begin_define
+DECL|macro|BEZIER_MOVE
+define|#
+directive|define
+name|BEZIER_MOVE
+value|3
+end_define
+
+begin_define
 DECL|macro|IMAGE_COORDS
 define|#
 directive|define
@@ -97,7 +105,7 @@ value|1000
 end_define
 
 begin_enum
-DECL|enum|__anon29e4f8a40103
+DECL|enum|__anon2b6fbdac0103
 DECL|enumerator|EXTEND_EDIT
 DECL|enumerator|EXTEND_ADD
 DECL|enumerator|EXTEND_REMOVE
@@ -133,10 +141,10 @@ DECL|member|type
 name|int
 name|type
 decl_stmt|;
-comment|/* type of point (anchor or control) */
+comment|/* type of point (anchor/control/move) */
 DECL|member|x
 DECL|member|y
-name|int
+name|double
 name|x
 decl_stmt|,
 name|y
@@ -162,6 +170,12 @@ modifier|*
 name|prev
 decl_stmt|;
 comment|/* prev point on curve               */
+DECL|member|next_curve
+name|BezierPoint
+modifier|*
+name|next_curve
+decl_stmt|;
+comment|/* Next curve segment                */
 block|}
 struct|;
 end_struct
@@ -194,7 +208,7 @@ DECL|member|closed
 name|int
 name|closed
 decl_stmt|;
-comment|/* is the curve closed               */
+comment|/* is the last curve closed          */
 DECL|member|core
 name|DrawCore
 modifier|*
@@ -246,6 +260,25 @@ comment|/* used in converting a curve        */
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/* All udata that are passed to the bezier_draw_curve must  * have this structure as the first element.  */
+end_comment
+
+begin_typedef
+DECL|struct|__anon2b6fbdac0208
+typedef|typedef
+struct|struct
+block|{
+DECL|member|count
+name|gint
+name|count
+decl_stmt|;
+DECL|typedef|CountCurves
+block|}
+name|CountCurves
+typedef|;
+end_typedef
 
 begin_typedef
 DECL|typedef|BezierPointsFunc
@@ -325,9 +358,9 @@ modifier|*
 parameter_list|,
 name|int
 parameter_list|,
-name|int
+name|gdouble
 parameter_list|,
-name|int
+name|gdouble
 parameter_list|)
 function_decl|;
 end_function_decl
