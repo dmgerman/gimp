@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2909bf4c0103
+DECL|enum|__anon296af0090103
 block|{
 DECL|enumerator|RED_CHANNEL
 name|RED_CHANNEL
@@ -147,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2909bf4c0203
+DECL|enum|__anon296af0090203
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -433,7 +433,7 @@ name|GimpRGB
 name|qmask_color
 decl_stmt|;
 comment|/*  rgba triplet of the color    */
-comment|/*  Undo apparatus  */
+comment|/*  Old undo apparatus  */
 DECL|member|undo_stack
 name|GSList
 modifier|*
@@ -472,6 +472,19 @@ modifier|*
 name|undo_history
 decl_stmt|;
 comment|/*  history viewer, or NULL      */
+comment|/*  New undo apparatus  */
+DECL|member|new_undo_stack
+name|GimpUndoStack
+modifier|*
+name|new_undo_stack
+decl_stmt|;
+comment|/*  stack for undo operations    */
+DECL|member|new_redo_stack
+name|GimpUndoStack
+modifier|*
+name|new_redo_stack
+decl_stmt|;
+comment|/*  stack for redo operations    */
 comment|/*  Composite preview  */
 DECL|member|comp_preview
 name|TempBuf
@@ -621,6 +634,30 @@ name|gimage
 parameter_list|,
 name|gint
 name|event
+parameter_list|)
+function_decl|;
+DECL|member|undo
+name|void
+function_decl|(
+modifier|*
+name|undo
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|)
+function_decl|;
+DECL|member|redo
+name|void
+function_decl|(
+modifier|*
+name|redo
+function_decl|)
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
 parameter_list|)
 function_decl|;
 block|}

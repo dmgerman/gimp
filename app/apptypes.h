@@ -278,6 +278,28 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  undo objects  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpUndo
+typedef|typedef
+name|struct
+name|_GimpUndo
+name|GimpUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpUndoStack
+typedef|typedef
+name|struct
+name|_GimpUndoStack
+name|GimpUndoStack
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  widgets  */
 end_comment
 

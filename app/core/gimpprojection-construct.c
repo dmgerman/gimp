@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -115,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"gimpparasite.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpundostack.h"
 end_include
 
 begin_include
@@ -731,7 +743,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276caa060103
+DECL|enum|__anon27a833de0103
 block|{
 DECL|enumerator|ACTIVE_LAYER_CHANGED
 name|ACTIVE_LAYER_CHANGED
@@ -1275,6 +1287,18 @@ name|undo_event
 operator|=
 name|NULL
 expr_stmt|;
+name|klass
+operator|->
+name|undo
+operator|=
+name|gimp_image_undo
+expr_stmt|;
+name|klass
+operator|->
+name|redo
+operator|=
+name|gimp_image_redo
+expr_stmt|;
 block|}
 end_function
 
@@ -1561,6 +1585,24 @@ name|NULL
 expr_stmt|;
 name|gimage
 operator|->
+name|new_undo_stack
+operator|=
+name|gimp_undo_stack_new
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+name|gimage
+operator|->
+name|new_redo_stack
+operator|=
+name|gimp_undo_stack_new
+argument_list|(
+name|gimage
+argument_list|)
+expr_stmt|;
+name|gimage
+operator|->
 name|comp_preview
 operator|=
 name|NULL
@@ -1680,6 +1722,26 @@ argument_list|(
 name|gimage
 operator|->
 name|parasites
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimage
+operator|->
+name|new_undo_stack
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_object_unref
+argument_list|(
+name|GTK_OBJECT
+argument_list|(
+name|gimage
+operator|->
+name|new_redo_stack
 argument_list|)
 argument_list|)
 expr_stmt|;
