@@ -296,7 +296,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278365da0108
+DECL|struct|__anon28a67c060108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -3391,7 +3391,7 @@ block|,
 name|LARGE_CHECKS
 block|,   }
 decl_stmt|;
-DECL|struct|__anon278365da0208
+DECL|struct|__anon28a67c060208
 specifier|static
 specifier|const
 struct|struct
@@ -3442,7 +3442,7 @@ operator|)
 block|}
 block|}
 struct|;
-DECL|struct|__anon278365da0308
+DECL|struct|__anon28a67c060308
 specifier|static
 specifier|const
 struct|struct
@@ -3534,7 +3534,7 @@ name|edit_plug_in_path
 block|}
 block|}
 struct|;
-DECL|struct|__anon278365da0408
+DECL|struct|__anon28a67c060408
 specifier|static
 specifier|const
 struct|struct
@@ -5970,7 +5970,7 @@ literal|"Show tool tips"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_activd
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
