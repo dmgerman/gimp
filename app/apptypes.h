@@ -793,11 +793,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|TransformCore
+DECL|typedef|GimpTransformTool
 typedef|typedef
 name|struct
-name|_TransformCore
-name|TransformCore
+name|_GimpTransformTool
+name|GimpTransformTool
 typedef|;
 end_typedef
 

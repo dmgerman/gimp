@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"tools/tool.h"
+file|"tools/gimptool.h"
 end_include
 
 begin_define
@@ -379,13 +379,21 @@ name|state
 parameter_list|)
 function_decl|;
 block|}
-comment|/*  Special undo type  */
-DECL|variable|TransformUndo
-decl|typedef struct
-name|_TransformUndo
-name|TransformUndo
 struct|;
 end_struct
+
+begin_comment
+comment|/*  Special undo type  */
+end_comment
+
+begin_typedef
+DECL|typedef|TransformUndo
+typedef|typedef
+name|struct
+name|_TransformUndo
+name|TransformUndo
+typedef|;
+end_typedef
 
 begin_struct
 DECL|struct|_TransformUndo
@@ -443,7 +451,7 @@ begin_function_decl
 name|void
 name|gimp_transform_tool_destroy
 parameter_list|(
-name|GimpTransformTool
+name|GtkObject
 modifier|*
 name|tool
 parameter_list|)
@@ -517,16 +525,39 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  transform functions  */
-end_comment
-
 begin_function_decl
 name|TileManager
 modifier|*
 name|gimp_transform_tool_transform
 parameter_list|(
-name|GImage
+name|GimpTransformTool
+modifier|*
+name|tool
+parameter_list|,
+name|GDisplay
+modifier|*
+name|gdisp
+parameter_list|,
+name|TransformState
+name|state
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  transform functions  */
+end_comment
+
+begin_comment
+comment|/* FIXME this function needs to be renamed */
+end_comment
+
+begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_transform_tool_do
+parameter_list|(
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -558,7 +589,7 @@ name|TileManager
 modifier|*
 name|gimp_transform_tool_cut
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
@@ -577,7 +608,7 @@ begin_function_decl
 name|gboolean
 name|gimp_transform_tool_paste
 parameter_list|(
-name|GImage
+name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,

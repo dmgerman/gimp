@@ -233,7 +233,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2969e7b40103
+DECL|enum|__anon278344f60103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -5379,30 +5379,13 @@ name|gpointer
 name|tu_ptr
 parameter_list|)
 block|{
-name|TransformCore
-modifier|*
-name|tc
-decl_stmt|;
-name|TransformUndo
-modifier|*
-name|tu
-decl_stmt|;
-name|TileManager
-modifier|*
-name|temp
-decl_stmt|;
-name|gdouble
-name|d
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 warning|#
 directive|warning
 warning|very bogus
 if|#
 directive|if
 literal|0
+block|TransformCore *tc;   TransformUndo *tu;   TileManager   *temp;   gdouble        d;   gint           i;
 comment|/* Can't have ANY tool selected - maybe a plugin running */
 block|if (active_tool == NULL)     return TRUE;    tc = (TransformCore *) active_tool->private;   tu = (TransformUndo *) tu_ptr;    path_transform_do_undo (gimage,tu->path_undo);
 comment|/*  only pop if the active tool is the tool that pushed this undo  */
