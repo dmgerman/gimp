@@ -818,6 +818,36 @@ block|}
 end_function
 
 begin_function
+name|gboolean
+DECL|function|gimp_draw_tool_is_active (GimpDrawTool * draw_tool)
+name|gimp_draw_tool_is_active
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DRAW_TOOL
+argument_list|(
+name|draw_tool
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|draw_tool
+operator|->
+name|gdisp
+operator|!=
+name|NULL
+return|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_draw_tool_pause (GimpDrawTool * draw_tool)
 name|gimp_draw_tool_pause
