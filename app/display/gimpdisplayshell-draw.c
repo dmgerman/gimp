@@ -3025,7 +3025,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-comment|/*  the table widget is pretty stupid so we need 2 tables       or it treats rulers and canvas with equal weight when        allocating space, ugh. */
+comment|/*  the table widget is pretty stupid so we need 2 tables       or it treats rulers and canvas with equal weight when       allocating space, ugh. */
 name|table
 operator|=
 name|gtk_table_new
@@ -5404,15 +5404,17 @@ condition|)
 block|{
 name|val
 operator|=
-name|GTK_PROGRESS_BAR
+name|gtk_progress_get_current_percentage
+argument_list|(
+name|GTK_PROGRESS
 argument_list|(
 name|progress_area
 argument_list|)
-operator|->
-name|percentage
+argument_list|)
 operator|+
 literal|0.01
 expr_stmt|;
+comment|/*       val = GTK_PROGRESS_BAR (progress_area)->percentage + 0.01;       */
 if|if
 condition|(
 name|val

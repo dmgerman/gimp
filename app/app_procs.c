@@ -1343,7 +1343,7 @@ argument_list|,
 name|AUTHORS
 argument_list|)
 expr_stmt|;
-comment|/*      *  This is a hack: we try to compute a good guess for the maximum number    *  of charcters that will fit into the splash-screen using the given font     */
+comment|/*    *  This is a hack: we try to compute a good guess for the maximum number    *  of charcters that will fit into the splash-screen using the given font    */
 name|max_label_length
 operator|=
 operator|(
@@ -2030,15 +2030,14 @@ name|pct_progress
 operator|>=
 literal|0
 operator|&&
-name|GTK_PROGRESS_BAR
+name|gtk_progress_get_current_percentage
 argument_list|(
 name|pbar
 argument_list|)
-operator|->
-name|percentage
 operator|!=
 name|pct_progress
 condition|)
+comment|/* 	 GTK_PROGRESS_BAR(pbar)->percentage != pct_progress) 	*/
 block|{
 name|gtk_progress_bar_update
 argument_list|(
