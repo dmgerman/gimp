@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0481e0108
+DECL|struct|__anon2c608e310108
 block|{
 DECL|member|pdb_name
 name|gchar
@@ -351,11 +351,11 @@ comment|/*  *  Local variables  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|script_list
+DECL|variable|script_tree
 specifier|static
 name|GTree
 modifier|*
-name|script_list
+name|script_tree
 init|=
 name|NULL
 decl_stmt|;
@@ -391,14 +391,14 @@ decl_stmt|;
 comment|/*  Make sure to clear any existing scripts  */
 if|if
 condition|(
-name|script_list
+name|script_tree
 operator|!=
 name|NULL
 condition|)
 block|{
 name|g_tree_foreach
 argument_list|(
-name|script_list
+name|script_tree
 argument_list|,
 operator|(
 name|GTraverseFunc
@@ -410,11 +410,11 @@ argument_list|)
 expr_stmt|;
 name|g_tree_destroy
 argument_list|(
-name|script_list
+name|script_tree
 argument_list|)
 expr_stmt|;
 block|}
-name|script_list
+name|script_tree
 operator|=
 name|g_tree_new
 argument_list|(
@@ -457,7 +457,7 @@ expr_stmt|;
 comment|/*  Now that all scripts are read in and sorted, tell gimp about them  */
 name|g_tree_foreach
 argument_list|(
-name|script_list
+name|script_tree
 argument_list|,
 operator|(
 name|GTraverseFunc
@@ -3140,14 +3140,14 @@ name|list
 init|=
 name|g_tree_lookup
 argument_list|(
-name|script_list
+name|script_tree
 argument_list|,
 name|key
 argument_list|)
 decl_stmt|;
 name|g_tree_insert
 argument_list|(
-name|script_list
+name|script_tree
 argument_list|,
 name|key
 argument_list|,
@@ -3686,7 +3686,7 @@ expr_stmt|;
 block|}
 name|g_list_free
 argument_list|(
-name|list
+name|scripts
 argument_list|)
 expr_stmt|;
 return|return
@@ -4433,7 +4433,7 @@ name|pdb_name
 decl_stmt|;
 name|g_tree_foreach
 argument_list|(
-name|script_list
+name|script_tree
 argument_list|,
 operator|(
 name|GTraverseFunc
