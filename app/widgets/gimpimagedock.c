@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpuimanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -163,12 +169,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
-end_ifdef
-
 begin_function_decl
 specifier|static
 name|GObject
@@ -187,11 +187,6 @@ name|params
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 specifier|static
@@ -371,12 +366,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
-end_ifdef
-
 begin_function_decl
 specifier|static
 name|void
@@ -396,11 +385,6 @@ name|dock
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function_decl
 specifier|static
@@ -438,12 +422,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
-end_ifdef
-
 begin_function_decl
 specifier|static
 name|void
@@ -459,11 +437,6 @@ name|dock
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_decl_stmt
 DECL|variable|parent_class
@@ -621,17 +594,12 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
 name|object_class
 operator|->
 name|constructor
 operator|=
 name|gimp_image_dock_constructor
 expr_stmt|;
-endif|#
-directive|endif
 name|gtk_object_class
 operator|->
 name|destroy
@@ -969,12 +937,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
-end_ifdef
-
 begin_function
 specifier|static
 name|GObject
@@ -1004,14 +966,6 @@ decl_stmt|;
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
-decl_stmt|;
-name|GtkItemFactory
-modifier|*
-name|item_factory
-decl_stmt|;
-name|GList
-modifier|*
-name|list
 decl_stmt|;
 name|object
 operator|=
@@ -1049,298 +1003,19 @@ name|menu_factory
 expr_stmt|;
 name|dock
 operator|->
-name|item_factory
+name|ui_manager
 operator|=
-name|gimp_menu_factory_menu_new
+name|gimp_menu_factory_manager_new
 argument_list|(
 name|menu_factory
 argument_list|,
-literal|"<Image>"
+literal|"<Dock>"
 argument_list|,
-name|GTK_TYPE_MENU
-argument_list|,
-name|object
+name|dock
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|item_factory
-operator|=
-name|GTK_ITEM_FACTORY
-argument_list|(
-name|dock
-operator|->
-name|item_factory
-argument_list|)
-expr_stmt|;
-DECL|macro|DESTROY (menu)
-define|#
-directive|define
-name|DESTROY
-parameter_list|(
-name|menu
-parameter_list|)
-value|gtk_item_factory_delete_item (item_factory, menu)
-name|DESTROY
-argument_list|(
-literal|"/View/New View"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Dot for Dot"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/Zoom Out"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/Zoom In"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/Zoom to Fit Window"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/16:1"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/8:1"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/4:1"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/2:1"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/1:1"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/1:2"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/1:4"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/1:8"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/1:16"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Zoom/Other..."
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Info Window"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Navigation Window"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Display Filters..."
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Show Selection"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Show Layer Boundary"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Show Menubar"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Show Rulers"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Show Scrollbars"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Show Statusbar"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Shrink Wrap"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/View/Fullscreen"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Layer/Stack/Select Previous Layer"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Layer/Stack/Select Next Layer"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Layer/Stack/Select Top Layer"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Layer/Stack/Select Bottom Layer"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Layer/Stack/Raise Layer"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Layer/Stack/Lower Layer"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Layer/Stack/Layer to Top"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Layer/Stack/Layer to Bottom"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Select/By Color"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Select/Toggle QuickMask"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Tools/Toolbox"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Tools/Default Colors"
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-literal|"/Tools/Swap Colors"
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|list
-operator|=
-name|GIMP_LIST
-argument_list|(
-name|GIMP_DOCK
-argument_list|(
-name|dock
-argument_list|)
-operator|->
-name|context
-operator|->
-name|gimp
-operator|->
-name|tool_info_list
-argument_list|)
-operator|->
-name|list
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_list_next
-argument_list|(
-name|list
-argument_list|)
-control|)
-block|{
-name|GimpToolInfo
-modifier|*
-name|tool_info
-init|=
-name|list
-operator|->
-name|data
-decl_stmt|;
-name|gchar
-modifier|*
-name|menu_path
-decl_stmt|;
-name|menu_path
-operator|=
-name|gimp_strip_uline
-argument_list|(
-name|tool_info
-operator|->
-name|menu_path
-argument_list|)
-expr_stmt|;
-name|DESTROY
-argument_list|(
-name|menu_path
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|menu_path
-argument_list|)
-expr_stmt|;
-block|}
-undef|#
-directive|undef
-name|DESTROY
 name|gtk_window_add_accel_group
 argument_list|(
 name|GTK_WINDOW
@@ -1348,14 +1023,15 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|,
-name|GTK_ITEM_FACTORY
+name|gtk_ui_manager_get_accel_group
+argument_list|(
+name|GTK_UI_MANAGER
 argument_list|(
 name|dock
 operator|->
-name|item_factory
+name|ui_manager
 argument_list|)
-operator|->
-name|accel_group
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1363,15 +1039,6 @@ name|object
 return|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* ENABLE_GLOBAL_SHORTCUTS */
-end_comment
 
 begin_function
 specifier|static
@@ -1414,9 +1081,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
 if|if
 condition|(
 name|dock
@@ -1446,25 +1110,23 @@ if|if
 condition|(
 name|dock
 operator|->
-name|item_factory
+name|ui_manager
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
 name|dock
 operator|->
-name|item_factory
+name|ui_manager
 argument_list|)
 expr_stmt|;
 name|dock
 operator|->
-name|item_factory
+name|ui_manager
 operator|=
 name|NULL
 expr_stmt|;
 block|}
-endif|#
-directive|endif
 comment|/*  remove the image menu and the auto button manually here because    *  of weird cross-connections with GimpDock's context    */
 if|if
 condition|(
@@ -2282,9 +1944,6 @@ name|display_container
 operator|=
 name|display_container
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
 name|image_dock
 operator|->
 name|image_flush_handler_id
@@ -2303,8 +1962,6 @@ argument_list|,
 name|image_dock
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_help_connect
 argument_list|(
 name|GTK_WIDGET
@@ -2420,9 +2077,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
 name|g_signal_connect_object
 argument_list|(
 name|context
@@ -2439,8 +2093,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|g_signal_connect_object
 argument_list|(
 name|context
@@ -2967,12 +2619,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
-end_ifdef
-
 begin_function
 specifier|static
 name|void
@@ -3001,22 +2647,17 @@ argument_list|(
 name|dock
 argument_list|)
 decl_stmt|;
-name|gimp_item_factory_update
+name|gimp_ui_manager_update
 argument_list|(
 name|image_dock
 operator|->
-name|item_factory
+name|ui_manager
 argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static
@@ -3350,12 +2991,6 @@ block|}
 block|}
 end_function
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|ENABLE_GLOBAL_SHORTCUTS
-end_ifdef
-
 begin_function
 specifier|static
 name|void
@@ -3415,11 +3050,11 @@ if|if
 condition|(
 name|display
 condition|)
-name|gimp_item_factory_update
+name|gimp_ui_manager_update
 argument_list|(
 name|image_dock
 operator|->
-name|item_factory
+name|ui_manager
 argument_list|,
 name|display
 argument_list|)
@@ -3427,11 +3062,6 @@ expr_stmt|;
 block|}
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 end_unit
 
