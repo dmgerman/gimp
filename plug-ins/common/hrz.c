@@ -178,7 +178,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290139a60108
+DECL|struct|__anon29c3fcd50108
 block|{
 DECL|member|run
 name|gint
@@ -1284,20 +1284,8 @@ decl_stmt|;
 comment|/* must check file size */
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"Loading %s:"
@@ -1893,20 +1881,8 @@ return|;
 block|}
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"

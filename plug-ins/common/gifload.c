@@ -758,7 +758,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c22a6430108
+DECL|struct|__anon297c54700108
 block|{
 DECL|member|Width
 name|unsigned
@@ -808,7 +808,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c22a6430208
+DECL|struct|__anon297c54700208
 block|{
 DECL|member|transparent
 name|int
@@ -1080,18 +1080,6 @@ operator|-
 literal|1
 return|;
 block|}
-name|name_buf
-operator|=
-name|g_malloc
-argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|run_mode
@@ -1099,10 +1087,10 @@ operator|!=
 name|RUN_NONINTERACTIVE
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|name_buf
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Loading %s:"
@@ -3546,12 +3534,15 @@ decl_stmt|,
 name|j
 decl_stmt|;
 name|gchar
+modifier|*
 name|framename
-index|[
-literal|200
-index|]
 decl_stmt|;
-comment|/* FIXME */
+name|gchar
+modifier|*
+name|framenamedisp
+init|=
+name|NULL
+decl_stmt|;
 name|gboolean
 name|alpha_frame
 init|=
@@ -3740,10 +3731,10 @@ name|delayTime
 operator|<
 literal|0
 condition|)
-name|strcpy
-argument_list|(
 name|framename
-argument_list|,
+operator|=
+name|g_strdup
+argument_list|(
 name|_
 argument_list|(
 literal|"Background"
@@ -3751,10 +3742,10 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
-argument_list|(
 name|framename
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Background (%dms)"
@@ -3829,6 +3820,11 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|framename
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 comment|/* NOT FIRST FRAME */
@@ -3953,10 +3949,10 @@ name|delayTime
 operator|<
 literal|0
 condition|)
-name|sprintf
-argument_list|(
 name|framename
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Frame %d"
@@ -3966,10 +3962,10 @@ name|frame_number
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
-argument_list|(
 name|framename
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Frame %d (%dms)"
@@ -3997,7 +3993,9 @@ comment|/* 'don't care' */
 case|case
 literal|0x01
 case|:
-name|strcat
+name|framenamedisp
+operator|=
+name|g_strconcat
 argument_list|(
 name|framename
 argument_list|,
@@ -4005,13 +4003,17 @@ name|_
 argument_list|(
 literal|" (combine)"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
 literal|0x02
 case|:
-name|strcat
+name|framenamedisp
+operator|=
+name|g_strconcat
 argument_list|(
 name|framename
 argument_list|,
@@ -4019,13 +4021,17 @@ name|_
 argument_list|(
 literal|" (replace)"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
 literal|0x03
 case|:
-name|strcat
+name|framenamedisp
+operator|=
+name|g_strconcat
 argument_list|(
 name|framename
 argument_list|,
@@ -4033,6 +4039,8 @@ name|_
 argument_list|(
 literal|" (combine)"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 break|break;
@@ -4048,7 +4056,9 @@ case|:
 case|case
 literal|0x07
 case|:
-name|strcat
+name|framenamedisp
+operator|=
+name|g_strconcat
 argument_list|(
 name|framename
 argument_list|,
@@ -4056,6 +4066,8 @@ name|_
 argument_list|(
 literal|" (unknown disposal)"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_message
@@ -4071,6 +4083,13 @@ argument_list|(
 literal|"GIF: Something got corrupted.\n"
 argument_list|)
 expr_stmt|;
+name|framenamedisp
+operator|=
+name|g_strdup
+argument_list|(
+name|framename
+argument_list|)
+expr_stmt|;
 break|break;
 block|}
 name|previous_disposal
@@ -4079,13 +4098,18 @@ name|Gif89
 operator|.
 name|disposal
 expr_stmt|;
+name|g_free
+argument_list|(
+name|framename
+argument_list|)
+expr_stmt|;
 name|layer_ID
 operator|=
 name|gimp_layer_new
 argument_list|(
 name|image_ID
 argument_list|,
-name|framename
+name|framenamedisp
 argument_list|,
 name|len
 argument_list|,
@@ -4105,6 +4129,11 @@ expr_stmt|;
 name|alpha_frame
 operator|=
 name|TRUE
+expr_stmt|;
+name|g_free
+argument_list|(
+name|framenamedisp
+argument_list|)
 expr_stmt|;
 block|}
 name|frame_number

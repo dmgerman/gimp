@@ -138,7 +138,7 @@ comment|/* Fileheader of SunRaster files */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28b7fee20108
+DECL|struct|__anon28c6b80c0108
 typedef|typedef
 struct|struct
 block|{
@@ -227,7 +227,7 @@ comment|/* Runlength compression format */
 end_comment
 
 begin_typedef
-DECL|struct|__anon28b7fee20208
+DECL|struct|__anon28c6b80c0208
 typedef|typedef
 struct|struct
 block|{
@@ -881,7 +881,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7fee20308
+DECL|struct|__anon28c6b80c0308
 block|{
 DECL|member|rle
 name|gint
@@ -897,7 +897,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b7fee20408
+DECL|struct|__anon28c6b80c0408
 block|{
 DECL|member|run
 name|gint
@@ -2007,17 +2007,7 @@ condition|)
 block|{
 name|temp
 operator|=
-name|g_malloc
-argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|64
-argument_list|)
-expr_stmt|;
-name|sprintf
+name|g_strdup_printf
 argument_list|(
 name|temp
 argument_list|,
@@ -2311,20 +2301,8 @@ condition|)
 block|{
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|64
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"

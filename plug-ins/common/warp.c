@@ -144,7 +144,7 @@ value|3
 end_define
 
 begin_typedef
-DECL|struct|__anon2b6ea8320108
+DECL|struct|__anon2ba41fad0108
 typedef|typedef
 struct|struct
 block|{
@@ -211,7 +211,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b6ea8320208
+DECL|struct|__anon2ba41fad0208
 typedef|typedef
 struct|struct
 block|{
@@ -7925,10 +7925,8 @@ name|mag_draw
 decl_stmt|;
 comment|/* Magnitude multiplier factor map */
 name|gchar
+modifier|*
 name|string
-index|[
-literal|80
-index|]
 decl_stmt|;
 comment|/* string to hold title of progress bar window */
 name|gint
@@ -8113,10 +8111,10 @@ operator|!=
 name|RUN_NONINTERACTIVE
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|string
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Flow Step %d..."
@@ -8128,6 +8126,11 @@ literal|1
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
+argument_list|(
+name|string
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|string
 argument_list|)
@@ -8161,7 +8164,6 @@ argument_list|,
 name|warp_iter
 argument_list|)
 expr_stmt|;
-comment|/*      sprintf(string,"Background Step %d...",warp_iter+1);      gimp_progress_init (string);      progress     = 0;      warp_one(new_image, orig_draw, *map_x, *map_y, mag_draw, FALSE, warp_iter);      */
 name|gimp_drawable_update
 argument_list|(
 name|orig_draw

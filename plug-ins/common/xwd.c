@@ -115,7 +115,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e8593b0108
+DECL|struct|__anon2900e4410108
 typedef|typedef
 struct|struct
 block|{
@@ -249,7 +249,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e8593b0208
+DECL|struct|__anon2900e4410208
 typedef|typedef
 struct|struct
 block|{
@@ -307,7 +307,7 @@ value|((1<< MAPPERBITS)-1)
 end_define
 
 begin_typedef
-DECL|struct|__anon29e8593b0308
+DECL|struct|__anon2900e4410308
 typedef|typedef
 struct|struct
 block|{
@@ -333,7 +333,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29e8593b0408
+DECL|struct|__anon2900e4410408
 typedef|typedef
 struct|struct
 block|{
@@ -1607,7 +1607,7 @@ name|depth
 decl_stmt|,
 name|bpp
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|temp
 decl_stmt|;
@@ -1937,21 +1937,12 @@ condition|)
 block|{
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
+name|_
 argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 literal|"Loading %s:"
+argument_list|)
 argument_list|,
 name|filename
 argument_list|)
@@ -2229,38 +2220,8 @@ condition|)
 block|{
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|256
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|temp
-operator|==
-name|NULL
-condition|)
-block|{
-name|show_message
-argument_list|(
-name|_
-argument_list|(
-literal|"this image depth/format is not supported"
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"load_image (xwd): XWD-file %s has format %d, depth %d\n\ and bits per pixel %d.\nCurrently this is not supported.\n"
@@ -2290,7 +2251,6 @@ argument_list|(
 name|temp
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 operator|(
 operator|-
@@ -2435,20 +2395,8 @@ condition|)
 block|{
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"

@@ -2059,20 +2059,8 @@ return|;
 block|}
 name|name_buf
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name_buf
-argument_list|,
 name|_
 argument_list|(
 literal|"Loading %s:"
@@ -3206,24 +3194,8 @@ return|;
 block|}
 name|name_buf
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name_buf
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"

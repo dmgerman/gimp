@@ -116,7 +116,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c161570108
+DECL|struct|__anon28a59ed20108
 block|{
 DECL|member|x
 name|gfloat
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c161570208
+DECL|struct|__anon28a59ed20208
 block|{
 DECL|member|run
 name|gint
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c161570308
+DECL|struct|__anon28a59ed20308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -4005,11 +4005,9 @@ name|gint32
 modifier|*
 name|animlayers
 decl_stmt|;
-name|char
+name|gchar
+modifier|*
 name|st
-index|[
-literal|100
-index|]
 decl_stmt|;
 name|gfloat
 name|delta
@@ -4117,11 +4115,14 @@ name|i
 operator|++
 control|)
 block|{
-name|sprintf
-argument_list|(
 name|st
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
 literal|"Frame %d"
+argument_list|)
 argument_list|,
 name|i
 argument_list|)
@@ -4146,6 +4147,11 @@ argument_list|,
 name|st
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|st
+argument_list|)
+expr_stmt|;
 name|destdrawable
 operator|=
 name|gimp_drawable_get
@@ -4156,10 +4162,10 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|st
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Warping Frame Nr %d ..."
@@ -4169,6 +4175,11 @@ name|frame_number
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
+argument_list|(
+name|st
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|st
 argument_list|)
@@ -4209,10 +4220,10 @@ condition|(
 name|do_animate_ping_pong
 condition|)
 block|{
-name|sprintf
-argument_list|(
 name|st
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Warping Frame Nr %d ..."
@@ -4227,6 +4238,11 @@ name|_
 argument_list|(
 literal|"Ping Pong"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|st
 argument_list|)
 expr_stmt|;
 for|for
@@ -4271,11 +4287,14 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
-name|sprintf
-argument_list|(
 name|st
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
 literal|"Frame %d"
+argument_list|)
 argument_list|,
 name|i
 operator|+
@@ -4286,6 +4305,11 @@ name|gimp_layer_set_name
 argument_list|(
 name|layerID
 argument_list|,
+name|st
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|st
 argument_list|)
 expr_stmt|;

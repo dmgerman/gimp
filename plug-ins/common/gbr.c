@@ -161,7 +161,7 @@ comment|/* Declare local data types  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b75ab280108
+DECL|struct|__anon2abf9e3e0108
 typedef|typedef
 struct|struct
 block|{
@@ -1135,20 +1135,8 @@ name|version_extra
 decl_stmt|;
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"Loading %s:"
@@ -1700,20 +1688,8 @@ name|FALSE
 return|;
 name|temp
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|10
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|temp
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"

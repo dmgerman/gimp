@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3a0ae40108
+DECL|struct|__anon274b5f880108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1197,11 +1197,9 @@ modifier|*
 name|pixel
 decl_stmt|;
 comment|/* Pixel data */
-name|char
+name|gchar
+modifier|*
 name|progress
-index|[
-literal|255
-index|]
 decl_stmt|;
 comment|/* Title for progress display... */
 name|guchar
@@ -1350,10 +1348,10 @@ argument_list|)
 operator|!=
 name|NULL
 condition|)
-name|sprintf
-argument_list|(
 name|progress
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Loading %s:"
@@ -1370,7 +1368,9 @@ literal|1
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
+name|progress
+operator|=
+name|g_strdup_printf
 argument_list|(
 name|progress
 argument_list|,
@@ -1383,6 +1383,11 @@ name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
+argument_list|(
+name|progress
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|progress
 argument_list|)
@@ -2405,11 +2410,9 @@ modifier|*
 name|pixel
 decl_stmt|;
 comment|/* Pixel data */
-name|char
+name|gchar
+modifier|*
 name|progress
-index|[
-literal|255
-index|]
 decl_stmt|;
 comment|/* Title for progress display... */
 name|gdouble
@@ -2551,10 +2554,10 @@ argument_list|)
 operator|!=
 name|NULL
 condition|)
-name|sprintf
-argument_list|(
 name|progress
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Saving %s:"
@@ -2571,10 +2574,10 @@ literal|1
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
-argument_list|(
 name|progress
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
 name|_
 argument_list|(
 literal|"Saving %s:"
@@ -2584,6 +2587,11 @@ name|filename
 argument_list|)
 expr_stmt|;
 name|gimp_progress_init
+argument_list|(
+name|progress
+argument_list|)
+expr_stmt|;
+name|g_free
 argument_list|(
 name|progress
 argument_list|)

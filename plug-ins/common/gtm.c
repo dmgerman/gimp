@@ -54,7 +54,7 @@ comment|/* Typedefs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29224f2a0108
+DECL|struct|__anon2a3622490108
 typedef|typedef
 struct|struct
 block|{
@@ -121,7 +121,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29224f2a0208
+DECL|struct|__anon2a3622490208
 typedef|typedef
 struct|struct
 block|{
@@ -869,20 +869,8 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|g_malloc
+name|g_strdup_printf
 argument_list|(
-name|strlen
-argument_list|(
-name|filename
-argument_list|)
-operator|+
-literal|11
-argument_list|)
-expr_stmt|;
-name|sprintf
-argument_list|(
-name|name
-argument_list|,
 name|_
 argument_list|(
 literal|"Saving %s:"
