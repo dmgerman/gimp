@@ -84,7 +84,7 @@ file|"tile_manager_pvt.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2af551e80108
+DECL|struct|__anon28c8ee640108
 typedef|typedef
 struct|struct
 block|{
@@ -331,6 +331,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|float
+name|file_new_default_unit_parse
+parameter_list|(
+name|int
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  static variables  */
 end_comment
@@ -428,19 +438,8 @@ begin_comment
 comment|/*  FIXME */
 end_comment
 
-begin_decl_stmt
-DECL|variable|default_resolution
-specifier|static
-name|float
-name|default_resolution
-init|=
-literal|72
-decl_stmt|;
-end_decl_stmt
-
 begin_comment
-DECL|variable|default_resolution
-comment|/* this needs to be set in gimprc */
+comment|/* static   float        default_resolution = 72;      this needs to be set in gimprc */
 end_comment
 
 begin_decl_stmt
@@ -2116,6 +2115,13 @@ decl_stmt|;
 name|float
 name|temp
 decl_stmt|;
+name|default_res_unit
+operator|=
+name|file_new_default_unit_parse
+argument_list|(
+name|default_resolution_units
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -2296,13 +2302,6 @@ expr_stmt|;
 comment|/* no indexed images */
 comment|/*  if a cut buffer exist, default to using its size for the new image */
 comment|/* also check to see if a new_image has been opened */
-name|printf
-argument_list|(
-literal|"last_new_image is: %d \n"
-argument_list|,
-name|last_new_image
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|global_buf
@@ -2336,11 +2335,6 @@ literal|0
 index|]
 operator|.
 name|height
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"foo foo foo\n"
-argument_list|)
 expr_stmt|;
 block|}
 name|vals
@@ -2819,7 +2813,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|GTK_ENTRY
 argument_list|(
 name|vals
 operator|->
@@ -2937,7 +2931,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
 argument_list|(
-name|GTK_OBJECT
+name|GTK_ENTRY
 argument_list|(
 name|vals
 operator|->
@@ -2991,7 +2985,7 @@ literal|32767.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|5.0
+literal|0.01
 argument_list|,
 literal|0.0
 argument_list|)
@@ -3019,6 +3013,8 @@ name|width_units_spinbutton
 argument_list|)
 argument_list|,
 name|GTK_UPDATE_ALWAYS
+operator||
+name|GTK_UPDATE_IF_VALID
 argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_shadow_type
@@ -3031,6 +3027,18 @@ name|width_units_spinbutton
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_NONE
+argument_list|)
+expr_stmt|;
+name|gtk_spin_button_set_snap_to_ticks
+argument_list|(
+name|GTK_SPIN_BUTTON
+argument_list|(
+name|vals
+operator|->
+name|width_units_spinbutton
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_usize
@@ -3132,7 +3140,7 @@ literal|32767.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|5.0
+literal|0.01
 argument_list|,
 literal|0.0
 argument_list|)
@@ -3160,6 +3168,8 @@ name|height_units_spinbutton
 argument_list|)
 argument_list|,
 name|GTK_UPDATE_ALWAYS
+operator||
+name|GTK_UPDATE_IF_VALID
 argument_list|)
 expr_stmt|;
 name|gtk_spin_button_set_shadow_type
@@ -3172,6 +3182,18 @@ name|height_units_spinbutton
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_NONE
+argument_list|)
+expr_stmt|;
+name|gtk_spin_button_set_snap_to_ticks
+argument_list|(
+name|GTK_SPIN_BUTTON
+argument_list|(
+name|vals
+operator|->
+name|height_units_spinbutton
+argument_list|)
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_usize
@@ -4394,6 +4416,41 @@ name|last_new_image
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+DECL|function|file_new_default_unit_parse (int ruler_unit)
+specifier|static
+name|float
+name|file_new_default_unit_parse
+parameter_list|(
+name|int
+name|ruler_unit
+parameter_list|)
+block|{
+comment|/* checks the enum passed from gimprc to see what the values are */
+if|if
+condition|(
+name|ruler_unit
+operator|==
+literal|1
+condition|)
+return|return
+literal|1.0
+return|;
+if|if
+condition|(
+name|ruler_unit
+operator|==
+literal|2
+condition|)
+return|return
+literal|2.54
+return|;
+return|return
+literal|1.0
+return|;
 block|}
 end_function
 
