@@ -3224,13 +3224,13 @@ name|num_channels
 init|=
 literal|0
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|pixel
 init|=
 name|NULL
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|p
 decl_stmt|;
@@ -3340,7 +3340,7 @@ name|pixel
 operator|=
 name|g_new
 argument_list|(
-name|gint8
+name|guint8
 argument_list|,
 name|num_channels
 argument_list|)
@@ -3593,11 +3593,11 @@ decl_stmt|;
 name|gint32
 name|num_channels
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|pixel
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|p
 decl_stmt|;
@@ -3688,7 +3688,7 @@ expr_stmt|;
 name|pixel
 operator|=
 operator|(
-name|gint8
+name|guint8
 operator|*
 operator|)
 name|args
@@ -4114,7 +4114,7 @@ name|num_pixels
 init|=
 literal|0
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|thumbnail_data
 init|=
@@ -4313,7 +4313,7 @@ name|thumbnail_data
 operator|=
 name|g_new
 argument_list|(
-name|gint8
+name|guint8
 argument_list|,
 name|num_pixels
 argument_list|)

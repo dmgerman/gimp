@@ -1564,7 +1564,7 @@ name|length
 init|=
 literal|0
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|mask_data
 init|=
@@ -1706,7 +1706,7 @@ name|mask_data
 operator|=
 name|g_new
 argument_list|(
-name|gint8
+name|guint8
 argument_list|,
 name|length
 argument_list|)

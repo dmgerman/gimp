@@ -6154,7 +6154,7 @@ name|num_bytes
 init|=
 literal|0
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|cmap
 init|=
@@ -6201,7 +6201,7 @@ name|cmap
 operator|=
 name|g_new
 argument_list|(
-name|gint8
+name|guint8
 argument_list|,
 name|num_bytes
 argument_list|)
@@ -6371,7 +6371,7 @@ decl_stmt|;
 name|gint32
 name|num_bytes
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|cmap
 decl_stmt|;
@@ -6427,7 +6427,7 @@ expr_stmt|;
 name|cmap
 operator|=
 operator|(
-name|gint8
+name|guint8
 operator|*
 operator|)
 name|args
@@ -7864,7 +7864,7 @@ name|num_pixels
 init|=
 literal|0
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|thumbnail_data
 init|=
@@ -8030,7 +8030,7 @@ name|thumbnail_data
 operator|=
 name|g_new
 argument_list|(
-name|gint8
+name|guint8
 argument_list|,
 name|num_pixels
 argument_list|)

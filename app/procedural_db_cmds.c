@@ -2827,7 +2827,7 @@ name|gchar
 modifier|*
 name|identifier
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|data_copy
 init|=
@@ -2919,7 +2919,7 @@ name|data_copy
 operator|=
 name|g_new
 argument_list|(
-name|char
+name|guint8
 argument_list|,
 name|data
 operator|->
@@ -3325,7 +3325,7 @@ decl_stmt|;
 name|gint32
 name|bytes
 decl_stmt|;
-name|gint8
+name|guint8
 modifier|*
 name|data_src
 decl_stmt|;
@@ -3388,7 +3388,7 @@ expr_stmt|;
 name|data_src
 operator|=
 operator|(
-name|gint8
+name|guint8
 operator|*
 operator|)
 name|args
