@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278071dc0108
+DECL|struct|__anon29ed20b20108
 block|{
 DECL|member|width
 DECL|member|height
@@ -854,7 +854,11 @@ name|sx1
 argument_list|,
 name|h
 argument_list|,
-name|width
+operator|(
+name|sx2
+operator|-
+name|sx1
+operator|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -874,6 +878,7 @@ operator|==
 literal|0
 condition|)
 block|{
+comment|/* Draw row */
 for|for
 control|(
 name|w
@@ -904,7 +909,11 @@ control|)
 block|{
 name|copybuf
 index|[
+operator|(
 name|w
+operator|-
+name|sx1
+operator|)
 operator|*
 name|bytes
 operator|+
@@ -921,6 +930,7 @@ block|}
 block|}
 else|else
 block|{
+comment|/* Just copy shit */
 for|for
 control|(
 name|w
@@ -968,7 +978,11 @@ control|)
 block|{
 name|copybuf
 index|[
+operator|(
 name|w
+operator|-
+name|sx1
+operator|)
 operator|*
 name|bytes
 operator|+
@@ -995,7 +1009,11 @@ name|sx1
 argument_list|,
 name|h
 argument_list|,
-name|width
+operator|(
+name|sx2
+operator|-
+name|sx1
+operator|)
 argument_list|)
 expr_stmt|;
 name|gimp_progress_update
