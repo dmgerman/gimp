@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * "$Id$"  *  *   SGI image file format library routines.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   sgiClose()    - Close an SGI image file.  *   sgiGetRow()   - Get a row of image data from a file.  *   sgiOpen()     - Open an SGI image file for reading or writing.  *   sgiOpenFile() - Open an SGI image file for reading or writing.  *   sgiPutRow()   - Put a row of image data to a file.  *   getlong()     - Get a 32-bit big-endian integer.  *   getshort()    - Get a 16-bit big-endian integer.  *   putlong()     - Put a 32-bit big-endian integer.  *   putshort()    - Put a 16-bit big-endian integer.  *   read_rle8()   - Read 8-bit RLE data.  *   read_rle16()  - Read 16-bit RLE data.  *   write_rle8()  - Write 8-bit RLE data.  *   write_rle16() - Write 16-bit RLE data.  *  * Revision History:  *  *   $Log$  *   Revision 1.7  1998/06/06 23:22:21  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.5  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.4  1998/02/05  17:10:58  mike  *   Added sgiOpenFile() function for opening an existing file pointer.  *  *   Revision 1.3  1997/07/02  16:40:16  mike  *   sgiOpen() wasn't opening files with "rb" or "wb+".  This caused problems  *   on PCs running Windows/DOS...  *  *   Revision 1.2  1997/06/18  00:55:28  mike  *   Updated to hold length table when writing.  *   Updated to hold current length when doing ARLE.  *   Wasn't writing length table on close.  *   Wasn't saving new line into arle_row when necessary.  *  *   Revision 1.1  1997/06/15  03:37:19  mike  *   Initial revision  */
+comment|/*  * "$Id$"  *  *   SGI image file format library routines.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Contents:  *  *   sgiClose()    - Close an SGI image file.  *   sgiGetRow()   - Get a row of image data from a file.  *   sgiOpen()     - Open an SGI image file for reading or writing.  *   sgiOpenFile() - Open an SGI image file for reading or writing.  *   sgiPutRow()   - Put a row of image data to a file.  *   getlong()     - Get a 32-bit big-endian integer.  *   getshort()    - Get a 16-bit big-endian integer.  *   putlong()     - Put a 32-bit big-endian integer.  *   putshort()    - Put a 16-bit big-endian integer.  *   read_rle8()   - Read 8-bit RLE data.  *   read_rle16()  - Read 16-bit RLE data.  *   write_rle8()  - Write 8-bit RLE data.  *   write_rle16() - Write 16-bit RLE data.  *  * Revision History:  *  *   $Log$  *   Revision 1.8  2003/04/07 11:59:33  neo  *   2003-04-07  Sven Neumann<sven@gimp.org>  *  *   	* plug-ins/sgi/sgi.h  *   	* plug-ins/sgi/sgilib.c: applied a patch from marek@aki.cz that  *   	adds support for reading SGI files in little-endian format. Fixes  *   	bug #106610.  *  *   Revision 1.7  1998/06/06 23:22:21  yosh  *   * adding Lighting plugin  *  *   * updated despeckle, png, sgi, and sharpen  *  *   -Yosh  *  *   Revision 1.5  1998/04/23  17:40:49  mike  *   Updated to support 16-bit<unsigned> image data.  *  *   Revision 1.4  1998/02/05  17:10:58  mike  *   Added sgiOpenFile() function for opening an existing file pointer.  *  *   Revision 1.3  1997/07/02  16:40:16  mike  *   sgiOpen() wasn't opening files with "rb" or "wb+".  This caused problems  *   on PCs running Windows/DOS...  *  *   Revision 1.2  1997/06/18  00:55:28  mike  *   Updated to hold length table when writing.  *   Updated to hold current length when doing ARLE.  *   Wasn't writing length table on close.  *   Wasn't saving new line into arle_row when necessary.  *  *   Revision 1.1  1997/06/15  03:37:19  mike  *   Initial revision  */
 end_comment
 
 begin_include
@@ -18,7 +18,7 @@ specifier|static
 name|int
 name|getlong
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
 parameter_list|)
 function_decl|;
@@ -29,7 +29,7 @@ specifier|static
 name|int
 name|getshort
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
 parameter_list|)
 function_decl|;
@@ -42,7 +42,7 @@ name|putlong
 parameter_list|(
 name|long
 parameter_list|,
-name|FILE
+name|sgi_t
 modifier|*
 parameter_list|)
 function_decl|;
@@ -56,7 +56,7 @@ parameter_list|(
 name|unsigned
 name|short
 parameter_list|,
-name|FILE
+name|sgi_t
 modifier|*
 parameter_list|)
 function_decl|;
@@ -67,7 +67,7 @@ specifier|static
 name|int
 name|read_rle8
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
 parameter_list|,
 name|unsigned
@@ -84,7 +84,7 @@ specifier|static
 name|int
 name|read_rle16
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
 parameter_list|,
 name|unsigned
@@ -101,7 +101,7 @@ specifier|static
 name|int
 name|write_rle8
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
 parameter_list|,
 name|unsigned
@@ -118,7 +118,7 @@ specifier|static
 name|int
 name|write_rle16
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
 parameter_list|,
 name|unsigned
@@ -234,8 +234,6 @@ literal|0
 index|]
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 operator|<
 literal|0
@@ -287,8 +285,6 @@ literal|0
 index|]
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 operator|<
 literal|0
@@ -586,8 +582,6 @@ operator|=
 name|getshort
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -643,8 +637,6 @@ operator|(
 name|read_rle8
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|,
 name|row
 argument_list|,
@@ -660,8 +652,6 @@ operator|(
 name|read_rle16
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|,
 name|row
 argument_list|,
@@ -897,6 +887,12 @@ name|file
 operator|=
 name|file
 expr_stmt|;
+name|sgip
+operator|->
+name|swapBytes
+operator|=
+literal|0
+expr_stmt|;
 switch|switch
 condition|(
 name|mode
@@ -916,9 +912,37 @@ operator|=
 name|getshort
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|magic
+operator|!=
+name|SGI_MAGIC
+condition|)
+block|{
+comment|/* try little endian format */
+name|magic
+operator|=
+operator|(
+operator|(
+name|magic
+operator|>>
+literal|8
+operator|)
+operator|&
+literal|0x00ff
+operator|)
+operator||
+operator|(
+operator|(
+name|magic
+operator|<<
+literal|8
+operator|)
+operator|&
+literal|0xff00
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -938,7 +962,16 @@ name|NULL
 operator|)
 return|;
 block|}
-empty_stmt|;
+else|else
+block|{
+name|sgip
+operator|->
+name|swapBytes
+operator|=
+literal|1
+expr_stmt|;
+block|}
+block|}
 name|sgip
 operator|->
 name|comp
@@ -964,8 +997,6 @@ expr_stmt|;
 name|getshort
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Dimensions */
@@ -976,8 +1007,6 @@ operator|=
 name|getshort
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 name|sgip
@@ -987,8 +1016,6 @@ operator|=
 name|getshort
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 name|sgip
@@ -998,23 +1025,17 @@ operator|=
 name|getshort
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 name|getlong
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Minimum pixel */
 name|getlong
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Maximum pixel */
@@ -1155,8 +1176,6 @@ operator|=
 name|getlong
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -1219,8 +1238,6 @@ argument_list|(
 name|SGI_MAGIC
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 name|putc
@@ -1258,8 +1275,6 @@ argument_list|(
 literal|3
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Dimensions */
@@ -1272,8 +1287,6 @@ operator|=
 name|xsize
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 name|putshort
@@ -1285,8 +1298,6 @@ operator|=
 name|ysize
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 name|putshort
@@ -1298,8 +1309,6 @@ operator|=
 name|zsize
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 if|if
@@ -1314,8 +1323,6 @@ argument_list|(
 literal|0
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Minimum pixel */
@@ -1324,8 +1331,6 @@ argument_list|(
 literal|255
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Maximum pixel */
@@ -1338,8 +1343,6 @@ operator|-
 literal|32768
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Minimum pixel */
@@ -1348,8 +1351,6 @@ argument_list|(
 literal|32767
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Maximum pixel */
@@ -1360,8 +1361,6 @@ argument_list|(
 literal|0
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 comment|/* Reserved */
@@ -1411,8 +1410,6 @@ argument_list|(
 literal|0
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1483,8 +1480,6 @@ argument_list|(
 literal|0
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -1547,8 +1542,6 @@ argument_list|(
 literal|0
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 name|sgip
@@ -1940,8 +1933,6 @@ operator|*
 name|row
 argument_list|,
 name|sgip
-operator|->
-name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -2102,8 +2093,6 @@ operator|=
 name|read_rle8
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|,
 name|sgip
 operator|->
@@ -2191,8 +2180,6 @@ operator|=
 name|read_rle16
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|,
 name|sgip
 operator|->
@@ -2386,8 +2373,6 @@ operator|=
 name|write_rle8
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|,
 name|row
 argument_list|,
@@ -2402,8 +2387,6 @@ operator|=
 name|write_rle16
 argument_list|(
 name|sgip
-operator|->
-name|file
 argument_list|,
 name|row
 argument_list|,
@@ -2498,14 +2481,14 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|getlong (FILE * fp)
+DECL|function|getlong (sgi_t * sgip)
 name|getlong
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
-name|fp
+name|sgip
 parameter_list|)
-comment|/* I - File to read from */
+comment|/* I - SGI image to read from */
 block|{
 name|unsigned
 name|char
@@ -2522,9 +2505,53 @@ literal|4
 argument_list|,
 literal|1
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|sgip
+operator|->
+name|swapBytes
+condition|)
+return|return
+operator|(
+operator|(
+name|b
+index|[
+literal|3
+index|]
+operator|<<
+literal|24
+operator|)
+operator||
+operator|(
+name|b
+index|[
+literal|2
+index|]
+operator|<<
+literal|16
+operator|)
+operator||
+operator|(
+name|b
+index|[
+literal|1
+index|]
+operator|<<
+literal|8
+operator|)
+operator||
+name|b
+index|[
+literal|0
+index|]
+operator|)
+return|;
+else|else
 return|return
 operator|(
 operator|(
@@ -2570,14 +2597,14 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|getshort (FILE * fp)
+DECL|function|getshort (sgi_t * sgip)
 name|getshort
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
-name|fp
+name|sgip
 parameter_list|)
-comment|/* I - File to read from */
+comment|/* I - SGI image to read from */
 block|{
 name|unsigned
 name|char
@@ -2594,9 +2621,35 @@ literal|2
 argument_list|,
 literal|1
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|sgip
+operator|->
+name|swapBytes
+condition|)
+return|return
+operator|(
+operator|(
+name|b
+index|[
+literal|1
+index|]
+operator|<<
+literal|8
+operator|)
+operator||
+name|b
+index|[
+literal|0
+index|]
+operator|)
+return|;
+else|else
 return|return
 operator|(
 operator|(
@@ -2624,16 +2677,16 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|putlong (long n,FILE * fp)
+DECL|function|putlong (long n,sgi_t * sgip)
 name|putlong
 parameter_list|(
 name|long
 name|n
 parameter_list|,
 comment|/* I - Long to write */
-name|FILE
+name|sgi_t
 modifier|*
-name|fp
+name|sgip
 parameter_list|)
 comment|/* I - File to write to */
 block|{
@@ -2645,7 +2698,9 @@ name|n
 operator|>>
 literal|24
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -2663,7 +2718,9 @@ name|n
 operator|>>
 literal|16
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -2681,7 +2738,9 @@ name|n
 operator|>>
 literal|8
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -2697,7 +2756,9 @@ name|putc
 argument_list|(
 name|n
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -2723,7 +2784,7 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|putshort (unsigned short n,FILE * fp)
+DECL|function|putshort (unsigned short n,sgi_t * sgip)
 name|putshort
 parameter_list|(
 name|unsigned
@@ -2731,9 +2792,9 @@ name|short
 name|n
 parameter_list|,
 comment|/* I - Short to write */
-name|FILE
+name|sgi_t
 modifier|*
-name|fp
+name|sgip
 parameter_list|)
 comment|/* I - File to write to */
 block|{
@@ -2745,7 +2806,9 @@ name|n
 operator|>>
 literal|8
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -2761,7 +2824,9 @@ name|putc
 argument_list|(
 name|n
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -2787,14 +2852,14 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|read_rle8 (FILE * fp,unsigned short * row,int xsize)
+DECL|function|read_rle8 (sgi_t * sgip,unsigned short * row,int xsize)
 name|read_rle8
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
-name|fp
+name|sgip
 parameter_list|,
-comment|/* I - File to read from */
+comment|/* I - SGI image to read from */
 name|unsigned
 name|short
 modifier|*
@@ -2837,7 +2902,9 @@ name|ch
 operator|=
 name|getc
 argument_list|(
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|)
 operator|==
@@ -2899,7 +2966,9 @@ name|row
 operator|=
 name|getc
 argument_list|(
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 expr_stmt|;
 block|}
@@ -2909,7 +2978,9 @@ name|ch
 operator|=
 name|getc
 argument_list|(
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 expr_stmt|;
 name|length
@@ -2965,14 +3036,14 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|read_rle16 (FILE * fp,unsigned short * row,int xsize)
+DECL|function|read_rle16 (sgi_t * sgip,unsigned short * row,int xsize)
 name|read_rle16
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
-name|fp
+name|sgip
 parameter_list|,
-comment|/* I - File to read from */
+comment|/* I - SGI image to read from */
 name|unsigned
 name|short
 modifier|*
@@ -3015,7 +3086,7 @@ name|ch
 operator|=
 name|getshort
 argument_list|(
-name|fp
+name|sgip
 argument_list|)
 operator|)
 operator|==
@@ -3077,7 +3148,7 @@ name|row
 operator|=
 name|getshort
 argument_list|(
-name|fp
+name|sgip
 argument_list|)
 expr_stmt|;
 block|}
@@ -3087,7 +3158,7 @@ name|ch
 operator|=
 name|getshort
 argument_list|(
-name|fp
+name|sgip
 argument_list|)
 expr_stmt|;
 name|length
@@ -3145,14 +3216,14 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|write_rle8 (FILE * fp,unsigned short * row,int xsize)
+DECL|function|write_rle8 (sgi_t * sgip,unsigned short * row,int xsize)
 name|write_rle8
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
-name|fp
+name|sgip
 parameter_list|,
-comment|/* I - File to write to */
+comment|/* I - SGI image to write to */
 name|unsigned
 name|short
 modifier|*
@@ -3297,7 +3368,9 @@ literal|128
 operator||
 name|i
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -3325,7 +3398,9 @@ argument_list|(
 operator|*
 name|start
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -3426,7 +3501,9 @@ name|putc
 argument_list|(
 name|i
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -3446,7 +3523,9 @@ name|putc
 argument_list|(
 name|repeat
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -3473,7 +3552,9 @@ name|putc
 argument_list|(
 literal|0
 argument_list|,
-name|fp
+name|sgip
+operator|->
+name|file
 argument_list|)
 operator|==
 name|EOF
@@ -3500,14 +3581,14 @@ end_comment
 begin_function
 specifier|static
 name|int
-DECL|function|write_rle16 (FILE * fp,unsigned short * row,int xsize)
+DECL|function|write_rle16 (sgi_t * sgip,unsigned short * row,int xsize)
 name|write_rle16
 parameter_list|(
-name|FILE
+name|sgi_t
 modifier|*
-name|fp
+name|sgip
 parameter_list|,
-comment|/* I - File to write to */
+comment|/* I - SGI image to write to */
 name|unsigned
 name|short
 modifier|*
@@ -3652,7 +3733,7 @@ literal|128
 operator||
 name|i
 argument_list|,
-name|fp
+name|sgip
 argument_list|)
 operator|==
 name|EOF
@@ -3680,7 +3761,7 @@ argument_list|(
 operator|*
 name|start
 argument_list|,
-name|fp
+name|sgip
 argument_list|)
 operator|==
 name|EOF
@@ -3781,7 +3862,7 @@ name|putshort
 argument_list|(
 name|i
 argument_list|,
-name|fp
+name|sgip
 argument_list|)
 operator|==
 name|EOF
@@ -3801,7 +3882,7 @@ name|putshort
 argument_list|(
 name|repeat
 argument_list|,
-name|fp
+name|sgip
 argument_list|)
 operator|==
 name|EOF
@@ -3828,7 +3909,7 @@ name|putshort
 argument_list|(
 literal|0
 argument_list|,
-name|fp
+name|sgip
 argument_list|)
 operator|==
 name|EOF

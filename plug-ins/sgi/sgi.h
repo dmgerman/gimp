@@ -109,7 +109,7 @@ comment|/* Agressive run-length encoding */
 comment|/*  * Image structure...  */
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c927a940108
+DECL|struct|__anon2b73843b0108
 block|{
 DECL|member|file
 name|FILE
@@ -128,8 +128,12 @@ decl_stmt|,
 comment|/* Bytes per pixel/channel */
 DECL|member|comp
 name|comp
-decl_stmt|;
+decl_stmt|,
 comment|/* Compression */
+DECL|member|swapBytes
+name|swapBytes
+decl_stmt|;
+comment|/* SwapBytes flag */
 DECL|member|xsize
 name|unsigned
 name|short
