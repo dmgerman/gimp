@@ -12,19 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
@@ -43,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"gui-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimpconfig-utils.h"
 end_include
 
 begin_include
@@ -90,18 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpenummenu.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimppropwidgets.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimptemplateeditor.h"
 end_include
 
@@ -126,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b275c60108
+DECL|struct|__anon289bebb40108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -162,9 +132,9 @@ DECL|member|memsize
 name|gulong
 name|memsize
 decl_stmt|;
-DECL|typedef|NewImageInfo
+DECL|typedef|FileNewDialog
 block|}
-name|NewImageInfo
+name|FileNewDialog
 typedef|;
 end_typedef
 
@@ -181,9 +151,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -197,9 +167,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -213,9 +183,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -233,9 +203,9 @@ name|GParamSpec
 modifier|*
 name|param_spec
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -256,9 +226,9 @@ parameter_list|,
 name|gpointer
 name|insert_data
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -268,9 +238,9 @@ specifier|static
 name|void
 name|file_new_confirm_dialog
 parameter_list|(
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -280,9 +250,9 @@ specifier|static
 name|void
 name|file_new_create_image
 parameter_list|(
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -305,9 +275,9 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 decl_stmt|;
 name|GimpTemplate
 modifier|*
@@ -345,28 +315,28 @@ name|gimage
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|info
+name|dialog
 operator|=
 name|g_new0
 argument_list|(
-name|NewImageInfo
+name|FileNewDialog
 argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|info
+name|dialog
 operator|->
 name|gimp
 operator|=
 name|gimp
 expr_stmt|;
-name|info
+name|dialog
 operator|->
 name|memsize
 operator|=
 literal|0
 expr_stmt|;
-name|info
+name|dialog
 operator|->
 name|dialog
 operator|=
@@ -396,7 +366,7 @@ name|GIMP_STOCK_RESET
 argument_list|,
 name|file_new_reset_callback
 argument_list|,
-name|info
+name|dialog
 argument_list|,
 name|NULL
 argument_list|,
@@ -410,7 +380,7 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|file_new_cancel_callback
 argument_list|,
-name|info
+name|dialog
 argument_list|,
 name|NULL
 argument_list|,
@@ -424,12 +394,12 @@ name|GTK_STOCK_OK
 argument_list|,
 name|file_new_ok_callback
 argument_list|,
-name|info
+name|dialog
 argument_list|,
 name|NULL
 argument_list|,
 operator|&
-name|info
+name|dialog
 operator|->
 name|ok_button
 argument_list|,
@@ -444,7 +414,7 @@ name|gtk_window_set_resizable
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|dialog
 argument_list|)
@@ -478,7 +448,7 @@ name|GTK_BOX
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|dialog
 argument_list|)
@@ -574,7 +544,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|info
+name|dialog
 operator|->
 name|template_menu
 operator|=
@@ -598,14 +568,14 @@ argument_list|(
 name|optionmenu
 argument_list|)
 argument_list|,
-name|info
+name|dialog
 operator|->
 name|template_menu
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|template_menu
 argument_list|)
@@ -614,7 +584,7 @@ name|gimp_container_menu_select_item
 argument_list|(
 name|GIMP_CONTAINER_MENU
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|template_menu
 argument_list|)
@@ -624,7 +594,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|template_menu
 argument_list|,
@@ -635,11 +605,11 @@ argument_list|(
 name|file_new_template_select
 argument_list|)
 argument_list|,
-name|info
+name|dialog
 argument_list|)
 expr_stmt|;
 comment|/*  Template editor  */
-name|info
+name|dialog
 operator|->
 name|editor
 operator|=
@@ -653,7 +623,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-name|info
+name|dialog
 operator|->
 name|editor
 argument_list|,
@@ -666,7 +636,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|editor
 argument_list|)
@@ -675,7 +645,7 @@ name|g_signal_connect
 argument_list|(
 name|GIMP_TEMPLATE_EDITOR
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|editor
 argument_list|)
@@ -689,7 +659,7 @@ argument_list|(
 name|file_new_template_notify
 argument_list|)
 argument_list|,
-name|info
+name|dialog
 argument_list|)
 expr_stmt|;
 name|template
@@ -705,7 +675,7 @@ name|gimp_template_editor_set_template
 argument_list|(
 name|GIMP_TEMPLATE_EDITOR
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|editor
 argument_list|)
@@ -724,7 +694,7 @@ name|GIMP_SIZE_ENTRY
 argument_list|(
 name|GIMP_TEMPLATE_EDITOR
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|editor
 argument_list|)
@@ -735,7 +705,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|dialog
 argument_list|)
@@ -750,27 +720,27 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_ok_callback (GtkWidget * widget,NewImageInfo * info)
+DECL|function|file_new_ok_callback (GtkWidget * widget,FileNewDialog * dialog)
 name|file_new_ok_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 block|{
 if|if
 condition|(
-name|info
+name|dialog
 operator|->
 name|memsize
 operator|>
 name|GIMP_GUI_CONFIG
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|gimp
 operator|->
@@ -781,13 +751,13 @@ name|max_new_image_size
 condition|)
 name|file_new_confirm_dialog
 argument_list|(
-name|info
+name|dialog
 argument_list|)
 expr_stmt|;
 else|else
 name|file_new_create_image
 argument_list|(
-name|info
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -796,28 +766,28 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_cancel_callback (GtkWidget * widget,NewImageInfo * info)
+DECL|function|file_new_cancel_callback (GtkWidget * widget,FileNewDialog * dialog)
 name|file_new_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|info
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -826,16 +796,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_reset_callback (GtkWidget * widget,NewImageInfo * info)
+DECL|function|file_new_reset_callback (GtkWidget * widget,FileNewDialog * dialog)
 name|file_new_reset_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 block|{
 name|GimpTemplate
@@ -853,7 +823,7 @@ name|gimp_template_set_from_config
 argument_list|(
 name|template
 argument_list|,
-name|info
+name|dialog
 operator|->
 name|gimp
 operator|->
@@ -864,7 +834,7 @@ name|gimp_template_editor_set_template
 argument_list|(
 name|GIMP_TEMPLATE_EDITOR
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|editor
 argument_list|)
@@ -883,7 +853,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_template_notify (GimpTemplate * template,GParamSpec * param_spec,NewImageInfo * info)
+DECL|function|file_new_template_notify (GimpTemplate * template,GParamSpec * param_spec,FileNewDialog * dialog)
 name|file_new_template_notify
 parameter_list|(
 name|GimpTemplate
@@ -894,14 +864,14 @@ name|GParamSpec
 modifier|*
 name|param_spec
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 block|{
 if|if
 condition|(
-name|info
+name|dialog
 operator|->
 name|memsize
 operator|!=
@@ -910,7 +880,7 @@ operator|->
 name|initial_size
 condition|)
 block|{
-name|info
+name|dialog
 operator|->
 name|memsize
 operator|=
@@ -920,7 +890,7 @@ name|initial_size
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|ok_button
 argument_list|,
@@ -937,7 +907,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_template_select (GimpContainerMenu * menu,GimpTemplate * template,gpointer insert_data,NewImageInfo * info)
+DECL|function|file_new_template_select (GimpContainerMenu * menu,GimpTemplate * template,gpointer insert_data,FileNewDialog * dialog)
 name|file_new_template_select
 parameter_list|(
 name|GimpContainerMenu
@@ -951,9 +921,9 @@ parameter_list|,
 name|gpointer
 name|insert_data
 parameter_list|,
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 block|{
 if|if
@@ -964,7 +934,7 @@ name|gimp_template_editor_set_template
 argument_list|(
 name|GIMP_TEMPLATE_EDITOR
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|editor
 argument_list|)
@@ -996,17 +966,17 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 init|=
 operator|(
-name|NewImageInfo
+name|FileNewDialog
 operator|*
 operator|)
 name|data
 decl_stmt|;
-name|info
+name|dialog
 operator|->
 name|confirm_dialog
 operator|=
@@ -1018,13 +988,13 @@ name|create
 condition|)
 name|file_new_create_image
 argument_list|(
-name|info
+name|dialog
 argument_list|)
 expr_stmt|;
 else|else
 name|gtk_widget_set_sensitive
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|dialog
 argument_list|,
@@ -1037,12 +1007,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_confirm_dialog (NewImageInfo * info)
+DECL|function|file_new_confirm_dialog (FileNewDialog * dialog)
 name|file_new_confirm_dialog
 parameter_list|(
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 block|{
 name|gchar
@@ -1061,7 +1031,7 @@ name|size_str
 operator|=
 name|gimp_memsize_to_string
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|memsize
 argument_list|)
@@ -1072,7 +1042,7 @@ name|gimp_memsize_to_string
 argument_list|(
 name|GIMP_GUI_CONFIG
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|gimp
 operator|->
@@ -1114,7 +1084,7 @@ argument_list|(
 name|max_size_str
 argument_list|)
 expr_stmt|;
-name|info
+name|dialog
 operator|->
 name|confirm_dialog
 operator|=
@@ -1143,7 +1113,7 @@ name|NULL
 argument_list|,
 name|file_new_confirm_dialog_callback
 argument_list|,
-name|info
+name|dialog
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1155,14 +1125,14 @@ name|gtk_window_set_transient_for
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|confirm_dialog
 argument_list|)
 argument_list|,
 name|GTK_WINDOW
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|dialog
 argument_list|)
@@ -1170,7 +1140,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|dialog
 argument_list|,
@@ -1179,7 +1149,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|confirm_dialog
 argument_list|)
@@ -1190,12 +1160,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_new_create_image (NewImageInfo * info)
+DECL|function|file_new_create_image (FileNewDialog * dialog)
 name|file_new_create_image
 parameter_list|(
-name|NewImageInfo
+name|FileNewDialog
 modifier|*
-name|info
+name|dialog
 parameter_list|)
 block|{
 name|GimpTemplate
@@ -1208,7 +1178,7 @@ name|gimp_template_editor_get_template
 argument_list|(
 name|GIMP_TEMPLATE_EDITOR
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|editor
 argument_list|)
@@ -1216,14 +1186,14 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
 name|gimp_template_create_image
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|gimp
 argument_list|,
@@ -1232,7 +1202,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_new_set_last_template
 argument_list|(
-name|info
+name|dialog
 operator|->
 name|gimp
 argument_list|,
@@ -1246,7 +1216,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|info
+name|dialog
 argument_list|)
 expr_stmt|;
 block|}
