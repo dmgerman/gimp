@@ -67,7 +67,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c4282a0103
+DECL|enum|__anon2a4d7ed10103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -469,37 +469,6 @@ typedef|typedef
 name|struct
 name|_GimpPlugInDebug
 name|GimpPlugInDebug
-typedef|;
-end_typedef
-
-begin_comment
-comment|/*  EEK stuff  */
-end_comment
-
-begin_typedef
-DECL|typedef|Path
-typedef|typedef
-name|struct
-name|_Path
-name|Path
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PathPoint
-typedef|typedef
-name|struct
-name|_PathPoint
-name|PathPoint
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|PathList
-typedef|typedef
-name|struct
-name|_PathList
-name|PathList
 typedef|;
 end_typedef
 

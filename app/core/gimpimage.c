@@ -204,12 +204,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"path.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -252,7 +246,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon275582ee0103
+DECL|enum|__anon2ad5352f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -1880,12 +1874,6 @@ argument_list|()
 expr_stmt|;
 name|gimage
 operator|->
-name|paths
-operator|=
-name|NULL
-expr_stmt|;
-name|gimage
-operator|->
 name|qmask_state
 operator|=
 name|FALSE
@@ -2604,7 +2592,6 @@ name|parasites
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME paths */
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
@@ -8413,7 +8400,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  layers / channels / paths  */
+comment|/*  layers / channels / vectors  */
 end_comment
 
 begin_function
@@ -8502,67 +8489,6 @@ return|return
 name|gimage
 operator|->
 name|vectors
-return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_image_set_paths (GimpImage * gimage,PathList * paths)
-name|gimp_image_set_paths
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|PathList
-modifier|*
-name|paths
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimage
-operator|->
-name|paths
-operator|=
-name|paths
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|PathList
-modifier|*
-DECL|function|gimp_image_get_paths (const GimpImage * gimage)
-name|gimp_image_get_paths
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|gimage
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|gimage
-operator|->
-name|paths
 return|;
 block|}
 end_function

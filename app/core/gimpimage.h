@@ -398,12 +398,6 @@ modifier|*
 name|parasites
 decl_stmt|;
 comment|/*  Plug-in parasite data        */
-DECL|member|paths
-name|PathList
-modifier|*
-name|paths
-decl_stmt|;
-comment|/*  Paths data for this image    */
 DECL|member|visible
 name|gboolean
 name|visible
@@ -1818,34 +1812,6 @@ begin_function_decl
 name|GimpContainer
 modifier|*
 name|gimp_image_get_vectors
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_image_set_paths
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|PathList
-modifier|*
-name|paths
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|PathList
-modifier|*
-name|gimp_image_get_paths
 parameter_list|(
 specifier|const
 name|GimpImage

@@ -453,20 +453,6 @@ argument_list|,
 name|NULL
 argument_list|)
 block|,
-name|ADD_TAB
-argument_list|(
-name|N_
-argument_list|(
-literal|"/Add Tab/Old Paths..."
-argument_list|)
-argument_list|,
-literal|"gimp-path-list"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-block|,
 block|{
 block|{
 name|N_

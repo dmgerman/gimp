@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbaad960103
+DECL|enum|__anon2c4ca0b10103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2650,11 +2650,12 @@ modifier|*
 name|stroke
 parameter_list|)
 block|{
+comment|/*  Don't g_list_prepend() here.  See ChangeLog 2003-05-21 --Mitch  */
 name|vectors
 operator|->
 name|strokes
 operator|=
-name|g_list_prepend
+name|g_list_append
 argument_list|(
 name|vectors
 operator|->

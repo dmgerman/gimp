@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbezierselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpblendtool.h"
 end_include
 
@@ -352,8 +346,6 @@ block|,
 name|gimp_color_picker_tool_register
 block|,
 comment|/*  selection tools */
-name|gimp_bezier_select_tool_register
-block|,
 name|gimp_iscissors_tool_register
 block|,
 name|gimp_by_color_select_tool_register

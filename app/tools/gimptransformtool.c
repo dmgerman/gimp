@@ -215,12 +215,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"path_transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1861,20 +1855,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|#
+directive|if
+literal|0
 comment|/*  Only update the paths preview */
-name|path_transform_current_path
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
-name|tr_tool
-operator|->
-name|transform
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
+block|path_transform_current_path (gdisp->gimage, 				       tr_tool->transform, TRUE);
+endif|#
+directive|endif
 block|}
 block|}
 else|else
@@ -1931,20 +1918,13 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
 comment|/* Update the paths preview */
-name|path_transform_current_path
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-argument_list|,
-name|tr_tool
-operator|->
-name|transform
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
+block|path_transform_current_path (gdisp->gimage, 				   tr_tool->transform, TRUE);
+endif|#
+directive|endif
 block|}
 block|}
 end_function
@@ -3059,20 +3039,12 @@ name|tmp_matrix
 argument_list|)
 expr_stmt|;
 block|}
-name|path_transform_draw_current
-argument_list|(
-name|GIMP_TOOL
-argument_list|(
-name|draw_tool
-argument_list|)
-operator|->
-name|gdisp
-argument_list|,
-name|draw_tool
-argument_list|,
-name|tmp_matrix
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|path_transform_draw_current (GIMP_TOOL (draw_tool)->gdisp,                                    draw_tool, tmp_matrix);
+endif|#
+directive|endif
 block|}
 block|}
 end_function
