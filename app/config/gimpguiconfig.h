@@ -142,6 +142,10 @@ DECL|member|tearoff_menus
 name|gboolean
 name|tearoff_menus
 decl_stmt|;
+DECL|member|can_change_accels
+name|gboolean
+name|can_change_accels
+decl_stmt|;
 DECL|member|last_opened_size
 name|gint
 name|last_opened_size

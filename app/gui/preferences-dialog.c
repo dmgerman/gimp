@@ -4879,6 +4879,23 @@ name|vbox2
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|prefs_check_button_add
+argument_list|(
+name|config
+argument_list|,
+literal|"can-change-accels"
+argument_list|,
+name|_
+argument_list|(
+literal|"Dynamic _Keyboard Shortcuts (does not work in GNOME2 yet)"
+argument_list|)
+argument_list|,
+name|GTK_BOX
+argument_list|(
+name|vbox2
+argument_list|)
+argument_list|)
+expr_stmt|;
 comment|/* Window Positions */
 name|vbox2
 operator|=
@@ -6199,7 +6216,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c973eb00108
+DECL|struct|__anon2c14547a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7820,7 +7837,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c973eb00208
+DECL|struct|__anon2c14547a0208
 block|{
 DECL|member|label
 specifier|const
@@ -7979,7 +7996,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c973eb00308
+DECL|struct|__anon2c14547a0308
 block|{
 DECL|member|tree_label
 specifier|const

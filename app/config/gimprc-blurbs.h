@@ -645,6 +645,15 @@ value|N_("When enabled, menus can be torn off.")
 end_define
 
 begin_define
+DECL|macro|CAN_CHANGE_ACCELS_BLURB
+define|#
+directive|define
+name|CAN_CHANGE_ACCELS_BLURB
+define|\
+value|N_("When enabled, you can change keyboard shortcuts for menu items on the fly.")
+end_define
+
+begin_define
 DECL|macro|TEMP_PATH_BLURB
 define|#
 directive|define
