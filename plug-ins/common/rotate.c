@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907b0ba0108
+DECL|struct|__anon2a8d5e8e0108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2907b0ba0208
+DECL|struct|__anon2a8d5e8e0208
 block|{
 DECL|member|ID
 name|gint32
@@ -2074,6 +2074,13 @@ return|return;
 block|}
 if|if
 condition|(
+name|gimp_drawable_is_layer
+argument_list|(
+name|active_drawable
+operator|->
+name|drawable_id
+argument_list|)
+operator|&&
 name|gimp_layer_is_floating_selection
 argument_list|(
 name|active_drawable
