@@ -182,6 +182,14 @@ directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
+begin_define
+DECL|macro|SB_WIDTH
+define|#
+directive|define
+name|SB_WIDTH
+value|10
+end_define
+
 begin_comment
 comment|/*  gimprc will be parsed with a buffer size of 1024,   *  so don't set this too large  */
 end_comment
@@ -197,7 +205,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6328930103
+DECL|enum|__anon2b50c4750103
 block|{
 DECL|enumerator|PREFS_OK
 name|PREFS_OK
@@ -8474,7 +8482,7 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|75
+name|SB_WIDTH
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|)
@@ -8803,7 +8811,7 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|75
+name|SB_WIDTH
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
 argument_list|)
@@ -11961,7 +11969,7 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-literal|75
+name|SB_WIDTH
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
 argument_list|)
@@ -13130,7 +13138,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6328930208
+DECL|struct|__anon2b50c4750208
 block|{
 DECL|member|label
 name|gchar
@@ -13310,7 +13318,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6328930308
+DECL|struct|__anon2b50c4750308
 block|{
 DECL|member|tree_label
 name|gchar

@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be861080108
+DECL|struct|__anon2acff83f0108
 block|{
 DECL|member|resize
 name|Resize
@@ -465,8 +465,6 @@ argument_list|(
 name|image_resize_callback
 argument_list|)
 argument_list|,
-name|NULL
-argument_list|,
 name|image_resize
 argument_list|)
 expr_stmt|;
@@ -612,8 +610,6 @@ name|G_CALLBACK
 argument_list|(
 name|image_scale_callback
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|,
 name|image_scale
 argument_list|)

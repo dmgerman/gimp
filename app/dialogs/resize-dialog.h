@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e8b7b00103
+DECL|enum|__anon2c3ca9080103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e8b7b00203
+DECL|enum|__anon2c3ca9080203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -172,9 +172,6 @@ name|dot_for_dot
 parameter_list|,
 name|GCallback
 name|ok_cb
-parameter_list|,
-name|GCallback
-name|cancel_cb
 parameter_list|,
 name|gpointer
 name|user_data

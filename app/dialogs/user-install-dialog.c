@@ -248,7 +248,7 @@ value|gtk_widget_modify_style (widget, title_style)
 end_define
 
 begin_enum
-DECL|enum|__anon28dc73190103
+DECL|enum|__anon28fe61ff0103
 enum|enum
 block|{
 DECL|enumerator|DIRENT_COLUMN
@@ -509,7 +509,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28dc73190208
+DECL|struct|__anon28fe61ff0208
 block|{
 DECL|member|directory
 name|gboolean
@@ -5200,7 +5200,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|75
+literal|10
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_RESOLUTION
 argument_list|,

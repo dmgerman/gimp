@@ -1293,7 +1293,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|75
+literal|10
 argument_list|,
 name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|,
