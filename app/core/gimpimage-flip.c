@@ -87,12 +87,6 @@ directive|include
 file|"gimplist.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
-end_include
-
 begin_function
 name|void
 DECL|function|gimp_image_flip (GimpImage * gimage,GimpOrientationType flip_type,GimpProgressFunc progress_func,gpointer progress_data)
