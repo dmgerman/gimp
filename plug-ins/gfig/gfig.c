@@ -1156,7 +1156,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2992f6df0108
+DECL|struct|__anon27c7c2f00108
 block|{
 DECL|member|gridspacing
 name|void
@@ -5270,7 +5270,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_file_selection (GFigObj * obj,gchar * tpath)
+DECL|function|create_file_selection (GFigObj * obj,gchar * tpath,GtkWidget * parent)
 name|create_file_selection
 parameter_list|(
 name|GFigObj
@@ -5280,6 +5280,10 @@ parameter_list|,
 name|gchar
 modifier|*
 name|tpath
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 specifier|static
@@ -5302,6 +5306,19 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Save Gfig Drawing"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5500,10 +5517,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_save (void)
+DECL|function|gfig_save (GtkWidget * parent)
 name|gfig_save
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 comment|/* Save the current object */
@@ -5520,6 +5539,8 @@ argument_list|(
 name|current_obj
 argument_list|,
 name|NULL
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 return|return;
@@ -16670,7 +16691,9 @@ case|case
 name|RESPONSE_SAVE
 case|:
 name|gfig_save
-argument_list|()
+argument_list|(
+name|widget
+argument_list|)
 expr_stmt|;
 comment|/* Save current object */
 break|break;
@@ -18625,6 +18648,22 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Load Gfig object collection"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -20845,7 +20884,12 @@ operator|=
 name|gfig_obj_for_menu
 expr_stmt|;
 name|gfig_save
-argument_list|()
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|data
+argument_list|)
+argument_list|)
 expr_stmt|;
 comment|/* Save current object */
 name|current_obj
@@ -20898,6 +20942,11 @@ argument_list|,
 name|gfig_obj_for_menu
 operator|->
 name|filename
+argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -21053,7 +21102,7 @@ argument_list|(
 name|gfig_save_menu_callback
 argument_list|)
 argument_list|,
-name|NULL
+name|window
 argument_list|)
 expr_stmt|;
 if|#

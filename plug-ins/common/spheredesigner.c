@@ -230,7 +230,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb82400103
+DECL|enum|__anon29b36fd20103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb82400203
+DECL|enum|__anon29b36fd20203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -304,7 +304,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb82400303
+DECL|enum|__anon29b36fd20303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -320,7 +320,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb82400403
+DECL|enum|__anon29b36fd20403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb82400503
+DECL|enum|__anon29b36fd20503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -383,7 +383,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400608
+DECL|struct|__anon29b36fd20608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -406,7 +406,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400708
+DECL|struct|__anon29b36fd20708
 block|{
 DECL|member|numcol
 name|gshort
@@ -435,7 +435,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400808
+DECL|struct|__anon29b36fd20808
 block|{
 DECL|member|majtype
 name|gint
@@ -530,7 +530,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400908
+DECL|struct|__anon29b36fd20908
 block|{
 DECL|member|type
 name|gshort
@@ -557,7 +557,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400a08
+DECL|struct|__anon29b36fd20a08
 block|{
 DECL|member|type
 name|gshort
@@ -598,7 +598,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400b08
+DECL|struct|__anon29b36fd20b08
 block|{
 DECL|member|com
 name|common
@@ -623,7 +623,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400c08
+DECL|struct|__anon29b36fd20c08
 block|{
 DECL|member|com
 name|common
@@ -649,7 +649,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400d08
+DECL|struct|__anon29b36fd20d08
 block|{
 DECL|member|com
 name|common
@@ -672,7 +672,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400e08
+DECL|struct|__anon29b36fd20e08
 block|{
 DECL|member|com
 name|common
@@ -697,7 +697,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82400f08
+DECL|struct|__anon29b36fd20f08
 block|{
 DECL|member|com
 name|common
@@ -720,7 +720,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82401008
+DECL|struct|__anon29b36fd21008
 block|{
 DECL|member|com
 name|common
@@ -743,7 +743,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb82401108
+DECL|struct|__anon29b36fd21108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -769,7 +769,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29eb8240120a
+DECL|union|__anon29b36fd2120a
 block|{
 DECL|member|com
 name|common
@@ -1085,7 +1085,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29eb82401308
+DECL|struct|__anon29b36fd21308
 block|{
 DECL|member|solid
 DECL|member|phong
@@ -1195,6 +1195,11 @@ name|void
 name|fileselect
 parameter_list|(
 name|gint
+name|action
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -12800,15 +12805,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|loadpreset (void)
+DECL|function|loadpreset (GtkWidget * widget,GtkWidget * parent)
 name|loadpreset
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|fileselect
 argument_list|(
 literal|0
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 block|}
@@ -12817,15 +12830,23 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|savepreset (void)
+DECL|function|savepreset (GtkWidget * widget,GtkWidget * parent)
 name|savepreset
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|fileselect
 argument_list|(
 literal|1
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 block|}
@@ -12834,11 +12855,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fileselect (gint action)
+DECL|function|fileselect (gint action,GtkWidget * parent)
 name|fileselect
 parameter_list|(
 name|gint
 name|action
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 specifier|static
@@ -12908,7 +12933,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_position
+name|gtk_window_set_transient_for
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -12918,7 +12943,10 @@ name|action
 index|]
 argument_list|)
 argument_list|,
-name|GTK_WIN_POS_MOUSE
+name|GTK_WINDOW
+argument_list|(
+name|parent
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -15220,7 +15248,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|gtk_widget_show
+argument_list|(
+name|button
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
@@ -15231,12 +15264,7 @@ argument_list|(
 name|loadpreset
 argument_list|)
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
+name|window
 argument_list|)
 expr_stmt|;
 name|button
@@ -15262,7 +15290,12 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect_swapped
+name|gtk_widget_show
+argument_list|(
+name|button
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
 argument_list|(
 name|button
 argument_list|,
@@ -15273,12 +15306,7 @@ argument_list|(
 name|savepreset
 argument_list|)
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|button
+name|window
 argument_list|)
 expr_stmt|;
 name|frame

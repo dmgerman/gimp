@@ -324,9 +324,22 @@ parameter_list|,
 name|GtkFileSelection
 modifier|*
 name|fs
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|file_selection_ok
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
 parameter_list|,
-name|gpointer
-name|data
+name|GtkFileSelection
+modifier|*
+name|fs
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -336,7 +349,13 @@ specifier|static
 name|void
 name|create_load_file_selection
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -346,7 +365,13 @@ specifier|static
 name|void
 name|create_file_selection
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -9498,7 +9523,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_selection_ok (GtkWidget * w,GtkFileSelection * fs,gpointer data)
+DECL|function|file_selection_ok (GtkWidget * w,GtkFileSelection * fs)
 name|file_selection_ok
 parameter_list|(
 name|GtkWidget
@@ -9508,9 +9533,6 @@ parameter_list|,
 name|GtkFileSelection
 modifier|*
 name|fs
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 specifier|const
@@ -9597,7 +9619,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_file_selection_ok (GtkWidget * w,GtkFileSelection * fs,gpointer data)
+DECL|function|load_file_selection_ok (GtkWidget * w,GtkFileSelection * fs)
 name|load_file_selection_ok
 parameter_list|(
 name|GtkWidget
@@ -9607,9 +9629,6 @@ parameter_list|,
 name|GtkFileSelection
 modifier|*
 name|fs
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 block|{
 name|filename
@@ -9667,10 +9686,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_load_file_selection (void)
+DECL|function|create_load_file_selection (GtkWidget * widget,GtkWidget * dialog)
 name|create_load_file_selection
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|dialog
 parameter_list|)
 block|{
 specifier|static
@@ -9704,6 +9729,19 @@ name|window
 argument_list|)
 argument_list|,
 name|GTK_WIN_POS_NONE
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -9771,10 +9809,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_file_selection (void)
+DECL|function|create_file_selection (GtkWidget * widget,GtkWidget * dialog)
 name|create_file_selection
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|dialog
 parameter_list|)
 block|{
 specifier|static
@@ -9808,6 +9852,19 @@ name|window
 argument_list|)
 argument_list|,
 name|GTK_WIN_POS_NONE
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -488,7 +488,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon290fa5730108
+DECL|struct|__anon29ebfee30108
 block|{
 DECL|member|randomize
 name|gint
@@ -2174,10 +2174,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|make_file_dlg (void)
+DECL|function|make_file_dlg (GtkWidget * parent)
 name|make_file_dlg
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|file_dlg
@@ -2187,14 +2189,27 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_quit_add_destroy
+name|gtk_window_set_transient_for
 argument_list|(
-literal|1
-argument_list|,
-name|GTK_OBJECT
+name|GTK_WINDOW
 argument_list|(
 name|file_dlg
 argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_destroy_with_parent
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|file_dlg
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -3721,7 +3736,12 @@ name|file_dlg
 condition|)
 block|{
 name|make_file_dlg
-argument_list|()
+argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -3798,7 +3818,12 @@ name|file_dlg
 condition|)
 block|{
 name|make_file_dlg
-argument_list|()
+argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 else|else

@@ -167,7 +167,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2733630103
+DECL|enum|__anon29097e5e0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -187,7 +187,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2733630203
+DECL|enum|__anon29097e5e0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2733630308
+DECL|struct|__anon29097e5e0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -225,7 +225,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b273363040a
+DECL|union|__anon29097e5e040a
 block|{
 DECL|member|d
 name|gdouble
@@ -254,7 +254,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2733630508
+DECL|struct|__anon29097e5e0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2733630608
+DECL|struct|__anon29097e5e0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2733630708
+DECL|struct|__anon29097e5e0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -355,7 +355,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2733630808
+DECL|struct|__anon29097e5e0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -422,7 +422,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2733630908
+DECL|struct|__anon29097e5e0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -624,7 +624,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2733630a08
+DECL|struct|__anon29097e5e0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -14385,6 +14385,19 @@ literal|"Save as IFS file"
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|file_select
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_help_connect
 argument_list|(
 name|file_select
@@ -14477,6 +14490,19 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Load IFS file"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|file_select
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;

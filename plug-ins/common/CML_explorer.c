@@ -214,7 +214,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9d15fc0108
+DECL|struct|__anon291eebec0108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -241,7 +241,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9d15fc0203
+DECL|enum|__anon291eebec0203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -364,7 +364,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9d15fc0303
+DECL|enum|__anon291eebec0303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -503,7 +503,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9d15fc0403
+DECL|enum|__anon291eebec0403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -602,7 +602,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9d15fc0503
+DECL|enum|__anon291eebec0503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -694,7 +694,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9d15fc0608
+DECL|struct|__anon291eebec0608
 block|{
 DECL|member|function
 name|gint
@@ -767,7 +767,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9d15fc0708
+DECL|struct|__anon291eebec0708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1389,6 +1389,10 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1534,7 +1538,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9d15fc0808
+DECL|struct|__anon291eebec0808
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -10806,7 +10810,10 @@ argument_list|)
 argument_list|,
 literal|"cml_explorer"
 argument_list|,
-name|NULL
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -11778,14 +11785,20 @@ literal|"Save Parameters to"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_position
+name|gtk_window_set_transient_for
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|filesel
 argument_list|)
 argument_list|,
-name|GTK_WIN_POS_MOUSE
+name|GTK_WINDOW
+argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -12068,6 +12081,11 @@ operator|!
 name|force_overwrite
 argument_list|(
 name|filename
+argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -12594,13 +12612,17 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|force_overwrite (const gchar * filename)
+DECL|function|force_overwrite (const gchar * filename,GtkWidget * parent)
 name|force_overwrite
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkWidget
@@ -12633,7 +12655,7 @@ argument_list|)
 argument_list|,
 literal|"cml_explorer"
 argument_list|,
-name|NULL
+name|parent
 argument_list|,
 literal|0
 argument_list|,
@@ -12808,14 +12830,20 @@ argument_list|(
 literal|""
 argument_list|)
 expr_stmt|;
-name|gtk_window_set_position
+name|gtk_window_set_transient_for
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|filesel
 argument_list|)
 argument_list|,
-name|GTK_WIN_POS_MOUSE
+name|GTK_WINDOW
+argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
