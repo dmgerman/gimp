@@ -120,6 +120,10 @@ DECL|member|allow_enlarge
 name|gboolean
 name|allow_enlarge
 decl_stmt|;
+DECL|member|keep_aspect
+name|gboolean
+name|keep_aspect
+decl_stmt|;
 DECL|member|crop_mode
 name|GimpCropMode
 name|crop_mode

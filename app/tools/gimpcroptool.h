@@ -209,6 +209,19 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+DECL|member|aspect_ratio
+name|gdouble
+name|aspect_ratio
+decl_stmt|;
+DECL|member|change_aspect_ratio
+name|gboolean
+name|change_aspect_ratio
+decl_stmt|;
+comment|/* Boolean for the crop_info_update function */
+comment|/* aspect_ratio should not be chaget whith   */
+comment|/* crop_info_update when is called from      */
+comment|/* crop_aspect_changed, due to the innacurate*/
+comment|/* decimal precision                         */
 DECL|member|origin_sizeentry
 name|GtkWidget
 modifier|*
