@@ -663,6 +663,24 @@ value|N_("When enabled, you can change keyboard shortcuts for menu items on the 
 end_define
 
 begin_define
+DECL|macro|SAVE_ACCELS_BLURB
+define|#
+directive|define
+name|SAVE_ACCELS_BLURB
+define|\
+value|N_("Save changed keyboard shortcuts when the GIMP exits.")
+end_define
+
+begin_define
+DECL|macro|RESTORE_ACCELS_BLURB
+define|#
+directive|define
+name|RESTORE_ACCELS_BLURB
+define|\
+value|N_("Restore saved keyboard shortcuts on each GIMP startup.")
+end_define
+
+begin_define
 DECL|macro|TEMP_PATH_BLURB
 define|#
 directive|define

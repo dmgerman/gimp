@@ -1145,6 +1145,11 @@ name|message_handler
 operator|=
 name|GIMP_MESSAGE_BOX
 expr_stmt|;
+name|menus_restore
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|toolbox_item_factory
 operator|=
 name|gimp_menu_factory_menu_new
@@ -1276,7 +1281,6 @@ argument_list|)
 operator|->
 name|show_tips
 condition|)
-block|{
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
@@ -1287,7 +1291,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -2100,6 +2103,11 @@ operator|=
 name|GIMP_CONSOLE
 expr_stmt|;
 name|session_save
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|menus_save
 argument_list|(
 name|gimp
 argument_list|)

@@ -129,7 +129,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon289be5f90103
+DECL|enum|__anon2b31f0c40103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -756,6 +756,32 @@ argument_list|,
 literal|"end of sessionrc"
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|session_clear (Gimp * gimp)
+name|session_clear
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"TODO: implement session_clear()\n"
 argument_list|)
 expr_stmt|;
 block|}
