@@ -251,15 +251,15 @@ name|file
 argument_list|,
 literal|"<?xml version=\"1.0\" standalone=\"no\"?>\n"
 literal|"<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 20010904//EN\"\n"
-literal|"\"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd\">\n"
+literal|"              \"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd\">\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"<svg viewBox=\"0 0 %d %d\"\n"
-literal|"     xmlns=\"http://www.w3.org/2000/svg\">\n"
+literal|"<svg xmlns=\"http://www.w3.org/2000/svg\"\n"
+literal|"     viewBox=\"0 0 %d %d\">\n\n"
 argument_list|,
 name|image
 operator|->
@@ -429,7 +429,7 @@ name|file
 argument_list|,
 literal|"<path id=\"%s\"\n"
 literal|"        fill=\"none\" stroke=\"black\" stroke-width=\"1\"\n"
-literal|"        d=\"%s\"/>\n"
+literal|"        d=\"%s\" />\n"
 argument_list|,
 name|esc_name
 argument_list|,
@@ -956,11 +956,14 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
+name|g_strchomp
+argument_list|(
 name|g_string_free
 argument_list|(
 name|str
 argument_list|,
 name|FALSE
+argument_list|)
 argument_list|)
 return|;
 block|}
