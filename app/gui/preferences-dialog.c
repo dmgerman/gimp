@@ -6797,7 +6797,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b1898660108
+DECL|struct|__anon29b26fcb0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8135,7 +8135,7 @@ name|prefs_enum_option_menu_add
 argument_list|(
 name|object
 argument_list|,
-literal|"toolbox-window-type"
+literal|"toolbox-window-hint"
 argument_list|,
 literal|0
 argument_list|,
@@ -8158,7 +8158,7 @@ name|prefs_enum_option_menu_add
 argument_list|(
 name|object
 argument_list|,
-literal|"dock-window-type"
+literal|"dock-window-hint"
 argument_list|,
 literal|0
 argument_list|,
@@ -9238,7 +9238,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1898660208
+DECL|struct|__anon29b26fcb0208
 block|{
 DECL|member|label
 specifier|const
@@ -9397,7 +9397,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b1898660308
+DECL|struct|__anon29b26fcb0308
 block|{
 DECL|member|tree_label
 specifier|const
