@@ -553,7 +553,7 @@ name|GIMP_NO_DITHER
 operator|||
 name|dither_type
 operator|>
-name|GIMP_NODESTRUCT_DITHER
+name|GIMP_FIXED_DITHER
 condition|)
 name|success
 operator|=
