@@ -6,6 +6,12 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -66,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config.h"
+file|"parasitelist.h"
 end_include
 
 begin_include
@@ -2758,6 +2764,10 @@ name|floating_sel_drawable
 init|=
 name|NULL
 decl_stmt|;
+name|ParasiteList
+modifier|*
+name|parasites
+decl_stmt|;
 name|PathList
 modifier|*
 name|paths
@@ -3435,6 +3445,26 @@ operator|=
 name|gimage
 operator|->
 name|qmask_opacity
+expr_stmt|;
+comment|/* Copy parasites */
+name|parasites
+operator|=
+name|gimage
+operator|->
+name|parasites
+expr_stmt|;
+if|if
+condition|(
+name|parasites
+condition|)
+name|new_gimage
+operator|->
+name|parasites
+operator|=
+name|parasite_list_copy
+argument_list|(
+name|parasites
+argument_list|)
 expr_stmt|;
 comment|/* Copy paths */
 name|paths
