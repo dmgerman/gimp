@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29017ec10108
+DECL|struct|__anon28c9c5220108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -844,7 +844,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29017ec10208
+DECL|struct|__anon28c9c5220208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1069,7 +1069,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29017ec10308
+DECL|struct|__anon28c9c5220308
 block|{
 DECL|member|run
 name|gint
@@ -3612,7 +3612,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29017ec10408
+DECL|struct|__anon28c9c5220408
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5641,7 +5641,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

@@ -10880,7 +10880,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d61f840108
+DECL|struct|__anon2ad2f0c80108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -15297,7 +15297,7 @@ argument_list|,
 name|label_name
 argument_list|)
 condition|)
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

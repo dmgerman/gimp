@@ -189,7 +189,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0631210103
+DECL|enum|__anon2a2cd7c10103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -2313,7 +2313,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2354,7 +2354,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2384,7 +2384,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2414,7 +2414,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2608,7 +2608,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

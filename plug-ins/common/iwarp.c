@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298162e00103
+DECL|enum|__anon2a2fd1d80103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298162e00208
+DECL|struct|__anon2a2fd1d80208
 block|{
 DECL|member|run
 name|gint
@@ -141,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298162e00308
+DECL|struct|__anon2a2fd1d80308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -5340,7 +5340,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

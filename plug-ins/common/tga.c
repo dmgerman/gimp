@@ -313,7 +313,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298f2f590108
+DECL|struct|__anon296236180108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -5602,7 +5602,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -5642,7 +5642,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

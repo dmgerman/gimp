@@ -452,7 +452,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce52040108
+DECL|struct|__anon2c72b46b0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -558,7 +558,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce52040208
+DECL|struct|__anon2c72b46b0208
 block|{
 DECL|member|menu
 name|gchar
@@ -4695,7 +4695,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

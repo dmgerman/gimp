@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2b4e281f0108
+DECL|struct|__anon291b39650108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b4e281f0208
+DECL|struct|__anon291b39650208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e281f0308
+DECL|struct|__anon291b39650308
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b4e281f0408
+DECL|struct|__anon291b39650408
 typedef|typedef
 struct|struct
 block|{
@@ -538,7 +538,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4e281f0503
+DECL|enum|__anon291b39650503
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -2640,7 +2640,7 @@ literal|"Move Path"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -3017,7 +3017,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3653,7 +3653,7 @@ operator|->
 name|src_force_visible
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3729,7 +3729,7 @@ operator|->
 name|clip_to_img
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -6684,7 +6684,7 @@ name|filesel
 operator|=
 name|filesel
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -6826,7 +6826,7 @@ name|filesel
 operator|=
 name|filesel
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -8527,7 +8527,7 @@ operator|->
 name|PointIndex_LabelPtr
 condition|)
 block|{
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -9492,7 +9492,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -9513,7 +9513,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -10397,7 +10397,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -10454,7 +10454,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -11298,7 +11298,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -11770,7 +11770,7 @@ argument_list|,
 name|path_ptr
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

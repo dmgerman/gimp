@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc426260103
+DECL|enum|__anon2ad4b7900103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc426260208
+DECL|struct|__anon2ad4b7900208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc426260308
+DECL|struct|__anon2ad4b7900308
 block|{
 DECL|member|run
 name|gint
@@ -2280,7 +2280,7 @@ operator|.
 name|wrap_type
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2370,7 +2370,7 @@ operator|.
 name|wrap_type
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2460,7 +2460,7 @@ operator|.
 name|wrap_type
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2550,7 +2550,7 @@ operator|.
 name|wrap_type
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3009,7 +3009,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -3091,7 +3091,7 @@ operator|.
 name|mag_use
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a153e4f0103
+DECL|enum|__anon2b7756590103
 block|{
 DECL|enumerator|MODE_SMEAR
 name|MODE_SMEAR
@@ -1838,7 +1838,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

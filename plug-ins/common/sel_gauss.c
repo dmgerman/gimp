@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2937696f0108
+DECL|struct|__anon29911b300108
 block|{
 DECL|member|radius
 name|gdouble
@@ -67,7 +67,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2937696f0208
+DECL|struct|__anon29911b300208
 block|{
 DECL|member|run
 name|gint
@@ -825,7 +825,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

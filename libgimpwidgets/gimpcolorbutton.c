@@ -471,7 +471,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_enum
-DECL|enum|__anon2b1d56840103
+DECL|enum|__anon2ba586de0103
 enum|enum
 block|{
 DECL|enumerator|COLOR_CHANGED
@@ -1978,7 +1978,7 @@ argument_list|,
 name|gcb
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

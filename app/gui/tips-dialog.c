@@ -1205,7 +1205,7 @@ name|tips_count
 operator|-
 literal|1
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1248,7 +1248,7 @@ name|last_tip
 operator|=
 literal|0
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

@@ -813,7 +813,7 @@ literal|"GEE!  The GIMP E'er Egg!"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -936,7 +936,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -976,7 +976,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1005,7 +1005,7 @@ argument_list|,
 literal|5
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1034,7 +1034,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

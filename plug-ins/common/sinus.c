@@ -22238,7 +22238,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd1f170108
+DECL|struct|__anon2c888f520108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -22347,7 +22347,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbd1f170208
+DECL|struct|__anon2c888f520208
 block|{
 DECL|member|height
 DECL|member|width
@@ -23576,7 +23576,7 @@ modifier|*
 name|p
 parameter_list|)
 block|{
-DECL|struct|__anon2bbd1f170308
+DECL|struct|__anon2c888f520308
 DECL|member|r
 DECL|member|g
 DECL|member|b
@@ -28365,7 +28365,7 @@ argument_list|,
 name|vbox
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

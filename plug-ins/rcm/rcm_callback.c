@@ -499,7 +499,7 @@ else|:
 name|rcm_ccw
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -709,7 +709,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -975,7 +975,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -1241,7 +1241,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

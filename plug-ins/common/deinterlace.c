@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab1432a0103
+DECL|enum|__anon291fa30f0103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -1116,7 +1116,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

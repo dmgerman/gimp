@@ -771,7 +771,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ecab5f0108
+DECL|struct|__anon2b57ec460108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -857,7 +857,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ecab5f0208
+DECL|struct|__anon2b57ec460208
 block|{
 DECL|member|y
 name|gint32
@@ -11226,7 +11226,7 @@ name|filesel
 operator|=
 name|filesel
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -11371,7 +11371,7 @@ name|filesel
 operator|=
 name|filesel
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

@@ -86,7 +86,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b09a2470108
+DECL|struct|__anon2c775e850108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -109,7 +109,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b09a2470208
+DECL|struct|__anon2c775e850208
 typedef|typedef
 struct|struct
 block|{
@@ -403,7 +403,7 @@ argument_list|,
 name|title_text
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -522,7 +522,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

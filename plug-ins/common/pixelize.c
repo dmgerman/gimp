@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d06b10108
+DECL|struct|__anon2924781c0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d06b10208
+DECL|struct|__anon2924781c0208
 block|{
 DECL|member|run
 name|gint
@@ -136,7 +136,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d06b10308
+DECL|struct|__anon2924781c0308
 block|{
 DECL|member|x
 DECL|member|y
@@ -909,7 +909,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -961,7 +961,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

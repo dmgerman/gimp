@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2923ac1c0108
+DECL|struct|__anon2af920fa0108
 block|{
 DECL|member|run
 name|gint
@@ -2864,7 +2864,7 @@ literal|"Save Options"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -2904,7 +2904,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

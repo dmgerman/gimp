@@ -295,7 +295,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a288b0d0108
+DECL|struct|__anon28019fae0108
 block|{
 DECL|member|adj
 name|GtkAdjustment
@@ -339,7 +339,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a288b0d0208
+DECL|struct|__anon28019fae0208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a288b0d0308
+DECL|struct|__anon28019fae0308
 block|{
 DECL|member|fileselection
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a288b0d0408
+DECL|struct|__anon28019fae0408
 block|{
 DECL|member|name
 name|gchar
@@ -414,7 +414,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a288b0d0508
+DECL|struct|__anon28019fae0508
 block|{
 DECL|member|list
 name|GSList
@@ -434,7 +434,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2a288b0d060a
+DECL|union|__anon28019fae060a
 block|{
 DECL|member|sfa_image
 name|gint32
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a288b0d0708
+DECL|struct|__anon28019fae0708
 block|{
 DECL|member|args_widgets
 name|GtkWidget
@@ -599,7 +599,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a288b0d0808
+DECL|struct|__anon28019fae0808
 block|{
 DECL|member|status
 name|GtkWidget
@@ -10064,7 +10064,7 @@ argument_list|,
 name|title
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -11748,7 +11748,7 @@ operator|->
 name|fontname
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

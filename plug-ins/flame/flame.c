@@ -524,7 +524,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon28c761d60108
+DECL|struct|__anon2b727c650108
 block|{
 DECL|member|randomize
 name|gint
@@ -2297,7 +2297,7 @@ name|file_dlg
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

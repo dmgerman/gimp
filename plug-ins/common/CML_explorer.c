@@ -209,7 +209,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8546cf0108
+DECL|struct|__anon2bce5c350108
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -236,7 +236,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8546cf0203
+DECL|enum|__anon2bce5c350203
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -359,7 +359,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8546cf0303
+DECL|enum|__anon2bce5c350303
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -498,7 +498,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8546cf0403
+DECL|enum|__anon2bce5c350403
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -597,7 +597,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8546cf0503
+DECL|enum|__anon2bce5c350503
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -689,7 +689,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8546cf0608
+DECL|struct|__anon2bce5c350608
 block|{
 DECL|member|function
 name|gint
@@ -762,7 +762,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8546cf0708
+DECL|struct|__anon2bce5c350708
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1538,7 +1538,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8546cf0808
+DECL|struct|__anon2bce5c350808
 block|{
 DECL|member|run
 name|gint
@@ -1588,7 +1588,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8546cf0908
+DECL|struct|__anon2bce5c350908
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -12118,7 +12118,7 @@ literal|"Save Parameters to"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -13145,7 +13145,7 @@ literal|"Selective Load from"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

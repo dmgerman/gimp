@@ -30504,7 +30504,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcc4220108
+DECL|struct|__anon29bc28f00108
 block|{
 DECL|member|redstretch
 name|gdouble
@@ -30539,7 +30539,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dcc4220208
+DECL|struct|__anon29bc28f00208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -34740,7 +34740,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

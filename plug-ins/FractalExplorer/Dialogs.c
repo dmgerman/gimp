@@ -1557,7 +1557,7 @@ operator|.
 name|alwayspreview
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3668,7 +3668,7 @@ operator|.
 name|useloglog
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4771,7 +4771,7 @@ literal|"Inversion"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4992,7 +4992,7 @@ operator|.
 name|colormode
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8953,7 +8953,7 @@ literal|"Load Fractal Parameters"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -9117,7 +9117,7 @@ literal|"Save Fractal Parameters"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(

@@ -370,7 +370,7 @@ value|(MC_GET_SAMPLE_COLORS | MC_DST_REMAP)
 end_define
 
 begin_typedef
-DECL|struct|__anon295560060108
+DECL|struct|__anon2b1f38590108
 typedef|typedef
 struct|struct
 block|{
@@ -439,7 +439,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295560060208
+DECL|struct|__anon2b1f38590208
 typedef|typedef
 struct|struct
 block|{
@@ -557,7 +557,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295560060308
+DECL|struct|__anon2b1f38590308
 typedef|typedef
 struct|struct
 block|{
@@ -586,7 +586,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295560060408
+DECL|struct|__anon2b1f38590408
 typedef|typedef
 struct|struct
 block|{
@@ -613,7 +613,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon295560060508
+DECL|struct|__anon2b1f38590508
 typedef|typedef
 struct|struct
 block|{
@@ -7338,7 +7338,7 @@ operator|.
 name|dst_show_selection
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7402,7 +7402,7 @@ operator|.
 name|dst_show_color
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7508,7 +7508,7 @@ operator|.
 name|sample_show_selection
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -7572,7 +7572,7 @@ operator|.
 name|sample_show_color
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -8976,7 +8976,7 @@ operator|.
 name|hold_inten
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -9046,7 +9046,7 @@ operator|.
 name|orig_inten
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -9163,7 +9163,7 @@ operator|.
 name|rnd_subcolors
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -9227,7 +9227,7 @@ operator|.
 name|guess_missing
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

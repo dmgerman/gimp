@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb740108
+DECL|struct|__anon2bdd4c480108
 block|{
 DECL|member|run
 name|gint
@@ -195,7 +195,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd1bb740203
+DECL|enum|__anon2bdd4c480203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd1bb740303
+DECL|enum|__anon2bdd4c480303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -455,7 +455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd1bb740403
+DECL|enum|__anon2bdd4c480403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -485,7 +485,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd1bb740503
+DECL|enum|__anon2bdd4c480503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd1bb740603
+DECL|enum|__anon2bdd4c480603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -527,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd1bb740703
+DECL|enum|__anon2bdd4c480703
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -562,7 +562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd1bb740803
+DECL|enum|__anon2bdd4c480803
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -652,7 +652,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb740908
+DECL|struct|__anon2bdd4c480908
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb740a08
+DECL|struct|__anon2bdd4c480a08
 block|{
 DECL|member|int_val1
 name|gint32
@@ -737,7 +737,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb740b08
+DECL|struct|__anon2bdd4c480b08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -774,7 +774,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb740c08
+DECL|struct|__anon2bdd4c480c08
 block|{
 DECL|member|path_type
 name|gint32
@@ -824,7 +824,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb740d08
+DECL|struct|__anon2bdd4c480d08
 block|{
 DECL|member|active_channel
 name|gint
@@ -898,7 +898,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb740e08
+DECL|struct|__anon2bdd4c480e08
 block|{
 DECL|member|active_layer
 name|gint
@@ -983,7 +983,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb740f08
+DECL|struct|__anon2bdd4c480f08
 block|{
 DECL|member|position
 name|gint32
@@ -1007,7 +1007,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd1bb741008
+DECL|struct|__anon2bdd4c481008
 block|{
 DECL|member|version
 name|gchar
@@ -3639,7 +3639,7 @@ literal|"Optimize"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3712,7 +3712,7 @@ literal|"Clear Transparent"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

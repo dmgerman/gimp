@@ -392,7 +392,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d33b310108
+DECL|struct|__anon298b83ac0108
 block|{
 DECL|member|receipt
 name|gchar
@@ -1691,7 +1691,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

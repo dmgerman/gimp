@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2934abeb0108
+DECL|struct|__anon2b688bba0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -2861,7 +2861,7 @@ argument_list|,
 literal|4
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

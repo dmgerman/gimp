@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8e47770108
+DECL|struct|__anon29fdf4420108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -563,7 +563,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8e47770203
+DECL|enum|__anon29fdf4420203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8e47770308
+DECL|struct|__anon29fdf4420308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -652,7 +652,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8e47770408
+DECL|struct|__anon29fdf4420408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -2099,7 +2099,7 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

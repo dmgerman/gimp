@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2956c3710108
+DECL|struct|__anon2aa355da0108
 block|{
 DECL|member|arr_ptr
 name|t_arr_arg
@@ -120,7 +120,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2956c3710208
+DECL|struct|__anon2aa355da0208
 typedef|typedef
 struct|struct
 block|{
@@ -1235,7 +1235,7 @@ name|text_filesel
 operator|=
 name|filesel
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -2019,7 +2019,7 @@ argument_list|,
 name|arr_ptr
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2464,7 +2464,7 @@ argument_list|,
 name|radio_ptr
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -3487,7 +3487,7 @@ argument_list|,
 name|title_txt
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -3817,7 +3817,7 @@ argument_list|,
 name|GTK_SHADOW_ETCHED_IN
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

@@ -119,7 +119,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7c9da0108
+DECL|struct|__anon2b816ea30108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad7c9da0208
+DECL|struct|__anon2b816ea30208
 block|{
 DECL|member|run
 name|gint
@@ -2461,7 +2461,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2536,7 +2536,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2611,7 +2611,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(

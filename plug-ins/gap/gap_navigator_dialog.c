@@ -178,7 +178,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5b75fb0103
+DECL|enum|__anon290d43bd0103
 block|{
 DECL|enumerator|OPS_BUTTON_MODIFIER_NONE
 name|OPS_BUTTON_MODIFIER_NONE
@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5b75fb0203
+DECL|enum|__anon290d43bd0203
 block|{
 DECL|enumerator|OPS_BUTTON_NORMAL
 name|OPS_BUTTON_NORMAL
@@ -3562,7 +3562,7 @@ operator|->
 name|last_frame_nr
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(
@@ -11508,7 +11508,7 @@ argument_list|,
 name|frame_nr_to_time
 argument_list|)
 expr_stmt|;
-name|gtk_label_set
+name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
 argument_list|(

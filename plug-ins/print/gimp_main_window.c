@@ -4866,7 +4866,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(

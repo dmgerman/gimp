@@ -208,7 +208,7 @@ file|"graphics/layer_align_9.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon28eccfda0108
+DECL|struct|__anon28d178110108
 typedef|typedef
 struct|struct
 block|{
@@ -795,7 +795,7 @@ argument_list|,
 literal|170
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -912,7 +912,7 @@ argument_list|(
 name|GTK_WINDOW_DIALOG
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -949,7 +949,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -1654,7 +1654,7 @@ argument_list|,
 literal|400
 argument_list|)
 expr_stmt|;
-name|gtk_container_border_width
+name|gtk_container_set_border_width
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
@@ -1906,7 +1906,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2208,7 +2208,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2326,7 +2326,7 @@ operator|->
 name|alignment
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2428,7 +2428,7 @@ operator|->
 name|alignment
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2530,7 +2530,7 @@ operator|->
 name|alignment
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -2609,7 +2609,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4329,7 +4329,7 @@ operator|->
 name|preview
 condition|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -4690,7 +4690,7 @@ operator|->
 name|new_layer
 condition|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
@@ -5488,7 +5488,7 @@ argument_list|,
 literal|270
 argument_list|)
 expr_stmt|;
-name|gtk_window_position
+name|gtk_window_set_position
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
@@ -5632,7 +5632,7 @@ modifier|*
 name|window
 parameter_list|)
 block|{
-name|gtk_toggle_button_set_state
+name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
