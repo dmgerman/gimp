@@ -720,12 +720,6 @@ block|}
 block|}
 end_function
 
-begin_expr_stmt
-name|MAIN
-argument_list|()
-expr_stmt|;
-end_expr_stmt
-
 begin_function
 DECL|function|query (void)
 specifier|static
@@ -2262,6 +2256,12 @@ argument_list|()
 expr_stmt|;
 block|}
 end_function
+
+begin_expr_stmt
+name|MAIN
+argument_list|()
+expr_stmt|;
+end_expr_stmt
 
 end_unit
 
