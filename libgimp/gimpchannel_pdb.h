@@ -53,6 +53,24 @@ end_function_decl
 
 begin_function_decl
 name|gint32
+name|gimp_channel_new_from_component
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|GimpChannelType
+name|component
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
 name|gimp_channel_copy
 parameter_list|(
 name|gint32
