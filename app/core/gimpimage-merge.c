@@ -435,7 +435,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon298cb5580103
+DECL|enum|__anon2b6e964c0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -1228,6 +1228,7 @@ name|char
 modifier|*
 name|new_filename
 decl_stmt|;
+comment|/*     * WARNING: this function will free the current filename even if you are     * setting it to itself so any pointer you hold to the filename will be    * invalid after this call.  So please use with care.    */
 name|new_filename
 operator|=
 name|g_strdup

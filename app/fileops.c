@@ -1118,6 +1118,8 @@ specifier|static
 name|GimpImage
 modifier|*
 name|the_gimage
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -3585,14 +3587,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  set the image title  */
-name|gimage_set_filename
-argument_list|(
-name|gimage
-argument_list|,
-name|filename
-argument_list|)
-expr_stmt|;
+comment|/* these calls must come before the call to gimage_set_filename */
 name|idea_add
 argument_list|(
 name|filename
@@ -3600,6 +3595,14 @@ argument_list|)
 expr_stmt|;
 name|menus_last_opened_add
 argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
+comment|/*  set the image title  */
+name|gimp_image_set_filename
+argument_list|(
+name|gimage
+argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
