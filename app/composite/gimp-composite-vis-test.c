@@ -442,6 +442,10 @@ condition|)
 block|{
 if|if
 condition|(
+name|argc
+operator|>
+literal|1
+operator|&&
 operator|(
 name|strcmp
 argument_list|(
@@ -467,10 +471,6 @@ argument_list|)
 operator|==
 literal|0
 operator|)
-operator|&&
-name|argc
-operator|>
-literal|1
 condition|)
 block|{
 name|iterations
@@ -497,6 +497,10 @@ block|}
 elseif|else
 if|if
 condition|(
+name|argc
+operator|>
+literal|1
+operator|&&
 operator|(
 name|strcmp
 argument_list|(
@@ -522,10 +526,6 @@ argument_list|)
 operator|==
 literal|0
 operator|)
-operator|&&
-name|argc
-operator|>
-literal|1
 condition|)
 block|{
 name|n_pixels
@@ -551,6 +551,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|printf
+argument_list|(
+literal|"Usage: gimp-composites-*-test [-i|--iterations n] [-n|--n-pixels n]"
+argument_list|)
+expr_stmt|;
 name|argc
 operator|--
 operator|,
