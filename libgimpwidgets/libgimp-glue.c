@@ -234,6 +234,7 @@ comment|/* If that didn't work, try the name style used by Hans Breuer */
 if|if
 condition|(
 operator|!
+operator|*
 name|hMod
 condition|)
 operator|*
