@@ -188,7 +188,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_histogram_nchannels
+name|gimp_histogram_n_channels
 parameter_list|(
 name|GimpHistogram
 modifier|*

@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a17561f0103
+DECL|enum|__anon2878a5d80103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a17561f0203
+DECL|enum|__anon2878a5d80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -931,6 +931,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GimpHistogramChannel
+name|channel
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -995,6 +998,36 @@ literal|2
 operator|*
 name|border
 expr_stmt|;
+name|channel
+operator|=
+name|view
+operator|->
+name|channel
+expr_stmt|;
+comment|/* FIXME: hack */
+if|if
+condition|(
+name|gimp_histogram_n_channels
+argument_list|(
+name|view
+operator|->
+name|histogram
+argument_list|)
+operator|==
+literal|2
+condition|)
+name|channel
+operator|=
+operator|(
+name|channel
+operator|>
+literal|0
+operator|)
+condition|?
+literal|1
+else|:
+literal|0
+expr_stmt|;
 comment|/*  find the maximum value  */
 name|max
 operator|=
@@ -1004,8 +1037,6 @@ name|view
 operator|->
 name|histogram
 argument_list|,
-name|view
-operator|->
 name|channel
 argument_list|)
 expr_stmt|;
@@ -1251,8 +1282,6 @@ name|view
 operator|->
 name|histogram
 argument_list|,
-name|view
-operator|->
 name|channel
 argument_list|,
 name|i
@@ -1950,7 +1979,7 @@ name|view
 operator|->
 name|channel
 operator|>=
-name|gimp_histogram_nchannels
+name|gimp_histogram_n_channels
 argument_list|(
 name|histogram
 argument_list|)
@@ -1959,7 +1988,7 @@ name|gimp_histogram_view_set_channel
 argument_list|(
 name|view
 argument_list|,
-literal|0
+name|GIMP_HISTOGRAM_VALUE
 argument_list|)
 expr_stmt|;
 block|}

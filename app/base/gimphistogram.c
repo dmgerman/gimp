@@ -879,8 +879,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_histogram_nchannels (GimpHistogram * histogram)
-name|gimp_histogram_nchannels
+DECL|function|gimp_histogram_n_channels (GimpHistogram * histogram)
+name|gimp_histogram_n_channels
 parameter_list|(
 name|GimpHistogram
 modifier|*

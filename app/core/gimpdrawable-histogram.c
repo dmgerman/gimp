@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core-types.h"
 end_include
 
@@ -86,15 +80,8 @@ decl_stmt|,
 name|off_y
 decl_stmt|;
 name|gboolean
-name|no_mask
+name|have_mask
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|drawable
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DRAWABLE
@@ -110,9 +97,8 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|no_mask
+name|have_mask
 operator|=
-operator|(
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -129,9 +115,6 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-operator|==
-name|FALSE
-operator|)
 expr_stmt|;
 name|pixel_region_init
 argument_list|(
@@ -164,8 +147,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|no_mask
+name|have_mask
 condition|)
 block|{
 name|GimpChannel
