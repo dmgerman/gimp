@@ -282,12 +282,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"input-dialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"layers-commands.h"
 end_include
 
@@ -936,35 +930,6 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_input_devices_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
-name|dialogs_input_devices_get
-parameter_list|(
-name|GimpDialogFactory
-modifier|*
-name|factory
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|gint
-name|preview_size
-parameter_list|)
-block|{
-return|return
-name|input_dialog_create
-argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-name|GtkWidget
-modifier|*
 DECL|function|dialogs_module_browser_get (GimpDialogFactory * factory,GimpContext * context,gint preview_size)
 name|dialogs_module_browser_get
 parameter_list|(
@@ -1219,7 +1184,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e360c0108
+DECL|struct|__anon29da8e0d0108
 block|{
 DECL|member|shell
 name|GtkWidget

@@ -165,10 +165,6 @@ DECL|member|tearoff_menus
 name|gboolean
 name|tearoff_menus
 decl_stmt|;
-DECL|member|show_indicators
-name|gboolean
-name|show_indicators
-decl_stmt|;
 DECL|member|max_new_image_size
 name|guint
 name|max_new_image_size

@@ -150,12 +150,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimpintl.h"
 end_include
 
@@ -835,12 +829,6 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimprc
-operator|.
-name|show_indicators
-condition|)
 name|toolbox_create_indicator_area
 argument_list|(
 name|wbox
