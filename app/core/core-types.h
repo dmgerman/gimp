@@ -71,7 +71,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291d17a70103
+DECL|enum|__anon2bcfbc160103
 block|{
 DECL|enumerator|GIMP_PIXELS
 name|GIMP_PIXELS
@@ -244,6 +244,15 @@ typedef|typedef
 name|struct
 name|_GimpDocumentList
 name|GimpDocumentList
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTemplate
+typedef|typedef
+name|struct
+name|_GimpTemplate
+name|GimpTemplate
 typedef|;
 end_typedef
 
@@ -459,15 +468,6 @@ typedef|typedef
 name|struct
 name|_GimpGuide
 name|GimpGuide
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpImageNewValues
-typedef|typedef
-name|struct
-name|_GimpImageNewValues
-name|GimpImageNewValues
 typedef|;
 end_typedef
 

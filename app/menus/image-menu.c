@@ -445,6 +445,27 @@ block|{
 block|{
 name|N_
 argument_list|(
+literal|"/File/Save as Template..."
+argument_list|)
+block|,
+name|NULL
+block|,
+name|file_save_template_cmd_callback
+block|,
+literal|0
+block|}
+block|,
+name|NULL
+block|,
+literal|"file/dialogs/file_save.html"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
 literal|"/File/Revert..."
 argument_list|)
 block|,

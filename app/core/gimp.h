@@ -449,9 +449,15 @@ modifier|*
 name|documents
 decl_stmt|;
 comment|/*  image_new values  */
-DECL|member|image_new_last_values
-name|GimpImageNewValues
-name|image_new_last_values
+DECL|member|templates
+name|GimpContainer
+modifier|*
+name|templates
+decl_stmt|;
+DECL|member|image_new_last_template
+name|GimpTemplate
+modifier|*
+name|image_new_last_template
 decl_stmt|;
 DECL|member|have_current_cut_buffer
 name|gboolean
