@@ -168,6 +168,9 @@ decl_stmt|,
 modifier|*
 name|free_me
 decl_stmt|;
+name|g_type_init
+argument_list|()
+expr_stmt|;
 name|g_message
 argument_list|(
 literal|"tool-safe-mode init called"

@@ -29,6 +29,14 @@ file|"gimptooltypes.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_TOOL_MODULE_ABI_VERSION
+define|#
+directive|define
+name|GIMP_TOOL_MODULE_ABI_VERSION
+value|0x1
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_TOOL_MODULE
 define|#
 directive|define
@@ -143,6 +151,16 @@ parameter_list|(
 name|GimpToolModule
 modifier|*
 name|module
+parameter_list|)
+function_decl|;
+DECL|member|abi_version
+name|guint
+function_decl|(
+modifier|*
+name|abi_version
+function_decl|)
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 block|}
