@@ -1373,6 +1373,31 @@ block|,
 name|NULL
 block|}
 block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Select/To _Path"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|vectors_selection_to_vectors_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<StockItem>"
+block|,
+name|GIMP_STOCK_SELECTION_TO_PATH
+block|}
+block|,
+name|NULL
+block|,
+name|GIMP_HELP_SELECTION_TO_PATH
+block|,
+name|NULL
+block|}
+block|,
 comment|/*<Image>/View  */
 name|MENU_BRANCH
 argument_list|(
@@ -6538,8 +6563,16 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Select/Save to Channel"
 argument_list|,
-name|lp
+name|sel
 operator|&&
+operator|!
+name|fs
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Select/To Path"
+argument_list|,
 name|sel
 operator|&&
 operator|!

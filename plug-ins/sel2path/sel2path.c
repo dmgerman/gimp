@@ -550,10 +550,7 @@ literal|"Andy Thomas"
 argument_list|,
 literal|"1999"
 argument_list|,
-name|N_
-argument_list|(
-literal|"<Image>/Select/To _Path"
-argument_list|)
+name|NULL
 argument_list|,
 literal|"RGB*, INDEXED*, GRAY*"
 argument_list|,
