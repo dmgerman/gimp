@@ -232,17 +232,17 @@ name|list
 argument_list|)
 control|)
 block|{
-name|GimpChannel
+name|GimpItem
 modifier|*
-name|channel
+name|item
 init|=
 name|list
 operator|->
 name|data
 decl_stmt|;
-name|gimp_channel_resize
+name|gimp_item_resize
 argument_list|(
-name|channel
+name|item
 argument_list|,
 name|new_width
 argument_list|,
@@ -384,11 +384,14 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Don't forget the selection mask!  */
-name|gimp_channel_resize
+name|gimp_item_resize
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimage
 operator|->
 name|selection_mask
+argument_list|)
 argument_list|,
 name|new_width
 argument_list|,

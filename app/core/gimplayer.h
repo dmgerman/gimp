@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2ac51dda0108
+DECL|struct|__anon2c3e4bbb0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -479,29 +479,6 @@ name|interpolation_type
 parameter_list|,
 name|gboolean
 name|local_origin
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_layer_resize
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|,
-name|gint
-name|new_width
-parameter_list|,
-name|gint
-name|new_height
-parameter_list|,
-name|gint
-name|offx
-parameter_list|,
-name|gint
-name|offy
 parameter_list|)
 function_decl|;
 end_function_decl

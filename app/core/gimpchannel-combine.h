@@ -353,29 +353,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_channel_resize
-parameter_list|(
-name|GimpChannel
-modifier|*
-name|channel
-parameter_list|,
-name|gint
-name|new_width
-parameter_list|,
-name|gint
-name|new_height
-parameter_list|,
-name|gint
-name|offx
-parameter_list|,
-name|gint
-name|offy
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  selection mask functions  */
 end_comment

@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a277b00103
+DECL|enum|__anon27ba14580103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -468,9 +468,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_layer_resize
+name|gimp_item_resize
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -589,9 +592,12 @@ name|list
 operator|->
 name|data
 expr_stmt|;
-name|gimp_channel_resize
+name|gimp_item_resize
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|channel
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -606,11 +612,14 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  Don't forget the selection mask!  */
-name|gimp_channel_resize
+name|gimp_item_resize
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|gimage
 operator|->
 name|selection_mask
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
@@ -802,9 +811,12 @@ name|width
 operator|&&
 name|height
 condition|)
-name|gimp_layer_resize
+name|gimp_item_resize
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|width
 argument_list|,
