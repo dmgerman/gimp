@@ -176,7 +176,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e80108
+DECL|struct|__anon277b0c310108
 block|{
 DECL|member|run
 name|gint
@@ -195,7 +195,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276109e80203
+DECL|enum|__anon277b0c310203
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -395,7 +395,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276109e80303
+DECL|enum|__anon277b0c310303
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -455,7 +455,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276109e80403
+DECL|enum|__anon277b0c310403
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -485,7 +485,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276109e80503
+DECL|enum|__anon277b0c310503
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -507,7 +507,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276109e80603
+DECL|enum|__anon277b0c310603
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -527,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276109e80703
+DECL|enum|__anon277b0c310703
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -562,7 +562,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276109e80803
+DECL|enum|__anon277b0c310803
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -652,7 +652,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e80908
+DECL|struct|__anon277b0c310908
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -688,7 +688,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e80a08
+DECL|struct|__anon277b0c310a08
 block|{
 DECL|member|int_val1
 name|gint32
@@ -737,7 +737,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e80b08
+DECL|struct|__anon277b0c310b08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -774,7 +774,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e80c08
+DECL|struct|__anon277b0c310c08
 block|{
 DECL|member|path_type
 name|gint32
@@ -824,7 +824,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e80d08
+DECL|struct|__anon277b0c310d08
 block|{
 DECL|member|active_channel
 name|gint
@@ -898,7 +898,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e80e08
+DECL|struct|__anon277b0c310e08
 block|{
 DECL|member|active_layer
 name|gint
@@ -983,7 +983,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e80f08
+DECL|struct|__anon277b0c310f08
 block|{
 DECL|member|position
 name|gint32
@@ -1007,7 +1007,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276109e81008
+DECL|struct|__anon277b0c311008
 block|{
 DECL|member|version
 name|gchar
@@ -7451,7 +7451,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Can't open : %s"
+literal|"Can't open: %s"
 argument_list|)
 argument_list|,
 name|l_prop_file
@@ -13668,7 +13668,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Error, XJT propertyfile %s is empty"
+literal|"Error: XJT propertyfile %s is empty"
 argument_list|)
 argument_list|,
 name|prop_filename

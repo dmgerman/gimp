@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a54c1470108
+DECL|struct|__anon2b94e4490108
 block|{
 DECL|member|run
 name|gint
@@ -333,7 +333,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"bmp: cannot operate on unknown image types or alpha images"
+literal|"BMP: cannot operate on unknown image types or alpha images"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -580,7 +580,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"can't open %s\n"
+literal|"Can't open %s"
 argument_list|)
 argument_list|,
 name|filename

@@ -160,7 +160,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: can't open \"%s\"\n"
+literal|"%s: can't open \"%s\""
 argument_list|)
 argument_list|,
 name|prog_name
@@ -202,7 +202,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: %s is not a valid BMP file\n"
+literal|"%s: %s is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|prog_name
@@ -309,7 +309,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header\n"
+literal|"%s: error reading BMP file header"
 argument_list|)
 argument_list|,
 name|prog_name
@@ -413,7 +413,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header\n"
+literal|"%s: error reading BMP file header"
 argument_list|)
 argument_list|,
 name|prog_name
@@ -602,7 +602,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header\n"
+literal|"%s: error reading BMP file header"
 argument_list|)
 argument_list|,
 name|prog_name
@@ -765,7 +765,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: error reading BMP file header\n"
+literal|"%s: error reading BMP file header"
 argument_list|)
 argument_list|,
 name|prog_name
@@ -1118,7 +1118,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"%s: bad colormap\n"
+literal|"%s: bad colormap"
 argument_list|)
 argument_list|,
 name|prog_name

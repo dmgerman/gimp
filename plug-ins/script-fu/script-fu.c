@@ -2493,7 +2493,9 @@ condition|)
 return|return
 name|my_err
 argument_list|(
-literal|"Procedure database argument marshaller was called with no arguments.  The procedure to be executed and the arguments it requires (possibly none) must be specified."
+literal|"Procedure database argument marshaller was called with no arguments. "
+literal|"The procedure to be executed and the arguments it requires "
+literal|"(possibly none) must be specified."
 argument_list|,
 name|NIL
 argument_list|)
