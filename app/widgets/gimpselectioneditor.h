@@ -103,6 +103,10 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
+DECL|member|selection_to_vectors_func
+name|GimpSelectionToVectorsFunc
+name|selection_to_vectors_func
+decl_stmt|;
 DECL|member|preview
 name|GtkWidget
 modifier|*
@@ -127,6 +131,11 @@ DECL|member|save_button
 name|GtkWidget
 modifier|*
 name|save_button
+decl_stmt|;
+DECL|member|path_button
+name|GtkWidget
+modifier|*
+name|path_button
 decl_stmt|;
 DECL|member|stroke_button
 name|GtkWidget
