@@ -2852,17 +2852,6 @@ literal|"group-edit-cut"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_EDIT_COPY
-block|,
-name|N_
-argument_list|(
-literal|"Copy"
-argument_list|)
-block|,
-literal|"group-edit-copy"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_GROUP_TEXT
 block|,
 name|N_
