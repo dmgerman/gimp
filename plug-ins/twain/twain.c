@@ -56,12 +56,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -509,7 +503,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon298517e60108
+DECL|struct|__anon28d8ce160108
 typedef|typedef
 struct|struct
 block|{
@@ -1873,7 +1867,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon298517e60208
+DECL|struct|__anon28d8ce160208
 typedef|typedef
 struct|struct
 block|{
