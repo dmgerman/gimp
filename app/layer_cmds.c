@@ -645,16 +645,6 @@ name|value
 operator|.
 name|pdb_pointer
 expr_stmt|;
-if|if
-condition|(
-name|name
-operator|==
-name|NULL
-condition|)
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
 name|opacity_arg
 operator|=
 name|args
