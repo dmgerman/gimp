@@ -429,6 +429,12 @@ modifier|*
 name|window_nav_dialog
 decl_stmt|;
 comment|/*  dialog box for image navigation         */
+DECL|member|nav_popup
+name|GtkWidget
+modifier|*
+name|nav_popup
+decl_stmt|;
+comment|/*  widget for the popup navigation window  */
 DECL|member|color_type
 name|int
 name|color_type

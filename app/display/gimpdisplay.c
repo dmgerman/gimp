@@ -539,6 +539,12 @@ name|NULL
 expr_stmt|;
 name|gdisp
 operator|->
+name|nav_popup
+operator|=
+name|NULL
+expr_stmt|;
+name|gdisp
+operator|->
 name|depth
 operator|=
 name|g_visual
@@ -1605,6 +1611,19 @@ argument_list|(
 name|gdisp
 operator|->
 name|window_nav_dialog
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gdisp
+operator|->
+name|nav_popup
+condition|)
+name|nav_popup_free
+argument_list|(
+name|gdisp
+operator|->
+name|nav_popup
 argument_list|)
 expr_stmt|;
 comment|/*  set the active display to NULL if it was this display  */
