@@ -271,7 +271,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29859f7e0103
+DECL|enum|__anon274e860b0103
 block|{
 DECL|enumerator|NO_ACTION
 name|NO_ACTION
@@ -297,7 +297,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29859f7e0203
+DECL|enum|__anon274e860b0203
 block|{
 DECL|enumerator|DRAW_NOTHING
 name|DRAW_NOTHING
@@ -3322,12 +3322,14 @@ name|state
 operator|==
 name|SEED_ADJUSTMENT
 condition|)
+block|{
 name|iscissors
 operator|->
 name|draw
 operator|=
 name|DRAW_ACTIVE_CURVE
 expr_stmt|;
+block|}
 name|draw_core_pause
 argument_list|(
 name|iscissors

@@ -163,6 +163,10 @@ DECL|member|interactive
 name|gboolean
 name|interactive
 decl_stmt|;
+DECL|member|interactive_d
+name|gboolean
+name|interactive_d
+decl_stmt|;
 DECL|member|interactive_w
 name|GtkWidget
 modifier|*
