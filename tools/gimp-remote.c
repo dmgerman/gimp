@@ -4,7 +4,7 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Disclaimer:  *  * It is a really bad idea to use Drag'n'Drop for inter-client  * communication. Dont even think about doing this in your own newly  * created application. We do this *only*, because we are in a  * feature freeze for Gimp 1.2 and adding a completely new communication  * infrastructure for remote controlling Gimp is definitely a new  * feature...  * Think about sockets or Corba when you want to do something similiar.  * We definitely consider this for Gimp 2.0.  *                                                Simon  */
+comment|/* Disclaimer:  *  * It is a really bad idea to use Drag'n'Drop for inter-client  * communication. Dont even think about doing this in your own newly  * created application. We do this *only*, because we are in a  * feature freeze for Gimp 1.2 and adding a completely new communication  * infrastructure for remote controlling Gimp is definitely a new  * feature...  *                                                Simon  */
 end_comment
 
 begin_include
@@ -70,6 +70,12 @@ begin_include
 include|#
 directive|include
 file|"libgimpbase/gimpversion.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gi18n.h>
 end_include
 
 begin_define
@@ -184,7 +190,10 @@ name|GOptionArgFunc
 operator|)
 name|show_version
 block|,
+name|N_
+argument_list|(
 literal|"Show version information and exit"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -201,7 +210,10 @@ block|,
 operator|&
 name|existing
 block|,
+name|N_
+argument_list|(
 literal|"Use a running GIMP only, never start a new one"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -218,7 +230,10 @@ block|,
 operator|&
 name|query
 block|,
+name|N_
+argument_list|(
 literal|"Only check if GIMP is running, then quit"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -235,7 +250,10 @@ block|,
 operator|&
 name|no_splash
 block|,
+name|N_
+argument_list|(
 literal|"Start GIMP without showing the startup window"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -590,8 +608,17 @@ parameter_list|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Could not connect to GIMP.\n"
-literal|"Make sure that the Toolbox is visible!\n"
+literal|"%s\n%s\n"
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not connect to GIMP."
+argument_list|)
+argument_list|,
+name|_
+argument_list|(
+literal|"Make sure that the Toolbox is visible!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_main_quit
@@ -939,7 +966,10 @@ expr_stmt|;
 comment|/*  if execv and execvp return, there was an error  */
 name|g_printerr
 argument_list|(
-literal|"Couldn't start %s for the following reason: %s\n"
+name|_
+argument_list|(
+literal|"Couldn't start '%s': %s"
+argument_list|)
 argument_list|,
 name|GIMP_BINARY
 argument_list|,
@@ -947,6 +977,11 @@ name|g_strerror
 argument_list|(
 name|errno
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"\n"
 argument_list|)
 expr_stmt|;
 name|exit
@@ -977,14 +1012,67 @@ parameter_list|)
 block|{
 name|g_print
 argument_list|(
-literal|"gimp-remote version %s\n"
+name|_
+argument_list|(
+literal|"%s version %s"
+argument_list|)
+argument_list|,
+literal|"gimp-remote"
 argument_list|,
 name|GIMP_VERSION
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n"
 argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
 name|EXIT_SUCCESS
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|init_i18n (void)
+name|init_i18n
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|setlocale
+argument_list|(
+name|LC_ALL
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+name|bindtextdomain
+argument_list|(
+name|GETTEXT_PACKAGE
+argument_list|,
+name|LOCALEDIR
+argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_BIND_TEXTDOMAIN_CODESET
+name|bind_textdomain_codeset
+argument_list|(
+name|GETTEXT_PACKAGE
+argument_list|,
+literal|"UTF-8"
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
+name|textdomain
+argument_list|(
+name|GETTEXT_PACKAGE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1046,6 +1134,9 @@ argument_list|(
 name|NULL
 argument_list|)
 decl_stmt|;
+name|init_i18n
+argument_list|()
+expr_stmt|;
 comment|/* we save the startup_id before calling gtk_init()      because GTK+ will unset it  */
 name|startup_id
 operator|=

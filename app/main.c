@@ -1973,8 +1973,10 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"GIMP version %s"
+literal|"%s version %s"
 argument_list|)
+argument_list|,
+literal|"GIMP"
 argument_list|,
 name|GIMP_VERSION
 argument_list|)
