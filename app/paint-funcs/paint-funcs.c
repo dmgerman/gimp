@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af9ae0a0103
+DECL|enum|__anon2b25b7870103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -21183,6 +21183,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|initial_inten_pixels
 argument_list|(
 name|s
@@ -21207,6 +21208,7 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|INITIAL_INTENSITY_ALPHA
@@ -21411,6 +21413,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|initial_inten_a_pixels
 argument_list|(
 name|s
@@ -21432,6 +21435,7 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 block|}
 name|s
@@ -22483,8 +22487,8 @@ name|combine
 operator|)
 expr_stmt|;
 block|}
-break|break;
 block|}
+break|break;
 default|default:
 name|g_warning
 argument_list|(
