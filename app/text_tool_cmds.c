@@ -164,7 +164,7 @@ if|if
 condition|(
 name|metric
 operator|==
-name|PIXELS
+name|POINTS
 condition|)
 name|size
 operator|*=
