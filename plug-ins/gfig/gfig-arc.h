@@ -18,6 +18,15 @@ end_define
 
 begin_function_decl
 name|void
+name|d_arc_object_class_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|d_update_arc
 parameter_list|(
 name|GdkPoint
@@ -35,7 +44,7 @@ name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 function_decl|;
@@ -49,17 +58,8 @@ name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|d_arc_object_class_init
-parameter_list|(
-name|void
 parameter_list|)
 function_decl|;
 end_function_decl

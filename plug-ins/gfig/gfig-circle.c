@@ -69,6 +69,59 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_function_decl
+specifier|static
+name|gint
+name|calc_radius
+parameter_list|(
+name|GdkPoint
+modifier|*
+name|center
+parameter_list|,
+name|GdkPoint
+modifier|*
+name|edge
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|d_draw_circle
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|d_paint_circle
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GfigObject
+modifier|*
+name|d_copy_circle
+parameter_list|(
+name|GfigObject
+modifier|*
+name|obj
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 specifier|static
 name|gint
@@ -845,14 +898,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_circle_start (GdkPoint * pnt,gint shift_down)
+DECL|function|d_circle_start (GdkPoint * pnt,gboolean shift_down)
 name|d_circle_start
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
@@ -876,14 +929,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|d_circle_end (GdkPoint * pnt,gint shift_down)
+DECL|function|d_circle_end (GdkPoint * pnt,gboolean shift_down)
 name|d_circle_end
 parameter_list|(
 name|GdkPoint
 modifier|*
 name|pnt
 parameter_list|,
-name|gint
+name|gboolean
 name|shift_down
 parameter_list|)
 block|{
