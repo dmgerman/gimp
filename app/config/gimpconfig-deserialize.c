@@ -59,6 +59,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -72,6 +78,12 @@ begin_include
 include|#
 directive|include
 file|"gimpconfig-deserialize.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpconfig-params.h"
 end_include
 
 begin_include
@@ -398,7 +410,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_SERIALIZE
 condition|)
 block|{
 name|g_scanner_scope_add_symbol
@@ -1614,7 +1626,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a179e0103
+DECL|enum|__anon2a1cc15a0103
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

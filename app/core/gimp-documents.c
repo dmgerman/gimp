@@ -180,15 +180,13 @@ name|header
 init|=
 literal|"# GIMP documents\n"
 literal|"#\n"
-literal|"# This file will be entirely rewritten every time you\n"
-literal|"# quit the gimp.\n\n"
+literal|"# This file will be entirely rewritten every time you quit the gimp.\n"
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|footer
 init|=
-literal|"\n"
 literal|"# end of documents\n"
 decl_stmt|;
 name|gchar

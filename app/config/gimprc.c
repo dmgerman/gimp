@@ -769,14 +769,13 @@ name|bottom
 init|=
 literal|"\n"
 literal|"# Most values can be set within The GIMP by changing some options in\n"
-literal|"# the Preferences dialog.\n\n"
+literal|"# the Preferences dialog.\n"
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|footer
 init|=
-literal|"\n"
 literal|"# end of gimprc\n"
 decl_stmt|;
 name|gchar

@@ -270,9 +270,9 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-name|NULL
+literal|"# foorc\n"
 argument_list|,
-name|NULL
+literal|"# end of foorc\n"
 argument_list|,
 name|NULL
 argument_list|,

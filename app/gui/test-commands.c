@@ -1132,9 +1132,9 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-literal|"# foo\n\n"
+literal|"# test-context\n"
 argument_list|,
-literal|"\n# bar\n"
+literal|"# end of test-context\n"
 argument_list|,
 name|NULL
 argument_list|,

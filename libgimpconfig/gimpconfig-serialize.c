@@ -64,6 +64,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -71,6 +77,12 @@ begin_include
 include|#
 directive|include
 file|"gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpconfig-params.h"
 end_include
 
 begin_include
@@ -230,7 +242,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
@@ -256,27 +268,15 @@ operator|&
 name|value
 argument_list|)
 expr_stmt|;
-name|g_string_assign
+name|g_string_printf
 argument_list|(
 name|str
 argument_list|,
-literal|"("
-argument_list|)
-expr_stmt|;
-name|g_string_append
-argument_list|(
-name|str
+literal|"(%s "
 argument_list|,
 name|prop_spec
 operator|->
 name|name
-argument_list|)
-expr_stmt|;
-name|g_string_append_c
-argument_list|(
-name|str
-argument_list|,
-literal|' '
 argument_list|)
 expr_stmt|;
 if|if
@@ -535,7 +535,7 @@ name|prop_spec
 operator|->
 name|flags
 operator|&
-name|G_PARAM_READWRITE
+name|GIMP_PARAM_SERIALIZE
 operator|)
 condition|)
 continue|continue;
@@ -596,27 +596,15 @@ name|old_value
 argument_list|)
 condition|)
 block|{
-name|g_string_assign
+name|g_string_printf
 argument_list|(
 name|str
 argument_list|,
-literal|"("
-argument_list|)
-expr_stmt|;
-name|g_string_append
-argument_list|(
-name|str
+literal|"(%s "
 argument_list|,
 name|prop_spec
 operator|->
 name|name
-argument_list|)
-expr_stmt|;
-name|g_string_append_c
-argument_list|(
-name|str
-argument_list|,
-literal|' '
 argument_list|)
 expr_stmt|;
 if|if

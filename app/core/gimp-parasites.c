@@ -382,15 +382,13 @@ name|header
 init|=
 literal|"# GIMP parasiterc\n"
 literal|"#\n"
-literal|"# This file will be entirely rewritten every time you "
-literal|"quit the gimp.\n\n"
+literal|"# This file will be entirely rewritten every time you quit the gimp.\n"
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|footer
 init|=
-literal|"\n"
 literal|"# end of parasiterc"
 decl_stmt|;
 name|gchar
