@@ -134,7 +134,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f63e1c0103
+DECL|enum|__anon2a20c8180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2801,14 +2801,12 @@ block|{
 name|GimpTemplateEditor
 modifier|*
 name|editor
-decl_stmt|;
-name|editor
-operator|=
+init|=
 name|GIMP_TEMPLATE_EDITOR
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|editor
