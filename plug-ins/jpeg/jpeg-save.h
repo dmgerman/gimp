@@ -306,7 +306,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4e09f0108
+DECL|struct|__anon29fc685a0108
 block|{
 DECL|member|quality
 name|gdouble
@@ -353,7 +353,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4e09f0208
+DECL|struct|__anon29fc685a0208
 block|{
 DECL|member|run
 name|gint
@@ -368,7 +368,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4e09f0308
+DECL|struct|__anon29fc685a0308
 block|{
 DECL|member|cinfo
 name|struct
@@ -4093,7 +4093,7 @@ literal|"Size: %ld bytes (%02.01f kB)"
 argument_list|)
 argument_list|,
 operator|(
-name|gint
+name|glong
 operator|)
 name|buf
 operator|.
