@@ -887,6 +887,18 @@ literal|"<ToggleItem>"
 block|}
 block|,
 block|{
+literal|"/View/Toggle Statusbar"
+block|,
+literal|"<control><shift>S"
+block|,
+name|view_toggle_statusbar_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<ToggleItem>"
+block|}
+block|,
+block|{
 literal|"/View/Toggle Guides"
 block|,
 literal|"<control><shift>T"

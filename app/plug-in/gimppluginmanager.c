@@ -206,7 +206,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290e6bc30103
+DECL|enum|__anon29024e830103
 block|{
 DECL|enumerator|RUN_INTERACTIVE
 name|RUN_INTERACTIVE
@@ -13721,6 +13721,13 @@ condition|(
 name|gdisp_ID
 operator|>
 literal|0
+operator|&&
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|gdisp
+operator|->
+name|statusarea
+argument_list|)
 operator|&&
 operator|(
 name|gdisp

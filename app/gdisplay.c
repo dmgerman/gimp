@@ -5994,6 +5994,22 @@ operator|->
 name|snap_to_guides
 argument_list|)
 expr_stmt|;
+name|menus_set_state
+argument_list|(
+literal|"<Image>/View/Toggle Statusbar"
+argument_list|,
+name|GTK_WIDGET_VISIBLE
+argument_list|(
+name|gdisp
+operator|->
+name|statusarea
+argument_list|)
+condition|?
+literal|1
+else|:
+literal|0
+argument_list|)
+expr_stmt|;
 name|plug_in_set_menu_sensitivity
 argument_list|(
 name|type

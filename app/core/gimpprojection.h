@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ed27970103
+DECL|enum|__anon2bb04cd20103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -197,6 +197,12 @@ modifier|*
 name|popup
 decl_stmt|;
 comment|/*  widget for popup menu                   */
+DECL|member|statusarea
+name|GtkWidget
+modifier|*
+name|statusarea
+decl_stmt|;
+comment|/*  hbox holding the statusbar and stuff    */
 DECL|member|statusbar
 name|GtkWidget
 modifier|*

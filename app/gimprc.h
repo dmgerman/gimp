@@ -258,6 +258,13 @@ end_decl_stmt
 begin_decl_stmt
 specifier|extern
 name|int
+name|show_statusbar
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|int
 name|auto_save
 decl_stmt|;
 end_decl_stmt

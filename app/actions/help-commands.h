@@ -565,6 +565,18 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|view_toggle_statusbar_cmd_callback
+parameter_list|(
+name|GtkWidget
+modifier|*
+parameter_list|,
+name|gpointer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|view_snap_to_guides_cmd_callback
 parameter_list|(
 name|GtkWidget
