@@ -43,11 +43,22 @@ directive|include
 file|<string.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_UNISTD_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<unistd.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -61,11 +72,22 @@ directive|include
 file|<errno.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_SYS_TIME_H
+end_ifdef
+
 begin_include
 include|#
 directive|include
 file|<sys/time.h>
 end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -83,6 +105,12 @@ begin_include
 include|#
 directive|include
 file|<winsock2.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpbase/gimpwin32-io.h>
 end_include
 
 begin_else
@@ -369,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e3c820108
+DECL|struct|__anon29ff35390108
 block|{
 DECL|member|command
 name|gchar
@@ -393,7 +421,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5e3c820208
+DECL|struct|__anon29ff35390208
 block|{
 DECL|member|port_entry
 name|GtkWidget
