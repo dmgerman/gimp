@@ -5367,7 +5367,7 @@ name|window
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  we need to realize the cursor_label widget here, so the size gets    *  computed correctly    */

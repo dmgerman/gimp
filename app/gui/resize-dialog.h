@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e00c480103
+DECL|enum|__anon2b8940780103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -47,7 +47,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e00c480203
+DECL|enum|__anon2b8940780203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -74,7 +74,6 @@ DECL|struct|_Resize
 struct|struct
 name|_Resize
 block|{
-comment|/*  The calling procedure is respondible for showing this widget  */
 DECL|member|resize_shell
 name|GtkWidget
 modifier|*
@@ -137,7 +136,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e00c480308
+DECL|struct|__anon2b8940780308
 block|{
 DECL|member|resize
 name|Resize
@@ -156,7 +155,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/* If resolution_x is zero, then don't show resolution modification  * parts of the dialog. If object is non-NULL, then attach the cancel  * callback to its destroy signal. */
+comment|/*  If resolution_x is zero, then don't show resolution modification  *  parts of the dialog.  *  *  If object and signal are non-NULL, then attach the cancel callback to signal.  *  *  If cancel_callback is NULL, then the dialog will be destroyed on "Cancel".  */
 end_comment
 
 begin_function_decl
@@ -173,6 +172,10 @@ parameter_list|,
 name|GtkObject
 modifier|*
 name|object
+parameter_list|,
+name|gchar
+modifier|*
+name|signal
 parameter_list|,
 name|gint
 name|width
@@ -204,17 +207,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|resize_widget_free
-parameter_list|(
-name|Resize
-modifier|*
-name|resize
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/* Layer scaling sanity check and warning dialogs */
 end_comment
@@ -225,6 +217,7 @@ name|resize_check_layer_scaling
 parameter_list|(
 name|ImageResize
 modifier|*
+name|image_resize
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -235,6 +228,7 @@ name|resize_scale_implement
 parameter_list|(
 name|ImageResize
 modifier|*
+name|image_resize
 parameter_list|)
 function_decl|;
 end_function_decl
