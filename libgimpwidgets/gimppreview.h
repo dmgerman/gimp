@@ -188,6 +188,10 @@ DECL|member|update_preview
 name|gboolean
 name|update_preview
 decl_stmt|;
+DECL|member|timeout_id
+name|guint
+name|timeout_id
+decl_stmt|;
 block|}
 struct|;
 end_struct
