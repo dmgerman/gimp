@@ -2973,7 +2973,7 @@ operator|)
 condition|?
 name|_
 argument_list|(
-literal|"Erazer Options"
+literal|"Eraser Options"
 argument_list|)
 else|:
 operator|(
