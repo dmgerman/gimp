@@ -64,7 +64,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289076c70108
+DECL|struct|__anon2a2c584b0108
 block|{
 DECL|member|horizontal
 name|gint
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289076c70208
+DECL|struct|__anon2a2c584b0208
 block|{
 DECL|member|run
 name|gint
@@ -1179,7 +1179,7 @@ decl_stmt|;
 if|if
 condition|(
 name|y
-operator|==
+operator|<
 literal|0
 condition|)
 name|gimp_pixel_rgn_get_row
@@ -1190,11 +1190,7 @@ name|data
 argument_list|,
 name|x
 argument_list|,
-operator|(
-name|y
-operator|+
-literal|1
-operator|)
+literal|0
 argument_list|,
 name|w
 argument_list|)
@@ -1203,7 +1199,7 @@ elseif|else
 if|if
 condition|(
 name|y
-operator|==
+operator|>=
 name|pixel_rgn
 operator|->
 name|h
@@ -1216,11 +1212,11 @@ name|data
 argument_list|,
 name|x
 argument_list|,
-operator|(
-name|y
+name|pixel_rgn
+operator|->
+name|h
 operator|-
 literal|1
-operator|)
 argument_list|,
 name|w
 argument_list|)
