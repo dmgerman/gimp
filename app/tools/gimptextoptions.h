@@ -153,10 +153,6 @@ DECL|member|line_spacing
 name|gdouble
 name|line_spacing
 decl_stmt|;
-DECL|member|color
-name|GimpRGB
-name|color
-decl_stmt|;
 block|}
 struct|;
 end_struct
