@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dockable-menu.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"image-menu.h"
 end_include
 
@@ -426,7 +432,7 @@ literal|"/dockable-popup"
 argument_list|,
 literal|"dockable-menu.xml"
 argument_list|,
-name|NULL
+name|dockable_menu_setup
 argument_list|,
 name|NULL
 argument_list|)
