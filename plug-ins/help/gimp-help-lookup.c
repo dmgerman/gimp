@@ -159,7 +159,9 @@ name|gchar
 modifier|*
 name|help_root
 init|=
-name|NULL
+name|DATADIR
+name|G_DIR_SEPARATOR_S
+name|GIMP_HELP_PREFIX
 decl_stmt|;
 name|gchar
 modifier|*
@@ -378,11 +380,11 @@ name|uri
 operator|=
 name|g_filename_to_uri
 argument_list|(
-argument|DATADIR G_DIR_SEPARATOR_S GIMP_HELP_PREFIX
+name|help_root
 argument_list|,
-argument|NULL
+name|NULL
 argument_list|,
-argument|NULL
+name|NULL
 argument_list|)
 expr_stmt|;
 name|domain_register
