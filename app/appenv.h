@@ -197,6 +197,29 @@ endif|#
 directive|endif
 end_endif
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|G_SQRT2
+end_ifndef
+
+begin_comment
+comment|/* As will G_SQRT2 */
+end_comment
+
+begin_define
+DECL|macro|G_SQRT2
+define|#
+directive|define
+name|G_SQRT2
+value|1.4142135623730951
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -296,7 +319,7 @@ value|CLAMP(a,0,255)
 end_define
 
 begin_typedef
-DECL|enum|__anon27940e130103
+DECL|enum|__anon2b5498020103
 typedef|typedef
 enum|enum
 block|{

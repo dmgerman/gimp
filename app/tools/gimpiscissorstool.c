@@ -183,7 +183,7 @@ comment|/*  The possible states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c34bf030103
+DECL|enum|__anon27a928700103
 typedef|typedef
 enum|enum
 block|{
@@ -209,7 +209,7 @@ comment|/*  The possible drawing states...  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2c34bf030203
+DECL|enum|__anon27a928700203
 typedef|typedef
 enum|enum
 block|{
@@ -5490,7 +5490,7 @@ call|)
 argument_list|(
 name|i
 operator|*
-name|M_SQRT2
+name|G_SQRT2
 argument_list|)
 expr_stmt|;
 comment|/*  The direction value array  */
