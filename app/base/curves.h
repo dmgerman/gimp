@@ -16,29 +16,13 @@ directive|define
 name|__CURVES_H__
 end_define
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2744b8f50103
-block|{
-DECL|enumerator|CURVES_SMOOTH
-name|CURVES_SMOOTH
-block|,
-DECL|enumerator|CURVES_FREE
-name|CURVES_FREE
-block|, }
-DECL|typedef|CurvesType
-name|CurvesType
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_Curves
 struct|struct
 name|_Curves
 block|{
 DECL|member|curve_type
-name|CurvesType
+name|GimpCurveType
 name|curve_type
 index|[
 literal|5

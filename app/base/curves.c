@@ -211,7 +211,7 @@ index|[
 name|channel
 index|]
 operator|=
-name|CURVES_SMOOTH
+name|GIMP_CURVE_SMOOTH
 expr_stmt|;
 name|curves_channel_reset
 argument_list|(
@@ -434,11 +434,11 @@ index|]
 condition|)
 block|{
 case|case
-name|CURVES_FREE
+name|GIMP_CURVE_FREE
 case|:
 break|break;
 case|case
-name|CURVES_SMOOTH
+name|GIMP_CURVE_SMOOTH
 case|:
 comment|/*  cycle through the curves  */
 name|num_pts
