@@ -192,7 +192,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf136f30103
+DECL|enum|__anon2bc057b30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -720,7 +720,7 @@ literal|"toolbox-image-area"
 argument_list|,
 name|TOOLBOX_IMAGE_AREA_BLURB
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
