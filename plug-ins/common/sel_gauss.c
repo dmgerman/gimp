@@ -36,7 +36,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a33e4330108
+DECL|struct|__anon2b1cb4560108
 block|{
 DECL|member|radius
 name|gdouble
@@ -116,7 +116,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|sel_gauss_dialog
 parameter_list|(
 name|void
@@ -633,7 +633,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|sel_gauss_dialog (void)
 name|sel_gauss_dialog
 parameter_list|(
@@ -714,7 +714,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -724,7 +724,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
