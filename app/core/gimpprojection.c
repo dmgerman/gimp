@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1a3bc90103
+DECL|enum|__anon288180970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -777,6 +777,7 @@ operator|->
 name|gimp
 operator|->
 name|next_display_ID
+operator|++
 expr_stmt|;
 comment|/*  refs the image  */
 name|gimp_display_connect
