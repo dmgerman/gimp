@@ -251,7 +251,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_cross_product:  * @vector1: the first vector (by address)  * @vector2: the second vector (by address)  *  * Compute the cross product of two vectors.  * The result is a vector (a #GimpVector2) which is orthognal to both  * of vector1 and vector2. If vector1 and vector2 and parallel, the  * result will be the nul vector.  *  * Note that in 2D, this function is mostly useful to test if two  * vectors are parallel or not, or to compute the area spawned by two  * vectors.  *   * Returns: The cross product.  **/
+comment|/**  * gimp_vector2_cross_product:  * @vector1: the first vector (by address)  * @vector2: the second vector (by address)  *  * Compute the cross product of two vectors.  * The result is a vector (a #GimpVector2) which is orthognal to both  * of vector1 and vector2. If vector1 and vector2 and parallel, the  * result will be the nul vector.  *  * Note that in 2D, this function is mostly useful to test if two  * vectors are parallel or not, or to compute the area spawned by two  * vectors.  *  * Returns: The cross product.  **/
 end_comment
 
 begin_function
@@ -524,7 +524,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_normalize_val:  *  * @vector: a #GimpVector2 (by value)  *   * Computes and returns the normalized vector corresponding with the one  * passed in argument.  *  * Returns: a #GimpVector2 parallel to @vector, pointing in the same  *          direction but with a length of 1.0.  **/
+comment|/**  * gimp_vector2_normalize_val:  *  * @vector: a #GimpVector2 (by value)  *  * Computes and returns the normalized vector corresponding with the one  * passed in argument.  *  * Returns: a #GimpVector2 parallel to @vector, pointing in the same  *          direction but with a length of 1.0.  **/
 end_comment
 
 begin_function
@@ -945,7 +945,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_neg:  * @vector: a #GimpVector2 (by address)  *  * Negates the @vector (i.e. negate all its coordinates).   **/
+comment|/**  * gimp_vector2_neg:  * @vector: a #GimpVector2 (by address)  *  * Negates the @vector (i.e. negate all its coordinates).  **/
 end_comment
 
 begin_function
@@ -1092,7 +1092,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_rotate_val:  * @vector: a #GimpVector2 (by value)  * @alpha: an angle (in radians)  *  * Computes and returns the rotation of the @vector by @alpha radians,  * counterclockwize.  *   * Returns: the @vector rotated by @alpha radians.  **/
+comment|/**  * gimp_vector2_rotate_val:  * @vector: a #GimpVector2 (by value)  * @alpha: an angle (in radians)  *  * Computes and returns the rotation of the @vector by @alpha radians,  * counterclockwize.  *  * Returns: the @vector rotated by @alpha radians.  **/
 end_comment
 
 begin_function
@@ -1269,7 +1269,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector3_cross_product:  * @vector1: the first #GimpVector3 (by address)  * @vector2: the second #GimpVector3 (by address)  *  * Compute the cross product of two vectors.  * The result is a #GimpVector3 which is orthognal to both  * of vector1 and vector2. If vector1 and vector2 and parallel, the  * result will be the nul vector.  *  * This function can be used to compute the normal of the plan defined by  * @vector1 and @vector2.  *   * Returns: The cross product.  **/
+comment|/**  * gimp_vector3_cross_product:  * @vector1: the first #GimpVector3 (by address)  * @vector2: the second #GimpVector3 (by address)  *  * Compute the cross product of two vectors.  * The result is a #GimpVector3 which is orthognal to both  * of vector1 and vector2. If vector1 and vector2 and parallel, the  * result will be the nul vector.  *  * This function can be used to compute the normal of the plan defined by  * @vector1 and @vector2.  *  * Returns: The cross product.  **/
 end_comment
 
 begin_function
@@ -1604,7 +1604,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector3_normalize_val:  *  * @vector: a #GimpVector3 (by value)  *   * Computes and returns the normalized vector corresponding with the one  * passed in argument.  *  * Returns: a #GimpVector2 parallel to @vector, pointing in the same  *          direction but with a length of 1.0.  **/
+comment|/**  * gimp_vector3_normalize_val:  *  * @vector: a #GimpVector3 (by value)  *  * Computes and returns the normalized vector corresponding with the one  * passed in argument.  *  * Returns: a #GimpVector2 parallel to @vector, pointing in the same  *          direction but with a length of 1.0.  **/
 end_comment
 
 begin_function
@@ -1686,7 +1686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector3_mul:  * @vector: a #GimpVector3 (by address)  * @factor: a scalar  *  * Multiplies each component of the @vector by @factor.  * Note that this is equivalent to multiplied the length of @vector   * by @factor.  **/
+comment|/**  * gimp_vector3_mul:  * @vector: a #GimpVector3 (by address)  * @factor: a scalar  *  * Multiplies each component of the @vector by @factor.  * Note that this is equivalent to multiplied the length of @vector  * by @factor.  **/
 end_comment
 
 begin_function
@@ -2117,7 +2117,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector3_neg:  * @vector: a #GimpVector3 (by address)  *  * Negates the @vector (i.e. negate all its coordinates).   **/
+comment|/**  * gimp_vector3_neg:  * @vector: a #GimpVector3 (by address)  *  * Negates the @vector (i.e. negate all its coordinates).  **/
 end_comment
 
 begin_function
@@ -2560,7 +2560,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector_2d_to_3d:  * @sx: the abscisse of the upper-left screen rectangle.  * @sy: the ordinate of the upper-left screen rectangle.  * @w: the width of the screen rectangle.  * @h: the height of the screen rectangle.  * @x: the abscisse of the point in the screen rectangle to map.  * @y: the ordinate of the point in the screen rectangle to map.  * @vp: position of the observer (by address).  * @p: the resulting point (by address).  *   * \"Compute screen (sx,sy)-(sx+w,sy+h) to 3D unit square mapping.  * The plane to map to is given in the z field of p. The observer  * is located at position vp (vp->z!=0.0).\"  *  * In other words, this computes the projection of the point (@x ,@y) to  * the plane z = @p->z (parallel to XY), from the @vp point of view through  * the screen (@sx, @sy)->(@sx+@w, @sy+@h)   **/
+comment|/**  * gimp_vector_2d_to_3d:  * @sx: the abscisse of the upper-left screen rectangle.  * @sy: the ordinate of the upper-left screen rectangle.  * @w: the width of the screen rectangle.  * @h: the height of the screen rectangle.  * @x: the abscisse of the point in the screen rectangle to map.  * @y: the ordinate of the point in the screen rectangle to map.  * @vp: position of the observer (by address).  * @p: the resulting point (by address).  *  * \"Compute screen (sx,sy)-(sx+w,sy+h) to 3D unit square mapping.  * The plane to map to is given in the z field of p. The observer  * is located at position vp (vp->z!=0.0).\"  *  * In other words, this computes the projection of the point (@x ,@y) to  * the plane z = @p->z (parallel to XY), from the @vp point of view through  * the screen (@sx, @sy)->(@sx+@w, @sy+@h)  **/
 end_comment
 
 begin_function
