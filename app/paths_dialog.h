@@ -72,7 +72,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|BZPATHP
+name|PATHP
 name|paths_get_bzpaths
 parameter_list|(
 name|void
@@ -87,7 +87,7 @@ parameter_list|(
 name|GImage
 modifier|*
 parameter_list|,
-name|BZPATHP
+name|PATHP
 parameter_list|)
 function_decl|;
 end_function_decl
