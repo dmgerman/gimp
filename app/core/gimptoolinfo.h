@@ -153,6 +153,11 @@ name|gchar
 modifier|*
 name|pdb_string
 decl_stmt|;
+DECL|member|paint_core_name
+name|gchar
+modifier|*
+name|paint_core_name
+decl_stmt|;
 DECL|member|stock_id
 specifier|const
 name|gchar
@@ -259,6 +264,11 @@ specifier|const
 name|gchar
 modifier|*
 name|pdb_string
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|paint_core_name
 parameter_list|,
 specifier|const
 name|gchar

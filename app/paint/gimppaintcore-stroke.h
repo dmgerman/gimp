@@ -32,12 +32,12 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
-name|gint
-name|n_strokes
-parameter_list|,
-name|gdouble
+name|GimpCoords
 modifier|*
 name|strokes
+parameter_list|,
+name|gint
+name|n_strokes
 parameter_list|)
 function_decl|;
 end_function_decl

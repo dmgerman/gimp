@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/pdb-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pdb/procedural_db.h"
 end_include
 
@@ -53,6 +47,12 @@ begin_include
 include|#
 directive|include
 file|"pdb/internal_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint/paint.h"
 end_include
 
 begin_include
@@ -512,6 +512,11 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|gimp_parasites_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|paint_init
 argument_list|(
 name|gimp
 argument_list|)
@@ -1238,6 +1243,11 @@ operator|->
 name|modules
 condition|)
 name|gimp_modules_exit
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
+name|paint_exit
 argument_list|(
 name|gimp
 argument_list|)
