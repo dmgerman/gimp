@@ -277,7 +277,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|struct|__anon2b0c151e0108
+DECL|struct|__anon2bb8b7260108
 typedef|typedef
 struct|struct
 block|{
@@ -314,7 +314,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0c151e0208
+DECL|struct|__anon2bb8b7260208
 typedef|typedef
 struct|struct
 block|{
@@ -369,7 +369,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b0c151e0308
+DECL|struct|__anon2bb8b7260308
 typedef|typedef
 struct|struct
 block|{
@@ -13638,6 +13638,16 @@ argument_list|,
 literal|1
 argument_list|)
 decl_stmt|;
+comment|/*  Start an undo group  */
+name|undo_push_group_start
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|,
+name|PAINT_CORE_UNDO
+argument_list|)
+expr_stmt|;
 name|redraw
 operator|=
 name|bezier_gen_points
@@ -13863,10 +13873,14 @@ condition|(
 name|rpnts
 condition|)
 do|;
-comment|/* printf ("num_stroke_points: %d\ndone.\n", num_stroke_points); */
-comment|/*   rpnts->stroke_points = NULL; */
-comment|/*   rpnts->len_stroke_points = rpnts->num_stroke_points = 0; */
-comment|/*   g_free(rpnts); */
+comment|/*  End an undo group  */
+name|undo_push_group_end
+argument_list|(
+name|gdisp
+operator|->
+name|gimage
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
