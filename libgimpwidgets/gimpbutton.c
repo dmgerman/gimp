@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8b2f20103
+DECL|enum|__anon2c16d36c0103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -467,6 +467,10 @@ modifier|*
 name|bevent
 parameter_list|)
 block|{
+name|GtkButton
+modifier|*
+name|button
+decl_stmt|;
 name|gboolean
 name|in_button
 init|=
@@ -500,6 +504,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|button
+operator|=
+name|GTK_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|bevent
@@ -509,17 +520,6 @@ operator|==
 literal|1
 condition|)
 block|{
-name|GtkButton
-modifier|*
-name|button
-decl_stmt|;
-name|button
-operator|=
-name|GTK_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 name|in_button
 operator|=
 name|button
@@ -608,6 +608,12 @@ operator|&&
 name|in_button
 condition|)
 block|{
+name|button
+operator|->
+name|in_button
+operator|=
+name|TRUE
+expr_stmt|;
 name|gtk_widget_set_state
 argument_list|(
 name|widget

@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be88f420103
+DECL|enum|__anon2be3e3240103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1043,7 +1043,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Raise          \n"
-literal|"<shift> To Top"
+literal|"<Shift> To Top"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1155,7 +1155,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Lower             \n"
-literal|"<shift> To Bottom"
+literal|"<Shift> To Bottom"
 argument_list|)
 argument_list|,
 name|NULL
