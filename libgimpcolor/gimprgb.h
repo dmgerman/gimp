@@ -31,7 +31,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a42bebf0103
+DECL|enum|__anon28a324de0103
 block|{
 DECL|enumerator|GIMP_RGB_COMPOSITE_NONE
 name|GIMP_RGB_COMPOSITE_NONE
@@ -459,7 +459,7 @@ name|g
 parameter_list|,
 name|b
 parameter_list|)
-value|((r) * GIMP_RGB_INTENSITY_RED   + \ 			           (g) * GIMP_RGB_INTENSITY_GREEN + \ 			           (b) * GIMP_RGB_INTENSITY_BLUE  + 0.001)
+value|((r) * GIMP_RGB_INTENSITY_RED   + \ 			           (g) * GIMP_RGB_INTENSITY_GREEN + \ 			           (b) * GIMP_RGB_INTENSITY_BLUE)
 end_define
 
 begin_macro

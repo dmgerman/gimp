@@ -18,7 +18,10 @@ end_define
 
 begin_decl_stmt
 name|G_BEGIN_DECLS
-comment|/* This file contains aliases that are kept for historical  * reasons, because a wide code base depends on them.  *  * These defines will be removed in the next development cycle.  */
+comment|/* This file contains aliases that are kept for historical reasons,  * because a wide code base depends on them. We suggest that you  * only use this header temporarily while porting a plug-in to the  * new API.  *  * These defines will be removed in the next development cycle.  */
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
 DECL|macro|GimpRunModeType
 define|#
 directive|define
@@ -146,8 +149,35 @@ define|#
 directive|define
 name|gimp_pattern_select_widget_close_popup
 value|gimp_pattern_select_widget_close
+DECL|macro|INTENSITY (r,g,b)
+define|#
+directive|define
+name|INTENSITY
+parameter_list|(
+name|r
+parameter_list|,
+name|g
+parameter_list|,
+name|b
+parameter_list|)
+value|GIMP_RGB_INTENSITY(r,g,b)
+DECL|macro|INTENSITY_RED
+define|#
+directive|define
+name|INTENSITY_RED
+value|GIMP_RGB_INTENSITY_RED
+DECL|macro|INTENSITY_GREEN
+define|#
+directive|define
+name|INTENSITY_GREEN
+value|GIMP_RGB_INTENSITY_GREEN
+DECL|macro|INTENSITY_BLUE
+define|#
+directive|define
+name|INTENSITY_BLUE
+value|GIMP_RGB_INTENSITY_BLUE
 name|enum
-DECL|enum|__anon29b38a830103
+DECL|enum|__anon28b836080103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -179,7 +209,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon29b38a830203
+DECL|enum|__anon28b836080203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -206,7 +236,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b38a830303
+DECL|enum|__anon28b836080303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -233,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b38a830403
+DECL|enum|__anon28b836080403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -265,7 +295,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b38a830503
+DECL|enum|__anon28b836080503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -282,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b38a830603
+DECL|enum|__anon28b836080603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -299,7 +329,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b38a830703
+DECL|enum|__anon28b836080703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -316,7 +346,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b38a830803
+DECL|enum|__anon28b836080803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -338,7 +368,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b38a830903
+DECL|enum|__anon28b836080903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -397,6 +427,15 @@ name|GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE
 block|}
 enum|;
 end_enum
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_macro
 name|G_END_DECLS
