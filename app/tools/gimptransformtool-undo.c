@@ -271,11 +271,18 @@ index|[
 name|i
 index|]
 expr_stmt|;
+if|if
+condition|(
+name|original
+condition|)
 name|tu
 operator|->
 name|original
 operator|=
+name|tile_manager_ref
+argument_list|(
 name|original
+argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
@@ -514,7 +521,7 @@ name|tu
 operator|->
 name|original
 condition|)
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|tu
 operator|->

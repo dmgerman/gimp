@@ -128,7 +128,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c793f7e0108
+DECL|struct|__anon2bc20ea40108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -185,7 +185,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c793f7e0208
+DECL|struct|__anon2bc20ea40208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -908,7 +908,7 @@ operator|.
 name|tiles
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|distR
 operator|.
@@ -998,7 +998,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  free the temporary buffer  */
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|buf_tiles
 argument_list|)
@@ -2979,7 +2979,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|tempR
 operator|.

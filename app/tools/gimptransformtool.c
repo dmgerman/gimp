@@ -1077,7 +1077,7 @@ operator|->
 name|original
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|tr_tool
 operator|->
@@ -3428,6 +3428,11 @@ argument_list|,
 name|new_layer
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|new_tiles
+argument_list|)
+expr_stmt|;
 comment|/*  Make a note of the new current drawable (since we may have        *  a floating selection, etc now.        */
 name|tool
 operator|->
@@ -3784,7 +3789,7 @@ operator|->
 name|original
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|tr_tool
 operator|->

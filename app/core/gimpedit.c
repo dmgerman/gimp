@@ -243,7 +243,7 @@ operator|!=
 name|cut
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|cut
 argument_list|)
@@ -447,7 +447,7 @@ operator|!=
 name|copy
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|copy
 argument_list|)
@@ -1259,7 +1259,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  free the temporary tiles  */
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|buf_tiles
 argument_list|)
@@ -1680,7 +1680,7 @@ operator|)
 argument_list|)
 expr_stmt|;
 comment|/*  free the temporary tiles  */
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|buf_tiles
 argument_list|)

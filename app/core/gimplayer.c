@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b212d2c0103
+DECL|enum|__anon2921daf40103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -1053,7 +1053,7 @@ operator|.
 name|backing_store
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|layer
 operator|->
@@ -3115,7 +3115,7 @@ expr_stmt|;
 block|}
 break|break;
 block|}
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|new_drawable
 operator|->
@@ -4085,7 +4085,7 @@ if|if
 condition|(
 name|copy_tiles
 condition|)
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|copy_tiles
 argument_list|)
@@ -4628,6 +4628,16 @@ name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  Configure the new layer  */
+name|tile_manager_unref
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+operator|->
+name|tiles
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE
 argument_list|(
 name|layer

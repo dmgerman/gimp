@@ -2704,26 +2704,16 @@ argument_list|(
 name|drawable
 argument_list|)
 decl_stmt|;
-comment|/*  free the block structures  */
-if|if
-condition|(
-name|undo_tiles
-condition|)
-name|tile_manager_destroy
-argument_list|(
-name|undo_tiles
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|canvas_tiles
-condition|)
-name|tile_manager_destroy
-argument_list|(
-name|canvas_tiles
-argument_list|)
-expr_stmt|;
 comment|/*  Allocate the undo structure  */
+if|if
+condition|(
+name|undo_tiles
+condition|)
+name|tile_manager_unref
+argument_list|(
+name|undo_tiles
+argument_list|)
+expr_stmt|;
 name|undo_tiles
 operator|=
 name|tile_manager_new
@@ -2745,6 +2735,15 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Allocate the canvas blocks structure  */
+if|if
+condition|(
+name|canvas_tiles
+condition|)
+name|tile_manager_unref
+argument_list|(
+name|canvas_tiles
+argument_list|)
+expr_stmt|;
 name|canvas_tiles
 operator|=
 name|tile_manager_new
@@ -2831,6 +2830,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|undo_tiles
+argument_list|)
+expr_stmt|;
 name|undo_tiles
 operator|=
 name|NULL
@@ -2862,7 +2866,7 @@ condition|(
 name|undo_tiles
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|undo_tiles
 argument_list|)
@@ -2878,7 +2882,7 @@ condition|(
 name|canvas_tiles
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|canvas_tiles
 argument_list|)
@@ -3124,7 +3128,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon29f912650103
+DECL|enum|__anon2c0935b00103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

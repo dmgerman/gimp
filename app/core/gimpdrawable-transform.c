@@ -4200,7 +4200,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Free the cut/copied buffer */
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|orig_tiles
 argument_list|)
@@ -4209,6 +4209,7 @@ if|if
 condition|(
 name|new_tiles
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_drawable_transform_paste
@@ -4220,6 +4221,12 @@ argument_list|,
 name|new_layer
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|new_tiles
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/*  push the undo group end  */
 name|gimp_image_undo_group_end
@@ -4430,7 +4437,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Free the cut/copied buffer */
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|orig_tiles
 argument_list|)
@@ -4439,6 +4446,7 @@ if|if
 condition|(
 name|new_tiles
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_drawable_transform_paste
@@ -4450,6 +4458,12 @@ argument_list|,
 name|new_layer
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|new_tiles
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/*  push the undo group end  */
 name|gimp_image_undo_group_end
@@ -4642,7 +4656,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Free the cut/copied buffer */
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|orig_tiles
 argument_list|)
@@ -4651,6 +4665,7 @@ if|if
 condition|(
 name|new_tiles
 condition|)
+block|{
 name|success
 operator|=
 name|gimp_drawable_transform_paste
@@ -4662,6 +4677,12 @@ argument_list|,
 name|new_layer
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|new_tiles
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/*  push the undo group end  */
 name|gimp_image_undo_group_end
@@ -4990,12 +5011,6 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-comment|/*  Free the tiles  */
-name|tile_manager_destroy
-argument_list|(
-name|tiles
-argument_list|)
-expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -5148,11 +5163,21 @@ name|channel
 argument_list|)
 expr_stmt|;
 comment|/*  set the current layer's data  */
+name|tile_manager_unref
+argument_list|(
+name|drawable
+operator|->
+name|tiles
+argument_list|)
+expr_stmt|;
 name|drawable
 operator|->
 name|tiles
 operator|=
+name|tile_manager_ref
+argument_list|(
 name|tiles
+argument_list|)
 expr_stmt|;
 comment|/*  Fill in the new layer's attributes  */
 name|GIMP_ITEM

@@ -21,6 +21,11 @@ DECL|struct|_TileManager
 struct|struct
 name|_TileManager
 block|{
+DECL|member|ref_count
+name|gint
+name|ref_count
+decl_stmt|;
+comment|/*  reference counter                    */
 DECL|member|x
 DECL|member|y
 name|gint

@@ -4255,7 +4255,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|iscissors
 operator|->

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a50f73e0103
+DECL|enum|__anon29735d240103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -843,14 +843,14 @@ name|y1
 operator|)
 condition|)
 block|{
-comment|/*  Destroy old tiles--If they exist  */
+comment|/*  Destroy old tiles  */
 if|if
 condition|(
 name|image_map
 operator|->
 name|undo_tiles
 condition|)
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|image_map
 operator|->
@@ -1298,6 +1298,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|image_map
+operator|->
+name|undo_tiles
+argument_list|)
+expr_stmt|;
+name|image_map
+operator|->
+name|undo_tiles
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
@@ -1498,7 +1511,7 @@ argument_list|(
 literal|"image depth change, unable to restore original image"
 argument_list|)
 expr_stmt|;
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|image_map
 operator|->
@@ -1549,7 +1562,7 @@ name|height
 argument_list|)
 expr_stmt|;
 comment|/*  Free the undo_tiles tile manager  */
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|image_map
 operator|->

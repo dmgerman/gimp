@@ -437,7 +437,7 @@ operator|->
 name|tiles
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|buffer
 operator|->

@@ -1623,7 +1623,7 @@ name|core
 operator|->
 name|undo_tiles
 condition|)
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|core
 operator|->
@@ -1659,7 +1659,7 @@ name|core
 operator|->
 name|canvas_tiles
 condition|)
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|core
 operator|->
@@ -1909,6 +1909,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|core
+operator|->
+name|undo_tiles
+argument_list|)
+expr_stmt|;
 name|core
 operator|->
 name|undo_tiles
@@ -1957,7 +1964,7 @@ operator|->
 name|undo_tiles
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|core
 operator|->
@@ -1978,7 +1985,7 @@ operator|->
 name|canvas_tiles
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|core
 operator|->

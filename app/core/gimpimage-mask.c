@@ -1582,7 +1582,7 @@ operator|+
 name|off_y
 expr_stmt|;
 comment|/*  Free the temp buffer  */
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|tiles
 argument_list|)

@@ -1352,7 +1352,7 @@ argument_list|,
 name|y1
 argument_list|)
 expr_stmt|;
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|buf_tiles
 argument_list|)

@@ -485,7 +485,7 @@ operator|->
 name|projection
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|gimage
 operator|->
@@ -525,15 +525,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
 name|gimage
 operator|->
 name|projection
 operator|==
 name|NULL
-operator|)
 operator|||
-operator|(
 name|tile_manager_width
 argument_list|(
 name|gimage
@@ -544,9 +541,7 @@ operator|!=
 name|gimage
 operator|->
 name|width
-operator|)
 operator|||
-operator|(
 name|tile_manager_height
 argument_list|(
 name|gimage
@@ -557,7 +552,6 @@ operator|!=
 name|gimage
 operator|->
 name|height
-operator|)
 condition|)
 block|{
 name|gimp_image_projection_allocate

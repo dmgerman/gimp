@@ -68,12 +68,24 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Destroy a tile manager and all the tiles it contains.  */
+comment|/* Ref/Unref a tile manager.  */
 end_comment
 
 begin_function_decl
+name|TileManager
+modifier|*
+name|tile_manager_ref
+parameter_list|(
+name|TileManager
+modifier|*
+name|tm
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
-name|tile_manager_destroy
+name|tile_manager_unref
 parameter_list|(
 name|TileManager
 modifier|*

@@ -1448,6 +1448,13 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  swap the tiles  */
+name|tile_manager_unref
+argument_list|(
+name|drawable
+operator|->
+name|tiles
+argument_list|)
+expr_stmt|;
 name|drawable
 operator|->
 name|tiles

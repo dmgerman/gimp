@@ -1218,7 +1218,7 @@ name|drawable
 operator|->
 name|tiles
 condition|)
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|drawable
 operator|->
@@ -1451,7 +1451,7 @@ argument_list|,
 name|OPAQUE_OPACITY
 argument_list|)
 expr_stmt|;
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|mask
 argument_list|)

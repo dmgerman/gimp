@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e91000103
+DECL|enum|__anon2c4c21390103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED
@@ -830,7 +830,7 @@ operator|->
 name|tiles
 condition|)
 block|{
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|drawable
 operator|->
@@ -1412,6 +1412,13 @@ else|:
 name|interpolation_type
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|drawable
+operator|->
+name|tiles
+argument_list|)
+expr_stmt|;
 name|drawable
 operator|->
 name|tiles
@@ -1756,6 +1763,13 @@ name|destPR
 argument_list|)
 expr_stmt|;
 block|}
+name|tile_manager_unref
+argument_list|(
+name|drawable
+operator|->
+name|tiles
+argument_list|)
+expr_stmt|;
 name|drawable
 operator|->
 name|tiles
@@ -1921,6 +1935,7 @@ if|if
 condition|(
 name|tiles
 condition|)
+block|{
 name|gimp_drawable_transform_paste
 argument_list|(
 name|drawable
@@ -1930,6 +1945,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|tiles
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2050,6 +2071,7 @@ if|if
 condition|(
 name|tiles
 condition|)
+block|{
 name|gimp_drawable_transform_paste
 argument_list|(
 name|drawable
@@ -2059,6 +2081,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|tiles
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2189,6 +2217,7 @@ if|if
 condition|(
 name|tiles
 condition|)
+block|{
 name|gimp_drawable_transform_paste
 argument_list|(
 name|drawable
@@ -2198,6 +2227,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|tiles
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2301,7 +2336,7 @@ name|drawable
 operator|->
 name|tiles
 condition|)
-name|tile_manager_destroy
+name|tile_manager_unref
 argument_list|(
 name|drawable
 operator|->
