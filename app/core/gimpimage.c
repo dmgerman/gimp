@@ -222,7 +222,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ba3930103
+DECL|enum|__anon28c83b130103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -438,7 +438,7 @@ literal|1
 index|]
 init|=
 block|{
-comment|/* RGB GIMAGE */
+comment|/* GIMP_RGB_IMAGE */
 block|{
 operator|-
 literal|1
@@ -454,7 +454,7 @@ block|,
 name|COMBINE_INTEN_INTEN_A
 block|}
 block|,
-comment|/* RGBA GIMAGE */
+comment|/* GIMP_RGBA_IMAGE */
 block|{
 operator|-
 literal|1
@@ -470,7 +470,7 @@ block|,
 name|COMBINE_INTEN_A_INTEN_A
 block|}
 block|,
-comment|/* GRAY GIMAGE */
+comment|/* GIMP_GRAY_IMAGE */
 block|{
 operator|-
 literal|1
@@ -486,7 +486,7 @@ operator|-
 literal|1
 block|}
 block|,
-comment|/* GRAYA GIMAGE */
+comment|/* GIMP_GRAYA_IMAGE */
 block|{
 operator|-
 literal|1
@@ -502,7 +502,7 @@ operator|-
 literal|1
 block|}
 block|,
-comment|/* INDEXED GIMAGE */
+comment|/* GIMP_INDEXED_IMAGE */
 block|{
 operator|-
 literal|1
@@ -518,7 +518,7 @@ operator|-
 literal|1
 block|}
 block|,
-comment|/* INDEXEDA GIMAGE */
+comment|/* GIMP_INDEXEDA_IMAGE */
 block|{
 operator|-
 literal|1
@@ -1595,7 +1595,7 @@ name|gimage
 operator|->
 name|proj_type
 operator|=
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 expr_stmt|;
 name|gimage
 operator|->
@@ -3179,13 +3179,13 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|GRAY_GIMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 case|case
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 if|if
 condition|(
@@ -3248,13 +3248,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 case|case
-name|GRAYA_GIMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 case|case
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 if|if
 condition|(
@@ -3683,23 +3683,23 @@ case|case
 name|GIMP_RGB
 case|:
 return|return
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 return|;
 case|case
 name|GIMP_GRAY
 case|:
 return|return
-name|GRAYA_GIMAGE
+name|GIMP_GRAYA_IMAGE
 return|;
 case|case
 name|GIMP_INDEXED
 case|:
 return|return
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 return|;
 block|}
 return|return
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 return|;
 block|}
 end_function
@@ -6215,10 +6215,10 @@ name|d_type
 condition|)
 block|{
 case|case
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|map_to_color
 argument_list|(
@@ -6233,10 +6233,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_GIMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 case|case
-name|GRAYA_GIMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 name|map_to_color
 argument_list|(
@@ -6251,10 +6251,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 case|case
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 name|map_to_color
 argument_list|(
@@ -6344,10 +6344,10 @@ name|d_type
 condition|)
 block|{
 case|case
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 comment|/*  Straight copy  */
 operator|*
@@ -6376,10 +6376,10 @@ operator|++
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_GIMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 case|case
-name|GRAYA_GIMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 comment|/*  NTSC conversion  */
 operator|*
@@ -6405,10 +6405,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 case|case
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 comment|/*  Least squares method  */
 operator|*
@@ -6446,10 +6446,10 @@ name|d_type
 condition|)
 block|{
 case|case
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 comment|/*  Gray to RG&B */
 operator|*
@@ -6475,10 +6475,10 @@ name|src
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_GIMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 case|case
-name|GRAYA_GIMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 comment|/*  Straight copy  */
 operator|*
@@ -6489,10 +6489,10 @@ name|src
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 case|case
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 comment|/*  Least squares method  */
 operator|*

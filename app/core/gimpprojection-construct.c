@@ -391,7 +391,7 @@ name|gimage
 operator|->
 name|proj_type
 operator|=
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -407,7 +407,7 @@ name|gimage
 operator|->
 name|proj_type
 operator|=
-name|GRAYA_GIMAGE
+name|GIMP_GRAYA_IMAGE
 expr_stmt|;
 break|break;
 default|default:
@@ -2070,10 +2070,10 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|GRAY_GIMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 comment|/* no mask possible */
 name|project_intensity
@@ -2093,10 +2093,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 case|case
-name|GRAYA_GIMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 name|project_intensity_alpha
 argument_list|(
@@ -2115,7 +2115,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 comment|/* no mask possible */
 name|project_indexed
@@ -2133,7 +2133,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 name|project_indexed_alpha
 argument_list|(

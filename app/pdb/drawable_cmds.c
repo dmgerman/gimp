@@ -64,6 +64,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-enums.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -1642,7 +1648,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"The drawable's type: { RGB_IMAGE (0), RGBA_IMAGE (1), GRAY_IMAGE (2), GRAYA_IMAGE (3), INDEXED_IMAGE (4), INDEXEDA_IMAGE (5) }"
+literal|"The drawable's type: { GIMP_RGB_IMAGE (0), GIMP_RGBA_IMAGE (1), GIMP_GRAY_IMAGE (2), GIMP_GRAYA_IMAGE (3), GIMP_INDEXED_IMAGE (4), GIMP_INDEXEDA_IMAGE (5) }"
 block|}
 block|}
 decl_stmt|;
@@ -1972,7 +1978,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type_with_alpha"
 block|,
-literal|"The drawable's type with alpha: { RGBA_IMAGE (1), GRAYA_IMAGE (3), INDEXEDA_IMAGE (5) }"
+literal|"The drawable's type with alpha: { GIMP_RGB_IMAGE (0), GIMP_RGBA_IMAGE (1), GIMP_GRAY_IMAGE (2), GIMP_GRAYA_IMAGE (3), GIMP_INDEXED_IMAGE (4), GIMP_INDEXEDA_IMAGE (5) }"
 block|}
 block|}
 decl_stmt|;

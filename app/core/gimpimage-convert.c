@@ -35087,7 +35087,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e6a470108
+DECL|struct|__anon29874d2c0108
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -35164,7 +35164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e6a470208
+DECL|struct|__anon29874d2c0208
 block|{
 DECL|member|ncolors
 name|long
@@ -35355,7 +35355,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2e6a470308
+DECL|struct|__anon29874d2c0308
 block|{
 DECL|member|used_count
 name|signed
@@ -36387,7 +36387,7 @@ name|NULL
 expr_stmt|;
 name|new_layer_type
 operator|=
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 expr_stmt|;
 name|new_layer_bytes
 operator|=
@@ -36815,9 +36815,9 @@ operator|(
 name|has_alpha
 operator|)
 condition|?
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 else|:
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 expr_stmt|;
 name|new_layer_bytes
 operator|=
@@ -36839,9 +36839,9 @@ operator|(
 name|has_alpha
 operator|)
 condition|?
-name|GRAYA_GIMAGE
+name|GIMP_GRAYA_IMAGE
 else|:
-name|GRAY_GIMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 name|new_layer_bytes
 operator|=
@@ -36863,9 +36863,9 @@ operator|(
 name|has_alpha
 operator|)
 condition|?
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 else|:
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 expr_stmt|;
 name|new_layer_bytes
 operator|=

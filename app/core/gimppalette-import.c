@@ -1161,11 +1161,11 @@ name|indexed
 operator|=
 name|d_type
 operator|==
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 operator|||
 name|d_type
 operator|==
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 expr_stmt|;
 name|width
 operator|=

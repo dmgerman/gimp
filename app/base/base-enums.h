@@ -16,8 +16,45 @@ directive|define
 name|__BASE_ENUMS_H__
 end_define
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
-comment|/* These enums that are registered with the type system. */
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and glib-mkenums. All enums that are not marked with
+comment|/*< pdb-skip>*/
+end_comment
+
+begin_comment
+unit|are exported to libgimp and the PDB. Enums that are not marked with
+comment|/*< skip>*/
+end_comment
+
+begin_comment
+unit|are registered with the GType system. If you want the    enum to be skipped by both scripts, you have to use
+comment|/*< pdb-skip>*/
+end_comment
+
+begin_comment
+unit|_before_
+comment|/*< skip>*/
+end_comment
+
+begin_comment
+unit|.      All enum values that are marked with
+comment|/*< skip>*/
+end_comment
+
+begin_endif
+unit|are skipped for    both targets.
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*   * these enums that are registered with the type system  */
 end_comment
 
 begin_define
@@ -41,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace1e2e0103
+DECL|enum|__anon290182df0103
 block|{
 DECL|enumerator|GIMP_LINEAR_INTERPOLATION
 name|GIMP_LINEAR_INTERPOLATION
@@ -78,7 +115,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ace1e2e0203
+DECL|enum|__anon290182df0203
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -158,6 +195,50 @@ typedef|;
 end_typedef
 
 begin_define
+DECL|macro|GIMP_TYPE_CHECK_SIZE
+define|#
+directive|define
+name|GIMP_TYPE_CHECK_SIZE
+value|(gimp_check_size_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_check_size_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+DECL|enum|__anon290182df0303
+block|{
+DECL|enumerator|GIMP_SMALL_CHECKS
+name|GIMP_SMALL_CHECKS
+init|=
+literal|0
+block|,
+DECL|enumerator|GIMP_MEDIUM_CHECKS
+name|GIMP_MEDIUM_CHECKS
+init|=
+literal|1
+block|,
+DECL|enumerator|GIMP_LARGE_CHECKS
+name|GIMP_LARGE_CHECKS
+init|=
+literal|2
+DECL|typedef|GimpCheckSize
+block|}
+name|GimpCheckSize
+typedef|;
+end_typedef
+
+begin_define
 DECL|macro|GIMP_TYPE_CHECK_TYPE
 define|#
 directive|define
@@ -179,7 +260,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ace1e2e0303
+DECL|enum|__anon290182df0403
 block|{
 DECL|enumerator|GIMP_LIGHT_CHECKS
 name|GIMP_LIGHT_CHECKS
@@ -216,47 +297,99 @@ name|GimpCheckType
 typedef|;
 end_typedef
 
-begin_define
-DECL|macro|GIMP_TYPE_CHECK_SIZE
-define|#
-directive|define
-name|GIMP_TYPE_CHECK_SIZE
-value|(gimp_check_size_get_type ())
-end_define
+begin_comment
+comment|/*  * non-registered enums; register them if needed  */
+end_comment
 
-begin_decl_stmt
-name|GType
-name|gimp_check_size_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon290182df0503
+block|{
+DECL|enumerator|GIMP_NORMAL_CONVOL
+name|GIMP_NORMAL_CONVOL
+block|,
+comment|/*  Negative numbers truncated  */
+DECL|enumerator|GIMP_ABSOLUTE_CONVOL
+name|GIMP_ABSOLUTE_CONVOL
+block|,
+comment|/*  Absolute value              */
+DECL|enumerator|GIMP_NEGATIVE_CONVOL
+name|GIMP_NEGATIVE_CONVOL
+comment|/*  add 127 to values           */
+DECL|typedef|GimpConvolutionType
+block|}
+name|GimpConvolutionType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon290182df0603
+block|{
+DECL|enumerator|GIMP_VALUE_LUT
+name|GIMP_VALUE_LUT
+block|,
+DECL|enumerator|GIMP_RED_LUT
+name|GIMP_RED_LUT
+block|,
+DECL|enumerator|GIMP_GREEN_LUT
+name|GIMP_GREEN_LUT
+block|,
+DECL|enumerator|GIMP_BLUE_LUT
+name|GIMP_BLUE_LUT
+block|,
+DECL|enumerator|GIMP_ALPHA_LUT
+name|GIMP_ALPHA_LUT
+block|,
+DECL|enumerator|GIMP_GRAY_LUT
+name|GIMP_GRAY_LUT
+init|=
+literal|0
+comment|/*< skip>*/
+DECL|typedef|GimpChannelLutType
+block|}
+name|GimpChannelLutType
+typedef|;
+end_typedef
 
 begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2ace1e2e0403
+comment|/*< skip>*/
+DECL|enum|__anon290182df0703
 block|{
-DECL|enumerator|GIMP_SMALL_CHECKS
-name|GIMP_SMALL_CHECKS
+DECL|enumerator|GIMP_HISTOGRAM_VALUE
+name|GIMP_HISTOGRAM_VALUE
 init|=
 literal|0
 block|,
-DECL|enumerator|GIMP_MEDIUM_CHECKS
-name|GIMP_MEDIUM_CHECKS
+DECL|enumerator|GIMP_HISTOGRAM_RED
+name|GIMP_HISTOGRAM_RED
 init|=
 literal|1
 block|,
-DECL|enumerator|GIMP_LARGE_CHECKS
-name|GIMP_LARGE_CHECKS
+DECL|enumerator|GIMP_HISTOGRAM_GREEN
+name|GIMP_HISTOGRAM_GREEN
 init|=
 literal|2
-DECL|typedef|GimpCheckSize
+block|,
+DECL|enumerator|GIMP_HISTOGRAM_BLUE
+name|GIMP_HISTOGRAM_BLUE
+init|=
+literal|3
+block|,
+DECL|enumerator|GIMP_HISTOGRAM_ALPHA
+name|GIMP_HISTOGRAM_ALPHA
+init|=
+literal|4
+DECL|typedef|GimpHistogramChannel
 block|}
-name|GimpCheckSize
+name|GimpHistogramChannel
 typedef|;
 end_typedef
 

@@ -38,7 +38,7 @@ name|GIMP_IMAGE_TYPE_HAS_ALPHA
 parameter_list|(
 name|t
 parameter_list|)
-value|((t) == RGBA_GIMAGE  || \ 				      (t) == GRAYA_GIMAGE || \ 				      (t) == INDEXEDA_GIMAGE)
+value|((t) == GIMP_RGBA_IMAGE  || \ 				      (t) == GIMP_GRAYA_IMAGE || \ 				      (t) == GIMP_INDEXEDA_IMAGE)
 end_define
 
 begin_struct

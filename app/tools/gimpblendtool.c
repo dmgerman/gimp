@@ -851,10 +851,10 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 case|case
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 name|g_message
 argument_list|(
@@ -2001,10 +2001,10 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 case|case
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 name|gimp_display_shell_install_tool_cursor
 argument_list|(

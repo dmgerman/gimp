@@ -601,7 +601,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GRAY_GIMAGE
+name|GIMP_GRAY_IMAGE
 argument_list|,
 name|name
 argument_list|)

@@ -16,8 +16,45 @@ directive|define
 name|__CORE_ENUMS_H__
 end_define
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
-comment|/* These enums that are registered with the type system. */
+unit|This file is parsed by two scripts, enumgen.pl in tools/pdbgen    and glib-mkenums. All enums that are not marked with
+comment|/*< pdb-skip>*/
+end_comment
+
+begin_comment
+unit|are exported to libgimp and the PDB. Enums that are not marked with
+comment|/*< skip>*/
+end_comment
+
+begin_comment
+unit|are registered with the GType system. If you want the    enum to be skipped by both scripts, you have to use
+comment|/*< pdb-skip>*/
+end_comment
+
+begin_comment
+unit|_before_
+comment|/*< skip>*/
+end_comment
+
+begin_comment
+unit|.      All enum values that are marked with
+comment|/*< skip>*/
+end_comment
+
+begin_endif
+unit|are skipped for    both targets.
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/*   * these enums that are registered with the type system  */
 end_comment
 
 begin_define
@@ -41,7 +78,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2778950e0103
+DECL|enum|__anon287f4b5a0103
 block|{
 DECL|enumerator|GIMP_RGB
 name|GIMP_RGB
@@ -79,7 +116,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2778950e0203
+DECL|enum|__anon287f4b5a0203
 block|{
 DECL|enumerator|GIMP_PREVIEW_SIZE_NONE
 name|GIMP_PREVIEW_SIZE_NONE
@@ -133,6 +170,104 @@ literal|256
 DECL|typedef|GimpPreviewSize
 block|}
 name|GimpPreviewSize
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  * non-registered enums; register them if needed  */
+end_comment
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon287f4b5a0303
+block|{
+DECL|enumerator|GIMP_RGB_IMAGE
+name|GIMP_RGB_IMAGE
+block|,
+DECL|enumerator|GIMP_RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
+block|,
+DECL|enumerator|GIMP_GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
+block|,
+DECL|enumerator|GIMP_GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
+block|,
+DECL|enumerator|GIMP_INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
+block|,
+DECL|enumerator|GIMP_INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
+DECL|typedef|GimpImageType
+block|}
+name|GimpImageType
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+comment|/*< skip>*/
+DECL|enum|__anon287f4b5a0403
+block|{
+DECL|enumerator|GIMP_SELECTION_OFF
+name|GIMP_SELECTION_OFF
+block|,
+DECL|enumerator|GIMP_SELECTION_LAYER_OFF
+name|GIMP_SELECTION_LAYER_OFF
+block|,
+DECL|enumerator|GIMP_SELECTION_ON
+name|GIMP_SELECTION_ON
+block|,
+DECL|enumerator|GIMP_SELECTION_PAUSE
+name|GIMP_SELECTION_PAUSE
+block|,
+DECL|enumerator|GIMP_SELECTION_RESUME
+name|GIMP_SELECTION_RESUME
+DECL|typedef|GimpSelectionControl
+block|}
+name|GimpSelectionControl
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< skip>*/
+DECL|enum|__anon287f4b5a0503
+block|{
+DECL|enumerator|GIMP_SHADOWS
+name|GIMP_SHADOWS
+block|,
+DECL|enumerator|GIMP_MIDTONES
+name|GIMP_MIDTONES
+block|,
+DECL|enumerator|GIMP_HIGHLIGHTS
+name|GIMP_HIGHLIGHTS
+DECL|typedef|GimpTransferMode
+block|}
+name|GimpTransferMode
+typedef|;
+end_typedef
+
+begin_typedef
+typedef|typedef
+enum|enum
+comment|/*< pdb-skip>*/
+comment|/*< skip>*/
+DECL|enum|__anon287f4b5a0603
+block|{
+DECL|enumerator|GIMP_TRANSFORM_FORWARD
+name|GIMP_TRANSFORM_FORWARD
+block|,
+DECL|enumerator|GIMP_TRANSFORM_BACKWARD
+name|GIMP_TRANSFORM_BACKWARD
+DECL|typedef|GimpTransformDirection
+block|}
+name|GimpTransformDirection
 typedef|;
 end_typedef
 

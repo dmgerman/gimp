@@ -861,7 +861,7 @@ name|NULL
 expr_stmt|;
 name|type
 operator|=
-name|RGBA_GIMAGE
+name|GIMP_RGBA_IMAGE
 expr_stmt|;
 name|x1
 operator|=
@@ -1268,7 +1268,7 @@ name|layer
 argument_list|)
 argument_list|)
 operator|==
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 condition|)
 block|{
 switch|switch
@@ -1284,7 +1284,7 @@ name|GIMP_RGB
 case|:
 name|type
 operator|=
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -1292,7 +1292,7 @@ name|GIMP_GRAY
 case|:
 name|type
 operator|=
-name|GRAY_GIMAGE
+name|GIMP_GRAY_IMAGE
 expr_stmt|;
 break|break;
 case|case
@@ -1300,7 +1300,7 @@ name|GIMP_INDEXED
 case|:
 name|type
 operator|=
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 expr_stmt|;
 break|break;
 block|}

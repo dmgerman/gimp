@@ -46,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
+file|"base/base-enums.h"
 end_include
 
 begin_include
@@ -82,7 +82,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"core/core-enums.h"
 end_include
 
 begin_include

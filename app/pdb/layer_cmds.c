@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/core-enums.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/core-types.h"
 end_include
 
@@ -740,11 +746,11 @@ if|if
 condition|(
 name|type
 operator|<
-name|RGB_GIMAGE
+name|GIMP_RGB_IMAGE
 operator|||
 name|type
 operator|>
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 condition|)
 name|success
 operator|=
@@ -941,7 +947,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"The layer type: { RGB_IMAGE (0), RGBA_IMAGE (1), GRAY_IMAGE (2), GRAYA_IMAGE (3), INDEXED_IMAGE (4), INDEXEDA_IMAGE (5) }"
+literal|"The layer type: { GIMP_RGB_IMAGE (0), GIMP_RGBA_IMAGE (1), GIMP_GRAY_IMAGE (2), GIMP_GRAYA_IMAGE (3), GIMP_INDEXED_IMAGE (4), GIMP_INDEXEDA_IMAGE (5) }"
 block|}
 block|,
 block|{

@@ -1320,7 +1320,7 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|==
-name|INDEXED_GIMAGE
+name|GIMP_INDEXED_IMAGE
 operator|)
 operator|||
 operator|(
@@ -1329,7 +1329,7 @@ argument_list|(
 name|drawable
 argument_list|)
 operator|==
-name|INDEXEDA_GIMAGE
+name|GIMP_INDEXEDA_IMAGE
 operator|)
 condition|)
 return|return;
