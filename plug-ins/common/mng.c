@@ -4734,7 +4734,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -4744,7 +4744,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4764,7 +4764,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -4794,17 +4794,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5149,7 +5139,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -5159,17 +5149,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5316,7 +5296,7 @@ argument_list|(
 literal|"Default Chunks Type:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -5393,7 +5373,7 @@ argument_list|(
 literal|"Default Frame Disposal:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
@@ -5489,9 +5469,9 @@ argument_list|(
 literal|"PNG Compression Level:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|1.0
+literal|0.9
 argument_list|,
 name|scale
 argument_list|,
@@ -5622,9 +5602,9 @@ argument_list|(
 literal|"JPEG Compression Quality:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|1.0
+literal|0.9
 argument_list|,
 name|scale
 argument_list|,
@@ -5742,9 +5722,9 @@ argument_list|(
 literal|"JPEG Smoothing Factor:"
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
-literal|1.0
+literal|0.9
 argument_list|,
 name|scale
 argument_list|,
@@ -5782,7 +5762,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -5812,17 +5792,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

@@ -384,7 +384,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a614e0108
+DECL|struct|__anon2974db9a0108
 block|{
 DECL|member|name
 specifier|const
@@ -644,7 +644,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a614e0208
+DECL|struct|__anon2974db9a0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -717,7 +717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a614e0308
+DECL|struct|__anon2974db9a0308
 block|{
 DECL|member|input_spi
 name|gint
@@ -747,7 +747,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a614e0408
+DECL|struct|__anon2974db9a0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -854,7 +854,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a614e0508
+DECL|struct|__anon2974db9a0508
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -1025,7 +1025,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a614e0608
+DECL|struct|__anon2974db9a0608
 block|{
 DECL|member|name
 specifier|const
@@ -1520,7 +1520,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|newsprint_dialog
 parameter_list|(
 name|GimpDrawable
@@ -3725,6 +3725,10 @@ modifier|*
 name|ct
 parameter_list|)
 block|{
+name|GtkSizeGroup
+modifier|*
+name|group
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
@@ -3774,7 +3778,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -3786,7 +3790,7 @@ operator|->
 name|vbox
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|table
@@ -3807,7 +3811,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3831,6 +3835,13 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|table
+argument_list|)
+expr_stmt|;
+name|group
+operator|=
+name|gtk_size_group_new
+argument_list|(
+name|GTK_SIZE_GROUP_HORIZONTAL
 argument_list|)
 expr_stmt|;
 comment|/* angle slider */
@@ -3899,6 +3910,23 @@ argument_list|,
 name|ct
 operator|->
 name|angle
+argument_list|)
+expr_stmt|;
+name|gtk_size_group_add_widget
+argument_list|(
+name|group
+argument_list|,
+name|GIMP_SCALE_ENTRY_LABEL
+argument_list|(
+name|chst
+operator|->
+name|angle_adj
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|group
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3990,7 +4018,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4025,7 +4053,7 @@ argument_list|(
 name|label
 argument_list|)
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|,
 literal|0.5
 argument_list|)
@@ -4048,6 +4076,13 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
+name|gtk_size_group_add_widget
+argument_list|(
+name|group
+argument_list|,
 name|label
 argument_list|)
 expr_stmt|;
@@ -4572,7 +4607,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|newsprint_dialog (GimpDrawable * drawable)
 name|newsprint_dialog
 parameter_list|(
@@ -4746,7 +4781,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -4756,7 +4791,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4790,7 +4825,7 @@ expr_stmt|;
 comment|/* resolution settings  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -4814,6 +4849,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|frame
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -4832,7 +4872,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -4842,17 +4882,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -4862,6 +4892,11 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
+name|table
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
 name|table
 argument_list|)
 expr_stmt|;
@@ -5086,20 +5121,10 @@ operator|&
 name|st
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|frame
-argument_list|)
-expr_stmt|;
 comment|/* screen settings */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -5131,19 +5156,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|st
-operator|.
-name|vbox
-argument_list|)
-argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5176,10 +5189,6 @@ name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|sep
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|button
 decl_stmt|;
 name|GtkWidget
@@ -5208,19 +5217,7 @@ operator|.
 name|pull_table
 argument_list|)
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_table_set_row_spacings
-argument_list|(
-name|GTK_TABLE
-argument_list|(
-name|st
-operator|.
-name|pull_table
-argument_list|)
-argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 comment|/* black pullout */
@@ -5342,34 +5339,6 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-name|sep
-operator|=
-name|gtk_hseparator_new
-argument_list|()
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|st
-operator|.
-name|vbox
-argument_list|)
-argument_list|,
-name|sep
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|sep
 argument_list|)
 expr_stmt|;
 comment|/*  pack the scaleentry table  */
@@ -5709,7 +5678,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|10
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5885,7 +5854,7 @@ expr_stmt|;
 comment|/* anti-alias control */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -5927,17 +5896,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6606,7 +6565,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299a614e0708
+DECL|struct|__anon2974db9a0708
 block|{
 DECL|member|index
 name|gint

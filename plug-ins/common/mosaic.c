@@ -164,7 +164,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c6eb790108
+DECL|struct|__anon27b2adeb0108
 block|{
 DECL|member|x
 DECL|member|y
@@ -182,7 +182,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c6eb790208
+DECL|struct|__anon27b2adeb0208
 block|{
 DECL|member|npts
 name|gint
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c6eb790308
+DECL|struct|__anon27b2adeb0308
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -233,7 +233,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c6eb790408
+DECL|struct|__anon27b2adeb0408
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2412,7 +2412,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -2422,7 +2422,7 @@ argument_list|(
 name|main_hbox
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2453,7 +2453,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2475,7 +2475,7 @@ expr_stmt|;
 comment|/*  the vertical box and its toggle buttons  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -2505,17 +2505,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|toggle_vbox
-argument_list|)
-argument_list|,
-literal|2
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2931,11 +2921,11 @@ expr_stmt|;
 comment|/*  parameter settings  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Parameter Settings"
+literal|"Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2973,7 +2963,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacings
@@ -2983,17 +2973,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|2
-argument_list|)
-expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
