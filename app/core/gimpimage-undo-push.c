@@ -7514,6 +7514,10 @@ condition|(
 name|layer
 operator|->
 name|text
+operator|&&
+name|tu
+operator|->
+name|text
 condition|)
 name|gimp_config_sync
 argument_list|(
