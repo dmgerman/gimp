@@ -67,13 +67,21 @@ comment|/*   tool options  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon297e75230108
+DECL|struct|__anon2ab0c63a0108
 typedef|typedef
 struct|struct
 block|{
 DECL|member|layer_only
 name|int
 name|layer_only
+decl_stmt|;
+DECL|member|default_to_enlarge
+name|int
+name|default_to_enlarge
+decl_stmt|;
+DECL|member|default_to_crop
+name|int
+name|default_to_crop
 decl_stmt|;
 DECL|typedef|CropToolOptions
 block|}
