@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5572750108
+DECL|struct|__anon27834fed0108
 block|{
 DECL|member|str
 specifier|const
