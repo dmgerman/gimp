@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"appenv.h"
 end_include
 
@@ -2007,9 +2001,11 @@ block|{
 case|case
 name|ADD
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|select_mode
+argument_list|,
+literal|21
 argument_list|,
 literal|"Selection: ADD"
 argument_list|)
@@ -2018,9 +2014,11 @@ break|break;
 case|case
 name|SUB
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|select_mode
+argument_list|,
+literal|21
 argument_list|,
 literal|"Selection: SUBTRACT"
 argument_list|)
@@ -2029,9 +2027,11 @@ break|break;
 case|case
 name|INTERSECT
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|select_mode
+argument_list|,
+literal|21
 argument_list|,
 literal|"Selection: INTERSECT"
 argument_list|)
@@ -2040,9 +2040,11 @@ break|break;
 case|case
 name|REPLACE
 case|:
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|select_mode
+argument_list|,
+literal|21
 argument_list|,
 literal|"Selection: REPLACE"
 argument_list|)
@@ -3003,9 +3005,11 @@ literal|25
 argument_list|)
 expr_stmt|;
 comment|/* strlen("Selection:  x ") + 2*5 */
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|size
+argument_list|,
+literal|25
 argument_list|,
 literal|"Selection: %d x %d"
 argument_list|,
