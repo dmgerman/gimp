@@ -133,7 +133,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2a0663150108
+DECL|struct|__anon29db6a280108
 typedef|typedef
 struct|struct
 block|{
@@ -151,7 +151,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a0663150208
+DECL|struct|__anon29db6a280208
 typedef|typedef
 struct|struct
 block|{
@@ -1440,7 +1440,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0663150308
+DECL|struct|__anon29db6a280308
 block|{
 DECL|member|color
 name|double
@@ -1459,7 +1459,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0663150408
+DECL|struct|__anon29db6a280408
 block|{
 DECL|member|coord
 name|double
@@ -1476,7 +1476,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a0663150503
+DECL|enum|__anon29db6a280503
 typedef|typedef
 enum|enum
 block|{
@@ -1498,7 +1498,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a0663150603
+DECL|enum|__anon29db6a280603
 typedef|typedef
 enum|enum
 block|{
@@ -1516,7 +1516,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0663150708
+DECL|struct|__anon29db6a280708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1551,7 +1551,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0663150808
+DECL|struct|__anon29db6a280808
 block|{
 DECL|member|type
 name|t_LightType
@@ -2411,7 +2411,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"iter_ALT/gen/plug_in_gauss_iir2_iter_ALT.inc"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"iter_ALT/gen/plug_in_gauss_rle_iter_ALT.inc"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"iter_ALT/gen/plug_in_gauss_rle2_iter_ALT.inc"
 end_include
 
 begin_include
@@ -2790,9 +2802,21 @@ name|p_plug_in_gauss_iir_iter_ALT
 block|}
 block|,
 block|{
+literal|"plug_in_gauss_iir2"
+block|,
+name|p_plug_in_gauss_iir2_iter_ALT
+block|}
+block|,
+block|{
 literal|"plug_in_gauss_rle"
 block|,
 name|p_plug_in_gauss_rle_iter_ALT
+block|}
+block|,
+block|{
+literal|"plug_in_gauss_rle2"
+block|,
+name|p_plug_in_gauss_rle2_iter_ALT
 block|}
 block|,
 block|{

@@ -200,7 +200,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b70e32a0108
+DECL|struct|__anon29e666290108
 block|{
 DECL|member|hwidth
 name|gint
@@ -2875,9 +2875,9 @@ argument_list|(
 literal|3
 argument_list|,
 comment|/*  number_of_fields  */
-name|UNIT_PIXEL
+name|unit
 argument_list|,
-comment|/*  FIXME - use unit  */
+comment|/*  unit              */
 literal|"%a"
 argument_list|,
 comment|/*  unit_format       */
@@ -2897,6 +2897,17 @@ name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|)
 expr_stmt|;
 comment|/*  update_policy     */
+comment|/*  set the unit back to pixels, since most times we will want pixels */
+name|gimp_size_entry_set_unit
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|width
+argument_list|)
+argument_list|,
+name|UNIT_PIXEL
+argument_list|)
+expr_stmt|;
 comment|/*  set the resolution to the image resolution  */
 name|gimp_size_entry_set_resolution
 argument_list|(
@@ -3371,9 +3382,9 @@ argument_list|(
 literal|3
 argument_list|,
 comment|/*  number_of_fields  */
-name|UNIT_PIXEL
+name|unit
 argument_list|,
-comment|/*  FIXME - use unit  */
+comment|/*  unit              */
 literal|"%a"
 argument_list|,
 comment|/*  unit_format       */
@@ -3393,6 +3404,16 @@ name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|)
 expr_stmt|;
 comment|/*  update_policy     */
+name|gimp_size_entry_set_unit
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|space
+argument_list|)
+argument_list|,
+name|UNIT_PIXEL
+argument_list|)
+expr_stmt|;
 comment|/*  set the resolution to the image resolution  */
 name|gimp_size_entry_set_resolution
 argument_list|(
@@ -3810,9 +3831,9 @@ argument_list|(
 literal|3
 argument_list|,
 comment|/*  number_of_fields  */
-name|UNIT_PIXEL
+name|unit
 argument_list|,
-comment|/*  FIXME - use unit  */
+comment|/*  unit              */
 literal|"%a"
 argument_list|,
 comment|/*  unit_format       */
@@ -3832,6 +3853,16 @@ name|GIMP_SIZE_ENTRY_UPDATE_SIZE
 argument_list|)
 expr_stmt|;
 comment|/*  update_policy     */
+name|gimp_size_entry_set_unit
+argument_list|(
+name|GIMP_SIZE_ENTRY
+argument_list|(
+name|offset
+argument_list|)
+argument_list|,
+name|UNIT_PIXEL
+argument_list|)
+expr_stmt|;
 comment|/*  set the resolution to the image resolution  */
 name|gimp_size_entry_set_resolution
 argument_list|(
