@@ -256,12 +256,21 @@ value|"Set the default preview size."
 end_define
 
 begin_define
+DECL|macro|SHOW_MENUBAR_BLURB
+define|#
+directive|define
+name|SHOW_MENUBAR_BLURB
+define|\
+value|"Set the menubar visibility. This can also be toggled with the "\ "View->Toggle Menubar command."
+end_define
+
+begin_define
 DECL|macro|SHOW_RULERS_BLURB
 define|#
 directive|define
 name|SHOW_RULERS_BLURB
 define|\
-value|"Set the ruler visibility. This can also be toggled with the "\ "View->Toggle Rulers command or Shift+Control+R."
+value|"Set the ruler visibility. This can also be toggled with the "\ "View->Toggle Rulers command."
 end_define
 
 begin_define
@@ -270,7 +279,7 @@ define|#
 directive|define
 name|SHOW_STATUSBAR_BLURB
 define|\
-value|"Controlling statusbar visibility. This can also be toggled with "\ "the View->Toggle Statusbar command or Shift+Control+S."
+value|"Controlling statusbar visibility. This can also be toggled with "\ "the View->Toggle Statusbar command."
 end_define
 
 begin_define
@@ -601,14 +610,6 @@ DECL|macro|CANVAS_PADDING_COLOR_BLURB
 define|#
 directive|define
 name|CANVAS_PADDING_COLOR_BLURB
-value|NULL
-end_define
-
-begin_define
-DECL|macro|MENU_BAR_PER_DISPLAY_BLURB
-define|#
-directive|define
-name|MENU_BAR_PER_DISPLAY_BLURB
 value|NULL
 end_define
 

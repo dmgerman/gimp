@@ -140,6 +140,10 @@ name|gchar
 modifier|*
 name|image_status_format
 decl_stmt|;
+DECL|member|show_menubar
+name|gboolean
+name|show_menubar
+decl_stmt|;
 DECL|member|show_rulers
 name|gboolean
 name|show_rulers
@@ -175,10 +179,6 @@ decl_stmt|;
 DECL|member|canvas_padding_color
 name|GimpRGB
 name|canvas_padding_color
-decl_stmt|;
-DECL|member|menu_bar_per_display
-name|gboolean
-name|menu_bar_per_display
 decl_stmt|;
 block|}
 struct|;

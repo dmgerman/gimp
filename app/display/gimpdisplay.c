@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54bbc10103
+DECL|enum|__anon2c9058670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1737,27 +1737,12 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/*  ensure the consistency of the tear-off menus  */
+comment|/*  ensure the consistency of the menus  */
 if|if
 condition|(
 operator|!
 name|now
-operator|&&
-name|gimp_context_get_display
-argument_list|(
-name|gimp_get_user_context
-argument_list|(
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|gimp
-argument_list|)
-argument_list|)
-operator|==
-name|gdisp
 condition|)
-block|{
 name|gimp_display_shell_set_menu_sensitivity
 argument_list|(
 name|shell
@@ -1767,9 +1752,10 @@ operator|->
 name|gimage
 operator|->
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 

@@ -290,10 +290,15 @@ name|GimpDisplay
 modifier|*
 name|gdisp
 decl_stmt|;
-DECL|member|item_factory
+DECL|member|menubar_factory
 name|GimpItemFactory
 modifier|*
-name|item_factory
+name|menubar_factory
+decl_stmt|;
+DECL|member|popup_factory
+name|GimpItemFactory
+modifier|*
+name|popup_factory
 decl_stmt|;
 DECL|member|monitor_xres
 name|gdouble
@@ -845,6 +850,9 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|update_popup
 parameter_list|)
 function_decl|;
 end_function_decl
