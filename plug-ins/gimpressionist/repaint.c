@@ -7138,8 +7138,8 @@ name|k
 init|=
 name|y
 operator|*
-name|tmp
-operator|.
+name|p
+operator|->
 name|width
 operator|*
 literal|3
