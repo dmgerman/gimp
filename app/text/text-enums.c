@@ -32,27 +32,38 @@ comment|/* enumerations from "./text-enums.h" */
 end_comment
 
 begin_decl_stmt
-DECL|variable|gimp_text_alignment_enum_values
+DECL|variable|gimp_text_justification_enum_values
 specifier|static
 specifier|const
 name|GEnumValue
-name|gimp_text_alignment_enum_values
+name|gimp_text_justification_enum_values
 index|[]
 init|=
 block|{
 block|{
-name|GIMP_TEXT_ALIGNMENT_LEFT
+name|GIMP_TEXT_JUSTIFY_LEFT
 block|,
 name|N_
 argument_list|(
-literal|"Left Aligned"
+literal|"Left Justified"
 argument_list|)
 block|,
 literal|"left"
 block|}
 block|,
 block|{
-name|GIMP_TEXT_ALIGNMENT_CENTER
+name|GIMP_TEXT_JUSTIFY_RIGHT
+block|,
+name|N_
+argument_list|(
+literal|"Right Justified"
+argument_list|)
+block|,
+literal|"right"
+block|}
+block|,
+block|{
+name|GIMP_TEXT_JUSTIFY_CENTER
 block|,
 name|N_
 argument_list|(
@@ -63,14 +74,14 @@ literal|"center"
 block|}
 block|,
 block|{
-name|GIMP_TEXT_ALIGNMENT_RIGHT
+name|GIMP_TEXT_JUSTIFY_FILL
 block|,
 name|N_
 argument_list|(
-literal|"Right Aligned"
+literal|"Filled"
 argument_list|)
 block|,
-literal|"right"
+literal|"fill"
 block|}
 block|,
 block|{
@@ -86,8 +97,8 @@ end_decl_stmt
 
 begin_function
 name|GType
-DECL|function|gimp_text_alignment_get_type (void)
-name|gimp_text_alignment_get_type
+DECL|function|gimp_text_justification_get_type (void)
+name|gimp_text_justification_get_type
 parameter_list|(
 name|void
 parameter_list|)
@@ -107,9 +118,9 @@ name|enum_type
 operator|=
 name|g_enum_register_static
 argument_list|(
-literal|"GimpTextAlignment"
+literal|"GimpTextJustification"
 argument_list|,
-name|gimp_text_alignment_enum_values
+name|gimp_text_justification_enum_values
 argument_list|)
 expr_stmt|;
 return|return

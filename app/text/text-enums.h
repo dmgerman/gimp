@@ -17,16 +17,16 @@ name|__TEXT_ENUMS_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_TEXT_ALIGNMENT
+DECL|macro|GIMP_TYPE_TEXT_JUSTIFICATION
 define|#
 directive|define
-name|GIMP_TYPE_TEXT_ALIGNMENT
-value|(gimp_text_alignment_get_type ())
+name|GIMP_TYPE_TEXT_JUSTIFICATION
+value|(gimp_text_justification_get_type ())
 end_define
 
 begin_decl_stmt
 name|GType
-name|gimp_text_alignment_get_type
+name|gimp_text_justification_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -34,29 +34,29 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/* this enum must match the values of the PangoAlignment enum */
-end_comment
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e6cdaa0103
+DECL|enum|__anon2c2e1dbc0103
 block|{
-DECL|enumerator|GIMP_TEXT_ALIGNMENT_LEFT
-name|GIMP_TEXT_ALIGNMENT_LEFT
+DECL|enumerator|GIMP_TEXT_JUSTIFY_LEFT
+name|GIMP_TEXT_JUSTIFY_LEFT
 block|,
-comment|/*< desc="Left Aligned">*/
-DECL|enumerator|GIMP_TEXT_ALIGNMENT_CENTER
-name|GIMP_TEXT_ALIGNMENT_CENTER
+comment|/*< desc="Left Justified">*/
+DECL|enumerator|GIMP_TEXT_JUSTIFY_RIGHT
+name|GIMP_TEXT_JUSTIFY_RIGHT
+block|,
+comment|/*< desc="Right Justified">*/
+DECL|enumerator|GIMP_TEXT_JUSTIFY_CENTER
+name|GIMP_TEXT_JUSTIFY_CENTER
 block|,
 comment|/*< desc="Centered">*/
-DECL|enumerator|GIMP_TEXT_ALIGNMENT_RIGHT
-name|GIMP_TEXT_ALIGNMENT_RIGHT
-comment|/*< desc="Right Aligned">*/
-DECL|typedef|GimpTextAlignment
+DECL|enumerator|GIMP_TEXT_JUSTIFY_FILL
+name|GIMP_TEXT_JUSTIFY_FILL
+comment|/*< desc="Filled">*/
+DECL|typedef|GimpTextJustification
 block|}
-name|GimpTextAlignment
+name|GimpTextJustification
 typedef|;
 end_typedef
 
