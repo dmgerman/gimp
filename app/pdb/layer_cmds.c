@@ -3567,15 +3567,6 @@ argument_list|)
 operator|!=
 name|NULL
 expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-name|g_object_unref
-argument_list|(
-name|mask
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|procedural_db_return_args
