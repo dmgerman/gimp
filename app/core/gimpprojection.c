@@ -5943,6 +5943,8 @@ name|buf
 decl_stmt|;
 name|int
 name|bpp
+decl_stmt|,
+name|bpl
 decl_stmt|;
 name|buf
 operator|=
@@ -5952,6 +5954,11 @@ expr_stmt|;
 name|bpp
 operator|=
 name|gximage_get_bpp
+argument_list|()
+expr_stmt|;
+name|bpl
+operator|=
+name|gximage_get_bpl
 argument_list|()
 expr_stmt|;
 name|sx
@@ -6395,6 +6402,8 @@ argument_list|,
 name|dy
 argument_list|,
 name|bpp
+argument_list|,
+name|bpl
 argument_list|)
 expr_stmt|;
 name|list

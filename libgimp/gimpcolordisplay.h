@@ -81,6 +81,9 @@ name|height
 parameter_list|,
 name|int
 name|bpp
+parameter_list|,
+name|int
+name|bpl
 parameter_list|)
 function_decl|;
 end_typedef

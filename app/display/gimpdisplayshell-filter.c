@@ -952,6 +952,13 @@ argument_list|,
 name|node
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|node_list
+operator|->
+name|prev
+condition|)
+block|{
 name|node_list
 operator|->
 name|data
@@ -970,6 +977,7 @@ name|data
 operator|=
 name|node
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1002,6 +1010,13 @@ argument_list|,
 name|node
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|node_list
+operator|->
+name|next
+condition|)
+block|{
 name|node_list
 operator|->
 name|data
@@ -1020,6 +1035,7 @@ name|data
 operator|=
 name|node
 expr_stmt|;
+block|}
 block|}
 end_function
 

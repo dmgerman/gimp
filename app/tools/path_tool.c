@@ -977,9 +977,7 @@ expr_stmt|;
 endif|#
 directive|endif
 endif|PATH_TOOL_DEBUG
-warning|#
-directive|warning
-warning|here we need path_curve_get_point(s)
+comment|/* XXX: here we need path_curve_get_point(s) */
 comment|/* Something like:     * for i = 1 to subsamples {     *   (x,y) = get_coordinates(i / subsamples)     *   (* function) (....)     * }     */
 block|}
 end_function
@@ -1306,9 +1304,7 @@ name|cur_segment
 operator|=
 name|new_segment
 expr_stmt|;
-warning|#
-directive|warning
-warning|we need initialisation of the segment here.
+comment|/* XXX: we need initialisation of the segment here. */
 block|}
 ifdef|#
 directive|ifdef
@@ -1499,9 +1495,7 @@ name|cur_segment
 operator|=
 name|new_segment
 expr_stmt|;
-warning|#
-directive|warning
-warning|we need initialisation of the segment here.
+comment|/* XXX: we need initialisation of the segment here. */
 block|}
 ifdef|#
 directive|ifdef
@@ -1597,9 +1591,7 @@ name|segment
 operator|->
 name|type
 expr_stmt|;
-warning|#
-directive|warning
-warning|Giving PathTool as NULL Pointer!
+comment|/* XXX: Giving PathTool as NULL Pointer! */
 name|path_curve_get_point
 argument_list|(
 name|NULL
@@ -1657,9 +1649,7 @@ name|data
 operator|=
 name|NULL
 expr_stmt|;
-warning|#
-directive|warning
-warning|we need initialisation of the segment here.
+comment|/* XXX: we need initialisation of the segment here. */
 name|new_segment
 operator|->
 name|next
@@ -1826,9 +1816,7 @@ operator|=
 name|segment2
 expr_stmt|;
 block|}
-warning|#
-directive|warning
-warning|Probably some segment-updates needed
+comment|/* XXX: Probably some segment-updates needed */
 return|return;
 block|}
 if|if
@@ -2042,9 +2030,7 @@ operator|->
 name|next
 expr_stmt|;
 block|}
-warning|#
-directive|warning
-warning|Probably some segment-updates needed
+comment|/* XXX: Probably some segment-updates needed */
 return|return;
 block|}
 if|if
@@ -2191,9 +2177,7 @@ name|prev
 expr_stmt|;
 block|}
 return|return;
-warning|#
-directive|warning
-warning|Probably some segment-updates needed
+comment|/* XXX: Probably some segment-updates needed */
 block|}
 ifdef|#
 directive|ifdef
@@ -2240,9 +2224,7 @@ decl_stmt|,
 modifier|*
 name|tmp2
 decl_stmt|;
-warning|#
-directive|warning
-warning|Please add path_curve_flip_segment here
+comment|/* XXX: Please add path_curve_flip_segment here */
 if|if
 condition|(
 operator|!
@@ -2381,9 +2363,7 @@ name|tmp
 operator|->
 name|next
 expr_stmt|;
-warning|#
-directive|warning
-warning|Probably some segment-updates needed
+comment|/* XXX: Probably some segment-updates needed */
 block|}
 block|}
 end_function
@@ -2590,9 +2570,7 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-warning|#
-directive|warning
-warning|Free Segment needs an own hook in the different curve-types!
+comment|/* XXX: Free Segment needs an own hook in the different curve-types! */
 name|g_free
 argument_list|(
 name|segment
@@ -2799,9 +2777,7 @@ name|segment
 argument_list|)
 expr_stmt|;
 comment|/*        * here we have to update the surrounding segments        */
-warning|#
-directive|warning
-warning|Please add path_curve_update_segment here
+comment|/* XXX: Please add path_curve_update_segment here */
 block|}
 block|}
 end_function
@@ -5431,7 +5407,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon280545a90108
+DECL|struct|__anon2924e2730108
 typedef|typedef
 struct|struct
 block|{
@@ -5816,7 +5792,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon280545a90208
+DECL|struct|__anon2924e2730208
 typedef|typedef
 struct|struct
 block|{
@@ -6168,7 +6144,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon280545a90308
+DECL|struct|__anon2924e2730308
 typedef|typedef
 struct|struct
 block|{
@@ -6253,9 +6229,7 @@ operator|->
 name|dy
 expr_stmt|;
 block|}
-warning|#
-directive|warning
-warning|Do a segment_update here!
+comment|/* XXX: Do a segment_update here! */
 block|}
 end_function
 
@@ -6328,7 +6302,7 @@ comment|/**************************************************************  * Set o
 end_comment
 
 begin_typedef
-DECL|struct|__anon280545a90408
+DECL|struct|__anon2924e2730408
 typedef|typedef
 struct|struct
 block|{
