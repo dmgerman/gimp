@@ -94,22 +94,16 @@ DECL|member|parent_instance
 name|GimpItem
 name|parent_instance
 decl_stmt|;
-DECL|member|visible
-name|gboolean
-name|visible
-decl_stmt|;
-comment|/* controls visibility            */
-DECL|member|locked
-name|gboolean
-name|locked
-decl_stmt|;
-comment|/* transformation locking         */
 DECL|member|strokes
 name|GList
 modifier|*
 name|strokes
 decl_stmt|;
 comment|/* The List of GimpStrokes        */
+DECL|member|freeze_count
+name|gint
+name|freeze_count
+decl_stmt|;
 comment|/* Stuff missing */
 block|}
 struct|;
@@ -125,11 +119,23 @@ name|GimpItemClass
 name|parent_class
 decl_stmt|;
 comment|/*  signals  */
-DECL|member|changed
+DECL|member|freeze
 name|void
 function_decl|(
 modifier|*
-name|changed
+name|freeze
+function_decl|)
+parameter_list|(
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|)
+function_decl|;
+DECL|member|thaw
+name|void
+function_decl|(
+modifier|*
+name|thaw
 function_decl|)
 parameter_list|(
 name|GimpVectors
@@ -362,6 +368,28 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_vectors_freeze
+parameter_list|(
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_vectors_thaw
+parameter_list|(
+name|GimpVectors
+modifier|*
+name|vectors
 parameter_list|)
 function_decl|;
 end_function_decl
