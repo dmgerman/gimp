@@ -25,20 +25,20 @@ comment|/* Will be used to hopefully store in XCF format...  */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2afb826d0108
+DECL|struct|__anon2c1568650108
 typedef|typedef
 struct|struct
 block|{
 DECL|member|type
-name|gint
+name|guint32
 name|type
 decl_stmt|;
 DECL|member|x
-name|gint
+name|gint32
 name|x
 decl_stmt|;
 DECL|member|y
-name|gint
+name|gint32
 name|y
 decl_stmt|;
 DECL|typedef|BZPOINT
@@ -52,7 +52,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2afb826d0208
+DECL|struct|__anon2c1568650208
 typedef|typedef
 struct|struct
 block|{
@@ -66,11 +66,11 @@ name|gboolean
 name|closed
 decl_stmt|;
 DECL|member|state
-name|gint
+name|guint32
 name|state
 decl_stmt|;
 DECL|member|locked
-name|gint
+name|guint32
 name|locked
 decl_stmt|;
 comment|/* Only bottom bit used */
@@ -90,7 +90,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2afb826d0308
+DECL|struct|__anon2c1568650308
 typedef|typedef
 struct|struct
 block|{
@@ -116,7 +116,7 @@ name|guint
 name|sig_id
 decl_stmt|;
 DECL|member|last_selected_row
-name|gint
+name|gint32
 name|last_selected_row
 decl_stmt|;
 DECL|typedef|PATHIMAGELIST
