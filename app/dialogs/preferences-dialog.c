@@ -7905,15 +7905,13 @@ init|=
 block|{
 name|NULL
 block|,
-literal|"%f-%p.%i (%t)"
+name|NULL
 block|,
 literal|"%f-%p.%i (%t) %z%%"
 block|,
 literal|"%f-%p.%i (%t) %d:%s"
 block|,
 literal|"%f-%p.%i (%t) %wx%h"
-block|,
-literal|"%f-%p.%i (%t) %m"
 block|}
 decl_stmt|;
 specifier|const
@@ -7925,12 +7923,12 @@ init|=
 block|{
 name|N_
 argument_list|(
-literal|"Default"
+literal|"Current format"
 argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Simple"
+literal|"Default format"
 argument_list|)
 block|,
 name|N_
@@ -7947,20 +7945,21 @@ name|N_
 argument_list|(
 literal|"Show image size"
 argument_list|)
-block|,
-name|N_
-argument_list|(
-literal|"Show memory usage"
-argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon291b788c0108
+DECL|struct|__anon2c2a3e480108
 block|{
 DECL|member|current_setting
 name|gchar
 modifier|*
 name|current_setting
+decl_stmt|;
+DECL|member|default_setting
+specifier|const
+name|gchar
+modifier|*
+name|default_setting
 decl_stmt|;
 DECL|member|title
 specifier|const
@@ -7982,6 +7981,8 @@ block|{
 block|{
 name|NULL
 block|,
+name|GIMP_CONFIG_DEFAULT_IMAGE_TITLE_FORMAT
+block|,
 name|N_
 argument_list|(
 literal|"Image Title Format"
@@ -7992,6 +7993,8 @@ block|}
 block|,
 block|{
 name|NULL
+block|,
+name|GIMP_CONFIG_DEFAULT_IMAGE_STATUS_FORMAT
 block|,
 name|N_
 argument_list|(
@@ -8091,6 +8094,18 @@ name|format
 index|]
 operator|.
 name|current_setting
+expr_stmt|;
+name|format_strings
+index|[
+literal|1
+index|]
+operator|=
+name|formats
+index|[
+name|format
+index|]
+operator|.
+name|default_setting
 expr_stmt|;
 name|vbox2
 operator|=
@@ -10057,7 +10072,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291b788c0208
+DECL|struct|__anon2c2a3e480208
 block|{
 DECL|member|label
 specifier|const
@@ -10214,7 +10229,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon291b788c0308
+DECL|struct|__anon2c2a3e480308
 block|{
 DECL|member|tree_label
 specifier|const

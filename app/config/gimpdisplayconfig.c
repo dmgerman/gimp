@@ -203,22 +203,6 @@ function_decl|;
 end_function_decl
 
 begin_define
-DECL|macro|DEFAULT_IMAGE_TITLE_FORMAT
-define|#
-directive|define
-name|DEFAULT_IMAGE_TITLE_FORMAT
-value|"%D*%f-%p.%i (%t, %L) %wx%h"
-end_define
-
-begin_define
-DECL|macro|DEFAULT_IMAGE_STATUS_FORMAT
-define|#
-directive|define
-name|DEFAULT_IMAGE_STATUS_FORMAT
-value|"%n (%m)"
-end_define
-
-begin_define
 DECL|macro|DEFAULT_ACTIVATE_ON_FOCUS
 define|#
 directive|define
@@ -228,7 +212,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d22100103
+DECL|enum|__anon28fad49f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -699,7 +683,7 @@ literal|"image-title-format"
 argument_list|,
 name|IMAGE_TITLE_FORMAT_BLURB
 argument_list|,
-name|DEFAULT_IMAGE_TITLE_FORMAT
+name|GIMP_CONFIG_DEFAULT_IMAGE_TITLE_FORMAT
 argument_list|,
 literal|0
 argument_list|)
@@ -714,7 +698,7 @@ literal|"image-status-format"
 argument_list|,
 name|IMAGE_STATUS_FORMAT_BLURB
 argument_list|,
-name|DEFAULT_IMAGE_STATUS_FORMAT
+name|GIMP_CONFIG_DEFAULT_IMAGE_STATUS_FORMAT
 argument_list|,
 literal|0
 argument_list|)

@@ -29,6 +29,22 @@ file|"config/gimpcoreconfig.h"
 end_include
 
 begin_define
+DECL|macro|GIMP_CONFIG_DEFAULT_IMAGE_TITLE_FORMAT
+define|#
+directive|define
+name|GIMP_CONFIG_DEFAULT_IMAGE_TITLE_FORMAT
+value|"%D*%f-%p.%i (%t, %L) %wx%h"
+end_define
+
+begin_define
+DECL|macro|GIMP_CONFIG_DEFAULT_IMAGE_STATUS_FORMAT
+define|#
+directive|define
+name|GIMP_CONFIG_DEFAULT_IMAGE_STATUS_FORMAT
+value|"%n (%m)"
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_DISPLAY_CONFIG
 define|#
 directive|define
