@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpchannel-combine.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
