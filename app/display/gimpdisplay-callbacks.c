@@ -284,9 +284,6 @@ block|{
 name|GDisplay
 modifier|*
 name|gdisp
-decl_stmt|,
-modifier|*
-name|tool_gdisp
 decl_stmt|;
 name|GdkEventExpose
 modifier|*
