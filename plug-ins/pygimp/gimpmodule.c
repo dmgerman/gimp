@@ -3806,25 +3806,6 @@ return|;
 block|}
 end_function
 
-begin_function_decl
-name|void
-name|gimp_extension_ack
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_extension_process
-parameter_list|(
-name|guint
-name|timeout
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 specifier|static
 name|PyObject
