@@ -150,7 +150,7 @@ comment|/* ick. */
 end_comment
 
 begin_enum
-DECL|enum|__anon2a3b8ff00103
+DECL|enum|__anon28f863a90103
 enum|enum
 block|{
 DECL|enumerator|REMOVED
@@ -288,9 +288,11 @@ end_decl_stmt
 
 begin_function
 name|GtkType
-DECL|function|gimp_layer_get_type ()
+DECL|function|gimp_layer_get_type (void)
 name|gimp_layer_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GtkType
@@ -462,9 +464,11 @@ end_function
 
 begin_function
 name|GtkType
-DECL|function|gimp_layer_mask_get_type ()
+DECL|function|gimp_layer_mask_get_type (void)
 name|gimp_layer_mask_get_type
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 specifier|static
 name|GtkType
