@@ -11,6 +11,10 @@ begin_comment
 comment|/* Alexander.Schulz@stud.uni-karlsruhe.de                */
 end_comment
 
+begin_comment
+comment|/*   * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  * ----------------------------------------------------------------------------  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -60,16 +64,14 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_function
-DECL|function|ReadBMP (name)
 name|gint32
+DECL|function|ReadBMP (char * name)
 name|ReadBMP
 parameter_list|(
-name|name
-parameter_list|)
 name|char
 modifier|*
 name|name
-decl_stmt|;
+parameter_list|)
 block|{
 name|FILE
 modifier|*
@@ -109,6 +111,9 @@ name|puffer
 index|[
 literal|50
 index|]
+decl_stmt|;
+name|gint32
+name|image_ID
 decl_stmt|;
 if|if
 condition|(
@@ -855,8 +860,8 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* Get the Image and return the ID or -1 on error*/
-return|return
-operator|(
+name|image_ID
+operator|=
 name|ReadImage
 argument_list|(
 name|fd
@@ -887,33 +892,90 @@ name|SpeicherZeile
 argument_list|,
 name|Grey
 argument_list|)
+expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_HAVE_RESOLUTION_INFO
+block|{
+comment|/* quick hack by the muppet, scott@asofyet.org, 19 dec 1999 */
+name|double
+name|xresolution
+decl_stmt|;
+name|double
+name|yresolution
+decl_stmt|;
+comment|/*      * xresolution and yresolution are in dots per inch.      * the BMP spec says that biXPels and biYPels are in      * pixels per meter as long ints (actually, "DWORDS").      * this means we've lost some accuracy in the numbers.      * typically, the dots per inch settings on BMPs will      * be integer numbers of dots per inch, which is freaky      * because they're stored in the BMP as metric.  *sigh*      * so, we'll round this off, even though the gimp wants      * a floating point number...      */
+DECL|macro|LROUND (x)
+define|#
+directive|define
+name|LROUND
+parameter_list|(
+name|x
+parameter_list|)
+value|((long int)((x)+0.5))
+name|xresolution
+operator|=
+name|LROUND
+argument_list|(
+operator|(
+name|Bitmap_Head
+operator|.
+name|biXPels
+operator|*
+literal|2.54
+operator|/
+literal|100.0
+operator|)
+argument_list|)
+expr_stmt|;
+name|yresolution
+operator|=
+name|LROUND
+argument_list|(
+operator|(
+name|Bitmap_Head
+operator|.
+name|biYPels
+operator|*
+literal|2.54
+operator|/
+literal|100.0
+operator|)
+argument_list|)
+expr_stmt|;
+undef|#
+directive|undef
+name|LROUND
+name|gimp_image_set_resolution
+argument_list|(
+name|image_ID
+argument_list|,
+name|xresolution
+argument_list|,
+name|yresolution
+argument_list|)
+expr_stmt|;
+block|}
+endif|#
+directive|endif
+comment|/* GIMP_HAVE_RESOLUTION_INFO */
+return|return
+operator|(
+name|image_ID
 operator|)
 return|;
 block|}
 end_function
 
 begin_function
-DECL|function|ReadColorMap (fd,buffer,number,size,grey)
 name|gint
+DECL|function|ReadColorMap (FILE * fd,unsigned char buffer[256][3],int number,int size,int * grey)
 name|ReadColorMap
 parameter_list|(
-name|fd
-parameter_list|,
-name|buffer
-parameter_list|,
-name|number
-parameter_list|,
-name|size
-parameter_list|,
-name|grey
-parameter_list|)
 name|FILE
 modifier|*
 name|fd
-decl_stmt|;
-name|int
-name|number
-decl_stmt|;
+parameter_list|,
 name|unsigned
 name|char
 name|buffer
@@ -923,14 +985,17 @@ index|]
 index|[
 literal|3
 index|]
-decl_stmt|;
+parameter_list|,
+name|int
+name|number
+parameter_list|,
 name|int
 name|size
-decl_stmt|;
+parameter_list|,
 name|int
 modifier|*
 name|grey
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|i
@@ -1128,37 +1193,20 @@ block|}
 end_function
 
 begin_function
-DECL|function|ReadImage (fd,len,height,cmap,ncols,bpp,compression,spzeile,grey)
 name|Image
+DECL|function|ReadImage (FILE * fd,int len,int height,unsigned char cmap[256][3],int ncols,int bpp,int compression,int spzeile,int grey)
 name|ReadImage
 parameter_list|(
-name|fd
-parameter_list|,
-name|len
-parameter_list|,
-name|height
-parameter_list|,
-name|cmap
-parameter_list|,
-name|ncols
-parameter_list|,
-name|bpp
-parameter_list|,
-name|compression
-parameter_list|,
-name|spzeile
-parameter_list|,
-name|grey
-parameter_list|)
 name|FILE
 modifier|*
 name|fd
-decl_stmt|;
+parameter_list|,
 name|int
 name|len
-decl_stmt|,
+parameter_list|,
+name|int
 name|height
-decl_stmt|;
+parameter_list|,
 name|unsigned
 name|char
 name|cmap
@@ -1168,18 +1216,22 @@ index|]
 index|[
 literal|3
 index|]
-decl_stmt|;
+parameter_list|,
 name|int
 name|ncols
-decl_stmt|,
+parameter_list|,
+name|int
 name|bpp
-decl_stmt|,
+parameter_list|,
+name|int
 name|compression
-decl_stmt|,
+parameter_list|,
+name|int
 name|spzeile
-decl_stmt|,
+parameter_list|,
+name|int
 name|grey
-decl_stmt|;
+parameter_list|)
 block|{
 name|char
 modifier|*

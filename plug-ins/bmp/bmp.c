@@ -96,6 +96,10 @@ comment|/*                       fixed.                   */
 end_comment
 
 begin_comment
+comment|/*            19.12.1999 Resolution support added */
+end_comment
+
+begin_comment
 comment|/*   * The GIMP -- an image manipulation program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  * ----------------------------------------------------------------------------  */
 end_comment
 
@@ -961,8 +965,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ToL (guchar * puffer)
 name|gint32
+DECL|function|ToL (guchar * puffer)
 name|ToL
 parameter_list|(
 name|guchar
@@ -1003,8 +1007,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|ToS (guchar * puffer)
 name|gint16
+DECL|function|ToS (guchar * puffer)
 name|ToS
 parameter_list|(
 name|guchar
@@ -1031,8 +1035,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|FromL (gint32 wert,guchar * bopuffer)
 name|void
+DECL|function|FromL (gint32 wert,guchar * bopuffer)
 name|FromL
 parameter_list|(
 name|gint32
@@ -1099,8 +1103,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|FromS (gint16 wert,guchar * bopuffer)
 name|void
+DECL|function|FromS (gint16 wert,guchar * bopuffer)
 name|FromS
 parameter_list|(
 name|gint16
