@@ -168,6 +168,21 @@ function_decl|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColorDisplayConfigureCancel
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|GimpColorDisplayConfigureCancel
+function_decl|)
+parameter_list|(
+name|gpointer
+name|cd_ID
+parameter_list|)
+function_decl|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorDisplayMethods
 typedef|typedef
 name|struct
@@ -212,6 +227,10 @@ decl_stmt|;
 DECL|member|configure
 name|GimpColorDisplayConfigure
 name|configure
+decl_stmt|;
+DECL|member|cancel
+name|GimpColorDisplayConfigureCancel
+name|cancel
 decl_stmt|;
 block|}
 struct|;
