@@ -339,11 +339,11 @@ argument_list|)
 block|,
 literal|"Jay Cox<jaycox@earthlink.net>"
 block|,
-literal|"v0.1"
+literal|"v0.2"
 block|,
 literal|"(c) 2000, released under the GPL"
 block|,
-literal|"April 28, 2000"
+literal|"October 14, 2000"
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1367,7 +1367,9 @@ name|adjustment
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-literal|4.0
+name|context
+operator|->
+name|contrast
 argument_list|,
 literal|1.0
 argument_list|,

@@ -339,11 +339,11 @@ argument_list|)
 block|,
 literal|"Manish Singh<yosh@gimp.org>"
 block|,
-literal|"v0.1"
+literal|"v0.2"
 block|,
 literal|"(c) 1999, released under the GPL"
 block|,
-literal|"October 3, 1999"
+literal|"October 14, 2000"
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1396,7 +1396,9 @@ name|adjustment
 operator|=
 name|gtk_adjustment_new
 argument_list|(
-literal|1.0
+name|context
+operator|->
+name|gamma
 argument_list|,
 literal|0.01
 argument_list|,
