@@ -142,7 +142,7 @@ directive|define
 name|gimp_pattern_select_widget_close_popup
 value|gimp_pattern_select_widget_close
 name|enum
-DECL|enum|__anon27dec7b30103
+DECL|enum|__anon28b3eeb20103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -183,7 +183,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon27dec7b30203
+DECL|enum|__anon28b3eeb20203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -210,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dec7b30303
+DECL|enum|__anon28b3eeb20303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -237,7 +237,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dec7b30403
+DECL|enum|__anon28b3eeb20403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -269,7 +269,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dec7b30503
+DECL|enum|__anon28b3eeb20503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -286,7 +286,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dec7b30603
+DECL|enum|__anon28b3eeb20603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -303,7 +303,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dec7b30703
+DECL|enum|__anon28b3eeb20703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -320,7 +320,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dec7b30803
+DECL|enum|__anon28b3eeb20803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -336,9 +336,7 @@ DECL|enumerator|GIMP_UNKNOWN
 name|GIMP_UNKNOWN
 init|=
 name|GIMP_ORIENTATION_UNKNOWN
-DECL|variable|GimpOrientationTypeCompat
 block|}
-name|GimpOrientationTypeCompat
 enum|;
 end_enum
 
