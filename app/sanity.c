@@ -200,11 +200,11 @@ return|return
 name|g_strdup_printf
 argument_list|(
 literal|"%s\n\n"
-literal|"The GIMP requires GLib+ version %d.%d.%d or later.\n"
-literal|"Installed GLib+ version is %d.%d.%d.\n\n"
+literal|"The GIMP requires GLib version %d.%d.%d or later.\n"
+literal|"Installed GLib version is %d.%d.%d.\n\n"
 literal|"Somehow you or your software packager managed\n"
-literal|"to install The GIMP with an older GLib+ version.\n\n"
-literal|"Please upgrade to GLib+ version %d.%d.%d or later."
+literal|"to install The GIMP with an older GLib version.\n\n"
+literal|"Please upgrade to GLib version %d.%d.%d or later."
 argument_list|,
 name|mismatch
 argument_list|,
