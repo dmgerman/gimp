@@ -157,10 +157,6 @@ block|}
 struct|;
 end_struct
 
-begin_comment
-comment|/*  magnify action functions  */
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
@@ -716,7 +712,7 @@ argument_list|,
 name|GIMP_CURSOR_MODIFIER_PLUS
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_tool_cursor
+name|gimp_tool_control_set_toggle_cursor
 argument_list|(
 name|tool
 operator|->
