@@ -175,7 +175,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-literal|"plug_in_unit_editor"
+literal|"extension_gimp_unit_editor"
 argument_list|,
 literal|"The GIMP unit editor (runs in interactive mode only)"
 argument_list|,
