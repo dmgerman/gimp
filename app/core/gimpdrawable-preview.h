@@ -17,7 +17,7 @@ name|__GIMP_DRAWABLE__PREVIEW_H__
 end_define
 
 begin_comment
-comment|/*  *  virtual functions of GimpDrawable -- dont't call directly  */
+comment|/*  *  virtual function of GimpDrawable -- dont't call directly  */
 end_comment
 
 begin_function_decl
@@ -34,6 +34,36 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|TempBuf
+modifier|*
+name|gimp_drawable_get_sub_preview
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|,
+name|gint
+name|src_x
+parameter_list|,
+name|gint
+name|src_y
+parameter_list|,
+name|gint
+name|src_width
+parameter_list|,
+name|gint
+name|src_height
+parameter_list|,
+name|gint
+name|dest_width
+parameter_list|,
+name|gint
+name|dest_height
 parameter_list|)
 function_decl|;
 end_function_decl
