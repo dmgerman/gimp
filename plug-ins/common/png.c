@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a18f3d00108
+DECL|struct|__anon295029950108
 block|{
 DECL|member|interlaced
 name|gint
@@ -1252,15 +1252,10 @@ name|filename
 argument_list|)
 expr_stmt|;
 return|return
-name|image
-return|;
-block|}
-comment|/* initialise variables here, thus avoiding compiler warnings */
-name|image
-operator|=
 operator|-
 literal|1
-expr_stmt|;
+return|;
+block|}
 comment|/*   * Open the file and initialize the PNG read "engine"...   */
 name|fp
 operator|=

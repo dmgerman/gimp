@@ -8,7 +8,7 @@ comment|/* This plug-in uses the algorithm described by John Schlag, "Fast  * Em
 end_comment
 
 begin_comment
-comment|/* Version 3.0-pre1-ac2:  *  * - waterlevel/ambient restricted to 0-255  */
+comment|/* Version 3.0-pre1-ac2:  *  * - waterlevel/ambient restricted to 0-255  * - correctly initialize bumpmap_offsets  */
 end_comment
 
 begin_comment
@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28922cd70103
+DECL|enum|__anon2b0e73500103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -156,7 +156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28922cd70203
+DECL|enum|__anon2b0e73500203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -175,7 +175,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28922cd70308
+DECL|struct|__anon2b0e73500308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -234,7 +234,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28922cd70408
+DECL|struct|__anon2b0e73500408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -279,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28922cd70508
+DECL|struct|__anon2b0e73500508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -574,7 +574,8 @@ specifier|static
 name|void
 name|dialog_new_bumpmap
 parameter_list|(
-name|void
+name|gboolean
+name|init_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -6153,18 +6154,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dialog_new_bumpmap (void)
+DECL|function|dialog_new_bumpmap (gboolean init_offsets)
 name|dialog_new_bumpmap
 parameter_list|(
-name|void
+name|gboolean
+name|init_offsets
 parameter_list|)
 block|{
-specifier|static
-name|gboolean
-name|first_call
-init|=
-name|TRUE
-decl_stmt|;
 name|GtkAdjustment
 modifier|*
 name|adj
@@ -6299,15 +6295,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|first_call
-operator|||
-name|bmvals
-operator|.
-name|bumpmap_id
-operator|==
-operator|-
-literal|1
+name|init_offsets
 condition|)
 block|{
 name|gimp_drawable_offsets
@@ -6355,14 +6343,6 @@ operator|-
 name|bump_offset_y
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|first_call
-condition|)
-name|first_call
-operator|=
-name|FALSE
-expr_stmt|;
 name|adj
 operator|=
 operator|(
@@ -6746,9 +6726,6 @@ literal|4
 argument_list|,
 name|TRUE
 argument_list|,
-comment|/*  		   bmint.bm_rows[(y + sel_y1)     % bmint.bm_height],  */
-comment|/*  		   bmint.bm_rows[(y + sel_y1 + 1) % bmint.bm_height],  */
-comment|/*  		   bmint.bm_rows[(y + sel_y1 + 2) % bmint.bm_height], */
 name|bmint
 operator|.
 name|bm_rows
@@ -8500,6 +8477,23 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+if|if
+condition|(
+name|bmvals
+operator|.
+name|bumpmap_id
+operator|==
+name|id
+condition|)
+block|{
+name|dialog_new_bumpmap
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|bmvals
 operator|.
 name|bumpmap_id
@@ -8507,8 +8501,11 @@ operator|=
 name|id
 expr_stmt|;
 name|dialog_new_bumpmap
-argument_list|()
+argument_list|(
+name|TRUE
+argument_list|)
 expr_stmt|;
+block|}
 name|dialog_update_preview
 argument_list|()
 expr_stmt|;
