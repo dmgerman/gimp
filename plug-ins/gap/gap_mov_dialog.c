@@ -223,7 +223,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2c89705b0108
+DECL|struct|__anon2c60d3bc0108
 typedef|typedef
 struct|struct
 block|{
@@ -238,7 +238,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c89705b0208
+DECL|struct|__anon2c60d3bc0208
 typedef|typedef
 struct|struct
 block|{
@@ -265,7 +265,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c89705b0308
+DECL|struct|__anon2c60d3bc0308
 block|{
 DECL|member|drawable
 name|GDrawable
@@ -443,7 +443,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c89705b0408
+DECL|struct|__anon2c60d3bc0408
 typedef|typedef
 struct|struct
 block|{
@@ -4326,7 +4326,7 @@ name|help_txt
 operator|=
 name|_
 argument_list|(
-literal|"Scale down size of the generated animated preview in %"
+literal|"Scale down size of the generated animated preview (in %)"
 argument_list|)
 expr_stmt|;
 name|argv
