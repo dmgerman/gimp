@@ -118,7 +118,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c17cc0103
+DECL|enum|__anon2bd374920103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1130,7 +1130,6 @@ operator|->
 name|border_width
 argument_list|)
 expr_stmt|;
-else|else
 name|gimp_preview_renderer_invalidate
 argument_list|(
 name|renderer
@@ -2643,7 +2642,6 @@ operator|->
 name|border_width
 argument_list|)
 expr_stmt|;
-else|else
 name|gimp_preview_renderer_invalidate
 argument_list|(
 name|renderer
