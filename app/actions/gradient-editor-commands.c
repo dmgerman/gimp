@@ -2126,42 +2126,8 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/*  Instructions  */
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Select the number of times"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-operator|(
+if|if
+condition|(
 name|editor
 operator|->
 name|control_sel_l
@@ -2169,16 +2135,27 @@ operator|==
 name|editor
 operator|->
 name|control_sel_r
-operator|)
-condition|?
+condition|)
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
 name|_
 argument_list|(
-literal|"to replicate the selected segment"
+literal|"Select the number of times\n"
+literal|"to replicate the selected segment."
 argument_list|)
-else|:
+argument_list|)
+expr_stmt|;
+else|else
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
 name|_
 argument_list|(
-literal|"to replicate the selection"
+literal|"Select the number of times\n"
+literal|"to replicate the selection."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2651,42 +2628,8 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/*  Instructions  */
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Please select the number of uniform parts"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|label
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|label
-argument_list|)
-expr_stmt|;
-name|label
-operator|=
-name|gtk_label_new
-argument_list|(
-operator|(
+if|if
+condition|(
 name|editor
 operator|->
 name|control_sel_l
@@ -2694,16 +2637,27 @@ operator|==
 name|editor
 operator|->
 name|control_sel_r
-operator|)
-condition|?
+condition|)
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
 name|_
 argument_list|(
-literal|"in which to split the selected segment"
+literal|"Select the number of uniform parts\n"
+literal|"in which to split the selected segment."
 argument_list|)
-else|:
+argument_list|)
+expr_stmt|;
+else|else
+name|label
+operator|=
+name|gtk_label_new
+argument_list|(
 name|_
 argument_list|(
-literal|"in which to split the segments in the selection"
+literal|"Select the number of uniform parts\n"
+literal|"in which to split the segments in the selection."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -59,7 +59,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ee29550108
+DECL|struct|__anon2c14ea8d0108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -577,7 +577,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't handle layers"
+literal|"%s can't handle layers"
 argument_list|)
 block|,
 block|{
@@ -607,7 +607,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't handle layer offsets, size or opacity"
+literal|"%s can't handle layer offsets, size or opacity"
 argument_list|)
 block|,
 block|{
@@ -637,7 +637,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only handle layers as animation frames"
+literal|"%s can only handle layers as animation frames"
 argument_list|)
 block|,
 block|{
@@ -670,7 +670,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only handle layers as animation frames"
+literal|"%s can only handle layers as animation frames"
 argument_list|)
 block|,
 block|{
@@ -703,7 +703,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't handle layers"
+literal|"%s can't handle layers"
 argument_list|)
 block|,
 block|{
@@ -733,7 +733,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can't handle transparency"
+literal|"%s can't handle transparency"
 argument_list|)
 block|,
 block|{
@@ -763,7 +763,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only handle RGB images"
+literal|"%s can only handle RGB images"
 argument_list|)
 block|,
 block|{
@@ -793,7 +793,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only handle grayscale images"
+literal|"%s can only handle grayscale images"
 argument_list|)
 block|,
 block|{
@@ -823,7 +823,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"can only handle indexed images"
+literal|"%s can only handle indexed images"
 argument_list|)
 block|,
 block|{
@@ -854,7 +854,7 @@ name|export_convert_grayscale
 block|,
 name|N_
 argument_list|(
-literal|"can only handle RGB or grayscale images"
+literal|"%s can only handle RGB or grayscale images"
 argument_list|)
 block|,
 block|{
@@ -887,7 +887,7 @@ name|export_convert_indexed
 block|,
 name|N_
 argument_list|(
-literal|"can only handle RGB or indexed images"
+literal|"%s can only handle RGB or indexed images"
 argument_list|)
 block|,
 block|{
@@ -921,7 +921,7 @@ name|export_convert_grayscale
 block|,
 name|N_
 argument_list|(
-literal|"can only handle grayscale or indexed images"
+literal|"%s can only handle grayscale or indexed images"
 argument_list|)
 block|,
 block|{
@@ -955,7 +955,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"needs an alpha channel"
+literal|"%s needs an alpha channel"
 argument_list|)
 block|,
 block|{
@@ -1154,13 +1154,13 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|confirm_save_dialog (const gchar * saving_what,const gchar * format_name)
+DECL|function|confirm_save_dialog (const gchar * message,const gchar * format_name)
 name|confirm_save_dialog
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|saving_what
+name|message
 parameter_list|,
 specifier|const
 name|gchar
@@ -1186,10 +1186,15 @@ name|GIMP_EXPORT_CANCEL
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|saving_what
+name|message
 operator|!=
 name|NULL
-operator|&&
+argument_list|,
+name|dialog_return
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|format_name
 operator|!=
 name|NULL
@@ -1316,13 +1321,7 @@ name|text
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
-argument_list|(
-literal|"You are about to save %s as %s.\n"
-literal|"This will not save the visible layers."
-argument_list|)
-argument_list|,
-name|saving_what
+name|message
 argument_list|,
 name|format_name
 argument_list|)
@@ -1761,16 +1760,14 @@ name|text
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"<b>%s %s</b>"
-argument_list|,
-name|format_name
-argument_list|,
 name|gettext
 argument_list|(
 name|action
 operator|->
 name|reason
 argument_list|)
+argument_list|,
+name|format_name
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_markup
@@ -2356,7 +2353,8 @@ name|confirm_save_dialog
 argument_list|(
 name|_
 argument_list|(
-literal|"a layer mask"
+literal|"You are about to save a layer mask as %s.\n"
+literal|"This will not save the visible layers."
 argument_list|)
 argument_list|,
 name|format_name
@@ -2377,7 +2375,8 @@ name|confirm_save_dialog
 argument_list|(
 name|_
 argument_list|(
-literal|"a channel (saved selection)"
+literal|"You are about to save a channel (saved selection) as %s.\n"
+literal|"This will not save the visible layers."
 argument_list|)
 argument_list|,
 name|format_name
