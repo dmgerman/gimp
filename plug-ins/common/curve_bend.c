@@ -38,6 +38,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -53,75 +59,11 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
-begin_comment
-comment|/* internationalisation (nls-macros) is available since gimp 1.1.x */
-end_comment
-
-begin_if
-if|#
-directive|if
-operator|(
-operator|(
-name|GIMP_MAJOR_VERSION
-operator|>
-literal|0
-operator|)
-operator|&&
-operator|(
-name|GIMP_MINOR_VERSION
-operator|>
-literal|0
-operator|)
-operator|)
-end_if
-
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpintl.h>
+file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GIMPINTL_H__
-end_ifndef
-
-begin_comment
-comment|/* for older gimp releases use dummys nls-macros */
-end_comment
-
-begin_define
-DECL|macro|N_ (x)
-define|#
-directive|define
-name|N_
-parameter_list|(
-name|x
-parameter_list|)
-value|x
-end_define
-
-begin_define
-DECL|macro|_ (x)
-define|#
-directive|define
-name|_
-parameter_list|(
-name|x
-parameter_list|)
-value|x
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* Defines */
@@ -149,14 +91,6 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"v1.01 (1999/09/13)"
-end_define
-
-begin_define
-DECL|macro|PLUG_IN_MENU_PATH
-define|#
-directive|define
-name|PLUG_IN_MENU_PATH
-value|"<Image>/Filters/Distorts/CurveBend..."
 end_define
 
 begin_define
@@ -879,7 +813,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b14149c0108
+DECL|struct|__anon28b086d90108
 typedef|typedef
 struct|struct
 block|{
@@ -908,7 +842,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b14149c0208
+DECL|struct|__anon28b086d90208
 typedef|typedef
 struct|struct
 block|{
@@ -994,7 +928,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b14149c0308
+DECL|struct|__anon28b086d90308
 typedef|typedef
 struct|struct
 block|{
@@ -3463,7 +3397,10 @@ name|PLUG_IN_COPYRIGHT
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
-name|PLUG_IN_MENU_PATH
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Distorts/CurveBend..."
+argument_list|)
 argument_list|,
 name|PLUG_IN_IMAGE_TYPES
 argument_list|,
@@ -3612,6 +3549,23 @@ index|[
 literal|2
 index|]
 decl_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|RUN_INTERACTIVE
+condition|)
+block|{
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
+block|}
+else|else
+block|{
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
+block|}
 name|cd
 operator|=
 name|NULL
@@ -11807,7 +11761,10 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Load Curve Points from file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|cd
@@ -11949,7 +11906,10 @@ name|filesel
 operator|=
 name|gtk_file_selection_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Save Curve Points to file"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|cd
@@ -13489,9 +13449,12 @@ name|menu_item
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|items
 operator|->
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -13613,12 +13576,15 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|actions
 index|[
 name|i
 index|]
 operator|.
 name|label
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -17666,7 +17632,10 @@ name|show_progress
 condition|)
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Curve Bend ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -19,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -204,13 +216,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_deinterlace"
 argument_list|,
+name|_
+argument_list|(
 literal|"Deinterlace"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Deinterlace is useful for processing images from video capture cards. When only the odd or even fields get captured, deinterlace can be used to interpolate between the existing fields to correct this."
+argument_list|)
 argument_list|,
 literal|"Andrew Kieschnick"
 argument_list|,
@@ -218,7 +239,10 @@ literal|"Andrew Kieschnick"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Enhance/Deinterlace..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -316,6 +340,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_deinterlace"
@@ -338,6 +365,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|nparams
@@ -369,6 +399,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 literal|"plug_in_deinterlace"
@@ -408,7 +441,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"deinterlace"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tile_cache_ntiles
@@ -952,13 +988,19 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Keep Odd Fields"
+argument_list|)
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Keep Even Fields"
+argument_list|)
 block|,
 literal|0
 block|}
@@ -978,6 +1020,39 @@ decl_stmt|;
 name|gint
 name|argc
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|2
+condition|;
+name|i
+operator|++
+control|)
+name|modes
+index|[
+name|i
+index|]
+operator|.
+name|name
+operator|=
+name|gettext
+argument_list|(
+name|modes
+index|[
+name|i
+index|]
+operator|.
+name|name
+argument_list|)
+expr_stmt|;
 comment|/* Set args */
 name|argc
 operator|=
@@ -1033,7 +1108,10 @@ name|mw_app_new
 argument_list|(
 literal|"plug_in_deinterlace"
 argument_list|,
+name|_
+argument_list|(
 literal|"Deinterlace"
+argument_list|)
 argument_list|,
 operator|&
 name|runp
@@ -1088,7 +1166,10 @@ name|mw_radio_group_new
 argument_list|(
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Mode"
+argument_list|)
 argument_list|,
 name|modes
 argument_list|)
