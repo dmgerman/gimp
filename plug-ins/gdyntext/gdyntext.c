@@ -2829,6 +2829,7 @@ case|case
 name|LA_NONE
 case|:
 default|default:
+break|break;
 block|}
 name|gimp_layer_set_preserve_transparency
 argument_list|(
