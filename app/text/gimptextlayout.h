@@ -119,24 +119,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|TileManager
-modifier|*
-name|gimp_text_layout_render
-parameter_list|(
-name|GimpTextLayout
-modifier|*
-name|layout
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
