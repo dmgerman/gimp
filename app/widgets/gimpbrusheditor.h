@@ -43,6 +43,11 @@ name|GtkWidget
 modifier|*
 name|preview
 decl_stmt|;
+DECL|member|scale_label
+name|GtkWidget
+modifier|*
+name|scale_label
+decl_stmt|;
 DECL|member|options_box
 name|GtkWidget
 modifier|*
@@ -68,24 +73,6 @@ name|GtkAdjustment
 modifier|*
 name|aspect_ratio_data
 decl_stmt|;
-DECL|member|width
-DECL|member|height
-name|int
-name|width
-decl_stmt|,
-name|height
-decl_stmt|;
-DECL|member|cell_width
-DECL|member|cell_height
-name|int
-name|cell_width
-decl_stmt|,
-name|cell_height
-decl_stmt|;
-DECL|member|redraw
-name|int
-name|redraw
-decl_stmt|;
 comment|/*  Brush preview  */
 DECL|member|brush_preview
 name|GtkWidget
@@ -96,6 +83,10 @@ DECL|member|brush
 name|GimpBrushGenerated
 modifier|*
 name|brush
+decl_stmt|;
+DECL|member|scale
+name|int
+name|scale
 decl_stmt|;
 DECL|typedef|BrushEditGeneratedWindow
 block|}

@@ -4855,7 +4855,8 @@ block|}
 else|else
 name|g_message
 argument_list|(
-literal|"We are all out of brush editors today, please try again tomorrow\n"
+literal|"We are all fresh out of brush editors today,\n"
+literal|"please write your own or try back tomorrow\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4882,12 +4883,12 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|gimp_brush_list_add
-argument_list|(
-name|brush_list
-argument_list|,
-name|GIMP_BRUSH
-argument_list|(
+name|GimpBrushGenerated
+modifier|*
+name|brush
+decl_stmt|;
+name|brush
+operator|=
 name|gimp_brush_generated_new
 argument_list|(
 literal|10
@@ -4898,6 +4899,22 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|)
+expr_stmt|;
+name|gimp_brush_list_add
+argument_list|(
+name|brush_list
+argument_list|,
+name|GIMP_BRUSH
+argument_list|(
+name|brush
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|select_brush
+argument_list|(
+name|GIMP_BRUSH
+argument_list|(
+name|brush
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -52,7 +52,7 @@ file|"brush_header.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2b8b79300103
+DECL|enum|__anon2b7b173c0103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -848,31 +848,6 @@ literal|"GIMP brush file appears to be truncated."
 argument_list|)
 expr_stmt|;
 break|break;
-case|case
-literal|3
-case|:
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"loading generated brush\n"
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"currently unimplemeted expect a crash to occur any second\n"
-argument_list|)
-expr_stmt|;
-name|fprintf
-argument_list|(
-name|stderr
-argument_list|,
-literal|"finished loading generated brush\n"
-argument_list|)
-expr_stmt|;
-break|break;
 default|default:
 name|g_message
 argument_list|(
@@ -913,14 +888,6 @@ argument_list|(
 name|brush
 operator|->
 name|mask
-argument_list|)
-expr_stmt|;
-comment|/*  TODO: get rid of this call */
-name|gimp_brush_list_add
-argument_list|(
-name|brush_list
-argument_list|,
-name|brush
 argument_list|)
 expr_stmt|;
 comment|/* Check if the current brush is the default one */
