@@ -445,6 +445,8 @@ DECL|variable|current_obj
 name|fractalexplorerOBJ
 modifier|*
 name|current_obj
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -3692,7 +3694,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
@@ -3702,7 +3704,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|2
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3728,6 +3730,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|vbox
+argument_list|)
+expr_stmt|;
 comment|/*  the name entry hbox, label and entry  */
 name|hbox
 operator|=
@@ -3735,7 +3742,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3752,6 +3759,11 @@ argument_list|,
 name|FALSE
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|hbox
 argument_list|)
 expr_stmt|;
 name|label
@@ -3829,16 +3841,6 @@ argument_list|(
 name|options
 operator|->
 name|name_entry
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|hbox
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5179,7 +5181,7 @@ name|button
 decl_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -5194,7 +5196,7 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-literal|4
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -5213,16 +5215,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gtk_container_set_border_width
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
 name|gtk_table_set_row_spacings
 argument_list|(
 name|GTK_TABLE
@@ -5230,7 +5222,17 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|4
+literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacings
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -5732,7 +5734,7 @@ argument_list|(
 name|patheditor
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
