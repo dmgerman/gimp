@@ -56,6 +56,13 @@ block|{
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|params
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|params
 operator|->
 name|step
@@ -176,9 +183,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_pixpipe_params_parse (gchar * string,GimpPixPipeParams * params)
+DECL|function|gimp_pixpipe_params_parse (const gchar * string,GimpPixPipeParams * params)
 name|gimp_pixpipe_params_parse
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|string
@@ -188,6 +196,10 @@ modifier|*
 name|params
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|copy
+decl_stmt|;
 name|gchar
 modifier|*
 name|p
@@ -201,9 +213,30 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|string
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|params
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|copy
+operator|=
+name|g_strdup
+argument_list|(
+name|string
+argument_list|)
+expr_stmt|;
 name|q
 operator|=
-name|string
+name|copy
 expr_stmt|;
 while|while
 condition|(
@@ -647,6 +680,11 @@ operator|=
 literal|':'
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|copy
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -664,11 +702,6 @@ block|{
 name|GString
 modifier|*
 name|s
-init|=
-name|g_string_new
-argument_list|(
-name|NULL
-argument_list|)
 decl_stmt|;
 name|gchar
 modifier|*
@@ -677,6 +710,22 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|params
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|s
+operator|=
+name|g_string_new
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_string_printf
 argument_list|(
 name|s

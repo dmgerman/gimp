@@ -43,7 +43,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c835290108
+DECL|struct|__anon27b5becc0108
 block|{
 DECL|member|step
 name|gint
@@ -130,6 +130,7 @@ begin_function_decl
 name|void
 name|gimp_pixpipe_params_parse
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|parameters

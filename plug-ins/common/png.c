@@ -126,7 +126,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c885d0108
+DECL|struct|__anon27a3e3ac0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c885d0208
+DECL|struct|__anon27a3e3ac0208
 block|{
 DECL|member|run
 name|gboolean
@@ -4639,9 +4639,10 @@ name|gamma
 operator|=
 name|g_ascii_strtod
 argument_list|(
+name|gimp_parasite_data
+argument_list|(
 name|parasite
-operator|->
-name|data
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

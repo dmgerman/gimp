@@ -179,7 +179,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b77e5300108
+DECL|struct|__anon289181ee0108
 block|{
 DECL|member|spacing
 name|guint
@@ -252,7 +252,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77e5300208
+DECL|struct|__anon289181ee0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -1290,9 +1290,10 @@ name|pipe_parasite
 condition|)
 name|gimp_pixpipe_params_parse
 argument_list|(
+name|gimp_parasite_data
+argument_list|(
 name|pipe_parasite
-operator|->
-name|data
+argument_list|)
 argument_list|,
 operator|&
 name|gihparams
@@ -1572,9 +1573,10 @@ name|pipe_parasite
 condition|)
 name|gimp_pixpipe_params_parse
 argument_list|(
+name|gimp_parasite_data
+argument_list|(
 name|pipe_parasite
-operator|->
-name|data
+argument_list|)
 argument_list|,
 operator|&
 name|gihparams
