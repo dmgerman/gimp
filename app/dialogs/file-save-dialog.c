@@ -131,6 +131,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-dialog-utils.h"
 end_include
 
@@ -742,6 +748,10 @@ return|return
 name|file_dialog_new
 argument_list|(
 name|gimp
+argument_list|,
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-file-save-dialog"
 argument_list|,
 name|menu_factory
 argument_list|,
