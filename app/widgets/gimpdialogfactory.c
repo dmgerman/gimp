@@ -143,7 +143,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1fef670103
+DECL|enum|__anon27a2e7950103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -164,7 +164,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1fef670203
+DECL|enum|__anon27a2e7950203
 block|{
 DECL|enumerator|GIMP_DIALOG_SHOW_ALL
 name|GIMP_DIALOG_SHOW_ALL
@@ -1487,7 +1487,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: no entry entry registered for \"%s\""
+literal|"%s: no entry registered for \"%s\""
 argument_list|,
 name|G_GNUC_FUNCTION
 argument_list|,
@@ -1754,7 +1754,16 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|dock
+argument_list|)
+expr_stmt|;
 name|dialog
+operator|=
+name|NULL
+expr_stmt|;
+name|dock
 operator|=
 name|NULL
 expr_stmt|;
