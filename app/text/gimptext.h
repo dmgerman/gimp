@@ -115,6 +115,11 @@ DECL|member|font_size_unit
 name|GimpUnit
 name|font_size_unit
 decl_stmt|;
+DECL|member|language
+name|gchar
+modifier|*
+name|language
+decl_stmt|;
 DECL|member|color
 name|GimpRGB
 name|color
