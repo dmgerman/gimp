@@ -381,12 +381,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_new_template_dialog (Gimp * gimp)
+DECL|function|templates_new_template_dialog (Gimp * gimp,GimpTemplate * unused)
 name|templates_new_template_dialog
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpTemplate
+modifier|*
+name|unused
 parameter_list|)
 block|{
 name|GimpTemplate
