@@ -1639,6 +1639,10 @@ name|toggle_widget
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|auto_widget
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|notebook_menu
 decl_stmt|;
 name|gint
@@ -1681,6 +1685,15 @@ argument_list|(
 name|ifactory
 argument_list|,
 literal|"/Show Image Menu"
+argument_list|)
+expr_stmt|;
+name|auto_widget
+operator|=
+name|gtk_item_factory_get_widget
+argument_list|(
+name|ifactory
+argument_list|,
+literal|"/Auto Follow Active Image"
 argument_list|)
 expr_stmt|;
 name|notebook_menu
@@ -1830,8 +1843,6 @@ argument_list|(
 name|toggle_widget
 argument_list|)
 argument_list|,
-name|GTK_WIDGET_VISIBLE
-argument_list|(
 name|GIMP_IMAGE_DOCK
 argument_list|(
 name|dockbook
@@ -1839,10 +1850,24 @@ operator|->
 name|dock
 argument_list|)
 operator|->
-name|option_menu
-operator|->
-name|parent
+name|show_image_menu
 argument_list|)
+expr_stmt|;
+name|gtk_check_menu_item_set_active
+argument_list|(
+name|GTK_CHECK_MENU_ITEM
+argument_list|(
+name|auto_widget
+argument_list|)
+argument_list|,
+name|GIMP_IMAGE_DOCK
+argument_list|(
+name|dockbook
+operator|->
+name|dock
+argument_list|)
+operator|->
+name|auto_follow_active
 argument_list|)
 expr_stmt|;
 name|gtk_item_factory_popup_with_data

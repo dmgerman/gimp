@@ -5547,7 +5547,30 @@ name|NULL
 block|,
 name|NULL
 block|}
-block|,  }
+block|,
+block|{
+block|{
+name|N_
+argument_list|(
+literal|"/Auto Follow Active Image"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|dialogs_toggle_auto_cmd_callback
+block|,
+literal|0
+block|,
+literal|"<ToggleItem>"
+block|}
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|}
 decl_stmt|;
 end_decl_stmt
 
