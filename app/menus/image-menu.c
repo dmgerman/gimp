@@ -3951,7 +3951,11 @@ name|plug_in_menus_create
 argument_list|(
 name|factory
 argument_list|,
-name|proc_defs
+name|factory
+operator|->
+name|gimp
+operator|->
+name|plug_in_proc_defs
 argument_list|)
 expr_stmt|;
 block|{

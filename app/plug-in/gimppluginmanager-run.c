@@ -141,20 +141,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  global variables  */
-end_comment
-
-begin_decl_stmt
-DECL|variable|last_plug_in
-name|ProcRecord
-modifier|*
-name|last_plug_in
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -199,6 +185,38 @@ name|PlugIn
 modifier|*
 name|plug_in
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|proc_rec
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|argc
+operator|==
+literal|0
+operator|||
+name|args
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|proc_rec
@@ -578,8 +596,18 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
+name|gimp
+operator|->
 name|last_plug_in
 condition|)
 block|{
@@ -614,6 +642,8 @@ index|]
 operator|.
 name|arg_type
 operator|=
+name|gimp
+operator|->
 name|last_plug_in
 operator|->
 name|args
@@ -668,6 +698,8 @@ name|plug_in_run
 argument_list|(
 name|gimp
 argument_list|,
+name|gimp
+operator|->
 name|last_plug_in
 argument_list|,
 name|args

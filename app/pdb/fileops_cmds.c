@@ -1962,6 +1962,8 @@ name|file_proc
 operator|=
 name|plug_ins_file_handler
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|,
 name|extensions
@@ -2475,6 +2477,8 @@ name|file_proc
 operator|=
 name|plug_ins_file_handler
 argument_list|(
+name|gimp
+argument_list|,
 name|name
 argument_list|,
 name|extensions

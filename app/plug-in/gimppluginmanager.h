@@ -49,6 +49,10 @@ begin_function_decl
 name|void
 name|plug_ins_add_internal
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|PlugInProcDef
 modifier|*
 name|proc_def
@@ -65,6 +69,10 @@ name|PlugInProcDef
 modifier|*
 name|plug_ins_file_handler
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|gchar
 modifier|*
 name|name
@@ -92,6 +100,10 @@ begin_function_decl
 name|void
 name|plug_ins_def_add_from_rc
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|PlugInDef
 modifier|*
 name|plug_in_def
@@ -215,14 +227,6 @@ name|image_types
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|GSList
-modifier|*
-name|proc_defs
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#

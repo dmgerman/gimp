@@ -489,12 +489,16 @@ argument_list|)
 expr_stmt|;
 name|plug_ins_add_internal
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|xcf_plug_in_save_proc
 argument_list|)
 expr_stmt|;
 name|plug_ins_add_internal
 argument_list|(
+name|gimp
+argument_list|,
 operator|&
 name|xcf_plug_in_load_proc
 argument_list|)

@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-ins.h"
 end_include
 
@@ -72,6 +78,10 @@ specifier|static
 name|GTokenType
 name|plug_in_def_deserialize
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
@@ -161,7 +171,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon288daf680103
+DECL|enum|__anon291347f50103
 block|{
 DECL|enumerator|PLUG_IN_DEF
 name|PLUG_IN_DEF
@@ -188,9 +198,13 @@ end_enum
 
 begin_function
 name|gboolean
-DECL|function|plug_in_rc_parse (const gchar * filename)
+DECL|function|plug_in_rc_parse (Gimp * gimp,const gchar * filename)
 name|plug_in_rc_parse
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -210,6 +224,16 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|filename
@@ -383,6 +407,8 @@ name|token
 operator|=
 name|plug_in_def_deserialize
 argument_list|(
+name|gimp
+argument_list|,
 name|scanner
 argument_list|)
 expr_stmt|;
@@ -472,9 +498,13 @@ end_function
 begin_function
 specifier|static
 name|GTokenType
-DECL|function|plug_in_def_deserialize (GScanner * scanner)
+DECL|function|plug_in_def_deserialize (Gimp * gimp,GScanner * scanner)
 name|plug_in_def_deserialize
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GScanner
 modifier|*
 name|scanner
@@ -714,6 +744,8 @@ condition|)
 block|{
 name|plug_ins_def_add_from_rc
 argument_list|(
+name|gimp
+argument_list|,
 name|plug_in_def
 argument_list|)
 expr_stmt|;

@@ -99,25 +99,6 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|gimp_ndebug_wrap_keys
-specifier|static
-specifier|const
-name|guint
-name|gimp_ndebug_wrap_keys
-init|=
-sizeof|sizeof
-argument_list|(
-name|gimp_debug_wrap_keys
-argument_list|)
-operator|/
-sizeof|sizeof
-argument_list|(
-name|GDebugKey
-argument_list|)
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 name|void
 DECL|function|plug_in_debug_init (Gimp * gimp)
@@ -276,7 +257,10 @@ literal|1
 argument_list|,
 name|gimp_debug_wrap_keys
 argument_list|,
-name|gimp_ndebug_wrap_keys
+name|G_N_ELEMENTS
+argument_list|(
+name|gimp_debug_wrap_keys
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -495,6 +495,8 @@ name|proc_type
 operator|==
 name|GIMP_PLUGIN
 condition|)
+name|gimp
+operator|->
 name|last_plug_in
 operator|=
 name|proc_rec

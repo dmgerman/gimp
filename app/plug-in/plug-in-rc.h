@@ -20,6 +20,10 @@ begin_function_decl
 name|gboolean
 name|plug_in_rc_parse
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

@@ -1337,6 +1337,10 @@ expr_stmt|;
 name|plug_in_push
 argument_list|(
 name|plug_in
+operator|->
+name|gimp
+argument_list|,
+name|plug_in
 argument_list|)
 expr_stmt|;
 comment|/*  Execute the procedure even if procedural_db_lookup() returned NULL,    *  procedural_db_execute() will return appropriate error return_vals.    */
@@ -1356,7 +1360,11 @@ name|args
 argument_list|)
 expr_stmt|;
 name|plug_in_pop
-argument_list|()
+argument_list|(
+name|plug_in
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

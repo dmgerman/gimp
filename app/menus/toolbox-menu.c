@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/plug-ins.h"
 end_include
 
@@ -1034,7 +1040,11 @@ name|plug_in_menus_create
 argument_list|(
 name|factory
 argument_list|,
-name|proc_defs
+name|factory
+operator|->
+name|gimp
+operator|->
+name|plug_in_proc_defs
 argument_list|)
 expr_stmt|;
 comment|/*  Move all menu items under "<Toolbox>/Xtns" which are not submenus or    *  separators to the top of the menu    */

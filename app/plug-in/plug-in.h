@@ -312,6 +312,10 @@ begin_function_decl
 name|void
 name|plug_in_push
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|PlugIn
 modifier|*
 name|plug_in
@@ -323,7 +327,9 @@ begin_function_decl
 name|void
 name|plug_in_pop
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -349,14 +355,6 @@ name|plug_in
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_decl_stmt
-specifier|extern
-name|PlugIn
-modifier|*
-name|current_plug_in
-decl_stmt|;
-end_decl_stmt
 
 begin_endif
 endif|#
