@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c3c19c0103
+DECL|enum|__anon287ddef60103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c3c19c0203
+DECL|enum|__anon287ddef60203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3c19c0308
+DECL|struct|__anon287ddef60308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon28c3c19c040a
+DECL|union|__anon287ddef6040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3c19c0508
+DECL|struct|__anon287ddef60508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3c19c0608
+DECL|struct|__anon287ddef60608
 block|{
 DECL|member|color
 name|IfsColor
@@ -290,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3c19c0708
+DECL|struct|__anon287ddef60708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -326,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3c19c0808
+DECL|struct|__anon287ddef60808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -393,7 +393,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3c19c0908
+DECL|struct|__anon287ddef60908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -565,7 +565,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3c19c0a08
+DECL|struct|__anon287ddef60a08
 block|{
 DECL|member|run
 name|gint
@@ -969,22 +969,6 @@ name|data
 parameter_list|,
 name|gint
 name|fixed_point
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|color_map_clicked_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|ColorMap
-modifier|*
-name|colormap
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -11643,25 +11627,6 @@ operator|->
 name|button
 argument_list|)
 argument_list|,
-literal|"clicked"
-argument_list|,
-name|GTK_SIGNAL_FUNC
-argument_list|(
-name|color_map_clicked_callback
-argument_list|)
-argument_list|,
-name|color_map
-argument_list|)
-expr_stmt|;
-name|gtk_signal_connect
-argument_list|(
-name|GTK_OBJECT
-argument_list|(
-name|color_map
-operator|->
-name|button
-argument_list|)
-argument_list|,
 literal|"color_changed"
 argument_list|,
 name|GTK_SIGNAL_FUNC
@@ -11681,8 +11646,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_map_clicked_callback (GtkWidget * widget,ColorMap * color_map)
-name|color_map_clicked_callback
+DECL|function|color_map_color_changed_cb (GtkWidget * widget,ColorMap * color_map)
+name|color_map_color_changed_cb
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -11703,24 +11668,6 @@ operator|->
 name|current_element
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|color_map_color_changed_cb (GtkWidget * widget,ColorMap * color_map)
-name|color_map_color_changed_cb
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|ColorMap
-modifier|*
-name|color_map
-parameter_list|)
-block|{
 name|color_map
 operator|->
 name|color
