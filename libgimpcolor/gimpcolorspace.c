@@ -69,6 +69,10 @@ begin_comment
 comment|/*  GimpRGB functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_rgb_to_hsv:  * @rgb: A color value in the RGB colorspace  * @hsv: The value converted to the HSV colorspace  *   * Does a conversion from RGB to HSV (Hue, Saturation,   * Value) colorspace.   **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_rgb_to_hsv (const GimpRGB * rgb,GimpHSV * hsv)
@@ -291,6 +295,10 @@ name|a
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_hsv_to_rgb:  * @hsv: A color value in the HSV colorspace  * @rgb: The returned RGB value.  *   * Converts a color value from HSV to RGB colorspace  **/
+end_comment
 
 begin_function
 name|void
@@ -620,6 +628,10 @@ name|a
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_rgb_to_hsl:  * @rgb: A color value in the RGB colorspace  * @hsl: The value converted to HSL  *   * Convert an RGB color value to a HSL (Hue, Saturation, Luminosity) color   * value.  **/
+end_comment
 
 begin_function
 name|void
@@ -983,6 +995,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_hsl_to_rgb:  * @hsl: A color value in the HSL colorspace   * @rgb: The value converted to a value in the RGB colorspace  *   * Convert a HSL color value to an RGB color value.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_hsl_to_rgb (const GimpHSL * hsl,GimpRGB * rgb)
@@ -1171,6 +1187,10 @@ name|a
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_rgb_to_cmyk:  * @rgb: A value in the RGB colorspace   * @pullout: A scaling value (0-1) indicating how much black should be pulled out  * @cmyk: The input value naively converted to the CMYK colorspace   *   * Does a naive conversion from RGB to CMYK colorspace. A simple  * formula that doesn't take any color-profiles into account is used.  * The amount of black pullout how can be controlled via the @pullout  * parameter. A @pullout value of 0 makes this a conversion to CMY.  * A value of 1 causes the maximum amount of black to be pulled out.  **/
+end_comment
 
 begin_function
 name|void
@@ -1368,6 +1388,10 @@ name|a
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cmyk_to_rgb:  * @cmyk: A color value in the CMYK colorspace  * @rgb: The value converted to the RGB colorspace  *   * Does a simple transformation from the CMYK colorspace to the RGB   * colorspace, without taking color profiles into account.   **/
+end_comment
 
 begin_function
 name|void
@@ -3408,6 +3432,10 @@ expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_cmyk_to_rgb_int:  * @cyan:    the cyan channel; returns the red value (0-255)  * @magenta: the magenta channel; returns the green value (0-255)  * @yellow:  the yellow channel; returns the blue value (0-255)  * @black:   the black channel (0-255); doesn't change  *  * Does a naive conversion from CMYK to RGB colorspace. A simple  * formula that doesn't take any color-profiles into account is used.  **/
+end_comment
 
 begin_function
 name|void
