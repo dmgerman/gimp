@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|gboolean
-name|qmask_click_handler
+name|qmask_button_press_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -36,7 +36,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|qmask_activate
+name|qmask_activate_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -51,7 +51,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|qmask_deactivate
+name|qmask_deactivate_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

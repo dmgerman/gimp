@@ -1667,7 +1667,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|qmask_deactivate
+name|qmask_deactivate_callback
 argument_list|)
 argument_list|,
 name|gdisp
@@ -1686,7 +1686,7 @@ literal|"button_press_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|qmask_click_handler
+name|qmask_button_press_callback
 argument_list|)
 argument_list|,
 name|gdisp
@@ -1772,7 +1772,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|qmask_activate
+name|qmask_activate_callback
 argument_list|)
 argument_list|,
 name|gdisp
@@ -1791,7 +1791,7 @@ literal|"button_press_event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|qmask_click_handler
+name|qmask_button_press_callback
 argument_list|)
 argument_list|,
 name|gdisp
@@ -1852,7 +1852,7 @@ argument_list|,
 literal|"#nav_window_button"
 argument_list|)
 expr_stmt|;
-comment|/* We need to realize the shell so that we have a GdkWindow for    * the pixmap creation.  */
+comment|/* We need to realize the shell so that we have a GdkWindow for    * the pixmap creation.    */
 name|gtk_widget_realize
 argument_list|(
 name|gdisp

@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac36b00103
+DECL|enum|__anon2b43f07d0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -774,7 +774,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function

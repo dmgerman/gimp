@@ -3041,14 +3041,8 @@ name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
-argument_list|(
-literal|"Save"
-argument_list|)
+name|GTK_STOCK_SAVE
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
 name|devices_write_rc
 argument_list|,
 name|NULL
@@ -3061,10 +3055,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-name|_
-argument_list|(
-literal|"Close"
-argument_list|)
+name|GTK_STOCK_CLOSE
 argument_list|,
 name|devices_close_callback
 argument_list|,

@@ -195,7 +195,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297a78a50103
+DECL|enum|__anon2b8421fe0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -1247,6 +1247,12 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|preview
+operator|->
+name|viewable
+condition|)
 name|gimp_preview_set_viewable
 argument_list|(
 name|preview

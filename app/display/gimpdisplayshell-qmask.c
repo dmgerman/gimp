@@ -456,10 +456,7 @@ operator|->
 name|qmaskoff
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|qmask_deactivate
-argument_list|)
+name|qmask_deactivate_callback
 argument_list|,
 name|gdisp
 argument_list|)
@@ -473,10 +470,7 @@ operator|->
 name|qmaskon
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|qmask_activate
-argument_list|)
+name|qmask_activate_callback
 argument_list|,
 name|gdisp
 argument_list|)
@@ -525,10 +519,7 @@ operator|->
 name|qmaskoff
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|qmask_deactivate
-argument_list|)
+name|qmask_deactivate_callback
 argument_list|,
 name|gdisp
 argument_list|)
@@ -542,10 +533,7 @@ operator|->
 name|qmaskon
 argument_list|)
 argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|qmask_activate
-argument_list|)
+name|qmask_activate_callback
 argument_list|,
 name|gdisp
 argument_list|)
@@ -556,8 +544,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|qmask_click_handler (GtkWidget * widget,GdkEventButton * event,gpointer data)
-name|qmask_click_handler
+DECL|function|qmask_button_press_callback (GtkWidget * widget,GdkEventButton * event,gpointer data)
+name|qmask_button_press_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -619,8 +607,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_deactivate (GtkWidget * widget,GDisplay * gdisp)
-name|qmask_deactivate
+DECL|function|qmask_deactivate_callback (GtkWidget * widget,GDisplay * gdisp)
+name|qmask_deactivate_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -735,8 +723,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_activate (GtkWidget * widget,GDisplay * gdisp)
-name|qmask_activate
+DECL|function|qmask_activate_callback (GtkWidget * widget,GDisplay * gdisp)
+name|qmask_activate_callback
 parameter_list|(
 name|GtkWidget
 modifier|*

@@ -372,7 +372,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-comment|/* make sure we hide and free color_notebook */
 if|if
 condition|(
 name|panel
@@ -393,6 +392,12 @@ name|panel
 operator|->
 name|color_notebook
 argument_list|)
+expr_stmt|;
+name|panel
+operator|->
+name|color_notebook
+operator|=
+name|NULL
 expr_stmt|;
 block|}
 if|if
