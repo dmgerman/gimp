@@ -176,7 +176,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6dd8f0103
+DECL|enum|__anon291e90ee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -618,7 +618,7 @@ literal|0
 argument_list|,
 literal|1024
 argument_list|,
-literal|4
+literal|10
 argument_list|,
 name|GIMP_PARAM_RESTART
 argument_list|)
@@ -639,7 +639,7 @@ name|G_MAXULONG
 argument_list|,
 literal|1
 operator|<<
-literal|25
+literal|26
 argument_list|,
 literal|0
 argument_list|)
