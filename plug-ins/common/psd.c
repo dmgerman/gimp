@@ -131,7 +131,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2e6aa30103
+DECL|enum|__anon292bbf070103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2e6aa30208
+DECL|struct|__anon292bbf070208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -345,7 +345,7 @@ DECL|member|heightUnit
 name|gint16
 name|heightUnit
 decl_stmt|;
-comment|/* Res_unit :  	1 == Pixels per inch         2 == Pixels per cm */
+comment|/* Res_unit : 	1 == Pixels per inch         2 == Pixels per cm */
 DECL|typedef|PSDresolution
 block|}
 name|PSDresolution
@@ -568,7 +568,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a2e6aa30308
+DECL|struct|__anon292bbf070308
 block|{
 DECL|member|signature
 name|gchar
@@ -801,30 +801,6 @@ name|height
 parameter_list|,
 name|int
 name|alpha
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|cmyk_to_rgb
-parameter_list|(
-name|int
-modifier|*
-name|c
-parameter_list|,
-name|int
-modifier|*
-name|m
-parameter_list|,
-name|int
-modifier|*
-name|y
-parameter_list|,
-name|int
-modifier|*
-name|k
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -7029,11 +7005,12 @@ decl_stmt|;
 name|psd_imagetype
 name|imagetype
 decl_stmt|;
-name|int
+name|gboolean
 name|cmyk
 init|=
-literal|0
-decl_stmt|,
+name|FALSE
+decl_stmt|;
+name|gint
 name|step
 init|=
 literal|1
@@ -8383,7 +8360,7 @@ case|:
 comment|/* CMYK Colour */
 name|cmyk
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 switch|switch
 condition|(
@@ -10098,7 +10075,7 @@ operator|*
 name|src
 operator|++
 expr_stmt|;
-name|cmyk_to_rgb
+name|gimp_cmyk_to_rgb_int
 argument_list|(
 operator|&
 name|r
@@ -10334,7 +10311,7 @@ operator|*
 name|kp
 operator|++
 expr_stmt|;
-name|cmyk_to_rgb
+name|gimp_cmyk_to_rgb_int
 argument_list|(
 operator|&
 name|r
@@ -10418,38 +10395,6 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|cmyk_to_rgb (gint * c,gint * m,gint * y,gint * k)
-name|cmyk_to_rgb
-parameter_list|(
-name|gint
-modifier|*
-name|c
-parameter_list|,
-name|gint
-modifier|*
-name|m
-parameter_list|,
-name|gint
-modifier|*
-name|y
-parameter_list|,
-name|gint
-modifier|*
-name|k
-parameter_list|)
-block|{
-if|#
-directive|if
-literal|0
-block|gint cyan, magenta, yellow, black;      cyan = *c;     magenta = *m;     yellow = *y;     black = *k;      if (black> 0) { 	cyan -= black; 	magenta -= black; 	yellow -= black;     }     *c = 255 - cyan;     *m = 255 - magenta;     *y = 255 - yellow;     if (*c< 0) *c = 0; else if (*c> 255) *c = 255;     if (*m< 0) *m = 0; else if (*m> 255) *m = 255;     if (*y< 0) *y = 0; else if (*y> 255) *y = 255;
-endif|#
-directive|endif
 block|}
 end_function
 
