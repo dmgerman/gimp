@@ -237,7 +237,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abfa3ae0103
+DECL|enum|__anon27cad9b40103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -251,7 +251,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abfa3ae0208
+DECL|struct|__anon27cad9b40208
 block|{
 DECL|member|dirname
 specifier|const
@@ -3531,7 +3531,10 @@ name|thumb_name
 operator|=
 name|g_build_filename
 argument_list|(
-name|thumb_dir
+name|thumb_subdirs
+index|[
+name|i
+index|]
 argument_list|,
 name|name
 argument_list|,
