@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -37,12 +31,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -90,31 +78,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdock.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpitemtreeview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gui/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui/offset-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"actions.h"
 end_include
 
 begin_include
@@ -140,7 +110,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_DOCK (data)) \     gimage = gimp_context_get_image (((GimpDock *) data)->context); \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     gimage = ((GimpItemTreeView *) data)->gimage; \   else \     gimage = NULL; \   \   if (! gimage) \     return
+value|gimage = action_data_get_image (data); \   if (! gimage) \     return
 end_define
 
 begin_define
@@ -170,7 +140,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     widget = ((GimpDisplay *) data)->shell; \   else if (GIMP_IS_GIMP (data)) \     widget = dialogs_get_toolbox (); \   else if (GIMP_IS_DOCK (data)) \     widget = data; \   else if (GIMP_IS_ITEM_TREE_VIEW (data)) \     widget = data; \   else \     widget = NULL; \   \   if (! widget) \     return
+value|widget = action_data_get_widget (data); \   if (! widget) \     return
 end_define
 
 begin_comment

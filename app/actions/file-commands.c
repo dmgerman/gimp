@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdock.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -162,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"file-commands.h"
 end_include
 
@@ -190,7 +190,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gimp = ((GimpDisplay *) data)->gimage->gimp; \   else if (GIMP_IS_GIMP (data)) \     gimp = data; \   else if (GIMP_IS_DOCK (data)) \     gimp = ((GimpDock *) data)->context->gimp; \   else \     gimp = NULL; \   if (! gimp) \     return
+value|gimp = action_data_get_gimp (data); \   if (! gimp) \     return
 end_define
 
 begin_define
@@ -204,7 +204,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP (data)) \     gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_DOCK (data)) \     gdisp = gimp_context_get_display (((GimpDock *) data)->context); \   else \     gdisp = NULL; \   if (! gdisp) \     return
+value|gdisp = action_data_get_display (data); \   if (! gdisp) \     return
 end_define
 
 begin_define
@@ -218,7 +218,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     widget = ((GimpDisplay *) data)->shell; \   else if (GIMP_IS_GIMP (data)) \     widget = dialogs_get_toolbox (); \   else if (GIMP_IS_DOCK (data)) \     widget = data; \   else \     widget = NULL; \   if (! widget) \     return
+value|widget = action_data_get_widget (data); \   if (! widget) \     return
 end_define
 
 begin_comment

@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -108,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdock.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -133,6 +121,12 @@ begin_include
 include|#
 directive|include
 file|"gui/stroke-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"actions.h"
 end_include
 
 begin_include
@@ -158,7 +152,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gdisp = data; \   else if (GIMP_IS_GIMP (data)) \     gdisp = gimp_context_get_display (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_DOCK (data)) \     gdisp = gimp_context_get_display (((GimpDock *) data)->context); \   else \     gdisp = NULL; \   if (! gdisp) \     return
+value|gdisp = action_data_get_display (data); \   if (! gdisp) \     return
 end_define
 
 begin_define
@@ -172,7 +166,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|if (GIMP_IS_DISPLAY (data)) \     gimage = ((GimpDisplay *) data)->gimage; \   else if (GIMP_IS_GIMP (data)) \     gimage = gimp_context_get_image (gimp_get_user_context (GIMP (data))); \   else if (GIMP_IS_DOCK (data)) \     gimage = gimp_context_get_image (((GimpDock *) data)->context); \   else \     gimage = NULL; \   if (! gimage) \     return
+value|gimage = action_data_get_image (data); \   if (! gimage) \     return
 end_define
 
 begin_define
