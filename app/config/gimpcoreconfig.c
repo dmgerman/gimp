@@ -258,7 +258,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a568ae0103
+DECL|enum|__anon29ae0ac80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1107,7 +1107,7 @@ literal|"thumbnail-filesize-limit"
 argument_list|,
 name|THUMBNAIL_FILESIZE_LIMIT_BLURB
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 name|GIMP_MAX_MEMSIZE
 argument_list|,
