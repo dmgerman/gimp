@@ -355,7 +355,7 @@ end_comment
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|USE_GCC_INTEL_MMX
+name|HAVE_ASM_MMX
 end_ifdef
 
 begin_function_decl

@@ -25,7 +25,7 @@ DECL|member|bytes
 name|gint
 name|bytes
 decl_stmt|;
-comment|/*  The necessary info  */
+comment|/*  the necessary info                             */
 DECL|member|width
 name|gint
 name|width
@@ -41,7 +41,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-comment|/*  origin of data source  */
+comment|/*  origin of data source                          */
 DECL|member|swapped
 name|gboolean
 name|swapped
@@ -52,13 +52,13 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-comment|/*  filename of cached information  */
+comment|/*  filename of cached information                 */
 DECL|member|data
 name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/*  The data buffer     */
+comment|/*  The data buffer. Do never access this field                             directly, use temp_buf_data() instead !!       */
 block|}
 struct|;
 end_struct

@@ -175,10 +175,6 @@ parameter_list|)
 block|{
 name|gdouble
 name|pos
-decl_stmt|,
-name|x
-decl_stmt|,
-name|y
 decl_stmt|;
 name|gint
 name|index
@@ -694,13 +690,7 @@ name|segment
 parameter_list|)
 block|{
 name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|,
-name|numpts
-decl_stmt|,
-name|index
+name|num_pts
 decl_stmt|;
 if|if
 condition|(
@@ -755,7 +745,7 @@ argument_list|,
 literal|200
 argument_list|)
 decl_stmt|;
-name|numpts
+name|num_pts
 operator|=
 name|path_curve_get_points
 argument_list|(
@@ -776,7 +766,7 @@ name|tool
 argument_list|,
 name|coordinates
 argument_list|,
-literal|100
+name|num_pts
 argument_list|,
 name|FALSE
 argument_list|)
