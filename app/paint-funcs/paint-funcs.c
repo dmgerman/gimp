@@ -207,7 +207,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bf5b670103
+DECL|enum|__anon28e48d8a0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -18866,7 +18866,7 @@ operator|>
 name|orig_height
 condition|)
 block|{
-comment|//      new_y = floor((y - 0.5) * y_rat);
+comment|/* new_y = floor((y - 0.5) * y_rat); */
 name|new_y
 operator|=
 name|floor
@@ -18936,7 +18936,7 @@ name|p2
 decl_stmt|,
 name|p3
 decl_stmt|;
-comment|//	 double dy = ((y - 0.5) * y_rat) - new_y;
+comment|/* double dy = ((y - 0.5) * y_rat) - new_y; */
 name|double
 name|dy
 init|=
