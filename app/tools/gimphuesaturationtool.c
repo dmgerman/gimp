@@ -974,7 +974,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon298fedee0108
+DECL|struct|__anon2bde5a520108
 block|{
 DECL|member|label
 specifier|const
@@ -1111,7 +1111,7 @@ block|}
 struct|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1573,7 +1573,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(

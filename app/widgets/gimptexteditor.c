@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae86410103
+DECL|enum|__anon288c9b820103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -848,7 +848,7 @@ argument_list|(
 name|scrolled_window
 argument_list|)
 argument_list|,
-literal|6
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

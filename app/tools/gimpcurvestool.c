@@ -2862,7 +2862,7 @@ expr_stmt|;
 comment|/*  Horizontal button box for load / save */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -3022,7 +3022,7 @@ expr_stmt|;
 comment|/*  The radio box for selecting the curve type  */
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
