@@ -1328,10 +1328,6 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-name|GDisplay
-modifier|*
-name|tool_gdisp
-decl_stmt|;
 name|GimpContext
 modifier|*
 name|context
@@ -1374,19 +1370,8 @@ operator|&&
 name|active_tool
 operator|->
 name|gdisp_ptr
-condition|)
-block|{
-name|tool_gdisp
-operator|=
-name|active_tool
-operator|->
-name|gdisp_ptr
-expr_stmt|;
-if|if
-condition|(
-name|gdisp
 operator|==
-name|tool_gdisp
+name|gdisp
 condition|)
 block|{
 name|active_tool
@@ -1401,7 +1386,6 @@ name|gdisp_ptr
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 block|}
 comment|/*  free the selection structure  */
 name|selection_free
@@ -1498,7 +1482,7 @@ operator|->
 name|window_info_dialog
 argument_list|)
 expr_stmt|;
-comment|/*  set the active display to NULL  */
+comment|/*  set the active display to NULL if it was this display  */
 name|context
 operator|=
 name|gimp_context_get_user
