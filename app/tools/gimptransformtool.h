@@ -203,6 +203,11 @@ decl_stmt|,
 name|cy
 decl_stmt|;
 comment|/*  center point (for rotation)      */
+DECL|member|aspect_ratio
+name|gdouble
+name|aspect_ratio
+decl_stmt|;
+comment|/*  aspect ratio (for scaling)       */
 DECL|member|tx1
 DECL|member|ty1
 name|gdouble

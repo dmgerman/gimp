@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b18a20103
+DECL|enum|__anon27540b7e0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -4466,10 +4466,6 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|widget
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -4892,7 +4888,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|widget
+name|spinbutton
 operator|=
 name|info_dialog_add_spinbutton
 argument_list|(
@@ -4922,7 +4918,7 @@ literal|0.1
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+literal|0.5
 argument_list|,
 literal|2
 argument_list|,
@@ -4932,16 +4928,6 @@ name|crop_aspect_changed
 argument_list|)
 argument_list|,
 name|crop
-argument_list|)
-expr_stmt|;
-name|gtk_spin_button_set_wrap
-argument_list|(
-name|GTK_SPIN_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Create the area selection buttons */
