@@ -9604,7 +9604,7 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|1.0
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|opacity_scale
