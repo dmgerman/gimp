@@ -3597,6 +3597,10 @@ argument_list|(
 literal|"<gimp.image %s>"
 argument_list|,
 name|name
+condition|?
+name|name
+else|:
+literal|"(null)"
 argument_list|)
 expr_stmt|;
 name|g_free
