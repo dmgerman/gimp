@@ -4711,13 +4711,6 @@ name|option_menu
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|palette
-operator|->
-name|menu
-argument_list|)
-expr_stmt|;
 name|palette_create_palette_menu
 argument_list|(
 name|palette
@@ -4796,13 +4789,6 @@ name|palette
 operator|->
 name|option_menu
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_destroy
-argument_list|(
-name|palette
-operator|->
-name|menu
 argument_list|)
 expr_stmt|;
 name|entries
