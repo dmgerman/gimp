@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8621db0103
+DECL|enum|__anon2c3915b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -694,7 +694,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_new_valist:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @role:         The dialog's @role which will be set with  *                gtk_window_set_role().  * @parent:       The @parent widget of this dialog.  * @flags:        The @flags (see the #GtkDialog documentation).  * @help_func:    The function which will be called if the user presses "F1".  * @help_id:      The help_id which will be passed to @help_func.  * @args:         A @va_list destribing the action_area buttons.  *  * Creates a new @GimpDialog widget.  *  * For a description of the format of the @va_list describing the  * action_area buttons see gtk_dialog_new_with_buttons().  *  * Returns: A #GimpDialog.  **/
+comment|/**  * gimp_dialog_new_valist:  * @title:        The dialog's title which will be set with  *                gtk_window_set_title().  * @role:         The dialog's @role which will be set with  *                gtk_window_set_role().  * @parent:       The @parent widget of this dialog or %NULL.  * @flags:        The @flags (see the #GtkDialog documentation).  * @help_func:    The function which will be called if the user presses "F1".  * @help_id:      The help_id which will be passed to @help_func.  * @args:         A @va_list destribing the action_area buttons.  *  * Creates a new @GimpDialog widget. If a @parent widget is specified,  * the dialog will be made transient for the window this widget lives in  * (or or to the @parent widget itself if it is already a #GtkWindow).  *  * For a description of the format of the @va_list describing the  * action_area buttons see gtk_dialog_new_with_buttons().  *  * Returns: A #GimpDialog.  **/
 end_comment
 
 begin_function
@@ -738,20 +738,6 @@ name|dialog
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|parent
-operator|==
-name|NULL
-operator|||
-name|GTK_IS_WIDGET
-argument_list|(
-name|parent
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|title
 operator|!=
 name|NULL
@@ -764,6 +750,20 @@ argument_list|(
 name|role
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -790,6 +790,21 @@ condition|(
 name|parent
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|GTK_IS_WINDOW
+argument_list|(
+name|parent
+argument_list|)
+condition|)
+name|parent
+operator|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|parent
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GTK_IS_WINDOW
@@ -827,7 +842,6 @@ name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* TODO */
 block|}
 block|}
 if|if
@@ -986,7 +1000,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8621db0208
+DECL|struct|__anon2c3915b90208
 block|{
 DECL|member|dialog
 name|GtkDialog

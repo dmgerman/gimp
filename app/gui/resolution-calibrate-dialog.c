@@ -111,7 +111,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * resolution_calibrate_dialog:  * @resolution_entry: a #GimpSizeEntry to connect the dialog to  * @pixbuf:           an optional #GdkPixbuf for the upper left corner  * @dialog_style:     a #GtkStyle for the main dialog (used by the  *                    user_installation_dialog)  * @ruler_style:      a #GtkStyle for the rulers and the entry area  *                    (used by the user_installation_dialog)  * @expose_callback:  an "expose_event" handler used by the  *                    user_installation_dialog  *  * Displays a dialog that allows the user to interactively determine  * her monitor resolution. This dialog runs it's own GTK main loop and  * is connected to a #GimpSizeEntry handling the resolution to be  * set. The style and callback parameters are supposed to be only used  * by the user_installation_dialog.  **/
+comment|/**  * resolution_calibrate_dialog:  * @resolution_entry: a #GimpSizeEntry to connect the dialog to  * @pixbuf:           an optional #GdkPixbuf for the upper left corner  * @dialog_style:     a #GtkStyle for the main dialog (used by the  *                    user_installation_dialog)  * @ruler_style:      a #GtkStyle for the rulers and the entry area  *                    (used by the user_installation_dialog)  * @expose_callback:  an "expose_event" handler used by the  *                    user_installation_dialog  *  * Displays a dialog that allows the user to interactively determine  * her monitor resolution. This dialog runs it's own GTK main loop and  * is connected to a #GimpSizeEntry handling the resolution to be set.  * The style and callback parameters must only be used by the  * user_installation_dialog.  **/
 end_comment
 
 begin_function
@@ -218,8 +218,6 @@ literal|"calibrate_resolution"
 argument_list|,
 name|resolution_entry
 argument_list|,
-name|GTK_DIALOG_MODAL
-operator||
 name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|NULL
