@@ -288,10 +288,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_active_drawable_proc
+DECL|variable|image_get_active_drawable_proc
 specifier|static
 name|ProcRecord
-name|image_active_drawable_proc
+name|image_get_active_drawable_proc
 decl_stmt|;
 end_decl_stmt
 
@@ -774,7 +774,7 @@ argument_list|(
 name|gimp
 argument_list|,
 operator|&
-name|image_active_drawable_proc
+name|image_get_active_drawable_proc
 argument_list|)
 expr_stmt|;
 name|procedural_db_register
@@ -4241,8 +4241,8 @@ begin_function
 specifier|static
 name|Argument
 modifier|*
-DECL|function|image_active_drawable_invoker (Gimp * gimp,Argument * args)
-name|image_active_drawable_invoker
+DECL|function|image_get_active_drawable_invoker (Gimp * gimp,Argument * args)
+name|image_get_active_drawable_invoker
 parameter_list|(
 name|Gimp
 modifier|*
@@ -4322,7 +4322,7 @@ operator|=
 name|procedural_db_return_args
 argument_list|(
 operator|&
-name|image_active_drawable_proc
+name|image_get_active_drawable_proc
 argument_list|,
 name|success
 argument_list|)
@@ -4355,10 +4355,10 @@ block|}
 end_function
 
 begin_decl_stmt
-DECL|variable|image_active_drawable_inargs
+DECL|variable|image_get_active_drawable_inargs
 specifier|static
 name|ProcArg
-name|image_active_drawable_inargs
+name|image_get_active_drawable_inargs
 index|[]
 init|=
 block|{
@@ -4374,10 +4374,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_active_drawable_outargs
+DECL|variable|image_get_active_drawable_outargs
 specifier|static
 name|ProcArg
-name|image_active_drawable_outargs
+name|image_get_active_drawable_outargs
 index|[]
 init|=
 block|{
@@ -4393,13 +4393,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|image_active_drawable_proc
+DECL|variable|image_get_active_drawable_proc
 specifier|static
 name|ProcRecord
-name|image_active_drawable_proc
+name|image_get_active_drawable_proc
 init|=
 block|{
-literal|"gimp_image_active_drawable"
+literal|"gimp_image_get_active_drawable"
 block|,
 literal|"Get the image's active drawable"
 block|,
@@ -4415,15 +4415,15 @@ name|GIMP_INTERNAL
 block|,
 literal|1
 block|,
-name|image_active_drawable_inargs
+name|image_get_active_drawable_inargs
 block|,
 literal|1
 block|,
-name|image_active_drawable_outargs
+name|image_get_active_drawable_outargs
 block|,
 block|{
 block|{
-name|image_active_drawable_invoker
+name|image_get_active_drawable_invoker
 block|}
 block|}
 block|}

@@ -1276,13 +1276,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_active_drawable:  * @image_ID: The image.  *  * Get the image's active drawable  *  * This procedure returns the ID of the image's active drawable. This  * can be either a layer, a channel, or a layer mask. The active  * drawable is specified by the active image channel. If that is -1,  * then by the active image layer. If the active image layer has a  * layer mask and the layer mask is in edit mode, then the layer mask  * is the active drawable.  *  * Returns: The active drawable.  */
+comment|/**  * gimp_image_get_active_drawable:  * @image_ID: The image.  *  * Get the image's active drawable  *  * This procedure returns the ID of the image's active drawable. This  * can be either a layer, a channel, or a layer mask. The active  * drawable is specified by the active image channel. If that is -1,  * then by the active image layer. If the active image layer has a  * layer mask and the layer mask is in edit mode, then the layer mask  * is the active drawable.  *  * Returns: The active drawable.  */
 end_comment
 
 begin_function
 name|gint32
-DECL|function|gimp_image_active_drawable (gint32 image_ID)
-name|gimp_image_active_drawable
+DECL|function|gimp_image_get_active_drawable (gint32 image_ID)
+name|gimp_image_get_active_drawable
 parameter_list|(
 name|gint32
 name|image_ID
@@ -1305,7 +1305,7 @@ name|return_vals
 operator|=
 name|gimp_run_procedure
 argument_list|(
-literal|"gimp_image_active_drawable"
+literal|"gimp_image_get_active_drawable"
 argument_list|,
 operator|&
 name|nreturn_vals

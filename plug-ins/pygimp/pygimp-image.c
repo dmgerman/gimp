@@ -3131,7 +3131,7 @@ block|{
 name|gint32
 name|id
 init|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|self
 operator|->

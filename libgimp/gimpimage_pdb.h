@@ -215,7 +215,7 @@ end_function_decl
 
 begin_function_decl
 name|gint32
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 parameter_list|(
 name|gint32
 name|image_ID
