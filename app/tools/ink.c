@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"ink.h"
 end_include
 
@@ -709,25 +715,25 @@ name|options
 operator|->
 name|size
 operator|=
-literal|8.
+literal|3.0
 expr_stmt|;
 name|options
 operator|->
 name|sensitivity
 operator|=
-literal|1.
+literal|1.0
 expr_stmt|;
 name|options
 operator|->
 name|aspect
 operator|=
-literal|1.
+literal|1.0
 expr_stmt|;
 name|options
 operator|->
 name|angle
 operator|=
-literal|0.
+literal|0.0
 expr_stmt|;
 comment|/*  the main vbox  */
 name|vbox
@@ -794,15 +800,15 @@ name|GTK_ADJUSTMENT
 argument_list|(
 name|gtk_adjustment_new
 argument_list|(
-literal|4.0
+literal|3.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|25.0
+literal|20.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|10.0
+literal|5.0
 argument_list|,
 literal|0.0
 argument_list|)
@@ -2470,14 +2476,26 @@ argument_list|,
 name|SelectionPause
 argument_list|)
 expr_stmt|;
-comment|/* add motion memory if you press mod1 first */
+comment|/* add motion memory if you press mod1 first ^ perfectmouse */
 if|if
 condition|(
+operator|(
+operator|(
 name|bevent
 operator|->
 name|state
 operator|&
 name|GDK_MOD1_MASK
+operator|)
+operator|!=
+literal|0
+operator|)
+operator|!=
+operator|(
+name|perfectmouse
+operator|!=
+literal|0
+operator|)
 condition|)
 name|gdk_pointer_grab
 argument_list|(
@@ -3552,7 +3570,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2b8ab1c80103
+DECL|enum|__anon2c73b1580103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

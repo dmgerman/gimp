@@ -142,7 +142,7 @@ value|2
 end_define
 
 begin_typedef
-DECL|enum|__anon2a2e46570103
+DECL|enum|__anon2ae8a0140103
 typedef|typedef
 enum|enum
 block|{
@@ -438,6 +438,20 @@ comment|/* Mid-Tone Checks */
 end_comment
 
 begin_decl_stmt
+DECL|variable|perfectmouse
+name|int
+name|perfectmouse
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+DECL|variable|perfectmouse
+comment|/* off (fast and sloppy) */
+end_comment
+
+begin_decl_stmt
 DECL|variable|transparency_size
 name|int
 name|transparency_size
@@ -456,13 +470,13 @@ DECL|variable|levels_of_undo
 name|int
 name|levels_of_undo
 init|=
-literal|1
+literal|2
 decl_stmt|;
 end_decl_stmt
 
 begin_comment
 DECL|variable|levels_of_undo
-comment|/* 1 level of undo default */
+comment|/* 2 levels of undo default */
 end_comment
 
 begin_decl_stmt
@@ -1533,6 +1547,17 @@ name|TT_INT
 block|,
 operator|&
 name|transparency_type
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"perfect-mouse"
+block|,
+name|TT_BOOLEAN
+block|,
+operator|&
+name|perfectmouse
 block|,
 name|NULL
 block|}

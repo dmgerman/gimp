@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprc.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"layers_dialog.h"
 end_include
 
@@ -1309,14 +1315,26 @@ argument_list|,
 name|SelectionPause
 argument_list|)
 expr_stmt|;
-comment|/* add motion memory if you press mod1 first */
+comment|/* add motion memory if you press mod1 first ^ perfectmouse */
 if|if
 condition|(
+operator|(
+operator|(
 name|bevent
 operator|->
 name|state
 operator|&
 name|GDK_MOD1_MASK
+operator|)
+operator|!=
+literal|0
+operator|)
+operator|!=
+operator|(
+name|perfectmouse
+operator|!=
+literal|0
+operator|)
 condition|)
 name|gdk_pointer_grab
 argument_list|(
