@@ -8,6 +8,10 @@ comment|/* This plug-in uses the algorithm described by John Schlag, "Fast  * Em
 end_comment
 
 begin_comment
+comment|/* Version 3.0-pre1-ac2:  *  * - waterlevel/ambient restricted to 0-255  */
+end_comment
+
+begin_comment
 comment|/* Version 3.0-pre1-ac1:  *  * - Now able not to tile the bumpmap - this is the default.  * - Added new PDB call plug_in_bumpmap_tiled.  * - Added scrollbars for preview.  * - Fixed slider feedback for bumpmap offset and set initial offsets  *   from drawable offsets.  * - Make it work as intended from the very beginning...  */
 end_comment
 
@@ -109,7 +113,7 @@ DECL|macro|PLUG_IN_VERSION
 define|#
 directive|define
 name|PLUG_IN_VERSION
-value|"April 2000, 3.0-pre1-ac1"
+value|"April 2000, 3.0-pre1-ac2"
 end_define
 
 begin_define
@@ -134,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c474bee0103
+DECL|enum|__anon28922cd70103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -152,7 +156,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c474bee0203
+DECL|enum|__anon28922cd70203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -171,7 +175,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c474bee0308
+DECL|struct|__anon28922cd70308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -230,7 +234,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c474bee0408
+DECL|struct|__anon28922cd70408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -275,7 +279,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c474bee0508
+DECL|struct|__anon28922cd70508
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -5191,7 +5195,7 @@ name|waterlevel
 argument_list|,
 literal|0.0
 argument_list|,
-literal|256.0
+literal|255.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -5259,7 +5263,7 @@ name|ambient
 argument_list|,
 literal|0.0
 argument_list|,
-literal|256.0
+literal|255.0
 argument_list|,
 literal|1.0
 argument_list|,
