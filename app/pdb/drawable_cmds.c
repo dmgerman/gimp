@@ -1762,7 +1762,7 @@ literal|"gimp_drawable_type_with_alpha"
 block|,
 literal|"Returns the drawable's type with alpha."
 block|,
-literal|"This procedure returns the drawable's type if an alpha channel were added. If the type is currently Gray, for instance, the returned type would be GrayA. If the drawable already has an alpha channel, the drawable's type is simply returned."
+literal|"This procedure returns the drawable's type as if had an alpha channel. If the type is currently Gray, for instance, the returned type would be GrayA. If the drawable already has an alpha channel, the drawable's type is simply returned."
 block|,
 literal|"Spencer Kimball& Peter Mattis"
 block|,
