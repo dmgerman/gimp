@@ -43,6 +43,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -540,7 +546,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b2eef200108
+DECL|struct|__anon2bab57e20108
 typedef|typedef
 struct|struct
 block|{
@@ -606,7 +612,10 @@ directive|define
 name|SPOTFN_DOT
 value|0
 block|{
+name|N_
+argument_list|(
 literal|"round"
+argument_list|)
 block|,
 name|spot_round
 block|,
@@ -626,7 +635,10 @@ name|FALSE
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"line"
+argument_list|)
 block|,
 name|spot_line
 block|,
@@ -646,7 +658,10 @@ name|FALSE
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"diamond"
+argument_list|)
 block|,
 name|spot_diamond
 block|,
@@ -666,7 +681,10 @@ name|TRUE
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"PS square (Euclidean dot)"
+argument_list|)
 block|,
 name|spot_PSsquare
 block|,
@@ -686,7 +704,10 @@ name|FALSE
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"PS diamond"
+argument_list|)
 block|,
 name|spot_PSdiamond
 block|,
@@ -785,7 +806,7 @@ comment|/* Some of these are here merely to save them across calls.  They are  *
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2eef200208
+DECL|struct|__anon2bab57e20208
 typedef|typedef
 struct|struct
 block|{
@@ -858,7 +879,7 @@ comment|/* bits of state used by the UI, but not visible from the PDB */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2eef200308
+DECL|struct|__anon2bab57e20308
 typedef|typedef
 struct|struct
 block|{
@@ -884,7 +905,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2eef200408
+DECL|struct|__anon2bab57e20408
 typedef|typedef
 struct|struct
 block|{
@@ -917,7 +938,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b2eef200503
+DECL|enum|__anon2bab57e20503
 typedef|typedef
 enum|enum
 block|{
@@ -933,7 +954,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b2eef200608
+DECL|struct|__anon2bab57e20608
 typedef|typedef
 struct|struct
 block|{
@@ -991,7 +1012,7 @@ comment|/* state for the preview widgets */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2eef200708
+DECL|struct|__anon2bab57e20708
 typedef|typedef
 struct|struct
 block|{
@@ -1093,7 +1114,7 @@ comment|/* State associated with the configuration dialog and passed to its  * c
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2eef200808
+DECL|struct|__anon2bab57e20808
 typedef|typedef
 struct|struct
 block|{
@@ -1281,7 +1302,7 @@ comment|/* channel templates */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2eef200908
+DECL|struct|__anon2bab57e20908
 typedef|typedef
 struct|struct
 block|{
@@ -1331,7 +1352,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Grey"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -1379,7 +1403,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Red"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -1403,7 +1430,10 @@ name|red_spotfn
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Green"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -1427,7 +1457,10 @@ name|grn_spotfn
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Blue"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -1475,7 +1508,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Cyan"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -1499,7 +1535,10 @@ name|red_spotfn
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Magenta"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -1523,7 +1562,10 @@ name|grn_spotfn
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Yellow"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -1547,7 +1589,10 @@ name|blu_spotfn
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Black"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -1595,7 +1640,10 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Intensity"
+argument_list|)
 block|,
 operator|&
 name|pvals
@@ -2174,18 +2222,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_newsprint"
 argument_list|,
-literal|"Re-sample the image to give a newspaper-like "
-literal|"effect"
+name|_
+argument_list|(
+literal|"Re-sample the image to give a newspaper-like effect"
+argument_list|)
 argument_list|,
-literal|"Halftone the image, trading off "
-literal|"resolution to represent colours or grey levels "
-literal|"using the process described both in the PostScript "
-literal|"language definition, and also by Robert Ulichney, "
-literal|"\"Digital halftoning\", MIT Press, 1987."
+name|_
+argument_list|(
+literal|"Halftone the image, trading off resolution to represent colours or grey levels using the process described both in the PostScript language definition, and also by Robert Ulichney, \"Digital halftoning\", MIT Press, 1987."
+argument_list|)
 argument_list|,
 literal|"Austin Donnelly"
 argument_list|,
@@ -2195,7 +2247,10 @@ literal|"1998 ("
 name|VERSION
 literal|")"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Distorts/Newsprint..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -2332,6 +2387,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -2370,6 +2428,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Make sure all the arguments are there!  */
 if|if
 condition|(
@@ -2603,6 +2664,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
@@ -2643,7 +2707,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Newsprintifing..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  set the tile cache size  */
@@ -4192,7 +4259,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"angle"
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -4220,7 +4290,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"spot function"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -4331,9 +4404,12 @@ index|]
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|sf
 operator|->
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -4643,9 +4719,12 @@ name|ch_menuitem
 operator|=
 name|gtk_menu_item_new_with_label
 argument_list|(
+name|gettext
+argument_list|(
 name|ct
 operator|->
 name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_object_set_user_data
@@ -5174,7 +5253,10 @@ operator|.
 name|dlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Newsprint"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -5290,7 +5372,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5349,7 +5434,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5407,7 +5495,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Resolution"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -5549,7 +5640,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"Input SPI "
+argument_list|)
 argument_list|,
 name|ENTSCALE_INT
 argument_list|,
@@ -5585,7 +5679,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Output LPI "
+argument_list|)
 argument_list|,
 name|ENTSCALE_DOUBLE
 argument_list|,
@@ -5621,7 +5718,10 @@ literal|0
 argument_list|,
 literal|2
 argument_list|,
+name|_
+argument_list|(
 literal|"Cell size "
+argument_list|)
 argument_list|,
 name|ENTSCALE_INT
 argument_list|,
@@ -5660,7 +5760,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Screen"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -5802,7 +5905,10 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"Black pullout (%)"
+argument_list|)
 argument_list|,
 name|ENTSCALE_INT
 argument_list|,
@@ -5845,7 +5951,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Separate to"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -5896,8 +6005,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"RGB"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -5983,8 +6095,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"CMYK"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|group
 operator|=
@@ -6070,7 +6185,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|group
 argument_list|,
+name|_
+argument_list|(
 literal|"Intensity"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group
@@ -6285,7 +6403,10 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Lock channels"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -6408,7 +6529,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Factory defaults"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_signal_connect
@@ -6580,7 +6704,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Anti-alias"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -6665,7 +6792,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|_
+argument_list|(
 literal|"oversample "
+argument_list|)
 argument_list|,
 name|ENTSCALE_INT
 argument_list|,
@@ -7430,7 +7560,7 @@ comment|/* Each call of the spot function results in one of these */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b2eef200a08
+DECL|struct|__anon2bab57e20a08
 typedef|typedef
 struct|struct
 block|{

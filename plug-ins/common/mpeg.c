@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -47,6 +53,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -219,11 +231,17 @@ literal|0
 index|]
 argument_list|)
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"file_mpeg_load"
 argument_list|,
+name|_
+argument_list|(
 literal|"Loads MPEG movies"
+argument_list|)
 argument_list|,
 literal|"FIXME: write help for mpeg_load"
 argument_list|,
@@ -340,6 +358,9 @@ operator|.
 name|d_status
 operator|=
 name|STATUS_CALLING_ERROR
+expr_stmt|;
+name|INIT_I18N
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -580,10 +601,8 @@ name|ImageDesc
 name|img
 decl_stmt|;
 name|gchar
+modifier|*
 name|layername
-index|[
-literal|200
-index|]
 decl_stmt|;
 comment|/* FIXME? */
 name|temp
@@ -613,7 +632,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Loading MPEG movie..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fp
@@ -824,11 +846,14 @@ name|delay
 operator|>
 literal|0
 condition|)
-name|sprintf
-argument_list|(
 name|layername
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
 literal|"Frame %d (%dms)"
+argument_list|)
 argument_list|,
 name|framenumber
 argument_list|,
@@ -836,11 +861,14 @@ name|delay
 argument_list|)
 expr_stmt|;
 else|else
-name|sprintf
-argument_list|(
 name|layername
-argument_list|,
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|_
+argument_list|(
 literal|"Frame %d"
+argument_list|)
 argument_list|,
 name|framenumber
 argument_list|)
@@ -862,6 +890,11 @@ argument_list|,
 literal|100
 argument_list|,
 name|NORMAL_MODE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|layername
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_layer

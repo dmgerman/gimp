@@ -1,7 +1,13 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* max_rgb.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<1997/10/23 23:40:20 narazaki@InetQ.or.jp>  * Version: 0.35  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* max_rgb.c -- This is a plug-in for the GIMP (1.0's API)  * Author: Shuji Narazaki<narazaki@InetQ.or.jp>  * Time-stamp:<2000-01-01 00:24:57 yasuhiro>  * Version: 0.35  *  * Copyright (C) 1997 Shuji Narazaki<narazaki@InetQ.or.jp>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
+
+begin_include
+include|#
+directive|include
+file|"config.h"
+end_include
 
 begin_include
 include|#
@@ -13,6 +19,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_include
@@ -57,22 +69,6 @@ define|#
 directive|define
 name|SHORT_NAME
 value|"max_rgb"
-end_define
-
-begin_define
-DECL|macro|PROGRESS_NAME
-define|#
-directive|define
-name|PROGRESS_NAME
-value|"max_rgb: scanning..."
-end_define
-
-begin_define
-DECL|macro|MENU_POSITION
-define|#
-directive|define
-name|MENU_POSITION
-value|"<Image>/Filters/Colors/Max RGB..."
 end_define
 
 begin_define
@@ -438,7 +434,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15b65d0108
+DECL|struct|__anon2c2b60ac0108
 block|{
 DECL|member|max_p
 name|gint
@@ -466,7 +462,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b15b65d0208
+DECL|struct|__anon2c2b60ac0208
 block|{
 DECL|member|run
 name|gint
@@ -585,11 +581,17 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Return an image in which each pixel holds only the channel that has the maximum value in three (red, green, blue) channels, and other channels are zero-cleared"
+argument_list|)
 argument_list|,
 literal|"the help is not yet written for this plug-in"
 argument_list|,
@@ -599,7 +601,10 @@ literal|"Shuji Narazaki"
 argument_list|,
 literal|"1997"
 argument_list|,
-name|MENU_POSITION
+name|N_
+argument_list|(
+literal|"<Image>/Filters/Colors/Max RGB..."
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -722,6 +727,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -760,7 +768,10 @@ name|ERROR_DIALOG
 argument_list|(
 literal|1
 argument_list|,
+name|_
+argument_list|(
 literal|"RGB drawable is not selected."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -776,11 +787,17 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* You must copy the values of parameters to VALS or dialog variables. */
 break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_get_data
 argument_list|(
 name|PLUG_IN_NAME
@@ -1076,7 +1093,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
-name|PROGRESS_NAME
+name|_
+argument_list|(
+literal|"max_rgb: scanning..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -1478,7 +1498,10 @@ name|gtkW_frame_new
 argument_list|(
 name|hbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Parameter Settings"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*   table = gtkW_table_new (frame, 2, 2);   gtkW_table_add_toggle (table, "Hold the maximal channel", 0, 2, 1, 			 (GtkSignalFunc) gtkW_toggle_update,&VALS.max_p);   gtk_widget_show (table);   */
@@ -1495,7 +1518,10 @@ name|gtkW_vbox_add_radio_button
 argument_list|(
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Hold the maximal channels"
+argument_list|)
 argument_list|,
 name|group
 argument_list|,
@@ -1514,7 +1540,10 @@ name|gtkW_vbox_add_radio_button
 argument_list|(
 name|vbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Hold the minimal channels"
+argument_list|)
 argument_list|,
 name|group
 argument_list|,
@@ -1914,7 +1943,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -1976,7 +2008,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2109,7 +2144,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS

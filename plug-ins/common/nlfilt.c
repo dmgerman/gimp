@@ -31,24 +31,6 @@ directive|include
 file|<math.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<plug-ins/megawidget/megawidget.h>
-end_include
-
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -65,6 +47,30 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<plug-ins/megawidget/megawidget.h>
+end_include
 
 begin_decl_stmt
 DECL|variable|nlfilt_do_preview
@@ -150,7 +156,7 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|enum|__anon289e89ba0103
+DECL|enum|__anon2b9dca2a0103
 typedef|typedef
 enum|enum
 block|{
@@ -402,13 +408,22 @@ name|nrets
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_nlfilt"
 argument_list|,
+name|_
+argument_list|(
 literal|"Nonlinear swiss army knife filter"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"This is the pnmnlfilt, in gimp's clothing.  See the pnmnlfilt manpage for details."
+argument_list|)
 argument_list|,
 literal|"Graeme W. Gill, gimp 0.99 plugin by Eric L. Hernes"
 argument_list|,
@@ -416,7 +431,10 @@ literal|"Graeme W. Gill, Eric L. Hernes"
 argument_list|,
 literal|"1997"
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Enhance/NL Filter..."
+argument_list|)
 argument_list|,
 literal|"RGB,GRAY"
 argument_list|,
@@ -579,6 +597,9 @@ decl_stmt|;
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for interactive running */
 if|if
 condition|(
@@ -676,6 +697,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for non-interactive running */
 if|if
 condition|(
@@ -765,6 +789,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* XXX: add code here for last-values running */
 if|if
 condition|(
@@ -998,7 +1025,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"NL Filter"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* first row */
@@ -1291,6 +1321,9 @@ decl_stmt|;
 name|gint
 name|runp
 decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 name|struct
 name|mwRadioGroup
 name|filter
@@ -1298,19 +1331,28 @@ index|[]
 init|=
 block|{
 block|{
+name|N_
+argument_list|(
 literal|"Alpha Trimmed Mean"
+argument_list|)
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Optimal Estimation"
+argument_list|)
 block|,
 literal|0
 block|}
 block|,
 block|{
+name|N_
+argument_list|(
 literal|"Edge Enhancement"
+argument_list|)
 block|,
 literal|0
 block|}
@@ -1381,13 +1423,51 @@ name|var
 operator|=
 literal|1
 expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|filter
+index|[
+name|i
+index|]
+operator|.
+name|name
+operator|!=
+name|NULL
+condition|;
+name|i
+operator|++
+control|)
+name|filter
+index|[
+name|i
+index|]
+operator|.
+name|name
+operator|=
+name|gettext
+argument_list|(
+name|filter
+index|[
+name|i
+index|]
+operator|.
+name|name
+argument_list|)
+expr_stmt|;
 name|dlg
 operator|=
 name|mw_app_new
 argument_list|(
 literal|"plug_in_nlfilt"
 argument_list|,
+name|_
+argument_list|(
 literal|"NL Filter"
+argument_list|)
 argument_list|,
 operator|&
 name|runp
@@ -1484,7 +1564,10 @@ name|mw_radio_group_new
 argument_list|(
 name|hbox
 argument_list|,
+name|_
+argument_list|(
 literal|"Filter"
+argument_list|)
 argument_list|,
 name|filter
 argument_list|)
@@ -1493,7 +1576,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Parameters"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -1577,7 +1663,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Alpha"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -1607,7 +1696,10 @@ name|mw_fscale_entry_new
 argument_list|(
 name|table
 argument_list|,
+name|_
+argument_list|(
 literal|"Radius"
+argument_list|)
 argument_list|,
 literal|0.3333333
 argument_list|,

@@ -54,6 +54,12 @@ directive|include
 file|<libgimp/gimp.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_define
 DECL|macro|PLUG_IN_NAME
 define|#
@@ -103,7 +109,7 @@ value|MBLUR_ZOOM
 end_define
 
 begin_typedef
-DECL|struct|__anon296e1d850108
+DECL|struct|__anon2b4d96de0108
 typedef|typedef
 struct|struct
 block|{
@@ -126,7 +132,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296e1d850208
+DECL|struct|__anon2b4d96de0208
 typedef|typedef
 struct|struct
 block|{
@@ -648,15 +654,22 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
+name|_
+argument_list|(
 literal|"Motion blur of image"
+argument_list|)
 argument_list|,
-literal|"This plug-in simulates the effect seen when photographing a"
-literal|"moving object at a slow shutter speed."
-literal|"Done by adding multiple displaced copies."
+name|_
+argument_list|(
+literal|"This plug-in simulates the effect seen when photographing a moving object at a slow shutter speed. Done by adding multiple displaced copies."
+argument_list|)
 argument_list|,
 literal|"Torsten Martinsen, Federico Mena Quintero and Daniel Skarda"
 argument_list|,
@@ -664,7 +677,10 @@ literal|"Torsten Martinsen, Federico Mena Quintero and Daniel Skarda"
 argument_list|,
 name|PLUG_IN_VERSION
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Blur/Motion Blur..."
+argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
@@ -902,6 +918,9 @@ block|{
 case|case
 name|RUN_INTERACTIVE
 case|:
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -923,6 +942,9 @@ break|break;
 case|case
 name|RUN_NONINTERACTIVE
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Make sure all the arguments are present */
 if|if
 condition|(
@@ -1008,6 +1030,9 @@ break|break;
 case|case
 name|RUN_WITH_LAST_VALS
 case|:
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 comment|/* Possibly retrieve data */
 name|gimp_get_data
 argument_list|(
@@ -3029,7 +3054,10 @@ parameter_list|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"Blurring..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -3762,7 +3790,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"Motion blur"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3878,7 +3909,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -3935,7 +3969,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4028,7 +4065,10 @@ name|oframe
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Options"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4090,7 +4130,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Length"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
@@ -4242,7 +4285,10 @@ name|iframe
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blur type"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4312,11 +4358,20 @@ literal|3
 index|]
 init|=
 block|{
+name|N_
+argument_list|(
 literal|"Linear"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Radial"
+argument_list|)
 block|,
+name|N_
+argument_list|(
 literal|"Zoom"
+argument_list|)
 block|}
 decl_stmt|;
 name|button
@@ -4357,10 +4412,13 @@ name|button
 argument_list|)
 argument_list|)
 argument_list|,
+name|gettext
+argument_list|(
 name|name
 index|[
 name|i
 index|]
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -4437,7 +4495,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Angle"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
