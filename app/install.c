@@ -264,9 +264,9 @@ end_define
 begin_function_decl
 specifier|static
 name|void
-name|install_dialog_create
+name|user_install_dialog_create
 parameter_list|(
-name|InstallCallback
+name|UserInstallCallback
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -274,7 +274,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|install_continue_callback
+name|user_install_continue_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -289,7 +289,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|install_cancel_callback
+name|user_install_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -304,7 +304,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|install_run
+name|user_install_run
 parameter_list|(
 name|void
 parameter_list|)
@@ -314,7 +314,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|install_tuning
+name|user_install_tuning
 parameter_list|(
 name|void
 parameter_list|)
@@ -324,7 +324,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|install_tuning_done
+name|user_install_tuning_done
 parameter_list|(
 name|void
 parameter_list|)
@@ -334,7 +334,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|install_resolution
+name|user_install_resolution
 parameter_list|(
 name|void
 parameter_list|)
@@ -344,7 +344,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|install_resolution_done
+name|user_install_resolution_done
 parameter_list|(
 name|void
 parameter_list|)
@@ -353,11 +353,11 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|install_verify (InstallCallback install_callback)
-name|install_verify
+DECL|function|user_install_verify (UserInstallCallback user_install_callback)
+name|user_install_verify
 parameter_list|(
-name|InstallCallback
-name|install_callback
+name|UserInstallCallback
+name|user_install_callback
 parameter_list|)
 block|{
 name|gboolean
@@ -403,7 +403,7 @@ condition|)
 block|{
 call|(
 modifier|*
-name|install_callback
+name|user_install_callback
 call|)
 argument_list|()
 expr_stmt|;
@@ -441,16 +441,16 @@ argument_list|)
 expr_stmt|;
 call|(
 modifier|*
-name|install_callback
+name|user_install_callback
 call|)
 argument_list|()
 expr_stmt|;
 block|}
 else|else
 block|{
-name|install_dialog_create
+name|user_install_dialog_create
 argument_list|(
-name|install_callback
+name|user_install_callback
 argument_list|)
 expr_stmt|;
 block|}
@@ -462,11 +462,11 @@ comment|/*  private stuff  */
 end_comment
 
 begin_decl_stmt
-DECL|variable|install_dialog
+DECL|variable|user_install_dialog
 specifier|static
 name|GtkWidget
 modifier|*
-name|install_dialog
+name|user_install_dialog
 init|=
 name|NULL
 decl_stmt|;
@@ -631,7 +631,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c7ef4b70108
+DECL|struct|__anon2bc3b98f0108
 block|{
 DECL|member|directory
 name|gboolean
@@ -987,8 +987,8 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|install_notebook_set_page (GtkNotebook * notebook,gint index)
-name|install_notebook_set_page
+DECL|function|user_install_notebook_set_page (GtkNotebook * notebook,gint index)
+name|user_install_notebook_set_page
 parameter_list|(
 name|GtkNotebook
 modifier|*
@@ -1111,8 +1111,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_continue_callback (GtkWidget * widget,gpointer data)
-name|install_continue_callback
+DECL|function|user_install_continue_callback (GtkWidget * widget,gpointer data)
+name|user_install_continue_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1128,13 +1128,13 @@ name|notebook_index
 init|=
 literal|0
 decl_stmt|;
-name|InstallCallback
+name|UserInstallCallback
 name|callback
 decl_stmt|;
 name|callback
 operator|=
 operator|(
-name|InstallCallback
+name|UserInstallCallback
 operator|)
 name|data
 expr_stmt|;
@@ -1153,7 +1153,7 @@ case|:
 if|if
 condition|(
 operator|!
-name|install_run
+name|user_install_run
 argument_list|()
 condition|)
 name|gtk_widget_set_sensitive
@@ -1184,29 +1184,29 @@ expr_stmt|;
 name|parse_gimprc
 argument_list|()
 expr_stmt|;
-name|install_tuning
+name|user_install_tuning
 argument_list|()
 expr_stmt|;
 break|break;
 case|case
 literal|3
 case|:
-name|install_tuning_done
+name|user_install_tuning_done
 argument_list|()
 expr_stmt|;
-name|install_resolution
+name|user_install_resolution
 argument_list|()
 expr_stmt|;
 break|break;
 case|case
 literal|4
 case|:
-name|install_resolution_done
+name|user_install_resolution_done
 argument_list|()
 expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
-name|install_dialog
+name|user_install_dialog
 argument_list|)
 expr_stmt|;
 name|gdk_gc_unref
@@ -1248,7 +1248,7 @@ name|NUM_PAGES
 operator|-
 literal|1
 condition|)
-name|install_notebook_set_page
+name|user_install_notebook_set_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -1265,8 +1265,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_cancel_callback (GtkWidget * widget,gpointer data)
-name|install_cancel_callback
+DECL|function|user_install_cancel_callback (GtkWidget * widget,gpointer data)
+name|user_install_cancel_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1296,7 +1296,7 @@ argument_list|(
 name|continue_button
 argument_list|)
 expr_stmt|;
-name|install_notebook_set_page
+name|user_install_notebook_set_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -1329,8 +1329,8 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|install_corner_expose (GtkWidget * widget,GdkEventExpose * eevent,gpointer data)
-name|install_corner_expose
+DECL|function|user_install_corner_expose (GtkWidget * widget,GdkEventExpose * eevent,gpointer data)
+name|user_install_corner_expose
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1559,8 +1559,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|install_notebook_append_page (GtkNotebook * notebook,gchar * title,gchar * footer)
-name|install_notebook_append_page
+DECL|function|user_install_notebook_append_page (GtkNotebook * notebook,gchar * title,gchar * footer)
+name|user_install_notebook_append_page
 parameter_list|(
 name|GtkNotebook
 modifier|*
@@ -1709,8 +1709,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_ctree_select_row (GtkWidget * widget,gint row,gint column,GdkEventButton * bevent,gpointer data)
-name|install_ctree_select_row
+DECL|function|user_install_ctree_select_row (GtkWidget * widget,gint row,gint column,GdkEventButton * bevent,gpointer data)
+name|user_install_ctree_select_row
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1754,10 +1754,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|install_dialog_create (InstallCallback callback)
-name|install_dialog_create
+DECL|function|user_install_dialog_create (UserInstallCallback callback)
+name|user_install_dialog_create
 parameter_list|(
-name|InstallCallback
+name|UserInstallCallback
 name|callback
 parameter_list|)
 block|{
@@ -1799,7 +1799,7 @@ name|large_font
 decl_stmt|;
 name|dialog
 operator|=
-name|install_dialog
+name|user_install_dialog
 operator|=
 name|gimp_dialog_new
 argument_list|(
@@ -1827,7 +1827,7 @@ argument_list|(
 literal|"Continue"
 argument_list|)
 argument_list|,
-name|install_continue_callback
+name|user_install_continue_callback
 argument_list|,
 name|callback
 argument_list|,
@@ -1845,7 +1845,7 @@ argument_list|(
 literal|"Cancel"
 argument_list|)
 argument_list|,
-name|install_cancel_callback
+name|user_install_cancel_callback
 argument_list|,
 name|callback
 argument_list|,
@@ -2497,7 +2497,7 @@ literal|"expose_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|install_corner_expose
+name|user_install_corner_expose
 argument_list|)
 argument_list|,
 operator|(
@@ -2570,7 +2570,7 @@ literal|"expose_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|install_corner_expose
+name|user_install_corner_expose
 argument_list|)
 argument_list|,
 operator|(
@@ -2666,7 +2666,7 @@ expr_stmt|;
 comment|/*  Page 1  */
 name|page
 operator|=
-name|install_notebook_append_page
+name|user_install_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -2844,7 +2844,7 @@ index|]
 decl_stmt|;
 name|page
 operator|=
-name|install_notebook_append_page
+name|user_install_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -3153,7 +3153,7 @@ literal|"select_row"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|install_ctree_select_row
+name|user_install_ctree_select_row
 argument_list|)
 argument_list|,
 name|notebook2
@@ -3458,7 +3458,7 @@ name|page
 operator|=
 name|log_page
 operator|=
-name|install_notebook_append_page
+name|user_install_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -3478,7 +3478,7 @@ name|page
 operator|=
 name|tuning_page
 operator|=
-name|install_notebook_append_page
+name|user_install_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -3540,7 +3540,7 @@ name|page
 operator|=
 name|resolution_page
 operator|=
-name|install_notebook_append_page
+name|user_install_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -3601,7 +3601,7 @@ expr_stmt|;
 comment|/*  EEK page  */
 name|page
 operator|=
-name|install_notebook_append_page
+name|user_install_notebook_append_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -3616,7 +3616,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|install_notebook_set_page
+name|user_install_notebook_set_page
 argument_list|(
 name|GTK_NOTEBOOK
 argument_list|(
@@ -3796,8 +3796,8 @@ end_endif
 begin_function
 specifier|static
 name|gboolean
-DECL|function|install_run (void)
-name|install_run
+DECL|function|user_install_run (void)
+name|user_install_run
 parameter_list|(
 name|void
 parameter_list|)
@@ -4470,8 +4470,8 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|install_tuning (void)
-name|install_tuning
+DECL|function|user_install_tuning (void)
+name|user_install_tuning
 parameter_list|(
 name|void
 parameter_list|)
@@ -4780,8 +4780,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_tuning_done (void)
-name|install_tuning_done
+DECL|function|user_install_tuning_done (void)
+name|user_install_tuning_done
 parameter_list|(
 name|void
 parameter_list|)
@@ -4842,8 +4842,8 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|install_resolution_calibrate_ok (GtkWidget * button,gpointer data)
-name|install_resolution_calibrate_ok
+DECL|function|user_install_resolution_calibrate_ok (GtkWidget * button,gpointer data)
+name|user_install_resolution_calibrate_ok
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -4963,8 +4963,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_resolution_calibrate (GtkWidget * button,gpointer data)
-name|install_resolution_calibrate
+DECL|function|user_install_resolution_calibrate (GtkWidget * button,gpointer data)
+name|user_install_resolution_calibrate
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -5008,7 +5008,7 @@ name|list
 decl_stmt|;
 name|gtk_widget_hide
 argument_list|(
-name|install_dialog
+name|user_install_dialog
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -5039,7 +5039,7 @@ argument_list|(
 literal|"OK"
 argument_list|)
 argument_list|,
-name|install_resolution_calibrate_ok
+name|user_install_resolution_calibrate_ok
 argument_list|,
 name|NULL
 argument_list|,
@@ -5425,7 +5425,7 @@ literal|"expose_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|install_corner_expose
+name|user_install_corner_expose
 argument_list|)
 argument_list|,
 operator|(
@@ -5498,7 +5498,7 @@ literal|"expose_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|install_corner_expose
+name|user_install_corner_expose
 argument_list|)
 argument_list|,
 operator|(
@@ -5571,7 +5571,7 @@ literal|"expose_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|install_corner_expose
+name|user_install_corner_expose
 argument_list|)
 argument_list|,
 operator|(
@@ -5644,7 +5644,7 @@ literal|"expose_event"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|install_corner_expose
+name|user_install_corner_expose
 argument_list|)
 argument_list|,
 operator|(
@@ -5935,7 +5935,7 @@ argument_list|()
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|install_dialog
+name|user_install_dialog
 argument_list|)
 expr_stmt|;
 block|}
@@ -5944,8 +5944,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_resolution (void)
-name|install_resolution
+DECL|function|user_install_resolution (void)
+name|user_install_resolution
 parameter_list|(
 name|void
 parameter_list|)
@@ -6476,7 +6476,7 @@ literal|"clicked"
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
-name|install_resolution_calibrate
+name|user_install_resolution_calibrate
 argument_list|)
 argument_list|,
 name|NULL
@@ -6544,8 +6544,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|install_resolution_done (void)
-name|install_resolution_done
+DECL|function|user_install_resolution_done (void)
+name|user_install_resolution_done
 parameter_list|(
 name|void
 parameter_list|)

@@ -1586,8 +1586,8 @@ name|argv
 operator|+
 literal|1
 expr_stmt|;
-comment|/* Check the installation */
-name|install_verify
+comment|/* Check the user_installation */
+name|user_install_verify
 argument_list|(
 name|init
 argument_list|)

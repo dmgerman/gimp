@@ -21,12 +21,12 @@ comment|/*  Install callback function  */
 end_comment
 
 begin_typedef
-DECL|typedef|InstallCallback
+DECL|typedef|UserInstallCallback
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|InstallCallback
+name|UserInstallCallback
 function_decl|)
 parameter_list|(
 name|void
@@ -40,10 +40,10 @@ end_comment
 
 begin_function_decl
 name|void
-name|install_verify
+name|user_install_verify
 parameter_list|(
-name|InstallCallback
-name|install_callback
+name|UserInstallCallback
+name|user_install_callback
 parameter_list|)
 function_decl|;
 end_function_decl
