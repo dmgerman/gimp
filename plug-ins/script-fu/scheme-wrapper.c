@@ -22,7 +22,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<glib.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_include
@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"script-fu-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"script-fu-constants.h"
 end_include
 
@@ -52,7 +58,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"script-fu-enums.h"
+file|"script-fu-interface.h"
 end_include
 
 begin_include
@@ -2635,7 +2641,7 @@ name|a
 argument_list|)
 expr_stmt|;
 comment|/*  report the current command  */
-name|script_fu_report_cc
+name|script_fu_interface_report_cc
 argument_list|(
 name|proc_name
 argument_list|)

@@ -6,40 +6,31 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SCRIPT_FU_SCRIPTS_H__
+name|__SCRIPT_FU_INTERFACE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SCRIPT_FU_SCRIPTS_H__
+DECL|macro|__SCRIPT_FU_INTERFACE_H__
 define|#
 directive|define
-name|__SCRIPT_FU_SCRIPTS_H__
+name|__SCRIPT_FU_INTERFACE_H__
 end_define
 
 begin_function_decl
 name|void
-name|script_fu_find_scripts
+name|script_fu_interface
 parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|LISP
-name|script_fu_add_script
-parameter_list|(
-name|LISP
-name|a
+name|SFScript
+modifier|*
+name|script
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|script_fu_error_msg
+name|script_fu_interface_report_cc
 parameter_list|(
-specifier|const
 name|gchar
 modifier|*
 name|command
@@ -53,7 +44,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SCRIPT_FU_SCRIPTS__  */
+comment|/*  __SCRIPT_FU_INTERFACE_H__  */
 end_comment
 
 end_unit
