@@ -67,11 +67,6 @@ name|int
 name|spacing
 decl_stmt|;
 comment|/*  brush's spacing                            */
-DECL|member|index
-name|int
-name|index
-decl_stmt|;
-comment|/*  brush's index...                           */
 DECL|member|mask
 name|TempBuf
 modifier|*

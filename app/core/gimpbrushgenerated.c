@@ -931,7 +931,7 @@ name|mask
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* compute the range of the brush, should do a better job than this */
+comment|/* compute the range of the brush. should do a better job than this? */
 name|s
 operator|=
 name|sin
@@ -1091,8 +1091,6 @@ argument_list|(
 name|brush
 operator|->
 name|radius
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 if|if
