@@ -36,8 +36,7 @@ define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-define|\
-value|setlocale(LC_MESSAGES, ""); \   bindtextdomain("gimp-std-plugins", LOCALEDIR); \   textdomain("gimp-std-plugins")
+value|G_STMT_START{			\   setlocale(LC_MESSAGES, ""); 				\   bindtextdomain("gimp-std-plugins", LOCALEDIR);	\   textdomain("gimp-std-plugins");			\   			}G_STMT_END
 end_define
 
 begin_else
@@ -51,8 +50,7 @@ define|#
 directive|define
 name|INIT_I18N
 parameter_list|()
-define|\
-value|bindtextdomain("gimp-std-plugins", LOCALEDIR); \   textdomain("gimp-std-plugins")
+value|G_STMT_START{			\   bindtextdomain("gimp-std-plugins", LOCALEDIR);	\   textdomain("gimp-std-plugins");			\   			}G_STMT_END
 end_define
 
 begin_endif
@@ -66,8 +64,7 @@ define|#
 directive|define
 name|INIT_I18N_UI
 parameter_list|()
-define|\
-value|gtk_set_locale(); \   setlocale (LC_NUMERIC, "C"); \   INIT_I18N();
+value|G_STMT_START{	\   gtk_set_locale();			\   setlocale (LC_NUMERIC, "C");		\   INIT_I18N();				\ 			}G_STMT_END
 end_define
 
 begin_endif

@@ -15,6 +15,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<locale.h>
 end_include
 
@@ -209,8 +215,7 @@ name|INIT_LOCALE
 parameter_list|(
 name|domain
 parameter_list|)
-define|\
-value|gtk_set_locale ();			\ 	setlocale (LC_NUMERIC, "C");		\ 	bindtextdomain (domain, LOCALEDIR);	\ 	textdomain (domain);
+value|G_STMT_START{	\ 	gtk_set_locale ();			\ 	setlocale (LC_NUMERIC, "C");		\ 	bindtextdomain (domain, LOCALEDIR);	\ 	textdomain (domain);			\ 				}G_STMT_END
 end_define
 
 begin_endif

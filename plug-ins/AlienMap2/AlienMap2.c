@@ -43,6 +43,12 @@ directive|include
 file|"logo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/***** Macros *****/
 end_comment
@@ -129,18 +135,18 @@ comment|/***** Color model *****/
 end_comment
 
 begin_define
-DECL|macro|RGB
+DECL|macro|RGB_MODEL
 define|#
 directive|define
-name|RGB
+name|RGB_MODEL
 value|0
 end_define
 
 begin_define
-DECL|macro|HSL
+DECL|macro|HSL_MODEL
 define|#
 directive|define
-name|HSL
+name|HSL_MODEL
 value|1
 end_define
 
@@ -149,7 +155,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2adec7400108
+DECL|struct|__anon2b91d32f0108
 typedef|typedef
 struct|struct
 block|{
@@ -200,7 +206,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2adec7400208
+DECL|struct|__anon2b91d32f0208
 typedef|typedef
 struct|struct
 block|{
@@ -674,7 +680,7 @@ literal|1.0
 block|,
 literal|0.0
 block|,
-name|RGB
+name|RGB_MODEL
 block|,
 name|TRUE
 block|,
@@ -908,7 +914,7 @@ name|PARAM_INT8
 block|,
 literal|"colormodel"
 block|,
-literal|"Color model (0: RGB, 1: HSL)"
+literal|"Color model (0: RGB_MODEL, 1: HSL_MODEL)"
 block|}
 block|,
 block|{
@@ -966,23 +972,38 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_alienmap2"
 argument_list|,
+name|_
+argument_list|(
 literal|"AlienMap2 Color Transformation Plug-In"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"No help yet. Just try it and you'll see!"
+argument_list|)
 argument_list|,
 literal|"Martin Weber (martin.weber@usa.net, http://diverse.freepage.de/martin.weber)"
 argument_list|,
 literal|"Martin Weber (martin.weber@usa.net, http://diverse.freepage.de/martin.weber"
 argument_list|,
+name|_
+argument_list|(
 literal|"24th April 1998"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"<Image>/Filters/Colors/Alien Map 2"
+argument_list|)
 argument_list|,
-literal|"RGB*"
+literal|"RGB_MODEL*"
 argument_list|,
 name|PROC_PLUG_IN
 argument_list|,
@@ -1060,7 +1081,7 @@ name|wvals
 operator|.
 name|colormodel
 operator|==
-name|HSL
+name|HSL_MODEL
 condition|)
 block|{
 name|r1
@@ -1290,7 +1311,7 @@ name|wvals
 operator|.
 name|colormodel
 operator|==
-name|RGB
+name|RGB_MODEL
 condition|)
 block|{
 if|if
@@ -1504,6 +1525,9 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -2014,7 +2038,7 @@ operator|==
 name|STATUS_SUCCESS
 condition|)
 block|{
-comment|/*  Make sure that the drawable is indexed or RGB color  */
+comment|/*  Make sure that the drawable is indexed or RGB_MODEL color  */
 if|if
 condition|(
 name|gimp_drawable_color
@@ -2027,7 +2051,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"AlienMap2: Transforming ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Set the tile cache size */
@@ -2086,7 +2113,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*           gimp_message("This filter only applies on RGB-images"); */
+comment|/*           gimp_message("This filter only applies on RGB_MODEL-images"); */
 name|status
 operator|=
 name|STATUS_EXECUTION_ERROR
@@ -3198,7 +3225,7 @@ name|wvals
 operator|.
 name|colormodel
 operator|==
-name|RGB
+name|RGB_MODEL
 operator|)
 expr_stmt|;
 name|use_hsl
@@ -3208,7 +3235,7 @@ name|wvals
 operator|.
 name|colormodel
 operator|==
-name|HSL
+name|HSL_MODEL
 operator|)
 expr_stmt|;
 name|argc
@@ -3319,7 +3346,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"AlienMap2"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3640,7 +3670,10 @@ argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"R/H-Frequency:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3658,7 +3691,10 @@ literal|0
 argument_list|,
 literal|5.0000000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change frequency of the red/hue channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3673,7 +3709,10 @@ name|exit
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"R/H-Phaseshift:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3691,12 +3730,18 @@ literal|0
 argument_list|,
 literal|360.00000000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change angle of the red/hue channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"G/S-Frequency:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3714,12 +3759,18 @@ literal|0
 argument_list|,
 literal|5.00000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change frequeny of the green/saturation channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"G/S-Phaseshift:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3737,12 +3788,18 @@ literal|0
 argument_list|,
 literal|360.00000000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change angle of the green/saturation channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"B/L-Frequency:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3760,12 +3817,18 @@ literal|0
 argument_list|,
 literal|5.00000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change frequency of the blue/luminance channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dialog_create_value
 argument_list|(
+name|_
+argument_list|(
 literal|"B/L-Phaseshift:"
+argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -3783,7 +3846,10 @@ literal|0
 argument_list|,
 literal|360.00000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change angle of the blue/luminance channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Mode toggle box  */
@@ -3791,7 +3857,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Mode:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3869,7 +3938,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|mode_group
 argument_list|,
-literal|"RGB color model"
+name|_
+argument_list|(
+literal|"RGB_MODEL color model"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mode_group
@@ -3937,7 +4009,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
-literal|"Use RGB color model"
+name|_
+argument_list|(
+literal|"Use RGB_MODEL color model"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -3946,7 +4021,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|mode_group
 argument_list|,
-literal|"HSL color model"
+name|_
+argument_list|(
+literal|"HSL_MODEL color model"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|mode_group
@@ -4014,15 +4092,21 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
-literal|"Use HSL color model"
+name|_
+argument_list|(
+literal|"Use HSL_MODEL color model"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Modify red/hue channel"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -4083,15 +4167,21 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use function for red/hue component"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
+argument_list|(
+name|_
 argument_list|(
 literal|"Modify green/saturation channel"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
 argument_list|(
@@ -4152,14 +4242,20 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use function for green/saturation component"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Modify blue/luminance channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4221,7 +4317,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use function for blue/luminance component"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4254,7 +4353,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4318,14 +4420,20 @@ name|tips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Accept settings and apply filter on image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4384,14 +4492,20 @@ name|tips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Reject any changes and close plug-in"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"About..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4450,7 +4564,10 @@ name|tips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Show information about this plug-in and the author"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Done */
@@ -5587,7 +5704,7 @@ name|wvals
 operator|.
 name|colormodel
 operator|=
-name|RGB
+name|RGB_MODEL
 expr_stmt|;
 elseif|else
 if|if
@@ -5598,7 +5715,7 @@ name|wvals
 operator|.
 name|colormodel
 operator|=
-name|HSL
+name|HSL_MODEL
 expr_stmt|;
 name|dialog_update_preview
 argument_list|()
@@ -5681,7 +5798,10 @@ argument_list|(
 name|logodlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"About Alien Map 2"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -5744,7 +5864,10 @@ name|xbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -5811,7 +5934,10 @@ name|tips
 argument_list|,
 name|xbutton
 argument_list|,
+name|_
+argument_list|(
 literal|"This closes the information box"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|xframe
@@ -6140,11 +6266,14 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
+name|_
+argument_list|(
 literal|"\nMartin Weber\n"
 literal|"martin.weber@usa.net\n"
 literal|"http://diverse.freepage.de/martin.weber\n\n"
 literal|"AlienMap2 Plug-In for the GIMP\n"
 literal|"Version 1.0\n"
+argument_list|)
 expr_stmt|;
 name|xlabel
 operator|=

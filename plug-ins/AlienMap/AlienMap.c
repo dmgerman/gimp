@@ -43,6 +43,12 @@ directive|include
 file|"logo.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimp/stdplugins-intl.h"
+end_include
+
 begin_comment
 comment|/***** Macros *****/
 end_comment
@@ -130,7 +136,7 @@ comment|/***** Types *****/
 end_comment
 
 begin_typedef
-DECL|struct|__anon2968c8b10108
+DECL|struct|__anon2b9fb34d0108
 typedef|typedef
 struct|struct
 block|{
@@ -165,7 +171,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2968c8b10208
+DECL|struct|__anon2b9fb34d0208
 typedef|typedef
 struct|struct
 block|{
@@ -894,21 +900,36 @@ name|nreturn_vals
 init|=
 literal|0
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 literal|"plug_in_alienmap"
 argument_list|,
+name|_
+argument_list|(
 literal|"AlienMap Color Transformation Plug-In"
+argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"No help yet. Just try it and you'll see!"
+argument_list|)
 argument_list|,
 literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
 literal|"Daniel Cotting (cotting@mygale.org, http://www.mygale.org/~cotting)"
 argument_list|,
+name|_
+argument_list|(
 literal|"1th May 1997"
+argument_list|)
 argument_list|,
+name|N_
+argument_list|(
 literal|"<Image>/Filters/Colors/Alien Map"
+argument_list|)
 argument_list|,
 literal|"RGB*"
 argument_list|,
@@ -1294,6 +1315,9 @@ name|status
 init|=
 name|STATUS_SUCCESS
 decl_stmt|;
+name|INIT_I18N_UI
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -1753,7 +1777,10 @@ condition|)
 block|{
 name|gimp_progress_init
 argument_list|(
+name|_
+argument_list|(
 literal|"AlienMap: Transforming ..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Set the tile cache size */
@@ -3180,7 +3207,10 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"AlienMap"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -3519,7 +3549,10 @@ literal|0
 argument_list|,
 literal|128.00000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change intensity of the red channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|table2
@@ -3596,7 +3629,10 @@ literal|0
 argument_list|,
 literal|128.0000000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change intensity of the green channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|table3
@@ -3673,7 +3709,10 @@ literal|0
 argument_list|,
 literal|128.00000000000000
 argument_list|,
+name|_
+argument_list|(
 literal|"Change intensity of the blue channel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Redmode toggle box  */
@@ -3681,7 +3720,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Red:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -3759,8 +3801,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|redmode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Sine"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|redmode_group
 operator|=
@@ -3827,8 +3872,11 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use sine-function for red component"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
@@ -3836,8 +3884,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|redmode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Cosine"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|redmode_group
 operator|=
@@ -3904,7 +3955,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use cosine-function for red component"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -3913,7 +3967,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|redmode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"None"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|redmode_group
@@ -3981,7 +4038,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Red channel: use linear mapping instead of any trigonometrical function"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -3999,7 +4059,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Green:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4077,8 +4140,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|greenmode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Sine"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|greenmode_group
 operator|=
@@ -4145,8 +4211,11 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use sine-function for green component"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
@@ -4154,8 +4223,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|greenmode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Cosine"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|greenmode_group
 operator|=
@@ -4222,7 +4294,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use cosine-function for green component"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -4231,7 +4306,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|greenmode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"None"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|greenmode_group
@@ -4299,7 +4377,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Green channel: use linear mapping instead of any trigonometrical function"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4317,7 +4398,10 @@ name|frame
 operator|=
 name|gtk_frame_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Blue:"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_frame_set_shadow_type
@@ -4395,8 +4479,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|bluemode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Sine"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|bluemode_group
 operator|=
@@ -4463,8 +4550,11 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use sine-function for blue component"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|toggle
 operator|=
@@ -4472,8 +4562,11 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|bluemode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"Cosine"
 argument_list|)
+argument_list|)
 expr_stmt|;
 name|bluemode_group
 operator|=
@@ -4540,7 +4633,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Use cosine-function for blue component"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|toggle
@@ -4549,7 +4645,10 @@ name|gtk_radio_button_new_with_label
 argument_list|(
 name|bluemode_group
 argument_list|,
+name|_
+argument_list|(
 literal|"None"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|bluemode_group
@@ -4617,7 +4716,10 @@ name|tips
 argument_list|,
 name|toggle
 argument_list|,
+name|_
+argument_list|(
 literal|"Blue channel: use linear mapping instead of any trigonometrical function"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -4651,7 +4753,10 @@ name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4715,14 +4820,20 @@ name|tips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Accept settings and apply filter on image"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"Cancel"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4781,14 +4892,20 @@ name|tips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Reject any changes and close plug-in"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"About..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -4847,7 +4964,10 @@ name|tips
 argument_list|,
 name|button
 argument_list|,
+name|_
+argument_list|(
 literal|"Show information about this plug-in and the author"
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Done */
@@ -6183,7 +6303,10 @@ argument_list|(
 name|logodlg
 argument_list|)
 argument_list|,
+name|_
+argument_list|(
 literal|"About Alien Map"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_window_position
@@ -6246,7 +6369,10 @@ name|xbutton
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
+name|_
+argument_list|(
 literal|"OK"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -6313,7 +6439,10 @@ name|tips
 argument_list|,
 name|xbutton
 argument_list|,
+name|_
+argument_list|(
 literal|"This closes the information box"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|xframe
@@ -6642,6 +6771,8 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
+name|_
+argument_list|(
 literal|"\nCotting Software Productions\n"
 literal|"Bahnhofstrasse 31\n"
 literal|"CH-3066 Stettlen (Switzerland)\n\n"
@@ -6649,6 +6780,7 @@ literal|"cotting@mygale.org\n"
 literal|"http://www.mygale.org/~cotting\n\n"
 literal|"AlienMap Plug-In for the GIMP\n"
 literal|"Version 1.01\n"
+argument_list|)
 expr_stmt|;
 name|xlabel
 operator|=
