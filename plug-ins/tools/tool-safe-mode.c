@@ -122,11 +122,16 @@ modifier|*
 name|tool_plug_in_path
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|VERBOSE
 name|g_message
 argument_list|(
 literal|"tool-safe-mode init called"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 name|g_module_supported
@@ -188,6 +193,9 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+ifdef|#
+directive|ifdef
+name|VERBOSE
 name|g_message
 argument_list|(
 literal|"tool_plug_in_path: %s"
@@ -195,6 +203,8 @@ argument_list|,
 name|tool_plug_in_path
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|path
 operator|=
 name|gimp_path_parse
@@ -224,6 +234,9 @@ name|list
 argument_list|)
 control|)
 block|{
+ifdef|#
+directive|ifdef
+name|VERBOSE
 name|g_message
 argument_list|(
 literal|"reading datafiles directory '%s'"
@@ -237,6 +250,8 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|dir
 operator|=
 name|g_dir_open
@@ -366,11 +381,16 @@ name|path
 argument_list|)
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|VERBOSE
 name|g_message
 argument_list|(
 literal|"tool-safe-mode init done"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 

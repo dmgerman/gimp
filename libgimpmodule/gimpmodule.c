@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbfe0570103
+DECL|enum|__anon278c7a250103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -748,7 +748,7 @@ name|gimp_module
 operator|->
 name|state
 operator|=
-name|GIMP_MODULE_STATE_LOADED_OK
+name|GIMP_MODULE_STATE_LOADED
 expr_stmt|;
 return|return
 name|TRUE
@@ -929,7 +929,7 @@ name|module
 operator|->
 name|state
 operator|=
-name|GIMP_MODULE_STATE_UNLOADED_OK
+name|GIMP_MODULE_STATE_NOT_LOADED
 expr_stmt|;
 block|}
 return|return
@@ -1286,7 +1286,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Loaded OK"
+literal|"Loaded"
 argument_list|)
 block|,
 name|N_
@@ -1296,7 +1296,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"Unloaded OK"
+literal|"Not loaded"
 argument_list|)
 block|}
 decl_stmt|;
@@ -1308,7 +1308,7 @@ name|GIMP_MODULE_STATE_ERROR
 operator|&&
 name|state
 operator|<=
-name|GIMP_MODULE_STATE_UNLOADED_OK
+name|GIMP_MODULE_STATE_NOT_LOADED
 argument_list|,
 name|NULL
 argument_list|)
@@ -1444,7 +1444,7 @@ name|module
 operator|->
 name|state
 operator|=
-name|GIMP_MODULE_STATE_UNLOADED_OK
+name|GIMP_MODULE_STATE_NOT_LOADED
 expr_stmt|;
 return|return
 name|TRUE

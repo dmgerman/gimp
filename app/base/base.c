@@ -167,6 +167,9 @@ name|path
 decl_stmt|;
 ifdef|#
 directive|ifdef
+name|ENABLE_MMX
+ifdef|#
+directive|ifdef
 name|HAVE_ASM_MMX
 name|use_mmx
 operator|=
@@ -198,6 +201,8 @@ else|:
 literal|"no"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 endif|#
 directive|endif
 name|toast_old_temp_files

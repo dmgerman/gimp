@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a40aab0103
+DECL|enum|__anon28a5e0640103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -1408,7 +1408,7 @@ name|last_update
 operator|->
 name|state
 operator|!=
-name|GIMP_MODULE_STATE_LOADED_OK
+name|GIMP_MODULE_STATE_LOADED
 condition|)
 block|{
 if|if
@@ -2139,7 +2139,7 @@ case|case
 name|GIMP_MODULE_STATE_LOAD_FAILED
 case|:
 case|case
-name|GIMP_MODULE_STATE_UNLOADED_OK
+name|GIMP_MODULE_STATE_NOT_LOADED
 case|:
 if|if
 condition|(
@@ -2194,7 +2194,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_MODULE_STATE_LOADED_OK
+name|GIMP_MODULE_STATE_LOADED
 case|:
 name|gtk_label_set_text
 argument_list|(

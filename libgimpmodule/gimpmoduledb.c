@@ -76,7 +76,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276e41260103
+DECL|enum|__anon29d47dfc0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -93,13 +93,9 @@ block|}
 enum|;
 end_enum
 
-begin_define
-DECL|macro|DUMP_DB
-define|#
-directive|define
-name|DUMP_DB
-value|1
-end_define
+begin_comment
+comment|/*  #define DUMP_DB 1  */
+end_comment
 
 begin_function_decl
 specifier|static

@@ -41,22 +41,22 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4066340103
+DECL|enum|__anon27b46c770103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
 block|,
 comment|/* missing gimp_module_register function                                   * or other error                                   */
-DECL|enumerator|GIMP_MODULE_STATE_LOADED_OK
-name|GIMP_MODULE_STATE_LOADED_OK
+DECL|enumerator|GIMP_MODULE_STATE_LOADED
+name|GIMP_MODULE_STATE_LOADED
 block|,
 comment|/* an instance of a type implemented by                                   * this module is allocated                                   */
 DECL|enumerator|GIMP_MODULE_STATE_LOAD_FAILED
 name|GIMP_MODULE_STATE_LOAD_FAILED
 block|,
 comment|/* gimp_module_register returned FALSE                                   */
-DECL|enumerator|GIMP_MODULE_STATE_UNLOADED_OK
-name|GIMP_MODULE_STATE_UNLOADED_OK
+DECL|enumerator|GIMP_MODULE_STATE_NOT_LOADED
+name|GIMP_MODULE_STATE_NOT_LOADED
 comment|/* there are no instances allocated of                                   * types implemented by this module                                   */
 DECL|typedef|GimpModuleState
 block|}
@@ -218,40 +218,40 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-comment|/* path to the module                        */
+comment|/* path to the module                       */
 DECL|member|verbose
 name|gboolean
 name|verbose
 decl_stmt|;
-comment|/* verbose error reporting                   */
+comment|/* verbose error reporting                  */
 DECL|member|state
 name|GimpModuleState
 name|state
 decl_stmt|;
-comment|/* what's happened to the module             */
+comment|/* what's happened to the module            */
 DECL|member|on_disk
 name|gboolean
 name|on_disk
 decl_stmt|;
-comment|/* TRUE if file still exists                 */
+comment|/* TRUE if file still exists                */
 DECL|member|load_inhibit
 name|gboolean
 name|load_inhibit
 decl_stmt|;
-comment|/* user requests not to load at boot time    */
-comment|/* stuff from now on may be NULL depending on the state the module is in    */
+comment|/* user requests not to load at boot time   */
+comment|/* stuff from now on may be NULL depending on the state the module is in   */
 DECL|member|module
 name|GModule
 modifier|*
 name|module
 decl_stmt|;
-comment|/* handle on the module                      */
+comment|/* handle on the module                     */
 DECL|member|info
 name|GimpModuleInfo
 modifier|*
 name|info
 decl_stmt|;
-comment|/* returned values from module_query         */
+comment|/* returned values from module_query        */
 DECL|member|last_module_error
 name|gchar
 modifier|*
