@@ -9,10 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_comment
-comment|/* For ArtVpath */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -22,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"glib-object.h"
+file|<glib-object.h>
 end_include
 
 begin_include

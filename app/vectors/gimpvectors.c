@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libart_lgpl/libart.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -89,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2919c9bc0103
+DECL|enum|__anon2bd0e88f0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE

@@ -16,10 +16,6 @@ directive|define
 name|__GIMP_STROKE_H__
 end_define
 
-begin_comment
-comment|/* For ArtVpath */
-end_comment
-
 begin_include
 include|#
 directive|include
