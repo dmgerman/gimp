@@ -615,6 +615,12 @@ argument_list|(
 name|gdisp
 argument_list|)
 expr_stmt|;
+comment|/* To update the fields of the info window for the first time. *        * It's no use updating it in info_window_create() because the *        * pointer of the info window is not present in the shell yet. */
+name|info_window_update
+argument_list|(
+name|gdisp
+argument_list|)
+expr_stmt|;
 name|info_dialog_present
 argument_list|(
 name|shell
