@@ -9941,7 +9941,7 @@ argument_list|)
 expr_stmt|;
 name|size_str
 operator|=
-name|gimp_image_new_get_size_string
+name|gimp_image_new_get_memsize_string
 argument_list|(
 name|memsize
 argument_list|)

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f2bf90108
+DECL|struct|__anon29088c730108
 block|{
 DECL|member|type
 name|GimpImageBaseType
@@ -39,7 +39,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292f2bf90208
+DECL|struct|__anon29088c730208
 block|{
 DECL|member|type
 name|GimpFillType
@@ -186,8 +186,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gdouble
-name|gimp_image_new_calculate_size
+name|gsize
+name|gimp_image_new_calculate_memsize
 parameter_list|(
 name|GimpImageNewValues
 modifier|*
@@ -199,10 +199,10 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_image_new_get_size_string
+name|gimp_image_new_get_memsize_string
 parameter_list|(
-name|gdouble
-name|size
+name|gsize
+name|memsize
 parameter_list|)
 function_decl|;
 end_function_decl

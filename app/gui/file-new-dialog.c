@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd173890108
+DECL|struct|__anon2a9b86170108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3294,7 +3294,7 @@ argument_list|)
 expr_stmt|;
 name|size
 operator|=
-name|gimp_image_new_get_size_string
+name|gimp_image_new_get_memsize_string
 argument_list|(
 name|info
 operator|->
@@ -3303,7 +3303,7 @@ argument_list|)
 expr_stmt|;
 name|max_size
 operator|=
-name|gimp_image_new_get_size_string
+name|gimp_image_new_get_memsize_string
 argument_list|(
 name|gimprc
 operator|.
@@ -3697,7 +3697,7 @@ name|info
 operator|->
 name|size
 operator|=
-name|gimp_image_new_calculate_size
+name|gimp_image_new_calculate_memsize
 argument_list|(
 name|info
 operator|->
@@ -3706,7 +3706,7 @@ argument_list|)
 expr_stmt|;
 name|text
 operator|=
-name|gimp_image_new_get_size_string
+name|gimp_image_new_get_memsize_string
 argument_list|(
 name|info
 operator|->

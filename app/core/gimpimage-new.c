@@ -769,47 +769,20 @@ block|}
 end_function
 
 begin_function
-name|gdouble
-DECL|function|gimp_image_new_calculate_size (GimpImageNewValues * values)
-name|gimp_image_new_calculate_size
+name|gsize
+DECL|function|gimp_image_new_calculate_memsize (GimpImageNewValues * values)
+name|gimp_image_new_calculate_memsize
 parameter_list|(
 name|GimpImageNewValues
 modifier|*
 name|values
 parameter_list|)
 block|{
-name|gdouble
-name|width
-decl_stmt|,
-name|height
+name|gint
+name|channels
 decl_stmt|;
-name|gdouble
-name|size
-decl_stmt|;
-name|width
+name|channels
 operator|=
-operator|(
-name|gdouble
-operator|)
-name|values
-operator|->
-name|width
-expr_stmt|;
-name|height
-operator|=
-operator|(
-name|gdouble
-operator|)
-name|values
-operator|->
-name|height
-expr_stmt|;
-name|size
-operator|=
-name|width
-operator|*
-name|height
-operator|*
 operator|(
 operator|(
 name|values
@@ -822,24 +795,31 @@ literal|3
 else|:
 literal|1
 operator|)
+comment|/* color     */
 operator|+
-comment|/* bytes per pixel */
 operator|(
 name|values
 operator|->
 name|fill_type
 operator|==
 name|TRANSPARENT_FILL
-condition|?
-literal|1
-else|:
-literal|0
 operator|)
+comment|/* alpha     */
+operator|+
+literal|1
+comment|/* selection */
 operator|)
 expr_stmt|;
-comment|/* alpha channel */
 return|return
-name|size
+name|channels
+operator|*
+name|values
+operator|->
+name|width
+operator|*
+name|values
+operator|->
+name|height
 return|;
 block|}
 end_function
@@ -847,19 +827,20 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_image_new_get_size_string (gdouble size)
-name|gimp_image_new_get_size_string
+DECL|function|gimp_image_new_get_memsize_string (gsize memsize)
+name|gimp_image_new_get_memsize_string
 parameter_list|(
-name|gdouble
-name|size
+name|gsize
+name|memsize
 parameter_list|)
 block|{
 if|if
 condition|(
-name|size
+name|memsize
 operator|<
 literal|4096
 condition|)
+block|{
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -868,21 +849,20 @@ argument_list|(
 literal|"%d Bytes"
 argument_list|)
 argument_list|,
-operator|(
-name|gint
-operator|)
-name|size
+name|memsize
 argument_list|)
 return|;
+block|}
 elseif|else
 if|if
 condition|(
-name|size
+name|memsize
 operator|<
 literal|1024
 operator|*
 literal|10
 condition|)
+block|{
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -891,20 +871,25 @@ argument_list|(
 literal|"%.2f KB"
 argument_list|)
 argument_list|,
-name|size
+operator|(
+name|gdouble
+operator|)
+name|memsize
 operator|/
-literal|1024
+literal|1024.0
 argument_list|)
 return|;
+block|}
 elseif|else
 if|if
 condition|(
-name|size
+name|memsize
 operator|<
 literal|1024
 operator|*
 literal|100
 condition|)
+block|{
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -913,20 +898,25 @@ argument_list|(
 literal|"%.1f KB"
 argument_list|)
 argument_list|,
-name|size
+operator|(
+name|gdouble
+operator|)
+name|memsize
 operator|/
-literal|1024
+literal|1024.0
 argument_list|)
 return|;
+block|}
 elseif|else
 if|if
 condition|(
-name|size
+name|memsize
 operator|<
 literal|1024
 operator|*
 literal|1024
 condition|)
+block|{
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -935,18 +925,16 @@ argument_list|(
 literal|"%d KB"
 argument_list|)
 argument_list|,
-operator|(
-name|gint
-operator|)
-name|size
+name|memsize
 operator|/
 literal|1024
 argument_list|)
 return|;
+block|}
 elseif|else
 if|if
 condition|(
-name|size
+name|memsize
 operator|<
 literal|1024
 operator|*
@@ -954,6 +942,7 @@ literal|1024
 operator|*
 literal|10
 condition|)
+block|{
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -962,14 +951,19 @@ argument_list|(
 literal|"%.2f MB"
 argument_list|)
 argument_list|,
-name|size
+operator|(
+name|gdouble
+operator|)
+name|memsize
 operator|/
-literal|1024
+literal|1024.0
 operator|/
-literal|1024
+literal|1024.0
 argument_list|)
 return|;
+block|}
 else|else
+block|{
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -978,13 +972,17 @@ argument_list|(
 literal|"%.1f MB"
 argument_list|)
 argument_list|,
-name|size
+operator|(
+name|gdouble
+operator|)
+name|memsize
 operator|/
-literal|1024
+literal|1024.0
 operator|/
-literal|1024
+literal|1024.0
 argument_list|)
 return|;
+block|}
 block|}
 end_function
 
