@@ -1202,7 +1202,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_unit (const gchar * name,const gchar * nick,const gchar * blurb,GimpUnit default_value,GParamFlags flags)
+DECL|function|gimp_param_spec_unit (const gchar * name,const gchar * nick,const gchar * blurb,gboolean allow_pixels,GimpUnit default_value,GParamFlags flags)
 name|gimp_param_spec_unit
 parameter_list|(
 specifier|const
@@ -1219,6 +1219,9 @@ specifier|const
 name|gchar
 modifier|*
 name|blurb
+parameter_list|,
+name|gboolean
+name|allow_pixels
 parameter_list|,
 name|GimpUnit
 name|default_value
@@ -1256,6 +1259,10 @@ name|pspec
 operator|->
 name|minimum
 operator|=
+name|allow_pixels
+condition|?
+name|GIMP_UNIT_PIXEL
+else|:
 name|GIMP_UNIT_INCH
 expr_stmt|;
 name|pspec

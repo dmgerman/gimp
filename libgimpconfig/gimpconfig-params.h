@@ -264,6 +264,9 @@ name|gchar
 modifier|*
 name|blurb
 parameter_list|,
+name|gboolean
+name|allow_pixels
+parameter_list|,
 name|GimpUnit
 name|default_value
 parameter_list|,
@@ -460,7 +463,7 @@ name|id
 parameter_list|,
 name|name
 parameter_list|,
-define|default)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_unit (name, NULL, NULL,\                                    default,\                                    GIMP_CONFIG_PARAM_FLAGS))
+define|default)\   g_object_class_install_property (class, id,\                                    gimp_param_spec_unit (name, NULL, NULL,\                                    FALSE, default,\                                    GIMP_CONFIG_PARAM_FLAGS))
 end_define
 
 begin_endif

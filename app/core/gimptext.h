@@ -111,9 +111,13 @@ DECL|member|size
 name|gdouble
 name|size
 decl_stmt|;
-DECL|member|size_unit
+DECL|member|border
+name|gdouble
+name|border
+decl_stmt|;
+DECL|member|unit
 name|GimpUnit
-name|size_unit
+name|unit
 decl_stmt|;
 DECL|member|letter_spacing
 name|gdouble

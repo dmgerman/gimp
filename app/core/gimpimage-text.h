@@ -19,6 +19,26 @@ end_define
 begin_function_decl
 name|GimpLayer
 modifier|*
+name|gimp_image_text_render
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpText
+modifier|*
+name|text
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* convenience functions using the old API */
+end_comment
+
+begin_function_decl
+name|GimpLayer
+modifier|*
 name|text_render
 parameter_list|(
 name|GimpImage
