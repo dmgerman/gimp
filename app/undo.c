@@ -245,7 +245,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4470650103
+DECL|enum|__anon2bff76cb0103
 block|{
 DECL|enumerator|UNDO
 name|UNDO
@@ -9699,12 +9699,12 @@ modifier|*
 name|gimage
 decl_stmt|;
 DECL|member|guide
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
 DECL|member|orig
-name|Guide
+name|GimpGuide
 name|orig
 decl_stmt|;
 block|}
@@ -9755,7 +9755,7 @@ condition|)
 block|{
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 operator|(
@@ -9850,7 +9850,7 @@ name|GuideUndo
 modifier|*
 name|data
 decl_stmt|;
-name|Guide
+name|GimpGuide
 name|tmp
 decl_stmt|;
 name|gint

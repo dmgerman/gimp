@@ -187,7 +187,7 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 init|=
@@ -831,14 +831,14 @@ name|list
 argument_list|)
 control|)
 block|{
-name|Guide
+name|GimpGuide
 modifier|*
 name|new_guide
 decl_stmt|;
 name|guide
 operator|=
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|list

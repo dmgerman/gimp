@@ -107,7 +107,7 @@ modifier|*
 name|layer
 decl_stmt|;
 DECL|member|guide
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;

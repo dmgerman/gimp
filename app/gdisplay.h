@@ -29,7 +29,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab493c10103
+DECL|enum|__anon29b60fd00103
 block|{
 DECL|enumerator|SelectionOff
 name|SelectionOff
@@ -985,7 +985,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)
@@ -1089,7 +1089,7 @@ name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|,
@@ -1100,7 +1100,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Guide
+name|GimpGuide
 modifier|*
 name|gdisplay_find_guide
 parameter_list|(
@@ -1372,7 +1372,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)

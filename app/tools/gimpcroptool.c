@@ -711,7 +711,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c54aa880103
+DECL|enum|__anon27e9799b0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1980,7 +1980,7 @@ name|GList
 modifier|*
 name|glist
 decl_stmt|;
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
@@ -2008,7 +2008,7 @@ block|{
 name|guide
 operator|=
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|glist
@@ -4855,7 +4855,7 @@ argument_list|(
 name|gimage
 argument_list|,
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guide_list_ptr

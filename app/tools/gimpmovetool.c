@@ -704,7 +704,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
@@ -1053,14 +1053,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|move_draw_guide (GDisplay * gdisp,Guide * guide)
+DECL|function|move_draw_guide (GDisplay * gdisp,GimpGuide * guide)
 name|move_draw_guide
 parameter_list|(
 name|GDisplay
 modifier|*
 name|gdisp
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)
@@ -1829,7 +1829,7 @@ name|GimpMoveTool
 modifier|*
 name|move
 decl_stmt|;
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;

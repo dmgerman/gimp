@@ -46,12 +46,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"undo.h"
 end_include
 
@@ -183,7 +177,7 @@ name|guide_ID
 init|=
 literal|0
 decl_stmt|;
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
@@ -427,7 +421,7 @@ name|guide_ID
 init|=
 literal|0
 decl_stmt|;
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
@@ -726,7 +720,7 @@ condition|(
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -742,7 +736,7 @@ operator|&&
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -776,7 +770,7 @@ name|gimage
 argument_list|,
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -790,7 +784,7 @@ argument_list|(
 name|gimage
 argument_list|,
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -994,7 +988,7 @@ operator|&&
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1022,7 +1016,7 @@ name|next_guide
 operator|=
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1049,7 +1043,7 @@ condition|(
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1065,7 +1059,7 @@ operator|&&
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1100,7 +1094,7 @@ operator|&&
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|tmplist
@@ -1127,7 +1121,7 @@ name|next_guide
 operator|=
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|tmplist
@@ -1366,7 +1360,7 @@ condition|(
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1382,7 +1376,7 @@ operator|&&
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1400,7 +1394,7 @@ name|orientation
 operator|=
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1638,7 +1632,7 @@ condition|(
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1654,7 +1648,7 @@ operator|&&
 operator|(
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides
@@ -1672,7 +1666,7 @@ name|position
 operator|=
 operator|(
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guides

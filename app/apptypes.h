@@ -120,15 +120,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|Guide
-typedef|typedef
-name|struct
-name|_Guide
-name|Guide
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|ImageMap
 typedef|typedef
 name|gpointer

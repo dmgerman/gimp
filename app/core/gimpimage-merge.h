@@ -23,17 +23,6 @@ file|"gimpviewable.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_IMAGE_TYPE_HAS_ALPHA (t)
-define|#
-directive|define
-name|GIMP_IMAGE_TYPE_HAS_ALPHA
-parameter_list|(
-name|t
-parameter_list|)
-value|((t)==RGBA_GIMAGE || (t)==GRAYA_GIMAGE || (t)==INDEXEDA_GIMAGE)
-end_define
-
-begin_define
 DECL|macro|COLORMAP_SIZE
 define|#
 directive|define
@@ -41,10 +30,21 @@ name|COLORMAP_SIZE
 value|768
 end_define
 
+begin_define
+DECL|macro|GIMP_IMAGE_TYPE_HAS_ALPHA (t)
+define|#
+directive|define
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
+parameter_list|(
+name|t
+parameter_list|)
+value|((t) == RGBA_GIMAGE  || \ 				      (t) == GRAYA_GIMAGE || \ 				      (t) == INDEXEDA_GIMAGE)
+end_define
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289ac8810103
+DECL|enum|__anon296cbca10103
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -62,6 +62,31 @@ block|}
 name|MergeType
 typedef|;
 end_typedef
+
+begin_struct
+DECL|struct|_GimpGuide
+struct|struct
+name|_GimpGuide
+block|{
+DECL|member|ref_count
+name|gint
+name|ref_count
+decl_stmt|;
+DECL|member|position
+name|gint
+name|position
+decl_stmt|;
+DECL|member|orientation
+name|InternalOrientationType
+name|orientation
+decl_stmt|;
+DECL|member|guide_ID
+name|guint32
+name|guide_ID
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_define
 DECL|macro|GIMP_TYPE_IMAGE
@@ -621,35 +646,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* Ugly! Move this someplace else! Prolly to gdisplay.. */
-end_comment
-
-begin_struct
-DECL|struct|_Guide
-struct|struct
-name|_Guide
-block|{
-DECL|member|ref_count
-name|gint
-name|ref_count
-decl_stmt|;
-DECL|member|position
-name|gint
-name|position
-decl_stmt|;
-DECL|member|orientation
-name|InternalOrientationType
-name|orientation
-decl_stmt|;
-DECL|member|guide_ID
-name|guint32
-name|guide_ID
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_comment
 comment|/* function declarations */
 end_comment
 
@@ -1089,7 +1085,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Guide
+name|GimpGuide
 modifier|*
 name|gimp_image_add_hguide
 parameter_list|(
@@ -1101,7 +1097,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|Guide
+name|GimpGuide
 modifier|*
 name|gimp_image_add_vguide
 parameter_list|(
@@ -1120,7 +1116,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)
@@ -1135,7 +1131,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)
@@ -1150,7 +1146,7 @@ name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)

@@ -754,27 +754,13 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|next_guide_id
-name|guint32
-name|next_guide_id
-init|=
-literal|1
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
-DECL|variable|next_guide_id
-comment|/* For generating guide_ID handles for PDB stuff */
-end_comment
-
 begin_comment
 comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28989fe60103
+DECL|enum|__anon2774d89b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -865,6 +851,16 @@ modifier|*
 name|gimp_image_table
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|next_guide_id
+specifier|static
+name|guint32
+name|next_guide_id
+init|=
+literal|1
 decl_stmt|;
 end_decl_stmt
 
@@ -2001,6 +1997,27 @@ name|parasites
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_list_foreach
+argument_list|(
+name|gimage
+operator|->
+name|guides
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|g_free
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|gimage
+operator|->
+name|guides
+argument_list|)
+expr_stmt|;
 name|gtk_object_unref
 argument_list|(
 name|GTK_OBJECT
@@ -3075,14 +3092,14 @@ condition|(
 name|guide_list
 condition|)
 block|{
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
 name|guide
 operator|=
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|guide_list
@@ -3328,7 +3345,7 @@ name|GSList
 modifier|*
 name|slist
 decl_stmt|;
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
@@ -3639,7 +3656,7 @@ block|{
 name|guide
 operator|=
 operator|(
-name|Guide
+name|GimpGuide
 operator|*
 operator|)
 name|list
@@ -5795,7 +5812,7 @@ block|}
 end_function
 
 begin_function
-name|Guide
+name|GimpGuide
 modifier|*
 DECL|function|gimp_image_add_hguide (GimpImage * gimage)
 name|gimp_image_add_hguide
@@ -5805,7 +5822,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
@@ -5823,7 +5840,7 @@ name|guide
 operator|=
 name|g_new
 argument_list|(
-name|Guide
+name|GimpGuide
 argument_list|,
 literal|1
 argument_list|)
@@ -5874,7 +5891,7 @@ block|}
 end_function
 
 begin_function
-name|Guide
+name|GimpGuide
 modifier|*
 DECL|function|gimp_image_add_vguide (GimpImage * gimage)
 name|gimp_image_add_vguide
@@ -5884,7 +5901,7 @@ modifier|*
 name|gimage
 parameter_list|)
 block|{
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
@@ -5902,7 +5919,7 @@ name|guide
 operator|=
 name|g_new
 argument_list|(
-name|Guide
+name|GimpGuide
 argument_list|,
 literal|1
 argument_list|)
@@ -5954,14 +5971,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_add_guide (GimpImage * gimage,Guide * guide)
+DECL|function|gimp_image_add_guide (GimpImage * gimage,GimpGuide * guide)
 name|gimp_image_add_guide
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)
@@ -5992,14 +6009,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_remove_guide (GimpImage * gimage,Guide * guide)
+DECL|function|gimp_image_remove_guide (GimpImage * gimage,GimpGuide * guide)
 name|gimp_image_remove_guide
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)
@@ -6030,14 +6047,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_delete_guide (GimpImage * gimage,Guide * guide)
+DECL|function|gimp_image_delete_guide (GimpImage * gimage,GimpGuide * guide)
 name|gimp_image_delete_guide
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
 parameter_list|,
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 parameter_list|)

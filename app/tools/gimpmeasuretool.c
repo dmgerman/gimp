@@ -1120,7 +1120,7 @@ block|{
 name|gboolean
 name|undo_group
 decl_stmt|;
-name|Guide
+name|GimpGuide
 modifier|*
 name|guide
 decl_stmt|;
