@@ -145,7 +145,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69a78a0108
+DECL|struct|__anon292bfb650108
 block|{
 DECL|member|interlace
 name|int
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69a78a0208
+DECL|struct|__anon292bfb650208
 block|{
 DECL|member|run
 name|gint
@@ -865,7 +865,7 @@ name|drawable_ID
 operator|=
 name|param
 index|[
-literal|1
+literal|2
 index|]
 operator|.
 name|data

@@ -308,7 +308,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ac512560108
+DECL|struct|__anon2c743b1d0108
 block|{
 DECL|member|extensionAreaOffset
 name|guint32
@@ -1017,7 +1017,7 @@ name|drawable_ID
 operator|=
 name|param
 index|[
-literal|1
+literal|2
 index|]
 operator|.
 name|data
