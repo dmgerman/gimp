@@ -112,7 +112,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29373e3f0103
+DECL|enum|__anon2c371ce10103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -331,11 +331,14 @@ name|measure_tool_button_press
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -347,11 +350,14 @@ name|measure_tool_button_release
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventButton
 modifier|*
+name|bevent
 parameter_list|,
 name|gpointer
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -363,11 +369,14 @@ name|measure_tool_motion
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
 name|gpointer
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -379,11 +388,14 @@ name|measure_tool_cursor_update
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|GdkEventMotion
 modifier|*
+name|mevent
 parameter_list|,
 name|gpointer
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -395,10 +407,13 @@ name|measure_tool_control
 parameter_list|(
 name|Tool
 modifier|*
+name|tool
 parameter_list|,
 name|ToolAction
+name|action
 parameter_list|,
 name|gpointer
+name|gdisp_ptr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -410,8 +425,10 @@ name|measure_tool_info_window_close_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -603,7 +620,7 @@ end_function
 
 begin_function
 specifier|static
-name|double
+name|gdouble
 DECL|function|measure_get_angle (gint dx,gint dy,gdouble xres,gdouble yres)
 name|measure_get_angle
 parameter_list|(
@@ -635,7 +652,7 @@ name|atan
 argument_list|(
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|dy
@@ -646,7 +663,7 @@ operator|)
 operator|/
 operator|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|dx
@@ -704,16 +721,16 @@ name|angle
 expr_stmt|;
 block|}
 else|else
+block|{
 name|angle
 operator|=
 literal|180.0
 operator|-
 name|angle
 expr_stmt|;
+block|}
 return|return
-operator|(
 name|angle
-operator|)
 return|;
 block|}
 end_function
@@ -855,7 +872,7 @@ operator|->
 name|gdisp_ptr
 condition|)
 block|{
-comment|/*  if the cursor is in one of the handles,  	  the new function will be moving or adding a new point or guide */
+comment|/*  if the cursor is in one of the handles,        *  the new function will be moving or adding a new point or guide        */
 for|for
 control|(
 name|i
