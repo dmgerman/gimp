@@ -373,7 +373,7 @@ name|GIMP_TYPE_MOVE_OPTIONS
 argument_list|,
 name|gimp_move_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-move-tool"
 argument_list|,

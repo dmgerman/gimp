@@ -423,7 +423,7 @@ name|GIMP_TYPE_TEXT_OPTIONS
 argument_list|,
 name|gimp_text_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-text-tool"
 argument_list|,

@@ -352,7 +352,7 @@ name|GIMP_TYPE_TRANSFORM_OPTIONS
 argument_list|,
 name|gimp_transform_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-shear-tool"
 argument_list|,

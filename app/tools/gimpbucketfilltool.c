@@ -271,7 +271,11 @@ name|GIMP_TYPE_BUCKET_FILL_OPTIONS
 argument_list|,
 name|gimp_bucket_fill_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_CONTEXT_OPACITY_MASK
+operator||
+name|GIMP_CONTEXT_PAINT_MODE_MASK
+operator||
+name|GIMP_CONTEXT_PATTERN_MASK
 argument_list|,
 literal|"gimp-bucket-fill-tool"
 argument_list|,

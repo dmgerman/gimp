@@ -116,6 +116,10 @@ DECL|member|tool_options_type
 name|GType
 name|tool_options_type
 decl_stmt|;
+DECL|member|context_props
+name|GimpContextPropMask
+name|context_props
+decl_stmt|;
 DECL|member|blurb
 name|gchar
 modifier|*
@@ -149,10 +153,6 @@ decl_stmt|;
 DECL|member|in_toolbox
 name|gboolean
 name|in_toolbox
-decl_stmt|;
-DECL|member|use_context
-name|gboolean
-name|use_context
 decl_stmt|;
 DECL|member|tool_options
 name|GimpToolOptions
@@ -206,8 +206,8 @@ parameter_list|,
 name|GType
 name|tool_options_type
 parameter_list|,
-name|gboolean
-name|tool_context
+name|GimpContextPropMask
+name|context_props
 parameter_list|,
 specifier|const
 name|gchar

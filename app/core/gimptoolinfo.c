@@ -283,6 +283,12 @@ parameter_list|)
 block|{
 name|tool_info
 operator|->
+name|gimp
+operator|=
+name|NULL
+expr_stmt|;
+name|tool_info
+operator|->
 name|tool_type
 operator|=
 name|G_TYPE_NONE
@@ -292,6 +298,12 @@ operator|->
 name|tool_options_type
 operator|=
 name|G_TYPE_NONE
+expr_stmt|;
+name|tool_info
+operator|->
+name|context_props
+operator|=
+literal|0
 expr_stmt|;
 name|tool_info
 operator|->
@@ -334,12 +346,6 @@ operator|->
 name|in_toolbox
 operator|=
 name|TRUE
-expr_stmt|;
-name|tool_info
-operator|->
-name|use_context
-operator|=
-name|FALSE
 expr_stmt|;
 name|tool_info
 operator|->
@@ -589,7 +595,7 @@ end_function
 begin_function
 name|GimpToolInfo
 modifier|*
-DECL|function|gimp_tool_info_new (Gimp * gimp,GType tool_type,GType tool_options_type,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * paint_core_name,const gchar * stock_id)
+DECL|function|gimp_tool_info_new (Gimp * gimp,GType tool_type,GType tool_options_type,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * paint_core_name,const gchar * stock_id)
 name|gimp_tool_info_new
 parameter_list|(
 name|Gimp
@@ -602,8 +608,8 @@ parameter_list|,
 name|GType
 name|tool_options_type
 parameter_list|,
-name|gboolean
-name|tool_context
+name|GimpContextPropMask
+name|context_props
 parameter_list|,
 specifier|const
 name|gchar
@@ -774,12 +780,6 @@ argument_list|)
 expr_stmt|;
 name|tool_info
 operator|->
-name|use_context
-operator|=
-name|tool_context
-expr_stmt|;
-name|tool_info
-operator|->
 name|tool_options
 operator|=
 name|NULL
@@ -807,6 +807,12 @@ operator|->
 name|tool_options_type
 operator|=
 name|tool_options_type
+expr_stmt|;
+name|tool_info
+operator|->
+name|context_props
+operator|=
+name|context_props
 expr_stmt|;
 name|tool_info
 operator|->

@@ -468,7 +468,7 @@ name|GIMP_TYPE_MEASURE_OPTIONS
 argument_list|,
 name|gimp_measure_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-measure-tool"
 argument_list|,

@@ -302,7 +302,11 @@ name|GIMP_TYPE_BLEND_OPTIONS
 argument_list|,
 name|gimp_blend_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_CONTEXT_OPACITY_MASK
+operator||
+name|GIMP_CONTEXT_PAINT_MODE_MASK
+operator||
+name|GIMP_CONTEXT_GRADIENT_MASK
 argument_list|,
 literal|"gimp-blend-tool"
 argument_list|,

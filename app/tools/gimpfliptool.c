@@ -252,7 +252,7 @@ name|GIMP_TYPE_FLIP_OPTIONS
 argument_list|,
 name|gimp_flip_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-flip-tool"
 argument_list|,

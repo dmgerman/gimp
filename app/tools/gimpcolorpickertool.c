@@ -413,7 +413,7 @@ name|GIMP_TYPE_COLOR_PICKER_OPTIONS
 argument_list|,
 name|gimp_color_picker_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-color-picker-tool"
 argument_list|,

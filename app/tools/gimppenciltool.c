@@ -125,7 +125,7 @@ name|GIMP_TYPE_PAINT_OPTIONS
 argument_list|,
 name|gimp_paint_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_PAINT_TOOL_OPTIONS_MASK
 argument_list|,
 literal|"gimp-pencil-tool"
 argument_list|,

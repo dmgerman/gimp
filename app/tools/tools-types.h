@@ -167,8 +167,8 @@ parameter_list|,
 name|GimpToolOptionsGUIFunc
 name|options_gui_func
 parameter_list|,
-name|gboolean
-name|tool_context
+name|GimpContextPropMask
+name|context_props
 parameter_list|,
 specifier|const
 name|gchar

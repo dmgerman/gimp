@@ -350,7 +350,7 @@ name|G_TYPE_NONE
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-colorize-tool"
 argument_list|,

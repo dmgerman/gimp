@@ -317,7 +317,7 @@ name|GIMP_TYPE_MAGNIFY_OPTIONS
 argument_list|,
 name|gimp_magnify_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-magnify-tool"
 argument_list|,

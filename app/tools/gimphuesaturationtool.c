@@ -441,7 +441,7 @@ name|G_TYPE_NONE
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-hue-saturation-tool"
 argument_list|,
@@ -965,7 +965,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2a1838890108
+DECL|struct|__anon2a31c28e0108
 block|{
 DECL|member|label
 specifier|const

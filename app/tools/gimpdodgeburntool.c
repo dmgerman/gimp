@@ -200,7 +200,7 @@ name|GIMP_TYPE_DODGE_BURN_OPTIONS
 argument_list|,
 name|gimp_dodge_burn_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_PAINT_TOOL_OPTIONS_MASK
 argument_list|,
 literal|"gimp-dodgeburn-tool"
 argument_list|,

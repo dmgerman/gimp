@@ -335,7 +335,9 @@ name|GIMP_TYPE_CLONE_OPTIONS
 argument_list|,
 name|gimp_clone_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_PAINT_TOOL_OPTIONS_MASK
+operator||
+name|GIMP_CONTEXT_PATTERN_MASK
 argument_list|,
 literal|"gimp-clone-tool"
 argument_list|,

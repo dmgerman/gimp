@@ -125,7 +125,9 @@ name|GIMP_TYPE_PAINT_OPTIONS
 argument_list|,
 name|gimp_paint_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_PAINT_TOOL_OPTIONS_MASK
+operator||
+name|GIMP_CONTEXT_GRADIENT_MASK
 argument_list|,
 literal|"gimp-paintbrush-tool"
 argument_list|,

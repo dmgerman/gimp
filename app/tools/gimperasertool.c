@@ -200,7 +200,7 @@ name|GIMP_TYPE_ERASER_OPTIONS
 argument_list|,
 name|gimp_eraser_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_PAINT_TOOL_OPTIONS_MASK
 argument_list|,
 literal|"gimp-eraser-tool"
 argument_list|,

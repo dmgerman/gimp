@@ -194,7 +194,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c30cc3f0103
+DECL|enum|__anon29335f9d0103
 block|{
 DECL|enumerator|CREATING
 name|CREATING
@@ -663,7 +663,7 @@ name|GIMP_TYPE_CROP_OPTIONS
 argument_list|,
 name|gimp_crop_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-crop-tool"
 argument_list|,

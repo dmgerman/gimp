@@ -306,7 +306,7 @@ name|GIMP_TYPE_CONVOLVE_OPTIONS
 argument_list|,
 name|gimp_convolve_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_PAINT_TOOL_OPTIONS_MASK
 argument_list|,
 literal|"gimp-convolve-tool"
 argument_list|,

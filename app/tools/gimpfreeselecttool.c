@@ -325,7 +325,7 @@ name|GIMP_TYPE_SELECTION_OPTIONS
 argument_list|,
 name|gimp_selection_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-free-select-tool"
 argument_list|,

@@ -408,7 +408,7 @@ name|GIMP_TYPE_VECTOR_OPTIONS
 argument_list|,
 name|gimp_vector_options_gui
 argument_list|,
-name|FALSE
+literal|0
 argument_list|,
 literal|"gimp-vector-tool"
 argument_list|,

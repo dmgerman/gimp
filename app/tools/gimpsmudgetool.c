@@ -150,7 +150,7 @@ name|GIMP_TYPE_SMUDGE_OPTIONS
 argument_list|,
 name|gimp_smudge_options_gui
 argument_list|,
-name|TRUE
+name|GIMP_PAINT_TOOL_OPTIONS_MASK
 argument_list|,
 literal|"gimp-smudge-tool"
 argument_list|,

@@ -159,14 +159,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|PAINT_OPTIONS_MASK
-define|#
-directive|define
-name|PAINT_OPTIONS_MASK
-value|GIMP_CONTEXT_OPACITY_MASK    | \                            GIMP_CONTEXT_PAINT_MODE_MASK | \                            GIMP_CONTEXT_BRUSH_MASK      | \                            GIMP_CONTEXT_PATTERN_MASK    | \                            GIMP_CONTEXT_GRADIENT_MASK   | \                            GIMP_CONTEXT_FONT_MASK
-end_define
-
 begin_typedef
 DECL|typedef|GimpToolManager
 typedef|typedef
@@ -190,11 +182,6 @@ DECL|member|tool_stack
 name|GSList
 modifier|*
 name|tool_stack
-decl_stmt|;
-DECL|member|global_tool_context
-name|GimpContext
-modifier|*
-name|global_tool_context
 decl_stmt|;
 DECL|member|image_dirty_handler_id
 name|GQuark
@@ -345,12 +332,6 @@ name|NULL
 expr_stmt|;
 name|tool_manager
 operator|->
-name|global_tool_context
-operator|=
-name|NULL
-expr_stmt|;
-name|tool_manager
-operator|->
 name|image_dirty_handler_id
 operator|=
 literal|0
@@ -429,32 +410,6 @@ argument_list|,
 name|tool_manager
 argument_list|)
 expr_stmt|;
-comment|/*  Create a context to store the paint options of the    *  global paint options mode    */
-name|tool_manager
-operator|->
-name|global_tool_context
-operator|=
-name|gimp_context_new
-argument_list|(
-name|gimp
-argument_list|,
-literal|"Global Tool Context"
-argument_list|,
-name|user_context
-argument_list|)
-expr_stmt|;
-comment|/*  TODO: add foreground, background, brush, pattern, gradient  */
-name|gimp_context_define_properties
-argument_list|(
-name|tool_manager
-operator|->
-name|global_tool_context
-argument_list|,
-name|PAINT_OPTIONS_MASK
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 comment|/* register internal tools */
 name|tools_init
 argument_list|(
@@ -496,7 +451,7 @@ if|if
 condition|(
 name|tool_info
 operator|->
-name|use_context
+name|context_props
 condition|)
 name|gimp_context_set_parent
 argument_list|(
@@ -558,13 +513,6 @@ argument_list|(
 name|gimp
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|tool_manager
-operator|->
-name|global_tool_context
 argument_list|)
 expr_stmt|;
 name|gimp_container_remove_handler
@@ -1817,7 +1765,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_register_tool (GType tool_type,GType tool_options_type,GimpToolOptionsGUIFunc options_gui_func,gboolean tool_context,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id,gpointer data)
+DECL|function|tool_manager_register_tool (GType tool_type,GType tool_options_type,GimpToolOptionsGUIFunc options_gui_func,GimpContextPropMask context_props,const gchar * identifier,const gchar * blurb,const gchar * help,const gchar * menu_path,const gchar * menu_accel,const gchar * help_domain,const gchar * help_data,const gchar * stock_id,gpointer data)
 name|tool_manager_register_tool
 parameter_list|(
 name|GType
@@ -1829,8 +1777,8 @@ parameter_list|,
 name|GimpToolOptionsGUIFunc
 name|options_gui_func
 parameter_list|,
-name|gboolean
-name|tool_context
+name|GimpContextPropMask
+name|context_props
 parameter_list|,
 specifier|const
 name|gchar
@@ -2068,7 +2016,7 @@ name|tool_type
 argument_list|,
 name|tool_options_type
 argument_list|,
-name|tool_context
+name|context_props
 argument_list|,
 name|identifier
 argument_list|,
@@ -2141,29 +2089,31 @@ if|if
 condition|(
 name|tool_info
 operator|->
-name|use_context
+name|context_props
 condition|)
 block|{
+name|gimp_context_define_properties
+argument_list|(
 name|GIMP_CONTEXT
 argument_list|(
 name|tool_info
 operator|->
 name|tool_options
 argument_list|)
+argument_list|,
+name|tool_info
 operator|->
-name|defined_props
-operator|=
-name|tool_manager
-operator|->
-name|global_tool_context
-operator|->
-name|defined_props
+name|context_props
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 name|gimp_context_copy_properties
 argument_list|(
-name|tool_manager
-operator|->
-name|global_tool_context
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 name|GIMP_CONTEXT
 argument_list|(
@@ -2552,7 +2502,7 @@ name|active_tool
 operator|->
 name|tool_info
 operator|->
-name|use_context
+name|context_props
 condition|)
 block|{
 name|GimpToolInfo
@@ -2585,7 +2535,7 @@ if|if
 condition|(
 name|tool_info
 operator|->
-name|use_context
+name|context_props
 condition|)
 block|{
 name|gimp_context_copy_properties
@@ -2599,7 +2549,9 @@ argument_list|)
 argument_list|,
 name|user_context
 argument_list|,
-name|PAINT_OPTIONS_MASK
+name|tool_info
+operator|->
+name|context_props
 argument_list|)
 expr_stmt|;
 name|gimp_context_set_parent
