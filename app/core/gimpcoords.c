@@ -475,8 +475,8 @@ end_comment
 
 begin_function
 name|gdouble
-DECL|function|gimp_coords_length2 (const GimpCoords * a)
-name|gimp_coords_length2
+DECL|function|gimp_coords_length_squared (const GimpCoords * a)
+name|gimp_coords_length_squared
 parameter_list|(
 specifier|const
 name|GimpCoords
@@ -570,7 +570,7 @@ block|{
 return|return
 name|sqrt
 argument_list|(
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 argument_list|(
 name|a
 argument_list|)

@@ -3246,7 +3246,7 @@ argument_list|,
 name|precision
 argument_list|)
 operator|&&
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 argument_list|(
 operator|&
 name|point1
@@ -3254,7 +3254,7 @@ argument_list|)
 operator|<
 name|precision
 operator|&&
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 argument_list|(
 operator|&
 name|point2
@@ -8744,7 +8744,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 argument_list|(
 operator|&
 name|line
@@ -8802,7 +8802,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 argument_list|(
 operator|&
 name|tan1
@@ -8814,7 +8814,7 @@ name|precision
 operator|)
 operator|&&
 operator|(
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 argument_list|(
 operator|&
 name|tan2
@@ -8986,7 +8986,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 argument_list|(
 operator|&
 name|d1
@@ -8998,7 +8998,7 @@ name|precision
 operator|)
 operator|||
 operator|(
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 argument_list|(
 operator|&
 name|d2

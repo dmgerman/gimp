@@ -159,7 +159,7 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_coords_length2
+name|gimp_coords_length_squared
 parameter_list|(
 specifier|const
 name|GimpCoords
