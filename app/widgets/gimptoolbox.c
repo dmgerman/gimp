@@ -3759,9 +3759,12 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-name|gimp_layer_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|new_layer
+argument_list|)
 argument_list|,
 operator|-
 name|off_x

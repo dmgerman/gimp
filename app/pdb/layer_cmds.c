@@ -2523,9 +2523,12 @@ argument_list|(
 name|tmp_layer
 argument_list|)
 condition|)
-name|gimp_layer_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|tmp_layer
+argument_list|)
 argument_list|,
 name|offx
 argument_list|,
@@ -2975,9 +2978,12 @@ argument_list|(
 name|tmp_layer
 argument_list|)
 condition|)
-name|gimp_layer_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|tmp_layer
+argument_list|)
 argument_list|,
 operator|(
 name|offx

@@ -2142,6 +2142,17 @@ literal|"group-item-properties"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_ITEM_DISPLACE
+block|,
+name|N_
+argument_list|(
+literal|"Move Item"
+argument_list|)
+block|,
+literal|"group-item-displace"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_GROUP_DRAWABLE_VISIBILITY
 block|,
 name|N_
@@ -2172,17 +2183,6 @@ literal|"Resize Layer"
 argument_list|)
 block|,
 literal|"group-layer-resize"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_GROUP_LAYER_DISPLACE
-block|,
-name|N_
-argument_list|(
-literal|"Move Layer"
-argument_list|)
-block|,
-literal|"group-layer-displace"
 block|}
 block|,
 block|{
@@ -2450,6 +2450,17 @@ literal|"item-rename"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_ITEM_DISPLACE
+block|,
+name|N_
+argument_list|(
+literal|"Move Item"
+argument_list|)
+block|,
+literal|"item-displace"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_DRAWABLE_VISIBILITY
 block|,
 name|N_
@@ -2524,17 +2535,6 @@ literal|"Reposition Layer"
 argument_list|)
 block|,
 literal|"layer-reposition"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_LAYER_DISPLACE
-block|,
-name|N_
-argument_list|(
-literal|"Move Layer"
-argument_list|)
-block|,
-literal|"layer-displace"
 block|}
 block|,
 block|{

@@ -2035,9 +2035,12 @@ argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
-name|gimp_layer_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|new_layer
+argument_list|)
 argument_list|,
 name|off_x
 argument_list|,

@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2b4bf80103
+DECL|enum|__anon294052090103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -675,9 +675,12 @@ argument_list|(
 name|list
 argument_list|)
 expr_stmt|;
-name|gimp_layer_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 operator|-
 name|x1

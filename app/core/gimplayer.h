@@ -131,7 +131,7 @@ decl_stmt|;
 comment|/*  possible layer mask        */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28b2dce60108
+DECL|struct|__anon27e7e3eb0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -384,26 +384,6 @@ name|layer
 parameter_list|,
 name|GimpMaskApplyMode
 name|mode
-parameter_list|,
-name|gboolean
-name|push_undo
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_layer_translate
-parameter_list|(
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|,
-name|gint
-name|off_x
-parameter_list|,
-name|gint
-name|off_y
 parameter_list|,
 name|gboolean
 name|push_undo

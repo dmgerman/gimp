@@ -439,9 +439,12 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|gimp_layer_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|,
 name|offset_x
 argument_list|,

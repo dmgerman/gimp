@@ -243,9 +243,12 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
-name|gimp_layer_translate
+name|gimp_item_translate
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|new_layer
+argument_list|)
 argument_list|,
 name|off_x
 argument_list|,
