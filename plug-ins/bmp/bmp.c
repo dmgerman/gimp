@@ -4,11 +4,11 @@ comment|/* bmp.c                                          */
 end_comment
 
 begin_comment
-comment|/* Version 0.44	                                  */
+comment|/* Version 0.51	                                  */
 end_comment
 
 begin_comment
-comment|/* This is a File input and output filter for     */
+comment|/* This is a File input and output filter for the */
 end_comment
 
 begin_comment
@@ -69,6 +69,30 @@ end_comment
 
 begin_comment
 comment|/*            14.04.1998 Another Bug in Padding   */
+end_comment
+
+begin_comment
+comment|/*            28.04.1998 RLE-Encoding rewritten   */
+end_comment
+
+begin_comment
+comment|/*            29.10.1998 Changes by Tor Lillqvist */
+end_comment
+
+begin_comment
+comment|/*<tml@iki.fi> to support  */
+end_comment
+
+begin_comment
+comment|/*                       16 and 32 bit images     */
+end_comment
+
+begin_comment
+comment|/*            28.11.1998 Bug in RLE-read-padding  */
+end_comment
+
+begin_comment
+comment|/*                       fixed.                   */
 end_comment
 
 begin_comment
