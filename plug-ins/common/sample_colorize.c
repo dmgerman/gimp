@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -335,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf0db40108
+DECL|struct|__anon2b2848c70108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -404,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf0db40208
+DECL|struct|__anon2b2848c70208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -512,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf0db40308
+DECL|struct|__anon2b2848c70308
 block|{
 DECL|member|color
 name|guchar
@@ -541,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf0db40408
+DECL|struct|__anon2b2848c70408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -568,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acf0db40508
+DECL|struct|__anon2b2848c70508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -8523,7 +8529,7 @@ condition|)
 return|return;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|ppm_name
 argument_list|,
@@ -9148,7 +9154,7 @@ literal|5.5
 expr_stmt|;
 name|l_fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 literal|"sample_colorize.values"
 argument_list|,
@@ -13121,7 +13127,7 @@ name|g_Sdebug
 condition|)
 name|prot_fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 literal|"sample_colors.dump"
 argument_list|,

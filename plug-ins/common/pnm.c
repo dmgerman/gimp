@@ -309,7 +309,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f49490108
+DECL|struct|__anon2bc4c1cb0108
 block|{
 DECL|member|raw
 name|gint
@@ -1751,6 +1751,8 @@ argument_list|,
 name|O_RDONLY
 operator||
 name|_O_BINARY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if

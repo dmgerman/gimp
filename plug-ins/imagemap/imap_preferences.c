@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<stdlib.h>
 end_include
 
@@ -30,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -42,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
+file|"libgimp/gimpui.h"
 end_include
 
 begin_include
@@ -100,7 +94,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2ae814e40108
+DECL|struct|__anon291a91ee0108
 typedef|typedef
 struct|struct
 block|{
@@ -801,19 +795,14 @@ name|filename
 decl_stmt|;
 name|filename
 operator|=
-name|g_build_filename
+name|gimp_personal_rc_file
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
 literal|"imagemaprc"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|in
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -911,19 +900,14 @@ name|colors
 decl_stmt|;
 name|filename
 operator|=
-name|g_build_filename
+name|gimp_personal_rc_file
 argument_list|(
-name|gimp_directory
-argument_list|()
-argument_list|,
 literal|"imagemaprc"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|out
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

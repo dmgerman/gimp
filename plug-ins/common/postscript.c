@@ -224,7 +224,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279e715a0108
+DECL|struct|__anon28d35c990108
 block|{
 DECL|member|resolution
 name|guint
@@ -313,7 +313,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279e715a0208
+DECL|struct|__anon28d35c990208
 block|{
 DECL|member|width
 DECL|member|height
@@ -887,7 +887,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279e715a0308
+DECL|struct|__anon28d35c990308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1743,7 +1743,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279e715a0408
+DECL|struct|__anon28d35c990408
 block|{
 DECL|member|eol
 name|long
@@ -5715,7 +5715,7 @@ literal|1
 decl_stmt|;
 name|ifp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

@@ -137,7 +137,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297906280108
+DECL|struct|__anon2c6b8e730108
 block|{
 DECL|member|description
 name|gchar
@@ -1184,6 +1184,8 @@ argument_list|,
 name|O_RDONLY
 operator||
 name|_O_BINARY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1956,7 +1958,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29790628020a
+DECL|union|__anon2c6b8e73020a
 block|{
 DECL|member|u
 name|guint16

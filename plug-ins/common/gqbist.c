@@ -126,7 +126,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2976bdbd0103
+DECL|enum|__anon29bd05c10103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976bdbd0208
+DECL|struct|__anon29bd05c10208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -210,7 +210,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2976bdbd0308
+DECL|struct|__anon29bd05c10308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -3208,7 +3208,7 @@ index|]
 decl_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|name
 argument_list|,
@@ -3448,7 +3448,7 @@ index|]
 decl_stmt|;
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|name
 argument_list|,

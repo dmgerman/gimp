@@ -59,6 +59,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/gimp.h"
 end_include
 
@@ -2028,7 +2034,7 @@ block|}
 else|else
 name|prn
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|stp_get_output_to
 argument_list|(
@@ -2933,7 +2939,7 @@ condition|(
 operator|(
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,
@@ -4370,7 +4376,7 @@ condition|(
 operator|(
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|filename
 argument_list|,

@@ -985,7 +985,7 @@ index|]
 decl_stmt|;
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|file
 argument_list|,
@@ -2012,7 +2012,7 @@ else|else
 block|{
 name|fp
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|palette_file
 argument_list|,

@@ -91,7 +91,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07308a0103
+DECL|enum|__anon2ab415490103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -117,7 +117,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a07308a0203
+DECL|enum|__anon2ab415490203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -135,7 +135,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a07308a0308
+DECL|struct|__anon2ab415490308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -176,7 +176,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a07308a0408
+DECL|struct|__anon2ab415490408
 block|{
 DECL|member|fp
 name|FILE
@@ -914,6 +914,8 @@ operator|.
 name|d_string
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1836,6 +1838,8 @@ argument_list|(
 name|palette_file
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -3748,6 +3752,8 @@ argument_list|(
 name|palfile
 argument_list|,
 name|O_RDONLY
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|lseek
