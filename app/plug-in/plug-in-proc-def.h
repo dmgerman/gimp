@@ -161,6 +161,11 @@ parameter_list|(
 name|PlugInProcDef
 modifier|*
 name|proc_def
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_path
 parameter_list|)
 function_decl|;
 end_function_decl
