@@ -1203,9 +1203,6 @@ block|}
 else|else
 block|{
 comment|/* This is Simons evil Eraser Hack. Code is borrowed from the        * colortoalpha plugin by Seth Burgess. Algorithm has been        * described on IRC by clahey.        */
-warning|#
-directive|warning
-literal|"Simons evil Eraser Hack"
 name|gimp_rgb_set_uchar
 argument_list|(
 operator|&
