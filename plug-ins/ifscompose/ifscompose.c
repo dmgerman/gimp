@@ -126,7 +126,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b442ba70103
+DECL|enum|__anon2b8634060103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -146,7 +146,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b442ba70203
+DECL|enum|__anon2b8634060203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b442ba70308
+DECL|struct|__anon2b8634060308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -184,7 +184,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b442ba7040a
+DECL|union|__anon2b863406040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b442ba70508
+DECL|struct|__anon2b8634060508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b442ba70608
+DECL|struct|__anon2b8634060608
 block|{
 DECL|member|color
 name|IfsColor
@@ -283,7 +283,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b442ba70708
+DECL|struct|__anon2b8634060708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -319,7 +319,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b442ba70808
+DECL|struct|__anon2b8634060808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -386,7 +386,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b442ba70908
+DECL|struct|__anon2b8634060908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -545,7 +545,7 @@ name|gint
 name|auto_preview
 decl_stmt|;
 DECL|member|in_update
-name|gint
+name|gboolean
 name|in_update
 decl_stmt|;
 comment|/* true if we're currently in 				   update_values() - don't do anything 				   on updates */
@@ -558,7 +558,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b442ba70a08
+DECL|struct|__anon2b8634060a08
 block|{
 DECL|member|run
 name|gint
@@ -596,7 +596,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -604,7 +604,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -621,7 +621,7 @@ specifier|static
 name|gint
 name|ifs_compose_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -895,7 +895,7 @@ specifier|static
 name|void
 name|recompute_center
 parameter_list|(
-name|int
+name|gboolean
 name|save_undo
 parameter_list|)
 function_decl|;
@@ -908,8 +908,10 @@ name|recompute_center_cb
 parameter_list|(
 name|GtkWidget
 modifier|*
+name|widget
 parameter_list|,
 name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -919,7 +921,7 @@ specifier|static
 name|void
 name|ifs_compose
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -1474,7 +1476,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -1509,13 +1511,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -1523,7 +1525,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -1531,7 +1533,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -1540,7 +1542,7 @@ block|}
 block|,   }
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 init|=
@@ -1578,12 +1580,12 @@ literal|"plug_in_ifs_compose"
 argument_list|,
 literal|"Create an Iterated Function System Fractal"
 argument_list|,
-literal|"Interactively create an Iterated Function System fractal."
-literal|"Use the window on the upper left to adjust the component"
-literal|"transformations of the fractal. The operation that is performed"
-literal|"is selected by the buttons underneath the window, or from a"
-literal|"menu popped up by the right mouse button. The fractal will be"
-literal|"rendered with a transparent background if the current image has"
+literal|"Interactively create an Iterated Function System fractal. "
+literal|"Use the window on the upper left to adjust the component "
+literal|"transformations of the fractal. The operation that is performed "
+literal|"is selected by the buttons underneath the window, or from a "
+literal|"menu popped up by the right mouse button. The fractal will be "
+literal|"rendered with a transparent background if the current image has "
 literal|"a transparent background."
 argument_list|,
 literal|"Owen Taylor"
@@ -1599,7 +1601,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -1616,7 +1618,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -1626,7 +1628,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -1634,30 +1636,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|active_drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|GimpParasite
 modifier|*
@@ -1686,7 +1688,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -1734,7 +1736,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/*  Possibly retrieve data; first look for a parasite -        *  if not found, fall back to global values        */
 name|parasite
@@ -1850,21 +1852,21 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 comment|/*  Make sure all the arguments are there!  */
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/*  Possibly retrieve data  */
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 comment|/*      gimp_get_data ("plug_in_ifs_compose",&mvals); */
 break|break;
@@ -1877,7 +1879,7 @@ condition|(
 operator|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 operator|)
 operator|&&
 operator|(
@@ -1932,7 +1934,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1942,7 +1944,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|gchar
@@ -2021,12 +2023,12 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -3951,10 +3953,10 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|ifs_compose_dialog (GDrawable * drawable)
+DECL|function|ifs_compose_dialog (GimpDrawable * drawable)
 name|ifs_compose_dialog
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -7353,10 +7355,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|ifs_compose (GDrawable * drawable)
+DECL|function|ifs_compose (GimpDrawable * drawable)
 name|ifs_compose
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -7366,7 +7368,7 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|GDrawableType
+name|GimpImageType
 name|type
 init|=
 name|gimp_drawable_type
@@ -7576,7 +7578,7 @@ decl_stmt|;
 name|guchar
 name|maskval
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|dest_rgn
 decl_stmt|;
 name|gint
@@ -8029,7 +8031,7 @@ name|type
 condition|)
 block|{
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 operator|*
 name|dest
@@ -8069,7 +8071,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 operator|*
 name|dest
@@ -8093,7 +8095,7 @@ name|mtot
 expr_stmt|;
 break|break;
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 operator|*
 name|dest
@@ -8157,7 +8159,7 @@ literal|255
 expr_stmt|;
 break|break;
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 operator|*
 name|dest
@@ -8185,10 +8187,10 @@ name|mtot
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 case|case
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 name|g_error
 argument_list|(
@@ -8866,7 +8868,7 @@ modifier|*
 name|event
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gdouble
@@ -12932,12 +12934,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|recompute_center_cb (GtkWidget * w,gpointer data)
+DECL|function|recompute_center_cb (GtkWidget * widget,gpointer data)
 name|recompute_center_cb
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|gpointer
 name|data
@@ -12954,14 +12956,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|recompute_center (int save_undo)
+DECL|function|recompute_center (gboolean save_undo)
 name|recompute_center
 parameter_list|(
-name|int
+name|gboolean
 name|save_undo
 parameter_list|)
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|gdouble

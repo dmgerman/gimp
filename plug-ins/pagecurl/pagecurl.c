@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5541290108
+DECL|struct|__anon2934abeb0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -215,7 +215,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -223,7 +223,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -413,7 +413,7 @@ name|guchar
 modifier|*
 name|get_samples
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -426,7 +426,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -468,7 +468,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|curl_layer
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|curl_layer
 decl_stmt|;
@@ -477,7 +477,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|drawable
 specifier|static
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -702,13 +702,13 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -716,7 +716,7 @@ literal|"Interactive (0), non-interactive (1)"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
@@ -724,7 +724,7 @@ literal|"Input image"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
@@ -732,7 +732,7 @@ literal|"Input drawable"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
@@ -740,7 +740,7 @@ literal|"Pagecurl-mode: Use FG- and BG-Color (0), Use current gradient (1)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"edge"
 block|,
@@ -748,7 +748,7 @@ literal|"Edge to curl (1-4, clockwise, starting in the lower right edge)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
@@ -756,7 +756,7 @@ literal|"vertical (0), horizontal (1)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"shade"
 block|,
@@ -782,13 +782,13 @@ index|]
 argument_list|)
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|return_vals
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 block|,
 literal|"Curl Layer"
 block|,
@@ -837,7 +837,7 @@ argument_list|)
 argument_list|,
 literal|"RGBA, GRAYA"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -854,7 +854,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -864,7 +864,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -872,26 +872,26 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|2
 index|]
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|run_mode
 operator|=
@@ -933,7 +933,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -953,7 +953,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_LAYER
+name|GIMP_PDB_LAYER
 expr_stmt|;
 name|values
 index|[
@@ -1025,7 +1025,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 name|INIT_I18N_UI
 argument_list|()
@@ -1040,7 +1040,7 @@ condition|)
 return|return;
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1054,13 +1054,13 @@ literal|7
 condition|)
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|curl
@@ -1272,7 +1272,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|INIT_I18N
 argument_list|()
@@ -1285,7 +1285,7 @@ if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|page_curl
@@ -1306,7 +1306,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -1315,7 +1315,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
@@ -1336,7 +1336,7 @@ else|else
 comment|/* Sorry - no indexed/noalpha images */
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|values
 index|[
@@ -3917,7 +3917,7 @@ name|guchar
 modifier|*
 name|gradsamp
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|dest_rgn
 decl_stmt|;
 name|gpointer
@@ -3957,13 +3957,13 @@ name|true_sel_height
 argument_list|,
 name|color_image
 condition|?
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 else|:
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 argument_list|,
 literal|100
 argument_list|,
-name|NORMAL_MODE
+name|GIMP_NORMAL_MODE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5149,7 +5149,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|,
 name|dest_rgn
@@ -5704,10 +5704,10 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|get_samples (GDrawable * drawable)
+DECL|function|get_samples (GimpDrawable * drawable)
 name|get_samples
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)

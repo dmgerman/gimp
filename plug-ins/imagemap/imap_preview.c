@@ -175,14 +175,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_gray_image (GtkWidget * preview,GPixelRgn * srcrgn)
+DECL|function|render_gray_image (GtkWidget * preview,GimpPixelRgn * srcrgn)
 name|render_gray_image
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|srcrgn
 parameter_list|)
@@ -469,14 +469,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_indexed_image (GtkWidget * preview,GPixelRgn * srcrgn)
+DECL|function|render_indexed_image (GtkWidget * preview,GimpPixelRgn * srcrgn)
 name|render_indexed_image
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|srcrgn
 parameter_list|)
@@ -890,14 +890,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_rgb_image (GtkWidget * preview,GPixelRgn * srcrgn)
+DECL|function|render_rgb_image (GtkWidget * preview,GimpPixelRgn * srcrgn)
 name|render_rgb_image
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|srcrgn
 parameter_list|)
@@ -1415,14 +1415,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|render_preview (GtkWidget * preview,GPixelRgn * srcrgn)
+DECL|function|render_preview (GtkWidget * preview,GimpPixelRgn * srcrgn)
 name|render_preview
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|srcrgn
 parameter_list|)
@@ -1440,10 +1440,10 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 name|render_rgb_image
 argument_list|(
@@ -1454,10 +1454,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 name|render_gray_image
 argument_list|(
@@ -1468,10 +1468,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 case|case
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 name|render_indexed_image
 argument_list|(
@@ -2063,10 +2063,10 @@ end_function
 begin_function
 name|Preview_t
 modifier|*
-DECL|function|make_preview (GDrawable * drawable)
+DECL|function|make_preview (GimpDrawable * drawable)
 name|make_preview
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)

@@ -29,12 +29,12 @@ file|"gtk/gtk.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon299ca7620108
+DECL|struct|__anon296494580108
 typedef|typedef
 struct|struct
 block|{
 DECL|member|drawable
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
@@ -76,7 +76,7 @@ name|gint
 name|exp_id
 decl_stmt|;
 DECL|member|src_rgn
-name|GPixelRgn
+name|GimpPixelRgn
 name|src_rgn
 decl_stmt|;
 DECL|member|cursor
@@ -94,7 +94,7 @@ name|Preview_t
 modifier|*
 name|make_preview
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)

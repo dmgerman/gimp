@@ -130,7 +130,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -138,7 +138,7 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
@@ -151,7 +151,7 @@ specifier|static
 name|void
 name|maze
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
@@ -303,7 +303,7 @@ specifier|extern
 name|void
 name|get_colors
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -323,7 +323,7 @@ specifier|extern
 name|void
 name|drawbox
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|dest_rgn
 parameter_list|,
@@ -350,7 +350,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_INFO
-name|GPlugInInfo
+name|GimpPlugInInfo
 name|PLUG_IN_INFO
 init|=
 block|{
@@ -433,13 +433,13 @@ name|query
 parameter_list|()
 block|{
 specifier|static
-name|GParamDef
+name|GimpParamDef
 name|args
 index|[]
 init|=
 block|{
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"run_mode"
 block|,
@@ -447,7 +447,7 @@ literal|"Interactive, non-interactive"
 block|}
 block|,
 block|{
-name|PARAM_IMAGE
+name|GIMP_PDB_IMAGE
 block|,
 literal|"image_ID"
 block|,
@@ -455,7 +455,7 @@ literal|"(unused)"
 block|}
 block|,
 block|{
-name|PARAM_DRAWABLE
+name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable_ID"
 block|,
@@ -464,7 +464,7 @@ block|}
 block|,
 comment|/* If we did have parameters, these be them: */
 block|{
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 block|,
 literal|"width"
 block|,
@@ -472,7 +472,7 @@ literal|"Width of the passages"
 block|}
 block|,
 block|{
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 block|,
 literal|"height"
 block|,
@@ -480,7 +480,7 @@ literal|"Height of the passages"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"tileable"
 block|,
@@ -488,7 +488,7 @@ literal|"Tileable maze?"
 block|}
 block|,
 block|{
-name|PARAM_INT8
+name|GIMP_PDB_INT8
 block|,
 literal|"algorithm"
 block|,
@@ -497,7 +497,7 @@ literal|"(0=DEPTH FIRST, 1=PRIM'S ALGORITHM)"
 block|}
 block|,
 block|{
-name|PARAM_INT32
+name|GIMP_PDB_INT32
 block|,
 literal|"seed"
 block|,
@@ -505,7 +505,7 @@ literal|"Random Seed"
 block|}
 block|,
 block|{
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 block|,
 literal|"multiple"
 block|,
@@ -513,7 +513,7 @@ literal|"Multiple (use 57)"
 block|}
 block|,
 block|{
-name|PARAM_INT16
+name|GIMP_PDB_INT16
 block|,
 literal|"offset"
 block|,
@@ -522,7 +522,7 @@ block|}
 block|}
 decl_stmt|;
 specifier|static
-name|GParamDef
+name|GimpParamDef
 modifier|*
 name|return_vals
 init|=
@@ -585,7 +585,7 @@ argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
 argument_list|,
-name|PROC_PLUG_IN
+name|GIMP_PLUGIN
 argument_list|,
 name|nargs
 argument_list|,
@@ -607,7 +607,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|run (gchar * name,gint nparams,GParam * param,gint * nreturn_vals,GParam ** return_vals)
+DECL|function|run (gchar * name,gint nparams,GimpParam * param,gint * nreturn_vals,GimpParam ** return_vals)
 name|run
 parameter_list|(
 name|gchar
@@ -617,7 +617,7 @@ parameter_list|,
 name|gint
 name|nparams
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 name|param
 parameter_list|,
@@ -625,30 +625,30 @@ name|gint
 modifier|*
 name|nreturn_vals
 parameter_list|,
-name|GParam
+name|GimpParam
 modifier|*
 modifier|*
 name|return_vals
 parameter_list|)
 block|{
 specifier|static
-name|GParam
+name|GimpParam
 name|values
 index|[
 literal|1
 index|]
 decl_stmt|;
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GRunModeType
+name|GimpRunModeType
 name|run_mode
 decl_stmt|;
-name|GStatusType
+name|GimpPDBStatusType
 name|status
 init|=
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint
 name|x1
@@ -703,7 +703,7 @@ index|]
 operator|.
 name|type
 operator|=
-name|PARAM_STATUS
+name|GIMP_PDB_STATUS
 expr_stmt|;
 name|values
 index|[
@@ -736,7 +736,7 @@ name|run_mode
 condition|)
 block|{
 case|case
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
@@ -796,7 +796,7 @@ return|return;
 block|}
 break|break;
 case|case
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 case|:
 if|if
 condition|(
@@ -807,14 +807,14 @@ condition|)
 block|{
 name|status
 operator|=
-name|STATUS_CALLING_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 if|if
 condition|(
 name|status
 operator|==
-name|STATUS_SUCCESS
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|mvals
@@ -932,7 +932,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 comment|/* Possibly retrieve data */
 name|gimp_get_data
@@ -981,7 +981,7 @@ if|if
 condition|(
 name|run_mode
 operator|!=
-name|RUN_NONINTERACTIVE
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
@@ -990,7 +990,7 @@ if|if
 condition|(
 name|run_mode
 operator|==
-name|RUN_INTERACTIVE
+name|GIMP_RUN_INTERACTIVE
 operator|||
 operator|(
 name|mvals
@@ -999,7 +999,7 @@ name|timeseed
 operator|&&
 name|run_mode
 operator|==
-name|RUN_WITH_LAST_VALS
+name|GIMP_RUN_WITH_LAST_VALS
 operator|)
 condition|)
 name|gimp_set_data
@@ -1020,7 +1020,7 @@ else|else
 block|{
 name|status
 operator|=
-name|STATUS_EXECUTION_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 name|values
@@ -1206,15 +1206,15 @@ end_endif
 begin_function
 specifier|static
 name|void
-DECL|function|maze (GDrawable * drawable)
+DECL|function|maze (GimpDrawable * drawable)
 name|maze
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|)
 block|{
-name|GPixelRgn
+name|GimpPixelRgn
 name|dest_rgn
 decl_stmt|;
 name|guint
@@ -2292,7 +2292,7 @@ block|{
 name|gint32
 name|selection_ID
 decl_stmt|;
-name|GPixelRgn
+name|GimpPixelRgn
 name|sel_rgn
 decl_stmt|;
 name|gint

@@ -27,7 +27,7 @@ begin_function_decl
 name|void
 name|get_colors
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -43,14 +43,14 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* drawbox draws a solid colored box in a GPixelRgn, hopefully fairly    quickly.  See comments below. */
+comment|/* drawbox draws a solid colored box in a GimpPixelRgn, hopefully fairly    quickly.  See comments below. */
 end_comment
 
 begin_function_decl
 name|void
 name|drawbox
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|dest_rgn
 parameter_list|,
@@ -77,10 +77,10 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|get_colors (GDrawable * drawable,guint8 * fg,guint8 * bg)
+DECL|function|get_colors (GimpDrawable * drawable,guint8 * fg,guint8 * bg)
 name|get_colors
 parameter_list|(
-name|GDrawable
+name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
@@ -104,7 +104,7 @@ argument_list|)
 condition|)
 block|{
 case|case
-name|RGBA_IMAGE
+name|GIMP_RGBA_IMAGE
 case|:
 comment|/* ASSUMPTION: Assuming the user wants entire */
 name|fg
@@ -123,7 +123,7 @@ operator|=
 literal|255
 expr_stmt|;
 case|case
-name|RGB_IMAGE
+name|GIMP_RGB_IMAGE
 case|:
 name|gimp_palette_get_foreground
 argument_list|(
@@ -169,7 +169,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GRAYA_IMAGE
+name|GIMP_GRAYA_IMAGE
 case|:
 comment|/* and again */
 name|gimp_palette_get_foreground
@@ -276,7 +276,7 @@ literal|255
 expr_stmt|;
 break|break;
 case|case
-name|GRAY_IMAGE
+name|GIMP_GRAY_IMAGE
 case|:
 name|gimp_palette_get_foreground
 argument_list|(
@@ -368,10 +368,10 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|INDEXEDA_IMAGE
+name|GIMP_INDEXEDA_IMAGE
 case|:
 case|case
-name|INDEXED_IMAGE
+name|GIMP_INDEXED_IMAGE
 case|:
 comment|/* FIXME: Should use current fg/bg colors.  */
 name|g_warning
@@ -403,7 +403,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Draws a solid color box in a GPixelRgn. */
+comment|/* Draws a solid color box in a GimpPixelRgn. */
 end_comment
 
 begin_comment
@@ -416,10 +416,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|drawbox (GPixelRgn * dest_rgn,guint x,guint y,guint w,guint h,guint8 clr[4])
+DECL|function|drawbox (GimpPixelRgn * dest_rgn,guint x,guint y,guint w,guint h,guint8 clr[4])
 name|drawbox
 parameter_list|(
-name|GPixelRgn
+name|GimpPixelRgn
 modifier|*
 name|dest_rgn
 parameter_list|,
