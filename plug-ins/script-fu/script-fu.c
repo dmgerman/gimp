@@ -817,15 +817,9 @@ name|gimp_install_temp_proc
 argument_list|(
 literal|"script_fu_refresh"
 argument_list|,
-name|_
-argument_list|(
 literal|"Re-read all available scripts"
-argument_list|)
 argument_list|,
-name|_
-argument_list|(
 literal|"Re-read all available scripts"
-argument_list|)
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
