@@ -152,7 +152,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d40f80108
+DECL|struct|__anon2a959f0d0108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -199,7 +199,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3d40f80208
+DECL|struct|__anon2a959f0d0208
 block|{
 DECL|member|run
 name|gint
@@ -1054,7 +1054,7 @@ decl_stmt|;
 name|guchar
 name|alphaval
 decl_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background

@@ -142,7 +142,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af77cb00108
+DECL|struct|__anon28b573360108
 block|{
 DECL|member|circle
 name|gdouble
@@ -173,7 +173,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af77cb00208
+DECL|struct|__anon28b573360208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af77cb00308
+DECL|struct|__anon28b573360308
 block|{
 DECL|member|col
 DECL|member|row
@@ -3502,7 +3502,7 @@ block|{
 name|GimpRGB
 name|background
 decl_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background
@@ -5224,7 +5224,7 @@ decl_stmt|;
 name|GimpRGB
 name|background
 decl_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background

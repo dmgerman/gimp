@@ -459,25 +459,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_by_color_select:  * @drawable_ID: The affected drawable.  * @red:  * @green:  * @blue: The color to select.  * @threshold: Threshold in intensity levels %%desc%%.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius: Radius for feather operation.  * @sample_merged: Use the composite image, not the drawable.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the specified threshold. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold value) are included in the  * selection. The antialiasing parameter allows the final selection  * mask to contain intermediate values based on close misses to the  * threshold bar. Feathering can be enabled optionally and is  * controlled with the \"feather_radius\" parameter. If the  * sample_merged parameter is non-zero, the data of the composite image  * will be used instead of that for the specified drawable. This is  * equivalent to sampling for colors after merging all visible layers.  * In the case of a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_by_color_select:  * @drawable_ID: The affected drawable.  * @color: The color to select.  * @threshold: Threshold in intensity levels %%desc%%.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius: Radius for feather operation.  * @sample_merged: Use the composite image, not the drawable.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the specified threshold. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold value) are included in the  * selection. The antialiasing parameter allows the final selection  * mask to contain intermediate values based on close misses to the  * threshold bar. Feathering can be enabled optionally and is  * controlled with the \"feather_radius\" parameter. If the  * sample_merged parameter is non-zero, the data of the composite image  * will be used instead of that for the specified drawable. This is  * equivalent to sampling for colors after merging all visible layers.  * In the case of a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_by_color_select (gint32 drawable_ID,guchar red,guchar green,guchar blue,gint threshold,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius,gboolean sample_merged)
+DECL|function|gimp_by_color_select (gint32 drawable_ID,GimpRGB * color,gint threshold,GimpChannelOps operation,gboolean antialias,gboolean feather,gdouble feather_radius,gboolean sample_merged)
 name|gimp_by_color_select
 parameter_list|(
 name|gint32
 name|drawable_ID
 parameter_list|,
-name|guchar
-name|red
-parameter_list|,
-name|guchar
-name|green
-parameter_list|,
-name|guchar
-name|blue
+name|GimpRGB
+modifier|*
+name|color
 parameter_list|,
 name|gint
 name|threshold
@@ -510,33 +505,6 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|guchar
-name|color
-index|[
-literal|3
-index|]
-decl_stmt|;
-name|color
-index|[
-literal|0
-index|]
-operator|=
-name|red
-expr_stmt|;
-name|color
-index|[
-literal|1
-index|]
-operator|=
-name|green
-expr_stmt|;
-name|color
-index|[
-literal|2
-index|]
-operator|=
-name|blue
-expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -800,12 +768,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_picker:  * @image_ID: The image.  * @drawable_ID: The affected drawable.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @save_color: Save the color to the active palette.  * @red:  * @green:  * @blue: The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is non-zero, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_color_picker:  * @image_ID: The image.  * @drawable_ID: The affected drawable.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @save_color: Save the color to the active palette.  * @color: The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is non-zero, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_color_picker (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,gboolean save_color,guchar * red,guchar * green,guchar * blue)
+DECL|function|gimp_color_picker (gint32 image_ID,gint32 drawable_ID,gdouble x,gdouble y,gboolean sample_merged,gboolean sample_average,gdouble average_radius,gboolean save_color,GimpRGB * color)
 name|gimp_color_picker
 parameter_list|(
 name|gint32
@@ -832,17 +800,9 @@ parameter_list|,
 name|gboolean
 name|save_color
 parameter_list|,
-name|guchar
+name|GimpRGB
 modifier|*
-name|red
-parameter_list|,
-name|guchar
-modifier|*
-name|green
-parameter_list|,
-name|guchar
-modifier|*
-name|blue
+name|color
 parameter_list|)
 block|{
 name|GimpParam
@@ -918,9 +878,8 @@ if|if
 condition|(
 name|success
 condition|)
-block|{
 operator|*
-name|red
+name|color
 operator|=
 name|return_vals
 index|[
@@ -930,38 +889,7 @@ operator|.
 name|data
 operator|.
 name|d_color
-operator|.
-name|red
 expr_stmt|;
-operator|*
-name|green
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_color
-operator|.
-name|green
-expr_stmt|;
-operator|*
-name|blue
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_color
-operator|.
-name|blue
-expr_stmt|;
-block|}
 name|gimp_destroy_params
 argument_list|(
 name|return_vals

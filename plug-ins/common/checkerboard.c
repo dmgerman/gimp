@@ -72,7 +72,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1288d00108
+DECL|struct|__anon29c71ddd0108
 block|{
 DECL|member|run
 name|gint
@@ -752,13 +752,13 @@ name|y1
 operator|)
 expr_stmt|;
 comment|/* Get the foreground and background colors */
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|foreground
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background

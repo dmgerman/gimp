@@ -1110,7 +1110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70103
+DECL|enum|__anon2c4c29e00103
 block|{
 DECL|enumerator|LINE
 name|LINE
@@ -1162,7 +1162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70203
+DECL|enum|__anon2c4c29e00203
 block|{
 DECL|enumerator|RECT_GRID
 name|RECT_GRID
@@ -1183,7 +1183,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70303
+DECL|enum|__anon2c4c29e00303
 block|{
 DECL|enumerator|ORIGINAL_LAYER
 name|ORIGINAL_LAYER
@@ -1204,7 +1204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70403
+DECL|enum|__anon2c4c29e00403
 block|{
 DECL|enumerator|LAYER_TRANS_BG
 name|LAYER_TRANS_BG
@@ -1231,7 +1231,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70503
+DECL|enum|__anon2c4c29e00503
 block|{
 DECL|enumerator|PAINT_BRUSH_TYPE
 name|PAINT_BRUSH_TYPE
@@ -1252,7 +1252,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70603
+DECL|enum|__anon2c4c29e00603
 block|{
 DECL|enumerator|BRUSH_BRUSH_TYPE
 name|BRUSH_BRUSH_TYPE
@@ -1420,7 +1420,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a19fb70708
+DECL|struct|__anon2c4c29e00708
 block|{
 DECL|member|gridspacing
 name|gint
@@ -1459,7 +1459,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a19fb70808
+DECL|struct|__anon2c4c29e00808
 block|{
 DECL|member|gridspacing
 name|void
@@ -1508,7 +1508,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a19fb70908
+DECL|struct|__anon2c4c29e00908
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -1686,7 +1686,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70a03
+DECL|enum|__anon2c4c29e00a03
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -1716,7 +1716,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70b03
+DECL|enum|__anon2c4c29e00b03
 block|{
 DECL|enumerator|ARC_SEGMENT
 name|ARC_SEGMENT
@@ -1732,7 +1732,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70c03
+DECL|enum|__anon2c4c29e00c03
 block|{
 DECL|enumerator|FILL_FOREGROUND
 name|FILL_FOREGROUND
@@ -1757,7 +1757,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a19fb70d03
+DECL|enum|__anon2c4c29e00d03
 block|{
 DECL|enumerator|FILL_EACH
 name|FILL_EACH
@@ -12196,13 +12196,13 @@ expr_stmt|;
 block|}
 comment|/* Need this later to delete it */
 comment|/* Store foreground& backgroud colours set to black/white    * paint with brush    * restore colours    */
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|foreground
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background
@@ -12227,7 +12227,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gimp_palette_set_background_rgb
+name|gimp_palette_set_background
 argument_list|(
 operator|&
 name|color
@@ -12247,7 +12247,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gimp_palette_set_foreground_rgb
+name|gimp_palette_set_foreground
 argument_list|(
 operator|&
 name|color
@@ -12353,13 +12353,13 @@ argument_list|,
 name|line_pnts
 argument_list|)
 expr_stmt|;
-name|gimp_palette_set_background_rgb
+name|gimp_palette_set_background
 argument_list|(
 operator|&
 name|background
 argument_list|)
 expr_stmt|;
-name|gimp_palette_set_foreground_rgb
+name|gimp_palette_set_foreground
 argument_list|(
 operator|&
 name|foreground

@@ -2461,7 +2461,7 @@ operator|=
 name|nframes
 expr_stmt|;
 block|}
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background

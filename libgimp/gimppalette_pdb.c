@@ -14,25 +14,17 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_palette_get_foreground:  * @red:  * @green:  * @blue: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure retrieves the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palette_get_foreground:  * @foreground: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure retrieves the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_get_foreground (guchar * red,guchar * green,guchar * blue)
+DECL|function|gimp_palette_get_foreground (GimpRGB * foreground)
 name|gimp_palette_get_foreground
 parameter_list|(
-name|guchar
+name|GimpRGB
 modifier|*
-name|red
-parameter_list|,
-name|guchar
-modifier|*
-name|green
-parameter_list|,
-name|guchar
-modifier|*
-name|blue
+name|foreground
 parameter_list|)
 block|{
 name|GimpParam
@@ -76,9 +68,8 @@ if|if
 condition|(
 name|success
 condition|)
-block|{
 operator|*
-name|red
+name|foreground
 operator|=
 name|return_vals
 index|[
@@ -88,38 +79,7 @@ operator|.
 name|data
 operator|.
 name|d_color
-operator|.
-name|red
 expr_stmt|;
-operator|*
-name|green
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_color
-operator|.
-name|green
-expr_stmt|;
-operator|*
-name|blue
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_color
-operator|.
-name|blue
-expr_stmt|;
-block|}
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -134,25 +94,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_get_background:  * @red:  * @green:  * @blue: The background color.  *  * Get the current GIMP background color.  *  * This procedure retrieves the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palette_get_background:  * @background: The background color.  *  * Get the current GIMP background color.  *  * This procedure retrieves the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_get_background (guchar * red,guchar * green,guchar * blue)
+DECL|function|gimp_palette_get_background (GimpRGB * background)
 name|gimp_palette_get_background
 parameter_list|(
-name|guchar
+name|GimpRGB
 modifier|*
-name|red
-parameter_list|,
-name|guchar
-modifier|*
-name|green
-parameter_list|,
-name|guchar
-modifier|*
-name|blue
+name|background
 parameter_list|)
 block|{
 name|GimpParam
@@ -196,9 +148,8 @@ if|if
 condition|(
 name|success
 condition|)
-block|{
 operator|*
-name|red
+name|background
 operator|=
 name|return_vals
 index|[
@@ -208,38 +159,7 @@ operator|.
 name|data
 operator|.
 name|d_color
-operator|.
-name|red
 expr_stmt|;
-operator|*
-name|green
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_color
-operator|.
-name|green
-expr_stmt|;
-operator|*
-name|blue
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_color
-operator|.
-name|blue
-expr_stmt|;
-block|}
 name|gimp_destroy_params
 argument_list|(
 name|return_vals
@@ -254,22 +174,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_set_foreground:  * @red:  * @green:  * @blue: The foreground color.  *  * Set the current GIMP foreground color.  *  * This procedure sets the current GIMP foreground color. After this is  * set, operations which use foreground such as paint tools, blending,  * and bucket fill will use the new value.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palette_set_foreground:  * @foreground: The foreground color.  *  * Set the current GIMP foreground color.  *  * This procedure sets the current GIMP foreground color. After this is  * set, operations which use foreground such as paint tools, blending,  * and bucket fill will use the new value.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_set_foreground (guchar red,guchar green,guchar blue)
+DECL|function|gimp_palette_set_foreground (GimpRGB * foreground)
 name|gimp_palette_set_foreground
 parameter_list|(
-name|guchar
-name|red
-parameter_list|,
-name|guchar
-name|green
-parameter_list|,
-name|guchar
-name|blue
+name|GimpRGB
+modifier|*
+name|foreground
 parameter_list|)
 block|{
 name|GimpParam
@@ -284,33 +199,6 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|guchar
-name|foreground
-index|[
-literal|3
-index|]
-decl_stmt|;
-name|foreground
-index|[
-literal|0
-index|]
-operator|=
-name|red
-expr_stmt|;
-name|foreground
-index|[
-literal|1
-index|]
-operator|=
-name|green
-expr_stmt|;
-name|foreground
-index|[
-literal|2
-index|]
-operator|=
-name|blue
-expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -354,22 +242,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_set_background:  * @red:  * @green:  * @blue: The background color.  *  * Set the current GIMP background color.  *  * This procedure sets the current GIMP background color. After this is  * set, operations which use background such as blending, filling  * images, clearing, and erasing (in non-alpha images) will use the new  * value.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palette_set_background:  * @background: The background color.  *  * Set the current GIMP background color.  *  * This procedure sets the current GIMP background color. After this is  * set, operations which use background such as blending, filling  * images, clearing, and erasing (in non-alpha images) will use the new  * value.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_palette_set_background (guchar red,guchar green,guchar blue)
+DECL|function|gimp_palette_set_background (GimpRGB * background)
 name|gimp_palette_set_background
 parameter_list|(
-name|guchar
-name|red
-parameter_list|,
-name|guchar
-name|green
-parameter_list|,
-name|guchar
-name|blue
+name|GimpRGB
+modifier|*
+name|background
 parameter_list|)
 block|{
 name|GimpParam
@@ -384,33 +267,6 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
-name|guchar
-name|background
-index|[
-literal|3
-index|]
-decl_stmt|;
-name|background
-index|[
-literal|0
-index|]
-operator|=
-name|red
-expr_stmt|;
-name|background
-index|[
-literal|1
-index|]
-operator|=
-name|green
-expr_stmt|;
-name|background
-index|[
-literal|2
-index|]
-operator|=
-name|blue
-expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure

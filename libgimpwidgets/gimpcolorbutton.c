@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimppalette.h"
+file|"libgimp/gimppalette_pdb.h"
 end_include
 
 begin_include
@@ -295,7 +295,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c6bc660103
+DECL|enum|__anon275714780103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1741,7 +1741,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|color
@@ -1807,7 +1807,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|color

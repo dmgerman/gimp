@@ -54,7 +54,7 @@ parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
-name|guchar
+name|GimpRGB
 modifier|*
 name|color
 parameter_list|)

@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8d95320108
+DECL|struct|__anon2a0de5e40108
 block|{
 DECL|member|from
 name|GimpRGB
@@ -792,7 +792,7 @@ name|xargs
 argument_list|)
 expr_stmt|;
 comment|/* initialize using foreground color */
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|xargs
@@ -823,7 +823,7 @@ name|xargs
 argument_list|)
 expr_stmt|;
 comment|/*         * instead of recalling the last-set values,        * run with the current foreground as 'from'        * color, making ALT-F somewhat more useful.        */
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|xargs

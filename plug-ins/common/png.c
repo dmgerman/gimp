@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f89c260108
+DECL|struct|__anon28fad2a10108
 block|{
 DECL|member|interlaced
 name|gint
@@ -3156,7 +3156,7 @@ block|{
 name|GimpRGB
 name|color
 decl_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|color
@@ -3976,7 +3976,7 @@ literal|3
 argument_list|)
 expr_stmt|;
 comment|/* Apps with no natural background will use this instead, see        elsewhere for the bKGD chunk being written to use index 0 */
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|color

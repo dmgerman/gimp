@@ -711,7 +711,7 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/* Fetch the GIMP current background colour, to semi-flatten against */
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background

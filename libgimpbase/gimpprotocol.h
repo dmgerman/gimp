@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library                                                     * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.               *                                                                                * This library is distributed in the hope that it will be useful,                * but WITHOUT ANY WARRANTY; without even the implied warranty of                 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU              * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -35,9 +35,9 @@ DECL|macro|GP_VERSION
 define|#
 directive|define
 name|GP_VERSION
-value|0x0004
+value|0x0008
 enum|enum
-DECL|enum|__anon2bd42e890103
+DECL|enum|__anon28d3ced40103
 block|{
 DECL|enumerator|GP_QUIT
 name|GP_QUIT
@@ -244,7 +244,7 @@ name|guint32
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2bd42e89020a
+DECL|union|__anon28d3ced4020a
 block|{
 DECL|member|d_int32
 name|gint32
@@ -293,27 +293,12 @@ modifier|*
 modifier|*
 name|d_stringarray
 decl_stmt|;
-struct|struct
-DECL|struct|__anon2bd42e890308
-block|{
-DECL|member|red
-name|guint8
-name|red
-decl_stmt|;
-DECL|member|green
-name|guint8
-name|green
-decl_stmt|;
-DECL|member|blue
-name|guint8
-name|blue
-decl_stmt|;
 DECL|member|d_color
-block|}
+name|GimpRGB
 name|d_color
-struct|;
+decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd42e890408
+DECL|struct|__anon28d3ced40308
 block|{
 DECL|member|x
 name|gint32
@@ -368,7 +353,7 @@ name|gint32
 name|d_path
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd42e890508
+DECL|struct|__anon28d3ced40408
 block|{
 DECL|member|name
 name|gchar

@@ -109,12 +109,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimp/gimppalette.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimpparasite.h>
 end_include
 
@@ -405,24 +399,6 @@ name|description
 decl_stmt|;
 block|}
 struct|;
-DECL|struct|_GimpParamColor
-struct|struct
-name|_GimpParamColor
-block|{
-DECL|member|red
-name|guint8
-name|red
-decl_stmt|;
-DECL|member|green
-name|guint8
-name|green
-decl_stmt|;
-DECL|member|blue
-name|guint8
-name|blue
-decl_stmt|;
-block|}
-struct|;
 DECL|struct|_GimpParamRegion
 struct|struct
 name|_GimpParamRegion
@@ -497,7 +473,7 @@ modifier|*
 name|d_stringarray
 decl_stmt|;
 DECL|member|d_color
-name|GimpParamColor
+name|GimpRGB
 name|d_color
 decl_stmt|;
 DECL|member|d_region

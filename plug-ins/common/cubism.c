@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27caf1a70108
+DECL|struct|__anon29561a560108
 block|{
 DECL|member|npts
 name|gint
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27caf1a70208
+DECL|struct|__anon29561a560208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -157,7 +157,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27caf1a70308
+DECL|struct|__anon29561a560308
 block|{
 DECL|member|run
 name|gint
@@ -1083,7 +1083,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background

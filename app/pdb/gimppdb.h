@@ -25,7 +25,7 @@ DECL|member|arg_type
 name|PDBArgType
 name|arg_type
 decl_stmt|;
-comment|/*  argument type  */
+comment|/*  argument type        */
 DECL|union|_ArgValue
 union|union
 name|_ArgValue
@@ -34,7 +34,7 @@ DECL|member|pdb_int
 name|gint32
 name|pdb_int
 decl_stmt|;
-comment|/*  Integer type  */
+comment|/*  Integer type         */
 DECL|member|pdb_float
 name|gdouble
 name|pdb_float
@@ -44,7 +44,12 @@ DECL|member|pdb_pointer
 name|gpointer
 name|pdb_pointer
 decl_stmt|;
-comment|/*  Pointer type  */
+comment|/*  Pointer type         */
+DECL|member|pdb_color
+name|GimpRGB
+name|pdb_color
+decl_stmt|;
+comment|/*  Color type           */
 DECL|member|value
 block|}
 name|value

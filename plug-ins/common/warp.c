@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c3a500103
+DECL|enum|__anon28c40ef70103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -127,7 +127,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c3a500208
+DECL|struct|__anon28c40ef70208
 block|{
 DECL|member|amount
 name|gdouble
@@ -194,7 +194,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c3a500308
+DECL|struct|__anon28c40ef70308
 block|{
 DECL|member|run
 name|gint
@@ -1061,7 +1061,7 @@ name|gimp_tile_height
 argument_list|()
 expr_stmt|;
 comment|/* get currently selected foreground pixel color */
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|color

@@ -772,13 +772,10 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|gimp_rgb_set_uchar
-argument_list|(
-operator|&
 name|gdtvals
 operator|.
 name|color
-argument_list|,
+operator|=
 name|param
 index|[
 literal|8
@@ -787,31 +784,6 @@ operator|.
 name|data
 operator|.
 name|d_color
-operator|.
-name|red
-argument_list|,
-name|param
-index|[
-literal|8
-index|]
-operator|.
-name|data
-operator|.
-name|d_color
-operator|.
-name|green
-argument_list|,
-name|param
-index|[
-literal|8
-index|]
-operator|.
-name|data
-operator|.
-name|d_color
-operator|.
-name|blue
-argument_list|)
 expr_stmt|;
 name|gdtvals
 operator|.
@@ -1131,7 +1103,7 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|data
@@ -2270,14 +2242,14 @@ name|layer_oy
 argument_list|)
 expr_stmt|;
 comment|/* get foreground color */
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|old_color
 argument_list|)
 expr_stmt|;
 comment|/* set foreground color to the wanted text color */
-name|gimp_palette_set_foreground_rgb
+name|gimp_palette_set_foreground
 argument_list|(
 operator|&
 name|data
@@ -2484,7 +2456,7 @@ name|text_lines_w
 argument_list|)
 expr_stmt|;
 comment|/* set foreground color to the old one */
-name|gimp_palette_set_foreground_rgb
+name|gimp_palette_set_foreground
 argument_list|(
 operator|&
 name|old_color

@@ -208,7 +208,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon27e91b3b0108
+DECL|struct|__anon2ba6f1190108
 typedef|typedef
 struct|struct
 block|{
@@ -226,7 +226,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27e91b3b0208
+DECL|struct|__anon2ba6f1190208
 typedef|typedef
 struct|struct
 block|{
@@ -1505,7 +1505,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e91b3b0308
+DECL|struct|__anon2ba6f1190308
 block|{
 DECL|member|color
 name|double
@@ -1524,7 +1524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e91b3b0408
+DECL|struct|__anon2ba6f1190408
 block|{
 DECL|member|coord
 name|double
@@ -1541,7 +1541,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27e91b3b0503
+DECL|enum|__anon2ba6f1190503
 typedef|typedef
 enum|enum
 block|{
@@ -1563,7 +1563,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon27e91b3b0603
+DECL|enum|__anon2ba6f1190603
 typedef|typedef
 enum|enum
 block|{
@@ -1581,7 +1581,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e91b3b0708
+DECL|struct|__anon2ba6f1190708
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -1616,7 +1616,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e91b3b0808
+DECL|struct|__anon2ba6f1190808
 block|{
 DECL|member|type
 name|t_LightType
@@ -2185,11 +2185,9 @@ directive|include
 file|"iter_ALT/mod/plug_in_emboss_iter_ALT.inc"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"iter_ALT/mod/plug_in_exchange_iter_ALT.inc"
-end_include
+begin_comment
+comment|/*  #include "iter_ALT/mod/plug_in_exchange_iter_ALT.inc" */
+end_comment
 
 begin_include
 include|#
@@ -2826,12 +2824,7 @@ literal|"plug_in_engrave"
 block|,
 name|p_plug_in_engrave_iter_ALT
 block|}
-block|,
-block|{
-literal|"plug_in_exchange"
-block|,
-name|p_plug_in_exchange_iter_ALT
-block|}
+comment|/*    , { "plug_in_exchange",  p_plug_in_exchange_iter_ALT } */
 comment|/*, { "plug_in_export_palette",  p_plug_in_export_palette_iter_ALT }              */
 block|,
 block|{

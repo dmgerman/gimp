@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2882d4d70108
+DECL|struct|__anon29fe8c3a0108
 block|{
 DECL|member|do_curl_shade
 name|gint
@@ -3808,7 +3808,7 @@ operator|/
 name|sel_height
 expr_stmt|;
 comment|/* Colors */
-name|gimp_palette_get_foreground_rgb
+name|gimp_palette_get_foreground
 argument_list|(
 operator|&
 name|color
@@ -3838,7 +3838,7 @@ literal|2
 index|]
 argument_list|)
 expr_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|color

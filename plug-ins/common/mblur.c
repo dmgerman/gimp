@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2ff9550108
+DECL|struct|__anon28fbafa20108
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -134,7 +134,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2ff9550208
+DECL|struct|__anon28fbafa20208
 block|{
 DECL|member|col
 DECL|member|row
@@ -3003,7 +3003,7 @@ block|{
 name|GimpRGB
 name|background
 decl_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background

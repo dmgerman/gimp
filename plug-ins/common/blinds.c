@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a7f0a40108
+DECL|struct|__anon2c1663550108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -2873,7 +2873,7 @@ block|{
 name|GimpRGB
 name|background
 decl_stmt|;
-name|gimp_palette_get_background_rgb
+name|gimp_palette_get_background
 argument_list|(
 operator|&
 name|background
