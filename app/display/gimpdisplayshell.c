@@ -340,7 +340,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad342f90103
+DECL|enum|__anon2b0453940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -356,7 +356,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad342f90203
+DECL|enum|__anon2b0453940203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3945,18 +3945,6 @@ operator|=
 name|gimp_statusbar_new
 argument_list|(
 name|shell
-argument_list|)
-expr_stmt|;
-name|gtk_statusbar_set_has_resize_grip
-argument_list|(
-name|GTK_STATUSBAR
-argument_list|(
-name|shell
-operator|->
-name|statusbar
-argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_help_set_help_data
