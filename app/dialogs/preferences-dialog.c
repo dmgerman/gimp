@@ -4323,7 +4323,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Defaults for New Images"
+literal|"New Image"
 argument_list|)
 argument_list|,
 literal|"new-image.png"
@@ -6849,7 +6849,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29b4c39d0108
+DECL|struct|__anon29883ebc0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -8701,7 +8701,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29b4c39d0208
+DECL|struct|__anon29883ebc0208
 block|{
 DECL|member|label
 specifier|const
@@ -8860,7 +8860,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29b4c39d0308
+DECL|struct|__anon29883ebc0308
 block|{
 DECL|member|tree_label
 specifier|const

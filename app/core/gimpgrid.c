@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a486140103
+DECL|enum|__anon2bef829b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -394,7 +394,7 @@ literal|"xspacing"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Horizontal spacing of grid lines"
+literal|"Horizontal spacing of grid lines."
 argument_list|)
 argument_list|,
 literal|1.0
@@ -416,7 +416,7 @@ literal|"yspacing"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Vertical spacing of grid lines"
+literal|"Vertical spacing of grid lines."
 argument_list|)
 argument_list|,
 literal|1.0
@@ -457,8 +457,8 @@ literal|"xoffset"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Horizontal offset of the first grid line, "
-literal|"this may be a negative number"
+literal|"Horizontal offset of the first grid "
+literal|"line; this may be a negative number."
 argument_list|)
 argument_list|,
 operator|-
@@ -481,8 +481,8 @@ literal|"yoffset"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Vertical offset of the first grid line, "
-literal|"this may be a negative number"
+literal|"Vertical offset of the first grid "
+literal|"line; this may be a negative number."
 argument_list|)
 argument_list|,
 operator|-
@@ -524,7 +524,7 @@ literal|"fgcolor"
 argument_list|,
 name|N_
 argument_list|(
-literal|"The foreground color of the grid"
+literal|"The foreground color of the grid."
 argument_list|)
 argument_list|,
 operator|&
@@ -543,8 +543,8 @@ literal|"bgcolor"
 argument_list|,
 name|N_
 argument_list|(
-literal|"The background color of the grid, "
-literal|"only used in double dashed line style"
+literal|"The background color of the grid; "
+literal|"only used in double dashed line style."
 argument_list|)
 argument_list|,
 operator|&
@@ -563,7 +563,7 @@ literal|"style"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Line style used for the grid"
+literal|"Line style used for the grid."
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_GRID_STYLE
