@@ -2354,7 +2354,7 @@ operator|&&
 operator|!
 name|rect_sel
 operator|->
-name|fixed_width
+name|fixed_size
 condition|)
 block|{
 comment|/*  If there is a floating selection, anchor it  */
