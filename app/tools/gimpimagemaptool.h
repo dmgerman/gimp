@@ -113,7 +113,7 @@ name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
-comment|/* the dialog */
+comment|/* dialog */
 DECL|member|shell_desc
 specifier|const
 name|gchar
@@ -130,6 +130,12 @@ name|GtkWidget
 modifier|*
 name|main_vbox
 decl_stmt|;
+comment|/* settings file dialog */
+DECL|member|settings_dialog
+name|GtkWidget
+modifier|*
+name|settings_dialog
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -142,6 +148,12 @@ block|{
 DECL|member|parent_class
 name|GimpColorToolClass
 name|parent_class
+decl_stmt|;
+DECL|member|settings_name
+specifier|const
+name|gchar
+modifier|*
+name|settings_name
 decl_stmt|;
 comment|/* virtual functions */
 DECL|member|map
@@ -180,6 +192,36 @@ modifier|*
 name|image_map_tool
 parameter_list|)
 function_decl|;
+DECL|member|settings_load
+name|gboolean
+function_decl|(
+modifier|*
+name|settings_load
+function_decl|)
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|image_map_tool
+parameter_list|,
+name|gpointer
+name|file
+parameter_list|)
+function_decl|;
+DECL|member|settings_save
+name|gboolean
+function_decl|(
+modifier|*
+name|settings_save
+function_decl|)
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|image_map_tool
+parameter_list|,
+name|gpointer
+name|file
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -201,6 +243,25 @@ parameter_list|(
 name|GimpImageMapTool
 modifier|*
 name|image_map_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_map_tool_settings_dialog
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|image_map_tool
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|title
+parameter_list|,
+name|gboolean
+name|save
 parameter_list|)
 function_decl|;
 end_function_decl

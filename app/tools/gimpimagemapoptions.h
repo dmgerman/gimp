@@ -107,6 +107,11 @@ DECL|member|preview
 name|gboolean
 name|preview
 decl_stmt|;
+DECL|member|settings
+name|gchar
+modifier|*
+name|settings
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -204,6 +204,11 @@ name|GtkWidget
 modifier|*
 name|file_dialog
 decl_stmt|;
+DECL|member|filename
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 DECL|member|is_save
 name|gboolean
 name|is_save
