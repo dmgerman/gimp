@@ -12,19 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<locale.h>
 end_include
 
 begin_include
@@ -78,12 +66,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptext.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2957963d0103
+DECL|enum|__anon2b2770af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
