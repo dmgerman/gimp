@@ -244,6 +244,27 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_thumbnail_set_from_thumb
+parameter_list|(
+name|GimpThumbnail
+modifier|*
+name|thumbnail
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpThumbState
 name|gimp_thumbnail_peek_image
 parameter_list|(
