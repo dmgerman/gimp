@@ -4792,7 +4792,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-comment|/* Dialog Bahaviour */
+comment|/* Dialog Bahavior */
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -5938,14 +5938,14 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Zoom& Resize Behaviour  */
+comment|/*  Zoom& Resize Behavior  */
 name|vbox2
 operator|=
 name|prefs_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Zoom& Resize Behaviour"
+literal|"Zoom& Resize Behavior"
 argument_list|)
 argument_list|,
 name|GTK_CONTAINER
@@ -6182,7 +6182,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2767909b0108
+DECL|struct|__anon2bd2b1020108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -7746,7 +7746,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Size of Thumbnails Files:"
+literal|"Size of Thumbnail Files:"
 argument_list|)
 argument_list|,
 name|GTK_TABLE
@@ -7803,7 +7803,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2767909b0208
+DECL|struct|__anon2bd2b1020208
 block|{
 DECL|member|label
 specifier|const
@@ -7962,7 +7962,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2767909b0308
+DECL|struct|__anon2bd2b1020308
 block|{
 DECL|member|tree_label
 specifier|const

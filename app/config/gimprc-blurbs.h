@@ -107,7 +107,7 @@ define|#
 directive|define
 name|DEFAULT_DOT_FOR_DOT_BLURB
 define|\
-value|N_("When set to yes, this will ensure that each pixel of an image gets " \    "mapped to a pixel on the screen.")
+value|N_("When enabled, this will ensure that each pixel of an image gets " \    "mapped to a pixel on the screen.")
 end_define
 
 begin_define
@@ -125,7 +125,7 @@ define|#
 directive|define
 name|DEFAULT_IMAGE_WIDTH_BLURB
 define|\
-value|"Sets the default image width in the File/New dialog."
+value|"Sets the default image width in the \"File/New\" dialog."
 end_define
 
 begin_define
@@ -134,7 +134,7 @@ define|#
 directive|define
 name|DEFAULT_IMAGE_HEIGHT_BLURB
 define|\
-value|"Sets the default image height in the File/New dialog."
+value|"Sets the default image height in the \"File/New\" dialog."
 end_define
 
 begin_define
@@ -143,7 +143,7 @@ define|#
 directive|define
 name|DEFAULT_IMAGE_TYPE_BLURB
 define|\
-value|"Sets the default image type in the File/New dialog."
+value|"Sets the default image type in the \"File/New\" dialog."
 end_define
 
 begin_define
@@ -170,7 +170,7 @@ define|#
 directive|define
 name|DEFAULT_RESOLUTION_UNIT_BLURB
 define|\
-value|"Sets the units for the display of the default resolution in the " \ "File/New dialog."
+value|"Sets the units for the display of the default resolution in the " \ "\"File/New\" dialog."
 end_define
 
 begin_define
@@ -188,7 +188,7 @@ define|#
 directive|define
 name|DEFAULT_UNIT_BLURB
 define|\
-value|"Sets the default unit for new images and for the File/New dialog. " \ "This units will be used for coordinate display when not in dot-for-dot " \ "mode."
+value|"Sets the default unit for new images and for the \"File/New\" dialog. " \ "This units will be used for coordinate display when not in dot-for-dot " \ "mode."
 end_define
 
 begin_define
@@ -197,7 +197,7 @@ define|#
 directive|define
 name|DEFAULT_XRESOLUTION_BLURB
 define|\
-value|"Sets the default horizontal resolution for new images and for the " \ "File/New dialog. This value is always in dpi (dots per inch)."
+value|"Sets the default horizontal resolution for new images and for the " \ "\"File/New\" dialog. This value is always in dpi (dots per inch)."
 end_define
 
 begin_define
@@ -206,7 +206,7 @@ define|#
 directive|define
 name|DEFAULT_YRESOLUTION_BLURB
 define|\
-value|"Sets the default vertical resolution for new images and for the " \ "File/New dialog. This value is always in dpi (dots per inch)."
+value|"Sets the default vertical resolution for new images and for the " \ "\"File/New\" dialog. This value is always in dpi (dots per inch)."
 end_define
 
 begin_define
@@ -317,7 +317,7 @@ define|#
 directive|define
 name|INFO_WINDOW_PER_DISPLAY_BLURB
 define|\
-value|N_("When set to yes, the GIMP will use a different info window per image " \    "view.")
+value|N_("When enabled, the GIMP will use a different info window per image view.")
 end_define
 
 begin_define
@@ -326,7 +326,7 @@ define|#
 directive|define
 name|INITIAL_ZOOM_TO_FIT_BLURB
 define|\
-value|N_("When set to yes, this will ensure that the full image is visible after " \    "a file is opened, otherwise it will be displayed with a scale of 1:1.")
+value|N_("When enabled, this will ensure that the full image is visible after a " \    "file is opened, otherwise it will be displayed with a scale of 1:1.")
 end_define
 
 begin_define
@@ -407,7 +407,7 @@ define|#
 directive|define
 name|MONITOR_RES_FROM_GDK_BLURB
 define|\
-value|"Set to yes if the GIMP should use the monitor resolution from " \ "the windowing system."
+value|"When enabled, the GIMP will use the monitor resolution from the " \ "windowing system."
 end_define
 
 begin_define
@@ -470,7 +470,7 @@ define|#
 directive|define
 name|PERFECT_MOUSE_BLURB
 define|\
-value|N_("When set to yes, the X server is queried for the mouse's current " \    "position on each motion event, rather than relying on the position " \    "hint.  This means painting with large brushes should be more accurate, " \    "but it may be slower.  Perversely, on some X servers turning on this " \    "option results in faster painting.")
+value|N_("When enabled, the X server is queried for the mouse's current position " \    "on each motion event, rather than relying on the position hint.  This " \    "means painting with large brushes should be more accurate, but it may " \    "be slower.  Perversely, on some X servers enabling this option results " \    "in faster painting.")
 end_define
 
 begin_define
@@ -506,7 +506,7 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_RESIZE_BLURB
 define|\
-value|N_("When the physical image size changes, setting this option to yes " \    "enables the automatic resizing of windows.")
+value|N_("When enabled, the image window will automatically resize itself, " \    "whenever the physical image size changes.")
 end_define
 
 begin_define
@@ -515,7 +515,7 @@ define|#
 directive|define
 name|RESIZE_WINDOWS_ON_ZOOM_BLURB
 define|\
-value|N_("When zooming into and out of images, setting this option to yes " \    "enables the automatic resizing of windows.")
+value|N_("When enabled, the image window will automatically resize itself, " \    "when zooming into and out of images.")
 end_define
 
 begin_define
@@ -560,7 +560,7 @@ define|#
 directive|define
 name|SHOW_MENUBAR_BLURB
 define|\
-value|N_("Sets the default menubar visibility. This can also be toggled with the "\    "View->Toggle Menubar command.")
+value|N_("Sets the default menubar visibility. This can also be toggled with the "\    "\"View->Toggle\" Menubar command.")
 end_define
 
 begin_define
@@ -569,7 +569,7 @@ define|#
 directive|define
 name|SHOW_RULERS_BLURB
 define|\
-value|N_("Sets the default ruler visibility. This can also be toggled with the " \    "View->Toggle Rulers command.")
+value|N_("Sets the default ruler visibility. This can also be toggled with the " \    "\"View->Toggle Rulers\" command.")
 end_define
 
 begin_define
@@ -578,7 +578,7 @@ define|#
 directive|define
 name|SHOW_STATUSBAR_BLURB
 define|\
-value|N_("Set to yes to make the statusbar visible by default. This can also be " \    "toggled with the View->Toggle Statusbar command.")
+value|N_("When enabled, the statusbar is visible by default. This can also be " \    "toggled with the \"View->Toggle Statusbar\" command.")
 end_define
 
 begin_define
@@ -587,7 +587,7 @@ define|#
 directive|define
 name|SHOW_TIPS_BLURB
 define|\
-value|N_("To display a handy GIMP tip on startup, set to yes.")
+value|N_("Enable to display a handy GIMP tip on startup.")
 end_define
 
 begin_define
@@ -596,7 +596,7 @@ define|#
 directive|define
 name|SHOW_TOOL_TIPS_BLURB
 define|\
-value|N_("To display tooltips, set to yes.")
+value|N_("Enable to display tooltips.")
 end_define
 
 begin_define
@@ -623,7 +623,7 @@ define|#
 directive|define
 name|TEAROFF_MENUS_BLURB
 define|\
-value|N_("When set to yes, enables tear off menus.")
+value|N_("When enabled, menus can be torn off.")
 end_define
 
 begin_define
@@ -704,7 +704,7 @@ define|#
 directive|define
 name|TRUST_DIRTY_FLAG_BLURB
 define|\
-value|N_("When set to yes, the GIMP will not save if the image is unchanged since " \    "opening it.")
+value|N_("When enabled, the GIMP will not save if the image is unchanged since " \    "opening it.")
 end_define
 
 begin_define
@@ -731,7 +731,7 @@ define|#
 directive|define
 name|USE_HELP_BLURB
 define|\
-value|N_("When set to no the F1 help binding will be disabled.")
+value|N_("When enabled, pressing F1 will open the help browser.")
 end_define
 
 begin_endif
