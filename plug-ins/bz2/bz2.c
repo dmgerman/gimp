@@ -20,6 +20,10 @@ comment|/* GZ plugin adapted to BZ2 by Adam. I've left all other */
 end_comment
 
 begin_comment
+comment|/* Error checking added by srn. */
+end_comment
+
+begin_comment
 comment|/* credits intact since it was only a super-wussy mod. */
 end_comment
 
@@ -947,6 +951,10 @@ operator|==
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+operator|(
 name|f
 operator|=
 name|fopen
@@ -955,7 +963,25 @@ name|filename
 argument_list|,
 literal|"w"
 argument_list|)
+operator|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"bz2: fopen failed: %s\n"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
 expr_stmt|;
+name|_exit
+argument_list|(
+literal|127
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* make stdout for this process be the output file */
 if|if
 condition|(
@@ -1189,6 +1215,10 @@ name|FILE
 modifier|*
 name|f
 decl_stmt|;
+if|if
+condition|(
+operator|!
+operator|(
 name|f
 operator|=
 name|fopen
@@ -1197,7 +1227,25 @@ name|tmpname
 argument_list|,
 literal|"w"
 argument_list|)
+operator|)
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"bz2: fopen failed: %s\n"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
+argument_list|)
+argument_list|)
 expr_stmt|;
+name|_exit
+argument_list|(
+literal|127
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* make stdout for this child process be the temp file */
 if|if
 condition|(
