@@ -51,11 +51,12 @@ directive|include
 file|"core/gimppaintinfo.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
+begin_define
+DECL|macro|LIBART_STROKE
+define|#
+directive|define
 name|LIBART_STROKE
-end_undef
+end_define
 
 begin_ifdef
 ifdef|#
@@ -123,7 +124,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54c18b0103
+DECL|enum|__anon2894afa40103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
