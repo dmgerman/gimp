@@ -709,9 +709,7 @@ name|container
 argument_list|,
 name|context
 argument_list|,
-name|GIMP_PREVIEW_SIZE_SMALL
-operator|*
-literal|2
+name|GIMP_PREVIEW_SIZE_LARGE
 argument_list|,
 literal|1
 argument_list|,
@@ -726,6 +724,16 @@ argument_list|(
 literal|"Open the gradient selection dialog"
 argument_list|)
 argument_list|)
+expr_stmt|;
+comment|/*  use smaller previews for the popup  */
+name|GIMP_VIEWABLE_BUTTON
+argument_list|(
+name|button
+argument_list|)
+operator|->
+name|preview_size
+operator|=
+name|GIMP_PREVIEW_SIZE_SMALL
 expr_stmt|;
 name|gimp_table_attach_aligned
 argument_list|(
