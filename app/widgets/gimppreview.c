@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dafd3b0103
+DECL|enum|__anon29647f850103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -2323,11 +2323,6 @@ operator|&
 name|preview
 operator|->
 name|viewable
-argument_list|)
-expr_stmt|;
-name|gimp_preview_update
-argument_list|(
-name|preview
 argument_list|)
 expr_stmt|;
 block|}

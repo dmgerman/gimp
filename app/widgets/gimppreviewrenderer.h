@@ -157,6 +157,10 @@ DECL|member|rowstride
 name|gint
 name|rowstride
 decl_stmt|;
+DECL|member|bytes
+name|gint
+name|bytes
+decl_stmt|;
 DECL|member|no_preview_pixbuf
 name|GdkPixbuf
 modifier|*
@@ -449,6 +453,9 @@ name|dest_height
 parameter_list|,
 name|gint
 name|dest_rowstride
+parameter_list|,
+name|gint
+name|dest_bytes
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -110,17 +110,9 @@ directive|include
 file|"gimppreviewrenderer-utils.h"
 end_include
 
-begin_define
-DECL|macro|PREVIEW_BYTES
-define|#
-directive|define
-name|PREVIEW_BYTES
-value|3
-end_define
-
 begin_enum
 enum|enum
-DECL|enum|__anon296a2b450103
+DECL|enum|__anon2b9d62930103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -478,6 +470,12 @@ operator|->
 name|rowstride
 operator|=
 literal|0
+expr_stmt|;
+name|renderer
+operator|->
+name|bytes
+operator|=
+literal|3
 expr_stmt|;
 name|renderer
 operator|->
@@ -1479,7 +1477,9 @@ name|renderer
 operator|->
 name|width
 operator|*
-name|PREVIEW_BYTES
+name|renderer
+operator|->
+name|bytes
 operator|+
 literal|3
 operator|)
@@ -2241,15 +2241,6 @@ operator|->
 name|buffer
 condition|)
 block|{
-if|if
-condition|(
-name|renderer
-operator|->
-name|border_width
-operator|>
-literal|0
-condition|)
-block|{
 name|buf_rect
 operator|.
 name|x
@@ -2278,38 +2269,18 @@ name|buf_rect
 operator|.
 name|width
 operator|=
-name|border_rect
-operator|.
+name|renderer
+operator|->
 name|width
-operator|-
-literal|2
-operator|*
-name|renderer
-operator|->
-name|border_width
 expr_stmt|;
 name|buf_rect
 operator|.
 name|height
 operator|=
-name|border_rect
-operator|.
-name|height
-operator|-
-literal|2
-operator|*
 name|renderer
 operator|->
-name|border_width
+name|height
 expr_stmt|;
-block|}
-else|else
-block|{
-name|buf_rect
-operator|=
-name|border_rect
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|gdk_rectangle_intersect
@@ -2359,7 +2330,9 @@ operator|.
 name|x
 operator|)
 operator|*
-name|PREVIEW_BYTES
+name|renderer
+operator|->
+name|bytes
 operator|)
 expr_stmt|;
 name|gdk_draw_rgb_image_dithalign
@@ -3155,7 +3128,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_preview_render_to_buffer (TempBuf * temp_buf,gint channel,GimpPreviewBG inside_bg,GimpPreviewBG outside_bg,guchar * dest_buffer,gint dest_width,gint dest_height,gint dest_rowstride)
+DECL|function|gimp_preview_render_to_buffer (TempBuf * temp_buf,gint channel,GimpPreviewBG inside_bg,GimpPreviewBG outside_bg,guchar * dest_buffer,gint dest_width,gint dest_height,gint dest_rowstride,gint dest_bytes)
 name|gimp_preview_render_to_buffer
 parameter_list|(
 name|TempBuf
@@ -3183,6 +3156,9 @@ name|dest_height
 parameter_list|,
 name|gint
 name|dest_rowstride
+parameter_list|,
+name|gint
+name|dest_bytes
 parameter_list|)
 block|{
 name|guchar
@@ -3565,7 +3541,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|PREVIEW_BYTES
+name|dest_bytes
 condition|;
 name|b
 operator|++
@@ -3574,7 +3550,7 @@ name|render_temp_buf
 index|[
 name|j
 operator|*
-name|PREVIEW_BYTES
+name|dest_bytes
 operator|+
 name|b
 index|]
@@ -3914,7 +3890,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|PREVIEW_BYTES
+name|dest_bytes
 condition|;
 name|b
 operator|++
@@ -3923,7 +3899,7 @@ name|render_temp_buf
 index|[
 name|j
 operator|*
-name|PREVIEW_BYTES
+name|dest_bytes
 operator|+
 name|b
 index|]
@@ -3965,7 +3941,7 @@ literal|0
 init|;
 name|b
 operator|<
-name|PREVIEW_BYTES
+name|dest_bytes
 condition|;
 name|b
 operator|++
@@ -3974,7 +3950,7 @@ name|render_temp_buf
 index|[
 name|j
 operator|*
-name|PREVIEW_BYTES
+name|dest_bytes
 operator|+
 name|b
 index|]
@@ -4001,7 +3977,7 @@ name|render_temp_buf
 argument_list|,
 name|dest_width
 operator|*
-name|PREVIEW_BYTES
+name|dest_bytes
 argument_list|)
 expr_stmt|;
 block|}
@@ -4080,6 +4056,10 @@ argument_list|,
 name|renderer
 operator|->
 name|rowstride
+argument_list|,
+name|renderer
+operator|->
+name|bytes
 argument_list|)
 expr_stmt|;
 name|renderer
