@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtkmain.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -402,7 +408,7 @@ modifier|*
 name|gdisp
 parameter_list|)
 block|{
-comment|/* FIXME: Still not perfect - have to hide and show the window to     * get it to work.  Adding a queue_resize to the shell doesn't     * seem to help. Anyone have any good ideas here?     *    * Also: if an image width is 1 pixel shy, it will eat up all width    * of the screen.  This can be non-good for some window managers; should    * we attempt to keep that from happening?    *    * I'm pretty sure this assumes that the current size is< display size    * Is this a valid assumption?     */
+comment|/*     * I'm pretty sure this assumes that the current size is< display size    * Is this a valid assumption?     */
 name|gint
 name|x
 decl_stmt|,
@@ -631,13 +637,13 @@ operator|.
 name|width
 expr_stmt|;
 block|}
-comment|/* FIXME: Have to hide/reshow here */
-name|gtk_widget_hide
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
+while|while
+condition|(
+name|gtk_events_pending
+argument_list|()
+condition|)
+name|gtk_main_iteration
+argument_list|()
 expr_stmt|;
 name|gtk_drawing_area_size
 argument_list|(
@@ -651,13 +657,6 @@ argument_list|,
 name|width
 argument_list|,
 name|height
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|gdisp
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 undef|#
@@ -791,13 +790,13 @@ operator|.
 name|width
 expr_stmt|;
 block|}
-comment|/* I don't know why, but if I don't hide the window, it doesn't work */
-name|gtk_widget_hide
-argument_list|(
-name|gdisp
-operator|->
-name|shell
-argument_list|)
+while|while
+condition|(
+name|gtk_events_pending
+argument_list|()
+condition|)
+name|gtk_main_iteration
+argument_list|()
 expr_stmt|;
 name|gtk_drawing_area_size
 argument_list|(
@@ -811,13 +810,6 @@ argument_list|,
 name|width
 argument_list|,
 name|height
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|gdisp
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -1071,21 +1063,13 @@ name|disp_height
 operator|=
 name|height
 expr_stmt|;
-if|if
+while|while
 condition|(
-name|GTK_WIDGET_VISIBLE
-argument_list|(
-name|gdisp
-operator|->
-name|canvas
-argument_list|)
+name|gtk_events_pending
+argument_list|()
 condition|)
-name|gtk_widget_hide
-argument_list|(
-name|gdisp
-operator|->
-name|canvas
-argument_list|)
+name|gtk_main_iteration
+argument_list|()
 expr_stmt|;
 name|gtk_widget_set_usize
 argument_list|(
@@ -1100,13 +1084,6 @@ argument_list|,
 name|gdisp
 operator|->
 name|disp_height
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|gdisp
-operator|->
-name|canvas
 argument_list|)
 expr_stmt|;
 block|}
