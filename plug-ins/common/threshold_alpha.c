@@ -171,7 +171,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a30586a0108
+DECL|struct|__anon2b40f0870108
 block|{
 DECL|member|threshold
 name|gint
@@ -396,7 +396,7 @@ case|:
 comment|/* Since a channel might be selected, we must check wheter RGB or not. */
 if|if
 condition|(
-name|gimp_layer_get_preserve_transparency
+name|gimp_layer_get_preserve_trans
 argument_list|(
 name|drawable_id
 argument_list|)

@@ -19,16 +19,6 @@ end_define
 begin_function_decl
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-DECL|macro|gimp_layer_get_preserve_transparency
-define|#
-directive|define
-name|gimp_layer_get_preserve_transparency
-value|gimp_layer_get_preserve_trans
-DECL|macro|gimp_layer_set_preserve_transparency
-define|#
-directive|define
-name|gimp_layer_set_preserve_transparency
-value|gimp_layer_set_preserve_trans
 name|gint32
 name|gimp_layer_new
 parameter_list|(

@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2904bf000108
+DECL|struct|__anon2bc9a7410108
 block|{
 DECL|member|angle
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2904bf000208
+DECL|struct|__anon2bc9a7410208
 block|{
 DECL|member|ID
 name|gint32
@@ -906,7 +906,7 @@ name|bpp
 expr_stmt|;
 if|if
 condition|(
-name|gimp_layer_get_preserve_transparency
+name|gimp_layer_get_preserve_trans
 argument_list|(
 name|drawable
 operator|->
@@ -918,7 +918,7 @@ name|was_preserve_transparency
 operator|=
 name|TRUE
 expr_stmt|;
-name|gimp_layer_set_preserve_transparency
+name|gimp_layer_set_preserve_trans
 argument_list|(
 name|drawable
 operator|->
@@ -1582,7 +1582,7 @@ if|if
 condition|(
 name|was_preserve_transparency
 condition|)
-name|gimp_layer_set_preserve_transparency
+name|gimp_layer_set_preserve_trans
 argument_list|(
 name|drawable
 operator|->

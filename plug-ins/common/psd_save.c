@@ -4955,7 +4955,7 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|gimp_layer_get_preserve_transparency
+name|gimp_layer_get_preserve_trans
 argument_list|(
 name|PSDImageData
 operator|.
