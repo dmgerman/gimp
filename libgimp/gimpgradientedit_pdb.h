@@ -271,7 +271,7 @@ parameter_list|,
 name|gint
 name|end_segment
 parameter_list|,
-name|gint
+name|GimpGradientSegmentType
 name|blending_function
 parameter_list|)
 function_decl|;
@@ -311,7 +311,7 @@ parameter_list|,
 name|gint
 name|end_segment
 parameter_list|,
-name|gint
+name|GimpGradientSegmentColor
 name|coloring_type
 parameter_list|)
 function_decl|;
