@@ -18,6 +18,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<unistd.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -57,7 +69,7 @@ return|return;
 block|}
 name|printf
 argument_list|(
-literal|"(pid %d), parasite: %X\n"
+literal|"(pid %d), parasite: %p\n"
 argument_list|,
 name|getpid
 argument_list|()
@@ -114,7 +126,7 @@ literal|0
 condition|)
 name|printf
 argument_list|(
-literal|"\tdata: %X\n"
+literal|"\tdata: %p\n"
 argument_list|,
 name|p
 operator|->

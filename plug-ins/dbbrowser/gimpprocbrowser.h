@@ -64,7 +64,7 @@ file|"dbbrowser.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon29a161000108
+DECL|struct|__anon295304650108
 typedef|typedef
 struct|struct
 block|{
@@ -85,7 +85,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon29a161000208
+DECL|struct|__anon295304650208
 typedef|typedef
 struct|struct
 block|{
@@ -123,6 +123,11 @@ DECL|member|clist
 name|GtkWidget
 modifier|*
 name|clist
+decl_stmt|;
+DECL|member|scrolled_win
+name|GtkWidget
+modifier|*
+name|scrolled_win
 decl_stmt|;
 comment|/* the currently selected procedure */
 DECL|member|selected_proc_name

@@ -28,8 +28,11 @@ end_typedef
 begin_endif
 endif|#
 directive|endif
-endif|_PARASITEF_H_
 end_endif
+
+begin_comment
+comment|/* _PARASITEF_H_ */
+end_comment
 
 end_unit
 

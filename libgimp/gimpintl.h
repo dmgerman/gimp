@@ -12,14 +12,6 @@ directive|define
 name|__GIMPINTL_H__
 end_define
 
-begin_define
-DECL|macro|LOCALEDIR
-define|#
-directive|define
-name|LOCALEDIR
-value|"/usr/local/share/locale"
-end_define
-
 begin_comment
 comment|/* Copied from gnome-i18n.h by Tom Tromey<tromey@creche.cygnus.com> */
 end_comment

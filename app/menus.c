@@ -2334,7 +2334,7 @@ operator|||
 operator|!
 name|widget
 condition|)
-name|printf
+name|g_message
 argument_list|(
 name|_
 argument_list|(
@@ -2431,11 +2431,11 @@ operator|||
 operator|!
 name|widget
 condition|)
-name|printf
+name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to set state for menu which doesn't exist:\n%s"
+literal|"Unable to set state for menu which doesn't exist:\n%s\n"
 argument_list|)
 argument_list|,
 name|path

@@ -56,8 +56,11 @@ end_struct
 begin_endif
 endif|#
 directive|endif
-endif|_PARASITEP_H_
 end_endif
+
+begin_comment
+comment|/* _PARASITEP_H_ */
+end_comment
 
 end_unit
 

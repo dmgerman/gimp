@@ -2156,7 +2156,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"parsing %s\n"
+literal|"parsing \"%s\"\n"
 argument_list|)
 argument_list|,
 name|filename
