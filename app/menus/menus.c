@@ -1648,7 +1648,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_PASTE
+name|GIMP_STOCK_PASTE_INTO
 block|}
 block|,
 name|NULL
@@ -1673,7 +1673,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GTK_STOCK_PASTE
+name|GIMP_STOCK_PASTE_AS_NEW
 block|}
 block|,
 name|NULL
