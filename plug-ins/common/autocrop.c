@@ -729,6 +729,9 @@ condition|(
 name|y
 operator|==
 name|height
+operator|&&
+operator|!
+name|abort
 condition|)
 block|{
 name|g_free

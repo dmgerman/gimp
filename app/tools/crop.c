@@ -614,7 +614,7 @@ comment|/* Crop area-select functions */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28a022190103
+DECL|enum|__anon2c2dff6f0103
 typedef|typedef
 enum|enum
 block|{
@@ -7429,6 +7429,9 @@ condition|(
 name|y
 operator|==
 name|height
+operator|&&
+operator|!
+name|abort
 condition|)
 block|{
 name|g_free
