@@ -5237,6 +5237,20 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_WIN32
+comment|/* This seems to help a lot on Windoze. */
+while|while
+condition|(
+name|gtk_events_pending
+argument_list|()
+condition|)
+name|gtk_main_iteration
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|return_val
 return|;
