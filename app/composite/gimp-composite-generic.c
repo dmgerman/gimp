@@ -1378,6 +1378,13 @@ name|g2
 decl_stmt|,
 name|b2
 decl_stmt|;
+if|if
+condition|(
+name|bytes1
+operator|>
+literal|2
+condition|)
+block|{
 comment|/*  assumes inputs are only 4 byte RGBA pixels  */
 while|while
 condition|(
@@ -1539,6 +1546,18 @@ expr_stmt|;
 name|dest
 operator|+=
 name|bytes2
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|ctx
+operator|->
+name|D
+operator|=
+name|ctx
+operator|->
+name|B
 expr_stmt|;
 block|}
 block|}
@@ -1643,6 +1662,13 @@ name|g2
 decl_stmt|,
 name|b2
 decl_stmt|;
+if|if
+condition|(
+name|bytes1
+operator|>
+literal|2
+condition|)
+block|{
 comment|/*  assumes inputs are only 4 byte RGBA pixels  */
 while|while
 condition|(
@@ -1804,6 +1830,18 @@ expr_stmt|;
 name|dest
 operator|+=
 name|bytes2
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|ctx
+operator|->
+name|D
+operator|=
+name|ctx
+operator|->
+name|B
 expr_stmt|;
 block|}
 block|}
@@ -1908,6 +1946,14 @@ name|g2
 decl_stmt|,
 name|b2
 decl_stmt|;
+if|if
+condition|(
+name|bytes1
+operator|>
+literal|2
+condition|)
+block|{
+comment|/*  assumes inputs are only 4 byte RGBA pixels  */
 comment|/*  assumes inputs are only 4 byte RGBA pixels  */
 while|while
 condition|(
@@ -2072,6 +2118,18 @@ name|bytes2
 expr_stmt|;
 block|}
 block|}
+else|else
+block|{
+name|ctx
+operator|->
+name|D
+operator|=
+name|ctx
+operator|->
+name|B
+expr_stmt|;
+block|}
+block|}
 end_function
 
 begin_comment
@@ -2173,6 +2231,13 @@ name|g2
 decl_stmt|,
 name|b2
 decl_stmt|;
+if|if
+condition|(
+name|bytes1
+operator|>
+literal|2
+condition|)
+block|{
 comment|/*  assumes inputs are only 4 byte RGBA pixels  */
 while|while
 condition|(
@@ -2339,6 +2404,18 @@ expr_stmt|;
 name|dest
 operator|+=
 name|bytes2
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|ctx
+operator|->
+name|D
+operator|=
+name|ctx
+operator|->
+name|B
 expr_stmt|;
 block|}
 block|}
