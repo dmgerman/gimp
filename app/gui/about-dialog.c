@@ -127,7 +127,7 @@ literal|"Translation by"
 argument_list|)
 block|,
 comment|/* Translators: insert your names here, separated by newline */
-comment|/* we'd prefer just the names, please no email adresses.     */
+comment|/* we'd prefer just the names, please no email addresses.    */
 name|N_
 argument_list|(
 literal|"translator-credits"
@@ -168,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c93cfc30108
+DECL|struct|__anon2b66ff7a0108
 block|{
 DECL|member|about_dialog
 name|GtkWidget
