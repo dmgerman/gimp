@@ -1014,7 +1014,7 @@ name|context
 operator|->
 name|contrast
 operator|=
-name|gtk_spin_button_get_value_as_float
+name|gtk_spin_button_get_value
 argument_list|(
 name|GTK_SPIN_BUTTON
 argument_list|(
@@ -1382,7 +1382,7 @@ argument_list|,
 literal|3
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_usize
+name|gtk_widget_set_size_request
 argument_list|(
 name|context
 operator|->
@@ -1390,7 +1390,8 @@ name|spinner
 argument_list|,
 literal|100
 argument_list|,
-literal|0
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
