@@ -256,7 +256,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf265d10103
+DECL|enum|__anon2949431a0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4005,6 +4005,9 @@ operator|->
 name|guides
 condition|)
 block|{
+name|gboolean
+name|snapped
+decl_stmt|;
 name|gint
 name|tx
 decl_stmt|,
@@ -4021,6 +4024,8 @@ operator|>
 literal|0
 condition|)
 block|{
+name|snapped
+operator|=
 name|gimp_image_snap_rectangle
 argument_list|(
 name|shell
@@ -4067,6 +4072,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|snapped
+operator|=
 name|gimp_image_snap_point
 argument_list|(
 name|shell
@@ -4095,6 +4102,11 @@ name|ty
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|snapped
+condition|)
+block|{
 name|snapped_coords
 operator|->
 name|x
@@ -4111,6 +4123,7 @@ name|ty
 operator|-
 name|snap_offset_y
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
