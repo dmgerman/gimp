@@ -3095,7 +3095,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Some data has been changed.\n"
-literal|"Do you really want to continue?"
+literal|"Do you really want to discard your changes?"
 argument_list|)
 argument_list|)
 expr_stmt|;
