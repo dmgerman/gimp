@@ -66,7 +66,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=ADD_>*/
-DECL|enum|__anon290fbdf40103
+DECL|enum|__anon2a2cb52a0103
 block|{
 DECL|enumerator|ADD_WHITE_MASK
 name|ADD_WHITE_MASK
@@ -97,7 +97,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290fbdf40203
+DECL|enum|__anon2a2cb52a0203
 block|{
 DECL|enumerator|APPLY
 name|APPLY
@@ -113,7 +113,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290fbdf40303
+DECL|enum|__anon2a2cb52a0303
 block|{
 DECL|enumerator|HORIZONTAL
 name|HORIZONTAL
@@ -133,7 +133,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon290fbdf40403
+DECL|enum|__anon2a2cb52a0403
 block|{
 DECL|enumerator|ORIENTATION_UNKNOWN
 name|ORIENTATION_UNKNOWN
@@ -157,7 +157,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< chop=CHANNEL_OP_>*/
-DECL|enum|__anon290fbdf40503
+DECL|enum|__anon2a2cb52a0503
 block|{
 DECL|enumerator|CHANNEL_OP_ADD
 name|CHANNEL_OP_ADD
@@ -179,7 +179,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290fbdf40603
+DECL|enum|__anon2a2cb52a0603
 block|{
 DECL|enumerator|FOREGROUND_FILL
 name|FOREGROUND_FILL
@@ -209,7 +209,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290fbdf40703
+DECL|enum|__anon2a2cb52a0703
 block|{
 DECL|enumerator|OFFSET_BACKGROUND
 name|OFFSET_BACKGROUND
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290fbdf40803
+DECL|enum|__anon2a2cb52a0803
 block|{
 DECL|enumerator|EXPAND_AS_NECESSARY
 name|EXPAND_AS_NECESSARY
@@ -247,7 +247,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290fbdf40903
+DECL|enum|__anon2a2cb52a0903
 block|{
 DECL|enumerator|MAKE_PALETTE
 name|MAKE_PALETTE
@@ -282,7 +282,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290fbdf40a03
+DECL|enum|__anon2a2cb52a0a03
 block|{
 DECL|enumerator|NO_DITHER
 name|NO_DITHER
@@ -318,7 +318,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290fbdf40b03
+DECL|enum|__anon2a2cb52a0b03
 block|{
 DECL|enumerator|FG_BUCKET_FILL
 name|FG_BUCKET_FILL
@@ -339,7 +339,7 @@ typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
 comment|/*< skip>*/
-DECL|enum|__anon290fbdf40c03
+DECL|enum|__anon2a2cb52a0c03
 block|{
 comment|/* NOTE: If you change this list, please update the textual mapping at    *  the bottom of undo.c as well.    */
 comment|/* Type NO_UNDO_GROUP (0) is special - in the gimpimage structure it    * means there is no undo group currently being added to.    */
@@ -373,6 +373,9 @@ name|IMAGE_QMASK_UNDO_GROUP
 block|,
 DECL|enumerator|IMAGE_GUIDE_UNDO_GROUP
 name|IMAGE_GUIDE_UNDO_GROUP
+block|,
+DECL|enumerator|LAYER_PROPERTIES_UNDO_GROUP
+name|LAYER_PROPERTIES_UNDO_GROUP
 block|,
 DECL|enumerator|LAYER_SCALE_UNDO_GROUP
 name|LAYER_SCALE_UNDO_GROUP

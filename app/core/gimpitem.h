@@ -112,7 +112,7 @@ DECL|member|tattoo
 name|guint32
 name|tattoo
 decl_stmt|;
-comment|/*  provides a perminant ID  */
+comment|/*  provides a permanent ID  */
 DECL|member|gimage
 name|GimpImage
 modifier|*
@@ -281,7 +281,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|parasite
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -228,7 +228,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9315e50103
+DECL|enum|__anon2893425f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -13036,7 +13036,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Vectors cannot be raised higher."
+literal|"Path cannot be raised higher."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -13130,7 +13130,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Vectors cannot be lowered more."
+literal|"Path cannot be lowered more."
 argument_list|)
 argument_list|)
 expr_stmt|;

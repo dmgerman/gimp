@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c058f800103
+DECL|enum|__anon2ac9fe9e0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -1238,12 +1238,14 @@ name|gimage
 operator|==
 name|NULL
 condition|)
+block|{
 name|item
 operator|->
 name|tattoo
 operator|=
 literal|0
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -1259,6 +1261,7 @@ name|gimage
 operator|!=
 name|gimage
 condition|)
+block|{
 name|item
 operator|->
 name|tattoo
@@ -1268,6 +1271,7 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
+block|}
 name|item
 operator|->
 name|gimage
@@ -1299,7 +1303,7 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we arn't undoable */
+comment|/*  only set the dirty bit manually if we can be saved and the new    *  parasite differs from the current one and we arn't undoable    */
 if|if
 condition|(
 name|gimp_parasite_is_undoable
@@ -1456,7 +1460,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_parasite_detach (GimpItem * item,const gchar * parasite)
+DECL|function|gimp_item_parasite_detach (GimpItem * item,const gchar * name)
 name|gimp_item_parasite_detach
 parameter_list|(
 name|GimpItem
@@ -1466,12 +1470,12 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|parasite
+name|name
 parameter_list|)
 block|{
 name|GimpParasite
 modifier|*
-name|p
+name|parasite
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1481,11 +1485,7 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-operator|(
-name|p
+name|parasite
 operator|=
 name|gimp_parasite_list_find
 argument_list|(
@@ -1493,18 +1493,23 @@ name|item
 operator|->
 name|parasites
 argument_list|,
-name|parasite
+name|name
 argument_list|)
-operator|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|parasite
 condition|)
 return|return;
 if|if
 condition|(
 name|gimp_parasite_is_undoable
 argument_list|(
-name|p
+name|parasite
 argument_list|)
 condition|)
+block|{
 name|undo_push_item_parasite_remove
 argument_list|(
 name|item
@@ -1515,18 +1520,20 @@ name|item
 argument_list|,
 name|gimp_parasite_name
 argument_list|(
-name|p
+name|parasite
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
 name|gimp_parasite_is_persistent
 argument_list|(
-name|p
+name|parasite
 argument_list|)
 condition|)
+block|{
 name|undo_push_cantundo
 argument_list|(
 name|item
@@ -1539,13 +1546,14 @@ literal|"parasite detached from item"
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_parasite_list_remove
 argument_list|(
 name|item
 operator|->
 name|parasites
 argument_list|,
-name|parasite
+name|name
 argument_list|)
 expr_stmt|;
 block|}
@@ -1594,16 +1602,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_parasite_list_foreach_func (gchar * key,GimpParasite * p,gchar *** cur)
+DECL|function|gimp_item_parasite_list_foreach_func (gchar * name,GimpParasite * parasite,gchar *** cur)
 name|gimp_item_parasite_list_foreach_func
 parameter_list|(
 name|gchar
 modifier|*
-name|key
+name|name
 parameter_list|,
 name|GimpParasite
 modifier|*
-name|p
+name|parasite
 parameter_list|,
 name|gchar
 modifier|*
@@ -1625,7 +1633,7 @@ operator|*
 operator|)
 name|g_strdup
 argument_list|(
-name|key
+name|name
 argument_list|)
 expr_stmt|;
 block|}

@@ -1468,7 +1468,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Vectors name:"
+literal|"Path name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1574,7 +1574,7 @@ name|vectors_name
 else|:
 name|_
 argument_list|(
-literal|"New Vectors"
+literal|"New Path"
 argument_list|)
 operator|)
 argument_list|)
@@ -1704,14 +1704,13 @@ operator|->
 name|gimage
 condition|)
 block|{
-comment|/*  Set the new vectors name  */
-name|gimp_object_set_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|,
+specifier|const
+name|gchar
+modifier|*
+name|new_name
+decl_stmt|;
+name|new_name
+operator|=
 name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
@@ -1721,8 +1720,46 @@ operator|->
 name|name_entry
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|new_name
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|undo_push_item_rename
+argument_list|(
+name|options
+operator|->
+name|gimage
+argument_list|,
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_object_set_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|,
+name|new_name
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|gtk_widget_destroy
 argument_list|(
@@ -2007,7 +2044,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Vectors name:"
+literal|"Path name:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2169,7 +2206,7 @@ modifier|*
 name|vectors
 decl_stmt|;
 name|gboolean
-name|fs
+name|mask_empty
 decl_stmt|;
 name|GList
 modifier|*
@@ -2201,16 +2238,12 @@ argument_list|(
 name|gimage
 argument_list|)
 expr_stmt|;
-name|fs
+name|mask_empty
 operator|=
-operator|(
-name|gimp_image_floating_sel
+name|gimp_image_mask_is_empty
 argument_list|(
 name|gimage
 argument_list|)
-operator|!=
-name|NULL
-operator|)
 expr_stmt|;
 for|for
 control|(
@@ -2278,19 +2311,15 @@ define|\
 value|gimp_item_factory_set_sensitive (factory, menu, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"/New Vectors..."
+literal|"/New Path..."
 argument_list|,
-operator|!
-name|fs
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Raise Vectors"
+literal|"/Raise Path"
 argument_list|,
-operator|!
-name|fs
-operator|&&
 name|vectors
 operator|&&
 name|prev
@@ -2298,11 +2327,8 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Lower Vectors"
+literal|"/Lower Path"
 argument_list|,
-operator|!
-name|fs
-operator|&&
 name|vectors
 operator|&&
 name|next
@@ -2310,21 +2336,15 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Duplicate Vectors"
+literal|"/Duplicate Path"
 argument_list|,
-operator|!
-name|fs
-operator|&&
 name|vectors
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Vectors to Selection"
+literal|"/Path to Selection"
 argument_list|,
-operator|!
-name|fs
-operator|&&
 name|vectors
 argument_list|)
 expr_stmt|;
@@ -2332,9 +2352,6 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Add to Selection"
 argument_list|,
-operator|!
-name|fs
-operator|&&
 name|vectors
 argument_list|)
 expr_stmt|;
@@ -2342,9 +2359,6 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Subtract from Selection"
 argument_list|,
-operator|!
-name|fs
-operator|&&
 name|vectors
 argument_list|)
 expr_stmt|;
@@ -2352,35 +2366,41 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"/Intersect with Selection"
 argument_list|,
-operator|!
-name|fs
-operator|&&
 name|vectors
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Delete Vectors"
+literal|"/Selection to Path"
 argument_list|,
 operator|!
-name|fs
-operator|&&
+name|mask_empty
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Stroke Path"
+argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"/Edit Vectors Attributes..."
+literal|"/Delete Path"
 argument_list|,
-operator|!
-name|fs
-operator|&&
+name|vectors
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"/Edit Path Attributes..."
+argument_list|,
 name|vectors
 argument_list|)
 expr_stmt|;
 undef|#
 directive|undef
-name|SET_OPS_SENSITIVE
+name|SET_SENSITIVE
 block|}
 end_function
 

@@ -23,7 +23,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba61c030103
+DECL|enum|__anon2c0092380103
 block|{
 DECL|enumerator|UNDO_PUSHED
 name|UNDO_PUSHED
@@ -357,6 +357,25 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  item undos  */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|undo_push_item_rename
+parameter_list|(
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  layer undos  */
 end_comment
 
@@ -453,21 +472,6 @@ parameter_list|,
 name|GimpLayerMask
 modifier|*
 name|mask
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|undo_push_layer_rename
-parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
-name|GimpLayer
-modifier|*
-name|layer
 parameter_list|)
 function_decl|;
 end_function_decl

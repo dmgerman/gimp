@@ -5024,7 +5024,7 @@ block|{
 block|{
 name|N_
 argument_list|(
-literal|"/New Path"
+literal|"/New Path..."
 argument_list|)
 block|,
 literal|"<control>N"
@@ -8881,7 +8881,7 @@ literal|"<Vectors>"
 argument_list|,
 literal|"vectors"
 argument_list|,
-name|NULL
+name|vectors_menu_update
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
