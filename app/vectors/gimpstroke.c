@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpanchor.h"
 end_include
 
@@ -35,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4c1150103
+DECL|enum|__anon2af6b2020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1557,24 +1563,17 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
-name|g_list_length
+name|gimp_g_list_get_memsize
 argument_list|(
 name|stroke
 operator|->
 name|anchors
-argument_list|)
-operator|*
-operator|(
-sizeof|sizeof
-argument_list|(
-name|GList
-argument_list|)
-operator|+
+argument_list|,
 sizeof|sizeof
 argument_list|(
 name|GimpAnchor
 argument_list|)
-operator|)
+argument_list|)
 expr_stmt|;
 return|return
 name|memsize

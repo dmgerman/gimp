@@ -275,17 +275,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gint64
-name|gimp_g_object_get_memsize
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

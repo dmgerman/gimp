@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c085a470103
+DECL|enum|__anon2c762a860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -78,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c085a470203
+DECL|enum|__anon2c762a860203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW

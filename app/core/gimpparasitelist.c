@@ -88,6 +88,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -99,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9a79780103
+DECL|enum|__anon292d09cd0103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -822,24 +828,14 @@ operator|->
 name|table
 condition|)
 block|{
-comment|/* FIXME */
 name|memsize
 operator|+=
-operator|(
-name|g_hash_table_size
+name|gimp_g_hash_table_get_memsize
 argument_list|(
 name|list
 operator|->
 name|table
 argument_list|)
-operator|*
-literal|3
-operator|*
-sizeof|sizeof
-argument_list|(
-name|gpointer
-argument_list|)
-operator|)
 expr_stmt|;
 name|g_hash_table_foreach
 argument_list|(
