@@ -764,7 +764,7 @@ literal|"<Templates>"
 argument_list|,
 name|_
 argument_list|(
-literal|"Templaes Menu"
+literal|"Templates Menu"
 argument_list|)
 argument_list|,
 name|GIMP_HELP_TEMPLATE_DIALOG
