@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialog_handler.h"
 end_include
 
@@ -59,12 +65,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -124,7 +124,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b450a20108
+DECL|struct|__anon28c4114b0108
 block|{
 DECL|member|gimage
 name|GimpImage
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b450a20208
+DECL|struct|__anon28c4114b0208
 block|{
 DECL|member|clist
 name|GtkCList

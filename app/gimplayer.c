@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"boundary.h"
 end_include
 
@@ -100,12 +106,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pixel_region.h"
 end_include
 
@@ -153,7 +153,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0aa52b0103
+DECL|enum|__anon296b41b60103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED

@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprc.h"
+file|"paint-funcs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
+file|"gimprc.h"
 end_include
 
 begin_include
@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c72f9f70103
+DECL|enum|__anon2a0b4fbd0103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY

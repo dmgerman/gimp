@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brush_scale.h"
 end_include
 
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"gimprc.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -227,7 +227,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75a3590103
+DECL|enum|__anon2a06fba90103
 block|{
 DECL|enumerator|PAINT
 name|PAINT

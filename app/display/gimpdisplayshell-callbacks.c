@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimpbucketfilltool.h"
 end_include
 
@@ -151,12 +157,6 @@ begin_include
 include|#
 directive|include
 file|"layer_select.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include

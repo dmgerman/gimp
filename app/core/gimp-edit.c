@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptool.h"
 end_include
 
@@ -108,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"pixel_region.h"
 end_include
 
@@ -138,7 +138,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d8534a0103
+DECL|enum|__anon2c38e1ca0103
 block|{
 DECL|enumerator|PASTE
 name|PASTE

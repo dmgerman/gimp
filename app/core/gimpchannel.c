@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"appenv.h"
+file|"paint-funcs/paint-funcs.h"
 end_include
 
 begin_include
@@ -91,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"gimplut.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include

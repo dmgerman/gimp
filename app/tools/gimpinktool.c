@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -91,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"gdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -6376,7 +6376,7 @@ block|}
 end_function
 
 begin_enum
-DECL|enum|__anon2c82f8e80103
+DECL|enum|__anon2ac169a00103
 DECL|enumerator|ROW_START
 DECL|enumerator|ROW_STOP
 enum|enum

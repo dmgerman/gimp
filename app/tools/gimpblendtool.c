@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -115,12 +121,6 @@ begin_include
 include|#
 directive|include
 file|"gimpprogress.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -347,7 +347,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a23e7800108
+DECL|struct|__anon2c0a80a20108
 block|{
 DECL|member|offset
 name|gdouble
@@ -399,7 +399,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a23e7800208
+DECL|struct|__anon2c0a80a20208
 block|{
 DECL|member|PR
 name|PixelRegion

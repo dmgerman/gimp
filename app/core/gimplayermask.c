@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"boundary.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c147a0103
+DECL|enum|__anon2add29ce0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED

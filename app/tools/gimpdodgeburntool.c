@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"drawable.h"
 end_include
 
@@ -67,12 +73,6 @@ begin_include
 include|#
 directive|include
 file|"gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimage_mask.h"
 end_include
 
@@ -108,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint_funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"parasitelist.h"
 end_include
 
@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2b5a90103
+DECL|enum|__anon275e6ec90103
 block|{
 DECL|enumerator|VISIBILITY_CHANGED
 name|VISIBILITY_CHANGED

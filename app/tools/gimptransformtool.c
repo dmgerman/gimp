@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -121,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"path_transform.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -233,7 +233,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ded3a0103
+DECL|enum|__anon297aa5240103
 block|{
 DECL|enumerator|TRANSFORM
 name|TRANSFORM

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"appenv.h"
 end_include
 
@@ -157,12 +163,6 @@ begin_include
 include|#
 directive|include
 file|"ops_buttons.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -10805,7 +10805,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4105cb0108
+DECL|struct|__anon2ae453ff0108
 block|{
 DECL|member|gimage
 name|GimpImage

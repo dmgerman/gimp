@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"cursorutil.h"
 end_include
 
@@ -127,12 +133,6 @@ begin_include
 include|#
 directive|include
 file|"gimpundostack.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint_funcs.h"
 end_include
 
 begin_include
@@ -743,7 +743,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon292f85ba0103
+DECL|enum|__anon2c2fd32b0103
 block|{
 DECL|enumerator|ACTIVE_LAYER_CHANGED
 name|ACTIVE_LAYER_CHANGED
