@@ -1152,6 +1152,7 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
+comment|/* The following used to read:    *    * tree_view->model_columns[tree_view->n_model_columns++] = ...    *    * but combining the two lead to gcc miscompiling the function on ppc/ia64    * (model_column_mask and model_column_mask_visible would have the same    * value, probably due to bad instruction reordering). See bug #113144 for    * more info.    */
 name|view
 operator|->
 name|model_column_mask
@@ -1167,10 +1168,14 @@ index|[
 name|tree_view
 operator|->
 name|n_model_columns
-operator|++
 index|]
 operator|=
 name|GIMP_TYPE_PREVIEW_RENDERER
+expr_stmt|;
+name|tree_view
+operator|->
+name|n_model_columns
+operator|++
 expr_stmt|;
 name|view
 operator|->
@@ -1187,10 +1192,14 @@ index|[
 name|tree_view
 operator|->
 name|n_model_columns
-operator|++
 index|]
 operator|=
 name|G_TYPE_BOOLEAN
+expr_stmt|;
+name|tree_view
+operator|->
+name|n_model_columns
+operator|++
 expr_stmt|;
 name|view
 operator|->
