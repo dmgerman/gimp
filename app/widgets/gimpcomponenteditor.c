@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc304930103
+DECL|enum|__anon28e9edb60103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1466,15 +1472,20 @@ name|GimpViewRenderer
 modifier|*
 name|renderer
 decl_stmt|;
-name|gboolean
-name|visible
+name|GtkTreeIter
+name|iter
 decl_stmt|;
 name|GEnumValue
 modifier|*
 name|enum_value
 decl_stmt|;
-name|GtkTreeIter
-name|iter
+specifier|const
+name|gchar
+modifier|*
+name|desc
+decl_stmt|;
+name|gboolean
+name|visible
 decl_stmt|;
 name|visible
 operator|=
@@ -1559,6 +1570,15 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
+name|desc
+operator|=
+name|gimp_enum_value_get_desc
+argument_list|(
+name|enum_class
+argument_list|,
+name|enum_value
+argument_list|)
+expr_stmt|;
 name|gtk_list_store_append
 argument_list|(
 name|GTK_LIST_STORE
@@ -1601,12 +1621,7 @@ name|renderer
 argument_list|,
 name|COLUMN_NAME
 argument_list|,
-name|gettext
-argument_list|(
-name|enum_value
-operator|->
-name|value_name
-argument_list|)
+name|desc
 argument_list|,
 operator|-
 literal|1
