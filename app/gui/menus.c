@@ -1326,7 +1326,7 @@ literal|"<control>O"
 block|,
 name|file_open_cmd_callback
 block|,
-literal|0
+literal|1
 block|,
 literal|"<StockItem>"
 block|,

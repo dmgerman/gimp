@@ -227,7 +227,6 @@ if|if
 condition|(
 name|action
 condition|)
-block|{
 name|gimage
 operator|=
 name|gimp_context_get_image
@@ -238,7 +237,6 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 name|file_new_dialog_create
 argument_list|(
 name|gimp
@@ -251,7 +249,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_by_extension_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_open_by_extension_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_open_by_extension_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -260,6 +258,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|file_open_dialog_menu_reset
@@ -270,7 +271,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_open_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_open_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_open_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -279,14 +280,50 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
-name|file_open_dialog_show
-argument_list|(
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|gimage
+init|=
+name|NULL
+decl_stmt|;
+name|gimp
+operator|=
 name|GIMP
 argument_list|(
 name|data
 argument_list|)
+expr_stmt|;
+comment|/*  if called from the image menu  */
+if|if
+condition|(
+name|action
+condition|)
+name|gimage
+operator|=
+name|gimp_context_get_image
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|file_open_dialog_show
+argument_list|(
+name|gimp
+argument_list|,
+name|gimage
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -388,7 +425,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_by_extension_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_save_by_extension_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_save_by_extension_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -397,6 +434,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|file_save_dialog_menu_reset
@@ -407,7 +447,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_save_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_save_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -416,6 +456,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -485,6 +528,8 @@ argument_list|(
 name|widget
 argument_list|,
 name|data
+argument_list|,
+name|action
 argument_list|)
 expr_stmt|;
 block|}
@@ -542,7 +587,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_as_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_save_as_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_save_as_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -551,6 +596,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -576,7 +624,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_a_copy_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_save_a_copy_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_save_a_copy_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -585,6 +633,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -610,7 +661,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_revert_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_revert_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_revert_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -619,6 +670,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -806,7 +860,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_close_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_close_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_close_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -815,6 +869,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -845,7 +902,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_quit_cmd_callback (GtkWidget * widget,gpointer data)
+DECL|function|file_quit_cmd_callback (GtkWidget * widget,gpointer data,guint action)
 name|file_quit_cmd_callback
 parameter_list|(
 name|GtkWidget
@@ -854,6 +911,9 @@ name|widget
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|,
+name|guint
+name|action
 parameter_list|)
 block|{
 name|app_exit

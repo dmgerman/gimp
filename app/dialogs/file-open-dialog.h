@@ -47,6 +47,15 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpImage
+modifier|*
+name|gimage
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|uri
 parameter_list|)
 function_decl|;
 end_function_decl
