@@ -2572,7 +2572,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scale_entry_set_sensitive:  * @adjustment: a #GtkAdjustment returned by gimp_scale_entry_new()  * @sensitive:  a boolean value with the same semantics as the @sensitive  *              parameter of gtk_widget_set_sensitive()  *   * Sets the sensitivity of the scale_entry's #GtkLabel, #GtkHScale and  * #GtkSpinbutton.  **/
+comment|/**  * gimp_scale_entry_set_sensitive:  * @adjustment: a #GtkAdjustment returned by gimp_scale_entry_new()  * @sensitive:  a boolean value with the same semantics as the @sensitive  *              parameter of gtk_widget_set_sensitive()  *  * Sets the sensitivity of the scale_entry's #GtkLabel, #GtkHScale and  * #GtkSpinbutton.  **/
 end_comment
 
 begin_function
@@ -2839,7 +2839,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/* Send spinbutton as data so that we can change the value in     * gimp_random_seed_update() */
+comment|/* Send spinbutton as data so that we can change the value in    * gimp_random_seed_update() */
 name|g_signal_connect
 argument_list|(
 name|button
@@ -2920,7 +2920,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4714910108
+DECL|struct|__anon2ab1f1ec0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2956,35 +2956,24 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_coordinates_callback (GtkWidget * widget,gpointer data)
+DECL|function|gimp_coordinates_callback (GtkWidget * widget,GimpCoordinatesData * gcd)
 name|gimp_coordinates_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|GimpCoordinatesData
 modifier|*
 name|gcd
-decl_stmt|;
+parameter_list|)
+block|{
 name|gdouble
 name|new_x
 decl_stmt|;
 name|gdouble
 name|new_y
 decl_stmt|;
-name|gcd
-operator|=
-operator|(
-name|GimpCoordinatesData
-operator|*
-operator|)
-name|data
-expr_stmt|;
 name|new_x
 operator|=
 name|gimp_size_entry_get_refval
@@ -3019,13 +3008,6 @@ name|chainbutton
 argument_list|)
 condition|)
 block|{
-name|g_signal_stop_emission_by_name
-argument_list|(
-name|widget
-argument_list|,
-literal|"value_changed"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gcd
@@ -3085,6 +3067,13 @@ name|gcd
 operator|->
 name|orig_x
 expr_stmt|;
+name|g_signal_stop_emission_by_name
+argument_list|(
+name|widget
+argument_list|,
+literal|"value_changed"
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -3132,6 +3121,13 @@ name|gcd
 operator|->
 name|orig_y
 expr_stmt|;
+name|g_signal_stop_emission_by_name
+argument_list|(
+name|widget
+argument_list|,
+literal|"value_changed"
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -3170,6 +3166,13 @@ name|last_x
 operator|=
 name|new_x
 expr_stmt|;
+name|g_signal_stop_emission_by_name
+argument_list|(
+name|widget
+argument_list|,
+literal|"value_changed"
+argument_list|)
+expr_stmt|;
 name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
@@ -3204,6 +3207,13 @@ operator|->
 name|last_y
 operator|=
 name|new_y
+expr_stmt|;
+name|g_signal_stop_emission_by_name
+argument_list|(
+name|widget
+argument_list|,
+literal|"value_changed"
+argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
 argument_list|(
@@ -3255,7 +3265,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_coordinates_new:  * @unit:                   The initial unit of the #GimpUnitMenu.  * @unit_format:            A printf-like unit-format string as is used with  *                          gimp_unit_menu_new().  * @menu_show_pixels:       %TRUE if the #GimpUnitMenu should contain an item  *                          for GIMP_UNIT_PIXEL.  * @menu_show_percent:      %TRUE if the #GimpUnitMenu should contain an item   *                          for GIMP_UNIT_PERCENT.  * @spinbutton_width:       The horizontal size of the #GimpSizeEntry's  *                           #GtkSpinButton's.  * @update_policy:          The update policy for the #GimpSizeEntry.  * @chainbutton_active:     %TRUE if the attached #GimpChainButton should be  *                          active.  * @chain_constrains_ratio: %TRUE if the chainbutton should constrain the  *                          fields' aspect ratio. If %FALSE, the values will  *                          be constrained.  * @xlabel:                 The label for the X coordinate.  * @x:                      The initial value of the X coordinate.  * @xres:                   The horizontal resolution in DPI.  * @lower_boundary_x:       The lower boundary of the X coordinate.  * @upper_boundary_x:       The upper boundary of the X coordinate.  * @xsize_0:                The X value which will be treated as 0%.  * @xsize_100:              The X value which will be treated as 100%.  * @ylabel:                 The label for the Y coordinate.  * @y:                      The initial value of the Y coordinate.  * @yres:                   The vertical resolution in DPI.  * @lower_boundary_y:       The lower boundary of the Y coordinate.  * @upper_boundary_y:       The upper boundary of the Y coordinate.  * @ysize_0:                The Y value which will be treated as 0%.  * @ysize_100:              The Y value which will be treated as 100%.  *  * Convenience function that creates a #GimpSizeEntry with two fields for x/y  * coordinates/sizes with a #GimpChainButton attached to constrain either the  * two fields' values or the ratio between them.  *  * Returns: The new #GimpSizeEntry.  **/
+comment|/**  * gimp_coordinates_new:  * @unit:                   The initial unit of the #GimpUnitMenu.  * @unit_format:            A printf-like unit-format string as is used with  *                          gimp_unit_menu_new().  * @menu_show_pixels:       %TRUE if the #GimpUnitMenu should contain an item  *                          for GIMP_UNIT_PIXEL.  * @menu_show_percent:      %TRUE if the #GimpUnitMenu should contain an item  *                          for GIMP_UNIT_PERCENT.  * @spinbutton_width:       The horizontal size of the #GimpSizeEntry's  *                           #GtkSpinButton's.  * @update_policy:          The update policy for the #GimpSizeEntry.  * @chainbutton_active:     %TRUE if the attached #GimpChainButton should be  *                          active.  * @chain_constrains_ratio: %TRUE if the chainbutton should constrain the  *                          fields' aspect ratio. If %FALSE, the values will  *                          be constrained.  * @xlabel:                 The label for the X coordinate.  * @x:                      The initial value of the X coordinate.  * @xres:                   The horizontal resolution in DPI.  * @lower_boundary_x:       The lower boundary of the X coordinate.  * @upper_boundary_x:       The upper boundary of the X coordinate.  * @xsize_0:                The X value which will be treated as 0%.  * @xsize_100:              The X value which will be treated as 100%.  * @ylabel:                 The label for the Y coordinate.  * @y:                      The initial value of the Y coordinate.  * @yres:                   The vertical resolution in DPI.  * @lower_boundary_y:       The lower boundary of the Y coordinate.  * @upper_boundary_y:       The upper boundary of the Y coordinate.  * @ysize_0:                The Y value which will be treated as 0%.  * @ysize_100:              The Y value which will be treated as 100%.  *  * Convenience function that creates a #GimpSizeEntry with two fields for x/y  * coordinates/sizes with a #GimpChainButton attached to constrain either the  * two fields' values or the ratio between them.  *  * Returns: The new #GimpSizeEntry.  **/
 end_comment
 
 begin_function
@@ -3824,7 +3834,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixmap_button_new:  * @xpm_data: The XPM data which will be passed to gimp_pixmap_new().  * @text:     An optional text which will appear right of the pixmap.  *  * Convenience function that creates a #GtkButton with a #GimpPixmap  * and an optional #GtkLabel.  *   * Returns: The new #GtkButton.  **/
+comment|/**  * gimp_pixmap_button_new:  * @xpm_data: The XPM data which will be passed to gimp_pixmap_new().  * @text:     An optional text which will appear right of the pixmap.  *  * Convenience function that creates a #GtkButton with a #GimpPixmap  * and an optional #GtkLabel.  *  * Returns: The new #GtkButton.  **/
 end_comment
 
 begin_function
