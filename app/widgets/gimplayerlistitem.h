@@ -86,6 +86,11 @@ DECL|member|parent_instance
 name|GimpDrawableListItem
 name|parent_instance
 decl_stmt|;
+DECL|member|linked_button
+name|GtkWidget
+modifier|*
+name|linked_button
+decl_stmt|;
 DECL|member|mask_preview
 name|GtkWidget
 modifier|*

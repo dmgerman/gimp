@@ -120,7 +120,7 @@ decl_stmt|;
 comment|/*  possible layer mask            */
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2af9f7460108
+DECL|struct|__anon28be3cf00108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -201,6 +201,18 @@ name|void
 function_decl|(
 modifier|*
 name|preserve_trans_changed
+function_decl|)
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+DECL|member|linked_changed
+name|void
+function_decl|(
+modifier|*
+name|linked_changed
 function_decl|)
 parameter_list|(
 name|GimpLayer

@@ -207,39 +207,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_drawable_list_item_button_realize
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_drawable_list_item_button_state_changed
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GtkStateType
-name|previous_state
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|parent_class
 specifier|static
@@ -1371,8 +1338,11 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/*  protected finctions  */
+end_comment
+
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_drawable_list_item_button_realize (GtkWidget * widget,gpointer data)
 name|gimp_drawable_list_item_button_realize
@@ -1400,7 +1370,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_drawable_list_item_button_state_changed (GtkWidget * widget,GtkStateType previous_state,gpointer data)
 name|gimp_drawable_list_item_button_state_changed
