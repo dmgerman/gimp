@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aab90200103
+DECL|enum|__anon2bf435ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1065,9 +1065,6 @@ block|{
 name|GimpTemplate
 modifier|*
 name|template
-decl_stmt|;
-name|guint64
-name|size
 decl_stmt|;
 name|gint
 name|channels

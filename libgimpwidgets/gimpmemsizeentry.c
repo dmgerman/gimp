@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b199b8a0103
+DECL|enum|__anon2c74a86e0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -441,7 +441,7 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
-name|gulong
+name|guint64
 name|size
 init|=
 name|gtk_adjustment_get_value
@@ -581,16 +581,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_memsize_entry_new (gulong value,gulong lower,gulong upper)
+DECL|function|gimp_memsize_entry_new (guint64 value,guint64 lower,guint64 upper)
 name|gimp_memsize_entry_new
 parameter_list|(
-name|gulong
+name|guint64
 name|value
 parameter_list|,
-name|gulong
+name|guint64
 name|lower
 parameter_list|,
-name|gulong
+name|guint64
 name|upper
 parameter_list|)
 block|{
@@ -700,17 +700,23 @@ name|entry
 operator|->
 name|adjustment
 argument_list|,
+operator|(
 name|value
 operator|>>
 name|shift
+operator|)
 argument_list|,
+operator|(
 name|lower
 operator|>>
 name|shift
+operator|)
 argument_list|,
+operator|(
 name|upper
 operator|>>
 name|shift
+operator|)
 argument_list|,
 literal|1
 argument_list|,
@@ -892,14 +898,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_memsize_entry_set_value (GimpMemsizeEntry * entry,gulong value)
+DECL|function|gimp_memsize_entry_set_value (GimpMemsizeEntry * entry,guint64 value)
 name|gimp_memsize_entry_set_value
 parameter_list|(
 name|GimpMemsizeEntry
 modifier|*
 name|entry
 parameter_list|,
-name|gulong
+name|guint64
 name|value
 parameter_list|)
 block|{
@@ -1022,7 +1028,7 @@ comment|/**  * gimp_memsize_entry_get_value:  * @entry: a #GimpMemsizeEntry  *  
 end_comment
 
 begin_function
-name|gulong
+name|guint64
 DECL|function|gimp_memsize_entry_get_value (GimpMemsizeEntry * entry)
 name|gimp_memsize_entry_get_value
 parameter_list|(

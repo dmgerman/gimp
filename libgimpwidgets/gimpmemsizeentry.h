@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library   * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball                  *  * gimpmemsizeentry.h  * Copyright (C) 2000-2003  Sven Neumann<sven@gimp.org>   *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *   * This library is distributed in the hope that it will be useful,   * but WITHOUT ANY WARRANTY; without even the implied warranty of   * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU    * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpmemsizeentry.h  * Copyright (C) 2000-2003  Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -108,15 +108,15 @@ name|GtkHBox
 name|parent_instance
 decl_stmt|;
 DECL|member|value
-name|gulong
+name|guint64
 name|value
 decl_stmt|;
 DECL|member|lower
-name|gulong
+name|guint64
 name|lower
 decl_stmt|;
 DECL|member|upper
-name|gulong
+name|guint64
 name|upper
 decl_stmt|;
 DECL|member|shift
@@ -182,13 +182,13 @@ name|GtkWidget
 modifier|*
 name|gimp_memsize_entry_new
 parameter_list|(
-name|gulong
+name|guint64
 name|value
 parameter_list|,
-name|gulong
+name|guint64
 name|lower
 parameter_list|,
-name|gulong
+name|guint64
 name|upper
 parameter_list|)
 function_decl|;
@@ -202,14 +202,14 @@ name|GimpMemsizeEntry
 modifier|*
 name|entry
 parameter_list|,
-name|gulong
+name|guint64
 name|value
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gulong
+name|guint64
 name|gimp_memsize_entry_get_value
 parameter_list|(
 name|GimpMemsizeEntry
