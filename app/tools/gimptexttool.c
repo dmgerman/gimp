@@ -415,7 +415,7 @@ name|GIMP_TYPE_TEXT_OPTIONS
 argument_list|,
 name|gimp_text_options_gui
 argument_list|,
-literal|0
+name|GIMP_CONTEXT_FONT_MASK
 argument_list|,
 literal|"gimp-text-tool"
 argument_list|,
