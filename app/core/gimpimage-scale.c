@@ -503,7 +503,7 @@ comment|/*  *  Static variables  */
 end_comment
 
 begin_enum
-DECL|enum|__anon2ad0d9230103
+DECL|enum|__anon274ed0060103
 enum|enum
 block|{
 DECL|enumerator|DIRTY
@@ -12103,20 +12103,20 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Push the layer undo--It is important it goes here since layer might        *   be immediately destroyed if the undo push fails        */
-name|undo_push_layer
-argument_list|(
-name|gimage
-argument_list|,
-name|lu
-argument_list|)
-expr_stmt|;
 comment|/* Send out REMOVED signal from layer */
 name|layer_removed
 argument_list|(
 name|layer
 argument_list|,
 name|gimage
+argument_list|)
+expr_stmt|;
+comment|/*  Push the layer undo--It is important it goes here since layer might        *   be immediately destroyed if the undo push fails        */
+name|undo_push_layer
+argument_list|(
+name|gimage
+argument_list|,
+name|lu
 argument_list|)
 expr_stmt|;
 comment|/*  invalidate the composite preview  */

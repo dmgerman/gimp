@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ac4ac10103
+DECL|enum|__anon29d57de60103
 block|{
 DECL|enumerator|GIMP_MOUSE1_CURSOR
 name|GIMP_MOUSE1_CURSOR
@@ -41,6 +41,9 @@ name|GIMP_MOUSE1P_CURSOR
 block|,
 DECL|enumerator|GIMP_MOUSE1M_CURSOR
 name|GIMP_MOUSE1M_CURSOR
+block|,
+DECL|enumerator|GIMP_MOUSE1U_CURSOR
+name|GIMP_MOUSE1U_CURSOR
 block|,
 DECL|enumerator|GIMP_BIGCIRC_CURSOR
 name|GIMP_BIGCIRC_CURSOR

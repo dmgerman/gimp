@@ -153,7 +153,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be6c14a0103
+DECL|enum|__anon275c42070103
 block|{
 DECL|enumerator|TEXT
 name|TEXT
@@ -1166,7 +1166,7 @@ name|font_family
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 name|gdtvals
 operator|.

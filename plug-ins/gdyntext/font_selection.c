@@ -106,7 +106,7 @@ value|32767
 end_define
 
 begin_enum
-DECL|enum|__anon2a30f8000103
+DECL|enum|__anon29472cd60103
 enum|enum
 block|{
 DECL|enumerator|FONT_CHANGED
@@ -582,7 +582,7 @@ operator|)
 name|strcmp
 argument_list|)
 expr_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 name|font_style
 argument_list|,
@@ -1423,7 +1423,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|snprintf
+name|g_snprintf
 argument_list|(
 name|fontname
 argument_list|,
@@ -1511,7 +1511,7 @@ literal|0
 condition|)
 block|{
 comment|/* pixel size */
-name|snprintf
+name|g_snprintf
 argument_list|(
 name|fontname
 argument_list|,
@@ -1567,7 +1567,7 @@ block|}
 else|else
 block|{
 comment|/* point size */
-name|snprintf
+name|g_snprintf
 argument_list|(
 name|fontname
 argument_list|,

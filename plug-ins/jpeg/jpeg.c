@@ -136,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758bc6c0108
+DECL|struct|__anon27d796990108
 block|{
 DECL|member|quality
 name|gdouble
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2758bc6c0208
+DECL|struct|__anon27d796990208
 block|{
 DECL|member|run
 name|gint
@@ -3101,10 +3101,10 @@ ifdef|#
 directive|ifdef
 name|GIMP_HAVE_RESOLUTION_INFO
 block|{
-name|float
+name|double
 name|xresolution
 decl_stmt|;
-name|float
+name|double
 name|yresolution
 decl_stmt|;
 name|gimp_image_get_resolution

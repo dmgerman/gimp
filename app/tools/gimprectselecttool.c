@@ -2511,12 +2511,11 @@ break|break;
 case|case
 name|SELECTION_INTERSECT
 case|:
-comment|/* need a real cursor for this one */
 name|gdisplay_install_tool_cursor
 argument_list|(
 name|gdisp
 argument_list|,
-name|GIMP_BIGCIRC_CURSOR
+name|GIMP_MOUSE1U_CURSOR
 argument_list|)
 expr_stmt|;
 break|break;

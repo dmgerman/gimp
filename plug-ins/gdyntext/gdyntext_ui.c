@@ -130,7 +130,7 @@ file|"graphics/text_load.xpm"
 end_include
 
 begin_typedef
-DECL|struct|__anon2978a9e60108
+DECL|struct|__anon2ae75aa90108
 typedef|typedef
 struct|struct
 block|{
@@ -6303,7 +6303,7 @@ operator|>
 name|MAX_TEXT_SIZE
 condition|)
 block|{
-name|snprintf
+name|g_snprintf
 argument_list|(
 name|msg
 argument_list|,
@@ -6392,7 +6392,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|snprintf
+name|g_snprintf
 argument_list|(
 name|msg
 argument_list|,
