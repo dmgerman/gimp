@@ -172,9 +172,7 @@ name|GtkWidget
 modifier|*
 name|gimp_histogram_editor_new
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl

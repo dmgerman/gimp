@@ -170,10 +170,6 @@ name|GtkWidget
 modifier|*
 name|gimp_selection_editor_new
 parameter_list|(
-name|GimpImage
-modifier|*
-name|gimage
-parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
