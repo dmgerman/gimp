@@ -545,7 +545,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 argument_list|,
 name|_
 argument_list|(
@@ -574,7 +574,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-name|GIMP_STOCK_REFRESH
+name|GTK_STOCK_REFRESH
 argument_list|,
 name|_
 argument_list|(

@@ -2624,7 +2624,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -2890,7 +2890,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_RAISE
+name|GTK_STOCK_GO_UP
 block|}
 block|,
 name|NULL
@@ -2915,7 +2915,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_LOWER
+name|GTK_STOCK_GO_DOWN
 block|}
 block|,
 name|NULL
@@ -2940,7 +2940,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_RAISE
+name|GTK_STOCK_GOTO_TOP
 block|}
 block|,
 name|NULL
@@ -2965,7 +2965,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_LOWER
+name|GTK_STOCK_GOTO_BOTTOM
 block|}
 block|,
 name|NULL
@@ -2995,7 +2995,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -3070,7 +3070,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -4274,7 +4274,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -4299,7 +4299,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_RAISE
+name|GTK_STOCK_GO_UP
 block|}
 block|,
 name|NULL
@@ -4324,7 +4324,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_RAISE
+name|GTK_STOCK_GOTO_TOP
 block|}
 block|,
 name|NULL
@@ -4349,7 +4349,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_LOWER
+name|GTK_STOCK_GO_DOWN
 block|}
 block|,
 name|NULL
@@ -4374,7 +4374,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_LOWER
+name|GTK_STOCK_GOTO_BOTTOM
 block|}
 block|,
 name|NULL
@@ -4449,7 +4449,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -4795,7 +4795,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -4820,7 +4820,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_RAISE
+name|GTK_STOCK_GO_UP
 block|}
 block|,
 name|NULL
@@ -4845,7 +4845,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_LOWER
+name|GTK_STOCK_GO_DOWN
 block|}
 block|,
 name|NULL
@@ -5005,7 +5005,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -5075,7 +5075,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -5200,7 +5200,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -5873,7 +5873,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -5948,7 +5948,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -5978,7 +5978,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_REFRESH
+name|GTK_STOCK_REFRESH
 block|}
 block|,
 name|NULL
@@ -6018,7 +6018,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -6093,7 +6093,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -6123,7 +6123,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_REFRESH
+name|GTK_STOCK_REFRESH
 block|}
 block|,
 name|NULL
@@ -7192,7 +7192,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -7267,7 +7267,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -7297,7 +7297,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_REFRESH
+name|GTK_STOCK_REFRESH
 block|}
 block|,
 name|NULL
@@ -7367,7 +7367,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 block|}
 block|,
 name|NULL
@@ -7442,7 +7442,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -7472,7 +7472,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_REFRESH
+name|GTK_STOCK_REFRESH
 block|}
 block|,
 name|NULL
@@ -7638,7 +7638,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -7753,7 +7753,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 block|}
 block|,
 name|NULL
@@ -7783,7 +7783,7 @@ literal|0
 block|,
 literal|"<StockItem>"
 block|,
-name|GIMP_STOCK_REFRESH
+name|GTK_STOCK_REFRESH
 block|}
 block|,
 name|NULL

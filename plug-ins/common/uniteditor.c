@@ -465,7 +465,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c08cb3f0103
+DECL|enum|__anon2b16401f0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -2363,7 +2363,7 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-name|GIMP_STOCK_REFRESH
+name|GTK_STOCK_REFRESH
 argument_list|,
 name|refresh_callback
 argument_list|,

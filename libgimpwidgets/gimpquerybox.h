@@ -142,6 +142,17 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_define
+DECL|macro|GIMP_QUERY_BOX_VBOX (qbox)
+define|#
+directive|define
+name|GIMP_QUERY_BOX_VBOX
+parameter_list|(
+name|qbox
+parameter_list|)
+value|g_object_get_data (G_OBJECT (qbox), \                                                      "gimp-query-box-vbox")
+end_define
+
 begin_comment
 comment|/*  some simple query dialogs  */
 end_comment

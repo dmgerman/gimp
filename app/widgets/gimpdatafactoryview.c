@@ -694,7 +694,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 argument_list|,
 name|_
 argument_list|(
@@ -781,7 +781,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 argument_list|,
 name|_
 argument_list|(
@@ -810,7 +810,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-name|GIMP_STOCK_REFRESH
+name|GTK_STOCK_REFRESH
 argument_list|,
 name|_
 argument_list|(
@@ -1629,11 +1629,11 @@ name|gimp_standard_help_func
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|GTK_STOCK_DIALOG_QUESTION
 argument_list|,
 name|str
 argument_list|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

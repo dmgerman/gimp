@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292025050103
+DECL|enum|__anon2958439e0103
 block|{
 DECL|enumerator|PATH_CHANGED
 name|PATH_CHANGED
@@ -523,7 +523,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -601,7 +601,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_RAISE
+name|GTK_STOCK_GO_UP
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -679,7 +679,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_LOWER
+name|GTK_STOCK_GO_DOWN
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)
@@ -757,7 +757,7 @@ name|image
 operator|=
 name|gtk_image_new_from_stock
 argument_list|(
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 argument_list|,
 name|GTK_ICON_SIZE_BUTTON
 argument_list|)

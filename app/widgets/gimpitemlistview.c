@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2985e79d0103
+DECL|enum|__anon2c67b3510103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -712,7 +712,7 @@ name|gimp_container_view_add_button
 argument_list|(
 name|container_view
 argument_list|,
-name|GIMP_STOCK_NEW
+name|GTK_STOCK_NEW
 argument_list|,
 name|_
 argument_list|(
@@ -739,7 +739,7 @@ name|gimp_container_view_add_button
 argument_list|(
 name|container_view
 argument_list|,
-name|GIMP_STOCK_RAISE
+name|GTK_STOCK_GO_UP
 argument_list|,
 name|_
 argument_list|(
@@ -770,7 +770,7 @@ name|gimp_container_view_add_button
 argument_list|(
 name|container_view
 argument_list|,
-name|GIMP_STOCK_LOWER
+name|GTK_STOCK_GO_DOWN
 argument_list|,
 name|_
 argument_list|(
@@ -855,7 +855,7 @@ name|gimp_container_view_add_button
 argument_list|(
 name|container_view
 argument_list|,
-name|GIMP_STOCK_DELETE
+name|GTK_STOCK_DELETE
 argument_list|,
 name|_
 argument_list|(
