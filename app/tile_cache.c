@@ -520,7 +520,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* The tile was not in the cache. First check and see        *  if there is room in the cache. If not then we'll have        *  to make room first. Note: it might be the case that the        *  cache is smaller than the size of a tile in which case         *  it won't be possible to put it in the cache.        */
+comment|/* The tile was not in the cache. First check and see        *  if there is room in the cache. If not then we'll have        *  to make room first. Note: it might be the case that the        *  cache is smaller than the size of a tile in which case        *  it won't be possible to put it in the cache.        */
 while|while
 condition|(
 operator|(
@@ -1000,6 +1000,14 @@ name|tile
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|tile
+operator|->
+name|dirty
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|tile
@@ -1020,6 +1028,16 @@ argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
+return|;
+block|}
+comment|/* unable to swap out tile for some reason */
+name|TILE_MUTEX_UNLOCK
+argument_list|(
+name|tile
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
 return|;
 block|}
 end_function
