@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c658130103
+DECL|enum|__anon293847c20103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -637,6 +637,8 @@ name|_
 argument_list|(
 literal|"Import a New Palette"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

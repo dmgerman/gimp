@@ -1128,6 +1128,8 @@ argument_list|(
 literal|"File Exists!"
 argument_list|)
 argument_list|,
+name|save_dialog
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_FILE_SAVE_OVERWRITE

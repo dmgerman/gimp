@@ -1134,6 +1134,10 @@ argument_list|(
 literal|"Image Information"
 argument_list|)
 argument_list|,
+name|gdisp
+operator|->
+name|shell
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_INFO_DIALOG

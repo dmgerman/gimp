@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2add5cf50108
+DECL|struct|__anon27cb14f60108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -395,12 +395,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|convert_to_indexed (GimpImage * gimage)
+DECL|function|convert_to_indexed (GimpImage * gimage,GtkWidget * parent)
 name|convert_to_indexed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|IndexedDialog
@@ -450,6 +454,14 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -533,6 +545,8 @@ name|_
 argument_list|(
 literal|"Convert Image to Indexed Colors"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

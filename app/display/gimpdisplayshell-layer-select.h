@@ -10,19 +10,19 @@ name|__GIMP_DISPLAY_SHELL_LAYER_SELECT_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DISPLAY_SHELLLAYER_SELECT_H__
+DECL|macro|__GIMP_DISPLAY_SHELL_LAYER_SELECT_H__
 define|#
 directive|define
-name|__GIMP_DISPLAY_SHELLLAYER_SELECT_H__
+name|__GIMP_DISPLAY_SHELL_LAYER_SELECT_H__
 end_define
 
 begin_function_decl
 name|void
 name|gimp_display_shell_layer_select_init
 parameter_list|(
-name|GimpImage
+name|GimpDisplayShell
 modifier|*
-name|gimage
+name|shell
 parameter_list|,
 name|gint
 name|move
@@ -39,7 +39,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DISPLAY_SHELLLAYER_SELECT_H__  */
+comment|/*  __GIMP_DISPLAY_SHELL_LAYER_SELECT_H__  */
 end_comment
 
 end_unit

@@ -222,6 +222,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -724,6 +726,8 @@ expr_stmt|;
 name|channels_edit_channel_query
 argument_list|(
 name|active_channel
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -955,7 +959,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_new_channel_query (GimpImage * gimage,GimpChannel * template,gboolean interactive)
+DECL|function|channels_new_channel_query (GimpImage * gimage,GimpChannel * template,gboolean interactive,GtkWidget * parent)
 name|channels_new_channel_query
 parameter_list|(
 name|GimpImage
@@ -968,6 +972,10 @@ name|template
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|NewChannelOptions
@@ -1240,6 +1248,8 @@ name|_
 argument_list|(
 literal|"New Channel Options"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -1856,12 +1866,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|channels_edit_channel_query (GimpChannel * channel)
+DECL|function|channels_edit_channel_query (GimpChannel * channel,GtkWidget * parent)
 name|channels_edit_channel_query
 parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|EditChannelOptions
@@ -1982,6 +1996,8 @@ name|_
 argument_list|(
 literal|"Edit Channel Attributes"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

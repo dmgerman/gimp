@@ -23,6 +23,10 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -177,6 +177,10 @@ parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -193,6 +197,10 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -209,6 +217,10 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -777,6 +789,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1046,6 +1060,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1129,6 +1145,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|active_layer
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1340,6 +1358,8 @@ expr_stmt|;
 name|layers_add_mask_query
 argument_list|(
 name|active_layer
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1740,6 +1760,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|TRUE
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1815,6 +1837,8 @@ expr_stmt|;
 name|layers_edit_layer_query
 argument_list|(
 name|active_layer
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -2102,7 +2126,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_new_layer_query (GimpImage * gimage,GimpLayer * template,gboolean interactive)
+DECL|function|layers_new_layer_query (GimpImage * gimage,GimpLayer * template,gboolean interactive,GtkWidget * parent)
 name|layers_new_layer_query
 parameter_list|(
 name|GimpImage
@@ -2115,6 +2139,10 @@ name|template
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|NewLayerOptions
@@ -2447,6 +2475,8 @@ name|_
 argument_list|(
 literal|"Create a New Layer"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -3346,12 +3376,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|layers_edit_layer_query (GimpLayer * layer)
+DECL|function|layers_edit_layer_query (GimpLayer * layer,GtkWidget * parent)
 name|layers_edit_layer_query
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|EditLayerOptions
@@ -3417,6 +3451,8 @@ name|_
 argument_list|(
 literal|"Edit Layer Attributes"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -3817,12 +3853,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_add_mask_query (GimpLayer * layer)
+DECL|function|layers_add_mask_query (GimpLayer * layer,GtkWidget * parent)
 name|layers_add_mask_query
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|AddMaskOptions
@@ -3908,6 +3948,8 @@ name|_
 argument_list|(
 literal|"Add a Mask to the Layer"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -4380,7 +4422,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_scale_layer_query (GimpImage * gimage,GimpLayer * layer)
+DECL|function|layers_scale_layer_query (GimpImage * gimage,GimpLayer * layer,GtkWidget * parent)
 name|layers_scale_layer_query
 parameter_list|(
 name|GimpImage
@@ -4390,6 +4432,10 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|ScaleLayerOptions
@@ -4421,6 +4467,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|ScaleWidget
 argument_list|,
@@ -4737,7 +4785,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|layers_resize_layer_query (GimpImage * gimage,GimpLayer * layer)
+DECL|function|layers_resize_layer_query (GimpImage * gimage,GimpLayer * layer,GtkWidget * parent)
 name|layers_resize_layer_query
 parameter_list|(
 name|GimpImage
@@ -4747,6 +4795,10 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|ResizeLayerOptions
@@ -4778,6 +4830,8 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|ResizeWidget
 argument_list|,

@@ -3224,6 +3224,9 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
+name|gdk_screen_get_default
+argument_list|()
+argument_list|,
 literal|"gimp-brush-editor"
 argument_list|,
 operator|-
@@ -3323,6 +3326,9 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
+name|gdk_screen_get_default
+argument_list|()
+argument_list|,
 literal|"gimp-gradient-editor"
 argument_list|,
 operator|-
@@ -3421,6 +3427,9 @@ block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
+argument_list|,
+name|gdk_screen_get_default
+argument_list|()
 argument_list|,
 literal|"gimp-palette-editor"
 argument_list|,

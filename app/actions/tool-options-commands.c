@@ -298,6 +298,11 @@ argument_list|(
 literal|"Save Tool Options"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_TOOL_OPTIONS_DIALOG
@@ -413,6 +418,8 @@ name|_
 argument_list|(
 literal|"Rename Saved Tool Options"
 argument_list|)
+argument_list|,
+name|widget
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

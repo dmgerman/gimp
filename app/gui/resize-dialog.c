@@ -460,12 +460,16 @@ end_function_decl
 begin_function
 name|Resize
 modifier|*
-DECL|function|resize_widget_new (GimpViewable * viewable,ResizeType type,gint width,gint height,gdouble resolution_x,gdouble resolution_y,GimpUnit unit,gboolean dot_for_dot,GCallback ok_cb,gpointer user_data)
+DECL|function|resize_widget_new (GimpViewable * viewable,GtkWidget * parent,ResizeType type,gint width,gint height,gdouble resolution_x,gdouble resolution_y,GimpUnit unit,gboolean dot_for_dot,GCallback ok_cb,gpointer user_data)
 name|resize_widget_new
 parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|ResizeType
 name|type
@@ -971,6 +975,8 @@ argument_list|,
 name|stock_id
 argument_list|,
 name|window_desc
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

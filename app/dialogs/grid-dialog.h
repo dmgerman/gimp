@@ -24,6 +24,10 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -169,12 +169,16 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|grid_dialog_new (GimpImage * gimage)
+DECL|function|grid_dialog_new (GimpImage * gimage,GtkWidget * parent)
 name|grid_dialog_new
 parameter_list|(
 name|GimpImage
 modifier|*
 name|gimage
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GimpGrid
@@ -198,6 +202,20 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|gimage
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
 argument_list|)
 argument_list|,
 name|NULL
@@ -245,6 +263,8 @@ name|_
 argument_list|(
 literal|"Configure Image Grid"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

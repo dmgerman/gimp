@@ -93,7 +93,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287f751a0103
+DECL|enum|__anon2a4a88d50103
 block|{
 DECL|enumerator|PATH_COLUMN
 name|PATH_COLUMN
@@ -445,6 +445,8 @@ name|_
 argument_list|(
 literal|"Manage Loadable Modules"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

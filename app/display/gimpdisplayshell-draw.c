@@ -316,7 +316,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be8434f0103
+DECL|enum|__anon295b535a0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1715,6 +1715,15 @@ name|GimpDisplayConfig
 modifier|*
 name|config
 decl_stmt|;
+if|if
+condition|(
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|screen_changed
+condition|)
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -1824,14 +1833,12 @@ block|{
 name|GimpDisplayShell
 modifier|*
 name|shell
-decl_stmt|;
-name|shell
-operator|=
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|widget
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_display_shell_close
 argument_list|(
 name|shell
@@ -8255,6 +8262,11 @@ operator|=
 name|gimp_query_boolean_box
 argument_list|(
 name|title
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

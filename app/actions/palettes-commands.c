@@ -225,6 +225,11 @@ argument_list|(
 literal|"Merge Palette"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_PALETTE_MERGE

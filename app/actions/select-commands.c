@@ -497,6 +497,10 @@ argument_list|(
 literal|"Feather Selection"
 argument_list|)
 argument_list|,
+name|gdisp
+operator|->
+name|shell
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_SELECTION_FEATHER
@@ -650,6 +654,10 @@ name|_
 argument_list|(
 literal|"Shrink Selection"
 argument_list|)
+argument_list|,
+name|gdisp
+operator|->
+name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -816,6 +824,10 @@ argument_list|(
 literal|"Grow Selection"
 argument_list|)
 argument_list|,
+name|gdisp
+operator|->
+name|shell
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_SELECTION_GROW
@@ -923,6 +935,10 @@ name|_
 argument_list|(
 literal|"Border Selection"
 argument_list|)
+argument_list|,
+name|gdisp
+operator|->
+name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -1035,6 +1051,11 @@ expr_stmt|;
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
 literal|"gimp-channel-list"
 argument_list|,

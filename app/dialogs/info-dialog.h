@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286dfca10103
+DECL|enum|__anon28c73bc10103
 block|{
 DECL|enumerator|INFO_LABEL
 name|INFO_LABEL
@@ -155,6 +155,10 @@ name|gchar
 modifier|*
 name|desc
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
@@ -192,6 +196,10 @@ specifier|const
 name|gchar
 modifier|*
 name|desc
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|GimpHelpFunc
 name|help_func

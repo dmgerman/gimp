@@ -162,7 +162,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad7dec0108
+DECL|struct|__anon27c10e140108
 block|{
 DECL|member|resize
 name|Resize
@@ -372,6 +372,8 @@ expr_stmt|;
 name|convert_to_indexed
 argument_list|(
 name|gimage
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -446,6 +448,10 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|gdisp
+operator|->
+name|shell
 argument_list|,
 name|ResizeWidget
 argument_list|,
@@ -606,6 +612,10 @@ name|GIMP_VIEWABLE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|gdisp
+operator|->
+name|shell
 argument_list|,
 name|ScaleWidget
 argument_list|,
@@ -1038,6 +1048,8 @@ argument_list|(
 name|gimage
 argument_list|,
 name|TRUE
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -1148,6 +1160,8 @@ name|GIMP_IMAGE
 argument_list|(
 name|gimage
 argument_list|)
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_transient_for
@@ -1330,7 +1344,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|image_layers_merge_query (GimpImage * gimage,gboolean merge_visible)
+DECL|function|image_layers_merge_query (GimpImage * gimage,gboolean merge_visible,GtkWidget * parent)
 name|image_layers_merge_query
 parameter_list|(
 name|GimpImage
@@ -1340,6 +1354,10 @@ parameter_list|,
 comment|/*  if FALSE, anchor active layer  */
 name|gboolean
 name|merge_visible
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|LayerMergeOptions
@@ -1407,6 +1425,8 @@ name|_
 argument_list|(
 literal|"Layers Merge Options"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -1792,15 +1812,9 @@ block|{
 name|ImageResize
 modifier|*
 name|image_scale
-decl_stmt|;
-name|image_scale
-operator|=
-operator|(
-name|ImageResize
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 name|g_assert
 argument_list|(
 name|image_scale
@@ -1880,6 +1894,12 @@ argument_list|(
 literal|"Layer Too Small"
 argument_list|)
 argument_list|,
+name|image_scale
+operator|->
+name|resize
+operator|->
+name|resize_shell
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_IMAGE_SCALE_WARNING
@@ -1942,15 +1962,9 @@ block|{
 name|ImageResize
 modifier|*
 name|image_scale
-decl_stmt|;
-name|image_scale
-operator|=
-operator|(
-name|ImageResize
-operator|*
-operator|)
+init|=
 name|data
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|do_scale

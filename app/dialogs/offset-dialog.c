@@ -187,12 +187,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|offset_dialog_create (GimpDrawable * drawable)
+DECL|function|offset_dialog_create (GimpDrawable * drawable,GtkWidget * parent)
 name|offset_dialog_create
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|OffsetDialog
@@ -243,6 +247,14 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -355,6 +367,8 @@ argument_list|,
 name|GIMP_STOCK_TOOL_MOVE
 argument_list|,
 name|title
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

@@ -300,6 +300,11 @@ argument_list|(
 literal|"Gradient Segment's Left Endpoint Color"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
 name|global_dialog_factory
 argument_list|,
 literal|"gimp-gradient-editor-color-dialog"
@@ -762,6 +767,11 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Gradient Segment's Right Endpoint Color"
+argument_list|)
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
 argument_list|)
 argument_list|,
 name|global_dialog_factory
@@ -1924,6 +1934,11 @@ name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
 name|desc
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_GRADIENT_EDITOR_REPLICATE
@@ -2393,6 +2408,11 @@ argument_list|,
 name|GIMP_STOCK_TOOL_BLEND
 argument_list|,
 name|desc
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|editor
+argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

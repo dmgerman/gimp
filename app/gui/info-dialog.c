@@ -93,6 +93,10 @@ name|gchar
 modifier|*
 name|desc
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
@@ -160,7 +164,7 @@ end_comment
 begin_function
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GimpHelpFunc help_func,gpointer help_data)
+DECL|function|info_dialog_new (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpHelpFunc help_func,gpointer help_data)
 name|info_dialog_new
 parameter_list|(
 name|GimpViewable
@@ -187,6 +191,10 @@ name|gchar
 modifier|*
 name|desc
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
@@ -207,6 +215,8 @@ name|stock_id
 argument_list|,
 name|desc
 argument_list|,
+name|parent
+argument_list|,
 name|help_func
 argument_list|,
 name|help_data
@@ -220,7 +230,7 @@ end_function
 begin_function
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_notebook_new (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GimpHelpFunc help_func,gpointer help_data)
+DECL|function|info_dialog_notebook_new (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpHelpFunc help_func,gpointer help_data)
 name|info_dialog_notebook_new
 parameter_list|(
 name|GimpViewable
@@ -247,6 +257,10 @@ name|gchar
 modifier|*
 name|desc
 parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
+parameter_list|,
 name|GimpHelpFunc
 name|help_func
 parameter_list|,
@@ -266,6 +280,8 @@ argument_list|,
 name|stock_id
 argument_list|,
 name|desc
+argument_list|,
+name|parent
 argument_list|,
 name|help_func
 argument_list|,
@@ -1195,7 +1211,7 @@ begin_function
 specifier|static
 name|InfoDialog
 modifier|*
-DECL|function|info_dialog_new_extended (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GimpHelpFunc help_func,gpointer help_data,gboolean in_notebook)
+DECL|function|info_dialog_new_extended (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpHelpFunc help_func,gpointer help_data,gboolean in_notebook)
 name|info_dialog_new_extended
 parameter_list|(
 name|GimpViewable
@@ -1221,6 +1237,10 @@ specifier|const
 name|gchar
 modifier|*
 name|desc
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|GimpHelpFunc
 name|help_func
@@ -1286,6 +1306,8 @@ argument_list|,
 name|stock_id
 argument_list|,
 name|desc
+argument_list|,
+name|parent
 argument_list|,
 name|help_func
 argument_list|,

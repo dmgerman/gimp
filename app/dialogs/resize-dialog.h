@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abad3e70103
+DECL|enum|__anon28f6d4620103
 block|{
 DECL|enumerator|ScaleWidget
 name|ScaleWidget
@@ -35,7 +35,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2abad3e70203
+DECL|enum|__anon28f6d4620203
 block|{
 DECL|enumerator|ResizeImage
 name|ResizeImage
@@ -136,6 +136,10 @@ parameter_list|(
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|ResizeType
 name|type

@@ -131,6 +131,10 @@ name|template
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -142,6 +146,10 @@ parameter_list|(
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl

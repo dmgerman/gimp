@@ -531,6 +531,11 @@ argument_list|(
 literal|"Edit QuickMask Attributes"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_QMASK_EDIT

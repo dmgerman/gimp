@@ -945,6 +945,9 @@ name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,
+name|gdk_screen_get_default
+argument_list|()
+argument_list|,
 literal|"gimp-tips-dialog"
 argument_list|,
 operator|-
@@ -1611,6 +1614,8 @@ name|_
 argument_list|(
 literal|"Quit The GIMP?"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

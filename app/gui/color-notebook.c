@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28cb07f00103
+DECL|enum|__anon2b5f293e0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -250,6 +250,10 @@ specifier|const
 name|gchar
 modifier|*
 name|desc
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -517,13 +521,17 @@ end_comment
 begin_function
 name|ColorNotebook
 modifier|*
-DECL|function|color_notebook_new (const gchar * title,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
+DECL|function|color_notebook_new (const gchar * title,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
 name|color_notebook_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -564,6 +572,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|parent
 argument_list|,
 name|dialog_factory
 argument_list|,
@@ -586,7 +596,7 @@ end_function
 begin_function
 name|ColorNotebook
 modifier|*
-DECL|function|color_notebook_viewable_new (GimpViewable * viewable,const gchar * title,const gchar * stock_id,const gchar * desc,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
+DECL|function|color_notebook_viewable_new (GimpViewable * viewable,const gchar * title,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
 name|color_notebook_viewable_new
 parameter_list|(
 name|GimpViewable
@@ -607,6 +617,10 @@ specifier|const
 name|gchar
 modifier|*
 name|desc
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -647,6 +661,8 @@ argument_list|,
 name|stock_id
 argument_list|,
 name|desc
+argument_list|,
+name|parent
 argument_list|,
 name|dialog_factory
 argument_list|,
@@ -999,7 +1015,7 @@ begin_function
 specifier|static
 name|ColorNotebook
 modifier|*
-DECL|function|color_notebook_new_internal (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
+DECL|function|color_notebook_new_internal (GimpViewable * viewable,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * desc,GtkWidget * parent,GimpDialogFactory * dialog_factory,const gchar * dialog_identifier,const GimpRGB * color,ColorNotebookCallback callback,gpointer client_data,gboolean wants_updates,gboolean show_alpha)
 name|color_notebook_new_internal
 parameter_list|(
 name|GimpViewable
@@ -1025,6 +1041,10 @@ specifier|const
 name|gchar
 modifier|*
 name|desc
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -1096,6 +1116,16 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|dialog_factory
@@ -1213,6 +1243,8 @@ name|stock_id
 argument_list|,
 name|desc
 argument_list|,
+name|parent
+argument_list|,
 name|color_notebook_help_func
 argument_list|,
 name|NULL
@@ -1245,7 +1277,7 @@ name|title
 argument_list|,
 name|role
 argument_list|,
-name|NULL
+name|parent
 argument_list|,
 literal|0
 argument_list|,

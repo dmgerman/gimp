@@ -392,7 +392,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_new_template_dialog (Gimp * gimp,GimpTemplate * unused)
+DECL|function|templates_new_template_dialog (Gimp * gimp,GimpTemplate * unused,GtkWidget * parent)
 name|templates_new_template_dialog
 parameter_list|(
 name|Gimp
@@ -402,6 +402,10 @@ parameter_list|,
 name|GimpTemplate
 modifier|*
 name|unused
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GimpTemplate
@@ -439,6 +443,8 @@ name|_
 argument_list|(
 literal|"Create a New Template"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -728,7 +734,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_edit_template_dialog (Gimp * gimp,GimpTemplate * template)
+DECL|function|templates_edit_template_dialog (Gimp * gimp,GimpTemplate * template,GtkWidget * parent)
 name|templates_edit_template_dialog
 parameter_list|(
 name|Gimp
@@ -738,6 +744,10 @@ parameter_list|,
 name|GimpTemplate
 modifier|*
 name|template
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkWidget
@@ -774,6 +784,8 @@ name|_
 argument_list|(
 literal|"Edit Template"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -942,7 +954,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|templates_file_new_dialog (Gimp * gimp,GimpTemplate * template)
+DECL|function|templates_file_new_dialog (Gimp * gimp,GimpTemplate * template,GtkWidget * parent)
 name|templates_file_new_dialog
 parameter_list|(
 name|Gimp
@@ -952,6 +964,10 @@ parameter_list|,
 name|GimpTemplate
 modifier|*
 name|template
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkWidget
@@ -963,6 +979,11 @@ operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 literal|"gimp-file-new-dialog"
 argument_list|,

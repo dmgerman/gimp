@@ -90,6 +90,10 @@ specifier|static
 name|void
 name|dialogs_create_dock
 parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -169,6 +173,11 @@ condition|)
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
 name|identifier
 argument_list|,
@@ -293,6 +302,11 @@ name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
 argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|ids
 index|[
 name|i
@@ -323,6 +337,11 @@ block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
 name|identifier
 argument_list|,
@@ -1280,6 +1299,11 @@ block|}
 decl_stmt|;
 name|dialogs_create_dock
 argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|tabs
 argument_list|,
 name|G_N_ELEMENTS
@@ -1328,6 +1352,11 @@ block|}
 decl_stmt|;
 name|dialogs_create_dock
 argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|tabs
 argument_list|,
 name|G_N_ELEMENTS
@@ -1374,6 +1403,11 @@ block|}
 decl_stmt|;
 name|dialogs_create_dock
 argument_list|(
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 name|tabs
 argument_list|,
 name|G_N_ELEMENTS
@@ -1410,6 +1444,9 @@ operator|=
 name|gimp_dialog_factory_dock_new
 argument_list|(
 name|global_toolbox_factory
+argument_list|,
+name|gdk_screen_get_default
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1476,9 +1513,13 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|dialogs_create_dock (const gchar * tabs[],gint n_tabs)
+DECL|function|dialogs_create_dock (GdkScreen * screen,const gchar * tabs[],gint n_tabs)
 name|dialogs_create_dock
 parameter_list|(
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1509,6 +1550,8 @@ operator|=
 name|gimp_dialog_factory_dock_new
 argument_list|(
 name|global_dock_factory
+argument_list|,
+name|screen
 argument_list|)
 expr_stmt|;
 name|dockbook
@@ -1554,6 +1597,8 @@ operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dock_factory
+argument_list|,
+name|screen
 argument_list|,
 name|tabs
 index|[

@@ -737,6 +737,8 @@ expr_stmt|;
 name|offset_dialog_create
 argument_list|(
 name|active_drawable
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}

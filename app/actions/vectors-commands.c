@@ -264,6 +264,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|TRUE
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -665,6 +667,8 @@ name|GIMP_ITEM
 argument_list|(
 name|active_vectors
 argument_list|)
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -889,6 +893,8 @@ expr_stmt|;
 name|vectors_edit_vectors_query
 argument_list|(
 name|active_vectors
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -896,12 +902,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_stroke_vectors (GimpItem * item)
+DECL|function|vectors_stroke_vectors (GimpItem * item,GtkWidget * parent)
 name|vectors_stroke_vectors
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GimpImage
@@ -963,6 +973,8 @@ argument_list|,
 name|GIMP_STOCK_PATH_STROKE
 argument_list|,
 name|GIMP_HELP_PATH_STROKE
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1483,7 +1495,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_new_vectors_query (GimpImage * gimage,GimpVectors * template,gboolean interactive)
+DECL|function|vectors_new_vectors_query (GimpImage * gimage,GimpVectors * template,gboolean interactive,GtkWidget * parent)
 name|vectors_new_vectors_query
 parameter_list|(
 name|GimpImage
@@ -1496,6 +1508,10 @@ name|template
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|NewVectorsOptions
@@ -1614,6 +1630,8 @@ name|_
 argument_list|(
 literal|"New Path Options"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -2079,12 +2097,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|vectors_edit_vectors_query (GimpVectors * vectors)
+DECL|function|vectors_edit_vectors_query (GimpVectors * vectors,GtkWidget * parent)
 name|vectors_edit_vectors_query
 parameter_list|(
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|EditVectorsOptions
@@ -2167,6 +2189,8 @@ name|_
 argument_list|(
 literal|"Edit Path Attributes"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

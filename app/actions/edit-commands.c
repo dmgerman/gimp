@@ -632,6 +632,10 @@ argument_list|(
 literal|"Cut Named"
 argument_list|)
 argument_list|,
+name|gdisp
+operator|->
+name|shell
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_BUFFER_CUT
@@ -680,17 +684,17 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpImage
+name|GimpDisplay
 modifier|*
-name|gimage
+name|gdisp
 decl_stmt|;
 name|GtkWidget
 modifier|*
 name|qbox
 decl_stmt|;
-name|return_if_no_image
+name|return_if_no_display
 argument_list|(
-name|gimage
+name|gdisp
 argument_list|,
 name|data
 argument_list|)
@@ -703,6 +707,10 @@ name|_
 argument_list|(
 literal|"Copy Named"
 argument_list|)
+argument_list|,
+name|gdisp
+operator|->
+name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -717,6 +725,8 @@ name|NULL
 argument_list|,
 name|G_OBJECT
 argument_list|(
+name|gdisp
+operator|->
 name|gimage
 argument_list|)
 argument_list|,
@@ -724,6 +734,8 @@ literal|"disconnect"
 argument_list|,
 name|copy_named_buffer_callback
 argument_list|,
+name|gdisp
+operator|->
 name|gimage
 argument_list|)
 expr_stmt|;
@@ -751,6 +763,11 @@ block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
 name|global_dock_factory
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
 literal|"gimp-buffer-list"
 argument_list|,
@@ -908,6 +925,8 @@ argument_list|(
 name|gimage
 argument_list|)
 argument_list|)
+argument_list|,
+name|widget
 argument_list|)
 expr_stmt|;
 block|}
@@ -915,12 +934,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|edit_stroke_selection (GimpItem * item)
+DECL|function|edit_stroke_selection (GimpItem * item,GtkWidget * parent)
 name|edit_stroke_selection
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GimpImage
@@ -982,6 +1005,8 @@ argument_list|,
 name|GIMP_STOCK_SELECTION_STROKE
 argument_list|,
 name|GIMP_HELP_SELECTION_STROKE
+argument_list|,
+name|parent
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

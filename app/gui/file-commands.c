@@ -314,6 +314,11 @@ name|gimp_dialog_factory_dialog_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
 literal|"gimp-file-new-dialog"
 argument_list|,
 operator|-
@@ -954,6 +959,10 @@ argument_list|(
 literal|"Create New Template"
 argument_list|)
 argument_list|,
+name|gdisp
+operator|->
+name|shell
+argument_list|,
 name|gimp_standard_help_func
 argument_list|,
 name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
@@ -1131,6 +1140,10 @@ name|_
 argument_list|(
 literal|"Revert Image"
 argument_list|)
+argument_list|,
+name|gdisp
+operator|->
+name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

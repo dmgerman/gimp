@@ -154,7 +154,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|stroke_dialog_new (GimpItem * item,const gchar * stock_id,const gchar * help_id)
+DECL|function|stroke_dialog_new (GimpItem * item,const gchar * stock_id,const gchar * help_id,GtkWidget * parent)
 name|stroke_dialog_new
 parameter_list|(
 name|GimpItem
@@ -170,6 +170,10 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 specifier|static
@@ -227,6 +231,20 @@ argument_list|(
 name|help_id
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GTK_IS_WIDGET
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -310,6 +328,8 @@ name|_
 argument_list|(
 literal|"Choose Stroke Style"
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

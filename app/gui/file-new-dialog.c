@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29eb3e370108
+DECL|struct|__anon297efd790108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -354,6 +354,8 @@ name|_
 argument_list|(
 literal|"Create a New Image"
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -1216,6 +1218,10 @@ name|_
 argument_list|(
 literal|"Confirm Image Size"
 argument_list|)
+argument_list|,
+name|dialog
+operator|->
+name|dialog
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
