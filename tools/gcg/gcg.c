@@ -32,7 +32,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"p_output.h"
+file|"output.h"
 end_include
 
 begin_decl_stmt
