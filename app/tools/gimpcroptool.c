@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplayshell.h"
 end_include
 
@@ -194,7 +188,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d5bc430103
+DECL|enum|__anon295b4e610103
 block|{
 DECL|enumerator|CREATING
 name|CREATING

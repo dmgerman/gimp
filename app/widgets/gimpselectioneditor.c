@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -102,12 +108,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask-select.h"
 end_include
 
 begin_include
@@ -1780,11 +1780,14 @@ argument_list|(
 name|col
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_select_by_color
+name|gimp_channel_select_by_color
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|image_editor
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
@@ -1934,11 +1937,14 @@ operator|!
 name|drawable
 condition|)
 return|return;
-name|gimp_image_mask_select_by_color
+name|gimp_channel_select_by_color
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|editor
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,

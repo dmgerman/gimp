@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer.h"
 end_include
 
@@ -6547,7 +6553,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a807860108
+DECL|struct|__anon2baa86e40108
 block|{
 DECL|member|info
 name|XcfInfo

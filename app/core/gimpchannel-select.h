@@ -6,23 +6,23 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_IMAGE_MASK_SELECT_H__
+name|__GIMP_CHANNEL_SELECT_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_IMAGE_MASK_SELECT_H__
+DECL|macro|__GIMP_CHANNEL_SELECT_H__
 define|#
 directive|define
-name|__GIMP_IMAGE_MASK_SELECT_H__
+name|__GIMP_CHANNEL_SELECT_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_rectangle
+name|gimp_channel_select_rectangle
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 name|gint
 name|x
@@ -53,11 +53,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_ellipse
+name|gimp_channel_select_ellipse
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 name|gint
 name|x
@@ -91,11 +91,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_polygon
+name|gimp_channel_select_polygon
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 specifier|const
 name|gchar
@@ -129,11 +129,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_vectors
+name|gimp_channel_select_vectors
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 specifier|const
 name|gchar
@@ -164,11 +164,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_channel
+name|gimp_channel_select_channel
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 specifier|const
 name|gchar
@@ -177,7 +177,7 @@ name|undo_desc
 parameter_list|,
 name|GimpChannel
 modifier|*
-name|channel
+name|add_on
 parameter_list|,
 name|gint
 name|offset_x
@@ -202,11 +202,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_alpha
+name|gimp_channel_select_alpha
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 name|GimpLayer
 modifier|*
@@ -229,11 +229,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_component
+name|gimp_channel_select_component
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 name|GimpChannelType
 name|component
@@ -255,11 +255,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_fuzzy
+name|gimp_channel_select_fuzzy
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -300,11 +300,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_mask_select_by_color
+name|gimp_channel_select_by_color
 parameter_list|(
-name|GimpImage
+name|GimpChannel
 modifier|*
-name|gimage
+name|channel
 parameter_list|,
 name|GimpDrawable
 modifier|*
@@ -348,7 +348,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_IMAGE_MASK_SELECT_H__  */
+comment|/*  __GIMP_CHANNEL_SELECT_H__  */
 end_comment
 
 end_unit

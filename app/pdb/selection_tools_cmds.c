@@ -40,13 +40,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"core/gimpchannel-select.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask-select.h"
+file|"core/gimpdrawable.h"
 end_include
 
 begin_include
@@ -374,9 +374,12 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_select_by_color
+name|gimp_channel_select_by_color
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
@@ -738,9 +741,12 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_image_mask_select_ellipse
+name|gimp_channel_select_ellipse
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 operator|(
 name|gint
@@ -1092,9 +1098,12 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_image_mask_select_polygon
+name|gimp_channel_select_polygon
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -1465,9 +1474,12 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_select_fuzzy
+name|gimp_channel_select_fuzzy
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
@@ -1821,9 +1833,12 @@ if|if
 condition|(
 name|success
 condition|)
-name|gimp_image_mask_select_rectangle
+name|gimp_channel_select_rectangle
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 operator|(
 name|gint

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask-select.h"
 end_include
 
 begin_include
@@ -1535,9 +1535,12 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_select_channel
+name|gimp_channel_select_channel
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
@@ -1681,9 +1684,12 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gimp_image_mask_select_alpha
+name|gimp_channel_select_alpha
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|active_layer
 argument_list|,

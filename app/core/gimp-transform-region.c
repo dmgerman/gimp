@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -133,6 +127,12 @@ begin_include
 include|#
 directive|include
 file|"gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpselection.h"
 end_include
 
 begin_include
@@ -436,7 +436,7 @@ name|vinc
 decl_stmt|,
 name|winc
 decl_stmt|;
-comment|/* increments in source coordinates                                           pr horizontal target coordinate */
+comment|/* increments in source coordinates                                          pr horizontal target coordinate */
 name|gdouble
 name|u
 index|[
@@ -448,7 +448,7 @@ index|[
 literal|5
 index|]
 decl_stmt|;
-comment|/* source coordinates,                                       2                                  / \    0 is sample in the centre of pixel                                 1 0 3   1..4 is offset 1 pixel in each                                  \ /    direction (in target space)                                   4                                        */
+comment|/* source coordinates,                                   2                                  / \    0 is sample in the centre of pixel                                 1 0 3   1..4 is offset 1 pixel in each                                  \ /    direction (in target space)                                   4                                        */
 name|gdouble
 name|tu
 index|[
@@ -4841,9 +4841,12 @@ block|{
 comment|/* set the keep_indexed flag to FALSE here, since we use        * gimp_layer_new_from_tiles() later which assumes that the tiles        * are either RGB or GRAY.  Eeek!!!              (Sven)        */
 name|tiles
 operator|=
-name|gimp_image_mask_extract
+name|gimp_selection_extract
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
@@ -4872,9 +4875,12 @@ argument_list|)
 condition|)
 name|tiles
 operator|=
-name|gimp_image_mask_extract
+name|gimp_selection_extract
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
@@ -4888,9 +4894,12 @@ expr_stmt|;
 else|else
 name|tiles
 operator|=
-name|gimp_image_mask_extract
+name|gimp_selection_extract
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
@@ -5340,7 +5349,7 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  if we were operating on the floating selection, then it's boundary         *  and previews need invalidating        */
+comment|/*  if we were operating on the floating selection, then it's boundary        *  and previews need invalidating        */
 if|if
 condition|(
 name|drawable
@@ -6172,7 +6181,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   * Returns TRUE if one of the deltas of the  * quad edge is> 1.0 (16.16 fixed values).  */
+comment|/*  * Returns TRUE if one of the deltas of the  * quad edge is> 1.0 (16.16 fixed values).  */
 end_comment
 
 begin_function
@@ -6325,7 +6334,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   *  Returns TRUE if one of the deltas of the  *  quad edge is> 1.0 (double values).  */
+comment|/*  *  Returns TRUE if one of the deltas of the  *  quad edge is> 1.0 (double values).  */
 end_comment
 
 begin_function
@@ -6662,7 +6671,7 @@ name|bly
 decl_stmt|,
 name|bry
 decl_stmt|;
-comment|/* calculate subdivided corner coordinates (including centercoords          thus using a bilinear interpolation,. almost as good as           doing the perspective transform for each subpixel coordinate*/
+comment|/* calculate subdivided corner coordinates (including centercoords          thus using a bilinear interpolation,. almost as good as          doing the perspective transform for each subpixel coordinate*/
 name|tx
 operator|=
 operator|(

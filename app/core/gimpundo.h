@@ -51,10 +51,6 @@ DECL|member|unit_changed
 name|gboolean
 name|unit_changed
 decl_stmt|;
-DECL|member|mask_changed
-name|gboolean
-name|mask_changed
-decl_stmt|;
 DECL|member|qmask_changed
 name|gboolean
 name|qmask_changed

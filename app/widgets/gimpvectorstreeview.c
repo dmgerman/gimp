@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -61,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask-select.h"
 end_include
 
 begin_include
@@ -1019,9 +1019,12 @@ operator|=
 name|GIMP_CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
-name|gimp_image_mask_select_vectors
+name|gimp_channel_select_vectors
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

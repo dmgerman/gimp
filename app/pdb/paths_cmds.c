@@ -52,13 +52,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"core/gimpchannel-select.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask-select.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -3960,9 +3960,12 @@ if|if
 condition|(
 name|vectors
 condition|)
-name|gimp_image_mask_select_vectors
+name|gimp_channel_select_vectors
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

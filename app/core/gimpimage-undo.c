@@ -1017,17 +1017,6 @@ if|if
 condition|(
 name|accum
 operator|.
-name|mask_changed
-condition|)
-name|gimp_image_mask_changed
-argument_list|(
-name|gimage
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|accum
-operator|.
 name|qmask_changed
 condition|)
 name|gimp_image_qmask_changed

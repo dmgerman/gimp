@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -55,12 +61,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-crop.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpimage-mask-select.h"
 end_include
 
 begin_include
@@ -2144,13 +2144,16 @@ operator|->
 name|tool_options
 argument_list|)
 expr_stmt|;
-name|gimp_image_mask_select_rectangle
+name|gimp_channel_select_rectangle
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|tool
 operator|->
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 name|x
 argument_list|,

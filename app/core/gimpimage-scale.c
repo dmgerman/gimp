@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-projection.h"
 end_include
 

@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage-undo.h"
 end_include
 
@@ -103,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpselection.h"
 end_include
 
 begin_include
@@ -2619,11 +2619,14 @@ case|:
 if|if
 condition|(
 operator|!
-name|gimp_image_mask_float
+name|gimp_selection_float
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 name|GIMP_DRAWABLE
 argument_list|(

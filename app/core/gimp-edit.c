@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -115,6 +109,12 @@ begin_include
 include|#
 directive|include
 file|"gimplist.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpselection.h"
 end_include
 
 begin_include
@@ -193,9 +193,12 @@ expr_stmt|;
 comment|/*  Next, cut the mask portion from the gimage  */
 name|tiles
 operator|=
-name|gimp_image_mask_extract
+name|gimp_selection_extract
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
@@ -387,9 +390,12 @@ expr_stmt|;
 comment|/*  First, copy the masked portion of the gimage  */
 name|tiles
 operator|=
-name|gimp_image_mask_extract
+name|gimp_selection_extract
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gimage
+argument_list|)
 argument_list|,
 name|drawable
 argument_list|,

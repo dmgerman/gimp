@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-snap.h"
 end_include
 

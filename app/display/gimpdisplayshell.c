@@ -101,6 +101,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-snap.h"
 end_include
 
@@ -292,7 +298,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3e675c0103
+DECL|enum|__anon28e6933a0103
 block|{
 DECL|enumerator|SCALED
 name|SCALED

@@ -110,26 +110,23 @@ parameter_list|)
 value|((b) == GIMP_RGB ?                \                                             GIMP_RGB_IMAGE :                 \                                             (b) == GIMP_GRAY ?               \                                             GIMP_GRAY_IMAGE :                \                                             (b) == GIMP_INDEXED ?            \                                             GIMP_INDEXED_IMAGE : -1)
 end_define
 
+begin_typedef
+DECL|typedef|GimpImageFlushAccumulator
+typedef|typedef
+name|struct
+name|_GimpImageFlushAccumulator
+name|GimpImageFlushAccumulator
+typedef|;
+end_typedef
+
 begin_struct
-DECL|struct|_GimpGuide
+DECL|struct|_GimpImageFlushAccumulator
 struct|struct
-name|_GimpGuide
+name|_GimpImageFlushAccumulator
 block|{
-DECL|member|ref_count
-name|gint
-name|ref_count
-decl_stmt|;
-DECL|member|position
-name|gint
-name|position
-decl_stmt|;
-DECL|member|orientation
-name|GimpOrientationType
-name|orientation
-decl_stmt|;
-DECL|member|guide_ID
-name|guint32
-name|guide_ID
+DECL|member|mask_changed
+name|gboolean
+name|mask_changed
 decl_stmt|;
 block|}
 struct|;
@@ -451,6 +448,7 @@ name|GimpRGB
 name|qmask_color
 decl_stmt|;
 comment|/*  rgba triplet of the color    */
+comment|/*  Undo apparatus  */
 DECL|member|undo_stack
 name|GimpUndoStack
 modifier|*
@@ -473,7 +471,6 @@ name|GimpUndoType
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */
-comment|/*  New undo apparatus  */
 comment|/*  Composite preview  */
 DECL|member|comp_preview
 name|TempBuf
@@ -486,6 +483,11 @@ name|gboolean
 name|comp_preview_valid
 decl_stmt|;
 comment|/*  preview valid-1/channel      */
+comment|/*  Signal emmision accumulator  */
+DECL|member|flush_accum
+name|GimpImageFlushAccumulator
+name|flush_accum
+decl_stmt|;
 block|}
 struct|;
 end_struct

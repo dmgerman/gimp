@@ -52,6 +52,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -509,9 +515,18 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-name|gimp_displays_flush
+name|gimp_container_foreach
 argument_list|(
 name|gimp
+operator|->
+name|images
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gimp_image_flush
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

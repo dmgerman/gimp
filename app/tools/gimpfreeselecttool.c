@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimpchannel-select.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-mask-select.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -938,11 +938,14 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_image_mask_select_polygon
+name|gimp_channel_select_polygon
+argument_list|(
+name|gimp_image_get_mask
 argument_list|(
 name|gdisp
 operator|->
 name|gimage
+argument_list|)
 argument_list|,
 name|tool
 operator|->

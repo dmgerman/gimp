@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-mask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -149,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c82e8a40103
+DECL|enum|__anon274f14460103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
