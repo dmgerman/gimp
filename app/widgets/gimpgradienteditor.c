@@ -4,35 +4,11 @@ comment|/* The GIMP -- an image manipulation program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* alt: Added previews and some other buttons to gradient dialog.   *  * hof: Hofer Wolfgang, 1998.01.27   avoid resize bug by keeping   *                                   preview widgetsize constant.  * hof: Hofer Wolfgang, 1997.10.17   Added "Load From FG color"  */
-end_comment
-
-begin_comment
-comment|/* Release date: 1997/06/02  *  * - Added the following procedural_db calls:  *     gimp_gradients_get_list  *     gimp_gradients_get_active  *     gimp_gradients_set_active  *     gimp_gradients_sample_uniform  *     gimp_gradients_sample_custom  *   Many thanks to Eiichi and Marcelo for their suggestions!  */
-end_comment
-
-begin_comment
-comment|/* Release date: 1997/05/07  *  * - Added accelerator keys for the popup functions.  This allows for  * very fast operation of the editor.  *  * - Added Replicate Selection function.  *  * - Re-arranged the pop-up menu a bit; it was getting too big.  I am  * still not entirely happy with it.  *  * - Added grad_dump_gradient(); it is useful for debugging.  */
-end_comment
-
-begin_comment
-comment|/* Release date: 1997/04/30  *  * - All `dangerous' dialogs now de-sensitize the main editor window.  * This fixes a lot of potential bugs when the dialogs are active.  *  * - Fixed two bugs due to uninitialized variables, one in  * prev_events() (thanks to Marcelo for pointing it out) and another  * in cpopup_render_color_box() (me), and removed all warnings due to  * those.  *  * - Removed the printf()'s in the pop-up menu (they were only used  * for debugging).  */
-end_comment
-
-begin_comment
-comment|/* Release date: 1997/04/22  *  * - Added GtkRadioMenuItems to the blending and coloring pop-up  * menus.  You no longer have to remember the dang type for each  * segment.  *  * - Added midpoint capabilities to sinuosidal and spherical sigments.  * Many thanks to Marcelo for the patches!  *  * - Added a *real* Cancel function to the color pickers.  I don't  * know why nobody killed me for not having done it before.  */
-end_comment
-
-begin_comment
-comment|/* Release date: 1997/04/21  *  * - Re-wrote the old pop-up menu code, which was *horrible*.  The  * memory leaks *should* go away once I write  * grad_free_gradient_editor().  I'll do it once I'm finished adding  * crap to gradient_editor_t.  *  * - Added "fetch from" color buttons.  Yeah, we all missed them.  You  * should shed happiness tears when you see it.  *  * - Added an eyedropper function to the preview widget.  You can now  * click on the preview widget and the foreground color will be set to  * the gradient's color under the cursor.  This is still missing the  * eyedropper cursor shape.  *  * - You can now invoke the pop-up menu from the preview widget.  Even  * my hand gets unsteady at times.  *  * - Cool functions: Flip selection, Blend colors.  Can't live without  * them.  */
-end_comment
-
-begin_comment
 comment|/* Special thanks to:  *  * Luis Albarran (luis4@mindspring.com) - Nice UI suggestions  *  * Miguel de Icaza (miguel@nuclecu.unam.mx) - Pop-up menu suggestion  *  * Marcelo Malheiros (malheiro@dca.fee.unicamp.br) - many, many  * suggestions, nice gradient files  *  * Adam Moss (adam@uunet.pipex.com) - idea for the hint bar  *  * Everyone on #gimp - many suggestions  */
 end_comment
 
 begin_comment
-comment|/* TODO:  *  * - Fix memory leaks: grad_free_gradient_editor() and any others  * which I may have missed.  *  * - Add all of Marcelo's neat suggestions:  *   - Hue rotate, saturation, brightness, contrast.  *  * - Add Save Dirty Gradients function.  *  * - Provide a way of renaming a gradient (instead of having to do  *   copy/delete).  *  * - Fix the flicker in the hint bar.  *  * - Better handling of bogus gradient files and inconsistent  *   segments.  Do not loop indefinitely in seg_get_segment_at() if  *   there is a missing segment between two others.  *  * - Add a Gradient brush mode (color changes as you move it).  */
+comment|/* TODO:  *  * - Fix memory leaks: grad_free_gradient_editor() and any others  * which I may have missed.  *  * - Add all of Marcelo's neat suggestions:  *   - Hue rotate, saturation, brightness, contrast.  *  * - Better handling of bogus gradient files and inconsistent  *   segments.  Do not loop indefinitely in seg_get_segment_at() if  *   there is a missing segment between two others.  *  * - Add a Gradient brush mode (color changes as you move it).  */
 end_comment
 
 begin_include
@@ -356,7 +332,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299208c40103
+DECL|enum|__anon28de3a320103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -380,7 +356,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299208c40208
+DECL|struct|__anon28de3a320208
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -663,7 +639,7 @@ name|replicate_times
 decl_stmt|;
 comment|/*  Saved colors  */
 struct|struct
-DECL|struct|__anon299208c40308
+DECL|struct|__anon28de3a320308
 block|{
 DECL|member|r
 DECL|member|g
@@ -867,12 +843,6 @@ parameter_list|,
 name|gchar
 modifier|*
 name|help_data
-parameter_list|,
-name|gdouble
-name|xalign
-parameter_list|,
-name|gdouble
-name|yalign
 parameter_list|,
 name|GtkSignalFunc
 name|signal_func
@@ -1140,19 +1110,6 @@ name|GtkWidget
 modifier|*
 parameter_list|,
 name|GdkEvent
-modifier|*
-parameter_list|,
-name|gpointer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|ed_save_grads_callback
-parameter_list|(
-name|GtkWidget
 modifier|*
 parameter_list|,
 name|gpointer
@@ -4055,21 +4012,6 @@ name|FALSE
 argument_list|,
 name|_
 argument_list|(
-literal|"Save"
-argument_list|)
-argument_list|,
-name|ed_save_grads_callback
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|_
-argument_list|(
 literal|"Refresh"
 argument_list|)
 argument_list|,
@@ -4557,10 +4499,6 @@ argument_list|)
 argument_list|,
 literal|"dialogs/gradient_editor/new_gradient.html"
 argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
 name|ed_new_gradient_callback
@@ -4607,10 +4545,6 @@ literal|"Copy Gradient"
 argument_list|)
 argument_list|,
 literal|"dialogs/gradient_editor/copy_gradient.html"
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -4659,10 +4593,6 @@ argument_list|)
 argument_list|,
 literal|"dialogs/gradient_editor/delete_gradient.html"
 argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
 name|ed_delete_gradient_callback
@@ -4710,10 +4640,6 @@ argument_list|)
 argument_list|,
 literal|"dialogs/gradient_editor/rename_gradient.html"
 argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
 name|ed_rename_gradient_callback
@@ -4760,10 +4686,6 @@ literal|"Save as POV-Ray"
 argument_list|)
 argument_list|,
 literal|"dialogs/gradient_editor/save_as_pov_ray.html"
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -4863,10 +4785,6 @@ literal|"Zoom all"
 argument_list|)
 argument_list|,
 name|NULL
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
 argument_list|,
 name|GTK_SIGNAL_FUNC
 argument_list|(
@@ -5229,7 +5147,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+name|gtk_widget_hide
 argument_list|(
 name|g_editor
 operator|->
@@ -6528,7 +6446,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|ed_create_button (gchar * label,gchar * help_data,gdouble xalign,gdouble yalign,GtkSignalFunc signal_func,gpointer data)
+DECL|function|ed_create_button (gchar * label,gchar * help_data,GtkSignalFunc signal_func,gpointer data)
 name|ed_create_button
 parameter_list|(
 name|gchar
@@ -6538,12 +6456,6 @@ parameter_list|,
 name|gchar
 modifier|*
 name|help_data
-parameter_list|,
-name|gdouble
-name|xalign
-parameter_list|,
-name|gdouble
-name|yalign
 parameter_list|,
 name|GtkSignalFunc
 name|signal_func
@@ -6556,59 +6468,16 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|text
-decl_stmt|;
 name|button
 operator|=
-name|gtk_button_new
-argument_list|()
-expr_stmt|;
-name|text
-operator|=
-name|gtk_label_new
+name|gtk_button_new_with_label
 argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|gtk_misc_set_alignment
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|text
-argument_list|)
-argument_list|,
-name|xalign
-argument_list|,
-name|yalign
-argument_list|)
-expr_stmt|;
-name|gtk_misc_set_padding
-argument_list|(
-name|GTK_MISC
-argument_list|(
-name|text
-argument_list|)
-argument_list|,
-literal|4
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|button
-argument_list|)
-argument_list|,
-name|text
-argument_list|)
-expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|text
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -9873,28 +9742,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|ed_save_grads_callback (GtkWidget * widget,gpointer data)
-name|ed_save_grads_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
-name|grad_save_all
-argument_list|(
-name|FALSE
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|ed_refresh_grads_callback (GtkWidget * widget,gpointer data)
 name|ed_refresh_grads_callback
 parameter_list|(
@@ -10207,6 +10054,13 @@ name|zoom_factor
 operator|=
 literal|1
 expr_stmt|;
+name|gtk_widget_hide
+argument_list|(
+name|g_editor
+operator|->
+name|scrollbar
+argument_list|)
+expr_stmt|;
 name|adjustment
 operator|->
 name|value
@@ -10309,6 +10163,29 @@ name|g_editor
 operator|->
 name|zoom_factor
 operator|--
+expr_stmt|;
+if|if
+condition|(
+name|g_editor
+operator|->
+name|zoom_factor
+operator|==
+literal|1
+condition|)
+name|gtk_widget_hide
+argument_list|(
+name|g_editor
+operator|->
+name|scrollbar
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_widget_show
+argument_list|(
+name|g_editor
+operator|->
+name|scrollbar
+argument_list|)
 expr_stmt|;
 name|page_size
 operator|=
@@ -10500,6 +10377,13 @@ operator|->
 name|scroll_data
 argument_list|,
 literal|"changed"
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|g_editor
+operator|->
+name|scrollbar
 argument_list|)
 expr_stmt|;
 block|}
