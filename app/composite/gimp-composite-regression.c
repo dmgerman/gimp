@@ -916,12 +916,7 @@ expr_stmt|;
 block|}
 name|printf
 argument_list|(
-literal|"   "
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"exp="
+literal|"   exp="
 argument_list|)
 expr_stmt|;
 name|gimp_composite_regression_print_rgba8

@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3d57b60103
+DECL|enum|__anon2c40c4650103
 block|{
 DECL|enumerator|MinifyX_MinifyY
 name|MinifyX_MinifyY
@@ -21961,7 +21961,9 @@ if|if
 condition|(
 name|gimp_composite_options
 operator|.
-name|use
+name|bits
+operator|&
+name|GIMP_COMPOSITE_OPTION_USE
 condition|)
 block|{
 name|GimpCompositeContext
@@ -22069,12 +22071,9 @@ name|ctx
 operator|.
 name|pixelformat_D
 operator|=
-name|gimp_composite_pixel_alpha
-index|[
 name|ctx
 operator|.
-name|pixelformat_B
-index|]
+name|pixelformat_A
 expr_stmt|;
 name|ctx
 operator|.

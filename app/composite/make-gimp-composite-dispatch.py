@@ -400,21 +400,26 @@ def gimp_composite_init(fpout, function_tables):
   print >>fpout, 'void'
   print >>fpout, 'gimp_composite_init (void)'
   print >>fpout, '{'
-  print >>fpout, '  if (g_getenv ("GIMP_COMPOSITE"))'
+  print >>fpout, '  const gchar *p;'
+  print >>fpout, ''
+  print >>fpout, '  if ((p = g_getenv ("GIMP_COMPOSITE")))'
   print >>fpout, '    {'
-  print >>fpout, '      gimp_composite_options.use = TRUE;'
-  print >>fpout, '      g_printerr ("Using new image composite functions\\n");'
+  print >>fpout, '      gimp_composite_options.bits = strtoul(p, NULL, 16);'
+  print >>fpout, '      g_printerr ("gimp_composite_options: %08lx\\n", gimp_composite_options.bits);'
+  print >>fpout, '      if (gimp_composite_options.bits & GIMP_COMPOSITE_OPTION_USE) {'
+  print >>fpout, '        g_printerr ("using new gimp_composite functions\\n");'
+  print >>fpout, '      }'
   print >>fpout, '    }'
   print >>fpout, ''
 
-  print >>fpout, '  if (! gimp_composite_options.initialised)'
+  print >>fpout, '  if (! (gimp_composite_options.bits & GIMP_COMPOSITE_OPTION_INITIALISED))'
   print >>fpout, '    {'
 
   for o in function_tables:
     print >>fpout, '      %s_init ();' % (functionnameify(o[0]))
     pass
   
-  print >>fpout, '      gimp_composite_options.initialised = TRUE;'
+  print >>fpout, '      gimp_composite_options.bits |= GIMP_COMPOSITE_OPTION_INITIALISED;'
   print >>fpout, '    }'
   print >>fpout, '}'
   pass
@@ -436,7 +441,7 @@ def gimp_composite_cfile(fpout, function_tables):
   print >>fpout, '#include "base/base-types.h"'
   print >>fpout, '#include "gimp-composite.h"'
   print >>fpout, '#include "gimp-composite-dispatch.h"'
-  print >>fpout, 'extern void %s(GimpCompositeContext *);' % ("gimp_composite_unsupported")
+  #print >>fpout, 'extern void %s(GimpCompositeContext *);' % ("gimp_composite_unsupported")
   print >>fpout, ''
 
   for f in function_tables:

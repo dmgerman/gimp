@@ -6215,6 +6215,21 @@ define|#
 directive|define
 name|RANDOM_SEED
 value|314159265
+if|if
+condition|(
+name|gimp_composite_options
+operator|.
+name|bits
+operator|&
+name|GIMP_COMPOSITE_OPTION_VERBOSE
+condition|)
+block|{
+name|printf
+argument_list|(
+literal|"gimp_composite_generic_init:\n"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  generate a table of random seeds  */
 name|gr
 operator|=

@@ -40,17 +40,6 @@ file|"gimp-composite-dispatch.h"
 end_include
 
 begin_function_decl
-specifier|extern
-name|void
-name|gimp_composite_unsupported
-parameter_list|(
-name|GimpCompositeContext
-modifier|*
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|gimp_composite_addition_any_any_any_generic
 parameter_list|(
@@ -20863,65 +20852,6 @@ block|,  }
 block|, }
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-specifier|extern
-name|void
-name|gimp_composite_generic_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function
-name|void
-DECL|function|gimp_composite_init (void)
-name|gimp_composite_init
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|g_getenv
-argument_list|(
-literal|"GIMP_COMPOSITE"
-argument_list|)
-condition|)
-block|{
-name|gimp_composite_options
-operator|.
-name|use
-operator|=
-name|TRUE
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"Using new image composite functions\n"
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-operator|!
-name|gimp_composite_options
-operator|.
-name|initialised
-condition|)
-block|{
-name|gimp_composite_generic_init
-argument_list|()
-expr_stmt|;
-name|gimp_composite_options
-operator|.
-name|initialised
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-block|}
-end_function
 
 end_unit
 

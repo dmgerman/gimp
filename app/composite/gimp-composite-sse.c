@@ -19,6 +19,12 @@ directive|ifdef
 name|USE_MMX
 end_ifdef
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|ARCH_X86
+end_ifdef
+
 begin_if
 if|#
 directive|if
@@ -221,6 +227,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|rgba8_alpha_mask
+specifier|static
 name|unsigned
 name|long
 name|rgba8_alpha_mask
@@ -238,6 +245,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_b1
+specifier|static
 name|unsigned
 name|long
 name|rgba8_b1
@@ -255,6 +263,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_b255
+specifier|static
 name|unsigned
 name|long
 name|rgba8_b255
@@ -272,6 +281,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_w1
+specifier|static
 name|unsigned
 name|long
 name|rgba8_w1
@@ -289,6 +299,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_w128
+specifier|static
 name|unsigned
 name|long
 name|rgba8_w128
@@ -306,6 +317,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_w256
+specifier|static
 name|unsigned
 name|long
 name|rgba8_w256
@@ -323,6 +335,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rgba8_w255
+specifier|static
 name|unsigned
 name|long
 name|rgba8_w255
@@ -340,6 +353,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|va8_alpha_mask
+specifier|static
 name|unsigned
 name|long
 name|va8_alpha_mask
@@ -357,6 +371,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|va8_b255
+specifier|static
 name|unsigned
 name|long
 name|va8_b255
@@ -374,6 +389,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|va8_w1
+specifier|static
 name|unsigned
 name|long
 name|va8_w1
@@ -391,6 +407,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|va8_w255
+specifier|static
 name|unsigned
 name|long
 name|va8_w255
@@ -430,7 +447,7 @@ asm|asm
 specifier|volatile
 asm|("movq    %0,%%mm0"     																:
 comment|/* empty */
-asm|: "m" (rgba8_alpha_mask) 																: "%mm0");
+asm|: "m" (*rgba8_alpha_mask) 																: "%mm0");
 for|for
 control|(
 init|;
@@ -488,7 +505,7 @@ asm|asm
 specifier|volatile
 asm|("movq   %0,%%mm1"       :
 comment|/* empty */
-asm|: "m" (rgba8_alpha_mask)       : "%mm1");
+asm|: "m" (*rgba8_alpha_mask)       : "%mm1");
 for|for
 control|(
 init|;
@@ -525,7 +542,7 @@ asm|"\tpandn     %%mm5,%%mm7\n"
 comment|/* mm7 = ~mm7& mm5 */
 asm|"\tpor       %%mm1,%%mm7\n"
 comment|/* mm7 = mm7 | mm1 */
-asm|"\tmovq      %%mm7,(%2); addl $8,%2\n" 									: "+r" (op.A), "+r" (op.B), "+r" (op.D) 									: "m" (rgba8_b255), "m" (rgba8_w1), "m" (rgba8_w255), "m" (rgba8_alpha_mask) 									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
+asm|"\tmovq      %%mm7,(%2); addl $8,%2\n" 									: "+r" (op.A), "+r" (op.B), "+r" (op.D) 									: "m" (*rgba8_b255), "m" (*rgba8_w1), "m" (*rgba8_w255), "m" (*rgba8_alpha_mask) 									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
 block|}
 if|if
 condition|(
@@ -558,7 +575,7 @@ asm|"\tpor       %%mm1,%%mm7\n"
 comment|/* mm7 = mm7 | mm1 */
 asm|"\tmovd      %%mm7,(%2)\n"                   :
 comment|/* empty */
-asm|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (rgba8_b255), "m" (rgba8_w1), "m" (rgba8_w255), "m" (rgba8_alpha_mask)                   : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
+asm|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (*rgba8_b255), "m" (*rgba8_w1), "m" (*rgba8_w255), "m" (*rgba8_alpha_mask)                   : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
 block|}
 asm|asm("emms");
 block|}
@@ -580,7 +597,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -689,7 +706,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -743,7 +760,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -799,7 +816,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0, %%mm0\n"       "\tmovq    %1, %%mm7\n"       :       : "m" (rgba8_alpha_mask), "m" (rgba8_w1)       : "%mm0", "%mm7");
+asm|asm("movq    %0, %%mm0\n"       "\tmovq    %1, %%mm7\n"       :       : "m" (*rgba8_alpha_mask), "m" (*rgba8_w1)       : "%mm0", "%mm7");
 for|for
 control|(
 init|;
@@ -832,7 +849,7 @@ asm|"\t" pdivwuqX(mm2,mm3,mm4) "\n"
 comment|/* mm4 = (A*256)/(B+1) */
 asm|"\tpackuswb  %%mm4,%%mm5\n"
 comment|/* expects mm4 and mm5 to be signed values */
-asm|"\t" pminub(mm0,mm1,mm3) "\n"                   "\tmovq      %3,%%mm3\n"                   "\tmovq      %%mm3,%%mm2\n"                    "\tpandn     %%mm5,%%mm3\n"                    "\tpand      %%mm2,%%mm1\n"                   "\tpor       %%mm1,%%mm3\n"                    "\tmovq      %%mm3,(%2); addl $8, %2\n"                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)                   : "m" (rgba8_alpha_mask)                   : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|"\t" pminub(mm0,mm1,mm3) "\n"                   "\tmovq      %3,%%mm3\n"                   "\tmovq      %%mm3,%%mm2\n"                    "\tpandn     %%mm5,%%mm3\n"                    "\tpand      %%mm2,%%mm1\n"                   "\tpor       %%mm1,%%mm3\n"                    "\tmovq      %%mm3,(%2); addl $8, %2\n"                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)                   : "m" (*rgba8_alpha_mask)                   : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 block|}
 if|if
 condition|(
@@ -859,7 +876,7 @@ asm|"\tpackuswb  %%mm4,%%mm5\n"
 comment|/* expects mm4 and mm5 to be signed values */
 asm|"\t" pminub(mm0,mm1,mm3) "\n"                   "\tmovq      %3,%%mm3\n"                   "\tmovq      %%mm3,%%mm2\n"                    "\tpandn     %%mm5,%%mm3\n"                    "\tpand      %%mm2,%%mm1\n"                   "\tpor       %%mm1,%%mm3\n"                    "\tmovd      %%mm3,(%2); addl $8, %2\n"                   :
 comment|/* empty */
-asm|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (rgba8_alpha_mask)                   : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
+asm|: "r" (op.A), "r" (op.B), "r" (op.D), "m" (*rgba8_alpha_mask)                   : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
 block|}
 asm|asm("emms");
 block|}
@@ -940,9 +957,9 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 asm|asm("pxor    %%mm6,%%mm6"  :  :                        : "%mm6");
-asm|asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128)       : "%mm7");
+asm|asm("movq    %0,%%mm7"     :  : "m" (*rgba8_w128)       : "%mm7");
 for|for
 control|(
 init|;
@@ -998,9 +1015,9 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0, %%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0, %%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 asm|asm("pxor    %%mm6, %%mm6"  :  :                        : "%mm6");
-asm|asm("movq    %0, %%mm7"     :  : "m" (rgba8_w128)       : "%mm7");
+asm|asm("movq    %0, %%mm7"     :  : "m" (*rgba8_w128)       : "%mm7");
 for|for
 control|(
 init|;
@@ -1056,7 +1073,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -1100,7 +1117,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -1144,7 +1161,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -1200,8 +1217,8 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
-asm|asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128) : "%mm7");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm7"     :  : "m" (*rgba8_w128) : "%mm7");
 asm|asm("pxor    %%mm6,%%mm6"  :  :  : "%mm6");
 for|for
 control|(
@@ -1244,6 +1261,8 @@ end_function
 
 begin_decl_stmt
 DECL|variable|rgba8_lower_ff
+specifier|const
+specifier|static
 name|unsigned
 name|long
 name|rgba8_lower_ff
@@ -1260,6 +1279,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
+specifier|static
 name|void
 DECL|function|op_overlay (void)
 name|op_overlay
@@ -1366,7 +1386,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -1422,7 +1442,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -1482,7 +1502,7 @@ asm|asm
 specifier|volatile
 asm|("pxor    %%mm0,%%mm0\n"                 "\tmovl  %0,%%eax\n"                 "\tmovl  %%eax,%%ebx\n"                 "\tshl   $16,%%ebx\n"                 "\torl   %%ebx,%%eax\n"                 "\tmovd  %%eax,%%mm5\n"                 "\tmovd  %%eax,%%mm3\n"                 "\tpsllq $32,%%mm5\n"                 "\tpor   %%mm5,%%mm3\n"                 "\tmovq  %1,%%mm7\n"                 :
 comment|/* empty */
-asm|: "m" (op.scale.scale), "m" (rgba8_w128)                 : "%eax", "%mm0", "%mm5", "%mm6", "%mm7");
+asm|: "m" (op.scale.scale), "m" (*rgba8_w128)                 : "%eax", "%mm0", "%mm5", "%mm6", "%mm7");
 for|for
 control|(
 init|;
@@ -1538,8 +1558,8 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
-asm|asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128)  : "%mm7");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm7"     :  : "m" (*rgba8_w128)  : "%mm7");
 asm|asm("pxor    %mm6, %mm6");
 for|for
 control|(
@@ -1596,7 +1616,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -1652,7 +1672,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -1763,7 +1783,7 @@ init|=
 operator|*
 name|_op
 decl_stmt|;
-asm|asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+asm|asm("movq    %0,%%mm0"     :  : "m" (*rgba8_alpha_mask) : "%mm0");
 for|for
 control|(
 init|;
@@ -1805,6 +1825,8 @@ end_function
 
 begin_decl_stmt
 DECL|variable|v8_alpha_mask
+specifier|const
+specifier|static
 name|unsigned
 name|long
 name|v8_alpha_mask
@@ -1822,6 +1844,8 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|v8_mul_shift
+specifier|const
+specifier|static
 name|unsigned
 name|long
 name|v8_mul_shift
@@ -1961,6 +1985,15 @@ end_endif
 
 begin_comment
 comment|/* __GNUC__> 3 */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* ARCH_X86 */
 end_comment
 
 begin_endif
