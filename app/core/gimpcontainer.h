@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ab033230103
+DECL|enum|__anon2c119cb50103
 block|{
 DECL|enumerator|GIMP_CONTAINER_POLICY_STRONG
 name|GIMP_CONTAINER_POLICY_STRONG
@@ -37,6 +37,14 @@ block|}
 name|GimpContainerPolicy
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_CONTAINER_POLICY
+define|#
+directive|define
+name|GIMP_TYPE_CONTAINER_POLICY
+value|(gimp_container_policy_get_type ())
+end_define
 
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER
@@ -326,6 +334,15 @@ function_decl|;
 block|}
 struct|;
 end_struct
+
+begin_function_decl
+name|GType
+name|gimp_container_policy_get_type
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GType
