@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0bd5f30103
+DECL|enum|__anon2bb728500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1053,7 +1053,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_config_serialize_changed_properties
+name|gimp_config_serialize_properties_diff
 argument_list|(
 name|object
 argument_list|,
