@@ -45,11 +45,30 @@ directive|include
 file|"libgimp/gimp.h"
 end_include
 
+begin_define
+DECL|macro|WinMain
+define|#
+directive|define
+name|WinMain
+value|WinMain_foo
+end_define
+
+begin_comment
+DECL|macro|WinMain
+comment|/* Kludge */
+end_comment
+
 begin_include
 include|#
 directive|include
 file|"gdk/gdkx.h"
 end_include
+
+begin_undef
+undef|#
+directive|undef
+name|WinMain
+end_undef
 
 begin_include
 include|#
@@ -99,7 +118,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b94e5e70103
+DECL|enum|__anon2a2002ab0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED

@@ -1630,22 +1630,6 @@ name|_stdcall
 value|__attribute__((stdcall))
 end_define
 
-begin_define
-DECL|macro|__argc
-define|#
-directive|define
-name|__argc
-value|_argc
-end_define
-
-begin_define
-DECL|macro|__argv
-define|#
-directive|define
-name|__argv
-value|_argv
-end_define
-
 begin_endif
 endif|#
 directive|endif
@@ -2027,7 +2011,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a8bf30108
+DECL|struct|__anon2906ad730108
 block|{
 DECL|member|test_gint32
 name|gint32

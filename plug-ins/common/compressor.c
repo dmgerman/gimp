@@ -64,11 +64,25 @@ directive|define
 name|STRICT
 end_define
 
+begin_define
+DECL|macro|WinMain
+define|#
+directive|define
+name|WinMain
+value|WinMain_foo
+end_define
+
 begin_include
 include|#
 directive|include
 file|<windows.h>
 end_include
+
+begin_undef
+undef|#
+directive|undef
+name|WinMain
+end_undef
 
 begin_endif
 endif|#
