@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpenummenu.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpwidgets-constructors.h"
 end_include
 
