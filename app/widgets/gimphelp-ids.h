@@ -881,6 +881,14 @@ value|"gimp-layer-invert"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_WHITE_BALANCE
+define|#
+directive|define
+name|GIMP_HELP_LAYER_WHITE_BALANCE
+value|"gimp-layer-white-balance"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_EQUALIZE
 define|#
 directive|define
