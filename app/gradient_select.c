@@ -1073,6 +1073,10 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
+name|gradient_area_update
+argument_list|()
+expr_stmt|;
+comment|/*  update the indicator_area  */
 name|import_palette_grad_update
 argument_list|(
 name|grad
