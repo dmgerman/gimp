@@ -748,8 +748,6 @@ operator|(
 name|CAN_HANDLE_RGB
 operator||
 name|CAN_HANDLE_GRAY
-operator||
-name|CAN_HANDLE_ALPHA
 operator|)
 argument_list|)
 expr_stmt|;
