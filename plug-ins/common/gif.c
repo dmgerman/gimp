@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5698170103
+DECL|enum|__anon29741cea0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -161,11 +161,15 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5698170208
+DECL|struct|__anon29741cea0208
 block|{
 DECL|member|interlace
 name|gint
 name|interlace
+decl_stmt|;
+DECL|member|save_comment
+name|gint
+name|save_comment
 decl_stmt|;
 DECL|member|loop
 name|gint
@@ -188,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5698170308
+DECL|struct|__anon29741cea0308
 block|{
 DECL|member|run
 name|gint
@@ -432,15 +436,18 @@ init|=
 block|{
 name|FALSE
 block|,
-comment|/* interlace */
+comment|/* interlace                            */
 name|TRUE
 block|,
-comment|/* loop infinitely */
+comment|/* save comment                         */
+name|TRUE
+block|,
+comment|/* loop infinitely                      */
 literal|100
 block|,
 comment|/* default_delay between frames (100ms) */
 literal|0
-comment|/* default_dispose = "don't care" */
+comment|/* default_dispose = "don't care"       */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -887,6 +894,13 @@ name|FALSE
 expr_stmt|;
 name|gsvals
 operator|.
+name|save_comment
+operator|=
+name|TRUE
+expr_stmt|;
+comment|/*  no way to to specify that through the PDB  */
+name|gsvals
+operator|.
 name|loop
 operator|=
 operator|(
@@ -1104,15 +1118,6 @@ modifier|*
 name|globalcomment
 init|=
 name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|globalusecomment
-name|gint
-name|globalusecomment
-init|=
-name|TRUE
 decl_stmt|;
 end_decl_stmt
 
@@ -2648,7 +2653,9 @@ name|TRUE
 expr_stmt|;
 if|if
 condition|(
-name|globalusecomment
+name|gsvals
+operator|.
+name|save_comment
 condition|)
 name|is_gif89
 operator|=
@@ -3014,7 +3021,9 @@ expr_stmt|;
 comment|/* Write comment extension - mustn't be written before the looping ext. */
 if|if
 condition|(
-name|globalusecomment
+name|gsvals
+operator|.
+name|save_comment
 condition|)
 block|{
 name|GIFEncodeCommentExt
@@ -4200,7 +4209,9 @@ name|gimp_toggle_button_update
 argument_list|)
 argument_list|,
 operator|&
-name|globalusecomment
+name|gsvals
+operator|.
+name|save_comment
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -4210,7 +4221,9 @@ argument_list|(
 name|toggle
 argument_list|)
 argument_list|,
-name|TRUE
+name|gsvals
+operator|.
+name|save_comment
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

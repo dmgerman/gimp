@@ -137,7 +137,7 @@ modifier|*
 name|color_panel
 decl_stmt|;
 DECL|member|opacity
-name|double
+name|gdouble
 name|opacity
 decl_stmt|;
 block|}
@@ -305,7 +305,7 @@ name|gimage
 operator|->
 name|qmask_state
 operator|=
-literal|0
+name|FALSE
 expr_stmt|;
 name|qmask_buttons_update
 argument_list|(
@@ -459,8 +459,6 @@ argument_list|,
 name|gdisp
 argument_list|)
 expr_stmt|;
-comment|/* Flush event queue */
-comment|/*  while (g_main_iteration(FALSE)); */
 block|}
 block|}
 end_function
@@ -524,12 +522,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_deactivate (GtkWidget * w,GDisplay * gdisp)
+DECL|function|qmask_deactivate (GtkWidget * widget,GDisplay * gdisp)
 name|qmask_deactivate
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GDisplay
 modifier|*
@@ -572,13 +570,6 @@ name|qmask_state
 condition|)
 return|return;
 comment|/* if already set do nothing */
-name|undo_push_group_start
-argument_list|(
-name|gimg
-argument_list|,
-name|QMASK_UNDO
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -593,6 +584,19 @@ argument_list|)
 operator|)
 condition|)
 block|{
+name|undo_push_group_start
+argument_list|(
+name|gimg
+argument_list|,
+name|QMASK_UNDO
+argument_list|)
+expr_stmt|;
+comment|/*  push the undo here since removing the mask will 	      call the qmask_removed_callback() which will set 	      the qmask_state to FALSE  */
+name|undo_push_qmask
+argument_list|(
+name|gimg
+argument_list|)
+expr_stmt|;
 name|gimage_mask_load
 argument_list|(
 name|gimg
@@ -607,33 +611,19 @@ argument_list|,
 name|gmask
 argument_list|)
 expr_stmt|;
-name|undo_push_qmask
-argument_list|(
-name|gimg
-argument_list|)
-expr_stmt|;
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|qmask_state
-operator|=
-literal|0
-expr_stmt|;
-block|}
-else|else
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|qmask_state
-operator|=
-literal|0
-expr_stmt|;
 name|undo_push_group_end
 argument_list|(
 name|gimg
 argument_list|)
+expr_stmt|;
+block|}
+name|gdisp
+operator|->
+name|gimage
+operator|->
+name|qmask_state
+operator|=
+name|FALSE
 expr_stmt|;
 if|if
 condition|(
@@ -648,12 +638,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|qmask_activate (GtkWidget * w,GDisplay * gdisp)
+DECL|function|qmask_activate (GtkWidget * widget,GDisplay * gdisp)
 name|qmask_activate
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|w
+name|widget
 parameter_list|,
 name|GDisplay
 modifier|*
@@ -672,11 +662,10 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|double
+name|gdouble
 name|opacity
 decl_stmt|;
-name|unsigned
-name|char
+name|guchar
 modifier|*
 name|color
 decl_stmt|;
@@ -711,7 +700,7 @@ comment|/* Set the defaults */
 name|opacity
 operator|=
 operator|(
-name|double
+name|gdouble
 operator|)
 name|gimg
 operator|->
@@ -741,7 +730,7 @@ name|gimg
 operator|->
 name|qmask_state
 operator|=
-literal|1
+name|TRUE
 expr_stmt|;
 comment|/* if the user was clever and created his own */
 return|return;
@@ -797,7 +786,7 @@ argument_list|,
 literal|"Qmask"
 argument_list|,
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 literal|255
@@ -834,20 +823,6 @@ literal|0
 argument_list|,
 literal|0
 argument_list|)
-expr_stmt|;
-comment|/* edit_clear(gimg,GIMP_DRAWABLE(gmask));  */
-name|undo_push_qmask
-argument_list|(
-name|gimg
-argument_list|)
-expr_stmt|;
-name|gdisp
-operator|->
-name|gimage
-operator|->
-name|qmask_state
-operator|=
-literal|1
 expr_stmt|;
 block|}
 else|else
@@ -899,7 +874,13 @@ name|gimg
 argument_list|)
 expr_stmt|;
 comment|/* Clear the selection */
+block|}
 name|undo_push_qmask
+argument_list|(
+name|gimg
+argument_list|)
+expr_stmt|;
+name|undo_push_group_end
 argument_list|(
 name|gimg
 argument_list|)
@@ -910,13 +891,7 @@ name|gimage
 operator|->
 name|qmask_state
 operator|=
-literal|1
-expr_stmt|;
-block|}
-name|undo_push_group_end
-argument_list|(
-name|gimg
-argument_list|)
+name|TRUE
 expr_stmt|;
 name|gdisplays_flush
 argument_list|()
@@ -1452,14 +1427,6 @@ name|Channel
 modifier|*
 name|channel
 decl_stmt|;
-name|gint
-name|opacity
-decl_stmt|;
-name|gint
-name|update
-init|=
-name|FALSE
-decl_stmt|;
 name|guchar
 modifier|*
 name|tmpcolp
@@ -1469,6 +1436,14 @@ name|tmpcol
 index|[
 literal|3
 index|]
+decl_stmt|;
+name|gboolean
+name|update
+init|=
+name|FALSE
+decl_stmt|;
+name|gint
+name|opacity
 decl_stmt|;
 name|gint
 name|i
@@ -1495,7 +1470,7 @@ expr_stmt|;
 name|opacity
 operator|=
 call|(
-name|int
+name|gint
 call|)
 argument_list|(
 literal|255
